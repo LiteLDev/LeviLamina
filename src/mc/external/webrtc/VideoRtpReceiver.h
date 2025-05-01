@@ -21,41 +21,41 @@ class VideoRtpReceiver {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void OnEncodedSinkEnabled(bool);
+    MCNAPI void OnEncodedSinkEnabled(bool);
 
-    MCAPI void OnGenerateKeyFrame();
+    MCNAPI void OnGenerateKeyFrame();
 
-    MCAPI void RestartMediaChannel(::std::optional<uint>);
+    MCNAPI void RestartMediaChannel(::std::optional<uint>);
 
-    MCAPI void RestartMediaChannel_w(::std::optional<uint>, ::webrtc::MediaSourceInterface::SourceState);
+    MCNAPI void RestartMediaChannel_w(::std::optional<uint>, ::webrtc::MediaSourceInterface::SourceState);
 
-    MCAPI void SetEncodedSinkEnabled(bool);
+    MCNAPI void SetEncodedSinkEnabled(bool);
 
-    MCAPI void SetMediaChannel_w(::cricket::MediaReceiveChannelInterface*);
+    MCNAPI void SetMediaChannel_w(::cricket::MediaReceiveChannelInterface*);
 
-    MCAPI void SetSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>*);
+    MCNAPI void SetSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>*);
 
-    MCAPI void SetupMediaChannel(::std::optional<uint>, ::cricket::MediaReceiveChannelInterface*);
+    MCNAPI void SetupMediaChannel(::std::optional<uint>, ::cricket::MediaReceiveChannelInterface*);
 
-    MCAPI VideoRtpReceiver(::rtc::Thread*, ::std::string, ::std::vector<::std::string>);
+    MCNAPI VideoRtpReceiver(::rtc::Thread*, ::std::string, ::std::vector<::std::string>);
 
-    MCAPI
+    MCNAPI
     VideoRtpReceiver(::rtc::Thread*, ::std::string const&, ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::Thread*, ::std::string, ::std::vector<::std::string>);
+    MCNAPI void* $ctor(::rtc::Thread*, ::std::string, ::std::vector<::std::string>);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::rtc::Thread*, ::std::string const&, ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

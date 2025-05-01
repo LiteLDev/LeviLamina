@@ -19,20 +19,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParameterList(::ParameterList&&);
+    MCNAPI ParameterList(::ParameterList&&);
 
-    MCAPI ~ParameterList();
+    MCNAPI ~ParameterList();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ParameterList&&);
+    MCNAPI void* $ctor(::ParameterList&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

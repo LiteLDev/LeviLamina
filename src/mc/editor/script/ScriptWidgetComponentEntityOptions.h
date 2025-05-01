@@ -25,35 +25,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWidgetComponentEntityOptions(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions&&);
+    MCNAPI ScriptWidgetComponentEntityOptions(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions&&);
 
-    MCAPI ScriptWidgetComponentEntityOptions(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions const&);
+    MCNAPI ScriptWidgetComponentEntityOptions(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions const&);
 
-    MCAPI ::Editor::ScriptModule::ScriptWidgetComponentEntityOptions&
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentEntityOptions&
     operator=(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions&&);
 
-    MCAPI ~ScriptWidgetComponentEntityOptions();
+    MCNAPI ~ScriptWidgetComponentEntityOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentEntityOptions>
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentEntityOptions>
     bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions&&);
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions&&);
 
-    MCAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions const&);
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -35,15 +35,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $init(::Biome&, uint);
+    MCNAPI void $init(::Biome&, uint);
 
-    MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
+    MCNAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

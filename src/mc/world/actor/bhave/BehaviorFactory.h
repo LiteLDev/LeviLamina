@@ -26,12 +26,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _initNodes();
+    MCNAPI void _initNodes();
 
-    MCAPI ::std::unique_ptr<::BehaviorDefinition>
+    MCNAPI ::std::unique_ptr<::BehaviorDefinition>
     loadNodeDefinition(::std::string const& name, ::Json::Value root, ::BehaviorTreeDefinitionPtr& ptr) const;
 
-    MCAPI void registerNodePair(
+    MCNAPI void registerNodePair(
         ::std::string const&                                       id,
         ::std::function<::std::unique_ptr<::BehaviorDefinition>()> definitionCreator,
         ::std::function<::std::unique_ptr<::BehaviorNode>()>       nodeCreator

@@ -45,20 +45,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RTCCertificateGenerator(::rtc::Thread*, ::rtc::Thread*);
+    MCNAPI RTCCertificateGenerator(::rtc::Thread*, ::rtc::Thread*);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::scoped_refptr<::rtc::RTCCertificate>
+    MCNAPI static ::webrtc::scoped_refptr<::rtc::RTCCertificate>
     GenerateCertificate(::rtc::KeyParams const&, ::std::optional<uint64> const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::Thread*, ::rtc::Thread*);
+    MCNAPI void* $ctor(::rtc::Thread*, ::rtc::Thread*);
     // NOLINTEND
 
 public:
@@ -76,7 +76,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

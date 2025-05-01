@@ -109,9 +109,9 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForMdnsResponderProvider();
+    MCNAPI static void** $vftableForMdnsResponderProvider();
 
-    MCAPI static void** $vftableForDefaultLocalAddressProvider();
+    MCNAPI static void** $vftableForDefaultLocalAddressProvider();
     // NOLINTEND
 };
 

@@ -14,9 +14,9 @@ struct RobustThroughputEstimatorSettings {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::webrtc::StructParametersParser> Parser();
+    MCNAPI ::std::unique_ptr<::webrtc::StructParametersParser> Parser();
 
-    MCAPI explicit RobustThroughputEstimatorSettings(::webrtc::FieldTrialsView const*);
+    MCNAPI explicit RobustThroughputEstimatorSettings(::webrtc::FieldTrialsView const*);
     // NOLINTEND
 
 public:
@@ -28,7 +28,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const*);
     // NOLINTEND
 };
 

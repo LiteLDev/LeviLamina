@@ -33,40 +33,40 @@ class RtpVideoSender {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::DataRate
+    MCNAPI ::webrtc::DataRate
         CalculateOverheadRate(::webrtc::DataRate, ::webrtc::DataSize, ::webrtc::DataSize, ::webrtc::Frequency) const;
 
-    MCAPI void ConfigureSsrcs(::std::map<uint, ::webrtc::RtpState> const&);
+    MCNAPI void ConfigureSsrcs(::std::map<uint, ::webrtc::RtpState> const&);
 
-    MCAPI ::webrtc::DataRate GetPostEncodeOverhead() const;
+    MCNAPI ::webrtc::DataRate GetPostEncodeOverhead() const;
 
-    MCAPI bool IsActiveLocked();
+    MCNAPI bool IsActiveLocked();
 
-    MCAPI bool NackEnabled() const;
+    MCNAPI bool NackEnabled() const;
 
-    MCAPI
+    MCNAPI
     RtpVideoSender(::webrtc::Clock*, ::std::map<uint, ::webrtc::RtpState> const&, ::std::map<uint, ::webrtc::RtpPayloadState> const&, ::webrtc::RtpConfig const&, int, ::webrtc::Transport*, ::webrtc::RtpSenderObservers const&, ::webrtc::RtpTransportControllerSendInterface*, ::webrtc::RtcEventLog*, ::webrtc::RateLimiter*, ::std::unique_ptr<::webrtc::FecController>, ::webrtc::FrameEncryptorInterface*, ::webrtc::CryptoOptions const&, ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>, ::webrtc::FieldTrialsView const&, ::webrtc::TaskQueueFactory*);
 
-    MCAPI void SetActiveModulesLocked(bool);
+    MCNAPI void SetActiveModulesLocked(bool);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::webrtc::Clock*, ::std::map<uint, ::webrtc::RtpState> const&, ::std::map<uint, ::webrtc::RtpPayloadState> const&, ::webrtc::RtpConfig const&, int, ::webrtc::Transport*, ::webrtc::RtpSenderObservers const&, ::webrtc::RtpTransportControllerSendInterface*, ::webrtc::RtcEventLog*, ::webrtc::RateLimiter*, ::std::unique_ptr<::webrtc::FecController>, ::webrtc::FrameEncryptorInterface*, ::webrtc::CryptoOptions const&, ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>, ::webrtc::FieldTrialsView const&, ::webrtc::TaskQueueFactory*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForStreamFeedbackObserver();
+    MCNAPI static void** $vftableForStreamFeedbackObserver();
 
-    MCAPI static void** $vftableForEncodedImageCallback();
+    MCNAPI static void** $vftableForEncodedImageCallback();
 
-    MCAPI static void** $vftableForVCMProtectionCallback();
+    MCNAPI static void** $vftableForVCMProtectionCallback();
 
-    MCAPI static void** $vftableForFecControllerOverride();
+    MCNAPI static void** $vftableForFecControllerOverride();
     // NOLINTEND
 };
 

@@ -44,20 +44,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::CommandPermissionLevel $getPermissionsLevel() const;
+    MCNAPI ::CommandPermissionLevel $getPermissionsLevel() const;
 
-    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
+    MCNAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCFOLD bool $canUseCommandsWithoutCheatsEnabled() const;
+    MCNAPI bool $canUseCommandsWithoutCheatsEnabled() const;
 
-    MCAPI ::CommandOriginType $getOriginType() const;
+    MCNAPI ::CommandOriginType $getOriginType() const;
 
-    MCFOLD bool $isSelectorExpansionAllowed() const;
+    MCNAPI bool $isSelectorExpansionAllowed() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -27,9 +27,9 @@ struct FinalizeMoveSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo create();
+    MCNAPI static ::TickingSystemWithInfo create();
 
-    MCAPI static void tick(
+    MCNAPI static void tick(
         ::ViewT<
             ::StrictEntityContext,
             ::AABBShapeComponent const,

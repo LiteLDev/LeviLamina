@@ -40,18 +40,18 @@ public:
     // vIndex: 0
     virtual ~ClassroomModeNetworkHandler() /*override*/;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual ::IncomingPacketFilterResult allowIncomingPacketId(
         ::NetworkIdentifierWithSubId const& id,
         ::MinecraftPacketIds                packetId,
         uint64                              packetSize
     ) /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual ::OutgoingPacketFilterResult
     allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual void onWebsocketRequest(
         ::std::string const&    serverAddress,
         ::std::string const&    payload,
@@ -62,35 +62,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ClassroomModeNetworkHandler(bool isDedicatedServer);
+    MCNAPI explicit ClassroomModeNetworkHandler(bool isDedicatedServer);
 
-    MCAPI void _connect(::std::string const& address);
+    MCNAPI void _connect(::std::string const& address);
 
-    MCAPI void setAutomationClient(::Bedrock::NonOwnerPointer<::Automation::AutomationClient> client);
+    MCNAPI void setAutomationClient(::Bedrock::NonOwnerPointer<::Automation::AutomationClient> client);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(bool isDedicatedServer);
+    MCNAPI void* $ctor(bool isDedicatedServer);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::IncomingPacketFilterResult
+    MCNAPI ::IncomingPacketFilterResult
     $allowIncomingPacketId(::NetworkIdentifierWithSubId const& id, ::MinecraftPacketIds packetId, uint64 packetSize);
 
-    MCFOLD ::OutgoingPacketFilterResult
+    MCNAPI ::OutgoingPacketFilterResult
     $allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet);
 
-    MCAPI void $onWebsocketRequest(
+    MCNAPI void $onWebsocketRequest(
         ::std::string const&    serverAddress,
         ::std::string const&    payload,
         ::std::function<void()> errorCallback
@@ -100,8 +100,8 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEnableQueueForMainThread();
+    MCNAPI static void** $vftableForEnableQueueForMainThread();
 
-    MCAPI static void** $vftableForNetEventCallback();
+    MCNAPI static void** $vftableForNetEventCallback();
     // NOLINTEND
 };

@@ -12,27 +12,27 @@ struct ScriptItemEnchantmentUnknownIdError : public ::Scripting::Error {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemEnchantmentUnknownIdError();
+    MCNAPI ScriptItemEnchantmentUnknownIdError();
 
-    MCAPI ~ScriptItemEnchantmentUnknownIdError();
+    MCNAPI ~ScriptItemEnchantmentUnknownIdError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError> bind();
+    MCNAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

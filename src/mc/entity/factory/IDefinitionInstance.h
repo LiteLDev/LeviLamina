@@ -60,12 +60,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ushort $getRuntimeTypeId() const;
+    MCNAPI ushort $getRuntimeTypeId() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

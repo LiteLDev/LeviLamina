@@ -60,27 +60,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VideoSinkWants();
+    MCNAPI VideoSinkWants();
 
-    MCAPI VideoSinkWants(::rtc::VideoSinkWants const&);
+    MCNAPI VideoSinkWants(::rtc::VideoSinkWants const&);
 
-    MCAPI ::rtc::VideoSinkWants& operator=(::rtc::VideoSinkWants const&);
+    MCNAPI ::rtc::VideoSinkWants& operator=(::rtc::VideoSinkWants const&);
 
-    MCAPI ~VideoSinkWants();
+    MCNAPI ~VideoSinkWants();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::rtc::VideoSinkWants const&);
+    MCNAPI void* $ctor(::rtc::VideoSinkWants const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

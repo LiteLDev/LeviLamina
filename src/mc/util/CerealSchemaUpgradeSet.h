@@ -23,16 +23,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool forEach(::std::function<bool(::std::shared_ptr<::CerealSchemaUpgrade>)> functor);
+    MCNAPI bool forEach(::std::function<bool(::std::shared_ptr<::CerealSchemaUpgrade>)> functor);
 
-    MCAPI ::CerealSchemaUpgradeSet& operator=(::CerealSchemaUpgradeSet&&);
+    MCNAPI ::CerealSchemaUpgradeSet& operator=(::CerealSchemaUpgradeSet&&);
 
-    MCAPI ~CerealSchemaUpgradeSet();
+    MCNAPI ~CerealSchemaUpgradeSet();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

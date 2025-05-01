@@ -28,15 +28,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptMessageReceiveEventFilterData const& data);
+    MCNAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptMessageReceiveEventFilterData const& data);
 
-    MCAPI ~ScriptMessageReceiveEventFilter();
+    MCNAPI ~ScriptMessageReceiveEventFilter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<
         ::ScriptModuleMinecraft::EventFilters::ScriptMessageReceiveEventFilter>
     bind();
     // NOLINTEND
@@ -44,7 +44,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

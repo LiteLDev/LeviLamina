@@ -36,9 +36,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void processActivationArguments(::Bedrock::ActivationArguments const& args);
+    MCNAPI void processActivationArguments(::Bedrock::ActivationArguments const& args);
 
-    MCAPI void processLoadedLevel(::LevelData& levelData, ::Core::Result const& levelLoadResult);
+    MCNAPI void processLoadedLevel(::LevelData& levelData, ::Core::Result const& levelLoadResult);
     // NOLINTEND
 
 public:
@@ -58,6 +58,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

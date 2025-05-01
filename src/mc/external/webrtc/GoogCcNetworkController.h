@@ -19,29 +19,29 @@ class GoogCcNetworkController {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void ClampConstraints();
+    MCNAPI void ClampConstraints();
 
-    MCAPI ::webrtc::PacerConfig GetPacingRates(::webrtc::Timestamp) const;
+    MCNAPI ::webrtc::PacerConfig GetPacingRates(::webrtc::Timestamp) const;
 
-    MCAPI GoogCcNetworkController(::webrtc::NetworkControllerConfig, ::webrtc::GoogCcConfig);
+    MCNAPI GoogCcNetworkController(::webrtc::NetworkControllerConfig, ::webrtc::GoogCcConfig);
 
-    MCAPI void MaybeTriggerOnNetworkChanged(::webrtc::NetworkControlUpdate*, ::webrtc::Timestamp);
+    MCNAPI void MaybeTriggerOnNetworkChanged(::webrtc::NetworkControlUpdate*, ::webrtc::Timestamp);
 
-    MCAPI ::std::vector<::webrtc::ProbeClusterConfig> ResetConstraints(::webrtc::TargetRateConstraints);
+    MCNAPI ::std::vector<::webrtc::ProbeClusterConfig> ResetConstraints(::webrtc::TargetRateConstraints);
 
-    MCAPI void UpdateCongestionWindowSize();
+    MCNAPI void UpdateCongestionWindowSize();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::NetworkControllerConfig, ::webrtc::GoogCcConfig);
+    MCNAPI void* $ctor(::webrtc::NetworkControllerConfig, ::webrtc::GoogCcConfig);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

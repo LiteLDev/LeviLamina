@@ -15,7 +15,7 @@ class StructureHelpers {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool createChest(
+    MCNAPI static bool createChest(
         ::StructurePiece&    piece,
         ::BlockSource&       region,
         ::BoundingBox const& chunkBB,
@@ -27,7 +27,7 @@ public:
         ::std::string const& lootTable
     );
 
-    MCAPI static bool createDispenser(
+    MCNAPI static bool createDispenser(
         ::StructurePiece&    piece,
         ::BlockSource&       region,
         ::BoundingBox const& chunkBB,
@@ -39,7 +39,7 @@ public:
         ::std::string const& y
     );
 
-    MCAPI static bool createMinecartChest(
+    MCNAPI static bool createMinecartChest(
         ::StructurePiece&    piece,
         ::BlockSource&       region,
         ::BoundingBox const& chunkBB,
@@ -51,7 +51,7 @@ public:
         ::std::string const& direction
     );
 
-    MCAPI static void fillColumnDown(
+    MCNAPI static void fillColumnDown(
         ::StructurePiece&    piece,
         ::BlockSource&       region,
         ::Block const&       block,
@@ -61,6 +61,6 @@ public:
         ::BoundingBox const& chunkBB
     );
 
-    MCAPI static int getTorchRotation(int structureOrientation, ushort torchOrientation);
+    MCNAPI static int getTorchRotation(int structureOrientation, ushort torchOrientation);
     // NOLINTEND
 };

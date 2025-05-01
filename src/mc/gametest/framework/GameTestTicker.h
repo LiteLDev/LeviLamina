@@ -24,11 +24,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void clear();
+    MCNAPI void clear();
 
-    MCAPI void forceStop();
+    MCNAPI void forceStop();
 
-    MCAPI void tick();
+    MCNAPI void tick();
     // NOLINTEND
 };
 

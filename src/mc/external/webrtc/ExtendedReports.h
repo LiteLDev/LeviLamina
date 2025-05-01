@@ -16,35 +16,35 @@ class ExtendedReports {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool AddDlrrItem(::webrtc::rtcp::ReceiveTimeInfo const&);
+    MCNAPI bool AddDlrrItem(::webrtc::rtcp::ReceiveTimeInfo const&);
 
-    MCAPI ExtendedReports();
+    MCNAPI ExtendedReports();
 
-    MCAPI bool Parse(::webrtc::rtcp::CommonHeader const&);
+    MCNAPI bool Parse(::webrtc::rtcp::CommonHeader const&);
 
-    MCAPI void ParseDlrrBlock(uchar const*, ushort);
+    MCNAPI void ParseDlrrBlock(uchar const*, ushort);
 
-    MCAPI void ParseRrtrBlock(uchar const*, ushort);
+    MCNAPI void ParseRrtrBlock(uchar const*, ushort);
 
-    MCAPI void ParseTargetBitrateBlock(uchar const*, ushort);
+    MCNAPI void ParseTargetBitrateBlock(uchar const*, ushort);
 
-    MCAPI void SetRrtr(::webrtc::rtcp::Rrtr const&);
+    MCNAPI void SetRrtr(::webrtc::rtcp::Rrtr const&);
 
-    MCAPI void SetTargetBitrate(::webrtc::rtcp::TargetBitrate const&);
+    MCNAPI void SetTargetBitrate(::webrtc::rtcp::TargetBitrate const&);
 
-    MCAPI uint64 TargetBitrateLength() const;
+    MCNAPI uint64 TargetBitrateLength() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

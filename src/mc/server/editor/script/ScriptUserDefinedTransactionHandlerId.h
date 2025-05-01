@@ -23,7 +23,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptUserDefinedTransactionHandlerId>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptUserDefinedTransactionHandlerId>
     bindScript();
     // NOLINTEND
 };

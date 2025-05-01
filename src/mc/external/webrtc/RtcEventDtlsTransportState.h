@@ -11,19 +11,19 @@ class RtcEventDtlsTransportState {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RtcEventDtlsTransportState(::webrtc::DtlsTransportState);
+    MCNAPI explicit RtcEventDtlsTransportState(::webrtc::DtlsTransportState);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::DtlsTransportState);
+    MCNAPI void* $ctor(::webrtc::DtlsTransportState);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

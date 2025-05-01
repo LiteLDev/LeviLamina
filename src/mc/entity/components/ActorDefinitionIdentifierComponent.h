@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct ActorDefinitionIdentifier;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
 
 struct ActorDefinitionIdentifierComponent {
 public:
@@ -17,12 +15,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ActorDefinitionIdentifierComponent();
+    MCNAPI ~ActorDefinitionIdentifierComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

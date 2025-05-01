@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/world/events/ActorEventListener.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActorEventListener;
 class HashedString;
 struct ActorDefinitionTriggeredEvent;
-struct ActorUniqueID;
 // clang-format on
 
 class DebugInfoComponent : public ::EventListenerDispatcher<::ActorEventListener> {
@@ -40,13 +40,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Listener();
+        MCNAPI Listener(::DebugInfoComponent::Listener&&);
+
+        MCNAPI ~Listener();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::DebugInfoComponent::Listener&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -67,7 +75,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 37
+    // vIndex: 39
     virtual ::EventResult onEvent(::ActorDefinitionTriggeredEvent const& actorDefinitionEvent) /*override*/;
 
     // vIndex: 0
@@ -77,19 +85,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DebugInfoComponent(::DebugInfoComponent&&);
+    MCNAPI DebugInfoComponent(::DebugInfoComponent&&);
 
-    MCAPI DebugInfoComponent(::DebugInfoComponent const&);
+    MCNAPI DebugInfoComponent(::DebugInfoComponent const&);
 
-    MCAPI ::DebugInfoComponent& operator=(::DebugInfoComponent&&);
+    MCNAPI ::DebugInfoComponent& operator=(::DebugInfoComponent&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::DebugInfoComponent&&);
+    MCNAPI void* $ctor(::DebugInfoComponent&&);
 
-    MCAPI void* $ctor(::DebugInfoComponent const&);
+    MCNAPI void* $ctor(::DebugInfoComponent const&);
     // NOLINTEND
 
 public:
@@ -101,12 +109,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ActorDefinitionTriggeredEvent const& actorDefinitionEvent);
+    MCNAPI ::EventResult $onEvent(::ActorDefinitionTriggeredEvent const& actorDefinitionEvent);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

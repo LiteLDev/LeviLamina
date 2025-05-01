@@ -33,18 +33,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent&
+    MCNAPI ::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent&
     operator=(::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<
+    MCNAPI static ::std::vector<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
     _resolvePlayers(::Scripting::WeakLifetimeScope const& scope, ::OutgoingPacketEvent const& packetEvent);
 
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent> bind();
     // NOLINTEND
 };
 

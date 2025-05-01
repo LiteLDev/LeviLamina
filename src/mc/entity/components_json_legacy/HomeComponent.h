@@ -6,12 +6,12 @@
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/entity/components_json_legacy/RestrictionType.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class BlockLegacy;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
@@ -40,12 +40,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool hasValidBlockAtHomePos(::BlockSource const& region) const;
+    MCNAPI bool hasValidBlockAtHomePos(::BlockSource const& region) const;
 
-    MCAPI bool isInHomeDimension(::Actor const& owner) const;
+    MCNAPI bool isInHomeDimension(::Actor const& owner) const;
 
-    MCAPI ::HomeComponent& operator=(::HomeComponent&&);
+    MCNAPI ::HomeComponent& operator=(::HomeComponent&&);
 
-    MCAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const& dataLoadHelper, ::DataLoadHelper&);
+    MCNAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const& dataLoadHelper, ::DataLoadHelper&);
     // NOLINTEND
 };

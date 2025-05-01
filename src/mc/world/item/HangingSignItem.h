@@ -31,10 +31,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Block const*
+    MCNAPI ::Block const*
     _getCeilingHangingSignBlock(::Actor const& entity, uchar const& face, ::BlockPos const& pos) const;
 
-    MCAPI ::Block const*
+    MCNAPI ::Block const*
     _getWallHangingSignBlock(::Actor const& entity, uchar const& face, ::BlockPos const& pos) const;
     // NOLINTEND
 
@@ -47,14 +47,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const* $getBlockToPlace(uchar const face, ::Actor const& entity, ::BlockPos const pos) const;
+    MCNAPI ::Block const* $getBlockToPlace(uchar const face, ::Actor const& entity, ::BlockPos const pos) const;
 
-    MCAPI bool $_calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    MCNAPI bool $_calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -41,14 +41,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AsynchronousIPResolver(::std::string url);
+    MCNAPI explicit AsynchronousIPResolver(::std::string url);
 
-    MCAPI void _resolve();
+    MCNAPI void _resolve();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string url);
+    MCNAPI void* $ctor(::std::string url);
     // NOLINTEND
 };

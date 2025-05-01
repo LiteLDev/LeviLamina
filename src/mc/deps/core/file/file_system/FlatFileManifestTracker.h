@@ -27,21 +27,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FlatFileManifestTracker();
+    MCNAPI FlatFileManifestTracker();
 
-    MCAPI ::std::shared_ptr<::Core::FlatFileManifest const> loadManifest(::Core::PathView manifestPath);
+    MCNAPI ::std::shared_ptr<::Core::FlatFileManifest const> loadManifest(::Core::PathView manifestPath);
 
-    MCAPI bool manifestExists(::Core::PathView manifestPath) const;
+    MCNAPI bool manifestExists(::Core::PathView manifestPath) const;
 
-    MCAPI bool tryUnloadManifest(::Core::PathView manifestPath);
+    MCNAPI bool tryUnloadManifest(::Core::PathView manifestPath);
 
-    MCAPI void updateManifest(::std::shared_ptr<::Core::FlatFileManifest> manifest, bool keepCached);
+    MCNAPI void updateManifest(::std::shared_ptr<::Core::FlatFileManifest> manifest, bool keepCached);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

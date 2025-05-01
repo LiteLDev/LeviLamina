@@ -23,18 +23,18 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool operator()(::rtc::NetworkRoute const&, ::rtc::NetworkRoute const&) const;
+        MCNAPI bool operator()(::rtc::NetworkRoute const&, ::rtc::NetworkRoute const&) const;
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddInFlightPacketBytes(::webrtc::PacketFeedback const&);
+    MCNAPI void AddInFlightPacketBytes(::webrtc::PacketFeedback const&);
 
-    MCAPI ::webrtc::DataSize GetOutstandingData(::rtc::NetworkRoute const&) const;
+    MCNAPI ::webrtc::DataSize GetOutstandingData(::rtc::NetworkRoute const&) const;
 
-    MCAPI void RemoveInFlightPacketBytes(::webrtc::PacketFeedback const&);
+    MCNAPI void RemoveInFlightPacketBytes(::webrtc::PacketFeedback const&);
     // NOLINTEND
 };
 

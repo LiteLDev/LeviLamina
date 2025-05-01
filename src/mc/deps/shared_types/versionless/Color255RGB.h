@@ -16,13 +16,13 @@ struct Color255RGB : public ::Detail::ColorBase {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Color255RGB(::mce::Color const&);
+    MCNAPI explicit Color255RGB(::mce::Color const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::mce::Color const&);
+    MCNAPI void* $ctor(::mce::Color const&);
     // NOLINTEND
 };
 

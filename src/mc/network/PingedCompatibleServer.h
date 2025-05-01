@@ -33,28 +33,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PingedCompatibleServer();
+    MCNAPI PingedCompatibleServer();
 
-    MCAPI PingedCompatibleServer(::PingedCompatibleServer&&);
+    MCNAPI PingedCompatibleServer(::PingedCompatibleServer&&);
 
-    MCAPI PingedCompatibleServer(::PingedCompatibleServer const&);
+    MCNAPI PingedCompatibleServer(::PingedCompatibleServer const&);
 
-    MCAPI ~PingedCompatibleServer();
+    MCNAPI ~PingedCompatibleServer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::PingedCompatibleServer&&);
+    MCNAPI void* $ctor(::PingedCompatibleServer&&);
 
-    MCAPI void* $ctor(::PingedCompatibleServer const&);
+    MCNAPI void* $ctor(::PingedCompatibleServer const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

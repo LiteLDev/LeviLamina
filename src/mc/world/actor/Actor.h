@@ -3,8 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Color.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/optional_ref.h"
+#include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
 #include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/input/InputMode.h"
@@ -12,17 +16,24 @@
 #include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
-#include "mc/deps/shared_types/legacy/actor/PaletteColor.h"
 #include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
 #include "mc/input/NewInteractionModel.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/util/MolangVariableMap.h"
+#include "mc/util/VariantParameterList.h"
 #include "mc/world/actor/ActorCategory.h"
+#include "mc/world/actor/ActorDefinitionPtr.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/actor/ActorResetRule.h"
+#include "mc/world/actor/ActorTerrainInterlockData.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/ArmorMaterialType.h"
+#include "mc/world/actor/BuiltInActorComponents.h"
 #include "mc/world/actor/SpawnRuleEnum.h"
+#include "mc/world/actor/SynchedActorDataEntityWrapper.h"
 #include "mc/world/actor/animation/AnimationComponentGroupType.h"
 #include "mc/world/item/HandSlot.h"
 #include "mc/world/item/ItemUseMethod.h"
@@ -38,10 +49,8 @@ class ActorDamageSource;
 class ActorDefinitionDescriptor;
 class ActorDefinitionDiffList;
 class ActorDefinitionGroup;
-class ActorDefinitionPtr;
 class ActorInteraction;
 class ActorRuntimeID;
-class ActorTerrainInterlockData;
 class AddActorBasePacket;
 class AnimationComponent;
 class Attribute;
@@ -55,11 +64,9 @@ class CompoundTag;
 class DataLoadHelper;
 class Dimension;
 class DynamicProperties;
-class EntityContext;
 class EntityRegistry;
 class GameEvent;
 class GetCollisionShapeInterface;
-class HashedString;
 class IConstBlockSource;
 class ILevel;
 class ItemActor;
@@ -72,7 +79,6 @@ class MerchantRecipeList;
 class Mob;
 class MobEffect;
 class MobEffectInstance;
-class MolangVariableMap;
 class Options;
 class Player;
 class Random;
@@ -81,22 +87,16 @@ class RideableComponent;
 class RopeSystem;
 class SpatialActorNetworkData;
 class StrictEntityContext;
-class SynchedActorDataEntityWrapper;
 class UpdateEquipPacket;
 class Vec2;
-class Vec3;
 struct ActorDefinitionIdentifier;
 struct ActorLink;
-struct ActorUniqueID;
-struct BuiltInActorComponents;
 struct DistanceSortedActor;
 struct EquipmentTable;
 struct MutableAttributeWithContext;
 struct PlayerMovementSettings;
-struct VariantParameterList;
 namespace Bedrock::Safety { class RedactableString; }
 namespace MovementDataExtractionUtility { class SnapshotAccessor; }
-namespace mce { class Color; }
 // clang-format on
 
 class Level;
@@ -287,7 +287,7 @@ public:
     virtual ~Actor();
 
     // vIndex: 9
-    virtual void resetUserPos(bool);
+    virtual void resetUserPos(::ActorResetRule);
 
     // vIndex: 10
     virtual ::ActorType getOwnerEntityType();
@@ -719,9 +719,13 @@ public:
 
     MCAPI void _setHeightOffset(float heightOffset);
 
+    MCAPI void _setPosPrev(::Vec3 const& posPrev);
+
     MCAPI void _setupServerAnimationComponent();
 
     MCAPI void _syncTickCountIfAnimationComponentShared();
+
+    MCAPI bool _tryApplyDye(::Player& player, ::ItemStack const& dyeItem, ::ActorInteraction& interaction);
 
     MCAPI void _tryPlantWitherRose();
 
@@ -819,11 +823,9 @@ public:
 
     MCAPI int getChestSlots() const;
 
-    MCAPI ::SharedTypes::Legacy::PaletteColor getColor() const;
-
-    MCAPI ::SharedTypes::Legacy::PaletteColor getColor2() const;
-
     MCAPI float getCurrentSwimAmount() const;
+
+    MCAPI bool getDamageNearbyMobs() const;
 
     MCFOLD ::Dimension& getDimension() const;
 
@@ -858,6 +860,10 @@ public:
     MCAPI ::Vec3 getInterpolatedRidingPosition(float a = 0.0f) const;
 
     MCAPI ::Vec2 getInterpolatedRotation(float a = 0.0f) const;
+
+    MCAPI ::Mob* getLastHurtByMob();
+
+    MCAPI ::Player* getLastHurtByPlayer();
 
     MCAPI ::ActorUniqueID getLeashHolder() const;
 
@@ -900,6 +906,8 @@ public:
     MCAPI ::Bedrock::Safety::RedactableString getRedactableNameTag() const;
 
     MCAPI float getRidingHeight() const;
+
+    MCAPI ::Vec2 const& getRotation() const;
 
     MCAPI ::ActorRuntimeID getRuntimeID() const;
 
@@ -947,6 +955,8 @@ public:
 
     MCAPI bool hasTag(::std::string const& tag) const;
 
+    MCAPI bool hasTags() const;
+
     MCAPI bool hasType(::ActorType types) const;
 
     MCAPI bool hasUniqueID() const;
@@ -985,8 +995,6 @@ public:
 
     MCAPI bool isGlobal() const;
 
-    MCAPI bool isInClouds() const;
-
     MCAPI bool isInLava() const;
 
     MCAPI bool isInLove() const;
@@ -1024,6 +1032,8 @@ public:
     MCAPI bool isRiding() const;
 
     MCAPI bool isRiding(::Actor* targetVehicle) const;
+
+    MCAPI bool isSilent() const;
 
     MCAPI bool isSitting() const;
 
@@ -1070,6 +1080,13 @@ public:
 
     MCAPI void playSound(::SharedTypes::Legacy::LevelSoundEvent type, ::Vec3 const& pos, int data);
 
+    MCAPI void playSound(
+        ::IConstBlockSource const&             region,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data
+    );
+
     MCAPI void
     playSynchronizedSound(::SharedTypes::Legacy::LevelSoundEvent type, ::Vec3 const& pos, int data, bool isGlobal);
 
@@ -1086,6 +1103,8 @@ public:
     MCAPI void pushOutOfBlocks(::Vec3 const& vec);
 
     MCAPI void queueBBUpdateFromDefinition();
+
+    MCAPI void queueBBUpdateFromValue(::Vec2 const& value);
 
     MCAPI void refreshComponents();
 
@@ -1121,10 +1140,6 @@ public:
 
     MCAPI void setBlockTarget(::BlockPos const& target);
 
-    MCAPI void setColor(::SharedTypes::Legacy::PaletteColor color);
-
-    MCAPI void setColor2(::SharedTypes::Legacy::PaletteColor color);
-
     MCAPI void setDimension(::WeakRef<::Dimension> weakDimension);
 
     MCAPI void setInvisible(bool value);
@@ -1137,21 +1152,25 @@ public:
 
     MCAPI void setLastHurtByPlayer(::Player* player);
 
+    MCAPI void setLastHurtMob(::Actor* target);
+
     MCAPI void setLeashHolder(::ActorUniqueID leashHolder);
 
     MCAPI void setLimitedLifetimeTicks(int lifetimeTicks);
 
     MCAPI void setMarkVariant(int value);
 
+    MCAPI void setMovementSoundDistanceOffset(float movementSoundDistanceOffset);
+
     MCAPI void setNameTag(::std::string const& name);
 
     MCAPI void setPersistent();
 
-    MCAPI void setPos(::Vec3 const& pos);
-
     MCAPI void setPreviousPosRot();
 
     MCAPI void setRedactableNameTag(::Bedrock::Safety::RedactableString const& name);
+
+    MCAPI void setRotationPrev(::Vec2 const& rotation);
 
     MCAPI void setSkinID(int value);
 
@@ -1270,7 +1289,7 @@ public:
 
     MCAPI void $_doInitialMove();
 
-    MCFOLD void $resetUserPos(bool);
+    MCFOLD void $resetUserPos(::ActorResetRule);
 
     MCAPI ::ActorType $getOwnerEntityType();
 

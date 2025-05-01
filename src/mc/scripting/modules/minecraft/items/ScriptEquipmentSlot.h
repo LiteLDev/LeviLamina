@@ -12,7 +12,7 @@ struct ScriptEquipmentSlot {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::SharedTypes::Legacy::EquipmentSlot> bind();
+    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::SharedTypes::Legacy::EquipmentSlot> bind();
     // NOLINTEND
 };
 

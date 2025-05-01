@@ -28,23 +28,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraftNet::EventFilters::ScriptPacketEventFilter&
+    MCNAPI ::ScriptModuleMinecraftNet::EventFilters::ScriptPacketEventFilter&
     operator=(::ScriptModuleMinecraftNet::EventFilters::ScriptPacketEventFilter const&);
 
-    MCAPI ~ScriptPacketEventFilter();
+    MCNAPI ~ScriptPacketEventFilter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraftNet::EventFilters::ScriptPacketEventFilter>
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<
+        ::ScriptModuleMinecraftNet::EventFilters::ScriptPacketEventFilter>
     bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

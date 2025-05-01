@@ -6,10 +6,10 @@ struct ReflectionConfiguration {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 104> mUnk7122f2;
-    ::ll::UntypedStorage<4, 104> mUnkf7dcc2;
-    ::ll::UntypedStorage<4, 104> mUnk28cd80;
-    ::ll::UntypedStorage<4, 104> mUnkfa191e;
+    ::ll::UntypedStorage<4, 124> mUnk7122f2;
+    ::ll::UntypedStorage<4, 124> mUnkf7dcc2;
+    ::ll::UntypedStorage<4, 124> mUnk28cd80;
+    ::ll::UntypedStorage<4, 124> mUnkfa191e;
     // NOLINTEND
 
 public:

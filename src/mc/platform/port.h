@@ -5,7 +5,7 @@
 namespace port {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::wstring toFilePath(::std::string const& string);
+MCNAPI ::std::wstring toFilePath(::std::string const& string);
 // NOLINTEND
 
 } // namespace port

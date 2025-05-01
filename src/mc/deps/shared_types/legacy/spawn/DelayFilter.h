@@ -22,9 +22,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::Legacy::Spawn::DelayFilter& operator=(::SharedTypes::Legacy::Spawn::DelayFilter&&);
+    MCNAPI ::SharedTypes::Legacy::Spawn::DelayFilter& operator=(::SharedTypes::Legacy::Spawn::DelayFilter&&);
 
-    MCAPI ::SharedTypes::Legacy::Spawn::DelayFilter& operator=(::SharedTypes::Legacy::Spawn::DelayFilter const&);
+    MCNAPI ::SharedTypes::Legacy::Spawn::DelayFilter& operator=(::SharedTypes::Legacy::Spawn::DelayFilter const&);
     // NOLINTEND
 };
 

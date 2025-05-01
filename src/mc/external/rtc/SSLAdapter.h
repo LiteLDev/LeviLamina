@@ -61,7 +61,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::rtc::SSLAdapter* Create(::rtc::Socket*);
+    MCNAPI static ::rtc::SSLAdapter* Create(::rtc::Socket*);
     // NOLINTEND
 
 public:

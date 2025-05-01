@@ -35,11 +35,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CerealDocumentUpgrader(::SemVersion terminus);
+    MCNAPI explicit CerealDocumentUpgrader(::SemVersion terminus);
 
-    MCAPI void clear();
+    MCNAPI void clear();
 
-    MCAPI ::CerealDocumentUpgrader::ParseAndUpgradeResult parseJsonAndUpgrade(
+    MCNAPI ::CerealDocumentUpgrader::ParseAndUpgradeResult parseJsonAndUpgrade(
         ::std::string const& json,
         ::SemVersion&        outDocumentVersion,
         ::rapidjson::GenericDocument<
@@ -52,9 +52,9 @@ public:
         ::std::function<bool(::SemVersion const&)> const& shouldUpgrade
     ) const;
 
-    MCAPI void registerUpgrade(::std::shared_ptr<::CerealSchemaUpgrade> upgrade);
+    MCNAPI void registerUpgrade(::std::shared_ptr<::CerealSchemaUpgrade> upgrade);
 
-    MCAPI bool upgradeJson(
+    MCNAPI bool upgradeJson(
         ::std::string& json,
         ::SemVersion&  outDocumentVersion,
         ::rapidjson::GenericDocument<
@@ -66,27 +66,27 @@ public:
         ::std::function<bool(::SemVersion const&)> const& shouldUpgrade
     ) const;
 
-    MCAPI ~CerealDocumentUpgrader();
+    MCNAPI ~CerealDocumentUpgrader();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string getVersion(::rapidjson::GenericDocument<
-                                          ::rapidjson::UTF8<char>,
-                                          ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
-                                          ::rapidjson::CrtAllocator> const& document);
+    MCNAPI static ::std::string getVersion(::rapidjson::GenericDocument<
+                                           ::rapidjson::UTF8<char>,
+                                           ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+                                           ::rapidjson::CrtAllocator> const& document);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SemVersion terminus);
+    MCNAPI void* $ctor(::SemVersion terminus);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

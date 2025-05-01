@@ -49,24 +49,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isReadOnly(::LevelChunk const& levelChunk) const;
+    MCNAPI bool $isReadOnly(::LevelChunk const& levelChunk) const;
 
-    MCAPI bool $setOnChunkLoadedCalled(::LevelChunk& levelChunk);
+    MCNAPI bool $setOnChunkLoadedCalled(::LevelChunk& levelChunk);
 
-    MCAPI void $onTickingStarted(::LevelChunk& levelChunk);
+    MCNAPI void $onTickingStarted(::LevelChunk& levelChunk);
 
-    MCAPI void $setupRedstoneCircuit(::ChunkSource& chunkSource, ::LevelChunk& levelChunk);
+    MCNAPI void $setupRedstoneCircuit(::ChunkSource& chunkSource, ::LevelChunk& levelChunk);
 
-    MCAPI int $getClosestPlayerDistanceSquared(::LevelChunk const& levelChunk) const;
+    MCNAPI int $getClosestPlayerDistanceSquared(::LevelChunk const& levelChunk) const;
 
-    MCAPI bool $isOwnedByTickingThread(::LevelChunk const& levelChunk) const;
+    MCNAPI bool $isOwnedByTickingThread(::LevelChunk const& levelChunk) const;
 
-    MCAPI void $onTickingStopped(::LevelChunk& levelChunk);
+    MCNAPI void $onTickingStopped(::LevelChunk& levelChunk);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

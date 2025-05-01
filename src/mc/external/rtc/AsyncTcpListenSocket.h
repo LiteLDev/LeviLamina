@@ -13,21 +13,21 @@ class AsyncTcpListenSocket {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AsyncTcpListenSocket(::std::unique_ptr<::rtc::Socket>);
+    MCNAPI explicit AsyncTcpListenSocket(::std::unique_ptr<::rtc::Socket>);
 
-    MCAPI void OnReadEvent(::rtc::Socket*);
+    MCNAPI void OnReadEvent(::rtc::Socket*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::rtc::Socket>);
+    MCNAPI void* $ctor(::std::unique_ptr<::rtc::Socket>);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

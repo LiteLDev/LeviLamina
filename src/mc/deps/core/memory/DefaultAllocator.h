@@ -24,7 +24,7 @@ public:
     virtual void alignedRelease(void*) /*override*/;
 
     // vIndex: 5
-    virtual uint64 getUsableSize(void*) /*override*/;
+    virtual uint64 getUsableSize(void*, bool) /*override*/;
 
     // vIndex: 6
     virtual void* _realloc(::gsl::not_null<void*>, uint64) /*override*/;

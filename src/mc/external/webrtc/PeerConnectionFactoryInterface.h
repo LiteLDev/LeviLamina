@@ -55,13 +55,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Options();
+        MCNAPI ~Options();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -132,7 +132,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>
     $CreateVideoTrack(::std::string const& label, ::webrtc::VideoTrackSourceInterface* source);
     // NOLINTEND
 };

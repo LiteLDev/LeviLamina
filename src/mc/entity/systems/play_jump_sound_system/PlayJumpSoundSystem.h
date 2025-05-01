@@ -13,7 +13,7 @@ struct TickingSystemWithInfo;
 namespace PlayJumpSoundSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createSystem(::PlayJumpSoundSystem::SoundType jumpType);
+MCNAPI ::TickingSystemWithInfo createSystem(::PlayJumpSoundSystem::SoundType jumpType);
 // NOLINTEND
 
 } // namespace PlayJumpSoundSystem

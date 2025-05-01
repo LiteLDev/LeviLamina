@@ -8,21 +8,21 @@ struct IntervalBudget {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void IncreaseBudget(int64);
+    MCNAPI void IncreaseBudget(int64);
 
-    MCAPI IntervalBudget(int, bool);
+    MCNAPI IntervalBudget(int, bool);
 
-    MCAPI void UseBudget(uint64);
+    MCNAPI void UseBudget(uint64);
 
-    MCAPI double budget_ratio() const;
+    MCNAPI double budget_ratio() const;
 
-    MCAPI void set_target_rate_kbps(int);
+    MCNAPI void set_target_rate_kbps(int);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int, bool);
+    MCNAPI void* $ctor(int, bool);
     // NOLINTEND
 };
 

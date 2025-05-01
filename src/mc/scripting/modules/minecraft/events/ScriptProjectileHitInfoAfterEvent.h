@@ -30,32 +30,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptProjectileHitInfoAfterEvent(::ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent&&);
+    MCNAPI ScriptProjectileHitInfoAfterEvent(::ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent&&);
 
-    MCAPI ScriptProjectileHitInfoAfterEvent(::ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent const&);
+    MCNAPI ScriptProjectileHitInfoAfterEvent(::ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent const&);
 
-    MCAPI ScriptProjectileHitInfoAfterEvent(
+    MCNAPI ScriptProjectileHitInfoAfterEvent(
         ::ProjectileHitEvent const&           projectileHitEvent,
         ::Scripting::WeakLifetimeScope const& scope
     );
 
-    MCAPI ~ScriptProjectileHitInfoAfterEvent();
+    MCNAPI ~ScriptProjectileHitInfoAfterEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent&&);
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent const&);
 
-    MCAPI void* $ctor(::ProjectileHitEvent const& projectileHitEvent, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void* $ctor(::ProjectileHitEvent const& projectileHitEvent, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct ReplayStateTrackerDiff;
-// clang-format on
+// auto generated inclusion list
+#include "mc/entity/components/ReplayStateTrackerDiff.h"
 
 struct ReplayStateTrackerComponent {
 public:

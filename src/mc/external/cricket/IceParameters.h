@@ -27,15 +27,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::RTCError Validate() const;
+    MCNAPI ::webrtc::RTCError Validate() const;
 
-    MCAPI ~IceParameters();
+    MCNAPI ~IceParameters();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -62,32 +62,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContainerScreenValidation(
+    MCNAPI ContainerScreenValidation(
         ::ContainerScreenContext const&                                           screenContext,
         ::ContainerValidationCaller                                               caller,
         ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> predictiveContainers
     );
 
-    MCAPI void _commit();
+    MCNAPI void _commit();
 
-    MCAPI ::ContainerValidationSlotInfo _createContainerValidatorSlotInfo(::ContainerValidationSlotData const& slotData
+    MCNAPI ::ContainerValidationSlotInfo _createContainerValidatorSlotInfo(::ContainerValidationSlotData const& slotData
     );
 
-    MCAPI bool _dropItems();
+    MCNAPI bool _dropItems();
 
-    MCAPI ::std::shared_ptr<::ContainerValidationBase const>
+    MCNAPI ::std::shared_ptr<::ContainerValidationBase const>
     _getOrCreateContainerValidator(::FullContainerName const& containerEnumName);
 
-    MCAPI bool _propagateContainers();
+    MCNAPI bool _propagateContainers();
 
-    MCAPI int _tryAddItem(::ContainerValidationSlotInfo& slotInfo, int addCount, bool allowPartialSuccess);
+    MCNAPI int _tryAddItem(::ContainerValidationSlotInfo& slotInfo, int addCount, bool allowPartialSuccess);
 
-    MCAPI bool
+    MCNAPI bool
     _tryMoveItem(::ContainerValidationSlotInfo& srcValidatorPair, ::ContainerValidationSlotInfo& dstValidatorPair);
 
-    MCAPI ::ItemStack _tryRemoveItem(::ContainerValidationSlotInfo& slotInfo, int amount);
+    MCNAPI ::ItemStack _tryRemoveItem(::ContainerValidationSlotInfo& slotInfo, int amount);
 
-    MCAPI int _trySetItem(
+    MCNAPI int _trySetItem(
         ::ContainerValidationSlotInfo& slotInfo,
         ::ItemStack const&             stack,
         bool                           isWholeStackTransfer,
@@ -95,26 +95,26 @@ public:
         bool                           isInternalTransfer
     );
 
-    MCAPI ::ContainerValidationResult _tryTransferSpecial(
+    MCNAPI ::ContainerValidationResult _tryTransferSpecial(
         ::ContainerValidationSlotData const& srcSlotData,
         int                                  transferAmount,
         ::ContainerScreenRequestActionType   actionType
     );
 
-    MCAPI ::std::shared_ptr<::SimpleSparseContainer>
+    MCNAPI ::std::shared_ptr<::SimpleSparseContainer>
     getOrCreateSparseContainer(::FullContainerName const& containerEnumName);
 
-    MCAPI bool tryCommitActionResults();
+    MCNAPI bool tryCommitActionResults();
 
-    MCAPI ::ContainerValidationResult tryConsume(::ContainerValidationSlotData const& srcSlotData, int transferAmount);
+    MCNAPI ::ContainerValidationResult tryConsume(::ContainerValidationSlotData const& srcSlotData, int transferAmount);
 
-    MCAPI ::ContainerValidationResult
+    MCNAPI ::ContainerValidationResult
     tryDrop(::ContainerValidationSlotData const& srcSlotData, int transferAmount, bool dropRandomly);
 
-    MCAPI ::ContainerValidationResult
+    MCNAPI ::ContainerValidationResult
     trySwap(::ContainerValidationSlotData const& srcSlotData, ::ContainerValidationSlotData const& dstSlotData);
 
-    MCAPI ::ContainerValidationResult tryTransfer(
+    MCNAPI ::ContainerValidationResult tryTransfer(
         ::ContainerValidationSlotData const& srcSlotData,
         ::ContainerValidationSlotData const& dstSlotData,
         int                                  transferAmount,
@@ -125,7 +125,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::ContainerScreenValidation> makeContainerScreenValidation(
+    MCNAPI static ::std::unique_ptr<::ContainerScreenValidation> makeContainerScreenValidation(
         ::ContainerScreenContext const&                                           screenContext,
         ::ContainerValidationCaller                                               caller,
         ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> predictiveContainers
@@ -135,7 +135,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ContainerScreenContext const&                                           screenContext,
         ::ContainerValidationCaller                                               caller,
         ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> predictiveContainers
@@ -145,24 +145,24 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ContainerValidationResult
+    MCNAPI ::ContainerValidationResult
     $tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const);
 
-    MCAPI ::ContainerValidationCraftResult
+    MCNAPI ::ContainerValidationCraftResult
     $getCraftResults(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const);
 
-    MCFOLD ::ContainerValidationResult $tryActivate();
+    MCNAPI ::ContainerValidationResult $tryActivate();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

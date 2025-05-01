@@ -17,6 +17,7 @@ namespace Scripting { struct ErrorBinding; }
 namespace Scripting { struct FunctionBinding; }
 namespace Scripting { struct InterfaceBinding; }
 namespace Scripting { struct ModuleBinding; }
+namespace Scripting { struct ModuleDependency; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct ObjectFactory; }
 namespace Scripting { struct TaggedBinding; }
@@ -29,9 +30,55 @@ namespace Scripting {
 
 class ModuleBindingBuilder {
 public:
+    // ModuleBindingBuilder inner types declare
+    // clang-format off
+    struct BuilderData;
+    // clang-format on
+
+    // ModuleBindingBuilder inner types define
+    struct BuilderData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1>   mUnk791e57;
+        ::ll::UntypedStorage<8, 104> mUnk7003d2;
+        ::ll::UntypedStorage<8, 24>  mUnk4eacd6;
+        ::ll::UntypedStorage<8, 24>  mUnk79fcda;
+        ::ll::UntypedStorage<8, 24>  mUnka08202;
+        ::ll::UntypedStorage<8, 24>  mUnk12ae0a;
+        ::ll::UntypedStorage<8, 24>  mUnk904f94;
+        ::ll::UntypedStorage<8, 24>  mUnkb1808e;
+        ::ll::UntypedStorage<8, 24>  mUnk7703db;
+        ::ll::UntypedStorage<8, 24>  mUnk6bcb57;
+        ::ll::UntypedStorage<8, 24>  mUnk8fa1fb;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        BuilderData& operator=(BuilderData const&);
+        BuilderData(BuilderData const&);
+        BuilderData();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ::Scripting::ModuleBindingBuilder::BuilderData&
+        operator=(::Scripting::ModuleBindingBuilder::BuilderData&&);
+
+        MCNAPI ~BuilderData();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 352> mUnk19651f;
+    ::ll::UntypedStorage<8, 328> mUnkd4febe;
     // NOLINTEND
 
 public:
@@ -43,98 +90,104 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    ModuleBindingBuilder(::Scripting::UUID const& id, ::std::string const& name, ::Scripting::Version const& version);
+    MCNAPI ModuleBindingBuilder(
+        ::Scripting::UUID const&    id,
+        ::std::string const&        name,
+        ::Scripting::Version const& version,
+        bool                        importRestricted
+    );
 
-    MCAPI bool _allowed(
+    MCNAPI bool _allowed(
         ::std::vector<::Scripting::Release> const& releases,
         bool                                       allowUntagged,
         ::std::vector<::std::string> const&        additionalTags
     ) const;
 
-    MCAPI ::std::vector<::Scripting::ClassBinding> _filterClassBindings(
+    MCNAPI ::std::vector<::Scripting::ClassBinding> _filterClassBindings(
         ::std::vector<::Scripting::ClassBinding> const& classBindings,
         bool                                            allowUntagged,
         ::std::vector<::std::string> const&             additionalTags
     ) const;
 
-    MCAPI ::std::vector<::Scripting::EnumBinding> _filterEnumBindings(
+    MCNAPI ::std::vector<::Scripting::EnumBinding> _filterEnumBindings(
         ::std::vector<::Scripting::EnumBinding> const& enumBindings,
         bool                                           allowUntagged,
         ::std::vector<::std::string> const&            additionalTags
     ) const;
 
-    MCAPI ::std::vector<::Scripting::EnumBinding::EnumValue> _filterEnumValueMap(
+    MCNAPI ::std::vector<::Scripting::EnumBinding::EnumValue> _filterEnumValueMap(
         ::std::vector<::Scripting::ConstantFactory> const&        filteredConstants,
         ::std::vector<::Scripting::EnumBinding::EnumValue> const& valueMap
     ) const;
 
-    MCAPI ::std::vector<::Scripting::ErrorBinding> _filterErrorBindings(
+    MCNAPI ::std::vector<::Scripting::ErrorBinding> _filterErrorBindings(
         ::std::vector<::Scripting::ErrorBinding> const& errorBindings,
         bool                                            allowUnreleased,
         ::std::vector<::std::string> const&             allowedTags
     ) const;
 
-    MCAPI ::std::vector<::Scripting::InterfaceBinding> _filterInterfaceBindings(
+    MCNAPI ::std::vector<::Scripting::InterfaceBinding> _filterInterfaceBindings(
         ::std::vector<::Scripting::InterfaceBinding> const& interfaceBindings,
         bool                                                allowUntagged,
         ::std::vector<::std::string> const&                 additionalTags
     ) const;
 
-    MCAPI ::std::vector<::Scripting::TypeMapData> _filterTypeMaps(
+    MCNAPI ::std::vector<::Scripting::TypeMapData> _filterTypeMaps(
         ::std::vector<::Scripting::TypeMapData> const& typeMaps,
         bool                                           allowUntagged,
         ::std::vector<::std::string> const&            additionalTags
     ) const;
 
-    MCAPI ::std::vector<::Scripting::ClassBinding>
+    MCNAPI ::std::vector<::Scripting::ClassBinding>
     _orderClassBindingsByDependency(::std::vector<::Scripting::ClassBinding>& unorderedBindings) const;
 
-    MCAPI ::Scripting::ModuleBinding build(
+    MCNAPI ::Scripting::ModuleBinding build(
         bool                                  allowUntagged,
         ::std::vector<::std::string> const&   additionalTags,
         ::Scripting::RuntimeConditions const& currentRuntimeConditions
     );
 
-    MCAPI ::Scripting::ModuleBindingBuilder& classBinding(::Scripting::ClassBinding&& classBinding);
+    MCNAPI ::Scripting::ModuleBindingBuilder& classBinding(::Scripting::ClassBinding&& classBinding);
 
-    MCAPI ::Scripting::ModuleBindingBuilder& createTypeMap(::Scripting::TypeMapBuilder& typeMapBuilder);
+    MCNAPI ::Scripting::ModuleBindingBuilder& createTypeMap(::Scripting::TypeMapBuilder& typeMapBuilder);
 
-    MCAPI ::Scripting::ModuleBindingBuilder& enumBinding(::Scripting::EnumBinding&& enumBinding);
+    MCNAPI ::Scripting::ModuleBindingBuilder& dependency(::std::vector<::Scripting::ModuleDependency> const& modules);
 
-    MCAPI ::Scripting::ModuleBindingBuilder& errorBinding(::Scripting::ErrorBinding&& errorBinding);
+    MCNAPI ::Scripting::ModuleBindingBuilder& enumBinding(::Scripting::EnumBinding&& enumBinding);
 
-    MCAPI ::Scripting::ModuleDescriptor getModuleDescriptor() const;
+    MCNAPI ::Scripting::ModuleBindingBuilder& errorBinding(::Scripting::ErrorBinding&& errorBinding);
 
-    MCAPI ::Scripting::ModuleBindingBuilder& interfaceBinding(::Scripting::InterfaceBinding&& interfaceBinding);
+    MCNAPI ::Scripting::ModuleDescriptor getModuleDescriptor() const;
 
-    MCAPI ~ModuleBindingBuilder();
+    MCNAPI ::Scripting::ModuleBindingBuilder& interfaceBinding(::Scripting::InterfaceBinding&& interfaceBinding);
+
+    MCNAPI ~ModuleBindingBuilder();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _assertClassMemberSymbolDoesntExist(
+    MCNAPI static bool _assertClassMemberSymbolDoNotExist(
         ::Scripting::ClassBinding const&  classBinding,
         ::std::string const&              name,
         ::Scripting::TaggedBinding const& binding
     );
 
-    MCAPI static bool _assertEnumMemberSymbolDoesntExist(
+    MCNAPI static bool _assertEnumMemberSymbolDoNotExist(
         ::Scripting::EnumBinding const&   enumBinding,
         ::std::string const&              name,
         ::Scripting::TaggedBinding const& binding
     );
 
-    MCAPI static bool _assertModuleMemberSymbolDoesntExist(
+    MCNAPI static bool _assertModuleMemberSymbolDoNotExist(
         ::Scripting::ModuleBinding const& moduleBinding,
         ::std::string const&              name,
         ::Scripting::TaggedBinding const& binding
     );
 
-    MCAPI static void _validateClassConstructors(::Scripting::ModuleBinding const& moduleBinding);
+    MCNAPI static void _validateClassConstructors(::Scripting::ModuleBinding const& moduleBinding);
 
-    MCAPI static void _validateModuleNames(::Scripting::ModuleBinding const& moduleBinding);
+    MCNAPI static void _validateModuleNames(::Scripting::ModuleBinding const& moduleBinding);
     // NOLINTEND
 
 public:
@@ -150,13 +203,18 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::UUID const& id, ::std::string const& name, ::Scripting::Version const& version);
+    MCNAPI void* $ctor(
+        ::Scripting::UUID const&    id,
+        ::std::string const&        name,
+        ::Scripting::Version const& version,
+        bool                        importRestricted
+    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

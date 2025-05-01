@@ -3,19 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/util/FloatRange.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/item/ItemStack.h"
+#include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionTrigger;
 class ContainerComponent;
-class ItemStack;
 class Mob;
 class ShareableComponent;
-class WeakEntityRef;
-struct FloatRange;
-struct Tick;
 // clang-format on
 
 class AdmireItemGoal : public ::Goal {
@@ -60,7 +60,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AdmireItemGoal(
+    MCNAPI AdmireItemGoal(
         ::Mob&                                 mob,
         ::SharedTypes::Legacy::LevelSoundEvent sound,
         ::FloatRange                           soundIntervalRange,
@@ -68,16 +68,16 @@ public:
         ::ActorDefinitionTrigger const&        onAdmireItemStop
     );
 
-    MCAPI void _removeItemFromOffhandSlot() const;
+    MCNAPI void _removeItemFromOffhandSlot() const;
 
-    MCAPI void
+    MCNAPI void
     _tryPlaceItemInInventory(::ContainerComponent& containerComponent, ::ShareableComponent const& shareableComponent);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Mob&                                 mob,
         ::SharedTypes::Legacy::LevelSoundEvent sound,
         ::FloatRange                           soundIntervalRange,
@@ -89,28 +89,28 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCFOLD bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

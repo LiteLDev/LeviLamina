@@ -41,11 +41,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Candidate();
+    MCNAPI Candidate();
 
-    MCAPI Candidate(::cricket::Candidate const&);
+    MCNAPI Candidate(::cricket::Candidate const&);
 
-    MCAPI Candidate(
+    MCNAPI Candidate(
         int,
         ::std::string_view,
         ::rtc::SocketAddress const&,
@@ -59,59 +59,59 @@ public:
         ushort
     );
 
-    MCAPI void ComputeFoundation(::rtc::SocketAddress const&, uint64);
+    MCNAPI void ComputeFoundation(::rtc::SocketAddress const&, uint64);
 
-    MCAPI void ComputePrflxFoundation();
+    MCNAPI void ComputePrflxFoundation();
 
-    MCAPI uint GetPriority(uint, int, int, bool) const;
+    MCNAPI uint GetPriority(uint, int, int, bool) const;
 
-    MCAPI bool IsEquivalent(::cricket::Candidate const&) const;
+    MCNAPI bool IsEquivalent(::cricket::Candidate const&) const;
 
-    MCAPI bool MatchesForRemoval(::cricket::Candidate const&) const;
+    MCNAPI bool MatchesForRemoval(::cricket::Candidate const&) const;
 
-    MCAPI ::cricket::Candidate ToSanitizedCopy(bool, bool) const;
+    MCNAPI ::cricket::Candidate ToSanitizedCopy(bool, bool) const;
 
-    MCAPI ::std::string ToStringInternal(bool) const;
+    MCNAPI ::std::string ToStringInternal(bool) const;
 
-    MCAPI void generate_id();
+    MCNAPI void generate_id();
 
-    MCAPI bool is_local() const;
+    MCNAPI bool is_local() const;
 
-    MCAPI bool is_prflx() const;
+    MCNAPI bool is_prflx() const;
 
-    MCAPI bool is_relay() const;
+    MCNAPI bool is_relay() const;
 
-    MCAPI bool is_stun() const;
+    MCNAPI bool is_stun() const;
 
-    MCAPI bool operator!=(::cricket::Candidate const&) const;
+    MCNAPI bool operator!=(::cricket::Candidate const&) const;
 
-    MCAPI ::cricket::Candidate& operator=(::cricket::Candidate const&);
+    MCNAPI ::cricket::Candidate& operator=(::cricket::Candidate const&);
 
-    MCAPI bool operator==(::cricket::Candidate const&) const;
+    MCNAPI bool operator==(::cricket::Candidate const&) const;
 
-    MCAPI void set_password(::std::string_view);
+    MCNAPI void set_password(::std::string_view);
 
-    MCAPI void set_username(::std::string_view);
+    MCNAPI void set_username(::std::string_view);
 
-    MCAPI ::std::string_view type_name() const;
+    MCNAPI ::std::string_view type_name() const;
 
-    MCAPI ~Candidate();
+    MCNAPI ~Candidate();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void Assign(::std::string&, ::std::string_view);
+    MCNAPI static void Assign(::std::string&, ::std::string_view);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::cricket::Candidate const&);
+    MCNAPI void* $ctor(::cricket::Candidate const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         int,
         ::std::string_view,
         ::rtc::SocketAddress const&,
@@ -129,7 +129,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

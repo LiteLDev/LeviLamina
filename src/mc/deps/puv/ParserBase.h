@@ -39,13 +39,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParserBase(::SemVersion const& parserVersion, ::Puv::VersionRange supportedVersions);
+    MCNAPI ParserBase(::SemVersion const& parserVersion, ::Puv::VersionRange supportedVersions);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SemVersion const& parserVersion, ::Puv::VersionRange supportedVersions);
+    MCNAPI void* $ctor(::SemVersion const& parserVersion, ::Puv::VersionRange supportedVersions);
     // NOLINTEND
 
 public:
@@ -63,7 +63,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

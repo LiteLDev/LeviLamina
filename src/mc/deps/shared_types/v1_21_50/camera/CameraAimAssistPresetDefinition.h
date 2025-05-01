@@ -28,46 +28,46 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CameraAimAssistPresetDefinition();
+    MCNAPI CameraAimAssistPresetDefinition();
 
-    MCAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
+    MCNAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
 
-    MCAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&&);
+    MCNAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&&);
 
-    MCAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&
+    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&
     operator=(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&&);
 
-    MCAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&
+    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&
     operator=(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&) const;
 
-    MCAPI void write(::BinaryStream& stream) const;
+    MCNAPI void write(::BinaryStream& stream) const;
 
-    MCAPI ~CameraAimAssistPresetDefinition();
+    MCNAPI ~CameraAimAssistPresetDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition>
+    MCNAPI static ::Bedrock::Result<::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition>
     read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

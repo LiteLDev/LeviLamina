@@ -41,42 +41,42 @@ public:
     // vIndex: 9
     virtual ::Core::Result _deleteFile(::Core::PathView path) /*override*/;
 
-    // vIndex: 10
+    // vIndex: 11
     virtual ::Core::Result _getFileSize(::Core::PathView filePath, uint64* pFileSizeOut) /*override*/;
 
-    // vIndex: 11
+    // vIndex: 12
     virtual ::Core::Result _renameFile(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath) /*override*/;
 
-    // vIndex: 16
+    // vIndex: 17
     virtual ::Core::Result _createOneDirectory(::Core::PathView directoryPath) /*override*/;
 
-    // vIndex: 20
+    // vIndex: 21
     virtual ::Core::Result _deleteEmptyDirectory(::Core::PathView directoryPath) /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual bool _directoryExists(::Core::PathView directoryPath) /*override*/;
 
-    // vIndex: 24
+    // vIndex: 25
     virtual ::Core::Result
     _renameDirectory(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath) /*override*/;
 
-    // vIndex: 25
+    // vIndex: 26
     virtual ::Core::Result _iterateOverDirectory(
         ::Core::PathView                                                             directoryPath,
         ::Core::DirectoryIterationFlags                                              flags,
         ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> fx
     ) /*override*/;
 
-    // vIndex: 31
+    // vIndex: 32
     virtual bool _fileOrDirectoryExists(::Core::PathView entryPath) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual ::Core::Result _getLastModificationTime(::Core::PathView filePath, int64* pModificationTime) /*override*/;
 
-    // vIndex: 33
+    // vIndex: 34
     virtual ::Core::Result _getEntryType(::Core::PathView entryPath, ::Core::FileType& fileTypeOut) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 46
     virtual ::Core::Result
     _copyTimeAndAccessRights(::Core::PathView sourceEntryPath, ::Core::PathView targetEntryPath) /*override*/;
 
@@ -87,26 +87,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FileSystem_windows(
+    MCNAPI FileSystem_windows(
         ::Core::FileAccessType                             accessType,
         ::std::shared_ptr<::Core::FileStorageArea>         storageArea,
         ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker
     );
 
-    MCAPI ::Core::Result _iterateOverDirectoryWide(
+    MCNAPI ::Core::Result _iterateOverDirectoryWide(
         ::std::wstring const&                                                        directoryPath,
         ::Core::DirectoryIterationFlags                                              flags,
         ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> fx
     );
 
-    MCAPI ::Core::Result
+    MCNAPI ::Core::Result
     _makeFailureFromFileSystemResult(::std::error_code const& errorCode, char const* function, char const* fileContext);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Core::FileAccessType                             accessType,
         ::std::shared_ptr<::Core::FileStorageArea>         storageArea,
         ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker
@@ -122,48 +122,48 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Core::Result $_openFile(
+    MCNAPI ::Core::Result $_openFile(
         ::std::unique_ptr<::Core::FileImpl>& uptFileOut,
         ::Core::PathView                     filename,
         ::Core::FileOpenMode                 fileOpenMode,
         ::Core::FileBufferingMode            bufferingMode
     );
 
-    MCAPI bool $_fileExists(::Core::PathView filePath);
+    MCNAPI bool $_fileExists(::Core::PathView filePath);
 
-    MCAPI ::Core::Result $_deleteFile(::Core::PathView path);
+    MCNAPI ::Core::Result $_deleteFile(::Core::PathView path);
 
-    MCAPI ::Core::Result $_getFileSize(::Core::PathView filePath, uint64* pFileSizeOut);
+    MCNAPI ::Core::Result $_getFileSize(::Core::PathView filePath, uint64* pFileSizeOut);
 
-    MCAPI ::Core::Result $_renameFile(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath);
+    MCNAPI ::Core::Result $_renameFile(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath);
 
-    MCAPI ::Core::Result $_createOneDirectory(::Core::PathView directoryPath);
+    MCNAPI ::Core::Result $_createOneDirectory(::Core::PathView directoryPath);
 
-    MCAPI ::Core::Result $_deleteEmptyDirectory(::Core::PathView directoryPath);
+    MCNAPI ::Core::Result $_deleteEmptyDirectory(::Core::PathView directoryPath);
 
-    MCAPI bool $_directoryExists(::Core::PathView directoryPath);
+    MCNAPI bool $_directoryExists(::Core::PathView directoryPath);
 
-    MCAPI ::Core::Result $_renameDirectory(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
+    MCNAPI ::Core::Result $_renameDirectory(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
 
-    MCAPI ::Core::Result $_iterateOverDirectory(
+    MCNAPI ::Core::Result $_iterateOverDirectory(
         ::Core::PathView                                                             directoryPath,
         ::Core::DirectoryIterationFlags                                              flags,
         ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> fx
     );
 
-    MCAPI bool $_fileOrDirectoryExists(::Core::PathView entryPath);
+    MCNAPI bool $_fileOrDirectoryExists(::Core::PathView entryPath);
 
-    MCAPI ::Core::Result $_getLastModificationTime(::Core::PathView filePath, int64* pModificationTime);
+    MCNAPI ::Core::Result $_getLastModificationTime(::Core::PathView filePath, int64* pModificationTime);
 
-    MCAPI ::Core::Result $_getEntryType(::Core::PathView entryPath, ::Core::FileType& fileTypeOut);
+    MCNAPI ::Core::Result $_getEntryType(::Core::PathView entryPath, ::Core::FileType& fileTypeOut);
 
-    MCAPI ::Core::Result $_copyTimeAndAccessRights(::Core::PathView sourceEntryPath, ::Core::PathView targetEntryPath);
+    MCNAPI ::Core::Result $_copyTimeAndAccessRights(::Core::PathView sourceEntryPath, ::Core::PathView targetEntryPath);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

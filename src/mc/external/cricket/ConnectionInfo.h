@@ -46,25 +46,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ConnectionInfo();
+    MCNAPI ConnectionInfo();
 
-    MCAPI ConnectionInfo(::cricket::ConnectionInfo const&);
+    MCNAPI ConnectionInfo(::cricket::ConnectionInfo const&);
 
-    MCAPI ~ConnectionInfo();
+    MCNAPI ~ConnectionInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::cricket::ConnectionInfo const&);
+    MCNAPI void* $ctor(::cricket::ConnectionInfo const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -2,9 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/containers/FullContainerName.h"
+
 // auto generated forward declare list
 // clang-format off
-struct FullContainerName;
 struct ItemStackResponseSlotInfo;
 // clang-format on
 
@@ -24,20 +26,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemStackResponseContainerInfo(::ItemStackResponseContainerInfo&&);
+    MCNAPI ItemStackResponseContainerInfo(::ItemStackResponseContainerInfo&&);
 
-    MCAPI ~ItemStackResponseContainerInfo();
+    MCNAPI ~ItemStackResponseContainerInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemStackResponseContainerInfo&&);
+    MCNAPI void* $ctor(::ItemStackResponseContainerInfo&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -58,7 +58,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void defaultDeleter(uchar* ptr);
+    MCNAPI static void defaultDeleter(uchar* ptr);
     // NOLINTEND
 };
 

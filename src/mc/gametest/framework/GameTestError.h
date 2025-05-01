@@ -21,42 +21,45 @@ public:
 public:
     // prevent constructor by default
     GameTestError& operator=(GameTestError const&);
-    GameTestError(GameTestError const&);
     GameTestError();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameTestError(::gametest::GameTestError&&);
+    MCNAPI GameTestError(::gametest::GameTestError const&);
 
-    MCAPI GameTestError(
+    MCNAPI GameTestError(::gametest::GameTestError&&);
+
+    MCNAPI GameTestError(
         ::gametest::GameTestErrorType type_,
         ::std::string const&          message_,
         ::std::vector<::std::string>  params_
     );
 
-    MCAPI ~GameTestError();
+    MCNAPI ~GameTestError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBindingBuilder<::gametest::GameTestError> bind();
+    MCNAPI static ::Scripting::ErrorBindingBuilder<::gametest::GameTestError> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::gametest::GameTestError&&);
+    MCNAPI void* $ctor(::gametest::GameTestError const&);
 
-    MCAPI void*
+    MCNAPI void* $ctor(::gametest::GameTestError&&);
+
+    MCNAPI void*
     $ctor(::gametest::GameTestErrorType type_, ::std::string const& message_, ::std::vector<::std::string> params_);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -129,82 +129,82 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _updateClient(::Editor::Services::ClipboardItem const& item) const;
+    MCNAPI void _updateClient(::Editor::Services::ClipboardItem const& item) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result<void> $ready();
 
-    MCFOLD ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCFOLD ::mce::UUID const& $getPrimaryItemId();
+    MCNAPI ::mce::UUID const& $getPrimaryItemId();
 
-    MCAPI ::mce::UUID const& $create();
+    MCNAPI ::mce::UUID const& $create();
 
-    MCAPI bool $destroy(::mce::UUID const& id);
+    MCNAPI bool $destroy(::mce::UUID const& id);
 
-    MCFOLD void $setPrimaryItem(::mce::UUID const& id);
+    MCNAPI void $setPrimaryItem(::mce::UUID const& id);
 
-    MCAPI ::Editor::Services::ClipboardItem* $getPrimaryItem();
+    MCNAPI ::Editor::Services::ClipboardItem* $getPrimaryItem();
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     $readFromSelection(::mce::UUID const& itemId, ::Editor::Selection::SelectionContainer const& selection);
 
-    MCAPI ::Scripting::Result<void> $readFromVolume(::mce::UUID const& itemId, ::CompoundBlockVolume const& volume);
+    MCNAPI ::Scripting::Result<void> $readFromVolume(::mce::UUID const& itemId, ::CompoundBlockVolume const& volume);
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     $readFromWorld(::mce::UUID const& itemId, ::BlockPos const& from, ::BlockPos const& to);
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     $readFromEditorStructure(::mce::UUID const& itemId, ::Editor::EditorStructureTemplate const& editorStructure);
 
-    MCAPI ::Scripting::Result_deprecated<bool> $writeToWorld(
+    MCNAPI ::Scripting::Result_deprecated<bool> $writeToWorld(
         ::mce::UUID const&                               itemId,
         ::BlockPos const&                                position,
         ::Editor::Services::ClipboardWriteOptions const* options
     ) const;
 
-    MCAPI ::Scripting::Result_deprecated<::WeakRef<::Editor::Selection::SelectionContainer>>
+    MCNAPI ::Scripting::Result_deprecated<::WeakRef<::Editor::Selection::SelectionContainer>>
     $getPredictedWriteAsSelection(
         ::mce::UUID const&                               itemId,
         ::BlockPos const&                                position,
         ::Editor::Services::ClipboardWriteOptions const* options
     ) const;
 
-    MCAPI ::Scripting::Result_deprecated<::CompoundBlockVolume> $getPredictedWriteAsCompoundBlockVolume(
+    MCNAPI ::Scripting::Result_deprecated<::CompoundBlockVolume> $getPredictedWriteAsCompoundBlockVolume(
         ::mce::UUID const&                               itemId,
         ::BlockPos const&                                position,
         ::Editor::Services::ClipboardWriteOptions const* options
     ) const;
 
-    MCAPI ::Scripting::Result<void> $clear(::mce::UUID const& itemId);
+    MCNAPI ::Scripting::Result<void> $clear(::mce::UUID const& itemId);
 
-    MCAPI ::Scripting::Result_deprecated<bool> $isEmpty(::mce::UUID const& itemId) const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $isEmpty(::mce::UUID const& itemId) const;
 
-    MCAPI ::Scripting::Result_deprecated<::BlockPos> $getSize(::mce::UUID const& itemId) const;
+    MCNAPI ::Scripting::Result_deprecated<::BlockPos> $getSize(::mce::UUID const& itemId) const;
 
-    MCAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     $listenForClipboardItemChanges(::std::function<void(::mce::UUID const&, bool)> callback);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForClipboardServiceProvider();
+    MCNAPI static void** $vftableForClipboardServiceProvider();
 
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

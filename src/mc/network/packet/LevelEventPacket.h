@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
@@ -11,7 +12,6 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-class Vec3;
 // clang-format on
 
 class LevelEventPacket : public ::Packet {

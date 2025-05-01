@@ -12,8 +12,8 @@ class RailActivatorComponent {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _ejectLocalPlayer(::Actor const& cart, ::Player& passenger) const;
+    MCNAPI void _ejectLocalPlayer(::Actor const& cart, ::Player& passenger) const;
 
-    MCAPI void ejectAllPassengers(::Actor& owner);
+    MCNAPI void ejectAllPassengers(::Actor& owner);
     // NOLINTEND
 };

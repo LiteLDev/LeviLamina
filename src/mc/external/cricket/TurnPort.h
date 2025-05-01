@@ -32,112 +32,110 @@ class TurnPort {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddRequestAuthInfo(::cricket::StunMessage*);
+    MCNAPI void AddRequestAuthInfo(::cricket::StunMessage*);
 
-    MCAPI void Close();
+    MCNAPI void Close();
 
-    MCAPI bool CreateOrRefreshEntry(::cricket::Connection*, int);
+    MCNAPI bool CreateOrRefreshEntry(::cricket::Connection*, int);
 
-    MCAPI bool CreateTurnClientSocket();
+    MCNAPI bool CreateTurnClientSocket();
 
-    MCAPI void DispatchPacket(char const*, uint64, ::rtc::SocketAddress const&, ::cricket::ProtocolType, int64);
+    MCNAPI void DispatchPacket(char const*, uint64, ::rtc::SocketAddress const&, ::cricket::ProtocolType, int64);
 
-    MCAPI bool FailAndPruneConnection(::rtc::SocketAddress const&);
+    MCNAPI bool FailAndPruneConnection(::rtc::SocketAddress const&);
 
-    MCAPI ::cricket::TurnEntry* FindEntry(int) const;
+    MCNAPI ::cricket::TurnEntry* FindEntry(int) const;
 
-    MCAPI ::cricket::TurnEntry* FindEntry(::rtc::SocketAddress const&) const;
+    MCNAPI ::cricket::TurnEntry* FindEntry(::rtc::SocketAddress const&) const;
 
-    MCAPI ::rtc::SocketAddress GetLocalAddress() const;
+    MCNAPI ::rtc::SocketAddress GetLocalAddress() const;
 
-    MCAPI void HandleChannelData(int, char const*, uint64, int64);
+    MCNAPI void HandleChannelData(int, char const*, uint64, int64);
 
-    MCAPI void HandleDataIndication(char const*, uint64, int64);
+    MCNAPI void HandleDataIndication(char const*, uint64, int64);
 
-    MCAPI void HandleRefreshError();
+    MCNAPI void HandleRefreshError();
 
-    MCAPI bool HasPermission(::rtc::IPAddress const&) const;
+    MCNAPI bool HasPermission(::rtc::IPAddress const&) const;
 
-    MCAPI void MaybeAddTurnLoggingId(::cricket::StunMessage*);
+    MCNAPI void MaybeAddTurnLoggingId(::cricket::StunMessage*);
 
-    MCAPI void OnAllocateError(int, ::std::string_view);
+    MCNAPI void OnAllocateError(int, ::std::string_view);
 
-    MCAPI void OnAllocateMismatch();
+    MCNAPI void OnAllocateMismatch();
 
-    MCAPI void OnAllocateRequestTimeout();
+    MCNAPI void OnAllocateRequestTimeout();
 
-    MCAPI void OnAllocateSuccess(::rtc::SocketAddress const&, ::rtc::SocketAddress const&);
+    MCNAPI void OnAllocateSuccess(::rtc::SocketAddress const&, ::rtc::SocketAddress const&);
 
-    MCAPI void OnRefreshError();
+    MCNAPI void OnRefreshError();
 
-    MCAPI void OnSendStunPacket(void const*, uint64, ::cricket::StunRequest*);
+    MCNAPI void OnSendStunPacket(void const*, uint64, ::cricket::StunRequest*);
 
-    MCAPI void OnSocketClose(::rtc::AsyncPacketSocket*, int);
+    MCNAPI void OnSocketClose(::rtc::AsyncPacketSocket*, int);
 
-    MCAPI void OnSocketConnect(::rtc::AsyncPacketSocket*);
+    MCNAPI void OnSocketConnect(::rtc::AsyncPacketSocket*);
 
-    MCAPI ::std::string ReconstructServerUrl();
+    MCNAPI ::std::string ReconstructServerUrl();
 
-    MCAPI void Release();
+    MCNAPI void Release();
 
-    MCAPI void ResetNonce();
+    MCNAPI void ResetNonce();
 
-    MCAPI void ResolveTurnAddress(::rtc::SocketAddress const&);
+    MCNAPI void ResolveTurnAddress(::rtc::SocketAddress const&);
 
-    MCAPI bool ScheduleRefresh(uint);
+    MCNAPI bool ScheduleRefresh(uint);
 
-    MCAPI int Send(void const*, uint64, ::rtc::PacketOptions const&);
+    MCNAPI int Send(void const*, uint64, ::rtc::PacketOptions const&);
 
-    MCAPI void SendRequest(::cricket::StunRequest*, int);
+    MCNAPI void SendRequest(::cricket::StunRequest*, int);
 
-    MCAPI bool SetAlternateServer(::rtc::SocketAddress const&);
+    MCNAPI bool SetAlternateServer(::rtc::SocketAddress const&);
 
-    MCAPI void SetTurnLoggingId(::std::string_view);
+    MCNAPI void SetTurnLoggingId(::std::string_view);
 
-    MCAPI void TryAlternateServer();
+    MCNAPI void TryAlternateServer();
 
-    MCAPI bool TurnCustomizerAllowChannelData(void const*, uint64, bool);
+    MCNAPI bool TurnCustomizerAllowChannelData(void const*, uint64, bool);
 
-    MCAPI void TurnCustomizerMaybeModifyOutgoingStunMessage(::cricket::StunMessage*);
+    MCNAPI void TurnCustomizerMaybeModifyOutgoingStunMessage(::cricket::StunMessage*);
 
-    MCAPI
-    TurnPort(::webrtc::TaskQueueBase*, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ::rtc::AsyncPacketSocket*, ::std::string_view, ::std::string_view, ::cricket::ProtocolAddress const&, ::cricket::RelayCredentials const&, int, ::std::vector<::std::string> const&, ::std::vector<::std::string> const&, ::webrtc::TurnCustomizer*, ::rtc::SSLCertificateVerifier*, ::webrtc::FieldTrialsView const*);
+    MCNAPI TurnPort(::webrtc::TaskQueueBase*, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ::rtc::AsyncPacketSocket*, ::std::string_view, ::std::string_view, ::cricket::ProtocolAddress const&, ::cricket::RelayCredentials const&, int, ::std::vector<::std::string> const&, ::std::vector<::std::string> const&, ::webrtc::TurnCustomizer*, ::rtc::SSLCertificateVerifier*, ::webrtc::FieldTrialsView const*);
 
-    MCAPI TurnPort(::webrtc::TaskQueueBase*, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ushort, ushort, ::std::string_view, ::std::string_view, ::cricket::ProtocolAddress const&, ::cricket::RelayCredentials const&, int, ::std::vector<::std::string> const&, ::std::vector<::std::string> const&, ::webrtc::TurnCustomizer*, ::rtc::SSLCertificateVerifier*, ::webrtc::FieldTrialsView const*);
+    MCNAPI
+    TurnPort(::webrtc::TaskQueueBase*, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ushort, ushort, ::std::string_view, ::std::string_view, ::cricket::ProtocolAddress const&, ::cricket::RelayCredentials const&, int, ::std::vector<::std::string> const&, ::std::vector<::std::string> const&, ::webrtc::TurnCustomizer*, ::rtc::SSLCertificateVerifier*, ::webrtc::FieldTrialsView const*);
 
-    MCAPI void UpdateHash();
+    MCNAPI void UpdateHash();
 
-    MCAPI bool UpdateNonce(::cricket::StunMessage*);
+    MCNAPI bool UpdateNonce(::cricket::StunMessage*);
 
-    MCAPI void set_nonce(::std::string_view);
+    MCNAPI void set_nonce(::std::string_view);
 
-    MCAPI void set_realm(::std::string_view);
+    MCNAPI void set_realm(::std::string_view);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool AllowedTurnPort(int, ::webrtc::FieldTrialsView const*);
+    MCNAPI static bool AllowedTurnPort(int, ::webrtc::FieldTrialsView const*);
 
-    MCAPI static bool Validate(::cricket::CreateRelayPortArgs const&);
+    MCNAPI static bool Validate(::cricket::CreateRelayPortArgs const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::webrtc::TaskQueueBase*, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ::rtc::AsyncPacketSocket*, ::std::string_view, ::std::string_view, ::cricket::ProtocolAddress const&, ::cricket::RelayCredentials const&, int, ::std::vector<::std::string> const&, ::std::vector<::std::string> const&, ::webrtc::TurnCustomizer*, ::rtc::SSLCertificateVerifier*, ::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(::webrtc::TaskQueueBase*, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ::rtc::AsyncPacketSocket*, ::std::string_view, ::std::string_view, ::cricket::ProtocolAddress const&, ::cricket::RelayCredentials const&, int, ::std::vector<::std::string> const&, ::std::vector<::std::string> const&, ::webrtc::TurnCustomizer*, ::rtc::SSLCertificateVerifier*, ::webrtc::FieldTrialsView const*);
 
-    MCAPI void*
-    $ctor(::webrtc::TaskQueueBase*, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ushort, ushort, ::std::string_view, ::std::string_view, ::cricket::ProtocolAddress const&, ::cricket::RelayCredentials const&, int, ::std::vector<::std::string> const&, ::std::vector<::std::string> const&, ::webrtc::TurnCustomizer*, ::rtc::SSLCertificateVerifier*, ::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(::webrtc::TaskQueueBase*, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ushort, ushort, ::std::string_view, ::std::string_view, ::cricket::ProtocolAddress const&, ::cricket::RelayCredentials const&, int, ::std::vector<::std::string> const&, ::std::vector<::std::string> const&, ::webrtc::TurnCustomizer*, ::rtc::SSLCertificateVerifier*, ::webrtc::FieldTrialsView const*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForHasSlots();
+    MCNAPI static void** $vftableForHasSlots();
 
-    MCAPI static void** $vftableForPortInterface();
+    MCNAPI static void** $vftableForPortInterface();
     // NOLINTEND
 };
 

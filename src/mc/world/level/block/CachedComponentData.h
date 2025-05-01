@@ -25,6 +25,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void cacheComponentData(::Block const& block);
+    MCNAPI void cacheComponentData(::Block const& block);
     // NOLINTEND
 };

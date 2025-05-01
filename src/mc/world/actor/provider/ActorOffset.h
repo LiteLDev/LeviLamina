@@ -12,11 +12,11 @@ class Vec3;
 namespace ActorOffset {
 // functions
 // NOLINTBEGIN
-MCAPI ::Vec3 getEyeOffset(::EntityContext const& entity);
+MCNAPI ::Vec3 getEyeOffset(::EntityContext const& entity);
 
-MCAPI void initializePlayer(::EntityContext& entity);
+MCNAPI void initializePlayer(::EntityContext& entity);
 
-MCAPI void setAABBRelativeScaling(
+MCNAPI void setAABBRelativeScaling(
     ::EntityContext&        entity,
     ::std::optional<::Vec2> headScalar,
     ::std::optional<::Vec2> eyeScalar,
@@ -24,7 +24,7 @@ MCAPI void setAABBRelativeScaling(
     ::std::optional<::Vec2> mouthScalar
 );
 
-MCAPI void setAABBRelativeScalingAndScaleNow(
+MCNAPI void setAABBRelativeScalingAndScaleNow(
     ::EntityContext&        entity,
     ::std::optional<::Vec2> headScalar,
     ::std::optional<::Vec2> eyeScalar,
@@ -32,7 +32,7 @@ MCAPI void setAABBRelativeScalingAndScaleNow(
     ::std::optional<::Vec2> mouthScalar
 );
 
-MCAPI void setHeightOffset(::EntityContext& entity, float heightOffset);
+MCNAPI void setHeightOffset(::EntityContext& entity, float heightOffset);
 // NOLINTEND
 
 // static variables

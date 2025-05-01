@@ -8,9 +8,9 @@ struct ExpFilter {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI float Apply(float, float);
+    MCNAPI float Apply(float, float);
 
-    MCAPI void Reset(float);
+    MCNAPI void Reset(float);
     // NOLINTEND
 
 public:

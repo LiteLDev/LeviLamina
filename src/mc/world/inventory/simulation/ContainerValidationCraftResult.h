@@ -21,24 +21,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContainerValidationCraftResult();
+    MCNAPI ContainerValidationCraftResult();
 
-    MCAPI ContainerValidationCraftResult(::ContainerValidationCraftResult&&);
+    MCNAPI ContainerValidationCraftResult(::ContainerValidationCraftResult&&);
 
-    MCAPI ~ContainerValidationCraftResult();
+    MCNAPI ~ContainerValidationCraftResult();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::ContainerValidationCraftResult&&);
+    MCNAPI void* $ctor(::ContainerValidationCraftResult&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

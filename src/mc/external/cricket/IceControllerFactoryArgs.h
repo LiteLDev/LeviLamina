@@ -8,13 +8,13 @@ struct IceControllerFactoryArgs {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~IceControllerFactoryArgs();
+    MCNAPI ~IceControllerFactoryArgs();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

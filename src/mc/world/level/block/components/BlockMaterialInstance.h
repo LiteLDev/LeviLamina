@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/util/BidirectionalUnorderedMap.h"
 #include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/TintMethod.h"
 
 struct BlockMaterialInstance {
 public:
@@ -15,8 +14,9 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk22148c;
     ::ll::UntypedStorage<1, 1>  mUnkdce191;
     ::ll::UntypedStorage<1, 1>  mUnk50874f;
-    ::ll::UntypedStorage<8, 16> mUnk6e50da;
+    ::ll::UntypedStorage<1, 1>  mUnk12dc06;
     ::ll::UntypedStorage<1, 1>  mUnkf63cee;
+    ::ll::UntypedStorage<8, 16> mUnk6e50da;
     // NOLINTEND
 
 public:
@@ -27,24 +27,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockMaterialInstance& operator=(::BlockMaterialInstance&&);
+    MCNAPI ::BlockMaterialInstance& operator=(::BlockMaterialInstance&&);
 
-    MCAPI ::BlockMaterialInstance& operator=(::BlockMaterialInstance const&);
+    MCNAPI ::BlockMaterialInstance& operator=(::BlockMaterialInstance const&);
 
-    MCAPI ~BlockMaterialInstance();
+    MCNAPI ~BlockMaterialInstance();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BidirectionalUnorderedMap<::std::string, ::BlockRenderLayer> const& renderLayerNameBiMap();
-
-    MCAPI static ::BidirectionalUnorderedMap<::std::string, ::TintMethod> const& tintMethodBiMap();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

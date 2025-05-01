@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -38,21 +38,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~DryingOutTimerDefinition();
+        MCNAPI ~DryingOutTimerDefinition();
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
-                                          ::JsonUtil::EmptyClass,
-                                          ::DryingOutTimerComponent::DryingOutTimerDefinition>>& root);
+        MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+                                           ::JsonUtil::EmptyClass,
+                                           ::DryingOutTimerComponent::DryingOutTimerDefinition>>& root);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -78,20 +78,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DryingOutTimerComponent(::DryingOutTimerComponent&&);
+    MCNAPI DryingOutTimerComponent(::DryingOutTimerComponent&&);
 
-    MCAPI ~DryingOutTimerComponent();
+    MCNAPI ~DryingOutTimerComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::DryingOutTimerComponent&&);
+    MCNAPI void* $ctor(::DryingOutTimerComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

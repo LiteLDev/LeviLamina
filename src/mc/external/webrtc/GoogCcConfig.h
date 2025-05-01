@@ -8,13 +8,13 @@ struct GoogCcConfig {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~GoogCcConfig();
+    MCNAPI ~GoogCcConfig();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

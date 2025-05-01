@@ -18,30 +18,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Rule();
+    MCNAPI Rule();
 
-    MCAPI Rule(::SharedTypes::v1_21_20::JigsawStructure::Rule const&);
+    MCNAPI Rule(::SharedTypes::v1_21_20::JigsawStructure::Rule const&);
 
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructure::Rule&
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::Rule&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::Rule const&);
 
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructure::Rule& operator=(::SharedTypes::v1_21_20::JigsawStructure::Rule&&);
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::Rule& operator=(::SharedTypes::v1_21_20::JigsawStructure::Rule&&);
 
-    MCAPI ~Rule();
+    MCNAPI ~Rule();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructure::Rule const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructure::Rule const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

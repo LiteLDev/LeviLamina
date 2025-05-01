@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/ActorFilterGroup.h"
+#include "mc/world/actor/ai/util/ExpiringTick.h"
+#include "mc/world/effect/EffectDuration.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorFilterGroup;
-class ExpiringTick;
-struct EffectDuration;
 // clang-format on
 
 class MobEffectComponent {
@@ -25,14 +27,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void tick(::Actor& owner);
+    MCNAPI void tick(::Actor& owner);
 
-    MCAPI ~MobEffectComponent();
+    MCNAPI ~MobEffectComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

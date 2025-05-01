@@ -38,15 +38,19 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void fromString(::std::string str);
+        MCNAPI void fromBool(bool b);
 
-        MCAPI ~Compound();
+        MCNAPI void fromInt(int i);
+
+        MCNAPI void fromString(::std::string str);
+
+        MCNAPI ~Compound();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -66,25 +70,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockDescriptor(::SharedTypes::Legacy::BlockDescriptor&&);
+    MCNAPI BlockDescriptor(::SharedTypes::Legacy::BlockDescriptor&&);
 
-    MCAPI ::SharedTypes::Legacy::BlockDescriptor& operator=(::SharedTypes::Legacy::BlockDescriptor&&);
+    MCNAPI ::SharedTypes::Legacy::BlockDescriptor& operator=(::SharedTypes::Legacy::BlockDescriptor&&);
 
-    MCAPI ::SharedTypes::Legacy::BlockDescriptor& operator=(::SharedTypes::Legacy::BlockDescriptor const&);
+    MCNAPI ::SharedTypes::Legacy::BlockDescriptor& operator=(::SharedTypes::Legacy::BlockDescriptor const&);
 
-    MCAPI ~BlockDescriptor();
+    MCNAPI ~BlockDescriptor();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Legacy::BlockDescriptor&&);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::BlockDescriptor&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

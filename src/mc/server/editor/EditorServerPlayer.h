@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class PlayerEventCoordinator;
+class ServerPlayer;
 // clang-format on
 
 namespace Editor {
@@ -48,6 +49,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::ServerPlayer* getServerPlayer() const;
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -56,25 +63,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result<void> $ready();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::optional_ref<::PlayerEventCoordinator> $getPlayerEventCoordinator();
+    MCNAPI ::optional_ref<::PlayerEventCoordinator> $getPlayerEventCoordinator();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIEditorPlayer();
+    MCNAPI static void** $vftableForIEditorPlayer();
 
-    MCAPI static void** $vftableForPlayerEventListener();
+    MCNAPI static void** $vftableForPlayerEventListener();
 
-    MCAPI static void** $vftableForEditorPlayerServiceProvider();
+    MCNAPI static void** $vftableForEditorPlayerServiceProvider();
 
-    MCAPI static void** $vftableForEditorServiceList();
+    MCNAPI static void** $vftableForEditorServiceList();
     // NOLINTEND
 };
 

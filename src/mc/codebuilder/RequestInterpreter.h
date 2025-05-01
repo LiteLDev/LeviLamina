@@ -16,7 +16,7 @@ class RequestInterpreter {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void process(
+    MCNAPI void process(
         ::CodeBuilder::IRequestHandler&     sender,
         ::CodeBuilder::RequestHeader const& header,
         ::Json::Value const&                body
@@ -26,7 +26,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _parse(::Json::Value const& command, ::CodeBuilder::CommandRequest& request);
+    MCNAPI static bool _parse(::Json::Value const& command, ::CodeBuilder::CommandRequest& request);
     // NOLINTEND
 };
 

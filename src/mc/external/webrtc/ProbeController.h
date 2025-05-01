@@ -22,55 +22,55 @@ class ProbeController {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void EnablePeriodicAlrProbing(bool);
+    MCNAPI void EnablePeriodicAlrProbing(bool);
 
-    MCAPI ::std::vector<::webrtc::ProbeClusterConfig> InitiateExponentialProbing(::webrtc::Timestamp);
+    MCNAPI ::std::vector<::webrtc::ProbeClusterConfig> InitiateExponentialProbing(::webrtc::Timestamp);
 
-    MCAPI ::std::vector<::webrtc::ProbeClusterConfig>
+    MCNAPI ::std::vector<::webrtc::ProbeClusterConfig>
     InitiateProbing(::webrtc::Timestamp, ::std::vector<::webrtc::DataRate>, bool);
 
-    MCAPI ::std::vector<::webrtc::ProbeClusterConfig>
+    MCNAPI ::std::vector<::webrtc::ProbeClusterConfig>
         OnMaxTotalAllocatedBitrate(::webrtc::DataRate, ::webrtc::Timestamp);
 
-    MCAPI ::std::vector<::webrtc::ProbeClusterConfig> OnNetworkAvailability(::webrtc::NetworkAvailability);
+    MCNAPI ::std::vector<::webrtc::ProbeClusterConfig> OnNetworkAvailability(::webrtc::NetworkAvailability);
 
-    MCAPI ProbeController(::webrtc::FieldTrialsView const*, ::webrtc::RtcEventLog*);
+    MCNAPI ProbeController(::webrtc::FieldTrialsView const*, ::webrtc::RtcEventLog*);
 
-    MCAPI ::std::vector<::webrtc::ProbeClusterConfig> Process(::webrtc::Timestamp);
+    MCNAPI ::std::vector<::webrtc::ProbeClusterConfig> Process(::webrtc::Timestamp);
 
-    MCAPI ::std::vector<::webrtc::ProbeClusterConfig> RequestProbe(::webrtc::Timestamp);
+    MCNAPI ::std::vector<::webrtc::ProbeClusterConfig> RequestProbe(::webrtc::Timestamp);
 
-    MCAPI void Reset(::webrtc::Timestamp);
+    MCNAPI void Reset(::webrtc::Timestamp);
 
-    MCAPI void SetAlrEndedTimeMs(int64);
+    MCNAPI void SetAlrEndedTimeMs(int64);
 
-    MCAPI void SetAlrStartTimeMs(::std::optional<int64>);
+    MCNAPI void SetAlrStartTimeMs(::std::optional<int64>);
 
-    MCAPI ::std::vector<::webrtc::ProbeClusterConfig>
+    MCNAPI ::std::vector<::webrtc::ProbeClusterConfig>
         SetBitrates(::webrtc::DataRate, ::webrtc::DataRate, ::webrtc::DataRate, ::webrtc::Timestamp);
 
-    MCAPI ::std::vector<::webrtc::ProbeClusterConfig>
+    MCNAPI ::std::vector<::webrtc::ProbeClusterConfig>
         SetEstimatedBitrate(::webrtc::DataRate, ::webrtc::BandwidthLimitedCause, ::webrtc::Timestamp);
 
-    MCAPI void SetNetworkStateEstimate(::webrtc::NetworkStateEstimate);
+    MCNAPI void SetNetworkStateEstimate(::webrtc::NetworkStateEstimate);
 
-    MCAPI bool TimeForAlrProbe(::webrtc::Timestamp) const;
+    MCNAPI bool TimeForAlrProbe(::webrtc::Timestamp) const;
 
-    MCAPI bool TimeForNetworkStateProbe(::webrtc::Timestamp) const;
+    MCNAPI bool TimeForNetworkStateProbe(::webrtc::Timestamp) const;
 
-    MCAPI ~ProbeController();
+    MCNAPI ~ProbeController();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::FieldTrialsView const*, ::webrtc::RtcEventLog*);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const*, ::webrtc::RtcEventLog*);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

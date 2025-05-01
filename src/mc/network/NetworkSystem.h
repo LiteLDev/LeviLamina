@@ -18,7 +18,6 @@ class NetworkConnection;
 class NetworkIdentifier;
 class NetworkPeer;
 class Packet;
-class PacketSecurityController;
 class RemoteConnector;
 class WeakEntityRef;
 struct NetworkIdentifierWithSubId;
@@ -45,7 +44,7 @@ public:
         ::ll::UntypedStorage<8, 24> mUnk331fbf;
         ::ll::UntypedStorage<8, 24> mUnkf4c1a6;
         ::ll::UntypedStorage<4, 24> mUnkfbdc8b;
-        ::ll::UntypedStorage<8, 64> mUnkacfb81;
+        ::ll::UntypedStorage<1, 1>  mUnk3c7466;
         // NOLINTEND
 
     public:
@@ -57,13 +56,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Dependencies();
+        MCNAPI ~Dependencies();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -105,8 +104,7 @@ public:
     ::ll::UntypedStorage<2, 2>  mUnk5e3f1d;
     ::ll::UntypedStorage<1, 1>  mUnk148327;
     ::ll::UntypedStorage<8, 8>  mUnk71c9a9;
-    ::ll::UntypedStorage<8, 64> mUnk7f3cc3;
-    ::ll::UntypedStorage<8, 64> mUnkaaded0;
+    ::ll::UntypedStorage<1, 1>  mUnk9b4c2b;
     ::ll::UntypedStorage<1, 1>  mUnk214764;
     ::ll::UntypedStorage<4, 24> mUnk7bbd3c;
     ::ll::UntypedStorage<1, 1>  mUnk248b46;
@@ -202,7 +200,7 @@ public:
 
     MCAPI void runEvents(bool networkIsCritical);
 
-    MCAPI void send(::NetworkIdentifier const& id, ::Packet const& packet, ::SubClientId senderSubId);
+    MCAPI void send(::NetworkIdentifier const& id, ::Packet const& packet, ::SubClientId recipientSubId);
 
     MCAPI void sendToMultiple(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet);
 

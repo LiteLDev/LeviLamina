@@ -24,27 +24,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorDamageSource(::ScriptModuleMinecraft::ScriptActorDamageSource const&);
+    MCNAPI ScriptActorDamageSource(::ScriptModuleMinecraft::ScriptActorDamageSource const&);
 
-    MCAPI ~ScriptActorDamageSource();
+    MCNAPI ~ScriptActorDamageSource();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptActorDamageSource> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptActorDamageSource> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorDamageSource const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorDamageSource const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

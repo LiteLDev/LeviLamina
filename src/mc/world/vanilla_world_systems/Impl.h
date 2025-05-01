@@ -20,7 +20,7 @@ class Impl {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Impl(
+    MCNAPI Impl(
         ::Bedrock::NonOwnerPointer<::Level> const& level,
         ::Experiments const&                       experiments,
         ::BaseGameVersion const&                   baseGameVersion,
@@ -28,7 +28,7 @@ public:
         ::ServerScriptManager const*               scriptManager
     );
 
-    MCAPI ~Impl();
+    MCNAPI ~Impl();
     // NOLINTEND
 
 public:
@@ -40,7 +40,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NonOwnerPointer<::Level> const& level,
         ::Experiments const&                       experiments,
         ::BaseGameVersion const&                   baseGameVersion,
@@ -52,7 +52,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/ActorFilterGroup.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActorFilterGroup;
 class BlockPos;
 class Mob;
 class Vec3;
-struct Tick;
 // clang-format on
 
 class StalkAndPounceOnTargetGoal : public ::Goal {
@@ -74,17 +74,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _attemptToStrike(::Vec3 const& mobPos, ::Vec3 const& targetPos);
+    MCNAPI void _attemptToStrike(::Vec3 const& mobPos, ::Vec3 const& targetPos);
 
-    MCAPI bool _isPouncePathClear(::Vec3 const& mobPos, ::Vec3 const& targetPos) const;
+    MCNAPI bool _isPouncePathClear(::Vec3 const& mobPos, ::Vec3 const& targetPos) const;
 
-    MCAPI bool _isStuckBlock(::BlockPos blockPos) const;
+    MCNAPI bool _isStuckBlock(::BlockPos blockPos) const;
 
-    MCAPI void _pounce(::Vec3 const& mobPos, ::Vec3 const& targetPos) const;
+    MCNAPI void _pounce(::Vec3 const& mobPos, ::Vec3 const& targetPos) const;
 
-    MCAPI void _preparePounce(::Vec3 const& mobPos, ::Vec3 const& targetPos);
+    MCNAPI void _preparePounce(::Vec3 const& mobPos, ::Vec3 const& targetPos);
 
-    MCAPI void _stuck();
+    MCNAPI void _stuck();
     // NOLINTEND
 
 public:
@@ -96,24 +96,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI bool $canBeInterrupted();
+    MCNAPI bool $canBeInterrupted();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

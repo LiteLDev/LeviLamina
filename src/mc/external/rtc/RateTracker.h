@@ -36,25 +36,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddSamples(int64);
+    MCNAPI void AddSamples(int64);
 
-    MCAPI void AddSamplesAtTime(int64, int64);
+    MCNAPI void AddSamplesAtTime(int64, int64);
 
-    MCAPI double ComputeRateForInterval(int64) const;
+    MCNAPI double ComputeRateForInterval(int64) const;
 
-    MCAPI void EnsureInitialized();
+    MCNAPI void EnsureInitialized();
 
-    MCAPI uint64 NextBucketIndex(uint64) const;
+    MCNAPI uint64 NextBucketIndex(uint64) const;
 
-    MCAPI RateTracker(int64, uint64);
+    MCNAPI RateTracker(int64, uint64);
 
-    MCAPI int64 TotalSampleCount() const;
+    MCNAPI int64 TotalSampleCount() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int64, uint64);
+    MCNAPI void* $ctor(int64, uint64);
     // NOLINTEND
 
 public:
@@ -72,7 +72,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

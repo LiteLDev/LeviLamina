@@ -8,13 +8,13 @@ struct DependencyDescriptor {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~DependencyDescriptor();
+    MCNAPI ~DependencyDescriptor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

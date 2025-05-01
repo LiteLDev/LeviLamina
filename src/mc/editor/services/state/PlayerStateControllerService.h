@@ -62,41 +62,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _handleModeChanged(::Editor::Mode from, ::Editor::Mode to);
+    MCNAPI void _handleModeChanged(::Editor::Mode from, ::Editor::Mode to);
 
-    MCAPI void _syncFlyingNoClip(::Editor::ServiceProviderCollection&);
+    MCNAPI void _syncFlyingNoClip(::Editor::ServiceProviderCollection&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI void $_onEditorActivate();
+    MCNAPI void $_onEditorActivate();
 
-    MCAPI void $_onEditorDeactivate();
+    MCNAPI void $_onEditorDeactivate();
 
-    MCAPI void $_onEnterToolMode();
+    MCNAPI void $_onEnterToolMode();
 
-    MCFOLD void $_onExitToolMode();
+    MCNAPI void $_onExitToolMode();
 
-    MCAPI void $_onEnterCrosshairMode();
+    MCNAPI void $_onEnterCrosshairMode();
 
-    MCAPI void $_onExitCrosshairMode();
+    MCNAPI void $_onExitCrosshairMode();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

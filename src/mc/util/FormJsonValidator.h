@@ -9,27 +9,29 @@ class FormJsonValidator {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::JsonValidator::Property getContentItemProperty(
+    MCNAPI static ::JsonValidator::Property getContentItemProperty(
         ::JsonValidator::Property const& labelType,
         ::JsonValidator::Property const& toggleType,
         ::JsonValidator::Property const& sliderType,
         ::JsonValidator::Property const& stepSliderType,
         ::JsonValidator::Property const& dropdownType,
-        ::JsonValidator::Property const& textInputType
+        ::JsonValidator::Property const& textInputType,
+        ::JsonValidator::Property const& headerType,
+        ::JsonValidator::Property const& dividerType
     );
 
-    MCAPI static ::JsonValidator::Property getControlLockedProperty();
+    MCNAPI static ::JsonValidator::Property getControlLockedProperty();
 
-    MCAPI static ::JsonValidator::Property getDropdownProperty(bool requiresDefault);
+    MCNAPI static ::JsonValidator::Property getDropdownProperty(bool requiresDefault);
 
-    MCAPI static ::JsonValidator::Property getSliderProperty(bool requiresDefault);
+    MCNAPI static ::JsonValidator::Property getSliderProperty(bool requiresDefault);
 
-    MCAPI static ::JsonValidator::Property getStepSliderProperty(bool requiresDefault);
+    MCNAPI static ::JsonValidator::Property getStepSliderProperty(bool requiresDefault);
 
-    MCAPI static ::JsonValidator::Property getStringOrObjectProperty();
+    MCNAPI static ::JsonValidator::Property getStringOrObjectProperty();
 
-    MCAPI static ::JsonValidator::Property getTextInputProperty(bool requiresDefault);
+    MCNAPI static ::JsonValidator::Property getTextInputProperty(bool requiresDefault);
 
-    MCAPI static ::JsonValidator::Property getToggleProperty(bool requiresDefault);
+    MCNAPI static ::JsonValidator::Property getToggleProperty(bool requiresDefault);
     // NOLINTEND
 };

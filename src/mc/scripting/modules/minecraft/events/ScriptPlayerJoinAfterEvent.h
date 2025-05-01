@@ -32,30 +32,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerJoinAfterEvent(
+    MCNAPI ScriptPlayerJoinAfterEvent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> playerHandle,
         ::std::string const&                                                        playerName,
         ::std::string const&                                                        playerId
     );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent&&);
 
-    MCAPI ~ScriptPlayerJoinAfterEvent();
+    MCNAPI ~ScriptPlayerJoinAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent> bind();
 
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent> bindV010();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent> bindV010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> playerHandle,
         ::std::string const&                                                        playerName,
         ::std::string const&                                                        playerId
@@ -65,7 +65,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

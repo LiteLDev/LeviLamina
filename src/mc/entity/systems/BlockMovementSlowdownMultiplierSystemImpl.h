@@ -16,7 +16,7 @@ struct StateVectorComponent;
 namespace BlockMovementSlowdownMultiplierSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void applySlowdownOnMoveSingleEntity(
+MCNAPI void applySlowdownOnMoveSingleEntity(
     ::StrictEntityContext const& context,
     ::ViewT<
         ::StrictEntityContext,

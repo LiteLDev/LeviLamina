@@ -14,15 +14,15 @@ class CrashDumpLog {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void crashDumpLogThreadRoutine();
+    MCNAPI static void crashDumpLogThreadRoutine();
 
-    MCAPI static void logEvent(::CrashDumpEventData const& eventData);
+    MCNAPI static void logEvent(::CrashDumpEventData const& eventData);
 
-    MCAPI static void logKeyValue(::CrashDumpKeyValueData const& keyValueData);
+    MCNAPI static void logKeyValue(::CrashDumpKeyValueData const& keyValueData);
 
-    MCAPI static bool setDeviceSessionID(::std::string const& str);
+    MCNAPI static bool setDeviceSessionID(::std::string const& str);
 
-    MCAPI static bool startCrashDumpLogThread();
+    MCNAPI static bool startCrashDumpLogThread();
     // NOLINTEND
 
 public:

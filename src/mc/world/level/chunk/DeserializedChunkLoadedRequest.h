@@ -3,12 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/chunk/ChunkLoadedRequest.h"
 #include "mc/world/level/chunk/ChunkRequestListType.h"
-
-// auto generated forward declare list
-// clang-format off
-class ChunkLoadedRequest;
-// clang-format on
 
 struct DeserializedChunkLoadedRequest {
 public:
@@ -21,23 +17,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DeserializedChunkLoadedRequest(
+    MCNAPI DeserializedChunkLoadedRequest(
         ::ChunkLoadedRequest   chunkLoadedRequest,
         ::ChunkRequestListType chunkRequestListType
     );
 
-    MCAPI ~DeserializedChunkLoadedRequest();
+    MCNAPI ~DeserializedChunkLoadedRequest();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ChunkLoadedRequest chunkLoadedRequest, ::ChunkRequestListType chunkRequestListType);
+    MCNAPI void* $ctor(::ChunkLoadedRequest chunkLoadedRequest, ::ChunkRequestListType chunkRequestListType);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -18,7 +18,7 @@ class ScriptMovementSwayComponent : public ::ScriptModuleMinecraft::MovementScri
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
+    // vIndex: 3
     virtual bool _isValid() const /*override*/;
 
     // vIndex: 0
@@ -28,15 +28,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<float> getSwayAmplitude() const;
+    MCNAPI ::Scripting::Result_deprecated<float> getSwayAmplitude() const;
 
-    MCAPI ::Scripting::Result_deprecated<float> getSwayFrequency() const;
+    MCNAPI ::Scripting::Result_deprecated<float> getSwayFrequency() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptMovementSwayComponent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptMovementSwayComponent>
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
@@ -55,13 +55,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isValid() const;
+    MCNAPI bool $_isValid() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -62,13 +62,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~FunctionInfo();
+        MCNAPI ~FunctionInfo();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 

@@ -10,10 +10,10 @@ struct AssertHandlerContext;
 namespace DebugUtils {
 // functions
 // NOLINTBEGIN
-MCAPI bool
+MCNAPI bool
 handleAssert_va(char const* msgFormat, char const* arg, int line, char const* file, char const* function, char* args);
 
-MCAPI bool runAssertHandler(::std::bitset<7> const& steps, ::AssertHandlerContext const& context);
+MCNAPI bool runAssertHandler(::std::bitset<7> const& steps, ::AssertHandlerContext const& context);
 // NOLINTEND
 
 } // namespace DebugUtils

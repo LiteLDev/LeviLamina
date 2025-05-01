@@ -16,7 +16,7 @@ struct StateVectorComponent;
 namespace SwimControlSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void doSwimControl(
+MCNAPI void doSwimControl(
     ::StrictEntityContext const&,
     ::ActorDataFlagComponent const&      synchedActorDataComponent,
     ::MovementAbilitiesComponent const&  abilitiesComponent,

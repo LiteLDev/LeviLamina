@@ -13,19 +13,19 @@ class ScriptPlugin;
 namespace ScriptPluginUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::ScriptRuntimeType GetRuntimeType(::std::string const& runtimeName);
+MCNAPI ::ScriptRuntimeType GetRuntimeType(::std::string const& runtimeName);
 
-MCAPI ::ScriptRuntimeType GetRuntimeTypeFromFileExtension(::std::string const& fileExt);
+MCNAPI ::ScriptRuntimeType GetRuntimeTypeFromFileExtension(::std::string const& fileExt);
 
-MCAPI ::std::string JavaScriptModuleNameNormalizer(
+MCNAPI ::std::string JavaScriptModuleNameNormalizer(
     ::std::string_view                  baseName,
     ::std::string const&                moduleName,
     ::std::vector<::std::string> const& knownModuleNames
 );
 
-MCAPI ::std::string SanitizeRuntimeName(::std::string const& runtimeName);
+MCNAPI ::std::string SanitizeRuntimeName(::std::string const& runtimeName);
 
-MCAPI ::std::vector<::std::string> ValidatePlugin(::ScriptPlugin const& plugin);
+MCNAPI ::std::vector<::std::string> ValidatePlugin(::ScriptPlugin const& plugin);
 // NOLINTEND
 
 // static variables

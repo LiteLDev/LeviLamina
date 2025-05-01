@@ -16,23 +16,23 @@ struct RuntimeConditionError : public ::Scripting::Error {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     RuntimeConditionError(::std::string const& missingRuntimeConditions, ::Scripting::RuntimeConditions const& apiName, ::std::string const&);
 
-    MCAPI ~RuntimeConditionError();
+    MCNAPI ~RuntimeConditionError();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::string const& missingRuntimeConditions, ::Scripting::RuntimeConditions const& apiName, ::std::string const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

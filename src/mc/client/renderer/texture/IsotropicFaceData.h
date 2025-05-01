@@ -6,8 +6,7 @@ class IsotropicFaceData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk1c2355;
-    ::ll::UntypedStorage<4, 4> mUnk35ac14;
+    ::ll::UntypedStorage<1, 1> mUnk87eb08;
     // NOLINTEND
 
 public:

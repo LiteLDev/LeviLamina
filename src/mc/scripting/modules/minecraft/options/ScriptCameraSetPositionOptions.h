@@ -25,13 +25,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptCameraSetPositionOptions const& other) const;
+    MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptCameraSetPositionOptions const& other) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptCameraSetPositionOptions> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptCameraSetPositionOptions> bind();
     // NOLINTEND
 };
 

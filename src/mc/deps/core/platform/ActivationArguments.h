@@ -30,23 +30,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActivationArguments();
+    MCNAPI ActivationArguments();
 
-    MCAPI void preParseArguments();
+    MCNAPI void preParseArguments();
 
-    MCAPI ~ActivationArguments();
+    MCNAPI ~ActivationArguments();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

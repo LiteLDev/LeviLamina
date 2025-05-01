@@ -65,14 +65,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ItemStackNetResult _handleAutoCraft(::ItemStackRequestActionCraftRecipeAuto const& requestAction);
+    MCNAPI ::ItemStackNetResult _handleAutoCraft(::ItemStackRequestActionCraftRecipeAuto const& requestAction);
 
-    MCAPI void _handleCarefulRestoration(::ItemInstance const& itemInstance) const;
+    MCNAPI void _handleCarefulRestoration(::ItemInstance const& itemInstance) const;
 
-    MCAPI ::ItemStackNetResult
+    MCNAPI ::ItemStackNetResult
     _handleCraftCreative(::ItemStackRequestActionCraft<::CreativeItemNetId, 14> const& requestAction);
 
-    MCAPI ::ItemStackNetResult _handleCraftOutput(::ItemStackRequestActionCraft<::RecipeNetId, 12> const& requestAction
+    MCNAPI ::ItemStackNetResult _handleCraftOutput(::ItemStackRequestActionCraft<::RecipeNetId, 12> const& requestAction
     );
     // NOLINTEND
 
@@ -85,22 +85,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStackNetResult $handleConsumedItem(
+    MCNAPI ::ItemStackNetResult $handleConsumedItem(
         ::FullContainerName const& openContainerNetId,
         uchar const                slot,
         ::ItemStack const&         consumedItem
     );
 
-    MCAPI ::ItemStackNetResult $preHandleAction(::ItemStackRequestActionType requestActionType);
+    MCNAPI ::ItemStackNetResult $preHandleAction(::ItemStackRequestActionType requestActionType);
 
-    MCAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
+    MCNAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
 
-    MCAPI ::Recipes const* $_getLevelRecipes() const;
+    MCNAPI ::Recipes const* $_getLevelRecipes() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

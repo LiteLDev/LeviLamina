@@ -11,7 +11,7 @@ namespace mce { class Color; }
 namespace PlayerUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::mce::Color getPlayerColor(::Player const& player);
+MCNAPI ::mce::Color getPlayerColor(::Player const& player);
 // NOLINTEND
 
 } // namespace PlayerUtils

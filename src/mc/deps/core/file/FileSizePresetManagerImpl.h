@@ -51,18 +51,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::Core::FileSizePresetToken>
+    MCNAPI ::std::unique_ptr<::Core::FileSizePresetToken>
     $presetInitialSizeForFile(::Core::PathView filePath, uint64 initialFileSize);
 
-    MCAPI ::std::optional<uint64> $checkFileInitialSize(::Core::PathView filePath);
+    MCNAPI ::std::optional<uint64> $checkFileInitialSize(::Core::PathView filePath);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForFileSizePresetManager();
+    MCNAPI static void** $vftableForFileSizePresetManager();
 
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };
 

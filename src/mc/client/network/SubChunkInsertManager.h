@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/threading/TaskGroup.h"
+
 // auto generated forward declare list
 // clang-format off
 class Player;
-class TaskGroup;
 // clang-format on
 
 class SubChunkInsertManager {

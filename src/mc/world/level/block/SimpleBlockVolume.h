@@ -82,44 +82,44 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool doesAreaTouchFaces(::BlockPos const& min, ::BlockPos const& max) const;
+    MCNAPI bool doesAreaTouchFaces(::BlockPos const& min, ::BlockPos const& max) const;
 
-    MCAPI ::SimpleBlockVolume::IntersectionResult intersects(::SimpleBlockVolume const& other) const;
+    MCNAPI ::SimpleBlockVolume::IntersectionResult intersects(::SimpleBlockVolume const& other) const;
 
-    MCAPI ::std::string toString() const;
+    MCNAPI ::std::string toString() const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockPos $getMin() const;
+    MCNAPI ::BlockPos $getMin() const;
 
-    MCAPI ::BlockPos $getMax() const;
+    MCNAPI ::BlockPos $getMax() const;
 
-    MCAPI ::BoundingBox $getBoundingBox() const;
+    MCNAPI ::BoundingBox $getBoundingBox() const;
 
-    MCAPI ::glm::ivec3 $getSpan() const;
+    MCNAPI ::glm::ivec3 $getSpan() const;
 
-    MCAPI int $getCapacity() const;
+    MCNAPI int $getCapacity() const;
 
-    MCAPI bool $isInside(::BlockPos const& pos) const;
+    MCNAPI bool $isInside(::BlockPos const& pos) const;
 
-    MCAPI void $translate(::BlockPos const& delta);
+    MCNAPI void $translate(::BlockPos const& delta);
 
-    MCAPI void $forEach(::std::function<bool(::BlockPos const&)> callback) const;
+    MCNAPI void $forEach(::std::function<bool(::BlockPos const&)> callback) const;
 
-    MCAPI ::std::set<::ChunkPos> $getChunks() const;
+    MCNAPI ::std::set<::ChunkPos> $getChunks() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

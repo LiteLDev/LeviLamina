@@ -9,9 +9,9 @@ class DyeColorUtil {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int getAuxValue(::ItemColor color);
+    MCNAPI static int getAuxValue(::ItemColor color);
 
-    MCAPI static ::ItemColor getItemColor(int auxValue);
+    MCNAPI static ::ItemColor getItemColor(int auxValue);
     // NOLINTEND
 
 public:

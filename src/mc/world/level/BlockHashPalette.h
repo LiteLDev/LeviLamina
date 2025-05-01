@@ -51,18 +51,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BlockPalette::PaletteType $getPaletteType();
+    MCNAPI ::BlockPalette::PaletteType $getPaletteType();
 
-    MCAPI void $appendBlock(::Block const& blockState);
+    MCNAPI void $appendBlock(::Block const& blockState);
 
-    MCAPI ::Block const& $getBlock(uint const& networkId) const;
+    MCNAPI ::Block const& $getBlock(uint const& networkId) const;
 
-    MCAPI void $assignBlockNetworkId(::Block const& block, uint64 networkId) const;
+    MCNAPI void $assignBlockNetworkId(::Block const& block, uint64 networkId) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

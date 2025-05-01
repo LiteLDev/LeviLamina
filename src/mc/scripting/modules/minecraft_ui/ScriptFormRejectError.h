@@ -25,27 +25,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptFormRejectError(::ScriptModuleMinecraftServerUI::ScriptFormRejectReason reason);
+    MCNAPI explicit ScriptFormRejectError(::ScriptModuleMinecraftServerUI::ScriptFormRejectReason reason);
 
-    MCAPI ~ScriptFormRejectError();
+    MCNAPI ~ScriptFormRejectError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraftServerUI::ScriptFormRejectError> bind();
+    MCNAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraftServerUI::ScriptFormRejectError> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptFormRejectReason reason);
+    MCNAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptFormRejectReason reason);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

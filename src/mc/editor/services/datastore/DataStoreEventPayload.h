@@ -39,30 +39,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DataStoreEventPayload(::Editor::Network::DataStoreEventPayload const&);
+    MCNAPI DataStoreEventPayload(::Editor::Network::DataStoreEventPayload const&);
 
-    MCAPI DataStoreEventPayload(
+    MCNAPI DataStoreEventPayload(
         ::HashedString const&                          dataTag,
         ::Editor::DataStore::EventType                 eventType,
         ::std::optional<::std::string>                 payload,
         ::Editor::DataStore::PayloadDescription const& desc
     );
 
-    MCAPI ::Editor::Network::DataStoreEventPayload& operator=(::Editor::Network::DataStoreEventPayload const&);
+    MCNAPI ::Editor::Network::DataStoreEventPayload& operator=(::Editor::Network::DataStoreEventPayload const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::Network::DataStoreEventPayload const&);
+    MCNAPI void* $ctor(::Editor::Network::DataStoreEventPayload const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::HashedString const&                          dataTag,
         ::Editor::DataStore::EventType                 eventType,
         ::std::optional<::std::string>                 payload,
@@ -73,13 +73,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -50,9 +50,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::EnchantingContainerManagerModel& _getEnchantingModel() const;
+    MCNAPI ::EnchantingContainerManagerModel& _getEnchantingModel() const;
 
-    MCAPI ::ItemStackNetResult _handleEnchant(::ItemStackRequestActionCraft<::RecipeNetId, 12> const& requestAction);
+    MCNAPI ::ItemStackNetResult _handleEnchant(::ItemStackRequestActionCraft<::RecipeNetId, 12> const& requestAction);
     // NOLINTEND
 
 public:
@@ -64,16 +64,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
+    MCNAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
 
-    MCAPI void $_postCraftRequest(bool const wasSuccess);
+    MCNAPI void $_postCraftRequest(bool const wasSuccess);
 
-    MCAPI void $endRequestBatch();
+    MCNAPI void $endRequestBatch();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

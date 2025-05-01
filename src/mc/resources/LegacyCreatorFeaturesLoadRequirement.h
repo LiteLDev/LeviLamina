@@ -14,6 +14,6 @@ class LegacyCreatorFeaturesLoadRequirement {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool satisfied(::IPackLoadContext const& context, ::JsonBetaState);
+    MCNAPI static bool satisfied(::IPackLoadContext const& context, ::JsonBetaState);
     // NOLINTEND
 };

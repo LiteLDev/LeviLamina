@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+
 #include "mc/deps/ecs/EntityIdTraits.h"
 
 template <>

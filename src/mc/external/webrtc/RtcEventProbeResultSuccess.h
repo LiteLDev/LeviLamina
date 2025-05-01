@@ -8,19 +8,19 @@ class RtcEventProbeResultSuccess {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RtcEventProbeResultSuccess(int, int);
+    MCNAPI RtcEventProbeResultSuccess(int, int);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int, int);
+    MCNAPI void* $ctor(int, int);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

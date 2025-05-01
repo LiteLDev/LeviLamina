@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-struct ActorDefinitionIdentifier;
 struct ShooterProjectileData;
 // clang-format on
 
@@ -32,18 +32,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _shootProjectile(::Actor& owner, ::ActorDefinitionIdentifier const& actorDef, int auxVal);
+    MCNAPI void _shootProjectile(::Actor& owner, ::ActorDefinitionIdentifier const& actorDef, int auxVal);
 
-    MCAPI void onShoot(::Actor& owner);
+    MCNAPI void onShoot(::Actor& owner);
 
-    MCAPI ::ShooterComponent& operator=(::ShooterComponent&&);
+    MCNAPI ::ShooterComponent& operator=(::ShooterComponent&&);
 
-    MCAPI ~ShooterComponent();
+    MCNAPI ~ShooterComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

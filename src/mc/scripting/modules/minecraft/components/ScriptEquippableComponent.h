@@ -22,7 +22,7 @@ class ScriptEquippableComponent : public ::ScriptModuleMinecraft::ScriptActorCom
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
+    // vIndex: 3
     virtual bool _isValid() const /*override*/;
 
     // vIndex: 0
@@ -32,15 +32,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
     getEquipment(::SharedTypes::Legacy::EquipmentSlot equipmentSlot);
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerSlot>>
     getEquipmentSlot(::SharedTypes::Legacy::EquipmentSlot equipmentSlot);
 
-    MCAPI ::Scripting::Result_deprecated<bool> setEquipment(
+    MCNAPI ::Scripting::Result_deprecated<bool> setEquipment(
         ::SharedTypes::Legacy::EquipmentSlot                             equipmentSlot,
         ::std::optional<::ScriptModuleMinecraft::ScriptItemStack> const& scriptItemStack
     );
@@ -49,7 +49,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptEquippableComponent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptEquippableComponent>
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
@@ -68,13 +68,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isValid() const;
+    MCNAPI bool $_isValid() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

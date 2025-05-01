@@ -107,7 +107,7 @@ public:
     virtual bool canFreeze() const /*override*/;
 
     // vIndex: 105
-    virtual bool canBeAffected(uint effectId) const /*override*/;
+    virtual bool canBeAffected(uint id) const /*override*/;
 
     // vIndex: 106
     virtual bool canBeAffectedByArrow(::MobEffectInstance const& effect) const /*override*/;
@@ -155,13 +155,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WitherBoss(
+    MCNAPI WitherBoss(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _destroyBlocks(
+    MCNAPI void _destroyBlocks(
         ::Level&                       level,
         ::AABB const&                  bb,
         ::BlockSource&                 region,
@@ -169,31 +169,31 @@ public:
         ::WitherBoss::WitherAttackType attackType
     );
 
-    MCAPI void _performRangedAttack(int headID, ::Actor& target);
+    MCNAPI void _performRangedAttack(int headID, ::Actor& target);
 
-    MCAPI void _performRangedAttack(int headID, ::Vec3 const& targetPos, bool dangerous);
+    MCNAPI void _performRangedAttack(int headID, ::Vec3 const& targetPos, bool dangerous);
 
-    MCAPI bool canShoot();
+    MCNAPI bool canShoot();
 
-    MCAPI bool getAerialAttack() const;
+    MCNAPI bool getAerialAttack() const;
 
-    MCAPI ::ActorUniqueID getAlternativeTarget(int headIndex);
+    MCNAPI ::ActorUniqueID getAlternativeTarget(int headIndex);
 
-    MCAPI ::Vec3 getHeadPos(int headID) const;
+    MCNAPI ::Vec3 getHeadPos(int headID) const;
 
-    MCAPI int getInvulnerableTicks() const;
+    MCNAPI int getInvulnerableTicks() const;
 
-    MCAPI bool hasAerialAttack() const;
+    MCNAPI bool hasAerialAttack() const;
 
-    MCAPI void postAiStep();
+    MCNAPI void postAiStep();
 
-    MCAPI ::WitherBossPreAIStepResult preAiStep();
+    MCNAPI ::WitherBossPreAIStepResult preAiStep();
 
-    MCAPI void setAerialAttack(bool aerialAttack);
+    MCNAPI void setAerialAttack(bool aerialAttack);
 
-    MCAPI void setAlternativeTarget(int headIndex, ::ActorUniqueID entityId);
+    MCNAPI void setAlternativeTarget(int headIndex, ::ActorUniqueID entityId);
 
-    MCAPI void setInvulnerableTicks(int invulnerableTicks);
+    MCNAPI void setInvulnerableTicks(int invulnerableTicks);
     // NOLINTEND
 
 public:
@@ -205,7 +205,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -221,46 +221,46 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
+    MCNAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCAPI void $aiStep();
+    MCNAPI void $aiStep();
 
-    MCAPI void $newServerAiStep();
+    MCNAPI void $newServerAiStep();
 
-    MCFOLD bool $canFreeze() const;
+    MCNAPI bool $canFreeze() const;
 
-    MCAPI bool $canBeAffected(uint effectId) const;
+    MCNAPI bool $canBeAffected(uint effectId) const;
 
-    MCAPI bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
+    MCNAPI bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
 
-    MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCNAPI void $hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCFOLD float $causeFallDamageToActor(float, float, ::ActorDamageSource);
+    MCNAPI float $causeFallDamageToActor(float, float, ::ActorDamageSource);
 
-    MCAPI int $getArmorValue() const;
+    MCNAPI int $getArmorValue() const;
 
-    MCAPI void $die(::ActorDamageSource const& source);
+    MCNAPI void $die(::ActorDamageSource const& source);
 
-    MCAPI void $remove();
+    MCNAPI void $remove();
 
-    MCFOLD bool $startRiding(::Actor& vehicle, bool forceRiding);
+    MCNAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
 
-    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCNAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI ::Vec3 $getFiringPos() const;
+    MCNAPI ::Vec3 $getFiringPos() const;
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCNAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

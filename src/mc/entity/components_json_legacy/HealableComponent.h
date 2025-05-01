@@ -19,16 +19,17 @@ class HealableComponent {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _useFeedItem(::Actor& owner, ::Player& player, ::FeedItem const& feedItem);
+    MCNAPI void _useFeedItem(::Actor& owner, ::Player& player, ::FeedItem const& feedItem);
 
-    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCNAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _applyEffects(::Actor& owner, ::std::vector<::FeedItem::Effect> const& effects);
+    MCNAPI static void _applyEffects(::Actor& owner, ::std::vector<::FeedItem::Effect> const& effects);
 
-    MCAPI static bool _canHeal(::Actor& owner, ::ItemStack const& item, ::HealableDefinition const* healableDefinition);
+    MCNAPI static bool
+    _canHeal(::Actor& owner, ::ItemStack const& item, ::HealableDefinition const* healableDefinition);
     // NOLINTEND
 };

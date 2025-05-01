@@ -34,7 +34,7 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 5
-    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream) /*override*/;
+    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0
     virtual ~CompressedBiomeDefinitionListPacket() /*override*/ = default;
@@ -43,13 +43,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CompressedBiomeDefinitionListPacket(::CompoundTag biomeData);
+    MCNAPI explicit CompressedBiomeDefinitionListPacket(::CompoundTag biomeData);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CompoundTag biomeData);
+    MCNAPI void* $ctor(::CompoundTag biomeData);
     // NOLINTEND
 
 public:
@@ -61,18 +61,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MinecraftPacketIds $getId() const;
+    MCNAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCAPI void $write(::BinaryStream& stream) const;
+    MCNAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& bitStream);
+    MCNAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -4,16 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/chunk/IRequestAction.h"
+#include "mc/world/level/levelgen/structure/StructureSettings.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class CompoundTag;
 class Dimension;
 class ServerLevel;
 class StructureAnimationData;
-class StructureSettings;
 // clang-format on
 
 class StructureAnimationAction : public ::IRequestAction {
@@ -46,12 +46,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureAnimationAction(
+    MCNAPI StructureAnimationAction(
         ::std::unique_ptr<::StructureAnimationData> structureAnimationData,
         ::DimensionType                             dimensionType
     );
 
-    MCAPI StructureAnimationAction(
+    MCNAPI StructureAnimationAction(
         ::StructureSettings const& structureSettings,
         ::DimensionType            dimensionType,
         ::BlockPos const&          loadPosition,
@@ -62,17 +62,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::StructureAnimationAction>
+    MCNAPI static ::std::unique_ptr<::StructureAnimationAction>
     load(::CompoundTag const& tag, ::std::string const& dimensionPrefix);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::unique_ptr<::StructureAnimationData> structureAnimationData, ::DimensionType dimensionType);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::StructureSettings const& structureSettings,
         ::DimensionType            dimensionType,
         ::BlockPos const&          loadPosition,
@@ -89,14 +89,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
+    MCNAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
 
-    MCAPI void $serialize(::CompoundTag& tag);
+    MCNAPI void $serialize(::CompoundTag& tag);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

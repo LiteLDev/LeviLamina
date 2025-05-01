@@ -16,7 +16,7 @@ class VanillaAncientCityJigsawStructureElements {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void initialize(
+    MCNAPI static void initialize(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager> manager,
         ::FeatureRegistry&                                featureRegistry,
         ::JigsawStructureRegistry&                        jigsawRegistry

@@ -8,7 +8,7 @@ class XXHashState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk353fd1;
+    ::ll::UntypedStorage<8, 8> mUnk4f43ec;
     // NOLINTEND
 
 public:

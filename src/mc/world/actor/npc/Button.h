@@ -20,23 +20,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Button();
+    MCNAPI Button();
 
-    MCAPI ::npc::Button& operator=(::std::string_view newName);
+    MCNAPI ::npc::Button& operator=(::std::string_view newName);
 
-    MCAPI ~Button();
+    MCNAPI ~Button();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

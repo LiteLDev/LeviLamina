@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/IRandom.h"
-#include "mc/platform/threading/ThreadLocalObject.h"
 
 namespace Core {
 
@@ -65,13 +64,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Random();
+    MCNAPI Random();
 
-    MCAPI Random(uint seed, bool onlyUsedDeterministically);
+    MCNAPI Random(uint seed, bool onlyUsedDeterministically);
 
-    MCAPI uint _genRandInt32();
+    MCNAPI uint _genRandInt32();
 
-    MCAPI float nextGaussian();
+    MCNAPI float nextGaussian();
     // NOLINTEND
 
 public:
@@ -79,49 +78,49 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::random_device& mRandomDevice();
 
-    MCAPI static ::Bedrock::Threading::ThreadLocalObject<::Core::Random>& mThreadLocalRandom();
+    MCAPI static ::Core::Random& mThreadLocalRandom();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(uint seed, bool onlyUsedDeterministically);
+    MCNAPI void* $ctor(uint seed, bool onlyUsedDeterministically);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $nextBoolean();
+    MCNAPI bool $nextBoolean();
 
-    MCAPI float $nextFloat();
+    MCNAPI float $nextFloat();
 
-    MCAPI double $nextDouble();
+    MCNAPI double $nextDouble();
 
-    MCAPI int $nextInt();
+    MCNAPI int $nextInt();
 
-    MCAPI int $nextInt(int n);
+    MCNAPI int $nextInt(int n);
 
-    MCAPI int64 $nextLong();
+    MCNAPI int64 $nextLong();
 
-    MCAPI void $consumeCount(uint count);
+    MCNAPI void $consumeCount(uint count);
 
-    MCAPI double $nextGaussianDouble();
+    MCNAPI double $nextGaussianDouble();
 
-    MCAPI ::std::unique_ptr<::IRandom> $fork();
+    MCNAPI ::std::unique_ptr<::IRandom> $fork();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

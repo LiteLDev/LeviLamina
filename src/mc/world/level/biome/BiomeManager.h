@@ -39,14 +39,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeManager(
+    MCNAPI BiomeManager(
         ::OwnerPtr<::BiomeRegistry>                biomes,
         ::BiomeComponentFactory::FactoryScope      factoryScope,
         bool                                       clientSideChunkGenerationEnabled,
         ::std::unique_ptr<::AutomaticFeatureRules> automaticFeatureRules
     );
 
-    MCAPI void initializeBiomeRegistryAndAutomaticFeatureRulesOnServer(
+    MCNAPI void initializeBiomeRegistryAndAutomaticFeatureRulesOnServer(
         ::Experiments const&        experiments,
         ::IWorldRegistriesProvider& worldRegistries,
         ::ResourcePackManager&      resourcePackManager,
@@ -55,13 +55,13 @@ public:
         ::BaseGameVersion const&    baseGameVersion
     );
 
-    MCAPI ~BiomeManager();
+    MCNAPI ~BiomeManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::OwnerPtr<::BiomeRegistry>                biomes,
         ::BiomeComponentFactory::FactoryScope      factoryScope,
         bool                                       clientSideChunkGenerationEnabled,
@@ -72,6 +72,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

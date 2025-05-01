@@ -94,20 +94,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ActorDefinition(::std::string const& id);
+    MCNAPI explicit ActorDefinition(::std::string const& id);
 
-    MCAPI ::ActorDefinitionParseStatus parse(
+    MCNAPI ::ActorDefinitionParseStatus parse(
         ::DeserializeDataParams      deserializeDataParams,
         ::ActorDefinitionDescriptor& desc,
         ::ActorFactory&              actorFactory,
         ::LogArea                    logArea
     );
 
-    MCAPI void parseAttributes(::DeserializeDataParams deserializeDataParams, ::ActorDefinitionDescriptor& desc);
+    MCNAPI void parseAttributes(::DeserializeDataParams deserializeDataParams, ::ActorDefinitionDescriptor& desc);
 
-    MCAPI void parseEntityDescription(::DeserializeDataParams deserializeDataParams);
+    MCNAPI void parseEntityDescription(::DeserializeDataParams deserializeDataParams);
 
-    MCAPI void parseEvents(
+    MCNAPI void parseEvents(
         ::Json::Value const&         root,
         ::MinEngineVersion const&    minEngineVersion,
         ::SemVersion const&          formatVersion,
@@ -115,18 +115,18 @@ public:
         ::JsonBetaState              useBetaFeatures
     );
 
-    MCAPI ~ActorDefinition();
+    MCNAPI ~ActorDefinition();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& id);
+    MCNAPI void* $ctor(::std::string const& id);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

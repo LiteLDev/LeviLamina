@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/ActorBlockBase.h"
+#include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
@@ -12,7 +13,6 @@ class AABB;
 class Actor;
 class Block;
 class BlockActor;
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
 class Experiments;

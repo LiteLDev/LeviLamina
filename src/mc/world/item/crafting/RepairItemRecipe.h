@@ -56,7 +56,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RepairItemRecipe(::std::string const& recipeId, ::mce::UUID const* uuid);
+    MCNAPI RepairItemRecipe(::std::string const& recipeId, ::mce::UUID const* uuid);
     // NOLINTEND
 
 public:
@@ -68,7 +68,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& recipeId, ::mce::UUID const* uuid);
+    MCNAPI void* $ctor(::std::string const& recipeId, ::mce::UUID const* uuid);
     // NOLINTEND
 
 public:
@@ -80,22 +80,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const;
+    MCNAPI ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const;
 
-    MCFOLD int $getCraftingSize() const;
+    MCNAPI int $getCraftingSize() const;
 
-    MCFOLD ::RecipeIngredient const& $getIngredient(int x, int y) const;
+    MCNAPI ::RecipeIngredient const& $getIngredient(int x, int y) const;
 
-    MCFOLD ::std::vector<::ItemInstance> const& $getResultItems() const;
+    MCNAPI ::std::vector<::ItemInstance> const& $getResultItems() const;
 
-    MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
+    MCNAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
 
-    MCFOLD int $size() const;
+    MCNAPI int $size() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

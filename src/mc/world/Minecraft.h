@@ -9,12 +9,12 @@
 #include "mc/deps/ecs/gamerefs_entity/IEntityRegistryOwner.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/network/ClientOrServerNetworkSystemRef.h"
 #include "mc/network/connection/DisconnectFailReason.h"
 
 // auto generated forward declare list
 // clang-format off
 class AllowList;
-class ClientOrServerNetworkSystemRef;
 class EntityContext;
 class EntityRegistry;
 class EntitySystems;
@@ -39,6 +39,7 @@ class ResourcePackManager;
 class Scheduler;
 class ServerMetrics;
 class ServerNetworkHandler;
+class ServerNetworkSystem;
 class StructureManager;
 class TextFilteringProcessor;
 class Timer;
@@ -148,6 +149,8 @@ public:
     MCAPI ::Level* getLevel() const;
 
     MCAPI ::Bedrock::NonOwnerPointer<::ServerNetworkHandler> getServerNetworkHandler();
+
+    MCAPI ::ServerNetworkSystem& getServerNetworkSystem();
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::StructureManager> getStructureManager();
 

@@ -14,7 +14,7 @@ struct EndPortalBlockFlag;
 namespace InsideEndPortalBlockSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void tickInsideEndPortalBlock(
+MCNAPI void tickInsideEndPortalBlock(
     ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag> const& endPortalInsideComponent,
     ::ActorOwnerComponent&                                             actorOwnerComponent
 );

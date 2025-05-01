@@ -17,12 +17,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~RemovePassengersComponent();
+    MCNAPI ~RemovePassengersComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

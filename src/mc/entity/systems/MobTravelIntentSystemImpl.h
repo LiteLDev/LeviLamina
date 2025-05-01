@@ -13,7 +13,7 @@ struct MobTravelComponent;
 namespace MobTravelIntentSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void updatedMoveVelocity(
+MCNAPI void updatedMoveVelocity(
     ::StrictEntityContext const&,
     ::LocalMoveVelocityComponent& localMoveVelocityComponent,
     ::MobRotationComponent&       mobRotationComponent,

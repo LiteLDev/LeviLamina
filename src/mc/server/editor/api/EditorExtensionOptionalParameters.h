@@ -25,30 +25,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EditorExtensionOptionalParameters(::Editor::API::EditorExtensionOptionalParameters&&);
+    MCNAPI EditorExtensionOptionalParameters(::Editor::API::EditorExtensionOptionalParameters&&);
 
-    MCFOLD ::Editor::API::EditorExtensionOptionalParameters&
+    MCNAPI ::Editor::API::EditorExtensionOptionalParameters&
     operator=(::Editor::API::EditorExtensionOptionalParameters&&);
 
-    MCAPI ~EditorExtensionOptionalParameters();
+    MCNAPI ~EditorExtensionOptionalParameters();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::Editor::API::EditorExtensionOptionalParameters> bindInterface();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::API::EditorExtensionOptionalParameters>
+    bindInterface();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::API::EditorExtensionOptionalParameters&&);
+    MCNAPI void* $ctor(::Editor::API::EditorExtensionOptionalParameters&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

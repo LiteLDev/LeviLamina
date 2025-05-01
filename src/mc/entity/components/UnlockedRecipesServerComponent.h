@@ -43,13 +43,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~UnlockingInstruction();
+        MCNAPI ~UnlockingInstruction();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -72,15 +72,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UnlockedRecipesServerComponent(::UnlockedRecipesServerComponent const&);
+    MCNAPI UnlockedRecipesServerComponent(::UnlockedRecipesServerComponent const&);
 
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void addUnlockingInstruction(::UnlockedRecipesServerComponent::UnlockingInstruction instruction);
+    MCNAPI void addUnlockingInstruction(::UnlockedRecipesServerComponent::UnlockingInstruction instruction);
 
-    MCAPI ::UnlockedRecipesServerComponent& operator=(::UnlockedRecipesServerComponent&&);
+    MCNAPI ::UnlockedRecipesServerComponent& operator=(::UnlockedRecipesServerComponent&&);
 
-    MCAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const&, ::DataLoadHelper&);
+    MCNAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const&, ::DataLoadHelper&);
     // NOLINTEND
 
 public:
@@ -96,6 +96,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UnlockedRecipesServerComponent const&);
+    MCNAPI void* $ctor(::UnlockedRecipesServerComponent const&);
     // NOLINTEND
 };

@@ -9,7 +9,7 @@ class Easing {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string const& getStringFromEasingType(::EasingType easingType);
+    MCNAPI static ::std::string const& getStringFromEasingType(::EasingType easingType);
     // NOLINTEND
 
 public:

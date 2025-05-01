@@ -39,24 +39,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI KeyBindingRegisterPayload(::Editor::Network::KeyBindingRegisterPayload const&);
+    MCNAPI KeyBindingRegisterPayload(::Editor::Network::KeyBindingRegisterPayload const&);
 
-    MCAPI KeyBindingRegisterPayload(
+    MCNAPI KeyBindingRegisterPayload(
         ::HashedString const&               contextId,
         ::HashedString const&               bindingId,
         ::Editor::Input::KeyBinding const&  binding,
         ::Editor::Input::BindingInfo const& info
     );
 
-    MCAPI ::Editor::Network::KeyBindingRegisterPayload& operator=(::Editor::Network::KeyBindingRegisterPayload const&);
+    MCNAPI ::Editor::Network::KeyBindingRegisterPayload& operator=(::Editor::Network::KeyBindingRegisterPayload const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::Network::KeyBindingRegisterPayload const&);
+    MCNAPI void* $ctor(::Editor::Network::KeyBindingRegisterPayload const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::HashedString const&               contextId,
         ::HashedString const&               bindingId,
         ::Editor::Input::KeyBinding const&  binding,
@@ -67,13 +67,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

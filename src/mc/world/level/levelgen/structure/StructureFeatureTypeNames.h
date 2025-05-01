@@ -5,7 +5,7 @@
 namespace StructureFeatureTypeNames {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::map<::std::string, ::std::string> const& getFeatureNameAliasesMap();
+MCNAPI ::std::map<::std::string, ::std::string> const& getFeatureNameAliasesMap();
 // NOLINTEND
 
 } // namespace StructureFeatureTypeNames

@@ -45,17 +45,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canChat(::PlayerCapabilities::IPlayerData const& player) const;
+    MCNAPI bool $canChat(::PlayerCapabilities::IPlayerData const& player) const;
 
-    MCAPI bool $canTell(::PlayerCapabilities::IPlayerData const& player) const;
+    MCNAPI bool $canTell(::PlayerCapabilities::IPlayerData const& player) const;
 
-    MCAPI bool $canOpenChat(::PlayerCapabilities::IPlayerData const& player) const;
+    MCNAPI bool $canOpenChat(::PlayerCapabilities::IPlayerData const& player) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

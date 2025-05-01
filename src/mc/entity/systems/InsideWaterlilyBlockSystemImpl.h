@@ -14,7 +14,7 @@ struct WaterlilyBlockFlag;
 namespace InsideWaterlilyBlockSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void tickDestroyWaterlily(
+MCNAPI void tickDestroyWaterlily(
     ::InsideBlockWithPosComponent<::WaterlilyBlockFlag> const& insideWaterlilyBlockComponent,
     ::ActorOwnerComponent&                                     actorOwnerComponent
 );

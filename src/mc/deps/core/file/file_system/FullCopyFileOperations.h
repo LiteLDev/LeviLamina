@@ -15,21 +15,21 @@ class FullCopyFileOperations {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Core::Result copyFile(
+    MCNAPI static ::Core::Result copyFile(
         ::Core::FileSystemImpl* pSourceTransaction,
         ::Core::PathView        sourceFilePath,
         ::Core::FileSystemImpl* pTargetTransaction,
         ::Core::PathView        targetFilePath
     );
 
-    MCAPI static ::Core::Result moveDirectory(
+    MCNAPI static ::Core::Result moveDirectory(
         ::Core::FileSystemImpl* pSourceTransaction,
         ::Core::PathView        sourceDirectoryPath,
         ::Core::FileSystemImpl* pTargetTransaction,
         ::Core::PathView        targetDirectoryPath
     );
 
-    MCAPI static ::Core::Result moveFile(
+    MCNAPI static ::Core::Result moveFile(
         ::Core::FileSystemImpl* pSourceTransaction,
         ::Core::PathView        sourceFilePath,
         ::Core::FileSystemImpl* pTargetTransaction,

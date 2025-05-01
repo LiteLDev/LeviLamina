@@ -13,11 +13,11 @@ struct TMMBRHelp {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static uint64 CalcMinBitrateBps(::std::vector<::webrtc::rtcp::TmmbItem> const&);
+    MCNAPI static uint64 CalcMinBitrateBps(::std::vector<::webrtc::rtcp::TmmbItem> const&);
 
-    MCAPI static ::std::vector<::webrtc::rtcp::TmmbItem> FindBoundingSet(::std::vector<::webrtc::rtcp::TmmbItem>);
+    MCNAPI static ::std::vector<::webrtc::rtcp::TmmbItem> FindBoundingSet(::std::vector<::webrtc::rtcp::TmmbItem>);
 
-    MCAPI static bool IsOwner(::std::vector<::webrtc::rtcp::TmmbItem> const&, uint);
+    MCNAPI static bool IsOwner(::std::vector<::webrtc::rtcp::TmmbItem> const&, uint);
     // NOLINTEND
 };
 

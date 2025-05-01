@@ -37,26 +37,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::AliasInfoDescription const* getAliasInfo(::std::string const& name) const;
+    MCNAPI ::AliasInfoDescription const* getAliasInfo(::std::string const& name) const;
 
-    MCAPI void parse(::Json::Value& root, bool isVanilla);
+    MCNAPI void parse(::Json::Value& root, bool isVanilla);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI char const* $getJsonName() const;
+    MCNAPI char const* $getJsonName() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

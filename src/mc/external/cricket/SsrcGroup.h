@@ -19,31 +19,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SsrcGroup(::cricket::SsrcGroup&&);
+    MCNAPI SsrcGroup(::cricket::SsrcGroup&&);
 
-    MCAPI SsrcGroup(::cricket::SsrcGroup const&);
+    MCNAPI SsrcGroup(::cricket::SsrcGroup const&);
 
-    MCAPI SsrcGroup(::std::string const&, ::std::vector<uint> const&);
+    MCNAPI SsrcGroup(::std::string const&, ::std::vector<uint> const&);
 
-    MCAPI ::cricket::SsrcGroup& operator=(::cricket::SsrcGroup const&);
+    MCNAPI ::cricket::SsrcGroup& operator=(::cricket::SsrcGroup const&);
 
-    MCAPI ~SsrcGroup();
+    MCNAPI ~SsrcGroup();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::SsrcGroup&&);
+    MCNAPI void* $ctor(::cricket::SsrcGroup&&);
 
-    MCAPI void* $ctor(::cricket::SsrcGroup const&);
+    MCNAPI void* $ctor(::cricket::SsrcGroup const&);
 
-    MCAPI void* $ctor(::std::string const&, ::std::vector<uint> const&);
+    MCNAPI void* $ctor(::std::string const&, ::std::vector<uint> const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

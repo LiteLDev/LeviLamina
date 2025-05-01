@@ -52,7 +52,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Impl(
+        MCNAPI Impl(
             ::OptionID           id,
             ::OptionOwnerType    ownerType,
             ::OptionResetFlags   resetFlags,
@@ -61,13 +61,13 @@ public:
             ::OptionType         optionType
         );
 
-        MCAPI ~Impl();
+        MCNAPI ~Impl();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::OptionID           id,
             ::OptionOwnerType    ownerType,
             ::OptionResetFlags   resetFlags,
@@ -80,7 +80,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -118,7 +118,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Option(
+    MCNAPI Option(
         ::OptionID           id,
         ::OptionOwnerType    ownerType,
         ::OptionResetFlags   resetFlags,
@@ -127,29 +127,29 @@ public:
         ::OptionType         optionType
     );
 
-    MCAPI void _updatePropertyVector(
+    MCNAPI void _updatePropertyVector(
         ::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector,
         ::std::string const&                                      value
     );
 
-    MCAPI bool getBool() const;
+    MCNAPI bool getBool() const;
 
-    MCAPI ::Bedrock::PubSub::Subscription registerLock(::std::function<void(bool&)> isModifiableCondition);
+    MCNAPI ::Bedrock::PubSub::Subscription registerLock(::std::function<void(bool&)> isModifiableCondition);
 
-    MCAPI ::Bedrock::PubSub::Subscription registerObserver(::std::function<void(::Option const&)> onValueChangedCallback
-    );
+    MCNAPI ::Bedrock::PubSub::Subscription
+    registerObserver(::std::function<void(::Option const&)> onValueChangedCallback);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool read(::std::string const& valueString, bool& output);
+    MCNAPI static bool read(::std::string const& valueString, bool& output);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::OptionID           id,
         ::OptionOwnerType    ownerType,
         ::OptionResetFlags   resetFlags,
@@ -168,14 +168,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::std::map<::std::string, ::std::string>& propertyMap);
+    MCNAPI void $load(::std::map<::std::string, ::std::string>& propertyMap);
 
-    MCAPI void $load(::Json::Value const& valueJson);
+    MCNAPI void $load(::Json::Value const& valueJson);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

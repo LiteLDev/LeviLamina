@@ -37,30 +37,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ContentTierManager(::std::function<bool()> isHardwareRayTracingCompatible);
+    MCNAPI explicit ContentTierManager(::std::function<bool()> isHardwareRayTracingCompatible);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::function<bool()> isHardwareRayTracingCompatible);
+    MCNAPI void* $ctor(::std::function<bool()> isHardwareRayTracingCompatible);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ContentTierInfo $getContentTierInfo() const;
+    MCNAPI ::ContentTierInfo $getContentTierInfo() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct ContainerValidationSlotData;
-struct SlotData;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/containers/SlotData.h"
+#include "mc/world/inventory/simulation/ContainerValidationSlotData.h"
 
 struct ContainerSplitControl {
 public:

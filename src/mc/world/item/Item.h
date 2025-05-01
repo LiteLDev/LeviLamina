@@ -4,10 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 #include "mc/deps/shared_types/legacy/item/UseAnimation.h"
 #include "mc/gameplayhandlers/CoordinatorResult.h"
+#include "mc/resources/BaseGameVersion.h"
 #include "mc/resources/JsonBetaState.h"
 #include "mc/world/interactions/mining/MineBlockItemEffectType.h"
 #include "mc/world/item/CreativeItemCategory.h"
@@ -23,7 +25,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BaseGameVersion;
 class Block;
 class BlockLegacy;
 class BlockPos;
@@ -32,7 +33,6 @@ class CameraItemComponentLegacy;
 class CompoundTag;
 class Container;
 class FoodItemComponentLegacy;
-class HashedString;
 class IDataInput;
 class IDataOutput;
 class IFoodItemComponent;
@@ -551,6 +551,8 @@ public:
 
     MCAPI bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
+    MCAPI void clearTags();
+
     MCAPI ::std::vector<::CommandName> getCommandNames() const;
 
     MCAPI ::std::string getSerializedName() const;
@@ -633,7 +635,7 @@ public:
 
     MCAPI ::Item& $setDescriptionId(::std::string const& description);
 
-    MCAPI ::std::string const& $getDescriptionId() const;
+    MCFOLD ::std::string const& $getDescriptionId() const;
 
     MCAPI int $getMaxUseDuration(::ItemStack const*) const;
 

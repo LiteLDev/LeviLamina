@@ -12,7 +12,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string toString() const;
+    MCNAPI ::std::string toString() const;
     // NOLINTEND
 
 public:

@@ -62,21 +62,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setCursorState(::Editor::Cursor::CursorState&& state);
+    MCNAPI void $setCursorState(::Editor::Cursor::CursorState&& state);
 
-    MCAPI void $setCursorState(::Editor::Cursor::CursorState const& state);
+    MCNAPI void $setCursorState(::Editor::Cursor::CursorState const& state);
 
-    MCAPI void $setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& props);
+    MCNAPI void $setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& props);
 
-    MCAPI void $setAttachmentProperties(::Editor::Cursor::AttachmentProperties const& props);
+    MCNAPI void $setAttachmentProperties(::Editor::Cursor::AttachmentProperties const& props);
 
-    MCAPI ::Scripting::Result_deprecated<::BlockPos> $moveCursor(::glm::ivec3 const& offset);
+    MCNAPI ::Scripting::Result_deprecated<::BlockPos> $moveCursor(::glm::ivec3 const& offset);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

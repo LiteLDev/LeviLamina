@@ -50,15 +50,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnSuccess(::webrtc::SessionDescriptionInterface* pSessionDescription);
+    MCNAPI void $OnSuccess(::webrtc::SessionDescriptionInterface* pSessionDescription);
 
-    MCAPI void $OnFailure(::webrtc::RTCError error);
+    MCNAPI void $OnFailure(::webrtc::RTCError error);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

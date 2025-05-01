@@ -20,13 +20,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI SpatialLayer(::webrtc::VideoLayersAllocation::SpatialLayer const&);
+        MCNAPI SpatialLayer(::webrtc::VideoLayersAllocation::SpatialLayer const&);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::webrtc::VideoLayersAllocation::SpatialLayer const&);
+        MCNAPI void* $ctor(::webrtc::VideoLayersAllocation::SpatialLayer const&);
         // NOLINTEND
     };
 
@@ -37,25 +37,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VideoLayersAllocation(::webrtc::VideoLayersAllocation&&);
+    MCNAPI VideoLayersAllocation(::webrtc::VideoLayersAllocation&&);
 
-    MCAPI VideoLayersAllocation(::webrtc::VideoLayersAllocation const&);
+    MCNAPI VideoLayersAllocation(::webrtc::VideoLayersAllocation const&);
 
-    MCAPI ~VideoLayersAllocation();
+    MCNAPI ~VideoLayersAllocation();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::VideoLayersAllocation&&);
+    MCNAPI void* $ctor(::webrtc::VideoLayersAllocation&&);
 
-    MCAPI void* $ctor(::webrtc::VideoLayersAllocation const&);
+    MCNAPI void* $ctor(::webrtc::VideoLayersAllocation const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

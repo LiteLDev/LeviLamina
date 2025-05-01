@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/sem_ver/SemVersionBase.h"
+#include "mc/deps/core/string/StaticOptimizedString.h"
 
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
-namespace Bedrock { class StaticOptimizedString; }
 namespace Json { class Value; }
 // clang-format on
 

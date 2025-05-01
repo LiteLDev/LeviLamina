@@ -9,6 +9,7 @@
 #include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/interfaces/IScreenController.h"
 #include "mc/deps/input/enums/ButtonState.h"
+#include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,6 +20,7 @@ struct ActorUniqueID;
 struct FocusMoveScreenEventData;
 struct HoloInputModeChangeScreenEventData;
 struct InputModeChangeScreenEventData;
+struct ItemRendererData;
 struct PointerHeldScreenEventData;
 struct RawInputScreenEventData;
 struct ScreenEvent;
@@ -27,6 +29,7 @@ struct TextEditScreenEventData;
 struct TextEditSelectedStateChangeEventData;
 struct ToggleChangeEventData;
 namespace Json { class Value; }
+namespace mce { class Color; }
 // clang-format on
 
 class ScreenController : public ::IScreenController {
@@ -58,27 +61,27 @@ public:
     ::ll::UntypedStorage<1, 1>    mUnkd9ae2b;
     ::ll::UntypedStorage<1, 1>    mUnk658e75;
     ::ll::UntypedStorage<1, 1>    mUnka0b766;
-    ::ll::UntypedStorage<8, 1536> mUnkf888ac;
+    ::ll::UntypedStorage<8, 1408> mUnkf888ac;
     ::ll::UntypedStorage<1, 1>    mUnkdcae0f;
-    ::ll::UntypedStorage<8, 64>   mUnk369414;
-    ::ll::UntypedStorage<8, 64>   mUnkfeae63;
-    ::ll::UntypedStorage<8, 64>   mUnk9a63b2;
-    ::ll::UntypedStorage<8, 24>   mUnk89e797;
-    ::ll::UntypedStorage<8, 24>   mUnkb05447;
-    ::ll::UntypedStorage<8, 24>   mUnkfa00b6;
-    ::ll::UntypedStorage<8, 24>   mUnk56cafa;
-    ::ll::UntypedStorage<8, 64>   mUnk58e9be;
-    ::ll::UntypedStorage<8, 64>   mUnkd0fe6c;
-    ::ll::UntypedStorage<8, 64>   mUnk207b71;
+    ::ll::UntypedStorage<8, 64>   mUnke5c710;
+    ::ll::UntypedStorage<8, 64>   mUnka9059e;
+    ::ll::UntypedStorage<8, 64>   mUnk8a2aa4;
+    ::ll::UntypedStorage<8, 24>   mUnkef27f7;
+    ::ll::UntypedStorage<8, 24>   mUnkdd0f55;
+    ::ll::UntypedStorage<8, 24>   mUnk6a6193;
+    ::ll::UntypedStorage<8, 24>   mUnk1c1018;
+    ::ll::UntypedStorage<8, 64>   mUnk60893a;
+    ::ll::UntypedStorage<8, 64>   mUnk3c1132;
+    ::ll::UntypedStorage<8, 64>   mUnk20b072;
     ::ll::UntypedStorage<8, 24>   mUnkc3d6bf;
-    ::ll::UntypedStorage<8, 64>   mUnkfe031a;
-    ::ll::UntypedStorage<8, 64>   mUnkf04dff;
-    ::ll::UntypedStorage<8, 64>   mUnk1fdf38;
-    ::ll::UntypedStorage<8, 64>   mUnk7cc892;
-    ::ll::UntypedStorage<8, 64>   mUnka281ef;
-    ::ll::UntypedStorage<8, 64>   mUnke65773;
-    ::ll::UntypedStorage<8, 64>   mUnk67e6f4;
-    ::ll::UntypedStorage<8, 64>   mUnk15987c;
+    ::ll::UntypedStorage<8, 64>   mUnkee4a31;
+    ::ll::UntypedStorage<8, 64>   mUnkaa9757;
+    ::ll::UntypedStorage<8, 64>   mUnk955ba0;
+    ::ll::UntypedStorage<8, 64>   mUnk9c1f6f;
+    ::ll::UntypedStorage<8, 64>   mUnk38743d;
+    ::ll::UntypedStorage<8, 64>   mUnka545bb;
+    ::ll::UntypedStorage<8, 64>   mUnkcd76db;
+    ::ll::UntypedStorage<8, 64>   mUnk1669d5;
     ::ll::UntypedStorage<8, 8>    mUnk458aec;
     // NOLINTEND
 

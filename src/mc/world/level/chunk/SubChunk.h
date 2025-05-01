@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/chunk/DirtyTicksCounter.h"
 #include "mc/world/level/chunk/SubChunkStorage.h"
 #include "mc/world/level/chunk/sub_chunk_storage_unit/PruneType.h"
 
@@ -18,7 +19,6 @@ class SpinLockImpl;
 class SubChunkBrightnessStorage;
 class SubChunkPos;
 struct DeserializationChanges;
-struct DirtyTicksCounter;
 // clang-format on
 
 struct SubChunk {
@@ -72,68 +72,68 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     SubChunk(::Block const* initBlock, bool maxSkyLight, bool fullyLit, ::SpinLockImpl& spinLock, schar absoluteIndex);
 
-    MCAPI void _createBlockLightStorage();
+    MCNAPI void _createBlockLightStorage();
 
-    MCAPI void _createSkyLightStorage();
+    MCNAPI void _createSkyLightStorage();
 
-    MCAPI void _resetLight(bool maxSkyLight, bool maxLight);
+    MCNAPI void _resetLight(bool maxSkyLight, bool maxLight);
 
-    MCAPI void _setBlock(uchar layer, ushort index, ::Block const& block);
+    MCNAPI void _setBlock(uchar layer, ushort index, ::Block const& block);
 
-    MCAPI void deserialize(
+    MCNAPI void deserialize(
         ::IDataInput&                              stream,
         ::BlockPalette const&                      palette,
         ::SubChunkPos const&                       subChunkPos,
         ::std::optional<::DeserializationChanges*> deserializationChanges
     );
 
-    MCAPI void fetchBlocks(
+    MCNAPI void fetchBlocks(
         ::BlockPos const& subChunkOrigin,
         ::BlockPos const& volumeOrigin,
         short             dimensionMinHeight,
         ::BlockVolume&    volume
     ) const;
 
-    MCAPI bool isUniform(::Block const& block) const;
+    MCNAPI bool isUniform(::Block const& block) const;
 
-    MCAPI ::SubChunk& operator=(::SubChunk&& rhs);
+    MCNAPI ::SubChunk& operator=(::SubChunk&& rhs);
 
-    MCAPI void prune(::SubChunkStorageUnit::PruneType pruneType);
+    MCNAPI void prune(::SubChunkStorageUnit::PruneType pruneType);
 
-    MCAPI ::std::string recalculateHashAndSerialize(bool network);
+    MCNAPI ::std::string recalculateHashAndSerialize(bool network);
 
-    MCAPI void reset(::Block const* resetBlock, bool maxSkyLight, bool fullyLit);
+    MCNAPI void reset(::Block const* resetBlock, bool maxSkyLight, bool fullyLit);
 
-    MCAPI void serialize(::IDataOutput& stream, bool network) const;
+    MCNAPI void serialize(::IDataOutput& stream, bool network) const;
 
-    MCAPI void setBlocksToUniform(::Block const& initBlock, bool maxSkyLight, bool fullyLit);
+    MCNAPI void setBlocksToUniform(::Block const& initBlock, bool maxSkyLight, bool fullyLit);
 
-    MCAPI void setFromBlockVolume(::BlockVolume const& box, short height);
+    MCNAPI void setFromBlockVolume(::BlockVolume const& box, short height);
 
-    MCAPI void setSkyLight(ushort index, uchar lightValue);
+    MCNAPI void setSkyLight(ushort index, uchar lightValue);
 
-    MCAPI ~SubChunk();
+    MCNAPI ~SubChunk();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void flushGarbageCollectors();
+    MCNAPI static void flushGarbageCollectors();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::Block const* initBlock, bool maxSkyLight, bool fullyLit, ::SpinLockImpl& spinLock, schar absoluteIndex);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

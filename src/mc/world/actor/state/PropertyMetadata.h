@@ -33,12 +33,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~PropertyMetadata();
+    MCNAPI ~PropertyMetadata();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

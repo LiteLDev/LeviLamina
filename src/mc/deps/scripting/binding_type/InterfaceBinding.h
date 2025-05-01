@@ -33,11 +33,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InterfaceBinding();
+    MCNAPI InterfaceBinding();
 
-    MCAPI InterfaceBinding(::Scripting::InterfaceBinding&&);
+    MCNAPI InterfaceBinding(::Scripting::InterfaceBinding&&);
 
-    MCAPI InterfaceBinding(
+    MCNAPI InterfaceBinding(
         ::std::string                               name_,
         ::entt::meta_type                           type_,
         ::entt::meta_type                           baseType_,
@@ -46,17 +46,17 @@ public:
         ::Scripting::RuntimeConditions              missingRuntimeConditions_
     );
 
-    MCAPI ~InterfaceBinding();
+    MCNAPI ~InterfaceBinding();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::Scripting::InterfaceBinding&&);
+    MCNAPI void* $ctor(::Scripting::InterfaceBinding&&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string                               name_,
         ::entt::meta_type                           type_,
         ::entt::meta_type                           baseType_,
@@ -69,7 +69,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

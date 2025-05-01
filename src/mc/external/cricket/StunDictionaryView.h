@@ -19,35 +19,35 @@ class StunDictionaryView {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::RTCErrorOr<::std::pair<::std::unique_ptr<::cricket::StunUInt64Attribute>, ::std::vector<ushort>>>
+    MCNAPI ::webrtc::RTCErrorOr<::std::pair<::std::unique_ptr<::cricket::StunUInt64Attribute>, ::std::vector<ushort>>>
     ApplyDelta(::cricket::StunByteStringAttribute const&);
 
-    MCAPI uint64 GetLength(int) const;
+    MCNAPI uint64 GetLength(int) const;
 
-    MCAPI ::cricket::StunAttribute const* GetOrNull(int, ::std::optional<::cricket::StunAttributeValueType>) const;
+    MCNAPI ::cricket::StunAttribute const* GetOrNull(int, ::std::optional<::cricket::StunAttributeValueType>) const;
 
-    MCAPI StunDictionaryView();
+    MCNAPI StunDictionaryView();
 
-    MCAPI ~StunDictionaryView();
+    MCNAPI ~StunDictionaryView();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::RTCErrorOr<::std::pair<uint64, ::std::deque<::std::unique_ptr<::cricket::StunAttribute>>>>
+    MCNAPI static ::webrtc::RTCErrorOr<::std::pair<uint64, ::std::deque<::std::unique_ptr<::cricket::StunAttribute>>>>
     ParseDelta(::cricket::StunByteStringAttribute const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -3,12 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/actor/ActorType.h"
-
-// auto generated forward declare list
-// clang-format off
-class HashedString;
-// clang-format on
 
 struct ActorDefinitionIdentifier {
 public:
@@ -24,8 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDefinitionIdentifier();
-
     MCAPI ActorDefinitionIdentifier(::ActorDefinitionIdentifier&&);
 
     MCAPI ActorDefinitionIdentifier(::ActorDefinitionIdentifier const&);
@@ -33,6 +27,8 @@ public:
     MCAPI explicit ActorDefinitionIdentifier(::std::string const& fullName);
 
     MCAPI explicit ActorDefinitionIdentifier(char const* fullName);
+
+    MCAPI explicit ActorDefinitionIdentifier(::std::string_view fullName);
 
     MCAPI explicit ActorDefinitionIdentifier(::ActorType type);
 
@@ -61,8 +57,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::ActorDefinitionIdentifier&&);
 
     MCAPI void* $ctor(::ActorDefinitionIdentifier const&);
@@ -70,6 +64,8 @@ public:
     MCAPI void* $ctor(::std::string const& fullName);
 
     MCAPI void* $ctor(char const* fullName);
+
+    MCAPI void* $ctor(::std::string_view fullName);
 
     MCAPI void* $ctor(::ActorType type);
 

@@ -14,9 +14,9 @@ class SocketLayer {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void GetMyAdapters(::RakNet::NetworkAdapter* const adapters);
+    MCNAPI static void GetMyAdapters(::RakNet::NetworkAdapter* const adapters);
 
-    MCAPI static ::RakNet::RakString GetSubNetForSocketAndIp(::RakNet::RakString inIpString);
+    MCNAPI static ::RakNet::RakString GetSubNetForSocketAndIp(::RakNet::RakString inIpString);
     // NOLINTEND
 
 public:

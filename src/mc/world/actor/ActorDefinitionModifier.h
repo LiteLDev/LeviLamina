@@ -19,24 +19,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDefinitionModifier(::ActorDefinitionModifier const&);
+    MCNAPI ActorDefinitionModifier(::ActorDefinitionModifier const&);
 
-    MCAPI ::ActorDefinitionModifier& operator=(::ActorDefinitionModifier const&);
+    MCNAPI ::ActorDefinitionModifier& operator=(::ActorDefinitionModifier const&);
 
-    MCAPI ::ActorDefinitionModifier& operator=(::ActorDefinitionModifier&&);
+    MCNAPI ::ActorDefinitionModifier& operator=(::ActorDefinitionModifier&&);
 
-    MCAPI ~ActorDefinitionModifier();
+    MCNAPI ~ActorDefinitionModifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionModifier const&);
+    MCNAPI void* $ctor(::ActorDefinitionModifier const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

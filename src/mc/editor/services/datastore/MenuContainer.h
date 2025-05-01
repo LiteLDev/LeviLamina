@@ -41,19 +41,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD bool _createMenuItem(::std::string const& id, ::Json::Value const& payload);
+    MCNAPI bool _createMenuItem(::std::string const& id, ::Json::Value const& payload);
 
-    MCAPI void _onMenuItemCreated(::std::string const& id);
+    MCNAPI void _onMenuItemCreated(::std::string const& id);
 
-    MCAPI void _onMenuItemDestroyed(::std::string const& id);
+    MCNAPI void _onMenuItemDestroyed(::std::string const& id);
 
-    MCAPI void _onMenuItemUpdated(::std::string const& id);
+    MCNAPI void _onMenuItemUpdated(::std::string const& id);
 
-    MCAPI bool _removeMenuItem(::std::string const& id);
+    MCNAPI bool _removeMenuItem(::std::string const& id);
 
-    MCFOLD ::Json::Value getDataPayload(::Editor::DataStore::PayloadDescription const& desc) const;
+    MCNAPI ::Json::Value getDataPayload(::Editor::DataStore::PayloadDescription const& desc) const;
 
-    MCAPI ::Scripting::Result<void> handleDataEvent(
+    MCNAPI ::Scripting::Result<void> handleDataEvent(
         ::Editor::DataStore::EventType                 eventType,
         ::Json::Value const&                           payload,
         ::Editor::DataStore::PayloadDescription const& desc
@@ -75,13 +75,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $clear();
+    MCNAPI void $clear();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

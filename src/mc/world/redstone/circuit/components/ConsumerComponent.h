@@ -60,41 +60,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ConsumerComponent();
+    MCNAPI ConsumerComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
+    MCNAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+    MCNAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
-    MCAPI bool
+    MCNAPI bool
     $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
-    MCFOLD bool $canConsumerPower() const;
+    MCNAPI bool $canConsumerPower() const;
 
-    MCAPI bool $isSecondaryPowered() const;
+    MCNAPI bool $isSecondaryPowered() const;
 
-    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
+    MCNAPI ::CircuitComponentType $getCircuitComponentType() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

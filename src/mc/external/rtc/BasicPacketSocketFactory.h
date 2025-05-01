@@ -57,15 +57,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BasicPacketSocketFactory(::rtc::SocketFactory*);
+    MCNAPI explicit BasicPacketSocketFactory(::rtc::SocketFactory*);
 
-    MCAPI int BindSocket(::rtc::Socket*, ::rtc::SocketAddress const&, ushort, ushort);
+    MCNAPI int BindSocket(::rtc::Socket*, ::rtc::SocketAddress const&, ushort, ushort);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::SocketFactory*);
+    MCNAPI void* $ctor(::rtc::SocketFactory*);
     // NOLINTEND
 
 public:
@@ -83,7 +83,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

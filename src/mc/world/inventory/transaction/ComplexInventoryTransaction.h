@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/platform/Result.h"
 #include "mc/util/BidirectionalUnorderedMap.h"
+#include "mc/world/inventory/transaction/InventoryTransaction.h"
 #include "mc/world/inventory/transaction/InventoryTransactionError.h"
 
 // auto generated forward declare list
@@ -12,7 +13,6 @@
 class BinaryStream;
 class BlockPalette;
 class EntityContext;
-class InventoryTransaction;
 class Player;
 class ReadOnlyBinaryStream;
 // clang-format on
@@ -60,9 +60,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _setDepenetrationOverride(::EntityContext& entity);
+    MCNAPI static void _setDepenetrationOverride(::EntityContext& entity);
 
-    MCAPI static ::std::unique_ptr<::ComplexInventoryTransaction>
+    MCNAPI static ::std::unique_ptr<::ComplexInventoryTransaction>
     fromType(::ComplexInventoryTransaction::Type type, ::InventoryTransaction const& transaction);
     // NOLINTEND
 
@@ -76,26 +76,26 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream&);
+    MCNAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream&);
 
-    MCFOLD void $write(::BinaryStream& stream) const;
+    MCNAPI void $write(::BinaryStream& stream) const;
 
-    MCFOLD void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
+    MCNAPI void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
-    MCAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
+    MCNAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
 
-    MCFOLD void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
+    MCNAPI void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

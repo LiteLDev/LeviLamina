@@ -5,10 +5,10 @@
 // auto generated inclusion list
 #include "mc/world/Direction.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class DoorBlock;
 class Mob;
 class Path;
@@ -55,7 +55,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::DoorBlock const* _findBlockingDoorAtPos(
+    MCNAPI static ::DoorBlock const* _findBlockingDoorAtPos(
         ::BlockPos const&  bpos,
         ::Mob const&       mob,
         ::Path*            path,
@@ -73,20 +73,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -74,13 +74,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~LoadActorResult();
+        MCNAPI ~LoadActorResult();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -113,16 +113,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDefinitionGroup(
+    MCNAPI ActorDefinitionGroup(
         ::Level&               level,
         ::ResourcePackManager& resourcePackManager,
         ::IMinecraftEventing&  eventing,
         ::Experiments const&   experiments
     );
 
-    MCAPI void _getResources(::Level& level);
+    MCNAPI void _getResources(::Level& level);
 
-    MCAPI ::ActorDefinitionGroup::LoadActorResult _loadActorDefinition(
+    MCNAPI ::ActorDefinitionGroup::LoadActorResult _loadActorDefinition(
         ::Level&                             level,
         ::IPackLoadContext&                  packLoadContext,
         ::std::string const&                 relativeResourceFilepath,
@@ -131,7 +131,7 @@ public:
         ::LogArea                            logArea
     );
 
-    MCAPI bool _loadDefinitionFromJSON(
+    MCNAPI bool _loadDefinitionFromJSON(
         ::SemVersion const&  formatVersion,
         ::IPackLoadContext&  packLoadContext,
         ::std::string const& relativeResourceFilepath,
@@ -142,51 +142,51 @@ public:
         ::LogArea            logArea
     );
 
-    MCAPI ::ActorDefinitionParseStatus
+    MCNAPI ::ActorDefinitionParseStatus
     _loadTemplates(::Level& level, ::std::string const& base, ::DeserializeDataParams deserializeDataParams);
 
-    MCAPI void _removeRef(::ActorDefinitionPtr& ptr);
+    MCNAPI void _removeRef(::ActorDefinitionPtr& ptr);
 
-    MCAPI void _setupCommonResourceDefinitionMap(::ActorDefinition& def, ::Level& level);
+    MCNAPI void _setupCommonResourceDefinitionMap(::ActorDefinition& def, ::Level& level);
 
-    MCAPI void _setupPropertyGroups(::Level& level, ::ActorDefinition const& def);
+    MCNAPI void _setupPropertyGroups(::Level& level, ::ActorDefinition const& def);
 
-    MCAPI ::std::vector<::std::string> buildActorEventList() const;
+    MCNAPI ::std::vector<::std::string> buildActorEventList() const;
 
-    MCAPI ::ActorDefinitionPtr tryGetDefinitionGroup(::std::string const& base, ::std::string const& definitionId);
+    MCNAPI ::ActorDefinitionPtr tryGetDefinitionGroup(::std::string const& base, ::std::string const& definitionId);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void forEachComponentOf(
+    MCNAPI static void forEachComponentOf(
         ::Json::Value&                                               entityValue,
         ::std::string const&                                         componentName,
         ::std::function<void(::Json::Value&, ::Json::Value&)> const& callback
     );
 
-    MCAPI static void loadActorDefinitionFormatVersion(::Json::Value const& root, ::SemVersion& formatVersion);
+    MCNAPI static void loadActorDefinitionFormatVersion(::Json::Value const& root, ::SemVersion& formatVersion);
 
-    MCAPI static bool loadActorDefinitionIdentifier(
+    MCNAPI static bool loadActorDefinitionIdentifier(
         ::Json::Value const& root,
         ::SemVersion const&  formatVersion,
         ::std::string&       identifier
     );
 
-    MCAPI static bool loadActorDefinitionRuntimeIdentifier(
+    MCNAPI static bool loadActorDefinitionRuntimeIdentifier(
         ::Json::Value const& root,
         ::SemVersion const&  formatVersion,
         ::std::string&       runtimeIdentifier
     );
 
-    MCAPI static bool
+    MCNAPI static bool
     tryReadEntityResourceFile(::PackInstance& packInstance, ::Core::Path const& resource, ::Json::Value& outputRoot);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Level&               level,
         ::ResourcePackManager& resourcePackManager,
         ::IMinecraftEventing&  eventing,
@@ -197,12 +197,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

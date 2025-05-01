@@ -13,21 +13,21 @@ struct PacketQueue {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Clear();
+    MCNAPI void Clear();
 
-    MCAPI bool Empty() const;
+    MCNAPI bool Empty() const;
 
-    MCAPI ::std::unique_ptr<::webrtc::DataBuffer> PopFront();
+    MCNAPI ::std::unique_ptr<::webrtc::DataBuffer> PopFront();
 
-    MCAPI void PushBack(::std::unique_ptr<::webrtc::DataBuffer>);
+    MCNAPI void PushBack(::std::unique_ptr<::webrtc::DataBuffer>);
 
-    MCAPI ~PacketQueue();
+    MCNAPI ~PacketQueue();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

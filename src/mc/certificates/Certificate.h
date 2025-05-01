@@ -3,10 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/certificates/UnverifiedCertificate.h"
 
+// auto generated inclusion list
+#include "mc/certificates/UnverifiedCertificate.h"
+
 // auto generated forward declare list
 // clang-format off
 class PrivateKeyManager;
-class UnverifiedCertificate;
 class WebToken;
 namespace Json { class Value; }
 // clang-format on
@@ -28,25 +30,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Certificate(::Certificate const& other);
+    MCNAPI Certificate(::Certificate const& other);
 
-    MCAPI int64 getExpirationDate() const;
+    MCNAPI int64 getExpirationDate() const;
 
-    MCAPI ::std::string getIdentityPublicKey() const;
+    MCNAPI ::std::string getIdentityPublicKey() const;
 
-    MCAPI int64 getNotBeforeDate() const;
+    MCNAPI int64 getNotBeforeDate() const;
 
-    MCAPI bool isCertificateAuthority() const;
+    MCNAPI bool isCertificateAuthority() const;
 
-    MCAPI bool validate(int64 currentTime, bool isSelfSigned, bool checkExpired);
+    MCNAPI bool validate(int64 currentTime, bool isSelfSigned, bool checkExpired);
 
-    MCAPI ~Certificate();
+    MCNAPI ~Certificate();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::WebToken> createWebToken(
+    MCNAPI static ::std::unique_ptr<::WebToken> createWebToken(
         ::PrivateKeyManager& signer,
         int64                notBeforeDate,
         int64                expirationDate,
@@ -55,7 +57,7 @@ public:
         ::Json::Value const* isCertificateAuthority
     );
 
-    MCAPI static ::std::unique_ptr<::Certificate> createWrappedCertificate(
+    MCNAPI static ::std::unique_ptr<::Certificate> createWrappedCertificate(
         ::PrivateKeyManager&             signer,
         int64                            notBeforeDate,
         int64                            expirationDate,
@@ -69,12 +71,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Certificate const& other);
+    MCNAPI void* $ctor(::Certificate const& other);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

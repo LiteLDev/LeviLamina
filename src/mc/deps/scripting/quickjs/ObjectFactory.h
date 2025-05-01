@@ -51,16 +51,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::StrongTypedObjectHandle<::Scripting::PromiseType> $makePromise();
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::Scripting::PromiseType> $makePromise();
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::Scripting::DataBufferHandleType>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::Scripting::DataBufferHandleType>
     $makeDataBuffer(uchar const* data, uint64 size, ::entt::meta_type const& dataType);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

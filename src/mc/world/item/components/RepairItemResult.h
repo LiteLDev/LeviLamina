@@ -18,22 +18,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RepairItemResult();
+    MCNAPI RepairItemResult();
 
-    MCAPI ::RepairItemResult& operator=(::RepairItemResult&&);
+    MCNAPI ::RepairItemResult& operator=(::RepairItemResult&&);
 
-    MCAPI ~RepairItemResult();
+    MCNAPI ~RepairItemResult();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -10,7 +10,7 @@ class EntityContext;
 namespace PlayerMoveInput {
 // functions
 // NOLINTBEGIN
-MCAPI void initializePlayer(::EntityContext& entity);
+MCNAPI void initializePlayer(::EntityContext& entity);
 // NOLINTEND
 
 } // namespace PlayerMoveInput

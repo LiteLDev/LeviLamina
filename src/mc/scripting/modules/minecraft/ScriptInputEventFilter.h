@@ -26,22 +26,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilter&
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilter const&);
 
-    MCAPI ~ScriptInputEventFilter();
+    MCNAPI ~ScriptInputEventFilter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

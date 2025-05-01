@@ -4,6 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/platform/threading/Mutex.h"
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/level/SubChunkPos.h"
 
 // auto generated forward declare list
 // clang-format off

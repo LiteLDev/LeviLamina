@@ -34,21 +34,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::DisplayNameItemComponent& operator=(::DisplayNameItemComponent&&);
+    MCNAPI ::DisplayNameItemComponent& operator=(::DisplayNameItemComponent&&);
 
-    MCAPI ::DisplayNameItemComponent& operator=(::DisplayNameItemComponent const&);
+    MCNAPI ::DisplayNameItemComponent& operator=(::DisplayNameItemComponent const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
@@ -60,6 +60,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

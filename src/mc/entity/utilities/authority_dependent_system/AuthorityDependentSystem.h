@@ -13,16 +13,16 @@ struct TickingSystemWithInfo;
 namespace AuthorityDependentSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createAntiCheatSystem(::TickingSystemWithInfo system);
+MCNAPI ::TickingSystemWithInfo createAntiCheatSystem(::TickingSystemWithInfo system);
 
-MCAPI ::TickingSystemWithInfo
+MCNAPI ::TickingSystemWithInfo
 createAuthorityDependentSystem(::TickingSystemWithInfo system, ::AuthorityDependentSystem::MovementFilter requiredMode);
 
-MCAPI ::TickingSystemWithInfo createClientAuthoritativeSystem(::TickingSystemWithInfo system);
+MCNAPI ::TickingSystemWithInfo createClientAuthoritativeSystem(::TickingSystemWithInfo system);
 
-MCAPI ::TickingSystemWithInfo createNotAntiCheatSystem(::TickingSystemWithInfo system);
+MCNAPI ::TickingSystemWithInfo createNotAntiCheatSystem(::TickingSystemWithInfo system);
 
-MCAPI ::TickingSystemWithInfo createNotClientAuthoritativeSystem(::TickingSystemWithInfo system);
+MCNAPI ::TickingSystemWithInfo createNotClientAuthoritativeSystem(::TickingSystemWithInfo system);
 // NOLINTEND
 
 } // namespace AuthorityDependentSystem

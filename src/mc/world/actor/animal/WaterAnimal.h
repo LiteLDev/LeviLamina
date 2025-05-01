@@ -5,18 +5,19 @@
 // auto generated inclusion list
 #include "mc/world/actor/Mob.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorDefinitionGroup;
+class EntityContext;
+struct ActorDefinitionIdentifier;
+// clang-format on
+
 class WaterAnimal : public ::Mob {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 147
     virtual bool checkSpawnRules(bool) /*override*/;
-
-    // vIndex: 177
-    virtual float getFlopVerticalVelocityFactor() const;
-
-    // vIndex: 178
-    virtual float getFlopHorizontalVelocityFactor() const;
 
     // vIndex: 8
     virtual ~WaterAnimal() /*override*/;
@@ -25,28 +26,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void preAiStep();
+    MCNAPI WaterAnimal(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+
+    MCNAPI void preAiStep();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $checkSpawnRules(bool);
-
-    MCFOLD float $getFlopVerticalVelocityFactor() const;
-
-    MCAPI float $getFlopHorizontalVelocityFactor() const;
+    MCNAPI bool $checkSpawnRules(bool);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

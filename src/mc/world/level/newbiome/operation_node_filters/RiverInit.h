@@ -29,13 +29,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RiverInit(::BiomeRegistry const& biomeRegistry);
+    MCNAPI explicit RiverInit(::BiomeRegistry const& biomeRegistry);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BiomeRegistry const& biomeRegistry);
+    MCNAPI void* $ctor(::BiomeRegistry const& biomeRegistry);
     // NOLINTEND
 };
 

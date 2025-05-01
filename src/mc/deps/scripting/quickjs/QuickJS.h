@@ -31,7 +31,7 @@ namespace Scripting::Reflection { class IFunction; }
 namespace Scripting::QuickJS {
 // functions
 // NOLINTBEGIN
-MCAPI ::JSValue ConvertJSValueArgsToNativeAnys(
+MCNAPI ::JSValue ConvertJSValueArgsToNativeAnys(
     ::JSContext*                        ctx,
     ::Scripting::Reflection::IFunction* funcPtr,
     uint                                jsArgCount,
@@ -39,30 +39,30 @@ MCAPI ::JSValue ConvertJSValueArgsToNativeAnys(
     ::std::array<::entt::meta_any, 16>& outArgsAsAnys
 );
 
-MCAPI ::JSValue CopyJSValueArrayToNativeSequenceContainer(
+MCNAPI ::JSValue CopyJSValueArrayToNativeSequenceContainer(
     ::JSContext*                     ctx,
     ::JSValue                        jsArray,
     ::entt::meta_sequence_container& view,
     ::entt::meta_type const&         type
 );
 
-MCAPI ::JSValue CopyJSValueObjectToNativeAssociativeContainer(
+MCNAPI ::JSValue CopyJSValueObjectToNativeAssociativeContainer(
     ::JSContext*                        ctx,
     ::JSValue                           jsValue,
     ::entt::meta_associative_container& view,
     ::entt::meta_type const&            type
 );
 
-MCAPI ::Scripting::QuickJS::ArrayProxy CreateArrayProxy(::JSContext* ctx);
+MCNAPI ::Scripting::QuickJS::ArrayProxy CreateArrayProxy(::JSContext* ctx);
 
-MCAPI ::Scripting::FunctionBinding CreateIteratorNextFunctionBinding(::Scripting::IteratorBinding& iteratorBinding);
+MCNAPI ::Scripting::FunctionBinding CreateIteratorNextFunctionBinding(::Scripting::IteratorBinding& iteratorBinding);
 
-MCAPI ::std::unique_ptr<::Scripting::ClassBinding>
+MCNAPI ::std::unique_ptr<::Scripting::ClassBinding>
 CreateIteratorReturnClassBinding(::Scripting::IteratorBinding& iteratorBinding);
 
-MCAPI ::entt::meta_any ExceptionWriter(::JSContext* ctx);
+MCNAPI ::entt::meta_any ExceptionWriter(::JSContext* ctx);
 
-MCAPI ::JSValue GenericFreeFunctionCaller(
+MCNAPI ::JSValue GenericFreeFunctionCaller(
     ::JSContext* ctx,
     ::JSValue    thisVal,
     int          argc,
@@ -71,7 +71,7 @@ MCAPI ::JSValue GenericFreeFunctionCaller(
     ::JSValue*   funcDataVal
 );
 
-MCAPI ::JSValue GenericObjectFunctionCaller(
+MCNAPI ::JSValue GenericObjectFunctionCaller(
     ::JSContext* ctx,
     ::JSValue    thisVal,
     int          argc,
@@ -80,10 +80,10 @@ MCAPI ::JSValue GenericObjectFunctionCaller(
     ::JSValue*   funcDataVal
 );
 
-MCAPI ::JSValue
+MCNAPI ::JSValue
 GenericReflectionCtorCaller(::JSContext* ctx, ::JSValue newTarget, int argc, ::JSValue* argv, int jsClassIdMagic);
 
-MCAPI ::JSValue GenericReflectionPropertyGetter(
+MCNAPI ::JSValue GenericReflectionPropertyGetter(
     ::JSContext* ctx,
     ::JSValue    thisVal,
     int          argc,
@@ -92,7 +92,7 @@ MCAPI ::JSValue GenericReflectionPropertyGetter(
     ::JSValue*   funcDataVal
 );
 
-MCAPI ::JSValue GenericReflectionPropertySetter(
+MCNAPI ::JSValue GenericReflectionPropertySetter(
     ::JSContext* ctx,
     ::JSValue    thisVal,
     int          argc,
@@ -101,20 +101,20 @@ MCAPI ::JSValue GenericReflectionPropertySetter(
     ::JSValue*   funcDataVal
 );
 
-MCAPI ::std::string GetClassNameFromJSValue(::JSContext* ctx, ::JSValue target);
+MCNAPI ::std::string GetClassNameFromJSValue(::JSContext* ctx, ::JSValue target);
 
-MCAPI uint GetJSArrayLength(::JSContext* ctx, ::JSValue jsArray);
+MCNAPI uint GetJSArrayLength(::JSContext* ctx, ::JSValue jsArray);
 
-MCAPI ::Scripting::ObjectHandle GetNativeObjectHandleFromJSValue(::JSValue jsValue);
+MCNAPI ::Scripting::ObjectHandle GetNativeObjectHandleFromJSValue(::JSValue jsValue);
 
-MCAPI ::Scripting::QuickJS::PropertyGetSet const&
+MCNAPI ::Scripting::QuickJS::PropertyGetSet const&
 GetPropertyGetSetFromJSFuncData(::JSContext* ctx, ::JSValue* funcDataVal);
 
-MCAPI ::Scripting::QuickJS::RuntimeUserData* GetRuntimeUserDataFromContext(::JSContext* ctx);
+MCNAPI ::Scripting::QuickJS::RuntimeUserData* GetRuntimeUserDataFromContext(::JSContext* ctx);
 
-MCAPI bool HasNativeObjectHandle(::JSValue jsValue);
+MCNAPI bool HasNativeObjectHandle(::JSValue jsValue);
 
-MCAPI void InitializeBakedProperties(
+MCNAPI void InitializeBakedProperties(
     ::JSContext*                                 ctx,
     ::JSValue                                    obj,
     ::Scripting::ObjectHandle                    objectHandle,
@@ -122,20 +122,20 @@ MCAPI void InitializeBakedProperties(
     ::Scripting::QuickJS::RegisteredClass const* registeredClass
 );
 
-MCAPI ::std::string JSAtomCStringToString(::JSContext* ctx, uint jsAtom);
+MCNAPI ::std::string JSAtomCStringToString(::JSContext* ctx, uint jsAtom);
 
-MCAPI ::entt::meta_any JSErrorToNativeAny(::JSContext* ctx, ::JSValue jsValue);
+MCNAPI ::entt::meta_any JSErrorToNativeAny(::JSContext* ctx, ::JSValue jsValue);
 
-MCAPI ::std::string JSValueCStringToString(::JSContext* ctx, ::JSValue jsValue);
+MCNAPI ::std::string JSValueCStringToString(::JSContext* ctx, ::JSValue jsValue);
 
-MCAPI bool JSValueIsInfinite(::JSValue const& value);
+MCNAPI bool JSValueIsInfinite(::JSValue const& value);
 
-MCAPI bool JSValueIsNan(::JSValue const& value);
+MCNAPI bool JSValueIsNan(::JSValue const& value);
 
-MCAPI ::std::variant<::entt::meta_any, ::JSValue>
+MCNAPI ::std::variant<::entt::meta_any, ::JSValue>
 JSValueToNativeAny(::JSContext* ctx, ::JSValue jsValue, ::entt::meta_type const& type);
 
-MCAPI ::std::variant<::entt::meta_any, ::JSValue> JSValueToNativeInterface(
+MCNAPI ::std::variant<::entt::meta_any, ::JSValue> JSValueToNativeInterface(
     ::JSContext*                           ctx,
     ::JSValue                              jsValue,
     ::Scripting::QuickJS::ContextUserData* contextData,
@@ -143,7 +143,7 @@ MCAPI ::std::variant<::entt::meta_any, ::JSValue> JSValueToNativeInterface(
     ::Scripting::InterfaceBinding const&   interfaceBinding
 );
 
-MCAPI ::JSValue NativeAnyToJSProtoClass(
+MCNAPI ::JSValue NativeAnyToJSProtoClass(
     ::JSContext*                                 ctx,
     ::JSValue                                    newTarget,
     ::entt::meta_any&                            any,
@@ -151,20 +151,21 @@ MCAPI ::JSValue NativeAnyToJSProtoClass(
     ::Scripting::QuickJS::ContextUserData&       contextData
 );
 
-MCAPI ::JSValue NativeAnyToJSValue(::JSContext* ctx, ::entt::meta_any& any, bool addRef, bool allowCopy);
+MCNAPI ::JSValue NativeAnyToJSValue(::JSContext* ctx, ::entt::meta_any& any, bool addRef, bool allowCopy);
 
-MCAPI ::JSValue NativeEnumToJSValue(::JSContext* ctx, ::entt::meta_any& any, bool addRef, bool allowCopy);
+MCNAPI ::JSValue NativeEnumToJSValue(::JSContext* ctx, ::entt::meta_any& any, bool addRef, bool allowCopy);
 
-MCAPI ::JSValue NativeErrorToJSValue(::JSContext* ctx, ::entt::meta_any& any);
+MCNAPI ::JSValue NativeErrorToJSValue(::JSContext* ctx, ::entt::meta_any& any);
 
-MCAPI ::JSValue NativeErrorToJSValueInternal(
-    ::JSContext*                   ctx,
-    ::entt::meta_any&              any,
-    uint                           jsClassId,
-    ::Scripting::LifetimeRegistry& registry
+MCNAPI ::JSValue NativeErrorToJSValueInternal(
+    ::JSContext*                           ctx,
+    ::Scripting::QuickJS::ContextUserData& any,
+    ::entt::meta_any&                      jsClassId,
+    uint                                   registry,
+    ::Scripting::LifetimeRegistry&         contextData
 );
 
-MCAPI ::JSValue NativeInterfaceToJSValue(
+MCNAPI ::JSValue NativeInterfaceToJSValue(
     ::JSContext*                                     ctx,
     ::entt::meta_any&                                any,
     ::Scripting::QuickJS::RegisteredInterface const& registeredInterface,
@@ -172,7 +173,7 @@ MCAPI ::JSValue NativeInterfaceToJSValue(
     bool                                             allowCopy
 );
 
-MCAPI ::JSValue NativeObjectHandleToJSProtoClass(
+MCNAPI ::JSValue NativeObjectHandleToJSProtoClass(
     ::JSContext*                                 ctx,
     ::JSValue                                    newTarget,
     ::Scripting::ObjectHandle                    objectHandle,
@@ -180,7 +181,7 @@ MCAPI ::JSValue NativeObjectHandleToJSProtoClass(
     ::Scripting::LifetimeRegistry&               registry
 );
 
-MCAPI ::JSValue NativeObjectHandleToJSValue(
+MCNAPI ::JSValue NativeObjectHandleToJSValue(
     ::JSContext*                                ctx,
     ::Scripting::ObjectHandle                   objectHandle,
     bool                                        addRef,
@@ -188,31 +189,33 @@ MCAPI ::JSValue NativeObjectHandleToJSValue(
     ::Scripting::QuickJS::NativeObjectOwnership allowCopy
 );
 
-MCAPI ::JSValue NativeRegisteredEnumToJSValue(
+MCNAPI ::JSValue NativeRegisteredEnumToJSValue(
     ::JSContext*                                ctx,
     ::entt::meta_any&                           any,
     ::Scripting::QuickJS::RegisteredEnum const& registeredEnum
 );
 
-MCAPI ::JSValue PrintError(::JSContext* ctx, ::JSValue, int argc, ::JSValue* argv);
+MCNAPI ::JSValue PrintError(::JSContext* ctx, ::JSValue, int argc, ::JSValue* argv);
 
-MCAPI ::JSValue PrintInfo(::JSContext* ctx, ::JSValue, int argc, ::JSValue* argv);
+MCNAPI ::JSValue PrintInfo(::JSContext* ctx, ::JSValue, int argc, ::JSValue* argv);
 
-MCAPI ::JSValue PrintWarn(::JSContext* ctx, ::JSValue, int argc, ::JSValue* argv);
+MCNAPI ::JSValue PrintWarn(::JSContext* ctx, ::JSValue, int argc, ::JSValue* argv);
 
-MCAPI ::JSValue ThrowEngineErrorToJS(::JSContext* ctx, ::std::string const& msg);
+MCNAPI ::JSValue ThrowEngineErrorToJS(::JSContext* ctx, ::std::string const& msg);
 
-MCAPI ::JSTypedArrayEnum ToJSTypedArrayEnum(::entt::meta_type const& type);
+MCNAPI ::JSValue ThrowJSTypeErrorWithContext(::JSContext*, ::Scripting::QuickJS::ContextUserData&, char const*, ...);
 
-MCAPI ::entt::meta_any WriteError(::JSContext* ctx, ::JSValue exceptionVal);
+MCNAPI ::JSTypedArrayEnum ToJSTypedArrayEnum(::entt::meta_type const& type);
 
-MCAPI ::std::string WriteObject(::JSContext* ctx, ::JSValue val);
+MCNAPI ::entt::meta_any WriteError(::JSContext* ctx, ::JSValue exceptionVal);
 
-MCAPI double anyToDouble(::entt::meta_any const& any);
+MCNAPI ::std::string WriteObject(::JSContext* ctx, ::JSValue val);
 
-MCAPI ::std::string anyToString(::entt::meta_any const& any);
+MCNAPI double anyToDouble(::entt::meta_any const& any);
 
-MCAPI ::Scripting::StrongObjectHandle getHandleFromObjectFactory(
+MCNAPI ::std::string anyToString(::entt::meta_any const& any);
+
+MCNAPI ::Scripting::StrongObjectHandle getHandleFromObjectFactory(
     ::JSContext*                           ctx,
     ::Scripting::QuickJS::ContextUserData& contextData,
     ::Scripting::ObjectFactory const&      objectFactory

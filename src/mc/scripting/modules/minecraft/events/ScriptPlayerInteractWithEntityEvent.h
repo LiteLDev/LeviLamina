@@ -29,22 +29,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerInteractWithEntityEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityEvent const&);
+    MCNAPI ScriptPlayerInteractWithEntityEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityEvent const&);
 
-    MCAPI ScriptPlayerInteractWithEntityEvent(
+    MCNAPI ScriptPlayerInteractWithEntityEvent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>  target
     );
 
-    MCAPI ~ScriptPlayerInteractWithEntityEvent();
+    MCNAPI ~ScriptPlayerInteractWithEntityEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityEvent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>  target
     );
@@ -53,7 +53,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

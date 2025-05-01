@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/entity/components/AnimationEventState.h"
 #include "mc/entity/components/AnimationEventType.h"
-
-// auto generated forward declare list
-// clang-format off
-class WeakEntityRef;
-// clang-format on
 
 struct ActorAnimationChangedEvent {
 public:

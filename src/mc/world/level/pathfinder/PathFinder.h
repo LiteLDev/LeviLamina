@@ -3,8 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/CachedChunkBlockSource.h"
 #include "mc/world/level/block/BlockProperty.h"
 #include "mc/world/level/pathfinder/ActorPathingData.h"
+#include "mc/world/level/pathfinder/BinaryHeap.h"
 #include "mc/world/level/pathfinder/CanClimbIntoNode.h"
 #include "mc/world/level/pathfinder/CanJumpIntoNode.h"
 #include "mc/world/level/pathfinder/NodeType.h"
@@ -14,12 +16,10 @@
 // clang-format off
 class AABB;
 class Actor;
-class BinaryHeap;
 class Block;
 class BlockPos;
 class BlockSource;
 class BreakBlocksComponent;
-class CachedChunkBlockSource;
 class IPathBlockSource;
 class NavigationComponent;
 class Path;
@@ -66,9 +66,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PathFinder(::BlockSource& region, ::NavigationComponent const& navigation);
+    MCNAPI PathFinder(::BlockSource& region, ::NavigationComponent const& navigation);
 
-    MCAPI bool _checkBlockAndNeighborsProperty(
+    MCNAPI bool _checkBlockAndNeighborsProperty(
         ::ActorPathingData const&                                data,
         ::BlockPos const&                                        pos,
         ::Block const&                                           block,
@@ -78,7 +78,7 @@ public:
         ::std::function<bool(::Block const&, ::BlockPos const&)> extraCondition
     );
 
-    MCAPI bool _checkForDamagingBlock(
+    MCNAPI bool _checkForDamagingBlock(
         ::ActorPathingData const&     data,
         ::BlockPos const&             pos,
         ::Block const&                block,
@@ -86,17 +86,17 @@ public:
         ::BreakBlocksComponent const* breakBlocksComponent
     );
 
-    MCAPI ::NodeType _classifyDoorNode(
+    MCNAPI ::NodeType _classifyDoorNode(
         ::ActorPathingData const& data,
         ::Block const&            testBlock,
         ::BlockPos const&         testPos,
         ::BlockPos const&         lastPathPos
     );
 
-    MCAPI ::NodeType
+    MCNAPI ::NodeType
     _classifyNode(::ActorPathingData const& data, ::BlockPos const& fromPos, ::BlockPos const& testPos);
 
-    MCAPI ::NodeType _classifyNode(
+    MCNAPI ::NodeType _classifyNode(
         ::ActorPathingData const& data,
         ::BlockPos const&         lastPathPos,
         ::Block const&            testBlock,
@@ -105,13 +105,13 @@ public:
         ::CanClimbIntoNode        climbIntoNode
     );
 
-    MCAPI bool
+    MCNAPI bool
     _findNearestPathableNeighbor(::BlockPos& outPos, ::ActorPathingData const& data, ::BlockPos const& testPos);
 
-    MCAPI ::std::unique_ptr<::Path>
+    MCNAPI ::std::unique_ptr<::Path>
     _findPath(::ActorPathingData const& actorData, float xt, float yt, float zt, float maxDist);
 
-    MCAPI ::std::unique_ptr<::Path> _findPath(
+    MCNAPI ::std::unique_ptr<::Path> _findPath(
         ::ActorPathingData const& data,
         ::PathfinderNode*         from,
         ::PathfinderNode*         to,
@@ -119,20 +119,20 @@ public:
         float                     maxDist
     );
 
-    MCAPI float _getHeightAboveBlock(::BlockPos const& blockPos, float mobHeight) const;
+    MCNAPI float _getHeightAboveBlock(::BlockPos const& blockPos, float mobHeight) const;
 
-    MCAPI float _getHeightBelowBlock(::BlockPos const& blockPos, float mobHeight) const;
+    MCNAPI float _getHeightBelowBlock(::BlockPos const& blockPos, float mobHeight) const;
 
-    MCAPI ::std::optional<::BlockPos> _getHighestReachablePosByJumping(
+    MCNAPI ::std::optional<::BlockPos> _getHighestReachablePosByJumping(
         ::BlockPos const& originalTargetPos,
         float             maxReachableHeight,
         ::BlockPos const& actorSize
     ) const;
 
-    MCAPI ::ActorPathingData::MinMaxHeightCacheEntry
+    MCNAPI ::ActorPathingData::MinMaxHeightCacheEntry
     _getMinAndMaxHeightAroundBlock(::ActorPathingData const& data, ::BlockPos const& blockPos, float mobHeight) const;
 
-    MCAPI int _getNeighbors(
+    MCNAPI int _getNeighbors(
         ::ActorPathingData const& data,
         ::PathfinderNode&         pos,
         ::PathfinderNode const&   size,
@@ -141,9 +141,9 @@ public:
         ::std::bitset<18> const&  validPositions
     );
 
-    MCAPI ::PathfinderNode* _getNode(::BlockPos const& pos, ::NodeType nodeType);
+    MCNAPI ::PathfinderNode* _getNode(::BlockPos const& pos, ::NodeType nodeType);
 
-    MCAPI ::PathfinderNode* _getNode(
+    MCNAPI ::PathfinderNode* _getNode(
         ::ActorPathingData const& data,
         ::BlockPos const&         fromPos,
         ::BlockPos const&         blockPos,
@@ -152,15 +152,15 @@ public:
         ::CanClimbIntoNode        climbIntoNode
     );
 
-    MCAPI ::std::optional<::NodeType> _getPartialBlockNodeType(
+    MCNAPI ::std::optional<::NodeType> _getPartialBlockNodeType(
         ::BlockPos const&         currentBlockPos,
         ::BlockPos const&         lastBlockPos,
         ::ActorPathingData const& data
     );
 
-    MCAPI float _getPathfindingMalus(::ActorPathingData const& data, ::NodeType nodeType, ::BlockPos const& blockPos);
+    MCNAPI float _getPathfindingMalus(::ActorPathingData const& data, ::NodeType nodeType, ::BlockPos const& blockPos);
 
-    MCAPI ::PathfinderNode* _getUnderneathSupportedNode(
+    MCNAPI ::PathfinderNode* _getUnderneathSupportedNode(
         ::PathfinderNode*         node,
         ::ActorPathingData const& data,
         ::BlockPos const&         fromPos,
@@ -168,30 +168,30 @@ public:
         ::CanClimbIntoNode        climbIntoNode
     );
 
-    MCAPI ::PathfinderNode*
+    MCNAPI ::PathfinderNode*
     _getWaterNode(::ActorPathingData const& data, ::BlockPos const& lastPos, ::BlockPos const& blockPos);
 
-    MCAPI ::NodeType _isFreeStartNode(
+    MCNAPI ::NodeType _isFreeStartNode(
         ::ActorPathingData const& data,
         ::AABB const&             entityAABB,
         ::BlockPos const&         testPos,
         ::BlockPos const&         size
     );
 
-    MCAPI ::NodeType
+    MCNAPI ::NodeType
     _isFreeWaterNode(::ActorPathingData const& data, ::BlockPos const& lastPos, ::BlockPos const& blockPos);
 
-    MCAPI bool _isNeighborPotentiallyValid(
+    MCNAPI bool _isNeighborPotentiallyValid(
         ::PathfinderNode const& node,
         ::PathfinderNode const& target,
         ::BlockPos const&       offset,
         uint                    maxDistSqr
     );
 
-    MCAPI ::std::unique_ptr<::Path>
+    MCNAPI ::std::unique_ptr<::Path>
     _reconstructPath(::PathfinderNode* to, ::PathCompletionType completionType, ::ActorUniqueID actorId);
 
-    MCAPI ::NodeType isFree(
+    MCNAPI ::NodeType isFree(
         ::ActorPathingData const& data,
         ::BlockPos const&         lastPathPos,
         ::BlockPos const&         testPos,
@@ -200,20 +200,20 @@ public:
         ::CanClimbIntoNode        climbIntoNode
     );
 
-    MCAPI ~PathFinder();
+    MCNAPI ~PathFinder();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static float _calculateMoveCost(
+    MCNAPI static float _calculateMoveCost(
         ::ActorPathingData const& data,
         ::PathfinderNode&         start,
         ::BlockPos const&         fromPos,
         ::CachedChunkBlockSource& region
     );
 
-    MCAPI static ::BlockPos _getStartPositionFlyingActor(
+    MCNAPI static ::BlockPos _getStartPositionFlyingActor(
         ::IPathBlockSource const& pathBlockSource,
         ::BlockPos                originalStartPos,
         bool                      canFloat,
@@ -221,7 +221,7 @@ public:
         float                     yFeetPosition
     );
 
-    MCAPI static ::ActorPathingData extractPathingData(
+    MCNAPI static ::ActorPathingData extractPathingData(
         ::Actor&                        mutableActor,
         ::PathFinder::ExtractionPurpose purpose,
         ::std::optional<::Vec3>         targetPos
@@ -237,12 +237,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockSource& region, ::NavigationComponent const& navigation);
+    MCNAPI void* $ctor(::BlockSource& region, ::NavigationComponent const& navigation);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

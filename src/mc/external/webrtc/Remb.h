@@ -13,23 +13,23 @@ class Remb {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool Parse(::webrtc::rtcp::CommonHeader const&);
+    MCNAPI bool Parse(::webrtc::rtcp::CommonHeader const&);
 
-    MCAPI Remb();
+    MCNAPI Remb();
 
-    MCAPI bool SetSsrcs(::std::vector<uint>);
+    MCNAPI bool SetSsrcs(::std::vector<uint>);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

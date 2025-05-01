@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Vec3;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 
 struct MobTravelComponent {
 public:
@@ -17,5 +15,7 @@ public:
     ::ll::TypedStorage<4, 4, float>   mFriction;
     ::ll::TypedStorage<1, 1, bool>    mBlockModifiedFriction;
     ::ll::TypedStorage<4, 4, float>   mSlowdown;
+    ::ll::TypedStorage<1, 1, bool>    mDoesVerticalFriction;
+    ::ll::TypedStorage<1, 1, bool>    mDoesGroundFriction;
     // NOLINTEND
 };

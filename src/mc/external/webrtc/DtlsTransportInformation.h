@@ -33,31 +33,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DtlsTransportInformation(::webrtc::DtlsTransportInformation const&);
+    MCNAPI DtlsTransportInformation(::webrtc::DtlsTransportInformation const&);
 
-    MCAPI explicit DtlsTransportInformation(::webrtc::DtlsTransportState);
+    MCNAPI explicit DtlsTransportInformation(::webrtc::DtlsTransportState);
 
-    MCAPI
+    MCNAPI
     DtlsTransportInformation(::webrtc::DtlsTransportState, ::std::optional<::webrtc::DtlsTransportTlsRole>, ::std::optional<int>, ::std::optional<int>, ::std::optional<int>, ::std::unique_ptr<::rtc::SSLCertChain>);
 
-    MCAPI ~DtlsTransportInformation();
+    MCNAPI ~DtlsTransportInformation();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::DtlsTransportInformation const&);
+    MCNAPI void* $ctor(::webrtc::DtlsTransportInformation const&);
 
-    MCAPI void* $ctor(::webrtc::DtlsTransportState);
+    MCNAPI void* $ctor(::webrtc::DtlsTransportState);
 
-    MCAPI void*
+    MCNAPI void*
         $ctor(::webrtc::DtlsTransportState, ::std::optional<::webrtc::DtlsTransportTlsRole>, ::std::optional<int>, ::std::optional<int>, ::std::optional<int>, ::std::unique_ptr<::rtc::SSLCertChain>);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

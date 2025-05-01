@@ -40,13 +40,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $doFireEventActorValueValidationFailed(::std::string const& invalidValue, char const* caller);
+    MCNAPI void $doFireEventActorValueValidationFailed(::std::string const& invalidValue, char const* caller);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

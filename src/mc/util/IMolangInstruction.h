@@ -16,6 +16,9 @@ public:
 
     // vIndex: 1
     virtual void execute(::MolangEvalParams&) const = 0;
+
+    // vIndex: 2
+    virtual ::std::unique_ptr<::IMolangInstruction> clone() const = 0;
     // NOLINTEND
 
 public:

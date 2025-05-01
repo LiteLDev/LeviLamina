@@ -11,7 +11,7 @@ namespace PlayerCapabilities { struct ISharedController; }
 namespace PlayerCapabilities {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::unique_ptr<::PlayerCapabilities::ISharedController> createController(::Level const& level);
+MCNAPI ::std::unique_ptr<::PlayerCapabilities::ISharedController> createController(::Level const& level);
 // NOLINTEND
 
 } // namespace PlayerCapabilities

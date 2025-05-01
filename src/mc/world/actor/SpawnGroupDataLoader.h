@@ -26,22 +26,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnGroupDataLoader();
+    MCNAPI SpawnGroupDataLoader();
 
-    MCAPI ::Puv::LoadResult<::ActorSpawnRuleData> load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
+    MCNAPI ::Puv::LoadResult<::ActorSpawnRuleData> load(::Bedrock::Resources::MinecraftDocumentInput const& input
+    ) const;
 
-    MCAPI ~SpawnGroupDataLoader();
+    MCNAPI ~SpawnGroupDataLoader();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

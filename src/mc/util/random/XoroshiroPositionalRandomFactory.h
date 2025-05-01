@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/IPositionalRandomFactory.h"
-#include "mc/platform/threading/ThreadLocalObject.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -38,40 +37,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::XoroshiroRandom forBlockPosImpl(::BlockPos const& blockPos) const;
+    MCNAPI ::XoroshiroRandom forBlockPosImpl(::BlockPos const& blockPos) const;
 
-    MCAPI ::XoroshiroRandom forStringImpl(::std::string const& s) const;
+    MCNAPI ::XoroshiroRandom forStringImpl(::std::string const& s) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::XoroshiroRandom forBlockPosImplNoSeed(::BlockPos const& blockPos);
+    MCNAPI static ::XoroshiroRandom forBlockPosImplNoSeed(::BlockPos const& blockPos);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Threading::ThreadLocalObject<::Crypto::Hash::md5>& mThreadLocalDigest();
+    MCAPI static ::Crypto::Hash::md5& mThreadLocalDigest();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::IRandom> $forBlockPos(::BlockPos const& blockPos) const;
+    MCNAPI ::std::unique_ptr<::IRandom> $forBlockPos(::BlockPos const& blockPos) const;
 
-    MCAPI ::std::unique_ptr<::IRandom> $forString(::std::string const& s) const;
+    MCNAPI ::std::unique_ptr<::IRandom> $forString(::std::string const& s) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

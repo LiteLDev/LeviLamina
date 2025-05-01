@@ -28,41 +28,41 @@ class RetransmissionQueue {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState&);
+    MCNAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState&);
 
-    MCAPI ::std::vector<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>> BeginResetStreams();
+    MCNAPI ::std::vector<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>> BeginResetStreams();
 
-    MCAPI void CommitResetStreams();
+    MCNAPI void CommitResetStreams();
 
-    MCAPI ::std::vector<::std::pair<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::dcsctp::Data>>
+    MCNAPI ::std::vector<::std::pair<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::dcsctp::Data>>
         GetChunksForFastRetransmit(uint64);
 
-    MCAPI ::std::vector<::std::pair<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::dcsctp::Data>>
+    MCNAPI ::std::vector<::std::pair<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::dcsctp::Data>>
         GetChunksToSend(::webrtc::Timestamp, uint64);
 
-    MCAPI ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const;
+    MCNAPI ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const;
 
-    MCAPI uint64 GetSerializedChunkSize(::dcsctp::Data const&) const;
+    MCNAPI uint64 GetSerializedChunkSize(::dcsctp::Data const&) const;
 
-    MCAPI void HandleIncreasedCumulativeTsnAck(uint64, uint64);
+    MCNAPI void HandleIncreasedCumulativeTsnAck(uint64, uint64);
 
-    MCAPI void HandlePacketLoss(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>);
+    MCNAPI void HandlePacketLoss(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>);
 
-    MCAPI bool HandleSack(::webrtc::Timestamp, ::dcsctp::SackChunk const&);
+    MCNAPI bool HandleSack(::webrtc::Timestamp, ::dcsctp::SackChunk const&);
 
-    MCAPI void HandleT3RtxTimerExpiry();
+    MCNAPI void HandleT3RtxTimerExpiry();
 
-    MCAPI bool HasStreamsReadyToBeReset() const;
+    MCNAPI bool HasStreamsReadyToBeReset() const;
 
-    MCAPI bool IsSackValid(::dcsctp::SackChunk const&) const;
+    MCNAPI bool IsSackValid(::dcsctp::SackChunk const&) const;
 
-    MCAPI void MaybeExitFastRecovery(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>);
+    MCNAPI void MaybeExitFastRecovery(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>);
 
-    MCAPI void PrepareResetStream(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>);
+    MCNAPI void PrepareResetStream(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>);
 
-    MCAPI void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const&);
+    MCNAPI void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const&);
 
-    MCAPI RetransmissionQueue(
+    MCNAPI RetransmissionQueue(
         ::std::string_view,
         ::dcsctp::DcSctpSocketCallbacks*,
         ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>,
@@ -76,28 +76,28 @@ public:
         bool
     );
 
-    MCAPI void RollbackResetStreams();
+    MCNAPI void RollbackResetStreams();
 
-    MCAPI bool ShouldSendForwardTsn(::webrtc::Timestamp);
+    MCNAPI bool ShouldSendForwardTsn(::webrtc::Timestamp);
 
-    MCAPI void StartT3RtxTimerIfOutstandingData();
+    MCNAPI void StartT3RtxTimerIfOutstandingData();
 
-    MCAPI void
+    MCNAPI void
         UpdateRTT(::webrtc::Timestamp, ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>);
 
-    MCAPI void UpdateReceiverWindow(uint);
+    MCNAPI void UpdateReceiverWindow(uint);
 
-    MCAPI bool can_send_data() const;
+    MCNAPI bool can_send_data() const;
 
-    MCAPI uint64 max_bytes_to_send() const;
+    MCNAPI uint64 max_bytes_to_send() const;
 
-    MCAPI ~RetransmissionQueue();
+    MCNAPI ~RetransmissionQueue();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string_view,
         ::dcsctp::DcSctpSocketCallbacks*,
         ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>,
@@ -115,7 +115,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

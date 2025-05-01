@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -22,21 +25,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void detach(::Actor& owner);
+    MCNAPI void detach(::Actor& owner);
 
-    MCAPI void integrate(::Actor& owner);
+    MCNAPI void integrate(::Actor& owner);
 
-    MCAPI void onRemoved(::Actor& owner, bool shouldPop);
+    MCNAPI void onRemoved(::Actor& owner, bool shouldPop);
 
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void setAttachedActor(::Actor& owner, ::Actor& toAttach);
+    MCNAPI void setAttachedActor(::Actor& owner, ::Actor& toAttach);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Actor* getBalloonForActor(::Actor const& actor);
+    MCNAPI static ::Actor* getBalloonForActor(::Actor const& actor);
     // NOLINTEND
 
 public:

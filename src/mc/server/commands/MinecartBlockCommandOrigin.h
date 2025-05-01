@@ -77,19 +77,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MinecartBlockCommandOrigin(::BlockSource& region, ::ActorUniqueID const& minecartId);
+    MCNAPI MinecartBlockCommandOrigin(::BlockSource& region, ::ActorUniqueID const& minecartId);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::MinecartBlockCommandOrigin> load(::CompoundTag const& tag, ::Level& level);
+    MCNAPI static ::std::unique_ptr<::MinecartBlockCommandOrigin> load(::CompoundTag const& tag, ::Level& level);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockSource& region, ::ActorUniqueID const& minecartId);
+    MCNAPI void* $ctor(::BlockSource& region, ::ActorUniqueID const& minecartId);
     // NOLINTEND
 
 public:
@@ -101,32 +101,32 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BlockPos $getBlockPosition() const;
+    MCNAPI ::BlockPos $getBlockPosition() const;
 
-    MCAPI ::Vec3 $getWorldPosition() const;
+    MCNAPI ::Vec3 $getWorldPosition() const;
 
-    MCAPI ::std::optional<::Vec2> $getRotation() const;
+    MCNAPI ::std::optional<::Vec2> $getRotation() const;
 
-    MCAPI ::Actor* $getEntity() const;
+    MCNAPI ::Actor* $getEntity() const;
 
-    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
+    MCNAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCFOLD bool $canUseCommandsWithoutCheatsEnabled() const;
+    MCNAPI bool $canUseCommandsWithoutCheatsEnabled() const;
 
-    MCFOLD ::CommandOriginType $getOriginType() const;
+    MCNAPI ::CommandOriginType $getOriginType() const;
 
-    MCAPI ::CompoundTag $serialize() const;
+    MCNAPI ::CompoundTag $serialize() const;
 
-    MCFOLD bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCFOLD ::CommandBlockActor* $_getBlockEntity(::BlockSource& region) const;
+    MCNAPI ::CommandBlockActor* $_getBlockEntity(::BlockSource& region) const;
 
-    MCAPI ::BaseCommandBlock* $_getBaseCommandBlock(::BlockSource& region) const;
+    MCNAPI ::BaseCommandBlock* $_getBaseCommandBlock(::BlockSource& region) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

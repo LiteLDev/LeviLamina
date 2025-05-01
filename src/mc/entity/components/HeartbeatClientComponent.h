@@ -4,11 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
-
-// auto generated forward declare list
-// clang-format off
-struct Tick;
-// clang-format on
+#include "mc/world/level/Tick.h"
 
 struct HeartbeatClientComponent {
 public:

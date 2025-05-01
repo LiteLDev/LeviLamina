@@ -13,27 +13,27 @@ struct ThreadPool {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI long Initialize(void*, void (*)(void*, ::OS::ThreadPoolActionStatus&));
+    MCNAPI long Initialize(void*, void (*)(void*, ::OS::ThreadPoolActionStatus&));
 
-    MCAPI void Submit();
+    MCNAPI void Submit();
 
-    MCAPI void Terminate();
+    MCNAPI void Terminate();
 
-    MCAPI ThreadPool();
+    MCNAPI ThreadPool();
 
-    MCAPI ~ThreadPool();
+    MCNAPI ~ThreadPool();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

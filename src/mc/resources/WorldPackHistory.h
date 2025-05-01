@@ -26,34 +26,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldPackHistory();
+    MCNAPI WorldPackHistory();
 
-    MCAPI WorldPackHistory(::WorldPackHistory const&);
+    MCNAPI WorldPackHistory(::WorldPackHistory const&);
 
-    MCAPI WorldPackHistory(::WorldPackHistory&&);
+    MCNAPI WorldPackHistory(::WorldPackHistory&&);
 
-    MCAPI bool initializeFromJson(::Json::Value const& value);
+    MCNAPI bool initializeFromJson(::Json::Value const& value);
 
-    MCAPI void setUnlocalizedName(::std::string const& unlocalizedName);
+    MCNAPI void setUnlocalizedName(::std::string const& unlocalizedName);
 
-    MCAPI ::Json::Value toJsonValue() const;
+    MCNAPI ::Json::Value toJsonValue() const;
 
-    MCAPI ~WorldPackHistory();
+    MCNAPI ~WorldPackHistory();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::WorldPackHistory const&);
+    MCNAPI void* $ctor(::WorldPackHistory const&);
 
-    MCAPI void* $ctor(::WorldPackHistory&&);
+    MCNAPI void* $ctor(::WorldPackHistory&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

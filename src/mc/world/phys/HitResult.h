@@ -6,14 +6,14 @@
 #include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/phys/HitResultType.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BlockPos;
-class Vec3;
-class WeakEntityRef;
 // clang-format on
 
 class HitResult {

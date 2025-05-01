@@ -19,17 +19,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::Scripting::JSON& operator=(::Scripting::JSON const&);
+    MCNAPI ::Scripting::JSON& operator=(::Scripting::JSON const&);
 
-    MCFOLD ::Scripting::JSON& operator=(::Scripting::JSON&&);
+    MCNAPI ::Scripting::JSON& operator=(::Scripting::JSON&&);
 
-    MCAPI ~JSON();
+    MCNAPI ~JSON();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -5,7 +5,7 @@
 namespace RapidJsonDataFixers {
 // functions
 // NOLINTBEGIN
-MCAPI void applyLambdaToChild(
+MCNAPI void applyLambdaToChild(
     ::rapidjson::GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>>&
                                                                                                parent,
     ::std::string const&                                                                       childName,
@@ -15,7 +15,7 @@ MCAPI void applyLambdaToChild(
                          ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>>)> const& callback
 );
 
-MCAPI void applyLambdaToChildObject(
+MCNAPI void applyLambdaToChildObject(
     ::rapidjson::GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>>&
                                                                                                parent,
     ::std::string const&                                                                       childName,

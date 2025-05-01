@@ -33,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWidgetComponentGuideSensor(
+    MCNAPI ScriptWidgetComponentGuideSensor(
         ::Editor::ServiceProviderCollection&                                             serviceProviders,
         ::mce::UUID const&                                                               componentId,
         ::std::string const&                                                             componentName,
@@ -46,14 +46,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentGuideSensor>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentGuideSensor>
     bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                             serviceProviders,
         ::mce::UUID const&                                                               componentId,
         ::std::string const&                                                             componentName,
@@ -72,13 +72,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
+    MCNAPI ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

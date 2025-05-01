@@ -27,27 +27,27 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::dcsctp::SctpPacket::Builder& Add(::dcsctp::Chunk const&);
+        MCNAPI ::dcsctp::SctpPacket::Builder& Add(::dcsctp::Chunk const&);
 
-        MCAPI ::std::vector<uchar> Build(bool);
+        MCNAPI ::std::vector<uchar> Build(bool);
 
-        MCAPI Builder(::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::dcsctp::DcSctpOptions const&);
+        MCNAPI Builder(::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::dcsctp::DcSctpOptions const&);
 
-        MCAPI uint64 bytes_remaining() const;
+        MCNAPI uint64 bytes_remaining() const;
 
-        MCAPI ~Builder();
+        MCNAPI ~Builder();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::dcsctp::DcSctpOptions const&);
+        MCNAPI void* $ctor(::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::dcsctp::DcSctpOptions const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -56,20 +56,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~SctpPacket();
+    MCNAPI ~SctpPacket();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::dcsctp::SctpPacket>
+    MCNAPI static ::std::optional<::dcsctp::SctpPacket>
     Parse(::rtc::ArrayView<uchar const>, ::dcsctp::DcSctpOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

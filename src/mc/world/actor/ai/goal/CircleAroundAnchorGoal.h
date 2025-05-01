@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/util/FloatRange.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
-class Vec3;
-struct FloatRange;
 // clang-format on
 
 class CircleAroundAnchorGoal : public ::Goal {
@@ -58,11 +58,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _selectNext();
+    MCNAPI void _selectNext();
 
-    MCAPI void _setAnchorAboveGround();
+    MCNAPI void _setAnchorAboveGround();
 
-    MCAPI void _setAnchorAboveTarget();
+    MCNAPI void _setAnchorAboveTarget();
     // NOLINTEND
 
 public:
@@ -74,20 +74,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCFOLD void $stop();
+    MCNAPI void $stop();
 
-    MCFOLD bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

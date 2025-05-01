@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/options/EducationServicesEnvironment.h"
 #include "mc/deps/core/debug/log/LogLevel.h"
 #include "mc/deps/core/file/file_system/FileType.h"
 #include "mc/deps/core/sem_ver/SemVersionBase.h"
@@ -78,6 +79,7 @@ struct ActorFactoryData;
 struct ActorMapping;
 struct AssertHandlerContext;
 struct BlockLayer;
+struct BlockMaterialInstance;
 struct DynDnsResult;
 struct HCTraceImplArea;
 struct HC_CALL;
@@ -299,6 +301,10 @@ MCAPI ::I18n& getI18n();
 
 MCAPI ::std::string getJsonTypeString(::Json::ValueType const& type);
 
+MCAPI ::std::unordered_map<int, ::std::string> const& getPackParseErrorTypeEventMapAccess();
+
+MCAPI ::std::unordered_map<int, ::std::string> const& getPackParseErrorTypeLOCMapAccess();
+
 MCAPI ::std::string join(::std::string prefix, ::std::string_view chunkKey);
 
 MCAPI ::std::string join(::std::string_view prefix, ::LevelChunkTag tag);
@@ -321,6 +327,8 @@ MCAPI bool operator<(
 );
 
 MCAPI bool operator==(::DefinitionTrigger const& a, ::DefinitionTrigger const& b);
+
+MCAPI bool operator==(::BlockMaterialInstance const& lhs, ::BlockMaterialInstance const& rhs);
 
 MCAPI bool operator==(
     ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
@@ -462,6 +470,8 @@ MaterialAlphaModeEnumMap();
 
 MCAPI ::std::bitset<38> const& PLAYER_ACTION_MOVEMENT_BITSET();
 
+MCAPI ::std::bitset<38> const& PLAYER_ACTION_MOVEMENT_FLYING_ATTRIBUTE_BITSET();
+
 MCAPI ::std::bitset<38> const& PLAYER_ACTION_MOVEMENT_SPEED_ATTRIBUTE_BITSET();
 
 MCAPI ::HashedString const& SMOKER_TAG();
@@ -512,6 +522,8 @@ MCAPI ::std::add_lvalue_reference_t<void (*)(void*, uint)> g_memFreeFunc();
 MCAPI ::HCTraceImplArea& g_traceHTTPCLIENT();
 
 MCAPI ::HCTraceImplArea& g_traceWEBSOCKET();
+
+MCAPI ::EducationServicesEnvironment& mCachedServicesEnvironment();
 
 MCAPI ::std::add_lvalue_reference_t<void (*)(char const*, long)> notifyOutOfMemory();
 

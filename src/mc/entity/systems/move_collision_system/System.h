@@ -130,13 +130,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~SpatialQueries();
+        MCNAPI ~SpatialQueries();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -235,46 +235,45 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::MoveCollisionSystem::System::SpatialQueryFactories>
-    createSpatialQueryFactories(::StrictExecutionContext<
-                                ::Filter<
-                                    ::CanStandOnSnowFlagComponent,
-                                    ::HasLightweightFamilyFlagComponent,
-                                    ::HorseFlagComponent,
-                                    ::MobFlagComponent,
-                                    ::ParrotFlagComponent,
-                                    ::VehicleComponent,
-                                    ::CamelFlagComponent,
-                                    ::PlayerComponent,
-                                    ::CollidableMobFlagComponent,
-                                    ::FallingBlockFlagComponent>,
-                                ::Read<
-                                    ::AABBShapeComponent,
-                                    ::MovementAbilitiesComponent,
-                                    ::ActorTypeComponent,
-                                    ::FallDistanceComponent,
-                                    ::PassengerComponent,
-                                    ::ActorGameTypeComponent,
-                                    ::ActorDataFlagComponent,
-                                    ::VehicleComponent,
-                                    ::ActorRotationComponent,
-                                    ::MobBodyRotationComponent,
-                                    ::RenderRotationComponent,
-                                    ::StandAnimationComponent,
-                                    ::OffsetsComponent,
-                                    ::VanillaOffsetComponent,
-                                    ::PassengerRenderingRidingOffsetComponent,
-                                    ::DimensionTypeComponent,
-                                    ::MaxAutoStepComponent,
-                                    ::CollidableMobNearFlagComponent>,
-                                ::Write<::MoveRequestComponent>,
-                                ::AddRemove<>,
-                                ::GlobalRead<
-                                    ::ExternalDataComponent,
-                                    ::LocalConstBlockSourceFactoryComponent,
-                                    ::LocalSpatialEntityFetcherFactoryComponent>,
-                                ::GlobalWrite<>,
-                                ::EntityFactoryT<>>& context);
+    MCNAPI static auto createViews(::StrictExecutionContext<
+                                   ::Filter<
+                                       ::CanStandOnSnowFlagComponent,
+                                       ::HasLightweightFamilyFlagComponent,
+                                       ::HorseFlagComponent,
+                                       ::MobFlagComponent,
+                                       ::ParrotFlagComponent,
+                                       ::VehicleComponent,
+                                       ::CamelFlagComponent,
+                                       ::PlayerComponent,
+                                       ::CollidableMobFlagComponent,
+                                       ::FallingBlockFlagComponent>,
+                                   ::Read<
+                                       ::AABBShapeComponent,
+                                       ::MovementAbilitiesComponent,
+                                       ::ActorTypeComponent,
+                                       ::FallDistanceComponent,
+                                       ::PassengerComponent,
+                                       ::ActorGameTypeComponent,
+                                       ::ActorDataFlagComponent,
+                                       ::VehicleComponent,
+                                       ::ActorRotationComponent,
+                                       ::MobBodyRotationComponent,
+                                       ::RenderRotationComponent,
+                                       ::StandAnimationComponent,
+                                       ::OffsetsComponent,
+                                       ::VanillaOffsetComponent,
+                                       ::PassengerRenderingRidingOffsetComponent,
+                                       ::DimensionTypeComponent,
+                                       ::MaxAutoStepComponent,
+                                       ::CollidableMobNearFlagComponent>,
+                                   ::Write<::MoveRequestComponent>,
+                                   ::AddRemove<>,
+                                   ::GlobalRead<
+                                       ::ExternalDataComponent,
+                                       ::LocalConstBlockSourceFactoryComponent,
+                                       ::LocalSpatialEntityFetcherFactoryComponent>,
+                                   ::GlobalWrite<>,
+                                   ::EntityFactoryT<>>& context);
     // NOLINTEND
 
 public:
@@ -286,47 +285,47 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::StrictExecutionContext<
-                     ::Filter<
-                         ::CanStandOnSnowFlagComponent,
-                         ::HasLightweightFamilyFlagComponent,
-                         ::HorseFlagComponent,
-                         ::MobFlagComponent,
-                         ::ParrotFlagComponent,
-                         ::VehicleComponent,
-                         ::CamelFlagComponent,
-                         ::PlayerComponent,
-                         ::CollidableMobFlagComponent,
-                         ::FallingBlockFlagComponent>,
-                     ::Read<
-                         ::AABBShapeComponent,
-                         ::MovementAbilitiesComponent,
-                         ::ActorTypeComponent,
-                         ::FallDistanceComponent,
-                         ::PassengerComponent,
-                         ::ActorGameTypeComponent,
-                         ::ActorDataFlagComponent,
-                         ::VehicleComponent,
-                         ::ActorRotationComponent,
-                         ::MobBodyRotationComponent,
-                         ::RenderRotationComponent,
-                         ::StandAnimationComponent,
-                         ::OffsetsComponent,
-                         ::VanillaOffsetComponent,
-                         ::PassengerRenderingRidingOffsetComponent,
-                         ::DimensionTypeComponent,
-                         ::MaxAutoStepComponent,
-                         ::CollidableMobNearFlagComponent>,
-                     ::Write<::MoveRequestComponent>,
-                     ::AddRemove<>,
-                     ::GlobalRead<
-                         ::ExternalDataComponent,
-                         ::LocalConstBlockSourceFactoryComponent,
-                         ::LocalSpatialEntityFetcherFactoryComponent>,
-                     ::GlobalWrite<>,
-                     ::EntityFactoryT<>>& context);
+    MCNAPI void $tick(::StrictExecutionContext<
+                      ::Filter<
+                          ::CanStandOnSnowFlagComponent,
+                          ::HasLightweightFamilyFlagComponent,
+                          ::HorseFlagComponent,
+                          ::MobFlagComponent,
+                          ::ParrotFlagComponent,
+                          ::VehicleComponent,
+                          ::CamelFlagComponent,
+                          ::PlayerComponent,
+                          ::CollidableMobFlagComponent,
+                          ::FallingBlockFlagComponent>,
+                      ::Read<
+                          ::AABBShapeComponent,
+                          ::MovementAbilitiesComponent,
+                          ::ActorTypeComponent,
+                          ::FallDistanceComponent,
+                          ::PassengerComponent,
+                          ::ActorGameTypeComponent,
+                          ::ActorDataFlagComponent,
+                          ::VehicleComponent,
+                          ::ActorRotationComponent,
+                          ::MobBodyRotationComponent,
+                          ::RenderRotationComponent,
+                          ::StandAnimationComponent,
+                          ::OffsetsComponent,
+                          ::VanillaOffsetComponent,
+                          ::PassengerRenderingRidingOffsetComponent,
+                          ::DimensionTypeComponent,
+                          ::MaxAutoStepComponent,
+                          ::CollidableMobNearFlagComponent>,
+                      ::Write<::MoveRequestComponent>,
+                      ::AddRemove<>,
+                      ::GlobalRead<
+                          ::ExternalDataComponent,
+                          ::LocalConstBlockSourceFactoryComponent,
+                          ::LocalSpatialEntityFetcherFactoryComponent>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& context);
 
-    MCAPI void $singleTick(
+    MCNAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnSnowFlagComponent,
@@ -373,7 +372,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

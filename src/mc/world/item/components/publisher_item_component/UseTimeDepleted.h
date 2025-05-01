@@ -32,7 +32,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
@@ -44,11 +44,11 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
 
-    MCAPI static void** $vftableForConnector();
+    MCNAPI static void** $vftableForConnector();
 
-    MCAPI static void** $vftableForDispatchingPublisherBase();
+    MCNAPI static void** $vftableForDispatchingPublisherBase();
     // NOLINTEND
 };
 

@@ -49,15 +49,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initRegistry(::EntityRegistry& registry);
+    MCNAPI void $initRegistry(::EntityRegistry& registry);
 
-    MCAPI void $registerSystems(::IEntitySystems& systems, ::ECSModule::ModuleInitArgs const& args);
+    MCNAPI void $registerSystems(::IEntitySystems& systems, ::ECSModule::ModuleInitArgs const& args);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -24,26 +24,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NpcDialogueButton();
+    MCNAPI NpcDialogueButton();
 
-    MCAPI ~NpcDialogueButton();
+    MCNAPI ~NpcDialogueButton();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::NpcDialogueButton parse(::Json::Value const& root, ::std::string const& fileName, int);
+    MCNAPI static ::NpcDialogueButton parse(::Json::Value const& root, ::std::string const& fileName, int);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

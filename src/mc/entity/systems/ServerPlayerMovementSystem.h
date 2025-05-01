@@ -14,16 +14,16 @@ struct ServerPlayerMovementSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tryResetFallDistance(
+    MCNAPI static void _tryResetFallDistance(
         ::StateVectorComponent const& vecComp,
         ::FallDistanceComponent&      fallDistance,
         ::BlockSource const&          region
     );
 
-    MCAPI static ::TickingSystemWithInfo createClearPlayerActionComponentSystem();
+    MCNAPI static ::TickingSystemWithInfo createClearPlayerActionComponentSystem();
 
-    MCAPI static ::std::array<::TickingSystemWithInfo, 2> createPostTravelSystems();
+    MCNAPI static ::std::array<::TickingSystemWithInfo, 2> createPostTravelSystems();
 
-    MCAPI static ::TickingSystemWithInfo createServerPlayerResetFallDistanceSystem();
+    MCNAPI static ::TickingSystemWithInfo createServerPlayerResetFallDistanceSystem();
     // NOLINTEND
 };

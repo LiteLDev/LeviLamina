@@ -27,13 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _areKnownFilesValid(::PackAccessStrategy const& accessStrategy, bool requiresSignaturesFile);
+    MCNAPI bool _areKnownFilesValid(::PackAccessStrategy const& accessStrategy, bool requiresSignaturesFile);
 
-    MCAPI bool _checkSignedFiles(::PackAccessStrategy const& accessStrategy) const;
+    MCNAPI bool _checkSignedFiles(::PackAccessStrategy const& accessStrategy) const;
 
-    MCAPI void _loadSignaturesFile(::Core::Path const& filePath, ::PackAccessStrategy const& accessStrategy);
+    MCNAPI void _loadSignaturesFile(::Core::Path const& filePath, ::PackAccessStrategy const& accessStrategy);
 
-    MCAPI ~ResourceSignature();
+    MCNAPI ~ResourceSignature();
     // NOLINTEND
 
 public:
@@ -45,6 +45,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

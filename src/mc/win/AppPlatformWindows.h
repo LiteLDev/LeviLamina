@@ -42,22 +42,22 @@ public:
     // vIndex: 250
     virtual ::Core::PathBuffer<::std::string> getPlatformTempPath() const /*override*/;
 
-    // vIndex: 67
+    // vIndex: 66
     virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath) /*override*/;
 
     // vIndex: 178
     virtual uint64 calculateAvailableDiskFreeSpace(::Core::Path const& rootPath) /*override*/;
 
-    // vIndex: 78
+    // vIndex: 77
     virtual bool allowContentLogWriteToDisk() /*override*/;
 
     // vIndex: 181
     virtual bool devHotReloadRenderResources() const /*override*/;
 
-    // vIndex: 80
+    // vIndex: 79
     virtual void queueForMainThread_DEPRECATED(::std::function<void()> callback) /*override*/;
 
-    // vIndex: 81
+    // vIndex: 80
     virtual ::MPMCQueue<::std::function<void()>>& getMainThreadQueue() /*override*/;
 
     // vIndex: 214
@@ -69,7 +69,7 @@ public:
     // vIndex: 216
     virtual bool getPlatformTTSEnabled() const /*override*/;
 
-    // vIndex: 69
+    // vIndex: 68
     virtual void registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const
         /*override*/;
 
@@ -88,7 +88,7 @@ public:
     // vIndex: 243
     virtual ::Core::PathBuffer<::std::string> _getUserdataPath() const /*override*/;
 
-    // vIndex: 47
+    // vIndex: 46
     virtual ::Core::PathBuffer<::std::string> getPackagedShaderCachePath() /*override*/;
 
     // vIndex: 0
@@ -98,13 +98,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uint64 _findHighPerformanceThreadsCount() const;
+    MCNAPI uint64 _findHighPerformanceThreadsCount() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static long callWerRegisterCustomMetadata(::std::string const& data, ::std::string const& key);
+    MCNAPI static long callWerRegisterCustomMetadata(::std::string const& data, ::std::string const& key);
     // NOLINTEND
 
 public:
@@ -116,56 +116,56 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint64 $getTotalHardwareThreadsCount() const;
+    MCNAPI uint64 $getTotalHardwareThreadsCount() const;
 
-    MCAPI uint64 $getHighPerformanceThreadsCount() const;
+    MCNAPI uint64 $getHighPerformanceThreadsCount() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> $getPlatformTempPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> $getPlatformTempPath() const;
 
-    MCFOLD ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
+    MCNAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
 
-    MCAPI uint64 $calculateAvailableDiskFreeSpace(::Core::Path const& rootPath);
+    MCNAPI uint64 $calculateAvailableDiskFreeSpace(::Core::Path const& rootPath);
 
-    MCFOLD bool $allowContentLogWriteToDisk();
+    MCNAPI bool $allowContentLogWriteToDisk();
 
-    MCFOLD bool $devHotReloadRenderResources() const;
+    MCNAPI bool $devHotReloadRenderResources() const;
 
-    MCAPI void $queueForMainThread_DEPRECATED(::std::function<void()> callback);
+    MCNAPI void $queueForMainThread_DEPRECATED(::std::function<void()> callback);
 
-    MCAPI ::MPMCQueue<::std::function<void()>>& $getMainThreadQueue();
+    MCNAPI ::MPMCQueue<::std::function<void()>>& $getMainThreadQueue();
 
-    MCFOLD bool $canAppSelfTerminate() const;
+    MCNAPI bool $canAppSelfTerminate() const;
 
-    MCFOLD bool $getPlatformTTSExists() const;
+    MCNAPI bool $getPlatformTTSExists() const;
 
-    MCAPI bool $getPlatformTTSEnabled() const;
+    MCNAPI bool $getPlatformTTSEnabled() const;
 
-    MCAPI void $registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const;
+    MCNAPI void $registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const;
 
-    MCAPI bool $is24HourTimeFormat() const;
+    MCNAPI bool $is24HourTimeFormat() const;
 
-    MCFOLD ::Core::PathBuffer<::std::string> $_getCurrentStoragePath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> $_getCurrentStoragePath() const;
 
-    MCFOLD ::Core::PathBuffer<::std::string> $_getExternalStoragePath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> $_getExternalStoragePath() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> $_getInternalStoragePath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> $_getInternalStoragePath() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> $_getUserdataPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> $_getUserdataPath() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> $getPackagedShaderCachePath();
+    MCNAPI ::Core::PathBuffer<::std::string> $getPackagedShaderCachePath();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIAppPlatform();
+    MCNAPI static void** $vftableForIAppPlatform();
 
-    MCAPI static void** $vftableForISecureStorageKeySystem();
+    MCNAPI static void** $vftableForISecureStorageKeySystem();
     // NOLINTEND
 };

@@ -15,17 +15,24 @@ public:
     // prevent constructor by default
     ActorSpawnConditionData& operator=(ActorSpawnConditionData const&);
     ActorSpawnConditionData(ActorSpawnConditionData const&);
-    ActorSpawnConditionData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ActorSpawnConditionData();
+    MCNAPI ActorSpawnConditionData();
+
+    MCNAPI ~ActorSpawnConditionData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

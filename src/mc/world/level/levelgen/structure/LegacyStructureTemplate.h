@@ -3,19 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/structure/ILegacyStructureTemplate.h"
 #include "mc/world/level/levelgen/structure/IStructureTemplate.h"
+#include "mc/world/level/levelgen/structure/LegacyStructureBlockPalette.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
 class JigsawStructureBlockInfo;
 class LegacyStructureActorInfo;
 class LegacyStructureBlockInfo;
-class LegacyStructureBlockPalette;
 class LegacyStructureSettings;
 class Random;
 namespace br::worldgen { struct StructureTemplateBlockPalette; }
@@ -58,45 +58,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyStructureTemplate();
+    MCNAPI LegacyStructureTemplate();
 
-    MCAPI ::BlockPos calculateConnectedPosition(
+    MCNAPI ::BlockPos calculateConnectedPosition(
         ::LegacyStructureSettings const& settings1,
         ::BlockPos const&                connection1,
         ::LegacyStructureSettings const& settings2,
         ::BlockPos const&                connection2
     ) const;
 
-    MCAPI ::std::vector<::JigsawStructureBlockInfo> getJigsawMarkers() const;
+    MCNAPI ::std::vector<::JigsawStructureBlockInfo> getJigsawMarkers() const;
 
-    MCAPI void load(::CompoundTag const& tag);
+    MCNAPI void load(::CompoundTag const& tag);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _fixItemStack(::CompoundTag& itemTag, int dataVersion);
+    MCNAPI static void _fixItemStack(::CompoundTag& itemTag, int dataVersion);
 
-    MCAPI static void _mapPropertiesToTags(::CompoundTag& originalTag, ::CompoundTag const& paletteTag);
+    MCNAPI static void _mapPropertiesToTags(::CompoundTag& originalTag, ::CompoundTag const& paletteTag);
 
-    MCAPI static void _mapPropertyToTag(
+    MCNAPI static void _mapPropertyToTag(
         ::CompoundTag&       originalTag,
         ::std::string const& propertyString,
         ::std::string const& valueString
     );
 
-    MCAPI static ::std::unique_ptr<::CompoundTag> _mapTag(
+    MCNAPI static ::std::unique_ptr<::CompoundTag> _mapTag(
         ::std::unique_ptr<::CompoundTag> originalTag,
         ::std::string const&             javaBlockName,
         int                              dataVersion,
         ::Block const*&                  block
     );
 
-    MCAPI static ::Block const* _mapToBlock(::std::string const& blockName);
+    MCNAPI static ::Block const* _mapToBlock(::std::string const& blockName);
 
-    MCAPI static ::Block const& _mapToData(::Block const& curr, ::LegacyStructureSettings const& settings);
+    MCNAPI static ::Block const& _mapToData(::Block const& curr, ::LegacyStructureSettings const& settings);
 
-    MCAPI static ::Block const*
+    MCNAPI static ::Block const*
     _mapToProperty(::std::string const& propertyString, ::std::string const& valueString, ::Block const& block);
     // NOLINTEND
 
@@ -137,35 +137,35 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unordered_map<::BlockPos, ::std::string>
+    MCNAPI ::std::unordered_map<::BlockPos, ::std::string>
     $getMarkers(::BlockPos const& position, ::LegacyStructureSettings& settings) const;
 
-    MCAPI void
+    MCNAPI void
     $placeInWorld(::BlockSource& region, ::BlockPos const& pos, ::LegacyStructureSettings& settings, ::Random& random)
         const;
 
-    MCAPI ::BlockPos $rawSize() const;
+    MCNAPI ::BlockPos $rawSize() const;
 
-    MCAPI ::br::worldgen::StructureTemplateBlockPalette $randomPalette(::BlockPos) const;
+    MCNAPI ::br::worldgen::StructureTemplateBlockPalette $randomPalette(::BlockPos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForILegacyStructureTemplate();
+    MCNAPI static void** $vftableForILegacyStructureTemplate();
 
-    MCAPI static void** $vftableForIStructureTemplate();
+    MCNAPI static void** $vftableForIStructureTemplate();
     // NOLINTEND
 };

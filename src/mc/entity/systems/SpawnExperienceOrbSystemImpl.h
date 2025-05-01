@@ -11,7 +11,7 @@ struct SpawnExperienceOrbRequestQueueComponent;
 namespace SpawnExperienceOrbSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void
+MCNAPI void
 trySpawnExperienceOrbs(::LevelComponent& levelComponent, ::SpawnExperienceOrbRequestQueueComponent& requestComponent);
 // NOLINTEND
 

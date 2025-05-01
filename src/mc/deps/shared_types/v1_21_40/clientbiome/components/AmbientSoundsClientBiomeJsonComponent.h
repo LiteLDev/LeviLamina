@@ -1,0 +1,71 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_40/clientbiome/components/IClientBiomeJsonComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
+namespace SharedTypes::v1_21_40 {
+
+struct AmbientSoundsClientBiomeJsonComponent : public ::SharedTypes::v1_21_40::IClientBiomeJsonComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkdd944a;
+    ::ll::UntypedStorage<8, 32> mUnk3b53de;
+    ::ll::UntypedStorage<8, 32> mUnk7ef30c;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    AmbientSoundsClientBiomeJsonComponent& operator=(AmbientSoundsClientBiomeJsonComponent const&);
+    AmbientSoundsClientBiomeJsonComponent(AmbientSoundsClientBiomeJsonComponent const&);
+    AmbientSoundsClientBiomeJsonComponent();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~AmbientSoundsClientBiomeJsonComponent() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent&
+    operator=(::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent&&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
+
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
+};
+
+} // namespace SharedTypes::v1_21_40

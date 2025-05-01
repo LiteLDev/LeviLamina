@@ -51,6 +51,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _finalizeInit(::Block const& block);
+    MCNAPI void _finalizeInit(::Block const& block);
     // NOLINTEND
 };

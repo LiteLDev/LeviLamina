@@ -11,7 +11,7 @@ class BlockPos;
 namespace BiomeSourceUtil::v1_16_compat {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::optional<::BlockPos>
+MCNAPI ::std::optional<::BlockPos>
 locateSpawnBiome2d(::std::set<ushort> const& biomeSource, ::BiomeSource const& biomes, int startingX);
 // NOLINTEND
 

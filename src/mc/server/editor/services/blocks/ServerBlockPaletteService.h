@@ -89,31 +89,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _loadActiveBlockPaletteId();
+    MCNAPI bool _loadActiveBlockPaletteId();
 
-    MCAPI bool _loadAllBlockPalettes();
+    MCNAPI bool _loadAllBlockPalettes();
 
-    MCAPI ::std::shared_ptr<::Editor::EditorBlockPalette> _loadBlockPalette(::HashedString const& blockPaletteId) const;
+    MCNAPI ::std::shared_ptr<::Editor::EditorBlockPalette> _loadBlockPalette(::HashedString const& blockPaletteId
+    ) const;
 
-    MCAPI bool _loadSelectedBlockPaletteItem();
+    MCNAPI bool _loadSelectedBlockPaletteItem();
 
-    MCAPI void _removeSavedBlockPalette(::HashedString const& blockPaletteId);
+    MCNAPI void _removeSavedBlockPalette(::HashedString const& blockPaletteId);
 
-    MCAPI void _saveActiveBlockPaletteId();
+    MCNAPI void _saveActiveBlockPaletteId();
 
-    MCAPI void _saveBlockPalette(::Editor::EditorBlockPalette const& palette);
+    MCNAPI void _saveBlockPalette(::Editor::EditorBlockPalette const& palette);
 
-    MCAPI void _saveSelectedBlockPaletteItem(int index);
+    MCNAPI void _saveSelectedBlockPaletteItem(int index);
 
-    MCAPI ::Scripting::Result<void> _setActiveAndSyncPalette(::HashedString const& paletteId);
+    MCNAPI ::Scripting::Result<void> _setActiveAndSyncPalette(::HashedString const& paletteId);
 
-    MCAPI ::Scripting::Result<void> _updateAndSyncPaletteItem(
+    MCNAPI ::Scripting::Result<void> _updateAndSyncPaletteItem(
         ::HashedString const&                                                                          paletteId,
         int                                                                                            index,
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
     );
 
-    MCAPI ::Scripting::Result<void> _updateAndSyncSelectedPaletteIndex(int index);
+    MCNAPI ::Scripting::Result<void> _updateAndSyncSelectedPaletteIndex(int index);
     // NOLINTEND
 
 public:
@@ -125,51 +126,52 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCFOLD ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result<void> $ready();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCFOLD ::Scripting::Result<void> $setSelectedPaletteItemIndex(int index);
+    MCNAPI ::Scripting::Result<void> $setSelectedPaletteItemIndex(int index);
 
-    MCAPI ::Scripting::Result<void> $setPaletteItem(
+    MCNAPI ::Scripting::Result<void> $setPaletteItem(
         ::HashedString const&                                                                          paletteId,
         int                                                                                            index,
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
     );
 
-    MCFOLD ::Scripting::Result<void> $pickBlock(::Block const&);
+    MCNAPI ::Scripting::Result<void> $pickBlock(::Block const&);
 
-    MCAPI void $addOrReplacePalette(::Editor::EditorBlockPalette const& palette);
+    MCNAPI void $addOrReplacePalette(::Editor::EditorBlockPalette const& palette);
 
-    MCAPI ::Scripting::Result<void> $removePalette(::HashedString const& paletteId);
+    MCNAPI ::Scripting::Result<void> $removePalette(::HashedString const& paletteId);
 
-    MCAPI ::Scripting::Result<void> $setActivePalette(::HashedString const& paletteId);
+    MCNAPI ::Scripting::Result<void> $setActivePalette(::HashedString const& paletteId);
 
-    MCAPI void $_handleBlockPaletteItemChangedPayload(::Editor::Network::BlockPaletteItemChangedPayload const& payload);
+    MCNAPI void $_handleBlockPaletteItemChangedPayload(::Editor::Network::BlockPaletteItemChangedPayload const& payload
+    );
 
-    MCAPI void $_handleBlockPaletteSelectedIndexChangedPayload(
+    MCNAPI void $_handleBlockPaletteSelectedIndexChangedPayload(
         ::Editor::Network::BlockPaletteSelectedIndexChangedPayload const& payload
     );
 
-    MCAPI void $_handleBlockPaletteActivePaletteChangedPayload(
+    MCNAPI void $_handleBlockPaletteActivePaletteChangedPayload(
         ::Editor::Network::BlockPaletteActivePaletteChangedPayload const& payload
     );
 
-    MCAPI void $_handleBlockPaletteChangedPayload(::Editor::Network::BlockPaletteChangedPayload const& payload);
+    MCNAPI void $_handleBlockPaletteChangedPayload(::Editor::Network::BlockPaletteChangedPayload const& payload);
 
-    MCAPI void $_handleBlockPaletteRemovedPayload(::Editor::Network::BlockPaletteRemovedPayload const& payload);
+    MCNAPI void $_handleBlockPaletteRemovedPayload(::Editor::Network::BlockPaletteRemovedPayload const& payload);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
 
-    MCAPI static void** $vftableForEditorBlockPaletteServiceProvider();
+    MCNAPI static void** $vftableForEditorBlockPaletteServiceProvider();
     // NOLINTEND
 };
 

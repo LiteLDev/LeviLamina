@@ -20,16 +20,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _attemptToTame(::Actor& owner, ::Player& player);
+    MCNAPI bool _attemptToTame(::Actor& owner, ::Player& player);
 
-    MCAPI bool _canTame(::Actor& owner, ::Player& player);
+    MCNAPI bool _canTame(::Actor& owner, ::Player& player);
 
-    MCAPI void tame(::Actor& owner, ::Player& player);
+    MCNAPI void tame(::Actor& owner, ::Player& player);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _becomeTame(::Actor& owner);
+    MCNAPI static void _becomeTame(::Actor& owner);
     // NOLINTEND
 };

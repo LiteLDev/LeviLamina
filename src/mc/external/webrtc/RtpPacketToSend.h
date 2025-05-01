@@ -46,33 +46,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RtpPacketToSend(::webrtc::RtpPacketToSend const&);
+    MCNAPI RtpPacketToSend(::webrtc::RtpPacketToSend const&);
 
-    MCAPI explicit RtpPacketToSend(::webrtc::RtpHeaderExtensionMap const*);
+    MCNAPI explicit RtpPacketToSend(::webrtc::RtpHeaderExtensionMap const*);
 
-    MCAPI RtpPacketToSend(::webrtc::RtpHeaderExtensionMap const*, uint64);
+    MCNAPI RtpPacketToSend(::webrtc::RtpHeaderExtensionMap const*, uint64);
 
-    MCAPI ::webrtc::RtpPacketToSend& operator=(::webrtc::RtpPacketToSend const&);
+    MCNAPI ::webrtc::RtpPacketToSend& operator=(::webrtc::RtpPacketToSend const&);
 
-    MCAPI void set_packet_type(::webrtc::RtpPacketMediaType);
+    MCNAPI void set_packet_type(::webrtc::RtpPacketMediaType);
 
-    MCAPI ~RtpPacketToSend();
+    MCNAPI ~RtpPacketToSend();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::RtpPacketToSend const&);
+    MCNAPI void* $ctor(::webrtc::RtpPacketToSend const&);
 
-    MCAPI void* $ctor(::webrtc::RtpHeaderExtensionMap const*);
+    MCNAPI void* $ctor(::webrtc::RtpHeaderExtensionMap const*);
 
-    MCAPI void* $ctor(::webrtc::RtpHeaderExtensionMap const*, uint64);
+    MCNAPI void* $ctor(::webrtc::RtpHeaderExtensionMap const*, uint64);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

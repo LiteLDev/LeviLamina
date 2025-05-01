@@ -29,26 +29,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JSONSchemaValidation(::cereal::ext::internal::JSONSchemaValidation const&);
+    MCNAPI JSONSchemaValidation(::cereal::ext::internal::JSONSchemaValidation const&);
 
-    MCAPI ::cereal::ext::internal::JSONSchemaValidation&
+    MCNAPI ::cereal::ext::internal::JSONSchemaValidation&
     operator=(::cereal::ext::internal::JSONSchemaValidation const&);
 
-    MCAPI ::cereal::ext::internal::JSONSchemaValidation& operator=(::cereal::ext::internal::JSONSchemaValidation&&);
+    MCNAPI ::cereal::ext::internal::JSONSchemaValidation& operator=(::cereal::ext::internal::JSONSchemaValidation&&);
 
-    MCAPI ~JSONSchemaValidation();
+    MCNAPI ~JSONSchemaValidation();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ext::internal::JSONSchemaValidation const&);
+    MCNAPI void* $ctor(::cereal::ext::internal::JSONSchemaValidation const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

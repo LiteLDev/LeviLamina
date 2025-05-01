@@ -24,40 +24,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JSONSchemaDef(::cereal::ext::internal::JSONSchemaDef const&);
+    MCNAPI JSONSchemaDef(::cereal::ext::internal::JSONSchemaDef const&);
 
-    MCAPI explicit JSONSchemaDef(::cereal::internal::SchemaInfo const& info);
+    MCNAPI explicit JSONSchemaDef(::cereal::internal::SchemaInfo const& info);
 
-    MCAPI JSONSchemaDef(::cereal::SchemaDescription const& schemaInfo, ::cereal::ext::internal::OutRefsMap& outRefs);
+    MCNAPI JSONSchemaDef(::cereal::SchemaDescription const& schemaInfo, ::cereal::ext::internal::OutRefsMap& outRefs);
 
-    MCAPI void normalizeRefs(
-        ::cereal::ext::internal::OutRefsMap&                               outRefs,
-        ::std::map<::std::string, ::cereal::ext::internal::JSONSchemaDef>& defsMap
+    MCNAPI void normalizeRefs(
+        ::cereal::ext::internal::OutRefsMap&                                         outRefs,
+        ::std::unordered_map<::std::string, ::cereal::ext::internal::JSONSchemaDef>& defsMap
     );
 
-    MCAPI ~JSONSchemaDef();
+    MCNAPI ~JSONSchemaDef();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ext::internal::JSONSchemaDef const&);
+    MCNAPI void* $ctor(::cereal::ext::internal::JSONSchemaDef const&);
 
-    MCAPI void* $ctor(::cereal::internal::SchemaInfo const& info);
+    MCNAPI void* $ctor(::cereal::internal::SchemaInfo const& info);
 
-    MCAPI void* $ctor(::cereal::SchemaDescription const& schemaInfo, ::cereal::ext::internal::OutRefsMap& outRefs);
+    MCNAPI void* $ctor(::cereal::SchemaDescription const& schemaInfo, ::cereal::ext::internal::OutRefsMap& outRefs);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

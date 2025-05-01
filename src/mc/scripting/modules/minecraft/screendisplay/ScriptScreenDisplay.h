@@ -34,9 +34,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptScreenDisplay(::Player const& player);
+    MCNAPI explicit ScriptScreenDisplay(::Player const& player);
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> _getJsonString(
+    MCNAPI ::Scripting::Result_deprecated<::std::string> _getJsonString(
         ::Player& player,
         ::std::variant<
             ::std::string,
@@ -45,17 +45,19 @@ public:
             text
     ) const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::HudElement>> getHiddenHudElements();
+    MCNAPI bool _isValid() const;
 
-    MCAPI ::Scripting::Result<void> hideAllExcept(::std::optional<::std::vector<::HudElement>> hudElement);
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::HudElement>> getHiddenHudElements();
 
-    MCAPI ::Scripting::Result_deprecated<bool> isForcedHidden(::HudElement hudElement);
+    MCNAPI ::Scripting::Result<void> hideAllExcept(::std::optional<::std::vector<::HudElement>> hudElement);
 
-    MCFOLD ::ScriptModuleMinecraft::ScriptScreenDisplay& operator=(::ScriptModuleMinecraft::ScriptScreenDisplay&&);
+    MCNAPI ::Scripting::Result_deprecated<bool> isForcedHidden(::HudElement hudElement);
 
-    MCAPI ::Scripting::Result<void> resetHudElements();
+    MCNAPI ::ScriptModuleMinecraft::ScriptScreenDisplay& operator=(::ScriptModuleMinecraft::ScriptScreenDisplay&&);
 
-    MCAPI ::Scripting::Result<void> setActionBar(
+    MCNAPI ::Scripting::Result<void> resetHudElements();
+
+    MCNAPI ::Scripting::Result<void> setActionBar(
         ::std::variant<
             ::std::string,
             ::ScriptModuleMinecraft::ScriptRawMessageInterface,
@@ -63,10 +65,10 @@ public:
             text
     ) const;
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     setHudVisibility(::HudVisibility visible, ::std::optional<::std::vector<::HudElement>> hudElement);
 
-    MCAPI ::Scripting::Result<void> setTitle(
+    MCNAPI ::Scripting::Result<void> setTitle(
         ::std::variant<
             ::std::string,
             ::ScriptModuleMinecraft::ScriptRawMessageInterface,
@@ -75,7 +77,7 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptTitleDisplayOptions> options
     ) const;
 
-    MCAPI ::Scripting::Result<void> updateSubtitle(
+    MCNAPI ::Scripting::Result<void> updateSubtitle(
         ::std::variant<
             ::std::string,
             ::ScriptModuleMinecraft::ScriptRawMessageInterface,
@@ -87,13 +89,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptScreenDisplay> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptScreenDisplay> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::Player const& player);
+    MCNAPI void* $ctor(::Player const& player);
     // NOLINTEND
 };
 

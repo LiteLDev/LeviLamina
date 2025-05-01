@@ -14,7 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnke18c0f;
-    ::ll::UntypedStorage<8, 64> mUnkbc3a4b;
+    ::ll::UntypedStorage<8, 64> mUnk610961;
     // NOLINTEND
 
 public:
@@ -24,35 +24,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockSpecifier(::SharedTypes::v1_20_60::BlockSpecifier const&);
+    MCNAPI BlockSpecifier(::SharedTypes::v1_20_60::BlockSpecifier const&);
 
-    MCAPI BlockSpecifier(::SharedTypes::v1_20_60::BlockSpecifier&&);
+    MCNAPI BlockSpecifier(::SharedTypes::v1_20_60::BlockSpecifier&&);
 
-    MCAPI ::SharedTypes::v1_20_60::BlockSpecifier& operator=(::SharedTypes::v1_20_60::BlockSpecifier const&);
+    MCNAPI ::SharedTypes::v1_20_60::BlockSpecifier& operator=(::SharedTypes::v1_20_60::BlockSpecifier const&);
 
-    MCAPI ::SharedTypes::v1_20_60::BlockSpecifier& operator=(::SharedTypes::v1_20_60::BlockSpecifier&&);
+    MCNAPI ::SharedTypes::v1_20_60::BlockSpecifier& operator=(::SharedTypes::v1_20_60::BlockSpecifier&&);
 
-    MCAPI ~BlockSpecifier();
+    MCNAPI ~BlockSpecifier();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_60::BlockSpecifier const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_60::BlockSpecifier const&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_20_60::BlockSpecifier&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_60::BlockSpecifier&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

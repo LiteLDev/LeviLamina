@@ -46,13 +46,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ScriptCommandMessageEvent const& scriptCommandMessageEvent);
+    MCNAPI ::EventResult $onEvent(::ScriptCommandMessageEvent const& scriptCommandMessageEvent);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

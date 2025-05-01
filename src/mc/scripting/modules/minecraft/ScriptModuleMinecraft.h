@@ -12,13 +12,18 @@
 #include "mc/scripting/modules/minecraft/scoreboard/ScriptDisplayObjectiveSlotId.h"
 #include "mc/world/item/ItemLockMode.h"
 #include "mc/world/item/alchemy/Potion.h"
+#include "mc/world/level/block/LiquidType.h"
 #include "mc/world/persistence/DynamicPropertyDefinePropertyError.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class Block;
 class BlockPos;
+class PlayerUpdateEntityOverridesPacket;
 class Potion;
+class PropertyComponent;
+class PropertyMetadata;
 namespace ScriptModuleMinecraft { class IScriptItemComponentFactory; }
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptAimAssistCategorySettings; }
@@ -38,76 +43,105 @@ namespace SharedTypes::v1_21_50 { struct CameraAimAssistPresetDefinition; }
 namespace ScriptModuleMinecraft {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::
+MCNAPI ::std::
     unordered_map<::std::string, ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>> const&
     _getAllSupportedItemComponents();
 
-MCAPI ::Scripting::Error
+MCNAPI ::Scripting::Error
 _handleDefinePropertyError(::DynamicPropertyDefinePropertyError error, ::std::string const& identifier);
 
-MCAPI ::Scripting::ClassBindingBuilder<::BlockPos> bindBlockLocation();
+MCNAPI ::PropertyMetadata const*
+_tryGetPropertyMetadata(::PropertyComponent const* props, ::std::string const& identifier);
 
-MCAPI ::Scripting::EnumBinding bindButtonInputAction();
+MCNAPI ::std::optional<::Scripting::Error> _tryQueueUpdateForOverridenProperty(
+    ::Actor&                                          actor,
+    ::PropertyComponent const&                        props,
+    ::PlayerUpdateEntityOverridesPacket&              packet,
+    ::PropertyMetadata const&                         propertyMetadata,
+    ::std::variant<float, bool, ::std::string> const& value
+);
 
-MCAPI ::Scripting::EnumBinding bindButtonInputState();
+MCNAPI ::std::optional<::Scripting::Error> _tryQueueUpdateForRemovedOverride(
+    ::Actor&                   actor,
+    ::PropertyComponent const& props,
+    ::PropertyMetadata const&  propertyMetadata
+);
 
-MCAPI ::Scripting::EnumBindingBuilder<::ScriptModuleMinecraft::ScriptFacing, ::ScriptModuleMinecraft::ScriptFacing>
+MCNAPI ::std::optional<::Scripting::Error> _validatePropertyMetadata(
+    ::PropertyMetadata const* propertyMetadata,
+    ::Actor const*            actor,
+    ::std::string const&      identifier
+);
+
+MCNAPI ::Scripting::ClassBindingBuilder<::BlockPos> bindBlockLocation();
+
+MCNAPI ::Scripting::EnumBinding bindButtonInputAction();
+
+MCNAPI ::Scripting::EnumBinding bindButtonInputState();
+
+MCNAPI ::Scripting::EnumBinding bindEntitySpawnCategory();
+
+MCNAPI ::Scripting::EnumBinding bindEntitySpawnReason();
+
+MCNAPI ::Scripting::EnumBindingBuilder<::ScriptModuleMinecraft::ScriptFacing, ::ScriptModuleMinecraft::ScriptFacing>
 bindFacingEnumV010();
 
-MCAPI ::Scripting::EnumBindingBuilder<::std::string, ::ScriptModuleMinecraft::ScriptFacing> bindFacingEnumV1();
+MCNAPI ::Scripting::EnumBindingBuilder<::std::string, ::ScriptModuleMinecraft::ScriptFacing> bindFacingEnumV1();
 
-MCAPI void bindHudElements(::Scripting::ModuleBindingBuilder& moduleBuilder);
+MCNAPI void bindHudElements(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
-MCAPI void bindHudVisibility(::Scripting::ModuleBindingBuilder& moduleBuilder);
+MCNAPI void bindHudVisibility(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
-MCAPI ::Scripting::EnumBindingBuilder<::std::string, ::ItemLockMode> bindItemLockMode();
+MCNAPI ::Scripting::EnumBindingBuilder<::std::string, ::ItemLockMode> bindItemLockMode();
 
-MCAPI void bindMoonPhases(::Scripting::ModuleBindingBuilder& moduleBuilder);
+MCNAPI ::Scripting::EnumBindingBuilder<::std::string, ::LiquidType> bindLiquidTypeEnum();
 
-MCAPI ::Scripting::EnumBindingBuilder<::std::string, ::ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId>
+MCNAPI void bindMoonPhases(::Scripting::ModuleBindingBuilder& moduleBuilder);
+
+MCNAPI ::Scripting::EnumBindingBuilder<::std::string, ::ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId>
 bindScriptDisplayObjectiveSlotId();
 
-MCAPI ::Scripting::EnumBindingBuilder<::std::string, ::ScriptModuleMinecraft::ScriptEventSource>
+MCNAPI ::Scripting::EnumBindingBuilder<::std::string, ::ScriptModuleMinecraft::ScriptEventSource>
 bindScriptEventSource();
 
-MCAPI ::Scripting::
+MCNAPI ::Scripting::
     EnumBindingBuilder<::ScriptModuleMinecraft::ScriptTimeOfDay, ::ScriptModuleMinecraft::ScriptTimeOfDay>
     bindTimeOfDay();
 
-MCAPI ::Block const* extractBlockFromVariant(
+MCNAPI ::Block const* extractBlockFromVariant(
     ::std::variant<
         ::std::string,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const& block
 );
 
-MCAPI ::std::shared_ptr<::Potion const> const getLongPotion(::Potion::PotionVariant potionEffect);
+MCNAPI ::std::shared_ptr<::Potion const> const getLongPotion(::Potion::PotionVariant potionEffect);
 
-MCAPI ::std::shared_ptr<::Potion const> const getNormalPotion(::Potion::PotionVariant potionEffect);
+MCNAPI ::std::shared_ptr<::Potion const> const getNormalPotion(::Potion::PotionVariant potionEffect);
 
-MCAPI ::std::shared_ptr<::Potion const> const getPotion(
+MCNAPI ::std::shared_ptr<::Potion const> const getPotion(
     ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionEffectType>   effect,
     ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionModifierType> modifier
 );
 
-MCAPI ::std::optional<int> getPotionId(
+MCNAPI ::std::optional<int> getPotionId(
     ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionEffectType>   effect,
     ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionModifierType> modifier
 );
 
-MCAPI ::std::string getScriptScoreboardParticipantName(
+MCNAPI ::std::string getScriptScoreboardParticipantName(
     ::std::variant<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
         ::std::string> const& participant
 );
 
-MCAPI ::std::shared_ptr<::Potion const> const getStrongPotion(::Potion::PotionVariant potionEffect);
+MCNAPI ::std::shared_ptr<::Potion const> const getStrongPotion(::Potion::PotionVariant potionEffect);
 
-MCAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition
+MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition
 makeAimAssistCategoryDefinition(::ScriptModuleMinecraft::ScriptAimAssistCategorySettings const& category);
 
-MCAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition
+MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition
 makeAimAssistPresetDefinition(::ScriptModuleMinecraft::ScriptAimAssistPresetSettings const& preset);
 // NOLINTEND
 

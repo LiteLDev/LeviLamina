@@ -44,25 +44,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockPalette(::Editor::ScriptModule::ScriptBlockPalette const&);
+    MCNAPI ScriptBlockPalette(::Editor::ScriptModule::ScriptBlockPalette const&);
 
-    MCAPI ScriptBlockPalette(::Scripting::WeakLifetimeScope const& scope, uint64 maxSize);
+    MCNAPI ScriptBlockPalette(::Scripting::WeakLifetimeScope const& scope, uint64 maxSize);
 
-    MCAPI ::std::optional<::Scripting::ArgumentOutOfBoundsError> _tryGetArgumentOutOfBoundsError(int index) const;
+    MCNAPI ::std::optional<::Scripting::ArgumentOutOfBoundsError> _tryGetArgumentOutOfBoundsError(int index) const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptIBlockPaletteItem>,
         ::Scripting::ArgumentOutOfBoundsError>
     getItem(int index) const;
 
-    MCAPI ::std::array<::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>, 9>
+    MCNAPI ::std::array<::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>, 9>
     getItemListFromScriptItems() const;
 
-    MCAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError> removeItemAt(int index);
+    MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError> removeItemAt(int index);
 
-    MCAPI void removeItems();
+    MCNAPI void removeItems();
 
-    MCAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError> setItem(
+    MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError> setItem(
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptIBlockPaletteItem> blockPaletteItem,
         int                                                                                   index
     );
@@ -71,15 +71,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptBlockPalette> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptBlockPalette> bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ScriptModule::ScriptBlockPalette const&);
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptBlockPalette const&);
 
-    MCAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, uint64 maxSize);
+    MCNAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, uint64 maxSize);
     // NOLINTEND
 
 public:
@@ -91,7 +91,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

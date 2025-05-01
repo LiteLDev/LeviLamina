@@ -20,22 +20,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemEnchantOption(::ItemEnchantOption&&);
+    MCNAPI ItemEnchantOption(::ItemEnchantOption&&);
 
-    MCAPI ::ItemEnchantOption& operator=(::ItemEnchantOption const&);
+    MCNAPI ::ItemEnchantOption& operator=(::ItemEnchantOption const&);
 
-    MCAPI ~ItemEnchantOption();
+    MCNAPI ~ItemEnchantOption();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemEnchantOption&&);
+    MCNAPI void* $ctor(::ItemEnchantOption&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

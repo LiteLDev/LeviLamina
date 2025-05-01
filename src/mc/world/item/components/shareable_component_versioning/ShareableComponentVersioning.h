@@ -11,7 +11,7 @@ class Level;
 namespace ShareableComponentVersioning {
 // functions
 // NOLINTBEGIN
-MCFOLD bool isSupported(::Level const& level, ::BaseGameVersion version);
+MCNAPI bool isSupported(::Level const& level, ::BaseGameVersion version);
 // NOLINTEND
 
 } // namespace ShareableComponentVersioning

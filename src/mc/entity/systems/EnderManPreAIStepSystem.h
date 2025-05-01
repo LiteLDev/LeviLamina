@@ -20,9 +20,9 @@ struct EnderManPreAIStepSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
 
-    MCAPI static void tick(
+    MCNAPI static void tick(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::ActorMovementTickNeededComponent, ::EnderManFlagComponent, ::MobIsJumpingFlagComponent>> view,

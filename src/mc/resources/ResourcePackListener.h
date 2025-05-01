@@ -33,24 +33,24 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $onFullPackStackInvalid();
+    MCNAPI bool $onFullPackStackInvalid();
 
-    MCFOLD void $onBaseGamePackDownloadComplete();
+    MCNAPI void $onBaseGamePackDownloadComplete();
 
-    MCFOLD void $onLanguageSubpacksChanged();
+    MCNAPI void $onLanguageSubpacksChanged();
 
-    MCFOLD void $onResourceManagerDestroyed(::ResourcePackManager& mgr);
+    MCNAPI void $onResourceManagerDestroyed(::ResourcePackManager& mgr);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -54,7 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseGameTestFunction(
+    MCNAPI BaseGameTestFunction(
         ::std::string                batchName,
         ::std::string                testName,
         ::std::string                structureName,
@@ -68,13 +68,13 @@ public:
         ::std::vector<::std::string> attempts
     );
 
-    MCAPI bool hasTag(::std::string const& tag) const;
+    MCNAPI bool hasTag(::std::string const& tag) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string                batchName,
         ::std::string                testName,
         ::std::string                structureName,
@@ -92,7 +92,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -104,7 +104,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

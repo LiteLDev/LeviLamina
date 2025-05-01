@@ -60,17 +60,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Scheduler(::std::string name, uint FPS);
+    MCNAPI Scheduler(::std::string name, uint FPS);
 
-    MCAPI void processCoroutines(::std::chrono::nanoseconds timeSinceSwap, ::std::chrono::nanoseconds minTimeCap);
+    MCNAPI void processCoroutines(::std::chrono::nanoseconds timeSinceSwap, ::std::chrono::nanoseconds minTimeCap);
 
-    MCAPI void setTargetFPS(uint FPS);
+    MCNAPI void setTargetFPS(uint FPS);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string name, uint FPS);
+    MCNAPI void* $ctor(::std::string name, uint FPS);
     // NOLINTEND
 
 public:
@@ -82,6 +82,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -9,6 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 72> mUnk3078a3;
+    ::ll::UntypedStorage<8, 64> mUnk8a188a;
     // NOLINTEND
 
 public:
@@ -20,13 +21,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ReflectionContext();
+    MCNAPI ReflectionContext(::cereal::internal::ReflectionContext&&);
+
+    MCNAPI ~ReflectionContext();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::cereal::internal::ReflectionContext&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

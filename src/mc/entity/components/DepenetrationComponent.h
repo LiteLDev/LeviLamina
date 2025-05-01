@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 // auto generated forward declare list
 // clang-format off
 class AABB;
-class Vec3;
 // clang-format on
 
 struct DepenetrationComponent {
@@ -39,6 +41,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::DepenetrationComponent& operator=(::DepenetrationComponent&&);
+    MCNAPI ::DepenetrationComponent& operator=(::DepenetrationComponent&&);
     // NOLINTEND
 };

@@ -7,7 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class IBackgroundTaskOwner;
 class ITaskExecutionContext;
+struct TaskStartInfo;
 // clang-format on
 
 class BackgroundTaskBase {
@@ -40,13 +42,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~CurrentTaskAutoScope();
+        MCNAPI ~CurrentTaskAutoScope();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -61,6 +63,7 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk96ebbd;
     ::ll::UntypedStorage<4, 4>  mUnkcad031;
     ::ll::UntypedStorage<8, 8>  mUnk8b825b;
+    ::ll::UntypedStorage<1, 1>  mUnk3605cd;
     // NOLINTEND
 
 public:
@@ -88,7 +91,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setNext(::std::shared_ptr<::BackgroundTaskBase> next);
+    MCNAPI
+    BackgroundTaskBase(::gsl::not_null<::IBackgroundTaskOwner*> group, ::TaskStartInfo const& startInfo, bool isAsync);
+
+    MCNAPI void setNext(::std::shared_ptr<::BackgroundTaskBase> next);
     // NOLINTEND
 
 public:
@@ -98,9 +104,15 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::gsl::not_null<::IBackgroundTaskOwner*> group, ::TaskStartInfo const& startInfo, bool isAsync);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -112,6 +124,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -37,76 +37,76 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PropertyGroup();
+    MCNAPI PropertyGroup();
 
-    MCAPI void _addBoolProperty(::std::string const& name, bool clientSync, bool defaultValue);
+    MCNAPI void _addBoolProperty(::std::string const& name, bool clientSync, bool defaultValue);
 
-    MCAPI void _addEnumIndexProperty(
+    MCNAPI void _addEnumIndexProperty(
         ::std::string const&                 name,
         bool                                 clientSync,
         ::ExpressionNode&&                   defaultExpression,
         ::std::vector<::HashedString> const& enumValues
     );
 
-    MCAPI void _addEnumIndexProperty(
+    MCNAPI void _addEnumIndexProperty(
         ::std::string const&                 name,
         bool                                 clientSync,
         uint64                               defaultValue,
         ::std::vector<::HashedString> const& enumValues
     );
 
-    MCAPI void
+    MCNAPI void
     _addFloatProperty(::std::string const& name, bool clientSync, float defaultValue, float rangeMin, float rangeMax);
 
-    MCAPI void
+    MCNAPI void
     _addIntProperty(::std::string const& name, bool clientSync, int defaultValue, int rangeMin, int rangeMax);
 
-    MCAPI void
+    MCNAPI void
     _addPropertyMetadata(::std::string const& name, bool clientSync, ::PropertyMetadata::ContainedType propertyType);
 
-    MCAPI ::std::string const& _getFriendlyJsonTypeString(::PropertyMetadata::ContainedType type);
+    MCNAPI ::std::string const& _getFriendlyJsonTypeString(::PropertyMetadata::ContainedType type);
 
-    MCAPI bool _loadPropertyFromJson(
+    MCNAPI bool _loadPropertyFromJson(
         ::std::string const& name,
         ::Json::Value const& propertyNode,
         ::MolangVersion      molangVersion,
         bool                 clientSync
     );
 
-    MCAPI void _reserveSpaceForTypes(::std::vector<uint64> const& typeCounts);
+    MCNAPI void _reserveSpaceForTypes(::std::vector<uint64> const& typeCounts);
 
-    MCAPI bool _validateDataType(::Json::Value const& value, ::PropertyMetadata::ContainedType type);
+    MCNAPI bool _validateDataType(::Json::Value const& value, ::PropertyMetadata::ContainedType type);
 
-    MCAPI bool getDefaultBoolValue(uint64 boolArrayIndex, ::RenderParams& renderParams) const;
+    MCNAPI bool getDefaultBoolValue(uint64 boolArrayIndex, ::RenderParams& renderParams) const;
 
-    MCAPI uint64 getDefaultEnumIndexValue(
+    MCNAPI uint64 getDefaultEnumIndexValue(
         uint64               enumIndexArrayIndex,
         ::RenderParams&      renderParams,
         ::std::string const& propertyName
     ) const;
 
-    MCAPI float getDefaultFloatValue(uint64 floatArrayIndex, ::RenderParams& renderParams) const;
+    MCNAPI float getDefaultFloatValue(uint64 floatArrayIndex, ::RenderParams& renderParams) const;
 
-    MCAPI int getDefaultIntValue(uint64 intArrayIndex, ::RenderParams& renderParams) const;
+    MCNAPI int getDefaultIntValue(uint64 intArrayIndex, ::RenderParams& renderParams) const;
 
-    MCAPI ::ListTag getNetworkSyncPropertyDescriptionsAsListTag() const;
+    MCNAPI ::ListTag getNetworkSyncPropertyDescriptionsAsListTag() const;
 
-    MCAPI ::PropertyMetadata const* getPropertyMetadata(uint64 propertyNameHash) const;
+    MCNAPI ::PropertyMetadata const* getPropertyMetadata(uint64 propertyNameHash) const;
 
-    MCAPI ~PropertyGroup();
+    MCNAPI ~PropertyGroup();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::PropertyMetadata::ContainedType _getJsonPropertyType(::Json::Value const& typeNode);
+    MCNAPI static ::PropertyMetadata::ContainedType _getJsonPropertyType(::Json::Value const& typeNode);
 
-    MCAPI static bool
+    MCNAPI static bool
     _tryGetClientSync(::std::string const& propertyName, ::Json::Value const& propertyNode, bool& clientSyncOut);
 
-    MCAPI static bool isValidEnumEntry(::std::string const& entryValue);
+    MCNAPI static bool isValidEnumEntry(::std::string const& entryValue);
 
-    MCAPI static ::std::shared_ptr<::PropertyGroup const>
+    MCNAPI static ::std::shared_ptr<::PropertyGroup const>
     loadPropertiesFromJson(::Json::Value const& root, ::MolangVersion molangVersion);
     // NOLINTEND
 
@@ -121,12 +121,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

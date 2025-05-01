@@ -11,29 +11,29 @@ struct RtcpMuxFilter {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool ExpectAnswer(::cricket::ContentSource);
+    MCNAPI bool ExpectAnswer(::cricket::ContentSource);
 
-    MCAPI bool ExpectOffer(bool, ::cricket::ContentSource);
+    MCNAPI bool ExpectOffer(bool, ::cricket::ContentSource);
 
-    MCAPI bool IsActive() const;
+    MCNAPI bool IsActive() const;
 
-    MCAPI bool IsFullyActive() const;
+    MCNAPI bool IsFullyActive() const;
 
-    MCAPI bool IsProvisionallyActive() const;
+    MCNAPI bool IsProvisionallyActive() const;
 
-    MCAPI RtcpMuxFilter();
+    MCNAPI RtcpMuxFilter();
 
-    MCAPI bool SetAnswer(bool, ::cricket::ContentSource);
+    MCNAPI bool SetAnswer(bool, ::cricket::ContentSource);
 
-    MCAPI bool SetOffer(bool, ::cricket::ContentSource);
+    MCNAPI bool SetOffer(bool, ::cricket::ContentSource);
 
-    MCAPI bool SetProvisionalAnswer(bool, ::cricket::ContentSource);
+    MCNAPI bool SetProvisionalAnswer(bool, ::cricket::ContentSource);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

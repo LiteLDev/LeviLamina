@@ -4,20 +4,32 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/block/tessellation_pipeline/VolumeOf.h"
+#include "mc/common/BrightnessPair.h"
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/network/packet/SubChunkPacket.h"
+#include "mc/platform/threading/Mutex.h"
+#include "mc/platform/threading/SpinLockImpl.h"
 #include "mc/platform/threading/UniqueLock.h"
 #include "mc/world/actor/ActorType.h"
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/level/ChunkLocalHeight.h"
+#include "mc/world/level/ChunkPos.h"
+#include "mc/world/level/Tick.h"
+#include "mc/world/level/chunk/BiomeChunkData.h"
 #include "mc/world/level/chunk/ChunkCachedDataState.h"
 #include "mc/world/level/chunk/ChunkDebugDisplaySavedState.h"
 #include "mc/world/level/chunk/ChunkState.h"
 #include "mc/world/level/chunk/ChunkTerrainDataState.h"
+#include "mc/world/level/chunk/ColumnCachedData.h"
+#include "mc/world/level/chunk/DirtyTicksCounter.h"
 #include "mc/world/level/chunk/LevelChunkFormat.h"
 #include "mc/world/level/chunk/LevelChunkNeighbor.h"
+#include "mc/world/level/chunk/LevelChunkVolumeData.h"
 #include "mc/world/level/chunk/SubChunkInitMode.h"
 #include "mc/world/level/chunk/SubChunkStorage.h"
 #include "mc/world/level/chunk/level_chunk_ticking/Entity.h"
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
 #include "mc/world/level/levelgen/v1/HardcodedSpawnAreaType.h"
 
 // auto generated forward declare list
@@ -28,14 +40,10 @@ class Biome;
 class BiomeRegistry;
 class Block;
 class BlockActor;
-class BlockPos;
 class BlockSource;
 class BlockTickingQueue;
 class BlockVolume;
-class BoundingBox;
 class ChunkBlockPos;
-class ChunkLocalHeight;
-class ChunkPos;
 class ChunkSource;
 class ChunkViewSource;
 class Dimension;
@@ -45,10 +53,8 @@ class IDataInput;
 class IDataOutput;
 class ILevel;
 class LevelChunkMetaData;
-class LevelChunkVolumeData;
 class Random;
 class SaveContext;
-class SpinLockImpl;
 class StringByteInput;
 class SubChunkPos;
 class Vec3;
@@ -56,17 +62,11 @@ class WeakEntityRef;
 class Weather;
 struct ActorDefinitionIdentifier;
 struct ActorLink;
-struct BiomeChunkData;
 struct BiomeChunkState;
 struct BlockID;
-struct BrightnessPair;
-struct ColumnCachedData;
 struct DeserializationChanges;
-struct DirtyTicksCounter;
 struct NibblePair;
 struct SubChunk;
-struct Tick;
-namespace Bedrock::Threading { class Mutex; }
 namespace LevelChunkTicking { struct Registry; }
 // clang-format on
 
@@ -360,6 +360,11 @@ public:
 
     MCAPI void finalizePostProcessing();
 
+    MCAPI void finalizeSubChunkDeserialization(
+        ::std::unordered_map<::ChunkBlockPos, ::std::shared_ptr<::BlockActor>>& blockActorMap,
+        ::buffer_span_mut<::SubChunk>                                           subchunks
+    );
+
     MCAPI ::std::optional<::BlockPos> findExposedLightningRod(::BlockPos const& pos, ::BlockSource& region);
 
     MCAPI ::Vec3 findLightningTarget(::BlockPos const& pos, ::BlockSource& region);
@@ -518,17 +523,6 @@ public:
         ushort                 dimensionHeightInSubchunks,
         ::Biome const*         defaultBiome,
         bool                   fromNetwork
-    );
-
-    MCAPI static ::std::tuple<
-        ::std::array<::ChunkLocalHeight, 256>,
-        ushort,
-        ::std::vector<::std::unique_ptr<::SubChunkStorage<::Biome>>>>
-    deserialize3DData(
-        ::IDataInput&          stream,
-        ::BiomeRegistry const& biomeRegistry,
-        ushort                 dimensionHeightInSubchunks,
-        ::Biome*               defaultBiomes
     );
 
     MCAPI static void serializeEntities(

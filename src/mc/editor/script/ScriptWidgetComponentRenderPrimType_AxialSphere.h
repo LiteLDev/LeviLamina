@@ -33,17 +33,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere&
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere&
     operator=(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere const&);
 
-    MCAPI ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere&
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere&
     operator=(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<
+    MCNAPI static ::Scripting::ClassBindingBuilder<
         ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere>
     bindScript();
     // NOLINTEND
@@ -51,13 +51,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -39,7 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addPiece(
+    MCNAPI void _addPiece(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::PoolElementStructurePiece const&                  sourcePiece,
         ::Random&                                           random,
@@ -51,7 +51,7 @@ public:
         ::BlockPos const&                                   refPos
     );
 
-    MCAPI bool _tryPlacingPiece(
+    MCNAPI bool _tryPlacingPiece(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::PoolElementStructurePiece const&                  sourcePiece,
         ::Random&                                           random,
@@ -66,7 +66,7 @@ public:
         ::BlockPos const&                                   refPos
     );
 
-    MCAPI void addPieces(
+    MCNAPI void addPieces(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::StructurePoolElement const&                       initialElement,
         ::Random&                                           random,
@@ -76,12 +76,12 @@ public:
         ::Dimension&                                        dimension
     );
 
-    MCAPI ~LegacyJigsawPlacement();
+    MCNAPI ~LegacyJigsawPlacement();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

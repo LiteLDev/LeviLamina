@@ -26,37 +26,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RTCError(::webrtc::RTCErrorType);
+    MCNAPI explicit RTCError(::webrtc::RTCErrorType);
 
-    MCAPI RTCError(::webrtc::RTCErrorType, ::std::string_view);
+    MCNAPI RTCError(::webrtc::RTCErrorType, ::std::string_view);
 
-    MCAPI char const* message() const;
+    MCNAPI char const* message() const;
 
-    MCAPI ::webrtc::RTCError& operator=(::webrtc::RTCError&&);
+    MCNAPI ::webrtc::RTCError& operator=(::webrtc::RTCError&&);
 
-    MCAPI void set_message(::std::string_view);
+    MCNAPI void set_message(::std::string_view);
 
-    MCAPI ~RTCError();
+    MCNAPI ~RTCError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::RTCError OK();
+    MCNAPI static ::webrtc::RTCError OK();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::RTCErrorType);
+    MCNAPI void* $ctor(::webrtc::RTCErrorType);
 
-    MCAPI void* $ctor(::webrtc::RTCErrorType, ::std::string_view);
+    MCNAPI void* $ctor(::webrtc::RTCErrorType, ::std::string_view);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

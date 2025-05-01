@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/BasicSerializerContext.h"
 #include "mc/deps/cereal/ResultCode.h"
-#include "mc/deps/cereal/SerializerContext.h"
 #include "mc/deps/puv/LoggerIterator.h"
 
 namespace Puv {
@@ -13,11 +13,40 @@ class Logger {
 public:
     // Logger inner types declare
     // clang-format off
+    struct ParseLogEntry;
     struct UpgradeLogEntry;
     struct ValidationLogEntry;
     // clang-format on
 
     // Logger inner types define
+    struct ParseLogEntry {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<2, 2>  mUnk3e9543;
+        ::ll::UntypedStorage<8, 24> mUnk51254a;
+        ::ll::UntypedStorage<8, 32> mUnk448aaf;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ParseLogEntry& operator=(ParseLogEntry const&);
+        ParseLogEntry(ParseLogEntry const&);
+        ParseLogEntry();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~ParseLogEntry();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
     enum class UpgradeResultCode : uchar {
         // bitfield representation
         UnsupportedVersion = 1 << 0,
@@ -34,8 +63,8 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<1, 1>  mUnkecd095;
-        ::ll::UntypedStorage<8, 24> mUnk553dcb;
-        ::ll::UntypedStorage<8, 24> mUnk2c9630;
+        ::ll::UntypedStorage<8, 24> mUnk70d724;
+        ::ll::UntypedStorage<8, 24> mUnk6f2eb0;
         ::ll::UntypedStorage<8, 32> mUnkd94ab9;
         // NOLINTEND
 
@@ -48,13 +77,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~UpgradeLogEntry();
+        MCNAPI ~UpgradeLogEntry();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -82,20 +111,20 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ValidationLogEntry();
+        MCNAPI ~ValidationLogEntry();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk168e35;
+    ::ll::UntypedStorage<8, 24> mUnk6de64c;
     ::ll::UntypedStorage<8, 24> mUnk2f2a6c;
     ::ll::UntypedStorage<8, 24> mUnkbfc3b7;
     ::ll::UntypedStorage<1, 1>  mUnkbcb18b;
@@ -109,40 +138,48 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Logger(::Puv::Logger const&);
+    MCNAPI Logger(::Puv::Logger const&);
 
-    MCAPI Logger(::Puv::Logger&&);
+    MCNAPI Logger(::Puv::Logger&&);
 
-    MCAPI ::Puv::Logger& log(::Puv::Logger::ValidationResultCode res, ::std::string msg);
+    MCNAPI ::Puv::Logger& log(::Puv::Logger::ValidationResultCode res, ::std::string msg);
 
-    MCAPI ::Puv::Logger&
-    log(::cereal::ResultCode                                                                res,
-        ::std::vector<::std::pair<::cereal::SerializerContext::ContextType, ::std::string>> path,
-        ::std::string                                                                       msg);
+    MCNAPI ::Puv::Logger&
+    log(::cereal::ResultCode                                                                     res,
+        ::std::vector<::std::pair<::cereal::BasicSerializerContext::ContextType, ::std::string>> path,
+        ::std::string                                                                            msg);
 
-    MCAPI ::Puv::Logger&
-    log(::Puv::Logger::UpgradeResultCode                                                    res,
-        ::std::vector<::std::pair<::cereal::SerializerContext::ContextType, ::std::string>> src,
-        ::std::vector<::std::pair<::cereal::SerializerContext::ContextType, ::std::string>> dst,
-        ::std::string                                                                       msg);
+    MCNAPI ::Puv::Logger&
+    log(::Puv::Logger::UpgradeResultCode                                                         res,
+        ::std::vector<::std::pair<::cereal::BasicSerializerContext::ContextType, ::std::string>> src,
+        ::std::vector<::std::pair<::cereal::BasicSerializerContext::ContextType, ::std::string>> dst,
+        ::std::string                                                                            msg);
 
-    MCAPI ::Puv::Logger& operator=(::Puv::Logger&&);
+    MCNAPI ::Puv::Logger& operator=(::Puv::Logger&&);
 
-    MCAPI ~Logger();
+    MCNAPI ~Logger();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::string contextString(
+        ::std::vector<::std::pair<::cereal::BasicSerializerContext::ContextType, ::std::string>> const& contextStack
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Puv::Logger const&);
+    MCNAPI void* $ctor(::Puv::Logger const&);
 
-    MCAPI void* $ctor(::Puv::Logger&&);
+    MCNAPI void* $ctor(::Puv::Logger&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

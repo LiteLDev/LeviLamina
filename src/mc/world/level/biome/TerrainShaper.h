@@ -26,13 +26,13 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static float getContinents(::TerrainShaper::Point const& point);
+        MCNAPI static float getContinents(::TerrainShaper::Point const& point);
 
-        MCAPI static float getErosion(::TerrainShaper::Point const& point);
+        MCNAPI static float getErosion(::TerrainShaper::Point const& point);
 
-        MCFOLD static float getRidges(::TerrainShaper::Point const& point);
+        MCNAPI static float getRidges(::TerrainShaper::Point const& point);
 
-        MCFOLD static float getWeirdness(::TerrainShaper::Point const& point);
+        MCNAPI static float getWeirdness(::TerrainShaper::Point const& point);
         // NOLINTEND
 
     public:
@@ -65,30 +65,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TerrainShaper(::TerrainShaper const&);
+    MCNAPI TerrainShaper(::TerrainShaper const&);
 
-    MCAPI TerrainShaper(
+    MCNAPI TerrainShaper(
         ::ToFloatFunction<::TerrainShaper::Point> offsetSpline,
         ::ToFloatFunction<::TerrainShaper::Point> factorSpline,
         ::ToFloatFunction<::TerrainShaper::Point> jaggednessSpline
     );
 
-    MCAPI float offset(float continentalness, float erosion, float weirdness) const;
+    MCNAPI float offset(float continentalness, float erosion, float weirdness) const;
 
-    MCAPI ~TerrainShaper();
+    MCNAPI ~TerrainShaper();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ToFloatFunction<::TerrainShaper::Point> buildErosionJaggednessSpline(
+    MCNAPI static ::ToFloatFunction<::TerrainShaper::Point> buildErosionJaggednessSpline(
         float jaggednessFactorAtPeakRidgeAndErosionIndex1,
         float jaggednessFactorAtHighRidgeAndErosionIndex0,
         float jaggednessFactorAtPeakRidgeAndErosionIndex0,
         float jaggednessFactorAtHighRidgeAndErosionIndex1
     );
 
-    MCAPI static ::ToFloatFunction<::TerrainShaper::Point> buildErosionOffsetSpline(
+    MCNAPI static ::ToFloatFunction<::TerrainShaper::Point> buildErosionOffsetSpline(
         ::std::string const& name,
         float                lowValley,
         float                hill,
@@ -100,19 +100,19 @@ public:
         bool                 saddle
     );
 
-    MCAPI static ::ToFloatFunction<::TerrainShaper::Point>
+    MCNAPI static ::ToFloatFunction<::TerrainShaper::Point>
     buildMountainRidgeSplineWithPoints(float modulation, bool saddle);
 
-    MCAPI static ::TerrainShaper buildOverworld();
+    MCNAPI static ::TerrainShaper buildOverworld();
 
-    MCAPI static ::ToFloatFunction<::TerrainShaper::Point>
+    MCNAPI static ::ToFloatFunction<::TerrainShaper::Point>
     buildRidgeJaggednessSpline(float jaggednessFactorAtPeakRidge, float jaggednessFactorAtHighRidge);
 
-    MCAPI static ::ToFloatFunction<::TerrainShaper::Point> buildWeirdnessJaggednessSpline(float jaggednessFactor);
+    MCNAPI static ::ToFloatFunction<::TerrainShaper::Point> buildWeirdnessJaggednessSpline(float jaggednessFactor);
 
-    MCAPI static ::ToFloatFunction<::TerrainShaper::Point> getErosionFactor(float baseValue, bool shatteredTerrain);
+    MCNAPI static ::ToFloatFunction<::TerrainShaper::Point> getErosionFactor(float baseValue, bool shatteredTerrain);
 
-    MCAPI static ::ToFloatFunction<::TerrainShaper::Point> ridgeSpline(
+    MCNAPI static ::ToFloatFunction<::TerrainShaper::Point> ridgeSpline(
         ::std::string const& name,
         float                valley,
         float                low,
@@ -126,9 +126,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TerrainShaper const&);
+    MCNAPI void* $ctor(::TerrainShaper const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ToFloatFunction<::TerrainShaper::Point> offsetSpline,
         ::ToFloatFunction<::TerrainShaper::Point> factorSpline,
         ::ToFloatFunction<::TerrainShaper::Point> jaggednessSpline
@@ -138,6 +138,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

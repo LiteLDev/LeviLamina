@@ -32,77 +32,80 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptBlockFilter(ScriptBlockFilter const&);
     ScriptBlockFilter();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockFilter(::ScriptModuleMinecraft::ScriptBlockFilter&&);
+    MCNAPI ScriptBlockFilter(::ScriptModuleMinecraft::ScriptBlockFilter&&);
 
-    MCAPI ::Scripting::Result_deprecated<::std::optional<
+    MCNAPI ScriptBlockFilter(::ScriptModuleMinecraft::ScriptBlockFilter const&);
+
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>>
     getExcludePermutations() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::vector<::std::string>>> getExcludeTags() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::vector<::std::string>>> getExcludeTags() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::vector<::std::string>>> getExcludeTypes() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::vector<::std::string>>> getExcludeTypes() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::optional<
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>>
     getIncludePermutations() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::vector<::std::string>>> getIncludeTags() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::vector<::std::string>>> getIncludeTags() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::vector<::std::string>>> getIncludeTypes() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::vector<::std::string>>> getIncludeTypes() const;
 
-    MCAPI bool isValid(::Scripting::Error& error) const;
+    MCNAPI bool isValid(::Scripting::Error& error) const;
 
-    MCAPI bool operator()(::Block const& block) const;
+    MCNAPI bool operator()(::Block const& block) const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptBlockFilter& operator=(::ScriptModuleMinecraft::ScriptBlockFilter const&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptBlockFilter& operator=(::ScriptModuleMinecraft::ScriptBlockFilter const&);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptBlockFilter& operator=(::ScriptModuleMinecraft::ScriptBlockFilter&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptBlockFilter& operator=(::ScriptModuleMinecraft::ScriptBlockFilter&&);
 
-    MCAPI ::Scripting::Result<void> setExcludePermutations(
+    MCNAPI ::Scripting::Result<void> setExcludePermutations(
         ::std::optional<
             ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>> const&
             permutations
     );
 
-    MCAPI ::Scripting::Result<void> setExcludeTags(::std::optional<::std::vector<::std::string>> strings);
+    MCNAPI ::Scripting::Result<void> setExcludeTags(::std::optional<::std::vector<::std::string>> strings);
 
-    MCAPI ::Scripting::Result<void> setExcludeTypes(::std::optional<::std::vector<::std::string>> strings);
+    MCNAPI ::Scripting::Result<void> setExcludeTypes(::std::optional<::std::vector<::std::string>> strings);
 
-    MCAPI ::Scripting::Result<void> setIncludePermutations(
+    MCNAPI ::Scripting::Result<void> setIncludePermutations(
         ::std::optional<
             ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>> const&
             permutations
     );
 
-    MCAPI ::Scripting::Result<void> setIncludeTags(::std::optional<::std::vector<::std::string>> strings);
+    MCNAPI ::Scripting::Result<void> setIncludeTags(::std::optional<::std::vector<::std::string>> strings);
 
-    MCAPI ::Scripting::Result<void> setIncludeTypes(::std::optional<::std::vector<::std::string>> strings);
+    MCNAPI ::Scripting::Result<void> setIncludeTypes(::std::optional<::std::vector<::std::string>> strings);
 
-    MCAPI ~ScriptBlockFilter();
+    MCNAPI ~ScriptBlockFilter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptBlockFilter> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptBlockFilter> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockFilter&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockFilter&&);
+
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockFilter const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

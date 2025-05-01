@@ -32,34 +32,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::std::string> getSelectedTool() const;
+    MCNAPI ::std::optional<::std::string> getSelectedTool() const;
 
-    MCAPI ::std::string getToolPayload(::std::string id) const;
+    MCNAPI ::std::string getToolPayload(::std::string id) const;
 
-    MCAPI ::std::optional<::std::variant<float, bool, ::std::string>>
+    MCNAPI ::std::optional<::std::variant<float, bool, ::std::string>>
     getToolProperty(::std::string id, ::std::string property) const;
 
-    MCAPI bool hasToolPayload(::std::string id) const;
+    MCNAPI bool hasToolPayload(::std::string id) const;
 
-    MCAPI bool hasToolProperty(::std::string id, ::std::string property) const;
+    MCNAPI bool hasToolProperty(::std::string id, ::std::string property) const;
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     registerTool(::Scripting::ContextConfig const& contextConfig, ::std::string id, ::std::string const& payload);
 
-    MCAPI ::Scripting::Result<void> unregisterTool(::std::string id);
+    MCNAPI ::Scripting::Result<void> unregisterTool(::std::string id);
 
-    MCAPI ::Scripting::Result<void> updateRegisteredTool(::std::string id, ::std::string const& payload);
+    MCNAPI ::Scripting::Result<void> updateRegisteredTool(::std::string id, ::std::string const& payload);
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     updateRegisteredToolProperty(::std::string id, ::std::string const& payload, ::std::string const& prop);
 
-    MCAPI ::Scripting::Result<void> updateSelectedTool(::std::optional<::std::string> toolId);
+    MCNAPI ::Scripting::Result<void> updateSelectedTool(::std::optional<::std::string> toolId);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
     // NOLINTEND
 };
 

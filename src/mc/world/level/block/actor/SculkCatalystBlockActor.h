@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/world/events/gameevents/GameEventListener.h"
+#include "mc/world/events/gameevents/PositionSource.h"
+#include "mc/world/level/block/SculkSpreader.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 
@@ -18,9 +20,7 @@ class GameEvent;
 class ILevel;
 class Level;
 class SaveContext;
-class SculkSpreader;
 struct GameEventContext;
-namespace GameEvents { class PositionSource; }
 // clang-format on
 
 class SculkCatalystBlockActor : public ::BlockActor, public ::GameEventListener {
@@ -41,10 +41,10 @@ public:
     // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
     // vIndex: 1
@@ -70,15 +70,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SculkCatalystBlockActor(::BlockPos const& pos);
+    MCNAPI explicit SculkCatalystBlockActor(::BlockPos const& pos);
 
-    MCAPI void _tryConsumeOnDeathExperience(::Level& level, ::Actor& actor);
+    MCNAPI void _tryConsumeOnDeathExperience(::Level& level, ::Actor& actor);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _trySendItSpreadsEventPacket(::Actor& actor);
+    MCNAPI static void _trySendItSpreadsEventPacket(::Actor& actor);
     // NOLINTEND
 
 public:
@@ -92,7 +92,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
+    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -104,29 +104,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI void $onRemoved(::BlockSource& region);
+    MCNAPI void $onRemoved(::BlockSource& region);
 
-    MCAPI void
+    MCNAPI void
     $handleGameEvent(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, ::BlockSource& region);
 
-    MCFOLD ::GameEvents::PositionSource const& $getPositionSource() const;
+    MCNAPI ::GameEvents::PositionSource const& $getPositionSource() const;
 
-    MCFOLD uint $getRange() const;
+    MCNAPI uint $getRange() const;
 
-    MCFOLD ::GameEventListener::DeliveryMode $getDeliveryMode() const;
+    MCNAPI ::GameEventListener::DeliveryMode $getDeliveryMode() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBlockActor();
+    MCNAPI static void** $vftableForBlockActor();
 
-    MCAPI static void** $vftableForGameEventListener();
+    MCNAPI static void** $vftableForGameEventListener();
     // NOLINTEND
 };

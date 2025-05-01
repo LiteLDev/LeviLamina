@@ -20,7 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string getBytes(uint amount);
+    MCNAPI ::std::string getBytes(uint amount);
     // NOLINTEND
 };
 

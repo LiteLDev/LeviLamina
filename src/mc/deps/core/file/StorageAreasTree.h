@@ -51,15 +51,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::Core::StorageAreasTree::TreeChild& operator=(::Core::StorageAreasTree::TreeChild&&);
+        MCNAPI ::Core::StorageAreasTree::TreeChild& operator=(::Core::StorageAreasTree::TreeChild&&);
 
-        MCAPI ~TreeChild();
+        MCNAPI ~TreeChild();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -79,13 +79,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Core::FileStorageArea* getStorageArea(::Core::PathView path) const;
+    MCNAPI ::Core::FileStorageArea* getStorageArea(::Core::PathView path) const;
 
-    MCAPI void insertStorageArea(::Core::FileStorageArea& storageArea);
+    MCNAPI void insertStorageArea(::Core::FileStorageArea& storageArea);
 
-    MCAPI void removeStorageArea(::Core::FileStorageArea& storageArea);
+    MCNAPI void removeStorageArea(::Core::FileStorageArea& storageArea);
 
-    MCAPI void teardown(::std::function<void(::Core::FileStorageArea&)>&& teardownCallback);
+    MCNAPI void teardown(::std::function<void(::Core::FileStorageArea&)>&& teardownCallback);
     // NOLINTEND
 };
 

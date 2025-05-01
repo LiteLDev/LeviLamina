@@ -20,10 +20,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_60::DimensionDefinition::Dimension&
+    MCNAPI ::SharedTypes::v1_21_60::DimensionDefinition::Dimension&
     operator=(::SharedTypes::v1_21_60::DimensionDefinition::Dimension&&);
 
-    MCAPI ::SharedTypes::v1_21_60::DimensionDefinition::Dimension&
+    MCNAPI ::SharedTypes::v1_21_60::DimensionDefinition::Dimension&
     operator=(::SharedTypes::v1_21_60::DimensionDefinition::Dimension const&);
     // NOLINTEND
 };

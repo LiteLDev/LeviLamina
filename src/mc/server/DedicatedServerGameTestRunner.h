@@ -18,13 +18,14 @@ class DedicatedServerGameTestRunner {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 128> mUnk67324a;
+    ::ll::UntypedStorage<8, 120> mUnk67324a;
     ::ll::UntypedStorage<8, 152> mUnkd3a2d2;
     ::ll::UntypedStorage<8, 64>  mUnk991b8c;
     ::ll::UntypedStorage<8, 64>  mUnkfee08d;
     ::ll::UntypedStorage<1, 1>   mUnka6cf52;
     ::ll::UntypedStorage<8, 8>   mUnka26d55;
     ::ll::UntypedStorage<8, 16>  mUnk8dd78f;
+    ::ll::UntypedStorage<8, 8>   mUnk9052bf;
     ::ll::UntypedStorage<8, 8>   mUnkc340eb;
     ::ll::UntypedStorage<8, 8>   mUnk7247f6;
     ::ll::UntypedStorage<1, 1>   mUnke03888;
@@ -41,30 +42,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DedicatedServerGameTestRunner(
+    MCNAPI DedicatedServerGameTestRunner(
         ::TestConfig const&  testConfig,
         ::MinecraftGameTest& gameTest,
         ::ServerInstance&    server,
         ::Level&             level
     );
 
-    MCAPI ::Dimension* _ensureDimension(::DimensionType dimensionType);
+    MCNAPI ::Dimension* _ensureDimension(::DimensionType dimensionType);
 
-    MCAPI void _initializeReport();
+    MCNAPI void _initializeReport();
 
-    MCAPI void _runTestGroup(::std::vector<::std::string> const& tags);
+    MCNAPI void _runTestGroup(::std::vector<::std::string> const& tags);
 
-    MCAPI bool _saveReport();
+    MCNAPI bool _saveReport();
 
-    MCAPI bool _writeFile(::std::string const& fileName, ::std::string const& contents);
+    MCNAPI bool _writeFile(::std::string const& fileName, ::std::string const& contents);
 
-    MCAPI void tick();
+    MCNAPI void tick();
+
+    MCNAPI ~DedicatedServerGameTestRunner();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::TestConfig const& testConfig, ::MinecraftGameTest& gameTest, ::ServerInstance& server, ::Level& level);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

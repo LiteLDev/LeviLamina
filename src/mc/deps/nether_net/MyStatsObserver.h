@@ -52,17 +52,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $AddRef() const;
+    MCNAPI void $AddRef() const;
 
-    MCAPI ::webrtc::RefCountReleaseStatus $Release() const;
+    MCNAPI ::webrtc::RefCountReleaseStatus $Release() const;
 
-    MCAPI void $OnComplete(::std::vector<::webrtc::StatsReport const*> const& reports);
+    MCNAPI void $OnComplete(::std::vector<::webrtc::StatsReport const*> const& reports);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

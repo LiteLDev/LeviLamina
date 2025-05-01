@@ -44,28 +44,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ConnectionContext(::webrtc::Environment const&, ::webrtc::PeerConnectionFactoryDependencies*);
+    MCNAPI ConnectionContext(::webrtc::Environment const&, ::webrtc::PeerConnectionFactoryDependencies*);
 
-    MCAPI ~ConnectionContext();
+    MCNAPI ~ConnectionContext();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::scoped_refptr<::webrtc::ConnectionContext>
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::ConnectionContext>
     Create(::webrtc::Environment const&, ::webrtc::PeerConnectionFactoryDependencies*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::Environment const&, ::webrtc::PeerConnectionFactoryDependencies*);
+    MCNAPI void* $ctor(::webrtc::Environment const&, ::webrtc::PeerConnectionFactoryDependencies*);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -22,12 +22,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $Logv(char const* format, char* ap);
+    MCNAPI void $Logv(char const* format, char* ap);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

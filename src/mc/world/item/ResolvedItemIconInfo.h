@@ -29,24 +29,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResolvedItemIconInfo();
+    MCNAPI ResolvedItemIconInfo();
 
-    MCAPI ResolvedItemIconInfo(::std::string const& name, int frame, ::ItemIconInfoType type);
+    MCNAPI ResolvedItemIconInfo(::std::string const& name, int frame, ::ItemIconInfoType type);
 
-    MCAPI ~ResolvedItemIconInfo();
+    MCNAPI ~ResolvedItemIconInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::std::string const& name, int frame, ::ItemIconInfoType type);
+    MCNAPI void* $ctor(::std::string const& name, int frame, ::ItemIconInfoType type);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

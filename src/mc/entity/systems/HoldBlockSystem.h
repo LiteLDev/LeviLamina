@@ -28,7 +28,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _holdBlockSystemOnActorDie(::ActorDieEvent& dieEvent);
+    MCNAPI static void _holdBlockSystemOnActorDie(::ActorDieEvent& dieEvent);
     // NOLINTEND
 
 public:
@@ -40,14 +40,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $tick(::EntityRegistry&);
+    MCNAPI void $tick(::EntityRegistry&);
 
-    MCAPI void $registerEvents(::entt::dispatcher& dispatcher);
+    MCNAPI void $registerEvents(::entt::dispatcher& dispatcher);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

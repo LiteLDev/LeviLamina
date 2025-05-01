@@ -38,13 +38,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~EnumValue();
+        MCNAPI ~EnumValue();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -62,14 +62,15 @@ public:
     // prevent constructor by default
     EnumBinding& operator=(EnumBinding const&);
     EnumBinding(EnumBinding const&);
-    EnumBinding();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EnumBinding(::Scripting::EnumBinding&&);
+    MCNAPI EnumBinding();
 
-    MCAPI EnumBinding(
+    MCNAPI EnumBinding(::Scripting::EnumBinding&&);
+
+    MCNAPI EnumBinding(
         ::std::string                                      name_,
         ::entt::meta_type                                  type_,
         bool                                               isStringEnum_,
@@ -77,15 +78,17 @@ public:
         ::std::vector<::Scripting::EnumBinding::EnumValue> valueMap_
     );
 
-    MCAPI ~EnumBinding();
+    MCNAPI ~EnumBinding();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::EnumBinding&&);
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(::Scripting::EnumBinding&&);
+
+    MCNAPI void* $ctor(
         ::std::string                                      name_,
         ::entt::meta_type                                  type_,
         bool                                               isStringEnum_,
@@ -97,7 +100,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

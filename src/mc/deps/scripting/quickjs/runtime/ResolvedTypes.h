@@ -65,25 +65,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResolvedTypes();
+    MCNAPI ResolvedTypes();
 
-    MCAPI bool isHandleType(::entt::meta_type const& type) const;
+    MCNAPI bool isHandleType(::entt::meta_type const& type) const;
 
-    MCAPI bool isNumericType(::entt::meta_type const& type) const;
+    MCNAPI bool isNumericType(::entt::meta_type const& type) const;
 
-    MCAPI ~ResolvedTypes();
+    MCNAPI ~ResolvedTypes();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

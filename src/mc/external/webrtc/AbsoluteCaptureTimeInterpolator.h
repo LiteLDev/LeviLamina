@@ -8,9 +8,9 @@ struct AbsoluteCaptureTimeInterpolator {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static uint GetSource(uint, ::rtc::ArrayView<uint const>);
+    MCNAPI static uint GetSource(uint, ::rtc::ArrayView<uint const>);
 
-    MCAPI static uint64 InterpolateAbsoluteCaptureTimestamp(uint, int, uint, uint64);
+    MCNAPI static uint64 InterpolateAbsoluteCaptureTimestamp(uint, int, uint, uint64);
     // NOLINTEND
 };
 

@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ai/goal/target/NearestAttackableTargetGoal.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionTrigger;
 class TrustComponent;
 struct ActorUniqueID;
 // clang-format on
@@ -40,7 +40,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ActorUniqueID _findTrustedTarget(::TrustComponent const& trust);
+    MCNAPI ::ActorUniqueID _findTrustedTarget(::TrustComponent const& trust);
     // NOLINTEND
 
 public:
@@ -52,16 +52,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

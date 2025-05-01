@@ -44,14 +44,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     RtcEventIceCandidatePairConfig(::webrtc::IceCandidatePairConfigType, uint, ::webrtc::IceCandidatePairDescription const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::IceCandidatePairConfigType, uint, ::webrtc::IceCandidatePairDescription const&);
+    MCNAPI void* $ctor(::webrtc::IceCandidatePairConfigType, uint, ::webrtc::IceCandidatePairDescription const&);
     // NOLINTEND
 
 public:
@@ -69,7 +69,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

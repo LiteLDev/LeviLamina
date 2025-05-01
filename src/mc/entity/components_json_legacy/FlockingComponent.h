@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Vec3;
 struct ActorUniqueID;
 // clang-format on
 
@@ -51,28 +53,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FlockingComponent(::FlockingComponent&&);
+    MCNAPI FlockingComponent(::FlockingComponent&&);
 
-    MCAPI void calculateFlockVector(::Actor const& owner);
+    MCNAPI void calculateFlockVector(::Actor const& owner);
 
-    MCAPI bool canJoinFlock(::Actor& owner) const;
+    MCNAPI bool canJoinFlock(::Actor& owner) const;
 
-    MCAPI void joinFlock(::Actor& owner);
+    MCNAPI void joinFlock(::Actor& owner);
 
-    MCAPI void manageNeighborhood(::Actor& owner);
+    MCNAPI void manageNeighborhood(::Actor& owner);
 
-    MCAPI void mergeNeighborhoods(::Actor& owner);
+    MCNAPI void mergeNeighborhoods(::Actor& owner);
 
-    MCAPI ::FlockingComponent& operator=(::FlockingComponent&&);
+    MCNAPI ::FlockingComponent& operator=(::FlockingComponent&&);
 
-    MCAPI void updateNeighborhoodData(::Actor const& owner);
+    MCNAPI void updateNeighborhoodData(::Actor const& owner);
 
-    MCAPI bool validateVariantEntityTypes(::Actor const& e0, ::Actor const& e1) const;
+    MCNAPI bool validateVariantEntityTypes(::Actor const& e0, ::Actor const& e1) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FlockingComponent&&);
+    MCNAPI void* $ctor(::FlockingComponent&&);
     // NOLINTEND
 };

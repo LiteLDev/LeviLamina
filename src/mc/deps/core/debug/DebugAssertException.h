@@ -33,34 +33,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DebugAssertException(::DebugAssertException const&);
+    MCNAPI DebugAssertException(::DebugAssertException const&);
 
-    MCAPI explicit DebugAssertException(::AssertHandlerContext context);
+    MCNAPI explicit DebugAssertException(::AssertHandlerContext context);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::DebugAssertException const&);
+    MCNAPI void* $ctor(::DebugAssertException const&);
 
-    MCAPI void* $ctor(::AssertHandlerContext context);
+    MCNAPI void* $ctor(::AssertHandlerContext context);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI char const* $what() const;
+    MCNAPI char const* $what() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

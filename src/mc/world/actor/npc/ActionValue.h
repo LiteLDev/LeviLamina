@@ -15,23 +15,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActionValue();
+    MCNAPI ActionValue();
 
-    MCAPI ::npc::ActionValue& operator=(::std::string_view newName);
+    MCNAPI ::npc::ActionValue& operator=(::std::string_view newName);
 
-    MCAPI ~ActionValue();
+    MCNAPI ~ActionValue();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

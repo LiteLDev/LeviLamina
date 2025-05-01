@@ -28,14 +28,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameTestClearTask(::Dimension& dimension, ::BoundingBox const& bounds);
+    MCNAPI GameTestClearTask(::Dimension& dimension, ::BoundingBox const& bounds);
 
-    MCAPI void tick();
+    MCNAPI void tick();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension, ::BoundingBox const& bounds);
+    MCNAPI void* $ctor(::Dimension& dimension, ::BoundingBox const& bounds);
     // NOLINTEND
 };

@@ -4,14 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ActorDefinitionEventType.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
+#include "mc/world/actor/ActorFilterGroup.h"
+#include "mc/world/response/ActorEventResponseCollection.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorDefinitionTrigger;
-class ActorFilterGroup;
 struct ActorDefinitionModifier;
-struct ActorEventResponseCollection;
 struct VariantParameterListConst;
 // clang-format on
 
@@ -33,32 +33,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDefinitionEvent(::ActorDefinitionEvent const&);
+    MCNAPI ActorDefinitionEvent(::ActorDefinitionEvent const&);
 
-    MCAPI ActorDefinitionEvent(::ActorDefinitionEvent&&);
+    MCNAPI ActorDefinitionEvent(::ActorDefinitionEvent&&);
 
-    MCAPI void _evaluateGroups(
+    MCNAPI void _evaluateGroups(
         ::Actor&                                  entity,
         ::std::vector<::ActorDefinitionModifier>& modifications,
         ::VariantParameterListConst const&        list
     ) const;
 
-    MCAPI ::ActorDefinitionEvent& operator=(::ActorDefinitionEvent const&);
+    MCNAPI ::ActorDefinitionEvent& operator=(::ActorDefinitionEvent const&);
 
-    MCAPI ~ActorDefinitionEvent();
+    MCNAPI ~ActorDefinitionEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionEvent const&);
+    MCNAPI void* $ctor(::ActorDefinitionEvent const&);
 
-    MCAPI void* $ctor(::ActorDefinitionEvent&&);
+    MCNAPI void* $ctor(::ActorDefinitionEvent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

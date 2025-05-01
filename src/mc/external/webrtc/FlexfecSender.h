@@ -16,21 +16,21 @@ class FlexfecSender {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     FlexfecSender(int, uint, uint, ::std::string_view, ::std::vector<::webrtc::RtpExtension> const&, ::rtc::ArrayView<::webrtc::RtpExtensionSize const>, ::webrtc::RtpState const*, ::webrtc::Clock*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(int, uint, uint, ::std::string_view, ::std::vector<::webrtc::RtpExtension> const&, ::rtc::ArrayView<::webrtc::RtpExtensionSize const>, ::webrtc::RtpState const*, ::webrtc::Clock*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -10,7 +10,7 @@ class EntityContext;
 namespace ActorMovement {
 // functions
 // NOLINTBEGIN
-MCAPI void setHasTeleported(::EntityContext& entity, bool newValue);
+MCNAPI void setHasTeleported(::EntityContext& entity, bool newValue);
 // NOLINTEND
 
 } // namespace ActorMovement

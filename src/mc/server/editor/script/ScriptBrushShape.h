@@ -23,23 +23,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::Editor::ScriptModule::ScriptBrushShape& operator=(::Editor::ScriptModule::ScriptBrushShape&&);
+    MCNAPI ::Editor::ScriptModule::ScriptBrushShape& operator=(::Editor::ScriptModule::ScriptBrushShape&&);
 
-    MCFOLD ::Editor::ScriptModule::ScriptBrushShape& operator=(::Editor::ScriptModule::ScriptBrushShape const&);
+    MCNAPI ::Editor::ScriptModule::ScriptBrushShape& operator=(::Editor::ScriptModule::ScriptBrushShape const&);
 
-    MCAPI ~ScriptBrushShape();
+    MCNAPI ~ScriptBrushShape();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptBrushShape> bindScript();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptBrushShape> bindScript();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

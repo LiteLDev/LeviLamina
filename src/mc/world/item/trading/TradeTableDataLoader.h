@@ -28,23 +28,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit TradeTableDataLoader(::cereal::ReflectionCtx const& ctx);
+    MCNAPI explicit TradeTableDataLoader(::cereal::ReflectionCtx const& ctx);
 
-    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_30::TradeTableData>
+    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_30::TradeTableData>
     load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
 
-    MCAPI ~TradeTableDataLoader();
+    MCNAPI ~TradeTableDataLoader();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
+    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

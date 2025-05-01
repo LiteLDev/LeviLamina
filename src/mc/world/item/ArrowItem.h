@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/ResolvedItemIconInfo.h"
 #include "mc/world/item/alchemy/Potion.h"
 #include "mc/world/item/components/ComponentItem.h"
 
@@ -22,7 +23,6 @@ class Level;
 class MobEffectInstance;
 class Potion;
 class Vec3;
-struct ResolvedItemIconInfo;
 namespace Bedrock::Safety { class RedactableString; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -79,19 +79,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ArrowItem(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
+    MCNAPI ArrowItem(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
 
-    MCAPI ::std::shared_ptr<::Potion const> _potionExistsOrContentError(int aux) const;
+    MCNAPI ::std::shared_ptr<::Potion const> _potionExistsOrContentError(int aux) const;
 
-    MCAPI void applyEffect(::Arrow* arrow, ::ItemInstance const& slotItem) const;
+    MCNAPI void applyEffect(::Arrow* arrow, ::ItemInstance const& slotItem) const;
 
-    MCAPI ::std::vector<::MobEffectInstance> getMobEffects(int auxValue) const;
+    MCNAPI ::std::vector<::MobEffectInstance> getMobEffects(int auxValue) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
+    MCNAPI void* $ctor(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -103,35 +103,35 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCNAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
-    MCAPI ::Actor*
+    MCNAPI ::Actor*
     $createProjectileActor(::BlockSource& region, ::ItemStack const& stack, ::Vec3 const& pos, ::Vec3 const& direction)
         const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI ::std::string
+    MCNAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCAPI void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
 
-    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack) const;
+    MCNAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack) const;
 
-    MCAPI bool $isValidAuxValue(int auxValue) const;
+    MCNAPI bool $isValidAuxValue(int auxValue) const;
 
-    MCAPI ::ResolvedItemIconInfo
+    MCNAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

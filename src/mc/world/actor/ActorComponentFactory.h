@@ -21,7 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _initialize(::Experiments const& experiments);
+    MCNAPI void _initialize(::Experiments const& experiments);
     // NOLINTEND
 
 public:
@@ -33,6 +33,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

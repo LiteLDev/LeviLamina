@@ -3,12 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/world/events/WatchdogTerminateReason.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { class WeakLifetimeScope; }
-// clang-format on
 
 struct BeforeWatchdogTerminateEvent {
 public:

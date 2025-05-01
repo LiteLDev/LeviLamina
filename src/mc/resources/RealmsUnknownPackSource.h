@@ -36,7 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RealmsUnknownPackSource() /*override*/ = default;
+    virtual ~RealmsUnknownPackSource() /*override*/;
 
     // vIndex: 1
     virtual void forEachPackConst(::std::function<void(::Pack const&)> callback) const /*override*/;
@@ -60,21 +60,21 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $forEachPackConst(::std::function<void(::Pack const&)> callback) const;
+    MCNAPI void $forEachPackConst(::std::function<void(::Pack const&)> callback) const;
 
-    MCFOLD void $forEachPack(::std::function<void(::Pack&)> callback);
+    MCNAPI void $forEachPack(::std::function<void(::Pack&)> callback);
 
-    MCFOLD ::PackOrigin $getPackOrigin() const;
+    MCNAPI ::PackOrigin $getPackOrigin() const;
 
-    MCFOLD ::PackType $getPackType() const;
+    MCNAPI ::PackType $getPackType() const;
 
-    MCAPI ::PackSourceReport $load(
+    MCNAPI ::PackSourceReport $load(
         ::IPackManifestFactory&                                           manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     );
@@ -83,6 +83,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

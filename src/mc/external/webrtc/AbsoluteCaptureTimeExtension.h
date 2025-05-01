@@ -13,9 +13,9 @@ class AbsoluteCaptureTimeExtension {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static uint64 ValueSize(::webrtc::AbsoluteCaptureTime const&);
+    MCNAPI static uint64 ValueSize(::webrtc::AbsoluteCaptureTime const&);
 
-    MCAPI static bool Write(::rtc::ArrayView<uchar>, ::webrtc::AbsoluteCaptureTime const&);
+    MCNAPI static bool Write(::rtc::ArrayView<uchar>, ::webrtc::AbsoluteCaptureTime const&);
     // NOLINTEND
 };
 

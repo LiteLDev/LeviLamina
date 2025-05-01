@@ -5,19 +5,23 @@
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/platform/PlatformType.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/CrashDumpLogStringID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
-#include "mc/deviceinfo/DeviceMemoryTier.h"
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/util/CallbackToken.h"
 #include "mc/util/HudElement.h"
 #include "mc/util/HudVisibility.h"
 #include "mc/world/ContainerID.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/player/Player.h"
+#include "mc/world/inventory/InventoryMenu.h"
 #include "mc/world/level/GameType.h"
+#include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,7 +29,6 @@ class Actor;
 class ActorDamageSource;
 class BlockActor;
 class BlockPos;
-class CallbackToken;
 class ChunkSource;
 class ComplexInventoryTransaction;
 class CompoundTag;
@@ -36,9 +39,7 @@ class Dimension;
 class EntityContext;
 class FrameUpdateContextBase;
 class GameServerToken;
-class HashedString;
 class IContainerManager;
-class InventoryMenu;
 class InventoryTransaction;
 class ItemStack;
 class Level;
@@ -50,10 +51,9 @@ class ResolvedTextObject;
 class ServerNetworkSystem;
 class TextObjectRoot;
 class Vec3;
-struct ActorUniqueID;
 struct INpcDialogueData;
 struct PlayerMovementSettings;
-struct Tick;
+struct SyncedClientOptionsComponent;
 struct VariantParameterList;
 namespace ClientBlobCache::Server { class ActiveTransfersManager; }
 namespace Editor { class IEditorManager; }
@@ -93,9 +93,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::DeviceMemoryTier>                      mMemoryTier;
     ::ll::TypedStorage<4, 4, ::PlatformType>                          mPlatformType;
-    ::ll::TypedStorage<4, 4, int>                                     mMaxClientViewDistance;
     ::ll::TypedStorage<8, 8, ::ServerNetworkSystem&>                  mNetwork;
     ::ll::TypedStorage<8, 64, ::std::function<void(::ServerPlayer&)>> mOnPlayerLoadedCallback;
     ::ll::TypedStorage<8, 112, ::InventoryMenu>                       mInventoryMenu;
@@ -197,7 +195,7 @@ public:
 
     // vIndex: 203
     virtual void displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& resolvedTextObject,
+        ::ResolvedTextObject const& textObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     ) /*override*/;
@@ -360,10 +358,9 @@ public:
         int                                                maxChunkRadius,
         bool                                               enableItemStackNetManager,
         ::EntityContext&                                   entityContext,
-        ::DeviceMemoryTier                                 memoryTier,
         ::PlatformType                                     platformType,
-        int                                                maxClientViewDistance,
-        ::InputMode                                        inputMode
+        ::InputMode                                        inputMode,
+        ::SyncedClientOptionsComponent                     clientOptions
     );
 
     MCAPI bool _checkForLoadedTickingAreas() const;
@@ -401,7 +398,7 @@ public:
 
     MCAPI void hideAllExcept(::std::optional<::std::vector<::HudElement>> const& hudElements);
 
-    MCAPI bool isInPickRangeOf(::BlockPos const& pos);
+    MCAPI bool isInPickRangeOf(::BlockPos const& pos) const;
 
     MCAPI ::ContainerID openUnmanagedContainer();
 
@@ -449,10 +446,9 @@ public:
         int                                                maxChunkRadius,
         bool                                               enableItemStackNetManager,
         ::EntityContext&                                   entityContext,
-        ::DeviceMemoryTier                                 memoryTier,
         ::PlatformType                                     platformType,
-        int                                                maxClientViewDistance,
-        ::InputMode                                        inputMode
+        ::InputMode                                        inputMode,
+        ::SyncedClientOptionsComponent                     clientOptions
     );
     // NOLINTEND
 
@@ -514,7 +510,7 @@ public:
     );
 
     MCAPI void $displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& resolvedTextObject,
+        ::ResolvedTextObject const& textObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     );

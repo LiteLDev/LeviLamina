@@ -27,19 +27,19 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Packet();
+        MCNAPI Packet();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -47,13 +47,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ProtectedPacket();
+        MCNAPI ~ProtectedPacket();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -61,73 +61,73 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ReceivedFecPacket();
+        MCNAPI ~ReceivedFecPacket();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int
+    MCNAPI int
     EncodeFec(::std::list<::std::unique_ptr<::webrtc::ForwardErrorCorrection::Packet>> const&, uchar, int, bool, ::webrtc::FecMaskType, ::std::list<::webrtc::ForwardErrorCorrection::Packet*>*);
 
-    MCAPI void FinalizeFecHeaders(uint64, uint, ushort);
+    MCNAPI void FinalizeFecHeaders(uint64, uint, ushort);
 
-    MCAPI ForwardErrorCorrection(
+    MCNAPI ForwardErrorCorrection(
         ::std::unique_ptr<::webrtc::FecHeaderReader>,
         ::std::unique_ptr<::webrtc::FecHeaderWriter>,
         uint,
         uint
     );
 
-    MCAPI void
+    MCNAPI void
     GenerateFecPayloads(::std::list<::std::unique_ptr<::webrtc::ForwardErrorCorrection::Packet>> const&, uint64);
 
-    MCAPI int
+    MCNAPI int
     InsertZerosInPacketMasks(::std::list<::std::unique_ptr<::webrtc::ForwardErrorCorrection::Packet>> const&, uint64);
 
-    MCAPI uint64 MaxPacketOverhead() const;
+    MCNAPI uint64 MaxPacketOverhead() const;
 
-    MCAPI ~ForwardErrorCorrection();
+    MCNAPI ~ForwardErrorCorrection();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::webrtc::ForwardErrorCorrection> CreateFlexfec(uint, uint);
+    MCNAPI static ::std::unique_ptr<::webrtc::ForwardErrorCorrection> CreateFlexfec(uint, uint);
 
-    MCAPI static ::std::unique_ptr<::webrtc::ForwardErrorCorrection> CreateUlpfec(uint);
+    MCNAPI static ::std::unique_ptr<::webrtc::ForwardErrorCorrection> CreateUlpfec(uint);
 
-    MCAPI static int NumFecPackets(int, int);
+    MCNAPI static int NumFecPackets(int, int);
 
-    MCAPI static ushort ParseSequenceNumber(uchar const*);
+    MCNAPI static ushort ParseSequenceNumber(uchar const*);
 
-    MCAPI static uint ParseSsrc(uchar const*);
+    MCNAPI static uint ParseSsrc(uchar const*);
 
-    MCAPI static void
+    MCNAPI static void
     XorHeaders(::webrtc::ForwardErrorCorrection::Packet const&, ::webrtc::ForwardErrorCorrection::Packet*);
 
-    MCAPI static void
+    MCNAPI static void
     XorPayloads(::webrtc::ForwardErrorCorrection::Packet const&, uint64, uint64, ::webrtc::ForwardErrorCorrection::Packet*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
         $ctor(::std::unique_ptr<::webrtc::FecHeaderReader>, ::std::unique_ptr<::webrtc::FecHeaderWriter>, uint, uint);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

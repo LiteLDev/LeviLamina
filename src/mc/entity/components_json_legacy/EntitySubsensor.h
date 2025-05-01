@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class Vec3;
 struct Tick;
 // clang-format on
 
@@ -12,7 +13,8 @@ class EntitySubsensor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk25aeeb;
+    ::ll::UntypedStorage<4, 8>  mUnke19055;
+    ::ll::UntypedStorage<4, 4>  mUnk565267;
     ::ll::UntypedStorage<1, 1>  mUnkc5df3d;
     ::ll::UntypedStorage<4, 4>  mUnk556217;
     ::ll::UntypedStorage<4, 4>  mUnkc2289e;
@@ -31,20 +33,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void senseEntities(
+    MCNAPI void senseEntities(
         ::Actor&                                      actor,
         ::gsl::span<::gsl::not_null<::Actor*>> const& nearbyActors,
         ::Tick const&                                 currentTick,
-        bool                                          relativeRange,
+        ::Vec3 const&                                 searchAreaPos,
+        ::Vec3 const&                                 searchAreaGrowth,
         bool                                          canFireEventWithNoEntities
     );
 
-    MCAPI ~EntitySubsensor();
+    MCNAPI ~EntitySubsensor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

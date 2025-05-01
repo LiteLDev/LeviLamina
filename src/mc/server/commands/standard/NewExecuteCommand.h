@@ -6,23 +6,23 @@
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandBlockName.h"
 #include "mc/server/commands/CommandChainedSubcommand.h"
 #include "mc/server/commands/CommandCompareOperator.h"
+#include "mc/server/commands/CommandIntegerRange.h"
+#include "mc/server/commands/CommandPosition.h"
+#include "mc/server/commands/CommandPositionFloat.h"
 #include "mc/server/commands/CommandSelector.h"
+#include "mc/server/commands/RelativeFloat.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class BlockStateCommandParam;
-class CommandBlockName;
-class CommandIntegerRange;
 class CommandOrigin;
 class CommandOutput;
-class CommandPosition;
-class CommandPositionFloat;
 class CommandRegistry;
 class Dimension;
-class RelativeFloat;
 class Scoreboard;
 struct ScoreInfo;
 struct ScoreboardId;
@@ -86,10 +86,10 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static ::std::string
+        MCNAPI static ::std::string
         getSubcommandName(::NewExecuteCommand::ExecuteChainedSubcommand::Subcommand subcommand);
 
-        MCAPI static void setup(::CommandRegistry& registry);
+        MCNAPI static void setup(::CommandRegistry& registry);
         // NOLINTEND
 
     public:
@@ -167,13 +167,13 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::std::string $getCommandName() const;
+        MCNAPI ::std::string $getCommandName() const;
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 

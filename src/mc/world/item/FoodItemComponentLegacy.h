@@ -53,13 +53,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Effect();
+        MCNAPI ~Effect();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -119,43 +119,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _applyEatEffects(::ItemStack const& actor, ::Actor& level, ::Level&);
+    MCNAPI void _applyEatEffects(::ItemStack const& actor, ::Actor& level, ::Level&);
 
-    MCAPI void _loadEffects(::Json::Value const& effectsData);
+    MCNAPI void _loadEffects(::Json::Value const& effectsData);
 
-    MCAPI void _loadRemoveEffects(::Json::Value const& removeEffectsData);
+    MCNAPI void _loadRemoveEffects(::Json::Value const& removeEffectsData);
 
-    MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
 
-    MCAPI bool init(::Json::Value const& data, ::MolangVersion);
+    MCNAPI bool init(::Json::Value const& data, ::MolangVersion);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
+    MCNAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $getNutrition() const;
+    MCNAPI int $getNutrition() const;
 
-    MCFOLD float $getSaturationModifier() const;
+    MCNAPI float $getSaturationModifier() const;
 
-    MCAPI bool $canAlwaysEat() const;
+    MCNAPI bool $canAlwaysEat() const;
 
-    MCAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
+    MCNAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
 
-    MCAPI void $use(bool& result, ::ItemStack& item, ::Player& player);
+    MCNAPI void $use(bool& result, ::ItemStack& item, ::Player& player);
 
-    MCAPI ::Item const* $useTimeDepleted(
+    MCNAPI ::Item const* $useTimeDepleted(
         ::ItemUseMethod& itemUseMethod,
         ::ItemStack const&,
         ::ItemStack& instance,
@@ -167,6 +167,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

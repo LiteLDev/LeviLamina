@@ -20,39 +20,39 @@ class TCPConnection {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void ConnectSocketSignals(::rtc::AsyncPacketSocket*);
+    MCNAPI void ConnectSocketSignals(::rtc::AsyncPacketSocket*);
 
-    MCAPI void CreateOutgoingTcpSocket();
+    MCNAPI void CreateOutgoingTcpSocket();
 
-    MCAPI void DisconnectSocketSignals(::rtc::AsyncPacketSocket*);
+    MCNAPI void DisconnectSocketSignals(::rtc::AsyncPacketSocket*);
 
-    MCAPI void MaybeReconnect();
+    MCNAPI void MaybeReconnect();
 
-    MCAPI void OnClose(::rtc::AsyncPacketSocket*, int);
+    MCNAPI void OnClose(::rtc::AsyncPacketSocket*, int);
 
-    MCAPI void OnConnect(::rtc::AsyncPacketSocket*);
+    MCNAPI void OnConnect(::rtc::AsyncPacketSocket*);
 
-    MCAPI void OnDestroyed(::cricket::Connection*);
+    MCNAPI void OnDestroyed(::cricket::Connection*);
 
-    MCAPI void OnReadPacket(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const&);
+    MCNAPI void OnReadPacket(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const&);
 
-    MCAPI void OnReadyToSend(::rtc::AsyncPacketSocket*);
+    MCNAPI void OnReadyToSend(::rtc::AsyncPacketSocket*);
 
-    MCAPI TCPConnection(::rtc::WeakPtr<::cricket::Port>, ::cricket::Candidate const&, ::rtc::AsyncPacketSocket*);
+    MCNAPI TCPConnection(::rtc::WeakPtr<::cricket::Port>, ::cricket::Candidate const&, ::rtc::AsyncPacketSocket*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::WeakPtr<::cricket::Port>, ::cricket::Candidate const&, ::rtc::AsyncPacketSocket*);
+    MCNAPI void* $ctor(::rtc::WeakPtr<::cricket::Port>, ::cricket::Candidate const&, ::rtc::AsyncPacketSocket*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForHasSlots();
+    MCNAPI static void** $vftableForHasSlots();
 
-    MCAPI static void** $vftableForConnection();
+    MCNAPI static void** $vftableForConnection();
     // NOLINTEND
 };
 

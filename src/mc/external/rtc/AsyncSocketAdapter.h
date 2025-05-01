@@ -97,19 +97,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AsyncSocketAdapter(::rtc::Socket*);
+    MCNAPI explicit AsyncSocketAdapter(::rtc::Socket*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::Socket*);
+    MCNAPI void* $ctor(::rtc::Socket*);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -121,9 +121,9 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForSocket();
+    MCNAPI static void** $vftableForSocket();
 
-    MCAPI static void** $vftableForHasSlots();
+    MCNAPI static void** $vftableForHasSlots();
     // NOLINTEND
 };
 

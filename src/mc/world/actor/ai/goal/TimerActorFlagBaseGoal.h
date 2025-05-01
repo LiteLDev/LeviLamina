@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/IntRange.h"
 #include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/TimerActorFlagBaseDefinition.h"
+#include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
-class TimerActorFlagBaseDefinition;
-struct IntRange;
-struct Tick;
 // clang-format on
 
 class TimerActorFlagBaseGoal : public ::Goal {
@@ -55,13 +55,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TimerActorFlagBaseGoal(::Mob& mob, ::ActorFlags actorFlag);
+    MCNAPI TimerActorFlagBaseGoal(::Mob& mob, ::ActorFlags actorFlag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::ActorFlags actorFlag);
+    MCNAPI void* $ctor(::Mob& mob, ::ActorFlags actorFlag);
     // NOLINTEND
 
 public:
@@ -73,22 +73,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCFOLD void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

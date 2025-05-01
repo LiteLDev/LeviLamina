@@ -24,20 +24,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorFactoryData();
+    MCNAPI ActorFactoryData();
 
-    MCAPI ~ActorFactoryData();
+    MCNAPI ~ActorFactoryData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -50,6 +50,7 @@ enum class CurrentCmdVersion : int {
     StopSoundMusicFix                                                                 = 40,
     SpreadPlayersStuckInGroundFixAndMaxHeightParameter                                = 41,
     LocateStructureOutput                                                             = 42,
-    Count                                                                             = 43,
-    Latest                                                                            = 42,
+    PostBlockFlattening                                                               = 43,
+    Count                                                                             = 44,
+    Latest                                                                            = 43,
 };

@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/entity/components/UpdateWaterStateFlowRequest.h"
 #include "mc/world/level/material/MaterialType.h"
-
-// auto generated forward declare list
-// clang-format off
-class Vec3;
-// clang-format on
 
 struct UpdateWaterStateRequestComponent {
 public:

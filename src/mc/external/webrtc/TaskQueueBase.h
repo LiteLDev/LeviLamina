@@ -60,21 +60,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit CurrentTaskQueueSetter(::webrtc::TaskQueueBase*);
+        MCNAPI explicit CurrentTaskQueueSetter(::webrtc::TaskQueueBase*);
 
-        MCAPI ~CurrentTaskQueueSetter();
+        MCNAPI ~CurrentTaskQueueSetter();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::webrtc::TaskQueueBase*);
+        MCNAPI void* $ctor(::webrtc::TaskQueueBase*);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -99,22 +99,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void PostDelayedTask(
+    MCNAPI void PostDelayedTask(
         ::absl::AnyInvocable<void() &&> task,
         ::webrtc::TimeDelta             delay,
         ::webrtc::Location const&       location
     );
 
-    MCAPI void
+    MCNAPI void
     PostDelayedTaskWithPrecision(::webrtc::TaskQueueBase::DelayPrecision, ::absl::AnyInvocable<void() &&>, ::webrtc::TimeDelta, ::webrtc::Location const&);
 
-    MCAPI void PostTask(::absl::AnyInvocable<void() &&> task, ::webrtc::Location const& location);
+    MCNAPI void PostTask(::absl::AnyInvocable<void() &&> task, ::webrtc::Location const& location);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::TaskQueueBase* Current();
+    MCNAPI static ::webrtc::TaskQueueBase* Current();
     // NOLINTEND
 
 public:

@@ -27,27 +27,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LoadResultAny(::Puv::LoadResultAny&&);
+    MCNAPI LoadResultAny(::Puv::LoadResultAny&&);
 
-    MCAPI ~LoadResultAny();
+    MCNAPI ~LoadResultAny();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Puv::LoadResultAny makeError(::Puv::Logger log);
+    MCNAPI static ::Puv::LoadResultAny makeError(::Puv::Logger log);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Puv::LoadResultAny&&);
+    MCNAPI void* $ctor(::Puv::LoadResultAny&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

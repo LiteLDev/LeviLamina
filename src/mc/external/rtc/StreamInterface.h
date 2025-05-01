@@ -45,15 +45,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StreamInterface();
+    MCNAPI StreamInterface();
 
-    MCAPI ::rtc::StreamResult WriteAll(void const*, uint64, uint64*, int*);
+    MCNAPI ::rtc::StreamResult WriteAll(void const*, uint64, uint64*, int*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -71,7 +71,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

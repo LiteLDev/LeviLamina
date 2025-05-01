@@ -25,15 +25,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void fromTradeItem(::SharedTypes::v1_21_30::TradeItem item);
+    MCNAPI void fromTradeItem(::SharedTypes::v1_21_30::TradeItem item);
 
-    MCAPI ~TradeItemList();
+    MCNAPI ~TradeItemList();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -34,13 +34,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockPos $adjustSpawnPos(::BlockSource&, ::BlockPos candidate) const;
+    MCNAPI ::BlockPos $adjustSpawnPos(::BlockSource&, ::BlockPos candidate) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

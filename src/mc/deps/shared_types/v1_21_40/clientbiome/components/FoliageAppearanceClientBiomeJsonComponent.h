@@ -1,0 +1,97 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_40/clientbiome/components/IClientBiomeJsonComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
+namespace SharedTypes::v1_21_40 {
+
+struct FoliageAppearanceClientBiomeJsonComponent : public ::SharedTypes::v1_21_40::IClientBiomeJsonComponent {
+public:
+    // FoliageAppearanceClientBiomeJsonComponent inner types declare
+    // clang-format off
+    struct FoliageColorMapContainer;
+    // clang-format on
+
+    // FoliageAppearanceClientBiomeJsonComponent inner types define
+    struct FoliageColorMapContainer {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnkc2a1e6;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        FoliageColorMapContainer& operator=(FoliageColorMapContainer const&);
+        FoliageColorMapContainer(FoliageColorMapContainer const&);
+        FoliageColorMapContainer();
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
+
+        MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+        // NOLINTEND
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 24> mUnk82f0e8;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FoliageAppearanceClientBiomeJsonComponent& operator=(FoliageAppearanceClientBiomeJsonComponent const&);
+    FoliageAppearanceClientBiomeJsonComponent(FoliageAppearanceClientBiomeJsonComponent const&);
+    FoliageAppearanceClientBiomeJsonComponent();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~FoliageAppearanceClientBiomeJsonComponent() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
+
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
+};
+
+} // namespace SharedTypes::v1_21_40

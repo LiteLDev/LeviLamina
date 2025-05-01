@@ -5,9 +5,9 @@
 namespace Bedrock {
 // functions
 // NOLINTBEGIN
-MCAPI int strtoint32(char const* str, char** endptr, int base);
+MCNAPI int strtoint32(char const* str, char** endptr, int base);
 
-MCAPI void throw_system_error(::std::errc errc);
+MCNAPI void throw_system_error(::std::errc errc);
 // NOLINTEND
 
 } // namespace Bedrock

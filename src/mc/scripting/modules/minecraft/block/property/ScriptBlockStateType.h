@@ -53,15 +53,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _fillValidValues();
+    MCNAPI void _fillValidValues();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockStateType> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockStateType> bind();
 
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockStateType>
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockStateType>
     getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::BlockState const& blockState);
     // NOLINTEND
 };

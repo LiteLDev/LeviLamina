@@ -23,26 +23,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CompoundTagUpdaterNodeBuilder&
+    MCNAPI ::CompoundTagUpdaterNodeBuilder&
     edit(::std::string const& tagName, ::std::function<void(::CompoundTagEditHelper&)>&& update);
 
-    MCAPI void fork(uint64 size, ::std::function<void(::CompoundTagUpdaterNodeBuilder&, uint64)>&& function);
+    MCNAPI void fork(uint64 size, ::std::function<void(::CompoundTagUpdaterNodeBuilder&, uint64)>&& function);
 
-    MCAPI ::CompoundTagUpdaterNodeBuilder& match(::std::string const& tagName, ::std::string pattern);
+    MCNAPI ::CompoundTagUpdaterNodeBuilder& match(::std::string const& tagName, ::std::string pattern);
 
-    MCAPI ::CompoundTagUpdaterNodeBuilder& matchInteger(::std::string const& tagName, int64 value);
+    MCNAPI ::CompoundTagUpdaterNodeBuilder& matchInteger(::std::string const& tagName, int64 value);
 
-    MCAPI ::CompoundTagUpdaterNodeBuilder& matchLiteral(::std::string const& tagName, ::std::string pattern);
+    MCNAPI ::CompoundTagUpdaterNodeBuilder& matchLiteral(::std::string const& tagName, ::std::string pattern);
 
-    MCAPI ::CompoundTagUpdaterNodeBuilder& popVisit();
+    MCNAPI ::CompoundTagUpdaterNodeBuilder& popVisit();
 
-    MCAPI ::CompoundTagUpdaterNodeBuilder& remove(::std::string const& tagName);
+    MCNAPI ::CompoundTagUpdaterNodeBuilder& remove(::std::string const& tagName);
 
-    MCAPI ::CompoundTagUpdaterNodeBuilder& rename(::std::string const& tagName, ::std::string const& newTagName);
+    MCNAPI ::CompoundTagUpdaterNodeBuilder& rename(::std::string const& tagName, ::std::string const& newTagName);
 
-    MCAPI ::CompoundTagUpdaterNodeBuilder&
+    MCNAPI ::CompoundTagUpdaterNodeBuilder&
     tryEdit(::std::string const& tagName, ::std::function<void(::CompoundTagEditHelper&)>&& update);
 
-    MCAPI ::CompoundTagUpdaterNodeBuilder& visit(::std::string const& tagName);
+    MCNAPI ::CompoundTagUpdaterNodeBuilder& visit(::std::string const& tagName);
     // NOLINTEND
 };

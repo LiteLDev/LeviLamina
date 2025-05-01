@@ -32,37 +32,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptInvalidActorError(
-        ::ScriptModuleMinecraft::ErrorMemberType    invalidActor,
-        ::ScriptModuleMinecraft::ScriptActor const& functionName,
-        ::std::string_view                          memberType
+    MCNAPI ScriptInvalidActorError(
+        ::ScriptModuleMinecraft::ErrorMemberType    memberType,
+        ::ScriptModuleMinecraft::ScriptActor const& invalidActor,
+        ::std::string_view                          functionName
     );
 
-    MCAPI ScriptInvalidActorError(
+    MCNAPI ScriptInvalidActorError(
         ::ScriptModuleMinecraft::ErrorMemberType        memberType,
         ::ScriptModuleMinecraft::ScriptActorData const& invalidActorData,
         ::std::string_view                              functionName
     );
 
-    MCAPI ~ScriptInvalidActorError();
+    MCNAPI ~ScriptInvalidActorError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ScriptModuleMinecraft::ErrorMemberType    invalidActor,
-        ::ScriptModuleMinecraft::ScriptActor const& functionName,
-        ::std::string_view                          memberType
+    MCNAPI void* $ctor(
+        ::ScriptModuleMinecraft::ErrorMemberType    memberType,
+        ::ScriptModuleMinecraft::ScriptActor const& invalidActor,
+        ::std::string_view                          functionName
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ScriptModuleMinecraft::ErrorMemberType        memberType,
         ::ScriptModuleMinecraft::ScriptActorData const& invalidActorData,
         ::std::string_view                              functionName
@@ -72,7 +72,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

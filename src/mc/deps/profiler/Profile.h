@@ -5,11 +5,11 @@
 namespace Core::Profile {
 // functions
 // NOLINTBEGIN
-MCAPI void onFileOpenFailed(bool isReadOnly);
+MCNAPI void onFileOpenFailed(bool isReadOnly);
 
-MCAPI void onFileOpenRequest(bool isReadOnly);
+MCNAPI void onFileOpenRequest(bool isReadOnly);
 
-MCAPI void onFileOpenRetrySuccess(bool isReadOnly);
+MCNAPI void onFileOpenRetrySuccess(bool isReadOnly);
 // NOLINTEND
 
 } // namespace Core::Profile

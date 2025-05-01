@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct ProfilerLiteTelemetry;
-// clang-format on
+// auto generated inclusion list
+#include "mc/util/ProfilerLiteTelemetry.h"
 
 struct DiagnosticsEvent {
 public:
@@ -18,12 +16,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~DiagnosticsEvent();
+    MCNAPI ~DiagnosticsEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

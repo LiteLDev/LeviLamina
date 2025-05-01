@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct SchemaDescription; }
 namespace cereal::ext::internal { struct OutRefsMap; }
 // clang-format on
@@ -20,53 +19,53 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk15868f;
     ::ll::UntypedStorage<8, 32> mUnkab4a80;
-    ::ll::UntypedStorage<8, 24> mUnk83b6c7;
+    ::ll::UntypedStorage<8, 72> mUnka0304c;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    JSONSchema(JSONSchema const&);
+    JSONSchema& operator=(JSONSchema const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JSONSchema();
+    MCNAPI JSONSchema();
 
-    MCAPI JSONSchema(::cereal::ext::JSONSchema&&);
+    MCNAPI JSONSchema(::cereal::ext::JSONSchema const&);
 
-    MCAPI void makeAndNormalizeDefs(
+    MCNAPI JSONSchema(::cereal::ext::JSONSchema&&);
+
+    MCNAPI void makeAndNormalizeDefs(
         ::cereal::ext::internal::OutRefsMap&              outRefs,
         ::std::vector<::cereal::SchemaDescription> const& descriptions
     );
 
-    MCAPI ::cereal::ext::JSONSchema& operator=(::cereal::ext::JSONSchema&&);
+    MCNAPI ::cereal::ext::JSONSchema& operator=(::cereal::ext::JSONSchema&&);
 
-    MCAPI ::cereal::ext::JSONSchema& operator=(::cereal::ext::JSONSchema const&);
-
-    MCAPI ~JSONSchema();
+    MCNAPI ~JSONSchema();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static ::cereal::ext::JSONSchema
+    MCNAPI static ::cereal::ext::JSONSchema
     fromDescriptions(::std::vector<::cereal::SchemaDescription> const& descriptions, uint64 pos);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::cereal::ext::JSONSchema&&);
+    MCNAPI void* $ctor(::cereal::ext::JSONSchema const&);
+
+    MCNAPI void* $ctor(::cereal::ext::JSONSchema&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

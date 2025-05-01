@@ -102,15 +102,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PortAllocatorSession(::std::string_view, int, ::std::string_view, ::std::string_view, uint);
+    MCNAPI PortAllocatorSession(::std::string_view, int, ::std::string_view, ::std::string_view, uint);
 
-    MCAPI void SetIceParameters(::std::string_view, int, ::std::string_view, ::std::string_view);
+    MCNAPI void SetIceParameters(::std::string_view, int, ::std::string_view, ::std::string_view);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view, int, ::std::string_view, ::std::string_view, uint);
+    MCNAPI void* $ctor(::std::string_view, int, ::std::string_view, ::std::string_view, uint);
     // NOLINTEND
 
 public:
@@ -128,7 +128,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

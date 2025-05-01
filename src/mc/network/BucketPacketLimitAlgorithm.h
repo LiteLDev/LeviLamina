@@ -36,13 +36,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BucketPacketLimitAlgorithm(float drainRatePerSec, uint maxBucketSize);
+    MCNAPI BucketPacketLimitAlgorithm(float drainRatePerSec, uint maxBucketSize);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(float drainRatePerSec, uint maxBucketSize);
+    MCNAPI void* $ctor(float drainRatePerSec, uint maxBucketSize);
     // NOLINTEND
 
 public:
@@ -54,12 +54,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint $checkPacket(::MinecraftPacketIds packet);
+    MCNAPI uint $checkPacket(::MinecraftPacketIds packet);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

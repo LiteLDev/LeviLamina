@@ -11,8 +11,8 @@ struct VehicleClientPositionPassengerSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSetPreviousPosRotSystem();
+    MCNAPI static ::TickingSystemWithInfo createSetPreviousPosRotSystem();
 
-    MCAPI static ::TickingSystemWithInfo createSetRotationLock();
+    MCNAPI static ::TickingSystemWithInfo createSetRotationLock();
     // NOLINTEND
 };

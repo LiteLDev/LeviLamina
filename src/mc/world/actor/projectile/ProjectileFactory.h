@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Actor* shootProjectileFromDefinition(
+    MCNAPI ::Actor* shootProjectileFromDefinition(
         ::ActorDefinitionIdentifier const& identifier,
         ::Mob*                             owner,
         ::Vec3                             targetDir,
@@ -43,10 +43,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::OnHitSubcomponent>
+    MCNAPI static ::std::unique_ptr<::OnHitSubcomponent>
     createSubcomponent(::Json::Value& trigger, ::std::string const& name);
 
-    MCAPI static void initFactory();
+    MCNAPI static void initFactory();
     // NOLINTEND
 
 public:

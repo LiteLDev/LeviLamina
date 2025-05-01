@@ -31,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerNetworkSystem(
+    MCNAPI ServerNetworkSystem(
         ::Scheduler&                                         receiveThread,
         ::std::vector<::std::string> const&                  overrideBroadcastAddresses,
         ::NetworkSystemToggles const&                        networkToggles,
@@ -41,20 +41,20 @@ public:
         ::NetworkSettingOptions const&                       networkSettingOption
     );
 
-    MCAPI void _createNetworkStatistics(
+    MCNAPI void _createNetworkStatistics(
         ::NetworkSystemToggles const&                            networkToggles,
         ::Bedrock::NonOwnerPointer<::NetworkDebugManager> const& networkDebugManager
     );
 
-    MCAPI ::NetworkIdentifier getLocalNetworkId() const;
+    MCNAPI ::NetworkIdentifier getLocalNetworkId() const;
 
-    MCAPI bool host(::ConnectionDefinition const& definition);
+    MCNAPI bool host(::ConnectionDefinition const& definition);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::NetworkSystem::Dependencies _createConstructionDependencies(
+    MCNAPI static ::NetworkSystem::Dependencies _createConstructionDependencies(
         ::ServerNetworkSystem*                               pThis,
         ::Scheduler&                                         receiveThread,
         ::std::vector<::std::string> const&                  overrideBroadcastAddresses,
@@ -69,7 +69,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scheduler&                                         receiveThread,
         ::std::vector<::std::string> const&                  overrideBroadcastAddresses,
         ::NetworkSystemToggles const&                        networkToggles,
@@ -89,12 +89,12 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForNetworkEnableDisableListener();
+    MCNAPI static void** $vftableForNetworkEnableDisableListener();
 
-    MCAPI static void** $vftableForConnectionCallbacks();
+    MCNAPI static void** $vftableForConnectionCallbacks();
 
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
 
-    MCAPI static void** $vftableForIPSupportInterface();
+    MCNAPI static void** $vftableForIPSupportInterface();
     // NOLINTEND
 };

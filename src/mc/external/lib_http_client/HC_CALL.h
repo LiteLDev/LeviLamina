@@ -17,44 +17,44 @@ struct HC_CALL {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Result<::std::chrono::seconds> GetRetryAfterHeaderTime();
+    MCNAPI ::Result<::std::chrono::seconds> GetRetryAfterHeaderTime();
 
-    MCAPI explicit HC_CALL(uint64);
+    MCNAPI explicit HC_CALL(uint64);
 
-    MCAPI long PerformAsync(::XAsyncBlock*);
+    MCNAPI long PerformAsync(::XAsyncBlock*);
 
-    MCAPI ::Result<bool> ShouldFailFast(uint&);
+    MCNAPI ::Result<bool> ShouldFailFast(uint&);
 
-    MCAPI bool ShouldRetry(uint&);
+    MCNAPI bool ShouldRetry(uint&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Result<::std::unique_ptr<::HC_CALL, ::http_alloc_deleter<::HC_CALL>>> Initialize();
+    MCNAPI static ::Result<::std::unique_ptr<::HC_CALL, ::http_alloc_deleter<::HC_CALL>>> Initialize();
 
-    MCAPI static long PerfomAsyncProvider(::XAsyncOp, ::XAsyncProviderData const*);
+    MCNAPI static long PerfomAsyncProvider(::XAsyncOp, ::XAsyncProviderData const*);
 
-    MCAPI static void PerformSingleRequest(void*, bool);
+    MCNAPI static void PerformSingleRequest(void*, bool);
 
-    MCAPI static long PerformSingleRequestAsyncProvider(::XAsyncOp, ::XAsyncProviderData const*);
+    MCNAPI static long PerformSingleRequestAsyncProvider(::XAsyncOp, ::XAsyncProviderData const*);
 
-    MCAPI static void PerformSingleRequestComplete(::XAsyncBlock*);
+    MCNAPI static void PerformSingleRequestComplete(::XAsyncBlock*);
 
-    MCAPI static long ReadRequestBody(::HC_CALL*, uint64, uint64, void*, uchar*, uint64*);
+    MCNAPI static long ReadRequestBody(::HC_CALL*, uint64, uint64, void*, uchar*, uint64*);
 
-    MCAPI static long ResponseBodyWrite(::HC_CALL*, uchar const*, uint64, void*);
+    MCNAPI static long ResponseBodyWrite(::HC_CALL*, uchar const*, uint64, void*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint64);
+    MCNAPI void* $ctor(uint64);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -14,7 +14,7 @@ namespace Scripting { class DependencyLocator; }
 namespace ScriptDiagnosticsCollectors {
 // functions
 // NOLINTBEGIN
-MCAPI void AddScriptStatCollectors(
+MCNAPI void AddScriptStatCollectors(
     ::ScriptDiagnostics&               diagnostics,
     ::ServerLevel&                     serverLevel,
     ::ScriptPluginManager&             pluginManager,

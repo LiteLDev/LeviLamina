@@ -32,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerGameModeChangeAfterEvent(
+    MCNAPI ScriptPlayerGameModeChangeAfterEvent(
         ::Player const&                       player,
         ::GameType                            fromGameMode,
         ::GameType                            toGameMode,
@@ -43,13 +43,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeAfterEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeAfterEvent>
+    bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Player const&                       player,
         ::GameType                            fromGameMode,
         ::GameType                            toGameMode,

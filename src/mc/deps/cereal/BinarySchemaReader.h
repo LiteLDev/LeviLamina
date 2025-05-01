@@ -107,9 +107,6 @@ public:
     // vIndex: 22
     virtual void pop() /*override*/;
 
-    // vIndex: 23
-    virtual bool isSequenceReader() const /*override*/;
-
     // vIndex: 0
     virtual ~BinarySchemaReader() /*override*/;
     // NOLINTEND
@@ -117,69 +114,67 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void pushStateIf(::cereal::PropertyReader const& prop);
+    MCNAPI void pushStateIf(::cereal::PropertyReader const& prop);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCAPI bool $isObject() const;
+    MCNAPI bool $isObject() const;
 
-    MCAPI bool $isArray() const;
+    MCNAPI bool $isArray() const;
 
-    MCFOLD bool $isNull() const;
+    MCNAPI bool $isNull() const;
 
-    MCAPI ::Bedrock::Result<bool> $asBool(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<bool> $asBool(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<schar> $asInt8(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<schar> $asInt8(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<uchar> $asUInt8(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<uchar> $asUInt8(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<short> $asInt16(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<short> $asInt16(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<ushort> $asUInt16(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<ushort> $asUInt16(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<int> $asInt32(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<int> $asInt32(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<uint> $asUInt32(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<uint> $asUInt32(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<int64> $asInt64(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<int64> $asInt64(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<uint64> $asUInt64(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<uint64> $asUInt64(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<float> $asFloat(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<float> $asFloat(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<double> $asDouble(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<double> $asDouble(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<::std::string> $asString(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<::std::string> $asString(::cereal::PropertyReader const&);
 
-    MCFOLD uint64 $members();
+    MCNAPI uint64 $members();
 
-    MCAPI uint64 $length();
+    MCNAPI uint64 $length();
 
-    MCAPI bool $pushMember(::std::string_view const, ::cereal::PropertyReader const& prop);
+    MCNAPI bool $pushMember(::std::string_view const, ::cereal::PropertyReader const& prop);
 
-    MCAPI ::std::string_view $pushNextMember(::cereal::PropertyReader const& prop);
+    MCNAPI ::std::string_view $pushNextMember(::cereal::PropertyReader const& prop);
 
-    MCAPI void $pushElement(uint64, ::cereal::PropertyReader const& prop);
+    MCNAPI void $pushElement(uint64, ::cereal::PropertyReader const& prop);
 
-    MCAPI void $pop();
-
-    MCFOLD bool $isSequenceReader() const;
+    MCNAPI void $pop();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

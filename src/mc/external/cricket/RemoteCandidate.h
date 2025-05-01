@@ -8,13 +8,13 @@ class RemoteCandidate {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~RemoteCandidate();
+    MCNAPI ~RemoteCandidate();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -42,13 +42,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacySpringsFeature(::FeatureRegistry const& registry, ::BaseGameVersion const& baseGameVersion);
+    MCNAPI LegacySpringsFeature(::FeatureRegistry const& registry, ::BaseGameVersion const& baseGameVersion);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FeatureRegistry const& registry, ::BaseGameVersion const& baseGameVersion);
+    MCNAPI void* $ctor(::FeatureRegistry const& registry, ::BaseGameVersion const& baseGameVersion);
     // NOLINTEND
 
 public:
@@ -60,12 +60,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

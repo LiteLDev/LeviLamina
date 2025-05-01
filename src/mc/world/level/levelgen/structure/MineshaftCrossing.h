@@ -51,13 +51,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _placeSupportPillar(::BlockSource& region, ::BoundingBox const& chunkBB, int x, int y0, int z, int y1);
+    MCNAPI void _placeSupportPillar(::BlockSource& region, ::BoundingBox const& chunkBB, int x, int y0, int z, int y1);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BoundingBox findCrossing(
+    MCNAPI static ::BoundingBox findCrossing(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
         int                                                 footX,
@@ -76,20 +76,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::StructurePieceType $getType() const;
+    MCNAPI ::StructurePieceType $getType() const;
 
-    MCAPI void $addChildren(
+    MCNAPI void $addChildren(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random
     );
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB);
+    MCNAPI bool $postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

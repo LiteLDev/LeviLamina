@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PriorityCategory(
+    MCNAPI PriorityCategory(
         ::HashedString const&                            id,
         int                                              blockPriority,
         ::std::unordered_map<::HashedString, int> const& entityPriority,
@@ -47,7 +47,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::HashedString const&                            id,
         int                                              blockPriority,
         ::std::unordered_map<::HashedString, int> const& entityPriority,

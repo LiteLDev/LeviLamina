@@ -6,13 +6,13 @@
 #include "mc/deps/core/resource/PackCategory.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/resources/PackReport.h"
+#include "mc/resources/PackStats.h"
 
 // auto generated forward declare list
 // clang-format off
 class PackManifest;
-class PackReport;
 class PackSettings;
-class PackStats;
 class ResourcePack;
 class SemVersion;
 namespace Bedrock::Resources { class PreloadedPathHandle; }
@@ -38,54 +38,56 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackInstance(
+    MCNAPI PackInstance(
         ::Bedrock::NotNullNonOwnerPtr<::ResourcePack> pack,
         int                                           subpackIndex,
         bool                                          packSettings,
         ::PackSettings*                               isDependent
     );
 
-    MCAPI PackInstance(
+    MCNAPI PackInstance(
         ::Bedrock::NotNullNonOwnerPtr<::ResourcePack> pack,
         ::std::string const&                          subpackName,
         bool                                          packSettings,
         ::PackSettings*                               isDependent
     );
 
-    MCAPI ::std::string const& getFolderName() const;
+    MCNAPI void forEachInAssetSet(::Core::Path const& path, ::std::function<void(::Core::Path const&)> callback) const;
 
-    MCAPI ::PackManifest const& getManifest() const;
+    MCNAPI ::std::string const& getFolderName() const;
 
-    MCAPI ::PackManifest& getManifest();
+    MCNAPI ::PackManifest const& getManifest() const;
 
-    MCAPI ::PackCategory getPackCategory() const;
+    MCNAPI ::PackManifest& getManifest();
 
-    MCAPI ::mce::UUID const getPackId() const;
+    MCNAPI ::PackCategory getPackCategory() const;
 
-    MCAPI ::PackOrigin getPackOrigin() const;
+    MCNAPI ::mce::UUID const getPackId() const;
 
-    MCAPI ::std::string const& getSubpackFolderName() const;
+    MCNAPI ::PackOrigin getPackOrigin() const;
 
-    MCAPI ::SemVersion const& getVersion() const;
+    MCNAPI ::std::string const& getSubpackFolderName() const;
 
-    MCAPI bool isBaseGamePack() const;
+    MCNAPI ::SemVersion const& getVersion() const;
 
-    MCAPI ::Bedrock::Resources::PreloadedPathHandle preloadPath(::Core::Path const& packRelativePath) const;
+    MCNAPI bool isBaseGamePack() const;
 
-    MCAPI ~PackInstance();
+    MCNAPI ::Bedrock::Resources::PreloadedPathHandle preloadPath(::Core::Path const& packRelativePath) const;
+
+    MCNAPI ~PackInstance();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::ResourcePack> pack,
         int                                           subpackIndex,
         bool                                          packSettings,
         ::PackSettings*                               isDependent
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::ResourcePack> pack,
         ::std::string const&                          subpackName,
         bool                                          packSettings,
@@ -96,6 +98,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

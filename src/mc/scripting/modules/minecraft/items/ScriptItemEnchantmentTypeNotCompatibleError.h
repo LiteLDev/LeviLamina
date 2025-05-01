@@ -12,20 +12,20 @@ struct ScriptItemEnchantmentTypeNotCompatibleError : public ::Scripting::Error {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptItemEnchantmentTypeNotCompatibleError(::std::string const& typeName);
+    MCNAPI explicit ScriptItemEnchantmentTypeNotCompatibleError(::std::string const& typeName);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentTypeNotCompatibleError>
+    MCNAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentTypeNotCompatibleError>
     bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& typeName);
+    MCNAPI void* $ctor(::std::string const& typeName);
     // NOLINTEND
 };
 

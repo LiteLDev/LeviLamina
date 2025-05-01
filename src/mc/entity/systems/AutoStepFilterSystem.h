@@ -10,7 +10,7 @@ struct TickingSystemWithInfo;
 namespace AutoStepFilterSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createAutoStepFilterSystem();
+MCNAPI ::TickingSystemWithInfo createAutoStepFilterSystem();
 // NOLINTEND
 
 } // namespace AutoStepFilterSystem

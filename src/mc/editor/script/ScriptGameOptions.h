@@ -21,35 +21,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptGameOptions(::Editor::ScriptModule::ScriptGameOptions&&);
+    MCNAPI ScriptGameOptions(::Editor::ScriptModule::ScriptGameOptions&&);
 
-    MCAPI ~ScriptGameOptions();
+    MCNAPI ~ScriptGameOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::EnumBindingBuilder<::DaylightCycle, ::DaylightCycle> bindDayLightCycleEnum();
+    MCNAPI static ::Scripting::EnumBindingBuilder<::DaylightCycle, ::DaylightCycle> bindDayLightCycleEnum();
 
-    MCAPI static ::Scripting::EnumBindingBuilder<::Social::GamePublishSetting, ::Social::GamePublishSetting>
+    MCNAPI static ::Scripting::EnumBindingBuilder<::Social::GamePublishSetting, ::Social::GamePublishSetting>
     bindGamePublishSettingEnum();
 
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptGameOptions> bindInterface();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptGameOptions> bindInterface();
 
-    MCAPI static ::Scripting::EnumBindingBuilder<::PlayerPermissionLevel, ::PlayerPermissionLevel>
+    MCNAPI static ::Scripting::EnumBindingBuilder<::PlayerPermissionLevel, ::PlayerPermissionLevel>
     bindPlayerPermissionLevelEnum();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ScriptModule::ScriptGameOptions&&);
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptGameOptions&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

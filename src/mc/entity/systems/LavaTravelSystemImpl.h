@@ -12,7 +12,7 @@ struct MovementAttributesComponent;
 namespace LavaTravelSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void copyLavaSpeedToMobTravel(
+MCNAPI void copyLavaSpeedToMobTravel(
     ::StrictEntityContext&,
     ::MovementAttributesComponent const& attributesComponent,
     ::MobTravelComponent&                mobTravelComponent

@@ -14,18 +14,27 @@ namespace webrtc {
 
 struct FrameDependenciesCalculator {
 public:
+    // FrameDependenciesCalculator inner types declare
+    // clang-format off
+    struct BufferUsage;
+    // clang-format on
+
+    // FrameDependenciesCalculator inner types define
+    struct BufferUsage {};
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::absl::InlinedVector<int64, 5, ::std::allocator<int64>>
+    MCNAPI ::absl::InlinedVector<int64, 5, ::std::allocator<int64>>
         FromBuffersUsage(int64, ::rtc::ArrayView<::webrtc::CodecBufferUsage const>);
 
-    MCAPI ~FrameDependenciesCalculator();
+    MCNAPI ~FrameDependenciesCalculator();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

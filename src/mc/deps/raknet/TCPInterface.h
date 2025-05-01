@@ -101,29 +101,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void CloseConnection(::RakNet::SystemAddress systemAddress);
+    MCNAPI void CloseConnection(::RakNet::SystemAddress systemAddress);
 
-    MCAPI ::RakNet::SystemAddress
+    MCNAPI ::RakNet::SystemAddress
     Connect(char const* host, ushort remotePort, bool block, ushort socketFamily, char const* bindAddress);
 
-    MCAPI bool
+    MCNAPI bool
     CreateListenSocket(ushort port, ushort maxIncomingConnections, ushort socketFamily, char const* bindAddress);
 
-    MCAPI void GetConnectionList(::RakNet::SystemAddress* remoteSystems, ushort* numberOfSystems) const;
+    MCNAPI void GetConnectionList(::RakNet::SystemAddress* remoteSystems, ushort* numberOfSystems) const;
 
-    MCAPI uint GetOutgoingDataBufferSize(::RakNet::SystemAddress systemAddress) const;
+    MCNAPI uint GetOutgoingDataBufferSize(::RakNet::SystemAddress systemAddress) const;
 
-    MCAPI ::RakNet::SystemAddress HasCompletedConnectionAttempt();
+    MCNAPI ::RakNet::SystemAddress HasCompletedConnectionAttempt();
 
-    MCAPI ::RakNet::SystemAddress HasFailedConnectionAttempt();
+    MCNAPI ::RakNet::SystemAddress HasFailedConnectionAttempt();
 
-    MCAPI ::RakNet::SystemAddress HasLostConnection();
+    MCNAPI ::RakNet::SystemAddress HasLostConnection();
 
-    MCAPI ::RakNet::Packet* ReceiveInt();
+    MCNAPI ::RakNet::Packet* ReceiveInt();
 
-    MCAPI uint64 SocketConnect(char const* host, ushort remotePort, ushort socketFamily, char const* bindAddress);
+    MCNAPI uint64 SocketConnect(char const* host, ushort remotePort, ushort socketFamily, char const* bindAddress);
 
-    MCAPI bool Start(
+    MCNAPI bool Start(
         ushort      port,
         ushort      maxIncomingConnections,
         ushort      maxConnections,
@@ -132,29 +132,29 @@ public:
         char const* bindAddress
     );
 
-    MCAPI void Stop();
+    MCNAPI void Stop();
 
-    MCAPI TCPInterface();
+    MCNAPI TCPInterface();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $Send(char const* data, uint length, ::RakNet::SystemAddress const& systemAddress, bool broadcast);
+    MCNAPI void $Send(char const* data, uint length, ::RakNet::SystemAddress const& systemAddress, bool broadcast);
 
-    MCAPI bool $SendList(
+    MCNAPI bool $SendList(
         char const**                   data,
         uint const*                    lengths,
         int const                      numParameters,
@@ -162,17 +162,17 @@ public:
         bool                           broadcast
     );
 
-    MCAPI bool $ReceiveHasPackets();
+    MCNAPI bool $ReceiveHasPackets();
 
-    MCAPI ::RakNet::Packet* $Receive();
+    MCNAPI ::RakNet::Packet* $Receive();
 
-    MCAPI void $PushBackPacket(::RakNet::Packet* packet, bool pushAtHead);
+    MCNAPI void $PushBackPacket(::RakNet::Packet* packet, bool pushAtHead);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

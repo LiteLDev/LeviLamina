@@ -8,9 +8,9 @@ class Rtpfb {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void CreateCommonFeedback(uchar*) const;
+    MCNAPI void CreateCommonFeedback(uchar*) const;
 
-    MCAPI void ParseCommonFeedback(uchar const*);
+    MCNAPI void ParseCommonFeedback(uchar const*);
     // NOLINTEND
 };
 

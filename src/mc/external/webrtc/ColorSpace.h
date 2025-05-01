@@ -96,33 +96,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ColorSpace(::webrtc::ColorSpace&&);
+    MCNAPI ColorSpace(::webrtc::ColorSpace&&);
 
-    MCAPI ColorSpace(::webrtc::ColorSpace const&);
+    MCNAPI ColorSpace(::webrtc::ColorSpace const&);
 
-    MCAPI ::webrtc::ColorSpace::ChromaSiting chroma_siting_horizontal() const;
+    MCNAPI ::webrtc::ColorSpace::ChromaSiting chroma_siting_horizontal() const;
 
-    MCAPI ::webrtc::ColorSpace::ChromaSiting chroma_siting_vertical() const;
+    MCNAPI ::webrtc::ColorSpace::ChromaSiting chroma_siting_vertical() const;
 
-    MCAPI ::webrtc::HdrMetadata const* hdr_metadata() const;
+    MCNAPI ::webrtc::HdrMetadata const* hdr_metadata() const;
 
-    MCAPI ::webrtc::ColorSpace::MatrixID matrix() const;
+    MCNAPI ::webrtc::ColorSpace::MatrixID matrix() const;
 
-    MCAPI ::webrtc::ColorSpace& operator=(::webrtc::ColorSpace const&);
+    MCNAPI ::webrtc::ColorSpace& operator=(::webrtc::ColorSpace const&);
 
-    MCAPI ::webrtc::ColorSpace::PrimaryID primaries() const;
+    MCNAPI ::webrtc::ColorSpace::PrimaryID primaries() const;
 
-    MCAPI ::webrtc::ColorSpace::RangeID range() const;
+    MCNAPI ::webrtc::ColorSpace::RangeID range() const;
 
-    MCAPI ::webrtc::ColorSpace::TransferID transfer() const;
+    MCNAPI ::webrtc::ColorSpace::TransferID transfer() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::ColorSpace&&);
+    MCNAPI void* $ctor(::webrtc::ColorSpace&&);
 
-    MCAPI void* $ctor(::webrtc::ColorSpace const&);
+    MCNAPI void* $ctor(::webrtc::ColorSpace const&);
     // NOLINTEND
 };
 

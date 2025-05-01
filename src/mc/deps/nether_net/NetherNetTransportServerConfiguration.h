@@ -36,13 +36,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~NetherNetTransportServerConfiguration();
+    MCNAPI ~NetherNetTransportServerConfiguration();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

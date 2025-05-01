@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/platform/brstd/flat_set.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -36,7 +36,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void setLocation(::std::string const& str);
+        MCNAPI void setLocation(::std::string const& str);
         // NOLINTEND
     };
 
@@ -66,19 +66,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setFieldOfView(float const& fieldOfViewInDegrees);
+    MCNAPI void setFieldOfView(float const& fieldOfViewInDegrees);
 
-    MCAPI void setLineOfSightObstructionType(::std::string const& str);
+    MCNAPI void setLineOfSightObstructionType(::std::string const& str);
 
-    MCAPI void setSetTargetMode(::std::string const& str);
+    MCNAPI void setSetTargetMode(::std::string const& str);
 
-    MCAPI ~LookedAtDefinition();
+    MCNAPI ~LookedAtDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::LookedAtDefinition>>& root
     );
     // NOLINTEND
@@ -86,6 +86,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

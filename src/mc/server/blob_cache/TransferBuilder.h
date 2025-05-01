@@ -25,27 +25,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TransferBuilder();
+    MCNAPI TransferBuilder();
 
-    MCAPI TransferBuilder(::ClientBlobCache::Server::ActiveTransfersManager& cache, ::NetworkIdentifier const& client);
+    MCNAPI TransferBuilder(::ClientBlobCache::Server::ActiveTransfersManager& cache, ::NetworkIdentifier const& client);
 
-    MCAPI void add(uint64 id, ::std::string& blob, bool isChunkInTickRange);
+    MCNAPI void add(uint64 id, ::std::string& blob, bool isChunkInTickRange);
 
-    MCAPI ~TransferBuilder();
+    MCNAPI ~TransferBuilder();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::ClientBlobCache::Server::ActiveTransfersManager& cache, ::NetworkIdentifier const& client);
+    MCNAPI void* $ctor(::ClientBlobCache::Server::ActiveTransfersManager& cache, ::NetworkIdentifier const& client);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -10,11 +10,11 @@ namespace Scripting { struct Error; }
 namespace ScriptUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::Scripting::Error functionError(::std::string_view functionName);
+MCNAPI ::Scripting::Error functionError(::std::string_view functionName);
 
-MCAPI ::Scripting::Error getPropertyError(::std::string_view propertyName);
+MCNAPI ::Scripting::Error getPropertyError(::std::string_view propertyName);
 
-MCAPI ::Scripting::Error setPropertyError(::std::string_view propertyName);
+MCNAPI ::Scripting::Error setPropertyError(::std::string_view propertyName);
 // NOLINTEND
 
 } // namespace ScriptUtils

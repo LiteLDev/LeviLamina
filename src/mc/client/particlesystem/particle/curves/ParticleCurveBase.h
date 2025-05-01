@@ -10,7 +10,7 @@
 class HashedString;
 class RenderParams;
 struct ConstDeserializeDataParams;
-namespace SharedTypes::v1_21 { struct ParticleCurveBase; }
+namespace SharedTypes::v1_20_80 { struct ParticleCurveBase; }
 // clang-format on
 
 namespace ParticleSystem {
@@ -35,10 +35,10 @@ public:
     virtual ~ParticleCurveBase() = default;
 
     // vIndex: 1
-    virtual void initializeFromData(::SharedTypes::v1_21::ParticleCurveBase&, ::HashedString const&) = 0;
+    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleCurveBase&, ::HashedString const&) = 0;
 
     // vIndex: 2
-    virtual void upgradeToSharedTypes(::SharedTypes::v1_21::ParticleCurveBase&) = 0;
+    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleCurveBase&) = 0;
 
     // vIndex: 3
     virtual void parseJson(::ConstDeserializeDataParams const&, ::HashedString const&) = 0;

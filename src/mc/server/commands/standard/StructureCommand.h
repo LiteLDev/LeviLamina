@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandPosition.h"
 #include "mc/server/commands/standard/StructureActionType.h"
 #include "mc/util/AnimationMode.h"
 #include "mc/util/Mirror.h"
@@ -15,7 +16,6 @@
 class BlockPos;
 class CommandOrigin;
 class CommandOutput;
-class CommandPosition;
 class CommandRegistry;
 class DimensionHeightRange;
 // clang-format on

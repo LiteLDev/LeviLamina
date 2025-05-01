@@ -10,7 +10,7 @@ class Vec2;
 namespace RotationUtility {
 // functions
 // NOLINTBEGIN
-MCAPI void setRot(::Vec2 const& newRot, ::Vec2& currentRot, ::Vec2& previousRot);
+MCNAPI void setRot(::Vec2 const& newRot, ::Vec2& currentRot, ::Vec2& previousRot);
 // NOLINTEND
 
 } // namespace RotationUtility

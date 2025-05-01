@@ -24,14 +24,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::ScriptModule::ScriptDataStoreModalToolActivationChangedEvent&
+    MCNAPI ::Editor::ScriptModule::ScriptDataStoreModalToolActivationChangedEvent&
     operator=(::Editor::ScriptModule::ScriptDataStoreModalToolActivationChangedEvent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<
+    MCNAPI static ::Scripting::ClassBindingBuilder<
         ::Editor::ScriptModule::ScriptDataStoreModalToolActivationChangedEvent>
     bindScript();
     // NOLINTEND

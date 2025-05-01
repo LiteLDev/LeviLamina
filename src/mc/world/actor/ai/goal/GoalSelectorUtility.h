@@ -10,9 +10,9 @@ class Mob;
 namespace GoalSelectorUtility {
 // functions
 // NOLINTBEGIN
-MCAPI void tickGoals(::Mob& owner, bool isTarget);
+MCNAPI void tickGoals(::Mob& owner, bool isTarget);
 
-MCAPI void tryStartGoals(::Mob& owner, bool isTarget);
+MCNAPI void tryStartGoals(::Mob& owner, bool isTarget);
 // NOLINTEND
 
 } // namespace GoalSelectorUtility

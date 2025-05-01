@@ -26,7 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _isValidPlacement(::BlockSource& region, ::BlockPos cursor) const;
+    MCNAPI bool _isValidPlacement(::BlockSource& region, ::BlockPos cursor) const;
     // NOLINTEND
 
 public:
@@ -38,12 +38,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& centerPos, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& centerPos, ::Random& random) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

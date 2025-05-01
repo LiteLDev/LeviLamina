@@ -30,16 +30,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<::std::optional<::ScriptModuleMinecraft::ScriptRawTextInterface>>
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::ScriptModuleMinecraft::ScriptRawTextInterface>>
     getRawText(::SignTextSide side) const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getText(::SignTextSide side) const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getText(::SignTextSide side) const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::optional<::ItemColor>> getTextDyeColor(::SignTextSide side) const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::ItemColor>> getTextDyeColor(::SignTextSide side) const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getWaxed() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getWaxed() const;
 
-    MCAPI ::Scripting::Result<void> setText(
+    MCNAPI ::Scripting::Result<void> setText(
         ::std::variant<
             ::std::string,
             ::ScriptModuleMinecraft::ScriptRawMessageInterface,
@@ -47,15 +47,15 @@ public:
         ::SignTextSide                                              side
     );
 
-    MCAPI ::Scripting::Result<void> setTextDyeColor(::std::optional<::ItemColor> color, ::SignTextSide side);
+    MCNAPI ::Scripting::Result<void> setTextDyeColor(::std::optional<::ItemColor> color, ::SignTextSide side);
 
-    MCAPI ::Scripting::Result<void> setWaxed(bool waxed);
+    MCNAPI ::Scripting::Result<void> setWaxed(bool waxed);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockSignComponent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockSignComponent>
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
@@ -74,7 +74,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

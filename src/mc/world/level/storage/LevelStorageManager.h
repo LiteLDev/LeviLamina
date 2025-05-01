@@ -75,38 +75,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelStorageManager(
+    MCNAPI LevelStorageManager(
         ::Bedrock::UniqueOwnerPointer<::LevelStorage> levelStorage,
         ::std::unique_ptr<::GameDataSaveTimer>        gameDataSaveTimer,
         ::std::unique_ptr<::UserStorageChecker>       userStorageChecker,
         ::IMinecraftEventing&                         eventing
     );
 
-    MCAPI void _onNewDimensionCreated(::Dimension& dimension);
+    MCNAPI void _onNewDimensionCreated(::Dimension& dimension);
 
-    MCAPI void _savePlayer(::Player& player);
+    MCNAPI void _savePlayer(::Player& player);
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::LevelStorage> getLevelStorage();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::LevelStorage> getLevelStorage();
 
-    MCAPI void initializeWithDimensionManager(::IDimensionManagerConnector& dimensionManagerConnector);
+    MCNAPI void initializeWithDimensionManager(::IDimensionManagerConnector& dimensionManagerConnector);
 
-    MCAPI void initializeWithPlayerDeathManager(::IPlayerDeathManagerConnector& playerDeathManagerConnector);
+    MCNAPI void initializeWithPlayerDeathManager(::IPlayerDeathManagerConnector& playerDeathManagerConnector);
 
-    MCAPI void onStartLeaveGame();
+    MCNAPI void onStartLeaveGame();
 
-    MCAPI void save(::std::chrono::steady_clock::time_point currentTime);
+    MCNAPI void save(::std::chrono::steady_clock::time_point currentTime);
 
-    MCAPI void saveGameData(::std::chrono::steady_clock::time_point currentTime);
+    MCNAPI void saveGameData(::std::chrono::steady_clock::time_point currentTime);
 
-    MCAPI void saveLevelData();
+    MCNAPI void saveLevelData();
 
-    MCAPI void trySaveGameData(::std::chrono::steady_clock::time_point currentTime);
+    MCNAPI void trySaveGameData(::std::chrono::steady_clock::time_point currentTime);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::UniqueOwnerPointer<::LevelStorage> levelStorage,
         ::std::unique_ptr<::GameDataSaveTimer>        gameDataSaveTimer,
         ::std::unique_ptr<::UserStorageChecker>       userStorageChecker,
@@ -117,28 +117,28 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveGameDataConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveGameDataConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveLevelDataConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveLevelDataConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(bool&)>& $getOnCanStartGameSaveTimerCheckConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(bool&)>& $getOnCanStartGameSaveTimerCheckConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnStartLeaveGameConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnStartLeaveGameConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnAppSuspendConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void()>& $getOnAppSuspendConnector();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

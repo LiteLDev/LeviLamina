@@ -29,23 +29,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureSpawnRegistry();
-
-    MCAPI ::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride> const*
+    MCNAPI ::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride> const*
     get(::std::string const& key) const;
 
-    MCAPI ~StructureSpawnRegistry();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI ~StructureSpawnRegistry();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

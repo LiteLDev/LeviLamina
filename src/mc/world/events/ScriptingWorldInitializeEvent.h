@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptBlockComponentRegistry; }
 namespace ScriptModuleMinecraft { class ScriptItemComponentRegistry; }
 namespace ScriptModuleMinecraft { class ScriptPropertyRegistry; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 struct ScriptingWorldInitializeEvent {
@@ -36,20 +36,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptingWorldInitializeEvent(::ScriptingWorldInitializeEvent const&);
+    MCNAPI ScriptingWorldInitializeEvent(::ScriptingWorldInitializeEvent const&);
 
-    MCAPI ~ScriptingWorldInitializeEvent();
+    MCNAPI ~ScriptingWorldInitializeEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptingWorldInitializeEvent const&);
+    MCNAPI void* $ctor(::ScriptingWorldInitializeEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

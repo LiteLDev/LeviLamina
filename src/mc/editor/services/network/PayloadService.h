@@ -58,13 +58,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ConstructionInfo();
+        MCNAPI ~ConstructionInfo();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -86,13 +86,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~CachedPacket();
+        MCNAPI ~CachedPacket();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -163,34 +163,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PayloadService(
+    MCNAPI PayloadService(
         ::Editor::ServiceProviderCollection& providers,
         ::WeakEntityRef                      optionalPlayerRef,
         ::PacketSender&                      packetSender,
         bool                                 isClientSide
     );
 
-    MCAPI ::Bedrock::PubSub::
+    MCNAPI ::Bedrock::PubSub::
         Publisher<void(::Editor::Network::INetworkPayload const&), ::Bedrock::PubSub::ThreadModel::SingleThreaded>*
         _findOrCreatePublisher(uint hashVal);
 
-    MCAPI ::std::shared_ptr<::Editor::Network::INetworkPayload> _load(::CompoundTag const* data);
+    MCNAPI ::std::shared_ptr<::Editor::Network::INetworkPayload> _load(::CompoundTag const* data);
 
-    MCAPI ::Scripting::Result_deprecated<::EditorNetworkPacket>
+    MCNAPI ::Scripting::Result_deprecated<::EditorNetworkPacket>
     _populatePacket(::Editor::Network::INetworkPayload* payload, ::Editor::Network::PayloadService::SendTarget target);
 
-    MCAPI void _registerPacketFactory(
+    MCNAPI void _registerPacketFactory(
         char const*                                                              payloadName,
         ::std::function<::std::shared_ptr<::Editor::Network::INetworkPayload>()> constructorFunc
     );
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     _sendToClient(::Editor::Network::INetworkPayload& payload, ::Editor::Network::PayloadService::SendTarget target);
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     _sendToServer(::Editor::Network::INetworkPayload& payload, ::Editor::Network::PayloadService::SendTarget target);
 
-    MCAPI ::Scripting::Result<void> _sendToTarget(
+    MCNAPI ::Scripting::Result<void> _sendToTarget(
         ::Actor*                                      actor,
         ::EditorNetworkPacket&                        outPacket,
         ::Editor::Network::PayloadService::SendTarget toWhom
@@ -206,7 +206,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection& providers,
         ::WeakEntityRef                      optionalPlayerRef,
         ::PacketSender&                      packetSender,
@@ -217,45 +217,45 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCAPI ::Scripting::Result<void> $dispatchToSelf(::Editor::Network::INetworkPayload& payload);
+    MCNAPI ::Scripting::Result<void> $dispatchToSelf(::Editor::Network::INetworkPayload& payload);
 
-    MCAPI void $onReceivePayload(::EditorNetworkPacket const& packet);
+    MCNAPI void $onReceivePayload(::EditorNetworkPacket const& packet);
 
-    MCAPI void $_registerPayload(
+    MCNAPI void $_registerPayload(
         char const*                                                              payloadName,
         ::std::function<::std::shared_ptr<::Editor::Network::INetworkPayload>()> constructorFunc
     );
 
-    MCAPI ::Scripting::Result<void> $_send(::Editor::Network::INetworkPayload& payload);
+    MCNAPI ::Scripting::Result<void> $_send(::Editor::Network::INetworkPayload& payload);
 
-    MCAPI ::Scripting::Result<void> $_sendToManager(::Editor::Network::INetworkPayload& payload);
+    MCNAPI ::Scripting::Result<void> $_sendToManager(::Editor::Network::INetworkPayload& payload);
 
-    MCAPI ::Scripting::Result<void> $_broadcastToClients(::Editor::Network::INetworkPayload& payload);
+    MCNAPI ::Scripting::Result<void> $_broadcastToClients(::Editor::Network::INetworkPayload& payload);
 
-    MCAPI ::Scripting::Result<void> $_broadcastToClientManagers(::Editor::Network::INetworkPayload& payload);
+    MCNAPI ::Scripting::Result<void> $_broadcastToClientManagers(::Editor::Network::INetworkPayload& payload);
 
-    MCAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     $_listenFor(char const* payloadName, ::std::function<void(::Editor::Network::INetworkPayload const&)> func);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForPayloadServiceProvider();
+    MCNAPI static void** $vftableForPayloadServiceProvider();
 
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

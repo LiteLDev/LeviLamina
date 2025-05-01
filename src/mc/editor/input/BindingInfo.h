@@ -23,15 +23,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::Input::BindingInfo& operator=(::Editor::Input::BindingInfo&&);
+    MCNAPI ::Editor::Input::BindingInfo& operator=(::Editor::Input::BindingInfo&&);
 
-    MCAPI ~BindingInfo();
+    MCNAPI ~BindingInfo();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

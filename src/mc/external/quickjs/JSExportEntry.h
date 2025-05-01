@@ -6,7 +6,7 @@ struct JSExportEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkf75fd7;
+    ::ll::UntypedStorage<8, 16> mUnk1c485e;
     ::ll::UntypedStorage<4, 4>  mUnk478611;
     ::ll::UntypedStorage<4, 4>  mUnkade76c;
     ::ll::UntypedStorage<4, 4>  mUnk40f3bc;

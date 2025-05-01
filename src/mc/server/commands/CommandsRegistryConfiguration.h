@@ -33,36 +33,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandsRegistryConfiguration();
+    MCNAPI CommandsRegistryConfiguration();
 
-    MCAPI CommandsRegistryConfiguration(::CommandsRegistryConfiguration&&);
+    MCNAPI CommandsRegistryConfiguration(::CommandsRegistryConfiguration&&);
 
-    MCAPI ::CommandsRegistryConfiguration& operator=(::CommandsRegistryConfiguration&&);
+    MCNAPI ::CommandsRegistryConfiguration& operator=(::CommandsRegistryConfiguration&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::CommandsRegistryConfiguration&&);
+    MCNAPI void* $ctor(::CommandsRegistryConfiguration&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

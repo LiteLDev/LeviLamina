@@ -30,27 +30,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ErrorBinding(::Scripting::ErrorBinding&&);
+    MCNAPI ErrorBinding(::Scripting::ErrorBinding&&);
 
-    MCAPI
+    MCNAPI
     ErrorBinding(::std::string name_, ::entt::meta_type type_, ::std::vector<::Scripting::PropertyBinding> properties_);
 
-    MCAPI ~ErrorBinding();
+    MCNAPI ~ErrorBinding();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::ErrorBinding&&);
+    MCNAPI void* $ctor(::Scripting::ErrorBinding&&);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::string name_, ::entt::meta_type type_, ::std::vector<::Scripting::PropertyBinding> properties_);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

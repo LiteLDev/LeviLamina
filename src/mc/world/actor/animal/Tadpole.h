@@ -19,12 +19,6 @@ public:
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 177
-    virtual float getFlopVerticalVelocityFactor() const /*override*/;
-
-    // vIndex: 178
-    virtual float getFlopHorizontalVelocityFactor() const /*override*/;
-
     // vIndex: 8
     virtual ~Tadpole() /*override*/ = default;
     // NOLINTEND
@@ -38,16 +32,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
-
-    MCAPI float $getFlopVerticalVelocityFactor() const;
-
-    MCFOLD float $getFlopHorizontalVelocityFactor() const;
+    MCNAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

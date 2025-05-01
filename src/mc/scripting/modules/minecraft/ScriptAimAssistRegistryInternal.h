@@ -15,7 +15,7 @@ namespace Scripting { struct InvalidArgumentError; }
 namespace ScriptModuleMinecraft::ScriptAimAssistRegistryInternal {
 // functions
 // NOLINTBEGIN
-MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::Scripting::InvalidArgumentError>
+MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::Scripting::InvalidArgumentError>
 validateCategoryId(::CameraAimAssistDataRegistryComponent const& aimAssistRegistry, ::std::string const& categoryId);
 // NOLINTEND
 

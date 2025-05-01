@@ -64,24 +64,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isInWorldAndNotShowingAnyMenuScreens() const;
+    MCNAPI bool $isInWorldAndNotShowingAnyMenuScreens() const;
 
-    MCAPI ::AdventureSettings const& $getAdventureSettings() const;
+    MCNAPI ::AdventureSettings const& $getAdventureSettings() const;
 
-    MCFOLD ::ClientPlayMode $getPlayMode() const;
+    MCNAPI ::ClientPlayMode $getPlayMode() const;
 
-    MCFOLD float $getSmoothRotationSpeed() const;
+    MCNAPI float $getSmoothRotationSpeed() const;
 
-    MCFOLD ::InputMode $getInputMode() const;
+    MCNAPI ::InputMode $getInputMode() const;
 
-    MCAPI ::GameType $getDefaultGameType() const;
+    MCNAPI ::GameType $getDefaultGameType() const;
 
-    MCFOLD ::Vec3 $getWorldSpaceVRRealityGazeDir() const;
+    MCNAPI ::Vec3 $getWorldSpaceVRRealityGazeDir() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

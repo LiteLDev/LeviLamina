@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ItemInstance;
-class WeakEntityRef;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/world/item/ItemInstance.h"
 
 struct ItemDefinitionEventTriggeredEvent {
 public:
@@ -24,24 +22,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemDefinitionEventTriggeredEvent(::ItemDefinitionEventTriggeredEvent&&);
+    MCNAPI ItemDefinitionEventTriggeredEvent(::ItemDefinitionEventTriggeredEvent&&);
 
-    MCAPI ItemDefinitionEventTriggeredEvent(::ItemDefinitionEventTriggeredEvent const&);
+    MCNAPI ItemDefinitionEventTriggeredEvent(::ItemDefinitionEventTriggeredEvent const&);
 
-    MCAPI ~ItemDefinitionEventTriggeredEvent();
+    MCNAPI ~ItemDefinitionEventTriggeredEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemDefinitionEventTriggeredEvent&&);
+    MCNAPI void* $ctor(::ItemDefinitionEventTriggeredEvent&&);
 
-    MCAPI void* $ctor(::ItemDefinitionEventTriggeredEvent const&);
+    MCNAPI void* $ctor(::ItemDefinitionEventTriggeredEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

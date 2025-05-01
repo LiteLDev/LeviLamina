@@ -8,13 +8,13 @@ class UserInitiatedAbortCause {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::dcsctp::UserInitiatedAbortCause> Parse(::rtc::ArrayView<uchar const>);
+    MCNAPI static ::std::optional<::dcsctp::UserInitiatedAbortCause> Parse(::rtc::ArrayView<uchar const>);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -16,7 +16,7 @@ class ScriptActorDefinitionFeedItem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ActorDefinitionFeedItem> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ActorDefinitionFeedItem> bind();
     // NOLINTEND
 };
 

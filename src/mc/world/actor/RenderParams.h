@@ -3,9 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/minecraft_renderer/game/ShadowContext.h"
 #include "mc/deps/shared_types/legacy/FilterSubject.h"
+#include "mc/util/MolangScriptArg.h"
 #include "mc/world/actor/animation/AttachableSlotIndex.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/response/ResponseParameterContext.h"
 
 // auto generated forward declare list
@@ -15,15 +18,12 @@ class ActorRenderData;
 class AnimationComponent;
 class BaseActorRenderContext;
 class Block;
-class BlockPos;
 class BlockSource;
 class DataDrivenModel;
 class IBlockWorldGenAPI;
 class ILevel;
 class ItemStackBase;
 class MolangVariableMap;
-class Vec3;
-struct MolangScriptArg;
 namespace ParticleSystem { class ParticleEmitter; }
 // clang-format on
 
@@ -76,7 +76,7 @@ public:
     ::ll::TypedStorage<2, 2, ushort>                              mSubRenderLayerIndex;
     ::ll::TypedStorage<8, 64, ::std::function<float()>>           mRandomFunction;
     ::ll::TypedStorage<4, 4, float>                               mCameraDistance;
-    ::ll::TypedStorage<4, 4, ::ShadowContext>                     mShadowContext;
+    ::ll::TypedStorage<1, 1, ::ShadowContext>                     mShadowContext;
     ::ll::TypedStorage<4, 32, float[8]>                           mParams;
     ::ll::TypedStorage<8, 88, ::MolangScriptArg>                  mThisValue;
     ::ll::TypedStorage<8, 88, ::MolangScriptArg>                  mScratchValue;
@@ -88,15 +88,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RenderParams();
+    MCNAPI RenderParams();
 
-    MCAPI RenderParams(::RenderParams&&);
+    MCNAPI RenderParams(::RenderParams&&);
 
-    MCAPI RenderParams(::RenderParams const&);
+    MCNAPI RenderParams(::RenderParams const&);
 
-    MCAPI ::Actor* getActorTarget(::SharedTypes::Legacy::FilterSubject subject) const;
+    MCNAPI ::Actor* getActorTarget(::SharedTypes::Legacy::FilterSubject subject) const;
 
-    MCAPI ::RenderParams& init(
+    MCNAPI ::RenderParams& init(
         ::BaseActorRenderContext*            actor,
         ::Actor*                             animationComponent,
         ::AnimationComponent*                variableMap,
@@ -106,26 +106,26 @@ public:
         float                                frameAlpha
     );
 
-    MCAPI ::RenderParams& operator=(::RenderParams const&);
+    MCNAPI ::RenderParams& operator=(::RenderParams const&);
 
-    MCAPI ::RenderParams& operator=(::RenderParams&&);
+    MCNAPI ::RenderParams& operator=(::RenderParams&&);
 
-    MCAPI ~RenderParams();
+    MCNAPI ~RenderParams();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::RenderParams&&);
+    MCNAPI void* $ctor(::RenderParams&&);
 
-    MCAPI void* $ctor(::RenderParams const&);
+    MCNAPI void* $ctor(::RenderParams const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

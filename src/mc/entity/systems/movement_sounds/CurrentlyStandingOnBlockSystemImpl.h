@@ -57,7 +57,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void doCurrentlyStandingOnBlockSystem(
+    MCNAPI static void doCurrentlyStandingOnBlockSystem(
         ::StrictEntityContext const&                          entity,
         ::ActorOwnerComponent const&                          actorOwnerComponent,
         ::StateVectorComponent const&                         stateVectorComponent,
@@ -76,7 +76,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     $tick(::StrictExecutionContext<
           ::Filter<::ShouldPlayMovementSoundComponent>,
           ::Read<::ActorOwnerComponent, ::DimensionTypeComponent, ::StateVectorComponent, ::AABBShapeComponent>,
@@ -90,6 +90,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

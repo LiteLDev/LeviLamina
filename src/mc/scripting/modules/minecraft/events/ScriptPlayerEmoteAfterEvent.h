@@ -30,34 +30,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerEmoteAfterEvent(
+    MCNAPI ScriptPlayerEmoteAfterEvent(
         ::Player const&                       player,
         ::std::string                         emotePieceId,
         ::Scripting::WeakLifetimeScope const& scope
     );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPlayerEmoteAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerEmoteAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptPlayerEmoteAfterEvent&&);
 
-    MCAPI ~ScriptPlayerEmoteAfterEvent();
+    MCNAPI ~ScriptPlayerEmoteAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerEmoteAfterEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerEmoteAfterEvent> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Player const& player, ::std::string emotePieceId, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void* $ctor(::Player const& player, ::std::string emotePieceId, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

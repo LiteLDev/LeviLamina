@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/certificates/identity/GameServerToken.h"
 #include "mc/common/SubClientId.h"
 #include "mc/world/actor/player/persona/PieceType.h"
 
 // auto generated forward declare list
 // clang-format off
 class AnimatedImageData;
-class GameServerToken;
 class MinEngineVersion;
 class SerializedPersonaPieceHandle;
 class TintMapColor;

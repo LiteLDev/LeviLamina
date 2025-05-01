@@ -8,13 +8,13 @@ class OutgoingSSNResetRequestParameter {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::dcsctp::OutgoingSSNResetRequestParameter> Parse(::rtc::ArrayView<uchar const>);
+    MCNAPI static ::std::optional<::dcsctp::OutgoingSSNResetRequestParameter> Parse(::rtc::ArrayView<uchar const>);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

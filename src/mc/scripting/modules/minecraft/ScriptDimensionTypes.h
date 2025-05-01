@@ -33,22 +33,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimensionType>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimensionType>>
     get(::Scripting::WeakLifetimeScope scope, ::std::string const& identifier);
 
-    MCAPI void registerTypes(::Scripting::WeakLifetimeScope scope);
+    MCNAPI void registerTypes(::Scripting::WeakLifetimeScope scope);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::std::string, ::std::string> _getDimensionStringNames();
+    MCNAPI static ::std::unordered_map<::std::string, ::std::string> _getDimensionStringNames();
 
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
-    MCAPI static ::DimensionType fromString(::std::string const& name);
+    MCNAPI static ::DimensionType fromString(::std::string const& name);
 
-    MCAPI static ::std::string toString(::DimensionType const& type);
+    MCNAPI static ::std::string toString(::DimensionType const& type);
     // NOLINTEND
 
 public:

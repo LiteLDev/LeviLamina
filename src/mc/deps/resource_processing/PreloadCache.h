@@ -55,29 +55,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PreloadCache(::Bedrock::Resources::PreloadCache::SharedOnlyConstructionTag);
+    MCNAPI explicit PreloadCache(::Bedrock::Resources::PreloadCache::SharedOnlyConstructionTag);
 
-    MCAPI ::Bedrock::Resources::PreloadedPathHandle _findPreloadedPath(
+    MCNAPI ::Bedrock::Resources::PreloadedPathHandle _findPreloadedPath(
         ::Bedrock::Resources::PreloadCache::PreloadedContentMaps const& contentMaps,
         ::Core::Path const&                                             cleanPath
     ) const;
 
-    MCAPI ::Bedrock::Resources::PreloadState _getAsset(
+    MCNAPI ::Bedrock::Resources::PreloadState _getAsset(
         ::Bedrock::Resources::PreloadCache::PreloadedContentMaps const& contentMaps,
         ::Core::Path const&                                             path,
         ::std::string*                                                  assetData
     ) const;
 
-    MCAPI ::Bedrock::Resources::PreloadedPathHandle
+    MCNAPI ::Bedrock::Resources::PreloadedPathHandle
     addPreloadedPath(::Core::Path const& path, ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> archiveReader);
 
-    MCAPI ::Bedrock::Resources::PreloadedPathHandle findPreloadedPath(::Core::Path const& path) const;
+    MCNAPI ::Bedrock::Resources::PreloadedPathHandle findPreloadedPath(::Core::Path const& path) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _preloadedPathDeleter(
+    MCNAPI static void _preloadedPathDeleter(
         ::std::weak_ptr<::Bedrock::Resources::PreloadCache> weakThis,
         ::Core::Path const&                                 path,
         ::Bedrock::Resources::Archive::Reader*              reader
@@ -87,7 +87,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::Resources::PreloadCache::SharedOnlyConstructionTag);
+    MCNAPI void* $ctor(::Bedrock::Resources::PreloadCache::SharedOnlyConstructionTag);
     // NOLINTEND
 };
 

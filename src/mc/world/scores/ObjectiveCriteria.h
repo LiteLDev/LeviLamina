@@ -22,8 +22,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::ObjectiveCriteria> deserialize(::CompoundTag const& dataTag);
+    MCNAPI static ::std::unique_ptr<::ObjectiveCriteria> deserialize(::CompoundTag const& dataTag);
 
-    MCAPI static ::std::unique_ptr<::CompoundTag> serialize(::ObjectiveCriteria const& toSave);
+    MCNAPI static ::std::unique_ptr<::CompoundTag> serialize(::ObjectiveCriteria const& toSave);
     // NOLINTEND
 };

@@ -4,6 +4,28 @@
 
 class BaseLightData {
 public:
+    // BaseLightData inner types declare
+    // clang-format off
+    struct DarknessLevels;
+    // clang-format on
+
+    // BaseLightData inner types define
+    struct DarknessLevels {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk79b59d;
+        ::ll::UntypedStorage<4, 4> mUnk4028d4;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        DarknessLevels& operator=(DarknessLevels const&);
+        DarknessLevels(DarknessLevels const&);
+        DarknessLevels();
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 16> mUnked29b8;

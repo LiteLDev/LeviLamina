@@ -33,32 +33,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemStartUseAfterEvent(::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent const&);
+    MCNAPI ScriptItemStartUseAfterEvent(::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent const&);
 
-    MCAPI ScriptItemStartUseAfterEvent(
+    MCNAPI ScriptItemStartUseAfterEvent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Player const&                                                                player,
         ::ItemStartUseEvent const&                                                     itemEvent,
         ::Scripting::WeakLifetimeScope const&                                          scope
     );
 
-    MCAPI ~ScriptItemStartUseAfterEvent();
+    MCNAPI ~ScriptItemStartUseAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent> bind();
 
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent> bindV010();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent> bindV010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Player const&                                                                player,
         ::ItemStartUseEvent const&                                                     itemEvent,
@@ -69,7 +69,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

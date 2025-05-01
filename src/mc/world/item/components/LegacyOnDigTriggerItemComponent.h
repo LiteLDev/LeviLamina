@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/world/actor/DefinitionTrigger.h"
 #include "mc/world/item/components/LegacyTriggerItemComponent.h"
 
 // auto generated forward declare list
@@ -44,21 +46,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LegacyOnDigTriggerItemComponent(::LegacyOnDigTriggerItemComponentData&& componentData);
+    MCNAPI explicit LegacyOnDigTriggerItemComponent(::LegacyOnDigTriggerItemComponentData&& componentData);
 
-    MCAPI void _onMineBlock(bool& result, ::ItemStack& item, ::Block const& block, int x, int y, int z, ::Actor& owner);
+    MCNAPI void
+    _onMineBlock(bool& result, ::ItemStack& item, ::Block const& block, int x, int y, int z, ::Actor& owner);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LegacyOnDigTriggerItemComponentData&& componentData);
+    MCNAPI void* $ctor(::LegacyOnDigTriggerItemComponentData&& componentData);
     // NOLINTEND
 
 public:
@@ -70,14 +73,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
+    MCNAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
-    MCAPI void $_initializeComponent();
+    MCNAPI void $_initializeComponent();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

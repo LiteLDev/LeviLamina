@@ -38,13 +38,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~DocumentableEventExecution();
+        MCNAPI ~DocumentableEventExecution();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -70,19 +70,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptDeferredEventCoordinator();
+    MCNAPI ScriptDeferredEventCoordinator();
 
-    MCAPI void _sendFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCNAPI void _sendFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI void _sendFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCNAPI void _sendFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI void _sendFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCNAPI void _sendFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI void _sendFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCNAPI void _sendFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI void _sendFlushSystemAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCNAPI void _sendFlushSystemAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI void _sendFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCNAPI void _sendFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
     // NOLINTEND
 
 public:
@@ -95,7 +95,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -107,6 +107,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

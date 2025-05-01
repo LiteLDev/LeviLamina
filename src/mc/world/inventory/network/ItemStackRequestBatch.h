@@ -26,6 +26,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::std::unique_ptr<::ItemStackRequestBatch>> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::std::unique_ptr<::ItemStackRequestBatch>> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

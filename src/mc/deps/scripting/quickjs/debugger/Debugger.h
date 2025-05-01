@@ -57,23 +57,23 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static uint ContextToId(::JSContext* ctx, void*);
+    MCNAPI static uint ContextToId(::JSContext* ctx, void*);
 
-    MCAPI static char const* ContextToModuleUuidLowerCase(::JSContext* ctx, void*);
+    MCNAPI static char const* ContextToModuleUuidLowerCase(::JSContext* ctx, void*);
 
-    MCAPI static void MessageHandler(void* udata, char const* message, uint64 length);
+    MCNAPI static void MessageHandler(void* udata, char const* message, uint64 length);
 
-    MCAPI static void NotifyResume(void* udata);
+    MCNAPI static void NotifyResume(void* udata);
 
-    MCAPI static char const* ToTypeName(::JSContext* ctx, ::JSValue val);
+    MCNAPI static char const* ToTypeName(::JSContext* ctx, ::JSValue val);
 
-    MCAPI static void TransportClose(::JSRuntime* rt, void* udata);
+    MCNAPI static void TransportClose(::JSRuntime* rt, void* udata);
 
-    MCAPI static uint64 TransportPeek(void* udata);
+    MCNAPI static uint64 TransportPeek(void* udata);
 
-    MCAPI static uint64 TransportRead(void* udata, char* buffer, uint64 length);
+    MCNAPI static uint64 TransportRead(void* udata, char* buffer, uint64 length);
 
-    MCAPI static uint64 TransportWrite(void* udata, char const* buffer, uint64 length);
+    MCNAPI static uint64 TransportWrite(void* udata, char const* buffer, uint64 length);
     // NOLINTEND
 
 public:
@@ -85,23 +85,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $attach(
+    MCNAPI bool $attach(
         bool                                      performHandshake,
         ::std::optional<::std::string>            targetModuleUuid,
         ::std::function<void(::std::string_view)> handler
     );
 
-    MCAPI void $detach();
+    MCNAPI void $detach();
 
-    MCAPI bool $closed() const;
+    MCNAPI bool $closed() const;
 
-    MCAPI void $pumpMessages();
+    MCNAPI void $pumpMessages();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

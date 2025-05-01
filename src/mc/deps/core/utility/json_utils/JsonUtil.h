@@ -19,7 +19,7 @@ namespace Json { class Value; }
 namespace JsonUtil {
 // functions
 // NOLINTBEGIN
-MCAPI void LogMissingChildSchemaOption(
+MCNAPI void LogMissingChildSchemaOption(
     ::LogArea            area,
     ::Json::Value const& node,
     ::std::string const& missingName,
@@ -27,29 +27,30 @@ MCAPI void LogMissingChildSchemaOption(
     ::std::string const& optionsStr
 );
 
-MCAPI void LogUnknownChildSchemaOption(::std::string const& childName, ::LogArea area, ::Json::Value const& childValue);
+MCNAPI void
+LogUnknownChildSchemaOption(::std::string const& childName, ::LogArea area, ::Json::Value const& childValue);
 
-MCAPI void eraseSchema(::HashedString const& name, ::SemVersion const& version);
+MCNAPI void eraseSchema(::HashedString const& name, ::SemVersion const& version);
 
-MCAPI ::Json::Value& getMemberByCaseInsensitiveName(::Json::Value& node, ::std::string_view memberName);
+MCNAPI ::Json::Value& getMemberByCaseInsensitiveName(::Json::Value& node, ::std::string_view memberName);
 
-MCAPI ::Json::Value const&
+MCNAPI ::Json::Value const&
 getMemberByCaseInsensitiveNameConst(::Json::Value const& node, ::std::string_view memberName);
 
-MCAPI bool parseBannerBlockType(::BannerBlockType& outType, ::Json::Value const& root);
+MCNAPI bool parseBannerBlockType(::BannerBlockType& outType, ::Json::Value const& root);
 
-MCAPI bool
+MCNAPI bool
 parseItem(::std::string& outItemName, ::std::string& outItemNamespace, int& inoutItemAux, ::std::string_view inString);
 
-MCAPI bool parseItemColor(::ItemColor& outColor, ::Json::Value const& root);
+MCNAPI bool parseItemColor(::ItemColor& outColor, ::Json::Value const& root);
 
-MCAPI bool parseRange(::Json::Value const& root, int& outMin, int& outMax);
+MCNAPI bool parseRange(::Json::Value const& root, int& outMin, int& outMax);
 
-MCAPI bool parseVec2(::Vec2& outVec, ::Json::Value const& root);
+MCNAPI bool parseVec2(::Vec2& outVec, ::Json::Value const& root);
 
-MCAPI bool parseVec3(::Vec3& outVec, ::Json::Value const& root);
+MCNAPI bool parseVec3(::Vec3& outVec, ::Json::Value const& root);
 
-MCAPI void printJsonSchema_childNode(
+MCNAPI void printJsonSchema_childNode(
     ::std::string&        output,
     ::std::string const&  indent,
     ::HashedString const& typeName,
@@ -61,9 +62,9 @@ MCAPI void printJsonSchema_childNode(
     ::std::string const&  documentation
 );
 
-MCAPI void setDefaultPrettyName(::std::string& destPrettyName, ::HashedString const& sourceName);
+MCNAPI void setDefaultPrettyName(::std::string& destPrettyName, ::HashedString const& sourceName);
 
-MCAPI void unregisterSchema(::HashedString const& name, ::SemVersion const& version);
+MCNAPI void unregisterSchema(::HashedString const& name, ::SemVersion const& version);
 // NOLINTEND
 
 } // namespace JsonUtil

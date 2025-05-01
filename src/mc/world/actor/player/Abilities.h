@@ -5,10 +5,10 @@
 // auto generated inclusion list
 #include "mc/server/commands/PlayerPermissionLevel.h"
 #include "mc/world/actor/player/AbilitiesIndex.h"
+#include "mc/world/actor/player/Ability.h"
 
 // auto generated forward declare list
 // clang-format off
-class Ability;
 class CompoundTag;
 // clang-format on
 
@@ -22,17 +22,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addSaveData(::CompoundTag& parentTag) const;
+    MCNAPI void addSaveData(::CompoundTag& parentTag) const;
 
-    MCAPI bool loadSaveData(::CompoundTag const& parentTag);
+    MCNAPI bool loadSaveData(::CompoundTag const& parentTag);
 
-    MCAPI void setFromPermissions(::PlayerPermissionLevel permissions);
+    MCNAPI void setFromPermissions(::PlayerPermissionLevel permissions);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Ability const& getDefault(::AbilitiesIndex abilityIndex);
+    MCNAPI static ::Ability const& getDefault(::AbilitiesIndex abilityIndex);
     // NOLINTEND
 
 public:

@@ -35,21 +35,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PageContent(::PageContent&&);
+    MCNAPI PageContent(::PageContent&&);
 
-    MCAPI PageContent(::std::string nText, ::std::optional<::std::string> nFilteredText);
+    MCNAPI PageContent(::std::string nText, ::std::optional<::std::string> nFilteredText);
 
-    MCAPI ::PageContent& operator=(::PageContent const&);
+    MCNAPI ::PageContent& operator=(::PageContent const&);
 
-    MCAPI ~PageContent();
+    MCNAPI ~PageContent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::PageContent read(::CompoundTag const& tag);
+    MCNAPI static ::PageContent read(::CompoundTag const& tag);
 
-    MCAPI static void write(::PageContent const& page, ::CompoundTag& tag);
+    MCNAPI static void write(::PageContent const& page, ::CompoundTag& tag);
     // NOLINTEND
 
 public:
@@ -61,14 +61,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PageContent&&);
+    MCNAPI void* $ctor(::PageContent&&);
 
-    MCAPI void* $ctor(::std::string nText, ::std::optional<::std::string> nFilteredText);
+    MCNAPI void* $ctor(::std::string nText, ::std::optional<::std::string> nFilteredText);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

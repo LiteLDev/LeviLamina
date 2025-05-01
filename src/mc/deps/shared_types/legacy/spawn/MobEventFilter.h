@@ -19,25 +19,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MobEventFilter(::SharedTypes::Legacy::Spawn::MobEventFilter&&);
+    MCNAPI MobEventFilter(::SharedTypes::Legacy::Spawn::MobEventFilter&&);
 
-    MCFOLD ::SharedTypes::Legacy::Spawn::MobEventFilter& operator=(::SharedTypes::Legacy::Spawn::MobEventFilter const&);
+    MCNAPI ::SharedTypes::Legacy::Spawn::MobEventFilter& operator=(::SharedTypes::Legacy::Spawn::MobEventFilter const&);
 
-    MCFOLD ::SharedTypes::Legacy::Spawn::MobEventFilter& operator=(::SharedTypes::Legacy::Spawn::MobEventFilter&&);
+    MCNAPI ::SharedTypes::Legacy::Spawn::MobEventFilter& operator=(::SharedTypes::Legacy::Spawn::MobEventFilter&&);
 
-    MCAPI ~MobEventFilter();
+    MCNAPI ~MobEventFilter();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::Legacy::Spawn::MobEventFilter&&);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::Spawn::MobEventFilter&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

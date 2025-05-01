@@ -52,21 +52,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI BlockPositionData(::StructureBlockPalette::BlockPositionData const& rhs);
+        MCNAPI BlockPositionData(::StructureBlockPalette::BlockPositionData const& rhs);
 
-        MCAPI ~BlockPositionData();
+        MCNAPI ~BlockPositionData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::StructureBlockPalette::BlockPositionData const& rhs);
+        MCNAPI void* $ctor(::StructureBlockPalette::BlockPositionData const& rhs);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -86,45 +86,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureBlockPalette();
+    MCNAPI StructureBlockPalette();
 
-    MCAPI StructureBlockPalette(::StructureBlockPalette&&);
+    MCNAPI StructureBlockPalette(::StructureBlockPalette&&);
 
-    MCAPI ::StructureBlockPaletteLoadResult _parseBlockPalette(::CompoundTag const& tag);
+    MCNAPI ::StructureBlockPaletteLoadResult _parseBlockPalette(::CompoundTag const& tag);
 
-    MCAPI ::StructureBlockPaletteLoadResult _parseBlockPositionData(::CompoundTag const& tag, int index);
+    MCNAPI ::StructureBlockPaletteLoadResult _parseBlockPositionData(::CompoundTag const& tag, int index);
 
-    MCAPI ::StructureBlockPaletteLoadResult _parseBlockPositionDataList(::CompoundTag const& tag);
+    MCNAPI ::StructureBlockPaletteLoadResult _parseBlockPositionDataList(::CompoundTag const& tag);
 
-    MCAPI void _saveBlockPalette(::CompoundTag& tag) const;
+    MCNAPI void _saveBlockPalette(::CompoundTag& tag) const;
 
-    MCAPI void _saveBlockPositionDataList(::CompoundTag& tag) const;
+    MCNAPI void _saveBlockPositionDataList(::CompoundTag& tag) const;
 
-    MCAPI ::Block const& getBlock(
+    MCNAPI ::Block const& getBlock(
         ::BlockPalette const&                                   paletteId,
         uint64                                                  unknownBlockRegistry,
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> blockPalette
     ) const;
 
-    MCAPI ::StructureBlockPalette::BlockPositionData const* getBlockPositionData(uint64 blockIndex) const;
+    MCNAPI ::StructureBlockPalette::BlockPositionData const* getBlockPositionData(uint64 blockIndex) const;
 
-    MCAPI ::Block const*
+    MCNAPI ::Block const*
     tryGetBlock(uint64 paletteId, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry) const;
 
-    MCAPI ~StructureBlockPalette();
+    MCNAPI ~StructureBlockPalette();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::StructureBlockPalette&&);
+    MCNAPI void* $ctor(::StructureBlockPalette&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

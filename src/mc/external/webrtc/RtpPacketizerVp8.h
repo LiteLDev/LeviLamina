@@ -17,28 +17,28 @@ class RtpPacketizerVp8 {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     RtpPacketizerVp8(::rtc::ArrayView<uchar const>, ::webrtc::RtpPacketizer::PayloadSizeLimits, ::webrtc::RTPVideoHeaderVP8 const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::absl::InlinedVector<uchar, 6, ::std::allocator<uchar>>
+    MCNAPI static ::absl::InlinedVector<uchar, 6, ::std::allocator<uchar>>
     BuildHeader(::webrtc::RTPVideoHeaderVP8 const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::rtc::ArrayView<uchar const>, ::webrtc::RtpPacketizer::PayloadSizeLimits, ::webrtc::RTPVideoHeaderVP8 const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

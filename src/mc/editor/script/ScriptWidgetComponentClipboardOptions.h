@@ -37,28 +37,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWidgetComponentClipboardOptions(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&&);
+    MCNAPI ScriptWidgetComponentClipboardOptions(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&&);
 
-    MCAPI ScriptWidgetComponentClipboardOptions(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions const&);
+    MCNAPI ScriptWidgetComponentClipboardOptions(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions const&);
 
-    MCAPI ::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&
     operator=(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions const&);
 
-    MCAPI ::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&
     operator=(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&&);
 
-    MCAPI ~ScriptWidgetComponentClipboardOptions();
+    MCNAPI ::Scripting::Result<void> validate() const;
+
+    MCNAPI ~ScriptWidgetComponentClipboardOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions>
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions>
     bindScript();
 
-    MCAPI static ::Scripting::Result<void> validateOffsetValues(::Vec3 const& offset);
+    MCNAPI static ::Scripting::Result<void> validateOffsetValues(::Vec3 const& offset);
 
-    MCAPI static ::Scripting::Result<void> validateOriginValues(::Vec3 const& origin);
+    MCNAPI static ::Scripting::Result<void> validateOriginValues(::Vec3 const& origin);
     // NOLINTEND
 
 public:
@@ -90,15 +92,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&&);
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&&);
 
-    MCAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions const&);
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

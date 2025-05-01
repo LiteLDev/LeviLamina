@@ -23,30 +23,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DefinitionTrigger(::DefinitionTrigger const&);
+    MCNAPI DefinitionTrigger(::DefinitionTrigger const&);
 
-    MCAPI ::DefinitionTrigger& operator=(::DefinitionTrigger&&);
+    MCNAPI ::DefinitionTrigger& operator=(::DefinitionTrigger&&);
 
-    MCAPI ::DefinitionTrigger& operator=(::DefinitionTrigger const&);
+    MCNAPI ::DefinitionTrigger& operator=(::DefinitionTrigger const&);
 
-    MCAPI ~DefinitionTrigger();
+    MCNAPI ~DefinitionTrigger();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::DefinitionTrigger const&);
+    MCNAPI void* $ctor(::DefinitionTrigger const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

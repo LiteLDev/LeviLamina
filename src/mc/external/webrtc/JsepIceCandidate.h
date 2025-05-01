@@ -14,25 +14,25 @@ class JsepIceCandidate {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool Initialize(::std::string const&, ::webrtc::SdpParseError*);
+    MCNAPI bool Initialize(::std::string const&, ::webrtc::SdpParseError*);
 
-    MCAPI JsepIceCandidate(::std::string const&, int);
+    MCNAPI JsepIceCandidate(::std::string const&, int);
 
-    MCAPI JsepIceCandidate(::std::string const&, int, ::cricket::Candidate const&);
+    MCNAPI JsepIceCandidate(::std::string const&, int, ::cricket::Candidate const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const&, int);
+    MCNAPI void* $ctor(::std::string const&, int);
 
-    MCAPI void* $ctor(::std::string const&, int, ::cricket::Candidate const&);
+    MCNAPI void* $ctor(::std::string const&, int, ::cricket::Candidate const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

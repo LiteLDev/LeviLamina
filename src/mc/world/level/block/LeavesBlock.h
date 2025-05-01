@@ -31,36 +31,26 @@ public:
     // LeavesBlock inner types define
     struct ParticleParams {
     public:
+        // ParticleParams inner types declare
+        // clang-format off
+        struct BiomeTintedColor;
+        // clang-format on
+
+        // ParticleParams inner types define
+        struct BiomeTintedColor {};
+
+    public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 56> mUnk3d19fc;
+        ::ll::UntypedStorage<4, 20> mUnk6794b1;
         ::ll::UntypedStorage<4, 4>  mUnk885c5b;
         // NOLINTEND
 
     public:
         // prevent constructor by default
         ParticleParams& operator=(ParticleParams const&);
+        ParticleParams(ParticleParams const&);
         ParticleParams();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ParticleParams(::LeavesBlock::ParticleParams const&);
-
-        MCAPI ~ParticleParams();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::LeavesBlock::ParticleParams const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -69,7 +59,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                            mHasTransparentLeaves;
     ::ll::TypedStorage<1, 1, bool>                                            mHasFastAlphaTest;
     ::ll::TypedStorage<8, 8, ::HashedString const&>                           mSapling;
-    ::ll::TypedStorage<8, 72, ::std::optional<::LeavesBlock::ParticleParams>> mParticleParams;
+    ::ll::TypedStorage<4, 28, ::std::optional<::LeavesBlock::ParticleParams>> mParticleParams;
     ::ll::TypedStorage<1, 1, bool>                                            mUseSeasonsOpaqueLayerIfSnowingBiome;
     // NOLINTEND
 
@@ -85,7 +75,7 @@ public:
     // vIndex: 114
     virtual bool isSeasonTinted(::Block const& block, ::BlockSource& region, ::BlockPos const& p) const /*override*/;
 
-    // vIndex: 143
+    // vIndex: 141
     virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const
         /*override*/;
 
@@ -119,39 +109,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LeavesBlock(
-        ::std::string const&                           nameId,
-        int                                            id,
-        ::HashedString const&                          sapling,
-        ::std::optional<::LeavesBlock::ParticleParams> particleParams
-    );
+    MCNAPI void _die(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void _die(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI ::LeavesBlock& setUseSeasonsOpaqueLayerIfSnowingBiome(bool enabled);
+    MCNAPI ::LeavesBlock& setUseSeasonsOpaqueLayerIfSnowingBiome(bool enabled);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void runDecay(::BlockSource& region, ::BlockPos const& pos, int range);
+    MCNAPI static void runDecay(::BlockSource& region, ::BlockPos const& pos, int range);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::LeavesBlock::ParticleParams const& BIOME_TINTED_LEAVES_PARTICLE_PARAMS();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const&                           nameId,
-        int                                            id,
-        ::HashedString const&                          sapling,
-        ::std::optional<::LeavesBlock::ParticleParams> particleParams
-    );
     // NOLINTEND
 
 public:
@@ -163,34 +135,34 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI bool $isSeasonTinted(::Block const& block, ::BlockSource& region, ::BlockPos const& p) const;
+    MCNAPI bool $isSeasonTinted(::Block const& block, ::BlockSource& region, ::BlockPos const& p) const;
 
-    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
 
-    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCAPI ::Block const&
+    MCNAPI ::Block const&
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
 
-    MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
+    MCNAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
+    MCNAPI bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
-    MCFOLD bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
+    MCNAPI bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

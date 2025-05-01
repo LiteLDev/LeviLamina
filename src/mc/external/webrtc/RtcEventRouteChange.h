@@ -8,19 +8,19 @@ class RtcEventRouteChange {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RtcEventRouteChange(bool, uint);
+    MCNAPI RtcEventRouteChange(bool, uint);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(bool, uint);
+    MCNAPI void* $ctor(bool, uint);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

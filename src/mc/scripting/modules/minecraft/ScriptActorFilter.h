@@ -38,35 +38,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorFilter(::ScriptModuleMinecraft::ScriptActorFilter&&);
+    MCNAPI ScriptActorFilter(::ScriptModuleMinecraft::ScriptActorFilter&&);
 
-    MCAPI ScriptActorFilter(::ScriptModuleMinecraft::ScriptActorFilter const&);
+    MCNAPI ScriptActorFilter(::ScriptModuleMinecraft::ScriptActorFilter const&);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptActorFilter& operator=(::ScriptModuleMinecraft::ScriptActorFilter const&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptActorFilter& operator=(::ScriptModuleMinecraft::ScriptActorFilter const&);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptActorFilter& operator=(::ScriptModuleMinecraft::ScriptActorFilter&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptActorFilter& operator=(::ScriptModuleMinecraft::ScriptActorFilter&&);
 
-    MCAPI ~ScriptActorFilter();
+    MCNAPI ~ScriptActorFilter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptActorFilter> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptActorFilter> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorFilter&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorFilter&&);
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorFilter const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorFilter const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

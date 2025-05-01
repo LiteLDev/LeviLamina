@@ -34,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext& entity, ::MoveTowardsRestrictionGoal& goal) const;
+    MCNAPI void initialize(::EntityContext& entity, ::MoveTowardsRestrictionGoal& goal) const;
     // NOLINTEND
 
 public:

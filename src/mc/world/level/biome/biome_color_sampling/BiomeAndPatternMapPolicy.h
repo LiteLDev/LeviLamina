@@ -18,7 +18,7 @@ class BiomeAndPatternMapPolicy : public ::BiomeColorSampling::MapPolicy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk63f218;
+    ::ll::UntypedStorage<8, 8>  mUnkbadad7;
     ::ll::UntypedStorage<8, 24> mUnka67583;
     // NOLINTEND
 
@@ -47,13 +47,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::mce::Color $get(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI ::mce::Color $get(::BlockSource& region, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

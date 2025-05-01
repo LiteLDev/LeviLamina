@@ -28,21 +28,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptChunkValidator(::std::set<::ChunkPos> const& chunkPositions, ::BlockSource& region);
+    MCNAPI ScriptChunkValidator(::std::set<::ChunkPos> const& chunkPositions, ::BlockSource& region);
 
-    MCAPI ~ScriptChunkValidator();
+    MCNAPI ~ScriptChunkValidator();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::set<::ChunkPos> const& chunkPositions, ::BlockSource& region);
+    MCNAPI void* $ctor(::std::set<::ChunkPos> const& chunkPositions, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

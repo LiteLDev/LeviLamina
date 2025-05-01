@@ -7,7 +7,10 @@
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/platform/BuildPlatform.h"
+#include "mc/deps/core/string/HashedString.h"
+#include "mc/deps/core/timing/Stopwatch.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/optional_ref.h"
@@ -17,18 +20,27 @@
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/ContainerID.h"
+#include "mc/world/PlayerUIContainer.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/actor/ActorResetRule.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/Mob.h"
 #include "mc/world/actor/player/AbilitiesIndex.h"
 #include "mc/world/actor/player/BedSleepingResult.h"
+#include "mc/world/actor/player/PlayerItemInUse.h"
 #include "mc/world/actor/player/PlayerSpawnFallbackType.h"
 #include "mc/world/actor/player/PlayerUISlot.h"
+#include "mc/world/inventory/InventoryOptions.h"
+#include "mc/world/inventory/transaction/InventoryTransactionManager.h"
 #include "mc/world/item/HandSlot.h"
+#include "mc/world/item/ItemGroup.h"
+#include "mc/world/item/ItemInstance.h"
 #include "mc/world/item/ItemUseMethod.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
@@ -42,7 +54,6 @@ class AnimationComponent;
 class Attribute;
 class Block;
 class BlockActor;
-class BlockPos;
 class BlockSource;
 class BodyControl;
 class ChalkboardBlockActor;
@@ -61,17 +72,13 @@ class FrameUpdateContextBase;
 class GameMode;
 class GameServerToken;
 class GetCollisionShapeInterface;
-class HashedString;
 class HudContainerManagerModel;
 class IConstBlockSource;
 class IContainerManager;
 class IMinecraftEventing;
 class InventoryTransaction;
-class InventoryTransactionManager;
 class Item;
 class ItemDescriptor;
-class ItemGroup;
-class ItemInstance;
 class ItemStack;
 class ItemStackBase;
 class ItemStackNetManagerBase;
@@ -86,24 +93,17 @@ class PlayerEventCoordinator;
 class PlayerInventory;
 class PlayerListener;
 class PlayerRespawnRandomizer;
-class PlayerUIContainer;
 class ResolvedTextObject;
 class SerializedSkin;
 class ShieldItem;
-class Stopwatch;
 class SubChunkPos;
 class TextObjectRoot;
 class Vec2;
-class Vec3;
 struct AABBShapeComponent;
-struct ActorDefinitionIdentifier;
 struct ActorRotationComponent;
-struct ActorUniqueID;
 struct INpcDialogueData;
-struct InventoryOptions;
 struct MutableAttributeWithContext;
 struct PlayerDestroyProgressCacheComponent;
-struct PlayerItemInUse;
 struct PlayerMovementSettings;
 struct StateVectorComponent;
 struct Tick;
@@ -198,7 +198,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool
+        MCNAPI bool
         setSpawnPoint(::BlockPos const& playerPosition, ::DimensionType dimension, ::BlockPos const& spawnBlock);
         // NOLINTEND
     };
@@ -285,9 +285,7 @@ public:
     ::ll::TypedStorage<4, 4, float const>                                    mSneakHeight;
     ::ll::TypedStorage<4, 4, float const>                                    mSneakOffset;
     ::ll::TypedStorage<4, 4, int>                                            mScore;
-    ::ll::TypedStorage<4, 4, float>                                          mOBob;
-    ::ll::TypedStorage<4, 4, float>                                          mBob;
-    ::ll::TypedStorage<4, 4, ::BuildPlatform>                                mBuildPlatform;
+    ::ll::TypedStorage<4, 4,  ::BuildPlatform>                                mBuildPlatform;
     ::ll::TypedStorage<8, 32, ::std::string>                                 mUniqueName;
     ::ll::TypedStorage<8, 32, ::std::string>                                 mServerId;
     ::ll::TypedStorage<8, 32, ::std::string>                                 mSelfSignedId;
@@ -333,8 +331,6 @@ public:
     ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>>                       mSpawnFallbackPosition;
     ::ll::TypedStorage<8, 168, ::PlayerItemInUse>                            mItemInUse;
     ::ll::TypedStorage<4, 4, ::ActorType>                                    mLastHurtBy;
-    ::ll::TypedStorage<2, 2, short>                                          mSleepCounter;
-    ::ll::TypedStorage<2, 2, short>                                          mPrevSleepCounter;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                mPreviousInteractEntity;
     ::ll::TypedStorage<4, 4, int>                                            mPreviousCarriedItem;
     ::ll::TypedStorage<4, 4, int>                                            mEmoteTicks;
@@ -494,7 +490,7 @@ public:
     virtual void resetRot();
 
     // vIndex: 9
-    virtual void resetUserPos(bool clearMore) /*override*/;
+    virtual void resetUserPos(::ActorResetRule resetRule) /*override*/;
 
     // vIndex: 192
     virtual bool isInTrialMode();
@@ -518,7 +514,7 @@ public:
     virtual bool isDamageBlocked(::ActorDamageSource const& source) const /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     // vIndex: 160
     virtual ::std::vector<::ItemStack const*> getAllHand() const /*override*/;
@@ -631,7 +627,7 @@ public:
     virtual bool isSilentObserver() const /*override*/;
 
     // vIndex: 112
-    virtual void useItem(::ItemStackBase& item, ::ItemUseMethod itemUseMethod, bool consumeItem) /*override*/;
+    virtual void useItem(::ItemStackBase& instance, ::ItemUseMethod itemUseMethod, bool consumeItem) /*override*/;
 
     // vIndex: 210
     virtual bool isLoading() const;
@@ -1026,7 +1022,6 @@ public:
     MCAPI void playPredictiveSynchronizedSound(
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
-        ::ActorDefinitionIdentifier const&     entityType,
         int                                    data,
         bool                                   isGlobal
     );
@@ -1262,7 +1257,7 @@ public:
 
     MCFOLD void $resetRot();
 
-    MCAPI void $resetUserPos(bool clearMore);
+    MCAPI void $resetUserPos(::ActorResetRule resetRule);
 
     MCFOLD bool $isInTrialMode();
 
@@ -1278,7 +1273,7 @@ public:
 
     MCAPI bool $isDamageBlocked(::ActorDamageSource const& source) const;
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCAPI ::std::vector<::ItemStack const*> $getAllHand() const;
 
@@ -1357,7 +1352,7 @@ public:
 
     MCAPI bool $isSilentObserver() const;
 
-    MCAPI void $useItem(::ItemStackBase& item, ::ItemUseMethod itemUseMethod, bool consumeItem);
+    MCAPI void $useItem(::ItemStackBase& instance, ::ItemUseMethod itemUseMethod, bool consumeItem);
 
     MCFOLD bool $isLoading() const;
 

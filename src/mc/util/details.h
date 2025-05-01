@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,9 +15,9 @@ namespace JsonUtil::details { struct BlockReference; }
 namespace JsonUtil::details {
 // functions
 // NOLINTBEGIN
-MCAPI ::Block const* _getBlockDefaultState(::std::string const& blockTypeName);
+MCNAPI ::Block const* _getBlockDefaultState(::std::string const& blockTypeName);
 
-MCAPI ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::JsonUtil::details::BlockReference>>
+MCNAPI ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::JsonUtil::details::BlockReference>>
 _getOrMakeBlockReferenceSchema();
 // NOLINTEND
 

@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class HashedString;
-struct MolangScriptArg;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+#include "mc/util/MolangScriptArg.h"
 
 struct MolangMemberVariable {
 public:
@@ -23,6 +21,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MolangMemberVariable(::MolangMemberVariable&&);
+
     MCAPI MolangMemberVariable(::MolangMemberVariable const&);
 
     MCAPI ~MolangMemberVariable();
@@ -31,6 +31,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::MolangMemberVariable&&);
+
     MCAPI void* $ctor(::MolangMemberVariable const&);
     // NOLINTEND
 

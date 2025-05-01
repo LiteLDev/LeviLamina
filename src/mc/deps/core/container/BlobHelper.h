@@ -10,9 +10,9 @@ namespace mce { class Blob; }
 namespace mce::BlobHelper {
 // functions
 // NOLINTBEGIN
-MCAPI void copySpanIntoBlob(::mce::Blob& blob, ::gsl::span<uchar const> span);
+MCNAPI void copySpanIntoBlob(::mce::Blob& blob, ::gsl::span<uchar const> span);
 
-MCAPI void copyStringIntoBlob(::mce::Blob& blob, ::std::string const& source);
+MCNAPI void copyStringIntoBlob(::mce::Blob& blob, ::std::string const& source);
 // NOLINTEND
 
 } // namespace mce::BlobHelper

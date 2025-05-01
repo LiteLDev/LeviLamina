@@ -19,11 +19,11 @@ class ResetActionStopSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createResetActionStopSystem();
+    MCNAPI static ::TickingSystemWithInfo createResetActionStopSystem();
 
-    MCAPI static void tickResetActionStopSystem(::ViewT<
-                                                ::StrictEntityContext,
-                                                ::Include<::ActorMovementTickNeededComponent, ::LocalPlayerComponent>,
-                                                ::ActionOrStopComponent> view);
+    MCNAPI static void tickResetActionStopSystem(::ViewT<
+                                                 ::StrictEntityContext,
+                                                 ::Include<::ActorMovementTickNeededComponent, ::LocalPlayerComponent>,
+                                                 ::ActionOrStopComponent> view);
     // NOLINTEND
 };

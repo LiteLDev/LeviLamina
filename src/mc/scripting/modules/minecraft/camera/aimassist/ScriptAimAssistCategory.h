@@ -31,24 +31,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const* _getCategoryDefinition() const;
+    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const* _getCategoryDefinition() const;
 
-    MCAPI ::Scripting::Result<::std::unordered_map<::std::string, int>, ::Scripting::Error> getBlockPriorities() const;
+    MCNAPI ::Scripting::Result<::std::unordered_map<::std::string, int>, ::Scripting::Error> getBlockPriorities() const;
 
-    MCAPI ::Scripting::Result<int, ::Scripting::Error> getDefaultBlockPriority() const;
+    MCNAPI ::Scripting::Result<int, ::Scripting::Error> getDefaultBlockPriority() const;
 
-    MCAPI ::Scripting::Result<int, ::Scripting::Error> getDefaultEntityPriority() const;
+    MCNAPI ::Scripting::Result<int, ::Scripting::Error> getDefaultEntityPriority() const;
 
-    MCAPI ::Scripting::Result<::std::unordered_map<::std::string, int>, ::Scripting::Error> getEntityPriorities() const;
+    MCNAPI ::Scripting::Result<::std::unordered_map<::std::string, int>, ::Scripting::Error>
+    getEntityPriorities() const;
 
-    MCFOLD ::ScriptModuleMinecraft::ScriptAimAssistCategory&
+    MCNAPI ::ScriptModuleMinecraft::ScriptAimAssistCategory&
     operator=(::ScriptModuleMinecraft::ScriptAimAssistCategory&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptAimAssistCategory> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptAimAssistCategory> bind();
     // NOLINTEND
 };
 

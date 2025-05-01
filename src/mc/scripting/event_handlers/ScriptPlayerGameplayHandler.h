@@ -48,31 +48,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _handleClientJoinedEvent(
+    MCNAPI bool _handleClientJoinedEvent(
         ::ClientJoinedEvent const&                                                        joinEventData,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     ) const;
 
-    MCAPI bool _handleCoordinatorPlayerGameplayEvent(
+    MCNAPI bool _handleCoordinatorPlayerGameplayEvent(
         ::PlayerGameplayEvent<::CoordinatorResult> const&                                 event,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     );
 
-    MCAPI bool _handleMutablePlayerGameplayEvent(
+    MCNAPI bool _handleMutablePlayerGameplayEvent(
         ::MutablePlayerGameplayEvent<::CoordinatorResult>&                                event,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     ) const;
 
-    MCAPI bool _handlePlayerDisconnectEvent(
+    MCNAPI bool _handlePlayerDisconnectEvent(
         ::PlayerDisconnectEvent const&                                                    playerDisconnectEvent,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     ) const;
 
-    MCAPI bool _handlePlayerGameModeChangeEvent(
+    MCNAPI bool _handlePlayerGameModeChangeEvent(
         ::PlayerGameModeChangeEvent&                                                      playerGameModeChangeEvent,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
@@ -88,20 +88,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::HandlerResult $handleEvent(::PlayerDisconnectEvent const& playerDisconnectEvent);
+    MCNAPI ::HandlerResult $handleEvent(::PlayerDisconnectEvent const& playerDisconnectEvent);
 
-    MCAPI ::HandlerResult $handleEvent(::ClientJoinedEvent const& playerJoined);
+    MCNAPI ::HandlerResult $handleEvent(::ClientJoinedEvent const& playerJoined);
 
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult>
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult>
     $handleEvent(::MutablePlayerGameplayEvent<::CoordinatorResult>& event);
 
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult>
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult>
     $handleEvent(::PlayerGameplayEvent<::CoordinatorResult> const& event);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -13,9 +13,9 @@ class HashedString;
 namespace persona {
 // functions
 // NOLINTBEGIN
-MCAPI ::persona::PieceType pieceTypeFromString(::std::string const& assetTypeStr);
+MCNAPI ::persona::PieceType pieceTypeFromString(::std::string const& assetTypeStr);
 
-MCAPI ::std::string const& stringFromPieceType(::persona::PieceType assetType, bool isDefaultItem);
+MCNAPI ::std::string const& stringFromPieceType(::persona::PieceType assetType, bool isDefaultItem);
 // NOLINTEND
 
 // static variables

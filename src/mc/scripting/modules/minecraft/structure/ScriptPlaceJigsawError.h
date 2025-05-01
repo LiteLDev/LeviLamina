@@ -12,27 +12,27 @@ struct ScriptPlaceJigsawError : public ::Scripting::Error {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptPlaceJigsawError(::std::string message);
+    MCNAPI explicit ScriptPlaceJigsawError(::std::string message);
 
-    MCAPI ~ScriptPlaceJigsawError();
+    MCNAPI ~ScriptPlaceJigsawError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptPlaceJigsawError> bind();
+    MCNAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptPlaceJigsawError> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string message);
+    MCNAPI void* $ctor(::std::string message);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -12,7 +12,7 @@ public:
     uint                       mUnk98c10e : 30;
     uchar                      mUnk85b39d : 2;
     ::ll::UntypedStorage<4, 4> mUnkfbf9e4;
-    ::ll::UntypedStorage<2, 2> mUnk38243a;
+    ::ll::UntypedStorage<2, 2> mUnkbf8682;
     // NOLINTEND
 
 public:

@@ -33,21 +33,21 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $overflow(int c);
+    MCNAPI int $overflow(int c);
 
-    MCAPI int64 $xsputn(char const* s, int64 n);
+    MCNAPI int64 $xsputn(char const* s, int64 n);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

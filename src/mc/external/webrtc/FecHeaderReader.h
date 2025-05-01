@@ -8,19 +8,19 @@ class FecHeaderReader {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FecHeaderReader(uint64, uint64);
+    MCNAPI FecHeaderReader(uint64, uint64);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint64, uint64);
+    MCNAPI void* $ctor(uint64, uint64);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -19,7 +19,7 @@ class IllagerBeastPostAIStepSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doIllagerBeastPostAIStepSystem(
+    MCNAPI static void _doIllagerBeastPostAIStepSystem(
         ::StrictEntityContext const&,
         ::StateVectorComponent const& stateVectorComponent,
         ::SubBBsComponent&            subBBsComponent

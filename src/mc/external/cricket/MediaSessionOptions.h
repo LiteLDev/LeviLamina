@@ -12,25 +12,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MediaSessionOptions();
+    MCNAPI MediaSessionOptions();
 
-    MCAPI MediaSessionOptions(::cricket::MediaSessionOptions const&);
+    MCNAPI MediaSessionOptions(::cricket::MediaSessionOptions const&);
 
-    MCAPI ~MediaSessionOptions();
+    MCNAPI ~MediaSessionOptions();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::cricket::MediaSessionOptions const&);
+    MCNAPI void* $ctor(::cricket::MediaSessionOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

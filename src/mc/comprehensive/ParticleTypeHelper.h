@@ -14,13 +14,13 @@ namespace cereal { struct ReflectionCtx; }
 namespace ParticleTypeHelper {
 // functions
 // NOLINTBEGIN
-MCAPI void bindParticleTypeEnumType(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindParticleTypeEnumType(::cereal::ReflectionCtx& ctx);
 
-MCAPI ::std::string particleNameFromType(::ParticleType type);
+MCNAPI ::std::string particleNameFromType(::ParticleType type);
 
-MCAPI ::ParticleType particleTypeFromName(::std::string_view name);
+MCNAPI ::ParticleType particleTypeFromName(::std::string_view name);
 
-MCAPI ::ParticleType particleTypeFromNameOrContentWarn(::std::string_view name, ::LogArea logArea);
+MCNAPI ::ParticleType particleTypeFromNameOrContentWarn(::std::string_view name, ::LogArea logArea);
 // NOLINTEND
 
 } // namespace ParticleTypeHelper

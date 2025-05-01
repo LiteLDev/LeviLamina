@@ -18,10 +18,10 @@ public:
     // vIndex: 0
     virtual ~BlockActorLevelListener() /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual void onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
-    // vIndex: 21
+    // vIndex: 22
     virtual void onSubChunkLoaded(
         ::ChunkSource&,
         ::LevelChunk& lc,
@@ -29,30 +29,30 @@ public:
         bool          subChunkVisibilityChanged
     ) /*override*/;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual void onChunkUnloaded(::LevelChunk& lc) /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
+    MCNAPI void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
 
-    MCAPI void
+    MCNAPI void
     $onSubChunkLoaded(::ChunkSource&, ::LevelChunk& lc, short absoluteSubChunkIndex, bool subChunkVisibilityChanged);
 
-    MCAPI void $onChunkUnloaded(::LevelChunk& lc);
+    MCNAPI void $onChunkUnloaded(::LevelChunk& lc);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

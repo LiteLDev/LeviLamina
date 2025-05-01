@@ -56,15 +56,15 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $onTestPassed(::gametest::BaseGameTestInstance& testInstance);
+        MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance& testInstance);
 
-        MCAPI void $onTestFailed(::gametest::BaseGameTestInstance& testInstance);
+        MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance& testInstance);
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -83,7 +83,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void rungametest(
+    MCNAPI void rungametest(
         ::gsl::not_null<::PacketSender*>  packetSender,
         ::std::string const&              testName,
         ::Dimension&                      dimension,

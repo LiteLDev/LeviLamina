@@ -28,15 +28,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsStoriesData(::LevelStorage& levelStorage);
+    MCNAPI explicit RealmsStoriesData(::LevelStorage& levelStorage);
 
-    MCAPI void clearAllRealmEventsInLevelData();
+    MCNAPI void clearAllRealmEventsInLevelData();
 
-    MCAPI void setPlayerRealmEventPublished(::RealmEventId eventId, ::std::string const& xuid);
+    MCNAPI void setPlayerRealmEventPublished(::RealmEventId eventId, ::std::string const& xuid);
 
-    MCAPI void setWorldRealmEventPublished(::RealmEventId eventId);
+    MCNAPI void setWorldRealmEventPublished(::RealmEventId eventId);
 
-    MCAPI ~RealmsStoriesData();
+    MCNAPI ~RealmsStoriesData();
     // NOLINTEND
 
 public:
@@ -50,12 +50,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LevelStorage& levelStorage);
+    MCNAPI void* $ctor(::LevelStorage& levelStorage);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

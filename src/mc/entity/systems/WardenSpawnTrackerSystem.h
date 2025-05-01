@@ -36,16 +36,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCNAPI void $tick(::EntityRegistry& registry);
 
-    MCAPI ::EventResult $onLevelAddedPlayer(::Player& player);
+    MCNAPI ::EventResult $onLevelAddedPlayer(::Player& player);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForLevelEventListener();
+    MCNAPI static void** $vftableForLevelEventListener();
 
-    MCAPI static void** $vftableForITickingSystem();
+    MCNAPI static void** $vftableForITickingSystem();
     // NOLINTEND
 };

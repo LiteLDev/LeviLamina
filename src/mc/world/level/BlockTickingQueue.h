@@ -5,6 +5,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/container/MovePriorityQueue.h"
+#include "mc/world/level/Tick.h"
+#include "mc/world/level/TickNextTickData.h"
 #include "mc/world/level/TickingQueueType.h"
 
 // auto generated forward declare list
@@ -17,8 +19,6 @@ class BlockSource;
 class CompoundTag;
 class LevelChunk;
 class ListTag;
-class TickNextTickData;
-struct Tick;
 // clang-format on
 
 class BlockTickingQueue {

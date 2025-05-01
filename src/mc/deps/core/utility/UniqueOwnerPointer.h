@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+
 namespace Bedrock {
 
 template <class T>

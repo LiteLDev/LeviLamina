@@ -22,6 +22,12 @@ public:
 
     // vIndex: 2
     virtual ::IPlayerTickPolicy::TickAction shouldTickPlayer(uint64, uint64) const = 0;
+
+    // vIndex: 3
+    virtual bool isStrictMovement() const = 0;
+
+    // vIndex: 4
+    virtual bool isStrictDismount() const = 0;
     // NOLINTEND
 
 public:

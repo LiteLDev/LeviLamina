@@ -39,41 +39,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _recalculateBounds();
+    MCNAPI void _recalculateBounds();
 
-    MCAPI ::CompoundBlockVolumeIterator begin() const;
+    MCNAPI ::CompoundBlockVolumeIterator begin() const;
 
-    MCAPI ::BoundingBox calculateBoundsWithItem(::CompoundBlockVolumeItem const& item);
+    MCNAPI ::BoundingBox calculateBoundsWithItem(::CompoundBlockVolumeItem const& item);
 
-    MCAPI void forEachPosition(::std::function<bool(::BlockPos const&)> const& callback) const;
+    MCNAPI void forEachPosition(::std::function<bool(::BlockPos const&)> const& callback) const;
 
-    MCAPI ::std::vector<::CompoundBlockVolumeItem> getAbsoluteVolumeList() const;
+    MCNAPI ::std::vector<::CompoundBlockVolumeItem> getAbsoluteVolumeList() const;
 
-    MCAPI bool isInside(::BlockPos const& pos) const;
+    MCNAPI bool isInside(::BlockPos const& pos) const;
 
-    MCAPI ::CompoundBlockVolume& operator=(::CompoundBlockVolume const& other);
+    MCNAPI ::CompoundBlockVolume& operator=(::CompoundBlockVolume const& other);
 
-    MCAPI bool operator==(::CompoundBlockVolume const& other) const;
+    MCNAPI bool operator==(::CompoundBlockVolume const& other) const;
 
-    MCAPI ::std::optional<::CompoundBlockVolumeItem>
+    MCNAPI ::std::optional<::CompoundBlockVolumeItem>
     peekLastVolume(::std::optional<::CompoundBlockVolumePositionRelativity> optRelativity) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

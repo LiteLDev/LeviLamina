@@ -7,6 +7,7 @@
 #include "mc/world/actor/Actor.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/item/ItemStack.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,7 +17,6 @@ class AddActorBasePacket;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
-class ItemStack;
 class ListTag;
 class Player;
 struct ActorDefinitionIdentifier;

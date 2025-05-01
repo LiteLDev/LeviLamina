@@ -24,10 +24,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void captureWorldExitSnapshot();
+    MCNAPI void captureWorldExitSnapshot();
 
-    MCAPI void captureWorldStartSnapshot();
+    MCNAPI void captureWorldStartSnapshot();
 
-    MCAPI void pushSnapshot();
+    MCNAPI void pushSnapshot();
     // NOLINTEND
 };

@@ -46,17 +46,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $execute();
+    MCNAPI void $execute();
 
-    MCFOLD bool $isDone();
+    MCNAPI bool $isDone();
 
-    MCAPI void $fireCommandDoneEvent();
+    MCNAPI void $fireCommandDoneEvent();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

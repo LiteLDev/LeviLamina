@@ -48,16 +48,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $append(::ContainerValidationCommitObject* other);
+    MCNAPI bool $append(::ContainerValidationCommitObject* other);
 
-    MCAPI bool $canCommit(::ContainerScreenContext const& screenContext) const;
+    MCNAPI bool $canCommit(::ContainerScreenContext const& screenContext) const;
 
-    MCAPI void $commit(::ContainerScreenContext const& screenContext);
+    MCNAPI void $commit(::ContainerScreenContext const& screenContext);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -100,32 +100,32 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Builder();
+        MCNAPI Builder();
 
-        MCAPI ::webrtc::VideoFrame build();
+        MCNAPI ::webrtc::VideoFrame build();
 
-        MCAPI ::webrtc::VideoFrame::Builder& set_id(ushort);
+        MCNAPI ::webrtc::VideoFrame::Builder& set_id(ushort);
 
-        MCAPI ::webrtc::VideoFrame::Builder& set_rotation(::webrtc::VideoRotation);
+        MCNAPI ::webrtc::VideoFrame::Builder& set_rotation(::webrtc::VideoRotation);
 
-        MCAPI ::webrtc::VideoFrame::Builder& set_timestamp_us(int64);
+        MCNAPI ::webrtc::VideoFrame::Builder& set_timestamp_us(int64);
 
-        MCAPI ::webrtc::VideoFrame::Builder&
+        MCNAPI ::webrtc::VideoFrame::Builder&
         set_video_frame_buffer(::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const&);
 
-        MCAPI ~Builder();
+        MCNAPI ~Builder();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -155,9 +155,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VideoFrame(::webrtc::VideoFrame const&);
+    MCNAPI VideoFrame(::webrtc::VideoFrame const&);
 
-    MCAPI VideoFrame(
+    MCNAPI VideoFrame(
         ushort,
         ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const&,
         int64,
@@ -172,19 +172,19 @@ public:
         ::webrtc::RtpPacketInfos
     );
 
-    MCAPI int height() const;
+    MCNAPI int height() const;
 
-    MCAPI int width() const;
+    MCNAPI int width() const;
 
-    MCAPI ~VideoFrame();
+    MCNAPI ~VideoFrame();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::VideoFrame const&);
+    MCNAPI void* $ctor(::webrtc::VideoFrame const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ushort,
         ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const&,
         int64,
@@ -203,7 +203,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

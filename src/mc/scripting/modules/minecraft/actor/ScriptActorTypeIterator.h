@@ -23,7 +23,7 @@ class ScriptActorTypeIterator
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptActorTypeIterator> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptActorTypeIterator> bind();
     // NOLINTEND
 };
 

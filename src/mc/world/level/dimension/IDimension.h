@@ -18,6 +18,7 @@ class Packet;
 class Player;
 class Vec3;
 struct ActorUniqueID;
+struct NetworkIdentifierWithSubId;
 // clang-format on
 
 class IDimension {
@@ -63,12 +64,17 @@ public:
 
     // vIndex: 12
     virtual ::BlockSource& getBlockSourceFromMainChunkSource() const = 0;
+
+    // vIndex: 13
+    virtual void
+    buildPlayersForPositionPacket(::BlockPos const&, ::Player const*, ::std::vector<::NetworkIdentifierWithSubId>&)
+        const = 0;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -80,6 +86,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

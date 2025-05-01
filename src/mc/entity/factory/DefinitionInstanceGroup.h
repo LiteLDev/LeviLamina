@@ -23,18 +23,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void add(::std::shared_ptr<::IDefinitionInstance> const& definition);
+    MCNAPI void add(::std::shared_ptr<::IDefinitionInstance> const& definition);
 
-    MCAPI void combine(::DefinitionInstanceGroup const& other);
+    MCNAPI void combine(::DefinitionInstanceGroup const& other);
 
-    MCAPI void remove(::std::shared_ptr<::IDefinitionInstance> const& definition);
+    MCNAPI void remove(::std::shared_ptr<::IDefinitionInstance> const& definition);
 
-    MCAPI ~DefinitionInstanceGroup();
+    MCNAPI ~DefinitionInstanceGroup();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

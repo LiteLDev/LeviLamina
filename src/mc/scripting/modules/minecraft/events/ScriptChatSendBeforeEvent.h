@@ -23,24 +23,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptChatSendBeforeEvent(::ScriptModuleMinecraft::ScriptChatSendBeforeEvent const&);
+    MCNAPI ScriptChatSendBeforeEvent(::ScriptModuleMinecraft::ScriptChatSendBeforeEvent const&);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptChatSendBeforeEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptChatSendBeforeEvent&
     operator=(::ScriptModuleMinecraft::ScriptChatSendBeforeEvent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent> bind();
 
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent> bindV010();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent> bindV010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptChatSendBeforeEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptChatSendBeforeEvent const&);
     // NOLINTEND
 };
 

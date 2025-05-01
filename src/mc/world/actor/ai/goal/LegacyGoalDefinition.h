@@ -143,6 +143,8 @@ public:
     ::ll::UntypedStorage<4, 4>   mUnk85d975;
     ::ll::UntypedStorage<1, 1>   mUnk9b1e32;
     ::ll::UntypedStorage<4, 8>   mUnk481b4b;
+    ::ll::UntypedStorage<1, 1>   mUnk31fff8;
+    ::ll::UntypedStorage<1, 1>   mUnk9613bb;
     ::ll::UntypedStorage<4, 8>   mUnk84e74f;
     ::ll::UntypedStorage<4, 4>   mUnk2a7812;
     ::ll::UntypedStorage<4, 8>   mUnk631470;
@@ -220,34 +222,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyGoalDefinition();
+    MCNAPI LegacyGoalDefinition();
 
-    MCAPI LegacyGoalDefinition(::LegacyGoalDefinition const&);
+    MCNAPI LegacyGoalDefinition(::LegacyGoalDefinition const&);
 
-    MCAPI LegacyGoalDefinition(::LegacyGoalDefinition&&);
+    MCNAPI LegacyGoalDefinition(::LegacyGoalDefinition&&);
 
-    MCAPI ::LegacyGoalDefinition& operator=(::LegacyGoalDefinition&&);
+    MCNAPI ::LegacyGoalDefinition& operator=(::LegacyGoalDefinition&&);
 
-    MCAPI ::LegacyGoalDefinition& operator=(::LegacyGoalDefinition const&);
+    MCNAPI ::LegacyGoalDefinition& operator=(::LegacyGoalDefinition const&);
 
-    MCAPI bool parse(::ConstDeserializeDataParams const& deserializeDataParams, int priority);
+    MCNAPI bool parse(::ConstDeserializeDataParams const& deserializeDataParams, int priority);
 
-    MCAPI ~LegacyGoalDefinition();
+    MCNAPI ~LegacyGoalDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int _controlFlagsFromArr(::Json::Value const& flags);
+    MCNAPI static int _controlFlagsFromArr(::Json::Value const& flags);
 
-    MCAPI static ::POIType _getPOITypeFromString(::std::string poiStr);
+    MCNAPI static ::POIType _getPOITypeFromString(::std::string poiStr);
 
-    MCAPI static ::std::vector<::SharedTypes::Legacy::ActorDamageCause>
+    MCNAPI static ::std::vector<::SharedTypes::Legacy::ActorDamageCause>
     _getPanicGoalDamageSources(::ConstDeserializeDataParams const& deserializeDataParams);
 
-    MCAPI static ::TargetSelectionMethod _getTargetSelectionMethodFromString(::std::string const& methodStr);
+    MCNAPI static ::TargetSelectionMethod _getTargetSelectionMethodFromString(::std::string const& methodStr);
 
-    MCAPI static bool goalExists(::std::string const& name);
+    MCNAPI static bool goalExists(::std::string const& name);
     // NOLINTEND
 
 public:
@@ -261,16 +263,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::LegacyGoalDefinition const&);
+    MCNAPI void* $ctor(::LegacyGoalDefinition const&);
 
-    MCAPI void* $ctor(::LegacyGoalDefinition&&);
+    MCNAPI void* $ctor(::LegacyGoalDefinition&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -34,7 +34,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::Json::Value toJson() const;
+        MCNAPI ::Json::Value toJson() const;
         // NOLINTEND
     };
 
@@ -56,7 +56,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::Json::Value toJson() const;
+        MCNAPI ::Json::Value toJson() const;
         // NOLINTEND
     };
 
@@ -77,6 +77,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Json::Value toJson() const;
+    MCNAPI ::Json::Value toJson() const;
     // NOLINTEND
 };

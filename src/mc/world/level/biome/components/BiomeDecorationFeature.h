@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/world/level/ScatterParams.h"
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class IFeature;
-class ScatterParams;
 // clang-format on
 
 struct BiomeDecorationFeature {
@@ -30,26 +30,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeDecorationFeature(::BiomeDecorationFeature&&);
+    MCNAPI BiomeDecorationFeature(::BiomeDecorationFeature&&);
 
-    MCAPI BiomeDecorationFeature(::BiomeDecorationFeature const&);
+    MCNAPI BiomeDecorationFeature(::BiomeDecorationFeature const&);
 
-    MCAPI bool canUseFeature(::IFeature const& mFeatureValue) const;
+    MCNAPI bool canUseFeature(::IFeature const& mFeatureValue) const;
 
-    MCAPI ~BiomeDecorationFeature();
+    MCNAPI ~BiomeDecorationFeature();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BiomeDecorationFeature&&);
+    MCNAPI void* $ctor(::BiomeDecorationFeature&&);
 
-    MCAPI void* $ctor(::BiomeDecorationFeature const&);
+    MCNAPI void* $ctor(::BiomeDecorationFeature const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -54,7 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OceanMonumentPiece(
+    MCNAPI OceanMonumentPiece(
         int                                 orientation,
         int&                                roomDefinition,
         ::std::shared_ptr<::RoomDefinition> roomWidth,
@@ -63,9 +63,9 @@ public:
         int                                 genDepth
     );
 
-    MCAPI bool chunkIntersects(::BoundingBox const& chunkBB, int x0, int z0, int x1, int z1);
+    MCNAPI bool chunkIntersects(::BoundingBox const& chunkBB, int x0, int z0, int x1, int z1);
 
-    MCAPI void generateBoxOnFillOnly(
+    MCNAPI void generateBoxOnFillOnly(
         ::BlockSource&       region,
         ::BoundingBox const& chunkBB,
         int                  x0,
@@ -77,10 +77,10 @@ public:
         ::Block const&       targetBlock
     );
 
-    MCAPI void
+    MCNAPI void
     generateDefaultFloor(::BlockSource& region, ::BoundingBox const& chunkBB, int xOff, int zOff, bool downOpening);
 
-    MCAPI void spawnElder(::BlockSource& region, ::BoundingBox const& x, int z, int chunkBB, int y);
+    MCNAPI void spawnElder(::BlockSource& region, ::BoundingBox const& x, int z, int chunkBB, int y);
     // NOLINTEND
 
 public:
@@ -104,7 +104,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         int                                 orientation,
         int&                                roomDefinition,
         ::std::shared_ptr<::RoomDefinition> roomWidth,
@@ -117,24 +117,24 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCNAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI int $getWorldZ(int x, int z);
+    MCNAPI int $getWorldZ(int x, int z);
 
-    MCAPI int $getWorldX(int x, int z);
+    MCNAPI int $getWorldX(int x, int z);
 
-    MCAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
+    MCNAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

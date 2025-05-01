@@ -24,7 +24,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptCursorPropertiesChangeAfterEvent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptCursorPropertiesChangeAfterEvent>
     bind();
     // NOLINTEND
 };

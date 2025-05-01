@@ -12,7 +12,7 @@ struct ScriptActorInitializationCause {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::ActorInitializationMethod> bind();
+    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::ActorInitializationMethod> bind();
     // NOLINTEND
 };
 

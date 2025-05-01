@@ -20,15 +20,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::entt::meta_type const& cacheType(::entt::meta_type&& type);
+    MCNAPI ::entt::meta_type const& cacheType(::entt::meta_type&& type);
 
-    MCAPI ~TypeCache();
+    MCNAPI ~TypeCache();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

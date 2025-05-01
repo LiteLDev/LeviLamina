@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/inventory/network/ItemStackNetIdVariant.h"
 #include "mc/world/item/ItemStackBase.h"
 
 // auto generated forward declare list
@@ -18,7 +19,6 @@ class ItemInstance;
 class Mob;
 class NetworkItemStackDescriptor;
 class Vec3;
-struct ItemStackNetIdVariant;
 struct ItemUsedOnEventContext;
 // clang-format on
 

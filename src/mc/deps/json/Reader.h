@@ -2,9 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/json/Features.h"
+
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Features; }
 namespace Json { class Value; }
 // clang-format on
 
@@ -63,13 +65,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ErrorInfo();
+        MCNAPI ~ErrorInfo();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 

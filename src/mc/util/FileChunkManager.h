@@ -28,8 +28,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _generateChunkInfo();
+    MCNAPI void _generateChunkInfo();
 
-    MCAPI void reset(uint64 totalSize, uint chunkSize);
+    MCNAPI void reset(uint64 totalSize, uint chunkSize);
     // NOLINTEND
 };

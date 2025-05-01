@@ -21,6 +21,7 @@ class ItemStack;
 class MobEffect;
 class Player;
 class SaveContext;
+class Vec3;
 struct BeaconBeamSection;
 // clang-format on
 
@@ -51,7 +52,7 @@ public:
     // vIndex: 0
     virtual ~BeaconBlockActor() /*override*/ = default;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 2
@@ -60,19 +61,22 @@ public:
     // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 20
+    // vIndex: 21
     virtual bool hasAlphaLayer() const /*override*/;
+
+    // vIndex: 7
+    virtual bool isWithinRenderDistance(::Vec3 const& cameraPosition) const /*override*/;
 
     // vIndex: 7
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 14
     virtual void removeItem(int slot, int count) /*override*/;
 
-    // vIndex: 26
+    // vIndex: 27
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 20
@@ -94,51 +98,51 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    // vIndex: 33
+    // vIndex: 34
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 32
+    // vIndex: 33
     virtual ::Container const* getContainer() const /*override*/;
 
-    // vIndex: 43
+    // vIndex: 44
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BeaconBlockActor(::BlockPos const& pos);
+    MCNAPI explicit BeaconBlockActor(::BlockPos const& pos);
 
-    MCAPI void _applyEffects(::BlockSource& region);
+    MCNAPI void _applyEffects(::BlockSource& region);
 
-    MCAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI bool _setEffect(int effectId, int& outEffectId, int& outTier);
+    MCNAPI bool _setEffect(int effectId, int& outEffectId, int& outTier);
 
-    MCAPI void checkShapeAndAchievement(::BlockSource& region);
+    MCNAPI void checkShapeAndAchievement(::BlockSource& region);
 
-    MCAPI ::CompoundTag getBeaconData(::SaveContext const& saveContext);
+    MCNAPI ::CompoundTag getBeaconData(::SaveContext const& saveContext);
 
-    MCAPI bool isEffectAvailable(int effectId) const;
+    MCNAPI bool isEffectAvailable(int effectId) const;
 
-    MCAPI bool setSecondaryEffect(int effectId);
+    MCNAPI bool setSecondaryEffect(int effectId);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BlockColor _getMediumColor(::BlockLegacy const& medium);
+    MCNAPI static ::BlockColor _getMediumColor(::BlockLegacy const& medium);
 
-    MCAPI static bool isPaymentItem(::ItemDescriptor const& pItem);
+    MCNAPI static bool isPaymentItem(::ItemDescriptor const& pItem);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
+    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -150,50 +154,52 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCFOLD bool $hasAlphaLayer() const;
+    MCNAPI bool $hasAlphaLayer() const;
 
-    MCFOLD ::ItemStack const& $getItem(int slot) const;
+    MCNAPI bool $isWithinRenderDistance(::Vec3 const& cameraPosition) const;
 
-    MCFOLD void $setItem(int modelSlot, ::ItemStack const& item);
+    MCNAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCFOLD void $removeItem(int slot, int count);
+    MCNAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI void $removeItem(int slot, int count);
 
-    MCFOLD int $getContainerSize() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCFOLD int $getMaxStackSize() const;
+    MCNAPI int $getContainerSize() const;
 
-    MCFOLD void $startOpen(::Player& player);
+    MCNAPI int $getMaxStackSize() const;
 
-    MCFOLD void $stopOpen(::Player& player);
+    MCNAPI void $startOpen(::Player& player);
 
-    MCFOLD void $serverInitItemStackIds(
+    MCNAPI void $stopOpen(::Player& player);
+
+    MCNAPI void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCFOLD ::Container* $getContainer();
+    MCNAPI ::Container* $getContainer();
 
-    MCFOLD ::Container const* $getContainer() const;
+    MCNAPI ::Container const* $getContainer() const;
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBlockActor();
+    MCNAPI static void** $vftableForBlockActor();
 
-    MCAPI static void** $vftableForContainer();
+    MCNAPI static void** $vftableForContainer();
     // NOLINTEND
 };

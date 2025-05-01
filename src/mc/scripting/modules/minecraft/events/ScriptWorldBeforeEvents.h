@@ -168,71 +168,72 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWorldBeforeEvents(::ScriptModuleMinecraft::ScriptWorldBeforeEvents&&);
+    MCNAPI ScriptWorldBeforeEvents(::ScriptModuleMinecraft::ScriptWorldBeforeEvents&&);
 
-    MCAPI ScriptWorldBeforeEvents(::Scripting::WeakLifetimeScope scope, ::Level* level);
+    MCNAPI ScriptWorldBeforeEvents(::Scripting::WeakLifetimeScope scope, ::Level* level);
 
-    MCAPI ::std::vector<::ScriptModuleMinecraft::SignalNameSubscriberCount> getFineGrainedSignalSubscriberStats() const;
+    MCNAPI ::std::vector<::ScriptModuleMinecraft::SignalNameSubscriberCount>
+    getFineGrainedSignalSubscriberStats() const;
 
-    MCAPI void onTick();
+    MCNAPI void onTick();
 
-    MCAPI ::ScriptModuleMinecraft::ScriptWorldBeforeEvents&
+    MCNAPI ::ScriptModuleMinecraft::ScriptWorldBeforeEvents&
     operator=(::ScriptModuleMinecraft::ScriptWorldBeforeEvents&&);
 
-    MCAPI void registerListeners();
+    MCNAPI void registerListeners();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptWorldBeforeEvents&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptWorldBeforeEvents&&);
 
-    MCAPI void* $ctor(::Scripting::WeakLifetimeScope scope, ::Level* level);
+    MCNAPI void* $ctor(::Scripting::WeakLifetimeScope scope, ::Level* level);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onBeforeActorRemove(::Actor const& actor);
+    MCNAPI void $onBeforeActorRemove(::Actor const& actor);
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent>>
     $onBeforeChat(::ChatEvent const& chatEvent, ::Player const& player);
 
-    MCAPI ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent>>
     $onBeforeExplosion(::ExplosionStartedEvent const& event);
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseBeforeEvent>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseBeforeEvent>>
     $onBeforeItemUse(::Player const& player, ::ItemUseEvent const& itemEvent);
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
     $onBeforeItemUseOn(::Player const& player, ::ItemUseOnEvent const& itemEvent);
 
-    MCAPI ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent>>
     $onBeforePlayerBreakBlock(::Player const& player, ::BlockTryDestroyByPlayerEvent const& eventData);
 
-    MCAPI ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent>>
     $onBeforePlayerPlaceBlock(::Player const& player, ::BlockTryPlaceByPlayerEvent const& eventData);
 
-    MCAPI ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent>>
     $onBeforePlayerInteractWithBlock(::Player& player, ::PlayerInteractWithBlockBeforeEvent const& eventData);
 
-    MCAPI ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent>>
     $onBeforePlayerInteractWithEntity(
         ::Player&                                    player,
@@ -240,22 +241,22 @@ public:
         ::PlayerInteractWithEntityBeforeEvent const& eventData
     );
 
-    MCAPI void $onBeforeWorldInitialize(
+    MCNAPI void $onBeforeWorldInitialize(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockComponentRegistry> const&
             blockComponentRegistry,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponentRegistry> const&
             itemComponentRegistry
     );
 
-    MCAPI void $onBeforePlayerLeave(::Player const& player);
+    MCNAPI void $onBeforePlayerLeave(::Player const& player);
 
-    MCAPI void $onClientJoinedEvent(::ClientJoinedEvent const& e);
+    MCNAPI void $onClientJoinedEvent(::ClientJoinedEvent const& e);
 
-    MCAPI ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent>>
     $onBeforeEffectAddedEventSend(::ActorAddEffectEvent& actorEffectAddedEvent, ::Actor const& actor);
 
-    MCAPI ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>>
     $onBeforeWeatherChangedEvent(
         ::ScriptModuleMinecraft::ScriptWeatherType previousWeatherType,
@@ -267,7 +268,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

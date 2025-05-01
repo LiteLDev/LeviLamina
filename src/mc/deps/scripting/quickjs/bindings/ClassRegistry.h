@@ -52,9 +52,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClassRegistry();
+    MCNAPI ClassRegistry();
 
-    MCAPI void _collectAllInterfaceProperties(
+    MCNAPI void _collectAllInterfaceProperties(
         ::std::unordered_set<
             ::Scripting::PropertyBinding,
             ::Scripting::HashPropertyBinding,
@@ -62,7 +62,7 @@ public:
         ::Scripting::InterfaceBinding const&    interfaceBinding
     );
 
-    MCAPI void _collectAllProperties(
+    MCNAPI void _collectAllProperties(
         ::std::unordered_set<
             ::Scripting::PropertyBinding,
             ::Scripting::HashPropertyBinding,
@@ -70,46 +70,46 @@ public:
         ::Scripting::ClassBinding const&        classBinding
     );
 
-    MCAPI void _registerBakedProperties(::Scripting::ClassBinding const& classBinding);
+    MCNAPI void _registerBakedProperties(::Scripting::ClassBinding const& classBinding);
 
-    MCAPI ::Scripting::QuickJS::RegisteredClass* findClassByType(::entt::meta_type const& type) const;
+    MCNAPI ::Scripting::QuickJS::RegisteredClass* findClassByType(::entt::meta_type const& type) const;
 
-    MCAPI ::Scripting::QuickJS::RegisteredEnum* findEnumByType(::entt::meta_type const& type) const;
+    MCNAPI ::Scripting::QuickJS::RegisteredEnum* findEnumByType(::entt::meta_type const& type) const;
 
-    MCAPI ::Scripting::QuickJS::RegisteredError* findErrorByType(::entt::meta_type const& type) const;
+    MCNAPI ::Scripting::QuickJS::RegisteredError* findErrorByType(::entt::meta_type const& type) const;
 
-    MCAPI ::Scripting::QuickJS::RegisteredInterface* findInterfaceByType(::entt::meta_type const& type) const;
+    MCNAPI ::Scripting::QuickJS::RegisteredInterface* findInterfaceByType(::entt::meta_type const& type) const;
 
-    MCAPI ::std::optional<::Scripting::TypeNameInfo> getNameForType(
+    MCNAPI ::std::optional<::Scripting::TypeNameInfo> getNameForType(
         ::Scripting::QuickJS::ResolvedTypes const& resolvedTypes,
         ::entt::meta_type const&                   type,
         bool                                       allowUnknownTypes
     ) const;
 
-    MCAPI ::Scripting::QuickJS::RegisteredClass&
+    MCNAPI ::Scripting::QuickJS::RegisteredClass&
     registerClass(::JSContext* ctx, ::Scripting::ClassBinding const& classBinding, bool forModule);
 
-    MCAPI void registerEnum(::JSContext* enumBinding, ::Scripting::EnumBinding const& ctx);
+    MCNAPI void registerEnum(::JSContext* enumBinding, ::Scripting::EnumBinding const& ctx);
 
-    MCAPI ::Scripting::QuickJS::RegisteredError&
+    MCNAPI ::Scripting::QuickJS::RegisteredError&
     registerError(::JSContext* ctx, ::Scripting::ErrorBinding const& errorBinding);
 
-    MCAPI ::Scripting::QuickJS::RegisteredInterface&
+    MCNAPI ::Scripting::QuickJS::RegisteredInterface&
     registerInterface(::JSContext* interfaceBinding, ::Scripting::InterfaceBinding const& ctx);
 
-    MCAPI ~ClassRegistry();
+    MCNAPI ~ClassRegistry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

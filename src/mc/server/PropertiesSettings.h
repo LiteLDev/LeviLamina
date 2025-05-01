@@ -6,18 +6,14 @@
 #include "mc/config/ChatRestrictionLevel.h"
 #include "mc/deps/core/debug/log/LogLevel.h"
 #include "mc/deps/shared_types/legacy/Difficulty.h"
+#include "mc/network/NetworkAddress.h"
+#include "mc/network/NetworkPermissions.h"
+#include "mc/network/NetworkSettingOptions.h"
 #include "mc/network/TransportLayer.h"
+#include "mc/scripting/ScriptSettings.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/world/actor/player/PlayerMovementSettings.h"
 #include "mc/world/level/GameType.h"
-
-// auto generated forward declare list
-// clang-format off
-struct NetworkAddress;
-struct NetworkPermissions;
-struct NetworkSettingOptions;
-struct PlayerMovementSettings;
-struct ScriptSettings;
-// clang-format on
 
 class PropertiesSettings {
 public:
@@ -53,6 +49,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mIsPropertiesFileLoaded;
     ::ll::TypedStorage<1, 1, bool>                                                mIsServerVisibleToLanDiscovery;
     ::ll::TypedStorage<1, 1, bool>                                                mIsPacketRateLimitingEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                                mIsPacketReceiptEventingEnabled;
     ::ll::TypedStorage<1, 1, bool>                                                mEncryptionDisabled;
     ::ll::TypedStorage<4, 4, int>                                                 mMaxViewDistanceChunks;
     ::ll::TypedStorage<4, 4, ::std::chrono::minutes>                              mMaxIdleTime;
@@ -69,7 +66,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mUseWebsocketEncryption;
     ::ll::TypedStorage<4, 24, ::NetworkSettingOptions>                            mNetworkSettings;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>> mCustomProperties;
-    ::ll::TypedStorage<8, 80, ::PlayerMovementSettings>                           mPlayerMovementSettings;
+    ::ll::TypedStorage<8, 88, ::PlayerMovementSettings>                           mPlayerMovementSettings;
     ::ll::TypedStorage<8, 704, ::ScriptSettings>                                  mScriptSettings;
     ::ll::TypedStorage<1, 1, ::ChatRestrictionLevel>                              mChatRestrictionLevel;
     ::ll::TypedStorage<1, 1, bool>                                                mPersonaDisabled;
@@ -90,36 +87,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PropertiesSettings(::std::string const& filename);
+    MCNAPI explicit PropertiesSettings(::std::string const& filename);
 
-    MCAPI ::std::unordered_map<::std::string, ::std::string> getChangedValues() const;
+    MCNAPI ::std::unordered_map<::std::string, ::std::string> getChangedValues() const;
 
-    MCAPI ::SharedTypes::Legacy::Difficulty getDifficulty() const;
+    MCNAPI ::SharedTypes::Legacy::Difficulty getDifficulty() const;
 
-    MCAPI ::CommandPermissionLevel getOpPermissionLevel() const;
+    MCNAPI ::CommandPermissionLevel getOpPermissionLevel() const;
 
-    MCAPI ~PropertiesSettings();
+    MCNAPI float websocketRetryTime() const;
+
+    MCNAPI ~PropertiesSettings();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool parseBoolValue(::std::string const& value);
+    MCNAPI static bool parseBoolValue(::std::string const& value);
 
-    MCAPI static ::GameType parseGameMode(::std::string const& value);
+    MCNAPI static ::GameType parseGameMode(::std::string const& value);
 
-    MCAPI static int parseInt32Value(::std::string const& value);
+    MCNAPI static int parseInt32Value(::std::string const& value);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& filename);
+    MCNAPI void* $ctor(::std::string const& filename);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

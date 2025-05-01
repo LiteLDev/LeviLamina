@@ -32,9 +32,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _applyBase(::ItemStackBase& item, ::Random& random) const;
+    MCNAPI void _applyBase(::ItemStackBase& item, ::Random& random) const;
 
-    MCAPI ::mce::Color _getRandomArmorColor(::Random& random) const;
+    MCNAPI ::mce::Color _getRandomArmorColor(::Random& random) const;
     // NOLINTEND
 
 public:
@@ -46,14 +46,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
+    MCNAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
 
-    MCFOLD void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
+    MCNAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

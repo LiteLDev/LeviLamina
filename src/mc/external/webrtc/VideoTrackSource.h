@@ -11,25 +11,25 @@ class VideoTrackSource {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void SetState(::webrtc::MediaSourceInterface::SourceState);
+    MCNAPI void SetState(::webrtc::MediaSourceInterface::SourceState);
 
-    MCAPI explicit VideoTrackSource(bool);
+    MCNAPI explicit VideoTrackSource(bool);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(bool);
+    MCNAPI void* $ctor(bool);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
 
-    MCAPI static void** $vftableForRefCountInterface();
+    MCNAPI static void** $vftableForRefCountInterface();
 
-    MCAPI static void** $vftableForNotifierInterface();
+    MCNAPI static void** $vftableForNotifierInterface();
     // NOLINTEND
 };
 

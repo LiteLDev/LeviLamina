@@ -22,18 +22,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::GameTestResult& operator=(::GameTestResult&&);
+    MCNAPI ::GameTestResult& operator=(::GameTestResult&&);
 
-    MCAPI ::GameTestResult& operator=(::GameTestResult const&);
+    MCNAPI ::GameTestResult& operator=(::GameTestResult const&);
 
-    MCAPI bool operator==(::GameTestResult const& rhs) const;
+    MCNAPI bool operator==(::GameTestResult const& rhs) const;
 
-    MCAPI ~GameTestResult();
+    MCNAPI ~GameTestResult();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

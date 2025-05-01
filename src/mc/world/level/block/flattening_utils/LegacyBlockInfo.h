@@ -33,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyBlockInfo(
+    MCNAPI LegacyBlockInfo(
         int                                                      legacyId_,
         ::HashedString                                           legacyFullName_,
         ::HashedString                                           legacyRawName_,
@@ -42,13 +42,13 @@ public:
         int                                                      startVariant
     );
 
-    MCAPI ~LegacyBlockInfo();
+    MCNAPI ~LegacyBlockInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         int                                                      legacyId_,
         ::HashedString                                           legacyFullName_,
         ::HashedString                                           legacyRawName_,
@@ -61,7 +61,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

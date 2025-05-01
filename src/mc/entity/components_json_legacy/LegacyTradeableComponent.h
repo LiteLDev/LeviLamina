@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/ContainerID.h"
 
 // auto generated forward declare list
@@ -14,7 +15,7 @@ class DataLoadHelper;
 class MerchantRecipeList;
 class Player;
 class UpdateTradePacket;
-struct ActorUniqueID;
+struct Trade;
 struct TradeTable;
 // clang-format on
 
@@ -42,34 +43,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::TradeTable* _getTradeTable(::Actor& owner);
+    MCNAPI ::TradeTable* _getTradeTable(::Actor& owner);
 
-    MCAPI bool _refreshTrades(::Actor& owner);
+    MCNAPI void _rearrangeTradeList(::Actor& owner, ::std::vector<::Trade>& tradeList, uint64 sampleCount);
 
-    MCAPI void _updateMaxTradeTier(::Actor& owner, int tradeTier);
+    MCNAPI bool _refreshTrades(::Actor& owner);
 
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void _updateMaxTradeTier(::Actor& owner, int tradeTier);
 
-    MCAPI ::UpdateTradePacket createDataPacket(::Actor& owner, ::ContainerID containerID);
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCNAPI ::UpdateTradePacket createDataPacket(::Actor& owner, ::ContainerID containerID);
 
-    MCAPI void notifyTrade(::Actor& owner, int recipeIndex, int numTrades);
+    MCNAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
-    MCAPI ::LegacyTradeableComponent& operator=(::LegacyTradeableComponent&&);
+    MCNAPI void notifyTrade(::Actor& owner, int recipeIndex, int numTrades);
 
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper&);
+    MCNAPI ::LegacyTradeableComponent& operator=(::LegacyTradeableComponent&&);
 
-    MCAPI void restockAllRecipes(::Actor& owner);
+    MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper&);
 
-    MCAPI void updateTradeTier(::Actor& owner);
+    MCNAPI void restockAllRecipes(::Actor& owner);
 
-    MCAPI ~LegacyTradeableComponent();
+    MCNAPI void updateTradeTier(::Actor& owner);
+
+    MCNAPI ~LegacyTradeableComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

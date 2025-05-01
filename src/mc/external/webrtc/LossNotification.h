@@ -13,23 +13,23 @@ class LossNotification {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LossNotification();
+    MCNAPI LossNotification();
 
-    MCAPI bool Parse(::webrtc::rtcp::CommonHeader const&);
+    MCNAPI bool Parse(::webrtc::rtcp::CommonHeader const&);
 
-    MCAPI bool Set(ushort, ushort, bool);
+    MCNAPI bool Set(ushort, ushort, bool);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -33,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::Network::DataTransferServiceRegisterCollectionPayload&
+    MCNAPI ::Editor::Network::DataTransferServiceRegisterCollectionPayload&
     operator=(::Editor::Network::DataTransferServiceRegisterCollectionPayload&&);
     // NOLINTEND
 
@@ -46,7 +46,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

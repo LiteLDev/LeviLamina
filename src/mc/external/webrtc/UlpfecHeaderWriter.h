@@ -8,19 +8,19 @@ class UlpfecHeaderWriter {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UlpfecHeaderWriter();
+    MCNAPI UlpfecHeaderWriter();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

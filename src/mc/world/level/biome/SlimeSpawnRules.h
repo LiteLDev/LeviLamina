@@ -11,7 +11,7 @@ class SpawnConditions;
 namespace SlimeSpawnRules {
 // functions
 // NOLINTBEGIN
-MCAPI bool checkSpawnRulesCallback(::SpawnConditions const& conditions, ::BlockSource& region);
+MCNAPI bool checkSpawnRulesCallback(::SpawnConditions const& conditions, ::BlockSource& region);
 // NOLINTEND
 
 } // namespace SlimeSpawnRules

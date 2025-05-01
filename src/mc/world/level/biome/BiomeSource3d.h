@@ -97,29 +97,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const& chunkLocalNoiseCache) const;
+    MCNAPI void $fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const& chunkLocalNoiseCache) const;
 
-    MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& box, uint scale) const;
+    MCNAPI ::BiomeArea $getBiomeArea(::BoundingBox const& box, uint scale) const;
 
-    MCAPI ::BiomeArea
+    MCNAPI ::BiomeArea
     $getBiomeArea(::BoundingBox const& box, uint scale, ::GetBiomeOptions const& getBiomeOptionsIn) const;
 
-    MCAPI bool $containsOnly(int xo, int yo, int zo, int r, ::gsl::span<uint64 const> allowed) const;
+    MCNAPI bool $containsOnly(int xo, int yo, int zo, int r, ::gsl::span<uint64 const> allowed) const;
 
-    MCFOLD ::Biome const* $getBiome(::BlockPos const& blockPos) const;
+    MCNAPI ::Biome const* $getBiome(::BlockPos const& blockPos) const;
 
-    MCAPI ::Biome const* $getBiome(::GetBiomeOptions const& getBiomeOptions) const;
+    MCNAPI ::Biome const* $getBiome(::GetBiomeOptions const& getBiomeOptions) const;
 
-    MCAPI ::Biome const* $getBiome(int blockX, int blockY, int blockZ) const;
+    MCNAPI ::Biome const* $getBiome(int blockX, int blockY, int blockZ) const;
 
-    MCAPI bool $has(uint64 id) const;
+    MCNAPI bool $has(uint64 id) const;
 
-    MCAPI bool $hasByHashId(uint64 id) const;
+    MCNAPI bool $hasByHashId(uint64 id) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

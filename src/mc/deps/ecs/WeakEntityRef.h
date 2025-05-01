@@ -19,22 +19,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit WeakEntityRef(::WeakRef<::EntityContext> entityRef);
+    MCNAPI explicit WeakEntityRef(::WeakRef<::EntityContext> entityRef);
 
-    MCFOLD ::WeakEntityRef& operator=(::WeakEntityRef&&);
+    MCNAPI ::WeakEntityRef& operator=(::WeakEntityRef&&);
 
-    MCAPI ~WeakEntityRef();
+    MCNAPI ~WeakEntityRef();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::WeakRef<::EntityContext> entityRef);
+    MCNAPI void* $ctor(::WeakRef<::EntityContext> entityRef);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -13,31 +13,31 @@ class AsyncTCPSocketBase {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AppendToOutBuffer(void const*, uint64);
+    MCNAPI void AppendToOutBuffer(void const*, uint64);
 
-    MCAPI AsyncTCPSocketBase(::rtc::Socket*, uint64);
+    MCNAPI AsyncTCPSocketBase(::rtc::Socket*, uint64);
 
-    MCAPI int FlushOutBuffer();
+    MCNAPI int FlushOutBuffer();
 
-    MCAPI void OnCloseEvent(::rtc::Socket*, int);
+    MCNAPI void OnCloseEvent(::rtc::Socket*, int);
 
-    MCAPI void OnConnectEvent(::rtc::Socket*);
+    MCNAPI void OnConnectEvent(::rtc::Socket*);
 
-    MCAPI void OnReadEvent(::rtc::Socket*);
+    MCNAPI void OnReadEvent(::rtc::Socket*);
 
-    MCAPI void OnWriteEvent(::rtc::Socket*);
+    MCNAPI void OnWriteEvent(::rtc::Socket*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::Socket*, uint64);
+    MCNAPI void* $ctor(::rtc::Socket*, uint64);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

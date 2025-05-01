@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
-namespace Json { class Value; }
 // clang-format on
 
 class ResourceLocation {
@@ -25,36 +24,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourceLocation();
+    MCNAPI ResourceLocation();
 
-    MCAPI ResourceLocation(::Core::Path const& path, ::ResourceFileSystem fileSystem);
+    MCNAPI ResourceLocation(::Core::Path const& path, ::ResourceFileSystem fileSystem);
 
-    MCAPI ::Core::PathBuffer<::std::string> getFullPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> getFullPath() const;
 
-    MCAPI bool operator==(::ResourceLocation const& rhs) const;
+    MCNAPI bool operator==(::ResourceLocation const& rhs) const;
 
-    MCAPI void serialize(::Json::Value& out) const;
-
-    MCAPI ~ResourceLocation();
+    MCNAPI ~ResourceLocation();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ResourceLocation const& getEmptyLocation();
+    MCNAPI static ::ResourceLocation const& getEmptyLocation();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::Core::Path const& path, ::ResourceFileSystem fileSystem);
+    MCNAPI void* $ctor(::Core::Path const& path, ::ResourceFileSystem fileSystem);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -8,9 +8,9 @@ struct JitterBufferDelay {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int GetMs() const;
+    MCNAPI int GetMs() const;
 
-    MCAPI void Set(::std::optional<double>);
+    MCNAPI void Set(::std::optional<double>);
     // NOLINTEND
 };
 

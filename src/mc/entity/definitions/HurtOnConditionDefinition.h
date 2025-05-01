@@ -23,6 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addDamageCondition(::DamageCondition const& damageCondition);
+    MCNAPI void addDamageCondition(::DamageCondition const& damageCondition);
     // NOLINTEND
 };

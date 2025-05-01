@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/attribute/AttributeModifier.h"
+#include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
-class AttributeModifier;
 class Mob;
 struct DrinkPotionData;
-struct Tick;
 namespace mce { class UUID; }
 // clang-format on
 
@@ -54,9 +54,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DrinkPotionGoal(::Mob& mob, float walkSpeedModifier, ::std::vector<::DrinkPotionData> const& drinkPotionData);
+    MCNAPI
+    DrinkPotionGoal(::Mob& mob, float walkSpeedModifier, ::std::vector<::DrinkPotionData> const& drinkPotionData);
 
-    MCAPI ::std::optional<int> _findPotionToUse() const;
+    MCNAPI ::std::optional<int> _findPotionToUse() const;
     // NOLINTEND
 
 public:
@@ -68,7 +69,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float walkSpeedModifier, ::std::vector<::DrinkPotionData> const& drinkPotionData);
+    MCNAPI void* $ctor(::Mob& mob, float walkSpeedModifier, ::std::vector<::DrinkPotionData> const& drinkPotionData);
     // NOLINTEND
 
 public:
@@ -80,22 +81,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCFOLD void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

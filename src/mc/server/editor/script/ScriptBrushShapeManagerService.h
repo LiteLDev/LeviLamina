@@ -29,12 +29,12 @@ class ScriptBrushShapeManagerService {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkec6894;
-    ::ll::UntypedStorage<8, 8>  mUnke91993;
-    ::ll::UntypedStorage<8, 24> mUnkde8b6f;
-    ::ll::UntypedStorage<8, 40> mUnke0ee94;
-    ::ll::UntypedStorage<8, 64> mUnkaa7a0e;
-    ::ll::UntypedStorage<8, 88> mUnk7c5ced;
+    ::ll::UntypedStorage<8, 8>   mUnkec6894;
+    ::ll::UntypedStorage<8, 8>   mUnke91993;
+    ::ll::UntypedStorage<8, 24>  mUnkde8b6f;
+    ::ll::UntypedStorage<8, 40>  mUnke0ee94;
+    ::ll::UntypedStorage<8, 64>  mUnkaa7a0e;
+    ::ll::UntypedStorage<8, 232> mUnk7c5ced;
     // NOLINTEND
 
 public:
@@ -45,38 +45,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBrushShapeManagerService(::Editor::ScriptModule::ScriptBrushShapeManagerService const&);
+    MCNAPI ScriptBrushShapeManagerService(::Editor::ScriptModule::ScriptBrushShapeManagerService const&);
 
-    MCAPI ScriptBrushShapeManagerService(
+    MCNAPI ScriptBrushShapeManagerService(
         ::Editor::Services::BrushShapeManagerServiceProvider& serviceProvider,
         ::Player&                                             player,
         ::Scripting::WeakLifetimeScope&                       scope
     );
 
-    MCAPI void _onBrushPaintCompletion(::Editor::Brush::BrushPaintCompletionState state);
+    MCNAPI void _onBrushPaintCompletion(::Editor::Brush::BrushPaintCompletionState state);
 
-    MCFOLD void activateBrushTool();
+    MCNAPI void activateBrushTool();
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error>
     beginPainting(::Scripting::Closure<void(::Editor::Brush::BrushPaintCompletionState)> const& closureEvent);
 
-    MCAPI void deactivateBrushTool();
+    MCNAPI void deactivateBrushTool();
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error> endPainting(bool cancelled);
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error> endPainting(bool cancelled);
 
-    MCAPI ::std::vector<::Editor::ScriptModule::ScriptBrushShape> getBrushShapeList() const;
+    MCNAPI ::std::vector<::Editor::ScriptModule::ScriptBrushShape> getBrushShapeList() const;
 
-    MCAPI ::std::optional<::Editor::ScriptModule::ScriptBrushShape> getCurrentBrushShape();
+    MCNAPI ::Vec3 getBrushShapeOffset() const;
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>>
+    MCNAPI ::std::optional<::Editor::ScriptModule::ScriptBrushShape> getCurrentBrushShape();
+
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>>
     getCurrentBrushVolume();
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptUIElement>>,
         ::Scripting::Error>
     getSettingsUIElements(::std::string const& brushName);
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error> registerBrushShape(
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error> registerBrushShape(
         ::std::string const& name,
         ::std::string const& icon,
         ::Scripting::Closure<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>()>
@@ -86,51 +88,55 @@ public:
             getSettingsUI
     );
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error>
     setBrushMask(::Editor::ScriptModule::ScriptBlockMaskList const& mask);
 
-    MCAPI void
+    MCNAPI void
     setBrushShape(::std::variant<
                   ::std::vector<::Vec3>,
                   ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>> const& shape
     );
 
-    MCFOLD void setFlattenHeight(int flattenHeight);
+    MCNAPI void setBrushShapeOffset(::Vec3 const& offset);
 
-    MCFOLD void setFlattenRadius(int flattenRadius);
+    MCNAPI void setBrushShapeVisible(bool visible);
 
-    MCFOLD void setTerrainStrength(int terrainStrength);
+    MCNAPI void setFlattenHeight(int flattenHeight);
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error>
+    MCNAPI void setFlattenRadius(int flattenRadius);
+
+    MCNAPI void setTerrainStrength(int terrainStrength);
+
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error>
     singlePaint(::Scripting::Closure<void(::Editor::Brush::BrushPaintCompletionState)> const& closureEvent);
 
-    MCAPI void switchBrushPaintMode(::Editor::Brush::BrushPaintMode mode);
+    MCNAPI void switchBrushPaintMode(::Editor::Brush::BrushPaintMode mode);
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>,
         ::Scripting::Error>
     switchBrushShape(::std::string const& brushName);
 
-    MCAPI ::Scripting::Result<bool, ::Scripting::Error> uiElementValueChanged(
+    MCNAPI ::Scripting::Result<bool, ::Scripting::Error> uiElementValueChanged(
         ::std::string const&                               elementName,
         ::std::variant<float, bool, ::Vec3, ::std::string> newValue
     );
 
-    MCAPI ~ScriptBrushShapeManagerService();
+    MCNAPI ~ScriptBrushShapeManagerService();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptBrushShapeManagerService> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptBrushShapeManagerService> bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ScriptModule::ScriptBrushShapeManagerService const&);
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptBrushShapeManagerService const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Editor::Services::BrushShapeManagerServiceProvider& serviceProvider,
         ::Player&                                             player,
         ::Scripting::WeakLifetimeScope&                       scope
@@ -140,7 +146,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

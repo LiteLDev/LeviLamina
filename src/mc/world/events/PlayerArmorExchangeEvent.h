@@ -6,11 +6,11 @@
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
 #include "mc/world/events/PlayerArmorExchangeEventTriggeredLocation.h"
+#include "mc/world/item/ItemStack.h"
 
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
-class ItemStack;
 // clang-format on
 
 struct PlayerArmorExchangeEvent {
@@ -31,20 +31,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerArmorExchangeEvent(::PlayerArmorExchangeEvent const&);
+    MCNAPI PlayerArmorExchangeEvent(::PlayerArmorExchangeEvent const&);
 
-    MCAPI ~PlayerArmorExchangeEvent();
+    MCNAPI ~PlayerArmorExchangeEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PlayerArmorExchangeEvent const&);
+    MCNAPI void* $ctor(::PlayerArmorExchangeEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Description* parseDescription(::DeserializeDataParams deserializeDataParams);
+    MCNAPI ::Description* parseDescription(::DeserializeDataParams deserializeDataParams);
     // NOLINTEND
 
 public:
@@ -36,12 +36,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $deserializeData(::DeserializeDataParams);
+    MCNAPI void $deserializeData(::DeserializeDataParams);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

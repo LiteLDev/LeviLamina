@@ -53,13 +53,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ProducerComponent();
+    MCNAPI ProducerComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -71,22 +71,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
+    MCNAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCAPI void $setStrength(int strength);
+    MCNAPI void $setStrength(int strength);
 
-    MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+    MCNAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
-    MCAPI bool $canStopPower() const;
+    MCNAPI bool $canStopPower() const;
 
-    MCAPI void $setStopPower(bool bPower);
+    MCNAPI void $setStopPower(bool bPower);
 
-    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
+    MCNAPI ::CircuitComponentType $getCircuitComponentType() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

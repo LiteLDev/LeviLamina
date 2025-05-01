@@ -95,20 +95,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::WallConnectionType
+    MCNAPI ::WallConnectionType
     _desiredConnectionState(::BlockSource& region, ::BlockPos const& pos, uchar neighbor) const;
 
-    MCAPI bool _isCovered(::BlockSource& region, ::BlockPos const& pos, ::AABB const& testAABB) const;
+    MCNAPI bool _isCovered(::BlockSource& region, ::BlockPos const& pos, ::AABB const& testAABB) const;
 
-    MCAPI bool _shouldBePost(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI bool _shouldBePost(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI bool _shouldUpdateConnectionStates(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool _shouldUpdateConnectionStates(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool _tryAddToTickingQueue(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool _tryAddToTickingQueue(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void tryFixWallStates(::BlockSource& region, ::BlockPos const& pos, int updateFlags) const;
+    MCNAPI void tryFixWallStates(::BlockSource& region, ::BlockPos const& pos, int updateFlags) const;
     // NOLINTEND
 
 public:
@@ -128,51 +128,51 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const&
+    MCNAPI ::Block const&
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
 
-    MCFOLD void $onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $onStructureNeighborBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onStructureNeighborBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI ::AABB const&
+    MCNAPI ::AABB const&
     $getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB)
         const;
 
-    MCAPI ::AABB
+    MCNAPI ::AABB
     $getCollisionShape(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCFOLD ::AABB const&
+    MCNAPI ::AABB const&
     $getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
         const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+    MCNAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
-    MCFOLD bool $canConnect(::Block const& otherBlock, uchar, ::Block const&) const;
+    MCNAPI bool $canConnect(::Block const& otherBlock, uchar, ::Block const&) const;
 
-    MCFOLD bool
+    MCNAPI bool
     $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
-    MCFOLD bool $isWallBlock() const;
+    MCNAPI bool $isWallBlock() const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCFOLD ::HitResult
+    MCNAPI ::HitResult
     $clip(::Block const& block, ::BlockSource const& region, ::BlockPos const& pos, ::Vec3 const& origin, ::Vec3 const& end, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

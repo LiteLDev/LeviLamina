@@ -9,8 +9,8 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockPos;
-class Player;
+class Experiments;
+namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class StonecutterBlock : public ::BlockLegacy {
@@ -19,9 +19,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 125
     virtual ::BlockLegacy& init() /*override*/;
-
-    // vIndex: 139
-    virtual bool use(::Player&, ::BlockPos const&, uchar) const /*override*/;
 
     // vIndex: 30
     virtual bool isCraftingBlock() const /*override*/;
@@ -32,8 +29,17 @@ public:
     // vIndex: 23
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
 
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
     virtual ~StonecutterBlock() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -45,20 +51,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockLegacy& $init();
+    MCNAPI ::BlockLegacy& $init();
 
-    MCFOLD bool $use(::Player&, ::BlockPos const&, uchar) const;
+    MCNAPI bool $isCraftingBlock() const;
 
-    MCFOLD bool $isCraftingBlock() const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

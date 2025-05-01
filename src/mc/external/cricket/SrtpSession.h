@@ -14,61 +14,61 @@ class SrtpSession {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool DoSetKey(int, int, uchar const*, uint64, ::std::vector<int> const&);
+    MCNAPI bool DoSetKey(int, int, uchar const*, uint64, ::std::vector<int> const&);
 
-    MCAPI void DumpPacket(void const*, int, bool);
+    MCNAPI void DumpPacket(void const*, int, bool);
 
-    MCAPI void EnableExternalAuth();
+    MCNAPI void EnableExternalAuth();
 
-    MCAPI int GetSrtpOverhead() const;
+    MCNAPI int GetSrtpOverhead() const;
 
-    MCAPI void HandleEvent(::srtp_event_data_t const*);
+    MCNAPI void HandleEvent(::srtp_event_data_t const*);
 
-    MCAPI bool IsExternalAuthEnabled() const;
+    MCNAPI bool IsExternalAuthEnabled() const;
 
-    MCAPI bool ProtectRtcp(void*, int, int, int*);
+    MCNAPI bool ProtectRtcp(void*, int, int, int*);
 
-    MCAPI bool ProtectRtp(void*, int, int, int*);
+    MCNAPI bool ProtectRtp(void*, int, int, int*);
 
-    MCAPI bool RemoveSsrcFromSession(uint);
+    MCNAPI bool RemoveSsrcFromSession(uint);
 
-    MCAPI bool SetKey(int, int, uchar const*, uint64, ::std::vector<int> const&);
+    MCNAPI bool SetKey(int, int, uchar const*, uint64, ::std::vector<int> const&);
 
-    MCAPI bool SetRecv(int, uchar const*, uint64, ::std::vector<int> const&);
+    MCNAPI bool SetRecv(int, uchar const*, uint64, ::std::vector<int> const&);
 
-    MCAPI bool SetSend(int, uchar const*, uint64, ::std::vector<int> const&);
+    MCNAPI bool SetSend(int, uchar const*, uint64, ::std::vector<int> const&);
 
-    MCAPI explicit SrtpSession(::webrtc::FieldTrialsView const&);
+    MCNAPI explicit SrtpSession(::webrtc::FieldTrialsView const&);
 
-    MCAPI bool UnprotectRtcp(void*, int, int*);
+    MCNAPI bool UnprotectRtcp(void*, int, int*);
 
-    MCAPI bool UnprotectRtp(void*, int, int*);
+    MCNAPI bool UnprotectRtp(void*, int, int*);
 
-    MCAPI bool UpdateKey(int, int, uchar const*, uint64, ::std::vector<int> const&);
+    MCNAPI bool UpdateKey(int, int, uchar const*, uint64, ::std::vector<int> const&);
 
-    MCAPI bool UpdateRecv(int, uchar const*, uint64, ::std::vector<int> const&);
+    MCNAPI bool UpdateRecv(int, uchar const*, uint64, ::std::vector<int> const&);
 
-    MCAPI bool UpdateSend(int, uchar const*, uint64, ::std::vector<int> const&);
+    MCNAPI bool UpdateSend(int, uchar const*, uint64, ::std::vector<int> const&);
 
-    MCAPI ~SrtpSession();
+    MCNAPI ~SrtpSession();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void HandleEventThunk(::srtp_event_data_t*);
+    MCNAPI static void HandleEventThunk(::srtp_event_data_t*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::FieldTrialsView const&);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

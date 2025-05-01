@@ -41,13 +41,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~MultiPartStreamHelper();
+        MCNAPI ~MultiPartStreamHelper();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -93,19 +93,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FileUploadManager(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
+    MCNAPI FileUploadManager(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
 
-    MCAPI void _generateMultiPartHelper();
+    MCNAPI void _generateMultiPartHelper();
 
-    MCAPI void _resumeUpload();
+    MCNAPI void _resumeUpload();
 
-    MCAPI void _uploadChunk(::FileChunkInfo const& chunk);
+    MCNAPI void _uploadChunk(::FileChunkInfo const& chunk);
 
-    MCAPI void _uploadStream();
+    MCNAPI void _uploadStream();
 
-    MCAPI void addCallbackQueue(::std::function<void()> callback);
+    MCNAPI void addCallbackQueue(::std::function<void()> callback);
 
-    MCAPI void uploadFile(
+    MCNAPI void uploadFile(
         ::std::string const& uploadId,
         ::Core::Path const&  filePath,
         bool                 autoStartUpload,
@@ -122,26 +122,26 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
+    MCNAPI void* $ctor(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getUploadProgress() const;
+    MCNAPI float $getUploadProgress() const;
 
-    MCAPI void $uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
+    MCNAPI void $uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

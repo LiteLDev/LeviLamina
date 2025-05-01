@@ -29,14 +29,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerRespawnBlockRadiusRandomizer(uint spawnRadius, ::XoroshiroRandom& random);
+    MCNAPI PlayerRespawnBlockRadiusRandomizer(uint spawnRadius, ::XoroshiroRandom& random);
 
-    MCAPI bool getNextPosition(::Vec3& outOffset, bool confineToCircle);
+    MCNAPI bool getNextPosition(::Vec3& outOffset, bool confineToCircle);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint spawnRadius, ::XoroshiroRandom& random);
+    MCNAPI void* $ctor(uint spawnRadius, ::XoroshiroRandom& random);
     // NOLINTEND
 };

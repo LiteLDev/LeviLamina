@@ -31,23 +31,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AchievementEventing();
+    MCNAPI AchievementEventing();
 
-    MCAPI void AwardAchievement(::Player& player, ::MinecraftEventing::AchievementIds achievementId);
+    MCNAPI void AwardAchievement(::Player& player, ::MinecraftEventing::AchievementIds achievementId);
 
-    MCAPI void CaravanChanged(::Mob& mob, int caravanSize);
+    MCNAPI void CaravanChanged(::Mob& mob, int caravanSize);
 
-    MCAPI void ItemUsed(::Player const& player, ::ItemDescriptor const& item, uint useMethod);
+    MCNAPI void ItemUsed(::Player const& player, ::ItemDescriptor const& item, uint useMethod);
 
-    MCAPI void JukeboxUsed(::Player const& player, ::ItemDescriptor const& disc);
+    MCNAPI void JukeboxUsed(::Player const& player, ::ItemDescriptor const& disc);
 
-    MCAPI void MobEffectChanged(::Player const& player, ::MobEffectInstance const& effectInstance, int change);
+    MCNAPI void MobEffectChanged(::Player const& player, ::MobEffectInstance const& effectInstance, int change);
 
-    MCAPI void PlayerBounced(::Player const& player, ::Block const& block, int bounceHeight, int auxType);
+    MCNAPI void PlayerBounced(::Player const& player, ::Block const& block, int bounceHeight, int auxType);
 
-    MCAPI void PlayerTeleported(::Player& player, float metersTravelled, int cause, int sourceType);
+    MCNAPI void PlayerTeleported(::Player& player, float metersTravelled, int cause, int sourceType);
 
-    MCAPI void
+    MCNAPI void
     PlayerTravelled(::Player const& player, float metersTravelledSinceLastEvent, int travelMethodType, int newBiome);
     // NOLINTEND
 
@@ -60,7 +60,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

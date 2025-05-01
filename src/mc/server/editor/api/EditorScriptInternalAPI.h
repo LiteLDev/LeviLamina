@@ -42,7 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::StrongTypedObjectHandle<::Editor::API::EditorExtension> _registerExtension(
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::Editor::API::EditorExtension> _registerExtension(
         ::Scripting::ContextConfig const& contextConfig,
         ::std::string const&              extensionName,
         ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
@@ -52,28 +52,28 @@ public:
         ::std::optional<::Editor::API::EditorExtensionOptionalParameters> options
     );
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error> fireTelemetryEvent(
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error> fireTelemetryEvent(
         ::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer,
         ::std::string const&                   source,
         ::std::string const&                   eventName,
         ::std::string const&                   metadata
     );
 
-    MCAPI ::Scripting::Result<::ScriptModuleMinecraft::ScriptRGBA, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<::ScriptModuleMinecraft::ScriptRGBA, ::Scripting::Error>
     getMapColorUnsafe(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer, ::Vec3 const& coordinate);
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>,
         ::Scripting::Error>
     getPlayerServiceContext(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer);
 
-    MCAPI ::Editor::API::EditorScriptInternalAPI& operator=(::Editor::API::EditorScriptInternalAPI&&);
+    MCNAPI ::Editor::API::EditorScriptInternalAPI& operator=(::Editor::API::EditorScriptInternalAPI&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::API::EditorScriptInternalAPI> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::API::EditorScriptInternalAPI> bindScript();
     // NOLINTEND
 };
 

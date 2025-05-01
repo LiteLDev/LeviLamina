@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/world/item/ItemStack.h"
 
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
-class ItemStack;
-class Vec3;
 // clang-format on
 
 struct PlayerInteractWithBlockAfterEvent {
@@ -32,20 +32,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerInteractWithBlockAfterEvent(::PlayerInteractWithBlockAfterEvent const&);
+    MCNAPI PlayerInteractWithBlockAfterEvent(::PlayerInteractWithBlockAfterEvent const&);
 
-    MCAPI ~PlayerInteractWithBlockAfterEvent();
+    MCNAPI ~PlayerInteractWithBlockAfterEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PlayerInteractWithBlockAfterEvent const&);
+    MCNAPI void* $ctor(::PlayerInteractWithBlockAfterEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

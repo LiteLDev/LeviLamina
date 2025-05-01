@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace JsonUtil { class EmptyClass; }
-// clang-format on
-
 class SchedulerDefinition {
 public:
     // member variables
@@ -28,16 +20,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setMaxDelayTicks(float const& seconds);
+    MCNAPI void setMaxDelayTicks(float const& seconds);
 
-    MCAPI void setMinDelayTicks(float const& seconds);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void
-    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SchedulerDefinition>>& root
-    );
+    MCNAPI void setMinDelayTicks(float const& seconds);
     // NOLINTEND
 };

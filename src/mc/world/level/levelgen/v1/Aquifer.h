@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
+
 // auto generated forward declare list
 // clang-format off
 class AquiferNoises;
-class BlockPos;
 class ChunkPos;
 class SurfaceLevelCache;
 struct OverworldNoises3d;
@@ -46,8 +48,6 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnk33b760;
         ::ll::UntypedStorage<8, 8> mUnkeef3f1;
-        ::ll::UntypedStorage<8, 8> mUnkf5b904;
-        ::ll::UntypedStorage<8, 8> mUnkd60ac1;
         // NOLINTEND
 
     public:
@@ -71,13 +71,13 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos>                            mMinGrid;
     ::ll::TypedStorage<4, 12, ::BlockPos>                            mGridSize;
     ::ll::TypedStorage<8, 24, ::std::vector<::Aquifer::FluidSample>> mFluidLevelCache;
-    ::ll::TypedStorage<8, 32, ::Aquifer::LocalRegistry>              mLocalRegistry;
+    ::ll::TypedStorage<8, 16, ::Aquifer::LocalRegistry>              mLocalRegistry;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Aquifer(
+    MCNAPI Aquifer(
         ::ChunkPos const&          chunkPos,
         ::AquiferNoises const&     aquiferNoises,
         ::OverworldNoises3d const& terrainNoises,
@@ -87,18 +87,18 @@ public:
         int                        seaLevel
     );
 
-    MCAPI float _calculatePressure(
+    MCNAPI float _calculatePressure(
         ::BlockPos                    worldPos,
         float&                        barrierNoiseValue,
         ::Aquifer::FluidSample const& fluidYClosest1,
         ::Aquifer::FluidSample const& fluidYClosest2
     ) const;
 
-    MCAPI ::Aquifer::FluidSample _computeAquifer(::BlockPos const& cellCenter) const;
+    MCNAPI ::Aquifer::FluidSample _computeAquifer(::BlockPos const& cellCenter) const;
 
-    MCAPI ::Aquifer::FluidSample _getOrComputeNewFluidSample(::BlockPos const& cellCenter);
+    MCNAPI ::Aquifer::FluidSample _getOrComputeNewFluidSample(::BlockPos const& cellCenter);
 
-    MCAPI void computeAt(::BlockPos const& worldPos);
+    MCNAPI void computeAt(::BlockPos const& worldPos);
     // NOLINTEND
 
 public:
@@ -110,7 +110,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ChunkPos const&          chunkPos,
         ::AquiferNoises const&     aquiferNoises,
         ::OverworldNoises3d const& terrainNoises,

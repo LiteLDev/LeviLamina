@@ -33,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool set(::std::string_view str, bool copy);
+    MCNAPI bool set(::std::string_view str, bool copy);
     // NOLINTEND
 };
 

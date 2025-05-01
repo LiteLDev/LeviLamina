@@ -44,31 +44,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DimensionDefinitionGroup(::DimensionDefinitionGroup const&);
+    MCNAPI DimensionDefinitionGroup(::DimensionDefinitionGroup const&);
 
-    MCAPI DimensionDefinitionGroup(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager* const rpm);
+    MCNAPI DimensionDefinitionGroup(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager* const rpm);
 
-    MCAPI ::DimensionDefinitionGroup& operator=(::DimensionDefinitionGroup&&);
+    MCNAPI ::DimensionDefinitionGroup& operator=(::DimensionDefinitionGroup&&);
 
-    MCAPI bool tryAddDimensionDefinitionByString(
+    MCNAPI bool tryAddDimensionDefinitionByString(
         ::std::string const&  dimensionDefinitionJSON,
         ::DimensionDataLoader dimensionLoader
     );
 
-    MCAPI ~DimensionDefinitionGroup();
+    MCNAPI ~DimensionDefinitionGroup();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::DimensionDefinitionGroup const&);
+    MCNAPI void* $ctor(::DimensionDefinitionGroup const&);
 
-    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager* const rpm);
+    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager* const rpm);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

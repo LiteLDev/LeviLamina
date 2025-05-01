@@ -28,22 +28,22 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeFactory(::IPackLoadContext const& packLoadContext);
+    MCNAPI void $initializeFactory(::IPackLoadContext const& packLoadContext);
 
-    MCAPI void $initSchema();
+    MCNAPI void $initSchema();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEventResponseFactory();
+    MCNAPI static void** $vftableForEventResponseFactory();
 
-    MCAPI static void** $vftableForIPackLoadScoped();
+    MCNAPI static void** $vftableForIPackLoadScoped();
     // NOLINTEND
 };

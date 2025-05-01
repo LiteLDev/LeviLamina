@@ -19,14 +19,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ItemCustomComponentData& operator=(::ItemCustomComponentData&&);
+    MCNAPI ::ItemCustomComponentData& operator=(::ItemCustomComponentData&&);
 
-    MCAPI ~ItemCustomComponentData();
+    MCNAPI ~ItemCustomComponentData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

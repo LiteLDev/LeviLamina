@@ -24,20 +24,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlayerSuspendLevelStorageSaveToken(::EntityContext& entity);
+    MCNAPI explicit PlayerSuspendLevelStorageSaveToken(::EntityContext& entity);
 
-    MCAPI ~PlayerSuspendLevelStorageSaveToken();
+    MCNAPI ~PlayerSuspendLevelStorageSaveToken();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::EntityContext& entity);
+    MCNAPI void* $ctor(::EntityContext& entity);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

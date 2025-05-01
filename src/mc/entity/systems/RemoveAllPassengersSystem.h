@@ -17,13 +17,13 @@ struct VehicleComponent;
 namespace RemoveAllPassengersSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void removeAllPassengers(
+MCNAPI void removeAllPassengers(
     ::VehicleComponent const&                                                             vehicleComponent,
     bool                                                                                  actorIsBeingDestroyed,
     ::EntityModifier<::ActorIsBeingDestroyedFlagComponent, ::StopRidingRequestComponent>& modifier
 );
 
-MCAPI void tickRemoveAllPassengers(
+MCNAPI void tickRemoveAllPassengers(
     ::StrictEntityContext&,
     ::VehicleComponent const&                                                            vehicleComponent,
     ::Optional<::ActorIsBeingDestroyedFlagComponent>                                     actorIsBeingDestroyed,

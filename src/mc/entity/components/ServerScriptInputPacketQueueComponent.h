@@ -22,6 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ServerScriptInputPacketQueueComponent& operator=(::ServerScriptInputPacketQueueComponent&&);
+    MCNAPI ::ServerScriptInputPacketQueueComponent& operator=(::ServerScriptInputPacketQueueComponent&&);
     // NOLINTEND
 };

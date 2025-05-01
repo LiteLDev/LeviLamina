@@ -13,12 +13,12 @@ class BreakBlocksComponent {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void breakNearbyBlocks(::Actor& actor);
+    MCNAPI void breakNearbyBlocks(::Actor& actor);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isBreakable(::BreakBlocksDescription const* description, ::BlockLegacy const& block);
+    MCNAPI static bool isBreakable(::BreakBlocksDescription const* description, ::BlockLegacy const& block);
     // NOLINTEND
 };

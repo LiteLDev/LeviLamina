@@ -13,34 +13,34 @@ class PlatformThread {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Finalize();
+    MCNAPI void Finalize();
 
-    MCAPI PlatformThread(void*, bool);
+    MCNAPI PlatformThread(void*, bool);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::rtc::PlatformThread
+    MCNAPI static ::rtc::PlatformThread
         SpawnDetached(::std::function<void()>, ::std::string_view, ::rtc::ThreadAttributes);
 
-    MCAPI static ::rtc::PlatformThread
+    MCNAPI static ::rtc::PlatformThread
         SpawnJoinable(::std::function<void()>, ::std::string_view, ::rtc::ThreadAttributes);
 
-    MCAPI static ::rtc::PlatformThread
+    MCNAPI static ::rtc::PlatformThread
     SpawnThread(::std::function<void()>, ::std::string_view, ::rtc::ThreadAttributes, bool);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(void*, bool);
+    MCNAPI void* $ctor(void*, bool);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

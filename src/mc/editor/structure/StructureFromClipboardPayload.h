@@ -13,6 +13,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk45890b;
+    ::ll::UntypedStorage<8, 40> mUnkf1b1d8;
     // NOLINTEND
 
 public:
@@ -30,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::Editor::Network::StructureFromClipboardPayload&
+    MCNAPI ::Editor::Network::StructureFromClipboardPayload&
     operator=(::Editor::Network::StructureFromClipboardPayload const&);
     // NOLINTEND
 
@@ -43,7 +44,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

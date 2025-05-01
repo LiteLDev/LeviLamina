@@ -3,17 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/shared_types/legacy/BlockDescriptor.h"
 #include "mc/molang/MolangVersion.h"
+#include "mc/platform/threading/SpinLockImpl.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
 class CompoundTag;
 class ExpressionNode;
-class HashedString;
-class SpinLockImpl;
 namespace SharedTypes::Legacy { struct BlockDescriptor; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class BlockDescriptor {
@@ -46,23 +47,27 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI State(::HashedString name, ::std::string const& stringState);
+        MCNAPI State(::HashedString name, ::SharedTypes::Legacy::BlockDescriptor::Compound state);
 
-        MCAPI ::BlockDescriptor::State& operator=(::BlockDescriptor::State const&);
+        MCNAPI State(::HashedString name, ::std::string const& stringState);
 
-        MCAPI ~State();
+        MCNAPI ::BlockDescriptor::State& operator=(::BlockDescriptor::State const&);
+
+        MCNAPI ~State();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::HashedString name, ::std::string const& stringState);
+        MCNAPI void* $ctor(::HashedString name, ::SharedTypes::Legacy::BlockDescriptor::Compound state);
+
+        MCNAPI void* $ctor(::HashedString name, ::std::string const& stringState);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -98,7 +103,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void resolve(bool logInvalidBlocks);
+        MCNAPI void resolve(bool logInvalidBlocks);
         // NOLINTEND
     };
 
@@ -122,54 +127,57 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockDescriptor();
+    MCNAPI BlockDescriptor();
 
-    MCAPI explicit BlockDescriptor(::SharedTypes::Legacy::BlockDescriptor desc);
+    MCNAPI explicit BlockDescriptor(::SharedTypes::Legacy::BlockDescriptor desc);
 
-    MCAPI explicit BlockDescriptor(::HashedString const& fullName);
+    MCNAPI explicit BlockDescriptor(::HashedString const& fullName);
 
-    MCAPI BlockDescriptor(::BlockDescriptor&& rhs);
+    MCNAPI BlockDescriptor(::BlockDescriptor&& rhs);
 
-    MCAPI BlockDescriptor(::BlockDescriptor const& rhs);
+    MCNAPI BlockDescriptor(::BlockDescriptor const& rhs);
 
-    MCAPI BlockDescriptor(::std::string const& name, ::std::vector<::BlockDescriptor::State>&& states);
+    MCNAPI BlockDescriptor(::std::string const& name, ::std::vector<::BlockDescriptor::State>&& states);
 
-    MCAPI bool _anyTagsMatch(::Block const& block) const;
+    MCNAPI bool _anyTagsMatch(::Block const& block) const;
 
-    MCAPI void _resolve(bool logInvalidBlocks) const;
+    MCNAPI void _resolve(bool logInvalidBlocks) const;
 
-    MCAPI bool _statesMatch(::Block const& block) const;
+    MCNAPI bool _statesMatch(::Block const& block) const;
 
-    MCAPI ::Block const& getBlockOrUnknownBlock() const;
+    MCNAPI ::Block const& getBlockOrUnknownBlock() const;
 
-    MCAPI ::BlockDescriptor::CompareType const& getCompareType() const;
+    MCNAPI ::BlockDescriptor::CompareType const& getCompareType() const;
 
-    MCAPI bool matches(::Block const& block) const;
+    MCNAPI bool matches(::Block const& block) const;
 
-    MCAPI bool matches(::BlockDescriptor const& otherDescriptor) const;
+    MCNAPI bool matches(::BlockDescriptor const& otherDescriptor) const;
 
-    MCAPI void operator=(::BlockDescriptor&& rhs);
+    MCNAPI void operator=(::BlockDescriptor&& rhs);
 
-    MCAPI void operator=(::BlockDescriptor const& rhs);
+    MCNAPI void operator=(::BlockDescriptor const& rhs);
 
-    MCAPI ::std::unique_ptr<::CompoundTag> toCompoundTag() const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> toCompoundTag() const;
 
-    MCAPI ::Block const* tryGetBlock() const;
+    MCNAPI ::Block const* tryGetBlock() const;
 
-    MCAPI ~BlockDescriptor();
+    MCNAPI ~BlockDescriptor();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool anyMatch(::std::vector<::BlockDescriptor> const& blockDescriptors, ::Block const& block);
+    MCNAPI static bool anyMatch(::std::vector<::BlockDescriptor> const& blockDescriptors, ::Block const& block);
 
-    MCAPI static bool
+    MCNAPI static bool
     anyMatch(::std::vector<::BlockDescriptor> const& blockDescriptors, ::BlockDescriptor const& otherBlockDescriptor);
 
-    MCAPI static ::BlockDescriptor fromCompoundTag(::CompoundTag const& tag);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::BlockDescriptor fromTagExpression(::std::string const& tagExpression, ::MolangVersion molangVersion);
+    MCNAPI static ::BlockDescriptor fromCompoundTag(::CompoundTag const& tag);
+
+    MCNAPI static ::BlockDescriptor
+    fromTagExpression(::std::string const& tagExpression, ::MolangVersion molangVersion);
     // NOLINTEND
 
 public:
@@ -185,22 +193,22 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::SharedTypes::Legacy::BlockDescriptor desc);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::BlockDescriptor desc);
 
-    MCAPI void* $ctor(::HashedString const& fullName);
+    MCNAPI void* $ctor(::HashedString const& fullName);
 
-    MCAPI void* $ctor(::BlockDescriptor&& rhs);
+    MCNAPI void* $ctor(::BlockDescriptor&& rhs);
 
-    MCAPI void* $ctor(::BlockDescriptor const& rhs);
+    MCNAPI void* $ctor(::BlockDescriptor const& rhs);
 
-    MCAPI void* $ctor(::std::string const& name, ::std::vector<::BlockDescriptor::State>&& states);
+    MCNAPI void* $ctor(::std::string const& name, ::std::vector<::BlockDescriptor::State>&& states);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

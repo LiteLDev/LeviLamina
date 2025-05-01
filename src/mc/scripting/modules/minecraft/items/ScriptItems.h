@@ -35,14 +35,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItems(::ScriptModuleMinecraft::ScriptItems const&);
+    MCNAPI ScriptItems(::ScriptModuleMinecraft::ScriptItems const&);
 
-    MCAPI explicit ScriptItems(::ItemRegistryRef itemRegistry);
+    MCNAPI explicit ScriptItems(::ItemRegistryRef itemRegistry);
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
     _getItemHandleForAlias(::HashedString const& aliasName) const;
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
     _registerItemType(
         ::std::unordered_map<
             ::std::string,
@@ -52,49 +52,49 @@ public:
         bool                                                                                allowAirBlockItem
     );
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
     _registerItemTypeAlias(
         ::std::string                                                                 itemName,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> itemHandle
     );
 
-    MCAPI void _registerItems(::Scripting::WeakLifetimeScope& scope, bool allowAirBlockItem);
+    MCNAPI void _registerItems(::Scripting::WeakLifetimeScope& scope, bool allowAirBlockItem);
 
-    MCAPI void _tryRegisterItemTypeAlias(::HashedString const& aliasName);
+    MCNAPI void _tryRegisterItemTypeAlias(::HashedString const& aliasName);
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
     get(::Scripting::WeakLifetimeScope& scope, ::std::string const& itemName, bool allowAirBlockItem);
 
-    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
     getAll(::Scripting::WeakLifetimeScope& scope, bool allowAirBlockItem);
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
     getOrAdd(::Scripting::WeakLifetimeScope& scope, ::std::string const& itemName, bool allowAirBlockItem);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
+    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
     _getOrCreateItemTypeHandle(::Scripting::WeakLifetimeScope scope, ::std::string const& lookupName);
 
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder, ::ItemRegistryRef itemRegistry);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder, ::ItemRegistryRef itemRegistry);
 
-    MCAPI static ::std::unordered_map<::std::string, ::std::string>
+    MCNAPI static ::std::unordered_map<::std::string, ::std::string>
     generateItemPropertyNameToRawNameMap(::ItemRegistryRef itemRegistry, bool allowAirBlockItem);
 
-    MCAPI static ::std::vector<::std::string> generatetItemCooldownCategories(::ItemRegistryRef itemRegistry);
+    MCNAPI static ::std::vector<::std::string> generatetItemCooldownCategories(::ItemRegistryRef itemRegistry);
 
-    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
+    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
     getOrCreateItemTypeHandle(::Scripting::WeakLifetimeScope scope, ::std::string const& identifier);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItems const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItems const&);
 
-    MCAPI void* $ctor(::ItemRegistryRef itemRegistry);
+    MCNAPI void* $ctor(::ItemRegistryRef itemRegistry);
     // NOLINTEND
 };
 

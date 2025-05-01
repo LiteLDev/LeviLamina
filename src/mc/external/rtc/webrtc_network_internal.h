@@ -10,7 +10,7 @@ namespace rtc { class Network; }
 namespace rtc::webrtc_network_internal {
 // functions
 // NOLINTBEGIN
-MCAPI bool CompareNetworks(::std::unique_ptr<::rtc::Network> const&, ::std::unique_ptr<::rtc::Network> const&);
+MCNAPI bool CompareNetworks(::std::unique_ptr<::rtc::Network> const&, ::std::unique_ptr<::rtc::Network> const&);
 // NOLINTEND
 
 } // namespace rtc::webrtc_network_internal

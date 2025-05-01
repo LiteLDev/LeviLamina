@@ -29,7 +29,7 @@ struct StorageCache {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 144> mUnkf1c9ae;
+    ::ll::UntypedStorage<8, 152> mUnkf1c9ae;
     // NOLINTEND
 
 public:

@@ -24,7 +24,7 @@ class MinecartComeOffRailSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _minecartComeOffRailSystem(
+    MCNAPI static void _minecartComeOffRailSystem(
         ::StrictEntityContext&                    context,
         ::RailMovementComponent const&            railMovementComponent,
         ::StateVectorComponent&                   stateVectorComponent,
@@ -32,7 +32,7 @@ public:
         ::EntityModifier<::MoveRequestComponent>  mod
     );
 
-    MCAPI static void _tickMinecartComeOffRailSystem(
+    MCNAPI static void _tickMinecartComeOffRailSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Exclude<::SnapOnRailComponent>,

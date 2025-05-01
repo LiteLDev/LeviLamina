@@ -37,80 +37,80 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void SetDelegate(::webrtc::DataChannelObserver*);
+        MCNAPI void SetDelegate(::webrtc::DataChannelObserver*);
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void CloseAbruptlyWithDataChannelFailure(::std::string const&);
+    MCNAPI void CloseAbruptlyWithDataChannelFailure(::std::string const&);
 
-    MCAPI void CloseAbruptlyWithError(::webrtc::RTCError);
+    MCNAPI void CloseAbruptlyWithError(::webrtc::RTCError);
 
-    MCAPI void DeliverQueuedReceivedData();
+    MCNAPI void DeliverQueuedReceivedData();
 
-    MCAPI ::webrtc::DataChannelStats GetStats() const;
+    MCNAPI ::webrtc::DataChannelStats GetStats() const;
 
-    MCAPI void MaybeSendOnBufferedAmountChanged();
+    MCNAPI void MaybeSendOnBufferedAmountChanged();
 
-    MCAPI void OnBufferedAmountLow();
+    MCNAPI void OnBufferedAmountLow();
 
-    MCAPI void OnClosingProcedureComplete();
+    MCNAPI void OnClosingProcedureComplete();
 
-    MCAPI void OnClosingProcedureStartedRemotely();
+    MCNAPI void OnClosingProcedureStartedRemotely();
 
-    MCAPI void OnDataReceived(::webrtc::DataMessageType, ::rtc::CopyOnWriteBuffer const&);
+    MCNAPI void OnDataReceived(::webrtc::DataMessageType, ::rtc::CopyOnWriteBuffer const&);
 
-    MCAPI void OnTransportChannelClosed(::webrtc::RTCError);
+    MCNAPI void OnTransportChannelClosed(::webrtc::RTCError);
 
-    MCAPI void OnTransportChannelCreated();
+    MCNAPI void OnTransportChannelCreated();
 
-    MCAPI void OnTransportReady();
+    MCNAPI void OnTransportReady();
 
-    MCAPI
+    MCNAPI
     SctpDataChannel(::webrtc::InternalDataChannelInit const&, ::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface>, ::std::string const&, bool, ::rtc::Thread*, ::rtc::Thread*);
 
-    MCAPI bool SendControlMessage(::rtc::CopyOnWriteBuffer const&);
+    MCNAPI bool SendControlMessage(::rtc::CopyOnWriteBuffer const&);
 
-    MCAPI ::webrtc::RTCError SendDataMessage(::webrtc::DataBuffer const&, bool);
+    MCNAPI ::webrtc::RTCError SendDataMessage(::webrtc::DataBuffer const&, bool);
 
-    MCAPI ::webrtc::RTCError SendImpl(::webrtc::DataBuffer);
+    MCNAPI ::webrtc::RTCError SendImpl(::webrtc::DataBuffer);
 
-    MCAPI void SetSctpSid_n(::webrtc::StreamId);
+    MCNAPI void SetSctpSid_n(::webrtc::StreamId);
 
-    MCAPI void SetState(::webrtc::DataChannelInterface::DataState);
+    MCNAPI void SetState(::webrtc::DataChannelInterface::DataState);
 
-    MCAPI void UpdateState();
+    MCNAPI void UpdateState();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::scoped_refptr<::webrtc::SctpDataChannel>
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::SctpDataChannel>
     Create(::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface>, ::std::string const&, bool, ::webrtc::InternalDataChannelInit const&, ::rtc::Thread*, ::rtc::Thread*);
 
-    MCAPI static ::webrtc::scoped_refptr<::webrtc::DataChannelInterface>
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::DataChannelInterface>
         CreateProxy(::webrtc::scoped_refptr<::webrtc::SctpDataChannel>, ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag>);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::webrtc::InternalDataChannelInit const&, ::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface>, ::std::string const&, bool, ::rtc::Thread*, ::rtc::Thread*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

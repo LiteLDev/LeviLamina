@@ -34,7 +34,6 @@ public:
 public:
     // prevent constructor by default
     ScriptItemEnchantmentComponent& operator=(ScriptItemEnchantmentComponent const&);
-    ScriptItemEnchantmentComponent(ScriptItemEnchantmentComponent const&);
     ScriptItemEnchantmentComponent();
 
 public:
@@ -47,7 +46,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<
+    MCNAPI ScriptItemEnchantmentComponent(::ScriptModuleMinecraft::ScriptItemEnchantmentComponent const&);
+
+    MCNAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError,
         ::ScriptModuleMinecraft::ScriptItemEnchantmentLevelOutOfBoundsError,
@@ -55,7 +56,7 @@ public:
         ::Scripting::Error>
     addEnchantment(::ScriptModuleMinecraft::ScriptItemEnchantmentInstance const& inst);
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError,
         ::ScriptModuleMinecraft::ScriptItemEnchantmentLevelOutOfBoundsError,
@@ -63,13 +64,13 @@ public:
         ::Scripting::Error>
     addEnchantments(::std::vector<::ScriptModuleMinecraft::ScriptItemEnchantmentInstance> const& enchants);
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         bool,
         ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError,
         ::ScriptModuleMinecraft::ScriptItemEnchantmentLevelOutOfBoundsError>
     canAddEnchantment(::ScriptModuleMinecraft::ScriptItemEnchantmentInstance const& inst);
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::std::optional<::ScriptModuleMinecraft::ScriptItemEnchantmentInstance>,
         ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError>
     getEnchantment(
@@ -79,19 +80,19 @@ public:
             ::std::string> enchantmentTypeOrId
     );
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::ScriptModuleMinecraft::ScriptItemEnchantmentInstance>>
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::ScriptModuleMinecraft::ScriptItemEnchantmentInstance>>
     getEnchantments(::Scripting::WeakLifetimeScope& scope) const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::Enchant::Slot>> getSlots() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::Enchant::Slot>> getSlots() const;
 
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError>
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError>
     hasEnchantment(::std::variant<
                    ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>,
                    ::std::string> enchantmentTypeOrId) const;
 
-    MCAPI ::Scripting::Result<void> removeAllEnchantments();
+    MCNAPI ::Scripting::Result<void> removeAllEnchantments();
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError, ::Scripting::Error>
     removeEnchantment(::std::variant<
                       ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>,
                       ::std::string> enchantmentTypeOrId);
@@ -100,8 +101,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentComponent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentComponent>
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemEnchantmentComponent const&);
     // NOLINTEND
 
 public:
@@ -113,7 +120,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

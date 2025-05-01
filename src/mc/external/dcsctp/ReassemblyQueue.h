@@ -23,45 +23,45 @@ class ReassemblyQueue {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Add(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::dcsctp::Data);
+    MCNAPI void Add(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::dcsctp::Data);
 
-    MCAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState&);
+    MCNAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState&);
 
-    MCAPI void AddReassembledMessage(
+    MCNAPI void AddReassembledMessage(
         ::rtc::ArrayView<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const>,
         ::dcsctp::DcSctpMessage
     );
 
-    MCAPI void
+    MCNAPI void
         EnterDeferredReset(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>);
 
-    MCAPI ::std::vector<::dcsctp::DcSctpMessage> FlushMessages();
+    MCNAPI ::std::vector<::dcsctp::DcSctpMessage> FlushMessages();
 
-    MCAPI ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const;
+    MCNAPI ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const;
 
-    MCAPI void
+    MCNAPI void
         HandleForwardTsn(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::rtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const>);
 
-    MCAPI ReassemblyQueue(::std::string_view, uint64, bool);
+    MCNAPI ReassemblyQueue(::std::string_view, uint64, bool);
 
-    MCAPI void
+    MCNAPI void
         ResetStreamsAndLeaveDeferredReset(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>);
 
-    MCAPI void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const&);
+    MCNAPI void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const&);
 
-    MCAPI ~ReassemblyQueue();
+    MCNAPI ~ReassemblyQueue();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view, uint64, bool);
+    MCNAPI void* $ctor(::std::string_view, uint64, bool);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

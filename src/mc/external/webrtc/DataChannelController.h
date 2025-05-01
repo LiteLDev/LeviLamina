@@ -27,52 +27,52 @@ class DataChannelController {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AllocateSctpSids(::rtc::SSLRole);
+    MCNAPI void AllocateSctpSids(::rtc::SSLRole);
 
-    MCAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::SctpDataChannel>>
+    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::SctpDataChannel>>
     CreateDataChannel(::std::string const&, ::webrtc::InternalDataChannelInit&);
 
-    MCAPI ::std::vector<::webrtc::DataChannelStats> GetDataChannelStats() const;
+    MCNAPI ::std::vector<::webrtc::DataChannelStats> GetDataChannelStats() const;
 
-    MCAPI bool HandleOpenMessage_n(int, ::webrtc::DataMessageType, ::rtc::CopyOnWriteBuffer const&);
+    MCNAPI bool HandleOpenMessage_n(int, ::webrtc::DataMessageType, ::rtc::CopyOnWriteBuffer const&);
 
-    MCAPI bool HasDataChannels() const;
+    MCNAPI bool HasDataChannels() const;
 
-    MCAPI bool HasUsedDataChannels() const;
+    MCNAPI bool HasUsedDataChannels() const;
 
-    MCAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::DataChannelInterface>>
+    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::DataChannelInterface>>
     InternalCreateDataChannelWithProxy(::std::string const&, ::webrtc::InternalDataChannelInit const&);
 
-    MCAPI void NotifyDataChannelsOfTransportCreated();
+    MCNAPI void NotifyDataChannelsOfTransportCreated();
 
-    MCAPI void OnDataChannelOpenMessage(::webrtc::scoped_refptr<::webrtc::SctpDataChannel>, bool);
+    MCNAPI void OnDataChannelOpenMessage(::webrtc::scoped_refptr<::webrtc::SctpDataChannel>, bool);
 
-    MCAPI void OnSctpDataChannelClosed(::webrtc::SctpDataChannel*);
+    MCNAPI void OnSctpDataChannelClosed(::webrtc::SctpDataChannel*);
 
-    MCAPI void OnTransportChanged(::webrtc::DataChannelTransportInterface*);
+    MCNAPI void OnTransportChanged(::webrtc::DataChannelTransportInterface*);
 
-    MCAPI void PrepareForShutdown();
+    MCNAPI void PrepareForShutdown();
 
-    MCAPI ::webrtc::RTCError
+    MCNAPI ::webrtc::RTCError
     ReserveOrAllocateSid(::std::optional<::webrtc::StreamId>&, ::std::optional<::rtc::SSLRole>);
 
-    MCAPI void SetupDataChannelTransport_n(::webrtc::DataChannelTransportInterface*);
+    MCNAPI void SetupDataChannelTransport_n(::webrtc::DataChannelTransportInterface*);
 
-    MCAPI void TeardownDataChannelTransport_n(::webrtc::RTCError);
+    MCNAPI void TeardownDataChannelTransport_n(::webrtc::RTCError);
 
-    MCAPI ::rtc::Thread* network_thread() const;
+    MCNAPI ::rtc::Thread* network_thread() const;
 
-    MCAPI void set_data_channel_transport(::webrtc::DataChannelTransportInterface*);
+    MCNAPI void set_data_channel_transport(::webrtc::DataChannelTransportInterface*);
 
-    MCAPI ::rtc::Thread* signaling_thread() const;
+    MCNAPI ::rtc::Thread* signaling_thread() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForDataChannelSink();
+    MCNAPI static void** $vftableForDataChannelSink();
 
-    MCAPI static void** $vftableForSctpDataChannelControllerInterface();
+    MCNAPI static void** $vftableForSctpDataChannelControllerInterface();
     // NOLINTEND
 };
 

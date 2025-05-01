@@ -61,22 +61,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::EventResult $onLevelInitialized(::Level& level);
+    MCNAPI ::EventResult $onLevelInitialized(::Level& level);
 
-    MCFOLD ::EventResult $onLevelAddedPlayer(::Player& player);
+    MCNAPI ::EventResult $onLevelAddedPlayer(::Player& player);
 
-    MCFOLD ::EventResult $onLevelRemovedPlayer(::Player&);
+    MCNAPI ::EventResult $onLevelRemovedPlayer(::Player&);
 
-    MCFOLD ::EventResult $onLevelRemovedActor(::Actor& actor);
+    MCNAPI ::EventResult $onLevelRemovedActor(::Actor& actor);
 
-    MCFOLD ::EventResult $onLevelTick(::Level&);
+    MCNAPI ::EventResult $onLevelTick(::Level&);
 
-    MCFOLD ::EventResult $onLevelTickStart(::Level&);
+    MCNAPI ::EventResult $onLevelTickStart(::Level&);
 
-    MCFOLD ::EventResult $onLevelTickEnd(::Level&);
+    MCNAPI ::EventResult $onLevelTickEnd(::Level&);
 
-    MCFOLD ::EventResult $onLevelWeatherChange(::std::string const&, bool, bool, bool, bool);
+    MCNAPI ::EventResult $onLevelWeatherChange(::std::string const&, bool, bool, bool, bool);
 
-    MCFOLD ::EventResult $onEvent(::LevelNotificationEvent const& event);
+    MCNAPI ::EventResult $onEvent(::LevelNotificationEvent const& event);
     // NOLINTEND
 };

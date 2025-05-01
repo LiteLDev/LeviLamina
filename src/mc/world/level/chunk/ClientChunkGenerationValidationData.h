@@ -4,16 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/util/Bounds.h"
+#include "mc/world/level/ChunkPos.h"
+#include "mc/world/level/chunk/ClientChunkGenerationDifferenceData.h"
+#include "mc/world/level/chunk/game_lighting_checker/CheckAreaForLightingResults.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPalette;
-class ChunkPos;
 class ChunkSource;
 class SubChunkPos;
-struct Bounds;
-struct ClientChunkGenerationDifferenceData;
-namespace GameLightingChecker { struct CheckAreaForLightingResults; }
 // clang-format on
 
 struct ClientChunkGenerationValidationData : public ::Bedrock::EnableNonOwnerReferences {
@@ -62,7 +62,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     _captureChunkData(::std::map<::ChunkPos, ::std::vector<::std::string>>& data, ::ChunkSource& chunkSource);
     // NOLINTEND
 

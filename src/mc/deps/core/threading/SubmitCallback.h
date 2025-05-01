@@ -15,8 +15,8 @@ struct SubmitCallback {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI long Register(void*, void (*)(void*, ::XTaskQueueObject*, ::XTaskQueuePort), ::XTaskQueueRegistrationToken*);
+    MCNAPI long Register(void*, void (*)(void*, ::XTaskQueueObject*, ::XTaskQueuePort), ::XTaskQueueRegistrationToken*);
 
-    MCAPI void Unregister(::XTaskQueueRegistrationToken);
+    MCNAPI void Unregister(::XTaskQueueRegistrationToken);
     // NOLINTEND
 };

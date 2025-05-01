@@ -40,46 +40,46 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter const&);
+    MCNAPI ScriptActorEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter const&);
 
-    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter&
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter const&);
 
-    MCAPI void process();
+    MCNAPI void process();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter>
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter>
     bind();
 
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter>
     bindV010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilterData const& filterData);
+    MCNAPI bool $shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilterData const& filterData);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

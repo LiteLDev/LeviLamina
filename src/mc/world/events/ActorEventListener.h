@@ -92,59 +92,59 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::EventResult $onEvent(::ActorNotificationEvent const& event);
+    MCNAPI ::EventResult $onEvent(::ActorNotificationEvent const& event);
 
-    MCFOLD ::EventResult $onActorDefinitionEvent(
+    MCNAPI ::EventResult $onActorDefinitionEvent(
         ::Actor&                                  actor,
         ::std::string const&                      event,
         ::std::vector<::ActorDefinitionModifier>& modifiers
     );
 
-    MCFOLD ::EventResult $onActorTick(::Actor& actor);
+    MCNAPI ::EventResult $onActorTick(::Actor& actor);
 
-    MCFOLD ::EventResult $onActorSneakChanged(::Actor& actor, bool isSneaking);
+    MCNAPI ::EventResult $onActorSneakChanged(::Actor& actor, bool isSneaking);
 
-    MCFOLD ::EventResult $onActorStartRiding(::Actor& actor, ::Actor& vehicle);
+    MCNAPI ::EventResult $onActorStartRiding(::Actor& actor, ::Actor& vehicle);
 
-    MCFOLD ::EventResult
+    MCNAPI ::EventResult
     $onActorStopRiding(::Actor& actor, bool exitFromPassenger, bool actorIsBeingDestroyed, bool switchingVehicles);
 
-    MCFOLD ::EventResult $onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod);
+    MCNAPI ::EventResult $onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod);
 
-    MCFOLD ::EventResult $onActorCreationAttemptFailed(::Actor& actor, ::std::string_view message);
+    MCNAPI ::EventResult $onActorCreationAttemptFailed(::Actor& actor, ::std::string_view message);
 
-    MCFOLD ::EventResult $onActorTeleported(::Actor& actor);
+    MCNAPI ::EventResult $onActorTeleported(::Actor& actor);
 
-    MCFOLD ::EventResult $onActorAttackedActor(::Actor& actor, ::Actor& target);
+    MCNAPI ::EventResult $onActorAttackedActor(::Actor& actor, ::Actor& target);
 
-    MCFOLD ::EventResult $onActorMobInteraction(
+    MCNAPI ::EventResult $onActorMobInteraction(
         ::Actor&                             actor,
         ::MinecraftEventing::InteractionType interactionType,
         ::ActorType                          interactedActorType
     );
 
-    MCFOLD ::EventResult $onActorTargetAcquired(::Actor& actor, ::Actor& target);
+    MCNAPI ::EventResult $onActorTargetAcquired(::Actor& actor, ::Actor& target);
 
-    MCFOLD ::EventResult $onPlayerAuthInputReceived(::Player&);
+    MCNAPI ::EventResult $onPlayerAuthInputReceived(::Player&);
 
-    MCFOLD ::EventResult $onPlayerAuthInputApplied(::Player&);
+    MCNAPI ::EventResult $onPlayerAuthInputApplied(::Player&);
 
-    MCFOLD ::EventResult $onPlayerAIStepBegin(::Player&);
+    MCNAPI ::EventResult $onPlayerAIStepBegin(::Player&);
 
-    MCFOLD ::EventResult $onPlayerAIStepEnd(::Player&);
+    MCNAPI ::EventResult $onPlayerAIStepEnd(::Player&);
 
-    MCFOLD ::EventResult $onActorMovementRewindCorrected(::Actor&, uint64, ::ReplayCorrectionResult);
+    MCNAPI ::EventResult $onActorMovementRewindCorrected(::Actor&, uint64, ::ReplayCorrectionResult);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

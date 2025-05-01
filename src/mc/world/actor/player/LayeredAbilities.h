@@ -5,14 +5,14 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/PlayerPermissionLevel.h"
+#include "mc/world/actor/player/Abilities.h"
 #include "mc/world/actor/player/AbilitiesIndex.h"
 #include "mc/world/actor/player/Ability.h"
+#include "mc/world/actor/player/PermissionsHandler.h"
 
 // auto generated forward declare list
 // clang-format off
-class Abilities;
 class Ability;
-class PermissionsHandler;
 // clang-format on
 
 class LayeredAbilities {
@@ -32,14 +32,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LayeredAbilities();
+    MCNAPI LayeredAbilities();
 
-    MCAPI void forEachAbility(
+    MCNAPI void forEachAbility(
         ::std::function<void(::Ability const&, ::AbilitiesIndex)> const& callback,
         ::Ability::Options                                               requiredOptions
     ) const;
 
-    MCAPI void setPlayerPermissions(::PlayerPermissionLevel permissions);
+    MCNAPI void setPlayerPermissions(::PlayerPermissionLevel permissions);
     // NOLINTEND
 
 public:
@@ -51,6 +51,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

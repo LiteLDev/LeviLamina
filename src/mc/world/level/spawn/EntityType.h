@@ -3,11 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/actor/spawn_category/Type.h"
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
+class Block;
 // clang-format on
 
 namespace br::spawn {
@@ -27,13 +28,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~EntityType();
+    MCNAPI EntityType(::br::spawn::EntityType const&);
+
+    MCNAPI bool isBlockDangerous(::Block const& block) const;
+
+    MCNAPI ~EntityType();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::br::spawn::EntityType const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

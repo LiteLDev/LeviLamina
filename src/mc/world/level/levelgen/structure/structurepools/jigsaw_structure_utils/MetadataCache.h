@@ -28,23 +28,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MetadataCache(::StructurePoolElement const& element);
+    MCNAPI explicit MetadataCache(::StructurePoolElement const& element);
 
-    MCAPI ::Block const* getOrCreateBlockCache(uint64 index);
+    MCNAPI ::Block const* getOrCreateBlockCache(uint64 index);
 
-    MCAPI ~MetadataCache();
+    MCNAPI ~MetadataCache();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::StructurePoolElement const& element);
+    MCNAPI void* $ctor(::StructurePoolElement const& element);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

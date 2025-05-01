@@ -10,7 +10,7 @@
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct ModuleBinding; }
-namespace Scripting { struct ModuleDescriptor; }
+namespace Scripting { struct ModuleDependency; }
 namespace Scripting { struct UUID; }
 namespace Scripting { struct Version; }
 // clang-format on
@@ -32,7 +32,8 @@ public:
         ::ll::UntypedStorage<8, 32> mUnkf72c40;
         ::ll::UntypedStorage<8, 40> mUnk8aa486;
         ::ll::UntypedStorage<8, 64> mUnk339eb2;
-        ::ll::UntypedStorage<8, 24> mUnk25c5a6;
+        ::ll::UntypedStorage<8, 24> mUnk179b59;
+        ::ll::UntypedStorage<1, 1>  mUnk6b9ccf;
         // NOLINTEND
 
     public:
@@ -44,45 +45,47 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ModuleData(
-            ::std::string const&   _alias,
+        MCNAPI ModuleData(
+            ::std::string          _alias,
             ::Scripting::Version&& _version,
             ::std::function<::std::optional<
                 ::Scripting::
                     ModuleBinding>(::Scripting::ModuleBindingBuilder&, ::std::optional<::Scripting::ContextConfig> const&)>&&
                                                            _moduleCreatorFn,
-            ::std::vector<::Scripting::ModuleDescriptor>&& _dependencies
+            ::std::vector<::Scripting::ModuleDependency>&& _dependencies,
+            bool                                           _importRestricted
         );
 
-        MCAPI ~ModuleData();
+        MCNAPI ~ModuleData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
-            ::std::string const&   _alias,
+        MCNAPI void* $ctor(
+            ::std::string          _alias,
             ::Scripting::Version&& _version,
             ::std::function<::std::optional<
                 ::Scripting::
                     ModuleBinding>(::Scripting::ModuleBindingBuilder&, ::std::optional<::Scripting::ContextConfig> const&)>&&
                                                            _moduleCreatorFn,
-            ::std::vector<::Scripting::ModuleDescriptor>&& _dependencies
+            ::std::vector<::Scripting::ModuleDependency>&& _dependencies,
+            bool                                           _importRestricted
         );
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk3f0c4d;
-    ::ll::UntypedStorage<8, 32> mUnk518bdc;
+    ::ll::UntypedStorage<8, 32> mUnk474121;
+    ::ll::UntypedStorage<8, 32> mUnk399359;
     ::ll::UntypedStorage<8, 24> mUnkafd931;
     // NOLINTEND
 
@@ -111,7 +114,7 @@ public:
     virtual ::std::vector<::Scripting::Version> getSupportedVersions() const /*override*/;
 
     // vIndex: 5
-    virtual ::std::vector<::Scripting::ModuleDescriptor> getDependencies(::Scripting::Version version) const
+    virtual ::std::vector<::Scripting::ModuleDependency> getDependencies(::Scripting::Version version) const
         /*override*/;
 
     // vIndex: 6
@@ -124,24 +127,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GenericModuleBindingFactory(::std::string name, ::Scripting::UUID uuid);
+    MCNAPI GenericModuleBindingFactory(::std::string moduleName, ::Scripting::UUID moduleUUID);
 
-    MCAPI void _addRuntimeDependency(
-        ::std::vector<::Scripting::ModuleDescriptor>& dependencies,
+    MCNAPI void _addRuntimeDependency(
+        ::std::vector<::Scripting::ModuleDependency>& dependencies,
         ::Scripting::Version                          runtimeVersion
     );
 
-    MCAPI void addVersionedModuleBinding(
+    MCNAPI void addVersionedModuleBinding(
         ::Scripting::Version version,
         ::std::function<::std::optional<
             ::Scripting::
                 ModuleBinding>(::Scripting::ModuleBindingBuilder&, ::std::optional<::Scripting::ContextConfig> const&)>
                                                      moduleCreatorFn,
         ::Scripting::Version                         runtimeVersion,
-        ::std::vector<::Scripting::ModuleDescriptor> dependencies
+        ::std::vector<::Scripting::ModuleDependency> dependencies,
+        bool                                         importRestricted
     );
 
-    MCAPI void addVersionedModuleBinding(
+    MCNAPI void addVersionedModuleBinding(
         ::std::string        alias,
         ::Scripting::Version version,
         ::std::function<::std::optional<
@@ -149,43 +153,44 @@ public:
                 ModuleBinding>(::Scripting::ModuleBindingBuilder&, ::std::optional<::Scripting::ContextConfig> const&)>
                                                      moduleCreatorFn,
         ::Scripting::Version                         runtimeVersion,
-        ::std::vector<::Scripting::ModuleDescriptor> dependencies
+        ::std::vector<::Scripting::ModuleDependency> dependencies,
+        bool                                         importRestricted
     );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string name, ::Scripting::UUID uuid);
+    MCNAPI void* $ctor(::std::string moduleName, ::Scripting::UUID moduleUUID);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCAPI ::Scripting::UUID $getUUID() const;
+    MCNAPI ::Scripting::UUID $getUUID() const;
 
-    MCAPI bool $hasAlias(::std::string const& alias) const;
+    MCNAPI bool $hasAlias(::std::string const& alias) const;
 
-    MCAPI ::std::vector<::Scripting::Version> $getSupportedVersions() const;
+    MCNAPI ::std::vector<::Scripting::Version> $getSupportedVersions() const;
 
-    MCAPI ::std::vector<::Scripting::ModuleDescriptor> $getDependencies(::Scripting::Version version) const;
+    MCNAPI ::std::vector<::Scripting::ModuleDependency> $getDependencies(::Scripting::Version version) const;
 
-    MCAPI ::std::optional<::Scripting::ModuleBinding>
+    MCNAPI ::std::optional<::Scripting::ModuleBinding>
     $createModuleBinding(::Scripting::Version version, ::std::optional<::Scripting::ContextConfig> const& config);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -18,26 +18,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TrimMaterial(::TrimMaterial&&);
+    MCNAPI TrimMaterial(::TrimMaterial&&);
 
-    MCAPI TrimMaterial(::TrimMaterial const&);
+    MCNAPI TrimMaterial(::TrimMaterial const&);
 
-    MCAPI ::TrimMaterial& operator=(::TrimMaterial const&);
+    MCNAPI ::TrimMaterial& operator=(::TrimMaterial const&);
 
-    MCAPI ~TrimMaterial();
+    MCNAPI ~TrimMaterial();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TrimMaterial&&);
+    MCNAPI void* $ctor(::TrimMaterial&&);
 
-    MCAPI void* $ctor(::TrimMaterial const&);
+    MCNAPI void* $ctor(::TrimMaterial const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

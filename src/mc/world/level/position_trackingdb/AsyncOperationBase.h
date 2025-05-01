@@ -76,16 +76,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $tick(
+    MCNAPI bool $tick(
         ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
         ::PositionTrackingDB::TrackingRecord&                           record
     );
 
-    MCFOLD bool $isAsync() const;
+    MCNAPI bool $isAsync() const;
 
-    MCAPI bool $isComplete() const;
+    MCNAPI bool $isComplete() const;
 
-    MCAPI bool
+    MCNAPI bool
     $_quit(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr, ::PositionTrackingDB::TrackingRecord&);
     // NOLINTEND
 };

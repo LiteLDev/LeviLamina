@@ -37,12 +37,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
+    MCNAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

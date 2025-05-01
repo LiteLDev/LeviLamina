@@ -21,17 +21,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::ProbabilityBlockPaletteItem& operator=(::Editor::ProbabilityBlockPaletteItem&&);
+    MCNAPI ::Editor::ProbabilityBlockPaletteItem& operator=(::Editor::ProbabilityBlockPaletteItem&&);
 
-    MCAPI bool operator==(::Editor::ProbabilityBlockPaletteItem const& other) const;
+    MCNAPI bool operator==(::Editor::ProbabilityBlockPaletteItem const& other) const;
 
-    MCAPI ~ProbabilityBlockPaletteItem();
+    MCNAPI ~ProbabilityBlockPaletteItem();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

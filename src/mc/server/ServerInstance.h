@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/AppPlatformListener.h"
+#include "mc/deps/application/LowMemorySeverity.h"
 #include "mc/deps/core/file/LevelStorageState.h"
 #include "mc/deps/core/file/StorageAreaStateListener.h"
 #include "mc/deps/core/threading/SPSCQueue.h"
@@ -11,6 +12,7 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/ServiceRegistrationToken.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
+#include "mc/platform/threading/Mutex.h"
 #include "mc/world/GameCallbacks.h"
 #include "mc/world/level/ForceBlockNetworkIdsAreHashes.h"
 
@@ -50,7 +52,6 @@ struct NetworkServerConfig;
 struct NetworkSettingOptions;
 struct PlayerMovementSettings;
 struct ScriptSettings;
-namespace Bedrock::Threading { class Mutex; }
 namespace Core { class FilePathManager; }
 namespace Core { class FileStorageArea; }
 namespace Editor { class IEditorManager; }
@@ -127,7 +128,7 @@ public:
     virtual ~ServerInstance() /*override*/;
 
     // vIndex: 19
-    virtual void onLowMemory() /*override*/;
+    virtual void onLowMemory(::LowMemorySeverity) /*override*/;
 
     // vIndex: 1
     virtual void onLevelCorrupt() /*override*/;
@@ -288,8 +289,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onLowMemory();
-
     MCAPI void $onLevelCorrupt();
 
     MCAPI void $onCriticalScriptError(char const* clientDisconnectMessage, char const* logMessage);

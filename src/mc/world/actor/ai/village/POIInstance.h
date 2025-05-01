@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/actor/ai/village/POIType.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class AABB;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
-class HashedString;
 class Random;
 class Village;
 // clang-format on
@@ -38,7 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI POIInstance(
+    MCNAPI POIInstance(
         ::BlockPos const& pos,
         bool              useBoundingBox,
         ::std::string     name,
@@ -51,19 +51,19 @@ public:
         ::std::string     endEvent
     );
 
-    MCAPI ::AABB getSecondBlockFullAABB(::BlockSource& region);
+    MCNAPI ::AABB getSecondBlockFullAABB(::BlockSource& region);
 
-    MCAPI void save(::CompoundTag& tag) const;
+    MCNAPI void save(::CompoundTag& tag) const;
 
-    MCAPI void trySpawnParticles(::BlockSource& region, ::Random& random, int particleType) const;
+    MCNAPI void trySpawnParticles(::BlockSource& region, ::Random& random, int particleType) const;
 
-    MCAPI ~POIInstance();
+    MCNAPI ~POIInstance();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::BlockPos const& pos,
         bool              useBoundingBox,
         ::std::string     name,
@@ -80,6 +80,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

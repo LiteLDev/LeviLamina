@@ -34,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FilterParamDefinition(
+    MCNAPI FilterParamDefinition(
         ::FilterParamType        type,
         ::FilterParamRequirement requirement,
         ::std::string            description,
@@ -42,7 +42,7 @@ public:
         ::FilterStringMap        stringMap
     );
 
-    MCAPI FilterParamDefinition(
+    MCNAPI FilterParamDefinition(
         ::FilterParamType        requirement,
         ::FilterParamRequirement description,
         ::std::string            def,
@@ -51,15 +51,15 @@ public:
         ::FilterStringMap        opt
     );
 
-    MCAPI ::FilterParamDefinition& operator=(::FilterParamDefinition&&);
+    MCNAPI ::FilterParamDefinition& operator=(::FilterParamDefinition&&);
 
-    MCAPI ~FilterParamDefinition();
+    MCNAPI ~FilterParamDefinition();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::FilterParamType        type,
         ::FilterParamRequirement requirement,
         ::std::string            description,
@@ -67,7 +67,7 @@ public:
         ::FilterStringMap        stringMap
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::FilterParamType        requirement,
         ::FilterParamRequirement description,
         ::std::string            def,
@@ -80,6 +80,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

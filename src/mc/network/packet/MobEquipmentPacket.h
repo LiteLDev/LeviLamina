@@ -3,17 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorRuntimeID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/world/ContainerID.h"
+#include "mc/world/item/NetworkItemStackDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActorRuntimeID;
 class BinaryStream;
 class ItemStack;
-class NetworkItemStackDescriptor;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -58,9 +58,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MobEquipmentPacket(::MobEquipmentPacket&&);
+    MCNAPI MobEquipmentPacket(::MobEquipmentPacket&&);
 
-    MCAPI MobEquipmentPacket(
+    MCNAPI MobEquipmentPacket(
         ::ActorRuntimeID                    runtimeId,
         ::NetworkItemStackDescriptor const& item,
         int                                 slot,
@@ -68,7 +68,7 @@ public:
         ::ContainerID                       containerId
     );
 
-    MCAPI MobEquipmentPacket(
+    MCNAPI MobEquipmentPacket(
         ::ActorRuntimeID   runtimeId,
         ::ItemStack const& item,
         int                slot,
@@ -76,15 +76,15 @@ public:
         ::ContainerID      containerId
     );
 
-    MCAPI void _convertFromBytes();
+    MCNAPI void _convertFromBytes();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MobEquipmentPacket&&);
+    MCNAPI void* $ctor(::MobEquipmentPacket&&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorRuntimeID                    runtimeId,
         ::NetworkItemStackDescriptor const& item,
         int                                 slot,
@@ -92,31 +92,31 @@ public:
         ::ContainerID                       containerId
     );
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::ActorRuntimeID runtimeId, ::ItemStack const& item, int slot, int selectedSlot, ::ContainerID containerId);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MinecraftPacketIds $getId() const;
+    MCNAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCAPI void $write(::BinaryStream& stream) const;
+    MCNAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

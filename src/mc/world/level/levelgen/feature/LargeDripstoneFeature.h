@@ -41,12 +41,12 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(
+        MCNAPI bool moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(
             ::IBlockWorldGenAPI&                   target,
             ::DripstoneUtils::WindOffsetter const& wind
         );
 
-        MCAPI void
+        MCNAPI void
         placeBlocks(::IBlockWorldGenAPI& target, ::Random& random, ::DripstoneUtils::WindOffsetter const& wind) const;
         // NOLINTEND
     };
@@ -70,12 +70,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

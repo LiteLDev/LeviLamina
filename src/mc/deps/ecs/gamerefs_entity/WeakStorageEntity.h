@@ -5,11 +5,11 @@
 #include "mc/deps/ecs/gamerefs_entity/StackResultStorageEntity.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/EntityId.h"
 #include "mc/deps/game_refs/WeakRef.h"
 
 // auto generated forward declare list
 // clang-format off
-class EntityId;
 class EntityRegistry;
 // clang-format on
 

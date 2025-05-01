@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/actor/ActorCategory.h"
 #include "mc/world/actor/ActorDamageByActorSource.h"
 #include "mc/world/actor/ActorType.h"
@@ -12,7 +13,6 @@
 // clang-format off
 class Actor;
 class ActorDamageSource;
-struct ActorUniqueID;
 // clang-format on
 
 class ActorDamageByChildActorSource : public ::ActorDamageByActorSource {
@@ -62,7 +62,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDamageByChildActorSource(
+    MCNAPI ActorDamageByChildActorSource(
         ::Actor const&                          childActor,
         ::Actor const&                          actor,
         ::SharedTypes::Legacy::ActorDamageCause cause
@@ -72,39 +72,39 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor const& childActor, ::Actor const& actor, ::SharedTypes::Legacy::ActorDamageCause cause);
+    MCNAPI void* $ctor(::Actor const& childActor, ::Actor const& actor, ::SharedTypes::Legacy::ActorDamageCause cause);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isChildEntitySource() const;
+    MCNAPI bool $isChildEntitySource() const;
 
-    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
+    MCNAPI ::std::pair<::std::string, ::std::vector<::std::string>>
     $getDeathMessage(::std::string deadName, ::Actor* dead) const;
 
-    MCFOLD bool $getDamagingEntityIsCreative() const;
+    MCNAPI bool $getDamagingEntityIsCreative() const;
 
-    MCFOLD bool $getDamagingEntityIsWorldBuilder() const;
+    MCNAPI bool $getDamagingEntityIsWorldBuilder() const;
 
-    MCAPI ::ActorUniqueID $getDamagingEntityUniqueID() const;
+    MCNAPI ::ActorUniqueID $getDamagingEntityUniqueID() const;
 
-    MCFOLD ::ActorType $getDamagingEntityType() const;
+    MCNAPI ::ActorType $getDamagingEntityType() const;
 
-    MCAPI ::ActorCategory $getDamagingEntityCategories() const;
+    MCNAPI ::ActorCategory $getDamagingEntityCategories() const;
 
-    MCAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
+    MCNAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

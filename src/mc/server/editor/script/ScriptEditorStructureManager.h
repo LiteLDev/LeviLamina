@@ -37,25 +37,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptEditorStructureManager(::gsl::not_null<::Level*> level, ::Scripting::WeakLifetimeScope& scope);
+    MCNAPI ScriptEditorStructureManager(::gsl::not_null<::Level*> level, ::Scripting::WeakLifetimeScope& scope);
 
-    MCAPI bool
+    MCNAPI bool
     _containTag(::std::vector<::std::string> const& firstTags, ::std::vector<::std::string> const& secondTags);
 
-    MCAPI ::Scripting::Result_deprecated<::Editor::ScriptModule::ScriptEditorStructure> createFromClipboardItem(
+    MCNAPI ::Scripting::Result_deprecated<::Editor::ScriptModule::ScriptEditorStructure> createFromClipboardItem(
         ::Scripting::DependencyLocator&              locator,
         ::Editor::ScriptModule::ScriptClipboardItem& item,
         ::std::string                                structureName
     );
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getExistingTags();
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getExistingTags();
 
-    MCAPI ::Scripting::Result_deprecated<::Editor::ScriptModule::ScriptEditorStructure>
+    MCNAPI ::Scripting::Result_deprecated<::Editor::ScriptModule::ScriptEditorStructure>
     loadStructure(::Scripting::DependencyLocator& locator, ::std::string storageLocation, ::std::string structureName);
 
-    MCAPI ::Scripting::Result<void> saveStructure(::Editor::ScriptModule::ScriptEditorStructure const& scriptStructure);
+    MCNAPI ::Scripting::Result<void> saveStructure(::Editor::ScriptModule::ScriptEditorStructure const& scriptStructure
+    );
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::Editor::ScriptModule::ScriptEditorStructure>> searchStructures(
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::Editor::ScriptModule::ScriptEditorStructure>>
+    searchStructures(
         ::Scripting::DependencyLocator&                                             locator,
         ::std::optional<::Editor::ScriptModule::ScriptEditorStructureSearchOptions> options
     );
@@ -64,13 +66,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptEditorStructureManager> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptEditorStructureManager> bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::gsl::not_null<::Level*> level, ::Scripting::WeakLifetimeScope& scope);
+    MCNAPI void* $ctor(::gsl::not_null<::Level*> level, ::Scripting::WeakLifetimeScope& scope);
     // NOLINTEND
 };
 

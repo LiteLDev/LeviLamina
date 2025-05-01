@@ -61,20 +61,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     $onSignalReceive(::BlockSource& region, ::BlockPos const&, ::GameEvent const& gameEvent, ::Actor* source, float distance, uint listenerRange, ::Actor*);
 
-    MCAPI bool
+    MCNAPI bool
     $shouldListen(::BlockSource& region, ::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext);
 
-    MCFOLD void $onSerializableDataChanged(::BlockSource& region);
+    MCNAPI void $onSerializableDataChanged(::BlockSource& region);
 
-    MCFOLD bool $canReceiveOnlyIfAdjacentChunksAreTicking() const;
+    MCNAPI bool $canReceiveOnlyIfAdjacentChunksAreTicking() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

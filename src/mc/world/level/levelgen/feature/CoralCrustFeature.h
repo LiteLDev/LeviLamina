@@ -28,13 +28,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canOverwrite(::BlockSource const& region, ::BlockPos const& pos) const;
+    MCNAPI bool _canOverwrite(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    MCAPI ::BlockPos _getCropOffsetFromRot(int rot, int type) const;
+    MCNAPI ::BlockPos _getCropOffsetFromRot(int rot, int type) const;
 
-    MCAPI ::BlockPos _getOffsetFromRot(int rot, int type) const;
+    MCNAPI ::BlockPos _getOffsetFromRot(int rot, int type) const;
 
-    MCAPI void _placeCoral(
+    MCNAPI void _placeCoral(
         ::BlockSource&                                 region,
         ::BlockPos const&                              pos,
         ::Random&                                      random,
@@ -43,7 +43,7 @@ public:
         int                                            color
     ) const;
 
-    MCAPI void _placeCoralBase(
+    MCNAPI void _placeCoralBase(
         ::BlockSource&             region,
         ::BlockPos const&          pos,
         ::Random&                  random,
@@ -51,9 +51,9 @@ public:
         ::LegacyStructureSettings& settings
     ) const;
 
-    MCFOLD void _placeSideDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random, uchar dir) const;
+    MCNAPI void _placeSideDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random, uchar dir) const;
 
-    MCFOLD void _placeTopDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI void _placeTopDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:
@@ -65,12 +65,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

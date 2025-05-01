@@ -7,9 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
 namespace cereal { struct ReflectionCtx; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Network {
@@ -33,50 +31,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WidgetComponentBasePayload(
-        ::mce::UUID const&   serviceId,
-        ::mce::UUID const&   groupId,
-        ::mce::UUID const&   widgetId,
-        ::mce::UUID const&   componentId,
-        ::std::string const& componentName,
-        ::Vec3 const&        pos,
-        bool                 visible,
-        bool                 lockToSurface
-    );
+    MCNAPI ::Editor::Network::WidgetComponentBasePayload& operator=(::Editor::Network::WidgetComponentBasePayload&&);
 
-    MCAPI ::Editor::Network::WidgetComponentBasePayload& operator=(::Editor::Network::WidgetComponentBasePayload&&);
-
-    MCAPI ::Editor::Network::WidgetComponentBasePayload&
+    MCNAPI ::Editor::Network::WidgetComponentBasePayload&
     operator=(::Editor::Network::WidgetComponentBasePayload const&);
 
-    MCAPI ~WidgetComponentBasePayload();
+    MCNAPI ~WidgetComponentBasePayload();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::mce::UUID const&   serviceId,
-        ::mce::UUID const&   groupId,
-        ::mce::UUID const&   widgetId,
-        ::mce::UUID const&   componentId,
-        ::std::string const& componentName,
-        ::Vec3 const&        pos,
-        bool                 visible,
-        bool                 lockToSurface
-    );
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

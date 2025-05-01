@@ -21,20 +21,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyItemTriggerHandlerConfig(::LegacyItemTriggerHandlerConfig const&);
+    MCNAPI LegacyItemTriggerHandlerConfig(::LegacyItemTriggerHandlerConfig const&);
 
-    MCAPI ~LegacyItemTriggerHandlerConfig();
+    MCNAPI ~LegacyItemTriggerHandlerConfig();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LegacyItemTriggerHandlerConfig const&);
+    MCNAPI void* $ctor(::LegacyItemTriggerHandlerConfig const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -49,19 +49,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reset();
+    MCNAPI void $reset();
 
-    MCAPI void $update(void const* data, uint size);
+    MCNAPI void $update(void const* data, uint size);
 
-    MCAPI void $final(uchar* result);
+    MCNAPI void $final(uchar* result);
 
-    MCAPI uint64 $resultSize() const;
+    MCNAPI uint64 $resultSize() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct FileChunkInfo;
-// clang-format on
+// auto generated inclusion list
+#include "mc/util/FileChunkInfo.h"
 
 struct FileChunk {
 public:

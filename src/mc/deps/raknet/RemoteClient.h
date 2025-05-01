@@ -24,23 +24,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RemoteClient();
+    MCNAPI RemoteClient();
 
-    MCAPI void SendOrBuffer(char const** data, uint const* lengths, int numParameters);
+    MCNAPI void SendOrBuffer(char const** data, uint const* lengths, int numParameters);
 
-    MCAPI ~RemoteClient();
+    MCNAPI ~RemoteClient();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

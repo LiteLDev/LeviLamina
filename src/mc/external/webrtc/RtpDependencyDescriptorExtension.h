@@ -14,10 +14,10 @@ class RtpDependencyDescriptorExtension {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static uint64
+    MCNAPI static uint64
     ValueSize(::webrtc::FrameDependencyStructure const&, ::std::bitset<32>, ::webrtc::DependencyDescriptor const&);
 
-    MCAPI static bool
+    MCNAPI static bool
     Write(::rtc::ArrayView<uchar>, ::webrtc::FrameDependencyStructure const&, ::std::bitset<32>, ::webrtc::DependencyDescriptor const&);
     // NOLINTEND
 };

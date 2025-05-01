@@ -44,9 +44,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChestContainerManagerModel(::ContainerID containerId, ::Player& player, ::ActorUniqueID uniqueID);
+    MCNAPI ChestContainerManagerModel(::ContainerID containerId, ::Player& player, ::ActorUniqueID uniqueID);
 
-    MCAPI ChestContainerManagerModel(
+    MCNAPI ChestContainerManagerModel(
         ::ContainerID     containerId,
         ::Player&         player,
         ::BlockPos const& blockPos,
@@ -57,9 +57,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::ActorUniqueID uniqueID);
+    MCNAPI void* $ctor(::ContainerID containerId, ::Player& player, ::ActorUniqueID uniqueID);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos, ::BlockActorType blockActorType);
     // NOLINTEND
 
@@ -72,14 +72,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isValid(float pickRange);
+    MCNAPI bool $isValid(float pickRange);
 
-    MCAPI ::ContainerScreenContext $_postInit();
+    MCNAPI ::ContainerScreenContext $_postInit();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

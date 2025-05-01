@@ -6,11 +6,13 @@
 #include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class BaseBlockLocationIterator;
 namespace ScriptModuleMinecraft { class ScriptBlockVolumeIterable; }
+namespace Scripting { struct EngineError; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -33,23 +35,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockLocationIterator(
+    MCNAPI ScriptBlockLocationIterator(
         ::std::unique_ptr<::BaseBlockLocationIterator> nativeIterator,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeIterable>
             strongTypedIterableHandle
     );
+
+    MCNAPI ::Scripting::Result<bool, ::Scripting::EngineError> isValid() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockLocationIterator> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockLocationIterator> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::BaseBlockLocationIterator> nativeIterator,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeIterable>
             strongTypedIterableHandle

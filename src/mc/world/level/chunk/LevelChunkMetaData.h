@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class CompoundTag;
-// clang-format on
+// auto generated inclusion list
+#include "mc/nbt/CompoundTag.h"
 
 class LevelChunkMetaData {
 public:
@@ -19,9 +17,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _recomputeHash() const;
+    MCNAPI void _recomputeHash() const;
 
-    MCAPI ~LevelChunkMetaData();
+    MCNAPI ~LevelChunkMetaData();
     // NOLINTEND
 
 public:
@@ -33,6 +31,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

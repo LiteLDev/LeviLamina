@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,25 +33,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addDropItem(::ItemDescriptor const& itemDescriptor);
+    MCNAPI void addDropItem(::ItemDescriptor const& itemDescriptor);
 
-    MCAPI void addFeedItem(::ActorDefinitionFeedItem const& feedItem);
+    MCNAPI void addFeedItem(::ActorDefinitionFeedItem const& feedItem);
 
-    MCAPI void addFeedItemByName(::std::string const& itemName);
+    MCNAPI void addFeedItemByName(::std::string const& itemName);
 
-    MCAPI ~AgeableDefinition();
+    MCNAPI ~AgeableDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AgeableDefinition>>& root);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

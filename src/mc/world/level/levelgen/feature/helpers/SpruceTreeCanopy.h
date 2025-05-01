@@ -56,7 +56,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $placeCanopy(
+    MCNAPI ::std::optional<::BlockPos> $placeCanopy(
         ::IBlockWorldGenAPI&             target,
         ::BlockPos const&                pos,
         ::Random&                        random,
@@ -69,6 +69,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

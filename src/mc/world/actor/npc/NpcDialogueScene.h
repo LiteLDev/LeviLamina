@@ -26,21 +26,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::NpcDialogueScene& operator=(::NpcDialogueScene&&);
+    MCNAPI ::NpcDialogueScene& operator=(::NpcDialogueScene&&);
 
-    MCAPI ~NpcDialogueScene();
+    MCNAPI ~NpcDialogueScene();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::NpcDialogueScene
+    MCNAPI static ::NpcDialogueScene
     parse(::Json::Value const& sceneNode, ::std::string const& fileName, int packCommandVersion);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

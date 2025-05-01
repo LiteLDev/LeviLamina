@@ -47,26 +47,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CollisionShapes(::CollisionShapes const&);
+    MCNAPI CollisionShapes(::CollisionShapes const&);
 
-    MCAPI ::std::pair<::BlockPos, ::Block const*> getBlockPosCurrentlyStandingOn(::AABB box) const;
+    MCNAPI ::std::pair<::BlockPos, ::Block const*> getBlockPosCurrentlyStandingOn(::AABB box) const;
 
-    MCAPI ::CollisionShapes& operator=(::CollisionShapes const&);
+    MCNAPI ::CollisionShapes& operator=(::CollisionShapes const&);
 
-    MCAPI ::CollisionShapes& operator=(::CollisionShapes&&);
+    MCNAPI ::CollisionShapes& operator=(::CollisionShapes&&);
 
-    MCAPI ~CollisionShapes();
+    MCNAPI ~CollisionShapes();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CollisionShapes const&);
+    MCNAPI void* $ctor(::CollisionShapes const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

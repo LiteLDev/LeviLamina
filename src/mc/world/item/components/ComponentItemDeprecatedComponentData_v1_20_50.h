@@ -20,29 +20,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemDeprecatedComponentData_v1_20_50(::ComponentItemDeprecatedComponentData_v1_20_50 const&);
+    MCNAPI ComponentItemDeprecatedComponentData_v1_20_50(::ComponentItemDeprecatedComponentData_v1_20_50 const&);
 
-    MCAPI ComponentItemDeprecatedComponentData_v1_20_50(::ComponentItemDeprecatedComponentData_v1_20_50&&);
+    MCNAPI ComponentItemDeprecatedComponentData_v1_20_50(::ComponentItemDeprecatedComponentData_v1_20_50&&);
 
-    MCAPI ::ComponentItemDeprecatedComponentData_v1_20_50&
+    MCNAPI ::ComponentItemDeprecatedComponentData_v1_20_50&
     operator=(::ComponentItemDeprecatedComponentData_v1_20_50 const&);
 
-    MCAPI ::ComponentItemDeprecatedComponentData_v1_20_50& operator=(::ComponentItemDeprecatedComponentData_v1_20_50&&);
+    MCNAPI ::ComponentItemDeprecatedComponentData_v1_20_50&
+    operator=(::ComponentItemDeprecatedComponentData_v1_20_50&&);
 
-    MCAPI ~ComponentItemDeprecatedComponentData_v1_20_50();
+    MCNAPI ~ComponentItemDeprecatedComponentData_v1_20_50();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ComponentItemDeprecatedComponentData_v1_20_50 const&);
+    MCNAPI void* $ctor(::ComponentItemDeprecatedComponentData_v1_20_50 const&);
 
-    MCAPI void* $ctor(::ComponentItemDeprecatedComponentData_v1_20_50&&);
+    MCNAPI void* $ctor(::ComponentItemDeprecatedComponentData_v1_20_50&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

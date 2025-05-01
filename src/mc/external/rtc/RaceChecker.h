@@ -8,17 +8,17 @@ class RaceChecker {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool Acquire() const;
+    MCNAPI bool Acquire() const;
 
-    MCAPI RaceChecker();
+    MCNAPI RaceChecker();
 
-    MCAPI void Release() const;
+    MCNAPI void Release() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

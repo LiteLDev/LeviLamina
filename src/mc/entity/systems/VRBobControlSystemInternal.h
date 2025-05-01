@@ -15,7 +15,7 @@ struct StateVectorComponent;
 namespace VRBobControlSystemInternal {
 // functions
 // NOLINTBEGIN
-MCAPI void tickVRBobControl(
+MCNAPI void tickVRBobControl(
     ::StrictEntityContext const&,
     ::AABBShapeComponent const&         aabbShapeComponent,
     ::MovementAbilitiesComponent const& abilitiesComponent,

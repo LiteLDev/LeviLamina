@@ -39,19 +39,19 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI uint64 $fread(void* buffer, uint64 size, uint64 count, void* file) const;
+        MCNAPI uint64 $fread(void* buffer, uint64 size, uint64 count, void* file) const;
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -69,19 +69,19 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI uint64 $fwrite(void const* buffer, uint64 size, uint64 count, void* file);
+        MCNAPI uint64 $fwrite(void const* buffer, uint64 size, uint64 count, void* file);
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -105,13 +105,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~StreamDetails();
+        MCNAPI ~StreamDetails();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -180,7 +180,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MemoryMappedFileAccess(
+    MCNAPI MemoryMappedFileAccess(
         ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const& inner,
         ::std::unique_ptr<::FileAccessTransforms>           transforms
     );
@@ -195,7 +195,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const& inner,
         ::std::unique_ptr<::FileAccessTransforms>           transforms
     );
@@ -204,30 +204,30 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void* $fopen(::Core::PathView filePath, ::std::string const& mode);
+    MCNAPI void* $fopen(::Core::PathView filePath, ::std::string const& mode);
 
-    MCAPI int $fclose(void* file);
+    MCNAPI int $fclose(void* file);
 
-    MCAPI int $fseek(void* file, int64 offset, int origin);
+    MCNAPI int $fseek(void* file, int64 offset, int origin);
 
-    MCAPI int64 $ftell(void* file);
+    MCNAPI int64 $ftell(void* file);
 
-    MCFOLD ::IFileReadAccess const* $getReadInterface() const;
+    MCNAPI ::IFileReadAccess const* $getReadInterface() const;
 
-    MCAPI ::IFileWriteAccess* $getWriteInterface();
+    MCNAPI ::IFileWriteAccess* $getWriteInterface();
 
-    MCAPI void $unload();
+    MCNAPI void $unload();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

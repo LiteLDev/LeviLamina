@@ -15,7 +15,7 @@ class BlockPos;
 namespace VanillaBlockActorFactory {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::shared_ptr<::BlockActor>
+MCNAPI ::std::shared_ptr<::BlockActor>
 createBlockActor(::BlockActorType type, ::BlockPos const& pos, ::BlockLegacy const& block);
 // NOLINTEND
 

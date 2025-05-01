@@ -49,16 +49,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $asString() const;
+    MCNAPI ::std::string $asString() const;
 
-    MCAPI ::Json::Value $asJsonValue() const;
+    MCNAPI ::Json::Value $asJsonValue() const;
 
-    MCFOLD ::Json::Value $resolve(::ResolveData const& resolveData) const;
+    MCNAPI ::Json::Value $resolve(::ResolveData const& resolveData) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

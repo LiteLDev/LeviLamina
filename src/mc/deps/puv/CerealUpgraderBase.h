@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cereal/SerializerContext.h"
+#include "mc/deps/cereal/BasicSerializerContext.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -40,13 +40,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~UpgradeState();
+        MCNAPI ~UpgradeState();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -66,90 +66,92 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CerealUpgraderBase(::cereal::ReflectionCtx const& ctx);
+    MCNAPI explicit CerealUpgraderBase(::cereal::ReflectionCtx const& ctx);
 
-    MCAPI void bindCallback(
+    MCNAPI void bindCallback(
         ::std::function<void(::entt::meta_any&, ::entt::meta_any&)> cb,
         ::std::vector<::std::string>                                source,
         ::std::vector<::std::string>                                destination
     );
 
-    MCAPI void copy(
+    MCNAPI void copy(
         ::entt::meta_any&                                  inputAny_,
         ::entt::meta_any&                                  outputAny_,
         ::Puv::internal::CerealUpgraderBase::UpgradeState& state
     ) const;
 
-    MCAPI void copyAssociative(
+    MCNAPI void copyAssociative(
         ::entt::meta_associative_container                 contFrom,
         ::entt::meta_any&                                  outputAny,
         ::Puv::internal::CerealUpgraderBase::UpgradeState& state
     ) const;
 
-    MCAPI bool copyEnum(
+    MCNAPI bool copyEnum(
         ::entt::meta_any&                                  source,
         ::entt::meta_any&                                  target,
         ::Puv::internal::CerealUpgraderBase::UpgradeState& state
     ) const;
 
-    MCAPI void copyNotEnum(
+    MCNAPI void copyNotEnum(
         ::entt::meta_any&                                  inputAny,
         ::entt::meta_any&                                  outputAny,
         ::Puv::internal::CerealUpgraderBase::UpgradeState& state
     ) const;
 
-    MCAPI void copyNotEnumImpl(
+    MCNAPI void copyNotEnumImpl(
         ::entt::meta_any&                                  inputAny,
         ::entt::meta_any&                                  outputAny,
         ::Puv::internal::CerealUpgraderBase::UpgradeState& state
     ) const;
 
-    MCAPI void copySequence(
+    MCNAPI void copySequence(
         ::entt::meta_sequence_container                    contFrom,
         ::entt::meta_any&                                  outputAny,
         ::Puv::internal::CerealUpgraderBase::UpgradeState& state
     ) const;
 
-    MCAPI void ignore(::std::vector<::std::string> source);
+    MCNAPI void ignore(::std::vector<::std::string> source);
 
-    MCAPI int iterate(
+    MCNAPI bool isSupported(::entt::meta_type const& t) const;
+
+    MCNAPI int iterate(
         ::entt::meta_type const&                           type,
         ::entt::meta_any&                                  inputAny,
         ::entt::meta_any&                                  outputAny,
         ::Puv::internal::CerealUpgraderBase::UpgradeState& state
     ) const;
 
-    MCAPI void move(::std::vector<::std::string> source, ::std::vector<::std::string> destination);
+    MCNAPI void move(::std::vector<::std::string> source, ::std::vector<::std::string> destination);
 
-    MCAPI void unwrapOrCopy(
+    MCNAPI void unwrapOrCopy(
         ::entt::meta_any&                                  inputAny,
         ::entt::meta_any&                                  outputAny,
         ::Puv::internal::CerealUpgraderBase::UpgradeState& state
     ) const;
 
-    MCAPI ~CerealUpgraderBase();
+    MCNAPI ~CerealUpgraderBase();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::pair<::cereal::SerializerContext::ContextType, ::std::string>>
+    MCNAPI static ::std::vector<::std::pair<::cereal::BasicSerializerContext::ContextType, ::std::string>>
     buildPath(::std::vector<::Puv::internal::PathElement> const& path);
 
-    MCAPI static ::entt::meta_any
+    MCNAPI static ::entt::meta_any
     constructOrLog(::entt::meta_type const& t, ::Puv::internal::CerealUpgraderBase::UpgradeState& state);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
+    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

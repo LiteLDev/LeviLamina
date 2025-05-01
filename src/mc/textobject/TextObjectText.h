@@ -43,7 +43,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Json::Value asJsonValue(::std::string const& textField);
+    MCNAPI static ::Json::Value asJsonValue(::std::string const& textField);
     // NOLINTEND
 
 public:
@@ -55,16 +55,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::string $asString() const;
+    MCNAPI ::std::string $asString() const;
 
-    MCAPI ::Json::Value $asJsonValue() const;
+    MCNAPI ::Json::Value $asJsonValue() const;
 
-    MCFOLD ::Json::Value $resolve(::ResolveData const& resolveData) const;
+    MCNAPI ::Json::Value $resolve(::ResolveData const& resolveData) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

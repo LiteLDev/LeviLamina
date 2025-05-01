@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class DynamicProperties;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/persistence/DynamicProperties.h"
 
 class DynamicPropertiesComponent {
 public:

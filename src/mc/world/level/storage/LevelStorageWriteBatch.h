@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/storage/db_helpers/Category.h"
 
 // auto generated forward declare list
 // clang-format off
 class LevelStorage;
-namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class LevelStorageWriteBatch {
@@ -49,13 +49,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~BatchEntry();
+        MCNAPI ~BatchEntry();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -109,42 +109,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelStorageWriteBatch(::LevelStorageWriteBatch&& rhs);
+    MCNAPI LevelStorageWriteBatch(::LevelStorageWriteBatch&& rhs);
 
-    MCAPI void clear();
+    MCNAPI void clear();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LevelStorageWriteBatch&& rhs);
+    MCNAPI void* $ctor(::LevelStorageWriteBatch&& rhs);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $putKey(::std::string const& key, ::std::string_view data, ::DBHelpers::Category category);
+    MCNAPI void $putKey(::std::string const& key, ::std::string_view data, ::DBHelpers::Category category);
 
-    MCAPI void $putKey(::std::string const& key, ::std::string const& data, ::DBHelpers::Category category);
+    MCNAPI void $putKey(::std::string const& key, ::std::string const& data, ::DBHelpers::Category category);
 
-    MCAPI void $putKey(::std::string const& key, ::std::string&& data, ::DBHelpers::Category category);
+    MCNAPI void $putKey(::std::string const& key, ::std::string&& data, ::DBHelpers::Category category);
 
-    MCAPI void $putKey(::std::string const& key, ::std::shared_ptr<::std::string> data, ::DBHelpers::Category category);
+    MCNAPI void
+    $putKey(::std::string const& key, ::std::shared_ptr<::std::string> data, ::DBHelpers::Category category);
 
-    MCAPI void $deleteKey(::std::string const& key, ::DBHelpers::Category category);
+    MCNAPI void $deleteKey(::std::string const& key, ::DBHelpers::Category category);
 
-    MCAPI void $flush(::LevelStorage& db);
+    MCNAPI void $flush(::LevelStorage& db);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

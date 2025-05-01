@@ -24,22 +24,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GiveableTrigger(::GiveableTrigger const&);
+    MCNAPI GiveableTrigger(::GiveableTrigger const&);
 
-    MCFOLD void addItem(::ItemDescriptor const& itemDescriptor);
+    MCNAPI void addItem(::ItemDescriptor const& itemDescriptor);
 
-    MCAPI ~GiveableTrigger();
+    MCNAPI ~GiveableTrigger();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GiveableTrigger const&);
+    MCNAPI void* $ctor(::GiveableTrigger const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

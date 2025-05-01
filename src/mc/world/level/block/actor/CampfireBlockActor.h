@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/ItemInstance.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated forward declare list
@@ -13,7 +14,6 @@ class CompoundTag;
 class DataLoadHelper;
 class HashedString;
 class ILevel;
-class ItemInstance;
 class SaveContext;
 // clang-format on
 
@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 7
+    // vIndex: 8
     virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 1
@@ -39,16 +39,16 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual float getShadowRadius(::BlockSource&) const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 44
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -58,13 +58,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _finishCooking(::BlockSource& region, int slot);
+    MCNAPI void _finishCooking(::BlockSource& region, int slot);
 
-    MCAPI void dropAllItems(::BlockSource& region);
+    MCNAPI void dropAllItems(::BlockSource& region);
 
-    MCAPI ::HashedString const& getCampfireTag(::BlockSource const& region) const;
+    MCNAPI ::HashedString const& getCampfireTag(::BlockSource const& region) const;
 
-    MCAPI bool setItem(::BlockSource& item, ::ItemInstance const&);
+    MCNAPI bool setItem(::BlockSource& item, ::ItemInstance const&);
     // NOLINTEND
 
 public:
@@ -76,24 +76,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCFOLD float $getShadowRadius(::BlockSource&) const;
+    MCNAPI float $getShadowRadius(::BlockSource&) const;
 
-    MCFOLD void $onChanged(::BlockSource& region);
+    MCNAPI void $onChanged(::BlockSource& region);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

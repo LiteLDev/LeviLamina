@@ -61,22 +61,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCFOLD bool $shouldBurn();
+    MCNAPI bool $shouldBurn();
 
-    MCFOLD bool $isOnFire() const;
+    MCNAPI bool $isOnFire() const;
 
-    MCAPI bool $canDestroyBlock(::Block const& block) const;
+    MCNAPI bool $canDestroyBlock(::Block const& block) const;
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCNAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCAPI float $getInertia();
+    MCNAPI float $getInertia();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

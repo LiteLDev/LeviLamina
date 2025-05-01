@@ -43,24 +43,24 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int
+    MCNAPI static int
     _parseTimeZone(char const* str, uint64 len, ::DateManager::TimeZoneType* type, int* hours, int* minutes);
 
-    MCAPI static ::std::string getCurrentTimestampFileName();
+    MCNAPI static ::std::string getCurrentTimestampFileName();
 
-    MCAPI static bool toDateTime(
+    MCNAPI static bool toDateTime(
         ::std::string const&         strTime,
         ::tm*                        result,
         ::DateManager::TimeZoneType* resultType,
         int*                         resultTimeZoneMinutes
     );
 
-    MCAPI static int64 toEpochTime(::tm const* dateTime, ::DateManager::TimeZoneType inputType);
+    MCNAPI static int64 toEpochTime(::tm const* dateTime, ::DateManager::TimeZoneType inputType);
 
-    MCAPI static ::std::string
+    MCNAPI static ::std::string
     toString(::tm const& time, ::std::string const& format, ::std::optional<::std::locale> const& locale);
 
-    MCAPI static ::std::string toString_DateTime(::tm const& time, ::DateManager::TimeZoneType outputType);
+    MCNAPI static ::std::string toString_DateTime(::tm const& time, ::DateManager::TimeZoneType outputType);
     // NOLINTEND
 
 public:

@@ -32,33 +32,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JigsawBlockMetadata(::SharedTypes::v1_21_50::JigsawBlockMetadata&&);
+    MCNAPI JigsawBlockMetadata(::SharedTypes::v1_21_50::JigsawBlockMetadata&&);
 
-    MCAPI ::SharedTypes::v1_21_50::JigsawBlockMetadata& operator=(::SharedTypes::v1_21_50::JigsawBlockMetadata const&);
+    MCNAPI ::SharedTypes::v1_21_50::JigsawBlockMetadata& operator=(::SharedTypes::v1_21_50::JigsawBlockMetadata const&);
 
-    MCAPI ::SharedTypes::v1_21_50::JigsawBlockMetadata& operator=(::SharedTypes::v1_21_50::JigsawBlockMetadata&&);
+    MCNAPI ::SharedTypes::v1_21_50::JigsawBlockMetadata& operator=(::SharedTypes::v1_21_50::JigsawBlockMetadata&&);
 
-    MCAPI bool operator==(::SharedTypes::v1_21_50::JigsawBlockMetadata const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_21_50::JigsawBlockMetadata const&) const;
 
-    MCAPI ~JigsawBlockMetadata();
+    MCNAPI ~JigsawBlockMetadata();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_50::JigsawBlockMetadata&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_50::JigsawBlockMetadata&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

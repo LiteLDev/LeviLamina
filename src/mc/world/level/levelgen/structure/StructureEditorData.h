@@ -3,16 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/safety/RedactableString.h"
 #include "mc/world/level/block/StructureBlockType.h"
 #include "mc/world/level/levelgen/structure/StructureRedstoneSaveMode.h"
+#include "mc/world/level/levelgen/structure/StructureSettings.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class CompoundTag;
 class DataLoadHelper;
-class StructureSettings;
-namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class StructureEditorData {
@@ -35,19 +35,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureEditorData();
+    MCNAPI StructureEditorData();
 
-    MCAPI StructureEditorData(::StructureEditorData&&);
+    MCNAPI StructureEditorData(::StructureEditorData&&);
 
-    MCAPI StructureEditorData(::StructureEditorData const&);
+    MCNAPI StructureEditorData(::StructureEditorData const&);
 
-    MCAPI void load(::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void load(::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI ::StructureEditorData& operator=(::StructureEditorData&&);
+    MCNAPI ::StructureEditorData& operator=(::StructureEditorData&&);
 
-    MCAPI void save(::CompoundTag& tag) const;
+    MCNAPI void save(::CompoundTag& tag) const;
 
-    MCAPI ~StructureEditorData();
+    MCNAPI ~StructureEditorData();
     // NOLINTEND
 
 public:
@@ -56,6 +56,8 @@ public:
     MCAPI static ::std::string const& DEFAULT_EXPORT_NAME();
 
     MCAPI static ::std::string const& DEFAULT_STRUCTURE_NAMESPACE();
+
+    MCAPI static ::StructureBlockType const& DEFAULT_STRUCTURE_TYPE();
 
     MCAPI static ::BlockPos const& MAX_STRUCTURE_OFFSET();
 
@@ -71,16 +73,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::StructureEditorData&&);
+    MCNAPI void* $ctor(::StructureEditorData&&);
 
-    MCAPI void* $ctor(::StructureEditorData const&);
+    MCNAPI void* $ctor(::StructureEditorData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -34,13 +34,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UpgradeTo118();
+    MCNAPI UpgradeTo118();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool
+    MCNAPI static bool
     checkRepairItemEntrySchema(::rapidjson::GenericValue<
                                ::rapidjson::UTF8<char>,
                                ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value);
@@ -49,7 +49,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -61,11 +61,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $previousSchema(::rapidjson::GenericValue<
-                               ::rapidjson::UTF8<char>,
-                               ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component) const;
+    MCNAPI bool $previousSchema(::rapidjson::GenericValue<
+                                ::rapidjson::UTF8<char>,
+                                ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component) const;
 
-    MCAPI void
+    MCNAPI void
     $upgradeToNext(::rapidjson::GenericDocument<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>, ::rapidjson::CrtAllocator>& document, ::SemVersion const&)
         const;
     // NOLINTEND
@@ -73,7 +73,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -6,19 +6,14 @@
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/animal/Animal.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorDefinitionGroup;
+class EntityContext;
+struct ActorDefinitionIdentifier;
+// clang-format on
+
 class Sheep : public ::Animal {
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk7a0b33;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Sheep& operator=(Sheep const&);
-    Sheep(Sheep const&);
-    Sheep();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -27,6 +22,26 @@ public:
 
     // vIndex: 8
     virtual ~Sheep() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI Sheep(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -44,6 +59,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

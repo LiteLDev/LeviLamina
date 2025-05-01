@@ -8,15 +8,15 @@ struct RtcpNackStats {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void ReportRequest(ushort);
+    MCNAPI void ReportRequest(ushort);
 
-    MCAPI RtcpNackStats();
+    MCNAPI RtcpNackStats();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

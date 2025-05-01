@@ -5,19 +5,21 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
+#include "mc/nbt/CompoundTag.h"
 #include "mc/world/level/ShapeType.h"
+#include "mc/world/level/block/CachedComponentData.h"
+#include "mc/world/level/block/components/BlockComponentDirectData.h"
+#include "mc/world/level/block/components/BlockComponentStorage.h"
 
 // auto generated forward declare list
 // clang-format off
 class AABB;
 class Actor;
 class BaseGameVersion;
-class BlockComponentStorage;
 class BlockLegacy;
 class BlockPos;
 class BlockSource;
 class BlockState;
-class CompoundTag;
 class GetCollisionShapeInterface;
 class HashedString;
 class HitResult;
@@ -28,8 +30,6 @@ class ItemStackBase;
 class Player;
 class Random;
 class Vec3;
-struct BlockComponentDirectData;
-struct CachedComponentData;
 namespace mce { class Color; }
 // clang-format on
 
@@ -212,8 +212,6 @@ public:
     MCAPI void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI ::Block const& sanitizeFillBlock() const;
-
-    MCAPI bool shouldRandomTick() const;
 
     MCAPI ::std::string toDebugString() const;
 

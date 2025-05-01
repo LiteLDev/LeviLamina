@@ -4,14 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
+#include "mc/platform/threading/SpinLockImpl.h"
+#include "mc/world/level/ChunkPos.h"
 
 // auto generated forward declare list
 // clang-format off
-class ChunkPos;
 class ChunkViewOwner;
 class NetworkChunkPublisherUpdatePacket;
 class NetworkIdentifier;
-class SpinLockImpl;
 // clang-format on
 
 class ChunkGenerationManager {
@@ -26,14 +26,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addServerChunksToPacket(
+    MCNAPI void addServerChunksToPacket(
         ::NetworkIdentifier const&           player,
         ::SubClientId                        clientId,
         ::NetworkChunkPublisherUpdatePacket& updatePacket
     );
 
-    MCAPI void clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId);
+    MCNAPI void clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId);
 
-    MCAPI bool hasPendingGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId) const;
+    MCNAPI bool hasPendingGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId) const;
     // NOLINTEND
 };

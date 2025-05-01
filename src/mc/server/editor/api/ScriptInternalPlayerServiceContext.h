@@ -25,6 +25,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk4c1358;
     ::ll::UntypedStorage<8, 32> mUnk33b9c0;
     ::ll::UntypedStorage<8, 32> mUnkfb5af4;
+    ::ll::UntypedStorage<8, 32> mUnkb8ca60;
     // NOLINTEND
 
 public:
@@ -35,35 +36,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptInternalPlayerServiceContext(::Editor::ScriptModule::ScriptInternalPlayerServiceContext const&);
+    MCNAPI ScriptInternalPlayerServiceContext(::Editor::ScriptModule::ScriptInternalPlayerServiceContext const&);
 
-    MCAPI ScriptInternalPlayerServiceContext(
+    MCNAPI ScriptInternalPlayerServiceContext(
         ::Editor::ServiceProviderCollection&  playerServices,
         ::Scripting::WeakLifetimeScope const& scope
     );
 
-    MCAPI ~ScriptInternalPlayerServiceContext();
+    MCNAPI ~ScriptInternalPlayerServiceContext();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>
     bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ScriptModule::ScriptInternalPlayerServiceContext const&);
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptInternalPlayerServiceContext const&);
 
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& playerServices, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void*
+    $ctor(::Editor::ServiceProviderCollection& playerServices, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

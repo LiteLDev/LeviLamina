@@ -40,13 +40,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NBStartPiece(::Random& random, int west, int north);
+    MCNAPI NBStartPiece(::Random& random, int west, int north);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Random& random, int west, int north);
+    MCNAPI void* $ctor(::Random& random, int west, int north);
     // NOLINTEND
 
 public:
@@ -58,12 +58,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::StructurePieceType $getType() const;
+    MCNAPI ::StructurePieceType $getType() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

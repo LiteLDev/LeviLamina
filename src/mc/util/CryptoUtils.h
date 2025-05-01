@@ -10,7 +10,7 @@ namespace Core { class Path; }
 namespace CryptoUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string getFileChecksum(::Core::Path const& path);
+MCNAPI ::std::string getFileChecksum(::Core::Path const& path);
 // NOLINTEND
 
 } // namespace CryptoUtils

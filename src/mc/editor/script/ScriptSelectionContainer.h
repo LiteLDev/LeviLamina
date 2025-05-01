@@ -49,52 +49,52 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSelectionContainer(
+    MCNAPI ScriptSelectionContainer(
         ::WeakRef<::Editor::Selection::SelectionContainer> containerObjectRef,
         ::Scripting::WeakLifetimeScope const&              scope
     );
 
-    MCAPI ::Scripting::Result<void> clearContainer();
+    MCNAPI ::Scripting::Result<void> clearContainer();
 
-    MCAPI ::Scripting::Result_deprecated<::BoundingBox> containerBoundingBox();
+    MCNAPI ::Scripting::Result_deprecated<::BoundingBox> containerBoundingBox();
 
-    MCAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptRGBA> getFillColor() const;
+    MCNAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptRGBA> getFillColor() const;
 
-    MCAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptRGBA> getOutlineColor() const;
+    MCNAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptRGBA> getOutlineColor() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> isVisible() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> isVisible() const;
 
-    MCAPI ::Scripting::Result_deprecated<::Vec3> moveBy(::Vec3 const& delta);
+    MCNAPI ::Scripting::Result_deprecated<::Vec3> moveBy(::Vec3 const& delta);
 
-    MCAPI ::Scripting::Result_deprecated<::Vec3> moveTo(::Vec3 const& position);
+    MCNAPI ::Scripting::Result_deprecated<::Vec3> moveTo(::Vec3 const& position);
 
-    MCAPI ::Editor::ScriptModule::ScriptSelectionContainer&
+    MCNAPI ::Editor::ScriptModule::ScriptSelectionContainer&
     operator=(::Editor::ScriptModule::ScriptSelectionContainer&&);
 
-    MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem>
+    MCNAPI ::std::optional<::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem>
     peekLastVolume(::std::optional<::CompoundBlockVolumePositionRelativity> optRelativity);
 
-    MCAPI ::Scripting::Result<void> popVolume();
+    MCNAPI ::Scripting::Result<void> popVolume();
 
-    MCAPI ::Scripting::Result<void> pushVolume(::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const& item);
+    MCNAPI ::Scripting::Result<void> pushVolume(::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const& item);
 
-    MCAPI ::Scripting::Result<void> setFillColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
+    MCNAPI ::Scripting::Result<void> setFillColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
 
-    MCAPI ::Scripting::Result<void> setOutlineColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
+    MCNAPI ::Scripting::Result<void> setOutlineColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
 
-    MCAPI ::Scripting::Result<void> setVisible(bool visible);
+    MCNAPI ::Scripting::Result<void> setVisible(bool visible);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptSelectionContainer> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptSelectionContainer> bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::WeakRef<::Editor::Selection::SelectionContainer> containerObjectRef,
         ::Scripting::WeakLifetimeScope const&              scope
     );
@@ -103,13 +103,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

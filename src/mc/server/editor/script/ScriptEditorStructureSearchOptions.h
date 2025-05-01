@@ -25,34 +25,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptEditorStructureSearchOptions(::Editor::ScriptModule::ScriptEditorStructureSearchOptions&&);
+    MCNAPI ScriptEditorStructureSearchOptions(::Editor::ScriptModule::ScriptEditorStructureSearchOptions&&);
 
-    MCAPI ::Editor::ScriptModule::ScriptEditorStructureSearchOptions&
+    MCNAPI ::Editor::ScriptModule::ScriptEditorStructureSearchOptions&
     operator=(::Editor::ScriptModule::ScriptEditorStructureSearchOptions&&);
 
-    MCAPI ::Editor::ScriptModule::ScriptEditorStructureSearchOptions&
+    MCNAPI ::Editor::ScriptModule::ScriptEditorStructureSearchOptions&
     operator=(::Editor::ScriptModule::ScriptEditorStructureSearchOptions const&);
 
-    MCAPI ~ScriptEditorStructureSearchOptions();
+    MCNAPI ~ScriptEditorStructureSearchOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptEditorStructureSearchOptions>
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptEditorStructureSearchOptions>
     bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ScriptModule::ScriptEditorStructureSearchOptions&&);
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptEditorStructureSearchOptions&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

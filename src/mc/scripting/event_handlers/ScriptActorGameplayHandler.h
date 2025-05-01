@@ -24,11 +24,11 @@ class ScriptActorGameplayHandler : public ::EventHandlerDispatcher<::ActorGamepl
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
+    // vIndex: 5
     virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::ActorAddEffectEvent& actorEffectAddedEvent
     ) /*override*/;
 
-    // vIndex: 14
+    // vIndex: 17
     virtual ::HandlerResult handleEvent(::ActorRemovedEvent const& actorRemovedEvent) /*override*/;
 
     // vIndex: 0
@@ -38,13 +38,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _handleActorEffectAddedEvent(
+    MCNAPI bool _handleActorEffectAddedEvent(
         ::ActorAddEffectEvent&                                                            actorEffectAddedEvent,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     ) const;
 
-    MCAPI bool _handleActorRemoveEvent(
+    MCNAPI bool _handleActorRemoveEvent(
         ::ActorRemovedEvent const&                                                        actorRemovedEvent,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
@@ -60,14 +60,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ActorAddEffectEvent& actorEffectAddedEvent);
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ActorAddEffectEvent& actorEffectAddedEvent);
 
-    MCAPI ::HandlerResult $handleEvent(::ActorRemovedEvent const& actorRemovedEvent);
+    MCNAPI ::HandlerResult $handleEvent(::ActorRemovedEvent const& actorRemovedEvent);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

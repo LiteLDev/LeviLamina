@@ -13,12 +13,12 @@ class ProcessPlayerActionPacketSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _foreachTransactionPacket(
+    MCNAPI static void _foreachTransactionPacket(
         ::PlayerActionComponent const&                              actions,
         bool                                                        callback,
         ::std::function<void(::InventoryTransactionPacket&)> const& isClientSide
     );
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

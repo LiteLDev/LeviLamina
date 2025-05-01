@@ -30,9 +30,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::Vec2> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Vec2> bind();
 
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptXYRotation> bindV010();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptXYRotation> bindV010();
     // NOLINTEND
 };
 

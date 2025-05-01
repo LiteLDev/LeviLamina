@@ -33,30 +33,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptBiomeTypes(::Bedrock::NonOwnerPointer<::BiomeRegistry> registry);
+    MCNAPI explicit ScriptBiomeTypes(::Bedrock::NonOwnerPointer<::BiomeRegistry> registry);
 
-    MCAPI void _generateAllBiomeTypeHandles(::Scripting::WeakLifetimeScope& scope);
+    MCNAPI void _generateAllBiomeTypeHandles(::Scripting::WeakLifetimeScope& scope);
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>>
     get(::std::string const& biomeName, ::Scripting::WeakLifetimeScope& scope);
 
-    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>>
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>>
     getAllBiomeTypes(::Scripting::WeakLifetimeScope& scope);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptBiomeTypes& operator=(::ScriptModuleMinecraft::ScriptBiomeTypes&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptBiomeTypes& operator=(::ScriptModuleMinecraft::ScriptBiomeTypes&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBiomeTypes>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBiomeTypes>
     bind(::Bedrock::NonOwnerPointer<::BiomeRegistry> biomeRegistry);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::BiomeRegistry> registry);
+    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::BiomeRegistry> registry);
     // NOLINTEND
 };
 

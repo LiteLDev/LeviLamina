@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 class IJsonDefinitionSerializer;
 // clang-format on
 
@@ -33,18 +34,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::IJsonDefinitionSerializer* tryGetDefinitionSerializer(::std::string const& name) const;
+    MCNAPI ::IJsonDefinitionSerializer* tryGetDefinitionSerializer(::std::string const& name) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

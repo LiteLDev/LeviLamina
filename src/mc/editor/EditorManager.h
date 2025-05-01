@@ -69,46 +69,46 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EditorManager(bool packetSender, ::PacketSender& eventing, ::IMinecraftEventing& isClient);
+    MCNAPI EditorManager(bool packetSender, ::PacketSender& eventing, ::IMinecraftEventing& isClient);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(bool packetSender, ::PacketSender& eventing, ::IMinecraftEventing& isClient);
+    MCNAPI void* $ctor(bool packetSender, ::PacketSender& eventing, ::IMinecraftEventing& isClient);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::FileArchiver::IWorldConverter>
+    MCNAPI ::std::unique_ptr<::FileArchiver::IWorldConverter>
     $createWorldConverter(::ILevelListCache&, ::Scheduler&, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>);
 
-    MCAPI void $cleanupOrphanedTemporaryPlaytestWorlds(::ILevelListCache& levelListCache) const;
+    MCNAPI void $cleanupOrphanedTemporaryPlaytestWorlds(::ILevelListCache& levelListCache) const;
 
-    MCFOLD ::Scripting::Result<void> $scriptingTeardown();
+    MCNAPI ::Scripting::Result<void> $scriptingTeardown();
 
-    MCFOLD ::Scripting::Result<void> $scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent);
+    MCNAPI ::Scripting::Result<void> $scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent);
 
-    MCFOLD void $tryClearPlaytestRoundtripInfo();
+    MCNAPI void $tryClearPlaytestRoundtripInfo();
 
-    MCFOLD ::Editor::ServiceProviderCollection& $getServiceProviders();
+    MCNAPI ::Editor::ServiceProviderCollection& $getServiceProviders();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEditorManagerServiceProvider();
+    MCNAPI static void** $vftableForEditorManagerServiceProvider();
 
-    MCAPI static void** $vftableForEditorServiceList();
+    MCNAPI static void** $vftableForEditorServiceList();
 
-    MCAPI static void** $vftableForIEditorManager();
+    MCNAPI static void** $vftableForIEditorManager();
     // NOLINTEND
 };
 

@@ -46,7 +46,7 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCAPI Item(
+            MCNAPI Item(
                 ::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint>,
                 ::dcsctp::DcSctpMessage,
                 ::dcsctp::RRSendQueue::MessageAttributes
@@ -56,7 +56,7 @@ public:
         public:
             // constructor thunks
             // NOLINTBEGIN
-            MCAPI void* $ctor(
+            MCNAPI void* $ctor(
                 ::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint>,
                 ::dcsctp::DcSctpMessage,
                 ::dcsctp::RRSendQueue::MessageAttributes
@@ -67,35 +67,35 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void Add(::dcsctp::DcSctpMessage, ::dcsctp::RRSendQueue::MessageAttributes);
+        MCNAPI void Add(::dcsctp::DcSctpMessage, ::dcsctp::RRSendQueue::MessageAttributes);
 
-        MCAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState::OutgoingStream&) const;
+        MCNAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState::OutgoingStream&) const;
 
-        MCAPI bool Discard(::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint>);
+        MCNAPI bool Discard(::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint>);
 
-        MCAPI void HandleMessageExpired(::dcsctp::RRSendQueue::OutgoingStream::Item&);
+        MCNAPI void HandleMessageExpired(::dcsctp::RRSendQueue::OutgoingStream::Item&);
 
-        MCAPI
+        MCNAPI
         OutgoingStream(::dcsctp::RRSendQueue*, ::dcsctp::StreamScheduler*, ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>, ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>, ::std::function<void()>, ::dcsctp::DcSctpSocketHandoverState::OutgoingStream const*);
 
-        MCAPI void Pause();
+        MCNAPI void Pause();
 
-        MCAPI void Reset();
+        MCNAPI void Reset();
 
-        MCAPI void Resume();
+        MCNAPI void Resume();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void*
+        MCNAPI void*
         $ctor(::dcsctp::RRSendQueue*, ::dcsctp::StreamScheduler*, ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>, ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>, ::std::function<void()>, ::dcsctp::DcSctpSocketHandoverState::OutgoingStream const*);
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -103,46 +103,46 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void Decrease(uint64);
+        MCNAPI void Decrease(uint64);
 
-        MCAPI void SetLowThreshold(uint64);
+        MCNAPI void SetLowThreshold(uint64);
 
-        MCAPI explicit ThresholdWatcher(::std::function<void()>);
+        MCNAPI explicit ThresholdWatcher(::std::function<void()>);
 
-        MCAPI ~ThresholdWatcher();
+        MCNAPI ~ThresholdWatcher();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::std::function<void()>);
+        MCNAPI void* $ctor(::std::function<void()>);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Add(::webrtc::Timestamp, ::dcsctp::DcSctpMessage, ::dcsctp::SendOptions const&);
+    MCNAPI void Add(::webrtc::Timestamp, ::dcsctp::DcSctpMessage, ::dcsctp::SendOptions const&);
 
-    MCAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState&);
+    MCNAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState&);
 
-    MCAPI ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const;
+    MCNAPI ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const;
 
-    MCAPI ::dcsctp::RRSendQueue::OutgoingStream&
+    MCNAPI ::dcsctp::RRSendQueue::OutgoingStream&
         GetOrCreateStreamInfo(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>);
 
-    MCAPI ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>
+    MCNAPI ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>
         GetStreamPriority(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>) const;
 
-    MCAPI bool IsEmpty() const;
+    MCNAPI bool IsEmpty() const;
 
-    MCAPI RRSendQueue(
+    MCNAPI RRSendQueue(
         ::std::string_view,
         ::dcsctp::DcSctpSocketCallbacks*,
         uint64,
@@ -150,16 +150,16 @@ public:
         uint64
     );
 
-    MCAPI void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const&);
+    MCNAPI void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const&);
 
-    MCAPI void
+    MCNAPI void
         SetStreamPriority(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>, ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string_view,
         ::dcsctp::DcSctpSocketCallbacks*,
         uint64,
@@ -171,7 +171,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

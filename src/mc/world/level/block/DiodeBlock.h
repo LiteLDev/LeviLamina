@@ -26,7 +26,7 @@ public:
     // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 142
+    // vIndex: 140
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 61
@@ -39,52 +39,52 @@ public:
     // vIndex: 52
     virtual int getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 148
     virtual int getSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
 
     // vIndex: 44
     virtual bool isSignalSource() const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 149
     virtual bool isLocked(::BlockSource&, ::BlockPos const&) const;
 
-    // vIndex: 152
+    // vIndex: 150
     virtual bool isSameDiode(::Block const& block) const;
 
-    // vIndex: 153
+    // vIndex: 151
     virtual bool shouldPrioritize(::BlockSource& region, ::BlockPos const& pos) const;
 
     // vIndex: 119
     virtual bool canSpawnOn(::Actor*) const /*override*/;
 
-    // vIndex: 154
+    // vIndex: 152
     virtual bool isOn() const;
 
-    // vIndex: 155
+    // vIndex: 153
     virtual bool shouldTurnOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 156
+    // vIndex: 154
     virtual int getInputSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 157
+    // vIndex: 155
     virtual bool isAlternateInput(::Block const&) const;
 
-    // vIndex: 158
+    // vIndex: 156
     virtual int getAlternateSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 159
+    // vIndex: 157
     virtual int getOutputSignal(::Block const& block) const;
 
-    // vIndex: 160
+    // vIndex: 158
     virtual int getTurnOffDelay(::Block const& block) const;
 
-    // vIndex: 161
+    // vIndex: 159
     virtual int getTurnOnDelay(::Block const&) const = 0;
 
-    // vIndex: 162
+    // vIndex: 160
     virtual ::Block const* getOnBlock(::Block const*) const = 0;
 
-    // vIndex: 163
+    // vIndex: 161
     virtual ::Block const* getOffBlock(::Block const*) const = 0;
 
     // vIndex: 0
@@ -94,7 +94,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isDiode(::Block const& block);
+    MCNAPI static bool isDiode(::Block const& block);
     // NOLINTEND
 
 public:
@@ -106,32 +106,32 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
+    MCNAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    MCAPI int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI int $getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
+    MCNAPI int $getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
 
-    MCAPI int $getSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
+    MCNAPI int $getSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
 
-    MCFOLD bool $isSignalSource() const;
+    MCNAPI bool $isSignalSource() const;
 
-    MCAPI bool $isSameDiode(::Block const& block) const;
+    MCNAPI bool $isSameDiode(::Block const& block) const;
 
-    MCAPI bool $shouldPrioritize(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $shouldPrioritize(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $canSpawnOn(::Actor*) const;
+    MCNAPI bool $canSpawnOn(::Actor*) const;
 
-    MCAPI bool $isOn() const;
+    MCNAPI bool $isOn() const;
 
-    MCAPI bool $shouldTurnOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $shouldTurnOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI int $getInputSignal(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI int $getInputSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI int $getAlternateSignal(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI int $getAlternateSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD int $getOutputSignal(::Block const& block) const;
+    MCNAPI int $getOutputSignal(::Block const& block) const;
 
-    MCFOLD int $getTurnOffDelay(::Block const& block) const;
+    MCNAPI int $getTurnOffDelay(::Block const& block) const;
     // NOLINTEND
 };

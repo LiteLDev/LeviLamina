@@ -14,7 +14,7 @@ struct RtpPacketSendInfo {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::RtpPacketSendInfo From(::webrtc::RtpPacketToSend const&, ::webrtc::PacedPacketInfo const&);
+    MCNAPI static ::webrtc::RtpPacketSendInfo From(::webrtc::RtpPacketToSend const&, ::webrtc::PacedPacketInfo const&);
     // NOLINTEND
 };
 

@@ -6,6 +6,8 @@
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/Container.h"
 #include "mc/world/actor/Hopper.h"
+#include "mc/world/item/ItemStack.h"
+#include "mc/world/level/Tick.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated forward declare list
@@ -17,10 +19,8 @@ class CompoundTag;
 class DataLoadHelper;
 class FurnaceBlockActor;
 class ILevel;
-class ItemStack;
 class Player;
 class SaveContext;
-struct Tick;
 // clang-format on
 
 class HopperBlockActor : public ::BlockActor, public ::Container, public ::Hopper {
@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 7
+    // vIndex: 8
     virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 1
@@ -47,9 +47,9 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
-    // vIndex: 26
+    // vIndex: 27
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 20
@@ -64,22 +64,22 @@ public:
     // vIndex: 23
     virtual void stopOpen(::Player& player) /*override*/;
 
-    // vIndex: 33
+    // vIndex: 34
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 32
+    // vIndex: 33
     virtual ::Container const* getContainer() const /*override*/;
 
     // vIndex: 31
     virtual void setContainerChanged(int slot) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual void onRemoved(::BlockSource&) /*override*/;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual void onNeighborChanged(::BlockSource& region, ::BlockPos const&) /*override*/;
 
-    // vIndex: 12
+    // vIndex: 13
     virtual void onMove() /*override*/;
 
     // vIndex: 2
@@ -89,10 +89,10 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 44
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource&) /*override*/;
 
     // vIndex: 0
@@ -142,7 +142,7 @@ public:
 
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
     MCAPI ::std::string $getName() const;
 

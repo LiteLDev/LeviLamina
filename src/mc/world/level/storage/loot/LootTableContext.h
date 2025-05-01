@@ -50,15 +50,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::LootTableContext create() const;
+        MCNAPI ::LootTableContext create() const;
 
-        MCAPI ~Builder();
+        MCNAPI ~Builder();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -87,7 +87,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LootTableContext(
+    MCNAPI LootTableContext(
         float                      luck,
         ::ILevel*                  level,
         ::ActorUniqueID            thisEntityID,
@@ -99,17 +99,17 @@ public:
         ::ItemStack const*         tool
     );
 
-    MCAPI void removeVisitedTable(::LootTable const* table);
+    MCNAPI void removeVisitedTable(::LootTable const* table);
 
-    MCAPI void setOriginalItemName(::std::string const& originalItemName);
+    MCNAPI void setOriginalItemName(::std::string const& originalItemName);
 
-    MCAPI ~LootTableContext();
+    MCNAPI ~LootTableContext();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         float                      luck,
         ::ILevel*                  level,
         ::ActorUniqueID            thisEntityID,
@@ -125,6 +125,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

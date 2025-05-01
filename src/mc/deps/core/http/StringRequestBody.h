@@ -27,7 +27,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::gsl::span<uchar const> $getLoggableData() const;
+    MCNAPI ::gsl::span<uchar const> $getLoggableData() const;
     // NOLINTEND
 };
 

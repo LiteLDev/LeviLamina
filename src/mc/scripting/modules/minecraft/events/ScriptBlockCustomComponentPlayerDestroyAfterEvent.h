@@ -33,34 +33,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockCustomComponentPlayerDestroyAfterEvent(::ScriptModuleMinecraft::
-                                                                ScriptBlockCustomComponentPlayerDestroyAfterEvent&&);
+    MCNAPI ScriptBlockCustomComponentPlayerDestroyAfterEvent(::ScriptModuleMinecraft::
+                                                                 ScriptBlockCustomComponentPlayerDestroyAfterEvent&&);
 
-    MCAPI
+    MCNAPI
     ScriptBlockCustomComponentPlayerDestroyAfterEvent(::ScriptModuleMinecraft::
                                                           ScriptBlockCustomComponentPlayerDestroyAfterEvent const&);
 
-    MCAPI ~ScriptBlockCustomComponentPlayerDestroyAfterEvent();
+    MCNAPI ~ScriptBlockCustomComponentPlayerDestroyAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerDestroyAfterEvent&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerDestroyAfterEvent&&);
 
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerDestroyAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerDestroyAfterEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ScriptData; }
 // clang-format on
 
@@ -18,8 +17,7 @@ public:
     virtual ~IDependencyLoader() = default;
 
     // vIndex: 1
-    virtual ::std::optional<::Scripting::ScriptData>
-    onLoadScript(::std::string const&, ::std::optional<::std::vector<::Scripting::ModuleBinding>>) = 0;
+    virtual ::std::optional<::Scripting::ScriptData> onLoadScript(::std::string const&) = 0;
     // NOLINTEND
 
 public:

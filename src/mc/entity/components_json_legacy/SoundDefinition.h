@@ -18,20 +18,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SoundDefinition(::SoundDefinition const&);
+    MCNAPI SoundDefinition(::SoundDefinition const&);
 
-    MCAPI ~SoundDefinition();
+    MCNAPI ~SoundDefinition();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SoundDefinition const&);
+    MCNAPI void* $ctor(::SoundDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

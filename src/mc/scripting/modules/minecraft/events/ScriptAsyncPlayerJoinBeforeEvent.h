@@ -31,25 +31,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptAsyncPlayerJoinBeforeEvent(::ClientJoinedEvent const& evtData);
+    MCNAPI explicit ScriptAsyncPlayerJoinBeforeEvent(::ClientJoinedEvent const& evtData);
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::DisconnectedError>
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::DisconnectedError>
     disconnect(::std::optional<::std::string> message);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptAsyncPlayerJoinBeforeEvent&
+    MCNAPI bool isValid();
+
+    MCNAPI ::ScriptModuleMinecraft::ScriptAsyncPlayerJoinBeforeEvent&
     operator=(::ScriptModuleMinecraft::ScriptAsyncPlayerJoinBeforeEvent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptAsyncPlayerJoinBeforeEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptAsyncPlayerJoinBeforeEvent> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ClientJoinedEvent const& evtData);
+    MCNAPI void* $ctor(::ClientJoinedEvent const& evtData);
     // NOLINTEND
 };
 

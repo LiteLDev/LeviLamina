@@ -54,20 +54,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeActor(::Actor& actor);
+    MCNAPI void $initializeActor(::Actor& actor);
 
-    MCAPI bool $validate(::Actor const& actor);
+    MCNAPI bool $validate(::Actor const& actor);
 
-    MCAPI void $addActor(::Actor& actor);
+    MCNAPI void $addActor(::Actor& actor);
 
-    MCAPI void $removeActorInLevelChunk(::Actor const& actor);
+    MCNAPI void $removeActorInLevelChunk(::Actor const& actor);
 
-    MCAPI void $deleteActorFromWorldInLevelChunk(::Actor const& actor);
+    MCNAPI void $deleteActorFromWorldInLevelChunk(::Actor const& actor);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -16,23 +16,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FilterStringMap(::std::initializer_list<::std::pair<::std::string const, ::FilterInputDefinition>> l
+    MCNAPI explicit FilterStringMap(::std::initializer_list<::std::pair<::std::string const, ::FilterInputDefinition>> l
     );
 
-    MCAPI ::FilterStringMap& operator=(::FilterStringMap&&);
+    MCNAPI ::FilterStringMap& operator=(::FilterStringMap&&);
 
-    MCAPI ~FilterStringMap();
+    MCNAPI ~FilterStringMap();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::initializer_list<::std::pair<::std::string const, ::FilterInputDefinition>> l);
+    MCNAPI void* $ctor(::std::initializer_list<::std::pair<::std::string const, ::FilterInputDefinition>> l);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

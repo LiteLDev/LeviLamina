@@ -12,7 +12,7 @@ class Experiments;
 namespace VanillaGoalUtility {
 // functions
 // NOLINTBEGIN
-MCAPI void registerGoalsToFactory(
+MCNAPI void registerGoalsToFactory(
     ::ActorGoalFactory&      factory,
     ::BaseGameVersion const& baseGameVersion,
     ::Experiments const&     experiments

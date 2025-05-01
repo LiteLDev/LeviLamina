@@ -5,7 +5,7 @@
 namespace webrtc::field_trial {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string FindFullName(::std::string_view);
+MCNAPI ::std::string FindFullName(::std::string_view);
 // NOLINTEND
 
 } // namespace webrtc::field_trial

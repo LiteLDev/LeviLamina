@@ -8,19 +8,19 @@ class RtcEventAlrState {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RtcEventAlrState(bool);
+    MCNAPI explicit RtcEventAlrState(bool);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(bool);
+    MCNAPI void* $ctor(bool);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

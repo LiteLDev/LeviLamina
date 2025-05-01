@@ -58,9 +58,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BannerAddPatternRecipe(::std::string const& recipeId, ::mce::UUID const& uuid);
+    MCNAPI BannerAddPatternRecipe(::std::string const& recipeId, ::mce::UUID const& uuid);
 
-    MCAPI ::Bedrock::NonOwnerPointer<::BannerPattern const> const matchPatterns(::CraftingContainer const& craftSlots
+    MCNAPI ::Bedrock::NonOwnerPointer<::BannerPattern const> const matchPatterns(::CraftingContainer const& craftSlots
     ) const;
     // NOLINTEND
 
@@ -73,7 +73,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& recipeId, ::mce::UUID const& uuid);
+    MCNAPI void* $ctor(::std::string const& recipeId, ::mce::UUID const& uuid);
     // NOLINTEND
 
 public:
@@ -85,22 +85,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const;
+    MCNAPI ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const;
 
-    MCFOLD int $getCraftingSize() const;
+    MCNAPI int $getCraftingSize() const;
 
-    MCFOLD ::RecipeIngredient const& $getIngredient(int, int) const;
+    MCNAPI ::RecipeIngredient const& $getIngredient(int, int) const;
 
-    MCFOLD ::std::vector<::ItemInstance> const& $getResultItems() const;
+    MCNAPI ::std::vector<::ItemInstance> const& $getResultItems() const;
 
-    MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
+    MCNAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
 
-    MCFOLD int $size() const;
+    MCNAPI int $size() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

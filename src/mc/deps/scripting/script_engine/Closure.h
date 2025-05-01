@@ -4,7 +4,7 @@
 
 namespace Scripting {
 
-template <typename T0>
+template <typename... T0>
 class Closure {};
 
 } // namespace Scripting

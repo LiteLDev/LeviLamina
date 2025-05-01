@@ -26,7 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::array<::BlockBreadthFirst::BlockNeighbor, 6> operator()(::BlockPos const& pos);
+    MCNAPI ::std::array<::BlockBreadthFirst::BlockNeighbor, 6> operator()(::BlockPos const& pos);
     // NOLINTEND
 };
 

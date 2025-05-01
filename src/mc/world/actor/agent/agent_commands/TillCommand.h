@@ -43,13 +43,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TillCommand(::Player& commander, ::std::string itemName, ::AgentComponents::Direction dir);
+    MCNAPI TillCommand(::Player& commander, ::std::string itemName, ::AgentComponents::Direction dir);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& commander, ::std::string itemName, ::AgentComponents::Direction dir);
+    MCNAPI void* $ctor(::Player& commander, ::std::string itemName, ::AgentComponents::Direction dir);
     // NOLINTEND
 
 public:
@@ -61,15 +61,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute();
+    MCNAPI void $execute();
 
-    MCAPI bool $isDone();
+    MCNAPI bool $isDone();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

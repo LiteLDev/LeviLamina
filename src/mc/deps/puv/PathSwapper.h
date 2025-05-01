@@ -27,15 +27,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void swap(::std::vector<::Puv::internal::PathElement> temp);
+    MCNAPI void swap(::std::vector<::Puv::internal::PathElement> temp);
 
-    MCAPI ~PathSwapper();
+    MCNAPI ~PathSwapper();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -2,12 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class AABB;
-class Vec3;
-struct CollisionShapes;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/vanilla_components/utilities/CollisionShapes.h"
+#include "mc/world/phys/AABB.h"
 
 struct RewindCollisionShapesComponent {
 public:
@@ -21,12 +19,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~RewindCollisionShapesComponent();
+    MCNAPI ~RewindCollisionShapesComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

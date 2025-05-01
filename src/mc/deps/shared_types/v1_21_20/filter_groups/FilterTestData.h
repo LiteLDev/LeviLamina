@@ -27,31 +27,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FilterTestData(::SharedTypes::v1_21_20::FilterTestData const&);
+    MCNAPI FilterTestData(::SharedTypes::v1_21_20::FilterTestData const&);
 
-    MCAPI ::SharedTypes::v1_21_20::FilterTestData& operator=(::SharedTypes::v1_21_20::FilterTestData&&);
+    MCNAPI ::SharedTypes::v1_21_20::FilterTestData& operator=(::SharedTypes::v1_21_20::FilterTestData&&);
 
-    MCAPI ::SharedTypes::v1_21_20::FilterTestData& operator=(::SharedTypes::v1_21_20::FilterTestData const&);
+    MCNAPI ::SharedTypes::v1_21_20::FilterTestData& operator=(::SharedTypes::v1_21_20::FilterTestData const&);
 
-    MCAPI ~FilterTestData();
+    MCNAPI ~FilterTestData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_20::FilterTestData const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_20::FilterTestData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

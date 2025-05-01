@@ -21,19 +21,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void fromStringList(::std::vector<::std::string> const& blockNames);
+    MCNAPI void fromStringList(::std::vector<::std::string> const& blockNames);
 
-    MCAPI ::Editor::BlockMask::BlockMaskList& operator=(::Editor::BlockMask::BlockMaskList&&);
+    MCNAPI ::Editor::BlockMask::BlockMaskList& operator=(::Editor::BlockMask::BlockMaskList&&);
 
-    MCAPI ::std::vector<::std::string> toStringList() const;
+    MCNAPI ::std::vector<::std::string> toStringList() const;
 
-    MCAPI ~BlockMaskList();
+    MCNAPI ~BlockMaskList();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

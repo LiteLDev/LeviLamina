@@ -31,7 +31,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -43,7 +43,7 @@ public:
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -65,7 +65,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Core::Result write(void const* data, uint64 byteCount);
+    MCNAPI ::Core::Result write(void const* data, uint64 byteCount);
     // NOLINTEND
 };
 

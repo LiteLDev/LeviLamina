@@ -76,7 +76,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::Timestamp CaptureTime() const;
+    MCNAPI ::webrtc::Timestamp CaptureTime() const;
     // NOLINTEND
 };
 

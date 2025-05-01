@@ -14,7 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk34d931;
-    ::ll::UntypedStorage<4, 4>  mUnk6122b2;
+    ::ll::UntypedStorage<1, 1>  mUnk6122b2;
     // NOLINTEND
 
 public:
@@ -51,13 +51,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isMemberFunction() const;
+    MCNAPI bool $isMemberFunction() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

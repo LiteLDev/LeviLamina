@@ -6,13 +6,13 @@
 #include "mc/deps/core/threading/IAsyncResult.h"
 #include "mc/deps/core/threading/IBackgroundTaskOwner.h"
 #include "mc/deps/core/threading/TaskGroupState.h"
-#include "mc/deps/core/threading/TaskStartInfoEx.h"
 #include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
 class BackgroundTaskBase;
 class TaskResult;
+struct TaskStartInfo;
 // clang-format on
 
 class InternalTaskGroup : public ::IBackgroundTaskOwner {
@@ -20,17 +20,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> queue(
-        ::TaskStartInfoEx<void> const&                startInfo,
-        ::brstd::move_only_function<::TaskResult()>&& task,
-        ::std::function<void()>&&                     callback
-    ) /*override*/;
+    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
+    queue_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&, ::std::function<void()>&&) /*override*/
+        ;
 
     // vIndex: 2
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> queueSync(
-        ::TaskStartInfoEx<void> const&                startInfo,
-        ::brstd::move_only_function<::TaskResult()>&& task
-    ) /*override*/;
+    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
+    queueSync_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&) /*override*/;
 
     // vIndex: 3
     virtual void taskRegister(::std::shared_ptr<::BackgroundTaskBase>) /*override*/;
@@ -60,29 +56,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> $queue(
-        ::TaskStartInfoEx<void> const&                startInfo,
-        ::brstd::move_only_function<::TaskResult()>&& task,
-        ::std::function<void()>&&                     callback
-    );
+    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
+    $queue_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&, ::std::function<void()>&&);
 
-    MCFOLD ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-    $queueSync(::TaskStartInfoEx<void> const& startInfo, ::brstd::move_only_function<::TaskResult()>&& task);
+    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
+    $queueSync_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&);
 
-    MCFOLD void $taskRegister(::std::shared_ptr<::BackgroundTaskBase>);
+    MCNAPI void $taskRegister(::std::shared_ptr<::BackgroundTaskBase>);
 
-    MCFOLD void $requeueTask(::std::shared_ptr<::BackgroundTaskBase>, bool);
+    MCNAPI void $requeueTask(::std::shared_ptr<::BackgroundTaskBase>, bool);
 
-    MCFOLD ::TaskGroupState $getState() const;
+    MCNAPI ::TaskGroupState $getState() const;
 
-    MCFOLD void $processCoroutines();
+    MCNAPI void $processCoroutines();
 
-    MCFOLD void $taskComplete(::gsl::not_null<::BackgroundTaskBase*> task);
+    MCNAPI void $taskComplete(::gsl::not_null<::BackgroundTaskBase*> task);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

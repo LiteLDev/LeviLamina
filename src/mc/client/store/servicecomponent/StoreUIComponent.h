@@ -60,31 +60,34 @@ public:
     // vIndex: 8
     virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification);
 
-    // vIndex: 9
+    // vIndex: 10
     virtual bool canRemove() const;
 
-    // vIndex: 10
-    virtual int getReadyCount() const;
+    // vIndex: 9
+    virtual bool canRemove(::StoreDataDrivenScreenController&) const;
 
     // vIndex: 11
-    virtual ::std::string getTelemetryData() const;
+    virtual int getReadyCount() const;
 
     // vIndex: 12
-    virtual ::ImageTelemetryInfo getImageTelemetry() const;
+    virtual ::std::string getTelemetryData() const;
 
     // vIndex: 13
-    virtual void _onInit(::StoreDataDrivenScreenController&);
+    virtual ::ImageTelemetryInfo getImageTelemetry() const;
 
     // vIndex: 14
-    virtual void _onPostInit();
+    virtual void _onInit(::StoreDataDrivenScreenController&);
 
     // vIndex: 15
-    virtual void _parseData(::Json::Value const&);
-
-    // vIndex: 17
-    virtual void _registerBindsAndEvents();
+    virtual void _onPostInit();
 
     // vIndex: 16
+    virtual void _parseData(::Json::Value const&);
+
+    // vIndex: 18
+    virtual void _registerBindsAndEvents();
+
+    // vIndex: 17
     virtual void _registerBindsAndEvents(::StoreDataDrivenScreenController&);
     // NOLINTEND
 

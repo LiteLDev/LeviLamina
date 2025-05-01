@@ -11,16 +11,14 @@
 class Block;
 class BlockPos;
 class BlockSource;
-class Player;
+class Experiments;
+namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class BarrelBlock : public ::FaceDirectionalBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 139
-    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
-
     // vIndex: 122
     virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
 
@@ -46,14 +44,23 @@ public:
     virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
         /*override*/;
 
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
     virtual ~BarrelBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void setOpen(bool isOpen, ::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI static void setOpen(bool isOpen, ::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -65,29 +72,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
+    MCNAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
 
-    MCAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI int $getVariant(::Block const& block) const;
+    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI bool $isContainerBlock() const;
 
-    MCFOLD bool $isContainerBlock() const;
+    MCNAPI bool $isSignalSource() const;
 
-    MCFOLD bool $isSignalSource() const;
+    MCNAPI bool $hasComparatorSignal() const;
 
-    MCFOLD bool $hasComparatorSignal() const;
-
-    MCFOLD int
+    MCNAPI int
     $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

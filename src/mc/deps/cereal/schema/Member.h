@@ -18,22 +18,23 @@ public:
 
 public:
     // prevent constructor by default
-    Member& operator=(Member const&);
     Member(Member const&);
     Member();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::cereal::internal::Member& operator=(::cereal::internal::Member&&);
+    MCNAPI ::cereal::internal::Member& operator=(::cereal::internal::Member&&);
 
-    MCAPI ~Member();
+    MCNAPI ::cereal::internal::Member& operator=(::cereal::internal::Member const&);
+
+    MCNAPI ~Member();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -43,25 +43,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::ContainerValidationCraftInputs>
+    MCNAPI ::std::unique_ptr<::ContainerValidationCraftInputs>
     _createCraftInputs(::ItemStackRequestActionCraftBase const& requestAction);
 
-    MCAPI ::ItemStackNetResult _initCraftResults(::std::vector<::ItemInstance> const& results, uchar numCrafts);
+    MCNAPI ::ItemStackNetResult _initCraftResults(::std::vector<::ItemInstance> const& results, uchar numCrafts);
 
-    MCAPI ::ItemInstance* _initSingleCraftResult(::ItemInstance const& itemInstance);
+    MCNAPI ::ItemInstance* _initSingleCraftResult(::ItemInstance const& itemInstance);
 
-    MCAPI ::ItemStackNetResult _setCreatedItemOutputSlot(uchar resultsIndex);
+    MCNAPI ::ItemStackNetResult _setCreatedItemOutputSlot(uchar resultsIndex);
 
-    MCAPI ::ItemStackNetResult endRequest(::ItemStackNetResult currentResult);
+    MCNAPI ::ItemStackNetResult endRequest(::ItemStackNetResult currentResult);
 
-    MCAPI ::ItemStackNetResult handleConsume(::ItemStackRequestActionConsume const& requestAction);
+    MCNAPI ::ItemStackNetResult handleConsume(::ItemStackRequestActionConsume const& requestAction);
 
-    MCAPI ::ItemStackNetResult handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
+    MCNAPI ::ItemStackNetResult handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
 
-    MCAPI ::ItemStackNetResult
+    MCNAPI ::ItemStackNetResult
     handleCraftResults(::ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const& requestAction);
 
-    MCAPI void onContainerScreenOpen(::ContainerScreenContext const& screenContext);
+    MCNAPI void onContainerScreenOpen(::ContainerScreenContext const& screenContext);
     // NOLINTEND
 
 public:
@@ -73,6 +73,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

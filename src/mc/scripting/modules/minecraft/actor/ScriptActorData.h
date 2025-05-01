@@ -22,33 +22,34 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptActorData& operator=(ScriptActorData const&);
     ScriptActorData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorData(::ScriptModuleMinecraft::ScriptActorData const&);
+    MCNAPI ScriptActorData(::ScriptModuleMinecraft::ScriptActorData const&);
 
-    MCAPI explicit ScriptActorData(::Actor const& actor);
+    MCNAPI explicit ScriptActorData(::Actor const& actor);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptActorData& operator=(::ScriptModuleMinecraft::ScriptActorData&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptActorData& operator=(::ScriptModuleMinecraft::ScriptActorData const&);
 
-    MCAPI ~ScriptActorData();
+    MCNAPI ::ScriptModuleMinecraft::ScriptActorData& operator=(::ScriptModuleMinecraft::ScriptActorData&&);
+
+    MCNAPI ~ScriptActorData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorData const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorData const&);
 
-    MCAPI void* $ctor(::Actor const& actor);
+    MCNAPI void* $ctor(::Actor const& actor);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

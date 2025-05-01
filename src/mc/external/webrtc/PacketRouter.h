@@ -19,40 +19,40 @@ class PacketRouter {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddRembModuleCandidate(::webrtc::RtcpFeedbackSenderInterface*, bool);
+    MCNAPI void AddRembModuleCandidate(::webrtc::RtcpFeedbackSenderInterface*, bool);
 
-    MCAPI void AddSendRtpModule(::webrtc::RtpRtcpInterface*, bool);
+    MCNAPI void AddSendRtpModule(::webrtc::RtpRtcpInterface*, bool);
 
-    MCAPI void AddSendRtpModuleToMap(::webrtc::RtpRtcpInterface*, uint);
+    MCNAPI void AddSendRtpModuleToMap(::webrtc::RtpRtcpInterface*, uint);
 
-    MCAPI void DetermineActiveRembModule();
+    MCNAPI void DetermineActiveRembModule();
 
-    MCAPI void MaybeRemoveRembModuleCandidate(::webrtc::RtcpFeedbackSenderInterface*, bool);
+    MCNAPI void MaybeRemoveRembModuleCandidate(::webrtc::RtcpFeedbackSenderInterface*, bool);
 
-    MCAPI PacketRouter();
+    MCNAPI PacketRouter();
 
-    MCAPI void RegisterNotifyBweCallback(::absl::AnyInvocable<
-                                         void(::webrtc::RtpPacketToSend const&, ::webrtc::PacedPacketInfo const&)>);
+    MCNAPI void RegisterNotifyBweCallback(::absl::AnyInvocable<
+                                          void(::webrtc::RtpPacketToSend const&, ::webrtc::PacedPacketInfo const&)>);
 
-    MCAPI void RemoveSendRtpModule(::webrtc::RtpRtcpInterface*);
+    MCNAPI void RemoveSendRtpModule(::webrtc::RtpRtcpInterface*);
 
-    MCAPI void RemoveSendRtpModuleFromMap(uint);
+    MCNAPI void RemoveSendRtpModuleFromMap(uint);
 
-    MCAPI bool SupportsRtxPayloadPadding() const;
+    MCNAPI bool SupportsRtxPayloadPadding() const;
 
-    MCAPI void UnsetActiveRembModule();
+    MCNAPI void UnsetActiveRembModule();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

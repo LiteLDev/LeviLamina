@@ -17,9 +17,9 @@ class BlockSource;
 class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-class Random;
 struct BlockGraphicsModeChangeContext;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class BaseRailBlock : public ::BlockLegacy {
@@ -49,33 +49,33 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Rail(::BlockSource& region, ::BlockPos const& pos);
+        MCNAPI Rail(::BlockSource& region, ::BlockPos const& pos);
 
-        MCAPI void connectTo(::BaseRailBlock::Rail& rail);
+        MCNAPI void connectTo(::BaseRailBlock::Rail& rail);
 
-        MCAPI ::std::shared_ptr<::BaseRailBlock::Rail> getRail(::BlockPos const& p);
+        MCNAPI ::std::shared_ptr<::BaseRailBlock::Rail> getRail(::BlockPos const& p);
 
-        MCAPI bool hasNeighborRail(::BlockPos const& pos);
+        MCNAPI bool hasNeighborRail(::BlockPos const& pos);
 
-        MCAPI void place(int signalStrength, bool first);
+        MCNAPI void place(int signalStrength, bool first);
 
-        MCAPI void removeSoftConnections();
+        MCNAPI void removeSoftConnections();
 
-        MCAPI void updateConnections(int direction);
+        MCNAPI void updateConnections(int direction);
 
-        MCAPI ~Rail();
+        MCNAPI ~Rail();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::BlockSource& region, ::BlockPos const& pos);
+        MCNAPI void* $ctor(::BlockSource& region, ::BlockPos const& pos);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -99,7 +99,7 @@ public:
     // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 143
+    // vIndex: 141
     virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const
         /*override*/;
 
@@ -126,10 +126,10 @@ public:
     // vIndex: 115
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    // vIndex: 148
+    virtual void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    // vIndex: 142
+    // vIndex: 140
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 131
@@ -142,17 +142,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void _updatePlacement(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void _updatePlacement(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void updateDir(::BlockSource& region, ::BlockPos const& pos, bool first) const;
+    MCNAPI void updateDir(::BlockSource& region, ::BlockPos const& pos, bool first) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _createCircuitComponent(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI static void _createCircuitComponent(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -164,34 +164,34 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
+    MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCFOLD ::AABB
+    MCNAPI ::AABB
     $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
+    MCNAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCFOLD bool $isRailBlock() const;
+    MCNAPI bool $isRailBlock() const;
 
-    MCFOLD bool $canSpawnOn(::Actor*) const;
+    MCNAPI bool $canSpawnOn(::Actor*) const;
 
-    MCFOLD bool $isLavaBlocking() const;
+    MCNAPI bool $isLavaBlocking() const;
 
-    MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
+    MCNAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
 
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 };

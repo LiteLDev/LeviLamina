@@ -40,25 +40,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 28
+    // vIndex: 30
     virtual ::EventResult onEvent(::ActorRemovedEvent const& actorRemovedEvent) /*override*/;
 
-    // vIndex: 27
+    // vIndex: 29
     virtual ::EventResult onEvent(::ActorRemoveEffectEvent const& actorRemoveEffectEvent) /*override*/;
 
-    // vIndex: 39
+    // vIndex: 41
     virtual ::EventResult onEvent(::ActorAttackEvent const& actorAttackEvent) /*override*/;
 
-    // vIndex: 32
+    // vIndex: 34
     virtual ::EventResult onEvent(::ActorHurtEvent const& actorHurtEvent) /*override*/;
 
-    // vIndex: 31
+    // vIndex: 33
     virtual ::EventResult onEvent(::ActorHealthChangedEvent const& actorHealthChangedEvent) /*override*/;
 
-    // vIndex: 35
+    // vIndex: 37
     virtual ::EventResult onEvent(::ActorDiedEvent const& actorDiedEvent) /*override*/;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual ::EventResult onEvent(::ProjectileHitEvent const& projectileHitEvent) /*override*/;
 
     // vIndex: 7
@@ -77,27 +77,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ActorRemovedEvent const& actorRemovedEvent);
+    MCNAPI ::EventResult $onEvent(::ActorRemovedEvent const& actorRemovedEvent);
 
-    MCFOLD ::EventResult $onEvent(::ActorRemoveEffectEvent const& actorRemoveEffectEvent);
+    MCNAPI ::EventResult $onEvent(::ActorRemoveEffectEvent const& actorRemoveEffectEvent);
 
-    MCAPI ::EventResult $onEvent(::ActorAttackEvent const& actorAttackEvent);
+    MCNAPI ::EventResult $onEvent(::ActorAttackEvent const& actorAttackEvent);
 
-    MCAPI ::EventResult $onEvent(::ActorHurtEvent const& actorHurtEvent);
+    MCNAPI ::EventResult $onEvent(::ActorHurtEvent const& actorHurtEvent);
 
-    MCAPI ::EventResult $onEvent(::ActorHealthChangedEvent const& actorHealthChangedEvent);
+    MCNAPI ::EventResult $onEvent(::ActorHealthChangedEvent const& actorHealthChangedEvent);
 
-    MCAPI ::EventResult $onEvent(::ActorDiedEvent const& actorDiedEvent);
+    MCNAPI ::EventResult $onEvent(::ActorDiedEvent const& actorDiedEvent);
 
-    MCAPI ::EventResult $onEvent(::ProjectileHitEvent const& projectileHitEvent);
+    MCNAPI ::EventResult $onEvent(::ProjectileHitEvent const& projectileHitEvent);
 
-    MCAPI ::EventResult $onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod);
+    MCNAPI ::EventResult $onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

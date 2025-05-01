@@ -41,23 +41,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EncodedImageBuffer(uint64);
+    MCNAPI explicit EncodedImageBuffer(uint64);
 
-    MCAPI EncodedImageBuffer(uchar const*, uint64);
+    MCNAPI EncodedImageBuffer(uchar const*, uint64);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::scoped_refptr<::webrtc::EncodedImageBuffer> Create(uchar const*, uint64);
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::EncodedImageBuffer> Create(uchar const*, uint64);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint64);
+    MCNAPI void* $ctor(uint64);
 
-    MCAPI void* $ctor(uchar const*, uint64);
+    MCNAPI void* $ctor(uchar const*, uint64);
     // NOLINTEND
 
 public:
@@ -75,7 +75,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

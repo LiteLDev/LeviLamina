@@ -26,17 +26,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addReference();
+    MCNAPI void _removeReference();
 
-    MCAPI void _removeReference();
+    MCNAPI ::Scripting::LifetimeRegistry* getLifetimeRegistry() const;
 
-    MCFOLD ::Scripting::LifetimeRegistry* getLifetimeRegistry() const;
+    MCNAPI ::Scripting::StrongObjectHandle& operator=(::Scripting::StrongObjectHandle const& rhs);
 
-    MCAPI ::Scripting::StrongObjectHandle& operator=(::Scripting::StrongObjectHandle const& rhs);
+    MCNAPI ::Scripting::StrongObjectHandle& operator=(::Scripting::StrongObjectHandle&& rhs);
 
-    MCAPI ::Scripting::StrongObjectHandle& operator=(::Scripting::StrongObjectHandle&& rhs);
-
-    MCAPI ~StrongObjectHandle();
+    MCNAPI ~StrongObjectHandle();
     // NOLINTEND
 
 public:
@@ -48,7 +46,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

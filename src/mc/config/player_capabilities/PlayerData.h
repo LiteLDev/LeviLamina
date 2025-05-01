@@ -45,17 +45,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isAbilityEnabled(::AbilitiesIndex ability) const;
+    MCNAPI bool $isAbilityEnabled(::AbilitiesIndex ability) const;
 
-    MCAPI bool $isTeacher() const;
+    MCNAPI bool $isTeacher() const;
 
-    MCAPI bool $isOperator() const;
+    MCNAPI bool $isOperator() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

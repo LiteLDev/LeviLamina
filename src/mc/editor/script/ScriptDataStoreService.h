@@ -44,35 +44,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptDataStoreService(::Editor::ScriptModule::ScriptDataStoreService&&);
+    MCNAPI ScriptDataStoreService(::Editor::ScriptModule::ScriptDataStoreService&&);
 
-    MCAPI ScriptDataStoreService(
+    MCNAPI ScriptDataStoreService(
         ::Editor::Services::DataStoreServiceProvider*      dataStoreService,
         ::Editor::Services::TelemetryServiceProvider*      telemetryService,
         ::gsl::not_null<::ScriptDeferredEventCoordinator*> eventCoordinator,
         ::Scripting::WeakLifetimeScope const&              scope
     );
 
-    MCAPI void
+    MCNAPI void
     _handleDataStorePayloadEvent(::HashedString const& dataTag, ::Editor::DataStore::EventType eventType, ::Json::Value const& payload, ::Editor::DataStore::PayloadDescription const&);
 
-    MCAPI ::Editor::ScriptModule::ScriptDataStoreService& operator=(::Editor::ScriptModule::ScriptDataStoreService&&);
+    MCNAPI ::Editor::ScriptModule::ScriptDataStoreService& operator=(::Editor::ScriptModule::ScriptDataStoreService&&);
 
-    MCAPI ~ScriptDataStoreService();
+    MCNAPI ~ScriptDataStoreService();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptDataStoreService> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptDataStoreService> bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ScriptModule::ScriptDataStoreService&&);
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptDataStoreService&&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Editor::Services::DataStoreServiceProvider*      dataStoreService,
         ::Editor::Services::TelemetryServiceProvider*      telemetryService,
         ::gsl::not_null<::ScriptDeferredEventCoordinator*> eventCoordinator,
@@ -83,7 +83,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

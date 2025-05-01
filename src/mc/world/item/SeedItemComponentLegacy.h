@@ -36,17 +36,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
 
-    MCAPI bool init(::Json::Value const& data, ::MolangVersion molangVersion);
+    MCNAPI bool init(::Json::Value const& data, ::MolangVersion molangVersion);
 
-    MCAPI bool
+    MCNAPI bool
     useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3 const& clickPos);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
+    MCNAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
     // NOLINTEND
 };

@@ -27,7 +27,7 @@ struct ApplyDashSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void doDash(
+    MCNAPI static void doDash(
         ::StrictEntityContext const&                    context,
         ::JumpPreventionResult const&                   jumpPreventionResult,
         ::MovementAttributesComponent const&            attributes,
@@ -43,7 +43,7 @@ public:
         ::EntityModifier<::DashCooldownTimerComponent>& mod
     );
 
-    MCAPI static void tickApplyDashModifierSystem(
+    MCNAPI static void tickApplyDashModifierSystem(
         ::StrictEntityContext const&                    context,
         ::TriggerJumpRequestComponent const&            triggerJumpRequestComponent,
         ::DashComponent const&                          dashComponent,

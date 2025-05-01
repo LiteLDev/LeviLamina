@@ -24,27 +24,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RuntimeConditions(::Scripting::RuntimeConditions const& rhs);
+    MCNAPI RuntimeConditions(::Scripting::RuntimeConditions const& rhs);
 
-    MCAPI explicit RuntimeConditions(::std::vector<::Scripting::RuntimeCondition> const& runtimeConditions);
+    MCNAPI explicit RuntimeConditions(::std::vector<::Scripting::RuntimeCondition> const& runtimeConditions);
 
-    MCAPI ::Scripting::RuntimeConditions getMissing(::Scripting::RuntimeConditions const& runtimeConditions);
+    MCNAPI ::Scripting::RuntimeConditions getMissing(::Scripting::RuntimeConditions const& runtimeConditions);
 
-    MCAPI ~RuntimeConditions();
+    MCNAPI ~RuntimeConditions();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::RuntimeConditions const& rhs);
+    MCNAPI void* $ctor(::Scripting::RuntimeConditions const& rhs);
 
-    MCAPI void* $ctor(::std::vector<::Scripting::RuntimeCondition> const& runtimeConditions);
+    MCNAPI void* $ctor(::std::vector<::Scripting::RuntimeCondition> const& runtimeConditions);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

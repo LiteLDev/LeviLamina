@@ -9,7 +9,7 @@
 namespace Editor::ScriptModule::ScriptWidgetComponentType {
 // functions
 // NOLINTBEGIN
-MCAPI ::Scripting::EnumBindingBuilder<::std::string, ::Editor::Widgets::WidgetComponentType> bindEnums();
+MCNAPI ::Scripting::EnumBindingBuilder<::std::string, ::Editor::Widgets::WidgetComponentType> bindEnums();
 // NOLINTEND
 
 } // namespace Editor::ScriptModule::ScriptWidgetComponentType

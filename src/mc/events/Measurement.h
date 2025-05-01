@@ -39,15 +39,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Json::Value getValue() const;
+    MCNAPI ::Json::Value getValue() const;
 
-    MCAPI ~Measurement();
+    MCNAPI ~Measurement();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

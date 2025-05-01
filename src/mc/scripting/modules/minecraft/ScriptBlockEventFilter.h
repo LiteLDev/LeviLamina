@@ -29,38 +29,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter const&);
+    MCNAPI ScriptBlockEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter const&);
 
-    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter&
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter const&);
 
-    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter&
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter&&);
 
-    MCAPI void process();
+    MCNAPI void process();
 
-    MCAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptBlockFilterData const& data);
+    MCNAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptBlockFilterData const& data);
 
-    MCAPI ~ScriptBlockEventFilter();
+    MCNAPI ~ScriptBlockEventFilter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter>
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter>
     bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -89,13 +89,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DataStoreService(::Editor::ServiceProviderCollection& providers);
+    MCNAPI explicit DataStoreService(::Editor::ServiceProviderCollection& providers);
 
-    MCAPI void _handleDataStoreEventPacket(::Editor::Network::DataStoreEventPayload const& packet);
+    MCNAPI void _handleDataStoreEventPacket(::Editor::Network::DataStoreEventPayload const& packet);
 
-    MCAPI void _handleScriptReloadEventPacket(::Editor::Network::ServerScriptTeardownRebuildPayload const& packet);
+    MCNAPI void _handleScriptReloadEventPacket(::Editor::Network::ServerScriptTeardownRebuildPayload const& packet);
 
-    MCAPI ::Scripting::Result<void> _processEvent(
+    MCNAPI ::Scripting::Result<void> _processEvent(
         ::HashedString const&                          dataTag,
         ::Editor::DataStore::EventType                 eventType,
         ::Json::Value const&                           payload,
@@ -103,14 +103,14 @@ public:
         bool                                           isNetworkEvent
     );
 
-    MCAPI void _publishEvent(
+    MCNAPI void _publishEvent(
         ::HashedString const&                          dataTag,
         ::Editor::DataStore::EventType                 eventType,
         ::Json::Value const&                           payload,
         ::Editor::DataStore::PayloadDescription const& desc
     );
 
-    MCAPI void _sendNetworkEvent(
+    MCNAPI void _sendNetworkEvent(
         ::HashedString const&                          dataTag,
         ::Editor::DataStore::EventType                 eventType,
         ::Json::Value const&                           payload,
@@ -121,33 +121,33 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCFOLD ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::Scripting::Result<void> $dispatchEvent(
+    MCNAPI ::Scripting::Result<void> $dispatchEvent(
         ::HashedString const&                          dataTag,
         ::Editor::DataStore::EventType                 eventType,
         ::Json::Value const&                           payload,
         ::Editor::DataStore::PayloadDescription const& desc
     );
 
-    MCAPI ::Json::Value
+    MCNAPI ::Json::Value
     $getPayload(::HashedString const& dataTag, ::Editor::DataStore::PayloadDescription const& desc) const;
 
-    MCFOLD ::Bedrock::PubSub::Subscription $listenForEvent(
+    MCNAPI ::Bedrock::PubSub::Subscription $listenForEvent(
         ::std::function<
             void(::HashedString const&, ::Editor::DataStore::EventType, ::Json::Value const&, ::Editor::DataStore::PayloadDescription const&)>
             callback
@@ -157,9 +157,9 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForDataStoreServiceProvider();
+    MCNAPI static void** $vftableForDataStoreServiceProvider();
 
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

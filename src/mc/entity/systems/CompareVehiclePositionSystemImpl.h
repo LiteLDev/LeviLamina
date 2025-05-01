@@ -21,7 +21,7 @@ struct VehicleInputIntentComponent;
 namespace CompareVehiclePositionSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void doCompareVehiclePosition(
+MCNAPI void doCompareVehiclePosition(
     ::PassengerComponent const&                                                           passengerComponent,
     ::EventingDispatcherComponent const&                                                  eventingDispatcherComponent,
     ::ServerPlayerCurrentMovementComponent const&                                         serverPlayerCurrentMovement,
@@ -30,7 +30,7 @@ MCAPI void doCompareVehiclePosition(
     ::OptionalGlobal<::ComparisonEventingCapComponent>                                    eventingCapComponent
 );
 
-MCAPI void tick(
+MCNAPI void tick(
     ::ViewT<
         ::StrictEntityContext,
         ::PassengerComponent const,

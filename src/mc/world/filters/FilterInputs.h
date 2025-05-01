@@ -30,26 +30,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FilterInputs(
+    MCNAPI FilterInputs(
         ::SharedTypes::Legacy::FilterSubject domain,
         ::FilterInput                        value,
         ::FilterOperator                     subject,
         ::FilterInput                        op
     );
 
-    MCAPI ~FilterInputs();
+    MCNAPI ~FilterInputs();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::SharedTypes::Legacy::FilterSubject domain, ::FilterInput value, ::FilterOperator subject, ::FilterInput op);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

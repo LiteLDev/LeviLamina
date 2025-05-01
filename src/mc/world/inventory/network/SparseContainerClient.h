@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _networkUpdateItem(int slot, ::ItemStack const& newItem);
+    MCNAPI void _networkUpdateItem(int slot, ::ItemStack const& newItem);
     // NOLINTEND
 
 public:

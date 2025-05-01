@@ -42,19 +42,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onControlActionCreated(::std::string const& id);
+    MCNAPI void _onControlActionCreated(::std::string const& id);
 
-    MCAPI void _onControlActionDestroyed(::Json::Value const& payload);
+    MCNAPI void _onControlActionDestroyed(::Json::Value const& payload);
 
-    MCAPI ::Json::Value getControlActionPayload(::Editor::DataStore::PayloadDescription const& desc) const;
+    MCNAPI ::Json::Value getControlActionPayload(::Editor::DataStore::PayloadDescription const& desc) const;
 
-    MCAPI ::Scripting::Result<void> handleControlActionEvent(
+    MCNAPI ::Scripting::Result<void> handleControlActionEvent(
         ::Editor::DataStore::EventType                 eventType,
         ::Json::Value const&                           payload,
         ::Editor::DataStore::PayloadDescription const& desc
     );
 
-    MCAPI ::Scripting::Result<void> handleInvokeEvent(
+    MCNAPI ::Scripting::Result<void> handleInvokeEvent(
         ::Editor::DataStore::EventType                 eventType,
         ::Json::Value const&                           payload,
         ::Editor::DataStore::PayloadDescription const& desc
@@ -78,13 +78,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $clear();
+    MCNAPI void $clear();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

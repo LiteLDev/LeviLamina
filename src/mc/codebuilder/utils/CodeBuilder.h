@@ -20,31 +20,31 @@ namespace Json { class Value; }
 namespace Util::CodeBuilder {
 // functions
 // NOLINTBEGIN
-MCAPI ::Json::Value createMobObject(int mobType, int variant, uchar color);
+MCNAPI ::Json::Value createMobObject(int mobType, int variant, uchar color);
 
-MCAPI ::Json::Value createObject(::Actor const& actor);
+MCNAPI ::Json::Value createObject(::Actor const& actor);
 
-MCAPI ::Json::Value createObject(::LevelChunk const& chunk);
+MCNAPI ::Json::Value createObject(::LevelChunk const& chunk);
 
-MCAPI ::Json::Value createObject(::CommandOutput const& commandOutput);
+MCNAPI ::Json::Value createObject(::CommandOutput const& commandOutput);
 
-MCAPI ::Json::Value createObject(::ItemDescriptor const& item);
+MCNAPI ::Json::Value createObject(::ItemDescriptor const& item);
 
-MCAPI ::Json::Value createObject(::ItemStackBase const& item);
+MCNAPI ::Json::Value createObject(::ItemStackBase const& item);
 
-MCAPI ::Json::Value createObject(::Player const& player);
+MCNAPI ::Json::Value createObject(::Player const& player);
 
-MCAPI ::Json::Value createObject(::EconomyTradeableComponent const& val);
+MCNAPI ::Json::Value createObject(::EconomyTradeableComponent const& val);
 
-MCAPI ::Json::Value createObject(::EnchantmentInstance const& val);
+MCNAPI ::Json::Value createObject(::EnchantmentInstance const& val);
 
-MCAPI ::Json::Value createObject(::Vec3 const& vec);
+MCNAPI ::Json::Value createObject(::Vec3 const& vec);
 
-MCAPI ::Json::Value createObject(::Block const& val, int aux);
+MCNAPI ::Json::Value createObject(::Block const& val, int aux);
 
-MCAPI ::Json::Value createTraderObject(::Actor const& trader);
+MCNAPI ::Json::Value createTraderObject(::Actor const& trader);
 
-MCFOLD ::std::vector<::std::string> translate(::std::vector<::std::string> const& in);
+MCNAPI ::std::vector<::std::string> translate(::std::vector<::std::string> const& in);
 // NOLINTEND
 
 } // namespace Util::CodeBuilder

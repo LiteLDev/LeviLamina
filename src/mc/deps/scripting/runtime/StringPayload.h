@@ -46,13 +46,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::ResultAny $runOn(
+    MCNAPI ::Scripting::ResultAny $runOn(
         ::Scripting::ContextId                  contextId,
         ::Scripting::StringBasedRuntime&        runtime,
         ::std::optional<::Scripting::Privilege> privilege
@@ -62,7 +62,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

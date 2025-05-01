@@ -23,83 +23,83 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Clear();
+    MCNAPI void Clear();
 
-    MCAPI bool EqualIPs(::rtc::SocketAddress const&) const;
+    MCNAPI bool EqualIPs(::rtc::SocketAddress const&) const;
 
-    MCAPI bool EqualPorts(::rtc::SocketAddress const&) const;
+    MCNAPI bool EqualPorts(::rtc::SocketAddress const&) const;
 
-    MCAPI bool FromString(::std::string_view);
+    MCNAPI bool FromString(::std::string_view);
 
-    MCAPI ::std::string HostAsSensitiveURIString() const;
+    MCNAPI ::std::string HostAsSensitiveURIString() const;
 
-    MCAPI ::std::string HostAsURIString() const;
+    MCNAPI ::std::string HostAsURIString() const;
 
-    MCAPI bool IsAnyIP() const;
+    MCNAPI bool IsAnyIP() const;
 
-    MCAPI bool IsLoopbackIP() const;
+    MCNAPI bool IsLoopbackIP() const;
 
-    MCAPI bool IsNil() const;
+    MCNAPI bool IsNil() const;
 
-    MCAPI bool IsPrivateIP() const;
+    MCNAPI bool IsPrivateIP() const;
 
-    MCAPI bool IsUnresolvedIP() const;
+    MCNAPI bool IsUnresolvedIP() const;
 
-    MCAPI ::std::string PortAsString() const;
+    MCNAPI ::std::string PortAsString() const;
 
-    MCAPI void SetIP(::rtc::IPAddress const&);
+    MCNAPI void SetIP(::rtc::IPAddress const&);
 
-    MCAPI void SetIP(::std::string_view);
+    MCNAPI void SetIP(::std::string_view);
 
-    MCAPI void SetPort(int);
+    MCNAPI void SetPort(int);
 
-    MCAPI void SetResolvedIP(::rtc::IPAddress const&);
+    MCNAPI void SetResolvedIP(::rtc::IPAddress const&);
 
-    MCAPI SocketAddress();
+    MCNAPI SocketAddress();
 
-    MCAPI SocketAddress(::rtc::SocketAddress const&);
+    MCNAPI SocketAddress(::rtc::SocketAddress const&);
 
-    MCAPI SocketAddress(::rtc::IPAddress const&, int);
+    MCNAPI SocketAddress(::rtc::IPAddress const&, int);
 
-    MCAPI SocketAddress(::std::string_view, int);
+    MCNAPI SocketAddress(::std::string_view, int);
 
-    MCAPI ::std::string ToSensitiveNameAndAddressString() const;
+    MCNAPI ::std::string ToSensitiveNameAndAddressString() const;
 
-    MCAPI ::std::string ToSensitiveString() const;
+    MCNAPI ::std::string ToSensitiveString() const;
 
-    MCAPI uint64 ToSockAddrStorage(::sockaddr_storage*) const;
+    MCNAPI uint64 ToSockAddrStorage(::sockaddr_storage*) const;
 
-    MCAPI ::std::string ToString() const;
+    MCNAPI ::std::string ToString() const;
 
-    MCAPI ::rtc::IPAddress const& ipaddr() const;
+    MCNAPI ::rtc::IPAddress const& ipaddr() const;
 
-    MCAPI bool operator<(::rtc::SocketAddress const&) const;
+    MCNAPI bool operator<(::rtc::SocketAddress const&) const;
 
-    MCAPI ::rtc::SocketAddress& operator=(::rtc::SocketAddress const&);
+    MCNAPI ::rtc::SocketAddress& operator=(::rtc::SocketAddress const&);
 
-    MCAPI bool operator==(::rtc::SocketAddress const&) const;
+    MCNAPI bool operator==(::rtc::SocketAddress const&) const;
 
-    MCAPI ushort port() const;
+    MCNAPI ushort port() const;
 
-    MCAPI ~SocketAddress();
+    MCNAPI ~SocketAddress();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::rtc::SocketAddress const&);
+    MCNAPI void* $ctor(::rtc::SocketAddress const&);
 
-    MCAPI void* $ctor(::rtc::IPAddress const&, int);
+    MCNAPI void* $ctor(::rtc::IPAddress const&, int);
 
-    MCAPI void* $ctor(::std::string_view, int);
+    MCNAPI void* $ctor(::std::string_view, int);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

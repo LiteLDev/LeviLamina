@@ -23,25 +23,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StreamsConfig();
+    MCNAPI StreamsConfig();
 
-    MCAPI StreamsConfig(::webrtc::StreamsConfig const&);
+    MCNAPI StreamsConfig(::webrtc::StreamsConfig const&);
 
-    MCAPI ~StreamsConfig();
+    MCNAPI ~StreamsConfig();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::webrtc::StreamsConfig const&);
+    MCNAPI void* $ctor(::webrtc::StreamsConfig const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

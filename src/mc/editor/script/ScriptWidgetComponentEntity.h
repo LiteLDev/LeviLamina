@@ -47,7 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWidgetComponentEntity(
+    MCNAPI ScriptWidgetComponentEntity(
         ::Editor::ServiceProviderCollection&                                        serviceProviders,
         ::mce::UUID const&                                                          componentId,
         ::std::string const&                                                        componentName,
@@ -57,26 +57,26 @@ public:
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentEntityOptions> options
     );
 
-    MCFOLD ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _getClickable() const;
 
-    MCAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _playAnimation(::std::string const& animationName);
 
-    MCAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _setClickable(bool clickable);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentEntity> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentEntity> bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                        serviceProviders,
         ::mce::UUID const&                                                          componentId,
         ::std::string const&                                                        componentName,
@@ -96,13 +96,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
+    MCNAPI ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

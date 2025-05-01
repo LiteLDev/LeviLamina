@@ -193,18 +193,24 @@ public:
     virtual void stopAllSounds();
 
     // vIndex: 47
-    virtual void fadeMusicOut(float);
+    virtual void pauseAllPlayingSounds();
 
     // vIndex: 48
-    virtual bool isMusicChannelPlaying() const;
+    virtual void resumeAllPreviouslyPlayingSounds();
 
     // vIndex: 49
-    virtual void pauseMusic(bool);
+    virtual void fadeMusicOut(float);
 
     // vIndex: 50
-    virtual void update(float);
+    virtual bool isMusicChannelPlaying() const;
 
     // vIndex: 51
+    virtual void pauseMusic(bool);
+
+    // vIndex: 52
+    virtual void update(float);
+
+    // vIndex: 53
     virtual uint64 registerLoop(
         ::SoundItem const&,
         ::std::weak_ptr<::SoundEvent> const,
@@ -214,28 +220,28 @@ public:
         float
     );
 
-    // vIndex: 52
+    // vIndex: 54
     virtual void unregisterLoop(uint64, bool);
 
-    // vIndex: 53
+    // vIndex: 55
     virtual void displayDebugStats(::std::string&) const;
 
-    // vIndex: 54
+    // vIndex: 56
     virtual void startSnapshot(::std::string const&);
 
-    // vIndex: 55
+    // vIndex: 57
     virtual void stopSnapshot(::std::string const&);
 
-    // vIndex: 56
+    // vIndex: 58
     virtual void stopAllSnapshots();
 
-    // vIndex: 57
+    // vIndex: 59
     virtual uint64 getNewSoundHandle();
 
-    // vIndex: 58
+    // vIndex: 60
     virtual ::std::optional<::PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64) const;
 
-    // vIndex: 59
+    // vIndex: 61
     virtual ::std::optional<::LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64) const;
     // NOLINTEND
 

@@ -44,13 +44,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TextObjectLocalizedTextWithParams(::std::string text, ::std::vector<::std::string> const& params);
+    MCNAPI TextObjectLocalizedTextWithParams(::std::string text, ::std::vector<::std::string> const& params);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string text, ::std::vector<::std::string> const& params);
+    MCNAPI void* $ctor(::std::string text, ::std::vector<::std::string> const& params);
     // NOLINTEND
 
 public:
@@ -62,16 +62,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $asString() const;
+    MCNAPI ::std::string $asString() const;
 
-    MCAPI ::Json::Value $asJsonValue() const;
+    MCNAPI ::Json::Value $asJsonValue() const;
 
-    MCAPI ::Json::Value $resolve(::ResolveData const& resolveData) const;
+    MCNAPI ::Json::Value $resolve(::ResolveData const& resolveData) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

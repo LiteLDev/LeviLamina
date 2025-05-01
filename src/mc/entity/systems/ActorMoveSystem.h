@@ -11,10 +11,10 @@ class ActorMoveSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createActorMoveSystem();
+    MCNAPI static ::TickingSystemWithInfo createActorMoveSystem();
 
-    MCAPI static ::TickingSystemWithInfo createConfigureDepenetrationSystem();
+    MCNAPI static ::TickingSystemWithInfo createConfigureDepenetrationSystem();
 
-    MCAPI static ::TickingSystemWithInfo createUpdateDepenetrationSystem();
+    MCNAPI static ::TickingSystemWithInfo createUpdateDepenetrationSystem();
     // NOLINTEND
 };

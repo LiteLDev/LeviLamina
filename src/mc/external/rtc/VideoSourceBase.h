@@ -24,34 +24,34 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~SinkPair();
+        MCNAPI ~SinkPair();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::rtc::VideoSourceBase::SinkPair* FindSinkPair(::rtc::VideoSinkInterface<::webrtc::VideoFrame> const*);
+    MCNAPI ::rtc::VideoSourceBase::SinkPair* FindSinkPair(::rtc::VideoSinkInterface<::webrtc::VideoFrame> const*);
 
-    MCAPI VideoSourceBase();
+    MCNAPI VideoSourceBase();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

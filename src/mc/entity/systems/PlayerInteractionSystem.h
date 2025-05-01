@@ -13,6 +13,7 @@ class PlayerInteractionSystem {
 public:
     // PlayerInteractionSystem inner types declare
     // clang-format off
+    template<typename T0> struct InteractionMapping;
     struct InteractionMappingBase;
     // clang-format on
 
@@ -37,15 +38,18 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCFOLD bool $getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
+        MCNAPI bool $getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
+
+    template <typename T0>
+    struct InteractionMapping {};
 
 public:
     // member variables

@@ -19,6 +19,7 @@ class IDynamicContainerSerialization;
 class Item;
 class ItemRegistry;
 class LevelData;
+class LinkedAssetValidator;
 class ResourcePackManager;
 struct ItemData;
 struct ItemRegistryComplexAlias;
@@ -53,13 +54,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~LockGuard();
+        MCNAPI ~LockGuard();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -113,6 +114,13 @@ public:
         ::std::function<
             void(::ItemRegistryRef, ::BlockDefinitionGroup const&, ::CreativeItemRegistry*, ::BaseGameVersion const&, ::Experiments const&, ::ResourcePackManager const&, ::cereal::ReflectionCtx const&)>
             registerCallback
+    ) const;
+
+    MCAPI void initServer(
+        ::Experiments const&                               experiments,
+        ::BaseGameVersion const&                           baseGameVersion,
+        ::ResourcePackManager*                             rpm,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     ) const;
 
     MCAPI bool isComplexAlias(::HashedString const& oldName) const;

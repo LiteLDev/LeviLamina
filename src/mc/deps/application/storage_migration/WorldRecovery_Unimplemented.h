@@ -22,18 +22,17 @@ public:
     // vIndex: 1
     virtual void initialize() /*override*/;
 
-    // vIndex: 3
-    virtual ::Bedrock::PubSub::DeferredSubscription notifyOnUpdate(
-        ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::WorldRecovery::RecoveryResult>>,
-        ::std::function<void(::Bedrock::WorldRecovery::RecoveryUpdate const&)>,
-        ::Bedrock::PubSub::DeferralType
-    ) /*override*/;
-
     // vIndex: 2
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::WorldRecovery::RecoveryResult>>
-        doRecovery(::std::string_view) /*override*/;
+    virtual ::std::tuple<
+        ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::WorldRecovery::RecoveryResult>>,
+        ::Bedrock::PubSub::DeferredSubscription>
+        doRecovery(
+            ::std::string_view,
+            ::std::function<void(::Bedrock::WorldRecovery::RecoveryUpdate const&)>,
+            ::Bedrock::PubSub::DeferralType
+        ) /*override*/;
 
-    // vIndex: 4
+    // vIndex: 3
     virtual ::Core::PathBuffer<::std::string> const& getRecoveryDestinationPath() const /*override*/;
 
     // vIndex: 0

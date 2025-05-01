@@ -32,22 +32,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
     getActor() const;
 
-    MCAPI ::std::string getName() const;
+    MCNAPI ::std::string getName() const;
 
-    MCAPI bool isValid() const;
+    MCNAPI bool isValid() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptScoreboardIdentity&
+    MCNAPI ::ScriptModuleMinecraft::ScriptScoreboardIdentity&
     operator=(::ScriptModuleMinecraft::ScriptScoreboardIdentity&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptScoreboardIdentity> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptScoreboardIdentity> bind();
     // NOLINTEND
 };
 

@@ -31,36 +31,24 @@ public:
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(::BinaryStream& stream) const /*override*/;
+    virtual void write(::BinaryStream&) const /*override*/;
 
     // vIndex: 8
-    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) /*override*/;
 
     // vIndex: 0
-    virtual ~SetMovementAuthorityPacket() /*override*/;
+    virtual ~SetMovementAuthorityPacket() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
-
-    MCAPI void $write(::BinaryStream& stream) const;
-
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

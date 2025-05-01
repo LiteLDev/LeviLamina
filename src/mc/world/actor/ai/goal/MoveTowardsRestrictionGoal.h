@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
-class Vec3;
 // clang-format on
 
 class MoveTowardsRestrictionGoal : public ::Goal {
@@ -34,6 +34,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool _randomizeWantedPositionTowardsRestriction(::Vec3 const& restrictionCenter);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -42,8 +48,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCFOLD void $start();
+    MCNAPI void $start();
     // NOLINTEND
 };

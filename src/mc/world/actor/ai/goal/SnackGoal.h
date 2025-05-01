@@ -60,40 +60,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _hasSnackableItems();
+    MCNAPI bool _hasSnackableItems();
 
-    MCAPI bool _isSnackableItem(::ItemStack const& item) const;
+    MCNAPI bool _isSnackableItem(::ItemStack const& item) const;
 
-    MCFOLD void _updateHand(::ItemStack const& item);
+    MCNAPI void _updateHand(::ItemStack const& item);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCFOLD int $getRandomEatingEnd() const;
+    MCNAPI int $getRandomEatingEnd() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

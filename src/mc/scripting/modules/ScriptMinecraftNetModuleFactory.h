@@ -40,10 +40,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     ScriptMinecraftNetModuleFactory(::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler, ::ServerLevel* level);
 
-    MCAPI ::Scripting::ModuleBinding _generateBindings(
+    MCNAPI void _addVersions();
+
+    MCNAPI ::Scripting::ModuleBinding _generateBindings(
         ::Scripting::ModuleBindingBuilder&          moduleBuilder,
         ::std::optional<::Scripting::ContextConfig> contextConfig,
         bool                                        allowedTags,
@@ -62,7 +64,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler, ::ServerLevel* level);
+    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler, ::ServerLevel* level);
     // NOLINTEND
 
 public:
@@ -74,6 +76,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

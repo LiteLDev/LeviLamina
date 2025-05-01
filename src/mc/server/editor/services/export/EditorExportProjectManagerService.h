@@ -65,27 +65,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCFOLD ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCAPI void $beginExportProject(
+    MCNAPI void $beginExportProject(
         ::WeakEntityRef                                      playerRef,
         ::Editor::GameOptions const&                         gameOptions,
         ::std::function<void(::Editor::ExportResult const&)> callback
     );
 
-    MCFOLD bool $canExportProject();
+    MCNAPI bool $canExportProject();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
 
-    MCAPI static void** $vftableForEditorPlayerExportProjectServiceProvider();
+    MCNAPI static void** $vftableForEditorPlayerExportProjectServiceProvider();
     // NOLINTEND
 };
 

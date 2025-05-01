@@ -58,42 +58,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EncryptedNetworkPeer(::std::shared_ptr<::NetworkPeer> peer);
+    MCNAPI explicit EncryptedNetworkPeer(::std::shared_ptr<::NetworkPeer> peer);
 
-    MCAPI void enableEncryption(::std::string const& symmetricKey);
+    MCNAPI void enableEncryption(::std::string const& symmetricKey);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::NetworkPeer> peer);
+    MCNAPI void* $ctor(::std::shared_ptr<::NetworkPeer> peer);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
 
-    MCAPI ::NetworkPeer::DataStatus $receivePacket(
+    MCNAPI ::NetworkPeer::DataStatus $receivePacket(
         ::std::string&                                                    outData,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     );
 
-    MCFOLD ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
+    MCNAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 
-    MCAPI bool $isEncrypted() const;
+    MCNAPI bool $isEncrypted() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

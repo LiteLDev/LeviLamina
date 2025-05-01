@@ -5,7 +5,7 @@
 namespace RapidJsonDataFixers::Item {
 // functions
 // NOLINTBEGIN
-MCAPI bool applyLambdaToComponentObject(
+MCNAPI bool applyLambdaToComponentObject(
     ::rapidjson::GenericDocument<
         ::rapidjson::UTF8<char>,
         ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,

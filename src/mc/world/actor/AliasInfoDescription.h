@@ -17,22 +17,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AliasInfoDescription(::AliasInfoDescription const&);
+    MCNAPI AliasInfoDescription(::AliasInfoDescription const&);
 
-    MCAPI ::AliasInfoDescription& operator=(::AliasInfoDescription const&);
+    MCNAPI ::AliasInfoDescription& operator=(::AliasInfoDescription const&);
 
-    MCAPI ~AliasInfoDescription();
+    MCNAPI ~AliasInfoDescription();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AliasInfoDescription const&);
+    MCNAPI void* $ctor(::AliasInfoDescription const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

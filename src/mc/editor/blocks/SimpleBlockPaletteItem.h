@@ -26,23 +26,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::HashedString _getBlock() const;
+    MCNAPI ::HashedString _getBlock() const;
 
-    MCAPI ::Editor::SimpleBlockPaletteItem& operator=(::Editor::SimpleBlockPaletteItem&&);
+    MCNAPI ::Editor::SimpleBlockPaletteItem& operator=(::Editor::SimpleBlockPaletteItem&&);
 
-    MCAPI ~SimpleBlockPaletteItem();
+    MCNAPI ~SimpleBlockPaletteItem();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Editor::SimpleBlockPaletteItem createDefault();
+    MCNAPI static ::Editor::SimpleBlockPaletteItem createDefault();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

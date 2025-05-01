@@ -19,7 +19,7 @@ struct VehicleComponent;
 namespace ActorUpdateRidingIDSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void updateRidingPrevID(
+MCNAPI void updateRidingPrevID(
     ::entt::type_list<::Include<::StopRidingRequestComponent>>,
     ::StrictEntityContext const&                             entity,
     ::PassengerComponent const&                              passengerComponent,

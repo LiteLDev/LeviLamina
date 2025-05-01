@@ -30,21 +30,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getDropItems() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getDropItems() const;
 
-    MCAPI ::Scripting::Result_deprecated<float> getDuration() const;
+    MCNAPI ::Scripting::Result_deprecated<float> getDuration() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::ActorDefinitionFeedItem>> getFeedItems() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::ActorDefinitionFeedItem>> getFeedItems() const;
 
-    MCAPI ::Scripting::Result_deprecated<::ActorDefinitionTrigger> getGrowUp() const;
+    MCNAPI ::Scripting::Result_deprecated<::ActorDefinitionTrigger> getGrowUp() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getTransformToItem() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getTransformToItem() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptAgeableComponent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptAgeableComponent>
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
@@ -63,7 +63,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

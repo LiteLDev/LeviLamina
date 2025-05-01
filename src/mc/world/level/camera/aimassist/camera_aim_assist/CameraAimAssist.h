@@ -9,12 +9,15 @@
 // auto generated forward declare list
 // clang-format off
 class ReadOnlyBinaryStream;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace CameraAimAssist {
 // functions
 // NOLINTBEGIN
-MCAPI ::Bedrock::Result<::CameraAimAssist::TargetMode> readTargetMode(::ReadOnlyBinaryStream& stream);
+MCNAPI void bindTargetModeType(::cereal::ReflectionCtx& ctx);
+
+MCNAPI ::Bedrock::Result<::CameraAimAssist::TargetMode> readTargetMode(::ReadOnlyBinaryStream& stream);
 // NOLINTEND
 
 } // namespace CameraAimAssist

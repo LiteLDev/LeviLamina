@@ -9,6 +9,7 @@
 // clang-format off
 class IContentKeyProvider;
 class IFileAccess;
+class IPackIOProvider;
 class PackAccessStrategy;
 class PackReport;
 class ResourceLocation;
@@ -19,36 +20,28 @@ class PackAccessStrategyFactory {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::PackAccessStrategy> create(
-        ::ResourceLocation&                                     location,
-        ::Bedrock::NonOwnerPointer<::IContentKeyProvider const> keyProvider,
-        ::PackReport&                                           report,
-        bool                                                    optimizeForSpeedOverMemory,
-        ::Core::Path const&                                     zipSubDir
-    );
-
-    MCAPI static ::std::unique_ptr<::PackAccessStrategy> create(
+    MCNAPI static ::std::unique_ptr<::PackAccessStrategy> create(
         ::ResourceLocation&                                     location,
         ::Bedrock::NonOwnerPointer<::IContentKeyProvider const> keyProvider,
         ::PackReport&                                           report,
         bool                                                    optimizeForSpeedOverMemory,
         ::Core::Path const&                                     zipSubDir,
-        ::IFileAccess&                                          fileAccess
+        ::IPackIOProvider const&                                io
     );
 
-    MCAPI static ::std::unique_ptr<::PackAccessStrategy>
-    createForDirectory(::ResourceLocation const& location, bool canRecurse);
+    MCNAPI static ::std::unique_ptr<::PackAccessStrategy>
+    createForDirectory(::ResourceLocation const& location, bool canRecurse, ::IPackIOProvider const& io);
 
-    MCAPI static ::std::unique_ptr<::PackAccessStrategy> createForEncryptedZip(
+    MCNAPI static ::std::unique_ptr<::PackAccessStrategy> createForEncryptedZip(
         ::ResourceLocation const&                                         location,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
         ::IFileAccess&                                                    fileAccess
     );
 
-    MCAPI static ::std::unique_ptr<::PackAccessStrategy>
+    MCNAPI static ::std::unique_ptr<::PackAccessStrategy>
     createForZip(::ResourceLocation const& location, bool zipSubDir, ::Core::Path const& optimizeForSpeedOverMemory);
 
-    MCAPI static ::std::unique_ptr<::PackAccessStrategy> createForZip(
+    MCNAPI static ::std::unique_ptr<::PackAccessStrategy> createForZip(
         ::ResourceLocation const& location,
         bool                      optimizeForSpeedOverMemory,
         ::Core::Path const&       zipSubDir,

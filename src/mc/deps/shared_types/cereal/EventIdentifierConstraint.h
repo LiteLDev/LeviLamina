@@ -36,15 +36,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
+    MCNAPI void $doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
 
-    MCAPI ::cereal::internal::ConstraintDescription $description() const;
+    MCNAPI ::cereal::internal::ConstraintDescription $description() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

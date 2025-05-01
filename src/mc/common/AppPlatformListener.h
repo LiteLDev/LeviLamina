@@ -3,12 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/application/LowMemorySeverity.h"
 #include "mc/deps/core/platform/OperationMode.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
 // clang-format off
 class PushNotificationMessage;
-namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class AppPlatformListener {
@@ -80,64 +81,64 @@ public:
     virtual void onClipboardPaste(::std::string const&);
 
     // vIndex: 19
-    virtual void onLowMemory();
+    virtual void onLowMemory(::LowMemorySeverity);
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initListener(float priority);
+    MCNAPI void initListener(float priority);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onAppPaused();
+    MCNAPI void $onAppPaused();
 
-    MCFOLD void $onAppUnpaused();
+    MCNAPI void $onAppUnpaused();
 
-    MCFOLD void $onAppPreSuspended();
+    MCNAPI void $onAppPreSuspended();
 
-    MCFOLD void $onAppSuspended();
+    MCNAPI void $onAppSuspended();
 
-    MCFOLD void $onAppResumed();
+    MCNAPI void $onAppResumed();
 
-    MCFOLD void $onAppFocusLost();
+    MCNAPI void $onAppFocusLost();
 
-    MCFOLD void $onAppFocusGained();
+    MCNAPI void $onAppFocusGained();
 
-    MCFOLD void $onAppTerminated();
+    MCNAPI void $onAppTerminated();
 
-    MCFOLD void $onPerformanceModeChanged(bool const boost);
+    MCNAPI void $onPerformanceModeChanged(bool const boost);
 
-    MCFOLD void $onPushNotificationReceived(::PushNotificationMessage const& msg);
+    MCNAPI void $onPushNotificationReceived(::PushNotificationMessage const& msg);
 
-    MCFOLD void $onResizeBegin();
+    MCNAPI void $onResizeBegin();
 
-    MCFOLD void $onResizeEnd();
+    MCNAPI void $onResizeEnd();
 
-    MCFOLD void $onDeviceLost();
+    MCNAPI void $onDeviceLost();
 
-    MCFOLD void $onAppSurfaceCreated();
+    MCNAPI void $onAppSurfaceCreated();
 
-    MCFOLD void $onAppSurfaceDestroyed();
+    MCNAPI void $onAppSurfaceDestroyed();
 
-    MCFOLD void $onClipboardCopy(::std::string const&);
+    MCNAPI void $onClipboardCopy(::std::string const&);
 
-    MCFOLD void $onClipboardPaste(::std::string const&);
+    MCNAPI void $onClipboardPaste(::std::string const&);
 
-    MCFOLD void $onLowMemory();
+    MCNAPI void $onLowMemory(::LowMemorySeverity);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

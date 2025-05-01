@@ -16,21 +16,21 @@ class LocalAudioSource {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Initialize(::cricket::AudioOptions const*);
+    MCNAPI void Initialize(::cricket::AudioOptions const*);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::scoped_refptr<::webrtc::LocalAudioSource> Create(::cricket::AudioOptions const*);
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::LocalAudioSource> Create(::cricket::AudioOptions const*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForRefCountInterface();
+    MCNAPI static void** $vftableForRefCountInterface();
 
-    MCAPI static void** $vftableForNotifierInterface();
+    MCNAPI static void** $vftableForNotifierInterface();
     // NOLINTEND
 };
 

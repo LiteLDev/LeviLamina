@@ -32,25 +32,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPotionOptions(::ScriptModuleMinecraft::ScriptPotionOptions const&);
+    MCNAPI ScriptPotionOptions(::ScriptModuleMinecraft::ScriptPotionOptions const&);
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionLiquidType>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionLiquidType>>
     getLiquid(::Scripting::WeakLifetimeScope& scope) const;
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionModifierType>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionModifierType>>
     getModifier(::Scripting::WeakLifetimeScope& scope) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptPotionOptions> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptPotionOptions> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPotionOptions const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPotionOptions const&);
     // NOLINTEND
 };
 

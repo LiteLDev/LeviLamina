@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/inventory/transaction/InventorySource.h"
+#include "mc/world/item/ItemStack.h"
+#include "mc/world/item/NetworkItemStackDescriptor.h"
+
 // auto generated forward declare list
 // clang-format off
 class BlockPalette;
-class InventorySource;
-class ItemStack;
-class NetworkItemStackDescriptor;
 // clang-format on
 
 class InventoryAction {
@@ -25,42 +27,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InventoryAction(::InventoryAction const&);
+    MCNAPI InventoryAction(::InventoryAction const&);
 
-    MCAPI InventoryAction(
+    MCNAPI InventoryAction(
         ::InventorySource                   source,
         uint                                slot,
         ::NetworkItemStackDescriptor const& fromItem,
         ::NetworkItemStackDescriptor const& toItem
     );
 
-    MCAPI InventoryAction(::InventorySource source, uint slot, ::ItemStack const& fromItem, ::ItemStack const& toItem);
+    MCNAPI InventoryAction(::InventorySource source, uint slot, ::ItemStack const& fromItem, ::ItemStack const& toItem);
 
-    MCAPI ::InventoryAction& operator=(::InventoryAction const&);
+    MCNAPI ::InventoryAction& operator=(::InventoryAction const&);
 
-    MCAPI void postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
+    MCNAPI void postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
-    MCAPI ~InventoryAction();
+    MCNAPI ~InventoryAction();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::InventoryAction const&);
+    MCNAPI void* $ctor(::InventoryAction const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::InventorySource                   source,
         uint                                slot,
         ::NetworkItemStackDescriptor const& fromItem,
         ::NetworkItemStackDescriptor const& toItem
     );
 
-    MCAPI void* $ctor(::InventorySource source, uint slot, ::ItemStack const& fromItem, ::ItemStack const& toItem);
+    MCNAPI void* $ctor(::InventorySource source, uint slot, ::ItemStack const& fromItem, ::ItemStack const& toItem);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

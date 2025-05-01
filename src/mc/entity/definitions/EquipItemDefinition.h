@@ -23,6 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void addExcludeItemByName(::ItemDescriptor const& itemDescriptor);
+    MCNAPI void addExcludeItemByName(::ItemDescriptor const& itemDescriptor);
     // NOLINTEND
 };

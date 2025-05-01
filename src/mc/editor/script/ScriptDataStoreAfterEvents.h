@@ -6,7 +6,7 @@
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/editor/datastore/EventType.h"
 #include "mc/scripting/modules/minecraft/events/IScriptScriptDeferredEventListener.h"
-#include "mc/scripting/modules/minecraft/events/metadata/ScriptAsyncEventMetadata.h"
+#include "mc/scripting/modules/minecraft/events/metadata/ScriptAfterEventMetadata.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -51,13 +51,13 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+        MCNAPI void $onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -66,7 +66,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk12d589;
     ::ll::UntypedStorage<8, 8>  mUnk19d7df;
-    ::ll::UntypedStorage<8, 24> mUnkdc88c9;
+    ::ll::UntypedStorage<8, 24> mUnkbce81d;
     ::ll::UntypedStorage<8, 24> mUnk69c582;
     ::ll::UntypedStorage<8, 8>  mUnkd37419;
     // NOLINTEND
@@ -80,29 +80,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptDataStoreAfterEvents(::Editor::ScriptModule::ScriptDataStoreAfterEvents&&);
+    MCNAPI ScriptDataStoreAfterEvents(::Editor::ScriptModule::ScriptDataStoreAfterEvents&&);
 
-    MCAPI void
+    MCNAPI void
     _handleDataStorePayloadEvent(::HashedString const& dataTag, ::Editor::DataStore::EventType, ::Json::Value const& payload, ::Editor::DataStore::PayloadDescription const&);
 
-    MCAPI ::Editor::ScriptModule::ScriptDataStoreAfterEvents&
+    MCNAPI ::Editor::ScriptModule::ScriptDataStoreAfterEvents&
     operator=(::Editor::ScriptModule::ScriptDataStoreAfterEvents&&);
 
-    MCAPI void registerListeners(::Editor::Services::DataStoreServiceProvider& dataStoreService);
+    MCNAPI void registerListeners(::Editor::Services::DataStoreServiceProvider& dataStoreService);
 
-    MCAPI ~ScriptDataStoreAfterEvents();
+    MCNAPI ~ScriptDataStoreAfterEvents();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ScriptModuleMinecraft::ScriptAsyncEventMetadata<
+    MCAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata<
         ::Editor::ScriptModule::ScriptDataStoreAfterEvents> const&
     mMetadata();
     // NOLINTEND
@@ -110,13 +110,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ScriptModule::ScriptDataStoreAfterEvents&&);
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptDataStoreAfterEvents&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

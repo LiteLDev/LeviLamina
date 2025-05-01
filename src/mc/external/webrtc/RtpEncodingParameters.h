@@ -32,25 +32,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RtpEncodingParameters();
+    MCNAPI RtpEncodingParameters();
 
-    MCAPI RtpEncodingParameters(::webrtc::RtpEncodingParameters const&);
+    MCNAPI RtpEncodingParameters(::webrtc::RtpEncodingParameters const&);
 
-    MCAPI ~RtpEncodingParameters();
+    MCNAPI ~RtpEncodingParameters();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::webrtc::RtpEncodingParameters const&);
+    MCNAPI void* $ctor(::webrtc::RtpEncodingParameters const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

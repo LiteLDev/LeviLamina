@@ -28,6 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setCreationTime();
+    MCNAPI void setCreationTime();
     // NOLINTEND
 };

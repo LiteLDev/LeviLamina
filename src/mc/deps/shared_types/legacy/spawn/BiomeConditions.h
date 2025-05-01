@@ -37,34 +37,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeConditions();
+    MCNAPI BiomeConditions();
 
-    MCAPI BiomeConditions(::SharedTypes::Legacy::Spawn::BiomeConditions&&);
+    MCNAPI BiomeConditions(::SharedTypes::Legacy::Spawn::BiomeConditions&&);
 
-    MCAPI BiomeConditions(::SharedTypes::Legacy::Spawn::BiomeConditions const&);
+    MCNAPI BiomeConditions(::SharedTypes::Legacy::Spawn::BiomeConditions const&);
 
-    MCAPI ::SharedTypes::Legacy::Spawn::BiomeConditions&
+    MCNAPI ::SharedTypes::Legacy::Spawn::BiomeConditions&
     operator=(::SharedTypes::Legacy::Spawn::BiomeConditions const&);
 
-    MCAPI ::SharedTypes::Legacy::Spawn::BiomeConditions& operator=(::SharedTypes::Legacy::Spawn::BiomeConditions&&);
+    MCNAPI ::SharedTypes::Legacy::Spawn::BiomeConditions& operator=(::SharedTypes::Legacy::Spawn::BiomeConditions&&);
 
-    MCAPI ~BiomeConditions();
+    MCNAPI ~BiomeConditions();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::SharedTypes::Legacy::Spawn::BiomeConditions&&);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::Spawn::BiomeConditions&&);
 
-    MCAPI void* $ctor(::SharedTypes::Legacy::Spawn::BiomeConditions const&);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::Spawn::BiomeConditions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

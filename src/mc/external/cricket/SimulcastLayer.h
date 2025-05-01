@@ -20,25 +20,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SimulcastLayer(::cricket::SimulcastLayer const&);
+    MCNAPI SimulcastLayer(::cricket::SimulcastLayer const&);
 
-    MCAPI SimulcastLayer(::std::string_view, bool);
+    MCNAPI SimulcastLayer(::std::string_view, bool);
 
-    MCAPI ~SimulcastLayer();
+    MCNAPI ~SimulcastLayer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::SimulcastLayer const&);
+    MCNAPI void* $ctor(::cricket::SimulcastLayer const&);
 
-    MCAPI void* $ctor(::std::string_view, bool);
+    MCNAPI void* $ctor(::std::string_view, bool);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

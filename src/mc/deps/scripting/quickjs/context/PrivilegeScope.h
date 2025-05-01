@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8> mUnk5e29bd;
-    ::ll::UntypedStorage<4, 8> mUnk80be42;
+    ::ll::UntypedStorage<1, 2> mUnk80be42;
     // NOLINTEND
 
 public:
@@ -21,13 +21,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~PrivilegeScope();
+    MCNAPI ~PrivilegeScope();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

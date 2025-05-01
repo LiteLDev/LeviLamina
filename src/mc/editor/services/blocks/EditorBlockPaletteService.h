@@ -130,30 +130,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EditorBlockPaletteService(::Editor::ServiceProviderCollection& serviceProviders);
+    MCNAPI explicit EditorBlockPaletteService(::Editor::ServiceProviderCollection& serviceProviders);
 
-    MCAPI void _addOrReplacePalette(::Editor::EditorBlockPalette const& palette);
+    MCNAPI void _addOrReplacePalette(::Editor::EditorBlockPalette const& palette);
 
-    MCAPI ::Scripting::Result<void> _checkForDuplicateBlocks(
+    MCNAPI ::Scripting::Result<void> _checkForDuplicateBlocks(
         ::HashedString const&                                                                          paletteId,
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
     );
 
-    MCAPI ::Editor::EditorBlockPalette& _getActivePalette() const;
+    MCNAPI ::Editor::EditorBlockPalette& _getActivePalette() const;
 
-    MCAPI ::Scripting::Error _getAttemptingToRemoveOnlyPaletteError(::HashedString const& paletteId) const;
+    MCNAPI ::Scripting::Error _getAttemptingToRemoveOnlyPaletteError(::HashedString const& paletteId) const;
 
-    MCAPI ::Scripting::Error _getIndexOutOfBoundsError(int index, int max) const;
+    MCNAPI ::Scripting::Error _getIndexOutOfBoundsError(int index, int max) const;
 
-    MCAPI ::Editor::EditorBlockPalette* _getPalette(::HashedString const& paletteId) const;
+    MCNAPI ::Editor::EditorBlockPalette* _getPalette(::HashedString const& paletteId) const;
 
-    MCAPI ::Scripting::Error _getPaletteIdNotFoundError(::HashedString const& paletteId) const;
+    MCNAPI ::Scripting::Error _getPaletteIdNotFoundError(::HashedString const& paletteId) const;
 
-    MCAPI ::Scripting::Result<void> _removePalette(::HashedString const& paletteId);
+    MCNAPI ::Scripting::Result<void> _removePalette(::HashedString const& paletteId);
 
-    MCAPI ::Scripting::Result<void> _setActivePalette(::HashedString const& paletteId);
+    MCNAPI ::Scripting::Result<void> _setActivePalette(::HashedString const& paletteId);
 
-    MCAPI ::Scripting::Result<void> _updatePaletteItem(
+    MCNAPI ::Scripting::Result<void> _updatePaletteItem(
         ::HashedString const&                                                                          paletteId,
         int                                                                                            index,
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
@@ -163,43 +163,43 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& serviceProviders);
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& serviceProviders);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCFOLD ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCFOLD ::std::vector<::std::shared_ptr<::Editor::EditorBlockPalette>> const& $getPaletteList() const;
+    MCNAPI ::std::vector<::std::shared_ptr<::Editor::EditorBlockPalette>> const& $getPaletteList() const;
 
-    MCAPI ::Editor::EditorBlockPalette const& $getActivePalette() const;
+    MCNAPI ::Editor::EditorBlockPalette const& $getActivePalette() const;
 
-    MCAPI void $forEachBlockType(::std::function<void(::BlockLegacy const&, bool)> callback) const;
+    MCNAPI void $forEachBlockType(::std::function<void(::BlockLegacy const&, bool)> callback) const;
 
-    MCFOLD int $getSelectedPaletteItemIndex() const;
+    MCNAPI int $getSelectedPaletteItemIndex() const;
 
-    MCAPI ::Scripting::Result_deprecated<::BlockLegacy const*> $getSelectedBlockType() const;
+    MCNAPI ::Scripting::Result_deprecated<::BlockLegacy const*> $getSelectedBlockType() const;
 
-    MCAPI ::std::vector<::std::string> $getPaletteIdList() const;
+    MCNAPI ::std::vector<::std::string> $getPaletteIdList() const;
 
-    MCAPI ::std::optional<::Editor::EditorBlockPalette> $getPalette(::HashedString const& paletteId) const;
+    MCNAPI ::std::optional<::Editor::EditorBlockPalette> $getPalette(::HashedString const& paletteId) const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>>
     $getPaletteItem(::HashedString const& paletteId, int index) const;
 
-    MCAPI ::Bedrock::PubSub::Subscription
+    MCNAPI ::Bedrock::PubSub::Subscription
     $registerEventListener(::std::function<void(::std::variant<
                                                 ::Editor::EditorBlockPaletteEventItemUpdated,
                                                 ::Editor::EditorBlockPaletteEventSelectedItemIndexChanged,
@@ -211,9 +211,9 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
 
-    MCAPI static void** $vftableForEditorBlockPaletteServiceProvider();
+    MCNAPI static void** $vftableForEditorBlockPaletteServiceProvider();
     // NOLINTEND
 };
 

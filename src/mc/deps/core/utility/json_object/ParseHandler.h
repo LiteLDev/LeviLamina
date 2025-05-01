@@ -50,29 +50,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool Bool(bool b);
+    MCNAPI bool Bool(bool b);
 
-    MCAPI bool Double(double d);
+    MCNAPI bool Double(double d);
 
-    MCAPI bool Int(int i);
+    MCNAPI bool Int(int i);
 
-    MCFOLD bool Int64(int64 i);
+    MCNAPI bool Int64(int64 i);
 
-    MCFOLD bool Key(char const* str, uint length, bool copy);
+    MCNAPI bool Key(char const* str, uint length, bool copy);
 
-    MCAPI bool Null();
+    MCNAPI bool Null();
 
-    MCAPI bool StartArray();
+    MCNAPI bool StartArray();
 
-    MCAPI bool StartObject();
+    MCNAPI bool StartObject();
 
-    MCFOLD bool String(char const* str, uint length, bool copy);
+    MCNAPI bool String(char const* str, uint length, bool copy);
 
-    MCAPI bool Uint(uint u);
+    MCNAPI bool Uint(uint u);
 
-    MCFOLD bool Uint64(uint64 u);
+    MCNAPI bool Uint64(uint64 u);
 
-    MCAPI bool _addObjectOrArray(::Bedrock::JSONObject::ValueWrapper const& value);
+    MCNAPI bool _addObjectOrArray(::Bedrock::JSONObject::ValueWrapper const& value);
     // NOLINTEND
 };
 

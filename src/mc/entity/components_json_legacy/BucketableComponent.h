@@ -15,15 +15,15 @@ class BucketableComponent {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCNAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _canBucketWithItem(::ItemStack const& item, ::BaseGameVersion const& baseGameVersion);
+    MCNAPI static bool _canBucketWithItem(::ItemStack const& item, ::BaseGameVersion const& baseGameVersion);
 
-    MCAPI static void implInteraction(::Actor& owner, ::Player& player);
+    MCNAPI static void implInteraction(::Actor& owner, ::Player& player);
     // NOLINTEND
 
 public:

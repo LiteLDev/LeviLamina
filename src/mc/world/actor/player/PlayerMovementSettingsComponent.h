@@ -2,15 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct PlayerMovementSettings;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/actor/player/PlayerMovementSettings.h"
 
 class PlayerMovementSettingsComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::PlayerMovementSettings> mSettings;
+    ::ll::TypedStorage<8, 88, ::PlayerMovementSettings> mSettings;
     // NOLINTEND
 };

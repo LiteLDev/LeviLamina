@@ -13,7 +13,7 @@ class BlockClimberSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool canBlockBeAscendedByJumping(
+    MCNAPI static bool canBlockBeAscendedByJumping(
         ::BlockLegacy const&       block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          blockPos,

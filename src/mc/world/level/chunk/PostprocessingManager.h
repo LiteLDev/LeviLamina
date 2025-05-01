@@ -39,7 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::std::vector<::PostprocessingManager::LockedChunk>>
+    MCNAPI ::std::optional<::std::vector<::PostprocessingManager::LockedChunk>>
     tryLock(::ChunkPos const& center, ::ChunkSource& neighborhood);
     // NOLINTEND
 };

@@ -3,8 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/Difficulty.h"
 #include "mc/world/level/spawn/EntityPredicateToken.h"
 #include "mc/world/level/spawn/EntitySpawnReason.h"
+#include "mc/world/level/spawn/FinalizeMobToken.h"
 #include "mc/world/level/spawn/HeightmapToken.h"
 #include "mc/world/level/spawn/ObstructionPredicateToken.h"
 #include "mc/world/level/spawn/PlacementTypeToken.h"
@@ -18,6 +20,7 @@ class IRandom;
 class Mob;
 namespace br::spawn { class PlacementType; }
 namespace br::spawn { struct EntityType; }
+namespace br::spawn::transform { class PropertyBag; }
 // clang-format on
 
 namespace br::spawn {
@@ -48,6 +51,7 @@ public:
         ::ll::TypedStorage<2, 2, ::br::spawn::PlacementTypeToken>        mPlacement;
         ::ll::TypedStorage<2, 2, ::br::spawn::EntityPredicateToken>      mEntity;
         ::ll::TypedStorage<2, 2, ::br::spawn::ObstructionPredicateToken> mObstruction;
+        ::ll::TypedStorage<2, 2, ::br::spawn::FinalizeMobToken>          mFinalizeMob;
         // NOLINTEND
     };
 
@@ -71,36 +75,81 @@ public:
             ::std::string,
             ::std::function<bool(::BlockSource&, ::Mob const&, ::br::spawn::EntityType const&)>>>>
         mObstructionPredicates;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::std::tuple<
+            ::std::string,
+            ::std::function<
+                void(::BlockSource const&, ::SharedTypes::Legacy::Difficulty, ::br::spawn::EntitySpawnReason, ::Mob&, ::IRandom&, ::br::spawn::transform::PropertyBag&)>>>>
+        mFinalizeMobTransform;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::tuple<::std::string, ::std::function<bool(::Block const&)>>>>
         mHeightmapTypes;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::tuple<::std::string, ::std::unique_ptr<::br::spawn::PlacementType>>>>
         mPlacementTypes;
+    ::ll::
+        TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::tuple<::br::spawn::EntityPredicateToken, bool>>>
+            mReloadableEntitySpawnKeys;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::std::string, ::std::tuple<::br::spawn::ObstructionPredicateToken, bool>>>
+        mReloadableObstructionKeys;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::br::spawn::SpawnPlacements::PlacementRecord record(
+    MCNAPI SpawnPlacements();
+
+    MCNAPI bool isEntityPredicateKeyRecordable(::std::string_view key) const;
+
+    MCNAPI bool isObstructionPredicateKeyRecordable(::std::string_view key) const;
+
+    MCNAPI ::br::spawn::SpawnPlacements::PlacementRecord record(
         ::std::string_view                typeId,
         ::br::spawn::PlacementTypeToken   placementType,
         ::br::spawn::HeightmapToken       heightmap,
         ::br::spawn::EntityPredicateToken spawnPlacement
     );
 
-    MCAPI ::br::spawn::EntityPredicateToken record(
+    MCNAPI ::br::spawn::EntityPredicateToken record(
         ::std::string_view key,
         ::std::function<
             bool(::br::spawn::EntityType const&, ::BlockSource&, ::br::spawn::EntitySpawnReason&, ::BlockPos, ::IRandom&)>
             predicate
     );
 
-    MCAPI ~SpawnPlacements();
+    MCNAPI ::br::spawn::ObstructionPredicateToken record(
+        ::std::string_view                                                                  key,
+        ::std::function<bool(::BlockSource&, ::Mob const&, ::br::spawn::EntityType const&)> predicate
+    );
+
+    MCNAPI ::br::spawn::EntityPredicateToken recordReloadable(
+        ::std::string_view key,
+        ::std::function<
+            bool(::br::spawn::EntityType const&, ::BlockSource&, ::br::spawn::EntitySpawnReason&, ::BlockPos, ::IRandom&)>
+            predicate
+    );
+
+    MCNAPI ::br::spawn::ObstructionPredicateToken recordReloadable(
+        ::std::string_view                                                                  key,
+        ::std::function<bool(::BlockSource&, ::Mob const&, ::br::spawn::EntityType const&)> predicate
+    );
+
+    MCNAPI ~SpawnPlacements();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -25,7 +25,7 @@ struct VehicleComponent;
 namespace ClientInteractStopRidingSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void tick(
+MCNAPI void tick(
     ::entt::type_list<
         ::Include<::LocalPlayerComponent, ::StopRidingRequestComponent>,
         ::Exclude<::ActorRemovedFlagComponent, ::SwitchingVehiclesFlagComponent>>,

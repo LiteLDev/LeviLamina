@@ -20,97 +20,97 @@ class RTPSender {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> AllocatePacket(::rtc::ArrayView<uint const>);
+    MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> AllocatePacket(::rtc::ArrayView<uint const>);
 
-    MCAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> BuildRtxPacket(::webrtc::RtpPacketToSend const&);
+    MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> BuildRtxPacket(::webrtc::RtpPacketToSend const&);
 
-    MCAPI void DeregisterRtpHeaderExtension(::std::string_view);
+    MCNAPI void DeregisterRtpHeaderExtension(::std::string_view);
 
-    MCAPI void EnqueuePackets(::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>>);
+    MCNAPI void EnqueuePackets(::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>>);
 
-    MCAPI uint64 ExpectedPerPacketOverhead() const;
+    MCNAPI uint64 ExpectedPerPacketOverhead() const;
 
-    MCAPI uint64 FecOrPaddingPacketMaxRtpHeaderLength() const;
+    MCNAPI uint64 FecOrPaddingPacketMaxRtpHeaderLength() const;
 
-    MCAPI ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> GeneratePadding(uint64, bool, bool);
+    MCNAPI ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> GeneratePadding(uint64, bool, bool);
 
-    MCAPI ::webrtc::RtpState GetRtpState() const;
+    MCNAPI ::webrtc::RtpState GetRtpState() const;
 
-    MCAPI ::webrtc::RtpState GetRtxRtpState() const;
+    MCNAPI ::webrtc::RtpState GetRtxRtpState() const;
 
-    MCAPI bool IsAudioConfigured() const;
+    MCNAPI bool IsAudioConfigured() const;
 
-    MCAPI uint64 MaxRtpPacketSize() const;
+    MCNAPI uint64 MaxRtpPacketSize() const;
 
-    MCAPI void OnReceivedAckOnRtxSsrc(int64);
+    MCNAPI void OnReceivedAckOnRtxSsrc(int64);
 
-    MCAPI void OnReceivedAckOnSsrc(int64);
+    MCNAPI void OnReceivedAckOnSsrc(int64);
 
-    MCAPI void OnReceivedNack(::std::vector<ushort> const&, int64);
+    MCNAPI void OnReceivedNack(::std::vector<ushort> const&, int64);
 
-    MCAPI
+    MCNAPI
     RTPSender(::webrtc::RtpRtcpInterface::Configuration const&, ::webrtc::RtpPacketHistory*, ::webrtc::RtpPacketSender*);
 
-    MCAPI int ReSendPacket(ushort);
+    MCNAPI int ReSendPacket(ushort);
 
-    MCAPI bool RegisterRtpHeaderExtension(::std::string_view, int);
+    MCNAPI bool RegisterRtpHeaderExtension(::std::string_view, int);
 
-    MCAPI uint64 RtxPacketOverhead() const;
+    MCNAPI uint64 RtxPacketOverhead() const;
 
-    MCAPI int RtxStatus() const;
+    MCNAPI int RtxStatus() const;
 
-    MCAPI bool SendingMedia() const;
+    MCNAPI bool SendingMedia() const;
 
-    MCAPI void SetExtmapAllowMixed(bool);
+    MCNAPI void SetExtmapAllowMixed(bool);
 
-    MCAPI void SetMaxRtpPacketSize(uint64);
+    MCNAPI void SetMaxRtpPacketSize(uint64);
 
-    MCAPI void SetMid(::std::string_view);
+    MCNAPI void SetMid(::std::string_view);
 
-    MCAPI void SetRtpState(::webrtc::RtpState const&);
+    MCNAPI void SetRtpState(::webrtc::RtpState const&);
 
-    MCAPI void SetRtxPayloadType(int, int);
+    MCNAPI void SetRtxPayloadType(int, int);
 
-    MCAPI void SetRtxRtpState(::webrtc::RtpState const&);
+    MCNAPI void SetRtxRtpState(::webrtc::RtpState const&);
 
-    MCAPI void SetRtxStatus(int);
+    MCNAPI void SetRtxStatus(int);
 
-    MCAPI void SetSendingMediaStatus(bool);
+    MCNAPI void SetSendingMediaStatus(bool);
 
-    MCAPI void SetTimestampOffset(uint);
+    MCNAPI void SetTimestampOffset(uint);
 
-    MCAPI bool SupportsPadding() const;
+    MCNAPI bool SupportsPadding() const;
 
-    MCAPI bool SupportsRtxPayloadPadding() const;
+    MCNAPI bool SupportsRtxPayloadPadding() const;
 
-    MCAPI uint TimestampOffset() const;
+    MCNAPI uint TimestampOffset() const;
 
-    MCAPI void UpdateHeaderSizes();
+    MCNAPI void UpdateHeaderSizes();
 
-    MCAPI ~RTPSender();
+    MCNAPI ~RTPSender();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::rtc::ArrayView<::webrtc::RtpExtensionSize const> AudioExtensionSizes();
+    MCNAPI static ::rtc::ArrayView<::webrtc::RtpExtensionSize const> AudioExtensionSizes();
 
-    MCAPI static ::rtc::ArrayView<::webrtc::RtpExtensionSize const> FecExtensionSizes();
+    MCNAPI static ::rtc::ArrayView<::webrtc::RtpExtensionSize const> FecExtensionSizes();
 
-    MCAPI static ::rtc::ArrayView<::webrtc::RtpExtensionSize const> VideoExtensionSizes();
+    MCNAPI static ::rtc::ArrayView<::webrtc::RtpExtensionSize const> VideoExtensionSizes();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::webrtc::RtpRtcpInterface::Configuration const&, ::webrtc::RtpPacketHistory*, ::webrtc::RtpPacketSender*);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

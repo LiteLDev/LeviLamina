@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct LoadingScreenId;
-// clang-format on
+// auto generated inclusion list
+#include "mc/util/LoadingScreenId.h"
 
 struct PlayerLoadingScreenComponent {
 public:

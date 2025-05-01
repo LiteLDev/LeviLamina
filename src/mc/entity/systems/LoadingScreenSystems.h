@@ -10,7 +10,7 @@ class EntitySystems;
 namespace LoadingScreenSystems {
 // functions
 // NOLINTBEGIN
-MCAPI void registerServerSystems(::EntitySystems& entitySystems);
+MCNAPI void registerServerSystems(::EntitySystems& entitySystems);
 // NOLINTEND
 
 } // namespace LoadingScreenSystems

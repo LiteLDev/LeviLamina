@@ -55,13 +55,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ItemInstance const& initFireworksRocketItem(
+    MCNAPI static ::ItemInstance const& initFireworksRocketItem(
         ::ItemInstance&                      itemInstance,
         ::std::vector<::ItemInstance> const& charges,
         int                                  sulphurCount
     );
 
-    MCAPI static ::ItemStack const&
+    MCNAPI static ::ItemStack const&
     initFireworksRocketItem(::ItemStack& item, ::std::vector<::ItemStack> const& charges, int sulphurCount);
     // NOLINTEND
 
@@ -84,26 +84,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::InteractionResult
+    MCNAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
 
-    MCFOLD bool $isDestructive(int) const;
+    MCNAPI bool $isDestructive(int) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

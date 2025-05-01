@@ -25,22 +25,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_10::DurabilitySensorItemComponent&
+    MCNAPI ::SharedTypes::v1_21_10::DurabilitySensorItemComponent&
     operator=(::SharedTypes::v1_21_10::DurabilitySensorItemComponent&&);
 
-    MCAPI ~DurabilitySensorItemComponent();
+    MCNAPI ~DurabilitySensorItemComponent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

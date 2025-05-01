@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/level/camera/aimassist/camera_aim_assist/TargetMode.h"
-
-// auto generated forward declare list
-// clang-format off
-class HashedString;
-class Vec2;
-// clang-format on
 
 struct CameraAimAssistSettingsComponent {
 public:
@@ -29,14 +25,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::CameraAimAssistSettingsComponent& operator=(::CameraAimAssistSettingsComponent&&);
+    MCNAPI ::CameraAimAssistSettingsComponent& operator=(::CameraAimAssistSettingsComponent&&);
 
-    MCAPI ~CameraAimAssistSettingsComponent();
+    MCNAPI ~CameraAimAssistSettingsComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

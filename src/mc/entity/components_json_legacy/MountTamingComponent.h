@@ -22,12 +22,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _feedItem(::Actor& owner, ::Player& player, int temperModifier);
+    MCNAPI void _feedItem(::Actor& owner, ::Player& player, int temperModifier);
 
-    MCAPI void becomeTame(::Actor& owner, bool tamingParticles);
+    MCNAPI void becomeTame(::Actor& owner, bool tamingParticles);
 
-    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCNAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
-    MCAPI void tameToPlayer(::Actor& owner, ::Player& player, bool tamingParticles);
+    MCNAPI void tameToPlayer(::Actor& owner, ::Player& player, bool tamingParticles);
     // NOLINTEND
 };

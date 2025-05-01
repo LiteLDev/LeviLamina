@@ -10,10 +10,10 @@
 namespace Editor::ScriptModule::RenderHelper {
 // functions
 // NOLINTBEGIN
-MCAPI ::Scripting::EnumBindingBuilder<::Editor::RenderHelper::PrimitiveType, ::Editor::RenderHelper::PrimitiveType>
+MCNAPI ::Scripting::EnumBindingBuilder<::Editor::RenderHelper::PrimitiveType, ::Editor::RenderHelper::PrimitiveType>
 bindPrimitiveTypeEnums();
 
-MCAPI ::Scripting::EnumBindingBuilder<::Editor::RenderHelper::SplineType, ::Editor::RenderHelper::SplineType>
+MCNAPI ::Scripting::EnumBindingBuilder<::Editor::RenderHelper::SplineType, ::Editor::RenderHelper::SplineType>
 bindSplineEnums();
 // NOLINTEND
 

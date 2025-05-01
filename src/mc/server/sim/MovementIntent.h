@@ -2,14 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/server/sim/MoveInDirectionIntent.h"
+#include "mc/server/sim/MoveToPositionIntent.h"
+#include "mc/server/sim/NavigateToEntityIntent.h"
+#include "mc/server/sim/NavigateToPositionsIntent.h"
+#include "mc/server/sim/VoidMoveIntent.h"
+
 // auto generated forward declare list
 // clang-format off
 class SimulatedPlayer;
-namespace sim { struct MoveInDirectionIntent; }
-namespace sim { struct MoveToPositionIntent; }
-namespace sim { struct NavigateToEntityIntent; }
-namespace sim { struct NavigateToPositionsIntent; }
-namespace sim { struct VoidMoveIntent; }
 // clang-format on
 
 namespace sim {
@@ -33,33 +35,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MovementIntent(::std::variant<
-                                  ::sim::VoidMoveIntent,
-                                  ::sim::MoveInDirectionIntent,
-                                  ::sim::MoveToPositionIntent,
-                                  ::sim::NavigateToPositionsIntent,
-                                  ::sim::NavigateToEntityIntent> type);
+    MCNAPI explicit MovementIntent(::std::variant<
+                                   ::sim::VoidMoveIntent,
+                                   ::sim::MoveInDirectionIntent,
+                                   ::sim::MoveToPositionIntent,
+                                   ::sim::NavigateToPositionsIntent,
+                                   ::sim::NavigateToEntityIntent> type);
 
-    MCAPI void finalize(::SimulatedPlayer& player);
+    MCNAPI void finalize(::SimulatedPlayer& player);
 
-    MCAPI ~MovementIntent();
+    MCNAPI ~MovementIntent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::variant<
-                      ::sim::VoidMoveIntent,
-                      ::sim::MoveInDirectionIntent,
-                      ::sim::MoveToPositionIntent,
-                      ::sim::NavigateToPositionsIntent,
-                      ::sim::NavigateToEntityIntent> type);
+    MCNAPI void* $ctor(::std::variant<
+                       ::sim::VoidMoveIntent,
+                       ::sim::MoveInDirectionIntent,
+                       ::sim::MoveToPositionIntent,
+                       ::sim::NavigateToPositionsIntent,
+                       ::sim::NavigateToEntityIntent> type);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

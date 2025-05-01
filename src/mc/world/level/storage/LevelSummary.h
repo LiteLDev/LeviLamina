@@ -62,16 +62,18 @@ public:
     ::ll::UntypedStorage<8, 176> mUnk1391df;
     ::ll::UntypedStorage<4, 4>   mUnkf4d60e;
     ::ll::UntypedStorage<1, 1>   mUnka07096;
+    ::ll::UntypedStorage<8, 32>  mUnk97b1ff;
+    ::ll::UntypedStorage<8, 32>  mUnkc4d743;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelSummary();
+    MCNAPI LevelSummary();
 
-    MCAPI LevelSummary(::LevelSummary const&);
+    MCNAPI LevelSummary(::LevelSummary const&);
 
-    MCAPI LevelSummary(
+    MCNAPI LevelSummary(
         ::std::string const& levelId,
         ::LevelData const&   levelData,
         ::Core::Path const&  levelDirectory,
@@ -79,7 +81,7 @@ public:
         bool                 isBetaRetailLevel
     );
 
-    MCAPI LevelSummary(
+    MCNAPI LevelSummary(
         ::std::string const&                  id,
         ::std::string const&                  name,
         int64                                 lastSaved,
@@ -111,17 +113,18 @@ public:
         ::std::optional<::CloudSaveLevelInfo> cloudSaveInfo
     );
 
-    MCAPI ::std::optional<::Core::PathBuffer<::std::string>> _getScreenshotIconPath(::Core::Path const& worldDirectory);
+    MCNAPI ::std::optional<::Core::PathBuffer<::std::string>> _getScreenshotIconPath(::Core::Path const& worldDirectory
+    );
 
-    MCAPI void _initializeWorldIconPath(::Core::Path const& directory);
+    MCNAPI void _initializeWorldIconPath(::Core::Path const& directory);
 
-    MCAPI bool _isScreenshotIconPath(::Core::PathBuffer<::std::string> const& file);
+    MCNAPI bool _isScreenshotIconPath(::Core::PathBuffer<::std::string> const& file);
 
-    MCAPI ::LevelSummary& operator=(::LevelSummary const&);
+    MCNAPI ::LevelSummary& operator=(::LevelSummary const&);
 
-    MCAPI ::LevelSummary& setName(::std::string Name);
+    MCNAPI ::LevelSummary& setName(::std::string Name);
 
-    MCAPI ~LevelSummary();
+    MCNAPI ~LevelSummary();
     // NOLINTEND
 
 public:
@@ -145,11 +148,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::LevelSummary const&);
+    MCNAPI void* $ctor(::LevelSummary const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const& levelId,
         ::LevelData const&   levelData,
         ::Core::Path const&  levelDirectory,
@@ -157,7 +160,7 @@ public:
         bool                 isBetaRetailLevel
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                  id,
         ::std::string const&                  name,
         int64                                 lastSaved,
@@ -193,6 +196,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

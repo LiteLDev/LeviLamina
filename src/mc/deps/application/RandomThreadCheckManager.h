@@ -31,7 +31,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void invalidateThreadIndex();
+    MCNAPI static void invalidateThreadIndex();
     // NOLINTEND
 
 public:
@@ -51,12 +51,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onAppResumed();
+    MCNAPI void $onAppResumed();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

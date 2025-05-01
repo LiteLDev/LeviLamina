@@ -23,14 +23,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool parseJson(::Json::Value const& root);
+    MCNAPI bool parseJson(::Json::Value const& root);
 
-    MCAPI ~EntityTypes();
+    MCNAPI ~EntityTypes();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

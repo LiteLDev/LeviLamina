@@ -31,25 +31,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptScoreboardObjectiveDisplayOptions(
+    MCNAPI ScriptScoreboardObjectiveDisplayOptions(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective> objective,
         ::ScriptModuleMinecraft::ScriptObjectiveSortOrderType                                    sortOrder
     );
 
-    MCAPI ~ScriptScoreboardObjectiveDisplayOptions();
+    MCNAPI ~ScriptScoreboardObjectiveDisplayOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptScoreboardObjectiveDisplayOptions>
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptScoreboardObjectiveDisplayOptions>
     bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective> objective,
         ::ScriptModuleMinecraft::ScriptObjectiveSortOrderType                                    sortOrder
     );
@@ -58,7 +58,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

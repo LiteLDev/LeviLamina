@@ -49,16 +49,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Actor* $fetchActor(::ActorUniqueID actorUniqueID) const;
+    MCNAPI ::Actor* $fetchActor(::ActorUniqueID actorUniqueID) const;
 
-    MCAPI bool $shouldShowDeathMessages() const;
+    MCNAPI bool $shouldShowDeathMessages() const;
 
-    MCAPI void $onWorldOwnerHasDied();
+    MCNAPI void $onWorldOwnerHasDied();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

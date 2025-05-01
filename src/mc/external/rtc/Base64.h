@@ -8,7 +8,7 @@ struct Base64 {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void EncodeFromArray(void const*, uint64, ::std::string*);
+    MCNAPI static void EncodeFromArray(void const*, uint64, ::std::string*);
     // NOLINTEND
 
 public:

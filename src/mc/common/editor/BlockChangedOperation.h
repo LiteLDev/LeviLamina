@@ -50,9 +50,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> _performOperation(::Editor::ServiceProviderCollection& services, bool isUndo) const;
+    MCNAPI ::Scripting::Result<void>
+    _performOperation(::Editor::ServiceProviderCollection& services, bool isUndo) const;
 
-    MCAPI ::Scripting::Result<void> _setBlock(
+    MCNAPI ::Scripting::Result<void> _setBlock(
         ::Level&          level,
         ::BlockSource&    region,
         uint const&       blockToPlace,
@@ -65,7 +66,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::Editor::Transactions::BlockChangeIntentData>
+    MCNAPI static ::std::vector<::Editor::Transactions::BlockChangeIntentData>
     createBlockChangeIntentFromLocation(::BlockSource const& region, ::BlockPos const& pos, bool includeAll);
     // NOLINTEND
 
@@ -84,17 +85,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string_view $getName();
+    MCNAPI ::std::string_view $getName();
 
-    MCAPI ::Scripting::Result<void> $_undo(::Editor::ServiceProviderCollection& services);
+    MCNAPI ::Scripting::Result<void> $_undo(::Editor::ServiceProviderCollection& services);
 
-    MCAPI ::Scripting::Result<void> $_redo(::Editor::ServiceProviderCollection& services);
+    MCNAPI ::Scripting::Result<void> $_redo(::Editor::ServiceProviderCollection& services);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

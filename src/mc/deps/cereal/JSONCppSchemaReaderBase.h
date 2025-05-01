@@ -118,37 +118,37 @@ public:
     // vIndex: 22
     virtual void pop() /*override*/;
 
-    // vIndex: 24
+    // vIndex: 23
     virtual bool _allowAsBool() = 0;
 
-    // vIndex: 25
+    // vIndex: 24
     virtual bool _allowAsInt8() = 0;
 
-    // vIndex: 26
+    // vIndex: 25
     virtual bool _allowAsUInt8() = 0;
 
-    // vIndex: 27
+    // vIndex: 26
     virtual bool _allowAsInt16() = 0;
 
-    // vIndex: 28
+    // vIndex: 27
     virtual bool _allowAsUInt16() = 0;
 
-    // vIndex: 29
+    // vIndex: 28
     virtual bool _allowAsInt32() = 0;
 
-    // vIndex: 30
+    // vIndex: 29
     virtual bool _allowAsUInt32() = 0;
 
-    // vIndex: 31
+    // vIndex: 30
     virtual bool _allowAsInt64() = 0;
 
-    // vIndex: 32
+    // vIndex: 31
     virtual bool _allowAsUInt64() = 0;
 
-    // vIndex: 33
+    // vIndex: 32
     virtual bool _allowAsFloat() = 0;
 
-    // vIndex: 34
+    // vIndex: 33
     virtual bool _allowAsDouble() = 0;
 
     // vIndex: 0
@@ -164,55 +164,55 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCAPI bool $isObject() const;
+    MCNAPI bool $isObject() const;
 
-    MCAPI bool $isArray() const;
+    MCNAPI bool $isArray() const;
 
-    MCAPI bool $isNull() const;
+    MCNAPI bool $isNull() const;
 
-    MCAPI ::Bedrock::Result<bool> $asBool(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<bool> $asBool(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<schar> $asInt8(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<schar> $asInt8(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<uchar> $asUInt8(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<uchar> $asUInt8(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<short> $asInt16(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<short> $asInt16(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<ushort> $asUInt16(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<ushort> $asUInt16(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<int> $asInt32(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<int> $asInt32(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<uint> $asUInt32(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<uint> $asUInt32(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<int64> $asInt64(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<int64> $asInt64(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<uint64> $asUInt64(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<uint64> $asUInt64(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<float> $asFloat(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<float> $asFloat(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<double> $asDouble(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<double> $asDouble(::cereal::PropertyReader const&);
 
-    MCAPI ::Bedrock::Result<::std::string> $asString(::cereal::PropertyReader const&);
+    MCNAPI ::Bedrock::Result<::std::string> $asString(::cereal::PropertyReader const&);
 
-    MCFOLD uint64 $members();
+    MCNAPI uint64 $members();
 
-    MCFOLD uint64 $length();
+    MCNAPI uint64 $length();
 
-    MCAPI bool $pushMember(::std::string_view const name, ::cereal::PropertyReader const&);
+    MCNAPI bool $pushMember(::std::string_view const name, ::cereal::PropertyReader const&);
 
-    MCAPI ::std::string_view $pushNextMember(::cereal::PropertyReader const&);
+    MCNAPI ::std::string_view $pushNextMember(::cereal::PropertyReader const&);
 
-    MCAPI void $pushElement(uint64 index, ::cereal::PropertyReader const&);
+    MCNAPI void $pushElement(uint64 index, ::cereal::PropertyReader const&);
 
-    MCFOLD void $pop();
+    MCNAPI void $pop();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

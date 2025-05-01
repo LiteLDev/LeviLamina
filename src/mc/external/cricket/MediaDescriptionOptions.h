@@ -18,9 +18,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddAudioSender(::std::string const&, ::std::vector<::std::string> const&);
+    MCNAPI void AddAudioSender(::std::string const&, ::std::vector<::std::string> const&);
 
-    MCAPI void AddSenderInternal(
+    MCNAPI void AddSenderInternal(
         ::std::string const&,
         ::std::vector<::std::string> const&,
         ::std::vector<::cricket::RidDescription> const&,
@@ -28,7 +28,7 @@ public:
         int
     );
 
-    MCAPI void AddVideoSender(
+    MCNAPI void AddVideoSender(
         ::std::string const&,
         ::std::vector<::std::string> const&,
         ::std::vector<::cricket::RidDescription> const&,
@@ -36,27 +36,27 @@ public:
         int
     );
 
-    MCAPI MediaDescriptionOptions(::cricket::MediaDescriptionOptions&&);
+    MCNAPI MediaDescriptionOptions(::cricket::MediaDescriptionOptions&&);
 
-    MCAPI MediaDescriptionOptions(::cricket::MediaDescriptionOptions const&);
+    MCNAPI MediaDescriptionOptions(::cricket::MediaDescriptionOptions const&);
 
-    MCAPI ::cricket::MediaDescriptionOptions& operator=(::cricket::MediaDescriptionOptions&&);
+    MCNAPI ::cricket::MediaDescriptionOptions& operator=(::cricket::MediaDescriptionOptions&&);
 
-    MCAPI ~MediaDescriptionOptions();
+    MCNAPI ~MediaDescriptionOptions();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::MediaDescriptionOptions&&);
+    MCNAPI void* $ctor(::cricket::MediaDescriptionOptions&&);
 
-    MCAPI void* $ctor(::cricket::MediaDescriptionOptions const&);
+    MCNAPI void* $ctor(::cricket::MediaDescriptionOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

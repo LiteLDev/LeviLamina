@@ -13,6 +13,7 @@ class StrictEntityContext;
 struct ActorDataFlagComponent;
 struct ActorDataHorseTypeComponent;
 struct ActorDefinitionIdentifierComponent;
+struct ActorUniqueIDComponent;
 struct CurrentlyStandingOnBlockComponent;
 struct DimensionTypeComponent;
 struct GallopSoundCounterComponent;
@@ -28,14 +29,15 @@ struct VehicleComponent;
 namespace PlayGallopSoundSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void tick(
+MCNAPI void tick(
     ::entt::type_list<::Include<::ShouldPlayStepSoundComponent, ::HorseFlagComponent>>,
     ::StrictEntityContext const&                                       entity,
-    ::ActorDefinitionIdentifierComponent const&                        actorDefinitionIdentifierComponent,
-    ::ActorDataFlagComponent const&                                    synchedActorDataComponent,
+    ::ActorDataFlagComponent const&                                    actorFlags,
+    ::ActorDefinitionIdentifierComponent const&                        actorIdentifier,
+    ::ActorUniqueIDComponent const&                                    actorUniqueID,
+    ::DimensionTypeComponent const&                                    dimensionType,
     ::ActorDataHorseTypeComponent const&                               actorDataHorseTypeComponent,
     ::CurrentlyStandingOnBlockComponent const&                         currentlyStandingOnBlockComponent,
-    ::DimensionTypeComponent const&                                    dimensionTypeComponent,
     ::RandomReferenceComponent const&                                  randomReferenceComponent,
     ::SoundEventPlayerComponent const&                                 soundEventPlayerComponent,
     ::GallopSoundCounterComponent&                                     gallopSoundCounterComponent,

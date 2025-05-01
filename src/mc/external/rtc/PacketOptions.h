@@ -27,29 +27,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PacketOptions();
+    MCNAPI PacketOptions();
 
-    MCAPI PacketOptions(::rtc::PacketOptions const&);
+    MCNAPI PacketOptions(::rtc::PacketOptions const&);
 
-    MCAPI explicit PacketOptions(::rtc::DiffServCodePoint);
+    MCNAPI explicit PacketOptions(::rtc::DiffServCodePoint);
 
-    MCAPI ~PacketOptions();
+    MCNAPI ~PacketOptions();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::rtc::PacketOptions const&);
+    MCNAPI void* $ctor(::rtc::PacketOptions const&);
 
-    MCAPI void* $ctor(::rtc::DiffServCodePoint);
+    MCNAPI void* $ctor(::rtc::DiffServCodePoint);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

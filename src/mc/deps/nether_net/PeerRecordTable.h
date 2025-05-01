@@ -38,13 +38,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~PeerRecord();
+        MCNAPI ~PeerRecord();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -70,7 +70,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool AddOrUpdate(
+    MCNAPI bool AddOrUpdate(
         ::NetherNet::NetworkID                  networkID,
         ::rtc::SocketAddress const&             address,
         ::std::chrono::steady_clock::time_point timeOfDiscovery
@@ -80,7 +80,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::pair<::NetherNet::NetworkID, ::NetherNet::PeerRecordTable::PeerRecord>>
+    MCNAPI static ::std::vector<::std::pair<::NetherNet::NetworkID, ::NetherNet::PeerRecordTable::PeerRecord>>
     RemoveExpiredRecords(
         ::NetherNet::Utils::ThreadSafe<
             ::std::map<::NetherNet::NetworkID, ::NetherNet::PeerRecordTable::PeerRecord>>::View const& exclusiveTable
@@ -96,7 +96,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

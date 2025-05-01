@@ -28,28 +28,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::dcsctp::Data Clone() const;
+    MCNAPI ::dcsctp::Data Clone() const;
 
-    MCAPI Data(::dcsctp::Data&&);
+    MCNAPI Data(::dcsctp::Data&&);
 
-    MCAPI Data(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>, ::webrtc::StrongAlias<::dcsctp::SSNTag, ushort>, ::webrtc::StrongAlias<::dcsctp::MIDTag, uint>, ::webrtc::StrongAlias<::dcsctp::FSNTag, uint>, ::webrtc::StrongAlias<::dcsctp::PPIDTag, uint>, ::std::vector<uchar>, ::webrtc::StrongAlias<::dcsctp::IsBeginningTag, bool>, ::webrtc::StrongAlias<::dcsctp::IsEndTag, bool>, ::webrtc::StrongAlias<::dcsctp::IsUnorderedTag, bool>);
+    MCNAPI Data(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>, ::webrtc::StrongAlias<::dcsctp::SSNTag, ushort>, ::webrtc::StrongAlias<::dcsctp::MIDTag, uint>, ::webrtc::StrongAlias<::dcsctp::FSNTag, uint>, ::webrtc::StrongAlias<::dcsctp::PPIDTag, uint>, ::std::vector<uchar>, ::webrtc::StrongAlias<::dcsctp::IsBeginningTag, bool>, ::webrtc::StrongAlias<::dcsctp::IsEndTag, bool>, ::webrtc::StrongAlias<::dcsctp::IsUnorderedTag, bool>);
 
-    MCAPI ~Data();
+    MCNAPI ~Data();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::dcsctp::Data&&);
+    MCNAPI void* $ctor(::dcsctp::Data&&);
 
-    MCAPI void*
+    MCNAPI void*
         $ctor(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>, ::webrtc::StrongAlias<::dcsctp::SSNTag, ushort>, ::webrtc::StrongAlias<::dcsctp::MIDTag, uint>, ::webrtc::StrongAlias<::dcsctp::FSNTag, uint>, ::webrtc::StrongAlias<::dcsctp::PPIDTag, uint>, ::std::vector<uchar>, ::webrtc::StrongAlias<::dcsctp::IsBeginningTag, bool>, ::webrtc::StrongAlias<::dcsctp::IsEndTag, bool>, ::webrtc::StrongAlias<::dcsctp::IsUnorderedTag, bool>);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

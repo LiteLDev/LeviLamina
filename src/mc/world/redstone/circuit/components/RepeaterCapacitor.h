@@ -87,29 +87,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool
+    MCNAPI bool
     $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
-    MCAPI void $updateDependencies(::CircuitSceneGraph& system, ::BlockPos const& pos);
+    MCNAPI void $updateDependencies(::CircuitSceneGraph& system, ::BlockPos const& pos);
 
-    MCAPI void $checkLock(::CircuitSystem& system, ::BlockPos const& pos);
+    MCNAPI void $checkLock(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
+    MCNAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCAPI void $cacheValues(::CircuitSystem& system, ::BlockPos const& pos);
+    MCNAPI void $cacheValues(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCAPI void $setStrength(int strength);
+    MCNAPI void $setStrength(int strength);
 
-    MCAPI int $getStrength() const;
+    MCNAPI int $getStrength() const;
 
-    MCFOLD ::RedstoneLogicExecutionFlags $getLogicExecutionFlags() const;
+    MCNAPI ::RedstoneLogicExecutionFlags $getLogicExecutionFlags() const;
 
-    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
+    MCNAPI ::CircuitComponentType $getCircuitComponentType() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

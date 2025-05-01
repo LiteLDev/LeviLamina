@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ChunkPos;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/level/ChunkPos.h"
 
 struct ChunkPositionComponent {
 public:

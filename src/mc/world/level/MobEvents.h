@@ -3,16 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/BasicTimer.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/world/level/MobEvent.h"
 #include "mc/world/level/MobEventsIndex.h"
 
 // auto generated forward declare list
 // clang-format off
-class BasicTimer;
 class CompoundTag;
 class ILevelStorageManagerConnector;
 class LevelStorage;
-class MobEvent;
-namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class MobEvents {
@@ -38,20 +38,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MobEvents(::LevelStorage& levelStorage);
+    MCNAPI explicit MobEvents(::LevelStorage& levelStorage);
 
-    MCAPI void _onSaveEvent(::LevelStorage&);
+    MCNAPI void _onSaveEvent(::LevelStorage&);
 
-    MCAPI ::MobEventsIndex getIndexFromName(::std::string const& name) const;
+    MCNAPI ::MobEventsIndex getIndexFromName(::std::string const& name) const;
 
-    MCAPI void initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector
+    MCNAPI void initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector
     );
 
-    MCAPI void readFromLevelStorage();
+    MCNAPI void readFromLevelStorage();
 
-    MCAPI ::std::unique_ptr<::CompoundTag> serialize() const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> serialize() const;
 
-    MCAPI void writeToLevelStorage();
+    MCNAPI void writeToLevelStorage();
     // NOLINTEND
 
 public:
@@ -63,7 +63,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LevelStorage& levelStorage);
+    MCNAPI void* $ctor(::LevelStorage& levelStorage);
     // NOLINTEND
 
 public:
@@ -75,6 +75,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -39,29 +39,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EnchantableItemComponent(::SharedTypes::v1_20_50::EnchantableItemComponent component);
+    MCNAPI explicit EnchantableItemComponent(::SharedTypes::v1_20_50::EnchantableItemComponent component);
 
-    MCFOLD ::EnchantableItemComponent& operator=(::EnchantableItemComponent&&);
+    MCNAPI ::EnchantableItemComponent& operator=(::EnchantableItemComponent&&);
 
-    MCFOLD ::EnchantableItemComponent& operator=(::EnchantableItemComponent const&);
+    MCNAPI ::EnchantableItemComponent& operator=(::EnchantableItemComponent const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::EnchantableItemComponent component);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_50::EnchantableItemComponent component);
     // NOLINTEND
 
 public:
@@ -73,12 +73,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent();
+    MCNAPI void $_initializeComponent();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

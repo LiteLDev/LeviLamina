@@ -32,42 +32,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptDynamicPropertiesDefinition(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&);
+    MCNAPI ScriptDynamicPropertiesDefinition(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&);
 
-    MCAPI ScriptDynamicPropertiesDefinition(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&);
+    MCNAPI ScriptDynamicPropertiesDefinition(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&);
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>>
     defineBoolean(::std::string const& identifier, ::std::optional<bool> defaultValue);
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>>
     defineNumber(::std::string const& identifier, ::std::optional<float> defaultValue);
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>>
     defineString(::std::string const& identifier, uint maxLength, ::std::optional<::std::string> defaultValue);
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>>
     defineVector3(::std::string const& identifier, ::std::optional<::Vec3> defaultValue);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&
+    MCNAPI ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&
     operator=(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&);
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&);
     // NOLINTEND
 };
 

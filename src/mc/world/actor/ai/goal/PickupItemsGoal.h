@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
@@ -14,7 +15,6 @@ class ItemDescriptor;
 class ItemStack;
 class Mob;
 class Path;
-class Vec3;
 class WeakEntityRef;
 struct DistanceSortedActor;
 struct Shareable;
@@ -72,47 +72,47 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _dropItem(::ItemStack const& item) const;
+    MCNAPI void _dropItem(::ItemStack const& item) const;
 
-    MCAPI ::std::vector<::WeakEntityRef> _filterValidTargets(::std::vector<::DistanceSortedActor> const& entities
+    MCNAPI ::std::vector<::WeakEntityRef> _filterValidTargets(::std::vector<::DistanceSortedActor> const& entities
     ) const;
 
-    MCAPI ::Shareable const* _getShareableItem(::ItemStack const& item) const;
+    MCNAPI ::Shareable const* _getShareableItem(::ItemStack const& item) const;
 
-    MCAPI void _handlePickupItem(::Actor& itemEntity);
+    MCNAPI void _handlePickupItem(::Actor& itemEntity);
 
-    MCAPI bool _hasRoomForCarriedItem() const;
+    MCNAPI bool _hasRoomForCarriedItem() const;
 
-    MCAPI bool _isSameItemAsInHand(::ItemStack const& item) const;
+    MCNAPI bool _isSameItemAsInHand(::ItemStack const& item) const;
 
-    MCAPI void _pickItemUp(::ItemActor* itemActor);
+    MCNAPI void _pickItemUp(::ItemActor* itemActor);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

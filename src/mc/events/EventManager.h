@@ -49,48 +49,48 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EventManager(::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform);
+    MCNAPI explicit EventManager(::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform);
 
-    MCAPI void UpdateDnAPlatString();
+    MCNAPI void UpdateDnAPlatString();
 
-    MCAPI ::std::string _buildDnAPlatformString();
+    MCNAPI ::std::string _buildDnAPlatformString();
 
-    MCAPI void addListener(::std::unique_ptr<::Social::Events::IEventListener> listener);
+    MCNAPI void addListener(::std::unique_ptr<::Social::Events::IEventListener> listener);
 
-    MCAPI ::std::unordered_map<::std::string, ::Social::Events::Property>
+    MCNAPI ::std::unordered_map<::std::string, ::Social::Events::Property>
     buildCommonProperties(uint userId, ::std::vector<::std::string> const& exclude) const;
 
-    MCAPI void buildCommonProperties(
+    MCNAPI void buildCommonProperties(
         ::std::unordered_map<::std::string, ::Social::Events::Property>& props,
         uint                                                             userId,
         ::std::vector<::std::string> const&                              exclude
     ) const;
 
-    MCAPI ::Social::Events::Property getPlayerCommonProperty(uint userId, ::std::string const& name) const;
+    MCNAPI ::Social::Events::Property getPlayerCommonProperty(uint userId, ::std::string const& name) const;
 
-    MCAPI ::Social::Events::Property getPlayerGlobalProperty(uint userId, ::std::string const& name) const;
+    MCNAPI ::Social::Events::Property getPlayerGlobalProperty(uint userId, ::std::string const& name) const;
 
-    MCAPI void recordDelayedEventAction(::std::string const& action);
+    MCNAPI void recordDelayedEventAction(::std::string const& action);
 
-    MCAPI void recordEvent(::Social::Events::Event& event);
+    MCNAPI void recordEvent(::Social::Events::Event& event);
 
-    MCAPI void removePlayerCommonProperty(uint userId, ::std::string const& name);
+    MCNAPI void removePlayerCommonProperty(uint userId, ::std::string const& name);
 
-    MCAPI void setupCommonProperties();
+    MCNAPI void setupCommonProperties();
 
-    MCAPI ~EventManager();
+    MCNAPI ~EventManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform);
+    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

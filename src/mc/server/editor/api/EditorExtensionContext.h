@@ -63,7 +63,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EditorExtensionContext(
+    MCNAPI EditorExtensionContext(
         ::Player&                                              player,
         ::Editor::ServiceProviderCollection&                   serviceProviders,
         ::Editor::Services::EditorSettingsServiceProvider*     settingsService,
@@ -80,13 +80,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::API::EditorExtensionContext> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::API::EditorExtensionContext> bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Player&                                              player,
         ::Editor::ServiceProviderCollection&                   serviceProviders,
         ::Editor::Services::EditorSettingsServiceProvider*     settingsService,
@@ -103,13 +103,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

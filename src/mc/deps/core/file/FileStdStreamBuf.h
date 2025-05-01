@@ -45,7 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int _flushoutput();
+    MCNAPI int _flushoutput();
     // NOLINTEND
 
 public:
@@ -57,27 +57,27 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $underflow();
+    MCNAPI int $underflow();
 
-    MCAPI int $overflow(int c);
+    MCNAPI int $overflow(int c);
 
-    MCAPI ::std::fpos<::_Mbstatet> $seekoff(int64 off, int way, int openMode);
+    MCNAPI ::std::fpos<::_Mbstatet> $seekoff(int64 off, int way, int openMode);
 
-    MCAPI ::std::fpos<::_Mbstatet> $seekpos(::std::fpos<::_Mbstatet> pos, int openMode);
+    MCNAPI ::std::fpos<::_Mbstatet> $seekpos(::std::fpos<::_Mbstatet> pos, int openMode);
 
-    MCAPI int $sync();
+    MCNAPI int $sync();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -3,19 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
 class Mob;
 class Path;
-class Vec2;
-class Vec3;
-struct ActorUniqueID;
-struct Tick;
 namespace JsonUtil { class EmptyClass; }
 namespace RamAttackGoalUtils { class RamGoalItemDropperInterface; }
 // clang-format on
@@ -62,17 +62,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void addPreRamSoundEventByName(::std::string const& name);
+        MCNAPI void addPreRamSoundEventByName(::std::string const& name);
 
-        MCAPI void addRamImpactSoundEventByName(::std::string const& name);
+        MCNAPI void addRamImpactSoundEventByName(::std::string const& name);
 
-        MCAPI void initialize(::EntityContext& entity, ::RamAttackGoal& goal) const;
+        MCNAPI void initialize(::EntityContext& entity, ::RamAttackGoal& goal) const;
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(
+        MCNAPI static void buildSchema(
             ::std::string const& name,
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RamAttackGoal::Definition>>&
                 root
@@ -82,13 +82,13 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -176,50 +176,50 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RamAttackGoal(::Mob& mob);
+    MCNAPI explicit RamAttackGoal(::Mob& mob);
 
-    MCAPI bool _hasChargePath();
+    MCNAPI bool _hasChargePath();
 
-    MCAPI bool _initiateRamAttack();
+    MCNAPI bool _initiateRamAttack();
 
-    MCAPI void _resetCooldown();
+    MCNAPI void _resetCooldown();
 
-    MCAPI void _tryKnockbackTarget();
+    MCNAPI void _tryKnockbackTarget();
 
-    MCAPI bool _verifyTargetStillInPositionAndPrepareForRamAttack();
+    MCNAPI bool _verifyTargetStillInPositionAndPrepareForRamAttack();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCNAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

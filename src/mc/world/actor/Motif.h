@@ -32,19 +32,19 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::std::vector<::Motif const*> _getBaseMotifs() const;
+        MCNAPI ::std::vector<::Motif const*> _getBaseMotifs() const;
 
-        MCAPI ::std::vector<::Motif const*> _getR21Motifs() const;
+        MCNAPI ::std::vector<::Motif const*> _getR21Motifs() const;
 
-        MCAPI ::Motif const& getMotifByName(::std::string const& name) const;
+        MCNAPI ::Motif const& getMotifByName(::std::string const& name) const;
 
-        MCAPI void init(::BaseGameVersion const& baseGameVersion);
+        MCNAPI void init(::BaseGameVersion const& baseGameVersion);
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static ::Motif::Registry& get();
+        MCNAPI static ::Motif::Registry& get();
         // NOLINTEND
     };
 

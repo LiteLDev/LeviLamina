@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/IntRange.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
 class Path;
-struct IntRange;
 // clang-format on
 
 class RandomHoverGoal : public ::Goal {
@@ -51,13 +51,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _computeNewTarget();
+    MCNAPI bool _computeNewTarget();
 
-    MCAPI ::std::unique_ptr<::Path> _findNewTarget() const;
+    MCNAPI ::std::unique_ptr<::Path> _findNewTarget() const;
 
-    MCAPI bool _mobMeetsPreconditions() const;
+    MCNAPI bool _mobMeetsPreconditions() const;
 
-    MCAPI void _moveToTarget();
+    MCNAPI void _moveToTarget();
     // NOLINTEND
 
 public:
@@ -69,20 +69,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

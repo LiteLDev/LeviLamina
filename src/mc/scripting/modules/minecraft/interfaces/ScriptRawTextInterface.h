@@ -29,23 +29,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD bool operator==(::ScriptModuleMinecraft::ScriptRawTextInterface const& other) const;
+    MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptRawTextInterface const& other) const;
 
-    MCAPI ~ScriptRawTextInterface();
+    MCNAPI ~ScriptRawTextInterface();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptRawTextInterface> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptRawTextInterface> bind();
 
-    MCAPI static ::ScriptModuleMinecraft::ScriptRawTextInterface fromJSON(::Json::Value const& json);
+    MCNAPI static ::ScriptModuleMinecraft::ScriptRawTextInterface fromJSON(::Json::Value const& json);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

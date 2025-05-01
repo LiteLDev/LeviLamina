@@ -32,16 +32,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isDiggable(::BlockLegacy const& block) const;
+    MCNAPI bool $_isDiggable(::BlockLegacy const& block) const;
 
-    MCAPI bool
-    $_carve(::BlockVolume& blocks, ::BiomeSource const& localBiomeSource, ::CanyonFeatureUtils::CanyonConfiguration const&, ::Random& random, ::ChunkPos const& pos, ::Vec3 const& startPos, ::Vec3 const& originalStartPos, int x0, int x1, int y0, int y1, int z0, int z1, float rad, float yRad, ::gsl::span<float const> widthRandomization, ::WorldGenContext const&)
+    MCNAPI bool $_carve(::BlockVolume& blocks, ::BiomeSource const& localBiomeSource, ::CanyonFeatureUtils::CanyonConfiguration const&, ::Random& random, ::ChunkPos const& pos, ::Vec3 const& startPos, ::Vec3 const& originalStartPos, int x0, int x1, int y0, int y1, int z0, int z1, float rad, float yRad, ::gsl::span<float const> widthRandomization, ::WorldGenContext const&)
         const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/ActorFilterGroup.h"
+#include "mc/world/phys/AABB.h"
+
 // auto generated forward declare list
 // clang-format off
-class ActorFilterGroup;
 class ActorOwnerComponent;
 class EntitySubsensor;
-class Vec3;
 struct Tick;
 // clang-format on
 
@@ -16,7 +18,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                              mRelativeRange;
-    ::ll::TypedStorage<4, 12, ::Vec3>                           mMaxSensorRange;
+    ::ll::TypedStorage<1, 1, bool>                              mFindPlayersOnly;
+    ::ll::TypedStorage<4, 24, ::AABB>                           mMaxBaseSearchArea;
     ::ll::TypedStorage<8, 64, ::ActorFilterGroup>               mEventCondition;
     ::ll::TypedStorage<8, 24, ::std::vector<::EntitySubsensor>> mSubsensors;
     ::ll::TypedStorage<1, 1, bool>                              mCanFireEventWithNoEntities;
@@ -30,16 +33,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::EntitySensorComponent& operator=(::EntitySensorComponent&&);
+    MCNAPI ::EntitySensorComponent& operator=(::EntitySensorComponent&&);
 
-    MCAPI void tick(::ActorOwnerComponent& actorOwnerComponent, ::Tick const& currentTick);
+    MCNAPI void tick(::ActorOwnerComponent& actorOwnerComponent, ::Tick const& currentTick);
 
-    MCAPI ~EntitySensorComponent();
+    MCNAPI ~EntitySensorComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

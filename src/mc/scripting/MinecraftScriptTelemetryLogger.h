@@ -52,18 +52,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onPluginDiscovery(::ScriptPluginManagerResult const& pluginManagerResult);
+    MCNAPI void $onPluginDiscovery(::ScriptPluginManagerResult const& pluginManagerResult);
 
-    MCAPI void $onPluginRun(::ScriptPluginManagerResult const& pluginManagerResult);
+    MCNAPI void $onPluginRun(::ScriptPluginManagerResult const& pluginManagerResult);
 
-    MCAPI void $onDebuggerListen(bool autoAttach);
+    MCNAPI void $onDebuggerListen(bool autoAttach);
 
-    MCAPI void $onDebuggerConnect(bool autoAttach, int retries);
+    MCNAPI void $onDebuggerConnect(bool autoAttach, int retries);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

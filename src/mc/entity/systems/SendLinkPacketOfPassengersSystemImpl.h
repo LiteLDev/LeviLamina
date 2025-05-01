@@ -23,7 +23,7 @@ struct VehicleComponent;
 namespace SendLinkPacketOfPassengersSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void sendLinkPacketOfPassengers(
+MCNAPI void sendLinkPacketOfPassengers(
     ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::PassengersChangedFlagComponent>>,
     ::StrictEntityContext const&              entity,
     ::ActorUniqueIDComponent const&           vehicleUniqueIDComponent,

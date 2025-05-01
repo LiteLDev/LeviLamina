@@ -29,17 +29,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RtpCodecCapability();
+    MCNAPI RtpCodecCapability();
 
-    MCAPI RtpCodecCapability(::webrtc::RtpCodecCapability const&);
+    MCNAPI RtpCodecCapability(::webrtc::RtpCodecCapability const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::webrtc::RtpCodecCapability const&);
+    MCNAPI void* $ctor(::webrtc::RtpCodecCapability const&);
     // NOLINTEND
 
 public:
@@ -51,7 +51,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

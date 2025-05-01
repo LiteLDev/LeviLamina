@@ -19,25 +19,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool AddKnownId(::std::string_view);
+    MCNAPI bool AddKnownId(::std::string_view);
 
-    MCAPI ::std::string GenerateString();
+    MCNAPI ::std::string GenerateString();
 
-    MCAPI UniqueStringGenerator();
+    MCNAPI UniqueStringGenerator();
 
-    MCAPI ~UniqueStringGenerator();
+    MCNAPI ~UniqueStringGenerator();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

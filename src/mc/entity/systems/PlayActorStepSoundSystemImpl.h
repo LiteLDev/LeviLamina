@@ -13,6 +13,7 @@ class ActorOwnerComponent;
 class StrictEntityContext;
 struct ActorDataFlagComponent;
 struct ActorDefinitionIdentifierComponent;
+struct ActorUniqueIDComponent;
 struct CamelFlagComponent;
 struct CurrentlyStandingOnBlockComponent;
 struct DimensionTypeComponent;
@@ -30,7 +31,7 @@ struct UsesDefaultStepSoundComponent;
 namespace PlayActorStepSoundSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void tick(
+MCNAPI void tick(
     ::entt::type_list<
         ::Include<::ShouldPlayStepSoundComponent>,
         ::Exclude<
@@ -40,10 +41,11 @@ MCAPI void tick(
             ::MakesLavaStepSoundComponent>>,
     ::StrictEntityContext const&                                       entity,
     ::ActorOwnerComponent const&                                       actorOwner,
-    ::ActorDefinitionIdentifierComponent const&                        actorDefinitionIdentifier,
-    ::ActorDataFlagComponent const&                                    actorDataFlag,
-    ::CurrentlyStandingOnBlockComponent const&                         currentlyStandingOnBlock,
+    ::ActorDataFlagComponent const&                                    actorFlags,
+    ::ActorDefinitionIdentifierComponent const&                        actorIdentifier,
+    ::ActorUniqueIDComponent const&                                    actorUniqueID,
     ::DimensionTypeComponent const&                                    dimensionType,
+    ::CurrentlyStandingOnBlockComponent const&                         currentlyStandingOnBlock,
     ::SoundEventPlayerComponent const&                                 soundEventPlayer,
     ::RandomReferenceComponent const&                                  randomReference,
     ::MovementSoundComponent&                                          movementSound,

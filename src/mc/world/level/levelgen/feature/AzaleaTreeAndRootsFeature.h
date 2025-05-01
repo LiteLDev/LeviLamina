@@ -26,9 +26,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _isLushGroundReplaceable(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool _isLushGroundReplaceable(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool
+    MCNAPI bool
     _tryPlaceAzaleaTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random, uint waterDepth) const;
     // NOLINTEND
 
@@ -41,12 +41,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

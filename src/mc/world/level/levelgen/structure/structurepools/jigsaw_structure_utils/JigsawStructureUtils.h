@@ -18,17 +18,17 @@ namespace cereal { struct ReflectionCtx; }
 namespace JigsawStructureUtils {
 // functions
 // NOLINTBEGIN
-MCAPI bool canAttach(
+MCNAPI bool canAttach(
     ::JigsawStructureUtils::JigsawBlockMetadataCacheHandle cacheHandle,
     ::JigsawStructureUtils::JigsawBlockMetadataCacheHandle rhsCacheHandle,
     ::Rotation                                             rotation,
     ::Rotation                                             rhsRotation
 );
 
-MCAPI ::Puv::Loader<::SharedTypes::v1_21_50::JigsawStructureMetadataFile>
+MCNAPI ::Puv::Loader<::SharedTypes::v1_21_50::JigsawStructureMetadataFile>
 createMetadataLoader(::cereal::ReflectionCtx const& ctx);
 
-MCAPI ::BlockPos getPosition(
+MCNAPI ::BlockPos getPosition(
     ::SharedTypes::v1_21_50::JigsawBlockMetadata const& metadata,
     ::BlockPos const&                                   offset,
     ::Rotation                                          rotation

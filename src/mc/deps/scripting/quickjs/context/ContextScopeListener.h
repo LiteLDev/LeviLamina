@@ -49,15 +49,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onPreLifetimeScopeDestroy(::Scripting::LifetimeRegistry& registry);
+    MCNAPI void $onPreLifetimeScopeDestroy(::Scripting::LifetimeRegistry& registry);
 
-    MCAPI void $onPostLifetimeScopeDestroy(::Scripting::LifetimeRegistry&);
+    MCNAPI void $onPostLifetimeScopeDestroy(::Scripting::LifetimeRegistry&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -15,19 +15,19 @@ class TurnCreatePermissionRequest {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TurnCreatePermissionRequest(::cricket::TurnPort*, ::cricket::TurnEntry*, ::rtc::SocketAddress const&);
+    MCNAPI TurnCreatePermissionRequest(::cricket::TurnPort*, ::cricket::TurnEntry*, ::rtc::SocketAddress const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::TurnPort*, ::cricket::TurnEntry*, ::rtc::SocketAddress const&);
+    MCNAPI void* $ctor(::cricket::TurnPort*, ::cricket::TurnEntry*, ::rtc::SocketAddress const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

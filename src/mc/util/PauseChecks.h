@@ -11,6 +11,6 @@ struct PauseChecks {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isActorTickPaused(::Actor const& actor);
+    MCNAPI static bool isActorTickPaused(::Actor const& actor);
     // NOLINTEND
 };

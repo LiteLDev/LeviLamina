@@ -18,8 +18,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _cleanUp(::Mob& mob);
+    MCNAPI void _cleanUp(::Mob& mob);
 
-    MCAPI void checkPath(::Mob& mob);
+    MCNAPI void checkPath(::Mob& mob);
     // NOLINTEND
 };

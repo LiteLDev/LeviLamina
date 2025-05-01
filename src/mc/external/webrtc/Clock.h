@@ -27,13 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int64 TimeInMilliseconds();
+    MCNAPI int64 TimeInMilliseconds();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::Clock* GetRealTimeClock();
+    MCNAPI static ::webrtc::Clock* GetRealTimeClock();
     // NOLINTEND
 
 public:
@@ -51,7 +51,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

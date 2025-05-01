@@ -43,21 +43,21 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::cereal::internal::ConstraintDescription $description() const;
+    MCNAPI ::cereal::internal::ConstraintDescription $description() const;
 
-    MCAPI void $doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
+    MCNAPI void $doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

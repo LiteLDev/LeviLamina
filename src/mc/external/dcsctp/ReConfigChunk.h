@@ -13,25 +13,25 @@ class ReConfigChunk {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ReConfigChunk(::dcsctp::Parameters);
+    MCNAPI explicit ReConfigChunk(::dcsctp::Parameters);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::dcsctp::ReConfigChunk> Parse(::rtc::ArrayView<uchar const>);
+    MCNAPI static ::std::optional<::dcsctp::ReConfigChunk> Parse(::rtc::ArrayView<uchar const>);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::dcsctp::Parameters);
+    MCNAPI void* $ctor(::dcsctp::Parameters);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

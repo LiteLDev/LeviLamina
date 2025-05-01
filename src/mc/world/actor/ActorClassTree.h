@@ -14,6 +14,6 @@ class ActorClassTree {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isInstanceOf(::Actor const& inEntity, ::ActorType type);
+    MCNAPI static bool isInstanceOf(::Actor const& inEntity, ::ActorType type);
     // NOLINTEND
 };

@@ -57,7 +57,7 @@ public:
     // vIndex: 18
     virtual ::EventResult onEvent(::ActorAddEffectEvent const& actorAddEffectEvent) /*override*/;
 
-    // vIndex: 36
+    // vIndex: 38
     virtual ::EventResult onEvent(::ActorDefinitionEndedEvent const& actorDefinitionEndedEvent) /*override*/;
 
     // vIndex: 0
@@ -73,15 +73,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ActorAddEffectEvent const& actorAddEffectEvent);
+    MCNAPI ::EventResult $onEvent(::ActorAddEffectEvent const& actorAddEffectEvent);
 
-    MCAPI ::EventResult $onEvent(::ActorDefinitionEndedEvent const& actorDefinitionEndedEvent);
+    MCNAPI ::EventResult $onEvent(::ActorDefinitionEndedEvent const& actorDefinitionEndedEvent);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -57,39 +57,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CraftingContainer(int w, int h);
+    MCNAPI CraftingContainer(int w, int h);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int w, int h);
+    MCNAPI void* $ctor(int w, int h);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCNAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCNAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
-    MCFOLD int $getContainerSize() const;
+    MCNAPI int $getContainerSize() const;
 
-    MCFOLD int $getMaxStackSize() const;
+    MCNAPI int $getMaxStackSize() const;
 
-    MCFOLD void $setContainerChanged(int slot);
+    MCNAPI void $setContainerChanged(int slot);
 
-    MCFOLD void $startOpen(::Player&);
+    MCNAPI void $startOpen(::Player&);
 
-    MCFOLD void $stopOpen(::Player& player);
+    MCNAPI void $stopOpen(::Player& player);
 
-    MCFOLD void $serverInitItemStackIds(
+    MCNAPI void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
@@ -99,6 +99,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

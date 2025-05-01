@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/resource/ContentIdentity.h"
+#include "mc/deps/core/resource/PackIdVersion.h"
+
 // auto generated forward declare list
 // clang-format off
-class ContentIdentity;
 class SemVersion;
-struct PackIdVersion;
 namespace mce { class UUID; }
 // clang-format on
 
@@ -29,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackInfoData(
+    MCNAPI PackInfoData(
         ::mce::UUID const&       guid,
         ::SemVersion const&      version,
         uint64                   packSize,
@@ -42,13 +44,13 @@ public:
         ::std::string const&     cdnUrl
     );
 
-    MCAPI ~PackInfoData();
+    MCNAPI ~PackInfoData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::mce::UUID const&       guid,
         ::SemVersion const&      version,
         uint64                   packSize,
@@ -65,6 +67,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

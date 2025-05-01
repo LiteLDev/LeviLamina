@@ -26,27 +26,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool IsMediaCodec() const;
+    MCNAPI bool IsMediaCodec() const;
 
-    MCAPI bool IsResiliencyCodec() const;
+    MCNAPI bool IsResiliencyCodec() const;
 
-    MCAPI RtpCodec();
+    MCNAPI RtpCodec();
 
-    MCAPI RtpCodec(::webrtc::RtpCodec const&);
+    MCNAPI RtpCodec(::webrtc::RtpCodec const&);
 
-    MCAPI ::std::string mime_type() const;
+    MCNAPI ::std::string mime_type() const;
 
-    MCAPI ::webrtc::RtpCodec& operator=(::webrtc::RtpCodec const&);
+    MCNAPI ::webrtc::RtpCodec& operator=(::webrtc::RtpCodec const&);
 
-    MCAPI bool operator==(::webrtc::RtpCodec const&) const;
+    MCNAPI bool operator==(::webrtc::RtpCodec const&) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::webrtc::RtpCodec const&);
+    MCNAPI void* $ctor(::webrtc::RtpCodec const&);
     // NOLINTEND
 
 public:
@@ -58,7 +58,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

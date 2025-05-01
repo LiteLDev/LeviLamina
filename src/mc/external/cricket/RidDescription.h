@@ -20,31 +20,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RidDescription();
+    MCNAPI RidDescription();
 
-    MCAPI RidDescription(::cricket::RidDescription const&);
+    MCNAPI RidDescription(::cricket::RidDescription const&);
 
-    MCAPI RidDescription(::std::string const&, ::cricket::RidDirection);
+    MCNAPI RidDescription(::std::string const&, ::cricket::RidDirection);
 
-    MCAPI ::cricket::RidDescription& operator=(::cricket::RidDescription const&);
+    MCNAPI ::cricket::RidDescription& operator=(::cricket::RidDescription const&);
 
-    MCAPI ~RidDescription();
+    MCNAPI ~RidDescription();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::cricket::RidDescription const&);
+    MCNAPI void* $ctor(::cricket::RidDescription const&);
 
-    MCAPI void* $ctor(::std::string const&, ::cricket::RidDirection);
+    MCNAPI void* $ctor(::std::string const&, ::cricket::RidDirection);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

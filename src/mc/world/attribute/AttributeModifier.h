@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/UUID.h"
 #include "mc/world/attribute/AttributeModifierOperation.h"
 #include "mc/world/attribute/AttributeOperands.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace mce { class UUID; }
-// clang-format on
 
 class AttributeModifier {
 public:
@@ -36,9 +32,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AttributeModifier(::AttributeModifier const&);
+    MCNAPI AttributeModifier(::AttributeModifier const&);
 
-    MCAPI AttributeModifier(
+    MCNAPI AttributeModifier(
         ::mce::UUID          id,
         ::std::string const& name,
         float                amount,
@@ -47,7 +43,7 @@ public:
         bool                 serializable
     );
 
-    MCAPI ::AttributeModifier& operator=(::AttributeModifier const& rhs);
+    MCNAPI ::AttributeModifier& operator=(::AttributeModifier const& rhs);
     // NOLINTEND
 
 public:
@@ -59,27 +55,27 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AttributeModifier const&);
+    MCNAPI void* $ctor(::AttributeModifier const&);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::mce::UUID id, ::std::string const& name, float amount, int operation, int operand, bool serializable);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isInstantaneous() const;
+    MCNAPI bool $isInstantaneous() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -24,29 +24,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddLayer(::cricket::SimulcastLayer const&);
+    MCNAPI void AddLayer(::cricket::SimulcastLayer const&);
 
-    MCAPI void AddLayerWithAlternatives(::std::vector<::cricket::SimulcastLayer> const&);
+    MCNAPI void AddLayerWithAlternatives(::std::vector<::cricket::SimulcastLayer> const&);
 
-    MCAPI ::std::vector<::cricket::SimulcastLayer> GetAllLayers() const;
+    MCNAPI ::std::vector<::cricket::SimulcastLayer> GetAllLayers() const;
 
-    MCAPI SimulcastLayerList(::cricket::SimulcastLayerList const&);
+    MCNAPI SimulcastLayerList(::cricket::SimulcastLayerList const&);
 
-    MCAPI ::cricket::SimulcastLayerList& operator=(::cricket::SimulcastLayerList&&);
+    MCNAPI ::cricket::SimulcastLayerList& operator=(::cricket::SimulcastLayerList&&);
 
-    MCAPI ~SimulcastLayerList();
+    MCNAPI ~SimulcastLayerList();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::SimulcastLayerList const&);
+    MCNAPI void* $ctor(::cricket::SimulcastLayerList const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

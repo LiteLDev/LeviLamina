@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class LayeredAbilities;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/actor/player/LayeredAbilities.h"
 
 struct AbilitiesComponent {
 public:

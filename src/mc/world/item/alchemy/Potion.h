@@ -69,27 +69,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Potion(::std::string_view nameId);
+    MCNAPI explicit Potion(::std::string_view nameId);
 
-    MCAPI Potion(
+    MCNAPI Potion(
         ::std::string_view         nameId,
         ::std::string_view         descriptionID,
         ::MobEffectInstance const& mobEffect,
         ::Potion::PotionVariant    var
     );
 
-    MCAPI Potion(
+    MCNAPI Potion(
         ::std::string_view                 nameId,
         ::std::vector<::std::string>       descriptionIDs,
         ::std::vector<::MobEffectInstance> mobEffects,
         ::Potion::PotionVariant            var
     );
 
-    MCAPI ::std::string _getDescriptionIdCombiningStrings(::Potion::PotionType potiontype) const;
+    MCNAPI ::std::string _getDescriptionIdCombiningStrings(::Potion::PotionType potiontype) const;
 
-    MCAPI ::std::string _getDescriptionIdSingleString(::Potion::PotionType potionType) const;
+    MCNAPI ::std::string _getDescriptionIdSingleString(::Potion::PotionType potionType) const;
 
-    MCAPI void appendFormattedPotionText(
+    MCNAPI void appendFormattedPotionText(
         ::Bedrock::Safety::RedactableString& inOutHovertext,
         ::Potion::PotionType                 potionType,
         ::Potion::PotionVariant              potionVariant,
@@ -97,19 +97,19 @@ public:
         float                                timeMod
     ) const;
 
-    MCAPI ::std::string getDescriptionId(::Potion::PotionType potionType) const;
+    MCNAPI ::std::string getDescriptionId(::Potion::PotionType potionType) const;
 
-    MCAPI ::std::string getPotencyDescription(::Potion::PotionType potionType, float timeMod) const;
+    MCNAPI ::std::string getPotencyDescription(::Potion::PotionType potionType, float timeMod) const;
 
-    MCAPI ~Potion();
+    MCNAPI ~Potion();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void addPotion(::std::shared_ptr<::Potion const> potion);
+    MCNAPI static void addPotion(::std::shared_ptr<::Potion const> potion);
 
-    MCAPI static void appendMobEffectText(
+    MCNAPI static void appendMobEffectText(
         ::Bedrock::Safety::RedactableString& inOutHovertext,
         ::Potion::PotionVariant              potionVariant,
         uint                                 mobEffectId,
@@ -117,23 +117,23 @@ public:
         ::Player const&                      player
     );
 
-    MCAPI static ::std::string
+    MCNAPI static ::std::string
     effectDurationToString(::Potion::PotionType potionType, float timeMod, ::MobEffectInstance const& effect);
 
-    MCAPI static ::std::string effectPotencyToString(::MobEffectInstance const& effect);
+    MCNAPI static ::std::string effectPotencyToString(::MobEffectInstance const& effect);
 
-    MCAPI static ::std::string getBasePotion(::Potion::PotionType type);
+    MCNAPI static ::std::string getBasePotion(::Potion::PotionType type);
 
-    MCAPI static ::std::string getPotencyDescription(
+    MCNAPI static ::std::string getPotencyDescription(
         ::Potion::PotionType       potionType,
         float                      timeMod,
         ::std::string_view         descID,
         ::MobEffectInstance const& effect
     );
 
-    MCAPI static ::std::shared_ptr<::Potion const> getPotion(::std::string_view potionNameId);
+    MCNAPI static ::std::shared_ptr<::Potion const> getPotion(::std::string_view potionNameId);
 
-    MCAPI static void initPotions(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
+    MCNAPI static void initPotions(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
     // NOLINTEND
 
 public:
@@ -243,16 +243,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view nameId);
+    MCNAPI void* $ctor(::std::string_view nameId);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string_view         nameId,
         ::std::string_view         descriptionID,
         ::MobEffectInstance const& mobEffect,
         ::Potion::PotionVariant    var
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string_view                 nameId,
         ::std::vector<::std::string>       descriptionIDs,
         ::std::vector<::MobEffectInstance> mobEffects,
@@ -263,6 +263,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

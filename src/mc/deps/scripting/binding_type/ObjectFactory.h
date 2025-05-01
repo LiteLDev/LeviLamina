@@ -32,26 +32,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ObjectFactory(
+    MCNAPI ObjectFactory(
         ::std::string                                         name_,
         ::std::shared_ptr<::Scripting::Reflection::IFunction> func_,
         ::entt::meta_type                                     type_
     );
 
-    MCAPI ~ObjectFactory();
+    MCNAPI ~ObjectFactory();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::string name_, ::std::shared_ptr<::Scripting::Reflection::IFunction> func_, ::entt::meta_type type_);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

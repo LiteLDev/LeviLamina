@@ -16,19 +16,19 @@ struct SctpSidAllocator {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::webrtc::StreamId> AllocateSid(::rtc::SSLRole);
+    MCNAPI ::std::optional<::webrtc::StreamId> AllocateSid(::rtc::SSLRole);
 
-    MCAPI void ReleaseSid(::webrtc::StreamId);
+    MCNAPI void ReleaseSid(::webrtc::StreamId);
 
-    MCAPI bool ReserveSid(::webrtc::StreamId);
+    MCNAPI bool ReserveSid(::webrtc::StreamId);
 
-    MCAPI ~SctpSidAllocator();
+    MCNAPI ~SctpSidAllocator();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

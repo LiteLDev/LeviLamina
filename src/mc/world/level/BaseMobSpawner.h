@@ -62,21 +62,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BaseMobSpawner(::ActorDefinitionIdentifier actorDefId);
+    MCNAPI explicit BaseMobSpawner(::ActorDefinitionIdentifier actorDefId);
 
-    MCAPI void _delay(::BlockSource& source);
+    MCNAPI void _delay(::BlockSource& source);
 
-    MCAPI void removeDisplayEntity();
+    MCNAPI void removeDisplayEntity();
 
-    MCAPI void setEntityId(::ActorDefinitionIdentifier actorDefId);
+    MCNAPI void setEntityId(::ActorDefinitionIdentifier actorDefId);
 
-    MCAPI void setNextSpawnData(::std::unique_ptr<::SpawnData> nextSpawnData);
+    MCNAPI void setNextSpawnData(::std::unique_ptr<::SpawnData> nextSpawnData);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionIdentifier actorDefId);
+    MCNAPI void* $ctor(::ActorDefinitionIdentifier actorDefId);
     // NOLINTEND
 
 public:
@@ -88,16 +88,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::BlockSource& source);
+    MCNAPI void $tick(::BlockSource& source);
 
-    MCAPI void $load(::CompoundTag const& data);
+    MCNAPI void $load(::CompoundTag const& data);
 
-    MCAPI void $save(::CompoundTag& tag);
+    MCNAPI void $save(::CompoundTag& tag);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

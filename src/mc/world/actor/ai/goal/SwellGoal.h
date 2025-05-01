@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
@@ -10,7 +11,6 @@
 // clang-format off
 class Actor;
 class Creeper;
-class WeakEntityRef;
 // clang-format on
 
 class SwellGoal : public ::Goal {
@@ -48,13 +48,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SwellGoal(::Creeper* creeper, float startSwellDist, float stopSwellDist);
+    MCNAPI SwellGoal(::Creeper* creeper, float startSwellDist, float stopSwellDist);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Creeper* creeper, float startSwellDist, float stopSwellDist);
+    MCNAPI void* $ctor(::Creeper* creeper, float startSwellDist, float stopSwellDist);
     // NOLINTEND
 
 public:
@@ -66,20 +66,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

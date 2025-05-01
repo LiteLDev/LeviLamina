@@ -18,9 +18,9 @@ struct TickingSystemWithInfo;
 namespace AutoStepSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createSystem();
+MCNAPI ::TickingSystemWithInfo createSystem();
 
-MCAPI void doAutoStepSystemImpl(
+MCNAPI void doAutoStepSystemImpl(
     ::entt::type_list<::Include<::AutoStepRequestFlagComponent>>,
     ::MaxAutoStepComponent const& maxAutoStepComponent,
     ::MoveRequestComponent&       moveRequestComponent,

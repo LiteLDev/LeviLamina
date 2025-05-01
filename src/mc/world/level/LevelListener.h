@@ -22,6 +22,7 @@ struct BreakingItemParticleData;
 struct ResolvedItemIconInfo;
 struct ScreenshotOptions;
 namespace cg { class ImageBuffer; }
+namespace mce { class Color; }
 // clang-format on
 
 class LevelListener : public ::BlockSourceListener {
@@ -52,49 +53,53 @@ public:
     addBreakingItemParticleEffect(::Vec3 const&, ::BreakingItemParticleData const&, ::ResolvedItemIconInfo const&);
 
     // vIndex: 15
-    virtual void playMusic(::std::string const&, ::Vec3 const&, float, float);
+    virtual void
+    addBiomeTintedParticleEffect(::HashedString const&, ::BlockPos const&, ::Block const&, ::std::optional<::mce::Color>);
 
     // vIndex: 16
-    virtual void playStreamingMusic(::std::string const&, int, int, int);
+    virtual void playMusic(::std::string const&, ::Vec3 const&, float, float);
 
     // vIndex: 17
-    virtual void onEntityAdded(::Actor&);
+    virtual void playStreamingMusic(::std::string const&, int, int, int);
 
     // vIndex: 18
-    virtual void onEntityRemoved(::Actor&);
+    virtual void onEntityAdded(::Actor&);
 
     // vIndex: 19
-    virtual void onChunkLoaded(::ChunkSource&, ::LevelChunk&);
+    virtual void onEntityRemoved(::Actor&);
 
     // vIndex: 20
-    virtual void onChunkReloaded(::ChunkSource&, ::LevelChunk&);
+    virtual void onChunkLoaded(::ChunkSource&, ::LevelChunk&);
 
     // vIndex: 21
-    virtual void onSubChunkLoaded(::ChunkSource&, ::LevelChunk&, short, bool);
+    virtual void onChunkReloaded(::ChunkSource&, ::LevelChunk&);
 
     // vIndex: 22
-    virtual void onChunkUnloaded(::LevelChunk&);
+    virtual void onSubChunkLoaded(::ChunkSource&, ::LevelChunk&, short, bool);
 
     // vIndex: 23
-    virtual void onLevelDestruction(::std::string const&);
-
-    // vIndex: 25
-    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int);
+    virtual void onChunkUnloaded(::LevelChunk&);
 
     // vIndex: 24
-    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&);
+    virtual void onLevelDestruction(::std::string const&);
 
     // vIndex: 26
+    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int);
+
+    // vIndex: 25
+    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&);
+
+    // vIndex: 27
     virtual void
     takePicture(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&, ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>);
 
-    // vIndex: 27
+    // vIndex: 28
     virtual void playerListChanged();
 
-    // vIndex: 28
+    // vIndex: 29
     virtual void onLevelDataCommandsChanged(bool);
 
-    // vIndex: 29
+    // vIndex: 30
     virtual void onLevelDataWorldTemplateOptionsUnlocked();
     // NOLINTEND
 
@@ -120,6 +125,9 @@ public:
 
     MCFOLD void
     $addBreakingItemParticleEffect(::Vec3 const&, ::BreakingItemParticleData const&, ::ResolvedItemIconInfo const&);
+
+    MCFOLD void
+    $addBiomeTintedParticleEffect(::HashedString const&, ::BlockPos const&, ::Block const&, ::std::optional<::mce::Color>);
 
     MCFOLD void $playMusic(::std::string const&, ::Vec3 const&, float, float);
 

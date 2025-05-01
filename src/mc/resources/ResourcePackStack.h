@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContentIdentity;
 class IResourcePackRepository;
 class LoadedResourceData;
 class PackInstance;
@@ -63,6 +64,11 @@ public:
     MCAPI void getSplitStacks(::ResourcePackStack& clientStack, ::ResourcePackStack& serverStack) const;
 
     MCAPI bool hasPlatformLockedContent() const;
+
+    MCAPI bool isAssetExtractionViableForAll(
+        ::std::function<::std::string(::ContentIdentity const&)> getContentKey,
+        ::std::string const&                                     sourceContext
+    ) const;
 
     MCAPI void removeDuplicates();
 

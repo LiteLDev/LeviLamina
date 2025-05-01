@@ -67,9 +67,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext);
+    MCNAPI bool $shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext);
 
-    MCAPI void $onSignalReceive(
+    MCNAPI void $onSignalReceive(
         ::BlockSource& region,
         ::BlockPos const&,
         ::GameEvent const&,
@@ -79,16 +79,16 @@ public:
         ::Actor* projectileOwner
     );
 
-    MCFOLD void $onSerializableDataChanged(::BlockSource& region);
+    MCNAPI void $onSerializableDataChanged(::BlockSource& region);
 
-    MCFOLD bool $canReceiveOnlyIfAdjacentChunksAreTicking() const;
+    MCNAPI bool $canReceiveOnlyIfAdjacentChunksAreTicking() const;
 
-    MCAPI bool $isValidVibration(::GameEvent const& gameEvent);
+    MCNAPI bool $isValidVibration(::GameEvent const& gameEvent);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

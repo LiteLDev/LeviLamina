@@ -19,6 +19,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::AttributeCollection& instance();
+    MCNAPI static ::AttributeCollection& instance();
     // NOLINTEND
 };

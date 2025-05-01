@@ -91,53 +91,53 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $write(::cereal::NullType, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(::cereal::NullType, ::cereal::PropertyReader const&);
 
-    MCAPI bool $write(bool value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(bool value, ::cereal::PropertyReader const&);
 
-    MCAPI bool $write(char value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(char value, ::cereal::PropertyReader const&);
 
-    MCAPI bool $write(uchar value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(uchar value, ::cereal::PropertyReader const&);
 
-    MCAPI bool $write(short value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(short value, ::cereal::PropertyReader const&);
 
-    MCAPI bool $write(ushort value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(ushort value, ::cereal::PropertyReader const&);
 
-    MCAPI bool $write(int value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(int value, ::cereal::PropertyReader const&);
 
-    MCAPI bool $write(uint value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(uint value, ::cereal::PropertyReader const&);
 
-    MCFOLD bool $write(int64 value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(int64 value, ::cereal::PropertyReader const&);
 
-    MCFOLD bool $write(uint64 value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(uint64 value, ::cereal::PropertyReader const&);
 
-    MCAPI bool $write(float value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(float value, ::cereal::PropertyReader const&);
 
-    MCAPI bool $write(double value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(double value, ::cereal::PropertyReader const&);
 
-    MCAPI bool $write(::std::string_view const value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(::std::string_view const value, ::cereal::PropertyReader const&);
 
-    MCAPI bool $pushMember(::std::string_view const value, ::cereal::PropertyReader const&);
+    MCNAPI bool $pushMember(::std::string_view const value, ::cereal::PropertyReader const&);
 
-    MCAPI void $popMember();
+    MCNAPI void $popMember();
 
-    MCAPI bool $openObject(::cereal::PropertyReader const&);
+    MCNAPI bool $openObject(::cereal::PropertyReader const&);
 
-    MCAPI bool $openArray(uint64 len, ::cereal::PropertyReader const&);
+    MCNAPI bool $openArray(uint64 len, ::cereal::PropertyReader const&);
 
-    MCAPI void $close();
+    MCNAPI void $close();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

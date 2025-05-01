@@ -4,12 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/world/redstone/circuit/components/CapacitorComponent.h"
+#include "mc/world/redstone/circuit/components/CircuitComponentList.h"
 
 // auto generated forward declare list
 // clang-format off
 class BaseCircuitComponent;
 class BlockPos;
-class CircuitComponentList;
 class CircuitSceneGraph;
 class CircuitTrackingInfo;
 // clang-format on
@@ -50,34 +50,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _removeSideSource(::BlockPos const& posSource);
+    MCNAPI void _removeSideSource(::BlockPos const& posSource);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD uchar $getPoweroutDirection() const;
+    MCNAPI uchar $getPoweroutDirection() const;
 
-    MCFOLD bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+    MCNAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
-    MCFOLD bool $canConsumePowerAnyDirection() const;
+    MCNAPI bool $canConsumePowerAnyDirection() const;
 
-    MCFOLD bool $canConsumerPower() const;
+    MCNAPI bool $canConsumerPower() const;
 
-    MCAPI void $removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent);
+    MCNAPI void $removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent);
 
-    MCAPI void $removeFromAnySourceList(::BaseCircuitComponent const* component);
+    MCNAPI void $removeFromAnySourceList(::BaseCircuitComponent const* component);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

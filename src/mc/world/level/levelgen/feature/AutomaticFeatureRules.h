@@ -44,20 +44,20 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~AutomaticFeatureRule();
+        MCNAPI ~AutomaticFeatureRule();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnka8c11c;
+    ::ll::UntypedStorage<8, 232> mUnka8c11c;
     // NOLINTEND
 
 public:
@@ -69,16 +69,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AutomaticFeatureRules(::cereal::ReflectionCtx const& ctx);
+    MCNAPI explicit AutomaticFeatureRules(::cereal::ReflectionCtx const& ctx);
 
-    MCAPI void _applyAutomaticFeatureRuleDefinition(
+    MCNAPI void _applyAutomaticFeatureRuleDefinition(
         ::AutomaticFeatureRules::AutomaticFeatureRule&            automaticFeatureRule,
         ::SharedTypes::v1_21_20::AutomaticFeatureRulesData const& automaticFeatureRulesData,
         ::MinEngineVersion const&                                 minEngineVersion,
         ::FeatureRegistry&                                        featureRegistry
     ) const;
 
-    MCAPI void _parseAndInsertUnsorted(
+    MCNAPI void _parseAndInsertUnsorted(
         ::std::string const&        filename,
         ::std::string&&             data,
         ::MinEngineVersion const&   minEngineVersion,
@@ -89,13 +89,13 @@ public:
         bool                                                                                      isBasePack
     ) const;
 
-    MCAPI void attachAutomaticFeatures(
+    MCNAPI void attachAutomaticFeatures(
         ::ResourcePackManager&                                          resourcePackManager,
         ::IWorldRegistriesProvider&                                     worldRegistries,
         ::std::unordered_map<::HashedString, ::BiomeDecorationFeature>& biomeDecorationFeatureMap
     ) const;
 
-    MCAPI ::std::unordered_map<
+    MCNAPI ::std::unordered_map<
         ::std::string,
         ::std::unordered_map<::HashedString, ::AutomaticFeatureRules::AutomaticFeatureRule>>
     parseAutomaticFeatures(
@@ -114,6 +114,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
+    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 };

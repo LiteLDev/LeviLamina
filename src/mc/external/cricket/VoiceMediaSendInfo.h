@@ -19,25 +19,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VoiceMediaSendInfo();
+    MCNAPI VoiceMediaSendInfo();
 
-    MCAPI VoiceMediaSendInfo(::cricket::VoiceMediaSendInfo const&);
+    MCNAPI VoiceMediaSendInfo(::cricket::VoiceMediaSendInfo const&);
 
-    MCAPI ~VoiceMediaSendInfo();
+    MCNAPI ~VoiceMediaSendInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::cricket::VoiceMediaSendInfo const&);
+    MCNAPI void* $ctor(::cricket::VoiceMediaSendInfo const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -23,9 +23,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptDebugUtilitiesModuleFactory();
+    MCNAPI ScriptDebugUtilitiesModuleFactory();
 
-    MCAPI ::Scripting::ModuleBinding _generateBindings(
+    MCNAPI ::Scripting::ModuleBinding _generateBindings(
         ::Scripting::ModuleBindingBuilder&  moduleBuilder,
         bool                                allowedTags,
         ::std::vector<::std::string> const& allowUntagged
@@ -43,7 +43,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -55,6 +55,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

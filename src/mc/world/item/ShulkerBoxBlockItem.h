@@ -38,7 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string _buildContainedItemList(::CompoundTag const* containerList) const;
+    MCNAPI ::std::string _buildContainedItemList(::CompoundTag const* containerList) const;
     // NOLINTEND
 
 public:
@@ -50,21 +50,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
 
-    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack) const;
+    MCNAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack) const;
 
-    MCAPI int $getLevelDataForAuxValue(int auxValue) const;
+    MCNAPI int $getLevelDataForAuxValue(int auxValue) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

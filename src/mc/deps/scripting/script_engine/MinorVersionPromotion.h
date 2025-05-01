@@ -23,21 +23,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MinorVersionPromotion(::Scripting::MinorVersionPromotion&&);
+    MCNAPI MinorVersionPromotion(::Scripting::MinorVersionPromotion&&);
 
-    MCAPI ~MinorVersionPromotion();
+    MCNAPI ~MinorVersionPromotion();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::MinorVersionPromotion&&);
+    MCNAPI void* $ctor(::Scripting::MinorVersionPromotion&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

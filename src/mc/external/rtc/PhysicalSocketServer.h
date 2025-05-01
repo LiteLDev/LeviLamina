@@ -56,23 +56,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Add(::rtc::Dispatcher*);
+    MCNAPI void Add(::rtc::Dispatcher*);
 
-    MCAPI PhysicalSocketServer();
+    MCNAPI PhysicalSocketServer();
 
-    MCAPI void Remove(::rtc::Dispatcher*);
+    MCNAPI void Remove(::rtc::Dispatcher*);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int ToCmsWait(::webrtc::TimeDelta);
+    MCNAPI static int ToCmsWait(::webrtc::TimeDelta);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -90,7 +90,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

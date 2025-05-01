@@ -24,6 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::error_code toErrorCode() const;
+    MCNAPI ::std::error_code toErrorCode() const;
     // NOLINTEND
 };

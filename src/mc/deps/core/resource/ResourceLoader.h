@@ -84,39 +84,39 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $load(
+    MCNAPI bool $load(
         ::ResourceLocationPair const&    resourceLocation,
         ::std::string&                   resourceStream,
         ::gsl::span<::std::string const> extensions
     ) const;
 
-    MCFOLD bool $isInStreamableLocation(::ResourceLocation const& resourceLocation) const;
+    MCNAPI bool $isInStreamableLocation(::ResourceLocation const& resourceLocation) const;
 
-    MCFOLD bool $isInStreamableLocation(
+    MCNAPI bool $isInStreamableLocation(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensions
     ) const;
 
-    MCAPI ::Core::PathBuffer<::std::string> $getPath(::ResourceLocation const& resourceLocation) const;
+    MCNAPI ::Core::PathBuffer<::std::string> $getPath(::ResourceLocation const& resourceLocation) const;
 
-    MCFOLD ::Core::PathBuffer<::std::string>
+    MCNAPI ::Core::PathBuffer<::std::string>
     $getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const;
 
-    MCFOLD ::Core::PathBuffer<::std::string> $getPathContainingResource(::ResourceLocation const& resourceLocation
+    MCNAPI ::Core::PathBuffer<::std::string> $getPathContainingResource(::ResourceLocation const& resourceLocation
     ) const;
 
-    MCFOLD ::Core::PathBuffer<::std::string> $getPathContainingResource(
+    MCNAPI ::Core::PathBuffer<::std::string> $getPathContainingResource(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensions
     ) const;
 
-    MCAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(
+    MCNAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensions
     ) const;
@@ -125,6 +125,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -62,9 +62,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PersonaPiece();
+    MCNAPI PersonaPiece();
 
-    MCAPI ~PersonaPiece();
+    MCNAPI ~PersonaPiece();
     // NOLINTEND
 
 public:
@@ -76,12 +76,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

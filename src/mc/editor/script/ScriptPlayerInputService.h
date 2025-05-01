@@ -34,9 +34,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> focusViewport();
+    MCNAPI ::Scripting::Result<void> focusViewport();
 
-    MCAPI ::Scripting::Result<void> registerKeyBinding(
+    MCNAPI ::std::optional<int>
+    getKeyBindingProcessingState(::std::string const& contextId, ::std::string const& bindingId) const;
+
+    MCNAPI ::Scripting::Result<void> registerKeyBinding(
         ::std::string const&                contextId,
         ::std::string const&                bindingId,
         int                                 key,
@@ -44,23 +47,29 @@ public:
         ::Editor::Input::BindingInfo const& info
     );
 
-    MCAPI ::Scripting::Result<void> registerMouseBinding(
+    MCNAPI ::Scripting::Result<void> registerMouseBinding(
         ::std::string const&                 contextId,
         ::std::string const&                 bindingId,
         ::Editor::Input::MouseActionCategory mouseAction
     );
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     unregisterKeyBinding(::std::string const& contextId, ::std::string const& bindingId);
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     unregisterMouseBinding(::std::string const& contextId, ::std::string const& bindingId);
+
+    MCNAPI ::Scripting::Result<void> updateKeyBindingProcessingState(
+        ::std::string const& contextId,
+        ::std::string const& bindingId,
+        ::std::optional<int> state
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptPlayerInputService> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptPlayerInputService> bindScript();
     // NOLINTEND
 };
 

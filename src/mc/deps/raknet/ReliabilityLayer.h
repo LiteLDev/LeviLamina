@@ -154,12 +154,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::RakNet::InternalPacket* AllocateFromInternalPacketPool();
+    MCNAPI ::RakNet::InternalPacket* AllocateFromInternalPacketPool();
 
-    MCAPI ::RakNet::InternalPacket*
+    MCNAPI ::RakNet::InternalPacket*
     BuildPacketFromSplitPacketList(::RakNet::SplitPacketChannel* splitPacketChannel, uint64 time);
 
-    MCAPI ::RakNet::InternalPacket* BuildPacketFromSplitPacketList(
+    MCNAPI ::RakNet::InternalPacket* BuildPacketFromSplitPacketList(
         ushort                   splitPacketId,
         uint64                   time,
         ::RakNet::RakNetSocket2* s,
@@ -168,19 +168,19 @@ public:
         ::RakNet::BitStream&     rnr
     );
 
-    MCAPI void ClearPacketsAndDatagrams();
+    MCNAPI void ClearPacketsAndDatagrams();
 
-    MCAPI ::RakNet::InternalPacket* CreateInternalPacketFromBitStream(::RakNet::BitStream* bitStream, uint64 time);
+    MCNAPI ::RakNet::InternalPacket* CreateInternalPacketFromBitStream(::RakNet::BitStream* bitStream, uint64 time);
 
-    MCAPI void FreeInternalPacketData(::RakNet::InternalPacket* internalPacket, char const* file, uint line);
+    MCNAPI void FreeInternalPacketData(::RakNet::InternalPacket* internalPacket, char const* file, uint line);
 
-    MCAPI void FreeThreadSafeMemory();
+    MCNAPI void FreeThreadSafeMemory();
 
-    MCAPI uint64 GetNextWeight(int priorityLevel);
+    MCNAPI uint64 GetNextWeight(int priorityLevel);
 
-    MCAPI ::RakNet::RakNetStatistics* GetStatistics(::RakNet::RakNetStatistics* rns);
+    MCNAPI ::RakNet::RakNetStatistics* GetStatistics(::RakNet::RakNetStatistics* rns);
 
-    MCAPI bool HandleSocketReceiveFromConnectedPlayer(
+    MCNAPI bool HandleSocketReceiveFromConnectedPlayer(
         char const*                                          buffer,
         uint                                                 length,
         ::RakNet::SystemAddress&                             systemAddress,
@@ -192,28 +192,28 @@ public:
         ::RakNet::BitStream&                                 rnr
     );
 
-    MCAPI void InitializeVariables();
+    MCNAPI void InitializeVariables();
 
-    MCAPI void InsertIntoSplitPacketList(::RakNet::InternalPacket* internalPacket, uint64 time);
+    MCNAPI void InsertIntoSplitPacketList(::RakNet::InternalPacket* internalPacket, uint64 time);
 
-    MCAPI void PushPacket(uint64 internalPacket, ::RakNet::InternalPacket* isReliable, bool time);
+    MCNAPI void PushPacket(uint64 internalPacket, ::RakNet::InternalPacket* isReliable, bool time);
 
-    MCAPI void ReleaseToInternalPacketPool(::RakNet::InternalPacket* ip);
+    MCNAPI void ReleaseToInternalPacketPool(::RakNet::InternalPacket* ip);
 
-    MCAPI ReliabilityLayer();
+    MCNAPI ReliabilityLayer();
 
-    MCAPI void RemoveFromDatagramHistory(::RakNet::uint24_t index);
+    MCNAPI void RemoveFromDatagramHistory(::RakNet::uint24_t index);
 
-    MCAPI uint RemovePacketFromResendListAndDeleteOlderReliableSequenced(
+    MCNAPI uint RemovePacketFromResendListAndDeleteOlderReliableSequenced(
         ::RakNet::uint24_t                                   messageNumber,
         uint64                                               time,
         ::DataStructures::List<::RakNet::PluginInterface2*>& messageHandlerList,
         ::RakNet::SystemAddress const&                       systemAddress
     );
 
-    MCAPI void ResetPacketsAndDatagrams();
+    MCNAPI void ResetPacketsAndDatagrams();
 
-    MCAPI bool Send(
+    MCNAPI bool Send(
         char*               data,
         uint                numberOfBitsToSend,
         ::PacketPriority    priority,
@@ -225,7 +225,7 @@ public:
         uint                MTUSize
     );
 
-    MCAPI void SendACKs(
+    MCNAPI void SendACKs(
         ::RakNet::RakNetSocket2* s,
         ::RakNet::SystemAddress& systemAddress,
         uint64                   time,
@@ -233,7 +233,7 @@ public:
         ::RakNet::BitStream&     rnr
     );
 
-    MCAPI void SendBitStream(
+    MCNAPI void SendBitStream(
         ::RakNet::RakNetSocket2* s,
         ::RakNet::SystemAddress& systemAddress,
         ::RakNet::BitStream*     bitStream,
@@ -241,9 +241,9 @@ public:
         uint64                   rnr
     );
 
-    MCAPI void SplitPacket(::RakNet::InternalPacket* internalPacket);
+    MCNAPI void SplitPacket(::RakNet::InternalPacket* internalPacket);
 
-    MCAPI void Update(
+    MCNAPI void Update(
         ::RakNet::RakNetSocket2*                             s,
         ::RakNet::SystemAddress&                             systemAddress,
         int                                                  time,
@@ -254,25 +254,25 @@ public:
         ::RakNet::BitStream&                                 rnr
     );
 
-    MCAPI uint WriteToBitStreamFromInternalPacket(
+    MCNAPI uint WriteToBitStreamFromInternalPacket(
         ::RakNet::BitStream*                  bitStream,
         ::RakNet::InternalPacket const* const internalPacket,
         uint64                                curTime
     );
 
-    MCAPI ~ReliabilityLayer();
+    MCNAPI ~ReliabilityLayer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

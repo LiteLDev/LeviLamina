@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/level/ChunkPos.h"
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
+
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSource;
-class BoundingBox;
-class ChunkPos;
 class HashedString;
 namespace br::worldgen { class StructureSection; }
 namespace br::worldgen { struct Structure; }
@@ -29,9 +31,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void placeEntities(::BlockSource& region, ::BoundingBox const& chunkBB) const;
+    MCNAPI void placeEntities(::BlockSource& region, ::BoundingBox const& chunkBB) const;
 
-    MCAPI ::HashedString type() const;
+    MCNAPI ::HashedString type() const;
     // NOLINTEND
 };
 

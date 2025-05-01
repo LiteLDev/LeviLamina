@@ -47,7 +47,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void append(
+    MCNAPI static void append(
         ::std::shared_ptr<::ContainerValidationCommitObject>                 commitObject,
         ::std::vector<::std::shared_ptr<::ContainerValidationCommitObject>>& objectList
     );

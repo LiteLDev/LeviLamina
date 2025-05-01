@@ -21,7 +21,7 @@ class RemovePassengersWithoutSeatSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tickRemovePassengersWithoutSeat(
+    MCNAPI static void _tickRemovePassengersWithoutSeat(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::ActorMovementTickNeededComponent>,
@@ -30,9 +30,9 @@ public:
         ::EntityModifier<::StopRidingRequestComponent> modifier
     );
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
 
-    MCAPI static void removePassengersWithoutSeat(
+    MCNAPI static void removePassengersWithoutSeat(
         ::StrictEntityContext&,
         ::RideableComponent const&                      rideableComponent,
         ::VehicleComponent&                             vehicleComponent,

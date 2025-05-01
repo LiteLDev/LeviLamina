@@ -22,7 +22,7 @@ struct EditorFilterPausedSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tickAddEditorPaused(
+    MCNAPI static void _tickAddEditorPaused(
         ::ViewT<
             ::StrictEntityContext,
             ::Exclude<

@@ -37,12 +37,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onActorDied(::Actor& target, int amplifier) const;
+    MCNAPI void $onActorDied(::Actor& target, int amplifier) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

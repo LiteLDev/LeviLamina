@@ -11,7 +11,7 @@ class GameEvent;
 namespace GameEventUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void requestDeferredPosting(::EntityContext& source, ::GameEvent const& gameEvent);
+MCNAPI void requestDeferredPosting(::EntityContext& source, ::GameEvent const& gameEvent);
 // NOLINTEND
 
 } // namespace GameEventUtils

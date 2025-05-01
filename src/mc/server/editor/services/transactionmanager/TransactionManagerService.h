@@ -148,96 +148,96 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _handleRedoMessage(::Editor::Network::RedoOperationPayload const&);
+    MCNAPI void _handleRedoMessage(::Editor::Network::RedoOperationPayload const&);
 
-    MCAPI void _handleUndoMessage(::Editor::Network::UndoOperationPayload const&);
+    MCNAPI void _handleUndoMessage(::Editor::Network::UndoOperationPayload const&);
 
-    MCAPI ::Scripting::Result<void> _redo();
+    MCNAPI ::Scripting::Result<void> _redo();
 
-    MCAPI ::Scripting::Result_deprecated<bool>
+    MCNAPI ::Scripting::Result_deprecated<bool>
     _trackBlockChanges(::BlockSource const& region, ::std::vector<::BlockPos> const& locations);
 
-    MCAPI ::Scripting::Result<void> _undo();
+    MCNAPI ::Scripting::Result<void> _undo();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::PlayerDimensionChangeBeforeEvent const&);
+    MCNAPI ::EventResult $onEvent(::PlayerDimensionChangeBeforeEvent const&);
 
-    MCAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result<void> $ready();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCAPI void $addTransaction(::std::unique_ptr<::Editor::Transactions::TransactionContext> transactionContext);
+    MCNAPI void $addTransaction(::std::unique_ptr<::Editor::Transactions::TransactionContext> transactionContext);
 
-    MCAPI void $clearTransactions();
+    MCNAPI void $clearTransactions();
 
-    MCAPI ::Scripting::Result<void> $undo();
+    MCNAPI ::Scripting::Result<void> $undo();
 
-    MCAPI ::Scripting::Result<void> $redo();
+    MCNAPI ::Scripting::Result<void> $redo();
 
-    MCAPI uint64 $undoSize() const;
+    MCNAPI uint64 $undoSize() const;
 
-    MCAPI uint64 $redoSize() const;
+    MCNAPI uint64 $redoSize() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> $trackBlockChangeList(::std::vector<::BlockPos> const& locations);
+    MCNAPI ::Scripting::Result_deprecated<bool> $trackBlockChangeList(::std::vector<::BlockPos> const& locations);
 
-    MCAPI ::Scripting::Result_deprecated<bool> $trackBlockChangeArea(::BlockPos const& from, ::BlockPos const& to);
+    MCNAPI ::Scripting::Result_deprecated<bool> $trackBlockChangeArea(::BlockPos const& from, ::BlockPos const& to);
 
-    MCAPI ::Scripting::Result_deprecated<bool>
+    MCNAPI ::Scripting::Result_deprecated<bool>
     $trackBlockChangeSelection(::Editor::Selection::SelectionContainer const& selection);
 
-    MCAPI ::Scripting::Result_deprecated<bool>
+    MCNAPI ::Scripting::Result_deprecated<bool>
     $trackBlockChangeCompoundBlockVolume(::CompoundBlockVolume const& compoundVolume);
 
-    MCAPI ::Scripting::Result<bool, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<bool, ::Scripting::Error>
     $addEntityOperation(::Actor* entity, ::Editor::Transactions::EntityOperation::OperationType type);
 
-    MCAPI ::Scripting::Result_deprecated<int> $commitTrackedChanges();
+    MCNAPI ::Scripting::Result_deprecated<int> $commitTrackedChanges();
 
-    MCAPI ::Scripting::Result_deprecated<int> $discardTrackedChanges();
+    MCNAPI ::Scripting::Result_deprecated<int> $discardTrackedChanges();
 
-    MCAPI ::Scripting::Result_deprecated<bool> $openTransaction(::std::string const& name);
+    MCNAPI ::Scripting::Result_deprecated<bool> $openTransaction(::std::string const& name);
 
-    MCAPI ::Scripting::Result_deprecated<bool> $commitOpenTransaction();
+    MCNAPI ::Scripting::Result_deprecated<bool> $commitOpenTransaction();
 
-    MCAPI ::Scripting::Result_deprecated<bool> $discardOpenTransaction();
+    MCNAPI ::Scripting::Result_deprecated<bool> $discardOpenTransaction();
 
-    MCAPI ::Scripting::Result_deprecated<bool> $addUserDefinedOperation(
+    MCNAPI ::Scripting::Result_deprecated<bool> $addUserDefinedOperation(
         ::std::string const&                                             payload,
         ::std::string const&                                             operationName,
         ::std::function<::Scripting::Result<void>(::std::string const&)> fnUndo,
         ::std::function<::Scripting::Result<void>(::std::string const&)> fnRedo
     );
 
-    MCAPI uint64 $pendingOperationsSize() const;
+    MCNAPI uint64 $pendingOperationsSize() const;
 
-    MCFOLD bool $hasOpenTransaction() const;
+    MCNAPI bool $hasOpenTransaction() const;
 
-    MCAPI void $clearAllTransactionData();
+    MCNAPI void $clearAllTransactionData();
 
-    MCAPI bool $isBusy() const;
+    MCNAPI bool $isBusy() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEventListenerDispatcher();
+    MCNAPI static void** $vftableForEventListenerDispatcher();
 
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
 
-    MCAPI static void** $vftableForTransactionManagerServiceProvider();
+    MCNAPI static void** $vftableForTransactionManagerServiceProvider();
     // NOLINTEND
 };
 

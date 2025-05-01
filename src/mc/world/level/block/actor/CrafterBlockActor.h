@@ -46,13 +46,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~LruCache();
+        MCNAPI ~LruCache();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -67,7 +67,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 26
+    // vIndex: 27
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 29
@@ -82,13 +82,13 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 44
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource&) /*override*/;
 
     // vIndex: 0
@@ -98,24 +98,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CrafterBlockActor(::BlockPos pos);
+    MCNAPI explicit CrafterBlockActor(::BlockPos pos);
 
-    MCAPI bool tryMoveItemsIntoContainer(::BlockSource& region, ::std::vector<::ItemInstance>& items);
+    MCNAPI bool tryMoveItemsIntoContainer(::BlockSource& region, ::std::vector<::ItemInstance>& items);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::Recipe const*>
+    MCNAPI static ::std::vector<::Recipe const*>
     _getRecipesForCraftingGrid(::Level& level, ::CraftingContainer& craftingContainer);
 
-    MCAPI static ::std::vector<::ItemInstance> getCraftableItem(::CraftingContainer& craftingGrid, ::Level& level);
+    MCNAPI static ::std::vector<::ItemInstance> getCraftableItem(::CraftingContainer& craftingGrid, ::Level& level);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos pos);
+    MCNAPI void* $ctor(::BlockPos pos);
     // NOLINTEND
 
 public:
@@ -127,28 +127,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCAPI bool $canPushInItem(int slot, int, ::ItemStack const& item) const;
+    MCNAPI bool $canPushInItem(int slot, int, ::ItemStack const& item) const;
 
-    MCAPI bool $isSlotDisabled(int slot) const;
+    MCNAPI bool $isSlotDisabled(int slot) const;
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource&);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCNAPI static void** $vftableForRandomizableBlockActorContainerBase();
 
-    MCAPI static void** $vftableForContainer();
+    MCNAPI static void** $vftableForContainer();
     // NOLINTEND
 };

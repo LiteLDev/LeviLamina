@@ -30,15 +30,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::variant<float, bool, ::Vec3, ::std::string> const getInitialValue() const;
+    MCNAPI ::std::variant<float, bool, ::Vec3, ::std::string> const getInitialValue() const;
 
-    MCAPI ::Scripting::Closure<void(::std::variant<float, bool, ::Vec3, ::std::string>)> const getValueChanged() const;
+    MCNAPI ::Scripting::Closure<void(::std::variant<float, bool, ::Vec3, ::std::string>)> const getValueChanged() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptUIElement> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptUIElement> bindScript();
     // NOLINTEND
 };
 

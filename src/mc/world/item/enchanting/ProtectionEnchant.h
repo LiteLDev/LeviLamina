@@ -56,24 +56,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getMinCost(int level) const;
+    MCNAPI int $getMinCost(int level) const;
 
-    MCAPI int $getMaxCost(int level) const;
+    MCNAPI int $getMaxCost(int level) const;
 
-    MCAPI int $getMaxLevel() const;
+    MCNAPI int $getMaxLevel() const;
 
-    MCAPI int $getDamageProtection(int level, ::ActorDamageSource const& source) const;
+    MCNAPI int $getDamageProtection(int level, ::ActorDamageSource const& source) const;
 
-    MCAPI void $doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
+    MCNAPI void $doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
 
-    MCFOLD bool $isProtectionEnchant() const;
+    MCNAPI bool $isProtectionEnchant() const;
 
-    MCAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
+    MCNAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

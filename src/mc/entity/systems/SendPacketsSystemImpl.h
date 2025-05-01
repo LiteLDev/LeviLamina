@@ -15,7 +15,7 @@ struct SendPacketsComponent;
 namespace SendPacketsSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void sendPacketsSystem(
+MCNAPI void sendPacketsSystem(
     ::ActorOwnerComponent const&                      actorOwnerComponent,
     ::Optional<::UserEntityIdentifierComponent const> userEntityIdentifierComponent,
     ::SendPacketsComponent&                           sendPacketsComponent

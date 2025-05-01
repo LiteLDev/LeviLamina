@@ -38,13 +38,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UpgraderFrom_v1_12_To_v1_13();
+    MCNAPI UpgraderFrom_v1_12_To_v1_13();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -56,11 +56,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $previousSchema(::rapidjson::GenericValue<
-                               ::rapidjson::UTF8<char>,
-                               ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& document) const;
+    MCNAPI bool $previousSchema(::rapidjson::GenericValue<
+                                ::rapidjson::UTF8<char>,
+                                ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& document) const;
 
-    MCAPI void $upgradeToNext(
+    MCNAPI void $upgradeToNext(
         ::rapidjson::GenericDocument<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
@@ -72,7 +72,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

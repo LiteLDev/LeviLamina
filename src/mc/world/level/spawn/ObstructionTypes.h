@@ -15,7 +15,7 @@ namespace br::spawn { struct EntityType; }
 namespace br::spawn::ObstructionTypes {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::vector<
+MCNAPI ::std::vector<
     ::std::tuple<::std::string, ::std::function<bool(::BlockSource&, ::Mob const&, ::br::spawn::EntityType const&)>>>
 defaults();
 // NOLINTEND

@@ -37,9 +37,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OverworldNoises3d(::OverworldNoises3d const&);
+    MCNAPI OverworldNoises3d(::OverworldNoises3d const&);
 
-    MCAPI OverworldNoises3d(
+    MCNAPI OverworldNoises3d(
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> temperatureNoise,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> humidityNoise,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> continentalnessNoise,
@@ -49,30 +49,30 @@ public:
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> jaggedNoise
     );
 
-    MCAPI ::ChunkLocalNoiseCache::CacheEntry _computeBaseValueSetForCacheEntry(::DividedPos2d<4> const& worldQuartPos
+    MCNAPI ::ChunkLocalNoiseCache::CacheEntry _computeBaseValueSetForCacheEntry(::DividedPos2d<4> const& worldQuartPos
     ) const;
 
-    MCAPI ::std::pair<float, float> computeErosionAndDepth(::BlockPos position) const;
+    MCNAPI ::std::pair<float, float> computeErosionAndDepth(::BlockPos position) const;
 
-    MCAPI ::ChunkLocalNoiseCache::CacheEntry computeNoiseValues(::DividedPos2d<4> const& worldQuartPos) const;
+    MCNAPI ::ChunkLocalNoiseCache::CacheEntry computeNoiseValues(::DividedPos2d<4> const& worldQuartPos) const;
 
-    MCAPI ::TargetPoint sample(::BlockPos position) const;
+    MCNAPI ::TargetPoint sample(::BlockPos position) const;
 
-    MCAPI ~OverworldNoises3d();
+    MCNAPI ~OverworldNoises3d();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::OverworldNoises3d make(::XoroshiroPositionalRandomFactory const& randomFactory);
+    MCNAPI static ::OverworldNoises3d make(::XoroshiroPositionalRandomFactory const& randomFactory);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OverworldNoises3d const&);
+    MCNAPI void* $ctor(::OverworldNoises3d const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> temperatureNoise,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> humidityNoise,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> continentalnessNoise,
@@ -86,6 +86,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

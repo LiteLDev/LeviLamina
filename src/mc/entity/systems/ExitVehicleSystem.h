@@ -11,7 +11,7 @@ struct TickingSystemWithInfo;
 namespace ExitVehicleSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createSystem(::BaseGameVersion const& version, bool isClient);
+MCNAPI ::TickingSystemWithInfo createSystem(::BaseGameVersion const& version, bool isClient);
 // NOLINTEND
 
 } // namespace ExitVehicleSystem

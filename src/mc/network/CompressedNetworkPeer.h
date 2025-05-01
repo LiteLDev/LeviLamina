@@ -6,11 +6,7 @@
 // auto generated inclusion list
 #include "mc/network/Compressibility.h"
 #include "mc/network/NetworkPeer.h"
-
-// auto generated forward declare list
-// clang-format off
-struct NetworkSettingOptions;
-// clang-format on
+#include "mc/network/NetworkSettingOptions.h"
 
 class CompressedNetworkPeer : public ::NetworkPeer {
 public:
@@ -55,20 +51,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
 
-    MCAPI ::NetworkPeer::DataStatus $receivePacket(
+    MCNAPI ::NetworkPeer::DataStatus $receivePacket(
         ::std::string&                                                    outData,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     );
 
-    MCFOLD ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
+    MCNAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

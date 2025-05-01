@@ -34,7 +34,7 @@ public:
 
     // vIndex: 52
     virtual void appendFormattedHovertext(
-        ::ItemStackBase const&               instance,
+        ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
@@ -47,7 +47,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void addGoatHornVarationSaveData(::Goat& goat, ::ItemStack& instance);
+    MCNAPI static void addGoatHornVarationSaveData(::Goat& goat, ::ItemStack& instance);
     // NOLINTEND
 
 public:
@@ -59,16 +59,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCFOLD bool $canBeCharged() const;
+    MCNAPI bool $canBeCharged() const;
 
-    MCAPI ::HashedString const& $getCooldownType() const;
+    MCNAPI ::HashedString const& $getCooldownType() const;
 
-    MCFOLD int $getCooldownTime() const;
+    MCNAPI int $getCooldownTime() const;
 
-    MCAPI void $appendFormattedHovertext(
-        ::ItemStackBase const&               instance,
+    MCNAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
@@ -78,6 +78,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

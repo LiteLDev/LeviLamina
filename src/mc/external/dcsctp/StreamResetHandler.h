@@ -29,53 +29,53 @@ class StreamResetHandler {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState&);
+    MCNAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState&);
 
-    MCAPI ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const;
+    MCNAPI ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const;
 
-    MCAPI void HandleReConfig(::dcsctp::ReConfigChunk);
+    MCNAPI void HandleReConfig(::dcsctp::ReConfigChunk);
 
-    MCAPI void
+    MCNAPI void
     HandleResetIncoming(::dcsctp::ParameterDescriptor const&, ::std::vector<::dcsctp::ReconfigurationResponseParameter>&);
 
-    MCAPI void
+    MCNAPI void
     HandleResetOutgoing(::dcsctp::ParameterDescriptor const&, ::std::vector<::dcsctp::ReconfigurationResponseParameter>&);
 
-    MCAPI void HandleResponse(::dcsctp::ParameterDescriptor const&);
+    MCNAPI void HandleResponse(::dcsctp::ParameterDescriptor const&);
 
-    MCAPI ::dcsctp::ReConfigChunk MakeReconfigChunk();
+    MCNAPI ::dcsctp::ReConfigChunk MakeReconfigChunk();
 
-    MCAPI ::std::optional<::dcsctp::ReConfigChunk> MakeStreamResetRequest();
+    MCNAPI ::std::optional<::dcsctp::ReConfigChunk> MakeStreamResetRequest();
 
-    MCAPI ::webrtc::TimeDelta OnReconfigTimerExpiry();
+    MCNAPI ::webrtc::TimeDelta OnReconfigTimerExpiry();
 
-    MCAPI ::std::optional<::std::vector<::dcsctp::ReconfigurationResponseParameter>>
+    MCNAPI ::std::optional<::std::vector<::dcsctp::ReconfigurationResponseParameter>>
     Process(::dcsctp::ReConfigChunk const&);
 
-    MCAPI void ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>);
+    MCNAPI void ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>);
 
-    MCAPI
+    MCNAPI
     StreamResetHandler(::std::string_view, ::dcsctp::Context*, ::dcsctp::TimerManager*, ::dcsctp::DataTracker*, ::dcsctp::ReassemblyQueue*, ::dcsctp::RetransmissionQueue*, ::dcsctp::DcSctpSocketHandoverState const*);
 
-    MCAPI bool Validate(::dcsctp::ReConfigChunk const&);
+    MCNAPI bool Validate(::dcsctp::ReConfigChunk const&);
 
-    MCAPI bool
+    MCNAPI bool
     ValidateReqSeqNbr(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::ReconfigRequestSNTag, uint>>, ::std::vector<::dcsctp::ReconfigurationResponseParameter>&);
 
-    MCAPI ~StreamResetHandler();
+    MCNAPI ~StreamResetHandler();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::string_view, ::dcsctp::Context*, ::dcsctp::TimerManager*, ::dcsctp::DataTracker*, ::dcsctp::ReassemblyQueue*, ::dcsctp::RetransmissionQueue*, ::dcsctp::DcSctpSocketHandoverState const*);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

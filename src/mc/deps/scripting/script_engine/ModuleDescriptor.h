@@ -21,19 +21,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::ModuleDescriptor& operator=(::Scripting::ModuleDescriptor const&);
+    MCNAPI ::Scripting::ModuleDescriptor& operator=(::Scripting::ModuleDescriptor const&);
 
-    MCAPI ::Scripting::ModuleDescriptor& operator=(::Scripting::ModuleDescriptor&&);
+    MCNAPI ::Scripting::ModuleDescriptor& operator=(::Scripting::ModuleDescriptor&&);
 
-    MCAPI ::std::string toString() const;
+    MCNAPI ::std::string toString() const;
 
-    MCAPI ~ModuleDescriptor();
+    MCNAPI ~ModuleDescriptor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

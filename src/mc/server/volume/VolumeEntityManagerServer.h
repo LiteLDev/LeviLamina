@@ -50,14 +50,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _sendVolumeToClient(
+    MCNAPI void _sendVolumeToClient(
         ::EntityContext const&                 entity,
         ::UserEntityIdentifierComponent const& userIdentifier,
         ::NetworkIdentifier const&             source,
         ::PacketSender&                        packetSender
     ) const;
 
-    MCAPI ::std::vector<::WeakRef<::EntityContext>>
+    MCNAPI ::std::vector<::WeakRef<::EntityContext>>
     getAllVolumesOverlappingChunkPosition(::ChunkPos const& pos, ::DimensionType chunkDimension) const;
     // NOLINTEND
 

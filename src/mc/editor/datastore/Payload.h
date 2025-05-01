@@ -13,11 +13,11 @@ class Payload {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Json::Value deserialize(::std::string const& payloadStr);
+    MCNAPI static ::Json::Value deserialize(::std::string const& payloadStr);
 
-    MCAPI static void merge(::Json::Value& out, ::Json::Value const& in);
+    MCNAPI static void merge(::Json::Value& out, ::Json::Value const& in);
 
-    MCAPI static ::std::string serialize(::Json::Value const& payload);
+    MCNAPI static ::std::string serialize(::Json::Value const& payload);
     // NOLINTEND
 };
 

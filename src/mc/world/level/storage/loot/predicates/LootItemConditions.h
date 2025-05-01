@@ -12,7 +12,7 @@ class LootItemConditions {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::unique_ptr<::LootItemCondition>>
+    MCNAPI static ::std::vector<::std::unique_ptr<::LootItemCondition>>
     deserialize(::Json::Value object, bool usingUpcomingCreatorFeaturesExperiment);
     // NOLINTEND
 };

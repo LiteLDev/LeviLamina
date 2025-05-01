@@ -24,60 +24,60 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::RtpDependencyDescriptorWriter::TemplateMatch
+    MCNAPI ::webrtc::RtpDependencyDescriptorWriter::TemplateMatch
         CalculateMatch(::std::_Vector_const_iterator<
                        ::std::_Vector_val<::std::_Simple_types<::webrtc::FrameDependencyTemplate>>>) const;
 
-    MCAPI void FindBestTemplate();
+    MCNAPI void FindBestTemplate();
 
-    MCAPI bool HasExtendedFields() const;
+    MCNAPI bool HasExtendedFields() const;
 
-    MCAPI
+    MCNAPI
     RtpDependencyDescriptorWriter(::rtc::ArrayView<uchar>, ::webrtc::FrameDependencyStructure const&, ::std::bitset<32>, ::webrtc::DependencyDescriptor const&);
 
-    MCAPI bool ShouldWriteActiveDecodeTargetsBitmask() const;
+    MCNAPI bool ShouldWriteActiveDecodeTargetsBitmask() const;
 
-    MCAPI int StructureSizeBits() const;
+    MCNAPI int StructureSizeBits() const;
 
-    MCAPI uint64 TemplateId() const;
+    MCNAPI uint64 TemplateId() const;
 
-    MCAPI int ValueSizeBits() const;
+    MCNAPI int ValueSizeBits() const;
 
-    MCAPI bool Write();
+    MCNAPI bool Write();
 
-    MCAPI void WriteBits(uint64, uint64);
+    MCNAPI void WriteBits(uint64, uint64);
 
-    MCAPI void WriteExtendedFields();
+    MCNAPI void WriteExtendedFields();
 
-    MCAPI void WriteFrameChains();
+    MCNAPI void WriteFrameChains();
 
-    MCAPI void WriteFrameDependencyDefinition();
+    MCNAPI void WriteFrameDependencyDefinition();
 
-    MCAPI void WriteFrameDtis();
+    MCNAPI void WriteFrameDtis();
 
-    MCAPI void WriteFrameFdiffs();
+    MCNAPI void WriteFrameFdiffs();
 
-    MCAPI void WriteMandatoryFields();
+    MCNAPI void WriteMandatoryFields();
 
-    MCAPI void WriteNonSymmetric(uint, uint);
+    MCNAPI void WriteNonSymmetric(uint, uint);
 
-    MCAPI void WriteResolutions();
+    MCNAPI void WriteResolutions();
 
-    MCAPI void WriteTemplateChains();
+    MCNAPI void WriteTemplateChains();
 
-    MCAPI void WriteTemplateDependencyStructure();
+    MCNAPI void WriteTemplateDependencyStructure();
 
-    MCAPI void WriteTemplateDtis();
+    MCNAPI void WriteTemplateDtis();
 
-    MCAPI void WriteTemplateFdiffs();
+    MCNAPI void WriteTemplateFdiffs();
 
-    MCAPI void WriteTemplateLayers();
+    MCNAPI void WriteTemplateLayers();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::rtc::ArrayView<uchar>, ::webrtc::FrameDependencyStructure const&, ::std::bitset<32>, ::webrtc::DependencyDescriptor const&);
     // NOLINTEND
 };

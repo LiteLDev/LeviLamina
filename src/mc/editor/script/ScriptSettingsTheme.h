@@ -33,29 +33,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void, ::Scripting::Error> addNewTheme(
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error> addNewTheme(
         ::std::string const&                  id,
         ::std::optional<::std::string> const& name,
         ::std::optional<::std::string> const& sourceThemeId
     );
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error> deleteTheme(::std::string const& id);
+    MCNAPI bool canThemeBeModified(::std::string const& id) const;
 
-    MCAPI ::std::string const getCurrentTheme() const;
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error> deleteTheme(::std::string const& id);
 
-    MCAPI ::std::optional<::std::map<::std::string, ::ScriptModuleMinecraft::ScriptRGBA>>
+    MCNAPI ::std::string const getCurrentTheme() const;
+
+    MCNAPI ::std::optional<::std::map<::std::string, ::ScriptModuleMinecraft::ScriptRGBA>>
     getThemeColors(::std::string const& id) const;
 
-    MCAPI ::std::vector<::std::string> getThemeIdList() const;
+    MCNAPI ::std::vector<::std::string> getThemeIdList() const;
 
-    MCAPI ::Scripting::Result<::std::string, ::Scripting::Error> getThemeName(::std::string const& id) const;
+    MCNAPI ::Scripting::Result<::std::string, ::Scripting::Error> getThemeName(::std::string const& id) const;
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error> setCurrentTheme(::std::string const& id);
+    MCNAPI ::ScriptModuleMinecraft::ScriptRGBA resolveColorKey(::Editor::Settings::ThemeSettingsColorKey key) const;
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error> setCurrentTheme(::std::string const& id);
+
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error>
     setThemeName(::std::string const& id, ::std::string const& name);
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error> updateThemeColor(
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error> updateThemeColor(
         ::std::string const&                      id,
         ::Editor::Settings::ThemeSettingsColorKey key,
         ::ScriptModuleMinecraft::ScriptRGBA       newColor
@@ -65,9 +69,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptSettingsTheme> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptSettingsTheme> bindScript();
 
-    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Editor::Settings::ThemeSettingsColorKey>
+    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Editor::Settings::ThemeSettingsColorKey>
     bindScriptPropsEnum();
     // NOLINTEND
 };

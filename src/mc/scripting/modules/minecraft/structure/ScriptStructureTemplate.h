@@ -51,7 +51,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptStructureTemplate(
+    MCNAPI ScriptStructureTemplate(
         ::std::string const&                                                                id,
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                                   structureManager,
         ::Scripting::WeakLifetimeScope                                                      scope,
@@ -59,33 +59,35 @@ public:
         ::LevelStorage&                                                                     levelStorage
     );
 
-    MCAPI ::Scripting::InvalidArgumentError
+    MCNAPI ::Scripting::InvalidArgumentError
     _createBoundsError(int pos, ::BlockPos const& size, ::BlockPos const& index) const;
 
-    MCAPI ::StructureTemplate* _getStructureTemplate() const;
+    MCNAPI ::StructureTemplate* _getStructureTemplate() const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>,
         ::ScriptModuleMinecraft::ScriptInvalidStructureError,
         ::Scripting::InvalidArgumentError>
     getBlockPermutation(::Vec3 const& location) const;
 
-    MCAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getSize() const;
+    MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getSize() const;
 
-    MCAPI ::Scripting::
+    MCNAPI bool isValid() const;
+
+    MCNAPI ::Scripting::
         Result<bool, ::ScriptModuleMinecraft::ScriptInvalidStructureError, ::Scripting::InvalidArgumentError>
         isWaterlogged(::Vec3 const& location) const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>,
         ::ScriptModuleMinecraft::ScriptInvalidStructureError,
         ::Scripting::EngineError,
         ::Scripting::InvalidArgumentError>
     saveAs(::std::string const& identifier, ::StructureRedstoneSaveMode saveMode);
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidStructureError> saveToWorld();
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidStructureError> saveToWorld();
 
-    MCAPI ::Scripting::
+    MCNAPI ::Scripting::
         Result<void, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
         setBlockPermutation(
             ::Vec3 const& location,
@@ -98,22 +100,22 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptStructureTemplate> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptStructureTemplate> bind();
 
-    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::AnimationMode> bindAnimationModeEnum();
+    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::AnimationMode> bindAnimationModeEnum();
 
-    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Mirror> bindMirrorEnum();
+    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Mirror> bindMirrorEnum();
 
-    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Rotation> bindRotationEnum();
+    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Rotation> bindRotationEnum();
 
-    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::StructureRedstoneSaveMode>
+    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::StructureRedstoneSaveMode>
     bindStructureSaveModeEnum();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                                                                id,
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                                   structureManager,
         ::Scripting::WeakLifetimeScope                                                      scope,

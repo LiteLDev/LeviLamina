@@ -27,25 +27,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     SupportedScriptComponentFactoriesEntry(::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry const&);
 
-    MCAPI SupportedScriptComponentFactoriesEntry(
+    MCNAPI SupportedScriptComponentFactoriesEntry(
         ::BaseGameVersion                   minVersion,
         ::std::unordered_set<::std::string> supportedComponentTypeNames,
         ::std::string                       prerelease,
         ::std::optional<::BaseGameVersion>  maxVersionExclusive
     );
 
-    MCAPI ~SupportedScriptComponentFactoriesEntry();
+    MCNAPI ~SupportedScriptComponentFactoriesEntry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::BaseGameVersion                   minVersion,
         ::std::unordered_set<::std::string> supportedComponentTypeNames,
         ::std::string                       prerelease,
@@ -56,7 +56,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

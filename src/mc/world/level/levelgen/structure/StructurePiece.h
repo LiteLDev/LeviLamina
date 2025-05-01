@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
 // auto generated forward declare list
@@ -10,7 +11,6 @@
 class Block;
 class BlockSelector;
 class BlockSource;
-class BoundingBox;
 class LevelChunk;
 class Random;
 // clang-format on
@@ -88,9 +88,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addTerrainAdjustmentToken(::std::shared_ptr<bool> token);
+    MCNAPI void addTerrainAdjustmentToken(::std::shared_ptr<bool> token);
 
-    MCAPI void generateBox(
+    MCNAPI void generateBox(
         ::BlockSource&         region,
         ::BoundingBox const&   chunkBB,
         int                    x0,
@@ -104,7 +104,7 @@ public:
         ::BlockSelector const& skipAir
     );
 
-    MCAPI void generateMaybeBox(
+    MCNAPI void generateMaybeBox(
         ::BlockSource&       region,
         ::BoundingBox const& chunkBB,
         ::Random&            random,
@@ -121,48 +121,48 @@ public:
         bool                 skipAir
     );
 
-    MCAPI ::Block const& getBlock(::BlockSource& region, int x, int y, int z, ::BoundingBox const& chunkBB);
+    MCNAPI ::Block const& getBlock(::BlockSource& region, int x, int y, int z, ::BoundingBox const& chunkBB);
 
-    MCAPI ushort getOrientationData(::Block const* block, ushort data);
+    MCNAPI ushort getOrientationData(::Block const* block, ushort data);
 
-    MCAPI int getWorldY(int y);
+    MCNAPI int getWorldY(int y);
 
-    MCAPI bool isAboveGround(int x0, int y1, int z, ::BlockSource& region);
+    MCNAPI bool isAboveGround(int x0, int y1, int z, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $moveBoundingBox(int dx, int dy, int dz);
+    MCNAPI void $moveBoundingBox(int dx, int dy, int dz);
 
-    MCFOLD ::StructurePieceType $getType() const;
+    MCNAPI ::StructurePieceType $getType() const;
 
-    MCFOLD void $addChildren(
+    MCNAPI void $addChildren(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random
     );
 
-    MCFOLD void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCNAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI bool $isInInvalidLocation(::BlockSource& region, ::BoundingBox const& chunkBB);
+    MCNAPI bool $isInInvalidLocation(::BlockSource& region, ::BoundingBox const& chunkBB);
 
-    MCAPI int $getWorldX(int x, int z);
+    MCNAPI int $getWorldX(int x, int z);
 
-    MCAPI int $getWorldZ(int x, int z);
+    MCNAPI int $getWorldZ(int x, int z);
 
-    MCAPI void
+    MCNAPI void
     $placeBlock(::BlockSource& region, ::Block const& block, int x, int y, int z, ::BoundingBox const& chunkBB);
 
-    MCFOLD bool $canBeReplaced(::BlockSource&, int const, int const, int const, ::BoundingBox const&);
+    MCNAPI bool $canBeReplaced(::BlockSource&, int const, int const, int const, ::BoundingBox const&);
 
-    MCAPI void $generateBox(
+    MCNAPI void $generateBox(
         ::BlockSource&       region,
         ::BoundingBox const& chunkBB,
         int                  x0,
@@ -176,12 +176,12 @@ public:
         bool                 skipAir
     );
 
-    MCFOLD void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
+    MCNAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

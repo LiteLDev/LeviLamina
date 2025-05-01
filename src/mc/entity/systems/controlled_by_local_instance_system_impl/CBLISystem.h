@@ -110,21 +110,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::StrictExecutionContext<
-                     ::Filter<
-                         ::ActorMovementTickNeededComponent,
-                         ::BoatFlagComponent,
-                         ::HorseFlagComponent,
-                         ::PlayerComponent,
-                         ::RecalculateControlledByLocalInstanceRequestComponent>,
-                     ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>,
-                     ::Write<>,
-                     ::AddRemove<::ControlledByLocalInstanceComponent>,
-                     ::GlobalRead<>,
-                     ::GlobalWrite<>,
-                     ::EntityFactoryT<>>& strictContext);
+    MCNAPI void $tick(::StrictExecutionContext<
+                      ::Filter<
+                          ::ActorMovementTickNeededComponent,
+                          ::BoatFlagComponent,
+                          ::HorseFlagComponent,
+                          ::PlayerComponent,
+                          ::RecalculateControlledByLocalInstanceRequestComponent>,
+                      ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>,
+                      ::Write<>,
+                      ::AddRemove<::ControlledByLocalInstanceComponent>,
+                      ::GlobalRead<>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& strictContext);
 
-    MCAPI void $singleTick(
+    MCNAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<
                 ::ActorMovementTickNeededComponent,
@@ -145,7 +145,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

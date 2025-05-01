@@ -5,7 +5,7 @@
 namespace ColorFormat {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string_view const FormatCodeFromName(::std::string const& str);
+MCNAPI ::std::string_view const FormatCodeFromName(::std::string const& str);
 // NOLINTEND
 
 // static variables

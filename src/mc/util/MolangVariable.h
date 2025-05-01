@@ -3,14 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+#include "mc/util/MolangScriptArg.h"
 #include "mc/util/MolangVariableIndex.h"
-
-// auto generated forward declare list
-// clang-format off
-class HashedString;
-struct MolangScriptArg;
-struct MolangVariableSettings;
-// clang-format on
+#include "mc/util/MolangVariableSettings.h"
 
 class MolangVariable {
 public:
@@ -39,11 +35,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::MolangVariableIndex getVariableIndex(::HashedString const& name);
+    MCAPI static ::MolangVariableIndex
+    _findOrAddVariableIndex(uint64 nameHash, char const* name, bool allowSpecialCharacters);
 
     MCAPI static ::MolangVariableIndex getVariableIndex(uint64 nameHash);
-
-    MCAPI static ::MolangVariableIndex getVariableIndex(uint64 nameHash, char const* name, bool allowSpecialCharacters);
 
     MCAPI static ::HashedString const& getVariableName(::MolangVariableIndex index);
 

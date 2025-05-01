@@ -28,30 +28,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldTemplateLevelData();
+    MCNAPI WorldTemplateLevelData();
 
-    MCAPI WorldTemplateLevelData(
+    MCNAPI WorldTemplateLevelData(
         bool                     isFromWorldTemplate,
         bool                     isWorldTemplateOptionLocked,
         ::BaseGameVersion const& baseGameVersion,
         ::BaseGameVersion const& maxBaseGameVersion
     );
 
-    MCAPI void _getTagData(::CompoundTag const& tag);
+    MCNAPI void _getTagData(::CompoundTag const& tag);
 
-    MCAPI void _setTagData(::CompoundTag& tag) const;
+    MCNAPI void _setTagData(::CompoundTag& tag) const;
 
-    MCAPI ::BaseGameVersion const& getBaseGameVersion() const;
+    MCNAPI ::BaseGameVersion const& getBaseGameVersion() const;
 
-    MCAPI ~WorldTemplateLevelData();
+    MCNAPI ~WorldTemplateLevelData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         bool                     isFromWorldTemplate,
         bool                     isWorldTemplateOptionLocked,
         ::BaseGameVersion const& baseGameVersion,
@@ -62,6 +62,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

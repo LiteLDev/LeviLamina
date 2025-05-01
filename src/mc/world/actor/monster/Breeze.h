@@ -30,12 +30,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $causeFallDamageToActor(float fallDistance, float, ::ActorDamageSource);
+    MCNAPI float $causeFallDamageToActor(float fallDistance, float, ::ActorDamageSource);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

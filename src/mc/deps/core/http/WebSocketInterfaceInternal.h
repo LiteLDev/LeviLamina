@@ -51,22 +51,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD HRESULT
+    MCNAPI HRESULT
     $connect(char const*, char const*, ::gsl::not_null<::HC_WEBSOCKET_OBSERVER*>, ::gsl::not_null<::XAsyncBlock*>, ::HC_PERFORM_ENV*);
 
-    MCFOLD HRESULT
+    MCNAPI HRESULT
         $sendMessage(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*>, ::std::string_view, ::gsl::not_null<::XAsyncBlock*>);
 
-    MCFOLD HRESULT
+    MCNAPI HRESULT
         $sendBinaryMessage(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*>, ::gsl::span<uchar const>, ::gsl::not_null<::XAsyncBlock*>);
 
-    MCFOLD HRESULT $disconnect(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*> websocket, ::HCWebSocketCloseStatus status);
+    MCNAPI HRESULT $disconnect(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*> websocket, ::HCWebSocketCloseStatus status);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

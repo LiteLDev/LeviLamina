@@ -28,14 +28,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 147
+    // vIndex: 145
     virtual ::mce::Color getMapColor(::BlockSource&, ::BlockPos const&, ::Block const& block) const /*override*/;
 
     // vIndex: 112
     virtual ::std::string buildDescriptionId(::Block const& block) const /*override*/;
 
     // vIndex: 56
-    virtual bool canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const /*override*/;
+    virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
 
     // vIndex: 127
     virtual ::Block const* tryLegacyUpgrade(ushort extraData) const /*override*/;
@@ -47,13 +47,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ElementInfo getElementInfo(::ElementType e);
+    MCNAPI static ::ElementInfo getElementInfo(::ElementType e);
 
-    MCAPI static ::RecipeIngredient getIngredientForElement(::ElementType e, int stackCount);
+    MCNAPI static ::RecipeIngredient getIngredientForElement(::ElementType e, int stackCount);
 
-    MCAPI static ::ItemInstance getItemForElement(::ElementType e, int stackCount);
+    MCNAPI static ::ItemInstance getItemForElement(::ElementType e, int stackCount);
 
-    MCAPI static void initElements();
+    MCNAPI static void initElements();
     // NOLINTEND
 
 public:
@@ -71,18 +71,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::mce::Color $getMapColor(::BlockSource&, ::BlockPos const&, ::Block const& block) const;
+    MCNAPI ::mce::Color $getMapColor(::BlockSource&, ::BlockPos const&, ::Block const& block) const;
 
-    MCAPI ::std::string $buildDescriptionId(::Block const& block) const;
+    MCNAPI ::std::string $buildDescriptionId(::Block const& block) const;
 
-    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const;
+    MCNAPI bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
-    MCAPI ::Block const* $tryLegacyUpgrade(ushort extraData) const;
+    MCNAPI ::Block const* $tryLegacyUpgrade(ushort extraData) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

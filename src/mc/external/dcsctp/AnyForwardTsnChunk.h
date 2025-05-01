@@ -25,21 +25,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     AnyForwardTsnChunk(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::std::vector<::dcsctp::AnyForwardTsnChunk::SkippedStream>);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
         $ctor(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::std::vector<::dcsctp::AnyForwardTsnChunk::SkippedStream>);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

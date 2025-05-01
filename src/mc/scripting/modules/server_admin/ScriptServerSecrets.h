@@ -29,23 +29,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::ScriptModuleServerAdmin::ScriptSecretString> get(::std::string const& name) const;
+    MCNAPI ::std::optional<::ScriptModuleServerAdmin::ScriptSecretString> get(::std::string const& name) const;
 
-    MCAPI ::std::vector<::std::string> getAllSecretNames() const;
+    MCNAPI ::std::vector<::std::string> getAllSecretNames() const;
 
-    MCAPI ~ScriptServerSecrets();
+    MCNAPI ~ScriptServerSecrets();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleServerAdmin::ScriptServerSecrets> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleServerAdmin::ScriptServerSecrets> bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

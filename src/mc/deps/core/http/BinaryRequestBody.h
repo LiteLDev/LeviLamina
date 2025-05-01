@@ -46,7 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setData(::gsl::span<uchar const> data);
+    MCNAPI void setData(::gsl::span<uchar const> data);
     // NOLINTEND
 
 public:
@@ -58,21 +58,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Http::Internal::IRequestBody::ReadResult $read(::gsl::span<uchar> destination);
+    MCNAPI ::Bedrock::Http::Internal::IRequestBody::ReadResult $read(::gsl::span<uchar> destination);
 
-    MCAPI uint64 $getSize();
+    MCNAPI uint64 $getSize();
 
-    MCAPI void $cancel();
+    MCNAPI void $cancel();
 
-    MCAPI ::std::string const& $getLoggableSource() const;
+    MCNAPI ::std::string const& $getLoggableSource() const;
 
-    MCFOLD ::gsl::span<uchar const> $getLoggableData() const;
+    MCNAPI ::gsl::span<uchar const> $getLoggableData() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

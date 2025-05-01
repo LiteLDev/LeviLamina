@@ -11,6 +11,13 @@ namespace mce { class UUID; }
 
 class GameServerToken {
 public:
+    // GameServerToken inner types define
+    enum class VerificationOptions : int {
+        Default         = 0,
+        IgnoreTimestamp = 1,
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Certificate>> mCertificate;

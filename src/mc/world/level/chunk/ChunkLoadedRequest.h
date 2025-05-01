@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/Bounds.h"
 #include "mc/world/level/chunk/AreaType.h"
 #include "mc/world/level/chunk/ChunkRequestListType.h"
 #include "mc/world/level/chunk/ChunksLoadedStatus.h"
@@ -16,7 +17,6 @@ class IRequestAction;
 class ITickingAreaView;
 class JigsawStructureElementRegistry;
 class LevelChunk;
-struct Bounds;
 struct DeserializedChunkLoadedRequest;
 struct Tick;
 // clang-format on
@@ -41,31 +41,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChunkLoadedRequest(::ChunkLoadedRequest&&);
+    MCNAPI ChunkLoadedRequest(::ChunkLoadedRequest&&);
 
-    MCAPI ChunkLoadedRequest(
+    MCNAPI ChunkLoadedRequest(
         ::std::string const&                tickingAreaName,
         ::std::unique_ptr<::IRequestAction> requestAction,
         bool                                allowNonTickingPlayerAndTickingAreaChunks
     );
 
-    MCAPI ::ITickingAreaView const* _getTickingArea(::Dimension const& dimension) const;
+    MCNAPI ::ITickingAreaView const* _getTickingArea(::Dimension const& dimension) const;
 
-    MCAPI ::ChunksLoadedStatus areAllChunksLoaded(::Dimension& dimension, ::Tick currentLevelTick) const;
+    MCNAPI ::ChunksLoadedStatus areAllChunksLoaded(::Dimension& dimension, ::Tick currentLevelTick) const;
 
-    MCAPI bool areaContainsChunk(::LevelChunk const& chunk) const;
+    MCNAPI bool areaContainsChunk(::LevelChunk const& chunk) const;
 
-    MCAPI ::CompoundTag serialize(::ChunkRequestListType chunkRequestListType);
+    MCNAPI ::CompoundTag serialize(::ChunkRequestListType chunkRequestListType);
 
-    MCAPI ~ChunkLoadedRequest();
+    MCNAPI ~ChunkLoadedRequest();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isValidTag(::CompoundTag const& tag);
+    MCNAPI static bool isValidTag(::CompoundTag const& tag);
 
-    MCAPI static ::DeserializedChunkLoadedRequest load(
+    MCNAPI static ::DeserializedChunkLoadedRequest load(
         ::std::string const&                    key,
         ::CompoundTag const&                    tag,
         ::ICommandOriginLoader&                 loader,
@@ -77,9 +77,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ChunkLoadedRequest&&);
+    MCNAPI void* $ctor(::ChunkLoadedRequest&&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                tickingAreaName,
         ::std::unique_ptr<::IRequestAction> requestAction,
         bool                                allowNonTickingPlayerAndTickingAreaChunks
@@ -89,6 +89,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

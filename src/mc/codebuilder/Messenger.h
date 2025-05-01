@@ -196,37 +196,37 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     $onAgentAction(::AgentActionType actionType, ::std::string const& requestId, ::Json::Value const& result) const;
 
-    MCAPI void $onCommand(::CommandOrigin const& origin, ::CommandOutput const& output);
+    MCNAPI void $onCommand(::CommandOrigin const& origin, ::CommandOutput const& output);
 
-    MCAPI void
+    MCNAPI void
     $blockBroken(::Player const* player, ::Block const& block, int method, int variantData, ushort auxType) const;
 
-    MCAPI void $blockPlaced(::Player const* player, ::Block const& block, bool underWater, ushort auxType) const;
+    MCNAPI void $blockPlaced(::Player const* player, ::Block const& block, bool underWater, ushort auxType) const;
 
-    MCAPI void $cameraUsed(bool isSelfie) const;
+    MCNAPI void $cameraUsed(bool isSelfie) const;
 
-    MCAPI void $codeBuilderRuntimeAction(::std::string const& action) const;
+    MCNAPI void $codeBuilderRuntimeAction(::std::string const& action) const;
 
-    MCAPI void $codeBuilderScoreChanged(::std::string const& objective, int const score) const;
+    MCNAPI void $codeBuilderScoreChanged(::std::string const& objective, int const score) const;
 
-    MCAPI void $chunkChanged(::LevelChunk& chunk) const;
+    MCNAPI void $chunkChanged(::LevelChunk& chunk) const;
 
-    MCAPI void $chunkLoaded(::LevelChunk& chunk) const;
+    MCNAPI void $chunkLoaded(::LevelChunk& chunk) const;
 
-    MCAPI void $chunkUnloaded(::LevelChunk& chunk) const;
+    MCNAPI void $chunkUnloaded(::LevelChunk& chunk) const;
 
-    MCAPI void $endOfDay(::Player const* player) const;
+    MCNAPI void $endOfDay(::Player const* player) const;
 
-    MCAPI void $entitySpawned(::Player const* player, int mobType, uint spawnMethod) const;
+    MCNAPI void $entitySpawned(::Player const* player, int mobType, uint spawnMethod) const;
 
-    MCAPI void
+    MCNAPI void
     $itemAcquired(::Player const* player, ::ItemDescriptor const& item, int, uint amountAcquired, int acquisitionMethod)
         const;
 
-    MCAPI void $itemCrafted(
+    MCNAPI void $itemCrafted(
         ::Player const*       player,
         bool                  craftingTable,
         ::ItemInstance const& item,
@@ -240,18 +240,18 @@ public:
         bool                  recipeBookShown
     ) const;
 
-    MCAPI void $itemDropped(::Player const* player, ::ItemDescriptor const& item) const;
+    MCNAPI void $itemDropped(::Player const* player, ::ItemDescriptor const& item) const;
 
-    MCAPI void $itemEquipped(::Player const* player, ::ItemInstance const& item, int slot) const;
+    MCNAPI void $itemEquipped(::Player const* player, ::ItemInstance const& item, int slot) const;
 
-    MCAPI void $itemInteracted(::Player const* player, ::ItemInstance const& item, int method) const;
+    MCNAPI void $itemInteracted(::Player const* player, ::ItemInstance const& item, int method) const;
 
-    MCAPI void
+    MCNAPI void
     $itemSmelted(::Player const* player, ::ItemDescriptor const& item, ::ItemDescriptor const& lastFuelItem) const;
 
-    MCAPI void $itemUsed(::Player const* player, ::ItemDescriptor const& item, int useMethod) const;
+    MCNAPI void $itemUsed(::Player const* player, ::ItemDescriptor const& item, int useMethod) const;
 
-    MCAPI void $mobInteracted(
+    MCNAPI void $mobInteracted(
         ::Player const* player,
         int             legacyInteractedEntityType,
         int             interactionType,
@@ -259,7 +259,7 @@ public:
         uchar           interactedEntityColor
     ) const;
 
-    MCAPI void $mobKilled(
+    MCNAPI void $mobKilled(
         ::Player const* player,
         ::Actor*        entKiller,
         ::Mob&          mobKilled,
@@ -268,35 +268,35 @@ public:
         int traderTier
     ) const;
 
-    MCAPI void
+    MCNAPI void
     $piglinBarter(::Player const* player, ::std::string const& itemUsed, bool wasTargetingBarteringPlayer) const;
 
-    MCAPI void $playerBounced(::Player const* player, ::Block const& block, int bounceHeight, int auxType) const;
+    MCNAPI void $playerBounced(::Player const* player, ::Block const& block, int bounceHeight, int auxType) const;
 
-    MCAPI void $playerDied(::Player const* player, int killerId, int killerVariant, int reason, bool inRaid) const;
+    MCNAPI void $playerDied(::Player const* player, int killerId, int killerVariant, int reason, bool inRaid) const;
 
-    MCAPI void $playerJoined(::Player const* player) const;
+    MCNAPI void $playerJoined(::Player const* player) const;
 
-    MCAPI void $playerLeave(::Player const* player) const;
+    MCNAPI void $playerLeave(::Player const* player) const;
 
-    MCAPI void $playerMessage(
+    MCNAPI void $playerMessage(
         ::std::string const& fromName,
         ::std::string const& toName,
         ::std::string const& message,
         ::std::string const& messageType
     ) const;
 
-    MCAPI void $playerTeleported(::Player const* player, float metersTravelled, int cause, int sourceType) const;
+    MCNAPI void $playerTeleported(::Player const* player, float metersTravelled, int cause, int sourceType) const;
 
-    MCAPI void $playerTransform(::Player const* player) const;
+    MCNAPI void $playerTransform(::Player const* player) const;
 
-    MCAPI void
+    MCNAPI void
     $playerTravelled(::Player const* player, float metersTravelledSinceLastEvent, int travelMethodType, int newBiome)
         const;
 
-    MCAPI void $targetBlockHit(::Player const* player, int const redstoneLevel) const;
+    MCNAPI void $targetBlockHit(::Player const* player, int const redstoneLevel) const;
 
-    MCAPI void $tradeCompleted(
+    MCNAPI void $tradeCompleted(
         ::Player const*         player,
         ::Actor*                trader,
         ::ItemDescriptor const& itemA,
@@ -309,9 +309,9 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForCommandOutputObserver();
+    MCNAPI static void** $vftableForCommandOutputObserver();
     // NOLINTEND
 };
 

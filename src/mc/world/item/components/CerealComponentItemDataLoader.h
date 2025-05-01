@@ -27,25 +27,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CerealComponentItemDataLoader(
+    MCNAPI CerealComponentItemDataLoader(
         ::SemVersion                   documentVersion,
         ::IPackLoadContext const&      packLoadContext,
         ::cereal::ReflectionCtx const& ctx
     );
 
-    MCAPI ~CerealComponentItemDataLoader();
+    MCNAPI ~CerealComponentItemDataLoader();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::SemVersion documentVersion, ::IPackLoadContext const& packLoadContext, ::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

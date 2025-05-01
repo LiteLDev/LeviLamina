@@ -3,12 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/json/Value.h"
 
+// auto generated inclusion list
+#include "mc/deps/json/Value.h"
+
 // auto generated forward declare list
 // clang-format off
 class PrivateKeyManager;
 struct CertificateSNIType;
 struct PublicKeySignatureType;
-namespace Json { class Value; }
 // clang-format on
 
 class WebToken {
@@ -25,25 +27,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit WebToken(::std::string token);
+    MCNAPI explicit WebToken(::std::string token);
 
-    MCAPI void _parse(::Json::Value& value, ::std::string const& data);
+    MCNAPI void _parse(::Json::Value& value, ::std::string const& data);
 
-    MCAPI ::std::string _signatureToDER() const;
+    MCNAPI ::std::string _signatureToDER() const;
 
-    MCAPI ::std::string toString() const;
+    MCNAPI ::std::string toString() const;
 
-    MCAPI bool verifyWithIncludedKey(::std::vector<::std::string> const& trustedKeys) const;
+    MCNAPI bool verifyWithIncludedKey(::std::vector<::std::string> const& trustedKeys) const;
 
-    MCAPI ~WebToken();
+    MCNAPI ~WebToken();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string _DERToBinary(::std::string const& derSignature, int outputLength);
+    MCNAPI static ::std::string _DERToBinary(::std::string const& derSignature, int outputLength);
 
-    MCAPI static ::std::unique_ptr<::WebToken> createFromData(
+    MCNAPI static ::std::unique_ptr<::WebToken> createFromData(
         ::Json::Value const&                                           dataInfo,
         ::PrivateKeyManager const&                                     manager,
         ::std::variant<::PublicKeySignatureType, ::CertificateSNIType> signatureType
@@ -53,12 +55,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string token);
+    MCNAPI void* $ctor(::std::string token);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

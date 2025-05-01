@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class Block;
 class BlockActorDataPacket;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
@@ -47,47 +47,47 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 31
+    // vIndex: 32
     virtual ::PistonBlockActor* getOwningPiston(::BlockSource& region) /*override*/;
 
-    // vIndex: 30
+    // vIndex: 31
     virtual ::PistonBlockActor const* getOwningPiston(::BlockSource& region) const /*override*/;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual ::AABB getCollisionShape(::IConstBlockSource const& region) const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual bool isPreserved(::BlockSource& region) const /*override*/;
 
-    // vIndex: 15
+    // vIndex: 16
     virtual bool shouldPreserve(::BlockSource& region) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 44
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MovingBlockActor(::BlockPos const& pos);
+    MCNAPI explicit MovingBlockActor(::BlockPos const& pos);
 
-    MCAPI ::std::pair<::AABB, ::AABB> _getWrappedBlockCollisionShapes(::IConstBlockSource const& region) const;
+    MCNAPI ::std::pair<::AABB, ::AABB> _getWrappedBlockCollisionShapes(::IConstBlockSource const& region) const;
 
-    MCAPI ::Vec3 getDrawPos(::IConstBlockSource const& region, float a) const;
+    MCNAPI ::Vec3 getDrawPos(::IConstBlockSource const& region, float a) const;
 
-    MCAPI void moveCollidedEntities(::PistonBlockActor& pistonBlock, ::BlockSource& region);
+    MCNAPI void moveCollidedEntities(::PistonBlockActor& pistonBlock, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
+    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -99,30 +99,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCFOLD ::PistonBlockActor* $getOwningPiston(::BlockSource& region);
+    MCNAPI ::PistonBlockActor* $getOwningPiston(::BlockSource& region);
 
-    MCFOLD ::PistonBlockActor const* $getOwningPiston(::BlockSource& region) const;
+    MCNAPI ::PistonBlockActor const* $getOwningPiston(::BlockSource& region) const;
 
-    MCAPI ::AABB $getCollisionShape(::IConstBlockSource const& region) const;
+    MCNAPI ::AABB $getCollisionShape(::IConstBlockSource const& region) const;
 
-    MCAPI bool $isPreserved(::BlockSource& region) const;
+    MCNAPI bool $isPreserved(::BlockSource& region) const;
 
-    MCAPI bool $shouldPreserve(::BlockSource& region);
+    MCNAPI bool $shouldPreserve(::BlockSource& region);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

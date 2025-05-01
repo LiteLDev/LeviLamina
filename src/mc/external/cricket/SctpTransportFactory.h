@@ -13,19 +13,19 @@ class SctpTransportFactory {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SctpTransportFactory(::rtc::Thread*);
+    MCNAPI explicit SctpTransportFactory(::rtc::Thread*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::Thread*);
+    MCNAPI void* $ctor(::rtc::Thread*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

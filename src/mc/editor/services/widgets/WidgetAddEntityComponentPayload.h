@@ -43,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WidgetAddEntityComponentPayload(
+    MCNAPI WidgetAddEntityComponentPayload(
         ::mce::UUID const&             serviceId,
         ::mce::UUID const&             groupId,
         ::mce::UUID const&             widgetId,
@@ -58,20 +58,20 @@ public:
         ::std::optional<::std::string> deselectedAnimation
     );
 
-    MCAPI ::Editor::Network::WidgetAddEntityComponentPayload&
+    MCNAPI ::Editor::Network::WidgetAddEntityComponentPayload&
     operator=(::Editor::Network::WidgetAddEntityComponentPayload&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::mce::UUID const&             serviceId,
         ::mce::UUID const&             groupId,
         ::mce::UUID const&             widgetId,
@@ -90,13 +90,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

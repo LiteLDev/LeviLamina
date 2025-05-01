@@ -21,7 +21,7 @@ class PersonaEmoteInputSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _personaEmoteInputSystem(
+    MCNAPI static void _personaEmoteInputSystem(
         ::StrictEntityContext const&                                    entity,
         ::EventingDispatcherComponent const&                            eventingDispatcherComponent,
         ::EmotePlayedTelemetryDataComponent const&                      emotePlayedTelemetryDataComponent,
@@ -29,7 +29,7 @@ public:
         ::EntityModifier<::EmotePlayedTelemetryDataComponent, ::ShouldStopEmotingRequestComponent> modifier
     );
 
-    MCAPI static void _tickPersonaEmoteInputSystem(
+    MCNAPI static void _tickPersonaEmoteInputSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::ShouldStopEmotingRequestComponent>,
@@ -39,6 +39,6 @@ public:
         ::EntityModifier<::EmotePlayedTelemetryDataComponent, ::ShouldStopEmotingRequestComponent> modifier
     );
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

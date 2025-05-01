@@ -32,14 +32,14 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk952047;
-    ::ll::UntypedStorage<8, 48> mUnk1beb5b;
-    ::ll::UntypedStorage<8, 64> mUnk8fd19e;
-    ::ll::UntypedStorage<8, 80> mUnk70b4bc;
-    ::ll::UntypedStorage<8, 64> mUnk99c81f;
-    ::ll::UntypedStorage<8, 56> mUnkcaf84a;
-    ::ll::UntypedStorage<8, 72> mUnk59f3ba;
-    ::ll::UntypedStorage<8, 72> mUnk667de1;
-    ::ll::UntypedStorage<8, 64> mUnk55da99;
+    ::ll::UntypedStorage<8, 56> mUnk1beb5b;
+    ::ll::UntypedStorage<8, 72> mUnk8fd19e;
+    ::ll::UntypedStorage<8, 88> mUnk70b4bc;
+    ::ll::UntypedStorage<8, 72> mUnk99c81f;
+    ::ll::UntypedStorage<8, 64> mUnkcaf84a;
+    ::ll::UntypedStorage<8, 80> mUnk59f3ba;
+    ::ll::UntypedStorage<8, 80> mUnk667de1;
+    ::ll::UntypedStorage<8, 72> mUnk55da99;
     ::ll::UntypedStorage<8, 8>  mUnkc9eb45;
     ::ll::UntypedStorage<4, 4>  mUnk2271a3;
     ::ll::UntypedStorage<1, 1>  mUnkc7b55d;
@@ -54,7 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SystemParams(
+    MCNAPI SystemParams(
         ::StrictExecutionContext<
             ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
             ::Read<>,
@@ -76,7 +76,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::StrictExecutionContext<
             ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
             ::Read<>,

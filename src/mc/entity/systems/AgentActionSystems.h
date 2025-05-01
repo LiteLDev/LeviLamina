@@ -18,7 +18,7 @@ namespace AgentComponents { struct Executing; }
 namespace AgentActionSystems {
 // functions
 // NOLINTBEGIN
-MCAPI void tickActionFailed(
+MCNAPI void tickActionFailed(
     ::StrictEntityContext& entity,
     ::ActorOwnerComponent& actorOwner,
     ::EntityModifier<

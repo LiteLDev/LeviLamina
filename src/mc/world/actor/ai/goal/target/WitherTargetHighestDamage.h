@@ -58,7 +58,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Player* getHighestDamageTarget();
+    MCNAPI ::Player* getHighestDamageTarget();
     // NOLINTEND
 
 public:
@@ -70,15 +70,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI bool $_canAttack(
+    MCNAPI bool $_canAttack(
         ::Mob*                  testMob,
         ::Actor*                target,
         bool                    allowInvulnerable,
@@ -90,6 +90,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

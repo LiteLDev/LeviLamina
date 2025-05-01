@@ -29,15 +29,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool loadSubscriptions(::Bedrock::PubSub::Detail::PublisherBase const& publisher);
+    MCNAPI bool loadSubscriptions(::Bedrock::PubSub::Detail::PublisherBase const& publisher);
 
-    MCAPI ~DispatchTargets();
+    MCNAPI ~DispatchTargets();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

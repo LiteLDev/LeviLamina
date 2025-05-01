@@ -27,16 +27,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void garbageCollectEntity(::OwnerPtr<::EntityContext> entity);
+    MCNAPI void garbageCollectEntity(::OwnerPtr<::EntityContext> entity);
 
-    MCAPI void update();
+    MCNAPI void update();
 
-    MCAPI ~ActorGarbageCollector();
+    MCNAPI ~ActorGarbageCollector();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -18,7 +18,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::ChunkPos> getSortedPositionsFromClientOffsets(
+    MCNAPI static ::std::vector<::ChunkPos> getSortedPositionsFromClientOffsets(
         ::std::vector<::ChunkPos> const& centers,
         ::std::vector<::ChunkPos> const& offsets
     );

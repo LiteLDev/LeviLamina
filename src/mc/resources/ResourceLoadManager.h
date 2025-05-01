@@ -61,7 +61,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> queue(
+        MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> queue(
             ::brstd::move_only_function<::TaskResult()> threadedCallback,
             ::std::function<void()>                     mainThreadCallback,
             uint                                        taskPriority
@@ -96,12 +96,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     _prepareTaskGroupToRunAgain(::gsl::not_null<::ResourceLoadManager::ResourceLoadTaskGroup*> resourceLoadTaskGroup);
 
-    MCAPI bool cancel(::ResourceLoadType resourceLoadType);
+    MCNAPI bool cancel(::ResourceLoadType resourceLoadType);
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> queue(
+    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> queue(
         ::ResourceLoadType                          threadedCallback,
         ::brstd::move_only_function<::TaskResult()> mainThreadCallback,
         ::std::function<void()>                     resourceLoadType,
@@ -112,17 +112,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::function<void()> _wrapMainThreadCallback(
+    MCNAPI static ::std::function<void()> _wrapMainThreadCallback(
         ::ResourceLoadManager::ResourceLoadTaskGroup& resourceLoadTaskGroup,
         ::std::function<void()>&&                     mainThreadCallback
     );
 
-    MCAPI static ::brstd::move_only_function<::TaskResult()> _wrapTaskCallback(
+    MCNAPI static ::brstd::move_only_function<::TaskResult()> _wrapTaskCallback(
         ::ResourceLoadManager::ResourceLoadTaskGroup& resourceLoadTaskGroup,
         ::brstd::move_only_function<::TaskResult()>&& threadedCallback
     );
 
-    MCAPI static void queueChild(
+    MCNAPI static void queueChild(
         ::brstd::move_only_function<::TaskResult()> threadedCallback,
         ::std::function<void()>                     mainThreadCallback,
         uint                                        taskPriority

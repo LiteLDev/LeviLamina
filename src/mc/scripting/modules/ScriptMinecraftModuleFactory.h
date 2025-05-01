@@ -11,6 +11,7 @@ namespace ScriptModuleMinecraft { class IComponentFactory; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct ModuleBinding; }
+namespace Scripting { struct ModuleDependency; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct Version; }
 namespace mce { class UUID; }
@@ -39,9 +40,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addVersions();
+    MCNAPI void _addVersions();
 
-    MCAPI ::Scripting::ModuleBinding _generateBindings(
+    MCNAPI ::Scripting::ModuleBinding _generateBindings(
         ::Scripting::ModuleBindingBuilder&                 moduleBuilder,
         ::std::optional<::Scripting::ContextConfig> const& contextConfig,
         bool                                               allowUntagged,
@@ -52,10 +53,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>>&
+    MCNAPI static ::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>>&
     getActorComponentFactories();
 
-    MCAPI static ::Scripting::ModuleDescriptor makeModuleDescriptorFor(::Scripting::Version version);
+    MCNAPI static ::std::string getModuleName(::Scripting::Version version);
+
+    MCNAPI static ::Scripting::ModuleDependency makeModuleDependencyFor(::std::vector<::Scripting::Version> versions);
+
+    MCNAPI static ::Scripting::ModuleDescriptor makeModuleDescriptorFor(::Scripting::Version version);
     // NOLINTEND
 
 public:
@@ -77,6 +82,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

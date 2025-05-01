@@ -20,37 +20,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPluginDetails();
+    MCNAPI ScriptPluginDetails();
 
-    MCAPI ScriptPluginDetails(::ScriptModuleDebugUtilities::ScriptPluginDetails const&);
+    MCNAPI ScriptPluginDetails(::ScriptModuleDebugUtilities::ScriptPluginDetails const&);
 
-    MCAPI ::ScriptModuleDebugUtilities::ScriptPluginDetails&
+    MCNAPI ::ScriptModuleDebugUtilities::ScriptPluginDetails&
     operator=(::ScriptModuleDebugUtilities::ScriptPluginDetails&&);
 
-    MCAPI ::ScriptModuleDebugUtilities::ScriptPluginDetails&
+    MCNAPI ::ScriptModuleDebugUtilities::ScriptPluginDetails&
     operator=(::ScriptModuleDebugUtilities::ScriptPluginDetails const&);
 
-    MCAPI ~ScriptPluginDetails();
+    MCNAPI ~ScriptPluginDetails();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleDebugUtilities::ScriptPluginDetails> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleDebugUtilities::ScriptPluginDetails> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::ScriptModuleDebugUtilities::ScriptPluginDetails const&);
+    MCNAPI void* $ctor(::ScriptModuleDebugUtilities::ScriptPluginDetails const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

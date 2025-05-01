@@ -38,7 +38,7 @@ public:
 
     // vIndex: 3
     virtual ::MovementCorrection
-    shouldCorrectMovement(::EntityContext&, ::PlayerAuthInputPacket const&, uint64, uchar) /*override*/;
+    shouldCorrectMovement(::EntityContext&, ::PlayerAuthInputPacket const&, uint64, uchar, bool) /*override*/;
 
     // vIndex: 4
     virtual bool validateFrameSupport(::EntityContext& entity) /*override*/;
@@ -53,13 +53,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _checkSupportedFrame(::EntityContext& entity) const;
+    MCNAPI bool _checkSupportedFrame(::EntityContext& entity) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _isSupportedMovementMode(::EntityContext const& entity);
+    MCNAPI static bool _isSupportedMovementMode(::EntityContext const& entity);
     // NOLINTEND
 
 public:
@@ -71,20 +71,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isReplayNeeded(::AdvanceFrameResult result) const;
+    MCNAPI bool $isReplayNeeded(::AdvanceFrameResult result) const;
 
-    MCAPI bool $canRewind(::EntityContext const& entity);
+    MCNAPI bool $canRewind(::EntityContext const& entity);
 
-    MCAPI ::MovementCorrection $shouldCorrectMovement(::EntityContext&, ::PlayerAuthInputPacket const&, uint64, uchar);
+    MCNAPI ::MovementCorrection
+    $shouldCorrectMovement(::EntityContext&, ::PlayerAuthInputPacket const&, uint64, uchar, bool);
 
-    MCAPI bool $validateFrameSupport(::EntityContext& entity);
+    MCNAPI bool $validateFrameSupport(::EntityContext& entity);
 
-    MCFOLD void $notifyOfExternalCorrection(uint64);
+    MCNAPI void $notifyOfExternalCorrection(uint64);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

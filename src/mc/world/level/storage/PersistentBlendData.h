@@ -29,18 +29,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PersistentBlendData(::StringByteInput& stream);
+    MCNAPI explicit PersistentBlendData(::StringByteInput& stream);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::PersistentBlendData createNoBlend(::BlendVersion blendVersion);
+    MCNAPI static ::PersistentBlendData createNoBlend(::BlendVersion blendVersion);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::StringByteInput& stream);
+    MCNAPI void* $ctor(::StringByteInput& stream);
     // NOLINTEND
 };

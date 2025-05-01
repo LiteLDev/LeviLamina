@@ -3,8 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+#include "mc/world/actor/RenderParams.h"
 #include "mc/world/actor/SkeletalHierarchyIndex.h"
 #include "mc/world/actor/animation/AnimationComponentGroupType.h"
+#include "mc/world/actor/animation/AnimationComponentID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,15 +15,12 @@ class Actor;
 class ActorAnimationControllerInfo;
 class ActorAnimationControllerStatePlayer;
 class ActorAnimationPlayer;
-class AnimationComponentID;
 class BoneOrientation;
 class CommonResourceDefinitionMap;
 class DataDrivenModel;
 class ExpressionNode;
-class HashedString;
 class ModelPartLocator;
 class MolangVariableMap;
-class RenderParams;
 // clang-format on
 
 class AnimationComponent {
@@ -79,33 +79,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     AnimationComponent(::AnimationComponentGroupType animationComponentGroup, ::AnimationComponentID const& ownerUUID);
 
-    MCAPI void applyAnimations(bool setDefaultPose);
+    MCNAPI void applyAnimations(bool setDefaultPose);
 
-    MCAPI ::std::shared_ptr<::ActorAnimationPlayer> createAnimationPlayer(
+    MCNAPI ::std::shared_ptr<::ActorAnimationPlayer> createAnimationPlayer(
         ::HashedString const&                                    friendlyName,
         ::ExpressionNode const&                                  blendExpression,
         ::std::set<::HashedString, ::std::hash<::HashedString>>& animationControllerNameStack
     );
 
-    MCAPI ::std::vector<::BoneOrientation>*
+    MCNAPI ::std::vector<::BoneOrientation>*
     getBoneOrientations(::SkeletalHierarchyIndex skeletalHierarchyIndex, bool missingIsOkay);
 
-    MCAPI void initInstanceSpecificAnimationData(::MolangVariableMap* variableMap);
+    MCNAPI void initInstanceSpecificAnimationData(::MolangVariableMap* variableMap);
 
-    MCAPI void initializeServerAnimationComponent(
+    MCNAPI void initializeServerAnimationComponent(
         ::Actor&                                         actor,
         ::std::shared_ptr<::CommonResourceDefinitionMap> animationResourceDefinition,
         ::std::function<void(::ActorAnimationPlayer&)>   animationComponentInitFunction
     );
 
-    MCAPI void serverUpdate(::Actor& actor);
+    MCNAPI void serverUpdate(::Actor& actor);
 
-    MCAPI void setDirty();
+    MCNAPI void setDirty();
 
-    MCAPI ~AnimationComponent();
+    MCNAPI ~AnimationComponent();
     // NOLINTEND
 
 public:
@@ -121,12 +121,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AnimationComponentGroupType animationComponentGroup, ::AnimationComponentID const& ownerUUID);
+    MCNAPI void* $ctor(::AnimationComponentGroupType animationComponentGroup, ::AnimationComponentID const& ownerUUID);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -11,12 +11,12 @@ struct AsyncBlockInternalGuard {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AsyncBlockInternalGuard(::XAsyncBlock*);
+    MCNAPI explicit AsyncBlockInternalGuard(::XAsyncBlock*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::XAsyncBlock*);
+    MCNAPI void* $ctor(::XAsyncBlock*);
     // NOLINTEND
 };

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/util/MultidimensionalArray.h"
+#include "mc/world/level/levelgen/v1/BeardKernel.h"
 #include "mc/world/level/levelgen/v1/OverworldGenerator.h"
 
 // auto generated forward declare list
@@ -23,7 +24,6 @@ class PerlinSimplexNoise;
 class Random;
 class WorldGenCache;
 class XoroshiroPositionalRandomFactory;
-struct BeardKernel;
 // clang-format on
 
 class OverworldGenerator2d : public ::OverworldGenerator {
@@ -96,44 +96,44 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OverworldGenerator2d(::Dimension& dimension, uint seed, bool isLegacyWorld, ::Biome const* biomeOverride);
+    MCNAPI OverworldGenerator2d(::Dimension& dimension, uint seed, bool isLegacyWorld, ::Biome const* biomeOverride);
 
-    MCAPI ::Util::MultidimensionalArray<float, 5, 5, 41> _generateDensityCellsForChunk(::ChunkPos const& chunkPos
+    MCNAPI ::Util::MultidimensionalArray<float, 5, 5, 41> _generateDensityCellsForChunk(::ChunkPos const& chunkPos
     ) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension, uint seed, bool isLegacyWorld, ::Biome const* biomeOverride);
+    MCNAPI void* $ctor(::Dimension& dimension, uint seed, bool isLegacyWorld, ::Biome const* biomeOverride);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BiomeSource const& $getBiomeSource() const;
+    MCNAPI ::BiomeSource const& $getBiomeSource() const;
 
-    MCAPI ::BlockPos $findSpawnPosition() const;
+    MCNAPI ::BlockPos $findSpawnPosition() const;
 
-    MCFOLD int $getLevelGenHeight() const;
+    MCNAPI int $getLevelGenHeight() const;
 
-    MCAPI ::Util::MultidimensionalArray<float, 5, 5, 41> $generateDensityCellsForChunk(::ChunkPos const& chunkPos
+    MCNAPI ::Util::MultidimensionalArray<float, 5, 5, 41> $generateDensityCellsForChunk(::ChunkPos const& chunkPos
     ) const;
 
-    MCAPI ::PerlinSimplexNoise const& $getSurfaceNoise();
+    MCNAPI ::PerlinSimplexNoise const& $getSurfaceNoise();
 
-    MCAPI ::std::unique_ptr<::PerlinSimplexNoise> const& $getMaterialAdjNoise() const;
+    MCNAPI ::std::unique_ptr<::PerlinSimplexNoise> const& $getMaterialAdjNoise() const;
 
-    MCFOLD void
+    MCNAPI void
     $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
 
-    MCAPI void $_prepareHeights(
+    MCNAPI void $_prepareHeights(
         ::BlockVolume&                                                  box,
         ::ChunkPos const&                                               chunkPos,
         ::WorldGenCache const&                                          worldGenCache,
@@ -144,14 +144,14 @@ public:
         int                                                             skipTopN
     );
 
-    MCAPI ::std::optional<::XoroshiroPositionalRandomFactory> $getXoroshiroPositionalRandomFactory() const;
+    MCNAPI ::std::optional<::XoroshiroPositionalRandomFactory> $getXoroshiroPositionalRandomFactory() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForChunkSource();
+    MCNAPI static void** $vftableForChunkSource();
 
-    MCAPI static void** $vftableForIPreliminarySurfaceProvider();
+    MCNAPI static void** $vftableForIPreliminarySurfaceProvider();
     // NOLINTEND
 };

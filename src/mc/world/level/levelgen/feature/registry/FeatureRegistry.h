@@ -39,21 +39,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI FeatureBinaryJsonFormat(::FeatureRegistry::FeatureBinaryJsonFormat&&);
+        MCNAPI FeatureBinaryJsonFormat(::FeatureRegistry::FeatureBinaryJsonFormat&&);
 
-        MCAPI ~FeatureBinaryJsonFormat();
+        MCNAPI ~FeatureBinaryJsonFormat();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void* $ctor(::FeatureRegistry::FeatureBinaryJsonFormat&&);
+        MCNAPI void* $ctor(::FeatureRegistry::FeatureBinaryJsonFormat&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -72,13 +72,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FeatureRegistry();
+    MCNAPI FeatureRegistry();
 
-    MCAPI ::std::string const _featureNamespaceFromInput(::std::string const& filePath, ::std::string const& contents);
+    MCNAPI ::std::string const _featureNamespaceFromInput(::std::string const& filePath, ::std::string const& contents);
 
-    MCAPI void _registerFeature(::std::string const& name, ::std::unique_ptr<::IFeature> featurePtr);
+    MCNAPI void _registerFeature(::std::string const& name, ::std::unique_ptr<::IFeature> featurePtr);
 
-    MCAPI bool _setupFeature(
+    MCNAPI bool _setupFeature(
         ::IWorldRegistriesProvider&  worldRegistries,
         bool                         isBasePack,
         ::ResourcePackManager const& rpm,
@@ -88,19 +88,19 @@ public:
         bool                         serializeFeatures
     );
 
-    MCAPI void loadFromDefinitions(
+    MCNAPI void loadFromDefinitions(
         ::IWorldRegistriesProvider&  worldRegistries,
         ::ResourcePackManager const& rpm,
         bool                         clientSideGenEnabled
     );
 
-    MCAPI ::WeakRef<::IFeature> lookupByName(::std::string const& name) const;
+    MCNAPI ::WeakRef<::IFeature> lookupByName(::std::string const& name) const;
 
-    MCAPI ::WeakRef<::IFeature> lookupOrReserveFeature(::std::string const& featureName);
+    MCNAPI ::WeakRef<::IFeature> lookupOrReserveFeature(::std::string const& featureName);
 
-    MCAPI ::WeakRef<::IFeature> reserveFeature(::std::string const& name);
+    MCNAPI ::WeakRef<::IFeature> reserveFeature(::std::string const& name);
 
-    MCAPI ~FeatureRegistry();
+    MCNAPI ~FeatureRegistry();
     // NOLINTEND
 
 public:
@@ -134,12 +134,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

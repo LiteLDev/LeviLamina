@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/world/events/BlockObject.h"
+
 // auto generated forward declare list
 // clang-format off
 class Level;
-struct ActorUniqueID;
-struct BlockObject;
 // clang-format on
 
 struct ScriptCommandMessageEvent {
@@ -24,12 +26,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptCommandMessageEvent();
+    MCNAPI ~ScriptCommandMessageEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

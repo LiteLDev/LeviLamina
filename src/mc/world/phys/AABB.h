@@ -3,10 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/math/Vec3.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 // auto generated forward declare list
 // clang-format off
 class Matrix;
-class Vec3;
 struct AABBHitResult;
 struct ClipCollideResult;
 // clang-format on
@@ -114,8 +116,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::ClipCollideResult
     clipCollide(::AABB const& stationary, ::AABB const& moving, ::Vec3 const& velocity);
-
-    MCAPI static ::AABB fromPoints(::Vec3 const& A, ::Vec3 const& B);
     // NOLINTEND
 
 public:

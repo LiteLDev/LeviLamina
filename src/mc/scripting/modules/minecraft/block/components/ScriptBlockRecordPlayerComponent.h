@@ -22,7 +22,7 @@ class ScriptBlockRecordPlayerComponent : public ::ScriptModuleMinecraft::BaseScr
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
+    // vIndex: 3
     virtual bool _isValid() const /*override*/;
 
     // vIndex: 0
@@ -32,19 +32,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> ejectRecord();
+    MCNAPI ::Scripting::Result<void> ejectRecord();
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
     getRecord();
 
-    MCFOLD ::Scripting::Result_deprecated<bool> isPlaying();
+    MCNAPI ::Scripting::Result_deprecated<bool> isPlaying();
 
-    MCAPI ::Scripting::Result<void> pauseRecord();
+    MCNAPI ::Scripting::Result<void> pauseRecord();
 
-    MCAPI ::Scripting::Result<void> playRecord();
+    MCNAPI ::Scripting::Result<void> playRecord();
 
-    MCAPI ::Scripting::Result<void> setRecord(
+    MCNAPI ::Scripting::Result<void> setRecord(
         ::std::optional<::std::variant<
             ::std::string,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>> const& itemTypeOrId,
@@ -55,7 +55,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockRecordPlayerComponent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockRecordPlayerComponent>
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
@@ -74,13 +74,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isValid() const;
+    MCNAPI bool $_isValid() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -17,9 +17,9 @@ struct TickingSystemWithInfo;
 namespace MoveTowardsClosestSpaceSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::array<::TickingSystemWithInfo, 2> createSystems(bool isClientSide);
+MCNAPI ::std::array<::TickingSystemWithInfo, 2> createSystems(bool isClientSide);
 
-MCAPI void moveTowardsClosestSpace(
+MCNAPI void moveTowardsClosestSpace(
     ::AABB const&                                      aabb,
     ::std::vector<::AABB> const&                       oneWayPhysicsBlocks,
     ::IConstBlockSource const&                         region,

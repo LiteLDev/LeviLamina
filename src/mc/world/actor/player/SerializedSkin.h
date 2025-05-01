@@ -3,7 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/image/Image.h"
+#include "mc/deps/core/math/Color.h"
+#include "mc/deps/json/Value.h"
 #include "mc/platform/Result.h"
+#include "mc/resources/MinEngineVersion.h"
 #include "mc/world/actor/player/TrustedSkinFlag.h"
 #include "mc/world/actor/player/persona/AnimatedTextureType.h"
 #include "mc/world/actor/player/persona/ArmSize.h"
@@ -14,14 +18,10 @@
 class AnimatedImageData;
 class BinaryStream;
 class ConnectionRequest;
-class MinEngineVersion;
 class ReadOnlyBinaryStream;
 class SerializedPersonaPieceHandle;
 class SubClientConnectionRequest;
 class TintMapColor;
-namespace Json { class Value; }
-namespace mce { class Color; }
-namespace mce { struct Image; }
 // clang-format on
 
 class SerializedSkin {

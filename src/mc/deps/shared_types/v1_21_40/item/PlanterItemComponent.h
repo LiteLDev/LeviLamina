@@ -14,7 +14,7 @@ struct PlanterItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk65b69f;
+    ::ll::UntypedStorage<8, 32> mUnkfad5ea;
     ::ll::UntypedStorage<8, 24> mUnk81fc40;
     ::ll::UntypedStorage<1, 1>  mUnkd6fad7;
     // NOLINTEND
@@ -27,20 +27,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_40::PlanterItemComponent&
+    MCNAPI ::SharedTypes::v1_21_40::PlanterItemComponent&
     operator=(::SharedTypes::v1_21_40::PlanterItemComponent const&);
 
-    MCAPI ::SharedTypes::v1_21_40::PlanterItemComponent& operator=(::SharedTypes::v1_21_40::PlanterItemComponent&&);
+    MCNAPI ::SharedTypes::v1_21_40::PlanterItemComponent& operator=(::SharedTypes::v1_21_40::PlanterItemComponent&&);
 
-    MCAPI ~PlanterItemComponent();
+    MCNAPI ~PlanterItemComponent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void upgrade(
+    MCNAPI static void upgrade(
         ::std::optional<::SharedTypes::v1_20_50::PlanterItemComponent>& oldDefinition,
         ::std::optional<::SharedTypes::v1_21_40::PlanterItemComponent>& newDefinition
     );
@@ -49,7 +49,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

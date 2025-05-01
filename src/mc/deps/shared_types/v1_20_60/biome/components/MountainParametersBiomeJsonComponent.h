@@ -40,21 +40,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI SteepMaterial(::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial const&);
+        MCNAPI SteepMaterial(::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial const&);
 
-        MCAPI ~SteepMaterial();
+        MCNAPI ~SteepMaterial();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial const&);
+        MCNAPI void* $ctor(::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -75,7 +75,6 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>   mUnk424f05;
     ::ll::UntypedStorage<8, 120> mUnk3ec318;
     ::ll::UntypedStorage<1, 2>   mUnk576525;
     // NOLINTEND
@@ -96,7 +95,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -116,7 +115,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

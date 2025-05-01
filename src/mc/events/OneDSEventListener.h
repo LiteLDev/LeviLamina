@@ -3,12 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/IAsyncResult.h"
 #include "mc/events/AggregationEventListener.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Http { class Response; }
 namespace Core { class Path; }
 namespace Json { class Value; }
 namespace Social::Events { class Event; }
@@ -64,27 +62,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     AddPartA(::std::string const& eventName, ::Json::Value& eventBody, int64 eventTimestamp, bool isSafetyEvent);
 
-    MCAPI void AddPartC(::Social::Events::Event const& event, ::Json::Value& eventBody);
+    MCNAPI void AddPartC(::Social::Events::Event const& event, ::Json::Value& eventBody);
 
-    MCAPI ::std::string BuildCommonSchemaMsg(::Social::Events::Event const& event);
+    MCNAPI ::std::string BuildCommonSchemaMsg(::Social::Events::Event const& event);
 
-    MCAPI explicit OneDSEventListener(::Core::Path logFileName);
+    MCNAPI explicit OneDSEventListener(::Core::Path logFileName);
 
-    MCAPI ::std::vector<::std::string> _buildEventPayloads(
+    MCNAPI ::std::vector<::std::string> _buildEventPayloads(
         ::std::vector<::Social::Events::Event>                            events,
         ::std::function<void(::std::string const&, ::std::string const&)> onEventSerialized
     );
 
-    MCAPI void
-    _handleAsyncResponse(::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>> asyncResponse
-    );
+    MCNAPI bool _sendBatch();
 
-    MCAPI bool _sendBatch();
-
-    MCAPI void _sendEvents(::std::string const& eventPayload, ::std::string const& endpoint);
+    MCNAPI void _sendEvents(::std::string const& eventPayload, ::std::string const& endpoint);
     // NOLINTEND
 
 public:
@@ -104,31 +98,31 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::Path logFileName);
+    MCNAPI void* $ctor(::Core::Path logFileName);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $sendEvent(::Social::Events::Event const& event);
+    MCNAPI void $sendEvent(::Social::Events::Event const& event);
 
-    MCFOLD int $getEventTagsFilter() const;
+    MCNAPI int $getEventTagsFilter() const;
 
-    MCAPI bool $_checkAgainstEventAllowlist(::Social::Events::Event const& event) const;
+    MCNAPI bool $_checkAgainstEventAllowlist(::Social::Events::Event const& event) const;
 
-    MCAPI void $_flushEventQueue();
+    MCNAPI void $_flushEventQueue();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

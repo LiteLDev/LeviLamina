@@ -21,15 +21,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_30::TradeGroup& operator=(::SharedTypes::v1_21_30::TradeGroup&&);
+    MCNAPI ::SharedTypes::v1_21_30::TradeGroup& operator=(::SharedTypes::v1_21_30::TradeGroup&&);
 
-    MCAPI ~TradeGroup();
+    MCNAPI ~TradeGroup();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

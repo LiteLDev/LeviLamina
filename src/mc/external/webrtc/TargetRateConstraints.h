@@ -21,25 +21,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TargetRateConstraints();
+    MCNAPI TargetRateConstraints();
 
-    MCAPI TargetRateConstraints(::webrtc::TargetRateConstraints const&);
+    MCNAPI TargetRateConstraints(::webrtc::TargetRateConstraints const&);
 
-    MCAPI ~TargetRateConstraints();
+    MCNAPI ~TargetRateConstraints();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::webrtc::TargetRateConstraints const&);
+    MCNAPI void* $ctor(::webrtc::TargetRateConstraints const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -25,21 +25,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI DataToSend(::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint>, ::dcsctp::Data);
+        MCNAPI DataToSend(::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint>, ::dcsctp::Data);
 
-        MCAPI ~DataToSend();
+        MCNAPI ~DataToSend();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint>, ::dcsctp::Data);
+        MCNAPI void* $ctor(::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint>, ::dcsctp::Data);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 };

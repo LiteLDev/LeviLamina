@@ -10,7 +10,7 @@ class Actor;
 namespace OfferFlowerTickUtility {
 // functions
 // NOLINTBEGIN
-MCAPI void offerFlower(bool offerFlower, ::Actor& actor, int maxOfferFlowerTicks);
+MCNAPI void offerFlower(bool offerFlower, ::Actor& actor, int maxOfferFlowerTicks);
 // NOLINTEND
 
 } // namespace OfferFlowerTickUtility

@@ -35,23 +35,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addCursorsWithOffset(::Vec3 const& offset, int charge);
+    MCNAPI void addCursorsWithOffset(::Vec3 const& offset, int charge);
 
-    MCAPI ::Scripting::Result_deprecated<::Vec3> getCursorPosition(int index) const;
+    MCNAPI ::Scripting::Result_deprecated<::Vec3> getCursorPosition(int index) const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getMaxCharge() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getMaxCharge() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getNumberOfCursors() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getNumberOfCursors() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getTotalCharge() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getTotalCharge() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleGameTest::ScriptSculkSpreader> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleGameTest::ScriptSculkSpreader> bind();
 
-    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptSculkSpreader>>
+    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptSculkSpreader>>
     getHandle(::BlockSource& region, ::BlockPos const& pos, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };

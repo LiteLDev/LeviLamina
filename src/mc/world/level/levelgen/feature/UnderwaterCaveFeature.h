@@ -53,7 +53,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isDiggable(::Block const& block);
+    MCNAPI static bool isDiggable(::Block const& block);
     // NOLINTEND
 
 public:
@@ -65,7 +65,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $carveEllipsoidVolume(
+    MCNAPI bool $carveEllipsoidVolume(
         ::IBlockWorldGenAPI&                           target,
         ::CaveFeatureUtils::CarverConfiguration const& configuration,
         ::Random&                                      random,
@@ -81,6 +81,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

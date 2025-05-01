@@ -36,26 +36,26 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void
+        MCNAPI void
         search(::ClimateUtils::TargetSpace const& target, ::std::pair<::RTree::Node const*, int64>& closestLeaf) const;
 
-        MCAPI ~Node();
+        MCNAPI ~Node();
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static ::std::optional<::RTree::Node> branch(::std::vector<::RTree::Node>&& children);
+        MCNAPI static ::std::optional<::RTree::Node> branch(::std::vector<::RTree::Node>&& children);
 
-        MCAPI static ::std::vector<::RTree::Node> bucketize(::std::vector<::RTree::Node>&& nodes);
+        MCNAPI static ::std::vector<::RTree::Node> bucketize(::std::vector<::RTree::Node>&& nodes);
 
-        MCAPI static void sort(::std::vector<::RTree::Node>& children, int dimension, bool absolute);
+        MCNAPI static void sort(::std::vector<::RTree::Node>& children, int dimension, bool absolute);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -88,28 +88,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RTree(::RTree&&);
+    MCNAPI RTree(::RTree&&);
 
-    MCAPI ~RTree();
+    MCNAPI ~RTree();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::RTree::Node> build(::std::vector<::RTree::Node>&& children);
+    MCNAPI static ::std::optional<::RTree::Node> build(::std::vector<::RTree::Node>&& children);
 
-    MCAPI static ::std::optional<::RTree> create(::std::vector<::BiomeNoiseTarget> const& biomes);
+    MCNAPI static ::std::optional<::RTree> create(::std::vector<::BiomeNoiseTarget> const& biomes);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::RTree&&);
+    MCNAPI void* $ctor(::RTree&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

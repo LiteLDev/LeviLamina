@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class AABB;
-class Vec2;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/world/phys/AABB.h"
 
 struct AABBShapeComponent {
 public:

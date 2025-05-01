@@ -3,16 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
+#include "mc/util/FloatRange.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
-class Vec3;
-struct FloatRange;
-struct Tick;
 // clang-format on
 
 class PanicGoal : public ::Goal {
@@ -62,7 +62,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PanicGoal(
+    MCNAPI PanicGoal(
         ::Mob&                                                 mob,
         float                                                  speedMultiplier,
         bool                                                   ignoreMobDamage,
@@ -73,15 +73,15 @@ public:
         ::std::vector<::SharedTypes::Legacy::ActorDamageCause> damageCauses
     );
 
-    MCAPI ::std::optional<::Vec3> _findWaterPos(int xzDist, int yDist) const;
+    MCNAPI ::std::optional<::Vec3> _findWaterPos(int xzDist, int yDist) const;
 
-    MCAPI ::std::optional<::Vec3> _tryGeneratePathEnd() const;
+    MCNAPI ::std::optional<::Vec3> _tryGeneratePathEnd() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Mob&                                                 mob,
         float                                                  speedMultiplier,
         bool                                                   ignoreMobDamage,
@@ -102,22 +102,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCFOLD bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

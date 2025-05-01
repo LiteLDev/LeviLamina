@@ -37,30 +37,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Core::FlatFileSearchResult
+    MCNAPI ::Core::FlatFileSearchResult
     _findFileOrDirectoryEntry(::Core::PathView filePath, ::Core::PathView manifestPath, bool skipDeleted);
 
-    MCAPI ::Core::Result createFlatFile(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
+    MCNAPI ::Core::Result createFlatFile(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
 
-    MCAPI ::Core::Result deleteFileOrDirectory(
+    MCNAPI ::Core::Result deleteFileOrDirectory(
         ::Core::PathView fileOrDirectoryPath,
         ::Core::PathView manifestPath,
         bool             directoryDeleteEnabled,
         bool             deleteRecursively
     );
 
-    MCAPI bool fileOrDirectoryExists(::Core::PathView path, ::Core::PathView manifestPath);
+    MCNAPI bool fileOrDirectoryExists(::Core::PathView path, ::Core::PathView manifestPath);
 
-    MCAPI bool isDirectoryPathAFlatFile(::Core::PathView directoryPath);
+    MCNAPI bool isDirectoryPathAFlatFile(::Core::PathView directoryPath);
 
-    MCAPI ::Core::Result iterateOverDirectory(
+    MCNAPI ::Core::Result iterateOverDirectory(
         ::Core::PathView                                                             directoryPath,
         ::Core::PathView                                                             manifestPath,
         ::Core::DirectoryIterationFlags                                              flags,
         ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> callbackFunction
     );
 
-    MCAPI ::Core::Result openFlatFile(
+    MCNAPI ::Core::Result openFlatFile(
         ::std::unique_ptr<::Core::FileImpl>& fileOut,
         ::Core::PathView                     filePath,
         ::Core::PathView                     manifestPath,
@@ -68,19 +68,19 @@ public:
         ::Core::FileBufferingMode            fileBufferingMode
     );
 
-    MCAPI bool shouldAccessFlatFile(
+    MCNAPI bool shouldAccessFlatFile(
         ::Core::PathView                   path,
         ::Core::PathBuffer<::std::string>& manifestFilePath,
         bool                               shouldIncludeParentDir
     );
 
-    MCAPI ~FlatFileSystemImpl();
+    MCNAPI ~FlatFileSystemImpl();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

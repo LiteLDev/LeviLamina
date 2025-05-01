@@ -38,14 +38,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::leveldb::Status $Read(uint64 n, ::leveldb::Slice* result, char* scratch);
+    MCNAPI ::leveldb::Status $Read(uint64 n, ::leveldb::Slice* result, char* scratch);
 
-    MCAPI ::leveldb::Status $Skip(uint64 n);
+    MCNAPI ::leveldb::Status $Skip(uint64 n);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

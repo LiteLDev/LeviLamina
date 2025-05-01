@@ -20,35 +20,35 @@ class WrappingActiveIceController {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void HandlePingResult(::cricket::IceControllerInterface::PingResult);
+    MCNAPI void HandlePingResult(::cricket::IceControllerInterface::PingResult);
 
-    MCAPI void HandleSwitchResult(::cricket::IceSwitchReason, ::cricket::IceControllerInterface::SwitchResult);
+    MCNAPI void HandleSwitchResult(::cricket::IceSwitchReason, ::cricket::IceControllerInterface::SwitchResult);
 
-    MCAPI void MaybeStartPinging();
+    MCNAPI void MaybeStartPinging();
 
-    MCAPI void PruneConnections();
+    MCNAPI void PruneConnections();
 
-    MCAPI void SelectAndPingConnection();
+    MCNAPI void SelectAndPingConnection();
 
-    MCAPI void SortAndSwitchToBestConnection(::cricket::IceSwitchReason);
+    MCNAPI void SortAndSwitchToBestConnection(::cricket::IceSwitchReason);
 
-    MCAPI void UpdateStateOnConnectionsResorted();
+    MCNAPI void UpdateStateOnConnectionsResorted();
 
-    MCAPI
+    MCNAPI
     WrappingActiveIceController(::cricket::IceAgentInterface*, ::cricket::IceControllerFactoryInterface*, ::cricket::IceControllerFactoryArgs const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::cricket::IceAgentInterface*, ::cricket::IceControllerFactoryInterface*, ::cricket::IceControllerFactoryArgs const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

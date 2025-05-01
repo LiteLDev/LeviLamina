@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/ai/control/JumpInfo.h"
 #include "mc/world/actor/ai/control/JumpType.h"
 
 // auto generated forward declare list
 // clang-format off
 class JumpControl;
-class JumpInfo;
 // clang-format on
 
 class JumpControlComponent {
@@ -30,20 +30,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JumpControlComponent(::JumpControlComponent const& other);
+    MCNAPI JumpControlComponent(::JumpControlComponent const& other);
 
-    MCAPI ~JumpControlComponent();
+    MCNAPI ~JumpControlComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::JumpControlComponent const& other);
+    MCNAPI void* $ctor(::JumpControlComponent const& other);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

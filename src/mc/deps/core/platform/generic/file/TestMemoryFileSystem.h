@@ -18,7 +18,7 @@ class TestMemoryFileSystem : public ::Core::MemoryFileSystem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 49
+    // vIndex: 50
     virtual ::std::unique_ptr<::Core::FileImpl>
     _createMemoryFileHandle(::Core::MemoryFileSystemEntryFile*, ::Core::FileOpenMode, uint64) /*override*/;
 

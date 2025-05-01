@@ -22,20 +22,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AssertHandlerContext(::AssertHandlerContext const&);
+    MCNAPI AssertHandlerContext(::AssertHandlerContext const&);
 
-    MCAPI ~AssertHandlerContext();
+    MCNAPI ~AssertHandlerContext();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AssertHandlerContext const&);
+    MCNAPI void* $ctor(::AssertHandlerContext const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

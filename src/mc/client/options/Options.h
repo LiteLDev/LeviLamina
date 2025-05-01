@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/client/input/KeyboardType.h"
 #include "mc/client/options/BaseOptions.h"
-#include "mc/client/options/GraphicsMode.h"
 #include "mc/client/options/IOptions.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/platform/FileStorageDirectory.h"
@@ -13,6 +12,7 @@
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/VRControllerType.h"
 #include "mc/deviceinfo/DeviceMemoryTier.h"
+#include "mc/options/GraphicsMode.h"
 #include "mc/options/option_types/OptionID.h"
 #include "mc/options/option_types/OptionResetFlags.h"
 
@@ -158,7 +158,7 @@ public:
     virtual ::ChatOptions& getChatOptions() /*override*/;
 
     // vIndex: 24
-    virtual ::std::array<::std::unique_ptr<::Option>, 783> const& getAllRegisteredOptions() /*override*/;
+    virtual ::std::array<::std::unique_ptr<::Option>, 788> const& getAllRegisteredOptions() /*override*/;
 
     // vIndex: 25
     virtual void forEachOption(::std::function<void(::Option*)>) /*override*/;

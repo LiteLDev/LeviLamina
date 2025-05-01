@@ -10,7 +10,7 @@ namespace cereal { struct ReflectionCtx; }
 namespace ComponentItemData {
 // functions
 // NOLINTBEGIN
-MCAPI void bindTypes(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindTypes(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
 } // namespace ComponentItemData

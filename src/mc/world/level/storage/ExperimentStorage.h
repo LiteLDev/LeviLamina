@@ -22,16 +22,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ExperimentStorage& operator=(::ExperimentStorage&&);
+    MCNAPI ::ExperimentStorage& operator=(::ExperimentStorage&&);
 
-    MCAPI ::ExperimentStorage& operator=(::ExperimentStorage const&);
+    MCNAPI ::ExperimentStorage& operator=(::ExperimentStorage const&);
 
-    MCAPI ~ExperimentStorage();
+    MCNAPI ~ExperimentStorage();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -27,9 +27,9 @@ namespace PredictedMovementSystem { struct SystemUniforms; }
 namespace PredictedMovementSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void _disablePrediction(::PredictedMovementComponent& predictedMovement);
+MCNAPI void _disablePrediction(::PredictedMovementComponent& predictedMovement);
 
-MCAPI void _tickPredictedMovement(
+MCNAPI void _tickPredictedMovement(
     ::PredictedMovementComponent&                    predictedMovement,
     ::StateVectorComponent&                          stateVector,
     ::ActorOwnerComponent&                           actorOwnerComponent,
@@ -42,7 +42,7 @@ MCAPI void _tickPredictedMovement(
     ::PredictedMovementSystem::SystemUniforms const& uniforms
 );
 
-MCAPI void _tickSystem(
+MCNAPI void _tickSystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorTickNeededComponent>,
@@ -58,7 +58,7 @@ MCAPI void _tickSystem(
     ::ViewT<::StrictEntityContext, ::PredictedMovementComponent> disablingView
 );
 
-MCAPI ::TickingSystemWithInfo createSystem();
+MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
 } // namespace PredictedMovementSystem

@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/block/BushBlock.h"
+#include "mc/world/level/block/FoliageBlock.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +15,7 @@ class BlockSource;
 class Random;
 // clang-format on
 
-class SaplingBlock : public ::BushBlock {
+class SaplingBlock : public ::FoliageBlock {
 public:
     // member variables
     // NOLINTBEGIN
@@ -35,7 +35,7 @@ public:
 
     // vIndex: 74
     virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fertilizerType) const
         /*override*/;
 
     // vIndex: 76
@@ -49,7 +49,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SaplingBlock(
+    MCNAPI SaplingBlock(
         ::std::string const&           nameId,
         int                            id,
         ::std::optional<::std::string> singleSaplingTree,
@@ -57,12 +57,12 @@ public:
         ::std::optional<::std::string> quadrupleSaplingTree
     );
 
-    MCAPI bool _age(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool _age(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI ::std::optional<::BlockPos>
+    MCNAPI ::std::optional<::BlockPos>
     _getQuadrupleSaplingOffset(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    MCAPI bool _placeFeature(
+    MCNAPI bool _placeFeature(
         ::BlockSource&              region,
         ::BlockPos const&           pos,
         ::std::optional<::BlockPos> quadrupleSaplingOffset,
@@ -70,9 +70,9 @@ public:
         ::Random&                   random
     ) const;
 
-    MCAPI bool _placeTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool _placeTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void _setBlockNoUpdate(
+    MCNAPI void _setBlockNoUpdate(
         ::BlockSource&              region,
         ::BlockPos const&           pos,
         ::std::optional<::BlockPos> quadrupleSaplingOffset,
@@ -83,7 +83,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&           nameId,
         int                            id,
         ::std::optional<::std::string> singleSaplingTree,
@@ -101,19 +101,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    MCNAPI bool
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fertilizerType) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

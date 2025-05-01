@@ -42,11 +42,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addCommand(::std::string const& entry);
+    MCNAPI void _addCommand(::std::string const& entry);
 
-    MCAPI void _compileCommands(::ILevel& level) const;
+    MCNAPI void _compileCommands(::ILevel& level) const;
 
-    MCAPI void _executeAction(::RenderParams& params) const;
+    MCNAPI void _executeAction(::RenderParams& params) const;
     // NOLINTEND
 
 public:
@@ -64,6 +64,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::CommandOriginSystem $_getCommandOriginSystem() const;
+    MCNAPI ::CommandOriginSystem $_getCommandOriginSystem() const;
     // NOLINTEND
 };

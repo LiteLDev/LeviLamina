@@ -46,16 +46,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void makeAdjustments(::SurfaceMaterialBlocks& blockPalette, int height) const;
+    MCNAPI void makeAdjustments(::SurfaceMaterialBlocks& blockPalette, int height) const;
 
-    MCAPI ::SurfaceMaterialAdjustmentEvaluated& operator=(::SurfaceMaterialAdjustmentEvaluated&&);
+    MCNAPI ::SurfaceMaterialAdjustmentEvaluated& operator=(::SurfaceMaterialAdjustmentEvaluated&&);
 
-    MCAPI ~SurfaceMaterialAdjustmentEvaluated();
+    MCNAPI ~SurfaceMaterialAdjustmentEvaluated();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -14,23 +14,23 @@ class BitrateEstimator {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BitrateEstimator(::webrtc::FieldTrialsView const*);
+    MCNAPI explicit BitrateEstimator(::webrtc::FieldTrialsView const*);
 
-    MCAPI ::std::optional<::webrtc::DataRate> PeekRate() const;
+    MCNAPI ::std::optional<::webrtc::DataRate> PeekRate() const;
 
-    MCAPI float UpdateWindow(int64, int, int, bool*);
+    MCNAPI float UpdateWindow(int64, int, int, bool*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

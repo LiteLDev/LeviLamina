@@ -30,29 +30,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SctpTransportInformation(::webrtc::SctpTransportInformation const&);
+    MCNAPI SctpTransportInformation(::webrtc::SctpTransportInformation const&);
 
-    MCAPI
+    MCNAPI
     SctpTransportInformation(::webrtc::SctpTransportState, ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface>, ::std::optional<double>, ::std::optional<int>);
 
-    MCAPI ::webrtc::SctpTransportInformation& operator=(::webrtc::SctpTransportInformation const&);
+    MCNAPI ::webrtc::SctpTransportInformation& operator=(::webrtc::SctpTransportInformation const&);
 
-    MCAPI ~SctpTransportInformation();
+    MCNAPI ~SctpTransportInformation();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::SctpTransportInformation const&);
+    MCNAPI void* $ctor(::webrtc::SctpTransportInformation const&);
 
-    MCAPI void*
+    MCNAPI void*
         $ctor(::webrtc::SctpTransportState, ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface>, ::std::optional<double>, ::std::optional<int>);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

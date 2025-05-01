@@ -26,12 +26,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~Dependencies();
+    MCNAPI ~Dependencies();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -8,25 +8,25 @@ class FieldTrialFlag {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FieldTrialFlag(::std::string_view);
+    MCNAPI explicit FieldTrialFlag(::std::string_view);
 
-    MCAPI FieldTrialFlag(::std::string_view, bool);
+    MCNAPI FieldTrialFlag(::std::string_view, bool);
 
-    MCAPI explicit operator bool() const;
+    MCNAPI explicit operator bool() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view);
+    MCNAPI void* $ctor(::std::string_view);
 
-    MCAPI void* $ctor(::std::string_view, bool);
+    MCNAPI void* $ctor(::std::string_view, bool);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

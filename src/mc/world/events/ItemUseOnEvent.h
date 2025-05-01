@@ -2,13 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class BlockPos;
-class ItemInstance;
-class Vec3;
-class WeakEntityRef;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/world/item/ItemInstance.h"
+#include "mc/world/level/BlockPos.h"
 
 struct ItemUseOnEvent {
 public:
@@ -29,28 +27,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemUseOnEvent();
+    MCNAPI ItemUseOnEvent();
 
-    MCAPI ItemUseOnEvent(::ItemUseOnEvent const&);
+    MCNAPI ItemUseOnEvent(::ItemUseOnEvent const&);
 
-    MCAPI ItemUseOnEvent(::ItemUseOnEvent&&);
+    MCNAPI ItemUseOnEvent(::ItemUseOnEvent&&);
 
-    MCAPI ~ItemUseOnEvent();
+    MCNAPI ~ItemUseOnEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::ItemUseOnEvent const&);
+    MCNAPI void* $ctor(::ItemUseOnEvent const&);
 
-    MCAPI void* $ctor(::ItemUseOnEvent&&);
+    MCNAPI void* $ctor(::ItemUseOnEvent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

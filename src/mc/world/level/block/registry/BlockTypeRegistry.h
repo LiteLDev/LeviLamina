@@ -6,18 +6,18 @@
 // auto generated inclusion list
 #include "mc/common/SharedPtr.h"
 #include "mc/common/WeakPtr.h"
+#include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/deps/core/string/HashedString.h"
+#include "mc/resources/BaseGameVersion.h"
 
 // auto generated forward declare list
 // clang-format off
-class BaseGameVersion;
 class Block;
 class BlockLegacy;
 class BlockTypeRegistryModificationsLock;
 class BlockTypeRegistryRWLock;
 class BlockTypeRegistryReadLock;
 class Experiments;
-class HashedString;
-class SemVersion;
 class ServerScriptManager;
 // clang-format on
 
@@ -52,7 +52,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -76,17 +76,18 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::Block const* operator()(int data) const;
+        MCNAPI ::Block const* operator()(int data) const;
 
-        MCAPI ::BlockTypeRegistry::BlockComplexAliasContent& operator=(::BlockTypeRegistry::BlockComplexAliasContent&&);
+        MCNAPI ::BlockTypeRegistry::BlockComplexAliasContent&
+        operator=(::BlockTypeRegistry::BlockComplexAliasContent&&);
 
-        MCAPI ~BlockComplexAliasContent();
+        MCNAPI ~BlockComplexAliasContent();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -103,21 +104,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI LookupByNameImplReturnType(::Block const* block, bool resolveBlockLegacy);
+        MCNAPI LookupByNameImplReturnType(::Block const* block, bool resolveBlockLegacy);
 
-        MCAPI LookupByNameImplReturnType(::WeakPtr<::BlockLegacy const> blockLegacy, ::Block const* block);
+        MCNAPI LookupByNameImplReturnType(::WeakPtr<::BlockLegacy const> blockLegacy, ::Block const* block);
 
-        MCAPI LookupByNameImplReturnType(::WeakPtr<::BlockLegacy const> blockLegacy, int data, bool resolveBlock);
+        MCNAPI LookupByNameImplReturnType(::WeakPtr<::BlockLegacy const> blockLegacy, int data, bool resolveBlock);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::Block const* block, bool resolveBlockLegacy);
+        MCNAPI void* $ctor(::Block const* block, bool resolveBlockLegacy);
 
-        MCAPI void* $ctor(::WeakPtr<::BlockLegacy const> blockLegacy, ::Block const* block);
+        MCNAPI void* $ctor(::WeakPtr<::BlockLegacy const> blockLegacy, ::Block const* block);
 
-        MCAPI void* $ctor(::WeakPtr<::BlockLegacy const> blockLegacy, int data, bool resolveBlock);
+        MCNAPI void* $ctor(::WeakPtr<::BlockLegacy const> blockLegacy, int data, bool resolveBlock);
         // NOLINTEND
     };
 

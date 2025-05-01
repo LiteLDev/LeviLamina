@@ -51,7 +51,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScatteredFeatureStart(
+    MCNAPI ScatteredFeatureStart(
         ::BiomeSource const&                 source,
         short                                seaLevel,
         int                                  chunkX,
@@ -63,7 +63,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::BiomeSource const&                 source,
         short                                seaLevel,
         int                                  chunkX,
@@ -81,15 +81,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getMaxYSpawnOffset() const;
+    MCNAPI int $getMaxYSpawnOffset() const;
 
-    MCAPI ::std::string_view $getStructureName() const;
+    MCNAPI ::std::string_view $getStructureName() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

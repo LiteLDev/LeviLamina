@@ -4,16 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ai/goal/BaseMoveToBlockGoal.h"
+#include "mc/world/item/ItemDescriptor.h"
 #include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionTrigger;
 class BlockLegacy;
 class BlockPos;
 class BlockSource;
-class ItemDescriptor;
 class Mob;
 // clang-format on
 
@@ -66,7 +66,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LayEggGoal(
+    MCNAPI LayEggGoal(
         ::Mob&                                 mob,
         float                                  speedModifier,
         int                                    searchRange,
@@ -82,13 +82,13 @@ public:
         ::std::string const&                   layEggSound
     );
 
-    MCAPI bool _isTargetBlock(::BlockLegacy const& block) const;
+    MCNAPI bool _isTargetBlock(::BlockLegacy const& block) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Mob&                                 mob,
         float                                  speedModifier,
         int                                    searchRange,
@@ -108,32 +108,32 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $findTargetBlock();
+    MCNAPI bool $findTargetBlock();
 
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI void $_moveToBlock();
+    MCNAPI void $_moveToBlock();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

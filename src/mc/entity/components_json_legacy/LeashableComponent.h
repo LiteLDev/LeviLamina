@@ -13,10 +13,10 @@ class LeashableComponent {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCNAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
-    MCAPI void leash(::Actor& owner, ::Actor& leashHolder);
+    MCNAPI void leash(::Actor& owner, ::Actor& leashHolder);
 
-    MCAPI void unleash(::Actor& owner);
+    MCNAPI void unleash(::Actor& owner);
     // NOLINTEND
 };

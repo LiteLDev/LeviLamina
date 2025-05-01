@@ -10,9 +10,9 @@ class BaseGameVersion;
 namespace BiomeIdCompatibility {
 // functions
 // NOLINTBEGIN
-MCAPI ushort getFixedId(::std::string const& biomeName);
+MCNAPI ushort getFixedId(::std::string const& biomeName);
 
-MCAPI bool isReserved(ushort id, ::BaseGameVersion const& baseGameVersion);
+MCNAPI bool isReserved(ushort id, ::BaseGameVersion const& baseGameVersion);
 // NOLINTEND
 
 // static variables

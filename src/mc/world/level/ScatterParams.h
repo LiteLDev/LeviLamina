@@ -7,15 +7,15 @@
 #include "mc/deps/shared_types/v1_21_10/scatter_params/CoordinateEvaluationOrder.h"
 #include "mc/deps/shared_types/v1_21_10/scatter_params/RandomDistributionType.h"
 #include "mc/molang/MolangVersion.h"
+#include "mc/util/ExpressionNode.h"
+#include "mc/util/IntRange.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class CompoundTag;
-class ExpressionNode;
 class Random;
 class RenderParams;
-struct IntRange;
 namespace SharedTypes::v1_21_10 { struct CoordinateRangeData; }
 namespace SharedTypes::v1_21_10 { struct ScatterParamsData; }
 // clang-format on
@@ -66,31 +66,31 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI CoordinateRange();
+        MCNAPI CoordinateRange();
 
-        MCAPI CoordinateRange(::ScatterParams::CoordinateRange const&);
+        MCNAPI CoordinateRange(::ScatterParams::CoordinateRange const&);
 
-        MCAPI CoordinateRange(::ScatterParams::CoordinateRange&&);
+        MCNAPI CoordinateRange(::ScatterParams::CoordinateRange&&);
 
-        MCAPI int _eval(int evaluatedMin, int evaluatedMax, uint& stepIndex, ::Random& random) const;
+        MCNAPI int _eval(int evaluatedMin, int evaluatedMax, uint& stepIndex, ::Random& random) const;
 
-        MCAPI ~CoordinateRange();
+        MCNAPI ~CoordinateRange();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
 
-        MCAPI void* $ctor(::ScatterParams::CoordinateRange const&);
+        MCNAPI void* $ctor(::ScatterParams::CoordinateRange const&);
 
-        MCAPI void* $ctor(::ScatterParams::CoordinateRange&&);
+        MCNAPI void* $ctor(::ScatterParams::CoordinateRange&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -106,13 +106,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ChanceInformation();
+        MCNAPI ~ChanceInformation();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -132,11 +132,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScatterParams();
+    MCNAPI ScatterParams();
 
-    MCAPI ScatterParams(::ScatterParams const&);
+    MCNAPI ScatterParams(::ScatterParams const&);
 
-    MCAPI void _fillCoordinateRangeFromData(
+    MCNAPI void _fillCoordinateRangeFromData(
         ::std::string const&                                coordinateName,
         ::ScatterParams::CoordinateRange&                   coordinateRange,
         ::SharedTypes::v1_21_10::CoordinateRangeData const& coordinateRangeData,
@@ -144,10 +144,10 @@ public:
         ::LogArea                                           logArea
     );
 
-    MCAPI ::BlockPos
+    MCNAPI ::BlockPos
     _getPos(uint stepIndex, ::BlockPos const& origin, ::Random& random, ::RenderParams& molangParams) const;
 
-    MCFOLD void _parseExpressionNodeFloat(
+    MCNAPI void _parseExpressionNodeFloat(
         ::CompoundTag const& tag,
         ::std::string const& tagName,
         ::std::string const& tagNameType,
@@ -155,36 +155,36 @@ public:
         float                defaultValue
     );
 
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void fillFromData(
+    MCNAPI void fillFromData(
         ::SharedTypes::v1_21_10::ScatterParamsData const& data,
         ::MolangVersion                                   molangVersion,
         ::LogArea                                         logArea
     );
 
-    MCAPI void readAdditionalSaveData(::CompoundTag const& tag);
+    MCNAPI void readAdditionalSaveData(::CompoundTag const& tag);
 
-    MCAPI ~ScatterParams();
+    MCNAPI ~ScatterParams();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void initMolangParams(::RenderParams& molangParams, ::BlockPos const& pos, ::Random& random);
+    MCNAPI static void initMolangParams(::RenderParams& molangParams, ::BlockPos const& pos, ::Random& random);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::ScatterParams const&);
+    MCNAPI void* $ctor(::ScatterParams const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

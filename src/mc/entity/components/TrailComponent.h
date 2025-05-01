@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class BlockLegacy;
-class Vec3;
 // clang-format on
 
 struct TrailComponent {
@@ -20,6 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initFromDefinition(::Actor const& actor);
+    MCNAPI void initFromDefinition(::Actor const& actor);
     // NOLINTEND
 };

@@ -45,7 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::StructurePiece> findAndCreatePieceFactory(
+    MCNAPI ::std::unique_ptr<::StructurePiece> findAndCreatePieceFactory(
         ::std::string const&                                pieceClass,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
@@ -56,7 +56,7 @@ public:
         int                                                 depth
     );
 
-    MCAPI ::StructurePiece* generateAndAddPiece(
+    MCNAPI ::StructurePiece* generateAndAddPiece(
         ::SHStartPiece&                                     startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
@@ -67,7 +67,7 @@ public:
         int                                                 depth
     );
 
-    MCAPI ::std::unique_ptr<::StructurePiece> generatePieceFromSmallDoor(
+    MCNAPI ::std::unique_ptr<::StructurePiece> generatePieceFromSmallDoor(
         ::SHStartPiece&                                     startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random const&                                     randomRef,
@@ -78,7 +78,7 @@ public:
         int                                                 depth
     );
 
-    MCAPI void generateSmallDoor(
+    MCNAPI void generateSmallDoor(
         ::BlockSource&                   region,
         ::Random&                        chunkBB,
         ::BoundingBox const&             doorType,
@@ -88,7 +88,7 @@ public:
         int
     );
 
-    MCAPI ::StructurePiece* generateSmallDoorChildForward(
+    MCNAPI ::StructurePiece* generateSmallDoorChildForward(
         ::SHStartPiece&                                     startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
@@ -96,7 +96,7 @@ public:
         int                                                 yOff
     );
 
-    MCAPI ::StructurePiece* generateSmallDoorChildLeft(
+    MCNAPI ::StructurePiece* generateSmallDoorChildLeft(
         ::SHStartPiece&                                     startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
@@ -104,7 +104,7 @@ public:
         int                                                 zOff
     );
 
-    MCAPI ::StructurePiece* generateSmallDoorChildRight(
+    MCNAPI ::StructurePiece* generateSmallDoorChildRight(
         ::SHStartPiece&                                     startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
@@ -116,7 +116,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void forceAddPortalRoom(
+    MCNAPI static void forceAddPortalRoom(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random
@@ -126,6 +126,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

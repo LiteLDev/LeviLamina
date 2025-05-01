@@ -22,7 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::Editor::Network::WidgetPrimComponentBox const& other) const;
+    MCNAPI bool operator==(::Editor::Network::WidgetPrimComponentBox const& other) const;
     // NOLINTEND
 };
 

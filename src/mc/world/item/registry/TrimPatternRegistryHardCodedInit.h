@@ -11,7 +11,7 @@ class ItemRegistryRef;
 namespace TrimPatternRegistryHardCodedInit {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::unordered_map<::HashedString, ::HashedString> getPatterns(::ItemRegistryRef itemRegistry);
+MCNAPI ::std::unordered_map<::HashedString, ::HashedString> getPatterns(::ItemRegistryRef itemRegistry);
 // NOLINTEND
 
 } // namespace TrimPatternRegistryHardCodedInit

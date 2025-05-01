@@ -11,14 +11,14 @@
 namespace Editor::Brush {
 // functions
 // NOLINTBEGIN
-MCAPI ::Scripting::
+MCNAPI ::Scripting::
     EnumBindingBuilder<::Editor::Brush::BrushPaintCompletionState, ::Editor::Brush::BrushPaintCompletionState>
     bindBrushPaintCompletionStates();
 
-MCAPI ::Scripting::EnumBindingBuilder<::Editor::Brush::BrushPaintMode, ::Editor::Brush::BrushPaintMode>
+MCNAPI ::Scripting::EnumBindingBuilder<::Editor::Brush::BrushPaintMode, ::Editor::Brush::BrushPaintMode>
 bindBrushPaintModes();
 
-MCAPI ::Scripting::EnumBindingBuilder<::std::string, ::Editor::Brush::BrushShapeMethod> bindBrushShapeMethods();
+MCNAPI ::Scripting::EnumBindingBuilder<::std::string, ::Editor::Brush::BrushShapeMethod> bindBrushShapeMethods();
 // NOLINTEND
 
 } // namespace Editor::Brush

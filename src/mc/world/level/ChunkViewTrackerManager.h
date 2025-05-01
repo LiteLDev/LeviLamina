@@ -25,22 +25,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChunkViewTrackerManager(
+    MCNAPI ChunkViewTrackerManager(
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>    dimensionManager,
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager
     );
 
-    MCAPI void addChunkViewTracker(::std::weak_ptr<::ChunkViewSource> chunkViewSource);
+    MCNAPI void addChunkViewTracker(::std::weak_ptr<::ChunkViewSource> chunkViewSource);
 
-    MCAPI void onChunkReload(::Bounds const& bound);
+    MCNAPI void onChunkReload(::Bounds const& bound);
 
-    MCAPI ~ChunkViewTrackerManager();
+    MCNAPI ~ChunkViewTrackerManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>    dimensionManager,
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager
     );
@@ -49,6 +49,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

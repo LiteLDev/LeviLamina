@@ -26,21 +26,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UnzipSettings();
+    MCNAPI UnzipSettings();
 
-    MCAPI ~UnzipSettings();
+    MCNAPI ~UnzipSettings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

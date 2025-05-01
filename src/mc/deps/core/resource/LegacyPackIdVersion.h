@@ -24,14 +24,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::PackIdVersion getUpgradedPackId() const;
+    MCNAPI ::PackIdVersion getUpgradedPackId() const;
 
-    MCAPI ~LegacyPackIdVersion();
+    MCNAPI ~LegacyPackIdVersion();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

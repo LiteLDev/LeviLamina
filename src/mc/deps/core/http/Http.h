@@ -10,7 +10,7 @@ namespace Bedrock::Http { class LibHttpClientInstance; }
 namespace Bedrock::Http {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::shared_ptr<::Bedrock::Http::LibHttpClientInstance> initializeLibHttpClient();
+MCNAPI ::std::shared_ptr<::Bedrock::Http::LibHttpClientInstance> initializeLibHttpClient();
 // NOLINTEND
 
 } // namespace Bedrock::Http

@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct PackIdVersion;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/resource/PackIdVersion.h"
 
 struct PackInstanceId {
 public:
@@ -23,20 +21,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackInstanceId(::PackInstanceId&&);
+    MCNAPI PackInstanceId(::PackInstanceId&&);
 
-    MCAPI ~PackInstanceId();
+    MCNAPI ~PackInstanceId();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PackInstanceId&&);
+    MCNAPI void* $ctor(::PackInstanceId&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

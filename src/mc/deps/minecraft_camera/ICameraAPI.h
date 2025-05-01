@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
+class EntityRegistry;
 class Vec2;
 class Vec3;
 // clang-format on
@@ -91,18 +92,21 @@ public:
     virtual ::WeakRef<::EntityContext> getWeakEntity(int64) const = 0;
 
     // vIndex: 10
-    virtual float getFrameAlpha() const = 0;
+    virtual ::WeakRef<::EntityRegistry> getRegistryWeakEntity_DONOTUSE() const = 0;
 
     // vIndex: 11
-    virtual ::glm::vec2 getViewportSize() const = 0;
+    virtual float getFrameAlpha() const = 0;
 
     // vIndex: 12
-    virtual ::std::optional<::Vec3> clip(::glm::vec3 const&, ::glm::vec3 const&) = 0;
+    virtual ::glm::vec2 getViewportSize() const = 0;
 
     // vIndex: 13
-    virtual bool isInWall(::Vec3 const&) const = 0;
+    virtual ::std::optional<::Vec3> clip(::glm::vec3 const&, ::glm::vec3 const&) = 0;
 
     // vIndex: 14
+    virtual bool isInWall(::Vec3 const&) const = 0;
+
+    // vIndex: 15
     virtual bool isAlive(::WeakRef<::EntityContext> const) const = 0;
     // NOLINTEND
 

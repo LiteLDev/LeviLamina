@@ -68,7 +68,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     Npc(::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext);
@@ -85,7 +85,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -101,36 +101,36 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCFOLD void $newServerAiStep();
+    MCNAPI void $newServerAiStep();
 
-    MCFOLD void $die(::ActorDamageSource const& source);
+    MCNAPI void $die(::ActorDamageSource const& source);
 
-    MCFOLD bool $canBeAffected(uint id) const;
+    MCNAPI bool $canBeAffected(uint id) const;
 
-    MCAPI ::mce::Color $getNameTagTextColor() const;
+    MCNAPI ::mce::Color $getNameTagTextColor() const;
 
-    MCFOLD bool $canShowNameTag() const;
+    MCNAPI bool $canShowNameTag() const;
 
-    MCFOLD bool $isTargetable() const;
+    MCNAPI bool $isTargetable() const;
 
-    MCAPI void $buildDebugInfo(::std::string& out) const;
+    MCNAPI void $buildDebugInfo(::std::string& out) const;
 
-    MCFOLD void $knockback(::Actor*, int, float, float, float, float, float);
+    MCNAPI void $knockback(::Actor*, int, float, float, float, float, float);
 
-    MCFOLD bool $canBePulledIntoVehicle() const;
+    MCNAPI bool $canBePulledIntoVehicle() const;
 
-    MCFOLD bool $canExistWhenDisallowMob() const;
+    MCNAPI bool $canExistWhenDisallowMob() const;
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float, bool, bool);
+    MCNAPI bool $_hurt(::ActorDamageSource const& source, float, bool, bool);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

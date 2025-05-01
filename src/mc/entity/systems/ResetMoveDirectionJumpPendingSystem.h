@@ -23,14 +23,14 @@ class ResetMoveDirectionJumpPendingSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void tickResetMoveDirectionJumpPendingSystem(::ViewT<
-                                                              ::StrictEntityContext,
-                                                              ::Include<::OnGroundFlagComponent>,
-                                                              ::Exclude<::MobAllowStandSlidingFlagComponent>,
-                                                              ::JumpPendingScaleComponent const,
-                                                              ::ActorDataFlagComponent const,
-                                                              ::ActorDataControllingSeatIndexComponent const,
-                                                              ::VehicleComponent const,
-                                                              ::MobTravelComponent> view);
+    MCNAPI static void tickResetMoveDirectionJumpPendingSystem(::ViewT<
+                                                               ::StrictEntityContext,
+                                                               ::Include<::OnGroundFlagComponent>,
+                                                               ::Exclude<::MobAllowStandSlidingFlagComponent>,
+                                                               ::JumpPendingScaleComponent const,
+                                                               ::ActorDataFlagComponent const,
+                                                               ::ActorDataControllingSeatIndexComponent const,
+                                                               ::VehicleComponent const,
+                                                               ::MobTravelComponent> view);
     // NOLINTEND
 };

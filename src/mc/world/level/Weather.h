@@ -44,16 +44,16 @@ public:
     // vIndex: 0
     virtual ~Weather() /*override*/ = default;
 
-    // vIndex: 25
+    // vIndex: 26
     virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int calcSnowBlockDepth(::BlockSource& region, ::BlockPos const& pos, int maxLayerDepth) const;
+    MCNAPI int calcSnowBlockDepth(::BlockSource& region, ::BlockPos const& pos, int maxLayerDepth) const;
 
-    MCAPI bool canPlaceTopSnow(
+    MCNAPI bool canPlaceTopSnow(
         ::BlockSource&    region,
         ::BlockPos const& pos,
         bool              checkSnowDepthLevel,
@@ -61,26 +61,26 @@ public:
         int*              fromFallingSnow
     ) const;
 
-    MCAPI bool isPrecipitatingAt(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool isPrecipitatingAt(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool isRainingAt(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool isRainingAt(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void serverTick();
+    MCNAPI void serverTick();
 
-    MCAPI void stop();
+    MCNAPI void stop();
 
-    MCAPI bool
+    MCNAPI bool
     tryToPlaceTopSnow(::BlockSource& region, ::BlockPos const& pos, bool fromFallingSnow, bool fillLowerNeighborsFirst);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static int calcLightningCycleTime(::IRandom& random);
+    MCNAPI static int calcLightningCycleTime(::IRandom& random);
 
-    MCFOLD static int calcRainCycleTime(::IRandom& random);
+    MCNAPI static int calcRainCycleTime(::IRandom& random);
 
-    MCAPI static void rebuildTopSnowToDepth(::BlockSource& region, ::BlockPos const& testPos, int desiredDepth);
+    MCNAPI static void rebuildTopSnowToDepth(::BlockSource& region, ::BlockPos const& testPos, int desiredDepth);
     // NOLINTEND
 
 public:
@@ -98,6 +98,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

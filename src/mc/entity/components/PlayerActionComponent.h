@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/entity/components/PackedItemUseLegacyInventoryTransaction.h"
+#include "mc/entity/components/PlayerBlockActions.h"
+
 // auto generated forward declare list
 // clang-format off
 class ItemStackRequestData;
-class PlayerBlockActions;
-class Vec2;
-struct PackedItemUseLegacyInventoryTransaction;
 // clang-format on
 
 struct PlayerActionComponent {
@@ -29,29 +31,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerActionComponent(::PlayerActionComponent&&);
+    MCNAPI PlayerActionComponent(::PlayerActionComponent&&);
 
-    MCAPI ::PlayerActionComponent& operator=(::PlayerActionComponent&&);
+    MCNAPI ::PlayerActionComponent& operator=(::PlayerActionComponent&&);
 
-    MCAPI ~PlayerActionComponent();
+    MCNAPI ~PlayerActionComponent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string
+    MCNAPI static ::std::string
     getDiffOfPlayerAuthInputPacket(::PlayerActionComponent const& lhs, ::PlayerActionComponent const& rhs);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PlayerActionComponent&&);
+    MCNAPI void* $ctor(::PlayerActionComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

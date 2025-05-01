@@ -118,8 +118,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canGetChunk() const;
+    MCNAPI bool $canGetChunk() const;
 
-    MCFOLD ::LevelChunk* $getChunk(::ChunkPos const& pos);
+    MCNAPI ::LevelChunk* $getChunk(::ChunkPos const& pos);
     // NOLINTEND
 };

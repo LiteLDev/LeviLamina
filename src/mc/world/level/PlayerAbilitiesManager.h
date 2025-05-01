@@ -30,22 +30,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlayerAbilitiesManager(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
+    MCNAPI explicit PlayerAbilitiesManager(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
 
-    MCAPI void sendAllPlayerAbilities(::Player const& playerReference);
+    MCNAPI void sendAllPlayerAbilities(::Player const& playerReference);
 
-    MCAPI ~PlayerAbilitiesManager();
+    MCNAPI ~PlayerAbilitiesManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

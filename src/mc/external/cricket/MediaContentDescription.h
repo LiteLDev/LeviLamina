@@ -100,29 +100,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddCodecs(::std::vector<::cricket::Codec> const&);
+    MCNAPI void AddCodecs(::std::vector<::cricket::Codec> const&);
 
-    MCAPI void AddRtpHeaderExtension(::webrtc::RtpExtension const&);
+    MCNAPI void AddRtpHeaderExtension(::webrtc::RtpExtension const&);
 
-    MCAPI void AddStream(::cricket::StreamParams const&);
+    MCNAPI void AddStream(::cricket::StreamParams const&);
 
-    MCAPI MediaContentDescription();
+    MCNAPI MediaContentDescription();
 
-    MCAPI MediaContentDescription(::cricket::MediaContentDescription const&);
+    MCNAPI MediaContentDescription(::cricket::MediaContentDescription const&);
 
-    MCAPI void set_extmap_allow_mixed_enum(::cricket::MediaContentDescription::ExtmapAllowMixed);
+    MCNAPI void set_extmap_allow_mixed_enum(::cricket::MediaContentDescription::ExtmapAllowMixed);
 
-    MCAPI void set_receive_rids(::std::vector<::cricket::RidDescription> const&);
+    MCNAPI void set_receive_rids(::std::vector<::cricket::RidDescription> const&);
 
-    MCAPI void set_simulcast_description(::cricket::SimulcastDescription const&);
+    MCNAPI void set_simulcast_description(::cricket::SimulcastDescription const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::cricket::MediaContentDescription const&);
+    MCNAPI void* $ctor(::cricket::MediaContentDescription const&);
     // NOLINTEND
 
 public:
@@ -140,7 +140,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

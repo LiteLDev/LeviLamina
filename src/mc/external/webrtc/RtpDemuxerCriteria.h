@@ -8,23 +8,23 @@ class RtpDemuxerCriteria {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RtpDemuxerCriteria(::std::string_view, ::std::string_view);
+    MCNAPI RtpDemuxerCriteria(::std::string_view, ::std::string_view);
 
-    MCAPI ::std::string ToString() const;
+    MCNAPI ::std::string ToString() const;
 
-    MCAPI ~RtpDemuxerCriteria();
+    MCNAPI ~RtpDemuxerCriteria();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view, ::std::string_view);
+    MCNAPI void* $ctor(::std::string_view, ::std::string_view);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

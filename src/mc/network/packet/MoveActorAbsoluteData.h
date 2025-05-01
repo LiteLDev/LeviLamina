@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/legacy/ActorRuntimeID.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorRuntimeID;
 class MoveActorDeltaData;
-class Vec3;
 // clang-format on
 
 class MoveActorAbsoluteData {
@@ -39,14 +41,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MoveActorAbsoluteData(::Actor const& entity);
+    MCNAPI explicit MoveActorAbsoluteData(::Actor const& entity);
 
-    MCAPI ::MoveActorDeltaData calculateDelta(::MoveActorAbsoluteData const& previousAbsoluteMoveData) const;
+    MCNAPI ::MoveActorDeltaData calculateDelta(::MoveActorAbsoluteData const& previousAbsoluteMoveData) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor const& entity);
+    MCNAPI void* $ctor(::Actor const& entity);
     // NOLINTEND
 };

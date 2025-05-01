@@ -11,7 +11,7 @@ class Vec3;
 namespace ChiseledBookshelfSlotUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::optional<int> calculateHitSlot(::Vec3 const& blockHit, ::Block const& block, uchar hitFace);
+MCNAPI ::std::optional<int> calculateHitSlot(::Vec3 const& blockHit, ::Block const& block, uchar hitFace);
 // NOLINTEND
 
 } // namespace ChiseledBookshelfSlotUtils

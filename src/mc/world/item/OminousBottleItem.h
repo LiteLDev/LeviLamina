@@ -3,8 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/effect/MobEffectInstance.h"
 #include "mc/world/item/Item.h"
 #include "mc/world/item/ItemUseMethod.h"
+#include "mc/world/item/ResolvedItemIconInfo.h"
 #include "mc/world/item/alchemy/Potion.h"
 
 // auto generated forward declare list
@@ -14,9 +16,7 @@ class ItemDescriptor;
 class ItemStack;
 class ItemStackBase;
 class Level;
-class MobEffectInstance;
 class Player;
-struct ResolvedItemIconInfo;
 namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
@@ -74,7 +74,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OminousBottleItem(::std::string const& name, int id);
+    MCNAPI OminousBottleItem(::std::string const& name, int id);
     // NOLINTEND
 
 public:
@@ -86,7 +86,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
+    MCNAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:
@@ -98,35 +98,35 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Potion::PotionType $getPotionType() const;
+    MCNAPI ::Potion::PotionType $getPotionType() const;
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+    MCNAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
-    MCAPI void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
 
-    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& item) const;
+    MCNAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& item) const;
 
-    MCFOLD bool $uniqueAuxValues() const;
+    MCNAPI bool $uniqueAuxValues() const;
 
-    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const&, int, bool) const;
+    MCNAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const&, int, bool) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+    MCNAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
-    MCAPI bool $isValidAuxValue(int auxValue) const;
+    MCNAPI bool $isValidAuxValue(int auxValue) const;
 
-    MCFOLD bool $isDestructive(int) const;
+    MCNAPI bool $isDestructive(int) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

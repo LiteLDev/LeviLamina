@@ -5,12 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/v2/processors/StructureProcessor.h"
 #include "mc/world/level/levelgen/v2/processors/StructureProcessorType.h"
+#include "mc/world/level/levelgen/v2/providers/IntProvider.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class IBlockSource;
-struct IntProvider;
 namespace Util { class XXHash; }
 namespace br::worldgen { struct StructureBlockInfo; }
 namespace br::worldgen { struct StructurePlaceSettings; }
@@ -52,20 +52,20 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::br::worldgen::processors::Capped
+    MCNAPI static ::br::worldgen::processors::Capped
     from(::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>> delegate, ::IntProvider limit);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::br::worldgen::StructureBlockInfo> $finalize(
+    MCNAPI ::std::vector<::br::worldgen::StructureBlockInfo> $finalize(
         ::IBlockSource&                                          region,
         ::BlockPos                                               pos,
         ::BlockPos                                               structurePos,
@@ -74,15 +74,15 @@ public:
         ::br::worldgen::StructurePlaceSettings const&            settings
     ) const;
 
-    MCFOLD ::br::worldgen::StructureProcessorType $type() const;
+    MCNAPI ::br::worldgen::StructureProcessorType $type() const;
 
-    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

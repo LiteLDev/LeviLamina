@@ -8,9 +8,9 @@
 namespace Bedrock::PlatformUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::Core::PathBuffer<::std::string> const& getExternalStoragePath();
+MCNAPI ::Core::PathBuffer<::std::string> const& getExternalStoragePath();
 
-MCAPI ::std::string const& getPackageFamilyName();
+MCNAPI ::std::string const& getPackageFamilyName();
 // NOLINTEND
 
 } // namespace Bedrock::PlatformUtils

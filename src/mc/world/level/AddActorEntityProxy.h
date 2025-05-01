@@ -47,14 +47,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeActor(::Actor& actor);
+    MCNAPI void $initializeActor(::Actor& actor);
 
-    MCAPI void $reloadActor(::Actor& actor);
+    MCNAPI void $reloadActor(::Actor& actor);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

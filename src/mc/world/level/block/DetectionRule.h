@@ -26,7 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DetectionRule(
+    MCNAPI DetectionRule(
         ::LiquidType                                liquidType,
         bool                                        canContainLiquid,
         ::LiquidReaction                            onLiquidTouches,
@@ -37,7 +37,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::LiquidType                                liquidType,
         bool                                        canContainLiquid,
         ::LiquidReaction                            onLiquidTouches,

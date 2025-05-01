@@ -33,28 +33,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unordered_map<::Scripting::VersionRequestKey, ::std::vector<::Scripting::VersionRequestedBy>>
+    MCNAPI ::std::unordered_map<::Scripting::VersionRequestKey, ::std::vector<::Scripting::VersionRequestedBy>>
     _buildVersionRequestTable(
         ::Scripting::ModuleDescriptor const&                forModule,
         ::std::vector<::Scripting::ModuleDescriptor> const& dependencies
     ) const;
 
-    MCAPI ::Scripting::IModuleBindingFactory* _getModuleBindingFactory(::Scripting::UUID const& uuid) const;
+    MCNAPI ::Scripting::IModuleBindingFactory* _getModuleBindingFactory(::Scripting::UUID const& uuid) const;
 
-    MCAPI bool _isVersionMissing(
+    MCNAPI bool _isVersionMissing(
         ::Scripting::IModuleBindingFactory const& moduleFactory,
         ::Scripting::Version const&               version
     ) const;
 
-    MCAPI bool _isVersionSupported(
+    MCNAPI bool _isVersionSupported(
         ::Scripting::IModuleBindingFactory const& moduleFactory,
         ::Scripting::Version const&               version
     ) const;
 
-    MCAPI ::std::vector<::Scripting::ModuleDescriptor>
+    MCNAPI ::std::vector<::Scripting::ModuleDescriptor>
     _orderModulesByDependency(::std::vector<::Scripting::SupportedBindingModule>&& unorderedModules) const;
 
-    MCAPI ::Scripting::ModuleResolveResult _resolveDependencyRequests(
+    MCNAPI ::Scripting::ModuleResolveResult _resolveDependencyRequests(
         ::std::unordered_map<::Scripting::VersionRequestKey, ::std::vector<::Scripting::VersionRequestedBy>> const&
             versionRequestTable
     ) const;

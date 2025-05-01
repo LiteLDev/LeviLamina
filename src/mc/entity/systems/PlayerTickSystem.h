@@ -12,6 +12,6 @@ struct PlayerTickSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo create(bool isCatchup);
+    MCNAPI static ::TickingSystemWithInfo create(bool isCatchup);
     // NOLINTEND
 };

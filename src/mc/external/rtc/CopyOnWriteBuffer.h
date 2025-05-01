@@ -24,49 +24,49 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Clear();
+    MCNAPI void Clear();
 
-    MCAPI CopyOnWriteBuffer();
+    MCNAPI CopyOnWriteBuffer();
 
-    MCAPI CopyOnWriteBuffer(::rtc::CopyOnWriteBuffer&&);
+    MCNAPI CopyOnWriteBuffer(::rtc::CopyOnWriteBuffer&&);
 
-    MCAPI CopyOnWriteBuffer(::rtc::CopyOnWriteBuffer const&);
+    MCNAPI CopyOnWriteBuffer(::rtc::CopyOnWriteBuffer const&);
 
-    MCAPI explicit CopyOnWriteBuffer(uint64);
+    MCNAPI explicit CopyOnWriteBuffer(uint64);
 
-    MCAPI CopyOnWriteBuffer(uint64, uint64);
+    MCNAPI CopyOnWriteBuffer(uint64, uint64);
 
-    MCAPI void EnsureCapacity(uint64);
+    MCNAPI void EnsureCapacity(uint64);
 
-    MCAPI void SetSize(uint64);
+    MCNAPI void SetSize(uint64);
 
-    MCAPI void UnshareAndEnsureCapacity(uint64);
+    MCNAPI void UnshareAndEnsureCapacity(uint64);
 
-    MCAPI ::rtc::CopyOnWriteBuffer& operator=(::rtc::CopyOnWriteBuffer&&);
+    MCNAPI ::rtc::CopyOnWriteBuffer& operator=(::rtc::CopyOnWriteBuffer&&);
 
-    MCAPI bool operator==(::rtc::CopyOnWriteBuffer const&) const;
+    MCNAPI bool operator==(::rtc::CopyOnWriteBuffer const&) const;
 
-    MCAPI ~CopyOnWriteBuffer();
+    MCNAPI ~CopyOnWriteBuffer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::rtc::CopyOnWriteBuffer&&);
+    MCNAPI void* $ctor(::rtc::CopyOnWriteBuffer&&);
 
-    MCAPI void* $ctor(::rtc::CopyOnWriteBuffer const&);
+    MCNAPI void* $ctor(::rtc::CopyOnWriteBuffer const&);
 
-    MCAPI void* $ctor(uint64);
+    MCNAPI void* $ctor(uint64);
 
-    MCAPI void* $ctor(uint64, uint64);
+    MCNAPI void* $ctor(uint64, uint64);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

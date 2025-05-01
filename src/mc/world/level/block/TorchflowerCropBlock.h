@@ -21,7 +21,7 @@ class TorchflowerCropBlock : public ::CropBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 153
+    // vIndex: 151
     virtual ::ItemInstance const getBaseSeed() const /*override*/;
 
     // vIndex: 118
@@ -32,7 +32,7 @@ public:
     getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
         const /*override*/;
 
-    // vIndex: 152
+    // vIndex: 150
     virtual ::Block const&
     setGrowth(::BlockSource& region, ::BlockPos const& pos, ::Block const& baseBlock, ushort newGrowth, int updateFlags)
         const /*override*/;
@@ -55,15 +55,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemInstance const $getBaseSeed() const;
+    MCNAPI ::ItemInstance const $getBaseSeed() const;
 
-    MCAPI int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI ::AABB const&
+    MCNAPI ::AABB const&
     $getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
         const;
 
-    MCAPI ::Block const& $setGrowth(
+    MCNAPI ::Block const& $setGrowth(
         ::BlockSource&    region,
         ::BlockPos const& pos,
         ::Block const&    baseBlock,
@@ -71,13 +71,13 @@ public:
         int               updateFlags
     ) const;
 
-    MCAPI bool
+    MCNAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

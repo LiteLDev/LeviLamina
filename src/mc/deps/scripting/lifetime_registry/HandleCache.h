@@ -48,19 +48,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _add(uint64 typeHash, uint64 keyHash, ::Scripting::ObjectHandle const& handle);
+    MCNAPI void _add(uint64 typeHash, uint64 keyHash, ::Scripting::ObjectHandle const& handle);
 
-    MCAPI void _remove(uint64 typeHash, uint64 keyHash);
+    MCNAPI void _remove(uint64 typeHash, uint64 keyHash);
 
-    MCAPI ::std::optional<::Scripting::ObjectHandle> _tryGetHandle(uint64 typeHash, uint64 keyHash) const;
+    MCNAPI ::std::optional<::Scripting::ObjectHandle> _tryGetHandle(uint64 typeHash, uint64 keyHash) const;
 
-    MCAPI ~HandleCache();
+    MCNAPI ~HandleCache();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

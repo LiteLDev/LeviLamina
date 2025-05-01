@@ -40,35 +40,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _flushFiles();
+    MCNAPI void _flushFiles();
 
-    MCAPI ::Core::Result close();
+    MCNAPI ::Core::Result close();
 
-    MCAPI ::Core::Result
+    MCNAPI ::Core::Result
     open(::Core::Path filePath, ::Core::FileOpenMode fileOpenMode, ::Core::FileBufferingMode bufferingMode);
 
-    MCAPI ::Core::Result write(void const* pBuf, uint64 numBytes);
+    MCNAPI ::Core::Result write(void const* pBuf, uint64 numBytes);
 
-    MCAPI ~JournaledFile();
+    MCNAPI ~JournaledFile();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Core::PathBuffer<::std::string> findBackupPath(::Core::Path fileName);
+    MCNAPI static ::Core::PathBuffer<::std::string> findBackupPath(::Core::Path fileName);
 
-    MCAPI static ::Core::PathBuffer<::std::string> findReadPath(::Core::Path fileName);
+    MCNAPI static ::Core::PathBuffer<::std::string> findReadPath(::Core::Path fileName);
 
-    MCAPI static bool isOldFile(::Core::Path fileName);
+    MCNAPI static bool isOldFile(::Core::Path fileName);
 
-    MCAPI static void populateImportantFiles(::Core::Path fileName, ::std::vector<::std::string>& importantFiles);
+    MCNAPI static void populateImportantFiles(::Core::Path fileName, ::std::vector<::std::string>& importantFiles);
 
-    MCAPI static ::Core::Result replaceHeadFileWithBackup(::Core::Path fileName);
+    MCNAPI static ::Core::Result replaceHeadFileWithBackup(::Core::Path fileName);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

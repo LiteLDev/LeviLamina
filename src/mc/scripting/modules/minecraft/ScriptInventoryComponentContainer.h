@@ -47,7 +47,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptInventoryComponentContainer>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptInventoryComponentContainer>
     bindV010();
     // NOLINTEND
 
@@ -60,17 +60,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Scripting::Result_deprecated<int> $getEmptySlotsCount() const;
+    MCNAPI ::Scripting::Result_deprecated<int> $getEmptySlotsCount() const;
 
-    MCAPI ::Container* $_tryGetContainer() const;
+    MCNAPI ::Container* $_tryGetContainer() const;
 
-    MCFOLD ::ItemContext $_getItemContext(int slot) const;
+    MCNAPI ::ItemContext $_getItemContext(int slot) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

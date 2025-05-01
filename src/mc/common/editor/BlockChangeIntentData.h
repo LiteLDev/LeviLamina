@@ -29,27 +29,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockChangeIntentData(
+    MCNAPI BlockChangeIntentData(
         uint                blockRuntimeId,
         uint                extraBlockRuntimeId,
         ::BlockActor const* blockActor,
         ::BlockPos const&   pos
     );
 
-    MCAPI ~BlockChangeIntentData();
+    MCNAPI ~BlockChangeIntentData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(uint blockRuntimeId, uint extraBlockRuntimeId, ::BlockActor const* blockActor, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

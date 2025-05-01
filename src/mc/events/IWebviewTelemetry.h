@@ -48,10 +48,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onDownloadBegin(::WebviewDownloadInfo const& downloadInfo);
+    MCNAPI void $onDownloadBegin(::WebviewDownloadInfo const& downloadInfo);
 
-    MCAPI void $onDownloadComplete(::WebviewDownloadInfo const& downloadInfo);
+    MCNAPI void $onDownloadComplete(::WebviewDownloadInfo const& downloadInfo);
 
-    MCAPI void $onDownloadCanceled(::WebviewDownloadInfo const& downloadInfo);
+    MCNAPI void $onDownloadCanceled(::WebviewDownloadInfo const& downloadInfo);
     // NOLINTEND
 };

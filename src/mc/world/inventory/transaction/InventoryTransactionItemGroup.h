@@ -26,18 +26,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool equals(::ItemStack const& item) const;
+    MCNAPI bool equals(::ItemStack const& item) const;
 
-    MCAPI ::ItemStack getItemInstance() const;
+    MCNAPI ::ItemStack getItemInstance() const;
 
-    MCAPI ::InventoryTransactionItemGroup& operator=(::InventoryTransactionItemGroup const& rhs);
+    MCNAPI ::InventoryTransactionItemGroup& operator=(::InventoryTransactionItemGroup const& rhs);
 
-    MCAPI ~InventoryTransactionItemGroup();
+    MCNAPI ~InventoryTransactionItemGroup();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

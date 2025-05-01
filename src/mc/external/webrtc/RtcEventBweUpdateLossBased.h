@@ -8,19 +8,19 @@ class RtcEventBweUpdateLossBased {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RtcEventBweUpdateLossBased(int, uchar, int);
+    MCNAPI RtcEventBweUpdateLossBased(int, uchar, int);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int, uchar, int);
+    MCNAPI void* $ctor(int, uchar, int);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

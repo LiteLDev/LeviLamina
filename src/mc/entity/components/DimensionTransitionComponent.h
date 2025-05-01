@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/level/block/PortalAxis.h"
 
 // auto generated forward declare list
 // clang-format off
 class Dimension;
-class Vec3;
 // clang-format on
 
 struct DimensionTransitionComponent {

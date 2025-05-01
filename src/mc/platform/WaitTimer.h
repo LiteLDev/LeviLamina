@@ -8,31 +8,31 @@ struct WaitTimer {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Cancel();
+    MCNAPI void Cancel();
 
-    MCAPI uint64 GetAbsoluteTime(uint);
+    MCNAPI uint64 GetAbsoluteTime(uint);
 
-    MCAPI long Initialize(void*, void (*)(void*));
+    MCNAPI long Initialize(void*, void (*)(void*));
 
-    MCAPI void Start(uint64);
+    MCNAPI void Start(uint64);
 
-    MCAPI void Terminate();
+    MCNAPI void Terminate();
 
-    MCAPI WaitTimer();
+    MCNAPI WaitTimer();
 
-    MCAPI ~WaitTimer();
+    MCNAPI ~WaitTimer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

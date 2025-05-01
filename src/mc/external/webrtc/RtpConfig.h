@@ -30,21 +30,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Flexfec(::webrtc::RtpConfig::Flexfec const&);
+        MCNAPI Flexfec(::webrtc::RtpConfig::Flexfec const&);
 
-        MCAPI ~Flexfec();
+        MCNAPI ~Flexfec();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::webrtc::RtpConfig::Flexfec const&);
+        MCNAPI void* $ctor(::webrtc::RtpConfig::Flexfec const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -64,21 +64,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Rtx(::webrtc::RtpConfig::Rtx const&);
+        MCNAPI Rtx(::webrtc::RtpConfig::Rtx const&);
 
-        MCAPI ~Rtx();
+        MCNAPI ~Rtx();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::webrtc::RtpConfig::Rtx const&);
+        MCNAPI void* $ctor(::webrtc::RtpConfig::Rtx const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -112,23 +112,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<uint> GetRtxSsrcAssociatedWithMediaSsrc(uint) const;
+    MCNAPI ::std::optional<uint> GetRtxSsrcAssociatedWithMediaSsrc(uint) const;
 
-    MCAPI RtpConfig(::webrtc::RtpConfig const&);
+    MCNAPI RtpConfig(::webrtc::RtpConfig const&);
 
-    MCAPI ~RtpConfig();
+    MCNAPI ~RtpConfig();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::RtpConfig const&);
+    MCNAPI void* $ctor(::webrtc::RtpConfig const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

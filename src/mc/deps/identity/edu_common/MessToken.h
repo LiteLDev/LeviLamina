@@ -27,25 +27,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::MessToken& operator=(::MessToken&&);
+    MCNAPI ::MessToken& operator=(::MessToken&&);
 
-    MCAPI ::std::string toString() const;
+    MCNAPI ::std::string toString() const;
 
-    MCAPI ~MessToken();
+    MCNAPI ~MessToken();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::MessToken> fromString(::std::string const& tokenString);
+    MCNAPI static ::std::optional<::MessToken> fromString(::std::string const& tokenString);
 
-    MCAPI static ::std::optional<::std::pair<::Json::Value, ::MessToken>>
+    MCNAPI static ::std::optional<::std::pair<::Json::Value, ::MessToken>>
     unpackChainIfTrusted(::WebToken const& selfSignedToken);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

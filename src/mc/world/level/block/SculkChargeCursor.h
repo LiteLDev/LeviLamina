@@ -37,9 +37,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void load(::CompoundTag const& tag);
+    MCNAPI void load(::CompoundTag const& tag);
 
-    MCAPI void update(
+    MCNAPI void update(
         ::IBlockWorldGenAPI& target,
         ::BlockSource*       region,
         ::BlockPos const&    originPos,
@@ -52,11 +52,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::array<::BlockPos, 18> _getNonCornerNeighborsOffsets(::Random& random);
+    MCNAPI static ::std::array<::BlockPos, 18> _getNonCornerNeighborsOffsets(::Random& random);
 
-    MCAPI static ::SculkBehavior const& _getSculkBehavior(::Block const& block);
+    MCNAPI static ::SculkBehavior const& _getSculkBehavior(::Block const& block);
 
-    MCAPI static bool
+    MCNAPI static bool
     _isMovementUnobstructed(::IBlockWorldGenAPI& target, ::BlockPos const& fromPos, ::BlockPos const& toPos);
     // NOLINTEND
 

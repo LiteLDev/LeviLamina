@@ -10,7 +10,7 @@ class EntitySystems;
 namespace ServerCatchupMovementTrackerSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void registerSystems(::EntitySystems& systems);
+MCNAPI void registerSystems(::EntitySystems& systems);
 // NOLINTEND
 
 } // namespace ServerCatchupMovementTrackerSystem

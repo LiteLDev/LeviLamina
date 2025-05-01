@@ -39,16 +39,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Event(::Social::Events::Event const&);
+    MCNAPI Event(::Social::Events::Event const&);
 
-    MCAPI Event(
+    MCNAPI Event(
         uint                                                              id,
         ::std::string const&                                              eventName,
         ::std::unordered_map<::std::string, ::Social::Events::Property>&& commonProperties,
         int                                                               eventTags
     );
 
-    MCAPI Event(
+    MCNAPI Event(
         uint                                                              id,
         ::std::string const&                                              eventName,
         ::std::unordered_map<::std::string, ::Social::Events::Property>&& commonProperties,
@@ -56,28 +56,28 @@ public:
         int                                                               eventTags
     );
 
-    MCAPI void addMeasurement(::Social::Events::Measurement const& measurement);
+    MCNAPI void addMeasurement(::Social::Events::Measurement const& measurement);
 
-    MCAPI void addProperty(::Social::Events::Property const& property);
+    MCNAPI void addProperty(::Social::Events::Property const& property);
 
-    MCAPI void updateMeasurements(::Social::Events::Event const& event);
+    MCNAPI void updateMeasurements(::Social::Events::Event const& event);
 
-    MCAPI ~Event();
+    MCNAPI ~Event();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Social::Events::Event const&);
+    MCNAPI void* $ctor(::Social::Events::Event const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         uint                                                              id,
         ::std::string const&                                              eventName,
         ::std::unordered_map<::std::string, ::Social::Events::Property>&& commonProperties,
         int                                                               eventTags
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         uint                                                              id,
         ::std::string const&                                              eventName,
         ::std::unordered_map<::std::string, ::Social::Events::Property>&& commonProperties,
@@ -89,7 +89,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

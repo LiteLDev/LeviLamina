@@ -20,24 +20,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ActorInteraction(bool noCapture);
+    MCNAPI explicit ActorInteraction(bool noCapture);
 
-    MCAPI void capture(::std::function<void()> interactFunc);
+    MCNAPI void capture(::std::function<void()> interactFunc);
 
-    MCFOLD void setInteractText(::std::string const& text);
+    MCNAPI void setInteractText(::std::string const& text);
 
-    MCAPI ~ActorInteraction();
+    MCNAPI ~ActorInteraction();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(bool noCapture);
+    MCNAPI void* $ctor(bool noCapture);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

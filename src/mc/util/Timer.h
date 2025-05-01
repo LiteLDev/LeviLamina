@@ -18,19 +18,19 @@ public:
     ::ll::TypedStorage<8, 8, int64>                     mLastMs;
     ::ll::TypedStorage<8, 8, int64>                     mLastMsSysTime;
     ::ll::TypedStorage<4, 4, float>                     mAdjustTime;
-    ::ll::TypedStorage<4, 4, int>                       mSteppingTick;
+    ::ll::TypedStorage<4, 4, float>                     mSteppingTick;
     ::ll::TypedStorage<8, 64, ::std::function<int64()>> mGetTimeMSCallback;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void advanceTime(float preferredFrameStep);
+    MCNAPI void advanceTime(float preferredFrameStep);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int64 getMillisecondsSinceLaunch();
+    MCNAPI static int64 getMillisecondsSinceLaunch();
     // NOLINTEND
 };

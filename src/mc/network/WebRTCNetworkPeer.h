@@ -56,37 +56,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _updateConnectionStatus();
+    MCNAPI void _updateConnectionStatus();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
+    MCNAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
 
-    MCAPI ::NetworkPeer::DataStatus $receivePacket(
+    MCNAPI ::NetworkPeer::DataStatus $receivePacket(
         ::std::string&                                                    outData,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     );
 
-    MCAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
+    MCNAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 
-    MCAPI void $update();
+    MCNAPI void $update();
 
-    MCFOLD bool $isLocal() const;
+    MCNAPI bool $isLocal() const;
 
-    MCFOLD bool $isEncrypted() const;
+    MCNAPI bool $isEncrypted() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

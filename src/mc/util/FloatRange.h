@@ -25,8 +25,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI float getValue(::Random& random) const;
+    MCNAPI float getValue(::Random& random) const;
 
-    MCAPI bool parseJson(::Json::Value const& node, float minDefault, float maxDefault);
+    MCNAPI bool parseJson(::Json::Value const& node, float minDefault, float maxDefault);
     // NOLINTEND
 };

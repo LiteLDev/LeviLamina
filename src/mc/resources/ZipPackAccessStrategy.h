@@ -13,6 +13,7 @@
 class ContentIdentity;
 class IFileAccess;
 class ResourceLocation;
+struct ZipPackArgs;
 namespace Core { class Path; }
 // clang-format on
 
@@ -20,16 +21,15 @@ class ZipPackAccessStrategy : public ::PackAccessStrategy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkfb17b1;
+    ::ll::UntypedStorage<8, 32> mUnk18fd21;
     ::ll::UntypedStorage<8, 8>  mUnk7ca90a;
     ::ll::UntypedStorage<8, 80> mUnkea609d;
-    ::ll::UntypedStorage<8, 56> mUnkdc1533;
-    ::ll::UntypedStorage<8, 32> mUnk98d4c7;
-    ::ll::UntypedStorage<8, 32> mUnk5e5266;
-    ::ll::UntypedStorage<1, 1>  mUnkcf449b;
-    ::ll::UntypedStorage<1, 1>  mUnkd40bd8;
+    ::ll::UntypedStorage<8, 56> mUnkadd3fa;
+    ::ll::UntypedStorage<8, 32> mUnka8ffe5;
+    ::ll::UntypedStorage<8, 32> mUnk5887d5;
+    ::ll::UntypedStorage<1, 1>  mUnkcea598;
+    ::ll::UntypedStorage<1, 1>  mUnk773214;
     ::ll::UntypedStorage<8, 24> mUnk1bb513;
-    ::ll::UntypedStorage<8, 24> mUnka5d1c8;
     // NOLINTEND
 
 public:
@@ -53,137 +53,127 @@ public:
     // vIndex: 3
     virtual ::std::string const& getPackName() const /*override*/;
 
-    // vIndex: 5
-    virtual void setIsTrusted(bool newValue) /*override*/;
-
     // vIndex: 4
     virtual bool isWritable() const /*override*/;
 
-    // vIndex: 6
+    // vIndex: 5
     virtual bool isTrusted() const /*override*/;
 
-    // vIndex: 7
+    // vIndex: 6
     virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const
         /*override*/;
 
-    // vIndex: 8
+    // vIndex: 7
     virtual bool hasFolder(::Core::Path const& packRelativePath) const /*override*/;
 
-    // vIndex: 9
+    // vIndex: 8
     virtual bool getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const
         /*override*/;
 
-    // vIndex: 11
+    // vIndex: 9
     virtual bool writeAsset(::Core::Path const& packRelativePath, ::std::string const& fileContent) /*override*/;
 
     // vIndex: 10
-    virtual bool deleteAsset(::Core::Path const& packRelativePath) /*override*/;
-
-    // vIndex: 12
     virtual void forEachIn(
         ::Core::Path const&                        packRelativePath,
         ::std::function<void(::Core::Path const&)> callback,
         bool                                       recurseAnyways
     ) const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 12
     virtual ::PackAccessStrategyType getStrategyType() const /*override*/;
 
-    // vIndex: 15
+    // vIndex: 13
     virtual ::Core::PathBuffer<::std::string> const& getSubPath() const /*override*/;
 
-    // vIndex: 16
+    // vIndex: 14
     virtual bool supportsSignatureVerification() const /*override*/;
 
-    // vIndex: 17
+    // vIndex: 15
     virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
 
-    // vIndex: 21
+    // vIndex: 19
     virtual void unload() /*override*/;
 
-    // vIndex: 23
+    // vIndex: 20
     virtual ::ContentIdentity readContentIdentity() const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ZipPackAccessStrategy(
-        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const& fileAccess,
-        ::ResourceLocation const&                           location,
-        ::Core::Path const&                                 subPath
+    MCNAPI ZipPackAccessStrategy(
+        ::std::variant<::Bedrock::NotNullNonOwnerPtr<::IFileAccess>, ::gsl::not_null<::std::shared_ptr<::IFileAccess>>>
+                        fileAccess,
+        ::ZipPackArgs&& args
     );
 
-    MCAPI bool _tryReadFromPendingQueue(::Core::Path const& packRelativePath, ::std::string& result) const;
+    MCNAPI bool _tryReadFromPendingQueue(::Core::Path const& packRelativePath, ::std::string& result) const;
 
-    MCAPI bool initZipFile() const;
+    MCNAPI bool initZipFile() const;
 
-    MCAPI void shutdown();
+    MCNAPI void shutdown();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const& fileAccess,
-        ::ResourceLocation const&                           location,
-        ::Core::Path const&                                 subPath
+    MCNAPI void* $ctor(
+        ::std::variant<::Bedrock::NotNullNonOwnerPtr<::IFileAccess>, ::gsl::not_null<::std::shared_ptr<::IFileAccess>>>
+                        fileAccess,
+        ::ZipPackArgs&& args
     );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint64 $getPackSize() const;
+    MCNAPI uint64 $getPackSize() const;
 
-    MCFOLD ::ResourceLocation const& $getPackLocation() const;
+    MCNAPI ::ResourceLocation const& $getPackLocation() const;
 
-    MCFOLD ::std::string const& $getPackName() const;
+    MCNAPI ::std::string const& $getPackName() const;
 
-    MCAPI void $setIsTrusted(bool newValue);
+    MCNAPI bool $isWritable() const;
 
-    MCFOLD bool $isWritable() const;
+    MCNAPI bool $isTrusted() const;
 
-    MCAPI bool $isTrusted() const;
+    MCNAPI bool $hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
 
-    MCAPI bool $hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
+    MCNAPI bool $hasFolder(::Core::Path const& packRelativePath) const;
 
-    MCAPI bool $hasFolder(::Core::Path const& packRelativePath) const;
+    MCNAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
 
-    MCAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
+    MCNAPI bool $writeAsset(::Core::Path const& packRelativePath, ::std::string const& fileContent);
 
-    MCAPI bool $writeAsset(::Core::Path const& packRelativePath, ::std::string const& fileContent);
-
-    MCAPI bool $deleteAsset(::Core::Path const& packRelativePath);
-
-    MCAPI void $forEachIn(
+    MCNAPI void $forEachIn(
         ::Core::Path const&                        packRelativePath,
         ::std::function<void(::Core::Path const&)> callback,
         bool                                       recurseAnyways
     ) const;
 
-    MCFOLD ::PackAccessStrategyType $getStrategyType() const;
+    MCNAPI ::PackAccessStrategyType $getStrategyType() const;
 
-    MCFOLD ::Core::PathBuffer<::std::string> const& $getSubPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> const& $getSubPath() const;
 
-    MCFOLD bool $supportsSignatureVerification() const;
+    MCNAPI bool $supportsSignatureVerification() const;
 
-    MCAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
+    MCNAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
 
-    MCAPI void $unload();
+    MCNAPI void $unload();
 
-    MCAPI ::ContentIdentity $readContentIdentity() const;
+    MCNAPI ::ContentIdentity $readContentIdentity() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

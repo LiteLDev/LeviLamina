@@ -25,20 +25,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldGenCache(::ChunkLocalNoiseCache chunkLocalNoiseCache, ::SurfaceLevelCache surfaceLevelCache);
+    MCNAPI WorldGenCache(::ChunkLocalNoiseCache chunkLocalNoiseCache, ::SurfaceLevelCache surfaceLevelCache);
 
-    MCAPI ~WorldGenCache();
+    MCNAPI ~WorldGenCache();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ChunkLocalNoiseCache chunkLocalNoiseCache, ::SurfaceLevelCache surfaceLevelCache);
+    MCNAPI void* $ctor(::ChunkLocalNoiseCache chunkLocalNoiseCache, ::SurfaceLevelCache surfaceLevelCache);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

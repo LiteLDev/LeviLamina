@@ -38,6 +38,9 @@ public:
     // vIndex: 1
     virtual void OnMessage(::webrtc::DataBuffer const& message) /*override*/;
 
+    // vIndex: 2
+    virtual void OnBufferedAmountChange(uint64 previous_amount) /*override*/;
+
     // vIndex: 4
     virtual ~MyDataChannelObserver() /*override*/ = default;
     // NOLINTEND
@@ -45,7 +48,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MyDataChannelObserver(
+    MCNAPI MyDataChannelObserver(
         ::NetherNet::NetworkSession*                            pSession,
         ::webrtc::scoped_refptr<::webrtc::DataChannelInterface> pDataChannel
     );
@@ -54,7 +57,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::NetherNet::NetworkSession* pSession, ::webrtc::scoped_refptr<::webrtc::DataChannelInterface> pDataChannel);
     // NOLINTEND
 
@@ -67,15 +70,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnStateChange();
+    MCNAPI void $OnStateChange();
 
-    MCAPI void $OnMessage(::webrtc::DataBuffer const& message);
+    MCNAPI void $OnMessage(::webrtc::DataBuffer const& message);
+
+    MCNAPI void $OnBufferedAmountChange(uint64 previous_amount);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

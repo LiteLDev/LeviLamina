@@ -44,60 +44,60 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_10::CoordinateRangeData
+    MCNAPI ::SharedTypes::v1_21_10::CoordinateRangeData
     _createCoordinateRangeDataFromExpression(::SharedTypes::Legacy::ExpressionNode const& expressionNode);
 
-    MCAPI void addCoordinateEvaluationOrder(
+    MCNAPI void addCoordinateEvaluationOrder(
         ::SharedTypes::v1_21_10::ScatterParamsData&               scatterParamsData,
         ::SharedTypes::v1_21_10::CoordinateEvaluationOrder const& coordinateEvaluationOrder
     );
 
-    MCAPI void addCoordinateRangeDataX(
+    MCNAPI void addCoordinateRangeDataX(
         ::SharedTypes::v1_21_10::ScatterParamsData&         scatterParamsData,
         ::SharedTypes::v1_21_10::CoordinateRangeData const& coordinateRangeData
     );
 
-    MCAPI void addCoordinateRangeDataXExpression(
+    MCNAPI void addCoordinateRangeDataXExpression(
         ::SharedTypes::v1_21_10::ScatterParamsData&  scatterParamsData,
         ::SharedTypes::Legacy::ExpressionNode const& expressionNode
     );
 
-    MCAPI void addCoordinateRangeDataY(
+    MCNAPI void addCoordinateRangeDataY(
         ::SharedTypes::v1_21_10::ScatterParamsData&         scatterParamsData,
         ::SharedTypes::v1_21_10::CoordinateRangeData const& coordinateRangeData
     );
 
-    MCAPI void addCoordinateRangeDataYExpression(
+    MCNAPI void addCoordinateRangeDataYExpression(
         ::SharedTypes::v1_21_10::ScatterParamsData&  scatterParamsData,
         ::SharedTypes::Legacy::ExpressionNode const& expressionNode
     );
 
-    MCAPI void addCoordinateRangeDataZ(
+    MCNAPI void addCoordinateRangeDataZ(
         ::SharedTypes::v1_21_10::ScatterParamsData&         scatterParamsData,
         ::SharedTypes::v1_21_10::CoordinateRangeData const& coordinateRangeData
     );
 
-    MCAPI void addCoordinateRangeDataZExpression(
+    MCNAPI void addCoordinateRangeDataZExpression(
         ::SharedTypes::v1_21_10::ScatterParamsData&  scatterParamsData,
         ::SharedTypes::Legacy::ExpressionNode const& expressionNode
     );
 
-    MCAPI void addIterations(
+    MCNAPI void addIterations(
         ::SharedTypes::v1_21_10::ScatterParamsData&  scatterParamsData,
         ::SharedTypes::Legacy::ExpressionNode const& iterations
     );
 
-    MCAPI void addScatterChance(
+    MCNAPI void addScatterChance(
         ::SharedTypes::v1_21_10::ScatterParamsData&       scatterParamsData,
         ::SharedTypes::v1_21_10::ScatterChanceData const& scatterChance
     );
 
-    MCAPI void addScatterChanceExpression(
+    MCNAPI void addScatterChanceExpression(
         ::SharedTypes::v1_21_10::ScatterParamsData&  scatterParamsData,
         ::SharedTypes::Legacy::ExpressionNode const& scatterChance
     );
 
-    MCAPI void addScatterParams(::ScatterParams const& scatterParams);
+    MCNAPI void addScatterParams(::ScatterParams const& scatterParams);
     // NOLINTEND
 
 public:
@@ -109,12 +109,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

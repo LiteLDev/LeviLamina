@@ -75,16 +75,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addNetherrackDripColumn(::Random& random, ::BlockSource& region, ::BlockPos pos);
+    MCNAPI void _addNetherrackDripColumn(::Random& random, ::BlockSource& region, ::BlockPos pos);
 
-    MCAPI void _maybeReplaceBlock(
+    MCNAPI void _maybeReplaceBlock(
         ::Random&                           random,
         ::BlockSource&                      region,
         ::BlockPos                          pos,
         ::PortalEnvironmentModifiers const& modifiers
     );
 
-    MCAPI void _maybeReplaceFullStoneBlock(
+    MCNAPI void _maybeReplaceFullStoneBlock(
         ::Random&                           random,
         ::BlockSource&                      region,
         ::BlockPos                          pos,
@@ -92,27 +92,27 @@ public:
         ::PortalEnvironmentModifiers const& modifiers
     );
 
-    MCAPI void _maybeReplaceStairs(
+    MCNAPI void _maybeReplaceStairs(
         ::Random&                           random,
         ::BlockSource&                      region,
         ::BlockPos                          pos,
         ::PortalEnvironmentModifiers const& modifiers
     );
 
-    MCAPI void _moveStructureBoundsToSuitableY(
+    MCNAPI void _moveStructureBoundsToSuitableY(
         ::Random&                           random,
         ::BlockSource&                      region,
         ::PortalEnvironmentModifiers const& modifiers
     );
 
-    MCAPI void
+    MCNAPI void
     _spreadNetherrack(::Random& random, ::BlockSource& region, ::PortalEnvironmentModifiers const& modifiers);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _willLavaFlowIn(::BlockSource& region, ::BlockPos pos);
+    MCNAPI static bool _willLavaFlowIn(::BlockSource& region, ::BlockPos pos);
     // NOLINTEND
 
 public:
@@ -124,14 +124,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::StructurePieceType $getType() const;
+    MCNAPI ::StructurePieceType $getType() const;
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

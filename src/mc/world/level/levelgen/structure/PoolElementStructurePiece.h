@@ -4,22 +4,22 @@
 
 // auto generated inclusion list
 #include "mc/util/Rotation.h"
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
+#include "mc/world/level/levelgen/structure/JigsawJunction.h"
 #include "mc/world/level/levelgen/structure/StructurePiece.h"
 #include "mc/world/level/levelgen/v1/AdjustmentEffect.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockPos;
 class BlockSource;
 class BlockVolume;
-class BoundingBox;
 class ChunkPos;
 class Dimension;
 class Random;
 class StructurePoolElement;
 struct ActorDefinitionIdentifier;
-struct JigsawJunction;
 // clang-format on
 
 class PoolElementStructurePiece : public ::StructurePiece {
@@ -82,18 +82,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCNAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI void $moveBoundingBox(int dx, int dy, int dz);
+    MCNAPI void $moveBoundingBox(int dx, int dy, int dz);
 
-    MCFOLD bool $_needsPostProcessing(::BlockSource& region);
+    MCNAPI bool $_needsPostProcessing(::BlockSource& region);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

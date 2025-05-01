@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class BaseAttributeMap;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/attribute/BaseAttributeMap.h"
 
 struct AttributesComponent {
 public:
@@ -22,12 +20,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AttributesComponent(::AttributesComponent&&);
+    MCNAPI AttributesComponent(::AttributesComponent&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AttributesComponent&&);
+    MCNAPI void* $ctor(::AttributesComponent&&);
     // NOLINTEND
 };

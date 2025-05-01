@@ -33,36 +33,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptEventCommandMessageAfterEvent(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent const&);
+    MCNAPI ScriptEventCommandMessageAfterEvent(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent const&);
 
-    MCAPI ScriptEventCommandMessageAfterEvent(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&);
+    MCNAPI ScriptEventCommandMessageAfterEvent(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&);
 
-    MCAPI ScriptEventCommandMessageAfterEvent(
+    MCNAPI ScriptEventCommandMessageAfterEvent(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEventIntermediateData> const&
                                         scriptCommandMessageEvent,
         ::Scripting::WeakLifetimeScope& scope
     );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&);
 
-    MCAPI ~ScriptEventCommandMessageAfterEvent();
+    MCNAPI ~ScriptEventCommandMessageAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent const&);
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEventIntermediateData> const&
                                         scriptCommandMessageEvent,
         ::Scripting::WeakLifetimeScope& scope
@@ -72,7 +72,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

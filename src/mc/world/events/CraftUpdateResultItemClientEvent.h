@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/world/item/ItemInstance.h"
 
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
-class ItemInstance;
 // clang-format on
 
 struct CraftUpdateResultItemClientEvent {

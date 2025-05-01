@@ -43,7 +43,7 @@ public:
     // vIndex: 1
     virtual bool isAlive() const /*override*/;
 
-    // vIndex: 23
+    // vIndex: 24
     virtual ::ServerAuthMovementMode getMovementAuthorityMode() const /*override*/;
 
     // vIndex: 2
@@ -96,24 +96,27 @@ public:
     virtual void resendPlayerState() const /*override*/;
 
     // vIndex: 17
+    virtual void sendPlayerInventory() const /*override*/;
+
+    // vIndex: 18
     virtual bool isSneaking() const /*override*/;
 
     // vIndex: 3
     virtual ::Block const& unwrapBlock(uint const& block) const /*override*/;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual ::Block const& getBlock(::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual ::Block const& getExtraBlock(::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 20
+    // vIndex: 21
     virtual bool isLastBuildBlockInteractive() const /*override*/;
 
-    // vIndex: 21
+    // vIndex: 22
     virtual void sendBlockInteractedWith(::BlockPos const& pos) /*override*/;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual ::DepenetrationComponent& getDepenetrationComponent() /*override*/;
 
     // vIndex: 0
@@ -129,36 +132,36 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setSelectedSlot(int slot, ::ContainerID containerId);
+    MCNAPI void $setSelectedSlot(int slot, ::ContainerID containerId);
 
-    MCAPI bool $isAlive() const;
+    MCNAPI bool $isAlive() const;
 
-    MCAPI ::ServerAuthMovementMode $getMovementAuthorityMode() const;
+    MCNAPI ::ServerAuthMovementMode $getMovementAuthorityMode() const;
 
-    MCAPI ::ItemStack $unwrapItem(::NetworkItemStackDescriptor const& item) const;
+    MCNAPI ::ItemStack $unwrapItem(::NetworkItemStackDescriptor const& item) const;
 
-    MCAPI ::ItemStack const& $getSelectedItem() const;
+    MCNAPI ::ItemStack const& $getSelectedItem() const;
 
-    MCAPI void $setSelectedItem(::ItemStack const& item);
+    MCNAPI void $setSelectedItem(::ItemStack const& item);
 
-    MCAPI ::PlayerInventorySlotData $getSelectedSlot() const;
+    MCNAPI ::PlayerInventorySlotData $getSelectedSlot() const;
 
-    MCAPI float $getMaxPickRange() const;
+    MCNAPI float $getMaxPickRange() const;
 
-    MCAPI ::Vec3 $getPosition() const;
+    MCNAPI ::Vec3 $getPosition() const;
 
-    MCAPI void $setPosition(::Vec3 const& position);
+    MCNAPI void $setPosition(::Vec3 const& position);
 
-    MCAPI void $createTransactionContext(
+    MCNAPI void $createTransactionContext(
         ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)>&& callback,
         ::std::function<void()>&&                                                          execute
     );
 
-    MCAPI void $addExpectedAction(::InventoryAction const& action);
+    MCNAPI void $addExpectedAction(::InventoryAction const& action);
 
-    MCAPI bool $baseUseItem(::ItemStack& item);
+    MCNAPI bool $baseUseItem(::ItemStack& item);
 
-    MCAPI ::InteractionResult $useItemOn(
+    MCNAPI ::InteractionResult $useItemOn(
         ::ItemStack&      item,
         ::BlockPos const& at,
         uchar             face,
@@ -167,28 +170,30 @@ public:
         bool              isFirstEvent
     );
 
-    MCAPI void $resendBlocksAroundArea(::BlockPos const& pos, uchar facing) const;
+    MCNAPI void $resendBlocksAroundArea(::BlockPos const& pos, uchar facing) const;
 
-    MCAPI void $resendPlayerState() const;
+    MCNAPI void $resendPlayerState() const;
 
-    MCAPI bool $isSneaking() const;
+    MCNAPI void $sendPlayerInventory() const;
 
-    MCAPI ::Block const& $unwrapBlock(uint const& block) const;
+    MCNAPI bool $isSneaking() const;
 
-    MCAPI ::Block const& $getBlock(::BlockPos const& pos) const;
+    MCNAPI ::Block const& $unwrapBlock(uint const& block) const;
 
-    MCAPI ::Block const& $getExtraBlock(::BlockPos const& pos) const;
+    MCNAPI ::Block const& $getBlock(::BlockPos const& pos) const;
 
-    MCAPI bool $isLastBuildBlockInteractive() const;
+    MCNAPI ::Block const& $getExtraBlock(::BlockPos const& pos) const;
 
-    MCAPI void $sendBlockInteractedWith(::BlockPos const& pos);
+    MCNAPI bool $isLastBuildBlockInteractive() const;
 
-    MCAPI ::DepenetrationComponent& $getDepenetrationComponent();
+    MCNAPI void $sendBlockInteractedWith(::BlockPos const& pos);
+
+    MCNAPI ::DepenetrationComponent& $getDepenetrationComponent();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

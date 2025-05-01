@@ -19,14 +19,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool readValue(char const* key, ::std::string& result) const;
+    MCNAPI bool readValue(char const* key, ::std::string& result) const;
 
-    MCAPI ~RegistryKey();
+    MCNAPI ~RegistryKey();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

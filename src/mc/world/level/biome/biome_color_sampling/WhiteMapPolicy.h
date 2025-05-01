@@ -34,13 +34,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::mce::Color $get(::BlockSource&, ::BlockPos const&) const;
+    MCNAPI ::mce::Color $get(::BlockSource&, ::BlockPos const&) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

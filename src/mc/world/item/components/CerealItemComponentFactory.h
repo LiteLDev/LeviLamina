@@ -44,24 +44,24 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ComponentMetadata(::CerealItemComponentFactory::ComponentMetadata const&);
+        MCNAPI ComponentMetadata(::CerealItemComponentFactory::ComponentMetadata const&);
 
-        MCAPI ::CerealItemComponentFactory::ComponentMetadata&
+        MCNAPI ::CerealItemComponentFactory::ComponentMetadata&
         operator=(::CerealItemComponentFactory::ComponentMetadata&&);
 
-        MCAPI ~ComponentMetadata();
+        MCNAPI ~ComponentMetadata();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::CerealItemComponentFactory::ComponentMetadata const&);
+        MCNAPI void* $ctor(::CerealItemComponentFactory::ComponentMetadata const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -81,34 +81,34 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     addAllComponentUpgrades(::CerealDocumentUpgrader& documentUpgrader, ::cereal::ReflectionCtx const& ctx);
 
-    MCAPI static void addComponentMetadata(
+    MCNAPI static void addComponentMetadata(
         ::cereal::ReflectionCtx&                          ctx,
         ::std::string const&                              componentName,
         ::CerealItemComponentFactory::ComponentMetadata&& metadata,
         ::std::optional<::SemVersion>                     releasedMinFormatVersion
     );
 
-    MCAPI static ::std::shared_ptr<::ItemComponent>
+    MCNAPI static ::std::shared_ptr<::ItemComponent>
     constructItemComponent(::std::string const& name, ::cereal::ReflectionCtx const& ctx);
 
-    MCAPI static ::CerealItemComponentFactory* contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
+    MCNAPI static ::CerealItemComponentFactory* contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
 
-    MCAPI static void deprecateComponentStartingFromVersion(
+    MCNAPI static void deprecateComponentStartingFromVersion(
         ::std::string const&           name,
         ::SemVersion                   deprecatedVersion,
         ::cereal::ReflectionCtx const& ctx
     );
 
-    MCAPI static bool isComponentBasedItemSchema(
+    MCNAPI static bool isComponentBasedItemSchema(
         ::SemVersion const&            formatVersion,
         ::Json::Value const&           itemData,
         ::cereal::ReflectionCtx const& ctx
     );
 
-    MCAPI static bool validateCerealComponent(
+    MCNAPI static bool validateCerealComponent(
         ::std::string                  componentName,
         ::SemVersion const&            documentVersion,
         ::IPackLoadContext const&      packLoadContext,

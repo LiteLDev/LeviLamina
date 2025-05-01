@@ -24,12 +24,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addPendingGenerators(::IScriptGeneratorStats* stats);
+    MCNAPI void _addPendingGenerators(::IScriptGeneratorStats* stats);
 
-    MCAPI void _removeExpiredGenerators(::IScriptGeneratorStats* stats);
+    MCNAPI void _removeExpiredGenerators(::IScriptGeneratorStats* stats);
 
-    MCAPI ::ScriptAsyncJobCoordinator& operator=(::ScriptAsyncJobCoordinator const&);
+    MCNAPI ::ScriptAsyncJobCoordinator& operator=(::ScriptAsyncJobCoordinator const&);
 
-    MCAPI void process(::std::chrono::microseconds timeSlice, ::IScriptGeneratorStats* stats);
+    MCNAPI void process(::std::chrono::microseconds timeSlice, ::IScriptGeneratorStats* stats);
     // NOLINTEND
 };

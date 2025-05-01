@@ -44,37 +44,37 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 34
+    // vIndex: 35
     virtual void eraseLootTable() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setLootTable(::std::string const& lootTable, int lootTableSeed);
+    MCNAPI void setLootTable(::std::string const& lootTable, int lootTableSeed);
 
-    MCAPI void unPackLootTable(::Level& level, ::Container& container, ::DimensionType dimensionId, ::Actor* actor);
+    MCNAPI void unPackLootTable(::Level& level, ::Container& container, ::DimensionType dimensionId, ::Actor* actor);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $eraseLootTable();
+    MCNAPI void $eraseLootTable();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -36,45 +36,47 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addOrReplacePalette(
+    MCNAPI void addOrReplacePalette(
         ::std::string const&                                                             paletteId,
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptBlockPalette> palette
     ) const;
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptBlockPalette>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptBlockPalette>>
     getPalette(::std::string const& paletteId) const;
 
-    MCAPI ::std::vector<::std::string> getPaletteIdList() const;
+    MCNAPI ::std::vector<::std::string> getPaletteIdList() const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptIBlockPaletteItem>>
     getPaletteItem(::std::string const& paletteId, int index) const;
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptBlockPalette> getPrimaryPalette() const;
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptBlockPalette> getPrimaryPalette() const;
 
-    MCAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
     getSelectedBlock() const;
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptIBlockPaletteItem> getSelectedItem() const;
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptIBlockPaletteItem>
+    getSelectedItem() const;
 
-    MCAPI ::Scripting::Result<void> removePalette(::std::string const& paletteId) const;
+    MCNAPI ::Scripting::Result<void> removePalette(::std::string const& paletteId) const;
 
-    MCAPI ::Scripting::Result<void> setPaletteItem(
+    MCNAPI ::Scripting::Result<void> setPaletteItem(
         ::std::string const&                                                                  paletteId,
         int                                                                                   index,
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptIBlockPaletteItem> item
     ) const;
 
-    MCAPI ::Scripting::Result<void> setPrimaryPalette(::std::string const& paletteId) const;
+    MCNAPI ::Scripting::Result<void> setPrimaryPalette(::std::string const& paletteId) const;
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     setSelectedItem(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptIBlockPaletteItem> item) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptBlockPaletteService> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptBlockPaletteService> bindScript();
     // NOLINTEND
 };
 

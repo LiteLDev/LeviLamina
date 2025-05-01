@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ActorRuntimeID;
-// clang-format on
+// auto generated inclusion list
+#include "mc/legacy/ActorRuntimeID.h"
 
 struct RuntimeIDComponent {
 public:

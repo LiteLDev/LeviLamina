@@ -2,12 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Vec2;
-class Vec3;
-struct StrictActorIDEntityContextPair;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/vanilla_components/StrictActorIDEntityContextPair.h"
 
 struct VehicleInputIntentComponent {
 public:
@@ -23,6 +21,7 @@ public:
     ::ll::TypedStorage<4, 8, ::std::array<float, 2>>            mPaddleForces;
     ::ll::TypedStorage<1, 2, ::std::array<bool, 2>>             mIsPaddling;
     ::ll::TypedStorage<1, 1, bool>                              mDoMoveAndRotation;
+    ::ll::TypedStorage<1, 1, bool>                              mDoMoveAndRotationAirControlled;
     ::ll::TypedStorage<8, 16, ::StrictActorIDEntityContextPair> mControllingEntity;
     ::ll::TypedStorage<8, 8, uint64>                            mCurrentTick;
     // NOLINTEND

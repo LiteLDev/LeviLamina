@@ -16,30 +16,30 @@ class PacketTransportInternal {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void DeregisterReceivedPacketCallback(void*);
+    MCNAPI void DeregisterReceivedPacketCallback(void*);
 
-    MCAPI void NotifyOnClose();
+    MCNAPI void NotifyOnClose();
 
-    MCAPI void NotifyPacketReceived(::rtc::ReceivedPacket const&);
+    MCNAPI void NotifyPacketReceived(::rtc::ReceivedPacket const&);
 
-    MCAPI PacketTransportInternal();
+    MCNAPI PacketTransportInternal();
 
-    MCAPI void
+    MCNAPI void
     RegisterReceivedPacketCallback(void*, ::absl::AnyInvocable<void(::rtc::PacketTransportInternal*, ::rtc::ReceivedPacket const&)>);
 
-    MCAPI void SetOnCloseCallback(::absl::AnyInvocable<void() &&>);
+    MCNAPI void SetOnCloseCallback(::absl::AnyInvocable<void() &&>);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/block/block_serialization_utils/NBTState.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
-namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 namespace BlockSerializationUtils {
@@ -57,13 +57,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~NbtToBlockCache();
+    MCNAPI ~NbtToBlockCache();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

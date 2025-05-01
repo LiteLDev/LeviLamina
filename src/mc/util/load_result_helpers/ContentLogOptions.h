@@ -24,21 +24,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContentLogOptions(::LoadResultHelpers::ContentLogOptions const&);
+    MCNAPI ContentLogOptions(::LoadResultHelpers::ContentLogOptions const&);
 
-    MCAPI ~ContentLogOptions();
+    MCNAPI ~ContentLogOptions();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LoadResultHelpers::ContentLogOptions const&);
+    MCNAPI void* $ctor(::LoadResultHelpers::ContentLogOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

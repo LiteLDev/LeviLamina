@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace mce { class Color; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/math/Color.h"
 
 class MapDecoration {
 public:
@@ -62,9 +60,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MapDecoration(::MapDecoration const&);
+    MCNAPI MapDecoration(::MapDecoration const&);
 
-    MCAPI MapDecoration(
+    MCNAPI MapDecoration(
         ::MapDecoration::Type img,
         schar                 x,
         schar                 y,
@@ -73,15 +71,15 @@ public:
         ::mce::Color const&   color
     );
 
-    MCAPI ~MapDecoration();
+    MCNAPI ~MapDecoration();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MapDecoration const&);
+    MCNAPI void* $ctor(::MapDecoration const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::MapDecoration::Type img,
         schar                 x,
         schar                 y,
@@ -94,6 +92,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

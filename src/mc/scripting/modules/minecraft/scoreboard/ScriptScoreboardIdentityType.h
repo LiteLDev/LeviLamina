@@ -12,13 +12,14 @@ struct ScriptScoreboardIdentityType {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::EnumBindingBuilder<
+    MCNAPI static ::Scripting::EnumBindingBuilder<
         ::ScriptModuleMinecraft::ScriptScoreboardIdentityType_t,
         ::ScriptModuleMinecraft::ScriptScoreboardIdentityType_t>
     bindV010();
 
-    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::ScriptModuleMinecraft::ScriptScoreboardIdentityType_t>
-    bindV1();
+    MCNAPI static ::Scripting::
+        EnumBindingBuilder<::std::string, ::ScriptModuleMinecraft::ScriptScoreboardIdentityType_t>
+        bindV1();
     // NOLINTEND
 };
 

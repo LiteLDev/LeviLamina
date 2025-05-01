@@ -51,17 +51,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
+        MCNAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
-        MCAPI void write(::BinaryStream& stream) const;
+        MCNAPI void write(::BinaryStream& stream) const;
 
-        MCAPI ~ServerData();
+        MCNAPI ~ServerData();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -123,32 +123,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _cacheDiscoveryResponseData(::NetherNetServerLocator::ServerData const& serverData);
+    MCNAPI void _cacheDiscoveryResponseData(::NetherNetServerLocator::ServerData const& serverData);
 
-    MCAPI void _onDiscoveryResponse(uint64 networkID, ::gsl::span<char const> responseData);
+    MCNAPI void _onDiscoveryResponse(uint64 networkID, ::gsl::span<char const> responseData);
 
-    MCAPI void _setIsAnnouncing(bool isAnnouncing);
+    MCNAPI void _setIsAnnouncing(bool isAnnouncing);
 
-    MCAPI void setNetherNetConnector(::Bedrock::NonOwnerPointer<::NetherNetConnector>&& connector);
+    MCNAPI void setNetherNetConnector(::Bedrock::NonOwnerPointer<::NetherNetConnector>&& connector);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::PingedCompatibleServer
+    MCNAPI static ::PingedCompatibleServer
     _transformFrom(uint64 networkID, ::NetherNetServerLocator::ServerData&& serverData);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $startAnnouncingServer(
+    MCNAPI void $startAnnouncingServer(
         ::std::string const&                      playerName,
         ::std::string const&                      worldName,
         ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
@@ -160,22 +160,22 @@ public:
         bool                                      isHardcore
     );
 
-    MCAPI void $stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform);
+    MCNAPI void $stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform);
 
-    MCAPI void $startServerDiscovery(::PortPair ports);
+    MCNAPI void $startServerDiscovery(::PortPair ports);
 
-    MCAPI void $stopServerDiscovery();
+    MCNAPI void $stopServerDiscovery();
 
-    MCAPI ::std::vector<::PingedCompatibleServer> $getServerList() const;
+    MCNAPI ::std::vector<::PingedCompatibleServer> $getServerList() const;
 
-    MCAPI void $clearServerList();
+    MCNAPI void $clearServerList();
 
-    MCAPI void $update();
+    MCNAPI void $update();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

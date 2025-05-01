@@ -28,73 +28,73 @@ class BaseChannel {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     BaseChannel(::webrtc::TaskQueueBase*, ::rtc::Thread*, ::webrtc::TaskQueueBase*, ::std::unique_ptr<::cricket::MediaSendChannelInterface>, ::std::unique_ptr<::cricket::MediaReceiveChannelInterface>, ::std::string_view, bool, ::webrtc::CryptoOptions, ::rtc::UniqueRandomIdGenerator*);
 
-    MCAPI void ChannelNotWritable_n();
+    MCNAPI void ChannelNotWritable_n();
 
-    MCAPI void ChannelWritable_n();
+    MCNAPI void ChannelWritable_n();
 
-    MCAPI bool ClearHandledPayloadTypes();
+    MCNAPI bool ClearHandledPayloadTypes();
 
-    MCAPI bool ConnectToRtpTransport_n();
+    MCNAPI bool ConnectToRtpTransport_n();
 
-    MCAPI void DisableMedia_w();
+    MCNAPI void DisableMedia_w();
 
-    MCAPI void DisconnectFromRtpTransport_n();
+    MCNAPI void DisconnectFromRtpTransport_n();
 
-    MCAPI void EnableMedia_w();
+    MCNAPI void EnableMedia_w();
 
-    MCAPI ::std::vector<::webrtc::RtpExtension>
+    MCNAPI ::std::vector<::webrtc::RtpExtension>
     GetDeduplicatedRtpHeaderExtensions(::std::vector<::webrtc::RtpExtension> const&);
 
-    MCAPI bool IsReadyToSendMedia_w() const;
+    MCNAPI bool IsReadyToSendMedia_w() const;
 
-    MCAPI bool MaybeAddHandledPayloadType(int);
+    MCNAPI bool MaybeAddHandledPayloadType(int);
 
-    MCAPI bool
+    MCNAPI bool
     MaybeUpdateDemuxerAndRtpExtensions_w(bool, ::std::optional<::std::vector<::webrtc::RtpExtension>>, ::std::string&);
 
-    MCAPI void OnNetworkRouteChanged(::std::optional<::rtc::NetworkRoute>);
+    MCNAPI void OnNetworkRouteChanged(::std::optional<::rtc::NetworkRoute>);
 
-    MCAPI void OnTransportReadyToSend(bool);
+    MCNAPI void OnTransportReadyToSend(bool);
 
-    MCAPI void OnWritableState(bool);
+    MCNAPI void OnWritableState(bool);
 
-    MCAPI bool RegisterRtpDemuxerSink_w();
+    MCNAPI bool RegisterRtpDemuxerSink_w();
 
-    MCAPI bool SendPacket(bool, ::rtc::CopyOnWriteBuffer*, ::rtc::PacketOptions const&);
+    MCNAPI bool SendPacket(bool, ::rtc::CopyOnWriteBuffer*, ::rtc::PacketOptions const&);
 
-    MCAPI bool SetPayloadTypeDemuxingEnabled_w(bool);
+    MCNAPI bool SetPayloadTypeDemuxingEnabled_w(bool);
 
-    MCAPI void SignalSentPacket_n(::rtc::SentPacket const&);
+    MCNAPI void SignalSentPacket_n(::rtc::SentPacket const&);
 
-    MCAPI ::std::string ToString() const;
+    MCNAPI ::std::string ToString() const;
 
-    MCAPI bool UpdateLocalStreams_w(::std::vector<::cricket::StreamParams> const&, ::webrtc::SdpType, ::std::string&);
+    MCNAPI bool UpdateLocalStreams_w(::std::vector<::cricket::StreamParams> const&, ::webrtc::SdpType, ::std::string&);
 
-    MCAPI bool UpdateRemoteStreams_w(::cricket::MediaContentDescription const*, ::webrtc::SdpType, ::std::string&);
+    MCNAPI bool UpdateRemoteStreams_w(::cricket::MediaContentDescription const*, ::webrtc::SdpType, ::std::string&);
 
-    MCAPI void UpdateWritableState_n();
+    MCNAPI void UpdateWritableState_n();
 
-    MCAPI bool srtp_active() const;
+    MCNAPI bool srtp_active() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::webrtc::TaskQueueBase*, ::rtc::Thread*, ::webrtc::TaskQueueBase*, ::std::unique_ptr<::cricket::MediaSendChannelInterface>, ::std::unique_ptr<::cricket::MediaReceiveChannelInterface>, ::std::string_view, bool, ::webrtc::CryptoOptions, ::rtc::UniqueRandomIdGenerator*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForMediaChannelNetworkInterface();
+    MCNAPI static void** $vftableForMediaChannelNetworkInterface();
 
-    MCAPI static void** $vftableForChannelInterface();
+    MCNAPI static void** $vftableForChannelInterface();
 
-    MCAPI static void** $vftableForRtpPacketSinkInterface();
+    MCNAPI static void** $vftableForRtpPacketSinkInterface();
     // NOLINTEND
 };
 

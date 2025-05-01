@@ -3,7 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/buffer_span.h"
+#include "mc/platform/threading/Mutex.h"
+#include "mc/world/level/ChunkPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,13 +14,10 @@ class BiomeSource;
 class BlockPos;
 class BlockSource;
 class BoundingBox;
-class ChunkPos;
 class Dimension;
-class HashedString;
 class IPreliminarySurfaceProvider;
 class Random;
 class StructureStart;
-namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class StructureFeature {
@@ -79,9 +79,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureFeature(uint seed, ::HashedString structureFeatureType);
+    MCNAPI StructureFeature(uint seed, ::HashedString structureFeatureType);
 
-    MCAPI void addFeature(
+    MCNAPI void addFeature(
         ::Dimension&                         dimension,
         ::Random&                            random,
         ::ChunkPos const&                    cp,
@@ -89,28 +89,28 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
 
-    MCAPI void createBlueprints(
+    MCNAPI void createBlueprints(
         ::Dimension&                         dimension,
         ::ChunkPos const&                    cp,
         ::BiomeSource const&                 biomeSource,
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
 
-    MCAPI ::std::vector<::ChunkPos> findFarAwayStructures(::buffer_span<::ChunkPos> activeChunks, uint safetyBorder);
+    MCNAPI ::std::vector<::ChunkPos> findFarAwayStructures(::buffer_span<::ChunkPos> activeChunks, uint safetyBorder);
 
-    MCAPI void foreachIntersectingStructureStart(::BoundingBox const& bb, ::std::function<void(::StructureStart&)> fn);
+    MCNAPI void foreachIntersectingStructureStart(::BoundingBox const& bb, ::std::function<void(::StructureStart&)> fn);
 
-    MCAPI void garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks, uint safetyBorder);
+    MCNAPI void garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks, uint safetyBorder);
 
-    MCAPI bool isInsideBoundingFeature(int cellX, int cellY, int cellZ);
+    MCNAPI bool isInsideBoundingFeature(int cellX, int cellY, int cellZ);
 
-    MCAPI void postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random);
+    MCNAPI void postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool findNearestFeaturePositionBySpacing(
+    MCNAPI static bool findNearestFeaturePositionBySpacing(
         ::Dimension&                           dimension,
         ::IPreliminarySurfaceProvider const&   preliminarySurfaceLevel,
         ::StructureFeature&                    feature,
@@ -126,7 +126,7 @@ public:
         bool                                   maxSearchRadius
     );
 
-    MCAPI static ::ChunkPos getChunkPosInSpace(
+    MCNAPI static ::ChunkPos getChunkPosInSpace(
         ::ChunkPos const& cp,
         ::Random&         random,
         uint              levelSeed,
@@ -140,23 +140,23 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint seed, ::HashedString structureFeatureType);
+    MCNAPI void* $ctor(uint seed, ::HashedString structureFeatureType);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $shouldAddHardcodedSpawnAreas() const;
+    MCNAPI bool $shouldAddHardcodedSpawnAreas() const;
 
-    MCFOLD bool $shouldPostProcessMobs() const;
+    MCNAPI bool $shouldPostProcessMobs() const;
 
-    MCAPI bool $getNearestGeneratedFeature(
+    MCNAPI bool $getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
         ::BlockPos const&                      origin,
@@ -166,12 +166,12 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCAPI ::StructureStart* $getStructureAt(int cellX, int cellY, int cellZ);
+    MCNAPI ::StructureStart* $getStructureAt(int cellX, int cellY, int cellZ);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

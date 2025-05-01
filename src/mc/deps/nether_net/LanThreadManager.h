@@ -30,7 +30,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 144> mUnk15d021;
     ::ll::UntypedStorage<8, 16>  mUnk1df5ad;
-    ::ll::UntypedStorage<8, 8>   mUnkf60678;
+    ::ll::UntypedStorage<8, 8>   mUnk91c766;
     ::ll::UntypedStorage<8, 128> mUnk4506fd;
     ::ll::UntypedStorage<8, 8>   mUnk8c874b;
     ::ll::UntypedStorage<8, 80>  mUnk604495;
@@ -58,19 +58,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void BeginNetworkDiscovery();
+    MCNAPI void BeginNetworkDiscovery();
 
-    MCAPI void BroadcastTask();
+    MCNAPI void BroadcastTask();
 
-    MCAPI void CreateEncryptedBroadcastSocket();
+    MCNAPI void CreateEncryptedBroadcastSocket();
 
-    MCAPI void DestroyLanResources();
+    MCNAPI void DestroyLanResources();
 
-    MCAPI void DisableBroadcastDiscovery(::NetherNet::NetworkID id);
+    MCNAPI void DisableBroadcastDiscovery(::NetherNet::NetworkID id);
 
-    MCAPI void EnableBroadcastDiscovery(::NetherNet::NetworkID id);
+    MCNAPI void EnableBroadcastDiscovery(::NetherNet::NetworkID id);
 
-    MCAPI void Initialize(
+    MCNAPI void Initialize(
         char const*                    threadInit,
         ::NetherNet::ThreadInit const& applicationId,
         uint64                         port,
@@ -78,64 +78,64 @@ public:
         ::std::chrono::milliseconds    threadName
     );
 
-    MCAPI bool IsBroadcastDiscoveryEnabled(::NetherNet::NetworkID id);
+    MCNAPI bool IsBroadcastDiscoveryEnabled(::NetherNet::NetworkID id);
 
-    MCAPI explicit LanThreadManager(::NetherNet::ContextProxy const& ctx);
+    MCNAPI explicit LanThreadManager(::NetherNet::ContextProxy const& ctx);
 
-    MCAPI void OnNetworkDiscoveryComplete();
+    MCNAPI void OnNetworkDiscoveryComplete();
 
-    MCAPI void OnPacket(::rtc::AsyncPacketSocket* packet, ::rtc::ReceivedPacket const&);
+    MCNAPI void OnPacket(::rtc::AsyncPacketSocket* packet, ::rtc::ReceivedPacket const&);
 
-    MCAPI void SendLanBroadcastRequest(::std::unique_ptr<::rtc::AsyncPacketSocket>& socket, ::NetherNet::NetworkID id);
+    MCNAPI void SendLanBroadcastRequest(::std::unique_ptr<::rtc::AsyncPacketSocket>& socket, ::NetherNet::NetworkID id);
 
-    MCAPI void SendLanBroadcastResponse(
+    MCNAPI void SendLanBroadcastResponse(
         ::rtc::SocketAddress const&                 destination,
         ::NetherNet::DiscoveryResponsePacket const& packet
     );
 
-    MCAPI void SendSignalingMessageTo(
+    MCNAPI void SendSignalingMessageTo(
         ::NetherNet::NetworkID networkIdFrom,
         ::NetherNet::NetworkID networkIdTo,
         ::std::string const&   message
     );
 
-    MCAPI void SendSignalingMessageTo(
+    MCNAPI void SendSignalingMessageTo(
         ::std::unique_ptr<::rtc::AsyncPacketSocket>& socket,
         ::NetherNet::NetworkID                       networkIdFrom,
         ::NetherNet::NetworkID                       networkIdTo,
         ::std::string const&                         message
     );
 
-    MCAPI ::std::error_code SendToHelper(
+    MCNAPI ::std::error_code SendToHelper(
         ::std::unique_ptr<::rtc::AsyncPacketSocket>& socket,
         void const*                                  data,
         uint64                                       size,
         ::rtc::SocketAddress const&                  addr
     );
 
-    MCAPI void Shutdown();
+    MCNAPI void Shutdown();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::NetherNet::ContextProxy const& ctx);
+    MCNAPI void* $ctor(::NetherNet::ContextProxy const& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForHasSlots();
+    MCNAPI static void** $vftableForHasSlots();
 
-    MCAPI static void** $vftableForThread();
+    MCNAPI static void** $vftableForThread();
 
-    MCAPI static void** $vftableForContextProxy();
+    MCNAPI static void** $vftableForContextProxy();
     // NOLINTEND
 };
 

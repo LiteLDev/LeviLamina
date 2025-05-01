@@ -28,46 +28,46 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Incoming();
+        MCNAPI ~Incoming();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::rtc::AsyncPacketSocket* GetIncoming(::rtc::SocketAddress const&, bool);
+    MCNAPI ::rtc::AsyncPacketSocket* GetIncoming(::rtc::SocketAddress const&, bool);
 
-    MCAPI void OnNewConnection(::rtc::AsyncListenSocket*, ::rtc::AsyncPacketSocket*);
+    MCNAPI void OnNewConnection(::rtc::AsyncListenSocket*, ::rtc::AsyncPacketSocket*);
 
-    MCAPI void OnReadPacket(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const&);
+    MCNAPI void OnReadPacket(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const&);
 
-    MCAPI void OnReadyToSend(::rtc::AsyncPacketSocket*);
+    MCNAPI void OnReadyToSend(::rtc::AsyncPacketSocket*);
 
-    MCAPI
+    MCNAPI
     TCPPort(::rtc::Thread*, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ushort, ushort, ::std::string_view, ::std::string_view, bool, ::webrtc::FieldTrialsView const*);
 
-    MCAPI void TryCreateServerSocket();
+    MCNAPI void TryCreateServerSocket();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::rtc::Thread*, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ushort, ushort, ::std::string_view, ::std::string_view, bool, ::webrtc::FieldTrialsView const*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForPortInterface();
+    MCNAPI static void** $vftableForPortInterface();
 
-    MCAPI static void** $vftableForHasSlots();
+    MCNAPI static void** $vftableForHasSlots();
     // NOLINTEND
 };
 

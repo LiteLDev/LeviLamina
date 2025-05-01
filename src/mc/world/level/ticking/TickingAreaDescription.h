@@ -23,14 +23,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string asString() const;
+    MCNAPI ::std::string asString() const;
 
-    MCAPI ~TickingAreaDescription();
+    MCNAPI ~TickingAreaDescription();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

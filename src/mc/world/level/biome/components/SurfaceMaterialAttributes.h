@@ -4,11 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/biome/components/BiomeComponentBase.h"
-
-// auto generated forward declare list
-// clang-format off
-class BlockDescriptor;
-// clang-format on
+#include "mc/world/level/block/BlockDescriptor.h"
 
 struct SurfaceMaterialAttributes : public ::BiomeComponentBase {
 public:
@@ -32,24 +28,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SurfaceMaterialAttributes();
+    MCNAPI SurfaceMaterialAttributes();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

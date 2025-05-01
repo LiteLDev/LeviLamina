@@ -25,22 +25,22 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $getLocErrorMessage() const;
+    MCNAPI ::std::string $getLocErrorMessage() const;
 
-    MCAPI ::std::unordered_map<int, ::std::string> const& $getLocErrorMessageMap() const;
+    MCNAPI ::std::unordered_map<int, ::std::string> const& $getLocErrorMessageMap() const;
 
-    MCAPI ::std::unordered_map<int, ::std::string> const& $getEventErrorMessageMap() const;
+    MCNAPI ::std::unordered_map<int, ::std::string> const& $getEventErrorMessageMap() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class SemVersion;
 namespace SharedTypes::v1_20_50 { struct HoverTextColorItemComponent; }
 namespace cereal { struct ReflectionCtx; }
@@ -34,33 +34,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HoverTextColorItemComponent(::HoverTextColorItemComponent const&);
+    MCNAPI HoverTextColorItemComponent(::HoverTextColorItemComponent const&);
 
-    MCAPI explicit HoverTextColorItemComponent(::SharedTypes::v1_20_50::HoverTextColorItemComponent component);
+    MCNAPI explicit HoverTextColorItemComponent(::SharedTypes::v1_20_50::HoverTextColorItemComponent component);
 
-    MCAPI ::HoverTextColorItemComponent& operator=(::HoverTextColorItemComponent const&);
+    MCNAPI ::HoverTextColorItemComponent& operator=(::HoverTextColorItemComponent const&);
 
-    MCAPI ::HoverTextColorItemComponent& operator=(::HoverTextColorItemComponent&&);
+    MCNAPI ::HoverTextColorItemComponent& operator=(::HoverTextColorItemComponent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::HoverTextColorItemComponent const&);
+    MCNAPI void* $ctor(::HoverTextColorItemComponent const&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::HoverTextColorItemComponent component);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_50::HoverTextColorItemComponent component);
     // NOLINTEND
 
 public:
@@ -72,12 +72,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent();
+    MCNAPI void $_initializeComponent();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

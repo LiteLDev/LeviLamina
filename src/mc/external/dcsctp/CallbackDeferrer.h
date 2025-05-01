@@ -18,13 +18,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Error();
+        MCNAPI ~Error();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -32,13 +32,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ScopedDeferrer();
+        MCNAPI ~ScopedDeferrer();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -46,28 +46,28 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~StreamReset();
+        MCNAPI ~StreamReset();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Prepare();
+    MCNAPI void Prepare();
 
-    MCAPI void TriggerDeferred();
+    MCNAPI void TriggerDeferred();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

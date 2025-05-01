@@ -38,6 +38,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::GenerateMessageResult generateMessage(::CommandOrigin const& origin, int maxLength) const;
+    MCNAPI ::GenerateMessageResult generateMessage(::CommandOrigin const& origin, int maxLength) const;
     // NOLINTEND
 };

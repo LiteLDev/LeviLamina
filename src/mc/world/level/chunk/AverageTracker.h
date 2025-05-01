@@ -23,14 +23,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addSample(::std::chrono::nanoseconds dt);
+    MCNAPI void addSample(::std::chrono::nanoseconds dt);
 
-    MCAPI ~AverageTracker();
+    MCNAPI ~AverageTracker();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -13,19 +13,19 @@ class AsyncTCPSocket {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AsyncTCPSocket(::rtc::Socket*);
+    MCNAPI explicit AsyncTCPSocket(::rtc::Socket*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::Socket*);
+    MCNAPI void* $ctor(::rtc::Socket*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

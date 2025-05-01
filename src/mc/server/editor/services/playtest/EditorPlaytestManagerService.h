@@ -59,13 +59,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~PlayerSessionInfo();
+        MCNAPI ~PlayerSessionInfo();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -116,7 +116,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::Services::EditorPlaytestManagerService::PlayerSessionInfo*
+    MCNAPI ::Editor::Services::EditorPlaytestManagerService::PlayerSessionInfo*
     _createSessionInfo(::mce::UUID const& clientUUID);
     // NOLINTEND
 
@@ -129,21 +129,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCFOLD ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCAPI ::Editor::Playtest::SessionResult $getPlaytestSessionAvailability(::WeakEntityRef playerRef);
+    MCNAPI ::Editor::Playtest::SessionResult $getPlaytestSessionAvailability(::WeakEntityRef playerRef);
 
-    MCAPI void $beginPlaytestSession(
+    MCNAPI void $beginPlaytestSession(
         ::WeakEntityRef                                                 playerRef,
         ::Editor::GameOptions const&                                    options,
         ::std::function<void(::Editor::Playtest::SessionResult const&)> callback
     );
 
-    MCAPI void $_handlePlayersSessionTransferResponse(
+    MCNAPI void $_handlePlayersSessionTransferResponse(
         ::WeakEntityRef                                                       playerRef,
         ::Editor::Network::PlaytestBeginSessionTransferResponsePayload const& payload
     );
@@ -152,11 +152,11 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
 
-    MCAPI static void** $vftableForEditorPlaytestManagerServiceProvider();
+    MCNAPI static void** $vftableForEditorPlaytestManagerServiceProvider();
 
-    MCAPI static void** $vftableForEditorPlayerPlaytestServiceProvider();
+    MCNAPI static void** $vftableForEditorPlayerPlaytestServiceProvider();
     // NOLINTEND
 };
 

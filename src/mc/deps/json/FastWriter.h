@@ -33,25 +33,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void writeValue(::Json::Value const& value);
+    MCNAPI void writeValue(::Json::Value const& value);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $write(::Json::Value const& root);
+    MCNAPI ::std::string $write(::Json::Value const& root);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -13,25 +13,25 @@ class ErrorChunk {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ErrorChunk(::dcsctp::Parameters);
+    MCNAPI explicit ErrorChunk(::dcsctp::Parameters);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::dcsctp::ErrorChunk> Parse(::rtc::ArrayView<uchar const>);
+    MCNAPI static ::std::optional<::dcsctp::ErrorChunk> Parse(::rtc::ArrayView<uchar const>);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::dcsctp::Parameters);
+    MCNAPI void* $ctor(::dcsctp::Parameters);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

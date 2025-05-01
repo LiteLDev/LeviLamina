@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/molang/MolangVersion.h"
+
 class ActorAnimationControllerStateTransition {
 public:
     // member variables
@@ -16,4 +19,21 @@ public:
     ActorAnimationControllerStateTransition& operator=(ActorAnimationControllerStateTransition const&);
     ActorAnimationControllerStateTransition(ActorAnimationControllerStateTransition const&);
     ActorAnimationControllerStateTransition();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ActorAnimationControllerStateTransition(
+        ::std::string const& targetStateName,
+        ::std::string const& expression,
+        ::MolangVersion      molangVersion
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(::std::string const& targetStateName, ::std::string const& expression, ::MolangVersion molangVersion);
+    // NOLINTEND
 };

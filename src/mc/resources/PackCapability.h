@@ -42,13 +42,13 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCAPI ~Succeeded();
+            MCNAPI ~Succeeded();
             // NOLINTEND
 
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCFOLD void $dtor();
+            MCNAPI void $dtor();
             // NOLINTEND
         };
 
@@ -68,13 +68,13 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCAPI ~Failed();
+            MCNAPI ~Failed();
             // NOLINTEND
 
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCFOLD void $dtor();
+            MCNAPI void $dtor();
             // NOLINTEND
         };
 
@@ -97,12 +97,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~PackCapability();
+    MCNAPI ~PackCapability();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

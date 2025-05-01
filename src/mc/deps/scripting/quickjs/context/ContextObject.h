@@ -51,8 +51,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk6fd6ad;
-        ::ll::UntypedStorage<1, 1>  mUnkcaed09;
+        ::ll::UntypedStorage<8, 192> mUnkc8e476;
+        ::ll::UntypedStorage<1, 1>   mUnkcaed09;
         // NOLINTEND
 
     public:
@@ -64,13 +64,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~UnhandledPromiseRejectionEntry();
+        MCNAPI ~UnhandledPromiseRejectionEntry();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -101,7 +101,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContextObject(
+    MCNAPI ContextObject(
         ::Scripting::ContextId                                     contextId,
         ::JSContext*                                               jsContext,
         ::Scripting::WeakLifetimeScope                             scope,
@@ -114,57 +114,63 @@ public:
         ::Scripting::ContextConfig const&                          jsRuntime
     );
 
-    MCAPI void _bindGlobals(::Scripting::GlobalBinding const& global);
+    MCNAPI void _bindGlobals(::Scripting::GlobalBinding const& global);
 
-    MCAPI void _bindModules(::std::vector<::Scripting::ModuleBinding> const& modules);
+    MCNAPI void _bindModules(::std::vector<::Scripting::ModuleBinding> const& modules);
 
-    MCAPI void _bindPrint(::JSContext* ctx);
+    MCNAPI void _bindPrint(::JSContext* ctx);
 
-    MCAPI void _resolvePromise(::JSValue jsResolutionFunc, ::entt::meta_any& arg);
+    MCNAPI ::JSModuleDef* _evalScriptAsModule(::std::string const& moduleName, ::std::string const& moduleScript);
 
-    MCAPI void addUnhandledPromiseRejection(void* promise, ::std::string const& message, bool isHandled);
+    MCNAPI void _resolvePromise(::JSValue jsResolutionFunc, ::entt::meta_any& arg);
 
-    MCAPI ::Scripting::ResultAny call(
+    MCNAPI void addUnhandledPromiseRejection(void* promise, ::entt::meta_any rejection, bool isHandled);
+
+    MCNAPI ::Scripting::ResultAny call(
         ::Scripting::TypedObjectHandle<::Scripting::ClosureType> closureHandle,
         ::entt::meta_any*                                        args,
         uint                                                     argc,
         ::entt::meta_type const&                                 expectedReturnType
     );
 
-    MCAPI ::Scripting::ResultAny
+    MCNAPI ::Scripting::ResultAny
     getFutureResult(::Scripting::TypedObjectHandle<::Scripting::FutureType> futureHandle, ::entt::meta_type const&)
         const;
 
-    MCAPI ::Scripting::TypeNameInfo getNameForType(::entt::meta_type const& type, bool allowUnknownTypes) const;
+    MCNAPI ::Scripting::TypeNameInfo getNameForType(::entt::meta_type const& type, bool allowUnknownTypes) const;
 
-    MCAPI ::JSModuleDef* loadScriptAsModule(char const* moduleName);
+    MCNAPI bool isModuleImportAllowed(::std::string const& baseName, ::std::string const& moduleName) const;
 
-    MCAPI ::Scripting::ResultAny run(::std::string const& scriptName, ::std::string const& scriptData);
+    MCNAPI ::JSModuleDef* loadScriptAsModule(::std::string const& moduleName);
 
-    MCAPI ~ContextObject();
+    MCNAPI void processUnhandledPromiseRejection();
+
+    MCNAPI ::Scripting::ResultAny run(::std::string const& scriptName, ::std::string const& scriptData);
+
+    MCNAPI ~ContextObject();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _bindClass(
+    MCNAPI static void _bindClass(
         ::JSContext*                           ctx,
         ::JSModuleDef*                         jsModuleDef,
         ::Scripting::QuickJS::ContextUserData& contextData,
         ::Scripting::QuickJS::RegisteredClass& registeredClass
     );
 
-    MCAPI static void
+    MCNAPI static void
     _bindError(::JSContext* ctx, ::JSModuleDef* moduleDef, ::Scripting::QuickJS::RegisteredError& registeredError);
 
-    MCAPI static ::std::unique_ptr<::Scripting::AnyAndJSValue> _createConstant(
+    MCNAPI static ::std::unique_ptr<::Scripting::AnyAndJSValue> _createConstant(
         ::JSContext*                           ctx,
         ::Scripting::QuickJS::ContextUserData& contextData,
         ::JSValue                              target,
         ::Scripting::ConstantFactory const&    constantCreator
     );
 
-    MCAPI static ::std::unique_ptr<::Scripting::AnyAndJSValue> _createEnumReverseConstant(
+    MCNAPI static ::std::unique_ptr<::Scripting::AnyAndJSValue> _createEnumReverseConstant(
         ::JSContext*                           ctx,
         ::Scripting::QuickJS::ContextUserData& contextData,
         ::JSValue                              enumObj,
@@ -172,7 +178,7 @@ public:
         ::Scripting::ConstantFactory const&    constantBinding
     );
 
-    MCAPI static void _createFunction(
+    MCNAPI static void _createFunction(
         ::JSContext*                        ctx,
         ::JSValue                           jsValue,
         ::Scripting::FunctionBinding const& functionBinding,
@@ -180,21 +186,21 @@ public:
         ::std::string const&                className
     );
 
-    MCAPI static void _createGlobalEnum(
+    MCNAPI static void _createGlobalEnum(
         ::JSContext*                           ctx,
         ::Scripting::QuickJS::ContextUserData& contextData,
         ::Scripting::EnumBinding const&        enumBinding
     );
 
-    MCAPI static void _createGlobalFunction(::JSContext* ctx, ::Scripting::FunctionBinding const& functionBinding);
+    MCNAPI static void _createGlobalFunction(::JSContext* ctx, ::Scripting::FunctionBinding const& functionBinding);
 
-    MCAPI static void _createGlobalObject(
+    MCNAPI static void _createGlobalObject(
         ::JSContext*                           ctx,
         ::Scripting::QuickJS::ContextUserData& contextData,
         ::Scripting::ObjectFactory const&      objectFactory
     );
 
-    MCAPI static void _createIterator(
+    MCNAPI static void _createIterator(
         ::JSContext*                           ctx,
         ::JSModuleDef*                         jsModuleDef,
         ::Scripting::QuickJS::ContextUserData& contextData,
@@ -202,47 +208,47 @@ public:
         ::Scripting::IteratorBinding&          iteratorBinding
     );
 
-    MCAPI static void _createModuleEnum(
+    MCNAPI static void _createModuleEnum(
         ::JSContext*                           ctx,
         ::JSModuleDef*                         jsModuleDef,
         ::Scripting::QuickJS::ContextUserData& contextData,
         ::Scripting::EnumBinding const&        enumBinding
     );
 
-    MCAPI static void _createModuleFunction(
+    MCNAPI static void _createModuleFunction(
         ::JSContext*                        ctx,
         ::JSModuleDef*                      jsModuleDef,
         ::Scripting::FunctionBinding const& functionBinding
     );
 
-    MCAPI static void _createModuleObject(
+    MCNAPI static void _createModuleObject(
         ::JSContext*                           ctx,
         ::JSModuleDef*                         jsModuleDef,
         ::Scripting::QuickJS::ContextUserData& contextData,
         ::Scripting::ObjectFactory const&      objectFactory
     );
 
-    MCAPI static void _createProperty(
+    MCNAPI static void _createProperty(
         ::JSContext*                        ctx,
-        ::JSValue                           jsValue,
+        ::JSValue                           jsPrototype,
         ::Scripting::PropertyBinding const& propertyBinding,
         ::std::string const&                className
     );
 
-    MCAPI static int _initializeModuleBinding(
+    MCNAPI static int _initializeModuleBinding(
         ::JSContext*                           ctx,
         ::JSModuleDef*                         jsModuleDef,
         ::Scripting::QuickJS::ContextUserData& contextData,
         ::Scripting::ModuleBinding const&      moduleBinding
     );
 
-    MCAPI static int _moduleInitializer(::JSContext* ctx, ::JSModuleDef* jsModuleDef);
+    MCNAPI static int _moduleInitializer(::JSContext* ctx, ::JSModuleDef* jsModuleDef);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::ContextId                                     contextId,
         ::JSContext*                                               jsContext,
         ::Scripting::WeakLifetimeScope                             scope,
@@ -259,7 +265,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

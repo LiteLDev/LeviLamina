@@ -24,20 +24,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorInfoRegistry();
+    MCNAPI ActorInfoRegistry();
 
-    MCAPI uint getActorInfoId(uint64 const& name) const;
+    MCNAPI uint getActorInfoId(uint64 const& name) const;
 
-    MCAPI uint getActorInfoId(::std::string const& name) const;
+    MCNAPI uint getActorInfoId(::std::string const& name) const;
 
-    MCAPI bool isSpawnEggAvailable(::std::string identifier);
+    MCNAPI bool isSpawnEggAvailable(::std::string identifier);
 
-    MCAPI void registerActorInfo(::ActorInfo const& info);
+    MCNAPI void registerActorInfo(::ActorInfo const& info);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

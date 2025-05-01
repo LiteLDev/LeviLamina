@@ -18,6 +18,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void fromStringVector(::BlockPlacementDirectionalFilter& instance, ::std::vector<::std::string> faces);
+    MCNAPI static void
+    fromStringVector(::BlockPlacementDirectionalFilter& instance, ::std::vector<::std::string> faces);
     // NOLINTEND
 };

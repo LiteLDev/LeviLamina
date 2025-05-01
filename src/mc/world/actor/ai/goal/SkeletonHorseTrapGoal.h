@@ -44,11 +44,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Horse* _createHorse(::SharedTypes::Legacy::Difficulty const& difficulty);
+    MCNAPI ::Horse* _createHorse(::SharedTypes::Legacy::Difficulty const& difficulty);
 
-    MCAPI ::Skeleton* _createSkeleton(::SharedTypes::Legacy::Difficulty const& otherHorse, ::Horse const& difficulty);
+    MCNAPI ::Skeleton* _createSkeleton(::SharedTypes::Legacy::Difficulty const& otherHorse, ::Horse const& difficulty);
 
-    MCAPI ::Player* _getClosestPlayer() const;
+    MCNAPI ::Player* _getClosestPlayer() const;
     // NOLINTEND
 
 public:
@@ -60,18 +60,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCFOLD void $start();
+    MCNAPI void $start();
 
-    MCAPI void $appendDebugInfo(::std::string& debugInfo) const;
+    MCNAPI void $appendDebugInfo(::std::string& debugInfo) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

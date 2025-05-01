@@ -28,13 +28,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ReleaseDetails();
+        MCNAPI ~ReleaseDetails();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 

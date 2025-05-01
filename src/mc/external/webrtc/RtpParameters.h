@@ -20,27 +20,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RtpParameters();
+    MCNAPI RtpParameters();
 
-    MCAPI RtpParameters(::webrtc::RtpParameters const&);
+    MCNAPI RtpParameters(::webrtc::RtpParameters const&);
 
-    MCAPI ::webrtc::RtpParameters& operator=(::webrtc::RtpParameters const&);
+    MCNAPI ::webrtc::RtpParameters& operator=(::webrtc::RtpParameters const&);
 
-    MCAPI ~RtpParameters();
+    MCNAPI ~RtpParameters();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::webrtc::RtpParameters const&);
+    MCNAPI void* $ctor(::webrtc::RtpParameters const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

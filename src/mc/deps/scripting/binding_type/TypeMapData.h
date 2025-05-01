@@ -34,13 +34,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Mapping();
+        MCNAPI ~Mapping();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -60,21 +60,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TypeMapData(::std::string name_, ::std::vector<::Scripting::TypeMapData::Mapping> mappings_);
+    MCNAPI TypeMapData(::std::string name_, ::std::vector<::Scripting::TypeMapData::Mapping> mappings_);
 
-    MCAPI ~TypeMapData();
+    MCNAPI ~TypeMapData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string name_, ::std::vector<::Scripting::TypeMapData::Mapping> mappings_);
+    MCNAPI void* $ctor(::std::string name_, ::std::vector<::Scripting::TypeMapData::Mapping> mappings_);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

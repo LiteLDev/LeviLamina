@@ -19,12 +19,12 @@ class ActorUpdatePostTickPositionDeltaSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tickActorUpdatePostTickPositionDeltaSystem(::ViewT<
-                                                                  ::StrictEntityContext,
-                                                                  ::Include<::ActorMovementTickNeededComponent>,
-                                                                  ::StateVectorComponent const,
-                                                                  ::PostTickPositionDeltaComponent> view);
+    MCNAPI static void _tickActorUpdatePostTickPositionDeltaSystem(::ViewT<
+                                                                   ::StrictEntityContext,
+                                                                   ::Include<::ActorMovementTickNeededComponent>,
+                                                                   ::StateVectorComponent const,
+                                                                   ::PostTickPositionDeltaComponent> view);
 
-    MCAPI static ::TickingSystemWithInfo createActorUpdatePostTickPositionDeltaSystem();
+    MCNAPI static ::TickingSystemWithInfo createActorUpdatePostTickPositionDeltaSystem();
     // NOLINTEND
 };

@@ -23,24 +23,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PieceWeight(::PieceWeight&&);
+    MCNAPI PieceWeight(::PieceWeight&&);
 
-    MCAPI PieceWeight(::std::string const& pieceClass, int weight, int maxPlaceCount, int minDepth, bool allowInRow);
+    MCNAPI PieceWeight(::std::string const& pieceClass, int weight, int maxPlaceCount, int minDepth, bool allowInRow);
 
-    MCAPI ~PieceWeight();
+    MCNAPI ~PieceWeight();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PieceWeight&&);
+    MCNAPI void* $ctor(::PieceWeight&&);
 
-    MCAPI void* $ctor(::std::string const& pieceClass, int weight, int maxPlaceCount, int minDepth, bool allowInRow);
+    MCNAPI void* $ctor(::std::string const& pieceClass, int weight, int maxPlaceCount, int minDepth, bool allowInRow);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

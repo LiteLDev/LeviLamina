@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/ecs/systems/SystemInfo.h"
+
 // auto generated forward declare list
 // clang-format off
 class ITickingSystem;
-struct SystemInfo;
 // clang-format on
 
 struct TickingSystemWithInfo {
@@ -19,12 +21,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~TickingSystemWithInfo();
+    MCNAPI ~TickingSystemWithInfo();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

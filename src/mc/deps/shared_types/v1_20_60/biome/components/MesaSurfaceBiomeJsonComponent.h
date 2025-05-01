@@ -38,21 +38,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MesaSurfaceBiomeJsonComponent();
+    MCNAPI MesaSurfaceBiomeJsonComponent();
 
-    MCAPI MesaSurfaceBiomeJsonComponent(::SharedTypes::v1_20_60::MesaSurfaceBiomeJsonComponent const&);
+    MCNAPI MesaSurfaceBiomeJsonComponent(::SharedTypes::v1_20_60::MesaSurfaceBiomeJsonComponent const&);
 
-    MCAPI ::SharedTypes::v1_20_60::MesaSurfaceBiomeJsonComponent&
+    MCNAPI ::SharedTypes::v1_20_60::MesaSurfaceBiomeJsonComponent&
     operator=(::SharedTypes::v1_20_60::MesaSurfaceBiomeJsonComponent const&);
 
-    MCAPI ::SharedTypes::v1_20_60::MesaSurfaceBiomeJsonComponent&
+    MCNAPI ::SharedTypes::v1_20_60::MesaSurfaceBiomeJsonComponent&
     operator=(::SharedTypes::v1_20_60::MesaSurfaceBiomeJsonComponent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -66,9 +66,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::SharedTypes::v1_20_60::MesaSurfaceBiomeJsonComponent const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_60::MesaSurfaceBiomeJsonComponent const&);
     // NOLINTEND
 
 public:
@@ -80,7 +80,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

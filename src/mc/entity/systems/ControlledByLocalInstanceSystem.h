@@ -40,7 +40,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo
+    MCNAPI static ::TickingSystemWithInfo
     createCalculateControlledByLocalInstanceSystem(::ControlledByLocalInstanceSystem::Config const& config);
     // NOLINTEND
 };

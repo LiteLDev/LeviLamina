@@ -52,19 +52,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VillagerV2(
+    MCNAPI VillagerV2(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _fixupVillagerProfessionSkinIfNeeded(::DwellerComponent const& dweller);
+    MCNAPI void _fixupVillagerProfessionSkinIfNeeded(::DwellerComponent const& dweller);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -80,24 +80,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $newServerAiStep();
+    MCNAPI void $newServerAiStep();
 
-    MCFOLD void $die(::ActorDamageSource const& source);
+    MCNAPI void $die(::ActorDamageSource const& source);
 
-    MCAPI void $remove();
+    MCNAPI void $remove();
 
-    MCAPI void $buildDebugInfo(::std::string& out) const;
+    MCNAPI void $buildDebugInfo(::std::string& out) const;
 
-    MCAPI bool $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
+    MCNAPI bool $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
+    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

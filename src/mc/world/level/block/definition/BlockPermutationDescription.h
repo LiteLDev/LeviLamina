@@ -17,24 +17,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockPermutationDescription();
+    MCNAPI BlockPermutationDescription();
 
-    MCAPI BlockPermutationDescription(::BlockPermutationDescription const&);
+    MCNAPI BlockPermutationDescription(::BlockPermutationDescription const&);
 
-    MCAPI ~BlockPermutationDescription();
+    MCNAPI ~BlockPermutationDescription();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::BlockPermutationDescription const&);
+    MCNAPI void* $ctor(::BlockPermutationDescription const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

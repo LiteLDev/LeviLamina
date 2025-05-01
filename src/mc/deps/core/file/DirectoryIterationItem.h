@@ -34,23 +34,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DirectoryIterationItem(::Core::DirectoryIterationFlags flags);
+    MCNAPI explicit DirectoryIterationItem(::Core::DirectoryIterationFlags flags);
 
-    MCAPI void setName(::Core::PathPart const& name);
+    MCNAPI void setName(::Core::PathPart const& name);
 
-    MCAPI ~DirectoryIterationItem();
+    MCNAPI ~DirectoryIterationItem();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::DirectoryIterationFlags flags);
+    MCNAPI void* $ctor(::Core::DirectoryIterationFlags flags);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

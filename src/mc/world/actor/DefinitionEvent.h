@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/ExpressionNode.h"
 #include "mc/world/actor/DefinitionEventType.h"
+#include "mc/world/actor/DefinitionTrigger.h"
+#include "mc/world/response/EventResponseCollection.h"
 
 // auto generated forward declare list
 // clang-format off
-class DefinitionTrigger;
-class ExpressionNode;
 class RenderParams;
 struct DefinitionModifier;
-struct EventResponseCollection;
 // clang-format on
 
 class DefinitionEvent {
@@ -29,32 +29,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DefinitionEvent();
+    MCNAPI DefinitionEvent();
 
-    MCAPI DefinitionEvent(::DefinitionEvent const&);
+    MCNAPI DefinitionEvent(::DefinitionEvent const&);
 
-    MCAPI DefinitionEvent(::DefinitionEvent&&);
+    MCNAPI DefinitionEvent(::DefinitionEvent&&);
 
-    MCAPI void evaluateEvent(::RenderParams& params, ::std::vector<::DefinitionModifier>& modifications) const;
+    MCNAPI void evaluateEvent(::RenderParams& params, ::std::vector<::DefinitionModifier>& modifications) const;
 
-    MCAPI ::DefinitionEvent& operator=(::DefinitionEvent const&);
+    MCNAPI ::DefinitionEvent& operator=(::DefinitionEvent const&);
 
-    MCAPI ~DefinitionEvent();
+    MCNAPI ~DefinitionEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::DefinitionEvent const&);
+    MCNAPI void* $ctor(::DefinitionEvent const&);
 
-    MCAPI void* $ctor(::DefinitionEvent&&);
+    MCNAPI void* $ctor(::DefinitionEvent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -28,23 +28,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::LogMessage& operator=(::Editor::LogMessage const&);
+    MCNAPI ::Editor::LogMessage& operator=(::Editor::LogMessage const&);
 
-    MCAPI ::Editor::LogMessage& operator=(::Editor::LogMessage&&);
+    MCNAPI ::Editor::LogMessage& operator=(::Editor::LogMessage&&);
 
-    MCAPI ~LogMessage();
+    MCNAPI ~LogMessage();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

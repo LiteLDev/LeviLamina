@@ -30,33 +30,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TypeMapBuilder(
+    MCNAPI TypeMapBuilder(
         ::std::string const& typeMapName_,
         ::std::string const& keyConstantName_,
         ::entt::meta_type    baseClassType_
     );
 
-    MCAPI void mapping(
+    MCNAPI void mapping(
         ::std::string const&                       keyName,
         ::std::string const&                       className,
         ::std::vector<::Scripting::Release> const& classReleases,
         ::std::vector<::Scripting::Release> const& keyReleases
     );
 
-    MCAPI ~TypeMapBuilder();
+    MCNAPI ~TypeMapBuilder();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::string const& typeMapName_, ::std::string const& keyConstantName_, ::entt::meta_type baseClassType_);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -29,21 +29,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onWakeUpAllPlayers();
+    MCNAPI void _onWakeUpAllPlayers();
 
-    MCAPI void registerForGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
+    MCNAPI void registerForGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCAPI void
+    MCNAPI void
     registerForPlayerSleepManagerEvents(::IServerPlayerSleepManagerConnector& serverPlayerSleepManagerConnector);
 
-    MCAPI void update();
+    MCNAPI void update();
 
-    MCAPI ~TickTimeManager();
+    MCNAPI ~TickTimeManager();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

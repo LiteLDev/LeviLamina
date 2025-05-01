@@ -63,7 +63,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem(::std::string&& message);
+    MCNAPI static ::TickingSystemWithInfo createSystem(::std::string&& message);
     // NOLINTEND
 
 public:
@@ -75,20 +75,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::StrictExecutionContext<
-                     ::Filter<::PlayerComponent>,
-                     ::Read<::StateVectorComponent>,
-                     ::Write<::ActorOwnerComponent>,
-                     ::AddRemove<>,
-                     ::GlobalRead<>,
-                     ::GlobalWrite<>,
-                     ::EntityFactoryT<>>& context);
+    MCNAPI void $tick(::StrictExecutionContext<
+                      ::Filter<::PlayerComponent>,
+                      ::Read<::StateVectorComponent>,
+                      ::Write<::ActorOwnerComponent>,
+                      ::AddRemove<>,
+                      ::GlobalRead<>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& context);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

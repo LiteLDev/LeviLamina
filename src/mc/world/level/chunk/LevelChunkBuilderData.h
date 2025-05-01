@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/threading/SpinLockImpl.h"
+#include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/chunk/ChunkState.h"
 #include "mc/world/level/chunk/LevelChunkGridAreaElement.h"
 
 // auto generated forward declare list
 // clang-format off
-class ChunkPos;
 class LevelChunk;
-class SpinLockImpl;
 // clang-format on
 
 class LevelChunkBuilderData {
@@ -51,20 +51,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelChunkBuilderData();
+    MCNAPI LevelChunkBuilderData();
 
-    MCAPI ~LevelChunkBuilderData();
+    MCNAPI ~LevelChunkBuilderData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

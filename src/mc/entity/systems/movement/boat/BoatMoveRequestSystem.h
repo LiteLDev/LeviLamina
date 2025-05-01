@@ -10,7 +10,7 @@ struct TickingSystemWithInfo;
 namespace BoatMoveRequestSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createSystem(bool isClientSide);
+MCNAPI ::TickingSystemWithInfo createSystem(bool isClientSide);
 // NOLINTEND
 
 } // namespace BoatMoveRequestSystem

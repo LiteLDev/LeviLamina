@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/safety/RedactableString.h"
+
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
@@ -10,7 +13,6 @@ class CommandOrigin;
 class CompoundTag;
 class DataLoadHelper;
 class Level;
-namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class BaseCommandBlock {
@@ -38,36 +40,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _performCommand(::BlockSource& region, ::CommandOrigin const& origin, bool& markForSaving);
+    MCNAPI bool _performCommand(::BlockSource& region, ::CommandOrigin const& origin, bool& markForSaving);
 
-    MCAPI void _setCommand(::BlockSource& region, ::CommandOrigin const& origin, ::std::string const& command);
+    MCNAPI void _setCommand(::BlockSource& region, ::CommandOrigin const& origin, ::std::string const& command);
 
-    MCAPI void compile(::CommandOrigin const& origin, ::Level& level);
+    MCNAPI void compile(::CommandOrigin const& origin, ::Level& level);
 
-    MCAPI ::std::string getLastOutput() const;
+    MCNAPI ::std::string getLastOutput() const;
 
-    MCAPI ::Bedrock::Safety::RedactableString const getName() const;
+    MCNAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI ::BaseCommandBlock& operator=(::BaseCommandBlock&&);
 
-    MCAPI ::BaseCommandBlock& operator=(::BaseCommandBlock&&);
+    MCNAPI bool save(::CompoundTag& tag) const;
 
-    MCAPI bool save(::CompoundTag& tag) const;
+    MCNAPI void setLastOutput(::std::string const& lastOutput, ::std::vector<::std::string> const& params);
 
-    MCAPI void setLastOutput(::std::string const& lastOutput, ::std::vector<::std::string> const& params);
-
-    MCAPI ~BaseCommandBlock();
+    MCNAPI ~BaseCommandBlock();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& DefaultCommandBlockName();
+    MCAPI static ::Bedrock::Safety::RedactableString const& DefaultCommandBlockName();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -48,6 +48,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onActorChangedChunk(::BlockSource const& region, ::ChunkPos toChunkPos, ::DimensionType toDimensionId);
+    MCNAPI void _onActorChangedChunk(::BlockSource const& region, ::ChunkPos toChunkPos, ::DimensionType toDimensionId);
     // NOLINTEND
 };

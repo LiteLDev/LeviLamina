@@ -35,7 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SurfaceLevelCache(
+    MCNAPI SurfaceLevelCache(
         ::DividedPos2d<4>                    startPos,
         ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider,
         uint64                               bufferSizeXZ
@@ -45,7 +45,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::DividedPos2d<4>                    startPos,
         ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider,
         uint64                               bufferSizeXZ
@@ -55,18 +55,18 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const;
+    MCNAPI ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

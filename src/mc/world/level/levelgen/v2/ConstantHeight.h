@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/v2/HeightProvider.h"
+#include "mc/world/level/levelgen/v2/VerticalAnchor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -40,13 +41,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $sample(::IRandom&, ::br::worldgen::WorldGenContext const& heightAccessor) const;
+    MCNAPI int $sample(::IRandom&, ::br::worldgen::WorldGenContext const& heightAccessor) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

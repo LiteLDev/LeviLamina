@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ItemStack;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/item/ItemStack.h"
 
 struct PlayerSelectedItemChangedEvent {
 public:

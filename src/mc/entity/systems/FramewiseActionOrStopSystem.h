@@ -13,9 +13,9 @@ class FramewiseActionOrStopSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createFramewiseActionOrStopSystem();
+    MCNAPI static ::TickingSystemWithInfo createFramewiseActionOrStopSystem();
 
-    MCAPI static void doFramewiseActionOrStopSystem(
+    MCNAPI static void doFramewiseActionOrStopSystem(
         ::LocalMoveVelocityComponent const& localMoveVelocityComponent,
         ::ActionOrStopComponent&            actionOrStopComponent
     );

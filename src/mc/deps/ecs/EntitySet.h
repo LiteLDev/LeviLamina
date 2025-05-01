@@ -23,12 +23,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EntitySet(::EntitySet&&);
+    MCNAPI EntitySet(::EntitySet&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::EntitySet&&);
+    MCNAPI void* $ctor(::EntitySet&&);
     // NOLINTEND
 };

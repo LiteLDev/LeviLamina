@@ -21,27 +21,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RtcpParameters();
+    MCNAPI RtcpParameters();
 
-    MCAPI RtcpParameters(::webrtc::RtcpParameters const&);
+    MCNAPI RtcpParameters(::webrtc::RtcpParameters const&);
 
-    MCAPI bool operator==(::webrtc::RtcpParameters const&) const;
+    MCNAPI bool operator==(::webrtc::RtcpParameters const&) const;
 
-    MCAPI ~RtcpParameters();
+    MCNAPI ~RtcpParameters();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::webrtc::RtcpParameters const&);
+    MCNAPI void* $ctor(::webrtc::RtcpParameters const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

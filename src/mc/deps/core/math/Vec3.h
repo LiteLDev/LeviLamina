@@ -14,8 +14,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI float distanceToLineSquared(::Vec3 const& p0, ::Vec3 const& p1) const;
-
     MCAPI bool isNan() const;
 
     MCAPI bool isNear(::Vec3 const& rhs, float e) const;

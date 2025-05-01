@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void beat();
+    MCNAPI void beat();
     // NOLINTEND
 };
 

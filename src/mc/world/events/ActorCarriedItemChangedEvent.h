@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/world/item/HandSlot.h"
-
-// auto generated forward declare list
-// clang-format off
-class ItemInstance;
-class WeakEntityRef;
-// clang-format on
+#include "mc/world/item/ItemInstance.h"
 
 struct ActorCarriedItemChangedEvent {
 public:
@@ -28,20 +24,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorCarriedItemChangedEvent(::ActorCarriedItemChangedEvent const&);
+    MCNAPI ActorCarriedItemChangedEvent(::ActorCarriedItemChangedEvent const&);
 
-    MCAPI ~ActorCarriedItemChangedEvent();
+    MCNAPI ~ActorCarriedItemChangedEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorCarriedItemChangedEvent const&);
+    MCNAPI void* $ctor(::ActorCarriedItemChangedEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

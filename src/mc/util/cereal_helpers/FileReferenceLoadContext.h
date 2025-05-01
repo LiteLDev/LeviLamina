@@ -11,8 +11,8 @@ class FileReferenceLoadContext : public ::BedrockLoadContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk11b269;
-    ::ll::UntypedStorage<8, 8> mUnk584667;
+    ::ll::UntypedStorage<8, 16> mUnk6e26f3;
+    ::ll::UntypedStorage<8, 8>  mUnkf1bca8;
     // NOLINTEND
 
 public:

@@ -46,34 +46,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _printOriginInvalidError(::ServerLevel& level);
+    MCNAPI void _printOriginInvalidError(::ServerLevel& level);
 
-    MCAPI void _printOutput(::ServerLevel& level, int successCount);
+    MCNAPI void _printOutput(::ServerLevel& level, int successCount);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::FunctionAction> load(::CompoundTag const& tag, ::ICommandOriginLoader& loader);
+    MCNAPI static ::std::unique_ptr<::FunctionAction> load(::CompoundTag const& tag, ::ICommandOriginLoader& loader);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
+    MCNAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
 
-    MCAPI void $serialize(::CompoundTag& tag);
+    MCNAPI void $serialize(::CompoundTag& tag);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

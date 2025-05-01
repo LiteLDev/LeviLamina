@@ -50,7 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AnimateEntityPacket(
+    MCNAPI AnimateEntityPacket(
         ::std::vector<::ActorRuntimeID> const& runtimeIds,
         ::std::string const&                   animation,
         ::std::string const&                   nextState,
@@ -64,7 +64,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::vector<::ActorRuntimeID> const& runtimeIds,
         ::std::string const&                   animation,
         ::std::string const&                   nextState,
@@ -78,24 +78,24 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MinecraftPacketIds $getId() const;
+    MCNAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCAPI void $write(::BinaryStream& s) const;
+    MCNAPI void $write(::BinaryStream& s) const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& s);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& s);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

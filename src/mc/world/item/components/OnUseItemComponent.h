@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/DefinitionTrigger.h"
 #include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -35,32 +36,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::OnUseItemComponent& operator=(::OnUseItemComponent&&);
+    MCNAPI ::OnUseItemComponent& operator=(::OnUseItemComponent&&);
 
-    MCFOLD ::OnUseItemComponent& operator=(::OnUseItemComponent const&);
+    MCNAPI ::OnUseItemComponent& operator=(::OnUseItemComponent const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

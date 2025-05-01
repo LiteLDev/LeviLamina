@@ -36,15 +36,27 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ScopedPop();
+        MCNAPI ~ScopedPop();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkfa0ec0;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SchemaReader& operator=(SchemaReader const&);
+    SchemaReader(SchemaReader const&);
+    SchemaReader();
 
 public:
     // virtual functions
@@ -117,9 +129,6 @@ public:
 
     // vIndex: 22
     virtual void pop() = 0;
-
-    // vIndex: 23
-    virtual bool isSequenceReader() const;
     // NOLINTEND
 
 public:
@@ -131,7 +140,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isSequenceReader() const;
+
     // NOLINTEND
 };
 

@@ -117,23 +117,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int, bool selected) const;
+    MCNAPI bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int, bool selected) const;
 
-    MCAPI int $getEnchantSlot() const;
+    MCNAPI int $getEnchantSlot() const;
 
-    MCAPI bool $isValidRepairItem(
+    MCNAPI bool $isValidRepairItem(
         ::ItemStackBase const&   source,
         ::ItemStackBase const&   repairItem,
         ::BaseGameVersion const& baseGameVersion
     ) const;
 
-    MCFOLD bool $isHandEquipped() const;
+    MCNAPI bool $isHandEquipped() const;
 
-    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
+    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 
-    MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCNAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCAPI ::InHandUpdateType $getInHandUpdateType(
+    MCNAPI ::InHandUpdateType $getInHandUpdateType(
         ::Player const&    player,
         ::ItemStack const& oldItem,
         ::ItemStack const& newItem,
@@ -141,22 +141,22 @@ public:
         bool const         slotChanged
     ) const;
 
-    MCFOLD ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
-    MCAPI void
+    MCNAPI void
     $readUserData(::ItemStackBase& stack, ::IDataInput& input, ::ReadOnlyBinaryStream& underlyingStream) const;
 
-    MCAPI void $writeUserData(::ItemStackBase const& stack, ::IDataOutput& output) const;
+    MCNAPI void $writeUserData(::ItemStackBase const& stack, ::IDataOutput& output) const;
 
-    MCAPI ::HashedString const& $getCooldownType() const;
+    MCNAPI ::HashedString const& $getCooldownType() const;
 
-    MCFOLD int $getCooldownTime() const;
+    MCNAPI int $getCooldownTime() const;
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const;
+    MCNAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const;
 
-    MCAPI void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
@@ -167,6 +167,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

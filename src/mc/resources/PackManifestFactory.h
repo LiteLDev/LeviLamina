@@ -50,9 +50,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackManifestFactory(::PackCapabilityRegistry const& packCapabilityRegistry, ::IPackTelemetry& eventing);
+    MCNAPI PackManifestFactory(::PackCapabilityRegistry const& packCapabilityRegistry, ::IPackTelemetry& eventing);
 
-    MCAPI ::std::unique_ptr<::PackManifest> create(
+    MCNAPI ::std::unique_ptr<::PackManifest> create(
         ::PackAccessStrategy&             accessStrategy,
         ::std::string const&              manifestContent,
         ::PackReport&                     report,
@@ -64,15 +64,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Core::Path const& MANIFEST_LOG_PATH();
-
     MCAPI static ::std::string const& MANIFEST_PACK_UUID_UPGRADE_SALT();
 
     MCAPI static ::Core::Path const& MANIFEST_PATH();
 
     MCAPI static ::Core::Path const& MANIFEST_PATH_OLD();
-
-    MCAPI static ::Core::Path const& MANIFEST_PATH_OLD_BACKUP();
 
     MCAPI static ::std::unordered_map<::std::string, ::std::vector<char> const>& mAlternateContentKeys();
 
@@ -82,19 +78,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PackCapabilityRegistry const& packCapabilityRegistry, ::IPackTelemetry& eventing);
+    MCNAPI void* $ctor(::PackCapabilityRegistry const& packCapabilityRegistry, ::IPackTelemetry& eventing);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::PackManifest> $create(
+    MCNAPI ::std::unique_ptr<::PackManifest> $create(
         ::PackAccessStrategy&     accessStrategy,
         ::ResourceLocation const& location,
         ::PackReport&             report,
@@ -105,6 +101,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

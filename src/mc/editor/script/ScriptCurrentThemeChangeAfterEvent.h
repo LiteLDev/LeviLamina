@@ -23,22 +23,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::Editor::ScriptModule::ScriptCurrentThemeChangeAfterEvent&
+    MCNAPI ::Editor::ScriptModule::ScriptCurrentThemeChangeAfterEvent&
     operator=(::Editor::ScriptModule::ScriptCurrentThemeChangeAfterEvent&&);
 
-    MCAPI ~ScriptCurrentThemeChangeAfterEvent();
+    MCNAPI ~ScriptCurrentThemeChangeAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptCurrentThemeChangeAfterEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptCurrentThemeChangeAfterEvent> bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

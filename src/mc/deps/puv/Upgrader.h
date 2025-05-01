@@ -37,21 +37,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Upgrader(::SemVersion const& from, ::SemVersion const& to);
+    MCNAPI Upgrader(::SemVersion const& from, ::SemVersion const& to);
 
-    MCAPI ::Puv::LoadResultAny upgrade(::Puv::LoadResultAny source) const;
+    MCNAPI ::Puv::LoadResultAny upgrade(::Puv::LoadResultAny source) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SemVersion const& from, ::SemVersion const& to);
+    MCNAPI void* $ctor(::SemVersion const& from, ::SemVersion const& to);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -63,7 +63,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

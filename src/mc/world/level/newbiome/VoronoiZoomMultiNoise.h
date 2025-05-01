@@ -11,7 +11,7 @@ class Vec3;
 namespace VoronoiZoomMultiNoise {
 // functions
 // NOLINTBEGIN
-MCAPI uint getZoomedVoronoiCellIndex(
+MCNAPI uint getZoomedVoronoiCellIndex(
     ::BlockPos                   inPos,
     ::std::vector<::Vec3> const& voronoiCellOffsets,
     uint                         minCellIndex,

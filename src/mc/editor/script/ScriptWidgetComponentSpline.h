@@ -54,7 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWidgetComponentSpline(
+    MCNAPI ScriptWidgetComponentSpline(
         ::Editor::ServiceProviderCollection&                                        serviceProviders,
         ::mce::UUID const&                                                          componentId,
         ::std::string const&                                                        componentName,
@@ -63,21 +63,21 @@ public:
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentSplineOptions> options
     );
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>>,
         ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent,
         ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject,
         ::Scripting::Error>
     _getControlPoints() const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::std::vector<::Vec3>,
         ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent,
         ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject,
         ::Scripting::Error>
     _getInterpolatedPoints(::std::optional<int> maxPointsPerControlSegment);
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent,
         ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
@@ -85,15 +85,15 @@ public:
         ::std::vector<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>> const& points
     );
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent,
         ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
     _setSplineType(::Editor::RenderHelper::SplineType t);
 
-    MCAPI void _setupSplineHelper();
+    MCNAPI void _setupSplineHelper();
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::Editor::RenderHelper::SplineType,
         ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent,
         ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
@@ -103,13 +103,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentSpline> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentSpline> bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                        serviceProviders,
         ::mce::UUID const&                                                          componentId,
         ::std::string const&                                                        componentName,
@@ -128,13 +128,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
+    MCNAPI ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

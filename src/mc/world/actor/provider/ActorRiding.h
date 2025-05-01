@@ -18,13 +18,13 @@ struct VehicleComponent;
 namespace ActorRiding {
 // functions
 // NOLINTBEGIN
-MCAPI ::StrictEntityContext getPassengerClosestTo(
+MCNAPI ::StrictEntityContext getPassengerClosestTo(
     ::Vec3 const&                                                       pos,
     ::VehicleComponent const&                                           vehicle,
     ::ViewT<::StrictEntityContext, ::StateVectorComponent const> const& positions
 );
 
-MCAPI ::std::vector<::StrictActorIDEntityContextPair> const& getPassengers(::EntityContext const& provider);
+MCNAPI ::std::vector<::StrictActorIDEntityContextPair> const& getPassengers(::EntityContext const& provider);
 // NOLINTEND
 
 } // namespace ActorRiding

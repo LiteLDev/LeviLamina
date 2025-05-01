@@ -8,13 +8,13 @@ class StateCookie {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<uchar> Serialize();
+    MCNAPI ::std::vector<uchar> Serialize();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::dcsctp::StateCookie> Deserialize(::rtc::ArrayView<uchar const>);
+    MCNAPI static ::std::optional<::dcsctp::StateCookie> Deserialize(::rtc::ArrayView<uchar const>);
     // NOLINTEND
 };
 

@@ -11,9 +11,9 @@ class BlockSource;
 namespace WitherBossSpawnUtilities {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::unique_ptr<::BlockPatternBuilder> createWitherBuilder(::BlockSource& region);
+MCNAPI ::std::unique_ptr<::BlockPatternBuilder> createWitherBuilder(::BlockSource& region);
 
-MCAPI ::std::unique_ptr<::BlockPatternBuilder> createWitherBuilderForTShape(::BlockSource& region);
+MCNAPI ::std::unique_ptr<::BlockPatternBuilder> createWitherBuilderForTShape(::BlockSource& region);
 // NOLINTEND
 
 } // namespace WitherBossSpawnUtilities

@@ -46,21 +46,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddType(ushort);
+    MCNAPI void AddType(ushort);
 
-    MCAPI void AddTypeAtIndex(ushort, ushort);
+    MCNAPI void AddTypeAtIndex(ushort, ushort);
 
-    MCAPI ushort GetType(int) const;
+    MCNAPI ushort GetType(int) const;
 
-    MCAPI uint64 Size() const;
+    MCNAPI uint64 Size() const;
 
-    MCAPI StunUInt16ListAttribute(ushort, ushort);
+    MCNAPI StunUInt16ListAttribute(ushort, ushort);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(ushort, ushort);
+    MCNAPI void* $ctor(ushort, ushort);
     // NOLINTEND
 
 public:
@@ -78,7 +78,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -41,13 +41,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~InProgressRequest();
+        MCNAPI ~InProgressRequest();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -67,18 +67,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void handleFailure(uint requestId, ::std::string const& reason);
+    MCNAPI void handleFailure(uint requestId, ::Scripting::Error const& error);
 
-    MCAPI void handleResponse(
+    MCNAPI void handleResponse(
         uint                                                              requestId,
         ::std::vector<::ScriptModuleMinecraftNet::ScriptNetHeader> const& headers,
         ::std::string const&                                              body,
         uint                                                              status
     );
 
-    MCAPI void rejectAll(::std::string const& reason);
+    MCNAPI void rejectAll(::std::string const& reason);
 
-    MCAPI uint track(
+    MCNAPI uint track(
         ::Scripting::Promise<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
             ::Scripting::Error,

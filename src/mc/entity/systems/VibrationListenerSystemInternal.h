@@ -11,7 +11,7 @@ class VibrationListenerComponent;
 namespace VibrationListenerSystemInternal {
 // functions
 // NOLINTBEGIN
-MCAPI void
+MCNAPI void
 tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::VibrationListenerComponent& vibrationListenerComponent);
 // NOLINTEND
 

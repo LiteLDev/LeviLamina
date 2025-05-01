@@ -10,7 +10,7 @@ class LayeredAbilities;
 namespace AgentAbilitiesHelper {
 // functions
 // NOLINTBEGIN
-MCAPI void updateAbilities(
+MCNAPI void updateAbilities(
     ::LayeredAbilities const&    player,
     ::std::optional<bool> const& canModifyBlocks,
     ::LayeredAbilities&          agent

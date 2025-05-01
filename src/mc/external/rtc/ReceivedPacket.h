@@ -41,9 +41,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::rtc::ReceivedPacket CopyAndSet(::rtc::ReceivedPacket::DecryptionInfo) const;
+    MCNAPI ::rtc::ReceivedPacket CopyAndSet(::rtc::ReceivedPacket::DecryptionInfo) const;
 
-    MCAPI ReceivedPacket(
+    MCNAPI ReceivedPacket(
         ::rtc::ArrayView<uchar const>,
         ::rtc::SocketAddress const&,
         ::std::optional<::webrtc::Timestamp>,
@@ -55,13 +55,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::rtc::ReceivedPacket CreateFromLegacy(uchar const*, uint64, int64, ::rtc::SocketAddress const&);
+    MCNAPI static ::rtc::ReceivedPacket CreateFromLegacy(uchar const*, uint64, int64, ::rtc::SocketAddress const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::rtc::ArrayView<uchar const>,
         ::rtc::SocketAddress const&,
         ::std::optional<::webrtc::Timestamp>,

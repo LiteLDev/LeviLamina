@@ -44,7 +44,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void assign(::std::thread::id const& thread);
+    MCNAPI void assign(::std::thread::id const& thread);
     // NOLINTEND
 };
 

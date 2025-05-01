@@ -19,7 +19,7 @@ struct VehicleInputIntentComponent;
 namespace ReplayStateSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void _tickReplayStateSystem(
+MCNAPI void _tickReplayStateSystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorMovementTickNeededComponent>,
@@ -32,7 +32,7 @@ MCAPI void _tickReplayStateSystem(
         ::ReplayStateComponent> vehicleReplayView
 );
 
-MCAPI void registerSystems(::EntitySystems& systemRegistry);
+MCNAPI void registerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
 } // namespace ReplayStateSystem

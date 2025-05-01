@@ -84,9 +84,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _messagePlayers(::std::string message);
+    MCNAPI void _messagePlayers(::std::string message);
 
-    MCAPI void _showTrialReminder(bool force);
+    MCNAPI void _showTrialReminder(bool force);
     // NOLINTEND
 
 public:
@@ -104,21 +104,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $attack(::Actor& entity);
+    MCNAPI bool $attack(::Actor& entity);
 
-    MCAPI bool $interact(::Actor& entity, ::Vec3 const& location);
+    MCNAPI bool $interact(::Actor& entity, ::Vec3 const& location);
 
-    MCAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
+    MCNAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
 
-    MCAPI bool $startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
+    MCNAPI bool $startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
 
-    MCAPI void $startBuildBlock(::BlockPos const& pos, uchar face);
+    MCNAPI void $startBuildBlock(::BlockPos const& pos, uchar face);
 
-    MCAPI bool $buildBlock(::BlockPos const& pos, uchar face, bool const isSimTick);
+    MCNAPI bool $buildBlock(::BlockPos const& pos, uchar face, bool const isSimTick);
 
-    MCAPI bool $useItem(::ItemStack& item);
+    MCNAPI bool $useItem(::ItemStack& item);
 
-    MCAPI ::InteractionResult $useItemOn(
+    MCNAPI ::InteractionResult $useItemOn(
         ::ItemStack&      item,
         ::BlockPos const& at,
         uchar             face,
@@ -127,18 +127,18 @@ public:
         bool              isFirstEvent
     );
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $setTrialMode(bool isEnabled);
+    MCNAPI void $setTrialMode(bool isEnabled);
 
-    MCAPI bool $isInTrialMode();
+    MCNAPI bool $isInTrialMode();
 
-    MCAPI void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
+    MCNAPI void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

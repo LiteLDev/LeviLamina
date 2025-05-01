@@ -6,7 +6,7 @@
 #include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/scripting/modules/minecraft/events/IScriptScriptDeferredEventListener.h"
-#include "mc/scripting/modules/minecraft/events/metadata/ScriptAsyncEventMetadata.h"
+#include "mc/scripting/modules/minecraft/events/metadata/ScriptAfterEventMetadata.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -44,13 +44,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~SignalNameSubscriberCount();
+        MCNAPI ~SignalNameSubscriberCount();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -76,13 +76,13 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $onFlushSystemAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+        MCNAPI void $onFlushSystemAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -95,7 +95,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkb7a2f6;
     ::ll::UntypedStorage<8, 8>  mUnk316bc2;
     ::ll::UntypedStorage<8, 56> mUnk470b9c;
-    ::ll::UntypedStorage<8, 24> mUnk85e387;
+    ::ll::UntypedStorage<8, 24> mUnk4e5d35;
     ::ll::UntypedStorage<8, 8>  mUnk2f36a3;
     // NOLINTEND
 
@@ -108,28 +108,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSystemAfterEvents(::ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
+    MCNAPI ScriptSystemAfterEvents(::ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
 
-    MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptSystemAfterEvents::SignalNameSubscriberCount>
+    MCNAPI ::std::vector<::ScriptModuleMinecraft::ScriptSystemAfterEvents::SignalNameSubscriberCount>
     getFineGrainedSignalSubscriberStats() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptSystemAfterEvents&
+    MCNAPI ::ScriptModuleMinecraft::ScriptSystemAfterEvents&
     operator=(::ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
 
-    MCAPI void registerListener(
+    MCNAPI void registerListener(
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemAfterEvents> handle,
         ::ScriptModuleMinecraft::ScriptGlobalEventListeners&                             listeners
     );
 
-    MCAPI ~ScriptSystemAfterEvents();
+    MCNAPI ~ScriptSystemAfterEvents();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
-    MCAPI static ::ScriptModuleMinecraft::ScriptAsyncEventMetadata<
+    MCNAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata<
         ::ScriptModuleMinecraft::ScriptSystemAfterEvents> const&
     getMetadata();
     // NOLINTEND
@@ -137,13 +137,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

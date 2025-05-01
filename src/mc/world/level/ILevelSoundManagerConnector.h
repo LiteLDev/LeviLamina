@@ -5,12 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 
 // auto generated forward declare list
 // clang-format off
+class ActorSoundIdentifier;
 class Vec3;
-struct ActorDefinitionIdentifier;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 class ILevelSoundManagerConnector : public ::Bedrock::EnableNonOwnerReferences {
@@ -21,14 +23,8 @@ public:
     virtual ~ILevelSoundManagerConnector() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::Bedrock::PubSub::Connector<void(
-        ::SharedTypes::Legacy::LevelSoundEvent,
-        ::Vec3 const&,
-        int,
-        ::ActorDefinitionIdentifier const&,
-        bool,
-        bool
-    )>&
+    virtual ::Bedrock::PubSub::Connector<
+        void(::SharedTypes::Legacy::LevelSoundEvent, ::Vec3 const&, int, ::ActorSoundIdentifier const&, bool)>&
     getOnLevelSoundEventConnector() = 0;
 
     // vIndex: 2

@@ -57,7 +57,7 @@ public:
     virtual bool shouldUseJsonForRenderMatrix() const /*override*/;
 
     // vIndex: 107
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     // vIndex: 87
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
@@ -69,13 +69,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FishingRodItem(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
+    MCNAPI FishingRodItem(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
+    MCNAPI void* $ctor(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -87,36 +87,36 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const&, int newAnimationFrame, bool) const;
+    MCNAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const&, int newAnimationFrame, bool) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCFOLD bool $isHandEquipped() const;
+    MCNAPI bool $isHandEquipped() const;
 
-    MCFOLD bool $requiresInteract() const;
+    MCNAPI bool $requiresInteract() const;
 
-    MCAPI ::std::string $getInteractText(::Player const& player) const;
+    MCNAPI ::std::string $getInteractText(::Player const& player) const;
 
-    MCAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const;
+    MCNAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const;
 
-    MCFOLD int $getEnchantSlot() const;
+    MCNAPI int $getEnchantSlot() const;
 
-    MCFOLD int $getEnchantValue() const;
+    MCNAPI int $getEnchantValue() const;
 
-    MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCNAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCFOLD bool $shouldSendInteractionGameEvents() const;
+    MCNAPI bool $shouldSendInteractionGameEvents() const;
 
-    MCFOLD bool $shouldUseJsonForRenderMatrix() const;
+    MCNAPI bool $shouldUseJsonForRenderMatrix() const;
 
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
+    MCNAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+    MCNAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

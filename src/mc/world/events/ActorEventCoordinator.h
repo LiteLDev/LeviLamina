@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/gameplayhandlers/CoordinatorResult.h"
-#include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/events/ActorGameplayEvent.h"
 #include "mc/world/events/EventCoordinator.h"
 #include "mc/world/events/EventRef.h"
@@ -12,13 +12,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ActorEventListener;
 class ActorGameplayHandler;
-class EntityContext;
 class IActorManagerConnector;
 class IGameplayUserManagerConnector;
-namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class ActorEventCoordinator : public ::EventCoordinator<::ActorEventListener> {
@@ -40,10 +37,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onGameplayUserAdded(::EntityContext& entity);
-
-    MCAPI void _postReloadActorAdded(::Actor& actor, ::ActorInitializationMethod initializationMethod);
-
     MCAPI void registerWithActorManagerEvents(::IActorManagerConnector& actorManagerConnector);
 
     MCAPI void registerWithGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
@@ -51,6 +44,8 @@ public:
     MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableActorGameplayEvent<::CoordinatorResult>> event);
 
     MCAPI ::CoordinatorResult sendEvent(::EventRef<::ActorGameplayEvent<::CoordinatorResult>> const& event);
+
+    MCAPI void sendEvent(::EventRef<::MutableActorGameplayEvent<void>> event);
 
     MCAPI void sendEvent(::EventRef<::ActorGameplayEvent<void>> const& event);
     // NOLINTEND

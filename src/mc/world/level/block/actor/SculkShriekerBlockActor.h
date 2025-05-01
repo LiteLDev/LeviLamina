@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/events/gameevents/VibrationListener.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated forward declare list
@@ -15,7 +16,6 @@ class DataLoadHelper;
 class ILevel;
 class Player;
 class SaveContext;
-class VibrationListener;
 // clang-format on
 
 class SculkShriekerBlockActor : public ::BlockActor {
@@ -51,10 +51,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 7
+    // vIndex: 8
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
     // vIndex: 1
@@ -70,25 +70,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SculkShriekerBlockActor(::BlockPos const& pos);
+    MCNAPI explicit SculkShriekerBlockActor(::BlockPos const& pos);
 
-    MCAPI void tryRespond(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI void tryRespond(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI bool tryShriek(::BlockSource& region, ::BlockPos pos, ::Player& provokingPlayer);
+    MCNAPI bool tryShriek(::BlockSource& region, ::BlockPos pos, ::Player& provokingPlayer);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _canRespond(::BlockSource const& region, ::BlockPos const& pos);
+    MCNAPI static bool _canRespond(::BlockSource const& region, ::BlockPos const& pos);
 
-    MCAPI static ::Player* tryGetPlayerInHierarchy(::Actor* actor);
+    MCNAPI static ::Player* tryGetPlayerInHierarchy(::Actor* actor);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
+    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -100,18 +100,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCFOLD void $onRemoved(::BlockSource& region);
+    MCNAPI void $onRemoved(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

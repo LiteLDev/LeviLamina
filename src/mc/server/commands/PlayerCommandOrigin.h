@@ -6,6 +6,7 @@
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
@@ -21,7 +22,6 @@ class Level;
 class NetworkIdentifier;
 class Vec2;
 class Vec3;
-struct ActorUniqueID;
 struct CommandOriginIdentity;
 // clang-format on
 

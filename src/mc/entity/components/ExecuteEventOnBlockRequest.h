@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class BlockPos;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
 
 struct ExecuteEventOnBlockRequest {
 public:
@@ -18,12 +16,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ExecuteEventOnBlockRequest();
+    MCNAPI ~ExecuteEventOnBlockRequest();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

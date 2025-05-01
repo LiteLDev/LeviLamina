@@ -30,39 +30,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockTypes();
+    MCNAPI ScriptBlockTypes();
 
-    MCAPI void _generateAllBlockHandles(::Scripting::WeakLifetimeScope& scope);
+    MCNAPI void _generateAllBlockHandles(::Scripting::WeakLifetimeScope& scope);
 
-    MCAPI void _registerBlockTypeAlias(
+    MCNAPI void _registerBlockTypeAlias(
         ::std::string                                                                  blockName,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType> blockHandle
     );
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
     get(::Scripting::WeakLifetimeScope& scope, ::std::string const& blockName);
 
-    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
     getAllBlockTypes(::Scripting::WeakLifetimeScope& scope);
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
     get_V010(::Scripting::WeakLifetimeScope& scope, ::std::string const& blockName);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptBlockTypes& operator=(::ScriptModuleMinecraft::ScriptBlockTypes&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptBlockTypes& operator=(::ScriptModuleMinecraft::ScriptBlockTypes&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockTypes> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockTypes> bind();
 
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockTypes> bind_V010();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockTypes> bind_V010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

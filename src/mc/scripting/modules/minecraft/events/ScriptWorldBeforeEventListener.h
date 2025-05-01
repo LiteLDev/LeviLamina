@@ -45,13 +45,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onRunSystemTick(::ScriptDeferredFlushTracker&);
+    MCNAPI void $onRunSystemTick(::ScriptDeferredFlushTracker&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -29,24 +29,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string receive();
+    MCNAPI ::std::string receive();
 
-    MCAPI bool receiveProtocolResponse(::ScriptDebuggerMessages::ProtocolResponse& protocolResponse);
+    MCNAPI bool receiveProtocolResponse(::ScriptDebuggerMessages::ProtocolResponse& protocolResponse);
 
-    MCAPI void send(::std::string const& message);
+    MCNAPI void send(::std::string const& message);
 
-    MCAPI void sendNotificationEvent(::ScriptDebuggerMessages::NotificationEvent&& notificationEvent);
+    MCNAPI void sendNotificationEvent(::ScriptDebuggerMessages::NotificationEvent&& notificationEvent);
 
-    MCAPI void sendPrintEvent(::ScriptDebuggerMessages::PrintEvent&& printEvent);
+    MCNAPI void sendPrintEvent(::ScriptDebuggerMessages::PrintEvent&& printEvent);
 
-    MCAPI void sendProfilerCapture(::ScriptDebuggerMessages::ProfilerCapture&& profilerCapture);
+    MCNAPI void sendProfilerCapture(::ScriptDebuggerMessages::ProfilerCapture&& profilerCapture);
 
-    MCAPI void sendProtocolEvent(::ScriptDebuggerMessages::ProtocolEvent&& protocolEvent);
+    MCNAPI void sendProtocolEvent(::ScriptDebuggerMessages::ProtocolEvent&& protocolEvent);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindMessageTypes(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindMessageTypes(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };

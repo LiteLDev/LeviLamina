@@ -37,16 +37,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ParticleType $getTrailParticle();
+    MCNAPI ::ParticleType $getTrailParticle();
 
-    MCFOLD bool $shouldBurn();
+    MCNAPI bool $shouldBurn();
 
-    MCFOLD bool $_hurt(::ActorDamageSource const&, float, bool, bool);
+    MCNAPI bool $_hurt(::ActorDamageSource const&, float, bool, bool);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

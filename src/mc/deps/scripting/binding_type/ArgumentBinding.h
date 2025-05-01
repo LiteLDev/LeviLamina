@@ -17,29 +17,26 @@ public:
     // prevent constructor by default
     ArgumentBinding& operator=(ArgumentBinding const&);
     ArgumentBinding(ArgumentBinding const&);
+    ArgumentBinding();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ArgumentBinding();
+    MCNAPI ArgumentBinding(::Scripting::ArgumentBinding&&);
 
-    MCAPI ArgumentBinding(::Scripting::ArgumentBinding&&);
-
-    MCAPI ~ArgumentBinding();
+    MCNAPI ~ArgumentBinding();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::Scripting::ArgumentBinding&&);
+    MCNAPI void* $ctor(::Scripting::ArgumentBinding&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -65,13 +65,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BossEventSubscriptionManagerImpl();
+    MCNAPI BossEventSubscriptionManagerImpl();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -83,25 +83,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Subscription $subscribeToBossEvent(::std::function<void(::BossEventUpdateType)> callback);
+    MCNAPI ::Bedrock::PubSub::Subscription $subscribeToBossEvent(::std::function<void(::BossEventUpdateType)> callback);
 
-    MCAPI ::Bedrock::PubSub::Subscription $subscribeToBossEvent(
+    MCNAPI ::Bedrock::PubSub::Subscription $subscribeToBossEvent(
         ::std::function<void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&)> callback
     );
 
-    MCAPI void $broadcastBossEvent(::BossEventUpdateType type);
+    MCNAPI void $broadcastBossEvent(::BossEventUpdateType type);
 
-    MCAPI void
+    MCNAPI void
     $broadcastBossEvent(::BossEventUpdateType type, ::ActorUniqueID const& id, ::BossEventPacket const& packet);
 
-    MCAPI bool $areBossEventSubscribersReady() const;
+    MCNAPI bool $areBossEventSubscribersReady() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForImplBase();
+    MCNAPI static void** $vftableForImplBase();
     // NOLINTEND
 };

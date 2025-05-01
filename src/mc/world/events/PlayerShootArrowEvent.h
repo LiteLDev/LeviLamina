@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/world/item/ItemStack.h"
 
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
-class ItemStack;
 // clang-format on
 
 struct PlayerShootArrowEvent {
@@ -28,20 +28,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerShootArrowEvent(::PlayerShootArrowEvent const&);
+    MCNAPI PlayerShootArrowEvent(::PlayerShootArrowEvent const&);
 
-    MCAPI ~PlayerShootArrowEvent();
+    MCNAPI ~PlayerShootArrowEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::PlayerShootArrowEvent const&);
+    MCNAPI void* $ctor(::PlayerShootArrowEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionTrigger;
-class BlockPos;
 class Mob;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -51,7 +51,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(
+        MCNAPI static void buildSchema(
             ::std::string const& name,
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GoHomeGoal::GoHomeDefinition>>&
                 root
@@ -61,13 +61,13 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -113,42 +113,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockPos _getHomePos() const;
+    MCNAPI ::BlockPos _getHomePos() const;
 
-    MCAPI bool _hasReachedHome() const;
+    MCNAPI bool _hasReachedHome() const;
 
-    MCAPI bool _hasRequiredComponents() const;
+    MCNAPI bool _hasRequiredComponents() const;
 
-    MCAPI bool _isInHomeDimension() const;
+    MCNAPI bool _isInHomeDimension() const;
 
-    MCAPI void _triggerOnFailedEvents();
+    MCNAPI void _triggerOnFailedEvents();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

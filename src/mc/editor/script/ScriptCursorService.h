@@ -35,25 +35,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<uchar> getFacingDirection() const;
+    MCNAPI ::Scripting::Result_deprecated<uchar> getFacingDirection() const;
 
-    MCAPI ::Scripting::Result_deprecated<::Vec3> getPosition() const;
+    MCNAPI ::Scripting::Result_deprecated<::Vec3> getPosition() const;
 
-    MCAPI ::Scripting::Result_deprecated<::Editor::ScriptModule::ScriptCursorProperties> getProperties() const;
+    MCNAPI ::Scripting::Result_deprecated<::Editor::ScriptModule::ScriptCursorProperties> getProperties() const;
 
-    MCAPI ::Scripting::Result<::Editor::ScriptModule::ScriptCursorRay, ::Scripting::Error> getRay() const;
+    MCNAPI ::Scripting::Result<::Editor::ScriptModule::ScriptCursorRay, ::Scripting::Error> getRay() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> isVisible() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> isVisible() const;
 
-    MCAPI ::Scripting::Result<void> setProperties(::Editor::ScriptModule::ScriptCursorProperties const& properties);
+    MCNAPI ::Scripting::Result_deprecated<::Vec3> moveBy(::glm::ivec3 const& offset);
 
-    MCAPI ::Scripting::Result<void> setVisible(bool value);
+    MCNAPI ::Scripting::Result<void> setProperties(::Editor::ScriptModule::ScriptCursorProperties const& properties);
+
+    MCNAPI ::Scripting::Result<void> setVisible(bool value);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptCursorService> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptCursorService> bindScript();
     // NOLINTEND
 };
 

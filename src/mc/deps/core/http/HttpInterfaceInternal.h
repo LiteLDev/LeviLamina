@@ -38,14 +38,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void
+    MCNAPI void
     $send(::gsl::not_null<::HC_CALL*> call, ::gsl::not_null<::XAsyncBlock*> asyncBlock, ::HC_PERFORM_ENV* env);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

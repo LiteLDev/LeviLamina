@@ -11,7 +11,6 @@
 class Block;
 class BlockPos;
 class BlockSource;
-class HashedString;
 struct BlockGraphicsModeChangeContext;
 // clang-format on
 
@@ -19,7 +18,7 @@ class SeasonsAgnosticLeavesBlock : public ::LeavesBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 143
+    // vIndex: 141
     virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const
         /*override*/;
 
@@ -31,28 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SeasonsAgnosticLeavesBlock(
-        ::std::string const&                           nameId,
-        int                                            id,
-        ::HashedString const&                          sapling,
-        ::std::optional<::LeavesBlock::ParticleParams> particleParams
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const&                           nameId,
-        int                                            id,
-        ::HashedString const&                          sapling,
-        ::std::optional<::LeavesBlock::ParticleParams> particleParams
-    );
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -61,14 +38,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
+    MCNAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

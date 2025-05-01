@@ -49,38 +49,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AttributeBuff(float amount, int operand, ::AttributeBuffType type);
+    MCNAPI AttributeBuff(float amount, int operand, ::AttributeBuffType type);
 
-    MCAPI AttributeBuff(float amount, int operand, ::ActorDamageSource const& source, ::AttributeBuffType type);
+    MCNAPI AttributeBuff(float amount, int operand, ::ActorDamageSource const& source, ::AttributeBuffType type);
 
-    MCAPI float getAmount() const;
+    MCNAPI float getAmount() const;
 
-    MCAPI ::AttributeBuff& operator=(::AttributeBuff const&);
+    MCNAPI ::AttributeBuff& operator=(::AttributeBuff const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(float amount, int operand, ::AttributeBuffType type);
+    MCNAPI void* $ctor(float amount, int operand, ::AttributeBuffType type);
 
-    MCAPI void* $ctor(float amount, int operand, ::ActorDamageSource const& source, ::AttributeBuffType type);
+    MCNAPI void* $ctor(float amount, int operand, ::ActorDamageSource const& source, ::AttributeBuffType type);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
+    MCNAPI void $setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

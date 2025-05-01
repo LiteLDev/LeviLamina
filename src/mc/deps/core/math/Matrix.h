@@ -18,11 +18,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Matrix(::glm::qua<float> const& q);
+    MCNAPI explicit Matrix(::glm::qua<float> const& q);
 
-    MCAPI void transform3(::glm::vec3& outVec, float& outW) const;
+    MCNAPI void transform3(::glm::vec3& outVec, float& outW) const;
 
-    MCAPI void translate(::glm::vec3 const& t);
+    MCNAPI void translate(float x, float y, float z);
     // NOLINTEND
 
 public:
@@ -34,6 +34,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::glm::qua<float> const& q);
+    MCNAPI void* $ctor(::glm::qua<float> const& q);
     // NOLINTEND
 };

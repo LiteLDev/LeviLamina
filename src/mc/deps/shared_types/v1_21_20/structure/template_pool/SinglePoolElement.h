@@ -21,10 +21,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement&
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement&
     operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement&&);
 
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement&
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement&
     operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement const&);
     // NOLINTEND
 };

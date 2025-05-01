@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/deps/json/Value.h"
 
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
-namespace Json { class Value; }
 // clang-format on
 
 struct PlayerFormResponseEvent {
@@ -23,12 +23,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~PlayerFormResponseEvent();
+    MCNAPI ~PlayerFormResponseEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

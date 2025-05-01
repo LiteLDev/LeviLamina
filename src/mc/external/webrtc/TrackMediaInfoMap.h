@@ -30,48 +30,50 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<int> GetAttachmentIdByTrack(::webrtc::MediaStreamTrackInterface const*) const;
+    MCNAPI ::std::optional<int> GetAttachmentIdByTrack(::webrtc::MediaStreamTrackInterface const*) const;
 
-    MCAPI ::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> GetAudioTrack(::cricket::VoiceSenderInfo const&) const;
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::AudioTrackInterface>
+    GetAudioTrack(::cricket::VoiceSenderInfo const&) const;
 
-    MCAPI ::webrtc::scoped_refptr<::webrtc::AudioTrackInterface>
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::AudioTrackInterface>
     GetAudioTrack(::cricket::VoiceReceiverInfo const&) const;
 
-    MCAPI ::cricket::VideoSenderInfo const* GetVideoSenderInfoBySsrc(uint) const;
+    MCNAPI ::cricket::VideoSenderInfo const* GetVideoSenderInfoBySsrc(uint) const;
 
-    MCAPI ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface> GetVideoTrack(::cricket::VideoSenderInfo const&) const;
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>
+    GetVideoTrack(::cricket::VideoSenderInfo const&) const;
 
-    MCAPI ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>
     GetVideoTrack(::cricket::VideoReceiverInfo const&) const;
 
-    MCAPI ::cricket::VoiceSenderInfo const* GetVoiceSenderInfoBySsrc(uint) const;
+    MCNAPI ::cricket::VoiceSenderInfo const* GetVoiceSenderInfoBySsrc(uint) const;
 
-    MCAPI void
+    MCNAPI void
         Initialize(::std::optional<::cricket::VoiceMediaInfo>, ::std::optional<::cricket::VideoMediaInfo>, ::rtc::ArrayView<::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>>, ::rtc::ArrayView<::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>>);
 
-    MCAPI TrackMediaInfoMap();
+    MCNAPI TrackMediaInfoMap();
 
-    MCAPI TrackMediaInfoMap(::webrtc::TrackMediaInfoMap&&);
+    MCNAPI TrackMediaInfoMap(::webrtc::TrackMediaInfoMap&&);
 
-    MCAPI TrackMediaInfoMap(::webrtc::TrackMediaInfoMap const&);
+    MCNAPI TrackMediaInfoMap(::webrtc::TrackMediaInfoMap const&);
 
-    MCAPI ~TrackMediaInfoMap();
+    MCNAPI ~TrackMediaInfoMap();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::webrtc::TrackMediaInfoMap&&);
+    MCNAPI void* $ctor(::webrtc::TrackMediaInfoMap&&);
 
-    MCAPI void* $ctor(::webrtc::TrackMediaInfoMap const&);
+    MCNAPI void* $ctor(::webrtc::TrackMediaInfoMap const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

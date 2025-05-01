@@ -15,7 +15,7 @@ struct TickingSystemWithInfo;
 namespace MobMovementClimbOutOfLiquid {
 // functions
 // NOLINTBEGIN
-MCAPI void climbOutOfLiquid(
+MCNAPI void climbOutOfLiquid(
     ::StrictEntityContext const&,
     ::AABBShapeComponent const& aabbShape,
     ::MobTravelComponent const& mobTravel,
@@ -23,7 +23,7 @@ MCAPI void climbOutOfLiquid(
     ::IConstBlockSource const&  region
 );
 
-MCAPI void forSystem(::std::function<void(::TickingSystemWithInfo&&)> const& func);
+MCNAPI void forSystem(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 // NOLINTEND
 
 } // namespace MobMovementClimbOutOfLiquid

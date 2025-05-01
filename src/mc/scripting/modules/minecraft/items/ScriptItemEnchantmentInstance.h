@@ -33,26 +33,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::variant<
+    MCNAPI ::std::variant<
         ::EnchantmentInstance,
         ::ScriptModuleMinecraft::ScriptItemEnchantmentLevelOutOfBoundsError,
         ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError,
         ::ScriptModuleMinecraft::ScriptItemEnchantmentTypeNotCompatibleError>
     tryResolveInstance(::ItemEnchants& itemEnchants) const;
 
-    MCAPI ~ScriptItemEnchantmentInstance();
+    MCNAPI ~ScriptItemEnchantmentInstance();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentInstance> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentInstance> bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

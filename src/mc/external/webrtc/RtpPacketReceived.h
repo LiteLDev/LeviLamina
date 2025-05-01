@@ -32,25 +32,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RtpPacketReceived(::webrtc::RtpPacketReceived const&);
+    MCNAPI RtpPacketReceived(::webrtc::RtpPacketReceived const&);
 
-    MCAPI RtpPacketReceived(::webrtc::RtpHeaderExtensionMap const*, ::webrtc::Timestamp);
+    MCNAPI RtpPacketReceived(::webrtc::RtpHeaderExtensionMap const*, ::webrtc::Timestamp);
 
-    MCAPI ~RtpPacketReceived();
+    MCNAPI ~RtpPacketReceived();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::RtpPacketReceived const&);
+    MCNAPI void* $ctor(::webrtc::RtpPacketReceived const&);
 
-    MCAPI void* $ctor(::webrtc::RtpHeaderExtensionMap const*, ::webrtc::Timestamp);
+    MCNAPI void* $ctor(::webrtc::RtpHeaderExtensionMap const*, ::webrtc::Timestamp);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

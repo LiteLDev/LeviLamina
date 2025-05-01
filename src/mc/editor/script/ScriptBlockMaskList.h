@@ -26,9 +26,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Editor::BlockMask::OperationType> bindEnums();
+    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Editor::BlockMask::OperationType> bindEnums();
 
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptBlockMaskList> bindScript();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptBlockMaskList> bindScript();
     // NOLINTEND
 };
 

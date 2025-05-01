@@ -15,31 +15,31 @@ struct RtpBitrateConfigurator {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::BitrateConstraints GetConfig() const;
+    MCNAPI ::webrtc::BitrateConstraints GetConfig() const;
 
-    MCAPI explicit RtpBitrateConfigurator(::webrtc::BitrateConstraints const&);
+    MCNAPI explicit RtpBitrateConfigurator(::webrtc::BitrateConstraints const&);
 
-    MCAPI ::std::optional<::webrtc::BitrateConstraints> UpdateConstraints(::std::optional<int> const&);
+    MCNAPI ::std::optional<::webrtc::BitrateConstraints> UpdateConstraints(::std::optional<int> const&);
 
-    MCAPI ::std::optional<::webrtc::BitrateConstraints> UpdateWithClientPreferences(::webrtc::BitrateSettings const&);
+    MCNAPI ::std::optional<::webrtc::BitrateConstraints> UpdateWithClientPreferences(::webrtc::BitrateSettings const&);
 
-    MCAPI ::std::optional<::webrtc::BitrateConstraints> UpdateWithRelayCap(::webrtc::DataRate);
+    MCNAPI ::std::optional<::webrtc::BitrateConstraints> UpdateWithRelayCap(::webrtc::DataRate);
 
-    MCAPI ::std::optional<::webrtc::BitrateConstraints> UpdateWithSdpParameters(::webrtc::BitrateConstraints const&);
+    MCNAPI ::std::optional<::webrtc::BitrateConstraints> UpdateWithSdpParameters(::webrtc::BitrateConstraints const&);
 
-    MCAPI ~RtpBitrateConfigurator();
+    MCNAPI ~RtpBitrateConfigurator();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::BitrateConstraints const&);
+    MCNAPI void* $ctor(::webrtc::BitrateConstraints const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

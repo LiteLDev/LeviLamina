@@ -3,14 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
-
-// auto generated forward declare list
-// clang-format off
-class BlockPos;
-class WeakEntityRef;
-struct ActorUniqueID;
-// clang-format on
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/world/level/BlockPos.h"
 
 struct PlayerOpenContainerEvent {
 public:
@@ -25,12 +21,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~PlayerOpenContainerEvent();
+    MCNAPI ~PlayerOpenContainerEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

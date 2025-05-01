@@ -92,52 +92,52 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EditorPlayerCommon(::Player& player);
+    MCNAPI explicit EditorPlayerCommon(::Player& player);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player);
+    MCNAPI void* $ctor(::Player& player);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result<void> $ready();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCFOLD ::Editor::ServiceProviderCollection& $getServiceProviders();
+    MCNAPI ::Editor::ServiceProviderCollection& $getServiceProviders();
 
-    MCAPI ::Scripting::Result<::Bedrock::PubSub::Subscription, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<::Bedrock::PubSub::Subscription, ::Scripting::Error>
     $registerTickSubscriber(::std::function<void(::Editor::ServiceProviderCollection&)> fnTick);
 
-    MCAPI ::Player* $getPlayer() const;
+    MCNAPI ::Player* $getPlayer() const;
 
-    MCAPI ::EventResult $onPlayerTick(::Player& player);
+    MCNAPI ::EventResult $onPlayerTick(::Player& player);
 
-    MCAPI void $_onTick();
+    MCNAPI void $_onTick();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEditorServiceList();
+    MCNAPI static void** $vftableForEditorServiceList();
 
-    MCAPI static void** $vftableForEditorPlayerServiceProvider();
+    MCNAPI static void** $vftableForEditorPlayerServiceProvider();
 
-    MCAPI static void** $vftableForPlayerEventListener();
+    MCNAPI static void** $vftableForPlayerEventListener();
 
-    MCAPI static void** $vftableForIEditorPlayer();
+    MCNAPI static void** $vftableForIEditorPlayer();
     // NOLINTEND
 };
 

@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddScreen(
+    MCNAPI void AddScreen(
         ::std::string const&                                      screenName,
         double                                                    timestamp,
         double                                                    seconds,
@@ -38,7 +38,7 @@ public:
         bool                                                      isDeepLink
     );
 
-    MCAPI void PopulateEvent(::Social::Events::Event& event, bool clear);
+    MCNAPI void PopulateEvent(::Social::Events::Event& event, bool clear);
     // NOLINTEND
 };
 

@@ -3,19 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/util/FloatRange.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ActorFilterGroup.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/level/Tick.h"
+#include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
-class ActorFilterGroup;
-class BlockPos;
 class Mob;
 class Vec3;
-struct FloatRange;
-struct Tick;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -66,7 +66,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(
+        MCNAPI static void buildSchema(
             ::std::string const& name,
             ::std::shared_ptr<
                 ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::JumpAroundTargetGoal::Definition>>& root
@@ -82,7 +82,7 @@ public:
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -168,23 +168,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit JumpAroundTargetGoal(::Mob& mob);
+    MCNAPI explicit JumpAroundTargetGoal(::Mob& mob);
 
-    MCAPI ::std::optional<::JumpAroundTargetGoal::Jump> _calculateOptimalJumpVector(::Vec3 const& targetPosition) const;
+    MCNAPI ::std::optional<::JumpAroundTargetGoal::Jump> _calculateOptimalJumpVector(::Vec3 const& targetPosition
+    ) const;
 
-    MCAPI bool _canJumpFromCurrentPosition() const;
+    MCNAPI bool _canJumpFromCurrentPosition() const;
 
-    MCAPI void _jump() const;
+    MCNAPI void _jump() const;
 
-    MCAPI void _postJumpCleanup() const;
+    MCNAPI void _postJumpCleanup() const;
 
-    MCAPI ::std::optional<::BlockPos> _snapToSurface(::Vec3 const& targetPosition) const;
+    MCNAPI ::std::optional<::BlockPos> _snapToSurface(::Vec3 const& targetPosition) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCNAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:
@@ -196,24 +197,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCFOLD bool $canBeInterrupted();
+    MCNAPI bool $canBeInterrupted();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -14,29 +14,38 @@ namespace webrtc {
 
 class ProbeBitrateEstimator {
 public:
+    // ProbeBitrateEstimator inner types declare
+    // clang-format off
+    struct AggregatedCluster;
+    // clang-format on
+
+    // ProbeBitrateEstimator inner types define
+    struct AggregatedCluster {};
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void EraseOldClusters(::webrtc::Timestamp);
+    MCNAPI void EraseOldClusters(::webrtc::Timestamp);
 
-    MCAPI ::std::optional<::webrtc::DataRate> FetchAndResetLastEstimatedBitrate();
+    MCNAPI ::std::optional<::webrtc::DataRate> FetchAndResetLastEstimatedBitrate();
 
-    MCAPI ::std::optional<::webrtc::DataRate> HandleProbeAndEstimateBitrate(::webrtc::PacketResult const&);
+    MCNAPI ::std::optional<::webrtc::DataRate> HandleProbeAndEstimateBitrate(::webrtc::PacketResult const&);
 
-    MCAPI explicit ProbeBitrateEstimator(::webrtc::RtcEventLog*);
+    MCNAPI explicit ProbeBitrateEstimator(::webrtc::RtcEventLog*);
 
-    MCAPI ~ProbeBitrateEstimator();
+    MCNAPI ~ProbeBitrateEstimator();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::RtcEventLog*);
+    MCNAPI void* $ctor(::webrtc::RtcEventLog*);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

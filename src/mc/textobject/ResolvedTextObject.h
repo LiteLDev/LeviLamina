@@ -18,14 +18,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string getAsJsonString() const;
+    MCNAPI ::std::string getAsJsonString() const;
 
-    MCAPI ~ResolvedTextObject();
+    MCNAPI ~ResolvedTextObject();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

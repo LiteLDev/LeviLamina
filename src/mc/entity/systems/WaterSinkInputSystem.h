@@ -21,13 +21,13 @@ class WaterSinkInputSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void doInWaterSinkInputSystem(
+    MCNAPI static void doInWaterSinkInputSystem(
         ::MovementAbilitiesComponent const& abilitiesComponent,
         ::MoveInputComponent const&         moveInputComponent,
         ::StateVectorComponent&             stateVectorComponent
     );
 
-    MCAPI static void tickWaterSinkInputSystem(
+    MCNAPI static void tickWaterSinkInputSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::ActorMovementTickNeededComponent, ::PlayerInputRequestComponent, ::WasInWaterFlagComponent>,

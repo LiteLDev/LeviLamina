@@ -81,12 +81,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ActorPathingData();
+    MCNAPI ~ActorPathingData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -42,18 +42,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::GameModuleServer> $createGameModuleServer();
+    MCNAPI ::std::unique_ptr<::GameModuleServer> $createGameModuleServer();
 
-    MCAPI ::std::shared_ptr<::IInPackagePacks> $createInPackagePacks();
+    MCNAPI ::std::shared_ptr<::IInPackagePacks> $createInPackagePacks();
 
-    MCAPI void $registerMolangQueries();
+    MCNAPI void $registerMolangQueries();
 
-    MCAPI void $registerServerInstanceHandler(::ServerInstanceEventCoordinator& serverInstanceCoordinator);
+    MCNAPI void $registerServerInstanceHandler(::ServerInstanceEventCoordinator& serverInstanceCoordinator);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

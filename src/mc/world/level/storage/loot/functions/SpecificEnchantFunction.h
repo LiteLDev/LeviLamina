@@ -67,25 +67,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpecificEnchantFunction(
+    MCNAPI SpecificEnchantFunction(
         ::std::vector<::std::unique_ptr<::LootItemCondition>>&       predicates,
         ::std::vector<::SpecificEnchantFunction::EnchantInfo> const& enchantments
     );
 
-    MCAPI void _applyInner(::ItemStackBase& item, ::Random& random, ::LootTableContext& allowNonVanilla, bool);
+    MCNAPI void _applyInner(::ItemStackBase& item, ::Random& random, ::LootTableContext& allowNonVanilla, bool);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    MCNAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::vector<::std::unique_ptr<::LootItemCondition>>&       predicates,
         ::std::vector<::SpecificEnchantFunction::EnchantInfo> const& enchantments
     );
@@ -100,14 +100,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
+    MCNAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
-    MCAPI void $apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context);
+    MCNAPI void $apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

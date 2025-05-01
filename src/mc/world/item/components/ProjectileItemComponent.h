@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
@@ -39,15 +40,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ProjectileItemComponent(::SharedTypes::v1_20_50::ProjectileItemComponent component);
+    MCNAPI explicit ProjectileItemComponent(::SharedTypes::v1_20_50::ProjectileItemComponent component);
 
-    MCAPI ProjectileItemComponent(::ActorType actorType, float minCriticalPower);
+    MCNAPI ProjectileItemComponent(::ActorType actorType, float minCriticalPower);
 
-    MCAPI bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCNAPI bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI ::Vec3 getShootDir(::Player const& player, float angleOffset) const;
+    MCNAPI ::Vec3 getShootDir(::Player const& player, float angleOffset) const;
 
-    MCAPI ::Actor*
+    MCNAPI ::Actor*
     shootProjectile(::BlockSource& region, ::Vec3 const& aimPos, ::Vec3 const& aimDir, float power, ::Player* player)
         const;
     // NOLINTEND
@@ -55,32 +56,32 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::ProjectileItemComponent component);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_50::ProjectileItemComponent component);
 
-    MCAPI void* $ctor(::ActorType actorType, float minCriticalPower);
+    MCNAPI void* $ctor(::ActorType actorType, float minCriticalPower);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

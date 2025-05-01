@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
+class SemVersion;
 // clang-format on
 
 struct BlockDestructionParticlesDescription : public ::BlockComponentDescription {
@@ -44,40 +45,48 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockDestructionParticlesDescription(::std::string texture, ::TintMethod tintMethod);
+    MCNAPI BlockDestructionParticlesDescription(::std::string texture, ::TintMethod tintMethod);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
+
+    MCAPI static ::std::string const& SchemaID();
+
+    MCAPI static ::std::string const& TextureID();
+
+    MCAPI static ::std::string const& TintMethodID();
+
+    MCAPI static ::SemVersion const& Version1_21_70();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string texture, ::TintMethod tintMethod);
+    MCNAPI void* $ctor(::std::string texture, ::TintMethod tintMethod);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getName() const;
+    MCNAPI ::std::string const& $getName() const;
 
-    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

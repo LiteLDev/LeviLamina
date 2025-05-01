@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/world/level/ChunkPos.h"
 
 // auto generated forward declare list
 // clang-format off
-class ChunkPos;
 class Dimension;
 // clang-format on
 
@@ -22,6 +22,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uint64 hashCode() const;
+    MCNAPI ::std::string_view asSpan() const;
+
+    MCNAPI uint64 hashCode() const;
     // NOLINTEND
 };

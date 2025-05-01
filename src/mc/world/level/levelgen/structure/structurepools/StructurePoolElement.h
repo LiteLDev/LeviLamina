@@ -4,10 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/platform/threading/Mutex.h"
 #include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/PostProcessSettings.h"
 #include "mc/world/level/levelgen/structure/Projection.h"
 #include "mc/world/level/levelgen/structure/structurepools/JigsawReplacement.h"
+#include "mc/world/level/levelgen/structure/structurepools/StructurePoolElementSettings.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolElementType.h"
 
 // auto generated forward declare list
@@ -25,7 +27,6 @@ class StructurePoolActorRule;
 class StructurePoolBlockRule;
 class StructurePoolBlockTagRule;
 struct ActorDefinitionIdentifier;
-struct StructurePoolElementSettings;
 struct StructureTemplateRegistrationContext;
 namespace Bedrock::Threading { class Mutex; }
 namespace SharedTypes::v1_21_50 { struct JigsawStructureMetadata; }
@@ -66,7 +67,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -78,7 +79,7 @@ public:
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -115,7 +116,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI LazyTemplate(
+        MCNAPI LazyTemplate(
             ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                    manager,
             ::std::string const&                                                 location,
             ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const* blockTagRules
@@ -125,7 +126,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static ::std::vector<::JigsawBlockInfo> _findJigsawBlocks(
+        MCNAPI static ::std::vector<::JigsawBlockInfo> _findJigsawBlocks(
             ::std::vector<::JigsawStructureBlockInfo>&                           jigsawMarkers,
             ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const* blockTagRules
         );
@@ -134,7 +135,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                    manager,
             ::std::string const&                                                 location,
             ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const* blockTagRules
@@ -150,17 +151,17 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCFOLD ::std::vector<::JigsawBlockInfo> const& $getJigsawMarkers() const;
+        MCNAPI ::std::vector<::JigsawBlockInfo> const& $getJigsawMarkers() const;
 
-        MCAPI ::BlockPos $getSize(::Rotation rotation) const;
+        MCNAPI ::BlockPos $getSize(::Rotation rotation) const;
 
-        MCAPI bool $isLegacyStructure() const;
+        MCNAPI bool $isLegacyStructure() const;
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -263,13 +264,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructurePoolElement(
+    MCNAPI StructurePoolElement(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager> manager,
         ::std::string const&                              location,
         ::StructurePoolElementSettings                    settings
     );
 
-    MCAPI StructurePoolElement(
+    MCNAPI StructurePoolElement(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager> manager,
         ::std::string const&                              location,
         ::gsl::not_null<::std::shared_ptr<
@@ -278,14 +279,14 @@ public:
         ::Projection projection
     );
 
-    MCAPI StructurePoolElement(
+    MCNAPI StructurePoolElement(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager> manager,
         ::std::string const&                              location,
         ::Projection                                      projection,
         ::PostProcessSettings                             postProcessSettings
     );
 
-    MCAPI StructurePoolElement(
+    MCNAPI StructurePoolElement(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                    manager,
         ::std::string const&                                                 location,
         ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const*    blockRules,
@@ -295,22 +296,22 @@ public:
         ::PostProcessSettings                                                postProcessSettings
     );
 
-    MCAPI ::std::unique_ptr<::SharedTypes::v1_21_50::JigsawStructureMetadata> _createMetadata() const;
+    MCNAPI ::std::unique_ptr<::SharedTypes::v1_21_50::JigsawStructureMetadata> _createMetadata() const;
 
-    MCAPI ::SharedTypes::v1_21_50::JigsawStructureMetadata const& _getMetadata() const;
+    MCNAPI ::SharedTypes::v1_21_50::JigsawStructureMetadata const& _getMetadata() const;
 
-    MCAPI uint64 _getMetadataKey() const;
+    MCNAPI uint64 _getMetadataKey() const;
 
-    MCAPI ::StructurePoolElement::LazyTemplate const& _getTemplate() const;
+    MCNAPI ::StructurePoolElement::LazyTemplate const& _getTemplate() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::function<::StructurePoolElement const&(::StructureTemplateRegistrationContext, ::Projection)>
+    MCNAPI static ::std::function<::StructurePoolElement const&(::StructureTemplateRegistrationContext, ::Projection)>
     single(::std::string_view location);
 
-    MCAPI static ::std::function<::StructurePoolElement const&(::StructureTemplateRegistrationContext, ::Projection)>
+    MCNAPI static ::std::function<::StructurePoolElement const&(::StructureTemplateRegistrationContext, ::Projection)>
     single(
         ::std::string_view location,
         ::gsl::not_null<::std::shared_ptr<
@@ -318,7 +319,7 @@ public:
             processors
     );
 
-    MCAPI static ::std::function<::StructurePoolElement const&(::StructureTemplateRegistrationContext, ::Projection)>
+    MCNAPI static ::std::function<::StructurePoolElement const&(::StructureTemplateRegistrationContext, ::Projection)>
     single(
         ::std::string_view                                                   location,
         ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const*    blockRules,
@@ -330,13 +331,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager> manager,
         ::std::string const&                              location,
         ::StructurePoolElementSettings                    settings
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager> manager,
         ::std::string const&                              location,
         ::gsl::not_null<::std::shared_ptr<
@@ -345,14 +346,14 @@ public:
         ::Projection projection
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager> manager,
         ::std::string const&                              location,
         ::Projection                                      projection,
         ::PostProcessSettings                             postProcessSettings
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                    manager,
         ::std::string const&                                                 location,
         ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const*    blockRules,
@@ -366,28 +367,28 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockPos $getSize(::Rotation rotation) const;
+    MCNAPI ::BlockPos $getSize(::Rotation rotation) const;
 
-    MCAPI ::std::vector<::JigsawBlockInfo> $getJigsawMarkers(::BlockPos position, ::Rotation rotation) const;
+    MCNAPI ::std::vector<::JigsawBlockInfo> $getJigsawMarkers(::BlockPos position, ::Rotation rotation) const;
 
-    MCAPI ::std::vector<::JigsawBlockInfo>
+    MCNAPI ::std::vector<::JigsawBlockInfo>
     $getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const;
 
-    MCAPI ::BoundingBox $getBoundingBox(::BlockPos position, ::Rotation rotation) const;
+    MCNAPI ::BoundingBox $getBoundingBox(::BlockPos position, ::Rotation rotation) const;
 
-    MCFOLD void $setProjection(::Projection projection);
+    MCNAPI void $setProjection(::Projection projection);
 
-    MCAPI ::Projection $getProjection() const;
+    MCNAPI ::Projection $getProjection() const;
 
-    MCAPI ::PostProcessSettings $getPostProcessSettings() const;
+    MCNAPI ::PostProcessSettings $getPostProcessSettings() const;
 
-    MCAPI bool $place(
+    MCNAPI bool $place(
         ::BlockSource&                                                                  region,
         ::BlockPos                                                                      position,
         ::Rotation                                                                      rotation,
@@ -397,7 +398,7 @@ public:
         ::BlockPos                                                                      refPos
     ) const;
 
-    MCAPI bool $place(
+    MCNAPI bool $place(
         ::BlockSource&                    region,
         ::BlockPos                        position,
         ::BlockPos                        sectionOrigin,
@@ -407,30 +408,30 @@ public:
         ::br::worldgen::JigsawReplacement jigsaw
     ) const;
 
-    MCAPI void $placeActors(::BlockSource& region, ::BlockPos position, ::Rotation rotation, ::Random& random) const;
+    MCNAPI void $placeActors(::BlockSource& region, ::BlockPos position, ::Rotation rotation, ::Random& random) const;
 
-    MCAPI void
+    MCNAPI void
     $placeEntities(::BlockSource& region, ::BlockPos position, ::Rotation rotation, ::BoundingBox overlapBB) const;
 
-    MCAPI void
+    MCNAPI void
     $handleJigsawBlock(::BlockSource& region, ::JigsawBlockInfo& jigsawBlock, ::LegacyStructureSettings& settings)
         const;
 
-    MCAPI void $handleDataMarker(
+    MCNAPI void $handleDataMarker(
         ::BlockSource&                                                                  region,
         ::BlockPos                                                                      markerPos,
         ::std::string                                                                   markerData,
         ::std::unordered_map<::BlockPos, ::std::optional<::ActorDefinitionIdentifier>>& entitiesToPlace
     ) const;
 
-    MCAPI bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCFOLD ::StructurePoolElementType $type() const;
+    MCNAPI ::StructurePoolElementType $type() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

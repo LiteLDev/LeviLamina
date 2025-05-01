@@ -15,7 +15,7 @@ struct StateVectorComponent;
 namespace UpdateServerPlayerInputSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void _handlePlayerAuthInputPacket(
+MCNAPI void _handlePlayerAuthInputPacket(
     ::StateVectorComponent const&           stateVector,
     ::ActorHeadRotationComponent&           actorHeadRotationComponent,
     ::ActorRotationComponent&               actorRotationComponent,

@@ -6,12 +6,12 @@ struct AsyncStateRef {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~AsyncStateRef();
+    MCNAPI ~AsyncStateRef();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

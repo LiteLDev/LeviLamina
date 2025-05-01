@@ -46,7 +46,7 @@ public:
     virtual ::Scripting::Result<void> setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& props) = 0;
 
     // vIndex: 7
-    virtual ::Scripting::Result_deprecated<::BlockPos> moveBy(::glm::ivec3 const&) = 0;
+    virtual ::Scripting::Result_deprecated<::BlockPos> moveBy(::glm::ivec3 const& offset) = 0;
 
     // vIndex: 8
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>

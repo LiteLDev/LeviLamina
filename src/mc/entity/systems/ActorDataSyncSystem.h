@@ -11,6 +11,6 @@ class ActorDataSyncSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createActorDataSyncSystem();
+    MCNAPI static ::TickingSystemWithInfo createActorDataSyncSystem();
     // NOLINTEND
 };

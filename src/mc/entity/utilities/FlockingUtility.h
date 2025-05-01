@@ -11,9 +11,11 @@ class Vec3;
 namespace FlockingUtility {
 // functions
 // NOLINTBEGIN
-MCAPI bool checkForSteeringCollision(::Actor& owner, ::Vec3 const& direction, float distance, ::Vec3& vecOut);
+MCNAPI bool checkForSteeringCollision(::Actor& owner, ::Vec3 const& direction, float distance, ::Vec3& vecOut);
 
-MCAPI void getWaterHeights(::Actor const& owner, float& minHeightOut, float& maxHeightOut);
+MCNAPI void chooseRandomDirection(::Actor& owner, ::Vec3& vecOut);
+
+MCNAPI void getWaterHeights(::Actor const& owner, float& minHeightOut, float& maxHeightOut);
 // NOLINTEND
 
 } // namespace FlockingUtility

@@ -2,12 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Vec2;
-class Vec3;
-struct CanSprintResult;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/entity/components/CanSprintResult.h"
 
 struct PlayerInputRequestComponent {
 public:

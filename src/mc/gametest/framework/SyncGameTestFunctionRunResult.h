@@ -16,7 +16,7 @@ class SyncGameTestFunctionRunResult : public ::gametest::IGameTestFunctionRunRes
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 176> mUnkc3d536;
+    ::ll::UntypedStorage<8, 248> mUnkc3d536;
     // NOLINTEND
 
 public:
@@ -47,15 +47,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isComplete() const;
+    MCNAPI bool $isComplete() const;
 
-    MCAPI ::std::optional<::gametest::GameTestError> $getError();
+    MCNAPI ::std::optional<::gametest::GameTestError> $getError();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

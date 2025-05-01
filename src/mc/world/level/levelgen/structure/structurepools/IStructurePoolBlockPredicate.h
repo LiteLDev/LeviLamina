@@ -50,8 +50,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $finalize(::BlockSource&, ::IRandom&);
+    MCNAPI bool $finalize(::BlockSource&, ::IRandom&);
 
-    MCFOLD ::std::string $validate() const;
+    MCNAPI ::std::string $validate() const;
     // NOLINTEND
 };

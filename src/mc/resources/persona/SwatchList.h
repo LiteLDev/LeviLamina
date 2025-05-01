@@ -35,13 +35,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SwatchList(::std::vector<::persona::color::Swatch>&& swatches);
+    MCNAPI explicit SwatchList(::std::vector<::persona::color::Swatch>&& swatches);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::vector<::persona::color::Swatch>&& swatches);
+    MCNAPI void* $ctor(::std::vector<::persona::color::Swatch>&& swatches);
     // NOLINTEND
 
 public:
@@ -53,7 +53,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

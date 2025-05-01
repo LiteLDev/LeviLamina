@@ -86,43 +86,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EditorManagerServer(::ServerInstance& server);
+    MCNAPI explicit EditorManagerServer(::ServerInstance& server);
 
-    MCAPI void _dispatchToServerPlayers(::Editor::Network::INetworkPayload& payload);
+    MCNAPI void _dispatchToServerPlayers(::Editor::Network::INetworkPayload& payload);
 
-    MCAPI ::std::vector<::std::unique_ptr<::Scripting::GenericModuleBindingFactory>> getServerModuleFactories();
+    MCNAPI ::std::vector<::std::unique_ptr<::Scripting::GenericModuleBindingFactory>> getServerModuleFactories();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ServerInstance& server);
+    MCNAPI void* $ctor(::ServerInstance& server);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent);
+    MCNAPI ::EventResult $onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent);
 
-    MCFOLD bool $isClientSide() const;
+    MCNAPI bool $isClientSide() const;
 
-    MCAPI ::std::unique_ptr<::Editor::IEditorPlayer> $createPlayer(::Player& player);
+    MCNAPI ::std::unique_ptr<::Editor::IEditorPlayer> $createPlayer(::Player& player);
 
-    MCAPI ::EventResult $onServerLevelInitialized(::ServerInstance& instance, ::Level& level);
+    MCNAPI ::EventResult $onServerLevelInitialized(::ServerInstance& instance, ::Level& level);
 
-    MCAPI ::EventResult $onStartLeaveGame(::ServerInstance& instance);
+    MCNAPI ::EventResult $onStartLeaveGame(::ServerInstance& instance);
 
-    MCAPI ::Scripting::Result<void> $scriptingTeardown();
+    MCNAPI ::Scripting::Result<void> $scriptingTeardown();
 
-    MCAPI ::Scripting::Result<void> $scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent);
+    MCNAPI ::Scripting::Result<void> $scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent);
 
-    MCAPI ::std::unique_ptr<::FileArchiver::IWorldConverter> $createWorldConverter(
+    MCNAPI ::std::unique_ptr<::FileArchiver::IWorldConverter> $createWorldConverter(
         ::ILevelListCache&                                              levelListCache,
         ::Scheduler&                                                    scheduler,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
@@ -133,15 +133,15 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIEditorManager();
+    MCNAPI static void** $vftableForIEditorManager();
 
-    MCAPI static void** $vftableForEditorServiceList();
+    MCNAPI static void** $vftableForEditorServiceList();
 
-    MCAPI static void** $vftableForEditorManagerServiceProvider();
+    MCNAPI static void** $vftableForEditorManagerServiceProvider();
 
-    MCAPI static void** $vftableForServerInstanceEventListener();
+    MCNAPI static void** $vftableForServerInstanceEventListener();
 
-    MCAPI static void** $vftableForEventListenerDispatcher();
+    MCNAPI static void** $vftableForEventListenerDispatcher();
     // NOLINTEND
 };
 

@@ -20,6 +20,18 @@ namespace Editor::Services {
 class ServerPlayerInputService : public ::Editor::Services::IEditorService,
                                  public ::Editor::Services::ServerPlayerInputServiceProvider {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnkb22178;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ServerPlayerInputService& operator=(ServerPlayerInputService const&);
+    ServerPlayerInputService(ServerPlayerInputService const&);
+    ServerPlayerInputService();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -58,6 +70,17 @@ public:
     unregisterMouseBinding(::HashedString const& contextId, ::HashedString const& eventId) /*override*/;
 
     // vIndex: 5
+    virtual ::Scripting::Result<void> updateKeyBindingProcessingState(
+        ::HashedString const& contextId,
+        ::HashedString const& bindingId,
+        ::std::optional<int>  state
+    ) /*override*/;
+
+    // vIndex: 6
+    virtual ::std::optional<int>
+    getKeyBindingProcessingState(::HashedString const& contextId, ::HashedString const& bindingId) const /*override*/;
+
+    // vIndex: 7
     virtual ::Scripting::Result<void> setViewportFocus(bool focused) /*override*/;
     // NOLINTEND
 
@@ -70,40 +93,49 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCFOLD ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCAPI ::Scripting::Result<void> $registerKeyBinding(
+    MCNAPI ::Scripting::Result<void> $registerKeyBinding(
         ::HashedString const&               contextId,
         ::HashedString const&               eventId,
         ::Editor::Input::KeyBinding const&  binding,
         ::Editor::Input::BindingInfo const& info
     );
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     $unregisterKeyBinding(::HashedString const& contextId, ::HashedString const& eventId);
 
-    MCAPI ::Scripting::Result<void> $registerMouseBinding(
+    MCNAPI ::Scripting::Result<void> $registerMouseBinding(
         ::HashedString const&                contextId,
         ::HashedString const&                eventId,
         ::Editor::Input::MouseBinding const& binding
     );
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     $unregisterMouseBinding(::HashedString const& contextId, ::HashedString const& eventId);
 
-    MCAPI ::Scripting::Result<void> $setViewportFocus(bool focused);
+    MCNAPI ::Scripting::Result<void> $updateKeyBindingProcessingState(
+        ::HashedString const& contextId,
+        ::HashedString const& bindingId,
+        ::std::optional<int>  state
+    );
+
+    MCNAPI ::std::optional<int>
+    $getKeyBindingProcessingState(::HashedString const& contextId, ::HashedString const& bindingId) const;
+
+    MCNAPI ::Scripting::Result<void> $setViewportFocus(bool focused);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
 
-    MCAPI static void** $vftableForServerPlayerInputServiceProvider();
+    MCNAPI static void** $vftableForServerPlayerInputServiceProvider();
     // NOLINTEND
 };
 

@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/world/item/CreativeItemCategory.h"
+#include "mc/world/item/ItemInstance.h"
 
 // auto generated forward declare list
 // clang-format off
 class CreativeItemEntry;
 class CreativeItemRegistry;
-class HashedString;
-class ItemInstance;
 // clang-format on
 
 class CreativeGroupInfo : public ::Bedrock::EnableNonOwnerReferences {
@@ -40,9 +40,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CreativeGroupInfo(::CreativeGroupInfo const&);
+    MCNAPI CreativeGroupInfo(::CreativeGroupInfo const&);
 
-    MCAPI CreativeGroupInfo(
+    MCNAPI CreativeGroupInfo(
         ::CreativeItemRegistry* registry,
         ::CreativeItemCategory  category,
         ::HashedString const&   name,
@@ -50,15 +50,15 @@ public:
         ::ItemInstance const&   icon
     );
 
-    MCAPI void addCreativeItem(::CreativeItemEntry* itemEntry);
+    MCNAPI void addCreativeItem(::CreativeItemEntry* itemEntry);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CreativeGroupInfo const&);
+    MCNAPI void* $ctor(::CreativeGroupInfo const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::CreativeItemRegistry* registry,
         ::CreativeItemCategory  category,
         ::HashedString const&   name,
@@ -70,12 +70,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -61,30 +61,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerPlayerSleepManager(
+    MCNAPI ServerPlayerSleepManager(
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
         ::std::unique_ptr<::IPlayerSleepPercentageGetter>    playerSleepPercentageGetter,
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager>   levelEventManager
     );
 
-    MCAPI void _broadcastSleepingPlayerList(::PlayerSleepStatus const& playerSleepStatus);
+    MCNAPI void _broadcastSleepingPlayerList(::PlayerSleepStatus const& playerSleepStatus);
 
-    MCFOLD void _onPlayerDeath();
+    MCNAPI void _onPlayerDeath();
 
-    MCAPI bool enoughPlayersDeepSleeping() const;
+    MCNAPI bool enoughPlayersDeepSleeping() const;
 
-    MCAPI void initializeWithPlayerDeathManager(::PlayerDeathManager& playerDeathManager);
+    MCNAPI void initializeWithPlayerDeathManager(::PlayerDeathManager& playerDeathManager);
 
-    MCAPI void
+    MCNAPI void
     registerWithPlayerDimensionTransferConnector(::IPlayerDimensionTransferConnector& playerDimensionTransferConnector);
 
-    MCAPI void tickCheckToWakeUpPlayers();
+    MCNAPI void tickCheckToWakeUpPlayers();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
         ::std::unique_ptr<::IPlayerSleepPercentageGetter>    playerSleepPercentageGetter,
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager>   levelEventManager
@@ -94,24 +94,24 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $updateSleepingPlayerList();
+    MCNAPI void $updateSleepingPlayerList();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::Player&)>& $getPlayerWakeUpConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::Player&)>& $getPlayerWakeUpConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnWakeUpAllPlayersConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void()>& $getOnWakeUpAllPlayersConnector();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIServerPlayerSleepManagerConnector();
+    MCNAPI static void** $vftableForIServerPlayerSleepManagerConnector();
 
-    MCAPI static void** $vftableForPlayerSleepManager();
+    MCNAPI static void** $vftableForPlayerSleepManager();
     // NOLINTEND
 };

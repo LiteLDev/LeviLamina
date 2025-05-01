@@ -26,19 +26,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents&
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents&
     operator=(::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents&&);
 
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents&
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents&
     operator=(::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents const&);
 
-    MCAPI ~Contents();
+    MCNAPI ~Contents();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -50,7 +50,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

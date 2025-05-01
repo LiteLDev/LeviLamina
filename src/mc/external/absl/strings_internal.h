@@ -5,7 +5,7 @@
 namespace absl::strings_internal {
 // functions
 // NOLINTBEGIN
-MCAPI int memcasecmp(char const*, char const*, uint64);
+MCNAPI int memcasecmp(char const*, char const*, uint64);
 // NOLINTEND
 
 } // namespace absl::strings_internal

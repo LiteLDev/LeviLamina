@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class Mob;
 class Vec3;
-struct ActorUniqueID;
 // clang-format on
 
 class SensingComponent {
@@ -25,16 +27,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool canSee(::Mob& owner, ::Actor const& target);
+    MCNAPI bool canSee(::Mob& owner, ::Actor const& target);
 
-    MCAPI bool withinFOV(::Mob& owner, ::Vec3 const& targetPosition, float fov);
+    MCNAPI bool withinFOV(::Mob& owner, ::Vec3 const& targetPosition, float fov);
 
-    MCAPI ~SensingComponent();
+    MCNAPI ~SensingComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -44,35 +44,35 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     _handleCriterionUnlocks(::ServerPlayer* serverPlayer, ::UnlockedRecipesServerComponent& unlockedComp);
 
-    MCAPI static void
+    MCNAPI static void
     _handleInitialUnlocks(::ServerPlayer* serverPlayer, ::UnlockedRecipesServerComponent& unlockedComp);
 
-    MCAPI static void
+    MCNAPI static void
     _handleInstructionUnlocks(::ServerPlayer* serverPlayer, ::UnlockedRecipesServerComponent& unlockedComp);
 
-    MCAPI static void _tick(::ViewT<
-                            ::StrictEntityContext,
-                            ::Include<::ServerPlayerComponent>,
-                            ::UnlockedRecipesServerComponent,
-                            ::ActorOwnerComponent> view);
+    MCNAPI static void _tick(::ViewT<
+                             ::StrictEntityContext,
+                             ::Include<::ServerPlayerComponent>,
+                             ::UnlockedRecipesServerComponent,
+                             ::ActorOwnerComponent> view);
 
-    MCAPI static ::std::vector<::std::string> _unlockRecipes(
+    MCNAPI static ::std::vector<::std::string> _unlockRecipes(
         ::UnlockedRecipesServerComponent&                                     unlockedComp,
         ::Recipes const&                                                      recipes,
         bool                                                                  playerIsInWater,
         ::std::optional<::RecipeUnlockingSystem::InventoryChangedData> const& inventoryChanged
     );
 
-    MCAPI static void _useContext(
+    MCNAPI static void _useContext(
         ::UnlockedRecipesServerComponent&              unlockedComp,
         ::Recipes const&                               recipes,
         ::RecipeUnlockingRequirement::UnlockingContext context,
         ::std::vector<::std::string>&                  unlockedRecipeIds
     );
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

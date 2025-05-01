@@ -33,16 +33,16 @@ class ScriptWidgetComponentBase
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk677b3a;
-    ::ll::UntypedStorage<8, 8>  mUnk9aec33;
-    ::ll::UntypedStorage<1, 1>  mUnk3edffa;
-    ::ll::UntypedStorage<8, 32> mUnke816e4;
-    ::ll::UntypedStorage<8, 16> mUnk25ae07;
-    ::ll::UntypedStorage<8, 32> mUnk236c64;
-    ::ll::UntypedStorage<4, 12> mUnk2bdc64;
-    ::ll::UntypedStorage<1, 1>  mUnk4f80ca;
-    ::ll::UntypedStorage<1, 1>  mUnke2205c;
-    ::ll::UntypedStorage<8, 88> mUnk53f0de;
+    ::ll::UntypedStorage<8, 8>   mUnk677b3a;
+    ::ll::UntypedStorage<8, 8>   mUnk9aec33;
+    ::ll::UntypedStorage<1, 1>   mUnk3edffa;
+    ::ll::UntypedStorage<8, 32>  mUnke816e4;
+    ::ll::UntypedStorage<8, 16>  mUnk25ae07;
+    ::ll::UntypedStorage<8, 32>  mUnk236c64;
+    ::ll::UntypedStorage<4, 12>  mUnk2bdc64;
+    ::ll::UntypedStorage<1, 1>   mUnk4f80ca;
+    ::ll::UntypedStorage<1, 1>   mUnke2205c;
+    ::ll::UntypedStorage<8, 232> mUnk53f0de;
     // NOLINTEND
 
 public:
@@ -67,9 +67,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWidgetComponentBase(::Editor::ScriptModule::ScriptWidgetComponentBase const&);
+    MCNAPI ScriptWidgetComponentBase(::Editor::ScriptModule::ScriptWidgetComponentBase const&);
 
-    MCAPI ScriptWidgetComponentBase(
+    MCNAPI ScriptWidgetComponentBase(
         ::Editor::ServiceProviderCollection&                                      serviceProviders,
         ::mce::UUID const&                                                        componentId,
         ::std::string const&                                                      componentName,
@@ -78,12 +78,10 @@ public:
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentBaseOptions> options
     );
 
-    MCAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _deleteComponent();
 
-    MCAPI ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> _getWidget() const;
-
-    MCAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _setChangeEventClosure(
         ::std::optional<
             ::Scripting::Closure<void(::Scripting::StrongTypedObjectHandle<
@@ -91,27 +89,27 @@ public:
             closure
     );
 
-    MCAPI void _setLockToSurface(bool lockToSurface);
+    MCNAPI void _setLockToSurface(bool lockToSurface);
 
-    MCAPI void _setVisible(bool visible);
+    MCNAPI void _setVisible(bool visible);
 
-    MCAPI ::Vec3 const getWorldPosition() const;
+    MCNAPI ::Vec3 const getWorldPosition() const;
 
-    MCAPI void setPositionOffset(::Vec3 const& offset);
+    MCNAPI void setPositionOffset(::Vec3 const& offset);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentBase> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentBase> bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentBase const&);
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentBase const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                      serviceProviders,
         ::mce::UUID const&                                                        componentId,
         ::std::string const&                                                      componentName,
@@ -124,19 +122,19 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const& payload);
+    MCNAPI void $_handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const& payload);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

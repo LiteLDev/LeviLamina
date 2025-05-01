@@ -49,16 +49,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::IRandom& $getIRandom();
+    MCNAPI ::IRandom& $getIRandom();
 
-    MCFOLD ::Random& $getRandom();
+    MCNAPI ::Random& $getRandom();
 
-    MCFOLD ::Random& $getThreadRandom();
+    MCNAPI ::Random& $getThreadRandom();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

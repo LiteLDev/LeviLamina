@@ -9,9 +9,11 @@
 // clang-format off
 class Block;
 class BlockPos;
+class HashedString;
 class Vec3;
 struct BreakingItemParticleData;
 struct ResolvedItemIconInfo;
+namespace mce { class Color; }
 // clang-format on
 
 class ParticleProvider {
@@ -23,6 +25,7 @@ public:
     ::ll::UntypedStorage<8, 128> mUnk876d92;
     ::ll::UntypedStorage<8, 128> mUnk499051;
     ::ll::UntypedStorage<8, 128> mUnka1cafa;
+    ::ll::UntypedStorage<8, 128> mUnke1813e;
     // NOLINTEND
 
 public:
@@ -33,20 +36,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParticleProvider();
+    MCNAPI ParticleProvider();
 
-    MCAPI ~ParticleProvider();
+    MCNAPI ~ParticleProvider();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

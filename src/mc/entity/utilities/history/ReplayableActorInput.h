@@ -136,77 +136,77 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ReplayableActorInput();
+    MCNAPI ReplayableActorInput();
 
-    MCAPI void applyCollisionData(::History::EntityWithCache& entity);
+    MCNAPI void applyCollisionData(::History::EntityWithCache& entity);
 
-    MCAPI ::History::NonPlayerComponents& getOrCreateNonPlayerComponents();
+    MCNAPI ::History::NonPlayerComponents& getOrCreateNonPlayerComponents();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $preApplyInput(::EntityContext& e);
+    MCNAPI void $preApplyInput(::EntityContext& e);
 
-    MCAPI void $postApplyInput(::EntityContext& e);
+    MCNAPI void $postApplyInput(::EntityContext& e);
 
-    MCAPI void $applyCollisionData(::EntityContext& entity);
+    MCNAPI void $applyCollisionData(::EntityContext& entity);
 
-    MCAPI ::ExternalDataSnapshotComponent const& $getSnapshot() const;
+    MCNAPI ::ExternalDataSnapshotComponent const& $getSnapshot() const;
 
-    MCAPI void $captureExternalData(::EntityRegistry& registry);
+    MCNAPI void $captureExternalData(::EntityRegistry& registry);
 
-    MCAPI void $capture(::MoveInputComponent const& input);
+    MCNAPI void $capture(::MoveInputComponent const& input);
 
-    MCAPI void $capture(::ReplayStateTrackerComponent const& tracker);
+    MCNAPI void $capture(::ReplayStateTrackerComponent const& tracker);
 
-    MCAPI void $capture(::ActorRotationComponent const& rot);
+    MCNAPI void $capture(::ActorRotationComponent const& rot);
 
-    MCAPI void $capture(::History::TurnInput const& turn);
+    MCNAPI void $capture(::History::TurnInput const& turn);
 
-    MCAPI void $capture(::BlockCollisionsSystem::BlockCollisionResolutionVectorComponent const& v);
+    MCNAPI void $capture(::BlockCollisionsSystem::BlockCollisionResolutionVectorComponent const& v);
 
-    MCAPI void $capture(::BlockPosTrackerComponent const& tracker);
+    MCNAPI void $capture(::BlockPosTrackerComponent const& tracker);
 
-    MCAPI void $capture(::BuoyancyComponent const& buoyancy);
+    MCNAPI void $capture(::BuoyancyComponent const& buoyancy);
 
-    MCAPI void $capture(::BuoyancyFloatRequestComponent const& request);
+    MCNAPI void $capture(::BuoyancyFloatRequestComponent const& request);
 
-    MCAPI void $capture(::InsideSlowingSweetBerryBushBlockComponent const& inside);
+    MCNAPI void $capture(::InsideSlowingSweetBerryBushBlockComponent const& inside);
 
-    MCAPI void $capture(::ItemUseSlowdownModifierComponent const& slowdown);
+    MCNAPI void $capture(::ItemUseSlowdownModifierComponent const& slowdown);
 
-    MCAPI void $capture(::RewindCollisionShapesComponent&& shapes);
+    MCNAPI void $capture(::RewindCollisionShapesComponent&& shapes);
 
-    MCAPI void $capture(::MovementEffect const& movementEffect);
+    MCNAPI void $capture(::MovementEffect const& movementEffect);
 
-    MCAPI void $capture(::VehicleInputIntentComponent const& vehicleIntent);
+    MCNAPI void $capture(::VehicleInputIntentComponent const& vehicleIntent);
 
-    MCAPI void $capture(::IsSolidMobNearbyComponent const& isSolidMobNearby);
+    MCNAPI void $capture(::IsSolidMobNearbyComponent const& isSolidMobNearby);
 
-    MCAPI void $capture(::RiptideTridentSpinAttackComponent const& riptideSpinAttack);
+    MCNAPI void $capture(::RiptideTridentSpinAttackComponent const& riptideSpinAttack);
 
-    MCAPI void $capture(::SpinAttackResultsComponent const& spinAttackResults);
+    MCNAPI void $capture(::SpinAttackResultsComponent const& spinAttackResults);
 
-    MCAPI void $capture(::MovementInterpolatorComponent const& interpolator);
+    MCNAPI void $capture(::MovementInterpolatorComponent const& interpolator);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

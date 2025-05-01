@@ -39,9 +39,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _clear();
+    MCNAPI void _clear();
 
-    MCAPI void _insertConnection(
+    MCNAPI void _insertConnection(
         ::std::shared_ptr<::Bedrock::PubSub::Detail::SubscriptionBodyBase> const& body,
         ::Bedrock::PubSub::ConnectPosition                                        at,
         ::std::optional<int>                                                      group

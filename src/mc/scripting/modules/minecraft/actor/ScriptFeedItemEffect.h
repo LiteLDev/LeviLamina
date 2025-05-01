@@ -12,7 +12,7 @@ class ScriptFeedItemEffect {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::FeedItem::Effect> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::FeedItem::Effect> bind();
     // NOLINTEND
 };
 

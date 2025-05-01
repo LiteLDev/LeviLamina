@@ -46,31 +46,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void CopyBytes(::std::string_view);
+    MCNAPI void CopyBytes(::std::string_view);
 
-    MCAPI void CopyBytes(void const*, uint64);
+    MCNAPI void CopyBytes(void const*, uint64);
 
-    MCAPI void SetBytes(uchar*, uint64);
+    MCNAPI void SetBytes(uchar*, uint64);
 
-    MCAPI explicit StunByteStringAttribute(ushort);
+    MCNAPI explicit StunByteStringAttribute(ushort);
 
-    MCAPI StunByteStringAttribute(ushort, ::std::string_view);
+    MCNAPI StunByteStringAttribute(ushort, ::std::string_view);
 
-    MCAPI StunByteStringAttribute(ushort, ushort);
+    MCNAPI StunByteStringAttribute(ushort, ushort);
 
-    MCAPI StunByteStringAttribute(ushort, void const*, uint64);
+    MCNAPI StunByteStringAttribute(ushort, void const*, uint64);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(ushort);
+    MCNAPI void* $ctor(ushort);
 
-    MCAPI void* $ctor(ushort, ::std::string_view);
+    MCNAPI void* $ctor(ushort, ::std::string_view);
 
-    MCAPI void* $ctor(ushort, ushort);
+    MCNAPI void* $ctor(ushort, ushort);
 
-    MCAPI void* $ctor(ushort, void const*, uint64);
+    MCNAPI void* $ctor(ushort, void const*, uint64);
     // NOLINTEND
 
 public:
@@ -88,7 +88,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

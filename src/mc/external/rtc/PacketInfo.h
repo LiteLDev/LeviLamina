@@ -25,25 +25,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PacketInfo();
+    MCNAPI PacketInfo();
 
-    MCAPI PacketInfo(::rtc::PacketInfo const&);
+    MCNAPI PacketInfo(::rtc::PacketInfo const&);
 
-    MCAPI ~PacketInfo();
+    MCNAPI ~PacketInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::rtc::PacketInfo const&);
+    MCNAPI void* $ctor(::rtc::PacketInfo const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

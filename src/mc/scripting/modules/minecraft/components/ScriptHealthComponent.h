@@ -19,16 +19,16 @@ class ScriptHealthComponent : public ::ScriptModuleMinecraft::AttributeScriptAct
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
+    // vIndex: 5
     virtual ::Scripting::Result_deprecated<bool> setCurrent(float const& value) const /*override*/;
 
-    // vIndex: 7
+    // vIndex: 9
     virtual ::Scripting::Result<void> resetToMinValue() const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 10
     virtual ::Scripting::Result<void> resetToMaxValue() const /*override*/;
 
-    // vIndex: 9
+    // vIndex: 11
     virtual ::Scripting::Result<void> resetToDefaultValue() const /*override*/;
 
     // vIndex: 0
@@ -38,13 +38,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void notifyHealthChange(float oldValue, float newValue) const;
+    MCNAPI void notifyHealthChange(float oldValue, float newValue) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptHealthComponent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptHealthComponent>
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
@@ -63,19 +63,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<bool> $setCurrent(float const& value) const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $setCurrent(float const& value) const;
 
-    MCAPI ::Scripting::Result<void> $resetToMinValue() const;
+    MCNAPI ::Scripting::Result<void> $resetToMinValue() const;
 
-    MCAPI ::Scripting::Result<void> $resetToMaxValue() const;
+    MCNAPI ::Scripting::Result<void> $resetToMaxValue() const;
 
-    MCAPI ::Scripting::Result<void> $resetToDefaultValue() const;
+    MCNAPI ::Scripting::Result<void> $resetToDefaultValue() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

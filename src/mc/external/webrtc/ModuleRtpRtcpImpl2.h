@@ -27,61 +27,61 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI RtpSenderContext(::webrtc::TaskQueueBase&, ::webrtc::RtpRtcpInterface::Configuration const&);
+        MCNAPI RtpSenderContext(::webrtc::TaskQueueBase&, ::webrtc::RtpRtcpInterface::Configuration const&);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::webrtc::TaskQueueBase&, ::webrtc::RtpRtcpInterface::Configuration const&);
+        MCNAPI void* $ctor(::webrtc::TaskQueueBase&, ::webrtc::RtpRtcpInterface::Configuration const&);
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::RTCPSender::FeedbackState GetFeedbackState();
+    MCNAPI ::webrtc::RTCPSender::FeedbackState GetFeedbackState();
 
-    MCAPI void MaybeSendRtcp();
+    MCNAPI void MaybeSendRtcp();
 
-    MCAPI void MaybeSendRtcpAtOrAfterTimestamp(::webrtc::Timestamp);
+    MCNAPI void MaybeSendRtcpAtOrAfterTimestamp(::webrtc::Timestamp);
 
-    MCAPI explicit ModuleRtpRtcpImpl2(::webrtc::RtpRtcpInterface::Configuration const&);
+    MCNAPI explicit ModuleRtpRtcpImpl2(::webrtc::RtpRtcpInterface::Configuration const&);
 
-    MCAPI void PeriodicUpdate();
+    MCNAPI void PeriodicUpdate();
 
-    MCAPI void ScheduleMaybeSendRtcpAtOrAfterTimestamp(::webrtc::Timestamp, ::webrtc::TimeDelta);
+    MCNAPI void ScheduleMaybeSendRtcpAtOrAfterTimestamp(::webrtc::Timestamp, ::webrtc::TimeDelta);
 
-    MCAPI void ScheduleRtcpSendEvaluation(::webrtc::TimeDelta);
+    MCNAPI void ScheduleRtcpSendEvaluation(::webrtc::TimeDelta);
 
-    MCAPI bool StorePackets() const;
+    MCNAPI bool StorePackets() const;
 
-    MCAPI bool TimeToSendFullNackList(int64) const;
+    MCNAPI bool TimeToSendFullNackList(int64) const;
 
-    MCAPI int64 rtt_ms() const;
+    MCNAPI int64 rtt_ms() const;
 
-    MCAPI void set_rtt_ms(int64);
+    MCNAPI void set_rtt_ms(int64);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::webrtc::ModuleRtpRtcpImpl2>
+    MCNAPI static ::std::unique_ptr<::webrtc::ModuleRtpRtcpImpl2>
     Create(::webrtc::RtpRtcpInterface::Configuration const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::RtpRtcpInterface::Configuration const&);
+    MCNAPI void* $ctor(::webrtc::RtpRtcpInterface::Configuration const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForRtpRtcpInterface();
+    MCNAPI static void** $vftableForRtpRtcpInterface();
 
-    MCAPI static void** $vftableForModuleRtpRtcp();
+    MCNAPI static void** $vftableForModuleRtpRtcp();
     // NOLINTEND
 };
 

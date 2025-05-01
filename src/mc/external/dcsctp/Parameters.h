@@ -22,36 +22,36 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::dcsctp::Parameters::Builder& Add(::dcsctp::Parameter const&);
+        MCNAPI ::dcsctp::Parameters::Builder& Add(::dcsctp::Parameter const&);
 
-        MCAPI ~Builder();
+        MCNAPI ~Builder();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::dcsctp::ParameterDescriptor> descriptors() const;
+    MCNAPI ::std::vector<::dcsctp::ParameterDescriptor> descriptors() const;
 
-    MCAPI ~Parameters();
+    MCNAPI ~Parameters();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::dcsctp::Parameters> Parse(::rtc::ArrayView<uchar const>);
+    MCNAPI static ::std::optional<::dcsctp::Parameters> Parse(::rtc::ArrayView<uchar const>);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

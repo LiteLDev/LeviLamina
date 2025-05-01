@@ -19,7 +19,7 @@ struct VehicleComponent;
 namespace RemovePassengersSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void removePassengersSystem(
+MCNAPI void removePassengersSystem(
     ::StrictEntityContext const& vehicleEntity,
     ::RemovePassengersComponent& removePassengersComponent,
     ::VehicleComponent&          vehicleComponent,
@@ -29,7 +29,7 @@ MCAPI void removePassengersSystem(
         ::PassengersChangedFlagComponent> modifier
 );
 
-MCAPI void singleTickRemovePassenger(
+MCNAPI void singleTickRemovePassenger(
     ::StrictEntityContext const&                                                          passengerEntity,
     ::PassengerComponent const&                                                           passengerComponent,
     ::ViewT<::StrictEntityContext, ::RemovePassengersComponent const, ::VehicleComponent> vehicleView,

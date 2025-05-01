@@ -21,21 +21,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RtpCapabilities();
+    MCNAPI RtpCapabilities();
 
-    MCAPI ~RtpCapabilities();
+    MCNAPI ~RtpCapabilities();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

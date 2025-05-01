@@ -13,9 +13,9 @@ class SemVersion;
 namespace Puv {
 // functions
 // NOLINTBEGIN
-MCAPI ::SemVersion pickJsonFormatVersion(::std::string_view input);
+MCNAPI ::SemVersion pickJsonFormatVersion(::std::string_view input);
 
-MCAPI ::SemVersion::MatchType versionFromJson(
+MCNAPI ::SemVersion::MatchType versionFromJson(
     ::rapidjson::
         GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& json,
     ::SemVersion&                                                                                                 output

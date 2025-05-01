@@ -24,14 +24,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::Editor::ScriptModule::ScriptDataStorePayloadAfterEvent&
+    MCNAPI ::Editor::ScriptModule::ScriptDataStorePayloadAfterEvent&
     operator=(::Editor::ScriptModule::ScriptDataStorePayloadAfterEvent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptDataStorePayloadAfterEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptDataStorePayloadAfterEvent> bind();
     // NOLINTEND
 };
 

@@ -8,7 +8,7 @@ struct ActiveDecodeTargetsHelper {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void OnFrame(::rtc::ArrayView<int const>, ::std::bitset<32>, bool, int64, ::rtc::ArrayView<int const>);
+    MCNAPI void OnFrame(::rtc::ArrayView<int const>, ::std::bitset<32>, bool, int64, ::rtc::ArrayView<int const>);
     // NOLINTEND
 };
 

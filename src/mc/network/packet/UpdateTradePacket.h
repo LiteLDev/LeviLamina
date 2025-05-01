@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/ContainerType.h"
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/nbt/CompoundTag.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
@@ -12,9 +14,7 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class CompoundTag;
 class ReadOnlyBinaryStream;
-struct ActorUniqueID;
 // clang-format on
 
 class UpdateTradePacket : public ::Packet {
@@ -55,9 +55,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UpdateTradePacket();
+    MCNAPI UpdateTradePacket();
 
-    MCAPI UpdateTradePacket(
+    MCNAPI UpdateTradePacket(
         ::ContainerID                        containerID,
         ::SharedTypes::Legacy::ContainerType displayName,
         int                                  tag,
@@ -74,9 +74,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ContainerID                        containerID,
         ::SharedTypes::Legacy::ContainerType displayName,
         int                                  tag,
@@ -93,24 +93,24 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MinecraftPacketIds $getId() const;
+    MCNAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCAPI void $write(::BinaryStream& bitStream) const;
+    MCNAPI void $write(::BinaryStream& bitStream) const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

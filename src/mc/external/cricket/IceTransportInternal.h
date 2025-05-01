@@ -8,23 +8,23 @@ class IceTransportInternal {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI IceTransportInternal();
+    MCNAPI IceTransportInternal();
 
-    MCAPI void SendGatheringStateEvent();
+    MCNAPI void SendGatheringStateEvent();
 
-    MCAPI void SignalGatheringStateFired(::cricket::IceTransportInternal*);
+    MCNAPI void SignalGatheringStateFired(::cricket::IceTransportInternal*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

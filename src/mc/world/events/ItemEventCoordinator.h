@@ -33,11 +33,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void onItemSpawnedActor(::ItemStackBase const& item, ::Actor const& spawnedActor);
+    MCNAPI void onItemSpawnedActor(::ItemStackBase const& item, ::Actor const& spawnedActor);
 
-    MCAPI void registerItemGameplayHandler(::std::unique_ptr<::ItemGameplayHandler> handler);
+    MCNAPI void registerItemGameplayHandler(::std::unique_ptr<::ItemGameplayHandler> handler);
 
-    MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableItemGameplayEvent<::CoordinatorResult>> event);
+    MCNAPI ::CoordinatorResult sendEvent(::EventRef<::MutableItemGameplayEvent<::CoordinatorResult>> event);
     // NOLINTEND
 
 public:
@@ -49,6 +49,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

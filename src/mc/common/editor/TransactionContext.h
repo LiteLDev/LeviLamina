@@ -40,31 +40,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TransactionContext(
+    MCNAPI TransactionContext(
         ::std::string                                                      name,
         ::Editor::Transactions::TransactionContext::OperationErrorHandling errorHandling
     );
 
-    MCAPI ::Scripting::Result<void> _redo(::Editor::ServiceProviderCollection& serviceProviders) const;
+    MCNAPI ::Scripting::Result<void> _redo(::Editor::ServiceProviderCollection& serviceProviders) const;
 
-    MCAPI ::Scripting::Result<void> _undo(::Editor::ServiceProviderCollection& serviceProviders) const;
+    MCNAPI ::Scripting::Result<void> _undo(::Editor::ServiceProviderCollection& serviceProviders) const;
 
-    MCFOLD void addOperation(::std::unique_ptr<::Editor::Transactions::IOperation> operation);
+    MCNAPI void addOperation(::std::unique_ptr<::Editor::Transactions::IOperation> operation);
 
-    MCAPI ~TransactionContext();
+    MCNAPI ~TransactionContext();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::string name, ::Editor::Transactions::TransactionContext::OperationErrorHandling errorHandling);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

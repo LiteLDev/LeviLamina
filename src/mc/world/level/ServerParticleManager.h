@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     spawnParticleEffect(::std::string const& effectName, ::Vec3 const& spawnLocation, ::DimensionType dimensionType);
     // NOLINTEND
 };

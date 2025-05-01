@@ -42,21 +42,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _registerSpecialCompound(::ItemInstance const& item, ::CompoundType type);
+    MCNAPI void _registerSpecialCompound(::ItemInstance const& item, ::CompoundType type);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string _getName(::CompoundType type);
+    MCNAPI static ::std::string _getName(::CompoundType type);
 
-    MCAPI static ::CompoundType getCompoundType(::ItemDescriptor const& itemDescriptor);
+    MCNAPI static ::CompoundType getCompoundType(::ItemDescriptor const& itemDescriptor);
 
-    MCAPI static ::RecipeIngredient getIngredientForCompound(::CompoundType type);
+    MCNAPI static ::RecipeIngredient getIngredientForCompound(::CompoundType type);
 
-    MCAPI static ::ItemInstance getItemForCompound(::CompoundType type, int stackCount);
+    MCNAPI static ::ItemInstance getItemForCompound(::CompoundType type, int stackCount);
 
-    MCAPI static bool isCompoundItem(::ItemStackBase const& instance);
+    MCNAPI static bool isCompoundItem(::ItemStackBase const& instance);
     // NOLINTEND
 
 public:
@@ -76,20 +76,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isValidAuxValue(int auxValue) const;
+    MCNAPI bool $isValidAuxValue(int auxValue) const;
 
-    MCAPI ::std::string
+    MCNAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
+    MCNAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCAPI ::ResolvedItemIconInfo
+    MCNAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

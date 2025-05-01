@@ -47,26 +47,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SetArmorTrimFunction(
+    MCNAPI SetArmorTrimFunction(
         ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates,
         ::HashedString const&                                  material,
         ::HashedString const&                                  pattern
     );
 
-    MCAPI void _apply(::ItemStackBase& item, ::LootTableContext const& context) const;
+    MCNAPI void _apply(::ItemStackBase& item, ::LootTableContext const& context) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    MCNAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates,
         ::HashedString const&                                  material,
         ::HashedString const&                                  pattern
@@ -76,20 +76,20 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $apply(::ItemStack& item, ::Random&, ::LootTableContext& context);
+    MCNAPI void $apply(::ItemStack& item, ::Random&, ::LootTableContext& context);
 
-    MCFOLD void $apply(::ItemInstance& item, ::Random&, ::LootTableContext& context);
+    MCNAPI void $apply(::ItemInstance& item, ::Random&, ::LootTableContext& context);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

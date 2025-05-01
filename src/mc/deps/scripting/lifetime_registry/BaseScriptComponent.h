@@ -2,9 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/ObjectHandleValue.h"
+
 namespace Scripting::internal {
 
 struct BaseScriptComponent {
+public:
+    // BaseScriptComponent inner types declare
+    // clang-format off
+    struct Traits;
+    // clang-format on
+
+    // BaseScriptComponent inner types define
+    struct Traits {};
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -28,23 +40,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseScriptComponent(::Scripting::internal::BaseScriptComponent&&);
+    MCNAPI BaseScriptComponent(::Scripting::internal::BaseScriptComponent&&);
 
-    MCAPI ::Scripting::internal::BaseScriptComponent& operator=(::Scripting::internal::BaseScriptComponent&&);
+    MCNAPI ::entt::meta_any fetch(
+        ::entt::basic_registry<::Scripting::ObjectHandleValue>& registry,
+        ::Scripting::ObjectHandleValue                          handle
+    ) const;
 
-    MCAPI ~BaseScriptComponent();
+    MCNAPI ::Scripting::internal::BaseScriptComponent& operator=(::Scripting::internal::BaseScriptComponent&&);
+
+    MCNAPI ~BaseScriptComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::internal::BaseScriptComponent&&);
+    MCNAPI void* $ctor(::Scripting::internal::BaseScriptComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

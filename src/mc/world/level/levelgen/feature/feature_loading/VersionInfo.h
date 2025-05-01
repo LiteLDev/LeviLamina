@@ -29,20 +29,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~VersionInfo();
+    MCNAPI ~VersionInfo();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::Puv::VersionRange>
+    MCNAPI static ::std::optional<::Puv::VersionRange>
     getRangeFromVersion(::FeatureLoading::FeatureVersion const& version);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -42,28 +42,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::IntProvider& operator=(::IntProvider&&);
+    MCNAPI ::IntProvider& operator=(::IntProvider&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $sample(::IRandom& random) const;
+    MCNAPI int $sample(::IRandom& random) const;
 
-    MCAPI int $maxValue() const;
+    MCNAPI int $maxValue() const;
 
-    MCAPI int $minValue() const;
+    MCNAPI int $minValue() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

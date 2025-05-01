@@ -43,8 +43,7 @@ public:
     processLegacyOfferOwnership(::std::string const&, bool, ::std::vector<::PurchaseInfo> const&, ::std::string const&) = 0;
 
     // vIndex: 5
-    virtual void
-    purchaseCoinOffer(::std::string const&, ::PurchaseInfo const&, ::std::string const&, ::std::function<void(bool)>) = 0;
+    virtual void purchaseCoinOffer(::PurchaseInfo const&, ::std::string const&, ::std::function<void(bool)>) = 0;
 
     // vIndex: 6
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> processExternalStorePurchases() = 0;

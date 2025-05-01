@@ -30,7 +30,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI int removeRequestWithAction(
+        MCNAPI int removeRequestWithAction(
             ::DimensionDataSerializer          levelStorage,
             ::LevelStorage&                    actionToRemove,
             ::gsl::not_null<::IRequestAction*> dimensionDataSerializer
@@ -61,7 +61,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _loadRequest(
+    MCNAPI void _loadRequest(
         ::Dimension&                  dimension,
         ::std::string const&          key,
         ::CompoundTag const&          tag,
@@ -70,14 +70,14 @@ public:
         ::std::vector<::std::string>& invalidRequestsOut
     );
 
-    MCAPI void _loadRequests(
+    MCNAPI void _loadRequests(
         ::Dimension&            dimension,
         ::LevelStorage&         levelStorage,
         ::ICommandOriginLoader& loader,
         uint64                  currentTick
     );
 
-    MCAPI ::QueueRequestResult _queueRequestOrExecuteAction(
+    MCNAPI ::QueueRequestResult _queueRequestOrExecuteAction(
         ::DelayRequest  request,
         ::LevelStorage& levelStorage,
         ::Dimension&    dimension,
@@ -85,10 +85,10 @@ public:
         bool            allowDuplicates
     );
 
-    MCAPI void
+    MCNAPI void
     _saveRequest(::DelayRequest& request, ::std::string const& dimensionPrefix, ::LevelStorage& levelStorage);
 
-    MCAPI void tick(::ServerLevel& level, ::Dimension& dimension, uint64 currentTick);
+    MCNAPI void tick(::ServerLevel& level, ::Dimension& dimension, uint64 currentTick);
     // NOLINTEND
 
 public:
@@ -100,6 +100,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

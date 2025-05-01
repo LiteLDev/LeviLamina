@@ -23,6 +23,6 @@ class TeleportInterpolatorResetSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createTeleportInterpolatorResetSystem();
+    MCNAPI static ::TickingSystemWithInfo createTeleportInterpolatorResetSystem();
     // NOLINTEND
 };

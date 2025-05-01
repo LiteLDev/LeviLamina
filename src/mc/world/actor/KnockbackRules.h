@@ -12,9 +12,9 @@ class Vec3;
 namespace KnockbackRules {
 // functions
 // NOLINTBEGIN
-MCAPI void doKnockbackAttack(::Mob& self, ::Mob& target, ::Vec3 const& direction, float force, float heightCap);
+MCNAPI void doKnockbackAttack(::Mob& self, ::Mob& target, ::Vec3 const& direction, float force, float heightCap);
 
-MCAPI float getScaledKnockbackForce(::Actor const& actor, float knockbackPower);
+MCNAPI float getScaledKnockbackForce(::Actor const& actor, float knockbackPower);
 // NOLINTEND
 
 // static variables

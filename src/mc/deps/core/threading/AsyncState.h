@@ -6,6 +6,6 @@ struct AsyncState {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Release();
+    MCNAPI void Release();
     // NOLINTEND
 };

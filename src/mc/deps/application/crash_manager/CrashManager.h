@@ -35,7 +35,7 @@ public:
     virtual void notifyCrashed() = 0;
 
     // vIndex: 6
-    virtual void notifyMemoryIssue(uint, ::std::string const&) = 0;
+    virtual void notifySystemError(uint, ::std::string const&) = 0;
 
     // vIndex: 7
     virtual void recordCrashedSession(::std::string_view, ::std::string_view, int64) = 0;

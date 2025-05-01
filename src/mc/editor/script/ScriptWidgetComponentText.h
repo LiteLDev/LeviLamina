@@ -47,7 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWidgetComponentText(
+    MCNAPI ScriptWidgetComponentText(
         ::Editor::ServiceProviderCollection&                                      serviceProviders,
         ::mce::UUID const&                                                        componentId,
         ::std::string const&                                                      componentName,
@@ -57,21 +57,21 @@ public:
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentTextOptions> options
     );
 
-    MCAPI void _setColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
+    MCNAPI void _setColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
 
-    MCAPI void _setTextString(::std::string const& textString);
+    MCNAPI void _setTextString(::std::string const& textString);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentText> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentText> bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                      serviceProviders,
         ::mce::UUID const&                                                        componentId,
         ::std::string const&                                                      componentName,
@@ -91,13 +91,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
+    MCNAPI ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

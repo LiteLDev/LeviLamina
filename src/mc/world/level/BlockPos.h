@@ -44,6 +44,8 @@ public:
 
     MCAPI ::BlockPos operator-(::BlockPos const& rhs) const;
 
+    MCFOLD bool operator==(::BlockPos const& rhs) const;
+
     MCAPI ::BlockPos relative(uchar facing, int steps) const;
 
     MCAPI ::BlockPos transform(::Rotation rotation, ::Mirror mirror, ::Vec3 const& pivot) const;

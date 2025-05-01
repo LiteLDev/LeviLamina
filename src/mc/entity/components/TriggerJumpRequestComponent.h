@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct JumpPreventionResult;
-// clang-format on
+// auto generated inclusion list
+#include "mc/entity/utilities/JumpPreventionResult.h"
 
 struct TriggerJumpRequestComponent {
 public:

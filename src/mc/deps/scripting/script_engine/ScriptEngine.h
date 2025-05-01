@@ -36,11 +36,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptEngine(::Scripting::RegistryManager* registryManager);
+    MCNAPI explicit ScriptEngine(::Scripting::RegistryManager* registryManager);
 
-    MCAPI void addModuleBindingFactory(::std::unique_ptr<::Scripting::IModuleBindingFactory> moduleBindingFactory);
+    MCNAPI void addModuleBindingFactory(::std::unique_ptr<::Scripting::IModuleBindingFactory> moduleBindingFactory);
 
-    MCAPI ::Scripting::ScriptContextResult createScriptingContext(
+    MCNAPI ::Scripting::ScriptContextResult createScriptingContext(
         ::Scripting::ContextConfig const&                   config,
         ::Scripting::ModuleDescriptor const&                forModule,
         ::std::vector<::Scripting::ModuleDescriptor> const& dependencies,
@@ -48,30 +48,30 @@ public:
         ::Scripting::IPrinter*                              printer
     );
 
-    MCAPI ::std::optional<::Scripting::ModuleDescriptor> getModuleDescriptorByName(::std::string const& name) const;
+    MCNAPI ::std::optional<::Scripting::ModuleDescriptor> getModuleDescriptorByName(::std::string const& name) const;
 
-    MCAPI ::std::vector<::Scripting::SupportedBindingModule> getSupportedBindingModules() const;
+    MCNAPI ::std::vector<::Scripting::SupportedBindingModule> getSupportedBindingModules() const;
 
-    MCAPI void setRuntimeFactory(
+    MCNAPI void setRuntimeFactory(
         ::std::function<::std::shared_ptr<
             ::Scripting::
                 IRuntime>(::Scripting::ContextConfig const&, ::std::vector<::Scripting::ModuleDescriptor> const&)>
             factoryFn
     );
 
-    MCAPI ~ScriptEngine();
+    MCNAPI ~ScriptEngine();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::RegistryManager* registryManager);
+    MCNAPI void* $ctor(::Scripting::RegistryManager* registryManager);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

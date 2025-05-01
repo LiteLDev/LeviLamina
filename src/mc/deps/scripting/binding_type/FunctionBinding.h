@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/binding_type/TaggedBinding.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { class RuntimeConditions; }
-// clang-format on
-
 namespace Scripting {
 
 struct FunctionBinding : public ::Scripting::TaggedBinding {
@@ -30,27 +25,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FunctionBinding(::Scripting::FunctionBinding&&);
+    MCNAPI FunctionBinding(::Scripting::FunctionBinding&&);
 
-    MCAPI FunctionBinding(::Scripting::FunctionBinding const&);
+    MCNAPI FunctionBinding(::Scripting::FunctionBinding const&);
 
-    MCAPI void betaWithRuntimeConditions(::Scripting::RuntimeConditions const& requiredRuntimeConditions_);
-
-    MCAPI ~FunctionBinding();
+    MCNAPI ~FunctionBinding();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::FunctionBinding&&);
+    MCNAPI void* $ctor(::Scripting::FunctionBinding&&);
 
-    MCAPI void* $ctor(::Scripting::FunctionBinding const&);
+    MCNAPI void* $ctor(::Scripting::FunctionBinding const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -55,7 +55,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
+        MCNAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
             ::gsl::not_null<::Block const*> block,
             ::Actor const&,
             ::BlockPos const&,
@@ -68,7 +68,7 @@ public:
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -99,7 +99,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
+        MCNAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
             ::gsl::not_null<::Block const*> block,
             ::Actor const&,
             ::BlockPos const&,
@@ -112,7 +112,7 @@ public:
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -133,13 +133,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
+        MCNAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void fromStringVector(
+        MCNAPI static void fromStringVector(
             ::BlockTrait::PlacementPosition::EnabledStates& instance,
             ::std::vector<::std::string> const&             states
         );
@@ -177,45 +177,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlacementPosition(bool blockFace, bool verticalHalf);
+    MCNAPI PlacementPosition(bool blockFace, bool verticalHalf);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BlockTrait::PlacementPosition BlockFace();
+    MCNAPI static ::BlockTrait::PlacementPosition BlockFace();
 
-    MCAPI static ::BlockTrait::PlacementPosition VerticalHalf();
+    MCNAPI static ::BlockTrait::PlacementPosition VerticalHalf();
 
-    MCAPI static ::std::string const& getName();
+    MCNAPI static ::std::string const& getName();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(bool blockFace, bool verticalHalf);
+    MCNAPI void* $ctor(bool blockFace, bool verticalHalf);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag() const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag() const;
 
-    MCAPI void $initializeFromNetwork(::CompoundTag const& tag);
+    MCNAPI void $initializeFromNetwork(::CompoundTag const& tag);
 
-    MCAPI void $applyToBlockLegacy(::BlockLegacy& blockLegacy) const;
+    MCNAPI void $applyToBlockLegacy(::BlockLegacy& blockLegacy) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

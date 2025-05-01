@@ -17,9 +17,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/typeid_t.h"
 #include "mc/platform/brstd/copyable_function.h"
+#include "mc/server/commands/CommandFlag.h"
 #include "mc/server/commands/CommandLexer.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/CommandSelector.h"
+#include "mc/server/commands/CommandVersion.h"
 #include "mc/server/commands/SemanticConstraint.h"
 #include "mc/world/actor/selectors/InvertableFilter.h"
 
@@ -32,11 +34,10 @@ class CommandOrigin;
 class CommandParameterData;
 class CommandRunStats;
 class CommandSelectorBase;
-class CommandVersion;
 class IMinecraftEventing;
 class Packet;
 struct ActorSelectorArgs;
-struct CommandFlag;
+struct AutoCompleteInformation;
 struct CommandSyntaxInformation;
 namespace Json { class Value; }
 // clang-format on
@@ -56,6 +57,7 @@ public:
     struct ParseRule;
     struct ParseTable;
     struct ParseToken;
+    struct ParseTreeVisitor;
     class Parser;
     struct RegistryState;
     struct SemanticInfo;
@@ -67,56 +69,6 @@ public:
     // clang-format on
 
     // CommandRegistry inner types define
-    class Parser {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::CommandRegistry const&>             mRegistry;
-        ::ll::TypedStorage<8, 8, ::CommandRegistry::ParseTable const*> mParseTable;
-        ::ll::TypedStorage<8, 40, ::std::deque<::std::pair<::CommandRegistry::Symbol, ::CommandRegistry::ParseToken*>>>
-                                                                                   mStack;
-        ::ll::TypedStorage<8, 32, ::CommandRegistry::LexicalToken>                 mNext;
-        ::ll::TypedStorage<8, 32, ::std::string>                                   mInput;
-        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandRegistry::ParseToken>> mRoot;
-        ::ll::TypedStorage<8, 32, ::std::string>                                   mError;
-        ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                    mErrorParams;
-        ::ll::TypedStorage<4, 4, int>                                              mVersion;
-        ::ll::TypedStorage<1, 1, bool>                                             mGenerateParams;
-        ::ll::TypedStorage<1, 1, bool>                                             mBreakAtEnd;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI Parser(::CommandRegistry const& registry, int version);
-
-        MCAPI bool _parse(::std::string const& in);
-
-        MCAPI ::std::unique_ptr<::CommandSelector<::Actor>>
-        createSelector(::std::string const& selectorString, ::CommandOrigin const& origin);
-
-        MCAPI ::std::vector<::std::string> getErrorParams() const;
-
-        MCAPI bool parseCommand(::std::string const& in);
-
-        MCAPI bool parseSelector(::std::string const& in);
-
-        MCAPI ~Parser();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::CommandRegistry const& registry, int version);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
-    };
-
     using ValueTypeID = uint64;
 
     using EnumValueID = uint64;
@@ -334,21 +286,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Signature(::CommandRegistry::Signature&&);
+        MCNAPI Signature(::CommandRegistry::Signature&&);
 
-        MCAPI ~Signature();
+        MCNAPI ~Signature();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::CommandRegistry::Signature&&);
+        MCNAPI void* $ctor(::CommandRegistry::Signature&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -366,7 +318,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::CommandRegistry::LexicalToken& operator=(::CommandLexer::Token const& token);
+        MCNAPI ::CommandRegistry::LexicalToken& operator=(::CommandLexer::Token const& token);
         // NOLINTEND
     };
 
@@ -414,7 +366,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::CommandRegistry::ParseRule& operator=(::CommandRegistry::ParseRule&& rhs);
+        MCNAPI ::CommandRegistry::ParseRule& operator=(::CommandRegistry::ParseRule&& rhs);
         // NOLINTEND
     };
 
@@ -469,13 +421,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Enum();
+        MCNAPI ~Enum();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -494,13 +446,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ChainedSubcommand();
+        MCNAPI ~ChainedSubcommand();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -563,13 +515,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ParamSymbols();
+        MCNAPI ParamSymbols();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
         // NOLINTEND
     };
 
@@ -598,13 +550,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~RegistryState();
+        MCNAPI ~RegistryState();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -660,6 +612,58 @@ public:
     using CommandVisitCallback = ::std::function<bool(::CommandRegistry::ParseToken const*, ::CommandOrigin const&)>;
 
     using ParseTableMap = ::std::map<uint, ::CommandRegistry::ParseTable>;
+
+    class Parser {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::CommandRegistry const&>             mRegistry;
+        ::ll::TypedStorage<8, 8, ::CommandRegistry::ParseTable const*> mParseTable;
+        ::ll::TypedStorage<8, 40, ::std::deque<::std::pair<::CommandRegistry::Symbol, ::CommandRegistry::ParseToken*>>>
+                                                                                   mStack;
+        ::ll::TypedStorage<8, 32, ::CommandRegistry::LexicalToken>                 mNext;
+        ::ll::TypedStorage<8, 32, ::std::string>                                   mInput;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandRegistry::ParseToken>> mRoot;
+        ::ll::TypedStorage<8, 32, ::std::string>                                   mError;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                    mErrorParams;
+        ::ll::TypedStorage<4, 4, int>                                              mVersion;
+        ::ll::TypedStorage<1, 1, bool>                                             mGenerateParams;
+        ::ll::TypedStorage<1, 1, bool>                                             mBreakAtEnd;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI Parser(::CommandRegistry const& registry, int version);
+
+        MCNAPI bool _parse(::std::string const& in);
+
+        MCNAPI ::std::unique_ptr<::CommandSelector<::Actor>>
+        createSelector(::std::string const& selectorString, ::CommandOrigin const& origin);
+
+        MCNAPI ::std::vector<::std::string> getErrorParams() const;
+
+        MCNAPI bool parseCommand(::std::string const& in);
+
+        MCNAPI bool parseSelector(::std::string const& in);
+
+        MCNAPI ~Parser();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::CommandRegistry const& registry, int version);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct ParseTreeVisitor {};
 
 public:
     // member variables

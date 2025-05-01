@@ -49,68 +49,68 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSystem(::ScriptModuleMinecraft::ScriptSystem&&);
+    MCNAPI ScriptSystem(::ScriptModuleMinecraft::ScriptSystem&&);
 
-    MCAPI ScriptSystem(
+    MCNAPI ScriptSystem(
         ::Scripting::WeakLifetimeScope const&                scope,
         ::ScriptModuleMinecraft::ScriptGlobalEventListeners& eventListeners,
         ::gsl::not_null<::ServerLevel*>                      level
     );
 
-    MCAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error, void>, ::Scripting::EngineError>
+    MCNAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error, void>, ::Scripting::EngineError>
     _waitTicks(::Scripting::ScriptObjectFactory& factory, uint numberOfTicks);
 
-    MCAPI void
+    MCNAPI void
     clearJob(::Scripting::WeakLifetimeScope const& scope, ::Scripting::DependencyLocator& locator, uint jobId);
 
-    MCAPI void clearRun(uint runId);
+    MCNAPI void clearRun(uint runId);
 
-    MCFOLD ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemAfterEvents>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemAfterEvents>
     getSystemAfterEvents();
 
-    MCFOLD ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemBeforeEvents>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemBeforeEvents>
     getSystemBeforeEvents();
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemInfo> getSystemInfo();
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemInfo> getSystemInfo();
 
-    MCAPI ::ScriptModuleMinecraft::ScriptSystem& operator=(::ScriptModuleMinecraft::ScriptSystem&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptSystem& operator=(::ScriptModuleMinecraft::ScriptSystem&&);
 
-    MCAPI uint runInterval(::Scripting::Closure<void()> closure, ::std::optional<uint> interval);
+    MCNAPI uint runInterval(::Scripting::Closure<void()> closure, ::std::optional<uint> interval);
 
-    MCAPI uint runJob(::Scripting::DependencyLocator& locator, ::Scripting::Generator<void, void, void> generator);
+    MCNAPI uint runJob(::Scripting::DependencyLocator& locator, ::Scripting::Generator<void, void, void> generator);
 
-    MCAPI uint runSafe(::Scripting::Closure<void()> closure);
+    MCNAPI uint runSafe(::Scripting::Closure<void()> closure);
 
-    MCAPI uint runTimeout(::Scripting::Closure<void()> closure, ::std::optional<uint> delay);
+    MCNAPI uint runTimeout(::Scripting::Closure<void()> closure, ::std::optional<uint> delay);
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError,
         ::Scripting::InvalidArgumentError,
         ::Scripting::EngineError>
     sendScriptEvent(::std::string const& messageId, ::std::string const& messagePayload);
 
-    MCAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error, void>, ::Scripting::EngineError>
+    MCNAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error, void>, ::Scripting::EngineError>
     waitTicks(::Scripting::ScriptObjectFactory& factory, uint numberOfTicks);
 
-    MCAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error, void>, ::Scripting::EngineError>
+    MCNAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error, void>, ::Scripting::EngineError>
     waitTicksV1(::Scripting::ScriptObjectFactory& factory, uint numberOfTicks);
 
-    MCAPI ~ScriptSystem();
+    MCNAPI ~ScriptSystem();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptSystem> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptSystem> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSystem&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptSystem&&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::WeakLifetimeScope const&                scope,
         ::ScriptModuleMinecraft::ScriptGlobalEventListeners& eventListeners,
         ::gsl::not_null<::ServerLevel*>                      level
@@ -120,7 +120,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

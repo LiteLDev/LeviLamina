@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/world/actor/DefinitionTrigger.h"
 #include "mc/world/item/components/LegacyTriggerItemComponent.h"
 
 // auto generated forward declare list
@@ -36,21 +38,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LegacyOnUseTriggerItemComponent(::LegacyOnUseTriggerItemComponentData&& data);
+    MCNAPI explicit LegacyOnUseTriggerItemComponent(::LegacyOnUseTriggerItemComponentData&& data);
 
-    MCAPI void _use(bool& result, ::ItemStack& item, ::Player& player);
+    MCNAPI void _use(bool& result, ::ItemStack& item, ::Player& player);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LegacyOnUseTriggerItemComponentData&& data);
+    MCNAPI void* $ctor(::LegacyOnUseTriggerItemComponentData&& data);
     // NOLINTEND
 
 public:
@@ -62,12 +64,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent();
+    MCNAPI void $_initializeComponent();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

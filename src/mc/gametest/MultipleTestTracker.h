@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addListener(::std::shared_ptr<::gametest::IGameTestListener> listener);
+    MCNAPI void addListener(::std::shared_ptr<::gametest::IGameTestListener> listener);
     // NOLINTEND
 
 public:

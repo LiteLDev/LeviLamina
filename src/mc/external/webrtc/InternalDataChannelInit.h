@@ -13,23 +13,23 @@ struct InternalDataChannelInit {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit InternalDataChannelInit(::webrtc::DataChannelInit const&);
+    MCNAPI explicit InternalDataChannelInit(::webrtc::DataChannelInit const&);
 
-    MCAPI bool IsValid() const;
+    MCNAPI bool IsValid() const;
 
-    MCAPI ~InternalDataChannelInit();
+    MCNAPI ~InternalDataChannelInit();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::DataChannelInit const&);
+    MCNAPI void* $ctor(::webrtc::DataChannelInit const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

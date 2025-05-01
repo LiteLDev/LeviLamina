@@ -8,7 +8,7 @@ class MathUtility {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::glm::mat4x4 generateRotationAroundPivotMat(::glm::mat4x4 const& rotation, ::glm::vec3 const& pivot);
+    MCNAPI static ::glm::mat4x4 generateRotationAroundPivotMat(::glm::mat4x4 const& rotation, ::glm::vec3 const& pivot);
     // NOLINTEND
 };
 

@@ -31,6 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Deserialize(::RakNet::BitStream* b);
+    MCNAPI void Deserialize(::RakNet::BitStream* b);
     // NOLINTEND
 };

@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/world/item/ItemStack.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockPos;
 class EntityContext;
-class ItemStack;
 // clang-format on
 
 struct BlockTryDestroyByPlayerEvent {
@@ -30,24 +30,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockTryDestroyByPlayerEvent(::BlockTryDestroyByPlayerEvent const&);
+    MCNAPI BlockTryDestroyByPlayerEvent(::BlockTryDestroyByPlayerEvent const&);
 
-    MCAPI BlockTryDestroyByPlayerEvent(::BlockTryDestroyByPlayerEvent&&);
+    MCNAPI BlockTryDestroyByPlayerEvent(::BlockTryDestroyByPlayerEvent&&);
 
-    MCAPI ~BlockTryDestroyByPlayerEvent();
+    MCNAPI ~BlockTryDestroyByPlayerEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockTryDestroyByPlayerEvent const&);
+    MCNAPI void* $ctor(::BlockTryDestroyByPlayerEvent const&);
 
-    MCAPI void* $ctor(::BlockTryDestroyByPlayerEvent&&);
+    MCNAPI void* $ctor(::BlockTryDestroyByPlayerEvent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

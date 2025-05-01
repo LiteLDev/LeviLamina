@@ -34,26 +34,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit NBTSaver(::cereal::ReflectionCtx const& reflectionCtx);
+    MCNAPI explicit NBTSaver(::cereal::ReflectionCtx const&);
 
-    MCAPI ::CompoundTag getSavedCompoundTag();
+    MCNAPI ::CompoundTag getSavedCompoundTag();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx const& reflectionCtx);
+    MCNAPI void* $ctor(::cereal::ReflectionCtx const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

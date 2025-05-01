@@ -11,7 +11,7 @@ struct DepenetrationComponent;
 namespace DepenetrationComponentUtility {
 // functions
 // NOLINTBEGIN
-MCAPI void setTemporaryOverride(::DepenetrationComponent& depenetrationComponent, ::Vec3 const& value);
+MCNAPI void setTemporaryOverride(::DepenetrationComponent& depenetrationComponent, ::Vec3 const& value);
 // NOLINTEND
 
 // static variables

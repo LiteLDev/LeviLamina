@@ -15,7 +15,7 @@ class VanillaItemTiers {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::ItemStack> const
+    MCNAPI static ::std::vector<::ItemStack> const
     getTierItems(::Item::Tier const& tier, ::BaseGameVersion const& baseGameVersion);
     // NOLINTEND
 

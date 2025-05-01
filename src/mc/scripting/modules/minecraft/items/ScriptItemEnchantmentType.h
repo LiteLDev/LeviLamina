@@ -32,23 +32,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string getName() const;
+    MCNAPI ::std::string getName() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptItemEnchantmentType&
+    MCNAPI ::ScriptModuleMinecraft::ScriptItemEnchantmentType&
     operator=(::ScriptModuleMinecraft::ScriptItemEnchantmentType&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentType> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentType> bind();
 
-    MCAPI static ::Enchant::Type
+    MCNAPI static ::Enchant::Type
     getEnchantType(::std::variant<
                    ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>,
                    ::std::string> const& enchantmentTypeOrId);
 
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>
     getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::Enchant::Type enchantmentType);
     // NOLINTEND
 };

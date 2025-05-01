@@ -12,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class IContentKeyProvider;
+class IPackIOProvider;
 class IPackManifestFactory;
 class PackAccessStrategy;
 class PackManifest;
@@ -20,6 +21,7 @@ class PackReport;
 class PackSourceReport;
 class ResourceLocation;
 class SubpackInfoCollection;
+struct LegacyDependenciesUpgrade;
 namespace Core { class Path; }
 // clang-format on
 
@@ -27,12 +29,13 @@ class Pack : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackManifest>>                  mManifest;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackAccessStrategy>>            mAccessStrategy;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SubpackInfoCollection>>         mSubpackInfoStack;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackMetadata>>                  mMetadata;
-    ::ll::TypedStorage<8, 16, ::std::map<void*, ::std::function<void(::Pack&)>>> mPackUpdatedCallbacks;
-    ::ll::TypedStorage<8, 16, ::std::map<void*, ::std::function<void(::Pack&)>>> mPackDeletedCallbacks;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackManifest>>                    mManifest;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackAccessStrategy>>              mAccessStrategy;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SubpackInfoCollection>>           mSubpackInfoStack;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackMetadata>>                    mMetadata;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LegacyDependenciesUpgrade const>> mDependenciesUpgrade;
+    ::ll::TypedStorage<8, 16, ::std::map<void*, ::std::function<void(::Pack&)>>>   mPackUpdatedCallbacks;
+    ::ll::TypedStorage<8, 16, ::std::map<void*, ::std::function<void(::Pack&)>>>   mPackDeletedCallbacks;
     // NOLINTEND
 
 public:
@@ -45,24 +48,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Pack(
+    MCNAPI Pack(
         ::std::unique_ptr<::PackManifest>          manifest,
         ::std::unique_ptr<::PackAccessStrategy>    accessStrategy,
         ::std::unique_ptr<::SubpackInfoCollection> subpacks,
         ::std::unique_ptr<::PackMetadata>          metadata
     );
 
-    MCAPI void _loadLocalizationFiles();
+    MCNAPI void _loadLocalizationFiles();
 
-    MCAPI void move(::Pack&& pack);
+    MCNAPI void move(::Pack&& pack);
 
-    MCAPI void notifyUpdated();
+    MCNAPI void notifyUpdated();
+
+    MCNAPI void upgradeLegacyDependencies(::std::unique_ptr<::LegacyDependenciesUpgrade const> upgrade);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::Pack> createPack(
+    MCNAPI static ::std::unique_ptr<::Pack> createPack(
+        ::IPackIOProvider const&                                io,
         ::ResourceLocation const&                               fileLocation,
         ::PackType                                              type,
         ::PackOrigin                                            origin,
@@ -72,7 +78,7 @@ public:
         ::Core::Path const&                                     zipSubDir
     );
 
-    MCAPI static ::std::unique_ptr<::PackMetadata> createPackMetadata(
+    MCNAPI static ::std::unique_ptr<::PackMetadata> createPackMetadata(
         ::PackType                  type,
         ::PackManifest&             manifest,
         ::PackAccessStrategy const& accessStrategy,
@@ -89,7 +95,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::PackManifest>          manifest,
         ::std::unique_ptr<::PackAccessStrategy>    accessStrategy,
         ::std::unique_ptr<::SubpackInfoCollection> subpacks,
@@ -100,12 +106,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

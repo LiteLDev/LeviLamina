@@ -19,12 +19,12 @@ class UndefinedSchema : public ::cereal::internal::BasicSchema {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
+    // vIndex: 6
     virtual void
     doLoad(::cereal::SchemaReader&, ::entt::meta_any&, ::entt::meta_any const&, ::cereal::SerializerContext& context)
         const /*override*/;
 
-    // vIndex: 7
+    // vIndex: 9
     virtual ::cereal::SchemaDescription
     makeDescription(::cereal::ReflectionCtx const&, ::cereal::internal::BasicSchema::DescriptionMode) const
         /*override*/;
@@ -42,18 +42,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     $doLoad(::cereal::SchemaReader&, ::entt::meta_any&, ::entt::meta_any const&, ::cereal::SerializerContext& context)
         const;
 
-    MCAPI ::cereal::SchemaDescription
+    MCNAPI ::cereal::SchemaDescription
     $makeDescription(::cereal::ReflectionCtx const&, ::cereal::internal::BasicSchema::DescriptionMode) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -11,21 +11,21 @@ struct EngineError : public ::Scripting::Error {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EngineError(::std::string const& message);
+    MCNAPI explicit EngineError(::std::string const& message);
 
-    MCAPI ~EngineError();
+    MCNAPI ~EngineError();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& message);
+    MCNAPI void* $ctor(::std::string const& message);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

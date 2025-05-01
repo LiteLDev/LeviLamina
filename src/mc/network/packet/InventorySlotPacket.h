@@ -7,14 +7,14 @@
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/world/ContainerID.h"
+#include "mc/world/containers/FullContainerName.h"
+#include "mc/world/item/NetworkItemStackDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
 class ItemStack;
-class NetworkItemStackDescriptor;
 class ReadOnlyBinaryStream;
-struct FullContainerName;
 // clang-format on
 
 class InventorySlotPacket : public ::Packet {

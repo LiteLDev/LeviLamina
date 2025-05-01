@@ -15,9 +15,9 @@ class PlayerHelpers {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Editor::Services::ModeServiceProvider const* _getModeServiceConst(::Player const& player);
+    MCNAPI static ::Editor::Services::ModeServiceProvider const* _getModeServiceConst(::Player const& player);
 
-    MCAPI static ::Editor::ServiceProviderCollection& getServiceProviders(::Player& player);
+    MCNAPI static ::Editor::ServiceProviderCollection& getServiceProviders(::Player& player);
     // NOLINTEND
 };
 

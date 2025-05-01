@@ -12,7 +12,7 @@ namespace cereal { struct ReflectionCtx; }
 namespace BiomeJsonDocumentLoader {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::unique_ptr<::SharedTypes::v1_20_60::BiomeJsonDocument> loadBiomeJsonDocumentFromRapidJson(
+MCNAPI ::std::unique_ptr<::SharedTypes::v1_20_60::BiomeJsonDocument> loadBiomeJsonDocumentFromRapidJson(
     ::cereal::ReflectionCtx& ctx,
     ::rapidjson::GenericDocument<
         ::rapidjson::UTF8<char>,

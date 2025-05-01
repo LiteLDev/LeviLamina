@@ -24,17 +24,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::StructurePoolElement const* lookupByName(::std::string name) const;
+    MCNAPI ::StructurePoolElement const* lookupByName(::std::string name) const;
 
-    MCAPI ::StructurePoolElement const&
+    MCNAPI ::StructurePoolElement const&
     registerStructureElement(::std::string name, ::std::unique_ptr<::StructurePoolElement>&& element);
 
-    MCAPI ~JigsawStructureElementRegistry();
+    MCNAPI ~JigsawStructureElementRegistry();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

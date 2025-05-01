@@ -4,11 +4,9 @@
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/server/commands/RelativeFloat.h"
 
-// auto generated forward declare list
-// clang-format off
-class RelativeFloat;
-class Vec2;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/server/commands/RelativeFloat.h"
 
 namespace RotationCommandUtils {
 

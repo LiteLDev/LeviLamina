@@ -8,9 +8,10 @@ class WriteAppendEvent {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkc8beac;
     ::ll::UntypedStorage<8, 16> mUnk638fc6;
     ::ll::UntypedStorage<8, 8>  mUnkcae018;
-    ::ll::UntypedStorage<8, 64> mUnk92c576;
+    ::ll::UntypedStorage<8, 64> mUnkce2d98;
     // NOLINTEND
 
 public:

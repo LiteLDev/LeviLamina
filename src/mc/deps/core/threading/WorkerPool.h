@@ -51,9 +51,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorkerPool(::std::string name, ::Scheduler& owner);
+    MCNAPI WorkerPool(::std::string name, ::Scheduler& owner);
 
-    MCAPI WorkerPool(
+    MCNAPI WorkerPool(
         ::std::string                                 name,
         uint64                                        threadCount,
         ::Bedrock::Threading::OSThreadPriority const& priority,
@@ -62,17 +62,17 @@ public:
         ::std::optional<int>                          suppressWorkerProfiling
     );
 
-    MCAPI bool _checkPendingWork();
+    MCNAPI bool _checkPendingWork();
 
-    MCAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);
+    MCNAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);
 
-    MCAPI ::std::shared_ptr<::BackgroundTaskBase> tryPop(int minPriority);
+    MCNAPI ::std::shared_ptr<::BackgroundTaskBase> tryPop(int minPriority);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _registerPool(::WorkerPool& pool);
+    MCNAPI static void _registerPool(::WorkerPool& pool);
     // NOLINTEND
 
 public:
@@ -87,9 +87,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string name, ::Scheduler& owner);
+    MCNAPI void* $ctor(::std::string name, ::Scheduler& owner);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string                                 name,
         uint64                                        threadCount,
         ::Bedrock::Threading::OSThreadPriority const& priority,
@@ -102,12 +102,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

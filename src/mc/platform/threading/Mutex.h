@@ -11,7 +11,7 @@ class Mutex : public ::Bedrock::Threading::ZeroInit, public ::std::mutex {
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

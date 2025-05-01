@@ -23,32 +23,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InstantaneousAttributeBuff(float amount, ::AttributeBuffType type);
+    MCNAPI InstantaneousAttributeBuff(float amount, ::AttributeBuffType type);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(float amount, ::AttributeBuffType type);
+    MCNAPI void* $ctor(float amount, ::AttributeBuffType type);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isInstantaneous() const;
+    MCNAPI bool $isInstantaneous() const;
 
-    MCFOLD bool $isSerializable() const;
+    MCNAPI bool $isSerializable() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

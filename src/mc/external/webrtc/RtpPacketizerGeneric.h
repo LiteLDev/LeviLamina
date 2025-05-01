@@ -16,27 +16,27 @@ class RtpPacketizerGeneric {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void BuildHeader(::webrtc::RTPVideoHeader const&);
+    MCNAPI void BuildHeader(::webrtc::RTPVideoHeader const&);
 
-    MCAPI RtpPacketizerGeneric(::rtc::ArrayView<uchar const>, ::webrtc::RtpPacketizer::PayloadSizeLimits);
+    MCNAPI RtpPacketizerGeneric(::rtc::ArrayView<uchar const>, ::webrtc::RtpPacketizer::PayloadSizeLimits);
 
-    MCAPI
+    MCNAPI
     RtpPacketizerGeneric(::rtc::ArrayView<uchar const>, ::webrtc::RtpPacketizer::PayloadSizeLimits, ::webrtc::RTPVideoHeader const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::ArrayView<uchar const>, ::webrtc::RtpPacketizer::PayloadSizeLimits);
+    MCNAPI void* $ctor(::rtc::ArrayView<uchar const>, ::webrtc::RtpPacketizer::PayloadSizeLimits);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::rtc::ArrayView<uchar const>, ::webrtc::RtpPacketizer::PayloadSizeLimits, ::webrtc::RTPVideoHeader const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

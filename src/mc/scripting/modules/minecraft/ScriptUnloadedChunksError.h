@@ -12,27 +12,27 @@ struct ScriptUnloadedChunksError : public ::Scripting::Error {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptUnloadedChunksError(uint64 unloadedChunks, uint64 totalChunks);
+    MCNAPI ScriptUnloadedChunksError(uint64 unloadedChunks, uint64 totalChunks);
 
-    MCAPI ~ScriptUnloadedChunksError();
+    MCNAPI ~ScriptUnloadedChunksError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptUnloadedChunksError> bind();
+    MCNAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptUnloadedChunksError> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint64 unloadedChunks, uint64 totalChunks);
+    MCNAPI void* $ctor(uint64 unloadedChunks, uint64 totalChunks);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

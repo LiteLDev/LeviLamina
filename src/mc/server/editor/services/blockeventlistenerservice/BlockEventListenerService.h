@@ -52,10 +52,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::Editor::Transactions::BlockChangedOperationData>
+    MCNAPI ::std::vector<::Editor::Transactions::BlockChangedOperationData>
     _fillDestroyAction(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    MCAPI ::std::vector<::Editor::Transactions::BlockChangedOperationData>
+    MCNAPI ::std::vector<::Editor::Transactions::BlockChangedOperationData>
     _fillPlacedAction(::BlockSource const& region, ::BlockPos const& pos) const;
     // NOLINTEND
 
@@ -68,24 +68,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCAPI ::EventResult
+    MCNAPI ::EventResult
     $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
 
-    MCAPI ::EventResult $onBlockInPosWillBeDestroyedByPlayer(::Player& player, ::BlockPos const& pos);
+    MCNAPI ::EventResult $onBlockInPosWillBeDestroyedByPlayer(::Player& player, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
 
-    MCAPI static void** $vftableForEventListenerDispatcher();
+    MCNAPI static void** $vftableForEventListenerDispatcher();
     // NOLINTEND
 };
 

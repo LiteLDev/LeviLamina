@@ -13,14 +13,14 @@ class AcknowledgedBitrateEstimatorInterface {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::webrtc::AcknowledgedBitrateEstimatorInterface>
+    MCNAPI static ::std::unique_ptr<::webrtc::AcknowledgedBitrateEstimatorInterface>
     Create(::webrtc::FieldTrialsView const*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

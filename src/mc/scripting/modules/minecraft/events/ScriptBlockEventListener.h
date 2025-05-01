@@ -104,26 +104,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::PistonActionEvent const& pistonActionEvent);
+    MCNAPI ::EventResult $onEvent(::PistonActionEvent const& pistonActionEvent);
 
-    MCAPI ::EventResult $onEvent(::LeverActionEvent const& leverActionEvent);
+    MCNAPI ::EventResult $onEvent(::LeverActionEvent const& leverActionEvent);
 
-    MCAPI ::EventResult $onEvent(::ButtonPushEvent const& buttonPushEvent);
+    MCNAPI ::EventResult $onEvent(::ButtonPushEvent const& buttonPushEvent);
 
-    MCAPI ::EventResult $onEvent(::PressurePlatePushEvent const& pressurePlatePushEvent);
+    MCNAPI ::EventResult $onEvent(::PressurePlatePushEvent const& pressurePlatePushEvent);
 
-    MCAPI ::EventResult $onEvent(::PressurePlatePopEvent const& pressurePlatePopEvent);
+    MCNAPI ::EventResult $onEvent(::PressurePlatePopEvent const& pressurePlatePopEvent);
 
-    MCAPI ::EventResult $onEvent(::TripWireTripEvent const& tripWireTripEvent);
+    MCNAPI ::EventResult $onEvent(::TripWireTripEvent const& tripWireTripEvent);
 
-    MCAPI ::EventResult $onEvent(::TargetBlockHitEvent const& targetBlockHitEvent);
+    MCNAPI ::EventResult $onEvent(::TargetBlockHitEvent const& targetBlockHitEvent);
 
-    MCAPI ::EventResult $onEvent(::ExplosionStartedEvent const& explosionStartedEvent);
+    MCNAPI ::EventResult $onEvent(::ExplosionStartedEvent const& explosionStartedEvent);
 
-    MCAPI ::EventResult
+    MCNAPI ::EventResult
     $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
 
-    MCAPI ::EventResult $onBlockDestroyedByPlayer(
+    MCNAPI ::EventResult $onBlockDestroyedByPlayer(
         ::Player&              player,
         ::Block const&         destroyedBlock,
         ::BlockPos const&      pos,
@@ -131,14 +131,14 @@ public:
         ::ItemStackBase const& itemBeforeBlockBreak
     );
 
-    MCAPI ::EventResult
+    MCNAPI ::EventResult
     $onBlockDestructionStarted(::Player& player, ::BlockPos const& pos, ::Block const& hitBlock, uchar const face);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

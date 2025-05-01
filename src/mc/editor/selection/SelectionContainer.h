@@ -158,45 +158,45 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::CompoundBlockVolumeItem>
+    MCNAPI ::std::optional<::CompoundBlockVolumeItem>
     $peekLastVolume(::std::optional<::CompoundBlockVolumePositionRelativity> optRelativity);
 
-    MCAPI ::Scripting::Result_deprecated<int> $volumeCount();
+    MCNAPI ::Scripting::Result_deprecated<int> $volumeCount();
 
-    MCAPI ::Scripting::Result<void> $moveContainerToLocation(::BlockPos const& newPos);
+    MCNAPI ::Scripting::Result<void> $moveContainerToLocation(::BlockPos const& newPos);
 
-    MCAPI ::Scripting::Result<void> $_pushVolume(::CompoundBlockVolumeItem const& item);
+    MCNAPI ::Scripting::Result<void> $_pushVolume(::CompoundBlockVolumeItem const& item);
 
-    MCAPI ::Scripting::Result<void> $_popVolume();
+    MCNAPI ::Scripting::Result<void> $_popVolume();
 
-    MCAPI ::Scripting::Result<void> $_replaceOrAddLastVolume(::CompoundBlockVolumeItem const& item);
+    MCNAPI ::Scripting::Result<void> $_replaceOrAddLastVolume(::CompoundBlockVolumeItem const& item);
 
-    MCAPI ::Scripting::Result<void> $_clearContainer();
+    MCNAPI ::Scripting::Result<void> $_clearContainer();
 
-    MCAPI ::Scripting::Result<void> $_replaceContainerContents(::WeakRef<::Editor::Selection::SelectionContainer> other
+    MCNAPI ::Scripting::Result<void> $_replaceContainerContents(::WeakRef<::Editor::Selection::SelectionContainer> other
     );
 
-    MCAPI ::Scripting::Result<void> $_replaceContainerContents(::CompoundBlockVolume const& other);
+    MCNAPI ::Scripting::Result<void> $_replaceContainerContents(::CompoundBlockVolume const& other);
 
-    MCAPI ::Scripting::Result<void> $_translateContainer(int dx, int dy, int dz);
+    MCNAPI ::Scripting::Result<void> $_translateContainer(int dx, int dy, int dz);
 
-    MCAPI ::Scripting::Result<void> $_checkTranslationIsValid(int dx, int dy, int dz) const;
+    MCNAPI ::Scripting::Result<void> $_checkTranslationIsValid(int dx, int dy, int dz) const;
 
-    MCAPI ::Scripting::Result<void> $_checkSizeIsValid(int x, int y, int z) const;
+    MCNAPI ::Scripting::Result<void> $_checkSizeIsValid(int x, int y, int z) const;
 
-    MCAPI ::Scripting::Result<void> $_checkDimensionHeightIsValid(::BoundingBox const& boundingBox) const;
+    MCNAPI ::Scripting::Result<void> $_checkDimensionHeightIsValid(::BoundingBox const& boundingBox) const;
 
-    MCAPI void $_setVisible(bool visible);
+    MCNAPI void $_setVisible(bool visible);
 
-    MCAPI void $_setFillColor(::mce::Color color);
+    MCNAPI void $_setFillColor(::mce::Color color);
 
-    MCAPI void $_setOutlineColor(::mce::Color color);
+    MCNAPI void $_setOutlineColor(::mce::Color color);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

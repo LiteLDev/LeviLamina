@@ -8,13 +8,13 @@ struct OneTimeEvent {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~OneTimeEvent();
+    MCNAPI ~OneTimeEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

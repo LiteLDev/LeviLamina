@@ -29,9 +29,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void createNetworkSession(::TransportLayer transportLayer);
+    MCNAPI void createNetworkSession(::TransportLayer transportLayer);
 
-    MCAPI void destroyNetworkSession();
+    MCNAPI void destroyNetworkSession();
     // NOLINTEND
 
 public:
@@ -43,6 +43,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

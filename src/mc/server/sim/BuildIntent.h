@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace sim { struct ContinuousBuildIntent; }
-namespace sim { struct VoidBuildIntent; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/server/sim/ContinuousBuildIntent.h"
+#include "mc/server/sim/VoidBuildIntent.h"
 
 namespace sim {
 

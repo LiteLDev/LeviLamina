@@ -23,7 +23,7 @@ class ScriptAsyncGameTestFunction : public ::ScriptModuleGameTest::BaseScriptGam
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 88> mUnkbaa30c;
+    ::ll::UntypedStorage<8, 232> mUnkbaa30c;
     // NOLINTEND
 
 public:
@@ -46,7 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptAsyncGameTestFunction(
+    MCNAPI ScriptAsyncGameTestFunction(
         ::Scripting::WeakLifetimeScope scope,
         ::Scripting::Closure<
             ::Scripting::Future<void>(::Scripting::TypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestHelper>)>
@@ -58,7 +58,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::WeakLifetimeScope scope,
         ::Scripting::Closure<
             ::Scripting::Future<void>(::Scripting::TypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestHelper>)>
@@ -76,14 +76,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::gametest::IGameTestFunctionRunResult>
+    MCNAPI ::std::unique_ptr<::gametest::IGameTestFunctionRunResult>
     $run(::gametest::BaseGameTestHelper&, ::gametest::IGameTestFunctionContext& fnContext) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

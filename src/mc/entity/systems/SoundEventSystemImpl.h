@@ -101,35 +101,35 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::StrictExecutionContext<
-                     ::Filter<
-                         ::HorseFlagComponent,
-                         ::MobFlagComponent,
-                         ::ParrotFlagComponent,
-                         ::VehicleComponent,
-                         ::CamelFlagComponent,
-                         ::PlayerComponent>,
-                     ::Read<
-                         ::ActorRotationComponent,
-                         ::MobBodyRotationComponent,
-                         ::PassengerComponent,
-                         ::RenderRotationComponent,
-                         ::StandAnimationComponent,
-                         ::ActorDataFlagComponent,
-                         ::AABBShapeComponent,
-                         ::OffsetsComponent,
-                         ::VanillaOffsetComponent,
-                         ::PassengerRenderingRidingOffsetComponent>,
-                     ::Write<::LevelComponent, ::SoundEventRequestQueueComponent>,
-                     ::AddRemove<>,
-                     ::GlobalRead<>,
-                     ::GlobalWrite<>,
-                     ::EntityFactoryT<>>& context);
+    MCNAPI void $tick(::StrictExecutionContext<
+                      ::Filter<
+                          ::HorseFlagComponent,
+                          ::MobFlagComponent,
+                          ::ParrotFlagComponent,
+                          ::VehicleComponent,
+                          ::CamelFlagComponent,
+                          ::PlayerComponent>,
+                      ::Read<
+                          ::ActorRotationComponent,
+                          ::MobBodyRotationComponent,
+                          ::PassengerComponent,
+                          ::RenderRotationComponent,
+                          ::StandAnimationComponent,
+                          ::ActorDataFlagComponent,
+                          ::AABBShapeComponent,
+                          ::OffsetsComponent,
+                          ::VanillaOffsetComponent,
+                          ::PassengerRenderingRidingOffsetComponent>,
+                      ::Write<::LevelComponent, ::SoundEventRequestQueueComponent>,
+                      ::AddRemove<>,
+                      ::GlobalRead<>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& context);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -60,11 +60,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _disableGravity(::Mob& mob);
+    MCNAPI void _disableGravity(::Mob& mob);
 
-    MCAPI void _restorePreviousGravityFlag(::Mob& mob);
+    MCNAPI void _restorePreviousGravityFlag(::Mob& mob);
 
-    MCAPI void _storePreviousGravityFlag(::Mob& mob);
+    MCNAPI void _storePreviousGravityFlag(::Mob& mob);
     // NOLINTEND
 
 public:
@@ -76,26 +76,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeInternal(::Mob& mob, ::NavigationDescription* description);
+    MCNAPI void $initializeInternal(::Mob& mob, ::NavigationDescription* description);
 
-    MCAPI void $tick(::NavigationComponent& parent, ::Mob& mob);
+    MCNAPI void $tick(::NavigationComponent& parent, ::Mob& mob);
 
-    MCAPI ::Vec3 $getTempMobPos(::Mob const& mob) const;
+    MCNAPI ::Vec3 $getTempMobPos(::Mob const& mob) const;
 
-    MCAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos);
+    MCNAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos);
 
-    MCAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target);
+    MCNAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target);
 
-    MCAPI void $stop(::NavigationComponent& parent, ::Mob& mob);
+    MCNAPI void $stop(::NavigationComponent& parent, ::Mob& mob);
 
-    MCAPI bool $canUpdatePath(::Mob const& mob) const;
+    MCNAPI bool $canUpdatePath(::Mob const& mob) const;
 
-    MCAPI void $updatePath(::NavigationComponent& parent, ::Mob& mob);
+    MCNAPI void $updatePath(::NavigationComponent& parent, ::Mob& mob);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

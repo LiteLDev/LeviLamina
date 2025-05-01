@@ -51,16 +51,16 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::ScriptModuleMinecraftServerUI::ScriptModalFormData::IconData&
+        MCNAPI ::ScriptModuleMinecraftServerUI::ScriptModalFormData::IconData&
         operator=(::ScriptModuleMinecraftServerUI::ScriptModalFormData::IconData&&);
 
-        MCAPI ~IconData();
+        MCNAPI ~IconData();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -82,30 +82,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptModalFormData(::ScriptModuleMinecraftServerUI::ScriptModalFormData&&);
+    MCNAPI ScriptModalFormData(::ScriptModuleMinecraftServerUI::ScriptModalFormData&&);
 
-    MCAPI ::Scripting::Result_deprecated<::Json::Value>
+    MCNAPI ::Scripting::Result_deprecated<::Json::Value>
     _buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData> dropdown(
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData> divider();
+
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData> dropdown(
         ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>                label,
         ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>> options,
         ::std::optional<int> defaultValueIndex
     );
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData> dropdownV010(
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData> dropdownV010(
         ::std::string const&         label,
         ::std::vector<::std::string> options,
         ::std::optional<int>         defaultValueIndex
     );
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData>
+    header(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> text);
+
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData>
     iconV0(::std::string path);
 
-    MCAPI ::ScriptModuleMinecraftServerUI::ScriptModalFormData&
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData>
+    label(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> text);
+
+    MCNAPI ::ScriptModuleMinecraftServerUI::ScriptModalFormData&
     operator=(::ScriptModuleMinecraftServerUI::ScriptModalFormData&&);
 
-    MCAPI ::Scripting::Result_deprecated<::Scripting::Promise<
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormResponse>,
         ::ScriptModuleMinecraftServerUI::ScriptFormRejectError,
         void>>
@@ -116,7 +124,7 @@ public:
         ::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer
     );
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData> slider(
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData> slider(
         ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> label,
         float                                                                             minValue,
         float                                                                             maxValue,
@@ -124,7 +132,7 @@ public:
         ::std::optional<float>                                                            defaultValue
     );
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData> sliderV010(
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData> sliderV010(
         ::std::string const&   label,
         float                  minValue,
         float                  maxValue,
@@ -132,54 +140,54 @@ public:
         ::std::optional<float> defaultValue
     );
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData>
     submitButton(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> label);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData> textField(
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData> textField(
         ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> label,
         ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> placeholderText,
         ::std::optional<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>> defaultValue
     );
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData> textFieldV010(
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData> textFieldV010(
         ::std::string const&           label,
         ::std::string const&           placeholderText,
         ::std::optional<::std::string> defaultValue
     );
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData>
     title(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> title);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData>
     titleV010(::std::string const& title);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData> toggle(
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData> toggle(
         ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> label,
         ::std::optional<bool>                                                             defaultValue
     );
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormData>
     toggleV010(::std::string const& label, ::std::optional<bool> defaultValue);
 
-    MCAPI ~ScriptModalFormData();
+    MCNAPI ~ScriptModalFormData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftServerUI::ScriptModalFormData> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftServerUI::ScriptModalFormData> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptModalFormData&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptModalFormData&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
 class Dimension;
-class Vec3;
 // clang-format on
 
 class ChangeDimensionRequest {
@@ -37,12 +37,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ChangeDimensionRequest();
+    MCNAPI ~ChangeDimensionRequest();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -8,9 +8,9 @@ struct RetransmissionErrorCounter {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Clear();
+    MCNAPI void Clear();
 
-    MCAPI bool Increment(::std::string_view);
+    MCNAPI bool Increment(::std::string_view);
     // NOLINTEND
 };
 

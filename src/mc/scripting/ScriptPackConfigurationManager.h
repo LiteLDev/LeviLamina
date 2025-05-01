@@ -5,11 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/scripting/ScriptPackConfiguration.h"
+#include "mc/server/commands/CommandsRegistryConfiguration.h"
 
 // auto generated forward declare list
 // clang-format off
-class CommandsRegistryConfiguration;
-class ScriptPackConfiguration;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -37,15 +37,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPackConfigurationManager(::ScriptPackConfigurationManager&&);
+    MCNAPI ScriptPackConfigurationManager(::ScriptPackConfigurationManager&&);
 
-    MCAPI ScriptPackConfigurationManager(::ScriptPackConfigurationManager const&);
+    MCNAPI ScriptPackConfigurationManager(::ScriptPackConfigurationManager const&);
 
-    MCAPI explicit ScriptPackConfigurationManager(::std::optional<::Core::PathBuffer<::std::string>> configDirectory);
+    MCNAPI explicit ScriptPackConfigurationManager(::std::optional<::Core::PathBuffer<::std::string>> configDirectory);
 
-    MCAPI ::ScriptPackConfiguration const& getPackConfiguration(::std::string const& packIdentifier) const;
+    MCNAPI ::ScriptPackConfiguration const& getPackConfiguration(::std::string const& packIdentifier) const;
 
-    MCAPI void loadConfigs(::cereal::ReflectionCtx ctx);
+    MCNAPI void loadConfigs(::cereal::ReflectionCtx ctx);
     // NOLINTEND
 
 public:
@@ -57,22 +57,22 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptPackConfigurationManager&&);
+    MCNAPI void* $ctor(::ScriptPackConfigurationManager&&);
 
-    MCAPI void* $ctor(::ScriptPackConfigurationManager const&);
+    MCNAPI void* $ctor(::ScriptPackConfigurationManager const&);
 
-    MCAPI void* $ctor(::std::optional<::Core::PathBuffer<::std::string>> configDirectory);
+    MCNAPI void* $ctor(::std::optional<::Core::PathBuffer<::std::string>> configDirectory);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

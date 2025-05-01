@@ -33,6 +33,8 @@ MCAPI ::Scripting::Version const& V1_16_0();
 
 MCAPI ::Scripting::Version const& V1_17_0();
 
+MCAPI ::Scripting::Version const& V1_18_0();
+
 MCAPI ::Scripting::Version const& V1_1_0();
 
 MCAPI ::Scripting::Version const& V1_2_0();

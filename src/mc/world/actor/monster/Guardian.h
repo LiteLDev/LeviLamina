@@ -59,7 +59,7 @@ public:
     virtual bool checkSpawnRules(bool) /*override*/;
 
     // vIndex: 51
-    virtual void setTarget(::Actor* target) /*override*/;
+    virtual void setTarget(::Actor* entity) /*override*/;
 
     // vIndex: 152
     virtual float getMaxHeadXRot() /*override*/;
@@ -80,25 +80,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Guardian(
+    MCNAPI Guardian(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI ::Vec3 getMoveEyeVector();
+    MCNAPI ::Vec3 getMoveEyeVector();
 
-    MCAPI bool isElder() const;
+    MCNAPI bool isElder() const;
 
-    MCAPI void preAiStep();
+    MCNAPI void preAiStep();
 
-    MCAPI void registerLoopingSounds();
+    MCNAPI void registerLoopingSounds();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -108,34 +108,34 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
+    MCNAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCAPI bool $checkSpawnRules(bool);
+    MCNAPI bool $checkSpawnRules(bool);
 
-    MCFOLD void $setTarget(::Actor* target);
+    MCNAPI void $setTarget(::Actor* target);
 
-    MCFOLD float $getMaxHeadXRot();
+    MCNAPI float $getMaxHeadXRot();
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCFOLD bool $isDarkEnoughToSpawn() const;
+    MCNAPI bool $isDarkEnoughToSpawn() const;
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCNAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

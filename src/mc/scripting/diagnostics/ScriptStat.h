@@ -29,40 +29,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptStat(
+    MCNAPI ScriptStat(
         ::std::string                                name,
         int64                                        value,
         ::std::optional<::ScriptStat::Type>          type,
         ::std::optional<::std::vector<::ScriptStat>> children
     );
 
-    MCAPI ScriptStat(
+    MCNAPI ScriptStat(
         ::std::string                                name,
         ::std::optional<::std::vector<int64>>        values,
         ::std::optional<::ScriptStat::Type>          type,
         ::std::optional<::std::vector<::ScriptStat>> children
     );
 
-    MCAPI ::ScriptStat& addChild(::ScriptStat&& child);
+    MCNAPI ::ScriptStat& addChild(::ScriptStat&& child);
 
-    MCAPI ::ScriptStat& operator=(::ScriptStat const&);
+    MCNAPI ::ScriptStat& operator=(::ScriptStat const&);
 
-    MCAPI ::ScriptStat& operator=(::ScriptStat&&);
+    MCNAPI ::ScriptStat& operator=(::ScriptStat&&);
 
-    MCAPI ~ScriptStat();
+    MCNAPI ~ScriptStat();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string                                name,
         int64                                        value,
         ::std::optional<::ScriptStat::Type>          type,
         ::std::optional<::std::vector<::ScriptStat>> children
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string                                name,
         ::std::optional<::std::vector<int64>>        values,
         ::std::optional<::ScriptStat::Type>          type,
@@ -73,6 +73,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

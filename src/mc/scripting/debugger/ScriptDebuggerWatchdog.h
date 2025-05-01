@@ -44,16 +44,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $requireClose() const;
+    MCNAPI bool $requireClose() const;
 
-    MCAPI void $startListenTimeout(::std::chrono::seconds duration);
+    MCNAPI void $startListenTimeout(::std::chrono::seconds duration);
 
-    MCAPI bool $listenTimeoutExpired() const;
+    MCNAPI bool $listenTimeoutExpired() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

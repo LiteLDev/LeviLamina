@@ -106,6 +106,8 @@ MCAPI ::HashedString const& BlueBundle();
 
 MCAPI ::HashedString const& BlueDye();
 
+MCAPI ::HashedString const& BlueEgg();
+
 MCAPI ::HashedString const& BoatLegacy();
 
 MCAPI ::HashedString const& BoggedSpawnEgg();
@@ -141,6 +143,8 @@ MCAPI ::HashedString const& Brick();
 MCAPI ::HashedString const& BrownBundle();
 
 MCAPI ::HashedString const& BrownDye();
+
+MCAPI ::HashedString const& BrownEgg();
 
 MCAPI ::HashedString const& Brush();
 

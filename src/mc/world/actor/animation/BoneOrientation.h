@@ -28,13 +28,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void applyShortestPathBlend(
+    MCNAPI void applyShortestPathBlend(
         ::BoneOrientation const& blendOut,
         ::BoneOrientation const& blendIn,
         float                    blendInWeight,
         float
     );
 
-    MCAPI ::BoneOrientation& operator=(::BoneOrientation const& rhs);
+    MCNAPI ::BoneOrientation& operator=(::BoneOrientation const& rhs);
     // NOLINTEND
 };

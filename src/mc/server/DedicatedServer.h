@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/IMinecraftApp.h"
+#include "mc/common/SubClientId.h"
 #include "mc/deps/core/islands/AppIsland.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -17,7 +18,6 @@ class Minecraft;
 class PermissionsFile;
 class PropertiesSettings;
 class TestConfig;
-struct PlayerMovementSettings;
 namespace Automation { class AutomationClient; }
 namespace Bedrock { class ActivationArguments; }
 namespace Core { class FilePathManager; }
@@ -98,6 +98,9 @@ public:
 
     // vIndex: 7
     virtual void requestServerShutdown(::std::string const&) /*override*/;
+
+    // vIndex: 9
+    virtual bool requestInGamePause(::SubClientId const&, bool) /*override*/;
     // NOLINTEND
 
 public:
@@ -106,8 +109,6 @@ public:
     MCAPI DedicatedServer();
 
     MCAPI void initializeAppConfigs();
-
-    MCAPI void initializeBindings();
 
     MCAPI void initializeCodeBuilder();
 
@@ -129,13 +130,6 @@ public:
 
     MCAPI ::DedicatedServer::StartResult
     start(::std::string const& sessionID, ::Bedrock::ActivationArguments const& args);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void
-    logAuthorityMode(::PlayerMovementSettings const& fromServerProperties, ::PlayerMovementSettings const& fromLevel);
     // NOLINTEND
 
 public:
@@ -170,6 +164,8 @@ public:
     MCFOLD ::IGameModuleShared& $getGameModuleShared();
 
     MCAPI void $requestServerShutdown(::std::string const&);
+
+    MCFOLD bool $requestInGamePause(::SubClientId const&, bool);
     // NOLINTEND
 
 public:

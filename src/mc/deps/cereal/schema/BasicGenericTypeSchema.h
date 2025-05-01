@@ -25,9 +25,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BasicGenericTypeSchema();
+    MCNAPI BasicGenericTypeSchema();
 
-    MCAPI void doLoadWithSchema(
+    MCNAPI void doLoadWithSchema(
         ::entt::meta_type const&     type,
         ::cereal::SchemaReader&      value,
         ::entt::meta_any&            any,
@@ -36,7 +36,7 @@ public:
         ::entt::type_info const&     info
     ) const;
 
-    MCAPI void doSaveWithSchema(
+    MCNAPI void doSaveWithSchema(
         ::cereal::SchemaWriter&      value,
         ::entt::meta_any const&      any,
         ::cereal::SerializerContext& context,
@@ -47,7 +47,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -59,7 +59,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -78,24 +78,27 @@ public:
     virtual void resendPlayerState() const = 0;
 
     // vIndex: 17
-    virtual bool isSneaking() const = 0;
+    virtual void sendPlayerInventory() const = 0;
 
     // vIndex: 18
-    virtual ::Block const& getBlock(::BlockPos const&) const = 0;
+    virtual bool isSneaking() const = 0;
 
     // vIndex: 19
-    virtual ::Block const& getExtraBlock(::BlockPos const&) const = 0;
+    virtual ::Block const& getBlock(::BlockPos const&) const = 0;
 
     // vIndex: 20
-    virtual bool isLastBuildBlockInteractive() const = 0;
+    virtual ::Block const& getExtraBlock(::BlockPos const&) const = 0;
 
     // vIndex: 21
-    virtual void sendBlockInteractedWith(::BlockPos const&) = 0;
+    virtual bool isLastBuildBlockInteractive() const = 0;
 
     // vIndex: 22
-    virtual ::DepenetrationComponent& getDepenetrationComponent() = 0;
+    virtual void sendBlockInteractedWith(::BlockPos const&) = 0;
 
     // vIndex: 23
+    virtual ::DepenetrationComponent& getDepenetrationComponent() = 0;
+
+    // vIndex: 24
     virtual ::ServerAuthMovementMode getMovementAuthorityMode() const = 0;
     // NOLINTEND
 

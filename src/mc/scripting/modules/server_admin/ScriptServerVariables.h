@@ -29,23 +29,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::Scripting::JSON> get(::std::string const& name) const;
+    MCNAPI ::std::optional<::Scripting::JSON> get(::std::string const& name) const;
 
-    MCAPI ::std::vector<::std::string> getAllVariableNames() const;
+    MCNAPI ::std::vector<::std::string> getAllVariableNames() const;
 
-    MCAPI ~ScriptServerVariables();
+    MCNAPI ~ScriptServerVariables();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleServerAdmin::ScriptServerVariables> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleServerAdmin::ScriptServerVariables> bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

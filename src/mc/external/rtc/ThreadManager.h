@@ -26,37 +26,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddInternal(::rtc::Thread*);
+    MCNAPI void AddInternal(::rtc::Thread*);
 
-    MCAPI ::rtc::Thread* CurrentThread();
+    MCNAPI ::rtc::Thread* CurrentThread();
 
-    MCAPI void RemoveInternal(::rtc::Thread*);
+    MCNAPI void RemoveInternal(::rtc::Thread*);
 
-    MCAPI void SetCurrentThread(::rtc::Thread*);
+    MCNAPI void SetCurrentThread(::rtc::Thread*);
 
-    MCAPI void SetCurrentThreadInternal(::rtc::Thread*);
+    MCNAPI void SetCurrentThreadInternal(::rtc::Thread*);
 
-    MCAPI ThreadManager();
+    MCNAPI ThreadManager();
 
-    MCAPI void UnwrapCurrentThread();
+    MCNAPI void UnwrapCurrentThread();
 
-    MCAPI ::rtc::Thread* WrapCurrentThread();
+    MCNAPI ::rtc::Thread* WrapCurrentThread();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void Add(::rtc::Thread*);
+    MCNAPI static void Add(::rtc::Thread*);
 
-    MCAPI static ::rtc::ThreadManager* Instance();
+    MCNAPI static ::rtc::ThreadManager* Instance();
 
-    MCAPI static void Remove(::rtc::Thread*);
+    MCNAPI static void Remove(::rtc::Thread*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

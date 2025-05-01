@@ -40,9 +40,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit GameTestInstanceLedger(::LevelStorage& storage);
+    MCNAPI explicit GameTestInstanceLedger(::LevelStorage& storage);
 
-    MCAPI void clear(::DimensionType dimension);
+    MCNAPI void clear(::DimensionType dimension);
     // NOLINTEND
 
 public:
@@ -54,7 +54,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LevelStorage& storage);
+    MCNAPI void* $ctor(::LevelStorage& storage);
     // NOLINTEND
 
 public:
@@ -66,12 +66,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance);
+    MCNAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

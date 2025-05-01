@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/container/small_vector.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
@@ -45,20 +46,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> _placeBlockIfPossible(
-        ::BlockSource&              region,
-        ::BlockPos const&           pos,
-        ::Random&                   random,
-        ::std::vector<uchar> const& placementDirections
+    MCNAPI ::std::optional<::BlockPos> _placeBlockIfPossible(
+        ::BlockSource&           region,
+        ::BlockPos const&        pos,
+        ::Random&                random,
+        ::gsl::span<uchar const> placementDirections
     ) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::vector<uchar> _getShuffledDirections(::std::vector<uchar> faces);
-
-    MCAPI static ::std::vector<uchar> _getShuffledDirectionsExcept(uchar exclude, ::std::vector<uchar> const& faces);
     // NOLINTEND
 
 public:
@@ -70,12 +63,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

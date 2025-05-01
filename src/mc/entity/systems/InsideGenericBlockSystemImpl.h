@@ -11,7 +11,7 @@ struct InsideGenericBlockComponent;
 namespace InsideGenericBlockSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void tickInsideGenericBlock(
+MCNAPI void tickInsideGenericBlock(
     ::InsideGenericBlockComponent& insideGenericBlockComponent,
     ::ActorOwnerComponent&         actorOwnerComponent
 );

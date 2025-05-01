@@ -12,7 +12,7 @@ class SpawnFinder {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::BlockPos>
+    MCNAPI static ::std::optional<::BlockPos>
     findStandupPosition(::BlockPos const& requestedPosition, ::BlockSource const& region);
     // NOLINTEND
 };

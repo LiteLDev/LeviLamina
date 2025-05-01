@@ -24,24 +24,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
+    MCNAPI ::ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
     operator=(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface&&);
 
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface const& other) const;
+    MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface const& other) const;
 
-    MCAPI ~ScriptRawMessageScoreInterface();
+    MCNAPI ~ScriptRawMessageScoreInterface();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptRawMessageScoreInterface> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptRawMessageScoreInterface> bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -42,33 +42,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClipboardItemBodyPayload(::mce::UUID const& itemId, ::CompoundTag&& data);
+    MCNAPI ClipboardItemBodyPayload(::mce::UUID const& itemId, ::CompoundTag&& data);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::mce::UUID const& itemId, ::CompoundTag&& data);
+    MCNAPI void* $ctor(::mce::UUID const& itemId, ::CompoundTag&& data);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $load(::CompoundTag const* tag);
+    MCNAPI bool $load(::CompoundTag const* tag);
 
-    MCAPI ::CompoundTag $save() const;
+    MCNAPI ::CompoundTag $save() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

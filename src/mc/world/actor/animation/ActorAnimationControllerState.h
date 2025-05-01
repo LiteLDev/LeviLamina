@@ -35,24 +35,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ActorAnimationControllerState(::HashedString const& name);
+    MCNAPI explicit ActorAnimationControllerState(::HashedString const& name);
 
-    MCAPI void addAnimation(::HashedString const& name);
+    MCNAPI void addAnimation(::HashedString const& name);
 
-    MCAPI ::StateAnimationVariable& addVariable(::std::string const& variableName);
+    MCNAPI ::StateAnimationVariable& addVariable(::std::string const& variableName);
 
-    MCAPI ~ActorAnimationControllerState();
+    MCNAPI ~ActorAnimationControllerState();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::HashedString const& name);
+    MCNAPI void* $ctor(::HashedString const& name);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

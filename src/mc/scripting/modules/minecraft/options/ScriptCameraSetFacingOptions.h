@@ -25,21 +25,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptCameraSetFacingOptions const& other) const;
+    MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptCameraSetFacingOptions const& other) const;
 
-    MCAPI ~ScriptCameraSetFacingOptions();
+    MCNAPI ~ScriptCameraSetFacingOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptCameraSetFacingOptions> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptCameraSetFacingOptions> bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

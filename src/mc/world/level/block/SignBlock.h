@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/level/block/ActorBlockBase.h"
+#include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/actor/SignTextSide.h"
 
 // auto generated forward declare list
@@ -13,7 +14,6 @@ class AABB;
 class Actor;
 class Block;
 class BlockActor;
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
 class Experiments;
@@ -24,6 +24,7 @@ class ItemInstance;
 class ItemStack;
 class Player;
 class SignBlockActor;
+namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace mce { class Color; }
 // clang-format on
@@ -109,22 +110,19 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 142
+    // vIndex: 140
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    // vIndex: 139
-    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
 
     // vIndex: 138
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 148
     virtual float getYRotationInDegrees(::Block const& block) const;
 
-    // vIndex: 151
+    // vIndex: 149
     virtual bool _canSurvive(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    // vIndex: 152
+    // vIndex: 150
     virtual ::ItemInstance _getItemInstance() const;
 
     // vIndex: 131
@@ -137,15 +135,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _canChangeSign(::SignBlockActor& blockActor, ::Player& player);
+    MCNAPI static bool _canChangeSign(::SignBlockActor& blockActor, ::Player& player);
 
-    MCAPI static ::SignBlock::SignInteractionResult _getInteractResult(
+    MCNAPI static ::SignBlock::SignInteractionResult _getInteractResult(
         ::SignBlockActor& blockActor,
         ::SignTextSide    side,
         ::ItemStack&      item,
@@ -154,7 +154,7 @@ public:
         uchar             face
     );
 
-    MCAPI static void _useDye(
+    MCNAPI static void _useDye(
         ::SignBlockActor& blockActor,
         ::SignTextSide    side,
         ::ItemStack&      dyeStack,
@@ -162,7 +162,7 @@ public:
         ::Player&         player
     );
 
-    MCAPI static void _useGlowInkSac(
+    MCNAPI static void _useGlowInkSac(
         ::SignBlockActor& blockActor,
         ::SignTextSide    side,
         ::ItemStack&      glowInkSacStack,
@@ -170,10 +170,10 @@ public:
         ::Player&         player
     );
 
-    MCAPI static void
+    MCNAPI static void
     _useHoneyComb(::SignBlockActor& blockActor, ::ItemStack& honeyCombStack, ::BlockPos const& pos, ::Player& player);
 
-    MCAPI static void _useInkSac(
+    MCNAPI static void _useInkSac(
         ::SignBlockActor& blockActor,
         ::SignTextSide    side,
         ::ItemStack&      inkSacStack,
@@ -181,7 +181,7 @@ public:
         ::Player&         player
     );
 
-    MCAPI static ::mce::Color getSignTextColorFromDyeItem(::Item const& dyeItem);
+    MCNAPI static ::mce::Color getSignTextColorFromDyeItem(::Item const& dyeItem);
     // NOLINTEND
 
 public:
@@ -193,38 +193,36 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
+    MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCFOLD ::AABB
+    MCNAPI ::AABB
     $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCNAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI float $getYRotationInDegrees(::Block const& block) const;
 
-    MCAPI float $getYRotationInDegrees(::Block const& block) const;
+    MCNAPI bool $_canSurvive(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCAPI bool $_canSurvive(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCNAPI ::ItemInstance $_getItemInstance() const;
 
-    MCAPI ::ItemInstance $_getItemInstance() const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

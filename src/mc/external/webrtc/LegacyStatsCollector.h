@@ -38,21 +38,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI SessionStats();
+        MCNAPI SessionStats();
 
-        MCAPI ~SessionStats();
+        MCNAPI ~SessionStats();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -60,57 +60,57 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI TransportStats(::std::string, ::cricket::TransportStats);
+        MCNAPI TransportStats(::std::string, ::cricket::TransportStats);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::std::string, ::cricket::TransportStats);
+        MCNAPI void* $ctor(::std::string, ::cricket::TransportStats);
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::StatsReport* AddCandidateReport(::cricket::CandidateStats const&, bool);
+    MCNAPI ::webrtc::StatsReport* AddCandidateReport(::cricket::CandidateStats const&, bool);
 
-    MCAPI ::webrtc::StatsReport* AddCertificateReports(::std::unique_ptr<::rtc::SSLCertificateStats>);
+    MCNAPI ::webrtc::StatsReport* AddCertificateReports(::std::unique_ptr<::rtc::SSLCertificateStats>);
 
-    MCAPI ::webrtc::StatsReport*
+    MCNAPI ::webrtc::StatsReport*
     AddConnectionInfoReport(::std::string const&, int, int, ::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const&, ::cricket::ConnectionInfo const&);
 
-    MCAPI void AddStream(::webrtc::MediaStreamInterface*);
+    MCNAPI void AddStream(::webrtc::MediaStreamInterface*);
 
-    MCAPI void AddTrack(::webrtc::MediaStreamTrackInterface*);
+    MCNAPI void AddTrack(::webrtc::MediaStreamTrackInterface*);
 
-    MCAPI void ExtractBweInfo();
+    MCNAPI void ExtractBweInfo();
 
-    MCAPI void ExtractDataInfo_n(::webrtc::StatsCollection*);
+    MCNAPI void ExtractDataInfo_n(::webrtc::StatsCollection*);
 
-    MCAPI void ExtractMediaInfo(::std::map<::std::string, ::std::string> const&);
+    MCNAPI void ExtractMediaInfo(::std::map<::std::string, ::std::string> const&);
 
-    MCAPI void ExtractSenderInfo();
+    MCNAPI void ExtractSenderInfo();
 
-    MCAPI ::std::map<::std::string, ::std::string> ExtractSessionAndDataInfo();
+    MCNAPI ::std::map<::std::string, ::std::string> ExtractSessionAndDataInfo();
 
-    MCAPI ::webrtc::LegacyStatsCollector::SessionStats
+    MCNAPI ::webrtc::LegacyStatsCollector::SessionStats
     ExtractSessionInfo_n(::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>> const&, ::std::optional<::std::string>, ::std::optional<::std::string>);
 
-    MCAPI void ExtractSessionInfo_s(::webrtc::LegacyStatsCollector::SessionStats&);
+    MCNAPI void ExtractSessionInfo_s(::webrtc::LegacyStatsCollector::SessionStats&);
 
-    MCAPI ::webrtc::StatsReport*
+    MCNAPI ::webrtc::StatsReport*
     GetReport(::webrtc::StatsReport::StatsType const&, ::std::string const&, ::webrtc::StatsReport::Direction);
 
-    MCAPI void InvalidateCache();
+    MCNAPI void InvalidateCache();
 
-    MCAPI bool IsValidTrack(::std::string const&);
+    MCNAPI bool IsValidTrack(::std::string const&);
 
-    MCAPI explicit LegacyStatsCollector(::webrtc::PeerConnectionInternal*);
+    MCNAPI explicit LegacyStatsCollector(::webrtc::PeerConnectionInternal*);
 
-    MCAPI ::webrtc::StatsReport* PrepareADMReport();
+    MCNAPI ::webrtc::StatsReport* PrepareADMReport();
 
-    MCAPI ::webrtc::StatsReport* PrepareReport(
+    MCNAPI ::webrtc::StatsReport* PrepareReport(
         bool,
         uint,
         ::std::string const&,
@@ -118,25 +118,25 @@ public:
         ::webrtc::StatsReport::Direction
     );
 
-    MCAPI void UpdateReportFromAudioTrack(::webrtc::AudioTrackInterface*, ::webrtc::StatsReport*, bool);
+    MCNAPI void UpdateReportFromAudioTrack(::webrtc::AudioTrackInterface*, ::webrtc::StatsReport*, bool);
 
-    MCAPI void UpdateStats(::webrtc::PeerConnectionInterface::StatsOutputLevel);
+    MCNAPI void UpdateStats(::webrtc::PeerConnectionInterface::StatsOutputLevel);
 
-    MCAPI void UpdateStatsFromExistingLocalAudioTracks(bool);
+    MCNAPI void UpdateStatsFromExistingLocalAudioTracks(bool);
 
-    MCAPI void UpdateTrackReports();
+    MCNAPI void UpdateTrackReports();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::PeerConnectionInternal*);
+    MCNAPI void* $ctor(::webrtc::PeerConnectionInternal*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

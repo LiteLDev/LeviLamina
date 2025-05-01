@@ -43,18 +43,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::leveldb::Status $Append(::leveldb::Slice const& data);
+    MCNAPI ::leveldb::Status $Append(::leveldb::Slice const& data);
 
-    MCAPI ::leveldb::Status $Close();
+    MCNAPI ::leveldb::Status $Close();
 
-    MCFOLD ::leveldb::Status $Flush();
+    MCNAPI ::leveldb::Status $Flush();
 
-    MCFOLD ::leveldb::Status $Sync();
+    MCNAPI ::leveldb::Status $Sync();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

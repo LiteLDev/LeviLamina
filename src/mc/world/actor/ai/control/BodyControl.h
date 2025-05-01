@@ -14,18 +14,18 @@ class BodyControl : public ::Control {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>   mTimeStill;
-    ::ll::TypedStorage<4, 4, float> mLastHeadY;
+    ::ll::TypedStorage<4, 4, int>   mStillTicks;
+    ::ll::TypedStorage<4, 4, float> mLastYHeadRot;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BodyControl() /*override*/ = default;
-
     // vIndex: 1
     virtual void clientTick(::Mob& mob);
+
+    // vIndex: 0
+    virtual ~BodyControl() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -37,12 +37,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $clientTick(::Mob& mob);
+    MCNAPI void $clientTick(::Mob& mob);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

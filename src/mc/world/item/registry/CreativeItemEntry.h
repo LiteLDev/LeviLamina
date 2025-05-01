@@ -5,11 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/world/inventory/network/TypedServerNetId.h"
+#include "mc/world/item/ItemInstance.h"
 
 // auto generated forward declare list
 // clang-format off
 class CreativeItemRegistry;
-class ItemInstance;
 struct CreativeItemNetIdTag;
 // clang-format on
 
@@ -34,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CreativeItemEntry(
+    MCNAPI CreativeItemEntry(
         ::CreativeItemRegistry*    registry,
         ::CreativeItemNetId const& creativeNetId,
         ::ItemInstance const&      item,
@@ -45,7 +45,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::CreativeItemRegistry*    registry,
         ::CreativeItemNetId const& creativeNetId,
         ::ItemInstance const&      item,
@@ -62,6 +62,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

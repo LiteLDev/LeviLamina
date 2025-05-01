@@ -31,23 +31,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Contents();
+    MCNAPI Contents();
 
-    MCAPI Contents(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&&);
+    MCNAPI Contents(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&&);
 
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&
     operator=(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents const&);
 
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&
     operator=(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&&);
 
-    MCAPI ~Contents();
+    MCNAPI ~Contents();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -59,15 +59,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

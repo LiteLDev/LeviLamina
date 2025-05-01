@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void operator()(::AttributeRequestComponent::AddBuffModifier const& request) const;
+    MCNAPI void operator()(::AttributeRequestComponent::AddBuffModifier const& request) const;
     // NOLINTEND
 };
 

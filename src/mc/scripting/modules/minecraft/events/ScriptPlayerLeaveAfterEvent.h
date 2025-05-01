@@ -24,16 +24,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent> bind();
 
-    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent>
+    MCNAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent>
     bindV010();
     // NOLINTEND
 };

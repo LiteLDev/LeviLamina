@@ -13,13 +13,13 @@ class DurationMs {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DurationMs(::webrtc::TimeDelta);
+    MCNAPI explicit DurationMs(::webrtc::TimeDelta);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::TimeDelta);
+    MCNAPI void* $ctor(::webrtc::TimeDelta);
     // NOLINTEND
 };
 

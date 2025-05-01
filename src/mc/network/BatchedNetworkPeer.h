@@ -7,13 +7,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/threading/SPSCQueue.h"
+#include "mc/deps/core/utility/BinaryStream.h"
+#include "mc/deps/core/utility/ReadOnlyBinaryStream.h"
 #include "mc/network/Compressibility.h"
 #include "mc/network/NetworkPeer.h"
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
-class ReadOnlyBinaryStream;
 class Scheduler;
 class TaskGroup;
 // clang-format on
@@ -43,23 +43,23 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI DataCallback(::BatchedNetworkPeer::DataCallback&&);
+        MCNAPI DataCallback(::BatchedNetworkPeer::DataCallback&&);
 
-        MCAPI ::BatchedNetworkPeer::DataCallback& operator=(::BatchedNetworkPeer::DataCallback&&);
+        MCNAPI ::BatchedNetworkPeer::DataCallback& operator=(::BatchedNetworkPeer::DataCallback&&);
 
-        MCAPI ~DataCallback();
+        MCNAPI ~DataCallback();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::BatchedNetworkPeer::DataCallback&&);
+        MCNAPI void* $ctor(::BatchedNetworkPeer::DataCallback&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -110,44 +110,44 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BatchedNetworkPeer(::std::shared_ptr<::NetworkPeer> peer, ::Scheduler& scheduler);
+    MCNAPI BatchedNetworkPeer(::std::shared_ptr<::NetworkPeer> peer, ::Scheduler& scheduler);
 
-    MCAPI void _startSendTask();
+    MCNAPI void _startSendTask();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::NetworkPeer> peer, ::Scheduler& scheduler);
+    MCNAPI void* $ctor(::std::shared_ptr<::NetworkPeer> peer, ::Scheduler& scheduler);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $flush(::std::function<void()>&& callback);
+    MCNAPI void $flush(::std::function<void()>&& callback);
 
-    MCAPI void
+    MCNAPI void
     $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
 
-    MCAPI ::NetworkPeer::DataStatus $receivePacket(
+    MCNAPI ::NetworkPeer::DataStatus $receivePacket(
         ::std::string&                                                    outData,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     );
 
-    MCFOLD ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
+    MCNAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 
-    MCAPI void $update();
+    MCNAPI void $update();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -39,14 +39,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeInternal(::Mob& mob);
+    MCNAPI void $initializeInternal(::Mob& mob);
 
-    MCAPI void $tick(::Mob& mob);
+    MCNAPI void $tick(::Mob& mob);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

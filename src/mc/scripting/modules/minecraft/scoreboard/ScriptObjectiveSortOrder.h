@@ -12,7 +12,7 @@ struct ScriptObjectiveSortOrder {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::EnumBindingBuilder<
+    MCNAPI static ::Scripting::EnumBindingBuilder<
         ::ScriptModuleMinecraft::ScriptObjectiveSortOrderType,
         ::ScriptModuleMinecraft::ScriptObjectiveSortOrderType>
     bind();

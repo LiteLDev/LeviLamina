@@ -34,64 +34,64 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~CreateSessionDescriptionRequest();
+        MCNAPI ~CreateSessionDescriptionRequest();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void CreateAnswer(::webrtc::CreateSessionDescriptionObserver*, ::cricket::MediaSessionOptions const&);
+    MCNAPI void CreateAnswer(::webrtc::CreateSessionDescriptionObserver*, ::cricket::MediaSessionOptions const&);
 
-    MCAPI void
+    MCNAPI void
     CreateOffer(::webrtc::CreateSessionDescriptionObserver*, ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&, ::cricket::MediaSessionOptions const&);
 
-    MCAPI void FailPendingRequests(::std::string const&);
+    MCNAPI void FailPendingRequests(::std::string const&);
 
-    MCAPI void InternalCreateAnswer(::webrtc::WebRtcSessionDescriptionFactory::CreateSessionDescriptionRequest);
+    MCNAPI void InternalCreateAnswer(::webrtc::WebRtcSessionDescriptionFactory::CreateSessionDescriptionRequest);
 
-    MCAPI void InternalCreateOffer(::webrtc::WebRtcSessionDescriptionFactory::CreateSessionDescriptionRequest);
+    MCNAPI void InternalCreateOffer(::webrtc::WebRtcSessionDescriptionFactory::CreateSessionDescriptionRequest);
 
-    MCAPI void OnCertificateRequestFailed();
+    MCNAPI void OnCertificateRequestFailed();
 
-    MCAPI void Post(::absl::AnyInvocable<void() &&>);
+    MCNAPI void Post(::absl::AnyInvocable<void() &&>);
 
-    MCAPI void PostCreateSessionDescriptionFailed(::webrtc::CreateSessionDescriptionObserver*, ::webrtc::RTCError);
+    MCNAPI void PostCreateSessionDescriptionFailed(::webrtc::CreateSessionDescriptionObserver*, ::webrtc::RTCError);
 
-    MCAPI void
+    MCNAPI void
     PostCreateSessionDescriptionSucceeded(::webrtc::CreateSessionDescriptionObserver*, ::std::unique_ptr<::webrtc::SessionDescriptionInterface>);
 
-    MCAPI void SetCertificate(::webrtc::scoped_refptr<::rtc::RTCCertificate>);
+    MCNAPI void SetCertificate(::webrtc::scoped_refptr<::rtc::RTCCertificate>);
 
-    MCAPI
-    WebRtcSessionDescriptionFactory(::webrtc::ConnectionContext*, ::webrtc::SdpStateProvider const*, ::std::string const&, bool, ::std::unique_ptr<::rtc::RTCCertificateGeneratorInterface>, ::webrtc::scoped_refptr<::rtc::RTCCertificate>, ::std::function<void(::webrtc::scoped_refptr<::rtc::RTCCertificate> const&)>, ::webrtc::FieldTrialsView const&);
+    MCNAPI WebRtcSessionDescriptionFactory(::webrtc::ConnectionContext*, ::webrtc::SdpStateProvider const*, ::std::string const&, bool, ::std::unique_ptr<::rtc::RTCCertificateGeneratorInterface>, ::webrtc::scoped_refptr<::rtc::RTCCertificate>, ::std::function<void(::webrtc::scoped_refptr<::rtc::RTCCertificate> const&)>, ::webrtc::FieldTrialsView const&);
 
-    MCAPI ~WebRtcSessionDescriptionFactory();
+    MCNAPI ~WebRtcSessionDescriptionFactory();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     CopyCandidatesFromSessionDescription(::webrtc::SessionDescriptionInterface const*, ::std::string const&, ::webrtc::SessionDescriptionInterface*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::ConnectionContext*, ::webrtc::SdpStateProvider const*, ::std::string const&, bool, ::std::unique_ptr<::rtc::RTCCertificateGeneratorInterface>, ::webrtc::scoped_refptr<::rtc::RTCCertificate>, ::std::function<void(::webrtc::scoped_refptr<::rtc::RTCCertificate> const&)>, ::webrtc::FieldTrialsView const&);
+    MCNAPI void*
+    $ctor(::webrtc::ConnectionContext*, ::webrtc::SdpStateProvider const*, ::std::string const&, bool, ::std::unique_ptr<::rtc::RTCCertificateGeneratorInterface>, ::webrtc::scoped_refptr<::rtc::RTCCertificate>, ::std::function<void(::webrtc::scoped_refptr<::rtc::RTCCertificate> const&)>, ::webrtc::FieldTrialsView const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

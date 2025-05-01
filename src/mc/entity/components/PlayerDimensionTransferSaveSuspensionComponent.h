@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class PlayerSuspendLevelStorageSaveToken;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/level/storage/PlayerSuspendLevelStorageSaveToken.h"
 
 class PlayerDimensionTransferSaveSuspensionComponent {
 public:

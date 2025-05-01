@@ -37,7 +37,7 @@ public:
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
+        bool const                           advancedToolTips
     ) const /*override*/;
 
     // vIndex: 105
@@ -59,7 +59,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _initFireworkChargeItem(
+    MCNAPI static void _initFireworkChargeItem(
         ::ItemStackBase&            itemInstance,
         ::FireworkChargeItem::Shape shape,
         ::std::vector<uchar>        colors,
@@ -68,16 +68,16 @@ public:
         bool                        hasFlicker
     );
 
-    MCAPI static void
+    MCNAPI static void
     appendColors(::Bedrock::Safety::RedactableString& hovertext, ::std::vector<uchar> const& colorList);
 
-    MCAPI static void getFormattedHoverText(
+    MCNAPI static void getFormattedHoverText(
         ::CompoundTag const&                 explosion,
         ::Bedrock::Safety::RedactableString& hovertext,
         ::std::string const&                 indent
     );
 
-    MCAPI static ::ItemInstance const& initFireworkChargeItem(
+    MCNAPI static ::ItemInstance const& initFireworkChargeItem(
         ::ItemInstance&             itemInstance,
         ::FireworkChargeItem::Shape shape,
         ::std::vector<uchar>        colors,
@@ -86,7 +86,7 @@ public:
         bool                        hasFlicker
     );
 
-    MCAPI static ::ItemStack const& initFireworkChargeItem(
+    MCNAPI static ::ItemStack const& initFireworkChargeItem(
         ::ItemStack&                item,
         ::FireworkChargeItem::Shape colors,
         ::std::vector<uchar>        fadeColors,
@@ -95,7 +95,7 @@ public:
         bool                        hasFlicker
     );
 
-    MCAPI static void setColor(::ItemStackBase& instance);
+    MCNAPI static void setColor(::ItemStackBase& instance);
     // NOLINTEND
 
 public:
@@ -123,25 +123,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
+        bool const                           advancedToolTips
     ) const;
 
-    MCAPI bool $hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;
+    MCNAPI bool $hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;
 
-    MCFOLD bool $isDyeable() const;
+    MCNAPI bool $isDyeable() const;
 
-    MCAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
+    MCNAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
 
-    MCFOLD bool $isValidAuxValue(int auxValue) const;
+    MCNAPI bool $isValidAuxValue(int auxValue) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

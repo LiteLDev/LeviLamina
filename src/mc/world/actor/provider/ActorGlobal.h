@@ -10,7 +10,7 @@ class EntityContext;
 namespace ActorGlobal {
 // functions
 // NOLINTBEGIN
-MCAPI void addActorGlobalComponents(::EntityContext& entity);
+MCNAPI void addActorGlobalComponents(::EntityContext& entity);
 // NOLINTEND
 
 } // namespace ActorGlobal

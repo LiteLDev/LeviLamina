@@ -25,16 +25,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> bindActionToControl(::std::string controlId, ::std::string const& actionPayload);
+    MCNAPI ::Scripting::Result<void> bindActionToControl(::std::string controlId, ::std::string const& actionPayload);
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     removeActionFromControl(::std::string controlId, ::std::optional<::std::string> actionPayload);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptDataStoreActionContainer> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptDataStoreActionContainer> bindScript();
     // NOLINTEND
 };
 

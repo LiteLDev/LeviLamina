@@ -80,7 +80,7 @@ public:
     virtual ::Scripting::Result<void> setCursorState(::Editor::Cursor::CursorState&& state) /*override*/;
 
     // vIndex: 6
-    virtual ::Scripting::Result<void> setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& props
+    virtual ::Scripting::Result<void> setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& properties
     ) /*override*/;
 
     // vIndex: 7
@@ -101,47 +101,47 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<::WeakRef<::Editor::Cursor::ServerCursor>> _createCursor();
+    MCNAPI ::Scripting::Result_deprecated<::WeakRef<::Editor::Cursor::ServerCursor>> _createCursor();
 
-    MCAPI void _handlePayloadPositionChange(::Editor::Network::CursorServicePositionChangePayload const& payload);
+    MCNAPI void _handlePayloadPositionChange(::Editor::Network::CursorServicePositionChangePayload const& payload);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result<void> $ready();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCAPI ::StackRefResult<::Editor::Cursor::ServerCursor> $getCursor() const;
+    MCNAPI ::StackRefResult<::Editor::Cursor::ServerCursor> $getCursor() const;
 
-    MCAPI ::StackRefResult<::Editor::Cursor::Ray> $getRay() const;
+    MCNAPI ::StackRefResult<::Editor::Cursor::Ray> $getRay() const;
 
-    MCAPI ::Scripting::Result_deprecated<::Editor::Cursor::CursorState> $getCursorState() const;
+    MCNAPI ::Scripting::Result_deprecated<::Editor::Cursor::CursorState> $getCursorState() const;
 
-    MCAPI ::Scripting::Result_deprecated<::Editor::Cursor::AttachmentProperties> $getAttachmentProperties() const;
+    MCNAPI ::Scripting::Result_deprecated<::Editor::Cursor::AttachmentProperties> $getAttachmentProperties() const;
 
-    MCAPI ::Scripting::Result<void> $setCursorState(::Editor::Cursor::CursorState&& state);
+    MCNAPI ::Scripting::Result<void> $setCursorState(::Editor::Cursor::CursorState&& state);
 
-    MCAPI ::Scripting::Result<void> $setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& props);
+    MCNAPI ::Scripting::Result<void> $setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& properties);
 
-    MCAPI ::Scripting::Result_deprecated<::BlockPos> $moveBy(::glm::ivec3 const& offset);
+    MCNAPI ::Scripting::Result_deprecated<::BlockPos> $moveBy(::glm::ivec3 const& offset);
 
-    MCAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $listenForCursorStateChanges(
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $listenForCursorStateChanges(
         ::std::function<void(::Editor::Cursor::CursorState const&, ::Editor::Cursor::CursorState const&)> callback
     );
 
-    MCAPI ::Bedrock::PubSub::Subscription $listenForCursorPositionChanges(
+    MCNAPI ::Bedrock::PubSub::Subscription $listenForCursorPositionChanges(
         ::std::function<void(::std::optional<::Editor::Cursor::Position> const&, ::Editor::Cursor::CursorState const&)>
             callback
     );
@@ -150,9 +150,9 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForServerCursorServiceProvider();
+    MCNAPI static void** $vftableForServerCursorServiceProvider();
 
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

@@ -20,18 +20,18 @@ class FallingBlockNormalTickSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doFallingBlockNormalTickSystem(
+    MCNAPI static void _doFallingBlockNormalTickSystem(
         ::StrictEntityContext const&,
         ::ActorOwnerComponent& actorOwnerComponent,
         ::ITickDelegate&       onLand
     );
 
-    MCAPI static void
+    MCNAPI static void
     _tickFallingBlockNormalTickSystem(::ViewT<
                                       ::StrictEntityContext,
                                       ::Include<::ActorMovementTickNeededComponent, ::FallingBlockFlagComponent>,
                                       ::ActorOwnerComponent> view);
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

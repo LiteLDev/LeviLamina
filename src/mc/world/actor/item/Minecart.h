@@ -98,27 +98,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Minecart(
+    MCNAPI Minecart(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _registerLoopingSounds();
+    MCNAPI void _registerLoopingSounds();
 
-    MCAPI void dropMinecartWithContentsAndRemove(::std::string_view vanillaMinecartName, bool dropMinecartComponents);
+    MCNAPI void dropMinecartWithContentsAndRemove(::std::string_view vanillaMinecartName, bool dropMinecartComponents);
 
-    MCAPI void postNormalTick(::BlockPos const& preNormalTickBlockPos);
+    MCNAPI void postNormalTick(::BlockPos const& preNormalTickBlockPos);
 
-    MCAPI ::BlockPos preNormalTick();
+    MCNAPI ::BlockPos preNormalTick();
 
-    MCAPI void setDisplayBlock(::Block const& block);
+    MCNAPI void setDisplayBlock(::Block const& block);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -128,46 +128,46 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
+    MCNAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCAPI void $destroy(::ActorDamageSource const&, bool dropMinecartComponents);
+    MCNAPI void $destroy(::ActorDamageSource const&, bool dropMinecartComponents);
 
-    MCFOLD ::Block const* $getDefaultDisplayBlock() const;
+    MCNAPI ::Block const* $getDefaultDisplayBlock() const;
 
-    MCFOLD int $getDefaultDisplayOffset() const;
+    MCNAPI int $getDefaultDisplayOffset() const;
 
-    MCFOLD float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
 
-    MCFOLD ::ActorUniqueID $getControllingPlayer() const;
+    MCNAPI ::ActorUniqueID $getControllingPlayer() const;
 
-    MCFOLD bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCNAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI float $getInterpolatedBodyYaw(float) const;
+    MCNAPI float $getInterpolatedBodyYaw(float) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $kill();
+    MCNAPI void $kill();
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool, bool);
+    MCNAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool, bool);
 
-    MCAPI void $applyNaturalSlowdown(::BlockSource&);
+    MCNAPI void $applyNaturalSlowdown(::BlockSource&);
 
-    MCAPI void $_lazyInitDisplayBlock();
+    MCNAPI void $_lazyInitDisplayBlock();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -26,12 +26,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~KeyOrNameResult();
+    MCNAPI ~KeyOrNameResult();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

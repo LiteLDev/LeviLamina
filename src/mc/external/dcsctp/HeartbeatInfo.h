@@ -8,7 +8,7 @@ struct HeartbeatInfo {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<uchar> Serialize();
+    MCNAPI ::std::vector<uchar> Serialize();
     // NOLINTEND
 };
 

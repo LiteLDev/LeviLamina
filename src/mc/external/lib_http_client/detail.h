@@ -5,11 +5,11 @@
 namespace xbox::httpclient::detail {
 // functions
 // NOLINTBEGIN
-MCAPI long StdBadAllocToResult(::std::bad_alloc const&, char const*, uint);
+MCNAPI long StdBadAllocToResult(::std::bad_alloc const&, char const*, uint);
 
-MCAPI long StdExceptionToResult(::std::exception const&, char const*, uint);
+MCNAPI long StdExceptionToResult(::std::exception const&, char const*, uint);
 
-MCAPI long UnknownExceptionToResult(char const*, uint);
+MCNAPI long UnknownExceptionToResult(char const*, uint);
 // NOLINTEND
 
 } // namespace xbox::httpclient::detail

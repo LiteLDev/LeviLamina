@@ -18,7 +18,7 @@ struct MovementAbilitiesComponent;
 namespace UpdateAbilitiesSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void tickAntiCheatProcessRequests(
+MCNAPI void tickAntiCheatProcessRequests(
     ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::AntiCheatRewindFlagComponent>>,
     ::StrictEntityContext const&                  entity,
     ::MovementAbilitiesComponent&                 abilities,

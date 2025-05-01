@@ -27,27 +27,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptAimAssistCategorySettings(::std::string name);
+    MCNAPI explicit ScriptAimAssistCategorySettings(::std::string name);
 
-    MCAPI ::std::unordered_map<::std::string, int> getBlockPriorities() const;
+    MCNAPI ::std::unordered_map<::std::string, int> getBlockPriorities() const;
 
-    MCAPI ::std::unordered_map<::std::string, int> getEntityPriorities() const;
+    MCNAPI ::std::unordered_map<::std::string, int> getEntityPriorities() const;
 
-    MCAPI void setBlockPriorities(::std::unordered_map<::std::string, int> blockPriorities);
+    MCNAPI void setBlockPriorities(::std::unordered_map<::std::string, int> blockPriorities);
 
-    MCAPI void setEntityPriorities(::std::unordered_map<::std::string, int> entityPriorities);
+    MCNAPI void setEntityPriorities(::std::unordered_map<::std::string, int> entityPriorities);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptAimAssistCategorySettings> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptAimAssistCategorySettings> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string name);
+    MCNAPI void* $ctor(::std::string name);
     // NOLINTEND
 };
 

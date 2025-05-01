@@ -13,13 +13,13 @@ class ClientPlayerRewindSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo accumulateHistoryChangesSystem();
+    MCNAPI static ::TickingSystemWithInfo accumulateHistoryChangesSystem();
 
-    MCAPI static void applyHistoryChangesToLiveEntity(
+    MCNAPI static void applyHistoryChangesToLiveEntity(
         ::ReplayStateTrackerComponent const& postSimulationState,
         ::EntityContext&                     liveData
     );
 
-    MCAPI static ::TickingSystemWithInfo discardHistoryChangesSystem();
+    MCNAPI static ::TickingSystemWithInfo discardHistoryChangesSystem();
     // NOLINTEND
 };

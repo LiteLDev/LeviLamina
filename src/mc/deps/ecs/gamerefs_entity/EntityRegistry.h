@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/EntityId.h"
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
 #include "mc/deps/game_refs/WeakRef.h"
-
-// auto generated forward declare list
-// clang-format off
-class EntityId;
-// clang-format on
 
 class EntityRegistry : public ::EnableGetWeakRef<::EntityRegistry>,
                        public ::std::enable_shared_from_this<::EntityRegistry> {
@@ -32,9 +28,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EntityRegistry(::std::string identifier);
+    MCNAPI explicit EntityRegistry(::std::string identifier);
 
-    MCAPI ::WeakRef<::EntityRegistry> getWeakRef();
+    MCNAPI ::WeakRef<::EntityRegistry> getWeakRef();
     // NOLINTEND
 
 public:
@@ -46,6 +42,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string identifier);
+    MCNAPI void* $ctor(::std::string identifier);
     // NOLINTEND
 };

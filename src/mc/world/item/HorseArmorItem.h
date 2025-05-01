@@ -80,7 +80,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _tryEquipHorseArmor(::Actor* actor, ::ItemStack const& horseArmor);
+    MCNAPI static bool _tryEquipHorseArmor(::Actor* actor, ::ItemStack const& horseArmor);
     // NOLINTEND
 
 public:
@@ -100,21 +100,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getArmorValue() const;
+    MCNAPI int $getArmorValue() const;
 
-    MCAPI bool $hasCustomColor(::CompoundTag const* userData) const;
+    MCNAPI bool $hasCustomColor(::CompoundTag const* userData) const;
 
-    MCAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
+    MCNAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
 
-    MCFOLD void $clearColor(::ItemStackBase& item) const;
+    MCNAPI void $clearColor(::ItemStackBase& item) const;
 
-    MCFOLD void $setColor(::ItemStackBase& item, ::mce::Color const& color) const;
+    MCNAPI void $setColor(::ItemStackBase& item, ::mce::Color const& color) const;
 
-    MCAPI bool $isDyeable() const;
+    MCNAPI bool $isDyeable() const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
-    MCAPI void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
@@ -125,6 +125,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

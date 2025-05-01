@@ -14,7 +14,7 @@ namespace Puv { class Logger; }
 namespace LoadResultHelpers {
 // functions
 // NOLINTBEGIN
-MCAPI void
+MCNAPI void
 writeToContentLog(::Puv::Logger const& logger, ::LogArea logArea, ::LoadResultHelpers::ContentLogOptions options);
 // NOLINTEND
 

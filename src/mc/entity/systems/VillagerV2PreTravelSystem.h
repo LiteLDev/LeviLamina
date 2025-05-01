@@ -20,13 +20,13 @@ struct VillagerV2PreTravelSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doVillagerV2PreTravel(
+    MCNAPI static void _doVillagerV2PreTravel(
         ::StrictEntityContext const&               entity,
         ::ActorDataFlagComponent const&            synchedActorDataComponent,
         ::EntityModifier<::SkipMobTravelComponent> modifier
     );
 
-    MCAPI static void _tick(
+    MCNAPI static void _tick(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::ActorMovementTickNeededComponent, ::VillagerV2FlagComponent>,

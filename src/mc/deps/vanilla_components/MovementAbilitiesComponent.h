@@ -21,8 +21,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI float getFloat(::MovementAbilities ability) const;
+    MCNAPI float getFloat(::MovementAbilities ability) const;
 
-    MCAPI void setFloat(::MovementAbilities ability, float value);
+    MCNAPI void setFloat(::MovementAbilities ability, float value);
     // NOLINTEND
 };

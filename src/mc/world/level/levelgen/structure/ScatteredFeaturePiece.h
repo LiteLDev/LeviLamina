@@ -78,29 +78,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScatteredFeaturePiece(int west, int floor, int north, int width, int height, int depth);
+    MCNAPI ScatteredFeaturePiece(int west, int floor, int north, int width, int height, int depth);
 
-    MCAPI bool updateAverageGroundHeight(::BlockSource& region, ::BoundingBox const& chunkBB, int offset);
+    MCNAPI bool updateAverageGroundHeight(::BlockSource& region, ::BoundingBox const& chunkBB, int offset);
 
-    MCAPI bool
+    MCNAPI bool
     updateHeightPositionToLowestGroundHeight(::BlockSource& region, ::BoundingBox const& chunkBB, int offset);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int west, int floor, int north, int width, int height, int depth);
+    MCNAPI void* $ctor(int west, int floor, int north, int width, int height, int depth);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

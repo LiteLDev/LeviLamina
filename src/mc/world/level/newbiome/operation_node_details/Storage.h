@@ -23,13 +23,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Storage(uint64 size);
+    MCNAPI explicit Storage(uint64 size);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint64 size);
+    MCNAPI void* $ctor(uint64 size);
     // NOLINTEND
 };
 

@@ -25,7 +25,7 @@ struct WasInWaterFlagComponent;
 namespace FoodExhaustionSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void doFoodExhaustion(
+MCNAPI void doFoodExhaustion(
     ::StrictEntityContext const&                  entity,
     ::Optional<::OnGroundFlagComponent const>     onGround,
     ::Optional<::WasInWaterFlagComponent const>   wasInWater,

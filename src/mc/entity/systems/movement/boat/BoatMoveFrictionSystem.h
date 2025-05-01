@@ -19,7 +19,7 @@ struct StateVectorComponent;
 namespace BoatMoveFrictionSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void boatMoveFriction(
+MCNAPI void boatMoveFriction(
     ::StrictEntityContext const&,
     ::ActorDataFlagComponent const&           synchedActorDataComponent,
     ::BoatMovementComponent&                  boatMovementComponent,

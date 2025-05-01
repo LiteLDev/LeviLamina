@@ -37,27 +37,27 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_canSpreadInto(
+    MCNAPI bool $_canSpreadInto(
         ::IBlockWorldGenAPI& target,
         ::Block const&       self,
         ::BlockPos const&    pos,
         uchar const          placementDirection
     ) const;
 
-    MCAPI bool $_canSpreadFrom(::Block const& block, uchar const facing) const;
+    MCNAPI bool $_canSpreadFrom(::Block const& block, uchar const facing) const;
 
-    MCAPI bool $_isOtherBlockValidAsSource(::Block const& block) const;
+    MCNAPI bool $_isOtherBlockValidAsSource(::Block const& block) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -74,10 +74,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::PackCapability
+    MCNAPI static ::PackCapability
     getPackCapability(::Bedrock::NonOwnerPointer<::IAdvancedGraphicsOptions> advancedGraphicsOptions);
 
-    MCAPI static ::PackCapability
+    MCNAPI static ::PackCapability
     getPackDeferredCapability(::Bedrock::NonOwnerPointer<::IAdvancedGraphicsOptions> advancedGraphicsOptions);
     // NOLINTEND
 

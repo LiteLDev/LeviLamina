@@ -13,7 +13,7 @@ namespace mce { class Color; }
 namespace CopperUtil {
 // functions
 // NOLINTBEGIN
-MCAPI void trySendWaxingTelemetryEventToClient(::Player& player, ::BlockLegacy const& block);
+MCNAPI void trySendWaxingTelemetryEventToClient(::Player& player, ::BlockLegacy const& block);
 // NOLINTEND
 
 // static variables

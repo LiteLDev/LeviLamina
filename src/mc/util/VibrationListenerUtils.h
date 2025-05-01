@@ -12,15 +12,15 @@ struct GameEventContext;
 namespace VibrationListenerUtils {
 // functions
 // NOLINTBEGIN
-MCAPI int getGameEventFrequency(::GameEvent const& gameEvent);
+MCNAPI int getGameEventFrequency(::GameEvent const& gameEvent);
 
-MCAPI bool ignoreVibrationIfOnVibrationDampeningBlock(
+MCNAPI bool ignoreVibrationIfOnVibrationDampeningBlock(
     ::BlockSource&            region,
     ::GameEvent const&        gameEvent,
     ::GameEventContext const& gameEventContext
 );
 
-MCAPI bool
+MCNAPI bool
 ignoreVibrationIfSneaking(::BlockSource& gameEvent, ::GameEvent const& gameEventContext, ::GameEventContext const&);
 // NOLINTEND
 

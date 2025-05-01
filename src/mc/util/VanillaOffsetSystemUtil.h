@@ -19,7 +19,7 @@ struct VanillaOffsetComponent;
 namespace VanillaOffsetSystemUtil {
 // functions
 // NOLINTBEGIN
-MCAPI void _clientTick(
+MCNAPI void _clientTick(
     ::StrictEntityContext&                            entity,
     ::VanillaOffsetComponent&                         vanillaOffsetComponent,
     ::OffsetsComponent const&                         offsetComponent,
@@ -30,7 +30,7 @@ MCAPI void _clientTick(
     ::EntityModifier<::IsHorizontalPoseFlagComponent> modifier
 );
 
-MCAPI void _serverTick(
+MCNAPI void _serverTick(
     ::StrictEntityContext&                            entity,
     ::VanillaOffsetComponent&                         vanillaOffsetComponent,
     ::OffsetsComponent const&                         offsetComponent,
@@ -41,13 +41,13 @@ MCAPI void _serverTick(
     ::EntityModifier<::IsHorizontalPoseFlagComponent> modifier
 );
 
-MCAPI void _updateHorizontalFlagComponent(
+MCNAPI void _updateHorizontalFlagComponent(
     ::StrictEntityContext&                            entity,
     ::ActorDataFlagComponent const&                   actorDataFlag,
     ::EntityModifier<::IsHorizontalPoseFlagComponent> modifier
 );
 
-MCAPI float getCameraOffset(
+MCNAPI float getCameraOffset(
     ::ActorDataFlagComponent const&                   actorDataFlag,
     ::Optional<::PlayerIsSleepingFlagComponent const> isSleepingFlag,
     ::Optional<::IsHorizontalPoseFlagComponent const> isHorizontalFlag,

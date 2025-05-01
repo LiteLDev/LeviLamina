@@ -37,16 +37,16 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ShooterAmmunitionEntry(::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
+        MCNAPI ShooterAmmunitionEntry(::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
 
-        MCFOLD ::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry&
+        MCNAPI ::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry&
         operator=(::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void* $ctor(::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
+        MCNAPI void* $ctor(::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
         // NOLINTEND
     };
 
@@ -75,7 +75,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
@@ -91,6 +91,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

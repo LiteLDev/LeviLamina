@@ -21,12 +21,12 @@ class StorePreviousRideStatsSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _storePreviousRideStats(
+    MCNAPI static void _storePreviousRideStats(
         ::StrictEntityContext const&,
         ::StateVectorComponent const&     stateVectorComponent,
         ::VanillaClientGameplayComponent& vanillaClientGameplayComponent
     );
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

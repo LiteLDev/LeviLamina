@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 #include "mc/world/level/block/actor/SignTextSide.h"
 
@@ -16,7 +17,6 @@ class ILevel;
 class Player;
 class SaveContext;
 class TextObjectRoot;
-struct ActorUniqueID;
 // clang-format on
 
 class SignBlockActor : public ::BlockActor {
@@ -45,25 +45,25 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI CachedLineData();
+        MCNAPI CachedLineData();
 
-        MCAPI CachedLineData(::SignBlockActor::CachedLineData&&);
+        MCNAPI CachedLineData(::SignBlockActor::CachedLineData&&);
 
-        MCAPI ~CachedLineData();
+        MCNAPI ~CachedLineData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void* $ctor();
+        MCNAPI void* $ctor();
 
-        MCFOLD void* $ctor(::SignBlockActor::CachedLineData&&);
+        MCNAPI void* $ctor(::SignBlockActor::CachedLineData&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -187,50 +187,50 @@ public:
     // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual float getShadowRadius(::BlockSource& region) const /*override*/;
 
-    // vIndex: 28
+    // vIndex: 29
     virtual ::std::string getImmersiveReaderText(::BlockSource& region) /*override*/;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 38
+    // vIndex: 39
     virtual ::std::vector<::std::string> getUgcStrings(::CompoundTag const& tag) const /*override*/;
 
-    // vIndex: 39
+    // vIndex: 40
     virtual ::std::vector<::std::string> getFilteredUgcStrings(::CompoundTag const& tag) const /*override*/;
 
-    // vIndex: 40
+    // vIndex: 41
     virtual void setUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const /*override*/;
 
-    // vIndex: 41
+    // vIndex: 42
     virtual void setFilteredUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const /*override*/;
 
-    // vIndex: 43
+    // vIndex: 44
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 46
     virtual bool _playerCanUpdate(::Player const& fromPlayer) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _updateTextFromClient(::CompoundTag const& data, ::BlockSource const& region);
+    MCNAPI void _updateTextFromClient(::CompoundTag const& data, ::BlockSource const& region);
 
-    MCAPI ::SignTextSide getSideFacingPlayer(::Player const& player) const;
+    MCNAPI ::SignTextSide getSideFacingPlayer(::Player const& player) const;
 
-    MCAPI void setMessageForServerScripingOnly(::SignTextSide side, ::std::string message, ::std::string ownerID);
+    MCNAPI void setMessageForServerScripingOnly(::SignTextSide side, ::std::string message, ::std::string ownerID);
 
-    MCAPI void setMessageForServerScripingOnly(::SignTextSide side, ::TextObjectRoot message, ::std::string ownerID);
+    MCNAPI void setMessageForServerScripingOnly(::SignTextSide side, ::TextObjectRoot message, ::std::string ownerID);
     // NOLINTEND
 
 public:
@@ -242,36 +242,36 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCFOLD void $onChanged(::BlockSource& region);
+    MCNAPI void $onChanged(::BlockSource& region);
 
-    MCAPI float $getShadowRadius(::BlockSource& region) const;
+    MCNAPI float $getShadowRadius(::BlockSource& region) const;
 
-    MCAPI ::std::string $getImmersiveReaderText(::BlockSource& region);
+    MCNAPI ::std::string $getImmersiveReaderText(::BlockSource& region);
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI ::std::vector<::std::string> $getUgcStrings(::CompoundTag const& tag) const;
+    MCNAPI ::std::vector<::std::string> $getUgcStrings(::CompoundTag const& tag) const;
 
-    MCAPI ::std::vector<::std::string> $getFilteredUgcStrings(::CompoundTag const& tag) const;
+    MCNAPI ::std::vector<::std::string> $getFilteredUgcStrings(::CompoundTag const& tag) const;
 
-    MCAPI void $setUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const;
+    MCNAPI void $setUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const;
 
-    MCAPI void $setFilteredUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const;
+    MCNAPI void $setFilteredUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const;
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
-    MCAPI bool $_playerCanUpdate(::Player const& fromPlayer) const;
+    MCNAPI bool $_playerCanUpdate(::Player const& fromPlayer) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

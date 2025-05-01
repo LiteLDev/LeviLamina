@@ -5,15 +5,15 @@
 // auto generated inclusion list
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/level/ChunkPos.h"
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
 #include "mc/world/level/levelgen/structure/Projection.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
 class BlockPalette;
-class BlockPos;
-class BoundingBox;
-class ChunkPos;
 class HashedString;
 class StructurePoolBlockRule;
 class StructurePoolBlockTagRule;
@@ -68,22 +68,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyStructureSettings(::LegacyStructureSettings const&);
+    MCNAPI LegacyStructureSettings(::LegacyStructureSettings const&);
 
-    MCAPI LegacyStructureSettings(
+    MCNAPI LegacyStructureSettings(
         ::Mirror             mirror,
         ::Rotation           rotation,
         ::Block const*       ignoreBlock,
         ::BoundingBox const& boundingBox
     );
 
-    MCAPI ::Block const& getSwappedBlock(::BlockPalette const& oldBlock, ::Block const& palette) const;
+    MCNAPI ::Block const& getSwappedBlock(::BlockPalette const& oldBlock, ::Block const& palette) const;
 
-    MCAPI ::LegacyStructureSettings& operator=(::LegacyStructureSettings const&);
+    MCNAPI ::LegacyStructureSettings& operator=(::LegacyStructureSettings const&);
 
-    MCAPI void updateBoundingBoxFromChunkPos();
+    MCNAPI void updateBoundingBoxFromChunkPos();
 
-    MCAPI ~LegacyStructureSettings();
+    MCNAPI ~LegacyStructureSettings();
     // NOLINTEND
 
 public:
@@ -95,15 +95,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LegacyStructureSettings const&);
+    MCNAPI void* $ctor(::LegacyStructureSettings const&);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::Mirror mirror, ::Rotation rotation, ::Block const* ignoreBlock, ::BoundingBox const& boundingBox);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -13,6 +13,8 @@
 #define MCAPI  LL_SHARED_IMPORT
 #define MCTAPI template<> MCAPI
 #define MCFOLD MCAPI /*Identical COMDAT Folding*/
+#define MCNAPI [[deprecated("This API is not available. Open an issue if you need it."\
+                            "https://github.com/LiteLDev/mcapi-requests/issues/new")]] MCAPI
 
 #include <algorithm>          // STL general algorithms
 #include <array>              // STL array container
@@ -69,6 +71,7 @@
 #include "entt/entt.hpp" // Entity Component System Library
 #include "entt/fwd.hpp"  // Entity Component Forward Declarations
 #include "glm/glm.hpp"   // OpenGL Mathematics Library
+#include "glm/ext.hpp"   // OpenGL Mathematics Library
 #include "gsl/gsl"       // Guideline Support Library
 
 // LevelDB C++ Library

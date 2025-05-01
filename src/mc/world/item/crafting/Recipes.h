@@ -3,8 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/molang/MolangVersion.h"
 #include "mc/world/inventory/network/TypedServerNetId.h"
+#include "mc/world/item/ItemInstance.h"
+#include "mc/world/item/SortItemInstanceIdAux.h"
+#include "mc/world/item/crafting/ExternalRecipeStore.h"
+#include "mc/world/item/crafting/RecipeIngredient.h"
 #include "mc/world/item/crafting/RecipeUnlockingRequirement.h"
 
 // auto generated forward declare list
@@ -12,23 +17,18 @@
 class BaseGameVersion;
 class Block;
 class Experiments;
-class ExternalRecipeStore;
-class HashedString;
 class Item;
-class ItemInstance;
 class ItemStackBase;
 class Level;
 class MinEngineVersion;
 class PackInstance;
 class Recipe;
-class RecipeIngredient;
 class RecipeUnlockingRequirement;
 class ResourcePackManager;
 class SemVersion;
 class ShapedRecipe;
 class ShapelessRecipe;
 struct RecipeNetIdTag;
-struct SortItemInstanceIdAux;
 namespace Json { class Value; }
 namespace mce { class UUID; }
 // clang-format on
@@ -54,13 +54,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~FurnaceRecipeKey();
+        MCNAPI ~FurnaceRecipeKey();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -102,13 +102,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~NormalizedRectangularRecipeResults();
+        MCNAPI ~NormalizedRectangularRecipeResults();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 

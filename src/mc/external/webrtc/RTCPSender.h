@@ -28,6 +28,7 @@ public:
     struct Configuration;
     struct FeedbackState;
     class PacketSender;
+    struct ReportFlag;
     class RtcpContext;
     // clang-format on
 
@@ -36,20 +37,20 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Configuration();
+        MCNAPI ~Configuration();
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static ::webrtc::RTCPSender::Configuration
+        MCNAPI static ::webrtc::RTCPSender::Configuration
         FromRtpRtcpConfiguration(::webrtc::RtpRtcpInterface::Configuration const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -57,21 +58,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI FeedbackState();
+        MCNAPI FeedbackState();
 
-        MCAPI ~FeedbackState();
+        MCNAPI ~FeedbackState();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -79,130 +80,132 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI PacketSender(::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)>, uint64);
+        MCNAPI PacketSender(::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)>, uint64);
 
-        MCAPI ~PacketSender();
+        MCNAPI ~PacketSender();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)>, uint64);
+        MCNAPI void* $ctor(::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)>, uint64);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
+
+    struct ReportFlag {};
 
     class RtcpContext {};
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool AllVolatileFlagsConsumed() const;
+    MCNAPI bool AllVolatileFlagsConsumed() const;
 
-    MCAPI void BuildBYE(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
+    MCNAPI void BuildBYE(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
 
-    MCAPI void BuildExtendedReports(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
+    MCNAPI void BuildExtendedReports(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
 
-    MCAPI void BuildFIR(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
+    MCNAPI void BuildFIR(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
 
-    MCAPI void BuildLossNotification(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
+    MCNAPI void BuildLossNotification(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
 
-    MCAPI void BuildNACK(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
+    MCNAPI void BuildNACK(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
 
-    MCAPI void BuildPLI(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
+    MCNAPI void BuildPLI(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
 
-    MCAPI void BuildREMB(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
+    MCNAPI void BuildREMB(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
 
-    MCAPI void BuildRR(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
+    MCNAPI void BuildRR(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
 
-    MCAPI void BuildSDES(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
+    MCNAPI void BuildSDES(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
 
-    MCAPI void BuildSR(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
+    MCNAPI void BuildSR(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
 
-    MCAPI void BuildTMMBN(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
+    MCNAPI void BuildTMMBN(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
 
-    MCAPI void BuildTMMBR(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
+    MCNAPI void BuildTMMBR(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender&);
 
-    MCAPI ::std::optional<::webrtc::VideoBitrateAllocation>
+    MCNAPI ::std::optional<::webrtc::VideoBitrateAllocation>
     CheckAndUpdateLayerStructure(::webrtc::VideoBitrateAllocation const&) const;
 
-    MCAPI ::std::optional<int>
+    MCNAPI ::std::optional<int>
     ComputeCompoundRTCPPacket(::webrtc::RTCPSender::FeedbackState const&, ::webrtc::RTCPPacketType, int, ushort const*, ::webrtc::RTCPSender::PacketSender&);
 
-    MCAPI ::webrtc::TimeDelta ComputeTimeUntilNextReport(::webrtc::DataRate);
+    MCNAPI ::webrtc::TimeDelta ComputeTimeUntilNextReport(::webrtc::DataRate);
 
-    MCAPI bool ConsumeFlag(uint, bool);
+    MCNAPI bool ConsumeFlag(uint, bool);
 
-    MCAPI ::std::vector<::webrtc::rtcp::ReportBlock> CreateReportBlocks(::webrtc::RTCPSender::FeedbackState const&);
+    MCNAPI ::std::vector<::webrtc::rtcp::ReportBlock> CreateReportBlocks(::webrtc::RTCPSender::FeedbackState const&);
 
-    MCAPI bool IsFlagPresent(uint) const;
+    MCNAPI bool IsFlagPresent(uint) const;
 
-    MCAPI void PrepareReport(::webrtc::RTCPSender::FeedbackState const&);
+    MCNAPI void PrepareReport(::webrtc::RTCPSender::FeedbackState const&);
 
-    MCAPI explicit RTCPSender(::webrtc::RTCPSender::Configuration);
+    MCNAPI explicit RTCPSender(::webrtc::RTCPSender::Configuration);
 
-    MCAPI uint SSRC() const;
+    MCNAPI uint SSRC() const;
 
-    MCAPI void SendCombinedRtcpPacket(::std::vector<::std::unique_ptr<::webrtc::rtcp::RtcpPacket>>);
+    MCNAPI void SendCombinedRtcpPacket(::std::vector<::std::unique_ptr<::webrtc::rtcp::RtcpPacket>>);
 
-    MCAPI int SendLossNotification(::webrtc::RTCPSender::FeedbackState const&, ushort, ushort, bool, bool);
+    MCNAPI int SendLossNotification(::webrtc::RTCPSender::FeedbackState const&, ushort, ushort, bool, bool);
 
-    MCAPI int SendRTCP(::webrtc::RTCPSender::FeedbackState const&, ::webrtc::RTCPPacketType, int, ushort const*);
+    MCNAPI int SendRTCP(::webrtc::RTCPSender::FeedbackState const&, ::webrtc::RTCPPacketType, int, ushort const*);
 
-    MCAPI bool Sending() const;
+    MCNAPI bool Sending() const;
 
-    MCAPI int SetCNAME(::std::string_view);
+    MCNAPI int SetCNAME(::std::string_view);
 
-    MCAPI void SetFlag(uint, bool);
+    MCNAPI void SetFlag(uint, bool);
 
-    MCAPI void SetLastRtpTime(uint, ::std::optional<::webrtc::Timestamp>, ::std::optional<schar>);
+    MCNAPI void SetLastRtpTime(uint, ::std::optional<::webrtc::Timestamp>, ::std::optional<schar>);
 
-    MCAPI void SetMaxRtpPacketSize(uint64);
+    MCNAPI void SetMaxRtpPacketSize(uint64);
 
-    MCAPI void SetNextRtcpSendEvaluationDuration(::webrtc::TimeDelta);
+    MCNAPI void SetNextRtcpSendEvaluationDuration(::webrtc::TimeDelta);
 
-    MCAPI void SetNonSenderRttMeasurement(bool);
+    MCNAPI void SetNonSenderRttMeasurement(bool);
 
-    MCAPI void SetRTCPStatus(::webrtc::RtcpMode);
+    MCNAPI void SetRTCPStatus(::webrtc::RtcpMode);
 
-    MCAPI void SetRemb(int64, ::std::vector<uint>);
+    MCNAPI void SetRemb(int64, ::std::vector<uint>);
 
-    MCAPI void SetRemoteSSRC(uint);
+    MCNAPI void SetRemoteSSRC(uint);
 
-    MCAPI void SetRtpClockRate(schar, int);
+    MCNAPI void SetRtpClockRate(schar, int);
 
-    MCAPI void SetSendingStatus(::webrtc::RTCPSender::FeedbackState const&, bool);
+    MCNAPI void SetSendingStatus(::webrtc::RTCPSender::FeedbackState const&, bool);
 
-    MCAPI void SetSsrc(uint);
+    MCNAPI void SetSsrc(uint);
 
-    MCAPI void SetTimestampOffset(uint);
+    MCNAPI void SetTimestampOffset(uint);
 
-    MCAPI void SetTmmbn(::std::vector<::webrtc::rtcp::TmmbItem>);
+    MCNAPI void SetTmmbn(::std::vector<::webrtc::rtcp::TmmbItem>);
 
-    MCAPI void SetVideoBitrateAllocation(::webrtc::VideoBitrateAllocation const&);
+    MCNAPI void SetVideoBitrateAllocation(::webrtc::VideoBitrateAllocation const&);
 
-    MCAPI ::webrtc::RtcpMode Status() const;
+    MCNAPI ::webrtc::RtcpMode Status() const;
 
-    MCAPI bool TimeToSendRTCPReport(bool) const;
+    MCNAPI bool TimeToSendRTCPReport(bool) const;
 
-    MCAPI void UnsetRemb();
+    MCNAPI void UnsetRemb();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::RTCPSender::Configuration);
+    MCNAPI void* $ctor(::webrtc::RTCPSender::Configuration);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

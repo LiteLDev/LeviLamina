@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Matrix;
-class Vec3;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/math/Matrix.h"
+#include "mc/deps/core/math/Vec3.h"
 
 class BlockTransformationComponent {
 public:

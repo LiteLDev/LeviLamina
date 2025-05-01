@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
+#include "mc/world/actor/ActorFilterGroup.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorFilterGroup;
 class CompoundTag;
 class DataLoadHelper;
-class Vec3;
 struct ActorUniqueID;
 struct Tick;
 // clang-format on
@@ -37,18 +37,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI ::AreaAttackComponent& operator=(::AreaAttackComponent&&);
+    MCNAPI ::AreaAttackComponent& operator=(::AreaAttackComponent&&);
 
-    MCAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const&, ::DataLoadHelper&);
+    MCNAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const&, ::DataLoadHelper&);
 
-    MCAPI ~AreaAttackComponent();
+    MCNAPI ~AreaAttackComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

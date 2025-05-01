@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/phys/HitResult.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class HitResult;
 // clang-format on
 
 struct ProjectileHitEvent {

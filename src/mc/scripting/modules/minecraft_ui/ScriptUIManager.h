@@ -17,13 +17,13 @@ class ScriptUIManager {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> closeAllForms(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer);
+    MCNAPI ::Scripting::Result<void> closeAllForms(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftServerUI::ScriptUIManager> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftServerUI::ScriptUIManager> bind();
     // NOLINTEND
 };
 

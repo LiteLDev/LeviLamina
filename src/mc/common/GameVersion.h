@@ -34,40 +34,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameVersion(::GameVersion const&);
+    MCNAPI GameVersion(::GameVersion const&);
 
-    MCAPI explicit GameVersion(::ListTag const& tag);
+    MCNAPI explicit GameVersion(::ListTag const& tag);
 
-    MCAPI GameVersion(uint major, uint minor, uint patch, uint revision, uint isBeta);
+    MCNAPI GameVersion(uint major, uint minor, uint patch, uint revision, uint isBeta);
 
-    MCAPI bool operator<(::GameVersion const& other) const;
+    MCNAPI bool operator<(::GameVersion const& other) const;
 
-    MCAPI ::GameVersion& operator=(::GameVersion&&);
+    MCNAPI ::GameVersion& operator=(::GameVersion&&);
 
-    MCAPI bool operator>=(::GameVersion const& other) const;
+    MCNAPI bool operator>=(::GameVersion const& other) const;
 
-    MCAPI ~GameVersion();
+    MCNAPI ~GameVersion();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::GameVersion current();
+    MCNAPI static ::GameVersion current();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GameVersion const&);
+    MCNAPI void* $ctor(::GameVersion const&);
 
-    MCAPI void* $ctor(::ListTag const& tag);
+    MCNAPI void* $ctor(::ListTag const& tag);
 
-    MCAPI void* $ctor(uint major, uint minor, uint patch, uint revision, uint isBeta);
+    MCNAPI void* $ctor(uint major, uint minor, uint patch, uint revision, uint isBeta);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -32,34 +32,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
     addItem(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
 
-    MCAPI ::Scripting::Result<void> clearAll() const;
+    MCNAPI ::Scripting::Result<void> clearAll() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getEmptySlotsCount() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getEmptySlotsCount() const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
     getItem(int slot) const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getSize() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getSize() const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerSlot>>
     getSlot(int slot) const;
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI bool isValid() const;
+
+    MCNAPI ::Scripting::Result<void>
     moveItem(int fromSlot, int toSlot, ::ScriptModuleMinecraft::ScriptContainerWrapper& toScriptContainer) const;
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     setItem(int slot, ::std::optional<::ScriptModuleMinecraft::ScriptItemStack> const& scriptItemStack) const;
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     swapItems(int slot, int otherSlot, ::ScriptModuleMinecraft::ScriptContainerWrapper& otherScriptContainer) const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
     transferItem(int fromSlot, ::ScriptModuleMinecraft::ScriptContainerWrapper& toScriptContainer) const;
     // NOLINTEND
@@ -67,7 +69,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptContainerWrapper> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptContainerWrapper> bind();
     // NOLINTEND
 };
 

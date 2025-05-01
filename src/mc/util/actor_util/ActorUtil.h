@@ -13,9 +13,9 @@ class Actor;
 namespace ActorUtil {
 // functions
 // NOLINTBEGIN
-MCAPI ::ActorUtil::CanBeKilledResult const canActorBeKilled(::Actor const& actor, bool isWorldBuilder);
+MCNAPI ::ActorUtil::CanBeKilledResult const canActorBeKilled(::Actor const& actor, bool isWorldBuilder);
 
-MCAPI void startFizzEffect(::Actor& actor);
+MCNAPI void startFizzEffect(::Actor& actor);
 // NOLINTEND
 
 } // namespace ActorUtil

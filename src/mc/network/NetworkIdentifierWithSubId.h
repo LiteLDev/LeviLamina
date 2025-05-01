@@ -5,11 +5,7 @@
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
-
-// auto generated forward declare list
-// clang-format off
-class NetworkIdentifier;
-// clang-format on
+#include "mc/network/NetworkIdentifier.h"
 
 struct NetworkIdentifierWithSubId {
 public:

@@ -44,21 +44,21 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onLand(::FallingBlock const& block, ::IBlockSource& region, ::BlockPos const& pos);
+    MCNAPI void $onLand(::FallingBlock const& block, ::IBlockSource& region, ::BlockPos const& pos);
 
-    MCAPI void $breakBlock(::FallingBlockActor& fallingBlock);
+    MCNAPI void $breakBlock(::FallingBlockActor& fallingBlock);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

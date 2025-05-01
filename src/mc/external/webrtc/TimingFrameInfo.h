@@ -8,13 +8,13 @@ struct TimingFrameInfo {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool IsInvalid() const;
+    MCNAPI bool IsInvalid() const;
 
-    MCAPI bool IsOutlier() const;
+    MCNAPI bool IsOutlier() const;
 
-    MCAPI bool IsTimerTriggered() const;
+    MCNAPI bool IsTimerTriggered() const;
 
-    MCAPI ::std::string ToString() const;
+    MCNAPI ::std::string ToString() const;
     // NOLINTEND
 };
 

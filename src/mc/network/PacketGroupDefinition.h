@@ -29,15 +29,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void build(::PacketGroupDefinition* packetGroup);
+        MCNAPI void build(::PacketGroupDefinition* packetGroup);
 
-        MCAPI ~PacketGroupBuilder();
+        MCNAPI ~PacketGroupBuilder();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -57,16 +57,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uint checkPacket(::MinecraftPacketIds packetId) const;
+    MCNAPI uint checkPacket(::MinecraftPacketIds packetId) const;
 
-    MCAPI void initGroups();
+    MCNAPI void initGroups();
 
-    MCAPI ~PacketGroupDefinition();
+    MCNAPI ~PacketGroupDefinition();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

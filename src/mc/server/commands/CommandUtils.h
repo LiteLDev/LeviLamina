@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/deps/shared_types/legacy/Difficulty.h"
 #include "mc/world/actor/ActorType.h"
 
 // auto generated forward declare list
@@ -19,6 +20,7 @@ class EntityContext;
 class FunctionEntry;
 class ItemInstance;
 class ItemStack;
+class Level;
 class LevelData;
 class Player;
 class Vec3;
@@ -74,6 +76,8 @@ MCAPI bool isFunctionValid(::CommandOutput& output, ::FunctionEntry& functionEnt
 MCAPI bool isPlayerSpawnedMob(::Actor const& entity, ::Actor const& summoner);
 
 MCAPI void nameEntity(::Actor& actor, bool nameSet, ::Bedrock::Safety::RedactableString const& actorName);
+
+MCAPI void setDifficulty(::Level& level, ::SharedTypes::Legacy::Difficulty difficulty);
 
 MCAPI void setInitEvent(::ActorDefinitionIdentifier& actorId, ::std::string const& eventName);
 

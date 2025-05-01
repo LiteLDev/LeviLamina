@@ -11,19 +11,19 @@ struct ChainDiffCalculator {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::absl::InlinedVector<int, 4, ::std::allocator<int>> ChainDiffs(int64) const;
+    MCNAPI ::absl::InlinedVector<int, 4, ::std::allocator<int>> ChainDiffs(int64) const;
 
-    MCAPI ::absl::InlinedVector<int, 4, ::std::allocator<int>> From(int64, ::std::vector<bool> const&);
+    MCNAPI ::absl::InlinedVector<int, 4, ::std::allocator<int>> From(int64, ::std::vector<bool> const&);
 
-    MCAPI void Reset(::std::vector<bool> const&);
+    MCNAPI void Reset(::std::vector<bool> const&);
 
-    MCAPI ~ChainDiffCalculator();
+    MCNAPI ~ChainDiffCalculator();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

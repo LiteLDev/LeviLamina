@@ -3,12 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
 #include "mc/world/level/levelgen/v2/terrain_adjustment/Type.h"
-
-// auto generated forward declare list
-// clang-format off
-class BoundingBox;
-// clang-format on
 
 namespace br::worldgen {
 

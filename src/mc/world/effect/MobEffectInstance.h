@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/effect/EffectDuration.h"
 #include "mc/world/effect/MobEffect.h"
 
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
-struct EffectDuration;
 namespace mce { class Color; }
 // clang-format on
 

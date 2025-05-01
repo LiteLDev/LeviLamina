@@ -4,10 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
-#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/deps/ecs/strict/Include.h"
-#include "mc/deps/ecs/strict/OptionalGlobal.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,22 +24,16 @@ struct StateVectorComponent;
 namespace InitialTickFilterSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void registerSystems(::EntitySystems& systemRegistry);
+MCNAPI void registerSystems(::EntitySystems& systemRegistry);
 
-MCAPI void tickingAreaFilterTickEntity(
+MCNAPI void tickingAreaFilterTickEntity(
     ::StrictEntityContext const&                          context,
     ::TickWorldComponent&                                 tickWorldComponent,
     ::CurrentTickComponent const&                         currentTickComponent,
     ::EntityModifier<::ActorMovementTickNeededComponent>& modifier
 );
 
-MCAPI void tickingAreaFilterTickView(
-    ::OptionalGlobal<::CurrentTickComponent const> currentTickComponent,
-    ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::TickWorldComponent> view,
-    ::EntityModifier<::ActorMovementTickNeededComponent>                                                modifier
-);
-
-MCAPI void validChunkFilterTickEntity(
+MCNAPI void validChunkFilterTickEntity(
     ::StrictEntityContext const&                               context,
     ::StateVectorComponent&                                    stateVector,
     ::Optional<::ActorRotationComponent> const&                actorRotation,

@@ -71,32 +71,32 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $listen(ushort port);
+    MCNAPI bool $listen(ushort port);
 
-    MCAPI bool $connect(::std::string const& host, ushort port);
+    MCNAPI bool $connect(::std::string const& host, ushort port);
 
-    MCAPI bool $selectClient(::std::string& outClient);
+    MCNAPI bool $selectClient(::std::string& outClient);
 
-    MCFOLD bool $started() const;
+    MCNAPI bool $started() const;
 
-    MCAPI bool $connected() const;
+    MCNAPI bool $connected() const;
 
-    MCAPI bool $lostConnection() const;
+    MCNAPI bool $lostConnection() const;
 
-    MCAPI bool $readyClose() const;
+    MCNAPI bool $readyClose() const;
 
-    MCAPI void $close();
+    MCNAPI void $close();
 
-    MCAPI bool $peek() const;
+    MCNAPI bool $peek() const;
 
-    MCAPI bool $receive(char* buffer, uint64 length);
+    MCNAPI bool $receive(char* buffer, uint64 length);
 
-    MCAPI void $send(char const* buffer, uint64 length);
+    MCNAPI void $send(char const* buffer, uint64 length);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

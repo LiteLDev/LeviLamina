@@ -12,7 +12,7 @@ class BlockSource;
 namespace CropUtils {
 // functions
 // NOLINTBEGIN
-MCAPI float getGrowthSpeed(::BlockLegacy const& legacyBlock, ::BlockSource const& region, ::BlockPos const& pos);
+MCNAPI float getGrowthSpeed(::BlockLegacy const& legacyBlock, ::BlockSource const& region, ::BlockPos const& pos);
 // NOLINTEND
 
 } // namespace CropUtils

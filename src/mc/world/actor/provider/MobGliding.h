@@ -10,7 +10,7 @@ class EntityContext;
 namespace MobGliding {
 // functions
 // NOLINTBEGIN
-MCAPI int getFallFlyTicks(::EntityContext const& provider);
+MCNAPI int getFallFlyTicks(::EntityContext const& provider);
 // NOLINTEND
 
 } // namespace MobGliding

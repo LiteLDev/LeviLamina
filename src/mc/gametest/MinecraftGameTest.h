@@ -40,59 +40,59 @@ public:
     // vIndex: 0
     virtual ~MinecraftGameTest() /*override*/;
 
-    // vIndex: 23
+    // vIndex: 24
     virtual void onLevelDestruction(::std::string const&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MinecraftGameTest(::Level& level);
+    MCNAPI explicit MinecraftGameTest(::Level& level);
 
-    MCAPI void _runTestPreparation(::gametest::BaseGameTestFunction const& testFunction);
+    MCNAPI void _runTestPreparation(::gametest::BaseGameTestFunction const& testFunction);
 
-    MCAPI void clearAllTests(::BlockSource& region);
+    MCNAPI void clearAllTests(::BlockSource& region);
 
-    MCAPI void registerDefaultGameBatches(::Level& level);
+    MCNAPI void registerDefaultGameBatches(::Level& level);
 
-    MCAPI ::std::string
+    MCNAPI ::std::string
     runTest(::std::string const& testName, ::Dimension& dimension, ::gametest::TestParameters const& params);
 
-    MCAPI ::std::string runTest(
+    MCNAPI ::std::string runTest(
         ::std::string const&                                            testName,
         ::Dimension&                                                    dimension,
         ::gametest::TestParameters const&                               params,
         ::std::vector<::std::shared_ptr<::gametest::IGameTestListener>> listeners
     );
 
-    MCAPI ::std::string
+    MCNAPI ::std::string
     runTestAt(::BlockSource& region, ::BlockPos const& structureBlockPos, ::std::optional<::Rotation> rotation);
 
-    MCAPI ::std::vector<::std::shared_ptr<::gametest::BaseGameTestInstance>> const&
+    MCNAPI ::std::vector<::std::shared_ptr<::gametest::BaseGameTestInstance>> const&
     runTests(::Dimension& dimension, ::gametest::TestParameters&& params);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Level& level);
+    MCNAPI void* $ctor(::Level& level);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onLevelDestruction(::std::string const&);
+    MCNAPI void $onLevelDestruction(::std::string const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

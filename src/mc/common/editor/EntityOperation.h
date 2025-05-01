@@ -56,17 +56,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> _loadEntity(::Level* level);
+    MCNAPI ::Scripting::Result<void> _loadEntity(::Level* level);
 
-    MCAPI ::Scripting::Result<void> _performOperation(::Editor::ServiceProviderCollection& services, bool isUndo);
+    MCNAPI ::Scripting::Result<void> _performOperation(::Editor::ServiceProviderCollection& services, bool isUndo);
 
-    MCAPI ::Scripting::Result<void> _saveEntity(::Level* level);
+    MCNAPI ::Scripting::Result<void> _saveEntity(::Level* level);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::EnumBindingBuilder<
+    MCNAPI static ::Scripting::EnumBindingBuilder<
         ::Editor::Transactions::EntityOperation::OperationType,
         ::Editor::Transactions::EntityOperation::OperationType>
     bindOperationType();
@@ -87,17 +87,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string_view $getName();
+    MCNAPI ::std::string_view $getName();
 
-    MCAPI ::Scripting::Result<void> $_undo(::Editor::ServiceProviderCollection& services);
+    MCNAPI ::Scripting::Result<void> $_undo(::Editor::ServiceProviderCollection& services);
 
-    MCAPI ::Scripting::Result<void> $_redo(::Editor::ServiceProviderCollection& services);
+    MCNAPI ::Scripting::Result<void> $_redo(::Editor::ServiceProviderCollection& services);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

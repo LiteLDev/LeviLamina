@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
+
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
-class BoundingBox;
 namespace br::worldgen { class StructureSection; }
 namespace br::worldgen { struct GenerationContext; }
 // clang-format on
@@ -31,13 +33,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~BuildResult();
+        MCNAPI ~BuildResult();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 

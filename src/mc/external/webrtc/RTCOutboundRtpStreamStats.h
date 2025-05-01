@@ -17,9 +17,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RTCOutboundRtpStreamStats(::webrtc::RTCOutboundRtpStreamStats const&);
+    MCNAPI RTCOutboundRtpStreamStats(::webrtc::RTCOutboundRtpStreamStats const&);
 
-    MCAPI RTCOutboundRtpStreamStats(::std::string, ::webrtc::Timestamp);
+    MCNAPI RTCOutboundRtpStreamStats(::std::string, ::webrtc::Timestamp);
     // NOLINTEND
 
 public:
@@ -31,15 +31,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::RTCOutboundRtpStreamStats const&);
+    MCNAPI void* $ctor(::webrtc::RTCOutboundRtpStreamStats const&);
 
-    MCAPI void* $ctor(::std::string, ::webrtc::Timestamp);
+    MCNAPI void* $ctor(::std::string, ::webrtc::Timestamp);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

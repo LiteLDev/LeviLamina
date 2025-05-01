@@ -17,14 +17,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::NetworkAddress& operator=(::NetworkAddress const&);
+    MCNAPI ::NetworkAddress& operator=(::NetworkAddress const&);
 
-    MCAPI ~NetworkAddress();
+    MCNAPI ~NetworkAddress();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

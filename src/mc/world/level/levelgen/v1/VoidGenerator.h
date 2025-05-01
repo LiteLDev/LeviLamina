@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/block/BlockVolume.h"
 #include "mc/world/level/levelgen/WorldGenerator.h"
 
 // auto generated forward declare list
@@ -13,7 +14,6 @@ class BiomeSource;
 class Block;
 class BlockPos;
 class BlockSource;
-class BlockVolume;
 class BlockVolumeTarget;
 class BoundingBox;
 class ChunkLocalNoiseCache;
@@ -117,7 +117,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BiomeSource const& $getBiomeSource() const;
+    MCFOLD ::BiomeSource const& $getBiomeSource() const;
 
     MCFOLD ::BlockPos $findSpawnPosition() const;
 

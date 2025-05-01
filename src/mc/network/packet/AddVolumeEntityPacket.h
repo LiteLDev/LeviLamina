@@ -4,19 +4,19 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/ecs/EntityNetId.h"
+#include "mc/nbt/CompoundTag.h"
 #include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/NetworkBlockPosition.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/resources/MinEngineVersion.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class CompoundTag;
 class Dimension;
 class EntityContext;
-class EntityNetId;
-class MinEngineVersion;
-class NetworkBlockPosition;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -56,9 +56,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AddVolumeEntityPacket();
+    MCNAPI AddVolumeEntityPacket();
 
-    MCAPI AddVolumeEntityPacket(
+    MCNAPI AddVolumeEntityPacket(
         ::EntityContext const&    entity,
         ::CompoundTag             components,
         ::MinEngineVersion const& minEngineVersion
@@ -68,33 +68,33 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::EntityContext const& entity, ::CompoundTag components, ::MinEngineVersion const& minEngineVersion);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MinecraftPacketIds $getId() const;
+    MCNAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCAPI void $write(::BinaryStream& stream) const;
+    MCNAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

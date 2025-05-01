@@ -11,6 +11,6 @@ struct InsideWaterlilyBlockSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createDestroyWaterlilySystem();
+    MCNAPI static ::TickingSystemWithInfo createDestroyWaterlilySystem();
     // NOLINTEND
 };

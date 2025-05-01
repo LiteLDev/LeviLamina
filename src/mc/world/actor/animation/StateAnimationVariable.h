@@ -24,14 +24,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StateAnimationVariable(::StateAnimationVariable const&);
+    MCNAPI StateAnimationVariable(::StateAnimationVariable const&);
 
-    MCAPI void setVariable(::RenderParams& renderParams) const;
+    MCNAPI void setVariable(::RenderParams& renderParams) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::StateAnimationVariable const&);
+    MCNAPI void* $ctor(::StateAnimationVariable const&);
     // NOLINTEND
 };

@@ -33,30 +33,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemStackDescriptor();
+    MCNAPI ItemStackDescriptor();
 
-    MCAPI ItemStackDescriptor(::Item const& item, int auxValue, ushort stackSize, ::CompoundTag const* userData);
+    MCNAPI ItemStackDescriptor(::Item const& item, int auxValue, ushort stackSize, ::CompoundTag const* userData);
 
-    MCAPI ::ItemStackDescriptor& operator=(::ItemStackDescriptor&& other);
+    MCNAPI ::ItemStackDescriptor& operator=(::ItemStackDescriptor&& other);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::Item const& item, int auxValue, ushort stackSize, ::CompoundTag const* userData);
+    MCNAPI void* $ctor(::Item const& item, int auxValue, ushort stackSize, ::CompoundTag const* userData);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

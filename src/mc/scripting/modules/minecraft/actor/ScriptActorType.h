@@ -29,17 +29,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> addDynamicPropertiesDefinition(
+    MCNAPI ::Scripting::Result<void> addDynamicPropertiesDefinition(
         ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const& dynamicPropertiesDefinition
     );
 
-    MCAPI ::std::string getId() const;
+    MCNAPI ::std::string getId() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptActorType> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptActorType> bind();
     // NOLINTEND
 };
 

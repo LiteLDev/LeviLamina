@@ -39,33 +39,33 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI
+        MCNAPI
         ConstIterator(::webrtc::scoped_refptr<::webrtc::RTCStatsReport const> const&, ::std::_Tree_const_iterator<::std::_Tree_val<::std::_Tree_simple_types<::std::pair<::std::string const, ::std::unique_ptr<::webrtc::RTCStats const>>>>>);
 
-        MCAPI bool operator!=(::webrtc::RTCStatsReport::ConstIterator const&) const;
+        MCNAPI bool operator!=(::webrtc::RTCStatsReport::ConstIterator const&) const;
 
-        MCAPI ::webrtc::RTCStats const& operator*() const;
+        MCNAPI ::webrtc::RTCStats const& operator*() const;
 
-        MCAPI ::webrtc::RTCStatsReport::ConstIterator& operator++();
+        MCNAPI ::webrtc::RTCStatsReport::ConstIterator& operator++();
 
-        MCAPI ::webrtc::RTCStats const* operator->() const;
+        MCNAPI ::webrtc::RTCStats const* operator->() const;
 
-        MCAPI bool operator==(::webrtc::RTCStatsReport::ConstIterator const&) const;
+        MCNAPI bool operator==(::webrtc::RTCStatsReport::ConstIterator const&) const;
 
-        MCAPI ~ConstIterator();
+        MCNAPI ~ConstIterator();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void*
+        MCNAPI void*
         $ctor(::webrtc::scoped_refptr<::webrtc::RTCStatsReport const> const&, ::std::_Tree_const_iterator<::std::_Tree_val<::std::_Tree_simple_types<::std::pair<::std::string const, ::std::unique_ptr<::webrtc::RTCStats const>>>>>);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -85,35 +85,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddStats(::std::unique_ptr<::webrtc::RTCStats const>);
+    MCNAPI void AddStats(::std::unique_ptr<::webrtc::RTCStats const>);
 
-    MCAPI ::webrtc::scoped_refptr<::webrtc::RTCStatsReport> Copy() const;
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::RTCStatsReport> Copy() const;
 
-    MCAPI ::webrtc::RTCStats const* Get(::std::string const&) const;
+    MCNAPI ::webrtc::RTCStats const* Get(::std::string const&) const;
 
-    MCAPI explicit RTCStatsReport(::webrtc::Timestamp);
+    MCNAPI explicit RTCStatsReport(::webrtc::Timestamp);
 
-    MCAPI ::std::unique_ptr<::webrtc::RTCStats const> Take(::std::string const&);
+    MCNAPI ::std::unique_ptr<::webrtc::RTCStats const> Take(::std::string const&);
 
-    MCAPI void TakeMembersFrom(::webrtc::scoped_refptr<::webrtc::RTCStatsReport>);
+    MCNAPI void TakeMembersFrom(::webrtc::scoped_refptr<::webrtc::RTCStatsReport>);
 
-    MCAPI ::std::string ToJson() const;
+    MCNAPI ::std::string ToJson() const;
 
-    MCAPI ::webrtc::RTCStatsReport::ConstIterator begin() const;
+    MCNAPI ::webrtc::RTCStatsReport::ConstIterator begin() const;
 
-    MCAPI ::webrtc::RTCStatsReport::ConstIterator end() const;
+    MCNAPI ::webrtc::RTCStatsReport::ConstIterator end() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::scoped_refptr<::webrtc::RTCStatsReport> Create(::webrtc::Timestamp);
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::RTCStatsReport> Create(::webrtc::Timestamp);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::Timestamp);
+    MCNAPI void* $ctor(::webrtc::Timestamp);
     // NOLINTEND
 };
 

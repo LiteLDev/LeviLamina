@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/ActorFilterGroup.h"
+#include "mc/world/level/Tick.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -34,18 +38,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool canGetAngry(::Mob& owner, ::Mob* testMob, ::Actor* target, bool allowInvulnerable, bool mustSee) const;
+    MCNAPI bool canGetAngry(::Mob& owner, ::Mob* testMob, ::Actor* target, bool allowInvulnerable, bool mustSee) const;
 
-    MCAPI ::AngryComponent& operator=(::AngryComponent&&);
+    MCNAPI ::AngryComponent& operator=(::AngryComponent&&);
 
-    MCAPI void restartTimer(::Mob& owner);
+    MCNAPI void restartTimer(::Mob& owner);
 
-    MCAPI ~AngryComponent();
+    MCNAPI ~AngryComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

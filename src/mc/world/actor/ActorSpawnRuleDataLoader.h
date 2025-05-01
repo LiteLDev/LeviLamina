@@ -30,22 +30,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorSpawnRuleDataLoader(::cereal::ReflectionCtx const& ctx, ::br::spawn::SpawnPlacements& spawnPlacements);
+    MCNAPI ActorSpawnRuleDataLoader(::cereal::ReflectionCtx const& ctx, ::br::spawn::SpawnPlacements& spawnPlacements);
 
-    MCAPI ::Puv::LoadResult<::ActorSpawnRuleData> load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
+    MCNAPI ::Puv::LoadResult<::ActorSpawnRuleData> load(::Bedrock::Resources::MinecraftDocumentInput const& input
+    ) const;
 
-    MCAPI ~ActorSpawnRuleDataLoader();
+    MCNAPI ~ActorSpawnRuleDataLoader();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::br::spawn::SpawnPlacements& spawnPlacements);
+    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::br::spawn::SpawnPlacements& spawnPlacements);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

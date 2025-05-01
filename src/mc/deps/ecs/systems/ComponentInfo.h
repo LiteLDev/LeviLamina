@@ -14,12 +14,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ComponentInfo();
+    MCNAPI ~ComponentInfo();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

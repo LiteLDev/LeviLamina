@@ -81,7 +81,7 @@ public:
     // NOLINTBEGIN
     ::PacketPriority                        mPriority;
     ::NetworkPeer::Reliability              mReliability;
-    ::SubClientId                           mClientSubId;
+    ::SubClientId                           mSenderSubId;
     bool                                    mIsHandled;
     ::std::chrono::steady_clock::time_point mReceiveTimepoint;
     ::IPacketHandlerDispatcher const*       mHandler;

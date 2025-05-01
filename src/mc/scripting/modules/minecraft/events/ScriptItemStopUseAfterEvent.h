@@ -33,32 +33,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemStopUseAfterEvent(::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent const&);
+    MCNAPI ScriptItemStopUseAfterEvent(::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent const&);
 
-    MCAPI ScriptItemStopUseAfterEvent(
+    MCNAPI ScriptItemStopUseAfterEvent(
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> item,
         ::Player const&                                                                                 player,
         ::ItemStopUseEvent const&                                                                       itemEvent,
         ::Scripting::WeakLifetimeScope const&                                                           scope
     );
 
-    MCAPI ~ScriptItemStopUseAfterEvent();
+    MCNAPI ~ScriptItemStopUseAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent> bind();
 
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent> bindV010();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent> bindV010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent const&);
 
-    MCFOLD void* $ctor(
+    MCNAPI void* $ctor(
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> item,
         ::Player const&                                                                                 player,
         ::ItemStopUseEvent const&                                                                       itemEvent,
@@ -69,7 +69,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

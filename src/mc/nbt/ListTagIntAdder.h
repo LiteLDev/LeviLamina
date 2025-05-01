@@ -17,14 +17,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ListTagIntAdder& operator()(int i);
+    MCNAPI ::ListTagIntAdder& operator()(int i);
 
-    MCAPI ~ListTagIntAdder();
+    MCNAPI ~ListTagIntAdder();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

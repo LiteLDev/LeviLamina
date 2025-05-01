@@ -41,6 +41,8 @@ public:
 
     MCAPI static ::ItemTag const& Door();
 
+    MCAPI static ::ItemTag const& Egg();
+
     MCAPI static ::ItemTag const& Fishes();
 
     MCAPI static ::ItemTag const& Food();

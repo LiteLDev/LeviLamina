@@ -30,63 +30,72 @@ public:
 
     struct AdditionalTsnBlocks {
     public:
+        // AdditionalTsnBlocks inner types declare
+        // clang-format off
+        struct TsnRange;
+        // clang-format on
+
+        // AdditionalTsnBlocks inner types define
+        struct TsnRange {};
+
+    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>);
+        MCNAPI bool Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>);
 
-        MCAPI void EraseTo(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>);
+        MCNAPI void EraseTo(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>);
 
-        MCAPI void PopFront();
+        MCNAPI void PopFront();
 
-        MCAPI ~AdditionalTsnBlocks();
+        MCNAPI ~AdditionalTsnBlocks();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState&);
+    MCNAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState&);
 
-    MCAPI ::std::vector<::dcsctp::SackChunk::GapAckBlock> CreateGapAckBlocks() const;
+    MCNAPI ::std::vector<::dcsctp::SackChunk::GapAckBlock> CreateGapAckBlocks() const;
 
-    MCAPI ::dcsctp::SackChunk CreateSelectiveAck(uint64);
+    MCNAPI ::dcsctp::SackChunk CreateSelectiveAck(uint64);
 
-    MCAPI void ForceImmediateSack();
+    MCNAPI void ForceImmediateSack();
 
-    MCAPI ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const;
+    MCNAPI ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const;
 
-    MCAPI void HandleDelayedAckTimerExpiry();
+    MCNAPI void HandleDelayedAckTimerExpiry();
 
-    MCAPI bool HandleForwardTsn(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>);
+    MCNAPI bool HandleForwardTsn(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>);
 
-    MCAPI bool IsTSNValid(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>) const;
+    MCNAPI bool IsTSNValid(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>) const;
 
-    MCAPI bool
+    MCNAPI bool
         Observe(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::webrtc::StrongAlias<::dcsctp::ImmediateAckFlagTag, bool>);
 
-    MCAPI void ObservePacketEnd();
+    MCNAPI void ObservePacketEnd();
 
-    MCAPI void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const&);
+    MCNAPI void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const&);
 
-    MCAPI bool ShouldSendAck(bool);
+    MCNAPI bool ShouldSendAck(bool);
 
-    MCAPI void UpdateAckState(::dcsctp::DataTracker::AckState, ::std::string_view);
+    MCNAPI void UpdateAckState(::dcsctp::DataTracker::AckState, ::std::string_view);
 
-    MCAPI bool will_increase_cum_ack_tsn(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>) const;
+    MCNAPI bool will_increase_cum_ack_tsn(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>) const;
 
-    MCAPI ~DataTracker();
+    MCNAPI ~DataTracker();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

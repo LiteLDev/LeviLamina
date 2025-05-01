@@ -28,23 +28,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<int> getCurrentDamage();
+    MCNAPI ::Scripting::Result_deprecated<int> getCurrentDamage();
 
-    MCAPI ::Scripting::Result_deprecated<int> getDamageChance(int unbreaking);
+    MCNAPI ::Scripting::Result_deprecated<int> getDamageChance(int unbreaking);
 
-    MCAPI ::Scripting::Result_deprecated<::Scripting::NumberRange> getDamageChanceRange();
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::NumberRange> getDamageChanceRange();
 
-    MCAPI ::Scripting::Result_deprecated<::FloatRange> getDamageRange_V010();
+    MCNAPI ::Scripting::Result_deprecated<::FloatRange> getDamageRange_V010();
 
-    MCAPI ::Scripting::Result_deprecated<int> getMaxDurability();
+    MCNAPI ::Scripting::Result_deprecated<int> getMaxDurability();
 
-    MCAPI ::Scripting::Result<void> setCurrentDamage(int damage);
+    MCNAPI ::Scripting::Result<void> setCurrentDamage(int damage);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemDurabilityComponent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemDurabilityComponent>
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
@@ -57,7 +57,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

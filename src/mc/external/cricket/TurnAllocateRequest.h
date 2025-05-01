@@ -14,23 +14,23 @@ class TurnAllocateRequest {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void OnAuthChallenge(::cricket::StunMessage*, int);
+    MCNAPI void OnAuthChallenge(::cricket::StunMessage*, int);
 
-    MCAPI void OnTryAlternate(::cricket::StunMessage*, int);
+    MCNAPI void OnTryAlternate(::cricket::StunMessage*, int);
 
-    MCAPI explicit TurnAllocateRequest(::cricket::TurnPort*);
+    MCNAPI explicit TurnAllocateRequest(::cricket::TurnPort*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::TurnPort*);
+    MCNAPI void* $ctor(::cricket::TurnPort*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

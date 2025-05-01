@@ -58,15 +58,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FilterGroup(::FilterGroup const&);
+    MCNAPI FilterGroup(::FilterGroup const&);
 
-    MCAPI bool _parseFilterInputs(
+    MCNAPI bool _parseFilterInputs(
         ::SharedTypes::v1_21_20::FilterTestData const& filterTestData,
         ::FilterTest::Definition const&                filterDef,
         ::FilterInputs&                                inputs
     );
 
-    MCAPI bool _parseFilterParam(
+    MCNAPI bool _parseFilterParam(
         ::std::string const&                                             filter,
         ::std::string const&                                             member,
         ::std::optional<::std::variant<bool, int, float, ::std::string>> param,
@@ -74,26 +74,26 @@ public:
         ::FilterInput&                                                   input
     );
 
-    MCAPI bool _parseMemberCollection(
+    MCNAPI bool _parseMemberCollection(
         ::FilterGroup::CollectionType                   collectionType,
         ::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData
     );
 
-    MCAPI bool _parseObject(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
+    MCNAPI bool _parseObject(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
 
-    MCAPI bool _parseTest(::SharedTypes::v1_21_20::FilterTestData const& filterTestData);
+    MCNAPI bool _parseTest(::SharedTypes::v1_21_20::FilterTestData const& filterTestData);
 
-    MCAPI bool addFilterTest(::FilterTest::Definition const& filterDef, ::FilterInputs const& inputs);
+    MCNAPI bool addFilterTest(::FilterTest::Definition const& filterDef, ::FilterInputs const& inputs);
 
-    MCAPI bool evaluate(::std::array<::FilterContext, 10>& contextSet) const;
+    MCNAPI bool evaluate(::std::array<::FilterContext, 10>& contextSet) const;
 
-    MCAPI void serialize(::Json::Value& jsonVal) const;
+    MCNAPI void serialize(::Json::Value& jsonVal) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FilterGroup const&);
+    MCNAPI void* $ctor(::FilterGroup const&);
     // NOLINTEND
 
 public:
@@ -105,14 +105,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $parse(::Json::Value const& jsonVal);
+    MCNAPI bool $parse(::Json::Value const& jsonVal);
 
-    MCAPI bool $_setupContext(::FilterTest const& test, ::FilterContext& context) const;
+    MCNAPI bool $_setupContext(::FilterTest const& test, ::FilterContext& context) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

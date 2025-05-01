@@ -42,27 +42,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD bool _createTool(::std::string const& id, ::Json::Value const& payload);
+    MCNAPI bool _createTool(::std::string const& id, ::Json::Value const& payload);
 
-    MCAPI void _onSelectedToolUpdated(::Json::Value const& current, ::Json::Value const& prev);
+    MCNAPI void _onSelectedToolUpdated(::Json::Value const& current, ::Json::Value const& prev);
 
-    MCAPI void _onToolCreated(::std::string const& id);
+    MCNAPI void _onToolCreated(::std::string const& id);
 
-    MCAPI void _onToolDestroyed(::std::string const& id);
+    MCNAPI void _onToolDestroyed(::std::string const& id);
 
-    MCAPI void _onToolUpdated(::std::string const& id, ::std::string const& propName);
+    MCNAPI void _onToolUpdated(::std::string const& id, ::std::string const& propName);
 
-    MCFOLD bool _removeTool(::std::string const& id);
+    MCNAPI bool _removeTool(::std::string const& id);
 
-    MCFOLD ::Json::Value getDataPayload(::Editor::DataStore::PayloadDescription const& desc) const;
+    MCNAPI ::Json::Value getDataPayload(::Editor::DataStore::PayloadDescription const& desc) const;
 
-    MCAPI ::Scripting::Result<void> handleDataEvent(
+    MCNAPI ::Scripting::Result<void> handleDataEvent(
         ::Editor::DataStore::EventType                 eventType,
         ::Json::Value const&                           payload,
         ::Editor::DataStore::PayloadDescription const& desc
     );
 
-    MCAPI ::Scripting::Result<void> handleSelectedToolEvent(
+    MCNAPI ::Scripting::Result<void> handleSelectedToolEvent(
         ::Editor::DataStore::EventType eventType,
         ::Json::Value const&           payload,
         bool                           isNetworkEvent
@@ -86,13 +86,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $clear();
+    MCNAPI void $clear();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

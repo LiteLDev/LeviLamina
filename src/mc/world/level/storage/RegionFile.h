@@ -35,17 +35,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RegionFile(::Core::Path const& basePath);
+    MCNAPI explicit RegionFile(::Core::Path const& basePath);
 
-    MCAPI bool open();
+    MCNAPI bool open();
 
-    MCAPI bool readChunk(int x, int z, ::RakNet::BitStream** destChunkData);
+    MCNAPI bool readChunk(int x, int z, ::RakNet::BitStream** destChunkData);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::Path const& basePath);
+    MCNAPI void* $ctor(::Core::Path const& basePath);
     // NOLINTEND
 
 public:
@@ -57,6 +57,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

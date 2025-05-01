@@ -13,15 +13,16 @@ class BinaryStream;
 namespace DictionaryCompressionUtil {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::set<::std::string> _getDictionary(::std::string const& input);
+MCNAPI ::std::set<::std::string> _getDictionary(::std::string const& input);
 
-MCAPI ::std::set<::std::string> _pruneDictionary(::std::map<::std::string, uint64>& foundStrings);
+MCNAPI ::std::set<::std::string> _pruneDictionary(::std::map<::std::string, uint64>& foundStrings);
 
-MCAPI void _tryCompressToken(::std::string const& token, ::std::set<::std::string>& dictionary, ::BinaryStream& stream);
+MCNAPI void
+_tryCompressToken(::std::string const& token, ::std::set<::std::string>& dictionary, ::BinaryStream& stream);
 
-MCAPI ::std::string dictionaryCompressString(::std::string const& originalString);
+MCNAPI ::std::string dictionaryCompressString(::std::string const& originalString);
 
-MCAPI ::Bedrock::Result<::std::string> dictionaryDecompressString(::std::string const& compressedString);
+MCNAPI ::Bedrock::Result<::std::string> dictionaryDecompressString(::std::string const& compressedString);
 // NOLINTEND
 
 // static variables

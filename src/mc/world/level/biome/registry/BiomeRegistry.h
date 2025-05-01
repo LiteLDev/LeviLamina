@@ -6,9 +6,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/platform/brstd/flat_set.h"
 #include "mc/util/IDType.h"
 #include "mc/util/TagRegistry.h"
+#include "mc/world/level/biome/registry/WellKnownBiomeTags.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,8 +24,6 @@ class LevelStorage;
 class ResourcePackManager;
 struct BiomeTagIDType;
 struct BiomeTagSetIDType;
-struct WellKnownBiomeTags;
-namespace Bedrock::PubSub { class Subscription; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -52,13 +52,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~LoadedBiomeDocument();
+        MCNAPI ~LoadedBiomeDocument();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -85,7 +85,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                mLoadFromPacks;
     ::ll::TypedStorage<8, 128, ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>> mTagRegistry;
     ::ll::TypedStorage<8, 8, ::Biome*>                                                                   mEmptyBiome;
-    ::ll::TypedStorage<8, 48, ::HashedString>                  mDefaultWaterIdentifier;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnSaveSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnLevelStorageManagerStartLeaveGameSubscription;
     // NOLINTEND

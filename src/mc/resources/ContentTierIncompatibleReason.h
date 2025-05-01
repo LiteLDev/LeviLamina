@@ -18,7 +18,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string getExpandedI18nErrorList(
+    MCNAPI static ::std::string getExpandedI18nErrorList(
         uint                                errorValue,
         ::std::string const&                i18nContextPrefix,
         ::std::vector<::std::string> const& arguments

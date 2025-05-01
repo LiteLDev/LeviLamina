@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ItemInstance;
-class WeakEntityRef;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/world/item/ItemInstance.h"
 
 struct ActorPlacedItemEvent {
 public:
@@ -23,12 +21,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorPlacedItemEvent(::ActorPlacedItemEvent const&);
+    MCNAPI ActorPlacedItemEvent(::ActorPlacedItemEvent const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ActorPlacedItemEvent const&);
+    MCNAPI void* $ctor(::ActorPlacedItemEvent const&);
     // NOLINTEND
 };

@@ -102,50 +102,50 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::leveldb::Status $NewSequentialFile(::std::string const& fname, ::leveldb::SequentialFile** result);
+    MCNAPI ::leveldb::Status $NewSequentialFile(::std::string const& fname, ::leveldb::SequentialFile** result);
 
-    MCAPI ::leveldb::Status $NewRandomAccessFile(::std::string const& fname, ::leveldb::RandomAccessFile** result);
+    MCNAPI ::leveldb::Status $NewRandomAccessFile(::std::string const& fname, ::leveldb::RandomAccessFile** result);
 
-    MCAPI ::leveldb::Status $NewWritableFile(::std::string const& fname, ::leveldb::WritableFile** result);
+    MCNAPI ::leveldb::Status $NewWritableFile(::std::string const& fname, ::leveldb::WritableFile** result);
 
-    MCAPI ::leveldb::Status $NewAppendableFile(::std::string const& fname, ::leveldb::WritableFile** result);
+    MCNAPI ::leveldb::Status $NewAppendableFile(::std::string const& fname, ::leveldb::WritableFile** result);
 
-    MCAPI bool $FileExists(::std::string const& fname);
+    MCNAPI bool $FileExists(::std::string const& fname);
 
-    MCAPI ::leveldb::Status $GetChildren(::std::string const& dir, ::std::vector<::std::string>* pChildrenOut);
+    MCNAPI ::leveldb::Status $GetChildren(::std::string const& dir, ::std::vector<::std::string>* pChildrenOut);
 
-    MCAPI ::leveldb::Status $DeleteFileA(::std::string const& fname);
+    MCNAPI ::leveldb::Status $DeleteFileA(::std::string const& fname);
 
-    MCAPI ::leveldb::Status $CreateDir(::std::string const& path);
+    MCNAPI ::leveldb::Status $CreateDir(::std::string const& path);
 
-    MCAPI ::leveldb::Status $DeleteDir(::std::string const& name);
+    MCNAPI ::leveldb::Status $DeleteDir(::std::string const& name);
 
-    MCAPI ::leveldb::Status $GetFileSize(::std::string const& fname, uint64* size);
+    MCNAPI ::leveldb::Status $GetFileSize(::std::string const& fname, uint64* size);
 
-    MCAPI ::leveldb::Status $RenameFile(::std::string const& src, ::std::string const& target);
+    MCNAPI ::leveldb::Status $RenameFile(::std::string const& src, ::std::string const& target);
 
-    MCAPI ::leveldb::Status $LockFile(::std::string const& fname, ::leveldb::FileLock** lock);
+    MCNAPI ::leveldb::Status $LockFile(::std::string const& fname, ::leveldb::FileLock** lock);
 
-    MCAPI ::leveldb::Status $UnlockFile(::leveldb::FileLock* lock);
+    MCNAPI ::leveldb::Status $UnlockFile(::leveldb::FileLock* lock);
 
-    MCAPI void $Schedule(void (*function)(void*), void* arg);
+    MCNAPI void $Schedule(void (*function)(void*), void* arg);
 
-    MCFOLD void $StartThread(void (*function)(void*), void* arg);
+    MCNAPI void $StartThread(void (*function)(void*), void* arg);
 
-    MCAPI ::leveldb::Status $GetTestDirectory(::std::string* result);
+    MCNAPI ::leveldb::Status $GetTestDirectory(::std::string* result);
 
-    MCAPI ::leveldb::Status $NewLogger(::std::string const& fname, ::leveldb::Logger** result);
+    MCNAPI ::leveldb::Status $NewLogger(::std::string const& fname, ::leveldb::Logger** result);
 
-    MCAPI uint64 $NowMicros();
+    MCNAPI uint64 $NowMicros();
 
-    MCAPI void $SleepForMicroseconds(int microseconds);
+    MCNAPI void $SleepForMicroseconds(int microseconds);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForEnv();
+    MCNAPI static void** $vftableForEnv();
     // NOLINTEND
 };

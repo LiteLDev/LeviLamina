@@ -23,7 +23,7 @@ struct ShouldUpdateBoundingBoxRequestComponent;
 namespace ScaleByAgeSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void _tick(
+MCNAPI void _tick(
     ::entt::type_list<::Include<::ActorTickedComponent>>,
     ::StrictEntityContext const&                                entity,
     ::AgeableComponent const&                                   ageableComponent,
@@ -34,7 +34,7 @@ MCAPI void _tick(
     ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent> mod
 );
 
-MCAPI void registerSystems(::EntitySystems& systemRegistry, ::BaseGameVersion const& baseGameVersion);
+MCNAPI void registerSystems(::EntitySystems& systemRegistry, ::BaseGameVersion const& baseGameVersion);
 // NOLINTEND
 
 } // namespace ScaleByAgeSystem

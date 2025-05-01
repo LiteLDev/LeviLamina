@@ -11,6 +11,9 @@
 // clang-format off
 class BlockComponentStorage;
 class CompoundTag;
+class Experiments;
+class SemVersion;
+namespace Json { class Value; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -32,6 +35,7 @@ public:
         ::ll::UntypedStorage<1, 1>  mUnkb5483c;
         ::ll::UntypedStorage<1, 1>  mUnk73da79;
         ::ll::UntypedStorage<1, 1>  mUnkc44bf0;
+        ::ll::UntypedStorage<1, 1>  mUnk9611aa;
         // NOLINTEND
 
     public:
@@ -91,27 +95,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockMaterialInstancesDescription();
+    MCNAPI BlockMaterialInstancesDescription();
 
-    MCAPI BlockMaterialInstancesDescription(::BlockMaterialInstancesDescription const&);
+    MCNAPI BlockMaterialInstancesDescription(::BlockMaterialInstancesDescription const&);
 
-    MCAPI BlockMaterialInstancesDescription(
+    MCNAPI BlockMaterialInstancesDescription(
         ::std::string const& textureName,
         ::BlockRenderLayer   renderLayer,
         float                ambientOcclusion,
         bool                 faceDimming,
-        ::TintMethod         tintMethod
+        ::TintMethod         tintMethod,
+        bool                 randomizeUVRotation
     );
 
-    MCAPI ::BlockMaterialInstancesDescription& operator=(::BlockMaterialInstancesDescription const&);
+    MCNAPI ::BlockMaterialInstancesDescription& operator=(::BlockMaterialInstancesDescription const&);
 
-    MCAPI ::BlockMaterialInstancesDescription& operator=(::BlockMaterialInstancesDescription&&);
+    MCNAPI ::BlockMaterialInstancesDescription& operator=(::BlockMaterialInstancesDescription&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCNAPI static bool
+    postParseConstraint(::Experiments const& experiments, ::Json::Value const& componentJson, ::SemVersion const&);
     // NOLINTEND
 
 public:
@@ -123,44 +131,45 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::BlockMaterialInstancesDescription const&);
+    MCNAPI void* $ctor(::BlockMaterialInstancesDescription const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const& textureName,
         ::BlockRenderLayer   renderLayer,
         float                ambientOcclusion,
         bool                 faceDimming,
-        ::TintMethod         tintMethod
+        ::TintMethod         tintMethod,
+        bool                 randomizeUVRotation
     );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getName() const;
+    MCNAPI ::std::string const& $getName() const;
 
-    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCFOLD bool $isNetworkComponent() const;
+    MCNAPI bool $isNetworkComponent() const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCNAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

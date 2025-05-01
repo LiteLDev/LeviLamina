@@ -5,7 +5,7 @@
 namespace EntityGoalUtility {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string getNumericNodeSpecifier(ushort id);
+MCNAPI ::std::string getNumericNodeSpecifier(ushort id);
 // NOLINTEND
 
 } // namespace EntityGoalUtility

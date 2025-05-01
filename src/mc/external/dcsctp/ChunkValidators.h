@@ -13,9 +13,9 @@ struct ChunkValidators {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::dcsctp::SackChunk Clean(::dcsctp::SackChunk&&);
+    MCNAPI static ::dcsctp::SackChunk Clean(::dcsctp::SackChunk&&);
 
-    MCAPI static bool Validate(::dcsctp::SackChunk const&);
+    MCNAPI static bool Validate(::dcsctp::SackChunk const&);
     // NOLINTEND
 };
 

@@ -23,8 +23,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int getMiningLootBonusLevel() const;
+    MCNAPI int getMiningLootBonusLevel() const;
 
-    MCAPI bool isUsingSilkTouch() const;
+    MCNAPI bool isUsingSilkTouch() const;
     // NOLINTEND
 };

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/world/level/chunk/AtomicTimeAccumulator.h"
 
 // auto generated forward declare list
 // clang-format off

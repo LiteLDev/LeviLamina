@@ -28,8 +28,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
+    MCNAPI void runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
 
-    MCAPI void tick();
+    MCNAPI void tick();
     // NOLINTEND
 };

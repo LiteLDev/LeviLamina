@@ -3,20 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/legacy/ActorRuntimeID.h"
 #include "mc/platform/Result.h"
 #include "mc/world/inventory/transaction/ComplexInventoryTransaction.h"
 #include "mc/world/inventory/transaction/InventoryTransactionError.h"
+#include "mc/world/item/NetworkItemStackDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActorRuntimeID;
 class BinaryStream;
 class BlockPalette;
 class ItemStack;
-class NetworkItemStackDescriptor;
 class Player;
 class ReadOnlyBinaryStream;
-class Vec3;
 // clang-format on
 
 class ItemUseOnActorInventoryTransaction : public ::ComplexInventoryTransaction {
@@ -64,7 +64,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ItemUseOnActorInventoryTransaction& setSelectedItem(::ItemStack const& item);
+    MCNAPI ::ItemUseOnActorInventoryTransaction& setSelectedItem(::ItemStack const& item);
     // NOLINTEND
 
 public:
@@ -76,20 +76,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI void $write(::BinaryStream& stream) const;
+    MCNAPI void $write(::BinaryStream& stream) const;
 
-    MCFOLD void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
+    MCNAPI void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
-    MCFOLD void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
+    MCNAPI void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
 
-    MCAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
+    MCNAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

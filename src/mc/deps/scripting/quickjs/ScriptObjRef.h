@@ -85,11 +85,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void pin();
+    MCNAPI void pin();
 
-    MCAPI ::std::array<::JSValue, 3> release();
+    MCNAPI ::std::array<::JSValue, 3> release();
 
-    MCAPI void unpin();
+    MCNAPI void unpin();
     // NOLINTEND
 
 public:
@@ -101,17 +101,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onReduceToSingleOwner();
+    MCNAPI void $onReduceToSingleOwner();
 
-    MCAPI void $onPromoteToMultipleOwners();
+    MCNAPI void $onPromoteToMultipleOwners();
 
-    MCAPI void $onFinalize();
+    MCNAPI void $onFinalize();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

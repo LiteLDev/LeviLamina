@@ -40,20 +40,20 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI char const* $getJsonName() const;
+    MCNAPI char const* $getJsonName() const;
 
-    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    MCNAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

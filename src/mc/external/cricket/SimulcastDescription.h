@@ -20,17 +20,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool empty() const;
+    MCNAPI bool empty() const;
 
-    MCAPI ::cricket::SimulcastDescription& operator=(::cricket::SimulcastDescription const&);
+    MCNAPI ::cricket::SimulcastDescription& operator=(::cricket::SimulcastDescription const&);
 
-    MCAPI ~SimulcastDescription();
+    MCNAPI ~SimulcastDescription();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

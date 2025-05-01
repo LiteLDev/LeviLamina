@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/UUID.h"
 #include "mc/server/IJsonSerializable.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
-namespace mce { class UUID; }
 // clang-format on
 
 class AllowListEntry : public ::IJsonSerializable {
@@ -37,20 +37,20 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $serialize(::Json::Value& root);
+    MCNAPI void $serialize(::Json::Value& root);
 
-    MCAPI void $deserialize(::Json::Value& root);
+    MCNAPI void $deserialize(::Json::Value& root);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -18,7 +18,7 @@ public:
     virtual void kill() /*override*/;
 
     // vIndex: 138
-    virtual void destroy(::Actor* source) /*override*/;
+    virtual void destroy(::Actor* sourceActor) /*override*/;
 
     // vIndex: 30
     virtual ::std::string getEntityLocNameString() const /*override*/;
@@ -36,16 +36,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $kill();
+    MCNAPI void $kill();
 
-    MCAPI void $destroy(::Actor* source);
+    MCNAPI void $destroy(::Actor* sourceActor);
 
-    MCAPI ::std::string $getEntityLocNameString() const;
+    MCNAPI ::std::string $getEntityLocNameString() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

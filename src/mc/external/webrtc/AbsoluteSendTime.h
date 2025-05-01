@@ -8,7 +8,7 @@ class AbsoluteSendTime {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool Write(::rtc::ArrayView<uchar>, uint);
+    MCNAPI static bool Write(::rtc::ArrayView<uchar>, uint);
     // NOLINTEND
 };
 

@@ -33,37 +33,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::cricket::IceParameters GetIceParameters() const;
+    MCNAPI ::cricket::IceParameters GetIceParameters() const;
 
-    MCAPI TransportDescription();
+    MCNAPI TransportDescription();
 
-    MCAPI TransportDescription(::cricket::TransportDescription const&);
+    MCNAPI TransportDescription(::cricket::TransportDescription const&);
 
-    MCAPI TransportDescription(::std::string_view, ::std::string_view);
+    MCNAPI TransportDescription(::std::string_view, ::std::string_view);
 
-    MCAPI
+    MCNAPI
     TransportDescription(::std::vector<::std::string> const&, ::std::string_view, ::std::string_view, ::cricket::IceMode, ::cricket::ConnectionRole, ::rtc::SSLFingerprint const*);
 
-    MCAPI ~TransportDescription();
+    MCNAPI ~TransportDescription();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::cricket::TransportDescription const&);
+    MCNAPI void* $ctor(::cricket::TransportDescription const&);
 
-    MCAPI void* $ctor(::std::string_view, ::std::string_view);
+    MCNAPI void* $ctor(::std::string_view, ::std::string_view);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::vector<::std::string> const&, ::std::string_view, ::std::string_view, ::cricket::IceMode, ::cricket::ConnectionRole, ::rtc::SSLFingerprint const*);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

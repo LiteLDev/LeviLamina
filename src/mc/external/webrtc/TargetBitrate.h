@@ -16,36 +16,36 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI BitrateItem(uchar, uchar, uint);
+        MCNAPI BitrateItem(uchar, uchar, uint);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(uchar, uchar, uint);
+        MCNAPI void* $ctor(uchar, uchar, uint);
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddTargetBitrate(uchar, uchar, uint);
+    MCNAPI void AddTargetBitrate(uchar, uchar, uint);
 
-    MCAPI uint64 BlockLength() const;
+    MCNAPI uint64 BlockLength() const;
 
-    MCAPI void Create(uchar*) const;
+    MCNAPI void Create(uchar*) const;
 
-    MCAPI ::std::vector<::webrtc::rtcp::TargetBitrate::BitrateItem> const& GetTargetBitrates() const;
+    MCNAPI ::std::vector<::webrtc::rtcp::TargetBitrate::BitrateItem> const& GetTargetBitrates() const;
 
-    MCAPI void Parse(uchar const*, ushort);
+    MCNAPI void Parse(uchar const*, ushort);
 
-    MCAPI TargetBitrate();
+    MCNAPI TargetBitrate();
 
-    MCAPI TargetBitrate(::webrtc::rtcp::TargetBitrate const&);
+    MCNAPI TargetBitrate(::webrtc::rtcp::TargetBitrate const&);
 
-    MCAPI ::webrtc::rtcp::TargetBitrate& operator=(::webrtc::rtcp::TargetBitrate const&);
+    MCNAPI ::webrtc::rtcp::TargetBitrate& operator=(::webrtc::rtcp::TargetBitrate const&);
 
-    MCAPI ~TargetBitrate();
+    MCNAPI ~TargetBitrate();
     // NOLINTEND
 
 public:
@@ -57,15 +57,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::webrtc::rtcp::TargetBitrate const&);
+    MCNAPI void* $ctor(::webrtc::rtcp::TargetBitrate const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

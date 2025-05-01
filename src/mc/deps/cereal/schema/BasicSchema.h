@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/schema/VariantPriorityLevel.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { class Constraint; }
@@ -31,7 +34,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8>  mUnk25883b;
         ::ll::UntypedStorage<8, 32> mUnka7498e;
-        ::ll::UntypedStorage<8, 72> mUnkace713;
+        ::ll::UntypedStorage<8, 72> mUnkf81a52;
         ::ll::UntypedStorage<8, 32> mUnk5fc8e6;
         ::ll::UntypedStorage<1, 1>  mUnk7fcb00;
         // NOLINTEND
@@ -45,13 +48,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~TypeDescriptor();
+        MCNAPI ~TypeDescriptor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -78,7 +81,7 @@ public:
         ::ll::UntypedStorage<8, 8>  mUnkcc5bac;
         ::ll::UntypedStorage<8, 32> mUnkc97556;
         ::ll::UntypedStorage<8, 8>  mUnkb0e062;
-        ::ll::UntypedStorage<8, 72> mUnk86263e;
+        ::ll::UntypedStorage<8, 72> mUnkf7b794;
         ::ll::UntypedStorage<8, 40> mUnk3afbfc;
         ::ll::UntypedStorage<8, 32> mUnke471ac;
         // NOLINTEND
@@ -92,21 +95,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI MemberDescriptor(::cereal::internal::BasicSchema::MemberDescriptor&&);
+        MCNAPI MemberDescriptor(::cereal::internal::BasicSchema::MemberDescriptor&&);
 
-        MCAPI ~MemberDescriptor();
+        MCNAPI ~MemberDescriptor();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::cereal::internal::BasicSchema::MemberDescriptor&&);
+        MCNAPI void* $ctor(::cereal::internal::BasicSchema::MemberDescriptor&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -114,8 +117,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16>  mUnkfc5c34;
         ::ll::UntypedStorage<8, 192> mUnka33fb1;
+        ::ll::UntypedStorage<8, 8>   mUnkcc227c;
         // NOLINTEND
 
     public:
@@ -127,13 +130,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~DynamicSetterArg();
+        MCNAPI ~DynamicSetterArg();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -149,31 +152,36 @@ public:
     virtual ~BasicSchema() = default;
 
     // vIndex: 1
-    virtual void members(::cereal::ReflectionCtx const&, ::std::function<void(uint, ::entt::meta_data)>) const;
+    virtual bool isGreedy(::cereal::ReflectionCtx const&) const;
 
     // vIndex: 2
-    virtual ::cereal::internal::BasicSchema::MemberDescriptor const* member(::cereal::ReflectionCtx const&, uint) const;
+    virtual void members(::cereal::ReflectionCtx const&, ::std::function<void(uint, ::entt::meta_data)>) const;
 
     // vIndex: 3
+    virtual ::cereal::internal::BasicSchema::MemberDescriptor const* member(::cereal::ReflectionCtx const&, uint) const;
+
+    // vIndex: 4
+    virtual ::cereal::internal::VariantPriorityLevel minVariantPriorityLevel(::cereal::ReflectionCtx const&) const;
+
+    // vIndex: 5
     virtual void validateConstraint(
-        ::cereal::ReflectionCtx const&,
         ::cereal::Constraint const&  constraint,
         ::entt::meta_any const&      any,
         ::cereal::SerializerContext& context
     ) const;
 
-    // vIndex: 4
+    // vIndex: 6
     virtual void
     doLoad(::cereal::SchemaReader&, ::entt::meta_any&, ::entt::meta_any const&, ::cereal::SerializerContext& context)
         const;
 
-    // vIndex: 5
+    // vIndex: 7
     virtual void doSave(::cereal::SchemaWriter&, ::entt::meta_any const&, ::cereal::SerializerContext& context) const;
 
-    // vIndex: 6
+    // vIndex: 8
     virtual bool doVerifyInitialization(::cereal::SchemaWriter const&, ::entt::meta_any const&) const;
 
-    // vIndex: 7
+    // vIndex: 9
     virtual ::cereal::SchemaDescription
     makeDescription(::cereal::ReflectionCtx const&, ::cereal::internal::BasicSchema::DescriptionMode) const = 0;
     // NOLINTEND
@@ -181,7 +189,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void load(
+    MCNAPI void load(
         ::cereal::SchemaReader&      value,
         ::entt::meta_any&            any,
         ::entt::meta_any const&      udata,
@@ -198,24 +206,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $members(::cereal::ReflectionCtx const&, ::std::function<void(uint, ::entt::meta_data)>) const;
+    MCNAPI bool $isGreedy(::cereal::ReflectionCtx const&) const;
 
-    MCFOLD ::cereal::internal::BasicSchema::MemberDescriptor const* $member(::cereal::ReflectionCtx const&, uint) const;
+    MCNAPI void $members(::cereal::ReflectionCtx const&, ::std::function<void(uint, ::entt::meta_data)>) const;
 
-    MCAPI void $validateConstraint(
-        ::cereal::ReflectionCtx const&,
+    MCNAPI ::cereal::internal::BasicSchema::MemberDescriptor const* $member(::cereal::ReflectionCtx const&, uint) const;
+
+    MCNAPI ::cereal::internal::VariantPriorityLevel $minVariantPriorityLevel(::cereal::ReflectionCtx const&) const;
+
+    MCNAPI void $validateConstraint(
         ::cereal::Constraint const&  constraint,
         ::entt::meta_any const&      any,
         ::cereal::SerializerContext& context
     ) const;
 
-    MCAPI void
+    MCNAPI void
     $doLoad(::cereal::SchemaReader&, ::entt::meta_any&, ::entt::meta_any const&, ::cereal::SerializerContext& context)
         const;
 
-    MCAPI void $doSave(::cereal::SchemaWriter&, ::entt::meta_any const&, ::cereal::SerializerContext& context) const;
+    MCNAPI void $doSave(::cereal::SchemaWriter&, ::entt::meta_any const&, ::cereal::SerializerContext& context) const;
 
-    MCFOLD bool $doVerifyInitialization(::cereal::SchemaWriter const&, ::entt::meta_any const&) const;
+    MCNAPI bool $doVerifyInitialization(::cereal::SchemaWriter const&, ::entt::meta_any const&) const;
     // NOLINTEND
 };
 

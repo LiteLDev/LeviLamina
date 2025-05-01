@@ -36,29 +36,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JigsawSectionData(::br::worldgen::JigsawSectionData&&);
+    MCNAPI JigsawSectionData(::br::worldgen::JigsawSectionData&&);
 
-    MCAPI JigsawSectionData(::br::worldgen::JigsawSectionData const&);
+    MCNAPI JigsawSectionData(::br::worldgen::JigsawSectionData const&);
 
-    MCAPI ::br::worldgen::JigsawSectionDataKey push(::StructurePoolElement const* element, int depth);
+    MCNAPI ::br::worldgen::JigsawSectionDataKey push(::StructurePoolElement const* element, int depth);
 
-    MCAPI void reserve(uint64 size);
+    MCNAPI void reserve(uint64 size);
 
-    MCAPI ~JigsawSectionData();
+    MCNAPI ~JigsawSectionData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::br::worldgen::JigsawSectionData&&);
+    MCNAPI void* $ctor(::br::worldgen::JigsawSectionData&&);
 
-    MCAPI void* $ctor(::br::worldgen::JigsawSectionData const&);
+    MCNAPI void* $ctor(::br::worldgen::JigsawSectionData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

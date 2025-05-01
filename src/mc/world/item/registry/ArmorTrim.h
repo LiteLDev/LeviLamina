@@ -27,27 +27,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ArmorTrim(::ArmorTrim const&);
+    MCNAPI ArmorTrim(::ArmorTrim const&);
 
-    MCAPI ArmorTrim(::HashedString patternId, ::HashedString materialId);
+    MCNAPI ArmorTrim(::HashedString patternId, ::HashedString materialId);
 
-    MCAPI void load(::CompoundTag const& tag);
+    MCNAPI void load(::CompoundTag const& tag);
 
-    MCAPI ~ArmorTrim();
+    MCNAPI ~ArmorTrim();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void appendUpgradeHoverText(
+    MCNAPI static void appendUpgradeHoverText(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext
     );
 
-    MCAPI static ::std::optional<::ArmorTrim> getTrim(::ItemStackBase const& instance);
+    MCNAPI static ::std::optional<::ArmorTrim> getTrim(::ItemStackBase const& instance);
 
-    MCAPI static void setTrim(::ItemStackBase& instance, ::ArmorTrim trim);
+    MCNAPI static void setTrim(::ItemStackBase& instance, ::ArmorTrim trim);
     // NOLINTEND
 
 public:
@@ -69,14 +69,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ArmorTrim const&);
+    MCNAPI void* $ctor(::ArmorTrim const&);
 
-    MCAPI void* $ctor(::HashedString patternId, ::HashedString materialId);
+    MCNAPI void* $ctor(::HashedString patternId, ::HashedString materialId);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

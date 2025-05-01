@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct PlayerActionComponent;
-// clang-format on
+// auto generated inclusion list
+#include "mc/entity/components/PlayerActionComponent.h"
 
 struct PlayerActionAcceptanceComponent {
 public:
@@ -18,12 +16,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~PlayerActionAcceptanceComponent();
+    MCNAPI ~PlayerActionAcceptanceComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

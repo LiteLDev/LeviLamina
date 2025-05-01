@@ -19,22 +19,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RenderingRidingOffsetInfo(::RenderingRidingOffsetInfo const&);
+    MCNAPI RenderingRidingOffsetInfo(::RenderingRidingOffsetInfo const&);
 
-    MCAPI ::RenderingRidingOffsetInfo& operator=(::RenderingRidingOffsetInfo const&);
+    MCNAPI ::RenderingRidingOffsetInfo& operator=(::RenderingRidingOffsetInfo const&);
 
-    MCAPI ~RenderingRidingOffsetInfo();
+    MCNAPI ~RenderingRidingOffsetInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::RenderingRidingOffsetInfo const&);
+    MCNAPI void* $ctor(::RenderingRidingOffsetInfo const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

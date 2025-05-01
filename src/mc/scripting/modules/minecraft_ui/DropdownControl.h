@@ -45,7 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DropdownControl(
+    MCNAPI DropdownControl(
         ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>                label,
         ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>> options,
         ::std::optional<uint> defaultValueIndex
@@ -55,7 +55,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>                label,
         ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>> options,
         ::std::optional<uint> defaultValueIndex
@@ -71,14 +71,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<::Json::Value>
+    MCNAPI ::Scripting::Result_deprecated<::Json::Value>
     $buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

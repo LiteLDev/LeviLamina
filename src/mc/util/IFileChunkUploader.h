@@ -98,33 +98,33 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $getServerMissingChunks(
+    MCNAPI void $getServerMissingChunks(
         ::FileInfo const&                                     file,
         ::std::function<void(::std::vector<::FileChunkInfo>)> callback
     ) const;
 
-    MCFOLD void $confirmChunkReceived(::FileInfo const& file, ::FileChunkInfo const& chunk);
+    MCNAPI void $confirmChunkReceived(::FileInfo const& file, ::FileChunkInfo const& chunk);
 
-    MCAPI void $uploadChunk(
+    MCNAPI void $uploadChunk(
         ::FileInfo const&           file,
         ::FileChunkInfo const&      chunk,
         ::std::vector<uchar> const& data,
         ::std::function<void(bool)> onCompleteCallback
     );
 
-    MCAPI void $uploadStream(
+    MCNAPI void $uploadStream(
         ::FileInfo const&                                               file,
         uint64                                                          streamSize,
         ::std::string const&                                            boundary,
         ::std::function<void(::IFileChunkUploader::UploadStreamResult)> onCompleteCallback
     );
 
-    MCAPI ::FileChunkInfo $getChunkInfo(::FileInfo const& file, int chunkID) const;
+    MCNAPI ::FileChunkInfo $getChunkInfo(::FileInfo const& file, int chunkID) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

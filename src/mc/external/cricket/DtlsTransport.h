@@ -25,52 +25,52 @@ class DtlsTransport {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void ConfigureHandshakeTimeout();
+    MCNAPI void ConfigureHandshakeTimeout();
 
-    MCAPI void ConnectToIceTransport();
+    MCNAPI void ConnectToIceTransport();
 
-    MCAPI DtlsTransport(
+    MCNAPI DtlsTransport(
         ::cricket::IceTransportInternal*,
         ::webrtc::CryptoOptions const&,
         ::webrtc::RtcEventLog*,
         ::rtc::SSLProtocolVersion
     );
 
-    MCAPI bool HandleDtlsPacket(::rtc::ArrayView<uchar const>);
+    MCNAPI bool HandleDtlsPacket(::rtc::ArrayView<uchar const>);
 
-    MCAPI void MaybeStartDtls();
+    MCNAPI void MaybeStartDtls();
 
-    MCAPI void OnDtlsEvent(::rtc::StreamInterface*, int, int);
+    MCNAPI void OnDtlsEvent(::rtc::StreamInterface*, int, int);
 
-    MCAPI void OnDtlsHandshakeError(::rtc::SSLHandshakeError);
+    MCNAPI void OnDtlsHandshakeError(::rtc::SSLHandshakeError);
 
-    MCAPI void OnNetworkRouteChanged(::std::optional<::rtc::NetworkRoute>);
+    MCNAPI void OnNetworkRouteChanged(::std::optional<::rtc::NetworkRoute>);
 
-    MCAPI void OnReadPacket(::rtc::PacketTransportInternal*, ::rtc::ReceivedPacket const&);
+    MCNAPI void OnReadPacket(::rtc::PacketTransportInternal*, ::rtc::ReceivedPacket const&);
 
-    MCAPI void OnReadyToSend(::rtc::PacketTransportInternal*);
+    MCNAPI void OnReadyToSend(::rtc::PacketTransportInternal*);
 
-    MCAPI void OnReceivingState(::rtc::PacketTransportInternal*);
+    MCNAPI void OnReceivingState(::rtc::PacketTransportInternal*);
 
-    MCAPI void OnSentPacket(::rtc::PacketTransportInternal*, ::rtc::SentPacket const&);
+    MCNAPI void OnSentPacket(::rtc::PacketTransportInternal*, ::rtc::SentPacket const&);
 
-    MCAPI void OnWritableState(::rtc::PacketTransportInternal*);
+    MCNAPI void OnWritableState(::rtc::PacketTransportInternal*);
 
-    MCAPI bool SetupDtls();
+    MCNAPI bool SetupDtls();
 
-    MCAPI ::std::string ToString() const;
+    MCNAPI ::std::string ToString() const;
 
-    MCAPI void set_dtls_state(::webrtc::DtlsTransportState);
+    MCNAPI void set_dtls_state(::webrtc::DtlsTransportState);
 
-    MCAPI void set_receiving(bool);
+    MCNAPI void set_receiving(bool);
 
-    MCAPI void set_writable(bool);
+    MCNAPI void set_writable(bool);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::cricket::IceTransportInternal*,
         ::webrtc::CryptoOptions const&,
         ::webrtc::RtcEventLog*,
@@ -81,7 +81,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

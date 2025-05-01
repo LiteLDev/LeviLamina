@@ -64,12 +64,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::tuple<::ItemStackNetResult, ::Recipe const*> _getRecipeFromNetId(::RecipeNetId const& recipeNetId);
+    MCNAPI ::std::tuple<::ItemStackNetResult, ::Recipe const*> _getRecipeFromNetId(::RecipeNetId const& recipeNetId);
 
-    MCAPI ::ItemStackNetResult
+    MCNAPI ::ItemStackNetResult
     handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction, ::ItemStackNetResult currentResult);
 
-    MCAPI void postRequest(bool wasSuccess);
+    MCNAPI void postRequest(bool wasSuccess);
     // NOLINTEND
 
 public:
@@ -81,16 +81,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $endRequestBatch();
+    MCNAPI void $endRequestBatch();
 
-    MCFOLD void $_postCraftRequest(bool const wasSuccess);
+    MCNAPI void $_postCraftRequest(bool const wasSuccess);
 
-    MCFOLD ::Recipes const* $_getLevelRecipes() const;
+    MCNAPI ::Recipes const* $_getLevelRecipes() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

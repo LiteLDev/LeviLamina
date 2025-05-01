@@ -25,14 +25,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addBlockDescriptor(::BlockDescriptor const& blockDescriptor);
+    MCNAPI void addBlockDescriptor(::BlockDescriptor const& blockDescriptor);
 
-    MCAPI ~EnvironmentRequirement();
+    MCNAPI ~EnvironmentRequirement();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

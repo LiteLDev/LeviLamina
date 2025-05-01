@@ -3,18 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/input/InputMode.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class Block;
-class BlockPos;
 class HitResult;
 class InteractionResult;
 class ItemStack;
 class Player;
-class Vec3;
 struct IGameModeMessenger;
 struct IGameModeTimer;
 // clang-format on

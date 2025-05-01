@@ -37,21 +37,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DynamicValue(::cereal::DynamicValue&&);
+    MCNAPI DynamicValue(::cereal::DynamicValue&&);
 
-    MCAPI ~DynamicValue();
+    MCNAPI ~DynamicValue();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::DynamicValue&&);
+    MCNAPI void* $ctor(::cereal::DynamicValue&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

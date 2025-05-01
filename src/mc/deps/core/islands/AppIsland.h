@@ -56,31 +56,31 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ushort $getId();
+    MCNAPI ushort $getId();
 
-    MCFOLD bool $start();
+    MCNAPI bool $start();
 
-    MCFOLD bool $suspend();
+    MCNAPI bool $suspend();
 
-    MCFOLD bool $resume();
+    MCNAPI bool $resume();
 
-    MCFOLD bool $stop();
+    MCNAPI bool $stop();
 
-    MCFOLD void $mainUpdate();
+    MCNAPI void $mainUpdate();
 
-    MCFOLD void $processActivationArguments(::Bedrock::ActivationArguments const& args);
+    MCNAPI void $processActivationArguments(::Bedrock::ActivationArguments const& args);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

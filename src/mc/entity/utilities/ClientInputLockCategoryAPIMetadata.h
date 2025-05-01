@@ -22,20 +22,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ClientInputLockCategoryAPIMetadata();
+    MCNAPI ~ClientInputLockCategoryAPIMetadata();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::array<::ClientInputLockCategoryAPIMetadata, 11> const& getAllMetadata();
+    MCNAPI static ::std::array<::ClientInputLockCategoryAPIMetadata, 11> const& getAllMetadata();
 
-    MCAPI static ::std::vector<::std::string> getCommandFacingNames();
+    MCNAPI static ::std::vector<::std::string> getCommandFacingNames();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

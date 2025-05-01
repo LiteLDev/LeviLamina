@@ -51,7 +51,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ushort addBan(::RakNet::SystemAddress const& addr, ::std::chrono::seconds time);
+    MCNAPI ushort addBan(::RakNet::SystemAddress const& addr, ::std::chrono::seconds time);
     // NOLINTEND
 };
 

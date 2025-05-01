@@ -77,35 +77,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EditorServerSettingsService(::Editor::ServiceProviderCollection& providers);
+    MCNAPI explicit EditorServerSettingsService(::Editor::ServiceProviderCollection& providers);
 
-    MCAPI void _handleCurrentThemeModified(::std::string const& id);
+    MCNAPI void _handleCurrentThemeModified(::std::string const& id);
 
-    MCAPI void _handleGraphicsSettingsModified(::Editor::Settings::GraphicsProps const& props);
+    MCNAPI void _handleGraphicsSettingsModified(::Editor::Settings::GraphicsProps const& props);
 
-    MCAPI void _handleNewThemeCreated(
+    MCNAPI void _handleNewThemeCreated(
         ::std::string const&                  id,
         ::std::optional<::std::string> const& name,
         ::std::optional<::std::string> const& sourceThemeId
     );
 
-    MCAPI void _handleSpeedSettingsModified(::Editor::Settings::SpeedProps const& props);
+    MCNAPI void _handleSpeedSettingsModified(::Editor::Settings::SpeedProps const& props);
 
-    MCAPI void _handleThemeColorUpdated(
+    MCNAPI void _handleThemeColorUpdated(
         ::std::string const&                      themeId,
         ::Editor::Settings::ThemeSettingsColorKey colorKey,
         ::mce::Color const&                       color
     );
 
-    MCAPI void _handleThemeDeleted(::std::string const& id);
+    MCNAPI void _handleThemeDeleted(::std::string const& id);
 
-    MCAPI void _handleThemeSettingsModified(::Editor::Settings::ThemeProps const& props);
+    MCNAPI void _handleThemeSettingsModified(::Editor::Settings::ThemeProps const& props);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
@@ -117,39 +117,40 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCFOLD ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCAPI void $_handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const& payload);
+    MCNAPI void $_handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const& payload
+    );
 
-    MCAPI void $_handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const& payload);
+    MCNAPI void $_handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const& payload);
 
-    MCAPI void $_handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const& payload);
+    MCNAPI void $_handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const& payload);
 
-    MCAPI void $_handleThemeSettingsCurrentThemeChangedPayload(
+    MCNAPI void $_handleThemeSettingsCurrentThemeChangedPayload(
         ::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const& payload
     );
 
-    MCAPI void
+    MCNAPI void
     $_handleThemeSettingsNewThemeCreatedPayload(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const& payload);
 
-    MCAPI void $_handleThemeSettingsThemeColorUpdatedPayload(
+    MCNAPI void $_handleThemeSettingsThemeColorUpdatedPayload(
         ::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const& payload
     );
 
-    MCAPI void
+    MCNAPI void
     $_handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const& payload);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEditorSettingsServiceProvider();
+    MCNAPI static void** $vftableForEditorSettingsServiceProvider();
 
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

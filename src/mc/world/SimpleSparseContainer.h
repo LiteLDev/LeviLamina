@@ -40,7 +40,7 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 22
     virtual void startOpen(::Player& player) /*override*/;
@@ -68,20 +68,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SimpleSparseContainer(
+    MCNAPI SimpleSparseContainer(
         ::Container&                                     backingContainer,
         ::SparseContainerBackingSetType                  backingSetType,
         ::std::unique_ptr<::ISparseContainerSetListener> sparseContainerSetListener,
         ::std::unique_ptr<::IPlayerContainerSetter>      playerSetter
     );
 
-    MCAPI void _setBackingContainerSlot(int slot, ::ItemStack const& newItem);
+    MCNAPI void _setBackingContainerSlot(int slot, ::ItemStack const& newItem);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Container&                                     backingContainer,
         ::SparseContainerBackingSetType                  backingSetType,
         ::std::unique_ptr<::ISparseContainerSetListener> sparseContainerSetListener,
@@ -98,21 +98,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCNAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCNAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCAPI void $startOpen(::Player& player);
+    MCNAPI void $startOpen(::Player& player);
 
-    MCAPI void $stopOpen(::Player& player);
+    MCNAPI void $stopOpen(::Player& player);
 
-    MCAPI int $getContainerSize() const;
+    MCNAPI int $getContainerSize() const;
 
-    MCAPI int $getMaxStackSize() const;
+    MCNAPI int $getMaxStackSize() const;
 
-    MCAPI void $containerContentChanged(int slot);
+    MCNAPI void $containerContentChanged(int slot);
 
-    MCFOLD void $serverInitItemStackIds(
+    MCNAPI void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
@@ -122,8 +122,8 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForContainerContentChangeListener();
+    MCNAPI static void** $vftableForContainerContentChangeListener();
 
-    MCAPI static void** $vftableForContainer();
+    MCNAPI static void** $vftableForContainer();
     // NOLINTEND
 };

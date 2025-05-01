@@ -19,41 +19,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddContentName(::std::string_view);
+    MCNAPI void AddContentName(::std::string_view);
 
-    MCAPI ContentGroup(::cricket::ContentGroup&&);
+    MCNAPI ContentGroup(::cricket::ContentGroup&&);
 
-    MCAPI explicit ContentGroup(::std::string const&);
+    MCNAPI explicit ContentGroup(::std::string const&);
 
-    MCAPI ContentGroup(::cricket::ContentGroup const&);
+    MCNAPI ContentGroup(::cricket::ContentGroup const&);
 
-    MCAPI ::std::string const* FirstContentName() const;
+    MCNAPI ::std::string const* FirstContentName() const;
 
-    MCAPI bool HasContentName(::std::string_view) const;
+    MCNAPI bool HasContentName(::std::string_view) const;
 
-    MCAPI bool RemoveContentName(::std::string_view);
+    MCNAPI bool RemoveContentName(::std::string_view);
 
-    MCAPI ::std::string ToString() const;
+    MCNAPI ::std::string ToString() const;
 
-    MCAPI ::cricket::ContentGroup& operator=(::cricket::ContentGroup const&);
+    MCNAPI ::cricket::ContentGroup& operator=(::cricket::ContentGroup const&);
 
-    MCAPI ~ContentGroup();
+    MCNAPI ~ContentGroup();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::ContentGroup&&);
+    MCNAPI void* $ctor(::cricket::ContentGroup&&);
 
-    MCAPI void* $ctor(::std::string const&);
+    MCNAPI void* $ctor(::std::string const&);
 
-    MCAPI void* $ctor(::cricket::ContentGroup const&);
+    MCNAPI void* $ctor(::cricket::ContentGroup const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

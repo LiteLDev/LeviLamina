@@ -113,7 +113,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptDebugger(
+    MCNAPI ScriptDebugger(
         ::ScriptDebuggerSettings   settings,
         ::ServerLevel&             serverLevel,
         ::MinecraftCommands&       commands,
@@ -124,33 +124,33 @@ public:
         ::IScriptTelemetryLogger&  telemetry
     );
 
-    MCAPI void _debuggerMessageHandler(::std::string_view message);
+    MCNAPI void _debuggerMessageHandler(::std::string_view message);
 
-    MCAPI void _handleCommandMessage(::ScriptDebuggerMessages::CommandMessage const& commandMessage);
+    MCNAPI void _handleCommandMessage(::ScriptDebuggerMessages::CommandMessage const& commandMessage);
 
-    MCAPI void _handleStopProfilerMessage(::ScriptDebuggerMessages::ProfilerMessage const& profilerMessage);
+    MCNAPI void _handleStopProfilerMessage(::ScriptDebuggerMessages::ProfilerMessage const& profilerMessage);
 
-    MCAPI ::std::string _sanitizeHostName(::std::string const& host) const;
+    MCNAPI ::std::string _sanitizeHostName(::std::string const& host) const;
 
-    MCAPI ushort _sanitizePort(uint port) const;
+    MCNAPI ushort _sanitizePort(uint port) const;
 
-    MCAPI void _sendNotification(::LogLevel message, ::std::string_view logLevel);
+    MCNAPI void _sendNotification(::LogLevel message, ::std::string_view logLevel);
 
-    MCAPI bool _tryAttachRuntime(bool expectRuntime);
+    MCNAPI bool _tryAttachRuntime(bool expectRuntime);
 
-    MCAPI bool _trySelectTarget();
+    MCNAPI bool _trySelectTarget();
 
-    MCAPI void sendLog(::LogLevel logLevel, ::std::string_view message);
+    MCNAPI void sendLog(::LogLevel logLevel, ::std::string_view message);
 
-    MCAPI void update();
+    MCNAPI void update();
 
-    MCAPI void waitAutoAttach(::std::chrono::seconds waitDuration);
+    MCNAPI void waitAutoAttach(::std::chrono::seconds waitDuration);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ScriptDebuggerSettings   settings,
         ::ServerLevel&             serverLevel,
         ::MinecraftCommands&       commands,
@@ -165,34 +165,34 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ScriptDebuggerSettings const& $getSettings() const;
+    MCNAPI ::ScriptDebuggerSettings const& $getSettings() const;
 
-    MCAPI bool $connect(::std::string const& host, ushort port);
+    MCNAPI bool $connect(::std::string const& host, ushort port);
 
-    MCAPI bool $listen(ushort port);
+    MCNAPI bool $listen(ushort port);
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $startProfiler();
+    MCNAPI void $startProfiler();
 
-    MCAPI ::std::vector<::Core::Path> $stopProfiler();
+    MCNAPI ::std::vector<::Core::Path> $stopProfiler();
 
-    MCAPI bool $isStatPublisherEnabled() const;
+    MCNAPI bool $isStatPublisherEnabled() const;
 
-    MCAPI void $publishStats(uint64 collectedTick, ::std::vector<::ScriptStat> const& stats);
+    MCNAPI void $publishStats(uint64 collectedTick, ::std::vector<::ScriptStat> const& stats);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIScriptDebugger();
+    MCNAPI static void** $vftableForIScriptDebugger();
 
-    MCAPI static void** $vftableForIScriptStatPublisher();
+    MCNAPI static void** $vftableForIScriptStatPublisher();
     // NOLINTEND
 };

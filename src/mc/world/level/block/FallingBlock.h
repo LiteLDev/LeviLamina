@@ -28,22 +28,22 @@ public:
     // vIndex: 123
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 148
     virtual ::mce::Color getDustColor(::Block const&) const = 0;
 
-    // vIndex: 151
+    // vIndex: 149
     virtual ::std::string getDustParticleName(::Block const&) const = 0;
 
-    // vIndex: 152
+    // vIndex: 150
     virtual bool falling() const;
 
-    // vIndex: 153
+    // vIndex: 151
     virtual void onLand(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 154
+    // vIndex: 152
     virtual bool isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 155
+    // vIndex: 153
     virtual void
     startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const;
 
@@ -57,39 +57,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _scheduleCheck(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, int delay) const;
+    MCNAPI void _scheduleCheck(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, int delay) const;
 
-    MCAPI void _tickBlocksAround2D(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock) const;
+    MCNAPI void _tickBlocksAround2D(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock) const;
 
-    MCAPI void checkSlide(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void checkSlide(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCFOLD bool $falling() const;
+    MCNAPI bool $falling() const;
 
-    MCFOLD void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void
+    MCNAPI void
     $startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 };

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/versionless/Color255RGB.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -36,28 +37,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     appendFormattedHovertext(::ItemStackBase const& item, ::Bedrock::Safety::RedactableString& hovertext, bool) const;
 
-    MCFOLD void clearColor(::ItemStackBase& instance) const;
+    MCNAPI void clearColor(::ItemStackBase& instance) const;
 
-    MCAPI ::mce::Color getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
+    MCNAPI ::mce::Color getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
 
-    MCAPI bool hasCustomColor(::ItemStackBase const& instance) const;
+    MCNAPI bool hasCustomColor(::ItemStackBase const& instance) const;
 
-    MCAPI void setColor(::ItemStackBase& instance, ::mce::Color const& color) const;
+    MCNAPI void setColor(::ItemStackBase& instance, ::mce::Color const& color) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
@@ -69,6 +70,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

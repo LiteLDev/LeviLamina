@@ -41,19 +41,25 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCFOLD ::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&
+            MCNAPI ::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&
             operator=(::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::BiomeDescription const&);
 
-            MCFOLD ::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&
+            MCNAPI ::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&
             operator=(::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&&);
 
-            MCAPI ~BiomeDescription();
+            MCNAPI ~BiomeDescription();
+            // NOLINTEND
+
+        public:
+            // static functions
+            // NOLINTBEGIN
+            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
             // NOLINTEND
 
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCFOLD void $dtor();
+            MCNAPI void $dtor();
             // NOLINTEND
         };
 
@@ -71,22 +77,22 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCAPI ComponentMap(::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::ComponentMap const&);
+            MCNAPI ComponentMap(::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::ComponentMap const&);
 
-            MCFOLD ::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::ComponentMap&
+            MCNAPI ::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::ComponentMap&
             operator=(::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::ComponentMap const&);
             // NOLINTEND
 
         public:
             // static functions
             // NOLINTBEGIN
-            MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
             // NOLINTEND
 
         public:
             // constructor thunks
             // NOLINTBEGIN
-            MCFOLD void* $ctor(::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::ComponentMap const&);
+            MCNAPI void* $ctor(::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::ComponentMap const&);
             // NOLINTEND
         };
 
@@ -105,19 +111,25 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject&
+        MCNAPI ::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject&
         operator=(::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject&&);
 
-        MCAPI ::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject&
+        MCNAPI ::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject&
         operator=(::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject const&);
 
-        MCAPI ~BiomeJsonObject();
+        MCNAPI ~BiomeJsonObject();
+        // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -137,7 +149,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

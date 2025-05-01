@@ -13,6 +13,7 @@
 // clang-format off
 class ChunkSource;
 class CompoundTag;
+class ContentIdentity;
 class LevelData;
 class LevelStorageObserver;
 class LevelStorageWriteBatch;
@@ -88,51 +89,54 @@ public:
     virtual ::Core::LevelStorageResult getLevelStorageState() const = 0;
 
     // vIndex: 16
-    virtual void startShutdown() = 0;
+    virtual ::ContentIdentity const* getContentIdentity() const = 0;
 
     // vIndex: 17
-    virtual bool isShuttingDown() const = 0;
+    virtual void startShutdown() = 0;
 
     // vIndex: 18
-    virtual bool checkShutdownDone() = 0;
+    virtual bool isShuttingDown() const = 0;
 
     // vIndex: 19
-    virtual bool loadData(::std::string_view key, ::std::string& buffer, ::DBHelpers::Category category) const;
+    virtual bool checkShutdownDone() = 0;
 
     // vIndex: 20
-    virtual ::Core::LevelStorageResult getState() const = 0;
+    virtual bool loadData(::std::string_view key, ::std::string& buffer, ::DBHelpers::Category category) const;
 
     // vIndex: 21
-    virtual ::std::vector<::SnapshotFilenameAndLength> createSnapshot(::std::string const&, bool) = 0;
+    virtual ::Core::LevelStorageResult getState() const = 0;
 
     // vIndex: 22
-    virtual void releaseSnapshot() = 0;
+    virtual ::std::vector<::SnapshotFilenameAndLength> createSnapshot(::std::string const&, bool) = 0;
 
     // vIndex: 23
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> compactStorage() = 0;
+    virtual void releaseSnapshot() = 0;
 
     // vIndex: 24
-    virtual void syncAndSuspendStorage() = 0;
+    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> compactStorage() = 0;
 
     // vIndex: 25
-    virtual void resumeStorage() = 0;
+    virtual void syncAndSuspendStorage() = 0;
 
     // vIndex: 26
-    virtual void setFlushAllowed(bool) = 0;
+    virtual void resumeStorage() = 0;
 
     // vIndex: 27
-    virtual void flushToPermanentStorage() = 0;
+    virtual void setFlushAllowed(bool) = 0;
 
     // vIndex: 28
-    virtual void freeCaches();
+    virtual void flushToPermanentStorage() = 0;
 
     // vIndex: 29
-    virtual void setCompactionCallback(::std::function<void(::CompactionStatus)>) = 0;
+    virtual void freeCaches();
 
     // vIndex: 30
-    virtual void setCriticalSyncSaveCallback(::std::function<void()>) = 0;
+    virtual void setCompactionCallback(::std::function<void(::CompactionStatus)>) = 0;
 
     // vIndex: 31
+    virtual void setCriticalSyncSaveCallback(::std::function<void()>) = 0;
+
+    // vIndex: 32
     virtual void corruptLevel();
     // NOLINTEND
 

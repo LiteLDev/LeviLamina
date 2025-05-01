@@ -16,7 +16,7 @@ class ScriptSeat {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::SeatDescription> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::SeatDescription> bind();
     // NOLINTEND
 };
 

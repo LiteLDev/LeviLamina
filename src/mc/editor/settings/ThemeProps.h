@@ -22,27 +22,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ThemeProps();
+    MCNAPI ThemeProps();
 
-    MCAPI ThemeProps(::Editor::Settings::ThemeProps const&);
+    MCNAPI ThemeProps(::Editor::Settings::ThemeProps const&);
 
-    MCAPI void operator=(::Editor::Settings::ThemeProps const& other);
+    MCNAPI void operator=(::Editor::Settings::ThemeProps const& other);
 
-    MCAPI ~ThemeProps();
+    MCNAPI ~ThemeProps();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::Editor::Settings::ThemeProps const&);
+    MCNAPI void* $ctor(::Editor::Settings::ThemeProps const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

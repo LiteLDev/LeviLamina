@@ -24,22 +24,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraftServerUI::ScriptModalFormResponse&
+    MCNAPI ::ScriptModuleMinecraftServerUI::ScriptModalFormResponse&
     operator=(::ScriptModuleMinecraftServerUI::ScriptModalFormResponse&&);
 
-    MCAPI ~ScriptModalFormResponse();
+    MCNAPI ~ScriptModalFormResponse();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftServerUI::ScriptModalFormResponse> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftServerUI::ScriptModalFormResponse> bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

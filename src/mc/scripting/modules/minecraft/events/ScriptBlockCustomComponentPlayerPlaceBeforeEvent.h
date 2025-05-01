@@ -49,13 +49,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(::ScriptModuleMinecraft::
-                                                               ScriptBlockCustomComponentPlayerPlaceBeforeEvent&&);
+    MCNAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(::ScriptModuleMinecraft::
+                                                                ScriptBlockCustomComponentPlayerPlaceBeforeEvent&&);
 
-    MCAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(::ScriptModuleMinecraft::
-                                                               ScriptBlockCustomComponentPlayerPlaceBeforeEvent const&);
+    MCNAPI
+    ScriptBlockCustomComponentPlayerPlaceBeforeEvent(::ScriptModuleMinecraft::
+                                                         ScriptBlockCustomComponentPlayerPlaceBeforeEvent const&);
 
-    MCAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(
+    MCNAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(
         ::BlockEvents::BlockPlayerPlacingEvent const& engineEvent,
         ::Scripting::WeakLifetimeScope const&         scope
     );
@@ -64,38 +65,38 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent&&);
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent const&);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::BlockEvents::BlockPlayerPlacingEvent const& engineEvent, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $updateEngineEvent(::BlockEvents::BlockPlayerPlacingEvent& engineEvent) const;
+    MCNAPI void $updateEngineEvent(::BlockEvents::BlockPlayerPlacingEvent& engineEvent) const;
 
-    MCFOLD bool $shouldCancel() const;
+    MCNAPI bool $shouldCancel() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

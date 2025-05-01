@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/world/item/ItemStack.h"
 
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
-class ItemStack;
 // clang-format on
 
 struct PlayerInteractWithEntityAfterEvent {
@@ -28,20 +28,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerInteractWithEntityAfterEvent(::PlayerInteractWithEntityAfterEvent const&);
+    MCNAPI PlayerInteractWithEntityAfterEvent(::PlayerInteractWithEntityAfterEvent const&);
 
-    MCAPI ~PlayerInteractWithEntityAfterEvent();
+    MCNAPI ~PlayerInteractWithEntityAfterEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::PlayerInteractWithEntityAfterEvent const&);
+    MCNAPI void* $ctor(::PlayerInteractWithEntityAfterEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

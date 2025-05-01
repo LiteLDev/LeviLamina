@@ -29,33 +29,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptCompoundBlockVolumeItem(::CompoundBlockVolumeItem const& item);
+    MCNAPI explicit ScriptCompoundBlockVolumeItem(::CompoundBlockVolumeItem const& item);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem&
+    MCNAPI ::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem&
     operator=(::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const& rhs);
 
-    MCAPI ::CompoundBlockVolumeItem toCompoundBlockVolumeItem() const;
+    MCNAPI ::CompoundBlockVolumeItem toCompoundBlockVolumeItem() const;
 
-    MCAPI ~ScriptCompoundBlockVolumeItem();
+    MCNAPI ~ScriptCompoundBlockVolumeItem();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem>
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem>
     bindInterface();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CompoundBlockVolumeItem const& item);
+    MCNAPI void* $ctor(::CompoundBlockVolumeItem const& item);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

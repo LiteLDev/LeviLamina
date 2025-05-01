@@ -8,9 +8,9 @@ struct http_memory {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void* mem_alloc(uint64);
+    MCNAPI static void* mem_alloc(uint64);
 
-    MCAPI static void mem_free(void*);
+    MCNAPI static void mem_free(void*);
     // NOLINTEND
 };
 

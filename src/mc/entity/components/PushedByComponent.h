@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct StrictActorIDEntityContextPair;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/vanilla_components/StrictActorIDEntityContextPair.h"
 
 struct PushedByComponent {
 public:

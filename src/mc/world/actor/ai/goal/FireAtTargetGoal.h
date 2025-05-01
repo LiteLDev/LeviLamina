@@ -3,7 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/util/FloatRange.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
+#include "mc/world/actor/ActorFilterGroup.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 #include "mc/world/actor/projectile/ProjectileAnchor.h"
@@ -11,12 +15,8 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorFilterGroup;
 class EntityContext;
 class Mob;
-class Vec3;
-struct ActorDefinitionIdentifier;
-struct FloatRange;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -63,19 +63,19 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void initialize(::EntityContext& entity, ::FireAtTargetGoal& goal) const;
+        MCNAPI void initialize(::EntityContext& entity, ::FireAtTargetGoal& goal) const;
 
-        MCAPI void setOwnerAnchor(int const& value);
+        MCNAPI void setOwnerAnchor(int const& value);
 
-        MCAPI void setProjectileDefinitionByName(::std::string const& name);
+        MCNAPI void setProjectileDefinitionByName(::std::string const& name);
 
-        MCAPI void setTargetAnchor(int const& value);
+        MCNAPI void setTargetAnchor(int const& value);
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(
+        MCNAPI static void buildSchema(
             ::std::string const& name,
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::FireAtTargetGoal::Definition>>&
                 root
@@ -91,7 +91,7 @@ public:
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -146,20 +146,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FireAtTargetGoal(::Mob& mob);
+    MCNAPI explicit FireAtTargetGoal(::Mob& mob);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Vec3
+    MCNAPI static ::Vec3
     _getAnchorAndOffsetPosition(::Actor const& actor, ::ProjectileAnchor anchor, ::Vec3 const& offset);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCNAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:
@@ -171,22 +171,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

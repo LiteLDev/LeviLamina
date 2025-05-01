@@ -24,17 +24,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Event();
+    MCNAPI Event();
 
-    MCAPI Event(bool, bool);
+    MCNAPI Event(bool, bool);
 
-    MCAPI void Reset();
+    MCNAPI void Reset();
 
-    MCAPI void Set();
+    MCNAPI void Set();
 
-    MCAPI bool Wait(::webrtc::TimeDelta, ::webrtc::TimeDelta);
+    MCNAPI bool Wait(::webrtc::TimeDelta, ::webrtc::TimeDelta);
 
-    MCAPI ~Event();
+    MCNAPI ~Event();
     // NOLINTEND
 
 public:
@@ -46,15 +46,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(bool, bool);
+    MCNAPI void* $ctor(bool, bool);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

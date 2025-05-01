@@ -48,13 +48,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ServerCursor(::Editor::Network::PayloadServiceProvider& payloadService);
+    MCNAPI explicit ServerCursor(::Editor::Network::PayloadServiceProvider& payloadService);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::Network::PayloadServiceProvider& payloadService);
+    MCNAPI void* $ctor(::Editor::Network::PayloadServiceProvider& payloadService);
     // NOLINTEND
 
 public:
@@ -66,17 +66,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setCursorState(::Editor::Cursor::CursorState&& state);
+    MCNAPI void $setCursorState(::Editor::Cursor::CursorState&& state);
 
-    MCAPI ::Scripting::Result_deprecated<::BlockPos> $moveCursor(::glm::ivec3 const& offset);
+    MCNAPI ::Scripting::Result_deprecated<::BlockPos> $moveCursor(::glm::ivec3 const& offset);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForCursor();
+    MCNAPI static void** $vftableForCursor();
 
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };
 

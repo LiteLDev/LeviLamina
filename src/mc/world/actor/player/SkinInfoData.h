@@ -43,7 +43,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isValidSize(uint64 skinSize);
+    MCNAPI static bool isValidSize(uint64 skinSize);
     // NOLINTEND
 
 public:

@@ -50,15 +50,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::gametest::BaseGameTestInstance>
+    MCNAPI ::std::shared_ptr<::gametest::BaseGameTestInstance>
     $_createGameTestInstance(::gametest::BaseGameTestFunction& function);
 
-    MCAPI void $_runTest(::std::shared_ptr<::gametest::BaseGameTestInstance> test, ::gametest::GameTestTicker& ticker);
+    MCNAPI void $_runTest(::std::shared_ptr<::gametest::BaseGameTestInstance> test, ::gametest::GameTestTicker& ticker);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

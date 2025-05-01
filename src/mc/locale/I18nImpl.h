@@ -7,6 +7,7 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/Subject.h"
 #include "mc/locale/I18n.h"
+#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -185,127 +186,127 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI I18nImpl();
+    MCNAPI I18nImpl();
 
-    MCAPI void _chooseLanguage(::std::shared_ptr<::Localization> const& chosen);
+    MCNAPI void _chooseLanguage(::std::shared_ptr<::Localization> const& chosen);
 
-    MCAPI void _findAvailableLanguageNames(
+    MCNAPI void _findAvailableLanguageNames(
         ::Json::Value const&                                root,
         ::std::unordered_map<::std::string, ::std::string>& destination
     );
 
-    MCAPI void _findAvailableLanguages(::Json::Value const& root, ::std::vector<::std::string>& destination);
+    MCNAPI void _findAvailableLanguages(::Json::Value const& root, ::std::vector<::std::string>& destination);
 
-    MCAPI ::std::shared_ptr<::Localization> _findLocaleFor(::std::string const& code);
+    MCNAPI ::std::shared_ptr<::Localization> _findLocaleFor(::std::string const& code);
 
-    MCAPI ::std::string _generatePackKeyPrefix(::PackManifest const& manifest);
+    MCNAPI ::std::string _generatePackKeyPrefix(::PackManifest const& manifest);
 
-    MCAPI ::std::string& _getLocaleCodeFor(::std::string const& code);
+    MCNAPI ::std::string& _getLocaleCodeFor(::std::string const& code);
 
-    MCAPI ::gsl::not_null<::std::shared_ptr<::Localization>> _getPackKeywordLocale(::std::string const& langCode);
+    MCNAPI ::gsl::not_null<::std::shared_ptr<::Localization>> _getPackKeywordLocale(::std::string const& langCode);
 
-    MCAPI void _notifyLanguagesLoaded();
+    MCNAPI void _notifyLanguagesLoaded();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $clearLanguages();
+    MCNAPI void $clearLanguages();
 
-    MCAPI ::std::vector<::std::string> $findAvailableLanguages(::ResourcePackManager& resourcePackManager);
+    MCNAPI ::std::vector<::std::string> $findAvailableLanguages(::ResourcePackManager& resourcePackManager);
 
-    MCAPI ::std::unordered_map<::std::string, ::std::string>
+    MCNAPI ::std::unordered_map<::std::string, ::std::string>
     $findAvailableLanguageNames(::ResourcePackManager& resourcePackManager);
 
-    MCAPI void $loadLanguages(
+    MCNAPI void $loadLanguages(
         ::ResourcePackManager&                               resourcePackManager,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
         ::std::string const&                                 initLang
     );
 
-    MCAPI void $loadAllLanguages(::ResourcePackManager& resourcePackManager);
+    MCNAPI void $loadAllLanguages(::ResourcePackManager& resourcePackManager);
 
-    MCAPI ::std::vector<::std::string> $getLanguageCodesFromPack(::PackAccessStrategy const& accessStrategy);
+    MCNAPI ::std::vector<::std::string> $getLanguageCodesFromPack(::PackAccessStrategy const& accessStrategy);
 
-    MCAPI void
+    MCNAPI void
     $loadLanguageKeywordsFromPack(::PackManifest const& manifest, ::PackAccessStrategy const& accessStrategy);
 
-    MCAPI void $loadLanguageKeywordsFromPack(
+    MCNAPI void $loadLanguageKeywordsFromPack(
         ::PackManifest const&               manifest,
         ::PackAccessStrategy const&         accessStrategy,
         ::std::vector<::std::string> const& languageCodes
     );
 
-    MCAPI void $appendLanguageStringsFromPack(
+    MCNAPI void $appendLanguageStringsFromPack(
         ::PackManifest const&                                                            manifest,
         ::std::multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& localizationMapping
     );
 
-    MCAPI ::std::unordered_map<::std::string, ::std::string>
+    MCNAPI ::std::unordered_map<::std::string, ::std::string>
     $getLanguageKeywordsFromPack(::PackManifest const& manifest, ::std::string const& keyword);
 
-    MCAPI void $loadLangaugesByLocale(
+    MCNAPI void $loadLangaugesByLocale(
         ::std::unordered_multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& storeLocalization
     );
 
-    MCAPI void $appendAdditionalTranslations(
+    MCNAPI void $appendAdditionalTranslations(
         ::std::unordered_map<::std::string, ::std::string> const& translations,
         ::std::string const&                                      keyPrefix
     );
 
-    MCAPI void $appendLanguageStrings(::PackAccessStrategy* accessStrategy);
+    MCNAPI void $appendLanguageStrings(::PackAccessStrategy* accessStrategy);
 
-    MCAPI void $addI18nObserver(::I18nObserver& observer);
+    MCNAPI void $addI18nObserver(::I18nObserver& observer);
 
-    MCAPI void $chooseLanguage(::std::string const& code);
+    MCNAPI void $chooseLanguage(::std::string const& code);
 
-    MCAPI ::std::string $get(
+    MCNAPI ::std::string $get(
         ::std::string const&                    id,
         ::std::vector<::std::string> const&     params,
         ::std::shared_ptr<::Localization> const locale
     );
 
-    MCAPI ::std::string $get(::std::string const& langString, ::std::shared_ptr<::Localization> const locale);
+    MCNAPI ::std::string $get(::std::string const& langString, ::std::shared_ptr<::Localization> const locale);
 
-    MCAPI ::std::string $getPackKeywordValue(::PackManifest const& manifest, ::std::string const& key);
+    MCNAPI ::std::string $getPackKeywordValue(::PackManifest const& manifest, ::std::string const& key);
 
-    MCAPI ::std::string $getPackKeywordValueForTelemetry(::PackManifest const& manifest, ::std::string const& key);
+    MCNAPI ::std::string $getPackKeywordValueForTelemetry(::PackManifest const& manifest, ::std::string const& key);
 
-    MCAPI bool $hasPackKeyEntry(::PackManifest const& manifest, ::std::string const& key);
+    MCNAPI bool $hasPackKeyEntry(::PackManifest const& manifest, ::std::string const& key);
 
-    MCFOLD ::std::vector<::std::string> const& $getSupportedLanguageCodes();
+    MCNAPI ::std::vector<::std::string> const& $getSupportedLanguageCodes();
 
-    MCAPI ::std::string const& $getLanguageName(::std::string const& code);
+    MCNAPI ::std::string const& $getLanguageName(::std::string const& code);
 
-    MCAPI ::std::shared_ptr<::Localization> const $getLocaleFor(::std::string const& code);
+    MCNAPI ::std::shared_ptr<::Localization> const $getLocaleFor(::std::string const& code);
 
-    MCAPI ::std::string const& $getLocaleCodeFor(::std::string const& code);
+    MCNAPI ::std::string const& $getLocaleCodeFor(::std::string const& code);
 
-    MCAPI ::gsl::not_null<::std::shared_ptr<::Localization const>> $getCurrentLanguage();
+    MCNAPI ::gsl::not_null<::std::shared_ptr<::Localization const>> $getCurrentLanguage();
 
-    MCAPI bool $languageSupportsHypenSplitting();
+    MCNAPI bool $languageSupportsHypenSplitting();
 
-    MCAPI ::std::string
+    MCNAPI ::std::string
     $getLocalizedAssetFileWithFallback(::std::string const& fileNamePrefix, ::std::string const& fileNameSuffix);
 
-    MCAPI bool $isPackKeyword(::std::string const& key);
+    MCNAPI bool $isPackKeyword(::std::string const& key);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

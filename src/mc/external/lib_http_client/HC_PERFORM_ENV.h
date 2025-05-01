@@ -22,39 +22,48 @@ struct XAsyncProviderData;
 
 struct HC_PERFORM_ENV {
 public:
+    // HC_PERFORM_ENV inner types declare
+    // clang-format off
+    struct ActiveWebSocketContext;
+    // clang-format on
+
+    // HC_PERFORM_ENV inner types define
+    struct ActiveWebSocketContext {};
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI long HttpCallPerformAsyncShim(::HC_CALL*, ::XAsyncBlock*);
+    MCNAPI long HttpCallPerformAsyncShim(::HC_CALL*, ::XAsyncBlock*);
 
-    MCAPI long WebSocketConnectAsyncShim(::http_string&&, ::http_string&&, ::HC_WEBSOCKET_OBSERVER*, ::XAsyncBlock*);
+    MCNAPI long WebSocketConnectAsyncShim(::http_string&&, ::http_string&&, ::HC_WEBSOCKET_OBSERVER*, ::XAsyncBlock*);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::HttpPerformInfo GetPlatformDefaultHttpHandlers();
+    MCNAPI static ::HttpPerformInfo GetPlatformDefaultHttpHandlers();
 
-    MCAPI static ::WebSocketPerformInfo GetPlatformDefaultWebSocketHandlers();
+    MCNAPI static ::WebSocketPerformInfo GetPlatformDefaultWebSocketHandlers();
 
-    MCAPI static long HttpPerformAsyncShimProvider(::XAsyncOp, ::XAsyncProviderData const*);
+    MCNAPI static long HttpPerformAsyncShimProvider(::XAsyncOp, ::XAsyncProviderData const*);
 
-    MCAPI static void HttpPerformComplete(::XAsyncBlock*);
+    MCNAPI static void HttpPerformComplete(::XAsyncBlock*);
 
-    MCAPI static ::Result<::std::unique_ptr<::HC_PERFORM_ENV, ::http_alloc_deleter<::HC_PERFORM_ENV>>>
+    MCNAPI static ::Result<::std::unique_ptr<::HC_PERFORM_ENV, ::http_alloc_deleter<::HC_PERFORM_ENV>>>
     Initialize(::HCInitArgs*);
 
-    MCAPI static void ProviderCleanup(void*, bool);
+    MCNAPI static void ProviderCleanup(void*, bool);
 
-    MCAPI static void WebSocketClosed(::HC_WEBSOCKET_OBSERVER*, ::HCWebSocketCloseStatus, void*);
+    MCNAPI static void WebSocketClosed(::HC_WEBSOCKET_OBSERVER*, ::HCWebSocketCloseStatus, void*);
 
-    MCAPI static long WebSocketConnectAsyncShimProvider(::XAsyncOp, ::XAsyncProviderData const*);
+    MCNAPI static long WebSocketConnectAsyncShimProvider(::XAsyncOp, ::XAsyncProviderData const*);
 
-    MCAPI static void WebSocketConnectComplete(::XAsyncBlock*);
+    MCNAPI static void WebSocketConnectComplete(::XAsyncBlock*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

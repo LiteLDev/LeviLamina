@@ -53,113 +53,113 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI
+        MCNAPI
         CandidateAndResolver(::cricket::Candidate const&, ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>&&);
 
-        MCAPI ~CandidateAndResolver();
+        MCNAPI ~CandidateAndResolver();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::cricket::Candidate const&, ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>&&);
+        MCNAPI void* $ctor(::cricket::Candidate const&, ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddAllocatorSession(::std::unique_ptr<::cricket::PortAllocatorSession>);
+    MCNAPI void AddAllocatorSession(::std::unique_ptr<::cricket::PortAllocatorSession>);
 
-    MCAPI void AddConnection(::cricket::Connection*);
+    MCNAPI void AddConnection(::cricket::Connection*);
 
-    MCAPI void AddRemoteCandidateWithResult(::cricket::Candidate, ::webrtc::AsyncDnsResolverResult const&);
+    MCNAPI void AddRemoteCandidateWithResult(::cricket::Candidate, ::webrtc::AsyncDnsResolverResult const&);
 
-    MCAPI bool AllowedToPruneConnections() const;
+    MCNAPI bool AllowedToPruneConnections() const;
 
-    MCAPI int64 ComputeEstimatedDisconnectedTimeMs(int64, ::cricket::Connection*);
+    MCNAPI int64 ComputeEstimatedDisconnectedTimeMs(int64, ::cricket::Connection*);
 
-    MCAPI ::webrtc::IceTransportState ComputeIceTransportState() const;
+    MCNAPI ::webrtc::IceTransportState ComputeIceTransportState() const;
 
-    MCAPI ::cricket::IceTransportState ComputeState() const;
+    MCNAPI ::cricket::IceTransportState ComputeState() const;
 
-    MCAPI ::rtc::NetworkRoute ConfigureNetworkRoute(::cricket::Connection const*);
+    MCNAPI ::rtc::NetworkRoute ConfigureNetworkRoute(::cricket::Connection const*);
 
-    MCAPI bool CreateConnection(::cricket::PortInterface*, ::cricket::Candidate const&, ::cricket::PortInterface*);
+    MCNAPI bool CreateConnection(::cricket::PortInterface*, ::cricket::Candidate const&, ::cricket::PortInterface*);
 
-    MCAPI bool CreateConnections(::cricket::Candidate const&, ::cricket::PortInterface*);
+    MCNAPI bool CreateConnections(::cricket::Candidate const&, ::cricket::PortInterface*);
 
-    MCAPI bool FindConnection(::cricket::Connection const*) const;
+    MCNAPI bool FindConnection(::cricket::Connection const*) const;
 
-    MCAPI ::cricket::IceParameters const* FindRemoteIceFromUfrag(::std::string_view, uint*);
+    MCNAPI ::cricket::IceParameters const* FindRemoteIceFromUfrag(::std::string_view, uint*);
 
-    MCAPI void FinishAddingRemoteCandidate(::cricket::Candidate const&);
+    MCNAPI void FinishAddingRemoteCandidate(::cricket::Candidate const&);
 
-    MCAPI uint GetNominationAttr(::cricket::Connection*) const;
+    MCNAPI uint GetNominationAttr(::cricket::Connection*) const;
 
-    MCAPI uint GetRemoteCandidateGeneration(::cricket::Candidate const&);
+    MCNAPI uint GetRemoteCandidateGeneration(::cricket::Candidate const&);
 
-    MCAPI bool GetUseCandidateAttr(::cricket::Connection*) const;
+    MCNAPI bool GetUseCandidateAttr(::cricket::Connection*) const;
 
-    MCAPI void GoogDeltaAckReceived(::webrtc::RTCErrorOr<::cricket::StunUInt64Attribute const*>);
+    MCNAPI void GoogDeltaAckReceived(::webrtc::RTCErrorOr<::cricket::StunUInt64Attribute const*>);
 
-    MCAPI ::std::unique_ptr<::cricket::StunAttribute> GoogDeltaReceived(::cricket::StunByteStringAttribute const*);
+    MCNAPI ::std::unique_ptr<::cricket::StunAttribute> GoogDeltaReceived(::cricket::StunByteStringAttribute const*);
 
-    MCAPI void HandleAllTimedOut();
+    MCNAPI void HandleAllTimedOut();
 
-    MCAPI bool IsDuplicateRemoteCandidate(::cricket::Candidate const&);
+    MCNAPI bool IsDuplicateRemoteCandidate(::cricket::Candidate const&);
 
-    MCAPI bool IsPortPruned(::cricket::PortInterface const*) const;
+    MCNAPI bool IsPortPruned(::cricket::PortInterface const*) const;
 
-    MCAPI bool IsRemoteCandidatePruned(::cricket::Candidate const&) const;
+    MCNAPI bool IsRemoteCandidatePruned(::cricket::Candidate const&) const;
 
-    MCAPI void LogCandidatePairConfig(::cricket::Connection*, ::webrtc::IceCandidatePairConfigType);
+    MCNAPI void LogCandidatePairConfig(::cricket::Connection*, ::webrtc::IceCandidatePairConfigType);
 
-    MCAPI void MarkConnectionPinged(::cricket::Connection*);
+    MCNAPI void MarkConnectionPinged(::cricket::Connection*);
 
-    MCAPI void MaybeStopPortAllocatorSessions();
+    MCNAPI void MaybeStopPortAllocatorSessions();
 
-    MCAPI void OnCandidateError(::cricket::PortAllocatorSession*, ::cricket::IceCandidateErrorEvent const&);
+    MCNAPI void OnCandidateError(::cricket::PortAllocatorSession*, ::cricket::IceCandidateErrorEvent const&);
 
-    MCAPI void OnCandidateFilterChanged(uint, uint);
+    MCNAPI void OnCandidateFilterChanged(uint, uint);
 
-    MCAPI void OnCandidateResolved(::webrtc::AsyncDnsResolverInterface*);
+    MCNAPI void OnCandidateResolved(::webrtc::AsyncDnsResolverInterface*);
 
-    MCAPI void OnCandidatesAllocationDone(::cricket::PortAllocatorSession*);
+    MCNAPI void OnCandidatesAllocationDone(::cricket::PortAllocatorSession*);
 
-    MCAPI void OnCandidatesReady(::cricket::PortAllocatorSession*, ::std::vector<::cricket::Candidate> const&);
+    MCNAPI void OnCandidatesReady(::cricket::PortAllocatorSession*, ::std::vector<::cricket::Candidate> const&);
 
-    MCAPI void OnCandidatesRemoved(::cricket::PortAllocatorSession*, ::std::vector<::cricket::Candidate> const&);
+    MCNAPI void OnCandidatesRemoved(::cricket::PortAllocatorSession*, ::std::vector<::cricket::Candidate> const&);
 
-    MCAPI void OnConnectionDestroyed(::cricket::Connection*);
+    MCNAPI void OnConnectionDestroyed(::cricket::Connection*);
 
-    MCAPI void OnConnectionStateChange(::cricket::Connection*);
+    MCNAPI void OnConnectionStateChange(::cricket::Connection*);
 
-    MCAPI void OnNominated(::cricket::Connection*);
+    MCNAPI void OnNominated(::cricket::Connection*);
 
-    MCAPI void OnPortDestroyed(::cricket::PortInterface*);
+    MCNAPI void OnPortDestroyed(::cricket::PortInterface*);
 
-    MCAPI void OnPortReady(::cricket::PortAllocatorSession*, ::cricket::PortInterface*);
+    MCNAPI void OnPortReady(::cricket::PortAllocatorSession*, ::cricket::PortInterface*);
 
-    MCAPI void OnPortsPruned(::cricket::PortAllocatorSession*, ::std::vector<::cricket::PortInterface*> const&);
+    MCNAPI void OnPortsPruned(::cricket::PortAllocatorSession*, ::std::vector<::cricket::PortInterface*> const&);
 
-    MCAPI void OnReadPacket(::cricket::Connection*, ::rtc::ReceivedPacket const&);
+    MCNAPI void OnReadPacket(::cricket::Connection*, ::rtc::ReceivedPacket const&);
 
-    MCAPI void OnReadyToSend(::cricket::Connection*);
+    MCNAPI void OnReadyToSend(::cricket::Connection*);
 
-    MCAPI void OnRoleConflict(::cricket::PortInterface*);
+    MCNAPI void OnRoleConflict(::cricket::PortInterface*);
 
-    MCAPI void OnSelectedConnectionDestroyed();
+    MCNAPI void OnSelectedConnectionDestroyed();
 
-    MCAPI void OnSentPacket(::rtc::SentPacket const&);
+    MCNAPI void OnSentPacket(::rtc::SentPacket const&);
 
-    MCAPI void OnUnknownAddress(
+    MCNAPI void OnUnknownAddress(
         ::cricket::PortInterface*,
         ::rtc::SocketAddress const&,
         ::cricket::ProtocolType,
@@ -168,66 +168,66 @@ public:
         bool
     );
 
-    MCAPI
+    MCNAPI
     P2PTransportChannel(::std::string_view, int, ::cricket::PortAllocator*, ::webrtc::AsyncDnsResolverFactoryInterface*, ::std::unique_ptr<::webrtc::AsyncDnsResolverFactoryInterface>, ::webrtc::RtcEventLog*, ::cricket::IceControllerFactoryInterface*, ::cricket::ActiveIceControllerFactoryInterface*, ::webrtc::FieldTrialsView const*);
 
-    MCAPI void ParseFieldTrials(::webrtc::FieldTrialsView const*);
+    MCNAPI void ParseFieldTrials(::webrtc::FieldTrialsView const*);
 
-    MCAPI void PingConnection(::cricket::Connection*);
+    MCNAPI void PingConnection(::cricket::Connection*);
 
-    MCAPI bool PresumedWritable(::cricket::Connection const*) const;
+    MCNAPI bool PresumedWritable(::cricket::Connection const*) const;
 
-    MCAPI void PruneAllPorts();
+    MCNAPI void PruneAllPorts();
 
-    MCAPI bool PrunePort(::cricket::PortInterface*);
+    MCNAPI bool PrunePort(::cricket::PortInterface*);
 
-    MCAPI bool ReadyToSend(::cricket::Connection const*) const;
+    MCNAPI bool ReadyToSend(::cricket::Connection const*) const;
 
-    MCAPI void RememberRemoteCandidate(::cricket::Candidate const&, ::cricket::PortInterface*);
+    MCNAPI void RememberRemoteCandidate(::cricket::Candidate const&, ::cricket::PortInterface*);
 
-    MCAPI void RemoveConnection(::cricket::Connection*);
+    MCNAPI void RemoveConnection(::cricket::Connection*);
 
-    MCAPI void ResolveHostnameCandidate(::cricket::Candidate const&);
+    MCNAPI void ResolveHostnameCandidate(::cricket::Candidate const&);
 
-    MCAPI ::cricket::Candidate SanitizeLocalCandidate(::cricket::Candidate const&) const;
+    MCNAPI ::cricket::Candidate SanitizeLocalCandidate(::cricket::Candidate const&) const;
 
-    MCAPI ::cricket::Candidate SanitizeRemoteCandidate(::cricket::Candidate const&) const;
+    MCNAPI ::cricket::Candidate SanitizeRemoteCandidate(::cricket::Candidate const&) const;
 
-    MCAPI void SendPingRequestInternal(::cricket::Connection*);
+    MCNAPI void SendPingRequestInternal(::cricket::Connection*);
 
-    MCAPI void SetReceiving(bool);
+    MCNAPI void SetReceiving(bool);
 
-    MCAPI void SetWritable(bool);
+    MCNAPI void SetWritable(bool);
 
-    MCAPI void SwitchSelectedConnectionInternal(::cricket::Connection*, ::cricket::IceSwitchReason);
+    MCNAPI void SwitchSelectedConnectionInternal(::cricket::Connection*, ::cricket::IceSwitchReason);
 
-    MCAPI ::std::string ToString() const;
+    MCNAPI ::std::string ToString() const;
 
-    MCAPI void UpdateTransportState();
+    MCNAPI void UpdateTransportState();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::cricket::P2PTransportChannel>
+    MCNAPI static ::std::unique_ptr<::cricket::P2PTransportChannel>
     Create(::std::string_view, int, ::webrtc::IceTransportInit);
 
-    MCAPI static ::webrtc::RTCError ValidateIceConfig(::cricket::IceConfig const&);
+    MCNAPI static ::webrtc::RTCError ValidateIceConfig(::cricket::IceConfig const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::string_view, int, ::cricket::PortAllocator*, ::webrtc::AsyncDnsResolverFactoryInterface*, ::std::unique_ptr<::webrtc::AsyncDnsResolverFactoryInterface>, ::webrtc::RtcEventLog*, ::cricket::IceControllerFactoryInterface*, ::cricket::ActiveIceControllerFactoryInterface*, ::webrtc::FieldTrialsView const*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIceTransportInternal();
+    MCNAPI static void** $vftableForIceTransportInternal();
 
-    MCAPI static void** $vftableForIceAgentInterface();
+    MCNAPI static void** $vftableForIceAgentInterface();
     // NOLINTEND
 };
 

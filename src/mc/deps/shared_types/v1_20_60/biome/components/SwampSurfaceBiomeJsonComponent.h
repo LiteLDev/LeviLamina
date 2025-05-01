@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_20_60/biome/components/IBiomeJsonComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_20_60 {
 
 struct SwampSurfaceBiomeJsonComponent : public ::SharedTypes::v1_20_60::IBiomeJsonComponent {
@@ -29,15 +34,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SwampSurfaceBiomeJsonComponent();
+    MCNAPI SwampSurfaceBiomeJsonComponent();
 
-    MCAPI SwampSurfaceBiomeJsonComponent(::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent const&);
+    MCNAPI SwampSurfaceBiomeJsonComponent(::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent const&);
 
-    MCFOLD ::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent&
+    MCNAPI ::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent&
     operator=(::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent&&);
 
-    MCFOLD ::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent&
+    MCNAPI ::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent&
     operator=(::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent const&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -51,9 +62,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCFOLD void* $ctor(::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent const&);
     // NOLINTEND
 
 public:
@@ -65,7 +76,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

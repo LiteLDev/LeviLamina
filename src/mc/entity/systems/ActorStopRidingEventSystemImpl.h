@@ -24,7 +24,7 @@ struct VehicleComponent;
 namespace ActorStopRidingEventSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void tickHandlerEvent(
+MCNAPI void tickHandlerEvent(
     ::entt::type_list<::Include<::StopRidingRequestComponent>>,
     ::StrictEntityContext const&                           entity,
     ::ActorOwnerComponent const&                           actorOwnerComponent,
@@ -36,7 +36,7 @@ MCAPI void tickHandlerEvent(
     ::EntityModifier<::StopRidingRequestComponent>                                             modifier
 );
 
-MCAPI void tickListenerEvent(
+MCNAPI void tickListenerEvent(
     ::entt::type_list<::Include<::StopRidingRequestComponent>>,
     ::ActorOwnerComponent const&                           actorOwnerComponent,
     ::Optional<::LocalPlayerComponent const>               localPlayerFlag,

@@ -13,7 +13,7 @@ struct MessageDigestFactory {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::rtc::MessageDigest* Create(::std::string_view);
+    MCNAPI static ::rtc::MessageDigest* Create(::std::string_view);
     // NOLINTEND
 };
 

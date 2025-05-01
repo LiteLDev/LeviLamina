@@ -23,14 +23,14 @@ class SlimePreNormalTickSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doSlimePreNormalTickSystem(
+    MCNAPI static void _doSlimePreNormalTickSystem(
         ::StrictEntityContext&                                     context,
         ::ActorOwnerComponent&                                     actorOwnerComponent,
         ::Optional<::OnGroundFlagComponent const>                  onGround,
         ::EntityModifier<::SlimeWasOnGroundPreNormalTickComponent> mod
     );
 
-    MCAPI static void _tickSlimePreNormalTickSystem(
+    MCNAPI static void _tickSlimePreNormalTickSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::ActorMovementTickNeededComponent, ::SlimeFlagComponent>,
@@ -39,6 +39,6 @@ public:
         ::EntityModifier<::SlimeWasOnGroundPreNormalTickComponent> mod
     );
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

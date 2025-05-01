@@ -85,24 +85,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AsyncPacketSocket();
+    MCNAPI AsyncPacketSocket();
 
-    MCAPI void DeregisterReceivedPacketCallback();
+    MCNAPI void DeregisterReceivedPacketCallback();
 
-    MCAPI void NotifyPacketReceived(::rtc::ReceivedPacket const&);
+    MCNAPI void NotifyPacketReceived(::rtc::ReceivedPacket const&);
 
-    MCAPI void RegisterReceivedPacketCallback(::absl::AnyInvocable<
-                                              void(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const&)>);
+    MCNAPI void RegisterReceivedPacketCallback(::absl::AnyInvocable<
+                                               void(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const&)>);
 
-    MCAPI void SubscribeCloseEvent(void const*, ::std::function<void(::rtc::AsyncPacketSocket*, int)>);
+    MCNAPI void SubscribeCloseEvent(void const*, ::std::function<void(::rtc::AsyncPacketSocket*, int)>);
 
-    MCAPI void UnsubscribeCloseEvent(void const*);
+    MCNAPI void UnsubscribeCloseEvent(void const*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -120,7 +120,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -34,7 +34,7 @@ public:
     ) /*override*/;
 
     // vIndex: 1
-    virtual void getTelemetryData(uint& violationCount) /*override*/;
+    virtual uint getTelemetryData() /*override*/;
 
     // vIndex: 2
     virtual ~PacketLimitHandler() /*override*/ = default;
@@ -49,18 +49,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::PacketViolationResponse $checkForViolation(
+    MCNAPI ::PacketViolationResponse $checkForViolation(
         ::MinecraftPacketIds                                                     packetId,
         ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const& result,
         bool*                                                                    outIsNewOrUpdatedViolation
     );
 
-    MCAPI void $getTelemetryData(uint& violationCount);
+    MCNAPI uint $getTelemetryData();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

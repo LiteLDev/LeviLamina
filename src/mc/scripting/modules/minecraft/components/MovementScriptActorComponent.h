@@ -28,14 +28,14 @@ public:
     // vIndex: 0
     virtual ~MovementScriptActorComponent() /*override*/ = default;
 
-    // vIndex: 2
+    // vIndex: 4
     virtual ::Scripting::Result_deprecated<float> getMaxTurn() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::MovementScriptActorComponent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::MovementScriptActorComponent> bind();
     // NOLINTEND
 
 public:
@@ -47,13 +47,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<float> $getMaxTurn() const;
+    MCNAPI ::Scripting::Result_deprecated<float> $getMaxTurn() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

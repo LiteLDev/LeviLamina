@@ -29,8 +29,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnkd6e44b;
-    ::ll::UntypedStorage<8, 96> mUnk892348;
+    ::ll::UntypedStorage<8, 72>  mUnkd6e44b;
+    ::ll::UntypedStorage<8, 160> mUnk892348;
     // NOLINTEND
 
 public:
@@ -41,12 +41,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackManifestFactoryCache();
+    MCNAPI PackManifestFactoryCache();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

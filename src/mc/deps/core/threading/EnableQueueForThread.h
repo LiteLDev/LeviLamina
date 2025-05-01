@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> queue(::std::function<void()>&& callback);
+    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> queue(::std::function<void()>&& callback);
     // NOLINTEND
 
 public:
@@ -42,7 +42,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -43,21 +43,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ScopedDisallowBlockingCalls();
+        MCNAPI ScopedDisallowBlockingCalls();
 
-        MCAPI ~ScopedDisallowBlockingCalls();
+        MCNAPI ~ScopedDisallowBlockingCalls();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -95,23 +95,23 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI DelayedMessage(::rtc::Thread::DelayedMessage&&);
+        MCNAPI DelayedMessage(::rtc::Thread::DelayedMessage&&);
 
-        MCAPI ::rtc::Thread::DelayedMessage& operator=(::rtc::Thread::DelayedMessage&&);
+        MCNAPI ::rtc::Thread::DelayedMessage& operator=(::rtc::Thread::DelayedMessage&&);
 
-        MCAPI ~DelayedMessage();
+        MCNAPI ~DelayedMessage();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::rtc::Thread::DelayedMessage&&);
+        MCNAPI void* $ctor(::rtc::Thread::DelayedMessage&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -189,77 +189,77 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AllowInvokesToThread(::rtc::Thread*);
+    MCNAPI void AllowInvokesToThread(::rtc::Thread*);
 
-    MCAPI void ClearCurrentTaskQueue();
+    MCNAPI void ClearCurrentTaskQueue();
 
-    MCAPI void DisallowAllInvokes();
+    MCNAPI void DisallowAllInvokes();
 
-    MCAPI void Dispatch(::absl::AnyInvocable<void() &&>);
+    MCNAPI void Dispatch(::absl::AnyInvocable<void() &&>);
 
-    MCAPI void DoDestroy();
+    MCNAPI void DoDestroy();
 
-    MCAPI void DoInit();
+    MCNAPI void DoInit();
 
-    MCAPI void EnsureIsCurrentTaskQueue();
+    MCNAPI void EnsureIsCurrentTaskQueue();
 
-    MCAPI ::absl::AnyInvocable<void() &&> Get(int);
+    MCNAPI ::absl::AnyInvocable<void() &&> Get(int);
 
-    MCAPI bool IsCurrent() const;
+    MCNAPI bool IsCurrent() const;
 
-    MCAPI bool IsOwned();
+    MCNAPI bool IsOwned();
 
-    MCAPI bool IsRunning();
+    MCNAPI bool IsRunning();
 
-    MCAPI void Join();
+    MCNAPI void Join();
 
-    MCAPI bool ProcessMessages(int);
+    MCNAPI bool ProcessMessages(int);
 
-    MCAPI bool SetAllowBlockingCalls(bool);
+    MCNAPI bool SetAllowBlockingCalls(bool);
 
-    MCAPI void SetDispatchWarningMs(int);
+    MCNAPI void SetDispatchWarningMs(int);
 
-    MCAPI bool SetName(::std::string_view, void const*);
+    MCNAPI bool SetName(::std::string_view, void const*);
 
-    MCAPI bool Start();
+    MCNAPI bool Start();
 
-    MCAPI explicit Thread(::rtc::SocketServer*);
+    MCNAPI explicit Thread(::rtc::SocketServer*);
 
-    MCAPI explicit Thread(::std::unique_ptr<::rtc::SocketServer>);
+    MCNAPI explicit Thread(::std::unique_ptr<::rtc::SocketServer>);
 
-    MCAPI Thread(::std::unique_ptr<::rtc::SocketServer>, bool);
+    MCNAPI Thread(::std::unique_ptr<::rtc::SocketServer>, bool);
 
-    MCAPI Thread(::rtc::SocketServer*, bool);
+    MCNAPI Thread(::rtc::SocketServer*, bool);
 
-    MCAPI void UnwrapCurrent();
+    MCNAPI void UnwrapCurrent();
 
-    MCAPI void WakeUpSocketServer();
+    MCNAPI void WakeUpSocketServer();
 
-    MCAPI bool WrapCurrentWithThreadManager(::rtc::ThreadManager*, bool);
+    MCNAPI bool WrapCurrentWithThreadManager(::rtc::ThreadManager*, bool);
 
-    MCAPI ::rtc::SocketServer* socketserver();
+    MCNAPI ::rtc::SocketServer* socketserver();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::rtc::Thread> Create();
+    MCNAPI static ::std::unique_ptr<::rtc::Thread> Create();
 
-    MCAPI static ::rtc::Thread* Current();
+    MCNAPI static ::rtc::Thread* Current();
 
-    MCAPI static ulong PreRun(void*);
+    MCNAPI static ulong PreRun(void*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::SocketServer*);
+    MCNAPI void* $ctor(::rtc::SocketServer*);
 
-    MCAPI void* $ctor(::std::unique_ptr<::rtc::SocketServer>);
+    MCNAPI void* $ctor(::std::unique_ptr<::rtc::SocketServer>);
 
-    MCAPI void* $ctor(::std::unique_ptr<::rtc::SocketServer>, bool);
+    MCNAPI void* $ctor(::std::unique_ptr<::rtc::SocketServer>, bool);
 
-    MCAPI void* $ctor(::rtc::SocketServer*, bool);
+    MCNAPI void* $ctor(::rtc::SocketServer*, bool);
     // NOLINTEND
 
 public:
@@ -277,7 +277,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -25,23 +25,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::Editor::ScriptModule::ScriptTransferServiceDataResponse&
+    MCNAPI ::Editor::ScriptModule::ScriptTransferServiceDataResponse&
     operator=(::Editor::ScriptModule::ScriptTransferServiceDataResponse&&);
 
-    MCAPI ~ScriptTransferServiceDataResponse();
+    MCNAPI ~ScriptTransferServiceDataResponse();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::Editor::ScriptModule::ScriptTransferServiceDataResponse>
+    MCNAPI static ::Scripting::ClassBindingBuilderReadOnly<::Editor::ScriptModule::ScriptTransferServiceDataResponse>
     bindScript();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

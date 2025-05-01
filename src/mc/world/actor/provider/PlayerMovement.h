@@ -17,15 +17,15 @@ struct VanillaClientGameplayComponent;
 namespace PlayerMovement {
 // functions
 // NOLINTBEGIN
-MCAPI void applyInputLocks(::ClientInputLockComponent const& lockComponent, ::MoveInputState& inputState);
+MCNAPI void applyInputLocks(::ClientInputLockComponent const& lockComponent, ::MoveInputState& inputState);
 
-MCAPI ::Vec2 calculateButtonMoveVector(::MoveInputState const& inputState);
+MCNAPI ::Vec2 calculateButtonMoveVector(::MoveInputState const& inputState);
 
-MCAPI void initializePlayer(::EntityContext& provider);
+MCNAPI void initializePlayer(::EntityContext& provider);
 
-MCAPI void setElytraFlightTimeTicks(::EntityContext& provider, ::Tick const& value);
+MCNAPI void setElytraFlightTimeTicks(::EntityContext& provider, ::Tick const& value);
 
-MCAPI bool shouldStopEmoting(
+MCNAPI bool shouldStopEmoting(
     ::Vec2                            rawMove,
     ::ActorDataFlagComponent&         actorDataFlag,
     ::ActorDataDirtyFlagsComponent&   actorDataDirtyFlags,

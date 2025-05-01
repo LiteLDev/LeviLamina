@@ -24,22 +24,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::Editor::ScriptModule::ScriptClipboardChangeAfterEvent&
+    MCNAPI ::Editor::ScriptModule::ScriptClipboardChangeAfterEvent&
     operator=(::Editor::ScriptModule::ScriptClipboardChangeAfterEvent&&);
 
-    MCAPI ~ScriptClipboardChangeAfterEvent();
+    MCNAPI ~ScriptClipboardChangeAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptClipboardChangeAfterEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptClipboardChangeAfterEvent> bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

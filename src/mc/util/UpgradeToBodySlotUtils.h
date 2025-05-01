@@ -11,7 +11,7 @@ class Mob;
 namespace UpgradeToBodySlotUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void tryAddSkipBodySlotUpgradeSaveData(::CompoundTag& tag, ::Mob const& mob);
+MCNAPI void tryAddSkipBodySlotUpgradeSaveData(::CompoundTag& tag, ::Mob const& mob);
 // NOLINTEND
 
 } // namespace UpgradeToBodySlotUtils

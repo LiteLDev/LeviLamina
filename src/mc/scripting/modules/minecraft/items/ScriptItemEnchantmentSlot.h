@@ -12,7 +12,7 @@ struct ScriptItemEnchantmentSlot {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Enchant::Slot> bind();
+    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Enchant::Slot> bind();
     // NOLINTEND
 };
 

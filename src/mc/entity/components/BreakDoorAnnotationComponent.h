@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/Difficulty.h"
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class Mob;
 class Path;
-struct ActorUniqueID;
 // clang-format on
 
 class BreakDoorAnnotationComponent {
@@ -28,12 +28,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _cleanUp(::Mob& mob);
+    MCNAPI void _cleanUp(::Mob& mob);
 
-    MCAPI bool canMobBreakDoor(::Mob& mob, ::Path const& path) const;
+    MCNAPI bool canMobBreakDoor(::Mob& mob, ::Path const& path) const;
 
-    MCAPI void clearProgress(::Mob& mob);
+    MCNAPI void clearProgress(::Mob& mob);
 
-    MCAPI void obstructionCheck(::Mob& mob);
+    MCNAPI void obstructionCheck(::Mob& mob);
     // NOLINTEND
 };

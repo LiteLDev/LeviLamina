@@ -2,12 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Vec2;
-class Vec3;
-struct MoveInputState;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/input/MoveInputState.h"
 
 struct MoveInputComponent {
 public:
@@ -43,8 +41,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::MoveInputComponent& operator=(::MoveInputComponent&&);
+    MCNAPI ::MoveInputComponent& operator=(::MoveInputComponent&&);
 
-    MCAPI ::MoveInputComponent& operator=(::MoveInputComponent const&);
+    MCNAPI ::MoveInputComponent& operator=(::MoveInputComponent const&);
     // NOLINTEND
 };

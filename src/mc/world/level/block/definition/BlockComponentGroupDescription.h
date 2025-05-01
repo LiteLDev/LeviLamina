@@ -6,6 +6,7 @@
 // clang-format off
 struct BlockComponentDescription;
 namespace cereal { class DynamicValue; }
+namespace cereal { class SerializerContext; }
 // clang-format on
 
 struct BlockComponentGroupDescription {
@@ -31,25 +32,26 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void _setCustomComponent(
+        MCNAPI void _setCustomComponent(
             ::std::string_view                               compName,
             ::std::shared_ptr<::cereal::DynamicValue> const& compData,
             bool                                             overridePlayerInteract,
             bool                                             overridePlayerPlacing
         );
 
-        MCAPI ::std::shared_ptr<::cereal::DynamicValue> getCustomComponent(::std::string_view compName) const;
+        MCNAPI ::std::shared_ptr<::cereal::DynamicValue> getCustomComponent(::cereal::SerializerContext const& context
+        ) const;
 
-        MCFOLD ::BlockComponentGroupDescription::Components&
+        MCNAPI ::BlockComponentGroupDescription::Components&
         operator=(::BlockComponentGroupDescription::Components const&);
 
-        MCAPI ~Components();
+        MCNAPI ~Components();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -69,30 +71,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockComponentGroupDescription(::BlockComponentGroupDescription&&);
+    MCNAPI BlockComponentGroupDescription(::BlockComponentGroupDescription&&);
 
-    MCAPI BlockComponentGroupDescription(::BlockComponentGroupDescription const&);
+    MCNAPI BlockComponentGroupDescription(::BlockComponentGroupDescription const&);
 
-    MCAPI void addComponentDescription(::std::shared_ptr<::BlockComponentDescription> desc);
+    MCNAPI void addComponentDescription(::std::shared_ptr<::BlockComponentDescription> desc);
 
-    MCAPI void foreachDescription(::std::function<void(::BlockComponentDescription const&)> callback) const;
+    MCNAPI void foreachDescription(::std::function<void(::BlockComponentDescription const&)> callback) const;
 
-    MCAPI ::BlockComponentGroupDescription& operator=(::BlockComponentGroupDescription&&);
+    MCNAPI ::BlockComponentGroupDescription& operator=(::BlockComponentGroupDescription&&);
 
-    MCAPI ~BlockComponentGroupDescription();
+    MCNAPI ~BlockComponentGroupDescription();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockComponentGroupDescription&&);
+    MCNAPI void* $ctor(::BlockComponentGroupDescription&&);
 
-    MCAPI void* $ctor(::BlockComponentGroupDescription const&);
+    MCNAPI void* $ctor(::BlockComponentGroupDescription const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

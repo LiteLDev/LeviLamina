@@ -8,7 +8,7 @@ class VideoFrameTrackingIdExtension {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool Write(::rtc::ArrayView<uchar>, ushort);
+    MCNAPI static bool Write(::rtc::ArrayView<uchar>, ushort);
     // NOLINTEND
 };
 

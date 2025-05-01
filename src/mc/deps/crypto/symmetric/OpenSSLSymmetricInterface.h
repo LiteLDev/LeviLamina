@@ -61,25 +61,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init(::std::string const& key, ::std::string const& IV);
+    MCNAPI void $init(::std::string const& key, ::std::string const& IV);
 
-    MCAPI void $encrypt(::std::string const& plaintext, ::std::string& out);
+    MCNAPI void $encrypt(::std::string const& plaintext, ::std::string& out);
 
-    MCAPI void $decrypt(::std::string const& ciphertext, ::std::string& out);
+    MCNAPI void $decrypt(::std::string const& ciphertext, ::std::string& out);
 
-    MCAPI uint64 $getKeySize() const;
+    MCNAPI uint64 $getKeySize() const;
 
-    MCAPI uint64 $getBlockSize() const;
+    MCNAPI uint64 $getBlockSize() const;
 
-    MCAPI uint64 $getEncryptionBufferSize(uint64 inputSize) const;
+    MCNAPI uint64 $getEncryptionBufferSize(uint64 inputSize) const;
 
-    MCAPI bool $encryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten);
+    MCNAPI bool $encryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

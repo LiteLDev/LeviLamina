@@ -42,13 +42,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ValidatorRegistryValidators();
+        MCNAPI ~ValidatorRegistryValidators();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -74,15 +74,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::NonOwnerPointer<::ValidatorRegistry> _get();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::ValidatorRegistry> _get();
 
-    MCAPI static bool
+    MCNAPI static bool
     findValidators(::std::string const& validatorName, ::ValidatorRegistry::ValidatorRegistryValidators& validatorPair);
 
-    MCAPI static ::std::unordered_map<::std::string, ::ValidatorRegistry::ValidatorRegistryValidators> const&
+    MCNAPI static ::std::unordered_map<::std::string, ::ValidatorRegistry::ValidatorRegistryValidators> const&
     getValidatorMap();
 
-    MCAPI static void registerValidators(
+    MCNAPI static void registerValidators(
         ::std::string_view                                                                                validatorName,
         ::std::function<::ContentTierIncompatibleReason(::PackInstance const&, ::ContentTierInfo const&)> packValidator,
         ::std::function<::ContentTierIncompatibleReason(::SubpackInfo const&, ::ContentTierInfo const&)>
@@ -93,12 +93,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

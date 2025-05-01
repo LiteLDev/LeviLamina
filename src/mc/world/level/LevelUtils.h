@@ -14,7 +14,7 @@ class Player;
 namespace LevelUtils {
 // functions
 // NOLINTBEGIN
-MCAPI bool extinguishFire(
+MCNAPI bool extinguishFire(
     ::IBlockSource&      region,
     ::BlockPos const&    pos,
     uchar                face,

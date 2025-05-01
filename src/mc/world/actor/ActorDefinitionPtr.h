@@ -24,11 +24,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDefinitionPtr(::ActorDefinitionPtr const& rhs);
+    MCNAPI ActorDefinitionPtr(::ActorDefinitionPtr const& rhs);
 
-    MCAPI ActorDefinitionPtr(::ActorDefinitionGroup& group, ::ActorDefinition& EntityDefinition);
+    MCNAPI ActorDefinitionPtr(::ActorDefinitionGroup& group, ::ActorDefinition& EntityDefinition);
 
-    MCAPI ~ActorDefinitionPtr();
+    MCNAPI ~ActorDefinitionPtr();
     // NOLINTEND
 
 public:
@@ -40,14 +40,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionPtr const& rhs);
+    MCNAPI void* $ctor(::ActorDefinitionPtr const& rhs);
 
-    MCAPI void* $ctor(::ActorDefinitionGroup& group, ::ActorDefinition& EntityDefinition);
+    MCNAPI void* $ctor(::ActorDefinitionGroup& group, ::ActorDefinition& EntityDefinition);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

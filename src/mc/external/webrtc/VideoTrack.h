@@ -18,36 +18,36 @@ class VideoTrack {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     VideoTrack(::std::string_view, ::webrtc::scoped_refptr<::webrtc::VideoTrackSourceProxyWithInternal<::webrtc::VideoTrackSourceInterface>>, ::rtc::Thread*);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::scoped_refptr<::webrtc::VideoTrack>
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::VideoTrack>
     Create(::std::string_view, ::webrtc::scoped_refptr<::webrtc::VideoTrackSourceInterface>, ::rtc::Thread*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::string_view, ::webrtc::scoped_refptr<::webrtc::VideoTrackSourceProxyWithInternal<::webrtc::VideoTrackSourceInterface>>, ::rtc::Thread*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForNotifierInterface();
+    MCNAPI static void** $vftableForNotifierInterface();
 
-    MCAPI static void** $vftableForObserverInterface();
+    MCNAPI static void** $vftableForObserverInterface();
 
-    MCAPI static void** $vftableForVideoSourceBaseGuarded();
+    MCNAPI static void** $vftableForVideoSourceBaseGuarded();
 
-    MCAPI static void** $vftableForRefCountInterface();
+    MCNAPI static void** $vftableForRefCountInterface();
 
-    MCAPI static void** $vftableForMediaStreamTrack();
+    MCNAPI static void** $vftableForMediaStreamTrack();
     // NOLINTEND
 };
 

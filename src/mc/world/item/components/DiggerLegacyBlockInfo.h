@@ -18,16 +18,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DiggerLegacyBlockInfo();
+    MCNAPI DiggerLegacyBlockInfo();
 
-    MCAPI ::DiggerLegacyBlockInfo& operator=(::DiggerLegacyBlockInfo const&);
+    MCNAPI ::DiggerLegacyBlockInfo& operator=(::DiggerLegacyBlockInfo const&);
 
-    MCAPI ::DiggerLegacyBlockInfo& operator=(::DiggerLegacyBlockInfo&&);
+    MCNAPI ::DiggerLegacyBlockInfo& operator=(::DiggerLegacyBlockInfo&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

@@ -8,6 +8,7 @@ enum class InvalidArgumentErrorType : uchar {
     Unspecified = 0,
     Empty       = 1,
     Unknown     = 2,
+    Duplicate   = 3,
 };
 
 }

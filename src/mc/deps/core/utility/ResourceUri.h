@@ -10,7 +10,13 @@ namespace Util::ResourceUri { struct ValidationResult; }
 namespace Util::ResourceUri {
 // functions
 // NOLINTBEGIN
-MCAPI ::Util::ResourceUri::ValidationResult validateUri(::std::string const& uri);
+MCNAPI ::std::string_view _getScheme(::std::string_view uri);
+
+MCNAPI bool isFilePathScheme(::std::string_view uri);
+
+MCNAPI bool isValidScheme(::std::string_view uri);
+
+MCNAPI ::Util::ResourceUri::ValidationResult validateUri(::std::string const& uri);
 // NOLINTEND
 
 } // namespace Util::ResourceUri

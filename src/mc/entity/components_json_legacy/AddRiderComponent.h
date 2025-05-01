@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -18,14 +21,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void reloadComponent(::Actor& owner);
+    MCNAPI void reloadComponent(::Actor& owner);
 
-    MCAPI ~AddRiderComponent();
+    MCNAPI ~AddRiderComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -54,7 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _appendLogEntryMetadata(
+    MCNAPI void _appendLogEntryMetadata(
         ::std::string& logEntry,
         ::std::string  timestamp,
         ::LogAreaID    area,
@@ -64,11 +64,11 @@ public:
         int            _messageId
     );
 
-    MCAPI ::std::string _getCurrentTimestamp();
+    MCNAPI ::std::string _getCurrentTimestamp();
 
-    MCAPI void _logToFile(::std::string const& debugEvent);
+    MCNAPI void _logToFile(::std::string const& debugEvent);
 
-    MCAPI void _log_va(
+    MCNAPI void _log_va(
         ::LogAreaID _area,
         uint        _priority,
         char const* _function,
@@ -78,7 +78,7 @@ public:
         char*       argptr
     );
 
-    MCAPI ::std::string _makeLogString(
+    MCNAPI ::std::string _makeLogString(
         ::std::string        timestamp,
         ::LogAreaID          area,
         uint                 priority,
@@ -88,11 +88,11 @@ public:
         ::std::string const& logMessage
     );
 
-    MCAPI void _openLogFile();
+    MCNAPI void _openLogFile();
 
-    MCAPI void closeLog();
+    MCNAPI void closeLog();
 
-    MCAPI void createLog(
+    MCNAPI void createLog(
         ::Core::Path const&   _logFilePath,
         ::std::string const&  _logFileName,
         ::std::string const&  _debugLogTimestamp,
@@ -101,7 +101,7 @@ public:
         double                _logCycleInS
     );
 
-    MCAPI void updateLogFilter(
+    MCNAPI void updateLogFilter(
         ::std::unique_ptr<::LogSettingsUpdater> options,
         ::std::string const&                    filterType,
         ::std::vector<::std::string> const&     filters,
@@ -109,15 +109,15 @@ public:
         bool                                    toggle
     );
 
-    MCAPI void updateLogSetting(::std::string const& setting, bool newValue);
+    MCNAPI void updateLogSetting(::std::string const& setting, bool newValue);
 
-    MCAPI ~LogDetails();
+    MCNAPI ~LogDetails();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

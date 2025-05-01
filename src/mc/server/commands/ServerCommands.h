@@ -12,9 +12,9 @@ class PermissionsFile;
 namespace ServerCommands {
 // functions
 // NOLINTBEGIN
-MCAPI void setupCommonEnums(::CommandRegistry& registry);
+MCNAPI void setupCommonEnums(::CommandRegistry& registry);
 
-MCAPI void setupStandardServer(
+MCNAPI void setupStandardServer(
     ::Minecraft&         server,
     ::std::string const& permissionsFile,
     ::std::string const& networkCommands,

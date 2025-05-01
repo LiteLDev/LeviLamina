@@ -72,31 +72,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BasicNetworkManager(::rtc::NetworkMonitorFactory*, ::rtc::SocketFactory*, ::webrtc::FieldTrialsView const*);
+    MCNAPI BasicNetworkManager(::rtc::NetworkMonitorFactory*, ::rtc::SocketFactory*, ::webrtc::FieldTrialsView const*);
 
-    MCAPI bool CreateNetworks(bool, ::std::vector<::std::unique_ptr<::rtc::Network>>*) const;
+    MCNAPI bool CreateNetworks(bool, ::std::vector<::std::unique_ptr<::rtc::Network>>*) const;
 
-    MCAPI bool IsConfiguredVpn(::rtc::IPAddress, int) const;
+    MCNAPI bool IsConfiguredVpn(::rtc::IPAddress, int) const;
 
-    MCAPI bool IsIgnoredNetwork(::rtc::Network const&) const;
+    MCNAPI bool IsIgnoredNetwork(::rtc::Network const&) const;
 
-    MCAPI void OnNetworksChanged();
+    MCNAPI void OnNetworksChanged();
 
-    MCAPI ::rtc::IPAddress QueryDefaultLocalAddress(int) const;
+    MCNAPI ::rtc::IPAddress QueryDefaultLocalAddress(int) const;
 
-    MCAPI void StartNetworkMonitor();
+    MCNAPI void StartNetworkMonitor();
 
-    MCAPI void StopNetworkMonitor();
+    MCNAPI void StopNetworkMonitor();
 
-    MCAPI void UpdateNetworksContinually();
+    MCNAPI void UpdateNetworksContinually();
 
-    MCAPI void UpdateNetworksOnce();
+    MCNAPI void UpdateNetworksOnce();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::NetworkMonitorFactory*, ::rtc::SocketFactory*, ::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(::rtc::NetworkMonitorFactory*, ::rtc::SocketFactory*, ::webrtc::FieldTrialsView const*);
     // NOLINTEND
 
 public:
@@ -114,13 +114,13 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForMdnsResponderProvider();
+    MCNAPI static void** $vftableForMdnsResponderProvider();
 
-    MCAPI static void** $vftableForNetworkBinderInterface();
+    MCNAPI static void** $vftableForNetworkBinderInterface();
 
-    MCAPI static void** $vftableForDefaultLocalAddressProvider();
+    MCNAPI static void** $vftableForDefaultLocalAddressProvider();
 
-    MCAPI static void** $vftableForHasSlots();
+    MCNAPI static void** $vftableForHasSlots();
     // NOLINTEND
 };
 

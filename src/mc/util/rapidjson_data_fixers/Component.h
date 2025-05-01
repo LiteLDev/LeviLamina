@@ -5,7 +5,7 @@
 namespace RapidJsonDataFixers::Component {
 // functions
 // NOLINTBEGIN
-MCAPI void applyLambdaToComponentInComponentsSection(
+MCNAPI void applyLambdaToComponentInComponentsSection(
     ::rapidjson::GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>>&
                                                                                                parent,
     ::std::string const&                                                                       componentName,
@@ -15,7 +15,7 @@ MCAPI void applyLambdaToComponentInComponentsSection(
                          ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>>)> const& callback
 );
 
-MCAPI void removeComponentInComponentsSection(
+MCNAPI void removeComponentInComponentsSection(
     ::rapidjson::GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>>&
                          parent,
     ::std::string const& componentName,

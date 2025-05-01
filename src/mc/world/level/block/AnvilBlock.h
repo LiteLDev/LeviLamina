@@ -14,11 +14,12 @@ class BaseGameVersion;
 class Block;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class GetCollisionShapeInterface;
 class HashedString;
 class IConstBlockSource;
-class Player;
 struct BlockAnimateTickData;
+namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -36,22 +37,19 @@ public:
     getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
         /*override*/;
 
-    // vIndex: 139
-    virtual bool use(::Player&, ::BlockPos const&, uchar) const /*override*/;
-
-    // vIndex: 150
+    // vIndex: 148
     virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 149
     virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
     // vIndex: 124
     virtual void animateTick(::BlockAnimateTickData const&) const /*override*/;
 
-    // vIndex: 152
+    // vIndex: 150
     virtual bool falling() const /*override*/;
 
-    // vIndex: 153
+    // vIndex: 151
     virtual void onLand(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 30
@@ -71,16 +69,25 @@ public:
     // vIndex: 23
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
+
     // vIndex: 0
     virtual ~AnvilBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::AABB const& _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue);
+    MCNAPI static ::AABB const& _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue);
 
-    MCAPI static int getDamageForName(::HashedString const& name);
+    MCNAPI static int getDamageForName(::HashedString const& name);
     // NOLINTEND
 
 public:
@@ -92,38 +99,38 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::AABB
+    MCNAPI ::AABB
     $getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCAPI ::AABB const&
+    MCNAPI ::AABB const&
     $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
-    MCFOLD bool $use(::Player&, ::BlockPos const&, uchar) const;
+    MCNAPI ::mce::Color $getDustColor(::Block const&) const;
 
-    MCFOLD ::mce::Color $getDustColor(::Block const&) const;
+    MCNAPI ::std::string $getDustParticleName(::Block const&) const;
 
-    MCFOLD ::std::string $getDustParticleName(::Block const&) const;
+    MCNAPI void $animateTick(::BlockAnimateTickData const&) const;
 
-    MCFOLD void $animateTick(::BlockAnimateTickData const&) const;
+    MCNAPI bool $falling() const;
 
-    MCFOLD bool $falling() const;
+    MCNAPI void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $isCraftingBlock() const;
 
-    MCFOLD bool $isCraftingBlock() const;
+    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
-
-    MCFOLD bool
+    MCNAPI bool
     $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI bool $isInteractiveBlock() const;
+
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -27,10 +27,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
+    // vIndex: 4
     virtual ::Scripting::Result<void> setFillLevel(int level);
 
-    // vIndex: 1
+    // vIndex: 3
     virtual bool _isValid() const /*override*/;
 
     // vIndex: 0
@@ -40,13 +40,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<int> getFillLevel();
+    MCNAPI ::Scripting::Result_deprecated<int> getFillLevel();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent>
     bind();
     // NOLINTEND
 
@@ -59,15 +59,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $setFillLevel(int level);
+    MCNAPI ::Scripting::Result<void> $setFillLevel(int level);
 
-    MCFOLD bool $_isValid() const;
+    MCNAPI bool $_isValid() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

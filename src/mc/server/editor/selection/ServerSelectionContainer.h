@@ -100,7 +100,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _sendNotifications(::Editor::Network::INetworkPayload&& eventPayload) const;
+    MCNAPI void _sendNotifications(::Editor::Network::INetworkPayload&& eventPayload) const;
     // NOLINTEND
 
 public:
@@ -112,58 +112,59 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setVisible(bool visible);
+    MCNAPI void $setVisible(bool visible);
 
-    MCAPI void $setOutlineColor(::mce::Color color);
+    MCNAPI void $setOutlineColor(::mce::Color color);
 
-    MCAPI void $setFillColor(::mce::Color color);
+    MCNAPI void $setFillColor(::mce::Color color);
 
-    MCAPI ::Scripting::Result<void> $pushVolume(::CompoundBlockVolumeItem const& item);
+    MCNAPI ::Scripting::Result<void> $pushVolume(::CompoundBlockVolumeItem const& item);
 
-    MCAPI ::Scripting::Result<void> $popVolume();
+    MCNAPI ::Scripting::Result<void> $popVolume();
 
-    MCAPI ::Scripting::Result<void> $replaceOrAddLastVolume(::CompoundBlockVolumeItem const& item);
+    MCNAPI ::Scripting::Result<void> $replaceOrAddLastVolume(::CompoundBlockVolumeItem const& item);
 
-    MCAPI ::Scripting::Result<void> $clearContainer();
+    MCNAPI ::Scripting::Result<void> $clearContainer();
 
-    MCAPI ::Scripting::Result<void> $replaceContainerContents(::WeakRef<::Editor::Selection::SelectionContainer> other);
-
-    MCAPI ::Scripting::Result<void> $replaceContainerContents(::CompoundBlockVolume const& other);
-
-    MCAPI ::Scripting::Result<void> $translateContainer(int dx, int dy, int dz);
-
-    MCAPI void $_setVisible(bool visible);
-
-    MCAPI void $_setOutlineColor(::mce::Color color);
-
-    MCAPI void $_setFillColor(::mce::Color color);
-
-    MCAPI ::Scripting::Result<void> $_pushVolume(::CompoundBlockVolumeItem const& item);
-
-    MCAPI ::Scripting::Result<void> $_popVolume();
-
-    MCAPI ::Scripting::Result<void> $_replaceOrAddLastVolume(::CompoundBlockVolumeItem const& item);
-
-    MCAPI ::Scripting::Result<void> $_clearContainer();
-
-    MCAPI ::Scripting::Result<void> $_replaceContainerContents(::WeakRef<::Editor::Selection::SelectionContainer> other
+    MCNAPI ::Scripting::Result<void> $replaceContainerContents(::WeakRef<::Editor::Selection::SelectionContainer> other
     );
 
-    MCAPI ::Scripting::Result<void> $_replaceContainerContents(::CompoundBlockVolume const& other);
+    MCNAPI ::Scripting::Result<void> $replaceContainerContents(::CompoundBlockVolume const& other);
 
-    MCAPI ::Scripting::Result<void> $_translateContainer(int dx, int dy, int dz);
+    MCNAPI ::Scripting::Result<void> $translateContainer(int dx, int dy, int dz);
 
-    MCAPI ::Scripting::Result<void> $_checkVolumeIsValid(::CompoundBlockVolume const& volume) const;
+    MCNAPI void $_setVisible(bool visible);
 
-    MCAPI ::Scripting::Result<void> $_checkVolumeIsValid(::SimpleBlockVolume const& volume) const;
+    MCNAPI void $_setOutlineColor(::mce::Color color);
 
-    MCFOLD bool $_isClientSide() const;
+    MCNAPI void $_setFillColor(::mce::Color color);
+
+    MCNAPI ::Scripting::Result<void> $_pushVolume(::CompoundBlockVolumeItem const& item);
+
+    MCNAPI ::Scripting::Result<void> $_popVolume();
+
+    MCNAPI ::Scripting::Result<void> $_replaceOrAddLastVolume(::CompoundBlockVolumeItem const& item);
+
+    MCNAPI ::Scripting::Result<void> $_clearContainer();
+
+    MCNAPI ::Scripting::Result<void> $_replaceContainerContents(::WeakRef<::Editor::Selection::SelectionContainer> other
+    );
+
+    MCNAPI ::Scripting::Result<void> $_replaceContainerContents(::CompoundBlockVolume const& other);
+
+    MCNAPI ::Scripting::Result<void> $_translateContainer(int dx, int dy, int dz);
+
+    MCNAPI ::Scripting::Result<void> $_checkVolumeIsValid(::CompoundBlockVolume const& volume) const;
+
+    MCNAPI ::Scripting::Result<void> $_checkVolumeIsValid(::SimpleBlockVolume const& volume) const;
+
+    MCNAPI bool $_isClientSide() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

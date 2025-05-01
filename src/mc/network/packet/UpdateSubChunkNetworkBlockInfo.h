@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/network/NetworkBlockPosition.h"
+#include "mc/world/level/ActorBlockSyncMessage.h"
+
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class NetworkBlockPosition;
-struct ActorBlockSyncMessage;
 // clang-format on
 
 struct UpdateSubChunkNetworkBlockInfo {
@@ -26,9 +28,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UpdateSubChunkNetworkBlockInfo(::UpdateSubChunkNetworkBlockInfo const&);
+    MCNAPI UpdateSubChunkNetworkBlockInfo(::UpdateSubChunkNetworkBlockInfo const&);
 
-    MCAPI UpdateSubChunkNetworkBlockInfo(
+    MCNAPI UpdateSubChunkNetworkBlockInfo(
         ::BlockPos const&              pos,
         uint                           blockId,
         uchar                          updateFlags,
@@ -39,8 +41,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UpdateSubChunkNetworkBlockInfo const&);
+    MCNAPI void* $ctor(::UpdateSubChunkNetworkBlockInfo const&);
 
-    MCAPI void* $ctor(::BlockPos const& pos, uint blockId, uchar updateFlags, ::ActorBlockSyncMessage const& syncMsg);
+    MCNAPI void* $ctor(::BlockPos const& pos, uint blockId, uchar updateFlags, ::ActorBlockSyncMessage const& syncMsg);
     // NOLINTEND
 };

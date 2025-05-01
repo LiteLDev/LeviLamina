@@ -32,16 +32,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::WorldPacksHistoryFile::ParseResult initializeFromJson(::Json::Value const& value);
+    MCNAPI ::WorldPacksHistoryFile::ParseResult initializeFromJson(::Json::Value const& value);
 
-    MCAPI void removePack(::PackIdVersion const& packId);
+    MCNAPI void removePack(::PackIdVersion const& packId);
 
-    MCAPI ~WorldPacksHistoryFile();
+    MCNAPI ~WorldPacksHistoryFile();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

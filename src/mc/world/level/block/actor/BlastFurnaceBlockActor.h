@@ -9,7 +9,7 @@ class BlastFurnaceBlockActor : public ::FurnaceBlockActor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 26
+    // vIndex: 27
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 0
@@ -25,14 +25,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBlockActor();
+    MCNAPI static void** $vftableForBlockActor();
 
-    MCAPI static void** $vftableForContainer();
+    MCNAPI static void** $vftableForContainer();
     // NOLINTEND
 };

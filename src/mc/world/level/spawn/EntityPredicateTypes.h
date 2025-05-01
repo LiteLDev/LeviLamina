@@ -17,7 +17,7 @@ namespace br::spawn { struct EntityType; }
 namespace br::spawn::EntityPredicateTypes {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::vector<::std::tuple<
+MCNAPI ::std::vector<::std::tuple<
     ::std::string,
     ::std::function<
         bool(::br::spawn::EntityType const&, ::BlockSource&, ::br::spawn::EntitySpawnReason&, ::BlockPos, ::IRandom&)>>>

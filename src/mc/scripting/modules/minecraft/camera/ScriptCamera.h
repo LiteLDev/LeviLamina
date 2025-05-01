@@ -37,16 +37,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptCamera(::Player const& player);
+    MCNAPI explicit ScriptCamera(::Player const& player);
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     cameraFade(::std::optional<::ScriptModuleMinecraft::ScriptCameraFadeOptions> fadeOptions) const;
 
-    MCAPI ::Scripting::Result<void> clearCamera() const;
+    MCNAPI ::Scripting::Result<void> clearCamera() const;
 
-    MCFOLD ::ScriptModuleMinecraft::ScriptCamera& operator=(::ScriptModuleMinecraft::ScriptCamera&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptCamera& operator=(::ScriptModuleMinecraft::ScriptCamera&&);
 
-    MCAPI ::Scripting::Result<void> setCamera(
+    MCNAPI ::Scripting::Result<void> setCamera(
         ::std::string const&                                        cameraPreset,
         ::std::optional<::std::variant<
             ::ScriptModuleMinecraft::ScriptCameraSetFacingOptions,
@@ -58,7 +58,7 @@ public:
             ::ScriptModuleMinecraft::ScriptCameraFixedBoomOptions>> options
     ) const;
 
-    MCAPI ::Scripting::Result<void> setCameraBeta(
+    MCNAPI ::Scripting::Result<void> setCameraBeta(
         ::std::string const&                                        cameraPreset,
         ::std::optional<::std::variant<
             ::ScriptModuleMinecraft::ScriptCameraSetFacingOptions,
@@ -70,28 +70,29 @@ public:
             ::ScriptModuleMinecraft::ScriptCameraFixedBoomOptions>> options
     ) const;
 
-    MCAPI ::Scripting::Result<void> setCamera_V160(
-        ::std::string const&                                      cameraPreset,
+    MCNAPI ::Scripting::Result<void> setCamera_V160(
+        ::std::string const&                                        cameraPreset,
         ::std::optional<::std::variant<
             ::ScriptModuleMinecraft::ScriptCameraSetFacingOptions,
             ::ScriptModuleMinecraft::ScriptCameraSetPositionOptions,
             ::ScriptModuleMinecraft::ScriptCameraSetRotationOptions,
             ::ScriptModuleMinecraft::ScriptCameraSetLocationOptions,
             ::ScriptModuleMinecraft::ScriptCameraTargetOptions,
-            ::ScriptModuleMinecraft::ScriptCameraDefaultOptions>> options
+            ::ScriptModuleMinecraft::ScriptCameraDefaultOptions,
+            ::ScriptModuleMinecraft::ScriptCameraFixedBoomOptions>> options
     ) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptCamera> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptCamera> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::Player const& player);
+    MCNAPI void* $ctor(::Player const& player);
     // NOLINTEND
 };
 

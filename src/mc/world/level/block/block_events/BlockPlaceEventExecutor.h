@@ -7,17 +7,17 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace BlockEvents { class BlockEventBase; }
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
 namespace BlockEvents {
 
-class BlockPlaceEventExecutor : public ::BlockEvents::BlockEventExecutor {
+class BlockPlaceEventExecutor : public ::BlockEvents::BlockEventExecutor<::BlockEvents::BlockPlaceEvent> {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual void dispatch(::BlockEvents::BlockEventBase& eventData) const /*override*/;
+    // vIndex: 2
+    virtual void dispatch(::BlockEvents::BlockPlaceEvent& eventData) const /*override*/;
 
     // vIndex: 0
     virtual ~BlockPlaceEventExecutor() /*override*/ = default;
@@ -32,13 +32,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $dispatch(::BlockEvents::BlockEventBase& eventData) const;
+    MCNAPI void $dispatch(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

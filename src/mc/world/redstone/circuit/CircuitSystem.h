@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/redstone/circuit/CircuitSceneGraph.h"
+
 // auto generated forward declare list
 // clang-format off
 class BaseCircuitComponent;
-class BlockPos;
 class BlockSource;
-class CircuitSceneGraph;
 // clang-format on
 
 class CircuitSystem {

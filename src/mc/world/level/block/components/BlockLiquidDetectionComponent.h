@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/block/DetectionRule.h"
 #include "mc/world/level/block/LiquidType.h"
 
 // auto generated forward declare list

@@ -4,12 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/CopperBehavior.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class BlockSource;
-class CopperBehavior;
 class Experiments;
 class Random;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
@@ -44,7 +44,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -56,18 +56,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::CopperBehavior const* $tryGetCopperBehavior() const;
+    MCNAPI ::CopperBehavior const* $tryGetCopperBehavior() const;
 
-    MCFOLD void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCFOLD void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

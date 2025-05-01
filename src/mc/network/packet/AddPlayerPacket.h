@@ -3,28 +3,28 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/platform/BuildPlatform.h"
+#include "mc/legacy/ActorRuntimeID.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/AddActorBasePacket.h"
 #include "mc/platform/Result.h"
+#include "mc/platform/UUID.h"
+#include "mc/world/actor/player/LayeredAbilities.h"
+#include "mc/world/actor/state/PropertySyncData.h"
+#include "mc/world/item/NetworkItemStackDescriptor.h"
 #include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActorRuntimeID;
 class BinaryStream;
 class DataItem;
-class LayeredAbilities;
-class NetworkItemStackDescriptor;
 class Player;
 class ReadOnlyBinaryStream;
 class SynchedActorDataEntityWrapper;
-class Vec2;
-class Vec3;
 struct ActorLink;
-struct ActorUniqueID;
-struct PropertySyncData;
-namespace mce { class UUID; }
 // clang-format on
 
 class AddPlayerPacket : public ::AddActorBasePacket {

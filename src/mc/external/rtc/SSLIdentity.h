@@ -37,9 +37,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::rtc::SSLIdentity> Create(::std::string_view, ::rtc::KeyParams const&);
+    MCNAPI static ::std::unique_ptr<::rtc::SSLIdentity> Create(::std::string_view, ::rtc::KeyParams const&);
 
-    MCAPI static ::std::unique_ptr<::rtc::SSLIdentity> Create(::std::string_view, ::rtc::KeyParams const&, int64);
+    MCNAPI static ::std::unique_ptr<::rtc::SSLIdentity> Create(::std::string_view, ::rtc::KeyParams const&, int64);
     // NOLINTEND
 
 public:
@@ -57,7 +57,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

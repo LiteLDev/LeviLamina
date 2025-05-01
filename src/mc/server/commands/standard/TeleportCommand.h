@@ -5,8 +5,10 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandPositionFloat.h"
 #include "mc/server/commands/CommandSelector.h"
 #include "mc/server/commands/CommandSelectorResults.h"
+#include "mc/server/commands/RelativeFloat.h"
 #include "mc/util/rotation_command_utils/FacingResult.h"
 
 // auto generated forward declare list
@@ -15,10 +17,8 @@ class Actor;
 class CommandArea;
 class CommandOrigin;
 class CommandOutput;
-class CommandPositionFloat;
 class CommandRegistry;
 class Dimension;
-class RelativeFloat;
 class TeleportTarget;
 class Vec3;
 namespace RotationCommandUtils { class RotationData; }

@@ -30,21 +30,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _generateAllEffectsHandles(::Scripting::WeakLifetimeScope& scope);
+    MCNAPI void _generateAllEffectsHandles(::Scripting::WeakLifetimeScope& scope);
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>>
     get(::Scripting::WeakLifetimeScope& scope, ::std::string const& effectName);
 
-    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>>
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>>
     getAllEffectTypes(::Scripting::WeakLifetimeScope& scope);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
-    MCAPI static void bindV010(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCNAPI static void bindV010(::Scripting::ModuleBindingBuilder& moduleBuilder);
     // NOLINTEND
 };
 

@@ -3,9 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/file/PathPart.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/file/PathPart.h"
+
 // auto generated forward declare list
 // clang-format off
-namespace Core { class PathPart; }
 namespace Core { class PathView; }
 namespace Core { class Result; }
 // clang-format on
@@ -38,7 +40,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Core::Result
+    MCNAPI static ::Core::Result
     makeFailure(::fmt::v10::basic_format_string<char, char const*> const& format, ::Core::PathView path);
     // NOLINTEND
 
@@ -51,13 +53,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

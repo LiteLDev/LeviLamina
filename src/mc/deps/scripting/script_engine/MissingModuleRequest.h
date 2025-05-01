@@ -21,21 +21,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MissingModuleRequest(::Scripting::MissingModuleRequest&&);
+    MCNAPI MissingModuleRequest(::Scripting::MissingModuleRequest&&);
 
-    MCAPI ~MissingModuleRequest();
+    MCNAPI ~MissingModuleRequest();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::MissingModuleRequest&&);
+    MCNAPI void* $ctor(::Scripting::MissingModuleRequest&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

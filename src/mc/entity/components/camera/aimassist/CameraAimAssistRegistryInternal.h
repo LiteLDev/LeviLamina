@@ -15,10 +15,10 @@ namespace cereal { struct ReflectionCtx; }
 namespace CameraAimAssistRegistryInternal {
 // functions
 // NOLINTBEGIN
-MCAPI ::Puv::Loader<::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile>
+MCNAPI ::Puv::Loader<::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile>
 getCategoriesLoader(::cereal::ReflectionCtx const& ctx);
 
-MCAPI ::Puv::Loader<::SharedTypes::v1_21_50::CameraAimAssistPresetFile>
+MCNAPI ::Puv::Loader<::SharedTypes::v1_21_50::CameraAimAssistPresetFile>
 getPresetLoader(::cereal::ReflectionCtx const& ctx);
 // NOLINTEND
 

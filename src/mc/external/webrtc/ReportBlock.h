@@ -25,17 +25,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Create(uchar*) const;
+    MCNAPI void Create(uchar*) const;
 
-    MCAPI bool Parse(uchar const*, uint64);
+    MCNAPI bool Parse(uchar const*, uint64);
 
-    MCAPI ReportBlock();
+    MCNAPI ReportBlock();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

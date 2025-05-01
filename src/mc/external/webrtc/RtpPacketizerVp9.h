@@ -16,23 +16,23 @@ class RtpPacketizerVp9 {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     RtpPacketizerVp9(::rtc::ArrayView<uchar const>, ::webrtc::RtpPacketizer::PayloadSizeLimits, ::webrtc::RTPVideoHeaderVP9 const&);
 
-    MCAPI bool WriteHeader(bool, bool, ::rtc::ArrayView<uchar>) const;
+    MCNAPI bool WriteHeader(bool, bool, ::rtc::ArrayView<uchar>) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::rtc::ArrayView<uchar const>, ::webrtc::RtpPacketizer::PayloadSizeLimits, ::webrtc::RTPVideoHeaderVP9 const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

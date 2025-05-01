@@ -13,7 +13,7 @@ class RTCRemoteOutboundRtpStreamStats {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RTCRemoteOutboundRtpStreamStats(::std::string, ::webrtc::Timestamp);
+    MCNAPI RTCRemoteOutboundRtpStreamStats(::std::string, ::webrtc::Timestamp);
     // NOLINTEND
 
 public:
@@ -25,13 +25,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string, ::webrtc::Timestamp);
+    MCNAPI void* $ctor(::std::string, ::webrtc::Timestamp);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

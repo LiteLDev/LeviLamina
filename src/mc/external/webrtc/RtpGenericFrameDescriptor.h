@@ -8,39 +8,39 @@ class RtpGenericFrameDescriptor {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool AddFrameDependencyDiff(ushort);
+    MCNAPI bool AddFrameDependencyDiff(ushort);
 
-    MCAPI ::rtc::ArrayView<ushort const> FrameDependenciesDiffs() const;
+    MCNAPI ::rtc::ArrayView<ushort const> FrameDependenciesDiffs() const;
 
-    MCAPI ushort FrameId() const;
+    MCNAPI ushort FrameId() const;
 
-    MCAPI RtpGenericFrameDescriptor();
+    MCNAPI RtpGenericFrameDescriptor();
 
-    MCAPI void SetFrameId(ushort);
+    MCNAPI void SetFrameId(ushort);
 
-    MCAPI void SetResolution(int, int);
+    MCNAPI void SetResolution(int, int);
 
-    MCAPI void SetSpatialLayersBitmask(uchar);
+    MCNAPI void SetSpatialLayersBitmask(uchar);
 
-    MCAPI void SetTemporalLayer(int);
+    MCNAPI void SetTemporalLayer(int);
 
-    MCAPI uchar SpatialLayersBitmask() const;
+    MCNAPI uchar SpatialLayersBitmask() const;
 
-    MCAPI int TemporalLayer() const;
+    MCNAPI int TemporalLayer() const;
 
-    MCAPI ~RtpGenericFrameDescriptor();
+    MCNAPI ~RtpGenericFrameDescriptor();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

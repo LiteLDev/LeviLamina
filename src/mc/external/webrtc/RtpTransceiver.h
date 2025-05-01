@@ -36,66 +36,66 @@ class RtpTransceiver {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
         AddReceiver(::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>>);
 
-    MCAPI void AddSender(::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>>);
+    MCNAPI void AddSender(::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>>);
 
-    MCAPI void ClearChannel();
+    MCNAPI void ClearChannel();
 
-    MCAPI ::webrtc::RTCError
+    MCNAPI ::webrtc::RTCError
     CreateChannel(::std::string_view, ::webrtc::Call*, ::cricket::MediaConfig const&, bool, ::webrtc::CryptoOptions, ::cricket::AudioOptions const&, ::cricket::VideoOptions const&, ::webrtc::VideoBitrateAllocatorFactory*, ::std::function<::webrtc::RtpTransportInternal*(::std::string_view)>);
 
-    MCAPI void OnFirstPacketReceived();
+    MCNAPI void OnFirstPacketReceived();
 
-    MCAPI void OnNegotiationUpdate(::webrtc::SdpType, ::cricket::MediaContentDescription const*);
+    MCNAPI void OnNegotiationUpdate(::webrtc::SdpType, ::cricket::MediaContentDescription const*);
 
-    MCAPI void PushNewMediaChannelAndDeleteChannel(::std::unique_ptr<::cricket::ChannelInterface>);
+    MCNAPI void PushNewMediaChannelAndDeleteChannel(::std::unique_ptr<::cricket::ChannelInterface>);
 
-    MCAPI bool RemoveReceiver(::webrtc::RtpReceiverInterface*);
+    MCNAPI bool RemoveReceiver(::webrtc::RtpReceiverInterface*);
 
-    MCAPI bool RemoveSender(::webrtc::RtpSenderInterface*);
+    MCNAPI bool RemoveSender(::webrtc::RtpSenderInterface*);
 
-    MCAPI RtpTransceiver(::cricket::MediaType, ::webrtc::ConnectionContext*);
+    MCNAPI RtpTransceiver(::cricket::MediaType, ::webrtc::ConnectionContext*);
 
-    MCAPI
+    MCNAPI
     RtpTransceiver(::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>>, ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>>, ::webrtc::ConnectionContext*, ::std::vector<::webrtc::RtpHeaderExtensionCapability>, ::std::function<void()>);
 
-    MCAPI void
+    MCNAPI void
         SetChannel(::std::unique_ptr<::cricket::ChannelInterface>, ::std::function<::webrtc::RtpTransportInternal*(::std::string const&)>);
 
-    MCAPI void SetPeerConnectionClosed();
+    MCNAPI void SetPeerConnectionClosed();
 
-    MCAPI void StopSendingAndReceiving();
+    MCNAPI void StopSendingAndReceiving();
 
-    MCAPI void StopTransceiverProcedure();
+    MCNAPI void StopTransceiverProcedure();
 
-    MCAPI ::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal> receiver_internal() const;
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal> receiver_internal() const;
 
-    MCAPI ::webrtc::scoped_refptr<::webrtc::RtpSenderInternal> sender_internal() const;
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpSenderInternal> sender_internal() const;
 
-    MCAPI ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>>>
+    MCNAPI ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>>>
     senders() const;
 
-    MCAPI void set_current_direction(::webrtc::RtpTransceiverDirection);
+    MCNAPI void set_current_direction(::webrtc::RtpTransceiverDirection);
 
-    MCAPI void set_fired_direction(::std::optional<::webrtc::RtpTransceiverDirection>);
+    MCNAPI void set_fired_direction(::std::optional<::webrtc::RtpTransceiverDirection>);
 
-    MCAPI void set_mid(::std::optional<::std::string> const&);
+    MCNAPI void set_mid(::std::optional<::std::string> const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::MediaType, ::webrtc::ConnectionContext*);
+    MCNAPI void* $ctor(::cricket::MediaType, ::webrtc::ConnectionContext*);
 
-    MCAPI void* $ctor(::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>>, ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>>, ::webrtc::ConnectionContext*, ::std::vector<::webrtc::RtpHeaderExtensionCapability>, ::std::function<void()>);
+    MCNAPI void* $ctor(::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>>, ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>>, ::webrtc::ConnectionContext*, ::std::vector<::webrtc::RtpHeaderExtensionCapability>, ::std::function<void()>);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

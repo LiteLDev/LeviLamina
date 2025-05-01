@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/world/actor/ActorFilterGroup.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActorFilterGroup;
 struct SendEventStage;
 // clang-format on
 
@@ -35,14 +35,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SendEventData& operator=(::SendEventData const&);
+    MCNAPI SendEventData();
 
-    MCAPI ~SendEventData();
+    MCNAPI ::SendEventData& operator=(::SendEventData const&);
+
+    MCNAPI ~SendEventData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

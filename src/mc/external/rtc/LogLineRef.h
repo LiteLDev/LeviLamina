@@ -26,15 +26,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string DefaultLogLine() const;
+    MCNAPI ::std::string DefaultLogLine() const;
 
-    MCAPI ~LogLineRef();
+    MCNAPI ~LogLineRef();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -31,13 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool canFloat(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
+    MCNAPI bool canFloat(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
 
-    MCAPI void loadData(::std::string const& data, ::SemVersion const& engineVersion);
+    MCNAPI void loadData(::std::string const& data, ::SemVersion const& engineVersion);
 
-    MCAPI bool
+    MCNAPI bool
     needToResurface(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
 
-    MCAPI ::BuoyancyComponent& operator=(::BuoyancyComponent const&);
+    MCNAPI ::BuoyancyComponent& operator=(::BuoyancyComponent const&);
     // NOLINTEND
 };

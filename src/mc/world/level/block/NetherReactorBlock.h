@@ -4,11 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/ActorBlockBase.h"
-
-// auto generated forward declare list
-// clang-format off
-class BlockLegacy;
-// clang-format on
+#include "mc/world/level/block/BlockLegacy.h"
 
 class NetherReactorBlock : public ::ActorBlock {
 public:
@@ -27,6 +23,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

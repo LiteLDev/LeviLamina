@@ -11,9 +11,9 @@ struct TickingSystemWithInfo;
 namespace CameraInputTransformSystem {
 // functions
 // NOLINTBEGIN
-MCAPI float _getWorldYawDeg(::Vec2 const& orientation);
+MCNAPI float _getWorldYawDeg(::Vec2 const& orientation);
 
-MCAPI ::TickingSystemWithInfo create();
+MCNAPI ::TickingSystemWithInfo create();
 // NOLINTEND
 
 } // namespace CameraInputTransformSystem

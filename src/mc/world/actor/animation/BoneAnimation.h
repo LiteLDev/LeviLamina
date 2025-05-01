@@ -14,21 +14,18 @@ public:
 public:
     // prevent constructor by default
     BoneAnimation& operator=(BoneAnimation const&);
+    BoneAnimation(BoneAnimation const&);
     BoneAnimation();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BoneAnimation(::BoneAnimation const&);
-
-    MCAPI explicit BoneAnimation(::std::string const& name);
+    MCNAPI explicit BoneAnimation(::std::string const& name);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BoneAnimation const&);
-
-    MCAPI void* $ctor(::std::string const& name);
+    MCNAPI void* $ctor(::std::string const& name);
     // NOLINTEND
 };

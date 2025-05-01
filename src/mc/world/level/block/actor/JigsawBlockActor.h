@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/levelgen/structure/JigsawEditorData.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +14,6 @@ class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class ILevel;
-class JigsawEditorData;
 class SaveContext;
 // clang-format on
 
@@ -33,19 +33,19 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 38
+    // vIndex: 39
     virtual ::std::vector<::std::string> getUgcStrings(::CompoundTag const&) const /*override*/;
 
-    // vIndex: 40
+    // vIndex: 41
     virtual void setUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 44
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -55,13 +55,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit JigsawBlockActor(::BlockPos const& pos);
+    MCNAPI explicit JigsawBlockActor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
+    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -73,24 +73,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCFOLD ::std::vector<::std::string> $getUgcStrings(::CompoundTag const&) const;
+    MCNAPI ::std::vector<::std::string> $getUgcStrings(::CompoundTag const&) const;
 
-    MCFOLD void $setUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
+    MCNAPI void $setUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
 
-    MCAPI void $onChanged(::BlockSource& region);
+    MCNAPI void $onChanged(::BlockSource& region);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

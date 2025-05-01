@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
@@ -11,9 +12,9 @@
 // clang-format off
 class Dimension;
 class StrictEntityContext;
-class Vec3;
 struct ActorDataFlagComponent;
 struct ActorDefinitionIdentifier;
+struct ActorUniqueID;
 // clang-format on
 
 struct SoundEventRequest {
@@ -31,11 +32,12 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>   mUnk36ff99;
-        ::ll::UntypedStorage<1, 1>   mUnkad3962;
-        ::ll::UntypedStorage<1, 1>   mUnk9a24f2;
+        ::ll::UntypedStorage<8, 176> mUnk2dde30;
+        ::ll::UntypedStorage<8, 8>   mUnk1e75b0;
         ::ll::UntypedStorage<4, 4>   mUnkd9e8f3;
-        ::ll::UntypedStorage<8, 176> mUnkefd30c;
+        ::ll::UntypedStorage<4, 4>   mUnk36ff99;
+        ::ll::UntypedStorage<1, 1>   mUnk9a24f2;
+        ::ll::UntypedStorage<1, 1>   mUnkad3962;
         // NOLINTEND
 
     public:
@@ -64,11 +66,12 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 176> mUnka6339b;
+        ::ll::UntypedStorage<8, 8>   mUnkfb0b6a;
+        ::ll::UntypedStorage<4, 4>   mUnk8f8bf9;
         ::ll::UntypedStorage<4, 4>   mUnka2d7c8;
         ::ll::UntypedStorage<1, 1>   mUnkf05fad;
         ::ll::UntypedStorage<1, 1>   mUnk53aaf0;
-        ::ll::UntypedStorage<4, 4>   mUnk8f8bf9;
-        ::ll::UntypedStorage<8, 176> mUnkfe2a62;
         // NOLINTEND
 
     public:
@@ -106,7 +109,7 @@ public:
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mEvent;
     ::ll::TypedStorage<
         8,
-        200,
+        208,
         ::std::variant<
             ::SoundEventRequest::PlainData,
             ::SoundEventRequest::SoundData,
@@ -123,26 +126,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SoundEventRequest(::SoundEventRequest&&);
+    MCNAPI SoundEventRequest(::SoundEventRequest&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::SoundEventRequest> tryPlayPredictiveSynchronizedSound(
+    MCNAPI static ::std::optional<::SoundEventRequest> tryPlayPredictiveSynchronizedSound(
+        ::ActorDataFlagComponent const&        actorFlags,
+        ::ActorDefinitionIdentifier const&     identifier,
+        ::ActorUniqueID                        actorId,
         ::DimensionType                        dimension,
-        ::ActorDataFlagComponent const&        actorData,
-        ::ActorDefinitionIdentifier const&     id,
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
         int                                    data,
         bool                                   isGlobal
     );
 
-    MCAPI static ::std::optional<::SoundEventRequest> tryPlaySound(
+    MCNAPI static ::std::optional<::SoundEventRequest> tryPlaySound(
+        ::ActorDataFlagComponent const&        actorFlags,
+        ::ActorDefinitionIdentifier const&     identifier,
+        ::ActorUniqueID                        actorId,
         ::DimensionType                        dimension,
-        ::ActorDataFlagComponent const&        actorData,
-        ::ActorDefinitionIdentifier const&     id,
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::StrictEntityContext const&           entity,
         ::SharedTypes::Legacy::ActorLocation   location,
@@ -153,6 +158,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SoundEventRequest&&);
+    MCNAPI void* $ctor(::SoundEventRequest&&);
     // NOLINTEND
 };

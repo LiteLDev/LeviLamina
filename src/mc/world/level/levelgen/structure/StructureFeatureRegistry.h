@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/v2/ChunkGeneratorStructureState.h"
+#include "mc/world/level/levelgen/v2/StructureCache.h"
+
 // auto generated forward declare list
 // clang-format off
 class BiomeSource;
@@ -10,8 +14,6 @@ class Dimension;
 class HashedString;
 class IPreliminarySurfaceProvider;
 class StructureFeature;
-namespace br::worldgen { class StructureCache; }
-namespace br::worldgen { struct ChunkGeneratorStructureState; }
 // clang-format on
 
 class StructureFeatureRegistry {
@@ -30,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool findNearestStructureFeature(
+    MCNAPI bool findNearestStructureFeature(
         ::Dimension&                    dimension,
         ::IPreliminarySurfaceProvider&  surfaceProvider,
         ::HashedString                  feature,
@@ -41,10 +43,10 @@ public:
         ::std::optional<::HashedString> biomeTag
     );
 
-    MCAPI ::HashedString findStructureFeatureTypeAt(::BlockPos const& pos);
+    MCNAPI ::HashedString findStructureFeatureTypeAt(::BlockPos const& pos);
 
-    MCAPI ::StructureFeature* getStructureFeatureOfType(::HashedString type) const;
+    MCNAPI ::StructureFeature* getStructureFeatureOfType(::HashedString type) const;
 
-    MCAPI bool isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
+    MCNAPI bool isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
     // NOLINTEND
 };

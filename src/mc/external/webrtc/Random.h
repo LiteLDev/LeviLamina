@@ -8,19 +8,19 @@ struct Random {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int Rand(int, int);
+    MCNAPI int Rand(int, int);
 
-    MCAPI uint Rand(uint);
+    MCNAPI uint Rand(uint);
 
-    MCAPI uint Rand(uint, uint);
+    MCNAPI uint Rand(uint, uint);
 
-    MCAPI explicit Random(uint64);
+    MCNAPI explicit Random(uint64);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint64);
+    MCNAPI void* $ctor(uint64);
     // NOLINTEND
 };
 

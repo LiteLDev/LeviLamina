@@ -32,21 +32,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockSourceValidityManager(
+    MCNAPI BlockSourceValidityManager(
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>    dimensionManager,
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
         ::std::unique_ptr<::IBlockSourceValidityProxy>       blockSourceValidityProxy
     );
 
-    MCAPI void checkBlockSourceValidity();
+    MCNAPI void checkBlockSourceValidity();
 
-    MCAPI ~BlockSourceValidityManager();
+    MCNAPI ~BlockSourceValidityManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>    dimensionManager,
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
         ::std::unique_ptr<::IBlockSourceValidityProxy>       blockSourceValidityProxy
@@ -56,6 +56,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

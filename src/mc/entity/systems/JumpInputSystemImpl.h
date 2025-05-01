@@ -16,7 +16,7 @@ struct MovementAbilitiesComponent;
 namespace JumpInputSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void doJumpInputSystem(
+MCNAPI void doJumpInputSystem(
     ::StrictEntityContext const&                  context,
     ::MovementAbilitiesComponent const&           abilitiesComponent,
     ::MoveInputComponent const&                   moveInputComponent,

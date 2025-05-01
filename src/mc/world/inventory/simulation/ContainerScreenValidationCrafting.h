@@ -33,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _appendCraftResult(::ContainerValidationCraftResult& craftResult);
+    MCNAPI void _appendCraftResult(::ContainerValidationCraftResult& craftResult);
     // NOLINTEND
 
 public:
@@ -45,16 +45,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ContainerValidationResult
+    MCNAPI ::ContainerValidationResult
     $tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts);
 
-    MCAPI ::ContainerValidationCraftResult
+    MCNAPI ::ContainerValidationCraftResult
     $getCraftResults(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

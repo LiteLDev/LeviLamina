@@ -34,16 +34,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NoodleCavifier(::NoodleCavifierNoises const& noises, short minWorldHeight);
+    MCNAPI NoodleCavifier(::NoodleCavifierNoises const& noises, short minWorldHeight);
 
-    MCAPI void fillNoiseAtPos(::Vec3 const& worldPos, int bufferIndex, float noiseValue);
+    MCNAPI void fillNoiseAtPos(::Vec3 const& worldPos, int bufferIndex, float noiseValue);
 
-    MCAPI ::std::array<::NoiseCellInterpolator*, 4> getInterpolators(int blocksPerCellXZ, int blocksPerCellY);
+    MCNAPI ::std::array<::NoiseCellInterpolator*, 4> getInterpolators(int blocksPerCellXZ, int blocksPerCellY);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::NoodleCavifierNoises const& noises, short minWorldHeight);
+    MCNAPI void* $ctor(::NoodleCavifierNoises const& noises, short minWorldHeight);
     // NOLINTEND
 };

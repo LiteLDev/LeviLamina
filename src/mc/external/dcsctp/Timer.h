@@ -20,29 +20,29 @@ class Timer {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Start();
+    MCNAPI void Start();
 
-    MCAPI void Stop();
+    MCNAPI void Stop();
 
-    MCAPI
+    MCNAPI
     Timer(::webrtc::StrongAlias<::dcsctp::TimerIDTag, uint>, ::std::string_view, ::std::function<::webrtc::TimeDelta()>, ::std::function<void()>, ::std::unique_ptr<::dcsctp::Timeout>, ::dcsctp::TimerOptions const&);
 
-    MCAPI void Trigger(::webrtc::StrongAlias<::dcsctp::TimerGenerationTag, uint>);
+    MCNAPI void Trigger(::webrtc::StrongAlias<::dcsctp::TimerGenerationTag, uint>);
 
-    MCAPI ~Timer();
+    MCNAPI ~Timer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::webrtc::StrongAlias<::dcsctp::TimerIDTag, uint>, ::std::string_view, ::std::function<::webrtc::TimeDelta()>, ::std::function<void()>, ::std::unique_ptr<::dcsctp::Timeout>, ::dcsctp::TimerOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

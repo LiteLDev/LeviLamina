@@ -34,20 +34,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void finalize(::BlockEvents::BlockEventManager& manager);
+    MCNAPI void finalize(::BlockEvents::BlockEventManager& manager);
 
-    MCAPI void onPlayerDestroy(::BlockEvents::BlockPlayerDestroyEvent const& eventData) const;
+    MCNAPI void onPlayerDestroy(::BlockEvents::BlockPlayerDestroyEvent const& eventData) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

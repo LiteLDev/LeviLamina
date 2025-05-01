@@ -44,12 +44,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    MCNAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

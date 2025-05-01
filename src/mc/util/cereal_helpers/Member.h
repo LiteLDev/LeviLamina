@@ -44,21 +44,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool check(::rapidjson::GenericValue<
-                     ::rapidjson::UTF8<char>,
-                     ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value) const;
+    MCNAPI bool check(::rapidjson::GenericValue<
+                      ::rapidjson::UTF8<char>,
+                      ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value) const;
 
-    MCAPI bool doCheck(::rapidjson::GenericValue<
-                       ::rapidjson::UTF8<char>,
-                       ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value) const;
+    MCNAPI bool doCheck(::rapidjson::GenericValue<
+                        ::rapidjson::UTF8<char>,
+                        ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value) const;
 
-    MCAPI ~Member();
+    MCNAPI ~Member();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

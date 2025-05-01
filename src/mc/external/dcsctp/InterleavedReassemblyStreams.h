@@ -33,32 +33,33 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI int Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>, ::dcsctp::Data);
+        MCNAPI int
+            Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>, ::dcsctp::Data);
 
-        MCAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState&) const;
+        MCNAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState&) const;
 
-        MCAPI uint64
+        MCNAPI uint64
         AssembleMessage(::std::map<
                         ::webrtc::StrongAlias<::dcsctp::FSNTag, uint>,
                         ::std::pair<
                             ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>,
                             ::dcsctp::Data>> const&);
 
-        MCAPI uint64 EraseTo(::webrtc::StrongAlias<::dcsctp::MIDTag, uint>);
+        MCNAPI uint64 EraseTo(::webrtc::StrongAlias<::dcsctp::MIDTag, uint>);
 
-        MCAPI
+        MCNAPI
         Stream(::dcsctp::InterleavedReassemblyStreams::FullStreamId, ::dcsctp::InterleavedReassemblyStreams*, ::webrtc::StrongAlias<::dcsctp::MIDTag, uint>);
 
-        MCAPI uint64
+        MCNAPI uint64
             TryToAssembleMessage(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::MIDTag, uint>>);
 
-        MCAPI uint64 TryToAssembleMessages();
+        MCNAPI uint64 TryToAssembleMessages();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void*
+        MCNAPI void*
         $ctor(::dcsctp::InterleavedReassemblyStreams::FullStreamId, ::dcsctp::InterleavedReassemblyStreams*, ::webrtc::StrongAlias<::dcsctp::MIDTag, uint>);
         // NOLINTEND
     };
@@ -66,24 +67,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::dcsctp::InterleavedReassemblyStreams::Stream&
+    MCNAPI ::dcsctp::InterleavedReassemblyStreams::Stream&
     GetOrCreateStream(::dcsctp::InterleavedReassemblyStreams::FullStreamId const&);
 
-    MCAPI
+    MCNAPI
     InterleavedReassemblyStreams(::std::string_view, ::std::function<void(::rtc::ArrayView<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const>, ::dcsctp::DcSctpMessage)>);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
         $ctor(::std::string_view, ::std::function<void(::rtc::ArrayView<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const>, ::dcsctp::DcSctpMessage)>);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

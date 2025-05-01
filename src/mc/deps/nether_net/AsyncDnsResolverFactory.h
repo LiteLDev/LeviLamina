@@ -55,19 +55,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> $Create();
+    MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> $Create();
 
-    MCAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
+    MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
     $CreateAndResolve(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback);
 
-    MCAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
+    MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
     $CreateAndResolve(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

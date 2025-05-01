@@ -17,10 +17,10 @@ public:
     // vIndex: 0
     virtual ~StoreListenerMultistore() /*override*/ = default;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual void onQueryPurchasesSuccessMultistore(::std::string const&, ::std::vector<::PurchaseInfo> const&) = 0;
 
-    // vIndex: 15
+    // vIndex: 16
     virtual void onQueryPurchasesFailMultistore(::std::string const&) = 0;
     // NOLINTEND
 

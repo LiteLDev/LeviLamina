@@ -13,8 +13,12 @@
 namespace Editor { class EditorStructureTemplate; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class StructureCopyToClipboardPayload; }
+namespace Editor::Network { class StructureDeletePayload; }
+namespace Editor::Network { class StructureDuplicatePayload; }
+namespace Editor::Network { class StructureEditPayload; }
 namespace Editor::Network { class StructureFromClipboardPayload; }
 namespace Editor::Network { class StructureQueryPayload; }
+namespace Editor::Network { class StructureReplaceFromClipboardPayload; }
 // clang-format on
 
 namespace Editor::Services {
@@ -25,6 +29,7 @@ class ServerStructureService : public ::Editor::Services::IEditorService,
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk8a3486;
     ::ll::UntypedStorage<8, 8>  mUnkd54e7f;
     ::ll::UntypedStorage<8, 24> mUnk60d695;
     ::ll::UntypedStorage<8, 24> mUnkb9858c;
@@ -58,47 +63,56 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ServerStructureService(::Editor::ServiceProviderCollection& serviceProviders);
+    MCNAPI ServerStructureService(::Editor::ServiceProviderCollection& serviceProviders, bool isHostInstance);
 
-    MCAPI ::std::vector<::std::string> _getStructureIdList();
+    MCNAPI void _dispatchMetadataToClients();
 
-    MCAPI void _handleCopyToClipboardPayload(::Editor::Network::StructureCopyToClipboardPayload const& payload);
+    MCNAPI void _handleCopyToClipboardPayload(::Editor::Network::StructureCopyToClipboardPayload const& payload);
 
-    MCAPI void _handleQueryPayload(::Editor::Network::StructureQueryPayload const& evt);
+    MCNAPI void _handleDeletePayload(::Editor::Network::StructureDeletePayload const& evt);
 
-    MCAPI void _handleStructureFromClipboardPayload(::Editor::Network::StructureFromClipboardPayload const& payload);
+    MCNAPI void _handleDuplicatePayload(::Editor::Network::StructureDuplicatePayload const& payload);
+
+    MCNAPI void _handleEditPayload(::Editor::Network::StructureEditPayload const& evt);
+
+    MCNAPI void _handleQueryPayload(::Editor::Network::StructureQueryPayload const& evt);
+
+    MCNAPI void _handleStructureFromClipboardPayload(::Editor::Network::StructureFromClipboardPayload const& payload);
+
+    MCNAPI void
+    _handleStructureReplaceFromClipboardPayload(::Editor::Network::StructureReplaceFromClipboardPayload const& payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& serviceProviders);
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& serviceProviders, bool isHostInstance);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCFOLD ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCAPI ::std::optional<::Editor::EditorStructureTemplate> $loadStructure(::std::string const& id);
+    MCNAPI ::std::optional<::Editor::EditorStructureTemplate> $loadStructure(::std::string const& id);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForServerStructureServiceProvider();
+    MCNAPI static void** $vftableForServerStructureServiceProvider();
 
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

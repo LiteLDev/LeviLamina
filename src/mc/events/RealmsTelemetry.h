@@ -36,19 +36,19 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void addCall(int64 realmId, ::Bedrock::Http::Status returnCode, int count);
+        MCNAPI void addCall(int64 realmId, ::Bedrock::Http::Status returnCode, int count);
 
-        MCAPI ::Social::Events::RealmsTelemetry::CallCount getTotalCallCount() const;
+        MCNAPI ::Social::Events::RealmsTelemetry::CallCount getTotalCallCount() const;
 
-        MCAPI ::Json::Value toJson() const;
+        MCNAPI ::Json::Value toJson() const;
 
-        MCAPI ~RealmsCallCount();
+        MCNAPI ~RealmsCallCount();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -68,25 +68,25 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI CallCount(::Social::Events::RealmsTelemetry::CallCount&&);
+        MCNAPI CallCount(::Social::Events::RealmsTelemetry::CallCount&&);
 
-        MCAPI void addAllCalls(::Social::Events::RealmsTelemetry::CallCount const& other);
+        MCNAPI void addAllCalls(::Social::Events::RealmsTelemetry::CallCount const& other);
 
-        MCAPI ::Json::Value toJson() const;
+        MCNAPI ::Json::Value toJson() const;
 
-        MCAPI ~CallCount();
+        MCNAPI ~CallCount();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::Social::Events::RealmsTelemetry::CallCount&&);
+        MCNAPI void* $ctor(::Social::Events::RealmsTelemetry::CallCount&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -109,19 +109,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddGeneralCall(::std::string const& callName, ::Bedrock::Http::Status returnCode);
+    MCNAPI void AddGeneralCall(::std::string const& callName, ::Bedrock::Http::Status returnCode);
 
-    MCAPI void AddRealmCall(::std::string const& callName, int64 realmId, ::Bedrock::Http::Status returnCode);
+    MCNAPI void AddRealmCall(::std::string const& callName, int64 realmId, ::Bedrock::Http::Status returnCode);
 
-    MCAPI void PopulateEvent(::Social::Events::Event& event) const;
+    MCNAPI void PopulateEvent(::Social::Events::Event& event) const;
 
-    MCAPI RealmsTelemetry();
+    MCNAPI RealmsTelemetry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

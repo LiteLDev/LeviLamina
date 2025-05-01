@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -22,12 +25,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _applyCombatBuffsToMob(::Actor& owner, ::Actor& mob);
+    MCNAPI void _applyCombatBuffsToMob(::Actor& owner, ::Actor& mob);
 
-    MCAPI ::CombatRegenerationDefinition const* _getDefinition(::Actor& actor) const;
+    MCNAPI ::CombatRegenerationDefinition const* _getDefinition(::Actor& actor) const;
 
-    MCAPI void _trySendPlayerGeneratedByAxolotlTelemetryEvent(::Player const& player) const;
+    MCNAPI void _trySendPlayerGeneratedByAxolotlTelemetryEvent(::Player const& player) const;
 
-    MCAPI void tick(::Actor& owner);
+    MCNAPI void tick(::Actor& owner);
     // NOLINTEND
 };

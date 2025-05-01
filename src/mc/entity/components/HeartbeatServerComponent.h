@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ExpressionNode;
-class RenderParams;
-// clang-format on
+// auto generated inclusion list
+#include "mc/util/ExpressionNode.h"
+#include "mc/world/actor/RenderParams.h"
 
 struct HeartbeatServerComponent {
 public:
@@ -19,12 +17,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~HeartbeatServerComponent();
+    MCNAPI ~HeartbeatServerComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

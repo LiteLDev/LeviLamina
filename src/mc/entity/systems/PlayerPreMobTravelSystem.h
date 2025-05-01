@@ -10,7 +10,7 @@ struct TickingSystemWithInfo;
 namespace PlayerPreMobTravelSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createStorePositionSystem();
+MCNAPI ::TickingSystemWithInfo createStorePositionSystem();
 // NOLINTEND
 
 } // namespace PlayerPreMobTravelSystem

@@ -74,63 +74,63 @@ public:
     // vIndex: 2
     virtual void tick() /*override*/;
 
-    // vIndex: 23
+    // vIndex: 24
     virtual void onLevelDestruction(::std::string const&) /*override*/;
 
-    // vIndex: 27
+    // vIndex: 28
     virtual void playerListChanged() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _forEachSession(::std::function<bool(::Automation::AutomationSession&)> const& callback);
+    MCNAPI void _forEachSession(::std::function<bool(::Automation::AutomationSession&)> const& callback);
 
-    MCAPI void _removeSession(::Automation::AutomationSession const& session);
+    MCNAPI void _removeSession(::Automation::AutomationSession const& session);
 
-    MCAPI bool _tryAddCommand(::CodeBuilder::CommandRequest&& commandRequest);
+    MCNAPI bool _tryAddCommand(::CodeBuilder::CommandRequest&& commandRequest);
 
-    MCAPI ::std::shared_ptr<::Automation::AutomationSession> getDefaultSession();
+    MCNAPI ::std::shared_ptr<::Automation::AutomationSession> getDefaultSession();
 
-    MCAPI ::std::shared_ptr<::CodeBuilder::GameContext> getGameContext() const;
+    MCNAPI ::std::shared_ptr<::CodeBuilder::GameContext> getGameContext() const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onUri(::ActivationUri const& uri);
+    MCNAPI void $onUri(::ActivationUri const& uri);
 
-    MCAPI void $send(::CodeBuilder::AgentMessage const& message);
+    MCNAPI void $send(::CodeBuilder::AgentMessage const& message);
 
-    MCAPI void $send(::CodeBuilder::CommandMessage const& message);
+    MCNAPI void $send(::CodeBuilder::CommandMessage const& message);
 
-    MCAPI void $send(::CodeBuilder::ErrorMessage const& message);
+    MCNAPI void $send(::CodeBuilder::ErrorMessage const& message);
 
-    MCAPI void $send(::CodeBuilder::EventMessage const& message);
+    MCNAPI void $send(::CodeBuilder::EventMessage const& message);
 
-    MCAPI void $send(::CodeBuilder::ChatMessage const& message);
+    MCNAPI void $send(::CodeBuilder::ChatMessage const& message);
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $onLevelDestruction(::std::string const&);
+    MCNAPI void $onLevelDestruction(::std::string const&);
 
-    MCAPI void $playerListChanged();
+    MCNAPI void $playerListChanged();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForUriListener();
+    MCNAPI static void** $vftableForUriListener();
 
-    MCAPI static void** $vftableForIClient();
+    MCNAPI static void** $vftableForIClient();
 
-    MCAPI static void** $vftableForLevelListener();
+    MCNAPI static void** $vftableForLevelListener();
     // NOLINTEND
 };
 

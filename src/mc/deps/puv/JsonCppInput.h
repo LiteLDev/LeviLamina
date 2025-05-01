@@ -41,21 +41,21 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::SemVersion $version() const;
+    MCNAPI ::SemVersion $version() const;
 
-    MCAPI ::Puv::Input::Data $data() const;
+    MCNAPI ::Puv::Input::Data $data() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

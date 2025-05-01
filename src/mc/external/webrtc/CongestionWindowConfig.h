@@ -13,13 +13,13 @@ struct CongestionWindowConfig {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::webrtc::StructParametersParser> Parser();
+    MCNAPI ::std::unique_ptr<::webrtc::StructParametersParser> Parser();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::CongestionWindowConfig Parse(::std::string_view);
+    MCNAPI static ::webrtc::CongestionWindowConfig Parse(::std::string_view);
     // NOLINTEND
 
 public:

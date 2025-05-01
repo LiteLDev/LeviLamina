@@ -1,0 +1,44 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/editor/network/NetworkPayload.h"
+
+namespace Editor::Network {
+
+class EditorIsRealmsServiceAvailablePayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::EditorIsRealmsServiceAvailablePayload> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkdb4c77;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    EditorIsRealmsServiceAvailablePayload& operator=(EditorIsRealmsServiceAvailablePayload const&);
+    EditorIsRealmsServiceAvailablePayload(EditorIsRealmsServiceAvailablePayload const&);
+    EditorIsRealmsServiceAvailablePayload();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~EditorIsRealmsServiceAvailablePayload() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
+};
+
+} // namespace Editor::Network

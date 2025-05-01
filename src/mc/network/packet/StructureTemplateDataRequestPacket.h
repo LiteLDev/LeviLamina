@@ -4,16 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/NetworkBlockPosition.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/network/packet/StructureTemplateRequestOperation.h"
 #include "mc/platform/Result.h"
+#include "mc/world/level/levelgen/structure/StructureSettings.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class NetworkBlockPosition;
 class ReadOnlyBinaryStream;
-class StructureSettings;
 // clang-format on
 
 class StructureTemplateDataRequestPacket : public ::Packet {
@@ -48,13 +48,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureTemplateDataRequestPacket();
+    MCNAPI StructureTemplateDataRequestPacket();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -66,18 +66,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MinecraftPacketIds $getId() const;
+    MCNAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCAPI void $write(::BinaryStream& stream) const;
+    MCNAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

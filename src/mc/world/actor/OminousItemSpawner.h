@@ -53,25 +53,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OminousItemSpawner(
+    MCNAPI OminousItemSpawner(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _clientTick();
+    MCNAPI void _clientTick();
 
-    MCAPI ::ItemStack const& _getItem();
+    MCNAPI ::ItemStack const& _getItem();
 
-    MCAPI void _onTimePassed();
+    MCNAPI void _onTimePassed();
 
-    MCAPI void init(::ItemStack const& itemToSpawn, int ticksBeforeRemoval);
+    MCNAPI void init(::ItemStack const& itemToSpawn, int ticksBeforeRemoval);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -87,18 +87,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $remove();
+    MCNAPI void $remove();
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $baseTick();
+    MCNAPI void $baseTick();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

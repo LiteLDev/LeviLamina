@@ -20,6 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::OverloadSyntaxInformation& operator=(::OverloadSyntaxInformation&&);
+    MCNAPI ::OverloadSyntaxInformation& operator=(::OverloadSyntaxInformation&&);
     // NOLINTEND
 };

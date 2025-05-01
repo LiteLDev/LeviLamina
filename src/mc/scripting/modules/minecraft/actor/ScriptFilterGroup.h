@@ -16,7 +16,7 @@ class ScriptFilterGroup {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ActorFilterGroup> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ActorFilterGroup> bind();
     // NOLINTEND
 };
 

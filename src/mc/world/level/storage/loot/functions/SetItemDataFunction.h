@@ -60,14 +60,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SetItemDataFunction::ApplyForComplexAliasBlockResult _applyImplForComplexAliasBlock(
+    MCNAPI ::SetItemDataFunction::ApplyForComplexAliasBlockResult _applyImplForComplexAliasBlock(
         ::Item const*&       inOutItemDef,
         ::std::string const& originalItemName,
         ::Random&            random,
         int&                 outResultAux
     );
 
-    MCAPI ::SetItemDataFunction::ApplyForItemResult _applyImplForItem(
+    MCNAPI ::SetItemDataFunction::ApplyForItemResult _applyImplForItem(
         ::std::string const& originalItemName,
         ::std::string const& itemRawNameId,
         ::Random&            random,
@@ -75,13 +75,13 @@ public:
         ::WeakPtr<::Item>&   outItem
     );
 
-    MCAPI void _applyImplForNormalBlock(::Block const*& inOutBlock, ::Random& random);
+    MCNAPI void _applyImplForNormalBlock(::Block const*& inOutBlock, ::Random& random);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    MCNAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
@@ -94,14 +94,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
+    MCNAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
-    MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
+    MCNAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -33,37 +33,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CameraPresetAimAssistDefinition(::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition&&);
+    MCNAPI CameraPresetAimAssistDefinition(::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition&&);
 
-    MCAPI ::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition&
+    MCNAPI ::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition&
     operator=(::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition&&);
 
-    MCAPI bool operator==(::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition const& rhs) const;
+    MCNAPI bool operator==(::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition const& rhs) const;
 
-    MCAPI void write(::BinaryStream& stream) const;
+    MCNAPI void write(::BinaryStream& stream) const;
 
-    MCAPI ~CameraPresetAimAssistDefinition();
+    MCNAPI ~CameraPresetAimAssistDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::Bedrock::Result<::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition>
+    MCNAPI static ::Bedrock::Result<::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition>
     read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

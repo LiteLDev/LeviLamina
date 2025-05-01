@@ -38,7 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
@@ -53,7 +53,7 @@ public:
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface closures
     );
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentNameError,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
@@ -72,7 +72,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

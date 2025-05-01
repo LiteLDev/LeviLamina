@@ -30,27 +30,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onAttributeModified(::AttributeInstance const& attributeInstance);
+    MCNAPI void _onAttributeModified(::AttributeInstance const& attributeInstance);
 
-    MCAPI ::AttributeInstance const& getInstance(::Attribute const& attribute) const;
+    MCNAPI ::AttributeInstance const& getInstance(::Attribute const& attribute) const;
 
-    MCAPI ::AttributeInstance const& getInstance(uint idValue) const;
+    MCNAPI ::AttributeInstance const& getInstance(uint idValue) const;
 
-    MCAPI ::AttributeInstance* getMutableInstance(::HashedString const& name);
+    MCNAPI ::AttributeInstance* getMutableInstance(::HashedString const& name);
 
-    MCAPI ::MutableAttributeWithContext getMutableInstanceWithContext(::Attribute const& attribute);
+    MCNAPI ::MutableAttributeWithContext getMutableInstanceWithContext(::Attribute const& attribute);
 
-    MCAPI ::std::vector<::AttributeInstanceHandle> getSyncableAttributes() const;
+    MCNAPI ::std::vector<::AttributeInstanceHandle> getSyncableAttributes() const;
 
-    MCAPI ::BaseAttributeMap& operator=(::BaseAttributeMap&&);
+    MCNAPI ::BaseAttributeMap& operator=(::BaseAttributeMap&&);
 
-    MCAPI ::AttributeInstance& registerAttribute(::Attribute const& baseAttribute);
+    MCNAPI ::AttributeInstance& registerAttribute(::Attribute const& baseAttribute);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void updateAttribute(
+    MCNAPI static void updateAttribute(
         ::AttributeData const&          attributeData,
         ::AttributeInstance&            attributeInstance,
         ::AttributeModificationContext& context

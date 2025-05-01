@@ -25,15 +25,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit IntRange(int value);
+    MCNAPI explicit IntRange(int value);
 
-    MCAPI IntRange(int min, int max);
+    MCNAPI IntRange(int min, int max);
 
-    MCAPI int getValue(::Random& random) const;
+    MCNAPI int getValue(::Random& random) const;
 
-    MCAPI int getValueInclusive(::Random& random) const;
+    MCNAPI int getValueInclusive(::Random& random) const;
 
-    MCAPI bool parseJson(::Json::Value node, int minDefault, int maxDefault);
+    MCNAPI bool parseJson(::Json::Value node, int minDefault, int maxDefault);
     // NOLINTEND
 
 public:
@@ -45,8 +45,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int value);
+    MCNAPI void* $ctor(int value);
 
-    MCAPI void* $ctor(int min, int max);
+    MCNAPI void* $ctor(int min, int max);
     // NOLINTEND
 };

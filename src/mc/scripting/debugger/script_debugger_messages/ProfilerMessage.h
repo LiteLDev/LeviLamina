@@ -20,9 +20,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ScriptDebuggerMessages::ProfilerMessage& operator=(::ScriptDebuggerMessages::ProfilerMessage const&);
+    MCNAPI ::ScriptDebuggerMessages::ProfilerMessage& operator=(::ScriptDebuggerMessages::ProfilerMessage const&);
 
-    MCFOLD ::ScriptDebuggerMessages::ProfilerMessage& operator=(::ScriptDebuggerMessages::ProfilerMessage&&);
+    MCNAPI ::ScriptDebuggerMessages::ProfilerMessage& operator=(::ScriptDebuggerMessages::ProfilerMessage&&);
     // NOLINTEND
 };
 

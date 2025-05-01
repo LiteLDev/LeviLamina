@@ -29,7 +29,7 @@ struct VehicleComponent;
 namespace CameraInputTransferSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void _tickMoveInputUpdate(
+MCNAPI void _tickMoveInputUpdate(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActiveCameraComponent>,
@@ -52,9 +52,9 @@ MCAPI void _tickMoveInputUpdate(
     ::ViewT<::StrictEntityContext, ::Include<::BoatFlagComponent>, ::Include<::VehicleComponent>> boatView
 );
 
-MCAPI ::TickingSystemWithInfo createMoveInputUpdateSystem();
+MCNAPI ::TickingSystemWithInfo createMoveInputUpdateSystem();
 
-MCAPI ::TickingSystemWithInfo createPlayerActionUpdateSystem();
+MCNAPI ::TickingSystemWithInfo createPlayerActionUpdateSystem();
 // NOLINTEND
 
 } // namespace CameraInputTransferSystem

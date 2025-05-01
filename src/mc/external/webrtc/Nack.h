@@ -11,31 +11,40 @@ namespace webrtc::rtcp {
 
 class Nack {
 public:
+    // Nack inner types declare
+    // clang-format off
+    struct PackedNack;
+    // clang-format on
+
+    // Nack inner types define
+    struct PackedNack {};
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Nack();
+    MCNAPI Nack();
 
-    MCAPI void Pack();
+    MCNAPI void Pack();
 
-    MCAPI bool Parse(::webrtc::rtcp::CommonHeader const&);
+    MCNAPI bool Parse(::webrtc::rtcp::CommonHeader const&);
 
-    MCAPI void SetPacketIds(::std::vector<ushort>);
+    MCNAPI void SetPacketIds(::std::vector<ushort>);
 
-    MCAPI void SetPacketIds(ushort const*, uint64);
+    MCNAPI void SetPacketIds(ushort const*, uint64);
 
-    MCAPI void Unpack();
+    MCNAPI void Unpack();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

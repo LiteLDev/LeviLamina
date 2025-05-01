@@ -46,14 +46,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::IRandom> $forBlockPos(::BlockPos const& blockPos) const;
+    MCNAPI ::std::unique_ptr<::IRandom> $forBlockPos(::BlockPos const& blockPos) const;
 
-    MCAPI ::std::unique_ptr<::IRandom> $forString(::std::string const& string) const;
+    MCNAPI ::std::unique_ptr<::IRandom> $forString(::std::string const& string) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

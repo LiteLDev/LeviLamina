@@ -30,18 +30,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addRandomItem(::std::vector<::ItemStack>& result, ::Random& random, ::LootTableContext& context);
+    MCNAPI void addRandomItem(::std::vector<::ItemStack>& result, ::Random& random, ::LootTableContext& context);
 
-    MCAPI void addRandomItems(::std::vector<::ItemStack>& result, ::Random& random, ::LootTableContext& context);
+    MCNAPI void addRandomItems(::std::vector<::ItemStack>& result, ::Random& random, ::LootTableContext& context);
 
-    MCAPI void deserialize(::Json::Value const& pool, bool usingUpcomingCreatorFeaturesExperiment);
+    MCNAPI void deserialize(::Json::Value const& pool, bool usingUpcomingCreatorFeaturesExperiment);
 
-    MCAPI ~LootPool();
+    MCNAPI ~LootPool();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

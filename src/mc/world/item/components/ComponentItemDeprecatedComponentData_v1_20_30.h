@@ -17,23 +17,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemDeprecatedComponentData_v1_20_30(::ComponentItemDeprecatedComponentData_v1_20_30&&);
+    MCNAPI ComponentItemDeprecatedComponentData_v1_20_30(::ComponentItemDeprecatedComponentData_v1_20_30&&);
 
-    MCAPI ::ComponentItemDeprecatedComponentData_v1_20_30&
+    MCNAPI ::ComponentItemDeprecatedComponentData_v1_20_30&
     operator=(::ComponentItemDeprecatedComponentData_v1_20_30 const&);
 
-    MCAPI ~ComponentItemDeprecatedComponentData_v1_20_30();
+    MCNAPI ~ComponentItemDeprecatedComponentData_v1_20_30();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ComponentItemDeprecatedComponentData_v1_20_30&&);
+    MCNAPI void* $ctor(::ComponentItemDeprecatedComponentData_v1_20_30&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -16,25 +16,25 @@ struct AbsoluteCaptureTimeSender {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AbsoluteCaptureTimeSender(::webrtc::Clock*);
+    MCNAPI explicit AbsoluteCaptureTimeSender(::webrtc::Clock*);
 
-    MCAPI ::std::optional<::webrtc::AbsoluteCaptureTime>
+    MCNAPI ::std::optional<::webrtc::AbsoluteCaptureTime>
     OnSendPacket(uint, uint, int, ::webrtc::NtpTime, ::std::optional<int64>, bool);
 
-    MCAPI bool
+    MCNAPI bool
     ShouldSendExtension(::webrtc::Timestamp, uint, uint, int, ::webrtc::NtpTime, ::std::optional<int64>) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static uint GetSource(uint, ::rtc::ArrayView<uint const>);
+    MCNAPI static uint GetSource(uint, ::rtc::ArrayView<uint const>);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::Clock*);
+    MCNAPI void* $ctor(::webrtc::Clock*);
     // NOLINTEND
 };
 

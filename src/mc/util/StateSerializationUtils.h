@@ -8,7 +8,7 @@
 namespace StateSerializationUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::WallConnectionType fromJavaNbtString(::std::string const& tag);
+MCNAPI ::WallConnectionType fromJavaNbtString(::std::string const& tag);
 // NOLINTEND
 
 } // namespace StateSerializationUtils

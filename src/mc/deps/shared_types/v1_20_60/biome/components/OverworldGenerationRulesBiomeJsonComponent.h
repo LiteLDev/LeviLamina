@@ -39,13 +39,22 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~WeightedBiomeName();
+        MCNAPI ~WeightedBiomeName();
+        // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCNAPI static void fromString(
+            ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeName& instance,
+            ::std::string const&                                                                    str
+        );
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -65,7 +74,12 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void fromVector(
+        MCNAPI static void fromString(
+            ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeNameVector& instance,
+            ::std::string const&                                                                          str
+        );
+
+        MCNAPI static void fromVector(
             ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeNameVector& instance,
             ::std::vector<::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeName>&
                 entries
@@ -89,7 +103,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
     };
 
@@ -118,17 +132,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent&
+    MCNAPI ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent&
     operator=(::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent&&);
 
-    MCAPI ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent&
+    MCNAPI ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent&
     operator=(::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -148,7 +162,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -20,23 +20,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addHeader(::std::string const& headerName, ::std::string const& headerValue, bool setValue);
+    MCNAPI void _addHeader(::std::string const& headerName, ::std::string const& headerValue, bool setValue);
 
-    MCAPI void add(::std::string const& headerName, ::std::string const& headerValue);
+    MCNAPI void add(::std::string const& headerName, ::std::string const& headerValue);
 
-    MCAPI void addNoSafetyChecks(::std::string const& headerName, ::std::string const& headerValue);
+    MCNAPI void addNoSafetyChecks(::std::string const& headerName, ::std::string const& headerValue);
 
-    MCAPI ::std::string const& get(::std::string const& headerName) const;
+    MCNAPI ::std::string const& get(::std::string const& headerName) const;
 
-    MCAPI void set(::std::string const& headerName, ::std::string const& headerValue);
+    MCNAPI void set(::std::string const& headerName, ::std::string const& headerValue);
 
-    MCAPI ~HeaderCollection();
+    MCNAPI ~HeaderCollection();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

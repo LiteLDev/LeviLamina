@@ -30,24 +30,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptComponentTypeEnumBuilder(::ScriptModuleMinecraft::ScriptComponentType componentType);
+    MCNAPI explicit ScriptComponentTypeEnumBuilder(::ScriptModuleMinecraft::ScriptComponentType componentType);
 
-    MCAPI ::Scripting::EnumBindingBuilder<::std::string, ::std::string>
+    MCNAPI ::Scripting::EnumBindingBuilder<::std::string, ::std::string>
     bind(::std::optional<::Scripting::Version> releaseVersion);
 
-    MCAPI ~ScriptComponentTypeEnumBuilder();
+    MCNAPI ~ScriptComponentTypeEnumBuilder();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptComponentType componentType);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptComponentType componentType);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

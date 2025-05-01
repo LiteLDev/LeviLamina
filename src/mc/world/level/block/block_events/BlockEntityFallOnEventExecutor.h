@@ -7,12 +7,12 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace BlockEvents { class BlockEventBase; }
+namespace BlockEvents { class BlockEntityFallOnEvent; }
 // clang-format on
 
 namespace BlockEvents {
 
-class BlockEntityFallOnEventExecutor : public ::BlockEvents::BlockEventExecutor {
+class BlockEntityFallOnEventExecutor : public ::BlockEvents::BlockEventExecutor<::BlockEvents::BlockEntityFallOnEvent> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -28,8 +28,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual void dispatch(::BlockEvents::BlockEventBase& eventData) const /*override*/;
+    // vIndex: 2
+    virtual void dispatch(::BlockEvents::BlockEntityFallOnEvent& eventData) const /*override*/;
 
     // vIndex: 0
     virtual ~BlockEntityFallOnEventExecutor() /*override*/ = default;
@@ -44,13 +44,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $dispatch(::BlockEvents::BlockEventBase& eventData) const;
+    MCNAPI void $dispatch(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

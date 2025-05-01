@@ -34,18 +34,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $add(::std::string const& key, ::std::string const& value);
+    MCNAPI bool $add(::std::string const& key, ::std::string const& value);
 
-    MCFOLD bool $addOrUpdate(::std::string const& key, ::std::string const& value);
+    MCNAPI bool $addOrUpdate(::std::string const& key, ::std::string const& value);
 
-    MCFOLD bool $remove(::std::string const& key);
+    MCNAPI bool $remove(::std::string const& key);
 
-    MCFOLD bool $get(::std::string const& key, ::std::string& outValue);
+    MCNAPI bool $get(::std::string const& key, ::std::string& outValue);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

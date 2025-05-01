@@ -21,7 +21,7 @@ class FlatFileOperations {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Core::Result copyFlatFile(
+    MCNAPI static ::Core::Result copyFlatFile(
         ::Core::FileSystemImpl*                    sourceTransaction,
         ::Core::PathView                           sourceDirectoryPath,
         ::Core::FileSystemImpl*                    targetTransaction,
@@ -30,7 +30,7 @@ public:
         ::std::vector<::Core::ExcludedPath> const& excludedFiles
     );
 
-    MCAPI static ::Core::Result createFlatFile(
+    MCNAPI static ::Core::Result createFlatFile(
         ::Core::FileSystemImpl*                    sourceTransaction,
         ::Core::PathView                           sourceDirectoryPath,
         ::Core::FileSystemImpl*                    targetTransaction,
@@ -39,20 +39,20 @@ public:
         bool                                       deleteSourceDirectory
     );
 
-    MCAPI static ::Core::Result createFlatFileManifest(
+    MCNAPI static ::Core::Result createFlatFileManifest(
         ::Core::FileSystemImpl&                            transaction,
         ::Core::PathView                                   flatFileManifestPath,
         ::std::vector<::Core::FlatFileManifestInfo> const& manifestInfoVector
     );
 
-    MCAPI static ::Core::Result replaceFlatFileManifest(
+    MCNAPI static ::Core::Result replaceFlatFileManifest(
         ::Core::FileSystemImpl&                            transaction,
         ::Core::PathView                                   flatFileManifestPath,
         ::std::vector<::Core::FlatFileManifestInfo> const& manifestInfoVector,
         bool                                               keepCached
     );
 
-    MCAPI static ::Core::Result transferFlatFileDirectory(
+    MCNAPI static ::Core::Result transferFlatFileDirectory(
         ::Core::FileSystemImpl* sourceTransaction,
         ::Core::PathView        sourceDirectoryPath,
         ::Core::FileSystemImpl* targetTransaction,

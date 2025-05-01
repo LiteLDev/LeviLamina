@@ -46,7 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DeferredScriptCommand(
+    MCNAPI DeferredScriptCommand(
         ::std::unique_ptr<::ScriptCommand>  scriptCommand,
         ::std::unique_ptr<::CommandContext> commandContext,
         ::Scripting::WeakLifetimeScope      scope,
@@ -60,7 +60,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::ScriptCommand>  scriptCommand,
         ::std::unique_ptr<::CommandContext> commandContext,
         ::Scripting::WeakLifetimeScope      scope,
@@ -74,18 +74,18 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::MinecraftCommands& commands);
+    MCNAPI void $execute(::MinecraftCommands& commands);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -27,15 +27,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SeatDescription();
+    MCNAPI SeatDescription();
 
-    MCAPI SeatDescription(::SeatDescription const&);
+    MCNAPI SeatDescription(::SeatDescription const&);
 
-    MCAPI void addRotationExpressionNode(::ExpressionNode const& node);
+    MCNAPI void addRotationExpressionNode(::ExpressionNode const& node);
 
-    MCAPI bool operator==(::SeatDescription const& seat) const;
+    MCNAPI bool operator==(::SeatDescription const& seat) const;
 
-    MCAPI ~SeatDescription();
+    MCNAPI ~SeatDescription();
     // NOLINTEND
 
 public:
@@ -47,14 +47,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::SeatDescription const&);
+    MCNAPI void* $ctor(::SeatDescription const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

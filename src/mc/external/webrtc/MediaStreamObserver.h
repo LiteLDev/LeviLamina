@@ -15,19 +15,20 @@ class MediaStreamObserver {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MediaStreamObserver(::webrtc::MediaStreamInterface*, ::std::function<void(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*)>, ::std::function<void(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*)>, ::std::function<void(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*)>, ::std::function<void(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*)>);
+    MCNAPI MediaStreamObserver(::webrtc::MediaStreamInterface*, ::std::function<void(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*)>, ::std::function<void(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*)>, ::std::function<void(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*)>, ::std::function<void(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*)>);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::MediaStreamInterface*, ::std::function<void(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*)>, ::std::function<void(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*)>, ::std::function<void(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*)>, ::std::function<void(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*)>);
+    MCNAPI void*
+    $ctor(::webrtc::MediaStreamInterface*, ::std::function<void(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*)>, ::std::function<void(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*)>, ::std::function<void(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*)>, ::std::function<void(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*)>);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

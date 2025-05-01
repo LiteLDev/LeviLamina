@@ -55,27 +55,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int Elapsed() const;
+    MCNAPI int Elapsed() const;
 
-    MCAPI void Send(::webrtc::TimeDelta);
+    MCNAPI void Send(::webrtc::TimeDelta);
 
-    MCAPI void SendDelayed(::webrtc::TimeDelta);
+    MCNAPI void SendDelayed(::webrtc::TimeDelta);
 
-    MCAPI void SendInternal();
+    MCNAPI void SendInternal();
 
-    MCAPI StunRequest(::cricket::StunRequestManager&, ::std::unique_ptr<::cricket::StunMessage>);
+    MCNAPI StunRequest(::cricket::StunRequestManager&, ::std::unique_ptr<::cricket::StunMessage>);
 
-    MCAPI ::cricket::StunMessage const* msg() const;
+    MCNAPI ::cricket::StunMessage const* msg() const;
 
-    MCAPI void set_timed_out();
+    MCNAPI void set_timed_out();
 
-    MCAPI int type();
+    MCNAPI int type();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::StunRequestManager&, ::std::unique_ptr<::cricket::StunMessage>);
+    MCNAPI void* $ctor(::cricket::StunRequestManager&, ::std::unique_ptr<::cricket::StunMessage>);
     // NOLINTEND
 
 public:
@@ -93,7 +93,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

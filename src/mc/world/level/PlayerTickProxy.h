@@ -50,21 +50,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     $preReplicationTick(::ServerPlayer& serverPlayer, ::Tick const& currentTick, ::EntityContext& userEntity);
 
-    MCAPI void $playerTick(::Player& player, ::Tick const& currentTick);
+    MCNAPI void $playerTick(::Player& player, ::Tick const& currentTick);
 
-    MCAPI void $clearDimensionPlayerReplicationList(::Dimension& dimension);
+    MCNAPI void $clearDimensionPlayerReplicationList(::Dimension& dimension);
 
-    MCAPI void $processDimensionPlayerReplication(::Dimension& dimension);
+    MCNAPI void $processDimensionPlayerReplication(::Dimension& dimension);
 
-    MCAPI void $postReplicationtick(::ServerPlayer& serverPlayer, ::Tick const& currentTick);
+    MCNAPI void $postReplicationtick(::ServerPlayer& serverPlayer, ::Tick const& currentTick);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

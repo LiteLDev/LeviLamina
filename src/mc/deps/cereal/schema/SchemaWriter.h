@@ -84,7 +84,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isSequenceWriter() const;
+    MCNAPI bool $isSequenceWriter() const;
     // NOLINTEND
 };
 

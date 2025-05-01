@@ -8,37 +8,43 @@ struct DcSctpSocketHandoverState {
 public:
     // DcSctpSocketHandoverState inner types declare
     // clang-format off
+    struct OrderedStream;
     struct OutgoingStream;
     struct Receive;
+    struct UnorderedStream;
     // clang-format on
 
     // DcSctpSocketHandoverState inner types define
+    struct OrderedStream {};
+
     struct OutgoingStream {};
 
     struct Receive {
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Receive();
+        MCNAPI ~Receive();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
+
+    struct UnorderedStream {};
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~DcSctpSocketHandoverState();
+    MCNAPI ~DcSctpSocketHandoverState();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

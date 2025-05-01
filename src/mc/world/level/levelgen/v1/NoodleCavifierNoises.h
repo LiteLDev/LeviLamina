@@ -25,26 +25,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NoodleCavifierNoises(::NoodleCavifierNoises const&);
+    MCNAPI NoodleCavifierNoises(::NoodleCavifierNoises const&);
 
-    MCAPI ~NoodleCavifierNoises();
+    MCNAPI ~NoodleCavifierNoises();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::NoodleCavifierNoises make(::XoroshiroPositionalRandomFactory const& randomFactory);
+    MCNAPI static ::NoodleCavifierNoises make(::XoroshiroPositionalRandomFactory const& randomFactory);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::NoodleCavifierNoises const&);
+    MCNAPI void* $ctor(::NoodleCavifierNoises const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

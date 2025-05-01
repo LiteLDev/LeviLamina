@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/world/actor/ActorFilterGroup.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActorFilterGroup;
 class Mob;
-class Vec3;
-struct Tick;
 // clang-format on
 
 class NapGoal : public ::Goal {
@@ -53,7 +53,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NapGoal(
+    MCNAPI NapGoal(
         ::Mob&                    mob,
         float                     cooldownTimeMin,
         float                     cooldownTimeMax,
@@ -63,15 +63,15 @@ public:
         ::ActorFilterGroup const& wakeMobExceptions
     );
 
-    MCAPI bool _canSleep(::Tick const& currentTick) const;
+    MCNAPI bool _canSleep(::Tick const& currentTick) const;
 
-    MCAPI bool _detectsMobs() const;
+    MCNAPI bool _detectsMobs() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Mob&                    mob,
         float                     cooldownTimeMin,
         float                     cooldownTimeMax,
@@ -91,20 +91,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

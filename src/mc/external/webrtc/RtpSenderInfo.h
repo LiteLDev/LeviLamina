@@ -13,21 +13,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RtpSenderInfo(::webrtc::RtpSenderInfo&&);
+    MCNAPI RtpSenderInfo(::webrtc::RtpSenderInfo&&);
 
-    MCAPI ~RtpSenderInfo();
+    MCNAPI ~RtpSenderInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::RtpSenderInfo&&);
+    MCNAPI void* $ctor(::webrtc::RtpSenderInfo&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

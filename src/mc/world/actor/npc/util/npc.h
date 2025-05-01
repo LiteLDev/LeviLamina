@@ -17,18 +17,18 @@ namespace npc { struct UrlAction; }
 namespace npc {
 // functions
 // NOLINTBEGIN
-MCAPI void
+MCNAPI void
 fillCommands(::npc::CommandAction& cmd, ::std::vector<::std::string_view> const& src, ::CurrentCmdVersion ver);
 
-MCAPI ::std::optional<::std::variant<::npc::CommandAction, ::npc::UrlAction>> fromJson(::Json::Value const& root);
+MCNAPI ::std::optional<::std::variant<::npc::CommandAction, ::npc::UrlAction>> fromJson(::Json::Value const& root);
 
-MCAPI ::Json::Value toJson(::npc::CommandAction const& action);
+MCNAPI ::Json::Value toJson(::npc::CommandAction const& action);
 
-MCAPI ::Json::Value toJson(::npc::ActionContainer const& container);
+MCNAPI ::Json::Value toJson(::npc::ActionContainer const& container);
 
-MCAPI ::Json::Value toJson(::npc::UrlAction const& urlAction);
+MCNAPI ::Json::Value toJson(::npc::UrlAction const& urlAction);
 
-MCAPI ::std::string toString(::npc::ActionContainer const& container);
+MCNAPI ::std::string toString(::npc::ActionContainer const& container);
 // NOLINTEND
 
 // static variables

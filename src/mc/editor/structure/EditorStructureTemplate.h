@@ -28,8 +28,10 @@ public:
     ::ll::UntypedStorage<8, 88> mUnkb140e7;
     ::ll::UntypedStorage<8, 32> mUnkfcd3e5;
     ::ll::UntypedStorage<8, 24> mUnk30c525;
+    ::ll::UntypedStorage<4, 12> mUnkd4367e;
     ::ll::UntypedStorage<8, 32> mUnk8b0f70;
     ::ll::UntypedStorage<8, 32> mUnkbc4997;
+    ::ll::UntypedStorage<8, 32> mUnk363497;
     // NOLINTEND
 
 public:
@@ -66,33 +68,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EditorStructureTemplate(::Editor::EditorStructureTemplate const&);
+    MCNAPI EditorStructureTemplate(::Editor::EditorStructureTemplate const&);
 
-    MCAPI explicit EditorStructureTemplate(::std::string_view name);
+    MCNAPI explicit EditorStructureTemplate(::std::string_view name);
 
-    MCAPI EditorStructureTemplate(
+    MCNAPI EditorStructureTemplate(
         ::StructureTemplate const&                              temp,
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
     );
 
-    MCAPI void placeStructureTemplateInWorldForEditor(
+    MCNAPI void placeStructureTemplateInWorldForEditor(
         ::BlockSource&             region,
         ::BlockPalette const&      transformedBounds,
         ::BoundingBox const&       structureSettings,
         ::StructureSettings const& globalBlockPalette
     ) const;
 
-    MCAPI void setLocation(::std::string location);
+    MCNAPI void setLocation(::std::string location);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::EditorStructureTemplate const&);
+    MCNAPI void* $ctor(::Editor::EditorStructureTemplate const&);
 
-    MCAPI void* $ctor(::std::string_view name);
+    MCNAPI void* $ctor(::std::string_view name);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::StructureTemplate const&                              temp,
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
     );
@@ -101,30 +103,30 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $clear();
+    MCNAPI void $clear();
 
-    MCAPI bool $load(::CompoundTag const& tag);
+    MCNAPI bool $load(::CompoundTag const& tag);
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $save() const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> $save() const;
 
-    MCAPI ::BoundingBox
+    MCNAPI ::BoundingBox
     $getTransformedBounds(::BlockPos loadPosition, ::StructureSettings const& structureSettings) const;
 
-    MCAPI bool $_allowReadBlock(::BlockPos const& position, ::Block const& block) const;
+    MCNAPI bool $_allowReadBlock(::BlockPos const& position, ::Block const& block) const;
 
-    MCFOLD bool $_allowReadActor(::Actor const& actor) const;
+    MCNAPI bool $_allowReadActor(::Actor const& actor) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

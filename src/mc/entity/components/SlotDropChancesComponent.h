@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/EquipmentTableDropChance.h"
+
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
@@ -20,8 +23,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void readAdditionalSaveData(::CompoundTag const& tag);
+    MCNAPI void readAdditionalSaveData(::CompoundTag const& tag);
     // NOLINTEND
 };

@@ -8,7 +8,7 @@ struct shared_ptr_cache {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void remove(void*);
+    MCNAPI static void remove(void*);
     // NOLINTEND
 };
 

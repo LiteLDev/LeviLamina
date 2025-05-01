@@ -85,29 +85,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Arrow(
+    MCNAPI Arrow(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void addMobEffect(::MobEffectInstance effect);
+    MCNAPI void addMobEffect(::MobEffectInstance effect);
 
-    MCAPI int getAuxValue() const;
+    MCNAPI int getAuxValue() const;
 
-    MCAPI void setCritical(bool isCrit);
+    MCNAPI void setCritical(bool isCrit);
 
-    MCAPI void setEnchantFlame(int level);
+    MCNAPI void setEnchantFlame(int level);
 
-    MCAPI void setEnchantPower(int level);
+    MCNAPI void setEnchantPower(int level);
 
-    MCAPI void setEnchantPunch(int level);
+    MCNAPI void setEnchantPunch(int level);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -123,30 +123,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
+    MCNAPI void $shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
 
-    MCAPI void $normalTick();
+    MCNAPI void $normalTick();
 
-    MCAPI void $playerTouch(::Player& player);
+    MCNAPI void $playerTouch(::Player& player);
 
-    MCAPI void $setAuxValue(int aux);
+    MCNAPI void $setAuxValue(int aux);
 
-    MCAPI ::ItemStack $_getPickupItem() const;
+    MCNAPI ::ItemStack $_getPickupItem() const;
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $applyParticleColor(::Particle* p);
+    MCNAPI void $applyParticleColor(::Particle* p);
 
-    MCAPI ::mce::Color $getEffectColor();
+    MCNAPI ::mce::Color $getEffectColor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

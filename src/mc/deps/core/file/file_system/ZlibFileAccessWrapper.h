@@ -27,20 +27,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ZlibFileAccessWrapper(::Bedrock::NotNullNonOwnerPtr<::IFileAccess> fileAccess);
+    MCNAPI explicit ZlibFileAccessWrapper(::Bedrock::NotNullNonOwnerPtr<::IFileAccess> fileAccess);
 
-    MCAPI ~ZlibFileAccessWrapper();
+    MCNAPI ~ZlibFileAccessWrapper();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IFileAccess> fileAccess);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IFileAccess> fileAccess);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -40,23 +40,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> _destroyServices();
+    MCNAPI ::Scripting::Result<void> _destroyServices();
 
-    MCAPI ::Scripting::Result<void> _initServices();
+    MCNAPI ::Scripting::Result<void> _initServices();
 
-    MCAPI ::Scripting::Result<void> _readyServices();
+    MCNAPI ::Scripting::Result<void> _readyServices();
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     _registerAndInitServiceList(::std::vector<::std::unique_ptr<::Editor::Services::IEditorService>> serviceList);
 
-    MCAPI ::Scripting::Result_deprecated<::Editor::Services::IEditorService*>
+    MCNAPI ::Scripting::Result_deprecated<::Editor::Services::IEditorService*>
     _registerService(::std::unique_ptr<::Editor::Services::IEditorService> servicePtr);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -68,7 +68,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

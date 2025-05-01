@@ -165,103 +165,103 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AppConfigs();
+    MCNAPI AppConfigs();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $loadFromData(::IAppConfigData const&);
+    MCNAPI void $loadFromData(::IAppConfigData const&);
 
-    MCFOLD bool $arePremiumSkinPacksAllowed() const;
+    MCNAPI bool $arePremiumSkinPacksAllowed() const;
 
-    MCFOLD bool $areResourcePacksAllowed() const;
+    MCNAPI bool $areResourcePacksAllowed() const;
 
-    MCFOLD bool $isPlayScreenAllowed() const;
+    MCNAPI bool $isPlayScreenAllowed() const;
 
-    MCFOLD bool $isChatScreenAllowed() const;
+    MCNAPI bool $isChatScreenAllowed() const;
 
-    MCFOLD bool $isGameTabShownInSettings() const;
+    MCNAPI bool $isGameTabShownInSettings() const;
 
-    MCFOLD bool $areEmotesSupported() const;
+    MCNAPI bool $areEmotesSupported() const;
 
-    MCFOLD bool $useNormalizedFontSize() const;
+    MCNAPI bool $useNormalizedFontSize() const;
 
-    MCFOLD bool $useFullScreenByDefault() const;
+    MCNAPI bool $useFullScreenByDefault() const;
 
-    MCFOLD bool $muteByDefault() const;
+    MCNAPI bool $muteByDefault() const;
 
-    MCFOLD bool $isCoursesCacheEnabled() const;
+    MCNAPI bool $isCoursesCacheEnabled() const;
 
-    MCFOLD bool $shouldPromptBeforeExit() const;
+    MCNAPI bool $shouldPromptBeforeExit() const;
 
-    MCFOLD bool $gameArgumentsNeedAuthentication() const;
+    MCNAPI bool $gameArgumentsNeedAuthentication() const;
 
-    MCFOLD bool $worldBuilderDisabled() const;
+    MCNAPI bool $worldBuilderDisabled() const;
 
-    MCFOLD bool $worldsAreSingleUse() const;
+    MCNAPI bool $worldsAreSingleUse() const;
 
-    MCFOLD ::EducationEditionOffer $getEducationEditionOffering() const;
+    MCNAPI ::EducationEditionOffer $getEducationEditionOffering() const;
 
-    MCFOLD bool $requireTrustedContent() const;
+    MCNAPI bool $requireTrustedContent() const;
 
-    MCFOLD bool $isExternalPlayerCommunicationAllowed() const;
+    MCNAPI bool $isExternalPlayerCommunicationAllowed() const;
 
-    MCAPI bool $supports3DExport() const;
+    MCNAPI bool $supports3DExport() const;
 
-    MCFOLD bool $requireEduLevelSettings() const;
+    MCNAPI bool $requireEduLevelSettings() const;
 
-    MCAPI ::ConnectionDefinition $getConnectionDefinition() const;
+    MCNAPI ::ConnectionDefinition $getConnectionDefinition() const;
 
-    MCFOLD bool $supportsChangingMultiplayerDuringPlay() const;
+    MCNAPI bool $supportsChangingMultiplayerDuringPlay() const;
 
-    MCFOLD bool $webSocketsDisabled() const;
+    MCNAPI bool $webSocketsDisabled() const;
 
-    MCFOLD bool $sendPermissionsTelemetry() const;
+    MCNAPI bool $sendPermissionsTelemetry() const;
 
-    MCFOLD bool $useEduDemoUpsellDialog() const;
+    MCNAPI bool $useEduDemoUpsellDialog() const;
 
-    MCFOLD bool $allowGameArguments() const;
+    MCNAPI bool $allowGameArguments() const;
 
-    MCFOLD bool $canUseAzureNotebooks() const;
+    MCNAPI bool $canUseAzureNotebooks() const;
 
-    MCFOLD ::AppConfigs::MaelstromEduUsabilityStatus $canUseMaelstrom() const;
+    MCNAPI ::AppConfigs::MaelstromEduUsabilityStatus $canUseMaelstrom() const;
 
-    MCFOLD bool $isSaveToCloudOn() const;
+    MCNAPI bool $isSaveToCloudOn() const;
 
-    MCFOLD bool $isEduAIOn() const;
+    MCNAPI bool $isEduAIOn() const;
 
-    MCFOLD void $setCanAccessWorldCallback(::IMinecraftGame& minecraftGame);
+    MCNAPI void $setCanAccessWorldCallback(::IMinecraftGame& minecraftGame);
 
-    MCAPI ::std::vector<::PackIdVersion> $getAdditionalClientPacks(bool enteringLevel) const;
+    MCNAPI ::std::vector<::PackIdVersion> $getAdditionalClientPacks(bool enteringLevel) const;
 
-    MCAPI ::std::unique_ptr<::IScreenCapabilities> $getScreenCapabilities(::std::string const& screenName) const;
+    MCNAPI ::std::unique_ptr<::IScreenCapabilities> $getScreenCapabilities(::std::string const& screenName) const;
 
-    MCAPI ::std::unique_ptr<::IContentAccessibilityProvider>
+    MCNAPI ::std::unique_ptr<::IContentAccessibilityProvider>
     $createContentAccessibility(::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager) const;
 
-    MCAPI ::std::string $getFeedbackURL() const;
+    MCNAPI ::std::string $getFeedbackURL() const;
 
-    MCAPI ::std::string $getHelpCenterURL() const;
+    MCNAPI ::std::string $getHelpCenterURL() const;
 
-    MCFOLD void $applyLevelDataOverride(::LevelData&) const;
+    MCNAPI void $applyLevelDataOverride(::LevelData&) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

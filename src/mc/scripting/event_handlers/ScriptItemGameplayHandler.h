@@ -36,13 +36,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _handleItemUseEvent(
+    MCNAPI bool _handleItemUseEvent(
         ::ItemUseEvent&                                                                   itemEvent,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     );
 
-    MCAPI bool _handleItemUseOnEvent(
+    MCNAPI bool _handleItemUseOnEvent(
         ::ItemUseOnEvent&                                                                 itemEvent,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
@@ -58,14 +58,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ItemUseOnEvent& itemEvent);
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ItemUseOnEvent& itemEvent);
 
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ItemUseEvent& itemEvent);
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ItemUseEvent& itemEvent);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

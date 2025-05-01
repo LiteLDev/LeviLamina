@@ -50,58 +50,58 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ErrorLocalization();
+        MCNAPI ~ErrorLocalization();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _getObjectsFromTextObject(
+    MCNAPI static bool _getObjectsFromTextObject(
         ::Json::Value const&                   root,
         ::TextObjectRoot&                      parsedObject,
         ::TextObjectParser::ServerData*        serverData,
         ::TextObjectParser::ErrorLocalization& errorLocalization
     );
 
-    MCAPI static bool _parseScoreTextObject(
+    MCNAPI static bool _parseScoreTextObject(
         ::TextObjectRoot&                      parentTextObject,
         ::Json::Value const&                   scoreObject,
         ::TextObjectParser::ServerData*        serverData,
         ::TextObjectParser::ErrorLocalization& errorLocalization
     );
 
-    MCAPI static bool _parseSelectorTextObject(
+    MCNAPI static bool _parseSelectorTextObject(
         ::TextObjectRoot&                      parentTextObject,
         ::std::string                          selectorString,
         ::TextObjectParser::ServerData*        serverData,
         ::TextObjectParser::ErrorLocalization& errorLocalization
     );
 
-    MCAPI static bool _textObjectFromJson(
+    MCNAPI static bool _textObjectFromJson(
         ::Json::Value const&                   root,
         ::TextObjectRoot&                      parsedObject,
         ::TextObjectParser::ServerData*        serverData,
         ::TextObjectParser::ErrorLocalization& errorLocalization
     );
 
-    MCAPI static bool _textObjectFromString(
+    MCNAPI static bool _textObjectFromString(
         ::std::string const&                   jsonAsString,
         ::TextObjectRoot&                      parsedObject,
         ::TextObjectParser::ServerData*        errorLocalization,
         ::TextObjectParser::ErrorLocalization& serverData
     );
 
-    MCAPI static bool
+    MCNAPI static bool
     textObjectFromJson(::Json::Value const& root, ::TextObjectRoot& parsedObject, ::std::string& errorMsg);
 
-    MCAPI static bool textObjectFromJsonString(
+    MCNAPI static bool textObjectFromJsonString(
         ::std::string const& jsonAsString,
         ::TextObjectRoot&    parsedObject,
         ::std::string&       errorMsg

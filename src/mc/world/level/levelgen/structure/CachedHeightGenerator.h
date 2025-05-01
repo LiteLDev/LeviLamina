@@ -13,7 +13,7 @@ class Dimension;
 namespace CachedHeightGenerator {
 // functions
 // NOLINTBEGIN
-MCAPI short cachedGenerationOfTerrainHeight(
+MCNAPI short cachedGenerationOfTerrainHeight(
     ::BlockPos const&                                                          pos,
     ::Dimension&                                                               dimension,
     ::BlockVolume&                                                             blockVolume,

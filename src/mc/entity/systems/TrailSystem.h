@@ -49,9 +49,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TrailSystem::BlockPositions _calculateBlockSpawnPositions(::Actor& actor, ::Vec3& offset);
+    MCNAPI static ::TrailSystem::BlockPositions _calculateBlockSpawnPositions(::Actor& actor, ::Vec3& offset);
 
-    MCAPI static void _tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::TrailComponent& trailComponent);
+    MCNAPI static void _tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::TrailComponent& trailComponent);
     // NOLINTEND
 
 public:
@@ -63,12 +63,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCNAPI void $tick(::EntityRegistry& registry);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

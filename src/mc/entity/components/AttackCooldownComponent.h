@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct Tick;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/level/Tick.h"
 
 struct AttackCooldownComponent {
 public:

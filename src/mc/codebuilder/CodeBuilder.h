@@ -24,29 +24,29 @@ namespace Json { class Value; }
 namespace CodeBuilder {
 // functions
 // NOLINTBEGIN
-MCAPI ::MCRESULT deserialize(::Json::Value const& json, ::CodeBuilder::RequestHeader& result);
+MCNAPI ::MCRESULT deserialize(::Json::Value const& json, ::CodeBuilder::RequestHeader& result);
 
-MCAPI bool fromString(::std::string const& messagePurpose, ::CodeBuilder::RequestPurpose& outPurpose);
+MCNAPI bool fromString(::std::string const& messagePurpose, ::CodeBuilder::RequestPurpose& outPurpose);
 
-MCAPI bool fromString(::std::string const& modeString, ::CodeBuilder::EncryptionCipherMode& mode);
+MCNAPI bool fromString(::std::string const& modeString, ::CodeBuilder::EncryptionCipherMode& mode);
 
-MCAPI ::std::string serialize(::CodeBuilder::ChatMessage const& message);
+MCNAPI ::std::string serialize(::CodeBuilder::ChatMessage const& message);
 
-MCAPI ::std::string serialize(::CodeBuilder::CommandMessage const& message);
+MCNAPI ::std::string serialize(::CodeBuilder::CommandMessage const& message);
 
-MCAPI ::std::string serialize(::CodeBuilder::EncryptionResult const& message);
+MCNAPI ::std::string serialize(::CodeBuilder::EncryptionResult const& message);
 
-MCAPI ::std::string serialize(::CodeBuilder::ErrorMessage const& message);
+MCNAPI ::std::string serialize(::CodeBuilder::ErrorMessage const& message);
 
-MCAPI ::std::string serialize(::CodeBuilder::DataMessage const& message);
+MCNAPI ::std::string serialize(::CodeBuilder::DataMessage const& message);
 
-MCAPI ::std::string serialize(::CodeBuilder::EventMessage const& message);
+MCNAPI ::std::string serialize(::CodeBuilder::EventMessage const& message);
 
-MCAPI ::std::string serialize(::CodeBuilder::AgentMessage const& message);
+MCNAPI ::std::string serialize(::CodeBuilder::AgentMessage const& message);
 
-MCAPI ::std::string serialize(::CodeBuilder::ChatMessage const& message, ::std::string const& requestId);
+MCNAPI ::std::string serialize(::CodeBuilder::ChatMessage const& message, ::std::string const& requestId);
 
-MCAPI ::std::string toString(::CodeBuilder::ResponsePurpose purpose);
+MCNAPI ::std::string toString(::CodeBuilder::ResponsePurpose purpose);
 // NOLINTEND
 
 } // namespace CodeBuilder

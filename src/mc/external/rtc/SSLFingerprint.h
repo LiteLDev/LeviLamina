@@ -28,32 +28,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string GetRfc4572Fingerprint() const;
+    MCNAPI ::std::string GetRfc4572Fingerprint() const;
 
-    MCAPI SSLFingerprint(::std::string_view, ::rtc::ArrayView<uchar const>);
+    MCNAPI SSLFingerprint(::std::string_view, ::rtc::ArrayView<uchar const>);
 
-    MCAPI ::std::string ToString() const;
+    MCNAPI ::std::string ToString() const;
 
-    MCAPI bool operator==(::rtc::SSLFingerprint const&) const;
+    MCNAPI bool operator==(::rtc::SSLFingerprint const&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::rtc::SSLFingerprint> Create(::std::string_view, ::rtc::SSLCertificate const&);
+    MCNAPI static ::std::unique_ptr<::rtc::SSLFingerprint> Create(::std::string_view, ::rtc::SSLCertificate const&);
 
-    MCAPI static ::std::unique_ptr<::rtc::SSLFingerprint> CreateFromCertificate(::rtc::RTCCertificate const&);
+    MCNAPI static ::std::unique_ptr<::rtc::SSLFingerprint> CreateFromCertificate(::rtc::RTCCertificate const&);
 
-    MCAPI static ::std::unique_ptr<::rtc::SSLFingerprint> CreateUnique(::std::string_view, ::rtc::SSLIdentity const&);
+    MCNAPI static ::std::unique_ptr<::rtc::SSLFingerprint> CreateUnique(::std::string_view, ::rtc::SSLIdentity const&);
 
-    MCAPI static ::std::unique_ptr<::rtc::SSLFingerprint>
+    MCNAPI static ::std::unique_ptr<::rtc::SSLFingerprint>
         CreateUniqueFromRfc4572(::std::string_view, ::std::string_view);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view, ::rtc::ArrayView<uchar const>);
+    MCNAPI void* $ctor(::std::string_view, ::rtc::ArrayView<uchar const>);
     // NOLINTEND
 };
 

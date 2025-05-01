@@ -16,30 +16,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackSourceReport();
+    MCNAPI PackSourceReport();
 
-    MCAPI PackSourceReport(::PackSourceReport const&);
+    MCNAPI PackSourceReport(::PackSourceReport const&);
 
-    MCAPI PackSourceReport(::PackSourceReport&&);
+    MCNAPI PackSourceReport(::PackSourceReport&&);
 
-    MCAPI bool hasErrors() const;
+    MCNAPI bool hasErrors() const;
 
-    MCAPI ~PackSourceReport();
+    MCNAPI ~PackSourceReport();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::PackSourceReport const&);
+    MCNAPI void* $ctor(::PackSourceReport const&);
 
-    MCAPI void* $ctor(::PackSourceReport&&);
+    MCNAPI void* $ctor(::PackSourceReport&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

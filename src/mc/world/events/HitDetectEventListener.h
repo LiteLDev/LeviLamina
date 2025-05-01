@@ -5,11 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/events/ClientHitDetectListener.h"
 #include "mc/world/events/EventResult.h"
-
-// auto generated forward declare list
-// clang-format off
-class HitResult;
-// clang-format on
+#include "mc/world/phys/HitResult.h"
 
 class HitDetectEventListener : public ::ClientHitDetectListener {
 public:

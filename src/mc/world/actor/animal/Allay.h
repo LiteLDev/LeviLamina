@@ -17,7 +17,6 @@ class Allay : public ::Mob {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk1fa9e4;
     ::ll::UntypedStorage<8, 8> mUnk7647e1;
     // NOLINTEND
 
@@ -49,9 +48,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool hasDuplicationCooldown();
+    MCNAPI bool hasDuplicationCooldown();
 
-    MCAPI void setNewDuplicationCooldown();
+    MCNAPI void setNewDuplicationCooldown();
     // NOLINTEND
 
 public:
@@ -63,18 +62,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $aiStep();
+    MCNAPI void $aiStep();
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

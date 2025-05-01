@@ -12,10 +12,10 @@ namespace Scripting { class ModuleBindingBuilder; }
 namespace ScriptModuleMinecraft::ScriptPropertyComponents {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptPropertyComponents::PropertyComponentRegistration>
+MCNAPI ::std::vector<::ScriptModuleMinecraft::ScriptPropertyComponents::PropertyComponentRegistration>
 GetComponentRegistration();
 
-MCAPI void bind(
+MCNAPI void bind(
     ::Scripting::ModuleBindingBuilder&                       moduleBuilder,
     ::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder
 );

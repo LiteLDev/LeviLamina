@@ -20,12 +20,12 @@ namespace CameraAimAssistErrorType { struct UnknownPresetId; }
 namespace CameraAimAssistSystemUtil {
 // functions
 // NOLINTBEGIN
-MCAPI void clearAimAssistForServerPlayer(::ServerPlayer& player);
+MCNAPI void clearAimAssistForServerPlayer(::ServerPlayer& player);
 
-MCAPI ::std::optional<::CameraAimAssistPacket::TargetMode> getPacketTargetMode(::CameraAimAssist::TargetMode targetMode
+MCNAPI ::std::optional<::CameraAimAssistPacket::TargetMode> getPacketTargetMode(::CameraAimAssist::TargetMode targetMode
 );
 
-MCAPI ::Bedrock::Result<
+MCNAPI ::Bedrock::Result<
     void,
     ::std::variant<
         ::CameraAimAssistErrorType::UnknownPresetId,

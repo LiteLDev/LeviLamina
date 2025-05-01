@@ -36,21 +36,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SaveTransactionManager(
+    MCNAPI SaveTransactionManager(
         ::WorkerPool&               workerPool,
         ::Scheduler&                scheduler,
         ::std::function<void(bool)> showIconFunction
     );
 
-    MCAPI void _hideGlobalSaveIcon();
-
-    MCAPI void _showGlobalSaveIcon();
+    MCNAPI void onEndCompaction();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::WorkerPool& workerPool, ::Scheduler& scheduler, ::std::function<void(bool)> showIconFunction);
+    MCNAPI void* $ctor(::WorkerPool& workerPool, ::Scheduler& scheduler, ::std::function<void(bool)> showIconFunction);
     // NOLINTEND
 
 public:
@@ -62,6 +60,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

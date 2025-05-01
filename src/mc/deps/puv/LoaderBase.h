@@ -30,19 +30,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Puv::LoadResultAny doLoad(::Puv::Input const& input, ::SemVersion const& parserVersion) const;
+    MCNAPI ::Puv::LoadResultAny doLoad(::Puv::Input const& input, ::SemVersion const& parserVersion) const;
 
-    MCAPI void registerParser(::std::unique_ptr<::Puv::ParserBase> parser);
+    MCNAPI void registerParser(::std::unique_ptr<::Puv::ParserBase> parser);
 
-    MCAPI void registerUpgrader(::std::unique_ptr<::Puv::Upgrader> upgrader);
+    MCNAPI void registerUpgrader(::std::unique_ptr<::Puv::Upgrader> upgrader);
 
-    MCAPI ~LoaderBase();
+    MCNAPI ~LoaderBase();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -19,7 +19,7 @@ struct VehicleComponent;
 namespace PendingRemovePassengersSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void pendingRemovePassengers(
+MCNAPI void pendingRemovePassengers(
     ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::VehicleComponent>>,
     ::StrictEntityContext const&        vehicle,
     ::PendingRemovePassengersComponent& pendingPassengersToRemoveComponent,

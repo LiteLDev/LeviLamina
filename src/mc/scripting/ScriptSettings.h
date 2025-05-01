@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/scripting/runtime/watchdog/WatchdogSettings.h"
+#include "mc/resources/BaseGameVersion.h"
+#include "mc/scripting/ScriptPackConfigurationManager.h"
+#include "mc/scripting/debugger/ScriptDebuggerSettings.h"
 
 // auto generated forward declare list
 // clang-format off
-class BaseGameVersion;
-class ScriptPackConfigurationManager;
-struct ScriptDebuggerSettings;
-namespace Scripting { struct WatchdogSettings; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -38,24 +38,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSettings(::ScriptSettings const&);
+    MCNAPI ScriptSettings(::ScriptSettings const&);
 
-    MCAPI ScriptSettings(::ScriptSettings&&);
+    MCNAPI ScriptSettings(::ScriptSettings&&);
 
-    MCAPI ~ScriptSettings();
+    MCNAPI ~ScriptSettings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptSettings const&);
+    MCNAPI void* $ctor(::ScriptSettings const&);
 
-    MCAPI void* $ctor(::ScriptSettings&&);
+    MCNAPI void* $ctor(::ScriptSettings&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -12,6 +12,6 @@ class ScriptRuntimeConditionRegistry {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::RuntimeConditions getCurrentRuntimeConditions(::ServerLevel const& serverLevel);
+    MCNAPI static ::Scripting::RuntimeConditions getCurrentRuntimeConditions(::ServerLevel const& serverLevel);
     // NOLINTEND
 };

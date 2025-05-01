@@ -5,7 +5,7 @@
 namespace UpgradePatchHelpers {
 // functions
 // NOLINTBEGIN
-MCAPI void setVersion(
+MCNAPI void setVersion(
     ::rapidjson::GenericDocument<
         ::rapidjson::UTF8<char>,
         ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,

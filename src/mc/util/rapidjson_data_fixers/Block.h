@@ -5,7 +5,7 @@
 namespace RapidJsonDataFixers::Block {
 // functions
 // NOLINTBEGIN
-MCAPI void applyLambdaToComponent(
+MCNAPI void applyLambdaToComponent(
     ::rapidjson::GenericDocument<
         ::rapidjson::UTF8<char>,
         ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
@@ -16,7 +16,7 @@ MCAPI void applyLambdaToComponent(
                          ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>>&)> const& callback
 );
 
-MCAPI bool applyLambdaToComponentObject(
+MCNAPI bool applyLambdaToComponentObject(
     ::rapidjson::GenericDocument<
         ::rapidjson::UTF8<char>,
         ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
@@ -27,7 +27,7 @@ MCAPI bool applyLambdaToComponentObject(
                          ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>>&)> const& callback
 );
 
-MCAPI void applyLambdaToDescriptionObject(
+MCNAPI void applyLambdaToDescriptionObject(
     ::rapidjson::GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>>&
                                                                                                 parent,
     ::std::function<void(::rapidjson::GenericValue<
@@ -35,7 +35,7 @@ MCAPI void applyLambdaToDescriptionObject(
                          ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>>&)> const& callback
 );
 
-MCAPI void legacyFindIfMissingFieldAndRemoveComponent(
+MCNAPI void legacyFindIfMissingFieldAndRemoveComponent(
     ::rapidjson::
         GenericMemberIterator<0, ::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>>
                          componentsIte,
@@ -43,7 +43,7 @@ MCAPI void legacyFindIfMissingFieldAndRemoveComponent(
     ::std::string const& fieldName
 );
 
-MCAPI void removeComponent(
+MCNAPI void removeComponent(
     ::rapidjson::GenericDocument<
         ::rapidjson::UTF8<char>,
         ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
@@ -53,18 +53,18 @@ MCAPI void removeComponent(
     ::std::string const&            errorMessage
 );
 
-MCAPI void removeDuplicateComponents(::rapidjson::GenericDocument<
-                                     ::rapidjson::UTF8<char>,
-                                     ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
-                                     ::rapidjson::CrtAllocator>& document);
+MCNAPI void removeDuplicateComponents(::rapidjson::GenericDocument<
+                                      ::rapidjson::UTF8<char>,
+                                      ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+                                      ::rapidjson::CrtAllocator>& document);
 
-MCAPI void removeDuplicateComponentsInComponentsSection(
+MCNAPI void removeDuplicateComponentsInComponentsSection(
     ::rapidjson::
         GenericMemberIterator<0, ::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>>&
             componentsListIter
 );
 
-MCAPI void renameComponent(
+MCNAPI void renameComponent(
     ::rapidjson::GenericDocument<
         ::rapidjson::UTF8<char>,
         ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,

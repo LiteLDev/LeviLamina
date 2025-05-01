@@ -35,26 +35,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourceInformation(::ResourceInformation const&);
+    MCNAPI ResourceInformation(::ResourceInformation const&);
 
-    MCAPI ~ResourceInformation();
+    MCNAPI ~ResourceInformation();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ResourceInformation::ResourceType ResourceTypeFromString(::std::string const& value);
+    MCNAPI static ::ResourceInformation::ResourceType ResourceTypeFromString(::std::string const& value);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ResourceInformation const&);
+    MCNAPI void* $ctor(::ResourceInformation const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -8,15 +8,12 @@
 
 // auto generated forward declare list
 // clang-format off
-class Dimension;
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptBlockType; }
 namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
 namespace ScriptModuleMinecraft { class ScriptCompoundBlockVolume; }
 namespace ScriptModuleMinecraft { class ScriptListBlockVolume; }
-namespace ScriptModuleMinecraft { struct ScriptBlockFillOptions; }
 namespace ScriptModuleMinecraft { struct ScriptUnloadedChunksError; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct EngineError; }
 namespace Scripting { struct Error; }
 // clang-format on
@@ -42,13 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockFiller(
-        ::ScriptModuleMinecraft::ScriptBlockFillOptions const& options,
-        ::gsl::not_null<::Dimension*>                          dimension,
-        ::Scripting::WeakLifetimeScope                         scope
-    );
-
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptListBlockVolume>,
         ::ScriptModuleMinecraft::ScriptUnloadedChunksError,
         ::Scripting::EngineError,
@@ -63,23 +54,13 @@ public:
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const& block
     );
 
-    MCAPI ~ScriptBlockFiller();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ScriptModuleMinecraft::ScriptBlockFillOptions const& options,
-        ::gsl::not_null<::Dimension*>                          dimension,
-        ::Scripting::WeakLifetimeScope                         scope
-    );
+    MCNAPI ~ScriptBlockFiller();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

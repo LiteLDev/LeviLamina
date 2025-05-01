@@ -18,9 +18,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool IsDisabled(::std::string_view) const;
+    MCNAPI bool IsDisabled(::std::string_view) const;
 
-    MCAPI bool IsEnabled(::std::string_view) const;
+    MCNAPI bool IsEnabled(::std::string_view) const;
     // NOLINTEND
 
 public:

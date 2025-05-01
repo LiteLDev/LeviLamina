@@ -40,7 +40,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void onAckReceived(uint64 acked);
+        MCNAPI void onAckReceived(uint64 acked);
         // NOLINTEND
     };
 

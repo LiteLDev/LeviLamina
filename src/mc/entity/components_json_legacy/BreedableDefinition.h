@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -49,23 +49,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addBreedItem(::ItemDescriptor const& itemDescriptor);
+    MCNAPI void addBreedItem(::ItemDescriptor const& itemDescriptor);
 
-    MCAPI void addBreedableType(::BreedableType const& breedType);
+    MCNAPI void addBreedableType(::BreedableType const& breedType);
 
-    MCAPI void addEnvironmentRequirement(::EnvironmentRequirement const& envReq);
+    MCNAPI void addEnvironmentRequirement(::EnvironmentRequirement const& envReq);
 
-    MCAPI void addParentCentricAttributeBlending(::std::string const& attributesToUseParentCentricBlendingFor);
+    MCNAPI void addParentCentricAttributeBlending(::std::string const& attributesToUseParentCentricBlendingFor);
 
-    MCAPI void setMutationStrategy(::std::string const& strategyCased);
+    MCNAPI void setMutationStrategy(::std::string const& strategyCased);
 
-    MCAPI ~BreedableDefinition();
+    MCNAPI ~BreedableDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BreedableDefinition>>& root
     );
     // NOLINTEND
@@ -73,6 +73,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -27,13 +27,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void initializeActor(::Actor& actor) /*override*/;
+    virtual void initializeActor(::Actor&) /*override*/;
 
     // vIndex: 2
-    virtual bool validate(::Actor const& actor) /*override*/;
+    virtual bool validate(::Actor const&) /*override*/;
 
     // vIndex: 3
-    virtual void addActor(::Actor& actor) /*override*/;
+    virtual void addActor(::Actor&) /*override*/;
 
     // vIndex: 5
     virtual void removeActorInLevelChunk(::Actor const&) /*override*/;
@@ -54,20 +54,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeActor(::Actor& actor);
 
-    MCAPI bool $validate(::Actor const& actor);
-
-    MCAPI void $addActor(::Actor& actor);
-
-    MCFOLD void $removeActorInLevelChunk(::Actor const&);
-
-    MCFOLD void $deleteActorFromWorldInLevelChunk(::Actor const&);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

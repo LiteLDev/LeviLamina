@@ -29,14 +29,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BatteryStatus $getBatteryStatus() const;
+    MCNAPI ::BatteryStatus $getBatteryStatus() const;
 
-    MCFOLD float $getBatteryLevel() const;
+    MCNAPI float $getBatteryLevel() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

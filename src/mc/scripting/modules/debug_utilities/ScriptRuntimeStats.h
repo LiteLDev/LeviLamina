@@ -41,7 +41,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleDebugUtilities::ScriptRuntimeStats> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleDebugUtilities::ScriptRuntimeStats> bind();
     // NOLINTEND
 };
 

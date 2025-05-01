@@ -35,13 +35,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LegacyEventItemComponent(::LegacyEventItemComponentData&& componentData);
+    MCNAPI explicit LegacyEventItemComponent(::LegacyEventItemComponentData&& componentData);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LegacyEventItemComponentData&& componentData);
+    MCNAPI void* $ctor(::LegacyEventItemComponentData&& componentData);
     // NOLINTEND
 
 public:
@@ -53,12 +53,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent();
+    MCNAPI void $_initializeComponent();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

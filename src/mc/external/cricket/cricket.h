@@ -32,132 +32,132 @@ namespace webrtc { struct RtpParameters; }
 namespace cricket {
 // functions
 // NOLINTBEGIN
-MCAPI ::webrtc::RTCError
+MCNAPI ::webrtc::RTCError
 CheckRtpParametersInvalidModificationAndValues(::webrtc::RtpParameters const&, ::webrtc::RtpParameters const&);
 
-MCAPI ::webrtc::RTCError
+MCNAPI ::webrtc::RTCError
 CheckRtpParametersInvalidModificationAndValues(::webrtc::RtpParameters const&, ::webrtc::RtpParameters const&, ::rtc::ArrayView<::cricket::Codec>, ::std::optional<::cricket::Codec>);
 
-MCAPI ::webrtc::RTCError
+MCNAPI ::webrtc::RTCError
 CheckRtpParametersValues(::webrtc::RtpParameters const&, ::rtc::ArrayView<::cricket::Codec>, ::std::optional<::cricket::Codec>);
 
-MCAPI ::webrtc::RTCError
+MCNAPI ::webrtc::RTCError
 CheckScalabilityModeValues(::webrtc::RtpParameters const&, ::rtc::ArrayView<::cricket::Codec>, ::std::optional<::cricket::Codec>);
 
-MCAPI bool ComputeStunCredentialHash(::std::string const&, ::std::string const&, ::std::string const&, ::std::string*);
+MCNAPI bool ComputeStunCredentialHash(::std::string const&, ::std::string const&, ::std::string const&, ::std::string*);
 
-MCAPI bool ConnectionRoleToString(::cricket::ConnectionRole const&, ::std::string*);
+MCNAPI bool ConnectionRoleToString(::cricket::ConnectionRole const&, ::std::string*);
 
-MCAPI ::cricket::Codec CreateAudioCodec(int, ::std::string const&, int, uint64);
+MCNAPI ::cricket::Codec CreateAudioCodec(int, ::std::string const&, int, uint64);
 
-MCAPI ::cricket::Codec CreateVideoCodec(int, ::std::string const&);
+MCNAPI ::cricket::Codec CreateVideoCodec(int, ::std::string const&);
 
-MCAPI ::std::vector<::cricket::Codec const*>
+MCNAPI ::std::vector<::cricket::Codec const*>
 FindAllMatchingCodecs(::std::vector<::cricket::Codec> const&, ::cricket::Codec const&);
 
-MCAPI ::cricket::Codec const* FindCodecById(::std::vector<::cricket::Codec> const&, int);
+MCNAPI ::cricket::Codec const* FindCodecById(::std::vector<::cricket::Codec> const&, int);
 
-MCAPI ::cricket::ContentInfo const*
+MCNAPI ::cricket::ContentInfo const*
 FindContentInfoByName(::std::vector<::cricket::ContentInfo> const&, ::std::string const&);
 
-MCAPI ::std::vector<::webrtc::RtpExtension>
+MCNAPI ::std::vector<::webrtc::RtpExtension>
 GetDefaultEnabledRtpHeaderExtensions(::cricket::RtpHeaderExtensionQueryInterface const&);
 
-MCAPI ::cricket::ContentInfo const* GetFirstAudioContent(::cricket::SessionDescription const*);
+MCNAPI ::cricket::ContentInfo const* GetFirstAudioContent(::cricket::SessionDescription const*);
 
-MCAPI ::cricket::AudioContentDescription const* GetFirstAudioContentDescription(::cricket::SessionDescription const*);
+MCNAPI ::cricket::AudioContentDescription const* GetFirstAudioContentDescription(::cricket::SessionDescription const*);
 
-MCAPI ::cricket::ContentInfo const* GetFirstDataContent(::std::vector<::cricket::ContentInfo> const&);
+MCNAPI ::cricket::ContentInfo const* GetFirstDataContent(::std::vector<::cricket::ContentInfo> const&);
 
-MCAPI ::cricket::ContentInfo const* GetFirstDataContent(::cricket::SessionDescription const*);
+MCNAPI ::cricket::ContentInfo const* GetFirstDataContent(::cricket::SessionDescription const*);
 
-MCAPI ::cricket::ContentInfo const*
+MCNAPI ::cricket::ContentInfo const*
 GetFirstMediaContent(::std::vector<::cricket::ContentInfo> const&, ::cricket::MediaType);
 
-MCAPI ::cricket::ContentInfo const* GetFirstMediaContent(::cricket::SessionDescription const*, ::cricket::MediaType);
+MCNAPI ::cricket::ContentInfo const* GetFirstMediaContent(::cricket::SessionDescription const*, ::cricket::MediaType);
 
-MCAPI ::cricket::MediaContentDescription const*
+MCNAPI ::cricket::MediaContentDescription const*
 GetFirstMediaContentDescription(::cricket::SessionDescription const*, ::cricket::MediaType);
 
-MCAPI ::cricket::SctpDataContentDescription const*
+MCNAPI ::cricket::SctpDataContentDescription const*
 GetFirstSctpDataContentDescription(::cricket::SessionDescription const*);
 
-MCAPI ::cricket::ContentInfo const* GetFirstVideoContent(::cricket::SessionDescription const*);
+MCNAPI ::cricket::ContentInfo const* GetFirstVideoContent(::cricket::SessionDescription const*);
 
-MCAPI ::cricket::VideoContentDescription const* GetFirstVideoContentDescription(::cricket::SessionDescription const*);
+MCNAPI ::cricket::VideoContentDescription const* GetFirstVideoContentDescription(::cricket::SessionDescription const*);
 
-MCAPI int GetProtocolOverhead(::std::string_view);
+MCNAPI int GetProtocolOverhead(::std::string_view);
 
-MCAPI bool GetRtcpType(void const*, uint64, int*);
+MCNAPI bool GetRtcpType(void const*, uint64, int*);
 
-MCAPI int GetStunErrorResponseType(int);
+MCNAPI int GetStunErrorResponseType(int);
 
-MCAPI int GetStunSuccessResponseType(int);
+MCNAPI int GetStunSuccessResponseType(int);
 
-MCAPI int GreatestCommonDivisor(int, int);
+MCNAPI int GreatestCommonDivisor(int, int);
 
-MCAPI bool IceCredentialsChanged(::std::string_view, ::std::string_view, ::std::string_view, ::std::string_view);
+MCNAPI bool IceCredentialsChanged(::std::string_view, ::std::string_view, ::std::string_view, ::std::string_view);
 
-MCAPI ::std::string IceSwitchReasonToString(::cricket::IceSwitchReason);
+MCNAPI ::std::string IceSwitchReasonToString(::cricket::IceSwitchReason);
 
-MCAPI ::cricket::RtpPacketType InferRtpPacketType(::rtc::ArrayView<uchar const>);
+MCNAPI ::cricket::RtpPacketType InferRtpPacketType(::rtc::ArrayView<uchar const>);
 
-MCAPI bool IsAudioContent(::cricket::ContentInfo const*);
+MCNAPI bool IsAudioContent(::cricket::ContentInfo const*);
 
-MCAPI bool IsDtlsRtp(::std::string_view);
+MCNAPI bool IsDtlsRtp(::std::string_view);
 
-MCAPI bool IsDtlsSctp(::std::string_view);
+MCNAPI bool IsDtlsSctp(::std::string_view);
 
-MCAPI bool IsPlainRtp(::std::string_view);
+MCNAPI bool IsPlainRtp(::std::string_view);
 
-MCAPI bool IsPlainSctp(::std::string_view);
+MCNAPI bool IsPlainSctp(::std::string_view);
 
-MCAPI bool IsRtpProtocol(::std::string_view);
+MCNAPI bool IsRtpProtocol(::std::string_view);
 
-MCAPI bool IsSctpProtocol(::std::string_view);
+MCNAPI bool IsSctpProtocol(::std::string_view);
 
-MCAPI bool IsStunErrorResponseType(int);
+MCNAPI bool IsStunErrorResponseType(int);
 
-MCAPI bool IsStunIndicationType(int);
+MCNAPI bool IsStunIndicationType(int);
 
-MCAPI bool IsStunRequestType(int);
+MCNAPI bool IsStunRequestType(int);
 
-MCAPI bool IsStunSuccessResponseType(int);
+MCNAPI bool IsStunSuccessResponseType(int);
 
-MCAPI bool IsUnsupportedContent(::cricket::ContentInfo const*);
+MCNAPI bool IsUnsupportedContent(::cricket::ContentInfo const*);
 
-MCAPI bool IsValidRtpPacketSize(::cricket::RtpPacketType, uint64);
+MCNAPI bool IsValidRtpPacketSize(::cricket::RtpPacketType, uint64);
 
-MCAPI bool IsValidRtpPayloadType(int);
+MCNAPI bool IsValidRtpPayloadType(int);
 
-MCAPI bool IsVideoContent(::cricket::ContentInfo const*);
+MCNAPI bool IsVideoContent(::cricket::ContentInfo const*);
 
-MCAPI int LeastCommonMultiple(int, int);
+MCNAPI int LeastCommonMultiple(int, int);
 
-MCAPI void
+MCNAPI void
 MediaChannelParametersFromMediaDescription(::cricket::MediaContentDescription const*, ::std::vector<::webrtc::RtpExtension> const&, bool, ::cricket::MediaChannelParameters*);
 
-MCAPI ::std::string MediaTypeToString(::cricket::MediaType);
+MCNAPI ::std::string MediaTypeToString(::cricket::MediaType);
 
-MCAPI void
+MCNAPI void
 MergeCodecsFromDescription(::std::vector<::cricket::ContentInfo const*> const&, ::std::vector<::cricket::Codec>*, ::std::vector<::cricket::Codec>*, ::cricket::UsedPayloadTypes*);
 
-MCAPI char const* ProtoToString(::cricket::ProtocolType);
+MCNAPI char const* ProtoToString(::cricket::ProtocolType);
 
-MCAPI ::std::string_view RtpPacketTypeToString(::cricket::RtpPacketType);
+MCNAPI ::std::string_view RtpPacketTypeToString(::cricket::RtpPacketType);
 
-MCAPI void
+MCNAPI void
 RtpSendParametersFromMediaDescription(::cricket::MediaContentDescription const*, ::webrtc::RtpExtension::Filter, ::cricket::SenderParameters*);
 
-MCAPI ::std::optional<::cricket::ConnectionRole> StringToConnectionRole(::std::string_view);
+MCNAPI ::std::optional<::cricket::ConnectionRole> StringToConnectionRole(::std::string_view);
 
-MCAPI ::std::optional<::cricket::ProtocolType> StringToProto(::std::string_view);
+MCNAPI ::std::optional<::cricket::ProtocolType> StringToProto(::std::string_view);
 
-MCAPI ::std::string StunMethodToString(int);
+MCNAPI ::std::string StunMethodToString(int);
 
-MCAPI ::webrtc::RTCError VerifyCandidate(::cricket::Candidate const&);
+MCNAPI ::webrtc::RTCError VerifyCandidate(::cricket::Candidate const&);
 
-MCAPI ::webrtc::RTCError VerifyCandidates(::std::vector<::cricket::Candidate> const&);
+MCNAPI ::webrtc::RTCError VerifyCandidates(::std::vector<::cricket::Candidate> const&);
 // NOLINTEND
 
 // static variables

@@ -32,21 +32,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Identifier(::CraftingItemCatalogMergeResult::Identifier&&);
+        MCNAPI Identifier(::CraftingItemCatalogMergeResult::Identifier&&);
 
-        MCAPI ~Identifier();
+        MCNAPI ~Identifier();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::CraftingItemCatalogMergeResult::Identifier&&);
+        MCNAPI void* $ctor(::CraftingItemCatalogMergeResult::Identifier&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -66,23 +66,23 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Group();
+        MCNAPI Group();
 
-        MCAPI ::CraftingItemCatalogMergeResult::Group& operator=(::CraftingItemCatalogMergeResult::Group&&);
+        MCNAPI ::CraftingItemCatalogMergeResult::Group& operator=(::CraftingItemCatalogMergeResult::Group&&);
 
-        MCAPI ~Group();
+        MCNAPI ~Group();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -102,13 +102,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Category();
+        MCNAPI ~Category();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -131,18 +131,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void insertAfterItemsGroup(
+    MCNAPI void insertAfterItemsGroup(
         ::SharedTypes::v1_21_60::CraftingCatalogItemCategory itemName,
         ::std::string_view                                   insertGroup,
         ::CraftingItemCatalogMergeResult::Group              itemCategory
     );
 
-    MCAPI ~CraftingItemCatalogMergeResult();
+    MCNAPI ~CraftingItemCatalogMergeResult();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

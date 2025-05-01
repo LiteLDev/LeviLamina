@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> next();
+    MCNAPI ::std::optional<::br::worldgen::StructureBlockInfo> next();
     // NOLINTEND
 };
 

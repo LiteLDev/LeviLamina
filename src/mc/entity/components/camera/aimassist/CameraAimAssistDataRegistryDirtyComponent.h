@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class HashedString;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 
 struct CameraAimAssistDataRegistryDirtyComponent {
 public:
@@ -23,6 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CameraAimAssistDataRegistryDirtyComponent& operator=(::CameraAimAssistDataRegistryDirtyComponent&&);
+    MCNAPI ::CameraAimAssistDataRegistryDirtyComponent& operator=(::CameraAimAssistDataRegistryDirtyComponent&&);
     // NOLINTEND
 };

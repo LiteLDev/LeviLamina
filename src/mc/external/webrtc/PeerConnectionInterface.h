@@ -109,30 +109,30 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI IceServer();
+        MCNAPI IceServer();
 
-        MCAPI IceServer(::webrtc::PeerConnectionInterface::IceServer const&);
+        MCNAPI IceServer(::webrtc::PeerConnectionInterface::IceServer const&);
 
-        MCAPI ::webrtc::PeerConnectionInterface::IceServer&
+        MCNAPI ::webrtc::PeerConnectionInterface::IceServer&
         operator=(::webrtc::PeerConnectionInterface::IceServer const&);
 
-        MCAPI bool operator==(::webrtc::PeerConnectionInterface::IceServer const&) const;
+        MCNAPI bool operator==(::webrtc::PeerConnectionInterface::IceServer const&) const;
 
-        MCAPI ~IceServer();
+        MCNAPI ~IceServer();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
 
-        MCAPI void* $ctor(::webrtc::PeerConnectionInterface::IceServer const&);
+        MCNAPI void* $ctor(::webrtc::PeerConnectionInterface::IceServer const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -247,32 +247,32 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI RTCConfiguration();
+        MCNAPI RTCConfiguration();
 
-        MCAPI RTCConfiguration(::webrtc::PeerConnectionInterface::RTCConfiguration const&);
+        MCNAPI RTCConfiguration(::webrtc::PeerConnectionInterface::RTCConfiguration const&);
 
-        MCAPI bool operator!=(::webrtc::PeerConnectionInterface::RTCConfiguration const&) const;
+        MCNAPI bool operator!=(::webrtc::PeerConnectionInterface::RTCConfiguration const&) const;
 
-        MCAPI ::webrtc::PeerConnectionInterface::RTCConfiguration&
+        MCNAPI ::webrtc::PeerConnectionInterface::RTCConfiguration&
         operator=(::webrtc::PeerConnectionInterface::RTCConfiguration const&);
 
-        MCAPI bool operator==(::webrtc::PeerConnectionInterface::RTCConfiguration const&) const;
+        MCNAPI bool operator==(::webrtc::PeerConnectionInterface::RTCConfiguration const&) const;
 
-        MCAPI ~RTCConfiguration();
+        MCNAPI ~RTCConfiguration();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
 
-        MCAPI void* $ctor(::webrtc::PeerConnectionInterface::RTCConfiguration const&);
+        MCNAPI void* $ctor(::webrtc::PeerConnectionInterface::RTCConfiguration const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -517,7 +517,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string_view AsString(::webrtc::PeerConnectionInterface::SignalingState);
+    MCNAPI static ::std::string_view AsString(::webrtc::PeerConnectionInterface::SignalingState);
     // NOLINTEND
 
 public:

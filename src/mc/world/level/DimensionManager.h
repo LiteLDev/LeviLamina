@@ -11,11 +11,11 @@
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/world/level/IDimensionManagerConnector.h"
+#include "mc/world/level/dimension/DimensionDefinitionGroup.h"
 
 // auto generated forward declare list
 // clang-format off
 class Dimension;
-class DimensionDefinitionGroup;
 class IDimensionFactory;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
@@ -48,20 +48,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DimensionManager(
+    MCNAPI DimensionManager(
         ::Bedrock::NotNullNonOwnerPtr<::IDimensionFactory> dimensionFactory,
         ::std::optional<::DimensionDefinitionGroup>        dimensionDefinitions
     );
 
-    MCAPI void forEachDimension(::std::function<bool(::Dimension&)> callback);
+    MCNAPI void forEachDimension(::std::function<bool(::Dimension&)> callback);
 
-    MCAPI ::WeakRef<::Dimension> getOrCreateDimension(::DimensionType dimensionType);
+    MCNAPI ::WeakRef<::Dimension> getOrCreateDimension(::DimensionType dimensionType);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IDimensionFactory> dimensionFactory,
         ::std::optional<::DimensionDefinitionGroup>        dimensionDefinitions
     );
@@ -76,12 +76,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Bedrock::PubSub::Connector<void(::Dimension&)>& $getOnNewDimensionCreatedConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::Dimension&)>& $getOnNewDimensionCreatedConnector();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

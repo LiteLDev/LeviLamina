@@ -19,20 +19,14 @@ public:
     enum class Type : int {
         Flower = 0,
         Normal = 1,
-        Roofed = 2,
     };
 
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4>  mUnk243b32;
-    ::ll::UntypedStorage<8, 24> mUnkd69d25;
     ::ll::UntypedStorage<8, 24> mUnk6ea174;
     ::ll::UntypedStorage<8, 24> mUnkc610a9;
-    ::ll::UntypedStorage<8, 24> mUnk978e6f;
-    ::ll::UntypedStorage<8, 24> mUnk31e8bb;
-    ::ll::UntypedStorage<8, 24> mUnkb634d1;
-    ::ll::UntypedStorage<8, 24> mUnkd770a0;
     // NOLINTEND
 
 public:
@@ -54,13 +48,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyForestFoliageFeature(::LegacyForestFoliageFeature::Type forestType, ::FeatureRegistry& registry);
+    MCNAPI LegacyForestFoliageFeature(::LegacyForestFoliageFeature::Type forestType, ::FeatureRegistry& registry);
+
+    MCNAPI void
+    _placeDoublePlants(::BlockSource& region, ::BlockPos const& origin, ::Random& random, int doublePlantCount) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LegacyForestFoliageFeature::Type forestType, ::FeatureRegistry& registry);
+    MCNAPI void* $ctor(::LegacyForestFoliageFeature::Type forestType, ::FeatureRegistry& registry);
     // NOLINTEND
 
 public:
@@ -72,12 +69,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

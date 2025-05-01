@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void registerScriptingEventHandler(::std::unique_ptr<::ScriptingEventHandler>&& handler);
+    MCNAPI void registerScriptingEventHandler(::std::unique_ptr<::ScriptingEventHandler>&& handler);
     // NOLINTEND
 
 public:
@@ -40,6 +40,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

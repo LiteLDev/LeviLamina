@@ -27,20 +27,20 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string_view $getName() const;
+    MCNAPI ::std::string_view $getName() const;
 
-    MCAPI bool $_isExpectedItem(::std::vector<::ItemStack const*> const& itemList) const;
+    MCNAPI bool $_isExpectedItem(::std::vector<::ItemStack const*> const& itemList) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -20,16 +20,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _copy(::BlockStateDefinition const& rhs);
+    MCNAPI void _copy(::BlockStateDefinition const& rhs);
 
-    MCAPI ::BlockStateDefinition& operator=(::BlockStateDefinition&&);
+    MCNAPI ::BlockStateDefinition& operator=(::BlockStateDefinition&&);
 
-    MCAPI ~BlockStateDefinition();
+    MCNAPI ~BlockStateDefinition();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

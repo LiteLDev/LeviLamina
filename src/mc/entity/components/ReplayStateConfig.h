@@ -22,6 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setReplayStateConfigThresholds(float baseThreshold);
+    MCNAPI void setReplayStateConfigThresholds(float baseThreshold);
     // NOLINTEND
 };

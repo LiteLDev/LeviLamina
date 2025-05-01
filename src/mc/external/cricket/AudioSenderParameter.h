@@ -32,13 +32,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AudioSenderParameter();
+    MCNAPI AudioSenderParameter();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -56,7 +56,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

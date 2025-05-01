@@ -42,25 +42,25 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Element();
+        MCNAPI Element();
 
-        MCAPI Element(::SurfaceMaterialAdjustmentAttributes::Element const&);
+        MCNAPI Element(::SurfaceMaterialAdjustmentAttributes::Element const&);
 
-        MCAPI ~Element();
+        MCNAPI ~Element();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
 
-        MCAPI void* $ctor(::SurfaceMaterialAdjustmentAttributes::Element const&);
+        MCNAPI void* $ctor(::SurfaceMaterialAdjustmentAttributes::Element const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -80,7 +80,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SurfaceMaterialAdjustmentEvaluated evaluateAdjustments(
+    MCNAPI ::SurfaceMaterialAdjustmentEvaluated evaluateAdjustments(
         ::RenderParams&                        molangParams,
         ::gsl::not_null<::PerlinSimplexNoise*> noise,
         ::BlockPos const&                      pos,
@@ -88,7 +88,7 @@ public:
         int                                    heightMin
     ) const;
 
-    MCFOLD void parseExpressionNodeFloat(
+    MCNAPI void parseExpressionNodeFloat(
         ::CompoundTag const& tag,
         ::std::string const& tagName,
         ::std::string const& tagNameType,
@@ -106,6 +106,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

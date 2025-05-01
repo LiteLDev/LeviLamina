@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace SharedTypes::Legacy { struct ExpressionNode; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -27,35 +28,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CoordinateRangeData(::SharedTypes::v1_21_10::CoordinateRangeData&&);
+    MCNAPI CoordinateRangeData(::SharedTypes::v1_21_10::CoordinateRangeData&&);
 
-    MCAPI CoordinateRangeData(::SharedTypes::v1_21_10::CoordinateRangeData const&);
+    MCNAPI CoordinateRangeData(::SharedTypes::v1_21_10::CoordinateRangeData const&);
 
-    MCAPI ::SharedTypes::v1_21_10::CoordinateRangeData& operator=(::SharedTypes::v1_21_10::CoordinateRangeData const&);
+    MCNAPI ::SharedTypes::v1_21_10::CoordinateRangeData& operator=(::SharedTypes::v1_21_10::CoordinateRangeData const&);
 
-    MCAPI ::SharedTypes::v1_21_10::CoordinateRangeData& operator=(::SharedTypes::v1_21_10::CoordinateRangeData&&);
+    MCNAPI ::SharedTypes::v1_21_10::CoordinateRangeData& operator=(::SharedTypes::v1_21_10::CoordinateRangeData&&);
 
-    MCAPI ~CoordinateRangeData();
+    MCNAPI ~CoordinateRangeData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCNAPI static void fromExpression(
+        ::SharedTypes::v1_21_10::CoordinateRangeData& instance,
+        ::SharedTypes::Legacy::ExpressionNode const&  expression
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_10::CoordinateRangeData&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_10::CoordinateRangeData&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_21_10::CoordinateRangeData const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_10::CoordinateRangeData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -51,21 +51,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TradeItem();
+    MCNAPI TradeItem();
 
-    MCAPI TradeItem(::SharedTypes::v1_21_30::TradeItem&&);
+    MCNAPI TradeItem(::SharedTypes::v1_21_30::TradeItem&&);
 
-    MCAPI ::SharedTypes::v1_21_30::TradeItem& operator=(::SharedTypes::v1_21_30::TradeItem&&);
+    MCNAPI ::SharedTypes::v1_21_30::TradeItem& operator=(::SharedTypes::v1_21_30::TradeItem&&);
 
-    MCAPI ::SharedTypes::v1_21_30::TradeItem& operator=(::SharedTypes::v1_21_30::TradeItem const&);
+    MCNAPI ::SharedTypes::v1_21_30::TradeItem& operator=(::SharedTypes::v1_21_30::TradeItem const&);
 
-    MCAPI ~TradeItem();
+    MCNAPI ~TradeItem();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -79,15 +79,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::SharedTypes::v1_21_30::TradeItem&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_30::TradeItem&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

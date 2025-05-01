@@ -30,30 +30,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string getItemPayload(::std::string id) const;
+    MCNAPI ::std::string getItemPayload(::std::string id) const;
 
-    MCAPI ::std::optional<::std::variant<float, bool, ::std::string>>
+    MCNAPI ::std::optional<::std::variant<float, bool, ::std::string>>
     getItemProperty(::std::string id, ::std::string property) const;
 
-    MCAPI bool hasItemPayload(::std::string id) const;
+    MCNAPI bool hasItemPayload(::std::string id) const;
 
-    MCAPI bool hasItemProperty(::std::string id, ::std::string property) const;
+    MCNAPI bool hasItemProperty(::std::string id, ::std::string property) const;
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     registerItem(::Scripting::ContextConfig const& contextConfig, ::std::string id, ::std::string const& payload);
 
-    MCAPI ::Scripting::Result<void> unregisterItem(::std::string id);
+    MCNAPI ::Scripting::Result<void> unregisterItem(::std::string id);
 
-    MCAPI ::Scripting::Result<void> updateRegisteredItem(::std::string id, ::std::string const& payload);
+    MCNAPI ::Scripting::Result<void> updateRegisteredItem(::std::string id, ::std::string const& payload);
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     updateRegisteredItemProperty(::std::string id, ::std::string const& payload, ::std::string const& prop);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptDataStoreActionBarContainer>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptDataStoreActionBarContainer>
     bindScript();
     // NOLINTEND
 };

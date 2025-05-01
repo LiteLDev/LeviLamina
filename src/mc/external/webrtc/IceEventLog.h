@@ -29,28 +29,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void DumpCandidatePairDescriptionToMemoryAsConfigEvents() const;
+    MCNAPI void DumpCandidatePairDescriptionToMemoryAsConfigEvents() const;
 
-    MCAPI IceEventLog();
+    MCNAPI IceEventLog();
 
-    MCAPI void
+    MCNAPI void
     LogCandidatePairConfig(::webrtc::IceCandidatePairConfigType, uint, ::webrtc::IceCandidatePairDescription const&);
 
-    MCAPI void LogCandidatePairEvent(::webrtc::IceCandidatePairEventType, uint, uint);
+    MCNAPI void LogCandidatePairEvent(::webrtc::IceCandidatePairEventType, uint, uint);
 
-    MCAPI ~IceEventLog();
+    MCNAPI ~IceEventLog();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

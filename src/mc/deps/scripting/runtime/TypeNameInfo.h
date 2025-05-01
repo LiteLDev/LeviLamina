@@ -22,21 +22,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TypeNameInfo(::std::string bindingName, ::std::string typeName, bool bound);
+    MCNAPI TypeNameInfo(::std::string bindingName, ::std::string typeName, bool bound);
 
-    MCAPI ~TypeNameInfo();
+    MCNAPI ~TypeNameInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string bindingName, ::std::string typeName, bool bound);
+    MCNAPI void* $ctor(::std::string bindingName, ::std::string typeName, bool bound);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

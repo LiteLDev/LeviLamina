@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/platform/threading/ThreadLocalObject.h"
-
 // auto generated forward declare list
 // clang-format off
 class ItemRegistry;
@@ -36,39 +33,37 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit ScopedItemRegistry(::std::weak_ptr<::ItemRegistry> registry);
+        MCNAPI explicit ScopedItemRegistry(::std::weak_ptr<::ItemRegistry> registry);
 
-        MCAPI void construct(::ItemRegistryRef registryRef);
+        MCNAPI void construct(::ItemRegistryRef registryRef);
 
-        MCAPI ~ScopedItemRegistry();
+        MCNAPI ~ScopedItemRegistry();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::std::weak_ptr<::ItemRegistry> registry);
+        MCNAPI void* $ctor(::std::weak_ptr<::ItemRegistry> registry);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ItemRegistryRef getItemRegistry();
+    MCNAPI static ::ItemRegistryRef getItemRegistry();
 
-    MCAPI static void resetItemRegistry();
-
-    MCAPI static void setItemRegistry(::ItemRegistryRef registryRef);
+    MCNAPI static void setItemRegistry(::ItemRegistryRef registryRef);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Threading::ThreadLocalObject<::std::weak_ptr<::ItemRegistry>>& mThreadLocalRegistry();
+    MCAPI static ::std::weak_ptr<::ItemRegistry>& mThreadLocalRegistry();
     // NOLINTEND
 };

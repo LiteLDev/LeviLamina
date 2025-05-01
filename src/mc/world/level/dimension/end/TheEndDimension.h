@@ -36,34 +36,34 @@ public:
     // vIndex: 0
     virtual ~TheEndDimension() /*override*/ = default;
 
-    // vIndex: 34
+    // vIndex: 35
     virtual void startLeaveGame() /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual void init(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual void tick() /*override*/;
 
-    // vIndex: 23
+    // vIndex: 24
     virtual ::HashedString getDefaultBiome() const /*override*/;
 
     // vIndex: 1
     virtual bool isNaturalDimension() const /*override*/;
 
-    // vIndex: 20
+    // vIndex: 21
     virtual bool isValidSpawn(int x, int z) const /*override*/;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual short getCloudHeight() const /*override*/;
 
-    // vIndex: 24
+    // vIndex: 25
     virtual bool mayRespawnViaBed() const /*override*/;
 
-    // vIndex: 25
+    // vIndex: 26
     virtual ::BlockPos getSpawnPos() const /*override*/;
 
-    // vIndex: 26
+    // vIndex: 27
     virtual int getSpawnYPosition() const /*override*/;
 
     // vIndex: 9
@@ -75,26 +75,26 @@ public:
     // vIndex: 2
     virtual void serialize(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 28
+    // vIndex: 29
     virtual float getTimeOfDay(int time, float a) const /*override*/;
 
-    // vIndex: 16
+    // vIndex: 17
     virtual ::std::unique_ptr<::WorldGenerator>
     createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual bool levelChunkNeedsUpgrade(::LevelChunk const& lc) const /*override*/;
 
-    // vIndex: 17
+    // vIndex: 18
     virtual void upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk) /*override*/;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual void fixWallChunk(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
-    // vIndex: 36
+    // vIndex: 37
     virtual void _upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers) /*override*/;
 
-    // vIndex: 37
+    // vIndex: 38
     virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(
         ::std::unique_ptr<::ChunkSource> storageSource,
         ::StorageVersion                 levelVersion
@@ -104,13 +104,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TheEndDimension(::ILevel& level, ::Scheduler& context);
+    MCNAPI TheEndDimension(::ILevel& level, ::Scheduler& context);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ILevel& level, ::Scheduler& context);
+    MCNAPI void* $ctor(::ILevel& level, ::Scheduler& context);
     // NOLINTEND
 
 public:
@@ -122,58 +122,58 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $startLeaveGame();
+    MCNAPI void $startLeaveGame();
 
-    MCAPI void $init(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
+    MCNAPI void $init(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI ::HashedString $getDefaultBiome() const;
+    MCNAPI ::HashedString $getDefaultBiome() const;
 
-    MCFOLD bool $isNaturalDimension() const;
+    MCNAPI bool $isNaturalDimension() const;
 
-    MCFOLD bool $isValidSpawn(int x, int z) const;
+    MCNAPI bool $isValidSpawn(int x, int z) const;
 
-    MCFOLD short $getCloudHeight() const;
+    MCNAPI short $getCloudHeight() const;
 
-    MCFOLD bool $mayRespawnViaBed() const;
+    MCNAPI bool $mayRespawnViaBed() const;
 
-    MCAPI ::BlockPos $getSpawnPos() const;
+    MCNAPI ::BlockPos $getSpawnPos() const;
 
-    MCFOLD int $getSpawnYPosition() const;
+    MCNAPI int $getSpawnYPosition() const;
 
-    MCAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
+    MCNAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
 
-    MCAPI void $deserialize(::CompoundTag const& tag);
+    MCNAPI void $deserialize(::CompoundTag const& tag);
 
-    MCAPI void $serialize(::CompoundTag& tag) const;
+    MCNAPI void $serialize(::CompoundTag& tag) const;
 
-    MCFOLD float $getTimeOfDay(int time, float a) const;
+    MCNAPI float $getTimeOfDay(int time, float a) const;
 
-    MCAPI ::std::unique_ptr<::WorldGenerator>
+    MCNAPI ::std::unique_ptr<::WorldGenerator>
     $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
-    MCFOLD bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
+    MCNAPI bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
 
-    MCFOLD void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
+    MCNAPI void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
 
-    MCFOLD void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
+    MCNAPI void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
 
-    MCFOLD void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
+    MCNAPI void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
 
-    MCFOLD ::std::unique_ptr<::ChunkSource>
+    MCNAPI ::std::unique_ptr<::ChunkSource>
     $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForIDimension();
+    MCNAPI static void** $vftableForIDimension();
 
-    MCAPI static void** $vftableForSavedData();
+    MCNAPI static void** $vftableForSavedData();
 
-    MCAPI static void** $vftableForLevelListener();
+    MCNAPI static void** $vftableForLevelListener();
     // NOLINTEND
 };

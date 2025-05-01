@@ -8,29 +8,29 @@
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/shared_types/legacy/Difficulty.h"
 #include "mc/network/GamePublishSetting.h"
+#include "mc/options/EduSharedUriResource.h"
 #include "mc/options/EducationEditionOffer.h"
+#include "mc/options/EducationEditionOfferValue.h"
+#include "mc/resources/BaseGameVersion.h"
+#include "mc/world/actor/player/PermissionsHandler.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/DaylightCycle.h"
+#include "mc/world/level/EducationLevelSettings.h"
 #include "mc/world/level/GameType.h"
 #include "mc/world/level/GeneratorType.h"
+#include "mc/world/level/LevelSeed64.h"
 #include "mc/world/level/NetherWorldType.h"
+#include "mc/world/level/SpawnSettings.h"
 #include "mc/world/level/WorldVersion.h"
+#include "mc/world/level/storage/CloudSaveLevelInfo.h"
+#include "mc/world/level/storage/ExperimentStorage.h"
+#include "mc/world/level/storage/GameRules.h"
 
 // auto generated forward declare list
 // clang-format off
-class BaseGameVersion;
-class BlockPos;
-class CloudSaveLevelInfo;
 class Dimension;
-class EducationEditionOfferValue;
-class ExperimentStorage;
-class GameRules;
 class LevelData;
-class LevelSeed64;
-class PermissionsHandler;
-struct EduSharedUriResource;
-struct EducationLevelSettings;
 struct PackInstanceId;
-struct SpawnSettings;
 // clang-format on
 
 class LevelSettings {
@@ -93,7 +93,8 @@ public:
     ::ll::TypedStorage<8, 32, ::BaseGameVersion>                          mBaseGameVersion;
     ::ll::TypedStorage<8, 32, ::std::string>                              mEducationProductID;
     ::ll::TypedStorage<8, 32, ::std::string>                              mEducationCreatorID;
-    ::ll::TypedStorage<8, 32, ::std::string>                              mEducationWorldID;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mEducationCreatorWorldID;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mEducationReferrerID;
     ::ll::TypedStorage<8, 32, ::std::string>                              mBiomeOverride;
     ::ll::TypedStorage<8, 64, ::EduSharedUriResource>                     mEduSharedUriResource;
     ::ll::TypedStorage<1, 1, ::ChatRestrictionLevel>                      mChatRestrictionLevel;
@@ -132,6 +133,10 @@ public:
     MCAPI ::LevelSettings& setBaseGameVersion(::BaseGameVersion const& baseGameVersion);
 
     MCAPI ::LevelSettings& setEduSharedUriResource(::EduSharedUriResource const& eduSharedUriResource);
+
+    MCAPI ::LevelSettings& setEducationCreatorID(::std::string id);
+
+    MCAPI ::LevelSettings& setEducationCreatorWorldID(::std::string id);
 
     MCAPI ::LevelSettings& setEducationEditionOffer(::EducationEditionOffer offer);
 

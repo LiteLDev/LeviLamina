@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+
 // auto generated forward declare list
 // clang-format off
+class IFileAccess;
 class WorldTemplatePackManifest;
 // clang-format on
 
@@ -33,20 +37,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit WorldTemplateInfo(::WorldTemplatePackManifest const& manifest);
+    MCNAPI WorldTemplateInfo(
+        ::WorldTemplatePackManifest const&        manifest,
+        ::Bedrock::NonOwnerPointer<::IFileAccess> fileAccess
+    );
 
-    MCAPI ~WorldTemplateInfo();
+    MCNAPI ~WorldTemplateInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::WorldTemplatePackManifest const& manifest);
+    MCNAPI void*
+    $ctor(::WorldTemplatePackManifest const& manifest, ::Bedrock::NonOwnerPointer<::IFileAccess> fileAccess);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

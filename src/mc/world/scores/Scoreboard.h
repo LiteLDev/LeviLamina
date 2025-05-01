@@ -5,6 +5,10 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/server/commands/CommandOperator.h"
+#include "mc/server/commands/CommandSoftEnumRegistry.h"
+#include "mc/world/events/PlayerScoreboardEventListener.h"
+#include "mc/world/events/ScoreboardEventCoordinator.h"
+#include "mc/world/scores/IdentityDictionary.h"
 #include "mc/world/scores/ObjectiveRenderType.h"
 #include "mc/world/scores/ObjectiveSortOrder.h"
 #include "mc/world/scores/PlayerScoreSetFunction.h"
@@ -12,16 +16,12 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class CommandSoftEnumRegistry;
 class CompoundTag;
 class DisplayObjective;
-class IdentityDictionary;
 class Objective;
 class ObjectiveCriteria;
 class PacketSender;
 class Player;
-class PlayerScoreboardEventListener;
-class ScoreboardEventCoordinator;
 class ScoreboardIdentityRef;
 struct PlayerScore;
 struct PlayerScoreboardId;

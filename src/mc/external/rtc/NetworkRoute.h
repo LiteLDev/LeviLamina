@@ -24,9 +24,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string DebugString() const;
+    MCNAPI ::std::string DebugString() const;
 
-    MCAPI bool operator==(::rtc::NetworkRoute const&) const;
+    MCNAPI bool operator==(::rtc::NetworkRoute const&) const;
     // NOLINTEND
 };
 

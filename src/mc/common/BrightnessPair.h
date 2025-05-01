@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct Brightness;
-// clang-format on
+// auto generated inclusion list
+#include "mc/common/Brightness.h"
 
 struct BrightnessPair {
 public:

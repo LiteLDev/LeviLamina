@@ -51,18 +51,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
+    MCNAPI ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
 
-    MCFOLD ::ItemStackNetResult $endRequest();
+    MCNAPI ::ItemStackNetResult $endRequest();
 
-    MCFOLD void $endRequestBatch();
+    MCNAPI void $endRequestBatch();
 
-    MCFOLD void $postRequest(bool const wasSuccess);
+    MCNAPI void $postRequest(bool const wasSuccess);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

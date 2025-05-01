@@ -25,7 +25,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tickGoalSelectorComponent(::ActorOwnerComponent& actorOwnerComponent);
+    MCNAPI static void _tickGoalSelectorComponent(::ActorOwnerComponent& actorOwnerComponent);
     // NOLINTEND
 
 public:
@@ -37,12 +37,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCNAPI void $tick(::EntityRegistry& registry);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

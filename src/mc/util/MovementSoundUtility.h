@@ -10,7 +10,7 @@ class SynchedActorDataEntityWrapper;
 namespace MovementSoundUtility {
 // functions
 // NOLINTBEGIN
-MCAPI float getNextStep(::SynchedActorDataEntityWrapper const& synchedActorData, float moveDistance);
+MCNAPI float getNextStep(::SynchedActorDataEntityWrapper const& synchedActorData, float moveDistance);
 // NOLINTEND
 
 } // namespace MovementSoundUtility

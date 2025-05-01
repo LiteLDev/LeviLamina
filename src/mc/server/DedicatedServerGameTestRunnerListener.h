@@ -48,13 +48,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DedicatedServerGameTestRunnerListener(
+    MCNAPI DedicatedServerGameTestRunnerListener(
         ::GameTestReport&                    report,
         ::std::unordered_set<::std::string>& failedGameTests,
         ::std::unordered_set<::std::string>& passedGameTests
     );
 
-    MCAPI void _addTestResult(
+    MCNAPI void _addTestResult(
         ::std::string const&                       testName,
         ::std::string const&                       result,
         ::std::optional<::gametest::GameTestError> error
@@ -64,7 +64,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::GameTestReport&                    report,
         ::std::unordered_set<::std::string>& failedGameTests,
         ::std::unordered_set<::std::string>& passedGameTests
@@ -80,16 +80,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onTestStarted(::gametest::BaseGameTestInstance& testInstance);
+    MCNAPI void $onTestStarted(::gametest::BaseGameTestInstance& testInstance);
 
-    MCAPI void $onTestPassed(::gametest::BaseGameTestInstance& testInstance);
+    MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance& testInstance);
 
-    MCAPI void $onTestFailed(::gametest::BaseGameTestInstance& testInstance);
+    MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance& testInstance);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

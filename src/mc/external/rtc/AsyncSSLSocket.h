@@ -13,21 +13,21 @@ class AsyncSSLSocket {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AsyncSSLSocket(::rtc::Socket*);
+    MCNAPI explicit AsyncSSLSocket(::rtc::Socket*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::Socket*);
+    MCNAPI void* $ctor(::rtc::Socket*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForSocket();
+    MCNAPI static void** $vftableForSocket();
 
-    MCAPI static void** $vftableForHasSlots();
+    MCNAPI static void** $vftableForHasSlots();
     // NOLINTEND
 };
 

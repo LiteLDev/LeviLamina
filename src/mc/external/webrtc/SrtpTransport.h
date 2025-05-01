@@ -13,43 +13,43 @@ class SrtpTransport {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void CreateSrtpSessions();
+    MCNAPI void CreateSrtpSessions();
 
-    MCAPI void EnableExternalAuth();
+    MCNAPI void EnableExternalAuth();
 
-    MCAPI bool GetSrtpOverhead(int*) const;
+    MCNAPI bool GetSrtpOverhead(int*) const;
 
-    MCAPI void MaybeUpdateWritableState();
+    MCNAPI void MaybeUpdateWritableState();
 
-    MCAPI bool ProtectRtcp(void*, int, int, int*);
+    MCNAPI bool ProtectRtcp(void*, int, int, int*);
 
-    MCAPI bool ProtectRtp(void*, int, int, int*);
+    MCNAPI bool ProtectRtp(void*, int, int, int*);
 
-    MCAPI void ResetParams();
+    MCNAPI void ResetParams();
 
-    MCAPI bool
+    MCNAPI bool
     SetRtcpParams(int, uchar const*, int, ::std::vector<int> const&, int, uchar const*, int, ::std::vector<int> const&);
 
-    MCAPI bool
+    MCNAPI bool
     SetRtpParams(int, uchar const*, int, ::std::vector<int> const&, int, uchar const*, int, ::std::vector<int> const&);
 
-    MCAPI SrtpTransport(bool, ::webrtc::FieldTrialsView const&);
+    MCNAPI SrtpTransport(bool, ::webrtc::FieldTrialsView const&);
 
-    MCAPI bool UnprotectRtcp(void*, int, int*);
+    MCNAPI bool UnprotectRtcp(void*, int, int*);
 
-    MCAPI bool UnprotectRtp(void*, int, int*);
+    MCNAPI bool UnprotectRtp(void*, int, int*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(bool, ::webrtc::FieldTrialsView const&);
+    MCNAPI void* $ctor(bool, ::webrtc::FieldTrialsView const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

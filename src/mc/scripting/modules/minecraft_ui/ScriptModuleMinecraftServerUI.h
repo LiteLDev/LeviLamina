@@ -18,10 +18,10 @@ namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraftServerUI {
 // functions
 // NOLINTBEGIN
-MCAPI ::Scripting::EnumBindingBuilder<::std::string, ::ScriptModuleMinecraftServerUI::ScriptFormRejectReason>
+MCNAPI ::Scripting::EnumBindingBuilder<::std::string, ::ScriptModuleMinecraftServerUI::ScriptFormRejectReason>
 bindScriptFormRejectReason();
 
-MCAPI ::Scripting::Result_deprecated<::Json::Value> resolveRawMessageAsJson(
+MCNAPI ::Scripting::Result_deprecated<::Json::Value> resolveRawMessageAsJson(
     ::Player&                                                                                player,
     ::CurrentCmdVersion                                                                      commandVersion,
     ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> const& text

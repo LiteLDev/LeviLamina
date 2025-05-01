@@ -18,6 +18,7 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk2b4915;
     ::ll::UntypedStorage<1, 1>  mUnkda5e8c;
     ::ll::UntypedStorage<1, 1>  mUnkdb1b86;
+    ::ll::UntypedStorage<1, 1>  mUnk3fc97f;
     ::ll::UntypedStorage<8, 32> mUnkc0443a;
     ::ll::UntypedStorage<1, 1>  mUnkc8fcbc;
     ::ll::UntypedStorage<2, 12> mUnk876c1b;
@@ -36,13 +37,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~RegistrationOptions();
+    MCNAPI ~RegistrationOptions();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

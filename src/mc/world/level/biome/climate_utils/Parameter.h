@@ -15,17 +15,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Parameter(float min, float max);
+    MCNAPI Parameter(float min, float max);
 
-    MCAPI Parameter(int64 const& min, int64 const& max);
+    MCNAPI Parameter(int64 const& min, int64 const& max);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(float min, float max);
+    MCNAPI void* $ctor(float min, float max);
 
-    MCAPI void* $ctor(int64 const& min, int64 const& max);
+    MCNAPI void* $ctor(int64 const& min, int64 const& max);
     // NOLINTEND
 };
 

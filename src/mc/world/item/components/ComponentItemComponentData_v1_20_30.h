@@ -22,7 +22,7 @@ public:
     ::ll::UntypedStorage<8, 48>  mUnk438306;
     ::ll::UntypedStorage<8, 272> mUnk50359e;
     ::ll::UntypedStorage<8, 272> mUnka0229b;
-    ::ll::UntypedStorage<8, 48>  mUnk2c028a;
+    ::ll::UntypedStorage<8, 72>  mUnk2c028a;
     ::ll::UntypedStorage<8, 208> mUnk3b222e;
     ::ll::UntypedStorage<8, 168> mUnkcaca34;
     ::ll::UntypedStorage<8, 48>  mUnk8e34cb;
@@ -54,34 +54,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemComponentData_v1_20_30(::ComponentItemComponentData_v1_20_30 const&);
+    MCNAPI ComponentItemComponentData_v1_20_30(::ComponentItemComponentData_v1_20_30 const&);
 
-    MCAPI ComponentItemComponentData_v1_20_30(::ComponentItemComponentData_v1_20_30&&);
+    MCNAPI ComponentItemComponentData_v1_20_30(::ComponentItemComponentData_v1_20_30&&);
 
-    MCAPI ::ComponentItemComponentData_v1_20_30& operator=(::ComponentItemComponentData_v1_20_30&&);
+    MCNAPI ::ComponentItemComponentData_v1_20_30& operator=(::ComponentItemComponentData_v1_20_30&&);
 
-    MCAPI ::ComponentItemComponentData_v1_20_30& operator=(::ComponentItemComponentData_v1_20_30 const&);
+    MCNAPI ::ComponentItemComponentData_v1_20_30& operator=(::ComponentItemComponentData_v1_20_30 const&);
 
-    MCAPI ~ComponentItemComponentData_v1_20_30();
+    MCNAPI ~ComponentItemComponentData_v1_20_30();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ComponentItemComponentData_v1_20_30 const&);
+    MCNAPI void* $ctor(::ComponentItemComponentData_v1_20_30 const&);
 
-    MCAPI void* $ctor(::ComponentItemComponentData_v1_20_30&&);
+    MCNAPI void* $ctor(::ComponentItemComponentData_v1_20_30&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

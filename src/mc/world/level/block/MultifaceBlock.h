@@ -55,7 +55,7 @@ public:
 
     // vIndex: 4
     virtual ::HitResult
-    clip(::Block const& block, ::BlockSource const&, ::BlockPos const& pos, ::Vec3 const& origin, ::Vec3 const& end, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
+    clip(::Block const&, ::BlockSource const&, ::BlockPos const&, ::Vec3 const&, ::Vec3 const&, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
         const /*override*/;
 
     // vIndex: 92
@@ -67,7 +67,7 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 142
+    // vIndex: 140
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 80
@@ -89,21 +89,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MultifaceBlock(
+    MCNAPI MultifaceBlock(
         ::std::string const&                         nameId,
         int                                          id,
         ::Material const&                            material,
         ::std::unique_ptr<::MultifaceSpreader const> spreader
     );
 
-    MCAPI bool
+    MCNAPI bool
     _canSpread(::IBlockWorldGenAPI& target, ::Block const& block, ::BlockPos const& pos, uchar startingFace) const;
 
-    MCAPI void
+    MCNAPI void
     _removeBlock(::IBlockWorldGenAPI& target, ::BlockSource* region, ::BlockPos const& pos, bool canSpawnParticles)
         const;
 
-    MCAPI void removeFace(
+    MCNAPI void removeFace(
         ::IBlockWorldGenAPI& target,
         ::BlockSource*       region,
         ::Block const&       block,
@@ -112,15 +112,15 @@ public:
         bool                 canSpawnParticles
     ) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _hasAnyFace(::Block const& block);
+    MCNAPI static bool _hasAnyFace(::Block const& block);
 
-    MCAPI static ::Block const& getBlockForPlacement(
+    MCNAPI static ::Block const& getBlockForPlacement(
         ::Block const&    oldBlock,
         ::Block const&    placementBlock,
         ::BlockSource&    region,
@@ -128,7 +128,7 @@ public:
         uchar             placementDirection
     );
 
-    MCAPI static ::Block const& getBlockForPlacementOrFillMoreFaces(
+    MCNAPI static ::Block const& getBlockForPlacementOrFillMoreFaces(
         ::Block const&    oldBlock,
         ::Block const&    placementBlock,
         ::BlockSource&    region,
@@ -136,7 +136,7 @@ public:
         uchar             placementDirection
     );
 
-    MCAPI static ::Block const& getBlockForPlacementWorldGen(
+    MCNAPI static ::Block const& getBlockForPlacementWorldGen(
         ::Block const&       oldBlock,
         ::Block const&       placementBlock,
         ::IBlockWorldGenAPI& region,
@@ -144,7 +144,7 @@ public:
         uchar                placementDirection
     );
 
-    MCAPI static bool hasFace(::Block const& block, uchar faceDirection);
+    MCNAPI static bool hasFace(::Block const& block, uchar faceDirection);
     // NOLINTEND
 
 public:
@@ -170,7 +170,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                         nameId,
         int                                          id,
         ::Material const&                            material,
@@ -187,44 +187,40 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::AABB const&
+    MCNAPI ::AABB const&
     $getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB)
         const;
 
-    MCFOLD ::AABB
+    MCNAPI ::AABB
     $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCFOLD ::AABB const&
+    MCNAPI ::AABB const&
     $getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
         const;
 
-    MCAPI ::HitResult
-    $clip(::Block const& block, ::BlockSource const&, ::BlockPos const& pos, ::Vec3 const& origin, ::Vec3 const& end, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
-
-    MCAPI ::Block const&
+    MCNAPI ::Block const&
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
 
-    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCFOLD bool $isMultifaceBlock() const;
+    MCNAPI bool $isMultifaceBlock() const;
 
-    MCFOLD bool $isLavaBlocking() const;
+    MCNAPI bool $isLavaBlocking() const;
 
-    MCAPI ::Block const& $sanitizeFillBlock(::Block const& block) const;
+    MCNAPI ::Block const& $sanitizeFillBlock(::Block const& block) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

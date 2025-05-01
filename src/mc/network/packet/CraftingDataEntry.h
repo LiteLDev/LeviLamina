@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/network/packet/CraftingDataEntryType.h"
+#include "mc/world/item/NetworkItemInstanceDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class ItemInstance;
 class MultiRecipe;
-class NetworkItemInstanceDescriptor;
 class Recipe;
 // clang-format on
 
@@ -34,26 +34,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CraftingDataEntry(::CraftingDataEntry&& entry);
+    MCNAPI CraftingDataEntry(::CraftingDataEntry&& entry);
 
-    MCAPI void fillFromFurnaceAuxRecipe(int itemData, ::ItemInstance const& result, ::HashedString const& tag);
+    MCNAPI void fillFromFurnaceAuxRecipe(int itemData, ::ItemInstance const& result, ::HashedString const& tag);
 
-    MCAPI void fillFromMultiRecipe(::MultiRecipe const& recipe);
+    MCNAPI void fillFromMultiRecipe(::MultiRecipe const& recipe);
 
-    MCAPI void fillFromRecipe(::Recipe const& recipe);
+    MCNAPI void fillFromRecipe(::Recipe const& recipe);
 
-    MCAPI ~CraftingDataEntry();
+    MCNAPI ~CraftingDataEntry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CraftingDataEntry&& entry);
+    MCNAPI void* $ctor(::CraftingDataEntry&& entry);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

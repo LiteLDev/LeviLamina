@@ -23,6 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void unregisterTemporaryPointer(::_TickPtr& ptr);
+    MCNAPI void unregisterTemporaryPointer(::_TickPtr& ptr);
     // NOLINTEND
 };

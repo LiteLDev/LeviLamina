@@ -55,13 +55,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _loadPersistDataFromLevel();
+    MCNAPI void _loadPersistDataFromLevel();
 
-    MCAPI void _removePersistDataFromLevel(::HashedString const& key);
+    MCNAPI void _removePersistDataFromLevel(::HashedString const& key);
 
-    MCAPI void _saveDataOnLevel(::HashedString const& key, ::std::string value);
+    MCNAPI void _saveDataOnLevel(::HashedString const& key, ::std::string value);
 
-    MCAPI void _savePersistDataOnLevel();
+    MCNAPI void _savePersistDataOnLevel();
     // NOLINTEND
 
 public:
@@ -79,23 +79,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCAPI void $_removePersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType);
+    MCNAPI void $_removePersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType);
 
-    MCAPI void $_tick(::Editor::ServiceProviderCollection& serviceProvider);
+    MCNAPI void $_tick(::Editor::ServiceProviderCollection& serviceProvider);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEditorPersistenceServiceProvider();
+    MCNAPI static void** $vftableForEditorPersistenceServiceProvider();
 
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

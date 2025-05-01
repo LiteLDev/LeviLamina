@@ -15,12 +15,12 @@ class Vec3;
 namespace NavigationUtility {
 // functions
 // NOLINTBEGIN
-MCAPI bool
+MCNAPI bool
 canMoveDirectly(::Mob& mob, ::Vec3 const& startPos, ::Vec3 const& stopPos, int sx, int sy, int sz, bool isClimbing);
 
-MCAPI bool canMoveDirectlyWaterBound(::Mob const& mob, ::Vec3 const& startPos, ::Vec3 const& stopPos);
+MCNAPI bool canMoveDirectlyWaterBound(::Mob const& mob, ::Vec3 const& startPos, ::Vec3 const& stopPos);
 
-MCAPI bool canWalkAbove(
+MCNAPI bool canWalkAbove(
     ::Mob&        mob,
     int           startX,
     int           startY,
@@ -34,10 +34,10 @@ MCAPI bool canWalkAbove(
     bool          isClimbing
 );
 
-MCAPI bool
+MCNAPI bool
 canWalkDirectly(::Mob& mob, ::Vec3 const& startPos, ::Vec3 const& stopPos, int sx, int sy, int sz, bool isClimbing);
 
-MCAPI bool canWalkOn(
+MCNAPI bool canWalkOn(
     ::Mob&        mob,
     int           x,
     int           y,
@@ -51,28 +51,28 @@ MCAPI bool canWalkOn(
     bool          isClimbing
 );
 
-MCAPI bool closeToDone(::Mob const& mob, float dist);
+MCNAPI bool closeToDone(::Mob const& mob, float dist);
 
-MCAPI bool flyCondition(::Mob const& mob, ::BlockSource& region, int gridPosX, int gridPosY, int gridPosZ);
+MCNAPI bool flyCondition(::Mob const& mob, ::BlockSource& region, int gridPosX, int gridPosY, int gridPosZ);
 
-MCAPI int getSurfaceY(::Mob const& mob);
+MCNAPI int getSurfaceY(::Mob const& mob);
 
-MCAPI bool invalidPathStartStatus(::Mob const& mob, ::BlockPos& startPosition);
+MCNAPI bool invalidPathStartStatus(::Mob const& mob, ::BlockPos& startPosition);
 
-MCAPI bool
+MCNAPI bool
 isDoorBlockingPath(::Mob const& mob, ::Block const& block, ::Path const& path, ::BlockPos const& nodePos, uint64 index);
 
-MCAPI bool isInLiquid(::Mob const& mob);
+MCNAPI bool isInLiquid(::Mob const& mob);
 
-MCAPI bool isInNode(::Mob const& mob, ::BlockPos const& nodePos);
+MCNAPI bool isInNode(::Mob const& mob, ::BlockPos const& nodePos);
 
-MCAPI bool isStairBlockFacingMob(::Mob const& mob, ::BlockPos const& blockPos);
+MCNAPI bool isStairBlockFacingMob(::Mob const& mob, ::BlockPos const& blockPos);
 
-MCAPI bool moveCondition(::Mob const& mob, ::Block const& block);
+MCNAPI bool moveCondition(::Mob const& mob, ::Block const& block);
 
-MCAPI bool swimCondition(::Mob const&, ::BlockSource& region, int gridPosX, int gridPosY, int gridPosZ);
+MCNAPI bool swimCondition(::Mob const&, ::BlockSource& region, int gridPosX, int gridPosY, int gridPosZ);
 
-MCAPI void trimPathFromSun(::Mob const& mob);
+MCNAPI void trimPathFromSun(::Mob const& mob);
 // NOLINTEND
 
 } // namespace NavigationUtility

@@ -57,7 +57,7 @@ public:
     ::ll::UntypedStorage<8, 64>    mUnkc054fe;
     ::ll::UntypedStorage<8, 64>    mUnkd324ee;
     ::ll::UntypedStorage<8, 64>    mUnkbf613f;
-    ::ll::UntypedStorage<8, 10336> mUnkd22028;
+    ::ll::UntypedStorage<8, 10432> mUnk91f38a;
     ::ll::UntypedStorage<4, 16>    mUnk2fd154;
     ::ll::UntypedStorage<8, 24>    mUnk20f3d4;
     ::ll::UntypedStorage<8, 8>     mUnk67953e;
@@ -106,40 +106,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkStatistics(
+    MCNAPI NetworkStatistics(
         ::ClientOrServerNetworkSystemRef&&                   network,
         ::TrackerType                                        type,
         ::std::function<bool(::RakNet::RakNetStatistics&)>&& getRakNetStatsReading,
         ::Bedrock::NotNullNonOwnerPtr<::NetworkDebugManager> networkDebugManager
     );
 
-    MCAPI NetworkStatistics(
+    MCNAPI NetworkStatistics(
         ::ServerNetworkSystem&                               server,
         ::TrackerType                                        type,
         ::std::function<bool(::RakNet::RakNetStatistics&)>&& getRakNetStatsReading,
         ::Bedrock::NotNullNonOwnerPtr<::NetworkDebugManager> networkDebugManager
     );
 
-    MCAPI void _initRakNetProfileTracking();
+    MCNAPI void _initRakNetProfileTracking();
 
-    MCAPI void _logPeerConnectionInfo(::std::vector<::WeakEntityRef> const& userList, bool includeAverages) const;
+    MCNAPI void _logPeerConnectionInfo(::std::vector<::WeakEntityRef> const& userList, bool includeAverages) const;
 
-    MCAPI ::std::string getVerboseInfo() const;
+    MCNAPI ::std::string getVerboseInfo() const;
 
-    MCAPI void tick(::std::vector<::WeakEntityRef> const* userList);
+    MCNAPI void tick(::std::vector<::WeakEntityRef> const* userList);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ClientOrServerNetworkSystemRef&&                   network,
         ::TrackerType                                        type,
         ::std::function<bool(::RakNet::RakNetStatistics&)>&& getRakNetStatsReading,
         ::Bedrock::NotNullNonOwnerPtr<::NetworkDebugManager> networkDebugManager
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ServerNetworkSystem&                               server,
         ::TrackerType                                        type,
         ::std::function<bool(::RakNet::RakNetStatistics&)>&& getRakNetStatsReading,
@@ -150,26 +150,26 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $packetSentTo(::NetworkIdentifier const& target, ::Packet const& packet, uint size);
+    MCNAPI void $packetSentTo(::NetworkIdentifier const& target, ::Packet const& packet, uint size);
 
-    MCAPI void $packetReceivedFrom(::NetworkIdentifier const& source, ::Packet const& packet, uint size);
+    MCNAPI void $packetReceivedFrom(::NetworkIdentifier const& source, ::Packet const& packet, uint size);
 
-    MCAPI void $dataSentTo(::NetworkIdentifier const& target, ::std::string_view data);
+    MCNAPI void $dataSentTo(::NetworkIdentifier const& target, ::std::string_view data);
 
-    MCAPI void $dataReceivedFrom(::NetworkIdentifier const& source, ::std::string const& data);
+    MCNAPI void $dataReceivedFrom(::NetworkIdentifier const& source, ::std::string const& data);
 
-    MCAPI void $reset();
+    MCNAPI void $reset();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

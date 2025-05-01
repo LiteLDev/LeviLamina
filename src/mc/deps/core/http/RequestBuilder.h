@@ -20,25 +20,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RequestBuilder();
+    MCNAPI RequestBuilder();
 
-    MCAPI ::Bedrock::Http::RequestBuilder& body(::std::string const& plainText);
+    MCNAPI ::Bedrock::Http::RequestBuilder& body(::std::string const& plainText);
 
-    MCAPI ::Bedrock::Http::RequestBuilder& url(::std::string const& url);
+    MCNAPI ::Bedrock::Http::RequestBuilder& url(::std::string const& url);
 
-    MCAPI ~RequestBuilder();
+    MCNAPI ~RequestBuilder();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

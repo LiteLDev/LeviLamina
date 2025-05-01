@@ -38,13 +38,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~PoolEntry();
+        MCNAPI ~PoolEntry();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -86,13 +86,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorkerPoolManagerImpl();
+    MCNAPI WorkerPoolManagerImpl();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -104,9 +104,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $init();
+    MCNAPI void $init();
 
-    MCAPI ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> $createWorkerPool(
+    MCNAPI ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> $createWorkerPool(
         ::std::string                                 name,
         uint64                                        threadCount,
         ::Bedrock::Threading::OSThreadPriority const& priority,
@@ -115,15 +115,15 @@ public:
         ::std::optional<int> const                    idealCore
     );
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForImplBase();
+    MCNAPI static void** $vftableForImplBase();
 
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };
 

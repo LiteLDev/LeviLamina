@@ -21,7 +21,7 @@ struct TickingSystemWithInfo;
 namespace ServerPlayerInputSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void _tickPlayerMovement(
+MCNAPI void _tickPlayerMovement(
     ::StrictEntityContext&           entity,
     ::ServerPlayerMovementComponent& serverPlayerMovement,
     ::EntityModifier<
@@ -30,13 +30,13 @@ MCAPI void _tickPlayerMovement(
         ::ServerPlayerInteractComponent> modifier
 );
 
-MCAPI ::TickingSystemWithInfo create();
+MCNAPI ::TickingSystemWithInfo create();
 
-MCAPI bool onInteractPacket(::ServerPlayerMovementComponent& component, ::InteractPacket const& packet);
+MCNAPI bool onInteractPacket(::ServerPlayerMovementComponent& component, ::InteractPacket const& packet);
 
-MCAPI bool onPlayerAuthInputPacket(::ServerPlayerMovementComponent& component, ::PlayerAuthInputPacket const& packet);
+MCNAPI bool onPlayerAuthInputPacket(::ServerPlayerMovementComponent& component, ::PlayerAuthInputPacket const& packet);
 
-MCAPI void transferInteractPackets(::ServerPlayerMovementComponent& movementComponent, ::EntityContext& entity);
+MCNAPI void transferInteractPackets(::ServerPlayerMovementComponent& movementComponent, ::EntityContext& entity);
 // NOLINTEND
 
 } // namespace ServerPlayerInputSystem

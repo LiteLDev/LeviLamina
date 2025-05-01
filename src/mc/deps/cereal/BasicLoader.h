@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct SchemaReader; }
 namespace cereal::internal { class BasicSchema; }
 // clang-format on
@@ -18,7 +17,7 @@ class BasicLoader : public ::cereal::BasicContextOwner {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnkab84fe;
+    ::ll::UntypedStorage<8, 104> mUnkab84fe;
     // NOLINTEND
 
 public:
@@ -37,9 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BasicLoader(::cereal::ReflectionCtx const& reflectionCtx);
-
-    MCAPI bool loadImpl(
+    MCNAPI bool loadImpl(
         ::cereal::SchemaReader&                reader,
         ::entt::meta_handle                    handle,
         ::entt::meta_any const&                loadContext,
@@ -48,21 +45,15 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx const& reflectionCtx);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

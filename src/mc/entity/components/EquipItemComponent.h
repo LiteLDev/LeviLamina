@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ItemStack;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/item/ItemStack.h"
 
 struct EquipItemComponent {
 public:
@@ -19,12 +17,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~EquipItemComponent();
+    MCNAPI ~EquipItemComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

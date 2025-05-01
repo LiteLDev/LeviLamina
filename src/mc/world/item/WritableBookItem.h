@@ -17,7 +17,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 76
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
     // vIndex: 50
     virtual bool requiresInteract() const /*override*/;
@@ -32,13 +32,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void addPageAt(::ItemStack& book, int index, ::PageContent const& page);
+    MCNAPI static void addPageAt(::ItemStack& book, int index, ::PageContent const& page);
 
-    MCAPI static ::PageContent deletePage(::ItemStack& book, int index);
+    MCNAPI static ::PageContent deletePage(::ItemStack& book, int index);
 
-    MCAPI static void replacePage(::ItemStack& book, int index, ::PageContent const& page);
+    MCNAPI static void replacePage(::ItemStack& book, int index, ::PageContent const& page);
 
-    MCAPI static void signBook(
+    MCNAPI static void signBook(
         ::ItemStack&                   book,
         ::std::string                  title,
         ::std::optional<::std::string> filteredTitle,
@@ -47,7 +47,7 @@ public:
         ::std::string                  xuid
     );
 
-    MCAPI static void swapPages(::ItemStack& book, int page1, int page2);
+    MCNAPI static void swapPages(::ItemStack& book, int page1, int page2);
     // NOLINTEND
 
 public:
@@ -59,16 +59,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 
-    MCFOLD bool $requiresInteract() const;
+    MCNAPI bool $requiresInteract() const;
 
-    MCAPI ::std::string $getInteractText(::Player const& player) const;
+    MCNAPI ::std::string $getInteractText(::Player const& player) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

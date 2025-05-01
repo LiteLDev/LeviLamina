@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/cereal/SerializerContext.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
@@ -13,10 +10,8 @@ namespace Core { class Path; }
 namespace BiomeLoadingUtil {
 // functions
 // NOLINTBEGIN
-MCAPI void
+MCNAPI void
 _doContentError(::std::string const& message, ::Core::Path const& filePath, ::std::vector<::std::string> const& errors);
-
-MCFOLD ::std::string _getUnrecognizedFieldText(::std::vector<::cereal::SerializerContext::LogEntry> const& schemaLog);
 // NOLINTEND
 
 } // namespace BiomeLoadingUtil

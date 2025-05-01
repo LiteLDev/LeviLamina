@@ -41,17 +41,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::webrtc::Attribute> Attributes() const;
+    MCNAPI ::std::vector<::webrtc::Attribute> Attributes() const;
 
-    MCAPI RTCStats(::webrtc::RTCStats const&);
+    MCNAPI RTCStats(::webrtc::RTCStats const&);
 
-    MCAPI ::std::string ToJson() const;
+    MCNAPI ::std::string ToJson() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::RTCStats const&);
+    MCNAPI void* $ctor(::webrtc::RTCStats const&);
     // NOLINTEND
 
 public:
@@ -69,7 +69,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

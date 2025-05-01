@@ -162,7 +162,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ItemInstance getTierItem() const;
+    MCNAPI ::ItemInstance getTierItem() const;
     // NOLINTEND
 
 public:
@@ -198,62 +198,62 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isHumanoidArmor() const;
+    MCNAPI bool $isHumanoidArmor() const;
 
-    MCAPI bool $isValidRepairItem(
+    MCNAPI bool $isValidRepairItem(
         ::ItemStackBase const&   source,
         ::ItemStackBase const&   repairItem,
         ::BaseGameVersion const& baseGameVersion
     ) const;
 
-    MCAPI int $getEnchantSlot() const;
+    MCNAPI int $getEnchantSlot() const;
 
-    MCAPI int $getEnchantValue() const;
+    MCNAPI int $getEnchantValue() const;
 
-    MCFOLD int $getArmorValue() const;
+    MCNAPI int $getArmorValue() const;
 
-    MCAPI int $getToughnessValue() const;
+    MCNAPI int $getToughnessValue() const;
 
-    MCAPI float $getArmorKnockbackResistance() const;
+    MCNAPI float $getArmorKnockbackResistance() const;
 
-    MCAPI bool $hasCustomColor(::CompoundTag const* userData) const;
+    MCNAPI bool $hasCustomColor(::CompoundTag const* userData) const;
 
-    MCAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
+    MCNAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
 
-    MCFOLD void $clearColor(::ItemStackBase& instance) const;
+    MCNAPI void $clearColor(::ItemStackBase& instance) const;
 
-    MCFOLD void $setColor(::ItemStackBase& item, ::mce::Color const& color) const;
+    MCNAPI void $setColor(::ItemStackBase& item, ::mce::Color const& color) const;
 
-    MCAPI bool $isDyeable() const;
+    MCNAPI bool $isDyeable() const;
 
-    MCAPI bool $isTrimAllowed() const;
+    MCNAPI bool $isTrimAllowed() const;
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
+    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 
-    MCAPI int $getDamageChance(int unbreaking) const;
+    MCNAPI int $getDamageChance(int unbreaking) const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
-    MCAPI void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
 
-    MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCNAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCAPI ::ResolvedItemIconInfo
+    MCNAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI int $buildIdAux(short auxValue, ::CompoundTag const* userData) const;
+    MCNAPI int $buildIdAux(short auxValue, ::CompoundTag const* userData) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -101,12 +101,15 @@ public:
 
     // vIndex: 23
     virtual float getBrightness(::BlockPos const&) const = 0;
+
+    // vIndex: 24
+    virtual float getVisualLiquidHeight(::Vec3 const&) const = 0;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool checkMaterial(::AABB const& box, ::MaterialType material) const;
+    MCNAPI bool checkMaterial(::AABB const& box, ::MaterialType material) const;
     // NOLINTEND
 
 public:

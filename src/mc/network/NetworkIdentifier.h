@@ -3,10 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/raknet/RakNetGUID.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace RakNet { struct RakNetGUID; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/raknet/RakNetGUID.h"
 
 class NetworkIdentifier {
 public:

@@ -50,28 +50,28 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onLoadingBegin();
+    MCNAPI void $onLoadingBegin();
 
-    MCFOLD void $onLoadingEnd();
+    MCNAPI void $onLoadingEnd();
 
-    MCFOLD void $onError(::WebviewError const&);
+    MCNAPI void $onError(::WebviewError const&);
 
-    MCFOLD void $onWebviewChanged();
+    MCNAPI void $onWebviewChanged();
 
-    MCFOLD void $onDownloadBegin(::WebviewDownloadInfo const&);
+    MCNAPI void $onDownloadBegin(::WebviewDownloadInfo const&);
 
-    MCFOLD void $onDownloadUpdate(::WebviewDownloadInfo const&);
+    MCNAPI void $onDownloadUpdate(::WebviewDownloadInfo const&);
 
-    MCFOLD void $onDownloadComplete(::WebviewDownloadInfo const&);
+    MCNAPI void $onDownloadComplete(::WebviewDownloadInfo const&);
 
-    MCFOLD void $onDownloadCanceled(::WebviewDownloadInfo const&);
+    MCNAPI void $onDownloadCanceled(::WebviewDownloadInfo const&);
 
-    MCFOLD void $onMessageRecieved(::std::string const&);
+    MCNAPI void $onMessageRecieved(::std::string const&);
     // NOLINTEND
 };

@@ -13,21 +13,21 @@ class TransceiverStableState {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void SetInitSendEncodings(::std::vector<::webrtc::RtpEncodingParameters> const&);
+    MCNAPI void SetInitSendEncodings(::std::vector<::webrtc::RtpEncodingParameters> const&);
 
-    MCAPI void SetMSectionIfUnset(::std::optional<::std::string>, ::std::optional<uint64>);
+    MCNAPI void SetMSectionIfUnset(::std::optional<::std::string>, ::std::optional<uint64>);
 
-    MCAPI void SetRemoteStreamIds(::std::vector<::std::string> const&);
+    MCNAPI void SetRemoteStreamIds(::std::vector<::std::string> const&);
 
-    MCAPI void set_newly_created();
+    MCNAPI void set_newly_created();
 
-    MCAPI ~TransceiverStableState();
+    MCNAPI ~TransceiverStableState();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -12,7 +12,7 @@ struct GroundTravelTypeSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo create(::BaseGameVersion const& version);
+    MCNAPI static ::TickingSystemWithInfo create(::BaseGameVersion const& version);
     // NOLINTEND
 
 public:

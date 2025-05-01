@@ -10,15 +10,15 @@ namespace webrtc::metrics { class Histogram; }
 namespace webrtc::metrics {
 // functions
 // NOLINTBEGIN
-MCAPI void HistogramAdd(::webrtc::metrics::Histogram*, int);
+MCNAPI void HistogramAdd(::webrtc::metrics::Histogram*, int);
 
-MCAPI ::webrtc::metrics::Histogram* HistogramFactoryGetCounts(::std::string_view, int, int, int);
+MCNAPI ::webrtc::metrics::Histogram* HistogramFactoryGetCounts(::std::string_view, int, int, int);
 
-MCAPI ::webrtc::metrics::Histogram* HistogramFactoryGetCountsLinear(::std::string_view, int, int, int);
+MCNAPI ::webrtc::metrics::Histogram* HistogramFactoryGetCountsLinear(::std::string_view, int, int, int);
 
-MCAPI ::webrtc::metrics::Histogram* HistogramFactoryGetEnumeration(::std::string_view, int);
+MCNAPI ::webrtc::metrics::Histogram* HistogramFactoryGetEnumeration(::std::string_view, int);
 
-MCAPI ::webrtc::metrics::Histogram* SparseHistogramFactoryGetEnumeration(::std::string_view, int);
+MCNAPI ::webrtc::metrics::Histogram* SparseHistogramFactoryGetEnumeration(::std::string_view, int);
 // NOLINTEND
 
 } // namespace webrtc::metrics

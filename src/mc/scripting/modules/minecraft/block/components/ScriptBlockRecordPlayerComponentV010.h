@@ -26,17 +26,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> clearRecord();
+    MCNAPI ::Scripting::Result<void> clearRecord();
 
-    MCFOLD ::Scripting::Result_deprecated<bool> isPlaying();
+    MCNAPI ::Scripting::Result_deprecated<bool> isPlaying();
 
-    MCAPI ::Scripting::Result<void> setRecord(::ScriptModuleMinecraft::ScriptItemType const& itemType);
+    MCNAPI ::Scripting::Result<void> setRecord(::ScriptModuleMinecraft::ScriptItemType const& itemType);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockRecordPlayerComponentV010> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockRecordPlayerComponentV010>
+    bind();
     // NOLINTEND
 
 public:
@@ -54,7 +55,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

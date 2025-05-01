@@ -25,13 +25,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string getTypeId() const;
+    MCNAPI ::std::string getTypeId() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& module);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& module);
     // NOLINTEND
 };
 

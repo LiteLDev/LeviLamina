@@ -11,23 +11,32 @@ namespace webrtc::rtcp {
 
 class Fir {
 public:
+    // Fir inner types declare
+    // clang-format off
+    struct Request;
+    // clang-format on
+
+    // Fir inner types define
+    struct Request {};
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Fir();
+    MCNAPI Fir();
 
-    MCAPI bool Parse(::webrtc::rtcp::CommonHeader const&);
+    MCNAPI bool Parse(::webrtc::rtcp::CommonHeader const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

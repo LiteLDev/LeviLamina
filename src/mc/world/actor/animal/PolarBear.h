@@ -5,31 +5,42 @@
 // auto generated inclusion list
 #include "mc/world/actor/animal/Animal.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorDefinitionGroup;
+class EntityContext;
+struct ActorDefinitionIdentifier;
+// clang-format on
+
 class PolarBear : public ::Animal {
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk17e879;
-    ::ll::UntypedStorage<4, 4> mUnke9fe25;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PolarBear& operator=(PolarBear const&);
-    PolarBear(PolarBear const&);
-    PolarBear();
-
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 24
-    virtual void normalTick() /*override*/;
-
     // vIndex: 85
     virtual bool canFreeze() const /*override*/;
 
     // vIndex: 8
     virtual ~PolarBear() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI PolarBear(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -41,14 +52,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $normalTick();
-
-    MCFOLD bool $canFreeze() const;
+    MCNAPI bool $canFreeze() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

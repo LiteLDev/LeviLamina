@@ -86,9 +86,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo create();
+    MCNAPI static ::TickingSystemWithInfo create();
 
-    MCAPI static void tickVerticalCollisionSystem(
+    MCNAPI static void tickVerticalCollisionSystem(
         ::StrictEntityContext const&  context,
         ::AABBShapeComponent const&   aabb,
         ::MoveRequestComponent const& request,
@@ -117,21 +117,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::StrictExecutionContext<
-                     ::Filter<::MinecartFlagComponent, ::PlayerComponent, ::VerticalCollisionFlagComponent>,
-                     ::Read<
-                         ::DimensionTypeComponent,
-                         ::StateVectorComponent,
-                         ::ActorDataFlagComponent,
-                         ::MoveRequestComponent,
-                         ::AABBShapeComponent>,
-                     ::Write<::StateVectorComponent>,
-                     ::AddRemove<::BounceComponent>,
-                     ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
-                     ::GlobalWrite<>,
-                     ::EntityFactoryT<>>& strictContext);
+    MCNAPI void $tick(::StrictExecutionContext<
+                      ::Filter<::MinecartFlagComponent, ::PlayerComponent, ::VerticalCollisionFlagComponent>,
+                      ::Read<
+                          ::DimensionTypeComponent,
+                          ::StateVectorComponent,
+                          ::ActorDataFlagComponent,
+                          ::MoveRequestComponent,
+                          ::AABBShapeComponent>,
+                      ::Write<::StateVectorComponent>,
+                      ::AddRemove<::BounceComponent>,
+                      ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& strictContext);
 
-    MCAPI void $singleTick(
+    MCNAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<::MinecartFlagComponent, ::PlayerComponent, ::VerticalCollisionFlagComponent>,
             ::Read<
@@ -152,6 +152,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

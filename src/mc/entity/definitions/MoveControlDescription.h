@@ -42,6 +42,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    MCNAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
     // NOLINTEND
 };

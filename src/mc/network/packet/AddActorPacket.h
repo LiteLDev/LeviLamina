@@ -3,26 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/legacy/ActorRuntimeID.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/AddActorBasePacket.h"
 #include "mc/platform/Result.h"
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
+#include "mc/world/actor/state/PropertySyncData.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorRuntimeID;
 class AttributeInstanceHandle;
 class BaseAttributeMap;
 class BinaryStream;
 class DataItem;
 class ReadOnlyBinaryStream;
 class SynchedActorDataEntityWrapper;
-class Vec2;
-class Vec3;
-struct ActorDefinitionIdentifier;
 struct ActorLink;
-struct ActorUniqueID;
-struct PropertySyncData;
 struct SyncedAttribute;
 // clang-format on
 
@@ -69,40 +69,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AddActorPacket();
+    MCNAPI AddActorPacket();
 
-    MCAPI explicit AddActorPacket(::Actor& e);
+    MCNAPI explicit AddActorPacket(::Actor& e);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::Actor& e);
+    MCNAPI void* $ctor(::Actor& e);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::MinecraftPacketIds $getId() const;
+    MCNAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCAPI void $write(::BinaryStream& stream) const;
+    MCNAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

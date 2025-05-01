@@ -7,6 +7,7 @@
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/platform/UUID.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/actor/player/AbilitiesIndex.h"
@@ -26,7 +27,6 @@ class Vec2;
 class Vec3;
 struct CommandOriginData;
 struct CommandOriginIdentity;
-namespace mce { class UUID; }
 // clang-format on
 
 class CommandOrigin {

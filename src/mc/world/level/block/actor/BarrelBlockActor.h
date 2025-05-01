@@ -15,10 +15,10 @@ class BarrelBlockActor : public ::ChestBlockActor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 26
+    // vIndex: 27
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 11
+    // vIndex: 12
     virtual void onPlace(::BlockSource& region) /*override*/;
 
     // vIndex: 22
@@ -27,10 +27,10 @@ public:
     // vIndex: 23
     virtual void stopOpen(::Player& player) /*override*/;
 
-    // vIndex: 49
+    // vIndex: 50
     virtual void playOpenSound(::BlockSource& region) /*override*/;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual void playCloseSound(::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -46,24 +46,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCFOLD void $onPlace(::BlockSource& region);
+    MCNAPI void $onPlace(::BlockSource& region);
 
-    MCAPI void $startOpen(::Player& player);
+    MCNAPI void $startOpen(::Player& player);
 
-    MCAPI void $stopOpen(::Player& player);
+    MCNAPI void $stopOpen(::Player& player);
 
-    MCAPI void $playOpenSound(::BlockSource& region);
+    MCNAPI void $playOpenSound(::BlockSource& region);
 
-    MCAPI void $playCloseSound(::BlockSource& region);
+    MCNAPI void $playCloseSound(::BlockSource& region);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCNAPI static void** $vftableForRandomizableBlockActorContainerBase();
 
-    MCAPI static void** $vftableForFillingContainer();
+    MCNAPI static void** $vftableForFillingContainer();
     // NOLINTEND
 };

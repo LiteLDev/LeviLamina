@@ -13,10 +13,10 @@ struct AlrExperimentSettings {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::webrtc::AlrExperimentSettings>
+    MCNAPI static ::std::optional<::webrtc::AlrExperimentSettings>
     CreateFromFieldTrial(::webrtc::FieldTrialsView const&, ::std::string_view);
 
-    MCAPI static bool MaxOneFieldTrialEnabled(::webrtc::FieldTrialsView const&);
+    MCNAPI static bool MaxOneFieldTrialEnabled(::webrtc::FieldTrialsView const&);
     // NOLINTEND
 
 public:

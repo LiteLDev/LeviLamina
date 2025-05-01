@@ -8,10 +8,10 @@ struct EventTracer {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     AddTraceEvent(char, uchar const*, char const*, uint64, int, char const**, uchar const*, uint64 const*, uchar);
 
-    MCAPI static uchar const* GetCategoryEnabled(char const*);
+    MCNAPI static uchar const* GetCategoryEnabled(char const*);
     // NOLINTEND
 };
 

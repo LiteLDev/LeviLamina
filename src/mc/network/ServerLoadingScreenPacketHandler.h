@@ -17,7 +17,7 @@ class ServerboundLoadingScreenPacket;
 namespace ServerLoadingScreenPacketHandler {
 // functions
 // NOLINTBEGIN
-MCAPI void handleLoadingScreenPacket(
+MCNAPI void handleLoadingScreenPacket(
     ::NetworkIdentifier const&              source,
     ::ServerboundLoadingScreenPacket const& packet,
     ::EntityContext&                        entity,

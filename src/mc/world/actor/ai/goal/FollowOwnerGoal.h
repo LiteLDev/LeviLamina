@@ -67,7 +67,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FollowOwnerGoal(
+    MCNAPI FollowOwnerGoal(
         ::Mob& mob,
         float  speed,
         float  startDistance,
@@ -78,13 +78,13 @@ public:
         float  maxDistance
     );
 
-    MCAPI bool _canReachOwner(::Mob& owner, ::NavigationComponent& navigationComponent) const;
+    MCNAPI bool _canReachOwner(::Mob& owner, ::NavigationComponent& navigationComponent) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Mob& mob,
         float  speed,
         float  startDistance,
@@ -105,24 +105,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI void $onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
+    MCNAPI void $onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

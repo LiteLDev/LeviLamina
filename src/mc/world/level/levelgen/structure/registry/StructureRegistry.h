@@ -24,15 +24,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::br::worldgen::Structure const> get(::std::string_view key) const;
+    MCNAPI ::std::shared_ptr<::br::worldgen::Structure const> get(::std::string_view key) const;
 
-    MCAPI ~StructureRegistry();
+    MCNAPI ~StructureRegistry();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

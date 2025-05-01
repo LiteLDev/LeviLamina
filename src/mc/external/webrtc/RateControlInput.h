@@ -16,21 +16,21 @@ struct RateControlInput {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RateControlInput(::webrtc::BandwidthUsage, ::std::optional<::webrtc::DataRate> const&);
+    MCNAPI RateControlInput(::webrtc::BandwidthUsage, ::std::optional<::webrtc::DataRate> const&);
 
-    MCAPI ~RateControlInput();
+    MCNAPI ~RateControlInput();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::BandwidthUsage, ::std::optional<::webrtc::DataRate> const&);
+    MCNAPI void* $ctor(::webrtc::BandwidthUsage, ::std::optional<::webrtc::DataRate> const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

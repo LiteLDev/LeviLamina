@@ -29,31 +29,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorAnimationController(
+    MCNAPI ActorAnimationController(
         ::HashedString const& name,
         ::SemVersion const&   version,
         ::std::string const&  sourceFilePathWithExtension
     );
 
-    MCAPI ::std::shared_ptr<::ActorAnimationControllerState>& addState(::HashedString const& name);
+    MCNAPI ::std::shared_ptr<::ActorAnimationControllerState>& addState(::HashedString const& name);
 
-    MCAPI uint64 findStateIndex(::std::string const& name, bool missingIsOkay, uint64 defaultState) const;
+    MCNAPI uint64 findStateIndex(::std::string const& name, bool missingIsOkay, uint64 defaultState) const;
 
-    MCAPI void resolveTransitionStateIndices();
+    MCNAPI void resolveTransitionStateIndices();
 
-    MCAPI ~ActorAnimationController();
+    MCNAPI ~ActorAnimationController();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::HashedString const& name, ::SemVersion const& version, ::std::string const& sourceFilePathWithExtension);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

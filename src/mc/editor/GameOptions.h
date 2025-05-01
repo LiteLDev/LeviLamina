@@ -63,25 +63,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameOptions(::Editor::GameOptions const&);
+    MCNAPI GameOptions(::Editor::GameOptions const&);
 
-    MCAPI void applyToLevelData(::LevelData& levelData) const;
+    MCNAPI void applyToLevelData(::LevelData& levelData) const;
 
-    MCAPI ::Editor::GameOptions& operator=(::Editor::GameOptions&&);
+    MCNAPI ::Editor::GameOptions& operator=(::Editor::GameOptions&&);
 
-    MCAPI ~GameOptions();
+    MCNAPI ~GameOptions();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::GameOptions const&);
+    MCNAPI void* $ctor(::Editor::GameOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

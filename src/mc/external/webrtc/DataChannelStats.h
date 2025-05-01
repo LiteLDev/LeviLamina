@@ -8,13 +8,13 @@ struct DataChannelStats {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~DataChannelStats();
+    MCNAPI ~DataChannelStats();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

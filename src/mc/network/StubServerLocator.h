@@ -74,13 +74,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StubServerLocator();
+    MCNAPI StubServerLocator();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -92,7 +92,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $startAnnouncingServer(
+    MCNAPI void $startAnnouncingServer(
         ::std::string const&                      playerName,
         ::std::string const&                      worldName,
         ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
@@ -104,25 +104,25 @@ public:
         bool                                      isHardcore
     );
 
-    MCAPI void $stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform);
+    MCNAPI void $stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform);
 
-    MCFOLD void $startServerDiscovery(::PortPair ports);
+    MCNAPI void $startServerDiscovery(::PortPair ports);
 
-    MCFOLD void $addCustomServer(::AsynchronousIPResolver const& futureIP, int port);
+    MCNAPI void $addCustomServer(::AsynchronousIPResolver const& futureIP, int port);
 
-    MCFOLD void $addCustomServer(::std::string const& address, int port);
+    MCNAPI void $addCustomServer(::std::string const& address, int port);
 
-    MCFOLD void $stopServerDiscovery();
+    MCNAPI void $stopServerDiscovery();
 
-    MCFOLD ::std::vector<::PingedCompatibleServer> $getServerList() const;
+    MCNAPI ::std::vector<::PingedCompatibleServer> $getServerList() const;
 
-    MCFOLD void $clearServerList();
+    MCNAPI void $clearServerList();
 
-    MCFOLD void $update();
+    MCNAPI void $update();
 
-    MCFOLD float $getPingTimeForGUID(::std::string const& guid);
+    MCNAPI float $getPingTimeForGUID(::std::string const& guid);
 
-    MCAPI void $checkCanConnectToCustomServerAsync(
+    MCNAPI void $checkCanConnectToCustomServerAsync(
         ::std::string                                         hostIpAddress,
         int                                                   port,
         ::std::function<void(::ServerConnectivityTestResult)> callback
@@ -132,6 +132,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

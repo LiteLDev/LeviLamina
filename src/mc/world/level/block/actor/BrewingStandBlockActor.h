@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/Container.h"
+#include "mc/world/item/ItemStack.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated forward declare list
@@ -14,7 +15,6 @@ class CompoundTag;
 class DataLoadHelper;
 class ILevel;
 class Item;
-class ItemStack;
 class Player;
 class SaveContext;
 // clang-format on
@@ -53,7 +53,7 @@ public:
     // vIndex: 12
     virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
-    // vIndex: 26
+    // vIndex: 27
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 21
@@ -71,7 +71,7 @@ public:
     // vIndex: 31
     virtual void setContainerChanged(int slot) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual void onRemoved(::BlockSource&) /*override*/;
 
     // vIndex: 29
@@ -80,10 +80,10 @@ public:
     // vIndex: 30
     virtual bool canPullOutItem(int slot, int face, ::ItemStack const&) const /*override*/;
 
-    // vIndex: 33
+    // vIndex: 34
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 32
+    // vIndex: 33
     virtual ::Container const* getContainer() const /*override*/;
 
     // vIndex: 1
@@ -92,13 +92,13 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 12
+    // vIndex: 13
     virtual void onMove() /*override*/;
 
     // vIndex: 2
@@ -112,17 +112,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BrewingStandBlockActor(::BlockPos const& pos);
+    MCNAPI explicit BrewingStandBlockActor(::BlockPos const& pos);
 
-    MCAPI void brew();
+    MCNAPI void brew();
 
-    MCAPI bool canBrew();
+    MCNAPI bool canBrew();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
+    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -134,43 +134,43 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCNAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCNAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCFOLD ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCFOLD int $getMaxStackSize() const;
+    MCNAPI int $getMaxStackSize() const;
 
-    MCFOLD int $getContainerSize() const;
+    MCNAPI int $getContainerSize() const;
 
-    MCFOLD void $startOpen(::Player&);
+    MCNAPI void $startOpen(::Player&);
 
-    MCFOLD void $stopOpen(::Player& player);
+    MCNAPI void $stopOpen(::Player& player);
 
-    MCFOLD void $setContainerChanged(int slot);
+    MCNAPI void $setContainerChanged(int slot);
 
-    MCFOLD void $onRemoved(::BlockSource&);
+    MCNAPI void $onRemoved(::BlockSource&);
 
-    MCAPI bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
+    MCNAPI bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
 
-    MCAPI bool $canPullOutItem(int slot, int face, ::ItemStack const&) const;
+    MCNAPI bool $canPullOutItem(int slot, int face, ::ItemStack const&) const;
 
-    MCFOLD ::Container* $getContainer();
+    MCNAPI ::Container* $getContainer();
 
-    MCFOLD ::Container const* $getContainer() const;
+    MCNAPI ::Container const* $getContainer() const;
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI void $onChanged(::BlockSource& region);
+    MCNAPI void $onChanged(::BlockSource& region);
 
-    MCFOLD void $onMove();
+    MCNAPI void $onMove();
 
-    MCAPI void $serverInitItemStackIds(
+    MCNAPI void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
@@ -180,8 +180,8 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBlockActor();
+    MCNAPI static void** $vftableForBlockActor();
 
-    MCAPI static void** $vftableForContainer();
+    MCNAPI static void** $vftableForContainer();
     // NOLINTEND
 };

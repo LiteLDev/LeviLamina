@@ -13,7 +13,7 @@ class ShowcasedScreenshots : public ::Screenshots::IShowcasedScreenshots {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkfb2e45;
+    ::ll::UntypedStorage<8, 8>  mUnk501be4;
     ::ll::UntypedStorage<8, 8>  mUnkc598fa;
     ::ll::UntypedStorage<8, 8>  mUnk4f71e5;
     ::ll::UntypedStorage<8, 32> mUnkab068e;

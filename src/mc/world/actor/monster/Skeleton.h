@@ -51,7 +51,7 @@ public:
     virtual bool canBeAffected(uint id) const /*override*/;
 
     // vIndex: 51
-    virtual void setTarget(::Actor* target) /*override*/;
+    virtual void setTarget(::Actor* entity) /*override*/;
 
     // vIndex: 24
     virtual void normalTick() /*override*/;
@@ -69,13 +69,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Skeleton(
+    MCNAPI Skeleton(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCFOLD void setSkeletonType(::Skeleton::SkeletonType type);
+    MCNAPI void setSkeletonType(::Skeleton::SkeletonType type);
     // NOLINTEND
 
 public:
@@ -87,7 +87,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -103,22 +103,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $die(::ActorDamageSource const& source);
+    MCNAPI void $die(::ActorDamageSource const& source);
 
-    MCAPI bool $canBeAffected(uint id) const;
+    MCNAPI bool $canBeAffected(uint id) const;
 
-    MCFOLD void $setTarget(::Actor* target);
+    MCNAPI void $setTarget(::Actor* target);
 
-    MCAPI void $normalTick();
+    MCNAPI void $normalTick();
 
-    MCAPI bool $canFreeze() const;
+    MCNAPI bool $canFreeze() const;
 
-    MCAPI void $getDebugText(::std::vector<::std::string>& outputInfo);
+    MCNAPI void $getDebugText(::std::vector<::std::string>& outputInfo);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

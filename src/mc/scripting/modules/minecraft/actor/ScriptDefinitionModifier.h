@@ -17,9 +17,9 @@ class ScriptDefinitionModifier {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ActorDefinitionModifier> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ActorDefinitionModifier> bind();
 
-    MCAPI static ::Scripting::ClassBindingBuilder<::ActorDefinitionModifier> bindV010();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ActorDefinitionModifier> bindV010();
     // NOLINTEND
 };
 

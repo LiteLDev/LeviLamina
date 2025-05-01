@@ -71,21 +71,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockGeometryDescription(::BlockGeometryDescription const&);
+    MCNAPI BlockGeometryDescription(::BlockGeometryDescription const&);
 
-    MCAPI explicit BlockGeometryDescription(::HashedString const& geometryName);
+    MCNAPI explicit BlockGeometryDescription(::HashedString const& geometryName);
 
-    MCAPI BlockGeometryDescription(::HashedString const& geometryName, ::HashedString const& cullingName);
+    MCNAPI BlockGeometryDescription(::HashedString const& geometryName, ::HashedString const& cullingName);
 
-    MCAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription&&);
+    MCNAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription&&);
 
-    MCAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription const&);
+    MCNAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -103,34 +103,34 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockGeometryDescription const&);
+    MCNAPI void* $ctor(::BlockGeometryDescription const&);
 
-    MCAPI void* $ctor(::HashedString const& geometryName);
+    MCNAPI void* $ctor(::HashedString const& geometryName);
 
-    MCAPI void* $ctor(::HashedString const& geometryName, ::HashedString const& cullingName);
+    MCNAPI void* $ctor(::HashedString const& geometryName, ::HashedString const& cullingName);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getName() const;
+    MCNAPI ::std::string const& $getName() const;
 
-    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
+    MCNAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -34,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPistonActionAfterEvent(
+    MCNAPI ScriptPistonActionAfterEvent(
         ::PistonActionEvent const&                                                                pistonActionEvent,
         ::BlockSourceHandle&                                                                      blockSourceHandle,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPistonComponent> piston,
@@ -45,13 +45,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPistonActionAfterEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPistonActionAfterEvent> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::PistonActionEvent const&                                                                pistonActionEvent,
         ::BlockSourceHandle&                                                                      blockSourceHandle,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPistonComponent> piston,

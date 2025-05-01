@@ -22,31 +22,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void OnAudioChannelGone();
+    MCNAPI void OnAudioChannelGone();
 
-    MCAPI void OnData(::webrtc::AudioSinkInterface::Data const&);
+    MCNAPI void OnData(::webrtc::AudioSinkInterface::Data const&);
 
-    MCAPI RemoteAudioSource(::webrtc::TaskQueueBase*, ::webrtc::RemoteAudioSource::OnAudioChannelGoneAction);
+    MCNAPI RemoteAudioSource(::webrtc::TaskQueueBase*, ::webrtc::RemoteAudioSource::OnAudioChannelGoneAction);
 
-    MCAPI void SetState(::webrtc::MediaSourceInterface::SourceState);
+    MCNAPI void SetState(::webrtc::MediaSourceInterface::SourceState);
 
-    MCAPI void Start(::cricket::VoiceMediaReceiveChannelInterface*, ::std::optional<uint>);
+    MCNAPI void Start(::cricket::VoiceMediaReceiveChannelInterface*, ::std::optional<uint>);
 
-    MCAPI void Stop(::cricket::VoiceMediaReceiveChannelInterface*, ::std::optional<uint>);
+    MCNAPI void Stop(::cricket::VoiceMediaReceiveChannelInterface*, ::std::optional<uint>);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::TaskQueueBase*, ::webrtc::RemoteAudioSource::OnAudioChannelGoneAction);
+    MCNAPI void* $ctor(::webrtc::TaskQueueBase*, ::webrtc::RemoteAudioSource::OnAudioChannelGoneAction);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForNotifierInterface();
+    MCNAPI static void** $vftableForNotifierInterface();
 
-    MCAPI static void** $vftableForRefCountInterface();
+    MCNAPI static void** $vftableForRefCountInterface();
     // NOLINTEND
 };
 

@@ -27,8 +27,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::TaskResult _checkUserStoragePath(::Core::PathBuffer<::std::string> const& storagePath) const;
-
-    MCAPI void queueCheckUserStorage(::Core::PathBuffer<::std::string> const& storagePath);
+    MCNAPI ::TaskResult _checkUserStoragePath(::Core::PathBuffer<::std::string> const& storagePath) const;
     // NOLINTEND
 };

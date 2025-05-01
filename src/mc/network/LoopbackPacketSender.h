@@ -5,11 +5,11 @@
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/network/ClientOrServerNetworkSystemRef.h"
 #include "mc/network/PacketSender.h"
 
 // auto generated forward declare list
 // clang-format off
-class ClientOrServerNetworkSystemRef;
 class EntityContext;
 class NetEventCallback;
 class NetworkIdentifier;
@@ -44,7 +44,8 @@ public:
     virtual void sendToServer(::Packet& packet) /*override*/;
 
     // vIndex: 5
-    virtual void sendToClient(::NetworkIdentifier const& id, ::Packet const& packet, ::SubClientId subid) /*override*/;
+    virtual void
+    sendToClient(::NetworkIdentifier const& id, ::Packet const& packet, ::SubClientId recipientSubId) /*override*/;
 
     // vIndex: 6
     virtual void
@@ -77,30 +78,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isInitialized() const;
+    MCNAPI bool $isInitialized() const;
 
-    MCAPI void $send(::Packet& packet);
+    MCNAPI void $send(::Packet& packet);
 
-    MCAPI void $sendTo(::NetworkIdentifier const& id, ::SubClientId subid, ::Packet& packet);
+    MCNAPI void $sendTo(::NetworkIdentifier const& id, ::SubClientId subid, ::Packet& packet);
 
-    MCAPI void $sendToServer(::Packet& packet);
+    MCNAPI void $sendToServer(::Packet& packet);
 
-    MCAPI void $sendToClient(::NetworkIdentifier const& id, ::Packet const& packet, ::SubClientId subid);
+    MCNAPI void $sendToClient(::NetworkIdentifier const& id, ::Packet const& packet, ::SubClientId recipientSubId);
 
-    MCAPI void $sendToClient(::UserEntityIdentifierComponent const* userIdentifier, ::Packet const& packet);
+    MCNAPI void $sendToClient(::UserEntityIdentifierComponent const* userIdentifier, ::Packet const& packet);
 
-    MCAPI void $sendToClients(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet);
+    MCNAPI void $sendToClients(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet);
 
-    MCAPI void $sendBroadcast(::Packet const& packet);
+    MCNAPI void $sendBroadcast(::Packet const& packet);
 
-    MCAPI void $sendBroadcast(::NetworkIdentifier const& exceptId, ::SubClientId exceptSubid, ::Packet const& packet);
+    MCNAPI void $sendBroadcast(::NetworkIdentifier const& exceptId, ::SubClientId exceptSubid, ::Packet const& packet);
 
-    MCAPI void $flush(::NetworkIdentifier const& id, ::std::function<void()>&& callback);
+    MCNAPI void $flush(::NetworkIdentifier const& id, ::std::function<void()>&& callback);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

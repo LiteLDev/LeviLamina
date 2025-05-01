@@ -30,36 +30,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _fromList(::ListTag const& tag);
+    MCNAPI void _fromList(::ListTag const& tag);
 
-    MCAPI ::std::unique_ptr<::ListTag> _toList() const;
+    MCNAPI ::std::unique_ptr<::ListTag> _toList() const;
 
-    MCAPI bool addEnchant(::EnchantmentInstance enchant, bool allowNonVanilla);
+    MCNAPI bool addEnchant(::EnchantmentInstance enchant, bool allowNonVanilla);
 
-    MCAPI ::EnchantResult canEnchant(::EnchantmentInstance enchant, bool allowNonVanilla);
+    MCNAPI ::EnchantResult canEnchant(::EnchantmentInstance enchant, bool allowNonVanilla);
 
-    MCAPI ::std::vector<::EnchantmentInstance> getAllEnchants() const;
+    MCNAPI ::std::vector<::EnchantmentInstance> getAllEnchants() const;
 
-    MCAPI ::std::vector<::std::string> getEnchantNames() const;
+    MCNAPI ::std::vector<::std::string> getEnchantNames() const;
 
-    MCAPI ::EnchantmentInstance getEnchantment(::Enchant::Type enchantType);
+    MCNAPI ::EnchantmentInstance getEnchantment(::Enchant::Type enchantType);
 
-    MCAPI ::std::vector<::EnchantmentInstance> const& getEnchants(int activationType) const;
+    MCNAPI ::std::vector<::EnchantmentInstance> const& getEnchants(int activationType) const;
 
-    MCAPI int getTotalValue(bool bookModifier) const;
+    MCNAPI int getTotalValue(bool bookModifier) const;
 
-    MCAPI int hasEnchant(::Enchant::Type enchantType) const;
+    MCNAPI int hasEnchant(::Enchant::Type enchantType) const;
 
-    MCAPI ::ItemEnchants& operator=(::ItemEnchants&&);
+    MCNAPI ::ItemEnchants& operator=(::ItemEnchants&&);
 
-    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI ~ItemEnchants();
+    MCNAPI ~ItemEnchants();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

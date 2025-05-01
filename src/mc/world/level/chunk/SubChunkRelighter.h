@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/chunk/SubChunkBrightnessStorage.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
 class BlockPos;
-class ChunkPos;
 class IBlockSource;
 class LevelChunk;
 class Pos;
@@ -53,7 +53,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SubChunkRelighter(
+    MCNAPI SubChunkRelighter(
         ::IBlockSource&   source,
         uint64            centerSubChunkIndex,
         ::ChunkPos const& centerChunkPos,
@@ -61,34 +61,34 @@ public:
         bool              useFullyDarkSubchunk
     );
 
-    MCAPI void _checkEdgeForSubtractiveBlockLightProcessing(::SubChunkLightIndex const& coordIndex);
+    MCNAPI void _checkEdgeForSubtractiveBlockLightProcessing(::SubChunkLightIndex const& coordIndex);
 
-    MCAPI void _checkEdgeForSubtractiveSkyLightProcessing(::SubChunkLightIndex const& coordIndex);
+    MCNAPI void _checkEdgeForSubtractiveSkyLightProcessing(::SubChunkLightIndex const& coordIndex);
 
-    MCAPI ::SubChunk* _dirtySubChunk(::SubChunkLightIndex coordIndex, uint& subChunkIndex);
+    MCNAPI ::SubChunk* _dirtySubChunk(::SubChunkLightIndex coordIndex, uint& subChunkIndex);
 
-    MCAPI ::SubChunk*
+    MCNAPI ::SubChunk*
     _getBlock(::SubChunkLightIndex coordIndex, ::Block const*& block, ::Block const*& extraBlock) const;
 
-    MCAPI ::SubChunkBrightnessStorage::LightPair _getLightPair(::SubChunkLightIndex coordIndex) const;
+    MCNAPI ::SubChunkBrightnessStorage::LightPair _getLightPair(::SubChunkLightIndex coordIndex) const;
 
-    MCAPI void _propagateBlockLight();
+    MCNAPI void _propagateBlockLight();
 
-    MCAPI void _propagateBlockLight(::SubChunkLightIndex coordIndex, uchar brightness);
+    MCNAPI void _propagateBlockLight(::SubChunkLightIndex coordIndex, uchar brightness);
 
-    MCAPI void _propagateSkyLight();
+    MCNAPI void _propagateSkyLight();
 
-    MCAPI void _propagateSkyLight(::SubChunkLightIndex coordIndex, uchar brightness);
+    MCNAPI void _propagateSkyLight(::SubChunkLightIndex coordIndex, uchar brightness);
 
-    MCAPI void _propagateSubtractiveBlockLight();
+    MCNAPI void _propagateSubtractiveBlockLight();
 
-    MCAPI void _propagateSubtractiveBlockLight(::SubChunkLightIndex coordIndex, uchar effectiveBrightness);
+    MCNAPI void _propagateSubtractiveBlockLight(::SubChunkLightIndex coordIndex, uchar effectiveBrightness);
 
-    MCAPI void _propagateSubtractiveSkyLight();
+    MCNAPI void _propagateSubtractiveSkyLight();
 
-    MCAPI void _propagateSubtractiveSkyLight(::SubChunkLightIndex coordIndex, uchar effectiveBrightness);
+    MCNAPI void _propagateSubtractiveSkyLight(::SubChunkLightIndex coordIndex, uchar effectiveBrightness);
 
-    MCAPI void _setLightHelper(
+    MCNAPI void _setLightHelper(
         ::SubChunkLightIndex coordIndex,
         ::Brightness         oldBrightness,
         ::Brightness         newBrightness,
@@ -98,11 +98,11 @@ public:
         uint                 subChunkIndex
     );
 
-    MCAPI void _setPropagatedBlockLightValue(::SubChunkLightIndex coordIndex, uchar brightness);
+    MCNAPI void _setPropagatedBlockLightValue(::SubChunkLightIndex coordIndex, uchar brightness);
 
-    MCAPI void _setPropagatedSkyLightValue(::SubChunkLightIndex coordIndex, uchar brightness);
+    MCNAPI void _setPropagatedSkyLightValue(::SubChunkLightIndex coordIndex, uchar brightness);
 
-    MCAPI void _setSkyLight(
+    MCNAPI void _setSkyLight(
         ::SubChunkLightIndex coordIndex,
         ::Brightness         oldBrightness,
         ::Brightness         newBrightness,
@@ -110,13 +110,13 @@ public:
         ::Brightness         newAbsorption
     );
 
-    MCAPI void relightSubChunk(
+    MCNAPI void relightSubChunk(
         ::LevelChunk const&                         levelChunk,
         ::std::vector<::SubChunkLightUpdate> const& alteredBlockList,
         ::std::vector<::BlockPos>&                  brightnessChangedList
     );
 
-    MCAPI void setBlockLight(
+    MCNAPI void setBlockLight(
         ::Pos const& pos,
         ::Brightness oldBrightness,
         ::Brightness newBrightness,
@@ -124,17 +124,17 @@ public:
         ::Brightness newAbsorption
     );
 
-    MCAPI ~SubChunkRelighter();
+    MCNAPI ~SubChunkRelighter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::bitset<196608> computeAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits();
+    MCNAPI static ::std::bitset<196608> computeAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits();
 
-    MCAPI static ::std::bitset<196608> computeOuterEdgeOfComputationBits();
+    MCNAPI static ::std::bitset<196608> computeOuterEdgeOfComputationBits();
 
-    MCAPI static void initializeStatics();
+    MCNAPI static void initializeStatics();
     // NOLINTEND
 
 public:
@@ -156,7 +156,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::IBlockSource&   source,
         uint64            centerSubChunkIndex,
         ::ChunkPos const& centerChunkPos,
@@ -168,6 +168,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

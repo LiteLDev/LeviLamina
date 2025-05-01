@@ -19,20 +19,20 @@ struct LiquidSplashSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _singleTickLiquidSplash(
+    MCNAPI static void _singleTickLiquidSplash(
         ::StrictEntityContext const&                                                                     entity,
         ::ViewT<::StrictEntityContext, ::WaterSplashEffectRequestComponent const, ::ActorOwnerComponent> splashEffects,
         ::ViewT<::StrictEntityContext, ::Include<::PostSplashGameEventRequestComponent>, ::ActorOwnerComponent>
             gameEvents
     );
 
-    MCAPI static void _tickLiquidSplash(
+    MCNAPI static void _tickLiquidSplash(
         ::ViewT<::StrictEntityContext, ::WaterSplashEffectRequestComponent const, ::ActorOwnerComponent>
             waterSplashEffects,
         ::ViewT<::StrictEntityContext, ::Include<::PostSplashGameEventRequestComponent>, ::ActorOwnerComponent>
             splashGameEvents
     );
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

@@ -44,25 +44,25 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI EnumData();
+        MCNAPI EnumData();
 
-        MCAPI EnumData(::AvailableCommandsPacket::EnumData&&);
+        MCNAPI EnumData(::AvailableCommandsPacket::EnumData&&);
 
-        MCAPI ~EnumData();
+        MCNAPI ~EnumData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
 
-        MCFOLD void* $ctor(::AvailableCommandsPacket::EnumData&&);
+        MCNAPI void* $ctor(::AvailableCommandsPacket::EnumData&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -91,21 +91,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI SoftEnumData(::AvailableCommandsPacket::SoftEnumData&&);
+        MCNAPI SoftEnumData(::AvailableCommandsPacket::SoftEnumData&&);
 
-        MCAPI ~SoftEnumData();
+        MCNAPI ~SoftEnumData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void* $ctor(::AvailableCommandsPacket::SoftEnumData&&);
+        MCNAPI void* $ctor(::AvailableCommandsPacket::SoftEnumData&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -126,21 +126,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ConstrainedValueData(::AvailableCommandsPacket::ConstrainedValueData&&);
+        MCNAPI ConstrainedValueData(::AvailableCommandsPacket::ConstrainedValueData&&);
 
-        MCAPI ~ConstrainedValueData();
+        MCNAPI ~ConstrainedValueData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::AvailableCommandsPacket::ConstrainedValueData&&);
+        MCNAPI void* $ctor(::AvailableCommandsPacket::ConstrainedValueData&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -162,21 +162,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ParamData(::AvailableCommandsPacket::ParamData&&);
+        MCNAPI ParamData(::AvailableCommandsPacket::ParamData&&);
 
-        MCAPI ~ParamData();
+        MCNAPI ~ParamData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::AvailableCommandsPacket::ParamData&&);
+        MCNAPI void* $ctor(::AvailableCommandsPacket::ParamData&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -196,21 +196,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI OverloadData(::AvailableCommandsPacket::OverloadData&&);
+        MCNAPI OverloadData(::AvailableCommandsPacket::OverloadData&&);
 
-        MCAPI ~OverloadData();
+        MCNAPI ~OverloadData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::AvailableCommandsPacket::OverloadData&&);
+        MCNAPI void* $ctor(::AvailableCommandsPacket::OverloadData&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -235,21 +235,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI CommandData(::AvailableCommandsPacket::CommandData&&);
+        MCNAPI CommandData(::AvailableCommandsPacket::CommandData&&);
 
-        MCAPI ~CommandData();
+        MCNAPI ~CommandData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::AvailableCommandsPacket::CommandData&&);
+        MCNAPI void* $ctor(::AvailableCommandsPacket::CommandData&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 

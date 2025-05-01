@@ -24,26 +24,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorMapping(::std::string const& primary, ::std::string const& alt);
+    MCNAPI ActorMapping(::std::string const& primary, ::std::string const& alt);
 
-    MCAPI ActorMapping(::std::string const& space, ::std::string const& primary, ::std::string const& alt);
+    MCNAPI ActorMapping(::std::string const& space, ::std::string const& primary, ::std::string const& alt);
 
-    MCAPI ::std::string getMappingName(::ActorTypeNamespaceRules namespaceRule) const;
+    MCNAPI ::std::string getMappingName(::ActorTypeNamespaceRules namespaceRule) const;
 
-    MCAPI ~ActorMapping();
+    MCNAPI ~ActorMapping();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& primary, ::std::string const& alt);
+    MCNAPI void* $ctor(::std::string const& primary, ::std::string const& alt);
 
-    MCAPI void* $ctor(::std::string const& space, ::std::string const& primary, ::std::string const& alt);
+    MCNAPI void* $ctor(::std::string const& space, ::std::string const& primary, ::std::string const& alt);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

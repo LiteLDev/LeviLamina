@@ -14,7 +14,7 @@ class DeviceInfoUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::DeviceMemoryTier determineMemoryTier(::BaseGameVersion version);
+    MCNAPI static ::DeviceMemoryTier determineMemoryTier(::BaseGameVersion const& version);
     // NOLINTEND
 
 public:

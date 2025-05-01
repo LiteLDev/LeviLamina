@@ -9,6 +9,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/network/NetworkIdentifier.h"
 #include "mc/network/NetworkPeer.h"
 
 // auto generated forward declare list
@@ -17,8 +18,8 @@ class BatchedNetworkPeer;
 class CompressedNetworkPeer;
 class EncryptedNetworkPeer;
 class IPacketObserver;
+class IPacketSecurityController;
 class LatencyNetworkPeer;
-class NetworkIdentifier;
 class NetworkPacketRecorder;
 class NetworkPeer;
 class Scheduler;
@@ -49,13 +50,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~PausedPacket();
+        MCNAPI ~PausedPacket();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -82,46 +83,49 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                               mDisconnected;
     ::ll::TypedStorage<1, 1, bool>                                                               mShouldCloseConnection;
     ::ll::TypedStorage<1, 1, bool>                                                               mEncryptionDisabled;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IPacketSecurityController>> mPacketSecurityController;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkConnection(
-        ::NetworkIdentifier const&                    id,
-        ::std::shared_ptr<::NetworkPeer>              peer,
-        bool                                          isSafeAndFast,
-        ::Bedrock::NonOwnerPointer<::IPacketObserver> packetObserver,
-        ::Scheduler&                                  mainThread,
-        bool                                          settings,
-        ::NetworkSettingOptions const&                isRawRecordingEnabled
+    MCNAPI NetworkConnection(
+        ::NetworkIdentifier const&                     id,
+        ::std::shared_ptr<::NetworkPeer>               peer,
+        bool                                           isSafeAndFast,
+        ::Bedrock::NonOwnerPointer<::IPacketObserver>  packetObserver,
+        ::Scheduler&                                   mainThread,
+        bool                                           settings,
+        ::NetworkSettingOptions const&                 packetSecurityController,
+        ::std::shared_ptr<::IPacketSecurityController> isRawRecordingEnabled
     );
 
-    MCAPI ::NetworkPeer::DataStatus receivePacket(
+    MCNAPI ::NetworkPeer::DataStatus receivePacket(
         ::std::string&                                                    receiveBuffer,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     );
 
-    MCAPI ~NetworkConnection();
+    MCNAPI ~NetworkConnection();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::NetworkIdentifier const&                    id,
-        ::std::shared_ptr<::NetworkPeer>              peer,
-        bool                                          isSafeAndFast,
-        ::Bedrock::NonOwnerPointer<::IPacketObserver> packetObserver,
-        ::Scheduler&                                  mainThread,
-        bool                                          settings,
-        ::NetworkSettingOptions const&                isRawRecordingEnabled
+    MCNAPI void* $ctor(
+        ::NetworkIdentifier const&                     id,
+        ::std::shared_ptr<::NetworkPeer>               peer,
+        bool                                           isSafeAndFast,
+        ::Bedrock::NonOwnerPointer<::IPacketObserver>  packetObserver,
+        ::Scheduler&                                   mainThread,
+        bool                                           settings,
+        ::NetworkSettingOptions const&                 packetSecurityController,
+        ::std::shared_ptr<::IPacketSecurityController> isRawRecordingEnabled
     );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

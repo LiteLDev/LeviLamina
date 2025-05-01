@@ -37,25 +37,25 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI GenericDescriptorInfo();
+        MCNAPI GenericDescriptorInfo();
 
-        MCAPI GenericDescriptorInfo(::webrtc::RTPVideoHeader::GenericDescriptorInfo const&);
+        MCNAPI GenericDescriptorInfo(::webrtc::RTPVideoHeader::GenericDescriptorInfo const&);
 
-        MCAPI ~GenericDescriptorInfo();
+        MCNAPI ~GenericDescriptorInfo();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
 
-        MCAPI void* $ctor(::webrtc::RTPVideoHeader::GenericDescriptorInfo const&);
+        MCNAPI void* $ctor(::webrtc::RTPVideoHeader::GenericDescriptorInfo const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -88,35 +88,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::VideoFrameMetadata GetAsMetadata() const;
+    MCNAPI ::webrtc::VideoFrameMetadata GetAsMetadata() const;
 
-    MCAPI RTPVideoHeader();
+    MCNAPI RTPVideoHeader();
 
-    MCAPI RTPVideoHeader(::webrtc::RTPVideoHeader const&);
+    MCNAPI RTPVideoHeader(::webrtc::RTPVideoHeader const&);
 
-    MCAPI void SetFromMetadata(::webrtc::VideoFrameMetadata const&);
+    MCNAPI void SetFromMetadata(::webrtc::VideoFrameMetadata const&);
 
-    MCAPI ~RTPVideoHeader();
+    MCNAPI ~RTPVideoHeader();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::RTPVideoHeader FromMetadata(::webrtc::VideoFrameMetadata const&);
+    MCNAPI static ::webrtc::RTPVideoHeader FromMetadata(::webrtc::VideoFrameMetadata const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::webrtc::RTPVideoHeader const&);
+    MCNAPI void* $ctor(::webrtc::RTPVideoHeader const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

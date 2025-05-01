@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/v2/StructurePlacement.h"
+
 // auto generated forward declare list
 // clang-format off
 class HashedString;
 namespace br::worldgen { struct Structure; }
-namespace br::worldgen { struct StructurePlacement; }
 // clang-format on
 
 namespace br::worldgen {
@@ -30,13 +32,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Entry();
+        MCNAPI ~Entry();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -50,25 +52,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureSet(
+    MCNAPI StructureSet(
         ::std::initializer_list<::br::worldgen::StructureSet::Entry> entries,
         ::br::worldgen::StructurePlacement                           placement
     );
 
-    MCAPI bool contains(::HashedString type) const;
+    MCNAPI bool contains(::HashedString type) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<::br::worldgen::StructureSet>
+    MCNAPI static ::std::shared_ptr<::br::worldgen::StructureSet>
     create(::std::shared_ptr<::br::worldgen::Structure const> structure, ::br::worldgen::StructurePlacement placement);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::initializer_list<::br::worldgen::StructureSet::Entry> entries,
         ::br::worldgen::StructurePlacement                           placement
     );

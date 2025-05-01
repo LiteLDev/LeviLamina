@@ -25,21 +25,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ANAStats(::webrtc::ANAStats const&);
+    MCNAPI ANAStats(::webrtc::ANAStats const&);
 
-    MCAPI ~ANAStats();
+    MCNAPI ~ANAStats();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::ANAStats const&);
+    MCNAPI void* $ctor(::webrtc::ANAStats const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -29,36 +29,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool CheckResponse(::cricket::StunMessage*);
+    MCNAPI bool CheckResponse(::cricket::StunMessage*);
 
-    MCAPI bool CheckResponse(char const*, uint64);
+    MCNAPI bool CheckResponse(char const*, uint64);
 
-    MCAPI void Clear();
+    MCNAPI void Clear();
 
-    MCAPI void OnRequestTimedOut(::cricket::StunRequest*);
+    MCNAPI void OnRequestTimedOut(::cricket::StunRequest*);
 
-    MCAPI void Send(::cricket::StunRequest*);
+    MCNAPI void Send(::cricket::StunRequest*);
 
-    MCAPI void SendDelayed(::cricket::StunRequest*, int);
+    MCNAPI void SendDelayed(::cricket::StunRequest*, int);
 
-    MCAPI void SendPacket(void const*, uint64, ::cricket::StunRequest*);
+    MCNAPI void SendPacket(void const*, uint64, ::cricket::StunRequest*);
 
-    MCAPI
+    MCNAPI
     StunRequestManager(::webrtc::TaskQueueBase*, ::std::function<void(void const*, uint64, ::cricket::StunRequest*)>);
 
-    MCAPI ~StunRequestManager();
+    MCNAPI ~StunRequestManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::TaskQueueBase*, ::std::function<void(void const*, uint64, ::cricket::StunRequest*)>);
+    MCNAPI void* $ctor(::webrtc::TaskQueueBase*, ::std::function<void(void const*, uint64, ::cricket::StunRequest*)>);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -31,36 +31,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptMobEffectInstance(::Actor const& actor, uint effectIdx);
+    MCNAPI ScriptMobEffectInstance(::Actor const& actor, uint effectIdx);
 
-    MCAPI ::Scripting::Result_deprecated<int> getAmplifier() const;
+    MCNAPI bool _isValid() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getDisplayName() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getAmplifier() const;
 
-    MCAPI ::std::string getDisplayName_010() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getDisplayName() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getDuration() const;
+    MCNAPI ::std::string getDisplayName_010() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getTypeId_V1() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getDuration() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getTypeId_V2() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getTypeId_V1() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptMobEffectInstance&
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getTypeId_V2() const;
+
+    MCNAPI ::ScriptModuleMinecraft::ScriptMobEffectInstance&
     operator=(::ScriptModuleMinecraft::ScriptMobEffectInstance&&);
 
-    MCAPI ::MobEffectInstance const* tryGetEffect() const;
+    MCNAPI ::MobEffectInstance const* tryGetEffect() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptMobEffectInstance> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptMobEffectInstance> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor const& actor, uint effectIdx);
+    MCNAPI void* $ctor(::Actor const& actor, uint effectIdx);
     // NOLINTEND
 };
 

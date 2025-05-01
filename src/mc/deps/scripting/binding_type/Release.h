@@ -31,19 +31,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Release(
+    MCNAPI Release(
         ::Scripting::Comparison                         comparison_,
         ::Scripting::Version                            version_,
         ::std::optional<::Scripting::MajorVersionLimit> exclusiveMajorVersionLimit_
     );
 
-    MCAPI ~Release();
+    MCNAPI ~Release();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::Comparison                         comparison_,
         ::Scripting::Version                            version_,
         ::std::optional<::Scripting::MajorVersionLimit> exclusiveMajorVersionLimit_
@@ -53,7 +53,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

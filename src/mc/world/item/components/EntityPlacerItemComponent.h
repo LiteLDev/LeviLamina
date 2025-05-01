@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -52,9 +54,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EntityPlacerItemComponent(::SharedTypes::v1_20_50::EntityPlacerItemComponent component);
+    MCNAPI explicit EntityPlacerItemComponent(::SharedTypes::v1_20_50::EntityPlacerItemComponent component);
 
-    MCAPI void _positionAndRotateActor(
+    MCNAPI void _positionAndRotateActor(
         ::Actor&             actor,
         ::Vec3               position,
         uchar                face,
@@ -62,9 +64,9 @@ public:
         ::BlockLegacy const* blockLegacy
     ) const;
 
-    MCAPI void _setActorCustomName(::Actor& actor, ::ItemStack const& item) const;
+    MCNAPI void _setActorCustomName(::Actor& actor, ::ItemStack const& item) const;
 
-    MCAPI void _useOn(
+    MCNAPI void _useOn(
         bool&              result,
         ::ItemStack const& currentItemStack,
         ::ItemStack&       usingActor,
@@ -74,47 +76,47 @@ public:
         ::Vec3 const&      initialItemStack
     );
 
-    MCAPI void
+    MCNAPI void
     _validateBlocks(::std::vector<::BlockDescriptor> const& blocks, ::std::string const& blocksParameterName) const;
 
-    MCAPI bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCNAPI bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::EntityPlacerItemComponent component);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_50::EntityPlacerItemComponent component);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
+    MCNAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
-    MCAPI void $_initializeComponent();
+    MCNAPI void $_initializeComponent();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -25,23 +25,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::ScriptModule::ScriptWidgetComponentSplineOptions&
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentSplineOptions&
     operator=(::Editor::ScriptModule::ScriptWidgetComponentSplineOptions&&);
 
-    MCAPI ~ScriptWidgetComponentSplineOptions();
+    MCNAPI ~ScriptWidgetComponentSplineOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentSplineOptions>
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentSplineOptions>
     bindScript();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

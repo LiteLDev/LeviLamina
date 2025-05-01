@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/server/commands/CommandFlag.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 
 // auto generated forward declare list
@@ -11,7 +12,6 @@ class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
 class CommandSelectorBase;
-struct CommandFlag;
 // clang-format on
 
 class Command {

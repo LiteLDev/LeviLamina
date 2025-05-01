@@ -24,14 +24,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     TargetPoint(float temperature, float humidity, float continentalness, float erosion, float depth, float weirdness);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(float temperature, float humidity, float continentalness, float erosion, float depth, float weirdness);
     // NOLINTEND
 };

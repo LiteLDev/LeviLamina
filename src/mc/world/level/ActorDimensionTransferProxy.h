@@ -44,11 +44,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $transferTickingArea(::Actor& actor, ::Dimension& dimension) const;
+    MCNAPI void $transferTickingArea(::Actor& actor, ::Dimension& dimension) const;
 
-    MCAPI void $removeActorFromLevelChunk(::Actor& actor) const;
+    MCNAPI void $removeActorFromLevelChunk(::Actor& actor) const;
 
-    MCAPI void $transferActorToDimension(
+    MCNAPI void $transferActorToDimension(
         ::Actor const&                   actor,
         ::Dimension&                     dimension,
         ::Vec3 const&                    targetPosition,
@@ -59,6 +59,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
