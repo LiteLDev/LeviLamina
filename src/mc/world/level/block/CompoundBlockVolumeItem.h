@@ -5,11 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/level/block/CompoundBlockVolumeAction.h"
 #include "mc/world/level/block/CompoundBlockVolumePositionRelativity.h"
-
-// auto generated forward declare list
-// clang-format off
-class SimpleBlockVolume;
-// clang-format on
+#include "mc/world/level/block/SimpleBlockVolume.h"
 
 class CompoundBlockVolumeItem {
 public:
@@ -23,14 +19,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string toString() const;
+    MCNAPI ::std::string toString() const;
 
-    MCAPI ~CompoundBlockVolumeItem();
+    MCNAPI ~CompoundBlockVolumeItem();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

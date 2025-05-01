@@ -26,43 +26,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BitrateProber(::webrtc::FieldTrialsView const&);
+    MCNAPI explicit BitrateProber(::webrtc::FieldTrialsView const&);
 
-    MCAPI ::webrtc::Timestamp CalculateNextProbeTime(::webrtc::BitrateProber::ProbeCluster const&) const;
+    MCNAPI ::webrtc::Timestamp CalculateNextProbeTime(::webrtc::BitrateProber::ProbeCluster const&) const;
 
-    MCAPI void CreateProbeCluster(::webrtc::ProbeClusterConfig const&);
+    MCNAPI void CreateProbeCluster(::webrtc::ProbeClusterConfig const&);
 
-    MCAPI ::std::optional<::webrtc::PacedPacketInfo> CurrentCluster(::webrtc::Timestamp);
+    MCNAPI ::std::optional<::webrtc::PacedPacketInfo> CurrentCluster(::webrtc::Timestamp);
 
-    MCAPI void MaybeSetActiveState(::webrtc::DataSize);
+    MCNAPI void MaybeSetActiveState(::webrtc::DataSize);
 
-    MCAPI ::webrtc::Timestamp NextProbeTime(::webrtc::Timestamp) const;
+    MCNAPI ::webrtc::Timestamp NextProbeTime(::webrtc::Timestamp) const;
 
-    MCAPI void OnIncomingPacket(::webrtc::DataSize);
+    MCNAPI void OnIncomingPacket(::webrtc::DataSize);
 
-    MCAPI void ProbeSent(::webrtc::Timestamp, ::webrtc::DataSize);
+    MCNAPI void ProbeSent(::webrtc::Timestamp, ::webrtc::DataSize);
 
-    MCAPI bool ReadyToSetActiveState(::webrtc::DataSize) const;
+    MCNAPI bool ReadyToSetActiveState(::webrtc::DataSize) const;
 
-    MCAPI ::webrtc::DataSize RecommendedMinProbeSize() const;
+    MCNAPI ::webrtc::DataSize RecommendedMinProbeSize() const;
 
-    MCAPI void SetAllowProbeWithoutMediaPacket(bool);
+    MCNAPI void SetAllowProbeWithoutMediaPacket(bool);
 
-    MCAPI void SetEnabled(bool);
+    MCNAPI void SetEnabled(bool);
 
-    MCAPI ~BitrateProber();
+    MCNAPI ~BitrateProber();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::FieldTrialsView const&);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

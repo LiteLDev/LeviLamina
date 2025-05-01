@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/server/commands/CommandPosition.h"
 #include "mc/world/actor/selectors/ActorSelectorType.h"
 #include "mc/world/actor/selectors/InvertableFilter.h"
 #include "mc/world/level/GameType.h"
@@ -10,8 +12,6 @@
 // auto generated forward declare list
 // clang-format off
 class CommandIntegerRange;
-class CommandPosition;
-class Vec3;
 struct CodeBuilderSelectorFilter;
 struct HasItemFilter;
 struct HasPermissionFilter;
@@ -48,17 +48,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorSelectorArgs();
+    MCNAPI ActorSelectorArgs();
 
-    MCAPI ActorSelectorArgs(::ActorSelectorArgs const&);
+    MCNAPI ActorSelectorArgs(::ActorSelectorArgs const&);
 
-    MCAPI ActorSelectorArgs(::ActorSelectorArgs&&);
+    MCNAPI ActorSelectorArgs(::ActorSelectorArgs&&);
 
-    MCAPI ::ActorSelectorArgs& operator=(::ActorSelectorArgs const&);
+    MCNAPI ::ActorSelectorArgs& operator=(::ActorSelectorArgs const&);
 
-    MCAPI ::ActorSelectorArgs& operator=(::ActorSelectorArgs&&);
+    MCNAPI ::ActorSelectorArgs& operator=(::ActorSelectorArgs&&);
 
-    MCAPI ~ActorSelectorArgs();
+    MCNAPI ~ActorSelectorArgs();
     // NOLINTEND
 
 public:
@@ -74,16 +74,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::ActorSelectorArgs const&);
+    MCNAPI void* $ctor(::ActorSelectorArgs const&);
 
-    MCAPI void* $ctor(::ActorSelectorArgs&&);
+    MCNAPI void* $ctor(::ActorSelectorArgs&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

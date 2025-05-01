@@ -58,7 +58,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uint _getPropertyAsSize(::Scripting::ObjectHandle handle, char const* propertyName) const;
+    MCNAPI uint _getPropertyAsSize(::Scripting::ObjectHandle handle, char const* propertyName) const;
     // NOLINTEND
 
 public:
@@ -70,24 +70,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isSameObject(::Scripting::ObjectHandle handleA, ::Scripting::ObjectHandle handleB) const;
+    MCNAPI bool $isSameObject(::Scripting::ObjectHandle handleA, ::Scripting::ObjectHandle handleB) const;
 
-    MCAPI bool $hasBooleanPropertyValue(::Scripting::ObjectHandle handle, char const* name, bool expectedValue) const;
+    MCNAPI bool $hasBooleanPropertyValue(::Scripting::ObjectHandle handle, char const* name, bool expectedValue) const;
 
-    MCAPI ::std::optional<::Scripting::ResultAny>
+    MCNAPI ::std::optional<::Scripting::ResultAny>
     $getPropertyValue(::Scripting::ObjectHandle handle, char const* name, ::entt::meta_type const& expectedType) const;
 
-    MCAPI uint $getDataBufferLength(::Scripting::ObjectHandle handle) const;
+    MCNAPI uint $getDataBufferLength(::Scripting::ObjectHandle handle) const;
 
-    MCAPI uint $getDataBufferByteLength(::Scripting::ObjectHandle handle) const;
+    MCNAPI uint $getDataBufferByteLength(::Scripting::ObjectHandle handle) const;
 
-    MCAPI uchar* $getDataBufferBytes(::Scripting::ObjectHandle handle) const;
+    MCNAPI uchar* $getDataBufferBytes(::Scripting::ObjectHandle handle) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

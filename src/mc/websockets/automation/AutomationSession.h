@@ -106,84 +106,84 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AutomationSession(::Automation::AutomationClient& owner);
+    MCNAPI explicit AutomationSession(::Automation::AutomationClient& owner);
 
-    MCAPI ::std::unique_ptr<::CommandOrigin> _createCommandOrigin(::std::string const& requestId);
+    MCNAPI ::std::unique_ptr<::CommandOrigin> _createCommandOrigin(::std::string const& requestId);
 
-    MCAPI void _errorEncryptionRequired(::std::string const& requestId);
+    MCNAPI void _errorEncryptionRequired(::std::string const& requestId);
 
-    MCAPI void _handleIncomingMessage(::RakWebSocketDataFrame const& frame);
+    MCNAPI void _handleIncomingMessage(::RakWebSocketDataFrame const& frame);
 
-    MCAPI void _handleMessage(::CodeBuilder::ChatMessage const& message);
+    MCNAPI void _handleMessage(::CodeBuilder::ChatMessage const& message);
 
-    MCAPI void _handleOnClose(::CloseStatusCode code, ::std::string const& reason);
+    MCNAPI void _handleOnClose(::CloseStatusCode code, ::std::string const& reason);
 
-    MCAPI void _handleOnConnected(::std::string const& activeSubProtocol);
+    MCNAPI void _handleOnConnected(::std::string const& activeSubProtocol);
 
-    MCAPI void _send(::std::string const& messageBody);
+    MCNAPI void _send(::std::string const& messageBody);
 
-    MCAPI void _sendUnencrypted(::std::string const& messageBody);
+    MCNAPI void _sendUnencrypted(::std::string const& messageBody);
 
-    MCAPI ::WSConnectionResult connect(::std::string const& serverUri);
+    MCNAPI ::WSConnectionResult connect(::std::string const& serverUri);
 
-    MCAPI ::WSConnectionResult
+    MCNAPI ::WSConnectionResult
     connect(::std::string const& serverUri, ::std::vector<::std::string> const& subProtocols);
 
-    MCAPI bool isSubscribedtoEvent(::std::string const& eventName);
+    MCNAPI bool isSubscribedtoEvent(::std::string const& eventName);
 
-    MCAPI void receive(::std::string const& payload);
+    MCNAPI void receive(::std::string const& payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Automation::AutomationClient& owner);
+    MCNAPI void* $ctor(::Automation::AutomationClient& owner);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onMessageRecieved(::std::string const& message);
+    MCNAPI void $onMessageRecieved(::std::string const& message);
 
-    MCAPI void $agentCommand(::std::string const& requestId, ::CodeBuilder::CommandRequest&& request);
+    MCNAPI void $agentCommand(::std::string const& requestId, ::CodeBuilder::CommandRequest&& request);
 
-    MCAPI void $command(::std::string const& requestId, ::CodeBuilder::CommandRequest&& request);
+    MCNAPI void $command(::std::string const& requestId, ::CodeBuilder::CommandRequest&& request);
 
-    MCAPI void $chatSubscribe(::std::string const& requestId, ::CodeBuilder::ChatSubscription&& subscription);
+    MCNAPI void $chatSubscribe(::std::string const& requestId, ::CodeBuilder::ChatSubscription&& subscription);
 
-    MCAPI void $chatUnsubscribe(::std::string const&, ::std::string const& subscriptionId);
+    MCNAPI void $chatUnsubscribe(::std::string const&, ::std::string const& subscriptionId);
 
-    MCAPI void $chatUnsubscribeAll(::std::string const&);
+    MCNAPI void $chatUnsubscribeAll(::std::string const&);
 
-    MCAPI void $dataBlock(::std::string const& requestId);
+    MCNAPI void $dataBlock(::std::string const& requestId);
 
-    MCAPI void $dataItem(::std::string const& requestId);
+    MCNAPI void $dataItem(::std::string const& requestId);
 
-    MCAPI void $dataMob(::std::string const& requestId);
+    MCNAPI void $dataMob(::std::string const& requestId);
 
-    MCAPI void $dataTutorial(::std::string const& requestId, ::std::string const& tutorialPath);
+    MCNAPI void $dataTutorial(::std::string const& requestId, ::std::string const& tutorialPath);
 
-    MCAPI bool $encryptConnection(::std::string const& requestId, ::CodeBuilder::EncryptionRequest const& request);
+    MCNAPI bool $encryptConnection(::std::string const& requestId, ::CodeBuilder::EncryptionRequest const& request);
 
-    MCAPI void $subscribe(::std::string const& requestId, ::std::string const& eventId);
+    MCNAPI void $subscribe(::std::string const& requestId, ::std::string const& eventId);
 
-    MCAPI void $unsubscribe(::std::string const& requestId, ::std::string const& eventId);
+    MCNAPI void $unsubscribe(::std::string const& requestId, ::std::string const& eventId);
 
-    MCAPI void $error(::std::string const&, ::CodeBuilder::ErrorMessage const& message);
+    MCNAPI void $error(::std::string const&, ::CodeBuilder::ErrorMessage const& message);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForWebviewObserver();
+    MCNAPI static void** $vftableForWebviewObserver();
 
-    MCAPI static void** $vftableForIRequestHandler();
+    MCNAPI static void** $vftableForIRequestHandler();
     // NOLINTEND
 };
 

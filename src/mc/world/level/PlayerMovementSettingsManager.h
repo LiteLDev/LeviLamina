@@ -23,6 +23,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::PlayerMovementSettings const& getPlayerMovementSettings() const;
+    MCNAPI ::PlayerMovementSettings const& getPlayerMovementSettings() const;
+
+    MCNAPI void setPlayerMovementSettings(::PlayerMovementSettings const& settings);
     // NOLINTEND
 };

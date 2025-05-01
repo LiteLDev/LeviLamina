@@ -5,7 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
+#include "mc/safety/RedactableString.h"
 #include "mc/util/BidirectionalUnorderedMap.h"
+#include "mc/world/ContainerOwner.h"
 #include "mc/world/TypedRuntimeId.h"
 
 // auto generated forward declare list
@@ -19,9 +21,7 @@ class ItemStack;
 class Player;
 class Random;
 class Vec3;
-struct ContainerOwner;
 struct ContainerRuntimeIdTag;
-namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class Container {
@@ -48,13 +48,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~PublisherWrapper();
+        MCNAPI ~PublisherWrapper();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -213,33 +213,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Container(::Container const&);
+    MCNAPI Container(::Container const&);
 
-    MCAPI explicit Container(::SharedTypes::Legacy::ContainerType type);
+    MCNAPI explicit Container(::SharedTypes::Legacy::ContainerType type);
 
-    MCAPI Container(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
+    MCNAPI Container(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
 
-    MCAPI void
+    MCNAPI void
     _dropSlotContent(::BlockSource& region, ::Random& random, ::Vec3 const& pos, bool randomizeDrop, int slot);
 
-    MCAPI void
+    MCNAPI void
     _serverInitId(int slot, ::ItemStack& item, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
-    MCAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
+    MCNAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
 
-    MCAPI int getRedstoneSignalFromContainer(::BlockSource& region);
+    MCNAPI int getRedstoneSignalFromContainer(::BlockSource& region);
 
-    MCAPI ::Container& operator=(::Container const&);
+    MCNAPI ::Container& operator=(::Container const&);
 
-    MCAPI void removeCloseListener(::ContainerCloseListener* listener);
+    MCNAPI void removeCloseListener(::ContainerCloseListener* listener);
 
-    MCAPI void triggerTransactionChange(int slot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+    MCNAPI void triggerTransactionChange(int slot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SharedTypes::Legacy::ContainerType getContainerTypeId(::std::string const& name);
+    MCNAPI static ::SharedTypes::Legacy::ContainerType getContainerTypeId(::std::string const& name);
     // NOLINTEND
 
 public:
@@ -252,97 +252,97 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Container const&);
+    MCNAPI void* $ctor(::Container const&);
 
-    MCAPI void* $ctor(::SharedTypes::Legacy::ContainerType type);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::ContainerType type);
 
-    MCAPI void* $ctor(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $init();
+    MCNAPI void $init();
 
-    MCAPI void $addContentChangeListener(::ContainerContentChangeListener* listener);
+    MCNAPI void $addContentChangeListener(::ContainerContentChangeListener* listener);
 
-    MCAPI void $removeContentChangeListener(::ContainerContentChangeListener* listener);
+    MCNAPI void $removeContentChangeListener(::ContainerContentChangeListener* listener);
 
-    MCFOLD ::Bedrock::PubSub::Connector<void()>* $getContainerRemovedConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void()>* $getContainerRemovedConnector();
 
-    MCAPI bool $hasRemovedSubscribers() const;
+    MCNAPI bool $hasRemovedSubscribers() const;
 
-    MCAPI bool $hasRoomForItem(::ItemStack const& item);
+    MCNAPI bool $hasRoomForItem(::ItemStack const& item);
 
-    MCAPI bool $addItem(::ItemStack& item);
+    MCNAPI bool $addItem(::ItemStack& item);
 
-    MCAPI bool $addItemWithForceBalance(::ItemStack& item);
+    MCNAPI bool $addItemWithForceBalance(::ItemStack& item);
 
-    MCAPI bool $addItemToFirstEmptySlot(::ItemStack const& item);
+    MCNAPI bool $addItemToFirstEmptySlot(::ItemStack const& item);
 
-    MCFOLD void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
+    MCNAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
-    MCAPI void $removeItem(int slot, int count);
+    MCNAPI void $removeItem(int slot, int count);
 
-    MCAPI void $removeAllItems();
+    MCNAPI void $removeAllItems();
 
-    MCAPI void $removeAllItemsWithForceBalance();
+    MCNAPI void $removeAllItemsWithForceBalance();
 
-    MCAPI void $containerRemoved();
+    MCNAPI void $containerRemoved();
 
-    MCAPI void $dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot);
+    MCNAPI void $dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot);
 
-    MCAPI void $dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
+    MCNAPI void $dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
 
-    MCAPI void $stopOpen(::Player& player);
+    MCNAPI void $stopOpen(::Player& player);
 
-    MCAPI ::std::vector<::ItemStack> $getSlotCopies() const;
+    MCNAPI ::std::vector<::ItemStack> $getSlotCopies() const;
 
-    MCAPI ::std::vector<::ItemStack const*> const $getSlots() const;
+    MCNAPI ::std::vector<::ItemStack const*> const $getSlots() const;
 
-    MCFOLD int $getEmptySlotsCount() const;
+    MCNAPI int $getEmptySlotsCount() const;
 
-    MCAPI int $getItemCount(::ItemStack const& compare) const;
+    MCNAPI int $getItemCount(::ItemStack const& compare) const;
 
-    MCAPI int $findFirstSlotForItem(::ItemStack const& item) const;
+    MCNAPI int $findFirstSlotForItem(::ItemStack const& item) const;
 
-    MCFOLD bool $canPushInItem(int, int, ::ItemStack const&) const;
+    MCNAPI bool $canPushInItem(int, int, ::ItemStack const&) const;
 
-    MCFOLD bool $canPullOutItem(int, int, ::ItemStack const&) const;
+    MCNAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
 
-    MCAPI void $setContainerChanged(int slot);
+    MCNAPI void $setContainerChanged(int slot);
 
-    MCAPI void $setContainerMoved();
+    MCNAPI void $setContainerMoved();
 
-    MCAPI void $setCustomName(::Bedrock::Safety::RedactableString const& name);
+    MCNAPI void $setCustomName(::Bedrock::Safety::RedactableString const& name);
 
-    MCAPI bool $hasCustomName() const;
+    MCNAPI bool $hasCustomName() const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag);
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag);
 
-    MCAPI void $createTransactionContext(
+    MCNAPI void $createTransactionContext(
         ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
         ::std::function<void()>                                                          execute
     );
 
-    MCFOLD void $initializeContainerContents(::BlockSource& region);
+    MCNAPI void $initializeContainerContents(::BlockSource& region);
 
-    MCAPI bool $isEmpty() const;
+    MCNAPI bool $isEmpty() const;
 
-    MCFOLD bool $isSlotDisabled(int) const;
+    MCNAPI bool $isSlotDisabled(int) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

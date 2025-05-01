@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/game_refs/WeakRef.h"
 
@@ -10,7 +11,6 @@
 // clang-format off
 class Dimension;
 class EntityContext;
-class Vec3;
 // clang-format on
 
 struct PlayerDimensionChangeBeforeEvent {
@@ -27,12 +27,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~PlayerDimensionChangeBeforeEvent();
+    MCNAPI ~PlayerDimensionChangeBeforeEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

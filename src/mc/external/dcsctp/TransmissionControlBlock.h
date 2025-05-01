@@ -29,41 +29,41 @@ class TransmissionControlBlock {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState&);
+    MCNAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState&);
 
-    MCAPI void ClearCookieEchoChunk();
+    MCNAPI void ClearCookieEchoChunk();
 
-    MCAPI ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const;
+    MCNAPI ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const;
 
-    MCAPI void MaybeSendFastRetransmit();
+    MCNAPI void MaybeSendFastRetransmit();
 
-    MCAPI void MaybeSendForwardTsn(::dcsctp::SctpPacket::Builder&, ::webrtc::Timestamp);
+    MCNAPI void MaybeSendForwardTsn(::dcsctp::SctpPacket::Builder&, ::webrtc::Timestamp);
 
-    MCAPI void MaybeSendSack();
+    MCNAPI void MaybeSendSack();
 
-    MCAPI ::webrtc::TimeDelta OnDelayedAckTimerExpiry();
+    MCNAPI ::webrtc::TimeDelta OnDelayedAckTimerExpiry();
 
-    MCAPI ::webrtc::TimeDelta OnRtxTimerExpiry();
+    MCNAPI ::webrtc::TimeDelta OnRtxTimerExpiry();
 
-    MCAPI void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const&);
+    MCNAPI void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const&);
 
-    MCAPI void SendBufferedPackets(::webrtc::Timestamp);
+    MCNAPI void SendBufferedPackets(::webrtc::Timestamp);
 
-    MCAPI void SendBufferedPackets(::dcsctp::SctpPacket::Builder&, ::webrtc::Timestamp);
+    MCNAPI void SendBufferedPackets(::dcsctp::SctpPacket::Builder&, ::webrtc::Timestamp);
 
-    MCAPI TransmissionControlBlock(::dcsctp::TimerManager&, ::std::string_view, ::dcsctp::DcSctpOptions const&, ::dcsctp::Capabilities const&, ::dcsctp::DcSctpSocketCallbacks&, ::dcsctp::SendQueue&, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, uint64, ::webrtc::StrongAlias<::dcsctp::TieTagTag, uint64>, ::dcsctp::PacketSender&, ::std::function<bool()>);
+    MCNAPI TransmissionControlBlock(::dcsctp::TimerManager&, ::std::string_view, ::dcsctp::DcSctpOptions const&, ::dcsctp::Capabilities const&, ::dcsctp::DcSctpSocketCallbacks&, ::dcsctp::SendQueue&, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, uint64, ::webrtc::StrongAlias<::dcsctp::TieTagTag, uint64>, ::dcsctp::PacketSender&, ::std::function<bool()>);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::dcsctp::TimerManager&, ::std::string_view, ::dcsctp::DcSctpOptions const&, ::dcsctp::Capabilities const&, ::dcsctp::DcSctpSocketCallbacks&, ::dcsctp::SendQueue&, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, uint64, ::webrtc::StrongAlias<::dcsctp::TieTagTag, uint64>, ::dcsctp::PacketSender&, ::std::function<bool()>);
+    MCNAPI void* $ctor(::dcsctp::TimerManager&, ::std::string_view, ::dcsctp::DcSctpOptions const&, ::dcsctp::Capabilities const&, ::dcsctp::DcSctpSocketCallbacks&, ::dcsctp::SendQueue&, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, uint64, ::webrtc::StrongAlias<::dcsctp::TieTagTag, uint64>, ::dcsctp::PacketSender&, ::std::function<bool()>);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -39,11 +39,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptAimAssistRegistry(::ScriptModuleMinecraft::ScriptAimAssistRegistry&&);
+    MCNAPI ScriptAimAssistRegistry(::ScriptModuleMinecraft::ScriptAimAssistRegistry&&);
 
-    MCAPI ScriptAimAssistRegistry(::ScriptModuleMinecraft::ScriptAimAssistRegistry const&);
+    MCNAPI ScriptAimAssistRegistry(::ScriptModuleMinecraft::ScriptAimAssistRegistry const&);
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistCategory>,
         ::Scripting::InvalidArgumentError,
         ::Scripting::EngineError,
@@ -51,7 +51,7 @@ public:
         ::ScriptModuleMinecraft::ScriptNamespaceNameError>
     _addCategory(::ScriptModuleMinecraft::ScriptAimAssistCategorySettings const& categorySettings);
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistPreset>,
         ::Scripting::InvalidArgumentError,
         ::Scripting::EngineError,
@@ -59,40 +59,40 @@ public:
         ::ScriptModuleMinecraft::ScriptNamespaceNameError>
     _addPreset(::ScriptModuleMinecraft::ScriptAimAssistPresetSettings const& presetSettings);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistCategory>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistCategory>
     _createCategoryHandle(::std::string const& categoryId) const;
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistPreset>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistPreset>
     _createPresetHandle(::std::string const& presetId) const;
 
-    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistCategory>>
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistCategory>>
     _getCategories() const;
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistCategory>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistCategory>>
     _getOrCreateCategoryHandle(::std::string const& categoryId) const;
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistPreset>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistPreset>>
     _getOrCreatePresetHandle(::std::string const& presetId) const;
 
-    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistPreset>>
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistPreset>>
     _getPresets() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptAimAssistRegistry&
+    MCNAPI ::ScriptModuleMinecraft::ScriptAimAssistRegistry&
     operator=(::ScriptModuleMinecraft::ScriptAimAssistRegistry&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptAimAssistRegistry> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptAimAssistRegistry> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptAimAssistRegistry&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptAimAssistRegistry&&);
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptAimAssistRegistry const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptAimAssistRegistry const&);
     // NOLINTEND
 };
 

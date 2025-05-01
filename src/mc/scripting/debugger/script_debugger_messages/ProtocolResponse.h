@@ -23,15 +23,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptDebuggerMessages::ProtocolResponse& operator=(::ScriptDebuggerMessages::ProtocolResponse&&);
+    MCNAPI ::ScriptDebuggerMessages::ProtocolResponse& operator=(::ScriptDebuggerMessages::ProtocolResponse&&);
 
-    MCAPI ~ProtocolResponse();
+    MCNAPI ~ProtocolResponse();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

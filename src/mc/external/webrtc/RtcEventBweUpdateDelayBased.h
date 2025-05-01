@@ -11,19 +11,19 @@ class RtcEventBweUpdateDelayBased {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RtcEventBweUpdateDelayBased(int, ::webrtc::BandwidthUsage);
+    MCNAPI RtcEventBweUpdateDelayBased(int, ::webrtc::BandwidthUsage);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int, ::webrtc::BandwidthUsage);
+    MCNAPI void* $ctor(int, ::webrtc::BandwidthUsage);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

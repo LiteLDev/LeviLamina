@@ -11,7 +11,7 @@ class LeashableDefinition;
 namespace LeashableUtils {
 // functions
 // NOLINTBEGIN
-MCAPI bool canStayLeashedTo(::Actor const& actor, ::Actor const& leashHolder, ::LeashableDefinition const& leashable);
+MCNAPI bool canStayLeashedTo(::Actor const& actor, ::Actor const& leashHolder, ::LeashableDefinition const& leashable);
 // NOLINTEND
 
 } // namespace LeashableUtils

@@ -21,14 +21,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::GatheringServerInfo& operator=(::GatheringServerInfo const&);
+    MCNAPI ::GatheringServerInfo& operator=(::GatheringServerInfo const&);
 
-    MCAPI ~GatheringServerInfo();
+    MCNAPI ~GatheringServerInfo();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

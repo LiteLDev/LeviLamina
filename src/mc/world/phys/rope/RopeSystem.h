@@ -2,19 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/platform/threading/Mutex.h"
+#include "mc/world/phys/AABB.h"
+#include "mc/world/phys/rope/AABBPred.h"
+#include "mc/world/phys/rope/RopeParams.h"
+#include "mc/world/phys/rope/RopePoints.h"
+
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class BlockSource;
-class Vec3;
 struct AABBBucket;
-struct AABBPred;
-struct ActorUniqueID;
 struct RopeNode;
-struct RopeParams;
-struct RopePoints;
 struct RopeWave;
-namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class RopeSystem {
@@ -47,43 +49,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RopeSystem();
+    MCNAPI RopeSystem();
 
-    MCAPI bool _cacheColliders(::BlockSource& region);
+    MCNAPI bool _cacheColliders(::BlockSource& region);
 
-    MCAPI void _finalizeBucket(::AABBBucket& bucket);
+    MCNAPI void _finalizeBucket(::AABBBucket& bucket);
 
-    MCAPI void _initializePins();
+    MCNAPI void _initializePins();
 
-    MCAPI void _integrate();
+    MCNAPI void _integrate();
 
-    MCAPI void _prepareAABBBuckets();
+    MCNAPI void _prepareAABBBuckets();
 
-    MCAPI void _pruneDenyList();
+    MCNAPI void _pruneDenyList();
 
-    MCAPI void _pushRange(uint64 begin, uint64 end);
+    MCNAPI void _pushRange(uint64 begin, uint64 end);
 
-    MCAPI void _resizeRope();
+    MCNAPI void _resizeRope();
 
-    MCAPI float _solveCollisions(bool checkDenyList);
+    MCNAPI float _solveCollisions(bool checkDenyList);
 
-    MCAPI float _solveDistanceConstraint(::Vec3& a, ::Vec3& b, float targetDist);
+    MCNAPI float _solveDistanceConstraint(::Vec3& a, ::Vec3& b, float targetDist);
 
-    MCAPI float _solveDistanceConstraintBlock(::Vec3& a, ::Vec3& b, ::Vec3& c, ::Vec3& d, float targetDist);
+    MCNAPI float _solveDistanceConstraintBlock(::Vec3& a, ::Vec3& b, ::Vec3& c, ::Vec3& d, float targetDist);
 
-    MCAPI float _solveDistanceConstraints1();
+    MCNAPI float _solveDistanceConstraints1();
 
-    MCAPI float _solveDistanceConstraints3();
+    MCNAPI float _solveDistanceConstraints3();
 
-    MCAPI void _tick();
+    MCNAPI void _tick();
 
-    MCAPI void _tickWaves();
+    MCNAPI void _tickWaves();
 
-    MCAPI void _updateRenderPoints();
+    MCNAPI void _updateRenderPoints();
 
-    MCAPI void queueTick(::BlockSource& region, ::std::shared_ptr<::RopeSystem>& self);
+    MCNAPI void queueTick(::BlockSource& region, ::std::shared_ptr<::RopeSystem>& self);
 
-    MCAPI ~RopeSystem();
+    MCNAPI ~RopeSystem();
     // NOLINTEND
 
 public:
@@ -95,12 +97,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

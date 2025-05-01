@@ -51,39 +51,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ApplicationDataStores(::Bedrock::NotNullNonOwnerPtr<::AppPlatform> platform, ::std::string_view tag);
+    MCNAPI ApplicationDataStores(::Bedrock::NotNullNonOwnerPtr<::AppPlatform> platform, ::std::string_view tag);
 
-    MCAPI void _initDataStore(::Bedrock::IApplicationDataStores::DataStores which);
+    MCNAPI void _initDataStore(::Bedrock::IApplicationDataStores::DataStores which);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::AppPlatform> platform, ::std::string_view tag);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::AppPlatform> platform, ::std::string_view tag);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init();
+    MCNAPI void $init();
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::Bedrock::DataStore>
+    MCNAPI ::Bedrock::NonOwnerPointer<::Bedrock::DataStore>
     $getDataStore(::Bedrock::IApplicationDataStores::DataStores which);
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::Bedrock::DataStore const>
+    MCNAPI ::Bedrock::NonOwnerPointer<::Bedrock::DataStore const>
     $getDataStore(::Bedrock::IApplicationDataStores::DataStores which) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

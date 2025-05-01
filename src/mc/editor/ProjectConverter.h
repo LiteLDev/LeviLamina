@@ -88,24 +88,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ProjectConverter(
+    MCNAPI ProjectConverter(
         ::ILevelListCache&                                              levelListCache,
         ::Scheduler&                                                    scheduler,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>      keyProvider
     );
 
-    MCAPI void _fixupPackHistoryFile(
+    MCNAPI void _fixupPackHistoryFile(
         ::Core::PathBuffer<::std::string> const& filePath,
         ::std::unordered_set<::mce::UUID> const& packsToRemove
     ) const;
 
-    MCAPI void _fixupPacksFile(
+    MCNAPI void _fixupPacksFile(
         ::Core::PathBuffer<::std::string> const& filePath,
         ::std::unordered_set<::mce::UUID> const& packsToRemove
     ) const;
 
-    MCAPI ::Core::PathBuffer<::std::string> _getLevelFolder(::std::string const& levelId) const;
+    MCNAPI ::Core::PathBuffer<::std::string> _getLevelFolder(::std::string const& levelId) const;
     // NOLINTEND
 
 public:
@@ -119,7 +119,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ILevelListCache&                                              levelListCache,
         ::Scheduler&                                                    scheduler,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
@@ -130,21 +130,21 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $enqueueConvertImportingWorldTasks(
+    MCNAPI void $enqueueConvertImportingWorldTasks(
         ::std::shared_ptr<::FileArchiver::Result>&                      sharedResult,
         ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress,
         ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>&    prevTaskHandle
     );
 
-    MCAPI bool $shouldCopyWorldForConversion(::std::string const& levelId) const;
+    MCNAPI bool $shouldCopyWorldForConversion(::std::string const& levelId) const;
 
-    MCAPI void $enqueueConvertExportingWorldTasks(
+    MCNAPI void $enqueueConvertExportingWorldTasks(
         ::std::shared_ptr<::FileArchiver::ExportData>&                  exportData,
         ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress,
         ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>&    prevTaskHandle,
@@ -155,7 +155,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

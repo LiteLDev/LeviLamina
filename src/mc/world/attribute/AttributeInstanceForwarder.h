@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/attribute/AttributeModificationContext.h"
+
 // auto generated forward declare list
 // clang-format off
 class AttributeInstance;
 class AttributeModifier;
-struct AttributeModificationContext;
 namespace mce { class UUID; }
 // clang-format on
 
@@ -21,12 +23,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addModifier(::std::shared_ptr<::AttributeModifier> modifier);
+    MCNAPI void addModifier(::std::shared_ptr<::AttributeModifier> modifier);
 
-    MCAPI bool hasModifier(::AttributeModifier const& modifier) const;
+    MCNAPI bool hasModifier(::AttributeModifier const& modifier) const;
 
-    MCAPI bool hasModifier(::std::shared_ptr<::AttributeModifier> modifier) const;
+    MCNAPI bool hasModifier(::std::shared_ptr<::AttributeModifier> modifier) const;
 
-    MCAPI bool removeModifier(::mce::UUID const& id);
+    MCNAPI bool removeModifier(::mce::UUID const& id);
     // NOLINTEND
 };

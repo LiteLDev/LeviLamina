@@ -22,7 +22,7 @@ struct JigsawAssembler {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::br::worldgen::GenerationStub> construct(
+    MCNAPI static ::std::optional<::br::worldgen::GenerationStub> construct(
         ::br::worldgen::GenerationContext&        context,
         ::br::worldgen::WorldGenContext const&    worldGenContext,
         ::std::string_view                        startPool,

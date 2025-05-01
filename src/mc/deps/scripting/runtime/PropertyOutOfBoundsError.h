@@ -24,32 +24,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PropertyOutOfBoundsError(::Scripting::PropertyOutOfBoundsError const&);
+    MCNAPI PropertyOutOfBoundsError(::Scripting::PropertyOutOfBoundsError const&);
 
-    MCAPI PropertyOutOfBoundsError(::Scripting::PropertyOutOfBoundsError&&);
+    MCNAPI PropertyOutOfBoundsError(::Scripting::PropertyOutOfBoundsError&&);
 
-    MCAPI
+    MCNAPI
     PropertyOutOfBoundsError(::std::string const& propertyName, double value_, double minValue_, double maxValue_);
 
-    MCFOLD ::Scripting::PropertyOutOfBoundsError& operator=(::Scripting::PropertyOutOfBoundsError&&);
+    MCNAPI ::Scripting::PropertyOutOfBoundsError& operator=(::Scripting::PropertyOutOfBoundsError&&);
 
-    MCAPI ~PropertyOutOfBoundsError();
+    MCNAPI ~PropertyOutOfBoundsError();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::Scripting::PropertyOutOfBoundsError const&);
+    MCNAPI void* $ctor(::Scripting::PropertyOutOfBoundsError const&);
 
-    MCFOLD void* $ctor(::Scripting::PropertyOutOfBoundsError&&);
+    MCNAPI void* $ctor(::Scripting::PropertyOutOfBoundsError&&);
 
-    MCAPI void* $ctor(::std::string const& propertyName, double value_, double minValue_, double maxValue_);
+    MCNAPI void* $ctor(::std::string const& propertyName, double value_, double minValue_, double maxValue_);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

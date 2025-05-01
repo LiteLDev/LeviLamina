@@ -21,11 +21,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string ToString() const;
+    MCNAPI ::std::string ToString() const;
 
-    MCAPI bool has_value() const;
+    MCNAPI bool has_value() const;
 
-    MCAPI char const* name() const;
+    MCNAPI char const* name() const;
     // NOLINTEND
 };
 

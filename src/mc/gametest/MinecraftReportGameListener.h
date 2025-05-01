@@ -47,17 +47,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string _generateErrorDescription(::gametest::GameTestError const& error) const;
+    MCNAPI ::std::string _generateErrorDescription(::gametest::GameTestError const& error) const;
 
-    MCAPI void _reportFailure(::gametest::GameTestError const& error, ::BlockSource& region);
+    MCNAPI void _reportFailure(::gametest::GameTestError const& error, ::BlockSource& region);
 
-    MCAPI void _say(::std::string const& chatColor, ::std::string const& text);
+    MCNAPI void _say(::std::string const& chatColor, ::std::string const& text);
 
-    MCAPI void _spawnBeacon(::Block const& glassType);
+    MCNAPI void _spawnBeacon(::Block const& glassType);
 
-    MCAPI void _spawnLectern(::std::string const& text);
+    MCNAPI void _spawnLectern(::std::string const& text);
 
-    MCAPI void _visualizeFailedTest(::gametest::GameTestError const& error, ::BlockSource&);
+    MCNAPI void _visualizeFailedTest(::gametest::GameTestError const& error, ::BlockSource&);
     // NOLINTEND
 
 public:
@@ -69,16 +69,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance);
+    MCNAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance);
 
-    MCAPI void $onTestPassed(::gametest::BaseGameTestInstance& testInstance);
+    MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance& testInstance);
 
-    MCAPI void $onTestFailed(::gametest::BaseGameTestInstance& testInstance);
+    MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance& testInstance);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

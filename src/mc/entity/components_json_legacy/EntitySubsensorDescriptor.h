@@ -7,6 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 8>  mUnk378f1b;
+    ::ll::UntypedStorage<4, 4>  mUnkc56d21;
     ::ll::UntypedStorage<1, 1>  mUnkc272c6;
     ::ll::UntypedStorage<4, 4>  mUnkd28fc0;
     ::ll::UntypedStorage<4, 4>  mUnke1ba9f;
@@ -24,12 +25,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~EntitySubsensorDescriptor();
+    MCNAPI ~EntitySubsensorDescriptor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -46,22 +46,22 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
+    MCNAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
     BlockIgnore(::std::vector<::std::string> const& blocks);
 
-    MCAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
+    MCNAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
     Capped(::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>> delegate, ::IntProvider limit);
 
-    MCAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>> Protected(::std::string_view tag
-    );
+    MCNAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
+    Protected(::std::string_view tag);
 
-    MCAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
+    MCNAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
     Protected(::HashedString const& tag);
 
-    MCAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
+    MCNAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
     Rule(::std::vector<::br::worldgen::processors::RuleSet> rules);
 
-    MCAPI static void bootstrap();
+    MCNAPI static void bootstrap();
     // NOLINTEND
 
 public:
@@ -73,23 +73,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::br::worldgen::StructureBlockInfo>
+    MCNAPI ::std::optional<::br::worldgen::StructureBlockInfo>
     $process(::IBlockSource&, ::BlockPos, ::BlockPos, ::br::worldgen::StructureBlockInfo const&, ::br::worldgen::StructureBlockInfo&& processedBlockInfo, ::br::worldgen::StructurePlaceSettings const&)
         const;
 
-    MCAPI ::std::vector<::br::worldgen::StructureBlockInfo>
+    MCNAPI ::std::vector<::br::worldgen::StructureBlockInfo>
     $finalize(::IBlockSource&, ::BlockPos, ::BlockPos, ::std::vector<::br::worldgen::StructureBlockInfo> const&, ::std::vector<::br::worldgen::StructureBlockInfo>&& processedBlocks, ::br::worldgen::StructurePlaceSettings const&)
         const;
 
-    MCFOLD ::br::worldgen::StructureProcessorType $type() const;
+    MCNAPI ::br::worldgen::StructureProcessorType $type() const;
 
-    MCAPI void $appendMetadataKey(::Util::XXHash&) const;
+    MCNAPI void $appendMetadataKey(::Util::XXHash&) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

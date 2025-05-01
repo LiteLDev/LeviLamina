@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/level/block/BlockLegacy.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
 class BlockActor;
-class HashedString;
 class ItemInstance;
 // clang-format on
 
@@ -42,14 +42,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Block const* $tryGetInfested(::Block const& block) const;
+    MCNAPI ::Block const* $tryGetInfested(::Block const& block) const;
 
-    MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -46,7 +46,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void writeFrameToStream(
+    MCNAPI static void writeFrameToStream(
         ::RakNet::BitStream& stream,
         uchar const*         payload,
         uint                 size,

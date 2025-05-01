@@ -32,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WatchdogEvent(
+    MCNAPI WatchdogEvent(
         ::Scripting::WatchdogEventType eventType,
         ::Scripting::ContextId         contextId,
         ::std::string                  phaseName,
@@ -40,13 +40,13 @@ public:
         uint64                         memoryUsageMB
     );
 
-    MCAPI ~WatchdogEvent();
+    MCNAPI ~WatchdogEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::WatchdogEventType eventType,
         ::Scripting::ContextId         contextId,
         ::std::string                  phaseName,
@@ -58,7 +58,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

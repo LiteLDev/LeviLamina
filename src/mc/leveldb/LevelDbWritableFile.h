@@ -43,15 +43,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelDbWritableFile(::std::string filename, ::Core::File&& file);
+    MCNAPI LevelDbWritableFile(::std::string filename, ::Core::File&& file);
 
-    MCAPI ::leveldb::Status SyncDirIfManifest();
+    MCNAPI ::leveldb::Status SyncDirIfManifest();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string filename, ::Core::File&& file);
+    MCNAPI void* $ctor(::std::string filename, ::Core::File&& file);
     // NOLINTEND
 
 public:
@@ -63,18 +63,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::leveldb::Status $Append(::leveldb::Slice const& slice);
+    MCNAPI ::leveldb::Status $Append(::leveldb::Slice const& slice);
 
-    MCAPI ::leveldb::Status $Close();
+    MCNAPI ::leveldb::Status $Close();
 
-    MCAPI ::leveldb::Status $Flush();
+    MCNAPI ::leveldb::Status $Flush();
 
-    MCAPI ::leveldb::Status $Sync();
+    MCNAPI ::leveldb::Status $Sync();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

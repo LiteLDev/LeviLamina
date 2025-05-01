@@ -41,21 +41,21 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+    MCNAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 
-    MCAPI int
+    MCNAPI int
     $getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const;
 
-    MCFOLD int $getEnchantValue() const;
+    MCNAPI int $getEnchantValue() const;
 
-    MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCNAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
     // NOLINTEND
 };

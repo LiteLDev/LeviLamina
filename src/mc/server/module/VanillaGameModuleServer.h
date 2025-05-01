@@ -95,7 +95,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _configureWorldGen(
+    MCNAPI void _configureWorldGen(
         ::IWorldRegistriesProvider&    worldRegistries,
         ::SpawnSettings const&         spawnSettings,
         ::Experiments const&           experiments,
@@ -105,7 +105,7 @@ public:
         ::cereal::ReflectionCtx const& ctx
     );
 
-    MCAPI void _registerListeners(::Bedrock::NotNullNonOwnerPtr<::Level> const& level);
+    MCNAPI void _registerListeners(::Bedrock::NotNullNonOwnerPtr<::Level> const& level);
     // NOLINTEND
 
 public:
@@ -117,9 +117,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init(::Bedrock::NotNullNonOwnerPtr<::Level> const& level);
+    MCNAPI void $init(::Bedrock::NotNullNonOwnerPtr<::Level> const& level);
 
-    MCAPI void $initializeBehaviorStack(
+    MCNAPI void $initializeBehaviorStack(
         ::Experiments const&                                            experiments,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& repo,
         ::ResourcePackStack&                                            stack,
@@ -127,7 +127,7 @@ public:
         bool                                                            includeEditorPacks
     );
 
-    MCAPI void $configureLevel(
+    MCNAPI void $configureLevel(
         ::Bedrock::NotNullNonOwnerPtr<::Level> const& level,
         ::Experiments const&                          experiments,
         ::ResourcePackManager&                        resourcePackManager,
@@ -135,16 +135,16 @@ public:
         ::ServerScriptManager const*                  scriptManager
     );
 
-    MCFOLD void $configureNewPlayer(::Player& player);
+    MCNAPI void $configureNewPlayer(::Player& player);
 
-    MCAPI void
+    MCNAPI void
     $configureDocumentation(::IGameModuleDocumentation& moduleDocumentation, ::ItemRegistryRef const docItemRegistry);
 
-    MCFOLD void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $setupCommands(::CommandRegistry& commandRegistry);
+    MCNAPI void $setupCommands(::CommandRegistry& commandRegistry);
 
-    MCAPI void $configureServerNetworkHandler(
+    MCNAPI void $configureServerNetworkHandler(
         ::ServerInstance&                                     server,
         ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> handler
     );
@@ -153,6 +153,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -56,9 +56,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockCollisionBoxDescription(bool enabled);
+    MCNAPI explicit BlockCollisionBoxDescription(bool enabled);
 
-    MCAPI BlockCollisionBoxDescription(::Vec3 const& origin, ::Vec3 const& size);
+    MCNAPI BlockCollisionBoxDescription(::Vec3 const& origin, ::Vec3 const& size);
     // NOLINTEND
 
 public:
@@ -70,36 +70,36 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(bool enabled);
+    MCNAPI void* $ctor(bool enabled);
 
-    MCAPI void* $ctor(::Vec3 const& origin, ::Vec3 const& size);
+    MCNAPI void* $ctor(::Vec3 const& origin, ::Vec3 const& size);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getName() const;
+    MCNAPI ::std::string const& $getName() const;
 
-    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCFOLD bool $isNetworkComponent() const;
+    MCNAPI bool $isNetworkComponent() const;
 
-    MCFOLD ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCFOLD void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCNAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

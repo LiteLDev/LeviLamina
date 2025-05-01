@@ -16,19 +16,21 @@ namespace BiomeColorSampling { class MapPolicy; }
 namespace BiomeColorSampling {
 // functions
 // NOLINTBEGIN
-MCAPI int getMapBirchFoliageColor(::Biome const& biome, ::BlockPos const&);
+MCNAPI int getMapBirchFoliageColor(::Biome const& biome, ::BlockPos const&);
 
-MCAPI int getMapDefaultFoliageColor(::Biome const& biome, ::BlockPos const&);
+MCNAPI int getMapDefaultFoliageColor(::Biome const& biome, ::BlockPos const&);
 
-MCAPI int getMapEvergreenFoliageColor(::Biome const& biome, ::BlockPos const&);
+MCNAPI int getMapDryFoliageColor(::Biome const& biome, ::BlockPos const&);
 
-MCAPI int getMapGrassColor(::Biome const& biome, ::BlockPos const& pos);
+MCNAPI int getMapEvergreenFoliageColor(::Biome const& biome, ::BlockPos const&);
 
-MCAPI ::BiomeColorSampling::MapPolicy const& getMapPolicy(::TintMethod tint);
+MCNAPI int getMapGrassColor(::Biome const& biome, ::BlockPos const& pos);
 
-MCAPI int getMapWaterColor(::Biome const& biome, ::BlockPos const&);
+MCNAPI ::BiomeColorSampling::MapPolicy const& getMapPolicy(::TintMethod tint);
 
-MCAPI ::std::vector<::BlockPos> const& getPattern(::BiomeColorSampling::Pattern pattern);
+MCNAPI int getMapWaterColor(::Biome const& biome, ::BlockPos const&);
+
+MCNAPI ::std::vector<::BlockPos> const& getPattern(::BiomeColorSampling::Pattern pattern);
 // NOLINTEND
 
 } // namespace BiomeColorSampling

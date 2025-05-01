@@ -21,17 +21,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string ToString() const;
+    MCNAPI ::std::string ToString() const;
 
-    MCAPI ~ConnectResponse();
+    MCNAPI ~ConnectResponse();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static ::NetherNet::ConnectResponse Create(uint64 sessionId, ::std::string sdp);
+    MCNAPI static ::NetherNet::ConnectResponse Create(uint64 sessionId, ::std::string sdp);
 
-    MCAPI static ::std::optional<::NetherNet::ConnectResponse>
+    MCNAPI static ::std::optional<::NetherNet::ConnectResponse>
     TryParse(::std::array<::std::string_view, 3> const& tokens);
     // NOLINTEND
 
@@ -44,7 +44,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

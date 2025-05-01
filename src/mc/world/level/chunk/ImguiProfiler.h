@@ -76,7 +76,7 @@ public:
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -91,13 +91,13 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -124,19 +124,19 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void mark();
+        MCNAPI void mark();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -182,23 +182,23 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCAPI Record(::ImguiProfiler::RecordGroup::Record const&);
+            MCNAPI Record(::ImguiProfiler::RecordGroup::Record const&);
 
-            MCAPI ::ImguiProfiler::RecordGroup::Record& operator=(::ImguiProfiler::RecordGroup::Record&&);
+            MCNAPI ::ImguiProfiler::RecordGroup::Record& operator=(::ImguiProfiler::RecordGroup::Record&&);
 
-            MCAPI ~Record();
+            MCNAPI ~Record();
             // NOLINTEND
 
         public:
             // constructor thunks
             // NOLINTBEGIN
-            MCAPI void* $ctor(::ImguiProfiler::RecordGroup::Record const&);
+            MCNAPI void* $ctor(::ImguiProfiler::RecordGroup::Record const&);
             // NOLINTEND
 
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCAPI void $dtor();
+            MCNAPI void $dtor();
             // NOLINTEND
         };
 
@@ -221,24 +221,24 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCAPI FullStackRecord(::ImguiProfiler::RecordGroup::FullStackRecord&&);
+            MCNAPI FullStackRecord(::ImguiProfiler::RecordGroup::FullStackRecord&&);
 
-            MCAPI ::ImguiProfiler::RecordGroup::FullStackRecord&
+            MCNAPI ::ImguiProfiler::RecordGroup::FullStackRecord&
             operator=(::ImguiProfiler::RecordGroup::FullStackRecord&&);
 
-            MCAPI ~FullStackRecord();
+            MCNAPI ~FullStackRecord();
             // NOLINTEND
 
         public:
             // constructor thunks
             // NOLINTBEGIN
-            MCAPI void* $ctor(::ImguiProfiler::RecordGroup::FullStackRecord&&);
+            MCNAPI void* $ctor(::ImguiProfiler::RecordGroup::FullStackRecord&&);
             // NOLINTEND
 
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCAPI void $dtor();
+            MCNAPI void $dtor();
             // NOLINTEND
         };
 
@@ -267,12 +267,12 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool isGreaterThan(
+        MCNAPI bool isGreaterThan(
             ::ImguiProfiler::RecordGroup::FullStackRecord const& lhs,
             ::ImguiProfiler::RecordGroup::FullStackRecord const& rhs
         );
 
-        MCAPI ::ImguiProfiler::RecordGroup::FullStackRecord& operator[](::std::string const& name);
+        MCNAPI ::ImguiProfiler::RecordGroup::FullStackRecord& operator[](::std::string const& name);
         // NOLINTEND
     };
 
@@ -299,7 +299,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void update();
+    MCNAPI void update();
     // NOLINTEND
 
 public:
@@ -321,6 +321,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

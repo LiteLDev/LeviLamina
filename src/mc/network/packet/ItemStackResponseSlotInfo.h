@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/safety/RedactableString.h"
 #include "mc/world/inventory/network/TypedServerNetId.h"
 
 // auto generated forward declare list
 // clang-format off
 struct ItemStackNetIdTag;
-namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 struct ItemStackResponseSlotInfo {
@@ -31,20 +31,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemStackResponseSlotInfo(::ItemStackResponseSlotInfo&&);
+    MCNAPI ItemStackResponseSlotInfo(::ItemStackResponseSlotInfo&&);
 
-    MCAPI ~ItemStackResponseSlotInfo();
+    MCNAPI ~ItemStackResponseSlotInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemStackResponseSlotInfo&&);
+    MCNAPI void* $ctor(::ItemStackResponseSlotInfo&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

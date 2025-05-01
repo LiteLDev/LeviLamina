@@ -12,7 +12,7 @@ struct WalkDistComponent;
 namespace WalkDistanceSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void updateWalkDistance(
+MCNAPI void updateWalkDistance(
     ::MoveRequestComponent const& moveRequest,
     ::StateVectorComponent const& state,
     ::WalkDistComponent&          walkDistance

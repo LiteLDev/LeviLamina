@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/server/commands/Command.h"
 
 // auto generated forward declare list
@@ -12,9 +11,9 @@ class CameraPresets;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
-class EntityRegistry;
 class Experiments;
 struct CameraInstruction;
+struct ServerCameraStatesComponent;
 // clang-format on
 
 class CameraCommand : public ::Command {
@@ -101,13 +100,17 @@ public:
     // NOLINTBEGIN
     MCAPI CameraCommand();
 
+    MCAPI void forEachSelectedPlayersCameraStates(
+        ::CommandOrigin const&                                origin,
+        ::std::function<void(::ServerCameraStatesComponent&)> callback
+    ) const;
+
     MCAPI bool prepareInstruction(
-        ::CameraInstruction&               cameraInstruction,
-        ::CameraPresets const&             cameraPresets,
-        ::CommandOrigin const&             origin,
-        ::CommandOutput&                   output,
-        ::Experiments const&               experiments,
-        ::StackRefResult<::EntityRegistry> registry
+        ::CameraInstruction&   cameraInstruction,
+        ::CameraPresets const& cameraPresets,
+        ::CommandOrigin const& origin,
+        ::CommandOutput&       output,
+        ::Experiments const&   experiments
     ) const;
     // NOLINTEND
 

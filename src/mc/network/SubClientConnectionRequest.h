@@ -33,82 +33,82 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SubClientConnectionRequest(::SubClientConnectionRequest const& other);
+    MCNAPI SubClientConnectionRequest(::SubClientConnectionRequest const& other);
 
-    MCAPI SubClientConnectionRequest(::std::unique_ptr<::WebToken> rawToken, ::std::string const& certificateString);
+    MCNAPI SubClientConnectionRequest(::std::unique_ptr<::WebToken> rawToken, ::std::string const& certificateString);
 
-    MCFOLD ::std::vector<::AnimatedImageData> getAnimatedImageData() const;
+    MCNAPI ::std::vector<::AnimatedImageData> getAnimatedImageData() const;
 
-    MCFOLD ::std::string getArmSize() const;
+    MCNAPI ::std::string getArmSize() const;
 
-    MCFOLD ::std::vector<uchar> getCapeData() const;
+    MCNAPI ::std::vector<uchar> getCapeData() const;
 
-    MCFOLD ::std::string getCapeId() const;
+    MCNAPI ::std::string getCapeId() const;
 
-    MCFOLD uint64 getClientRandomId() const;
+    MCNAPI uint64 getClientRandomId() const;
 
-    MCFOLD ::Json::Value getData(::std::string const& key) const;
+    MCNAPI ::Json::Value getData(::std::string const& key) const;
 
-    MCFOLD ::std::string getDeviceId() const;
+    MCNAPI ::std::string getDeviceId() const;
 
-    MCFOLD ::std::vector<::SerializedPersonaPieceHandle> getPersonaPieces() const;
+    MCNAPI ::std::vector<::SerializedPersonaPieceHandle> getPersonaPieces() const;
 
-    MCFOLD ::std::unordered_map<::persona::PieceType, ::TintMapColor> getPieceTintColors() const;
+    MCNAPI ::std::unordered_map<::persona::PieceType, ::TintMapColor> getPieceTintColors() const;
 
-    MCFOLD ::std::string getPlatformId() const;
+    MCNAPI ::std::string getPlatformId() const;
 
-    MCFOLD ::std::string getPlatformOfflineId() const;
+    MCNAPI ::std::string getPlatformOfflineId() const;
 
-    MCFOLD ::std::string getPlatformOnlineId() const;
+    MCNAPI ::std::string getPlatformOnlineId() const;
 
-    MCFOLD ::std::string getPlayFabId() const;
+    MCNAPI ::std::string getPlayFabId() const;
 
-    MCFOLD ::std::string getSelfSignedId() const;
+    MCNAPI ::std::string getSelfSignedId() const;
 
-    MCFOLD ::std::string getSkinAnimationData() const;
+    MCNAPI ::std::string getSkinAnimationData() const;
 
-    MCFOLD ::mce::Color getSkinColor() const;
+    MCNAPI ::mce::Color getSkinColor() const;
 
-    MCFOLD ::std::vector<uchar> getSkinData() const;
+    MCNAPI ::std::vector<uchar> getSkinData() const;
 
-    MCAPI ::std::string getSkinGeometry() const;
+    MCNAPI ::std::string getSkinGeometry() const;
 
-    MCFOLD ::MinEngineVersion getSkinGeometryMinEngineVersion() const;
+    MCNAPI ::MinEngineVersion getSkinGeometryMinEngineVersion() const;
 
-    MCFOLD ::std::string getSkinId() const;
+    MCNAPI ::std::string getSkinId() const;
 
-    MCAPI ::std::string getSkinResourcePatch() const;
+    MCNAPI ::std::string getSkinResourcePatch() const;
 
-    MCFOLD ::std::string getThirdPartyName() const;
+    MCNAPI ::std::string getThirdPartyName() const;
 
-    MCFOLD bool isPersonaSkin() const;
+    MCNAPI bool isPersonaSkin() const;
 
-    MCFOLD ::std::string toString();
+    MCNAPI ::std::string toString();
 
-    MCAPI bool verify(::std::vector<::std::string> const& trustedKeys, int64 currentTime);
+    MCNAPI bool verify(::std::vector<::std::string> const& trustedKeys, int64 currentTime);
 
-    MCFOLD bool verifySelfSigned();
+    MCNAPI bool verifySelfSigned();
 
-    MCAPI ~SubClientConnectionRequest();
+    MCNAPI ~SubClientConnectionRequest();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SubClientConnectionRequest fromString(::std::string const& str);
+    MCNAPI static ::SubClientConnectionRequest fromString(::std::string const& str);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SubClientConnectionRequest const& other);
+    MCNAPI void* $ctor(::SubClientConnectionRequest const& other);
 
-    MCAPI void* $ctor(::std::unique_ptr<::WebToken> rawToken, ::std::string const& certificateString);
+    MCNAPI void* $ctor(::std::unique_ptr<::WebToken> rawToken, ::std::string const& certificateString);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

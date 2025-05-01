@@ -5,18 +5,18 @@
 // auto generated inclusion list
 #include "mc/world/Direction.h"
 #include "mc/world/level/block/ActorBlockBase.h"
+#include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class Block;
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
 class Experiments;
-class Player;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class DaylightDetectorBlock : public ::ActorBlock {
@@ -35,11 +35,8 @@ public:
     // vIndex: 132
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 148
     virtual void updateSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
-
-    // vIndex: 139
-    virtual bool use(::Player& player, ::BlockPos const& pos, uchar) const /*override*/;
 
     // vIndex: 54
     virtual bool
@@ -72,7 +69,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -84,33 +83,31 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $updateSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $updateSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
-
-    MCFOLD bool
+    MCNAPI bool
     $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCFOLD bool $isSignalSource() const;
+    MCNAPI bool $isSignalSource() const;
 
-    MCFOLD int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCNAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+    MCNAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

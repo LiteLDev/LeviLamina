@@ -36,15 +36,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::leveldb::Status execute(::leveldb::Env* targetEnv);
+        MCNAPI ::leveldb::Status execute(::leveldb::Env* targetEnv);
 
-        MCAPI ~DeleteFileEntry();
+        MCNAPI ~DeleteFileEntry();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -95,13 +95,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _isQueuedForRemoval(::Core::PathBuffer<::std::string> const& file);
+    MCNAPI bool _isQueuedForRemoval(::Core::PathBuffer<::std::string> const& file);
 
-    MCAPI ::leveldb::Status _newWrappedWritableFile(::std::string const& f, ::leveldb::WritableFile** r);
+    MCNAPI ::leveldb::Status _newWrappedWritableFile(::std::string const& f, ::leveldb::WritableFile** r);
 
-    MCAPI ::std::vector<::SnapshotFilenameAndLength> createSnapshot(::Core::Path const& dir);
+    MCNAPI ::std::vector<::SnapshotFilenameAndLength> createSnapshot(::Core::Path const& dir);
 
-    MCAPI void releaseSnapshot();
+    MCNAPI void releaseSnapshot();
     // NOLINTEND
 
 public:
@@ -113,22 +113,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::leveldb::Status $NewSequentialFile(::std::string const& f, ::leveldb::SequentialFile** r);
+    MCNAPI ::leveldb::Status $NewSequentialFile(::std::string const& f, ::leveldb::SequentialFile** r);
 
-    MCAPI ::leveldb::Status $NewRandomAccessFile(::std::string const& f, ::leveldb::RandomAccessFile** r);
+    MCNAPI ::leveldb::Status $NewRandomAccessFile(::std::string const& f, ::leveldb::RandomAccessFile** r);
 
-    MCAPI ::leveldb::Status $NewWritableFile(::std::string const& f, ::leveldb::WritableFile** r);
+    MCNAPI ::leveldb::Status $NewWritableFile(::std::string const& f, ::leveldb::WritableFile** r);
 
-    MCAPI ::leveldb::Status $NewAppendableFile(::std::string const& f, ::leveldb::WritableFile** r);
+    MCNAPI ::leveldb::Status $NewAppendableFile(::std::string const& f, ::leveldb::WritableFile** r);
 
-    MCAPI ::leveldb::Status $DeleteFileA(::std::string const& f);
+    MCNAPI ::leveldb::Status $DeleteFileA(::std::string const& f);
 
-    MCAPI ::leveldb::Status $RenameFile(::std::string const& from, ::std::string const& to);
+    MCNAPI ::leveldb::Status $RenameFile(::std::string const& from, ::std::string const& to);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

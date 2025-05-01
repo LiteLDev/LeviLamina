@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/threading/InstancedThreadLocal.h"
 #include "mc/util/MultidimensionalArray.h"
+#include "mc/util/Random.h"
 #include "mc/world/level/levelgen/WorldGenerator.h"
 
 // auto generated forward declare list
@@ -24,7 +25,6 @@ class Dimension;
 class LevelChunk;
 class PerlinNoise;
 class PerlinSimplexNoise;
-class Random;
 // clang-format on
 
 class NetherGenerator : public ::WorldGenerator {

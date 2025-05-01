@@ -24,31 +24,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorHitAfterEvent(::ScriptModuleMinecraft::ScriptActorHitAfterEvent&&);
+    MCNAPI ScriptActorHitAfterEvent(::ScriptModuleMinecraft::ScriptActorHitAfterEvent&&);
 
-    MCAPI ScriptActorHitAfterEvent(::ScriptModuleMinecraft::ScriptActorHitAfterEvent const&);
+    MCNAPI ScriptActorHitAfterEvent(::ScriptModuleMinecraft::ScriptActorHitAfterEvent const&);
 
-    MCAPI ~ScriptActorHitAfterEvent();
+    MCNAPI ~ScriptActorHitAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptActorHitAfterEvent> bindV010();
+    MCNAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptActorHitAfterEvent>
+    bindV010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorHitAfterEvent&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorHitAfterEvent&&);
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorHitAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorHitAfterEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

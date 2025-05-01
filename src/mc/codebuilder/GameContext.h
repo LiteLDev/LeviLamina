@@ -37,13 +37,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ObjectTypeList();
+        MCNAPI ~ObjectTypeList();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -64,21 +64,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ItemTypeList();
+        MCNAPI ItemTypeList();
 
-        MCAPI ~ItemTypeList();
+        MCNAPI ~ItemTypeList();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -101,32 +101,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameContext(
+    MCNAPI GameContext(
         ::std::unordered_map<::std::string, ::std::vector<::std::string>> mobs,
         ::CodeBuilder::GameContext::ObjectTypeList                        blocks,
         ::CodeBuilder::GameContext::ItemTypeList                          items,
         ::std::function<::ILevel*()>                                      levelGetter
     );
 
-    MCAPI ::Json::Value blocksToJson() const;
+    MCNAPI ::Json::Value blocksToJson() const;
 
-    MCAPI ::Json::Value itemsToJson() const;
+    MCNAPI ::Json::Value itemsToJson() const;
 
-    MCAPI ::Json::Value mobsToJson() const;
+    MCNAPI ::Json::Value mobsToJson() const;
 
-    MCAPI ~GameContext();
+    MCNAPI ~GameContext();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::CodeBuilder::GameContext> create(::std::function<::ILevel*()> levelGetter);
+    MCNAPI static ::std::unique_ptr<::CodeBuilder::GameContext> create(::std::function<::ILevel*()> levelGetter);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unordered_map<::std::string, ::std::vector<::std::string>> mobs,
         ::CodeBuilder::GameContext::ObjectTypeList                        blocks,
         ::CodeBuilder::GameContext::ItemTypeList                          items,
@@ -137,7 +137,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

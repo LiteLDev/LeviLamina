@@ -3,16 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorRuntimeID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/world/item/NetworkItemStackDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorRuntimeID;
 class BinaryStream;
-class NetworkItemStackDescriptor;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -50,40 +50,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MobArmorEquipmentPacket();
+    MCNAPI MobArmorEquipmentPacket();
 
-    MCAPI explicit MobArmorEquipmentPacket(::Actor const& e);
+    MCNAPI explicit MobArmorEquipmentPacket(::Actor const& e);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::Actor const& e);
+    MCNAPI void* $ctor(::Actor const& e);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::MinecraftPacketIds $getId() const;
+    MCNAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCAPI void $write(::BinaryStream& stream) const;
+    MCNAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

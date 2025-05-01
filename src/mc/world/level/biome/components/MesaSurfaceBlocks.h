@@ -26,6 +26,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::array<::Block const*, 16> buildClayMaterials(::Block const& base);
+    MCNAPI static ::std::array<::Block const*, 16> buildClayMaterials(::Block const& base);
     // NOLINTEND
 };

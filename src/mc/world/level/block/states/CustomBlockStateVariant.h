@@ -41,13 +41,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CustomBlockStateVariant(uint64 id, ::std::string const& name, ::ListTag const& values);
+    MCNAPI CustomBlockStateVariant(uint64 id, ::std::string const& name, ::ListTag const& values);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint64 id, ::std::string const& name, ::ListTag const& values);
+    MCNAPI void* $ctor(uint64 id, ::std::string const& name, ::ListTag const& values);
     // NOLINTEND
 
 public:
@@ -59,14 +59,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $toNBT(::CompoundTag& tag, int val) const;
+    MCNAPI void $toNBT(::CompoundTag& tag, int val) const;
 
-    MCAPI bool $fromNBT(::CompoundTag const& tag, int& outValue) const;
+    MCNAPI bool $fromNBT(::CompoundTag const& tag, int& outValue) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

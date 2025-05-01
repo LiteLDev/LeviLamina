@@ -12,11 +12,12 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::Legacy {
 // functions
 // NOLINTBEGIN
-MCAPI void bindLevelSoundEventType(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindLevelSoundEventType(::cereal::ReflectionCtx& ctx);
 
-MCAPI bool operator==(::SharedTypes::Legacy::BlockDescriptor const& a, ::SharedTypes::Legacy::BlockDescriptor const& b);
+MCNAPI bool
+operator==(::SharedTypes::Legacy::BlockDescriptor const& a, ::SharedTypes::Legacy::BlockDescriptor const& b);
 
-MCFOLD bool
+MCNAPI bool
 operator==(::SharedTypes::Legacy::ExpressionNode const& lhs, ::SharedTypes::Legacy::ExpressionNode const& rhs);
 // NOLINTEND
 

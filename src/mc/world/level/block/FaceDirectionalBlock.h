@@ -40,7 +40,7 @@ public:
         /*override*/;
 
     // vIndex: 48
-    virtual bool isValidAuxValue(int value) const /*override*/;
+    virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
     // vIndex: 0
     virtual ~FaceDirectionalBlock() /*override*/ = default;
@@ -55,14 +55,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Block const& $getRenderBlock() const;
+    MCNAPI ::Block const& $getRenderBlock() const;
 
-    MCFOLD uchar $getMappedFace(uchar face, ::Block const& block) const;
+    MCNAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCFOLD ::Block const&
+    MCNAPI ::Block const&
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
 
-    MCAPI bool $isValidAuxValue(int value) const;
+    MCNAPI bool $isValidAuxValue(int auxValue) const;
     // NOLINTEND
 };

@@ -17,24 +17,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RepairItemEntry();
+    MCNAPI RepairItemEntry();
 
-    MCAPI RepairItemEntry(::RepairItemEntry const&);
+    MCNAPI RepairItemEntry(::RepairItemEntry const&);
 
-    MCAPI ~RepairItemEntry();
+    MCNAPI ~RepairItemEntry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::RepairItemEntry const&);
+    MCNAPI void* $ctor(::RepairItemEntry const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

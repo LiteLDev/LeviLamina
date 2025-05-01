@@ -23,16 +23,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptStatEvent& operator=(::ScriptStatEvent&&);
+    MCNAPI ::ScriptStatEvent& operator=(::ScriptStatEvent&&);
 
-    MCAPI ::ScriptStatEvent& operator=(::ScriptStatEvent const&);
+    MCNAPI ::ScriptStatEvent& operator=(::ScriptStatEvent const&);
 
-    MCAPI ~ScriptStatEvent();
+    MCNAPI ~ScriptStatEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

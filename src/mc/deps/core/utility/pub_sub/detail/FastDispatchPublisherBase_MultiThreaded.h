@@ -38,7 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _loadDispatchTargets(::Bedrock::PubSub::Detail::DispatchTargets& targets) const;
+    MCNAPI bool _loadDispatchTargets(::Bedrock::PubSub::Detail::DispatchTargets& targets) const;
     // NOLINTEND
 
 public:
@@ -50,7 +50,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

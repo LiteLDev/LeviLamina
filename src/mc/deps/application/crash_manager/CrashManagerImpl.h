@@ -106,7 +106,7 @@ public:
     virtual void notifyCrashed() /*override*/;
 
     // vIndex: 6
-    virtual void notifyMemoryIssue(uint, ::std::string const&) /*override*/;
+    virtual void notifySystemError(uint, ::std::string const&) /*override*/;
 
     // vIndex: 7
     virtual void recordCrashedSession(::std::string_view, ::std::string_view, int64) /*override*/;

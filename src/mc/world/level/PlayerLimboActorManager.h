@@ -37,45 +37,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerLimboActorManager(
+    MCNAPI PlayerLimboActorManager(
         ::Bedrock::NotNullNonOwnerPtr<::LevelStorage> levelStorage,
         ::Bedrock::NotNullNonOwnerPtr<::ActorManager> actorManager,
         ::Bedrock::NotNullNonOwnerPtr<::ActorFactory> actorFactory
     );
 
-    MCAPI void clearOwnedEntityLimboForPlayer(::ActorUniqueID playerId);
+    MCNAPI void clearOwnedEntityLimboForPlayer(::ActorUniqueID playerId);
 
-    MCAPI void loadAllOwnedLimboActors();
+    MCNAPI void loadAllOwnedLimboActors();
 
-    MCAPI ::Actor* processOwnedAgentForPlayer(
+    MCNAPI ::Actor* processOwnedAgentForPlayer(
         ::CompoundTag&                agentCompoundTag,
         ::IAddActorEntityProxy&       addActorEntityProxy,
         ::DimensionHeightRange const& heightRange,
         ::Vec3 const&                 spawnPosition
     );
 
-    MCAPI void processOwnedEntityLimboForPlayer(
+    MCNAPI void processOwnedEntityLimboForPlayer(
         ::ActorUniqueID               playerId,
         ::IAddActorEntityProxy&       addActorEntityProxy,
         ::DimensionHeightRange const& heightRange,
         ::Vec3 const&                 spawnPosition
     );
 
-    MCAPI void saveOwnedLimboActorsForPlayer(::ActorUniqueID playerId) const;
+    MCNAPI void saveOwnedLimboActorsForPlayer(::ActorUniqueID playerId) const;
 
-    MCAPI ~PlayerLimboActorManager();
+    MCNAPI ~PlayerLimboActorManager();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string getOwnedEntityLimboStorageKeyForPlayer(::ActorUniqueID playerId);
+    MCNAPI static ::std::string getOwnedEntityLimboStorageKeyForPlayer(::ActorUniqueID playerId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::LevelStorage> levelStorage,
         ::Bedrock::NotNullNonOwnerPtr<::ActorManager> actorManager,
         ::Bedrock::NotNullNonOwnerPtr<::ActorFactory> actorFactory
@@ -85,6 +85,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

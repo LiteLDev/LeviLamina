@@ -61,13 +61,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~SetScoreOutput();
+        MCNAPI ~SetScoreOutput();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 

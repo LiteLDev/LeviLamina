@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/chunk/IRequestAction.h"
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
 #include "mc/world/level/levelgen/structure/structurepools/JigsawReplacement.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
-class BoundingBox;
 class CompoundTag;
 class Dimension;
 class JigsawStructureElementRegistry;
@@ -45,7 +45,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::JigsawStructurePostprocessAction>
+    MCNAPI static ::std::unique_ptr<::JigsawStructurePostprocessAction>
     load(::CompoundTag const& tag, ::JigsawStructureElementRegistry const& elementReg);
     // NOLINTEND
 
@@ -64,14 +64,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
+    MCNAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
 
-    MCAPI void $serialize(::CompoundTag& tag);
+    MCNAPI void $serialize(::CompoundTag& tag);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

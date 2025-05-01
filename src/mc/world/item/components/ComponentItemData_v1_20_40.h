@@ -14,7 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 96>   mUnk6df67c;
-    ::ll::UntypedStorage<8, 2120> mUnk55fae5;
+    ::ll::UntypedStorage<8, 2144> mUnk55fae5;
     ::ll::UntypedStorage<8, 1800> mUnk5f7a9e;
     // NOLINTEND
 
@@ -26,17 +26,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemData_v1_20_40();
+    MCNAPI ComponentItemData_v1_20_40();
 
-    MCAPI ~ComponentItemData_v1_20_40();
+    MCNAPI ~ComponentItemData_v1_20_40();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void moveDeprecatedData(::ComponentItemData_v1_20_30& oldData, ::ComponentItemData_v1_20_40& newData);
+    MCNAPI static void moveDeprecatedData(::ComponentItemData_v1_20_30& oldData, ::ComponentItemData_v1_20_40& newData);
     // NOLINTEND
 
 public:
@@ -48,12 +48,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

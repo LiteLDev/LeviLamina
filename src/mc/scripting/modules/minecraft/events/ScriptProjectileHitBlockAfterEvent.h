@@ -30,31 +30,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptProjectileHitBlockAfterEvent(::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent const&);
+    MCNAPI ScriptProjectileHitBlockAfterEvent(::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent const&);
 
-    MCAPI ScriptProjectileHitBlockAfterEvent(
+    MCNAPI ScriptProjectileHitBlockAfterEvent(
         ::ProjectileHitEvent const&           projectileHitEvent,
         ::Scripting::WeakLifetimeScope const& scope
     );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptBlockHitInformation getBlockHit() const;
+    MCNAPI ::ScriptModuleMinecraft::ScriptBlockHitInformation getBlockHit() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent const&);
 
-    MCAPI void* $ctor(::ProjectileHitEvent const& projectileHitEvent, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void* $ctor(::ProjectileHitEvent const& projectileHitEvent, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

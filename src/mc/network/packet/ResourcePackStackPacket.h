@@ -6,12 +6,12 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/resources/BaseGameVersion.h"
+#include "mc/world/level/storage/ExperimentStorage.h"
 
 // auto generated forward declare list
 // clang-format off
-class BaseGameVersion;
 class BinaryStream;
-class ExperimentStorage;
 class Experiments;
 class ReadOnlyBinaryStream;
 struct PackInstanceId;
@@ -51,9 +51,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourcePackStackPacket();
+    MCNAPI ResourcePackStackPacket();
 
-    MCAPI ResourcePackStackPacket(
+    MCNAPI ResourcePackStackPacket(
         ::std::vector<::PackInstanceId> addOnIdsAndVersions,
         ::std::vector<::PackInstanceId> texturePackIdsAndVersions,
         ::BaseGameVersion const&        baseGameVersion,
@@ -66,9 +66,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::vector<::PackInstanceId> addOnIdsAndVersions,
         ::std::vector<::PackInstanceId> texturePackIdsAndVersions,
         ::BaseGameVersion const&        baseGameVersion,
@@ -81,24 +81,24 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::MinecraftPacketIds $getId() const;
+    MCNAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCAPI void $write(::BinaryStream& stream) const;
+    MCNAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

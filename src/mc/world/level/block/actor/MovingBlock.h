@@ -5,13 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/level/block/ActorBlockBase.h"
+#include "mc/world/level/block/BlockLegacy.h"
 
 // auto generated forward declare list
 // clang-format off
 class AABB;
 class Block;
 class BlockActor;
-class BlockLegacy;
 class BlockPos;
 class Experiments;
 class GetCollisionShapeInterface;
@@ -58,7 +58,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    MCNAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -70,28 +70,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
-    MCFOLD ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI ::AABB const&
+    MCNAPI ::AABB const&
     $getVisualShapeInWorld(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferAABB)
         const;
 
-    MCFOLD bool $pushesUpFallingBlocks() const;
+    MCNAPI bool $pushesUpFallingBlocks() const;
 
-    MCAPI ::AABB
+    MCNAPI ::AABB
     $getCollisionShape(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
+    MCNAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
 
-    MCFOLD bool $isMovingBlock() const;
+    MCNAPI bool $isMovingBlock() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

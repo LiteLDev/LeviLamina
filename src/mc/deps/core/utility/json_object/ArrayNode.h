@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool setContents(::Bedrock::JSONObject::ValueWrapper const& contents);
+    MCNAPI bool setContents(::Bedrock::JSONObject::ValueWrapper const& contents);
     // NOLINTEND
 };
 

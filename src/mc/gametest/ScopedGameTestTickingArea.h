@@ -26,13 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _createTickingArea();
+    MCNAPI void _createTickingArea();
 
-    MCAPI void _removeTickingArea();
+    MCNAPI void _removeTickingArea();
 
-    MCAPI bool areChunksLoaded();
+    MCNAPI bool areChunksLoaded();
 
-    MCAPI ::std::shared_ptr<::ITickingArea> getTickingArea() const;
+    MCNAPI ::std::shared_ptr<::ITickingArea> getTickingArea() const;
     // NOLINTEND
 
 public:

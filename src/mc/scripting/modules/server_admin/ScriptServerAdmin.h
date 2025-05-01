@@ -16,7 +16,7 @@ class ScriptServerAdmin {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::Result<void>
+    MCNAPI static ::Scripting::Result<void>
     transferPlayer(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer, ::std::string host, ushort port);
     // NOLINTEND
 };

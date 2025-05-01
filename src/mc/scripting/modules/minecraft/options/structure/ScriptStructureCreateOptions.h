@@ -25,7 +25,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptStructureCreateOptions> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptStructureCreateOptions> bind();
     // NOLINTEND
 };
 

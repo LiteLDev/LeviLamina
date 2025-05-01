@@ -36,15 +36,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::InternalComponentRegistry::ComponentInfo& operator=(::InternalComponentRegistry::ComponentInfo&&);
+        MCNAPI ::InternalComponentRegistry::ComponentInfo& operator=(::InternalComponentRegistry::ComponentInfo&&);
 
-        MCAPI ~ComponentInfo();
+        MCNAPI ~ComponentInfo();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -68,15 +68,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _initializeComponents(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) const;
+    MCNAPI void _initializeComponents(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) const;
 
-    MCAPI void initializeComponents(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) const;
+    MCNAPI void initializeComponents(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::CompoundTag& _getOrCreateComponentScope(::CompoundTag& tag, ::std::string const& componentName);
+    MCNAPI static ::CompoundTag& _getOrCreateComponentScope(::CompoundTag& tag, ::std::string const& componentName);
     // NOLINTEND
 
 public:
@@ -94,12 +94,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $registerComponents();
+    MCNAPI void $registerComponents();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

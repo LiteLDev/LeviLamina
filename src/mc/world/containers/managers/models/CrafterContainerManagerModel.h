@@ -43,13 +43,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CrafterContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
+    MCNAPI CrafterContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
+    MCNAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
     // NOLINTEND
 
 public:
@@ -61,14 +61,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
+    MCNAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
 
-    MCAPI ::ContainerScreenContext $_postInit();
+    MCNAPI ::ContainerScreenContext $_postInit();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

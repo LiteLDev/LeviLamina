@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/world/level/PositionTrackingId.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,7 +12,6 @@ class BlockPos;
 class CompassSpriteCalculator;
 class Dimension;
 class LodestoneCompassComponentCalculator;
-class PositionTrackingId;
 struct ActorUniqueID;
 // clang-format on
 
@@ -43,9 +43,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LodestoneCompassComponent(::LodestoneCompassComponent&&);
+    MCNAPI LodestoneCompassComponent(::LodestoneCompassComponent&&);
 
-    MCAPI ::LodestoneCompassComponentCalculator* _findCalculator(
+    MCNAPI ::LodestoneCompassComponentCalculator* _findCalculator(
         ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& compassId,
         bool                                                                             createIfNotFound
     );
@@ -60,6 +60,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LodestoneCompassComponent&&);
+    MCNAPI void* $ctor(::LodestoneCompassComponent&&);
     // NOLINTEND
 };

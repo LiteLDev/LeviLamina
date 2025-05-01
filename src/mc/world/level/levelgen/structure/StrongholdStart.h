@@ -40,15 +40,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StrongholdStart(::Dimension& dimension, ::Random& random, int chunkX, int chunkZ);
+    MCNAPI StrongholdStart(::Dimension& dimension, ::Random& random, int chunkX, int chunkZ);
 
-    MCAPI void _initializePieceSet(::Random& random);
+    MCNAPI void _initializePieceSet(::Random& random);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension, ::Random& random, int chunkX, int chunkZ);
+    MCNAPI void* $ctor(::Dimension& dimension, ::Random& random, int chunkX, int chunkZ);
     // NOLINTEND
 
 public:
@@ -60,14 +60,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCAPI ::std::string_view $getStructureName() const;
+    MCNAPI ::std::string_view $getStructureName() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -50,15 +50,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> $getAutomationClient() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> $getAutomationClient() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::CodeBuilder::IMessenger> $getEventing() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::CodeBuilder::IMessenger> $getEventing() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

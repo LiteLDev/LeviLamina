@@ -6,7 +6,7 @@ namespace cereal {
 
 enum class ResultCode : ushort {
     // bitfield representation
-    Success              = 1 << 0,
+    Info                 = 1 << 0,
     Warning              = 1 << 1,
     UnrecognizedField    = 1 << 2,
     Error                = 1 << 3,
@@ -16,6 +16,7 @@ enum class ResultCode : ushort {
     MissingRequiredField = 1 << 7,
     UnsupportedType      = 1 << 8,
     DeprecatedMember     = 1 << 9,
+    VariantPriorityOrder = 1 << 10,
     EnttEnumAsBitmask    = 65535,
     All                  = 65535,
 };

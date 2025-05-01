@@ -25,14 +25,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext& entity) const;
+    MCNAPI void initialize(::EntityContext& entity) const;
 
-    MCAPI ~PeekDefinition();
+    MCNAPI ~PeekDefinition();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

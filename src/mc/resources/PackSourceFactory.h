@@ -6,6 +6,7 @@
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/resources/RealmsUnknownPackSources.h"
 #include "mc/resources/interface/IPackSourceFactory.h"
 
 // auto generated forward declare list
@@ -13,6 +14,7 @@
 class ContentCatalogPackSource;
 class DirectoryPackSource;
 class IInPackagePacks;
+class IPackIOProvider;
 class InPackagePackSource;
 class TreatmentPackSource;
 class WorldHistoryPackSource;
@@ -28,26 +30,10 @@ class PackSourceFactory : public ::IPackSourceFactory {
 public:
     // PackSourceFactory inner types declare
     // clang-format off
-    struct RealmsUnknownPackSources;
     template<typename T0> struct SourcesList;
     // clang-format on
 
     // PackSourceFactory inner types define
-    struct RealmsUnknownPackSources {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk6acab2;
-        ::ll::UntypedStorage<8, 8> mUnkb6d9cd;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RealmsUnknownPackSources& operator=(RealmsUnknownPackSources const&);
-        RealmsUnknownPackSources(RealmsUnknownPackSources const&);
-        RealmsUnknownPackSources();
-    };
-
     template <typename T0>
     struct SourcesList {};
 
@@ -66,9 +52,10 @@ public:
     ::ll::TypedStorage<8, 104, ::PackSourceFactory::SourcesList<::std::unique_ptr<::WorldHistoryPackSource>>>
         mWorldHistoryPackSources;
     ::ll::TypedStorage<8, 104, ::PackSourceFactory::SourcesList<::std::unique_ptr<::WorldTemplatePackSource>>>
-                                                                             mWorldTemplatePackSources;
-    ::ll::TypedStorage<8, 16, ::PackSourceFactory::RealmsUnknownPackSources> mRealmsUnknownPackSources;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IInPackagePacks>>          mInPackagePacksProvider;
+                                                                         mWorldTemplatePackSources;
+    ::ll::TypedStorage<8, 16, ::RealmsUnknownPackSources>                mRealmsUnknownPackSources;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IInPackagePacks>>      mInPackagePacksProvider;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IPackIOProvider> const> mIO;
     // NOLINTEND
 
 public:
@@ -125,60 +112,69 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PackSourceFactory(::std::shared_ptr<::IInPackagePacks> const& inPackagePacks);
+    MCNAPI explicit PackSourceFactory(::std::shared_ptr<::IInPackagePacks> const& inPackagePacks);
+
+    MCNAPI PackSourceFactory(
+        ::std::shared_ptr<::IInPackagePacks> const& inPackagePacks,
+        ::std::unique_ptr<::IPackIOProvider>        io
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::IInPackagePacks> const& inPackagePacks);
+    MCNAPI void* $ctor(::std::shared_ptr<::IInPackagePacks> const& inPackagePacks);
+
+    MCNAPI void*
+    $ctor(::std::shared_ptr<::IInPackagePacks> const& inPackagePacks, ::std::unique_ptr<::IPackIOProvider> io);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::WorldTemplatePackSource& $createWorldTemplatePackSource(
+    MCNAPI ::WorldTemplatePackSource& $createWorldTemplatePackSource(
         ::Bedrock::NotNullNonOwnerPtr<::WorldTemplateManager const> const& worldTemplateManager,
         ::mce::UUID const&                                                 worldTemplateId,
         ::PackType                                                         packType,
         ::PackOrigin                                                       packOrigin
     );
 
-    MCAPI ::WorldTemplatePackSource*
+    MCNAPI ::WorldTemplatePackSource*
     $getWorldTemplatePackSource(::mce::UUID const& worldTemplateId, ::PackType packType) const;
 
-    MCAPI ::DirectoryPackSource& $createDirectoryPackSource(
+    MCNAPI ::DirectoryPackSource& $createDirectoryPackSource(
         ::Core::Path const& path,
         ::PackType          packType,
         ::PackOrigin        packOrigin,
         bool                isDevDirectory
     );
 
-    MCAPI ::DirectoryPackSource* $getDirectoryPackSource(::Core::Path const& path, ::PackType packType) const;
+    MCNAPI ::DirectoryPackSource* $getDirectoryPackSource(::Core::Path const& path, ::PackType packType) const;
 
-    MCAPI ::InPackagePackSource& $createInPackagePackSource(::PackType packType);
+    MCNAPI ::InPackagePackSource& $createInPackagePackSource(::PackType packType);
 
-    MCAPI ::InPackagePackSource* $getInPackagePackSource(::PackType packType);
+    MCNAPI ::InPackagePackSource* $getInPackagePackSource(::PackType packType);
 
-    MCAPI ::WorldHistoryPackSource& $createWorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType packType);
+    MCNAPI ::WorldHistoryPackSource&
+    $createWorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType packType);
 
-    MCAPI ::WorldHistoryPackSource*
+    MCNAPI ::WorldHistoryPackSource*
     $getWorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType packType) const;
 
-    MCAPI ::DirectoryPackSource* $getDirectoryPackSourceContaining(::PackIdVersion const& packId) const;
+    MCNAPI ::DirectoryPackSource* $getDirectoryPackSourceContaining(::PackIdVersion const& packId) const;
 
-    MCAPI void $removeFromDirectoryPackSource(::Core::Path const& fullPathToPack);
+    MCNAPI void $removeFromDirectoryPackSource(::Core::Path const& fullPathToPack);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

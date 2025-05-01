@@ -30,12 +30,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const* $tryGetInfested(::Block const& block) const;
+    MCNAPI ::Block const* $tryGetInfested(::Block const& block) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

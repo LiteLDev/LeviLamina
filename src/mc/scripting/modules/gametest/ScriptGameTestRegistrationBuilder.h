@@ -33,34 +33,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     batch(::std::string batchName);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     maxAttempts(int maxAttempts);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     maxTicks(int maxTicks);
 
-    MCAPI ::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&
+    MCNAPI ::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&
     operator=(::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&&);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     padding(int blockPadding);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     required(bool required);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     requiredSuccessfulAttempts(int requiredSuccessfulAttempts);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     rotate(bool rotate);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     setupTicks(int setupTicks);
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>,
         ::Scripting::InvalidArgumentError,
         ::Scripting::EngineError>
@@ -69,10 +69,10 @@ public:
         ::std::optional<::std::variant<::ScriptModuleMinecraft::ScriptDimensionType, ::std::string>> dimensionTypeVar
     );
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     structureName(::std::string structureName);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     tag(::std::string tag);
     // NOLINTEND
 };

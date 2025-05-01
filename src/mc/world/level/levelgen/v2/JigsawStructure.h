@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/levelgen/v2/DimensionPadding.h"
 #include "mc/world/level/levelgen/v2/JigsawExpansion.h"
 #include "mc/world/level/levelgen/v2/Structure.h"
+#include "mc/world/level/levelgen/v2/StructureHeightProvider.h"
 #include "mc/world/level/levelgen/v2/heightmap_projection/Type.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace br::worldgen { class GenerationStub; }
-namespace br::worldgen { class StructureHeightProvider; }
-namespace br::worldgen { struct DimensionPadding; }
 namespace br::worldgen { struct GenerationContext; }
 // clang-format on
 
@@ -50,36 +50,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JigsawStructure();
+    MCNAPI JigsawStructure();
 
-    MCAPI JigsawStructure(::br::worldgen::JigsawStructure&&);
+    MCNAPI JigsawStructure(::br::worldgen::JigsawStructure&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::br::worldgen::JigsawStructure&&);
+    MCNAPI void* $ctor(::br::worldgen::JigsawStructure&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::br::worldgen::GenerationStub>
+    MCNAPI ::std::optional<::br::worldgen::GenerationStub>
     $findValidGenerationPoint(::br::worldgen::GenerationContext& context) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

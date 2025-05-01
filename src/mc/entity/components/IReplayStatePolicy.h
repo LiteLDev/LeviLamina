@@ -27,7 +27,7 @@ public:
 
     // vIndex: 3
     virtual ::MovementCorrection
-    shouldCorrectMovement(::EntityContext&, ::PlayerAuthInputPacket const&, uint64, uchar) = 0;
+    shouldCorrectMovement(::EntityContext&, ::PlayerAuthInputPacket const&, uint64, uchar, bool) = 0;
 
     // vIndex: 4
     virtual bool validateFrameSupport(::EntityContext&) = 0;

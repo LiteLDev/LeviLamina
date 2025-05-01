@@ -34,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setCompactionCallback(::std::function<void(::CompactionStatus)> callback);
+    MCNAPI void setCompactionCallback(::std::function<void(::CompactionStatus)> callback);
     // NOLINTEND
 
 public:
@@ -46,12 +46,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $Schedule(void (*function)(void*), void* arg);
+    MCNAPI void $Schedule(void (*function)(void*), void* arg);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

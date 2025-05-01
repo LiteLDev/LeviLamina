@@ -48,13 +48,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void SetCode(int);
+    MCNAPI void SetCode(int);
 
-    MCAPI void SetReason(::std::string const&);
+    MCNAPI void SetReason(::std::string const&);
 
-    MCAPI StunErrorCodeAttribute(ushort, ushort);
+    MCNAPI StunErrorCodeAttribute(ushort, ushort);
 
-    MCAPI int code() const;
+    MCNAPI int code() const;
     // NOLINTEND
 
 public:
@@ -66,7 +66,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(ushort, ushort);
+    MCNAPI void* $ctor(ushort, ushort);
     // NOLINTEND
 
 public:
@@ -84,7 +84,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

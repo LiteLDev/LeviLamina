@@ -45,13 +45,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::WorkerPool> $get() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::WorkerPool> $get() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

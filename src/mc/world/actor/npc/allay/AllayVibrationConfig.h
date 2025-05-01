@@ -48,13 +48,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AllayVibrationConfig(::Actor& actor, ushort signalThrottlingTicks);
+    MCNAPI AllayVibrationConfig(::Actor& actor, ushort signalThrottlingTicks);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor& actor, ushort signalThrottlingTicks);
+    MCNAPI void* $ctor(::Actor& actor, ushort signalThrottlingTicks);
     // NOLINTEND
 
 public:
@@ -66,17 +66,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     $onSignalReceive(::BlockSource& region, ::BlockPos const& vibrationSourcePos, ::GameEvent const& gameEvent, ::Actor*, float, uint, ::Actor*);
 
-    MCAPI bool $isValidVibration(::GameEvent const& gameEvent);
+    MCNAPI bool $isValidVibration(::GameEvent const& gameEvent);
 
-    MCFOLD bool $shouldListen(::BlockSource&, ::GameEvent const&, ::GameEventContext const&);
+    MCNAPI bool $shouldListen(::BlockSource&, ::GameEvent const&, ::GameEventContext const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

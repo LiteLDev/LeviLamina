@@ -38,21 +38,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI StatCollector(::ScriptDiagnostics::StatCollector&&);
+        MCNAPI StatCollector(::ScriptDiagnostics::StatCollector&&);
 
-        MCAPI ~StatCollector();
+        MCNAPI ~StatCollector();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::ScriptDiagnostics::StatCollector&&);
+        MCNAPI void* $ctor(::ScriptDiagnostics::StatCollector&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -74,7 +74,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addStatCollector(
+    MCNAPI void addStatCollector(
         uint64                                                                 collectionTickFrequency,
         ::std::function<::std::optional<::ScriptStat>(uint64, uint64, uint64)> collectorFn,
         ::std::function<void()>                                                enableFn,
@@ -82,14 +82,14 @@ public:
         ::std::function<void(bool)>                                            reloadFn
     );
 
-    MCAPI void collectStats(uint64 currentTick);
+    MCNAPI void collectStats(uint64 currentTick);
 
-    MCAPI ~ScriptDiagnostics();
+    MCNAPI ~ScriptDiagnostics();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

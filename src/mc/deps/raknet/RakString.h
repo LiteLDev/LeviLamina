@@ -48,25 +48,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Allocate(uint64 len);
+    MCNAPI void Allocate(uint64 len);
 
-    MCAPI void Assign(char const* str);
+    MCNAPI void Assign(char const* str);
 
-    MCAPI void Assign(char const* str, char* ap);
+    MCNAPI void Assign(char const* str, char* ap);
 
-    MCAPI void Free();
+    MCNAPI void Free();
 
-    MCAPI RakString();
+    MCNAPI RakString();
 
-    MCAPI RakString(char const*, ...);
+    MCNAPI RakString(char const*, ...);
 
-    MCAPI ~RakString();
+    MCNAPI ~RakString();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void FreeMemoryNoMutex();
+    MCNAPI static void FreeMemoryNoMutex();
     // NOLINTEND
 
 public:
@@ -80,15 +80,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(char const*, ...);
+    MCNAPI void* $ctor(char const*, ...);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

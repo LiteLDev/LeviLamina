@@ -10,11 +10,11 @@ struct TickingSystemWithInfo;
 namespace ItemUseSlowdownSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createAntiCheatSystem();
+MCNAPI ::TickingSystemWithInfo createAntiCheatSystem();
 
-MCAPI ::TickingSystemWithInfo createApplySystem();
+MCNAPI ::TickingSystemWithInfo createApplySystem();
 
-MCAPI ::TickingSystemWithInfo createSystem();
+MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
 } // namespace ItemUseSlowdownSystem

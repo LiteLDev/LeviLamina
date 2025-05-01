@@ -11,6 +11,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk2bc0af;
     ::ll::UntypedStorage<1, 1>  mUnk958413;
     ::ll::UntypedStorage<1, 1>  mUnke87fce;
+    ::ll::UntypedStorage<1, 1>  mUnk708d57;
     // NOLINTEND
 
 public:
@@ -22,12 +23,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~NetworkServerConfig();
+    MCNAPI ~NetworkServerConfig();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

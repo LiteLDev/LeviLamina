@@ -63,7 +63,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void* _acquireNode(
+    MCNAPI void* _acquireNode(
         ::Bedrock::Intrusive::
             list<::Bedrock::JSONObject::NodeBase, ::Bedrock::JSONObject::NodeBase, ::Bedrock::JSONObject::NodeBase>&
                 freeList,
@@ -71,25 +71,25 @@ public:
         uint64  alignment
     );
 
-    MCAPI void* _acquireStringBuffer(uint64 length, uint64& outCapacity);
+    MCNAPI void* _acquireStringBuffer(uint64 length, uint64& outCapacity);
 
-    MCAPI ::Bedrock::JSONObject::NodeBase* _createNode(::Bedrock::JSONObject::ValueWrapper const& value);
+    MCNAPI ::Bedrock::JSONObject::NodeBase* _createNode(::Bedrock::JSONObject::ValueWrapper const& value);
 
-    MCAPI void _initialize();
+    MCNAPI void _initialize();
 
-    MCAPI void _releaseNode(::Bedrock::JSONObject::NodeBase& node);
+    MCNAPI void _releaseNode(::Bedrock::JSONObject::NodeBase& node);
 
-    MCAPI void _releaseStringBuffer(::Bedrock::JSONObject::StringNode& node);
+    MCNAPI void _releaseStringBuffer(::Bedrock::JSONObject::StringNode& node);
 
-    MCAPI ::Bedrock::JSONObject::ParseResult const& loadString(::std::string_view str);
+    MCNAPI ::Bedrock::JSONObject::ParseResult const& loadString(::std::string_view str);
 
-    MCAPI ~Document();
+    MCNAPI ~Document();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -28,19 +28,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<::std::optional<::ScriptModuleMinecraft::ScriptRGB>, ::Scripting::Error> getColor();
+    MCNAPI ::Scripting::Result<::std::optional<::ScriptModuleMinecraft::ScriptRGB>, ::Scripting::Error> getColor();
 
-    MCAPI ::Scripting::Result<::std::optional<::ScriptModuleMinecraft::ScriptRGB>, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<::std::optional<::ScriptModuleMinecraft::ScriptRGB>, ::Scripting::Error>
     getDefaultColor();
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::InvalidArgumentError>
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::InvalidArgumentError>
     setColor(::std::optional<::ScriptModuleMinecraft::ScriptRGB> const& color);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemDyeableComponent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemDyeableComponent>
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
@@ -53,7 +53,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

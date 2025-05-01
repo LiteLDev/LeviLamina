@@ -34,25 +34,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MediaSenderInfo(::cricket::MediaSenderInfo const&);
+    MCNAPI MediaSenderInfo(::cricket::MediaSenderInfo const&);
 
-    MCAPI ::cricket::MediaSenderInfo& operator=(::cricket::MediaSenderInfo const&);
+    MCNAPI ::cricket::MediaSenderInfo& operator=(::cricket::MediaSenderInfo const&);
 
-    MCAPI uint ssrc() const;
+    MCNAPI uint ssrc() const;
 
-    MCAPI ~MediaSenderInfo();
+    MCNAPI ~MediaSenderInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::MediaSenderInfo const&);
+    MCNAPI void* $ctor(::cricket::MediaSenderInfo const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

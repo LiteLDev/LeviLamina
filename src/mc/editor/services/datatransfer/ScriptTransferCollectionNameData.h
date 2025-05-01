@@ -23,26 +23,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::Editor::ScriptModule::ScriptTransferCollectionNameData&
+    MCNAPI ::Editor::ScriptModule::ScriptTransferCollectionNameData&
     operator=(::Editor::ScriptModule::ScriptTransferCollectionNameData&&);
 
-    MCFOLD ::Editor::ScriptModule::ScriptTransferCollectionNameData&
+    MCNAPI ::Editor::ScriptModule::ScriptTransferCollectionNameData&
     operator=(::Editor::ScriptModule::ScriptTransferCollectionNameData const&);
 
-    MCAPI ~ScriptTransferCollectionNameData();
+    MCNAPI ~ScriptTransferCollectionNameData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptTransferCollectionNameData>
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptTransferCollectionNameData>
     bindInterface();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

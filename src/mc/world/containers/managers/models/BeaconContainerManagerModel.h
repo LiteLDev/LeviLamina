@@ -57,18 +57,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
+    MCNAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
 
-    MCAPI ::ItemStack const& $getSlot(int slot) const;
+    MCNAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
+    MCNAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI ::ContainerScreenContext $_postInit();
+    MCNAPI ::ContainerScreenContext $_postInit();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

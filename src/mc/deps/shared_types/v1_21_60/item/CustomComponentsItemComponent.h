@@ -35,13 +35,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ComponentData();
+        MCNAPI ~ComponentData();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -61,9 +61,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void upgrade(
+    MCNAPI static void upgrade(
         ::std::optional<::SharedTypes::v1_20_80::CustomComponentsItemComponent>& oldComp,
         ::std::optional<::SharedTypes::v1_21_60::CustomComponentsItemComponent>& newComp
     );

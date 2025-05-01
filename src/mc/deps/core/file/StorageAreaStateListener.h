@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/LevelStorageState.h"
+#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Threading { class Mutex; }
 namespace Core { class FileStorageArea; }
 // clang-format on
 
@@ -48,38 +48,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initListener(::std::shared_ptr<::Core::FileStorageArea> fileStorageArea);
+    MCNAPI void initListener(::std::shared_ptr<::Core::FileStorageArea> fileStorageArea);
 
-    MCAPI void removeListener();
+    MCNAPI void removeListener();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onExtendDiskSpace(
+    MCNAPI void $onExtendDiskSpace(
         bool const                                bSet,
         ::std::weak_ptr<::Core::FileStorageArea>& fileStorageAreaWeakPtr,
         uint64                                    freeSpace,
         ::std::function<void()>                   onHandledEventCallback
     );
 
-    MCFOLD void $onLowDiskSpace(bool const bSet);
+    MCNAPI void $onLowDiskSpace(bool const bSet);
 
-    MCFOLD void $onOutOfDiskSpace(bool const bSet);
+    MCNAPI void $onOutOfDiskSpace(bool const bSet);
 
-    MCFOLD void $onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
+    MCNAPI void $onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

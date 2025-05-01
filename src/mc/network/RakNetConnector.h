@@ -6,7 +6,10 @@
 #include "mc/deps/core/threading/MPMCQueue.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/Compressibility.h"
+#include "mc/network/ConnectionDefinition.h"
 #include "mc/network/Connector.h"
+#include "mc/network/GameConnectionInfo.h"
+#include "mc/network/NetworkIdentifier.h"
 #include "mc/network/NetworkPeer.h"
 #include "mc/network/RakPeerHelper.h"
 #include "mc/network/RemoteConnector.h"
@@ -16,14 +19,10 @@
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
-class NetworkIdentifier;
-class RakPeerHelper;
-struct ConnectionDefinition;
 namespace RakNet { class RakPeerInterface; }
 namespace RakNet { struct RakNetStatistics; }
 namespace RakNet { struct RakPeerConfiguration; }
 namespace RakNet { struct SystemAddress; }
-namespace Social { class GameConnectionInfo; }
 // clang-format on
 
 class RakNetConnector : public ::RemoteConnector {
@@ -71,7 +70,7 @@ public:
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -94,13 +93,13 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCAPI ~ReadBufferData();
+            MCNAPI ~ReadBufferData();
             // NOLINTEND
 
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCFOLD void $dtor();
+            MCNAPI void $dtor();
             // NOLINTEND
         };
 
@@ -148,15 +147,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI RakNetNetworkPeer(::RakNet::RakPeerInterface& rakPeer, ::NetworkIdentifier const& id);
+        MCNAPI RakNetNetworkPeer(::RakNet::RakPeerInterface& rakPeer, ::NetworkIdentifier const& id);
 
-        MCAPI void newData(::std::string data);
+        MCNAPI void newData(::std::string data);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::RakNet::RakPeerInterface& rakPeer, ::NetworkIdentifier const& id);
+        MCNAPI void* $ctor(::RakNet::RakPeerInterface& rakPeer, ::NetworkIdentifier const& id);
         // NOLINTEND
 
     public:
@@ -168,26 +167,26 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
+        MCNAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
 
-        MCAPI ::NetworkPeer::DataStatus $receivePacket(
+        MCNAPI ::NetworkPeer::DataStatus $receivePacket(
             ::std::string&                                                    outData,
             ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
         );
 
-        MCAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
+        MCNAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 
-        MCAPI void $update();
+        MCNAPI void $update();
 
-        MCFOLD bool $isLocal() const;
+        MCNAPI bool $isLocal() const;
 
-        MCFOLD bool $isEncrypted() const;
+        MCNAPI bool $isEncrypted() const;
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -304,26 +303,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RakNetConnector(
+    MCNAPI RakNetConnector(
         ::RakNetConnector::ConnectionCallbacks&          callbacks,
         ::RakPeerHelper::IPSupportInterface&             ipInterface,
         ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform,
         ::RakNet::RakPeerConfiguration const&            rakPeerConfig
     );
 
-    MCAPI ::std::vector<::std::string> _getLocalIps() const;
+    MCNAPI ::std::vector<::std::string> _getLocalIps() const;
 
-    MCAPI ::std::vector<::RakNet::SystemAddress> _getRefinedLocalIps() const;
+    MCNAPI ::std::vector<::RakNet::SystemAddress> _getRefinedLocalIps() const;
 
-    MCAPI void _storeLocalIP();
+    MCNAPI void _storeLocalIP();
 
-    MCAPI bool getStatistics(::RakNet::RakNetStatistics& rns);
+    MCNAPI bool getStatistics(::RakNet::RakNetStatistics& rns);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::RakNetConnector::ConnectionCallbacks&          callbacks,
         ::RakPeerHelper::IPSupportInterface&             ipInterface,
         ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform,
@@ -334,65 +333,65 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $host(::ConnectionDefinition const& definition);
+    MCNAPI bool $host(::ConnectionDefinition const& definition);
 
-    MCAPI bool $connect(
+    MCNAPI bool $connect(
         ::Social::GameConnectionInfo const& primaryConnection,
         ::Social::GameConnectionInfo const& backupConnection
     );
 
-    MCAPI void $disconnect();
+    MCNAPI void $disconnect();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $runEvents();
+    MCNAPI void $runEvents();
 
-    MCAPI void $closeNetworkConnection(::NetworkIdentifier const& id);
+    MCNAPI void $closeNetworkConnection(::NetworkIdentifier const& id);
 
-    MCAPI bool $setApplicationHandshakeCompleted(::NetworkIdentifier const& id);
+    MCNAPI bool $setApplicationHandshakeCompleted(::NetworkIdentifier const& id);
 
-    MCAPI bool $isServer() const;
+    MCNAPI bool $isServer() const;
 
-    MCAPI ::std::string $getLocalIp();
+    MCNAPI ::std::string $getLocalIp();
 
-    MCAPI ushort $getPort() const;
+    MCNAPI ushort $getPort() const;
 
-    MCFOLD ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
+    MCNAPI ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
 
-    MCAPI bool $isIPv4Supported() const;
+    MCNAPI bool $isIPv4Supported() const;
 
-    MCAPI bool $isIPv6Supported() const;
+    MCNAPI bool $isIPv6Supported() const;
 
-    MCAPI ushort $getIPv4Port() const;
+    MCNAPI ushort $getIPv4Port() const;
 
-    MCAPI ushort $getIPv6Port() const;
+    MCNAPI ushort $getIPv6Port() const;
 
-    MCAPI ::NetworkIdentifier $getNetworkIdentifier() const;
+    MCNAPI ::NetworkIdentifier $getNetworkIdentifier() const;
 
-    MCFOLD ::RakNet::RakPeerInterface* $getPeer();
+    MCNAPI ::RakNet::RakPeerInterface* $getPeer();
 
-    MCFOLD ::RakNet::RakPeerInterface const* $getPeer() const;
+    MCNAPI ::RakNet::RakPeerInterface const* $getPeer() const;
 
-    MCFOLD ::TransportLayer $getNetworkType() const;
+    MCNAPI ::TransportLayer $getNetworkType() const;
 
-    MCAPI void $_onDisable();
+    MCNAPI void $_onDisable();
 
-    MCAPI void $_onEnable();
+    MCNAPI void $_onEnable();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForConnector();
+    MCNAPI static void** $vftableForConnector();
 
-    MCAPI static void** $vftableForNetworkEnableDisableListener();
+    MCNAPI static void** $vftableForNetworkEnableDisableListener();
 
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

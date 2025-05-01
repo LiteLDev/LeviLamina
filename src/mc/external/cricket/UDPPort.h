@@ -31,78 +31,78 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI AddressResolver(::rtc::PacketSocketFactory*, ::std::function<void(::rtc::SocketAddress const&, int)>);
+        MCNAPI AddressResolver(::rtc::PacketSocketFactory*, ::std::function<void(::rtc::SocketAddress const&, int)>);
 
-        MCAPI bool GetResolvedAddress(::rtc::SocketAddress const&, int, ::rtc::SocketAddress*) const;
+        MCNAPI bool GetResolvedAddress(::rtc::SocketAddress const&, int, ::rtc::SocketAddress*) const;
 
-        MCAPI void Resolve(::rtc::SocketAddress const&, int, ::webrtc::FieldTrialsView const&);
+        MCNAPI void Resolve(::rtc::SocketAddress const&, int, ::webrtc::FieldTrialsView const&);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::rtc::PacketSocketFactory*, ::std::function<void(::rtc::SocketAddress const&, int)>);
+        MCNAPI void* $ctor(::rtc::PacketSocketFactory*, ::std::function<void(::rtc::SocketAddress const&, int)>);
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool HasStunCandidateWithAddress(::rtc::SocketAddress const&) const;
+    MCNAPI bool HasStunCandidateWithAddress(::rtc::SocketAddress const&) const;
 
-    MCAPI bool Init();
+    MCNAPI bool Init();
 
-    MCAPI void MaybePrepareStunCandidate();
+    MCNAPI void MaybePrepareStunCandidate();
 
-    MCAPI bool MaybeSetDefaultLocalAddress(::rtc::SocketAddress*) const;
+    MCNAPI bool MaybeSetDefaultLocalAddress(::rtc::SocketAddress*) const;
 
-    MCAPI void MaybeSetPortCompleteOrError();
+    MCNAPI void MaybeSetPortCompleteOrError();
 
-    MCAPI void OnLocalAddressReady(::rtc::AsyncPacketSocket*, ::rtc::SocketAddress const&);
+    MCNAPI void OnLocalAddressReady(::rtc::AsyncPacketSocket*, ::rtc::SocketAddress const&);
 
-    MCAPI void OnReadPacket(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const&);
+    MCNAPI void OnReadPacket(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const&);
 
-    MCAPI void OnReadyToSend(::rtc::AsyncPacketSocket*);
+    MCNAPI void OnReadyToSend(::rtc::AsyncPacketSocket*);
 
-    MCAPI void OnResolveResult(::rtc::SocketAddress const&, int);
+    MCNAPI void OnResolveResult(::rtc::SocketAddress const&, int);
 
-    MCAPI void OnSendPacket(void const*, uint64, ::cricket::StunRequest*);
+    MCNAPI void OnSendPacket(void const*, uint64, ::cricket::StunRequest*);
 
-    MCAPI void OnStunBindingOrResolveRequestFailed(::rtc::SocketAddress const&, int, ::std::string_view);
+    MCNAPI void OnStunBindingOrResolveRequestFailed(::rtc::SocketAddress const&, int, ::std::string_view);
 
-    MCAPI void OnStunBindingRequestSucceeded(int, ::rtc::SocketAddress const&, ::rtc::SocketAddress const&);
+    MCNAPI void OnStunBindingRequestSucceeded(int, ::rtc::SocketAddress const&, ::rtc::SocketAddress const&);
 
-    MCAPI void ResolveStunAddress(::rtc::SocketAddress const&);
+    MCNAPI void ResolveStunAddress(::rtc::SocketAddress const&);
 
-    MCAPI void SendStunBindingRequest(::rtc::SocketAddress const&);
+    MCNAPI void SendStunBindingRequest(::rtc::SocketAddress const&);
 
-    MCAPI void SendStunBindingRequests();
+    MCNAPI void SendStunBindingRequests();
 
-    MCAPI
+    MCNAPI
     UDPPort(::rtc::Thread*, ::webrtc::IceCandidateType, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ::rtc::AsyncPacketSocket*, ::std::string_view, ::std::string_view, bool, ::webrtc::FieldTrialsView const*);
 
-    MCAPI
+    MCNAPI
     UDPPort(::rtc::Thread*, ::webrtc::IceCandidateType, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ushort, ushort, ::std::string_view, ::std::string_view, bool, ::webrtc::FieldTrialsView const*);
 
-    MCAPI void set_stun_keepalive_delay(::std::optional<int> const&);
+    MCNAPI void set_stun_keepalive_delay(::std::optional<int> const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::rtc::Thread*, ::webrtc::IceCandidateType, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ::rtc::AsyncPacketSocket*, ::std::string_view, ::std::string_view, bool, ::webrtc::FieldTrialsView const*);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::rtc::Thread*, ::webrtc::IceCandidateType, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ushort, ushort, ::std::string_view, ::std::string_view, bool, ::webrtc::FieldTrialsView const*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForPortInterface();
+    MCNAPI static void** $vftableForPortInterface();
 
-    MCAPI static void** $vftableForHasSlots();
+    MCNAPI static void** $vftableForHasSlots();
     // NOLINTEND
 };
 

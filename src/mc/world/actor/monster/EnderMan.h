@@ -87,10 +87,6 @@ public:
     MCAPI static ::std::shared_ptr<::AttributeModifier>& SPEED_MODIFIER_ATTACKING();
 
     MCAPI static ::mce::UUID const& SPEED_MODIFIER_ATTACKING_UUID();
-
-    MCAPI static ::std::set<::Block const*>& mMayTake();
-
-    MCAPI static bool& mMayTakeIsSetup();
     // NOLINTEND
 
 public:

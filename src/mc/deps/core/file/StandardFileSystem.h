@@ -55,124 +55,127 @@ public:
     virtual ::Core::Result deleteFile(::Core::PathView filePath) /*override*/;
 
     // vIndex: 4
-    virtual ::Core::Result getFileSize(::Core::PathView filePath, uint64* pFileSize) /*override*/;
+    virtual ::Core::Result deleteFilePriority(::Core::PathView filePath) /*override*/;
 
     // vIndex: 5
-    virtual ::Core::Result renameFile(::Core::PathView sourceName, ::Core::PathView targetName) /*override*/;
+    virtual ::Core::Result getFileSize(::Core::PathView filePath, uint64* pFileSize) /*override*/;
 
     // vIndex: 6
-    virtual ::Core::Result createEmptyFile(::Core::PathView filePath) /*override*/;
+    virtual ::Core::Result renameFile(::Core::PathView sourceName, ::Core::PathView targetName) /*override*/;
 
     // vIndex: 7
-    virtual ::Core::Result copyFile(::Core::PathView sourceFileName, ::Core::PathView targetFileName) /*override*/;
+    virtual ::Core::Result createEmptyFile(::Core::PathView filePath) /*override*/;
 
     // vIndex: 8
+    virtual ::Core::Result copyFile(::Core::PathView sourceFileName, ::Core::PathView targetFileName) /*override*/;
+
+    // vIndex: 9
     virtual ::Core::Result
     copyFileWithLimit(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual ::Core::Result readFileData(::Core::PathView filePath, ::std::vector<uchar>& data) /*override*/;
 
-    // vIndex: 10
+    // vIndex: 11
     virtual ::Core::Result createOneDirectory(::Core::PathView directoryPath) /*override*/;
 
-    // vIndex: 11
+    // vIndex: 12
     virtual ::Core::Result createOneDirectoryIfNotExisting(::Core::PathView dirName) /*override*/;
 
-    // vIndex: 12
+    // vIndex: 13
     virtual ::Core::Result createDirectoryRecursively(::Core::PathView dirName) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual bool directoryExists(::Core::PathView dirName) /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual ::Core::Result deleteEmptyDirectory(::Core::PathView dirPath) /*override*/;
 
-    // vIndex: 15
+    // vIndex: 16
     virtual ::Core::Result deleteDirectoryAndContentsRecursively(::Core::PathView dirName) /*override*/;
 
-    // vIndex: 16
+    // vIndex: 17
     virtual ::Core::Result deleteDirectoryContentsRecursively(::Core::PathView directoryName) /*override*/;
 
-    // vIndex: 17
+    // vIndex: 18
     virtual ::Core::Result
     renameDirectory(::Core::PathView oldDirectoryName, ::Core::PathView newDirectoryName) /*override*/;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual ::Core::Result iterateOverDirectory(
         ::Core::PathView                                                             dirName,
         ::Core::DirectoryIterationFlags                                              flags,
         ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> callbackFunction
     ) /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual ::Core::Result
     getDirectoryFiles(::std::vector<::Core::PathBuffer<::std::string>>& files, ::Core::PathView path) /*override*/;
 
-    // vIndex: 20
+    // vIndex: 21
     virtual ::Core::Result getDirectoryFilesAndSizes(
         ::std::vector<::Core::FileSystem::BasicFileData>& filesOut,
         ::Core::PathView                                  directoryPath
     ) /*override*/;
 
-    // vIndex: 21
+    // vIndex: 22
     virtual ::Core::Result getDirectoryFilesRecursively(
         ::std::vector<::Core::PathBuffer<::std::string>>& files,
         ::Core::PathView                                  directoryPath
     ) /*override*/;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual ::Core::Result
     getDirectoryFilesSizeRecursively(uint64& totalSize, ::Core::PathView directoryPath) /*override*/;
 
-    // vIndex: 23
+    // vIndex: 24
     virtual ::Core::Result getDirectoryFilesAllocatedSizeRecursively(
         uint64&          totalSize,
         uint64&          totalAllocatedSize,
         ::Core::PathView directoryPath
     ) /*override*/;
 
-    // vIndex: 24
+    // vIndex: 25
     virtual ::Core::Result copyDirectoryAndContentsRecursively(::Core::PathView from, ::Core::PathView to) /*override*/;
 
-    // vIndex: 25
+    // vIndex: 26
     virtual ::Core::Result
     copyDirectoryAndContentsRecursivelyWithLimit(::Core::PathView from, ::Core::PathView to) /*override*/;
 
-    // vIndex: 26
+    // vIndex: 27
     virtual bool isDirectoryPartiallyCopied(::Core::PathView directory) /*override*/;
 
-    // vIndex: 27
+    // vIndex: 28
     virtual bool fileOrDirectoryExists(::Core::PathView fileOrDirectoryName) /*override*/;
 
-    // vIndex: 28
+    // vIndex: 29
     virtual ::Core::Result getFileOrDirectorySize(::Core::PathView path, uint64* pFileSizeOut) /*override*/;
 
-    // vIndex: 29
+    // vIndex: 30
     virtual ::Core::Result addIgnoredThrottlePath(::Core::PathView path) /*override*/;
 
-    // vIndex: 30
+    // vIndex: 31
     virtual ::Core::Result removeIgnoredThrottlePath(::Core::PathView path) /*override*/;
 
-    // vIndex: 31
-    virtual ::Core::Result isValidPath(::Core::PathView path) /*override*/;
-
     // vIndex: 32
-    virtual ::Core::Result
-    getLastModificationTime(::Core::PathView filePath, int64* pLastModificationTime) /*override*/;
+    virtual ::Core::Result isValidPath(::Core::PathView path) /*override*/;
 
     // vIndex: 33
     virtual ::Core::Result
-    copyTimeAndAccessRights(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath) /*override*/;
+    getLastModificationTime(::Core::PathView filePath, int64* pLastModificationTime) /*override*/;
 
     // vIndex: 34
     virtual ::Core::Result
-    createFlatFile(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath) /*override*/;
+    copyTimeAndAccessRights(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath) /*override*/;
 
     // vIndex: 35
-    virtual bool isDirectoryPathAFlatFile(::Core::PathView directoryPath) /*override*/;
+    virtual ::Core::Result
+    createFlatFile(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath) /*override*/;
 
     // vIndex: 36
+    virtual bool isDirectoryPathAFlatFile(::Core::PathView directoryPath) /*override*/;
+
+    // vIndex: 37
     virtual ::Core::Result copyFlatFile(
         ::Core::PathView                           flatFileParentDirectory,
         ::Core::PathView                           targetDirectory,
@@ -180,26 +183,26 @@ public:
         ::std::vector<::Core::ExcludedPath> const& excludedFiles
     ) /*override*/;
 
-    // vIndex: 37
+    // vIndex: 38
     virtual ::Core::Result createDirectoryForFile(::Core::PathView filePath) /*override*/;
 
-    // vIndex: 38
+    // vIndex: 39
     virtual ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> getUniqueFilePathForFile(::Core::PathView filePath
     ) /*override*/;
 
-    // vIndex: 39
+    // vIndex: 40
     virtual ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
     getUniqueFilePathForDirectory(::Core::PathView directoryPath) /*override*/;
 
-    // vIndex: 40
+    // vIndex: 41
     virtual ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
     createUniquePathFromSeed(::Core::PathView basePath, ::std::function<::std::string(int)> seedGenerator) /*override*/;
 
-    // vIndex: 41
+    // vIndex: 42
     virtual ::std::vector<::Core::PathBuffer<::std::string>> splitPathIntoFullPathSegments(::Core::PathView path
     ) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 43
     virtual ::Core::Result readFileDataExt(
         ::Core::PathView      filePath,
         uint64                filePosition,
@@ -208,33 +211,33 @@ public:
         uint64&               bytesRead
     ) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 44
     virtual ::Core::Result cleanPath_deprecated(
         ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>& pathBufferOut,
         ::Core::PathView                                          pathIn
     ) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual ::Core::Result cleanPathSeparators_deprecated(
         ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>& pathBufferOut,
         ::Core::PathView                                          pathIn
     ) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 46
     virtual bool checkStorageCorrupt(::Core::PathView path) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 47
     virtual ::std::unique_ptr<::Core::FileSizePresetToken>
     presetFileInitialSize(::Core::PathView path, uint64 initialSize) /*override*/;
 
-    // vIndex: 47
+    // vIndex: 48
     virtual ::Core::Result _getDirectoriesAndFileSizesRecursively(
         ::Core::PathView                                  directoryPath,
         ::std::vector<::Core::PathBuffer<::std::string>>& directoriesOut,
         ::std::vector<::Core::FileSystem::BasicFileData>& filesOut
     ) /*override*/;
 
-    // vIndex: 48
+    // vIndex: 49
     virtual ::Core::Result _copyDirectoryStructure(
         ::Core::PathView                                        from,
         ::Core::PathView                                        to,
@@ -242,7 +245,7 @@ public:
         ::Core::FileSystemImpl*                                 transaction
     ) /*override*/;
 
-    // vIndex: 49
+    // vIndex: 50
     virtual ::Core::Result _copyFilesWithLimit(
         ::Core::PathView                                  from,
         ::Core::PathView                                  to,
@@ -254,7 +257,7 @@ public:
             fileTransferFunction
     ) /*override*/;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual ::Core::Result _copyFlatFile(
         ::Core::PathView                           flatFileParentDirectory,
         ::Core::PathView                           targetDirectory,
@@ -262,7 +265,7 @@ public:
         ::std::vector<::Core::ExcludedPath> const& excludedFiles
     ) /*override*/;
 
-    // vIndex: 51
+    // vIndex: 52
     virtual ::std::optional<uint64> _checkFileInitialSize(::Core::PathView path) /*override*/;
 
     // vIndex: 0
@@ -278,116 +281,119 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Core::Result $openFile(
+    MCNAPI ::Core::Result $openFile(
         ::Core::PathView          filePath,
         ::Core::File&             fileOut,
         ::Core::FileOpenMode      openMode,
         ::Core::FileBufferingMode bufferingMode
     );
 
-    MCAPI bool $fileExists(::Core::PathView filePath);
+    MCNAPI bool $fileExists(::Core::PathView filePath);
 
-    MCAPI ::Core::Result $deleteFile(::Core::PathView filePath);
+    MCNAPI ::Core::Result $deleteFile(::Core::PathView filePath);
 
-    MCAPI ::Core::Result $getFileSize(::Core::PathView filePath, uint64* pFileSize);
+    MCNAPI ::Core::Result $deleteFilePriority(::Core::PathView filePath);
 
-    MCAPI ::Core::Result $renameFile(::Core::PathView sourceName, ::Core::PathView targetName);
+    MCNAPI ::Core::Result $getFileSize(::Core::PathView filePath, uint64* pFileSize);
 
-    MCAPI ::Core::Result $createEmptyFile(::Core::PathView filePath);
+    MCNAPI ::Core::Result $renameFile(::Core::PathView sourceName, ::Core::PathView targetName);
 
-    MCAPI ::Core::Result $copyFile(::Core::PathView sourceFileName, ::Core::PathView targetFileName);
+    MCNAPI ::Core::Result $createEmptyFile(::Core::PathView filePath);
 
-    MCAPI ::Core::Result $copyFileWithLimit(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath);
+    MCNAPI ::Core::Result $copyFile(::Core::PathView sourceFileName, ::Core::PathView targetFileName);
 
-    MCAPI ::Core::Result $readFileData(::Core::PathView filePath, ::std::vector<uchar>& data);
+    MCNAPI ::Core::Result $copyFileWithLimit(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath);
 
-    MCAPI ::Core::Result $createOneDirectory(::Core::PathView directoryPath);
+    MCNAPI ::Core::Result $readFileData(::Core::PathView filePath, ::std::vector<uchar>& data);
 
-    MCAPI ::Core::Result $createOneDirectoryIfNotExisting(::Core::PathView dirName);
+    MCNAPI ::Core::Result $createOneDirectory(::Core::PathView directoryPath);
 
-    MCAPI ::Core::Result $createDirectoryRecursively(::Core::PathView dirName);
+    MCNAPI ::Core::Result $createOneDirectoryIfNotExisting(::Core::PathView dirName);
 
-    MCAPI bool $directoryExists(::Core::PathView dirName);
+    MCNAPI ::Core::Result $createDirectoryRecursively(::Core::PathView dirName);
 
-    MCAPI ::Core::Result $deleteEmptyDirectory(::Core::PathView dirPath);
+    MCNAPI bool $directoryExists(::Core::PathView dirName);
 
-    MCAPI ::Core::Result $deleteDirectoryAndContentsRecursively(::Core::PathView dirName);
+    MCNAPI ::Core::Result $deleteEmptyDirectory(::Core::PathView dirPath);
 
-    MCAPI ::Core::Result $deleteDirectoryContentsRecursively(::Core::PathView directoryName);
+    MCNAPI ::Core::Result $deleteDirectoryAndContentsRecursively(::Core::PathView dirName);
 
-    MCAPI ::Core::Result $renameDirectory(::Core::PathView oldDirectoryName, ::Core::PathView newDirectoryName);
+    MCNAPI ::Core::Result $deleteDirectoryContentsRecursively(::Core::PathView directoryName);
 
-    MCAPI ::Core::Result $iterateOverDirectory(
+    MCNAPI ::Core::Result $renameDirectory(::Core::PathView oldDirectoryName, ::Core::PathView newDirectoryName);
+
+    MCNAPI ::Core::Result $iterateOverDirectory(
         ::Core::PathView                                                             dirName,
         ::Core::DirectoryIterationFlags                                              flags,
         ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> callbackFunction
     );
 
-    MCAPI ::Core::Result
+    MCNAPI ::Core::Result
     $getDirectoryFiles(::std::vector<::Core::PathBuffer<::std::string>>& files, ::Core::PathView path);
 
-    MCAPI ::Core::Result $getDirectoryFilesAndSizes(
+    MCNAPI ::Core::Result $getDirectoryFilesAndSizes(
         ::std::vector<::Core::FileSystem::BasicFileData>& filesOut,
         ::Core::PathView                                  directoryPath
     );
 
-    MCAPI ::Core::Result $getDirectoryFilesRecursively(
+    MCNAPI ::Core::Result $getDirectoryFilesRecursively(
         ::std::vector<::Core::PathBuffer<::std::string>>& files,
         ::Core::PathView                                  directoryPath
     );
 
-    MCAPI ::Core::Result $getDirectoryFilesSizeRecursively(uint64& totalSize, ::Core::PathView directoryPath);
+    MCNAPI ::Core::Result $getDirectoryFilesSizeRecursively(uint64& totalSize, ::Core::PathView directoryPath);
 
-    MCAPI ::Core::Result $getDirectoryFilesAllocatedSizeRecursively(
+    MCNAPI ::Core::Result $getDirectoryFilesAllocatedSizeRecursively(
         uint64&          totalSize,
         uint64&          totalAllocatedSize,
         ::Core::PathView directoryPath
     );
 
-    MCAPI ::Core::Result $copyDirectoryAndContentsRecursively(::Core::PathView from, ::Core::PathView to);
+    MCNAPI ::Core::Result $copyDirectoryAndContentsRecursively(::Core::PathView from, ::Core::PathView to);
 
-    MCAPI ::Core::Result $copyDirectoryAndContentsRecursivelyWithLimit(::Core::PathView from, ::Core::PathView to);
+    MCNAPI ::Core::Result $copyDirectoryAndContentsRecursivelyWithLimit(::Core::PathView from, ::Core::PathView to);
 
-    MCAPI bool $isDirectoryPartiallyCopied(::Core::PathView directory);
+    MCNAPI bool $isDirectoryPartiallyCopied(::Core::PathView directory);
 
-    MCAPI bool $fileOrDirectoryExists(::Core::PathView fileOrDirectoryName);
+    MCNAPI bool $fileOrDirectoryExists(::Core::PathView fileOrDirectoryName);
 
-    MCAPI ::Core::Result $getFileOrDirectorySize(::Core::PathView path, uint64* pFileSizeOut);
+    MCNAPI ::Core::Result $getFileOrDirectorySize(::Core::PathView path, uint64* pFileSizeOut);
 
-    MCAPI ::Core::Result $addIgnoredThrottlePath(::Core::PathView path);
+    MCNAPI ::Core::Result $addIgnoredThrottlePath(::Core::PathView path);
 
-    MCAPI ::Core::Result $removeIgnoredThrottlePath(::Core::PathView path);
+    MCNAPI ::Core::Result $removeIgnoredThrottlePath(::Core::PathView path);
 
-    MCAPI ::Core::Result $isValidPath(::Core::PathView path);
+    MCNAPI ::Core::Result $isValidPath(::Core::PathView path);
 
-    MCAPI ::Core::Result $getLastModificationTime(::Core::PathView filePath, int64* pLastModificationTime);
+    MCNAPI ::Core::Result $getLastModificationTime(::Core::PathView filePath, int64* pLastModificationTime);
 
-    MCAPI ::Core::Result $copyTimeAndAccessRights(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath);
+    MCNAPI ::Core::Result $copyTimeAndAccessRights(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath);
 
-    MCAPI ::Core::Result $createFlatFile(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
+    MCNAPI ::Core::Result $createFlatFile(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
 
-    MCAPI bool $isDirectoryPathAFlatFile(::Core::PathView directoryPath);
+    MCNAPI bool $isDirectoryPathAFlatFile(::Core::PathView directoryPath);
 
-    MCAPI ::Core::Result $copyFlatFile(
+    MCNAPI ::Core::Result $copyFlatFile(
         ::Core::PathView                           flatFileParentDirectory,
         ::Core::PathView                           targetDirectory,
         ::std::vector<::Core::ExcludedPath> const& excludedDirectories,
         ::std::vector<::Core::ExcludedPath> const& excludedFiles
     );
 
-    MCAPI ::Core::Result $createDirectoryForFile(::Core::PathView filePath);
+    MCNAPI ::Core::Result $createDirectoryForFile(::Core::PathView filePath);
 
-    MCAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> $getUniqueFilePathForFile(::Core::PathView filePath);
+    MCNAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> $getUniqueFilePathForFile(::Core::PathView filePath
+    );
 
-    MCAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
+    MCNAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
     $getUniqueFilePathForDirectory(::Core::PathView directoryPath);
 
-    MCAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
+    MCNAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
     $createUniquePathFromSeed(::Core::PathView basePath, ::std::function<::std::string(int)> seedGenerator);
 
-    MCAPI ::std::vector<::Core::PathBuffer<::std::string>> $splitPathIntoFullPathSegments(::Core::PathView path);
+    MCNAPI ::std::vector<::Core::PathBuffer<::std::string>> $splitPathIntoFullPathSegments(::Core::PathView path);
 
-    MCAPI ::Core::Result $readFileDataExt(
+    MCNAPI ::Core::Result $readFileDataExt(
         ::Core::PathView      filePath,
         uint64                filePosition,
         uint64                bufferSize,
@@ -395,35 +401,35 @@ public:
         uint64&               bytesRead
     );
 
-    MCAPI ::Core::Result $cleanPath_deprecated(
+    MCNAPI ::Core::Result $cleanPath_deprecated(
         ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>& pathBufferOut,
         ::Core::PathView                                          pathIn
     );
 
-    MCAPI ::Core::Result $cleanPathSeparators_deprecated(
+    MCNAPI ::Core::Result $cleanPathSeparators_deprecated(
         ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>& pathBufferOut,
         ::Core::PathView                                          pathIn
     );
 
-    MCAPI bool $checkStorageCorrupt(::Core::PathView path);
+    MCNAPI bool $checkStorageCorrupt(::Core::PathView path);
 
-    MCAPI ::std::unique_ptr<::Core::FileSizePresetToken>
+    MCNAPI ::std::unique_ptr<::Core::FileSizePresetToken>
     $presetFileInitialSize(::Core::PathView path, uint64 initialSize);
 
-    MCAPI ::Core::Result $_getDirectoriesAndFileSizesRecursively(
+    MCNAPI ::Core::Result $_getDirectoriesAndFileSizesRecursively(
         ::Core::PathView                                  directoryPath,
         ::std::vector<::Core::PathBuffer<::std::string>>& directoriesOut,
         ::std::vector<::Core::FileSystem::BasicFileData>& filesOut
     );
 
-    MCAPI ::Core::Result $_copyDirectoryStructure(
+    MCNAPI ::Core::Result $_copyDirectoryStructure(
         ::Core::PathView                                        from,
         ::Core::PathView                                        to,
         ::std::vector<::Core::PathBuffer<::std::string>> const& directories,
         ::Core::FileSystemImpl*                                 transaction
     );
 
-    MCAPI ::Core::Result $_copyFilesWithLimit(
+    MCNAPI ::Core::Result $_copyFilesWithLimit(
         ::Core::PathView                                  from,
         ::Core::PathView                                  to,
         ::std::vector<::Core::FileSystem::BasicFileData>& files,
@@ -434,20 +440,20 @@ public:
             fileTransferFunction
     );
 
-    MCAPI ::Core::Result $_copyFlatFile(
+    MCNAPI ::Core::Result $_copyFlatFile(
         ::Core::PathView                           flatFileParentDirectory,
         ::Core::PathView                           targetDirectory,
         ::std::vector<::Core::ExcludedPath> const& excludedDirectories,
         ::std::vector<::Core::ExcludedPath> const& excludedFiles
     );
 
-    MCAPI ::std::optional<uint64> $_checkFileInitialSize(::Core::PathView path);
+    MCNAPI ::std::optional<uint64> $_checkFileInitialSize(::Core::PathView path);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

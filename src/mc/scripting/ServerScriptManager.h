@@ -7,8 +7,12 @@
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/scripting/PluginExecutionGroup.h"
+#include "mc/scripting/RegisterDiagnosticsStatsTypes.h"
+#include "mc/scripting/ScriptSettings.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
+#include "mc/world/events/LevelEventListener.h"
+#include "mc/world/events/ServerInstanceEventListener.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,11 +20,9 @@ class IMinecraftEventing;
 class IScriptTelemetryLogger;
 class ItemRegistryRef;
 class LevelEventHandlerRegistrar;
-class LevelEventListener;
 class MinecraftCommands;
 class MinecraftGameTest;
 class PackManifest;
-class RegisterDiagnosticsStatsTypes;
 class Scheduler;
 class ScriptAsyncJobCoordinator;
 class ScriptClientDiagnosticsListener;
@@ -35,13 +37,12 @@ class ScriptPluginResult;
 class ScriptTickListener;
 class ScriptWatchdog;
 class ServerInstance;
-class ServerInstanceEventListener;
 class ServerLevel;
 struct LevelStartLeaveGameEvent;
-struct ScriptSettings;
 struct ServerInstanceRequestResourceReload;
 namespace ScriptModuleMinecraft { class IScriptItemCustomComponentRegistry; }
 namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentsRegistry; }
+namespace ScriptModuleMinecraft { class ScriptCustomSpawnRulesRegistry; }
 namespace ScriptModuleMinecraft { class ScriptGlobalEventListeners; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class IRuntime; }
@@ -76,6 +77,8 @@ public:
         mBlockCustomComponentsRegistry;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::IScriptItemCustomComponentRegistry>>
         mItemCustomComponentRegistry;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptCustomSpawnRulesRegistry>>
+        mCustomSpawnRulesRegistry;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptGlobalEventListeners>>
                                                                                        mGlobalEventListeners;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Scripting::ScriptEngine>>             mScriptEngine;
@@ -121,7 +124,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerScriptManager(
+    MCNAPI ServerScriptManager(
         ::ScriptSettings&&                      settings,
         ::ServerLevel&                          serverLevel,
         ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler,
@@ -132,27 +135,27 @@ public:
         ::Scripting::RegistryManager&           registry
     );
 
-    MCAPI void _initModules(::ServerInstance& server, ::ServerLevel& serverLevel);
+    MCNAPI void _initModules(::ServerInstance& server, ::ServerLevel& serverLevel);
 
-    MCAPI void _loadPlugins(::ServerLevel& serverLevel, bool fromReload);
+    MCNAPI void _loadPlugins(::ServerLevel& serverLevel, bool fromReload);
 
-    MCAPI void _onPreReload(
+    MCNAPI void _onPreReload(
         ::ServerInstance&                   serverInstance,
         ::ServerLevel&                      level,
         ::optional_ref<::MinecraftGameTest> optionalGameTest
     );
 
-    MCAPI void _runPlugins(::PluginExecutionGroup exeGroup, ::ServerInstance& serverInstance);
+    MCNAPI void _runPlugins(::PluginExecutionGroup exeGroup, ::ServerInstance& serverInstance);
 
-    MCAPI void _sendScriptModuleStartupEvent(::ServerLevel& level) const;
+    MCNAPI void _sendScriptModuleStartupEvent(::ServerLevel& level) const;
 
-    MCAPI void _sendWorldInitializeEvent(::ServerLevel& level) const;
+    MCNAPI void _sendWorldInitializeEvent(::ServerLevel& level) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _sendWorldInitializeEventImpl(
+    MCNAPI static void _sendWorldInitializeEventImpl(
         ::ServerLevel&                                                level,
         ::ScriptModuleMinecraft::IScriptItemCustomComponentRegistry&  itemCustomComponentRegistry,
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry& blockCustomComponentRegistry,
@@ -164,7 +167,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ScriptSettings&&                      settings,
         ::ServerLevel&                          serverLevel,
         ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler,
@@ -179,26 +182,26 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ServerInstanceRequestResourceReload const& reloadEvent);
+    MCNAPI ::EventResult $onEvent(::ServerInstanceRequestResourceReload const& reloadEvent);
 
-    MCAPI ::EventResult $onEvent(::LevelStartLeaveGameEvent const& levelStartLeaveGameEvent);
+    MCNAPI ::EventResult $onEvent(::LevelStartLeaveGameEvent const& levelStartLeaveGameEvent);
 
-    MCAPI ::EventResult $onServerUpdateEnd(::ServerInstance& instance);
+    MCNAPI ::EventResult $onServerUpdateEnd(::ServerInstance& instance);
 
-    MCAPI ::EventResult $onServerThreadStarted(::ServerInstance& instance);
+    MCNAPI ::EventResult $onServerThreadStarted(::ServerInstance& instance);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEventListenerDispatcherLevelEventListener();
+    MCNAPI static void** $vftableForEventListenerDispatcherLevelEventListener();
 
-    MCAPI static void** $vftableForEventListenerDispatcherServerInstanceEventListener();
+    MCNAPI static void** $vftableForEventListenerDispatcherServerInstanceEventListener();
     // NOLINTEND
 };

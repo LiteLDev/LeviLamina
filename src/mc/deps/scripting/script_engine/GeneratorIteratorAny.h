@@ -41,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GeneratorIteratorAny(
+    MCNAPI GeneratorIteratorAny(
         ::Scripting::IRuntime*                                                          runtime,
         ::Scripting::ContextId                                                          contextId,
         ::Scripting::WeakLifetimeScope                                                  scope,
@@ -49,13 +49,13 @@ public:
         ::Scripting::IObjectInspector*                                                  inspector
     );
 
-    MCFOLD ::Scripting::GeneratorIteratorAny& operator=(::Scripting::GeneratorIteratorAny&& rhs);
+    MCNAPI ::Scripting::GeneratorIteratorAny& operator=(::Scripting::GeneratorIteratorAny&& rhs);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::IRuntime*                                                          runtime,
         ::Scripting::ContextId                                                          contextId,
         ::Scripting::WeakLifetimeScope                                                  scope,
@@ -67,13 +67,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

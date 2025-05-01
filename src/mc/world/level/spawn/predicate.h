@@ -17,10 +17,10 @@ namespace br::spawn { struct EntityType; }
 namespace br::spawn::predicate {
 // functions
 // NOLINTBEGIN
-MCAPI bool
+MCNAPI bool
 checkAnimal(::br::spawn::EntityType const&, ::BlockSource& region, ::br::spawn::EntitySpawnReason reason, ::BlockPos pos, ::IRandom&);
 
-MCAPI bool checkAnyLightMonster(
+MCNAPI bool checkAnyLightMonster(
     ::br::spawn::EntityType const& type,
     ::BlockSource&                 region,
     ::br::spawn::EntitySpawnReason reason,
@@ -28,13 +28,13 @@ MCAPI bool checkAnyLightMonster(
     ::IRandom&                     random
 );
 
-MCAPI bool
+MCNAPI bool
 checkArmadillo(::br::spawn::EntityType const&, ::BlockSource& region, ::br::spawn::EntitySpawnReason, ::BlockPos pos, ::IRandom&);
 
-MCAPI bool
+MCNAPI bool
 checkAxolotl(::br::spawn::EntityType const&, ::BlockSource& region, ::br::spawn::EntitySpawnReason, ::BlockPos pos, ::IRandom&);
 
-MCAPI bool checkBat(
+MCNAPI bool checkBat(
     ::br::spawn::EntityType const& type,
     ::BlockSource&                 region,
     ::br::spawn::EntitySpawnReason reason,
@@ -42,7 +42,7 @@ MCAPI bool checkBat(
     ::IRandom&                     random
 );
 
-MCAPI bool checkDrowned(
+MCNAPI bool checkDrowned(
     ::br::spawn::EntityType const&,
     ::BlockSource&                 region,
     ::br::spawn::EntitySpawnReason reason,
@@ -50,7 +50,7 @@ MCAPI bool checkDrowned(
     ::IRandom&                     random
 );
 
-MCAPI bool checkEndermite(
+MCNAPI bool checkEndermite(
     ::br::spawn::EntityType const& type,
     ::BlockSource&                 region,
     ::br::spawn::EntitySpawnReason reason,
@@ -58,13 +58,13 @@ MCAPI bool checkEndermite(
     ::IRandom&                     random
 );
 
-MCAPI bool
+MCNAPI bool
 checkFox(::br::spawn::EntityType const&, ::BlockSource& region, ::br::spawn::EntitySpawnReason, ::BlockPos pos, ::IRandom&);
 
-MCAPI bool
+MCNAPI bool
 checkFrog(::br::spawn::EntityType const&, ::BlockSource& region, ::br::spawn::EntitySpawnReason, ::BlockPos pos, ::IRandom&);
 
-MCAPI bool checkGhast(
+MCNAPI bool checkGhast(
     ::br::spawn::EntityType const& type,
     ::BlockSource&                 region,
     ::br::spawn::EntitySpawnReason reason,
@@ -72,13 +72,13 @@ MCAPI bool checkGhast(
     ::IRandom&                     random
 );
 
-MCAPI bool
+MCNAPI bool
 checkGlowSquid(::br::spawn::EntityType const&, ::BlockSource& region, ::br::spawn::EntitySpawnReason, ::BlockPos pos, ::IRandom&);
 
-MCAPI bool
+MCNAPI bool
 checkGoat(::br::spawn::EntityType const&, ::BlockSource& region, ::br::spawn::EntitySpawnReason, ::BlockPos pos, ::IRandom&);
 
-MCAPI bool checkGuardian(
+MCNAPI bool checkGuardian(
     ::br::spawn::EntityType const&,
     ::BlockSource&                 region,
     ::br::spawn::EntitySpawnReason reason,
@@ -86,10 +86,10 @@ MCAPI bool checkGuardian(
     ::IRandom&                     random
 );
 
-MCAPI bool
+MCNAPI bool
 checkHoglin(::br::spawn::EntityType const&, ::BlockSource& region, ::br::spawn::EntitySpawnReason, ::BlockPos pos, ::IRandom&);
 
-MCAPI bool checkHusk(
+MCNAPI bool checkHusk(
     ::br::spawn::EntityType const& type,
     ::BlockSource&                 region,
     ::br::spawn::EntitySpawnReason reason,
@@ -97,13 +97,13 @@ MCAPI bool checkHusk(
     ::IRandom&                     random
 );
 
-MCAPI bool
+MCNAPI bool
 checkMagmaCube(::br::spawn::EntityType const&, ::BlockSource& region, ::br::spawn::EntitySpawnReason, ::BlockPos, ::IRandom&);
 
-MCAPI bool
+MCNAPI bool
 checkMob(::br::spawn::EntityType const& type, ::BlockSource& region, ::br::spawn::EntitySpawnReason reason, ::BlockPos pos, ::IRandom&);
 
-MCAPI bool checkMonster(
+MCNAPI bool checkMonster(
     ::br::spawn::EntityType const& type,
     ::BlockSource&                 region,
     ::br::spawn::EntitySpawnReason reason,
@@ -111,20 +111,20 @@ MCAPI bool checkMonster(
     ::IRandom&                     random
 );
 
-MCAPI bool
+MCNAPI bool
 checkMooshroom(::br::spawn::EntityType const&, ::BlockSource& region, ::br::spawn::EntitySpawnReason, ::BlockPos pos, ::IRandom&);
 
-MCAPI bool checkObstructionIgnoreWater(::BlockSource& region, ::Mob const& mob, ::br::spawn::EntityType const&);
+MCNAPI bool checkObstructionIgnoreWater(::BlockSource& region, ::Mob const& mob, ::br::spawn::EntityType const&);
 
-MCAPI bool checkObstructionIronGolem(::BlockSource& region, ::Mob const& mob, ::br::spawn::EntityType const& type);
+MCNAPI bool checkObstructionIronGolem(::BlockSource& region, ::Mob const& mob, ::br::spawn::EntityType const& type);
 
-MCAPI bool checkObstructionMob(::BlockSource& region, ::Mob const& mob, ::br::spawn::EntityType const&);
+MCNAPI bool checkObstructionMob(::BlockSource& region, ::Mob const& mob, ::br::spawn::EntityType const&);
 
-MCAPI bool checkObstructionRaveger(::BlockSource& region, ::Mob const& mob, ::br::spawn::EntityType const&);
+MCNAPI bool checkObstructionRaveger(::BlockSource& region, ::Mob const& mob, ::br::spawn::EntityType const&);
 
-MCAPI bool checkObstructionWarden(::BlockSource& region, ::Mob const& mob, ::br::spawn::EntityType const& type);
+MCNAPI bool checkObstructionWarden(::BlockSource& region, ::Mob const& mob, ::br::spawn::EntityType const& type);
 
-MCAPI bool checkOcelot(
+MCNAPI bool checkOcelot(
     ::br::spawn::EntityType const&,
     ::BlockSource&,
     ::br::spawn::EntitySpawnReason,
@@ -132,10 +132,10 @@ MCAPI bool checkOcelot(
     ::IRandom& rand
 );
 
-MCAPI bool
+MCNAPI bool
 checkParrot(::br::spawn::EntityType const&, ::BlockSource& region, ::br::spawn::EntitySpawnReason, ::BlockPos pos, ::IRandom&);
 
-MCAPI bool checkPatrollingMonster(
+MCNAPI bool checkPatrollingMonster(
     ::br::spawn::EntityType const& type,
     ::BlockSource&                 region,
     ::br::spawn::EntitySpawnReason reason,
@@ -143,7 +143,7 @@ MCAPI bool checkPatrollingMonster(
     ::IRandom&                     random
 );
 
-MCAPI bool checkPiglin(
+MCNAPI bool checkPiglin(
     ::br::spawn::EntityType const& type,
     ::BlockSource&                 region,
     ::br::spawn::EntitySpawnReason reason,
@@ -151,7 +151,7 @@ MCAPI bool checkPiglin(
     ::IRandom&                     random
 );
 
-MCAPI bool checkPolarBear(
+MCNAPI bool checkPolarBear(
     ::br::spawn::EntityType const& type,
     ::BlockSource&                 region,
     ::br::spawn::EntitySpawnReason reason,
@@ -159,10 +159,10 @@ MCAPI bool checkPolarBear(
     ::IRandom&                     random
 );
 
-MCAPI bool
+MCNAPI bool
 checkRabbit(::br::spawn::EntityType const&, ::BlockSource& region, ::br::spawn::EntitySpawnReason, ::BlockPos pos, ::IRandom&);
 
-MCAPI bool checkSilverfish(
+MCNAPI bool checkSilverfish(
     ::br::spawn::EntityType const& type,
     ::BlockSource&                 region,
     ::br::spawn::EntitySpawnReason reason,
@@ -170,7 +170,7 @@ MCAPI bool checkSilverfish(
     ::IRandom&                     random
 );
 
-MCAPI bool checkSkeletonHorse(
+MCNAPI bool checkSkeletonHorse(
     ::br::spawn::EntityType const& type,
     ::BlockSource&                 region,
     ::br::spawn::EntitySpawnReason reason,
@@ -178,7 +178,7 @@ MCAPI bool checkSkeletonHorse(
     ::IRandom&                     random
 );
 
-MCAPI bool checkSlime(
+MCNAPI bool checkSlime(
     ::br::spawn::EntityType const& type,
     ::BlockSource&                 region,
     ::br::spawn::EntitySpawnReason reason,
@@ -186,7 +186,7 @@ MCAPI bool checkSlime(
     ::IRandom&                     random
 );
 
-MCAPI bool checkStray(
+MCNAPI bool checkStray(
     ::br::spawn::EntityType const& type,
     ::BlockSource&                 region,
     ::br::spawn::EntitySpawnReason reason,
@@ -194,10 +194,10 @@ MCAPI bool checkStray(
     ::IRandom&                     random
 );
 
-MCAPI bool
+MCNAPI bool
 checkStrider(::br::spawn::EntityType const&, ::BlockSource& region, ::br::spawn::EntitySpawnReason, ::BlockPos pos, ::IRandom&);
 
-MCAPI bool checkSurfaceAgeableCreature(
+MCNAPI bool checkSurfaceAgeableCreature(
     ::br::spawn::EntityType const& type,
     ::BlockSource&                 region,
     ::br::spawn::EntitySpawnReason reason,
@@ -205,10 +205,10 @@ MCAPI bool checkSurfaceAgeableCreature(
     ::IRandom&                     rand
 );
 
-MCAPI bool
+MCNAPI bool
 checkSurfaceWaterAnimal(::br::spawn::EntityType const&, ::BlockSource& region, ::br::spawn::EntitySpawnReason, ::BlockPos pos, ::IRandom&);
 
-MCAPI bool checkTropicalFish(
+MCNAPI bool checkTropicalFish(
     ::br::spawn::EntityType const& type,
     ::BlockSource&                 region,
     ::br::spawn::EntitySpawnReason reason,
@@ -216,13 +216,13 @@ MCAPI bool checkTropicalFish(
     ::IRandom&                     rand
 );
 
-MCAPI bool
+MCNAPI bool
 checkTurtle(::br::spawn::EntityType const&, ::BlockSource& region, ::br::spawn::EntitySpawnReason, ::BlockPos pos, ::IRandom&);
 
-MCAPI bool
+MCNAPI bool
 checkWolf(::br::spawn::EntityType const&, ::BlockSource& region, ::br::spawn::EntitySpawnReason, ::BlockPos pos, ::IRandom&);
 
-MCAPI bool checkZombieHorse(
+MCNAPI bool checkZombieHorse(
     ::br::spawn::EntityType const& type,
     ::BlockSource&                 region,
     ::br::spawn::EntitySpawnReason reason,
@@ -230,7 +230,7 @@ MCAPI bool checkZombieHorse(
     ::IRandom&                     random
 );
 
-MCAPI bool checkZombifiedPiglin(
+MCNAPI bool checkZombifiedPiglin(
     ::br::spawn::EntityType const& type,
     ::BlockSource&                 region,
     ::br::spawn::EntitySpawnReason reason,

@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/util/Rotation.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/structure/structurepools/JigsawReplacement.h"
 #include "mc/world/level/levelgen/v2/StructureSection.h"
 #include "mc/world/level/levelgen/v2/terrain_adjustment/Type.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSource;
 class BoundingBox;
 class IRandom;
@@ -69,7 +69,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_50::PoolElementStructureSection serialize() const;
+    MCNAPI ::SharedTypes::v1_21_50::PoolElementStructureSection serialize() const;
     // NOLINTEND
 
 public:
@@ -81,13 +81,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $appendJunctions(::BoundingBox const& box, ::std::vector<::br::worldgen::JigsawJunction>& junctions);
+    MCNAPI void $appendJunctions(::BoundingBox const& box, ::std::vector<::br::worldgen::JigsawJunction>& junctions);
 
-    MCAPI void $appendRigid(::br::worldgen::TerrainAdjustment::Type type, ::std::vector<::br::worldgen::Rigid>& rigids);
+    MCNAPI void
+    $appendRigid(::br::worldgen::TerrainAdjustment::Type type, ::std::vector<::br::worldgen::Rigid>& rigids);
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) const;
+    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) const;
 
-    MCAPI bool $postProcess(
+    MCNAPI bool $postProcess(
         ::BlockSource&                    region,
         ::IRandom&                        random,
         ::BlockPos                        structurePos,
@@ -95,13 +96,13 @@ public:
         ::br::worldgen::JigsawReplacement replacement
     ) const;
 
-    MCAPI void $placeEntities(::BlockSource& region, ::BoundingBox const& overlapBB) const;
+    MCNAPI void $placeEntities(::BlockSource& region, ::BoundingBox const& overlapBB) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

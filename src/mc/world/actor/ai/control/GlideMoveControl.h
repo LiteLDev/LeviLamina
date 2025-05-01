@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/actor/ai/control/MoveControl.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
 class MoveControlComponent;
-class Vec3;
 struct MoveControlDescription;
 // clang-format on
 
@@ -46,14 +46,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeInternal(::Mob& mob, ::MoveControlDescription* description);
+    MCNAPI void $initializeInternal(::Mob& mob, ::MoveControlDescription* description);
 
-    MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
+    MCNAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

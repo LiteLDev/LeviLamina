@@ -11,7 +11,7 @@ struct InsideBlockData;
 namespace InsideBlockComponentUtility {
 // functions
 // NOLINTBEGIN
-MCAPI void entityInside(::std::vector<::InsideBlockData> const& insideBlockDataVector, ::Actor& actor);
+MCNAPI void entityInside(::std::vector<::InsideBlockData> const& insideBlockDataVector, ::Actor& actor);
 // NOLINTEND
 
 } // namespace InsideBlockComponentUtility

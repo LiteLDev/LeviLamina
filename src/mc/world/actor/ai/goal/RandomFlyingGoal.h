@@ -36,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::Vec3> _getTreePos() const;
+    MCNAPI ::std::optional<::Vec3> _getTreePos() const;
     // NOLINTEND
 
 public:
@@ -48,16 +48,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI bool $_setWantedPosition();
+    MCNAPI bool $_setWantedPosition();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

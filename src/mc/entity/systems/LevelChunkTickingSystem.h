@@ -30,7 +30,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _determineLevelChunksToTick(
+    MCNAPI static void _determineLevelChunksToTick(
         ::Actor const&                                  actor,
         ::BlockSource&                                  region,
         ::LoadedChunksComponent&                        loadedChunksComponent,
@@ -39,10 +39,10 @@ public:
         ::Tick const&                                   currentTick
     );
 
-    MCAPI static void
+    MCNAPI static void
     _tickLevelChunksAroundActor(::Actor& actor, ::BlockSource& region, ::LoadedChunksComponent& loadedChunksComponent);
 
-    MCAPI static void _tickLevelChunksAroundActorView(
+    MCNAPI static void _tickLevelChunksAroundActorView(
         ::ActorOwnerComponent&   actorOwnerComponent,
         ::LoadedChunksComponent& loadedChunksComponent
     );
@@ -57,12 +57,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCNAPI void $tick(::EntityRegistry& registry);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -19,53 +19,53 @@ struct RtpDemuxer {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool AddSink(::webrtc::RtpDemuxerCriteria const&, ::webrtc::RtpPacketSinkInterface*);
+    MCNAPI bool AddSink(::webrtc::RtpDemuxerCriteria const&, ::webrtc::RtpPacketSinkInterface*);
 
-    MCAPI void AddSsrcSinkBinding(uint, ::webrtc::RtpPacketSinkInterface*);
+    MCNAPI void AddSsrcSinkBinding(uint, ::webrtc::RtpPacketSinkInterface*);
 
-    MCAPI bool CriteriaWouldConflict(::webrtc::RtpDemuxerCriteria const&) const;
+    MCNAPI bool CriteriaWouldConflict(::webrtc::RtpDemuxerCriteria const&) const;
 
-    MCAPI ::webrtc::flat_containers_internal::
+    MCNAPI ::webrtc::flat_containers_internal::
         flat_tree<uint, ::webrtc::identity, ::std::less<void>, ::std::vector<uint>>
         GetSsrcsForSink(::webrtc::RtpPacketSinkInterface const*) const;
 
-    MCAPI bool OnRtpPacket(::webrtc::RtpPacketReceived const&);
+    MCNAPI bool OnRtpPacket(::webrtc::RtpPacketReceived const&);
 
-    MCAPI void RefreshKnownMids();
+    MCNAPI void RefreshKnownMids();
 
-    MCAPI bool RemoveSink(::webrtc::RtpPacketSinkInterface const*);
+    MCNAPI bool RemoveSink(::webrtc::RtpPacketSinkInterface const*);
 
-    MCAPI ::webrtc::RtpPacketSinkInterface* ResolveSink(::webrtc::RtpPacketReceived const&);
+    MCNAPI ::webrtc::RtpPacketSinkInterface* ResolveSink(::webrtc::RtpPacketReceived const&);
 
-    MCAPI ::webrtc::RtpPacketSinkInterface* ResolveSinkByMid(::std::string_view, uint);
+    MCNAPI ::webrtc::RtpPacketSinkInterface* ResolveSinkByMid(::std::string_view, uint);
 
-    MCAPI ::webrtc::RtpPacketSinkInterface* ResolveSinkByMidRsid(::std::string_view, ::std::string_view, uint);
+    MCNAPI ::webrtc::RtpPacketSinkInterface* ResolveSinkByMidRsid(::std::string_view, ::std::string_view, uint);
 
-    MCAPI ::webrtc::RtpPacketSinkInterface* ResolveSinkByPayloadType(uchar, uint);
+    MCNAPI ::webrtc::RtpPacketSinkInterface* ResolveSinkByPayloadType(uchar, uint);
 
-    MCAPI ::webrtc::RtpPacketSinkInterface* ResolveSinkByRsid(::std::string_view, uint);
+    MCNAPI ::webrtc::RtpPacketSinkInterface* ResolveSinkByRsid(::std::string_view, uint);
 
-    MCAPI explicit RtpDemuxer(bool);
+    MCNAPI explicit RtpDemuxer(bool);
 
-    MCAPI ~RtpDemuxer();
+    MCNAPI ~RtpDemuxer();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string DescribePacket(::webrtc::RtpPacketReceived const&);
+    MCNAPI static ::std::string DescribePacket(::webrtc::RtpPacketReceived const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(bool);
+    MCNAPI void* $ctor(bool);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

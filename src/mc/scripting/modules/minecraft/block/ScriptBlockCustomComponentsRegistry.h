@@ -68,18 +68,18 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void setClosureData(
+        MCNAPI void setClosureData(
             ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&& closures,
             ::Scripting::WeakLifetimeScope const&                          scope
         );
 
-        MCAPI ~ScriptBlockCustomComponentData();
+        MCNAPI ~ScriptBlockCustomComponentData();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -90,7 +90,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk1fa307;
     ::ll::UntypedStorage<8, 24> mUnk61196d;
     ::ll::UntypedStorage<8, 64> mUnkb5c618;
-    ::ll::UntypedStorage<8, 24> mUnk9d5cb6;
+    ::ll::UntypedStorage<8, 24> mUnkc6a9fb;
     ::ll::UntypedStorage<2, 2>  mUnkf295dd;
     // NOLINTEND
 
@@ -125,14 +125,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptBlockCustomComponentsRegistry(::ScriptDeferredEventCoordinator& deferredEventCoordinator);
+    MCNAPI explicit ScriptBlockCustomComponentsRegistry(::ScriptDeferredEventCoordinator& deferredEventCoordinator);
 
-    MCAPI void _bindComponentToCereal(
+    MCNAPI void _bindComponentToCereal(
         ::HashedString const&                                               compName,
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const& closures
     );
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentAlreadyRegisteredError,
@@ -148,7 +148,7 @@ public:
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const& closures
     );
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentAlreadyRegisteredError,
@@ -164,33 +164,33 @@ public:
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const& closures
     );
 
-    MCAPI void _registerBlockForEventing(
+    MCNAPI void _registerBlockForEventing(
         ::BlockLegacy&                                                           block,
         ::std::vector<::gsl::not_null<::BlockCustomComponentsComponent*>> const& comps
     );
 
-    MCAPI void beforeOnPlayerPlace(::BlockEvents::BlockPlayerPlacingEvent& eventData) const;
+    MCNAPI void beforeOnPlayerPlace(::BlockEvents::BlockPlayerPlacingEvent& eventData) const;
 
-    MCAPI bool
+    MCNAPI bool
     hasSubscriptionFor(::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes type, ::Block const& block) const;
 
-    MCAPI void onEntityFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    MCNAPI void onEntityFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent const& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent const& eventData) const;
 
-    MCAPI void onPlayerDestroy(::BlockEvents::BlockPlayerDestroyEvent const& eventData) const;
+    MCNAPI void onPlayerDestroy(::BlockEvents::BlockPlayerDestroyEvent const& eventData) const;
 
-    MCAPI void onPlayerInteract(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void onPlayerInteract(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
 
-    MCAPI void onQueuedTick(::BlockEvents::BlockQueuedTickEvent const& eventData) const;
+    MCNAPI void onQueuedTick(::BlockEvents::BlockQueuedTickEvent const& eventData) const;
 
-    MCAPI void onRandomTick(::BlockEvents::BlockRandomTickEvent const& eventData) const;
+    MCNAPI void onRandomTick(::BlockEvents::BlockRandomTickEvent const& eventData) const;
 
-    MCAPI void onStepOff(::BlockEvents::BlockStepOffEvent const& eventData) const;
+    MCNAPI void onStepOff(::BlockEvents::BlockStepOffEvent const& eventData) const;
 
-    MCAPI void onStepOn(::BlockEvents::BlockStepOnEvent const& eventData) const;
+    MCNAPI void onStepOn(::BlockEvents::BlockStepOnEvent const& eventData) const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentAlreadyRegisteredError,
@@ -203,7 +203,7 @@ public:
         ::Scripting::WeakLifetimeScope const&                          scope
     );
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentAlreadyRegisteredError,
@@ -220,13 +220,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ScriptModuleMinecraft::ScriptCustomComponentEventMetadata<
+    MCNAPI static ::ScriptModuleMinecraft::ScriptCustomComponentEventMetadata<
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface> const
     _getEventMetadata();
 
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
-    MCAPI static void generateOrderDocumentationForVersion(
+    MCNAPI static void generateOrderDocumentationForVersion(
         ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
         ::Json::Value&                       eventOrderArray
     );
@@ -235,35 +235,35 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptDeferredEventCoordinator& deferredEventCoordinator);
+    MCNAPI void* $ctor(::ScriptDeferredEventCoordinator& deferredEventCoordinator);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onPreFlushAfterEvents();
+    MCNAPI void $onPreFlushAfterEvents();
 
-    MCAPI void $onFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCNAPI void $onFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI void $onPostFlushAfterEvents();
+    MCNAPI void $onPostFlushAfterEvents();
 
-    MCAPI void $_onScriptInitializationComplete();
+    MCNAPI void $_onScriptInitializationComplete();
 
-    MCAPI void $_onReload();
+    MCNAPI void $_onReload();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForScriptDeferredEventListener();
+    MCNAPI static void** $vftableForScriptDeferredEventListener();
 
-    MCAPI static void** $vftableForScriptCustomComponentRegistry();
+    MCNAPI static void** $vftableForScriptCustomComponentRegistry();
     // NOLINTEND
 };
 

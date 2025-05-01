@@ -33,18 +33,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _placeBaseBlockAt(::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
+    MCNAPI void _placeBaseBlockAt(::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
 
-    MCAPI void
+    MCNAPI void
     placeBaseCluster(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, int trunkWidth) const;
 
-    MCAPI ~TreeParams();
+    MCNAPI ~TreeParams();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

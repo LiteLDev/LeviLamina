@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
+
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
-class WeakEntityRef;
 // clang-format on
 
 struct ActorDieEvent {

@@ -296,7 +296,11 @@ MCAPI ::HashedString const& BubbleCoralWallFan();
 
 MCAPI ::HashedString const& BuddingAmethyst();
 
+MCAPI ::HashedString const& Bush();
+
 MCAPI ::HashedString const& Cactus();
+
+MCAPI ::HashedString const& CactusFlower();
 
 MCAPI ::HashedString const& Cake();
 
@@ -802,6 +806,8 @@ MCAPI ::HashedString const& FireCoralFan();
 
 MCAPI ::HashedString const& FireCoralWallFan();
 
+MCAPI ::HashedString const& FireflyBush();
+
 MCAPI ::HashedString const& FletchingTable();
 
 MCAPI ::HashedString const& FlowerPot();
@@ -1081,6 +1087,8 @@ MCAPI ::HashedString const& LargeAmethystBud();
 MCAPI ::HashedString const& LargeFern();
 
 MCAPI ::HashedString const& Lava();
+
+MCAPI ::HashedString const& LeafLitter();
 
 MCAPI ::HashedString const& Lectern();
 
@@ -1798,6 +1806,8 @@ MCAPI ::HashedString const& SeaPickle();
 
 MCAPI ::HashedString const& Seagrass();
 
+MCAPI ::HashedString const& ShortDryGrass();
+
 MCAPI ::HashedString const& ShortGrass();
 
 MCAPI ::HashedString const& Shroomlight();
@@ -1991,6 +2001,8 @@ MCAPI ::HashedString const& SuspiciousGravel();
 MCAPI ::HashedString const& SuspiciousSand();
 
 MCAPI ::HashedString const& SweetBerryBush();
+
+MCAPI ::HashedString const& TallDryGrass();
 
 MCAPI ::HashedString const& TallGrass();
 
@@ -2243,6 +2255,8 @@ MCAPI ::HashedString const& WhiteTerracotta();
 MCAPI ::HashedString const& WhiteTulip();
 
 MCAPI ::HashedString const& WhiteWool();
+
+MCAPI ::HashedString const& Wildflowers();
 
 MCAPI ::HashedString const& WitherRose();
 

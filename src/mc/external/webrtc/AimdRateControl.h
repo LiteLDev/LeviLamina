@@ -18,58 +18,58 @@ struct AimdRateControl {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::DataRate AdditiveRateIncrease(::webrtc::Timestamp, ::webrtc::Timestamp) const;
+    MCNAPI ::webrtc::DataRate AdditiveRateIncrease(::webrtc::Timestamp, ::webrtc::Timestamp) const;
 
-    MCAPI AimdRateControl(::webrtc::FieldTrialsView const&, bool);
+    MCNAPI AimdRateControl(::webrtc::FieldTrialsView const&, bool);
 
-    MCAPI void ChangeBitrate(::webrtc::RateControlInput const&, ::webrtc::Timestamp);
+    MCNAPI void ChangeBitrate(::webrtc::RateControlInput const&, ::webrtc::Timestamp);
 
-    MCAPI void ChangeState(::webrtc::RateControlInput const&, ::webrtc::Timestamp);
+    MCNAPI void ChangeState(::webrtc::RateControlInput const&, ::webrtc::Timestamp);
 
-    MCAPI ::webrtc::DataRate ClampBitrate(::webrtc::DataRate) const;
+    MCNAPI ::webrtc::DataRate ClampBitrate(::webrtc::DataRate) const;
 
-    MCAPI ::webrtc::TimeDelta GetExpectedBandwidthPeriod() const;
+    MCNAPI ::webrtc::TimeDelta GetExpectedBandwidthPeriod() const;
 
-    MCAPI double GetNearMaxIncreaseRateBpsPerSecond() const;
+    MCNAPI double GetNearMaxIncreaseRateBpsPerSecond() const;
 
-    MCAPI bool InitialTimeToReduceFurther(::webrtc::Timestamp) const;
+    MCNAPI bool InitialTimeToReduceFurther(::webrtc::Timestamp) const;
 
-    MCAPI ::webrtc::DataRate LatestEstimate() const;
+    MCNAPI ::webrtc::DataRate LatestEstimate() const;
 
-    MCAPI ::webrtc::DataRate
+    MCNAPI ::webrtc::DataRate
         MultiplicativeRateIncrease(::webrtc::Timestamp, ::webrtc::Timestamp, ::webrtc::DataRate) const;
 
-    MCAPI void SetEstimate(::webrtc::DataRate, ::webrtc::Timestamp);
+    MCNAPI void SetEstimate(::webrtc::DataRate, ::webrtc::Timestamp);
 
-    MCAPI void SetInApplicationLimitedRegion(bool);
+    MCNAPI void SetInApplicationLimitedRegion(bool);
 
-    MCAPI void SetMinBitrate(::webrtc::DataRate);
+    MCNAPI void SetMinBitrate(::webrtc::DataRate);
 
-    MCAPI void SetNetworkStateEstimate(::std::optional<::webrtc::NetworkStateEstimate> const&);
+    MCNAPI void SetNetworkStateEstimate(::std::optional<::webrtc::NetworkStateEstimate> const&);
 
-    MCAPI void SetRtt(::webrtc::TimeDelta);
+    MCNAPI void SetRtt(::webrtc::TimeDelta);
 
-    MCAPI void SetStartBitrate(::webrtc::DataRate);
+    MCNAPI void SetStartBitrate(::webrtc::DataRate);
 
-    MCAPI bool TimeToReduceFurther(::webrtc::Timestamp, ::webrtc::DataRate) const;
+    MCNAPI bool TimeToReduceFurther(::webrtc::Timestamp, ::webrtc::DataRate) const;
 
-    MCAPI ::webrtc::DataRate Update(::webrtc::RateControlInput const&, ::webrtc::Timestamp);
+    MCNAPI ::webrtc::DataRate Update(::webrtc::RateControlInput const&, ::webrtc::Timestamp);
 
-    MCAPI bool ValidEstimate() const;
+    MCNAPI bool ValidEstimate() const;
 
-    MCAPI ~AimdRateControl();
+    MCNAPI ~AimdRateControl();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::FieldTrialsView const&, bool);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const&, bool);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

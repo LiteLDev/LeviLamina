@@ -25,26 +25,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> createItem(::std::string id, ::std::string const& payload);
+    MCNAPI ::Scripting::Result<void> createItem(::std::string id, ::std::string const& payload);
 
-    MCAPI ::Scripting::Result<void> destroyItem(::std::string id);
+    MCNAPI ::Scripting::Result<void> destroyItem(::std::string id);
 
-    MCAPI ::std::string getPayload(::std::string id) const;
+    MCNAPI ::std::string getPayload(::std::string id) const;
 
-    MCAPI ::std::optional<::std::variant<float, bool, ::std::string>>
+    MCNAPI ::std::optional<::std::variant<float, bool, ::std::string>>
     getProperty(::std::string id, ::std::string property) const;
 
-    MCAPI bool hasPayload(::std::string id) const;
+    MCNAPI bool hasPayload(::std::string id) const;
 
-    MCAPI bool hasProperty(::std::string id, ::std::string property) const;
+    MCNAPI bool hasProperty(::std::string id, ::std::string property) const;
 
-    MCAPI ::Scripting::Result<void> updateItem(::std::string id, ::std::string const& payload);
+    MCNAPI ::Scripting::Result<void> updateItem(::std::string id, ::std::string const& payload);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptDataStoreMenuContainer> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptDataStoreMenuContainer> bindScript();
     // NOLINTEND
 };
 

@@ -27,21 +27,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unordered_map<::std::string, ::std::optional<::std::variant<float>>> getAll() const;
+    MCNAPI ::std::optional<::std::variant<float>> get(::Editor::ScriptModule::ScriptSettingsSpeedPropType prop) const;
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::std::unordered_map<::std::string, ::std::optional<::std::variant<float>>> getAll() const;
+
+    MCNAPI ::Scripting::Result<void>
     set(::Editor::ScriptModule::ScriptSettingsSpeedPropType prop, ::std::variant<float> const& value);
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     setAll(::std::unordered_map<::std::string, ::std::optional<::std::variant<float>>> const& props);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptSettingsSpeed> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptSettingsSpeed> bindScript();
 
-    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Editor::ScriptModule::ScriptSettingsSpeedPropType>
+    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Editor::ScriptModule::ScriptSettingsSpeedPropType>
     bindScriptPropsEnum();
     // NOLINTEND
 };

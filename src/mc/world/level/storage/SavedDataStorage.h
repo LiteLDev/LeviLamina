@@ -26,9 +26,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _save(::SavedData const& data);
+    MCNAPI void _save(::SavedData const& data);
 
-    MCAPI bool loadAndSet(::SavedData& inoutData, ::std::string const& id);
+    MCNAPI bool loadAndSet(::SavedData& inoutData, ::std::string const& id);
     // NOLINTEND
 
 public:
@@ -40,6 +40,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

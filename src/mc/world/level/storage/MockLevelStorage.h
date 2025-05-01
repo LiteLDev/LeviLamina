@@ -14,6 +14,7 @@
 // clang-format off
 class ChunkSource;
 class CompoundTag;
+class ContentIdentity;
 class LevelData;
 class LevelStorageObserver;
 class LevelStorageWriteBatch;
@@ -74,42 +75,45 @@ public:
     virtual ::Core::LevelStorageResult getLevelStorageState() const /*override*/;
 
     // vIndex: 16
-    virtual void startShutdown() /*override*/;
+    virtual ::ContentIdentity const* getContentIdentity() const /*override*/;
 
     // vIndex: 17
-    virtual bool isShuttingDown() const /*override*/;
+    virtual void startShutdown() /*override*/;
 
     // vIndex: 18
+    virtual bool isShuttingDown() const /*override*/;
+
+    // vIndex: 19
     virtual bool checkShutdownDone() /*override*/;
 
-    // vIndex: 20
+    // vIndex: 21
     virtual ::Core::LevelStorageResult getState() const /*override*/;
 
-    // vIndex: 21
+    // vIndex: 22
     virtual ::std::vector<::SnapshotFilenameAndLength> createSnapshot(::std::string const&, bool) /*override*/;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual void releaseSnapshot() /*override*/;
 
-    // vIndex: 23
+    // vIndex: 24
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> compactStorage() /*override*/;
 
-    // vIndex: 24
+    // vIndex: 25
     virtual void syncAndSuspendStorage() /*override*/;
 
-    // vIndex: 25
+    // vIndex: 26
     virtual void resumeStorage() /*override*/;
 
-    // vIndex: 26
+    // vIndex: 27
     virtual void setFlushAllowed(bool) /*override*/;
 
-    // vIndex: 27
+    // vIndex: 28
     virtual void flushToPermanentStorage() /*override*/;
 
-    // vIndex: 29
+    // vIndex: 30
     virtual void setCompactionCallback(::std::function<void(::CompactionStatus)>) /*override*/;
 
-    // vIndex: 30
+    // vIndex: 31
     virtual void setCriticalSyncSaveCallback(::std::function<void()>) /*override*/;
     // NOLINTEND
 

@@ -26,23 +26,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _parseAndStoreTradeTable(
+    MCNAPI void _parseAndStoreTradeTable(
         ::Level&               level,
         ::ResourcePackManager* resourceLoader,
         ::Core::Path const&    tradeTablePath,
         bool                   usingUpcomingCreatorFeaturesExperiment
     );
 
-    MCAPI ::TradeTable* fetchTable(::std::string const& path);
+    MCNAPI ::TradeTable* fetchTable(::std::string const& path);
 
-    MCAPI void reload(::Level& level, bool usingUpcomingCreatorFeaturesExperiment);
+    MCNAPI void reload(::Level& level, bool usingUpcomingCreatorFeaturesExperiment);
 
-    MCAPI ~TradeTables();
+    MCNAPI ~TradeTables();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

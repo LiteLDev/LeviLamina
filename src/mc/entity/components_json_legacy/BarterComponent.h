@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
-struct ActorUniqueID;
 // clang-format on
 
 class BarterComponent {
@@ -20,6 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void onBarterItemPickedUp(::Actor const& owner, ::ActorUniqueID actorUniqueID, short barterItemId);
+    MCNAPI void onBarterItemPickedUp(::Actor const& owner, ::ActorUniqueID actorUniqueID, short barterItemId);
     // NOLINTEND
 };

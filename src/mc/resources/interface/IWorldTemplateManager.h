@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+struct PackIdVersion;
 struct WorldTemplateInfo;
 namespace Bedrock::PubSub { class Subscription; }
 namespace mce { class UUID; }
@@ -28,12 +29,24 @@ public:
 
     // vIndex: 3
     virtual ::std::vector<::std::unique_ptr<::WorldTemplateInfo>> const& getLocalTemplates() const = 0;
+
+    // vIndex: 4
+    virtual void populateWorldTemplates() = 0;
+
+    // vIndex: 5
+    virtual uint64 getWorldTemplateSize() const = 0;
+
+    // vIndex: 6
+    virtual ::WorldTemplateInfo const& getWorldTemplateAtIndex(int) const = 0;
+
+    // vIndex: 7
+    virtual void deleteWorldTemplateAndFiles(::PackIdVersion const&) = 0;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

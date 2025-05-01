@@ -210,17 +210,6 @@ public:
 
     // vIndex: 54
     virtual void pruneProfileImageCache();
-
-    // vIndex: 55
-    virtual void getLinkedXuids(
-        ::std::function<void(::std::string, ::std::string)>,
-        ::std::vector<::std::string> const&,
-        ::std::shared_ptr<::Social::Identity> const
-    );
-
-    // vIndex: 56
-    virtual void
-    getLinkedPlatformIds(::std::function<void(::std::string, ::std::string)>, ::std::vector<::std::string> const&);
     // NOLINTEND
 
 public:

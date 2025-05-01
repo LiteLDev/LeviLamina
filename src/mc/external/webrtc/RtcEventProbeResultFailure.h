@@ -11,19 +11,19 @@ class RtcEventProbeResultFailure {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RtcEventProbeResultFailure(int, ::webrtc::ProbeFailureReason);
+    MCNAPI RtcEventProbeResultFailure(int, ::webrtc::ProbeFailureReason);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int, ::webrtc::ProbeFailureReason);
+    MCNAPI void* $ctor(int, ::webrtc::ProbeFailureReason);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

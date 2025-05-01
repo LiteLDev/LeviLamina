@@ -18,7 +18,7 @@ struct ReplayStateTrackerComponent;
 namespace ClientRewind {
 // functions
 // NOLINTBEGIN
-MCAPI void tickAccumulate(
+MCNAPI void tickAccumulate(
     ::ReplayStateTrackerComponent& tracker,
     ::std::tuple<
         ::ActorDataFlagComponent const&,
@@ -28,7 +28,7 @@ MCAPI void tickAccumulate(
         ::Optional<::ActorDataSeatOffsetComponent const>> const& data
 );
 
-MCAPI void tickDiscard(
+MCNAPI void tickDiscard(
     ::ReplayStateTrackerComponent& tracker,
     ::std::tuple<
         ::ActorDataFlagComponent const&,

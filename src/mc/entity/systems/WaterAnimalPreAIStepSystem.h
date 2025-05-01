@@ -19,15 +19,15 @@ class WaterAnimalPreAIStepSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     _doWaterAnimalPreAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
 
-    MCAPI static void
+    MCNAPI static void
     _tickWaterAnimalPreAIStepSystem(::ViewT<
                                     ::StrictEntityContext,
                                     ::Include<::ActorMovementTickNeededComponent, ::WaterAnimalFlagComponent>,
                                     ::ActorOwnerComponent> view);
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

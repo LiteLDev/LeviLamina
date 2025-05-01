@@ -28,39 +28,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptNetHeader(::ScriptModuleMinecraftNet::ScriptNetHeader&&);
+    MCNAPI ScriptNetHeader(::ScriptModuleMinecraftNet::ScriptNetHeader&&);
 
-    MCAPI ScriptNetHeader(
+    MCNAPI ScriptNetHeader(
         ::std::string const&                                                         key,
         ::std::variant<::std::string, ::ScriptModuleServerAdmin::ScriptSecretString> value
     );
 
-    MCAPI ::ScriptModuleMinecraftNet::ScriptNetHeader& operator=(::ScriptModuleMinecraftNet::ScriptNetHeader const&);
+    MCNAPI ::ScriptModuleMinecraftNet::ScriptNetHeader& operator=(::ScriptModuleMinecraftNet::ScriptNetHeader const&);
 
-    MCAPI ::ScriptModuleMinecraftNet::ScriptNetHeader& operator=(::ScriptModuleMinecraftNet::ScriptNetHeader&&);
+    MCNAPI ::ScriptModuleMinecraftNet::ScriptNetHeader& operator=(::ScriptModuleMinecraftNet::ScriptNetHeader&&);
 
-    MCAPI ~ScriptNetHeader();
+    MCNAPI ~ScriptNetHeader();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftNet::ScriptNetHeader> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftNet::ScriptNetHeader> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraftNet::ScriptNetHeader&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraftNet::ScriptNetHeader&&);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::string const& key, ::std::variant<::std::string, ::ScriptModuleServerAdmin::ScriptSecretString> value);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -57,7 +57,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::HashedString _getTagForUUID(::mce::UUID const& uuid);
+    MCNAPI static ::HashedString _getTagForUUID(::mce::UUID const& uuid);
     // NOLINTEND
 
 public:
@@ -77,22 +77,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
+    MCNAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
 
-    MCAPI ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const;
+    MCNAPI ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const;
 
-    MCFOLD ::std::vector<::ItemInstance> const& $getResultItems() const;
+    MCNAPI ::std::vector<::ItemInstance> const& $getResultItems() const;
 
-    MCFOLD int $getCraftingSize() const;
+    MCNAPI int $getCraftingSize() const;
 
-    MCFOLD int $size() const;
+    MCNAPI int $size() const;
 
-    MCFOLD ::RecipeIngredient const& $getIngredient(int x, int y) const;
+    MCNAPI ::RecipeIngredient const& $getIngredient(int x, int y) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -51,7 +51,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI IntermediateStorage(
+        MCNAPI IntermediateStorage(
             bool&              result,
             ::ItemStack const& initialItemStack,
             ::ItemStack&       actor,
@@ -61,13 +61,13 @@ public:
             ::Vec3
         );
 
-        MCAPI ~IntermediateStorage();
+        MCNAPI ~IntermediateStorage();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             bool&              result,
             ::ItemStack const& initialItemStack,
             ::ItemStack&       actor,
@@ -81,7 +81,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -107,11 +107,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemCustomComponentUseOnEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent&&);
+    MCNAPI ScriptItemCustomComponentUseOnEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent&&);
 
-    MCAPI ScriptItemCustomComponentUseOnEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent const&);
+    MCNAPI ScriptItemCustomComponentUseOnEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent const&);
 
-    MCAPI ScriptItemCustomComponentUseOnEvent(
+    MCNAPI ScriptItemCustomComponentUseOnEvent(
         ::ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent::IntermediateStorage const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                    scope
     );
@@ -120,17 +120,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent&&);
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent::IntermediateStorage const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                    scope
     );
@@ -139,13 +139,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

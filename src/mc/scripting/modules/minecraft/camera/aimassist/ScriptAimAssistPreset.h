@@ -31,26 +31,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const* _getPresetDefinition() const;
+    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const* _getPresetDefinition() const;
 
-    MCAPI ::Scripting::Result<::std::optional<::std::string>, ::Scripting::Error> getDefaultItemSettings() const;
+    MCNAPI ::Scripting::Result<::std::optional<::std::string>, ::Scripting::Error> getDefaultItemSettings() const;
 
-    MCAPI ::Scripting::Result<::std::vector<::std::string>, ::Scripting::Error> getExcludedTargets() const;
+    MCNAPI ::Scripting::Result<::std::vector<::std::string>, ::Scripting::Error> getExcludedTargets() const;
 
-    MCAPI ::Scripting::Result<::std::optional<::std::string>, ::Scripting::Error> getHandSettings() const;
+    MCNAPI ::Scripting::Result<::std::optional<::std::string>, ::Scripting::Error> getHandSettings() const;
 
-    MCAPI ::Scripting::Result<::std::unordered_map<::std::string, ::std::string>, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<::std::unordered_map<::std::string, ::std::string>, ::Scripting::Error>
     getItemSettings() const;
 
-    MCAPI ::Scripting::Result<::std::vector<::std::string>, ::Scripting::Error> getLiquidTargetingItems() const;
+    MCNAPI ::Scripting::Result<::std::vector<::std::string>, ::Scripting::Error> getLiquidTargetingItems() const;
 
-    MCFOLD ::ScriptModuleMinecraft::ScriptAimAssistPreset& operator=(::ScriptModuleMinecraft::ScriptAimAssistPreset&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptAimAssistPreset& operator=(::ScriptModuleMinecraft::ScriptAimAssistPreset&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptAimAssistPreset> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptAimAssistPreset> bind();
     // NOLINTEND
 };
 

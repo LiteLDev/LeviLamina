@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ShadowContext : int {
+enum class ShadowContext : uchar {
     Unknown             = 0,
     ShadowOnly          = 1,
     PlayerShadowMapOnly = 2,

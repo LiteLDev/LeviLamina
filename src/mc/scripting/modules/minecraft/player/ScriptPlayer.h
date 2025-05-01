@@ -7,6 +7,7 @@
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/options/GraphicsMode.h"
 #include "mc/scripting/modules/minecraft/actor/ScriptActor.h"
 #include "mc/world/level/GameType.h"
 
@@ -26,6 +27,7 @@ namespace ScriptModuleMinecraft { class ScriptPlayerAimAssist; }
 namespace ScriptModuleMinecraft { struct ScriptActorData; }
 namespace ScriptModuleMinecraft { struct ScriptCamera; }
 namespace ScriptModuleMinecraft { struct ScriptDimensionLocation; }
+namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace ScriptModuleMinecraft { struct ScriptLocationInUnloadedChunkError; }
 namespace ScriptModuleMinecraft { struct ScriptLocationOutOfWorldBoundsError; }
 namespace ScriptModuleMinecraft { struct ScriptMusicOptions; }
@@ -62,25 +64,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
+    // vIndex: 4
     virtual ::Scripting::Result<void> lookAt(::Actor& self, ::Vec3 const& targetLocation) /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual ::Scripting::Result<void> applyImpulse(::Actor& self, ::Vec3 const& vector) /*override*/;
 
-    // vIndex: 2
+    // vIndex: 3
     virtual ::Scripting::Result<void> clearVelocity(::Actor& self) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual ::Scripting::Result<void> remove(::Actor& self) /*override*/;
 
-    // vIndex: 1
+    // vIndex: 2
     virtual void setUnloaded(::Actor& actor) /*override*/;
 
-    // vIndex: 10
-    virtual bool _isValid() const /*override*/;
+    // vIndex: 1
+    virtual void setLoading(::Actor const& actor) /*override*/;
 
     // vIndex: 11
+    virtual bool isValid() const /*override*/;
+
+    // vIndex: 12
     virtual ::ScoreboardId const& _getScoreboardId(::Scoreboard const& scoreboard) const /*override*/;
 
     // vIndex: 0
@@ -90,103 +95,114 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayer(::ScriptModuleMinecraft::ScriptPlayer&&);
+    MCNAPI ScriptPlayer(::ScriptModuleMinecraft::ScriptPlayer&&);
 
-    MCAPI ScriptPlayer(::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI ScriptPlayer(::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
 
-    MCAPI ScriptPlayer(
+    MCNAPI ScriptPlayer(
         ::ScriptModuleMinecraft::ScriptActorData const& playerData,
         ::Scripting::WeakLifetimeScope const&           scope
     );
 
-    MCAPI uint _calculateTotalXp(::Player const& player) const;
+    MCNAPI uint _calculateTotalXp(::Player const& player) const;
 
-    MCAPI ::Scripting::Result<void> _playOrQueueMusic(
+    MCNAPI ::Scripting::Result<void> _playOrQueueMusic(
         ::Player&                                                    player,
         ::std::string const&                                         trackID,
         ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions,
         bool                                                         shouldQueue
     );
 
-    MCAPI ::Scripting::Result<void> _playSoundInternal(
+    MCNAPI ::Scripting::Result<void> _playSoundInternal(
         ::std::string                                                      soundID,
         ::std::optional<::ScriptModuleMinecraft::ScriptPlayerSoundOptions> soundOptions
     );
 
-    MCAPI ::Scripting::Result_deprecated<uint> addExperience(int amount) const;
+    MCNAPI ::Scripting::Result_deprecated<uint> addExperience(int amount) const;
 
-    MCAPI ::Scripting::Result_deprecated<int> addLevels(int amount) const;
+    MCNAPI ::Scripting::Result_deprecated<int> addLevels(int amount) const;
 
-    MCAPI ::Scripting::Result_deprecated<uint> calculateTotalXp() const;
+    MCNAPI ::Scripting::Result_deprecated<uint> calculateTotalXp() const;
 
-    MCAPI ::Scripting::Result<void> eatItem(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack);
+    MCNAPI ::Scripting::Result<void>
+    clearPropertyOverridesForEntity(::ScriptModuleMinecraft::ScriptActor const& targetEntity);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerAimAssist> getAimAssist() const;
+    MCNAPI ::Scripting::Result<void> eatItem(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack);
 
-    MCAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCamera>>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerAimAssist> getAimAssist() const;
+
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCamera>>
     getCamera();
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptClientSystemInfo>,
         ::Scripting::Error>
     getClientSystemInfo();
 
-    MCAPI ::Scripting::Result_deprecated<::GameType> getGameMode() const;
+    MCNAPI ::Scripting::Result_deprecated<::GameType> getGameMode() const;
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptInputInfo> getInputInfo() const;
+    MCNAPI ::Scripting::Result<::GraphicsMode, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getGraphicsMode() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getItemCooldownLeft(::std::string const& type) const;
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptInputInfo> getInputInfo() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getName() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getItemCooldownLeft(::std::string const& type) const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getName() const;
+
+    MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScreenDisplay>>
     getOrCreateScreenDisplay();
 
-    MCAPI ::Scripting::Result_deprecated<int> getPlayerLevel() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getPlayerLevel() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getSelectedSlot() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getSelectedSlot() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::optional<::ScriptModuleMinecraft::ScriptDimensionLocation>>
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::ScriptModuleMinecraft::ScriptDimensionLocation>>
     getSpawnPoint() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getTotalXpNeededForNextLevel() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getTotalXpNeededForNextLevel() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getXpEarnedAtCurrentLevel() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getXpEarnedAtCurrentLevel() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> isEmoting() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> isEmoting() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> isFlying() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> isFlying() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> isGliding() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> isGliding() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> isJumping() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> isJumping() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> isOp() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> isOp() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPlayer& operator=(::ScriptModuleMinecraft::ScriptPlayer&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptPlayer& operator=(::ScriptModuleMinecraft::ScriptPlayer&&);
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     playMusic(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions);
 
-    MCAPI ::Scripting::Result<void> playSound(
+    MCNAPI ::Scripting::Result<void> playSound(
         ::std::string const&                                               soundID,
         ::std::optional<::ScriptModuleMinecraft::ScriptPlayerSoundOptions> soundOptions
     );
 
-    MCAPI ::Scripting::Result<void> playSound_V010(
+    MCNAPI ::Scripting::Result<void> playSound_V010(
         ::std::string const&                                         soundID,
         ::std::optional<::ScriptModuleMinecraft::ScriptSoundOptions> soundOptions
     );
 
-    MCAPI ::Scripting::Result<void> postClientMessage(::std::string const& id, ::std::string const& value);
+    MCNAPI ::Scripting::Result<void> postClientMessage(::std::string const& id, ::std::string const& value);
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     queueMusic(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions);
 
-    MCAPI ::Scripting::Result<void> resetPlayerLevel() const;
+    MCNAPI ::Scripting::Result<void> removePropertyOverrideForEntity(
+        ::ScriptModuleMinecraft::ScriptActor const& targetEntity,
+        ::std::string const&                        identifier
+    );
 
-    MCAPI ::Scripting::Result<void> sendMessage(
+    MCNAPI ::Scripting::Result<void> resetPlayerLevel() const;
+
+    MCNAPI ::Scripting::Result<void> sendMessage(
         ::Scripting::ContextConfig const& contextConfig,
         ::std::variant<
             ::std::string,
@@ -194,17 +210,23 @@ public:
             ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const& var
     ) const;
 
-    MCAPI ::Scripting::Result<void> setGameMode(::std::optional<::GameType> gameModeOrUndefined);
+    MCNAPI ::Scripting::Result<void> setGameMode(::std::optional<::GameType> gameModeOrUndefined);
 
-    MCAPI ::Scripting::Result<void> setOp(bool isOp) const;
+    MCNAPI ::Scripting::Result<void> setOp(bool isOp) const;
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::PropertyOutOfBoundsError> setSelectedSlot(int slot
+    MCNAPI ::Scripting::Result<void> setPropertyOverrideForEntity(
+        ::ScriptModuleMinecraft::ScriptActor const&       targetEntity,
+        ::std::string const&                              identifier,
+        ::std::variant<float, bool, ::std::string> const& value
+    );
+
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::PropertyOutOfBoundsError> setSelectedSlot(int slot
     ) const;
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError, ::Scripting::Error>
     setSpawnPoint(::std::optional<::ScriptModuleMinecraft::ScriptDimensionLocation> const& dimensionLocation) const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::Scripting::Error,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
@@ -216,59 +238,61 @@ public:
             molangVariables
     );
 
-    MCAPI ::Scripting::Result<void> startItemCooldown(::std::string const& itemType, int duration);
+    MCNAPI ::Scripting::Result<void> startItemCooldown(::std::string const& itemType, int duration);
 
-    MCAPI ::Scripting::Result<void> stopMusic();
+    MCNAPI ::Scripting::Result<void> stopMusic();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayer> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayer> bind();
 
-    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
+    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
     getHandle(::WeakEntityRef entityRef, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayer&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayer&&);
 
-    MCAPI void* $ctor(::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void* $ctor(::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::ScriptModuleMinecraft::ScriptActorData const& playerData, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $lookAt(::Actor& self, ::Vec3 const& targetLocation);
+    MCNAPI ::Scripting::Result<void> $lookAt(::Actor& self, ::Vec3 const& targetLocation);
 
-    MCAPI ::Scripting::Result<void> $applyImpulse(::Actor& self, ::Vec3 const& vector);
+    MCNAPI ::Scripting::Result<void> $applyImpulse(::Actor& self, ::Vec3 const& vector);
 
-    MCAPI ::Scripting::Result<void> $clearVelocity(::Actor& self);
+    MCNAPI ::Scripting::Result<void> $clearVelocity(::Actor& self);
 
-    MCAPI ::Scripting::Result<void> $remove(::Actor& self);
+    MCNAPI ::Scripting::Result<void> $remove(::Actor& self);
 
-    MCAPI void $setUnloaded(::Actor& actor);
+    MCNAPI void $setUnloaded(::Actor& actor);
 
-    MCAPI bool $_isValid() const;
+    MCNAPI void $setLoading(::Actor const& actor);
 
-    MCAPI ::ScoreboardId const& $_getScoreboardId(::Scoreboard const& scoreboard) const;
+    MCNAPI bool $isValid() const;
+
+    MCNAPI ::ScoreboardId const& $_getScoreboardId(::Scoreboard const& scoreboard) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

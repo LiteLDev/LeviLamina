@@ -5,7 +5,7 @@
 namespace Facing::Plane {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::vector<uchar> const& HORIZONTAL();
+MCAPI ::std::array<uchar, 4> const& HORIZONTAL();
 // NOLINTEND
 
 } // namespace Facing::Plane

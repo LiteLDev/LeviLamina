@@ -37,32 +37,32 @@ public:
     // vIndex: 2
     virtual ::ResourceLocation const& getPackLocation() const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 7
     virtual bool hasFolder(::Core::Path const& packRelativePath) const /*override*/;
 
-    // vIndex: 12
+    // vIndex: 10
     virtual void forEachIn(
         ::Core::Path const&                        packRelativePath,
         ::std::function<void(::Core::Path const&)> callback,
         bool                                       recurseAnyways
     ) const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 12
     virtual ::PackAccessStrategyType getStrategyType() const /*override*/;
 
-    // vIndex: 15
+    // vIndex: 13
     virtual ::Core::PathBuffer<::std::string> const& getSubPath() const /*override*/;
 
-    // vIndex: 16
+    // vIndex: 14
     virtual bool supportsSignatureVerification() const /*override*/;
 
-    // vIndex: 17
+    // vIndex: 15
     virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
 
-    // vIndex: 26
+    // vIndex: 23
     virtual ::std::string _getContentsFile() /*override*/;
 
-    // vIndex: 27
+    // vIndex: 24
     virtual ::std::string _getEncryptedAssetStream(::Core::Path const& packRelativePath) const /*override*/;
 
     // vIndex: 0
@@ -72,7 +72,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ZippedEncryptedFilesAccessStrategy(
+    MCNAPI ZippedEncryptedFilesAccessStrategy(
         ::ResourceLocation const&                                         archiveLocation,
         ::ContentIdentity const&                                          contentIdentity,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
@@ -84,13 +84,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string _getRawContentsFile(::Core::Path const& pathToPack, ::Core::Path const& subPath);
+    MCNAPI static ::std::string _getRawContentsFile(::Core::Path const& pathToPack, ::Core::Path const& subPath);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ResourceLocation const&                                         archiveLocation,
         ::ContentIdentity const&                                          contentIdentity,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
@@ -108,32 +108,32 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ResourceLocation const& $getPackLocation() const;
+    MCNAPI ::ResourceLocation const& $getPackLocation() const;
 
-    MCAPI bool $hasFolder(::Core::Path const& packRelativePath) const;
+    MCNAPI bool $hasFolder(::Core::Path const& packRelativePath) const;
 
-    MCAPI void $forEachIn(
+    MCNAPI void $forEachIn(
         ::Core::Path const&                        packRelativePath,
         ::std::function<void(::Core::Path const&)> callback,
         bool                                       recurseAnyways
     ) const;
 
-    MCFOLD ::PackAccessStrategyType $getStrategyType() const;
+    MCNAPI ::PackAccessStrategyType $getStrategyType() const;
 
-    MCFOLD ::Core::PathBuffer<::std::string> const& $getSubPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> const& $getSubPath() const;
 
-    MCFOLD bool $supportsSignatureVerification() const;
+    MCNAPI bool $supportsSignatureVerification() const;
 
-    MCAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
+    MCNAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
 
-    MCAPI ::std::string $_getContentsFile();
+    MCNAPI ::std::string $_getContentsFile();
 
-    MCAPI ::std::string $_getEncryptedAssetStream(::Core::Path const& packRelativePath) const;
+    MCNAPI ::std::string $_getEncryptedAssetStream(::Core::Path const& packRelativePath) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

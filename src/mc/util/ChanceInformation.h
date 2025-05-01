@@ -23,6 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool roll(::Random& random) const;
+    MCNAPI bool roll(::Random& random) const;
     // NOLINTEND
 };

@@ -39,35 +39,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptNamespaceNameError(
+    MCNAPI ScriptNamespaceNameError(
         ::std::string const&                                      name,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError::Reason reason
     );
 
-    MCAPI ~ScriptNamespaceNameError();
+    MCNAPI ~ScriptNamespaceNameError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
 
-    MCAPI static ::Scripting::EnumBinding bindReasonEnum();
+    MCNAPI static ::Scripting::EnumBinding bindReasonEnum();
 
-    MCAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::Scripting::EngineError>
+    MCNAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::Scripting::EngineError>
     validate(::std::string const& name);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, ::ScriptModuleMinecraft::ScriptNamespaceNameError::Reason reason);
+    MCNAPI void* $ctor(::std::string const& name, ::ScriptModuleMinecraft::ScriptNamespaceNameError::Reason reason);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

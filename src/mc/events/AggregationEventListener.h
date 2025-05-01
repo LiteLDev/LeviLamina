@@ -76,60 +76,60 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AggregationEventListener(::Core::Path const& logFileName);
+    MCNAPI explicit AggregationEventListener(::Core::Path const& logFileName);
 
-    MCAPI void _handleAggregation(
+    MCNAPI void _handleAggregation(
         ::std::deque<::Social::Events::Event>& listOfSameTypeEvents,
         ::Social::Events::Event const&         event
     );
 
-    MCAPI bool _needToSendAggregatedEvents() const;
+    MCNAPI bool _needToSendAggregatedEvents() const;
 
-    MCAPI void _recordAggregatedEvent(
+    MCNAPI void _recordAggregatedEvent(
         ::Social::Events::Event const&                                              event,
         ::std::unordered_map<::std::string, ::std::deque<::Social::Events::Event>>& eventQueue
     );
 
-    MCAPI void _sendCustomAggregatedEvents(bool forceSend);
+    MCNAPI void _sendCustomAggregatedEvents(bool forceSend);
 
-    MCAPI void _sendEvents(::std::unordered_map<::std::string, ::std::deque<::Social::Events::Event>>& queueToSend);
+    MCNAPI void _sendEvents(::std::unordered_map<::std::string, ::std::deque<::Social::Events::Event>>& queueToSend);
 
-    MCAPI void _sendNextEvent(::std::unordered_map<::std::string, ::std::deque<::Social::Events::Event>>& queueToSend);
+    MCNAPI void _sendNextEvent(::std::unordered_map<::std::string, ::std::deque<::Social::Events::Event>>& queueToSend);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::Path const& logFileName);
+    MCNAPI void* $ctor(::Core::Path const& logFileName);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     $recordEvent(::Social::Events::Event const& event, ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform);
 
-    MCAPI void $sendEvents(bool forceSend);
+    MCNAPI void $sendEvents(bool forceSend);
 
-    MCAPI void $stopDebugEventLogging();
+    MCNAPI void $stopDebugEventLogging();
 
-    MCFOLD void $_flushEventQueue();
+    MCNAPI void $_flushEventQueue();
 
-    MCFOLD bool $_checkAgainstEventAllowlist(::Social::Events::Event const& event) const;
+    MCNAPI bool $_checkAgainstEventAllowlist(::Social::Events::Event const& event) const;
 
-    MCFOLD bool $_isListenerReadyForEvents() const;
+    MCNAPI bool $_isListenerReadyForEvents() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

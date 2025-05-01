@@ -30,14 +30,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     _incrementAge(::BlockSource& region, ::Block const& block, ::BlockPos const& pos, float generatedOxidizeChance)
         const;
 
-    MCAPI ::Block const& getCorrespondingWaxedBlock(::Block const& block) const;
+    MCNAPI ::Block const& getCorrespondingWaxedBlock(::Block const& block) const;
 
-    MCAPI ::Block const& getNextAgingBlock(::Block const& block) const;
+    MCNAPI ::Block const& getNextAgingBlock(::Block const& block) const;
 
-    MCAPI bool use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI bool use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 };

@@ -36,17 +36,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uint64 HeaderLength() const;
+    MCNAPI uint64 HeaderLength() const;
 
-    MCAPI bool OnBufferFull(uchar*, uint64*, ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)>) const;
+    MCNAPI bool OnBufferFull(uchar*, uint64*, ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)>) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void CreateHeader(uint64, uchar, uint64, uchar*, uint64*);
+    MCNAPI static void CreateHeader(uint64, uchar, uint64, uchar*, uint64*);
 
-    MCAPI static void CreateHeader(uint64, uchar, uint64, bool, uchar*, uint64*);
+    MCNAPI static void CreateHeader(uint64, uchar, uint64, bool, uchar*, uint64*);
     // NOLINTEND
 
 public:
@@ -64,7 +64,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

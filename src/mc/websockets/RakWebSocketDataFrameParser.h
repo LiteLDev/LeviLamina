@@ -31,16 +31,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::RakWebSocketDataFrame> _failReadFrame(::std::string const& error, ::CloseStatusCode code);
+    MCNAPI ::std::shared_ptr<::RakWebSocketDataFrame>
+    _failReadFrame(::std::string const& error, ::CloseStatusCode code);
 
-    MCAPI ::std::shared_ptr<::RakWebSocketDataFrame> readFrame(::RakNet::BitStream& data);
+    MCNAPI ::std::shared_ptr<::RakWebSocketDataFrame> readFrame(::RakNet::BitStream& data);
 
-    MCAPI ~RakWebSocketDataFrameParser();
+    MCNAPI ~RakWebSocketDataFrameParser();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

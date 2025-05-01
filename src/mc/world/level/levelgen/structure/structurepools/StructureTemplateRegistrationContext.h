@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/resources/BaseGameVersion.h"
 
 // auto generated forward declare list
 // clang-format off
-class BaseGameVersion;
 class Experiments;
 class FeatureRegistry;
 class JigsawStructureElementRegistry;
@@ -32,24 +32,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureTemplateRegistrationContext(::StructureTemplateRegistrationContext const&);
+    MCNAPI StructureTemplateRegistrationContext(::StructureTemplateRegistrationContext const&);
 
-    MCAPI StructureTemplateRegistrationContext(::StructureTemplateRegistrationContext&&);
+    MCNAPI StructureTemplateRegistrationContext(::StructureTemplateRegistrationContext&&);
 
-    MCAPI ~StructureTemplateRegistrationContext();
+    MCNAPI ~StructureTemplateRegistrationContext();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::StructureTemplateRegistrationContext const&);
+    MCNAPI void* $ctor(::StructureTemplateRegistrationContext const&);
 
-    MCAPI void* $ctor(::StructureTemplateRegistrationContext&&);
+    MCNAPI void* $ctor(::StructureTemplateRegistrationContext&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -25,7 +25,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::BlockDescription::BlockTraits& operator=(::BlockDescription::BlockTraits const&);
+        MCNAPI ::BlockDescription::BlockTraits& operator=(::BlockDescription::BlockTraits const&);
         // NOLINTEND
     };
 
@@ -43,32 +43,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockDescription();
+    MCNAPI BlockDescription();
 
-    MCAPI BlockDescription(::BlockDescription const&);
+    MCNAPI BlockDescription(::BlockDescription const&);
 
-    MCAPI BlockDescription(::BlockDescription&&);
+    MCNAPI BlockDescription(::BlockDescription&&);
 
-    MCAPI ::BlockDescription& operator=(::BlockDescription&&);
+    MCNAPI ::BlockDescription& operator=(::BlockDescription&&);
 
-    MCAPI ::BlockDescription& operator=(::BlockDescription const&);
+    MCNAPI ::BlockDescription& operator=(::BlockDescription const&);
 
-    MCAPI ~BlockDescription();
+    MCNAPI ~BlockDescription();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::BlockDescription const&);
+    MCNAPI void* $ctor(::BlockDescription const&);
 
-    MCAPI void* $ctor(::BlockDescription&&);
+    MCNAPI void* $ctor(::BlockDescription&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

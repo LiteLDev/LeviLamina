@@ -99,7 +99,7 @@ public:
 
     // vIndex: 7
     virtual bool GetSessionState(
-        ::NetherNet::NetworkID     peerId,
+        ::NetherNet::NetworkID     networkIDRemote,
         uint64                     connectionId,
         ::NetherNet::SessionState* pConnectionState
     ) /*override*/;
@@ -144,20 +144,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Initialize(::NetherNet::INetherNetTransportInterfaceCallbacks* pCallbacks);
+    MCNAPI void Initialize(::NetherNet::INetherNetTransportInterfaceCallbacks* pCallbacks);
 
-    MCAPI void InitializeConfiguration(
+    MCNAPI void InitializeConfiguration(
         ::NetherNet::NetherNetTransportServerConfiguration const* pConfiguration,
         ::webrtc::PeerConnectionInterface::RTCConfiguration*      pRtcConfigOut
     );
 
-    MCAPI void ReceiveFromSignalingChannel(
+    MCNAPI void ReceiveFromSignalingChannel(
         ::NetherNet::NetworkID          from,
         ::std::string const&            message,
         ::NetherNet::SignalingChannelId sourceChannel
     );
 
-    MCAPI ::NetherNet::ErrorOr<void, ::NetherNet::ESessionError> SendToSignalingChannel(
+    MCNAPI ::NetherNet::ErrorOr<void, ::NetherNet::ESessionError> SendToSignalingChannel(
         ::NetherNet::NetworkID networkIDTo,
         ::std::variant<
             ::NetherNet::ConnectRequest,
@@ -171,67 +171,70 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $SendPacket(
+    MCNAPI bool $SendPacket(
         ::NetherNet::NetworkID remoteId,
         uint64                 connectionId,
         ::std::string const&   data,
         ::NetherNet::ESendType eSendType
     );
 
-    MCAPI bool $IsPacketAvailable(::NetherNet::NetworkID remoteId, uint64 connectionId, uint* pcbMessageSize);
+    MCNAPI bool $IsPacketAvailable(::NetherNet::NetworkID remoteId, uint64 connectionId, uint* pcbMessageSize);
 
-    MCAPI void $ClearPacketData(::NetherNet::NetworkID remoteId, uint64 connectionId);
+    MCNAPI void $ClearPacketData(::NetherNet::NetworkID remoteId, uint64 connectionId);
 
-    MCAPI bool
+    MCNAPI bool
     $ReadPacket(::NetherNet::NetworkID remoteId, uint64 connectionId, void* pubDest, uint cbDest, uint* pcbMessageSize);
 
-    MCAPI bool $OpenSessionWithUser(::NetherNet::NetworkID networkIDRemote);
+    MCNAPI bool $OpenSessionWithUser(::NetherNet::NetworkID networkIDRemote);
 
-    MCAPI bool $CloseSessionWithUser(::NetherNet::NetworkID networkIDRemote, uint64 connectionId);
+    MCNAPI bool $CloseSessionWithUser(::NetherNet::NetworkID networkIDRemote, uint64 connectionId);
 
-    MCAPI bool
-    $GetSessionState(::NetherNet::NetworkID peerId, uint64 connectionId, ::NetherNet::SessionState* pConnectionState);
+    MCNAPI bool $GetSessionState(
+        ::NetherNet::NetworkID     networkIDRemote,
+        uint64                     connectionId,
+        ::NetherNet::SessionState* pConnectionState
+    );
 
-    MCAPI void
+    MCNAPI void
     $SetSignalingInterface(::std::shared_ptr<::NetherNet::ISignalingInterface> const& pWebRTCSignalingInterface);
 
-    MCAPI void $SetRelayConfig(::std::vector<::NetherNet::StunRelayServer> const& config);
+    MCNAPI void $SetRelayConfig(::std::vector<::NetherNet::StunRelayServer> const& config);
 
-    MCAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
+    MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
 
-    MCAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ILanEventHandler* handler);
+    MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ILanEventHandler* handler);
 
-    MCAPI bool $IsBroadcastDiscoveryEnabled();
+    MCNAPI bool $IsBroadcastDiscoveryEnabled();
 
-    MCAPI void $EnableBroadcastDiscovery();
+    MCNAPI void $EnableBroadcastDiscovery();
 
-    MCAPI void $DisableBroadcastDiscovery();
+    MCNAPI void $DisableBroadcastDiscovery();
 
-    MCAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const& event);
+    MCNAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const& event);
 
-    MCAPI void $OnLanEvent(::NetherNet::LanEvents::MessageReceived const& event);
+    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::MessageReceived const& event);
 
-    MCAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryRequest const& event);
+    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryRequest const& event);
 
-    MCAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryResponse const& event);
+    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryResponse const& event);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForISignalingEventHandler();
+    MCNAPI static void** $vftableForISignalingEventHandler();
 
-    MCAPI static void** $vftableForILanEventHandler();
+    MCNAPI static void** $vftableForILanEventHandler();
 
-    MCAPI static void** $vftableForContextProxy();
+    MCNAPI static void** $vftableForContextProxy();
 
-    MCAPI static void** $vftableForINetherNetTransportInterface();
+    MCNAPI static void** $vftableForINetherNetTransportInterface();
     // NOLINTEND
 };
 

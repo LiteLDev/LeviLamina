@@ -48,7 +48,6 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk48f8f4;
     ::ll::UntypedStorage<8, 24> mUnk18d483;
     ::ll::UntypedStorage<8, 24> mUnk381438;
-    ::ll::UntypedStorage<1, 1>  mUnkffc4ce;
     // NOLINTEND
 
 public:
@@ -70,57 +69,54 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LootItemMatchToolCondition(
+    MCNAPI LootItemMatchToolCondition(
         ::IntRange                                                      count,
         ::IntRange                                                      durability,
         ::std::string                                                   itemName,
         ::std::vector<::LootItemMatchToolCondition::EnchantInfo> const& enchantments,
         ::std::vector<::ItemDescriptor> const&                          itemTagsAny,
         ::std::vector<::ItemDescriptor> const&                          itemTagsAll,
-        ::std::vector<::ItemDescriptor> const&                          itemTagsNone,
-        bool                                                            usingUpcomingCreatorFeaturesExperiment
+        ::std::vector<::ItemDescriptor> const&                          itemTagsNone
     );
 
-    MCAPI bool _doItemTagsMatch(::Item const& item) const;
+    MCNAPI bool _doItemTagsMatch(::Item const& item) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::LootItemCondition>
-    deserialize(::Json::Value object, bool usingUpcomingCreatorFeaturesExperiment);
+    MCNAPI static ::std::unique_ptr<::LootItemCondition> deserialize(::Json::Value object);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::IntRange                                                      count,
         ::IntRange                                                      durability,
         ::std::string                                                   itemName,
         ::std::vector<::LootItemMatchToolCondition::EnchantInfo> const& enchantments,
         ::std::vector<::ItemDescriptor> const&                          itemTagsAny,
         ::std::vector<::ItemDescriptor> const&                          itemTagsAll,
-        ::std::vector<::ItemDescriptor> const&                          itemTagsNone,
-        bool                                                            usingUpcomingCreatorFeaturesExperiment
+        ::std::vector<::ItemDescriptor> const&                          itemTagsNone
     );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $applies(::Random& random, ::LootTableContext& context);
+    MCNAPI bool $applies(::Random& random, ::LootTableContext& context);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

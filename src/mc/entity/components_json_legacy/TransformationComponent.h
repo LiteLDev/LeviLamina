@@ -20,7 +20,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void maintainOldData(
+    MCNAPI void initFromDefinition(::Actor& actor);
+
+    MCNAPI void maintainOldData(
         ::Actor&                           originalActor,
         ::Actor&                           transformed,
         ::TransformationDescription const& transformation,
@@ -28,8 +30,8 @@ public:
         ::Level const&                     level
     );
 
-    MCAPI void reloadComponent(::Actor& actor);
+    MCNAPI void reloadComponent(::Actor& actor);
 
-    MCAPI void transformIfAble(::Actor& actor, bool shouldRemove);
+    MCNAPI void transformIfAble(::Actor& actor, bool shouldRemove);
     // NOLINTEND
 };

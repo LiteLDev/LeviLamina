@@ -45,7 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::PackSourceReport _tryLoadFromZip(
+    MCNAPI ::PackSourceReport _tryLoadFromZip(
         ::IPackManifestFactory&                                           manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
         ::Core::PathBuffer<::std::string> const&                          worldTemplatePath,
@@ -62,7 +62,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::PackSourceReport $load(
+    MCNAPI ::PackSourceReport $load(
         ::IPackManifestFactory&                                           manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     );
@@ -71,6 +71,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

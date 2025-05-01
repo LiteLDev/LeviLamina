@@ -19,13 +19,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StringCompressor();
+    MCNAPI StringCompressor();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void RemoveReference();
+    MCNAPI static void RemoveReference();
     // NOLINTEND
 
 public:
@@ -39,7 +39,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

@@ -19,15 +19,15 @@ class GuardianPreAIStepSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     _doGuardianPreAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
 
-    MCAPI static void
+    MCNAPI static void
     _tickGuardianPreAIStepSystem(::ViewT<
                                  ::StrictEntityContext,
                                  ::Include<::ActorMovementTickNeededComponent, ::GuardianFlagComponent>,
                                  ::ActorOwnerComponent> view);
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

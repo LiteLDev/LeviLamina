@@ -19,21 +19,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SimpleMutex();
+    MCNAPI SimpleMutex();
 
-    MCAPI ~SimpleMutex();
+    MCNAPI ~SimpleMutex();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

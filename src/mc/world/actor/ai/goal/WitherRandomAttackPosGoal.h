@@ -40,18 +40,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCFOLD bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

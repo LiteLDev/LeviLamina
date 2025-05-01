@@ -15,15 +15,15 @@ struct TickingSystemWithInfo;
 namespace ServerPlayerInventoryTransactionSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createSystem();
+MCNAPI ::TickingSystemWithInfo createSystem();
 
-MCAPI void transactInventoryPacket(
+MCNAPI void transactInventoryPacket(
     ::InventoryTransactionPacket const& packet,
     ::ServerPlayer&                     player,
     ::BlockPalette&                     blockPalette
 );
 
-MCAPI void
+MCNAPI void
 transferInventoryTransactionPackets(::ServerPlayerMovementComponent& movementComponent, ::EntityContext& entity);
 // NOLINTEND
 

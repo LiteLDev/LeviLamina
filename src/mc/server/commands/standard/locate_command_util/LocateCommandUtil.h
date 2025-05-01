@@ -14,7 +14,7 @@ class Dimension;
 namespace LocateCommandUtil {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::optional<::BlockPos>
+MCNAPI ::std::optional<::BlockPos>
 locateNearbyBiome(::BlockPos position, ::Dimension* dimension, ::LocateCommandUtil::Biomes biome);
 // NOLINTEND
 

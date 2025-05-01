@@ -3,16 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorRuntimeID.h"
 #include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/NetworkBlockPosition.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/network/packet/PlayerActionType.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActorRuntimeID;
 class BinaryStream;
-class NetworkBlockPosition;
 class ReadOnlyBinaryStream;
 // clang-format on
 

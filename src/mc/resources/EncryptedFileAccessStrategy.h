@@ -33,42 +33,39 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 18
+    // vIndex: 16
     virtual ::PackAccessAssetGenerationResult generateAssetSet() /*override*/;
 
-    // vIndex: 6
+    // vIndex: 5
     virtual bool isTrusted() const /*override*/;
 
     // vIndex: 4
     virtual bool isWritable() const /*override*/;
 
-    // vIndex: 7
+    // vIndex: 6
     virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const
         /*override*/;
 
-    // vIndex: 9
+    // vIndex: 8
     virtual bool getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const
         /*override*/;
 
-    // vIndex: 10
-    virtual bool deleteAsset(::Core::Path const& packRelativePath) /*override*/;
-
-    // vIndex: 11
+    // vIndex: 9
     virtual bool writeAsset(::Core::Path const& packRelativePath, ::std::string const& fileContent) /*override*/;
 
-    // vIndex: 17
+    // vIndex: 15
     virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
 
-    // vIndex: 24
+    // vIndex: 21
     virtual bool isAssetExtractionViable() const /*override*/;
 
-    // vIndex: 23
+    // vIndex: 20
     virtual ::ContentIdentity readContentIdentity() const /*override*/;
 
-    // vIndex: 26
+    // vIndex: 23
     virtual ::std::string _getContentsFile();
 
-    // vIndex: 27
+    // vIndex: 24
     virtual ::std::string _getEncryptedAssetStream(::Core::Path const& packRelativePath) const;
 
     // vIndex: 0
@@ -78,7 +75,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EncryptedFileAccessStrategy(
+    MCNAPI EncryptedFileAccessStrategy(
         ::ResourceLocation const&                                          resourceLocation,
         ::ContentIdentity const&                                           contentIdentity,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&  keyProvider,
@@ -90,17 +87,18 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _getContentIdentityFromEncryptedStream(::std::string& stream, ::ContentIdentity& contentIdentity);
+    MCNAPI static bool
+    _getContentIdentityFromEncryptedStream(::std::string& stream, ::ContentIdentity& contentIdentity);
 
-    MCAPI static void _transformStream(::std::string& stream, ::std::string const& key, uint64 offset);
+    MCNAPI static void _transformStream(::std::string& stream, ::std::string const& key, uint64 offset);
 
-    MCAPI static bool isValidEncryptedPack(::Core::Path const& pathToPack, ::ContentIdentity& contentIdentity);
+    MCNAPI static bool isValidEncryptedPack(::Core::Path const& pathToPack, ::ContentIdentity& contentIdentity);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ResourceLocation const&                                          resourceLocation,
         ::ContentIdentity const&                                           contentIdentity,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&  keyProvider,
@@ -112,40 +110,38 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::PackAccessAssetGenerationResult $generateAssetSet();
+    MCNAPI ::PackAccessAssetGenerationResult $generateAssetSet();
 
-    MCFOLD bool $isTrusted() const;
+    MCNAPI bool $isTrusted() const;
 
-    MCFOLD bool $isWritable() const;
+    MCNAPI bool $isWritable() const;
 
-    MCAPI bool $hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
+    MCNAPI bool $hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
 
-    MCAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
+    MCNAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
 
-    MCFOLD bool $deleteAsset(::Core::Path const& packRelativePath);
+    MCNAPI bool $writeAsset(::Core::Path const& packRelativePath, ::std::string const& fileContent);
 
-    MCFOLD bool $writeAsset(::Core::Path const& packRelativePath, ::std::string const& fileContent);
+    MCNAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
 
-    MCAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
+    MCNAPI bool $isAssetExtractionViable() const;
 
-    MCAPI bool $isAssetExtractionViable() const;
+    MCNAPI ::ContentIdentity $readContentIdentity() const;
 
-    MCAPI ::ContentIdentity $readContentIdentity() const;
+    MCNAPI ::std::string $_getContentsFile();
 
-    MCAPI ::std::string $_getContentsFile();
-
-    MCAPI ::std::string $_getEncryptedAssetStream(::Core::Path const& packRelativePath) const;
+    MCNAPI ::std::string $_getEncryptedAssetStream(::Core::Path const& packRelativePath) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

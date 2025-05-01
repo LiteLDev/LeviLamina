@@ -46,14 +46,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ServerCameraStatesComponent(::CameraPresets const& presets);
+    MCNAPI explicit ServerCameraStatesComponent(::CameraPresets const& presets);
 
-    MCAPI ::ServerCameraStatesComponent& operator=(::ServerCameraStatesComponent&&);
+    MCNAPI ::ServerCameraStatesComponent& operator=(::ServerCameraStatesComponent&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CameraPresets const& presets);
+    MCNAPI void* $ctor(::CameraPresets const& presets);
     // NOLINTEND
 };

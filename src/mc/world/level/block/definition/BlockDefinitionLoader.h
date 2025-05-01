@@ -27,20 +27,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockDefinitionLoader(
+    MCNAPI BlockDefinitionLoader(
         ::gsl::not_null<::BlockDefinitionGroup*>                  group,
         ::gsl::not_null<::Core::PathBuffer<::std::string> const*> heapPathBuffer,
         ::std::string                                             resourcePackLocation,
         ::gsl::not_null<::IPackLoadContext*>                      packLoadContext
     );
 
-    MCAPI ~BlockDefinitionLoader();
+    MCNAPI ~BlockDefinitionLoader();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::gsl::not_null<::BlockDefinitionGroup*>                  group,
         ::gsl::not_null<::Core::PathBuffer<::std::string> const*> heapPathBuffer,
         ::std::string                                             resourcePackLocation,
@@ -51,6 +51,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

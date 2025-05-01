@@ -15,19 +15,19 @@ class TurnChannelBindRequest {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TurnChannelBindRequest(::cricket::TurnPort*, ::cricket::TurnEntry*, int, ::rtc::SocketAddress const&);
+    MCNAPI TurnChannelBindRequest(::cricket::TurnPort*, ::cricket::TurnEntry*, int, ::rtc::SocketAddress const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::TurnPort*, ::cricket::TurnEntry*, int, ::rtc::SocketAddress const&);
+    MCNAPI void* $ctor(::cricket::TurnPort*, ::cricket::TurnEntry*, int, ::rtc::SocketAddress const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

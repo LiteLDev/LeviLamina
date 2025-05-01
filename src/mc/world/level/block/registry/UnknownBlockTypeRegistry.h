@@ -40,7 +40,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _registerBlock(::std::string const& name, uint64 serIdHash);
+    MCNAPI void _registerBlock(::std::string const& name, uint64 serIdHash);
     // NOLINTEND
 
 public:
@@ -52,12 +52,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const& $getUnknownBlock(::CompoundTag const& serId);
+    MCNAPI ::Block const& $getUnknownBlock(::CompoundTag const& serId);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

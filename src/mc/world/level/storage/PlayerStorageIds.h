@@ -17,20 +17,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerStorageIds();
+    MCNAPI PlayerStorageIds();
 
-    MCAPI ~PlayerStorageIds();
+    MCNAPI ~PlayerStorageIds();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

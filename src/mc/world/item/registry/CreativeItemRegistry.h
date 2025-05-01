@@ -38,7 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::brstd::flat_map<
+    MCNAPI ::brstd::flat_map<
         ::CreativeItemCategory,
         ::gsl::not_null<::CreativeItemGroupCategory*>,
         ::std::less<::CreativeItemCategory>,
@@ -46,22 +46,22 @@ public:
         ::std::vector<::gsl::not_null<::CreativeItemGroupCategory*>>>
     createCategories();
 
-    MCAPI void forEachCreativeItemInstance(::std::function<bool(::ItemInstance const&)> func) const;
+    MCNAPI void forEachCreativeItemInstance(::std::function<bool(::ItemInstance const&)> func) const;
 
-    MCAPI ::CreativeItemGroupCategory* newCreativeCategory(::std::string const& name, ::CreativeItemCategory category);
+    MCNAPI ::CreativeItemGroupCategory* newCreativeCategory(::std::string const& name, ::CreativeItemCategory category);
 
-    MCAPI void updateNetIdMap();
+    MCNAPI void updateNetIdMap();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

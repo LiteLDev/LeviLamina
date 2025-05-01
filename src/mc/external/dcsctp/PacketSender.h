@@ -17,25 +17,25 @@ class PacketSender {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     PacketSender(::dcsctp::DcSctpSocketCallbacks&, ::std::function<void(::rtc::ArrayView<uchar const>, ::dcsctp::SendPacketStatus)>);
 
-    MCAPI bool Send(::dcsctp::SctpPacket::Builder&, bool);
+    MCNAPI bool Send(::dcsctp::SctpPacket::Builder&, bool);
 
-    MCAPI ~PacketSender();
+    MCNAPI ~PacketSender();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::dcsctp::DcSctpSocketCallbacks&, ::std::function<void(::rtc::ArrayView<uchar const>, ::dcsctp::SendPacketStatus)>);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

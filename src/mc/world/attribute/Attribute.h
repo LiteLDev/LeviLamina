@@ -3,12 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/attribute/RedefinitionMode.h"
-
-// auto generated forward declare list
-// clang-format off
-class HashedString;
-// clang-format on
 
 class Attribute {
 public:
@@ -23,6 +19,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Attribute& getByName(::HashedString const& attribute);
+    MCNAPI static ::Attribute& getByName(::HashedString const& attribute);
     // NOLINTEND
 };

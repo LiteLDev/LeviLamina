@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/BrightnessPair.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
@@ -10,8 +11,11 @@
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/level/BlockChangedEventTarget.h"
 #include "mc/world/level/BlockDataFetchResult.h"
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/IBlockSource.h"
 #include "mc/world/level/ShapeType.h"
+#include "mc/world/level/Tick.h"
 #include "mc/world/level/TickingQueueType.h"
 #include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
@@ -26,12 +30,10 @@ class Block;
 class BlockActor;
 class BlockDescriptor;
 class BlockLegacy;
-class BlockPos;
 class BlockSourceListener;
 class BlockTickingQueue;
 class BlockVolume;
 class BoundingBox;
-class ChunkPos;
 class ChunkSource;
 class Dimension;
 class EntityContext;
@@ -52,9 +54,7 @@ struct ActorBlockSyncMessage;
 struct ActorDefinitionIdentifier;
 struct Bounds;
 struct Brightness;
-struct BrightnessPair;
 struct ClipParameters;
-struct Tick;
 namespace BlockSourceVisitor { struct CollisionShape; }
 // clang-format on
 
@@ -96,55 +96,55 @@ public:
     // vIndex: 0
     virtual ~BlockSource() /*override*/;
 
-    // vIndex: 26
+    // vIndex: 27
     virtual ::WeakRef<::BlockSource> getWeakRef() /*override*/;
 
-    // vIndex: 40
+    // vIndex: 41
     virtual ::Level& getLevel() /*override*/;
 
-    // vIndex: 35
+    // vIndex: 36
     virtual ::Dimension& getDimension() const /*override*/;
 
-    // vIndex: 34
+    // vIndex: 35
     virtual ::Dimension& getDimension() /*override*/;
 
-    // vIndex: 36
+    // vIndex: 37
     virtual ::Dimension const& getDimensionConst() const /*override*/;
 
     // vIndex: 18
     virtual ::DimensionType getDimensionId() const /*override*/;
 
-    // vIndex: 56
+    // vIndex: 57
     virtual bool isInstaticking(::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 27
+    // vIndex: 28
     virtual void addListener(::BlockSourceListener& l) /*override*/;
 
-    // vIndex: 28
+    // vIndex: 29
     virtual void removeListener(::BlockSourceListener& l) /*override*/;
 
-    // vIndex: 39
+    // vIndex: 40
     virtual ::LevelChunk* getChunk(int x, int z) const /*override*/;
 
-    // vIndex: 38
+    // vIndex: 39
     virtual ::LevelChunk* getChunk(::ChunkPos const& pos) const /*override*/;
 
-    // vIndex: 37
+    // vIndex: 38
     virtual ::LevelChunk* getChunkAt(::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 43
+    // vIndex: 44
     virtual short
     getAboveTopSolidBlock(::BlockPos const& pos, bool includeWater, bool includeLeaves, bool iteratePastInitialBlocking)
         const /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual short getAboveTopSolidBlock(int x, int z, bool includeWater, bool includeLeaves) const /*override*/;
 
-    // vIndex: 46
+    // vIndex: 47
     virtual short getHeight(::std::function<bool(::Block const&)> const& type, ::BlockPos const& pos) const
         /*override*/;
 
-    // vIndex: 45
+    // vIndex: 46
     virtual short getHeight(::std::function<bool(::Block const&)> const& type, int x, int z) const /*override*/;
 
     // vIndex: 13
@@ -153,10 +153,10 @@ public:
     // vIndex: 12
     virtual ::Material const& getMaterial(int x, int y, int z) const /*override*/;
 
-    // vIndex: 33
+    // vIndex: 34
     virtual short getMaxHeight() const /*override*/;
 
-    // vIndex: 32
+    // vIndex: 33
     virtual short getMinHeight() const /*override*/;
 
     // vIndex: 14
@@ -171,7 +171,7 @@ public:
     // vIndex: 5
     virtual ::Block const& getExtraBlock(::BlockPos const& p) const /*override*/;
 
-    // vIndex: 53
+    // vIndex: 54
     virtual bool mayPlace(
         ::Block const&    block,
         ::BlockPos const& pos,
@@ -184,10 +184,10 @@ public:
     // vIndex: 7
     virtual bool hasBlock(::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 54
+    // vIndex: 55
     virtual bool canDoBlockDrops() const /*override*/;
 
-    // vIndex: 55
+    // vIndex: 56
     virtual bool canDoContainedItemDrops() const /*override*/;
 
     // vIndex: 17
@@ -199,7 +199,7 @@ public:
     // vIndex: 15
     virtual bool hasChunksAt(::AABB const& bb, bool ignoreClientChunk) const /*override*/;
 
-    // vIndex: 52
+    // vIndex: 53
     virtual bool areChunksFullyLoaded(::BlockPos const& pos, int r) const /*override*/;
 
     // vIndex: 8
@@ -211,11 +211,11 @@ public:
     // vIndex: 4
     virtual ::BlockActor const* getBlockEntity(::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 30
+    // vIndex: 31
     virtual ::gsl::span<::gsl::not_null<::Actor*>>
     fetchEntities(::Actor const* except, ::AABB const& bb, bool useHitbox, bool getDisplayEntities) /*override*/;
 
-    // vIndex: 29
+    // vIndex: 30
     virtual ::gsl::span<::gsl::not_null<::Actor*>> fetchEntities(
         ::ActorType                     entityTypeId,
         ::AABB const&                   bb,
@@ -228,10 +228,10 @@ public:
     fetchAABBs(::std::vector<::AABB>& shapes, ::AABB const& intersectTestBox, bool withUnloadedChunks) const
         /*override*/;
 
-    // vIndex: 24
+    // vIndex: 25
     virtual ::std::vector<::AABB>& fetchAABBs(::AABB const& intersectTestBox, bool withUnloadedChunks) /*override*/;
 
-    // vIndex: 25
+    // vIndex: 26
     virtual ::std::vector<::AABB>& fetchCollisionShapes(
         ::AABB const&                          intersectTestBox,
         bool                                   withUnloadedChunks,
@@ -265,7 +265,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
-    // vIndex: 48
+    // vIndex: 49
     virtual ::HitResult clip(
         ::Vec3 const&                                                            A,
         ::Vec3 const&                                                            B,
@@ -278,7 +278,7 @@ public:
         ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const& shouldCheckBlock
     ) const /*override*/;
 
-    // vIndex: 47
+    // vIndex: 48
     virtual ::HitResult clip(::ClipParameters const& parameters) const /*override*/;
 
     // vIndex: 10
@@ -296,7 +296,7 @@ public:
     // vIndex: 1
     virtual ::Block const& getBlock(::BlockPos const& pos, uint layer) const /*override*/;
 
-    // vIndex: 31
+    // vIndex: 32
     virtual bool setBlock(
         ::BlockPos const&              pos,
         ::Block const&                 block,
@@ -305,25 +305,25 @@ public:
         ::Actor*                       blockChangeSource
     ) /*override*/;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual bool isSolidBlockingBlock(int x, int y, int z) const /*override*/;
 
-    // vIndex: 51
+    // vIndex: 52
     virtual bool isSolidBlockingBlock(::BlockPos const& p) const /*override*/;
 
-    // vIndex: 59
+    // vIndex: 60
     virtual bool removeBlock(::BlockPos const& pos) /*override*/;
 
-    // vIndex: 41
+    // vIndex: 42
     virtual ::ILevel& getILevel() const /*override*/;
 
-    // vIndex: 42
+    // vIndex: 43
     virtual ::LevelSeed64 getLevelSeed64() const /*override*/;
 
-    // vIndex: 49
+    // vIndex: 50
     virtual ::ChunkSource& getChunkSource() /*override*/;
 
-    // vIndex: 58
+    // vIndex: 59
     virtual bool checkBlockPermissions(
         ::Actor&               entity,
         ::BlockPos const&      blockPos,
@@ -332,7 +332,10 @@ public:
         bool                   generateParticle
     ) /*override*/;
 
-    // vIndex: 60
+    // vIndex: 24
+    virtual float getVisualLiquidHeight(::Vec3 const& pos) const /*override*/;
+
+    // vIndex: 61
     virtual void postGameEvent(
         ::Actor*           source,
         ::GameEvent const& gameEvent,
@@ -340,7 +343,7 @@ public:
         ::Block const*     affectedBlock
     ) /*override*/;
 
-    // vIndex: 57
+    // vIndex: 58
     virtual void updateCheckForValidityState(bool checkForValidity) /*override*/;
     // NOLINTEND
 
@@ -383,10 +386,18 @@ public:
     ) const;
 
     MCAPI void _fetchEntityHelper(
-        ::WeakEntityRef                              entityRef,
-        ::gsl::span<::gsl::not_null<::Actor const*>> ignoredEntities,
-        ::AABB const&                                bb,
-        bool                                         useHitbox
+        ::WeakEntityRef const&                              entityRef,
+        ::gsl::span<::gsl::not_null<::Actor const*>> const& ignoredEntities,
+        ::AABB const&                                       bb,
+        bool                                                useHitbox
+    );
+
+    MCAPI void _fetchEntityHelper(
+        ::WeakEntityRef const&          entityRef,
+        ::ActorType                     entityTypeId,
+        ::AABB const&                   bb,
+        ::Actor const*                  except,
+        ::std::function<bool(::Actor*)> selector
     );
 
     MCAPI bool _getBlockPermissions(::BlockPos const& pos, bool currentState);
@@ -489,6 +500,9 @@ public:
     MCAPI ::std::vector<::Actor*> const& fetchEntities2(::ActorType type, ::AABB const& aabb, bool ignoreTargetType);
 
     MCAPI ::Actor* fetchNearestEntityOfType(::Actor const* except, ::AABB const& bb, ::ActorType entityTypeId);
+
+    MCAPI ::gsl::span<::gsl::not_null<::Actor*>>
+    fetchPlayers(::AABB const& bb, ::Actor const* except, ::std::function<bool(::Actor*)> selector);
 
     MCAPI bool findNextTopSolidBlockUnder(::BlockPos& pos);
 
@@ -781,6 +795,8 @@ public:
         ::ItemStackBase const& item,
         bool                   generateParticle
     );
+
+    MCFOLD float $getVisualLiquidHeight(::Vec3 const& pos) const;
 
     MCAPI void $postGameEvent(
         ::Actor*           source,

@@ -21,15 +21,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::cricket::FeedbackParam const&) const;
+    MCNAPI bool operator==(::cricket::FeedbackParam const&) const;
 
-    MCAPI ~FeedbackParam();
+    MCNAPI ~FeedbackParam();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

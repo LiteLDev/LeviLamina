@@ -17,14 +17,14 @@ struct SimulcastSdpSerializer {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::RTCErrorOr<::cricket::RidDescription> DeserializeRidDescription(::std::string_view) const;
+    MCNAPI ::webrtc::RTCErrorOr<::cricket::RidDescription> DeserializeRidDescription(::std::string_view) const;
 
-    MCAPI ::webrtc::RTCErrorOr<::cricket::SimulcastDescription> DeserializeSimulcastDescription(::std::string_view
+    MCNAPI ::webrtc::RTCErrorOr<::cricket::SimulcastDescription> DeserializeSimulcastDescription(::std::string_view
     ) const;
 
-    MCAPI ::std::string SerializeRidDescription(::cricket::RidDescription const&) const;
+    MCNAPI ::std::string SerializeRidDescription(::cricket::RidDescription const&) const;
 
-    MCAPI ::std::string SerializeSimulcastDescription(::cricket::SimulcastDescription const&) const;
+    MCNAPI ::std::string SerializeSimulcastDescription(::cricket::SimulcastDescription const&) const;
     // NOLINTEND
 };
 

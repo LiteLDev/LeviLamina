@@ -47,14 +47,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onLevelTickEnd(::Level&);
+    MCNAPI ::EventResult $onLevelTickEnd(::Level&);
 
-    MCAPI ::EventResult $onEvent(::LevelNotificationEvent const& event);
+    MCNAPI ::EventResult $onEvent(::LevelNotificationEvent const& event);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

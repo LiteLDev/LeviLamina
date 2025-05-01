@@ -47,12 +47,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
+    MCNAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

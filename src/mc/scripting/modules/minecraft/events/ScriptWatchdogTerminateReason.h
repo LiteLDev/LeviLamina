@@ -12,7 +12,7 @@ struct ScriptWatchdogTerminateReason {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::WatchdogTerminateReason> bind();
+    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::WatchdogTerminateReason> bind();
     // NOLINTEND
 };
 

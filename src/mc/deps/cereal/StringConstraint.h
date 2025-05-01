@@ -41,39 +41,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StringConstraint(::cereal::StringConstraint const&);
+    MCNAPI StringConstraint(::cereal::StringConstraint const&);
 
-    MCAPI StringConstraint(::cereal::StringConstraint&&);
+    MCNAPI StringConstraint(::cereal::StringConstraint&&);
 
-    MCAPI ::cereal::StringConstraint& regex(::std::string str);
+    MCNAPI ::cereal::StringConstraint& regex(::std::string str);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::StringConstraint const&);
+    MCNAPI void* $ctor(::cereal::StringConstraint const&);
 
-    MCAPI void* $ctor(::cereal::StringConstraint&&);
+    MCNAPI void* $ctor(::cereal::StringConstraint&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
+    MCNAPI void $doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
 
-    MCAPI ::cereal::internal::ConstraintDescription $description() const;
+    MCNAPI ::cereal::internal::ConstraintDescription $description() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

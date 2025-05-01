@@ -22,24 +22,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChemistryIngredient(::CompoundType compound, int stackCount);
+    MCNAPI ChemistryIngredient(::CompoundType compound, int stackCount);
 
-    MCAPI ChemistryIngredient(::ElementType element, int stackCount);
+    MCNAPI ChemistryIngredient(::ElementType element, int stackCount);
 
-    MCAPI ~ChemistryIngredient();
+    MCNAPI ~ChemistryIngredient();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CompoundType compound, int stackCount);
+    MCNAPI void* $ctor(::CompoundType compound, int stackCount);
 
-    MCAPI void* $ctor(::ElementType element, int stackCount);
+    MCNAPI void* $ctor(::ElementType element, int stackCount);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

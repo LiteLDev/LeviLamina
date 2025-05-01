@@ -70,9 +70,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int numberofAnimalsAttached();
+    MCNAPI int numberofAnimalsAttached();
 
-    MCAPI void removeAnimals();
+    MCNAPI void removeAnimals();
     // NOLINTEND
 
 public:
@@ -84,31 +84,31 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
 
-    MCFOLD int $getWidth() const;
+    MCNAPI int $getWidth() const;
 
-    MCFOLD int $getHeight() const;
+    MCNAPI int $getHeight() const;
 
-    MCFOLD void $dropItem();
+    MCNAPI void $dropItem();
 
-    MCFOLD void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCFOLD void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $wouldSurvive(::BlockSource& region);
+    MCNAPI bool $wouldSurvive(::BlockSource& region);
 
-    MCAPI void $remove();
+    MCNAPI void $remove();
 
-    MCAPI bool $getInteraction(::Player&, ::ActorInteraction& interaction, ::Vec3 const&);
+    MCNAPI bool $getInteraction(::Player&, ::ActorInteraction& interaction, ::Vec3 const&);
 
-    MCAPI void
+    MCNAPI void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

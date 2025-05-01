@@ -40,21 +40,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI BlockInfo();
+        MCNAPI BlockInfo();
 
-        MCAPI ~BlockInfo();
+        MCNAPI ~BlockInfo();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -75,27 +75,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DiggerItemComponent(::SharedTypes::v1_20_50::DiggerItemComponent component);
+    MCNAPI explicit DiggerItemComponent(::SharedTypes::v1_20_50::DiggerItemComponent component);
 
-    MCAPI float getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
+    MCNAPI float getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::DiggerItemComponent component);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_50::DiggerItemComponent component);
     // NOLINTEND
 
 public:
@@ -107,6 +107,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

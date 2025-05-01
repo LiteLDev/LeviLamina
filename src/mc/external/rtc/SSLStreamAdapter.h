@@ -94,10 +94,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::rtc::SSLStreamAdapter>
+    MCNAPI static ::std::unique_ptr<::rtc::SSLStreamAdapter>
         Create(::std::unique_ptr<::rtc::StreamInterface>, ::absl::AnyInvocable<void(::rtc::SSLHandshakeError)>);
 
-    MCAPI static ::std::string SslCipherSuiteToName(int);
+    MCNAPI static ::std::string SslCipherSuiteToName(int);
     // NOLINTEND
 
 public:
@@ -115,7 +115,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

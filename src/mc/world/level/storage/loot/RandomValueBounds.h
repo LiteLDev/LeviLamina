@@ -24,6 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void deserialize(::Json::Value const& object);
+    MCNAPI void deserialize(::Json::Value const& object);
     // NOLINTEND
 };

@@ -5,12 +5,12 @@
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/network/ClientOrServerNetworkSystemRef.h"
 
 // auto generated forward declare list
 // clang-format off
-class ClientOrServerNetworkSystemRef;
-class EntityContext;
 class Level;
 class LoopbackPacketSender;
 class NetEventCallback;
@@ -35,7 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameSession(
+    MCNAPI GameSession(
         ::ServerNetworkSystem&                                               network,
         ::std::unique_ptr<::ServerNetworkHandler>                            serverNetworkHandler,
         ::LoopbackPacketSender&                                              loopbackPacketSender,
@@ -44,15 +44,15 @@ public:
         ::SubClientId                                                        subid
     );
 
-    MCAPI void setLevel(::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity);
+    MCNAPI void setLevel(::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity);
 
-    MCAPI ~GameSession();
+    MCNAPI ~GameSession();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ServerNetworkSystem&                                               network,
         ::std::unique_ptr<::ServerNetworkHandler>                            serverNetworkHandler,
         ::LoopbackPacketSender&                                              loopbackPacketSender,
@@ -65,6 +65,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

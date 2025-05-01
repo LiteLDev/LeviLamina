@@ -29,29 +29,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DimensionDataLoader(::cereal::ReflectionCtx const& ctx);
+    MCNAPI explicit DimensionDataLoader(::cereal::ReflectionCtx const& ctx);
 
-    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument>
+    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument>
     load(::Puv::Input const& input);
 
-    MCAPI ~DimensionDataLoader();
+    MCNAPI ~DimensionDataLoader();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::GeneratorType> stringToGeneratorType(::std::string const& generatorNameString);
+    MCNAPI static ::std::optional<::GeneratorType> stringToGeneratorType(::std::string const& generatorNameString);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
+    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

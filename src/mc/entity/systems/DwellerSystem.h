@@ -33,14 +33,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCNAPI void $tick(::EntityRegistry& registry);
 
-    MCAPI void $registerEvents(::entt::dispatcher& dispatcher);
+    MCNAPI void $registerEvents(::entt::dispatcher& dispatcher);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

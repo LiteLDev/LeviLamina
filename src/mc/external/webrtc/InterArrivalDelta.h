@@ -14,22 +14,22 @@ class InterArrivalDelta {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool BelongsToBurst(::webrtc::Timestamp, ::webrtc::Timestamp) const;
+    MCNAPI bool BelongsToBurst(::webrtc::Timestamp, ::webrtc::Timestamp) const;
 
-    MCAPI bool
+    MCNAPI bool
     ComputeDeltas(::webrtc::Timestamp, ::webrtc::Timestamp, ::webrtc::Timestamp, uint64, ::webrtc::TimeDelta*, ::webrtc::TimeDelta*, int*);
 
-    MCAPI explicit InterArrivalDelta(::webrtc::TimeDelta);
+    MCNAPI explicit InterArrivalDelta(::webrtc::TimeDelta);
 
-    MCAPI bool NewTimestampGroup(::webrtc::Timestamp, ::webrtc::Timestamp) const;
+    MCNAPI bool NewTimestampGroup(::webrtc::Timestamp, ::webrtc::Timestamp) const;
 
-    MCAPI void Reset();
+    MCNAPI void Reset();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::TimeDelta);
+    MCNAPI void* $ctor(::webrtc::TimeDelta);
     // NOLINTEND
 };
 

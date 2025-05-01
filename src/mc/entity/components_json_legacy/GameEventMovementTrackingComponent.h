@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/entity/components_json_legacy/GameEventMovementTrackingSettings.h"
+#include "mc/world/level/Tick.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Vec3;
-struct GameEventMovementTrackingSettings;
-struct Tick;
 // clang-format on
 
 class GameEventMovementTrackingComponent {
@@ -26,6 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initializeFromCode(::Actor& actor, bool considerVerticalComponentForAmphibiousMovement);
+    MCNAPI void initializeFromCode(::Actor& actor, bool considerVerticalComponentForAmphibiousMovement);
     // NOLINTEND
 };

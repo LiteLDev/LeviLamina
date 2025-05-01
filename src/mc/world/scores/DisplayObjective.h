@@ -22,6 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string const getBelowNameStringForId(::ScoreboardId const& scoreboardId) const;
+    MCNAPI ::std::string const getBelowNameStringForId(::ScoreboardId const& scoreboardId) const;
     // NOLINTEND
 };

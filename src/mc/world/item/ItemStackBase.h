@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
+#include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,7 +26,6 @@ class RenderParams;
 class SaveContext;
 class Vec3;
 struct ItemTag;
-struct Tick;
 namespace Bedrock::Safety { class RedactableString; }
 namespace Json { class Value; }
 namespace mce { class Color; }

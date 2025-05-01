@@ -18,32 +18,32 @@ class AudioRtpSender {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     AudioRtpSender(::rtc::Thread*, ::std::string const&, ::webrtc::LegacyStatsCollectorInterface*, ::webrtc::RtpSenderBase::SetStreamsObserver*);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::scoped_refptr<::webrtc::AudioRtpSender>
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::AudioRtpSender>
     Create(::rtc::Thread*, ::std::string const&, ::webrtc::LegacyStatsCollectorInterface*, ::webrtc::RtpSenderBase::SetStreamsObserver*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::rtc::Thread*, ::std::string const&, ::webrtc::LegacyStatsCollectorInterface*, ::webrtc::RtpSenderBase::SetStreamsObserver*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForObserverInterface();
+    MCNAPI static void** $vftableForObserverInterface();
 
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
 
-    MCAPI static void** $vftableForRtpSenderInternal();
+    MCNAPI static void** $vftableForRtpSenderInternal();
     // NOLINTEND
 };
 

@@ -11,28 +11,6 @@ class IClientInstance;
 
 class BaseLightTextureImageBuilder {
 public:
-    // BaseLightTextureImageBuilder inner types declare
-    // clang-format off
-    struct DarknessLevels;
-    // clang-format on
-
-    // BaseLightTextureImageBuilder inner types define
-    struct DarknessLevels {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkcb24a9;
-        ::ll::UntypedStorage<4, 4> mUnk759980;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DarknessLevels& operator=(DarknessLevels const&);
-        DarknessLevels(DarknessLevels const&);
-        DarknessLevels();
-    };
-
-public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Dimension const*> mDimension;

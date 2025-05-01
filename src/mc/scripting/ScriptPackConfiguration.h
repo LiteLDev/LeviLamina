@@ -2,9 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/scripting/ScriptPackPermissions.h"
+
 // auto generated forward declare list
 // clang-format off
-class ScriptPackPermissions;
 namespace Json { class Value; }
 // clang-format on
 
@@ -24,30 +26,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPackConfiguration();
+    MCNAPI ScriptPackConfiguration();
 
-    MCAPI ScriptPackConfiguration(::ScriptPackConfiguration const&);
+    MCNAPI ScriptPackConfiguration(::ScriptPackConfiguration const&);
 
-    MCAPI ScriptPackConfiguration(::ScriptPackConfiguration&&);
+    MCNAPI ScriptPackConfiguration(::ScriptPackConfiguration&&);
 
-    MCAPI ::ScriptPackConfiguration& operator=(::ScriptPackConfiguration&&);
+    MCNAPI ::ScriptPackConfiguration& operator=(::ScriptPackConfiguration&&);
 
-    MCAPI ~ScriptPackConfiguration();
+    MCNAPI ~ScriptPackConfiguration();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::ScriptPackConfiguration const&);
+    MCNAPI void* $ctor(::ScriptPackConfiguration const&);
 
-    MCAPI void* $ctor(::ScriptPackConfiguration&&);
+    MCNAPI void* $ctor(::ScriptPackConfiguration&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

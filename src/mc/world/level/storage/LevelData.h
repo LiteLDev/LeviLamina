@@ -3,45 +3,45 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/GameVersion.h"
 #include "mc/common/editor/WorldType.h"
 #include "mc/config/ChatRestrictionLevel.h"
+#include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/deps/json/Value.h"
 #include "mc/deps/shared_types/legacy/Difficulty.h"
 #include "mc/network/GamePublishSetting.h"
 #include "mc/options/EducationEditionOffer.h"
+#include "mc/options/EducationEditionOfferValue.h"
+#include "mc/world/actor/player/Abilities.h"
+#include "mc/world/actor/player/PermissionsHandler.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/DaylightCycle.h"
 #include "mc/world/level/GameType.h"
 #include "mc/world/level/GeneratorType.h"
 #include "mc/world/level/NetherWorldType.h"
+#include "mc/world/level/SpawnSettings.h"
+#include "mc/world/level/Tick.h"
 #include "mc/world/level/WorldVersion.h"
+#include "mc/world/level/storage/AdventureSettings.h"
+#include "mc/world/level/storage/CloudSaveLevelInfo.h"
+#include "mc/world/level/storage/ExperimentStorage.h"
+#include "mc/world/level/storage/GameRules.h"
 #include "mc/world/level/storage/StorageVersion.h"
+#include "mc/world/level/storage/WorldTemplateLevelData.h"
 
 // auto generated forward declare list
 // clang-format off
-class Abilities;
 class BaseGameVersion;
-class BlockPos;
-class CloudSaveLevelInfo;
 class CompoundTag;
-class EducationEditionOfferValue;
-class ExperimentStorage;
-class GameRules;
-class GameVersion;
 class HashedString;
 class ILevelStorageManagerConnector;
 class LevelSeed64;
 class LevelSettings;
-class PermissionsHandler;
-class SemVersion;
-class WorldTemplateLevelData;
-struct AdventureSettings;
 struct EduSharedUriResource;
 struct LevelDataValue;
-struct SpawnSettings;
-struct Tick;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
-namespace Json { class Value; }
 namespace RakNet { class BitStream; }
 // clang-format on
 
@@ -78,7 +78,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                    mPlayerHasDied;
     ::ll::TypedStorage<1, 1, bool>                                                    mSpawnMobs;
     ::ll::TypedStorage<1, 1, bool>                                                    mAdventureModeOverridesEnabled;
-    ::ll::TypedStorage<8, 16, ::Json::Value>                                          mFlatworldGeneratorOptions;
+    ::ll::TypedStorage<8, 16, ::Json::Value>                                          mFlatWorldOptions;
     ::ll::TypedStorage<4, 4, uint>                                                    mWorldStartCount;
     ::ll::TypedStorage<1, 1, bool>                                                    mAchievementsDisabled;
     ::ll::TypedStorage<4, 4, ::Editor::WorldType>                                     mEditorWorldType;
@@ -106,7 +106,8 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                    mIsRandomSeedAllowed;
     ::ll::TypedStorage<8, 32, ::std::string>                                          mEducationProductId;
     ::ll::TypedStorage<8, 32, ::std::string>                                          mEducationCreatorId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                          mEducationWorldId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                          mEducationCreatorWorldId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                          mEducationReferrerId;
     ::ll::TypedStorage<1, 1, bool>                                                    mUseMsaGamertagsOnly;
     ::ll::TypedStorage<1, 1, bool>                                                    mBonusChestEnabled;
     ::ll::TypedStorage<1, 1, bool>                                                    mBonusChestSpawned;
@@ -162,10 +163,6 @@ public:
 
     MCAPI void _updateLimitedWorldOrigin(::BlockPos const& pos);
 
-    MCAPI void changeGameDifficulty(::SharedTypes::Legacy::Difficulty newDifficulty);
-
-    MCAPI bool checkHasOptedOutOfServerAuth() const;
-
     MCAPI ::std::optional<::SemVersion> checkServerAuthOptOutVersion() const;
 
     MCAPI bool cloudSaveForWorldIsEnabled() const;
@@ -194,8 +191,6 @@ public:
 
     MCAPI ::WorldVersion getWorldVersion() const;
 
-    MCAPI bool isAlwaysDay() const;
-
     MCAPI void registerWithLevelStorageManagerEvents(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
     MCAPI void setDaylightCycle(::DaylightCycle daylightCycle);
@@ -206,13 +201,11 @@ public:
 
     MCAPI void setEducationOid(::std::string const& educationOid);
 
-    MCAPI void setFlatWorldGeneratorOptions(::Json::Value const& options);
+    MCAPI void setFlatWorldOptions(::Json::Value const& options);
 
     MCAPI void setGameType(::GameType type);
 
     MCAPI void setGenerator(::GeneratorType version);
-
-    MCAPI void setHasOptedOutOfServerAuth(bool optedOut);
 
     MCAPI void setIsHardcore(bool value);
 

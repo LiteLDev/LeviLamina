@@ -33,6 +33,7 @@ struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
 struct SpawnSettings;
 namespace br::spawn { class EntityTypeCache; }
+namespace br::spawn { class SpawnPlacements; }
 namespace br::spawn { struct State; }
 // clang-format on
 
@@ -124,29 +125,32 @@ public:
     spawnMobGroup(::BlockSource&, ::std::string const&, ::Vec3 const&, bool, bool, ::std::function<void(::Mob&)>&&) = 0;
 
     // vIndex: 17
+    virtual ::br::spawn::SpawnPlacements& getSpawnPlacements() = 0;
+
+    // vIndex: 18
     virtual ::std::tuple<::std::array<::SpawnCategory::Type, 8>, uint64>
     filteredSpawningCategories(::br::spawn::State const&, bool, bool, bool) const;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual void
     spawnForChunk(::BlockSource&, ::LevelChunkVolumeData const&, ::br::spawn::State&, ::gsl::span<::SpawnCategory::Type>, ::IRandom&)
         const;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual void spawnMobsForChunkGeneration(::BlockSource&, ::Biome const&, ::ChunkPos, ::IRandom&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool findNextSpawnBlockUnder(
+    MCNAPI static bool findNextSpawnBlockUnder(
         ::BlockSource const&            region,
         ::BlockPos&                     pos,
         ::std::optional<::MaterialType> materialToSpawnIn,
         ::SpawnBlockRequirements        spawnBlockRequirements
     );
 
-    MCAPI static bool isSpawnPositionOk(
+    MCNAPI static bool isSpawnPositionOk(
         ::MobSpawnRules const& rules,
         ::BlockSource&         region,
         ::BlockPos const&      pos,
@@ -157,13 +161,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Mob* $spawnMob(
+    MCNAPI ::Mob* $spawnMob(
         ::BlockSource&                     region,
         ::ActorDefinitionIdentifier const& id,
         ::Actor*                           spawner,
@@ -173,10 +177,10 @@ public:
         bool                               fromSpawner
     );
 
-    MCAPI ::ItemActor*
+    MCNAPI ::ItemActor*
     $spawnItem(::BlockSource& region, ::ItemStack const& inst, ::Actor* spawner, ::Vec3 const& pos, int throwTime);
 
-    MCAPI ::Actor* $spawnProjectile(
+    MCNAPI ::Actor* $spawnProjectile(
         ::BlockSource&                     region,
         ::ActorDefinitionIdentifier const& id,
         ::Actor*                           spawner,
@@ -184,19 +188,19 @@ public:
         ::Vec3 const&                      direction
     );
 
-    MCAPI ::std::tuple<::std::array<::SpawnCategory::Type, 8>, uint64>
+    MCNAPI ::std::tuple<::std::array<::SpawnCategory::Type, 8>, uint64>
     $filteredSpawningCategories(::br::spawn::State const&, bool, bool, bool) const;
 
-    MCFOLD void
+    MCNAPI void
     $spawnForChunk(::BlockSource&, ::LevelChunkVolumeData const&, ::br::spawn::State&, ::gsl::span<::SpawnCategory::Type>, ::IRandom&)
         const;
 
-    MCFOLD void $spawnMobsForChunkGeneration(::BlockSource&, ::Biome const&, ::ChunkPos, ::IRandom&) const;
+    MCNAPI void $spawnMobsForChunkGeneration(::BlockSource&, ::Biome const&, ::ChunkPos, ::IRandom&) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

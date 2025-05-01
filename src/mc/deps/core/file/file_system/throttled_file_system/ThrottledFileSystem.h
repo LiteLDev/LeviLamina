@@ -58,54 +58,54 @@ public:
     // vIndex: 9
     virtual ::Core::Result _deleteFile(::Core::PathView) /*override*/;
 
-    // vIndex: 10
+    // vIndex: 11
     virtual ::Core::Result _getFileSize(::Core::PathView, uint64*) /*override*/;
 
-    // vIndex: 11
+    // vIndex: 12
     virtual ::Core::Result _renameFile(::Core::PathView, ::Core::PathView) /*override*/;
 
-    // vIndex: 12
+    // vIndex: 13
     virtual ::Core::Result _createEmptyFile(::Core::PathView fileName) /*override*/;
 
-    // vIndex: 16
+    // vIndex: 17
     virtual ::Core::Result _createOneDirectory(::Core::PathView) /*override*/;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual ::Core::Result _createDirectoryRecursively(::Core::PathView directoryPath) /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual bool _directoryExists(::Core::PathView) /*override*/;
 
-    // vIndex: 20
+    // vIndex: 21
     virtual ::Core::Result _deleteEmptyDirectory(::Core::PathView) /*override*/;
 
-    // vIndex: 24
+    // vIndex: 25
     virtual ::Core::Result _renameDirectory(::Core::PathView, ::Core::PathView) /*override*/;
 
-    // vIndex: 25
+    // vIndex: 26
     virtual ::Core::Result
         _iterateOverDirectory(::Core::PathView, ::Core::DirectoryIterationFlags, ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>) /*override*/
         ;
 
-    // vIndex: 31
+    // vIndex: 32
     virtual bool _fileOrDirectoryExists(::Core::PathView) /*override*/;
 
-    // vIndex: 33
+    // vIndex: 34
     virtual ::Core::Result _getEntryType(::Core::PathView, ::Core::FileType&) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual ::Core::Result _getLastModificationTime(::Core::PathView, int64*) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 46
     virtual ::Core::Result _copyTimeAndAccessRights(::Core::PathView, ::Core::PathView) /*override*/;
 
-    // vIndex: 34
+    // vIndex: 35
     virtual ::Core::Result _addIgnoredThrottlePath(::Core::PathView) /*override*/;
 
-    // vIndex: 35
+    // vIndex: 36
     virtual ::Core::Result _removeIgnoredThrottlePath(::Core::PathView) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 47
     virtual ::Core::Result _endTransaction() /*override*/;
 
     // vIndex: 4
@@ -114,7 +114,10 @@ public:
     // vIndex: 5
     virtual ::Core::CrossStorageCopyMode getCrossStorageCopyMode() /*override*/;
 
-    // vIndex: 48
+    // vIndex: 10
+    virtual ::Core::Result _deleteFilePriority(::Core::PathView filePath) /*override*/;
+
+    // vIndex: 49
     virtual void _initializeInternal() /*override*/;
     // NOLINTEND
 

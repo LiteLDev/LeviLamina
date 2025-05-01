@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/NewBlockID.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/projectile/PredictableProjectile.h"
 
@@ -15,9 +17,7 @@ class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
 class ITickDelegate;
-class Vec3;
 struct ActorDefinitionIdentifier;
-struct NewBlockID;
 struct VariantParameterList;
 // clang-format on
 
@@ -92,27 +92,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FallingBlockActor(
+    MCNAPI FallingBlockActor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _waitRemoval();
+    MCNAPI void _waitRemoval();
 
-    MCAPI void breakBlock();
+    MCNAPI void breakBlock();
 
-    MCAPI void doNormalTick(::ITickDelegate& tickDelegate);
+    MCNAPI void doNormalTick(::ITickDelegate& tickDelegate);
 
-    MCAPI ::Block const& getFallingBlock() const;
+    MCNAPI ::Block const& getFallingBlock() const;
 
-    MCAPI void setFallingBlock(::Block const& block, bool creative);
+    MCNAPI void setFallingBlock(::Block const& block, bool creative);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -128,31 +128,31 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $normalTick();
+    MCNAPI void $normalTick();
 
-    MCFOLD float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
 
-    MCAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
+    MCNAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
 
-    MCFOLD void
+    MCNAPI void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
-    MCAPI bool $canChangeDimensionsUsingPortal() const;
+    MCNAPI bool $canChangeDimensionsUsingPortal() const;
 
-    MCAPI void $onSynchedDataUpdate(int dataId);
+    MCNAPI void $onSynchedDataUpdate(int dataId);
 
-    MCFOLD bool $_hurt(::ActorDamageSource const&, float, bool, bool);
+    MCNAPI bool $_hurt(::ActorDamageSource const&, float, bool, bool);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

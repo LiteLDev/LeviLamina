@@ -13,23 +13,23 @@ class Bye {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Bye();
+    MCNAPI Bye();
 
-    MCAPI bool Parse(::webrtc::rtcp::CommonHeader const&);
+    MCNAPI bool Parse(::webrtc::rtcp::CommonHeader const&);
 
-    MCAPI bool SetCsrcs(::std::vector<uint>);
+    MCNAPI bool SetCsrcs(::std::vector<uint>);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

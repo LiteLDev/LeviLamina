@@ -12,21 +12,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SsrcInfo(::webrtc::SsrcInfo const&);
+    MCNAPI SsrcInfo(::webrtc::SsrcInfo const&);
 
-    MCAPI ~SsrcInfo();
+    MCNAPI ~SsrcInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::SsrcInfo const&);
+    MCNAPI void* $ctor(::webrtc::SsrcInfo const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

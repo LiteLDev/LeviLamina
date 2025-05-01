@@ -7,9 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorSoundIdentifier;
 class Level;
 class Vec3;
-struct ActorDefinitionIdentifier;
 // clang-format on
 
 class DanceComponentListener {
@@ -33,15 +33,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onLevelSoundEvent(
+    MCNAPI void _onLevelSoundEvent(
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
-        int                                    data,
-        ::ActorDefinitionIdentifier const&     entityType,
-        bool                                   isBabyMob,
-        bool                                   isGlobal
+        int,
+        ::ActorSoundIdentifier const&,
+        bool
     );
 
-    MCAPI void setLevel(::Level& level);
+    MCNAPI void setLevel(::Level& level);
     // NOLINTEND
 };

@@ -10,9 +10,9 @@ class LevelSoundEventMap {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SharedTypes::Legacy::LevelSoundEvent getId(::std::string const& type);
+    MCNAPI static ::SharedTypes::Legacy::LevelSoundEvent getId(::std::string const& type);
 
-    MCAPI static ::std::string const& getName(::SharedTypes::Legacy::LevelSoundEvent type);
+    MCNAPI static ::std::string const& getName(::SharedTypes::Legacy::LevelSoundEvent type);
     // NOLINTEND
 
 public:

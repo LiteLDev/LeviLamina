@@ -18,15 +18,16 @@ class JsepSessionDescription {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool GetMediasectionIndex(::webrtc::IceCandidateInterface const*, uint64*);
+    MCNAPI bool GetMediasectionIndex(::webrtc::IceCandidateInterface const*, uint64*);
 
-    MCAPI int GetMediasectionIndex(::cricket::Candidate const&);
+    MCNAPI int GetMediasectionIndex(::cricket::Candidate const&);
 
-    MCAPI bool Initialize(::std::unique_ptr<::cricket::SessionDescription>, ::std::string const&, ::std::string const&);
+    MCNAPI bool
+    Initialize(::std::unique_ptr<::cricket::SessionDescription>, ::std::string const&, ::std::string const&);
 
-    MCAPI explicit JsepSessionDescription(::webrtc::SdpType);
+    MCNAPI explicit JsepSessionDescription(::webrtc::SdpType);
 
-    MCAPI JsepSessionDescription(
+    MCNAPI JsepSessionDescription(
         ::webrtc::SdpType,
         ::std::unique_ptr<::cricket::SessionDescription>,
         ::std::string_view,
@@ -37,9 +38,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::SdpType);
+    MCNAPI void* $ctor(::webrtc::SdpType);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::webrtc::SdpType,
         ::std::unique_ptr<::cricket::SessionDescription>,
         ::std::string_view,
@@ -50,7 +51,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

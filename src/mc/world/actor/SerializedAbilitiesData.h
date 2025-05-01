@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/PlayerPermissionLevel.h"
 
 // auto generated forward declare list
 // clang-format off
 class LayeredAbilities;
-struct ActorUniqueID;
 // clang-format on
 
 struct SerializedAbilitiesData {
@@ -87,6 +87,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

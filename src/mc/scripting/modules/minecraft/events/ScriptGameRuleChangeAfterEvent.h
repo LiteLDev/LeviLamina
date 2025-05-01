@@ -25,7 +25,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptGameRuleChangeAfterEvent>
+    MCNAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptGameRuleChangeAfterEvent>
     bind();
     // NOLINTEND
 };

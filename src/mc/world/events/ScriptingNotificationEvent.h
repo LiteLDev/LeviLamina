@@ -21,12 +21,12 @@ struct ScriptingNotificationEvent : public ::EventVariantImpl<
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptingNotificationEvent();
+    MCNAPI ~ScriptingNotificationEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

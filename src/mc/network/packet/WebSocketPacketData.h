@@ -20,6 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

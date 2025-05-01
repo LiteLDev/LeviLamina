@@ -45,56 +45,56 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Interaction();
+    MCNAPI Interaction();
 
-    MCAPI Interaction(::Interaction const&);
+    MCNAPI Interaction(::Interaction const&);
 
-    MCAPI Interaction(::Interaction&&);
+    MCNAPI Interaction(::Interaction&&);
 
-    MCAPI void addActorDefinitionIdentifierByName(::std::string const& name);
+    MCNAPI void addActorDefinitionIdentifierByName(::std::string const& name);
 
-    MCAPI void addLevelSoundEventByName(::std::string const& name);
+    MCNAPI void addLevelSoundEventByName(::std::string const& name);
 
-    MCAPI void setCooldown(float const& seconds);
+    MCNAPI void setCooldown(float const& seconds);
 
-    MCAPI void setCooldownAfterBeingAttacked(float const& seconds);
+    MCNAPI void setCooldownAfterBeingAttacked(float const& seconds);
 
-    MCAPI void setDropItemSlot(::std::string const& slot);
+    MCNAPI void setDropItemSlot(::std::string const& slot);
 
-    MCAPI void setEquipItemSlot(::std::string const& slot);
+    MCNAPI void setEquipItemSlot(::std::string const& slot);
 
-    MCAPI void setParticleType(::std::string const& name);
+    MCNAPI void setParticleType(::std::string const& name);
 
-    MCAPI void setRepairItemAmount(int const& amount);
+    MCNAPI void setRepairItemAmount(int const& amount);
 
-    MCAPI void setRepairItemSlot(::std::string const& slot);
+    MCNAPI void setRepairItemSlot(::std::string const& slot);
 
-    MCAPI void setTransformItem(::std::string const& name);
+    MCNAPI void setTransformItem(::std::string const& name);
 
-    MCAPI void setVibrationByName(::std::string const& name);
+    MCNAPI void setVibrationByName(::std::string const& name);
 
-    MCAPI ~Interaction();
+    MCNAPI ~Interaction();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::ItemSlotInfo> _tryConvertStringToItemSlotInfo(::std::string const& string);
+    MCNAPI static ::std::optional<::ItemSlotInfo> _tryConvertStringToItemSlotInfo(::std::string const& string);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::Interaction const&);
+    MCNAPI void* $ctor(::Interaction const&);
 
-    MCAPI void* $ctor(::Interaction&&);
+    MCNAPI void* $ctor(::Interaction&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

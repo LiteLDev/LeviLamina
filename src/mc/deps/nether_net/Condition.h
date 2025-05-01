@@ -20,7 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool StateDispatch(::std::unique_lock<::std::mutex>&& lock) const;
+    MCNAPI bool StateDispatch(::std::unique_lock<::std::mutex>&& lock) const;
     // NOLINTEND
 };
 

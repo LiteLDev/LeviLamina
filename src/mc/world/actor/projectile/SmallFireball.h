@@ -30,12 +30,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $_hurt(::ActorDamageSource const&, float, bool, bool);
+    MCNAPI bool $_hurt(::ActorDamageSource const&, float, bool, bool);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

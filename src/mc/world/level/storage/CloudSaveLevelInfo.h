@@ -27,30 +27,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CloudSaveLevelInfo(::CloudSaveLevelInfo&&);
+    MCNAPI CloudSaveLevelInfo(::CloudSaveLevelInfo&&);
 
-    MCAPI explicit CloudSaveLevelInfo(::CompoundTag const& tag);
+    MCNAPI explicit CloudSaveLevelInfo(::CompoundTag const& tag);
 
-    MCAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo const&);
+    MCNAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo const&);
 
-    MCAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo&&);
+    MCNAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo&&);
 
-    MCAPI void serialize(::CompoundTag& tag) const;
+    MCNAPI void serialize(::CompoundTag& tag) const;
 
-    MCAPI ~CloudSaveLevelInfo();
+    MCNAPI ~CloudSaveLevelInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CloudSaveLevelInfo&&);
+    MCNAPI void* $ctor(::CloudSaveLevelInfo&&);
 
-    MCAPI void* $ctor(::CompoundTag const& tag);
+    MCNAPI void* $ctor(::CompoundTag const& tag);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

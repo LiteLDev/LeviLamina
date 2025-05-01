@@ -9,13 +9,13 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/typeid_t.h"
 #include "mc/diagnostics/LogAreaID.h"
+#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
 class ContentLogEndPoint;
 class ContextMessageLogger;
 namespace Bedrock { class StaticOptimizedString; }
-namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class ContentLog : public ::Bedrock::EnableNonOwnerReferences, public ::DisableServiceLocatorOverride {
@@ -54,21 +54,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit ContentLogScope(::Bedrock::StaticOptimizedString scope);
+        MCNAPI explicit ContentLogScope(::Bedrock::StaticOptimizedString scope);
 
-        MCAPI ~ContentLogScope();
+        MCNAPI ~ContentLogScope();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::Bedrock::StaticOptimizedString scope);
+        MCNAPI void* $ctor(::Bedrock::StaticOptimizedString scope);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -136,42 +136,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContentLog();
+    MCNAPI ContentLog();
 
-    MCAPI void _writeToLog(bool logOnlyOnce, ::LogArea area, ::LogLevel level, char*& args);
+    MCNAPI void _writeToLog(bool logOnlyOnce, ::LogArea area, ::LogLevel level, char*& args);
 
-    MCAPI ::std::string getScope();
+    MCNAPI ::std::string getScope();
 
-    MCAPI void log(bool, ::LogLevel, ::LogArea, ...);
+    MCNAPI void log(bool, ::LogLevel, ::LogArea, ...);
 
-    MCAPI void unregisterEndPoint(::gsl::not_null<::ContentLogEndPoint*> endPoint);
+    MCNAPI void unregisterEndPoint(::gsl::not_null<::ContentLogEndPoint*> endPoint);
 
-    MCAPI void updateEnabledStatus();
+    MCNAPI void updateEnabledStatus();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::LogAreaID const getBedrockLogAreaFromContentLogArea(::LogArea contentLogArea);
+    MCNAPI static ::LogAreaID const getBedrockLogAreaFromContentLogArea(::LogArea contentLogArea);
 
-    MCAPI static char const* getLogAreaName(::LogArea area);
+    MCNAPI static char const* getLogAreaName(::LogArea area);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

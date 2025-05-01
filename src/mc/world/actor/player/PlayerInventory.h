@@ -6,13 +6,13 @@
 #include "mc/world/ContainerContentChangeListener.h"
 #include "mc/world/ContainerID.h"
 #include "mc/world/ContainerSizeChangeListener.h"
+#include "mc/world/item/ItemStack.h"
 
 // auto generated forward declare list
 // clang-format off
 class Container;
 class HudContainerManagerModel;
 class Inventory;
-class ItemStack;
 // clang-format on
 
 class PlayerInventory : public ::ContainerSizeChangeListener, public ::ContainerContentChangeListener {
@@ -49,33 +49,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlayerInventory(::std::unique_ptr<::Inventory> inv);
+    MCNAPI explicit PlayerInventory(::std::unique_ptr<::Inventory> inv);
 
-    MCAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
+    MCNAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
 
-    MCAPI bool removeResource(int type);
+    MCNAPI void init(::std::weak_ptr<::HudContainerManagerModel> hud);
+
+    MCNAPI bool removeResource(int type);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::Inventory> inv);
+    MCNAPI void* $ctor(::std::unique_ptr<::Inventory> inv);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $containerSizeChanged(int size);
+    MCNAPI void $containerSizeChanged(int size);
 
-    MCAPI void $containerContentChanged(int slot);
+    MCNAPI void $containerContentChanged(int slot);
 
-    MCAPI void $createTransactionContext(
+    MCNAPI void $createTransactionContext(
         ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
         ::std::function<void()>                                                          execute
     );
@@ -84,8 +86,8 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForContainerSizeChangeListener();
+    MCNAPI static void** $vftableForContainerSizeChangeListener();
 
-    MCAPI static void** $vftableForContainerContentChangeListener();
+    MCNAPI static void** $vftableForContainerContentChangeListener();
     // NOLINTEND
 };

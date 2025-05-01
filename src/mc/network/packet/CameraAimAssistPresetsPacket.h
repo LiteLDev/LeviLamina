@@ -38,7 +38,7 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 5
-    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream) /*override*/;
+    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 8
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
@@ -50,7 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CameraAimAssistPresetsPacket(
+    MCNAPI CameraAimAssistPresetsPacket(
         ::CameraAimAssistPresetsPacketOperation                                   presets,
         ::std::vector<::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition>   categories,
         ::std::vector<::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition> operation
@@ -60,7 +60,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::CameraAimAssistPresetsPacketOperation                                   presets,
         ::std::vector<::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition>   categories,
         ::std::vector<::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition> operation
@@ -70,26 +70,26 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::MinecraftPacketIds $getId() const;
+    MCNAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCAPI void $write(::BinaryStream& stream) const;
+    MCNAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& bitStream);
+    MCNAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
 
-    MCFOLD ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

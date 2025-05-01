@@ -15,27 +15,27 @@ struct RttBasedBackoff {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::TimeDelta CorrectedRtt() const;
+    MCNAPI ::webrtc::TimeDelta CorrectedRtt() const;
 
-    MCAPI bool IsRttAboveLimit() const;
+    MCNAPI bool IsRttAboveLimit() const;
 
-    MCAPI explicit RttBasedBackoff(::webrtc::FieldTrialsView const*);
+    MCNAPI explicit RttBasedBackoff(::webrtc::FieldTrialsView const*);
 
-    MCAPI void UpdatePropagationRtt(::webrtc::Timestamp, ::webrtc::TimeDelta);
+    MCNAPI void UpdatePropagationRtt(::webrtc::Timestamp, ::webrtc::TimeDelta);
 
-    MCAPI ~RttBasedBackoff();
+    MCNAPI ~RttBasedBackoff();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const*);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

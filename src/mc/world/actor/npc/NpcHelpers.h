@@ -11,7 +11,7 @@ struct NpcDialogueScene;
 namespace NpcHelpers {
 // functions
 // NOLINTBEGIN
-MCAPI ::NpcDialogueScene* tryGetScene(::WeakEntityRef const& entityRef, ::std::string const& scene);
+MCNAPI ::NpcDialogueScene* tryGetScene(::WeakEntityRef const& entityRef, ::std::string const& scene);
 // NOLINTEND
 
 } // namespace NpcHelpers

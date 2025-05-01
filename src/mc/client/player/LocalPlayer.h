@@ -3,24 +3,35 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/oreui/routing/routes/GameplayRouteHandler.h"
+#include "mc/common/Brightness.h"
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
 #include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
 #include "mc/network/packet/PlayerRespawnState.h"
+#include "mc/platform/UUID.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/actor/ActorResetRule.h"
 #include "mc/world/actor/player/BedSleepingResult.h"
 #include "mc/world/actor/player/Player.h"
+#include "mc/world/inventory/InventoryMenu.h"
+#include "mc/world/item/ItemStack.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/GameType.h"
+#include "mc/world/level/chunk/NetworkChunkSubscriber.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class ActorDamageSource;
 class BlockActor;
-class BlockPos;
 class ChalkboardBlockActor;
 class ChangeDimensionPacket;
 class ChunkPos;
@@ -32,32 +43,23 @@ class DataLoadHelper;
 class Dimension;
 class EntityContext;
 class FrameUpdateContextBase;
-class HashedString;
 class IClientInstance;
 class IContainerManager;
 class IMinecraftEventing;
-class InventoryMenu;
 class InventoryTransaction;
-class ItemStack;
 class LayeredAbilities;
 class MobEffectInstance;
-class NetworkChunkSubscriber;
 class Packet;
 class PlayerAutomationObserver;
 class PlayerEventCoordinator;
 class SubChunkPos;
 class SubChunkRequestSubscriber;
 class TextObjectRoot;
-class Vec2;
-class Vec3;
 struct ActorUniqueID;
-struct Brightness;
 struct INpcDialogueData;
 struct Tick;
 namespace Editor { class IEditorPlayer; }
 namespace MovementDataExtractionUtility { class SnapshotAccessor; }
-namespace OreUI { class GameplayRouteHandler; }
-namespace mce { class UUID; }
 // clang-format on
 
 class LocalPlayer : public ::Player {
@@ -155,6 +157,7 @@ public:
     ::ll::TypedStorage<4, 20, ::LocalPlayer::UndergroundTelemetryHeuristic> mUndergroundTelemetryHeuristic;
     ::ll::TypedStorage<4, 12, ::LocalPlayer::FellFromWorldHeightAchievementTracker>
                                                                              mFellFromWorldHeightAchievementTracker;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>               mLowMemorySubscription;
     ::ll::TypedStorage<8, 8, ::IClientInstance&>                             mClient;
     ::ll::TypedStorage<4, 4, int>                                            mCanCloseScreenOnHurtAfterTime;
     ::ll::TypedStorage<4, 12, ::Vec3>                                        mlastFrameDelta;
@@ -187,6 +190,7 @@ public:
     ::ll::TypedStorage<1, 1, ::PlayerRespawnState>                           mClientRespawnState;
     ::ll::TypedStorage<4, 12, ::Vec3>                                        mClientRespawnPotentialPosition;
     ::ll::TypedStorage<4, 4, int>                                            mResetHMDAfterSleepTickDelay;
+    ::ll::TypedStorage<4, 4, int>                                            mRenderChunkRadiusLowMemoryWatermark;
     ::ll::TypedStorage<8, 32, ::std::string>                                 mLastDeathInfo;
     ::ll::TypedStorage<8, 112, ::OreUI::GameplayRouteHandler>                mGameplayRouteHandler;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Editor::IEditorPlayer>>     mEditorClientPlayer;
@@ -325,7 +329,7 @@ public:
     virtual void resetRot() /*override*/;
 
     // vIndex: 9
-    virtual void resetUserPos(bool) /*override*/;
+    virtual void resetUserPos(::ActorResetRule) /*override*/;
 
     // vIndex: 21
     virtual void teleportTo(::Vec3 const&, bool, int, int, bool) /*override*/;

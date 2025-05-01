@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/ContainerID.h"
 
 // auto generated forward declare list
@@ -15,8 +16,8 @@ class DataLoadHelper;
 class MerchantRecipeList;
 class Player;
 class UpdateTradePacket;
-struct ActorUniqueID;
 struct IntRange;
+struct Trade;
 struct TradeTable;
 // clang-format on
 
@@ -39,7 +40,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _calculateDemandPrices(
+    MCNAPI void _calculateDemandPrices(
         int               lowTierDiscount,
         int               highTierDiscount,
         int               nearbyCuredDiscount,
@@ -48,50 +49,52 @@ public:
         ::BaseGameVersion baseGameVersion
     );
 
-    MCAPI bool _generateTrades();
+    MCNAPI bool _generateTrades();
 
-    MCAPI ::TradeTable* _getTradeTable();
+    MCNAPI ::TradeTable* _getTradeTable();
 
-    MCAPI uint _getTradeTierFromCurrentExp() const;
+    MCNAPI uint _getTradeTierFromCurrentExp() const;
 
-    MCAPI void _setMaxTradeTier(int tradeTier);
+    MCNAPI void _rearrangeTradeList(::std::vector<::Trade>& tradeList, uint64 sampleCount);
 
-    MCAPI void _setTradeTier(int tradeTier);
+    MCNAPI void _setMaxTradeTier(int tradeTier);
 
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void _setTradeTier(int tradeTier);
 
-    MCAPI ::UpdateTradePacket createDataPacket(::ContainerID containerID);
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void fixVillagerTierToMatchTradeList(::MerchantRecipeList* oldOffers);
+    MCNAPI ::UpdateTradePacket createDataPacket(::ContainerID containerID);
 
-    MCAPI ::IntRange getCurrentCuredDiscount() const;
+    MCNAPI void fixVillagerTierToMatchTradeList(::MerchantRecipeList* oldOffers);
 
-    MCAPI int getCurrentNearbyCuredDiscount() const;
+    MCNAPI ::IntRange getCurrentCuredDiscount() const;
 
-    MCAPI bool getInteraction(::Player& player, ::ActorInteraction& interaction);
+    MCNAPI int getCurrentNearbyCuredDiscount() const;
 
-    MCAPI ::MerchantRecipeList* getOffers();
+    MCNAPI bool getInteraction(::Player& player, ::ActorInteraction& interaction);
 
-    MCAPI uint getTradeTier() const;
+    MCNAPI ::MerchantRecipeList* getOffers();
 
-    MCAPI void loadOffersFromTag(::CompoundTag const* tag);
+    MCNAPI uint getTradeTier() const;
 
-    MCAPI void matchExpAndTier();
+    MCNAPI void loadOffersFromTag(::CompoundTag const* tag);
 
-    MCAPI void newServerAiStep();
+    MCNAPI void matchExpAndTier();
 
-    MCAPI void notifyTrade(int recipeIndex, int numTrades);
+    MCNAPI void newServerAiStep();
 
-    MCAPI void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void notifyTrade(int recipeIndex, int numTrades);
 
-    MCAPI void setCurrentTradeExp(int currentTradeExp);
+    MCNAPI void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void setNearbyCuredDiscount(int discount);
+    MCNAPI void setCurrentTradeExp(int currentTradeExp);
 
-    MCAPI void tryIncrementCuredDiscount();
+    MCNAPI void setNearbyCuredDiscount(int discount);
 
-    MCAPI void tryIncrementNearbyCuredDiscount();
+    MCNAPI void tryIncrementCuredDiscount();
 
-    MCAPI void tryToTransferOldOffers(::MerchantRecipeList* oldOffers);
+    MCNAPI void tryIncrementNearbyCuredDiscount();
+
+    MCNAPI void tryToTransferOldOffers(::MerchantRecipeList* oldOffers);
     // NOLINTEND
 };

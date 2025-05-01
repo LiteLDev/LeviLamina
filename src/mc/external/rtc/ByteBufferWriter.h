@@ -12,25 +12,25 @@ class ByteBufferWriter : public ::rtc::ByteBufferWriterT<::rtc::BufferT<uchar, 0
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ByteBufferWriter();
+    MCNAPI ByteBufferWriter();
 
-    MCAPI ByteBufferWriter(uchar const*, uint64);
+    MCNAPI ByteBufferWriter(uchar const*, uint64);
 
-    MCAPI ~ByteBufferWriter();
+    MCNAPI ~ByteBufferWriter();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(uchar const*, uint64);
+    MCNAPI void* $ctor(uchar const*, uint64);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

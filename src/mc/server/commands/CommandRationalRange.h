@@ -35,16 +35,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandRationalRange();
+    MCNAPI CommandRationalRange();
 
-    MCAPI ::CommandRationalRange changeToValueType(::CommandRationalRange::ValueType const& valueType);
+    MCNAPI ::CommandRationalRange changeToValueType(::CommandRationalRange::ValueType const& valueType);
 
-    MCAPI void setInvert(bool val);
+    MCNAPI void setInvert(bool val);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

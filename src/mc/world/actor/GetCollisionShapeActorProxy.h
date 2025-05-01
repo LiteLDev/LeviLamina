@@ -70,30 +70,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getFeetAttachPosY() const;
+    MCNAPI float $getFeetAttachPosY() const;
 
-    MCAPI bool $canDescendThroughBlock() const;
+    MCNAPI bool $canDescendThroughBlock() const;
 
-    MCAPI float $getFallDistance() const;
+    MCNAPI float $getFallDistance() const;
 
-    MCAPI ::ActorType $getEntityTypeId() const;
+    MCNAPI ::ActorType $getEntityTypeId() const;
 
-    MCAPI bool $isWearingLeatherBoots() const;
+    MCNAPI bool $isWearingLeatherBoots() const;
 
-    MCAPI bool $hasLightWeightFamilyTag() const;
+    MCNAPI bool $hasLightWeightFamilyTag() const;
 
-    MCAPI bool $isWorldBuilder() const;
+    MCNAPI bool $isWorldBuilder() const;
 
-    MCAPI ::AABB const& $getAABB() const;
+    MCNAPI ::AABB const& $getAABB() const;
 
-    MCAPI bool $isRiding() const;
+    MCNAPI bool $isRiding() const;
 
-    MCAPI bool $hasPassenger() const;
+    MCNAPI bool $hasPassenger() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

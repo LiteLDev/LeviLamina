@@ -3,34 +3,34 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/core/resource/ContentIdentity.h"
+#include "mc/legacy/ActorRuntimeID.h"
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/nbt/CompoundTag.h"
 #include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/NetworkPermissions.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/platform/UUID.h"
+#include "mc/world/actor/player/SyncedPlayerMovementSettings.h"
 #include "mc/world/level/GameType.h"
+#include "mc/world/level/LevelSettings.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActorRuntimeID;
 class BinaryStream;
 class BlockDefinitionGroup;
-class CompoundTag;
-class ContentIdentity;
-class LevelSettings;
 class ReadOnlyBinaryStream;
-class Vec2;
-class Vec3;
-struct ActorUniqueID;
-struct NetworkPermissions;
 struct PlayerMovementSettings;
-struct SyncedPlayerMovementSettings;
-namespace mce { class UUID; }
 // clang-format on
 
 class StartGamePacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1352, ::LevelSettings>              mSettings;
+    ::ll::TypedStorage<8, 1384, ::LevelSettings>              mSettings;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                 mEntityId;
     ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                mRuntimeId;
     ::ll::TypedStorage<4, 4, ::GameType>                      mEntityGameType;
@@ -77,9 +77,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StartGamePacket();
+    MCNAPI StartGamePacket();
 
-    MCAPI StartGamePacket(
+    MCNAPI StartGamePacket(
         ::LevelSettings const&          settings,
         ::ActorUniqueID                 entityId,
         ::ActorRuntimeID                runtimeId,
@@ -106,9 +106,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::LevelSettings const&          settings,
         ::ActorUniqueID                 entityId,
         ::ActorRuntimeID                runtimeId,
@@ -135,24 +135,24 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::MinecraftPacketIds $getId() const;
+    MCNAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCAPI void $write(::BinaryStream& stream) const;
+    MCNAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

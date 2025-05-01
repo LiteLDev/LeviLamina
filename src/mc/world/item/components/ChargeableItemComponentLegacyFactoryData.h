@@ -36,32 +36,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ChargeableItemComponentLegacyFactoryData& operator=(::ChargeableItemComponentLegacyFactoryData const&);
+    MCNAPI ::ChargeableItemComponentLegacyFactoryData& operator=(::ChargeableItemComponentLegacyFactoryData const&);
 
-    MCAPI ::ChargeableItemComponentLegacyFactoryData& operator=(::ChargeableItemComponentLegacyFactoryData&&);
+    MCNAPI ::ChargeableItemComponentLegacyFactoryData& operator=(::ChargeableItemComponentLegacyFactoryData&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

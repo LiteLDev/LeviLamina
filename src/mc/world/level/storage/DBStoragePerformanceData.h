@@ -58,7 +58,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void reset();
+        MCNAPI void reset();
         // NOLINTEND
     };
 
@@ -99,7 +99,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void resetAll();
+    MCNAPI void resetAll();
     // NOLINTEND
 
 public:

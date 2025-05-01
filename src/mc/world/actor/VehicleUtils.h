@@ -36,22 +36,22 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<float>
+    MCNAPI static ::std::optional<float>
     calculateBlockFloorHeight(::IConstBlockSource const& region, ::BlockPos const& blockPos);
 
-    MCAPI static bool ignoredExitCollisionBlock(::Block const& block);
+    MCNAPI static bool ignoredExitCollisionBlock(::Block const& block);
 
-    MCAPI static ::std::optional<::Vec3> testPosFollowingEjectPattern(
+    MCNAPI static ::std::optional<::Vec3> testPosFollowingEjectPattern(
         ::VehicleUtils::VehicleDirections const&            vehicleDirections,
         ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback
     );
 
-    MCAPI static ::std::optional<::Vec3> testPosFollowingLegacyActivatorRailPattern(
+    MCNAPI static ::std::optional<::Vec3> testPosFollowingLegacyActivatorRailPattern(
         ::VehicleUtils::VehicleDirections const&            vehicleDirections,
         ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback
     );
 
-    MCAPI static ::std::optional<::Vec3> testPosFollowingLegacyActorPattern(
+    MCNAPI static ::std::optional<::Vec3> testPosFollowingLegacyActorPattern(
         ::VehicleUtils::VehicleDirections const&            vehicleDirections,
         ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback
     );

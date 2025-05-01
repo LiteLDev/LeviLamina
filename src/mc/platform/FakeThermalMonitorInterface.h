@@ -32,16 +32,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ThermalState $getThermalState() const;
+    MCNAPI ::ThermalState $getThermalState() const;
 
-    MCFOLD float $getThermalValueCelsius() const;
+    MCNAPI float $getThermalValueCelsius() const;
 
-    MCFOLD bool $isLowBatteryModeEnabled() const;
+    MCNAPI bool $isLowBatteryModeEnabled() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

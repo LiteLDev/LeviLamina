@@ -23,7 +23,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptProjectileShootOptions> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptProjectileShootOptions> bind();
     // NOLINTEND
 };
 

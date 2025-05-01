@@ -41,22 +41,22 @@ public:
     // vIndex: 126
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
-    // vIndex: 149
+    // vIndex: 147
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 146
     virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const /*override*/;
 
     // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 150
+    // vIndex: 148
     virtual int _getNumCandles(::Block const&) const;
 
-    // vIndex: 151
+    // vIndex: 149
     virtual void _iterateCandles(::Block const&, ::BlockPos const&, ::std::function<void(::Vec3 const&, int)>) const;
 
-    // vIndex: 152
+    // vIndex: 150
     virtual void _tryLightOnFire(::BlockSource&, ::BlockPos const&, ::Actor*) const;
 
     // vIndex: 0
@@ -66,14 +66,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addExtinguishEffects(::Block const& region, ::BlockSource& pos, ::BlockPos const&) const;
+    MCNAPI void _addExtinguishEffects(::Block const& region, ::BlockSource& pos, ::BlockPos const&) const;
 
-    MCAPI void _checkForWaterlogging(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void _checkForWaterlogging(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void
+    MCNAPI void
     _extinguish(::Actor* extinguisher, ::Block const& block, ::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -85,22 +85,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $hasVariableLighting() const;
+    MCNAPI bool $hasVariableLighting() const;
 
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCFOLD bool $isLavaBlocking() const;
+    MCNAPI bool $isLavaBlocking() const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCAPI ::Brightness $getLightEmission(::Block const& block) const;
+    MCNAPI ::Brightness $getLightEmission(::Block const& block) const;
 
-    MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
+    MCNAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
-    MCAPI void $_onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const;
     // NOLINTEND
 };

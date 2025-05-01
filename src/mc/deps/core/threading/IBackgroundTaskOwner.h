@@ -5,13 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/core/threading/IAsyncResult.h"
 #include "mc/deps/core/threading/TaskGroupState.h"
-#include "mc/deps/core/threading/TaskStartInfoEx.h"
 #include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
 class BackgroundTaskBase;
 class TaskResult;
+struct TaskStartInfo;
 // clang-format on
 
 class IBackgroundTaskOwner {
@@ -23,11 +23,11 @@ public:
 
     // vIndex: 1
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-    queue(::TaskStartInfoEx<void> const&, ::brstd::move_only_function<::TaskResult()>&&, ::std::function<void()>&&) = 0;
+    queue_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&, ::std::function<void()>&&) = 0;
 
     // vIndex: 2
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-    queueSync(::TaskStartInfoEx<void> const&, ::brstd::move_only_function<::TaskResult()>&&) = 0;
+    queueSync_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&) = 0;
 
     // vIndex: 3
     virtual void taskRegister(::std::shared_ptr<::BackgroundTaskBase>) = 0;

@@ -34,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeInit(
+    MCNAPI BiomeInit(
         ::BiomeRegistry const& registry,
         ::Biome const&         defaultOceanBiome,
         ::Biome const&         fallbackBiome,
@@ -45,7 +45,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::BiomeRegistry const& registry,
         ::Biome const&         defaultOceanBiome,
         ::Biome const&         fallbackBiome,

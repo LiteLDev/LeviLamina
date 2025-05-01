@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
@@ -10,7 +11,6 @@
 class AttributeInstance;
 class AttributeModifier;
 class BinaryStream;
-class HashedString;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -35,28 +35,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AttributeData(::AttributeData const&);
+    MCNAPI AttributeData(::AttributeData const&);
 
-    MCAPI explicit AttributeData(::AttributeInstance const& instance);
+    MCNAPI explicit AttributeData(::AttributeInstance const& instance);
 
-    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI void write(::BinaryStream& stream) const;
+    MCNAPI void write(::BinaryStream& stream) const;
 
-    MCAPI ~AttributeData();
+    MCNAPI ~AttributeData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AttributeData const&);
+    MCNAPI void* $ctor(::AttributeData const&);
 
-    MCAPI void* $ctor(::AttributeInstance const& instance);
+    MCNAPI void* $ctor(::AttributeInstance const& instance);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

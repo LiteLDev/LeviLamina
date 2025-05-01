@@ -20,19 +20,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions&
+    MCNAPI ::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions&
     operator=(::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions const&);
 
-    MCAPI ::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions&
+    MCNAPI ::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions&
     operator=(::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions&&);
 
-    MCAPI ~AutomaticFeatureRuleConditions();
+    MCNAPI ~AutomaticFeatureRuleConditions();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

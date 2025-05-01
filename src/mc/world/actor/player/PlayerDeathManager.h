@@ -40,24 +40,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void playerDied(::Player& player, ::ActorDamageSource const& source);
+    MCNAPI void playerDied(::Player& player, ::ActorDamageSource const& source);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Bedrock::PubSub::Connector<void(::Player&)>& $getOnPlayerDeathConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::Player&)>& $getOnPlayerDeathConnector();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -23,24 +23,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ScriptModuleServerAdmin::ScriptSecretString& operator=(::ScriptModuleServerAdmin::ScriptSecretString&&);
+    MCNAPI ::ScriptModuleServerAdmin::ScriptSecretString& operator=(::ScriptModuleServerAdmin::ScriptSecretString&&);
 
-    MCAPI ::ScriptModuleServerAdmin::ScriptSecretString&
+    MCNAPI ::ScriptModuleServerAdmin::ScriptSecretString&
     operator=(::ScriptModuleServerAdmin::ScriptSecretString const&);
 
-    MCAPI ~ScriptSecretString();
+    MCNAPI ~ScriptSecretString();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleServerAdmin::ScriptSecretString> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleServerAdmin::ScriptSecretString> bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

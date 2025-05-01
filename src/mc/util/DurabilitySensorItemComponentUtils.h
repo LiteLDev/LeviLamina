@@ -11,7 +11,7 @@ class ItemStackBase;
 namespace DurabilitySensorItemComponentUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void onHurtAndBreak(::ItemStackBase const& item, ::Actor& owner, int oldDamage, int newDamage);
+MCNAPI void onHurtAndBreak(::ItemStackBase const& item, ::Actor& owner, int oldDamage, int newDamage);
 // NOLINTEND
 
 } // namespace DurabilitySensorItemComponentUtils

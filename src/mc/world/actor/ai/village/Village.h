@@ -3,20 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/entity/components_json_legacy/DwellerRole.h"
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/platform/UUID.h"
 #include "mc/world/actor/ai/village/POIType.h"
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/level/Tick.h"
+#include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class Actor;
 class Block;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
 class Dimension;
-class HashedString;
 class Level;
 class LevelStorage;
 class Mob;
@@ -26,9 +29,6 @@ class Raid;
 class Random;
 class Vec3;
 class VillageManager;
-struct ActorUniqueID;
-struct Tick;
-namespace mce { class UUID; }
 // clang-format on
 
 class Village {

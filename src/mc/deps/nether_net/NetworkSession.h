@@ -61,11 +61,12 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk8f808f;
     ::ll::UntypedStorage<8, 80> mUnkab1f83;
     ::ll::UntypedStorage<8, 8>  mUnk3f0d55;
-    ::ll::UntypedStorage<8, 24> mUnk4b972a;
+    ::ll::UntypedStorage<8, 40> mUnk4a45c9;
     ::ll::UntypedStorage<4, 4>  mUnk8129d9;
     ::ll::UntypedStorage<8, 8>  mUnkd4f9be;
-    ::ll::UntypedStorage<8, 24> mUnk88254f;
+    ::ll::UntypedStorage<8, 40> mUnk3ba4a7;
     ::ll::UntypedStorage<4, 4>  mUnk9694d4;
+    ::ll::UntypedStorage<1, 1>  mUnk65cb85;
     ::ll::UntypedStorage<8, 80> mUnk3ff530;
     ::ll::UntypedStorage<8, 80> mUnkd90e28;
     ::ll::UntypedStorage<1, 1>  mUnk8e829f;
@@ -127,82 +128,82 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void CheckSendDeferredData();
+    MCNAPI void CheckSendDeferredData();
 
-    MCAPI void CheckUpdateStats();
+    MCNAPI void CheckUpdateStats();
 
-    MCAPI void EnterNewNegotiationState(::NetherNet::NetworkSession::ENegotiationState negotiationState);
+    MCNAPI void EnterNewNegotiationState(::NetherNet::NetworkSession::ENegotiationState negotiationState);
 
-    MCAPI ::NetherNet::ESessionError InitializeIncoming(
+    MCNAPI ::NetherNet::ESessionError InitializeIncoming(
         ::NetherNet::NetworkID                                   remoteID,
         uint64 const&                                            connectionID,
         ::std::unique_ptr<::webrtc::SessionDescriptionInterface> pSessionDescription,
         ::NetherNet::SignalingChannelId                          preference
     );
 
-    MCAPI void InitializeOutgoing(::NetherNet::NetworkID remoteID);
+    MCNAPI void InitializeOutgoing(::NetherNet::NetworkID remoteID);
 
-    MCAPI ::NetherNet::ESessionError IsDeadSession(::std::chrono::seconds negotiationTimeout);
+    MCNAPI ::NetherNet::ESessionError IsDeadSession(::std::chrono::seconds negotiationTimeout);
 
-    MCAPI void MaybeProcessIceCandidates();
+    MCNAPI void MaybeProcessIceCandidates();
 
-    MCAPI NetworkSession(::NetherNet::ContextProxy const& ctx, ::NetherNet::NetworkSessionManager& manager);
+    MCNAPI NetworkSession(::NetherNet::ContextProxy const& ctx, ::NetherNet::NetworkSessionManager& manager);
 
-    MCAPI void OnStatsRequestComplete(::std::vector<::webrtc::StatsReport const*> const& reports);
+    MCNAPI void OnStatsRequestComplete(::std::vector<::webrtc::StatsReport const*> const& reports);
 
-    MCAPI void ProcessSignal(::NetherNet::CandidateAdd const& signal);
+    MCNAPI void ProcessSignal(::NetherNet::CandidateAdd const& signal);
 
-    MCAPI void ProcessSignal(::NetherNet::ConnectResponse const& signal);
+    MCNAPI void ProcessSignal(::NetherNet::ConnectResponse const& signal);
 
-    MCAPI void SendPacket(char const* pbData, uint cbData, ::NetherNet::ESendType eSendType);
+    MCNAPI void SendPacket(char const* pbData, uint cbData, ::NetherNet::ESendType eSendType);
 
-    MCAPI void TrySendSessionResponse();
+    MCNAPI void TrySendSessionResponse();
 
-    MCAPI void UpdateDataChannelStates();
+    MCNAPI void UpdateDataChannelStates();
 
-    MCAPI void UpdateSessionActivity();
+    MCNAPI void UpdateSessionActivity();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::NetherNet::ContextProxy const& ctx, ::NetherNet::NetworkSessionManager& manager);
+    MCNAPI void* $ctor(::NetherNet::ContextProxy const& ctx, ::NetherNet::NetworkSessionManager& manager);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $OnSignalingChange(::webrtc::PeerConnectionInterface::SignalingState);
+    MCNAPI void $OnSignalingChange(::webrtc::PeerConnectionInterface::SignalingState);
 
-    MCAPI void $OnDataChannel(::webrtc::scoped_refptr<::webrtc::DataChannelInterface> pDataChannel);
+    MCNAPI void $OnDataChannel(::webrtc::scoped_refptr<::webrtc::DataChannelInterface> pDataChannel);
 
-    MCFOLD void $OnRenegotiationNeeded();
+    MCNAPI void $OnRenegotiationNeeded();
 
-    MCAPI void $OnIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState new_state);
+    MCNAPI void $OnIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState new_state);
 
-    MCAPI void $OnConnectionChange(::webrtc::PeerConnectionInterface::PeerConnectionState new_state);
+    MCNAPI void $OnConnectionChange(::webrtc::PeerConnectionInterface::PeerConnectionState new_state);
 
-    MCAPI void $OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState new_state);
+    MCNAPI void $OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState new_state);
 
-    MCAPI void $OnIceCandidate(::webrtc::IceCandidateInterface const* candidate);
+    MCNAPI void $OnIceCandidate(::webrtc::IceCandidateInterface const* candidate);
 
-    MCFOLD void $OnIceCandidatesRemoved(::std::vector<::cricket::Candidate> const&);
+    MCNAPI void $OnIceCandidatesRemoved(::std::vector<::cricket::Candidate> const&);
 
-    MCFOLD void $OnIceConnectionReceivingChange(bool);
+    MCNAPI void $OnIceConnectionReceivingChange(bool);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForContextProxy();
+    MCNAPI static void** $vftableForContextProxy();
 
-    MCAPI static void** $vftableForPeerConnectionObserver();
+    MCNAPI static void** $vftableForPeerConnectionObserver();
     // NOLINTEND
 };
 

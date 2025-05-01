@@ -40,13 +40,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI UniqueId(::MapItemTrackedActor::UniqueId const& rhs);
+        MCNAPI UniqueId(::MapItemTrackedActor::UniqueId const& rhs);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::MapItemTrackedActor::UniqueId const& rhs);
+        MCNAPI void* $ctor(::MapItemTrackedActor::UniqueId const& rhs);
         // NOLINTEND
     };
 
@@ -75,14 +75,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MapItemTrackedActor(::MapItemTrackedActor::UniqueId const& id, ::BlockSource& region);
+    MCNAPI MapItemTrackedActor(::MapItemTrackedActor::UniqueId const& id, ::BlockSource& region);
 
-    MCAPI ::std::unique_ptr<::Packet> nextUpdatePacket(::MapItemSavedData const& savedData);
+    MCNAPI ::std::unique_ptr<::Packet> nextUpdatePacket(::MapItemSavedData const& savedData);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MapItemTrackedActor::UniqueId const& id, ::BlockSource& region);
+    MCNAPI void* $ctor(::MapItemTrackedActor::UniqueId const& id, ::BlockSource& region);
     // NOLINTEND
 };

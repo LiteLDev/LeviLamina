@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/level/Tick.h"
+
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockPos;
-struct Tick;
 // clang-format on
 
 class TickNextTickData {

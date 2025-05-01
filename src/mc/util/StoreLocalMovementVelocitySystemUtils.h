@@ -11,7 +11,7 @@ struct MobTravelComponent;
 namespace StoreLocalMovementVelocitySystemUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void
+MCNAPI void
 storeLocalMovementVelocity(::MobTravelComponent const& mobTravel, ::CurrentLocalMoveVelocityComponent& velocity);
 // NOLINTEND
 

@@ -51,13 +51,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HudContainerModel(::ContainerEnumName containerName, ::Player& player);
+    MCNAPI HudContainerModel(::ContainerEnumName containerName, ::Player& player);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerEnumName containerName, ::Player& player);
+    MCNAPI void* $ctor(::ContainerEnumName containerName, ::Player& player);
     // NOLINTEND
 
 public:
@@ -69,20 +69,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $containerContentChanged(int slot);
+    MCNAPI void $containerContentChanged(int slot);
 
-    MCFOLD bool $isValid();
+    MCNAPI bool $isValid();
 
-    MCFOLD ::ContainerWeakRef $getContainerWeakRef() const;
+    MCNAPI ::ContainerWeakRef $getContainerWeakRef() const;
 
-    MCFOLD ::Container* $_getContainer() const;
+    MCNAPI ::Container* $_getContainer() const;
 
-    MCAPI void $_init();
+    MCNAPI void $_init();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

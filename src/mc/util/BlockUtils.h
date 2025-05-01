@@ -12,15 +12,15 @@ class BlockPos;
 namespace BlockUtils {
 // functions
 // NOLINTBEGIN
-MCAPI bool allowsNetherVegetation(::BlockLegacy const& block);
+MCNAPI bool allowsNetherVegetation(::BlockLegacy const& block);
 
-MCAPI float getLiquidBlockHeight(::Block const& block, ::BlockPos const& blockPos);
+MCNAPI float getLiquidBlockHeight(::Block const& block, ::BlockPos const& blockPos);
 
-MCAPI bool isDownwardFlowingLiquid(::Block const& block);
+MCNAPI bool isDownwardFlowingLiquid(::Block const& block);
 
-MCAPI bool isFullFlowingLiquid(::Block const& block);
+MCNAPI bool isFullFlowingLiquid(::Block const& block);
 
-MCAPI bool isLiquidSource(::Block const& block);
+MCNAPI bool isLiquidSource(::Block const& block);
 // NOLINTEND
 
 } // namespace BlockUtils

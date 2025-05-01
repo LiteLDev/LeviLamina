@@ -31,30 +31,30 @@ public:
     // vIndex: 9
     virtual ::Vec3 translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const /*override*/;
 
-    // vIndex: 16
+    // vIndex: 17
     virtual ::std::unique_ptr<::WorldGenerator>
     createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual bool levelChunkNeedsUpgrade(::LevelChunk const& lc) const /*override*/;
 
-    // vIndex: 17
+    // vIndex: 18
     virtual void upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk) /*override*/;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual void fixWallChunk(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual short getCloudHeight() const /*override*/;
 
-    // vIndex: 21
+    // vIndex: 22
     virtual ::mce::Color getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const
         /*override*/;
 
-    // vIndex: 36
+    // vIndex: 37
     virtual void _upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers) /*override*/;
 
-    // vIndex: 37
+    // vIndex: 38
     virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(
         ::std::unique_ptr<::ChunkSource> storageSource,
         ::StorageVersion                 levelVersion
@@ -64,13 +64,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OverworldDimension(::ILevel& level, ::Scheduler& context);
+    MCNAPI OverworldDimension(::ILevel& level, ::Scheduler& context);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ILevel& level, ::Scheduler& context);
+    MCNAPI void* $ctor(::ILevel& level, ::Scheduler& context);
     // NOLINTEND
 
 public:
@@ -82,36 +82,36 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
+    MCNAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
 
-    MCAPI ::std::unique_ptr<::WorldGenerator>
+    MCNAPI ::std::unique_ptr<::WorldGenerator>
     $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
-    MCFOLD bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
+    MCNAPI bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
 
-    MCAPI void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
+    MCNAPI void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
 
-    MCFOLD void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
+    MCNAPI void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
 
-    MCAPI short $getCloudHeight() const;
+    MCNAPI short $getCloudHeight() const;
 
-    MCAPI ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
+    MCNAPI ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
 
-    MCFOLD void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
+    MCNAPI void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
 
-    MCAPI ::std::unique_ptr<::ChunkSource>
+    MCNAPI ::std::unique_ptr<::ChunkSource>
     $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForIDimension();
+    MCNAPI static void** $vftableForIDimension();
 
-    MCAPI static void** $vftableForLevelListener();
+    MCNAPI static void** $vftableForLevelListener();
 
-    MCAPI static void** $vftableForSavedData();
+    MCNAPI static void** $vftableForSavedData();
     // NOLINTEND
 };

@@ -11,29 +11,29 @@ class PacketMaskTable {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::rtc::ArrayView<uchar const> LookUp(int, int);
+    MCNAPI ::rtc::ArrayView<uchar const> LookUp(int, int);
 
-    MCAPI PacketMaskTable(::webrtc::FecMaskType, int);
+    MCNAPI PacketMaskTable(::webrtc::FecMaskType, int);
 
-    MCAPI ~PacketMaskTable();
+    MCNAPI ~PacketMaskTable();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static uchar const* PickTable(::webrtc::FecMaskType, int);
+    MCNAPI static uchar const* PickTable(::webrtc::FecMaskType, int);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::FecMaskType, int);
+    MCNAPI void* $ctor(::webrtc::FecMaskType, int);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

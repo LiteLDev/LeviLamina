@@ -10,7 +10,7 @@ class ItemStackNetResultMap {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string const& getItemStackNetResultName(::ItemStackNetResult result);
+    MCNAPI static ::std::string const& getItemStackNetResultName(::ItemStackNetResult result);
     // NOLINTEND
 
 public:

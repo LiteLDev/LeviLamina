@@ -2,20 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/structure/registry/JigsawStructureActorRulesRegistry.h"
+#include "mc/world/level/levelgen/structure/registry/JigsawStructureBlockRulesRegistry.h"
+#include "mc/world/level/levelgen/structure/registry/JigsawStructureBlockTagRulesRegistry.h"
+#include "mc/world/level/levelgen/structure/registry/JigsawStructureElementRegistry.h"
+#include "mc/world/level/levelgen/structure/registry/StructureRegistry.h"
+#include "mc/world/level/levelgen/structure/registry/StructureSetRegistry.h"
+
 // auto generated forward declare list
 // clang-format off
 class BaseGameVersion;
 class Experiments;
 class IWorldRegistriesProvider;
-class JigsawStructureActorRulesRegistry;
-class JigsawStructureBlockRulesRegistry;
-class JigsawStructureBlockTagRulesRegistry;
-class JigsawStructureElementRegistry;
 class StructureSpawnRegistry;
 class StructureTemplatePool;
 namespace SharedTypes::v1_21_20 { struct JigsawStructureData; }
-namespace br::worldgen { class StructureRegistry; }
-namespace br::worldgen { class StructureSetRegistry; }
 // clang-format on
 
 class JigsawStructureRegistry {
@@ -40,31 +42,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JigsawStructureRegistry();
+    MCNAPI JigsawStructureRegistry();
 
-    MCAPI void initialize(
+    MCNAPI void initialize(
         ::StructureSpawnRegistry&   structureSpawnRegistry,
         ::BaseGameVersion const&    baseGameVersion,
         ::Experiments const&        experiments,
         ::IWorldRegistriesProvider& registries
     );
 
-    MCAPI ::StructureTemplatePool const* lookupByName(::std::string const& name) const;
+    MCNAPI ::StructureTemplatePool const* lookupByName(::std::string const& name) const;
 
-    MCAPI void registerPool(::std::unique_ptr<::StructureTemplatePool>&& pool);
+    MCNAPI void registerPool(::std::unique_ptr<::StructureTemplatePool>&& pool);
 
-    MCAPI ~JigsawStructureRegistry();
+    MCNAPI ~JigsawStructureRegistry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

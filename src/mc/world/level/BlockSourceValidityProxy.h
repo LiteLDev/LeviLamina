@@ -34,14 +34,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $updateDimensionBlockSourceTick(::Dimension& dimension);
+    MCNAPI void $updateDimensionBlockSourceTick(::Dimension& dimension);
 
-    MCAPI void $updateBlockSourceTick(::Player& player);
+    MCNAPI void $updateBlockSourceTick(::Player& player);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -25,20 +25,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI _ProfilerLiteTimer(::ProfilerLite::ScopedData& scopedData, ::std::thread::id threadId);
+    MCNAPI _ProfilerLiteTimer(::ProfilerLite::ScopedData& scopedData, ::std::thread::id threadId);
 
-    MCAPI ~_ProfilerLiteTimer();
+    MCNAPI ~_ProfilerLiteTimer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ProfilerLite::ScopedData& scopedData, ::std::thread::id threadId);
+    MCNAPI void* $ctor(::ProfilerLite::ScopedData& scopedData, ::std::thread::id threadId);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

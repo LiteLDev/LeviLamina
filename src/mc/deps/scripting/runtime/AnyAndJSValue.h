@@ -22,13 +22,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~AnyAndJSValue();
+    MCNAPI ~AnyAndJSValue();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

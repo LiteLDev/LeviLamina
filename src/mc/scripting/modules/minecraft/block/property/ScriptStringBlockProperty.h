@@ -40,31 +40,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptStringBlockProperty(
+    MCNAPI ScriptStringBlockProperty(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,
         ::std::vector<::std::string>                                                          validValues,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
     );
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getState() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getState() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptStringBlockProperty&
+    MCNAPI ::ScriptModuleMinecraft::ScriptStringBlockProperty&
     operator=(::ScriptModuleMinecraft::ScriptStringBlockProperty&&);
 
-    MCAPI ::Scripting::Result<void> setState(::std::string state);
+    MCNAPI ::Scripting::Result<void> setState(::std::string state);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptStringBlockProperty> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptStringBlockProperty> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,
         ::std::vector<::std::string>                                                          validValues,
@@ -81,7 +81,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

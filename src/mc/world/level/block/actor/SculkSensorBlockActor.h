@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/events/gameevents/VibrationListener.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated forward declare list
@@ -13,7 +14,6 @@ class CompoundTag;
 class DataLoadHelper;
 class ILevel;
 class SaveContext;
-class VibrationListener;
 // clang-format on
 
 class SculkSensorBlockActor : public ::BlockActor {
@@ -33,10 +33,10 @@ public:
     // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -46,13 +46,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SculkSensorBlockActor(::BlockPos const& pos);
+    MCNAPI explicit SculkSensorBlockActor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
+    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -64,18 +64,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCFOLD void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCFOLD void $onRemoved(::BlockSource& region);
+    MCNAPI void $onRemoved(::BlockSource& region);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

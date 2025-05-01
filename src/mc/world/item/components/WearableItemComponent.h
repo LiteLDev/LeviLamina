@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
@@ -13,7 +14,6 @@ class HashedString;
 class ItemStack;
 class Player;
 class SemVersion;
-namespace Bedrock::PubSub { class Subscription; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -39,19 +39,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void use(bool& result, ::ItemStack& instance, ::Player& player) const;
+    MCNAPI void use(bool& result, ::ItemStack& instance, ::Player& player) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
@@ -63,12 +63,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent();
+    MCNAPI void $_initializeComponent();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

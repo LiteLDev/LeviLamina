@@ -5,25 +5,23 @@
 // auto generated inclusion list
 #include "mc/world/Flip.h"
 #include "mc/world/level/block/ActorBlockBase.h"
+#include "mc/world/level/block/BlockLegacy.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class Block;
-class BlockLegacy;
 class BlockPos;
-class Player;
+class Experiments;
 class Vec3;
 struct Brightness;
+namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class VaultBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 139
-    virtual bool use(::Player& player, ::BlockPos const& pos, uchar) const /*override*/;
-
     // vIndex: 126
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
@@ -47,8 +45,17 @@ public:
     // vIndex: 122
     virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
 
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
     virtual ~VaultBlock() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -60,28 +67,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
+    MCNAPI ::Brightness $getLightEmission(::Block const& block) const;
 
-    MCAPI ::Brightness $getLightEmission(::Block const& block) const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCFOLD bool $isInteractiveBlock() const;
-
-    MCAPI ::Block const&
+    MCNAPI ::Block const&
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
 
-    MCAPI int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCFOLD ::Block const& $getRenderBlock() const;
+    MCNAPI ::Block const& $getRenderBlock() const;
 
-    MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
+    MCNAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
+    MCNAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
+
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

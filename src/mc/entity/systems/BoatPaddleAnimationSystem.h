@@ -25,7 +25,7 @@ struct VehicleInputIntentComponent;
 namespace BoatPaddleAnimationSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void sendAnimationPackets(
+MCNAPI void sendAnimationPackets(
     ::entt::type_list<
         ::Include<::ActorMovementTickNeededComponent, ::BoatFlagComponent, ::ShouldBeSimulatedComponent>,
         ::Exclude<::ActorRemovedFlagComponent>>,

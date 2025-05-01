@@ -30,6 +30,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $removeActor(::Actor& actor);
+    MCNAPI void $removeActor(::Actor& actor);
     // NOLINTEND
 };

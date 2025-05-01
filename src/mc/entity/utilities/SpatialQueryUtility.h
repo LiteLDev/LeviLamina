@@ -14,7 +14,7 @@ struct SpatialQueryUtility {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool forEachBlockInAABB(
+    MCNAPI static bool forEachBlockInAABB(
         ::IConstBlockSource const&                                      region,
         ::AABB const&                                                   aabb,
         float                                                           grow,

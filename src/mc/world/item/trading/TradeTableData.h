@@ -25,25 +25,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TradeTableData(
+    MCNAPI TradeTableData(
         ::SharedTypes::v1_21_30::TradeTableData parsedData,
         ::ItemRegistryRef                       itemRegistry,
         bool                                    usingUpcomingCreatorFeaturesExperiment
     );
 
-    MCAPI ~TradeTableData();
+    MCNAPI ~TradeTableData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SharedTypes::v1_21_30::TradeTableData parseJson(::std::string const& input, ::Puv::Logger& logger);
+    MCNAPI static ::SharedTypes::v1_21_30::TradeTableData parseJson(::std::string const& input, ::Puv::Logger& logger);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::SharedTypes::v1_21_30::TradeTableData parsedData,
         ::ItemRegistryRef                       itemRegistry,
         bool                                    usingUpcomingCreatorFeaturesExperiment
@@ -53,6 +53,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

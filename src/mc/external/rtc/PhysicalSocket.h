@@ -123,25 +123,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int DoConnect(::rtc::SocketAddress const&);
+    MCNAPI int DoConnect(::rtc::SocketAddress const&);
 
-    MCAPI int DoReadFromSocket(void*, uint64, ::rtc::SocketAddress*, int64*, ::rtc::EcnMarking*);
+    MCNAPI int DoReadFromSocket(void*, uint64, ::rtc::SocketAddress*, int64*, ::rtc::EcnMarking*);
 
-    MCAPI void OnResolveResult(::webrtc::AsyncDnsResolverResult const&);
+    MCNAPI void OnResolveResult(::webrtc::AsyncDnsResolverResult const&);
 
-    MCAPI PhysicalSocket(::rtc::PhysicalSocketServer*, uint64);
+    MCNAPI PhysicalSocket(::rtc::PhysicalSocketServer*, uint64);
 
-    MCAPI int SetOption(::rtc::Socket::Option, void const*, uint64);
+    MCNAPI int SetOption(::rtc::Socket::Option, void const*, uint64);
 
-    MCAPI int TranslateOption(::rtc::Socket::Option, int*, int*);
+    MCNAPI int TranslateOption(::rtc::Socket::Option, int*, int*);
 
-    MCAPI void UpdateLastError();
+    MCNAPI void UpdateLastError();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::PhysicalSocketServer*, uint64);
+    MCNAPI void* $ctor(::rtc::PhysicalSocketServer*, uint64);
     // NOLINTEND
 
 public:
@@ -159,9 +159,9 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForSocket();
+    MCNAPI static void** $vftableForSocket();
 
-    MCAPI static void** $vftableForHasSlots();
+    MCNAPI static void** $vftableForHasSlots();
     // NOLINTEND
 };
 

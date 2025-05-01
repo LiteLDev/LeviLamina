@@ -3,12 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/UUID.h"
 #include "mc/world/actor/player/persona/PieceType.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace mce { class UUID; }
-// clang-format on
 
 class SerializedPersonaPieceHandle {
 public:
@@ -28,6 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SerializedPersonaPieceHandle& operator=(::SerializedPersonaPieceHandle const&);
+    MCNAPI ::SerializedPersonaPieceHandle& operator=(::SerializedPersonaPieceHandle const&);
     // NOLINTEND
 };

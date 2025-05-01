@@ -3,12 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Color.h"
 #include "mc/world/level/block/TintMethod.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace mce { class Color; }
-// clang-format on
 
 struct BlockMapColorComponent {
 public:

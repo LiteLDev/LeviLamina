@@ -43,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uchar convertDirectionStringToKeyPress(::std::string directionString);
+    MCNAPI uchar convertDirectionStringToKeyPress(::std::string directionString);
     // NOLINTEND
 
 public:
@@ -55,14 +55,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BehaviorStatus $tick(::Actor& owner);
+    MCNAPI ::BehaviorStatus $tick(::Actor& owner);
 
-    MCAPI void $initializeFromDefinition(::Actor& owner);
+    MCNAPI void $initializeFromDefinition(::Actor& owner);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -25,23 +25,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI KeyFrameTransform(::KeyFrameTransform const&);
+    MCNAPI KeyFrameTransform(::KeyFrameTransform const&);
 
-    MCAPI ::KeyFrameTransform& operator=(::KeyFrameTransform&&);
+    MCNAPI ::KeyFrameTransform& operator=(::KeyFrameTransform&&);
 
-    MCAPI bool optimizeAndGetDataValues(::Vec3& minValue, ::Vec3& maxValue);
+    MCNAPI bool optimizeAndGetDataValues(::Vec3& minValue, ::Vec3& maxValue);
 
-    MCAPI void set(::ExpressionNode const& expression);
+    MCNAPI void set(::ExpressionNode const& expression);
 
-    MCAPI void set(::ExpressionNode const& expression, int axisIndex);
+    MCNAPI void set(::ExpressionNode const& expression, int axisIndex);
 
-    MCAPI ~KeyFrameTransform();
+    MCNAPI ~KeyFrameTransform();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void computeCubicPolynomial(
+    MCNAPI static void computeCubicPolynomial(
         ::KeyFrameTransform* p0,
         ::KeyFrameTransform& p1,
         ::KeyFrameTransform& p2,
@@ -52,12 +52,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::KeyFrameTransform const&);
+    MCNAPI void* $ctor(::KeyFrameTransform const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

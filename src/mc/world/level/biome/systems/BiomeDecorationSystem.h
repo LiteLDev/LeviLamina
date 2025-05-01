@@ -20,7 +20,7 @@ struct BiomeDecorationFeature;
 namespace BiomeDecorationSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void decorate(
+MCNAPI void decorate(
     ::LevelChunk&                        lc,
     ::BlockSource&                       source,
     ::Random&                            random,
@@ -29,7 +29,7 @@ MCAPI void decorate(
     ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider
 );
 
-MCAPI bool decorateBiome(
+MCNAPI bool decorateBiome(
     ::LevelChunk&                               lc,
     ::BlockSource&                              source,
     ::Random&                                   random,
@@ -39,7 +39,7 @@ MCAPI bool decorateBiome(
     ::IPreliminarySurfaceProvider const&        preliminarySurfaceProvider
 );
 
-MCAPI bool decorateLargeFeature(
+MCNAPI bool decorateLargeFeature(
     ::GeneratorType                             generatorType,
     uint const&                                 seed,
     ::BlockVolumeTarget&                        target,
@@ -49,7 +49,7 @@ MCAPI bool decorateLargeFeature(
     ::std::string const&                        pass
 );
 
-MCAPI void decorateLargeFeature(
+MCNAPI void decorateLargeFeature(
     ::Biome const&       biome,
     ::LevelChunk&        lc,
     ::BlockVolumeTarget& target,

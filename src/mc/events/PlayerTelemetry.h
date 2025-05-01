@@ -41,29 +41,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void ItemUsed(::std::string const& itemName, ::std::string const& useMethod);
+    MCNAPI void ItemUsed(::std::string const& itemName, ::std::string const& useMethod);
 
-    MCAPI PlayerTelemetry();
+    MCNAPI PlayerTelemetry();
 
-    MCAPI void PopulateEvent(::Social::Events::Event& event) const;
+    MCNAPI void PopulateEvent(::Social::Events::Event& event) const;
 
-    MCAPI void SetPosition(::std::string dimension, ::Vec3 pos, double metersTravelled);
+    MCNAPI void SetPosition(::std::string dimension, ::Vec3 pos, double metersTravelled);
 
-    MCAPI void UpdatePlayerLoadout(::Player& player);
+    MCNAPI void UpdatePlayerLoadout(::Player& player);
 
-    MCAPI ~PlayerTelemetry();
+    MCNAPI ~PlayerTelemetry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

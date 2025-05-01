@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/world/item/components/BlockLegacyPtr.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -11,7 +13,6 @@
 class Actor;
 class Block;
 class BlockDescriptor;
-class BlockLegacyPtr;
 class BlockPos;
 class CompoundTag;
 class HashedString;
@@ -19,7 +20,6 @@ class ItemStack;
 class ItemStackBase;
 class SemVersion;
 class Vec3;
-namespace Bedrock::PubSub { class Subscription; }
 namespace SharedTypes::v1_21_40 { struct PlanterItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -57,9 +57,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlanterItemComponent(::SharedTypes::v1_21_40::PlanterItemComponent component);
+    MCNAPI explicit PlanterItemComponent(::SharedTypes::v1_21_40::PlanterItemComponent component);
 
-    MCAPI bool _placeBlock(
+    MCNAPI bool _placeBlock(
         ::ItemStack&      item,
         ::Actor&          entity,
         ::Block const&    block,
@@ -68,7 +68,7 @@ public:
         ::Vec3 const&     clickPos
     ) const;
 
-    MCAPI void _useOn(
+    MCNAPI void _useOn(
         bool&              result,
         ::ItemStack const& currentItemStack,
         ::ItemStack&       entity,
@@ -78,27 +78,27 @@ public:
         ::Vec3 const&      initialItemStack
     );
 
-    MCAPI bool calculatePlacePos(::ItemStackBase const& entity, ::Actor& face, uchar& pos, ::BlockPos& instance) const;
+    MCNAPI bool calculatePlacePos(::ItemStackBase const& entity, ::Actor& face, uchar& pos, ::BlockPos& instance) const;
 
-    MCAPI bool canUseOn(::ItemStack const& instance, ::Actor& entity, ::BlockPos const& pos, uchar face) const;
+    MCNAPI bool canUseOn(::ItemStack const& instance, ::Actor& entity, ::BlockPos const& pos, uchar face) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_40::PlanterItemComponent component);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_40::PlanterItemComponent component);
     // NOLINTEND
 
 public:
@@ -110,18 +110,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
+    MCNAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
-    MCAPI void $_initializeComponent();
+    MCNAPI void $_initializeComponent();
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI bool $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCNAPI bool $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -63,13 +63,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BuriedTreasureFeature(uint seed);
+    MCNAPI explicit BuriedTreasureFeature(uint seed);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint seed);
+    MCNAPI void* $ctor(uint seed);
     // NOLINTEND
 
 public:
@@ -81,7 +81,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $getNearestGeneratedFeature(
+    MCNAPI bool $getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
         ::BlockPos const&                      origin,
@@ -91,16 +91,16 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCAPI ::std::unique_ptr<::StructureStart>
+    MCNAPI ::std::unique_ptr<::StructureStart>
     $createStructureStart(::Dimension& generator, ::BiomeSource const&, ::Random& random, ::ChunkPos const& lc, ::IPreliminarySurfaceProvider const&);
 
-    MCAPI bool
+    MCNAPI bool
     $isFeatureChunk(::BiomeSource const& biomeSource, ::Random& random, ::ChunkPos const& pos, uint levelSeed, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel, ::Dimension const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,19 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/shared_types/legacy/LevelEvent.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class Block;
-class BlockPos;
 class BlockSource;
 class ItemStack;
 class Randomize;
-class Vec3;
-struct ActorUniqueID;
 struct ResourceDropsContext;
 // clang-format on
 

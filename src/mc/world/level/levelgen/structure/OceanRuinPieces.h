@@ -73,7 +73,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI OceanRuinPiece(
+        MCNAPI OceanRuinPiece(
             ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
             ::std::string                                     templateName,
             ::BlockPos const&                                 origin,
@@ -83,15 +83,15 @@ public:
             ::OceanTempCategory                               type
         );
 
-        MCAPI int _getHeight(::BlockPos& pos, ::BlockSource& region, ::BlockPos const& corner);
+        MCNAPI int _getHeight(::BlockPos& pos, ::BlockSource& region, ::BlockPos const& corner);
 
-        MCAPI void _loadTemplate();
+        MCNAPI void _loadTemplate();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
             ::std::string                                     templateName,
             ::BlockPos const&                                 origin,
@@ -105,17 +105,17 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::StructurePieceType $getType() const;
+        MCNAPI ::StructurePieceType $getType() const;
 
-        MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+        MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-        MCAPI void $_handleDataMarker(
+        MCNAPI void $_handleDataMarker(
             ::std::string const& markerId,
             ::BlockPos const&    position,
             ::BlockSource&       region,
@@ -127,14 +127,14 @@ public:
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _addClusterRuins(
+    MCNAPI static void _addClusterRuins(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>   structureManager,
         ::Random&                                           random,
         ::Rotation const&                                   rotation,
@@ -143,7 +143,7 @@ public:
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces
     );
 
-    MCAPI static void _addPiece(
+    MCNAPI static void _addPiece(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>   structureManager,
         ::BlockPos const&                                   position,
         ::Rotation const&                                   rotation,
@@ -154,9 +154,9 @@ public:
         float                                               baseIntegrity
     );
 
-    MCAPI static ::std::vector<::BlockPos> _allPositions(::Random& random, int cornerX, int cornerY, int cornerZ);
+    MCNAPI static ::std::vector<::BlockPos> _allPositions(::Random& random, int cornerX, int cornerY, int cornerZ);
 
-    MCAPI static void addPieces(
+    MCNAPI static void addPieces(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>   structureManager,
         ::BlockPos const&                                   position,
         ::Rotation const&                                   rotation,

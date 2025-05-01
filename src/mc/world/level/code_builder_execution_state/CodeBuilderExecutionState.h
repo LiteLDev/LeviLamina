@@ -8,7 +8,7 @@
 namespace CodeBuilderExecutionState {
 // functions
 // NOLINTBEGIN
-MCAPI ::CodeBuilderExecutionState::CodeStatus toCodeStatus(::std::string_view status);
+MCNAPI ::CodeBuilderExecutionState::CodeStatus toCodeStatus(::std::string_view status);
 // NOLINTEND
 
 } // namespace CodeBuilderExecutionState

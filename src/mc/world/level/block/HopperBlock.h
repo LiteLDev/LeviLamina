@@ -6,6 +6,7 @@
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/ActorBlockBase.h"
+#include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
@@ -15,7 +16,6 @@ class Actor;
 class BaseGameVersion;
 class Block;
 class BlockActor;
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
 class Experiments;
@@ -23,9 +23,9 @@ class GetCollisionShapeInterface;
 class HitResult;
 class IConstBlockSource;
 class ItemInstance;
-class Player;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class HopperBlock : public ::ActorBlock {
@@ -41,9 +41,6 @@ public:
     // vIndex: 61
     virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
         /*override*/;
-
-    // vIndex: 139
-    virtual bool use(::Player&, ::BlockPos const&, uchar) const /*override*/;
 
     // vIndex: 138
     virtual bool isInteractiveBlock() const /*override*/;
@@ -96,7 +93,7 @@ public:
     // vIndex: 84
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 141
+    // vIndex: 139
     virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const
         /*override*/;
 
@@ -110,9 +107,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::AABB _getSpoutAABB(::Block const& block) const;
+    MCNAPI ::AABB _getSpoutAABB(::Block const& block) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -130,19 +129,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
+    MCNAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    MCFOLD bool $use(::Player&, ::BlockPos const&, uchar) const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI bool $isContainerBlock() const;
 
-    MCFOLD bool $isContainerBlock() const;
-
-    MCFOLD bool $addCollisionShapes(
+    MCNAPI bool $addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
         ::BlockPos const&                                  pos,
@@ -151,7 +148,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI void $addAABBs(
+    MCNAPI void $addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
@@ -159,33 +156,33 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
 
-    MCAPI ::HitResult
+    MCNAPI ::HitResult
     $clip(::Block const& block, ::BlockSource const&, ::BlockPos const& pos, ::Vec3 const& origin, ::Vec3 const& end, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+    MCNAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
-    MCAPI ::Block const&
+    MCNAPI ::Block const&
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
 
-    MCFOLD bool $hasComparatorSignal() const;
+    MCNAPI bool $hasComparatorSignal() const;
 
-    MCFOLD int
+    MCNAPI int
     $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCFOLD bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
+    MCNAPI bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

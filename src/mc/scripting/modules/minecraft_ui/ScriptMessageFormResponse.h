@@ -24,7 +24,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftServerUI::ScriptMessageFormResponse> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftServerUI::ScriptMessageFormResponse> bind();
     // NOLINTEND
 };
 

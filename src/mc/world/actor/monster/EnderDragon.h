@@ -112,40 +112,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EnderDragon(
+    MCNAPI EnderDragon(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _checkCrystals();
+    MCNAPI void _checkCrystals();
 
-    MCAPI bool _checkWalls(::AABB bb);
+    MCNAPI bool _checkWalls(::AABB bb);
 
-    MCAPI float _getHeadYOffset(float a) const;
+    MCNAPI float _getHeadYOffset(float a) const;
 
-    MCAPI bool _hurt(::AABB* part, ::ActorDamageSource const& source, float damage);
+    MCNAPI bool _hurt(::AABB* part, ::ActorDamageSource const& source, float damage);
 
-    MCAPI void _hurtEntities(::gsl::span<::gsl::not_null<::Actor*>> actors) const;
+    MCNAPI void _hurtEntities(::gsl::span<::gsl::not_null<::Actor*>> actors) const;
 
-    MCAPI void _knockBack(::gsl::span<::gsl::not_null<::Actor*>> actors) const;
+    MCNAPI void _knockBack(::gsl::span<::gsl::not_null<::Actor*>> actors) const;
 
-    MCAPI ::std::unique_ptr<::Path>
+    MCNAPI ::std::unique_ptr<::Path>
     _reconstructPath(::PathfinderNode& to, ::PathfinderNode& completionType, ::PathCompletionType from);
 
-    MCAPI void dieNaturally();
+    MCNAPI void dieNaturally();
 
-    MCAPI int findClosestNode();
+    MCNAPI int findClosestNode();
 
-    MCAPI int findClosestNode(::Vec3 const& pos);
+    MCNAPI int findClosestNode(::Vec3 const& pos);
 
-    MCAPI ::std::unique_ptr<::Path> findPath(int startIndex, int endIndex, ::PathfinderNode* finalNode);
+    MCNAPI ::std::unique_ptr<::Path> findPath(int startIndex, int endIndex, ::PathfinderNode* finalNode);
 
-    MCAPI ::std::vector<float> const getLatencyPos(int step, float a) const;
+    MCNAPI ::std::vector<float> const getLatencyPos(int step, float a) const;
 
-    MCAPI void onCrystalDestroyed(::EnderCrystal const& crystal, ::BlockPos pos, ::ActorDamageSource const& source);
+    MCNAPI void onCrystalDestroyed(::EnderCrystal const& crystal, ::BlockPos pos, ::ActorDamageSource const& source);
 
-    MCAPI void postAiStep();
+    MCNAPI void postAiStep();
     // NOLINTEND
 
 public:
@@ -163,7 +163,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -173,40 +173,40 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $remove();
+    MCNAPI void $remove();
 
-    MCAPI void $setSitting(bool value);
+    MCNAPI void $setSitting(bool value);
 
-    MCFOLD bool $canBeAffected(uint id) const;
+    MCNAPI bool $canBeAffected(uint id) const;
 
-    MCFOLD bool $isImmobile() const;
+    MCNAPI bool $isImmobile() const;
 
-    MCAPI ::Vec3 $getHeadLookVector(float a) const;
+    MCNAPI ::Vec3 $getHeadLookVector(float a) const;
 
-    MCAPI void $die(::ActorDamageSource const& source);
+    MCNAPI void $die(::ActorDamageSource const& source);
 
-    MCAPI float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
 
-    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCNAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCFOLD bool $canBePulledIntoVehicle() const;
+    MCNAPI bool $canBePulledIntoVehicle() const;
 
-    MCAPI void $tickDeath();
+    MCNAPI void $tickDeath();
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCNAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

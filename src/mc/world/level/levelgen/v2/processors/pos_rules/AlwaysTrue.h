@@ -37,15 +37,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $test(::BlockPos, ::BlockPos, ::BlockPos, ::IRandom&) const;
+    MCNAPI bool $test(::BlockPos, ::BlockPos, ::BlockPos, ::IRandom&) const;
 
-    MCFOLD void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 struct BlockGeometryDescription;
+namespace SharedTypes::Legacy { struct ExpressionNode; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -27,31 +28,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Proxy(::BlockGeometrySerializer::Proxy const&);
+    MCNAPI Proxy(::BlockGeometrySerializer::Proxy const&);
 
-    MCAPI ~Proxy();
+    MCNAPI ::std::map<::std::string, ::SharedTypes::Legacy::ExpressionNode> getBoneVisibility() const;
+
+    MCNAPI void setBoneVisibility(::std::map<::std::string, ::SharedTypes::Legacy::ExpressionNode>& boneVisibilities);
+
+    MCNAPI ~Proxy();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindTypes(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindTypes(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void from(::BlockGeometryDescription& desc, ::BlockGeometrySerializer::Proxy proxy);
+    MCNAPI static void from(::BlockGeometryDescription& desc, ::BlockGeometrySerializer::Proxy proxy);
 
-    MCAPI static ::BlockGeometrySerializer::Proxy to(::BlockGeometryDescription const& desc);
+    MCNAPI static ::BlockGeometrySerializer::Proxy to(::BlockGeometryDescription const& desc);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockGeometrySerializer::Proxy const&);
+    MCNAPI void* $ctor(::BlockGeometrySerializer::Proxy const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

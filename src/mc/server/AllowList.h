@@ -37,15 +37,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI AllowListEntryMatcher(::std::string name, ::std::string xuid);
+        MCNAPI AllowListEntryMatcher(::std::string name, ::std::string xuid);
 
-        MCAPI bool operator()(::AllowListEntry& entry);
+        MCNAPI bool operator()(::AllowListEntry& entry);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::std::string name, ::std::string xuid);
+        MCNAPI void* $ctor(::std::string name, ::std::string xuid);
         // NOLINTEND
     };
 
@@ -78,9 +78,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool isIgnoringPlayerLimit(::mce::UUID const& uuid, ::std::string const& xuid) const;
+    MCNAPI bool isIgnoringPlayerLimit(::mce::UUID const& uuid, ::std::string const& xuid) const;
 
-    MCAPI void tryUpdateEntries(::mce::UUID const& xuid, ::std::string const& name, ::std::string const& uuid);
+    MCNAPI void tryUpdateEntries(::mce::UUID const& xuid, ::std::string const& name, ::std::string const& uuid);
     // NOLINTEND
 
 public:
@@ -92,14 +92,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $serialize(::Json::Value& root);
+    MCNAPI void $serialize(::Json::Value& root);
 
-    MCAPI void $deserialize(::Json::Value& root);
+    MCNAPI void $deserialize(::Json::Value& root);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -32,13 +32,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~SourceMessagePair();
+        MCNAPI ~SourceMessagePair();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -57,6 +57,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void logFailure(::Bedrock::StaticOptimizedString source, ::Bedrock::StaticOptimizedString message);
+    MCNAPI void logFailure(::Bedrock::StaticOptimizedString source, ::Bedrock::StaticOptimizedString message);
+
+    MCNAPI ~FeaturePlacementFailureLog();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -23,11 +23,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     addComponents(::EntityRegistry& registry, ::EntityContext& entity, ::DefinitionInstanceGroup const& definitionGroup)
         const;
 
-    MCAPI void removeComponents(
+    MCNAPI void removeComponents(
         ::EntityRegistry&                registry,
         ::EntityContext&                 entity,
         ::DefinitionInstanceGroup const& definitionGroup
@@ -37,6 +37,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

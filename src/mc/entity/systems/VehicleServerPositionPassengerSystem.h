@@ -32,7 +32,7 @@ class VehicleServerPositionPassengerSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _vehicleServerPositionPassengerSystemSingleEntity(
+    MCNAPI static void _vehicleServerPositionPassengerSystemSingleEntity(
         ::StrictEntityContext const&,
         ::ViewT<
             ::StrictEntityContext,

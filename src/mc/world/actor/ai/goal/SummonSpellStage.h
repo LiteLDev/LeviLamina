@@ -28,14 +28,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SummonSpellStage& operator=(::SummonSpellStage const&);
+    MCNAPI ::SummonSpellStage& operator=(::SummonSpellStage const&);
 
-    MCAPI ~SummonSpellStage();
+    MCNAPI ~SummonSpellStage();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

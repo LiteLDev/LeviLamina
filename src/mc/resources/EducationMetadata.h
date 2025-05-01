@@ -40,11 +40,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EducationMetadata();
+    MCNAPI EducationMetadata();
 
-    MCAPI EducationMetadata(::EducationMetadata const&);
+    MCNAPI EducationMetadata(::EducationMetadata const&);
 
-    MCAPI ~EducationMetadata();
+    MCNAPI ~EducationMetadata();
     // NOLINTEND
 
 public:
@@ -58,14 +58,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::EducationMetadata const&);
+    MCNAPI void* $ctor(::EducationMetadata const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

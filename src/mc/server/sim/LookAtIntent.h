@@ -2,14 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace sim { struct ContinuousLookAtEntityIntent; }
-namespace sim { struct ContinuousLookAtPositionIntent; }
-namespace sim { struct LookAtEntityIntent; }
-namespace sim { struct LookAtPositionIntent; }
-namespace sim { struct VoidLookAtIntent; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/server/sim/ContinuousLookAtEntityIntent.h"
+#include "mc/server/sim/ContinuousLookAtPositionIntent.h"
+#include "mc/server/sim/LookAtEntityIntent.h"
+#include "mc/server/sim/LookAtPositionIntent.h"
+#include "mc/server/sim/VoidLookAtIntent.h"
 
 namespace sim {
 
@@ -32,31 +30,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LookAtIntent(::std::variant<
-                                ::sim::VoidLookAtIntent,
-                                ::sim::LookAtPositionIntent,
-                                ::sim::ContinuousLookAtPositionIntent,
-                                ::sim::LookAtEntityIntent,
-                                ::sim::ContinuousLookAtEntityIntent> type);
+    MCNAPI explicit LookAtIntent(::std::variant<
+                                 ::sim::VoidLookAtIntent,
+                                 ::sim::LookAtPositionIntent,
+                                 ::sim::ContinuousLookAtPositionIntent,
+                                 ::sim::LookAtEntityIntent,
+                                 ::sim::ContinuousLookAtEntityIntent> type);
 
-    MCAPI ~LookAtIntent();
+    MCNAPI ~LookAtIntent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::variant<
-                      ::sim::VoidLookAtIntent,
-                      ::sim::LookAtPositionIntent,
-                      ::sim::ContinuousLookAtPositionIntent,
-                      ::sim::LookAtEntityIntent,
-                      ::sim::ContinuousLookAtEntityIntent> type);
+    MCNAPI void* $ctor(::std::variant<
+                       ::sim::VoidLookAtIntent,
+                       ::sim::LookAtPositionIntent,
+                       ::sim::ContinuousLookAtPositionIntent,
+                       ::sim::LookAtEntityIntent,
+                       ::sim::ContinuousLookAtEntityIntent> type);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

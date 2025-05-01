@@ -14,23 +14,23 @@ class SenderReport {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool Parse(::webrtc::rtcp::CommonHeader const&);
+    MCNAPI bool Parse(::webrtc::rtcp::CommonHeader const&);
 
-    MCAPI SenderReport();
+    MCNAPI SenderReport();
 
-    MCAPI bool SetReportBlocks(::std::vector<::webrtc::rtcp::ReportBlock>);
+    MCNAPI bool SetReportBlocks(::std::vector<::webrtc::rtcp::ReportBlock>);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

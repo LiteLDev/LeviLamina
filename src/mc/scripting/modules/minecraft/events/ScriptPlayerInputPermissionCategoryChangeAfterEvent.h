@@ -26,7 +26,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<
+    MCNAPI static ::Scripting::ClassBindingBuilder<
         ::ScriptModuleMinecraft::ScriptPlayerInputPermissionCategoryChangeAfterEvent>
     bind();
     // NOLINTEND

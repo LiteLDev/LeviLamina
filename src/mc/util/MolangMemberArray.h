@@ -3,14 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/MolangStruct_BaseAndPattern.h"
 #include "mc/util/MolangStruct_MinAndMax.h"
-#include "mc/util/MolangStruct_PoseIndexAndHurtTime.h"
 #include "mc/util/MolangStruct_RGB.h"
 #include "mc/util/MolangStruct_RGBA.h"
 #include "mc/util/MolangStruct_SpeedAndDirection.h"
 #include "mc/util/MolangStruct_TRS.h"
-#include "mc/util/MolangStruct_TentacleAngleAndSwimRotation.h"
 #include "mc/util/MolangStruct_UV.h"
 #include "mc/util/MolangStruct_XY.h"
 #include "mc/util/MolangStruct_XYZ.h"
@@ -45,20 +42,12 @@ public:
 
     MCAPI MolangMemberArray(::MolangStruct_UV, float u, float v);
 
-    MCAPI MolangMemberArray(::MolangStruct_BaseAndPattern base, int pattern, int);
-
     MCAPI MolangMemberArray(::MolangStruct_MinAndMax min, ::MolangMemberArray&& max, ::MolangMemberArray&&);
-
-    MCAPI MolangMemberArray(::MolangStruct_PoseIndexAndHurtTime poseIndex, int hurtTime, int);
 
     MCAPI MolangMemberArray(::MolangStruct_SpeedAndDirection speed, float direction, ::Vec3 const&);
 
-    MCAPI MolangMemberArray(::MolangStruct_TentacleAngleAndSwimRotation tentacleAngle, float swimRotation, float);
-
     MCAPI
     MolangMemberArray(::MolangStruct_TRS translation, ::MolangMemberArray&& rotation, ::MolangMemberArray&& scale, ::MolangMemberArray&&);
-
-    MCAPI void add(::HashedString const& name, ::MolangScriptArg const& value);
 
     MCAPI ::MolangScriptArg& getOrAdd(::HashedString const& name);
 
@@ -78,15 +67,9 @@ public:
 
     MCAPI void* $ctor(::MolangStruct_UV, float u, float v);
 
-    MCAPI void* $ctor(::MolangStruct_BaseAndPattern base, int pattern, int);
-
     MCAPI void* $ctor(::MolangStruct_MinAndMax min, ::MolangMemberArray&& max, ::MolangMemberArray&&);
 
-    MCAPI void* $ctor(::MolangStruct_PoseIndexAndHurtTime poseIndex, int hurtTime, int);
-
     MCAPI void* $ctor(::MolangStruct_SpeedAndDirection speed, float direction, ::Vec3 const&);
-
-    MCAPI void* $ctor(::MolangStruct_TentacleAngleAndSwimRotation tentacleAngle, float swimRotation, float);
 
     MCAPI void*
     $ctor(::MolangStruct_TRS translation, ::MolangMemberArray&& rotation, ::MolangMemberArray&& scale, ::MolangMemberArray&&);

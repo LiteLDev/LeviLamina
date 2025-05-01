@@ -51,17 +51,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tryDropHorn(::Vec3 dropPos) const;
+    MCNAPI void $tryDropHorn(::Vec3 dropPos) const;
 
-    MCAPI void $checkForHornDropOnCollision(::Vec3 collisionPos);
+    MCNAPI void $checkForHornDropOnCollision(::Vec3 collisionPos);
 
-    MCAPI void $dontDropHorn();
+    MCNAPI void $dontDropHorn();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

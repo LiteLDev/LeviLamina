@@ -42,7 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addEffectFromJSON(::Json::Value& component);
+    MCNAPI void _addEffectFromJSON(::Json::Value& component);
     // NOLINTEND
 
 public:
@@ -54,18 +54,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $readfromJSON(::Json::Value& component);
+    MCNAPI void $readfromJSON(::Json::Value& component);
 
-    MCAPI void $writetoJSON(::Json::Value& component) const;
+    MCNAPI void $writetoJSON(::Json::Value& component) const;
 
-    MCAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
+    MCNAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
 
-    MCAPI char const* $getName();
+    MCNAPI char const* $getName();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

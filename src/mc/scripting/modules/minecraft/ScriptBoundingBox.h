@@ -16,7 +16,7 @@ class ScriptBoundingBox {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::BoundingBox> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::BoundingBox> bind();
     // NOLINTEND
 };
 

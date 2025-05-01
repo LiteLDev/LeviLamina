@@ -19,25 +19,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Enter() const;
+    MCNAPI void Enter() const;
 
-    MCAPI void Leave() const;
+    MCNAPI void Leave() const;
 
-    MCAPI RecursiveCriticalSection();
+    MCNAPI RecursiveCriticalSection();
 
-    MCAPI ~RecursiveCriticalSection();
+    MCNAPI ~RecursiveCriticalSection();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

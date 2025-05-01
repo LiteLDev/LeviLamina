@@ -25,15 +25,15 @@ public:
     ::ll::UntypedStorage<8, 80> mUnk16357b;
     ::ll::UntypedStorage<8, 32> mUnk813aa7;
     ::ll::UntypedStorage<8, 32> mUnk2db52f;
-    ::ll::UntypedStorage<8, 24> mUnk889be1;
-    ::ll::UntypedStorage<8, 24> mUnkafc4ae;
+    ::ll::UntypedStorage<8, 72> mUnk55a1f7;
+    ::ll::UntypedStorage<8, 72> mUnk5c337c;
     ::ll::UntypedStorage<8, 16> mUnk200d94;
     ::ll::UntypedStorage<8, 16> mUnkdb80fe;
     ::ll::UntypedStorage<8, 16> mUnk3b0c00;
     ::ll::UntypedStorage<8, 32> mUnkdb5419;
     ::ll::UntypedStorage<8, 40> mUnkeb7b38;
-    ::ll::UntypedStorage<8, 24> mUnk3c894b;
-    ::ll::UntypedStorage<8, 24> mUnk560a0b;
+    ::ll::UntypedStorage<8, 72> mUnk29ddaf;
+    ::ll::UntypedStorage<8, 72> mUnka07cee;
     // NOLINTEND
 
 public:
@@ -43,35 +43,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JSONSchemaBody(::cereal::ext::internal::JSONSchemaBody&&);
+    MCNAPI JSONSchemaBody(::cereal::ext::internal::JSONSchemaBody&&);
 
-    MCAPI JSONSchemaBody(::cereal::ext::internal::JSONSchemaBody const&);
+    MCNAPI JSONSchemaBody(::cereal::ext::internal::JSONSchemaBody const&);
 
-    MCAPI void fill(::cereal::internal::ConstraintDescription const& constraint);
+    MCNAPI void fill(::cereal::internal::ConstraintDescription const& constraint);
 
-    MCAPI void fillBody(::cereal::SchemaDescription const& schemaInfo, ::cereal::ext::internal::OutRefsMap& outRefs);
+    MCNAPI void fillBody(::cereal::SchemaDescription const& schemaInfo, ::cereal::ext::internal::OutRefsMap& outRefs);
 
-    MCAPI void fillBodyIfEnum(::cereal::SchemaDescription const& schemaInfo);
+    MCNAPI void fillBodyIfEnum(::cereal::SchemaDescription const& schemaInfo);
 
-    MCAPI ::cereal::ext::internal::JSONSchemaBody& operator=(::cereal::ext::internal::JSONSchemaBody const&);
+    MCNAPI ::cereal::ext::internal::JSONSchemaBody& operator=(::cereal::ext::internal::JSONSchemaBody const&);
 
-    MCAPI ::cereal::ext::internal::JSONSchemaBody& operator=(::cereal::ext::internal::JSONSchemaBody&&);
+    MCNAPI ::cereal::ext::internal::JSONSchemaBody& operator=(::cereal::ext::internal::JSONSchemaBody&&);
 
-    MCAPI ~JSONSchemaBody();
+    MCNAPI ~JSONSchemaBody();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ext::internal::JSONSchemaBody&&);
+    MCNAPI void* $ctor(::cereal::ext::internal::JSONSchemaBody&&);
 
-    MCAPI void* $ctor(::cereal::ext::internal::JSONSchemaBody const&);
+    MCNAPI void* $ctor(::cereal::ext::internal::JSONSchemaBody const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

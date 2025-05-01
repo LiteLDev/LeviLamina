@@ -47,33 +47,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _fillUserData(::CompoundTag& tag);
+    MCNAPI void _fillUserData(::CompoundTag& tag);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    MCNAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $apply(::ItemStack& item, ::Random&, ::LootTableContext&);
+    MCNAPI void $apply(::ItemStack& item, ::Random&, ::LootTableContext&);
 
-    MCFOLD void $apply(::ItemInstance& itemInstance, ::Random&, ::LootTableContext&);
+    MCNAPI void $apply(::ItemInstance& itemInstance, ::Random&, ::LootTableContext&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

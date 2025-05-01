@@ -18,6 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::DisplayObjectMessageRequestComponent& operator=(::DisplayObjectMessageRequestComponent&&);
+    MCNAPI ::DisplayObjectMessageRequestComponent& operator=(::DisplayObjectMessageRequestComponent&&);
     // NOLINTEND
 };

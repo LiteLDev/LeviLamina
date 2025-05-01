@@ -48,13 +48,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~PackNameAndWeakScope();
+        MCNAPI ~PackNameAndWeakScope();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -63,7 +63,6 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnke51876;
     ::ll::UntypedStorage<8, 8>  mUnk49bd90;
-    ::ll::UntypedStorage<8, 8>  mUnk98aafc;
     ::ll::UntypedStorage<8, 24> mUnk41c329;
     ::ll::UntypedStorage<8, 24> mUnk174121;
     // NOLINTEND
@@ -77,25 +76,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addContextResultsToPluginResults(
+    MCNAPI void _addContextResultsToPluginResults(
         ::Scripting::ScriptContextResult const& contextResult,
         ::ScriptPluginResult&                   pluginResult
     );
 
-    MCAPI void _createPluginContext(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult);
+    MCNAPI void _createPluginContext(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult);
 
-    MCAPI ::std::vector<::Scripting::ModuleDescriptor> _generateModuleDependencies(
+    MCNAPI ::std::vector<::Scripting::ModuleDescriptor> _generateModuleDependencies(
         ::std::vector<::ModuleIdentifier> const& moduleDeps,
         ::std::vector<::PackIdVersion> const&    packDeps
     ) const;
 
-    MCAPI void _runPlugin(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult, ::Scripting::Privilege privilege);
+    MCNAPI void
+    _runPlugin(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult, ::Scripting::Privilege privilege);
 
-    MCAPI ::Scripting::RuntimeStats collectRuntimeStats() const;
+    MCNAPI ::Scripting::RuntimeStats collectRuntimeStats() const;
 
-    MCAPI ::ScriptPluginManagerResult createContextsForGroup(::PluginExecutionGroup group);
+    MCNAPI ::ScriptPluginManagerResult createContextsForGroup(::PluginExecutionGroup group);
 
-    MCAPI ::ScriptPluginManagerResult discoverPlugins(
+    MCNAPI ::ScriptPluginManagerResult discoverPlugins(
         ::ResourceInformation::ResourceType     pluginEnumerator,
         ::IScriptPluginSourceEnumerator&        packConfigManager,
         ::ScriptPackConfigurationManager const& moduleFilters,
@@ -106,20 +106,20 @@ public:
         ::std::function<::PluginExecutionGroup(::std::vector<::Scripting::ModuleDescriptor> const&)>&& moduleType
     );
 
-    MCAPI void forEachPlugin(::std::function<void(::ScriptPlugin&)> func);
+    MCNAPI void forEachPlugin(::std::function<void(::ScriptPlugin&)> func);
 
-    MCAPI void forEachRuntime(::std::function<void(::Scripting::IRuntime&)> func);
+    MCNAPI void forEachRuntime(::std::function<void(::Scripting::IRuntime&)> func);
 
-    MCAPI ::std::vector<::ScriptPluginManager::PackNameAndWeakScope> getPluginScopes() const;
+    MCNAPI ::std::vector<::ScriptPluginManager::PackNameAndWeakScope> getPluginScopes() const;
 
-    MCAPI ::ScriptPluginManagerResult runGroup(::PluginExecutionGroup group);
+    MCNAPI ::ScriptPluginManagerResult runGroup(::PluginExecutionGroup group);
 
-    MCAPI ~ScriptPluginManager();
+    MCNAPI ~ScriptPluginManager();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

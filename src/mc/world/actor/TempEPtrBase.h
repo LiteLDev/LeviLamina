@@ -34,9 +34,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool isValid() const;
+    MCNAPI bool isValid() const;
 
-    MCAPI void unset();
+    MCNAPI void unset();
     // NOLINTEND
 
 public:
@@ -48,12 +48,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $invalidate();
+    MCNAPI void $invalidate();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

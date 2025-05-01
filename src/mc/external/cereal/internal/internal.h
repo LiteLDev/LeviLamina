@@ -16,14 +16,13 @@ namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
 namespace cereal::internal { class BasicSchema; }
-namespace cereal::internal { struct UserProperty; }
 namespace cereal::util::internal { struct StringViewHash; }
 // clang-format on
 
 namespace cereal::internal {
 // functions
 // NOLINTBEGIN
-MCAPI void derefAndLoad(
+MCNAPI void derefAndLoad(
     ::cereal::internal::BasicSchema const& schema,
     ::cereal::SchemaReader&                reader,
     ::entt::meta_any&                      any,
@@ -31,35 +30,33 @@ MCAPI void derefAndLoad(
     ::cereal::SerializerContext&           context
 );
 
-MCAPI ::cereal::DynamicValue
-dynamicValueFromProp(::cereal::ReflectionCtx const& ctx, ::cereal::internal::UserProperty const& prop);
+MCNAPI void derefAndSave(
+    ::cereal::internal::BasicSchema const& schema,
+    ::cereal::SchemaWriter&                writer,
+    ::entt::meta_any const&                any,
+    ::cereal::SerializerContext&           context
+);
 
-MCAPI void fillEnumDescription(
+MCNAPI void fillEnumDescription(
     ::cereal::ReflectionCtx const&                   ctx,
     ::cereal::SchemaDescription&                     ret,
     ::entt::meta_type const&                         type,
     ::cereal::internal::BasicSchema::DescriptionMode mode
 );
 
-MCAPI ::cereal::internal::ReflectedType getReflectedType(::entt::meta_type const& type);
+MCNAPI ::cereal::internal::ReflectedType getReflectedType(::entt::meta_type const& type);
 
-MCAPI ::std::string_view getSchemaName(::cereal::ReflectionCtx const& ctx, ::entt::type_info const& info);
+MCNAPI ::std::string_view getSchemaNameOrAssert(::cereal::ReflectionCtx const& ctx, ::entt::type_info const& info);
 
-MCAPI ::entt::dense_map<
-    ::std::string,
-    ::cereal::internal::UserProperty,
-    ::cereal::util::internal::StringViewHash,
-    ::std::equal_to<void>>*
-getUserProperties(::entt::meta_data const& data);
+MCNAPI ::entt::
+    dense_map<::std::string, ::entt::meta_any, ::cereal::util::internal::StringViewHash, ::std::equal_to<void>>*
+    getUserProperties(::entt::meta_data const& data);
 
-MCAPI ::entt::dense_map<
-    ::std::string,
-    ::cereal::internal::UserProperty,
-    ::cereal::util::internal::StringViewHash,
-    ::std::equal_to<void>>*
-getUserProperties(::entt::meta_type const& type);
+MCNAPI ::entt::
+    dense_map<::std::string, ::entt::meta_any, ::cereal::util::internal::StringViewHash, ::std::equal_to<void>>*
+    getUserProperties(::entt::meta_type const& type);
 
-MCAPI void iterateKeyValueAssociativeContainer(
+MCNAPI void iterateKeyValueAssociativeContainer(
     ::cereal::internal::BasicSchema const& keySchema,
     ::cereal::internal::BasicSchema const& mappedSchema,
     ::cereal::SchemaReader&                reader,
@@ -68,7 +65,7 @@ MCAPI void iterateKeyValueAssociativeContainer(
     ::cereal::SerializerContext&           context
 );
 
-MCAPI void iterateSequenceContainer(
+MCNAPI void iterateSequenceContainer(
     ::cereal::internal::BasicSchema const& schema,
     ::cereal::SchemaReader&                reader,
     ::entt::meta_any&                      any,
@@ -76,34 +73,34 @@ MCAPI void iterateSequenceContainer(
     ::cereal::SerializerContext&           context
 );
 
-MCAPI void loadEnumValue(
+MCNAPI void loadEnumValue(
     ::entt::meta_type const&     type,
     ::cereal::SchemaReader&      reader,
     ::entt::meta_any&            any,
     ::cereal::SerializerContext& context
 );
 
-MCAPI ::cereal::internal::BasicSchema const* lookup(::cereal::ReflectionCtx const& ctx, ::entt::type_info info);
+MCNAPI ::cereal::internal::BasicSchema const* lookup(::cereal::ReflectionCtx const& ctx, ::entt::type_info info);
 
-MCAPI void overrideCheck(::entt::meta_type type, uint currentMetaData, ::cereal::internal::SchemaTraits traits);
+MCNAPI void overrideCheck(::entt::meta_type type, uint currentMetaData, ::cereal::internal::SchemaTraits traits);
 
-MCAPI ::std::map<::std::string, ::cereal::DynamicValue> pickUserProperties(
+MCNAPI ::std::unordered_map<::std::string, ::cereal::DynamicValue> pickUserProperties(
     ::cereal::ReflectionCtx const& ctx,
     ::entt::dense_map<
         ::std::string,
-        ::cereal::internal::UserProperty,
+        ::entt::meta_any,
         ::cereal::util::internal::StringViewHash,
         ::std::equal_to<void>> const& userProps
 );
 
-MCAPI void saveEnumValue(
+MCNAPI void saveEnumValue(
     ::entt::meta_any const&      enumValue,
     ::entt::meta_type const&     type,
     ::cereal::SchemaWriter&      writer,
     ::cereal::SerializerContext& context
 );
 
-MCAPI void saveKeyValueAssociativeContainer(
+MCNAPI void saveKeyValueAssociativeContainer(
     ::entt::meta_any const&                any,
     ::cereal::internal::BasicSchema const& keySchema,
     ::cereal::internal::BasicSchema const& mappedSchema,
@@ -111,14 +108,14 @@ MCAPI void saveKeyValueAssociativeContainer(
     ::cereal::SerializerContext&           context
 );
 
-MCAPI void saveSequenceContainer(
+MCNAPI void saveSequenceContainer(
     ::cereal::internal::BasicSchema const& schema,
     ::cereal::SchemaWriter&                value,
     ::entt::meta_any const&                any,
     ::cereal::SerializerContext&           context
 );
 
-MCAPI ::std::string toString(double d);
+MCNAPI ::std::string toString(double d);
 // NOLINTEND
 
 } // namespace cereal::internal

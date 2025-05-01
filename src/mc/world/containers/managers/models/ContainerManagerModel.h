@@ -105,67 +105,67 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContainerManagerModel(::ContainerID containerId, ::Player& player);
+    MCNAPI ContainerManagerModel(::ContainerID containerId, ::Player& player);
 
-    MCAPI void _addContainer(::std::shared_ptr<::ContainerModel> containerModel);
+    MCNAPI void _addContainer(::std::shared_ptr<::ContainerModel> containerModel);
 
-    MCAPI bool _isPlayerInRangeOfPosition(::BlockPos const& blockPos, float pickRange) const;
+    MCNAPI bool _isPlayerInRangeOfPosition(::BlockPos const& blockPos, float pickRange) const;
 
-    MCAPI void addDynamicContainer(::std::shared_ptr<::ContainerModel> model);
+    MCNAPI void addDynamicContainer(::std::shared_ptr<::ContainerModel> model);
 
-    MCAPI void postInit();
+    MCNAPI void postInit();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerID containerId, ::Player& player);
+    MCNAPI void* $ctor(::ContainerID containerId, ::Player& player);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $tick();
+    MCNAPI bool $tick();
 
-    MCFOLD ::ContainerID $getContainerId() const;
+    MCNAPI ::ContainerID $getContainerId() const;
 
-    MCFOLD void $setContainerId(::ContainerID id);
+    MCNAPI void $setContainerId(::ContainerID id);
 
-    MCFOLD ::SharedTypes::Legacy::ContainerType $getContainerType() const;
+    MCNAPI ::SharedTypes::Legacy::ContainerType $getContainerType() const;
 
-    MCAPI void $setContainerType(::SharedTypes::Legacy::ContainerType type);
+    MCNAPI void $setContainerType(::SharedTypes::Legacy::ContainerType type);
 
-    MCAPI ::Bedrock::PubSub::Subscription
+    MCNAPI ::Bedrock::PubSub::Subscription
     $registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)> callback) const;
 
-    MCAPI void $debitPlayerLevels(int levels);
+    MCNAPI void $debitPlayerLevels(int levels);
 
-    MCAPI bool $isCreativeMode() const;
+    MCNAPI bool $isCreativeMode() const;
 
-    MCAPI bool $isClientSide() const;
+    MCNAPI bool $isClientSide() const;
 
-    MCAPI bool $isServerAuthoritative() const;
+    MCNAPI bool $isServerAuthoritative() const;
 
-    MCAPI bool $isValid(float pickRange);
+    MCNAPI bool $isValid(float pickRange);
 
-    MCAPI void $serverInitItemStackIds();
+    MCNAPI void $serverInitItemStackIds();
 
-    MCAPI void $setFullContainerSlot(int slot, ::FullContainerName const& name, ::ItemStack const& item, bool);
+    MCNAPI void $setFullContainerSlot(int slot, ::FullContainerName const& name, ::ItemStack const& item, bool);
 
-    MCAPI ::ItemStack const& $getFullContainerSlot(int slot, ::FullContainerName const& name) const;
+    MCNAPI ::ItemStack const& $getFullContainerSlot(int slot, ::FullContainerName const& name) const;
 
-    MCAPI void $broadcastChanges();
+    MCNAPI void $broadcastChanges();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

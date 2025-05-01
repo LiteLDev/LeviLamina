@@ -32,12 +32,12 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk1c2039;
-        ::ll::UntypedStorage<4, 4>  mUnkeea401;
-        ::ll::UntypedStorage<4, 4>  mUnkde3b98;
-        ::ll::UntypedStorage<4, 4>  mUnk976984;
-        ::ll::UntypedStorage<4, 4>  mUnk56aa7d;
-        ::ll::UntypedStorage<8, 96> mUnka96bda;
+        ::ll::UntypedStorage<4, 4>   mUnk1c2039;
+        ::ll::UntypedStorage<4, 4>   mUnkeea401;
+        ::ll::UntypedStorage<4, 4>   mUnkde3b98;
+        ::ll::UntypedStorage<4, 4>   mUnk976984;
+        ::ll::UntypedStorage<4, 4>   mUnk56aa7d;
+        ::ll::UntypedStorage<8, 240> mUnka96bda;
         // NOLINTEND
 
     public:
@@ -49,21 +49,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Slot(::ScriptModuleMinecraft::ScriptTickSignal::Slot&&);
+        MCNAPI Slot(::ScriptModuleMinecraft::ScriptTickSignal::Slot&&);
 
-        MCAPI ~Slot();
+        MCNAPI ~Slot();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptTickSignal::Slot&&);
+        MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptTickSignal::Slot&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -71,7 +71,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 120> mUnk888667;
+        ::ll::UntypedStorage<8, 264> mUnk888667;
         // NOLINTEND
 
     public:
@@ -83,13 +83,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~PendingSubscribe();
+        MCNAPI ~PendingSubscribe();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -125,26 +125,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _processActive(
+    MCNAPI void _processActive(
         ::std::vector<::ScriptModuleMinecraft::ScriptTickSignal::Slot>& slots,
         uint                                                            currentTick,
         ::ScriptDeferredFlushTracker&                                   deferredTracker
     );
 
-    MCAPI void _processPending(
+    MCNAPI void _processPending(
         ::std::vector<::std::variant<
             ::ScriptModuleMinecraft::ScriptTickSignal::PendingSubscribe,
             ::ScriptModuleMinecraft::ScriptTickSignal::PendingUnsubscribe>>& pendingList,
         ::std::vector<::ScriptModuleMinecraft::ScriptTickSignal::Slot>&      activeList
     );
 
-    MCAPI uint scheduleInterval(::Scripting::Closure<void()>&& closure, uint interval, uint currentTick);
+    MCNAPI uint scheduleInterval(::Scripting::Closure<void()>&& closure, uint interval, uint currentTick);
 
-    MCAPI uint scheduleTimeout(::Scripting::Closure<void()>&& closure, uint delay, uint currentTick);
+    MCNAPI uint scheduleTimeout(::Scripting::Closure<void()>&& closure, uint delay, uint currentTick);
 
-    MCAPI uint scheduleTimeout(::std::function<void()> function, uint delay, uint currentTick);
+    MCNAPI uint scheduleTimeout(::std::function<void()> function, uint delay, uint currentTick);
 
-    MCAPI uint scheduleTimeoutSafe(::Scripting::Closure<void()>&& closure, uint currentTick);
+    MCNAPI uint scheduleTimeoutSafe(::Scripting::Closure<void()>&& closure, uint currentTick);
     // NOLINTEND
 };
 

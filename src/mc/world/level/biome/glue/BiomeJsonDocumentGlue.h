@@ -41,13 +41,13 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCAPI ~ResolvedComponent();
+            MCNAPI ~ResolvedComponent();
             // NOLINTEND
 
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCFOLD void $dtor();
+            MCNAPI void $dtor();
             // NOLINTEND
         };
 
@@ -66,13 +66,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ResolvedBiomeData();
+        MCNAPI ~ResolvedBiomeData();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -91,7 +91,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BiomeJsonDocumentGlue::ResolvedBiomeData> getResolvedBiomeData(
+    MCNAPI ::std::optional<::BiomeJsonDocumentGlue::ResolvedBiomeData> getResolvedBiomeData(
         ::SharedTypes::v1_20_60::BiomeJsonDocument const& biomeJsonDocument,
         ::BiomeRegistry const&                            biomeRegistry
     ) const;

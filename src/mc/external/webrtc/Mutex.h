@@ -20,13 +20,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~Mutex();
+    MCNAPI ~Mutex();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

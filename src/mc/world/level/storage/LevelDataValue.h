@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class CompoundTag;
-// clang-format on
-
 struct LevelDataValue {
 public:
     // LevelDataValue inner types declare
@@ -30,25 +25,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Tag();
+        MCNAPI Tag();
 
-        MCAPI explicit Tag(::CompoundTag&& tag);
-
-        MCAPI ~Tag();
+        MCNAPI ~Tag();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
-
-        MCAPI void* $ctor(::CompoundTag&& tag);
+        MCNAPI void* $ctor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -67,12 +58,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~LevelDataValue();
+    MCNAPI ~LevelDataValue();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

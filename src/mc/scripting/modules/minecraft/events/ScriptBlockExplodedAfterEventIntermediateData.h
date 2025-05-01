@@ -31,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockExplodedAfterEventIntermediateData(
+    MCNAPI ScriptBlockExplodedAfterEventIntermediateData(
         ::Dimension&      dimension,
         ::BlockPos const& blockPos,
         ::Block const&    destroyedBlock,
@@ -42,7 +42,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::Dimension& dimension, ::BlockPos const& blockPos, ::Block const& destroyedBlock, ::Actor* source);
     // NOLINTEND
 };

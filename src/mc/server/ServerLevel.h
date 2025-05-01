@@ -43,6 +43,7 @@ class SoundPlayerInterface;
 class StructureManager;
 class TagCacheManager;
 class TradeTables;
+class VolumeEntityManagerServer;
 struct LevelTagIDType;
 struct LevelTagSetIDType;
 struct NetworkPermissions;
@@ -94,10 +95,10 @@ public:
         ::std::string const*   levelId
     ) /*override*/;
 
-    // vIndex: 384
+    // vIndex: 386
     virtual ::PlayerSleepManager const& getPlayerSleepManager() const /*override*/;
 
-    // vIndex: 383
+    // vIndex: 385
     virtual ::PlayerSleepManager& getPlayerSleepManager() /*override*/;
 
     // vIndex: 154
@@ -113,33 +114,33 @@ public:
     // vIndex: 156
     virtual void setWorldTemplateOptionsUnlocked() /*override*/;
 
-    // vIndex: 270
+    // vIndex: 271
     virtual ::ResourcePackManager* getClientResourcePackManager() const /*override*/;
 
-    // vIndex: 271
+    // vIndex: 272
     virtual ::ResourcePackManager* getServerResourcePackManager() const /*override*/;
 
-    // vIndex: 272
+    // vIndex: 273
     virtual ::TradeTables* getTradeTables() /*override*/;
 
-    // vIndex: 286
+    // vIndex: 288
     virtual void
     runCommand(::HashedString const&, ::CommandOrigin&, ::CommandOriginSystem, ::CurrentCmdVersion const) /*override*/;
 
-    // vIndex: 285
+    // vIndex: 287
     virtual void runCommand(::Command&, ::CommandOrigin&, ::CommandOriginSystem) /*override*/;
 
-    // vIndex: 273
+    // vIndex: 274
     virtual void
     decrementTagCache(::std::string const& tag, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&) /*override*/
         ;
 
-    // vIndex: 274
+    // vIndex: 275
     virtual void
     incrementTagCache(::std::string const& tag, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&) /*override*/
         ;
 
-    // vIndex: 275
+    // vIndex: 276
     virtual ::Bedrock::NonOwnerPointer<::TagCacheManager> getTagCacheManager() /*override*/;
 
     // vIndex: 227
@@ -148,38 +149,42 @@ public:
     // vIndex: 234
     virtual void loadFunctionManager() /*override*/;
 
-    // vIndex: 317
+    // vIndex: 319
     virtual ::Random& getThreadRandom() const /*override*/;
 
-    // vIndex: 296
+    // vIndex: 298
     virtual ::PositionTrackingDB::PositionTrackingDBServer* getPositionTrackerDBServer() const /*override*/;
 
-    // vIndex: 365
+    // vIndex: 286
+    virtual ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> tryGetVolumeEntityManagerServer() const
+        /*override*/;
+
+    // vIndex: 367
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> getChunkGenerationManager() /*override*/;
 
-    // vIndex: 364
+    // vIndex: 366
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> getChunkGenerationManager() const /*override*/;
 
-    // vIndex: 366
+    // vIndex: 368
     virtual ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> getMapDataManager() /*override*/;
 
-    // vIndex: 385
+    // vIndex: 387
     virtual void _subTick() /*override*/;
 
-    // vIndex: 378
+    // vIndex: 380
     virtual ::PlayerDeathManager* _getPlayerDeathManager() /*override*/;
 
-    // vIndex: 379
+    // vIndex: 381
     virtual ::MapDataManager& _getMapDataManager() /*override*/;
 
-    // vIndex: 386
+    // vIndex: 388
     virtual void _initializeMapDataManager() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerLevel(
+    MCNAPI ServerLevel(
         ::Bedrock::NotNullNonOwnerPtr<::PacketSender>                packetSender,
         ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer,
         ::Bedrock::UniqueOwnerPointer<::LevelStorage>                levelStorage,
@@ -199,23 +204,23 @@ public:
         ::std::weak_ptr<::BlockTypeRegistry>                         blockRegistry
     );
 
-    MCAPI void _initializeActorManager();
+    MCNAPI void _initializeActorManager();
 
-    MCAPI void _initializeMobEvents();
+    MCNAPI void _initializeMobEvents();
 
-    MCAPI void _initializePlayerSleepManager();
+    MCNAPI void _initializePlayerSleepManager();
 
-    MCAPI void _initializeScoreboard();
+    MCNAPI void _initializeScoreboard();
 
-    MCAPI void _onActorEntityAdded(::Actor& actor);
+    MCNAPI void _onActorEntityAdded(::Actor& actor);
 
-    MCAPI void _onPlayerWakeUp(::Player& player);
+    MCNAPI void _onPlayerWakeUp(::Player& player);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::PacketSender>                packetSender,
         ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer,
         ::Bedrock::UniqueOwnerPointer<::LevelStorage>                levelStorage,
@@ -239,75 +244,77 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $initialize(
+    MCNAPI bool $initialize(
         ::std::string const&   levelName,
         ::LevelSettings const& levelSettings,
         ::Experiments const&   experiments,
         ::std::string const*   levelId
     );
 
-    MCFOLD ::PlayerSleepManager const& $getPlayerSleepManager() const;
+    MCNAPI ::PlayerSleepManager const& $getPlayerSleepManager() const;
 
-    MCFOLD ::PlayerSleepManager& $getPlayerSleepManager();
+    MCNAPI ::PlayerSleepManager& $getPlayerSleepManager();
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager> $getServerPlayerSleepManager();
+    MCNAPI ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager> $getServerPlayerSleepManager();
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager const> $getServerPlayerSleepManager() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager const> $getServerPlayerSleepManager() const;
 
-    MCAPI void $setCommandsEnabled(bool commandsEnabled);
+    MCNAPI void $setCommandsEnabled(bool commandsEnabled);
 
-    MCAPI void $setWorldTemplateOptionsUnlocked();
+    MCNAPI void $setWorldTemplateOptionsUnlocked();
 
-    MCAPI ::ResourcePackManager* $getClientResourcePackManager() const;
+    MCNAPI ::ResourcePackManager* $getClientResourcePackManager() const;
 
-    MCAPI ::ResourcePackManager* $getServerResourcePackManager() const;
+    MCNAPI ::ResourcePackManager* $getServerResourcePackManager() const;
 
-    MCAPI ::TradeTables* $getTradeTables();
+    MCNAPI ::TradeTables* $getTradeTables();
 
-    MCAPI void
+    MCNAPI void
     $decrementTagCache(::std::string const& tag, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&);
 
-    MCAPI void
+    MCNAPI void
     $incrementTagCache(::std::string const& tag, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&);
 
-    MCAPI ::Bedrock::NonOwnerPointer<::TagCacheManager> $getTagCacheManager();
+    MCNAPI ::Bedrock::NonOwnerPointer<::TagCacheManager> $getTagCacheManager();
 
-    MCAPI ::LevelChunkMetaDataManager* $getLevelChunkMetaDataManager();
+    MCNAPI ::LevelChunkMetaDataManager* $getLevelChunkMetaDataManager();
 
-    MCAPI void $loadFunctionManager();
+    MCNAPI void $loadFunctionManager();
 
-    MCFOLD ::Random& $getThreadRandom() const;
+    MCNAPI ::Random& $getThreadRandom() const;
 
-    MCAPI ::PositionTrackingDB::PositionTrackingDBServer* $getPositionTrackerDBServer() const;
+    MCNAPI ::PositionTrackingDB::PositionTrackingDBServer* $getPositionTrackerDBServer() const;
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> $getChunkGenerationManager();
+    MCNAPI ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> $tryGetVolumeEntityManagerServer() const;
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> $getChunkGenerationManager() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> $getChunkGenerationManager();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> $getMapDataManager();
+    MCNAPI ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> $getChunkGenerationManager() const;
 
-    MCAPI void $_subTick();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> $getMapDataManager();
 
-    MCAPI ::PlayerDeathManager* $_getPlayerDeathManager();
+    MCNAPI void $_subTick();
 
-    MCAPI ::MapDataManager& $_getMapDataManager();
+    MCNAPI ::PlayerDeathManager* $_getPlayerDeathManager();
 
-    MCAPI void $_initializeMapDataManager();
+    MCNAPI ::MapDataManager& $_getMapDataManager();
+
+    MCNAPI void $_initializeMapDataManager();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBlockSourceListener();
+    MCNAPI static void** $vftableForBlockSourceListener();
 
-    MCAPI static void** $vftableForIWorldRegistriesProvider();
+    MCNAPI static void** $vftableForIWorldRegistriesProvider();
 
-    MCAPI static void** $vftableForILevel();
+    MCNAPI static void** $vftableForILevel();
     // NOLINTEND
 };

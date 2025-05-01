@@ -45,15 +45,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void buildDebugInfo(::std::string& out) const;
+    MCNAPI void buildDebugInfo(::std::string& out) const;
 
-    MCAPI void fireGeneEvents(::Actor& owner) const;
+    MCNAPI void fireGeneEvents(::Actor& owner) const;
 
-    MCAPI void initializeGenesFromParents(::Actor& owner, ::Actor& parentalUnit1, ::Actor& parentalUnit2);
+    MCNAPI void initializeGenesFromParents(::Actor& owner, ::Actor& parentalUnit1, ::Actor& parentalUnit2);
 
-    MCAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const& owner, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const& owner, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 
 public:

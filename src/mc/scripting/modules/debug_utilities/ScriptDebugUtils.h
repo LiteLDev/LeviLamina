@@ -19,13 +19,13 @@ class ScriptDebugUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ScriptModuleDebugUtilities::ScriptPluginStats
+    MCNAPI static ::ScriptModuleDebugUtilities::ScriptPluginStats
     collectPluginStats(::Scripting::DependencyLocator& locator);
 
-    MCAPI static ::ScriptModuleDebugUtilities::ScriptRuntimeStats
+    MCNAPI static ::ScriptModuleDebugUtilities::ScriptRuntimeStats
     collectRuntimeStats(::Scripting::DependencyLocator& locator);
 
-    MCAPI static ::Scripting::Result<void> disableWatchdogTimingWarnings(
+    MCNAPI static ::Scripting::Result<void> disableWatchdogTimingWarnings(
         ::Scripting::WeakLifetimeScope& scope,
         ::Scripting::DependencyLocator& locator,
         bool                            disable

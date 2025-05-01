@@ -17,19 +17,19 @@ class AnyDataChunk {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AnyDataChunk(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::dcsctp::Data, bool);
+    MCNAPI AnyDataChunk(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::dcsctp::Data, bool);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::dcsctp::Data, bool);
+    MCNAPI void* $ctor(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::dcsctp::Data, bool);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

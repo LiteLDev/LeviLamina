@@ -3,16 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/levelgen/v2/DimensionPadding.h"
 #include "mc/world/level/levelgen/v2/JigsawExpansion.h"
 #include "mc/world/level/levelgen/v2/StructureBuilder.h"
+#include "mc/world/level/levelgen/v2/StructureHeightProvider.h"
 #include "mc/world/level/levelgen/v2/heightmap_projection/Type.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
 class PoolAliasBinding;
-namespace br::worldgen { class StructureHeightProvider; }
-namespace br::worldgen { struct DimensionPadding; }
 namespace br::worldgen { struct JigsawStructure; }
 // clang-format on
 
@@ -43,35 +43,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JigsawStructureBuilder(::std::string_view key, ::HashedString type, int maxDistanceFromCenter);
+    MCNAPI JigsawStructureBuilder(::std::string_view key, ::HashedString type, int maxDistanceFromCenter);
 
-    MCAPI ::br::worldgen::JigsawStructure build();
+    MCNAPI ::br::worldgen::JigsawStructure build();
 
-    MCAPI ::br::worldgen::JigsawStructureBuilder& startPool(::std::string_view key);
+    MCNAPI ::br::worldgen::JigsawStructureBuilder& startPool(::std::string_view key);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::br::worldgen::JigsawStructureBuilder create(::std::string_view key, ::HashedString type);
+    MCNAPI static ::br::worldgen::JigsawStructureBuilder create(::std::string_view key, ::HashedString type);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view key, ::HashedString type, int maxDistanceFromCenter);
+    MCNAPI void* $ctor(::std::string_view key, ::HashedString type, int maxDistanceFromCenter);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

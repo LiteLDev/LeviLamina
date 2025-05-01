@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/util/Factory.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -43,9 +43,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::string const& $getName() const;
+    MCNAPI ::std::string const& $getName() const;
 
-    MCFOLD void $buildSchema(
+    MCNAPI void $buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
                                                schema,
         ::Factory<::ActorEventResponse> const& factory
@@ -55,6 +55,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

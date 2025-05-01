@@ -56,7 +56,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWidgetComponentGizmo(
+    MCNAPI ScriptWidgetComponentGizmo(
         ::Editor::ServiceProviderCollection&                                       serviceProviders,
         ::mce::UUID const&                                                         componentId,
         ::std::string const&                                                       componentName,
@@ -65,23 +65,23 @@ public:
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions> options
     );
 
-    MCFOLD ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _isActivated() const;
 
-    MCAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _setActivated(bool activated);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentGizmo> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentGizmo> bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                       serviceProviders,
         ::mce::UUID const&                                                         componentId,
         ::std::string const&                                                       componentName,
@@ -100,15 +100,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
+    MCNAPI ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
 
-    MCAPI void $_handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const& payload);
+    MCNAPI void $_handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const& payload);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

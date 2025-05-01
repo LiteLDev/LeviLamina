@@ -25,26 +25,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool Running() const;
+    MCNAPI bool Running() const;
 
-    MCAPI void Stop();
+    MCNAPI void Stop();
 
-    MCAPI ::webrtc::RepeatingTaskHandle& operator=(::webrtc::RepeatingTaskHandle&&);
+    MCNAPI ::webrtc::RepeatingTaskHandle& operator=(::webrtc::RepeatingTaskHandle&&);
 
-    MCAPI ~RepeatingTaskHandle();
+    MCNAPI ~RepeatingTaskHandle();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::RepeatingTaskHandle
+    MCNAPI static ::webrtc::RepeatingTaskHandle
     DelayedStart(::webrtc::TaskQueueBase*, ::webrtc::TimeDelta, ::absl::AnyInvocable<::webrtc::TimeDelta()>, ::webrtc::TaskQueueBase::DelayPrecision, ::webrtc::Clock*, ::webrtc::Location const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

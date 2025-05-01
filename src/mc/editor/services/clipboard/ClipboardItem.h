@@ -30,21 +30,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CompoundBlockVolume getPredictedWriteAsVolume(
+    MCNAPI ::CompoundBlockVolume getPredictedWriteAsVolume(
         ::BlockPos const&                                position,
         ::Editor::Services::ClipboardWriteOptions const* options
     ) const;
 
-    MCAPI ::StructureSettings getStructureSettingsFromOptions(
+    MCNAPI ::StructureSettings getStructureSettingsFromOptions(
         ::BlockPos const&                                size,
         ::Editor::Services::ClipboardWriteOptions const* options
     ) const;
 
-    MCAPI bool isEmpty() const;
+    MCNAPI bool isEmpty() const;
 
-    MCAPI void readFromVolume(::BlockSource& region, ::CompoundBlockVolume const& volume);
+    MCNAPI void readFromVolume(::BlockSource& region, ::CompoundBlockVolume const& volume);
 
-    MCAPI void readFromWorld(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to);
+    MCNAPI void readFromWorld(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to);
     // NOLINTEND
 };
 

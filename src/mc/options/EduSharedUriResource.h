@@ -22,30 +22,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EduSharedUriResource(::EduSharedUriResource&&);
+    MCNAPI EduSharedUriResource(::EduSharedUriResource&&);
 
-    MCFOLD ::EduSharedUriResource& operator=(::EduSharedUriResource&&);
+    MCNAPI ::EduSharedUriResource& operator=(::EduSharedUriResource&&);
 
-    MCFOLD ::EduSharedUriResource& operator=(::EduSharedUriResource const&);
+    MCNAPI ::EduSharedUriResource& operator=(::EduSharedUriResource const&);
 
-    MCAPI ~EduSharedUriResource();
+    MCNAPI ~EduSharedUriResource();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::EduSharedUriResource fromTag(::CompoundTag const& tag);
+    MCNAPI static ::EduSharedUriResource fromTag(::CompoundTag const& tag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::EduSharedUriResource&&);
+    MCNAPI void* $ctor(::EduSharedUriResource&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -37,11 +37,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::
+    MCNAPI ::Scripting::
         Result<::std::vector<::Editor::ScriptModule::ScriptTransferCollectionNameData>, ::Scripting::Error>
         _getRegisteredAccessors();
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::Scripting::Promise<
             ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptTransferServiceDataResponse>,
             ::Scripting::Error,
@@ -49,15 +49,15 @@ public:
         ::Scripting::Error>
     _requestData(::Scripting::ScriptObjectFactory& factory, ::std::string const& collectionName);
 
-    MCAPI ::Scripting::Result<void> _sendData(::std::string const& collectionName, ::std::string const& jsonData);
+    MCNAPI ::Scripting::Result<void> _sendData(::std::string const& collectionName, ::std::string const& jsonData);
 
-    MCAPI ::Scripting::Result<void> _sendDataToClipboard(::std::string const& jsonData);
+    MCNAPI ::Scripting::Result<void> _sendDataToClipboard(::std::string const& jsonData);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptDataTransferService> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptDataTransferService> bindScript();
     // NOLINTEND
 };
 

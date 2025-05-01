@@ -55,13 +55,13 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::Core::Result $_flushBuffer(void const* data, uint64 amount);
+        MCNAPI ::Core::Result $_flushBuffer(void const* data, uint64 amount);
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -99,17 +99,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _createNewCapture(::Core::Path capturePath);
+    MCNAPI bool _createNewCapture(::Core::Path capturePath);
 
-    MCAPI bool _cyclePreviousCaptures();
+    MCNAPI bool _cyclePreviousCaptures();
 
-    MCAPI ::Core::Path _getCapturePath(int captureIndex) const;
+    MCNAPI ::Core::Path _getCapturePath(int captureIndex) const;
 
-    MCAPI bool _initBasePath();
+    MCNAPI bool _initBasePath();
 
-    MCAPI bool startCapture();
+    MCNAPI bool startCapture();
 
-    MCAPI ::std::optional<::Core::Path> stopCapture();
+    MCNAPI ::std::optional<::Core::Path> stopCapture();
     // NOLINTEND
 
 public:
@@ -121,14 +121,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isStatPublisherEnabled() const;
+    MCNAPI bool $isStatPublisherEnabled() const;
 
-    MCAPI void $publishStats(uint64 collectedTick, ::std::vector<::ScriptStat> const& stats);
+    MCNAPI void $publishStats(uint64 collectedTick, ::std::vector<::ScriptStat> const& stats);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

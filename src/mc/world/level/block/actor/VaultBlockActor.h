@@ -57,13 +57,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~VaultConfig();
+        MCNAPI ~VaultConfig();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -86,13 +86,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~VaultSharedData();
+        MCNAPI ~VaultSharedData();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -114,13 +114,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~VaultClientData();
+        MCNAPI ~VaultClientData();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -146,13 +146,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~VaultServerData();
+        MCNAPI ~VaultServerData();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -160,17 +160,24 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void cycleDisplayItemFromLootTable(
+        MCNAPI static void cycleDisplayItemFromLootTable(
             ::BlockSource&                        region,
             ::VaultBlockState                     blockState,
             ::VaultBlockActor::VaultConfig const& config,
             ::VaultBlockActor::VaultSharedData&   sharedData
         );
 
-        MCAPI static ::ItemStack
+        MCNAPI static void ejectResultItem(
+            ::BlockSource&     region,
+            ::BlockPos         blockPos,
+            ::ItemStack const& item,
+            float              ejectionSoundProgress
+        );
+
+        MCNAPI static ::ItemStack
         getRandomDisplayItemFromLootTable(::BlockSource& region, ::std::string const& lootTable);
 
-        MCAPI static ::std::vector<::ItemStack> getRandomLootTableItems(
+        MCNAPI static ::std::vector<::ItemStack> getRandomLootTableItems(
             ::Level&             level,
             ::DimensionType      dimensionType,
             ::std::string const& lootTableName,
@@ -178,7 +185,7 @@ public:
             ::BlockPos           pos
         );
 
-        MCAPI static void onTransitionBetweenStates(
+        MCNAPI static void onTransitionBetweenStates(
             ::BlockSource&                        region,
             ::BlockPos                            pos,
             ::VaultBlockActor::VaultConfig const& config,
@@ -187,14 +194,14 @@ public:
             ::VaultBlockState                     newState
         );
 
-        MCAPI static void playInsertFailSound(
+        MCNAPI static void playInsertFailSound(
             ::BlockSource&                         region,
             ::BlockPos                             pos,
             ::VaultBlockActor::VaultServerData&    serverData,
             ::SharedTypes::Legacy::LevelSoundEvent sound
         );
 
-        MCAPI static void tick(
+        MCNAPI static void tick(
             ::BlockSource&                        region,
             ::BlockPos                            pos,
             ::VaultBlockActor::VaultConfig const& config,
@@ -202,7 +209,7 @@ public:
             ::VaultBlockActor::VaultSharedData&   sharedData
         );
 
-        MCAPI static ::VaultBlockState tickStateAndGetNext(
+        MCNAPI static ::VaultBlockState tickStateAndGetNext(
             ::BlockSource&                        region,
             ::BlockPos                            pos,
             ::VaultBlockActor::VaultConfig const& config,
@@ -211,7 +218,7 @@ public:
             ::VaultBlockState                     oldState
         );
 
-        MCAPI static void tryInsertKey(
+        MCNAPI static void tryInsertKey(
             ::BlockSource&                        region,
             ::Player&                             player,
             ::BlockPos                            pos,
@@ -220,7 +227,7 @@ public:
             ::VaultBlockActor::VaultServerData&   serverData
         );
 
-        MCAPI static void updateConnectedPlayersWithinRange(
+        MCNAPI static void updateConnectedPlayersWithinRange(
             ::BlockSource&                            region,
             ::BlockPos                                pos,
             ::VaultBlockActor::VaultServerData const& serverData,
@@ -234,26 +241,22 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void emitConnectedParticles(
+        MCNAPI static void emitConnectedParticles(
             ::BlockSource&                            region,
             ::BlockPos                                pos,
             ::VaultBlockActor::VaultSharedData const& sharedData
         );
 
-        MCAPI static void emitIdleParticles(
+        MCNAPI static void emitIdleParticles(
             ::BlockSource const&                      region,
             ::VaultBlockActor::VaultSharedData const& sharedData,
             ::BlockPos                                pos
         );
 
-        MCAPI static void removeDisplayEntity(::VaultBlockActor::VaultClientData& clientData);
+        MCNAPI static void
+        playIdleSounds(::BlockSource& region, ::BlockPos pos, ::VaultBlockActor::VaultSharedData const& sharedData);
 
-        MCAPI static void tick(
-            ::BlockSource&                            region,
-            ::BlockPos                                pos,
-            ::VaultBlockActor::VaultClientData&       clientData,
-            ::VaultBlockActor::VaultSharedData const& sharedData
-        );
+        MCNAPI static void removeDisplayEntity(::VaultBlockActor::VaultClientData& clientData);
         // NOLINTEND
     };
 
@@ -272,7 +275,7 @@ public:
     // vIndex: 0
     virtual ~VaultBlockActor() /*override*/ = default;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 1
@@ -281,30 +284,30 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 43
+    // vIndex: 44
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual void _onUpdatePacket(::CompoundTag const& tag, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit VaultBlockActor(::BlockPos const& pos);
+    MCNAPI explicit VaultBlockActor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     _javaSpawnItem(::BlockSource& region, ::ItemStack const& item, int position, uchar accuracy, ::Vec3 direction);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
+    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -316,20 +319,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& tag, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& tag, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

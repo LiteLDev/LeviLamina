@@ -12,20 +12,20 @@ class ScriptWidgetComponentGuideSensorOptions : public ::Editor::ScriptModule::S
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptWidgetComponentGuideSensorOptions();
+    MCNAPI ~ScriptWidgetComponentGuideSensorOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentGuideSensorOptions>
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentGuideSensorOptions>
     bindScript();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

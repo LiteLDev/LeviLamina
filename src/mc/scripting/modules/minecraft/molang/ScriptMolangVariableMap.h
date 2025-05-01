@@ -37,42 +37,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<::std::string> _prependVariable(::std::string const& variableName);
+    MCNAPI ::Scripting::Result_deprecated<::std::string> _prependVariable(::std::string const& variableName);
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     setColorRBGA_V010(::std::string const& variableName, ::ScriptModuleMinecraft::ScriptColor const& color);
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     setColorRBG_V010(::std::string const& variableName, ::ScriptModuleMinecraft::ScriptColor const& color);
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     setColorRGB(::std::string const& variableName, ::ScriptModuleMinecraft::ScriptRGB const& color);
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     setColorRGBA(::std::string const& variableName, ::ScriptModuleMinecraft::ScriptRGBA const& color);
 
-    MCAPI ::Scripting::Result<void> setFloat(::std::string const& variableName, float number);
+    MCNAPI ::Scripting::Result<void> setFloat(::std::string const& variableName, float number);
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     setSpeedAndDirection(::std::string const& variableName, float speed, ::Vec3 const& direction);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptMolangVariableMap>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptMolangVariableMap>
     setSpeedAndDirection_V010(
         ::std::string const&                         variableName,
         float                                        speed,
         ::ScriptModuleMinecraft::ScriptVector const& direction
     );
 
-    MCAPI ::Scripting::Result<void> setVector3(::std::string const& variableName, ::Vec3 const& vector);
+    MCNAPI ::Scripting::Result<void> setVector3(::std::string const& variableName, ::Vec3 const& vector);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptMolangVariableMap>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptMolangVariableMap>
     setVector3_V010(::std::string const& variableName, ::ScriptModuleMinecraft::ScriptVector const& vector);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptMolangVariableMap> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptMolangVariableMap> bind();
     // NOLINTEND
 };
 

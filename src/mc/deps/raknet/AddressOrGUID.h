@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace RakNet { struct RakNetGUID; }
-namespace RakNet { struct SystemAddress; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/raknet/RakNetGUID.h"
+#include "mc/deps/raknet/SystemAddress.h"
 
 namespace RakNet {
 
@@ -25,23 +23,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AddressOrGUID(::RakNet::RakNetGUID const& input);
+    MCNAPI explicit AddressOrGUID(::RakNet::RakNetGUID const& input);
 
-    MCAPI explicit AddressOrGUID(::RakNet::SystemAddress const& input);
+    MCNAPI explicit AddressOrGUID(::RakNet::SystemAddress const& input);
 
-    MCAPI AddressOrGUID(::RakNet::AddressOrGUID const& input);
+    MCNAPI AddressOrGUID(::RakNet::AddressOrGUID const& input);
 
-    MCAPI bool IsUndefined() const;
+    MCNAPI bool IsUndefined() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::RakNet::RakNetGUID const& input);
+    MCNAPI void* $ctor(::RakNet::RakNetGUID const& input);
 
-    MCAPI void* $ctor(::RakNet::SystemAddress const& input);
+    MCNAPI void* $ctor(::RakNet::SystemAddress const& input);
 
-    MCAPI void* $ctor(::RakNet::AddressOrGUID const& input);
+    MCNAPI void* $ctor(::RakNet::AddressOrGUID const& input);
     // NOLINTEND
 };
 

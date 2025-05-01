@@ -38,103 +38,104 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void CloseConnectionBecauseOfTooManyTransmissionErrors();
+    MCNAPI void CloseConnectionBecauseOfTooManyTransmissionErrors();
 
-    MCAPI void CreateTransmissionControlBlock(::dcsctp::Capabilities const&, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, uint64, ::webrtc::StrongAlias<::dcsctp::TieTagTag, uint64>);
+    MCNAPI void
+    CreateTransmissionControlBlock(::dcsctp::Capabilities const&, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, uint64, ::webrtc::StrongAlias<::dcsctp::TieTagTag, uint64>);
 
-    MCAPI
+    MCNAPI
     DcSctpSocket(::std::string_view, ::dcsctp::DcSctpSocketCallbacks&, ::std::unique_ptr<::dcsctp::PacketObserver>, ::dcsctp::DcSctpOptions const&);
 
-    MCAPI bool Dispatch(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
+    MCNAPI bool Dispatch(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
 
-    MCAPI void HandleAbort(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
+    MCNAPI void HandleAbort(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
 
-    MCAPI void HandleCookieAck(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
+    MCNAPI void HandleCookieAck(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
 
-    MCAPI void HandleCookieEcho(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
+    MCNAPI void HandleCookieEcho(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
 
-    MCAPI bool HandleCookieEchoWithTCB(::dcsctp::CommonHeader const&, ::dcsctp::StateCookie const&);
+    MCNAPI bool HandleCookieEchoWithTCB(::dcsctp::CommonHeader const&, ::dcsctp::StateCookie const&);
 
-    MCAPI void HandleData(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
+    MCNAPI void HandleData(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
 
-    MCAPI void HandleDataCommon(::dcsctp::AnyDataChunk&);
+    MCNAPI void HandleDataCommon(::dcsctp::AnyDataChunk&);
 
-    MCAPI void HandleError(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
+    MCNAPI void HandleError(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
 
-    MCAPI void HandleForwardTsn(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
+    MCNAPI void HandleForwardTsn(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
 
-    MCAPI void HandleForwardTsnCommon(::dcsctp::AnyForwardTsnChunk const&);
+    MCNAPI void HandleForwardTsnCommon(::dcsctp::AnyForwardTsnChunk const&);
 
-    MCAPI void HandleHeartbeatAck(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
+    MCNAPI void HandleHeartbeatAck(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
 
-    MCAPI void HandleHeartbeatRequest(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
+    MCNAPI void HandleHeartbeatRequest(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
 
-    MCAPI void HandleIData(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
+    MCNAPI void HandleIData(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
 
-    MCAPI void HandleIForwardTsn(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
+    MCNAPI void HandleIForwardTsn(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
 
-    MCAPI void HandleInit(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
+    MCNAPI void HandleInit(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
 
-    MCAPI void HandleInitAck(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
+    MCNAPI void HandleInitAck(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
 
-    MCAPI void HandleReconfig(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
+    MCNAPI void HandleReconfig(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
 
-    MCAPI void HandleSack(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
+    MCNAPI void HandleSack(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
 
-    MCAPI void HandleShutdown(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
+    MCNAPI void HandleShutdown(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
 
-    MCAPI void HandleShutdownAck(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
+    MCNAPI void HandleShutdownAck(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
 
-    MCAPI void HandleShutdownComplete(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
+    MCNAPI void HandleShutdownComplete(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
 
-    MCAPI bool HandleUnrecognizedChunk(::dcsctp::SctpPacket::ChunkDescriptor const&);
+    MCNAPI bool HandleUnrecognizedChunk(::dcsctp::SctpPacket::ChunkDescriptor const&);
 
-    MCAPI void InternalClose(::dcsctp::ErrorKind, ::std::string_view);
+    MCNAPI void InternalClose(::dcsctp::ErrorKind, ::std::string_view);
 
-    MCAPI ::dcsctp::SendStatus InternalSend(::dcsctp::DcSctpMessage const&, ::dcsctp::SendOptions const&);
+    MCNAPI ::dcsctp::SendStatus InternalSend(::dcsctp::DcSctpMessage const&, ::dcsctp::SendOptions const&);
 
-    MCAPI void MaybeDeliverMessages();
+    MCNAPI void MaybeDeliverMessages();
 
-    MCAPI void MaybeSendResetStreamsRequest();
+    MCNAPI void MaybeSendResetStreamsRequest();
 
-    MCAPI void MaybeSendShutdownOnPacketReceived(::dcsctp::SctpPacket const&);
+    MCNAPI void MaybeSendShutdownOnPacketReceived(::dcsctp::SctpPacket const&);
 
-    MCAPI void MaybeSendShutdownOrAck();
+    MCNAPI void MaybeSendShutdownOrAck();
 
-    MCAPI ::webrtc::TimeDelta OnCookieTimerExpiry();
+    MCNAPI ::webrtc::TimeDelta OnCookieTimerExpiry();
 
-    MCAPI ::webrtc::TimeDelta OnInitTimerExpiry();
+    MCNAPI ::webrtc::TimeDelta OnInitTimerExpiry();
 
-    MCAPI void OnSentPacket(::rtc::ArrayView<uchar const>, ::dcsctp::SendPacketStatus);
+    MCNAPI void OnSentPacket(::rtc::ArrayView<uchar const>, ::dcsctp::SendPacketStatus);
 
-    MCAPI ::webrtc::TimeDelta OnShutdownTimerExpiry();
+    MCNAPI ::webrtc::TimeDelta OnShutdownTimerExpiry();
 
-    MCAPI void ReportFailedToParseChunk(int);
+    MCNAPI void ReportFailedToParseChunk(int);
 
-    MCAPI void SendInit();
+    MCNAPI void SendInit();
 
-    MCAPI void SendShutdown();
+    MCNAPI void SendShutdown();
 
-    MCAPI void SendShutdownAck();
+    MCNAPI void SendShutdownAck();
 
-    MCAPI void SetState(::dcsctp::DcSctpSocket::State, ::std::string_view);
+    MCNAPI void SetState(::dcsctp::DcSctpSocket::State, ::std::string_view);
 
-    MCAPI bool ValidateHasTCB();
+    MCNAPI bool ValidateHasTCB();
 
-    MCAPI bool ValidatePacket(::dcsctp::SctpPacket const&);
+    MCNAPI bool ValidatePacket(::dcsctp::SctpPacket const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::string_view, ::dcsctp::DcSctpSocketCallbacks&, ::std::unique_ptr<::dcsctp::PacketObserver>, ::dcsctp::DcSctpOptions const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

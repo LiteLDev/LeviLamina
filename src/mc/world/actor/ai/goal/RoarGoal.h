@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
-class WeakEntityRef;
-struct Tick;
 // clang-format on
 
 class RoarGoal : public ::Goal {
@@ -50,7 +50,7 @@ public:
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -91,7 +91,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::WeakEntityRef> _findRoarTarget() const;
+    MCNAPI ::std::optional<::WeakEntityRef> _findRoarTarget() const;
     // NOLINTEND
 
 public:
@@ -103,22 +103,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

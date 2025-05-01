@@ -54,43 +54,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Symmetric(::Crypto::Symmetric::System system, ::Crypto::Symmetric::OperationMode mode);
+    MCNAPI Symmetric(::Crypto::Symmetric::System system, ::Crypto::Symmetric::OperationMode mode);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Crypto::Symmetric::System system, ::Crypto::Symmetric::OperationMode mode);
+    MCNAPI void* $ctor(::Crypto::Symmetric::System system, ::Crypto::Symmetric::OperationMode mode);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $init(::std::string const& key, ::std::string const& IV);
+    MCNAPI void $init(::std::string const& key, ::std::string const& IV);
 
-    MCFOLD void $encrypt(::std::string const& plaintext, ::std::string& output);
+    MCNAPI void $encrypt(::std::string const& plaintext, ::std::string& output);
 
-    MCFOLD void $decrypt(::std::string const& ciphertext, ::std::string& output);
+    MCNAPI void $decrypt(::std::string const& ciphertext, ::std::string& output);
 
-    MCFOLD uint64 $getKeySize() const;
+    MCNAPI uint64 $getKeySize() const;
 
-    MCFOLD uint64 $getBlockSize() const;
+    MCNAPI uint64 $getBlockSize() const;
 
-    MCFOLD uint64 $getEncryptionBufferSize(uint64 inputSize) const;
+    MCNAPI uint64 $getEncryptionBufferSize(uint64 inputSize) const;
 
-    MCAPI bool $encryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten);
+    MCNAPI bool $encryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

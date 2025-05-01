@@ -49,18 +49,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void processReplicationForPlayers(
+    MCNAPI void processReplicationForPlayers(
         ::std::vector<::WeakEntityRef> const& playerList,
         ::Level const&                        level,
         ::ChunkSource&                        chunkSource
     );
 
-    MCAPI ~ActorReplication();
+    MCNAPI ~ActorReplication();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

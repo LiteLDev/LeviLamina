@@ -25,31 +25,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EquipmentTable(::EquipmentTable const&);
+    MCNAPI EquipmentTable(::EquipmentTable const&);
 
-    MCAPI void readAdditionalSaveData(::CompoundTag const& tag);
+    MCNAPI void readAdditionalSaveData(::CompoundTag const& tag);
 
-    MCAPI ~EquipmentTable();
+    MCNAPI ~EquipmentTable();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::EquipmentTableDropChance> _createDropChancesFromTag(::Tag const& tag);
+    MCNAPI static ::std::vector<::EquipmentTableDropChance> _createDropChancesFromTag(::Tag const& tag);
 
-    MCAPI static ::std::unique_ptr<::CompoundTag>
+    MCNAPI static ::std::unique_ptr<::CompoundTag>
     _createTagFromDropChances(::std::vector<::EquipmentTableDropChance> const& dropChances);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::EquipmentTable const&);
+    MCNAPI void* $ctor(::EquipmentTable const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/FloatRange.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 class EnderDragon;
-struct FloatRange;
 // clang-format on
 
 class DragonBaseGoal : public ::Goal {

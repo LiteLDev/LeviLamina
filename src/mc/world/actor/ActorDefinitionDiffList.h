@@ -34,36 +34,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ActorDefinitionDiffList(::ActorDefinitionGroup& definitions);
+    MCNAPI explicit ActorDefinitionDiffList(::ActorDefinitionGroup& definitions);
 
-    MCAPI void _updateStack();
+    MCNAPI void _updateStack();
 
-    MCAPI void addDefinition(::std::string const& def);
+    MCNAPI void addDefinition(::std::string const& def);
 
-    MCAPI void clearChangedDescription();
+    MCNAPI void clearChangedDescription();
 
-    MCAPI ::std::string definitionListToString(::std::string const& delimiter) const;
+    MCNAPI ::std::string definitionListToString(::std::string const& delimiter) const;
 
-    MCAPI ::std::unique_ptr<::ActorDefinitionDescriptor> getDescription(bool needsUpdate);
+    MCNAPI ::std::unique_ptr<::ActorDefinitionDescriptor> getDescription(bool needsUpdate);
 
-    MCAPI void removeDefinition(::std::string const& def);
+    MCNAPI void removeDefinition(::std::string const& def);
 
-    MCAPI void setDefinitionStack(::std::vector<::DiffListPair>& stack);
+    MCNAPI void setDefinitionStack(::std::vector<::DiffListPair>& stack);
 
-    MCAPI void unlockChanges();
+    MCNAPI void unlockChanges();
 
-    MCAPI ~ActorDefinitionDiffList();
+    MCNAPI ~ActorDefinitionDiffList();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionGroup& definitions);
+    MCNAPI void* $ctor(::ActorDefinitionGroup& definitions);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

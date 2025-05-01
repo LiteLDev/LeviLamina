@@ -44,15 +44,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute();
+    MCNAPI void $execute();
 
-    MCAPI bool $isDone();
+    MCNAPI bool $isDone();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

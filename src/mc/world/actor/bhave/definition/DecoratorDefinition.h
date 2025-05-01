@@ -35,7 +35,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::BehaviorDefinition>
+    MCNAPI static ::std::unique_ptr<::BehaviorDefinition>
     _decoratorLoadChildBehavior(::Json::Value value, ::BehaviorFactory const& factory, ::BehaviorTreeDefinitionPtr ptr);
     // NOLINTEND
 

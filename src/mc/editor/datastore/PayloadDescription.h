@@ -22,15 +22,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::Editor::DataStore::PayloadDescription& operator=(::Editor::DataStore::PayloadDescription&&);
+    MCNAPI ::Editor::DataStore::PayloadDescription& operator=(::Editor::DataStore::PayloadDescription&&);
 
-    MCAPI ~PayloadDescription();
+    MCNAPI ~PayloadDescription();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

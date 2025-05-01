@@ -13,6 +13,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<bool> generateFlagsForIndices(int endIndex, int startIndex) const;
+    MCNAPI ::std::vector<bool> generateFlagsForIndices(int endIndex, int startIndex) const;
     // NOLINTEND
 };

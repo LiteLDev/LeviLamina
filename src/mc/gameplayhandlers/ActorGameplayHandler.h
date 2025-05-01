@@ -17,8 +17,11 @@ public:
     // vIndex: 0
     virtual ~ActorGameplayHandler() /*override*/ = default;
 
-    // vIndex: 3
+    // vIndex: 4
     virtual ::HandlerResult handleEvent(::ActorGameplayEvent<void> const&) = 0;
+
+    // vIndex: 3
+    virtual ::HandlerResult handleEvent(::MutableActorGameplayEvent<void>&) = 0;
 
     // vIndex: 2
     virtual ::GameplayHandlerResult<::CoordinatorResult>

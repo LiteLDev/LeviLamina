@@ -20,13 +20,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ToStringVal();
+    MCNAPI ~ToStringVal();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

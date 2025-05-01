@@ -10,11 +10,11 @@ struct TickingSystemWithInfo;
 namespace MovementInterpolatorSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createCopyInterpolatorComponentSystem();
+MCNAPI ::TickingSystemWithInfo createCopyInterpolatorComponentSystem();
 
-MCAPI ::TickingSystemWithInfo createOnGroundPostTickSystem();
+MCNAPI ::TickingSystemWithInfo createOnGroundPostTickSystem();
 
-MCAPI ::TickingSystemWithInfo createTickSystem(bool isClientSide);
+MCNAPI ::TickingSystemWithInfo createTickSystem(bool isClientSide);
 // NOLINTEND
 
 } // namespace MovementInterpolatorSystem

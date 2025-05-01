@@ -37,31 +37,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     ScriptPluginPackSourceEnumerator(::std::string const& scriptRoot, ::std::vector<::PackInstance> const& packStack);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& scriptRoot, ::std::vector<::PackInstance> const& packStack);
+    MCNAPI void* $ctor(::std::string const& scriptRoot, ::std::vector<::PackInstance> const& packStack);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::vector<::std::shared_ptr<::IScriptPluginSource>> const& $getPluginSources() const;
+    MCNAPI ::std::vector<::std::shared_ptr<::IScriptPluginSource>> const& $getPluginSources() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

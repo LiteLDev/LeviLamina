@@ -23,7 +23,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::GreaterThanComparison> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::GreaterThanComparison> bind();
     // NOLINTEND
 };
 

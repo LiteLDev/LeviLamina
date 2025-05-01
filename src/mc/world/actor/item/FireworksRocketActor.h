@@ -63,17 +63,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FireworksRocketActor(
+    MCNAPI FireworksRocketActor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void checkAchievement() const;
+    MCNAPI void checkAchievement() const;
 
-    MCAPI void dealExplosionDamage();
+    MCNAPI void dealExplosionDamage();
 
-    MCAPI void init(
+    MCNAPI void init(
         ::Level&             level,
         ::Vec3 const&        rocketUserData,
         ::CompoundTag const& dir,
@@ -82,15 +82,15 @@ public:
         bool
     );
 
-    MCAPI void initTagData(::Random& random);
+    MCNAPI void initTagData(::Random& random);
 
-    MCAPI void postNormalTick();
+    MCNAPI void postNormalTick();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void initData(
+    MCNAPI static void initData(
         ::SynchedActorDataEntityWrapper& data,
         ::CompoundTag const&             rocketUserData,
         ::Vec3 const&                    dir,
@@ -101,7 +101,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -117,20 +117,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
 
-    MCAPI void $lerpMotion(::Vec3 const& delta);
+    MCNAPI void $lerpMotion(::Vec3 const& delta);
 
-    MCAPI void $onSynchedDataUpdate(int dataId);
+    MCNAPI void $onSynchedDataUpdate(int dataId);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

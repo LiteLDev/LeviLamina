@@ -25,20 +25,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FileInfo(::Core::Path _filePath, int _fileHash, ::std::string _fileSize);
+    MCNAPI FileInfo(::Core::Path _filePath, int _fileHash, ::std::string _fileSize);
 
-    MCAPI ~FileInfo();
+    MCNAPI ~FileInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::Path _filePath, int _fileHash, ::std::string _fileSize);
+    MCNAPI void* $ctor(::Core::Path _filePath, int _fileHash, ::std::string _fileSize);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

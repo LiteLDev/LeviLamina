@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 namespace Scripting { struct ErrorBinding; }
 // clang-format on
 
@@ -17,27 +16,19 @@ struct ScriptItemCustomComponentReloadVersionError : public ::Scripting::Error {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptItemCustomComponentReloadVersionError(::HashedString const& componentName);
-
-    MCAPI ~ScriptItemCustomComponentReloadVersionError();
+    MCNAPI ~ScriptItemCustomComponentReloadVersionError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::HashedString const& componentName);
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

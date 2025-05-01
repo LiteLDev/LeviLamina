@@ -31,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::Network::PlaytestBeginSessionTransferResponsePayload&
+    MCNAPI ::Editor::Network::PlaytestBeginSessionTransferResponsePayload&
     operator=(::Editor::Network::PlaytestBeginSessionTransferResponsePayload const&);
     // NOLINTEND
 
@@ -44,7 +44,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

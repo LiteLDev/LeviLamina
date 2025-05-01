@@ -33,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _readConfigFile(::Core::Path const& filePath);
+    MCNAPI void _readConfigFile(::Core::Path const& filePath);
     // NOLINTEND
 
 public:
@@ -45,6 +45,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

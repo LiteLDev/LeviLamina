@@ -4,16 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/events/ChunkLoadTelemetryData.h"
+#include "mc/world/level/chunk/AtomicTimeAccumulator.h"
 
 // auto generated forward declare list
 // clang-format off
-class AtomicTimeAccumulator;
 class ChunkPos;
 class ChunkSource;
 class ILevelChunkEventManagerConnector;
 class LevelChunk;
-struct ChunkLoadTelemetryData;
-namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 struct ChunkPerformanceData : public ::Bedrock::EnableNonOwnerReferences {
@@ -126,19 +126,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChunkPerformanceData();
+    MCNAPI ChunkPerformanceData();
 
-    MCAPI void _onChunkLoaded(::ChunkSource&, ::LevelChunk& levelChunk, int);
+    MCNAPI void _onChunkLoaded(::ChunkSource&, ::LevelChunk& levelChunk, int);
 
-    MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
+    MCNAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
-    MCAPI void resetAll();
+    MCNAPI void resetAll();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -150,6 +150,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

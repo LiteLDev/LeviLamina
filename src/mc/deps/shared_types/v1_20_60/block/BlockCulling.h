@@ -41,19 +41,19 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCFOLD ::SharedTypes::v1_20_60::BlockCulling::Contents::Description&
+            MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Contents::Description&
             operator=(::SharedTypes::v1_20_60::BlockCulling::Contents::Description&&);
 
-            MCFOLD ::SharedTypes::v1_20_60::BlockCulling::Contents::Description&
+            MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Contents::Description&
             operator=(::SharedTypes::v1_20_60::BlockCulling::Contents::Description const&);
 
-            MCAPI ~Description();
+            MCNAPI ~Description();
             // NOLINTEND
 
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCFOLD void $dtor();
+            MCNAPI void $dtor();
             // NOLINTEND
         };
 
@@ -82,10 +82,10 @@ public:
             public:
                 // member functions
                 // NOLINTBEGIN
-                MCAPI ::SharedTypes::v1_20_60::BlockCulling::Contents::Rule::GeometryPart&
+                MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Contents::Rule::GeometryPart&
                 operator=(::SharedTypes::v1_20_60::BlockCulling::Contents::Rule::GeometryPart const&);
 
-                MCAPI ::SharedTypes::v1_20_60::BlockCulling::Contents::Rule::GeometryPart&
+                MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Contents::Rule::GeometryPart&
                 operator=(::SharedTypes::v1_20_60::BlockCulling::Contents::Rule::GeometryPart&&);
                 // NOLINTEND
             };
@@ -105,10 +105,10 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCAPI ::SharedTypes::v1_20_60::BlockCulling::Contents::Rule&
+            MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Contents::Rule&
             operator=(::SharedTypes::v1_20_60::BlockCulling::Contents::Rule const&);
 
-            MCAPI ::SharedTypes::v1_20_60::BlockCulling::Contents::Rule&
+            MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Contents::Rule&
             operator=(::SharedTypes::v1_20_60::BlockCulling::Contents::Rule&&);
             // NOLINTEND
         };
@@ -128,10 +128,10 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::SharedTypes::v1_20_60::BlockCulling::Contents&
+        MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Contents&
         operator=(::SharedTypes::v1_20_60::BlockCulling::Contents&&);
 
-        MCAPI ::SharedTypes::v1_20_60::BlockCulling::Contents&
+        MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Contents&
         operator=(::SharedTypes::v1_20_60::BlockCulling::Contents const&);
         // NOLINTEND
     };
@@ -152,7 +152,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

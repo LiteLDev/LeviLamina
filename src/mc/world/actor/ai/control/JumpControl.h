@@ -54,26 +54,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $initializeInternal(::Mob& mob, ::JumpControlDescription* description);
+    MCNAPI void $initializeInternal(::Mob& mob, ::JumpControlDescription* description);
 
-    MCAPI ::std::unique_ptr<::JumpControl> $clone() const;
+    MCNAPI ::std::unique_ptr<::JumpControl> $clone() const;
 
-    MCAPI void $tick(::JumpControlComponent& parent, ::Mob& mob);
+    MCNAPI void $tick(::JumpControlComponent& parent, ::Mob& mob);
 
-    MCFOLD int $getJumpDelay(::JumpControlComponent const&) const;
+    MCNAPI int $getJumpDelay(::JumpControlComponent const&) const;
 
-    MCAPI float $getJumpPower(::JumpControlComponent const& parent) const;
+    MCNAPI float $getJumpPower(::JumpControlComponent const& parent) const;
 
-    MCFOLD ::JumpType $getJumpType(::JumpControlComponent const&) const;
+    MCNAPI ::JumpType $getJumpType(::JumpControlComponent const&) const;
 
-    MCFOLD void $setJumpType(::JumpControlComponent&, ::JumpType);
+    MCNAPI void $setJumpType(::JumpControlComponent&, ::JumpType);
 
-    MCFOLD void $resetSpeedModifier(::JumpControlComponent const&, ::Mob&);
+    MCNAPI void $resetSpeedModifier(::JumpControlComponent const&, ::Mob&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

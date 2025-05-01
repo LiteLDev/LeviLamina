@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -66,10 +66,10 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForConnector();
+    MCNAPI static void** $vftableForConnector();
 
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForNetworkEnableDisableListener();
+    MCNAPI static void** $vftableForNetworkEnableDisableListener();
     // NOLINTEND
 };

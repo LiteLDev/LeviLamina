@@ -33,28 +33,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BackgroundTaskQueue();
+    MCNAPI BackgroundTaskQueue();
 
-    MCAPI bool _fetchAllAvailableTasks();
+    MCNAPI bool _fetchAllAvailableTasks();
 
-    MCAPI void flush();
+    MCNAPI void flush();
 
-    MCAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);
+    MCNAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);
 
-    MCAPI ::std::shared_ptr<::BackgroundTaskBase> tryPop(int minPriority);
+    MCNAPI ::std::shared_ptr<::BackgroundTaskBase> tryPop(int minPriority);
 
-    MCAPI ~BackgroundTaskQueue();
+    MCNAPI ~BackgroundTaskQueue();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -42,7 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DimensionFactory(
+    MCNAPI DimensionFactory(
         ::Bedrock::NotNullNonOwnerPtr<::ILevel>     level,
         ::Bedrock::NotNullNonOwnerPtr<::Scheduler>  scheduler,
         ::br::worldgen::StructureSetRegistry const& structureSetRegistry
@@ -52,7 +52,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::ILevel>     level,
         ::Bedrock::NotNullNonOwnerPtr<::Scheduler>  scheduler,
         ::br::worldgen::StructureSetRegistry const& structureSetRegistry
@@ -62,20 +62,20 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::OwnerPtr<::Dimension> $create(::std::string const& dimensionName) const;
+    MCNAPI ::OwnerPtr<::Dimension> $create(::std::string const& dimensionName) const;
 
-    MCAPI void $initializeDimension(::Dimension& dimension) const;
+    MCNAPI void $initializeDimension(::Dimension& dimension) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

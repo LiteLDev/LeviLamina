@@ -60,53 +60,53 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddFeedbackParam(::cricket::FeedbackParam const&);
+    MCNAPI void AddFeedbackParam(::cricket::FeedbackParam const&);
 
-    MCAPI Codec(::cricket::Codec&&);
+    MCNAPI Codec(::cricket::Codec&&);
 
-    MCAPI Codec(::cricket::Codec const&);
+    MCNAPI Codec(::cricket::Codec const&);
 
-    MCAPI Codec(::cricket::Codec::Type, int, ::std::string const&, int);
+    MCNAPI Codec(::cricket::Codec::Type, int, ::std::string const&, int);
 
-    MCAPI Codec(::cricket::Codec::Type, int, ::std::string const&, int, uint64);
+    MCNAPI Codec(::cricket::Codec::Type, int, ::std::string const&, int, uint64);
 
-    MCAPI bool GetParam(::std::string const&, int*) const;
+    MCNAPI bool GetParam(::std::string const&, int*) const;
 
-    MCAPI bool GetParam(::std::string const&, ::std::string*) const;
+    MCNAPI bool GetParam(::std::string const&, ::std::string*) const;
 
-    MCAPI ::cricket::Codec::ResiliencyType GetResiliencyType() const;
+    MCNAPI ::cricket::Codec::ResiliencyType GetResiliencyType() const;
 
-    MCAPI void IntersectFeedbackParams(::cricket::Codec const&);
+    MCNAPI void IntersectFeedbackParams(::cricket::Codec const&);
 
-    MCAPI bool IsMediaCodec() const;
+    MCNAPI bool IsMediaCodec() const;
 
-    MCAPI bool IsResiliencyCodec() const;
+    MCNAPI bool IsResiliencyCodec() const;
 
-    MCAPI bool Matches(::cricket::Codec const&) const;
+    MCNAPI bool Matches(::cricket::Codec const&) const;
 
-    MCAPI bool MatchesRtpCodec(::webrtc::RtpCodec const&) const;
+    MCNAPI bool MatchesRtpCodec(::webrtc::RtpCodec const&) const;
 
-    MCAPI void SetParam(::std::string const&, int);
+    MCNAPI void SetParam(::std::string const&, int);
 
-    MCAPI void SetParam(::std::string const&, ::std::string const&);
+    MCNAPI void SetParam(::std::string const&, ::std::string const&);
 
-    MCAPI ::std::string ToString() const;
+    MCNAPI ::std::string ToString() const;
 
-    MCAPI ::cricket::Codec& operator=(::cricket::Codec const&);
+    MCNAPI ::cricket::Codec& operator=(::cricket::Codec const&);
 
-    MCAPI ::cricket::Codec& operator=(::cricket::Codec&&);
+    MCNAPI ::cricket::Codec& operator=(::cricket::Codec&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::Codec&&);
+    MCNAPI void* $ctor(::cricket::Codec&&);
 
-    MCAPI void* $ctor(::cricket::Codec const&);
+    MCNAPI void* $ctor(::cricket::Codec const&);
 
-    MCAPI void* $ctor(::cricket::Codec::Type, int, ::std::string const&, int);
+    MCNAPI void* $ctor(::cricket::Codec::Type, int, ::std::string const&, int);
 
-    MCAPI void* $ctor(::cricket::Codec::Type, int, ::std::string const&, int, uint64);
+    MCNAPI void* $ctor(::cricket::Codec::Type, int, ::std::string const&, int, uint64);
     // NOLINTEND
 
 public:
@@ -124,7 +124,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

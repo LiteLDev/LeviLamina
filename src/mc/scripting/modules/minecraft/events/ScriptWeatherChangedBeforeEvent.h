@@ -27,7 +27,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent> bind();
     // NOLINTEND
 };
 

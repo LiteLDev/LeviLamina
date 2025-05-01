@@ -27,9 +27,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Editor::Widgets::GroupSelectionMode> bindEnums();
+    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Editor::Widgets::GroupSelectionMode> bindEnums();
 
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetGroupCreateOptions>
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetGroupCreateOptions>
     bindScript();
     // NOLINTEND
 };

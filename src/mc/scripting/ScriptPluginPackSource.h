@@ -47,7 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Core::Path _removeRootFromPath(::Core::Path const& pathIn);
+    MCNAPI ::Core::Path _removeRootFromPath(::Core::Path const& pathIn);
     // NOLINTEND
 
 public:
@@ -59,18 +59,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::PackManifest const& $getManifest();
+    MCNAPI ::PackManifest const& $getManifest();
 
-    MCAPI ::std::vector<::std::string> $enumerateScripts(::std::string const& extension);
+    MCNAPI ::std::vector<::std::string> $enumerateScripts(::std::string const& extension);
 
-    MCAPI ::std::optional<::std::string> $loadScript(::std::string const& path);
+    MCNAPI ::std::optional<::std::string> $loadScript(::std::string const& path);
 
-    MCAPI ::std::string $removeRootFromPath(::std::string const& path);
+    MCNAPI ::std::string $removeRootFromPath(::std::string const& path);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

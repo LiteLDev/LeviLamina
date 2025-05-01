@@ -81,6 +81,12 @@ public:
     virtual void
     checkCanConnectToCustomServerAsync(::std::string, int, ::std::function<void(::ServerConnectivityTestResult)>) /*override*/
         ;
+
+    // vIndex: 1
+    virtual void _onDisable() /*override*/;
+
+    // vIndex: 2
+    virtual void _onEnable() /*override*/;
     // NOLINTEND
 
 public:

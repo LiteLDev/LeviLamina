@@ -3,24 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/util/IDType.h"
 #include "mc/util/TagRegistry.h"
 #include "mc/util/WeightedRandomList.h"
+#include "mc/world/level/biome/OceanRuinConfiguration.h"
+#include "mc/world/level/biome/components/BiomeComponentStorage.h"
 #include "mc/world/level/biome/components/vanilla/VanillaBiomeTypes.h"
 
 // auto generated forward declare list
 // clang-format off
 class BaseGameVersion;
-class BiomeComponentStorage;
 class BlockPos;
 class BlockSource;
 class CompoundTag;
-class HashedString;
 class MobSpawnerData;
 class WellKnownTagID;
 struct BiomeTagIDType;
 struct BiomeTagSetIDType;
-struct OceanRuinConfiguration;
+namespace br::worldgen { struct SpawnerData; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -75,7 +76,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mRain;
     ::ll::TypedStorage<4, 12, ::OceanRuinConfiguration>                           mOceanRuinConfig;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::MobSpawnerData>>> mMobs;
-    ::ll::TypedStorage<8, 256, ::std::array<::WeightedRandomList<::std::shared_ptr<::MobSpawnerData>>, 8>> mMobsMap;
+    ::ll::TypedStorage<8, 256, ::std::array<::WeightedRandomList<::br::worldgen::SpawnerData>, 8>> mMobsMap;
     ::ll::TypedStorage<1, 2, ::Biome::CachedClientComponentData> mCachedClientComponentData;
     ::ll::TypedStorage<2, 2, ushort const>                       mId;
     ::ll::TypedStorage<8, 32, ::BiomeComponentStorage>           mBiomeComponentStorage;
@@ -135,27 +136,31 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::mce::Color getColorBySamplingSurroundings(
-        ::BlockSource&                                                 region,
-        ::BlockPos const&                                              pos,
-        ::std::vector<::BlockPos> const&                               pattern,
-        ::std::function<int(::Biome const&, ::BlockPos const&)> const& sampler
+        ::BlockSource&                                                     region,
+        ::BlockPos const&                                                  pos,
+        ::std::vector<::BlockPos> const&                                   pattern,
+        ::gsl::not_null<int (*)(::Biome const&, ::BlockPos const&)> const& sampler
     );
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::mce::Color const& BIRCH_FOLIAGE_COLOR();
+    MCAPI static ::mce::Color const& BIRCH_FOLIAGE_TINT();
 
-    MCAPI static ::mce::Color const& DEFAULT_FOLIAGE_COLOR();
+    MCAPI static ::mce::Color const& DEFAULT_FOLIAGE_TINT();
 
-    MCAPI static ::mce::Color const& DEFAULT_GRASS_COLOR();
+    MCAPI static ::mce::Color const& DEFAULT_GRASS_TINT();
 
     MCAPI static ::mce::Color const& DEFAULT_UNDERWATER_COLOR();
 
     MCAPI static ::mce::Color const& DEFAULT_WATER_COLOR();
 
-    MCAPI static ::mce::Color const& EVERGREEN_FOLIAGE_COLOR();
+    MCAPI static ::mce::Color const& DEFAULT_WATER_TINT();
+
+    MCAPI static ::mce::Color const& DRY_FOLIAGE_TINT();
+
+    MCAPI static ::mce::Color const& EVERGREEN_FOLIAGE_TINT();
 
     MCAPI static float const& RAIN_TEMP_THRESHOLD();
     // NOLINTEND

@@ -23,7 +23,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::PacketPriority>                        mPriority;
     ::ll::TypedStorage<4, 4, ::NetworkPeer::Reliability>              mReliability;
-    ::ll::TypedStorage<1, 1, ::SubClientId>                           mClientSubId;
+    ::ll::TypedStorage<1, 1, ::SubClientId>                           mSenderSubId;
     ::ll::TypedStorage<1, 1, bool>                                    mIsHandled;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mReceiveTimepoint;
     ::ll::TypedStorage<8, 8, ::IPacketHandlerDispatcher const*>       mHandler;

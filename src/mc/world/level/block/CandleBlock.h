@@ -14,9 +14,10 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class ItemInstance;
-class Player;
 class Vec3;
+namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class CandleBlock : public ::AbstractCandleBlock {
@@ -32,34 +33,40 @@ public:
     // vIndex: 138
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 139
-    virtual bool use(::Player& player, ::BlockPos const& pos, uchar) const /*override*/;
-
     // vIndex: 23
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 148
     virtual int _getNumCandles(::Block const& block) const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 149
     virtual void
     _iterateCandles(::Block const& block, ::BlockPos const& pos, ::std::function<void(::Vec3 const&, int)> callback)
         const /*override*/;
 
-    // vIndex: 152
+    // vIndex: 150
     virtual void _tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const /*override*/;
+
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0
     virtual ~CandleBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     _forEachCandle(::Block const& block, ::BlockPos const& pos, ::std::function<void(::Vec3 const&, int)> callback);
 
-    MCAPI static bool tryLightFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor);
+    MCNAPI static bool tryLightFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor);
     // NOLINTEND
 
 public:
@@ -71,28 +78,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
+    MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
+    MCNAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+    MCNAPI int $_getNumCandles(::Block const& block) const;
 
-    MCAPI int $_getNumCandles(::Block const& block) const;
-
-    MCAPI void
+    MCNAPI void
     $_iterateCandles(::Block const& block, ::BlockPos const& pos, ::std::function<void(::Vec3 const&, int)> callback)
         const;
 
-    MCAPI void $_tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
+    MCNAPI void $_tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
+
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

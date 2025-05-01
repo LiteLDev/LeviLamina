@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/ItemStack.h"
 #include "mc/world/level/block/actor/DecoratedPotAnimation.h"
 #include "mc/world/level/block/actor/RandomizableBlockActorContainer.h"
 
@@ -14,7 +15,6 @@ class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class ILevel;
-class ItemStack;
 class ItemStackBase;
 class Player;
 class SaveContext;
@@ -50,7 +50,7 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 2
@@ -72,10 +72,10 @@ public:
     // vIndex: 12
     virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 44
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -85,28 +85,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DecoratedPotBlockActor(::BlockPos const& pos);
+    MCNAPI explicit DecoratedPotBlockActor(::BlockPos const& pos);
 
-    MCAPI void _onInsertFailFeedback(::BlockSource& region, ::Player& player);
+    MCNAPI void _onInsertFailFeedback(::BlockSource& region, ::Player& player);
 
-    MCAPI void _onInsertFeedback(::BlockSource& region, ::ItemStack const& newContainedItem, ::Player& player);
+    MCNAPI void _onInsertFeedback(::BlockSource& region, ::ItemStack const& newContainedItem, ::Player& player);
 
-    MCAPI void _setContainedItem(::ItemStack const& item);
+    MCNAPI void _setContainedItem(::ItemStack const& item);
 
-    MCAPI void tryAddItem(::Player& player);
+    MCNAPI void tryAddItem(::Player& player);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::std::array<::std::string, 4>> _tryGetSherdsFromItem(::ItemStackBase const& item);
+    MCNAPI static ::std::optional<::std::array<::std::string, 4>> _tryGetSherdsFromItem(::ItemStackBase const& item);
 
-    MCAPI static void removeDefaultSherdsFromUserData(::ItemStackBase& itemInstance);
+    MCNAPI static void removeDefaultSherdsFromUserData(::ItemStackBase& itemInstance);
 
-    MCAPI static void
+    MCNAPI static void
     saveSherdsToTag(::CompoundTag& tag, ::std::array<::std::string, 4> const& sherds, bool forceSaveDefaultSherds);
 
-    MCAPI static ::std::optional<::std::array<::std::string, 4>> tryGetSherdsFromTag(::CompoundTag const& tag);
+    MCNAPI static ::std::optional<::std::array<::std::string, 4>> tryGetSherdsFromTag(::CompoundTag const& tag);
     // NOLINTEND
 
 public:
@@ -118,7 +118,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
+    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -130,33 +130,33 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI void
+    MCNAPI void
     $serverInitItemStackIds(int containerSlot, int, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
-    MCFOLD int $getContainerSize() const;
+    MCNAPI int $getContainerSize() const;
 
-    MCFOLD int $getMaxStackSize() const;
+    MCNAPI int $getMaxStackSize() const;
 
-    MCAPI ::ItemStack const& $getItem(int) const;
+    MCNAPI ::ItemStack const& $getItem(int) const;
 
-    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCNAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForContainer();
+    MCNAPI static void** $vftableForContainer();
 
-    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCNAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
 };

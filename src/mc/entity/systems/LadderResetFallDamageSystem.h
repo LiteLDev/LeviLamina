@@ -25,6 +25,6 @@ class LadderResetFallDamageSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createLadderResetFallDamageSystem();
+    MCNAPI static ::TickingSystemWithInfo createLadderResetFallDamageSystem();
     // NOLINTEND
 };

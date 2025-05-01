@@ -21,13 +21,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string ToString() const;
+    MCNAPI ::std::string ToString() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::NetherNet::ConnectError> TryParse(::std::array<::std::string_view, 3> const& tokens);
+    MCNAPI static ::std::optional<::NetherNet::ConnectError> TryParse(::std::array<::std::string_view, 3> const& tokens
+    );
     // NOLINTEND
 
 public:

@@ -11,8 +11,10 @@ class ComponentItem;
 class HashedString;
 class ScriptDeferredFlushTracker;
 struct ItemCustomComponentData;
+namespace Json { class Value; }
 namespace ScriptModuleMinecraft { class ScriptItemCustomComponentInterface; }
 namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -23,7 +25,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk3e8f4b;
-    ::ll::UntypedStorage<8, 24> mUnk854234;
+    ::ll::UntypedStorage<8, 24> mUnk19348b;
     ::ll::UntypedStorage<8, 88> mUnk39381f;
     // NOLINTEND
 
@@ -66,53 +68,58 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemCustomComponentSignalCollection();
+    MCNAPI ScriptItemCustomComponentSignalCollection();
 
-    MCAPI void bindMetadata(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCNAPI void bindMetadata(::Scripting::ModuleBindingBuilder& moduleBuilder);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+
+    MCNAPI static void generateOrderDocumentationForVersion(
+        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
+        ::Json::Value&                       eventOrderArray
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $registerClosures(
+    MCNAPI void $registerClosures(
         ::HashedString const&                                         componentName,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
     );
 
-    MCAPI void
+    MCNAPI void
     $subscribeToItemForComponent(::ComponentItem& item, ::std::vector<::ItemCustomComponentData> const& components);
 
-    MCAPI void $clear();
+    MCNAPI void $clear();
 
-    MCAPI void $onPreFlushAfterEvents();
+    MCNAPI void $onPreFlushAfterEvents();
 
-    MCAPI void $onFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCNAPI void $onFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI void $onPostFlushAfterEvents();
+    MCNAPI void $onPostFlushAfterEvents();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

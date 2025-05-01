@@ -46,25 +46,25 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::br::worldgen::StructureBlockInfo>
+    MCNAPI ::std::optional<::br::worldgen::StructureBlockInfo>
     $process(::IBlockSource& region, ::BlockPos, ::BlockPos structurePos, ::br::worldgen::StructureBlockInfo const& originalBlockInfo, ::br::worldgen::StructureBlockInfo&& processedBlockInfo, ::br::worldgen::StructurePlaceSettings const&)
         const;
 
-    MCFOLD ::br::worldgen::StructureProcessorType $type() const;
+    MCNAPI ::br::worldgen::StructureProcessorType $type() const;
 
-    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

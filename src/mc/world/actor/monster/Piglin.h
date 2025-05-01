@@ -32,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Piglin(
+    MCNAPI Piglin(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -42,7 +42,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -58,14 +58,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
+    MCNAPI bool $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
 
-    MCFOLD bool $isDarkEnoughToSpawn() const;
+    MCNAPI bool $isDarkEnoughToSpawn() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

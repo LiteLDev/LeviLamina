@@ -31,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptTripWireTripAfterEvent(
+    MCNAPI ScriptTripWireTripAfterEvent(
         ::TripWireTripEvent const&            tripWireTripEvent,
         ::Scripting::WeakLifetimeScope const& scope
     );
@@ -40,13 +40,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptTripWireTripAfterEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptTripWireTripAfterEvent> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TripWireTripEvent const& tripWireTripEvent, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void* $ctor(::TripWireTripEvent const& tripWireTripEvent, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

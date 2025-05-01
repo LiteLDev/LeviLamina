@@ -8,21 +8,21 @@ class LocalAudioSinkAdapter {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LocalAudioSinkAdapter();
+    MCNAPI LocalAudioSinkAdapter();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForAudioTrackSinkInterface();
+    MCNAPI static void** $vftableForAudioTrackSinkInterface();
 
-    MCAPI static void** $vftableForAudioSource();
+    MCNAPI static void** $vftableForAudioSource();
     // NOLINTEND
 };
 

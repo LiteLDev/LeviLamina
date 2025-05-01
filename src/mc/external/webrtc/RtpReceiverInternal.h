@@ -16,10 +16,10 @@ class RtpReceiverInternal {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>>
+    MCNAPI static ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>>
         CreateStreamsFromIds(::std::vector<::std::string>);
 
-    MCAPI static int GenerateUniqueId();
+    MCNAPI static int GenerateUniqueId();
     // NOLINTEND
 };
 

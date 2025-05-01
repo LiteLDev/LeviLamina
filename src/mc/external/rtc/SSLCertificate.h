@@ -41,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::rtc::SSLCertificateStats> GetStats() const;
+    MCNAPI ::std::unique_ptr<::rtc::SSLCertificateStats> GetStats() const;
     // NOLINTEND
 
 public:

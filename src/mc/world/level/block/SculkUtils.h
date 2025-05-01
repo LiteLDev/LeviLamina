@@ -13,13 +13,13 @@ class IBlockWorldGenAPI;
 namespace SculkUtils {
 // functions
 // NOLINTBEGIN
-MCAPI bool canSpreadIntoBlock(::IBlockWorldGenAPI& target, ::Block const& block, ::BlockPos const& pos);
+MCNAPI bool canSpreadIntoBlock(::IBlockWorldGenAPI& target, ::Block const& block, ::BlockPos const& pos);
 
-MCAPI ::std::set<::Block const*> const generateSculkReplaceableBlocks();
+MCNAPI ::std::set<::Block const*> const generateSculkReplaceableBlocks();
 
-MCAPI ::std::set<::Block const*> const generateSculkReplaceableBlocksWorldgen();
+MCNAPI ::std::set<::Block const*> const generateSculkReplaceableBlocksWorldgen();
 
-MCAPI void
+MCNAPI void
 requestChargeEffects(::IBlockWorldGenAPI& region, ::BlockSource* pos, ::BlockPos const& charge, int facingData, int);
 // NOLINTEND
 

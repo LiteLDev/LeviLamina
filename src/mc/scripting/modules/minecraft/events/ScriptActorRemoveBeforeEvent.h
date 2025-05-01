@@ -23,7 +23,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptActorRemoveBeforeEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptActorRemoveBeforeEvent>
+    bind();
     // NOLINTEND
 };
 

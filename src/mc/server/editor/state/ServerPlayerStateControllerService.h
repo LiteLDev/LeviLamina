@@ -64,13 +64,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _setFlySpeedMultiplier(::Editor::Settings::SpeedProps const& newValue);
+    MCNAPI void _setFlySpeedMultiplier(::Editor::Settings::SpeedProps const& newValue);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _updateAbilitiesOnClient(::Player& player);
+    MCNAPI static void _updateAbilitiesOnClient(::Player& player);
     // NOLINTEND
 
 public:
@@ -82,27 +82,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result<void> $ready();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCAPI void $_onEditorActivate();
+    MCNAPI void $_onEditorActivate();
 
-    MCAPI void $_onEditorDeactivate();
+    MCNAPI void $_onEditorDeactivate();
 
-    MCAPI void $_onEnterToolMode();
+    MCNAPI void $_onEnterToolMode();
 
-    MCAPI void $_onExitToolMode();
+    MCNAPI void $_onExitToolMode();
 
-    MCAPI void $_onEnterCrosshairMode();
+    MCNAPI void $_onEnterCrosshairMode();
 
-    MCAPI void $_onExitCrosshairMode();
+    MCNAPI void $_onExitCrosshairMode();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

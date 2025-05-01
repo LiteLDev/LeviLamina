@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::Editor::Network::StructureCopyToClipboardPayload&
+    MCNAPI ::Editor::Network::StructureCopyToClipboardPayload&
     operator=(::Editor::Network::StructureCopyToClipboardPayload const&);
     // NOLINTEND
 
@@ -43,7 +43,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

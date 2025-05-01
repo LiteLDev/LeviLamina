@@ -79,39 +79,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     _createAndStartExtensionContexts(::std::optional<::Scripting::ContextId> optionalContextId);
 
-    MCAPI ::Scripting::Result<void> _createExtensionContexts(::std::optional<::Scripting::ContextId> optionalContextId);
+    MCNAPI ::Scripting::Result<void> _createExtensionContexts(::std::optional<::Scripting::ContextId> optionalContextId
+    );
 
-    MCAPI ::Scripting::Result<void> _destroyExtensionContexts();
+    MCNAPI ::Scripting::Result<void> _destroyExtensionContexts();
+
+    MCNAPI ::Scripting::Result<void> _handleStartExtensions(::std::optional<::Scripting::ContextId> optionalContextId);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result<void> $ready();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCAPI ::Scripting::Result<void> $startExtensions(::std::optional<::Scripting::ContextId> optionalContextId);
+    MCNAPI ::Scripting::Result<void> $startExtensions(::std::optional<::Scripting::ContextId> optionalContextId);
 
-    MCAPI ::Scripting::Result<void> $stopExtensions();
+    MCNAPI ::Scripting::Result<void> $stopExtensions();
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     $forEachExtension(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func);
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>,
         ::Scripting::Error>
     $getInternalServiceContext(::Scripting::WeakLifetimeScope const& scope);
@@ -120,9 +123,9 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
 
-    MCAPI static void** $vftableForEditorPlayerExtensionServiceProvider();
+    MCNAPI static void** $vftableForEditorPlayerExtensionServiceProvider();
     // NOLINTEND
 };
 

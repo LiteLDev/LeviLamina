@@ -15,21 +15,30 @@ namespace webrtc {
 
 class RtpPacketizerH264 {
 public:
+    // RtpPacketizerH264 inner types declare
+    // clang-format off
+    struct PacketUnit;
+    // clang-format on
+
+    // RtpPacketizerH264 inner types define
+    struct PacketUnit {};
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool GeneratePackets(::webrtc::H264PacketizationMode);
+    MCNAPI bool GeneratePackets(::webrtc::H264PacketizationMode);
 
-    MCAPI void NextAggregatePacket(::webrtc::RtpPacketToSend*);
+    MCNAPI void NextAggregatePacket(::webrtc::RtpPacketToSend*);
 
-    MCAPI void NextFragmentPacket(::webrtc::RtpPacketToSend*);
+    MCNAPI void NextFragmentPacket(::webrtc::RtpPacketToSend*);
 
-    MCAPI bool PacketizeFuA(uint64);
+    MCNAPI bool PacketizeFuA(uint64);
 
-    MCAPI bool PacketizeSingleNalu(uint64);
+    MCNAPI bool PacketizeSingleNalu(uint64);
 
-    MCAPI uint64 PacketizeStapA(uint64);
+    MCNAPI uint64 PacketizeStapA(uint64);
 
-    MCAPI RtpPacketizerH264(
+    MCNAPI RtpPacketizerH264(
         ::rtc::ArrayView<uchar const>,
         ::webrtc::RtpPacketizer::PayloadSizeLimits,
         ::webrtc::H264PacketizationMode
@@ -39,7 +48,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::rtc::ArrayView<uchar const>,
         ::webrtc::RtpPacketizer::PayloadSizeLimits,
         ::webrtc::H264PacketizationMode
@@ -49,7 +58,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

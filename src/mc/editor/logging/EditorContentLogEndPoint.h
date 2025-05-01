@@ -54,7 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EditorContentLogEndPoint(
+    MCNAPI explicit EditorContentLogEndPoint(
         ::Bedrock::NotNullNonOwnerPtr<::Editor::Services::LoggingService> loggingService
     );
     // NOLINTEND
@@ -62,35 +62,35 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Editor::Services::LoggingService> loggingService);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Editor::Services::LoggingService> loggingService);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $log(::LogArea const area, ::LogLevel const level, char const* message);
+    MCNAPI void $log(::LogArea const area, ::LogLevel const level, char const* message);
 
-    MCFOLD bool $logOnlyOnce() const;
+    MCNAPI bool $logOnlyOnce() const;
 
-    MCFOLD void $flush();
+    MCNAPI void $flush();
 
-    MCFOLD void $setEnabled(bool newState);
+    MCNAPI void $setEnabled(bool newState);
 
-    MCFOLD bool $isEnabled() const;
+    MCNAPI bool $isEnabled() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForLogEndPoint();
+    MCNAPI static void** $vftableForLogEndPoint();
     // NOLINTEND
 };
 

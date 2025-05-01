@@ -30,12 +30,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

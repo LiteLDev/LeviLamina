@@ -61,59 +61,59 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWidgetService(
+    MCNAPI ScriptWidgetService(
         ::Editor::ServiceProviderCollection&  serviceProviderCollection,
         ::Scripting::WeakLifetimeScope const& scope
     );
 
-    MCAPI ::Scripting::
+    MCNAPI ::Scripting::
         Result<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup>, ::Scripting::Error>
         _createGroup(::std::optional<::Editor::ScriptModule::ScriptWidgetGroupCreateOptions> const& options);
 
-    MCAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject, ::Scripting::Error>
     _deleteGroup(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup> groupToDelete);
 
-    MCAPI ::std::optional<::std::pair<
+    MCNAPI ::std::optional<::std::pair<
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup>,
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>>>
     _getWidgetGroupPair(::mce::UUID const& widgetId) const;
 
-    MCAPI void
+    MCNAPI void
     _handleWidgetComponentStateChangePayload(::Editor::Network::WidgetComponentStateChangePayload const& payload);
 
-    MCAPI void _handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const& payload);
+    MCNAPI void _handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const& payload);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetService> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetService> bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::Editor::ServiceProviderCollection& serviceProviderCollection, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error>
     $_groupDeleteGroup(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup> groupToDelete);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

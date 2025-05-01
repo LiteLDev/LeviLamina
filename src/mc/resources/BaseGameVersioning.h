@@ -15,15 +15,15 @@ class WorldTemplateManager;
 namespace BaseGameVersioning {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::vector<::BaseGameVersion> const& getAvailableChemistryBehaviorPackGameVersions();
+MCNAPI ::std::vector<::BaseGameVersion> const& getAvailableChemistryBehaviorPackGameVersions();
 
-MCAPI ::std::vector<::BaseGameVersion> const& getAvailableChemistryResourcePackGameVersions();
+MCNAPI ::std::vector<::BaseGameVersion> const& getAvailableChemistryResourcePackGameVersions();
 
-MCAPI ::std::vector<::BaseGameVersion> const& getAvailableVanillaBehaviorPackGameVersions();
+MCNAPI ::std::vector<::BaseGameVersion> const& getAvailableVanillaBehaviorPackGameVersions();
 
-MCAPI ::std::vector<::BaseGameVersion> const& getAvailableVanillaResourcePackGameVersions();
+MCNAPI ::std::vector<::BaseGameVersion> const& getAvailableVanillaResourcePackGameVersions();
 
-MCAPI bool upgradeBaseGameVersionFromWorldTemplate(
+MCNAPI bool upgradeBaseGameVersionFromWorldTemplate(
     ::Bedrock::NotNullNonOwnerPtr<::WorldTemplateManager const> const& worldTemplateManager,
     ::LevelData&                                                       levelData
 );

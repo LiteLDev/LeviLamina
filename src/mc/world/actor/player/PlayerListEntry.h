@@ -4,15 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/platform/BuildPlatform.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/platform/Result.h"
+#include "mc/platform/UUID.h"
+#include "mc/world/actor/player/SerializedSkin.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-class SerializedSkin;
-struct ActorUniqueID;
-namespace mce { class UUID; }
 // clang-format on
 
 class PlayerListEntry {

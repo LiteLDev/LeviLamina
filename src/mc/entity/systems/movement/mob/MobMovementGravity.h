@@ -24,13 +24,13 @@ struct TickingSystemWithInfo;
 namespace MobMovementGravity {
 // functions
 // NOLINTBEGIN
-MCAPI void forLiquidGravitySystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
+MCNAPI void forLiquidGravitySystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
-MCAPI void forNormalGravitySystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
+MCNAPI void forNormalGravitySystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
-MCAPI bool isCenterTopAndBottomNotInAir(::Vec3 const& pos, ::IConstBlockSource const& region, ::Vec2 const& aabbDim);
+MCNAPI bool isCenterTopAndBottomNotInAir(::Vec3 const& pos, ::IConstBlockSource const& region, ::Vec2 const& aabbDim);
 
-MCAPI void tickAirGravity(
+MCNAPI void tickAirGravity(
     ::StrictEntityContext const&,
     ::ActorDataFlagComponent const& synchedActorData,
     ::MobEffectsComponent const&    mobEffects,
@@ -38,7 +38,7 @@ MCAPI void tickAirGravity(
     ::FallDistanceComponent&        fallDistance
 );
 
-MCAPI void tickLavaGravity(
+MCNAPI void tickLavaGravity(
     ::StrictEntityContext const&,
     ::Optional<::NavigationComponent const> navigation,
     ::Optional<::PhysicsComponent const>    physics,
@@ -48,7 +48,7 @@ MCAPI void tickLavaGravity(
     ::IConstBlockSource const&              region
 );
 
-MCAPI void tickMobWaterGravity(
+MCNAPI void tickMobWaterGravity(
     ::StrictEntityContext const&,
     ::Optional<::NavigationComponent const> navigation,
     ::Optional<::PhysicsComponent const>    physics,

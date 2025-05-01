@@ -19,18 +19,25 @@ public:
     // prevent constructor by default
     ArgumentDetails& operator=(ArgumentDetails const&);
     ArgumentDetails(ArgumentDetails const&);
-    ArgumentDetails();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ArgumentDetails();
+    MCNAPI ArgumentDetails();
+
+    MCNAPI ~ArgumentDetails();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

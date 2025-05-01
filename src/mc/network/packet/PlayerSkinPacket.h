@@ -6,13 +6,13 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/platform/UUID.h"
+#include "mc/world/actor/player/SerializedSkin.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-class SerializedSkin;
-namespace mce { class UUID; }
 // clang-format on
 
 class PlayerSkinPacket : public ::Packet {
@@ -41,7 +41,7 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 5
-    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream) /*override*/;
+    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 8
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
@@ -50,26 +50,26 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MinecraftPacketIds $getId() const;
+    MCNAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCAPI void $write(::BinaryStream& stream) const;
+    MCNAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& bitStream);
+    MCNAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
 
-    MCFOLD ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

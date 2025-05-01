@@ -16,30 +16,30 @@ class AudioTrack {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AudioTrack(::std::string_view, ::webrtc::scoped_refptr<::webrtc::AudioSourceInterface> const&);
+    MCNAPI AudioTrack(::std::string_view, ::webrtc::scoped_refptr<::webrtc::AudioSourceInterface> const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::scoped_refptr<::webrtc::AudioTrack>
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::AudioTrack>
     Create(::std::string_view, ::webrtc::scoped_refptr<::webrtc::AudioSourceInterface> const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view, ::webrtc::scoped_refptr<::webrtc::AudioSourceInterface> const&);
+    MCNAPI void* $ctor(::std::string_view, ::webrtc::scoped_refptr<::webrtc::AudioSourceInterface> const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForNotifierInterface();
+    MCNAPI static void** $vftableForNotifierInterface();
 
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
 
-    MCAPI static void** $vftableForRefCountInterface();
+    MCNAPI static void** $vftableForRefCountInterface();
     // NOLINTEND
 };
 

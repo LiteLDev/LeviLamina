@@ -11,8 +11,8 @@ struct ValidateClientPlayerActionSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void registerServerAntiCheatSystems(::EntitySystems& systemRegistry);
+    MCNAPI static void registerServerAntiCheatSystems(::EntitySystems& systemRegistry);
 
-    MCAPI static void registerSystems(::EntitySystems& systemRegistry, bool reportTelemetry);
+    MCNAPI static void registerSystems(::EntitySystems& systemRegistry, bool reportTelemetry);
     // NOLINTEND
 };

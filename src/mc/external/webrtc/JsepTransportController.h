@@ -57,86 +57,86 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Config();
+        MCNAPI ~Config();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::RTCError AddRemoteCandidates(::std::string const&, ::std::vector<::cricket::Candidate> const&);
+    MCNAPI ::webrtc::RTCError AddRemoteCandidates(::std::string const&, ::std::vector<::cricket::Candidate> const&);
 
-    MCAPI ::webrtc::RTCError
+    MCNAPI ::webrtc::RTCError
     ApplyDescription_n(bool, ::webrtc::SdpType, ::cricket::SessionDescription const*, ::cricket::SessionDescription const*);
 
-    MCAPI ::std::unique_ptr<::webrtc::DtlsSrtpTransport>
+    MCNAPI ::std::unique_ptr<::webrtc::DtlsSrtpTransport>
     CreateDtlsSrtpTransport(::std::string const&, ::cricket::DtlsTransportInternal*, ::cricket::DtlsTransportInternal*);
 
-    MCAPI ::std::unique_ptr<::cricket::DtlsTransportInternal>
+    MCNAPI ::std::unique_ptr<::cricket::DtlsTransportInternal>
     CreateDtlsTransport(::cricket::ContentInfo const&, ::cricket::IceTransportInternal*);
 
-    MCAPI ::webrtc::scoped_refptr<::webrtc::IceTransportInterface> CreateIceTransport(::std::string const&, bool);
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::IceTransportInterface> CreateIceTransport(::std::string const&, bool);
 
-    MCAPI ::cricket::JsepTransportDescription CreateJsepTransportDescription(
+    MCNAPI ::cricket::JsepTransportDescription CreateJsepTransportDescription(
         ::cricket::ContentInfo const&,
         ::cricket::TransportInfo const&,
         ::std::vector<int> const&,
         int
     );
 
-    MCAPI ::std::unique_ptr<::webrtc::RtpTransport>
+    MCNAPI ::std::unique_ptr<::webrtc::RtpTransport>
     CreateUnencryptedRtpTransport(::std::string const&, ::rtc::PacketTransportInternal*, ::rtc::PacketTransportInternal*);
 
-    MCAPI void DestroyAllJsepTransports_n();
+    MCNAPI void DestroyAllJsepTransports_n();
 
-    MCAPI ::cricket::IceRole
+    MCNAPI ::cricket::IceRole
     DetermineIceRole(::cricket::JsepTransport*, ::cricket::TransportInfo const&, ::webrtc::SdpType, bool);
 
-    MCAPI ::std::vector<::cricket::DtlsTransportInternal*> GetActiveDtlsTransports();
+    MCNAPI ::std::vector<::cricket::DtlsTransportInternal*> GetActiveDtlsTransports();
 
-    MCAPI ::webrtc::DataChannelTransportInterface* GetDataChannelTransport(::std::string const&) const;
+    MCNAPI ::webrtc::DataChannelTransportInterface* GetDataChannelTransport(::std::string const&) const;
 
-    MCAPI ::std::optional<::rtc::SSLRole> GetDtlsRole(::std::string const&) const;
+    MCNAPI ::std::optional<::rtc::SSLRole> GetDtlsRole(::std::string const&) const;
 
-    MCAPI ::cricket::DtlsTransportInternal* GetDtlsTransport(::std::string const&);
+    MCNAPI ::cricket::DtlsTransportInternal* GetDtlsTransport(::std::string const&);
 
-    MCAPI ::std::vector<::cricket::DtlsTransportInternal*> GetDtlsTransports();
+    MCNAPI ::std::vector<::cricket::DtlsTransportInternal*> GetDtlsTransports();
 
-    MCAPI ::std::vector<int> GetEncryptedHeaderExtensionIds(::cricket::ContentInfo const&);
+    MCNAPI ::std::vector<int> GetEncryptedHeaderExtensionIds(::cricket::ContentInfo const&);
 
-    MCAPI ::cricket::JsepTransport const* GetJsepTransportByName(::std::string const&) const;
+    MCNAPI ::cricket::JsepTransport const* GetJsepTransportByName(::std::string const&) const;
 
-    MCAPI ::cricket::JsepTransport* GetJsepTransportByName(::std::string const&);
+    MCNAPI ::cricket::JsepTransport* GetJsepTransportByName(::std::string const&);
 
-    MCAPI ::cricket::JsepTransport const* GetJsepTransportForMid(::std::string const&) const;
+    MCNAPI ::cricket::JsepTransport const* GetJsepTransportForMid(::std::string const&) const;
 
-    MCAPI ::cricket::JsepTransport const* GetJsepTransportForMid(::std::string_view) const;
+    MCNAPI ::cricket::JsepTransport const* GetJsepTransportForMid(::std::string_view) const;
 
-    MCAPI ::cricket::JsepTransport* GetJsepTransportForMid(::std::string const&);
+    MCNAPI ::cricket::JsepTransport* GetJsepTransportForMid(::std::string const&);
 
-    MCAPI ::webrtc::scoped_refptr<::rtc::RTCCertificate> GetLocalCertificate(::std::string const&) const;
+    MCNAPI ::webrtc::scoped_refptr<::rtc::RTCCertificate> GetLocalCertificate(::std::string const&) const;
 
-    MCAPI ::std::unique_ptr<::rtc::SSLCertChain> GetRemoteSSLCertChain(::std::string const&) const;
+    MCNAPI ::std::unique_ptr<::rtc::SSLCertChain> GetRemoteSSLCertChain(::std::string const&) const;
 
-    MCAPI int GetRtpAbsSendTimeHeaderExtensionId(::cricket::ContentInfo const&);
+    MCNAPI int GetRtpAbsSendTimeHeaderExtensionId(::cricket::ContentInfo const&);
 
-    MCAPI ::webrtc::RtpTransportInternal* GetRtpTransport(::std::string_view) const;
+    MCNAPI ::webrtc::RtpTransportInternal* GetRtpTransport(::std::string_view) const;
 
-    MCAPI ::webrtc::scoped_refptr<::webrtc::SctpTransport> GetSctpTransport(::std::string const&) const;
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::SctpTransport> GetSctpTransport(::std::string const&) const;
 
-    MCAPI bool GetStats(::std::string const&, ::cricket::TransportStats*);
+    MCNAPI bool GetStats(::std::string const&, ::cricket::TransportStats*);
 
-    MCAPI bool HandleBundledContent(::cricket::ContentInfo const&, ::cricket::ContentGroup const&);
+    MCNAPI bool HandleBundledContent(::cricket::ContentInfo const&, ::cricket::ContentGroup const&);
 
-    MCAPI void HandleRejectedContent(::cricket::ContentInfo const&);
+    MCNAPI void HandleRejectedContent(::cricket::ContentInfo const&);
 
-    MCAPI JsepTransportController(
+    MCNAPI JsepTransportController(
         ::webrtc::Environment const&,
         ::rtc::Thread*,
         ::cricket::PortAllocator*,
@@ -144,77 +144,77 @@ public:
         ::webrtc::JsepTransportController::Config
     );
 
-    MCAPI ::webrtc::scoped_refptr<::webrtc::DtlsTransport> LookupDtlsTransportByMid(::std::string const&);
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::DtlsTransport> LookupDtlsTransportByMid(::std::string const&);
 
-    MCAPI ::webrtc::RTCError
+    MCNAPI ::webrtc::RTCError
     MaybeCreateJsepTransport(bool, ::cricket::ContentInfo const&, ::cricket::SessionDescription const&);
 
-    MCAPI void MaybeStartGathering();
+    MCNAPI void MaybeStartGathering();
 
-    MCAPI ::std::map<::cricket::ContentGroup const*, ::std::vector<int>>
+    MCNAPI ::std::map<::cricket::ContentGroup const*, ::std::vector<int>>
     MergeEncryptedHeaderExtensionIdsForBundles(::cricket::SessionDescription const*);
 
-    MCAPI bool NeedsIceRestart(::std::string const&) const;
+    MCNAPI bool NeedsIceRestart(::std::string const&) const;
 
-    MCAPI void OnDtlsHandshakeError(::rtc::SSLHandshakeError);
+    MCNAPI void OnDtlsHandshakeError(::rtc::SSLHandshakeError);
 
-    MCAPI void OnRtcpPacketReceived_n(::rtc::CopyOnWriteBuffer*, int64);
+    MCNAPI void OnRtcpPacketReceived_n(::rtc::CopyOnWriteBuffer*, int64);
 
-    MCAPI void OnTransportCandidateError_n(::cricket::IceTransportInternal*, ::cricket::IceCandidateErrorEvent const&);
+    MCNAPI void OnTransportCandidateError_n(::cricket::IceTransportInternal*, ::cricket::IceCandidateErrorEvent const&);
 
-    MCAPI void OnTransportCandidateGathered_n(::cricket::IceTransportInternal*, ::cricket::Candidate const&);
+    MCNAPI void OnTransportCandidateGathered_n(::cricket::IceTransportInternal*, ::cricket::Candidate const&);
 
-    MCAPI void OnTransportCandidatePairChanged_n(::cricket::CandidatePairChangeEvent const&);
+    MCNAPI void OnTransportCandidatePairChanged_n(::cricket::CandidatePairChangeEvent const&);
 
-    MCAPI void
+    MCNAPI void
     OnTransportCandidatesRemoved_n(::cricket::IceTransportInternal*, ::std::vector<::cricket::Candidate> const&);
 
-    MCAPI bool OnTransportChanged(::std::string const&, ::cricket::JsepTransport*);
+    MCNAPI bool OnTransportChanged(::std::string const&, ::cricket::JsepTransport*);
 
-    MCAPI void OnTransportGatheringState_n(::cricket::IceTransportInternal*);
+    MCNAPI void OnTransportGatheringState_n(::cricket::IceTransportInternal*);
 
-    MCAPI void OnTransportReceivingState_n(::rtc::PacketTransportInternal*);
+    MCNAPI void OnTransportReceivingState_n(::rtc::PacketTransportInternal*);
 
-    MCAPI void OnTransportRoleConflict_n(::cricket::IceTransportInternal*);
+    MCNAPI void OnTransportRoleConflict_n(::cricket::IceTransportInternal*);
 
-    MCAPI void OnTransportStateChanged_n(::cricket::IceTransportInternal*);
+    MCNAPI void OnTransportStateChanged_n(::cricket::IceTransportInternal*);
 
-    MCAPI void OnTransportWritableState_n(::rtc::PacketTransportInternal*);
+    MCNAPI void OnTransportWritableState_n(::rtc::PacketTransportInternal*);
 
-    MCAPI void OnUnDemuxableRtpPacketReceived_n(::webrtc::RtpPacketReceived const&);
+    MCNAPI void OnUnDemuxableRtpPacketReceived_n(::webrtc::RtpPacketReceived const&);
 
-    MCAPI ::webrtc::RTCError RemoveRemoteCandidates(::std::vector<::cricket::Candidate> const&);
+    MCNAPI ::webrtc::RTCError RemoveRemoteCandidates(::std::vector<::cricket::Candidate> const&);
 
-    MCAPI ::webrtc::RTCError RollbackTransports();
+    MCNAPI ::webrtc::RTCError RollbackTransports();
 
-    MCAPI void SetActiveResetSrtpParams(bool);
+    MCNAPI void SetActiveResetSrtpParams(bool);
 
-    MCAPI void SetIceConfig(::cricket::IceConfig const&);
+    MCNAPI void SetIceConfig(::cricket::IceConfig const&);
 
-    MCAPI void SetIceRole_n(::cricket::IceRole);
+    MCNAPI void SetIceRole_n(::cricket::IceRole);
 
-    MCAPI bool SetLocalCertificate(::webrtc::scoped_refptr<::rtc::RTCCertificate> const&);
+    MCNAPI bool SetLocalCertificate(::webrtc::scoped_refptr<::rtc::RTCCertificate> const&);
 
-    MCAPI ::webrtc::RTCError
+    MCNAPI ::webrtc::RTCError
     SetLocalDescription(::webrtc::SdpType, ::cricket::SessionDescription const*, ::cricket::SessionDescription const*);
 
-    MCAPI void SetNeedsIceRestartFlag();
+    MCNAPI void SetNeedsIceRestartFlag();
 
-    MCAPI ::webrtc::RTCError
+    MCNAPI ::webrtc::RTCError
     SetRemoteDescription(::webrtc::SdpType, ::cricket::SessionDescription const*, ::cricket::SessionDescription const*);
 
-    MCAPI void UpdateAggregateStates_n();
+    MCNAPI void UpdateAggregateStates_n();
 
-    MCAPI ::webrtc::RTCError
+    MCNAPI ::webrtc::RTCError
     ValidateAndMaybeUpdateBundleGroups(bool, ::webrtc::SdpType, ::cricket::SessionDescription const*, ::cricket::SessionDescription const*);
 
-    MCAPI ::webrtc::RTCError ValidateContent(::cricket::ContentInfo const&);
+    MCNAPI ::webrtc::RTCError ValidateContent(::cricket::ContentInfo const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::webrtc::Environment const&,
         ::rtc::Thread*,
         ::cricket::PortAllocator*,
@@ -226,7 +226,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

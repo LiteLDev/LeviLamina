@@ -29,9 +29,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VersionConflict(::Scripting::VersionConflict&&);
+    MCNAPI VersionConflict(::Scripting::VersionConflict&&);
 
-    MCAPI VersionConflict(
+    MCNAPI VersionConflict(
         ::Scripting::ModuleDescriptor const& conflictModule_,
         ::Scripting::ModuleDescriptor const& requestedByA_,
         ::Scripting::ModuleDescriptor const& requestedByB_,
@@ -39,15 +39,15 @@ public:
         ::Scripting::ModuleDescriptor const& versionWantedByB_
     );
 
-    MCAPI ~VersionConflict();
+    MCNAPI ~VersionConflict();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::VersionConflict&&);
+    MCNAPI void* $ctor(::Scripting::VersionConflict&&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::ModuleDescriptor const& conflictModule_,
         ::Scripting::ModuleDescriptor const& requestedByA_,
         ::Scripting::ModuleDescriptor const& requestedByB_,
@@ -59,7 +59,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

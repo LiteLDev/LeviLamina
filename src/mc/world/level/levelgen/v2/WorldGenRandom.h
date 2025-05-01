@@ -5,13 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/IRandom.h"
 #include "mc/deps/core/math/IRandomSeeded.h"
+#include "mc/util/SimpleRandom.h"
+#include "mc/util/random/XoroshiroRandom.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class IPositionalRandomFactory;
-class SimpleRandom;
-class XoroshiroRandom;
 struct Seed128Bit;
 // clang-format on
 
@@ -76,61 +76,61 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::br::worldgen::WorldGenRandom forkPositional(::BlockPos pos);
+    MCNAPI ::br::worldgen::WorldGenRandom forkPositional(::BlockPos pos);
 
-    MCAPI ::br::worldgen::WorldGenRandom& setLargeFeatureSeed(int64 seed, int chunkX, int chunkZ);
+    MCNAPI ::br::worldgen::WorldGenRandom& setLargeFeatureSeed(int64 seed, int chunkX, int chunkZ);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::br::worldgen::WorldGenRandom createDecoration(int64 seed, int chunkX, int chunkZ);
+    MCNAPI static ::br::worldgen::WorldGenRandom createDecoration(int64 seed, int chunkX, int chunkZ);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $nextInt();
+    MCNAPI int $nextInt();
 
-    MCAPI int $nextInt(int bound);
+    MCNAPI int $nextInt(int bound);
 
-    MCAPI int64 $nextLong();
+    MCNAPI int64 $nextLong();
 
-    MCAPI bool $nextBoolean();
+    MCNAPI bool $nextBoolean();
 
-    MCAPI float $nextFloat();
+    MCNAPI float $nextFloat();
 
-    MCAPI double $nextDouble();
+    MCNAPI double $nextDouble();
 
-    MCAPI double $nextGaussianDouble();
+    MCNAPI double $nextGaussianDouble();
 
-    MCAPI void $consumeCount(uint count);
+    MCNAPI void $consumeCount(uint count);
 
-    MCAPI ::std::unique_ptr<::IRandom> $fork();
+    MCNAPI ::std::unique_ptr<::IRandom> $fork();
 
-    MCFOLD ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
+    MCNAPI ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
 
-    MCAPI void $setSeed(int64 seed);
+    MCNAPI void $setSeed(int64 seed);
 
-    MCAPI void $setSeed(::Seed128Bit seed);
+    MCNAPI void $setSeed(::Seed128Bit seed);
 
-    MCAPI int64 $seed64() const;
+    MCNAPI int64 $seed64() const;
 
-    MCAPI ::Seed128Bit $seed128() const;
+    MCNAPI ::Seed128Bit $seed128() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIRandom();
+    MCNAPI static void** $vftableForIRandom();
 
-    MCAPI static void** $vftableForIRandomSeeded();
+    MCNAPI static void** $vftableForIRandomSeeded();
     // NOLINTEND
 };
 

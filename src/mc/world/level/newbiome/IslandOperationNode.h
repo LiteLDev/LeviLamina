@@ -36,7 +36,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_fillArea(
+    MCNAPI void $_fillArea(
         ::OperationNodeDetails::WorkingData<::OperationNodeValues::Terrain, char>& operationNodeData,
         ::Pos2d const&                                                             origin,
         ::Pos2d const&                                                             size
@@ -46,6 +46,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

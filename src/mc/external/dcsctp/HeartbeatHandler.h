@@ -18,32 +18,32 @@ class HeartbeatHandler {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void HandleHeartbeatAck(::dcsctp::HeartbeatAckChunk);
+    MCNAPI void HandleHeartbeatAck(::dcsctp::HeartbeatAckChunk);
 
-    MCAPI void HandleHeartbeatRequest(::dcsctp::HeartbeatRequestChunk);
+    MCNAPI void HandleHeartbeatRequest(::dcsctp::HeartbeatRequestChunk);
 
-    MCAPI
+    MCNAPI
     HeartbeatHandler(::std::string_view, ::dcsctp::DcSctpOptions const&, ::dcsctp::Context*, ::dcsctp::TimerManager*);
 
-    MCAPI ::webrtc::TimeDelta OnIntervalTimerExpiry();
+    MCNAPI ::webrtc::TimeDelta OnIntervalTimerExpiry();
 
-    MCAPI ::webrtc::TimeDelta OnTimeoutTimerExpiry();
+    MCNAPI ::webrtc::TimeDelta OnTimeoutTimerExpiry();
 
-    MCAPI void RestartTimer();
+    MCNAPI void RestartTimer();
 
-    MCAPI ~HeartbeatHandler();
+    MCNAPI ~HeartbeatHandler();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view, ::dcsctp::DcSctpOptions const&, ::dcsctp::Context*, ::dcsctp::TimerManager*);
+    MCNAPI void* $ctor(::std::string_view, ::dcsctp::DcSctpOptions const&, ::dcsctp::Context*, ::dcsctp::TimerManager*);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

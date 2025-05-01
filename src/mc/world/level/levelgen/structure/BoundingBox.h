@@ -4,11 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/util/Rotation.h"
-
-// auto generated forward declare list
-// clang-format off
-class BlockPos;
-// clang-format on
+#include "mc/world/level/BlockPos.h"
 
 class BoundingBox {
 public:
@@ -21,21 +17,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BoundingBox();
+    MCNAPI BoundingBox();
 
-    MCAPI BoundingBox(int _x0, int _y0, int _z0, int _x1, int _y1, int _z1);
+    MCNAPI BoundingBox(int _x0, int _y0, int _z0, int _x1, int _y1, int _z1);
 
-    MCAPI void applyTransformation(::BlockPos const& pivot, ::Rotation rotationXZ, bool mirrorX, bool mirrorZ);
+    MCNAPI void applyTransformation(::BlockPos const& pivot, ::Rotation rotationXZ, bool mirrorX, bool mirrorZ);
 
-    MCAPI bool isValid() const;
+    MCNAPI bool isValid() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::BoundingBox> intersect(::BoundingBox const& lhs, ::BoundingBox const& rhs);
+    MCNAPI static ::std::optional<::BoundingBox> intersect(::BoundingBox const& lhs, ::BoundingBox const& rhs);
 
-    MCAPI static ::BoundingBox orientBox(
+    MCNAPI static ::BoundingBox orientBox(
         int footX,
         int footY,
         int footZ,
@@ -52,8 +48,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(int _x0, int _y0, int _z0, int _x1, int _y1, int _z1);
+    MCNAPI void* $ctor(int _x0, int _y0, int _z0, int _x1, int _y1, int _z1);
     // NOLINTEND
 };

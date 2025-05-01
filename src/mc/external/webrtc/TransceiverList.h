@@ -19,36 +19,36 @@ class TransceiverList {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Add(::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>);
+    MCNAPI void Add(::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>);
 
-    MCAPI void DiscardStableStates();
+    MCNAPI void DiscardStableStates();
 
-    MCAPI ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>
         FindByMLineIndex(uint64) const;
 
-    MCAPI ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>
     FindByMid(::std::string const&) const;
 
-    MCAPI ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>
         FindBySender(::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>) const;
 
-    MCAPI ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>>
+    MCNAPI ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>>
     List() const;
 
-    MCAPI ::std::vector<::webrtc::RtpTransceiver*> ListInternal() const;
+    MCNAPI ::std::vector<::webrtc::RtpTransceiver*> ListInternal() const;
 
-    MCAPI void Remove(::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>);
+    MCNAPI void Remove(::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>);
 
-    MCAPI ::webrtc::TransceiverStableState*
+    MCNAPI ::webrtc::TransceiverStableState*
         StableState(::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>);
 
-    MCAPI ~TransceiverList();
+    MCNAPI ~TransceiverList();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

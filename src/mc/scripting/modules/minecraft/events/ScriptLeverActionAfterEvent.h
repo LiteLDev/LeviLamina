@@ -34,20 +34,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     ScriptLeverActionAfterEvent(::LeverActionEvent const& leverActionEvent, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player, ::BlockPos const& scope, ::Scripting::WeakLifetimeScope const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptLeverActionAfterEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptLeverActionAfterEvent> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::LeverActionEvent const& leverActionEvent, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player, ::BlockPos const& scope, ::Scripting::WeakLifetimeScope const&);
     // NOLINTEND
 };

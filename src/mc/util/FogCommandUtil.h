@@ -12,14 +12,14 @@ class Player;
 namespace FogCommandUtil {
 // functions
 // NOLINTBEGIN
-MCAPI bool
+MCNAPI bool
 pop(::std::string const&,
     ::std::string const&   userProvidedId,
     ::CommandOutput&       output,
     ::Player&              target,
     ::FogCommandComponent& fogCommandComponent);
 
-MCAPI bool push(
+MCNAPI bool push(
     ::std::string const&   fogId,
     ::std::string const&   userProvidedId,
     ::CommandOutput&       output,
@@ -27,7 +27,7 @@ MCAPI bool push(
     ::FogCommandComponent& fogCommandComponent
 );
 
-MCAPI bool remove(
+MCNAPI bool remove(
     ::std::string const&,
     ::std::string const&   userProvidedId,
     ::CommandOutput&       output,

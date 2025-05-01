@@ -20,24 +20,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FilterInput(int i);
+    MCNAPI explicit FilterInput(int i);
 
-    MCAPI ::FilterInput& operator=(::FilterInput const&);
+    MCNAPI ::FilterInput& operator=(::FilterInput const&);
 
-    MCAPI ::FilterInput& operator=(::FilterInput&&);
+    MCNAPI ::FilterInput& operator=(::FilterInput&&);
 
-    MCAPI ~FilterInput();
+    MCNAPI ~FilterInput();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int i);
+    MCNAPI void* $ctor(int i);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

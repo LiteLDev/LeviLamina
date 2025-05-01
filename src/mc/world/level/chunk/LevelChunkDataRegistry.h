@@ -4,17 +4,17 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/spawn_category/Type.h"
+#include "mc/world/level/chunk/ChunkBoundingBox.h"
 #include "mc/world/level/chunk/ChunkEntity.h"
+#include "mc/world/level/chunk/DynamicSpawnArea.h"
+#include "mc/world/level/chunk/FullStructureBoundingBox.h"
+#include "mc/world/level/chunk/StaticSpawnArea.h"
 #include "mc/world/level/chunk/StorageTypeHelper.h"
+#include "mc/world/level/chunk/StructureKey.h"
+#include "mc/world/level/chunk/StructureType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace br { struct ChunkBoundingBox; }
-namespace br { struct DynamicSpawnArea; }
-namespace br { struct FullStructureBoundingBox; }
-namespace br { struct StaticSpawnArea; }
-namespace br { struct StructureKey; }
-namespace br { struct StructureType; }
 namespace br::worldgen { struct StructureSpawnOverride; }
 // clang-format on
 
@@ -81,25 +81,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelChunkDataRegistry();
+    MCNAPI LevelChunkDataRegistry();
 
-    MCAPI ::br::ChunkEntity create();
+    MCNAPI ::br::LevelChunkDataRegistry& operator=(::br::LevelChunkDataRegistry&& other);
 
-    MCAPI ::br::LevelChunkDataRegistry& operator=(::br::LevelChunkDataRegistry&& other);
-
-    MCAPI ~LevelChunkDataRegistry();
+    MCNAPI ~LevelChunkDataRegistry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

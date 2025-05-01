@@ -52,8 +52,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addCorrectionToFrame(::std::shared_ptr<::IMovementCorrection> correction, uint64 frame);
+    MCNAPI void addCorrectionToFrame(::std::shared_ptr<::IMovementCorrection> correction, uint64 frame);
 
-    MCAPI void queueCorrection(::std::shared_ptr<::IMovementCorrection> correction);
+    MCNAPI void queueCorrection(::std::shared_ptr<::IMovementCorrection> correction);
     // NOLINTEND
 };

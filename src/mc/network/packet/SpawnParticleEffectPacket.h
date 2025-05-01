@@ -3,17 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/util/MolangVariableMap.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class MolangVariableMap;
 class ReadOnlyBinaryStream;
-class Vec3;
-struct ActorUniqueID;
 // clang-format on
 
 class SpawnParticleEffectPacket : public ::Packet {

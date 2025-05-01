@@ -13,7 +13,7 @@ struct ExplorationMapData;
 namespace ExplorationMapUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void makeNewExplorationMapFromFeatureName(
+MCNAPI void makeNewExplorationMapFromFeatureName(
     ::ItemStackBase&     item,
     ::Level&             level,
     ::Actor*             owner,
@@ -21,7 +21,7 @@ MCAPI void makeNewExplorationMapFromFeatureName(
     bool                 markForRegeneration
 );
 
-MCAPI void makeNewExplorationMapFromMapData(
+MCNAPI void makeNewExplorationMapFromMapData(
     ::ItemStackBase&            item,
     ::Level&                    level,
     ::Actor*                    owner,

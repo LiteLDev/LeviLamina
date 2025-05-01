@@ -63,6 +63,11 @@ public:
         LoadingMessages();
     };
 
+    enum class FriendsDrawerLocation : int {
+        MainMenu   = 0,
+        InGameMenu = 1,
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -86,6 +91,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk6a6185;
     ::ll::UntypedStorage<8, 16> mUnk41aee7;
     ::ll::UntypedStorage<8, 8>  mUnk430851;
+    ::ll::UntypedStorage<8, 16> mUnka056cc;
     ::ll::UntypedStorage<4, 4>  mUnk921493;
     ::ll::UntypedStorage<1, 1>  mUnke8ca16;
     ::ll::UntypedStorage<1, 1>  mUnkf47178;

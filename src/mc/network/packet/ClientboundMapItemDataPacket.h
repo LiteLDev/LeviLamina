@@ -8,12 +8,12 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/saveddata/maps/MapItemTrackedActor.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class BlockPos;
 class Dimension;
 class Level;
 class MapDecoration;
@@ -73,11 +73,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClientboundMapItemDataPacket();
+    MCNAPI ClientboundMapItemDataPacket();
 
-    MCAPI ClientboundMapItemDataPacket(::gsl::not_null<::MapItemSavedData*> newMapItem, ::Level& level);
+    MCNAPI ClientboundMapItemDataPacket(::gsl::not_null<::MapItemSavedData*> newMapItem, ::Level& level);
 
-    MCAPI ClientboundMapItemDataPacket(
+    MCNAPI ClientboundMapItemDataPacket(
         ::ActorUniqueID mapId,
         schar           scale,
         ::std::vector<::std::pair<::MapItemTrackedActor::UniqueId, ::std::shared_ptr<::MapDecoration>>> const&
@@ -92,17 +92,17 @@ public:
         ::BlockPos const&   mapOrigin
     );
 
-    MCAPI bool isOfType(::ClientboundMapItemDataPacket::Type type) const;
+    MCNAPI bool isOfType(::ClientboundMapItemDataPacket::Type type) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::gsl::not_null<::MapItemSavedData*> newMapItem, ::Level& level);
+    MCNAPI void* $ctor(::gsl::not_null<::MapItemSavedData*> newMapItem, ::Level& level);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorUniqueID mapId,
         schar           scale,
         ::std::vector<::std::pair<::MapItemTrackedActor::UniqueId, ::std::shared_ptr<::MapDecoration>>> const&
@@ -121,24 +121,24 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $write(::BinaryStream& stream) const;
+    MCNAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::MinecraftPacketIds $getId() const;
+    MCNAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

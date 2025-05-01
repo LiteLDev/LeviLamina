@@ -34,9 +34,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerDimensionChangeAfterEvent(::ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent const&);
+    MCNAPI ScriptPlayerDimensionChangeAfterEvent(::ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent const&);
 
-    MCAPI ScriptPlayerDimensionChangeAfterEvent(
+    MCNAPI ScriptPlayerDimensionChangeAfterEvent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>    playerHandle,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension> fromDimension,
         ::Vec3                                                                         fromLocation,
@@ -44,22 +44,22 @@ public:
         ::Vec3                                                                         toLocation
     );
 
-    MCAPI ~ScriptPlayerDimensionChangeAfterEvent();
+    MCNAPI ~ScriptPlayerDimensionChangeAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent>
     bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>    playerHandle,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension> fromDimension,
         ::Vec3                                                                         fromLocation,
@@ -71,7 +71,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

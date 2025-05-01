@@ -61,7 +61,7 @@ class HashedString;
 namespace VanillaStates {
 // functions
 // NOLINTBEGIN
-MCAPI ::BlockState const* getState(::HashedString const& name);
+MCNAPI ::BlockState const* getState(::HashedString const& name);
 // NOLINTEND
 
 // static variables

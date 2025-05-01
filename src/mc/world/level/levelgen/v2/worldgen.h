@@ -26,25 +26,26 @@ namespace br::worldgen { struct StructureTemplateBlockPalette; }
 namespace br::worldgen {
 // functions
 // NOLINTBEGIN
-MCAPI int expansionHackCalc(
-    ::JigsawStructureUtils::MetadataCache&                                                  cache,
-    ::BlockPos const&                                                                       offset,
-    ::Rotation                                                                              rotation,
-    ::BoundingBox const&                                                                    box,
-    ::std::vector<::std::pair<uint64, ::SharedTypes::v1_21_50::JigsawBlockMetadata>> const& targetJigsaws,
-    ::JigsawStructureRegistry const&                                                        pools
+MCNAPI int expansionHackCalc(
+    ::JigsawStructureUtils::MetadataCache&                             cache,
+    ::BlockPos const&                                                  offset,
+    ::Rotation                                                         rotation,
+    ::BoundingBox const&                                               box,
+    ::std::vector<::SharedTypes::v1_21_50::JigsawBlockMetadata> const& targetJigsaws,
+    ::std::vector<uint64> const&                                       targetJigsawIndexes,
+    ::JigsawStructureRegistry const&                                   pools
 );
 
-MCAPI void expansionHackEval(int expandTo, ::BoundingBox& box);
+MCNAPI void expansionHackEval(int expandTo, ::BoundingBox& box);
 
-MCAPI bool isEmptyPool(::StructureTemplatePool const& pool);
+MCNAPI bool isEmptyPool(::StructureTemplatePool const& pool);
 
-MCFOLD int
-noopCalc(::JigsawStructureUtils::MetadataCache&, ::BlockPos const&, ::Rotation, ::BoundingBox const&, ::std::vector<::std::pair<uint64, ::SharedTypes::v1_21_50::JigsawBlockMetadata>> const&, ::JigsawStructureRegistry const&);
+MCNAPI int
+noopCalc(::JigsawStructureUtils::MetadataCache&, ::BlockPos const&, ::Rotation, ::BoundingBox const&, ::std::vector<::SharedTypes::v1_21_50::JigsawBlockMetadata> const&, ::std::vector<uint64> const&, ::JigsawStructureRegistry const&);
 
-MCFOLD void noopEval(int, ::BoundingBox&);
+MCNAPI void noopEval(int, ::BoundingBox&);
 
-MCAPI bool placeInWorld(
+MCNAPI bool placeInWorld(
     ::IStructureTemplate const&                   tmpl,
     ::BlockSource&                                region,
     ::BlockPos                                    position,
@@ -53,7 +54,7 @@ MCAPI bool placeInWorld(
     ::IRandom&                                    random
 );
 
-MCAPI ::std::vector<::br::worldgen::StructureBlockInfo> processBlockInfos(
+MCNAPI ::std::vector<::br::worldgen::StructureBlockInfo> processBlockInfos(
     ::BlockSource&                                region,
     ::BlockPos                                    position,
     ::BlockPos                                    structureOrigin,
@@ -61,7 +62,7 @@ MCAPI ::std::vector<::br::worldgen::StructureBlockInfo> processBlockInfos(
     ::br::worldgen::StructureTemplateBlockPalette sourceBlockInfos
 );
 
-MCAPI ::std::optional<::BlockPos> randomNamedJigsawLocation(
+MCNAPI ::std::optional<::BlockPos> randomNamedJigsawLocation(
     ::StructurePoolElement const& source,
     ::std::string_view            name,
     ::BlockPos                    pos,
@@ -69,10 +70,10 @@ MCAPI ::std::optional<::BlockPos> randomNamedJigsawLocation(
     ::IRandom&                    random
 );
 
-MCAPI ::std::vector<uint64> shuffledJigsawBlockId(::StructureTemplatePool const& pool, ::IRandom& random);
+MCNAPI ::std::vector<uint64> shuffledJigsawBlockId(::StructureTemplatePool const& pool, ::IRandom& random);
 
-MCAPI ::std::vector<::std::pair<uint64, ::SharedTypes::v1_21_50::JigsawBlockMetadata>>
-shuffledJigsawBlocks(::SharedTypes::v1_21_50::JigsawStructureMetadata const& metadata, ::IRandom& random);
+MCNAPI ::std::vector<uint64>
+shuffledJigsawBlockIndexes(::SharedTypes::v1_21_50::JigsawStructureMetadata const& metadata, ::IRandom& random);
 // NOLINTEND
 
 } // namespace br::worldgen

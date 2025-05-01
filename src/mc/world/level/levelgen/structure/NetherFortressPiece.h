@@ -70,7 +70,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::NetherFortressPiece> findAndCreateBridgePieceFactory(
+    MCNAPI ::std::unique_ptr<::NetherFortressPiece> findAndCreateBridgePieceFactory(
         ::std::string const&                                pieceClass,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
@@ -81,7 +81,7 @@ public:
         int                                                 depth
     );
 
-    MCAPI ::StructurePiece* generateAndAddPiece(
+    MCNAPI ::StructurePiece* generateAndAddPiece(
         ::NBStartPiece&                                     startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
@@ -93,7 +93,7 @@ public:
         bool                                                isCastle
     );
 
-    MCAPI ::StructurePiece* generateChildForward(
+    MCNAPI ::StructurePiece* generateChildForward(
         ::NBStartPiece&                                     startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
@@ -102,7 +102,7 @@ public:
         bool                                                isCastle
     );
 
-    MCAPI ::StructurePiece* generateChildLeft(
+    MCNAPI ::StructurePiece* generateChildLeft(
         ::NBStartPiece&                                     startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
@@ -111,7 +111,7 @@ public:
         bool                                                isCastle
     );
 
-    MCAPI ::StructurePiece* generateChildRight(
+    MCNAPI ::StructurePiece* generateChildRight(
         ::NBStartPiece&                                     startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
@@ -120,7 +120,7 @@ public:
         bool                                                isCastle
     );
 
-    MCAPI ::std::unique_ptr<::NetherFortressPiece> generatePiece(
+    MCNAPI ::std::unique_ptr<::NetherFortressPiece> generatePiece(
         ::NBStartPiece&                                     startPiece,
         ::std::vector<::PieceWeight>&                       currentPieces,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
@@ -136,20 +136,20 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
+    MCNAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

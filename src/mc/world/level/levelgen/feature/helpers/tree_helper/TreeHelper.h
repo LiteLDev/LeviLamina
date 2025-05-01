@@ -14,12 +14,12 @@ class Random;
 namespace TreeHelper {
 // functions
 // NOLINTBEGIN
-MCAPI bool isValidTreePosition(::IBlockWorldGenAPI const& target, ::BlockPos const& pos);
+MCNAPI bool isValidTreePosition(::IBlockWorldGenAPI const& target, ::BlockPos const& pos);
 
-MCAPI ::std::optional<::BlockPos>
+MCNAPI ::std::optional<::BlockPos>
 placeRadialBlockGroup(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& block, ::Block const& radius, int coreWidth, int simplify, bool mayGrowThrough, ::std::vector<::BlockDescriptor> const&);
 
-MCAPI bool prepareSpawn(
+MCNAPI bool prepareSpawn(
     ::IBlockWorldGenAPI const&              target,
     ::BlockPos const&                       pos,
     int                                     treeHeight,

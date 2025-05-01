@@ -36,13 +36,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool
+    MCNAPI bool
     $shouldListen(::BlockSource& region, ::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

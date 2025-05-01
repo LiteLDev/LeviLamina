@@ -19,7 +19,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~SlotData();
+    MCNAPI ~SlotData();
     // NOLINTEND
 
 public:
@@ -31,6 +31,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

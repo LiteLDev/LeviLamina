@@ -4,6 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/world/events/gameevents/GameEventListener.h"
+#include "mc/world/events/gameevents/PositionSource.h"
+#include "mc/world/events/gameevents/VibrationInfo.h"
+#include "mc/world/events/gameevents/VibrationSelector.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,11 +16,8 @@ class CompoundTag;
 class DataLoadHelper;
 class GameEvent;
 class Vec3;
-class VibrationInfo;
 class VibrationListenerConfig;
-class VibrationSelector;
 struct GameEventContext;
-namespace GameEvents { class PositionSource; }
 // clang-format on
 
 class VibrationListener : public ::GameEventListener {
@@ -66,28 +66,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _areAdjacentChunksTicking(::BlockSource& region) const;
+    MCNAPI bool _areAdjacentChunksTicking(::BlockSource& region) const;
 
-    MCAPI void _requestVibrationParticle(::BlockSource& region, ::BlockPos const& originPos, float timeToLive);
+    MCNAPI void _requestVibrationParticle(::BlockSource& region, ::BlockPos const& originPos, float timeToLive);
 
-    MCAPI void _tickInternal(::BlockSource& region);
+    MCNAPI void _tickInternal(::BlockSource& region);
 
-    MCAPI void _trySendSneakCloseToSculkSensorEventPacket(
+    MCNAPI void _trySendSneakCloseToSculkSensorEventPacket(
         ::BlockSource&            gameEvent,
         ::GameEvent const&        gameEventContext,
         ::GameEventContext const& sensorPos,
         ::Vec3 const&             region
     );
 
-    MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void save(::CompoundTag& tag) const;
+    MCNAPI void save(::CompoundTag& tag) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _shouldIgnoreVibration(
+    MCNAPI static bool _shouldIgnoreVibration(
         ::BlockSource&            region,
         ::GameEvent const&        gameEvent,
         ::GameEventContext const& gameEventContext
@@ -103,17 +103,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     $handleGameEvent(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, ::BlockSource& region);
 
-    MCFOLD uint $getRange() const;
+    MCNAPI uint $getRange() const;
 
-    MCFOLD ::GameEvents::PositionSource const& $getPositionSource() const;
+    MCNAPI ::GameEvents::PositionSource const& $getPositionSource() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

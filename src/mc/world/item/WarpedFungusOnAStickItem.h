@@ -33,13 +33,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WarpedFungusOnAStickItem(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
+    MCNAPI WarpedFungusOnAStickItem(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
+    MCNAPI void* $ctor(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -51,18 +51,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isHandEquipped() const;
+    MCNAPI bool $isHandEquipped() const;
 
-    MCFOLD bool $requiresInteract() const;
+    MCNAPI bool $requiresInteract() const;
 
-    MCAPI int $getEnchantSlot() const;
+    MCNAPI int $getEnchantSlot() const;
 
-    MCFOLD int $getEnchantValue() const;
+    MCNAPI int $getEnchantValue() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

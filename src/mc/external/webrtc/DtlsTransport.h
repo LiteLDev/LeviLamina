@@ -17,27 +17,27 @@ class DtlsTransport {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Clear();
+    MCNAPI void Clear();
 
-    MCAPI explicit DtlsTransport(::std::unique_ptr<::cricket::DtlsTransportInternal>);
+    MCNAPI explicit DtlsTransport(::std::unique_ptr<::cricket::DtlsTransportInternal>);
 
-    MCAPI void OnInternalDtlsState(::cricket::DtlsTransportInternal*, ::webrtc::DtlsTransportState);
+    MCNAPI void OnInternalDtlsState(::cricket::DtlsTransportInternal*, ::webrtc::DtlsTransportState);
 
-    MCAPI void UpdateInformation();
+    MCNAPI void UpdateInformation();
 
-    MCAPI void set_info(::webrtc::DtlsTransportInformation&&);
+    MCNAPI void set_info(::webrtc::DtlsTransportInformation&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::cricket::DtlsTransportInternal>);
+    MCNAPI void* $ctor(::std::unique_ptr<::cricket::DtlsTransportInternal>);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

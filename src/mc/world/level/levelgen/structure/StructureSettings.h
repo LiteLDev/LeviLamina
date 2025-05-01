@@ -3,16 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/util/AnimationMode.h"
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BoundingBox;
-class Vec3;
-struct ActorUniqueID;
 // clang-format on
 
 class StructureSettings {

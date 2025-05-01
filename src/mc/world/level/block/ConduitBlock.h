@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/ActorBlockBase.h"
+#include "mc/world/level/block/BlockLegacy.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
 // clang-format on
@@ -20,7 +20,7 @@ public:
     virtual ~ConduitBlock() /*override*/ = default;
 
     // vIndex: 80
-    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar facing) const /*override*/;
     // NOLINTEND
 
 public:
@@ -32,12 +32,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar facing) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

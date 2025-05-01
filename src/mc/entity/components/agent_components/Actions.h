@@ -11,7 +11,7 @@ namespace AgentComponents::Actions { struct QueueItem; }
 namespace AgentComponents::Actions {
 // functions
 // NOLINTBEGIN
-MCAPI void startAction(::EntityContext& entity, ::AgentComponents::Actions::QueueItem const& item);
+MCNAPI void startAction(::EntityContext& entity, ::AgentComponents::Actions::QueueItem const& item);
 // NOLINTEND
 
 } // namespace AgentComponents::Actions

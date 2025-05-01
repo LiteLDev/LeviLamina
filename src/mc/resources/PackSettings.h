@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/json/Value.h"
+
 // auto generated forward declare list
 // clang-format off
 class PackSetting;
 struct PackIdVersion;
-namespace Json { class Value; }
 // clang-format on
 
 class PackSettings {
@@ -20,8 +22,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _initPackSetting(::std::string const& name, ::Json::Value const& value);
+    MCNAPI void _initPackSetting(::std::string const& name, ::Json::Value const& value);
 
-    MCAPI void loadPackSettings(::PackIdVersion const& packId, ::Json::Value const& packSettings);
+    MCNAPI void loadPackSettings(::PackIdVersion const& packId, ::Json::Value const& packSettings);
     // NOLINTEND
 };

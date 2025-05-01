@@ -64,21 +64,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ListBlockVolume(::std::vector<::BlockPos> const& blockPositions);
+    MCNAPI explicit ListBlockVolume(::std::vector<::BlockPos> const& blockPositions);
 
-    MCAPI ListBlockVolume(::ListBlockVolume const& rhs);
+    MCNAPI ListBlockVolume(::ListBlockVolume const& rhs);
 
-    MCAPI void insert(::std::vector<::Vec3> const& blockPositions);
+    MCNAPI void insert(::std::vector<::Vec3> const& blockPositions);
 
-    MCAPI ::ListBlockVolume& operator=(::ListBlockVolume const& rhs);
+    MCNAPI ::ListBlockVolume& operator=(::ListBlockVolume const& rhs);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::vector<::BlockPos> const& blockPositions);
+    MCNAPI void* $ctor(::std::vector<::BlockPos> const& blockPositions);
 
-    MCAPI void* $ctor(::ListBlockVolume const& rhs);
+    MCNAPI void* $ctor(::ListBlockVolume const& rhs);
     // NOLINTEND
 
 public:
@@ -90,28 +90,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockPos $getMin() const;
+    MCNAPI ::BlockPos $getMin() const;
 
-    MCAPI ::BlockPos $getMax() const;
+    MCNAPI ::BlockPos $getMax() const;
 
-    MCAPI ::BoundingBox $getBoundingBox() const;
+    MCNAPI ::BoundingBox $getBoundingBox() const;
 
-    MCAPI ::glm::ivec3 $getSpan() const;
+    MCNAPI ::glm::ivec3 $getSpan() const;
 
-    MCFOLD int $getCapacity() const;
+    MCNAPI int $getCapacity() const;
 
-    MCAPI bool $isInside(::BlockPos const& pos) const;
+    MCNAPI bool $isInside(::BlockPos const& pos) const;
 
-    MCAPI void $translate(::BlockPos const& delta);
+    MCNAPI void $translate(::BlockPos const& delta);
 
-    MCAPI void $forEach(::std::function<bool(::BlockPos const&)> callback) const;
+    MCNAPI void $forEach(::std::function<bool(::BlockPos const&)> callback) const;
 
-    MCAPI ::std::set<::ChunkPos> $getChunks() const;
+    MCNAPI ::std::set<::ChunkPos> $getChunks() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

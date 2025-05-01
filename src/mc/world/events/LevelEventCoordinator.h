@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/events/EventCoordinator.h"
@@ -19,7 +20,6 @@ class IActorManagerConnector;
 class IGameplayUserManagerConnector;
 class LevelEventListener;
 class LevelGameplayHandler;
-namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class LevelEventCoordinator : public ::EventCoordinator<::LevelEventListener> {
@@ -43,25 +43,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onGameplayUserAdded(::EntityContext& entity);
+    MCNAPI void _onGameplayUserAdded(::EntityContext& entity);
 
-    MCAPI void _postReloadActorAdded(::Actor& actor, ::ActorInitializationMethod initializationMethod);
+    MCNAPI void _postReloadActorAdded(::Actor& actor, ::ActorInitializationMethod);
 
-    MCAPI void registerGameRules(::GameRules& gameRules);
+    MCNAPI void registerGameRules(::GameRules& gameRules);
 
-    MCFOLD void registerLevelGameplayHandler(::std::unique_ptr<::LevelGameplayHandler>&& handler);
+    MCNAPI void registerLevelGameplayHandler(::std::unique_ptr<::LevelGameplayHandler>&& handler);
 
-    MCAPI void registerWithActorManagerEvents(::IActorManagerConnector& actorManagerConnector, bool isClientSide);
+    MCNAPI void registerWithActorManagerEvents(::IActorManagerConnector& actorManagerConnector, bool isClientSide);
 
-    MCAPI void registerWithGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
+    MCNAPI void registerWithGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableLevelGameplayEvent<::CoordinatorResult>> event);
+    MCNAPI ::CoordinatorResult sendEvent(::EventRef<::MutableLevelGameplayEvent<::CoordinatorResult>> event);
 
-    MCAPI void sendEvent(::EventRef<::LevelGameplayEvent<void>> const& event);
+    MCNAPI void sendEvent(::EventRef<::LevelGameplayEvent<void>> const& event);
 
-    MCAPI void sendLevelRemovedActor(::Actor& actor);
+    MCNAPI void sendLevelRemovedActor(::Actor& actor);
 
-    MCAPI void sendLevelWeatherChanged(
+    MCNAPI void sendLevelWeatherChanged(
         ::std::string const& dimension,
         bool                 wasRaining,
         bool                 wasLightning,
@@ -73,12 +73,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

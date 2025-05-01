@@ -30,12 +30,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canConnect(::Block const&, uchar, ::Block const&) const;
+    MCNAPI bool $canConnect(::Block const&, uchar, ::Block const&) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

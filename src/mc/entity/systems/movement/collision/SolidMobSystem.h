@@ -12,7 +12,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class ActorOwnerComponent;
 class EntitySystems;
 class LocalSpatialEntityFetcher;
@@ -32,9 +31,7 @@ struct LocalSpatialEntityFetcherFactoryComponent;
 struct MobFlagComponent;
 struct MoveRequestComponent;
 struct MovementInterpolatorComponent;
-struct OffsetsComponent;
 struct ServerCatchupMovementTrackerComponent;
-struct ShouldBeSimulatedComponent;
 struct StateVectorComponent;
 struct TickingSystemWithInfo;
 // clang-format on
@@ -42,11 +39,11 @@ struct TickingSystemWithInfo;
 namespace SolidMobSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createRewindShapeRefreshSystem();
+MCNAPI ::TickingSystemWithInfo createRewindShapeRefreshSystem();
 
-MCAPI ::TickingSystemWithInfo createStoreNearbyMobsOnMoveRequestSystem();
+MCNAPI ::TickingSystemWithInfo createStoreNearbyMobsOnMoveRequestSystem();
 
-MCAPI void flagNearbyMobsForServerMovementCatchup(
+MCNAPI void flagNearbyMobsForServerMovementCatchup(
     ::StrictEntityContext const&                   player,
     ::StateVectorComponent const&                  stateVector,
     ::ServerCatchupMovementTrackerComponent const& tracker,
@@ -63,7 +60,7 @@ MCAPI void flagNearbyMobsForServerMovementCatchup(
     ::std::vector<::StrictEntityContext>&                                                          buffer
 );
 
-MCAPI void flagNearbyMobsForServerMovementCatchupSystem(
+MCNAPI void flagNearbyMobsForServerMovementCatchupSystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorMovementTickNeededComponent>,
@@ -80,7 +77,7 @@ MCAPI void flagNearbyMobsForServerMovementCatchupSystem(
     ::EntityModifier<::IsSolidMobNearbyComponent>                                                  modifier
 );
 
-MCAPI void flagNearbyMobsFromSolidEntity(
+MCNAPI void flagNearbyMobsFromSolidEntity(
     ::StrictEntityContext const& solidMob,
     ::IsSolidMobComponent const& solid,
     ::AABBShapeComponent const&  shape,
@@ -96,7 +93,7 @@ MCAPI void flagNearbyMobsFromSolidEntity(
     ::std::vector<::StrictEntityContext>&                     buffer
 );
 
-MCAPI void flagNearbyMobsFromSolidSystem(
+MCNAPI void flagNearbyMobsFromSolidSystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorComponent>,
@@ -114,7 +111,7 @@ MCAPI void flagNearbyMobsFromSolidSystem(
     ::EntityModifier<::IsSolidMobNearbyComponent>                       modifier
 );
 
-MCAPI void flagSolidMobsFromNearbyEntity(
+MCNAPI void flagSolidMobsFromNearbyEntity(
     ::StrictEntityContext const&                                                                   entity,
     ::AABBShapeComponent const&                                                                    shape,
     ::Optional<::MobFlagComponent const>                                                           isMob,
@@ -125,35 +122,15 @@ MCAPI void flagSolidMobsFromNearbyEntity(
     ::std::vector<::StrictEntityContext>&                                                          buffer
 );
 
-MCAPI void flagSolidMobsFromNearbySystem(
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::ShouldBeSimulatedComponent, ::ActorMovementTickNeededComponent>,
-        ::DimensionTypeComponent const,
-        ::AABBShapeComponent const,
-        ::Optional<::MobFlagComponent const>,
-        ::Optional<::IsSolidMobComponent const>>                                                   view,
-    ::ViewT<::StrictEntityContext, ::IsSolidMobComponent const, ::AABBShapeComponent const> const& solidMobs,
-    ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent const>                            fetcherFactory,
-    ::EntityModifier<::IsSolidMobNearbyComponent>                                                  modifier
-);
-
-MCAPI ::std::optional<::AABB> getLatestAABB(
-    ::StrictEntityContext const&                                                                e,
-    ::ViewT<::StrictEntityContext, ::AABBShapeComponent const, ::OffsetsComponent const> const& aabbs,
-    ::ViewT<::StrictEntityContext, ::PredictedMovementComponent const> const&                   pmcs,
-    ::ViewT<::StrictEntityContext, ::MovementInterpolatorComponent const> const&                interpolators
-);
-
-MCAPI ::std::optional<::Vec3> getLatestPosition(
+MCNAPI ::std::optional<::Vec3> getLatestPosition(
     ::StrictEntityContext const&                                                 e,
     ::ViewT<::StrictEntityContext, ::PredictedMovementComponent const> const&    pmcs,
     ::ViewT<::StrictEntityContext, ::MovementInterpolatorComponent const> const& interpolators
 );
 
-MCAPI void registerSystems(::EntitySystems& systems, bool isClientSide);
+MCNAPI void registerSystems(::EntitySystems& systems, bool isClientSide);
 
-MCAPI void storeNearbyMobsOnMoveRequest(
+MCNAPI void storeNearbyMobsOnMoveRequest(
     ::IsSolidMobNearbyComponent const& nearby,
     ::DepenetrationComponent&          depenetration,
     ::MoveRequestComponent&            request

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/safety/RedactableString.h"
 #include "mc/world/actor/ai/util/BossBarColor.h"
 #include "mc/world/actor/ai/util/BossBarOverlay.h"
 #include "mc/world/actor/ai/util/BossEventUpdateType.h"
@@ -13,7 +14,6 @@ class Actor;
 class CompoundTag;
 class DataLoadHelper;
 class Player;
-namespace Bedrock::Safety { class RedactableString; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -43,42 +43,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BossComponent();
+    MCNAPI BossComponent();
 
-    MCAPI BossComponent(::BossComponent&&);
+    MCNAPI BossComponent(::BossComponent&&);
 
-    MCAPI void _sendBossEvent(::Actor& owner, ::BossEventUpdateType type, ::Player* player);
+    MCNAPI void _sendBossEvent(::Actor& owner, ::BossEventUpdateType type, ::Player* player);
 
-    MCAPI void broadcastBossEvent(::Actor& owner, ::BossEventUpdateType type);
+    MCNAPI void broadcastBossEvent(::Actor& owner, ::BossEventUpdateType type);
 
-    MCAPI void handleRegisterPlayers(::Actor& owner);
+    MCNAPI void handleRegisterPlayers(::Actor& owner);
 
-    MCAPI ::BossComponent& operator=(::BossComponent&&);
+    MCNAPI ::BossComponent& operator=(::BossComponent&&);
 
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void sendDeathTelemetry(::Actor& owner);
+    MCNAPI void sendDeathTelemetry(::Actor& owner);
 
-    MCAPI void setName(::Actor& owner, ::Bedrock::Safety::RedactableString const& name);
+    MCNAPI void setName(::Actor& owner, ::Bedrock::Safety::RedactableString const& name);
 
-    MCAPI bool tryRemoveBoss(::Actor& owner, ::Player& player);
+    MCNAPI bool tryRemoveBoss(::Actor& owner, ::Player& player);
 
-    MCAPI void unRegisterPlayer(::Actor& owner, ::Player* player);
+    MCNAPI void unRegisterPlayer(::Actor& owner, ::Player* player);
 
-    MCAPI ~BossComponent();
+    MCNAPI ~BossComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::BossComponent&&);
+    MCNAPI void* $ctor(::BossComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

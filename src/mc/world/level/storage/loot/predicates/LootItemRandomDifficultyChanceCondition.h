@@ -38,13 +38,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LootItemRandomDifficultyChanceCondition(::Json::Value object);
+    MCNAPI explicit LootItemRandomDifficultyChanceCondition(::Json::Value object);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Json::Value object);
+    MCNAPI void* $ctor(::Json::Value object);
     // NOLINTEND
 
 public:
@@ -56,12 +56,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $applies(::Random& random, ::LootTableContext& context);
+    MCNAPI bool $applies(::Random& random, ::LootTableContext& context);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

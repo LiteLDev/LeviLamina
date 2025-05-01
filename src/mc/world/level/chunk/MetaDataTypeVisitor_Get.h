@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::std::variant<
+    MCNAPI ::std::optional<::std::variant<
         ::BaseGameVersion,
         ::std::string,
         ::LevelSeed64,
@@ -39,12 +39,12 @@ public:
         ::DimensionHeightRange>>
     operator()(::BaseGameVersion const&) const;
 
-    MCAPI ~MetaDataTypeVisitor_Get();
+    MCNAPI ~MetaDataTypeVisitor_Get();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

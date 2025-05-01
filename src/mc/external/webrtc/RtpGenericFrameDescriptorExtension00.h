@@ -13,9 +13,9 @@ class RtpGenericFrameDescriptorExtension00 {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static uint64 ValueSize(::webrtc::RtpGenericFrameDescriptor const&);
+    MCNAPI static uint64 ValueSize(::webrtc::RtpGenericFrameDescriptor const&);
 
-    MCAPI static bool Write(::rtc::ArrayView<uchar>, ::webrtc::RtpGenericFrameDescriptor const&);
+    MCNAPI static bool Write(::rtc::ArrayView<uchar>, ::webrtc::RtpGenericFrameDescriptor const&);
     // NOLINTEND
 };
 

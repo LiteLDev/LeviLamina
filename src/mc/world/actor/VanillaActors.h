@@ -11,7 +11,7 @@ class Experiments;
 namespace VanillaActors {
 // functions
 // NOLINTBEGIN
-MCAPI void registerVanillaActorData(::BaseGameVersion const& version, ::Experiments const& experiments);
+MCNAPI void registerVanillaActorData(::BaseGameVersion const& version, ::Experiments const& experiments);
 // NOLINTEND
 
 } // namespace VanillaActors

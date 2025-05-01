@@ -12,7 +12,7 @@ class ScriptPaletteColor {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::
+    MCNAPI static ::Scripting::
         EnumBindingBuilder<::SharedTypes::Legacy::PaletteColor, ::SharedTypes::Legacy::PaletteColor>
         bind();
     // NOLINTEND

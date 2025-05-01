@@ -13,13 +13,13 @@ class ItemStackResponsePacket;
 namespace ItemTransactionLogger {
 // functions
 // NOLINTBEGIN
-MCAPI void log(::InventoryAction const& action, ::std::string const& message);
+MCNAPI void log(::InventoryAction const& action, ::std::string const& message);
 
-MCAPI void log(::ItemStack const& item, ::std::string const& message);
+MCNAPI void log(::ItemStack const& item, ::std::string const& message);
 
-MCAPI void log(::InventoryTransactionPacket const& packet, ::std::string const& message);
+MCNAPI void log(::InventoryTransactionPacket const& packet, ::std::string const& message);
 
-MCAPI void log(::ItemStackResponsePacket const& packet, ::std::string const& message);
+MCNAPI void log(::ItemStackResponsePacket const& packet, ::std::string const& message);
 // NOLINTEND
 
 } // namespace ItemTransactionLogger

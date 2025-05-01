@@ -44,20 +44,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI void $_createBreakProgressParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    MCNAPI void $_createBreakProgressParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
-    MCAPI void $_createDestroyParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    MCNAPI void $_createDestroyParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
-    MCAPI void $_playBreakProgressSound(::Level&, ::BlockSource&, ::BlockPos pos);
+    MCNAPI void $_playBreakProgressSound(::Level&, ::BlockSource&, ::BlockPos pos);
 
-    MCAPI void $_playDestroySound(::Level&, ::BlockSource&, ::BlockPos pos);
+    MCNAPI void $_playDestroySound(::Level&, ::BlockSource&, ::BlockPos pos);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -143,9 +143,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
 
-    MCAPI static void doUnderWaterSensing(
+    MCNAPI static void doUnderWaterSensing(
         ::StrictEntityContext const&                                                          entity,
         ::StateVectorComponent const&                                                         stateVectorComponent,
         ::UpdateWaterStateRequestComponent const&                                             request,
@@ -165,35 +165,35 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::StrictExecutionContext<
-                     ::Filter<
-                         ::HorseFlagComponent,
-                         ::MobFlagComponent,
-                         ::ParrotFlagComponent,
-                         ::VehicleComponent,
-                         ::CamelFlagComponent,
-                         ::PlayerComponent>,
-                     ::Read<
-                         ::DimensionTypeComponent,
-                         ::StateVectorComponent,
-                         ::UpdateWaterStateRequestComponent,
-                         ::ActorRotationComponent,
-                         ::MobBodyRotationComponent,
-                         ::PassengerComponent,
-                         ::RenderRotationComponent,
-                         ::StandAnimationComponent,
-                         ::ActorDataFlagComponent,
-                         ::AABBShapeComponent,
-                         ::OffsetsComponent,
-                         ::VanillaOffsetComponent,
-                         ::PassengerRenderingRidingOffsetComponent>,
-                     ::Write<>,
-                     ::AddRemove<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent>,
-                     ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
-                     ::GlobalWrite<>,
-                     ::EntityFactoryT<>>& context);
+    MCNAPI void $tick(::StrictExecutionContext<
+                      ::Filter<
+                          ::HorseFlagComponent,
+                          ::MobFlagComponent,
+                          ::ParrotFlagComponent,
+                          ::VehicleComponent,
+                          ::CamelFlagComponent,
+                          ::PlayerComponent>,
+                      ::Read<
+                          ::DimensionTypeComponent,
+                          ::StateVectorComponent,
+                          ::UpdateWaterStateRequestComponent,
+                          ::ActorRotationComponent,
+                          ::MobBodyRotationComponent,
+                          ::PassengerComponent,
+                          ::RenderRotationComponent,
+                          ::StandAnimationComponent,
+                          ::ActorDataFlagComponent,
+                          ::AABBShapeComponent,
+                          ::OffsetsComponent,
+                          ::VanillaOffsetComponent,
+                          ::PassengerRenderingRidingOffsetComponent>,
+                      ::Write<>,
+                      ::AddRemove<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent>,
+                      ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& context);
 
-    MCAPI void $singleTick(
+    MCNAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<
                 ::HorseFlagComponent,
@@ -228,6 +228,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

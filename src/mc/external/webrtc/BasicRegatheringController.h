@@ -25,35 +25,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     BasicRegatheringController(::webrtc::BasicRegatheringController::Config const&, ::cricket::IceTransportInternal*, ::rtc::Thread*);
 
-    MCAPI void OnIceTransportNetworkRouteChanged(::std::optional<::rtc::NetworkRoute>);
+    MCNAPI void OnIceTransportNetworkRouteChanged(::std::optional<::rtc::NetworkRoute>);
 
-    MCAPI void OnIceTransportReceivingState(::rtc::PacketTransportInternal*);
+    MCNAPI void OnIceTransportReceivingState(::rtc::PacketTransportInternal*);
 
-    MCAPI void OnIceTransportStateChanged(::cricket::IceTransportInternal*);
+    MCNAPI void OnIceTransportStateChanged(::cricket::IceTransportInternal*);
 
-    MCAPI void OnIceTransportWritableState(::rtc::PacketTransportInternal*);
+    MCNAPI void OnIceTransportWritableState(::rtc::PacketTransportInternal*);
 
-    MCAPI void ScheduleRecurringRegatheringOnFailedNetworks();
+    MCNAPI void ScheduleRecurringRegatheringOnFailedNetworks();
 
-    MCAPI void SetConfig(::webrtc::BasicRegatheringController::Config const&);
+    MCNAPI void SetConfig(::webrtc::BasicRegatheringController::Config const&);
 
-    MCAPI void Start();
+    MCNAPI void Start();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::webrtc::BasicRegatheringController::Config const&, ::cricket::IceTransportInternal*, ::rtc::Thread*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

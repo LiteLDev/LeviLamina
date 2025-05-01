@@ -13,21 +13,21 @@ struct BitrateProberConfig {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BitrateProberConfig(::webrtc::FieldTrialsView const*);
+    MCNAPI explicit BitrateProberConfig(::webrtc::FieldTrialsView const*);
 
-    MCAPI ~BitrateProberConfig();
+    MCNAPI ~BitrateProberConfig();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const*);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

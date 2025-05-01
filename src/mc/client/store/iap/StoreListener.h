@@ -38,21 +38,24 @@ public:
     virtual void onPurchaseFailed(::ProductSku const&) = 0;
 
     // vIndex: 8
-    virtual void onPurchasePending(::ProductSku const&) = 0;
+    virtual void onPurchasePlatformStoreFailed(::ProductSku const&, ::std::string const&) = 0;
 
     // vIndex: 9
-    virtual void onQueryPurchasesSuccess(::std::vector<::PurchaseInfo> const&) = 0;
+    virtual void onPurchasePending(::ProductSku const&) = 0;
 
     // vIndex: 10
-    virtual void onQueryPurchasesFail() = 0;
+    virtual void onQueryPurchasesSuccess(::std::vector<::PurchaseInfo> const&) = 0;
 
     // vIndex: 11
-    virtual void onAppPurchaseSuccess() = 0;
+    virtual void onQueryPurchasesFail() = 0;
 
     // vIndex: 12
-    virtual void onAppPurchaseFailed() = 0;
+    virtual void onAppPurchaseSuccess() = 0;
 
     // vIndex: 13
+    virtual void onAppPurchaseFailed() = 0;
+
+    // vIndex: 14
     virtual void onAppPurchaseCanceled() = 0;
     // NOLINTEND
 

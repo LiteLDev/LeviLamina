@@ -23,10 +23,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _bribe(::Actor& owner, ::Player& player);
+    MCNAPI void _bribe(::Actor& owner, ::Player& player);
 
-    MCAPI bool _canBribe(::ItemStack const& item);
+    MCNAPI bool _canBribe(::ItemStack const& item);
 
-    MCAPI bool clientBribeCheck(::Actor& owner);
+    MCNAPI bool clientBribeCheck(::Actor& owner);
     // NOLINTEND
 };

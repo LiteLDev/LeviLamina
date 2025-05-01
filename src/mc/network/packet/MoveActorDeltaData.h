@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ActorRuntimeID;
-class MoveActorAbsoluteData;
-// clang-format on
+// auto generated inclusion list
+#include "mc/legacy/ActorRuntimeID.h"
+#include "mc/network/packet/MoveActorAbsoluteData.h"
 
 class MoveActorDeltaData {
 public:

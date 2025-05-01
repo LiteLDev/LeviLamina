@@ -18,7 +18,7 @@ struct StateVectorComponent;
 namespace BuoyancySystem {
 // functions
 // NOLINTBEGIN
-MCAPI void checkAndAddFloatRequest(
+MCNAPI void checkAndAddFloatRequest(
     ::StrictEntityContext const&                       entity,
     ::StateVectorComponent const&                      stateVectorComponent,
     ::BuoyancyComponent&                               buoyancyComponent,
@@ -26,7 +26,7 @@ MCAPI void checkAndAddFloatRequest(
     ::IConstBlockSource const&                         region
 );
 
-MCAPI void registerSystems(::EntitySystems& systemRegistry);
+MCNAPI void registerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
 } // namespace BuoyancySystem

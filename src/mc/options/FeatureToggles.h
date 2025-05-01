@@ -42,23 +42,23 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI FeatureToggle(::FeatureToggles::FeatureToggle&&);
+        MCNAPI FeatureToggle(::FeatureToggles::FeatureToggle&&);
 
-        MCAPI ::FeatureToggles::FeatureToggle& operator=(::FeatureToggles::FeatureToggle&&);
+        MCNAPI ::FeatureToggles::FeatureToggle& operator=(::FeatureToggles::FeatureToggle&&);
 
-        MCAPI ~FeatureToggle();
+        MCNAPI ~FeatureToggle();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::FeatureToggles::FeatureToggle&&);
+        MCNAPI void* $ctor(::FeatureToggles::FeatureToggle&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -87,25 +87,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::function<void(::Option&)>
+    MCNAPI ::std::function<void(::Option&)>
     _getDisableIfOtherOptionDisabledSetupCallback(::FeatureOptionID optionIdToCheck) const;
 
-    MCAPI ::std::function<void(::Option&)> _getDisabledIfOptionExpectationsNotMetSetupCallback(
+    MCNAPI ::std::function<void(::Option&)> _getDisabledIfOptionExpectationsNotMetSetupCallback(
         ::std::vector<::FeatureOptionID> expectedDisabledOptions,
         ::std::vector<::FeatureOptionID> expectedEnabledOptions
     );
 
-    MCAPI ::std::function<void(bool&)> _getLockIfInGameOrOptionExpectationsNotMetLockCallback(
+    MCNAPI ::std::function<void(bool&)> _getLockIfInGameOrOptionExpectationsNotMetLockCallback(
         ::std::vector<::FeatureOptionID> expectedDisabledOptions,
         ::std::vector<::FeatureOptionID> expectedEnabledOptions
     );
 
-    MCAPI ::std::function<void(bool&)> _getLockIfOtherOptionDisabledLockCallback(::FeatureOptionID optionIdToCheck
+    MCNAPI ::std::function<void(bool&)> _getLockIfOtherOptionDisabledLockCallback(::FeatureOptionID optionIdToCheck
     ) const;
 
-    MCAPI void _initialize(::AppPlatform& appPlatform);
+    MCNAPI void _initialize(::AppPlatform& appPlatform);
 
-    MCAPI void _registerFeature(
+    MCNAPI void _registerFeature(
         ::FeatureOptionTabID             tabID,
         ::FeatureOptionID                featureID,
         ::std::string const&             locName,
@@ -116,11 +116,11 @@ public:
         ::std::function<void(bool&)>     lock
     );
 
-    MCAPI void _registerFeatures();
+    MCNAPI void _registerFeatures();
 
-    MCAPI void _setupDependencies();
+    MCNAPI void _setupDependencies();
 
-    MCAPI bool isEnabled(::FeatureOptionID featureID) const;
+    MCNAPI bool isEnabled(::FeatureOptionID featureID) const;
     // NOLINTEND
 
 public:
@@ -132,12 +132,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

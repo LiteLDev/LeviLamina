@@ -102,27 +102,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ArmorStand(
+    MCNAPI ArmorStand(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _causeDamage(float dmg);
+    MCNAPI void _causeDamage(float dmg);
 
-    MCAPI void _destroyWithEffects(::Actor* sourceActor);
+    MCNAPI void _destroyWithEffects(::Actor* sourceActor);
 
-    MCAPI void _dropHeldItems();
+    MCNAPI void _dropHeldItems();
 
-    MCAPI void _dropHeldItemsAndResource();
+    MCNAPI void _dropHeldItemsAndResource();
 
-    MCAPI void _dropItem(::ItemStack const& item);
+    MCNAPI void _dropItem(::ItemStack const& item);
 
-    MCAPI bool _trySwapItem(::Player& player, ::SharedTypes::Legacy::EquipmentSlot slot);
+    MCNAPI bool _trySwapItem(::Player& player, ::SharedTypes::Legacy::EquipmentSlot slot);
 
-    MCAPI void _updatePoseFromSynchedData();
+    MCNAPI void _updatePoseFromSynchedData();
 
-    MCAPI void setPoseIndex(int poseIndex);
+    MCNAPI void setPoseIndex(int poseIndex);
     // NOLINTEND
 
 public:
@@ -158,7 +158,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -174,30 +174,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
+    MCNAPI bool $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
 
-    MCAPI void $kill();
+    MCNAPI void $kill();
 
-    MCAPI void $die(::ActorDamageSource const& source);
+    MCNAPI void $die(::ActorDamageSource const& source);
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float, bool, bool);
+    MCNAPI bool $_hurt(::ActorDamageSource const& source, float, bool, bool);
 
-    MCAPI void $normalTick();
+    MCNAPI void $normalTick();
 
-    MCAPI void $pushActors();
+    MCNAPI void $pushActors();
 
-    MCFOLD bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCNAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

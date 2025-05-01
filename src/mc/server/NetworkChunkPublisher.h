@@ -5,17 +5,17 @@
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/buffer_span.h"
+#include "mc/network/NetworkIdentifier.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class ChunkPos;
 class ChunkSource;
 class ChunkViewSource;
 class Level;
 class LevelChunk;
 class LevelChunkPacket;
-class NetworkIdentifier;
 class ServerNetworkSystem;
 class VarIntDataOutput;
 class Vec3;
@@ -68,34 +68,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkChunkPublisher(::Level& level, ::NetworkIdentifier const& owner, ::SubClientId subClientId);
+    MCNAPI NetworkChunkPublisher(::Level& level, ::NetworkIdentifier const& owner, ::SubClientId subClientId);
 
-    MCAPI bool _isWaitingForFullyBuiltChunks() const;
+    MCNAPI bool _isWaitingForFullyBuiltChunks() const;
 
-    MCAPI bool _sendQueuedChunk(
+    MCNAPI bool _sendQueuedChunk(
         ::ChunkPositionAndDimension const&          queuedChunk,
         ::ClientBlobCache::Server::TransferBuilder* cachedTransfer
     );
 
-    MCAPI void _serializeAndCache(
+    MCNAPI void _serializeAndCache(
         ::LevelChunkPacket&                          packet,
         ::ClientBlobCache::Server::TransferBuilder&  transfer,
         ::std::function<void(::VarIntDataOutput&)>&& serialize
     );
 
-    MCAPI void clearRegion();
+    MCNAPI void clearRegion();
 
-    MCAPI void moveRegion(::BlockPos const& position, uint blockRadius, ::Vec3 const& direction, float minDistance);
+    MCNAPI void moveRegion(::BlockPos const& position, uint blockRadius, ::Vec3 const& direction, float minDistance);
 
-    MCAPI void prepareRegion(::ChunkSource& mainChunkSource, ::ChunkPos const& center);
+    MCNAPI void prepareRegion(::ChunkSource& mainChunkSource, ::ChunkPos const& center);
 
-    MCAPI void sendQueuedChunks();
+    MCNAPI void sendQueuedChunks();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Level& level, ::NetworkIdentifier const& owner, ::SubClientId subClientId);
+    MCNAPI void* $ctor(::Level& level, ::NetworkIdentifier const& owner, ::SubClientId subClientId);
     // NOLINTEND
 
 public:
@@ -107,6 +107,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

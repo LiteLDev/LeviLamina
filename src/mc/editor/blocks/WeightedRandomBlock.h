@@ -26,7 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::HashedString _getBlock() const;
+    MCNAPI ::HashedString _getBlock() const;
     // NOLINTEND
 };
 

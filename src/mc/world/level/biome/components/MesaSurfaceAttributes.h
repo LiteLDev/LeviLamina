@@ -4,11 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/biome/components/BiomeComponentBase.h"
-
-// auto generated forward declare list
-// clang-format off
-class BlockDescriptor;
-// clang-format on
+#include "mc/world/level/block/BlockDescriptor.h"
 
 struct MesaSurfaceAttributes : public ::BiomeComponentBase {
 public:
@@ -30,13 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MesaSurfaceAttributes();
+    MCNAPI MesaSurfaceAttributes();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -48,6 +44,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -32,18 +32,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~MobSpawnerData();
+    MCNAPI ~MobSpawnerData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::MobSpawnerData from(::br::worldgen::SpawnerData const& spawnerData);
+    MCNAPI static ::MobSpawnerData from(::br::worldgen::SpawnerData const& spawnerData);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

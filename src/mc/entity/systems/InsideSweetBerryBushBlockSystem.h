@@ -10,7 +10,7 @@ struct TickingSystemWithInfo;
 namespace InsideSweetBerryBushBlockSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createReplayInputSystem();
+MCNAPI ::TickingSystemWithInfo createReplayInputSystem();
 // NOLINTEND
 
 } // namespace InsideSweetBerryBushBlockSystem

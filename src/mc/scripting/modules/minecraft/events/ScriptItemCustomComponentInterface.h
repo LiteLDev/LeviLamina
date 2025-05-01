@@ -21,21 +21,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemCustomComponentInterface(::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&);
+    MCNAPI ScriptItemCustomComponentInterface(::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&);
 
-    MCAPI ~ScriptItemCustomComponentInterface();
+    MCNAPI ~ScriptItemCustomComponentInterface();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

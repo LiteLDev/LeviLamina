@@ -31,22 +31,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::ActorDefinitionModifier> getModifiers() const;
+    MCNAPI ::std::vector<::ActorDefinitionModifier> getModifiers() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent&&);
 
-    MCAPI ~ScriptDataDrivenActorTriggerAfterEvent();
+    MCNAPI ~ScriptDataDrivenActorTriggerAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<
+    MCNAPI static ::Scripting::ClassBindingBuilderReadOnly<
         ::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent>
     bind();
 
-    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<
+    MCNAPI static ::Scripting::ClassBindingBuilderReadOnly<
         ::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent>
     bindV010();
     // NOLINTEND
@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

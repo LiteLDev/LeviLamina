@@ -24,29 +24,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RtcpFeedback(::webrtc::RtcpFeedback const&);
+    MCNAPI RtcpFeedback(::webrtc::RtcpFeedback const&);
 
-    MCAPI explicit RtcpFeedback(::webrtc::RtcpFeedbackType);
+    MCNAPI explicit RtcpFeedback(::webrtc::RtcpFeedbackType);
 
-    MCAPI RtcpFeedback(::webrtc::RtcpFeedbackType, ::webrtc::RtcpFeedbackMessageType);
+    MCNAPI RtcpFeedback(::webrtc::RtcpFeedbackType, ::webrtc::RtcpFeedbackMessageType);
 
-    MCAPI ~RtcpFeedback();
+    MCNAPI ~RtcpFeedback();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::RtcpFeedback const&);
+    MCNAPI void* $ctor(::webrtc::RtcpFeedback const&);
 
-    MCAPI void* $ctor(::webrtc::RtcpFeedbackType);
+    MCNAPI void* $ctor(::webrtc::RtcpFeedbackType);
 
-    MCAPI void* $ctor(::webrtc::RtcpFeedbackType, ::webrtc::RtcpFeedbackMessageType);
+    MCNAPI void* $ctor(::webrtc::RtcpFeedbackType, ::webrtc::RtcpFeedbackMessageType);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

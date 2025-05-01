@@ -64,9 +64,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AcaciaTreeTrunk();
+    MCNAPI AcaciaTreeTrunk();
 
-    MCAPI void _placeLeaningBranches(
+    MCNAPI void _placeLeaningBranches(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::BlockPos const&               branchPos,
@@ -78,7 +78,7 @@ public:
         ::TreeHelper::TreeParams const& treeParams
     ) const;
 
-    MCAPI void _placeVerticalBranches(
+    MCNAPI void _placeVerticalBranches(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::BlockPos const&               branchPos,
@@ -91,7 +91,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -103,9 +103,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getTreeHeight(::Random& random) const;
+    MCNAPI int $getTreeHeight(::Random& random) const;
 
-    MCAPI ::std::optional<::BlockPos> $placeTrunk(
+    MCNAPI ::std::optional<::BlockPos> $placeTrunk(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::Random&                       random,
@@ -119,6 +119,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

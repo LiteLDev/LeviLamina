@@ -24,7 +24,7 @@ struct VehicleComponent;
 namespace FlagPassengerRemovalSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void deferredPassengerRemoval(
+MCNAPI void deferredPassengerRemoval(
     ::StrictEntityContext const& vehicleEntity,
     ::VehicleComponent const&    vehicleComponent,
     ::ViewT<
@@ -36,7 +36,7 @@ MCAPI void deferredPassengerRemoval(
     ::EntityModifier<::PendingRemovePassengersComponent> modifier
 );
 
-MCAPI void immediatePassengerRemoval(
+MCNAPI void immediatePassengerRemoval(
     ::StrictEntityContext const& vehicleEntity,
     ::VehicleComponent const&    vehicleComponent,
     ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::ActorIsBeingDestroyedFlagComponent>>
@@ -46,7 +46,7 @@ MCAPI void immediatePassengerRemoval(
     ::EntityModifier<::RemovePassengersComponent> modifier
 );
 
-MCAPI void singleTickDeferredPassengerRemoval(
+MCNAPI void singleTickDeferredPassengerRemoval(
     ::StrictEntityContext const& entity,
     ::ViewT<
         ::StrictEntityContext,
@@ -57,7 +57,7 @@ MCAPI void singleTickDeferredPassengerRemoval(
     ::EntityModifier<::PendingRemovePassengersComponent> modifier
 );
 
-MCAPI void singleTickImmediatePassengerRemoval(
+MCNAPI void singleTickImmediatePassengerRemoval(
     ::StrictEntityContext const&                                                                        entity,
     ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent>, ::PassengerComponent const> view,
     ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::ActorIsBeingDestroyedFlagComponent>>

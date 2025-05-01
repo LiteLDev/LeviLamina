@@ -37,15 +37,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::BlockTraitFactory::TraitMetadata& operator=(::BlockTraitFactory::TraitMetadata&&);
+        MCNAPI ::BlockTraitFactory::TraitMetadata& operator=(::BlockTraitFactory::TraitMetadata&&);
 
-        MCAPI ~TraitMetadata();
+        MCNAPI ~TraitMetadata();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -63,30 +63,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockTraitFactory();
+    MCNAPI BlockTraitFactory();
 
-    MCAPI ~BlockTraitFactory();
+    MCNAPI ~BlockTraitFactory();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BlockTraitFactory* contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
+    MCNAPI static ::BlockTraitFactory* contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
 
-    MCAPI static void registerAllTraits(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void registerAllTraits(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::BlockTraitFactory& setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
+    MCNAPI static ::BlockTraitFactory& setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

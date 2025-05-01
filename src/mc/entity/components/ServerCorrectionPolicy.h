@@ -36,7 +36,8 @@ public:
         ::EntityContext&               entity,
         ::PlayerAuthInputPacket const& packet,
         uint64                         frame,
-        uchar const                    currentCounter
+        uchar const                    currentCounter,
+        bool                           isStrictMovement
     ) /*override*/;
 
     // vIndex: 2
@@ -64,25 +65,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MovementCorrection $shouldCorrectMovement(
+    MCNAPI ::MovementCorrection $shouldCorrectMovement(
         ::EntityContext&               entity,
         ::PlayerAuthInputPacket const& packet,
         uint64                         frame,
-        uchar const                    currentCounter
+        uchar const                    currentCounter,
+        bool                           isStrictMovement
     );
 
-    MCFOLD bool $canRewind(::EntityContext const&);
+    MCNAPI bool $canRewind(::EntityContext const&);
 
-    MCFOLD bool $isReplayNeeded(::AdvanceFrameResult) const;
+    MCNAPI bool $isReplayNeeded(::AdvanceFrameResult) const;
 
-    MCFOLD bool $validateFrameSupport(::EntityContext&);
+    MCNAPI bool $validateFrameSupport(::EntityContext&);
 
-    MCAPI void $notifyOfExternalCorrection(uint64 frame);
+    MCNAPI void $notifyOfExternalCorrection(uint64 frame);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

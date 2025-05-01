@@ -53,13 +53,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _attemptAttack(::Actor* target, bool canReach, bool hasLineOfSight);
+    MCNAPI void _attemptAttack(::Actor* target, bool canReach, bool hasLineOfSight);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _isTargetInLineOfSightLegacy(::Mob const& mob, ::Actor const& target);
+    MCNAPI static bool _isTargetInLineOfSightLegacy(::Mob const& mob, ::Actor const& target);
     // NOLINTEND
 
 public:
@@ -77,22 +77,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCFOLD void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

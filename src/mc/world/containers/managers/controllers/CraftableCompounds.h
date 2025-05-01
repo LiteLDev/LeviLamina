@@ -47,18 +47,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CraftableCompounds();
+    MCNAPI CraftableCompounds();
 
-    MCAPI ::std::string _getCompoundId(::std::vector<::ItemStack> const& input);
+    MCNAPI ::std::string _getCompoundId(::std::vector<::ItemStack> const& input);
 
-    MCAPI void _registerCompound(
+    MCNAPI void _registerCompound(
         ::std::vector<::ChemistryIngredient> const& input,
         ::ItemStack const&                          result,
         ::LabTableReactionType                      reaction,
         ::CompoundContainerType                     containerOverride
     );
 
-    MCAPI void _registerCompound(
+    MCNAPI void _registerCompound(
         ::std::vector<::ChemistryIngredient> const& input,
         ::CompoundType                              result,
         ::LabTableReactionType                      reaction,
@@ -66,29 +66,29 @@ public:
         int                                         stackCount
     );
 
-    MCAPI ::std::vector<::ItemStack> const* getComponents(::ItemDescriptor const& compound) const;
+    MCNAPI ::std::vector<::ItemStack> const* getComponents(::ItemDescriptor const& compound) const;
 
-    MCAPI ::LabTableReactionType getReaction(::std::vector<::ItemStack> const& components);
+    MCNAPI ::LabTableReactionType getReaction(::std::vector<::ItemStack> const& components);
 
-    MCAPI void registerCompounds();
+    MCNAPI void registerCompounds();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_registerCompound(
+    MCNAPI void $_registerCompound(
         ::std::vector<::ItemStack> const& input,
         ::ItemStack const&                result,
         ::LabTableReactionType            reaction,
@@ -99,6 +99,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

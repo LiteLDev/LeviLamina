@@ -36,38 +36,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptCursorProperties(::Editor::Cursor::CursorState const& stateToCopy);
+    MCNAPI explicit ScriptCursorProperties(::Editor::Cursor::CursorState const& stateToCopy);
 
-    MCFOLD ::Editor::ScriptModule::ScriptCursorProperties& operator=(::Editor::ScriptModule::ScriptCursorProperties&&);
+    MCNAPI ::Editor::ScriptModule::ScriptCursorProperties& operator=(::Editor::ScriptModule::ScriptCursorProperties&&);
 
-    MCAPI ::Editor::ScriptModule::ScriptCursorProperties&
+    MCNAPI ::Editor::ScriptModule::ScriptCursorProperties&
     operator=(::Editor::ScriptModule::ScriptCursorProperties const&);
 
-    MCAPI ~ScriptCursorProperties();
+    MCNAPI ~ScriptCursorProperties();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptCursorProperties> bindScript();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptCursorProperties> bindScript();
 
-    MCAPI static ::Scripting::EnumBindingBuilder<::Editor::Cursor::ControlMode, ::Editor::Cursor::ControlMode>
+    MCNAPI static ::Scripting::EnumBindingBuilder<::Editor::Cursor::ControlMode, ::Editor::Cursor::ControlMode>
     bindScriptEnumsControlMode();
 
-    MCAPI static ::Scripting::EnumBindingBuilder<::Editor::Cursor::TargetMode, ::Editor::Cursor::TargetMode>
+    MCNAPI static ::Scripting::EnumBindingBuilder<::Editor::Cursor::TargetMode, ::Editor::Cursor::TargetMode>
     bindScriptEnumsTargetMode();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::Cursor::CursorState const& stateToCopy);
+    MCNAPI void* $ctor(::Editor::Cursor::CursorState const& stateToCopy);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

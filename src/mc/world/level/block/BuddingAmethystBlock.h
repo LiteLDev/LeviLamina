@@ -41,16 +41,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCFOLD bool $isSilentWhenJumpingOff() const;
+    MCNAPI bool $isSilentWhenJumpingOff() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

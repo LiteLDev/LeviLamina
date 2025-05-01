@@ -33,11 +33,11 @@ struct WasInWaterFlagComponent;
 namespace MobJumpSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createCleanupSystem();
+MCNAPI ::TickingSystemWithInfo createCleanupSystem();
 
-MCAPI void doDecrementNoJumpDelaySystem(::MobJumpComponent& mobJumpComponent);
+MCNAPI void doDecrementNoJumpDelaySystem(::MobJumpComponent& mobJumpComponent);
 
-MCAPI void doMobJumpSystem(
+MCNAPI void doMobJumpSystem(
     ::StrictEntityContext const&                          context,
     ::Optional<::JumpControlComponent const>              jumpControl,
     ::Optional<::OnGroundFlagComponent const>             onGround,
@@ -59,9 +59,9 @@ MCAPI void doMobJumpSystem(
     ::IConstBlockSource const&                            region
 );
 
-MCAPI void doResetNoJumpDelaySystem(::StrictEntityContext const&, ::MobJumpComponent& mobJumpComponent);
+MCNAPI void doResetNoJumpDelaySystem(::StrictEntityContext const&, ::MobJumpComponent& mobJumpComponent);
 
-MCAPI void doSwimmerSwimUp(
+MCNAPI void doSwimmerSwimUp(
     ::Optional<::JumpControlComponent const> const& jumpControl,
     ::Optional<::SquidFlagComponent const> const&   isSquid,
     ::MobEffectsComponent const&                    mobEffects,
@@ -69,7 +69,7 @@ MCAPI void doSwimmerSwimUp(
     ::StateVectorComponent&                         stateVector
 );
 
-MCAPI bool shouldAscendLadder(
+MCNAPI bool shouldAscendLadder(
     ::Optional<::PlayerComponent const> const&                   isPlayer,
     ::Optional<::CanStandOnSnowFlagComponent const> const&       canStandOnSnow,
     ::Optional<::HasLightweightFamilyFlagComponent const> const& isLightweightFamily,

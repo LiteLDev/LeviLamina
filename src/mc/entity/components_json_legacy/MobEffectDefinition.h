@@ -3,11 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ActorFilterGroup.h"
+#include "mc/world/effect/EffectDuration.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActorFilterGroup;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -17,7 +18,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float>               mEffectRange;
     ::ll::TypedStorage<4, 4, int>                 mEffectId;
-    ::ll::TypedStorage<4, 4, int>                 mEffectTime;
+    ::ll::TypedStorage<4, 4, ::EffectDuration>    mEffectTime;
     ::ll::TypedStorage<4, 4, int>                 mCooldownTicks;
     ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mEntityFilter;
     // NOLINTEND
@@ -25,17 +26,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setCooldownTimeInTicks(int const& seconds);
+    MCNAPI void setCooldownTimeInTicks(int const& seconds);
 
-    MCAPI void setEffectTimeInTicks(int const& seconds);
+    MCNAPI void setEffectTimeInTicks(int const& seconds);
 
-    MCAPI void setMobEffectByName(::std::string const& mobEffect);
+    MCNAPI void setEffectTimeWithInfiniteString(::std::string const& duration);
+
+    MCNAPI void setMobEffectByName(::std::string const& mobEffect);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MobEffectDefinition>>& root
     );
     // NOLINTEND

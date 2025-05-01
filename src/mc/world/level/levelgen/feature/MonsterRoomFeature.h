@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Direction::Type
+    MCNAPI ::Direction::Type
     _getDirection(::BlockSource& region, ::BlockPos const& blockPos, int offsetX, int offsetZ) const;
     // NOLINTEND
 
@@ -40,12 +40,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

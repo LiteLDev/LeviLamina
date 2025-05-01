@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ItemDescriptor;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/item/ItemDescriptor.h"
 
 struct FeedItem {
 public:
@@ -21,7 +19,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnk6f8fa9;
         ::ll::UntypedStorage<4, 4>  mUnkd1c99e;
-        ::ll::UntypedStorage<4, 4>  mUnka46569;
+        ::ll::UntypedStorage<4, 4>  mUnk130c03;
         ::ll::UntypedStorage<4, 4>  mUnkf3d006;
         ::ll::UntypedStorage<4, 4>  mUnk347709;
         // NOLINTEND
@@ -34,17 +32,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::FeedItem::Effect& operator=(::FeedItem::Effect const&);
+        MCNAPI ::FeedItem::Effect& operator=(::FeedItem::Effect const&);
 
-        MCAPI ::FeedItem::Effect& operator=(::FeedItem::Effect&&);
+        MCNAPI ::FeedItem::Effect& operator=(::FeedItem::Effect&&);
 
-        MCAPI ~Effect();
+        MCNAPI ~Effect();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -59,26 +57,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FeedItem(::FeedItem const&);
+    MCNAPI FeedItem(::FeedItem const&);
 
-    MCAPI void addEffect(::FeedItem::Effect const& effect);
+    MCNAPI void addEffect(::FeedItem::Effect const& effect);
 
-    MCAPI ::FeedItem& operator=(::FeedItem const&);
+    MCNAPI ::FeedItem& operator=(::FeedItem const&);
 
-    MCAPI ::FeedItem& operator=(::FeedItem&&);
+    MCNAPI ::FeedItem& operator=(::FeedItem&&);
 
-    MCAPI ~FeedItem();
+    MCNAPI ~FeedItem();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FeedItem const&);
+    MCNAPI void* $ctor(::FeedItem const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

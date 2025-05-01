@@ -12,20 +12,20 @@ class ScriptWidgetComponentRenderPrimOptions : public ::Editor::ScriptModule::Sc
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptWidgetComponentRenderPrimOptions();
+    MCNAPI ~ScriptWidgetComponentRenderPrimOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentRenderPrimOptions>
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentRenderPrimOptions>
     bindScript();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

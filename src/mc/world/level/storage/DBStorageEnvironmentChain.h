@@ -39,27 +39,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DBStorageEnvironmentChain(
+    MCNAPI DBStorageEnvironmentChain(
         ::DBStorageConfig const&                    config,
         ::Core::Path const&                         dbPath,
         ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv> levelDbEnv
     );
 
-    MCAPI ::Core::Result isChainValid(bool bRequireFilePresence) const;
+    MCNAPI ::Core::Result isChainValid(bool bRequireFilePresence) const;
 
-    MCAPI ~DBStorageEnvironmentChain();
+    MCNAPI ~DBStorageEnvironmentChain();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::FlushableEnv> createFlushableEnv(
+    MCNAPI static ::std::unique_ptr<::FlushableEnv> createFlushableEnv(
         ::leveldb::Env*                            currentEnv,
         ::std::shared_ptr<::Core::FileStorageArea> storageAreaForLevel,
         ::Core::Path const&                        dbPath
     );
 
-    MCAPI static bool isContentKeyValid(
+    MCNAPI static bool isContentKeyValid(
         ::leveldb::Env*                            rootEnv,
         ::Core::Path const&                        dbPath,
         ::ContentIdentity const&                   contentIdentity,
@@ -71,7 +71,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::DBStorageConfig const&                    config,
         ::Core::Path const&                         dbPath,
         ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv> levelDbEnv
@@ -81,6 +81,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

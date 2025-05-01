@@ -41,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _determineMovePos();
+    MCNAPI void _determineMovePos();
     // NOLINTEND
 
 public:
@@ -53,22 +53,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCFOLD void $stop();
+    MCNAPI void $stop();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

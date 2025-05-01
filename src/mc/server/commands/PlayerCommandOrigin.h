@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
@@ -19,7 +20,6 @@ class Level;
 class NetworkIdentifier;
 class Vec2;
 class Vec3;
-struct ActorUniqueID;
 struct CommandOriginIdentity;
 // clang-format on
 
@@ -74,7 +74,7 @@ public:
     virtual ::std::optional<::Vec3> getCursorHitPos() const /*override*/;
 
     // vIndex: 15
-    virtual bool canUseAbility(::AbilitiesIndex abilityIndex) const /*override*/;
+    virtual bool canUseAbility(::AbilitiesIndex ability) const /*override*/;
 
     // vIndex: 18
     virtual bool isSelectorExpansionAllowed() const /*override*/;
@@ -131,7 +131,7 @@ public:
 
     MCAPI ::std::optional<::Vec3> $getCursorHitPos() const;
 
-    MCAPI bool $canUseAbility(::AbilitiesIndex abilityIndex) const;
+    MCAPI bool $canUseAbility(::AbilitiesIndex ability) const;
 
     MCFOLD bool $isSelectorExpansionAllowed() const;
 

@@ -27,13 +27,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void cleanUp(::EntityContext& agent, float waitingPeriod);
+    MCNAPI static void cleanUp(::EntityContext& agent, float waitingPeriod);
 
-    MCAPI static void initialize(::EntityContext& entity);
+    MCNAPI static void initialize(::EntityContext& entity);
 
-    MCAPI static void tickAgentCooldown(::EntityContext& entity, ::AgentComponents::CommandCooldown& waitComp);
+    MCNAPI static void tickAgentCooldown(::EntityContext& entity, ::AgentComponents::CommandCooldown& waitComp);
 
-    MCAPI static void tickLegacy(::EntityContext& entity, ::AgentCommandComponent& agentComp);
+    MCNAPI static void tickLegacy(::EntityContext& entity, ::AgentCommandComponent& agentComp);
     // NOLINTEND
 
 public:
@@ -45,12 +45,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCNAPI void $tick(::EntityRegistry& registry);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

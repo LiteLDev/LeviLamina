@@ -27,6 +27,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void sendPerformanceTelemetry(::Bedrock::NonOwnerPointer<::ChunkPerformanceData> chunkPerformanceData);
+    MCNAPI void sendPerformanceTelemetry(::Bedrock::NonOwnerPointer<::ChunkPerformanceData> chunkPerformanceData);
     // NOLINTEND
 };

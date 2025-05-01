@@ -4,7 +4,7 @@
 
 namespace ScriptModuleMinecraft {
 
-template <typename T0>
+template <typename... T0>
 class ScriptCustomComponentBeforeEvent {};
 
 } // namespace ScriptModuleMinecraft

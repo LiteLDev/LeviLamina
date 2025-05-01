@@ -25,15 +25,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CameraPresetsInternals::VerboseCameraList& operator=(::CameraPresetsInternals::VerboseCameraList&&);
+    MCNAPI ::CameraPresetsInternals::VerboseCameraList& operator=(::CameraPresetsInternals::VerboseCameraList&&);
 
-    MCAPI ::CameraPresetsInternals::VerboseCameraList& operator=(::CameraPresetsInternals::VerboseCameraList const&);
+    MCNAPI ::CameraPresetsInternals::VerboseCameraList& operator=(::CameraPresetsInternals::VerboseCameraList const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

@@ -12,7 +12,7 @@ class LootItemFunctions {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::unique_ptr<::LootItemFunction>>
+    MCNAPI static ::std::vector<::std::unique_ptr<::LootItemFunction>>
     deserialize(::Json::Value object, bool usingUpcomingCreatorFeaturesExperiment);
     // NOLINTEND
 };

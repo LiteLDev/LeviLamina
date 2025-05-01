@@ -15,31 +15,31 @@ class AlrDetector {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AlrDetector(::webrtc::FieldTrialsView const*, ::webrtc::RtcEventLog*);
+    MCNAPI AlrDetector(::webrtc::FieldTrialsView const*, ::webrtc::RtcEventLog*);
 
-    MCAPI AlrDetector(::webrtc::AlrDetectorConfig, ::webrtc::RtcEventLog*);
+    MCNAPI AlrDetector(::webrtc::AlrDetectorConfig, ::webrtc::RtcEventLog*);
 
-    MCAPI ::std::optional<int64> GetApplicationLimitedRegionStartTime() const;
+    MCNAPI ::std::optional<int64> GetApplicationLimitedRegionStartTime() const;
 
-    MCAPI void OnBytesSent(uint64, int64);
+    MCNAPI void OnBytesSent(uint64, int64);
 
-    MCAPI void SetEstimatedBitrate(int);
+    MCNAPI void SetEstimatedBitrate(int);
 
-    MCAPI ~AlrDetector();
+    MCNAPI ~AlrDetector();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::FieldTrialsView const*, ::webrtc::RtcEventLog*);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const*, ::webrtc::RtcEventLog*);
 
-    MCAPI void* $ctor(::webrtc::AlrDetectorConfig, ::webrtc::RtcEventLog*);
+    MCNAPI void* $ctor(::webrtc::AlrDetectorConfig, ::webrtc::RtcEventLog*);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -31,15 +31,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool ParseData();
+    MCNAPI bool ParseData();
 
-    MCAPI explicit RemoteEstimate(::webrtc::rtcp::App&&);
+    MCNAPI explicit RemoteEstimate(::webrtc::rtcp::App&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::rtcp::App&&);
+    MCNAPI void* $ctor(::webrtc::rtcp::App&&);
     // NOLINTEND
 
 public:
@@ -51,7 +51,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

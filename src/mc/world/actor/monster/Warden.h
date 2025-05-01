@@ -72,30 +72,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canDisableShield();
+    MCNAPI bool $canDisableShield();
 
-    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCNAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCFOLD void $onSynchedDataUpdate(int dataId);
+    MCNAPI void $onSynchedDataUpdate(int dataId);
 
-    MCAPI void $onPush(::Actor& source);
+    MCNAPI void $onPush(::Actor& source);
 
-    MCAPI void $normalTick();
+    MCNAPI void $normalTick();
 
-    MCAPI void $setTarget(::Actor* entity);
+    MCNAPI void $setTarget(::Actor* entity);
 
-    MCFOLD bool $checkSpawnRules(bool);
+    MCNAPI bool $checkSpawnRules(bool);
 
-    MCAPI bool $checkSpawnObstruction() const;
+    MCNAPI bool $checkSpawnObstruction() const;
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCNAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCAPI bool $doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
+    MCNAPI bool $doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

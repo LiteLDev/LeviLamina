@@ -19,6 +19,7 @@ public:
     // TransportFeedback inner types declare
     // clang-format off
     struct LastChunk;
+    class ReceivedPacket;
     // clang-format on
 
     // TransportFeedback inner types define
@@ -26,70 +27,72 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void AppendTo(::std::vector<uchar>*) const;
+        MCNAPI void AppendTo(::std::vector<uchar>*) const;
 
-        MCAPI void Clear();
+        MCNAPI void Clear();
 
-        MCAPI void Decode(ushort, uint64);
+        MCNAPI void Decode(ushort, uint64);
 
-        MCAPI void DecodeOneBit(ushort, uint64);
+        MCNAPI void DecodeOneBit(ushort, uint64);
 
-        MCAPI void DecodeRunLength(ushort, uint64);
+        MCNAPI void DecodeRunLength(ushort, uint64);
 
-        MCAPI void DecodeTwoBit(ushort, uint64);
+        MCNAPI void DecodeTwoBit(ushort, uint64);
 
-        MCAPI bool Empty() const;
+        MCNAPI bool Empty() const;
 
-        MCAPI ushort EncodeLast() const;
+        MCNAPI ushort EncodeLast() const;
 
-        MCAPI ushort EncodeOneBit() const;
+        MCNAPI ushort EncodeOneBit() const;
 
-        MCAPI ushort EncodeRunLength() const;
+        MCNAPI ushort EncodeRunLength() const;
 
-        MCAPI ushort EncodeTwoBit(uint64) const;
+        MCNAPI ushort EncodeTwoBit(uint64) const;
 
-        MCAPI LastChunk();
+        MCNAPI LastChunk();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
         // NOLINTEND
     };
+
+    class ReceivedPacket {};
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::Timestamp BaseTime() const;
+    MCNAPI ::webrtc::Timestamp BaseTime() const;
 
-    MCAPI void Clear();
+    MCNAPI void Clear();
 
-    MCAPI void ForAllPackets(::rtc::FunctionView<void(ushort, ::webrtc::TimeDelta)>) const;
+    MCNAPI void ForAllPackets(::rtc::FunctionView<void(ushort, ::webrtc::TimeDelta)>) const;
 
-    MCAPI ::webrtc::TimeDelta GetBaseDelta(::webrtc::Timestamp) const;
+    MCNAPI ::webrtc::TimeDelta GetBaseDelta(::webrtc::Timestamp) const;
 
-    MCAPI uint64 PaddingLength() const;
+    MCNAPI uint64 PaddingLength() const;
 
-    MCAPI bool Parse(::webrtc::rtcp::CommonHeader const&);
+    MCNAPI bool Parse(::webrtc::rtcp::CommonHeader const&);
 
-    MCAPI TransportFeedback();
+    MCNAPI TransportFeedback();
 
-    MCAPI explicit TransportFeedback(bool);
+    MCNAPI explicit TransportFeedback(bool);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(bool);
+    MCNAPI void* $ctor(bool);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

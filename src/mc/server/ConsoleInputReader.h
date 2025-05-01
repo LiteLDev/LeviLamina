@@ -20,6 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void unblockReading();
+    MCNAPI void unblockReading();
     // NOLINTEND
 };

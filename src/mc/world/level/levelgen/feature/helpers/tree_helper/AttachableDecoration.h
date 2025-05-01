@@ -60,35 +60,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AttachableDecoration();
+    MCNAPI AttachableDecoration();
 
-    MCAPI void _placeMultiDecoration(
+    MCNAPI void _placeMultiDecoration(
         ::IBlockWorldGenAPI& target,
         ::BlockPos const&    pos,
         ::Block const&       block,
         ::BlockPos const&    origin
     ) const;
 
-    MCAPI void placeDecoration(
+    MCNAPI void placeDecoration(
         ::IBlockWorldGenAPI&                                     target,
         ::BlockPos const&                                        pos,
         ::Random&                                                random,
         ::TreeHelper::AttachableDecoration::DirectionMask const& mask
     ) const;
 
-    MCAPI ~AttachableDecoration();
+    MCNAPI ~AttachableDecoration();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

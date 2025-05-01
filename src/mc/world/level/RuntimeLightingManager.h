@@ -50,13 +50,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~RuntimeLightingSubchunkList();
+        MCNAPI ~RuntimeLightingSubchunkList();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -88,13 +88,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _getListOfChunksWithPlayerDistance();
+    MCNAPI void _getListOfChunksWithPlayerDistance();
 
-    MCAPI void _relightChunks(::std::chrono::nanoseconds timeLimit);
+    MCNAPI void _relightChunks(::std::chrono::nanoseconds timeLimit);
 
-    MCAPI void _removeProcessedSubchunks();
+    MCNAPI void _removeProcessedSubchunks();
 
-    MCAPI void updateBlockLight(
+    MCNAPI void updateBlockLight(
         ::BlockPos const& blockPos,
         ::Brightness      oldBrightness,
         ::Brightness      newBrightness,
@@ -107,12 +107,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

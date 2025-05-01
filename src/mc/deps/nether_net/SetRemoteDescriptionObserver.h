@@ -46,13 +46,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnSetRemoteDescriptionComplete(::webrtc::RTCError error);
+    MCNAPI void $OnSetRemoteDescriptionComplete(::webrtc::RTCError error);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

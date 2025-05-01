@@ -12,9 +12,9 @@ struct TeleportToOwnerParameters;
 namespace TeleportToOwnerUtils {
 // functions
 // NOLINTBEGIN
-MCAPI bool canTeleport(::Mob const& mob);
+MCNAPI bool canTeleport(::Mob const& mob);
 
-MCAPI ::std::optional<::Vec3>
+MCNAPI ::std::optional<::Vec3>
 tryToGetTeleportPosition(::Mob const& mob, ::Mob const& owner, ::TeleportToOwnerParameters const& teleportParameters);
 // NOLINTEND
 

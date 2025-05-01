@@ -17,7 +17,7 @@ class ActorDefinitionEventLoader {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _loadCollection(
+    MCNAPI static void _loadCollection(
         ::ActorDefinitionEvent&            defEvent,
         ::Json::Value const&               collection,
         ::MinEngineVersion const&          minEngineVersion,
@@ -25,7 +25,7 @@ public:
         ::JsonBetaState                    useBetaFeatures
     );
 
-    MCAPI static ::ActorDefinitionEvent _loadEvent(
+    MCNAPI static ::ActorDefinitionEvent _loadEvent(
         ::Json::Value&                     root,
         ::MinEngineVersion const&          minEngineVersion,
         ::ActorEventResponseFactory const* responseFactory,

@@ -25,20 +25,20 @@ class RTPSenderVideoFrameTransformerDelegate {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Init();
+    MCNAPI void Init();
 
-    MCAPI
+    MCNAPI
     RTPSenderVideoFrameTransformerDelegate(::webrtc::RTPVideoFrameSenderInterface*, ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>, uint, ::webrtc::TaskQueueFactory*);
 
-    MCAPI void Reset();
+    MCNAPI void Reset();
 
-    MCAPI void SendVideo(::std::unique_ptr<::webrtc::TransformableFrameInterface>) const;
+    MCNAPI void SendVideo(::std::unique_ptr<::webrtc::TransformableFrameInterface>) const;
 
-    MCAPI void SetVideoLayersAllocationUnderLock(::webrtc::VideoLayersAllocation);
+    MCNAPI void SetVideoLayersAllocationUnderLock(::webrtc::VideoLayersAllocation);
 
-    MCAPI void SetVideoStructureUnderLock(::webrtc::FrameDependencyStructure const*);
+    MCNAPI void SetVideoStructureUnderLock(::webrtc::FrameDependencyStructure const*);
 
-    MCAPI bool TransformFrame(
+    MCNAPI bool TransformFrame(
         int,
         ::std::optional<::webrtc::VideoCodecType>,
         uint,
@@ -51,14 +51,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::webrtc::RTPVideoFrameSenderInterface*, ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>, uint, ::webrtc::TaskQueueFactory*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

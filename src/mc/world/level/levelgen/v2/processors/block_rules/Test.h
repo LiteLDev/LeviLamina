@@ -3,6 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/levelgen/v2/processors/block_rules/AlwaysTrue.h"
+#include "mc/world/level/levelgen/v2/processors/block_rules/BlockMatch.h"
+#include "mc/world/level/levelgen/v2/processors/block_rules/RandomBlockMatch.h"
+#include "mc/world/level/levelgen/v2/processors/block_rules/TagMatch.h"
 #include "mc/world/level/levelgen/v2/processors/block_rules/TestType.h"
 
 // auto generated forward declare list
@@ -10,10 +14,6 @@
 class Block;
 class IRandom;
 namespace Util { class XXHash; }
-namespace br::worldgen::processors::BlockRules { struct AlwaysTrue; }
-namespace br::worldgen::processors::BlockRules { struct BlockMatch; }
-namespace br::worldgen::processors::BlockRules { struct RandomBlockMatch; }
-namespace br::worldgen::processors::BlockRules { struct TagMatch; }
 // clang-format on
 
 namespace br::worldgen::processors::BlockRules {
@@ -61,37 +61,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Test(::br::worldgen::processors::BlockRules::Test&&);
+    MCNAPI Test(::br::worldgen::processors::BlockRules::Test&&);
 
-    MCAPI Test(::br::worldgen::processors::BlockRules::Test const&);
+    MCNAPI Test(::br::worldgen::processors::BlockRules::Test const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::br::worldgen::processors::BlockRules::Test&&);
+    MCNAPI void* $ctor(::br::worldgen::processors::BlockRules::Test&&);
 
-    MCAPI void* $ctor(::br::worldgen::processors::BlockRules::Test const&);
+    MCNAPI void* $ctor(::br::worldgen::processors::BlockRules::Test const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $test(::Block const& block, ::IRandom& random) const;
+    MCNAPI bool $test(::Block const& block, ::IRandom& random) const;
 
-    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

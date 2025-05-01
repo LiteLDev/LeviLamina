@@ -39,13 +39,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~BaseGameVersionPack();
+        MCNAPI ~BaseGameVersionPack();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -64,25 +64,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addFromVersions(
+    MCNAPI void addFromVersions(
         ::std::vector<::BaseGameVersion> const&                               baseGameVersions,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& resourcePackRepository,
         ::mce::UUID const&                                                    packId
     );
 
-    MCAPI void applyPackSlices(
+    MCNAPI void applyPackSlices(
         ::BaseGameVersion const&                                              baseGameVersion,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& resourcePackRepository,
         ::ResourcePackStack&                                                  packStack
     ) const;
 
-    MCAPI ~BaseGamePackSlices();
+    MCNAPI ~BaseGamePackSlices();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _add(
+    MCNAPI static void _add(
         ::std::vector<::BaseGamePackSlices::BaseGameVersionPack>& baseGameVersionPacks,
         ::BaseGameVersion const&                                  baseGameVersion,
         ::ResourcePack&                                           pack
@@ -92,6 +92,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

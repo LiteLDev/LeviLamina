@@ -41,19 +41,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $sendEvents(
+    MCNAPI void $sendEvents(
         ::LevelEventManager& levelEventManager,
         ::BlockSource&       region,
         ::BlockPos const&    pos,
         ::Block const&       block
     );
 
-    MCAPI void $dropResources(::BlockSource& region, ::BlockPos const& pos, ::Block const& block);
+    MCNAPI void $dropResources(::BlockSource& region, ::BlockPos const& pos, ::Block const& block);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

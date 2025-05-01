@@ -8,19 +8,19 @@ class RtcEventProbeClusterCreated {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RtcEventProbeClusterCreated(int, int, uint, uint);
+    MCNAPI RtcEventProbeClusterCreated(int, int, uint, uint);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int, int, uint, uint);
+    MCNAPI void* $ctor(int, int, uint, uint);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

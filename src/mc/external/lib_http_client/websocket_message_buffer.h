@@ -8,13 +8,13 @@ struct websocket_message_buffer {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~websocket_message_buffer();
+    MCNAPI ~websocket_message_buffer();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

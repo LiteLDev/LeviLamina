@@ -40,11 +40,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptServerAdminModuleFactory(
+    MCNAPI explicit ScriptServerAdminModuleFactory(
         ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager
     );
 
-    MCAPI ::Scripting::ModuleBinding _generateBindings(
+    MCNAPI ::Scripting::ModuleBinding _generateBindings(
         ::Scripting::ModuleBindingBuilder&          moduleBuilder,
         ::std::optional<::Scripting::ContextConfig> contextConfig,
         bool                                        allowedTags,
@@ -55,7 +55,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ModuleDescriptor makeModuleDescriptorFor(::Scripting::Version version);
+    MCNAPI static ::Scripting::ModuleDescriptor makeModuleDescriptorFor(::Scripting::Version version);
     // NOLINTEND
 
 public:
@@ -69,7 +69,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager);
+    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager);
     // NOLINTEND
 
 public:
@@ -81,6 +81,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

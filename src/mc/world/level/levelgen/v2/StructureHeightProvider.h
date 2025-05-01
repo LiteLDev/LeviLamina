@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/levelgen/v2/ConstantHeight.h"
 #include "mc/world/level/levelgen/v2/HeightProvider.h"
+#include "mc/world/level/levelgen/v2/UniformHeight.h"
 
 // auto generated forward declare list
 // clang-format off
 class IRandom;
-namespace br::worldgen { class ConstantHeight; }
-namespace br::worldgen { class UniformHeight; }
 namespace br::worldgen { class WorldGenContext; }
 // clang-format on
 
@@ -40,19 +40,19 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $sample(::IRandom& randomSource, ::br::worldgen::WorldGenContext const& heightAccessor) const;
+    MCNAPI int $sample(::IRandom& randomSource, ::br::worldgen::WorldGenContext const& heightAccessor) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

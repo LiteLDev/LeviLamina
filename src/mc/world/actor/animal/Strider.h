@@ -45,7 +45,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void tick(::Strider& strider);
+        MCNAPI void tick(::Strider& strider);
         // NOLINTEND
     };
 
@@ -83,14 +83,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
+    MCNAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
-    MCAPI void $normalTick();
+    MCNAPI void $normalTick();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

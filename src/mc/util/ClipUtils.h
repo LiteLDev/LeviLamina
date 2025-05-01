@@ -20,9 +20,9 @@ class Vec3;
 namespace ClipUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::HitResult clip(::BlockPos const& pos, ::Vec3 const& A, ::Vec3 const& B, ::AABB const& aabb);
+MCNAPI ::HitResult clip(::BlockPos const& pos, ::Vec3 const& A, ::Vec3 const& B, ::AABB const& aabb);
 
-MCAPI ::AABB const& getAABB(
+MCNAPI ::AABB const& getAABB(
     ::IConstBlockSource const&                         region,
     ::BlockPos const&                                  pos,
     ::Block const&                                     block,

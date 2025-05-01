@@ -6,16 +6,16 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/script_engine/Promise.h"
+#include "mc/network/NetworkIdentifier.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
+#include "mc/world/events/LevelEventListener.h"
+#include "mc/world/events/PlayerEventListener.h"
 
 // auto generated forward declare list
 // clang-format off
 class LevelEventCoordinator;
-class LevelEventListener;
-class NetworkIdentifier;
 class Player;
-class PlayerEventListener;
 class ServerPlayerEventCoordinator;
 struct PlayerFormCloseEvent;
 struct PlayerFormResponseEvent;
@@ -68,13 +68,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~FromRequest();
+        MCNAPI ~FromRequest();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -106,40 +106,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void handleFormResponse(uint formId, ::Json::Value const& formResponse);
+    MCNAPI void handleFormResponse(uint formId, ::Json::Value const& formResponse);
 
-    MCAPI void handlePlayerQuit(::NetworkIdentifier const& playerId);
+    MCNAPI void handlePlayerQuit(::NetworkIdentifier const& playerId);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _sendToClient(::Player const& player, ::Json::Value formJson, uint formId);
+    MCNAPI static void _sendToClient(::Player const& player, ::Json::Value formJson, uint formId);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::PlayerFormResponseEvent const& formResponseEvent);
+    MCNAPI ::EventResult $onEvent(::PlayerFormResponseEvent const& formResponseEvent);
 
-    MCAPI ::EventResult $onEvent(::PlayerFormCloseEvent const& formCloseEvent);
+    MCNAPI ::EventResult $onEvent(::PlayerFormCloseEvent const& formCloseEvent);
 
-    MCAPI ::EventResult $onLevelRemovedPlayer(::Player& player);
+    MCNAPI ::EventResult $onLevelRemovedPlayer(::Player& player);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForEventListenerDispatcherLevelEventListener();
+    MCNAPI static void** $vftableForEventListenerDispatcherLevelEventListener();
 
-    MCAPI static void** $vftableForEventListenerDispatcherPlayerEventListener();
+    MCNAPI static void** $vftableForEventListenerDispatcherPlayerEventListener();
     // NOLINTEND
 };

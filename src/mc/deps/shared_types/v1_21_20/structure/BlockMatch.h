@@ -19,19 +19,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::BlockMatch&
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::BlockMatch&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::BlockMatch const&);
 
-    MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::BlockMatch&
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::BlockMatch&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::BlockMatch&&);
 
-    MCAPI ~BlockMatch();
+    MCNAPI ~BlockMatch();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

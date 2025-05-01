@@ -89,7 +89,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptCommandOrigin(
+    MCNAPI ScriptCommandOrigin(
         ::ServerLevel&                              origin,
         ::Dimension*                                dimension,
         ::std::function<void(int, ::std::string&&)> outputCallback,
@@ -100,7 +100,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ServerLevel&                              origin,
         ::Dimension*                                dimension,
         ::std::function<void(int, ::std::string&&)> outputCallback,
@@ -111,46 +111,46 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::string const& $getRequestId() const;
+    MCNAPI ::std::string const& $getRequestId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCFOLD ::BlockPos $getBlockPosition() const;
+    MCNAPI ::BlockPos $getBlockPosition() const;
 
-    MCFOLD ::Vec3 $getWorldPosition() const;
+    MCNAPI ::Vec3 $getWorldPosition() const;
 
-    MCFOLD ::std::optional<::Vec2> $getRotation() const;
+    MCNAPI ::std::optional<::Vec2> $getRotation() const;
 
-    MCFOLD ::Level* $getLevel() const;
+    MCNAPI ::Level* $getLevel() const;
 
-    MCFOLD ::Dimension* $getDimension() const;
+    MCNAPI ::Dimension* $getDimension() const;
 
-    MCFOLD ::Actor* $getEntity() const;
+    MCNAPI ::Actor* $getEntity() const;
 
-    MCFOLD ::CommandPermissionLevel $getPermissionsLevel() const;
+    MCNAPI ::CommandPermissionLevel $getPermissionsLevel() const;
 
-    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
+    MCNAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCFOLD bool $canUseCommandsWithoutCheatsEnabled() const;
+    MCNAPI bool $canUseCommandsWithoutCheatsEnabled() const;
 
-    MCFOLD bool $isSelectorExpansionAllowed() const;
+    MCNAPI bool $isSelectorExpansionAllowed() const;
 
-    MCFOLD ::CommandOriginType $getOriginType() const;
+    MCNAPI ::CommandOriginType $getOriginType() const;
 
-    MCAPI void $handleCommandOutputCallback(int successCount, ::std::string&& messages) const;
+    MCNAPI void $handleCommandOutputCallback(int successCount, ::std::string&& messages) const;
 
-    MCFOLD bool $isValid() const;
+    MCNAPI bool $isValid() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

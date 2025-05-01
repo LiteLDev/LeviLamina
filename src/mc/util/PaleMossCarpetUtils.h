@@ -14,7 +14,7 @@ class BlockSource;
 namespace PaleMossCarpetUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::array<::PaleMossCarpetSide, 4>
+MCNAPI ::std::array<::PaleMossCarpetSide, 4>
 computeBottomSidesForSingleBlock(::BlockSource const& region, ::BlockPos const& pos);
 // NOLINTEND
 

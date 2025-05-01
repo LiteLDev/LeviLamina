@@ -21,8 +21,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _becomeTrusting(::Actor& owner);
+    MCNAPI void _becomeTrusting(::Actor& owner);
 
-    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCNAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
 };

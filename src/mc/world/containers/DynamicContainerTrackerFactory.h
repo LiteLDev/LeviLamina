@@ -17,12 +17,12 @@ struct PlayerContainerRefresher;
 namespace DynamicContainerTrackerFactory {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::shared_ptr<::DynamicContainerTracker> createDynamicContainerTracker(
+MCNAPI ::std::shared_ptr<::DynamicContainerTracker> createDynamicContainerTracker(
     ::WeakRef<::IContainerRegistryAccess>  registryAccess,
     ::WeakRef<::IContainerRegistryTracker> registryManager
 );
 
-MCAPI ::std::unique_ptr<::PlayerContainerRefresher> createPlayerContainerRefresher(::Player& player);
+MCNAPI ::std::unique_ptr<::PlayerContainerRefresher> createPlayerContainerRefresher(::Player& player);
 // NOLINTEND
 
 } // namespace DynamicContainerTrackerFactory

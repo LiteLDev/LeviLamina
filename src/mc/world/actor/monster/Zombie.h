@@ -50,13 +50,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Zombie(
+    MCNAPI Zombie(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCFOLD void setZombieType(::Zombie::ZombieType type);
+    MCNAPI void setZombieType(::Zombie::ZombieType type);
     // NOLINTEND
 
 public:
@@ -70,7 +70,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -80,24 +80,24 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canPickupItem(::ItemStack const& item) const;
+    MCNAPI bool $canPickupItem(::ItemStack const& item) const;
 
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI bool $checkSpawnRules(bool fromSpawner);
+    MCNAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCFOLD int $getArmorValue() const;
+    MCNAPI int $getArmorValue() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

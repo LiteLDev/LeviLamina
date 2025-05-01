@@ -34,23 +34,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addMissingDirectoriesForEntry(::Core::PathView fileOrDirectoryPath);
+    MCNAPI void _addMissingDirectoriesForEntry(::Core::PathView fileOrDirectoryPath);
 
-    MCAPI void _clear();
+    MCNAPI void _clear();
 
-    MCAPI void _createFromVector(
+    MCNAPI void _createFromVector(
         ::Core::PathView                                   manifestPath,
         ::std::vector<::Core::FlatFileManifestInfo> const& manifestInfoVector,
         uint64                                             version,
         bool                                               validatePaths
     );
 
-    MCAPI ::Bedrock::Result<void> _readHeaderFromStream(::ReadOnlyBinaryStream& manifestFileStream);
+    MCNAPI ::Bedrock::Result<void> _readHeaderFromStream(::ReadOnlyBinaryStream& manifestFileStream);
 
-    MCAPI ::Core::FlatFileManifestInfo const*
+    MCNAPI ::Core::FlatFileManifestInfo const*
     findFileOrDirectoryEntry(::Core::PathView filePath, bool skipDeleted) const;
 
-    MCAPI ::Bedrock::Result<void>
+    MCNAPI ::Bedrock::Result<void>
     readFromStream(::std::string const& manifestFileStr, ::Core::PathView manifestPath, bool validatePaths);
     // NOLINTEND
 };

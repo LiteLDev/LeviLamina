@@ -53,7 +53,7 @@ public:
     // vIndex: 5
     virtual ::Core::Result getUsedSize(uint64&) /*override*/;
 
-    // vIndex: 26
+    // vIndex: 28
     virtual uint64 getTransactionWriteSizeLimit() const /*override*/;
 
     // vIndex: 9
@@ -68,10 +68,10 @@ public:
     // vIndex: 12
     virtual void informStorageAreaCopy(uint64 storageAreaSize) /*override*/;
 
-    // vIndex: 27
+    // vIndex: 29
     virtual ::Core::Result setSaveDataIcon(::Core::PathView iconPath) /*override*/;
 
-    // vIndex: 25
+    // vIndex: 27
     virtual ::Core::FileStorageArea::FlushableLevelDbEnvType getFlushableLevelDbEnvType() const /*override*/;
 
     // vIndex: 22
@@ -80,10 +80,10 @@ public:
     // vIndex: 23
     virtual void enableFlushToDisk(bool) /*override*/;
 
-    // vIndex: 24
+    // vIndex: 25
     virtual bool checkCorrupt(bool handleCorruption) /*override*/;
 
-    // vIndex: 34
+    // vIndex: 36
     virtual void _onTeardown() /*override*/;
     // NOLINTEND
 

@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace ClimateUtils { struct Parameter; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/level/biome/climate_utils/Parameter.h"
 
 struct ClimateParameters {
 public:
@@ -24,7 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClimateParameters(
+    MCNAPI ClimateParameters(
         ::ClimateUtils::Parameter temperature,
         ::ClimateUtils::Parameter humidity,
         ::ClimateUtils::Parameter continentalness,
@@ -38,7 +36,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ClimateUtils::Parameter temperature,
         ::ClimateUtils::Parameter humidity,
         ::ClimateUtils::Parameter continentalness,

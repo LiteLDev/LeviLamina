@@ -53,40 +53,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LibHttpClientImpl();
+    MCNAPI LibHttpClientImpl();
 
-    MCAPI ::std::optional<::std::chrono::seconds>
+    MCNAPI ::std::optional<::std::chrono::seconds>
     _checkRetryPolicy(::gsl::not_null<::HC_CALL*> call, ::Bedrock::Http::Response const& httpResponse);
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
+    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
     _convertResponse(::gsl::not_null<::HC_CALL*> callHandle);
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
+    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
     _retry(::gsl::not_null<::HC_CALL*> callHandle, ::std::chrono::seconds delay);
 
-    MCAPI ::std::shared_ptr<::Bedrock::Http::Internal::IRequestBody> _tryGetRequestBody(::gsl::not_null<::HC_CALL*> call
-    );
+    MCNAPI ::std::shared_ptr<::Bedrock::Http::Internal::IRequestBody>
+    _tryGetRequestBody(::gsl::not_null<::HC_CALL*> call);
 
-    MCAPI ::std::shared_ptr<::Bedrock::Http::Internal::IResponseBody>
+    MCNAPI ::std::shared_ptr<::Bedrock::Http::Internal::IResponseBody>
     _tryGetResponseBody(::gsl::not_null<::HC_CALL*> call);
 
-    MCAPI void _untrack(::gsl::not_null<::HC_CALL*> callHandle);
+    MCNAPI void _untrack(::gsl::not_null<::HC_CALL*> callHandle);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static long
+    MCNAPI static long
     _convertRequestBody(::gsl::not_null<::HC_CALL*> callHandle, ::Bedrock::Http::Request const& request);
 
-    MCAPI static long _convertResponseBody(::gsl::not_null<::HC_CALL*> callHandle, ::Bedrock::Http::Response& response);
+    MCNAPI static long
+    _convertResponseBody(::gsl::not_null<::HC_CALL*> callHandle, ::Bedrock::Http::Response& response);
 
-    MCAPI static long
+    MCNAPI static long
     _convertResponseHeaders(::gsl::not_null<::HC_CALL*> callHandle, ::Bedrock::Http::Response& response);
 
-    MCAPI static long _createCallHandle(::HC_CALL** outHandle, ::Bedrock::Http::Request const& request);
+    MCNAPI static long _createCallHandle(::HC_CALL** outHandle, ::Bedrock::Http::Request const& request);
 
-    MCAPI static long _requestBodyRead(
+    MCNAPI static long _requestBodyRead(
         ::HC_CALL* call,
         uint64     offset,
         uint64     bytesAvailable,
@@ -95,7 +96,7 @@ public:
         uint64*    bytesWritten
     );
 
-    MCAPI static long _responseBodyWrite(::HC_CALL* call, uchar const* source, uint64 bytesAvailable, void* context);
+    MCNAPI static long _responseBodyWrite(::HC_CALL* call, uchar const* source, uint64 bytesAvailable, void* context);
     // NOLINTEND
 
 public:
@@ -109,7 +110,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -121,18 +122,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initialize();
+    MCNAPI void $initialize();
 
-    MCAPI void $shutdown();
+    MCNAPI void $shutdown();
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
+    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
     $send(::Bedrock::Http::Request&& request);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

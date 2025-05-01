@@ -16,9 +16,9 @@ class UsagePattern {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void NoteUsageEvent(::webrtc::UsageEvent);
+    MCNAPI void NoteUsageEvent(::webrtc::UsageEvent);
 
-    MCAPI void ReportUsagePattern(::webrtc::PeerConnectionObserver*) const;
+    MCNAPI void ReportUsagePattern(::webrtc::PeerConnectionObserver*) const;
     // NOLINTEND
 };
 

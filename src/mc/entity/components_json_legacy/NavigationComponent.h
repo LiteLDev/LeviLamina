@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/level/pathfinder/CanJumpIntoNode.h"
 #include "mc/world/level/pathfinder/NodeType.h"
 
@@ -15,7 +16,6 @@ class BlockPos;
 class Mob;
 class Path;
 class PathNavigation;
-class Vec3;
 struct NavigationDescription;
 // clang-format on
 
@@ -61,11 +61,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initMultiTypeNavigationComponent(::Mob& entity, ::ActorDefinitionDescriptor& initDescription);
+    MCNAPI void initMultiTypeNavigationComponent(::Mob& entity, ::ActorDefinitionDescriptor& initDescription);
 
-    MCAPI void initializeFromDefinition(::Mob& owner, ::NavigationDescription* description);
+    MCNAPI void initializeFromDefinition(::Mob& owner, ::NavigationDescription* description);
 
-    MCAPI ::NodeType isFree(
+    MCNAPI ::NodeType isFree(
         ::Mob&            owner,
         ::BlockPos const& lastPathPos,
         ::BlockPos const& testPos,
@@ -73,18 +73,18 @@ public:
         ::CanJumpIntoNode jumpIntoNode
     );
 
-    MCAPI bool moveTo(::Mob& owner, ::std::unique_ptr<::Path> newPath, float speed);
+    MCNAPI bool moveTo(::Mob& owner, ::std::unique_ptr<::Path> newPath, float speed);
 
-    MCAPI bool moveTo(::Mob& owner, ::Actor& target, float speed);
+    MCNAPI bool moveTo(::Mob& owner, ::Actor& target, float speed);
 
-    MCAPI ::NavigationComponent& operator=(::NavigationComponent&&);
+    MCNAPI ::NavigationComponent& operator=(::NavigationComponent&&);
 
-    MCAPI ~NavigationComponent();
+    MCNAPI ~NavigationComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

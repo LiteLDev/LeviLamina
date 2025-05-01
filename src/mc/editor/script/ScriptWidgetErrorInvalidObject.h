@@ -11,21 +11,21 @@ class ScriptWidgetErrorInvalidObject : public ::Scripting::Error {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWidgetErrorInvalidObject();
+    MCNAPI ScriptWidgetErrorInvalidObject();
 
-    MCAPI ~ScriptWidgetErrorInvalidObject();
+    MCNAPI ~ScriptWidgetErrorInvalidObject();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

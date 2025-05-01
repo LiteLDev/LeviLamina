@@ -17,27 +17,27 @@ struct ScriptCommandError : public ::Scripting::Error {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptCommandError(::std::string messages, ::MCRESULT const& result);
+    MCNAPI ScriptCommandError(::std::string messages, ::MCRESULT const& result);
 
-    MCAPI ~ScriptCommandError();
+    MCNAPI ~ScriptCommandError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptCommandError> bind();
+    MCNAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptCommandError> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string messages, ::MCRESULT const& result);
+    MCNAPI void* $ctor(::std::string messages, ::MCRESULT const& result);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

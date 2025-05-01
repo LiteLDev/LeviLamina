@@ -26,31 +26,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::webrtc::PacketResult> PacketsWithFeedback() const;
+    MCNAPI ::std::vector<::webrtc::PacketResult> PacketsWithFeedback() const;
 
-    MCAPI ::std::vector<::webrtc::PacketResult> ReceivedWithSendInfo() const;
+    MCNAPI ::std::vector<::webrtc::PacketResult> ReceivedWithSendInfo() const;
 
-    MCAPI ::std::vector<::webrtc::PacketResult> SortedByReceiveTime() const;
+    MCNAPI ::std::vector<::webrtc::PacketResult> SortedByReceiveTime() const;
 
-    MCAPI TransportPacketsFeedback();
+    MCNAPI TransportPacketsFeedback();
 
-    MCAPI TransportPacketsFeedback(::webrtc::TransportPacketsFeedback const&);
+    MCNAPI TransportPacketsFeedback(::webrtc::TransportPacketsFeedback const&);
 
-    MCAPI ~TransportPacketsFeedback();
+    MCNAPI ~TransportPacketsFeedback();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::webrtc::TransportPacketsFeedback const&);
+    MCNAPI void* $ctor(::webrtc::TransportPacketsFeedback const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

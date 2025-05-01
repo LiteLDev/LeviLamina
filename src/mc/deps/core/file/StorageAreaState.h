@@ -32,20 +32,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void checkUserStorage(
+    MCNAPI void checkUserStorage(
         ::std::weak_ptr<::Core::FileStorageArea>& fileStorageAreaWeakPtr,
         uint64                                    freeSpace,
         uint64                                    usedSpace,
         uint64                                    totalCapacity
     );
 
-    MCAPI ~StorageAreaState();
+    MCNAPI ~StorageAreaState();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -46,11 +46,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uchar readByte();
+    MCNAPI uchar readByte();
 
-    MCAPI bool readBytes(void* data, uint64 bytes);
+    MCNAPI bool readBytes(void* data, uint64 bytes);
 
-    MCAPI ::std::string readLongString();
+    MCNAPI ::std::string readLongString();
     // NOLINTEND
 
 public:
@@ -68,6 +68,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -23,27 +23,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockEvent(::ScriptModuleMinecraft::ScriptBlockEvent const&);
+    MCNAPI ScriptBlockEvent(::ScriptModuleMinecraft::ScriptBlockEvent const&);
 
-    MCAPI ~ScriptBlockEvent();
+    MCNAPI ~ScriptBlockEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockEvent> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBlockEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

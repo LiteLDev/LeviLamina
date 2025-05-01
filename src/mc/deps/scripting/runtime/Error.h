@@ -10,7 +10,9 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkff4b79;
     ::ll::UntypedStorage<8, 32> mUnk13ff88;
-    ::ll::UntypedStorage<8, 32> mUnkf70731;
+    ::ll::UntypedStorage<8, 40> mUnk1622be;
+    ::ll::UntypedStorage<8, 24> mUnk163284;
+    ::ll::UntypedStorage<8, 40> mUnk4c53c7;
     ::ll::UntypedStorage<1, 1>  mUnk1bf48e;
     // NOLINTEND
 
@@ -21,31 +23,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Error(::Scripting::Error const&);
+    MCNAPI Error(::Scripting::Error&&);
 
-    MCAPI explicit Error(::std::string const& message_);
+    MCNAPI Error(::Scripting::Error const&);
 
-    MCAPI ::Scripting::Error& operator=(::Scripting::Error const&);
+    MCNAPI explicit Error(::std::string const& message_);
 
-    MCAPI ::Scripting::Error& operator=(::Scripting::Error&&);
+    MCNAPI ::Scripting::Error& operator=(::Scripting::Error const&);
 
-    MCAPI ::std::string toString() const;
+    MCNAPI ::Scripting::Error& operator=(::Scripting::Error&&);
 
-    MCAPI ~Error();
+    MCNAPI void setCallStack(::std::string _backtrace);
+
+    MCNAPI ::std::string toString() const;
+
+    MCNAPI ~Error();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::Error const&);
+    MCNAPI void* $ctor(::Scripting::Error&&);
 
-    MCAPI void* $ctor(::std::string const& message_);
+    MCNAPI void* $ctor(::Scripting::Error const&);
+
+    MCNAPI void* $ctor(::std::string const& message_);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

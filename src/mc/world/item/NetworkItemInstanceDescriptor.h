@@ -37,40 +37,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkItemInstanceDescriptor();
+    MCNAPI NetworkItemInstanceDescriptor();
 
-    MCAPI NetworkItemInstanceDescriptor(::NetworkItemInstanceDescriptor&&);
+    MCNAPI NetworkItemInstanceDescriptor(::NetworkItemInstanceDescriptor&&);
 
-    MCAPI explicit NetworkItemInstanceDescriptor(::ItemStackDescriptor const& descriptor);
+    MCNAPI explicit NetworkItemInstanceDescriptor(::ItemStackDescriptor const& descriptor);
 
-    MCAPI explicit NetworkItemInstanceDescriptor(::ItemInstance const& item);
+    MCNAPI explicit NetworkItemInstanceDescriptor(::ItemInstance const& item);
 
-    MCAPI ::ItemInstance getItemInstance(::BlockPalette const& blockPalette) const;
+    MCNAPI ::ItemInstance getItemInstance(::BlockPalette const& blockPalette) const;
 
-    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::NetworkItemInstanceDescriptor&&);
+    MCNAPI void* $ctor(::NetworkItemInstanceDescriptor&&);
 
-    MCAPI void* $ctor(::ItemStackDescriptor const& descriptor);
+    MCNAPI void* $ctor(::ItemStackDescriptor const& descriptor);
 
-    MCAPI void* $ctor(::ItemInstance const& item);
+    MCNAPI void* $ctor(::ItemInstance const& item);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

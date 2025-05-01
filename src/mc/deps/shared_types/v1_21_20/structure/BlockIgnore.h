@@ -20,13 +20,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~BlockIgnore();
+    MCNAPI ~BlockIgnore();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

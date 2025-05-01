@@ -26,27 +26,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptTeleportOptions(::ScriptModuleMinecraft::ScriptTeleportOptions const&);
+    MCNAPI ScriptTeleportOptions(::ScriptModuleMinecraft::ScriptTeleportOptions const&);
 
-    MCAPI ~ScriptTeleportOptions();
+    MCNAPI ~ScriptTeleportOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptTeleportOptions> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptTeleportOptions> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptTeleportOptions const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptTeleportOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

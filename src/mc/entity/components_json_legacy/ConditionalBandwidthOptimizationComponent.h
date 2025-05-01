@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/components/ConditionalBandwidthOptimization.h"
+#include "mc/world/level/Tick.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
-struct ConditionalBandwidthOptimization;
-struct Tick;
 // clang-format on
 
 class ConditionalBandwidthOptimizationComponent {
@@ -26,28 +28,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ConditionalBandwidthOptimizationComponent(::ConditionalBandwidthOptimizationComponent const&);
+    MCNAPI ConditionalBandwidthOptimizationComponent(::ConditionalBandwidthOptimizationComponent const&);
 
-    MCAPI ConditionalBandwidthOptimizationComponent(::ConditionalBandwidthOptimizationComponent&&);
+    MCNAPI ConditionalBandwidthOptimizationComponent(::ConditionalBandwidthOptimizationComponent&&);
 
-    MCAPI ::ConditionalBandwidthOptimization getCurrentOptimizationValues(::Actor& owner);
+    MCNAPI ::ConditionalBandwidthOptimization getCurrentOptimizationValues(::Actor& owner);
 
-    MCAPI ::ConditionalBandwidthOptimizationComponent& operator=(::ConditionalBandwidthOptimizationComponent&&);
+    MCNAPI ::ConditionalBandwidthOptimizationComponent& operator=(::ConditionalBandwidthOptimizationComponent&&);
 
-    MCAPI ~ConditionalBandwidthOptimizationComponent();
+    MCNAPI ~ConditionalBandwidthOptimizationComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ConditionalBandwidthOptimizationComponent const&);
+    MCNAPI void* $ctor(::ConditionalBandwidthOptimizationComponent const&);
 
-    MCAPI void* $ctor(::ConditionalBandwidthOptimizationComponent&&);
+    MCNAPI void* $ctor(::ConditionalBandwidthOptimizationComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

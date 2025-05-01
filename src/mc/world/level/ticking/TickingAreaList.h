@@ -34,25 +34,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TickingAreaList(::TickingAreaList const&);
+    MCNAPI TickingAreaList(::TickingAreaList const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TickingAreaList const&);
+    MCNAPI void* $ctor(::TickingAreaList const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $removeDistantEntityAreasAndCheckForRemoved(
+    MCNAPI bool $removeDistantEntityAreasAndCheckForRemoved(
         ::std::vector<::Vec3> const&                 playerPositions,
         ::std::function<void(::ITickingArea const&)> requeue,
         ::LevelStorage&                              levelStorage
@@ -62,6 +62,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

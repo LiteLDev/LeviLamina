@@ -6,11 +6,11 @@
 #include "mc/world/actor/Actor.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionGroup;
-class BlockPos;
 class EntityContext;
 class HitResult;
 class Vec3;
@@ -66,47 +66,47 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FishingHook(
+    MCNAPI FishingHook(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _fishPosEvent();
+    MCNAPI void _fishPosEvent();
 
-    MCAPI void _fishTeaseEvent();
+    MCNAPI void _fishTeaseEvent();
 
-    MCAPI void _fishhookEvent();
+    MCNAPI void _fishhookEvent();
 
-    MCAPI int _getServerFishSpeed();
+    MCNAPI int _getServerFishSpeed();
 
-    MCAPI float _getWaterPercentage();
+    MCNAPI float _getWaterPercentage();
 
-    MCAPI ::HitResult _hitCheck();
+    MCNAPI ::HitResult _hitCheck();
 
-    MCAPI void _pullCloser(::Actor& inEntity, float inSpeed);
+    MCNAPI void _pullCloser(::Actor& inEntity, float inSpeed);
 
-    MCAPI bool _serverHooked();
+    MCNAPI bool _serverHooked();
 
-    MCAPI bool _serverLured();
+    MCNAPI bool _serverLured();
 
-    MCAPI void _updateGravity();
+    MCNAPI void _updateGravity();
 
-    MCAPI ::Actor* getFishingTarget();
+    MCNAPI ::Actor* getFishingTarget();
 
-    MCAPI ::Actor* getOwner();
+    MCNAPI ::Actor* getOwner();
 
-    MCAPI void postNormalTick();
+    MCNAPI void postNormalTick();
 
-    MCAPI int retrieve();
+    MCNAPI int retrieve();
 
-    MCAPI void shoot(::Vec3 dir, float pow, float uncertainty);
+    MCNAPI void shoot(::Vec3 dir, float pow, float uncertainty);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -122,18 +122,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $remove();
+    MCNAPI void $remove();
 
-    MCFOLD float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
 
-    MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
+    MCNAPI ::ActorUniqueID $getSourceUniqueID() const;
 
-    MCFOLD bool $shouldDropDeathLoot() const;
+    MCNAPI bool $shouldDropDeathLoot() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

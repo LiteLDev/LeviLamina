@@ -13,7 +13,7 @@ class IFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkb83a18;
+    ::ll::UntypedStorage<1, 1>  mUnkb83a18;
     ::ll::UntypedStorage<4, 4>  mUnkd34dfa;
     ::ll::UntypedStorage<4, 4>  mUnk89701f;
     ::ll::UntypedStorage<8, 24> mUnk84c109;
@@ -59,7 +59,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -71,7 +71,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

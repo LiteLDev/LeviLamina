@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/PositionTrackingId.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated forward declare list
@@ -12,7 +13,6 @@ class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class ILevel;
-class PositionTrackingId;
 class SaveContext;
 // clang-format on
 
@@ -26,10 +26,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 7
+    // vIndex: 8
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
     // vIndex: 1
@@ -38,10 +38,10 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 43
+    // vIndex: 44
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -63,22 +63,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI void $onRemoved(::BlockSource& region);
+    MCNAPI void $onRemoved(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

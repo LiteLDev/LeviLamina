@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
+
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
-class BoundingBox;
 class Random;
 class StructurePiece;
 // clang-format on
@@ -43,28 +45,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void calculateBoundingBox();
+    MCNAPI void calculateBoundingBox();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCFOLD bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCFOLD int $getMaxYSpawnOffset() const;
+    MCNAPI int $getMaxYSpawnOffset() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

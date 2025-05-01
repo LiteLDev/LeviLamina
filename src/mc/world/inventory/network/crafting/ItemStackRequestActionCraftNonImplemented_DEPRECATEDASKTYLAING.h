@@ -35,14 +35,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $_write(::BinaryStream& stream) const;
+    MCNAPI void $_write(::BinaryStream& stream) const;
 
-    MCFOLD ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream&);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

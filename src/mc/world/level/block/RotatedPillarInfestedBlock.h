@@ -38,7 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $spawnAfterBreak(
+    MCNAPI void $spawnAfterBreak(
         ::BlockSource& region,
         ::Block const&,
         ::BlockPos const&             pos,

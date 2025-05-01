@@ -46,17 +46,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit StunUInt32Attribute(ushort);
+    MCNAPI explicit StunUInt32Attribute(ushort);
 
-    MCAPI StunUInt32Attribute(ushort, uint);
+    MCNAPI StunUInt32Attribute(ushort, uint);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(ushort);
+    MCNAPI void* $ctor(ushort);
 
-    MCAPI void* $ctor(ushort, uint);
+    MCNAPI void* $ctor(ushort, uint);
     // NOLINTEND
 
 public:
@@ -74,7 +74,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

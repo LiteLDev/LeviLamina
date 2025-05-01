@@ -23,14 +23,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::LootItemCondition>
-    deserialize(::Json::Value object, bool usingUpcomingCreatorFeaturesExperiment);
+    MCNAPI static ::std::unique_ptr<::LootItemCondition> deserialize(::Json::Value object, bool);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -42,6 +41,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

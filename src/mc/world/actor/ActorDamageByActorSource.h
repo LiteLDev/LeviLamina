@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/actor/ActorCategory.h"
 #include "mc/world/actor/ActorDamageSource.h"
 #include "mc/world/actor/ActorType.h"
@@ -12,7 +13,6 @@
 // clang-format off
 class Actor;
 class BlockSource;
-struct ActorUniqueID;
 // clang-format on
 
 class ActorDamageByActorSource : public ::ActorDamageSource {

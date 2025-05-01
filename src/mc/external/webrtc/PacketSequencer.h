@@ -15,25 +15,25 @@ class PacketSequencer {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool CanSendPaddingOnMediaSsrc() const;
+    MCNAPI bool CanSendPaddingOnMediaSsrc() const;
 
-    MCAPI PacketSequencer(uint, ::std::optional<uint>, bool, ::webrtc::Clock*);
+    MCNAPI PacketSequencer(uint, ::std::optional<uint>, bool, ::webrtc::Clock*);
 
-    MCAPI void PopulatePaddingFields(::webrtc::RtpPacketToSend&);
+    MCNAPI void PopulatePaddingFields(::webrtc::RtpPacketToSend&);
 
-    MCAPI void PopulateRtpState(::webrtc::RtpState&) const;
+    MCNAPI void PopulateRtpState(::webrtc::RtpState&) const;
 
-    MCAPI void Sequence(::webrtc::RtpPacketToSend&);
+    MCNAPI void Sequence(::webrtc::RtpPacketToSend&);
 
-    MCAPI void SetRtpState(::webrtc::RtpState const&);
+    MCNAPI void SetRtpState(::webrtc::RtpState const&);
 
-    MCAPI void UpdateLastPacketState(::webrtc::RtpPacketToSend const&);
+    MCNAPI void UpdateLastPacketState(::webrtc::RtpPacketToSend const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint, ::std::optional<uint>, bool, ::webrtc::Clock*);
+    MCNAPI void* $ctor(uint, ::std::optional<uint>, bool, ::webrtc::Clock*);
     // NOLINTEND
 };
 

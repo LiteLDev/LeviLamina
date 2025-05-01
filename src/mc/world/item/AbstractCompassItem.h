@@ -53,11 +53,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ResolvedItemIconInfo
+    MCNAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const;
+    MCNAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const;
 
-    MCAPI int $getEnchantSlot() const;
+    MCNAPI int $getEnchantSlot() const;
     // NOLINTEND
 };

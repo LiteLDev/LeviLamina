@@ -11,6 +11,6 @@ struct MobOnPlayerJumpSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
+    MCNAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
     // NOLINTEND
 };

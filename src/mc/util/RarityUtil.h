@@ -8,7 +8,7 @@
 namespace RarityUtil {
 // functions
 // NOLINTBEGIN
-MCAPI ::Rarity getRarityFromName(::std::string const& name);
+MCNAPI ::Rarity getRarityFromName(::std::string const& name);
 // NOLINTEND
 
 // static variables

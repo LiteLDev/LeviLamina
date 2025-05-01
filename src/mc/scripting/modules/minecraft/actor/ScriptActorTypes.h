@@ -33,19 +33,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void add(::Scripting::WeakLifetimeScope& scope, ::std::string const& actorName);
+    MCNAPI void add(::Scripting::WeakLifetimeScope& scope, ::std::string const& actorName);
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorType>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorType>>
     get(::std::string const& actorName);
 
-    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorType>>
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorType>>
     getAll(::Scripting::WeakLifetimeScope& scope);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder, ::Level const& level);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder, ::Level const& level);
     // NOLINTEND
 };
 

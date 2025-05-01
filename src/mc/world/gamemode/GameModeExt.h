@@ -12,9 +12,9 @@ struct IGameModeTimer;
 namespace GameModeExt {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::unique_ptr<::IGameModeMessenger> createDefaultMessenger(::Player& player);
+MCNAPI ::std::unique_ptr<::IGameModeMessenger> createDefaultMessenger(::Player& player);
 
-MCAPI ::std::unique_ptr<::IGameModeTimer> createDefaultTimer(::Player const& player);
+MCNAPI ::std::unique_ptr<::IGameModeTimer> createDefaultTimer(::Player const& player);
 // NOLINTEND
 
 } // namespace GameModeExt

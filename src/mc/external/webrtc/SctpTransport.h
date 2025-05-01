@@ -20,33 +20,33 @@ class SctpTransport {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Clear();
+    MCNAPI void Clear();
 
-    MCAPI void OnAssociationChangeCommunicationUp();
+    MCNAPI void OnAssociationChangeCommunicationUp();
 
-    MCAPI void OnDtlsStateChange(::cricket::DtlsTransportInternal*, ::webrtc::DtlsTransportState);
+    MCNAPI void OnDtlsStateChange(::cricket::DtlsTransportInternal*, ::webrtc::DtlsTransportState);
 
-    MCAPI
+    MCNAPI
     SctpTransport(::std::unique_ptr<::cricket::SctpTransportInternal>, ::webrtc::scoped_refptr<::webrtc::DtlsTransport>);
 
-    MCAPI void Start(int, int, int);
+    MCNAPI void Start(int, int, int);
 
-    MCAPI void UpdateInformation(::webrtc::SctpTransportState);
+    MCNAPI void UpdateInformation(::webrtc::SctpTransportState);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
         $ctor(::std::unique_ptr<::cricket::SctpTransportInternal>, ::webrtc::scoped_refptr<::webrtc::DtlsTransport>);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForSctpTransportInterface();
+    MCNAPI static void** $vftableForSctpTransportInterface();
 
-    MCAPI static void** $vftableForDataChannelTransportInterface();
+    MCNAPI static void** $vftableForDataChannelTransportInterface();
     // NOLINTEND
 };
 

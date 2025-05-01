@@ -67,33 +67,42 @@ public:
     virtual void stopAllSounds() = 0;
 
     // vIndex: 15
-    virtual ::Core::PathBuffer<::std::string> const getCurrentlyPlayingMusicName() = 0;
+    virtual void pauseAllPlayingSounds() = 0;
 
     // vIndex: 16
-    virtual bool getItem(::std::string const&, ::Core::Path const&, ::SoundItem&) const = 0;
+    virtual void resumeAllPreviouslyPlayingSounds() = 0;
 
     // vIndex: 17
-    virtual uint64 registerLoop(::std::string const&, ::std::function<void(::LoopingSoundState&)>, float, float) = 0;
+    virtual void pauseMusic(bool) = 0;
 
     // vIndex: 18
-    virtual void unregisterLoop(uint64, bool) = 0;
-
-    // vIndex: 20
-    virtual bool isPlayingSound(uint64) const = 0;
+    virtual ::Core::PathBuffer<::std::string> const getCurrentlyPlayingMusicName() = 0;
 
     // vIndex: 19
-    virtual bool isPlayingSound(::Core::Path const&) const = 0;
+    virtual bool getItem(::std::string const&, ::Core::Path const&, ::SoundItem&) const = 0;
+
+    // vIndex: 20
+    virtual uint64 registerLoop(::std::string const&, ::std::function<void(::LoopingSoundState&)>, float, float) = 0;
 
     // vIndex: 21
-    virtual uint64 playAttached(::std::string const&, ::std::function<void(::SoundInstanceProperties&)>&&) = 0;
-
-    // vIndex: 22
-    virtual void stopAllDelayedSoundActions() = 0;
+    virtual void unregisterLoop(uint64, bool) = 0;
 
     // vIndex: 23
-    virtual ::std::optional<::PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64) const = 0;
+    virtual bool isPlayingSound(uint64) const = 0;
+
+    // vIndex: 22
+    virtual bool isPlayingSound(::Core::Path const&) const = 0;
 
     // vIndex: 24
+    virtual uint64 playAttached(::std::string const&, ::std::function<void(::SoundInstanceProperties&)>&&) = 0;
+
+    // vIndex: 25
+    virtual void stopAllDelayedSoundActions() = 0;
+
+    // vIndex: 26
+    virtual ::std::optional<::PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64) const = 0;
+
+    // vIndex: 27
     virtual ::std::optional<::LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64) const = 0;
     // NOLINTEND
 

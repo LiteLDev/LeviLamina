@@ -13,25 +13,25 @@ class RateLimiter {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RateLimiter(::webrtc::Clock*, int64);
+    MCNAPI RateLimiter(::webrtc::Clock*, int64);
 
-    MCAPI void SetMaxRate(uint);
+    MCNAPI void SetMaxRate(uint);
 
-    MCAPI bool TryUseRate(uint64);
+    MCNAPI bool TryUseRate(uint64);
 
-    MCAPI ~RateLimiter();
+    MCNAPI ~RateLimiter();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::Clock*, int64);
+    MCNAPI void* $ctor(::webrtc::Clock*, int64);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

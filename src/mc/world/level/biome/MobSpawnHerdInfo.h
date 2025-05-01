@@ -22,7 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MobSpawnHerdInfo(
+    MCNAPI MobSpawnHerdInfo(
         uint                 min,
         uint                 max,
         ::std::string const& initialEvent,
@@ -31,15 +31,15 @@ public:
         uint                 herdEventSkipCount
     );
 
-    MCFOLD ::MobSpawnHerdInfo& operator=(::MobSpawnHerdInfo const&);
+    MCNAPI ::MobSpawnHerdInfo& operator=(::MobSpawnHerdInfo const&);
 
-    MCAPI ~MobSpawnHerdInfo();
+    MCNAPI ~MobSpawnHerdInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         uint                 min,
         uint                 max,
         ::std::string const& initialEvent,
@@ -52,6 +52,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

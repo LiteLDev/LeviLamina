@@ -8,7 +8,7 @@
 namespace rtc::webrtc_logging_impl {
 // functions
 // NOLINTBEGIN
-MCAPI void Log(::rtc::webrtc_logging_impl::LogArgType const*, ...);
+MCNAPI void Log(::rtc::webrtc_logging_impl::LogArgType const*, ...);
 // NOLINTEND
 
 } // namespace rtc::webrtc_logging_impl

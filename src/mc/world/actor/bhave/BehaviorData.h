@@ -6,6 +6,7 @@ class BehaviorData {
 public:
     // BehaviorData inner types declare
     // clang-format off
+    template<typename T0> struct Data;
     struct DataProxy;
     // clang-format on
 
@@ -49,7 +50,7 @@ public:
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -62,6 +63,9 @@ public:
         Vector3       = 5,
         VoidPointer   = 6,
     };
+
+    template <typename T0>
+    struct Data {};
 
 public:
     // member variables
@@ -79,14 +83,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BehaviorData& operator=(::BehaviorData&&);
+    MCNAPI ::BehaviorData& operator=(::BehaviorData&&);
 
-    MCAPI ~BehaviorData();
+    MCNAPI ~BehaviorData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

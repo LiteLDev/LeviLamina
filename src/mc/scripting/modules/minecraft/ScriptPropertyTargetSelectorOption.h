@@ -35,17 +35,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption&
+    MCNAPI ::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption&
     operator=(::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption&&);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption&
+    MCNAPI ::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption&
     operator=(::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption>
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption>
     bind();
     // NOLINTEND
 };

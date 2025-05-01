@@ -32,47 +32,47 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Property();
+        MCNAPI Property();
 
-        MCAPI Property(::JsonValidator::Property const&);
+        MCNAPI Property(::JsonValidator::Property const&);
 
-        MCAPI Property(::JsonValidator::Property&&);
+        MCNAPI Property(::JsonValidator::Property&&);
 
-        MCAPI ::JsonValidator::Property& addChildProperty(::JsonValidator::Property const& prop);
+        MCNAPI ::JsonValidator::Property& addChildProperty(::JsonValidator::Property const& prop);
 
-        MCAPI ::JsonValidator::Property&
+        MCNAPI ::JsonValidator::Property&
         addConditionalProperty(::Json::Value const& value, ::JsonValidator::Property const& prop);
 
-        MCAPI ::JsonValidator::Property& operator=(::JsonValidator::Property const&);
+        MCNAPI ::JsonValidator::Property& operator=(::JsonValidator::Property const&);
 
-        MCAPI ::JsonValidator::Property& operator=(::JsonValidator::Property&&);
+        MCNAPI ::JsonValidator::Property& operator=(::JsonValidator::Property&&);
 
-        MCAPI ::JsonValidator::Property& operator[](::std::string const& propName);
+        MCNAPI ::JsonValidator::Property& operator[](::std::string const& propName);
 
-        MCAPI ~Property();
+        MCNAPI ~Property();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
 
-        MCAPI void* $ctor(::JsonValidator::Property const&);
+        MCNAPI void* $ctor(::JsonValidator::Property const&);
 
-        MCAPI void* $ctor(::JsonValidator::Property&&);
+        MCNAPI void* $ctor(::JsonValidator::Property&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool validate(
+    MCNAPI static bool validate(
         ::JsonValidator::Property const& rootProp,
         ::Json::Value const&             rootData,
         ::std::vector<::std::string>*    errors

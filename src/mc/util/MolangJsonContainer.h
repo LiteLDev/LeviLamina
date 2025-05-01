@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 struct MolangJsonContainer {
 public:
     // MolangJsonContainer inner types define
@@ -20,34 +25,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MolangJsonContainer();
+    MCNAPI MolangJsonContainer();
 
-    MCAPI MolangJsonContainer(::MolangJsonContainer const&);
+    MCNAPI MolangJsonContainer(::MolangJsonContainer const&);
 
-    MCAPI MolangJsonContainer(::MolangJsonContainer&&);
+    MCNAPI MolangJsonContainer(::MolangJsonContainer&&);
 
-    MCAPI ~MolangJsonContainer();
+    MCNAPI ~MolangJsonContainer();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void valueFromString(::MolangJsonContainer& instance, ::std::string const& str);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCNAPI static void valueFromBool(::MolangJsonContainer& instance, bool value);
+
+    MCNAPI static void valueFromFloat(::MolangJsonContainer& instance, float value);
+
+    MCNAPI static void valueFromString(::MolangJsonContainer& instance, ::std::string const& str);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::MolangJsonContainer const&);
+    MCNAPI void* $ctor(::MolangJsonContainer const&);
 
-    MCAPI void* $ctor(::MolangJsonContainer&&);
+    MCNAPI void* $ctor(::MolangJsonContainer&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class SubChunkBlockPos;
-struct Brightness;
-// clang-format on
+// auto generated inclusion list
+#include "mc/common/Brightness.h"
+#include "mc/world/level/SubChunkBlockPos.h"
 
 struct SubChunkLightUpdate {
 public:

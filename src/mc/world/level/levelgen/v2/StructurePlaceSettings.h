@@ -5,11 +5,11 @@
 // auto generated inclusion list
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
-class BoundingBox;
 namespace br::worldgen { struct StructureProcessor; }
 // clang-format on
 
@@ -39,13 +39,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~StructurePlaceSettings();
+    MCNAPI ~StructurePlaceSettings();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

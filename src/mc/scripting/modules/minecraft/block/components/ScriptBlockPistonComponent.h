@@ -44,34 +44,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>>
     getAttachedBlocks();
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::Vec3>> getAttachedBlocksLocations();
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::Vec3>> getAttachedBlocksLocations();
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::BlockPos>> getAttachedBlocks_V010();
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::BlockPos>> getAttachedBlocks_V010();
 
-    MCAPI ::Scripting::Result_deprecated<bool> isExpanded();
+    MCNAPI ::Scripting::Result_deprecated<bool> isExpanded();
 
-    MCAPI ::Scripting::Result_deprecated<bool> isExpanding();
+    MCNAPI ::Scripting::Result_deprecated<bool> isExpanding();
 
-    MCAPI ::Scripting::Result_deprecated<bool> isMoving();
+    MCNAPI ::Scripting::Result_deprecated<bool> isMoving();
 
-    MCAPI ::Scripting::Result_deprecated<bool> isRetracted();
+    MCNAPI ::Scripting::Result_deprecated<bool> isRetracted();
 
-    MCAPI ::Scripting::Result_deprecated<bool> isRetracting();
+    MCNAPI ::Scripting::Result_deprecated<bool> isRetracting();
 
-    MCAPI ::Scripting::Result_deprecated<::PistonState> state();
+    MCNAPI ::Scripting::Result_deprecated<::PistonState> state();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockPistonComponent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockPistonComponent>
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
 
-    MCAPI static ::std::optional<
+    MCNAPI static ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPistonComponent>>
     tryCreate(::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
@@ -91,7 +91,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

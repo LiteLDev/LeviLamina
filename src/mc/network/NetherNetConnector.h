@@ -46,13 +46,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~NewIncomingConnectionEvent();
+        MCNAPI ~NewIncomingConnectionEvent();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -166,16 +166,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetherNetConnector(::NetherNetTransportFactory const& factory, ::Connector::ConnectionCallbacks& callbacks);
+    MCNAPI NetherNetConnector(::NetherNetTransportFactory const& factory, ::Connector::ConnectionCallbacks& callbacks);
 
-    MCAPI ::gsl::not_null<::std::shared_ptr<::WebRTCNetworkPeer>>
+    MCNAPI ::gsl::not_null<::std::shared_ptr<::WebRTCNetworkPeer>>
     _getOrCreatePeer(uint64 remoteId, uint64 sessionId, ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const&);
 
-    MCAPI void _prepareForNewSession();
+    MCNAPI void _prepareForNewSession();
 
-    MCAPI void setBroadcastRequestCallback(::std::function<bool(void*, int*)>&& broadcastRequestCallback);
+    MCNAPI void setBroadcastRequestCallback(::std::function<bool(void*, int*)>&& broadcastRequestCallback);
 
-    MCAPI void setBroadcastResponseCallback(
+    MCNAPI void setBroadcastResponseCallback(
         ::std::function<void(::NetherNet::NetworkID const&, void const*, int)>&& broadcastResponseCallback
     );
     // NOLINTEND
@@ -183,59 +183,59 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::NetherNetTransportFactory const& factory, ::Connector::ConnectionCallbacks& callbacks);
+    MCNAPI void* $ctor(::NetherNetTransportFactory const& factory, ::Connector::ConnectionCallbacks& callbacks);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $host(::ConnectionDefinition const& definition);
+    MCNAPI bool $host(::ConnectionDefinition const& definition);
 
-    MCFOLD bool $connect(::Social::GameConnectionInfo const&, ::Social::GameConnectionInfo const&);
+    MCNAPI bool $connect(::Social::GameConnectionInfo const&, ::Social::GameConnectionInfo const&);
 
-    MCFOLD void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $runEvents();
+    MCNAPI void $runEvents();
 
-    MCAPI ::NetworkIdentifier $getNetworkIdentifier() const;
+    MCNAPI ::NetworkIdentifier $getNetworkIdentifier() const;
 
-    MCFOLD void $closeNetworkConnection(::NetworkIdentifier const&);
+    MCNAPI void $closeNetworkConnection(::NetworkIdentifier const&);
 
-    MCFOLD bool $setApplicationHandshakeCompleted(::NetworkIdentifier const&);
+    MCNAPI bool $setApplicationHandshakeCompleted(::NetworkIdentifier const&);
 
-    MCFOLD ::TransportLayer $getNetworkType() const;
+    MCNAPI ::TransportLayer $getNetworkType() const;
 
-    MCFOLD void $_onDisable();
+    MCNAPI void $_onDisable();
 
-    MCFOLD void $_onEnable();
+    MCNAPI void $_onEnable();
 
-    MCFOLD void $OnSpopViolation();
+    MCNAPI void $OnSpopViolation();
 
-    MCAPI void
+    MCNAPI void
     $OnSessionClose(::NetherNet::NetworkID networkID, uint64 sessionId, ::NetherNet::ESessionError sessionError);
 
-    MCAPI void $OnBroadcastResponseReceived(::NetherNet::NetworkID networkID, void const* pApplicationData, int size);
+    MCNAPI void $OnBroadcastResponseReceived(::NetherNet::NetworkID networkID, void const* pApplicationData, int size);
 
-    MCAPI bool $OnBroadcastDiscoveryRequestReceivedGetResponse(void* pApplicationData, int* pSize);
+    MCNAPI bool $OnBroadcastDiscoveryRequestReceivedGetResponse(void* pApplicationData, int* pSize);
 
-    MCAPI void $OnSessionGetConnectionFlags(::NetherNet::NetworkID, uint* flags);
+    MCNAPI void $OnSessionGetConnectionFlags(::NetherNet::NetworkID, uint* flags);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForNetworkEnableDisableListener();
+    MCNAPI static void** $vftableForNetworkEnableDisableListener();
 
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
 
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
 
-    MCAPI static void** $vftableForConnector();
+    MCNAPI static void** $vftableForConnector();
     // NOLINTEND
 };

@@ -18,20 +18,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DynamicAmbientSound(::DynamicAmbientSound const&);
+    MCNAPI DynamicAmbientSound(::DynamicAmbientSound const&);
 
-    MCAPI ~DynamicAmbientSound();
+    MCNAPI ~DynamicAmbientSound();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::DynamicAmbientSound const&);
+    MCNAPI void* $ctor(::DynamicAmbientSound const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

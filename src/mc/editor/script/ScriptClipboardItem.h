@@ -41,37 +41,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> clear();
+    MCNAPI ::Scripting::Result<void> clear();
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>>
     getPredictedWriteAsCompoundBlockVolume(
         ::Vec3 const&                                                               position,
         ::std::optional<::Editor::ScriptModule::ScriptClipboardWriteOptions> const& optOptions
     ) const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptSelectionContainer>>
     getPredictedWriteAsSelection(
         ::Vec3 const&                                                               position,
         ::std::optional<::Editor::ScriptModule::ScriptClipboardWriteOptions> const& optOptions
     ) const;
 
-    MCAPI ::Scripting::Result_deprecated<::Vec3> getSize() const;
+    MCNAPI ::Scripting::Result_deprecated<::Vec3> getSize() const;
 
-    MCAPI ::Scripting::Result_deprecated<::Editor::EditorStructureTemplate> getStructure();
+    MCNAPI ::Scripting::Result_deprecated<::Editor::EditorStructureTemplate> getStructure();
 
-    MCAPI ::Scripting::Result_deprecated<bool> isEmpty() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> isEmpty() const;
 
-    MCAPI ::Scripting::Result<void> readFromSelection(::Editor::ScriptModule::ScriptSelectionContainer const& selection
+    MCNAPI ::Scripting::Result<void> readFromSelection(::Editor::ScriptModule::ScriptSelectionContainer const& selection
     );
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error>
     readFromStructure(::Editor::ScriptModule::ScriptEditorStructure const& structure);
 
-    MCAPI ::Scripting::Result<void> readFromWorld(::Vec3 const& from, ::Vec3 const& to);
+    MCNAPI ::Scripting::Result<void> readFromWorld(::Vec3 const& from, ::Vec3 const& to);
 
-    MCAPI ::Scripting::Result_deprecated<bool> writeToWorld(
+    MCNAPI ::Scripting::Result_deprecated<bool> writeToWorld(
         ::Vec3 const&                                                               position,
         ::std::optional<::Editor::ScriptModule::ScriptClipboardWriteOptions> const& options
     ) const;
@@ -80,7 +80,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptClipboardItem> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptClipboardItem> bindScript();
     // NOLINTEND
 };
 

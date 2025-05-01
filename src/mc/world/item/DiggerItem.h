@@ -69,41 +69,41 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $getAttackDamage() const;
+    MCNAPI int $getAttackDamage() const;
 
-    MCFOLD bool $isHandEquipped() const;
+    MCNAPI bool $isHandEquipped() const;
 
-    MCAPI int $getEnchantValue() const;
+    MCNAPI int $getEnchantValue() const;
 
-    MCAPI bool $isValidRepairItem(
+    MCNAPI bool $isValidRepairItem(
         ::ItemStackBase const&,
         ::ItemStackBase const&   repairItem,
         ::BaseGameVersion const& baseGameVersion
     ) const;
 
-    MCAPI void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
 
-    MCAPI bool $canDestroySpecial(::Block const& block) const;
+    MCNAPI bool $canDestroySpecial(::Block const& block) const;
 
-    MCAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
+    MCNAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 
-    MCAPI void $executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const;
+    MCNAPI void $executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

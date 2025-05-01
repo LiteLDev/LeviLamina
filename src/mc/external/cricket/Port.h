@@ -214,7 +214,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddAddress(
+    MCNAPI void AddAddress(
         ::rtc::SocketAddress const&,
         ::rtc::SocketAddress const&,
         ::rtc::SocketAddress const&,
@@ -228,42 +228,42 @@ public:
         bool
     );
 
-    MCAPI void AddOrReplaceConnection(::cricket::Connection*);
+    MCNAPI void AddOrReplaceConnection(::cricket::Connection*);
 
-    MCAPI void CancelPendingTasks();
+    MCNAPI void CancelPendingTasks();
 
-    MCAPI void CopyPortInformationToPacketInfo(::rtc::PacketInfo*) const;
+    MCNAPI void CopyPortInformationToPacketInfo(::rtc::PacketInfo*) const;
 
-    MCAPI void Destroy();
+    MCNAPI void Destroy();
 
-    MCAPI void DestroyAllConnections();
+    MCNAPI void DestroyAllConnections();
 
-    MCAPI void DestroyConnectionInternal(::cricket::Connection*, bool);
+    MCNAPI void DestroyConnectionInternal(::cricket::Connection*, bool);
 
-    MCAPI void DestroyIfDead();
+    MCNAPI void DestroyIfDead();
 
-    MCAPI void FinishAddingAddress(::cricket::Candidate const&, bool);
+    MCNAPI void FinishAddingAddress(::cricket::Candidate const&, bool);
 
-    MCAPI bool IsCompatibleAddress(::rtc::SocketAddress const&);
+    MCNAPI bool IsCompatibleAddress(::rtc::SocketAddress const&);
 
-    MCAPI void KeepAliveUntilPruned();
+    MCNAPI void KeepAliveUntilPruned();
 
-    MCAPI bool MaybeObfuscateAddress(::cricket::Candidate const&, bool);
+    MCNAPI bool MaybeObfuscateAddress(::cricket::Candidate const&, bool);
 
-    MCAPI ::rtc::WeakPtr<::cricket::Port> NewWeakPtr();
+    MCNAPI ::rtc::WeakPtr<::cricket::Port> NewWeakPtr();
 
-    MCAPI bool OnConnectionDestroyed(::cricket::Connection*);
+    MCNAPI bool OnConnectionDestroyed(::cricket::Connection*);
 
-    MCAPI void OnNetworkTypeChanged(::rtc::Network const*);
+    MCNAPI void OnNetworkTypeChanged(::rtc::Network const*);
 
-    MCAPI void OnReadPacket(::rtc::ReceivedPacket const&, ::cricket::ProtocolType);
+    MCNAPI void OnReadPacket(::rtc::ReceivedPacket const&, ::cricket::ProtocolType);
 
-    MCAPI void OnReadyToSend();
+    MCNAPI void OnReadyToSend();
 
-    MCAPI
+    MCNAPI
     Port(::webrtc::TaskQueueBase*, ::webrtc::IceCandidateType, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ::std::string_view, ::std::string_view, ::webrtc::FieldTrialsView const*);
 
-    MCAPI Port(
+    MCNAPI Port(
         ::webrtc::TaskQueueBase*,
         ::webrtc::IceCandidateType,
         ::rtc::PacketSocketFactory*,
@@ -276,29 +276,29 @@ public:
         bool
     );
 
-    MCAPI void PostDestroyIfDead(bool);
+    MCNAPI void PostDestroyIfDead(bool);
 
-    MCAPI void Prune();
+    MCNAPI void Prune();
 
-    MCAPI void SendPortDestroyed(::cricket::Port*);
+    MCNAPI void SendPortDestroyed(::cricket::Port*);
 
-    MCAPI void
+    MCNAPI void
     SendUnknownAttributesErrorResponse(::cricket::StunMessage*, ::rtc::SocketAddress const&, ::std::vector<ushort> const&);
 
-    MCAPI void SetIceParameters(int, ::std::string_view, ::std::string_view);
+    MCNAPI void SetIceParameters(int, ::std::string_view, ::std::string_view);
 
-    MCAPI void set_content_name(::std::string_view);
+    MCNAPI void set_content_name(::std::string_view);
 
-    MCAPI ::std::string const& username_fragment() const;
+    MCNAPI ::std::string const& username_fragment() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::webrtc::TaskQueueBase*, ::webrtc::IceCandidateType, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ::std::string_view, ::std::string_view, ::webrtc::FieldTrialsView const*);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::webrtc::TaskQueueBase*,
         ::webrtc::IceCandidateType,
         ::rtc::PacketSocketFactory*,
@@ -327,9 +327,9 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForHasSlots();
+    MCNAPI static void** $vftableForHasSlots();
 
-    MCAPI static void** $vftableForPortInterface();
+    MCNAPI static void** $vftableForPortInterface();
     // NOLINTEND
 };
 

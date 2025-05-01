@@ -40,20 +40,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext& entity, ::WorkGoal& goal) const;
+    MCNAPI void initialize(::EntityContext& entity, ::WorkGoal& goal) const;
 
-    MCAPI ::WorkDefinition& operator=(::WorkDefinition const&);
+    MCNAPI ::WorkDefinition& operator=(::WorkDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,20 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/nbt/ByteArrayTag.h"
+#include "mc/nbt/ByteTag.h"
+#include "mc/nbt/CompoundTag.h"
+#include "mc/nbt/DoubleTag.h"
+#include "mc/nbt/EndTag.h"
+#include "mc/nbt/FloatTag.h"
+#include "mc/nbt/Int64Tag.h"
+#include "mc/nbt/IntArrayTag.h"
+#include "mc/nbt/IntTag.h"
+#include "mc/nbt/ListTag.h"
+#include "mc/nbt/ShortTag.h"
+#include "mc/nbt/StringTag.h"
+
 // auto generated forward declare list
 // clang-format off
-class ByteArrayTag;
-class ByteTag;
-class CompoundTag;
-class DoubleTag;
-class EndTag;
-class FloatTag;
-class Int64Tag;
-class IntArrayTag;
-class IntTag;
-class ListTag;
-class ShortTag;
-class StringTag;
 class Tag;
 // clang-format on
 
@@ -61,14 +63,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Tag& emplace(::Tag&& tag);
+    MCNAPI ::Tag& emplace(::Tag&& tag);
 
-    MCAPI ~CompoundTagVariant();
+    MCNAPI ~CompoundTagVariant();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

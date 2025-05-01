@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/world/level/BlockPos.h"
+
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSourceHandle;
-class WeakEntityRef;
 // clang-format on
 
 struct LeverActionEvent {
@@ -22,12 +24,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~LeverActionEvent();
+    MCNAPI ~LeverActionEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

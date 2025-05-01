@@ -13,23 +13,23 @@ struct RaceCheckerScope {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RaceCheckerScope(::rtc::RaceChecker const*);
+    MCNAPI explicit RaceCheckerScope(::rtc::RaceChecker const*);
 
-    MCAPI bool RaceDetected() const;
+    MCNAPI bool RaceDetected() const;
 
-    MCAPI ~RaceCheckerScope();
+    MCNAPI ~RaceCheckerScope();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::RaceChecker const*);
+    MCNAPI void* $ctor(::rtc::RaceChecker const*);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -77,7 +77,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Raid(
+    MCNAPI Raid(
         int                                      raidPreparationTime,
         int                                      groupCompleteDelayInTicks,
         int                                      locationHelpDelayInTicks,
@@ -90,23 +90,23 @@ public:
         ::std::function<bool()>&&                                                              isVillageDefeatedCallback
     );
 
-    MCAPI float _calcBossBarUsingHealth() const;
+    MCNAPI float _calcBossBarUsingHealth() const;
 
-    MCAPI float _calcBossBarUsingMobs() const;
+    MCNAPI float _calcBossBarUsingMobs() const;
 
-    MCAPI float _getTotalRaiderHealth() const;
+    MCNAPI float _getTotalRaiderHealth() const;
 
-    MCAPI void _tickGroupInPlay();
+    MCNAPI void _tickGroupInPlay();
 
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI float getBossBarFilledFraction() const;
+    MCNAPI float getBossBarFilledFraction() const;
 
-    MCAPI void readAdditionalSaveData(::CompoundTag const& tag);
+    MCNAPI void readAdditionalSaveData(::CompoundTag const& tag);
 
-    MCAPI void tick(::Tick tick);
+    MCNAPI void tick(::Tick tick);
 
-    MCAPI ~Raid();
+    MCNAPI ~Raid();
     // NOLINTEND
 
 public:
@@ -118,7 +118,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         int                                      raidPreparationTime,
         int                                      groupCompleteDelayInTicks,
         int                                      locationHelpDelayInTicks,
@@ -135,6 +135,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

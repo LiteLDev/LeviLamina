@@ -21,17 +21,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_60::Spawn::PermuteType& operator=(::SharedTypes::v1_21_60::Spawn::PermuteType const&);
+    MCNAPI ::SharedTypes::v1_21_60::Spawn::PermuteType& operator=(::SharedTypes::v1_21_60::Spawn::PermuteType const&);
 
-    MCFOLD ::SharedTypes::v1_21_60::Spawn::PermuteType& operator=(::SharedTypes::v1_21_60::Spawn::PermuteType&&);
+    MCNAPI ::SharedTypes::v1_21_60::Spawn::PermuteType& operator=(::SharedTypes::v1_21_60::Spawn::PermuteType&&);
 
-    MCAPI ~PermuteType();
+    MCNAPI ~PermuteType();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -26,7 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool valid() const;
+    MCNAPI bool valid() const;
     // NOLINTEND
 };
 

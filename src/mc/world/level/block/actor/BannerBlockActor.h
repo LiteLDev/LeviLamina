@@ -32,10 +32,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 11
+    // vIndex: 12
     virtual void onPlace(::BlockSource& region) /*override*/;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 1
@@ -44,10 +44,10 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 43
+    // vIndex: 44
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -57,21 +57,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setItemValues(::ItemStackBase const& instance);
+    MCNAPI void setItemValues(::ItemStackBase const& instance);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BannerBlockType getBannerType(::CompoundTag const* tag);
+    MCNAPI static ::BannerBlockType getBannerType(::CompoundTag const* tag);
 
-    MCAPI static int getBaseColor(::ItemStack const& item);
+    MCNAPI static int getBaseColor(::ItemStack const& item);
 
-    MCAPI static int getPatternCount(::CompoundTag const* tagElement);
+    MCNAPI static int getPatternCount(::CompoundTag const* tagElement);
 
-    MCAPI static bool isDefaultBanner(::ItemStackBase const& instance);
+    MCNAPI static bool isDefaultBanner(::ItemStackBase const& instance);
 
-    MCAPI static void removeLastPattern(::ItemStack& instance);
+    MCNAPI static void removeLastPattern(::ItemStack& instance);
     // NOLINTEND
 
 public:
@@ -99,22 +99,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onPlace(::BlockSource& region);
+    MCNAPI void $onPlace(::BlockSource& region);
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

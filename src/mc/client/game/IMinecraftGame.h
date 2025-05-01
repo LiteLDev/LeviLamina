@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/commands/test/TestAssetCommandType.h"
-#include "mc/client/commands/test/TestCommandType.h"
 #include "mc/client/game/DeferredTaskCategory.h"
 #include "mc/client/game/IClientInstances.h"
 #include "mc/client/game/IGameServerShutdown.h"
@@ -28,6 +26,8 @@
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/TextboxTextUpdateReason.h"
 #include "mc/platform/MultiplayerLockedContext.h"
+#include "mc/server/commands/test/TestAssetCommandType.h"
+#include "mc/server/commands/test/TestCommandType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -37,7 +37,6 @@ class ActorAnimationGroup;
 class ActorResourceDefinitionGroup;
 class AppSystemRegistry;
 class BlockCullingGroup;
-class BrazeSDKManager;
 class CDNService;
 class ChunkSource;
 class ClientNetworkSystem;
@@ -89,6 +88,7 @@ class LocalPlayer;
 class MarketplaceServicesManager;
 class MinecraftGraphics;
 class MinecraftInputHandler;
+class MusicManager;
 class NewPlayerSystem;
 class Options;
 class PackDownloadManager;
@@ -143,7 +143,6 @@ namespace Realms { class SubscriptionService; }
 namespace Realms { struct World; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { class IUserManager; }
-namespace Social { class MultiplayerGameInfo; }
 namespace Social { class MultiplayerServiceManager; }
 namespace Social { class PresenceManager; }
 namespace Social { class SocialSystem; }
@@ -253,41 +252,41 @@ public:
     virtual bool isAudioInitialized() const = 0;
 
     // vIndex: 28
-    virtual ::Bedrock::NotNullNonOwnerPtr<::SoundEngine> getSoundEngine() const = 0;
+    virtual ::MusicManager* getMusicManager() const = 0;
 
     // vIndex: 29
-    virtual void setTextboxText(::std::string const&, int const, ::TextboxTextUpdateReason) = 0;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::SoundEngine> getSoundEngine() const = 0;
 
     // vIndex: 30
-    virtual void onKeyboardDismissed(int const) = 0;
+    virtual void setTextboxText(::std::string const&, int const, ::TextboxTextUpdateReason) = 0;
 
     // vIndex: 31
-    virtual void openPauseMenu() = 0;
+    virtual void onKeyboardDismissed(int const) = 0;
 
     // vIndex: 32
-    virtual void setIsInGame(bool) = 0;
+    virtual void openPauseMenu() = 0;
 
     // vIndex: 33
-    virtual void createClientItemRegistry() = 0;
+    virtual void setIsInGame(bool) = 0;
 
     // vIndex: 34
+    virtual void createClientItemRegistry() = 0;
+
+    // vIndex: 35
     virtual bool hasNetworkPrivileges(bool) = 0;
 
-    // vIndex: 36
+    // vIndex: 37
     virtual ::Bedrock::NotNullNonOwnerPtr<::IThirdPartyServerRepository const>
     getThirdPartyServerRepository() const = 0;
 
-    // vIndex: 35
+    // vIndex: 36
     virtual ::Bedrock::NotNullNonOwnerPtr<::IThirdPartyServerRepository> getThirdPartyServerRepository() = 0;
 
-    // vIndex: 37
+    // vIndex: 38
     virtual ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> retrieveCIDToClientMap() = 0;
 
-    // vIndex: 38
-    virtual ::std::map<::SubClientId, ::std::shared_ptr<::IClientInstance>> const& getClientInstanceMap() const = 0;
-
     // vIndex: 39
-    virtual void joinMultiplayerFromUI(::Social::MultiplayerGameInfo const&) = 0;
+    virtual ::std::map<::SubClientId, ::std::shared_ptr<::IClientInstance>> const& getClientInstanceMap() const = 0;
 
     // vIndex: 40
     virtual void joinMultiplayerWithAddress(::Social::GameConnectionInfo, bool, int, bool) = 0;
@@ -299,46 +298,49 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::TrialManager> getTrialManager() const = 0;
 
     // vIndex: 43
-    virtual ::InputMode getCurrentInputMode() const = 0;
+    virtual bool isTrialManagerInitialized() const = 0;
 
     // vIndex: 44
-    virtual void handleInputPaneHidden() = 0;
+    virtual ::InputMode getCurrentInputMode() const = 0;
 
     // vIndex: 45
-    virtual bool getSuspended() const = 0;
+    virtual void handleInputPaneHidden() = 0;
 
     // vIndex: 46
-    virtual bool isResuming() const = 0;
+    virtual bool getSuspended() const = 0;
 
     // vIndex: 47
+    virtual bool isResuming() const = 0;
+
+    // vIndex: 48
     virtual void
     setTestExecuteCommandCallback(::std::function<
                                   void(::TestCommandType, ::std::vector<::std::string> const&, int)> const&) = 0;
 
-    // vIndex: 48
+    // vIndex: 49
     virtual void
     setTestAssetCommandCallback(::std::function<
                                 void(::TestAssetCommandType, ::std::vector<::std::string> const&)> const&) = 0;
 
-    // vIndex: 49
+    // vIndex: 50
     virtual void runTestExecuteCommandCallback(::TestCommandType, ::std::vector<::std::string> const&, int) const = 0;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual void runTestAssetCommandCallback(::TestAssetCommandType, ::std::vector<::std::string> const&) const = 0;
 
-    // vIndex: 51
+    // vIndex: 52
     virtual uint64 getClientInstanceCount() const = 0;
 
-    // vIndex: 52
+    // vIndex: 53
     virtual void setProfilerIsOn(bool) = 0;
 
-    // vIndex: 54
+    // vIndex: 55
     virtual ::LocalPlayer* getPrimaryLocalPlayer() = 0;
 
-    // vIndex: 53
+    // vIndex: 54
     virtual ::LocalPlayer const* getPrimaryLocalPlayer() const = 0;
 
-    // vIndex: 55
+    // vIndex: 56
     virtual ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> getUserManager() const = 0;
 
     // vIndex: 2
@@ -350,373 +352,370 @@ public:
     // vIndex: 3
     virtual ::ItemRegistryRef getClientItemRegistry() const = 0;
 
-    // vIndex: 56
+    // vIndex: 57
     virtual bool isPrimaryClientInstanceReady() const = 0;
 
-    // vIndex: 57
+    // vIndex: 58
     virtual void ensureAllClientsAreLeaving() const = 0;
 
-    // vIndex: 58
+    // vIndex: 59
     virtual ::Bedrock::NotNullNonOwnerPtr<::ClientNetworkSystem> getClientNetworkSystemPtr() = 0;
 
-    // vIndex: 60
+    // vIndex: 61
     virtual ::ClientNetworkSystem& getClientNetworkSystem() = 0;
 
-    // vIndex: 59
+    // vIndex: 60
     virtual ::ClientNetworkSystem const& getClientNetworkSystem() const = 0;
 
-    // vIndex: 61
+    // vIndex: 62
     virtual bool hasAllValidCrossPlatformSkin() const = 0;
 
-    // vIndex: 63
+    // vIndex: 64
     virtual ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem> getNewPlayerSystem() = 0;
 
-    // vIndex: 62
+    // vIndex: 63
     virtual ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem const> getNewPlayerSystem() const = 0;
 
-    // vIndex: 64
+    // vIndex: 65
     virtual void
     createAndUploadWorldToRealm(::std::string const&, ::std::string const&, ::ContentIdentity const&, ::LevelSettings const&, ::Realms::World, ::std::function<void(::Realms::World)>) = 0;
 
-    // vIndex: 65
+    // vIndex: 66
     virtual ::ILevelListCache& getLevelListCache() = 0;
 
-    // vIndex: 66
+    // vIndex: 67
     virtual ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> getFilePathManager() = 0;
 
-    // vIndex: 67
+    // vIndex: 68
     virtual void setUseFontOverrides(bool) = 0;
 
-    // vIndex: 68
+    // vIndex: 69
     virtual ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getFontHandle() const = 0;
 
-    // vIndex: 69
+    // vIndex: 70
     virtual ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getUIFontHandle() const = 0;
 
-    // vIndex: 70
+    // vIndex: 71
     virtual ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getRuneFontHandle() const = 0;
 
-    // vIndex: 71
+    // vIndex: 72
     virtual ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getUnicodeFontHandle() const = 0;
 
-    // vIndex: 72
+    // vIndex: 73
     virtual ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getSmoothFontHandle() const = 0;
 
-    // vIndex: 73
+    // vIndex: 74
     virtual void onClientLevelExit(::IClientInstance&, uint) = 0;
 
-    // vIndex: 74
+    // vIndex: 75
     virtual bool isLocalPlayer(::ActorUniqueID const&) const = 0;
 
-    // vIndex: 75
+    // vIndex: 76
     virtual ::IMinecraftEventing& getEventing() const = 0;
 
-    // vIndex: 76
+    // vIndex: 77
     virtual void reloadAnimationAndGeometryData(bool) = 0;
 
-    // vIndex: 77
+    // vIndex: 78
     virtual ::Bedrock::NotNullNonOwnerPtr<::GeometryGroup> getGeometryGroup() const = 0;
 
-    // vIndex: 78
+    // vIndex: 79
     virtual ::Bedrock::NotNullNonOwnerPtr<::BlockCullingGroup> getBlockCullingGroup() const = 0;
 
-    // vIndex: 79
+    // vIndex: 80
     virtual ::Bedrock::NotNullNonOwnerPtr<::ClientBlockPipeline::SchematicsRepository>
     getSchematicsRepository() const = 0;
 
-    // vIndex: 80
+    // vIndex: 81
     virtual ::ParticleEffectGroup& getParticleEffectGroup() const = 0;
 
-    // vIndex: 81
+    // vIndex: 82
     virtual ::DeferredLighting& getDeferredLighting() const = 0;
 
-    // vIndex: 82
+    // vIndex: 83
     virtual ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> getMultiplayerServiceManager() const = 0;
 
-    // vIndex: 83
+    // vIndex: 84
     virtual ::IResourcePackRepository& getResourcePackRepository() const = 0;
 
-    // vIndex: 84
+    // vIndex: 85
     virtual ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> getKeyProvider() const = 0;
 
-    // vIndex: 85
+    // vIndex: 86
     virtual ::ResourcePackManager& getResourcePackManager() const = 0;
 
-    // vIndex: 86
+    // vIndex: 87
     virtual ::ResourcePackManager& getServerResourcePackManager() = 0;
 
-    // vIndex: 87
+    // vIndex: 88
     virtual ::PackManifestFactory& getPackManifestFactory() = 0;
 
-    // vIndex: 88
+    // vIndex: 89
     virtual ::PlayerMessagingService& getPlayerMessagingService() = 0;
 
-    // vIndex: 89
+    // vIndex: 90
     virtual ::std::shared_ptr<::SkinRepository> getSkinRepository() const = 0;
 
-    // vIndex: 90
+    // vIndex: 91
     virtual ::PersonaRepository& getPersonaRepository() const = 0;
 
-    // vIndex: 91
+    // vIndex: 92
     virtual ::MarketplaceServicesManager& getMarketplaceServicesManager() const = 0;
 
-    // vIndex: 92
+    // vIndex: 93
     virtual ::Bedrock::NotNullNonOwnerPtr<::mce::TextureGroup> getStoreCacheTextures() const = 0;
 
-    // vIndex: 93
+    // vIndex: 94
     virtual ::Bedrock::NotNullNonOwnerPtr<::MinecraftGraphics> getMinecraftGraphics() = 0;
 
-    // vIndex: 94
+    // vIndex: 95
     virtual ::Bedrock::NotNullNonOwnerPtr<::IUIRepository> getUIRepository() const = 0;
 
-    // vIndex: 95
+    // vIndex: 96
     virtual bool isPrimaryLevelCrossPlatformMultiplayer() const = 0;
 
-    // vIndex: 96
+    // vIndex: 97
     virtual bool isPrimaryLevelMultiplayer() const = 0;
 
-    // vIndex: 97
+    // vIndex: 98
     virtual ::std::string getMultiplayerDisabledTextTitle(::MultiplayerLockedContext) const = 0;
 
-    // vIndex: 98
+    // vIndex: 99
     virtual ::std::string getMultiplayerDisabledTextBody(::MultiplayerLockedContext) const = 0;
 
-    // vIndex: 99
+    // vIndex: 100
     virtual void setRenderingSize(int, int) = 0;
 
-    // vIndex: 100
+    // vIndex: 101
     virtual void recalculateScene() = 0;
 
-    // vIndex: 101
+    // vIndex: 102
     virtual void setUISizeAndScale(int, int, float) = 0;
 
-    // vIndex: 102
+    // vIndex: 103
     virtual bool isReadyToRender() const = 0;
 
-    // vIndex: 103
+    // vIndex: 104
     virtual void onDimensionChanged() = 0;
 
-    // vIndex: 104
+    // vIndex: 105
     virtual void setLeaveGameInProgressAsReadyToContinue() = 0;
 
-    // vIndex: 105
+    // vIndex: 106
     virtual void onClientCreatedLevel(::IClientInstance&) = 0;
 
-    // vIndex: 106
+    // vIndex: 107
     virtual uint64 generateClientId(bool, bool&, uint64, ::std::shared_ptr<::Social::User>) = 0;
 
-    // vIndex: 107
+    // vIndex: 108
     virtual ::std::weak_ptr<::RealmsAPI> getRealms() = 0;
 
-    // vIndex: 108
+    // vIndex: 109
     virtual ::Realms::ContentService& getRealmsContentService() = 0;
 
-    // vIndex: 109
+    // vIndex: 110
     virtual bool getMouseGrabbed() const = 0;
 
-    // vIndex: 110
+    // vIndex: 111
     virtual void navigateToPlayScreenFriendsTab() = 0;
 
-    // vIndex: 111
+    // vIndex: 112
     virtual bool getForceMonoscopic() const = 0;
 
-    // vIndex: 112
+    // vIndex: 113
     virtual bool isInRealm() const = 0;
 
-    // vIndex: 113
+    // vIndex: 114
     virtual bool isShowingLoadingScreen() const = 0;
 
-    // vIndex: 114
+    // vIndex: 115
     virtual bool isRenderingLoadingScreen() const = 0;
 
-    // vIndex: 115
+    // vIndex: 116
     virtual ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> getStoreCatalog() const = 0;
 
-    // vIndex: 116
+    // vIndex: 117
     virtual ::ServiceDrivenImageRepository& getServiceImageRepository() const = 0;
 
-    // vIndex: 117
+    // vIndex: 118
     virtual ::Bedrock::NotNullNonOwnerPtr<::LibraryRepository> getLibraryRepository() const = 0;
 
-    // vIndex: 118
+    // vIndex: 119
     virtual ::GameRenderer& getGameRenderer() const = 0;
 
-    // vIndex: 119
+    // vIndex: 120
     virtual ::Bedrock::NonOwnerPointer<::HolosceneRenderer> getHolosceneRenderer() const = 0;
 
-    // vIndex: 121
+    // vIndex: 122
     virtual ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const> getTextureAtlas() const = 0;
 
-    // vIndex: 120
+    // vIndex: 121
     virtual ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas> getTextureAtlas() = 0;
 
-    // vIndex: 122
+    // vIndex: 123
     virtual bool hasActorResourceDefinitionGroup() const = 0;
 
-    // vIndex: 123
+    // vIndex: 124
     virtual ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup const>
     getActorResourceDefinitionGroup() const = 0;
 
-    // vIndex: 124
+    // vIndex: 125
     virtual ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> getActorResourceDefinitionGroupMutable() = 0;
 
-    // vIndex: 126
+    // vIndex: 127
     virtual ::Bedrock::NotNullNonOwnerPtr<::RenderControllerGroup const> getRenderControllerGroup() const = 0;
 
-    // vIndex: 125
+    // vIndex: 126
     virtual ::Bedrock::NotNullNonOwnerPtr<::RenderControllerGroup> getRenderControllerGroup() = 0;
 
-    // vIndex: 127
+    // vIndex: 128
     virtual int getMaxPlayerCount() const = 0;
 
-    // vIndex: 128
+    // vIndex: 129
     virtual void
     queueScreenshotRequest(::ScreenshotOptions&, ::std::function<void(::Core::PathBuffer<::std::string> const&)>) = 0;
 
-    // vIndex: 129
+    // vIndex: 130
     virtual ::Core::PathBuffer<::std::string> requestScreenshot(::ScreenshotOptions&) = 0;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> getOreUIResourceAllowList() = 0;
 
-    // vIndex: 131
+    // vIndex: 132
     virtual ::Bedrock::NotNullNonOwnerPtr<::DateManager> getDateManager() const = 0;
 
-    // vIndex: 132
+    // vIndex: 133
     virtual ::PixelCalc const& getDpadScale() const = 0;
 
-    // vIndex: 133
+    // vIndex: 134
     virtual void setKeyboardForcedHeight(float, bool) = 0;
 
-    // vIndex: 135
+    // vIndex: 136
     virtual ::Bedrock::NotNullNonOwnerPtr<::SceneStack const> getMainSceneStack() const = 0;
 
-    // vIndex: 134
+    // vIndex: 135
     virtual ::Bedrock::NotNullNonOwnerPtr<::SceneStack> getMainSceneStack() = 0;
 
-    // vIndex: 136
+    // vIndex: 137
     virtual ::OreUI::Router& getUIRouter() = 0;
 
-    // vIndex: 137
+    // vIndex: 138
     virtual ::OreUI::DataProviderManager_DEPRECATED& getDataProviderManager() = 0;
 
-    // vIndex: 138
+    // vIndex: 139
     virtual uint getUIRenderClientMask() const = 0;
 
-    // vIndex: 139
+    // vIndex: 140
     virtual bool useMinecraftVersionOfXBLUI() const = 0;
 
-    // vIndex: 140
+    // vIndex: 141
     virtual ::Bedrock::NotNullNonOwnerPtr<::PersonaService> getPersonaService() const = 0;
 
-    // vIndex: 141
+    // vIndex: 142
     virtual ::Bedrock::NotNullNonOwnerPtr<::GatheringManager> getGatheringManager() const = 0;
 
-    // vIndex: 142
+    // vIndex: 143
     virtual ::Bedrock::NotNullNonOwnerPtr<::CDNService> getCDNService() const = 0;
 
-    // vIndex: 143
+    // vIndex: 144
     virtual ::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> getContentCatalogService() const = 0;
 
-    // vIndex: 144
+    // vIndex: 145
     virtual ::Bedrock::NotNullNonOwnerPtr<::FlightingService> getFlightingService() const = 0;
 
-    // vIndex: 145
+    // vIndex: 146
     virtual ::std::shared_ptr<::FlightingService> getFlightingServicePtr() const = 0;
 
-    // vIndex: 146
+    // vIndex: 147
     virtual ::Bedrock::NotNullNonOwnerPtr<::TreatmentPackDownloadMonitor const>
     getTreatmentPackDownloadMonitor() const = 0;
 
-    // vIndex: 147
+    // vIndex: 148
     virtual ::SceneFactory& getPrimarySceneFactory() const = 0;
 
-    // vIndex: 148
+    // vIndex: 149
     virtual ::Bedrock::NonOwnerPointer<::MinecraftInputHandler> getInput() const = 0;
 
-    // vIndex: 149
+    // vIndex: 150
     virtual void grabMouse() = 0;
 
-    // vIndex: 150
+    // vIndex: 151
     virtual void releaseMouse() = 0;
 
-    // vIndex: 151
+    // vIndex: 152
     virtual void refocusMouse(bool) = 0;
 
-    // vIndex: 152
+    // vIndex: 153
     virtual void setMouseType(::ui::MousePointerType) = 0;
 
-    // vIndex: 153
+    // vIndex: 154
     virtual void play(::std::string const&, ::Vec3 const&, float, float) = 0;
 
-    // vIndex: 154
+    // vIndex: 155
     virtual void playUI(::std::string const&, float, float) = 0;
 
-    // vIndex: 155
+    // vIndex: 156
     virtual void fadeOutMusic() = 0;
 
-    // vIndex: 156
+    // vIndex: 157
     virtual void onPlayerLoaded(::IClientInstance&, ::Player&) = 0;
 
-    // vIndex: 157
+    // vIndex: 158
     virtual bool checkForPiracy() const = 0;
 
-    // vIndex: 158
+    // vIndex: 159
     virtual ::Bedrock::NotNullNonOwnerPtr<::CubemapBackgroundResources> getCubemapBackgroundResources() = 0;
 
-    // vIndex: 159
+    // vIndex: 160
     virtual void setAppWillTerminate(bool) = 0;
 
-    // vIndex: 160
+    // vIndex: 161
     virtual ::ServerInstance* getServerInstance() = 0;
 
-    // vIndex: 161
+    // vIndex: 162
     virtual ::Bedrock::NotNullNonOwnerPtr<::ServerInstance> getServerInstanceNonOwnPtr() = 0;
 
-    // vIndex: 162
+    // vIndex: 163
     virtual void setLaunchedForHMD(::ARVRPlatform) = 0;
 
-    // vIndex: 163
+    // vIndex: 164
     virtual ::ARVRPlatform getLaunchedForHMDPlatform() const = 0;
 
-    // vIndex: 164
+    // vIndex: 165
     virtual void setLaunchedFromLegacyVersion(bool) = 0;
 
-    // vIndex: 165
+    // vIndex: 166
     virtual ::UIMeasureStrategy& getUIMeasureStrategy() = 0;
 
-    // vIndex: 166
+    // vIndex: 167
     virtual void registerUpsellScreen() = 0;
 
-    // vIndex: 167
+    // vIndex: 168
     virtual float getHoloscreenHalfWidth() = 0;
 
-    // vIndex: 168
+    // vIndex: 169
     virtual void setHoloscreenHalfWidth(float) = 0;
 
-    // vIndex: 169
+    // vIndex: 170
     virtual ::Bedrock::NotNullNonOwnerPtr<::WorldTemplateManager> getWorldTemplateManager() const = 0;
 
-    // vIndex: 170
+    // vIndex: 171
     virtual ::World::WorldSystem& getWorldSystem() const = 0;
 
-    // vIndex: 171
+    // vIndex: 172
     virtual ::Social::SocialSystem& getSocialSystem() const = 0;
 
-    // vIndex: 172
+    // vIndex: 173
     virtual ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsSystem> getRealmsSystem() const = 0;
 
-    // vIndex: 173
+    // vIndex: 174
     virtual ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> getEntitlementManager() = 0;
 
-    // vIndex: 174
+    // vIndex: 175
     virtual ::IDlcValidation& getDlcValidation() = 0;
 
-    // vIndex: 175
-    virtual ::ServicesManager& getServicesManager() = 0;
-
     // vIndex: 176
-    virtual ::BrazeSDKManager& getBrazeSDKManager() = 0;
+    virtual ::ServicesManager& getServicesManager() = 0;
 
     // vIndex: 177
     virtual ::Bedrock::NotNullNonOwnerPtr<::SunsettingManager> getSunsettingManager() = 0;

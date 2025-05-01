@@ -50,13 +50,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI AsyncQueueResult();
+        MCNAPI AsyncQueueResult();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -68,13 +68,13 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $_cancel();
+        MCNAPI void $_cancel();
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -110,41 +110,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DispatchQueue(::std::shared_ptr<::Bedrock::Http::DispatcherProcess> childProcess);
+    MCNAPI explicit DispatchQueue(::std::shared_ptr<::Bedrock::Http::DispatcherProcess> childProcess);
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
+    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
     _addNewRequest(::Bedrock::Http::Request&& request);
 
-    MCAPI void _cleanUpCompletedRequests();
+    MCNAPI void _cleanUpCompletedRequests();
 
-    MCAPI void _handlePendingRequest();
+    MCNAPI void _handlePendingRequest();
 
-    MCAPI void _onCompletion();
+    MCNAPI void _onCompletion();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::Bedrock::Http::DispatcherProcess> childProcess);
+    MCNAPI void* $ctor(::std::shared_ptr<::Bedrock::Http::DispatcherProcess> childProcess);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
+    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
     $send(::Bedrock::Http::Request&& request);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

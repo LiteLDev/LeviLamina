@@ -24,15 +24,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ThemePalette();
+    MCNAPI ThemePalette();
 
-    MCAPI ThemePalette(::Editor::Settings::ThemePalette const&);
+    MCNAPI ThemePalette(::Editor::Settings::ThemePalette const&);
 
-    MCAPI ::Editor::Settings::ThemePalette& operator=(::Editor::Settings::ThemePalette const&);
+    MCNAPI ::Editor::Settings::ThemePalette& operator=(::Editor::Settings::ThemePalette const&);
 
-    MCAPI ::Editor::Settings::ThemePalette& operator=(::Editor::Settings::ThemePalette&&);
+    MCNAPI ::Editor::Settings::ThemePalette& operator=(::Editor::Settings::ThemePalette&&);
 
-    MCAPI ~ThemePalette();
+    MCNAPI ~ThemePalette();
     // NOLINTEND
 
 public:
@@ -50,15 +50,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::Editor::Settings::ThemePalette const&);
+    MCNAPI void* $ctor(::Editor::Settings::ThemePalette const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace br::spawn { struct LocalMobCapCalc; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/level/spawn/LocalMobCapCalc.h"
 
 namespace br::spawn {
 

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/resources/IPackLoadScoped.h"
 #include "mc/util/Factory.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -36,20 +36,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initSchema();
+    MCNAPI void initSchema();
 
-    MCAPI void initializeFactory(::IPackLoadContext const& packLoadContext);
+    MCNAPI void initializeFactory(::IPackLoadContext const& packLoadContext);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

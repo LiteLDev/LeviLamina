@@ -70,17 +70,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addRuleToClear(int ruleID);
+    MCNAPI void $addRuleToClear(int ruleID);
 
-    MCAPI void $clearRules();
+    MCNAPI void $clearRules();
 
-    MCAPI void $restoreRules();
+    MCNAPI void $restoreRules();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

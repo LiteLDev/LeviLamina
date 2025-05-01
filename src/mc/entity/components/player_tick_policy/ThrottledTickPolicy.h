@@ -13,6 +13,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8> mUnkb54545;
     ::ll::UntypedStorage<8, 8> mUnk5554b9;
+    ::ll::UntypedStorage<1, 1> mUnk3eb4a5;
+    ::ll::UntypedStorage<1, 1> mUnk31528c;
     // NOLINTEND
 
 public:
@@ -31,6 +33,12 @@ public:
     virtual ::IPlayerTickPolicy::TickAction
     shouldTickPlayer(uint64 const creditTicks, uint64 unprocessedTicksSize) const /*override*/;
 
+    // vIndex: 3
+    virtual bool isStrictMovement() const /*override*/;
+
+    // vIndex: 4
+    virtual bool isStrictDismount() const /*override*/;
+
     // vIndex: 0
     virtual ~ThrottledTickPolicy() /*override*/ = default;
     // NOLINTEND
@@ -44,16 +52,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint64 $getMaxTickCount(uint64 const creditTicks, bool hasQueuedInput) const;
+    MCNAPI uint64 $getMaxTickCount(uint64 const creditTicks, bool hasQueuedInput) const;
 
-    MCAPI ::IPlayerTickPolicy::TickAction
+    MCNAPI ::IPlayerTickPolicy::TickAction
     $shouldTickPlayer(uint64 const creditTicks, uint64 unprocessedTicksSize) const;
+
+    MCNAPI bool $isStrictMovement() const;
+
+    MCNAPI bool $isStrictDismount() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -28,6 +28,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
+    virtual ::std::string const& getTypeId_V1() const /*override*/;
+
+    // vIndex: 2
+    virtual ::std::string const& getTypeId_V2() const /*override*/;
+
+    // vIndex: 3
     virtual bool _isValid() const /*override*/;
 
     // vIndex: 0
@@ -37,36 +43,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void, ::Scripting::Error> addDye(::ScriptModuleMinecraft::ScriptItemType const& dye);
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error> addDye(::ScriptModuleMinecraft::ScriptItemType const& dye);
 
-    MCAPI ::Scripting::Result<::ScriptModuleMinecraft::ScriptRGBA, ::Scripting::Error> getCustomColor() const;
+    MCNAPI ::Scripting::Result<::ScriptModuleMinecraft::ScriptRGBA, ::Scripting::Error> getCustomColor() const;
 
-    MCAPI ::Scripting::Result<int, ::Scripting::Error> getFillLevel() const;
+    MCNAPI ::Scripting::Result<int, ::Scripting::Error> getFillLevel() const;
 
-    MCAPI ::Scripting::Result<::ScriptModuleMinecraft::ScriptFluidType, ::Scripting::Error> getFluidType() const;
+    MCNAPI ::Scripting::Result<::ScriptModuleMinecraft::ScriptFluidType, ::Scripting::Error> getFluidType() const;
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error> setCustomColor(::ScriptModuleMinecraft::ScriptRGBA const& color
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error> setCustomColor(::ScriptModuleMinecraft::ScriptRGBA const& color
     );
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error> setFillLevel(int level) const;
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error> setFillLevel(int level) const;
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error> setFluidType(::ScriptModuleMinecraft::ScriptFluidType fluidType
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error> setFluidType(::ScriptModuleMinecraft::ScriptFluidType fluidType
     );
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error>
     setPotionType(::ScriptModuleMinecraft::ScriptItemStack const& item);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ScriptModuleMinecraft::ScriptFluidType
+    MCNAPI static ::ScriptModuleMinecraft::ScriptFluidType
     _getActualCauldronFluidType(::BlockSource& region, ::BlockPos position);
 
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockFluidContainerComponent>
-    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockFluidContainerComponent>
+    bindV1(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
 
-    MCAPI static ::std::optional<
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockFluidContainerComponent>
+    bindV2(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+
+    MCNAPI static ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockFluidContainerComponent>>
     tryCreate(::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
@@ -74,7 +83,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const*& ComponentId();
+    MCAPI static ::std::string const& ComponentIdV1();
+
+    MCAPI static ::std::string const& ComponentIdV2();
     // NOLINTEND
 
 public:
@@ -86,13 +97,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $_isValid() const;
+    MCNAPI ::std::string const& $getTypeId_V1() const;
+
+    MCNAPI ::std::string const& $getTypeId_V2() const;
+
+    MCNAPI bool $_isValid() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

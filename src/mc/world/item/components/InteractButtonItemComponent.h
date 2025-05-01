@@ -49,29 +49,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit InteractButtonItemComponent(::SharedTypes::v1_20_50::InteractButtonItemComponent component);
+    MCNAPI explicit InteractButtonItemComponent(::SharedTypes::v1_20_50::InteractButtonItemComponent component);
 
-    MCFOLD ::InteractButtonItemComponent& operator=(::InteractButtonItemComponent&&);
+    MCNAPI ::InteractButtonItemComponent& operator=(::InteractButtonItemComponent&&);
 
-    MCFOLD ::InteractButtonItemComponent& operator=(::InteractButtonItemComponent const&);
+    MCNAPI ::InteractButtonItemComponent& operator=(::InteractButtonItemComponent const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::InteractButtonItemComponent component);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_50::InteractButtonItemComponent component);
     // NOLINTEND
 
 public:
@@ -83,18 +83,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isNetworkComponent() const;
+    MCNAPI bool $isNetworkComponent() const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI bool $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCNAPI bool $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
-    MCAPI void $_initializeComponent();
+    MCNAPI void $_initializeComponent();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

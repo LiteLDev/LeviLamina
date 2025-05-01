@@ -58,13 +58,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
-    MCFOLD bool $isFertilizer() const;
+    MCNAPI bool $isFertilizer() const;
 
-    MCAPI void $executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const;
+    MCNAPI void $executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const;
 
-    MCAPI ::InteractionResult
+    MCNAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 };

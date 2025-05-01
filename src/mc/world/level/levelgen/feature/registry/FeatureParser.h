@@ -44,12 +44,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Puv::LoadResultAny $parse(::Puv::Input const& input) const;
+    MCNAPI ::Puv::LoadResultAny $parse(::Puv::Input const& input) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

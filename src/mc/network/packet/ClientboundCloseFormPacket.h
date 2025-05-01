@@ -36,24 +36,24 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MinecraftPacketIds $getId() const;
+    MCNAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCFOLD void $write(::BinaryStream&) const;
+    MCNAPI void $write(::BinaryStream&) const;
 
-    MCFOLD ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream&);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

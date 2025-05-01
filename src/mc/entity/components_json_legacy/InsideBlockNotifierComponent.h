@@ -22,6 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::InsideBlockNotifierComponent& operator=(::InsideBlockNotifierComponent&&);
+    MCNAPI ::InsideBlockNotifierComponent& operator=(::InsideBlockNotifierComponent&&);
     // NOLINTEND
 };

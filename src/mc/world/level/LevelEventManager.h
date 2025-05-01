@@ -61,51 +61,51 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     LevelEventManager(bool isClientSide, ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> levelEventCoordinator);
 
-    MCAPI void broadcastLevelEvent(
+    MCNAPI void broadcastLevelEvent(
         ::SharedTypes::Legacy::LevelEvent      type,
         ::CompoundTag const&                   tag,
         ::UserEntityIdentifierComponent const* userIdentifierToExclude
     );
 
-    MCAPI void broadcastLevelEvent(
+    MCNAPI void broadcastLevelEvent(
         ::SharedTypes::Legacy::LevelEvent      type,
         ::Vec3 const&                          pos,
         int                                    data,
         ::UserEntityIdentifierComponent const* userIdentifierToExclude
     );
 
-    MCAPI void
+    MCNAPI void
     broadcastLocalEvent(::IDimension& dimension, ::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(bool isClientSide, ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> levelEventCoordinator);
+    MCNAPI void* $ctor(bool isClientSide, ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> levelEventCoordinator);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>&
+    MCNAPI ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>&
     $getLevelEventDataConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&)>&
+    MCNAPI ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&)>&
     $getLevelEventCompoundTagConnector();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -39,18 +39,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $getContentKey(::ContentIdentity const& contentIdentity) const;
+    MCNAPI ::std::string $getContentKey(::ContentIdentity const& contentIdentity) const;
 
-    MCFOLD bool $canAccess(::ContentIdentity const& contentIdentity) const;
+    MCNAPI bool $canAccess(::ContentIdentity const& contentIdentity) const;
 
-    MCFOLD void $setTempContentKeys(::std::unordered_map<::ContentIdentity, ::std::string> const&);
+    MCNAPI void $setTempContentKeys(::std::unordered_map<::ContentIdentity, ::std::string> const&);
 
-    MCFOLD void $clearTempContentKeys();
+    MCNAPI void $clearTempContentKeys();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

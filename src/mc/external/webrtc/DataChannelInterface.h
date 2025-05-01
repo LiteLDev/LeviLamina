@@ -108,7 +108,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static uint64 MaxSendQueueSize();
+    MCNAPI static uint64 MaxSendQueueSize();
     // NOLINTEND
 
 public:

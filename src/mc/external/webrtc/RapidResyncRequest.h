@@ -13,13 +13,13 @@ class RapidResyncRequest {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool Parse(::webrtc::rtcp::CommonHeader const&);
+    MCNAPI bool Parse(::webrtc::rtcp::CommonHeader const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

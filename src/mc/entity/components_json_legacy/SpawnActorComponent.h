@@ -25,10 +25,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI ::SpawnActorComponent& operator=(::SpawnActorComponent&&);
+    MCNAPI ::SpawnActorComponent& operator=(::SpawnActorComponent&&);
 
-    MCAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const&, ::DataLoadHelper&);
+    MCNAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const&, ::DataLoadHelper&);
     // NOLINTEND
 };

@@ -32,9 +32,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VersionRequestedBy(::Scripting::VersionRequestedBy&&);
+    MCNAPI VersionRequestedBy(::Scripting::VersionRequestedBy&&);
 
-    MCAPI VersionRequestedBy(
+    MCNAPI VersionRequestedBy(
         ::Scripting::Version          version_,
         ::Scripting::Version          originalVersion,
         ::Scripting::ModuleDescriptor by_,
@@ -48,9 +48,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::VersionRequestedBy&&);
+    MCNAPI void* $ctor(::Scripting::VersionRequestedBy&&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::Version          version_,
         ::Scripting::Version          originalVersion,
         ::Scripting::ModuleDescriptor by_,

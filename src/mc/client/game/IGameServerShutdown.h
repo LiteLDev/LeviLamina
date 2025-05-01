@@ -11,6 +11,9 @@ public:
 
     // vIndex: 1
     virtual void requestLeaveGame(bool, bool) = 0;
+
+    // vIndex: 2
+    virtual void requestLeaveThenJoinFriendsWorld(::std::string_view) = 0;
     // NOLINTEND
 
 public:

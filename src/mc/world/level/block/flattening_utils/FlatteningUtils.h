@@ -17,17 +17,17 @@ namespace FlatteningUtils { struct LegacyBlockInfo; }
 namespace FlatteningUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void addUpdate(
+MCNAPI void addUpdate(
     ::CompoundTagUpdaterContext&                                             context,
     uchar const* const                                                       version,
     ::FlatteningUtils::LegacyBlockInfo const&                                legacyBlockInfo,
     ::std::vector<::std::shared_ptr<::FlatteningUtils::RemovedState>> const& removedStates
 );
 
-MCAPI ::std::vector<::WeakPtr<::BlockLegacy const>>
+MCNAPI ::std::vector<::WeakPtr<::BlockLegacy const>>
 getComplexAliasBlocks(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64 expectedCount);
 
-MCAPI ::std::function<::Block const*(int)>
+MCNAPI ::std::function<::Block const*(int)>
 getSimpleBlockComplexAliasCallback(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64 expectedCount);
 // NOLINTEND
 

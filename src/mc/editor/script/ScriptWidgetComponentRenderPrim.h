@@ -53,7 +53,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWidgetComponentRenderPrim(
+    MCNAPI ScriptWidgetComponentRenderPrim(
         ::Editor::ServiceProviderCollection&                                     serviceProviders,
         ::mce::UUID const&                                                       componentId,
         ::std::string const&                                                     componentName,
@@ -67,13 +67,13 @@ public:
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentRenderPrimOptions> options
     );
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::Editor::RenderHelper::PrimitiveType,
         ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent,
         ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
     _getPrimitiveType() const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent,
         ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
@@ -87,13 +87,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentRenderPrim> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentRenderPrim>
+    bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                     serviceProviders,
         ::mce::UUID const&                                                       componentId,
         ::std::string const&                                                     componentName,
@@ -117,13 +118,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
+    MCNAPI ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

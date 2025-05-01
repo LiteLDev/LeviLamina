@@ -19,51 +19,51 @@ class AllocationSequence {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     AllocationSequence(::cricket::BasicPortAllocatorSession*, ::rtc::Network const*, ::cricket::PortConfiguration*, uint, ::std::function<void()>);
 
-    MCAPI void Clear();
+    MCNAPI void Clear();
 
-    MCAPI void CreateRelayPorts();
+    MCNAPI void CreateRelayPorts();
 
-    MCAPI void CreateStunPorts();
+    MCNAPI void CreateStunPorts();
 
-    MCAPI void CreateTCPPorts();
+    MCNAPI void CreateTCPPorts();
 
-    MCAPI void CreateTurnPort(::cricket::RelayServerConfig const&, int);
+    MCNAPI void CreateTurnPort(::cricket::RelayServerConfig const&, int);
 
-    MCAPI void CreateUDPPorts();
+    MCNAPI void CreateUDPPorts();
 
-    MCAPI void DisableEquivalentPhases(::rtc::Network const*, ::cricket::PortConfiguration*, uint*);
+    MCNAPI void DisableEquivalentPhases(::rtc::Network const*, ::cricket::PortConfiguration*, uint*);
 
-    MCAPI void Init();
+    MCNAPI void Init();
 
-    MCAPI void OnNetworkFailed();
+    MCNAPI void OnNetworkFailed();
 
-    MCAPI void OnPortDestroyed(::cricket::PortInterface*);
+    MCNAPI void OnPortDestroyed(::cricket::PortInterface*);
 
-    MCAPI void OnReadPacket(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const&);
+    MCNAPI void OnReadPacket(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const&);
 
-    MCAPI void Process(int);
+    MCNAPI void Process(int);
 
-    MCAPI void Start();
+    MCNAPI void Start();
 
-    MCAPI void Stop();
+    MCNAPI void Stop();
 
-    MCAPI ~AllocationSequence();
+    MCNAPI ~AllocationSequence();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::cricket::BasicPortAllocatorSession*, ::rtc::Network const*, ::cricket::PortConfiguration*, uint, ::std::function<void()>);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

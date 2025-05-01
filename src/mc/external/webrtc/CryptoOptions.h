@@ -58,31 +58,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CryptoOptions();
+    MCNAPI CryptoOptions();
 
-    MCAPI CryptoOptions(::webrtc::CryptoOptions const&);
+    MCNAPI CryptoOptions(::webrtc::CryptoOptions const&);
 
-    MCAPI ::std::vector<int> GetSupportedDtlsSrtpCryptoSuites() const;
+    MCNAPI ::std::vector<int> GetSupportedDtlsSrtpCryptoSuites() const;
 
-    MCAPI bool operator!=(::webrtc::CryptoOptions const&) const;
+    MCNAPI bool operator!=(::webrtc::CryptoOptions const&) const;
 
-    MCAPI bool operator==(::webrtc::CryptoOptions const&) const;
+    MCNAPI bool operator==(::webrtc::CryptoOptions const&) const;
 
-    MCAPI ~CryptoOptions();
+    MCNAPI ~CryptoOptions();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::webrtc::CryptoOptions const&);
+    MCNAPI void* $ctor(::webrtc::CryptoOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

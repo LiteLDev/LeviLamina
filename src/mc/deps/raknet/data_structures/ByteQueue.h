@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void WriteBytes(char const* in, uint length, char const* file, uint line);
+    MCNAPI void WriteBytes(char const* in, uint length, char const* file, uint line);
     // NOLINTEND
 };
 

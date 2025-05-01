@@ -29,55 +29,55 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::RTPVideoHeader::GenericDescriptorInfo
+    MCNAPI ::webrtc::RTPVideoHeader::GenericDescriptorInfo
     GenericDescriptorFromFrameInfo(::webrtc::GenericFrameInfo const&, int64);
 
-    MCAPI ::std::optional<::webrtc::FrameDependencyStructure> GenericStructure(::webrtc::CodecSpecificInfo const*);
+    MCNAPI ::std::optional<::webrtc::FrameDependencyStructure> GenericStructure(::webrtc::CodecSpecificInfo const*);
 
-    MCAPI void GenericToGeneric(int64, bool, ::webrtc::RTPVideoHeader*);
+    MCNAPI void GenericToGeneric(int64, bool, ::webrtc::RTPVideoHeader*);
 
-    MCAPI ::webrtc::RTPVideoHeader
+    MCNAPI ::webrtc::RTPVideoHeader
     GetRtpVideoHeader(::webrtc::EncodedImage const&, ::webrtc::CodecSpecificInfo const*, ::std::optional<int64>);
 
-    MCAPI void H264ToGeneric(::webrtc::CodecSpecificInfoH264 const&, int64, bool, ::webrtc::RTPVideoHeader*);
+    MCNAPI void H264ToGeneric(::webrtc::CodecSpecificInfoH264 const&, int64, bool, ::webrtc::RTPVideoHeader*);
 
-    MCAPI RtpPayloadParams(::webrtc::RtpPayloadParams const&);
+    MCNAPI RtpPayloadParams(::webrtc::RtpPayloadParams const&);
 
-    MCAPI RtpPayloadParams(uint, ::webrtc::RtpPayloadState const*, ::webrtc::FieldTrialsView const&);
+    MCNAPI RtpPayloadParams(uint, ::webrtc::RtpPayloadState const*, ::webrtc::FieldTrialsView const&);
 
-    MCAPI void SetCodecSpecific(::webrtc::RTPVideoHeader*, bool);
+    MCNAPI void SetCodecSpecific(::webrtc::RTPVideoHeader*, bool);
 
-    MCAPI void
+    MCNAPI void
     SetDependenciesVp8Deprecated(::webrtc::CodecSpecificInfoVP8 const&, int64, bool, int, int, bool, ::webrtc::RTPVideoHeader::GenericDescriptorInfo*);
 
-    MCAPI void
+    MCNAPI void
     SetDependenciesVp8New(::webrtc::CodecSpecificInfoVP8 const&, int64, bool, bool, ::webrtc::RTPVideoHeader::GenericDescriptorInfo*);
 
-    MCAPI void SetGeneric(::webrtc::CodecSpecificInfo const*, int64, bool, ::webrtc::RTPVideoHeader*);
+    MCNAPI void SetGeneric(::webrtc::CodecSpecificInfo const*, int64, bool, ::webrtc::RTPVideoHeader*);
 
-    MCAPI void Vp8ToGeneric(::webrtc::CodecSpecificInfoVP8 const&, int64, bool, ::webrtc::RTPVideoHeader*);
+    MCNAPI void Vp8ToGeneric(::webrtc::CodecSpecificInfoVP8 const&, int64, bool, ::webrtc::RTPVideoHeader*);
 
-    MCAPI void Vp9ToGeneric(::webrtc::CodecSpecificInfoVP9 const&, int64, ::webrtc::RTPVideoHeader&);
+    MCNAPI void Vp9ToGeneric(::webrtc::CodecSpecificInfoVP9 const&, int64, ::webrtc::RTPVideoHeader&);
 
-    MCAPI uint ssrc() const;
+    MCNAPI uint ssrc() const;
 
-    MCAPI ::webrtc::RtpPayloadState state() const;
+    MCNAPI ::webrtc::RtpPayloadState state() const;
 
-    MCAPI ~RtpPayloadParams();
+    MCNAPI ~RtpPayloadParams();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::RtpPayloadParams const&);
+    MCNAPI void* $ctor(::webrtc::RtpPayloadParams const&);
 
-    MCAPI void* $ctor(uint, ::webrtc::RtpPayloadState const*, ::webrtc::FieldTrialsView const&);
+    MCNAPI void* $ctor(uint, ::webrtc::RtpPayloadState const*, ::webrtc::FieldTrialsView const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

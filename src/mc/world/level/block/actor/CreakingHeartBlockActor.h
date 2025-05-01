@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated forward declare list
@@ -13,7 +14,6 @@ class DataLoadHelper;
 class ILevel;
 class Level;
 class SaveContext;
-struct ActorUniqueID;
 // clang-format on
 
 class CreakingHeartBlockActor : public ::BlockActor {
@@ -38,10 +38,10 @@ public:
     // vIndex: 3
     virtual bool saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -51,7 +51,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void despawnSpawnedCreaking(::Level& level);
+    MCNAPI void despawnSpawnedCreaking(::Level& level);
     // NOLINTEND
 
 public:
@@ -63,20 +63,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCFOLD bool $saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI void $onRemoved(::BlockSource& region);
+    MCNAPI void $onRemoved(::BlockSource& region);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

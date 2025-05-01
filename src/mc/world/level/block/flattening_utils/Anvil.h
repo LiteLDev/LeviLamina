@@ -11,9 +11,9 @@ namespace FlatteningUtils { struct Instance; }
 namespace FlatteningUtils::Anvil {
 // functions
 // NOLINTBEGIN
-MCAPI ::FlatteningUtils::Instance get();
+MCNAPI ::FlatteningUtils::Instance get();
 
-MCAPI ::std::function<::Block const*(int)> getBlockComplexAliasCallback();
+MCNAPI ::std::function<::Block const*(int)> getBlockComplexAliasCallback();
 // NOLINTEND
 
 } // namespace FlatteningUtils::Anvil

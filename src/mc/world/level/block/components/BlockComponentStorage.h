@@ -10,6 +10,7 @@ public:
     // BlockComponentStorage inner types declare
     // clang-format off
     struct ComponentBase;
+    template<typename T0> struct ComponentInstance;
     // clang-format on
 
     // BlockComponentStorage inner types define
@@ -27,6 +28,9 @@ public:
 
         // NOLINTEND
     };
+
+    template <typename T0>
+    struct ComponentInstance {};
 
 public:
     // member variables
@@ -47,14 +51,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addStatelessComponent(::Bedrock::typeid_t<void> typeId);
+    MCNAPI void _addStatelessComponent(::Bedrock::typeid_t<void> typeId);
 
-    MCAPI ~BlockComponentStorage();
+    MCNAPI ~BlockComponentStorage();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

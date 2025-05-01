@@ -3,55 +3,34 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/LiquidBlockBase.h"
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class Actor;
-class Block;
 class BlockPos;
 class BlockSource;
 class Experiments;
-class GetCollisionShapeInterface;
-class IConstBlockSource;
-class Material;
 class Random;
-class Vec3;
-struct BlockAnimateTickData;
-struct BlockGraphicsModeChangeContext;
-namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class LiquidBlock : public ::BlockLegacy {
+class LiquidBlock : public ::LiquidBlockBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 77
-    virtual bool mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const /*override*/;
-
-    // vIndex: 5
-    virtual ::AABB
-    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
-        const /*override*/;
-
-    // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
-
     // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 57
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    // vIndex: 137
+    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 115
-    virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
+    // vIndex: 147
+    virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const /*override*/;
 
     // vIndex: 131
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0
     virtual ~LiquidBlock() /*override*/ = default;
@@ -60,21 +39,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _solidify(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& changedNeighbor) const;
+    MCNAPI int _getSlopeDistance(::BlockSource& region, ::BlockPos const& pos, int pass, int from) const;
 
-    MCAPI void emitFizzParticle(::BlockSource& region, ::BlockPos const& p) const;
+    MCNAPI bool _isLiquidBlocking(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::BlockPos const& flowFromPos,
+        uchar             flowFromDirection
+    ) const;
 
-    MCAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void _spread(::BlockSource& region, ::BlockPos const& pos, int depth, bool preserveExisting) const;
 
-    MCAPI void solidify(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& changedNeighbor) const;
+    MCNAPI bool _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool onlyDetectStatic) const;
 
-    MCAPI void trySpreadFire(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-    // NOLINTEND
+    MCNAPI void _trySpreadTo(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        int               neighbor,
+        ::BlockPos const& flowFromPos,
+        uchar             flowFromDirection
+    ) const;
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Vec3 _getFlow(::IConstBlockSource const& region, ::BlockPos const& pos, ::Material const& material);
+    MCNAPI ::std::array<bool, 4> getSpread(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -86,26 +74,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCFOLD ::AABB
-    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
+    MCNAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
-
-    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
-
-    MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -4,7 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/components/ScriptComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace Scripting { class WeakLifetimeScope; }
+// clang-format on
 
 namespace ScriptModuleMinecraft {
 
@@ -27,32 +34,52 @@ public:
     // vIndex: 0
     virtual ~ScriptItemComponent() /*override*/;
 
-    // vIndex: 1
+    // vIndex: 3
     virtual bool _isValid() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptItemComponent(
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Scripting::WeakLifetimeScope const&                                        scope,
+        ::std::string const&                                                         id
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemComponent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemComponent> bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Scripting::WeakLifetimeScope const&                                        scope,
+        ::std::string const&                                                         id
+    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isValid() const;
+    MCNAPI bool $_isValid() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

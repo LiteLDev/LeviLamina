@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 // auto generated forward declare list
 // clang-format off
 class BlockSourceHandle;
-class Vec3;
 // clang-format on
 
 struct ChestBlockTryPairEvent {
@@ -20,12 +22,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ChestBlockTryPairEvent();
+    MCNAPI ~ChestBlockTryPairEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

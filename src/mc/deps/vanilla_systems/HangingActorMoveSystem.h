@@ -11,6 +11,6 @@ class HangingActorMoveSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::TickingSystemWithInfo> createSystems();
+    MCNAPI static ::std::vector<::TickingSystemWithInfo> createSystems();
     // NOLINTEND
 };

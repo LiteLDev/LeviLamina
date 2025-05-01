@@ -67,37 +67,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MinecraftDocumentInput(::SemVersion const& minModernVersion, ::std::string data);
+    MCNAPI MinecraftDocumentInput(::SemVersion const& minModernVersion, ::std::string data);
 
-    MCAPI void initAsBinary(::std::string data, ::Bedrock::Resources::BinaryHeader const& header);
+    MCNAPI void initAsBinary(::std::string data, ::Bedrock::Resources::BinaryHeader const& header);
 
-    MCAPI void initAsJson(::std::string data);
+    MCNAPI void initAsJson(::std::string data);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SemVersion const& minModernVersion, ::std::string data);
+    MCNAPI void* $ctor(::SemVersion const& minModernVersion, ::std::string data);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::SemVersion $version() const;
+    MCNAPI ::SemVersion $version() const;
 
-    MCAPI ::Puv::Input::Data $data() const;
+    MCNAPI ::Puv::Input::Data $data() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

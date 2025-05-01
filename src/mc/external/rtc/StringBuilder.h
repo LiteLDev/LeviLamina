@@ -20,23 +20,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::rtc::StringBuilder& AppendFormat(char const*, ...);
+    MCNAPI ::rtc::StringBuilder& AppendFormat(char const*, ...);
 
-    MCAPI ::rtc::StringBuilder& operator<<(ulong);
+    MCNAPI ::rtc::StringBuilder& operator<<(ulong);
 
-    MCAPI ::rtc::StringBuilder& operator<<(uint);
+    MCNAPI ::rtc::StringBuilder& operator<<(uint);
 
-    MCAPI ::rtc::StringBuilder& operator<<(int);
+    MCNAPI ::rtc::StringBuilder& operator<<(int);
 
-    MCAPI ::rtc::StringBuilder& operator<<(uint64);
+    MCNAPI ::rtc::StringBuilder& operator<<(uint64);
 
-    MCAPI ~StringBuilder();
+    MCNAPI ~StringBuilder();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

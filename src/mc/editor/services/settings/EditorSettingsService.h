@@ -151,88 +151,88 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EditorSettingsService(::Editor::ServiceProviderCollection& providers);
+    MCNAPI explicit EditorSettingsService(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCFOLD ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCFOLD ::Editor::Settings::Graphics& $getGraphicsSettings();
+    MCNAPI ::Editor::Settings::Graphics& $getGraphicsSettings();
 
-    MCFOLD ::Editor::Settings::Graphics const& $getGraphicsSettings() const;
+    MCNAPI ::Editor::Settings::Graphics const& $getGraphicsSettings() const;
 
-    MCFOLD ::Editor::Settings::Speed& $getSpeedSettings();
+    MCNAPI ::Editor::Settings::Speed& $getSpeedSettings();
 
-    MCFOLD ::Editor::Settings::Speed const& $getSpeedSettings() const;
+    MCNAPI ::Editor::Settings::Speed const& $getSpeedSettings() const;
 
-    MCFOLD ::Editor::Settings::Theme& $getThemeSettings();
+    MCNAPI ::Editor::Settings::Theme& $getThemeSettings();
 
-    MCFOLD ::Editor::Settings::Theme const& $getThemeSettings() const;
+    MCNAPI ::Editor::Settings::Theme const& $getThemeSettings() const;
 
-    MCAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     $listenForGraphicsSettingsChanged(::std::function<void(::Editor::Settings::GraphicsProps const&)> func);
 
-    MCAPI ::Bedrock::PubSub::Subscription
+    MCNAPI ::Bedrock::PubSub::Subscription
     $listenForSpeedSettingsChanged(::std::function<void(::Editor::Settings::SpeedProps const&)> func);
 
-    MCFOLD ::Bedrock::PubSub::Subscription
+    MCNAPI ::Bedrock::PubSub::Subscription
     $listenForThemeSettingsChanged(::std::function<void(::Editor::Settings::ThemeProps const&)> func);
 
-    MCAPI ::Bedrock::PubSub::Subscription $listenForCurrentThemeChanged(::std::function<void(::std::string const&)> func
-    );
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $listenForCurrentThemeChanged(::std::function<void(::std::string const&)> func);
 
-    MCAPI ::Bedrock::PubSub::Subscription $listenForNewThemeCreated(
+    MCNAPI ::Bedrock::PubSub::Subscription $listenForNewThemeCreated(
         ::std::function<
             void(::std::string const&, ::std::optional<::std::string> const&, ::std::optional<::std::string> const&)>
             func
     );
 
-    MCAPI ::Bedrock::PubSub::Subscription $listenForThemeColorUpdated(
+    MCNAPI ::Bedrock::PubSub::Subscription $listenForThemeColorUpdated(
         ::std::function<void(::std::string const&, ::Editor::Settings::ThemeSettingsColorKey, ::mce::Color const&)> func
     );
 
-    MCAPI ::Bedrock::PubSub::Subscription $listenForThemeDeleted(::std::function<void(::std::string const&)> func);
+    MCNAPI ::Bedrock::PubSub::Subscription $listenForThemeDeleted(::std::function<void(::std::string const&)> func);
 
-    MCFOLD void $_handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const&);
+    MCNAPI void $_handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const&);
 
-    MCFOLD void $_handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const&);
+    MCNAPI void $_handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const&);
 
-    MCFOLD void $_handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const&);
+    MCNAPI void $_handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const&);
 
-    MCFOLD void
+    MCNAPI void
     $_handleThemeSettingsCurrentThemeChangedPayload(::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const&);
 
-    MCFOLD void
+    MCNAPI void
     $_handleThemeSettingsNewThemeCreatedPayload(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const&);
 
-    MCFOLD void
+    MCNAPI void
     $_handleThemeSettingsThemeColorUpdatedPayload(::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const&);
 
-    MCFOLD void $_handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const&);
+    MCNAPI void $_handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEditorSettingsServiceProvider();
+    MCNAPI static void** $vftableForEditorSettingsServiceProvider();
 
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

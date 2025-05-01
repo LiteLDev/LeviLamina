@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 
 // auto generated forward declare list
 // clang-format off
 class BaseCircuitComponent;
-class BlockPos;
 class BlockSource;
 class ChunkPos;
 class CircuitComponentList;
@@ -41,13 +41,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~PendingEntry();
+        MCNAPI ~PendingEntry();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 

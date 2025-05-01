@@ -8,9 +8,9 @@ class BaseRtpStringExtension {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool Parse(::rtc::ArrayView<uchar const>, ::std::string*);
+    MCNAPI static bool Parse(::rtc::ArrayView<uchar const>, ::std::string*);
 
-    MCAPI static bool Write(::rtc::ArrayView<uchar>, ::std::string_view);
+    MCNAPI static bool Write(::rtc::ArrayView<uchar>, ::std::string_view);
     // NOLINTEND
 };
 

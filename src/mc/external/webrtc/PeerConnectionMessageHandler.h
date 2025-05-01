@@ -18,24 +18,24 @@ class PeerConnectionMessageHandler {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void PostCreateSessionDescriptionFailure(::webrtc::CreateSessionDescriptionObserver*, ::webrtc::RTCError);
+    MCNAPI void PostCreateSessionDescriptionFailure(::webrtc::CreateSessionDescriptionObserver*, ::webrtc::RTCError);
 
-    MCAPI void
+    MCNAPI void
     PostGetStats(::webrtc::StatsObserver*, ::webrtc::LegacyStatsCollectorInterface*, ::webrtc::MediaStreamTrackInterface*);
 
-    MCAPI void PostSetSessionDescriptionFailure(::webrtc::SetSessionDescriptionObserver*, ::webrtc::RTCError&&);
+    MCNAPI void PostSetSessionDescriptionFailure(::webrtc::SetSessionDescriptionObserver*, ::webrtc::RTCError&&);
 
-    MCAPI void PostSetSessionDescriptionSuccess(::webrtc::SetSessionDescriptionObserver*);
+    MCNAPI void PostSetSessionDescriptionSuccess(::webrtc::SetSessionDescriptionObserver*);
 
-    MCAPI void RequestUsagePatternReport(::std::function<void()>, int);
+    MCNAPI void RequestUsagePatternReport(::std::function<void()>, int);
 
-    MCAPI ~PeerConnectionMessageHandler();
+    MCNAPI ~PeerConnectionMessageHandler();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -13,29 +13,29 @@ struct LinkCapacityEstimator {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LinkCapacityEstimator();
+    MCNAPI LinkCapacityEstimator();
 
-    MCAPI ::webrtc::DataRate LowerBound() const;
+    MCNAPI ::webrtc::DataRate LowerBound() const;
 
-    MCAPI void OnOveruseDetected(::webrtc::DataRate);
+    MCNAPI void OnOveruseDetected(::webrtc::DataRate);
 
-    MCAPI void Reset();
+    MCNAPI void Reset();
 
-    MCAPI void Update(::webrtc::DataRate, double);
+    MCNAPI void Update(::webrtc::DataRate, double);
 
-    MCAPI ::webrtc::DataRate UpperBound() const;
+    MCNAPI ::webrtc::DataRate UpperBound() const;
 
-    MCAPI double deviation_estimate_kbps() const;
+    MCNAPI double deviation_estimate_kbps() const;
 
-    MCAPI ::webrtc::DataRate estimate() const;
+    MCNAPI ::webrtc::DataRate estimate() const;
 
-    MCAPI bool has_estimate() const;
+    MCNAPI bool has_estimate() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

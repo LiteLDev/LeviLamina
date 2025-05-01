@@ -55,29 +55,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseGameTestBatchRunner(
+    MCNAPI BaseGameTestBatchRunner(
         ::std::vector<::gametest::GameTestBatch>&& batches,
         ::gametest::GameTestTicker&                testTicker,
         ::gametest::TestParameters&&               params
     );
 
-    MCAPI void _addTestInstanceWithRotation(
+    MCNAPI void _addTestInstanceWithRotation(
         ::std::vector<::std::shared_ptr<::gametest::BaseGameTestInstance>>& instances,
         ::std::shared_ptr<::gametest::BaseGameTestFunction>                 testFunction,
         ::Rotation                                                          rotation
     );
 
-    MCAPI void _resetBatchTracker();
+    MCNAPI void _resetBatchTracker();
 
-    MCAPI void _runBatch(int batchIndex);
+    MCNAPI void _runBatch(int batchIndex);
 
-    MCAPI void start();
+    MCNAPI void start();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::vector<::gametest::GameTestBatch>&& batches,
         ::gametest::GameTestTicker&                testTicker,
         ::gametest::TestParameters&&               params
@@ -87,7 +87,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -99,7 +99,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

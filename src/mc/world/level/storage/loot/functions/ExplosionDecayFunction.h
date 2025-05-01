@@ -36,14 +36,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
+    MCNAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
-    MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
+    MCNAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

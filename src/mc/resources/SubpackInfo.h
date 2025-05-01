@@ -20,12 +20,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~SubpackInfo();
+    MCNAPI ~SubpackInfo();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

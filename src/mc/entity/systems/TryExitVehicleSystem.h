@@ -29,7 +29,7 @@ class TryExitVehicleSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tickTryExitVehicle(
+    MCNAPI static void _tickTryExitVehicle(
         ::StrictEntityContext const& entity,
         ::PassengerComponent const&  passengerComponent,
         ::ViewT<
@@ -44,6 +44,6 @@ public:
         ::EntityModifier<::StopRidingRequestComponent, ::ExitFromPassengerFlagComponent>& modifier
     );
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

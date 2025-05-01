@@ -28,12 +28,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void write(::BinaryStream& stream) const;
+    MCNAPI void write(::BinaryStream& stream) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::std::unique_ptr<::ItemStackRequestData>> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::std::unique_ptr<::ItemStackRequestData>> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

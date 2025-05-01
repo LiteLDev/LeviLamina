@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/certificates/WebToken.h"
+
 // auto generated forward declare list
 // clang-format off
 class Certificate;
-class WebToken;
 namespace Json { class Value; }
 // clang-format on
 
@@ -24,34 +26,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UnverifiedCertificate(::UnverifiedCertificate const& other);
+    MCNAPI UnverifiedCertificate(::UnverifiedCertificate const& other);
 
-    MCAPI void addToChain(::Json::Value& chain) const;
+    MCNAPI void addToChain(::Json::Value& chain) const;
 
-    MCAPI ::std::string getIdentityPublicKey() const;
+    MCNAPI ::std::string getIdentityPublicKey() const;
 
-    MCAPI ::std::string toString() const;
+    MCNAPI ::std::string toString() const;
 
-    MCAPI ::std::unique_ptr<::Certificate> verify(::std::vector<::std::string> const& trustedKeys) const;
+    MCNAPI ::std::unique_ptr<::Certificate> verify(::std::vector<::std::string> const& trustedKeys) const;
 
-    MCAPI ~UnverifiedCertificate();
+    MCNAPI ~UnverifiedCertificate();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::UnverifiedCertificate fromString(::std::string const& input);
+    MCNAPI static ::UnverifiedCertificate fromString(::std::string const& input);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UnverifiedCertificate const& other);
+    MCNAPI void* $ctor(::UnverifiedCertificate const& other);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

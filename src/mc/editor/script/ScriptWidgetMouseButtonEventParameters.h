@@ -28,11 +28,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<
+    MCNAPI static ::Scripting::ClassBindingBuilderReadOnly<
         ::Editor::ScriptModule::ScriptWidgetMouseButtonEventParameters>
     bindScript();
 
-    MCAPI static ::Scripting::EnumBindingBuilder<
+    MCNAPI static ::Scripting::EnumBindingBuilder<
         ::Editor::ScriptModule::ScriptWidgetMouseButtonEventType,
         ::Editor::ScriptModule::ScriptWidgetMouseButtonEventType>
     bindScriptEnum();

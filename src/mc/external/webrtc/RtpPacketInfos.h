@@ -49,13 +49,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~RtpPacketInfos();
+    MCNAPI ~RtpPacketInfos();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

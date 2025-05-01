@@ -13,17 +13,17 @@ class StructParametersParser {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string Encode() const;
+    MCNAPI ::std::string Encode() const;
 
-    MCAPI void Parse(::std::string_view);
+    MCNAPI void Parse(::std::string_view);
 
-    MCAPI explicit StructParametersParser(::std::vector<::webrtc::struct_parser_impl::MemberParameter>);
+    MCNAPI explicit StructParametersParser(::std::vector<::webrtc::struct_parser_impl::MemberParameter>);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::vector<::webrtc::struct_parser_impl::MemberParameter>);
+    MCNAPI void* $ctor(::std::vector<::webrtc::struct_parser_impl::MemberParameter>);
     // NOLINTEND
 };
 

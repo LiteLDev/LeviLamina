@@ -28,12 +28,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $handle(::NetworkIdentifier const&, ::ResourcePackClientResponsePacket const&);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ResourcePackClientResponsePacket const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -27,29 +27,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScatterChanceData(::SharedTypes::v1_21_10::ScatterChanceData&&);
+    MCNAPI ScatterChanceData(::SharedTypes::v1_21_10::ScatterChanceData&&);
 
-    MCAPI ::SharedTypes::v1_21_10::ScatterChanceData& operator=(::SharedTypes::v1_21_10::ScatterChanceData&&);
+    MCNAPI ::SharedTypes::v1_21_10::ScatterChanceData& operator=(::SharedTypes::v1_21_10::ScatterChanceData&&);
 
-    MCAPI ~ScatterChanceData();
+    MCNAPI ~ScatterChanceData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_10::ScatterChanceData&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_10::ScatterChanceData&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

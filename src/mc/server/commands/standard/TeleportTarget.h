@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/server/commands/standard/TeleportData.h"
+
 // auto generated forward declare list
 // clang-format off
 class ChangeDimensionRequest;
-class Vec2;
-struct TeleportData;
 // clang-format on
 
 class TeleportTarget {

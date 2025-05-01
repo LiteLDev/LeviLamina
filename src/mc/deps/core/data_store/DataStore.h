@@ -53,18 +53,18 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::Bedrock::JSONObject::Node*
+        MCNAPI ::Bedrock::JSONObject::Node*
         _setValueForKey(char const* key, uint64 keyLength, ::Bedrock::JSONObject::ValueWrapper const& value);
 
-        MCAPI void load();
+        MCNAPI void load();
 
-        MCAPI ~Impl();
+        MCNAPI ~Impl();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -100,7 +100,7 @@ public:
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -172,25 +172,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DataStore();
+    MCNAPI DataStore();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

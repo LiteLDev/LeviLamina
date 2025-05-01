@@ -13,12 +13,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkBlockPosition(::NetworkBlockPosition const& rhs);
+    MCNAPI NetworkBlockPosition(::NetworkBlockPosition const& rhs);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::NetworkBlockPosition const& rhs);
+    MCNAPI void* $ctor(::NetworkBlockPosition const& rhs);
     // NOLINTEND
 };

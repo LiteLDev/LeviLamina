@@ -36,13 +36,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~AckInfo();
+        MCNAPI ~AckInfo();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -54,11 +54,11 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void Abandon();
+        MCNAPI void Abandon();
 
-        MCAPI void Ack();
+        MCNAPI void Ack();
 
-        MCAPI Item(
+        MCNAPI Item(
             ::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint>,
             ::dcsctp::Data,
             ::webrtc::Timestamp,
@@ -67,17 +67,17 @@ public:
             ::dcsctp::LifecycleId
         );
 
-        MCAPI void MarkAsRetransmitted();
+        MCNAPI void MarkAsRetransmitted();
 
-        MCAPI ::dcsctp::OutstandingData::Item::NackAction Nack(bool);
+        MCNAPI ::dcsctp::OutstandingData::Item::NackAction Nack(bool);
 
-        MCAPI bool has_expired(::webrtc::Timestamp) const;
+        MCNAPI bool has_expired(::webrtc::Timestamp) const;
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint>,
             ::dcsctp::Data,
             ::webrtc::Timestamp,
@@ -91,49 +91,49 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AbandonAllFor(::dcsctp::OutstandingData::Item const&);
+    MCNAPI void AbandonAllFor(::dcsctp::OutstandingData::Item const&);
 
-    MCAPI void
+    MCNAPI void
     AckChunk(::dcsctp::OutstandingData::AckInfo&, ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>, ::dcsctp::OutstandingData::Item&);
 
-    MCAPI void
+    MCNAPI void
     AckGapBlocks(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>, ::rtc::ArrayView<::dcsctp::SackChunk::GapAckBlock const>, ::dcsctp::OutstandingData::AckInfo&);
 
-    MCAPI void BeginResetStreams();
+    MCNAPI void BeginResetStreams();
 
-    MCAPI ::dcsctp::ForwardTsnChunk CreateForwardTsn() const;
+    MCNAPI ::dcsctp::ForwardTsnChunk CreateForwardTsn() const;
 
-    MCAPI ::dcsctp::IForwardTsnChunk CreateIForwardTsn() const;
+    MCNAPI ::dcsctp::IForwardTsnChunk CreateIForwardTsn() const;
 
-    MCAPI void ExpireOutstandingChunks(::webrtc::Timestamp);
+    MCNAPI void ExpireOutstandingChunks(::webrtc::Timestamp);
 
-    MCAPI ::std::vector<::std::pair<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::dcsctp::Data>>
+    MCNAPI ::std::vector<::std::pair<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::dcsctp::Data>>
     ExtractChunksThatCanFit(
         ::std::set<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>>&,
         uint64
     );
 
-    MCAPI ::std::vector<::std::pair<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::dcsctp::Data>>
+    MCNAPI ::std::vector<::std::pair<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::dcsctp::Data>>
         GetChunksToBeFastRetransmitted(uint64);
 
-    MCAPI ::std::vector<::std::pair<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::dcsctp::Data>>
+    MCNAPI ::std::vector<::std::pair<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::dcsctp::Data>>
         GetChunksToBeRetransmitted(uint64);
 
-    MCAPI ::dcsctp::OutstandingData::Item const&
+    MCNAPI ::dcsctp::OutstandingData::Item const&
         GetItem(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>) const;
 
-    MCAPI ::dcsctp::OutstandingData::Item&
+    MCNAPI ::dcsctp::OutstandingData::Item&
         GetItem(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>);
 
-    MCAPI uint64 GetSerializedChunkSize(::dcsctp::Data const&) const;
+    MCNAPI uint64 GetSerializedChunkSize(::dcsctp::Data const&) const;
 
-    MCAPI ::dcsctp::OutstandingData::AckInfo HandleSack(
+    MCNAPI ::dcsctp::OutstandingData::AckInfo HandleSack(
         ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>,
         ::rtc::ArrayView<::dcsctp::SackChunk::GapAckBlock const>,
         bool
     );
 
-    MCAPI ::std::optional<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>> Insert(
+    MCNAPI ::std::optional<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>> Insert(
         ::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint>,
         ::dcsctp::Data const&,
         ::webrtc::Timestamp,
@@ -142,35 +142,35 @@ public:
         ::dcsctp::LifecycleId
     );
 
-    MCAPI ::webrtc::TimeDelta
+    MCNAPI ::webrtc::TimeDelta
         MeasureRTT(::webrtc::Timestamp, ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>)
             const;
 
-    MCAPI void NackAll();
+    MCNAPI void NackAll();
 
-    MCAPI void
+    MCNAPI void
     NackBetweenAckBlocks(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>, ::rtc::ArrayView<::dcsctp::SackChunk::GapAckBlock const>, bool, ::dcsctp::OutstandingData::AckInfo&);
 
-    MCAPI bool NackItem(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>, bool, bool);
+    MCNAPI bool NackItem(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>, bool, bool);
 
-    MCAPI
+    MCNAPI
     OutstandingData(uint64, ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>, ::std::function<bool(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>, ::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint>)>);
 
-    MCAPI void
+    MCNAPI void
     RemoveAcked(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>, ::dcsctp::OutstandingData::AckInfo&);
 
-    MCAPI void ResetSequenceNumbers(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>);
+    MCNAPI void ResetSequenceNumbers(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>);
 
-    MCAPI bool ShouldSendForwardTsn() const;
+    MCNAPI bool ShouldSendForwardTsn() const;
 
-    MCAPI ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>
+    MCNAPI ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>
     highest_outstanding_tsn() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
         $ctor(uint64, ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>, ::std::function<bool(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>, ::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint>)>);
     // NOLINTEND
 };

@@ -17,19 +17,19 @@ class ProxyConnection {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ProxyConnection(::rtc::WeakPtr<::cricket::PortInterface>, uint64, ::cricket::Candidate const&);
+    MCNAPI ProxyConnection(::rtc::WeakPtr<::cricket::PortInterface>, uint64, ::cricket::Candidate const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::WeakPtr<::cricket::PortInterface>, uint64, ::cricket::Candidate const&);
+    MCNAPI void* $ctor(::rtc::WeakPtr<::cricket::PortInterface>, uint64, ::cricket::Candidate const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

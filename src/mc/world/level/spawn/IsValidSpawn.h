@@ -13,15 +13,15 @@ namespace br::spawn { struct EntityType; }
 namespace IsValidSpawn {
 // functions
 // NOLINTBEGIN
-MCFOLD bool always(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const&);
+MCNAPI bool always(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const&);
 
-MCAPI bool fireImmune(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const& entityType);
+MCNAPI bool fireImmune(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const& entityType);
 
-MCFOLD bool never(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const&);
+MCNAPI bool never(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const&);
 
-MCAPI bool ocelotOrParrot(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const& entityType);
+MCNAPI bool ocelotOrParrot(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const& entityType);
 
-MCAPI bool polarBear(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const& entityType);
+MCNAPI bool polarBear(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const& entityType);
 // NOLINTEND
 
 } // namespace IsValidSpawn

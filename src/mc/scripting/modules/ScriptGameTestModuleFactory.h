@@ -35,9 +35,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addVersions();
+    MCNAPI void _addVersions();
 
-    MCAPI ::Scripting::ModuleBinding _generateBindings(
+    MCNAPI ::Scripting::ModuleBinding _generateBindings(
         ::Scripting::ModuleBindingBuilder&  moduleBuilder,
         bool                                allowUntagged,
         ::std::vector<::std::string> const& allowedTags
@@ -61,6 +61,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -24,19 +24,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptCameraFadeOptions();
+    MCNAPI ~ScriptCameraFadeOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptCameraFadeOptions> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptCameraFadeOptions> bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

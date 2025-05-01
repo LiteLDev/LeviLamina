@@ -31,15 +31,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint64 $threadId();
+    MCNAPI uint64 $threadId();
 
-    MCFOLD void $writeToDebugger(char const* area, ::HCTraceLevel level, char const* message);
+    MCNAPI void $writeToDebugger(char const* area, ::HCTraceLevel level, char const* message);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

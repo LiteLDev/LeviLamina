@@ -91,19 +91,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initialize();
+    MCNAPI void $initialize();
 
-    MCAPI ::std::string_view $getAssetRoot();
+    MCNAPI ::std::string_view $getAssetRoot();
 
-    MCAPI ::std::string_view $getSaveDataRoot();
+    MCNAPI ::std::string_view $getSaveDataRoot();
 
-    MCAPI ::Bedrock::PlatformBootstrap::LoadResult
+    MCNAPI ::Bedrock::PlatformBootstrap::LoadResult
     $rawLoadAssetFile(char* buffer, uint64 bufferSize, char const* path, char* errorBuffer, uint64 errorBufferSize);
 
-    MCAPI ::Bedrock::PlatformBootstrap::LoadResult
+    MCNAPI ::Bedrock::PlatformBootstrap::LoadResult
     $rawLoadDataFile(char* buffer, uint64 bufferSize, char const* path, char* errorBuffer, uint64 errorBufferSize);
 
-    MCAPI ::Bedrock::PlatformBootstrap::SaveResult $rawSaveDataFile(
+    MCNAPI ::Bedrock::PlatformBootstrap::SaveResult $rawSaveDataFile(
         char const* buffer,
         uint64      bufferSize,
         char const* path,
@@ -112,7 +112,7 @@ public:
         uint64 errorBufferSize
     );
 
-    MCAPI ::Bedrock::PlatformBootstrap::LoadResult $rawLoadFromCustomRoot(
+    MCNAPI ::Bedrock::PlatformBootstrap::LoadResult $rawLoadFromCustomRoot(
         char*       buffer,
         uint64      bufferSize,
         char const* fullPath,
@@ -120,14 +120,14 @@ public:
         uint64      errorBufferSize
     );
 
-    MCAPI ::Bedrock::PlatformBootstrap::CreateDirectoryResult
+    MCNAPI ::Bedrock::PlatformBootstrap::CreateDirectoryResult
     $rawCreateDirectory(char const* path, char* errorBuffer, uint64 errorBufferSize);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

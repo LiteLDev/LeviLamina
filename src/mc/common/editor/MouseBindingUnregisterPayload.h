@@ -35,32 +35,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MouseBindingUnregisterPayload(::Editor::Network::MouseBindingUnregisterPayload const&);
+    MCNAPI MouseBindingUnregisterPayload(::Editor::Network::MouseBindingUnregisterPayload const&);
 
-    MCAPI MouseBindingUnregisterPayload(::HashedString const& contextId, ::HashedString const& bindingId);
+    MCNAPI MouseBindingUnregisterPayload(::HashedString const& contextId, ::HashedString const& bindingId);
 
-    MCFOLD ::Editor::Network::MouseBindingUnregisterPayload&
+    MCNAPI ::Editor::Network::MouseBindingUnregisterPayload&
     operator=(::Editor::Network::MouseBindingUnregisterPayload const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::Network::MouseBindingUnregisterPayload const&);
+    MCNAPI void* $ctor(::Editor::Network::MouseBindingUnregisterPayload const&);
 
-    MCAPI void* $ctor(::HashedString const& contextId, ::HashedString const& bindingId);
+    MCNAPI void* $ctor(::HashedString const& contextId, ::HashedString const& bindingId);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

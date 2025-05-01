@@ -10,11 +10,11 @@ class EntityContext;
 namespace ActorEnvironment {
 // functions
 // NOLINTBEGIN
-MCFOLD bool getHeadInWater(::EntityContext const& provider);
+MCNAPI bool getHeadInWater(::EntityContext const& provider);
 
-MCFOLD bool getIsInWater(::EntityContext const& provider);
+MCNAPI bool getIsInWater(::EntityContext const& provider);
 
-MCAPI void setIsInWater(::EntityContext& provider, bool value);
+MCNAPI void setIsInWater(::EntityContext& provider, bool value);
 // NOLINTEND
 
 } // namespace ActorEnvironment

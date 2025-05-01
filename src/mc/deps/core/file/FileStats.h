@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void clear();
+    MCNAPI void clear();
     // NOLINTEND
 };
 

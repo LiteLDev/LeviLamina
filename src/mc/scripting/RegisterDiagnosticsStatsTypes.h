@@ -11,12 +11,12 @@ class RegisterDiagnosticsStatsTypes {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RegisterDiagnosticsStatsTypes(::cereal::ReflectionCtx& ctx);
+    MCNAPI explicit RegisterDiagnosticsStatsTypes(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx& ctx);
+    MCNAPI void* $ctor(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };

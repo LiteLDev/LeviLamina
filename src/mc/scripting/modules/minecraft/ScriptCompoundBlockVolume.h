@@ -37,19 +37,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptCompoundBlockVolume&
+    MCNAPI ::ScriptModuleMinecraft::ScriptCompoundBlockVolume&
     operator=(::ScriptModuleMinecraft::ScriptCompoundBlockVolume const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::EnumBindingBuilder<::CompoundBlockVolumeAction, ::CompoundBlockVolumeAction>
+    MCNAPI static ::Scripting::EnumBindingBuilder<::CompoundBlockVolumeAction, ::CompoundBlockVolumeAction>
     bindActionEnums();
 
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptCompoundBlockVolume> bindClass();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptCompoundBlockVolume> bindClass();
 
-    MCAPI static ::Scripting::
+    MCNAPI static ::Scripting::
         EnumBindingBuilder<::CompoundBlockVolumePositionRelativity, ::CompoundBlockVolumePositionRelativity>
         bindRelativeEnums();
     // NOLINTEND
@@ -63,7 +63,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

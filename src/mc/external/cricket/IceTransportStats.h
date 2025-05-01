@@ -12,21 +12,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI IceTransportStats(::cricket::IceTransportStats const&);
+    MCNAPI IceTransportStats(::cricket::IceTransportStats const&);
 
-    MCAPI ~IceTransportStats();
+    MCNAPI ~IceTransportStats();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::IceTransportStats const&);
+    MCNAPI void* $ctor(::cricket::IceTransportStats const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

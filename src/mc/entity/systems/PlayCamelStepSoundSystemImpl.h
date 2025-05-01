@@ -11,6 +11,7 @@
 class StrictEntityContext;
 struct ActorDataFlagComponent;
 struct ActorDefinitionIdentifierComponent;
+struct ActorUniqueIDComponent;
 struct CamelFlagComponent;
 struct CurrentlyStandingOnBlockComponent;
 struct DimensionTypeComponent;
@@ -22,13 +23,14 @@ struct SoundEventRequestQueueComponent;
 namespace PlayCamelStepSoundSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void tick(
+MCNAPI void tick(
     ::entt::type_list<::Include<::ShouldPlayStepSoundComponent, ::CamelFlagComponent>>,
     ::StrictEntityContext const&                                       entity,
-    ::ActorDefinitionIdentifierComponent const&                        actorDefinitionIdentifierComponent,
-    ::ActorDataFlagComponent const&                                    synchedActorDataComponent,
+    ::ActorDataFlagComponent const&                                    actorFlags,
+    ::ActorDefinitionIdentifierComponent const&                        actorIdentifier,
+    ::ActorUniqueIDComponent const&                                    actorUniqueID,
+    ::DimensionTypeComponent const&                                    dimensionType,
     ::CurrentlyStandingOnBlockComponent const&                         currentlyStandingOnBlockComponent,
-    ::DimensionTypeComponent const&                                    dimensionTypeComponent,
     ::SoundEventPlayerComponent const&                                 soundEventPlayerComponent,
     ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent>& requestQueueView
 );

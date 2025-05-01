@@ -23,25 +23,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ModuleResolveResult();
+    MCNAPI ModuleResolveResult();
 
-    MCAPI bool hasErrors() const;
+    MCNAPI bool hasErrors() const;
 
-    MCAPI ::Scripting::ModuleResolveResult& operator=(::Scripting::ModuleResolveResult&&);
+    MCNAPI ::Scripting::ModuleResolveResult& operator=(::Scripting::ModuleResolveResult&&);
 
-    MCAPI ~ModuleResolveResult();
+    MCNAPI ~ModuleResolveResult();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

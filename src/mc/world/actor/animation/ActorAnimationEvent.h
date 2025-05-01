@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/molang/MolangVersion.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
+#include "mc/util/ExpressionNode.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ExpressionNode;
-class HashedString;
 class RenderParams;
 // clang-format on
 
@@ -32,34 +32,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorAnimationEvent(::ActorAnimationEvent const&);
+    MCNAPI ActorAnimationEvent(::ActorAnimationEvent const&);
 
-    MCAPI ActorAnimationEvent(
+    MCNAPI ActorAnimationEvent(
         float                time,
         ::std::string const& event,
         ::CurrentCmdVersion  commandVersion,
         ::MolangVersion      molangVersion
     );
 
-    MCAPI void fire(::RenderParams& renderParams, ::Actor* actor) const;
+    MCNAPI void fire(::RenderParams& renderParams, ::Actor* actor) const;
 
-    MCAPI ::ActorAnimationEvent& operator=(::ActorAnimationEvent&&);
+    MCNAPI ::ActorAnimationEvent& operator=(::ActorAnimationEvent&&);
 
-    MCAPI ~ActorAnimationEvent();
+    MCNAPI ~ActorAnimationEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorAnimationEvent const&);
+    MCNAPI void* $ctor(::ActorAnimationEvent const&);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(float time, ::std::string const& event, ::CurrentCmdVersion commandVersion, ::MolangVersion molangVersion);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

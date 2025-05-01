@@ -24,15 +24,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool isPaused() const;
+    MCNAPI bool isPaused() const;
 
-    MCAPI ::Scripting::Result<void> setPaused(bool isPaused);
+    MCNAPI ::Scripting::Result<void> setPaused(bool isPaused);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::EditorSimulationState> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::EditorSimulationState> bindScript();
     // NOLINTEND
 };
 

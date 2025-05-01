@@ -16,7 +16,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk47090c;
-    ::ll::UntypedStorage<8, 8>  mUnk1eface;
+    ::ll::UntypedStorage<8, 8>  mUnk4bb523;
     // NOLINTEND
 
 public:
@@ -28,23 +28,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::rtc::Thread* GetRtcThread() const;
+    MCNAPI ::rtc::Thread* GetRtcThread() const;
 
-    MCAPI void Initialize(
+    MCNAPI void Initialize(
         char const*                              threadName,
         ::NetherNet::ThreadInit const&           threadInit,
         ::std::unique_ptr<::rtc::SocketServer>&& socketServer
     );
 
-    MCAPI void Shutdown();
-
-    MCAPI ~RtcThreadManager();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void Shutdown();
     // NOLINTEND
 };
 

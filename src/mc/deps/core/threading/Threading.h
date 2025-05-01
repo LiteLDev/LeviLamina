@@ -8,7 +8,7 @@
 namespace Bedrock::Threading {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::error_code MakeErrorCode(::Bedrock::Threading::AsyncErrc id);
+MCNAPI ::std::error_code MakeErrorCode(::Bedrock::Threading::AsyncErrc id);
 // NOLINTEND
 
 // static variables

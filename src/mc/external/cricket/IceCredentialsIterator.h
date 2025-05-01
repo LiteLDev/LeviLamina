@@ -13,27 +13,27 @@ class IceCredentialsIterator {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::cricket::IceParameters GetIceCredentials();
+    MCNAPI ::cricket::IceParameters GetIceCredentials();
 
-    MCAPI explicit IceCredentialsIterator(::std::vector<::cricket::IceParameters> const&);
+    MCNAPI explicit IceCredentialsIterator(::std::vector<::cricket::IceParameters> const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::cricket::IceParameters CreateRandomIceCredentials();
+    MCNAPI static ::cricket::IceParameters CreateRandomIceCredentials();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::vector<::cricket::IceParameters> const&);
+    MCNAPI void* $ctor(::std::vector<::cricket::IceParameters> const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

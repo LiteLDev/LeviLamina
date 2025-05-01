@@ -49,3 +49,4 @@ RemoveSemicolon: true
 # SeparateDefinitionBlocks: Always
 SortUsingDeclarations: LexicographicNumeric
 Standard: Latest
+LineEnding: CRLF

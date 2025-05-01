@@ -41,31 +41,31 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Duration();
+        MCNAPI Duration();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $reset();
+        MCNAPI void $reset();
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -102,13 +102,13 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $reset();
+        MCNAPI void $reset();
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -129,21 +129,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit EventScope(::PerfContextEvent eventType);
+        MCNAPI explicit EventScope(::PerfContextEvent eventType);
 
-        MCAPI ~EventScope();
+        MCNAPI ~EventScope();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::PerfContextEvent eventType);
+        MCNAPI void* $ctor(::PerfContextEvent eventType);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -174,12 +174,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _reset();
+    MCNAPI void _reset();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::PerfContextTracker& getInstance();
+    MCNAPI static ::PerfContextTracker& getInstance();
     // NOLINTEND
 };

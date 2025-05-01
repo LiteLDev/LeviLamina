@@ -28,11 +28,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PhotoStorage(::Core::Path const& baseDir);
+    MCNAPI explicit PhotoStorage(::Core::Path const& baseDir);
 
-    MCAPI void _readManifest();
+    MCNAPI void _readManifest();
 
-    MCAPI ~PhotoStorage();
+    MCNAPI ~PhotoStorage();
     // NOLINTEND
 
 public:
@@ -50,12 +50,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::Path const& baseDir);
+    MCNAPI void* $ctor(::Core::Path const& baseDir);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

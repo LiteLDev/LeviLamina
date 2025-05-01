@@ -28,29 +28,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSettingsService(::Editor::ScriptModule::ScriptSettingsService&&);
+    MCNAPI ScriptSettingsService(::Editor::ScriptModule::ScriptSettingsService&&);
 
-    MCAPI ::Editor::ScriptModule::ScriptSettingsService& operator=(::Editor::ScriptModule::ScriptSettingsService&&);
+    MCNAPI ::Editor::ScriptModule::ScriptSettingsService& operator=(::Editor::ScriptModule::ScriptSettingsService&&);
 
-    MCAPI ~ScriptSettingsService();
+    MCNAPI ~ScriptSettingsService();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptSettingsService> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptSettingsService> bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ScriptModule::ScriptSettingsService&&);
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptSettingsService&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

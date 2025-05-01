@@ -57,23 +57,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::NetherNet::ErrorOr<void, ::std::error_code> $SetKey(uint64 id);
+    MCNAPI ::NetherNet::ErrorOr<void, ::std::error_code> $SetKey(uint64 id);
 
-    MCAPI int $Send(void const* pv, uint64 cb);
+    MCNAPI int $Send(void const* pv, uint64 cb);
 
-    MCAPI int $SendTo(void const* pv, uint64 cb, ::rtc::SocketAddress const& addr);
+    MCNAPI int $SendTo(void const* pv, uint64 cb, ::rtc::SocketAddress const& addr);
 
-    MCAPI int $Recv(void* pv, uint64 cb, int64* timestamp);
+    MCNAPI int $Recv(void* pv, uint64 cb, int64* timestamp);
 
-    MCAPI int $RecvFrom(void* pv, uint64 cb, ::rtc::SocketAddress* paddr, int64* timestamp);
+    MCNAPI int $RecvFrom(void* pv, uint64 cb, ::rtc::SocketAddress* paddr, int64* timestamp);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForHasSlots();
+    MCNAPI static void** $vftableForHasSlots();
 
-    MCAPI static void** $vftableForSocket();
+    MCNAPI static void** $vftableForSocket();
     // NOLINTEND
 };
 

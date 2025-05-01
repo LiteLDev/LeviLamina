@@ -7,12 +7,17 @@
 #include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
 #include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/actor/Actor.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/ArmorMaterialType.h"
+#include "mc/world/actor/BuiltInMobComponents.h"
 #include "mc/world/actor/MobSpawnMethod.h"
 #include "mc/world/actor/TravelType.h"
+#include "mc/world/item/ClockSpriteCalculator.h"
+#include "mc/world/item/CompassSpriteCalculator.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,10 +26,7 @@ class ActorDamageSource;
 class ActorDefinitionGroup;
 class BaseAttributeMap;
 class Block;
-class BlockPos;
 class BodyControl;
-class ClockSpriteCalculator;
-class CompassSpriteCalculator;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
@@ -36,8 +38,6 @@ class SaveContext;
 class SynchedActorDataWriter;
 class Vec3;
 struct ActorDefinitionIdentifier;
-struct ActorUniqueID;
-struct BuiltInMobComponents;
 struct JumpPreventionResult;
 struct LegacyGoalDefinition;
 struct VariantParameterList;
@@ -56,14 +56,12 @@ public:
     ::ll::TypedStorage<4, 12, ::ClockSpriteCalculator>   mClockSpriteCalc;
     ::ll::TypedStorage<4, 4, float>                      mAttackAnim;
     ::ll::TypedStorage<4, 4, int>                        mSwingTime;
-    ::ll::TypedStorage<4, 4, int>                        mDeathTime;
     ::ll::TypedStorage<8, 16, ::BuiltInMobComponents>    mBuiltInMobComponents;
     ::ll::TypedStorage<4, 4, float>                      mMovementComponentCurrentSpeed;
     ::ll::TypedStorage<1, 1, bool>                       mSwinging;
     ::ll::TypedStorage<1, 1, bool>                       mSurfaceMob;
     ::ll::TypedStorage<1, 1, bool>                       mNaturallySpawned;
     ::ll::TypedStorage<1, 1, bool>                       mWantsToBeJockey;
-    ::ll::TypedStorage<1, 1, bool>                       mSpawnedXP;
     ::ll::TypedStorage<1, 1, bool>                       mHasBoundOrigin;
     ::ll::TypedStorage<1, 2, ::std::optional<bool>>      mActuallyDoKnockbackOrNotReallyBadHackDoNotUse;
     ::ll::TypedStorage<1, 1, ::MobSpawnMethod>           mSpawnMethod;
@@ -168,7 +166,7 @@ public:
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     // vIndex: 149
     virtual int getItemUseDuration() const;
@@ -321,7 +319,7 @@ public:
     virtual void tickDeath();
 
     // vIndex: 137
-    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
+    virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
 
     // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
@@ -436,6 +434,8 @@ public:
 
     MCAPI void hurtArmor(::ActorDamageSource const& source, int dmg);
 
+    MCAPI bool isSprinting() const;
+
     MCAPI void jumpFromGround();
 
     MCAPI void knockback(::Actor* source, int dmg, float xd, float zd, float horizontalPower, float verticalPower);
@@ -451,6 +451,8 @@ public:
     MCAPI ::std::unique_ptr<::ListTag> saveOffhand(::SaveContext const& saveContext) const;
 
     MCAPI void sendArmorSlot(::SharedTypes::Legacy::ArmorSlot slot);
+
+    MCAPI void setDeathTime(int ticks);
 
     MCAPI void setEatCounter(int value);
 
@@ -573,7 +575,7 @@ public:
 
     MCAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCFOLD int $getItemUseDuration() const;
 
@@ -658,7 +660,7 @@ public:
 
     MCAPI void $tickDeath();
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 

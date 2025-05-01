@@ -64,30 +64,30 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCFOLD ::Editor::Mode $getMode() const;
+    MCNAPI ::Editor::Mode $getMode() const;
 
-    MCAPI ::Scripting::Result<void> $trySetMode(::Editor::Mode newMode);
+    MCNAPI ::Scripting::Result<void> $trySetMode(::Editor::Mode newMode);
 
-    MCFOLD ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     $listenForModeChange(::std::function<void(::Editor::Mode, ::Editor::Mode)> func);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForModeServiceProvider();
+    MCNAPI static void** $vftableForModeServiceProvider();
 
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

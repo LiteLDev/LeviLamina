@@ -25,31 +25,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Response();
+    MCNAPI Response();
 
-    MCAPI Response(::Bedrock::Http::Response const&);
+    MCNAPI Response(::Bedrock::Http::Response const&);
 
-    MCAPI explicit Response(::Bedrock::Http::Status status);
+    MCNAPI explicit Response(::Bedrock::Http::Status status);
 
-    MCAPI ::gsl::span<uchar const> getBodyAsBytes() const;
+    MCNAPI ::gsl::span<uchar const> getBodyAsBytes() const;
 
-    MCAPI ~Response();
+    MCNAPI ~Response();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::Bedrock::Http::Response const&);
+    MCNAPI void* $ctor(::Bedrock::Http::Response const&);
 
-    MCAPI void* $ctor(::Bedrock::Http::Status status);
+    MCNAPI void* $ctor(::Bedrock::Http::Status status);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

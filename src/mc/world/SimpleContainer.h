@@ -26,7 +26,7 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 20
     virtual int getContainerSize() const /*override*/;
@@ -54,25 +54,25 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCNAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCNAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
-    MCFOLD int $getContainerSize() const;
+    MCNAPI int $getContainerSize() const;
 
-    MCFOLD int $getMaxStackSize() const;
+    MCNAPI int $getMaxStackSize() const;
 
-    MCFOLD void $startOpen(::Player&);
+    MCNAPI void $startOpen(::Player&);
 
-    MCFOLD void $stopOpen(::Player& player);
+    MCNAPI void $stopOpen(::Player& player);
 
-    MCAPI void $serverInitItemStackIds(
+    MCNAPI void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
@@ -82,6 +82,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

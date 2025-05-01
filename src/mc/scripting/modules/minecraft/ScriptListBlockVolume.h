@@ -39,35 +39,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptListBlockVolume();
+    MCNAPI ScriptListBlockVolume();
 
-    MCAPI ScriptListBlockVolume(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
+    MCNAPI ScriptListBlockVolume(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
 
-    MCAPI ScriptListBlockVolume(::ScriptModuleMinecraft::ScriptListBlockVolume const&);
+    MCNAPI ScriptListBlockVolume(::ScriptModuleMinecraft::ScriptListBlockVolume const&);
 
-    MCAPI explicit ScriptListBlockVolume(::std::vector<::Vec3> const& locations);
+    MCNAPI explicit ScriptListBlockVolume(::std::vector<::Vec3> const& locations);
 
-    MCAPI void add(::std::vector<::Vec3> const& locations);
+    MCNAPI void add(::std::vector<::Vec3> const& locations);
 
-    MCAPI void remove(::std::vector<::Vec3> const& locations);
+    MCNAPI void remove(::std::vector<::Vec3> const& locations);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptListBlockVolume> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptListBlockVolume> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume const&);
 
-    MCAPI void* $ctor(::std::vector<::Vec3> const& locations);
+    MCNAPI void* $ctor(::std::vector<::Vec3> const& locations);
     // NOLINTEND
 
 public:
@@ -79,16 +79,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
     $getBlockLocationIterator(::Scripting::WeakLifetimeScope scope);
 
-    MCAPI ::std::unique_ptr<::BaseBlockLocationIterator> $createBlockLocationIterator();
+    MCNAPI ::std::unique_ptr<::BaseBlockLocationIterator> $createBlockLocationIterator();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

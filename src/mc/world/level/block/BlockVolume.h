@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/Pos.h"
+
 // auto generated forward declare list
 // clang-format off
 class Block;
-class Pos;
 // clang-format on
 
 class BlockVolume {
@@ -52,6 +54,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::std::vector<short>> computeHeightMap() const;
+    MCNAPI ::std::unique_ptr<::std::vector<short>> computeHeightMap() const;
     // NOLINTEND
 };

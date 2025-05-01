@@ -6,12 +6,12 @@
 #include "mc/client/gui/screens/models/ManifestContentItem.h"
 #include "mc/client/gui/screens/models/PackListType.h"
 #include "mc/client/gui/screens/models/PackReportState.h"
+#include "mc/resources/PackReport.h"
+#include "mc/resources/SubpackInfoCollection.h"
 
 // auto generated forward declare list
 // clang-format off
-class PackReport;
 class PackSettings;
-class SubpackInfoCollection;
 // clang-format on
 
 struct PackContentItem : public ::ManifestContentItem {

@@ -86,23 +86,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::NetworkIdentifierWithSubId> _findRelevantPlayersToSendUpdate();
+    MCNAPI ::std::vector<::NetworkIdentifierWithSubId> _findRelevantPlayersToSendUpdate();
 
-    MCAPI uint64 _getOptimizationScore(::Player& player) const;
+    MCNAPI uint64 _getOptimizationScore(::Player& player) const;
 
-    MCAPI void _initializeLastSentValues();
+    MCNAPI void _initializeLastSentValues();
 
-    MCAPI bool _shouldUpdateBasedOptimizationOnScore(::Player& player) const;
+    MCNAPI bool _shouldUpdateBasedOptimizationOnScore(::Player& player) const;
 
-    MCAPI void handleClientData(::MoveActorAbsoluteData const& moveData);
+    MCNAPI void handleClientData(::MoveActorAbsoluteData const& moveData);
 
-    MCAPI void sendUpdate(bool forceTeleport, bool forceMoveLocalEntity, bool forceAbsoluteMovement);
+    MCNAPI void sendUpdate(bool forceTeleport, bool forceMoveLocalEntity, bool forceAbsoluteMovement);
 
-    MCAPI bool shouldSendMotionPredictionHintsPacket() const;
+    MCNAPI bool shouldSendMotionPredictionHintsPacket() const;
 
-    MCAPI bool shouldSendUpdate(bool forceTeleport, bool forceMoveLocalEntity) const;
+    MCNAPI bool shouldSendUpdate(bool forceTeleport, bool forceMoveLocalEntity) const;
 
-    MCAPI void teleportEntity(::Vec3 const& pos, ::Vec2 const& rot, float yHeadRot);
+    MCNAPI void teleportEntity(::Vec3 const& pos, ::Vec2 const& rot, float yHeadRot);
     // NOLINTEND
 
 public:

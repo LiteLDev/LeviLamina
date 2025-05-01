@@ -3,23 +3,30 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/Brightness.h"
+#include "mc/common/BrightnessPair.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/world/level/BlockChangedEventTarget.h"
 #include "mc/world/level/LevelListener.h"
+#include "mc/world/level/chunk/LevelChunkGarbageCollector.h"
+#include "mc/world/level/dimension/ActorReplication.h"
+#include "mc/world/level/dimension/DimensionHeightRange.h"
 #include "mc/world/level/dimension/IDimension.h"
 #include "mc/world/level/dimension/LimboEntitiesVersion.h"
+#include "mc/world/level/levelgen/v1/FeatureTerrainAdjustments.h"
+#include "mc/world/level/levelgen/v2/providers/IntProvider.h"
 #include "mc/world/level/saveddata/SavedData.h"
 #include "mc/world/level/storage/StorageVersion.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorReplication;
 class BaseLightTextureImageBuilder;
 class BiomeRegistry;
 class Block;
@@ -35,16 +42,13 @@ class CircuitSystem;
 class CompoundTag;
 class DelayActionList;
 class DimensionBrightnessRamp;
-class DimensionHeightRange;
 class EntityContext;
-class FeatureTerrainAdjustments;
 class GameEventDispatcher;
 class HashedString;
 class ILevel;
 class ILevelStorageManagerConnector;
 class LevelChunk;
 class LevelChunkBuilderData;
-class LevelChunkGarbageCollector;
 class LevelChunkMetaData;
 class Packet;
 class Player;
@@ -64,11 +68,7 @@ class WireframeQueue;
 class WorldGenerator;
 struct ActorBlockSyncMessage;
 struct ActorChunkTransferEntry;
-struct ActorUniqueID;
 struct ActorUnloadedChunkTransferEntry;
-struct Brightness;
-struct BrightnessPair;
-struct IntProvider;
 struct NetworkIdentifierWithSubId;
 struct UpdateSubChunkBlocksChangedInfo;
 namespace br::worldgen { class StructureSetRegistry; }
@@ -157,22 +157,22 @@ public:
     // vIndex: 0
     virtual ~Dimension() /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual void init(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
-    // vIndex: 14
+    // vIndex: 15
     virtual void tick();
 
-    // vIndex: 15
+    // vIndex: 16
     virtual void tickRedstone();
 
-    // vIndex: 16
+    // vIndex: 17
     virtual ::std::unique_ptr<::WorldGenerator> createGenerator(::br::worldgen::StructureSetRegistry const&) = 0;
 
-    // vIndex: 17
+    // vIndex: 18
     virtual void upgradeLevelChunk(::ChunkSource&, ::LevelChunk&, ::LevelChunk&) = 0;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual void fixWallChunk(::ChunkSource&, ::LevelChunk&) = 0;
 
     // vIndex: 6
@@ -180,37 +180,37 @@ public:
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector
     ) /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual bool levelChunkNeedsUpgrade(::LevelChunk const&) const = 0;
 
     // vIndex: 1
     virtual bool isNaturalDimension() const /*override*/;
 
-    // vIndex: 20
+    // vIndex: 21
     virtual bool isValidSpawn(int x, int z) const;
 
-    // vIndex: 21
+    // vIndex: 22
     virtual ::mce::Color getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual short getCloudHeight() const;
 
-    // vIndex: 23
+    // vIndex: 24
     virtual ::HashedString getDefaultBiome() const;
 
-    // vIndex: 24
+    // vIndex: 25
     virtual bool mayRespawnViaBed() const;
 
-    // vIndex: 25
+    // vIndex: 26
     virtual ::BlockPos getSpawnPos() const;
 
-    // vIndex: 26
+    // vIndex: 27
     virtual int getSpawnYPosition() const;
 
-    // vIndex: 27
+    // vIndex: 28
     virtual bool showSky() const;
 
-    // vIndex: 28
+    // vIndex: 29
     virtual float getTimeOfDay(int time, float a) const;
 
     // vIndex: 2
@@ -231,7 +231,7 @@ public:
     // vIndex: 11
     virtual ::Actor* fetchEntity(::ActorUniqueID actorID, bool getRemoved) const /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual void onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
     // vIndex: 1
@@ -240,11 +240,18 @@ public:
     // vIndex: 2
     virtual void serialize(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 29
+    // vIndex: 30
     virtual void sendBroadcast(::Packet const& packet, ::Player* except);
 
-    // vIndex: 30
+    // vIndex: 31
     virtual bool is2DPositionRelevantForPlayer(::BlockPos const& position, ::Player& player) const;
+
+    // vIndex: 13
+    virtual void buildPlayersForPositionPacket(
+        ::BlockPos const&                            position,
+        ::Player const*                              except,
+        ::std::vector<::NetworkIdentifierWithSubId>& result
+    ) const /*override*/;
 
     // vIndex: 3
     virtual void
@@ -253,7 +260,7 @@ public:
     // vIndex: 4
     virtual void sendPacketForEntity(::Actor const& actor, ::Packet const& packet, ::Player const* except) /*override*/;
 
-    // vIndex: 31
+    // vIndex: 32
     virtual bool isActorRelevantForPlayer(::Player& player, ::Actor const& actor) const;
 
     // vIndex: 8
@@ -272,28 +279,28 @@ public:
         ::Actor*                       blockChangeSource
     ) /*override*/;
 
-    // vIndex: 23
+    // vIndex: 24
     virtual void onLevelDestruction(::std::string const&) /*override*/;
 
-    // vIndex: 32
+    // vIndex: 33
     virtual ::BaseLightTextureImageBuilder* getLightTextureImageBuilder() const;
 
-    // vIndex: 33
+    // vIndex: 34
     virtual ::DimensionBrightnessRamp const& getBrightnessRamp() const;
 
-    // vIndex: 34
+    // vIndex: 35
     virtual void startLeaveGame();
 
     // vIndex: 5
     virtual void flushLevelChunkGarbageCollector() /*override*/;
 
-    // vIndex: 35
+    // vIndex: 36
     virtual ::std::unique_ptr<::ChunkBuildOrderPolicyBase> _createChunkBuildOrderPolicy();
 
-    // vIndex: 36
+    // vIndex: 37
     virtual void _upgradeOldLimboEntity(::CompoundTag&, ::LimboEntitiesVersion) = 0;
 
-    // vIndex: 37
+    // vIndex: 38
     virtual ::std::unique_ptr<::ChunkSource>
         _wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource>, ::StorageVersion) = 0;
     // NOLINTEND
@@ -459,6 +466,12 @@ public:
     MCAPI void $sendBroadcast(::Packet const& packet, ::Player* except);
 
     MCAPI bool $is2DPositionRelevantForPlayer(::BlockPos const& position, ::Player& player) const;
+
+    MCAPI void $buildPlayersForPositionPacket(
+        ::BlockPos const&                            position,
+        ::Player const*                              except,
+        ::std::vector<::NetworkIdentifierWithSubId>& result
+    ) const;
 
     MCAPI void $sendPacketForPosition(::BlockPos const& position, ::Packet const& packet, ::Player const* except);
 

@@ -21,16 +21,16 @@ namespace webrtc { class StatsReport; }
 namespace NetherNet {
 // functions
 // NOLINTBEGIN
-MCAPI ::NetherNet::ErrorOr<::std::unique_ptr<::NetherNet::AesContext>, ::std::error_code> CreateEnvelope(uint64 id);
+MCNAPI ::NetherNet::ErrorOr<::std::unique_ptr<::NetherNet::AesContext>, ::std::error_code> CreateEnvelope(uint64 id);
 
-MCAPI ::NetherNet::ErrorOr<::std::vector<uchar>, ::std::error_code> CreateKey(uint64 id);
+MCNAPI ::NetherNet::ErrorOr<::std::vector<uchar>, ::std::error_code> CreateKey(uint64 id);
 
-MCAPI bool
+MCNAPI bool
 GetValue(::webrtc::StatsReport const* report, ::webrtc::StatsReport::StatsValueName name, ::std::string* value);
 
-MCAPI void InitializeNetherNetTransport(::NetherNet::NetherNetTransportGlobalConfiguration const& config);
+MCNAPI void InitializeNetherNetTransport(::NetherNet::NetherNetTransportGlobalConfiguration const& config);
 
-MCAPI ::std::optional<::std::variant<
+MCNAPI ::std::optional<::std::variant<
     ::NetherNet::ConnectRequest,
     ::NetherNet::ConnectResponse,
     ::NetherNet::ConnectError,

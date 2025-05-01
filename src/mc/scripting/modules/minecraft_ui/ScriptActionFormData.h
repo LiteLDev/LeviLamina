@@ -39,26 +39,29 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 216> mUnke42b0c;
+        ::ll::UntypedStorage<8, 32>  mUnke9ed33;
         ::ll::UntypedStorage<8, 40>  mUnk19a1cd;
         ::ll::UntypedStorage<8, 40>  mUnkaa1e0d;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        ButtonData& operator=(ButtonData const&);
         ButtonData(ButtonData const&);
         ButtonData();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ButtonData();
+        MCNAPI ::ScriptModuleMinecraftServerUI::ScriptActionFormData::ButtonData&
+        operator=(::ScriptModuleMinecraftServerUI::ScriptActionFormData::ButtonData const&);
+
+        MCNAPI ~ButtonData();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -78,31 +81,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActionFormData(::ScriptModuleMinecraftServerUI::ScriptActionFormData&&);
+    MCNAPI ScriptActionFormData(::ScriptModuleMinecraftServerUI::ScriptActionFormData&&);
 
-    MCAPI ScriptActionFormData(::ScriptModuleMinecraftServerUI::ScriptActionFormData const&);
+    MCNAPI ScriptActionFormData(::ScriptModuleMinecraftServerUI::ScriptActionFormData const&);
 
-    MCAPI ::Scripting::Result_deprecated<::Json::Value>
+    MCNAPI ::Scripting::Result_deprecated<::Json::Value>
     _buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptActionFormData>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptActionFormData>
     body(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> text);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptActionFormData>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptActionFormData>
     bodyV010(::std::string const& text);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptActionFormData> button(
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptActionFormData> button(
         ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> text,
         ::std::optional<::std::string>                                                    iconPath
     );
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptActionFormData>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptActionFormData>
     buttonV010(::std::string const& text, ::std::optional<::std::string> iconPath);
 
-    MCAPI ::ScriptModuleMinecraftServerUI::ScriptActionFormData&
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptActionFormData> divider();
+
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptActionFormData>
+    header(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> text);
+
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptActionFormData>
+    label(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> text);
+
+    MCNAPI ::ScriptModuleMinecraftServerUI::ScriptActionFormData&
     operator=(::ScriptModuleMinecraftServerUI::ScriptActionFormData&&);
 
-    MCAPI ::Scripting::Result_deprecated<::Scripting::Promise<
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptActionFormResponse>,
         ::ScriptModuleMinecraftServerUI::ScriptFormRejectError,
         void>>
@@ -113,33 +124,33 @@ public:
         ::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer
     );
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptActionFormData>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptActionFormData>
     title(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> title);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptActionFormData>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptActionFormData>
     titleV010(::std::string const& title);
 
-    MCAPI ~ScriptActionFormData();
+    MCNAPI ~ScriptActionFormData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftServerUI::ScriptActionFormData> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftServerUI::ScriptActionFormData> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptActionFormData&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptActionFormData&&);
 
-    MCAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptActionFormData const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptActionFormData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

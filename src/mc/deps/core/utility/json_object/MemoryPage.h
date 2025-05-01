@@ -25,20 +25,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void* _allocate(
+    MCNAPI void* _allocate(
         uint64 (Bedrock::JSONObject::MemoryPage::*allocateFn)(uint64, uint64),
         void* (Bedrock::JSONObject::MemoryPage::*forwardFn)(uint64, uint64),
         uint64 bytes,
         uint64 align
     );
 
-    MCAPI uint64 _tryAllocateBack(uint64 bytes, uint64 align);
+    MCNAPI uint64 _tryAllocateBack(uint64 bytes, uint64 align);
 
-    MCAPI uint64 _tryAllocateFront(uint64 bytes, uint64 align);
+    MCNAPI uint64 _tryAllocateFront(uint64 bytes, uint64 align);
 
-    MCAPI void* allocateBack(uint64 bytes, uint64 align);
+    MCNAPI void* allocateBack(uint64 bytes, uint64 align);
 
-    MCAPI void* allocateFront(uint64 bytes, uint64 align);
+    MCNAPI void* allocateFront(uint64 bytes, uint64 align);
     // NOLINTEND
 };
 

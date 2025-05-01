@@ -72,34 +72,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorAnimationPlayer(::HashedString const& friendlyName, ::ExpressionNode const& blendExpression);
+    MCNAPI ActorAnimationPlayer(::HashedString const& friendlyName, ::ExpressionNode const& blendExpression);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::HashedString const& friendlyName, ::ExpressionNode const& blendExpression);
+    MCNAPI void* $ctor(::HashedString const& friendlyName, ::ExpressionNode const& blendExpression);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $buildBoneToPartMapping(::AnimationComponent&);
+    MCNAPI void $buildBoneToPartMapping(::AnimationComponent&);
 
-    MCFOLD void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const&);
+    MCNAPI void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const&);
 
-    MCFOLD void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const&);
+    MCNAPI void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

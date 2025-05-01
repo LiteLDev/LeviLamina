@@ -14,19 +14,19 @@ class StunDictionaryWriter {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void ApplyDeltaAck(::cricket::StunUInt64Attribute const&);
+    MCNAPI void ApplyDeltaAck(::cricket::StunUInt64Attribute const&);
 
-    MCAPI ::std::unique_ptr<::cricket::StunByteStringAttribute> CreateDelta();
+    MCNAPI ::std::unique_ptr<::cricket::StunByteStringAttribute> CreateDelta();
 
-    MCAPI void Disable();
+    MCNAPI void Disable();
 
-    MCAPI ~StunDictionaryWriter();
+    MCNAPI ~StunDictionaryWriter();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

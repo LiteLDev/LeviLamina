@@ -57,26 +57,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onRunSystemTick(::ScriptDeferredFlushTracker&);
+    MCNAPI void $onRunSystemTick(::ScriptDeferredFlushTracker&);
 
-    MCFOLD void $onFlushWorldAfterEvents(::ScriptDeferredFlushTracker&);
+    MCNAPI void $onFlushWorldAfterEvents(::ScriptDeferredFlushTracker&);
 
-    MCFOLD void $onFlushSystemAfterEvents(::ScriptDeferredFlushTracker&);
+    MCNAPI void $onFlushSystemAfterEvents(::ScriptDeferredFlushTracker&);
 
-    MCFOLD void $onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker&);
+    MCNAPI void $onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker&);
 
-    MCFOLD void $onFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker&);
+    MCNAPI void $onFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker&);
 
-    MCFOLD void $onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker&);
+    MCNAPI void $onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker&);
 
-    MCFOLD void $onFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker&);
+    MCNAPI void $onFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker&);
 
-    MCFOLD void $onPreFlushAfterEvents();
+    MCNAPI void $onPreFlushAfterEvents();
 
-    MCFOLD void $onPostFlushAfterEvents();
+    MCNAPI void $onPostFlushAfterEvents();
 
-    MCFOLD void $onScriptTickStart();
+    MCNAPI void $onScriptTickStart();
 
-    MCFOLD void $onScriptTickEnd();
+    MCNAPI void $onScriptTickEnd();
     // NOLINTEND
 };

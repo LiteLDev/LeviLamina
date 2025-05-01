@@ -32,32 +32,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PrivateKeyManager(::Crypto::Asymmetric::System system);
+    MCNAPI explicit PrivateKeyManager(::Crypto::Asymmetric::System system);
 
-    MCAPI ::std::string computeSecret(::KeyManager const& peer) const;
+    MCNAPI ::std::string computeSecret(::KeyManager const& peer) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Crypto::Asymmetric::System system);
+    MCNAPI void* $ctor(::Crypto::Asymmetric::System system);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isValid() const;
+    MCNAPI bool $isValid() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

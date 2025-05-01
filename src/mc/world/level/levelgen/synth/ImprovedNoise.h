@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Vec3;
-struct YBlendingBugSettings;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/world/level/levelgen/synth/YBlendingBugSettings.h"
 
 class ImprovedNoise {
 public:
@@ -43,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _blendCubeCorners(
+    MCNAPI void _blendCubeCorners(
         ::Vec3 const& origin,
         int           X,
         int           Y,
@@ -55,7 +53,7 @@ public:
         float&        vv3
     ) const;
 
-    MCAPI void
+    MCNAPI void
     _readArea(float* buffer, ::Vec3 const& pos, int xSize, int ySize, int zSize, ::Vec3 const& s, float pow) const;
     // NOLINTEND
 };

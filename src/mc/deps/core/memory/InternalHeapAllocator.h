@@ -24,7 +24,7 @@ public:
     virtual void alignedRelease(void* ptr) /*override*/;
 
     // vIndex: 5
-    virtual uint64 getUsableSize(void* ptr) /*override*/;
+    virtual uint64 getUsableSize(void* ptr, bool alignedAllocation) /*override*/;
 
     // vIndex: 6
     virtual void* _realloc(::gsl::not_null<void*> p, uint64 newSize) /*override*/;
@@ -42,23 +42,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void* $allocate(uint64 size);
+    MCNAPI void* $allocate(uint64 size);
 
-    MCAPI void $release(void* ptr);
+    MCNAPI void $release(void* ptr);
 
-    MCAPI void* $alignedAllocate(uint64 size, uint64 alignment);
+    MCNAPI void* $alignedAllocate(uint64 size, uint64 alignment);
 
-    MCAPI void $alignedRelease(void* ptr);
+    MCNAPI void $alignedRelease(void* ptr);
 
-    MCFOLD uint64 $getUsableSize(void* ptr);
+    MCNAPI uint64 $getUsableSize(void* ptr, bool alignedAllocation);
 
-    MCAPI void* $_realloc(::gsl::not_null<void*> p, uint64 newSize);
+    MCNAPI void* $_realloc(::gsl::not_null<void*> p, uint64 newSize);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

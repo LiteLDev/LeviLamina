@@ -17,31 +17,31 @@ struct BundleManager {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Commit();
+    MCNAPI void Commit();
 
-    MCAPI void DeleteGroup(::cricket::ContentGroup const*);
+    MCNAPI void DeleteGroup(::cricket::ContentGroup const*);
 
-    MCAPI void DeleteMid(::cricket::ContentGroup const*, ::std::string const&);
+    MCNAPI void DeleteMid(::cricket::ContentGroup const*, ::std::string const&);
 
-    MCAPI bool IsFirstMidInGroup(::std::string const&) const;
+    MCNAPI bool IsFirstMidInGroup(::std::string const&) const;
 
-    MCAPI ::cricket::ContentGroup const* LookupGroupByMid(::std::string const&) const;
+    MCNAPI ::cricket::ContentGroup const* LookupGroupByMid(::std::string const&) const;
 
-    MCAPI ::cricket::ContentGroup* LookupGroupByMid(::std::string const&);
+    MCNAPI ::cricket::ContentGroup* LookupGroupByMid(::std::string const&);
 
-    MCAPI void RefreshEstablishedBundleGroupsByMid();
+    MCNAPI void RefreshEstablishedBundleGroupsByMid();
 
-    MCAPI void Rollback();
+    MCNAPI void Rollback();
 
-    MCAPI void Update(::cricket::SessionDescription const*, ::webrtc::SdpType);
+    MCNAPI void Update(::cricket::SessionDescription const*, ::webrtc::SdpType);
 
-    MCAPI ~BundleManager();
+    MCNAPI ~BundleManager();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

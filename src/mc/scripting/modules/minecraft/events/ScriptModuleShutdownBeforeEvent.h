@@ -11,7 +11,7 @@ struct ScriptModuleShutdownBeforeEvent {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptModuleShutdownBeforeEvent>
+    MCNAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptModuleShutdownBeforeEvent>
     bind();
     // NOLINTEND
 };

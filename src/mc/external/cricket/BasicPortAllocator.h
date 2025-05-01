@@ -17,23 +17,23 @@ class BasicPortAllocator {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     BasicPortAllocator(::rtc::NetworkManager*, ::rtc::PacketSocketFactory*, ::webrtc::TurnCustomizer*, ::cricket::RelayPortFactoryInterface*, ::webrtc::FieldTrialsView const*);
 
-    MCAPI int GetNetworkIgnoreMask() const;
+    MCNAPI int GetNetworkIgnoreMask() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::rtc::NetworkManager*, ::rtc::PacketSocketFactory*, ::webrtc::TurnCustomizer*, ::cricket::RelayPortFactoryInterface*, ::webrtc::FieldTrialsView const*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

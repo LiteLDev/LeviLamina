@@ -26,7 +26,7 @@ class VehicleServerSeatPositionSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _setSeatDescriptionToActorDataSystem(
+    MCNAPI static void _setSeatDescriptionToActorDataSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::PassengerComponent const,
@@ -45,7 +45,7 @@ public:
         ::ViewT<::StrictEntityContext, ::AdultRidingHeightOffsetComponent const> adultRidingHeightOffsetView
     );
 
-    MCAPI static void _setSeatDescriptionToActorDataSystemSingleEntity(
+    MCNAPI static void _setSeatDescriptionToActorDataSystemSingleEntity(
         ::StrictEntityContext const& entityContext,
         ::ViewT<
             ::StrictEntityContext,

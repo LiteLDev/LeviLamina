@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/ActorFilterGroup.h"
 #include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorFilterGroup;
 class Mob;
 // clang-format on
 
@@ -57,34 +57,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _withinFieldOfView(::Actor& entity);
+    MCNAPI bool _withinFieldOfView(::Actor& entity);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCFOLD void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

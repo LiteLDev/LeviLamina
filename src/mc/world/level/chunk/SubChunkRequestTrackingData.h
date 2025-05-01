@@ -4,11 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-
-// auto generated forward declare list
-// clang-format off
-class AtomicTimeAccumulator;
-// clang-format on
+#include "mc/world/level/chunk/AtomicTimeAccumulator.h"
 
 struct SubChunkRequestTrackingData : public ::Bedrock::EnableNonOwnerReferences {
 public:

@@ -19,13 +19,13 @@ class DropperBlockActor : public ::DispenserBlockActor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 26
+    // vIndex: 27
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 43
+    // vIndex: 44
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0

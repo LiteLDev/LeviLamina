@@ -49,16 +49,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $sample(::IRandom& random) const;
+    MCNAPI int $sample(::IRandom& random) const;
 
-    MCFOLD int $maxValue() const;
+    MCNAPI int $maxValue() const;
 
-    MCFOLD int $minValue() const;
+    MCNAPI int $minValue() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

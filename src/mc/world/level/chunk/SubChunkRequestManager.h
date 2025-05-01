@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
 class Dimension;
 class SubChunkPos;
 class SubChunkRequestSubscriber;
-namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class SubChunkRequestManager {

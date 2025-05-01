@@ -28,14 +28,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isInstantaneous() const;
+    MCNAPI bool $isInstantaneous() const;
 
-    MCAPI bool $isDurationEffectTick(int remainingDuration, int) const;
+    MCNAPI bool $isDurationEffectTick(int remainingDuration, int) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

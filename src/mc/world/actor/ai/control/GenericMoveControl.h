@@ -35,14 +35,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $initializeInternal(::Mob& mob, ::MoveControlDescription* description);
+    MCNAPI void $initializeInternal(::Mob& mob, ::MoveControlDescription* description);
 
-    MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
+    MCNAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

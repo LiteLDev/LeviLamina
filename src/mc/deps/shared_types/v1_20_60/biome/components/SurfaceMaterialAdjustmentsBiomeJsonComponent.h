@@ -40,23 +40,24 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI SurfaceMaterialAdjustmentMaterials(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
-                                                     SurfaceMaterialAdjustmentMaterials const&);
+        MCNAPI
+        SurfaceMaterialAdjustmentMaterials(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
+                                               SurfaceMaterialAdjustmentMaterials const&);
 
-        MCAPI ~SurfaceMaterialAdjustmentMaterials();
+        MCNAPI ~SurfaceMaterialAdjustmentMaterials();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
-                              SurfaceMaterialAdjustmentMaterials const&);
+        MCNAPI void* $ctor(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
+                               SurfaceMaterialAdjustmentMaterials const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -78,21 +79,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI SurfaceMaterialAdjustment(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
-                                            SurfaceMaterialAdjustment&&);
+        MCNAPI SurfaceMaterialAdjustment(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
+                                             SurfaceMaterialAdjustment&&);
 
-        MCAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&
+        MCNAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&
         operator=(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
                       SurfaceMaterialAdjustment const&);
 
-        MCAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&
+        MCNAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&
         operator=(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&&);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void*
+        MCNAPI void*
         $ctor(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&&);
         // NOLINTEND
     };
@@ -119,7 +120,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -139,7 +140,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

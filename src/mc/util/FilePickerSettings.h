@@ -27,13 +27,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~FileDescription();
+        MCNAPI ~FileDescription();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -66,14 +66,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addFileDescription(::std::string const& extension, ::std::string const& name, bool isDefaultExtension);
+    MCNAPI void addFileDescription(::std::string const& extension, ::std::string const& name, bool isDefaultExtension);
 
-    MCAPI ~FilePickerSettings();
+    MCNAPI ~FilePickerSettings();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

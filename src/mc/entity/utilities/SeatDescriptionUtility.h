@@ -15,7 +15,7 @@ struct SeatDescriptionUtility {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void setValuesToSynchedActorData(
+    MCNAPI static void setValuesToSynchedActorData(
         ::ActorDataSeatOffsetComponent& seatOffsetComponent,
         ::ActorDataDirtyFlagsComponent& dirtyFlagsComponent,
         ::SynchedActorDataWriter        synchedActorData,

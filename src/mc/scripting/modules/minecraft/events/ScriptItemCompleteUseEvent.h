@@ -30,28 +30,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemCompleteUseEvent(::ScriptModuleMinecraft::ScriptItemCompleteUseEvent const&);
+    MCNAPI ScriptItemCompleteUseEvent(::ScriptModuleMinecraft::ScriptItemCompleteUseEvent const&);
 
-    MCAPI ScriptItemCompleteUseEvent(
+    MCNAPI ScriptItemCompleteUseEvent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>    player
     );
 
-    MCAPI ~ScriptItemCompleteUseEvent();
+    MCNAPI ~ScriptItemCompleteUseEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemCompleteUseEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemCompleteUseEvent> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptItemCompleteUseEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCompleteUseEvent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>    player
     );
@@ -60,7 +60,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -15,23 +15,23 @@ struct RtpStreamSender {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     RtpStreamSender(::std::unique_ptr<::webrtc::ModuleRtpRtcpImpl2>, ::std::unique_ptr<::webrtc::RTPSenderVideo>, ::std::unique_ptr<::webrtc::VideoFecGenerator>);
 
-    MCAPI ~RtpStreamSender();
+    MCNAPI ~RtpStreamSender();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
         $ctor(::std::unique_ptr<::webrtc::ModuleRtpRtcpImpl2>, ::std::unique_ptr<::webrtc::RTPSenderVideo>, ::std::unique_ptr<::webrtc::VideoFecGenerator>);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

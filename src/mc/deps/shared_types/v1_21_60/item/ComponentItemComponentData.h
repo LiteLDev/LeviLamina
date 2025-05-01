@@ -6,6 +6,7 @@
 // clang-format off
 class SemVersion;
 namespace cereal { class DynamicValue; }
+namespace cereal { class SerializerContext; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -60,29 +61,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemComponentData();
+    MCNAPI ComponentItemComponentData();
 
-    MCAPI ComponentItemComponentData(::SharedTypes::v1_21_60::ComponentItemComponentData&&);
+    MCNAPI ComponentItemComponentData(::SharedTypes::v1_21_60::ComponentItemComponentData&&);
 
-    MCAPI ComponentItemComponentData(::SharedTypes::v1_21_60::ComponentItemComponentData const&);
+    MCNAPI ComponentItemComponentData(::SharedTypes::v1_21_60::ComponentItemComponentData const&);
 
-    MCAPI ::std::shared_ptr<::cereal::DynamicValue> getCustomComponent(::std::string_view compName) const;
+    MCNAPI ::std::shared_ptr<::cereal::DynamicValue> getCustomComponent(::cereal::SerializerContext const& context
+    ) const;
 
-    MCAPI ::SharedTypes::v1_21_60::ComponentItemComponentData&
+    MCNAPI ::SharedTypes::v1_21_60::ComponentItemComponentData&
     operator=(::SharedTypes::v1_21_60::ComponentItemComponentData&&);
 
-    MCAPI ::SharedTypes::v1_21_60::ComponentItemComponentData&
+    MCNAPI ::SharedTypes::v1_21_60::ComponentItemComponentData&
     operator=(::SharedTypes::v1_21_60::ComponentItemComponentData const&);
 
-    MCAPI void setCustomComponent(::std::string_view compName, ::std::shared_ptr<::cereal::DynamicValue> data);
+    MCNAPI void
+    setCustomComponent(::std::shared_ptr<::cereal::DynamicValue> data, ::cereal::SerializerContext const& context);
 
-    MCAPI ~ComponentItemComponentData();
+    MCNAPI ~ComponentItemComponentData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -94,17 +97,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::SharedTypes::v1_21_60::ComponentItemComponentData&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_60::ComponentItemComponentData&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_21_60::ComponentItemComponentData const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_60::ComponentItemComponentData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

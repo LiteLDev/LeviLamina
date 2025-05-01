@@ -20,7 +20,7 @@ class ItemReplacementCommandUtil {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _replaceArmorSlots(
+    MCNAPI static void _replaceArmorSlots(
         ::Util::ReplacementResults&          replacementResults,
         ::Actor&                             entity,
         ::gsl::span<::ItemStack const>       itemSpan,
@@ -28,7 +28,7 @@ public:
         int                                  count
     );
 
-    MCAPI static bool _slotBoundsValid(
+    MCNAPI static bool _slotBoundsValid(
         ::Util::ReplacementResults& replacementResults,
         int                         slotId,
         int                         sizeForSlotIdCheck,
@@ -36,9 +36,9 @@ public:
         ::std::optional<int>        sizeForCountCheck
     );
 
-    MCAPI static ::Util::ReplacementResults replaceActorSlotsOrError(::Util::ActorReplacementParams& actorParams);
+    MCNAPI static ::Util::ReplacementResults replaceActorSlotsOrError(::Util::ActorReplacementParams& actorParams);
 
-    MCAPI static ::Util::ReplacementResults
+    MCNAPI static ::Util::ReplacementResults
     replaceContainerSlotsOrError(::Util::ContainerReplacementParams& containerParams);
     // NOLINTEND
 };

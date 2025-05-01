@@ -52,7 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _startGoingDark();
+    MCNAPI void _startGoingDark();
     // NOLINTEND
 
 public:
@@ -64,18 +64,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $normalTick();
+    MCNAPI void $normalTick();
 
-    MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
+    MCNAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCNAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $_getInkSquirtSoundEvent() const;
+    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $_getInkSquirtSoundEvent() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

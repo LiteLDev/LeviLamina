@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 107
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     // vIndex: 108
     virtual ::ResolvedItemIconInfo
@@ -53,13 +53,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CoalItem(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx, ::CoalItem::Type type);
+    MCNAPI CoalItem(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx, ::CoalItem::Type type);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx, ::CoalItem::Type type);
+    MCNAPI void* $ctor(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx, ::CoalItem::Type type);
     // NOLINTEND
 
 public:
@@ -71,20 +71,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
+    MCNAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCFOLD ::ResolvedItemIconInfo
+    MCNAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI ::std::string
+    MCNAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCAPI float $getFurnaceXPmultiplier(::ItemStackBase const& instance) const;
+    MCNAPI float $getFurnaceXPmultiplier(::ItemStackBase const& instance) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

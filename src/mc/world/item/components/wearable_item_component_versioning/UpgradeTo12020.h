@@ -24,13 +24,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UpgradeTo12020();
+    MCNAPI UpgradeTo12020();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -42,15 +42,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $previousSchema(::rapidjson::GenericValue<
-                               ::rapidjson::UTF8<char>,
-                               ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component) const;
+    MCNAPI bool $previousSchema(::rapidjson::GenericValue<
+                                ::rapidjson::UTF8<char>,
+                                ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

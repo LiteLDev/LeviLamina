@@ -13,21 +13,21 @@ class AsyncStunTCPSocket {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AsyncStunTCPSocket(::rtc::Socket*);
+    MCNAPI explicit AsyncStunTCPSocket(::rtc::Socket*);
 
-    MCAPI uint64 GetExpectedLength(void const*, uint64, int*);
+    MCNAPI uint64 GetExpectedLength(void const*, uint64, int*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::Socket*);
+    MCNAPI void* $ctor(::rtc::Socket*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

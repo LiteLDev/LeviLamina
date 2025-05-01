@@ -24,24 +24,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FilterInputDefinition(int i);
+    MCNAPI explicit FilterInputDefinition(int i);
 
-    MCAPI FilterInputDefinition(::FilterInput f, ::std::string const& d);
+    MCNAPI FilterInputDefinition(::FilterInput f, ::std::string const& d);
 
-    MCAPI ~FilterInputDefinition();
+    MCNAPI ~FilterInputDefinition();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int i);
+    MCNAPI void* $ctor(int i);
 
-    MCAPI void* $ctor(::FilterInput f, ::std::string const& d);
+    MCNAPI void* $ctor(::FilterInput f, ::std::string const& d);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

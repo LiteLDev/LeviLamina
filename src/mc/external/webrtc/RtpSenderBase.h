@@ -24,25 +24,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::RTCError CheckSetParameters(::webrtc::RtpParameters const&);
+    MCNAPI ::webrtc::RTCError CheckSetParameters(::webrtc::RtpParameters const&);
 
-    MCAPI RtpSenderBase(::rtc::Thread*, ::std::string const&, ::webrtc::RtpSenderBase::SetStreamsObserver*);
+    MCNAPI RtpSenderBase(::rtc::Thread*, ::std::string const&, ::webrtc::RtpSenderBase::SetStreamsObserver*);
 
-    MCAPI void SetEncoderSelectorOnChannel();
+    MCNAPI void SetEncoderSelectorOnChannel();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::Thread*, ::std::string const&, ::webrtc::RtpSenderBase::SetStreamsObserver*);
+    MCNAPI void* $ctor(::rtc::Thread*, ::std::string const&, ::webrtc::RtpSenderBase::SetStreamsObserver*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForRtpSenderInternal();
+    MCNAPI static void** $vftableForRtpSenderInternal();
 
-    MCAPI static void** $vftableForObserverInterface();
+    MCNAPI static void** $vftableForObserverInterface();
     // NOLINTEND
 };
 

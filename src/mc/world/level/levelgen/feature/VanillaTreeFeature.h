@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonParseState.h"
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/util/json_util/JsonParseState.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 #include "mc/world/level/levelgen/feature/ITreeFeature.h"
 #include "mc/world/level/levelgen/feature/feature_loading/ConcreteFeatureHolder.h"
@@ -32,12 +32,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     _buildSchema(::JsonUtil::JsonSchemaObjectNode<
                  ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
                  ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode);
 
-    MCAPI static void _buildVanillaCanopyVariants(
+    MCNAPI static void _buildVanillaCanopyVariants(
         ::JsonUtil::JsonSchemaObjectNode<
             ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
             ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode,
@@ -45,7 +45,7 @@ public:
             canopyAccessor
     );
 
-    MCAPI static void _buildVanillaTrunkVariants(
+    MCNAPI static void _buildVanillaTrunkVariants(
         ::JsonUtil::JsonSchemaObjectNode<
             ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
             ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode,
@@ -63,12 +63,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

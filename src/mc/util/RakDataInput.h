@@ -34,20 +34,20 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Result<void> $readBytesResult(void* data, uint64 bytes);
+    MCNAPI ::Bedrock::Result<void> $readBytesResult(void* data, uint64 bytes);
 
-    MCAPI uint64 $numBytesLeft() const;
+    MCNAPI uint64 $numBytesLeft() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

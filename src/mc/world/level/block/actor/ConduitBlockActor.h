@@ -3,18 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockActorDataPacket;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class ILevel;
 class SaveContext;
-struct ActorUniqueID;
 // clang-format on
 
 class ConduitBlockActor : public ::BlockActor {
@@ -40,10 +40,10 @@ public:
     // vIndex: 0
     virtual ~ConduitBlockActor() /*override*/ = default;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 20
+    // vIndex: 21
     virtual bool hasAlphaLayer() const /*override*/;
 
     // vIndex: 2
@@ -52,29 +52,29 @@ public:
     // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 44
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ConduitBlockActor(::BlockPos const& pos);
+    MCNAPI explicit ConduitBlockActor(::BlockPos const& pos);
 
-    MCAPI void _animateTick(::BlockSource& region) const;
+    MCNAPI void _animateTick(::BlockSource& region) const;
 
-    MCAPI void _checkShape(::BlockSource& region);
+    MCNAPI void _checkShape(::BlockSource& region);
 
-    MCAPI void _updateTarget(::BlockSource& region);
+    MCNAPI void _updateTarget(::BlockSource& region);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
+    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -86,22 +86,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCFOLD bool $hasAlphaLayer() const;
+    MCNAPI bool $hasAlphaLayer() const;
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

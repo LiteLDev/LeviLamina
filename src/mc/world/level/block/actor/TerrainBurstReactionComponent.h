@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/level/block/actor/LabTableReactionComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
 class LabTableReaction;
-class Vec3;
 // clang-format on
 
 class TerrainBurstReactionComponent : public ::LabTableReactionComponent {
@@ -42,12 +42,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_onEnd(::LabTableReaction& owner, ::BlockSource& region);
+    MCNAPI void $_onEnd(::LabTableReaction& owner, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

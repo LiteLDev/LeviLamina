@@ -19,6 +19,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::EntityStorageKeyComponent& operator=(::EntityStorageKeyComponent&&);
+    MCNAPI ::EntityStorageKeyComponent& operator=(::EntityStorageKeyComponent&&);
     // NOLINTEND
 };

@@ -26,17 +26,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemData_v1_20_80();
+    MCNAPI ComponentItemData_v1_20_80();
 
-    MCAPI ~ComponentItemData_v1_20_80();
+    MCNAPI ~ComponentItemData_v1_20_80();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void moveDeprecatedData(::ComponentItemData_v1_20_60& oldData, ::ComponentItemData_v1_20_80& newData);
+    MCNAPI static void moveDeprecatedData(::ComponentItemData_v1_20_60& oldData, ::ComponentItemData_v1_20_80& newData);
     // NOLINTEND
 
 public:
@@ -48,12 +48,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

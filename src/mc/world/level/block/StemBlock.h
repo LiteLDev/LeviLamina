@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/block/BushBlock.h"
+#include "mc/world/level/block/FoliageBlock.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,7 +19,7 @@ class ItemInstance;
 class Random;
 // clang-format on
 
-class StemBlock : public ::BushBlock {
+class StemBlock : public ::FoliageBlock {
 public:
     // member variables
     // NOLINTBEGIN
@@ -64,7 +64,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI float getGrowthSpeed(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI float getGrowthSpeed(::BlockSource& region, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:
@@ -76,27 +76,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
+    MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI bool
+    MCNAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCFOLD bool $isStemBlock() const;
+    MCNAPI bool $isStemBlock() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

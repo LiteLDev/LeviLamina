@@ -6,7 +6,7 @@ struct ComponentItemDescriptionData_v1_20 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk26a29c;
+    ::ll::UntypedStorage<8, 32> mUnkfde591;
     ::ll::UntypedStorage<4, 8>  mUnk18f1a6;
     // NOLINTEND
 
@@ -18,16 +18,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ComponentItemDescriptionData_v1_20& operator=(::ComponentItemDescriptionData_v1_20 const&);
+    MCNAPI ::ComponentItemDescriptionData_v1_20& operator=(::ComponentItemDescriptionData_v1_20 const&);
 
-    MCAPI ::ComponentItemDescriptionData_v1_20& operator=(::ComponentItemDescriptionData_v1_20&&);
+    MCNAPI ::ComponentItemDescriptionData_v1_20& operator=(::ComponentItemDescriptionData_v1_20&&);
 
-    MCAPI ~ComponentItemDescriptionData_v1_20();
+    MCNAPI ~ComponentItemDescriptionData_v1_20();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

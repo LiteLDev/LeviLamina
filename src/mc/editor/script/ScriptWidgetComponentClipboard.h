@@ -57,9 +57,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWidgetComponentClipboard(::Editor::ScriptModule::ScriptWidgetComponentClipboard const&);
+    MCNAPI ScriptWidgetComponentClipboard(::Editor::ScriptModule::ScriptWidgetComponentClipboard const&);
 
-    MCAPI ScriptWidgetComponentClipboard(
+    MCNAPI ScriptWidgetComponentClipboard(
         ::Editor::ServiceProviderCollection&                                     serviceProviders,
         ::mce::UUID const&                                                       componentId,
         ::std::string const&                                                     componentName,
@@ -70,33 +70,33 @@ public:
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions> options
     );
 
-    MCAPI void _setClipboardMirror(::Mirror m);
+    MCNAPI void _setClipboardMirror(::Mirror m);
 
-    MCAPI void _setClipboardOffset(::Vec3 const& offset);
+    MCNAPI void _setClipboardOffset(::Vec3 const& offset);
 
-    MCAPI void _setClipboardOrigin(::Vec3 const& pivot);
+    MCNAPI void _setClipboardOrigin(::Vec3 const& pivot);
 
-    MCAPI void _setClipboardRotation(::Rotation r);
+    MCNAPI void _setClipboardRotation(::Rotation r);
 
-    MCAPI void _setOuterBoundsFillColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
+    MCNAPI void _setOuterBoundsFillColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
 
-    MCAPI void _setOuterBoundsVisible(bool visible);
+    MCNAPI void _setOuterBoundsVisible(bool visible);
 
-    MCAPI void _setOuterBoundsWireframeColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
+    MCNAPI void _setOuterBoundsWireframeColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentClipboard> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentClipboard> bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentClipboard const&);
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentClipboard const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                     serviceProviders,
         ::mce::UUID const&                                                       componentId,
         ::std::string const&                                                     componentName,
@@ -117,13 +117,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
+    MCNAPI ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

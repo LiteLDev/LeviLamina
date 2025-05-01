@@ -5,10 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/world/level/ChunkPos.h"
 
 // auto generated forward declare list
 // clang-format off
-class ChunkPos;
 class ChunkSource;
 class Dimension;
 class DimensionManager;
@@ -16,7 +17,6 @@ class GameplayUserManager;
 class ILevelChunkEventManagerConnector;
 class ILevelChunkSaveManagerProxy;
 class LevelChunk;
-namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class LevelChunkSaveManager {
@@ -62,20 +62,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _findRandomChunkToSave();
+    MCNAPI void _findRandomChunkToSave();
 
-    MCAPI void _onChunkLoaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk, int closestPlayerDistanceSquared);
+    MCNAPI void _onChunkLoaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk, int closestPlayerDistanceSquared);
 
-    MCAPI bool _shouldDoSave() const;
+    MCNAPI bool _shouldDoSave() const;
 
-    MCAPI void registerForLevelChunkManagerEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
+    MCNAPI void registerForLevelChunkManagerEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
-    MCAPI ~LevelChunkSaveManager();
+    MCNAPI ~LevelChunkSaveManager();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

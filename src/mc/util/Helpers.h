@@ -11,7 +11,7 @@ class SemVersion;
 namespace Helpers {
 // functions
 // NOLINTBEGIN
-MCAPI ::HashedString const& getUseDurationComponentForVersion(::SemVersion const& version);
+MCNAPI ::HashedString const& getUseDurationComponentForVersion(::SemVersion const& version);
 // NOLINTEND
 
 } // namespace Helpers

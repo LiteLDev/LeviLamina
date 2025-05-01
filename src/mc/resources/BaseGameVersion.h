@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/sem_ver/SemVersion.h"
 
-// auto generated forward declare list
-// clang-format off
-class SemVersion;
-// clang-format on
-
 class BaseGameVersion {
 public:
     // BaseGameVersion inner types declare
@@ -30,27 +25,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseGameVersion(::BaseGameVersion const& rhs);
+    MCNAPI BaseGameVersion(::BaseGameVersion const& rhs);
 
-    MCAPI BaseGameVersion(ushort major, uint minor, uint patch);
+    MCNAPI BaseGameVersion(ushort major, uint minor, uint patch);
 
-    MCAPI ::std::string asString() const;
+    MCNAPI ::std::string asString() const;
 
-    MCAPI bool isCompatibleWith(::BaseGameVersion const& baseGameVersion) const;
+    MCNAPI bool isCompatibleWith(::BaseGameVersion const& baseGameVersion) const;
 
-    MCAPI bool operator<=(::BaseGameVersion const& rhs) const;
+    MCNAPI ::BaseGameVersion& operator=(::BaseGameVersion const&);
 
-    MCAPI ::BaseGameVersion& operator=(::BaseGameVersion const&);
+    MCNAPI bool operator>=(::BaseGameVersion const& rhs) const;
 
-    MCAPI bool operator>=(::BaseGameVersion const& rhs) const;
-
-    MCAPI ~BaseGameVersion();
+    MCNAPI ~BaseGameVersion();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SemVersion::MatchType fromString(::std::string const& source, ::BaseGameVersion& output);
+    MCNAPI static ::SemVersion::MatchType fromString(::std::string const& source, ::BaseGameVersion& output);
     // NOLINTEND
 
 public:
@@ -66,14 +59,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BaseGameVersion const& rhs);
+    MCNAPI void* $ctor(::BaseGameVersion const& rhs);
 
-    MCAPI void* $ctor(ushort major, uint minor, uint patch);
+    MCNAPI void* $ctor(ushort major, uint minor, uint patch);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -53,27 +53,27 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void checkWorldData(::Core::Path const& levelPath);
+        MCNAPI void checkWorldData(::Core::Path const& levelPath);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $onActiveResourcePacksChanged(::ResourcePackManager& mgr);
+        MCNAPI void $onActiveResourcePacksChanged(::ResourcePackManager& mgr);
 
-        MCAPI void $onResourceManagerDestroyed(::ResourcePackManager& mgr);
+        MCNAPI void $onResourceManagerDestroyed(::ResourcePackManager& mgr);
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -119,7 +119,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DebugEndPoint(::std::optional<::LogLevel> minLogLevel);
+    MCNAPI explicit DebugEndPoint(::std::optional<::LogLevel> minLogLevel);
+
+    MCNAPI void initializeContentLogging(::ResourcePackManager& mgr, ::Core::Path const& levelPath);
     // NOLINTEND
 
 public:
@@ -131,7 +133,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::optional<::LogLevel> minLogLevel);
+    MCNAPI void* $ctor(::std::optional<::LogLevel> minLogLevel);
     // NOLINTEND
 
 public:
@@ -143,24 +145,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $log(::LogArea const area, ::LogLevel const level, char const* message);
+    MCNAPI void $log(::LogArea const area, ::LogLevel const level, char const* message);
 
-    MCFOLD void $flush();
+    MCNAPI void $flush();
 
-    MCAPI void $setEnabled(bool newState);
+    MCNAPI void $setEnabled(bool newState);
 
-    MCFOLD bool $isEnabled() const;
+    MCNAPI bool $isEnabled() const;
 
-    MCFOLD bool $logOnlyOnce() const;
+    MCNAPI bool $logOnlyOnce() const;
 
-    MCFOLD void $contentAssert(::LogArea const area, ::LogLevel const level, char const* message);
+    MCNAPI void $contentAssert(::LogArea const area, ::LogLevel const level, char const* message);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForLogEndPoint();
+    MCNAPI static void** $vftableForLogEndPoint();
 
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

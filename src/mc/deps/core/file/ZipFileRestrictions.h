@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool allowFile(::Core::Path const& file) const;
+    MCNAPI bool allowFile(::Core::Path const& file) const;
     // NOLINTEND
 };
 

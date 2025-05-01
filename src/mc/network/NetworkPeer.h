@@ -93,24 +93,24 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update();
+    MCNAPI void $update();
 
-    MCAPI void $flush(::std::function<void()>&& callback);
+    MCNAPI void $flush(::std::function<void()>&& callback);
 
-    MCAPI bool $isLocal() const;
+    MCNAPI bool $isLocal() const;
 
-    MCAPI bool $isEncrypted() const;
+    MCNAPI bool $isEncrypted() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

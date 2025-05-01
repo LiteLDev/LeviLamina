@@ -25,12 +25,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $requiresNetworkOutageMessaging() const;
+    MCNAPI bool $requiresNetworkOutageMessaging() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -27,14 +27,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::InMemoryFile> createFile(::Core::Path const& fileName);
+    MCNAPI ::std::shared_ptr<::InMemoryFile> createFile(::Core::Path const& fileName);
 
-    MCAPI bool deleteFile(::Core::Path const& fileName);
+    MCNAPI bool deleteFile(::Core::Path const& fileName);
 
-    MCAPI bool findFile(::Core::Path const& fileName, ::std::shared_ptr<::InMemoryFile>& outFile);
+    MCNAPI bool findFile(::Core::Path const& fileName, ::std::shared_ptr<::InMemoryFile>& outFile);
 
-    MCAPI void flushToDisk();
+    MCNAPI void flushToDisk();
 
-    MCAPI void populateFileList(::std::vector<::std::string>& fileList);
+    MCNAPI void populateFileList(::std::vector<::std::string>& fileList);
     // NOLINTEND
 };

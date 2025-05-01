@@ -22,7 +22,7 @@ struct WaterSplashEffectRequestComponent;
 namespace LiquidSplashRequestSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void doTick(
+MCNAPI void doTick(
     ::StrictEntityContext const&                                                                 entity,
     ::UpdateWaterStateRequestComponent const&                                                    waterState,
     ::Optional<::ActorGameTypeComponent const> const&                                            playerGameType,

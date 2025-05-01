@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -46,15 +46,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<
+    MCNAPI ::std::shared_ptr<
         ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorAnimationGroupParseMetaData>>
     _buildAnimationFileSchema_v1_8(bool isPersonaPack);
 
-    MCAPI ::ActorSkeletalAnimationPtr getActorAnimation(::HashedString const& name);
+    MCNAPI ::ActorSkeletalAnimationPtr getActorAnimation(::HashedString const& name);
 
-    MCAPI ::std::shared_ptr<::ActorAnimationInfo> getActorAnimationInfo(::HashedString const& name);
+    MCNAPI ::std::shared_ptr<::ActorAnimationInfo> getActorAnimationInfo(::HashedString const& name);
 
-    MCAPI void loadActorAnimation(
+    MCNAPI void loadActorAnimation(
         ::std::string const&      fileData,
         ::Core::Path const&       filenameWithExtension,
         ::PackStats&              stats,
@@ -64,18 +64,18 @@ public:
         ::std::string const&      personaPieceId
     );
 
-    MCAPI void loadActorAnimationsSync(::ResourcePackManager& resourcePackManager);
+    MCNAPI void loadActorAnimationsSync(::ResourcePackManager& resourcePackManager);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

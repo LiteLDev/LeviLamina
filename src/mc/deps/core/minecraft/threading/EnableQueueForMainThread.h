@@ -18,25 +18,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EnableQueueForMainThread(::std::string name);
+    MCNAPI explicit EnableQueueForMainThread(::std::string name);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string name);
+    MCNAPI void* $ctor(::std::string name);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

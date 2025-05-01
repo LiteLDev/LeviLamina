@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/platform/Result.h"
+#include "mc/world/inventory/network/ItemStackNetIdVariant.h"
 #include "mc/world/item/ItemDescriptorCount.h"
 
 // auto generated forward declare list
@@ -12,7 +13,6 @@ class BlockPalette;
 class ItemStack;
 class ItemStackDescriptor;
 class ReadOnlyBinaryStream;
-struct ItemStackNetIdVariant;
 // clang-format on
 
 class NetworkItemStackDescriptor : public ::ItemDescriptorCount {

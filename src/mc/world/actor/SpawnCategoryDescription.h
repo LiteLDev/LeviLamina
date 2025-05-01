@@ -36,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void parse(::Json::Value const& root);
+    MCNAPI void parse(::Json::Value const& root);
     // NOLINTEND
 
 public:
@@ -48,12 +48,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI char const* $getJsonName() const;
+    MCNAPI char const* $getJsonName() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

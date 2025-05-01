@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct Paddle;
-struct Tick;
-// clang-format on
+// auto generated inclusion list
+#include "mc/entity/components/Paddle.h"
+#include "mc/world/level/Tick.h"
 
 struct BoatPaddleComponent {
 public:

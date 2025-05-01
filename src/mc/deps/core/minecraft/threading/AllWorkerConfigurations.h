@@ -32,12 +32,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AllWorkerConfigurations();
+    MCNAPI AllWorkerConfigurations();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

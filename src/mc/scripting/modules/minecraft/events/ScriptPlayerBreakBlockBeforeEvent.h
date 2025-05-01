@@ -34,11 +34,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerBreakBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent const&);
+    MCNAPI ScriptPlayerBreakBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent const&);
 
-    MCAPI ScriptPlayerBreakBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent&&);
+    MCNAPI ScriptPlayerBreakBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent&&);
 
-    MCAPI ScriptPlayerBreakBlockBeforeEvent(
+    MCNAPI ScriptPlayerBreakBlockBeforeEvent(
         ::Player const&                       player,
         ::Dimension&                          dimension,
         ::BlockPos const&                     pos,
@@ -46,23 +46,23 @@ public:
         ::Scripting::WeakLifetimeScope const& scope
     );
 
-    MCAPI ~ScriptPlayerBreakBlockBeforeEvent();
+    MCNAPI ~ScriptPlayerBreakBlockBeforeEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent const&);
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent&&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Player const&                       player,
         ::Dimension&                          dimension,
         ::BlockPos const&                     pos,
@@ -74,7 +74,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

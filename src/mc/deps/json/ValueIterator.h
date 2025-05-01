@@ -30,9 +30,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::Json::Value& operator*() const;
+    MCNAPI ::Json::Value& operator*() const;
 
-    MCFOLD ::Json::ValueIterator& operator++();
+    MCNAPI ::Json::ValueIterator& operator++();
     // NOLINTEND
 };
 

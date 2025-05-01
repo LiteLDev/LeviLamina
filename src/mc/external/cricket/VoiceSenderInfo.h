@@ -27,21 +27,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VoiceSenderInfo(::cricket::VoiceSenderInfo const&);
+    MCNAPI VoiceSenderInfo(::cricket::VoiceSenderInfo const&);
 
-    MCAPI ~VoiceSenderInfo();
+    MCNAPI ~VoiceSenderInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::VoiceSenderInfo const&);
+    MCNAPI void* $ctor(::cricket::VoiceSenderInfo const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

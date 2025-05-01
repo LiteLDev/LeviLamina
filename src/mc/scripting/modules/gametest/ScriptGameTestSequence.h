@@ -26,21 +26,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence>
+    MCNAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence>
     thenExecute(::Scripting::Closure<void()> fn);
 
-    MCAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence>
+    MCNAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence>
     thenExecuteAfter(int tickDelay, ::Scripting::Closure<void()> fn);
 
-    MCAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence>
+    MCNAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence>
     thenExecuteFor(int tickCount, ::Scripting::Closure<void()> fn);
 
-    MCAPI void thenFail(::std::string error);
+    MCNAPI void thenFail(::std::string error);
 
-    MCAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence>
+    MCNAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence> thenIdle(int tickDelay);
+
+    MCNAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence>
     thenWait(::Scripting::Closure<void()> fn);
 
-    MCAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence>
+    MCNAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence>
     thenWaitAfter(int tickDelay, ::Scripting::Closure<void()> fn);
     // NOLINTEND
 };

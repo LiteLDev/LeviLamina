@@ -9,6 +9,18 @@ namespace Scripting::Reflection {
 
 class IPropertyGetter {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk2af62d;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    IPropertyGetter& operator=(IPropertyGetter const&);
+    IPropertyGetter(IPropertyGetter const&);
+    IPropertyGetter();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -45,7 +57,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

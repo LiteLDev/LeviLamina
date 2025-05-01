@@ -33,24 +33,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TagCacheManager(
+    MCNAPI TagCacheManager(
         ::Bedrock::NonOwnerPointer<::CommandManager>       commandManager,
         ::std::unique_ptr<::IDeregisterTagsFromActorProxy> deregisterTagsFromActorProxy
     );
 
-    MCAPI void _deregisterTagsFromActor(::Actor& actor);
+    MCNAPI void _deregisterTagsFromActor(::Actor& actor);
 
-    MCAPI void decrementTagCache(::std::string const& tag);
+    MCNAPI void decrementTagCache(::std::string const& tag);
 
-    MCAPI void incrementTagCache(::std::string const& tag);
+    MCNAPI void incrementTagCache(::std::string const& tag);
 
-    MCAPI void initialize(::IActorManagerConnector& actorManagerConnector);
+    MCNAPI void initialize(::IActorManagerConnector& actorManagerConnector);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NonOwnerPointer<::CommandManager>       commandManager,
         ::std::unique_ptr<::IDeregisterTagsFromActorProxy> deregisterTagsFromActorProxy
     );

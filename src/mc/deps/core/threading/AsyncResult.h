@@ -8,7 +8,7 @@
 namespace Bedrock::Threading::AsyncResult {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> done();
+MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> done();
 // NOLINTEND
 
 } // namespace Bedrock::Threading::AsyncResult

@@ -20,7 +20,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::AudioCodecPairId Create();
+    MCNAPI static ::webrtc::AudioCodecPairId Create();
     // NOLINTEND
 };
 

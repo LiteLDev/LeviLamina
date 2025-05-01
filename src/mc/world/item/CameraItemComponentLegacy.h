@@ -96,19 +96,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CameraItemComponentLegacy::UseAction
+    MCNAPI ::CameraItemComponentLegacy::UseAction
     _tryPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3& spawnPos)
         const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
 
-    MCAPI bool init(::Json::Value const& data, ::MolangVersion);
+    MCNAPI bool init(::Json::Value const& data, ::MolangVersion);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
+    MCNAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
     // NOLINTEND
 
 public:
@@ -120,34 +120,34 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $takePictureNow(::Player& player, ::Actor* camera, ::Actor* target);
+    MCNAPI void $takePictureNow(::Player& player, ::Actor* camera, ::Actor* target);
 
-    MCAPI void $use(::ItemStack& instance, ::Player& player);
+    MCNAPI void $use(::ItemStack& instance, ::Player& player);
 
-    MCAPI void $releaseUsing(::ItemStack& instance, ::Player& player, int durationLeft);
+    MCNAPI void $releaseUsing(::ItemStack& instance, ::Player& player, int durationLeft);
 
-    MCAPI bool $useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3 const&);
+    MCNAPI bool $useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3 const&);
 
-    MCAPI bool $canPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face) const;
+    MCNAPI bool $canPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face) const;
 
-    MCFOLD float $blackBarsDuration() const;
+    MCNAPI float $blackBarsDuration() const;
 
-    MCFOLD float $blackBarsScreenRatio() const;
+    MCNAPI float $blackBarsScreenRatio() const;
 
-    MCAPI float $shutterScreenRatio() const;
+    MCNAPI float $shutterScreenRatio() const;
 
-    MCFOLD float $shutterDuration() const;
+    MCNAPI float $shutterDuration() const;
 
-    MCAPI float $pictureDuration() const;
+    MCNAPI float $pictureDuration() const;
 
-    MCAPI float $slideAwayDuration() const;
+    MCNAPI float $slideAwayDuration() const;
 
-    MCAPI void $registerCallbacks(::CameraCallbacks* callbacks);
+    MCNAPI void $registerCallbacks(::CameraCallbacks* callbacks);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

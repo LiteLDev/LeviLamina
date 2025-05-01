@@ -19,31 +19,34 @@ public:
 public:
     // prevent constructor by default
     InvalidArgumentError& operator=(InvalidArgumentError const&);
-    InvalidArgumentError(InvalidArgumentError const&);
     InvalidArgumentError();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InvalidArgumentError(::std::string const& message_, int index_);
+    MCNAPI InvalidArgumentError(::Scripting::InvalidArgumentError const&);
 
-    MCAPI InvalidArgumentError(::std::string const& message_, ::Scripting::InvalidArgumentErrorType type_, int index_);
+    MCNAPI InvalidArgumentError(::std::string const& message_, int index_);
 
-    MCAPI ~InvalidArgumentError();
+    MCNAPI InvalidArgumentError(::std::string const& message_, ::Scripting::InvalidArgumentErrorType type_, int index_);
+
+    MCNAPI ~InvalidArgumentError();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& message_, int index_);
+    MCNAPI void* $ctor(::Scripting::InvalidArgumentError const&);
 
-    MCAPI void* $ctor(::std::string const& message_, ::Scripting::InvalidArgumentErrorType type_, int index_);
+    MCNAPI void* $ctor(::std::string const& message_, int index_);
+
+    MCNAPI void* $ctor(::std::string const& message_, ::Scripting::InvalidArgumentErrorType type_, int index_);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

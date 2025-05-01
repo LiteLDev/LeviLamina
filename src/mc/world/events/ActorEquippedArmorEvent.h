@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
-
-// auto generated forward declare list
-// clang-format off
-class ItemInstance;
-class WeakEntityRef;
-// clang-format on
+#include "mc/world/item/ItemInstance.h"
 
 struct ActorEquippedArmorEvent {
 public:
@@ -27,20 +23,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorEquippedArmorEvent(::ActorEquippedArmorEvent const&);
+    MCNAPI ActorEquippedArmorEvent(::ActorEquippedArmorEvent const&);
 
-    MCAPI ~ActorEquippedArmorEvent();
+    MCNAPI ~ActorEquippedArmorEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorEquippedArmorEvent const&);
+    MCNAPI void* $ctor(::ActorEquippedArmorEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -2,16 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/cereal/SerializerContext.h"
-
 namespace CameraPresetsInternals {
 // functions
 // NOLINTBEGIN
-MCAPI void
+MCNAPI void
 _doContentError(::std::string const& message, ::std::string_view filename, ::std::vector<::std::string> const& errors);
-
-MCFOLD ::std::string _getUnrecognizedFieldText(::std::vector<::cereal::SerializerContext::LogEntry> const& schemaLog);
 // NOLINTEND
 
 // static variables

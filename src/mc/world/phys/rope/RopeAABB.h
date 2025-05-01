@@ -2,9 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/phys/AABB.h"
+
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class Vec3;
 struct AABBContactPoint;
 // clang-format on
@@ -20,6 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool getContactPoint(::Vec3 const& nodePos, float nodeSize, ::AABBContactPoint& result) const;
+    MCNAPI bool getContactPoint(::Vec3 const& nodePos, float nodeSize, ::AABBContactPoint& result) const;
     // NOLINTEND
 };

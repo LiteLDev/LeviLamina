@@ -2,9 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/ActorFilterGroup.h"
+
 // auto generated forward declare list
 // clang-format off
-class ActorFilterGroup;
 class LootItemFunction;
 // clang-format on
 
@@ -30,22 +32,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TradeItem(::TradeItem&&);
+    MCNAPI TradeItem(::TradeItem&&);
 
-    MCAPI ::TradeItem& operator=(::TradeItem&&);
+    MCNAPI ::TradeItem& operator=(::TradeItem&&);
 
-    MCAPI ~TradeItem();
+    MCNAPI ~TradeItem();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TradeItem&&);
+    MCNAPI void* $ctor(::TradeItem&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

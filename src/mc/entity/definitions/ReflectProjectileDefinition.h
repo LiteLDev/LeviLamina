@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,15 +29,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ReflectProjectileDefinition();
+    MCNAPI ReflectProjectileDefinition();
 
-    MCAPI void _addProjectileToReflect(::std::string const& projectileName);
+    MCNAPI void _addProjectileToReflect(::std::string const& projectileName);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ReflectProjectileDefinition>>& root
     );
     // NOLINTEND
@@ -45,6 +45,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

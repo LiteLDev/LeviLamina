@@ -29,9 +29,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::entt::meta_any deref_as_ref();
+        MCNAPI ::entt::meta_any deref_as_ref();
 
-        MCAPI bool isValid();
+        MCNAPI bool isValid();
         // NOLINTEND
     };
 
@@ -50,13 +50,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ServiceProviderCollection();
+    MCNAPI ~ServiceProviderCollection();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

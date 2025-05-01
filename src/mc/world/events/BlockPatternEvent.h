@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockSourceHandle;
 class EntityContext;
-class Vec3;
-struct ActorDefinitionIdentifier;
 // clang-format on
 
 struct BlockPatternEvent {

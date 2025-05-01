@@ -4,13 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-
-// auto generated forward declare list
-// clang-format off
-class BlockPos;
-class SubChunkPos;
-namespace Bedrock::Threading { class Mutex; }
-// clang-format on
+#include "mc/platform/threading/Mutex.h"
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/level/SubChunkPos.h"
 
 class PlayerRenderChunkModificationLatencyTracker : public ::Bedrock::EnableNonOwnerReferences {
 public:

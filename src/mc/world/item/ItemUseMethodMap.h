@@ -10,7 +10,7 @@ class ItemUseMethodMap {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string const& getItemUseMethodName(::ItemUseMethod useMethod);
+    MCNAPI static ::std::string const& getItemUseMethodName(::ItemUseMethod useMethod);
     // NOLINTEND
 
 public:

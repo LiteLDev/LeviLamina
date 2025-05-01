@@ -47,7 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _dealDamageTo(::Mob& entity);
+    MCNAPI void _dealDamageTo(::Mob& entity);
     // NOLINTEND
 
 public:
@@ -59,16 +59,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $normalTick();
+    MCNAPI void $normalTick();
 
-    MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
+    MCNAPI ::ActorUniqueID $getSourceUniqueID() const;
 
-    MCFOLD float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

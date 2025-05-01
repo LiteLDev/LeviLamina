@@ -25,19 +25,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptOperationPayload(
+    MCNAPI ScriptOperationPayload(
         ::std::string const&                                             payload,
         ::std::function<::Scripting::Result<void>(::std::string const&)> fnUndo,
         ::std::function<::Scripting::Result<void>(::std::string const&)> fnRedo
     );
 
-    MCAPI ~ScriptOperationPayload();
+    MCNAPI ~ScriptOperationPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                                             payload,
         ::std::function<::Scripting::Result<void>(::std::string const&)> fnUndo,
         ::std::function<::Scripting::Result<void>(::std::string const&)> fnRedo
@@ -47,7 +47,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

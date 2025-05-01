@@ -40,9 +40,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ushort GetDeltaCappedMs(::webrtc::TimeDelta);
+    MCNAPI static ushort GetDeltaCappedMs(::webrtc::TimeDelta);
 
-    MCAPI static ushort GetDeltaCappedMs(int64, int64);
+    MCNAPI static ushort GetDeltaCappedMs(int64, int64);
     // NOLINTEND
 };
 

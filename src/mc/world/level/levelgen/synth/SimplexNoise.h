@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 // auto generated forward declare list
 // clang-format off
 class IRandom;
 class Vec2;
-class Vec3;
 // clang-format on
 
 class SimplexNoise {
@@ -20,16 +22,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SimplexNoise(::IRandom& random, bool parityInitialization);
+    MCNAPI SimplexNoise(::IRandom& random, bool parityInitialization);
 
-    MCAPI float _getValue(::Vec2 const& vin) const;
+    MCNAPI float _getValue(::Vec2 const& vin) const;
 
-    MCAPI float _getValue(::Vec3 const& vin) const;
+    MCNAPI float _getValue(::Vec3 const& vin) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IRandom& random, bool parityInitialization);
+    MCNAPI void* $ctor(::IRandom& random, bool parityInitialization);
     // NOLINTEND
 };

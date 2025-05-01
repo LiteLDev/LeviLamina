@@ -32,32 +32,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerListManager();
+    MCNAPI PlayerListManager();
 
-    MCAPI void _onAnyGameplayUsersRemoved();
+    MCNAPI void _onAnyGameplayUsersRemoved();
 
-    MCAPI void _onGameplayUserAdded(::EntityContext& entity);
+    MCNAPI void _onGameplayUserAdded(::EntityContext& entity);
 
-    MCAPI void _onGameplayUserRemoved(::EntityContext& entity);
+    MCNAPI void _onGameplayUserRemoved(::EntityContext& entity);
 
-    MCAPI void initializeWithGameplayUserManagerOnServer(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
+    MCNAPI void initializeWithGameplayUserManagerOnServer(::IGameplayUserManagerConnector& gameplayUserManagerConnector
+    );
 
-    MCAPI void removeByUUID(::mce::UUID const& uuid);
+    MCNAPI void removeByUUID(::mce::UUID const& uuid);
 
-    MCAPI void setPacketSender(::PacketSender& packetSender);
+    MCNAPI void setPacketSender(::PacketSender& packetSender);
 
-    MCAPI ~PlayerListManager();
+    MCNAPI ~PlayerListManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

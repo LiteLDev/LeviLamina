@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/world/level/BlockPos.h"
+
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSourceHandle;
-class Vec3;
-class WeakEntityRef;
 // clang-format on
 
 struct TargetBlockHitEvent {
@@ -25,12 +27,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~TargetBlockHitEvent();
+    MCNAPI ~TargetBlockHitEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

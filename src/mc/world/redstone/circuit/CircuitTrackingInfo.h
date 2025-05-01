@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 
 // auto generated forward declare list
 // clang-format off
 class BaseCircuitComponent;
-class BlockPos;
 // clang-format on
 
 class CircuitTrackingInfo {
@@ -45,12 +45,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CircuitTrackingInfo(::gsl::not_null<::BaseCircuitComponent*> component, ::BlockPos const& pos, int dampening);
+    MCNAPI
+    CircuitTrackingInfo(::gsl::not_null<::BaseCircuitComponent*> component, ::BlockPos const& pos, int dampening);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::gsl::not_null<::BaseCircuitComponent*> component, ::BlockPos const& pos, int dampening);
+    MCNAPI void* $ctor(::gsl::not_null<::BaseCircuitComponent*> component, ::BlockPos const& pos, int dampening);
     // NOLINTEND
 };

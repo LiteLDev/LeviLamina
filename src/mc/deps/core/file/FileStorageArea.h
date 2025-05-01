@@ -7,9 +7,11 @@
 #include "mc/deps/core/file/LevelStorageState.h"
 #include "mc/deps/core/file/WriteOperation.h"
 #include "mc/deps/core/file/file_system/TransactionFlags.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Core { class FileIndexLru; }
 namespace Core { class FileStats; }
 namespace Core { class FileSystemImpl; }
 namespace Core { class PathView; }
@@ -158,43 +160,49 @@ public:
     virtual void enableFlushToDisk(bool);
 
     // vIndex: 24
-    virtual bool checkCorrupt(bool handleCorruption);
+    virtual void enableSequentialWrites(bool);
 
     // vIndex: 25
-    virtual ::Core::FileStorageArea::FlushableLevelDbEnvType getFlushableLevelDbEnvType() const;
+    virtual bool checkCorrupt(bool handleCorruption);
 
     // vIndex: 26
-    virtual uint64 getTransactionWriteSizeLimit() const;
+    virtual ::Bedrock::NonOwnerPointer<::Core::FileIndexLru> getFileIndexLru();
 
     // vIndex: 27
-    virtual ::Core::Result setSaveDataIcon(::Core::PathView iconPath);
+    virtual ::Core::FileStorageArea::FlushableLevelDbEnvType getFlushableLevelDbEnvType() const;
 
     // vIndex: 28
-    virtual bool shouldAllowCommit() const;
+    virtual uint64 getTransactionWriteSizeLimit() const;
 
     // vIndex: 29
-    virtual void trackBytesWritten(::Core::PathView targetPath, uint64 amount, ::Core::WriteOperation writeOperation);
+    virtual ::Core::Result setSaveDataIcon(::Core::PathView iconPath);
 
     // vIndex: 30
-    virtual void trackWriteOperation(::Core::PathView targetPath, ::Core::WriteOperation writeOperation);
+    virtual bool shouldAllowCommit() const;
 
     // vIndex: 31
-    virtual ::Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo();
+    virtual void trackBytesWritten(::Core::PathView targetPath, uint64 amount, ::Core::WriteOperation writeOperation);
 
     // vIndex: 32
-    virtual ::Core::Result _commit();
+    virtual void trackWriteOperation(::Core::PathView targetPath, ::Core::WriteOperation writeOperation);
 
     // vIndex: 33
-    virtual ::Core::Result _onTransactionsEmpty(bool fromChild);
+    virtual ::Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo();
 
     // vIndex: 34
+    virtual ::Core::Result _commit();
+
+    // vIndex: 35
+    virtual ::Core::Result _onTransactionsEmpty(bool fromChild);
+
+    // vIndex: 36
     virtual void _onTeardown();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FileStorageArea(
+    MCNAPI FileStorageArea(
         ::Core::FileAccessType                     type,
         ::Core::PathView                           rootPath,
         bool                                       usesFlatFiles,
@@ -202,32 +210,32 @@ public:
         ::std::shared_ptr<::Core::FileStorageArea> isAccessedDirectly
     );
 
-    MCAPI void _addReadOperation(bool succeeded, uint64 numBytesRead);
+    MCNAPI void _addReadOperation(bool succeeded, uint64 numBytesRead);
 
-    MCAPI void _addWriteOperation(bool succeeded, uint64 numBytesWritten);
+    MCNAPI void _addWriteOperation(bool succeeded, uint64 numBytesWritten);
 
-    MCAPI void _beginTransaction(::Core::FileSystemImpl* pTransaction, bool fromChild);
+    MCNAPI void _beginTransaction(::Core::FileSystemImpl* pTransaction, bool fromChild);
 
-    MCAPI ::Core::Result _endTransaction(::Core::FileSystemImpl* pTransaction, bool fromChild);
+    MCNAPI ::Core::Result _endTransaction(::Core::FileSystemImpl* pTransaction, bool fromChild);
 
-    MCAPI void _notifyEndWrite();
+    MCNAPI void _notifyEndWrite();
 
-    MCAPI bool canWrite() const;
+    MCNAPI bool canWrite() const;
 
-    MCAPI void checkUserStorage();
+    MCNAPI void checkUserStorage();
 
-    MCAPI bool isOutOfDiskSpaceError() const;
+    MCNAPI bool isOutOfDiskSpaceError() const;
 
-    MCAPI void notifyCriticalDiskError(::Core::LevelStorageState const& errorCode);
+    MCNAPI void notifyCriticalDiskError(::Core::LevelStorageState const& errorCode);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Core::Result
+    MCNAPI static ::Core::Result
     _getStorageAreaForPathImpl(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::PathView path);
 
-    MCAPI static ::Core::Result
+    MCNAPI static ::Core::Result
     getStorageAreaForPath(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::PathView path);
     // NOLINTEND
 
@@ -244,7 +252,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Core::FileAccessType                     type,
         ::Core::PathView                           rootPath,
         bool                                       usesFlatFiles,
@@ -256,82 +264,86 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::unique_ptr<::Core::FileSystemImpl>
+    MCNAPI ::std::unique_ptr<::Core::FileSystemImpl>
     $createTransaction(::Core::FileAccessType fileAccessType, ::Core::TransactionFlags);
 
-    MCFOLD void $setUsedSizeOverride(uint64);
+    MCNAPI void $setUsedSizeOverride(uint64);
 
-    MCFOLD void $clearUsedSizeOverride();
+    MCNAPI void $clearUsedSizeOverride();
 
-    MCAPI void $notifyChangeInFileSize(int64 changeInSize, int64 changeInAllocatedSize);
+    MCNAPI void $notifyChangeInFileSize(int64 changeInSize, int64 changeInAllocatedSize);
 
-    MCFOLD bool $handlesPendingWrites() const;
+    MCNAPI bool $handlesPendingWrites() const;
 
-    MCFOLD void $informPendingWriteSize(uint64 numBytesWritePending, bool const fromResourcePack);
+    MCNAPI void $informPendingWriteSize(uint64 numBytesWritePending, bool const fromResourcePack);
 
-    MCFOLD uint64 $estimatePendingWriteDiskSize(uint64 rawFileSize) const;
+    MCNAPI uint64 $estimatePendingWriteDiskSize(uint64 rawFileSize) const;
 
-    MCFOLD void $informStorageAreaCopy(uint64 storageAreaSize);
+    MCNAPI void $informStorageAreaCopy(uint64 storageAreaSize);
 
-    MCFOLD bool $supportsExtendSize() const;
+    MCNAPI bool $supportsExtendSize() const;
 
-    MCFOLD bool $canExtendSize() const;
+    MCNAPI bool $canExtendSize() const;
 
-    MCAPI void $resetCanAttemptExtendSize();
+    MCNAPI void $resetCanAttemptExtendSize();
 
-    MCAPI ::Core::Result $getExtendSizeThreshold(uint64& outExtendSizeThreshold) const;
+    MCNAPI ::Core::Result $getExtendSizeThreshold(uint64& outExtendSizeThreshold) const;
 
-    MCAPI void $attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback);
+    MCNAPI void $attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback);
 
-    MCAPI void $preemptiveExtendSize(
+    MCNAPI void $preemptiveExtendSize(
         uint64 const            expectedContentSize,
         ::std::function<void()> successCallback,
         ::std::function<void()> failureCallback
     );
 
-    MCAPI uint64 $getAvailableUserStorageSize();
+    MCNAPI uint64 $getAvailableUserStorageSize();
 
-    MCAPI void $unloadFlatFileManifests(bool shouldClearManifests);
+    MCNAPI void $unloadFlatFileManifests(bool shouldClearManifests);
 
-    MCFOLD void $tick();
+    MCNAPI void $tick();
 
-    MCFOLD void $flushImmediately();
+    MCNAPI void $flushImmediately();
 
-    MCFOLD void $enableFlushToDisk(bool);
+    MCNAPI void $enableFlushToDisk(bool);
 
-    MCFOLD bool $checkCorrupt(bool handleCorruption);
+    MCNAPI void $enableSequentialWrites(bool);
 
-    MCFOLD ::Core::FileStorageArea::FlushableLevelDbEnvType $getFlushableLevelDbEnvType() const;
+    MCNAPI bool $checkCorrupt(bool handleCorruption);
 
-    MCFOLD uint64 $getTransactionWriteSizeLimit() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::Core::FileIndexLru> $getFileIndexLru();
 
-    MCFOLD ::Core::Result $setSaveDataIcon(::Core::PathView iconPath);
+    MCNAPI ::Core::FileStorageArea::FlushableLevelDbEnvType $getFlushableLevelDbEnvType() const;
 
-    MCAPI bool $shouldAllowCommit() const;
+    MCNAPI uint64 $getTransactionWriteSizeLimit() const;
 
-    MCAPI void $trackBytesWritten(::Core::PathView targetPath, uint64 amount, ::Core::WriteOperation writeOperation);
+    MCNAPI ::Core::Result $setSaveDataIcon(::Core::PathView iconPath);
 
-    MCAPI void $trackWriteOperation(::Core::PathView targetPath, ::Core::WriteOperation writeOperation);
+    MCNAPI bool $shouldAllowCommit() const;
 
-    MCAPI ::Core::FileStorageArea::StorageAreaSpaceInfo $getStorageAreaSpaceInfo();
+    MCNAPI void $trackBytesWritten(::Core::PathView targetPath, uint64 amount, ::Core::WriteOperation writeOperation);
 
-    MCFOLD ::Core::Result $_commit();
+    MCNAPI void $trackWriteOperation(::Core::PathView targetPath, ::Core::WriteOperation writeOperation);
 
-    MCFOLD ::Core::Result $_onTransactionsEmpty(bool fromChild);
+    MCNAPI ::Core::FileStorageArea::StorageAreaSpaceInfo $getStorageAreaSpaceInfo();
 
-    MCFOLD void $_onTeardown();
+    MCNAPI ::Core::Result $_commit();
+
+    MCNAPI ::Core::Result $_onTransactionsEmpty(bool fromChild);
+
+    MCNAPI void $_onTeardown();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

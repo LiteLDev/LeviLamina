@@ -28,27 +28,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EditorBlockPalette(::Editor::EditorBlockPalette const&);
+    MCNAPI EditorBlockPalette(::Editor::EditorBlockPalette const&);
 
-    MCAPI EditorBlockPalette(
+    MCNAPI EditorBlockPalette(
         ::HashedString                                                                                           id,
         ::std::array<::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>, 9> items,
         ::std::optional<::std::string> displayName
     );
 
-    MCAPI ::Editor::EditorBlockPalette& operator=(::Editor::EditorBlockPalette&&);
+    MCNAPI ::Editor::EditorBlockPalette& operator=(::Editor::EditorBlockPalette&&);
 
-    MCAPI ::Editor::EditorBlockPalette& operator=(::Editor::EditorBlockPalette const&);
+    MCNAPI ::Editor::EditorBlockPalette& operator=(::Editor::EditorBlockPalette const&);
 
-    MCAPI ~EditorBlockPalette();
+    MCNAPI ~EditorBlockPalette();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::Editor::EditorBlockPalette createDefault();
+    MCNAPI static ::Editor::EditorBlockPalette createDefault();
     // NOLINTEND
 
 public:
@@ -62,9 +62,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::EditorBlockPalette const&);
+    MCNAPI void* $ctor(::Editor::EditorBlockPalette const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::HashedString                                                                                           id,
         ::std::array<::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>, 9> items,
         ::std::optional<::std::string> displayName
@@ -74,7 +74,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

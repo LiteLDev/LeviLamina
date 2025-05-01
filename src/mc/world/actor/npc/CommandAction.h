@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/npc/ActionValue.h"
+#include "mc/world/actor/npc/Button.h"
 #include "mc/world/actor/npc/action_mode/Enum.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace npc { struct ActionValue; }
-namespace npc { struct Button; }
 namespace npc { struct StoredCommand; }
 // clang-format on
 
@@ -27,13 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~CommandAction();
+    MCNAPI ~CommandAction();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

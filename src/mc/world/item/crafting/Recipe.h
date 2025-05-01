@@ -3,23 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/deps/core/string/HashedString.h"
+#include "mc/platform/UUID.h"
 #include "mc/world/inventory/network/TypedServerNetId.h"
+#include "mc/world/item/crafting/RecipeUnlockingRequirement.h"
 
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
 class CraftingContainer;
 class CraftingContext;
-class HashedString;
 class ItemDescriptor;
 class ItemInstance;
 class ItemStack;
 class NetworkItemInstanceDescriptor;
 class RecipeIngredient;
-class RecipeUnlockingRequirement;
-class SemVersion;
 struct RecipeNetIdTag;
-namespace mce { class UUID; }
 // clang-format on
 
 class Recipe {
@@ -49,13 +49,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Results();
+        MCNAPI ~Results();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -76,13 +76,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ConstructionContext();
+        MCNAPI ~ConstructionContext();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -155,56 +155,57 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Recipe(::Recipe::ConstructionContext&& context);
+    MCNAPI explicit Recipe(::Recipe::ConstructionContext&& context);
 
-    MCAPI int countQuantityOfIngredient(::ItemInstance const& ingredient) const;
+    MCNAPI int countQuantityOfIngredient(::ItemInstance const& ingredient) const;
 
-    MCAPI void generateUUID();
+    MCNAPI void generateUUID();
 
-    MCAPI ::Recipe::ConstructionContext getConstructionContext() const;
+    MCNAPI ::Recipe::ConstructionContext getConstructionContext() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isAnyAuxValue(::ItemDescriptor const& ii);
+    MCNAPI static bool isAnyAuxValue(::ItemDescriptor const& ii);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Recipe::ConstructionContext&& context);
+    MCNAPI void* $ctor(::Recipe::ConstructionContext&& context);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::mce::UUID const& $getId() const;
+    MCNAPI ::mce::UUID const& $getId() const;
 
-    MCFOLD ::std::vector<::ItemInstance> const& $getResultItems() const;
+    MCNAPI ::std::vector<::ItemInstance> const& $getResultItems() const;
 
-    MCFOLD bool $isMultiRecipe() const;
+    MCNAPI bool $isMultiRecipe() const;
 
-    MCFOLD bool $hasDataDrivenResult() const;
+    MCNAPI bool $hasDataDrivenResult() const;
 
-    MCAPI bool $itemValidForRecipe(::ItemDescriptor const& recipeItem, ::ItemStack const& item) const;
+    MCNAPI bool $itemValidForRecipe(::ItemDescriptor const& recipeItem, ::ItemStack const& item) const;
 
-    MCAPI bool $itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs) const;
+    MCNAPI bool $itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs) const;
 
-    MCAPI bool $itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs, ::CompoundTag const* rhsTag) const;
+    MCNAPI bool
+    $itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs, ::CompoundTag const* rhsTag) const;
 
-    MCAPI uint64 $getIngredientsHash() const;
+    MCNAPI uint64 $getIngredientsHash() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

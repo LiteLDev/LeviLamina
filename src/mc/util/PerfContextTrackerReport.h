@@ -40,12 +40,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~PerfContextTrackerReport();
+    MCNAPI ~PerfContextTrackerReport();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

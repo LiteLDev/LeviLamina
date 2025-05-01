@@ -19,6 +19,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool isSubscribed(::std::string const& objective) const;
+    MCNAPI bool isSubscribed(::std::string const& objective) const;
     // NOLINTEND
 };

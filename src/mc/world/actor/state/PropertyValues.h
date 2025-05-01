@@ -21,16 +21,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::PropertyValues& operator=(::PropertyValues&&);
+    MCNAPI ::PropertyValues& operator=(::PropertyValues&&);
 
-    MCAPI void resize(uint64 numInts, uint64 numFloats, uint64 numBools, uint64 numEnums);
+    MCNAPI void resize(uint64 numInts, uint64 numFloats, uint64 numBools, uint64 numEnums);
 
-    MCAPI ~PropertyValues();
+    MCNAPI ~PropertyValues();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

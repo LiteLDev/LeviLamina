@@ -52,12 +52,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourcePackFileUploadManager(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
+    MCNAPI ResourcePackFileUploadManager(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
 
-    MCAPI void
+    MCNAPI void
     _archiveAndUploadPackToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int slotIndex, ::std::string const&);
 
-    MCAPI void _extractPackFromZipAndUpload(
+    MCNAPI void _extractPackFromZipAndUpload(
         ::std::string const&                     resourcePack,
         ::ResourceLocation const&                resourcePackLocation,
         ::Core::PathBuffer<::std::string> const& relativePathWithinZip,
@@ -65,14 +65,14 @@ public:
         ::Json::Value const&                     uploadOptions
     );
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> _uploadResourcePackFolder(
+    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> _uploadResourcePackFolder(
         ::std::string const&                     resourcePack,
         ::ResourceLocation const&                resourcePackLocation,
         ::Core::PathBuffer<::std::string> const& resourceZipPath,
         ::Json::Value const&                     uploadOptions
     );
 
-    MCAPI void uploadResourcePack(
+    MCNAPI void uploadResourcePack(
         ::std::string const&                     resourcePackName,
         ::ResourceLocation const&                resourceLocation,
         bool                                     isZipped,
@@ -85,7 +85,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
+    MCNAPI void* $ctor(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
     // NOLINTEND
 
 public:
@@ -97,19 +97,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $archiveAndUploadFileToRealmStorage(
+    MCNAPI void $archiveAndUploadFileToRealmStorage(
         ::std::string const& uploadId,
         ::Core::Path const&  path,
         int const            slotIndex,
         ::std::string const& realmsGuid
     );
 
-    MCAPI void $uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
+    MCNAPI void $uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

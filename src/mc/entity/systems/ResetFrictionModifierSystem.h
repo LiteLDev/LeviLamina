@@ -18,7 +18,7 @@ class ResetFrictionModifierSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     tickResetFrictionModifierSystem(::ViewT<
                                     ::StrictEntityContext,
                                     ::Include<::ActorMovementTickNeededComponent, ::PlayerInputRequestComponent>,

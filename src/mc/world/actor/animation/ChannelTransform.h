@@ -27,26 +27,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ChannelTransform(::ExpressionNode const& expression);
+    MCNAPI explicit ChannelTransform(::ExpressionNode const& expression);
 
-    MCAPI explicit ChannelTransform(::ChannelTransform_Float const& rhs);
+    MCNAPI explicit ChannelTransform(::ChannelTransform_Float const& rhs);
 
-    MCAPI ChannelTransform(::ExpressionNode const& expression, ::Vec3 const& axis);
+    MCNAPI ChannelTransform(::ExpressionNode const& expression, ::Vec3 const& axis);
 
-    MCAPI ChannelTransform(::ExpressionNode const& expression, int axisIndex);
+    MCNAPI ChannelTransform(::ExpressionNode const& expression, int axisIndex);
 
-    MCAPI bool getDataValues(::Vec3& minValue, ::Vec3& maxValue) const;
+    MCNAPI bool getDataValues(::Vec3& minValue, ::Vec3& maxValue) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ExpressionNode const& expression);
+    MCNAPI void* $ctor(::ExpressionNode const& expression);
 
-    MCAPI void* $ctor(::ChannelTransform_Float const& rhs);
+    MCNAPI void* $ctor(::ChannelTransform_Float const& rhs);
 
-    MCAPI void* $ctor(::ExpressionNode const& expression, ::Vec3 const& axis);
+    MCNAPI void* $ctor(::ExpressionNode const& expression, ::Vec3 const& axis);
 
-    MCAPI void* $ctor(::ExpressionNode const& expression, int axisIndex);
+    MCNAPI void* $ctor(::ExpressionNode const& expression, int axisIndex);
     // NOLINTEND
 };

@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/MolangLoopBreak.h"
+#include "mc/util/MolangLoopContinue.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class ItemStackBase;
-struct MolangLoopBreak;
-struct MolangLoopContinue;
 // clang-format on
 
 union MolangScriptArgPOD {

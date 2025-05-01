@@ -4,12 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/world/inventory/network/TypedServerNetId.h"
+#include "mc/world/item/ItemInstance.h"
 
 // auto generated forward declare list
 // clang-format off
 class BaseGameVersion;
 class CompoundTag;
-class ItemInstance;
 class SaveContext;
 struct RecipeNetIdTag;
 // clang-format on
@@ -37,17 +37,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MerchantRecipe(::MerchantRecipe const&);
+    MCNAPI MerchantRecipe(::MerchantRecipe const&);
 
-    MCAPI explicit MerchantRecipe(::CompoundTag const* tag);
+    MCNAPI explicit MerchantRecipe(::CompoundTag const* tag);
 
-    MCAPI MerchantRecipe(::MerchantRecipe&&);
+    MCNAPI MerchantRecipe(::MerchantRecipe&&);
 
-    MCAPI MerchantRecipe(::ItemInstance const& buy, ::ItemInstance const& sell);
+    MCNAPI MerchantRecipe(::ItemInstance const& buy, ::ItemInstance const& sell);
 
-    MCAPI MerchantRecipe(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
+    MCNAPI MerchantRecipe(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
 
-    MCAPI void calculateDemandPrices(
+    MCNAPI void calculateDemandPrices(
         int               minorPositiveGossip,
         int               majorPositiveGossip,
         int               nearbyCuredDiscount,
@@ -56,36 +56,36 @@ public:
         ::BaseGameVersion baseGameVersion
     );
 
-    MCAPI ::std::unique_ptr<::CompoundTag> createTag(bool includeNetInfo, ::SaveContext const& saveContext) const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> createTag(bool includeNetInfo, ::SaveContext const& saveContext) const;
 
-    MCAPI bool isSame(::MerchantRecipe const& lhs) const;
+    MCNAPI bool isSame(::MerchantRecipe const& lhs) const;
 
-    MCAPI void legacyCalculateDemandPrices(int lowTierDiscount, int highTierDiscount);
+    MCNAPI void legacyCalculateDemandPrices(int lowTierDiscount, int highTierDiscount);
 
-    MCAPI void load(::CompoundTag const* tag);
+    MCNAPI void load(::CompoundTag const* tag);
 
-    MCAPI ::MerchantRecipe& operator=(::MerchantRecipe const&);
+    MCNAPI ::MerchantRecipe& operator=(::MerchantRecipe const&);
 
-    MCAPI ~MerchantRecipe();
+    MCNAPI ~MerchantRecipe();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::MerchantRecipe const&);
+    MCNAPI void* $ctor(::MerchantRecipe const&);
 
-    MCAPI void* $ctor(::CompoundTag const* tag);
+    MCNAPI void* $ctor(::CompoundTag const* tag);
 
-    MCAPI void* $ctor(::MerchantRecipe&&);
+    MCNAPI void* $ctor(::MerchantRecipe&&);
 
-    MCAPI void* $ctor(::ItemInstance const& buy, ::ItemInstance const& sell);
+    MCNAPI void* $ctor(::ItemInstance const& buy, ::ItemInstance const& sell);
 
-    MCAPI void* $ctor(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
+    MCNAPI void* $ctor(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

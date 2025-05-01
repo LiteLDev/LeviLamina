@@ -36,37 +36,37 @@ public:
     virtual ~UnzipFileLibZip() /*override*/ = default;
 
     // vIndex: 1
-    virtual bool isGood() const /*override*/;
-
-    // vIndex: 2
     virtual ::Core::ZipUtils::UnzipResult locateFile(char const*, int) /*override*/;
 
-    // vIndex: 3
+    // vIndex: 2
     virtual ::Core::ZipUtils::UnzipResult goToFirstFile() /*override*/;
 
-    // vIndex: 4
+    // vIndex: 3
     virtual ::Core::ZipUtils::UnzipResult goToNextFile() /*override*/;
 
-    // vIndex: 5
+    // vIndex: 4
     virtual ::std::string getCurrentFileName() const /*override*/;
 
-    // vIndex: 6
+    // vIndex: 5
     virtual ::Core::ZipUtils::UnzipResult openCurrentFileForReading() /*override*/;
 
-    // vIndex: 7
+    // vIndex: 6
     virtual ::Core::ZipUtils::UnzipResult closeCurrentFile() /*override*/;
 
-    // vIndex: 8
+    // vIndex: 7
     virtual void readCurrentFileContentsIntoMemory(::std::string&) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 8
     virtual void readCurrentFileContents(uint64, ::std::function<void(int, void const*)>) /*override*/;
 
-    // vIndex: 10
+    // vIndex: 9
     virtual uint64 getTotalFilesInZip() /*override*/;
 
-    // vIndex: 11
+    // vIndex: 10
     virtual uint64 getCurrentFileUncompressedSize() /*override*/;
+
+    // vIndex: 11
+    virtual bool _isGood() const /*override*/;
     // NOLINTEND
 
 public:

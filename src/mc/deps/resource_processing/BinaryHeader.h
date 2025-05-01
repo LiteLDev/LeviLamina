@@ -3,8 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cereal/SerializerContext.h"
 #include "mc/platform/Result.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Puv { class Logger; }
+// clang-format on
 
 namespace Bedrock::Resources {
 
@@ -26,23 +30,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~BinaryHeader();
+    MCNAPI ~BinaryHeader();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool hasMagicNumber(::gsl::span<uchar const> data);
+    MCNAPI static bool hasMagicNumber(::gsl::span<uchar const> data);
 
-    MCAPI static ::Bedrock::
-        Result<::Bedrock::Resources::BinaryHeader, ::std::vector<::cereal::SerializerContext::LogEntry>>
-        parse(::std::string_view binaryResource);
+    MCNAPI static ::Bedrock::Result<::Bedrock::Resources::BinaryHeader, ::Puv::Logger>
+    parse(::std::string_view binaryResource);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

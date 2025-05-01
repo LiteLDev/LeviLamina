@@ -75,26 +75,26 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $packetSentTo(::NetworkIdentifier const&, ::Packet const&, uint size);
+    MCNAPI void $packetSentTo(::NetworkIdentifier const&, ::Packet const&, uint size);
 
-    MCAPI void $packetReceivedFrom(::NetworkIdentifier const&, ::Packet const&, uint size);
+    MCNAPI void $packetReceivedFrom(::NetworkIdentifier const&, ::Packet const&, uint size);
 
-    MCFOLD void $dataSentTo(::NetworkIdentifier const&, ::std::string_view);
+    MCNAPI void $dataSentTo(::NetworkIdentifier const&, ::std::string_view);
 
-    MCFOLD void $dataReceivedFrom(::NetworkIdentifier const&, ::std::string const&);
+    MCNAPI void $dataReceivedFrom(::NetworkIdentifier const&, ::std::string const&);
 
-    MCAPI void $reset();
+    MCNAPI void $reset();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

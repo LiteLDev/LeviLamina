@@ -2,9 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/phys/AABB.h"
+
 // auto generated forward declare list
 // clang-format off
-class AABB;
 struct InsideBlockData;
 // clang-format on
 
@@ -26,6 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::InsideGenericBlockComponent& operator=(::InsideGenericBlockComponent&&);
+    MCNAPI ::InsideGenericBlockComponent& operator=(::InsideGenericBlockComponent&&);
     // NOLINTEND
 };

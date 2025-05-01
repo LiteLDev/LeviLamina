@@ -24,21 +24,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FrameDependencyStructure(::webrtc::FrameDependencyStructure const&);
+    MCNAPI FrameDependencyStructure(::webrtc::FrameDependencyStructure const&);
 
-    MCAPI ~FrameDependencyStructure();
+    MCNAPI ~FrameDependencyStructure();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::FrameDependencyStructure const&);
+    MCNAPI void* $ctor(::webrtc::FrameDependencyStructure const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

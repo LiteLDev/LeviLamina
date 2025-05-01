@@ -23,15 +23,13 @@ public:
 
     MCAPI Vec3(float x_, float y_, float z_);
 
-    MCAPI float distanceTo(::Vec3 const& p) const;
-
     MCAPI bool isNan() const;
 
     MCAPI bool isNear(::Vec3 const& rhs, float e) const;
 
     MCAPI float lengthSquared() const;
 
-    MCAPI ::Vec3 normalized() const;
+    MCFOLD ::Vec3 normalized() const;
 
     MCAPI ::Vec3 operator*(float k) const;
 
@@ -40,6 +38,8 @@ public:
     MCAPI ::Vec3 operator-() const;
 
     MCAPI ::Vec3 operator-(::Vec3 const& rhs) const;
+
+    MCFOLD bool operator==(::Vec3 const& rhs) const;
 
     MCAPI ::std::string toJsonString() const;
 

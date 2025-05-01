@@ -59,31 +59,31 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::NetherNet::RtcThreadManager const& $getSignalThread() const;
+    MCNAPI ::NetherNet::RtcThreadManager const& $getSignalThread() const;
 
-    MCAPI ::NetherNet::RtcThreadManager const& $getNetworkThread() const;
+    MCNAPI ::NetherNet::RtcThreadManager const& $getNetworkThread() const;
 
-    MCAPI ::NetherNet::RtcThreadManager const& $getWorkerThread() const;
+    MCNAPI ::NetherNet::RtcThreadManager const& $getWorkerThread() const;
 
-    MCAPI ::NetherNet::LanThreadManager& $getLanThread();
+    MCNAPI ::NetherNet::LanThreadManager& $getLanThread();
 
-    MCAPI ::NetherNet::NetherNetTransportGlobalConfiguration const& $getGlobalConfig() const;
+    MCNAPI ::NetherNet::NetherNetTransportGlobalConfiguration const& $getGlobalConfig() const;
 
-    MCAPI void $setLoggingLevel(::NetherNet::LogSeverity min);
+    MCNAPI void $setLoggingLevel(::NetherNet::LogSeverity min);
 
-    MCAPI void $_logMessage(::NetherNet::LogSeverity level, char const* fmt, char* args) const;
+    MCNAPI void $_logMessage(::NetherNet::LogSeverity level, char const* fmt, char* args) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

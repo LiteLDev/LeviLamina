@@ -50,7 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -62,18 +62,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::CopperBehavior const* $tryGetCopperBehavior() const;
+    MCNAPI ::CopperBehavior const* $tryGetCopperBehavior() const;
 
-    MCFOLD void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

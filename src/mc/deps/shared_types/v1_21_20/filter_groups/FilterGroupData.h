@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace SharedTypes::v1_21_20 { struct FilterTestData; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -25,34 +26,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FilterGroupData(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
+    MCNAPI FilterGroupData(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
 
-    MCAPI ::SharedTypes::v1_21_20::FilterGroupData& operator=(::SharedTypes::v1_21_20::FilterGroupData const&);
+    MCNAPI ::SharedTypes::v1_21_20::FilterGroupData& operator=(::SharedTypes::v1_21_20::FilterGroupData const&);
 
-    MCAPI ~FilterGroupData();
+    MCNAPI ~FilterGroupData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void fromFilterGroupVector(
+    MCNAPI static void fromFilterGroupVector(
         ::SharedTypes::v1_21_20::FilterGroupData&                      instance,
         ::std::vector<::SharedTypes::v1_21_20::FilterGroupData> const& filterGroups
+    );
+
+    MCNAPI static void fromFilterTestData(
+        ::SharedTypes::v1_21_20::FilterGroupData&      instance,
+        ::SharedTypes::v1_21_20::FilterTestData const& filterTestData
     );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -17,7 +17,7 @@ struct StateVectorComponent;
 namespace CameraOutOfRangeWarningSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void _tick(
+MCNAPI void _tick(
     ::StrictEntityContext const&                             entity,
     ::StateVectorComponent const&                            stateVectorComponent,
     ::ServerActiveCameraComponent const&                     serverActiveCameraComponent,

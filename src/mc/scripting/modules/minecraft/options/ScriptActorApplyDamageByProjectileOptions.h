@@ -23,18 +23,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorApplyDamageByProjectileOptions(::ScriptModuleMinecraft::
-                                                        ScriptActorApplyDamageByProjectileOptions const&);
+    MCNAPI ScriptActorApplyDamageByProjectileOptions(::ScriptModuleMinecraft::
+                                                         ScriptActorApplyDamageByProjectileOptions const&);
 
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const& other) const;
+    MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const& other) const;
 
-    MCAPI ~ScriptActorApplyDamageByProjectileOptions();
+    MCNAPI ~ScriptActorApplyDamageByProjectileOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<
         ::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions>
     bind();
     // NOLINTEND
@@ -42,13 +42,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

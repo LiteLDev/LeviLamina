@@ -28,14 +28,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
 
-    MCFOLD bool $checkSpawnRules(bool);
+    MCNAPI bool $checkSpawnRules(bool);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

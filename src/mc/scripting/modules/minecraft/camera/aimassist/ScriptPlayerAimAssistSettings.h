@@ -25,25 +25,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings&
+    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings&
     operator=(::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings&&);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings&
+    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings&
     operator=(::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings const&);
 
-    MCAPI ~ScriptPlayerAimAssistSettings();
+    MCNAPI ~ScriptPlayerAimAssistSettings();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings> bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

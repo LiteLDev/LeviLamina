@@ -28,68 +28,68 @@ public:
     // vIndex: 0
     virtual ~NavigationScriptActorComponent() /*override*/ = default;
 
-    // vIndex: 2
+    // vIndex: 4
     virtual ::Scripting::Result_deprecated<bool> getIsAmphibious() const;
 
-    // vIndex: 3
+    // vIndex: 5
     virtual ::Scripting::Result_deprecated<bool> getAvoidSun() const;
 
-    // vIndex: 4
+    // vIndex: 6
     virtual ::Scripting::Result_deprecated<bool> getCanPassDoors() const;
 
-    // vIndex: 5
+    // vIndex: 7
     virtual ::Scripting::Result_deprecated<bool> getCanOpenDoors() const;
 
-    // vIndex: 6
+    // vIndex: 8
     virtual ::Scripting::Result_deprecated<bool> getCanOpenIronDoors() const;
 
-    // vIndex: 7
+    // vIndex: 9
     virtual ::Scripting::Result_deprecated<bool> getCanBreakDoors() const;
 
-    // vIndex: 8
+    // vIndex: 10
     virtual ::Scripting::Result_deprecated<bool> getAvoidWater() const;
 
-    // vIndex: 9
+    // vIndex: 11
     virtual ::Scripting::Result_deprecated<bool> getAvoidDamageBlocks() const;
 
-    // vIndex: 10
+    // vIndex: 12
     virtual ::Scripting::Result_deprecated<bool> getCanFloat() const;
 
-    // vIndex: 11
+    // vIndex: 13
     virtual ::Scripting::Result_deprecated<bool> getCanSink() const;
 
-    // vIndex: 12
+    // vIndex: 14
     virtual ::Scripting::Result_deprecated<bool> getCanPathOverWater() const;
 
-    // vIndex: 13
+    // vIndex: 15
     virtual ::Scripting::Result_deprecated<bool> getCanPathOverLava() const;
 
-    // vIndex: 14
+    // vIndex: 16
     virtual ::Scripting::Result_deprecated<bool> getCanWalkInLava() const;
 
-    // vIndex: 15
+    // vIndex: 17
     virtual ::Scripting::Result_deprecated<bool> getAvoidPortals() const;
 
-    // vIndex: 16
+    // vIndex: 18
     virtual ::Scripting::Result_deprecated<bool> getCanWalk() const;
 
-    // vIndex: 17
+    // vIndex: 19
     virtual ::Scripting::Result_deprecated<bool> getCanSwim() const;
 
-    // vIndex: 18
+    // vIndex: 20
     virtual ::Scripting::Result_deprecated<bool> getCanBreach() const;
 
-    // vIndex: 19
+    // vIndex: 21
     virtual ::Scripting::Result_deprecated<bool> getCanJump() const;
 
-    // vIndex: 20
+    // vIndex: 22
     virtual ::Scripting::Result_deprecated<bool> getCanPathFromAir() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::NavigationScriptActorComponent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::NavigationScriptActorComponent> bind();
     // NOLINTEND
 
 public:
@@ -101,49 +101,49 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<bool> $getIsAmphibious() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $getIsAmphibious() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> $getAvoidSun() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $getAvoidSun() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> $getCanPassDoors() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $getCanPassDoors() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> $getCanOpenDoors() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $getCanOpenDoors() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> $getCanOpenIronDoors() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $getCanOpenIronDoors() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> $getCanBreakDoors() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $getCanBreakDoors() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> $getAvoidWater() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $getAvoidWater() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> $getAvoidDamageBlocks() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $getAvoidDamageBlocks() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> $getCanFloat() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $getCanFloat() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> $getCanSink() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $getCanSink() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> $getCanPathOverWater() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $getCanPathOverWater() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> $getCanPathOverLava() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $getCanPathOverLava() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> $getCanWalkInLava() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $getCanWalkInLava() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> $getAvoidPortals() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $getAvoidPortals() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> $getCanWalk() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $getCanWalk() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> $getCanSwim() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $getCanSwim() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> $getCanBreach() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $getCanBreach() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> $getCanJump() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $getCanJump() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> $getCanPathFromAir() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $getCanPathFromAir() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

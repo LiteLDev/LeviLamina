@@ -19,32 +19,32 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI TaskQueueTimeout(::dcsctp::TaskQueueTimeoutFactory&, ::webrtc::TaskQueueBase::DelayPrecision);
+        MCNAPI TaskQueueTimeout(::dcsctp::TaskQueueTimeoutFactory&, ::webrtc::TaskQueueBase::DelayPrecision);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::dcsctp::TaskQueueTimeoutFactory&, ::webrtc::TaskQueueBase::DelayPrecision);
+        MCNAPI void* $ctor(::dcsctp::TaskQueueTimeoutFactory&, ::webrtc::TaskQueueBase::DelayPrecision);
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~TaskQueueTimeoutFactory();
+    MCNAPI ~TaskQueueTimeoutFactory();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

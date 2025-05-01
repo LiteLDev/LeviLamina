@@ -31,29 +31,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EditorScriptAPI(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI EditorScriptAPI(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
 
-    MCAPI ::Editor::API::EditorScriptAPI& operator=(::Editor::API::EditorScriptAPI&&);
+    MCNAPI ::Editor::API::EditorScriptAPI& operator=(::Editor::API::EditorScriptAPI&&);
 
-    MCAPI ~EditorScriptAPI();
+    MCNAPI ~EditorScriptAPI();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::API::EditorScriptAPI> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::API::EditorScriptAPI> bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

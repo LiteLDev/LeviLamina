@@ -29,20 +29,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CustomComponentsItemComponent(::SharedTypes::v1_21_60::CustomComponentsItemComponent const& component
+    MCNAPI explicit CustomComponentsItemComponent(
+        ::SharedTypes::v1_21_60::CustomComponentsItemComponent const& component
     );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_60::CustomComponentsItemComponent const& component);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_60::CustomComponentsItemComponent const& component);
     // NOLINTEND
 
 public:
@@ -54,6 +55,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

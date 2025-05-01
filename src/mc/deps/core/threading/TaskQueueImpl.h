@@ -14,28 +14,28 @@ class TaskQueueImpl {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI long Initialize(::XTaskQueuePortObject*, ::XTaskQueuePortObject*);
+    MCNAPI long Initialize(::XTaskQueuePortObject*, ::XTaskQueuePortObject*);
 
-    MCAPI long Initialize(::XTaskQueueDispatchMode, ::XTaskQueueDispatchMode, bool, bool);
+    MCNAPI long Initialize(::XTaskQueueDispatchMode, ::XTaskQueueDispatchMode, bool, bool);
 
-    MCAPI TaskQueueImpl();
+    MCNAPI TaskQueueImpl();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void OnTerminationCallback(void*);
+    MCNAPI static void OnTerminationCallback(void*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

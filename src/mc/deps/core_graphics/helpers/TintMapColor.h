@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace mce { class Color; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/math/Color.h"
 
 class TintMapColor {
 public:
@@ -17,12 +15,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TintMapColor();
+    MCNAPI TintMapColor();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

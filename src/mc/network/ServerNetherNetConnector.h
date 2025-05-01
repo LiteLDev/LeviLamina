@@ -43,26 +43,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $host(::ConnectionDefinition const& definition);
+    MCNAPI bool $host(::ConnectionDefinition const& definition);
 
-    MCFOLD void $disconnect();
+    MCNAPI void $disconnect();
 
-    MCFOLD bool $isServer() const;
+    MCNAPI bool $isServer() const;
 
-    MCFOLD bool $OnSessionRequested(::NetherNet::NetworkID, uint64);
+    MCNAPI bool $OnSessionRequested(::NetherNet::NetworkID, uint64);
 
-    MCAPI void $OnSessionOpen(::NetherNet::NetworkID networkID, uint64 sessionId);
+    MCNAPI void $OnSessionOpen(::NetherNet::NetworkID networkID, uint64 sessionId);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForNetworkEnableDisableListener();
+    MCNAPI static void** $vftableForNetworkEnableDisableListener();
 
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
 
-    MCAPI static void** $vftableForConnector();
+    MCNAPI static void** $vftableForConnector();
     // NOLINTEND
 };

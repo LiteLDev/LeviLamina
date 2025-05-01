@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class LookControl;
 class Mob;
-class Vec3;
 // clang-format on
 
 class LookControlComponent {
@@ -26,10 +28,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(::Mob& owner);
+    MCNAPI void initialize(::Mob& owner);
 
-    MCAPI void setInternalType(::std::unique_ptr<::LookControl> type);
+    MCNAPI void setInternalType(::std::unique_ptr<::LookControl> type);
 
-    MCAPI void setLookAtPosition(::Actor const* target, float yMax, float xMax);
+    MCNAPI void setLookAtPosition(::Actor const* target, float yMax, float xMax);
     // NOLINTEND
 };

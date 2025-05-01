@@ -37,19 +37,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCFOLD ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result<void> $ready();
 
-    MCFOLD ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

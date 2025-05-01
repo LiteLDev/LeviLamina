@@ -19,25 +19,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkRouteChange();
+    MCNAPI NetworkRouteChange();
 
-    MCAPI NetworkRouteChange(::webrtc::NetworkRouteChange const&);
+    MCNAPI NetworkRouteChange(::webrtc::NetworkRouteChange const&);
 
-    MCAPI ~NetworkRouteChange();
+    MCNAPI ~NetworkRouteChange();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::webrtc::NetworkRouteChange const&);
+    MCNAPI void* $ctor(::webrtc::NetworkRouteChange const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

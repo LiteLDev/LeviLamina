@@ -8,7 +8,7 @@ struct ScopedYieldPolicy {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void YieldExecution();
+    MCNAPI static void YieldExecution();
     // NOLINTEND
 };
 

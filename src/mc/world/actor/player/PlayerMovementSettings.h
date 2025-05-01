@@ -3,14 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/entity/components/PlayerTickConfig.h"
+#include "mc/entity/components/ReplayStateConfig.h"
 #include "mc/entity/components/ServerAuthMovementMode.h"
 #include "mc/world/actor/player/preview/movement_preview/ServerAuthMovementFlight.h"
-
-// auto generated forward declare list
-// clang-format off
-struct PlayerTickConfig;
-struct ReplayStateConfig;
-// clang-format on
 
 struct PlayerMovementSettings {
 public:
@@ -25,7 +21,7 @@ public:
     ::ll::TypedStorage<4, 4, float>                                       DistanceThresholdSqr;
     ::ll::TypedStorage<4, 4, int>                                         DurationThreshold;
     ::ll::TypedStorage<4, 20, ::ReplayStateConfig>                        mReplay;
-    ::ll::TypedStorage<8, 24, ::PlayerTickConfig>                         mPlayerTickConfig;
+    ::ll::TypedStorage<8, 32, ::PlayerTickConfig>                         mPlayerTickConfig;
     ::ll::TypedStorage<1, 1, bool>                                        ServerAuthBlockBreaking;
     ::ll::TypedStorage<4, 4, float>                                       mServerPlayerPickRangeScalar;
     // NOLINTEND
@@ -33,7 +29,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::PlayerMovementSettings getDefault();
+    MCNAPI static ::PlayerMovementSettings getDefault();
     // NOLINTEND
 
 public:

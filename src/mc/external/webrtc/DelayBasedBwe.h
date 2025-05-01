@@ -29,26 +29,26 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Result();
+        MCNAPI Result();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DelayBasedBwe(::webrtc::FieldTrialsView const*, ::webrtc::RtcEventLog*, ::webrtc::NetworkStatePredictor*);
+    MCNAPI DelayBasedBwe(::webrtc::FieldTrialsView const*, ::webrtc::RtcEventLog*, ::webrtc::NetworkStatePredictor*);
 
-    MCAPI ::webrtc::TimeDelta GetExpectedBwePeriod() const;
+    MCNAPI ::webrtc::TimeDelta GetExpectedBwePeriod() const;
 
-    MCAPI void IncomingPacketFeedback(::webrtc::PacketResult const&, ::webrtc::Timestamp);
+    MCNAPI void IncomingPacketFeedback(::webrtc::PacketResult const&, ::webrtc::Timestamp);
 
-    MCAPI ::webrtc::DelayBasedBwe::Result IncomingPacketFeedbackVector(
+    MCNAPI ::webrtc::DelayBasedBwe::Result IncomingPacketFeedbackVector(
         ::webrtc::TransportPacketsFeedback const&,
         ::std::optional<::webrtc::DataRate>,
         ::std::optional<::webrtc::DataRate>,
@@ -56,7 +56,7 @@ public:
         bool
     );
 
-    MCAPI ::webrtc::DelayBasedBwe::Result MaybeUpdateEstimate(
+    MCNAPI ::webrtc::DelayBasedBwe::Result MaybeUpdateEstimate(
         ::std::optional<::webrtc::DataRate>,
         ::std::optional<::webrtc::DataRate>,
         ::std::optional<::webrtc::NetworkStateEstimate>,
@@ -65,25 +65,25 @@ public:
         ::webrtc::Timestamp
     );
 
-    MCAPI void OnRttUpdate(::webrtc::TimeDelta);
+    MCNAPI void OnRttUpdate(::webrtc::TimeDelta);
 
-    MCAPI void SetMinBitrate(::webrtc::DataRate);
+    MCNAPI void SetMinBitrate(::webrtc::DataRate);
 
-    MCAPI void SetStartBitrate(::webrtc::DataRate);
+    MCNAPI void SetStartBitrate(::webrtc::DataRate);
 
-    MCAPI bool UpdateEstimate(::webrtc::Timestamp, ::std::optional<::webrtc::DataRate>, ::webrtc::DataRate*);
+    MCNAPI bool UpdateEstimate(::webrtc::Timestamp, ::std::optional<::webrtc::DataRate>, ::webrtc::DataRate*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::FieldTrialsView const*, ::webrtc::RtcEventLog*, ::webrtc::NetworkStatePredictor*);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const*, ::webrtc::RtcEventLog*, ::webrtc::NetworkStatePredictor*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

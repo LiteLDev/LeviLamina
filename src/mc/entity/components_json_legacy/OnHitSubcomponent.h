@@ -32,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canAttack(::Actor* projectileOwnerActor, ::Actor* hitActor) const;
+    MCNAPI bool _canAttack(::Actor* projectileOwnerActor, ::Actor* hitActor) const;
     // NOLINTEND
 
 public:
@@ -44,12 +44,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI char const* $getName();
+    MCNAPI char const* $getName();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

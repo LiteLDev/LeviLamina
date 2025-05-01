@@ -52,27 +52,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void forEach(::std::function<bool(::BlockPos const&)> callback) const;
+    MCNAPI void forEach(::std::function<bool(::BlockPos const&)> callback) const;
 
-    MCAPI ::Scripting::Result_deprecated<::BoundingBox> getBoundingBox() const;
+    MCNAPI ::Scripting::Result_deprecated<::BoundingBox> getBoundingBox() const;
 
-    MCAPI int getCapacity() const;
+    MCNAPI int getCapacity() const;
 
-    MCAPI ::Scripting::Result_deprecated<::Vec3> getMax() const;
+    MCNAPI ::Scripting::Result_deprecated<::Vec3> getMax() const;
 
-    MCAPI ::Scripting::Result_deprecated<::Vec3> getMin() const;
+    MCNAPI ::Scripting::Result_deprecated<::Vec3> getMin() const;
 
-    MCAPI ::Vec3 getSpan() const;
+    MCNAPI ::Vec3 getSpan() const;
 
-    MCAPI bool isInside(::Vec3 const& location) const;
+    MCNAPI bool isInside(::Vec3 const& location) const;
 
-    MCAPI void translate(::Vec3 const& delta);
+    MCNAPI void translate(::Vec3 const& delta);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockVolumeBase> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockVolumeBase> bind();
     // NOLINTEND
 
 public:
@@ -90,7 +90,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

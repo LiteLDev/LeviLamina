@@ -47,13 +47,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::IConstBlockSource const* $updateBlockSourceForEntity(::StrictEntityContext const& entity);
+    MCNAPI ::IConstBlockSource const* $updateBlockSourceForEntity(::StrictEntityContext const& entity);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

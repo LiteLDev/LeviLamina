@@ -64,31 +64,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::Editor::ScriptModule::ScriptBlockPaletteItemType getType() const;
+    MCNAPI ::Editor::ScriptModule::ScriptBlockPaletteItemType getType() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptIBlockPaletteItem> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptIBlockPaletteItem> bindScript();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::std::string> $getDisplayName() const;
+    MCNAPI ::std::optional<::std::string> $getDisplayName() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

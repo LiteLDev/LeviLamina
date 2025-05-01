@@ -55,14 +55,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MangroveTreeRoots();
+    MCNAPI MangroveTreeRoots();
 
-    MCAPI void _placeRoot(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI void _placeRoot(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI ::std::vector<::BlockPos>
+    MCNAPI ::std::vector<::BlockPos>
     _potentialRootPositions(::BlockPos const& pos, uchar prevDir, ::Random& random, ::BlockPos const& origin) const;
 
-    MCAPI bool _simulateRoots(
+    MCNAPI bool _simulateRoots(
         ::IBlockWorldGenAPI&            target,
         ::Random&                       random,
         ::BlockPos const&               rootPos,
@@ -77,7 +77,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -89,7 +89,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $placeRoots(
+    MCNAPI ::std::optional<::BlockPos> $placeRoots(
         ::IBlockWorldGenAPI& target,
         ::BlockPos const&    pos,
         ::Random&            random,
@@ -102,6 +102,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

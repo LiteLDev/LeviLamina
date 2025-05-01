@@ -130,45 +130,45 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::StrictExecutionContext<
-                     ::Filter<
-                         ::ActorMovementTickNeededComponent,
-                         ::PassengerComponent,
-                         ::PlayerComponent,
-                         ::HorseFlagComponent,
-                         ::MobFlagComponent,
-                         ::ParrotFlagComponent,
-                         ::VehicleComponent,
-                         ::CamelFlagComponent>,
-                     ::Read<
-                         ::DimensionTypeComponent,
-                         ::ExhaustionComponent,
-                         ::OnGroundFlagComponent,
-                         ::ActorGameTypeComponent,
-                         ::ServerPlayerCurrentMovementComponent,
-                         ::StateVectorComponent,
-                         ::ActorDataFlagComponent,
-                         ::WasInWaterFlagComponent,
-                         ::ActorRotationComponent,
-                         ::MobBodyRotationComponent,
-                         ::PassengerComponent,
-                         ::RenderRotationComponent,
-                         ::StandAnimationComponent,
-                         ::AABBShapeComponent,
-                         ::OffsetsComponent,
-                         ::VanillaOffsetComponent,
-                         ::PassengerRenderingRidingOffsetComponent>,
-                     ::Write<>,
-                     ::AddRemove<::AttributeRequestComponent>,
-                     ::GlobalRead<::LocalConstBlockSourceFactoryComponent, ::ExternalDataComponent>,
-                     ::GlobalWrite<>,
-                     ::EntityFactoryT<>>& context);
+    MCNAPI void $tick(::StrictExecutionContext<
+                      ::Filter<
+                          ::ActorMovementTickNeededComponent,
+                          ::PassengerComponent,
+                          ::PlayerComponent,
+                          ::HorseFlagComponent,
+                          ::MobFlagComponent,
+                          ::ParrotFlagComponent,
+                          ::VehicleComponent,
+                          ::CamelFlagComponent>,
+                      ::Read<
+                          ::DimensionTypeComponent,
+                          ::ExhaustionComponent,
+                          ::OnGroundFlagComponent,
+                          ::ActorGameTypeComponent,
+                          ::ServerPlayerCurrentMovementComponent,
+                          ::StateVectorComponent,
+                          ::ActorDataFlagComponent,
+                          ::WasInWaterFlagComponent,
+                          ::ActorRotationComponent,
+                          ::MobBodyRotationComponent,
+                          ::PassengerComponent,
+                          ::RenderRotationComponent,
+                          ::StandAnimationComponent,
+                          ::AABBShapeComponent,
+                          ::OffsetsComponent,
+                          ::VanillaOffsetComponent,
+                          ::PassengerRenderingRidingOffsetComponent>,
+                      ::Write<>,
+                      ::AddRemove<::AttributeRequestComponent>,
+                      ::GlobalRead<::LocalConstBlockSourceFactoryComponent, ::ExternalDataComponent>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& context);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

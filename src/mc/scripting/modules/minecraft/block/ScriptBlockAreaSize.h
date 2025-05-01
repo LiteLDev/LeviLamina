@@ -23,9 +23,15 @@ public:
     ScriptBlockAreaSize();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptBlockAreaSize const& other) const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockAreaSize> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockAreaSize> bind();
     // NOLINTEND
 };
 

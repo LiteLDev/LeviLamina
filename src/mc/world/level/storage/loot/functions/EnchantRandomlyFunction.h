@@ -45,7 +45,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    MCNAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
@@ -58,14 +58,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
+    MCNAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
-    MCFOLD void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
+    MCNAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

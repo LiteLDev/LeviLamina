@@ -11,8 +11,8 @@ class BlockLegacyComponentStorageFinalizer {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _finalizeBlockTriggerComponents(::BlockLegacy& blockLegacy);
+    MCNAPI void _finalizeBlockTriggerComponents(::BlockLegacy& blockLegacy);
 
-    MCAPI void finalizeComponentData(::BlockLegacy& blockLegacy);
+    MCNAPI void finalizeComponentData(::BlockLegacy& blockLegacy);
     // NOLINTEND
 };

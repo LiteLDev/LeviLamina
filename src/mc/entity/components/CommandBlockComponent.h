@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/block/actor/BaseCommandBlock.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BaseCommandBlock;
 class CompoundTag;
 class DataLoadHelper;
 namespace Bedrock::Safety { class RedactableString; }
@@ -28,11 +30,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandBlockComponent(::CommandBlockComponent&&);
+    MCNAPI CommandBlockComponent(::CommandBlockComponent&&);
 
-    MCAPI void initFromDefinition(::Actor& owner);
+    MCNAPI void initFromDefinition(::Actor& owner);
 
-    MCAPI void onCommandBlockUpdate(
+    MCNAPI void onCommandBlockUpdate(
         ::Actor&                                   owner,
         ::std::string const&                       command,
         bool                                       trackOutput,
@@ -41,14 +43,15 @@ public:
         bool                                       executeOnFirstTick
     );
 
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& entityTag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void
+    readAdditionalSaveData(::Actor& owner, ::CompoundTag const& entityTag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void setTrackOutput(::Actor& owner, bool trackOutput);
+    MCNAPI void setTrackOutput(::Actor& owner, bool trackOutput);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CommandBlockComponent&&);
+    MCNAPI void* $ctor(::CommandBlockComponent&&);
     // NOLINTEND
 };

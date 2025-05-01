@@ -27,16 +27,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EditorServerModuleFactory(::Editor::ServiceProviderCollection& managerServices);
+    MCNAPI void _addVersions(::Editor::ServiceProviderCollection& managerServices);
 
-    MCAPI ::Scripting::ModuleBinding _generateBindings(
+    MCNAPI ::Scripting::ModuleBinding _generateBindings(
         ::Editor::ServiceProviderCollection& managerServices,
         ::Scripting::ModuleBindingBuilder&   builder,
         bool                                 additionalTags,
         ::std::vector<::std::string> const&  allowUntagged
     );
 
-    MCAPI ::Scripting::Result_deprecated<::std::string>
+    MCNAPI ::Scripting::Result_deprecated<::std::string>
     _loadScriptFromResourcePack(::Editor::ServiceProviderCollection& serviceProviders, ::ResourceLocation const& loc);
     // NOLINTEND
 
@@ -44,12 +44,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static char const*& ModuleName();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& managerServices);
     // NOLINTEND
 
 public:
@@ -61,7 +55,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

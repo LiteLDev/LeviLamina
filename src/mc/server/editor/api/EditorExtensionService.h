@@ -118,27 +118,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _sortExtensionListIntoExecutionOrder();
+    MCNAPI void _sortExtensionListIntoExecutionOrder();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCFOLD ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result<void> $ready();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCAPI ::Scripting::Result_deprecated<::Bedrock::NonOwnerPointer<::Editor::API::EditorExtension>> $registerExtension(
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::NonOwnerPointer<::Editor::API::EditorExtension>>
+    $registerExtension(
         ::std::string const&           extensionName,
         ::Scripting::WeakLifetimeScope scope,
         ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
@@ -149,38 +150,38 @@ public:
         ::Editor::API::ServerScriptPackType                               packType
     );
 
-    MCAPI ::Scripting::Result_deprecated<::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>>
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>>
     $getExtension(::std::string const& extensionName);
 
-    MCAPI bool $hasExtension(::std::string const& extensionName);
+    MCNAPI bool $hasExtension(::std::string const& extensionName);
 
-    MCAPI void
+    MCNAPI void
     $forEachExtension(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func);
 
-    MCAPI void
+    MCNAPI void
     $forEachExtensionOrdered(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func);
 
-    MCAPI void
+    MCNAPI void
     $forEachExtensionReverse(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func);
 
-    MCAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $registerForScriptSystemRebuildEvent(
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $registerForScriptSystemRebuildEvent(
         ::std::function<::Scripting::Result<void>(::std::optional<::Scripting::ContextId>)> handler
     );
 
-    MCAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     $registerForScriptSystemTeardownEvent(::std::function<::Scripting::Result<void>()> handler);
 
-    MCAPI ::Scripting::Result<void> $destroyRegisteredExtensions();
+    MCNAPI ::Scripting::Result<void> $destroyRegisteredExtensions();
 
-    MCAPI ::Scripting::Result<void> $createExtensionContexts(::Scripting::ContextId contextId, bool finalEvent);
+    MCNAPI ::Scripting::Result<void> $createExtensionContexts(::Scripting::ContextId contextId, bool finalEvent);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
 
-    MCAPI static void** $vftableForEditorExtensionServiceProvider();
+    MCNAPI static void** $vftableForEditorExtensionServiceProvider();
     // NOLINTEND
 };
 

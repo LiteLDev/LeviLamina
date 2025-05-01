@@ -102,32 +102,32 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::string $getLocalIp();
+    MCNAPI ::std::string $getLocalIp();
 
-    MCFOLD ushort $getPort() const;
+    MCNAPI ushort $getPort() const;
 
-    MCFOLD ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
+    MCNAPI ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
 
-    MCFOLD bool $isIPv4Supported() const;
+    MCNAPI bool $isIPv4Supported() const;
 
-    MCFOLD bool $isIPv6Supported() const;
+    MCNAPI bool $isIPv6Supported() const;
 
-    MCFOLD ushort $getIPv4Port() const;
+    MCNAPI ushort $getIPv4Port() const;
 
-    MCFOLD ushort $getIPv6Port() const;
+    MCNAPI ushort $getIPv6Port() const;
 
-    MCFOLD ::TransportLayer $getNetworkType() const;
+    MCNAPI ::TransportLayer $getNetworkType() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -49,7 +49,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RegionHillsOperationNode(
+    MCNAPI RegionHillsOperationNode(
         uint                                                         seedMixup,
         ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>& parent,
         ::std::shared_ptr<::OperationNode<int, ::Pos2d>>&            riverOperationNode,
@@ -60,7 +60,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         uint                                                         seedMixup,
         ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>& parent,
         ::std::shared_ptr<::OperationNode<int, ::Pos2d>>&            riverOperationNode,
@@ -77,19 +77,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_fillArea(
+    MCNAPI void $_fillArea(
         ::OperationNodeDetails::WorkingData<::Biome const*, ::Biome const*>& operationNodeData,
         ::Pos2d const&                                                       origin,
         ::Pos2d const&                                                       size,
         int                                                                  pw
     ) const;
 
-    MCFOLD ::std::tuple<::Pos2d, ::Pos2d> $_getAreaRead(::Pos2d const& origin, ::Pos2d const& size) const;
+    MCNAPI ::std::tuple<::Pos2d, ::Pos2d> $_getAreaRead(::Pos2d const& origin, ::Pos2d const& size) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

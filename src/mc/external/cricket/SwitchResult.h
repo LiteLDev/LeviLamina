@@ -12,21 +12,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SwitchResult(::cricket::IceControllerInterface::SwitchResult const&);
+    MCNAPI SwitchResult(::cricket::IceControllerInterface::SwitchResult const&);
 
-    MCAPI ~SwitchResult();
+    MCNAPI ~SwitchResult();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::IceControllerInterface::SwitchResult const&);
+    MCNAPI void* $ctor(::cricket::IceControllerInterface::SwitchResult const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

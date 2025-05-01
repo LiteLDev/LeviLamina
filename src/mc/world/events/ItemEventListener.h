@@ -87,46 +87,46 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::EventResult $onInventoryItemOpened(bool workbench);
+    MCNAPI ::EventResult $onInventoryItemOpened(bool workbench);
 
-    MCFOLD ::EventResult $onInventoryItemClosed();
+    MCNAPI ::EventResult $onInventoryItemClosed();
 
-    MCFOLD ::EventResult
+    MCNAPI ::EventResult
     $onItemTransferredFromContainer(::ItemStackBase const& item, ::std::string const& srcContainerName);
 
-    MCFOLD ::EventResult
+    MCNAPI ::EventResult
     $onItemTransferredToContainer(::ItemStackBase const& item, ::std::string const& dstContainerName);
 
-    MCFOLD ::EventResult
+    MCNAPI ::EventResult
     $onPreviewItemPopulatedInContainer(::ItemStackBase const& item, ::std::string const& containerName);
 
-    MCFOLD ::EventResult $onInventoryLayoutSelected(int activeInventoryLayout, int activeInventoryLeftTabIndex);
+    MCNAPI ::EventResult $onInventoryLayoutSelected(int activeInventoryLayout, int activeInventoryLeftTabIndex);
 
-    MCFOLD ::EventResult $onInventoryItemCraftedAutomaticallyByRecipe(::ItemStackBase const& item);
+    MCNAPI ::EventResult $onInventoryItemCraftedAutomaticallyByRecipe(::ItemStackBase const& item);
 
-    MCFOLD ::EventResult $onRecipeSelected(::ItemStackBase const& item);
+    MCNAPI ::EventResult $onRecipeSelected(::ItemStackBase const& item);
 
-    MCFOLD ::EventResult
+    MCNAPI ::EventResult
     $onItemSmelted(::Player& player, ::ItemDescriptor const& item, ::ItemDescriptor const& lastFuelItem);
 
-    MCFOLD ::EventResult $onItemSpawningActor(::Actor const& spawningActor);
+    MCNAPI ::EventResult $onItemSpawningActor(::Actor const& spawningActor);
 
-    MCFOLD ::EventResult $onItemSpawnedActor(::ItemStackBase const& item, ::Actor const& spawnedActor);
+    MCNAPI ::EventResult $onItemSpawnedActor(::ItemStackBase const& item, ::Actor const& spawnedActor);
 
-    MCFOLD ::EventResult $onItemModifiedActor(::ItemStackBase const& item, ::Actor const& modifiedActor);
+    MCNAPI ::EventResult $onItemModifiedActor(::ItemStackBase const& item, ::Actor const& modifiedActor);
 
-    MCFOLD ::EventResult $onItemSelectedSlot(int slot);
+    MCNAPI ::EventResult $onItemSelectedSlot(int slot);
 
-    MCFOLD ::EventResult $onItemSelected(::ItemStackBase const&);
+    MCNAPI ::EventResult $onItemSelected(::ItemStackBase const&);
 
-    MCFOLD ::EventResult $onItemDefinitionEventTriggered(::ItemStackBase const& item, ::std::string const& event);
+    MCNAPI ::EventResult $onItemDefinitionEventTriggered(::ItemStackBase const& item, ::std::string const& event);
 
-    MCFOLD ::EventResult $onEvent(::ItemNotificationEvent const& event);
+    MCNAPI ::EventResult $onEvent(::ItemNotificationEvent const& event);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

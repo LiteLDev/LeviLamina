@@ -4,20 +4,20 @@
 
 // auto generated inclusion list
 #include "mc/client/multiplayer/ISubChunkManagerConnector.h"
+#include "mc/client/network/SubChunkInsertManager.h"
 #include "mc/deps/core/math/Math.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/world/level/chunk/SubChunkRequestManager.h"
 
 // auto generated forward declare list
 // clang-format off
 class ChunkSource;
 class Dimension;
 class LevelChunk;
-class SubChunkInsertManager;
 class SubChunkPos;
-class SubChunkRequestManager;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 

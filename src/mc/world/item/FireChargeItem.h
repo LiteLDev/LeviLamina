@@ -48,7 +48,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _tryLightPortal(::Actor& actor, ::BlockPos actionPos) const;
+    MCNAPI bool _tryLightPortal(::Actor& actor, ::BlockPos actionPos) const;
     // NOLINTEND
 
 public:
@@ -60,22 +60,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Actor*
+    MCNAPI ::Actor*
     $createProjectileActor(::BlockSource& region, ::ItemStack const&, ::Vec3 const& pos, ::Vec3 const& direction) const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCFOLD bool $isDestructive(int) const;
+    MCNAPI bool $isDestructive(int) const;
 
-    MCAPI ::InteractionResult
+    MCNAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
-    MCAPI bool $_calculatePlacePos(::ItemStackBase&, ::Actor& actor, uchar& face, ::BlockPos& pos) const;
+    MCNAPI bool $_calculatePlacePos(::ItemStackBase&, ::Actor& actor, uchar& face, ::BlockPos& pos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

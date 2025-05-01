@@ -12,7 +12,7 @@ struct ScriptItemEnchantmentLevelOutOfBoundsError : public ::Scripting::Error {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemEnchantmentLevelOutOfBoundsError(
+    MCNAPI ScriptItemEnchantmentLevelOutOfBoundsError(
         ::std::string const& details,
         ::std::string const& typeName,
         int                  level,
@@ -23,14 +23,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentLevelOutOfBoundsError>
+    MCNAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentLevelOutOfBoundsError>
     bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& details, ::std::string const& typeName, int level, int maxLevel);
+    MCNAPI void* $ctor(::std::string const& details, ::std::string const& typeName, int level, int maxLevel);
     // NOLINTEND
 };
 

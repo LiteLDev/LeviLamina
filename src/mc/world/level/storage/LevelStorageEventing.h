@@ -5,11 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/world/level/storage/DBStorageFolderWatcherSnapshotKind.h"
+#include "mc/world/level/storage/LevelStorageEventingContext.h"
 
 // auto generated forward declare list
 // clang-format off
 class DBStorageFolderWatcher;
-struct LevelStorageEventingContext;
 // clang-format on
 
 class LevelStorageEventing : public ::Bedrock::EnableNonOwnerReferences {
@@ -29,14 +29,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void fireDBStorageError(char const* errorType) const;
+    MCNAPI void fireDBStorageError(char const* errorType) const;
 
-    MCAPI void fireEventDBStorageSizeSnapshot(
+    MCNAPI void fireEventDBStorageSizeSnapshot(
         ::DBStorageFolderWatcher const&      folderWatcher,
         ::DBStorageFolderWatcherSnapshotKind kind
     ) const;
 
-    MCAPI void fireEventWorldCorruptionCausedWorldShutdown(
+    MCNAPI void fireEventWorldCorruptionCausedWorldShutdown(
         ::std::string const&  reason,
         ::std::optional<bool> isOutOfDiskSpace
     ) const;
@@ -51,6 +51,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

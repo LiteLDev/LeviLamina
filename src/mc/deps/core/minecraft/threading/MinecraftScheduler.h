@@ -11,7 +11,7 @@ class MinecraftScheduler {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scheduler& client();
+    MCNAPI static ::Scheduler& client();
     // NOLINTEND
 
 public:

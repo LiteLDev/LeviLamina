@@ -25,6 +25,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::LootPoolTiers> deserialize(::Json::Value tiers);
+    MCNAPI static ::std::unique_ptr<::LootPoolTiers> deserialize(::Json::Value tiers);
     // NOLINTEND
 };

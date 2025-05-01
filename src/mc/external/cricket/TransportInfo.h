@@ -21,13 +21,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~TransportInfo();
+    MCNAPI ~TransportInfo();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

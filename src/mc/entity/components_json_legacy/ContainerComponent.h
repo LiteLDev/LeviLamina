@@ -7,6 +7,7 @@
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/ContainerCloseListener.h"
 #include "mc/world/ContainerContentChangeListener.h"
+#include "mc/world/inventory/FillingContainer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +16,6 @@ class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class Dimension;
-class FillingContainer;
 class ItemActor;
 class ItemStack;
 class Level;
@@ -58,31 +58,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContainerComponent(::ContainerComponent&& other);
+    MCNAPI ContainerComponent(::ContainerComponent&& other);
 
-    MCAPI bool _tryMoveInItem(::ItemStack& item, int slot, int face, int itemCount);
+    MCNAPI bool _tryMoveInItem(::ItemStack& item, int slot, int face, int itemCount);
 
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI bool addItem(::ItemActor& entity);
+    MCNAPI bool addItem(::ItemActor& entity);
 
-    MCAPI bool canOpenContainer(::Actor const& containerActor, ::Player& player) const;
+    MCNAPI bool canOpenContainer(::Actor const& containerActor, ::Player& player) const;
 
-    MCAPI int countItemsOfType(::ItemStack const& item) const;
+    MCNAPI int countItemsOfType(::ItemStack const& item) const;
 
-    MCAPI void dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
+    MCNAPI void dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
 
-    MCAPI void initFromDefinition(::Actor& actor, ::ContainerDescription const& desc);
+    MCNAPI void initFromDefinition(::Actor& actor, ::ContainerDescription const& desc);
 
-    MCAPI bool isEmpty() const;
+    MCNAPI bool isEmpty() const;
 
-    MCAPI bool openContainer(::Actor& containerActor, ::Player& player);
+    MCNAPI bool openContainer(::Actor& containerActor, ::Player& player);
 
-    MCAPI ::ContainerComponent& operator=(::ContainerComponent&& other);
+    MCNAPI ::ContainerComponent& operator=(::ContainerComponent&& other);
 
-    MCAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const&, ::DataLoadHelper&);
+    MCNAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const&, ::DataLoadHelper&);
 
-    MCAPI void rebuildContainer(
+    MCNAPI void rebuildContainer(
         ::Actor&                             owner,
         ::SharedTypes::Legacy::ContainerType type,
         int                                  size,
@@ -91,40 +91,40 @@ public:
         bool
     );
 
-    MCAPI void removeItemsOfType(::ItemStack const& item, int count);
+    MCNAPI void removeItemsOfType(::ItemStack const& item, int count);
 
-    MCAPI void setCustomName(::std::string const& name);
+    MCNAPI void setCustomName(::std::string const& name);
 
-    MCAPI bool setItem(int slot, ::ItemStack const& item);
+    MCNAPI bool setItem(int slot, ::ItemStack const& item);
 
-    MCAPI void unpackLootTable(::Level& level, ::DimensionType dimensionId);
+    MCNAPI void unpackLootTable(::Level& level, ::DimensionType dimensionId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerComponent&& other);
+    MCNAPI void* $ctor(::ContainerComponent&& other);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $containerContentChanged(int iSlot);
+    MCNAPI void $containerContentChanged(int iSlot);
 
-    MCAPI void $containerClosed(::Player& player);
+    MCNAPI void $containerClosed(::Player& player);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForContainerContentChangeListener();
+    MCNAPI static void** $vftableForContainerContentChangeListener();
 
-    MCAPI static void** $vftableForContainerCloseListener();
+    MCNAPI static void** $vftableForContainerCloseListener();
     // NOLINTEND
 };

@@ -19,10 +19,10 @@ public:
     // vIndex: 0
     virtual ~EnderChestBlockActor() /*override*/ = default;
 
-    // vIndex: 48
+    // vIndex: 49
     virtual void openBy(::Player& p) /*override*/;
 
-    // vIndex: 26
+    // vIndex: 27
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 29
@@ -31,10 +31,10 @@ public:
     // vIndex: 30
     virtual bool canPullOutItem(int, int, ::ItemStack const&) const /*override*/;
 
-    // vIndex: 49
+    // vIndex: 50
     virtual void playOpenSound(::BlockSource& region) /*override*/;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual void playCloseSound(::BlockSource& region) /*override*/;
     // NOLINTEND
 
@@ -47,24 +47,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $openBy(::Player& p);
+    MCNAPI void $openBy(::Player& p);
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCFOLD bool $canPushInItem(int, int, ::ItemStack const&) const;
+    MCNAPI bool $canPushInItem(int, int, ::ItemStack const&) const;
 
-    MCFOLD bool $canPullOutItem(int, int, ::ItemStack const&) const;
+    MCNAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
 
-    MCAPI void $playOpenSound(::BlockSource& region);
+    MCNAPI void $playOpenSound(::BlockSource& region);
 
-    MCAPI void $playCloseSound(::BlockSource& region);
+    MCNAPI void $playCloseSound(::BlockSource& region);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForFillingContainer();
+    MCNAPI static void** $vftableForFillingContainer();
 
-    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCNAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
 };

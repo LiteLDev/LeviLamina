@@ -15,7 +15,7 @@ class MobEffectPacket;
 namespace MobEffectPacketUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::optional<::MobEffectPacket> createPacket(
+MCNAPI ::std::optional<::MobEffectPacket> createPacket(
     ::MobEffectPacket::Event   eventType,
     ::MobEffectInstance const& effect,
     ::EntityContext const&     sourceEntity

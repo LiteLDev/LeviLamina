@@ -21,13 +21,13 @@ class MinecartPreNormalTickSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doMinecartPreNormalTickSystem(
+    MCNAPI static void _doMinecartPreNormalTickSystem(
         ::StrictEntityContext&                                     context,
         ::ActorOwnerComponent&                                     actorOwnerComponent,
         ::EntityModifier<::MinecartPreNormalTickBlockPosComponent> mod
     );
 
-    MCAPI static void _tickMinecartPreNormalTickSystem(
+    MCNAPI static void _tickMinecartPreNormalTickSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::ActorMovementTickNeededComponent, ::MinecartFlagComponent>,
@@ -35,6 +35,6 @@ public:
         ::EntityModifier<::MinecartPreNormalTickBlockPosComponent> mod
     );
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

@@ -77,21 +77,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DiskAccessTracker();
+    MCNAPI DiskAccessTracker();
 
-    MCAPI void _addNewWriteOperation(uint64 amount, ::Core::WriteOperation writeOperation, ::Core::PathView path);
+    MCNAPI void _addNewWriteOperation(uint64 amount, ::Core::WriteOperation writeOperation, ::Core::PathView path);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Core::DiskAccessTracker& getDiskAccessTracker();
+    MCNAPI static ::Core::DiskAccessTracker& getDiskAccessTracker();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

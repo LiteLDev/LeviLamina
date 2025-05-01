@@ -12,7 +12,8 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Random;
+class Experiments;
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class DetectorRailBlock : public ::BaseRailBlock {
@@ -29,10 +30,10 @@ public:
     virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
         /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    // vIndex: 148
+    virtual void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const /*override*/;
 
-    // vIndex: 149
+    // vIndex: 147
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
     // vIndex: 54
@@ -50,6 +51,9 @@ public:
     // vIndex: 44
     virtual bool isSignalSource() const /*override*/;
 
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
     virtual ~DetectorRailBlock() /*override*/ = default;
     // NOLINTEND
@@ -57,9 +61,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _checkPressed(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void _checkPressed(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void _handlePressed(::BlockSource& region, ::BlockPos const& pos, bool shouldBePressed) const;
+    MCNAPI void _handlePressed(::BlockSource& region, ::BlockPos const& pos, bool shouldBePressed) const;
     // NOLINTEND
 
 public:
@@ -71,29 +75,32 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
+    MCNAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
+    MCNAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
-    MCFOLD bool
+    MCNAPI bool
     $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCFOLD bool $hasComparatorSignal() const;
+    MCNAPI bool $hasComparatorSignal() const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCNAPI int
+    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCFOLD bool $isSignalSource() const;
+    MCNAPI bool $isSignalSource() const;
+
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

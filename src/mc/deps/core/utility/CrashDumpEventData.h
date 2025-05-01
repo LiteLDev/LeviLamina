@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CrashDumpEventData(::CrashDumpLogStringID tag0, ::CrashDumpLogStringID tag1);
+    MCNAPI CrashDumpEventData(::CrashDumpLogStringID tag0, ::CrashDumpLogStringID tag1);
     // NOLINTEND
 
 public:
@@ -35,6 +35,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CrashDumpLogStringID tag0, ::CrashDumpLogStringID tag1);
+    MCNAPI void* $ctor(::CrashDumpLogStringID tag0, ::CrashDumpLogStringID tag1);
     // NOLINTEND
 };

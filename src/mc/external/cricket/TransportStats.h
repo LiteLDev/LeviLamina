@@ -8,13 +8,13 @@ struct TransportStats {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~TransportStats();
+    MCNAPI ~TransportStats();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

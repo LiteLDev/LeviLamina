@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
 class ChunkPos;
 class Level;
 class LevelChunk;
-namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class ChunkRecyclerTelemetryData : public ::Bedrock::EnableNonOwnerReferences {
@@ -85,16 +85,16 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::ChunkRecyclerTelemetryData::BucketContext&
+        MCNAPI ::ChunkRecyclerTelemetryData::BucketContext&
         operator=(::ChunkRecyclerTelemetryData::BucketContext const&);
 
-        MCAPI ~BucketContext();
+        MCNAPI ~BucketContext();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -144,27 +144,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChunkRecyclerTelemetryData();
+    MCNAPI ChunkRecyclerTelemetryData();
 
-    MCAPI void _reset();
+    MCNAPI void _reset();
 
-    MCAPI void _setIsLocked();
+    MCNAPI void _setIsLocked();
 
-    MCAPI void endLevel(::Level& level);
+    MCNAPI void endLevel(::Level& level);
 
-    MCAPI void recordCacheCheck(::LevelChunk const& lc);
+    MCNAPI void recordCacheCheck(::LevelChunk const& lc);
 
-    MCAPI void recordChunkDeleted(::LevelChunk const& lc);
+    MCNAPI void recordChunkDeleted(::LevelChunk const& lc);
 
-    MCAPI void recordTaskCompleted(::LevelChunk const& lc, ::ChunkRecyclerTelemetryData::TaskInfo const& taskInfo);
+    MCNAPI void recordTaskCompleted(::LevelChunk const& lc, ::ChunkRecyclerTelemetryData::TaskInfo const& taskInfo);
 
-    MCAPI void tickLevel(::Level const& level);
+    MCNAPI void tickLevel(::Level const& level);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -176,6 +176,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

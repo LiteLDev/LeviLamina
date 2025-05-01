@@ -34,14 +34,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI ::ActorUniqueID $_findTarget(::MobDescriptor const** outMobDescriptor);
+    MCNAPI ::ActorUniqueID $_findTarget(::MobDescriptor const** outMobDescriptor);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

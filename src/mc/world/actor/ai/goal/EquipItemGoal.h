@@ -38,7 +38,7 @@ public:
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -71,9 +71,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _dropItem(::ItemStack const& item) const;
+    MCNAPI void _dropItem(::ItemStack const& item) const;
 
-    MCAPI void _sendMobEquipmentPacket(::MobEquipmentPacket packet) const;
+    MCNAPI void _sendMobEquipmentPacket(::MobEquipmentPacket packet) const;
     // NOLINTEND
 
 public:
@@ -85,18 +85,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCFOLD bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

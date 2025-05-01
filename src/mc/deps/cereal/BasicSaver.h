@@ -17,7 +17,7 @@ class BasicSaver : public ::cereal::BasicContextOwner {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnke6b1a6;
+    ::ll::UntypedStorage<8, 104> mUnke6b1a6;
     // NOLINTEND
 
 public:
@@ -36,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool saveImpl(
+    MCNAPI bool saveImpl(
         ::cereal::SchemaWriter&                writer,
         ::entt::meta_handle                    handle,
         ::cereal::internal::BasicSchema const& fallback
@@ -46,13 +46,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

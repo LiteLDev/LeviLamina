@@ -20,7 +20,7 @@ struct StructurePools {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bootstrap(
+    MCNAPI static void bootstrap(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
         ::FeatureRegistry&                                featureRegistry,
         ::JigsawStructureRegistry&                        jigsawStructureRegistry,

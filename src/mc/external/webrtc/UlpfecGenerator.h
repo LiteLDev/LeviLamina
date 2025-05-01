@@ -23,50 +23,50 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Params();
+        MCNAPI Params();
 
-        MCAPI Params(::webrtc::FecProtectionParams, ::webrtc::FecProtectionParams);
+        MCNAPI Params(::webrtc::FecProtectionParams, ::webrtc::FecProtectionParams);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
 
-        MCAPI void* $ctor(::webrtc::FecProtectionParams, ::webrtc::FecProtectionParams);
+        MCNAPI void* $ctor(::webrtc::FecProtectionParams, ::webrtc::FecProtectionParams);
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::FecProtectionParams const& CurrentParams() const;
+    MCNAPI ::webrtc::FecProtectionParams const& CurrentParams() const;
 
-    MCAPI bool ExcessOverheadBelowMax() const;
+    MCNAPI bool ExcessOverheadBelowMax() const;
 
-    MCAPI bool MinimumMediaPacketsReached() const;
+    MCNAPI bool MinimumMediaPacketsReached() const;
 
-    MCAPI int Overhead() const;
+    MCNAPI int Overhead() const;
 
-    MCAPI void ResetState();
+    MCNAPI void ResetState();
 
-    MCAPI UlpfecGenerator(::std::unique_ptr<::webrtc::ForwardErrorCorrection>, ::webrtc::Clock*);
+    MCNAPI UlpfecGenerator(::std::unique_ptr<::webrtc::ForwardErrorCorrection>, ::webrtc::Clock*);
 
-    MCAPI UlpfecGenerator(int, int, ::webrtc::Clock*);
+    MCNAPI UlpfecGenerator(int, int, ::webrtc::Clock*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::webrtc::ForwardErrorCorrection>, ::webrtc::Clock*);
+    MCNAPI void* $ctor(::std::unique_ptr<::webrtc::ForwardErrorCorrection>, ::webrtc::Clock*);
 
-    MCAPI void* $ctor(int, int, ::webrtc::Clock*);
+    MCNAPI void* $ctor(int, int, ::webrtc::Clock*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

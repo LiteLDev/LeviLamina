@@ -17,7 +17,7 @@ class ResultLogger {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     log(::std::optional<::Bedrock::LogLevel> logLevel,
         ::std::optional<::LogAreaID>         logArea,
         ::std::string const&                 error,

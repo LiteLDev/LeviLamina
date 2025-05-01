@@ -23,89 +23,89 @@ class SendSideBandwidthEstimation {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void ApplyTargetLimits(::webrtc::Timestamp);
+    MCNAPI void ApplyTargetLimits(::webrtc::Timestamp);
 
-    MCAPI ::webrtc::DataRate GetEstimatedLinkCapacity() const;
+    MCNAPI ::webrtc::DataRate GetEstimatedLinkCapacity() const;
 
-    MCAPI int GetMinBitrate() const;
+    MCNAPI int GetMinBitrate() const;
 
-    MCAPI ::webrtc::DataRate GetUpperLimit() const;
+    MCNAPI ::webrtc::DataRate GetUpperLimit() const;
 
-    MCAPI bool IsInStartPhase(::webrtc::Timestamp) const;
+    MCNAPI bool IsInStartPhase(::webrtc::Timestamp) const;
 
-    MCAPI bool IsRttAboveLimit() const;
+    MCNAPI bool IsRttAboveLimit() const;
 
-    MCAPI bool LossBasedBandwidthEstimatorV1Enabled() const;
+    MCNAPI bool LossBasedBandwidthEstimatorV1Enabled() const;
 
-    MCAPI bool LossBasedBandwidthEstimatorV1ReadyForUse() const;
+    MCNAPI bool LossBasedBandwidthEstimatorV1ReadyForUse() const;
 
-    MCAPI bool LossBasedBandwidthEstimatorV2Enabled() const;
+    MCNAPI bool LossBasedBandwidthEstimatorV2Enabled() const;
 
-    MCAPI bool LossBasedBandwidthEstimatorV2ReadyForUse() const;
+    MCNAPI bool LossBasedBandwidthEstimatorV2ReadyForUse() const;
 
-    MCAPI void MaybeLogLossBasedEvent(::webrtc::Timestamp);
+    MCNAPI void MaybeLogLossBasedEvent(::webrtc::Timestamp);
 
-    MCAPI void MaybeLogLowBitrateWarning(::webrtc::DataRate, ::webrtc::Timestamp);
+    MCNAPI void MaybeLogLowBitrateWarning(::webrtc::DataRate, ::webrtc::Timestamp);
 
-    MCAPI void OnRouteChange();
+    MCNAPI void OnRouteChange();
 
-    MCAPI void OnSentPacket(::webrtc::SentPacket const&);
+    MCNAPI void OnSentPacket(::webrtc::SentPacket const&);
 
-    MCAPI bool PaceAtLossBasedEstimate() const;
+    MCNAPI bool PaceAtLossBasedEstimate() const;
 
-    MCAPI SendSideBandwidthEstimation(::webrtc::FieldTrialsView const*, ::webrtc::RtcEventLog*);
+    MCNAPI SendSideBandwidthEstimation(::webrtc::FieldTrialsView const*, ::webrtc::RtcEventLog*);
 
-    MCAPI void SetAcknowledgedRate(::std::optional<::webrtc::DataRate>, ::webrtc::Timestamp);
+    MCNAPI void SetAcknowledgedRate(::std::optional<::webrtc::DataRate>, ::webrtc::Timestamp);
 
-    MCAPI void
+    MCNAPI void
         SetBitrates(::std::optional<::webrtc::DataRate>, ::webrtc::DataRate, ::webrtc::DataRate, ::webrtc::Timestamp);
 
-    MCAPI void SetMinMaxBitrate(::webrtc::DataRate, ::webrtc::DataRate);
+    MCNAPI void SetMinMaxBitrate(::webrtc::DataRate, ::webrtc::DataRate);
 
-    MCAPI void SetSendBitrate(::webrtc::DataRate, ::webrtc::Timestamp);
+    MCNAPI void SetSendBitrate(::webrtc::DataRate, ::webrtc::Timestamp);
 
-    MCAPI void UpdateDelayBasedEstimate(::webrtc::Timestamp, ::webrtc::DataRate);
+    MCNAPI void UpdateDelayBasedEstimate(::webrtc::Timestamp, ::webrtc::DataRate);
 
-    MCAPI void UpdateEstimate(::webrtc::Timestamp);
+    MCNAPI void UpdateEstimate(::webrtc::Timestamp);
 
-    MCAPI void UpdateLossBasedEstimator(
+    MCNAPI void UpdateLossBasedEstimator(
         ::webrtc::TransportPacketsFeedback const&,
         ::webrtc::BandwidthUsage,
         ::std::optional<::webrtc::DataRate>,
         bool
     );
 
-    MCAPI void UpdateMinHistory(::webrtc::Timestamp);
+    MCNAPI void UpdateMinHistory(::webrtc::Timestamp);
 
-    MCAPI void UpdatePacketsLost(int64, int64, ::webrtc::Timestamp);
+    MCNAPI void UpdatePacketsLost(int64, int64, ::webrtc::Timestamp);
 
-    MCAPI void UpdatePropagationRtt(::webrtc::Timestamp, ::webrtc::TimeDelta);
+    MCNAPI void UpdatePropagationRtt(::webrtc::Timestamp, ::webrtc::TimeDelta);
 
-    MCAPI void UpdateReceiverEstimate(::webrtc::Timestamp, ::webrtc::DataRate);
+    MCNAPI void UpdateReceiverEstimate(::webrtc::Timestamp, ::webrtc::DataRate);
 
-    MCAPI void UpdateRtt(::webrtc::TimeDelta, ::webrtc::Timestamp);
+    MCNAPI void UpdateRtt(::webrtc::TimeDelta, ::webrtc::Timestamp);
 
-    MCAPI void UpdateTargetBitrate(::webrtc::DataRate, ::webrtc::Timestamp);
+    MCNAPI void UpdateTargetBitrate(::webrtc::DataRate, ::webrtc::Timestamp);
 
-    MCAPI void UpdateUmaStatsPacketsLost(::webrtc::Timestamp, int);
+    MCNAPI void UpdateUmaStatsPacketsLost(::webrtc::Timestamp, int);
 
-    MCAPI ::webrtc::LossBasedState loss_based_state() const;
+    MCNAPI ::webrtc::LossBasedState loss_based_state() const;
 
-    MCAPI ::webrtc::DataRate target_rate() const;
+    MCNAPI ::webrtc::DataRate target_rate() const;
 
-    MCAPI ~SendSideBandwidthEstimation();
+    MCNAPI ~SendSideBandwidthEstimation();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::FieldTrialsView const*, ::webrtc::RtcEventLog*);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const*, ::webrtc::RtcEventLog*);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

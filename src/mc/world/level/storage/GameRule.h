@@ -43,13 +43,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ValidationError();
+        MCNAPI ~ValidationError();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -77,49 +77,49 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameRule(::GameRule const&);
+    MCNAPI GameRule(::GameRule const&);
 
-    MCAPI GameRule(::GameRule&&);
+    MCNAPI GameRule(::GameRule&&);
 
-    MCAPI GameRule(::std::string const& name, bool canBeModifiedByPlayer);
+    MCNAPI GameRule(::std::string const& name, bool canBeModifiedByPlayer);
 
-    MCAPI ::GameRule& _setDefaultValue(bool b);
+    MCNAPI ::GameRule& _setDefaultValue(bool b);
 
-    MCAPI ::GameRule& _setDefaultValue(int i);
+    MCNAPI ::GameRule& _setDefaultValue(int i);
 
-    MCAPI ::std::string getLowercaseName() const;
+    MCNAPI ::std::string getLowercaseName() const;
 
-    MCAPI ::GameRule& operator=(::GameRule&&);
+    MCNAPI ::GameRule& operator=(::GameRule&&);
 
-    MCAPI ::GameRule& operator=(::GameRule const&);
+    MCNAPI ::GameRule& operator=(::GameRule const&);
 
-    MCAPI bool setBool(bool value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
+    MCNAPI bool setBool(bool value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
 
-    MCAPI bool setFloat(float value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
+    MCNAPI bool setFloat(float value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
 
-    MCAPI bool setInt(int value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
+    MCNAPI bool setInt(int value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
 
-    MCAPI ::GameRule& setTagDataNotFoundCallback(::std::function<void(::GameRule&, ::BaseGameVersion const&)> cb);
+    MCNAPI ::GameRule& setTagDataNotFoundCallback(::std::function<void(::GameRule&, ::BaseGameVersion const&)> cb);
 
-    MCAPI ::GameRule&
+    MCNAPI ::GameRule&
     setValidateValueCallback(::std::function<bool(::GameRule::Value const&, ::GameRule::ValidationError*)> cb);
 
-    MCAPI ~GameRule();
+    MCNAPI ~GameRule();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GameRule const&);
+    MCNAPI void* $ctor(::GameRule const&);
 
-    MCAPI void* $ctor(::GameRule&&);
+    MCNAPI void* $ctor(::GameRule&&);
 
-    MCAPI void* $ctor(::std::string const& name, bool canBeModifiedByPlayer);
+    MCNAPI void* $ctor(::std::string const& name, bool canBeModifiedByPlayer);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

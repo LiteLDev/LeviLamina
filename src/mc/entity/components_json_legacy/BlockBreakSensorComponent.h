@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/world/events/BlockEventDispatcherToken.h"
+
 // auto generated forward declare list
 // clang-format off
 class ActorFilterGroup;
-class BlockEventDispatcherToken;
 class BlockListEventMap;
-class Vec3;
 // clang-format on
 
 class BlockBreakSensorComponent {
@@ -29,22 +31,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockBreakSensorComponent(::BlockBreakSensorComponent&&);
+    MCNAPI BlockBreakSensorComponent(::BlockBreakSensorComponent&&);
 
-    MCAPI ::BlockBreakSensorComponent& operator=(::BlockBreakSensorComponent&&);
+    MCNAPI ::BlockBreakSensorComponent& operator=(::BlockBreakSensorComponent&&);
 
-    MCAPI ~BlockBreakSensorComponent();
+    MCNAPI ~BlockBreakSensorComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockBreakSensorComponent&&);
+    MCNAPI void* $ctor(::BlockBreakSensorComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/util/FloatRange.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
-class Vec3;
-struct FloatRange;
 // clang-format on
 
 class FloatWanderGoal : public ::Goal {
@@ -24,6 +24,7 @@ public:
     ::ll::TypedStorage<4, 4, float>        mYOffset;
     ::ll::TypedStorage<1, 1, bool>         mMustReach;
     ::ll::TypedStorage<1, 1, bool>         mRandomReselect;
+    ::ll::TypedStorage<1, 1, bool>         mUseHomePositionRestriction;
     ::ll::TypedStorage<4, 8, ::FloatRange> mFloatDurationRange;
     // NOLINTEND
 
@@ -46,7 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canReach(::Vec3 const& targetPos, float dist);
+    MCNAPI bool _canReach(::Vec3 const& targetPos, float dist);
     // NOLINTEND
 
 public:
@@ -58,16 +59,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

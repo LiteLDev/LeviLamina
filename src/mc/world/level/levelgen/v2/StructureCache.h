@@ -32,13 +32,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~StructurePair();
+        MCNAPI ~StructurePair();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -70,18 +70,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance const> at(::BlockPos pos) const;
+    MCNAPI ::std::shared_ptr<::br::worldgen::StructureInstance const> at(::BlockPos pos) const;
 
-    MCAPI ::std::vector<::std::vector<::std::shared_ptr<::br::worldgen::StructureInstance const>>>
+    MCNAPI ::std::vector<::std::vector<::std::shared_ptr<::br::worldgen::StructureInstance const>>>
     collectGroupByStep() const;
 
-    MCAPI void setInstanceForStructure(
+    MCNAPI void setInstanceForStructure(
         ::br::worldgen::Structure const&                       structure,
         ::std::shared_ptr<::br::worldgen::StructureInstance>&& instance,
         ::ChunkPos                                             chunkPos
     );
 
-    MCAPI void tick();
+    MCNAPI void tick();
     // NOLINTEND
 };
 

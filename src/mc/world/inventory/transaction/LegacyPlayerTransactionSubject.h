@@ -45,14 +45,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isServerAuthBlockBreakingEnabled() const;
+    MCNAPI bool $isServerAuthBlockBreakingEnabled() const;
 
-    MCAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
+    MCNAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -13,21 +13,21 @@ struct CritScope {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CritScope(::rtc::RecursiveCriticalSection const*);
+    MCNAPI explicit CritScope(::rtc::RecursiveCriticalSection const*);
 
-    MCAPI ~CritScope();
+    MCNAPI ~CritScope();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::RecursiveCriticalSection const*);
+    MCNAPI void* $ctor(::rtc::RecursiveCriticalSection const*);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

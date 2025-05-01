@@ -71,17 +71,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AsyncUDPSocket(::rtc::Socket*);
+    MCNAPI explicit AsyncUDPSocket(::rtc::Socket*);
 
-    MCAPI void OnReadEvent(::rtc::Socket*);
+    MCNAPI void OnReadEvent(::rtc::Socket*);
 
-    MCAPI void OnWriteEvent(::rtc::Socket*);
+    MCNAPI void OnWriteEvent(::rtc::Socket*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::Socket*);
+    MCNAPI void* $ctor(::rtc::Socket*);
     // NOLINTEND
 
 public:
@@ -99,7 +99,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

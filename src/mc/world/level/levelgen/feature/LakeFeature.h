@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/random/XoroshiroPositionalRandomFactory.h"
 #include "mc/world/level/levelgen/feature/Feature.h"
 
 // auto generated forward declare list
@@ -11,7 +12,6 @@ class Block;
 class BlockPos;
 class BlockSource;
 class Random;
-class XoroshiroPositionalRandomFactory;
 // clang-format on
 
 class LakeFeature : public ::Feature {
@@ -37,7 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LakeFeature(
+    MCNAPI LakeFeature(
         ::Block const&                                      block,
         ::std::optional<::XoroshiroPositionalRandomFactory> xoroshiroPositionalRandomFactory
     );
@@ -46,25 +46,25 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::Block const& block, ::std::optional<::XoroshiroPositionalRandomFactory> xoroshiroPositionalRandomFactory);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

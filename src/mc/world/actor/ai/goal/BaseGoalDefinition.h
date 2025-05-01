@@ -44,20 +44,20 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $validateMobType(::Mob&) const;
+    MCNAPI bool $validateMobType(::Mob&) const;
 
-    MCFOLD bool $validate(::Mob&) const;
+    MCNAPI bool $validate(::Mob&) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

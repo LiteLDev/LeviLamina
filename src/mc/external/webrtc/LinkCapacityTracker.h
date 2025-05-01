@@ -14,31 +14,31 @@ struct LinkCapacityTracker {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LinkCapacityTracker();
+    MCNAPI LinkCapacityTracker();
 
-    MCAPI void OnRateUpdate(::std::optional<::webrtc::DataRate>, ::webrtc::DataRate, ::webrtc::Timestamp);
+    MCNAPI void OnRateUpdate(::std::optional<::webrtc::DataRate>, ::webrtc::DataRate, ::webrtc::Timestamp);
 
-    MCAPI void OnRttBackoff(::webrtc::DataRate, ::webrtc::Timestamp);
+    MCNAPI void OnRttBackoff(::webrtc::DataRate, ::webrtc::Timestamp);
 
-    MCAPI void OnStartingRate(::webrtc::DataRate);
+    MCNAPI void OnStartingRate(::webrtc::DataRate);
 
-    MCAPI void UpdateDelayBasedEstimate(::webrtc::Timestamp, ::webrtc::DataRate);
+    MCNAPI void UpdateDelayBasedEstimate(::webrtc::Timestamp, ::webrtc::DataRate);
 
-    MCAPI ::webrtc::DataRate estimate() const;
+    MCNAPI ::webrtc::DataRate estimate() const;
 
-    MCAPI ~LinkCapacityTracker();
+    MCNAPI ~LinkCapacityTracker();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

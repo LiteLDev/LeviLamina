@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/player/PlayerInventorySlotData.h"
+#include "mc/world/item/ItemStack.h"
+
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
-class ItemStack;
 class Player;
-struct PlayerInventorySlotData;
 // clang-format on
 
 struct PlayerItemInUse {
@@ -22,17 +24,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void releaseUsing(::Player& player);
+    MCNAPI void releaseUsing(::Player& player);
 
-    MCAPI void
+    MCNAPI void
     setItemInUse(::ItemStack const& newItem, ::EntityContext& owner, int duration, ::PlayerInventorySlotData slot);
 
-    MCAPI ~PlayerItemInUse();
+    MCNAPI ~PlayerItemInUse();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

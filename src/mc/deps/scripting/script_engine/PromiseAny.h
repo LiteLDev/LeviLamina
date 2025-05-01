@@ -34,19 +34,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PromiseAny(::Scripting::PromiseAny const& rhs);
+    MCNAPI PromiseAny(::Scripting::PromiseAny const& rhs);
 
-    MCFOLD ::Scripting::PromiseAny& operator=(::Scripting::PromiseAny&& rhs);
+    MCNAPI ::Scripting::PromiseAny& operator=(::Scripting::PromiseAny&& rhs);
 
-    MCAPI ::Scripting::ResultAny rejectGeneric(::entt::meta_any& any) const;
+    MCNAPI ::Scripting::ResultAny rejectGeneric(::entt::meta_any& any) const;
 
-    MCAPI ::Scripting::ResultAny resolveGeneric(::entt::meta_any& any) const;
+    MCNAPI ::Scripting::ResultAny resolveGeneric(::entt::meta_any& any) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::Scripting::PromiseAny const& rhs);
+    MCNAPI void* $ctor(::Scripting::PromiseAny const& rhs);
     // NOLINTEND
 
 public:
@@ -58,7 +58,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

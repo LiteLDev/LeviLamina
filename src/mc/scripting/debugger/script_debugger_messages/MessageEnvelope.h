@@ -22,15 +22,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptDebuggerMessages::MessageEnvelope& operator=(::ScriptDebuggerMessages::MessageEnvelope&&);
+    MCNAPI ::ScriptDebuggerMessages::MessageEnvelope& operator=(::ScriptDebuggerMessages::MessageEnvelope&&);
 
-    MCAPI ~MessageEnvelope();
+    MCNAPI ~MessageEnvelope();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

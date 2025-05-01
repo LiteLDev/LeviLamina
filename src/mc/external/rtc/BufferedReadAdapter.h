@@ -13,23 +13,23 @@ class BufferedReadAdapter {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void BufferInput(bool);
+    MCNAPI void BufferInput(bool);
 
-    MCAPI BufferedReadAdapter(::rtc::Socket*, uint64);
+    MCNAPI BufferedReadAdapter(::rtc::Socket*, uint64);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::Socket*, uint64);
+    MCNAPI void* $ctor(::rtc::Socket*, uint64);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForSocket();
+    MCNAPI static void** $vftableForSocket();
 
-    MCAPI static void** $vftableForHasSlots();
+    MCNAPI static void** $vftableForHasSlots();
     // NOLINTEND
 };
 

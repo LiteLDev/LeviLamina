@@ -19,39 +19,39 @@ class AudioRtpReceiver {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     AudioRtpReceiver(::rtc::Thread*, ::std::string const&, ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const&, bool, ::cricket::VoiceMediaReceiveChannelInterface*);
 
-    MCAPI
+    MCNAPI
     AudioRtpReceiver(::rtc::Thread*, ::std::string, ::std::vector<::std::string>, bool, ::cricket::VoiceMediaReceiveChannelInterface*);
 
-    MCAPI void Reconfigure(bool);
+    MCNAPI void Reconfigure(bool);
 
-    MCAPI void RestartMediaChannel(::std::optional<uint>);
+    MCNAPI void RestartMediaChannel(::std::optional<uint>);
 
-    MCAPI void RestartMediaChannel_w(::std::optional<uint>, bool, ::webrtc::MediaSourceInterface::SourceState);
+    MCNAPI void RestartMediaChannel_w(::std::optional<uint>, bool, ::webrtc::MediaSourceInterface::SourceState);
 
-    MCAPI void SetOutputVolume_w(double);
+    MCNAPI void SetOutputVolume_w(double);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::rtc::Thread*, ::std::string const&, ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const&, bool, ::cricket::VoiceMediaReceiveChannelInterface*);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::rtc::Thread*, ::std::string, ::std::vector<::std::string>, bool, ::cricket::VoiceMediaReceiveChannelInterface*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForAudioObserver();
+    MCNAPI static void** $vftableForAudioObserver();
 
-    MCAPI static void** $vftableForRtpReceiverInternal();
+    MCNAPI static void** $vftableForRtpReceiverInternal();
 
-    MCAPI static void** $vftableForObserverInterface();
+    MCNAPI static void** $vftableForObserverInterface();
     // NOLINTEND
 };
 

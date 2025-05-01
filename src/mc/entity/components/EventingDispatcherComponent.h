@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class StrictEntityContext;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/ecs/strict/StrictEntityContext.h"
 
 struct EventingDispatcherComponent {
 public:

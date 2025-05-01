@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 #include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
-class Vec3;
 // clang-format on
 
 class SwimUpForBreathGoal : public ::Goal {
@@ -54,9 +54,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int _determineApproximateLiquidDepthOfMob() const;
+    MCNAPI int _determineApproximateLiquidDepthOfMob() const;
 
-    MCAPI void _findAirPosition();
+    MCNAPI void _findAirPosition();
     // NOLINTEND
 
 public:
@@ -68,22 +68,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCFOLD bool $canBeInterrupted();
+    MCNAPI bool $canBeInterrupted();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

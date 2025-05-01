@@ -10,9 +10,9 @@
 namespace Bedrock::Diagnostics {
 // functions
 // NOLINTBEGIN
-MCAPI bool handleAssert(char const*, char const*, int, char const*, char const*, ...);
+MCNAPI bool handleAssert(char const*, char const*, int, char const*, char const*, ...);
 
-MCAPI void
+MCNAPI void
 log(::BedrockLog::LogCategory,
     ::std::bitset<3>,
     ::BedrockLog::LogRule,

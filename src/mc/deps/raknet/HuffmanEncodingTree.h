@@ -43,9 +43,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void FreeMemory();
+    MCNAPI void FreeMemory();
 
-    MCAPI void GenerateFromFrequencyTable(uint* const frequencyTable);
+    MCNAPI void GenerateFromFrequencyTable(uint* const frequencyTable);
     // NOLINTEND
 };
 

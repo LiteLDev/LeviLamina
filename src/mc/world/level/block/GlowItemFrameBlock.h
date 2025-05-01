@@ -14,7 +14,7 @@ class GlowItemFrameBlock : public ::ItemFrameBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 150
+    // vIndex: 148
     virtual ::HashedString getSpawnedItemName() const /*override*/;
 
     // vIndex: 0
@@ -30,12 +30,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::HashedString $getSpawnedItemName() const;
+    MCNAPI ::HashedString $getSpawnedItemName() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

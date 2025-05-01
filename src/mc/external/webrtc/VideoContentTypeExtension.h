@@ -11,7 +11,7 @@ class VideoContentTypeExtension {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool Write(::rtc::ArrayView<uchar>, ::webrtc::VideoContentType);
+    MCNAPI static bool Write(::rtc::ArrayView<uchar>, ::webrtc::VideoContentType);
     // NOLINTEND
 };
 

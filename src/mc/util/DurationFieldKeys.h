@@ -25,9 +25,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DurationFieldKeys(::std::string days, ::std::string hours, ::std::string minutes, ::std::string seconds);
+    MCNAPI DurationFieldKeys(::std::string days, ::std::string hours, ::std::string minutes, ::std::string seconds);
 
-    MCAPI DurationFieldKeys(
+    MCNAPI DurationFieldKeys(
         ::std::string days,
         ::std::string hours,
         ::std::string minutes,
@@ -38,15 +38,15 @@ public:
         ::std::string second
     );
 
-    MCAPI ~DurationFieldKeys();
+    MCNAPI ~DurationFieldKeys();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string days, ::std::string hours, ::std::string minutes, ::std::string seconds);
+    MCNAPI void* $ctor(::std::string days, ::std::string hours, ::std::string minutes, ::std::string seconds);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string days,
         ::std::string hours,
         ::std::string minutes,
@@ -61,6 +61,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

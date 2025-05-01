@@ -2,13 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/v2/processors/block_entity/Modifier.h"
+#include "mc/world/level/levelgen/v2/processors/block_rules/Test.h"
+#include "mc/world/level/levelgen/v2/processors/pos_rules/Test.h"
+
 // auto generated forward declare list
 // clang-format off
 class Block;
 namespace Util { class XXHash; }
-namespace br::worldgen::processors::BlockEntity { struct Modifier; }
-namespace br::worldgen::processors::BlockRules { struct Test; }
-namespace br::worldgen::processors::PosRules { struct Test; }
 // clang-format on
 
 namespace br::worldgen::processors {
@@ -31,42 +33,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RuleSet(::br::worldgen::processors::RuleSet const&);
+    MCNAPI RuleSet(::br::worldgen::processors::RuleSet const&);
 
-    MCAPI RuleSet(::br::worldgen::processors::RuleSet&&);
+    MCNAPI RuleSet(::br::worldgen::processors::RuleSet&&);
 
-    MCAPI void appendMetadataKey(::Util::XXHash& hash) const;
+    MCNAPI void appendMetadataKey(::Util::XXHash& hash) const;
 
-    MCAPI ::br::worldgen::processors::RuleSet& operator=(::br::worldgen::processors::RuleSet&&);
+    MCNAPI ::br::worldgen::processors::RuleSet& operator=(::br::worldgen::processors::RuleSet&&);
 
-    MCAPI ::br::worldgen::processors::RuleSet withLoc(::br::worldgen::processors::BlockRules::Test loc);
+    MCNAPI ::br::worldgen::processors::RuleSet withLoc(::br::worldgen::processors::BlockRules::Test loc);
 
-    MCAPI ::br::worldgen::processors::RuleSet withModifier(::br::worldgen::processors::BlockEntity::Modifier modifier);
+    MCNAPI ::br::worldgen::processors::RuleSet withModifier(::br::worldgen::processors::BlockEntity::Modifier modifier);
 
-    MCAPI ::br::worldgen::processors::RuleSet withPos(::br::worldgen::processors::PosRules::Test pos);
+    MCNAPI ::br::worldgen::processors::RuleSet withPos(::br::worldgen::processors::PosRules::Test pos);
 
-    MCAPI ~RuleSet();
+    MCNAPI ~RuleSet();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::br::worldgen::processors::RuleSet
+    MCNAPI static ::br::worldgen::processors::RuleSet
     from(::br::worldgen::processors::BlockRules::Test input, ::Block const& output);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::br::worldgen::processors::RuleSet const&);
+    MCNAPI void* $ctor(::br::worldgen::processors::RuleSet const&);
 
-    MCAPI void* $ctor(::br::worldgen::processors::RuleSet&&);
+    MCNAPI void* $ctor(::br::worldgen::processors::RuleSet&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

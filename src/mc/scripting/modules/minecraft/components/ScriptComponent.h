@@ -12,7 +12,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkad83bc;
-    ::ll::UntypedStorage<8, 32> mUnk4e2e45;
+    ::ll::UntypedStorage<8, 40> mUnkf28bfb;
     // NOLINTEND
 
 public:
@@ -28,31 +28,39 @@ public:
     virtual ~ScriptComponent();
 
     // vIndex: 1
+    virtual ::std::string const& getTypeId_V1() const;
+
+    // vIndex: 2
+    virtual ::std::string const& getTypeId_V2() const;
+
+    // vIndex: 3
     virtual bool _isValid() const = 0;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptComponent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptComponent> bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::string const& $getTypeId_V1() const;
 
+    MCNAPI ::std::string const& $getTypeId_V2() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -41,18 +41,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _addTransaction(
+    MCNAPI bool _addTransaction(
         ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> parent,
         ::std::unique_ptr<::PositionTrackingDB::OperationBase>          newTransaction
     );
 
-    MCAPI void deserialize(::CompoundTag const& tag);
+    MCNAPI void deserialize(::CompoundTag const& tag);
 
-    MCAPI bool loadRecordFromStorage(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> parent);
+    MCNAPI bool loadRecordFromStorage(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> parent);
 
-    MCAPI bool processPendingTransactions(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> parent);
+    MCNAPI bool processPendingTransactions(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> parent);
 
-    MCAPI ::CompoundTag serialize() const;
+    MCNAPI ::CompoundTag serialize() const;
     // NOLINTEND
 };
 

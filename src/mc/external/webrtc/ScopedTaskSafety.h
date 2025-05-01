@@ -28,17 +28,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> flag() const;
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> flag() const;
 
-    MCAPI void reset(::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag>);
+    MCNAPI void reset(::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag>);
 
-    MCAPI ~ScopedTaskSafety();
+    MCNAPI ~ScopedTaskSafety();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

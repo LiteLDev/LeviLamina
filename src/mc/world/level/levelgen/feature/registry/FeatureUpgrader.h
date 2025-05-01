@@ -30,12 +30,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Puv::LoadResultAny $doUpgrade(::Puv::LoadResultAny source) const;
+    MCNAPI ::Puv::LoadResultAny $doUpgrade(::Puv::LoadResultAny source) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

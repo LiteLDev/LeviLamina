@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/Hopper.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BlockPos;
 // clang-format on
 
 class HopperComponent : public ::Hopper {
@@ -21,6 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool pullInItems(::Actor& owner);
+    MCNAPI bool pullInItems(::Actor& owner);
     // NOLINTEND
 };

@@ -32,9 +32,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerInteractWithBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent&&);
+    MCNAPI
+    ScriptPlayerInteractWithBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent&&);
 
-    MCAPI ScriptPlayerInteractWithBlockBeforeEvent(
+    MCNAPI ScriptPlayerInteractWithBlockBeforeEvent(
         ::Player&                                   player,
         ::PlayerInteractWithBlockBeforeEvent const& eventData,
         ::Scripting::WeakLifetimeScope&             scope
@@ -44,16 +45,16 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent>
     bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent&&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Player&                                   player,
         ::PlayerInteractWithBlockBeforeEvent const& eventData,
         ::Scripting::WeakLifetimeScope&             scope

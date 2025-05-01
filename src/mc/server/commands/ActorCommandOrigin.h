@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
@@ -16,7 +17,6 @@ class Dimension;
 class Level;
 class Vec2;
 class Vec3;
-struct ActorUniqueID;
 // clang-format on
 
 class ActorCommandOrigin : public ::CommandOrigin {

@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Color.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 
 // auto generated forward declare list
@@ -17,11 +19,9 @@ class BaseAttributeMap;
 class BaseGameVersion;
 class CompoundTag;
 class Experiments;
-class HashedString;
 class InstantaneousAttributeBuff;
 class TemporalAttributeBuff;
 struct EffectDuration;
-namespace mce { class Color; }
 // clang-format on
 
 class MobEffect {
@@ -59,23 +59,23 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::MobEffect::FactorCalculationData& operator=(::MobEffect::FactorCalculationData const&);
+        MCNAPI ::MobEffect::FactorCalculationData& operator=(::MobEffect::FactorCalculationData const&);
 
-        MCAPI ::std::unique_ptr<::CompoundTag> save() const;
+        MCNAPI ::std::unique_ptr<::CompoundTag> save() const;
 
-        MCAPI ~FactorCalculationData();
+        MCNAPI ~FactorCalculationData();
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static ::MobEffect::FactorCalculationData load(::CompoundTag const* tag);
+        MCNAPI static ::MobEffect::FactorCalculationData load(::CompoundTag const* tag);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 

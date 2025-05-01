@@ -28,13 +28,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorAddEffectAfterEventIntermediateData(::Actor const& actor, ::MobEffectInstance mobEffect);
+    MCNAPI ScriptActorAddEffectAfterEventIntermediateData(::Actor const& actor, ::MobEffectInstance mobEffect);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor const& actor, ::MobEffectInstance mobEffect);
+    MCNAPI void* $ctor(::Actor const& actor, ::MobEffectInstance mobEffect);
     // NOLINTEND
 };
 

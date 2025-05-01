@@ -41,9 +41,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FutureAny(::Scripting::FutureAny const& rhs);
+    MCNAPI FutureAny(::Scripting::FutureAny const& rhs);
 
-    MCAPI FutureAny(
+    MCNAPI FutureAny(
         ::Scripting::IRuntime*                                        runtime,
         ::Scripting::ContextId                                        contextId,
         ::Scripting::WeakLifetimeScope                                scope,
@@ -51,21 +51,21 @@ public:
         ::Scripting::IObjectInspector*                                inspector
     );
 
-    MCAPI ::Scripting::ResultAny getResult() const;
+    MCNAPI ::Scripting::ResultAny getResult() const;
 
-    MCAPI bool isPending() const;
+    MCNAPI bool isPending() const;
 
-    MCAPI bool isRejected() const;
+    MCNAPI bool isRejected() const;
 
-    MCFOLD ::Scripting::FutureAny& operator=(::Scripting::FutureAny&& rhs);
+    MCNAPI ::Scripting::FutureAny& operator=(::Scripting::FutureAny&& rhs);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::Scripting::FutureAny const& rhs);
+    MCNAPI void* $ctor(::Scripting::FutureAny const& rhs);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::IRuntime*                                        runtime,
         ::Scripting::ContextId                                        contextId,
         ::Scripting::WeakLifetimeScope                                scope,
@@ -77,13 +77,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

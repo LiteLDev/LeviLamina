@@ -3,20 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/util/FloatRange.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorDefinitionTrigger;
 class Mob;
 class Path;
-class Vec3;
-class WeakEntityRef;
-struct FloatRange;
 struct MobDescriptor;
-struct Tick;
 // clang-format on
 
 class AvoidMobTypeGoal : public ::Goal {
@@ -74,38 +74,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool canFindAvoidPath(::Actor* actor);
+    MCNAPI bool canFindAvoidPath(::Actor* actor);
 
-    MCAPI bool canFindAvoidPos(::Actor& entity);
+    MCNAPI bool canFindAvoidPos(::Actor& entity);
 
-    MCAPI ::Actor* findNearestEntityToAvoid(float dist);
+    MCNAPI ::Actor* findNearestEntityToAvoid(float dist);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

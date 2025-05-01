@@ -21,35 +21,35 @@ struct TransportFeedbackAdapter {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddPacket(::webrtc::RtpPacketSendInfo const&, uint64, ::webrtc::Timestamp);
+    MCNAPI void AddPacket(::webrtc::RtpPacketSendInfo const&, uint64, ::webrtc::Timestamp);
 
-    MCAPI ::webrtc::DataSize GetOutstandingData() const;
+    MCNAPI ::webrtc::DataSize GetOutstandingData() const;
 
-    MCAPI ::std::optional<::webrtc::SentPacket> ProcessSentPacket(::rtc::SentPacket const&);
+    MCNAPI ::std::optional<::webrtc::SentPacket> ProcessSentPacket(::rtc::SentPacket const&);
 
-    MCAPI ::std::optional<::webrtc::TransportPacketsFeedback>
+    MCNAPI ::std::optional<::webrtc::TransportPacketsFeedback>
     ProcessTransportFeedback(::webrtc::rtcp::TransportFeedback const&, ::webrtc::Timestamp);
 
-    MCAPI ::std::vector<::webrtc::PacketResult>
+    MCNAPI ::std::vector<::webrtc::PacketResult>
     ProcessTransportFeedbackInner(::webrtc::rtcp::TransportFeedback const&, ::webrtc::Timestamp);
 
-    MCAPI void SetNetworkRoute(::rtc::NetworkRoute const&);
+    MCNAPI void SetNetworkRoute(::rtc::NetworkRoute const&);
 
-    MCAPI TransportFeedbackAdapter();
+    MCNAPI TransportFeedbackAdapter();
 
-    MCAPI ~TransportFeedbackAdapter();
+    MCNAPI ~TransportFeedbackAdapter();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

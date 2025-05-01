@@ -65,27 +65,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit StructureManager(::ResourcePackManager& packManager);
+    MCNAPI explicit StructureManager(::ResourcePackManager& packManager);
 
-    MCAPI ::StructureTemplate* _createAndLoadStructure(
+    MCNAPI ::StructureTemplate* _createAndLoadStructure(
         ::std::string const&         structureName,
         ::ResourcePackManager const* packManager,
         ::LevelStorage*              levelStorage
     );
 
-    MCAPI ::std::string _createLevelStorageId(::std::string const& dimensionPrefix, ::std::string const& saveId);
+    MCNAPI ::std::string _createLevelStorageId(::std::string const& dimensionPrefix, ::std::string const& saveId);
 
-    MCAPI bool _findResource(
+    MCNAPI bool _findResource(
         ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& structurePath,
         ::PackInstance const&                                           pack,
         ::std::string&                                                  resourceStream
     );
 
-    MCAPI ::SharedTypes::v1_21_50::JigsawStructureMetadataRegistry& _getMetadataRegistry() const;
+    MCNAPI ::SharedTypes::v1_21_50::JigsawStructureMetadataRegistry& _getMetadataRegistry() const;
 
-    MCAPI bool _placeSegment(::StructureAnimationData& structureAnimationData);
+    MCNAPI bool _placeSegment(::StructureAnimationData& structureAnimationData);
 
-    MCAPI bool _placeSegment(
+    MCNAPI bool _placeSegment(
         ::Dimension&                                         dimension,
         ::StructureAnimationData&                            structureAnimationData,
         ::ChunkLoadActionList&                               chunkLoadActionList,
@@ -93,55 +93,55 @@ public:
         ::std::function<::ChunksLoadedStatus(::Tick)> const& areChunksLoaded
     );
 
-    MCAPI ::LegacyStructureTemplate* _readLegacyStructure(::std::string const& name);
+    MCNAPI ::LegacyStructureTemplate* _readLegacyStructure(::std::string const& name);
 
-    MCAPI void
+    MCNAPI void
     _removePlacementQueueItem(::std::string const& dimensionPrefix, ::StructureAnimationData& structureAnimationData);
 
-    MCAPI void
+    MCNAPI void
     _savePlacementQueueItem(::std::string const& dimensionPrefix, ::StructureAnimationData& structureAnimationData);
 
-    MCAPI ::StructureTemplate&
+    MCNAPI ::StructureTemplate&
     cloneStructure(::StructureTemplate const& structureTemplate, ::std::string const& structureName);
 
-    MCAPI ::StructureDeleteResult deleteStructure(::std::string const& structureName, ::LevelStorage& levelStorage);
+    MCNAPI ::StructureDeleteResult deleteStructure(::std::string const& structureName, ::LevelStorage& levelStorage);
 
-    MCAPI ::StructureTemplate& getOrCreate(::std::string const& structureName);
+    MCNAPI ::StructureTemplate& getOrCreate(::std::string const& structureName);
 
-    MCAPI ::LegacyStructureTemplate& getOrCreateLegacy(::std::string const& structureName);
+    MCNAPI ::LegacyStructureTemplate& getOrCreateLegacy(::std::string const& structureName);
 
-    MCAPI ::StructureTemplate* getStructure(::std::string const& structureName) const;
+    MCNAPI ::StructureTemplate* getStructure(::std::string const& structureName) const;
 
-    MCAPI ::std::vector<::std::string> getStructureNames(::LevelStorage& levelStorage, bool includeUnremovable) const;
+    MCNAPI ::std::vector<::std::string> getStructureNames(::LevelStorage& levelStorage, bool includeUnremovable) const;
 
-    MCAPI void importStructureFromTemplate(::std::string name, ::StructureTemplate const& temp);
+    MCNAPI void importStructureFromTemplate(::std::string name, ::StructureTemplate const& temp);
 
-    MCAPI bool load(
+    MCNAPI bool load(
         ::StructureTemplate&         structureTemplate,
         ::ResourcePackManager const* packManager,
         ::LevelStorage*              levelStorage
     );
 
-    MCAPI bool loadLegacy(::LegacyStructureTemplate& structure, ::std::string& data);
+    MCNAPI bool loadLegacy(::LegacyStructureTemplate& structure, ::std::string& data);
 
-    MCAPI void loadMetadataRegistries(::ResourcePackManager& packManager);
+    MCNAPI void loadMetadataRegistries(::ResourcePackManager& packManager);
 
-    MCAPI void loadPlacementQueue(::LevelStorage& storage, ::Level& level, ::Dimension& dimension);
+    MCNAPI void loadPlacementQueue(::LevelStorage& storage, ::Level& level, ::Dimension& dimension);
 
-    MCAPI void
+    MCNAPI void
     loadPlacementQueueItem(::std::string const& key, ::CompoundTag const& tag, ::Level& level, ::Dimension& dimension);
 
-    MCAPI void queueLoad(::std::unique_ptr<::StructureAnimationData> structureAnimationData);
+    MCNAPI void queueLoad(::std::unique_ptr<::StructureAnimationData> structureAnimationData);
 
-    MCAPI bool readStructure(::StructureTemplate& structureTemplate);
+    MCNAPI bool readStructure(::StructureTemplate& structureTemplate);
 
-    MCAPI void saveToLevel(::StructureTemplate const& structureTemplate, ::LevelStorage& levelStorage);
+    MCNAPI void saveToLevel(::StructureTemplate const& structureTemplate, ::LevelStorage& levelStorage);
 
-    MCAPI void setUnknownBlockRegistry(::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry);
+    MCNAPI void setUnknownBlockRegistry(::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry);
 
-    MCAPI void tick(::Dimension const& dimension);
+    MCNAPI void tick(::Dimension const& dimension);
 
-    MCAPI ::QueueRequestResult tryPlaceStructureInWorld(
+    MCNAPI ::QueueRequestResult tryPlaceStructureInWorld(
         ::std::unique_ptr<::CommandArea>            cmdArea,
         ::ServerLevel&                              level,
         ::Dimension&                                dimension,
@@ -156,10 +156,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::SharedTypes::v1_21_50::JigsawStructureMetadataRegistry>
+    MCNAPI static ::std::unique_ptr<::SharedTypes::v1_21_50::JigsawStructureMetadataRegistry>
     _loadMetadataRegistries(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager& packManager, bool excludeLatest);
 
-    MCAPI static void _metadataPackForEachCallback(
+    MCNAPI static void _metadataPackForEachCallback(
         ::SharedTypes::v1_21_50::JigsawStructureMetadataRegistry&            registry,
         ::Puv::Loader<::SharedTypes::v1_21_50::JigsawStructureMetadataFile>& loader,
         ::PackInstance const&                                                pack,
@@ -167,10 +167,10 @@ public:
         ::Core::Path const&                                                  filenameWithExtension
     );
 
-    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
+    MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
     getStructurePath(::std::string const& structureFullName);
 
-    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
+    MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
     getStructurePath(::std::string const& structureNamespace, ::std::string const& structureName);
     // NOLINTEND
 
@@ -185,18 +185,18 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ResourcePackManager& packManager);
+    MCNAPI void* $ctor(::ResourcePackManager& packManager);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

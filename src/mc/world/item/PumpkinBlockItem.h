@@ -33,16 +33,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getEnchantSlot() const;
+    MCNAPI int $getEnchantSlot() const;
 
-    MCFOLD ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
+    MCNAPI ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
 
-    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
+    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

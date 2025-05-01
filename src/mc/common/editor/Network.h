@@ -10,19 +10,21 @@ namespace cereal { struct ReflectionCtx; }
 namespace Editor::Network {
 // functions
 // NOLINTBEGIN
-MCAPI void bindBlockPalettePayloadTypes(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindBlockPalettePayloadTypes(::cereal::ReflectionCtx& ctx);
 
-MCAPI void bindCursorServicePayloads(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindCursorServicePayloads(::cereal::ReflectionCtx& ctx);
 
-MCAPI void bindDataTransferPayloadTypes(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindDataTransferPayloadTypes(::cereal::ReflectionCtx& ctx);
 
-MCAPI void bindInputPayloads(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindEditorRealmPayloadTypes(::cereal::ReflectionCtx& ctx);
 
-MCAPI void bindNativeBrushServicePayloadTypes(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindInputPayloads(::cereal::ReflectionCtx& ctx);
 
-MCAPI void bindPayloadTypes(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindNativeBrushServicePayloadTypes(::cereal::ReflectionCtx& ctx);
 
-MCAPI void bindStructurePayloadTypes(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindPayloadTypes(::cereal::ReflectionCtx& ctx);
+
+MCNAPI void bindStructurePayloadTypes(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
 } // namespace Editor::Network

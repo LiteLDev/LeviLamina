@@ -18,6 +18,7 @@ enum class DirectoryIterationFlags : uint64 {
     Recursive                = 1ull << 9,
     TreatFlatFileAsFile      = 1ull << 10,
     FileSizeAllocationOnDisk = 1ull << 11,
+    IgnoreLRUCallback        = 1ull << 12,
     CreateAndModifyTime      = CreateTime | ModifyTime,
     FilesAndDirectories      = Files | Directories,
 };

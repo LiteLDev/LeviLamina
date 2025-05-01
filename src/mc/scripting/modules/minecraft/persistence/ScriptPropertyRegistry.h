@@ -31,13 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> registerEntityTypeDynamicProperties(
+    MCNAPI ::Scripting::Result<void> registerEntityTypeDynamicProperties(
         ::Scripting::WeakLifetimeScope                                          scope,
         ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&       dynamicPropertiesDefinition,
         ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptActorType> entityTypeOrId
     );
 
-    MCAPI ::Scripting::Result<void> registerWorldDynamicProperties(
+    MCNAPI ::Scripting::Result<void> registerWorldDynamicProperties(
         ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const& dynamicPropertiesDefinition
     );
     // NOLINTEND
@@ -45,7 +45,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPropertyRegistry> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPropertyRegistry> bind();
     // NOLINTEND
 };
 

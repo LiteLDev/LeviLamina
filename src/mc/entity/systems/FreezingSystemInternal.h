@@ -13,11 +13,11 @@ class FreezingComponent;
 namespace FreezingSystemInternal {
 // functions
 // NOLINTBEGIN
-MCAPI bool isAffectedByFreezeEffect(::Actor const& actor);
+MCNAPI bool isAffectedByFreezeEffect(::Actor const& actor);
 
-MCAPI void processFreezeEffect(::Actor& actor, ::FreezingComponent const& freezeComp);
+MCNAPI void processFreezeEffect(::Actor& actor, ::FreezingComponent const& freezeComp);
 
-MCAPI void tickFreezeComponent(
+MCNAPI void tickFreezeComponent(
     ::EntityContext&       entity,
     ::ActorOwnerComponent& actorOwnerComponent,
     ::FreezingComponent&   freezingComponent

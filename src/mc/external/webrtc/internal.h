@@ -10,21 +10,21 @@ namespace webrtc::internal { class PacketMaskTable; }
 namespace webrtc::internal {
 // functions
 // NOLINTBEGIN
-MCAPI void CopyColumn(uchar*, int, uchar*, int, int, int, int);
+MCNAPI void CopyColumn(uchar*, int, uchar*, int, int, int, int);
 
-MCAPI void GeneratePacketMasks(int, int, int, bool, ::webrtc::internal::PacketMaskTable*, uchar*);
+MCNAPI void GeneratePacketMasks(int, int, int, bool, ::webrtc::internal::PacketMaskTable*, uchar*);
 
-MCAPI void ImportantPacketProtection(int, int, int, uchar*, ::webrtc::internal::PacketMaskTable*);
+MCNAPI void ImportantPacketProtection(int, int, int, uchar*, ::webrtc::internal::PacketMaskTable*);
 
-MCAPI void InsertZeroColumns(int, uchar*, int, int, int);
+MCNAPI void InsertZeroColumns(int, uchar*, int, int, int);
 
-MCAPI ::rtc::ArrayView<uchar const> LookUpInFecTable(uchar const*, int, int);
+MCNAPI ::rtc::ArrayView<uchar const> LookUpInFecTable(uchar const*, int, int);
 
-MCAPI uint64 PacketMaskSize(uint64);
+MCNAPI uint64 PacketMaskSize(uint64);
 
-MCAPI int SetProtectionAllocation(int, int, int);
+MCNAPI int SetProtectionAllocation(int, int, int);
 
-MCAPI void UnequalProtectionMask(int, int, int, int, uchar*, ::webrtc::internal::PacketMaskTable*);
+MCNAPI void UnequalProtectionMask(int, int, int, int, uchar*, ::webrtc::internal::PacketMaskTable*);
 // NOLINTEND
 
 } // namespace webrtc::internal

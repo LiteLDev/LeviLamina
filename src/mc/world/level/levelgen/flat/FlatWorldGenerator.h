@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/buffer_span.h"
+#include "mc/world/level/block/BlockVolume.h"
 #include "mc/world/level/levelgen/WorldGenerator.h"
 
 // auto generated forward declare list
@@ -14,14 +15,13 @@ class BiomeSource;
 class Block;
 class BlockPos;
 class BlockSource;
-class BlockVolume;
 class BlockVolumeTarget;
 class BoundingBox;
 class ChunkPos;
 class ChunkViewSource;
 class Dimension;
 class FixedBiomeSource;
-class FlatWorldGeneratorOptions;
+class FlatWorldOptions;
 class HashedString;
 class LevelChunk;
 class Random;
@@ -106,7 +106,7 @@ public:
     // NOLINTBEGIN
     MCAPI FlatWorldGenerator(::Dimension& dimension, uint generationOptionsJSON, ::Json::Value const&);
 
-    MCAPI void _generatePrototypeBlockValues(::FlatWorldGeneratorOptions const& layersDesc, short);
+    MCAPI void _generatePrototypeBlockValues(::FlatWorldOptions const& layersDesc, short);
     // NOLINTEND
 
 public:

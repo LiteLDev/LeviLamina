@@ -58,20 +58,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerMapDataManager(
+    MCNAPI ServerMapDataManager(
         ::DimensionManager&                         dimensionManager,
         ::LevelStorage*                             levelStorage,
         ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions,
         ::std::function<::ActorUniqueID()>          getNewUniqueID
     );
 
-    MCAPI void _onGameplayUserAdded(::EntityContext& entity);
+    MCNAPI void _onGameplayUserAdded(::EntityContext& entity);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::DimensionManager&                         dimensionManager,
         ::LevelStorage*                             levelStorage,
         ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions,
@@ -88,22 +88,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
+    MCNAPI void $registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::MapItemSavedData&)>& $getOnCreateMapSavedDataConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::MapItemSavedData&)>& $getOnCreateMapSavedDataConnector();
 
-    MCAPI ::MapItemSavedData& $createMapSavedData(::ActorUniqueID const& uuid);
+    MCNAPI ::MapItemSavedData& $createMapSavedData(::ActorUniqueID const& uuid);
 
-    MCFOLD void $requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate);
+    MCNAPI void $requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate);
 
-    MCAPI void $_copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid);
+    MCNAPI void $_copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIServerMapDataManagerConnector();
+    MCNAPI static void** $vftableForIServerMapDataManagerConnector();
 
-    MCAPI static void** $vftableForMapDataManager();
+    MCNAPI static void** $vftableForMapDataManager();
     // NOLINTEND
 };

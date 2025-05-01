@@ -26,22 +26,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent&
     operator=(::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent&&);
 
-    MCAPI ~ScriptActorAddEffectBeforeEvent();
+    MCNAPI ~ScriptActorAddEffectBeforeEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent> bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -5,7 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/threading/InstancedThreadLocal.h"
 #include "mc/util/MultidimensionalArray.h"
+#include "mc/util/Random.h"
 #include "mc/world/level/levelgen/WorldGenerator.h"
+#include "mc/world/level/levelgen/feature/CanyonFeature.h"
+#include "mc/world/level/levelgen/feature/MonsterRoomFeature.h"
+#include "mc/world/level/levelgen/feature/UnderwaterCanyonFeature.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,17 +23,13 @@ class BlockTickingQueue;
 class BlockVolume;
 class BlockVolumeTarget;
 class BoundingBox;
-class CanyonFeature;
 class ChunkLocalNoiseCache;
 class ChunkPos;
 class ChunkViewSource;
 class Dimension;
 class LevelChunk;
-class MonsterRoomFeature;
 class PerlinSimplexNoise;
-class Random;
 class SurfaceLevelCache;
-class UnderwaterCanyonFeature;
 class WorldGenCache;
 class XoroshiroPositionalRandomFactory;
 // clang-format on
@@ -156,9 +156,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OverworldGenerator(::Dimension& dimension, bool isLegacyWorld);
+    MCNAPI OverworldGenerator(::Dimension& dimension, bool isLegacyWorld);
 
-    MCAPI void buildSurfaces(
+    MCNAPI void buildSurfaces(
         ::OverworldGenerator::ThreadData& thread,
         ::BlockVolume&                    blocks,
         ::LevelChunk&                     levelChunk,
@@ -170,34 +170,34 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     _fixWaterAlongEdges(::LevelChunk const& lc, ::BlockSource& source, ::BlockTickingQueue& instaTickQueue);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension, bool isLegacyWorld);
+    MCNAPI void* $ctor(::Dimension& dimension, bool isLegacyWorld);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+    MCNAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
-    MCAPI bool $postProcess(::ChunkViewSource& neighborhood);
+    MCNAPI bool $postProcess(::ChunkViewSource& neighborhood);
 
-    MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
+    MCNAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
 
-    MCAPI void $prepareHeights(::BlockVolume& box, ::ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
+    MCNAPI void $prepareHeights(::BlockVolume& box, ::ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
-    MCAPI void $prepareAndComputeHeights(
+    MCNAPI void $prepareAndComputeHeights(
         ::BlockVolume&        box,
         ::ChunkPos const&     chunkPos,
         ::std::vector<short>& ZXheights,
@@ -205,12 +205,12 @@ public:
         int                   skipTopN
     );
 
-    MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
+    MCNAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
 
-    MCFOLD ::std::unique_ptr<::Aquifer>
+    MCNAPI ::std::unique_ptr<::Aquifer>
     $tryMakeAquifer(::ChunkPos const&, ::SurfaceLevelCache const&, short, short, short) const;
 
-    MCFOLD void $decorateWorldGenLoadChunk(
+    MCNAPI void $decorateWorldGenLoadChunk(
         ::Biome const&       biome,
         ::LevelChunk&        lc,
         ::BlockVolumeTarget& target,
@@ -218,16 +218,16 @@ public:
         ::ChunkPos const&    pos
     ) const;
 
-    MCFOLD ::ChunkLocalNoiseCache $createNoiseCache(::ChunkPos chunkPos) const;
+    MCNAPI ::ChunkLocalNoiseCache $createNoiseCache(::ChunkPos chunkPos) const;
 
-    MCAPI ::WorldGenCache $createWorldGenCache(::ChunkPos chunkPos) const;
+    MCNAPI ::WorldGenCache $createWorldGenCache(::ChunkPos chunkPos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForChunkSource();
+    MCNAPI static void** $vftableForChunkSource();
 
-    MCAPI static void** $vftableForIPreliminarySurfaceProvider();
+    MCNAPI static void** $vftableForIPreliminarySurfaceProvider();
     // NOLINTEND
 };

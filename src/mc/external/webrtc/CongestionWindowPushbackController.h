@@ -14,21 +14,21 @@ class CongestionWindowPushbackController {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CongestionWindowPushbackController(::webrtc::FieldTrialsView const*);
+    MCNAPI explicit CongestionWindowPushbackController(::webrtc::FieldTrialsView const*);
 
-    MCAPI void SetDataWindow(::webrtc::DataSize);
+    MCNAPI void SetDataWindow(::webrtc::DataSize);
 
-    MCAPI void UpdateOutstandingData(int64);
+    MCNAPI void UpdateOutstandingData(int64);
 
-    MCAPI void UpdatePacingQueue(int64);
+    MCNAPI void UpdatePacingQueue(int64);
 
-    MCAPI uint UpdateTargetBitrate(uint);
+    MCNAPI uint UpdateTargetBitrate(uint);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const*);
     // NOLINTEND
 };
 

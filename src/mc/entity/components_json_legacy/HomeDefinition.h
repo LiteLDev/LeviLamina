@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,17 +30,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _setRestrictionRadius(int const& restrictionRadius);
+    MCNAPI void _setRestrictionRadius(int const& restrictionRadius);
 
-    MCAPI void _setRestrictionType(::std::string const& restrictionType);
+    MCNAPI void _setRestrictionType(::std::string const& restrictionType);
 
-    MCAPI void initialize(::EntityContext& component, ::HomeComponent&) const;
+    MCNAPI void initialize(::EntityContext& component, ::HomeComponent&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::HomeDefinition>>& root);
     // NOLINTEND
 };

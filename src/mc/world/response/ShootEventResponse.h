@@ -3,16 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/deps/shared_types/legacy/FilterSubject.h"
+#include "mc/util/ExpressionNode.h"
 #include "mc/util/Factory.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/response/EventResponse.h"
 
 // auto generated forward declare list
 // clang-format off
-class ExpressionNode;
 class RenderParams;
-struct ActorDefinitionIdentifier;
 struct EventResponseCollection;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -49,7 +49,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ShootEventResponse();
+    MCNAPI ShootEventResponse();
     // NOLINTEND
 
 public:
@@ -61,7 +61,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -73,11 +73,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getName() const;
+    MCNAPI ::std::string const& $getName() const;
 
-    MCAPI void $executeAction(::RenderParams& params) const;
+    MCNAPI void $executeAction(::RenderParams& params) const;
 
-    MCAPI void $buildSchema(
+    MCNAPI void $buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
         ::Factory<::EventResponse> const&                                                                       factory
     ) const;
@@ -86,6 +86,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

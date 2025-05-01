@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+#include "mc/nbt/CompoundTag.h"
 #include "mc/world/item/registry/ItemVersion.h"
 
 // auto generated forward declare list
 // clang-format off
-class CompoundTag;
-class HashedString;
 class ItemRegistryRef;
 // clang-format on
 
@@ -31,26 +31,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemData(::ItemData&&);
+    MCNAPI ItemData(::ItemData&&);
 
-    MCAPI ~ItemData();
+    MCNAPI ~ItemData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::ItemData> fromItemRegistry(::ItemRegistryRef itemRegistry);
+    MCNAPI static ::std::vector<::ItemData> fromItemRegistry(::ItemRegistryRef itemRegistry);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemData&&);
+    MCNAPI void* $ctor(::ItemData&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

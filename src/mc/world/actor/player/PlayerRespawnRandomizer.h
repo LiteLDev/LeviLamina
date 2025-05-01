@@ -28,12 +28,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerRespawnRandomizer(uint spawnRadius, ::GeneratorType const& worldType);
+    MCNAPI PlayerRespawnRandomizer(uint spawnRadius, ::GeneratorType const& worldType);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint spawnRadius, ::GeneratorType const& worldType);
+    MCNAPI void* $ctor(uint spawnRadius, ::GeneratorType const& worldType);
     // NOLINTEND
 };

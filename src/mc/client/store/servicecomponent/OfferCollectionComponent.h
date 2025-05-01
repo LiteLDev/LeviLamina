@@ -4,17 +4,17 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
+#include "mc/client/store/StoreCatalogItemVisualLayer.h"
+#include "mc/client/store/servicecomponent/ImageTelemetryInfo.h"
 #include "mc/client/store/servicecomponent/StoreUIComponent.h"
+#include "mc/client/store/servicecomponent/utility/LinksToStyle.h"
+#include "mc/client/store/servicecomponent/utility/StyleData.h"
+#include "mc/deps/json/Value.h"
 
 // auto generated forward declare list
 // clang-format off
 class StoreCatalogItem;
-class StoreCatalogItemVisualLayer;
 class StoreDataDrivenScreenController;
-struct ImageTelemetryInfo;
-struct LinksToStyle;
-struct StyleData;
-namespace Json { class Value; }
 // clang-format on
 
 class OfferCollectionComponent : public ::StoreUIComponent {
@@ -36,6 +36,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                             mHasFetchedInitialImages;
     ::ll::TypedStorage<1, 1, bool>                                                             mShowMoreButtonVisible;
     ::ll::TypedStorage<1, 1, bool>                                                             mAreCycleButtonsVisible;
+    ::ll::TypedStorage<1, 1, bool>                                                             mHasMoreOffers;
     ::ll::TypedStorage<8, 208, ::StyleData>                                                    mStyleData;
     ::ll::TypedStorage<8, 16, ::Json::Value>                                                   mOfflineJson;
     // NOLINTEND
@@ -52,19 +53,19 @@ public:
     // vIndex: 7
     virtual void tick(::ui::DirtyFlag&) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual bool canRemove() const /*override*/;
 
-    // vIndex: 10
+    // vIndex: 11
     virtual int getReadyCount() const /*override*/;
 
-    // vIndex: 12
+    // vIndex: 13
     virtual ::ImageTelemetryInfo getImageTelemetry() const /*override*/;
 
-    // vIndex: 16
+    // vIndex: 17
     virtual void _registerBindsAndEvents(::StoreDataDrivenScreenController&) /*override*/;
 
-    // vIndex: 15
+    // vIndex: 16
     virtual void _parseData(::Json::Value const&) /*override*/;
     // NOLINTEND
 

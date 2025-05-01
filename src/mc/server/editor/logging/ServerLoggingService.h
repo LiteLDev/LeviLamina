@@ -54,7 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _dispatchLogMessagePayload(::Editor::LogMessage message, ::Editor::IEditorPlayer* editorPlayer);
+    MCNAPI void _dispatchLogMessagePayload(::Editor::LogMessage message, ::Editor::IEditorPlayer* editorPlayer);
     // NOLINTEND
 
 public:
@@ -66,22 +66,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCAPI void
+    MCNAPI void
     $log(::std::string&& msg, ::Player* player, ::Editor::LogLevel level, ::std::vector<::HashedString>&& areaTags);
 
-    MCFOLD void $flush();
+    MCNAPI void $flush();
 
-    MCFOLD ::std::vector<::Editor::LogMessage> const& $getMessages() const;
+    MCNAPI ::std::vector<::Editor::LogMessage> const& $getMessages() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForLoggingServiceProvider();
+    MCNAPI static void** $vftableForLoggingServiceProvider();
 
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

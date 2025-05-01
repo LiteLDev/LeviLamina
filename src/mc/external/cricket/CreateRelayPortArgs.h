@@ -8,13 +8,13 @@ struct CreateRelayPortArgs {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~CreateRelayPortArgs();
+    MCNAPI ~CreateRelayPortArgs();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

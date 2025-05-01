@@ -11,45 +11,38 @@ class ScriptWidgetComponentBaseOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk46e19c;
-    ::ll::UntypedStorage<1, 2>  mUnkf44423;
-    ::ll::UntypedStorage<1, 2>  mUnk2a2509;
-    ::ll::UntypedStorage<8, 96> mUnk2c8bbd;
+    ::ll::UntypedStorage<4, 16>  mUnk46e19c;
+    ::ll::UntypedStorage<1, 2>   mUnkf44423;
+    ::ll::UntypedStorage<1, 2>   mUnk2a2509;
+    ::ll::UntypedStorage<8, 240> mUnk2c8bbd;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ScriptWidgetComponentBaseOptions& operator=(ScriptWidgetComponentBaseOptions const&);
     ScriptWidgetComponentBaseOptions(ScriptWidgetComponentBaseOptions const&);
     ScriptWidgetComponentBaseOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWidgetComponentBaseOptions(::Editor::ScriptModule::ScriptWidgetComponentBaseOptions&&);
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentBaseOptions&
+    operator=(::Editor::ScriptModule::ScriptWidgetComponentBaseOptions&&);
 
-    MCAPI ::Editor::ScriptModule::ScriptWidgetComponentBaseOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentBaseOptions const&);
-
-    MCAPI ~ScriptWidgetComponentBaseOptions();
+    MCNAPI ~ScriptWidgetComponentBaseOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentBaseOptions>
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentBaseOptions>
     bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentBaseOptions&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

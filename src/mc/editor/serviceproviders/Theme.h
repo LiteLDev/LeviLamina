@@ -39,7 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Theme(
+    MCNAPI Theme(
         ::std::function<void(::Editor::Settings::ThemeProps const&)> fullSyncCallback,
         ::std::function<void(::std::string const&)>                  onCurrentThemeChangeCallback,
         ::std::function<
@@ -50,35 +50,37 @@ public:
         ::std::function<void(::std::string const&)> onThemeDeletedCallback
     );
 
-    MCAPI ::std::unordered_map<::HashedString, ::mce::Color>
+    MCNAPI ::std::unordered_map<::HashedString, ::mce::Color>
     _cloneThemeColorProps(::std::unordered_map<::HashedString, ::mce::Color> colorProps);
 
-    MCAPI ::Scripting::Error _getThemeDoesNotExistError(::std::string const& themeId, bool isCustom) const;
+    MCNAPI ::Scripting::Error _getThemeDoesNotExistError(::std::string const& themeId, bool isCustom) const;
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error> addNewTheme(
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error> addNewTheme(
         ::std::string const&                  id,
         ::std::optional<::std::string> const& name,
         ::std::optional<::std::string> const& sourceThemeId,
         bool                                  notifyUpdate
     );
 
-    MCAPI bool canThemeBeModified(::std::string const& id) const;
+    MCNAPI bool canThemeBeModified(::std::string const& id) const;
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error> deleteTheme(::std::string const& id, bool notifyUpdate);
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error> deleteTheme(::std::string const& id, bool notifyUpdate);
 
-    MCAPI ::std::optional<::Editor::Settings::ThemePalette> getThemeColors(::std::string const& id) const;
+    MCNAPI ::std::optional<::Editor::Settings::ThemePalette> getThemeColors(::std::string const& id) const;
 
-    MCAPI ::Scripting::Result<::Editor::Settings::ThemePalette, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<::std::string, ::Scripting::Error> getThemeName(::std::string const& id) const;
+
+    MCNAPI ::Scripting::Result<::Editor::Settings::ThemePalette, ::Scripting::Error>
     getThemePalette(::std::string const& id) const;
 
-    MCAPI ::mce::Color const& resolveColorKey(::Editor::Settings::ThemeSettingsColorKey key) const;
+    MCNAPI ::mce::Color const& resolveColorKey(::Editor::Settings::ThemeSettingsColorKey key) const;
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error> setCurrentTheme(::std::string const& id, bool notifyUpdate);
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error> setCurrentTheme(::std::string const& id, bool notifyUpdate);
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error>
     setThemeName(::std::string const& id, ::std::string const& name);
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error> updateThemeColor(
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error> updateThemeColor(
         ::std::string const&                      id,
         ::Editor::Settings::ThemeSettingsColorKey key,
         ::mce::Color const&                       newColor,
@@ -89,27 +91,27 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::mce::Color _getDarkThemeColorByKey(::Editor::Settings::ThemeSettingsColorKey colorKey);
+    MCNAPI static ::mce::Color _getDarkThemeColorByKey(::Editor::Settings::ThemeSettingsColorKey colorKey);
 
-    MCAPI static ::std::unordered_map<::HashedString, ::Editor::Settings::ThemePalette> _getDefaultThemesMap();
+    MCNAPI static ::std::unordered_map<::HashedString, ::Editor::Settings::ThemePalette> _getDefaultThemesMap();
 
-    MCAPI static ::mce::Color _getDefaultWorldUIColorByKey(::Editor::Settings::ThemeSettingsColorKey colorKey);
+    MCNAPI static ::mce::Color _getDefaultWorldUIColorByKey(::Editor::Settings::ThemeSettingsColorKey colorKey);
 
-    MCAPI static ::std::unordered_map<::HashedString, ::mce::Color> _getEmptyColorKeyMap();
+    MCNAPI static ::std::unordered_map<::HashedString, ::mce::Color> _getEmptyColorKeyMap();
 
-    MCAPI static ::mce::Color _getHighContrastThemeColorByKey(::Editor::Settings::ThemeSettingsColorKey colorKey);
+    MCNAPI static ::mce::Color _getHighContrastThemeColorByKey(::Editor::Settings::ThemeSettingsColorKey colorKey);
 
-    MCAPI static ::mce::Color _getLightThemeColorByKey(::Editor::Settings::ThemeSettingsColorKey colorKey);
+    MCNAPI static ::mce::Color _getLightThemeColorByKey(::Editor::Settings::ThemeSettingsColorKey colorKey);
 
-    MCAPI static ::mce::Color _getRedstoneThemeColorByKey(::Editor::Settings::ThemeSettingsColorKey colorKey);
+    MCNAPI static ::mce::Color _getRedstoneThemeColorByKey(::Editor::Settings::ThemeSettingsColorKey colorKey);
 
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::function<void(::Editor::Settings::ThemeProps const&)> fullSyncCallback,
         ::std::function<void(::std::string const&)>                  onCurrentThemeChangeCallback,
         ::std::function<

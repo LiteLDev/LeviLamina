@@ -18,10 +18,13 @@ public:
     // PathView inner types declare
     // clang-format off
     struct Hash;
+    struct path_view_less;
     // clang-format on
 
     // PathView inner types define
     struct Hash {};
+
+    struct path_view_less {};
 
 public:
     // member variables
@@ -38,35 +41,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PathView(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& src);
+    MCNAPI explicit PathView(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& src);
 
-    MCAPI explicit PathView(::Core::Path const& src);
+    MCNAPI explicit PathView(::Core::Path const& src);
 
-    MCAPI explicit PathView(::Core::PathBuffer<::std::string> const&);
+    MCNAPI explicit PathView(::Core::PathBuffer<::std::string> const&);
 
-    MCAPI PathView(::Core::PathView&&);
+    MCNAPI PathView(::Core::PathView&&);
 
-    MCAPI auto operator==(::Core::PathView const& rhs) const;
+    MCNAPI auto operator==(::Core::PathView const& rhs) const;
 
-    MCAPI ~PathView();
+    MCNAPI ~PathView();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& src);
+    MCNAPI void* $ctor(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& src);
 
-    MCFOLD void* $ctor(::Core::Path const& src);
+    MCNAPI void* $ctor(::Core::Path const& src);
 
-    MCAPI void* $ctor(::Core::PathBuffer<::std::string> const&);
+    MCNAPI void* $ctor(::Core::PathBuffer<::std::string> const&);
 
-    MCFOLD void* $ctor(::Core::PathView&&);
+    MCNAPI void* $ctor(::Core::PathView&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -24,14 +24,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::HasPropertyFilter& operator=(::HasPropertyFilter const&);
+    MCNAPI HasPropertyFilter(::HasPropertyFilter&&);
 
-    MCAPI ~HasPropertyFilter();
+    MCNAPI ::HasPropertyFilter& operator=(::HasPropertyFilter const&);
+
+    MCNAPI ~HasPropertyFilter();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::HasPropertyFilter&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

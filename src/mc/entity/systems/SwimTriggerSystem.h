@@ -23,9 +23,9 @@ struct WasInWaterFlagComponent;
 namespace SwimTriggerSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createSystem();
+MCNAPI ::TickingSystemWithInfo createSystem();
 
-MCAPI void doTick(
+MCNAPI void doTick(
     ::StrictEntityContext const&,
     ::AABBShapeComponent const&                       aabb,
     ::MovementAbilitiesComponent const&               abilities,

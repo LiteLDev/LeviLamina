@@ -14,23 +14,23 @@ class TransportFeedbackDemuxer {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddPacket(::webrtc::RtpPacketSendInfo const&);
+    MCNAPI void AddPacket(::webrtc::RtpPacketSendInfo const&);
 
-    MCAPI void OnTransportFeedback(::webrtc::rtcp::TransportFeedback const&);
+    MCNAPI void OnTransportFeedback(::webrtc::rtcp::TransportFeedback const&);
 
-    MCAPI TransportFeedbackDemuxer();
+    MCNAPI TransportFeedbackDemuxer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

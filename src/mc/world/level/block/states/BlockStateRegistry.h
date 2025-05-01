@@ -18,6 +18,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BlockStateRegistry& get();
+    MCNAPI static ::BlockStateRegistry& get();
     // NOLINTEND
 };

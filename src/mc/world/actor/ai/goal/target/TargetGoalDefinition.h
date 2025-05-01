@@ -41,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext& goal, ::TargetGoal& entity) const;
+    MCNAPI void initialize(::EntityContext& goal, ::TargetGoal& entity) const;
     // NOLINTEND
 
 public:
@@ -53,6 +53,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

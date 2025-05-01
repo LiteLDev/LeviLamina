@@ -3,28 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/minecraft_renderer/renderer/MaterialVariants.h"
+#include "mc/util/MolangActorArrayPtr.h"
+#include "mc/util/MolangActorIdArrayPtr.h"
+#include "mc/util/MolangArrayVariable.h"
+#include "mc/util/MolangClientTextureSet.h"
+#include "mc/util/MolangContextVariable.h"
+#include "mc/util/MolangDataDrivenGeometry.h"
+#include "mc/util/MolangEntityVariable.h"
+#include "mc/util/MolangGeometryVariable.h"
+#include "mc/util/MolangMaterialVariable.h"
+#include "mc/util/MolangMatrix.h"
+#include "mc/util/MolangMemberAccessor.h"
+#include "mc/util/MolangMemberArray.h"
+#include "mc/util/MolangOffsetPlaceholder.h"
+#include "mc/util/MolangQueryFunctionPtr.h"
+#include "mc/util/MolangResourceOffset.h"
+#include "mc/util/MolangScriptArgPOD.h"
 #include "mc/util/MolangScriptArgType.h"
-
-// auto generated forward declare list
-// clang-format off
-class MaterialVariants;
-struct MolangActorArrayPtr;
-struct MolangActorIdArrayPtr;
-struct MolangArrayVariable;
-struct MolangClientTextureSet;
-struct MolangContextVariable;
-struct MolangDataDrivenGeometry;
-struct MolangEntityVariable;
-struct MolangGeometryVariable;
-struct MolangMaterialVariable;
-struct MolangMatrix;
-struct MolangMemberAccessor;
-struct MolangMemberArray;
-struct MolangQueryFunctionPtr;
-struct MolangTempVariable;
-struct MolangTextureVariable;
-union MolangScriptArgPOD;
-// clang-format on
+#include "mc/util/MolangTempVariable.h"
+#include "mc/util/MolangTextureVariable.h"
 
 struct MolangScriptArg {
 public:
@@ -51,7 +49,9 @@ public:
             ::MolangMemberArray,
             ::MolangQueryFunctionPtr,
             ::MolangTempVariable,
-            ::MolangTextureVariable>>
+            ::MolangTextureVariable,
+            ::MolangOffsetPlaceholder,
+            ::MolangResourceOffset>>
         mData;
     // NOLINTEND
 

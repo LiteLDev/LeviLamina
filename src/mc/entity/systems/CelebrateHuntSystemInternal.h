@@ -11,7 +11,7 @@ class CelebrateHuntComponent;
 namespace CelebrateHuntSystemInternal {
 // functions
 // NOLINTBEGIN
-MCAPI void _tickCelebrateHuntComponent(
+MCNAPI void _tickCelebrateHuntComponent(
     ::ActorOwnerComponent&    actorOwnerComponent,
     ::CelebrateHuntComponent& celebrateHuntComponent
 );

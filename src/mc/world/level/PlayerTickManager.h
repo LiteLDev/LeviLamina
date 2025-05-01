@@ -32,24 +32,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerTickManager(
+    MCNAPI PlayerTickManager(
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>    dimensionManager,
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
         ::std::unique_ptr<::IPlayerTickProxy>                playerTickProxy,
         bool                                                 isClientSide
     );
 
-    MCAPI void processPlayerNetworking(::Tick const& currentTick);
+    MCNAPI void processPlayerNetworking(::Tick const& currentTick);
 
-    MCAPI void tick(::Tick const& currentTick);
+    MCNAPI void tick(::Tick const& currentTick);
 
-    MCAPI ~PlayerTickManager();
+    MCNAPI ~PlayerTickManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>    dimensionManager,
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
         ::std::unique_ptr<::IPlayerTickProxy>                playerTickProxy,
@@ -60,6 +60,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -4,12 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/ActorBlockBase.h"
+#include "mc/world/level/block/BlockLegacy.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockLegacy;
-class BlockPos;
-class Player;
+class Experiments;
+namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class BeaconBlock : public ::ActorBlock {
@@ -22,8 +22,14 @@ public:
     // vIndex: 138
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 139
-    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -35,14 +41,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCFOLD bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

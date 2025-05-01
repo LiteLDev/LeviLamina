@@ -113,10 +113,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PlatformBootstrap::CreateDirectoryResult
+    MCNAPI ::Bedrock::PlatformBootstrap::CreateDirectoryResult
     _rawCreateDirectory_std(char const* path, char* errorBuffer, uint64 errorBufferSize);
 
-    MCAPI ::Bedrock::PlatformBootstrap::LoadResult _rawLoadFile_cstdio(
+    MCNAPI ::Bedrock::PlatformBootstrap::LoadResult _rawLoadFile_cstdio(
         char*              buffer,
         uint64             bufferSize,
         ::std::string_view root,
@@ -129,13 +129,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::PlatformBootstrap::CreateDirectoryResult
+    MCNAPI static ::Bedrock::PlatformBootstrap::CreateDirectoryResult
     _makeCreateDirectoryError(::Bedrock::PlatformBootstrap::CreateDirectoryResultCode, char*, uint64, char const*, ...);
 
-    MCAPI static ::Bedrock::PlatformBootstrap::LoadResult
+    MCNAPI static ::Bedrock::PlatformBootstrap::LoadResult
     _makeLoadError(::Bedrock::PlatformBootstrap::LoadResultCode, char*, uint64, char const*, ...);
 
-    MCAPI static ::Bedrock::PlatformBootstrap::SaveResult
+    MCNAPI static ::Bedrock::PlatformBootstrap::SaveResult
     _makeSaveError(::Bedrock::PlatformBootstrap::SaveResultCode, char*, uint64, char const*, ...);
     // NOLINTEND
 

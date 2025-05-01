@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
-#include "mc/deps/ecs/OptionalComponentWrapper.h"
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/AddRemove.h"
 #include "mc/deps/ecs/strict/EntityFactoryT.h"
@@ -16,14 +15,13 @@
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
-#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
-#include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
 struct ActorDataFlagComponent;
 struct ActorDefinitionIdentifierComponent;
+struct ActorUniqueIDComponent;
 struct ClimbingLadderBlockComponent;
 struct CurrentlyStandingOnBlockComponent;
 struct DimensionTypeComponent;
@@ -39,10 +37,11 @@ struct StateVectorComponent;
 struct MovementSoundRequestSystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<
                                             ::Filter<::ShouldPlayMovementSoundComponent>,
                                             ::Read<
+                                                ::ActorDataFlagComponent,
                                                 ::ActorDefinitionIdentifierComponent,
+                                                ::ActorUniqueIDComponent,
                                                 ::DimensionTypeComponent,
                                                 ::SoundEventPlayerComponent,
-                                                ::ActorDataFlagComponent,
                                                 ::StateVectorComponent,
                                                 ::MovementSoundComponent,
                                                 ::ClimbingLadderBlockComponent,
@@ -59,10 +58,11 @@ public:
     virtual void tick(::StrictExecutionContext<
                       ::Filter<::ShouldPlayMovementSoundComponent>,
                       ::Read<
+                          ::ActorDataFlagComponent,
                           ::ActorDefinitionIdentifierComponent,
+                          ::ActorUniqueIDComponent,
                           ::DimensionTypeComponent,
                           ::SoundEventPlayerComponent,
-                          ::ActorDataFlagComponent,
                           ::StateVectorComponent,
                           ::MovementSoundComponent,
                           ::ClimbingLadderBlockComponent,
@@ -78,10 +78,11 @@ public:
         ::StrictExecutionContext<
             ::Filter<::ShouldPlayMovementSoundComponent>,
             ::Read<
+                ::ActorDataFlagComponent,
                 ::ActorDefinitionIdentifierComponent,
+                ::ActorUniqueIDComponent,
                 ::DimensionTypeComponent,
                 ::SoundEventPlayerComponent,
-                ::ActorDataFlagComponent,
                 ::StateVectorComponent,
                 ::MovementSoundComponent,
                 ::ClimbingLadderBlockComponent,
@@ -101,11 +102,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void doMovementSoundRequestSystem(
+    MCNAPI static void doMovementSoundRequestSystem(
         ::StrictEntityContext const&                                      entity,
-        ::ActorDefinitionIdentifierComponent const&                       actorDefinitionIdentifierComponent,
-        ::ActorDataFlagComponent const&                                   synchedActorDataComponent,
-        ::DimensionTypeComponent const&                                   dimensionTypeComponent,
+        ::ActorDataFlagComponent const&                                   actorFlags,
+        ::ActorDefinitionIdentifierComponent const&                       actorIdentifier,
+        ::ActorUniqueIDComponent const&                                   actorUniqueID,
+        ::DimensionTypeComponent const&                                   dimensionType,
         ::SoundEventPlayerComponent const&                                soundEventPlayerComponent,
         ::StateVectorComponent const&                                     stateVectorComponent,
         ::MovementSoundComponent const&                                   movementSoundComponent,
@@ -116,22 +118,11 @@ public:
         ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent> requestQueueView
     );
 
-    MCAPI static void prepareForStepSound(
+    MCNAPI static void prepareForStepSound(
         ::StrictEntityContext const&                          entity,
         ::MovementSoundComponent const&                       movementSoundComponent,
         ::Optional<::CurrentlyStandingOnBlockComponent const> currentlyStandingOnBlockComponent,
         ::EntityModifier<::ShouldPlayStepSoundComponent>&     entityModifier
-    );
-
-    MCAPI static void sendSoundRequest(
-        ::StrictEntityContext const&                                  entity,
-        ::DimensionTypeComponent const&                               dimensionTypeComponent,
-        ::ActorDataFlagComponent const&                               synchedActorDataComponent,
-        ::ActorDefinitionIdentifierComponent const&                   actorDefinitionIdentifierComponent,
-        ::SharedTypes::Legacy::LevelSoundEvent const&                 soundEvent,
-        ::SharedTypes::Legacy::ActorLocation const&                   location,
-        ::OptionalComponentWrapper<::SoundEventRequestQueueComponent> soundEventRequestQueueComponent,
-        int                                                           soundData
     );
     // NOLINTEND
 
@@ -144,31 +135,33 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::StrictExecutionContext<
-                     ::Filter<::ShouldPlayMovementSoundComponent>,
-                     ::Read<
-                         ::ActorDefinitionIdentifierComponent,
-                         ::DimensionTypeComponent,
-                         ::SoundEventPlayerComponent,
-                         ::ActorDataFlagComponent,
-                         ::StateVectorComponent,
-                         ::MovementSoundComponent,
-                         ::ClimbingLadderBlockComponent,
-                         ::CurrentlyStandingOnBlockComponent>,
-                     ::Write<>,
-                     ::AddRemove<::ShouldPlayStepSoundComponent>,
-                     ::GlobalRead<>,
-                     ::GlobalWrite<>,
-                     ::EntityFactoryT<>>& context);
+    MCNAPI void $tick(::StrictExecutionContext<
+                      ::Filter<::ShouldPlayMovementSoundComponent>,
+                      ::Read<
+                          ::ActorDataFlagComponent,
+                          ::ActorDefinitionIdentifierComponent,
+                          ::ActorUniqueIDComponent,
+                          ::DimensionTypeComponent,
+                          ::SoundEventPlayerComponent,
+                          ::StateVectorComponent,
+                          ::MovementSoundComponent,
+                          ::ClimbingLadderBlockComponent,
+                          ::CurrentlyStandingOnBlockComponent>,
+                      ::Write<>,
+                      ::AddRemove<::ShouldPlayStepSoundComponent>,
+                      ::GlobalRead<>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& context);
 
-    MCAPI void $singleTick(
+    MCNAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<::ShouldPlayMovementSoundComponent>,
             ::Read<
+                ::ActorDataFlagComponent,
                 ::ActorDefinitionIdentifierComponent,
+                ::ActorUniqueIDComponent,
                 ::DimensionTypeComponent,
                 ::SoundEventPlayerComponent,
-                ::ActorDataFlagComponent,
                 ::StateVectorComponent,
                 ::MovementSoundComponent,
                 ::ClimbingLadderBlockComponent,
@@ -185,6 +178,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

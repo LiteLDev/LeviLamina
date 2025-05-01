@@ -41,19 +41,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> _createItem(::std::string const& id, ::Json::Value const& payload);
+    MCNAPI ::Scripting::Result<void> _createItem(::std::string const& id, ::Json::Value const& payload);
 
-    MCAPI void _onItemCreated(::std::string const& id);
+    MCNAPI void _onItemCreated(::std::string const& id);
 
-    MCAPI void _onItemDestroyed(::std::string const& id);
+    MCNAPI void _onItemDestroyed(::std::string const& id);
 
-    MCAPI void _onItemUpdated(::std::string const& id, ::std::string const& propName);
+    MCNAPI void _onItemUpdated(::std::string const& id, ::std::string const& propName);
 
-    MCFOLD bool _removeItem(::std::string const& id);
+    MCNAPI bool _removeItem(::std::string const& id);
 
-    MCFOLD ::Json::Value getDataPayload(::Editor::DataStore::PayloadDescription const& desc) const;
+    MCNAPI ::Json::Value getDataPayload(::Editor::DataStore::PayloadDescription const& desc) const;
 
-    MCAPI ::Scripting::Result<void> handleDataEvent(
+    MCNAPI ::Scripting::Result<void> handleDataEvent(
         ::Editor::DataStore::EventType                 eventType,
         ::Json::Value const&                           payload,
         ::Editor::DataStore::PayloadDescription const& desc
@@ -83,13 +83,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $clear();
+    MCNAPI void $clear();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

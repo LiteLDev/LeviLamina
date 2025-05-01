@@ -51,7 +51,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 192, ::MountainAttributes::SteepMaterial>  mSteepMaterial;
     ::ll::TypedStorage<1, 1, ::MountainAttributes::TopSlideSettings> mTopSlideSettings;
-    ::ll::TypedStorage<4, 4, float>                                  mPeaksFactor;
     // NOLINTEND
 
 public:
@@ -64,7 +63,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool hasSlopes() const;
+    MCNAPI bool hasSlopes() const;
     // NOLINTEND
 
 public:
@@ -76,6 +75,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

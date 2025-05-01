@@ -30,9 +30,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::NetherNet::ErrorOr<::NetherNet::View, ::std::error_code> Open(::NetherNet::View envelope);
+    MCNAPI ::NetherNet::ErrorOr<::NetherNet::View, ::std::error_code> Open(::NetherNet::View envelope);
 
-    MCAPI ::NetherNet::ErrorOr<::NetherNet::View, ::std::error_code> Seal(::NetherNet::View plaintext);
+    MCNAPI ::NetherNet::ErrorOr<::NetherNet::View, ::std::error_code> Seal(::NetherNet::View plaintext);
     // NOLINTEND
 };
 

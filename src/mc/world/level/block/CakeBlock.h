@@ -16,6 +16,7 @@ class BlockSource;
 class Experiments;
 class ItemInstance;
 class Player;
+namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
@@ -23,16 +24,13 @@ class CakeBlock : public ::BlockLegacy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 139
-    virtual bool use(::Player& player, ::BlockPos const& pos, uchar) const /*override*/;
-
     // vIndex: 80
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
     // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
-    // vIndex: 142
+    // vIndex: 140
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 87
@@ -67,6 +65,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+
+    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -85,8 +85,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
-
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;

@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class BoundingBox;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
 
 namespace br::worldgen {
 
@@ -20,13 +18,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~JigsawSpace();
+    MCNAPI ~JigsawSpace();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -34,7 +34,7 @@ public:
     ::ll::UntypedStorage<8, 64>  mUnkc7fcf4;
     ::ll::UntypedStorage<8, 24>  mUnk6788f9;
     ::ll::UntypedStorage<8, 8>   mUnk2a8560;
-    ::ll::UntypedStorage<8, 176> mUnkfdc9e5;
+    ::ll::UntypedStorage<8, 248> mUnkfdc9e5;
     ::ll::UntypedStorage<4, 4>   mUnk7a1201;
     ::ll::UntypedStorage<4, 4>   mUnk7f9ce6;
     ::ll::UntypedStorage<4, 4>   mUnkc50f09;
@@ -109,30 +109,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseGameTestInstance(
+    MCNAPI BaseGameTestInstance(
         ::gametest::BaseGameTestFunction const&                testFunction,
         ::std::unique_ptr<::gametest::IGameTestHelperProvider> helper
     );
 
-    MCAPI ::gametest::GameTestSequence& createSequence();
+    MCNAPI ::gametest::GameTestSequence& createSequence();
 
-    MCAPI void fail(::gametest::GameTestError error, bool canRetry);
+    MCNAPI void fail(::gametest::GameTestError error, bool canRetry);
 
-    MCAPI void finish(bool canRetry);
+    MCNAPI void finish(bool canRetry);
 
-    MCAPI void removeListener(::std::shared_ptr<::gametest::IGameTestListener> listener);
+    MCNAPI void removeListener(::std::shared_ptr<::gametest::IGameTestListener> listener);
 
-    MCAPI void startExecution();
+    MCNAPI void startExecution();
 
-    MCAPI void succeed();
+    MCNAPI void succeed();
 
-    MCAPI void tick();
+    MCNAPI void tick();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::gametest::BaseGameTestFunction const&                testFunction,
         ::std::unique_ptr<::gametest::IGameTestHelperProvider> helper
     );
@@ -141,25 +141,25 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $initialize();
+    MCNAPI void $initialize();
 
-    MCAPI void $spawnStructure();
+    MCNAPI void $spawnStructure();
 
-    MCAPI void $_rerun();
+    MCNAPI void $_rerun();
 
-    MCAPI void $_removeSimulatedPlayers();
+    MCNAPI void $_removeSimulatedPlayers();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -19,18 +19,18 @@ class TimerManager {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::dcsctp::Timer>
+    MCNAPI ::std::unique_ptr<::dcsctp::Timer>
     CreateTimer(::std::string_view, ::std::function<::webrtc::TimeDelta()>, ::dcsctp::TimerOptions const&);
 
-    MCAPI void HandleTimeout(::webrtc::StrongAlias<::dcsctp::TimeoutTag, uint64>);
+    MCNAPI void HandleTimeout(::webrtc::StrongAlias<::dcsctp::TimeoutTag, uint64>);
 
-    MCAPI ~TimerManager();
+    MCNAPI ~TimerManager();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

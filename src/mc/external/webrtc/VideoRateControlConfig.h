@@ -13,7 +13,7 @@ struct VideoRateControlConfig {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::webrtc::StructParametersParser> Parser();
+    MCNAPI ::std::unique_ptr<::webrtc::StructParametersParser> Parser();
     // NOLINTEND
 
 public:

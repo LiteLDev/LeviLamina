@@ -43,36 +43,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemStack(::ScriptModuleMinecraft::ScriptItemStack&&);
+    MCNAPI ScriptItemStack(::ScriptModuleMinecraft::ScriptItemStack&&);
 
-    MCAPI ScriptItemStack(::ScriptModuleMinecraft::ScriptItemStack const&);
+    MCNAPI ScriptItemStack(::ScriptModuleMinecraft::ScriptItemStack const&);
 
-    MCAPI ScriptItemStack(
+    MCNAPI ScriptItemStack(
         ::Scripting::WeakLifetimeScope&                                                      scope,
         ::ItemStackBase const&                                                               item,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> const& itemTypeHandle
     );
 
-    MCAPI ScriptItemStack(
+    MCNAPI ScriptItemStack(
         ::Scripting::WeakLifetimeScope&                                                      scope,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> const& itemTypeHandle,
         int                                                                                  amount,
         int                                                                                  data
     );
 
-    MCAPI ::std::optional<::Scripting::Error> _validateDynamicProperty(
+    MCNAPI ::std::optional<::Scripting::Error> _validateDynamicProperty(
         ::std::string const&                                              key,
         ::std::variant<double, float, bool, ::std::string, ::Vec3> const& value
     ) const;
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>
+    MCNAPI void clearDynamicProperties(::Scripting::ContextConfig const& contextConfig);
+
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>
     clone(::Scripting::WeakLifetimeScope scope) const;
 
-    MCAPI ::std::vector<::std::string> getCanDestroy() const;
+    MCNAPI ::std::vector<::std::string> getCanDestroy() const;
 
-    MCAPI ::std::vector<::std::string> getCanPlaceOn() const;
+    MCNAPI ::std::vector<::std::string> getCanPlaceOn() const;
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent>>
     getComponent(
         ::std::unordered_map<
             ::std::string,
@@ -80,107 +82,111 @@ public:
         ::std::string const&                                                                id
     );
 
-    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent>>
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent>>
     getComponents(::std::unordered_map<
                   ::std::string,
                   ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>> const& factories);
 
-    MCAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>
+    MCNAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>
     getDynamicProperty(::Scripting::ContextConfig const& contextConfig, ::std::string const& key);
 
-    MCAPI ::std::vector<::std::string> getDynamicPropertyIds(::Scripting::ContextConfig const& contextConfig);
+    MCNAPI ::std::vector<::std::string> getDynamicPropertyIds(::Scripting::ContextConfig const& contextConfig);
 
-    MCAPI int getDynamicPropertyTotalByteCount(::Scripting::ContextConfig const& contextConfig);
+    MCNAPI int getDynamicPropertyTotalByteCount(::Scripting::ContextConfig const& contextConfig);
 
-    MCAPI ::std::vector<::std::string> getLore() const;
+    MCNAPI ::std::vector<::std::string> getLore() const;
 
-    MCAPI ::std::optional<::std::string> getNameTag() const;
+    MCNAPI ::std::optional<::std::string> getNameTag() const;
 
-    MCAPI ::std::vector<::std::string> getTags() const;
+    MCNAPI ::std::vector<::std::string> getTags() const;
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> getType() const;
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> getType() const;
 
-    MCAPI ::std::string getTypeId() const;
+    MCNAPI ::std::string getTypeId() const;
 
-    MCAPI bool hasComponent(
+    MCNAPI bool hasComponent(
         ::std::unordered_map<
             ::std::string,
             ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>> const& factories,
         ::std::string const&                                                                id
     );
 
-    MCAPI bool hasTag(::std::string const& tag) const;
+    MCNAPI bool hasTag(::std::string const& tag) const;
 
-    MCAPI bool matches(
+    MCNAPI bool isStackableWith(::ScriptModuleMinecraft::ScriptItemStack const& other) const;
+
+    MCNAPI bool matches(
         ::std::string                                                                                  itemName,
         ::std::optional<::std::unordered_map<::std::string, ::std::variant<int, ::std::string, bool>>> properties
     ) const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptItemStack& operator=(::ScriptModuleMinecraft::ScriptItemStack const&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptItemStack& operator=(::ScriptModuleMinecraft::ScriptItemStack const&);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptItemStack& operator=(::ScriptModuleMinecraft::ScriptItemStack&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptItemStack& operator=(::ScriptModuleMinecraft::ScriptItemStack&&);
 
-    MCAPI ::Scripting::Result<void> setAmount(int amount);
+    MCNAPI ::Scripting::Result<void> setAmount(int amount);
 
-    MCAPI ::Scripting::Result<void> setCanDestroy(::std::optional<::std::vector<::std::string>> const& blockIdentifiers
+    MCNAPI ::Scripting::Result<void> setCanDestroy(::std::optional<::std::vector<::std::string>> const& blockIdentifiers
     );
 
-    MCAPI ::Scripting::Result<void> setCanPlaceOn(::std::optional<::std::vector<::std::string>> const& blockIdentifiers
+    MCNAPI ::Scripting::Result<void> setCanPlaceOn(::std::optional<::std::vector<::std::string>> const& blockIdentifiers
     );
 
-    MCAPI ::Scripting::Result<void> setDynamicProperties(
+    MCNAPI ::Scripting::Result<void> setDynamicProperties(
         ::Scripting::ContextConfig const& contextConfig,
         ::std::unordered_map<::std::string, ::std::variant<double, float, bool, ::std::string, ::Vec3>> const& values
     );
 
-    MCAPI ::Scripting::Result<void> setDynamicProperty(
+    MCNAPI ::Scripting::Result<void> setDynamicProperty(
         ::Scripting::ContextConfig const&                                                  contextConfig,
         ::std::string const&                                                               key,
         ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> const& optionalValue
     );
 
-    MCAPI ::Scripting::Result<void> setLore(::std::optional<::std::vector<::std::string>> const& loreList);
+    MCNAPI ::Scripting::Result<void> setLore(::std::optional<::std::vector<::std::string>> const& loreList);
 
-    MCAPI ::Scripting::Result<void> setNameTag(::std::optional<::std::string> nameTag);
+    MCNAPI void setLoreV010(::std::optional<::std::vector<::std::string>> const& loreList);
 
-    MCAPI void setNameTagV010(::std::optional<::std::string> nameTag);
+    MCNAPI ::Scripting::Result<void> setNameTag(::std::optional<::std::string> nameTag);
 
-    MCAPI ~ScriptItemStack();
+    MCNAPI void setNameTagV010(::std::optional<::std::string> nameTag);
+
+    MCNAPI ~ScriptItemStack();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::Result_deprecated<
+    MCNAPI static ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>
     _createPotion(::Scripting::WeakLifetimeScope& scope, ::ScriptModuleMinecraft::ScriptPotionOptions const& options);
 
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemStack>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemStack>
     bind(::BaseGameVersion const& baseGameVersion, ::Scripting::Version const& version);
 
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>
     createHandle(::Scripting::WeakLifetimeScope scope, ::ItemStackBase const& item);
 
-    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>
+    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>
     createOptionalHandle(::Scripting::WeakLifetimeScope scope, ::ItemStackBase const& item);
 
-    MCAPI static ::std::optional<::Scripting::Error> validateLoreLength(::std::vector<::std::string> const& loreList);
+    MCNAPI static ::std::optional<::Scripting::Error> validateLoreLength(::std::vector<::std::string> const& loreList);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemStack&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemStack&&);
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemStack const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemStack const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::WeakLifetimeScope&                                                      scope,
         ::ItemStackBase const&                                                               item,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> const& itemTypeHandle
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::WeakLifetimeScope&                                                      scope,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> const& itemTypeHandle,
         int                                                                                  amount,
@@ -191,7 +197,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

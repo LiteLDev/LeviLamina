@@ -123,5 +123,8 @@ enum class ActorFlags : int {
     TimerFlag3                = 117,
     BodyRotationBlocked       = 118,
     RendersWhenInvisible      = 119,
-    Count                     = 120,
+    BodyRotationAxisAligned   = 120,
+    Collidable                = 121,
+    WasdAirControlled         = 122,
+    Count                     = 123,
 };

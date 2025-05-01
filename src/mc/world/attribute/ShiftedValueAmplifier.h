@@ -38,12 +38,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getAmount(int amplification, float scale) const;
+    MCNAPI float $getAmount(int amplification, float scale) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

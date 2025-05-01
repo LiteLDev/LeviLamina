@@ -2,12 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class BlockPos;
-class CompoundTag;
-class Vec3;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/nbt/CompoundTag.h"
+#include "mc/world/level/BlockPos.h"
 
 class LegacyStructureActorInfo {
 public:
@@ -21,12 +19,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyStructureActorInfo(::Vec3 const& pos, ::BlockPos const& blockPos, ::CompoundTag tag);
+    MCNAPI LegacyStructureActorInfo(::Vec3 const& pos, ::BlockPos const& blockPos, ::CompoundTag tag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Vec3 const& pos, ::BlockPos const& blockPos, ::CompoundTag tag);
+    MCNAPI void* $ctor(::Vec3 const& pos, ::BlockPos const& blockPos, ::CompoundTag tag);
     // NOLINTEND
 };

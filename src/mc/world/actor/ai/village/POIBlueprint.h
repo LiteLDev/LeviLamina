@@ -3,12 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/actor/ai/village/POIType.h"
-
-// auto generated forward declare list
-// clang-format off
-class HashedString;
-// clang-format on
 
 struct POIBlueprint {
 public:
@@ -28,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI POIBlueprint(
+    MCNAPI POIBlueprint(
         ::std::string name,
         ::POIType     type,
         float         radius,
@@ -38,7 +34,7 @@ public:
         ::std::string soundEvent
     );
 
-    MCAPI POIBlueprint(
+    MCNAPI POIBlueprint(
         ::std::string name,
         ::POIType     type,
         float         radius,
@@ -50,13 +46,13 @@ public:
         ::std::string endEvent
     );
 
-    MCAPI ~POIBlueprint();
+    MCNAPI ~POIBlueprint();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string name,
         ::POIType     type,
         float         radius,
@@ -66,7 +62,7 @@ public:
         ::std::string soundEvent
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string name,
         ::POIType     type,
         float         radius,
@@ -82,6 +78,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class IContentKeyProvider;
+class IPackIOProvider;
 class IPackManifestFactory;
 class Pack;
 class PackSourceReport;
@@ -65,49 +66,57 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DirectoryPackSource(
-        ::Core::Path const& path,
-        ::PackType          packType,
-        ::PackOrigin        packOrigin,
-        bool                isDeveloperDirectory
+    MCNAPI DirectoryPackSource(
+        ::Core::Path const&                  path,
+        ::PackType                           packType,
+        ::PackOrigin                         packOrigin,
+        bool                                 isDeveloperDirectory,
+        ::std::unique_ptr<::IPackIOProvider> io
     );
 
-    MCAPI void addPack(::std::unique_ptr<::Pack>&& pack);
+    MCNAPI void addPack(::std::unique_ptr<::Pack>&& pack);
 
-    MCAPI bool removePack(::Core::Path const& fullPath);
+    MCNAPI void deleteAllPacksAndReset();
+
+    MCNAPI bool removePack(::Core::Path const& fullPath);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void checkAndRemoveIncompletePacks(::Core::Path const& path);
+    MCNAPI static void checkAndRemoveIncompletePacks(::Core::Path const& path);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::Core::Path const& path, ::PackType packType, ::PackOrigin packOrigin, bool isDeveloperDirectory);
+    MCNAPI void* $ctor(
+        ::Core::Path const&                  path,
+        ::PackType                           packType,
+        ::PackOrigin                         packOrigin,
+        bool                                 isDeveloperDirectory,
+        ::std::unique_ptr<::IPackIOProvider> io
+    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $forEachPackConst(::std::function<void(::Pack const&)> callback) const;
+    MCNAPI void $forEachPackConst(::std::function<void(::Pack const&)> callback) const;
 
-    MCFOLD void $forEachPack(::std::function<void(::Pack&)> callback);
+    MCNAPI void $forEachPack(::std::function<void(::Pack&)> callback);
 
-    MCAPI ::PackOrigin $getPackOrigin() const;
+    MCNAPI ::PackOrigin $getPackOrigin() const;
 
-    MCFOLD ::PackType $getPackType() const;
+    MCNAPI ::PackType $getPackType() const;
 
-    MCAPI ::PackSourceReport $load(
+    MCNAPI ::PackSourceReport $load(
         ::IPackManifestFactory&                                           manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     );
@@ -116,6 +125,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

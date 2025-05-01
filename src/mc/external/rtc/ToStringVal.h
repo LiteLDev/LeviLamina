@@ -20,15 +20,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string const* GetVal() const;
+    MCNAPI ::std::string const* GetVal() const;
 
-    MCAPI ~ToStringVal();
+    MCNAPI ~ToStringVal();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

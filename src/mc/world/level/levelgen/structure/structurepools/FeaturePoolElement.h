@@ -67,7 +67,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FeaturePoolElement(
+    MCNAPI FeaturePoolElement(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
         ::WeakRef<::IFeature>                             feature
     );
@@ -76,7 +76,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager, ::WeakRef<::IFeature> feature);
     // NOLINTEND
 
@@ -89,10 +89,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::JigsawBlockInfo>
+    MCNAPI ::std::vector<::JigsawBlockInfo>
     $getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const;
 
-    MCAPI bool $place(
+    MCNAPI bool $place(
         ::BlockSource&                                                                  region,
         ::BlockPos                                                                      position,
         ::Rotation                                                                      rotation,
@@ -102,12 +102,12 @@ public:
         ::BlockPos                                                                      refPos
     ) const;
 
-    MCFOLD ::StructurePoolElementType $type() const;
+    MCNAPI ::StructurePoolElementType $type() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

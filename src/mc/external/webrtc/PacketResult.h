@@ -16,7 +16,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool operator()(::webrtc::PacketResult const&, ::webrtc::PacketResult const&);
+        MCNAPI bool operator()(::webrtc::PacketResult const&, ::webrtc::PacketResult const&);
         // NOLINTEND
     };
 
@@ -34,25 +34,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PacketResult();
+    MCNAPI PacketResult();
 
-    MCAPI PacketResult(::webrtc::PacketResult const&);
+    MCNAPI PacketResult(::webrtc::PacketResult const&);
 
-    MCAPI ~PacketResult();
+    MCNAPI ~PacketResult();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::webrtc::PacketResult const&);
+    MCNAPI void* $ctor(::webrtc::PacketResult const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

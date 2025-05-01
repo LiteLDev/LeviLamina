@@ -30,25 +30,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VersionRange(::Puv::VersionRange const&);
+    MCNAPI VersionRange(::Puv::VersionRange const&);
 
-    MCAPI VersionRange(::SemVersion const& min, ::SemVersion const& max, ::Puv::RangeType type);
+    MCNAPI VersionRange(::SemVersion const& min, ::SemVersion const& max, ::Puv::RangeType type);
 
-    MCAPI ~VersionRange();
+    MCNAPI ~VersionRange();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Puv::VersionRange const&);
+    MCNAPI void* $ctor(::Puv::VersionRange const&);
 
-    MCAPI void* $ctor(::SemVersion const& min, ::SemVersion const& max, ::Puv::RangeType type);
+    MCNAPI void* $ctor(::SemVersion const& min, ::SemVersion const& max, ::Puv::RangeType type);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -15,7 +15,7 @@ struct LiquidPhysicsSystemImpl {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _hasAdjacentFlowingBlock(
+    MCNAPI static bool _hasAdjacentFlowingBlock(
         ::std::vector<::LiquidBlockEntry> const& liquidBlocks,
         ::IConstBlockSource const&               region,
         ::MaterialType                           liquidType

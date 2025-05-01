@@ -11,9 +11,9 @@ namespace SharedTypes::Legacy { struct ExpressionNode; }
 namespace ExpressionNodeSerializer {
 // functions
 // NOLINTBEGIN
-MCAPI void fromSharedTypes(::ExpressionNode& instance, ::SharedTypes::Legacy::ExpressionNode const& expr);
+MCNAPI void fromSharedTypes(::ExpressionNode& instance, ::SharedTypes::Legacy::ExpressionNode const& expr);
 
-MCAPI ::SharedTypes::Legacy::ExpressionNode toSharedTypes(::ExpressionNode const& node);
+MCNAPI ::SharedTypes::Legacy::ExpressionNode toSharedTypes(::ExpressionNode const& node);
 // NOLINTEND
 
 } // namespace ExpressionNodeSerializer

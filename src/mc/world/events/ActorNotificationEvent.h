@@ -21,6 +21,8 @@ struct ActorEquippedArmorEvent;
 struct ActorGriefingBlockEvent;
 struct ActorHealthChangedEvent;
 struct ActorHurtEvent;
+struct ActorItemEventAfterDroppedItem;
+struct ActorItemEventBeforeDroppedItem;
 struct ActorKilledEvent;
 struct ActorPlacedItemEvent;
 struct ActorRemoveEffectEvent;
@@ -53,20 +55,22 @@ struct ActorNotificationEvent : public ::EventVariantImpl<
                                     ::ActorUseItemEvent const,
                                     ::KnockBackEvent const,
                                     ::MountTamingEvent const,
+                                    ::ActorItemEventAfterDroppedItem const,
                                     ::ProjectileHitEvent const,
                                     ::ActorGriefingBlockEvent const,
                                     ::ActorStopRidingEvent const,
+                                    ::ActorItemEventBeforeDroppedItem const,
                                     ::ActorDefinitionStartedEvent const,
                                     ::ActorAddEffectEvent const> {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ActorNotificationEvent();
+    MCNAPI ~ActorNotificationEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

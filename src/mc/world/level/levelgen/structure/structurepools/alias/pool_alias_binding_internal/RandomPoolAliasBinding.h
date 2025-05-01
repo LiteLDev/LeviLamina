@@ -51,16 +51,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     $appendResolvedAliases(::IRandom& random, ::PoolAliasBinding::PoolAliasLookup& inOutResolvedAliases) const;
 
-    MCAPI void $forAllTargets(::std::function<void(::std::string const&, ::std::string const&)> const& fn) const;
+    MCNAPI void $forAllTargets(::std::function<void(::std::string const&, ::std::string const&)> const& fn) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

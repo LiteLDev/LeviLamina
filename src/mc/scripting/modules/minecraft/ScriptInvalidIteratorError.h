@@ -12,27 +12,27 @@ struct ScriptInvalidIteratorError : public ::Scripting::Error {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptInvalidIteratorError();
+    MCNAPI ScriptInvalidIteratorError();
 
-    MCAPI ~ScriptInvalidIteratorError();
+    MCNAPI ~ScriptInvalidIteratorError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptInvalidIteratorError> bind();
+    MCNAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptInvalidIteratorError> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

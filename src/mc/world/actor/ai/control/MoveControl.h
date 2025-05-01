@@ -33,10 +33,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI float
+    MCNAPI float
     calculateMoveSpeed(::MoveControlComponent const& parent, ::Mob& mob, ::Vec3 const& endPosition, float maxMoveSpeed);
 
-    MCAPI float calculateYRotation(
+    MCNAPI float calculateYRotation(
         ::MoveControlComponent const& parent,
         ::Mob const&                  mob,
         ::Vec3 const&                 positionDifference,
@@ -47,7 +47,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Vec3 getDiffVector(::Vec3 const& wantedPosition, ::Mob const& mob);
+    MCNAPI static ::Vec3 getDiffVector(::Vec3 const& wantedPosition, ::Mob const& mob);
     // NOLINTEND
 
 public:
@@ -67,16 +67,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $initializeInternal(::Mob& mob, ::MoveControlDescription* description);
+    MCNAPI void $initializeInternal(::Mob& mob, ::MoveControlDescription* description);
 
-    MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
+    MCNAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
 
-    MCAPI void $setWantedPosition(::MoveControlComponent& parent, ::Mob&, ::Vec3 const& position, float speed);
+    MCNAPI void $setWantedPosition(::MoveControlComponent& parent, ::Mob&, ::Vec3 const& position, float speed);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

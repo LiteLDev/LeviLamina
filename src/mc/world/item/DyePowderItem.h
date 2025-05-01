@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 107
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     // vIndex: 87
     virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
@@ -51,18 +51,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
+    MCNAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
+    MCNAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
 
-    MCFOLD bool $isDye() const;
+    MCNAPI bool $isDye() const;
 
-    MCFOLD bool $isValidAuxValue(int auxValue) const;
+    MCNAPI bool $isValidAuxValue(int auxValue) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

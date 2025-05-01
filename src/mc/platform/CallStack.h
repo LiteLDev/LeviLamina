@@ -45,13 +45,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Context(::Bedrock::CallStack::Context&&);
+        MCNAPI Context(::Bedrock::CallStack::Context&&);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::Bedrock::CallStack::Context&&);
+        MCNAPI void* $ctor(::Bedrock::CallStack::Context&&);
         // NOLINTEND
     };
 

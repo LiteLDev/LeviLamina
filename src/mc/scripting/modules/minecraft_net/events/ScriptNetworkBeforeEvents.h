@@ -57,45 +57,46 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptNetworkBeforeEvents(::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents&&);
+    MCNAPI ScriptNetworkBeforeEvents(::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents&&);
 
-    MCAPI ::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents&
+    MCNAPI ::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents&
     operator=(::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketReceiveBeforeEvent>>
     $onBeforePacketReceive(::IncomingPacketEvent const& packetEvent);
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent>>
+    MCNAPI ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent>>
     $onBeforePacketSend(::OutgoingPacketEvent const& packetEvent);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -13,7 +13,7 @@ class Level;
 namespace TheEndSpikeHelper {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::vector<::SpikeFeature::EndSpike> getSpikesForLevel(::Level& level);
+MCNAPI ::std::vector<::SpikeFeature::EndSpike> getSpikesForLevel(::Level& level);
 // NOLINTEND
 
 } // namespace TheEndSpikeHelper

@@ -3,15 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/resource/PackIdVersion.h"
 #include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/resource/ResourceLocation.h"
+#include "mc/deps/core/sem_ver/SemVersion.h"
 
 // auto generated forward declare list
 // clang-format off
 class PackError;
-class ResourceLocation;
-class SemVersion;
-struct PackIdVersion;
-namespace Json { class Value; }
 // clang-format on
 
 class PackReport {
@@ -33,36 +32,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackReport();
+    MCNAPI PackReport();
 
-    MCAPI PackReport(::PackReport const&);
+    MCNAPI PackReport(::PackReport const&);
 
-    MCAPI PackReport(::PackReport&&);
+    MCNAPI PackReport(::PackReport&&);
 
-    MCAPI bool hasErrors() const;
+    MCNAPI bool hasErrors() const;
 
-    MCAPI ::PackReport& operator=(::PackReport const&);
+    MCNAPI ::PackReport& operator=(::PackReport const&);
 
-    MCAPI ::PackReport& operator=(::PackReport&&);
+    MCNAPI ::PackReport& operator=(::PackReport&&);
 
-    MCAPI void serialize(::Json::Value& out);
-
-    MCAPI ~PackReport();
+    MCNAPI ~PackReport();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::PackReport const&);
+    MCNAPI void* $ctor(::PackReport const&);
 
-    MCAPI void* $ctor(::PackReport&&);
+    MCNAPI void* $ctor(::PackReport&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

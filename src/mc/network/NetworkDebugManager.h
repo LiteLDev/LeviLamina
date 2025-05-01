@@ -38,21 +38,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Tracker();
+        MCNAPI Tracker();
 
-        MCAPI ~Tracker();
+        MCNAPI ~Tracker();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -80,7 +80,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::NetworkStatistics* getNetworkStatistics(::TrackerType type);
+    MCNAPI ::NetworkStatistics* getNetworkStatistics(::TrackerType type);
     // NOLINTEND
 
 public:
@@ -98,6 +98,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

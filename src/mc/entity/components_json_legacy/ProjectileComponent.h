@@ -4,27 +4,27 @@
 
 // auto generated inclusion list
 #include "mc/comprehensive/ParticleType.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/shared_types/legacy/Difficulty.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/projectile/ProjectileAnchor.h"
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/phys/HitResult.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class ActorDamageSource;
-class ActorDefinitionTrigger;
 class BaseGameVersion;
-class BlockPos;
 class CompoundTag;
 class DataLoadHelper;
-class HitResult;
 class Level;
 class OnHitSubcomponent;
 class Vec2;
-class Vec3;
-struct ActorUniqueID;
 // clang-format on
 
 class ProjectileComponent {

@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/ChunkPos.h"
+#include "mc/world/level/levelgen/v2/WorldGenRandom.h"
+
 // auto generated forward declare list
 // clang-format off
-class ChunkPos;
 class JigsawStructureRegistry;
 namespace br::worldgen { class ChunkAccessor; }
-namespace br::worldgen { struct WorldGenRandom; }
 // clang-format on
 
 namespace br::worldgen {
@@ -21,18 +23,19 @@ public:
     ::ll::TypedStorage<8, 8, int64>                            mLevelSeed;
     ::ll::TypedStorage<8, 8, ::ChunkPos>                       mChunkPos;
     ::ll::TypedStorage<8, 8, ::br::worldgen::ChunkAccessor&>   mChunkAccessor;
+    ::ll::TypedStorage<1, 1, bool>                             mIsDataDrivenJigsawStructuresEnabled;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~GenerationContext();
+    MCNAPI ~GenerationContext();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

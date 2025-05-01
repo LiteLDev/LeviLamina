@@ -14,39 +14,39 @@ class RateControlSettings {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::webrtc::DataSize> CongestionWindowInitialDataWindow() const;
+    MCNAPI ::std::optional<::webrtc::DataSize> CongestionWindowInitialDataWindow() const;
 
-    MCAPI uint CongestionWindowMinPushbackTargetBitrateBps() const;
+    MCNAPI uint CongestionWindowMinPushbackTargetBitrateBps() const;
 
-    MCAPI int64 GetCongestionWindowAdditionalTimeMs() const;
+    MCNAPI int64 GetCongestionWindowAdditionalTimeMs() const;
 
-    MCAPI explicit RateControlSettings(::webrtc::FieldTrialsView const* const);
+    MCNAPI explicit RateControlSettings(::webrtc::FieldTrialsView const* const);
 
-    MCAPI bool UseCongestionWindow() const;
+    MCNAPI bool UseCongestionWindow() const;
 
-    MCAPI bool UseCongestionWindowDropFrameOnly() const;
+    MCNAPI bool UseCongestionWindowDropFrameOnly() const;
 
-    MCAPI bool UseCongestionWindowPushback() const;
+    MCNAPI bool UseCongestionWindowPushback() const;
 
-    MCAPI ~RateControlSettings();
+    MCNAPI ~RateControlSettings();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::RateControlSettings ParseFromKeyValueConfig(::webrtc::FieldTrialsView const* const);
+    MCNAPI static ::webrtc::RateControlSettings ParseFromKeyValueConfig(::webrtc::FieldTrialsView const* const);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::FieldTrialsView const* const);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const* const);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

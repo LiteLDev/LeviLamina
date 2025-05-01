@@ -82,7 +82,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _tickChunk(
+    MCNAPI bool _tickChunk(
         ::Tick const&                  currentTick,
         ::BlockSource&                 region,
         ::Level&                       level,
@@ -94,40 +94,40 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init(::Bounds const& bounds, bool isCircle);
+    MCNAPI void $init(::Bounds const& bounds, bool isCircle);
 
-    MCAPI void $tick(::Tick const& currentTick, ::BlockSource& region, bool preload, bool randomize);
+    MCNAPI void $tick(::Tick const& currentTick, ::BlockSource& region, bool preload, bool randomize);
 
-    MCAPI void $tickSeasons(::BlockSource& region, ::Random& random);
+    MCNAPI void $tickSeasons(::BlockSource& region, ::Random& random);
 
-    MCAPI ::DimensionType $getDimensionId() const;
+    MCNAPI ::DimensionType $getDimensionId() const;
 
-    MCAPI ::Bounds const& $getBounds() const;
+    MCNAPI ::Bounds const& $getBounds() const;
 
-    MCAPI bool $isCircle() const;
+    MCNAPI bool $isCircle() const;
 
-    MCAPI bool $isDoneLoading() const;
+    MCNAPI bool $isDoneLoading() const;
 
-    MCAPI bool $checkInitialLoadDone(::Tick currentLevelTick);
+    MCNAPI bool $checkInitialLoadDone(::Tick currentLevelTick);
 
-    MCAPI bool $checkLoadedChunkNeighborsDone(::BlockSource const& region, bool useDoneLoading) const;
+    MCNAPI bool $checkLoadedChunkNeighborsDone(::BlockSource const& region, bool useDoneLoading) const;
 
-    MCAPI void $move(::Bounds const& bounds);
+    MCNAPI void $move(::Bounds const& bounds);
 
-    MCAPI ::std::unique_ptr<::ChunkViewSource> $createChildSource();
+    MCNAPI ::std::unique_ptr<::ChunkViewSource> $createChildSource();
 
-    MCAPI ::std::shared_ptr<::LevelChunk> $getAvailableChunk(::ChunkPos const& cp);
+    MCNAPI ::std::shared_ptr<::LevelChunk> $getAvailableChunk(::ChunkPos const& cp);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/RangedWeaponItem.h"
+#include "mc/world/item/ResolvedItemIconInfo.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,7 +18,6 @@ class Level;
 class Mob;
 class Player;
 class Vec3;
-struct ResolvedItemIconInfo;
 // clang-format on
 
 class CrossbowItem : public ::RangedWeaponItem {
@@ -35,7 +35,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 107
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     // vIndex: 108
     virtual ::ResolvedItemIconInfo
@@ -78,12 +78,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Vec3 _getShootDir(::Player const& player, float angleOffset) const;
+    MCNAPI ::Vec3 _getShootDir(::Player const& player, float angleOffset) const;
 
-    MCAPI void
+    MCNAPI void
     _shootArrow(::ItemInstance const& crossbow, ::ItemInstance const& projectileInstance, ::Player& player) const;
 
-    MCAPI void _shootFirework(::ItemInstance const& projectileInstance, ::Player& player) const;
+    MCNAPI void _shootFirework(::ItemInstance const& projectileInstance, ::Player& player) const;
     // NOLINTEND
 
 public:
@@ -95,32 +95,32 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCNAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCFOLD ::ResolvedItemIconInfo
+    MCNAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI int
+    MCNAPI int
     $getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+    MCNAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
-    MCAPI void $playSoundIncrementally(::ItemStack const& item, ::Mob& mob) const;
+    MCNAPI void $playSoundIncrementally(::ItemStack const& item, ::Mob& mob) const;
 
-    MCAPI int $getEnchantSlot() const;
+    MCNAPI int $getEnchantSlot() const;
 
-    MCFOLD bool $canBeCharged() const;
+    MCNAPI bool $canBeCharged() const;
 
-    MCAPI int $getMaxUseDuration(::ItemStack const* instance) const;
+    MCNAPI int $getMaxUseDuration(::ItemStack const* instance) const;
 
-    MCAPI void $enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
+    MCNAPI void $enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

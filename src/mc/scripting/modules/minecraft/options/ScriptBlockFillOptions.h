@@ -18,32 +18,25 @@ public:
 public:
     // prevent constructor by default
     ScriptBlockFillOptions& operator=(ScriptBlockFillOptions const&);
+    ScriptBlockFillOptions(ScriptBlockFillOptions const&);
     ScriptBlockFillOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockFillOptions(::ScriptModuleMinecraft::ScriptBlockFillOptions const&);
-
-    MCAPI ~ScriptBlockFillOptions();
+    MCNAPI ~ScriptBlockFillOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptBlockFillOptions> bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockFillOptions const&);
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptBlockFillOptions> bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -17,7 +17,7 @@ class ResetPositionModeSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void tickResetPositionModeSystem(
+    MCNAPI static void tickResetPositionModeSystem(
         ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::PlayerPositionModeComponent>
             view
     );

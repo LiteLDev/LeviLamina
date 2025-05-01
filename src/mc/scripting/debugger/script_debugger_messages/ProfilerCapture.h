@@ -21,19 +21,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ScriptDebuggerMessages::ProfilerCapture& operator=(::ScriptDebuggerMessages::ProfilerCapture&&);
+    MCNAPI ::ScriptDebuggerMessages::ProfilerCapture& operator=(::ScriptDebuggerMessages::ProfilerCapture&&);
 
-    MCAPI ::ScriptDebuggerMessages::ProfilerCapture& operator=(::ScriptDebuggerMessages::ProfilerCapture const&);
+    MCNAPI ::ScriptDebuggerMessages::ProfilerCapture& operator=(::ScriptDebuggerMessages::ProfilerCapture const&);
 
-    MCAPI bool operator==(::ScriptDebuggerMessages::ProfilerCapture const&) const;
+    MCNAPI bool operator==(::ScriptDebuggerMessages::ProfilerCapture const&) const;
 
-    MCAPI ~ProfilerCapture();
+    MCNAPI ~ProfilerCapture();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

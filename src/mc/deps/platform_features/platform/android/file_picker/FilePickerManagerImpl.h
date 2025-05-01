@@ -37,18 +37,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $directoryPickingEnabledForPlatform() const;
+    MCNAPI bool $directoryPickingEnabledForPlatform() const;
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::FilePickerManager::DirectoryPickerResult>>
+    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::FilePickerManager::DirectoryPickerResult>>
     $pickDirectory(::Bedrock::DirectoryPickerConfig const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForImplBase();
+    MCNAPI static void** $vftableForImplBase();
     // NOLINTEND
 };
 

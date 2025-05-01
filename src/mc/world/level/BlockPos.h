@@ -42,6 +42,8 @@ public:
 
     MCAPI ::BlockPos operator-(::BlockPos const& rhs) const;
 
+    MCFOLD bool operator==(::BlockPos const& rhs) const;
+
     MCAPI ::BlockPos relative(uchar facing, int steps) const;
 
     MCAPI ::std::string toString() const;

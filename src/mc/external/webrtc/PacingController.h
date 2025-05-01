@@ -36,77 +36,77 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void CreateProbeClusters(::rtc::ArrayView<::webrtc::ProbeClusterConfig const>);
+    MCNAPI void CreateProbeClusters(::rtc::ArrayView<::webrtc::ProbeClusterConfig const>);
 
-    MCAPI ::webrtc::Timestamp CurrentTime() const;
+    MCNAPI ::webrtc::Timestamp CurrentTime() const;
 
-    MCAPI void EnqueuePacket(::std::unique_ptr<::webrtc::RtpPacketToSend>);
+    MCNAPI void EnqueuePacket(::std::unique_ptr<::webrtc::RtpPacketToSend>);
 
-    MCAPI ::webrtc::TimeDelta ExpectedQueueTime() const;
+    MCNAPI ::webrtc::TimeDelta ExpectedQueueTime() const;
 
-    MCAPI ::std::optional<::webrtc::Timestamp> FirstSentPacketTime() const;
+    MCNAPI ::std::optional<::webrtc::Timestamp> FirstSentPacketTime() const;
 
-    MCAPI ::std::unique_ptr<::webrtc::RtpPacketToSend>
+    MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend>
     GetPendingPacket(::webrtc::PacedPacketInfo const&, ::webrtc::Timestamp, ::webrtc::Timestamp);
 
-    MCAPI bool IsProbing() const;
+    MCNAPI bool IsProbing() const;
 
-    MCAPI void MaybeUpdateMediaRateDueToLongQueue(::webrtc::Timestamp);
+    MCNAPI void MaybeUpdateMediaRateDueToLongQueue(::webrtc::Timestamp);
 
-    MCAPI ::webrtc::Timestamp NextSendTime() const;
+    MCNAPI ::webrtc::Timestamp NextSendTime() const;
 
-    MCAPI ::webrtc::Timestamp NextUnpacedSendTime() const;
+    MCNAPI ::webrtc::Timestamp NextUnpacedSendTime() const;
 
-    MCAPI ::webrtc::Timestamp OldestPacketEnqueueTime() const;
+    MCNAPI ::webrtc::Timestamp OldestPacketEnqueueTime() const;
 
-    MCAPI void OnPacketSent(::webrtc::RtpPacketMediaType, ::webrtc::DataSize, ::webrtc::Timestamp);
+    MCNAPI void OnPacketSent(::webrtc::RtpPacketMediaType, ::webrtc::DataSize, ::webrtc::Timestamp);
 
-    MCAPI PacingController(
+    MCNAPI PacingController(
         ::webrtc::Clock*,
         ::webrtc::PacingController::PacketSender*,
         ::webrtc::FieldTrialsView const&,
         ::webrtc::PacingController::Configuration
     );
 
-    MCAPI ::webrtc::DataSize PaddingToAdd(::webrtc::DataSize, ::webrtc::DataSize) const;
+    MCNAPI ::webrtc::DataSize PaddingToAdd(::webrtc::DataSize, ::webrtc::DataSize) const;
 
-    MCAPI void Pause();
+    MCNAPI void Pause();
 
-    MCAPI void ProcessPackets();
+    MCNAPI void ProcessPackets();
 
-    MCAPI ::webrtc::DataSize QueueSizeData() const;
+    MCNAPI ::webrtc::DataSize QueueSizeData() const;
 
-    MCAPI void RemovePacketsForSsrc(uint);
+    MCNAPI void RemovePacketsForSsrc(uint);
 
-    MCAPI void Resume();
+    MCNAPI void Resume();
 
-    MCAPI void SetAccountForAudioPackets(bool);
+    MCNAPI void SetAccountForAudioPackets(bool);
 
-    MCAPI void SetAllowProbeWithoutMediaPacket(bool);
+    MCNAPI void SetAllowProbeWithoutMediaPacket(bool);
 
-    MCAPI void SetCongested(bool);
+    MCNAPI void SetCongested(bool);
 
-    MCAPI void SetIncludeOverhead();
+    MCNAPI void SetIncludeOverhead();
 
-    MCAPI void SetPacingRates(::webrtc::DataRate, ::webrtc::DataRate);
+    MCNAPI void SetPacingRates(::webrtc::DataRate, ::webrtc::DataRate);
 
-    MCAPI void SetQueueTimeLimit(::webrtc::TimeDelta);
+    MCNAPI void SetQueueTimeLimit(::webrtc::TimeDelta);
 
-    MCAPI void SetSendBurstInterval(::webrtc::TimeDelta);
+    MCNAPI void SetSendBurstInterval(::webrtc::TimeDelta);
 
-    MCAPI void SetTransportOverhead(::webrtc::DataSize);
+    MCNAPI void SetTransportOverhead(::webrtc::DataSize);
 
-    MCAPI bool ShouldSendKeepalive(::webrtc::Timestamp) const;
+    MCNAPI bool ShouldSendKeepalive(::webrtc::Timestamp) const;
 
-    MCAPI void UpdateBudgetWithElapsedTime(::webrtc::TimeDelta);
+    MCNAPI void UpdateBudgetWithElapsedTime(::webrtc::TimeDelta);
 
-    MCAPI void UpdateBudgetWithSentData(::webrtc::DataSize);
+    MCNAPI void UpdateBudgetWithSentData(::webrtc::DataSize);
 
-    MCAPI void UpdatePaddingBudgetWithSentData(::webrtc::DataSize);
+    MCNAPI void UpdatePaddingBudgetWithSentData(::webrtc::DataSize);
 
-    MCAPI ::webrtc::TimeDelta UpdateTimeAndGetElapsed(::webrtc::Timestamp);
+    MCNAPI ::webrtc::TimeDelta UpdateTimeAndGetElapsed(::webrtc::Timestamp);
 
-    MCAPI ~PacingController();
+    MCNAPI ~PacingController();
     // NOLINTEND
 
 public:
@@ -126,7 +126,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::webrtc::Clock*,
         ::webrtc::PacingController::PacketSender*,
         ::webrtc::FieldTrialsView const&,
@@ -137,7 +137,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -38,22 +38,22 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI double $stop();
+    MCNAPI double $stop();
 
-    MCAPI double $stopContinue();
+    MCNAPI double $stopContinue();
 
-    MCAPI void $print(::std::string const& prepend);
+    MCNAPI void $print(::std::string const& prepend);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

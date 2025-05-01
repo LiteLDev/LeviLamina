@@ -13,7 +13,7 @@ class Factory {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<::Bedrock::Http::DispatcherProcess> createDispatcher();
+    MCNAPI static ::std::shared_ptr<::Bedrock::Http::DispatcherProcess> createDispatcher();
     // NOLINTEND
 };
 

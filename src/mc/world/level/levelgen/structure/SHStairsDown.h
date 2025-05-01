@@ -50,7 +50,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::StrongholdPiece> createPiece(
+    MCNAPI static ::std::unique_ptr<::StrongholdPiece> createPiece(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
         int                                                 footX,
@@ -70,11 +70,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::StructurePieceType $getType() const;
+    MCNAPI ::StructurePieceType $getType() const;
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI void $addChildren(
+    MCNAPI void $addChildren(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random
@@ -84,6 +84,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

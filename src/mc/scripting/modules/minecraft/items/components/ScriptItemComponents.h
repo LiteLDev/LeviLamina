@@ -17,7 +17,7 @@ class ScriptItemComponents {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<
+    MCNAPI static ::std::shared_ptr<
         ::std::unordered_map<::std::string, ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>>>
     _getSupportedItemComponents(
         ::std::vector<::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry> const& version,
@@ -25,7 +25,7 @@ public:
         ::std::string const& supportedComponentTypeNames
     );
 
-    MCAPI static void bind(
+    MCNAPI static void bind(
         ::Scripting::ModuleBindingBuilder&                       moduleBuilder,
         ::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder
     );

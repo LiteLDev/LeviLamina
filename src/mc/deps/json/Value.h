@@ -52,21 +52,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit CZString(char const* cstr);
+        MCNAPI explicit CZString(char const* cstr);
 
-        MCAPI ~CZString();
+        MCNAPI ~CZString();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(char const* cstr);
+        MCNAPI void* $ctor(char const* cstr);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 

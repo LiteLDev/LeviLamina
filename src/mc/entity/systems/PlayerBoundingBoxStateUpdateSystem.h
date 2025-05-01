@@ -123,7 +123,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void tickPlayerBoundingBoxStateUpdateSystem(
+    MCNAPI static void tickPlayerBoundingBoxStateUpdateSystem(
         ::StrictEntityContext const&   context,
         ::AABBShapeComponent const&    aabb,
         ::PlayerInputRequestComponent& request,
@@ -174,43 +174,43 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::StrictExecutionContext<
-                     ::Filter<
-                         ::CanStandOnSnowFlagComponent,
-                         ::HasLightweightFamilyFlagComponent,
-                         ::HorseFlagComponent,
-                         ::MobFlagComponent,
-                         ::ParrotFlagComponent,
-                         ::VehicleComponent,
-                         ::CamelFlagComponent,
-                         ::PlayerComponent>,
-                     ::Read<
-                         ::AABBShapeComponent,
-                         ::MovementAbilitiesComponent,
-                         ::ActorTypeComponent,
-                         ::FallDistanceComponent,
-                         ::PassengerComponent,
-                         ::ActorGameTypeComponent,
-                         ::ActorDataFlagComponent,
-                         ::VehicleComponent,
-                         ::ActorRotationComponent,
-                         ::MobBodyRotationComponent,
-                         ::RenderRotationComponent,
-                         ::StandAnimationComponent,
-                         ::OffsetsComponent,
-                         ::VanillaOffsetComponent,
-                         ::PassengerRenderingRidingOffsetComponent,
-                         ::DimensionTypeComponent>,
-                     ::Write<::PlayerInputRequestComponent>,
-                     ::AddRemove<>,
-                     ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
-                     ::GlobalWrite<>,
-                     ::EntityFactoryT<>>& strictContext);
+    MCNAPI void $tick(::StrictExecutionContext<
+                      ::Filter<
+                          ::CanStandOnSnowFlagComponent,
+                          ::HasLightweightFamilyFlagComponent,
+                          ::HorseFlagComponent,
+                          ::MobFlagComponent,
+                          ::ParrotFlagComponent,
+                          ::VehicleComponent,
+                          ::CamelFlagComponent,
+                          ::PlayerComponent>,
+                      ::Read<
+                          ::AABBShapeComponent,
+                          ::MovementAbilitiesComponent,
+                          ::ActorTypeComponent,
+                          ::FallDistanceComponent,
+                          ::PassengerComponent,
+                          ::ActorGameTypeComponent,
+                          ::ActorDataFlagComponent,
+                          ::VehicleComponent,
+                          ::ActorRotationComponent,
+                          ::MobBodyRotationComponent,
+                          ::RenderRotationComponent,
+                          ::StandAnimationComponent,
+                          ::OffsetsComponent,
+                          ::VanillaOffsetComponent,
+                          ::PassengerRenderingRidingOffsetComponent,
+                          ::DimensionTypeComponent>,
+                      ::Write<::PlayerInputRequestComponent>,
+                      ::AddRemove<>,
+                      ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& strictContext);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

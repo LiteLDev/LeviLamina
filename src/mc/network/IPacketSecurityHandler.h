@@ -16,7 +16,7 @@ public:
     checkForViolation(::MinecraftPacketIds, ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const&, bool*) = 0;
 
     // vIndex: 1
-    virtual void getTelemetryData(uint&) = 0;
+    virtual uint getTelemetryData() = 0;
 
     // vIndex: 2
     virtual ~IPacketSecurityHandler();
@@ -25,7 +25,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -37,6 +37,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

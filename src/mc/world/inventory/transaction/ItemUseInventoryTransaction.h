@@ -3,10 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/network/NetworkBlockPosition.h"
 #include "mc/platform/Result.h"
 #include "mc/util/BidirectionalUnorderedMap.h"
 #include "mc/world/inventory/transaction/ComplexInventoryTransaction.h"
 #include "mc/world/inventory/transaction/InventoryTransactionError.h"
+#include "mc/world/item/NetworkItemStackDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,11 +20,8 @@ class IItemUseTransactionSubject;
 class ILegacyItemUseTransactionSubject;
 class InventoryTransaction;
 class ItemStack;
-class NetworkBlockPosition;
-class NetworkItemStackDescriptor;
 class Player;
 class ReadOnlyBinaryStream;
-class Vec3;
 // clang-format on
 
 class ItemUseInventoryTransaction : public ::ComplexInventoryTransaction {
@@ -84,27 +84,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemUseInventoryTransaction();
+    MCNAPI ItemUseInventoryTransaction();
 
-    MCAPI ItemUseInventoryTransaction(::ItemUseInventoryTransaction const&);
+    MCNAPI ItemUseInventoryTransaction(::ItemUseInventoryTransaction const&);
 
-    MCAPI explicit ItemUseInventoryTransaction(::InventoryTransaction const& transaction);
+    MCNAPI explicit ItemUseInventoryTransaction(::InventoryTransaction const& transaction);
 
-    MCAPI ::InventoryTransactionError
+    MCNAPI ::InventoryTransactionError
     handle(::IItemUseTransactionSubject& player, ::ILegacyItemUseTransactionSubject& legacy, bool isSenderAuthority)
         const;
 
-    MCAPI ::ItemUseInventoryTransaction& operator=(::ItemUseInventoryTransaction const&);
+    MCNAPI ::ItemUseInventoryTransaction& operator=(::ItemUseInventoryTransaction const&);
 
-    MCAPI ::ItemUseInventoryTransaction& setSelectedItem(::ItemStack const& item);
+    MCNAPI ::ItemUseInventoryTransaction& setSelectedItem(::ItemStack const& item);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void resendBlocksAroundArea(::Player& player, ::BlockPos const& pos, uchar facing);
+    MCNAPI static void resendBlocksAroundArea(::Player& player, ::BlockPos const& pos, uchar facing);
 
-    MCAPI static void resendPlayerState(::Player& player);
+    MCNAPI static void resendPlayerState(::Player& player);
     // NOLINTEND
 
 public:
@@ -117,36 +117,36 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::ItemUseInventoryTransaction const&);
+    MCNAPI void* $ctor(::ItemUseInventoryTransaction const&);
 
-    MCAPI void* $ctor(::InventoryTransaction const& transaction);
+    MCNAPI void* $ctor(::InventoryTransaction const& transaction);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI void $write(::BinaryStream& stream) const;
+    MCNAPI void $write(::BinaryStream& stream) const;
 
-    MCFOLD void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
+    MCNAPI void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
-    MCAPI void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
+    MCNAPI void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
 
-    MCAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
+    MCNAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

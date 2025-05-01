@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/util/MolangQueryFunctionReturnType.h"
 
 // auto generated forward declare list
 // clang-format off
 class ExpressionNode;
-class HashedString;
 class RenderParams;
 struct MolangScriptArg;
 // clang-format on
@@ -27,9 +27,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MolangQueryFunctionPtr& operator=(MolangQueryFunctionPtr const&);
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MolangQueryFunctionPtr(::MolangQueryFunctionPtr const&);
+
     MCAPI ~MolangQueryFunctionPtr();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::MolangQueryFunctionPtr const&);
     // NOLINTEND
 
 public:

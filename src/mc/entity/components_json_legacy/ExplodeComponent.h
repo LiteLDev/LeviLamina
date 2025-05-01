@@ -38,6 +38,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void explode(::Actor& actor, ::Vec3 const& explosionPosition);
+    MCNAPI void explode(::Actor& actor, ::Vec3 const& explosionPosition);
     // NOLINTEND
 };

@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/world/level/AgentCapabilities.h"
+#include "mc/world/level/EducationLocalLevelSettings.h"
+#include "mc/world/level/ExternalLinkSettings.h"
 
 // auto generated forward declare list
 // clang-format off
-struct AgentCapabilities;
 struct CommandFlag;
-struct EducationLocalLevelSettings;
-struct ExternalLinkSettings;
 // clang-format on
 
 struct EducationLevelSettings {
@@ -39,16 +39,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EducationLevelSettings();
+    MCNAPI EducationLevelSettings();
 
-    MCAPI EducationLevelSettings(::EducationLevelSettings const&);
+    MCNAPI EducationLevelSettings(::EducationLevelSettings const&);
 
-    MCAPI ::std::function<void(::std::string const&, ::CommandFlag&, ::CommandPermissionLevel&)>
+    MCNAPI ::std::function<void(::std::string const&, ::CommandFlag&, ::CommandPermissionLevel&)>
     getCommandOverrideFunctor() const;
 
-    MCAPI ::EducationLevelSettings& operator=(::EducationLevelSettings const&);
+    MCNAPI ::EducationLevelSettings& operator=(::EducationLevelSettings const&);
 
-    MCAPI ~EducationLevelSettings();
+    MCNAPI ~EducationLevelSettings();
     // NOLINTEND
 
 public:
@@ -60,14 +60,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::EducationLevelSettings const&);
+    MCNAPI void* $ctor(::EducationLevelSettings const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

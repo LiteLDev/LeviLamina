@@ -14,19 +14,19 @@ class StunBindingRequest {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StunBindingRequest(::cricket::UDPPort*, ::rtc::SocketAddress const&, int64);
+    MCNAPI StunBindingRequest(::cricket::UDPPort*, ::rtc::SocketAddress const&, int64);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::UDPPort*, ::rtc::SocketAddress const&, int64);
+    MCNAPI void* $ctor(::cricket::UDPPort*, ::rtc::SocketAddress const&, int64);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

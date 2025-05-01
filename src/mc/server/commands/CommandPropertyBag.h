@@ -22,9 +22,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void set(::std::string const& key, ::BlockPos const& pos);
+    MCNAPI void set(::std::string const& key, ::BlockPos const& pos);
 
-    MCAPI void set(::std::string const& key, ::Vec3 size);
+    MCNAPI void set(::std::string const& key, ::Vec3 size);
     // NOLINTEND
 
 public:
@@ -36,6 +36,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

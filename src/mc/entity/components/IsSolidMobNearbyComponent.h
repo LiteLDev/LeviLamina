@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/ecs/strict/StrictEntityContext.h"
 
 // auto generated forward declare list
 // clang-format off
 class AABB;
 class StrictEntityContext;
-class Vec3;
 // clang-format on
 
 struct IsSolidMobNearbyComponent {
@@ -36,14 +36,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI IsSolidMobNearbyComponent(::IsSolidMobNearbyComponent&&);
+    MCNAPI IsSolidMobNearbyComponent(::IsSolidMobNearbyComponent&&);
 
-    MCAPI ::IsSolidMobNearbyComponent& operator=(::IsSolidMobNearbyComponent&&);
+    MCNAPI ::IsSolidMobNearbyComponent& operator=(::IsSolidMobNearbyComponent&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IsSolidMobNearbyComponent&&);
+    MCNAPI void* $ctor(::IsSolidMobNearbyComponent&&);
     // NOLINTEND
 };

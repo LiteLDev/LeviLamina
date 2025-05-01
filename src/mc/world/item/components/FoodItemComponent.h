@@ -5,6 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/world/item/ItemDescriptor.h"
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/IFoodItemComponent.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
@@ -15,12 +17,10 @@
 class Actor;
 class HashedString;
 class Item;
-class ItemDescriptor;
 class ItemStack;
 class Level;
 class Player;
 class SemVersion;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace SharedTypes::v1_20_50 { struct FoodItemComponent; }
 namespace cereal { struct ReflectionCtx; }
@@ -71,7 +71,7 @@ public:
     virtual ::Item const* eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level) /*override*/;
 
     // vIndex: 5
-    virtual void use(bool& result, ::ItemStack& instance, ::Player& player) /*override*/;
+    virtual void use(bool& result, ::ItemStack& item, ::Player& player) /*override*/;
 
     // vIndex: 6
     virtual ::Item const*
@@ -81,27 +81,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FoodItemComponent(::SharedTypes::v1_20_50::FoodItemComponent component);
+    MCNAPI explicit FoodItemComponent(::SharedTypes::v1_20_50::FoodItemComponent component);
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack const&, ::ItemStack&, ::Actor&)>& onConsume();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::ItemStack const&, ::ItemStack&, ::Actor&)>& onConsume();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::FoodItemComponent component);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_50::FoodItemComponent component);
     // NOLINTEND
 
 public:
@@ -113,24 +113,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent();
+    MCNAPI void $_initializeComponent();
 
-    MCFOLD int $getNutrition() const;
+    MCNAPI int $getNutrition() const;
 
-    MCFOLD float $getSaturationModifier() const;
+    MCNAPI float $getSaturationModifier() const;
 
-    MCFOLD bool $canAlwaysEat() const;
+    MCNAPI bool $canAlwaysEat() const;
 
-    MCAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
+    MCNAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
 
-    MCAPI void $use(bool& result, ::ItemStack& instance, ::Player& player);
+    MCNAPI void $use(bool& result, ::ItemStack& item, ::Player& player);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForNetworkedItemComponent();
+    MCNAPI static void** $vftableForNetworkedItemComponent();
 
-    MCAPI static void** $vftableForIFoodItemComponent();
+    MCNAPI static void** $vftableForIFoodItemComponent();
     // NOLINTEND
 };

@@ -36,36 +36,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClosureAny(::Scripting::ClosureAny const& rhs);
+    MCNAPI ClosureAny(::Scripting::ClosureAny const& rhs);
 
-    MCAPI ::Scripting::ResultAny callGeneric(
+    MCNAPI ::Scripting::ResultAny callGeneric(
         ::entt::meta_any*                       args,
         uint                                    argc,
         ::entt::meta_type const&                expectedReturnType,
         ::std::optional<::Scripting::Privilege> privilege
     ) const;
 
-    MCAPI bool compareTo(::Scripting::ClosureAny const& rhs) const;
+    MCNAPI bool compareTo(::Scripting::ClosureAny const& rhs) const;
 
-    MCFOLD ::Scripting::ClosureAny& operator=(::Scripting::ClosureAny&& rhs);
+    MCNAPI ::Scripting::ClosureAny& operator=(::Scripting::ClosureAny&& rhs);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::Scripting::ClosureAny const& rhs);
+    MCNAPI void* $ctor(::Scripting::ClosureAny const& rhs);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

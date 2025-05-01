@@ -47,9 +47,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI RequestProcessor(::std::string&& taskGroupName, ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler);
+        MCNAPI RequestProcessor(::std::string&& taskGroupName, ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler);
 
-        MCAPI ::Scripting::Promise<
+        MCNAPI ::Scripting::Promise<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
             ::Scripting::Error,
             void>
@@ -59,7 +59,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::std::string&& taskGroupName, ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler);
+        MCNAPI void* $ctor(::std::string&& taskGroupName, ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler);
         // NOLINTEND
     };
 
@@ -77,20 +77,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     ScriptNetHttpClient(::std::string const& descriptorString, ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler);
 
-    MCAPI ::Scripting::Promise<
+    MCNAPI void cancelAll(::std::string const& reason);
+
+    MCNAPI ::Scripting::Promise<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
         ::Scripting::Error,
         void>
     get(::Scripting::WeakLifetimeScope const& scope, ::Scripting::ScriptObjectFactory& factory, ::std::string const& uri
     );
 
-    MCFOLD ::ScriptModuleMinecraftNet::ScriptNetHttpClient&
+    MCNAPI ::ScriptModuleMinecraftNet::ScriptNetHttpClient&
     operator=(::ScriptModuleMinecraftNet::ScriptNetHttpClient const&);
 
-    MCAPI ::Scripting::Promise<
+    MCNAPI ::Scripting::Promise<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
         ::Scripting::Error,
         void>
@@ -100,25 +102,25 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> const& requestHandle
     );
 
-    MCAPI ~ScriptNetHttpClient();
+    MCNAPI ~ScriptNetHttpClient();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftNet::ScriptNetHttpClient> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftNet::ScriptNetHttpClient> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& descriptorString, ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler);
+    MCNAPI void* $ctor(::std::string const& descriptorString, ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

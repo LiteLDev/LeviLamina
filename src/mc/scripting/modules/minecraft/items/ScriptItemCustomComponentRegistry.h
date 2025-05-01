@@ -53,13 +53,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ComponentInfo();
+        MCNAPI ~ComponentInfo();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -137,19 +137,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemCustomComponentRegistry(
+    MCNAPI ScriptItemCustomComponentRegistry(
         ::ScriptDeferredEventCoordinator& deferredEventCoordinator,
         ::ItemRegistryRef                 itemRegistry,
         ::std::unique_ptr<::ScriptModuleMinecraft::IScriptItemCustomComponentSignalCollection>&& signals
     );
 
-    MCAPI void _bindComponentToCereal(::HashedString const& compName);
+    MCNAPI void _bindComponentToCereal(::HashedString const& compName);
 
-    MCAPI void _subscribeItemToComponents(::Item* item, ::std::unordered_set<::HashedString>& unusedComponents);
+    MCNAPI void _subscribeItemToComponents(::Item* item, ::std::unordered_set<::HashedString>& unusedComponents);
 
-    MCAPI void _subscribeItemsToComponents();
+    MCNAPI void _subscribeItemsToComponents();
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
@@ -165,7 +165,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ScriptDeferredEventCoordinator& deferredEventCoordinator,
         ::ItemRegistryRef                 itemRegistry,
         ::std::unique_ptr<::ScriptModuleMinecraft::IScriptItemCustomComponentSignalCollection>&& signals
@@ -175,13 +175,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
@@ -193,7 +193,7 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
     );
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
@@ -205,27 +205,27 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
     );
 
-    MCFOLD ::ScriptDeferredEventListener& $getEventListener();
+    MCNAPI ::ScriptDeferredEventListener& $getEventListener();
 
-    MCAPI void $onReload();
+    MCNAPI void $onReload();
 
-    MCAPI void $onScriptInitializationComplete();
+    MCNAPI void $onScriptInitializationComplete();
 
-    MCAPI void $onScriptModuleStartupComplete();
+    MCNAPI void $onScriptModuleStartupComplete();
 
-    MCAPI void $setCerealContext(::cereal::ReflectionCtx& ctx);
+    MCNAPI void $setCerealContext(::cereal::ReflectionCtx& ctx);
 
-    MCAPI void $_onReload();
+    MCNAPI void $_onReload();
 
-    MCAPI void $_onScriptInitializationComplete();
+    MCNAPI void $_onScriptInitializationComplete();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIScriptItemCustomComponentRegistry();
+    MCNAPI static void** $vftableForIScriptItemCustomComponentRegistry();
 
-    MCAPI static void** $vftableForScriptCustomComponentRegistry();
+    MCNAPI static void** $vftableForScriptCustomComponentRegistry();
     // NOLINTEND
 };
 

@@ -6,7 +6,7 @@
 // clang-format off
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct ModuleBinding; }
-namespace Scripting { struct ModuleDescriptor; }
+namespace Scripting { struct ModuleDependency; }
 namespace Scripting { struct UUID; }
 namespace Scripting { struct Version; }
 // clang-format on
@@ -33,7 +33,7 @@ public:
     virtual ::std::vector<::Scripting::Version> getSupportedVersions() const = 0;
 
     // vIndex: 5
-    virtual ::std::vector<::Scripting::ModuleDescriptor> getDependencies(::Scripting::Version) const = 0;
+    virtual ::std::vector<::Scripting::ModuleDependency> getDependencies(::Scripting::Version) const = 0;
 
     // vIndex: 6
     virtual ::std::optional<::Scripting::ModuleBinding>
@@ -55,7 +55,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

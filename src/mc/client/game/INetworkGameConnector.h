@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/social/MultiplayerServiceIdentifier.h"
 #include "mc/deps/core/threading/IAsyncResult.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Realms { struct World; }
 namespace Social { class GameConnectionInfo; }
+namespace Social { class MultiplayerGameInfo; }
 // clang-format on
 
 class INetworkGameConnector {
@@ -27,7 +27,7 @@ public:
 
     // vIndex: 3
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-    joinMultiplayerWithService(::std::string const&, ::Social::MultiplayerServiceIdentifier const) = 0;
+    joinMultiplayerGame(::Social::MultiplayerGameInfo const&) = 0;
     // NOLINTEND
 
 public:

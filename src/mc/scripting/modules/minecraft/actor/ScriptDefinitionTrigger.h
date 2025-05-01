@@ -16,7 +16,7 @@ class ScriptDefinitionTrigger {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ActorDefinitionTrigger> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ActorDefinitionTrigger> bind();
     // NOLINTEND
 };
 

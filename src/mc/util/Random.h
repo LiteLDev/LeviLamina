@@ -4,14 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/IRandom.h"
+#include "mc/deps/core/math/Random.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/platform/threading/ThreadLocalObject.h"
 #include "mc/util/ThreadOwner.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Core { class Random; }
-// clang-format on
 
 class Random : public ::IRandom, public ::Bedrock::EnableNonOwnerReferences {
 public:
@@ -61,72 +56,66 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Random();
+    MCNAPI Random();
 
-    MCAPI Random(uint seed, bool onlyUsedDeterministically);
+    MCNAPI Random(uint seed, bool onlyUsedDeterministically);
 
-    MCAPI float nextFloat(float min, float max);
+    MCNAPI float nextFloat(float min, float max);
 
-    MCAPI int nextInt(int min, int max);
+    MCNAPI int nextInt(int min, int max);
 
-    MCAPI int nextIntInclusive(int min, int max);
+    MCNAPI int nextIntInclusive(int min, int max);
 
-    MCAPI void setSeed(uint seed);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Random& getThreadLocal();
+    MCNAPI void setSeed(uint seed);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Threading::ThreadLocalObject<::Random>& mThreadLocalRandom();
+    MCAPI static ::Random& mThreadLocalRandom();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(uint seed, bool onlyUsedDeterministically);
+    MCNAPI void* $ctor(uint seed, bool onlyUsedDeterministically);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $nextBoolean();
+    MCNAPI bool $nextBoolean();
 
-    MCAPI float $nextFloat();
+    MCNAPI float $nextFloat();
 
-    MCAPI double $nextDouble();
+    MCNAPI double $nextDouble();
 
-    MCAPI int $nextInt();
+    MCNAPI int $nextInt();
 
-    MCAPI int $nextInt(int n);
+    MCNAPI int $nextInt(int n);
 
-    MCAPI int64 $nextLong();
+    MCNAPI int64 $nextLong();
 
-    MCAPI double $nextGaussianDouble();
+    MCNAPI double $nextGaussianDouble();
 
-    MCAPI void $consumeCount(uint count);
+    MCNAPI void $consumeCount(uint count);
 
-    MCAPI ::std::unique_ptr<::IRandom> $fork();
+    MCNAPI ::std::unique_ptr<::IRandom> $fork();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForIRandom();
+    MCNAPI static void** $vftableForIRandom();
     // NOLINTEND
 };

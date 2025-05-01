@@ -25,10 +25,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::CompoundTag> createTag(::Actor& owner) const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> createTag(::Actor& owner) const;
 
-    MCAPI bool onItemChanged(::Actor& owner, uint64 slotIdx, ::ItemStack const& item) const;
+    MCNAPI bool onItemChanged(::Actor& owner, uint64 slotIdx, ::ItemStack const& item) const;
 
-    MCAPI ::EquippableComponent& operator=(::EquippableComponent&& other);
+    MCNAPI ::EquippableComponent& operator=(::EquippableComponent&& other);
     // NOLINTEND
 };

@@ -12,7 +12,7 @@ class VanillaTrailRuinsJigsawStructures {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void initialize(::StructureTemplateRegistrationContext& context, ::JigsawStructureRegistry& registry);
+    MCNAPI static void initialize(::StructureTemplateRegistrationContext& context, ::JigsawStructureRegistry& registry);
     // NOLINTEND
 
 public:

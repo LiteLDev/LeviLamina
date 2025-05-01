@@ -172,7 +172,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $tick(::StrictExecutionContext<
+    MCNAPI void $tick(::StrictExecutionContext<
                       ::Filter<
                           ::CanStandOnSnowFlagComponent,
                           ::HasLightweightFamilyFlagComponent,
@@ -225,6 +225,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

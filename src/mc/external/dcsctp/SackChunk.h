@@ -25,27 +25,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     SackChunk(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, uint, ::std::vector<::dcsctp::SackChunk::GapAckBlock>, ::std::set<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::dcsctp::SackChunk> Parse(::rtc::ArrayView<uchar const>);
+    MCNAPI static ::std::optional<::dcsctp::SackChunk> Parse(::rtc::ArrayView<uchar const>);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
         $ctor(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, uint, ::std::vector<::dcsctp::SackChunk::GapAckBlock>, ::std::set<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

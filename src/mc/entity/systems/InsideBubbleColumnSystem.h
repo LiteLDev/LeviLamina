@@ -20,6 +20,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSpawnBubbleColumnParticlesSystem();
+    MCNAPI static ::TickingSystemWithInfo createSpawnBubbleColumnParticlesSystem();
     // NOLINTEND
 };

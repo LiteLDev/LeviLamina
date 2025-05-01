@@ -18,11 +18,11 @@ class ScriptLocation {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::Vec3> bindVec3();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Vec3> bindVec3();
 
-    MCAPI static ::Scripting::ClassBindingBuilder<::Vec3> bindVec3_V010();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Vec3> bindVec3_V010();
 
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::VecXZ> bindVecXZ();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::VecXZ> bindVecXZ();
     // NOLINTEND
 };
 

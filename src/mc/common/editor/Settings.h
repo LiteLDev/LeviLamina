@@ -10,7 +10,7 @@ namespace Editor::Settings { struct ThemePalette; }
 namespace Editor::Settings {
 // functions
 // NOLINTBEGIN
-MCFOLD bool operator==(::Editor::Settings::ThemePalette const& lhs, ::Editor::Settings::ThemePalette const& rhs);
+MCNAPI bool operator==(::Editor::Settings::ThemePalette const& lhs, ::Editor::Settings::ThemePalette const& rhs);
 // NOLINTEND
 
 } // namespace Editor::Settings

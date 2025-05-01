@@ -51,18 +51,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isPremiumWorldTemplate() const;
+    MCNAPI bool $isPremiumWorldTemplate() const;
 
-    MCAPI bool $isLegacyLevel() const;
+    MCNAPI bool $isLegacyLevel() const;
 
-    MCAPI bool $hasMapsCenteredToOrigin() const;
+    MCNAPI bool $hasMapsCenteredToOrigin() const;
 
-    MCAPI ::BlockPos const& $getWorldCenter() const;
+    MCNAPI ::BlockPos const& $getWorldCenter() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

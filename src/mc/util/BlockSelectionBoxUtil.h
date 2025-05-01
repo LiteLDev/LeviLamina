@@ -11,7 +11,7 @@ class Vec3;
 namespace BlockSelectionBoxUtil {
 // functions
 // NOLINTBEGIN
-MCAPI ::AABB computeAABBFromOriginAndSize(::Vec3 const& origin, ::Vec3 const& size);
+MCNAPI ::AABB computeAABBFromOriginAndSize(::Vec3 const& origin, ::Vec3 const& size);
 // NOLINTEND
 
 } // namespace BlockSelectionBoxUtil

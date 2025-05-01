@@ -25,13 +25,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SnapshotAccessor(::EntityContext const& entity);
+    MCNAPI explicit SnapshotAccessor(::EntityContext const& entity);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::EntityContext const& entity);
+    MCNAPI void* $ctor(::EntityContext const& entity);
     // NOLINTEND
 };
 

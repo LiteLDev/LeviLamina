@@ -15,25 +15,25 @@ class StunXorAddressAttribute {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::rtc::IPAddress GetXoredIP() const;
+    MCNAPI ::rtc::IPAddress GetXoredIP() const;
 
-    MCAPI StunXorAddressAttribute(ushort, ::rtc::SocketAddress const&);
+    MCNAPI StunXorAddressAttribute(ushort, ::rtc::SocketAddress const&);
 
-    MCAPI StunXorAddressAttribute(ushort, ushort, ::cricket::StunMessage*);
+    MCNAPI StunXorAddressAttribute(ushort, ushort, ::cricket::StunMessage*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(ushort, ::rtc::SocketAddress const&);
+    MCNAPI void* $ctor(ushort, ::rtc::SocketAddress const&);
 
-    MCAPI void* $ctor(ushort, ushort, ::cricket::StunMessage*);
+    MCNAPI void* $ctor(ushort, ushort, ::cricket::StunMessage*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

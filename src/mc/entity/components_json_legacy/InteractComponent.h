@@ -26,16 +26,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool
+    MCNAPI bool
     _runInteraction(::Actor& owner, ::Interaction const& desc, ::Player& player, ::ActorInteraction& interaction);
 
-    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCNAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _spawnParticle(
+    MCNAPI static void _spawnParticle(
         ::BlockSource&       region,
         ::Actor&             owner,
         ::Player&            player,
@@ -43,9 +43,9 @@ public:
         ::Interaction const& description
     );
 
-    MCAPI static void _tryDropItem(::BlockSource& region, ::Actor& owner, ::ItemSlotInfo const& itemSlotInfo);
+    MCNAPI static void _tryDropItem(::BlockSource& region, ::Actor& owner, ::ItemSlotInfo const& itemSlotInfo);
 
-    MCAPI static void _tryEquipItem(
+    MCNAPI static void _tryEquipItem(
         ::Actor&              owner,
         ::Player&             player,
         ::ItemStack&          usingItem,
@@ -55,6 +55,6 @@ public:
         bool&                 postponedReplace
     );
 
-    MCAPI static void _trySendArmorSlot(::Actor& owner, ::SharedTypes::Legacy::ArmorSlot armorSlot);
+    MCNAPI static void _trySendArmorSlot(::Actor& owner, ::SharedTypes::Legacy::ArmorSlot armorSlot);
     // NOLINTEND
 };

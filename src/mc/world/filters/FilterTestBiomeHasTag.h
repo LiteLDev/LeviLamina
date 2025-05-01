@@ -31,22 +31,22 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $evaluate(::FilterContext const& context) const;
+    MCNAPI bool $evaluate(::FilterContext const& context) const;
 
-    MCAPI void $finalizeParsedValue(::IWorldRegistriesProvider& registries);
+    MCNAPI void $finalizeParsedValue(::IWorldRegistriesProvider& registries);
 
-    MCAPI ::std::string_view $getName() const;
+    MCNAPI ::std::string_view $getName() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

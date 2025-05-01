@@ -11,13 +11,13 @@ struct FunctionError : public ::Scripting::Error {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~FunctionError();
+    MCNAPI ~FunctionError();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -14,37 +14,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit HashedString(nullptr_t);
+    MCNAPI explicit HashedString(nullptr_t);
 
-    MCAPI HashedString(::HashedString&& rhs);
+    MCNAPI HashedString(::HashedString&& rhs);
 
-    MCAPI HashedString(::HashedString const& rhs);
+    MCNAPI HashedString(::HashedString const& rhs);
 
-    MCAPI explicit HashedString(::std::string const& str);
+    MCNAPI explicit HashedString(::std::string const& str);
 
-    MCAPI explicit HashedString(char const* str);
+    MCNAPI explicit HashedString(char const* str);
 
-    MCAPI HashedString(uint64 hash, char const* str);
+    MCNAPI HashedString(uint64 hash, char const* str);
 
-    MCAPI char const* c_str() const;
+    MCNAPI char const* c_str() const;
 
-    MCAPI bool empty() const;
+    MCNAPI bool empty() const;
 
-    MCAPI explicit operator ::std::string_view() const;
+    MCNAPI explicit operator ::std::string_view() const;
 
-    MCAPI ::HashedString& operator=(::HashedString const& rhs);
+    MCNAPI ::HashedString& operator=(::HashedString const& rhs);
 
-    MCAPI ::HashedString& operator=(::HashedString&& rhs);
+    MCNAPI ::HashedString& operator=(::HashedString&& rhs);
 
-    MCAPI ~HashedString();
+    MCNAPI ~HashedString();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static uint64 computeHash(::std::string const& str);
+    MCNAPI static uint64 computeHash(::std::string const& str);
 
-    MCFOLD static ::HashedString const& getEmptyString();
+    MCNAPI static ::HashedString const& getEmptyString();
     // NOLINTEND
 
 public:
@@ -56,22 +56,22 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(nullptr_t);
+    MCNAPI void* $ctor(nullptr_t);
 
-    MCAPI void* $ctor(::HashedString&& rhs);
+    MCNAPI void* $ctor(::HashedString&& rhs);
 
-    MCAPI void* $ctor(::HashedString const& rhs);
+    MCNAPI void* $ctor(::HashedString const& rhs);
 
-    MCFOLD void* $ctor(::std::string const& str);
+    MCNAPI void* $ctor(::std::string const& str);
 
-    MCAPI void* $ctor(char const* str);
+    MCNAPI void* $ctor(char const* str);
 
-    MCAPI void* $ctor(uint64 hash, char const* str);
+    MCNAPI void* $ctor(uint64 hash, char const* str);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

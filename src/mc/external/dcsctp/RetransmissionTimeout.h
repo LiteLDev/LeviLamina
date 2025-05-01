@@ -14,15 +14,15 @@ struct RetransmissionTimeout {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void ObserveRTT(::webrtc::TimeDelta);
+    MCNAPI void ObserveRTT(::webrtc::TimeDelta);
 
-    MCAPI explicit RetransmissionTimeout(::dcsctp::DcSctpOptions const&);
+    MCNAPI explicit RetransmissionTimeout(::dcsctp::DcSctpOptions const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::dcsctp::DcSctpOptions const&);
+    MCNAPI void* $ctor(::dcsctp::DcSctpOptions const&);
     // NOLINTEND
 };
 

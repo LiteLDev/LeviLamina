@@ -21,12 +21,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MovementEffectsComponent(::MovementEffectsComponent const&);
+    MCNAPI MovementEffectsComponent(::MovementEffectsComponent const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MovementEffectsComponent const&);
+    MCNAPI void* $ctor(::MovementEffectsComponent const&);
     // NOLINTEND
 };

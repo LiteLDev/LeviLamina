@@ -22,7 +22,7 @@ struct SetMovingFlagRequestComponent;
 namespace CacheMovingStateSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void tickPassengerEntity(
+MCNAPI void tickPassengerEntity(
     ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
     ::PassengerComponent const&                                                            passenger,
     ::ActorDataFlagComponent&                                                              actorDataFlag,

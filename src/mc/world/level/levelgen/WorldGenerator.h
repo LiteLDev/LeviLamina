@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/buffer_span.h"
+#include "mc/platform/threading/Mutex.h"
+#include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/DividedPos2d.h"
 #include "mc/world/level/chunk/ChunkSource.h"
 #include "mc/world/level/levelgen/v1/IPreliminarySurfaceProvider.h"
@@ -18,13 +20,11 @@ class BlockSource;
 class BlockVolume;
 class BlockVolumeTarget;
 class BoundingBox;
-class ChunkPos;
 class Dimension;
 class HashedString;
 class LevelChunk;
 class Random;
 class StructureFeatureRegistry;
-namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class WorldGenerator : public ::ChunkSource, public ::IPreliminarySurfaceProvider {
@@ -189,7 +189,7 @@ public:
 
     MCAPI ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4>) const;
 
-    MCAPI void $debugRender();
+    MCFOLD void $debugRender();
     // NOLINTEND
 
 public:

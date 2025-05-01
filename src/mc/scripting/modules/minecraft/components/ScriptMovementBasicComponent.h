@@ -17,7 +17,7 @@ class ScriptMovementBasicComponent : public ::ScriptModuleMinecraft::MovementScr
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
+    // vIndex: 3
     virtual bool _isValid() const /*override*/;
 
     // vIndex: 0
@@ -27,10 +27,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptMovementBasicComponent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptMovementBasicComponent>
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
 
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptMovementBasicComponent> bindV010();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptMovementBasicComponent> bindV010();
     // NOLINTEND
 
 public:
@@ -48,13 +48,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isValid() const;
+    MCNAPI bool $_isValid() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

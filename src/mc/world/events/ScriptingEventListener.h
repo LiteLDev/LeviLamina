@@ -34,12 +34,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::EventResult $onEvent(::ScriptingNotificationEvent const&);
+    MCNAPI ::EventResult $onEvent(::ScriptingNotificationEvent const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

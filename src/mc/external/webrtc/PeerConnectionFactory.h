@@ -99,25 +99,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::webrtc::Call>
+    MCNAPI ::std::unique_ptr<::webrtc::Call>
     CreateCall_w(::webrtc::Environment const&, ::webrtc::PeerConnectionInterface::RTCConfiguration const&);
 
-    MCAPI bool IsTrialEnabled(::std::string_view) const;
+    MCNAPI bool IsTrialEnabled(::std::string_view) const;
 
-    MCAPI explicit PeerConnectionFactory(::webrtc::PeerConnectionFactoryDependencies);
+    MCNAPI explicit PeerConnectionFactory(::webrtc::PeerConnectionFactoryDependencies);
 
-    MCAPI
+    MCNAPI
     PeerConnectionFactory(::webrtc::scoped_refptr<::webrtc::ConnectionContext>, ::webrtc::PeerConnectionFactoryDependencies*);
 
-    MCAPI ::cricket::MediaEngineInterface* media_engine() const;
+    MCNAPI ::cricket::MediaEngineInterface* media_engine() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::PeerConnectionFactoryDependencies);
+    MCNAPI void* $ctor(::webrtc::PeerConnectionFactoryDependencies);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::webrtc::scoped_refptr<::webrtc::ConnectionContext>, ::webrtc::PeerConnectionFactoryDependencies*);
     // NOLINTEND
 
@@ -136,7 +136,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

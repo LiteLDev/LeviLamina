@@ -31,29 +31,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void applyPlayerPermissionsFromDisk(
+    MCNAPI void applyPlayerPermissionsFromDisk(
         ::Player&                              player,
         ::UserEntityIdentifierComponent const& userIdentifier,
         ::CommandPermissionLevel               opCommandPermissionLevel
     );
 
-    MCAPI bool fileExists() const;
+    MCNAPI bool fileExists() const;
 
-    MCAPI ::std::vector<::std::string> getXUIDsByPermission(::PlayerPermissionLevel permission) const;
+    MCNAPI ::std::vector<::std::string> getXUIDsByPermission(::PlayerPermissionLevel permission) const;
 
-    MCAPI bool isPermissionsSet(::std::string const& xuid, ::PlayerPermissionLevel permission) const;
+    MCNAPI bool isPermissionsSet(::std::string const& xuid, ::PlayerPermissionLevel permission) const;
 
-    MCAPI void persistPlayerPermissionsToDisk(
+    MCNAPI void persistPlayerPermissionsToDisk(
         ::UserEntityIdentifierComponent const& userIdentifier,
         ::PlayerPermissionLevel                permission
     );
 
-    MCAPI void persistPlayerPermissionsToDisk(::std::string const& xuid, ::PlayerPermissionLevel permission);
+    MCNAPI void persistPlayerPermissionsToDisk(::std::string const& xuid, ::PlayerPermissionLevel permission);
 
-    MCAPI ::std::tuple<::FileReadResult, ::Json::Value> readPermissionFile();
+    MCNAPI ::std::tuple<::FileReadResult, ::Json::Value> readPermissionFile();
 
-    MCAPI ::FileReadResult reload();
+    MCNAPI ::FileReadResult reload();
 
-    MCAPI void setDefaultPlayerPermission(::Player& player, ::CommandPermissionLevel opCommandPermissionLevel);
+    MCNAPI void setDefaultPlayerPermission(::Player& player, ::CommandPermissionLevel opCommandPermissionLevel);
     // NOLINTEND
 };

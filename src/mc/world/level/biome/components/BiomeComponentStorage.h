@@ -22,14 +22,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _removeComponent(::Bedrock::typeid_t<void> typeId);
+    MCNAPI void _removeComponent(::Bedrock::typeid_t<void> typeId);
 
-    MCAPI ~BiomeComponentStorage();
+    MCNAPI ~BiomeComponentStorage();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

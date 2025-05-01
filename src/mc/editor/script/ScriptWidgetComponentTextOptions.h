@@ -22,25 +22,26 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptWidgetComponentTextOptions(ScriptWidgetComponentTextOptions const&);
     ScriptWidgetComponentTextOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::ScriptModule::ScriptWidgetComponentTextOptions&
+    MCNAPI ScriptWidgetComponentTextOptions(::Editor::ScriptModule::ScriptWidgetComponentTextOptions const&);
+
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentTextOptions&
     operator=(::Editor::ScriptModule::ScriptWidgetComponentTextOptions&&);
 
-    MCAPI ::Editor::ScriptModule::ScriptWidgetComponentTextOptions&
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentTextOptions&
     operator=(::Editor::ScriptModule::ScriptWidgetComponentTextOptions const&);
 
-    MCAPI ~ScriptWidgetComponentTextOptions();
+    MCNAPI ~ScriptWidgetComponentTextOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentTextOptions>
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentTextOptions>
     bindScript();
     // NOLINTEND
 
@@ -51,9 +52,15 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentTextOptions const&);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

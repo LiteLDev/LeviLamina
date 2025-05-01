@@ -16,13 +16,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit Bucket(int64);
+        MCNAPI explicit Bucket(int64);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(int64);
+        MCNAPI void* $ctor(int64);
         // NOLINTEND
     };
 
@@ -33,31 +33,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void EraseOld(int64);
+    MCNAPI void EraseOld(int64);
 
-    MCAPI ::std::optional<int64> Rate(int64) const;
+    MCNAPI ::std::optional<int64> Rate(int64) const;
 
-    MCAPI RateStatistics(::webrtc::RateStatistics const&);
+    MCNAPI RateStatistics(::webrtc::RateStatistics const&);
 
-    MCAPI RateStatistics(int64, float);
+    MCNAPI RateStatistics(int64, float);
 
-    MCAPI void Update(int64, int64);
+    MCNAPI void Update(int64, int64);
 
-    MCAPI ~RateStatistics();
+    MCNAPI ~RateStatistics();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::RateStatistics const&);
+    MCNAPI void* $ctor(::webrtc::RateStatistics const&);
 
-    MCAPI void* $ctor(int64, float);
+    MCNAPI void* $ctor(int64, float);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

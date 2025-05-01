@@ -57,24 +57,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $checkComponentDataForContentErrors() const;
+    MCNAPI bool $checkComponentDataForContentErrors() const;
 
-    MCFOLD void $writeSettings();
+    MCNAPI void $writeSettings();
 
-    MCFOLD bool $isNetworkComponent() const;
+    MCNAPI bool $isNetworkComponent() const;
 
-    MCFOLD ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCFOLD bool $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCNAPI bool $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
-    MCFOLD void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
+    MCNAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
-    MCFOLD void $_initializeComponent();
+    MCNAPI void $_initializeComponent();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

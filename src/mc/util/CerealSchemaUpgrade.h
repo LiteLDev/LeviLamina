@@ -43,14 +43,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CerealSchemaUpgrade(
+    MCNAPI CerealSchemaUpgrade(
         ::std::string_view   fileType,
         ::SemVersion         targetVersion,
         ::std::string const& schemaKey,
         ::std::string const& jsonMemberName
     );
 
-    MCAPI bool checkAndUpgradeToNext(
+    MCNAPI bool checkAndUpgradeToNext(
         ::rapidjson::GenericDocument<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
@@ -62,7 +62,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string_view   fileType,
         ::SemVersion         targetVersion,
         ::std::string const& schemaKey,
@@ -73,13 +73,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void
+    MCNAPI void
     $upgradeToNext(::rapidjson::GenericDocument<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>, ::rapidjson::CrtAllocator>&, ::SemVersion const&)
         const;
     // NOLINTEND
@@ -87,6 +87,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

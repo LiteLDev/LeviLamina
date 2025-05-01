@@ -2,9 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/phys/AABB.h"
+
 // auto generated forward declare list
 // clang-format off
-class AABB;
 struct RopeAABB;
 // clang-format on
 
@@ -22,6 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void mergeAABBs();
+    MCNAPI void mergeAABBs();
     // NOLINTEND
 };

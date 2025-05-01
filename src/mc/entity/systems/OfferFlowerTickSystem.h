@@ -18,13 +18,13 @@ class OfferFlowerTickSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     _doOfferFlowerTickSystem(::StrictEntityContext const&, ::OfferFlowerTickComponent& offerFlowerTickComponent);
 
-    MCAPI static void _tickOfferFlowerTickSystem(
+    MCNAPI static void _tickOfferFlowerTickSystem(
         ::ViewT<::StrictEntityContext, ::Include<::ActorTickNeededComponent>, ::OfferFlowerTickComponent> view
     );
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

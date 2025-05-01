@@ -5,12 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/utility/BedrockLoadContext.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/molang/MolangVersion.h"
 #include "mc/resources/IPackLoadContext.h"
 
 // auto generated forward declare list
 // clang-format off
 class Experiments;
+class LinkedAssetValidator;
 class MinEngineVersion;
 class PackInstance;
 class PackLoadStorage;
@@ -65,6 +67,9 @@ public:
     virtual ::PackLoadStorage& getStorage() /*override*/;
 
     // vIndex: 9
+    virtual ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const getLinkedAssetValidator() const /*override*/;
+
+    // vIndex: 10
     virtual void setMinEngineVersion(::MinEngineVersion const& minEngineVersion) /*override*/;
 
     // vIndex: 0
@@ -74,52 +79,62 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackLoadContext(::PackInstance const& pack, ::Experiments const& experiments);
+    MCNAPI PackLoadContext(
+        ::PackInstance const&                              pack,
+        ::Experiments const&                               experiments,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PackInstance const& pack, ::Experiments const& experiments);
+    MCNAPI void* $ctor(
+        ::PackInstance const&                              pack,
+        ::Experiments const&                               experiments,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::MinEngineVersion const& $getMinEngineVersion() const;
+    MCNAPI ::MinEngineVersion const& $getMinEngineVersion() const;
 
-    MCAPI ::MolangVersion $getMolangVersion() const;
+    MCNAPI ::MolangVersion $getMolangVersion() const;
 
-    MCFOLD bool $isBaseGamePack() const;
+    MCNAPI bool $isBaseGamePack() const;
 
-    MCAPI bool $isTrustedPack() const;
+    MCNAPI bool $isTrustedPack() const;
 
-    MCFOLD ::mce::UUID const& $getPackUUID() const;
+    MCNAPI ::mce::UUID const& $getPackUUID() const;
 
-    MCFOLD ::Experiments const& $getExperiments() const;
+    MCNAPI ::Experiments const& $getExperiments() const;
 
-    MCAPI ::PackType $getPackType() const;
+    MCNAPI ::PackType $getPackType() const;
 
-    MCFOLD ::PackLoadStorage& $getStorage();
+    MCNAPI ::PackLoadStorage& $getStorage();
 
-    MCAPI void $setMinEngineVersion(::MinEngineVersion const& minEngineVersion);
+    MCNAPI ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const $getLinkedAssetValidator() const;
+
+    MCNAPI void $setMinEngineVersion(::MinEngineVersion const& minEngineVersion);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

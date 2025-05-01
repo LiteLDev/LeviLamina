@@ -124,57 +124,65 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent>>
     $onBeforeChat(::ChatEvent const&, ::Player const&);
 
-    MCFOLD void
+    MCNAPI void
     $onBeforeWorldInitialize(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockComponentRegistry> const&, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponentRegistry> const&);
 
-    MCFOLD ::std::optional<
+    MCNAPI ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>>
+    $onBeforeWeatherChangedEvent(
+        ::ScriptModuleMinecraft::ScriptWeatherType,
+        ::ScriptModuleMinecraft::ScriptWeatherType,
+        int
+    );
+
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent>>
     $onBeforePlayerInteractWithEntity(::Player&, ::Actor&, ::PlayerInteractWithEntityBeforeEvent const&);
 
-    MCFOLD ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent>>
     $onBeforePlayerInteractWithBlock(::Player&, ::PlayerInteractWithBlockBeforeEvent const&);
 
-    MCFOLD ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>>
     $onBeforePlayerGameModeChange(::Player const&, ::GameType, ::GameType);
 
-    MCFOLD void $onBeforePlayerLeave(::Player const&);
+    MCNAPI void $onBeforePlayerLeave(::Player const&);
 
-    MCFOLD void $onBeforeActorRemove(::Actor const&);
+    MCNAPI void $onBeforeActorRemove(::Actor const&);
 
-    MCFOLD ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent>>
     $onBeforeEffectAddedEventSend(::ActorAddEffectEvent&, ::Actor const&);
 
-    MCFOLD ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent>>
     $onBeforeExplosion(::ExplosionStartedEvent const&);
 
-    MCFOLD ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent>>
     $onBeforePlayerBreakBlock(::Player const&, ::BlockTryDestroyByPlayerEvent const&);
 
-    MCFOLD ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent>>
     $onBeforePlayerPlaceBlock(::Player const&, ::BlockTryPlaceByPlayerEvent const&);
 
-    MCFOLD ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseBeforeEvent>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseBeforeEvent>>
     $onBeforeItemUse(::Player const&, ::ItemUseEvent const&);
 
-    MCFOLD ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
     $onBeforeItemUseOn(::Player const&, ::ItemUseOnEvent const&);
 
-    MCFOLD void $onClientJoinedEvent(::ClientJoinedEvent const&);
+    MCNAPI void $onClientJoinedEvent(::ClientJoinedEvent const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

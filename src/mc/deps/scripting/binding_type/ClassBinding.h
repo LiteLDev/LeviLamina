@@ -39,13 +39,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClassBinding();
+    MCNAPI ClassBinding();
 
-    MCAPI ClassBinding(::Scripting::ClassBinding const&);
+    MCNAPI ClassBinding(::Scripting::ClassBinding const&);
 
-    MCAPI ClassBinding(::Scripting::ClassBinding&&);
+    MCNAPI ClassBinding(::Scripting::ClassBinding&&);
 
-    MCAPI ClassBinding(
+    MCNAPI ClassBinding(
         ::std::string                                   name_,
         ::entt::meta_type                               type_,
         ::entt::meta_type                               baseType_,
@@ -58,19 +58,19 @@ public:
         ::Scripting::RuntimeConditions                  missingRuntimeConditions_
     );
 
-    MCAPI ~ClassBinding();
+    MCNAPI ~ClassBinding();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::Scripting::ClassBinding const&);
+    MCNAPI void* $ctor(::Scripting::ClassBinding const&);
 
-    MCAPI void* $ctor(::Scripting::ClassBinding&&);
+    MCNAPI void* $ctor(::Scripting::ClassBinding&&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string                                   name_,
         ::entt::meta_type                               type_,
         ::entt::meta_type                               baseType_,
@@ -87,7 +87,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

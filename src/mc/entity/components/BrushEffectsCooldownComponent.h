@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ExpiringTick;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/actor/ai/util/ExpiringTick.h"
 
 class BrushEffectsCooldownComponent {
 public:

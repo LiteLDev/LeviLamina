@@ -25,8 +25,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CompoundTag getActorPropertyDataTag(::HashedString const& actorCanonicalName) const;
+    MCNAPI ::CompoundTag getActorPropertyDataTag(::HashedString const& actorCanonicalName) const;
 
-    MCAPI void tryInitPropertiesOnActor(::Actor& actor) const;
+    MCNAPI void tryInitPropertiesOnActor(::Actor& actor) const;
     // NOLINTEND
 };

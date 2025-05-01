@@ -23,16 +23,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI KeyFrameTransformData(::KeyFrameTransformData const&);
+    MCNAPI KeyFrameTransformData(::KeyFrameTransformData const&);
 
-    MCAPI void addChannelTransform(::ExpressionNode const& expression, int axisIndex);
+    MCNAPI void addChannelTransform(::ExpressionNode const& expression, int axisIndex);
 
-    MCAPI bool operator==(::KeyFrameTransformData const& rhs) const;
+    MCNAPI bool operator==(::KeyFrameTransformData const& rhs) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::KeyFrameTransformData const&);
+    MCNAPI void* $ctor(::KeyFrameTransformData const&);
     // NOLINTEND
 };

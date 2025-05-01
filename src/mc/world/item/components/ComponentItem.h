@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
@@ -25,7 +26,6 @@ class BlockSource;
 class CompoundTag;
 class Container;
 class Experiments;
-class HashedString;
 class IFoodItemComponent;
 class IPackLoadContext;
 class IconItemComponent;
@@ -279,13 +279,13 @@ public:
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
     // vIndex: 107
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int frame) /*override*/;
 
     // vIndex: 113
     virtual bool canBeCharged() const /*override*/;
 
     // vIndex: 3
-    virtual ::ComponentItem& setDescriptionId(::std::string const& description) /*override*/;
+    virtual ::ComponentItem& setDescriptionId(::std::string const& descriptionId) /*override*/;
 
     // vIndex: 123
     virtual bool shouldUseJsonForRenderMatrix() const;
@@ -320,34 +320,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItem(::std::string const& nameId, short id, ::cereal::ReflectionCtx const& ctx);
+    MCNAPI ComponentItem(::std::string const& nameId, short id, ::cereal::ReflectionCtx const& ctx);
 
-    MCAPI void
+    MCNAPI void
     _addRegisteredCerealComponent(::std::pair<::std::string const, ::std::shared_ptr<::ItemComponent>>& cerealComponent
     );
 
-    MCAPI ::std::unique_ptr<::CompoundTag> _buildItemPropertiesNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> _buildItemPropertiesNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI ::std::unique_ptr<::ListTag> _buildItemTagsNetworkTag() const;
+    MCNAPI ::std::unique_ptr<::ListTag> _buildItemTagsNetworkTag() const;
 
-    MCAPI bool _doesNotTakeDurabilityDamage() const;
+    MCNAPI bool _doesNotTakeDurabilityDamage() const;
 
-    MCAPI void _initializeLoadedComponents(
+    MCNAPI void _initializeLoadedComponents(
         ::std::optional<::SemVersion>  documentVersion,
         ::std::optional<::Experiments> _experiments
     );
 
-    MCAPI void _loadComponentsFromNetworkTag(
+    MCNAPI void _loadComponentsFromNetworkTag(
         ::std::string const&           componentName,
         ::CompoundTag const&           componentTag,
         ::cereal::ReflectionCtx const& ctx
     );
 
-    MCAPI void _loadItemPropertiesNetworkTag(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCNAPI void _loadItemPropertiesNetworkTag(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
-    MCAPI void _loadItemTagsNetworkTag(::ListTag const& listTag);
+    MCNAPI void _loadItemTagsNetworkTag(::ListTag const& listTag);
 
-    MCAPI bool _validateSchemaAndInitItem(
+    MCNAPI bool _validateSchemaAndInitItem(
         ::Json::Value const&           itemData,
         ::SemVersion const&            documentVersion,
         ::JsonBetaState                canUseBeta,
@@ -356,40 +356,40 @@ public:
         ::cereal::ReflectionCtx const& ctx
     );
 
-    MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI void
+    MCNAPI void
     init(::ComponentItemDataAll_Latest&& data, ::SemVersion const& documentVersion, ::Experiments const& experiments);
 
-    MCAPI ::Bedrock::PubSub::Connector<void(int&, ::ItemStack&, ::Actor&, ::Mob&)>& onBeforeDurabilityDamage();
+    MCNAPI ::Bedrock::PubSub::Connector<void(int&, ::ItemStack&, ::Actor&, ::Mob&)>& onBeforeDurabilityDamage();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack&, ::Actor&, ::Mob&)>& onHitActor();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::ItemStack&, ::Actor&, ::Mob&)>& onHitActor();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack&, ::Block const&, ::BlockPos const&, ::Mob&)>& onHitBlock();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::ItemStack&, ::Block const&, ::BlockPos const&, ::Mob&)>& onHitBlock();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack&, ::Actor&, ::Mob&)>& onHurtActor();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::ItemStack&, ::Actor&, ::Mob&)>& onHurtActor();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(bool&, ::ItemStack&, ::Block const&, int, int, int, ::Actor&)>&
+    MCNAPI ::Bedrock::PubSub::Connector<void(bool&, ::ItemStack&, ::Block const&, int, int, int, ::Actor&)>&
     onMiningBlock();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(bool&, ::ItemStack&, ::Player&)>& onUse();
+    MCNAPI ::Bedrock::PubSub::Connector<void(bool&, ::ItemStack&, ::Player&)>& onUse();
 
-    MCAPI ::Bedrock::PubSub::Connector<
+    MCNAPI ::Bedrock::PubSub::Connector<
         void(bool&, ::ItemStack const&, ::ItemStack&, ::Actor&, ::BlockPos, uchar, ::Vec3 const&)>&
     onUseOn();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&)>&
+    MCNAPI ::Bedrock::PubSub::Connector<void(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&)>&
     onUseTimeDepleted();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _moveDataToComponentItem(::ComponentItem& item, ::ComponentItemData_Legacy& data);
+    MCNAPI static void _moveDataToComponentItem(::ComponentItem& item, ::ComponentItemData_Legacy& data);
 
-    MCAPI static void registerItemComponentTypes(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void registerItemComponentTypes(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::std::pair<bool, ::SemVersion> upgradeJson(
+    MCNAPI static ::std::pair<bool, ::SemVersion> upgradeJson(
         ::cereal::ReflectionCtx const& ctx,
         ::std::string&                 document,
         ::Core::Path const&            resourceName,
@@ -400,174 +400,174 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, short id, ::cereal::ReflectionCtx const& ctx);
+    MCNAPI void* $ctor(::std::string const& nameId, short id, ::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $tearDown();
+    MCNAPI void $tearDown();
 
-    MCFOLD bool $isComponentBased() const;
+    MCNAPI bool $isComponentBased() const;
 
-    MCAPI bool $isHumanoidArmor() const;
+    MCNAPI bool $isHumanoidArmor() const;
 
-    MCAPI bool $isBlockPlanterItem() const;
+    MCNAPI bool $isBlockPlanterItem() const;
 
-    MCAPI bool $isDamageable() const;
+    MCNAPI bool $isDamageable() const;
 
-    MCAPI bool $isDyeable() const;
+    MCNAPI bool $isDyeable() const;
 
-    MCFOLD bool $isFood() const;
+    MCNAPI bool $isFood() const;
 
-    MCAPI bool $isThrowable() const;
+    MCNAPI bool $isThrowable() const;
 
-    MCAPI bool $isUseable() const;
+    MCNAPI bool $isUseable() const;
 
-    MCAPI bool $isMusicDisk() const;
+    MCNAPI bool $isMusicDisk() const;
 
-    MCAPI bool $isTrimAllowed() const;
+    MCNAPI bool $isTrimAllowed() const;
 
-    MCAPI ::WeakPtr<::BlockLegacy const> const& $getLegacyBlockForRendering() const;
+    MCNAPI ::WeakPtr<::BlockLegacy const> const& $getLegacyBlockForRendering() const;
 
-    MCAPI ::ItemComponent* $getComponent(::HashedString const& id) const;
+    MCNAPI ::ItemComponent* $getComponent(::HashedString const& id) const;
 
-    MCAPI ::IFoodItemComponent* $getFood() const;
+    MCNAPI ::IFoodItemComponent* $getFood() const;
 
-    MCAPI ::Item& $setMaxDamage(int maxDamage);
+    MCNAPI ::Item& $setMaxDamage(int maxDamage);
 
-    MCAPI ::std::string const& $getDescriptionId() const;
+    MCNAPI ::std::string const& $getDescriptionId() const;
 
-    MCFOLD ::BlockShape $getBlockShape() const;
+    MCNAPI ::BlockShape $getBlockShape() const;
 
-    MCAPI bool $canBeDepleted() const;
+    MCNAPI bool $canBeDepleted() const;
 
-    MCAPI bool $canDestroySpecial(::Block const& block) const;
+    MCNAPI bool $canDestroySpecial(::Block const& block) const;
 
-    MCFOLD int $getLevelDataForAuxValue(int) const;
+    MCNAPI int $getLevelDataForAuxValue(int) const;
 
-    MCAPI short $getMaxDamage() const;
+    MCNAPI short $getMaxDamage() const;
 
-    MCAPI int $getAttackDamage() const;
+    MCNAPI int $getAttackDamage() const;
 
-    MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
+    MCNAPI bool $isGlint(::ItemStackBase const& stack) const;
 
-    MCAPI bool $canDestroyInCreative() const;
+    MCNAPI bool $canDestroyInCreative() const;
 
-    MCFOLD bool $isDestructive(int) const;
+    MCNAPI bool $isDestructive(int) const;
 
-    MCAPI bool $isLiquidClipItem() const;
+    MCNAPI bool $isLiquidClipItem() const;
 
-    MCAPI bool $requiresInteract() const;
+    MCNAPI bool $requiresInteract() const;
 
-    MCAPI void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
 
-    MCAPI bool $isValidRepairItem(
+    MCNAPI bool $isValidRepairItem(
         ::ItemStackBase const&   source,
         ::ItemStackBase const&   repairItem,
         ::BaseGameVersion const& baseGameVersion
     ) const;
 
-    MCAPI int $getEnchantSlot() const;
+    MCNAPI int $getEnchantSlot() const;
 
-    MCFOLD int $getEnchantValue() const;
+    MCNAPI int $getEnchantValue() const;
 
-    MCAPI int $getArmorValue() const;
+    MCNAPI int $getArmorValue() const;
 
-    MCAPI int $getDamageChance(int unbreaking) const;
+    MCNAPI int $getDamageChance(int unbreaking) const;
 
-    MCAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const& instance) const;
+    MCNAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const& instance) const;
 
-    MCAPI bool $hasCustomColor(::ItemStackBase const& instance) const;
+    MCNAPI bool $hasCustomColor(::ItemStackBase const& instance) const;
 
-    MCAPI void $clearColor(::ItemStackBase& instance) const;
+    MCNAPI void $clearColor(::ItemStackBase& instance) const;
 
-    MCAPI void $setColor(::ItemStackBase& instance, ::mce::Color const& color) const;
+    MCNAPI void $setColor(::ItemStackBase& instance, ::mce::Color const& color) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI ::Actor*
+    MCNAPI ::Actor*
     $createProjectileActor(::BlockSource& region, ::ItemStack const& stack, ::Vec3 const& pos, ::Vec3 const& direction)
         const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+    MCNAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
-    MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+    MCNAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
-    MCAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
+    MCNAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 
-    MCAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCNAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCAPI void $hitActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCNAPI void $hitActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCAPI void $hitBlock(::ItemStack& item, ::Block const& block, ::BlockPos const& blockPos, ::Mob& attacker) const;
+    MCNAPI void $hitBlock(::ItemStack& item, ::Block const& block, ::BlockPos const& blockPos, ::Mob& attacker) const;
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+    MCNAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
-    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack) const;
+    MCNAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack) const;
 
-    MCFOLD uchar $getMaxStackSize(::ItemDescriptor const&) const;
+    MCNAPI uchar $getMaxStackSize(::ItemDescriptor const&) const;
 
-    MCAPI ::HashedString const& $getCooldownType() const;
+    MCNAPI ::HashedString const& $getCooldownType() const;
 
-    MCAPI int $getCooldownTime() const;
+    MCNAPI int $getCooldownTime() const;
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
+    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 
-    MCFOLD bool $useVariant(int, int, bool) const;
+    MCNAPI bool $useVariant(int, int, bool) const;
 
-    MCFOLD int $getVariant(int, int, bool) const;
+    MCNAPI int $getVariant(int, int, bool) const;
 
-    MCAPI ::std::string $getInteractText(::Player const& player) const;
+    MCNAPI ::std::string $getInteractText(::Player const& player) const;
 
-    MCFOLD int $getAnimationFrameFor(::Mob*, bool, ::ItemStack const*, bool) const;
+    MCNAPI int $getAnimationFrameFor(::Mob*, bool, ::ItemStack const*, bool) const;
 
-    MCFOLD bool $isEmissive(int auxValue) const;
+    MCNAPI bool $isEmissive(int auxValue) const;
 
-    MCAPI ::ResolvedItemIconInfo
+    MCNAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCNAPI ::Item& $setIconInfo(::std::string const& name, int frame);
 
-    MCAPI bool $canBeCharged() const;
+    MCNAPI bool $canBeCharged() const;
 
-    MCAPI ::ComponentItem& $setDescriptionId(::std::string const& description);
+    MCNAPI ::ComponentItem& $setDescriptionId(::std::string const& descriptionId);
 
-    MCAPI bool $shouldUseJsonForRenderMatrix() const;
+    MCNAPI bool $shouldUseJsonForRenderMatrix() const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag() const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag() const;
 
-    MCAPI void $initializeFromNetwork(::CompoundTag const& tag);
+    MCNAPI void $initializeFromNetwork(::CompoundTag const& tag);
 
-    MCAPI ::std::vector<::std::string> $validateFromNetwork(::CompoundTag const& tag);
+    MCNAPI ::std::vector<::std::string> $validateFromNetwork(::CompoundTag const& tag);
 
-    MCFOLD bool
+    MCNAPI bool
     $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
 
-    MCAPI bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    MCNAPI bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
-    MCAPI bool $_shouldAutoCalculatePlacePos() const;
+    MCNAPI bool $_shouldAutoCalculatePlacePos() const;
 
-    MCAPI ::InteractionResult
+    MCNAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

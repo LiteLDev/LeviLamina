@@ -27,25 +27,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SentPacket(int64, int64);
+    MCNAPI SentPacket(int64, int64);
 
-    MCAPI SentPacket(int64, int64, ::rtc::PacketInfo const&);
+    MCNAPI SentPacket(int64, int64, ::rtc::PacketInfo const&);
 
-    MCAPI ~SentPacket();
+    MCNAPI ~SentPacket();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int64, int64);
+    MCNAPI void* $ctor(int64, int64);
 
-    MCAPI void* $ctor(int64, int64, ::rtc::PacketInfo const&);
+    MCNAPI void* $ctor(int64, int64, ::rtc::PacketInfo const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

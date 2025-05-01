@@ -17,7 +17,7 @@ struct ServerPlayerMovementComponent;
 namespace PlayerTickSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void _addMovementTickNeededForCatchup(
+MCNAPI void _addMovementTickNeededForCatchup(
     ::StrictEntityContext const&                         entity,
     ::ServerPlayerMovementComponent const&               serverPlayerMovement,
     ::Optional<::PassengerComponent const> const&        passengerComponent,

@@ -18,27 +18,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::JsepCandidateCollection Clone() const;
+    MCNAPI ::webrtc::JsepCandidateCollection Clone() const;
 
-    MCAPI JsepCandidateCollection();
+    MCNAPI JsepCandidateCollection();
 
-    MCAPI JsepCandidateCollection(::webrtc::JsepCandidateCollection&&);
+    MCNAPI JsepCandidateCollection(::webrtc::JsepCandidateCollection&&);
 
-    MCAPI uint64 remove(::cricket::Candidate const&);
+    MCNAPI uint64 remove(::cricket::Candidate const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::webrtc::JsepCandidateCollection&&);
+    MCNAPI void* $ctor(::webrtc::JsepCandidateCollection&&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

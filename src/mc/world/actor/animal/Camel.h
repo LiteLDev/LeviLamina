@@ -47,19 +47,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Camel(
+    MCNAPI Camel(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _monitorSitting();
+    MCNAPI void _monitorSitting();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -75,16 +75,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $aiStep();
+    MCNAPI void $aiStep();
 
-    MCAPI void $normalTick();
+    MCNAPI void $normalTick();
 
-    MCAPI ::Vec3 $getInterpolatedRidingOffset(float, int const) const;
+    MCNAPI ::Vec3 $getInterpolatedRidingOffset(float, int const) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
+#include "mc/server/commands/CommandPosition.h"
 #include "mc/server/commands/CommandSelectionOrder.h"
 #include "mc/server/commands/CommandSelectionType.h"
 #include "mc/world/actor/selectors/InvertableFilter.h"
@@ -13,10 +15,8 @@
 class Actor;
 class CommandIntegerRange;
 class CommandOrigin;
-class CommandPosition;
 class CommandRationalRange;
 class HashedString;
-class Vec3;
 struct ActorDefinitionIdentifier;
 struct HasPermissionFilter;
 // clang-format on

@@ -52,15 +52,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string getId() const;
+    MCNAPI ::std::string getId() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBiomeType> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBiomeType> bind();
 
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>
     getOrCreateHandle(::Biome const& biome, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };

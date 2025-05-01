@@ -42,12 +42,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockPos const& $getSharedSpawnPosition() const;
+    MCNAPI ::BlockPos const& $getSharedSpawnPosition() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

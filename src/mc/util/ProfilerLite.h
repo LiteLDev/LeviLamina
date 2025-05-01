@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/OutputFileStream.h"
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/util/ProfilerLiteTelemetry.h"
 
 // auto generated forward declare list
 // clang-format off
 class _ProfilerLiteTimer;
-struct ProfilerLiteTelemetry;
-namespace Core { class OutputFileStream; }
 // clang-format on
 
 class ProfilerLite {
@@ -73,13 +73,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ScopedData();
+        MCNAPI ~ScopedData();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -149,9 +149,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ProfilerLite();
+    MCNAPI ProfilerLite();
 
-    MCAPI ~ProfilerLite();
+    MCNAPI ~ProfilerLite();
     // NOLINTEND
 
 public:
@@ -165,12 +165,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

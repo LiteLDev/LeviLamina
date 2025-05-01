@@ -28,21 +28,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void EnsureStarted();
+    MCNAPI void EnsureStarted();
 
-    MCAPI ::webrtc::TaskQueuePacedSender::Stats GetStats() const;
+    MCNAPI ::webrtc::TaskQueuePacedSender::Stats GetStats() const;
 
-    MCAPI void MaybeProcessPackets(::webrtc::Timestamp);
+    MCNAPI void MaybeProcessPackets(::webrtc::Timestamp);
 
-    MCAPI void MaybeScheduleProcessPackets();
+    MCNAPI void MaybeScheduleProcessPackets();
 
-    MCAPI void OnStatsUpdated(::webrtc::TaskQueuePacedSender::Stats const&);
+    MCNAPI void OnStatsUpdated(::webrtc::TaskQueuePacedSender::Stats const&);
 
-    MCAPI void SetAllowProbeWithoutMediaPacket(bool);
+    MCNAPI void SetAllowProbeWithoutMediaPacket(bool);
 
-    MCAPI void SetSendBurstInterval(::webrtc::TimeDelta);
+    MCNAPI void SetSendBurstInterval(::webrtc::TimeDelta);
 
-    MCAPI TaskQueuePacedSender(
+    MCNAPI TaskQueuePacedSender(
         ::webrtc::Clock*,
         ::webrtc::PacingController::PacketSender*,
         ::webrtc::FieldTrialsView const&,
@@ -50,7 +50,7 @@ public:
         int
     );
 
-    MCAPI void UpdateStats();
+    MCNAPI void UpdateStats();
     // NOLINTEND
 
 public:
@@ -62,7 +62,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::webrtc::Clock*,
         ::webrtc::PacingController::PacketSender*,
         ::webrtc::FieldTrialsView const&,
@@ -74,9 +74,9 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForRtpPacketSender();
+    MCNAPI static void** $vftableForRtpPacketSender();
 
-    MCAPI static void** $vftableForRtpPacketPacer();
+    MCNAPI static void** $vftableForRtpPacketPacer();
     // NOLINTEND
 };
 

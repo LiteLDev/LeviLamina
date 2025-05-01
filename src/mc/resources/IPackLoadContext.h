@@ -4,11 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/molang/MolangVersion.h"
 
 // auto generated forward declare list
 // clang-format off
 class Experiments;
+class LinkedAssetValidator;
 class MinEngineVersion;
 class PackLoadStorage;
 namespace mce { class UUID; }
@@ -46,6 +48,9 @@ public:
     virtual ::PackLoadStorage& getStorage() = 0;
 
     // vIndex: 9
+    virtual ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const getLinkedAssetValidator() const = 0;
+
+    // vIndex: 10
     virtual void setMinEngineVersion(::MinEngineVersion const&) = 0;
     // NOLINTEND
 
@@ -64,6 +69,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

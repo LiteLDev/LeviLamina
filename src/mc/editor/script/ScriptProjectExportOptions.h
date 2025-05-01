@@ -12,7 +12,7 @@ class ScriptProjectExportOptions : public ::Editor::ProjectExportOptions {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptProjectExportOptions>
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptProjectExportOptions>
     bindInterface();
     // NOLINTEND
 };

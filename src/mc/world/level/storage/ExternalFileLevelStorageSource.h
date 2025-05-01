@@ -117,7 +117,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExternalFileLevelStorageSource(
+    MCNAPI ExternalFileLevelStorageSource(
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&  pathManager,
         ::Bedrock::NotNullNonOwnerPtr<::SaveTransactionManager> const& saveTransactionManager
     );
@@ -126,7 +126,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&  pathManager,
         ::Bedrock::NotNullNonOwnerPtr<::SaveTransactionManager> const& saveTransactionManager
     );
@@ -135,15 +135,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getName() const;
+    MCNAPI ::std::string const& $getName() const;
 
-    MCAPI ::Bedrock::UniqueOwnerPointer<::LevelStorage> $createLevelStorage(
+    MCNAPI ::Bedrock::UniqueOwnerPointer<::LevelStorage> $createLevelStorage(
         ::Scheduler&                                                      scheduler,
         ::std::string const&                                              levelId,
         ::ContentIdentity const&                                          contentIdentity,
@@ -153,49 +153,49 @@ public:
         ::std::unique_ptr<::LevelStorageEventing>                         levelStorageEventing
     );
 
-    MCAPI ::std::unique_ptr<::LevelLooseFileStorage> $createLevelLooseStorage(
+    MCNAPI ::std::unique_ptr<::LevelLooseFileStorage> $createLevelLooseStorage(
         ::std::string const&                                              levelId,
         ::ContentIdentity const&                                          contentIdentity,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     );
 
-    MCAPI ::Core::Result $getLevelData(::std::string const& levelId, ::LevelData& levelDataOut) const;
+    MCNAPI ::Core::Result $getLevelData(::std::string const& levelId, ::LevelData& levelDataOut) const;
 
-    MCAPI void $saveLevelData(::std::string const& levelId, ::LevelData const& data);
+    MCNAPI void $saveLevelData(::std::string const& levelId, ::LevelData const& data);
 
-    MCAPI void $getLevelList(::std::vector<::Core::PathBuffer<::std::string>>& paths);
+    MCNAPI void $getLevelList(::std::vector<::Core::PathBuffer<::std::string>>& paths);
 
-    MCAPI void $deleteLevel(::std::string const& levelId);
+    MCNAPI void $deleteLevel(::std::string const& levelId);
 
-    MCAPI bool $renameLevel(::std::string const& levelId, ::std::string const& newLevelName);
+    MCNAPI bool $renameLevel(::std::string const& levelId, ::std::string const& newLevelName);
 
-    MCAPI void $renameLevel(::LevelData& levelData, ::Core::Path const& fullPath, ::std::string const& newLevelName);
+    MCNAPI void $renameLevel(::LevelData& levelData, ::Core::Path const& fullPath, ::std::string const& newLevelName);
 
-    MCAPI bool $createBackupCopyOfWorld(
+    MCNAPI bool $createBackupCopyOfWorld(
         ::std::string const& levelId,
         ::std::string const& newLeveId,
         ::std::string const& newName
     );
 
-    MCAPI bool $isLevelMarkedForSync(::Core::Path const& levelPath) const;
+    MCNAPI bool $isLevelMarkedForSync(::Core::Path const& levelPath) const;
 
-    MCAPI bool $isLevelPartiallyCopied(::Core::Path const& levelPath) const;
+    MCNAPI bool $isLevelPartiallyCopied(::Core::Path const& levelPath) const;
 
-    MCAPI ::Core::PathBuffer<::std::string> $getLevelDatFoundPath(::Core::Path const& levelPath) const;
+    MCNAPI ::Core::PathBuffer<::std::string> $getLevelDatFoundPath(::Core::Path const& levelPath) const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const $getBasePath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> const $getBasePath() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const $getPathToLevel(::std::string const& levelId) const;
+    MCNAPI ::Core::PathBuffer<::std::string> const $getPathToLevel(::std::string const& levelId) const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const
+    MCNAPI ::Core::PathBuffer<::std::string> const
     $getPathToLevelInfo(::std::string const& levelId, bool forceInfo) const;
 
-    MCFOLD bool $isBetaRetailLevel(::std::string const& levelId) const;
+    MCNAPI bool $isBetaRetailLevel(::std::string const& levelId) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

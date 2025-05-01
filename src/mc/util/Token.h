@@ -32,28 +32,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Token(::std::string const& str);
+    MCNAPI explicit Token(::std::string const& str);
 
-    MCAPI bool _parseRandom();
+    MCNAPI bool _parseRandom();
 
-    MCAPI ~Token();
+    MCNAPI ~Token();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::Token> tokenize(::std::string const& str);
+    MCNAPI static ::std::vector<::Token> tokenize(::std::string const& str);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& str);
+    MCNAPI void* $ctor(::std::string const& str);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

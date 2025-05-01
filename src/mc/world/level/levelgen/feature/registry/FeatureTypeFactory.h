@@ -39,9 +39,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uint64 addSupportedSchema(::std::optional<::Puv::VersionRange> versionRange);
+    MCNAPI uint64 addSupportedSchema(::std::optional<::Puv::VersionRange> versionRange);
 
-    MCAPI bool processFeature(
+    MCNAPI bool processFeature(
         ::IWorldRegistriesProvider&  lookupProvider,
         bool                         isBasePack,
         ::ResourcePackManager const& rpm,
@@ -54,12 +54,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

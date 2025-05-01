@@ -20,6 +20,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::EntityNetId> deserialize(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::EntityNetId> deserialize(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

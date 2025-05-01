@@ -12,14 +12,14 @@ class IWorldRegistriesProvider;
 namespace BiomeComponentLoading {
 // functions
 // NOLINTBEGIN
-MCAPI void _read(
+MCNAPI void _read(
     ::std::string const&                              name,
     ::CompoundTag const&                              tag,
     ::std::vector<::std::pair<::Biome const*, uint>>& biomes,
     ::IWorldRegistriesProvider&                       lookupProvider
 );
 
-MCAPI void
+MCNAPI void
 _write(::std::string const& name, ::CompoundTag& tag, ::std::vector<::std::pair<::Biome const*, uint>> const& biomes);
 // NOLINTEND
 

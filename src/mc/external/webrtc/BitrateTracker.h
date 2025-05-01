@@ -15,25 +15,25 @@ class BitrateTracker {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BitrateTracker(::webrtc::TimeDelta);
+    MCNAPI explicit BitrateTracker(::webrtc::TimeDelta);
 
-    MCAPI ::std::optional<::webrtc::DataRate> Rate(::webrtc::Timestamp) const;
+    MCNAPI ::std::optional<::webrtc::DataRate> Rate(::webrtc::Timestamp) const;
 
-    MCAPI void Update(int64, ::webrtc::Timestamp);
+    MCNAPI void Update(int64, ::webrtc::Timestamp);
 
-    MCAPI ~BitrateTracker();
+    MCNAPI ~BitrateTracker();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::TimeDelta);
+    MCNAPI void* $ctor(::webrtc::TimeDelta);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

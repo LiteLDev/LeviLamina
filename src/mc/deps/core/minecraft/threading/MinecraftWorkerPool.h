@@ -13,11 +13,6 @@ class WorkerPool;
 class MinecraftWorkerPool {
 public:
     // MinecraftWorkerPool inner types define
-    enum class CoreConfigFlavor : int {
-        LegacyCores             = 0,
-        ClientRenderServerCores = 1,
-    };
-
     enum class UseAsyncOrDiskPoolForLoading : int {
         Async = 0,
         Disk  = 1,
@@ -26,13 +21,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void configureMainThread();
+    MCNAPI static void configureMainThread();
 
-    MCAPI static void createSingletons();
+    MCNAPI static void createSingletons();
 
-    MCAPI static void destroySingletons();
+    MCNAPI static void destroySingletons();
 
-    MCAPI static void loadWorkerConfigurations(uint highPowerCores, uint totalCores);
+    MCNAPI static void loadWorkerConfigurations(uint highPowerCores, uint totalCores);
     // NOLINTEND
 
 public:

@@ -16,7 +16,7 @@ struct OnGroundFlagComponent;
 namespace CheckFallDamageSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void checkFallDamage(
+MCNAPI void checkFallDamage(
     ::ActorOwnerComponent&                    actorComponent,
     ::MoveRequestComponent const&             request,
     ::Optional<::OnGroundFlagComponent const> onGround,

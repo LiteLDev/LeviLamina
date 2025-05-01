@@ -17,9 +17,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RTCMediaSourceStats(::webrtc::RTCMediaSourceStats const&);
+    MCNAPI RTCMediaSourceStats(::webrtc::RTCMediaSourceStats const&);
 
-    MCAPI RTCMediaSourceStats(::std::string, ::webrtc::Timestamp);
+    MCNAPI RTCMediaSourceStats(::std::string, ::webrtc::Timestamp);
     // NOLINTEND
 
 public:
@@ -31,15 +31,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::RTCMediaSourceStats const&);
+    MCNAPI void* $ctor(::webrtc::RTCMediaSourceStats const&);
 
-    MCAPI void* $ctor(::std::string, ::webrtc::Timestamp);
+    MCNAPI void* $ctor(::std::string, ::webrtc::Timestamp);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

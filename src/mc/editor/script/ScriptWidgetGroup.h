@@ -88,14 +88,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWidgetGroup(
+    MCNAPI ScriptWidgetGroup(
         ::Editor::ServiceProviderCollection&                                           serviceProviders,
         ::Editor::ScriptModule::ScriptWidgetService&                                   parentService,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetGroupCreateOptions> const& options,
         ::Scripting::WeakLifetimeScope const&                                          scope
     );
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>,
         ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
     _createWidget(
@@ -103,42 +103,42 @@ public:
         ::std::optional<::Editor::ScriptModule::ScriptWidgetCreateOptions> const& options
     );
 
-    MCAPI void _deleteThisGroup();
+    MCNAPI void _deleteThisGroup();
 
-    MCAPI void
+    MCNAPI void
     _forEachWidget(::std::function<bool(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>)> fn
     ) const;
 
-    MCAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject> _scriptDeselectAll();
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject> _scriptDeselectAll();
 
-    MCAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
+    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
     _scriptGetBoundsVisible() const;
 
-    MCAPI ::Scripting::Result<int, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
+    MCNAPI ::Scripting::Result<int, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
     _scriptGetSelectedCount() const;
 
-    MCAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
+    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
     _scriptGetVisible() const;
 
-    MCAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject> _scriptSelectAll();
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject> _scriptSelectAll();
 
-    MCAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
     _scriptSetBoundsVisible(bool visible);
 
-    MCAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
     _scriptSetVisible(bool visible);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetGroup> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetGroup> bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                           serviceProviders,
         ::Editor::ScriptModule::ScriptWidgetService&                                   parentService,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetGroupCreateOptions> const& options,
@@ -155,18 +155,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_performDeleteGroup();
+    MCNAPI void $_performDeleteGroup();
 
-    MCAPI void $_setValid(bool valid);
+    MCNAPI void $_setValid(bool valid);
 
-    MCAPI void $_handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const& payload);
+    MCNAPI void $_handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const& payload);
 
-    MCAPI void
+    MCNAPI void
     $_handleWidgetComponentStateChangePayload(::Editor::Network::WidgetComponentStateChangePayload const& payload);
 
-    MCAPI void $_servicePendingStateChanges();
+    MCNAPI void $_servicePendingStateChanges();
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject,
         ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject,
@@ -177,9 +177,9 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForScriptWidgetGroupWidgetInterface();
+    MCNAPI static void** $vftableForScriptWidgetGroupWidgetInterface();
 
-    MCAPI static void** $vftableForScriptWidgetGroupServiceInterface();
+    MCNAPI static void** $vftableForScriptWidgetGroupServiceInterface();
     // NOLINTEND
 };
 

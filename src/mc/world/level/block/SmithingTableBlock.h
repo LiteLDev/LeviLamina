@@ -7,25 +7,31 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
-class Player;
+class Experiments;
+namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class SmithingTableBlock : public ::BlockLegacy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 139
-    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
-
     // vIndex: 30
     virtual bool isCraftingBlock() const /*override*/;
 
     // vIndex: 138
     virtual bool isInteractiveBlock() const /*override*/;
 
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
     virtual ~SmithingTableBlock() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -37,16 +43,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
+    MCNAPI bool $isCraftingBlock() const;
 
-    MCFOLD bool $isCraftingBlock() const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

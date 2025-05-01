@@ -19,6 +19,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk42b906;
     ::ll::UntypedStorage<8, 8>  mUnk842390;
     ::ll::UntypedStorage<8, 64> mUnkc6e8bc;
+    ::ll::UntypedStorage<4, 4>  mUnk7b8adc;
     // NOLINTEND
 
 public:
@@ -38,6 +39,9 @@ public:
 
     // vIndex: 3
     virtual void _preMergeTransform(::Json::Value&);
+
+    // vIndex: 4
+    virtual void _preMergePacketTransform(int const);
 
     // vIndex: 0
     virtual ~JsonMergeStrategy() /*override*/ = default;

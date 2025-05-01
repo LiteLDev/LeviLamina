@@ -11,49 +11,49 @@ struct IceConfig {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI IceConfig();
+    MCNAPI IceConfig();
 
-    MCAPI IceConfig(int, int, ::cricket::ContinualGatheringPolicy, bool, int, bool, int, int);
+    MCNAPI IceConfig(int, int, ::cricket::ContinualGatheringPolicy, bool, int, bool, int, int);
 
-    MCAPI int backup_connection_ping_interval_or_default() const;
+    MCNAPI int backup_connection_ping_interval_or_default() const;
 
-    MCAPI int ice_check_interval_strong_connectivity_or_default() const;
+    MCNAPI int ice_check_interval_strong_connectivity_or_default() const;
 
-    MCAPI int ice_check_interval_weak_connectivity_or_default() const;
+    MCNAPI int ice_check_interval_weak_connectivity_or_default() const;
 
-    MCAPI int ice_check_min_interval_or_default() const;
+    MCNAPI int ice_check_min_interval_or_default() const;
 
-    MCAPI int ice_inactive_timeout_or_default() const;
+    MCNAPI int ice_inactive_timeout_or_default() const;
 
-    MCAPI int ice_unwritable_min_checks_or_default() const;
+    MCNAPI int ice_unwritable_min_checks_or_default() const;
 
-    MCAPI int ice_unwritable_timeout_or_default() const;
+    MCNAPI int ice_unwritable_timeout_or_default() const;
 
-    MCAPI int receiving_switching_delay_or_default() const;
+    MCNAPI int receiving_switching_delay_or_default() const;
 
-    MCAPI int receiving_timeout_or_default() const;
+    MCNAPI int receiving_timeout_or_default() const;
 
-    MCAPI int regather_on_failed_networks_interval_or_default() const;
+    MCNAPI int regather_on_failed_networks_interval_or_default() const;
 
-    MCAPI int stable_writable_connection_ping_interval_or_default() const;
+    MCNAPI int stable_writable_connection_ping_interval_or_default() const;
 
-    MCAPI int stun_keepalive_interval_or_default() const;
+    MCNAPI int stun_keepalive_interval_or_default() const;
 
-    MCAPI ~IceConfig();
+    MCNAPI ~IceConfig();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(int, int, ::cricket::ContinualGatheringPolicy, bool, int, bool, int, int);
+    MCNAPI void* $ctor(int, int, ::cricket::ContinualGatheringPolicy, bool, int, bool, int, int);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

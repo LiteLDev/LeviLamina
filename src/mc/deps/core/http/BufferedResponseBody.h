@@ -59,19 +59,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::error_code $start(::std::optional<uint64> size);
+    MCNAPI ::std::error_code $start(::std::optional<uint64> size);
 
-    MCAPI ::std::error_code $write(::gsl::span<uchar const> source);
+    MCNAPI ::std::error_code $write(::gsl::span<uchar const> source);
 
-    MCAPI void $complete();
+    MCNAPI void $complete();
 
-    MCAPI void $cancel();
+    MCNAPI void $cancel();
 
-    MCAPI ::std::string const& $getLoggableDestination() const;
+    MCNAPI ::std::string const& $getLoggableDestination() const;
 
-    MCAPI ::gsl::span<uchar const> $getLoggableData() const;
+    MCNAPI ::gsl::span<uchar const> $getLoggableData() const;
 
-    MCFOLD ::Bedrock::Http::ResponseBodyType $getType() const;
+    MCNAPI ::Bedrock::Http::ResponseBodyType $getType() const;
     // NOLINTEND
 };
 

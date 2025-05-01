@@ -89,7 +89,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void tickEntity(
+    MCNAPI static void tickEntity(
         ::StrictEntityContext const&                             entity,
         ::ClientRewind::ApplyReplayStateTrackerRequestComponent& request,
         ::ActorDataDirtyFlagsComponent&                          dirtyFlags,
@@ -112,22 +112,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::StrictExecutionContext<
-                     ::Filter<::ActorMovementTickNeededComponent>,
-                     ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,
-                     ::Write<
-                         ::ActorDataFlagComponent,
-                         ::ActorDataHorseFlagComponent,
-                         ::ActorDataJumpDurationComponent,
-                         ::ActorDataBoundingBoxComponent,
-                         ::ActorDataSeatOffsetComponent,
-                         ::ActorDataDirtyFlagsComponent>,
-                     ::AddRemove<>,
-                     ::GlobalRead<>,
-                     ::GlobalWrite<>,
-                     ::EntityFactoryT<>>& executionContext);
+    MCNAPI void $tick(::StrictExecutionContext<
+                      ::Filter<::ActorMovementTickNeededComponent>,
+                      ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,
+                      ::Write<
+                          ::ActorDataFlagComponent,
+                          ::ActorDataHorseFlagComponent,
+                          ::ActorDataJumpDurationComponent,
+                          ::ActorDataBoundingBoxComponent,
+                          ::ActorDataSeatOffsetComponent,
+                          ::ActorDataDirtyFlagsComponent>,
+                      ::AddRemove<>,
+                      ::GlobalRead<>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& executionContext);
 
-    MCAPI void $singleTick(
+    MCNAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<::ActorMovementTickNeededComponent>,
             ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,
@@ -149,7 +149,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

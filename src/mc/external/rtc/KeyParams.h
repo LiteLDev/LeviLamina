@@ -30,19 +30,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool IsValid() const;
+    MCNAPI bool IsValid() const;
 
-    MCAPI explicit KeyParams(::rtc::KeyType);
+    MCNAPI explicit KeyParams(::rtc::KeyType);
 
-    MCAPI ::rtc::ECCurve ec_curve() const;
+    MCNAPI ::rtc::ECCurve ec_curve() const;
 
-    MCAPI ::rtc::RSAParams rsa_params() const;
+    MCNAPI ::rtc::RSAParams rsa_params() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::KeyType);
+    MCNAPI void* $ctor(::rtc::KeyType);
     // NOLINTEND
 };
 

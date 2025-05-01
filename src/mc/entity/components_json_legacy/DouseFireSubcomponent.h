@@ -37,7 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void douseFire(::Actor& owner, ::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI void douseFire(::Actor& owner, ::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -49,18 +49,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $readfromJSON(::Json::Value&);
+    MCNAPI void $readfromJSON(::Json::Value&);
 
-    MCFOLD void $writetoJSON(::Json::Value&) const;
+    MCNAPI void $writetoJSON(::Json::Value&) const;
 
-    MCAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
+    MCNAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
 
-    MCAPI char const* $getName();
+    MCNAPI char const* $getName();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

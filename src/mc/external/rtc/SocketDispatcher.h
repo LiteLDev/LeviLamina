@@ -13,11 +13,11 @@ class SocketDispatcher {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool Initialize();
+    MCNAPI bool Initialize();
 
-    MCAPI explicit SocketDispatcher(::rtc::PhysicalSocketServer*);
+    MCNAPI explicit SocketDispatcher(::rtc::PhysicalSocketServer*);
 
-    MCAPI SocketDispatcher(uint64, ::rtc::PhysicalSocketServer*);
+    MCNAPI SocketDispatcher(uint64, ::rtc::PhysicalSocketServer*);
     // NOLINTEND
 
 public:
@@ -29,19 +29,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::PhysicalSocketServer*);
+    MCNAPI void* $ctor(::rtc::PhysicalSocketServer*);
 
-    MCAPI void* $ctor(uint64, ::rtc::PhysicalSocketServer*);
+    MCNAPI void* $ctor(uint64, ::rtc::PhysicalSocketServer*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForHasSlots();
+    MCNAPI static void** $vftableForHasSlots();
 
-    MCAPI static void** $vftableForSocket();
+    MCNAPI static void** $vftableForSocket();
 
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

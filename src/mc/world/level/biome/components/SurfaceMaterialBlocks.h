@@ -28,12 +28,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SurfaceMaterialBlocks(::SurfaceMaterialAttributes const& attributes);
+    MCNAPI explicit SurfaceMaterialBlocks(::SurfaceMaterialAttributes const& attributes);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SurfaceMaterialAttributes const& attributes);
+    MCNAPI void* $ctor(::SurfaceMaterialAttributes const& attributes);
     // NOLINTEND
 };

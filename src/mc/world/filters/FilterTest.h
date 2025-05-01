@@ -40,13 +40,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Definition();
+        MCNAPI ~Definition();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -91,11 +91,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _testValuesWithOperator(float a, float b) const;
+    MCNAPI bool _testValuesWithOperator(float a, float b) const;
 
-    MCAPI bool _testValuesWithOperator(bool a, bool b) const;
+    MCNAPI bool _testValuesWithOperator(bool a, bool b) const;
 
-    MCAPI ::Json::Value serialize() const;
+    MCNAPI ::Json::Value serialize() const;
     // NOLINTEND
 
 public:
@@ -107,16 +107,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
+    MCNAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
 
-    MCFOLD void $finalizeParsedValue(::IWorldRegistriesProvider& registries);
+    MCNAPI void $finalizeParsedValue(::IWorldRegistriesProvider& registries);
 
-    MCFOLD ::Json::Value $_serializeDomain() const;
+    MCNAPI ::Json::Value $_serializeDomain() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

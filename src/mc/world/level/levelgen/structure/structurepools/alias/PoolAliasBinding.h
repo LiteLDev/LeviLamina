@@ -35,13 +35,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~PoolAliasLookup();
+        MCNAPI ~PoolAliasLookup();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -61,12 +61,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<::PoolAliasBinding> direct(::std::string&& id, ::std::string&& target);
+    MCNAPI static ::std::shared_ptr<::PoolAliasBinding> direct(::std::string&& id, ::std::string&& target);
 
-    MCAPI static ::std::shared_ptr<::PoolAliasBinding>
+    MCNAPI static ::std::shared_ptr<::PoolAliasBinding>
     random(::std::string&& id, ::std::vector<::Core::SimpleWeightedEntry<::std::string>>&& targets);
 
-    MCAPI static ::PoolAliasBinding::PoolAliasLookup resolvePoolAliases(
+    MCNAPI static ::PoolAliasBinding::PoolAliasLookup resolvePoolAliases(
         ::std::vector<::std::shared_ptr<::PoolAliasBinding>> const& aliases,
         ::BlockPos const&                                           structureStartPosition,
         int64                                                       levelSeed
@@ -88,6 +88,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

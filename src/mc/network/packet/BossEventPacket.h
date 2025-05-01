@@ -3,9 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/safety/RedactableString.h"
 #include "mc/world/actor/ai/util/BossBarColor.h"
 #include "mc/world/actor/ai/util/BossBarOverlay.h"
 #include "mc/world/actor/ai/util/BossEventUpdateType.h"
@@ -14,8 +16,6 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-struct ActorUniqueID;
-namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class BossEventPacket : public ::Packet {

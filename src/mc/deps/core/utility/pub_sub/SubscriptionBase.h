@@ -19,9 +19,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void disconnect();
+    MCNAPI void disconnect();
 
-    MCFOLD bool operator==(::Bedrock::PubSub::SubscriptionBase const& other) const;
+    MCNAPI bool operator==(::Bedrock::PubSub::SubscriptionBase const& other) const;
     // NOLINTEND
 };
 

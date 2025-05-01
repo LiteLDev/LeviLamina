@@ -27,7 +27,7 @@ public:
 
     // vIndex: 120
     virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+    _useOn(::ItemStack& instance, ::Actor& usingActor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
     // vIndex: 0
@@ -43,17 +43,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
+    MCNAPI bool $isGlint(::ItemStackBase const& stack) const;
 
-    MCFOLD bool $isDestructive(int auxValue) const;
+    MCNAPI bool $isDestructive(int auxValue) const;
 
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCNAPI ::InteractionResult
+    $_useOn(::ItemStack& instance, ::Actor& usingActor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

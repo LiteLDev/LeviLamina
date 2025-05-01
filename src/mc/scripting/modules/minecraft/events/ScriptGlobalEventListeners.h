@@ -32,19 +32,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptGlobalEventListeners(
+    MCNAPI ScriptGlobalEventListeners(
         ::ActorEventCoordinator&     actorEventCoordinator,
         ::BlockEventCoordinator&     blockEventCoordinator,
         ::ScriptingEventCoordinator& scriptEventCoordinator
     );
 
-    MCAPI ~ScriptGlobalEventListeners();
+    MCNAPI ~ScriptGlobalEventListeners();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorEventCoordinator&     actorEventCoordinator,
         ::BlockEventCoordinator&     blockEventCoordinator,
         ::ScriptingEventCoordinator& scriptEventCoordinator
@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

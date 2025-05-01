@@ -56,18 +56,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
+    MCNAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
 
-    MCAPI bool $evaluate(::FilterContext const& context) const;
+    MCNAPI bool $evaluate(::FilterContext const& context) const;
 
-    MCAPI ::std::string_view $getName() const;
+    MCNAPI ::std::string_view $getName() const;
 
-    MCFOLD ::Json::Value $_serializeValue() const;
+    MCNAPI ::Json::Value $_serializeValue() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

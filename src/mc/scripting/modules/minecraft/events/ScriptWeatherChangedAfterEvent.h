@@ -27,17 +27,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>
+    MCNAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>
     bind();
 
-    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>
+    MCNAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>
     bindV010();
     // NOLINTEND
 };

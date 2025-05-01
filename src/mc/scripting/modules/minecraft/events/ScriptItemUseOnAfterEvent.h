@@ -37,28 +37,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemUseOnAfterEvent(
+    MCNAPI ScriptItemUseOnAfterEvent(
         ::ItemUseOnEvent const&                                                        itemEvent,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Player const&                                                                player,
         ::Scripting::WeakLifetimeScope const&                                          scope
     );
 
-    MCAPI ::Scripting::Result_deprecated<::BlockPos> getBlockLocation_V010() const;
+    MCNAPI ::Scripting::Result_deprecated<::BlockPos> getBlockLocation_V010() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent> bind();
 
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent> bindV010();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent> bindV010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ItemUseOnEvent const&                                                        itemEvent,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Player const&                                                                player,

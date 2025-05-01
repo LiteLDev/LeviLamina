@@ -24,43 +24,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool AddSecondarySsrc(::std::string const&, uint, uint);
+    MCNAPI bool AddSecondarySsrc(::std::string const&, uint, uint);
 
-    MCAPI void GenerateSsrcs(int, bool, bool, ::rtc::UniqueRandomIdGenerator*);
+    MCNAPI void GenerateSsrcs(int, bool, bool, ::rtc::UniqueRandomIdGenerator*);
 
-    MCAPI StreamParams();
+    MCNAPI StreamParams();
 
-    MCAPI StreamParams(::cricket::StreamParams&&);
+    MCNAPI StreamParams(::cricket::StreamParams&&);
 
-    MCAPI StreamParams(::cricket::StreamParams const&);
+    MCNAPI StreamParams(::cricket::StreamParams const&);
 
-    MCAPI ::std::string first_stream_id() const;
+    MCNAPI ::std::string first_stream_id() const;
 
-    MCAPI bool has_ssrc(uint) const;
+    MCNAPI bool has_ssrc(uint) const;
 
-    MCAPI ::cricket::StreamParams& operator=(::cricket::StreamParams const&);
+    MCNAPI ::cricket::StreamParams& operator=(::cricket::StreamParams const&);
 
-    MCAPI void set_stream_ids(::std::vector<::std::string> const&);
+    MCNAPI void set_stream_ids(::std::vector<::std::string> const&);
 
-    MCAPI ::std::vector<::std::string> stream_ids() const;
+    MCNAPI ::std::vector<::std::string> stream_ids() const;
 
-    MCAPI ~StreamParams();
+    MCNAPI ~StreamParams();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::cricket::StreamParams&&);
+    MCNAPI void* $ctor(::cricket::StreamParams&&);
 
-    MCAPI void* $ctor(::cricket::StreamParams const&);
+    MCNAPI void* $ctor(::cricket::StreamParams const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

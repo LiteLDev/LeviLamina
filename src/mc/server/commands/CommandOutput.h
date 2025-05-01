@@ -44,8 +44,6 @@ public:
 
     MCAPI void addToResultList(::std::string const& key, ::Actor const& element);
 
-    MCAPI void addToResultList(::std::string const& key, ::std::string const& element);
-
     MCAPI void error(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params);
 
     MCAPI void load(

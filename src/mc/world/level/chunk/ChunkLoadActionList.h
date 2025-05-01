@@ -6,12 +6,12 @@
 #include "mc/world/level/chunk/ChunkRequestListType.h"
 #include "mc/world/level/chunk/ChunksLoadedStatus.h"
 #include "mc/world/level/chunk/QueueRequestResult.h"
+#include "mc/world/level/dimension/DimensionDataSerializer.h"
 
 // auto generated forward declare list
 // clang-format off
 class ChunkLoadedRequest;
 class Dimension;
-class DimensionDataSerializer;
 class IRequestAction;
 class LevelStorage;
 class ServerLevel;
@@ -29,17 +29,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addChunkLoadedRequest(
+    MCNAPI void _addChunkLoadedRequest(
         ::ChunkLoadedRequest chunkLoadedRequest,
         ::std::string const& dimensionPrefix,
         ::ChunksLoadedStatus chunksLoadedStatus,
         ::LevelStorage&      levelStorage
     );
 
-    MCAPI int
+    MCNAPI int
     _clearRequest(::LevelStorage& levelStorage, ::IRequestAction* actionToRemove, ::std::string_view tickingAreaName);
 
-    MCAPI ::QueueRequestResult _queueRequestOrExecuteAction(
+    MCNAPI ::QueueRequestResult _queueRequestOrExecuteAction(
         ::ChunkLoadedRequest chunkLoadedRequest,
         ::ServerLevel&       serverLevel,
         ::LevelStorage&      levelStorage,
@@ -47,26 +47,26 @@ public:
         ::ChunksLoadedStatus chunksLoadedStatus
     );
 
-    MCAPI void _saveRequest(
+    MCNAPI void _saveRequest(
         ::ChunkLoadedRequest&  request,
         ::std::string const&   dimensionPrefix,
         ::ChunkRequestListType chunkRequestListType,
         ::LevelStorage&        levelStorage
     );
 
-    MCAPI void _updateAsyncList(
+    MCNAPI void _updateAsyncList(
         ::LevelStorage&                                              levelStorage,
         ::Dimension&                                                 dimension,
         ::std::function<::ChunksLoadedStatus(::ChunkLoadedRequest&)> chunksLoadedCheckFunction
     );
 
-    MCAPI void _updateTickingList(
+    MCNAPI void _updateTickingList(
         ::ServerLevel&                                               serverLevel,
         ::Dimension&                                                 dimension,
         ::std::function<::ChunksLoadedStatus(::ChunkLoadedRequest&)> chunksLoadedCheckFunction
     );
 
-    MCAPI ::QueueRequestResult queueRequestOrExecuteAction(
+    MCNAPI ::QueueRequestResult queueRequestOrExecuteAction(
         ::ChunkLoadedRequest chunkLoadedRequest,
         ::ServerLevel&       serverLevel,
         ::Dimension&         dimension

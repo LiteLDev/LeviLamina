@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/v2/HeightProvider.h"
+#include "mc/world/level/levelgen/v2/VerticalAnchor.h"
 
 // auto generated forward declare list
 // clang-format off
 class IRandom;
-namespace br::worldgen { class VerticalAnchor; }
 namespace br::worldgen { class WorldGenContext; }
 // clang-format on
 
@@ -36,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string toString() const;
+    MCNAPI ::std::string toString() const;
     // NOLINTEND
 
 public:
@@ -48,13 +48,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $sample(::IRandom& randomSource, ::br::worldgen::WorldGenContext const& heightAccessor) const;
+    MCNAPI int $sample(::IRandom& randomSource, ::br::worldgen::WorldGenContext const& heightAccessor) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

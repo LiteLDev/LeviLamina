@@ -28,21 +28,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI TimeAndValue2();
+        MCNAPI TimeAndValue2();
 
-        MCAPI ~TimeAndValue2();
+        MCNAPI ~TimeAndValue2();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void* $ctor();
+        MCNAPI void* $ctor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -62,23 +62,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BPSTracker();
+    MCNAPI BPSTracker();
 
-    MCAPI void Push1(uint64 time, uint64 value1);
+    MCNAPI void Push1(uint64 time, uint64 value1);
 
-    MCAPI ~BPSTracker();
+    MCNAPI ~BPSTracker();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -150,7 +150,7 @@ enum class BlockShape : int {
     BambooBlock                 = 143,
     ChiseledBookshelf           = 144,
     DecoratedPot                = 145,
-    PinkPetals                  = 146,
+    FlowerBed                   = 146,
     CalibratedSculkSensor       = 147,
     PitcherCrop                 = 148,
     PitcherPlant                = 149,
@@ -160,5 +160,6 @@ enum class BlockShape : int {
     PaleMossCarpet              = 153,
     Eyeblossom                  = 154,
     DoublesidedWideCrossTexture = 155,
-    Count                       = 156,
+    FireflyBush                 = 156,
+    Count                       = 157,
 };

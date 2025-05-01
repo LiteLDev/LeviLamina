@@ -37,15 +37,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void containerContentChanged(::Actor& actor);
+    MCNAPI void containerContentChanged(::Actor& actor);
 
-    MCAPI void validateFlyEnabledItem(::Actor& actor);
+    MCNAPI void validateFlyEnabledItem(::Actor& actor);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void initializeEntity(::EntityContext& entity);
+    MCNAPI static void initializeEntity(::EntityContext& entity);
     // NOLINTEND
 
 public:
@@ -57,12 +57,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $containerContentChanged(int);
+    MCNAPI void $containerContentChanged(int);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

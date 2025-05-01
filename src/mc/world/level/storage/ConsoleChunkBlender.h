@@ -39,21 +39,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ConsoleChunkBlender();
+    MCNAPI ConsoleChunkBlender();
 
-    MCAPI void _blendChunkEnd4J(::LevelChunk& generatedChunk, ::LevelChunk& lc);
+    MCNAPI void _blendChunkEnd4J(::LevelChunk& generatedChunk, ::LevelChunk& lc);
 
-    MCAPI void _blendChunkNether4J(::LevelChunk& generatedChunk, ::LevelChunk& lc);
+    MCNAPI void _blendChunkNether4J(::LevelChunk& generatedChunk, ::LevelChunk& lc);
 
-    MCAPI void _blendChunkOverworld(
+    MCNAPI void _blendChunkOverworld(
         ::LevelChunk&                          generatedChunk,
         ::LevelChunk&                          lc,
         ::ConsoleChunkBlender::ShiftBlockTypes shiftBlockType
     );
 
-    MCAPI void _copyColumnFromGeneratedChunkNether(::LevelChunk& generatedChunk, ::LevelChunk& lc, int x, int z);
+    MCNAPI void _copyColumnFromGeneratedChunkNether(::LevelChunk& generatedChunk, ::LevelChunk& lc, int x, int z);
 
-    MCAPI void _copyColumnFromGeneratedChunkOverworld(
+    MCNAPI void _copyColumnFromGeneratedChunkOverworld(
         ::LevelChunk&                          generatedChunk,
         ::LevelChunk&                          lc,
         int                                    x,
@@ -61,18 +61,18 @@ public:
         ::ConsoleChunkBlender::ShiftBlockTypes shiftBlockType
     );
 
-    MCAPI ::ChunkLocalHeight _findHighestStoneOrBedrockHeight(::LevelChunk& lc, int x, int z);
+    MCNAPI ::ChunkLocalHeight _findHighestStoneOrBedrockHeight(::LevelChunk& lc, int x, int z);
 
-    MCAPI ::ChunkLocalHeight _findTopMostWaterHeight(
+    MCNAPI ::ChunkLocalHeight _findTopMostWaterHeight(
         ::LevelChunk&                                     lc,
         int                                               x,
         int                                               z,
         ::std::unordered_set<::BlockLegacy const*> const& waterBlocks
     );
 
-    MCAPI void _prepInterpTable();
+    MCNAPI void _prepInterpTable();
 
-    MCAPI void _shiftColumnBySetBlocks(
+    MCNAPI void _shiftColumnBySetBlocks(
         ::LevelChunk&                          lc,
         int                                    x,
         int                                    z,
@@ -83,18 +83,18 @@ public:
         ::OverworldBlendRules const&           blendRules
     );
 
-    MCAPI ~ConsoleChunkBlender();
+    MCNAPI ~ConsoleChunkBlender();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

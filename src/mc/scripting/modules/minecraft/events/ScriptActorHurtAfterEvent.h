@@ -28,37 +28,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorHurtAfterEvent(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent const&);
+    MCNAPI ScriptActorHurtAfterEvent(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent const&);
 
-    MCAPI ScriptActorHurtAfterEvent(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&&);
+    MCNAPI ScriptActorHurtAfterEvent(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&&);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&&);
 
-    MCAPI ~ScriptActorHurtAfterEvent();
+    MCNAPI ~ScriptActorHurtAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptActorHurtAfterEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptActorHurtAfterEvent> bind();
 
-    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptActorHurtAfterEvent>
+    MCNAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptActorHurtAfterEvent>
     bindV010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent const&);
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

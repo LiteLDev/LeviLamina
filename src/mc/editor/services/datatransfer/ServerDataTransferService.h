@@ -48,13 +48,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~RegisteredCollection();
+        MCNAPI ~RegisteredCollection();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -75,13 +75,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~PendingDataRequest();
+        MCNAPI ~PendingDataRequest();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -138,13 +138,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ServerDataTransferService(::Editor::ServiceProviderCollection& providers);
+    MCNAPI explicit ServerDataTransferService(::Editor::ServiceProviderCollection& providers);
 
-    MCAPI void _onDataRequestResponsePayloadReceived(
+    MCNAPI void _onDataRequestResponsePayloadReceived(
         ::Editor::Network::DataTransferServiceDataRequestResponsePayload const& payload
     );
 
-    MCAPI void
+    MCNAPI void
     _onRegisterCollectionPayloadReceived(::Editor::Network::DataTransferServiceRegisterCollectionPayload const& payload
     );
     // NOLINTEND
@@ -152,45 +152,45 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCFOLD ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCAPI void $requestData(
+    MCNAPI void $requestData(
         ::std::string const& collectionName,
         ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::string const&)> const& callback
     );
 
-    MCAPI ::Scripting::Result<::std::string const, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<::std::string const, ::Scripting::Error>
     $requestSchema(::std::string const& collectionName);
 
-    MCAPI ::Scripting::Result<void> $sendData(::std::string const& collectionName, ::std::string const& jsonData);
+    MCNAPI ::Scripting::Result<void> $sendData(::std::string const& collectionName, ::std::string const& jsonData);
 
-    MCAPI ::Scripting::Result<void> $sendDataToClipboard(::std::string const& jsonData);
+    MCNAPI ::Scripting::Result<void> $sendDataToClipboard(::std::string const& jsonData);
 
-    MCAPI ::std::vector<::Editor::ScriptModule::ScriptTransferCollectionNameData> $getRegisteredCollections() const;
+    MCNAPI ::std::vector<::Editor::ScriptModule::ScriptTransferCollectionNameData> $getRegisteredCollections() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForServerDataTransferServiceProvider();
+    MCNAPI static void** $vftableForServerDataTransferServiceProvider();
 
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

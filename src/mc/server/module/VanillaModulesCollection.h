@@ -47,12 +47,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _setupActorMoveModule(
+    MCNAPI void _setupActorMoveModule(
         ::WeakRef<::EntityRegistry>                        registry,
         ::VanillaSystemsRegistration::RegistrationOptions& options
     );
 
-    MCAPI void
+    MCNAPI void
     _setupVanillaSystemsEventing(::EntityRegistry& registry, ::Bedrock::NonOwnerPointer<::IMinecraftEventing> eventing);
     // NOLINTEND
 
@@ -65,7 +65,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init(
+    MCNAPI void $init(
         ::WeakRef<::EntityRegistry>                        registry,
         ::VanillaSystemsRegistration::RegistrationOptions& options,
         ::Bedrock::NonOwnerPointer<::IMinecraftEventing>   eventing
@@ -75,6 +75,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

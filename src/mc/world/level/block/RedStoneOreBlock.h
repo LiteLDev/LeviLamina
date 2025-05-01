@@ -12,10 +12,12 @@ class BlockActor;
 class BlockPos;
 class BlockSource;
 class EntityContext;
+class Experiments;
 class ItemInstance;
 class Player;
 class Random;
 struct BlockAnimateTickData;
+namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class RedStoneOreBlock : public ::BlockLegacy {
@@ -34,9 +36,6 @@ public:
     // vIndex: 134
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 139
-    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
-
     // vIndex: 137
     virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
@@ -49,8 +48,11 @@ public:
     // vIndex: 46
     virtual bool canBeOriginalSurface() const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 148
     virtual void _lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const;
+
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
     virtual ~RedStoneOreBlock() /*override*/ = default;
@@ -59,7 +61,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _poofParticles(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void _poofParticles(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -71,26 +75,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
+    MCNAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
 
-    MCAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
+    MCNAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
-    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
+    MCNAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCNAPI bool $canBeOriginalSurface() const;
 
-    MCFOLD bool $canBeOriginalSurface() const;
+    MCNAPI void $_lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $_lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

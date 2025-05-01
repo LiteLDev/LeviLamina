@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 #include "mc/world/level/block/actor/PistonState.h"
 
@@ -11,7 +12,6 @@
 class AABB;
 class Actor;
 class BlockActorDataPacket;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
@@ -50,22 +50,22 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    // vIndex: 31
+    // vIndex: 32
     virtual ::PistonBlockActor* getOwningPiston(::BlockSource&) /*override*/;
 
-    // vIndex: 30
+    // vIndex: 31
     virtual ::PistonBlockActor const* getOwningPiston(::BlockSource&) const /*override*/;
 
-    // vIndex: 43
+    // vIndex: 44
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -75,31 +75,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PistonBlockActor(::BlockPos const& pos, bool isSticky);
+    MCNAPI PistonBlockActor(::BlockPos const& pos, bool isSticky);
 
-    MCAPI bool _attachedBlockWalker(
+    MCNAPI bool _attachedBlockWalker(
         ::BlockSource&    region,
         ::BlockPos const& curPos,
         uchar             curBranchFacing,
         uchar             pistonMoveFacing
     );
 
-    MCAPI bool _checkAttachedBlocks(::BlockSource& region);
+    MCNAPI bool _checkAttachedBlocks(::BlockSource& region);
 
-    MCAPI void _checkInceptionAchievement(::BlockActor& be, ::BlockSource& region, ::BlockPos const& facingDir);
+    MCNAPI void _checkInceptionAchievement(::BlockActor& be, ::BlockSource& region, ::BlockPos const& facingDir);
 
-    MCAPI bool _handleSlimeConnections(
+    MCNAPI bool _handleSlimeConnections(
         ::BlockSource&    region,
         ::BlockPos const& curPos,
         uchar             curBranchFacing,
         uchar             pistonMoveFacing
     );
 
-    MCAPI bool _hasBlockAttached(::BlockPos const& blockPos);
+    MCNAPI bool _hasBlockAttached(::BlockPos const& blockPos);
 
-    MCAPI void _moveCollidedEntities(::BlockSource& region);
+    MCNAPI void _moveCollidedEntities(::BlockSource& region);
 
-    MCAPI void _moveCollidedEntitiesHelper(
+    MCNAPI void _moveCollidedEntitiesHelper(
         ::BlockSource&    region,
         ::AABB const&     insideBlockAABB,
         ::BlockPos const& facingDir,
@@ -107,21 +107,21 @@ public:
         uint              searchHeight
     );
 
-    MCAPI void _sortAttachedBlocks(::BlockSource& region);
+    MCNAPI void _sortAttachedBlocks(::BlockSource& region);
 
-    MCAPI void _spawnBlocks(::BlockSource& region);
+    MCNAPI void _spawnBlocks(::BlockSource& region);
 
-    MCAPI void _spawnMovingBlock(::BlockSource& region, ::BlockPos const& blockPos);
+    MCNAPI void _spawnMovingBlock(::BlockSource& region, ::BlockPos const& blockPos);
 
-    MCAPI void _spawnMovingBlocks(::BlockSource& region);
+    MCNAPI void _spawnMovingBlocks(::BlockSource& region);
 
-    MCAPI void moveEntityLastProgress(::Actor& entity, ::Vec3 delta);
+    MCNAPI void moveEntityLastProgress(::Actor& entity, ::Vec3 delta);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _spawnResourcesForBlockAndExtraBlock(
+    MCNAPI static void _spawnResourcesForBlockAndExtraBlock(
         ::BlockSource&                region,
         ::BlockPos const&             blockPos,
         ::Randomize                   randomize,
@@ -132,38 +132,38 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos, bool isSticky);
+    MCNAPI void* $ctor(::BlockPos const& pos, bool isSticky);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI void $onRemoved(::BlockSource& region);
+    MCNAPI void $onRemoved(::BlockSource& region);
 
-    MCFOLD ::PistonBlockActor* $getOwningPiston(::BlockSource&);
+    MCNAPI ::PistonBlockActor* $getOwningPiston(::BlockSource&);
 
-    MCFOLD ::PistonBlockActor const* $getOwningPiston(::BlockSource&) const;
+    MCNAPI ::PistonBlockActor const* $getOwningPiston(::BlockSource&) const;
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

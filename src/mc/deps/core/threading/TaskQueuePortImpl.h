@@ -31,48 +31,48 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool AppendEntry(::TaskQueuePortImpl::QueueEntry const&, uint64);
+    MCNAPI bool AppendEntry(::TaskQueuePortImpl::QueueEntry const&, uint64);
 
-    MCAPI bool AppendWaitRegistrationEntry(::TaskQueuePortImpl::WaitRegistration*);
+    MCNAPI bool AppendWaitRegistrationEntry(::TaskQueuePortImpl::WaitRegistration*);
 
-    MCAPI void CancelPendingEntries(::ITaskQueuePortContext*, bool);
+    MCNAPI void CancelPendingEntries(::ITaskQueuePortContext*, bool);
 
-    MCAPI bool DrainOneItem(::OS::ThreadPoolActionStatus&);
+    MCNAPI bool DrainOneItem(::OS::ThreadPoolActionStatus&);
 
-    MCAPI long Initialize(::XTaskQueueDispatchMode);
+    MCNAPI long Initialize(::XTaskQueueDispatchMode);
 
-    MCAPI long InitializeWaitRegistration(::TaskQueuePortImpl::WaitRegistration*);
+    MCNAPI long InitializeWaitRegistration(::TaskQueuePortImpl::WaitRegistration*);
 
-    MCAPI void NotifyItemQueued();
+    MCNAPI void NotifyItemQueued();
 
-    MCAPI void ProcessThreadPoolCallback(::OS::ThreadPoolActionStatus&);
+    MCNAPI void ProcessThreadPoolCallback(::OS::ThreadPoolActionStatus&);
 
-    MCAPI void ScheduleTermination(::TaskQueuePortImpl::TerminationEntry*);
+    MCNAPI void ScheduleTermination(::TaskQueuePortImpl::TerminationEntry*);
 
-    MCAPI void SubmitPendingCallback();
+    MCNAPI void SubmitPendingCallback();
 
-    MCAPI TaskQueuePortImpl();
+    MCNAPI TaskQueuePortImpl();
 
-    MCAPI bool Wait(::ITaskQueuePortContext*, uint);
+    MCNAPI bool Wait(::ITaskQueuePortContext*, uint);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void EraseQueue(::LocklessQueue<::TaskQueuePortImpl::QueueEntry>*);
+    MCNAPI static void EraseQueue(::LocklessQueue<::TaskQueuePortImpl::QueueEntry>*);
 
-    MCAPI static void WaitCallback(::_TP_CALLBACK_INSTANCE*, void*, ::_TP_WAIT*, ulong);
+    MCNAPI static void WaitCallback(::_TP_CALLBACK_INSTANCE*, void*, ::_TP_WAIT*, ulong);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

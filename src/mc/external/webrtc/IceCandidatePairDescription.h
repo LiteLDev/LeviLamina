@@ -28,25 +28,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI IceCandidatePairDescription(::webrtc::IceCandidatePairDescription const&);
+    MCNAPI IceCandidatePairDescription(::webrtc::IceCandidatePairDescription const&);
 
-    MCAPI IceCandidatePairDescription(::webrtc::IceCandidateType, ::webrtc::IceCandidateType);
+    MCNAPI IceCandidatePairDescription(::webrtc::IceCandidateType, ::webrtc::IceCandidateType);
 
-    MCAPI ~IceCandidatePairDescription();
+    MCNAPI ~IceCandidatePairDescription();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::IceCandidatePairDescription const&);
+    MCNAPI void* $ctor(::webrtc::IceCandidatePairDescription const&);
 
-    MCAPI void* $ctor(::webrtc::IceCandidateType, ::webrtc::IceCandidateType);
+    MCNAPI void* $ctor(::webrtc::IceCandidateType, ::webrtc::IceCandidateType);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

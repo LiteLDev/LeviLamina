@@ -79,39 +79,39 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $generateKeyPair(::std::string& privateKey, ::std::string& publicKey);
+    MCNAPI bool $generateKeyPair(::std::string& privateKey, ::std::string& publicKey);
 
-    MCAPI ::std::string $encryptData(
+    MCNAPI ::std::string $encryptData(
         ::std::string const&               publicKey,
         ::std::string const&               data,
         ::Crypto::Asymmetric::Padding      paddingType,
         ::Crypto::Asymmetric::PubKeyFormat keyFormat
     );
 
-    MCAPI ::std::string
+    MCNAPI ::std::string
     $decryptData(::std::string const& privateKey, ::std::string const& data, ::Crypto::Asymmetric::Padding paddingType);
 
-    MCAPI ::std::string $signData(
+    MCNAPI ::std::string $signData(
         ::std::string const&                          privateKey,
         ::std::string const&                          data,
         ::Crypto::Hash::HashType                      hash,
         ::Crypto::Asymmetric::PrivateKeySigningFormat format
     );
 
-    MCAPI bool $verifyData(
+    MCNAPI bool $verifyData(
         ::std::string const&     publicKey,
         ::std::string const&     signature,
         ::std::string const&     data,
         ::Crypto::Hash::HashType hash
     );
 
-    MCAPI ::std::string $computeSharedSecret(::std::string const& myPrivateKey, ::std::string const& peerPublicKey);
+    MCNAPI ::std::string $computeSharedSecret(::std::string const& myPrivateKey, ::std::string const& peerPublicKey);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -29,11 +29,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void clearAllTestMethods();
+    MCNAPI void clearAllTestMethods();
 
-    MCAPI void generateTagsList();
+    MCNAPI void generateTagsList();
 
-    MCAPI bool
+    MCNAPI bool
     registerTestMethod(::std::string const& className, ::std::shared_ptr<::gametest::BaseGameTestFunction> fn);
     // NOLINTEND
 };

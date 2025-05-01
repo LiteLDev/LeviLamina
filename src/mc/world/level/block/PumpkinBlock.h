@@ -59,17 +59,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canDispense(::BlockSource& region, ::Vec3 const& pos, uchar) const;
+    MCNAPI bool _canDispense(::BlockSource& region, ::Vec3 const& pos, uchar) const;
 
-    MCAPI bool _canSpawnGolem(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool _canSpawnGolem(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _isGolemHeadBlock(::BlockSource& region, ::BlockPos const&, ::Block const& block);
+    MCNAPI static bool _isGolemHeadBlock(::BlockSource& region, ::BlockPos const&, ::Block const& block);
     // NOLINTEND
 
 public:
@@ -87,24 +87,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
+    MCNAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCFOLD bool $canConnect(::Block const&, uchar, ::Block const&) const;
+    MCNAPI bool $canConnect(::Block const&, uchar, ::Block const&) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

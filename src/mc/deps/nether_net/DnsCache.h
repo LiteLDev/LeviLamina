@@ -26,13 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     Add(::std::string_view                      hostname,
         int                                     family,
         ::std::vector<::rtc::IPAddress> const&  result,
         ::std::chrono::steady_clock::time_point expiration);
 
-    MCAPI bool TryGet(::std::string_view hostname, int family, ::std::vector<::rtc::IPAddress>* outResult);
+    MCNAPI bool TryGet(::std::string_view hostname, int family, ::std::vector<::rtc::IPAddress>* outResult);
     // NOLINTEND
 };
 

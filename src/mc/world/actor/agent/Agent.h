@@ -108,7 +108,7 @@ public:
     virtual void kill() /*override*/;
 
     // vIndex: 55
-    virtual void setOwner(::ActorUniqueID const id) /*override*/;
+    virtual void setOwner(::ActorUniqueID const ownerId) /*override*/;
 
     // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
@@ -123,45 +123,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Agent(
+    MCNAPI Agent(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI bool _isOnGround(::AABB const& aabb);
+    MCNAPI bool _isOnGround(::AABB const& aabb);
 
-    MCAPI ::Vec3 doServerTravel(::AABB const& aabb, ::AgentTravelType travelType);
+    MCNAPI ::Vec3 doServerTravel(::AABB const& aabb, ::AgentTravelType travelType);
 
-    MCAPI float getMoveSpeedScalar() const;
+    MCNAPI float getMoveSpeedScalar() const;
 
-    MCAPI int getSwingAnimationDuration() const;
+    MCNAPI int getSwingAnimationDuration() const;
 
-    MCAPI void handleAnimationEvent(::AgentAnimation anim);
+    MCNAPI void handleAnimationEvent(::AgentAnimation anim);
 
-    MCAPI bool isArmSwinging() const;
+    MCNAPI bool isArmSwinging() const;
 
-    MCAPI bool isShrugging() const;
+    MCNAPI bool isShrugging() const;
 
-    MCAPI void setNameTagFromOwner(::Player const& player);
+    MCNAPI void setNameTagFromOwner(::Player const& player);
 
-    MCAPI void shrug();
+    MCNAPI void shrug();
 
-    MCAPI void swingArm();
+    MCNAPI void swingArm();
 
-    MCAPI void tryFireCreateEvent(::Player& player);
+    MCNAPI void tryFireCreateEvent(::Player& player);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Agent* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
+    MCNAPI static ::Agent* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -177,46 +177,46 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::mce::Color $getNameTagTextColor() const;
+    MCNAPI ::mce::Color $getNameTagTextColor() const;
 
-    MCFOLD bool $canShowNameTag() const;
+    MCNAPI bool $canShowNameTag() const;
 
-    MCFOLD bool $canBePulledIntoVehicle() const;
+    MCNAPI bool $canBePulledIntoVehicle() const;
 
-    MCFOLD bool $canBeAffected(uint id) const;
+    MCNAPI bool $canBeAffected(uint id) const;
 
-    MCFOLD void $knockback(::Actor*, int, float, float, float, float, float);
+    MCNAPI void $knockback(::Actor*, int, float, float, float, float, float);
 
-    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI bool $createAIGoals();
+    MCNAPI bool $createAIGoals();
 
-    MCAPI void $setCarriedItem(::ItemStack const& item);
+    MCNAPI void $setCarriedItem(::ItemStack const& item);
 
-    MCAPI void $normalTick();
+    MCNAPI void $normalTick();
 
-    MCAPI void $baseTick();
+    MCNAPI void $baseTick();
 
-    MCAPI void $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int entityType, bool keepVelocity);
+    MCNAPI void $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int entityType, bool keepVelocity);
 
-    MCFOLD bool $canExistWhenDisallowMob() const;
+    MCNAPI bool $canExistWhenDisallowMob() const;
 
-    MCFOLD bool $isTargetable() const;
+    MCNAPI bool $isTargetable() const;
 
-    MCAPI bool $isInvisible() const;
+    MCNAPI bool $isInvisible() const;
 
-    MCAPI void $kill();
+    MCNAPI void $kill();
 
-    MCAPI void $setOwner(::ActorUniqueID const id);
+    MCNAPI void $setOwner(::ActorUniqueID const ownerId);
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCNAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCAPI ::std::unique_ptr<::BodyControl> $initBodyControl();
+    MCNAPI ::std::unique_ptr<::BodyControl> $initBodyControl();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

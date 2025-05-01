@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/LiquidBlock.h"
+#include "mc/world/level/block/LiquidBlockBase.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,18 +11,27 @@ class Actor;
 class BlockPos;
 class BlockSource;
 class Experiments;
-class Random;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class LiquidBlockDynamic : public ::LiquidBlock {
+class LiquidBlockDynamic : public ::LiquidBlockBase {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk9b9ad6;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    LiquidBlockDynamic& operator=(LiquidBlockDynamic const&);
+    LiquidBlockDynamic(LiquidBlockDynamic const&);
+    LiquidBlockDynamic();
+
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    // vIndex: 149
+    // vIndex: 147
     virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const /*override*/;
 
     // vIndex: 131
@@ -35,32 +44,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int _getSlopeDistance(::BlockSource& region, ::BlockPos const& pos, int pass, int from) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI bool _isLiquidBlocking(
-        ::BlockSource&    region,
-        ::BlockPos const& pos,
-        ::BlockPos const& flowFromPos,
-        uchar             flowFromDirection
-    ) const;
-
-    MCAPI void _setStatic(::BlockSource& region, ::BlockPos const& pos, bool usingExtraData) const;
-
-    MCAPI void _spread(::BlockSource& region, ::BlockPos const& pos, int depth, bool preserveExisting) const;
-
-    MCAPI bool _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool onlyDetectStatic) const;
-
-    MCAPI void _trySpreadTo(
-        ::BlockSource&    region,
-        ::BlockPos const& pos,
-        int               neighbor,
-        ::BlockPos const& flowFromPos,
-        uchar             flowFromDirection
-    ) const;
-
-    MCAPI ::std::array<bool, 4> getSpread(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -72,16 +58,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
 
-    MCFOLD void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

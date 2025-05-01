@@ -47,6 +47,17 @@ def format_file(file_paths, clang_format_path):
         print(f"Failed to format {file_paths}: {e}")
 
 
+def convert_line_endings(input_file, output_file):
+    with open(input_file, 'r', encoding='utf-8') as infile:
+        content = infile.read()
+
+    # 先将所有 \r\n 替换为 \n（标准化），再统一替换为 \r\n
+    content = content.replace('\r\n', '\n').replace('\n', '\r\n')
+
+    with open(output_file, 'w', encoding='utf-8', newline='') as outfile:
+        outfile.write(content)
+
+
 def format_code_files(
     directory, clang_format_path, extensions=(".cpp", ".c", ".h"), threads=None
 ):
@@ -64,6 +75,10 @@ def format_code_files(
         for i in range(0, len(code_files), FILE_COUNT_PER_TASK):
             file_batch = code_files[i: i + FILE_COUNT_PER_TASK]
             executor.submit(format_file, file_batch, clang_format_path)
+
+    with ThreadPoolExecutor(max_workers=threads) as executor:
+        for file in code_files:
+            executor.submit(convert_line_endings, file, file)
 
 
 if __name__ == "__main__":

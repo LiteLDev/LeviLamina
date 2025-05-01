@@ -16,39 +16,39 @@ class I420Buffer {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void CropAndScaleFrom(::webrtc::I420BufferInterface const&, int, int, int, int);
+    MCNAPI void CropAndScaleFrom(::webrtc::I420BufferInterface const&, int, int, int, int);
 
-    MCAPI I420Buffer(int, int);
+    MCNAPI I420Buffer(int, int);
 
-    MCAPI I420Buffer(int, int, int, int, int);
+    MCNAPI I420Buffer(int, int, int, int, int);
 
-    MCAPI uchar* MutableDataU();
+    MCNAPI uchar* MutableDataU();
 
-    MCAPI uchar* MutableDataV();
+    MCNAPI uchar* MutableDataV();
 
-    MCAPI uchar* MutableDataY();
+    MCNAPI uchar* MutableDataY();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::scoped_refptr<::webrtc::I420Buffer> Create(int, int);
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::I420Buffer> Create(int, int);
 
-    MCAPI static void SetBlack(::webrtc::I420Buffer*);
+    MCNAPI static void SetBlack(::webrtc::I420Buffer*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int, int);
+    MCNAPI void* $ctor(int, int);
 
-    MCAPI void* $ctor(int, int, int, int, int);
+    MCNAPI void* $ctor(int, int, int, int, int);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

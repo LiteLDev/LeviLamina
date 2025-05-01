@@ -113,72 +113,72 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EditorPersistenceService(::Editor::ServiceProviderCollection& providers);
+    MCNAPI explicit EditorPersistenceService(::Editor::ServiceProviderCollection& providers);
 
-    MCAPI void _updatePersistData(::Editor::Persistence::PersistentData const& data);
+    MCNAPI void _updatePersistData(::Editor::Persistence::PersistentData const& data);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result<void> $ready();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCFOLD ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     $listenForPersistDataChanged(::std::function<void(::Editor::Persistence::PersistentData const&)> func);
 
-    MCAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $listenForPersistDataRemoved(
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $listenForPersistDataRemoved(
         ::std::function<void(::HashedString const&, ::Editor::Services::PersistentDataType)> func
     );
 
-    MCAPI ::Scripting::Result<void> $addOrUpdatePersistData(::Editor::Persistence::PersistentData const& data);
+    MCNAPI ::Scripting::Result<void> $addOrUpdatePersistData(::Editor::Persistence::PersistentData const& data);
 
-    MCAPI ::Scripting::Result<void> $addPersistData(::Editor::Persistence::PersistentData const& data);
+    MCNAPI ::Scripting::Result<void> $addPersistData(::Editor::Persistence::PersistentData const& data);
 
-    MCAPI ::Scripting::Result<void> $updatePersistData(::Editor::Persistence::PersistentData const& data);
+    MCNAPI ::Scripting::Result<void> $updatePersistData(::Editor::Persistence::PersistentData const& data);
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     $removePersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType);
 
-    MCAPI ::Scripting::Result<::std::string, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<::std::string, ::Scripting::Error>
     $getPersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) const;
 
-    MCAPI ::Scripting::Result<bool, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<bool, ::Scripting::Error>
     $hasData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) const;
 
-    MCAPI ::Scripting::Result<::std::vector<::HashedString>, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<::std::vector<::HashedString>, ::Scripting::Error>
     $getKeysStartWith(::std::string const prefix, ::Editor::Services::PersistentDataType const dataType) const;
 
-    MCFOLD void $_removePersistData(::HashedString const&, ::Editor::Services::PersistentDataType const);
+    MCNAPI void $_removePersistData(::HashedString const&, ::Editor::Services::PersistentDataType const);
 
-    MCFOLD void $_tick(::Editor::ServiceProviderCollection&);
+    MCNAPI void $_tick(::Editor::ServiceProviderCollection&);
 
-    MCFOLD ::std::unique_ptr<::cereal::ReflectionCtx>& $getCerealContext();
+    MCNAPI ::std::unique_ptr<::cereal::ReflectionCtx>& $getCerealContext();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEditorPersistenceServiceProvider();
+    MCNAPI static void** $vftableForEditorPersistenceServiceProvider();
 
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

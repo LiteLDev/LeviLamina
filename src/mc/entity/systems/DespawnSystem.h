@@ -26,7 +26,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::DespawnComponent& despawnComponent);
+    MCNAPI static void _tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::DespawnComponent& despawnComponent);
     // NOLINTEND
 
 public:
@@ -38,12 +38,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCNAPI void $tick(::EntityRegistry& registry);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

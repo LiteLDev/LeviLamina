@@ -38,24 +38,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockPaletteItemChangedPayload(::Editor::Network::BlockPaletteItemChangedPayload const&);
+    MCNAPI BlockPaletteItemChangedPayload(::Editor::Network::BlockPaletteItemChangedPayload const&);
 
-    MCAPI BlockPaletteItemChangedPayload(
+    MCNAPI BlockPaletteItemChangedPayload(
         ::HashedString const&                                                                          paletteId,
         int                                                                                            index,
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
     );
 
-    MCAPI ::Editor::Network::BlockPaletteItemChangedPayload&
+    MCNAPI ::Editor::Network::BlockPaletteItemChangedPayload&
     operator=(::Editor::Network::BlockPaletteItemChangedPayload const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::Network::BlockPaletteItemChangedPayload const&);
+    MCNAPI void* $ctor(::Editor::Network::BlockPaletteItemChangedPayload const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::HashedString const&                                                                          paletteId,
         int                                                                                            index,
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
@@ -65,13 +65,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

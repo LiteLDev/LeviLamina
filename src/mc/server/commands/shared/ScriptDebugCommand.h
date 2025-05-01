@@ -48,7 +48,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _handleDebuggerAttach(
+    MCNAPI void _handleDebuggerAttach(
         ::IScriptDebugger*                   debugger,
         ::std::string const&                 locPrefix,
         ::ScriptDebugCommand::DebuggerAction action,
@@ -57,14 +57,14 @@ public:
         ::CommandOutput&                     output
     ) const;
 
-    MCAPI void _handleDiagnosticsAction(
+    MCNAPI void _handleDiagnosticsAction(
         ::ScriptDiagnosticsPublishToFile*       diagnosticsPublishToFile,
         ::std::string const&                    locPrefix,
         ::ScriptDebugCommand::DiagnosticsAction action,
         ::CommandOutput&                        output
     ) const;
 
-    MCAPI void _handleProfilerAction(
+    MCNAPI void _handleProfilerAction(
         ::IScriptDebugger*                   debugger,
         ::std::string const&                 locPrefix,
         ::ScriptDebugCommand::ProfilerAction action,
@@ -75,6 +75,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

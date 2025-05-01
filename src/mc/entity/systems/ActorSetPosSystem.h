@@ -141,11 +141,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
+    MCNAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
 
-    MCAPI static void moveHitboxTo(::Vec3 const& pos, ::std::vector<::Hitbox>& hitboxes);
+    MCNAPI static void moveHitboxTo(::Vec3 const& pos, ::std::vector<::Hitbox>& hitboxes);
 
-    MCAPI static void setPosition(::EntityContext& entity, ::Vec3 const& position, bool isClientSide);
+    MCNAPI static void setPosition(::EntityContext& entity, ::Vec3 const& position, bool isClientSide);
     // NOLINTEND
 
 public:
@@ -157,7 +157,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $singleTick(
+    MCNAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<
                 ::ActorAddedFlagComponent,
@@ -185,35 +185,35 @@ public:
         ::StrictEntityContext&   entityContext
     );
 
-    MCAPI void $tick(::StrictExecutionContext<
-                     ::Filter<
-                         ::ActorAddedFlagComponent,
-                         ::ActorRemovedFlagComponent,
-                         ::LocalPlayerComponent,
-                         ::PaintingFlagComponent,
-                         ::PlayerComponent,
-                         ::ShulkerFlagComponent>,
-                     ::Read<::ActorOwnerComponent, ::ChunkPositionComponent, ::OffsetsComponent>,
-                     ::Write<
-                         ::AABBShapeComponent,
-                         ::ActorSetPositionRequestComponent,
-                         ::HitboxComponent,
-                         ::StateVectorComponent,
-                         ::SynchedActorDataComponent,
-                         ::ActorDataFlagComponent,
-                         ::ActorDataDirtyFlagsComponent>,
-                     ::AddRemove<
-                         ::ActorChunkMoveFlagComponent,
-                         ::ActorLocalPlayerEntityMovedFlagComponent,
-                         ::ActorSetPositionRequestComponent>,
-                     ::GlobalRead<>,
-                     ::GlobalWrite<>,
-                     ::EntityFactoryT<>>& executionContext);
+    MCNAPI void $tick(::StrictExecutionContext<
+                      ::Filter<
+                          ::ActorAddedFlagComponent,
+                          ::ActorRemovedFlagComponent,
+                          ::LocalPlayerComponent,
+                          ::PaintingFlagComponent,
+                          ::PlayerComponent,
+                          ::ShulkerFlagComponent>,
+                      ::Read<::ActorOwnerComponent, ::ChunkPositionComponent, ::OffsetsComponent>,
+                      ::Write<
+                          ::AABBShapeComponent,
+                          ::ActorSetPositionRequestComponent,
+                          ::HitboxComponent,
+                          ::StateVectorComponent,
+                          ::SynchedActorDataComponent,
+                          ::ActorDataFlagComponent,
+                          ::ActorDataDirtyFlagsComponent>,
+                      ::AddRemove<
+                          ::ActorChunkMoveFlagComponent,
+                          ::ActorLocalPlayerEntityMovedFlagComponent,
+                          ::ActorSetPositionRequestComponent>,
+                      ::GlobalRead<>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& executionContext);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

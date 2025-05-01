@@ -91,23 +91,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ContainerRegistry(bool isClientSide);
+    MCNAPI explicit ContainerRegistry(bool isClientSide);
 
-    MCAPI ::DynamicTrackedContainer& _getOrCreate(
+    MCNAPI ::DynamicTrackedContainer& _getOrCreate(
         ::FullContainerName const&         id,
         ::StorageItemComponent*            storageItemComponent,
         ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
     );
 
-    MCAPI void _serverCleanUp(::std::function<void(::Packet&)> broadcastPacketFunction);
+    MCNAPI void _serverCleanUp(::std::function<void(::Packet&)> broadcastPacketFunction);
 
-    MCAPI void tick(::std::function<void(::Packet&)> broadcastPacketFunction);
+    MCNAPI void tick(::std::function<void(::Packet&)> broadcastPacketFunction);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void sendCleanupPackets(
+    MCNAPI static void sendCleanupPackets(
         ::std::function<void(::Packet&)> const&   broadcastPacketFunction,
         ::std::vector<::FullContainerName> const& removedContainers
     );
@@ -116,7 +116,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(bool isClientSide);
+    MCNAPI void* $ctor(bool isClientSide);
     // NOLINTEND
 
 public:
@@ -128,44 +128,44 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::ListTag>
+    MCNAPI ::std::unique_ptr<::ListTag>
     $serializeContainerContent(::FullContainerName const& name, ::SaveContext const& saveContext);
 
-    MCAPI ::std::optional<int> $getDynamicContainerWeight(::FullContainerName const& name);
+    MCNAPI ::std::optional<int> $getDynamicContainerWeight(::FullContainerName const& name);
 
-    MCAPI ::std::shared_ptr<::StorageItemContainerModel> $getModel(::FullContainerName const& name);
+    MCNAPI ::std::shared_ptr<::StorageItemContainerModel> $getModel(::FullContainerName const& name);
 
-    MCAPI ::std::shared_ptr<::FillingContainer> $getBackingContainer(::FullContainerName const& name);
+    MCNAPI ::std::shared_ptr<::FillingContainer> $getBackingContainer(::FullContainerName const& name);
 
-    MCAPI void $tryCreateEntry(
+    MCNAPI void $tryCreateEntry(
         ::StorageItemComponent*            storageItemComponent,
         ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent,
         ::FullContainerName const&         name
     );
 
-    MCAPI ::std::unique_ptr<::DynamicContainerManager> $createContainerManager(
+    MCNAPI ::std::unique_ptr<::DynamicContainerManager> $createContainerManager(
         ::FullContainerName const&         id,
         ::ItemStack const&                 storageItem,
         ::StorageItemComponent*            storageItemComponent,
         ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
     );
 
-    MCAPI uint $generateNewID();
+    MCNAPI uint $generateNewID();
 
-    MCAPI void $tryLoadSavedStorageItem(::ListTag const& contentData, ::FullContainerName const& name);
+    MCNAPI void $tryLoadSavedStorageItem(::ListTag const& contentData, ::FullContainerName const& name);
 
-    MCAPI void $setExpired(::std::vector<::FullContainerName> const& removedContainers);
+    MCNAPI void $setExpired(::std::vector<::FullContainerName> const& removedContainers);
 
-    MCFOLD uint64 $getSize();
+    MCNAPI uint64 $getSize();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIDynamicContainerSerialization();
+    MCNAPI static void** $vftableForIDynamicContainerSerialization();
 
-    MCAPI static void** $vftableForIContainerRegistryTracker();
+    MCNAPI static void** $vftableForIContainerRegistryTracker();
 
-    MCAPI static void** $vftableForIContainerRegistryAccess();
+    MCNAPI static void** $vftableForIContainerRegistryAccess();
     // NOLINTEND
 };

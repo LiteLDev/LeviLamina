@@ -29,38 +29,38 @@ public:
     // vIndex: 0
     virtual ~AttributeScriptActorComponent() /*override*/ = default;
 
-    // vIndex: 2
+    // vIndex: 4
     virtual ::Scripting::Result_deprecated<float> getCurrent() const;
 
-    // vIndex: 3
+    // vIndex: 5
     virtual ::Scripting::Result_deprecated<bool> setCurrent(float const& value) const;
 
-    // vIndex: 4
+    // vIndex: 6
     virtual ::Scripting::Result_deprecated<float> getValue() const;
 
-    // vIndex: 5
+    // vIndex: 7
     virtual ::Scripting::Result_deprecated<float> getEffectiveMinValue() const;
 
-    // vIndex: 6
+    // vIndex: 8
     virtual ::Scripting::Result_deprecated<float> getEffectiveMaxValue() const;
 
-    // vIndex: 7
+    // vIndex: 9
     virtual ::Scripting::Result<void> resetToMinValue() const;
 
-    // vIndex: 8
+    // vIndex: 10
     virtual ::Scripting::Result<void> resetToMaxValue() const;
 
-    // vIndex: 9
+    // vIndex: 11
     virtual ::Scripting::Result<void> resetToDefaultValue() const;
 
-    // vIndex: 1
+    // vIndex: 3
     virtual bool _isValid() const /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::AttributeScriptActorComponent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::AttributeScriptActorComponent> bind();
     // NOLINTEND
 
 public:
@@ -72,29 +72,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<float> $getCurrent() const;
+    MCNAPI ::Scripting::Result_deprecated<float> $getCurrent() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> $setCurrent(float const& value) const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $setCurrent(float const& value) const;
 
-    MCAPI ::Scripting::Result_deprecated<float> $getValue() const;
+    MCNAPI ::Scripting::Result_deprecated<float> $getValue() const;
 
-    MCAPI ::Scripting::Result_deprecated<float> $getEffectiveMinValue() const;
+    MCNAPI ::Scripting::Result_deprecated<float> $getEffectiveMinValue() const;
 
-    MCAPI ::Scripting::Result_deprecated<float> $getEffectiveMaxValue() const;
+    MCNAPI ::Scripting::Result_deprecated<float> $getEffectiveMaxValue() const;
 
-    MCAPI ::Scripting::Result<void> $resetToMinValue() const;
+    MCNAPI ::Scripting::Result<void> $resetToMinValue() const;
 
-    MCAPI ::Scripting::Result<void> $resetToMaxValue() const;
+    MCNAPI ::Scripting::Result<void> $resetToMaxValue() const;
 
-    MCAPI ::Scripting::Result<void> $resetToDefaultValue() const;
+    MCNAPI ::Scripting::Result<void> $resetToDefaultValue() const;
 
-    MCAPI bool $_isValid() const;
+    MCNAPI bool $_isValid() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
+
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockPos;
 class CompoundTag;
 // clang-format on
 
@@ -24,20 +26,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~StructureBlockInfo();
+    MCNAPI ~StructureBlockInfo();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::br::worldgen::StructureBlockInfo
+    MCNAPI static ::br::worldgen::StructureBlockInfo
     from(::BlockPos pos, ::Block const& state, ::Block const* extraBlockState);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

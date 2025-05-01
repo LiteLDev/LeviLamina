@@ -28,27 +28,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommonResourceDefinitionMap();
+    MCNAPI CommonResourceDefinitionMap();
 
-    MCAPI ::std::vector<::NamedMolangScript> const& getAnimateScriptArray() const;
+    MCNAPI ::std::vector<::NamedMolangScript> const& getAnimateScriptArray() const;
 
-    MCAPI void mergeAnimation(::HashedString const& name, ::ActorSkeletalAnimationPtr animationPtr);
+    MCNAPI void mergeAnimation(::HashedString const& name, ::ActorSkeletalAnimationPtr animationPtr);
 
-    MCAPI void
+    MCNAPI void
     mergeAnimationController(::HashedString const& name, ::ActorAnimationControllerPtr animationControllerPtr);
 
-    MCAPI ~CommonResourceDefinitionMap();
+    MCNAPI ~CommonResourceDefinitionMap();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -19,26 +19,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SchemaConverterCollection(::JsonUtil::SchemaConverterCollection const&);
+    MCNAPI SchemaConverterCollection(::JsonUtil::SchemaConverterCollection const&);
 
-    MCAPI ::JsonUtil::SchemaConverterCollection&
+    MCNAPI ::JsonUtil::SchemaConverterCollection&
     operator()(::std::string const& filterString, bool forceCaseInsensitive);
 
-    MCAPI ::JsonUtil::SchemaConverterCollection& operator()(uint64 maxIndex, uint64 minIndex, bool);
+    MCNAPI ::JsonUtil::SchemaConverterCollection& operator()(uint64 maxIndex, uint64 minIndex, bool);
 
-    MCAPI ~SchemaConverterCollection();
+    MCNAPI ~SchemaConverterCollection();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::JsonUtil::SchemaConverterCollection const&);
+    MCNAPI void* $ctor(::JsonUtil::SchemaConverterCollection const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

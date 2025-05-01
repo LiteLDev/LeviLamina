@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/world/item/ItemAcquisitionMethod.h"
+#include "mc/world/item/ItemInstance.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ItemInstance;
-class WeakEntityRef;
 // clang-format on
 
 struct ActorAcquiredItemEvent {
@@ -30,20 +30,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorAcquiredItemEvent(::ActorAcquiredItemEvent const&);
+    MCNAPI ActorAcquiredItemEvent(::ActorAcquiredItemEvent const&);
 
-    MCAPI ~ActorAcquiredItemEvent();
+    MCNAPI ~ActorAcquiredItemEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorAcquiredItemEvent const&);
+    MCNAPI void* $ctor(::ActorAcquiredItemEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

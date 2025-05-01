@@ -33,49 +33,49 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     File(::std::unique_ptr<::Core::FileImpl>&& uptFile, ::std::unique_ptr<::Core::FileSystemImpl>&& uptTransaction);
 
-    MCAPI ::Core::Result close();
+    MCNAPI ::Core::Result close();
 
-    MCAPI ::Core::Result getPosition(uint64* pPosition);
+    MCNAPI ::Core::Result getPosition(uint64* pPosition);
 
-    MCAPI ::Core::Result getSize(uint64* pSize);
+    MCNAPI ::Core::Result getSize(uint64* pSize);
 
-    MCAPI ::Core::Result
+    MCNAPI ::Core::Result
     open(::Core::PathView fileName, ::Core::FileOpenMode openMode, ::Core::FileBufferingMode bufferingMode);
 
-    MCAPI ::Core::File& operator=(::Core::File&& rhs);
+    MCNAPI ::Core::File& operator=(::Core::File&& rhs);
 
-    MCAPI ::Core::Result read(void* buf, uint64 numBytes, uint64* pNumBytesRead);
+    MCNAPI ::Core::Result read(void* buf, uint64 numBytes, uint64* pNumBytesRead);
 
-    MCAPI ::Core::Result readExactly(void* buf, uint64 numBytes);
+    MCNAPI ::Core::Result readExactly(void* buf, uint64 numBytes);
 
-    MCAPI ::Core::Result setPosition(uint64 position);
+    MCNAPI ::Core::Result setPosition(uint64 position);
 
-    MCAPI ::Core::Result write(void const* pBuf, uint64 numBytes);
+    MCNAPI ::Core::Result write(void const* pBuf, uint64 numBytes);
 
-    MCAPI ~File();
+    MCNAPI ~File();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Core::Result
+    MCNAPI static ::Core::Result
     writeCreateOrAppendFileData(::Core::PathView path, uint64 offset, uint64 numBytesToWrite, uchar const* buffer);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::unique_ptr<::Core::FileImpl>&& uptFile, ::std::unique_ptr<::Core::FileSystemImpl>&& uptTransaction);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -13,21 +13,21 @@ class RobustThroughputEstimator {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool FirstPacketOutsideWindow();
+    MCNAPI bool FirstPacketOutsideWindow();
 
-    MCAPI explicit RobustThroughputEstimator(::webrtc::RobustThroughputEstimatorSettings const&);
+    MCNAPI explicit RobustThroughputEstimator(::webrtc::RobustThroughputEstimatorSettings const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::RobustThroughputEstimatorSettings const&);
+    MCNAPI void* $ctor(::webrtc::RobustThroughputEstimatorSettings const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

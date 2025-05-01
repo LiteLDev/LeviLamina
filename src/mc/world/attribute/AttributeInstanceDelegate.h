@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/attribute/AttributeInstanceHandle.h"
+
 // auto generated forward declare list
 // clang-format off
 class AttributeBuff;
 class AttributeInstance;
-class AttributeInstanceHandle;
 struct AttributeModificationContext;
 // clang-format on
 
@@ -42,7 +44,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::AttributeInstance* _getMutableInstance(::AttributeModificationContext& context) const;
+    MCNAPI ::AttributeInstance* _getMutableInstance(::AttributeModificationContext& context) const;
     // NOLINTEND
 
 public:
@@ -54,20 +56,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $tick(::AttributeInstance&, ::AttributeModificationContext&);
+    MCNAPI void $tick(::AttributeInstance&, ::AttributeModificationContext&);
 
-    MCFOLD void $notify(int64, ::AttributeModificationContext&);
+    MCNAPI void $notify(int64, ::AttributeModificationContext&);
 
-    MCFOLD bool $willChange(float, float, ::AttributeBuff const&);
+    MCNAPI bool $willChange(float, float, ::AttributeBuff const&);
 
-    MCAPI float $change(float, float newValue, ::AttributeBuff const&);
+    MCNAPI float $change(float, float newValue, ::AttributeBuff const&);
 
-    MCAPI float $getBuffValueWithModifiers(::AttributeBuff const& buff) const;
+    MCNAPI float $getBuffValueWithModifiers(::AttributeBuff const& buff) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

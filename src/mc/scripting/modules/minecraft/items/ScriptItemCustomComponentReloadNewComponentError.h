@@ -16,19 +16,19 @@ struct ScriptItemCustomComponentReloadNewComponentError : public ::Scripting::Er
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptItemCustomComponentReloadNewComponentError();
+    MCNAPI ~ScriptItemCustomComponentReloadNewComponentError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

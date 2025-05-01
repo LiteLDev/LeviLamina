@@ -6,6 +6,7 @@
 #include "mc/deps/core/utility/StablePriorityQueue.h"
 #include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/structurepools/alias/PoolAliasBinding.h"
+#include "mc/world/level/levelgen/v2/JigsawSectionData.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +16,6 @@ class JigsawStructureRegistry;
 namespace JigsawStructureUtils { class MetadataCache; }
 namespace SharedTypes::v1_21_50 { class JigsawBlockMetadata; }
 namespace br::worldgen { class ChunkAccessor; }
-namespace br::worldgen { class JigsawSectionData; }
 namespace br::worldgen { struct JigsawPieceState; }
 namespace br::worldgen { struct JigsawSpace; }
 namespace br::worldgen { struct WorldGenRandom; }
@@ -36,25 +36,26 @@ public:
     ::ll::TypedStorage<
         8,
         8,
-        int (*)(::JigsawStructureUtils::MetadataCache&, ::BlockPos const&, ::Rotation, ::BoundingBox const&, ::std::vector<::std::pair<uint64, ::SharedTypes::v1_21_50::JigsawBlockMetadata>> const&, ::JigsawStructureRegistry const&)>
-                                                                                                    mExpansionCalc;
-    ::ll::TypedStorage<8, 8, void (*)(int, ::BoundingBox&)>                                         mExpansionEval;
-    ::ll::TypedStorage<8, 24, ::std::vector<::br::worldgen::JigsawSpace>>                           mPlacementSpaces;
+        int (*)(::JigsawStructureUtils::MetadataCache&, ::BlockPos const&, ::Rotation, ::BoundingBox const&, ::std::vector<::SharedTypes::v1_21_50::JigsawBlockMetadata> const&, ::std::vector<uint64> const&, ::JigsawStructureRegistry const&)>
+                                                                          mExpansionCalc;
+    ::ll::TypedStorage<8, 8, void (*)(int, ::BoundingBox&)>               mExpansionEval;
+    ::ll::TypedStorage<1, 1, bool>                                        mIsDataDrivenJigsawExperimentEnabled;
+    ::ll::TypedStorage<8, 24, ::std::vector<::br::worldgen::JigsawSpace>> mPlacementSpaces;
     ::ll::TypedStorage<8, 40, ::StablePriorityQueue<::br::worldgen::JigsawPieceState, ::std::less>> mPlacingQueue;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void tryPlacingChildren(::br::worldgen::JigsawPieceState state);
+    MCNAPI void tryPlacingChildren(::br::worldgen::JigsawPieceState state);
 
-    MCAPI ~JigsawPlacer();
+    MCNAPI ~JigsawPlacer();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

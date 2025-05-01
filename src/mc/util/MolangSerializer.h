@@ -13,15 +13,15 @@ namespace Json { class Value; }
 namespace MolangSerializer {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::unique_ptr<::MolangScriptArg> deserializeScriptArg(::Json::Value const& json);
+MCNAPI ::std::unique_ptr<::MolangScriptArg> deserializeScriptArg(::Json::Value const& json);
 
-MCAPI ::std::unique_ptr<::MolangVariable> deserializeVariable(::Json::Value const& json);
+MCNAPI ::std::unique_ptr<::MolangVariable> deserializeVariable(::Json::Value const& json);
 
-MCAPI ::std::unique_ptr<::MolangVariableMap> deserializeVariableMap(::Json::Value const& json);
+MCNAPI ::std::unique_ptr<::MolangVariableMap> deserializeVariableMap(::Json::Value const& json);
 
-MCAPI ::Json::Value serializeScriptArg(::MolangScriptArg const& scriptArg);
+MCNAPI ::Json::Value serializeScriptArg(::MolangScriptArg const& scriptArg);
 
-MCAPI ::Json::Value serializeVariable(::MolangVariable const& variable);
+MCNAPI ::Json::Value serializeVariable(::MolangVariable const& variable);
 // NOLINTEND
 
 } // namespace MolangSerializer

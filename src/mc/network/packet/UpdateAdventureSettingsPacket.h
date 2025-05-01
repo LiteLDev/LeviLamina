@@ -6,12 +6,12 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/world/level/storage/AdventureSettings.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-struct AdventureSettings;
 // clang-format on
 
 class UpdateAdventureSettingsPacket : public ::Packet {

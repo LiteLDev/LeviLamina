@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/network/IGameConnectionInfoProvider.h"
 #include "mc/network/NetworkSystem.h"
 
 // auto generated forward declare list
 // clang-format off
 class NetworkIdentifier;
-class TaskGroup;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Social { class GameConnectionInfo; }
 // clang-format on
 
@@ -39,9 +39,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::NetworkIdentifier> tryGetLocalNetworkId() const;
+    MCNAPI ::std::optional<::NetworkIdentifier> tryGetLocalNetworkId() const;
 
-    MCAPI ::std::optional<::NetworkIdentifier> tryGetServerId() const;
+    MCNAPI ::std::optional<::NetworkIdentifier> tryGetServerId() const;
     // NOLINTEND
 
 public:

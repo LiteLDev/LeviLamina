@@ -21,19 +21,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ScriptDebuggerMessages::PrintEvent& operator=(::ScriptDebuggerMessages::PrintEvent const&);
+    MCNAPI ::ScriptDebuggerMessages::PrintEvent& operator=(::ScriptDebuggerMessages::PrintEvent const&);
 
-    MCFOLD ::ScriptDebuggerMessages::PrintEvent& operator=(::ScriptDebuggerMessages::PrintEvent&&);
+    MCNAPI ::ScriptDebuggerMessages::PrintEvent& operator=(::ScriptDebuggerMessages::PrintEvent&&);
 
-    MCFOLD bool operator==(::ScriptDebuggerMessages::PrintEvent const&) const;
+    MCNAPI bool operator==(::ScriptDebuggerMessages::PrintEvent const&) const;
 
-    MCAPI ~PrintEvent();
+    MCNAPI ~PrintEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

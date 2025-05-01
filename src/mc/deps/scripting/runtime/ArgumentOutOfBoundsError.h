@@ -24,31 +24,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ArgumentOutOfBoundsError(::Scripting::ArgumentOutOfBoundsError&&);
+    MCNAPI ArgumentOutOfBoundsError(::Scripting::ArgumentOutOfBoundsError&&);
 
-    MCAPI ArgumentOutOfBoundsError(::Scripting::ArgumentOutOfBoundsError const&);
+    MCNAPI ArgumentOutOfBoundsError(::Scripting::ArgumentOutOfBoundsError const&);
 
-    MCAPI ArgumentOutOfBoundsError(::std::string const& message_, double value_, double minValue_, double maxValue_);
+    MCNAPI ArgumentOutOfBoundsError(::std::string const& message_, double value_, double minValue_, double maxValue_);
 
-    MCFOLD ::Scripting::ArgumentOutOfBoundsError& operator=(::Scripting::ArgumentOutOfBoundsError&&);
+    MCNAPI ::Scripting::ArgumentOutOfBoundsError& operator=(::Scripting::ArgumentOutOfBoundsError&&);
 
-    MCAPI ~ArgumentOutOfBoundsError();
+    MCNAPI ~ArgumentOutOfBoundsError();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::Scripting::ArgumentOutOfBoundsError&&);
+    MCNAPI void* $ctor(::Scripting::ArgumentOutOfBoundsError&&);
 
-    MCFOLD void* $ctor(::Scripting::ArgumentOutOfBoundsError const&);
+    MCNAPI void* $ctor(::Scripting::ArgumentOutOfBoundsError const&);
 
-    MCAPI void* $ctor(::std::string const& message_, double value_, double minValue_, double maxValue_);
+    MCNAPI void* $ctor(::std::string const& message_, double value_, double minValue_, double maxValue_);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/container/Blob.h"
 #include "mc/deps/core/image/ImageFormat.h"
 #include "mc/deps/core/image/ImageUsage.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace mce { class Blob; }
-// clang-format on
 
 namespace mce {
 
@@ -37,27 +33,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Image(uint w, uint h, ::mce::ImageFormat format, ::mce::ImageUsage usage);
+    MCNAPI Image(uint w, uint h, ::mce::ImageFormat format, ::mce::ImageUsage usage);
 
-    MCAPI ::mce::Image clone() const;
+    MCNAPI ::mce::Image clone() const;
 
-    MCAPI ::mce::Image& operator=(::mce::Image&&);
+    MCNAPI ::mce::Image& operator=(::mce::Image&&);
 
-    MCAPI void resizeImageBytesToFitImageDescription();
+    MCNAPI void resizeImageBytesToFitImageDescription();
 
-    MCAPI ~Image();
+    MCNAPI ~Image();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint w, uint h, ::mce::ImageFormat format, ::mce::ImageUsage usage);
+    MCNAPI void* $ctor(uint w, uint h, ::mce::ImageFormat format, ::mce::ImageUsage usage);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

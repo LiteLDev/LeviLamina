@@ -4,14 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/level/levelgen/structure/StructureSettings.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class CommandArea;
 class CompoundTag;
 class Dimension;
-class StructureSettings;
 // clang-format on
 
 class StructureAnimationData {
@@ -38,9 +38,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureAnimationData(::StructureAnimationData&&);
+    MCNAPI StructureAnimationData(::StructureAnimationData&&);
 
-    MCAPI StructureAnimationData(
+    MCNAPI StructureAnimationData(
         ::std::unique_ptr<::CommandArea> cmdArea,
         uint64                           tickQueued,
         ::std::string const&             structureName,
@@ -49,25 +49,25 @@ public:
         ::BlockPos const&                placementPos
     );
 
-    MCAPI ::CompoundTag& serialize(::CompoundTag& tag);
+    MCNAPI ::CompoundTag& serialize(::CompoundTag& tag);
 
-    MCAPI void setCmdArea(::std::unique_ptr<::CommandArea> cmdArea);
+    MCNAPI void setCmdArea(::std::unique_ptr<::CommandArea> cmdArea);
 
-    MCAPI ~StructureAnimationData();
+    MCNAPI ~StructureAnimationData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::StructureAnimationData load(::std::string const& key, ::CompoundTag const& tag);
+    MCNAPI static ::StructureAnimationData load(::std::string const& key, ::CompoundTag const& tag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::StructureAnimationData&&);
+    MCNAPI void* $ctor(::StructureAnimationData&&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::CommandArea> cmdArea,
         uint64                           tickQueued,
         ::std::string const&             structureName,
@@ -80,6 +80,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

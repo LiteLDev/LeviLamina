@@ -28,31 +28,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::std::vector<::std::string>> _getExcludedTargets() const;
+    MCNAPI ::std::optional<::std::vector<::std::string>> _getExcludedTargets() const;
 
-    MCAPI ::std::unordered_map<::std::string, ::std::string> _getItemSettings() const;
+    MCNAPI ::std::unordered_map<::std::string, ::std::string> _getItemSettings() const;
 
-    MCAPI ::std::optional<::std::vector<::std::string>> _getLiquidTargetingItems() const;
+    MCNAPI ::std::optional<::std::vector<::std::string>> _getLiquidTargetingItems() const;
 
-    MCAPI void setExcludedTargets(::std::optional<::std::vector<::std::string>> targets);
+    MCNAPI void setExcludedTargets(::std::optional<::std::vector<::std::string>> targets);
 
-    MCAPI void setItemSettings(::std::unordered_map<::std::string, ::std::string> itemSettings);
+    MCNAPI void setItemSettings(::std::unordered_map<::std::string, ::std::string> itemSettings);
 
-    MCAPI void setLiquidTargetingItems(::std::optional<::std::vector<::std::string>> items);
+    MCNAPI void setLiquidTargetingItems(::std::optional<::std::vector<::std::string>> items);
 
-    MCAPI ~ScriptAimAssistPresetSettings();
+    MCNAPI ~ScriptAimAssistPresetSettings();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptAimAssistPresetSettings> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptAimAssistPresetSettings> bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

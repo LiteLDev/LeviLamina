@@ -54,23 +54,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BlockPos $getSize(::Rotation rotation) const;
+    MCNAPI ::BlockPos $getSize(::Rotation rotation) const;
 
-    MCFOLD ::std::vector<::JigsawBlockInfo> $getJigsawMarkers(::BlockPos position, ::Rotation rotation) const;
+    MCNAPI ::std::vector<::JigsawBlockInfo> $getJigsawMarkers(::BlockPos position, ::Rotation rotation) const;
 
-    MCFOLD ::std::vector<::JigsawBlockInfo>
+    MCNAPI ::std::vector<::JigsawBlockInfo>
     $getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const;
 
-    MCAPI ::BoundingBox $getBoundingBox(::BlockPos position, ::Rotation rotation) const;
+    MCNAPI ::BoundingBox $getBoundingBox(::BlockPos position, ::Rotation rotation) const;
 
-    MCFOLD bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCFOLD ::StructurePoolElementType $type() const;
+    MCNAPI ::StructurePoolElementType $type() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

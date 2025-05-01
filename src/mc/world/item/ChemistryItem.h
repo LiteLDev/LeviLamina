@@ -24,24 +24,24 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void validate(::ItemStackBase& stack);
+    MCNAPI static void validate(::ItemStackBase& stack);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $fixupCommon(::ItemStackBase& stack) const;
+    MCNAPI void $fixupCommon(::ItemStackBase& stack) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class MobEffectInstance;
-class WeakEntityRef;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/world/effect/MobEffectInstance.h"
 
 struct ActorAddEffectEvent {
 public:
@@ -19,12 +17,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ActorAddEffectEvent();
+    MCNAPI ~ActorAddEffectEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

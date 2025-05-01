@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSource;
 class Mob;
-class Vec3;
 // clang-format on
 
 class BaseMoveToGoal : public ::Goal {
@@ -81,7 +81,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _checkIfStuck();
+    MCNAPI void _checkIfStuck();
     // NOLINTEND
 
 public:
@@ -93,30 +93,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCFOLD void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI bool $hasReachedTarget() const;
+    MCNAPI bool $hasReachedTarget() const;
 
-    MCAPI int $_nextStartTick();
+    MCNAPI int $_nextStartTick();
 
-    MCAPI bool $_canReach(::BlockPos const& pos);
+    MCNAPI bool $_canReach(::BlockPos const& pos);
 
-    MCAPI ::Vec3 $_getTargetPosition() const;
+    MCNAPI ::Vec3 $_getTargetPosition() const;
 
-    MCFOLD uint64 $_getRepathTime() const;
+    MCNAPI uint64 $_getRepathTime() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

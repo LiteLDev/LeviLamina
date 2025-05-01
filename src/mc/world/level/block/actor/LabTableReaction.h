@@ -44,7 +44,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LabTableReaction(
+    MCNAPI LabTableReaction(
         ::LabTableReactionType type,
         ::BlockPos const&      pos,
         bool                   isClientSide,
@@ -52,24 +52,24 @@ public:
         int                    startDelay
     );
 
-    MCAPI ::Vec3 _getTableTop() const;
+    MCNAPI ::Vec3 _getTableTop() const;
 
-    MCFOLD void addComponent(::std::unique_ptr<::LabTableReactionComponent> comp);
+    MCNAPI void addComponent(::std::unique_ptr<::LabTableReactionComponent> comp);
 
-    MCAPI void addResultItem(::ItemStack const& resultItem);
+    MCNAPI void addResultItem(::ItemStack const& resultItem);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::LabTableReaction>
+    MCNAPI static ::std::unique_ptr<::LabTableReaction>
     createReaction(::LabTableReactionType type, ::BlockPos const& pos, bool isClientSide);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::LabTableReactionType type, ::BlockPos const& pos, bool isClientSide, int maxLifetime, int startDelay);
     // NOLINTEND
 
@@ -82,6 +82,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

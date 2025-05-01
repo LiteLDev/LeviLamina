@@ -5,13 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/item/ItemStack.h"
+#include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
-class ItemStack;
 class Mob;
 class Player;
-struct Tick;
 // clang-format on
 
 class TradeInterestGoal : public ::Goal {
@@ -65,7 +65,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TradeInterestGoal(
+    MCNAPI TradeInterestGoal(
         ::Mob& mob,
         float  interestDistance,
         float  interestTime,
@@ -74,41 +74,41 @@ public:
         float  cooldown
     );
 
-    MCAPI bool _isLookingAtMe(::Player const& target) const;
+    MCNAPI bool _isLookingAtMe(::Player const& target) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::Mob& mob, float interestDistance, float interestTime, float removeTime, float carriedTime, float cooldown);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -42,14 +42,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     sendToAdmins(::CommandOrigin const& origin, ::CommandOutput const& output, ::CommandPermissionLevel opPermLevel);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static ::std::vector<::std::string> translate(::std::vector<::std::string> const& in);
+    MCNAPI static ::std::vector<::std::string> translate(::std::vector<::std::string> const& in);
     // NOLINTEND
 
 public:
@@ -61,14 +61,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $send(::CommandOrigin const& origin, ::CommandOutput const& output);
+    MCNAPI void $send(::CommandOrigin const& origin, ::CommandOutput const& output);
 
-    MCFOLD void $registerOutputCallback(::std::function<void(::AutomationCmdOutput&)> const& callback);
+    MCNAPI void $registerOutputCallback(::std::function<void(::AutomationCmdOutput&)> const& callback);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

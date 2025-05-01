@@ -18,22 +18,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PosibleTransformation(::PosibleTransformation const&);
+    MCNAPI PosibleTransformation(::PosibleTransformation const&);
 
-    MCAPI ::PosibleTransformation& operator=(::PosibleTransformation const&);
+    MCNAPI ::PosibleTransformation& operator=(::PosibleTransformation const&);
 
-    MCAPI ~PosibleTransformation();
+    MCNAPI ~PosibleTransformation();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PosibleTransformation const&);
+    MCNAPI void* $ctor(::PosibleTransformation const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

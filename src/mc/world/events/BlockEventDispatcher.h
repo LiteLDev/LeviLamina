@@ -37,7 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockEventDispatcherToken registerListener(
+    MCNAPI ::BlockEventDispatcherToken registerListener(
         ::Vec3 const&                                                            shapePos,
         float                                                                    shapeRadius,
         ::std::function<void(::BlockPos const&, uint, ::Block const&, ::Actor*)> callback
@@ -53,6 +53,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -33,20 +33,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::Network::ThemeSettingsNewThemeCreatedPayload&
+    MCNAPI ::Editor::Network::ThemeSettingsNewThemeCreatedPayload&
     operator=(::Editor::Network::ThemeSettingsNewThemeCreatedPayload&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

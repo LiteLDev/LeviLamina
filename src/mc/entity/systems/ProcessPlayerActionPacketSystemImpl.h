@@ -13,7 +13,7 @@ struct ServerPlayerCurrentMovementComponent;
 namespace ProcessPlayerActionPacketSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void doProcessPlayerActionPacket(
+MCNAPI void doProcessPlayerActionPacket(
     ::PlayerComponent const&                      playerComponent,
     ::ServerPlayerCurrentMovementComponent const& serverPlayerCurrentMovementComponent,
     ::UserEntityIdentifierComponent const&        userIdentifierComponent,

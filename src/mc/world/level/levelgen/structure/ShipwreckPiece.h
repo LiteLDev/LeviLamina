@@ -32,10 +32,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BlockPos
+    MCNAPI static ::BlockPos
     _calculateTargetPos(::BlockSource& region, ::BlockPos origin, ::Rotation rot, ::BlockPos size);
 
-    MCAPI static ::BlockPos
+    MCNAPI static ::BlockPos
     _calculateTargetPosLegacy(::BlockSource& region, ::BlockPos origin, ::Rotation rot, ::BlockPos size);
     // NOLINTEND
 
@@ -54,14 +54,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::StructurePieceType $getType() const;
+    MCNAPI ::StructurePieceType $getType() const;
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

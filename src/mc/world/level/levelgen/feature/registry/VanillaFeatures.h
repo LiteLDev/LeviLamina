@@ -13,10 +13,13 @@ class FeatureTypeFactory;
 namespace VanillaFeatures {
 // functions
 // NOLINTBEGIN
-MCAPI void registerFeatureTypes(::FeatureTypeFactory& typeFactories);
+MCNAPI void registerFeatureTypes(::FeatureTypeFactory& typeFactories);
 
-MCAPI void
-registerFeatures(::FeatureRegistry& registry, ::BaseGameVersion const& baseGameVersion, ::Experiments const&);
+MCNAPI void registerFeatures(
+    ::FeatureRegistry&       registry,
+    ::BaseGameVersion const& baseGameVersion,
+    ::Experiments const&     experiment
+);
 // NOLINTEND
 
 } // namespace VanillaFeatures

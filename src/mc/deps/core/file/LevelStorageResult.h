@@ -21,13 +21,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~LevelStorageResult();
+    MCNAPI ~LevelStorageResult();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

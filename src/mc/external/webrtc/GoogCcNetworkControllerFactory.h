@@ -13,19 +13,19 @@ class GoogCcNetworkControllerFactory {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit GoogCcNetworkControllerFactory(::webrtc::NetworkStatePredictorFactoryInterface*);
+    MCNAPI explicit GoogCcNetworkControllerFactory(::webrtc::NetworkStatePredictorFactoryInterface*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::NetworkStatePredictorFactoryInterface*);
+    MCNAPI void* $ctor(::webrtc::NetworkStatePredictorFactoryInterface*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

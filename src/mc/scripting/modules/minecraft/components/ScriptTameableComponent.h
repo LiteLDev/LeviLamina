@@ -31,31 +31,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<float> getProbability() const;
+    MCNAPI ::Scripting::Result_deprecated<float> getProbability() const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
     getTameItems() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getTameItems_010() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getTameItems_010() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> isTamed() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> isTamed() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> tame(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer) const;
+    MCNAPI ::Scripting::Result_deprecated<bool> tame(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer) const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> tame_010() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> tame_010() const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
     tamedToPlayer() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> tamedToPlayerId() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> tamedToPlayerId() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptTameableComponent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptTameableComponent>
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
@@ -74,7 +74,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

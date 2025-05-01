@@ -11,7 +11,6 @@
 // clang-format off
 class ActorSpawnRuleGroup;
 class Biome;
-class Block;
 class BlockPos;
 class BlockSource;
 class ChunkPos;
@@ -26,7 +25,7 @@ class Vec3;
 struct ActorUniqueID;
 struct SpawnSettings;
 namespace br::spawn { class EntityTypeCache; }
-namespace br::spawn { struct EntityType; }
+namespace br::spawn { class SpawnPlacements; }
 namespace br::spawn { struct State; }
 // clang-format on
 
@@ -36,7 +35,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>   mUnk2d322f;
     ::ll::UntypedStorage<8, 48>  mUnk905d1f;
-    ::ll::UntypedStorage<8, 120> mUnk504207;
+    ::ll::UntypedStorage<8, 272> mUnk504207;
     ::ll::UntypedStorage<8, 8>   mUnk62f589;
     ::ll::UntypedStorage<8, 8>   mUnke1fc69;
     ::ll::UntypedStorage<8, 8>   mUnk5d231c;
@@ -54,17 +53,20 @@ public:
     // vIndex: 0
     virtual ~NaturalSpawner() /*override*/ = default;
 
-    // vIndex: 17
+    // vIndex: 18
     virtual ::std::tuple<::std::array<::SpawnCategory::Type, 8>, uint64>
     filteredSpawningCategories(::br::spawn::State const&, bool, bool, bool) const /*override*/;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual void
     spawnForChunk(::BlockSource&, ::LevelChunkVolumeData const&, ::br::spawn::State&, ::gsl::span<::SpawnCategory::Type>, ::IRandom&)
         const /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual void spawnMobsForChunkGeneration(::BlockSource&, ::Biome const&, ::ChunkPos, ::IRandom&) const /*override*/;
+
+    // vIndex: 17
+    virtual ::br::spawn::SpawnPlacements& getSpawnPlacements() /*override*/;
 
     // vIndex: 1
     virtual void initializeServerSide(::ResourcePackManager&, ::IWorldRegistriesProvider&) /*override*/;
@@ -106,13 +108,6 @@ public:
     virtual ::std::unordered_set<::ActorUniqueID>
     spawnMobGroup(::BlockSource&, ::std::string const&, ::Vec3 const&, bool, bool, ::std::function<void(::Mob&)>&&) /*override*/
         ;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool
-    isValidEmptySpawnBlock(::BlockSource& blockState, ::BlockPos type, ::Block const&, ::br::spawn::EntityType const&);
     // NOLINTEND
 
 public:

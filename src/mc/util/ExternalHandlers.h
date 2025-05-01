@@ -17,20 +17,20 @@ struct VariantParameterList;
 namespace ExternalHandlers {
 // functions
 // NOLINTBEGIN
-MCAPI void executeActorTrigger(
+MCNAPI void executeActorTrigger(
     ::Actor&                                                              actor,
     ::ActorDefinitionTrigger const&                                       actorTrigger,
     ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
     ::VariantParameterList const&                                         params
 );
 
-MCAPI void executeBlockEvent(::Block const* block, ::std::string const& name, ::RenderParams& params);
+MCNAPI void executeBlockEvent(::Block const* block, ::std::string const& name, ::RenderParams& params);
 
-MCAPI void executeBlockTrigger(::Block const& block, ::DefinitionTrigger const& trigger, ::RenderParams& params);
+MCNAPI void executeBlockTrigger(::Block const& block, ::DefinitionTrigger const& trigger, ::RenderParams& params);
 
-MCFOLD void executeEventResponse(::EventResponse const& response, ::RenderParams& params);
+MCNAPI void executeEventResponse(::EventResponse const& response, ::RenderParams& params);
 
-MCAPI bool executeItemStackEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params);
+MCNAPI bool executeItemStackEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params);
 // NOLINTEND
 
 } // namespace ExternalHandlers

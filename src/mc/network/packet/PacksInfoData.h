@@ -2,9 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/resource/PackIdVersion.h"
+
 // auto generated forward declare list
 // clang-format off
-struct PackIdVersion;
 struct PackInfoData;
 // clang-format on
 
@@ -22,12 +24,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~PacksInfoData();
+    MCNAPI ~PacksInfoData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

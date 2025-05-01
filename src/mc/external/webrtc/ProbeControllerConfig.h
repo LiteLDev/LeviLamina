@@ -13,21 +13,21 @@ struct ProbeControllerConfig {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ProbeControllerConfig(::webrtc::FieldTrialsView const*);
+    MCNAPI explicit ProbeControllerConfig(::webrtc::FieldTrialsView const*);
 
-    MCAPI ~ProbeControllerConfig();
+    MCNAPI ~ProbeControllerConfig();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const*);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

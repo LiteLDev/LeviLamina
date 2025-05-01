@@ -27,19 +27,19 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::dcsctp::StreamScheduler::VirtualTime CalculateFinishTime(uint64) const;
+        MCNAPI ::dcsctp::StreamScheduler::VirtualTime CalculateFinishTime(uint64) const;
 
-        MCAPI void ForceMarkInactive();
+        MCNAPI void ForceMarkInactive();
 
-        MCAPI void MakeActive(uint64);
+        MCNAPI void MakeActive(uint64);
 
-        MCAPI void MakeInactive();
+        MCNAPI void MakeInactive();
 
-        MCAPI void MaybeMakeActive();
+        MCNAPI void MaybeMakeActive();
 
-        MCAPI ::std::optional<::dcsctp::SendQueue::DataToSend> Produce(::webrtc::Timestamp, uint64);
+        MCNAPI ::std::optional<::dcsctp::SendQueue::DataToSend> Produce(::webrtc::Timestamp, uint64);
 
-        MCAPI void SetPriority(::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>);
+        MCNAPI void SetPriority(::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>);
         // NOLINTEND
     };
 
@@ -48,15 +48,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::dcsctp::SendQueue::DataToSend> Produce(::webrtc::Timestamp, uint64);
+    MCNAPI ::std::optional<::dcsctp::SendQueue::DataToSend> Produce(::webrtc::Timestamp, uint64);
 
-    MCAPI ~StreamScheduler();
+    MCNAPI ~StreamScheduler();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

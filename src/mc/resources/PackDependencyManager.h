@@ -12,10 +12,10 @@ struct PackIdVersion;
 namespace PackDependencyManager {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::vector<::PackIdVersion>
+MCNAPI ::std::vector<::PackIdVersion>
 getMissingDependencyIdentities(::gsl::not_null<::PackSource const*> source, ::PackManifest const& manifest);
 
-MCAPI bool isNativeModule(::std::string const& uuid);
+MCNAPI bool isNativeModule(::std::string const& uuid);
 // NOLINTEND
 
 } // namespace PackDependencyManager

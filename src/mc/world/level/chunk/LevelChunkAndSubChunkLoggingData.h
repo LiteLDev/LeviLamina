@@ -4,14 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/platform/threading/Mutex.h"
+#include "mc/world/level/SubChunkPos.h"
 #include "mc/world/level/chunk/ChunkState.h"
 #include "mc/world/level/chunk/SubChunk.h"
 
 // auto generated forward declare list
 // clang-format off
 class ChunkPos;
-class SubChunkPos;
-namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 struct LevelChunkAndSubChunkLoggingData : public ::Bedrock::EnableNonOwnerReferences {
@@ -65,9 +65,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void logLevelChunkEvent(::ChunkPos const& chunkPos, char const* message, bool isClientSide);
+    MCNAPI static void logLevelChunkEvent(::ChunkPos const& chunkPos, char const* message, bool isClientSide);
 
-    MCAPI static void logSubChunkEvent(::SubChunkPos const& subChunkPos, char const* message, bool isClientSide);
+    MCNAPI static void logSubChunkEvent(::SubChunkPos const& subChunkPos, char const* message, bool isClientSide);
     // NOLINTEND
 
 public:

@@ -8,13 +8,18 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/server/ServerPlayer.h"
+#include "mc/server/sim/BuildIntent.h"
+#include "mc/server/sim/LookAtIntent.h"
+#include "mc/server/sim/MovementIntent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/actor/player/PlayerMovementSettings.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/GameType.h"
+#include "mc/world/level/storage/PlayerSuspendLevelStorageSaveToken.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BlockPos;
 class BlockSource;
 class ChunkSource;
 class ChunkViewSource;
@@ -26,19 +31,16 @@ class Level;
 class NavigationComponent;
 class NetworkIdentifier;
 class PacketSender;
-class PlayerSuspendLevelStorageSaveToken;
 class ServerNetworkHandler;
 class ServerNetworkSystem;
+class Vec2;
 class Vec3;
-struct PlayerMovementSettings;
+struct ActorUniqueID;
 struct VariantParameterList;
 namespace ClientBlobCache::Server { class ActiveTransfersManager; }
 namespace ScriptModuleGameTest { struct ScriptNavigationResult; }
 namespace gametest { class BaseGameTestHelper; }
 namespace mce { class UUID; }
-namespace sim { struct BuildIntent; }
-namespace sim { struct LookAtIntent; }
-namespace sim { struct MovementIntent; }
 // clang-format on
 
 class SimulatedPlayer : public ::ServerPlayer {
@@ -52,7 +54,7 @@ public:
     ::ll::TypedStorage<1, 2, ::std::optional<uchar>>                                      mDestroyingBlockFace;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::gametest::BaseGameTestHelper>> mGameTestHelper;
     ::ll::TypedStorage<8, 8, uint64>                                                      mCooldownTick;
-    ::ll::TypedStorage<8, 80, ::PlayerMovementSettings>                                   mMovementSettings;
+    ::ll::TypedStorage<8, 88, ::PlayerMovementSettings>                                   mMovementSettings;
     ::ll::TypedStorage<4, 4, float>                                                       mBaseInputSpeed;
     ::ll::TypedStorage<8, 32, ::std::string>                                              mXuid;
     ::ll::TypedStorage<8, 40, ::PlayerSuspendLevelStorageSaveToken const> mPlayerSuspendLevelStorageSaveToken;
@@ -179,7 +181,20 @@ public:
         ::BlockPos const&                                     spawnPos,
         ::DimensionType                                       dimensionId,
         ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> serverNetworkHandler,
-        ::std::string const&                                  xuid
+        ::std::string const&                                  xuid,
+        ::std::optional<::ActorUniqueID>                      idOverride
+    );
+
+    MCAPI static ::SimulatedPlayer* create(
+        ::std::string const&                                  name,
+        ::BlockPos const&                                     spawnPos,
+        ::Vec3 const&                                         dimensionId,
+        ::Vec2 const&                                         serverNetworkHandler,
+        bool                                                  xuid,
+        ::DimensionType                                       idOverride,
+        ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> spawnPosDelta,
+        ::std::string const&                                  spawnRotation,
+        ::std::optional<::ActorUniqueID>                      spawnLoadedFromSave
     );
     // NOLINTEND
 

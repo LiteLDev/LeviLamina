@@ -29,6 +29,6 @@ struct TriggerJumpSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createCleanupSystem();
+    MCNAPI static ::TickingSystemWithInfo createCleanupSystem();
     // NOLINTEND
 };

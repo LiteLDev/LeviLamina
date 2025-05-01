@@ -17,34 +17,34 @@ class DtmfSender {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void DoInsertDtmf();
+    MCNAPI void DoInsertDtmf();
 
-    MCAPI DtmfSender(::webrtc::TaskQueueBase*, ::webrtc::DtmfProviderInterface*);
+    MCNAPI DtmfSender(::webrtc::TaskQueueBase*, ::webrtc::DtmfProviderInterface*);
 
-    MCAPI void OnDtmfProviderDestroyed();
+    MCNAPI void OnDtmfProviderDestroyed();
 
-    MCAPI void QueueInsertDtmf(uint);
+    MCNAPI void QueueInsertDtmf(uint);
 
-    MCAPI void StopSending();
+    MCNAPI void StopSending();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::scoped_refptr<::webrtc::DtmfSender>
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::DtmfSender>
     Create(::webrtc::TaskQueueBase*, ::webrtc::DtmfProviderInterface*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::TaskQueueBase*, ::webrtc::DtmfProviderInterface*);
+    MCNAPI void* $ctor(::webrtc::TaskQueueBase*, ::webrtc::DtmfProviderInterface*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

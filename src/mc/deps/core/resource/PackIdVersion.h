@@ -4,12 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/resource/PackType.h"
-
-// auto generated forward declare list
-// clang-format off
-class SemVersion;
-namespace mce { class UUID; }
-// clang-format on
+#include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/platform/UUID.h"
 
 struct PackIdVersion {
 public:
@@ -28,6 +24,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PackIdVersion(::PackIdVersion const&);
+
+    MCAPI PackIdVersion(::std::string const& id, ::std::string const& version, ::PackType packType);
 
     MCAPI PackIdVersion(::mce::UUID const& id, ::SemVersion const& version, ::PackType packType);
 
@@ -56,6 +54,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::PackIdVersion const&);
+
+    MCAPI void* $ctor(::std::string const& id, ::std::string const& version, ::PackType packType);
 
     MCAPI void* $ctor(::mce::UUID const& id, ::SemVersion const& version, ::PackType packType);
     // NOLINTEND

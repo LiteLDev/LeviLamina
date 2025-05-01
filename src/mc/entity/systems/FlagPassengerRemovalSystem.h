@@ -11,6 +11,6 @@ struct FlagPassengerRemovalSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createDeferredSystem();
+    MCNAPI static ::TickingSystemWithInfo createDeferredSystem();
     // NOLINTEND
 };

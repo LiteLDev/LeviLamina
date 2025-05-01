@@ -36,29 +36,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> addHeader(
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> addHeader(
         ::std::string const&                                                                key,
         ::std::variant<::std::string, ::ScriptModuleServerAdmin::ScriptSecretString> const& value
     );
 
-    MCAPI ::ScriptModuleMinecraftNet::ScriptNetRequest& operator=(::ScriptModuleMinecraftNet::ScriptNetRequest&&);
+    MCNAPI ::ScriptModuleMinecraftNet::ScriptNetRequest& operator=(::ScriptModuleMinecraftNet::ScriptNetRequest&&);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest>
     setBody(::std::string const& body);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest>
     setHeaders(::std::vector<::ScriptModuleMinecraftNet::ScriptNetHeader> const& headers);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest>
     setMethod(::Bedrock::Http::Method method);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> setTimeout(uint timeout);
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> setTimeout(uint timeout);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftNet::ScriptNetRequest> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftNet::ScriptNetRequest> bind();
     // NOLINTEND
 };
 

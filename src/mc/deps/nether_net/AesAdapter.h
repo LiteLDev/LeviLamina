@@ -34,9 +34,9 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForSocket();
+    MCNAPI static void** $vftableForSocket();
 
-    MCAPI static void** $vftableForHasSlots();
+    MCNAPI static void** $vftableForHasSlots();
     // NOLINTEND
 };
 

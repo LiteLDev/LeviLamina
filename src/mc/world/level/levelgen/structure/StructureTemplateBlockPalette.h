@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace br::worldgen { struct McStructureTemplateBlockPalette; }
-namespace br::worldgen { struct NbtStructureTemplateBlockPalette; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/level/levelgen/structure/McStructureTemplateBlockPalette.h"
+#include "mc/world/level/levelgen/structure/NbtStructureTemplateBlockPalette.h"
 
 namespace br::worldgen {
 

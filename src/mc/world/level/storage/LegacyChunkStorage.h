@@ -4,7 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/chunk/ChunkSource.h"
+#include "mc/world/level/levelgen/synth/PerlinSimplexNoise.h"
 #include "mc/world/level/storage/StorageVersion.h"
 
 // auto generated forward declare list
@@ -13,10 +15,8 @@ class Biome;
 class ChunkPos;
 class LevelChunk;
 class LevelStorage;
-class PerlinSimplexNoise;
 class RegionFile;
 struct LevelChunkFinalDeleter;
-namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class LegacyChunkStorage : public ::ChunkSource {
@@ -56,28 +56,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyChunkStorage(
+    MCNAPI LegacyChunkStorage(
         ::std::unique_ptr<::ChunkSource> parent,
         ::LevelStorage&                  levelStorage,
         ::StorageVersion                 v,
         ::Biome&                         defaultBiome
     );
 
-    MCAPI bool _isImported(::ChunkPos const& pos);
+    MCNAPI bool _isImported(::ChunkPos const& pos);
 
-    MCAPI bool _loadChunk(::LevelChunk& lc);
+    MCNAPI bool _loadChunk(::LevelChunk& lc);
 
-    MCAPI void _loadEntities();
+    MCNAPI void _loadEntities();
 
-    MCAPI void _markChunkAsImported(::ChunkPos const& pos);
+    MCNAPI void _markChunkAsImported(::ChunkPos const& pos);
 
-    MCAPI bool _openRegionFile();
+    MCNAPI bool _openRegionFile();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::ChunkSource> parent,
         ::LevelStorage&                  levelStorage,
         ::StorageVersion                 v,
@@ -88,22 +88,22 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+    MCNAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
-    MCAPI bool $saveLiveChunk(::LevelChunk& lc);
+    MCNAPI bool $saveLiveChunk(::LevelChunk& lc);
 
-    MCAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
+    MCNAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

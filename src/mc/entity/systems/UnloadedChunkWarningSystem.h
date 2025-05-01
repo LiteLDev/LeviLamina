@@ -18,7 +18,7 @@ struct UnloadedChunkTimerComponent;
 namespace UnloadedChunkWarningSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void tickEntity(
+MCNAPI void tickEntity(
     ::StrictEntityContext const&                                                            entity,
     ::StateVectorComponent const&                                                           stateVector,
     ::ActorRotationComponent const&                                                         actorRotation,

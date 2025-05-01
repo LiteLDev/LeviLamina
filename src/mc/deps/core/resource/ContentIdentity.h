@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace mce { class UUID; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/platform/UUID.h"
 
 class ContentIdentity {
 public:
@@ -16,9 +14,15 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::std::string asString() const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ContentIdentity fromString(::std::string const& uuidString);
+    MCNAPI static ::ContentIdentity fromString(::std::string const& uuidString);
     // NOLINTEND
 
 public:

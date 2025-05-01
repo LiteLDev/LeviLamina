@@ -18,7 +18,7 @@ namespace VanillaWorldSystems { class Impl; }
 namespace VanillaWorldSystems {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::shared_ptr<::VanillaWorldSystems::Impl> init(
+MCNAPI ::std::shared_ptr<::VanillaWorldSystems::Impl> init(
     ::Bedrock::NonOwnerPointer<::Level> const& level,
     ::Experiments const&                       experiments,
     ::BaseGameVersion const&                   baseGameVersion,

@@ -31,31 +31,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::rtc::SSLCertificate const& GetSSLCertificate() const;
+    MCNAPI ::rtc::SSLCertificate const& GetSSLCertificate() const;
 
-    MCAPI ::rtc::SSLCertChain const& GetSSLCertificateChain() const;
+    MCNAPI ::rtc::SSLCertChain const& GetSSLCertificateChain() const;
 
-    MCAPI explicit RTCCertificate(::rtc::SSLIdentity*);
+    MCNAPI explicit RTCCertificate(::rtc::SSLIdentity*);
 
-    MCAPI ~RTCCertificate();
+    MCNAPI ~RTCCertificate();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::scoped_refptr<::rtc::RTCCertificate> Create(::std::unique_ptr<::rtc::SSLIdentity>);
+    MCNAPI static ::webrtc::scoped_refptr<::rtc::RTCCertificate> Create(::std::unique_ptr<::rtc::SSLIdentity>);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::SSLIdentity*);
+    MCNAPI void* $ctor(::rtc::SSLIdentity*);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

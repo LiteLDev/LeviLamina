@@ -9,7 +9,7 @@
 namespace ScriptModuleGameTest {
 // functions
 // NOLINTBEGIN
-MCAPI ::Scripting::EnumBindingBuilder<::std::string, ::sim::LookDuration> bindLookDurationEnumV1();
+MCNAPI ::Scripting::EnumBindingBuilder<::std::string, ::sim::LookDuration> bindLookDurationEnumV1();
 // NOLINTEND
 
 } // namespace ScriptModuleGameTest

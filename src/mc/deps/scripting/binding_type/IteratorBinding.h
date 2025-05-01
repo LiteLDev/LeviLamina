@@ -42,7 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI IteratorBinding(
+    MCNAPI IteratorBinding(
         ::std::string                                         iteratorClassName,
         ::std::shared_ptr<::Scripting::Reflection::IFunction> nextCallback
     );
@@ -51,20 +51,20 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::string iteratorClassName, ::std::shared_ptr<::Scripting::Reflection::IFunction> nextCallback);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

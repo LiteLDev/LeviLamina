@@ -54,13 +54,13 @@ public:
     // vIndex: 112
     virtual ::std::string buildDescriptionId(::Block const&) const /*override*/;
 
-    // vIndex: 142
+    // vIndex: 140
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 151
+    // vIndex: 149
     virtual void checkAlive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 81
@@ -73,20 +73,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CoralFanHang(
+    MCNAPI CoralFanHang(
         ::std::string const&  nameId,
         int                   id,
         ::HashedString const& coralFanVersion,
         ::HashedString const& deadVersion
     );
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&  nameId,
         int                   id,
         ::HashedString const& coralFanVersion,
@@ -103,29 +103,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Vec3 $randomlyModifyPosition(::BlockPos const& pos) const;
+    MCNAPI ::Vec3 $randomlyModifyPosition(::BlockPos const& pos) const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI ::AABB const&
+    MCNAPI ::AABB const&
     $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
-    MCFOLD ::std::string $buildDescriptionId(::Block const&) const;
+    MCNAPI ::std::string $buildDescriptionId(::Block const&) const;
 
-    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
-    MCAPI void $checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

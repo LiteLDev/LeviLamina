@@ -13,7 +13,7 @@ class GameEventMapping {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::GameEvent const* creatorNameToEvent(::std::string const& name);
+    MCNAPI static ::GameEvent const* creatorNameToEvent(::std::string const& name);
     // NOLINTEND
 
 public:

@@ -20,7 +20,7 @@ struct MobTravelPlayerOrLocalFilterSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void tick(
+    MCNAPI static void tick(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::MobTravelComponent>,

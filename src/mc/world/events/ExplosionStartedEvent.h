@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class Dimension;
 class EntityContext;
 // clang-format on
@@ -28,20 +28,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExplosionStartedEvent(::ExplosionStartedEvent const&);
+    MCNAPI ExplosionStartedEvent(::ExplosionStartedEvent const&);
 
-    MCAPI ~ExplosionStartedEvent();
+    MCNAPI ~ExplosionStartedEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ExplosionStartedEvent const&);
+    MCNAPI void* $ctor(::ExplosionStartedEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

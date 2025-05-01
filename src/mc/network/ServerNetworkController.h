@@ -52,16 +52,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isDedicatedServer() const;
+    MCNAPI bool $isDedicatedServer() const;
 
-    MCAPI bool $isHost(::mce::UUID const& playerID) const;
+    MCNAPI bool $isHost(::mce::UUID const& playerID) const;
 
-    MCAPI bool $canChangePermission(::mce::UUID const& playerId, ::ServerPlayer const& player) const;
+    MCNAPI bool $canChangePermission(::mce::UUID const& playerId, ::ServerPlayer const& player) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

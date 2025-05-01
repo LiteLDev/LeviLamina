@@ -36,11 +36,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddRoundTripTimeSample(::webrtc::TimeDelta);
+    MCNAPI void AddRoundTripTimeSample(::webrtc::TimeDelta);
 
-    MCAPI void SetReportBlock(uint, ::webrtc::rtcp::ReportBlock const&, ::webrtc::Timestamp);
+    MCNAPI void SetReportBlock(uint, ::webrtc::rtcp::ReportBlock const&, ::webrtc::Timestamp);
 
-    MCAPI ::webrtc::TimeDelta jitter(int) const;
+    MCNAPI ::webrtc::TimeDelta jitter(int) const;
     // NOLINTEND
 };
 

@@ -24,15 +24,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::sim::ExecutionResult execute(::SimulatedPlayer& player);
+    MCNAPI ::sim::ExecutionResult execute(::SimulatedPlayer& player);
 
-    MCAPI ~NavigateToPositionsIntent();
+    MCNAPI ~NavigateToPositionsIntent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

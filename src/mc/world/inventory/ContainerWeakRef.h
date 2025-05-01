@@ -22,14 +22,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit operator bool() const;
+    MCNAPI explicit operator bool() const;
 
-    MCAPI ~ContainerWeakRef();
+    MCNAPI ~ContainerWeakRef();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

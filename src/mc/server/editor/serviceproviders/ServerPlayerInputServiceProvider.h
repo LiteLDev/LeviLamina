@@ -37,6 +37,13 @@ public:
     virtual ::Scripting::Result<void> unregisterMouseBinding(::HashedString const&, ::HashedString const&) = 0;
 
     // vIndex: 5
+    virtual ::Scripting::Result<void>
+    updateKeyBindingProcessingState(::HashedString const&, ::HashedString const&, ::std::optional<int>) = 0;
+
+    // vIndex: 6
+    virtual ::std::optional<int> getKeyBindingProcessingState(::HashedString const&, ::HashedString const&) const = 0;
+
+    // vIndex: 7
     virtual ::Scripting::Result<void> setViewportFocus(bool) = 0;
     // NOLINTEND
 

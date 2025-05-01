@@ -10,7 +10,7 @@ class EntityContext;
 namespace ServerPlayerLoadingScreenInitializer {
 // functions
 // NOLINTBEGIN
-MCAPI void initializeWithActiveLoadingScreen(::EntityContext& entity);
+MCNAPI void initializeWithActiveLoadingScreen(::EntityContext& entity);
 // NOLINTEND
 
 } // namespace ServerPlayerLoadingScreenInitializer

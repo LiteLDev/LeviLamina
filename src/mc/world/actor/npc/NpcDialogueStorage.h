@@ -27,11 +27,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::NpcDialogueScene const* getScene(::std::string const& sceneName) const;
+    MCNAPI ::NpcDialogueScene const* getScene(::std::string const& sceneName) const;
 
-    MCAPI void init(::ResourcePackManager& resourcePackManager);
+    MCNAPI void init(::ResourcePackManager& resourcePackManager);
 
-    MCAPI bool
+    MCNAPI bool
     parseFile(::std::string const& fileData, ::std::string const& fileName, ::CurrentCmdVersion packCommandVersion);
     // NOLINTEND
 };

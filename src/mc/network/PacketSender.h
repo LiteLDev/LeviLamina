@@ -18,7 +18,7 @@ class PacketSender : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::SubClientId> mSenderSubId;
+    ::ll::TypedStorage<1, 1, ::SubClientId> mSubId;
     // NOLINTEND
 
 public:
@@ -61,7 +61,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void sendToPrimaryClient(::NetworkIdentifier const& id, ::Packet const& packet);
+    MCNAPI void sendToPrimaryClient(::NetworkIdentifier const& id, ::Packet const& packet);
     // NOLINTEND
 
 public:

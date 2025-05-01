@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 104> mUnkd2fac2;
-    ::ll::UntypedStorage<8, 24>  mUnk516cf6;
+    ::ll::UntypedStorage<8, 24>  mUnkda2f38;
     // NOLINTEND
 
 public:
@@ -21,13 +21,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~SupportedBindingModule();
+    MCNAPI ~SupportedBindingModule();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

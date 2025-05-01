@@ -38,7 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::FileInfo _fillFileInfo(::Core::Path const& filePath);
+    MCNAPI ::FileInfo _fillFileInfo(::Core::Path const& filePath);
     // NOLINTEND
 
 public:
@@ -50,17 +50,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initFilePick(::Core::Path const& filePath, ::std::function<void(bool, ::FileInfo)> callback);
+    MCNAPI void $initFilePick(::Core::Path const& filePath, ::std::function<void(bool, ::FileInfo)> callback);
 
-    MCAPI uint64 $readBytes(::FileInfo const& file, uint64 offset, uint64 bufferSize, ::std::vector<uchar>& buffer);
+    MCNAPI uint64 $readBytes(::FileInfo const& file, uint64 offset, uint64 bufferSize, ::std::vector<uchar>& buffer);
 
-    MCAPI bool
+    MCNAPI bool
     $writeBytes(::FileInfo const& file, uint64 offset, uint64 bufferSize, ::std::vector<uchar> const& buffer);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

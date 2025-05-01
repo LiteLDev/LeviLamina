@@ -13,7 +13,7 @@ namespace Core { class Result; }
 namespace Core {
 // functions
 // NOLINTBEGIN
-MCAPI ::Core::Result transferDirectory(
+MCNAPI ::Core::Result transferDirectory(
     ::Core::FileSystemImpl*                                                    pSourceTransaction,
     ::Core::PathView                                                           sourceDirectoryPath,
     ::Core::FileSystemImpl*                                                    pTargetTransaction,

@@ -21,43 +21,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Version();
+    MCNAPI Version();
 
-    MCAPI Version(::Scripting::Version const&);
+    MCNAPI Version(::Scripting::Version const&);
 
-    MCAPI Version(ushort major_, ushort minor_, ushort patch_, ::std::string preRelease_);
+    MCNAPI Version(ushort major_, ushort minor_, ushort patch_, ::std::string preRelease_);
 
-    MCAPI bool operator!=(::Scripting::Version const& rhs) const;
+    MCNAPI bool operator<(::Scripting::Version const& rhs) const;
 
-    MCAPI bool operator<(::Scripting::Version const& rhs) const;
+    MCNAPI ::Scripting::Version& operator=(::Scripting::Version&&);
 
-    MCAPI ::Scripting::Version& operator=(::Scripting::Version&&);
+    MCNAPI bool operator==(::Scripting::Version const& rhs) const;
 
-    MCAPI bool operator==(::Scripting::Version const& rhs) const;
+    MCNAPI bool operator>=(::Scripting::Version const& rhs) const;
 
-    MCAPI bool operator>=(::Scripting::Version const& rhs) const;
+    MCNAPI bool satisfies(::Scripting::Version const& other, bool strict) const;
 
-    MCAPI bool satisfies(::Scripting::Version const& other, bool strict) const;
+    MCNAPI ::std::string toString() const;
 
-    MCAPI ::std::string toString() const;
-
-    MCAPI ~Version();
+    MCNAPI ~Version();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::Scripting::Version const&);
+    MCNAPI void* $ctor(::Scripting::Version const&);
 
-    MCAPI void* $ctor(ushort major_, ushort minor_, ushort patch_, ::std::string preRelease_);
+    MCNAPI void* $ctor(ushort major_, ushort minor_, ushort patch_, ::std::string preRelease_);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

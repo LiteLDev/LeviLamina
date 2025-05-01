@@ -17,13 +17,13 @@ class Vec2;
 namespace CameraAimAssistCommandUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void clearAimAssistForPlayerTargets(
+MCNAPI void clearAimAssistForPlayerTargets(
     ::CommandSelector<::Player> const& playerTargets,
     ::CommandOrigin const&             origin,
     ::CommandOutput&                   output
 );
 
-MCAPI void setAimAssistForPlayerTargets(
+MCNAPI void setAimAssistForPlayerTargets(
     ::std::string const&               presetId,
     ::CameraAimAssist::TargetMode      targetMode,
     ::Vec2 const&                      viewAngle,

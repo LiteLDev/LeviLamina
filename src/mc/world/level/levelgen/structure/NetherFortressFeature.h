@@ -61,13 +61,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetherFortressFeature(uint& seed, ::BaseGameVersion const& baseGameVersion);
+    MCNAPI NetherFortressFeature(uint& seed, ::BaseGameVersion const& baseGameVersion);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint& seed, ::BaseGameVersion const& baseGameVersion);
+    MCNAPI void* $ctor(uint& seed, ::BaseGameVersion const& baseGameVersion);
     // NOLINTEND
 
 public:
@@ -79,9 +79,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $shouldAddHardcodedSpawnAreas() const;
+    MCNAPI bool $shouldAddHardcodedSpawnAreas() const;
 
-    MCAPI bool $isFeatureChunk(
+    MCNAPI bool $isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
         ::ChunkPos const&                    chunkPos,
@@ -90,7 +90,7 @@ public:
         ::Dimension const&                   dimension
     );
 
-    MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
+    MCNAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
         ::Dimension&                         generator,
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
@@ -102,6 +102,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

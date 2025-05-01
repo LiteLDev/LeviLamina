@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/levelgen/v2/processors/pos_rules/AlwaysTrue.h"
+#include "mc/world/level/levelgen/v2/processors/pos_rules/AxisAlignedLinear.h"
 #include "mc/world/level/levelgen/v2/processors/pos_rules/TestType.h"
 
 // auto generated forward declare list
@@ -10,8 +12,6 @@
 class BlockPos;
 class IRandom;
 namespace Util { class XXHash; }
-namespace br::worldgen::processors::PosRules { struct AlwaysTrue; }
-namespace br::worldgen::processors::PosRules { struct AxisAlignedLinear; }
 // clang-format on
 
 namespace br::worldgen::processors::PosRules {
@@ -56,33 +56,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Test(::br::worldgen::processors::PosRules::Test const&);
+    MCNAPI Test(::br::worldgen::processors::PosRules::Test const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::br::worldgen::processors::PosRules::Test const&);
+    MCNAPI void* $ctor(::br::worldgen::processors::PosRules::Test const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $test(::BlockPos inTemplatePos, ::BlockPos worldPos, ::BlockPos worldReference, ::IRandom& random) const;
+    MCNAPI bool
+    $test(::BlockPos inTemplatePos, ::BlockPos worldPos, ::BlockPos worldReference, ::IRandom& random) const;
 
-    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

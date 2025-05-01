@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/input/ScriptingInputButtonState.h"
-
-// auto generated forward declare list
-// clang-format off
-class Vec2;
-// clang-format on
 
 struct ScriptingInputInfoComponent {
 public:

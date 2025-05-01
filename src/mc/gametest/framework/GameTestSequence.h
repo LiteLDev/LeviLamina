@@ -27,24 +27,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::gametest::GameTestError>
-    _executeWithoutFail(::std::optional<::gametest::GameTestError> const& error);
+    MCNAPI ::std::optional<::gametest::GameTestError> _tick(int currentTick);
 
-    MCAPI ::std::optional<::gametest::GameTestError> _tick(int currentTick);
+    MCNAPI ::gametest::GameTestSequence& thenExecute(::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
-    MCAPI ::gametest::GameTestSequence& thenExecute(::std::function<::std::optional<::gametest::GameTestError>()> fn);
-
-    MCAPI ::gametest::GameTestSequence&
+    MCNAPI ::gametest::GameTestSequence&
     thenExecuteAfter(int tickDelay, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
-    MCAPI ::gametest::GameTestSequence&
+    MCNAPI ::gametest::GameTestSequence&
     thenExecuteFor(int tickCount, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
-    MCAPI void thenFail(::gametest::GameTestError error);
+    MCNAPI void thenFail(::gametest::GameTestError error);
 
-    MCAPI void thenSucceed();
+    MCNAPI void thenSucceed();
 
-    MCAPI ::gametest::GameTestSequence&
+    MCNAPI ::gametest::GameTestSequence&
     thenWaitAfter(int tickDelay, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
     // NOLINTEND
 };

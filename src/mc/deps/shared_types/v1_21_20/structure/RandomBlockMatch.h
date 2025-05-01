@@ -20,19 +20,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockMatch&
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockMatch&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockMatch&&);
 
-    MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockMatch&
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockMatch&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockMatch const&);
 
-    MCAPI ~RandomBlockMatch();
+    MCNAPI ~RandomBlockMatch();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

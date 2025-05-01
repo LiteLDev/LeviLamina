@@ -56,15 +56,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _fillPillarDownOrChainUp(::BlockSource& region, int x, int z, int chunkBB, ::BoundingBox const& y);
+    MCNAPI void _fillPillarDownOrChainUp(::BlockSource& region, int x, int z, int chunkBB, ::BoundingBox const& y);
 
-    MCAPI void
+    MCNAPI void
     _placeCobWeb(::BlockSource& region, ::BoundingBox const& chunkBB, ::Random& random, float p, int x0, int z, int y1);
 
-    MCAPI void
+    MCNAPI void
     _placeDoubleLowerOrUpperSupport(::BlockSource& region, ::BoundingBox const& chunkBB, int z, int x, int y);
 
-    MCAPI void _placeSupport(
+    MCNAPI void _placeSupport(
         ::BlockSource&       region,
         ::BoundingBox const& chunkBB,
         int                  z,
@@ -79,7 +79,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BoundingBox findCorridorSize(
+    MCNAPI static ::BoundingBox findCorridorSize(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
         int                                                 footX,
@@ -98,22 +98,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::StructurePieceType $getType() const;
+    MCNAPI ::StructurePieceType $getType() const;
 
-    MCAPI void $addChildren(
+    MCNAPI void $addChildren(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random
     );
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCNAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

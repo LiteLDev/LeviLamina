@@ -2,12 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct ActorUniqueID;
-struct PlayerScoreboardId;
-struct ScoreboardId;
-// clang-format on
+// auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/world/scores/PlayerScoreboardId.h"
+#include "mc/world/scores/ScoreboardId.h"
 
 class IdentityDefinition {
 public:
@@ -35,10 +33,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string const& getName(::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver
+    MCNAPI ::std::string const& getName(::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver
     ) const;
 
-    MCAPI ~IdentityDefinition();
+    MCNAPI ~IdentityDefinition();
     // NOLINTEND
 
 public:
@@ -50,6 +48,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

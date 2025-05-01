@@ -31,9 +31,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DeserializeDataParams(::DeserializeDataParams const&);
+    MCNAPI DeserializeDataParams(::DeserializeDataParams const&);
 
-    MCAPI DeserializeDataParams(
+    MCNAPI DeserializeDataParams(
         ::Json::Value&            value,
         ::SemVersion const&       formatVersion,
         ::MinEngineVersion const& minEngineVersion,
@@ -41,15 +41,15 @@ public:
         ::JsonBetaState           canUseBeta
     );
 
-    MCAPI ~DeserializeDataParams();
+    MCNAPI ~DeserializeDataParams();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::DeserializeDataParams const&);
+    MCNAPI void* $ctor(::DeserializeDataParams const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Json::Value&            value,
         ::SemVersion const&       formatVersion,
         ::MinEngineVersion const& minEngineVersion,
@@ -61,6 +61,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

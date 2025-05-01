@@ -82,34 +82,34 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockSource& $getBlockSource() const;
+    MCNAPI ::BlockSource& $getBlockSource() const;
 
-    MCAPI void $initialize();
+    MCNAPI void $initialize();
 
-    MCAPI bool $hasStructureBlock() const;
+    MCNAPI bool $hasStructureBlock() const;
 
-    MCAPI void $clearStructure();
+    MCNAPI void $clearStructure();
 
-    MCAPI void $spawnStructure();
+    MCNAPI void $spawnStructure();
 
-    MCAPI ::std::optional<::AABB> $getStructureBounds() const;
+    MCNAPI ::std::optional<::AABB> $getStructureBounds() const;
 
-    MCAPI ::std::optional<::Vec3> $getStructureBlockPivot() const;
+    MCNAPI ::std::optional<::Vec3> $getStructureBlockPivot() const;
 
-    MCAPI ::std::optional<::Vec3> $getStructureBlockPosPivot() const;
+    MCNAPI ::std::optional<::Vec3> $getStructureBlockPosPivot() const;
 
-    MCAPI ::BoundingBox $getStructureBoundingBox() const;
+    MCNAPI ::BoundingBox $getStructureBoundingBox() const;
 
-    MCAPI ::DimensionType $getStructureDimension() const;
+    MCNAPI ::DimensionType $getStructureDimension() const;
 
-    MCAPI int $_getLevelTick() const;
+    MCNAPI int $_getLevelTick() const;
 
-    MCAPI bool $_isTestReady();
+    MCNAPI bool $_isTestReady();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

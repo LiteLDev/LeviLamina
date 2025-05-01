@@ -24,8 +24,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addBredExpressionNode(::ExpressionNode const& node);
+    MCNAPI void addBredExpressionNode(::ExpressionNode const& node);
 
-    MCAPI void addDeathExpressionNode(::ExpressionNode const& node);
+    MCNAPI void addDeathExpressionNode(::ExpressionNode const& node);
     // NOLINTEND
 };

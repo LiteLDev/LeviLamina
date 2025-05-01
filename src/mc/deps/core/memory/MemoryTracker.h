@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Memory { class ScopedMemoryCounter; }
+namespace Memory { struct MemoryCategoryCounter; }
 // clang-format on
 
 namespace Memory {
@@ -20,28 +20,37 @@ public:
     virtual ~MemoryTracker() = default;
 
     // vIndex: 1
-    virtual ::Memory::MemoryCategory getCurrentCategory();
+    virtual bool isTracking() const;
 
     // vIndex: 2
-    virtual void setCurrentCategory(::Memory::MemoryCategory);
+    virtual ::Memory::MemoryCategory getCurrentCategory() const;
 
     // vIndex: 3
-    virtual uint64 getCategoryAllocationCount(uint);
+    virtual void setCurrentCategory(::Memory::MemoryCategory);
 
     // vIndex: 4
-    virtual uint64 getCategoryAllocatedMemory(uint);
+    virtual uint64 getCategoryAllocationCount(uint) const;
 
     // vIndex: 5
-    virtual uint64 getCategoryTotalAllocationCount(uint);
+    virtual uint64 getCategoryAllocatedMemory(uint) const;
 
     // vIndex: 6
-    virtual char const* getCategoryName(uint);
+    virtual uint64 getCategoryTotalAllocationCount(uint) const;
 
     // vIndex: 7
-    virtual void publish();
+    virtual char const* getCategoryName(uint) const;
 
     // vIndex: 8
-    virtual void _addScopedMemoryCounter(::Memory::ScopedMemoryCounter&);
+    virtual void publish();
+
+    // vIndex: 9
+    virtual void populateCounters(::std::vector<::Memory::MemoryCategoryCounter>&, uint64) const;
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::Memory::MemoryTracker*& mInstance();
     // NOLINTEND
 
 public:
@@ -53,27 +62,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Memory::MemoryCategory $getCurrentCategory();
+    MCNAPI bool $isTracking() const;
 
-    MCFOLD void $setCurrentCategory(::Memory::MemoryCategory);
+    MCNAPI ::Memory::MemoryCategory $getCurrentCategory() const;
 
-    MCFOLD uint64 $getCategoryAllocationCount(uint);
+    MCNAPI void $setCurrentCategory(::Memory::MemoryCategory);
 
-    MCFOLD uint64 $getCategoryAllocatedMemory(uint);
+    MCNAPI uint64 $getCategoryAllocationCount(uint) const;
 
-    MCFOLD uint64 $getCategoryTotalAllocationCount(uint);
+    MCNAPI uint64 $getCategoryAllocatedMemory(uint) const;
 
-    MCFOLD char const* $getCategoryName(uint);
+    MCNAPI uint64 $getCategoryTotalAllocationCount(uint) const;
 
-    MCFOLD void $publish();
+    MCNAPI char const* $getCategoryName(uint) const;
 
-    MCFOLD void $_addScopedMemoryCounter(::Memory::ScopedMemoryCounter&);
+    MCNAPI void $publish();
+
+    MCNAPI void $populateCounters(::std::vector<::Memory::MemoryCategoryCounter>&, uint64) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

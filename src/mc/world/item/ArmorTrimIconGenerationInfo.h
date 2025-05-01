@@ -25,6 +25,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string buildTrimmedArmorName(::std::string const& trimMaterial, ::std::string const& armorName);
+    MCNAPI static ::std::string
+    buildTrimmedArmorName(::std::string const& trimMaterial, ::std::string const& armorName);
     // NOLINTEND
 };

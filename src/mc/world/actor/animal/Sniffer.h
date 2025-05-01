@@ -26,12 +26,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
+    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

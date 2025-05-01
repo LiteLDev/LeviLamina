@@ -22,26 +22,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeConditions();
+    MCNAPI BiomeConditions();
 
-    MCAPI ::SharedTypes::v1_21_60::Spawn::BiomeConditions& operator=(::SharedTypes::v1_21_60::Spawn::BiomeConditions&&);
+    MCNAPI ::SharedTypes::v1_21_60::Spawn::BiomeConditions&
+    operator=(::SharedTypes::v1_21_60::Spawn::BiomeConditions&&);
 
-    MCAPI ::SharedTypes::v1_21_60::Spawn::BiomeConditions&
+    MCNAPI ::SharedTypes::v1_21_60::Spawn::BiomeConditions&
     operator=(::SharedTypes::v1_21_60::Spawn::BiomeConditions const&);
 
-    MCAPI ~BiomeConditions();
+    MCNAPI ~BiomeConditions();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -66,77 +66,77 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddAttribute(::std::unique_ptr<::cricket::StunAttribute>);
+    MCNAPI void AddAttribute(::std::unique_ptr<::cricket::StunAttribute>);
 
-    MCAPI bool AddFingerprint();
+    MCNAPI bool AddFingerprint();
 
-    MCAPI bool AddMessageIntegrity(::std::string_view);
+    MCNAPI bool AddMessageIntegrity(::std::string_view);
 
-    MCAPI bool AddMessageIntegrity32(::std::string_view);
+    MCNAPI bool AddMessageIntegrity32(::std::string_view);
 
-    MCAPI bool AddMessageIntegrityOfType(int, uint64, ::std::string_view);
+    MCNAPI bool AddMessageIntegrityOfType(int, uint64, ::std::string_view);
 
-    MCAPI ::std::unique_ptr<::cricket::StunMessage> Clone() const;
+    MCNAPI ::std::unique_ptr<::cricket::StunMessage> Clone() const;
 
-    MCAPI ::cricket::StunAttribute* CreateAttribute(int, uint64);
+    MCNAPI ::cricket::StunAttribute* CreateAttribute(int, uint64);
 
-    MCAPI bool EqualAttributes(::cricket::StunMessage const*, ::std::function<bool(int)>) const;
+    MCNAPI bool EqualAttributes(::cricket::StunMessage const*, ::std::function<bool(int)>) const;
 
-    MCAPI ::cricket::StunAddressAttribute const* GetAddress(int) const;
+    MCNAPI ::cricket::StunAddressAttribute const* GetAddress(int) const;
 
-    MCAPI ::cricket::StunAttribute const* GetAttribute(int) const;
+    MCNAPI ::cricket::StunAttribute const* GetAttribute(int) const;
 
-    MCAPI ::cricket::StunByteStringAttribute const* GetByteString(int) const;
+    MCNAPI ::cricket::StunByteStringAttribute const* GetByteString(int) const;
 
-    MCAPI ::cricket::StunErrorCodeAttribute const* GetErrorCode() const;
+    MCNAPI ::cricket::StunErrorCodeAttribute const* GetErrorCode() const;
 
-    MCAPI int GetErrorCodeValue() const;
+    MCNAPI int GetErrorCodeValue() const;
 
-    MCAPI ::std::vector<ushort> GetNonComprehendedAttributes() const;
+    MCNAPI ::std::vector<ushort> GetNonComprehendedAttributes() const;
 
-    MCAPI ::cricket::StunUInt16ListAttribute const* GetUInt16List(int) const;
+    MCNAPI ::cricket::StunUInt16ListAttribute const* GetUInt16List(int) const;
 
-    MCAPI ::cricket::StunUInt32Attribute const* GetUInt32(int) const;
+    MCNAPI ::cricket::StunUInt32Attribute const* GetUInt32(int) const;
 
-    MCAPI ::cricket::StunUInt64Attribute const* GetUInt64(int) const;
+    MCNAPI ::cricket::StunUInt64Attribute const* GetUInt64(int) const;
 
-    MCAPI bool IsLegacy() const;
+    MCNAPI bool IsLegacy() const;
 
-    MCAPI bool Read(::rtc::ByteBufferReader*);
+    MCNAPI bool Read(::rtc::ByteBufferReader*);
 
-    MCAPI ::cricket::StunMessage::IntegrityStatus RevalidateMessageIntegrity(::std::string const&);
+    MCNAPI ::cricket::StunMessage::IntegrityStatus RevalidateMessageIntegrity(::std::string const&);
 
-    MCAPI StunMessage();
+    MCNAPI StunMessage();
 
-    MCAPI explicit StunMessage(ushort);
+    MCNAPI explicit StunMessage(ushort);
 
-    MCAPI StunMessage(ushort, ::std::string_view);
+    MCNAPI StunMessage(ushort, ::std::string_view);
 
-    MCAPI ::cricket::StunMessage::IntegrityStatus ValidateMessageIntegrity(::std::string const&);
+    MCNAPI ::cricket::StunMessage::IntegrityStatus ValidateMessageIntegrity(::std::string const&);
 
-    MCAPI bool Write(::rtc::ByteBufferWriter*) const;
+    MCNAPI bool Write(::rtc::ByteBufferWriter*) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string GenerateTransactionId();
+    MCNAPI static ::std::string GenerateTransactionId();
 
-    MCAPI static bool IsStunMethod(::rtc::ArrayView<int>, char const*, uint64);
+    MCNAPI static bool IsStunMethod(::rtc::ArrayView<int>, char const*, uint64);
 
-    MCAPI static bool ValidateFingerprint(char const*, uint64);
+    MCNAPI static bool ValidateFingerprint(char const*, uint64);
 
-    MCAPI static bool ValidateMessageIntegrityOfType(int, uint64, char const*, uint64, ::std::string const&);
+    MCNAPI static bool ValidateMessageIntegrityOfType(int, uint64, char const*, uint64, ::std::string const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(ushort);
+    MCNAPI void* $ctor(ushort);
 
-    MCAPI void* $ctor(ushort, ::std::string_view);
+    MCNAPI void* $ctor(ushort, ::std::string_view);
     // NOLINTEND
 
 public:
@@ -154,7 +154,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

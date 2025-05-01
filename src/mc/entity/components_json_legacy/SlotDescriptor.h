@@ -26,28 +26,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SlotDescriptor(::SlotDescriptor&&);
+    MCNAPI SlotDescriptor(::SlotDescriptor&&);
 
-    MCAPI SlotDescriptor(::SlotDescriptor const&);
+    MCNAPI SlotDescriptor(::SlotDescriptor const&);
 
-    MCFOLD void addAcceptedItem(::ItemDescriptor const& itemDescriptor);
+    MCNAPI void addAcceptedItem(::ItemDescriptor const& itemDescriptor);
 
-    MCAPI ::SlotDescriptor& operator=(::SlotDescriptor const&);
+    MCNAPI ::SlotDescriptor& operator=(::SlotDescriptor const&);
 
-    MCAPI ~SlotDescriptor();
+    MCNAPI ~SlotDescriptor();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SlotDescriptor&&);
+    MCNAPI void* $ctor(::SlotDescriptor&&);
 
-    MCAPI void* $ctor(::SlotDescriptor const&);
+    MCNAPI void* $ctor(::SlotDescriptor const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

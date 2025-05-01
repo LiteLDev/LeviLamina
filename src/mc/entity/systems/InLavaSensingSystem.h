@@ -17,13 +17,13 @@ struct InLavaSensingSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void doInLavaSensing(
+    MCNAPI static void doInLavaSensing(
         ::StrictEntityContext const&               entity,
         ::UpdateWaterStateRequestComponent const&  updateWaterStateRequestComponent,
         ::EntityModifier<::WasInLavaFlagComponent> mod
     );
 
-    MCAPI static void singleTickSystem(
+    MCNAPI static void singleTickSystem(
         ::StrictEntityContext&                                                   entity,
         ::ViewT<::StrictEntityContext, ::UpdateWaterStateRequestComponent const> view,
         ::EntityModifier<::WasInLavaFlagComponent>                               mod

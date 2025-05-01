@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/ActorBlockBase.h"
+#include "mc/world/level/block/BlockLegacy.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
 class Experiments;
@@ -33,13 +33,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bloom(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Random&);
+    MCNAPI static void bloom(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Random&);
     // NOLINTEND
 
 public:
@@ -51,14 +51,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

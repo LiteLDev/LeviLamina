@@ -53,28 +53,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Editor::BlockUtils::CommonBlockUtilityServiceProvider& $getCommonInterface();
+    MCNAPI ::Editor::BlockUtils::CommonBlockUtilityServiceProvider& $getCommonInterface();
 
-    MCAPI void $fillVolume(
+    MCNAPI void $fillVolume(
         ::std::variant<::BlockVolumeBase const*, ::CompoundBlockVolume const*> const volume,
         ::std::optional<::Block const*> const                                        optBlock
     );
 
-    MCFOLD ::Scripting::Result<void> $_implInit();
+    MCNAPI ::Scripting::Result<void> $_implInit();
 
-    MCFOLD ::Scripting::Result<void> $_implReady();
+    MCNAPI ::Scripting::Result<void> $_implReady();
 
-    MCFOLD ::Scripting::Result<void> $_implQuit();
+    MCNAPI ::Scripting::Result<void> $_implQuit();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
 
-    MCAPI static void** $vftableForCommonBlockUtilityServiceProvider();
+    MCNAPI static void** $vftableForCommonBlockUtilityServiceProvider();
 
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

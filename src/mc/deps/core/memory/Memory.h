@@ -10,7 +10,7 @@ namespace Bedrock::Memory { class IMemoryAllocator; }
 namespace Bedrock::Memory {
 // functions
 // NOLINTBEGIN
-MCAPI ::Bedrock::Memory::IMemoryAllocator& getDefaultAllocator();
+MCNAPI ::Bedrock::Memory::IMemoryAllocator& getDefaultAllocator();
 // NOLINTEND
 
 } // namespace Bedrock::Memory

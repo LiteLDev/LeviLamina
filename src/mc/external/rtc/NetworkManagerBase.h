@@ -59,28 +59,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::rtc::Network>
+    MCNAPI ::std::unique_ptr<::rtc::Network>
     CreateNetwork(::std::string_view, ::std::string_view, ::rtc::IPAddress const&, int, ::rtc::AdapterType) const;
 
-    MCAPI ::rtc::Network* GetNetworkFromAddress(::rtc::IPAddress const&) const;
+    MCNAPI ::rtc::Network* GetNetworkFromAddress(::rtc::IPAddress const&) const;
 
-    MCAPI void MergeNetworkList(::std::vector<::std::unique_ptr<::rtc::Network>>, bool*, ::rtc::NetworkManager::Stats*);
+    MCNAPI void
+    MergeNetworkList(::std::vector<::std::unique_ptr<::rtc::Network>>, bool*, ::rtc::NetworkManager::Stats*);
 
-    MCAPI explicit NetworkManagerBase(::webrtc::FieldTrialsView const*);
+    MCNAPI explicit NetworkManagerBase(::webrtc::FieldTrialsView const*);
 
-    MCAPI void set_default_local_addresses(::rtc::IPAddress const&, ::rtc::IPAddress const&);
+    MCNAPI void set_default_local_addresses(::rtc::IPAddress const&, ::rtc::IPAddress const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool IsVpnMacAddress(::rtc::ArrayView<uchar const>);
+    MCNAPI static bool IsVpnMacAddress(::rtc::ArrayView<uchar const>);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const*);
     // NOLINTEND
 
 public:
@@ -98,9 +99,9 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForDefaultLocalAddressProvider();
+    MCNAPI static void** $vftableForDefaultLocalAddressProvider();
 
-    MCAPI static void** $vftableForMdnsResponderProvider();
+    MCNAPI static void** $vftableForMdnsResponderProvider();
     // NOLINTEND
 };
 

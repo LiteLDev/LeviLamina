@@ -34,10 +34,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
+    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
     _resolvePlayer(::Scripting::WeakLifetimeScope const& scope, ::IncomingPacketEvent const& packetEvent);
 
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftNet::ScriptPacketReceiveBeforeEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftNet::ScriptPacketReceiveBeforeEvent> bind();
     // NOLINTEND
 };
 

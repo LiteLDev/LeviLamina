@@ -30,17 +30,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<::ActorFilterGroup> getFilters() const;
+    MCNAPI ::Scripting::Result_deprecated<::ActorFilterGroup> getFilters() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getForceUse() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getForceUse() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::FeedItem>> getItems() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::FeedItem>> getItems() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptHealableComponent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptHealableComponent>
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
@@ -59,7 +59,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

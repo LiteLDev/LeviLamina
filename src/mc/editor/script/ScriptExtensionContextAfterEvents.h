@@ -7,7 +7,7 @@
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/editor/Mode.h"
 #include "mc/scripting/modules/minecraft/events/IScriptScriptDeferredEventListener.h"
-#include "mc/scripting/modules/minecraft/events/metadata/ScriptAsyncEventMetadata.h"
+#include "mc/scripting/modules/minecraft/events/metadata/ScriptAfterEventMetadata.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -56,20 +56,20 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+        MCNAPI void $onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk71fe3f;
+    ::ll::UntypedStorage<8, 24> mUnkf45d6d;
     ::ll::UntypedStorage<8, 16> mUnk86589b;
     ::ll::UntypedStorage<8, 8>  mUnk586770;
     ::ll::UntypedStorage<8, 24> mUnkb230da;
@@ -85,48 +85,48 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptExtensionContextAfterEvents(::Editor::ScriptModule::ScriptExtensionContextAfterEvents&&);
+    MCNAPI ScriptExtensionContextAfterEvents(::Editor::ScriptModule::ScriptExtensionContextAfterEvents&&);
 
-    MCAPI void _handleClipboardItemChangeEvent(::mce::UUID const& itemId, bool isPrimary);
+    MCNAPI void _handleClipboardItemChangeEvent(::mce::UUID const& itemId, bool isPrimary);
 
-    MCAPI void _handleCurrentThemeChanged(
+    MCNAPI void _handleCurrentThemeChanged(
         ::Editor::Services::EditorSettingsServiceProvider* settingsServiceProvider,
         ::std::string const&                               themeId
     );
 
-    MCAPI void _handleCursorPositionChanged(
+    MCNAPI void _handleCursorPositionChanged(
         ::std::optional<::Editor::Cursor::Position> const& newPosition,
         ::Editor::Cursor::CursorState const&               cursorState
     );
 
-    MCAPI void
+    MCNAPI void
     _handleCursorStateChanged(::Editor::Cursor::CursorState const& from, ::Editor::Cursor::CursorState const& to);
 
-    MCAPI void _handleModeChanged(::Editor::Mode from, ::Editor::Mode to);
+    MCNAPI void _handleModeChanged(::Editor::Mode from, ::Editor::Mode to);
 
-    MCAPI void _handleSelectionEvent(::Editor::Services::SelectionEvent const& selectionEvent);
+    MCNAPI void _handleSelectionEvent(::Editor::Services::SelectionEvent const& selectionEvent);
 
-    MCAPI void _handleThemeColorUpdated(
+    MCNAPI void _handleThemeColorUpdated(
         ::Editor::Services::EditorSettingsServiceProvider* settingsServiceProvider,
         ::std::string const&                               themeId,
         ::Editor::Settings::ThemeSettingsColorKey          colorKey,
         ::mce::Color const&                                color
     );
 
-    MCAPI ::Editor::ScriptModule::ScriptExtensionContextAfterEvents&
+    MCNAPI ::Editor::ScriptModule::ScriptExtensionContextAfterEvents&
     operator=(::Editor::ScriptModule::ScriptExtensionContextAfterEvents&&);
 
-    MCAPI void registerListeners(::Editor::ServiceProviderCollection& serviceProviders);
+    MCNAPI void registerListeners(::Editor::ServiceProviderCollection& serviceProviders);
 
-    MCAPI ~ScriptExtensionContextAfterEvents();
+    MCNAPI ~ScriptExtensionContextAfterEvents();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
-    MCAPI static ::ScriptModuleMinecraft::ScriptAsyncEventMetadata<
+    MCNAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata<
         ::Editor::ScriptModule::ScriptExtensionContextAfterEvents> const&
     getMetadata();
     // NOLINTEND
@@ -134,13 +134,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ScriptModule::ScriptExtensionContextAfterEvents&&);
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptExtensionContextAfterEvents&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

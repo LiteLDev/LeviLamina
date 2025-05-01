@@ -46,7 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::RakNet::InternalPacket& operator=(::RakNet::InternalPacket const&);
+    MCNAPI ::RakNet::InternalPacket& operator=(::RakNet::InternalPacket const&);
     // NOLINTEND
 };
 

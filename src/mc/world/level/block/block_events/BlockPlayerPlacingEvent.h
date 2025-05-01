@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/block_events/BlockEventBase.h"
+#include "mc/world/level/block/block_events/BlockCancellableEventBase.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,14 +12,13 @@ class BlockSource;
 
 namespace BlockEvents {
 
-class BlockPlayerPlacingEvent : public ::BlockEvents::BlockEventBase {
+class BlockPlayerPlacingEvent : public ::BlockEvents::BlockCancellableEventBase {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8> mUnk8309f9;
     ::ll::UntypedStorage<8, 8> mUnk7cb3ad;
     ::ll::UntypedStorage<8, 8> mUnk20e934;
-    ::ll::UntypedStorage<1, 1> mUnkabfa13;
     ::ll::UntypedStorage<1, 1> mUnk73a7ef;
     // NOLINTEND
 
@@ -42,19 +41,19 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BlockSource const& $getBlockSource() const;
+    MCNAPI ::BlockSource const& $getBlockSource() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -24,7 +24,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string getStringFromType(::persona::ArmSize::Type armSizeType);
+    MCNAPI static ::std::string getStringFromType(::persona::ArmSize::Type armSizeType);
     // NOLINTEND
 
 public:

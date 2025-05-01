@@ -4,14 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ai/goal/MoveToPOIGoal.h"
+#include "mc/world/actor/ai/goal/WorkDefinition.h"
 #include "mc/world/actor/ai/village/POIType.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionTrigger;
 class Mob;
-class WorkDefinition;
 // clang-format on
 
 class WorkGoal : public ::MoveToPOIGoal {
@@ -62,17 +62,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit WorkGoal(::Mob& mob);
+    MCNAPI explicit WorkGoal(::Mob& mob);
 
-    MCAPI bool _isInsideOrIsNotRaining();
+    MCNAPI bool _isInsideOrIsNotRaining();
 
-    MCAPI void playPOISoundEvent() const;
+    MCNAPI void playPOISoundEvent() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCNAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:
@@ -84,24 +84,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $useWorkstation();
+    MCNAPI void $useWorkstation();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

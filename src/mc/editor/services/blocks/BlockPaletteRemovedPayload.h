@@ -30,20 +30,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::Editor::Network::BlockPaletteRemovedPayload&
+    MCNAPI ::Editor::Network::BlockPaletteRemovedPayload&
     operator=(::Editor::Network::BlockPaletteRemovedPayload const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

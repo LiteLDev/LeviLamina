@@ -44,13 +44,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::VanillaSystems::IOwnedConstBlockSource> $createBlockSource();
+    MCNAPI ::std::unique_ptr<::VanillaSystems::IOwnedConstBlockSource> $createBlockSource();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -19,19 +19,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::Processors::ProtectedBlock&
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::Processors::ProtectedBlock&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::Processors::ProtectedBlock&&);
 
-    MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::Processors::ProtectedBlock&
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::Processors::ProtectedBlock&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::Processors::ProtectedBlock const&);
 
-    MCAPI ~ProtectedBlock();
+    MCNAPI ~ProtectedBlock();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

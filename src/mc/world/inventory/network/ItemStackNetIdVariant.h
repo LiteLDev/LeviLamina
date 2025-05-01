@@ -31,18 +31,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Result<void> deserialize(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> deserialize(::ReadOnlyBinaryStream& stream);
 
-    MCAPI ::ItemStackNetIdVariant& operator=(::ItemStackNetIdVariant&&);
+    MCNAPI ::ItemStackNetIdVariant& operator=(::ItemStackNetIdVariant&&);
 
-    MCAPI ::std::string toString() const;
+    MCNAPI ::std::string toString() const;
 
-    MCAPI ~ItemStackNetIdVariant();
+    MCNAPI ~ItemStackNetIdVariant();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

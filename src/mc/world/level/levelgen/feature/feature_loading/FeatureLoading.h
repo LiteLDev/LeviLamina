@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonParseState.h"
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/util/json_util/JsonParseState.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/level/levelgen/feature/feature_loading/ConcreteFeatureHolder.h"
 
 // auto generated forward declare list
@@ -17,7 +17,7 @@ namespace JsonUtil { class EmptyClass; }
 namespace FeatureLoading {
 // functions
 // NOLINTBEGIN
-MCAPI void _addScatterParamsLegacySchema(
+MCNAPI void _addScatterParamsLegacySchema(
     ::JsonUtil::JsonSchemaObjectNode<
         ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
         ::FeatureLoading::ConcreteFeatureHolder<::ScatterFeature>>& schemaNode

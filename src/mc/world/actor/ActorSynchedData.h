@@ -12,19 +12,19 @@ class SynchedActorDataEntityWrapper;
 namespace ActorSynchedData {
 // functions
 // NOLINTBEGIN
-MCAPI void updateAlwaysShowNameTag(::EntityContext& entity, ::SynchedActorDataEntityWrapper const& entityData);
+MCNAPI void updateAlwaysShowNameTag(::EntityContext& entity, ::SynchedActorDataEntityWrapper const& entityData);
 
-MCAPI void updateBoundingBox(::EntityContext& entity, ::SynchedActorDataEntityWrapper const& entityData);
+MCNAPI void updateBoundingBox(::EntityContext& entity, ::SynchedActorDataEntityWrapper const& entityData);
 
-MCAPI void updateCommandBlock(::Actor& actor, int dataId, ::std::string& filteredNameTag);
+MCNAPI void updateCommandBlock(::Actor& actor, int dataId, ::std::string& filteredNameTag);
 
-MCAPI void updateContainer(::Actor& actor);
+MCNAPI void updateContainer(::Actor& actor);
 
-MCAPI void updateHasNPC(::Actor& actor);
+MCNAPI void updateHasNPC(::Actor& actor);
 
-MCAPI void updateIsBuoyant(::EntityContext& entity, ::SynchedActorDataEntityWrapper& entityData);
+MCNAPI void updateIsBuoyant(::EntityContext& entity, ::SynchedActorDataEntityWrapper& entityData);
 
-MCAPI void updateNameTag(::Actor& actor);
+MCNAPI void updateNameTag(::Actor& actor);
 // NOLINTEND
 
 } // namespace ActorSynchedData

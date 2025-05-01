@@ -29,20 +29,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::DynamicProperties& getOrAddLevelDynamicProperties();
+    MCNAPI ::DynamicProperties& getOrAddLevelDynamicProperties();
 
-    MCAPI void readFromLevelStorage(::LevelStorage& levelStorage);
+    MCNAPI void readFromLevelStorage(::LevelStorage& levelStorage);
 
-    MCAPI void registerLevelStorageManagerListener(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+    MCNAPI void registerLevelStorageManagerListener(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
-    MCAPI void writeToLevelStorage(::LevelStorage& levelStorage);
+    MCNAPI void writeToLevelStorage(::LevelStorage& levelStorage);
 
-    MCAPI ~DynamicPropertiesManager();
+    MCNAPI ~DynamicPropertiesManager();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

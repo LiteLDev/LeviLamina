@@ -13,11 +13,17 @@ struct ComponentItemDataAll_Latest;
 namespace Validators {
 // functions
 // NOLINTBEGIN
-MCAPI void chargeableItemComponent(::Puv::LoadResult<::ComponentItemDataAll_Latest>& loadResult);
+MCNAPI void chargeableItemComponent(::Puv::LoadResult<::ComponentItemDataAll_Latest>& loadResult);
 
-MCAPI void foodItemComponent(::Puv::LoadResult<::ComponentItemDataAll_Latest>& loadResult);
+MCNAPI void damageAbsorptionItemComponent(::Puv::LoadResult<::ComponentItemDataAll_Latest>& loadResult);
 
-MCAPI void shooterItemComponent(::Puv::LoadResult<::ComponentItemDataAll_Latest>& loadResult);
+MCNAPI void durabilitySensorItemComponent(::Puv::LoadResult<::ComponentItemDataAll_Latest>& loadResult);
+
+MCNAPI void foodItemComponent(::Puv::LoadResult<::ComponentItemDataAll_Latest>& loadResult);
+
+MCNAPI void shooterItemComponent(::Puv::LoadResult<::ComponentItemDataAll_Latest>& loadResult);
+
+MCNAPI void storageItemComponent(::Puv::LoadResult<::ComponentItemDataAll_Latest>& loadResult);
 // NOLINTEND
 
 } // namespace Validators

@@ -48,94 +48,94 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::VideoCodecType GetCodec() const;
+    MCNAPI ::webrtc::VideoCodecType GetCodec() const;
 
-    MCAPI ::webrtc::VideoContentType GetContentType() const;
+    MCNAPI ::webrtc::VideoContentType GetContentType() const;
 
-    MCAPI ::std::vector<uint> GetCsrcs() const;
+    MCNAPI ::std::vector<uint> GetCsrcs() const;
 
-    MCAPI ::rtc::ArrayView<::webrtc::DecodeTargetIndication const> GetDecodeTargetIndications() const;
+    MCNAPI ::rtc::ArrayView<::webrtc::DecodeTargetIndication const> GetDecodeTargetIndications() const;
 
-    MCAPI ::rtc::ArrayView<int64 const> GetFrameDependencies() const;
+    MCNAPI ::rtc::ArrayView<int64 const> GetFrameDependencies() const;
 
-    MCAPI ::std::optional<int64> GetFrameId() const;
+    MCNAPI ::std::optional<int64> GetFrameId() const;
 
-    MCAPI ::webrtc::VideoFrameType GetFrameType() const;
+    MCNAPI ::webrtc::VideoFrameType GetFrameType() const;
 
-    MCAPI ushort GetHeight() const;
+    MCNAPI ushort GetHeight() const;
 
-    MCAPI bool GetIsLastFrameInPicture() const;
+    MCNAPI bool GetIsLastFrameInPicture() const;
 
-    MCAPI ::std::variant<
+    MCNAPI ::std::variant<
         ::std::monostate,
         ::webrtc::RTPVideoHeaderVP8,
         ::webrtc::RTPVideoHeaderVP9,
         ::webrtc::RTPVideoHeaderH264> const&
     GetRTPVideoHeaderCodecSpecifics() const;
 
-    MCAPI ::webrtc::VideoRotation GetRotation() const;
+    MCNAPI ::webrtc::VideoRotation GetRotation() const;
 
-    MCAPI uchar GetSimulcastIdx() const;
+    MCNAPI uchar GetSimulcastIdx() const;
 
-    MCAPI int GetSpatialIndex() const;
+    MCNAPI int GetSpatialIndex() const;
 
-    MCAPI uint GetSsrc() const;
+    MCNAPI uint GetSsrc() const;
 
-    MCAPI int GetTemporalIndex() const;
+    MCNAPI int GetTemporalIndex() const;
 
-    MCAPI ushort GetWidth() const;
+    MCNAPI ushort GetWidth() const;
 
-    MCAPI void SetCodec(::webrtc::VideoCodecType);
+    MCNAPI void SetCodec(::webrtc::VideoCodecType);
 
-    MCAPI void SetContentType(::webrtc::VideoContentType);
+    MCNAPI void SetContentType(::webrtc::VideoContentType);
 
-    MCAPI void SetCsrcs(::std::vector<uint>);
+    MCNAPI void SetCsrcs(::std::vector<uint>);
 
-    MCAPI void SetDecodeTargetIndications(::rtc::ArrayView<::webrtc::DecodeTargetIndication const>);
+    MCNAPI void SetDecodeTargetIndications(::rtc::ArrayView<::webrtc::DecodeTargetIndication const>);
 
-    MCAPI void SetFrameDependencies(::rtc::ArrayView<int64 const>);
+    MCNAPI void SetFrameDependencies(::rtc::ArrayView<int64 const>);
 
-    MCAPI void SetFrameId(::std::optional<int64>);
+    MCNAPI void SetFrameId(::std::optional<int64>);
 
-    MCAPI void SetFrameType(::webrtc::VideoFrameType);
+    MCNAPI void SetFrameType(::webrtc::VideoFrameType);
 
-    MCAPI void SetHeight(ushort);
+    MCNAPI void SetHeight(ushort);
 
-    MCAPI void SetIsLastFrameInPicture(bool);
+    MCNAPI void SetIsLastFrameInPicture(bool);
 
-    MCAPI void SetRTPVideoHeaderCodecSpecifics(::std::variant<
-                                               ::std::monostate,
-                                               ::webrtc::RTPVideoHeaderVP8,
-                                               ::webrtc::RTPVideoHeaderVP9,
-                                               ::webrtc::RTPVideoHeaderH264>);
+    MCNAPI void SetRTPVideoHeaderCodecSpecifics(::std::variant<
+                                                ::std::monostate,
+                                                ::webrtc::RTPVideoHeaderVP8,
+                                                ::webrtc::RTPVideoHeaderVP9,
+                                                ::webrtc::RTPVideoHeaderH264>);
 
-    MCAPI void SetRotation(::webrtc::VideoRotation);
+    MCNAPI void SetRotation(::webrtc::VideoRotation);
 
-    MCAPI void SetSimulcastIdx(uchar);
+    MCNAPI void SetSimulcastIdx(uchar);
 
-    MCAPI void SetSpatialIndex(int);
+    MCNAPI void SetSpatialIndex(int);
 
-    MCAPI void SetSsrc(uint);
+    MCNAPI void SetSsrc(uint);
 
-    MCAPI void SetTemporalIndex(int);
+    MCNAPI void SetTemporalIndex(int);
 
-    MCAPI void SetWidth(ushort);
+    MCNAPI void SetWidth(ushort);
 
-    MCAPI VideoFrameMetadata();
+    MCNAPI VideoFrameMetadata();
 
-    MCAPI ~VideoFrameMetadata();
+    MCNAPI ~VideoFrameMetadata();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

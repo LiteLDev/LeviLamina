@@ -53,18 +53,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $test(::Block const& block, ::Randomize& randomize) const;
+    MCNAPI bool $test(::Block const& block, ::Randomize& randomize) const;
 
-    MCAPI bool $test(::BlockPos const& worldPos, ::BlockPos const& refPos, ::Randomize& randomize) const;
+    MCNAPI bool $test(::BlockPos const& worldPos, ::BlockPos const& refPos, ::Randomize& randomize) const;
 
-    MCFOLD ::StructurePoolBlockPredicateType $getType() const;
+    MCNAPI ::StructurePoolBlockPredicateType $getType() const;
 
-    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

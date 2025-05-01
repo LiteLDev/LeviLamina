@@ -27,22 +27,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<::std::string> getCooldownCategory();
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getCooldownCategory();
 
-    MCAPI ::Scripting::Result_deprecated<int> getCooldownTicks();
+    MCNAPI ::Scripting::Result_deprecated<int> getCooldownTicks();
 
-    MCAPI ::Scripting::Result_deprecated<int>
+    MCNAPI ::Scripting::Result_deprecated<int>
     getCooldownTicksRemaining(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer);
 
-    MCAPI ::Scripting::Result_deprecated<bool> isCooldownCategory(::std::string const& category);
+    MCNAPI ::Scripting::Result_deprecated<bool> isCooldownCategory(::std::string const& category);
 
-    MCAPI ::Scripting::Result<void> startCooldown(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer);
+    MCNAPI ::Scripting::Result<void> startCooldown(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemCooldownComponent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemCooldownComponent>
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
@@ -55,7 +55,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

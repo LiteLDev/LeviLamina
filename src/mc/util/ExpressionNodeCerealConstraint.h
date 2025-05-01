@@ -13,49 +13,27 @@ namespace cereal::internal { struct ConstraintDescription; }
 
 class ExpressionNodeCerealConstraint : public ::cereal::Constraint {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk9589f3;
-    ::ll::UntypedStorage<1, 1>  mUnk34d183;
-    ::ll::UntypedStorage<1, 1>  mUnk31fd9c;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ExpressionNodeCerealConstraint& operator=(ExpressionNodeCerealConstraint const&);
-    ExpressionNodeCerealConstraint(ExpressionNodeCerealConstraint const&);
-    ExpressionNodeCerealConstraint();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual void doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const /*override*/;
+    virtual void doValidate(::entt::meta_any const&, ::cereal::SerializerContext&) const /*override*/;
 
     // vIndex: 2
     virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
 
     // vIndex: 1
-    virtual ~ExpressionNodeCerealConstraint() /*override*/;
+    virtual ~ExpressionNodeCerealConstraint() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
 
-    MCFOLD ::cereal::internal::ConstraintDescription $description() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -5,7 +5,7 @@
 namespace DateHelper {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string getTimestampFileName(int64 const& timestamp);
+MCNAPI ::std::string getTimestampFileName(int64 const& timestamp);
 // NOLINTEND
 
 } // namespace DateHelper

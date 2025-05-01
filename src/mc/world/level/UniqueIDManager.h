@@ -27,6 +27,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::OwnerPtr<::UniqueIDManager> setupUniqueIDManager(::LevelData& levelData, bool isClientSide);
+    MCNAPI static ::OwnerPtr<::UniqueIDManager> setupUniqueIDManager(::LevelData& levelData, bool isClientSide);
     // NOLINTEND
 };

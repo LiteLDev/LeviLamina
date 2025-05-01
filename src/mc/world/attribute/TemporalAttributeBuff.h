@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/world/attribute/AttributeBuff.h"
+#include "mc/world/effect/EffectDuration.h"
 
 // auto generated forward declare list
 // clang-format off
 class Amplifier;
-struct EffectDuration;
 // clang-format on
 
 class TemporalAttributeBuff : public ::AttributeBuff {
@@ -50,38 +50,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TemporalAttributeBuff(::TemporalAttributeBuff const&);
+    MCNAPI TemporalAttributeBuff(::TemporalAttributeBuff const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TemporalAttributeBuff const&);
+    MCNAPI void* $ctor(::TemporalAttributeBuff const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $shouldBuff() const;
+    MCNAPI bool $shouldBuff() const;
 
-    MCAPI bool $isComplete() const;
+    MCNAPI bool $isComplete() const;
 
-    MCFOLD bool $isInstantaneous() const;
+    MCNAPI bool $isInstantaneous() const;
 
-    MCAPI bool $isSerializable() const;
+    MCNAPI bool $isSerializable() const;
 
-    MCAPI void $setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
+    MCNAPI void $setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

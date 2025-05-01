@@ -17,25 +17,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JsepTransportDescription(::cricket::JsepTransportDescription const&);
+    MCNAPI JsepTransportDescription(::cricket::JsepTransportDescription const&);
 
-    MCAPI JsepTransportDescription(bool, ::std::vector<int> const&, int, ::cricket::TransportDescription const&);
+    MCNAPI JsepTransportDescription(bool, ::std::vector<int> const&, int, ::cricket::TransportDescription const&);
 
-    MCAPI ~JsepTransportDescription();
+    MCNAPI ~JsepTransportDescription();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::JsepTransportDescription const&);
+    MCNAPI void* $ctor(::cricket::JsepTransportDescription const&);
 
-    MCAPI void* $ctor(bool, ::std::vector<int> const&, int, ::cricket::TransportDescription const&);
+    MCNAPI void* $ctor(bool, ::std::vector<int> const&, int, ::cricket::TransportDescription const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

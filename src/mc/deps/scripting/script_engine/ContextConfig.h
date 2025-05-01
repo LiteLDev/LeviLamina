@@ -27,29 +27,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContextConfig(::Scripting::ContextConfig&&);
+    MCNAPI ContextConfig(::Scripting::ContextConfig&&);
 
-    MCAPI ContextConfig(::Scripting::ContextConfig const&);
+    MCNAPI ContextConfig(::Scripting::ContextConfig const&);
 
-    MCAPI ::Scripting::ContextConfig& operator=(::Scripting::ContextConfig const&);
+    MCNAPI ::Scripting::ContextConfig& operator=(::Scripting::ContextConfig const&);
 
-    MCAPI ::Scripting::ContextConfig& operator=(::Scripting::ContextConfig&&);
+    MCNAPI ::Scripting::ContextConfig& operator=(::Scripting::ContextConfig&&);
 
-    MCAPI ~ContextConfig();
+    MCNAPI ~ContextConfig();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::ContextConfig&&);
+    MCNAPI void* $ctor(::Scripting::ContextConfig&&);
 
-    MCAPI void* $ctor(::Scripting::ContextConfig const&);
+    MCNAPI void* $ctor(::Scripting::ContextConfig const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

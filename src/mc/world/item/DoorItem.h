@@ -29,7 +29,7 @@ public:
     // NOLINTBEGIN
     // vIndex: 120
     virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
     // vIndex: 0
@@ -39,9 +39,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _place(::BlockSource& region, ::BlockPos pos, ::Block const& block) const;
+    MCNAPI bool _place(::BlockSource& region, ::BlockPos pos, ::Block const& block) const;
 
-    MCAPI ::Block const* getDoorBlock() const;
+    MCNAPI ::Block const* getDoorBlock() const;
     // NOLINTEND
 
 public:
@@ -53,13 +53,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCNAPI ::InteractionResult
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

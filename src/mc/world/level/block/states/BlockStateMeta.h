@@ -22,6 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int indexOf(uint64 const& h) const;
+    MCNAPI int indexOf(uint64 const& h) const;
     // NOLINTEND
 };

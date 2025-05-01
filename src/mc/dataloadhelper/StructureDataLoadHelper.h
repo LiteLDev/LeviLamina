@@ -5,18 +5,18 @@
 // auto generated inclusion list
 #include "mc/dataloadhelper/DataLoadHelper.h"
 #include "mc/dataloadhelper/DataLoadHelperType.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
 #include "mc/world/Direction.h"
 #include "mc/world/actor/InternalComponentRegistry.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class HashedString;
 class Level;
-class Vec3;
-struct ActorUniqueID;
 // clang-format on
 
 class StructureDataLoadHelper : public ::DataLoadHelper {
@@ -100,55 +100,55 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Vec3 $loadPosition(::Vec3 const& position);
+    MCNAPI ::Vec3 $loadPosition(::Vec3 const& position);
 
-    MCAPI ::BlockPos $loadBlockPosition(::BlockPos const& blockPos);
+    MCNAPI ::BlockPos $loadBlockPosition(::BlockPos const& blockPos);
 
-    MCAPI ::BlockPos $loadBlockPositionOffset(::BlockPos const& blockPosOffset);
+    MCNAPI ::BlockPos $loadBlockPositionOffset(::BlockPos const& blockPosOffset);
 
-    MCFOLD float $loadRotationDegreesX(float x);
+    MCNAPI float $loadRotationDegreesX(float x);
 
-    MCAPI float $loadRotationDegreesY(float y);
+    MCNAPI float $loadRotationDegreesY(float y);
 
-    MCFOLD float $loadRotationRadiansX(float x);
+    MCNAPI float $loadRotationRadiansX(float x);
 
-    MCAPI float $loadRotationRadiansY(float y);
+    MCNAPI float $loadRotationRadiansY(float y);
 
-    MCAPI uchar $loadFacingID(uchar facing);
+    MCNAPI uchar $loadFacingID(uchar facing);
 
-    MCAPI ::Vec3 $loadDirection(::Vec3 const& direction);
+    MCNAPI ::Vec3 $loadDirection(::Vec3 const& direction);
 
-    MCAPI ::Direction::Type $loadDirection(::Direction::Type direction);
+    MCNAPI ::Direction::Type $loadDirection(::Direction::Type direction);
 
-    MCAPI ::Rotation $loadRotation(::Rotation rotation);
+    MCNAPI ::Rotation $loadRotation(::Rotation rotation);
 
-    MCAPI ::Mirror $loadMirror(::Mirror mirror);
+    MCNAPI ::Mirror $loadMirror(::Mirror mirror);
 
-    MCAPI ::ActorUniqueID $loadActorUniqueID(::ActorUniqueID id);
+    MCNAPI ::ActorUniqueID $loadActorUniqueID(::ActorUniqueID id);
 
-    MCAPI ::ActorUniqueID $loadOwnerID(::ActorUniqueID id);
+    MCNAPI ::ActorUniqueID $loadOwnerID(::ActorUniqueID id);
 
-    MCFOLD ::InternalComponentRegistry::ComponentInfo const* $loadActorInternalComponentInfo(
+    MCNAPI ::InternalComponentRegistry::ComponentInfo const* $loadActorInternalComponentInfo(
         ::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const& registry,
         ::std::string const&                                                                    componentName
     );
 
-    MCFOLD bool $shouldResetTime();
+    MCNAPI bool $shouldResetTime();
 
-    MCFOLD ::DataLoadHelperType $getType() const;
+    MCNAPI ::DataLoadHelperType $getType() const;
 
-    MCAPI ::ActorUniqueID $_generateNewID();
+    MCNAPI ::ActorUniqueID $_generateNewID();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

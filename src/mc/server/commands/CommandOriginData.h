@@ -3,12 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/UUID.h"
 #include "mc/server/commands/CommandOriginType.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace mce { class UUID; }
-// clang-format on
 
 struct CommandOriginData {
 public:
@@ -23,22 +19,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandOriginData(::CommandOriginData const& other);
+    MCNAPI CommandOriginData(::CommandOriginData const& other);
 
-    MCAPI ::CommandOriginData& operator=(::CommandOriginData const& rhs);
+    MCNAPI ::CommandOriginData& operator=(::CommandOriginData const& rhs);
 
-    MCAPI ~CommandOriginData();
+    MCNAPI ~CommandOriginData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CommandOriginData const& other);
+    MCNAPI void* $ctor(::CommandOriginData const& other);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

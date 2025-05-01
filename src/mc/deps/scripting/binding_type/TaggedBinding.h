@@ -25,30 +25,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TaggedBinding();
+    MCNAPI TaggedBinding();
 
-    MCAPI ::Scripting::TaggedBinding& beta();
+    MCNAPI ::Scripting::TaggedBinding& beta();
 
-    MCAPI ::Scripting::TaggedBinding& onlyStable();
+    MCNAPI ::Scripting::TaggedBinding& onlyStable();
 
-    MCAPI ::Scripting::TaggedBinding& release(
+    MCNAPI ::Scripting::TaggedBinding& release(
         ::Scripting::Version                            inclusiveLowerVersion,
         ::std::optional<::Scripting::MajorVersionLimit> exclusiveMajorVersionLimit
     );
 
-    MCAPI ~TaggedBinding();
+    MCNAPI ~TaggedBinding();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

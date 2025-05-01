@@ -20,7 +20,7 @@ struct StateVectorComponent;
 namespace UpdateEntityAfterFallOn {
 // functions
 // NOLINTBEGIN
-MCAPI void onBounceStarted(
+MCNAPI void onBounceStarted(
     ::StrictEntityContext const&                                                                      entity,
     ::BlockPos const&                                                                                 bounceStartPos,
     ::Block const&                                                                                    block,

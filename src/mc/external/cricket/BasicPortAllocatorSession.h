@@ -32,11 +32,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddAllocatedPort(::cricket::Port*, ::cricket::AllocationSequence*);
+    MCNAPI void AddAllocatedPort(::cricket::Port*, ::cricket::AllocationSequence*);
 
-    MCAPI void AllocatePorts();
+    MCNAPI void AllocatePorts();
 
-    MCAPI BasicPortAllocatorSession(
+    MCNAPI BasicPortAllocatorSession(
         ::cricket::BasicPortAllocator*,
         ::std::string_view,
         int,
@@ -44,80 +44,80 @@ public:
         ::std::string_view
     );
 
-    MCAPI bool CandidatePairable(::cricket::Candidate const&, ::cricket::Port const*) const;
+    MCNAPI bool CandidatePairable(::cricket::Candidate const&, ::cricket::Port const*) const;
 
-    MCAPI bool CheckCandidateFilter(::cricket::Candidate const&) const;
+    MCNAPI bool CheckCandidateFilter(::cricket::Candidate const&) const;
 
-    MCAPI void ConfigReady(::std::unique_ptr<::cricket::PortConfiguration>);
+    MCNAPI void ConfigReady(::std::unique_ptr<::cricket::PortConfiguration>);
 
-    MCAPI void DisableEquivalentPhases(::rtc::Network const*, ::cricket::PortConfiguration*, uint*);
+    MCNAPI void DisableEquivalentPhases(::rtc::Network const*, ::cricket::PortConfiguration*, uint*);
 
-    MCAPI void DoAllocate(bool);
+    MCNAPI void DoAllocate(bool);
 
-    MCAPI ::cricket::BasicPortAllocatorSession::PortData* FindPort(::cricket::Port*);
+    MCNAPI ::cricket::BasicPortAllocatorSession::PortData* FindPort(::cricket::Port*);
 
-    MCAPI ::cricket::Port* GetBestTurnPortForNetwork(::std::string_view) const;
+    MCNAPI ::cricket::Port* GetBestTurnPortForNetwork(::std::string_view) const;
 
-    MCAPI void
+    MCNAPI void
     GetCandidatesFromPort(::cricket::BasicPortAllocatorSession::PortData const&, ::std::vector<::cricket::Candidate>*)
         const;
 
-    MCAPI ::std::vector<::rtc::Network const*> GetFailedNetworks();
+    MCNAPI ::std::vector<::rtc::Network const*> GetFailedNetworks();
 
-    MCAPI ::std::vector<::rtc::Network const*> GetNetworks();
+    MCNAPI ::std::vector<::rtc::Network const*> GetNetworks();
 
-    MCAPI ::std::vector<::cricket::BasicPortAllocatorSession::PortData*>
+    MCNAPI ::std::vector<::cricket::BasicPortAllocatorSession::PortData*>
     GetUnprunedPorts(::std::vector<::rtc::Network const*> const&);
 
-    MCAPI void MaybeSignalCandidatesAllocationDone();
+    MCNAPI void MaybeSignalCandidatesAllocationDone();
 
-    MCAPI void OnAllocate(int);
+    MCNAPI void OnAllocate(int);
 
-    MCAPI void OnAllocationSequenceObjectsCreated();
+    MCNAPI void OnAllocationSequenceObjectsCreated();
 
-    MCAPI void OnCandidateError(::cricket::Port*, ::cricket::IceCandidateErrorEvent const&);
+    MCNAPI void OnCandidateError(::cricket::Port*, ::cricket::IceCandidateErrorEvent const&);
 
-    MCAPI void OnCandidateReady(::cricket::Port*, ::cricket::Candidate const&);
+    MCNAPI void OnCandidateReady(::cricket::Port*, ::cricket::Candidate const&);
 
-    MCAPI void OnConfigReady(::std::unique_ptr<::cricket::PortConfiguration>);
+    MCNAPI void OnConfigReady(::std::unique_ptr<::cricket::PortConfiguration>);
 
-    MCAPI void OnConfigStop();
+    MCNAPI void OnConfigStop();
 
-    MCAPI void OnNetworksChanged();
+    MCNAPI void OnNetworksChanged();
 
-    MCAPI void OnPortAllocationComplete();
+    MCNAPI void OnPortAllocationComplete();
 
-    MCAPI void OnPortComplete(::cricket::Port*);
+    MCNAPI void OnPortComplete(::cricket::Port*);
 
-    MCAPI void OnPortDestroyed(::cricket::PortInterface*);
+    MCNAPI void OnPortDestroyed(::cricket::PortInterface*);
 
-    MCAPI void OnPortError(::cricket::Port*);
+    MCNAPI void OnPortError(::cricket::Port*);
 
-    MCAPI bool PruneNewlyPairableTurnPort(::cricket::BasicPortAllocatorSession::PortData*);
+    MCNAPI bool PruneNewlyPairableTurnPort(::cricket::BasicPortAllocatorSession::PortData*);
 
-    MCAPI void PrunePortsAndRemoveCandidates(::std::vector<::cricket::BasicPortAllocatorSession::PortData*> const&);
+    MCNAPI void PrunePortsAndRemoveCandidates(::std::vector<::cricket::BasicPortAllocatorSession::PortData*> const&);
 
-    MCAPI bool PruneTurnPorts(::cricket::Port*);
+    MCNAPI bool PruneTurnPorts(::cricket::Port*);
 
-    MCAPI void Regather(::std::vector<::rtc::Network const*> const&, bool, ::cricket::IceRegatheringReason);
+    MCNAPI void Regather(::std::vector<::rtc::Network const*> const&, bool, ::cricket::IceRegatheringReason);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::rtc::Network const*> SelectIPv6Networks(::std::vector<::rtc::Network const*>&, int);
+    MCNAPI static ::std::vector<::rtc::Network const*> SelectIPv6Networks(::std::vector<::rtc::Network const*>&, int);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::BasicPortAllocator*, ::std::string_view, int, ::std::string_view, ::std::string_view);
+    MCNAPI void* $ctor(::cricket::BasicPortAllocator*, ::std::string_view, int, ::std::string_view, ::std::string_view);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -62,13 +62,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~WeightedItemStack();
+        MCNAPI ~WeightedItemStack();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -102,15 +102,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void reset();
+        MCNAPI void reset();
 
-        MCAPI ~Data();
+        MCNAPI ~Data();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -131,13 +131,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~PlayerScanResult();
+        MCNAPI ~PlayerScanResult();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -162,88 +162,88 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit TrialSpawner(::BlockPos const& pos);
+    MCNAPI explicit TrialSpawner(::BlockPos const& pos);
 
-    MCAPI void _becomeOminous(::BlockSource& region, ::Block const& block);
+    MCNAPI void _becomeOminous(::BlockSource& region, ::Block const& block);
 
-    MCAPI void _dispenseItemAboveRandomCombatant(::BlockSource& region);
+    MCNAPI void _dispenseItemAboveRandomCombatant(::BlockSource& region);
 
-    MCAPI ::TrialSpawner::PlayerScanResult _doPlayerScan(::BlockSource& region);
+    MCNAPI ::TrialSpawner::PlayerScanResult _doPlayerScan(::BlockSource& region);
 
-    MCAPI ::std::vector<::TrialSpawner::WeightedItemStack>& _getDispensingItems(::BlockSource& region);
+    MCNAPI ::std::vector<::TrialSpawner::WeightedItemStack>& _getDispensingItems(::BlockSource& region);
 
-    MCAPI ::std::optional<::Vec3>
+    MCNAPI ::std::optional<::Vec3>
     _getPositionToSpawnItemSpawner(::BlockSource& region, ::std::vector<::ActorUniqueID> const& eligibleActorIds) const;
 
-    MCAPI bool _hasLineOfSight(::BlockSource const& region, ::Vec3 from, ::Vec3 to, float maxRange) const;
+    MCNAPI bool _hasLineOfSight(::BlockSource const& region, ::Vec3 from, ::Vec3 to, float maxRange) const;
 
-    MCAPI void _selectLootTable(::Level& level);
+    MCNAPI void _selectLootTable(::Level& level);
 
-    MCAPI void _sendParticlesForState(::BlockSource& region, ::BlockPos pos, ::TrialSpawner::SpawningLogicState state);
+    MCNAPI void _sendParticlesForState(::BlockSource& region, ::BlockPos pos, ::TrialSpawner::SpawningLogicState state);
 
-    MCAPI void _sendSmallFlame(::BlockSource& region, ::Vec3 center);
+    MCNAPI void _sendSmallFlame(::BlockSource& region, ::Vec3 center);
 
-    MCAPI void _spawnItemSpawner(::BlockSource& region, ::Vec3 pos, ::ItemStack const& itemToSpawn);
+    MCNAPI void _spawnItemSpawner(::BlockSource& region, ::Vec3 pos, ::ItemStack const& itemToSpawn);
 
-    MCAPI ::std::optional<::ActorUniqueID> _spawnMob(::BlockSource& region, ::BlockPos blockActorPos, ::Vec3 spawnPos);
+    MCNAPI ::std::optional<::ActorUniqueID> _spawnMob(::BlockSource& region, ::BlockPos blockActorPos, ::Vec3 spawnPos);
 
-    MCAPI void _tryRegisterNewPlayers(::BlockSource& region, ::TrialSpawner::SpawningLogicState currentState);
+    MCNAPI void _tryRegisterNewPlayers(::BlockSource& region, ::TrialSpawner::SpawningLogicState currentState);
 
-    MCAPI void _updateStateMachine(::BlockSource& region);
+    MCNAPI void _updateStateMachine(::BlockSource& region);
 
-    MCAPI void applyUpdatePacket(::CompoundTag const& tag, ::BlockSource& region);
+    MCNAPI void applyUpdatePacket(::CompoundTag const& tag, ::BlockSource& region);
 
-    MCAPI ::Mob* createAndAddDisplayEntity(::BlockSource& region);
+    MCNAPI ::Mob* createAndAddDisplayEntity(::BlockSource& region);
 
-    MCAPI ::SpawnData const* getOrCreateNextSpawnData(::Random& random);
+    MCNAPI ::SpawnData const* getOrCreateNextSpawnData(::Random& random);
 
-    MCAPI ::TrialSpawner::SpawningLogicState getSpawningLogicState(::BlockSource& region) const;
+    MCNAPI ::TrialSpawner::SpawningLogicState getSpawningLogicState(::BlockSource& region) const;
 
-    MCAPI void load(::CompoundTag const& data, ::TrialSpawnerConfigRegistry const& configRegistry);
+    MCNAPI void load(::CompoundTag const& data, ::TrialSpawnerConfigRegistry const& configRegistry);
 
-    MCAPI void removeDisplayEntity();
+    MCNAPI void removeDisplayEntity();
 
-    MCAPI void save(::CompoundTag& tag);
+    MCNAPI void save(::CompoundTag& tag);
 
-    MCAPI void setEntityId(::ActorDefinitionIdentifier const& actorDefId, ::BlockSource& region);
+    MCNAPI void setEntityId(::ActorDefinitionIdentifier const& actorDefId, ::BlockSource& region);
 
-    MCAPI void tick(::BlockSource& region);
+    MCNAPI void tick(::BlockSource& region);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _ejectItem(::BlockSource& region, ::Vec3 pos, ::ItemStack const& item);
+    MCNAPI static void _ejectItem(::BlockSource& region, ::Vec3 pos, ::ItemStack const& item);
 
-    MCAPI static void _ejectResultItems(
+    MCNAPI static void _ejectResultItems(
         ::BlockSource&                    region,
         ::BlockPos                        blockPos,
         ::std::vector<::ItemStack> const& items,
         int                               lootCount
     );
 
-    MCAPI static ::std::optional<::Vec3>
+    MCNAPI static ::std::optional<::Vec3>
     _findFreePositionAbove(::BlockSource const& region, ::Vec3 const& from, int distance);
 
-    MCAPI static ::std::vector<::ItemStack> _getRandomLootTableItems(
+    MCNAPI static ::std::vector<::ItemStack> _getRandomLootTableItems(
         ::Level&             level,
         ::Random&            random,
         ::DimensionType      dimensionType,
         ::std::string const& lootTableName
     );
 
-    MCAPI static bool _isAllowedToSpawnInLevel(::Level& level);
+    MCNAPI static bool _isAllowedToSpawnInLevel(::Level& level);
 
-    MCAPI static bool _isOminous(::BlockSource& region, ::BlockPos pos);
+    MCNAPI static bool _isOminous(::BlockSource& region, ::BlockPos pos);
 
-    MCAPI static void _removeMobByGameplay(::Level& level, ::Actor& mob);
+    MCNAPI static void _removeMobByGameplay(::Level& level, ::Actor& mob);
 
-    MCAPI static ::std::unique_ptr<::Tag> _saveConfig(::TrialSpawnerConfig& config);
+    MCNAPI static ::std::unique_ptr<::Tag> _saveConfig(::TrialSpawnerConfig& config);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
+    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 };

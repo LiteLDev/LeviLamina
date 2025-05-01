@@ -16,7 +16,7 @@ class ScriptNumberRange {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::FloatRange> bindV010();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::FloatRange> bindV010();
     // NOLINTEND
 };
 

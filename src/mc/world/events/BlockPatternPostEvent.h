@@ -13,20 +13,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockPatternPostEvent(::BlockPatternPostEvent const&);
+    MCNAPI BlockPatternPostEvent(::BlockPatternPostEvent const&);
 
-    MCAPI ~BlockPatternPostEvent();
+    MCNAPI ~BlockPatternPostEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::BlockPatternPostEvent const&);
+    MCNAPI void* $ctor(::BlockPatternPostEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

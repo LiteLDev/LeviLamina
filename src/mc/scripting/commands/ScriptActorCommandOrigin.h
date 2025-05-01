@@ -41,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorCommandOrigin(
+    MCNAPI ScriptActorCommandOrigin(
         ::Actor const&                              actor,
         ::std::function<void(int, ::std::string&&)> outputCallback,
         ::std::optional<::CommandPermissionLevel>   permissionLevel
@@ -51,7 +51,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Actor const&                              actor,
         ::std::function<void(int, ::std::string&&)> outputCallback,
         ::std::optional<::CommandPermissionLevel>   permissionLevel
@@ -61,20 +61,20 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Actor* $getEntity() const;
+    MCNAPI ::Actor* $getEntity() const;
 
-    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
+    MCNAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

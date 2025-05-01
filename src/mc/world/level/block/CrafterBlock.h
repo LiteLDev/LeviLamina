@@ -5,19 +5,19 @@
 // auto generated inclusion list
 #include "mc/world/Flip.h"
 #include "mc/world/level/block/ActorBlockBase.h"
+#include "mc/world/level/block/BlockLegacy.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class Block;
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
 class Experiments;
-class Player;
 class Random;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class CrafterBlock : public ::ActorBlock {
@@ -34,9 +34,6 @@ public:
 
     // vIndex: 132
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    // vIndex: 139
-    virtual bool use(::Player& player, ::BlockPos const& pos, uchar) const /*override*/;
 
     // vIndex: 138
     virtual bool isInteractiveBlock() const /*override*/;
@@ -70,7 +67,7 @@ public:
     // vIndex: 122
     virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
 
-    // vIndex: 141
+    // vIndex: 139
     virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const
         /*override*/;
 
@@ -84,9 +81,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -98,44 +97,43 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI ::Block const&
+    MCNAPI ::Block const&
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
 
-    MCFOLD void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI bool $isContainerBlock() const;
 
-    MCFOLD bool $isContainerBlock() const;
+    MCNAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
+    MCNAPI bool $hasComparatorSignal() const;
 
-    MCFOLD bool $hasComparatorSignal() const;
+    MCNAPI int
+    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCNAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI ::Block const& $getRenderBlock() const;
 
-    MCAPI ::Block const& $getRenderBlock() const;
+    MCNAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
+    MCNAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
 
-    MCAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
+    MCNAPI bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
 
-    MCFOLD bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

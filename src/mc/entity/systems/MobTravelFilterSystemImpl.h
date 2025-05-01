@@ -14,7 +14,7 @@ struct MobTravelComponent;
 namespace MobTravelFilterSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void addMobTravelComponent(::StrictEntityContext const& context, ::EntityModifier<::MobTravelComponent> mod);
+MCNAPI void addMobTravelComponent(::StrictEntityContext const& context, ::EntityModifier<::MobTravelComponent> mod);
 // NOLINTEND
 
 } // namespace MobTravelFilterSystemImpl

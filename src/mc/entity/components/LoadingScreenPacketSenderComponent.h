@@ -21,20 +21,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LoadingScreenPacketSenderComponent(::LoadingScreenPacketSenderComponent const&);
+    MCNAPI LoadingScreenPacketSenderComponent(::LoadingScreenPacketSenderComponent const&);
 
-    MCAPI ~LoadingScreenPacketSenderComponent();
+    MCNAPI ~LoadingScreenPacketSenderComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LoadingScreenPacketSenderComponent const&);
+    MCNAPI void* $ctor(::LoadingScreenPacketSenderComponent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

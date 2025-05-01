@@ -33,31 +33,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> _logMessage(
+    MCNAPI ::Scripting::Result<void> _logMessage(
         ::Editor::LogLevel                                           level,
         ::std::string                                                message,
         ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps
     );
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     debug(::std::string message, ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps);
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     error(::std::string message, ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps);
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     info(::std::string message, ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps);
 
-    MCAPI ::Editor::ScriptModule::ScriptLoggingService& operator=(::Editor::ScriptModule::ScriptLoggingService&&);
+    MCNAPI ::Editor::ScriptModule::ScriptLoggingService& operator=(::Editor::ScriptModule::ScriptLoggingService&&);
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     warning(::std::string message, ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptLoggingService> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptLoggingService> bindScript();
     // NOLINTEND
 };
 

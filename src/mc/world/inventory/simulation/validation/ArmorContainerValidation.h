@@ -55,7 +55,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isItemAllowedInSlot(
+    MCNAPI bool $isItemAllowedInSlot(
         ::ContainerScreenContext const&,
         int const              slot,
         ::ItemStackBase const& item,
@@ -63,20 +63,21 @@ public:
         bool
     ) const;
 
-    MCFOLD int $getAvailableSetCount(int const slot, ::ItemStackBase const& item) const;
+    MCNAPI int $getAvailableSetCount(int const slot, ::ItemStackBase const& item) const;
 
-    MCAPI bool $isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const;
+    MCNAPI bool
+    $isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const;
 
-    MCFOLD int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const;
+    MCNAPI int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const;
 
-    MCFOLD bool $canItemMoveToContainer(::ItemStackBase const& item) const;
+    MCNAPI bool $canItemMoveToContainer(::ItemStackBase const& item) const;
 
-    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    MCNAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

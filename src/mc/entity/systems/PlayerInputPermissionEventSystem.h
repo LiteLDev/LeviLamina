@@ -19,9 +19,9 @@ struct TickingSystemWithInfo;
 namespace PlayerInputPermissionEventSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createSystem();
+MCNAPI ::TickingSystemWithInfo createSystem();
 
-MCAPI void processChanges(
+MCNAPI void processChanges(
     ::entt::type_list<::Include<::ActorTickedComponent, ::PlayerComponent>>,
     ::ClientInputLockComponent const& clientInputLock,
     ::ClientInputLockLastComponent&   clientInputLockLast,

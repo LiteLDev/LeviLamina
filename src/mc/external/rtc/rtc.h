@@ -22,189 +22,189 @@ namespace webrtc { class SctpDataChannelControllerInterface; }
 namespace rtc {
 // functions
 // NOLINTBEGIN
-MCAPI int64 ASN1TimeToSec(uchar const*, uint64, bool);
+MCNAPI int64 ASN1TimeToSec(uchar const*, uint64, bool);
 
-MCAPI ::std::string AdapterTypeToString(::rtc::AdapterType);
+MCNAPI ::std::string AdapterTypeToString(::rtc::AdapterType);
 
-MCAPI uint64 ComputeDigest(::rtc::MessageDigest*, void const*, uint64, void*, uint64);
+MCNAPI uint64 ComputeDigest(::rtc::MessageDigest*, void const*, uint64, void*, uint64);
 
-MCAPI uint64 ComputeDigest(::std::string_view, void const*, uint64, void*, uint64);
+MCNAPI uint64 ComputeDigest(::std::string_view, void const*, uint64, void*, uint64);
 
-MCAPI uint64 ComputeHmac(::std::string_view, void const*, uint64, void const*, uint64, void*, uint64);
+MCNAPI uint64 ComputeHmac(::std::string_view, void const*, uint64, void const*, uint64, void*, uint64);
 
-MCAPI uint64 ComputeHmac(::rtc::MessageDigest*, void const*, uint64, void const*, uint64, void*, uint64);
+MCNAPI uint64 ComputeHmac(::rtc::MessageDigest*, void const*, uint64, void const*, uint64, void*, uint64);
 
-MCAPI void CopySocketInformationToPacketInfo(uint64, ::rtc::AsyncPacketSocket const&, bool, ::rtc::PacketInfo*);
+MCNAPI void CopySocketInformationToPacketInfo(uint64, ::rtc::AsyncPacketSocket const&, bool, ::rtc::PacketInfo*);
 
-MCAPI ::std::unique_ptr<::rtc::SocketServer> CreateDefaultSocketServer();
+MCNAPI ::std::unique_ptr<::rtc::SocketServer> CreateDefaultSocketServer();
 
-MCAPI uint CreateRandomId();
+MCNAPI uint CreateRandomId();
 
-MCAPI uint64 CreateRandomId64();
+MCNAPI uint64 CreateRandomId64();
 
-MCAPI uint CreateRandomNonZeroId();
+MCNAPI uint CreateRandomNonZeroId();
 
-MCAPI bool CreateRandomString(uint64, ::std::string*);
+MCNAPI bool CreateRandomString(uint64, ::std::string*);
 
-MCAPI ::std::string CreateRandomString(uint64);
+MCNAPI ::std::string CreateRandomString(uint64);
 
-MCAPI ::std::string CreateRandomUuid();
+MCNAPI ::std::string CreateRandomUuid();
 
-MCAPI ulong CurrentThreadId();
+MCNAPI ulong CurrentThreadId();
 
-MCAPI ulong CurrentThreadRef();
+MCNAPI ulong CurrentThreadRef();
 
-MCAPI ::rtc::SocketAddress EmptySocketAddressWithFamily(int);
+MCNAPI ::rtc::SocketAddress EmptySocketAddressWithFamily(int);
 
-MCAPI void ExplicitZeroMemory(void*, uint64);
+MCNAPI void ExplicitZeroMemory(void*, uint64);
 
-MCAPI ::rtc::IPAddress GetAnyIP(int);
+MCNAPI ::rtc::IPAddress GetAnyIP(int);
 
-MCAPI double GetNextMovingAverage(double, double, double);
+MCNAPI double GetNextMovingAverage(double, double, double);
 
-MCAPI uint GetPrefix(::_IP_ADAPTER_PREFIX_XP*, ::rtc::IPAddress const&, ::rtc::IPAddress*);
+MCNAPI uint GetPrefix(::_IP_ADAPTER_PREFIX_XP*, ::rtc::IPAddress const&, ::rtc::IPAddress*);
 
-MCAPI bool GetSrtpKeyAndSaltLengths(int, int*, int*);
+MCNAPI bool GetSrtpKeyAndSaltLengths(int, int*, int*);
 
-MCAPI int IPAddressPrecedence(::rtc::IPAddress const&);
+MCNAPI int IPAddressPrecedence(::rtc::IPAddress const&);
 
-MCAPI bool IPFromAddrInfo(::addrinfo*, ::rtc::IPAddress*);
+MCNAPI bool IPFromAddrInfo(::addrinfo*, ::rtc::IPAddress*);
 
-MCAPI bool IPFromString(::std::string_view, ::rtc::IPAddress*);
+MCNAPI bool IPFromString(::std::string_view, ::rtc::IPAddress*);
 
-MCAPI bool IPIs6Bone(::rtc::IPAddress const&);
+MCNAPI bool IPIs6Bone(::rtc::IPAddress const&);
 
-MCAPI bool IPIs6To4(::rtc::IPAddress const&);
+MCNAPI bool IPIs6To4(::rtc::IPAddress const&);
 
-MCAPI bool IPIsAny(::rtc::IPAddress const&);
+MCNAPI bool IPIsAny(::rtc::IPAddress const&);
 
-MCAPI bool IPIsLinkLocal(::rtc::IPAddress const&);
+MCNAPI bool IPIsLinkLocal(::rtc::IPAddress const&);
 
-MCAPI bool IPIsLoopback(::rtc::IPAddress const&);
+MCNAPI bool IPIsLoopback(::rtc::IPAddress const&);
 
-MCAPI bool IPIsMacBased(::rtc::IPAddress const&);
+MCNAPI bool IPIsMacBased(::rtc::IPAddress const&);
 
-MCAPI bool IPIsPrivate(::rtc::IPAddress const&);
+MCNAPI bool IPIsPrivate(::rtc::IPAddress const&);
 
-MCAPI bool IPIsPrivateNetwork(::rtc::IPAddress const&);
+MCNAPI bool IPIsPrivateNetwork(::rtc::IPAddress const&);
 
-MCAPI bool IPIsSharedNetwork(::rtc::IPAddress const&);
+MCNAPI bool IPIsSharedNetwork(::rtc::IPAddress const&);
 
-MCAPI bool IPIsSiteLocal(::rtc::IPAddress const&);
+MCNAPI bool IPIsSiteLocal(::rtc::IPAddress const&);
 
-MCAPI bool IPIsTeredo(::rtc::IPAddress const&);
+MCNAPI bool IPIsTeredo(::rtc::IPAddress const&);
 
-MCAPI bool IPIsULA(::rtc::IPAddress const&);
+MCNAPI bool IPIsULA(::rtc::IPAddress const&);
 
-MCAPI bool IPIsUnspec(::rtc::IPAddress const&);
+MCNAPI bool IPIsUnspec(::rtc::IPAddress const&);
 
-MCAPI bool IPIsV4Compatibility(::rtc::IPAddress const&);
+MCNAPI bool IPIsV4Compatibility(::rtc::IPAddress const&);
 
-MCAPI bool IPIsV4Mapped(::rtc::IPAddress const&);
+MCNAPI bool IPIsV4Mapped(::rtc::IPAddress const&);
 
-MCAPI bool InitRandom(int);
+MCNAPI bool InitRandom(int);
 
-MCAPI bool InitRandom(char const*, uint64);
+MCNAPI bool InitRandom(char const*, uint64);
 
-MCAPI bool InitializeSSL();
+MCNAPI bool InitializeSSL();
 
-MCAPI bool IsFips180DigestAlgorithm(::std::string_view);
+MCNAPI bool IsFips180DigestAlgorithm(::std::string_view);
 
-MCAPI bool IsGcmCryptoSuite(int);
+MCNAPI bool IsGcmCryptoSuite(int);
 
-MCAPI bool IsThreadRefEqual(ulong const&, ulong const&);
+MCNAPI bool IsThreadRefEqual(ulong const&, ulong const&);
 
-MCAPI ::std::string MakeNetworkKey(::std::string_view, ::rtc::IPAddress const&, int);
+MCNAPI ::std::string MakeNetworkKey(::std::string_view, ::rtc::IPAddress const&, int);
 
-MCAPI void SetCurrentThreadName(char const*);
+MCNAPI void SetCurrentThreadName(char const*);
 
-MCAPI bool SocketAddressFromSockAddrStorage(::sockaddr_storage const&, ::rtc::SocketAddress*);
+MCNAPI bool SocketAddressFromSockAddrStorage(::sockaddr_storage const&, ::rtc::SocketAddress*);
 
-MCAPI ::std::string SrtpCryptoSuiteToName(int);
+MCNAPI ::std::string SrtpCryptoSuiteToName(int);
 
-MCAPI ::std::string StringFormat(char const*, ...);
+MCNAPI ::std::string StringFormat(char const*, ...);
 
-MCAPI int64 SystemTimeMillis();
+MCNAPI int64 SystemTimeMillis();
 
-MCAPI int64 SystemTimeNanos();
+MCNAPI int64 SystemTimeNanos();
 
-MCAPI uint Time32();
+MCNAPI uint Time32();
 
-MCAPI int64 TimeAfter(int64);
+MCNAPI int64 TimeAfter(int64);
 
-MCAPI int64 TimeDiff(int64, int64);
+MCNAPI int64 TimeDiff(int64, int64);
 
-MCAPI int64 TimeMicros();
+MCNAPI int64 TimeMicros();
 
-MCAPI int64 TimeMillis();
+MCNAPI int64 TimeMillis();
 
-MCAPI int64 TimeNanos();
+MCNAPI int64 TimeNanos();
 
-MCAPI int64 TimeUTCMicros();
+MCNAPI int64 TimeUTCMicros();
 
-MCAPI int64 TimeUTCMillis();
+MCNAPI int64 TimeUTCMillis();
 
-MCAPI int64 TmToSeconds(::tm const&);
+MCNAPI int64 TmToSeconds(::tm const&);
 
-MCAPI ::std::string ToHex(int);
+MCNAPI ::std::string ToHex(int);
 
-MCAPI ::std::string ToString(ushort);
+MCNAPI ::std::string ToString(ushort);
 
-MCAPI ::std::string ToString(int64);
+MCNAPI ::std::string ToString(int64);
 
-MCAPI ::std::string ToString(uint64);
+MCNAPI ::std::string ToString(uint64);
 
-MCAPI ::std::string ToString(bool);
+MCNAPI ::std::string ToString(bool);
 
-MCAPI ::std::string ToString(ulong);
+MCNAPI ::std::string ToString(ulong);
 
-MCAPI ::std::string ToString(long);
+MCNAPI ::std::string ToString(long);
 
-MCAPI ::std::string ToString(::std::string_view);
+MCNAPI ::std::string ToString(::std::string_view);
 
-MCAPI ::std::string ToString(uint);
+MCNAPI ::std::string ToString(uint);
 
-MCAPI ::std::string ToString(int);
+MCNAPI ::std::string ToString(int);
 
-MCAPI ::std::string ToString(long double);
+MCNAPI ::std::string ToString(long double);
 
-MCAPI ::std::string ToString(double);
+MCNAPI ::std::string ToString(double);
 
-MCAPI ::std::string TransformAlpnProtocols(::std::vector<::std::string> const&);
+MCNAPI ::std::string TransformAlpnProtocols(::std::vector<::std::string> const&);
 
-MCAPI ::rtc::IPAddress TruncateIP(::rtc::IPAddress const&, int);
+MCNAPI ::rtc::IPAddress TruncateIP(::rtc::IPAddress const&, int);
 
-MCAPI uint UpdateCrc32(uint, void const*, uint64);
+MCNAPI uint UpdateCrc32(uint, void const*, uint64);
 
-MCAPI int64 WinUwpSystemTimeNanos();
+MCNAPI int64 WinUwpSystemTimeNanos();
 
-MCAPI uint64 hex_decode_with_delimiter(::rtc::ArrayView<char>, ::std::string_view, char);
+MCNAPI uint64 hex_decode_with_delimiter(::rtc::ArrayView<char>, ::std::string_view, char);
 
-MCAPI ::std::string hex_encode(::std::string_view);
+MCNAPI ::std::string hex_encode(::std::string_view);
 
-MCAPI ::std::string hex_encode_with_delimiter(::std::string_view, char);
+MCNAPI ::std::string hex_encode_with_delimiter(::std::string_view, char);
 
-MCAPI char const* inet_ntop(int, void const*, char*, int);
+MCNAPI char const* inet_ntop(int, void const*, char*, int);
 
-MCAPI int inet_pton(int, ::std::string_view, void*);
+MCNAPI int inet_pton(int, ::std::string_view, void*);
 
-MCAPI bool operator!=(::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> const&, nullptr_t);
+MCNAPI bool operator!=(::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> const&, nullptr_t);
 
-MCAPI bool operator!=(::rtc::WeakPtr<::cricket::Port> const&, nullptr_t);
+MCNAPI bool operator!=(::rtc::WeakPtr<::cricket::Port> const&, nullptr_t);
 
-MCAPI bool operator==(::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> const&, nullptr_t);
+MCNAPI bool operator==(::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> const&, nullptr_t);
 
-MCAPI bool operator==(::rtc::WeakPtr<::cricket::Port> const&, nullptr_t);
+MCNAPI bool operator==(::rtc::WeakPtr<::cricket::Port> const&, nullptr_t);
 
-MCAPI ::std::vector<::std::string_view> split(::std::string_view, char);
+MCNAPI ::std::vector<::std::string_view> split(::std::string_view, char);
 
-MCAPI uint64 tokenize(::std::string_view, char, ::std::vector<::std::string>*);
+MCNAPI uint64 tokenize(::std::string_view, char, ::std::vector<::std::string>*);
 
-MCAPI bool tokenize_first(::std::string_view, char, ::std::string*, ::std::string*);
+MCNAPI bool tokenize_first(::std::string_view, char, ::std::string*, ::std::string*);
 
-MCAPI char const* win32_inet_ntop(int, void const*, char*, int);
+MCNAPI char const* win32_inet_ntop(int, void const*, char*, int);
 
-MCAPI int win32_inet_pton(int, char const*, void*);
+MCNAPI int win32_inet_pton(int, char const*, void*);
 // NOLINTEND
 
 // static variables

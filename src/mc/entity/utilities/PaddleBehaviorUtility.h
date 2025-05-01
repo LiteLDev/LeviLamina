@@ -10,7 +10,7 @@ class Vec3;
 namespace PaddleBehaviorUtility {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::array<float, 2>
+MCNAPI ::std::array<float, 2>
 computePaddleForcesBasedOnGaze(::Vec3& inGazeDir, float forceLength, float facingOffsetFactor, float yRot);
 // NOLINTEND
 

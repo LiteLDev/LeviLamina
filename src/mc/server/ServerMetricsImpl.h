@@ -68,7 +68,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void sendPeriodicMetricsInternal(::ServerInstance& serverInstance);
+    MCNAPI void sendPeriodicMetricsInternal(::ServerInstance& serverInstance);
     // NOLINTEND
 
 public:
@@ -80,16 +80,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $sendPeriodicMetrics(::ServerInstance& serverInstance);
+    MCNAPI void $sendPeriodicMetrics(::ServerInstance& serverInstance);
 
-    MCAPI void $sendServerTickTime(::std::chrono::nanoseconds const& timepoint);
+    MCNAPI void $sendServerTickTime(::std::chrono::nanoseconds const& timepoint);
 
-    MCAPI void $sendChunkLoadTelemetryData();
+    MCNAPI void $sendChunkLoadTelemetryData();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

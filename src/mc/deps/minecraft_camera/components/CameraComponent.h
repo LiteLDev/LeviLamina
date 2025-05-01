@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class HashedString;
-class Matrix;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/math/Matrix.h"
+#include "mc/deps/core/string/HashedString.h"
 
 class CameraComponent {
 public:
@@ -31,18 +29,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CameraComponent(::CameraComponent&&);
+    MCNAPI CameraComponent(::CameraComponent&&);
 
-    MCAPI CameraComponent(::CameraComponent const&);
+    MCNAPI CameraComponent(::CameraComponent const&);
 
-    MCAPI ::CameraComponent& operator=(::CameraComponent&&);
+    MCNAPI ::CameraComponent& operator=(::CameraComponent&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CameraComponent&&);
+    MCNAPI void* $ctor(::CameraComponent&&);
 
-    MCAPI void* $ctor(::CameraComponent const&);
+    MCNAPI void* $ctor(::CameraComponent const&);
     // NOLINTEND
 };

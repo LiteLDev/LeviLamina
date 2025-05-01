@@ -8,9 +8,9 @@ class Rrtr {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Create(uchar*) const;
+    MCNAPI void Create(uchar*) const;
 
-    MCAPI void Parse(uchar const*);
+    MCNAPI void Parse(uchar const*);
     // NOLINTEND
 };
 

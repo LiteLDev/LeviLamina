@@ -19,12 +19,12 @@ class StructureTemplate;
 namespace gametest::StructureUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void
+MCNAPI void
 AddCommandBlockAndButtonToStartTest(::BlockPos const& structureBlockPos, ::Rotation commandBlockPosRelativeToTestPos, ::BlockPos const& testName, ::std::string const& region, ::BlockSource&);
 
-MCAPI void ClearSpaceForStructure(::BoundingBox const& structureBoundingBox, int structureYPos, ::BlockSource& region);
+MCNAPI void ClearSpaceForStructure(::BoundingBox const& structureBoundingBox, int structureYPos, ::BlockSource& region);
 
-MCAPI void CreateNewEmptyStructureBlock(
+MCNAPI void CreateNewEmptyStructureBlock(
     ::std::string const& testName,
     ::BlockPos const&    structurePos,
     ::BlockPos const&    size,
@@ -32,19 +32,19 @@ MCAPI void CreateNewEmptyStructureBlock(
     ::BlockSource&       rotation
 );
 
-MCAPI ::std::optional<::BlockPos>
+MCNAPI ::std::optional<::BlockPos>
 FindStructureBlockContainingPos(::BlockPos const& pos, int searchRadius, ::BlockSource& region);
 
-MCAPI ::std::vector<::BlockPos>
+MCNAPI ::std::vector<::BlockPos>
 FindStructureBlocks(::BlockPos const& centerPos, int searchRadius, ::BlockSource& region);
 
-MCAPI ::BoundingBox GetStructureBoundingBox(::StructureBlockActor const& structureBlockActor);
+MCNAPI ::BoundingBox GetStructureBoundingBox(::StructureBlockActor const& structureBlockActor);
 
-MCAPI ::StructureEditorData GetStructureEditorData(::StructureTemplate const& structure, ::Rotation const& rotation);
+MCNAPI ::StructureEditorData GetStructureEditorData(::StructureTemplate const& structure, ::Rotation const& rotation);
 
-MCAPI ::StructureTemplate* GetStructureTemplate(::std::string const& structureName, ::Level& level);
+MCNAPI ::StructureTemplate* GetStructureTemplate(::std::string const& structureName, ::Level& level);
 
-MCAPI ::StructureBlockActor*
+MCNAPI ::StructureBlockActor*
 SpawnStructure(::std::string const& structureName, ::BlockPos const& northWestCorner, ::Rotation rotation, int region, ::BlockSource&);
 // NOLINTEND
 

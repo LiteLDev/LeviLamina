@@ -28,13 +28,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~AutomaticFeatureRulesData();
+    MCNAPI ~AutomaticFeatureRulesData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -46,7 +46,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -30,30 +30,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptStructurePlaceOptions(::ScriptModuleMinecraft::ScriptStructurePlaceOptions const&);
+    MCNAPI ScriptStructurePlaceOptions(::ScriptModuleMinecraft::ScriptStructurePlaceOptions const&);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptStructurePlaceOptions&
+    MCNAPI ::ScriptModuleMinecraft::ScriptStructurePlaceOptions&
     operator=(::ScriptModuleMinecraft::ScriptStructurePlaceOptions&&);
 
-    MCAPI ~ScriptStructurePlaceOptions();
+    MCNAPI ~ScriptStructurePlaceOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptStructurePlaceOptions> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptStructurePlaceOptions> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptStructurePlaceOptions const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptStructurePlaceOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

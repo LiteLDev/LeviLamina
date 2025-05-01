@@ -71,32 +71,32 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCFOLD ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result<void> $ready();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCAPI void $fireEditorEventToolActivated(::std::string const& toolName);
+    MCNAPI void $fireEditorEventToolActivated(::std::string const& toolName);
 
-    MCAPI void $fireUndoEvent(::std::string const& transactionName);
+    MCNAPI void $fireUndoEvent(::std::string const& transactionName);
 
-    MCAPI void $fireRedoEvent(::std::string const& transactionName);
+    MCNAPI void $fireRedoEvent(::std::string const& transactionName);
 
-    MCAPI void $fireEditorKeybindUpdate(::std::string const& keybindName, int const key, int const modifiers);
+    MCNAPI void $fireEditorKeybindUpdate(::std::string const& keybindName, int const key, int const modifiers);
 
-    MCAPI void
+    MCNAPI void
     $fireEditorScriptEvent(::std::string const& source, ::std::string const& eventName, ::std::string const& metadata);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForTelemetryServiceProvider();
+    MCNAPI static void** $vftableForTelemetryServiceProvider();
 
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

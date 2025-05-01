@@ -11,7 +11,7 @@ class BlockSource;
 namespace LightningRodUtil {
 // functions
 // NOLINTBEGIN
-MCAPI void emitLightningRodParticles(::BlockSource& region, ::BlockPos const& pos, int sparkCount);
+MCNAPI void emitLightningRodParticles(::BlockSource& region, ::BlockPos const& pos, int sparkCount);
 // NOLINTEND
 
 } // namespace LightningRodUtil

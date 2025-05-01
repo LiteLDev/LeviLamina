@@ -28,15 +28,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ComponentItemMenuCategoryData_v1_20_20& operator=(::ComponentItemMenuCategoryData_v1_20_20&&);
+    MCNAPI ::ComponentItemMenuCategoryData_v1_20_20& operator=(::ComponentItemMenuCategoryData_v1_20_20&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void upgrade(
+    MCNAPI static void upgrade(
         ::std::optional<::CreativeItemCategory>&                   oldData,
         ::std::optional<::ComponentItemMenuCategoryData_v1_20_20>& newData
     );

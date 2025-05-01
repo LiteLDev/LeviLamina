@@ -9,7 +9,7 @@
 namespace gametest {
 // functions
 // NOLINTBEGIN
-MCAPI ::Scripting::EnumBindingBuilder<::std::string, ::gametest::GameTestErrorType> bindGameTestErrorType();
+MCNAPI ::Scripting::EnumBindingBuilder<::std::string, ::gametest::GameTestErrorType> bindGameTestErrorType();
 // NOLINTEND
 
 // static variables

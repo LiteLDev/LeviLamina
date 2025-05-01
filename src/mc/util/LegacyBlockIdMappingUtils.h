@@ -13,9 +13,9 @@ class BlockLegacy;
 namespace LegacyBlockIdMappingUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void addLegacyBlockIdMapping(::BlockLegacy const& legacyBlock, uint64 legacyId);
+MCNAPI void addLegacyBlockIdMapping(::BlockLegacy const& legacyBlock, uint64 legacyId);
 
-MCAPI void addLegacyBlockIdMappings();
+MCNAPI void addLegacyBlockIdMappings();
 // NOLINTEND
 
 // static variables

@@ -30,15 +30,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::webrtc::DataSize PacketSize() const;
+        MCNAPI ::webrtc::DataSize PacketSize() const;
 
-        MCAPI ~QueuedPacket();
+        MCNAPI ~QueuedPacket();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -46,87 +46,87 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::std::array<::std::deque<::webrtc::PrioritizedPacketQueue::QueuedPacket>, 5> DequeueAll();
+        MCNAPI ::std::array<::std::deque<::webrtc::PrioritizedPacketQueue::QueuedPacket>, 5> DequeueAll();
 
-        MCAPI ::webrtc::PrioritizedPacketQueue::QueuedPacket DequeuePacket(int);
+        MCNAPI ::webrtc::PrioritizedPacketQueue::QueuedPacket DequeuePacket(int);
 
-        MCAPI bool EnqueuePacket(::webrtc::PrioritizedPacketQueue::QueuedPacket, int);
+        MCNAPI bool EnqueuePacket(::webrtc::PrioritizedPacketQueue::QueuedPacket, int);
 
-        MCAPI bool HasPacketsAtPrio(int) const;
+        MCNAPI bool HasPacketsAtPrio(int) const;
 
-        MCAPI bool IsEmpty() const;
+        MCNAPI bool IsEmpty() const;
 
-        MCAPI ::webrtc::Timestamp LastEnqueueTime() const;
+        MCNAPI ::webrtc::Timestamp LastEnqueueTime() const;
 
-        MCAPI ::webrtc::Timestamp LeadingPacketEnqueueTime(int) const;
+        MCNAPI ::webrtc::Timestamp LeadingPacketEnqueueTime(int) const;
 
-        MCAPI explicit StreamQueue(::webrtc::Timestamp);
+        MCNAPI explicit StreamQueue(::webrtc::Timestamp);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::webrtc::Timestamp);
+        MCNAPI void* $ctor(::webrtc::Timestamp);
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::TimeDelta AverageQueueTime() const;
+    MCNAPI ::webrtc::TimeDelta AverageQueueTime() const;
 
-    MCAPI void DequeuePacketInternal(::webrtc::PrioritizedPacketQueue::QueuedPacket&);
+    MCNAPI void DequeuePacketInternal(::webrtc::PrioritizedPacketQueue::QueuedPacket&);
 
-    MCAPI bool Empty() const;
+    MCNAPI bool Empty() const;
 
-    MCAPI bool HasKeyframePackets(uint) const;
+    MCNAPI bool HasKeyframePackets(uint) const;
 
-    MCAPI ::webrtc::Timestamp LeadingPacketEnqueueTime(::webrtc::RtpPacketMediaType) const;
+    MCNAPI ::webrtc::Timestamp LeadingPacketEnqueueTime(::webrtc::RtpPacketMediaType) const;
 
-    MCAPI ::webrtc::Timestamp LeadingPacketEnqueueTimeForRetransmission() const;
+    MCNAPI ::webrtc::Timestamp LeadingPacketEnqueueTimeForRetransmission() const;
 
-    MCAPI void MaybeUpdateTopPrioLevel();
+    MCNAPI void MaybeUpdateTopPrioLevel();
 
-    MCAPI ::webrtc::Timestamp OldestEnqueueTime() const;
+    MCNAPI ::webrtc::Timestamp OldestEnqueueTime() const;
 
-    MCAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> Pop();
+    MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> Pop();
 
-    MCAPI PrioritizedPacketQueue(::webrtc::Timestamp, bool, ::webrtc::PacketQueueTTL);
+    MCNAPI PrioritizedPacketQueue(::webrtc::Timestamp, bool, ::webrtc::PacketQueueTTL);
 
-    MCAPI void PurgeOldPacketsAtPriorityLevel(int, ::webrtc::Timestamp);
+    MCNAPI void PurgeOldPacketsAtPriorityLevel(int, ::webrtc::Timestamp);
 
-    MCAPI void Push(::webrtc::Timestamp, ::std::unique_ptr<::webrtc::RtpPacketToSend>);
+    MCNAPI void Push(::webrtc::Timestamp, ::std::unique_ptr<::webrtc::RtpPacketToSend>);
 
-    MCAPI void RemovePacketsForSsrc(uint);
+    MCNAPI void RemovePacketsForSsrc(uint);
 
-    MCAPI void SetPauseState(bool, ::webrtc::Timestamp);
+    MCNAPI void SetPauseState(bool, ::webrtc::Timestamp);
 
-    MCAPI int SizeInPackets() const;
+    MCNAPI int SizeInPackets() const;
 
-    MCAPI ::webrtc::DataSize SizeInPayloadBytes() const;
+    MCNAPI ::webrtc::DataSize SizeInPayloadBytes() const;
 
-    MCAPI void UpdateAverageQueueTime(::webrtc::Timestamp);
+    MCNAPI void UpdateAverageQueueTime(::webrtc::Timestamp);
 
-    MCAPI ~PrioritizedPacketQueue();
+    MCNAPI ~PrioritizedPacketQueue();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::absl::InlinedVector<::webrtc::TimeDelta, 5, ::std::allocator<::webrtc::TimeDelta>>
+    MCNAPI static ::absl::InlinedVector<::webrtc::TimeDelta, 5, ::std::allocator<::webrtc::TimeDelta>>
         ToTtlPerPrio(::webrtc::PacketQueueTTL);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::Timestamp, bool, ::webrtc::PacketQueueTTL);
+    MCNAPI void* $ctor(::webrtc::Timestamp, bool, ::webrtc::PacketQueueTTL);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

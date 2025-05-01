@@ -8,27 +8,27 @@ struct Dlrr {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uint64 BlockLength() const;
+    MCNAPI uint64 BlockLength() const;
 
-    MCAPI void Create(uchar*) const;
+    MCNAPI void Create(uchar*) const;
 
-    MCAPI Dlrr();
+    MCNAPI Dlrr();
 
-    MCAPI bool Parse(uchar const*, ushort);
+    MCNAPI bool Parse(uchar const*, ushort);
 
-    MCAPI ~Dlrr();
+    MCNAPI ~Dlrr();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

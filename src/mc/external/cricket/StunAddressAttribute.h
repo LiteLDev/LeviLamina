@@ -47,19 +47,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void SetAddress(::rtc::SocketAddress const&);
+    MCNAPI void SetAddress(::rtc::SocketAddress const&);
 
-    MCAPI StunAddressAttribute(ushort, ::rtc::SocketAddress const&);
+    MCNAPI StunAddressAttribute(ushort, ::rtc::SocketAddress const&);
 
-    MCAPI StunAddressAttribute(ushort, ushort);
+    MCNAPI StunAddressAttribute(ushort, ushort);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(ushort, ::rtc::SocketAddress const&);
+    MCNAPI void* $ctor(ushort, ::rtc::SocketAddress const&);
 
-    MCAPI void* $ctor(ushort, ushort);
+    MCNAPI void* $ctor(ushort, ushort);
     // NOLINTEND
 
 public:
@@ -77,7 +77,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

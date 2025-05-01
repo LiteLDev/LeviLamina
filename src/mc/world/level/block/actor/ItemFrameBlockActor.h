@@ -3,6 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/world/item/ClockSpriteCalculator.h"
+#include "mc/world/item/CompassSpriteCalculator.h"
+#include "mc/world/item/ItemInstance.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/states/BlockStateVariant.h"
@@ -13,15 +17,11 @@ class Actor;
 class BlockActorDataPacket;
 class BlockPos;
 class BlockSource;
-class ClockSpriteCalculator;
-class CompassSpriteCalculator;
 class CompoundTag;
 class DataLoadHelper;
 class HashedString;
 class ILevel;
-class ItemInstance;
 class SaveContext;
-class WeakEntityRef;
 // clang-format on
 
 class ItemFrameBlockActor : public ::BlockActor {
@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 7
+    // vIndex: 8
     virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 1
@@ -53,19 +53,19 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual float getShadowRadius(::BlockSource&) const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 44
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0

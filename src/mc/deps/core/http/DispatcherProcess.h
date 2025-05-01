@@ -43,25 +43,25 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initialize();
+    MCNAPI void $initialize();
 
-    MCAPI void $shutdown();
+    MCNAPI void $shutdown();
 
-    MCAPI void $suspend();
+    MCNAPI void $suspend();
 
-    MCAPI void $resume();
+    MCNAPI void $resume();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -37,17 +37,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ToXAsyncBlock(::XTaskQueueObject* queue);
+    MCNAPI explicit ToXAsyncBlock(::XTaskQueueObject* queue);
 
-    MCAPI ::XAsyncBlock* _getAsyncBlock();
+    MCNAPI ::XAsyncBlock* _getAsyncBlock();
 
-    MCAPI void _handleResult(long hr);
+    MCNAPI void _handleResult(long hr);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::XTaskQueueObject* queue);
+    MCNAPI void* $ctor(::XTaskQueueObject* queue);
     // NOLINTEND
 
 public:
@@ -59,7 +59,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

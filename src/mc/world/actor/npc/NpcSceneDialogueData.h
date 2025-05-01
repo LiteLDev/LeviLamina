@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/world/actor/npc/INpcDialogueData.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class WeakEntityRef;
 struct ActorUniqueID;
 namespace npc { struct ActionContainer; }
 // clang-format on
@@ -58,34 +58,34 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getDialogueText() const;
+    MCNAPI ::std::string const& $getDialogueText() const;
 
-    MCFOLD ::std::string const& $getSceneName() const;
+    MCNAPI ::std::string const& $getSceneName() const;
 
-    MCAPI ::std::string const& $getNameText() const;
+    MCNAPI ::std::string const& $getNameText() const;
 
-    MCAPI ::std::string const& $getNameRawText() const;
+    MCNAPI ::std::string const& $getNameRawText() const;
 
-    MCFOLD ::npc::ActionContainer* $getActionsContainer();
+    MCNAPI ::npc::ActionContainer* $getActionsContainer();
 
-    MCFOLD ::npc::ActionContainer const* $getActionsContainer() const;
+    MCNAPI ::npc::ActionContainer const* $getActionsContainer() const;
 
-    MCAPI ::ActorUniqueID $getActorUniqueID();
+    MCNAPI ::ActorUniqueID $getActorUniqueID();
 
-    MCFOLD ::Actor* $getActor();
+    MCNAPI ::Actor* $getActor();
 
-    MCFOLD ::Actor const* $getActor() const;
+    MCNAPI ::Actor const* $getActor() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

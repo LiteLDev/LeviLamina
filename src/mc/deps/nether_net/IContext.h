@@ -47,7 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void logMessage(::NetherNet::LogSeverity, char const*, ...) const;
+    MCNAPI void logMessage(::NetherNet::LogSeverity, char const*, ...) const;
     // NOLINTEND
 
 public:

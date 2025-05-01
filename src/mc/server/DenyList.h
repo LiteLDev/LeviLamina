@@ -43,21 +43,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Entry(::mce::UUID const& uuid, ::std::string const& xuid);
+        MCNAPI Entry(::mce::UUID const& uuid, ::std::string const& xuid);
 
-        MCAPI ~Entry();
+        MCNAPI ~Entry();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::mce::UUID const& uuid, ::std::string const& xuid);
+        MCNAPI void* $ctor(::mce::UUID const& uuid, ::std::string const& xuid);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -77,20 +77,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addEntry(::DenyList::Entry const& entry);
+    MCNAPI void addEntry(::DenyList::Entry const& entry);
 
-    MCAPI ::DenyList::Duration getDuration(::DenyList::Entry const& entry) const;
+    MCNAPI ::DenyList::Duration getDuration(::DenyList::Entry const& entry) const;
 
-    MCAPI ::std::string const& getMessage(::DenyList::Entry const& entry) const;
+    MCNAPI ::std::string const& getMessage(::DenyList::Entry const& entry) const;
 
-    MCAPI bool isBlocked(::DenyList::Entry const& entry) const;
+    MCNAPI bool isBlocked(::DenyList::Entry const& entry) const;
 
-    MCAPI ~DenyList();
+    MCNAPI ~DenyList();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

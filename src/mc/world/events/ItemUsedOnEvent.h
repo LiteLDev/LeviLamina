@@ -4,11 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/events/ItemUseOnEvent.h"
-
-// auto generated forward declare list
-// clang-format off
-class ItemInstance;
-// clang-format on
+#include "mc/world/item/ItemInstance.h"
 
 struct ItemUsedOnEvent : public ::ItemUseOnEvent {
 public:
@@ -20,20 +16,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemUsedOnEvent();
+    MCNAPI ItemUsedOnEvent();
 
-    MCAPI ~ItemUsedOnEvent();
+    MCNAPI ~ItemUsedOnEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

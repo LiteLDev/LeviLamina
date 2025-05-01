@@ -27,13 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~DataChannelInit();
+    MCNAPI ~DataChannelInit();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -18,7 +18,7 @@ struct StateVectorComponent;
 namespace ClientAcceptanceSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void adjustMotion(
+MCNAPI void adjustMotion(
     ::Vec3 const&                                 amount,
     ::ServerPlayerCurrentMovementComponent const& input,
     ::MoveRequestComponent&                       moveRequest,
@@ -26,9 +26,9 @@ MCAPI void adjustMotion(
     ::ClientAcceptanceConfig const&               config
 );
 
-MCAPI void registerSystems(::EntitySystems& systems, ::EntitySystemTickingMode const& mode);
+MCNAPI void registerSystems(::EntitySystems& systems, ::EntitySystemTickingMode const& mode);
 
-MCAPI void tickClientAcceptance(
+MCNAPI void tickClientAcceptance(
     ::ServerPlayerCurrentMovementComponent const& currentMove,
     ::StateVectorComponent const&                 stateVector,
     ::MoveRequestComponent&                       moveRequest,

@@ -35,54 +35,54 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ItemStack const& _getItem() const;
+    MCNAPI ::ItemStack const& _getItem() const;
 
-    MCAPI void _setItem(::ItemStack const& item);
+    MCNAPI void _setItem(::ItemStack const& item);
 
-    MCAPI ::Container* _tryGetContainerFromEntity() const;
+    MCNAPI ::Container* _tryGetContainerFromEntity() const;
 
-    MCAPI ::std::optional<::std::vector<::std::string>> getDynamicPropertyIds(::std::string const& collection) const;
+    MCNAPI ::std::optional<::std::vector<::std::string>> getDynamicPropertyIds(::std::string const& collection) const;
 
-    MCAPI ::std::optional<::std::vector<::std::string>> getLore() const;
+    MCNAPI ::std::optional<::std::vector<::std::string>> getLore() const;
 
-    MCAPI ::std::optional<::std::string> getNameTag() const;
+    MCNAPI ::std::optional<::std::string> getNameTag() const;
 
-    MCAPI bool isValid() const;
+    MCNAPI bool isValid() const;
 
-    MCAPI bool setAmount(int amount);
+    MCNAPI bool setAmount(int amount);
 
-    MCAPI ::std::optional<bool> setCanDestroy(::std::vector<::std::string> const& blockIdentifiers);
+    MCNAPI ::std::optional<bool> setCanDestroy(::std::vector<::std::string> const& blockIdentifiers);
 
-    MCAPI ::std::optional<bool> setCanPlaceOn(::std::vector<::std::string> const& blockIdentifiers);
+    MCNAPI ::std::optional<bool> setCanPlaceOn(::std::vector<::std::string> const& blockIdentifiers);
 
-    MCAPI bool setDynamicProperty(
+    MCNAPI bool setDynamicProperty(
         ::std::string const&                                                               collection,
         ::std::string const&                                                               key,
         ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> const& optionalValue
     );
 
-    MCAPI bool setKeepOnDeath(bool value);
+    MCNAPI bool setKeepOnDeath(bool value);
 
-    MCAPI bool setLore(::std::optional<::std::vector<::std::string>> const& loreList);
+    MCNAPI bool setLore(::std::optional<::std::vector<::std::string>> const& loreList);
 
-    MCAPI bool setNameTag(::std::optional<::std::string> nameTag);
+    MCNAPI bool setNameTag(::std::optional<::std::string> nameTag);
 
-    MCAPI ~ItemContext();
+    MCNAPI ~ItemContext();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool
+    MCNAPI static bool
     _trySetEquippedSlot(::ItemStack const& item, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot, ::Mob& mob);
 
-    MCAPI static bool
+    MCNAPI static bool
     setEquipment(::ItemStack const& item, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot, ::Mob& mob);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

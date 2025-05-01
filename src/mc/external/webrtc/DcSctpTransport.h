@@ -15,41 +15,50 @@ namespace webrtc {
 
 class DcSctpTransport {
 public:
+    // DcSctpTransport inner types declare
+    // clang-format off
+    struct StreamState;
+    // clang-format on
+
+    // DcSctpTransport inner types define
+    struct StreamState {};
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void ConnectTransportSignals();
+    MCNAPI void ConnectTransportSignals();
 
-    MCAPI DcSctpTransport(::webrtc::Environment const&, ::rtc::Thread*, ::rtc::PacketTransportInternal*);
+    MCNAPI DcSctpTransport(::webrtc::Environment const&, ::rtc::Thread*, ::rtc::PacketTransportInternal*);
 
-    MCAPI
+    MCNAPI
     DcSctpTransport(::webrtc::Environment const&, ::rtc::Thread*, ::rtc::PacketTransportInternal*, ::std::unique_ptr<::dcsctp::DcSctpSocketFactory>);
 
-    MCAPI void DisconnectTransportSignals();
+    MCNAPI void DisconnectTransportSignals();
 
-    MCAPI void MaybeConnectSocket();
+    MCNAPI void MaybeConnectSocket();
 
-    MCAPI void OnTransportReadPacket(::rtc::PacketTransportInternal*, ::rtc::ReceivedPacket const&);
+    MCNAPI void OnTransportReadPacket(::rtc::PacketTransportInternal*, ::rtc::ReceivedPacket const&);
 
-    MCAPI void OnTransportWritableState(::rtc::PacketTransportInternal*);
+    MCNAPI void OnTransportWritableState(::rtc::PacketTransportInternal*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::Environment const&, ::rtc::Thread*, ::rtc::PacketTransportInternal*);
+    MCNAPI void* $ctor(::webrtc::Environment const&, ::rtc::Thread*, ::rtc::PacketTransportInternal*);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::webrtc::Environment const&, ::rtc::Thread*, ::rtc::PacketTransportInternal*, ::std::unique_ptr<::dcsctp::DcSctpSocketFactory>);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForHasSlots();
+    MCNAPI static void** $vftableForHasSlots();
 
-    MCAPI static void** $vftableForSctpTransportInternal();
+    MCNAPI static void** $vftableForSctpTransportInternal();
 
-    MCAPI static void** $vftableForDcSctpSocketCallbacks();
+    MCNAPI static void** $vftableForDcSctpSocketCallbacks();
     // NOLINTEND
 };
 

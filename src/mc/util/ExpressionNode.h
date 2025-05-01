@@ -4,10 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/molang/MolangVersion.h"
-#include "mc/util/ExpressionOp.h"
+#include "mc/platform/brstd/bitset.h"
 #include "mc/util/MolangCompileResult.h"
 #include "mc/util/MolangQueryFunctionReturnType.h"
-#include "mc/util/MolangVariableIndex.h"
+#include "mc/util/MolangScriptArg.h"
+#include "mc/util/molang/ExpressionOp.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,19 +18,22 @@ class BlockSource;
 class ExperimentStorage;
 class HashedString;
 class IMolangInstruction;
-class MolangVariableMap;
 class RenderParams;
-struct ExpressionOpBitField;
 struct MolangEvalParams;
+struct MolangParseConfig;
 struct MolangProgramBuildState;
 struct MolangQueryFunction;
-struct MolangScriptArg;
 namespace Json { class Value; }
 namespace mce { class Color; }
 // clang-format on
 
 class ExpressionNode {
 public:
+    // ExpressionNode inner types declare
+    // clang-format off
+    struct ResourceReference;
+    // clang-format on
+
     // ExpressionNode inner types define
     using QueryLookupFunc = ::std::function<
         ::std::function<::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)> const*(
@@ -39,6 +43,24 @@ public:
         )>;
 
     using GetParticleTintFunc = ::std::function<::mce::Color(::Block const&, ::BlockSource&, ::BlockPos const&)>;
+
+    struct ResourceReference {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 88> mUnkdeb2d8;
+        ::ll::UntypedStorage<2, 2>  mUnk80cca4;
+        ::ll::UntypedStorage<1, 1>  mUnk749abb;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ResourceReference& operator=(ResourceReference const&);
+        ResourceReference(ResourceReference const&);
+        ResourceReference();
+    };
+
+    using ResourceTable = ::std::unordered_map<::HashedString, ::ExpressionNode::ResourceReference>;
 
 public:
     // member variables
@@ -50,10 +72,11 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                    mStoreStackState;
     ::ll::TypedStorage<1, 1, bool>                                                    mNeedsToCompile;
     ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                     mIsBeingCompiled;
+    ::ll::TypedStorage<1, 1, bool>                                                    mHasVariableAssignments;
     ::ll::TypedStorage<8, 88, ::MolangScriptArg>                                      mValue;
     ::ll::TypedStorage<8, 24, ::std::vector<::ExpressionNode>>                        mChildren;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::IMolangInstruction>>> mInstructions;
-    ::ll::TypedStorage<8, 32, ::std::string>                                          _mExpressionString;
+    ::ll::TypedStorage<8, 32, ::std::string>                                          mExpressionString;
     ::ll::TypedStorage<8, 32, ::std::string>                                          _mContentScopeString;
     // NOLINTEND
 
@@ -66,23 +89,17 @@ public:
 
     MCAPI ExpressionNode(::ExpressionNode const& rhs);
 
-    MCAPI ExpressionNode(::MolangScriptArg& value, ::ExpressionOp op);
+    MCAPI ExpressionNode(::std::string const& expression, ::MolangVersion molangVersion);
 
-    MCAPI ExpressionNode(
-        ::Json::Value const&              value,
-        ::MolangVersion                   molangVersion,
-        ::gsl::span<::HashedString const> querySetID
-    );
+    MCAPI ExpressionNode(::Json::Value const& value, ::MolangParseConfig const& config);
 
-    MCAPI bool _buildTree(::ExpressionOpBitField const& usedTokenFlags, ::MolangVersion molangVersion);
+    MCAPI ExpressionNode(::MolangScriptArg const& value, ::ExpressionOp op);
+
+    MCAPI bool _buildTree(::brstd::bitset<77, uint64> const& usedTokenFlags, ::MolangVersion molangVersion);
 
     MCFOLD bool _checkAllOperationsAreValid() const;
 
-    MCAPI bool _hasDisallowedQueryPtrs(
-        ::std::vector<::std::function<
-            ::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)> const*> const&
-            allowedQueryPtrs
-    ) const;
+    MCAPI ::std::string _getExpressionString() const;
 
     MCAPI bool _optimize(::MolangVersion version, ::RenderParams& outRenderParams, int recursionDepth);
 
@@ -90,19 +107,14 @@ public:
 
     MCAPI bool _processTernaryAndConditionalExpressions();
 
-    MCAPI bool _readNextToken(
-        char const*&                             expression,
-        ::gsl::span<::HashedString const> const& idSet,
-        ::MolangVersion                          molangVersion
-    );
+    MCAPI bool _readNextToken(char const*& expression, ::MolangParseConfig const& parseConfig);
 
-    MCAPI void _setExpressionStringWithoutRelink(::std::string const& expressionString);
+    MCAPI void _setExpressionStringWithoutRelink(::std::string expressionString);
 
     MCAPI bool _tokenize(
-        char const*                              expression,
-        ::ExpressionOpBitField&                  usedTokenFlags,
-        ::gsl::span<::HashedString const> const& idSet,
-        ::MolangVersion                          molangVersion
+        char const*                  expression,
+        ::brstd::bitset<77, uint64>& usedTokenFlags,
+        ::MolangParseConfig const&   parseConfig
     );
 
     MCAPI bool _validate(::MolangVersion version, bool inLoop, int inAssignmentLHSDepth) const;
@@ -117,25 +129,19 @@ public:
 
     MCAPI bool findClosingOp(uint64& i, ::ExpressionOp endOp) const;
 
-    MCAPI ::std::string const getExpressionString() const;
-
     MCAPI ::std::string const& getExpressionString();
 
     MCAPI uint64 getTreeHash(bool sideEffectsReturnZero) const;
 
     MCAPI bool getTreeString(::std::string& dest, bool sideEffectsReturnZero) const;
 
-    MCAPI bool hasDisallowedQueries(::std::vector<::std::string> const& allowedQueries) const;
-
     MCAPI bool hasMadd() const;
-
-    MCAPI bool hasSideEffects(bool countRandomAsSideEffect) const;
 
     MCFOLD bool isValid() const;
 
-    MCAPI ::MolangCompileResult link() const;
+    MCAPI ::MolangCompileResult link();
 
-    MCAPI ::MolangCompileResult link(::MolangVersion molangVersion) const;
+    MCAPI ::MolangCompileResult link(::MolangVersion molangVersion);
 
     MCAPI void moveConstantChildToValueIfFloatOrHashType(int firstConstChildIndex);
 
@@ -149,8 +155,7 @@ public:
 
     MCAPI bool optimizeFunctionCallParams();
 
-    MCAPI bool
-    parse(::std::string const& inputExpression, ::MolangVersion molangVersion, ::gsl::span<::HashedString const> idSet);
+    MCAPI bool parse(::std::string_view inputExpression, ::MolangParseConfig const& config);
 
     MCAPI bool processArrays();
 
@@ -184,13 +189,8 @@ public:
         ::ExpressionNode const& memberAccessorNode
     );
 
-    MCAPI static bool _getQueryFunctionAccessor(
-        ::MolangScriptArg&              arg,
-        ::std::string const&            functionName,
-        ::MolangVersion                 molangVersion,
-        ::MolangQueryFunctionReturnType functionReturnType,
-        ::HashedString const&           querySetId
-    );
+    MCAPI static ::std::optional<::MolangScriptArg>
+    _getQueryFunctionAccessor(::std::string const& functionName, ::MolangParseConfig const& parseConfig);
 
     MCAPI static ::MolangScriptArg const*
     _getScriptArgFromMemberAccessedVariable(::MolangEvalParams& state, ::ExpressionNode const& memberAccessorNode);
@@ -202,16 +202,6 @@ public:
         ::ExpressionNode const&  memberAccessorNode,
         ::MolangScriptArg const& value
     );
-
-    MCAPI static void _writeScriptArgToMolangVariable(
-        ::MolangVariableMap&     destMap,
-        ::MolangVariableIndex    variableIndex,
-        ::MolangScriptArg const& value
-    );
-
-    MCAPI static void buildExpressionOpTable();
-
-    MCAPI static float fast_atof_positiveOnly(char const*& ptr);
 
     MCAPI static char const* getOpFriendlyName(::ExpressionOp op);
 
@@ -245,11 +235,7 @@ public:
     MCAPI static ::std::function<::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)>&
     _defaultUnknownQueryFunction();
 
-    MCAPI static ::std::vector<::std::pair<::std::string, ::ExpressionOp>>& mAliasOpTokens();
-
     MCAPI static ::ExperimentStorage& mExperiments();
-
-    MCAPI static ::std::vector<::std::string>& mExpressionOpTokens();
 
     MCAPI static ::std::function<::mce::Color(::Block const&, ::BlockSource&, ::BlockPos const&)>&
     mGetParticleTintFunc();
@@ -270,10 +256,11 @@ public:
 
     MCAPI void* $ctor(::ExpressionNode const& rhs);
 
-    MCAPI void* $ctor(::MolangScriptArg& value, ::ExpressionOp op);
+    MCAPI void* $ctor(::std::string const& expression, ::MolangVersion molangVersion);
 
-    MCAPI void*
-    $ctor(::Json::Value const& value, ::MolangVersion molangVersion, ::gsl::span<::HashedString const> querySetID);
+    MCAPI void* $ctor(::Json::Value const& value, ::MolangParseConfig const& config);
+
+    MCAPI void* $ctor(::MolangScriptArg const& value, ::ExpressionOp op);
     // NOLINTEND
 
 public:

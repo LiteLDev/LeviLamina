@@ -26,7 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::Scripting::LifetimeRegistry> createLifetimeRegistry();
+    MCNAPI ::std::unique_ptr<::Scripting::LifetimeRegistry> createLifetimeRegistry();
     // NOLINTEND
 };
 

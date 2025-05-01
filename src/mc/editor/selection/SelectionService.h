@@ -95,73 +95,73 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _cleanGarbageCollection(::Editor::ServiceProviderCollection&);
+    MCNAPI void _cleanGarbageCollection(::Editor::ServiceProviderCollection&);
 
-    MCAPI ::WeakRef<::Editor::Selection::SelectionContainer>
+    MCNAPI ::WeakRef<::Editor::Selection::SelectionContainer>
     _createContainer(::mce::UUID const& newId, bool isPrimary, bool requiresReplication, bool fromNetwork);
 
-    MCAPI ::Scripting::Result<void> _destroyContainer(::mce::UUID const& idToDestroy, bool force, bool fromNetwork);
+    MCNAPI ::Scripting::Result<void> _destroyContainer(::mce::UUID const& idToDestroy, bool force, bool fromNetwork);
 
-    MCAPI void _handlePayloadClone(::Editor::Network::SelectionContainerClonePayload const& payload);
+    MCNAPI void _handlePayloadClone(::Editor::Network::SelectionContainerClonePayload const& payload);
 
-    MCAPI void _handlePayloadColor(::Editor::Network::SelectionContainerColorPayload const& payload);
+    MCNAPI void _handlePayloadColor(::Editor::Network::SelectionContainerColorPayload const& payload);
 
-    MCAPI void _handlePayloadError(::Editor::Network::SelectionContainerErrorPayload const& payload);
+    MCNAPI void _handlePayloadError(::Editor::Network::SelectionContainerErrorPayload const& payload);
 
-    MCAPI void _handlePayloadPush(::Editor::Network::SelectionContainerPushPayload const& payload);
+    MCNAPI void _handlePayloadPush(::Editor::Network::SelectionContainerPushPayload const& payload);
 
-    MCAPI void _handlePayloadReplace(::Editor::Network::SelectionContainerReplacePayload const& payload);
+    MCNAPI void _handlePayloadReplace(::Editor::Network::SelectionContainerReplacePayload const& payload);
 
-    MCAPI void _handlePayloadTranslate(::Editor::Network::SelectionContainerTranslatePayload const& payload);
+    MCNAPI void _handlePayloadTranslate(::Editor::Network::SelectionContainerTranslatePayload const& payload);
 
-    MCAPI void _handlePayloadUnary(::Editor::Network::SelectionContainerUnaryPayload const& payload);
+    MCNAPI void _handlePayloadUnary(::Editor::Network::SelectionContainerUnaryPayload const& payload);
 
-    MCAPI void _handlePayloadVisible(::Editor::Network::SelectionContainerVisiblePayload const& payload);
+    MCNAPI void _handlePayloadVisible(::Editor::Network::SelectionContainerVisiblePayload const& payload);
 
-    MCAPI void _handleServicePayloadMessage(::Editor::Network::SelectionServicePayload const& payload);
+    MCNAPI void _handleServicePayloadMessage(::Editor::Network::SelectionServicePayload const& payload);
 
-    MCAPI void
+    MCNAPI void
     _handle_ServerScriptTeardownRebuildPayload(::Editor::Network::ServerScriptTeardownRebuildPayload const& payload);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result<void> $ready();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCAPI ::Scripting::Result_deprecated<::WeakRef<::Editor::Selection::SelectionContainer>> $createContainer();
+    MCNAPI ::Scripting::Result_deprecated<::WeakRef<::Editor::Selection::SelectionContainer>> $createContainer();
 
-    MCAPI ::Scripting::Result<void> $destroyContainer(::WeakRef<::Editor::Selection::SelectionContainer> containerRef);
+    MCNAPI ::Scripting::Result<void> $destroyContainer(::WeakRef<::Editor::Selection::SelectionContainer> containerRef);
 
-    MCAPI ::StackRefResult<::Editor::Selection::SelectionContainer> $getPrimaryContainer() const;
+    MCNAPI ::StackRefResult<::Editor::Selection::SelectionContainer> $getPrimaryContainer() const;
 
-    MCAPI ::Scripting::Result_deprecated<::WeakRef<::Editor::Selection::SelectionContainer>>
+    MCNAPI ::Scripting::Result_deprecated<::WeakRef<::Editor::Selection::SelectionContainer>>
     $findContainer(::mce::UUID const& id) const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::mce::UUID>> $getContainerIdList() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::mce::UUID>> $getContainerIdList() const;
 
-    MCAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     $registerSelectionEventListener(::std::function<void(::Editor::Services::SelectionEvent const&)> callback);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
 
-    MCAPI static void** $vftableForSelectionServiceProvider();
+    MCNAPI static void** $vftableForSelectionServiceProvider();
     // NOLINTEND
 };
 

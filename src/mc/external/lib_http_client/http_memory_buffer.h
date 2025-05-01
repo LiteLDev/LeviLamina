@@ -8,13 +8,13 @@ struct http_memory_buffer {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~http_memory_buffer();
+    MCNAPI ~http_memory_buffer();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

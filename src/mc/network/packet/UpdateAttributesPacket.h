@@ -3,20 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorRuntimeID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/network/packet/PlayerInputTick.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorRuntimeID;
 class AttributeInstanceHandle;
 class BaseAttributeMap;
 class BinaryStream;
 class ReadOnlyBinaryStream;
 struct AttributeData;
-struct PlayerInputTick;
 // clang-format on
 
 class UpdateAttributesPacket : public ::Packet {
@@ -50,9 +50,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UpdateAttributesPacket(::Actor const& entity, ::std::vector<::AttributeInstanceHandle> const& dirtyData);
+    MCNAPI UpdateAttributesPacket(::Actor const& entity, ::std::vector<::AttributeInstanceHandle> const& dirtyData);
 
-    MCAPI UpdateAttributesPacket(
+    MCNAPI UpdateAttributesPacket(
         ::ActorRuntimeID const&                         id,
         ::BaseAttributeMap const&                       map,
         ::std::vector<::AttributeInstanceHandle> const& dirtyData,
@@ -63,9 +63,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor const& entity, ::std::vector<::AttributeInstanceHandle> const& dirtyData);
+    MCNAPI void* $ctor(::Actor const& entity, ::std::vector<::AttributeInstanceHandle> const& dirtyData);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorRuntimeID const&                         id,
         ::BaseAttributeMap const&                       map,
         ::std::vector<::AttributeInstanceHandle> const& dirtyData,
@@ -76,24 +76,24 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MinecraftPacketIds $getId() const;
+    MCNAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCAPI void $write(::BinaryStream& stream) const;
+    MCNAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

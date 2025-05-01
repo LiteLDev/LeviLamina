@@ -40,12 +40,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_onEnd(::LabTableReaction& owner, ::BlockSource& region);
+    MCNAPI void $_onEnd(::LabTableReaction& owner, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

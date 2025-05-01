@@ -52,7 +52,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $_onScriptModuleStartupComplete();
+    MCNAPI void $_onScriptModuleStartupComplete();
     // NOLINTEND
 };
 

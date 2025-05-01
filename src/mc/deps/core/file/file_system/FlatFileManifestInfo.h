@@ -39,31 +39,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FlatFileManifestInfo();
+    MCNAPI FlatFileManifestInfo();
 
-    MCAPI FlatFileManifestInfo(::Core::FlatFileManifestInfo const&);
+    MCNAPI FlatFileManifestInfo(::Core::FlatFileManifestInfo const&);
 
-    MCAPI ::Bedrock::Result<void> readFromStream(::ReadOnlyBinaryStream& manifestFileStream);
+    MCNAPI ::Bedrock::Result<void> readFromStream(::ReadOnlyBinaryStream& manifestFileStream);
 
-    MCAPI void setAttributes(::Core::FileType fileType, bool isDeleted);
+    MCNAPI void setAttributes(::Core::FileType fileType, bool isDeleted);
 
-    MCAPI void setPath(::Core::PathView path);
+    MCNAPI void setPath(::Core::PathView path);
 
-    MCAPI ~FlatFileManifestInfo();
+    MCNAPI ~FlatFileManifestInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::Core::FlatFileManifestInfo const&);
+    MCNAPI void* $ctor(::Core::FlatFileManifestInfo const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

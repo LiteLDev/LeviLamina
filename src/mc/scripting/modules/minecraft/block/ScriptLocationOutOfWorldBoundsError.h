@@ -17,27 +17,27 @@ struct ScriptLocationOutOfWorldBoundsError : public ::Scripting::Error {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptLocationOutOfWorldBoundsError(::std::string const& details, ::Vec3 const& pos);
+    MCNAPI ScriptLocationOutOfWorldBoundsError(::std::string const& details, ::Vec3 const& pos);
 
-    MCAPI ~ScriptLocationOutOfWorldBoundsError();
+    MCNAPI ~ScriptLocationOutOfWorldBoundsError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> bind();
+    MCNAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& details, ::Vec3 const& pos);
+    MCNAPI void* $ctor(::std::string const& details, ::Vec3 const& pos);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

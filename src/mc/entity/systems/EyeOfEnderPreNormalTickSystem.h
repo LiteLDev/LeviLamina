@@ -19,15 +19,15 @@ class EyeOfEnderPreNormalTickSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     _doEyeOfEnderPreNormalTickSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
 
-    MCAPI static void
+    MCNAPI static void
     _tickEyeOfEnderPreNormalTickSystem(::ViewT<
                                        ::StrictEntityContext,
                                        ::Include<::ActorMovementTickNeededComponent, ::EyeOfEnderFlagComponent>,
                                        ::ActorOwnerComponent> view);
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

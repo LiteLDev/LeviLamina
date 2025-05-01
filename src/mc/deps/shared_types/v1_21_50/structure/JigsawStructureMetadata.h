@@ -22,15 +22,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::SharedTypes::v1_21_50::JigsawStructureMetadata const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_21_50::JigsawStructureMetadata const&) const;
 
-    MCAPI ~JigsawStructureMetadata();
+    MCNAPI ~JigsawStructureMetadata();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -25,19 +25,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<bool> getCanAlwaysEat();
+    MCNAPI ::Scripting::Result_deprecated<bool> getCanAlwaysEat();
 
-    MCAPI ::Scripting::Result_deprecated<int> getNutrition();
+    MCNAPI ::Scripting::Result_deprecated<int> getNutrition();
 
-    MCAPI ::Scripting::Result_deprecated<float> getSaturationModifier();
+    MCNAPI ::Scripting::Result_deprecated<float> getSaturationModifier();
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getUsingConvertsToItem();
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getUsingConvertsToItem();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptFoodComponent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptFoodComponent>
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
@@ -50,7 +50,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

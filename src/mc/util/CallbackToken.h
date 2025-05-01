@@ -18,16 +18,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void cancelCallback();
+    MCNAPI void cancelCallback();
 
-    MCAPI void release();
+    MCNAPI void release();
 
-    MCAPI ~CallbackToken();
+    MCNAPI ~CallbackToken();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

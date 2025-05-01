@@ -13,9 +13,9 @@ class VideoTimingExtension {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool Write(::rtc::ArrayView<uchar>, ::webrtc::VideoSendTiming const&);
+    MCNAPI static bool Write(::rtc::ArrayView<uchar>, ::webrtc::VideoSendTiming const&);
 
-    MCAPI static bool Write(::rtc::ArrayView<uchar>, ushort, uchar);
+    MCNAPI static bool Write(::rtc::ArrayView<uchar>, ushort, uchar);
     // NOLINTEND
 
 public:

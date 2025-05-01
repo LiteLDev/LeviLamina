@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/world/item/ItemStack.h"
+#include "mc/world/level/Tick.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ItemStack;
-class WeakEntityRef;
-struct Tick;
 // clang-format on
 
 class AdmireItemComponent {
@@ -28,26 +30,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AdmireItemComponent(::AdmireItemComponent&&);
+    MCNAPI AdmireItemComponent(::AdmireItemComponent&&);
 
-    MCAPI void onAdmireItemPickedUp(::Actor const& owner, ::ItemStack const& item, ::Actor* itemOwner);
+    MCNAPI void onAdmireItemPickedUp(::Actor const& owner, ::ItemStack const& item, ::Actor* itemOwner);
 
-    MCAPI ::AdmireItemComponent& operator=(::AdmireItemComponent&&);
+    MCNAPI ::AdmireItemComponent& operator=(::AdmireItemComponent&&);
 
-    MCAPI void stopAdmiring();
+    MCNAPI void stopAdmiring();
 
-    MCAPI ~AdmireItemComponent();
+    MCNAPI ~AdmireItemComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AdmireItemComponent&&);
+    MCNAPI void* $ctor(::AdmireItemComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

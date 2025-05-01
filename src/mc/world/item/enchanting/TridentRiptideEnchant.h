@@ -34,18 +34,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getMinCost(int level) const;
+    MCNAPI int $getMinCost(int level) const;
 
-    MCFOLD int $getMaxCost(int level) const;
+    MCNAPI int $getMaxCost(int level) const;
 
-    MCFOLD int $getMaxLevel() const;
+    MCNAPI int $getMaxLevel() const;
 
-    MCAPI bool $isCompatibleWith(::Enchant::Type type) const;
+    MCNAPI bool $isCompatibleWith(::Enchant::Type type) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

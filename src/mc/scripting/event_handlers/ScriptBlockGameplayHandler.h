@@ -43,19 +43,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _handleBlockTryDestroyByPlayerEvent(
+    MCNAPI bool _handleBlockTryDestroyByPlayerEvent(
         ::BlockTryDestroyByPlayerEvent&                                                   eventData,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     ) const;
 
-    MCAPI bool _handleBlockTryPlaceByPlayerEvent(
+    MCNAPI bool _handleBlockTryPlaceByPlayerEvent(
         ::BlockTryPlaceByPlayerEvent const&                                               eventData,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     ) const;
 
-    MCAPI bool _handleExplosionStartedEvent(
+    MCNAPI bool _handleExplosionStartedEvent(
         ::ExplosionStartedEvent&                                                          explosionStartedEvent,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
@@ -71,16 +71,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ExplosionStartedEvent& explosionStartedEvent);
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ExplosionStartedEvent& explosionStartedEvent);
 
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::BlockTryDestroyByPlayerEvent& eventData);
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::BlockTryDestroyByPlayerEvent& eventData);
 
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::BlockTryPlaceByPlayerEvent const& eventData);
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::BlockTryPlaceByPlayerEvent const& eventData);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

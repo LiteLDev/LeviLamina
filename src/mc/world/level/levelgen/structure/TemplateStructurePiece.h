@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/level/levelgen/structure/LegacyStructureSettings.h"
 #include "mc/world/level/levelgen/structure/StructurePiece.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSource;
 class BoundingBox;
-class LegacyStructureSettings;
 class LegacyStructureTemplate;
 class Random;
 // clang-format on
@@ -45,34 +45,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit TemplateStructurePiece(int depth);
+    MCNAPI explicit TemplateStructurePiece(int depth);
 
-    MCAPI void _setBoundingBoxFromTemplate();
+    MCNAPI void _setBoundingBoxFromTemplate();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int depth);
+    MCNAPI void* $ctor(int depth);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI void $moveBoundingBox(int dx, int dy, int dz);
+    MCNAPI void $moveBoundingBox(int dx, int dy, int dz);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

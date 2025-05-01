@@ -38,13 +38,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~SignalNameSubscriberCount();
+        MCNAPI ~SignalNameSubscriberCount();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -68,33 +68,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSystemBeforeEvents(::ScriptModuleMinecraft::ScriptSystemBeforeEvents&&);
+    MCNAPI ScriptSystemBeforeEvents(::ScriptModuleMinecraft::ScriptSystemBeforeEvents&&);
 
-    MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptSystemBeforeEvents::SignalNameSubscriberCount>
+    MCNAPI ::std::vector<::ScriptModuleMinecraft::ScriptSystemBeforeEvents::SignalNameSubscriberCount>
     getFineGrainedSignalSubscriberStats() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptSystemBeforeEvents&
+    MCNAPI ::ScriptModuleMinecraft::ScriptSystemBeforeEvents&
     operator=(::ScriptModuleMinecraft::ScriptSystemBeforeEvents&&);
 
-    MCAPI ~ScriptSystemBeforeEvents();
+    MCNAPI ~ScriptSystemBeforeEvents();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSystemBeforeEvents&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptSystemBeforeEvents&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

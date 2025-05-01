@@ -72,7 +72,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BackgroundWorker(
+    MCNAPI BackgroundWorker(
         ::std::string                                 name,
         bool                                          async,
         ::Bedrock::Threading::OSThreadPriority const& priority,
@@ -82,15 +82,15 @@ public:
         bool                                          suppressProfiling
     );
 
-    MCAPI void _doNoWorkDelay();
+    MCNAPI void _doNoWorkDelay();
 
-    MCAPI bool _processNextTask();
+    MCNAPI bool _processNextTask();
 
-    MCAPI ::BackgroundWorker::RunOneResult _runOneTask();
+    MCNAPI ::BackgroundWorker::RunOneResult _runOneTask();
 
-    MCAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task);
+    MCNAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task);
 
-    MCAPI void start();
+    MCNAPI void start();
     // NOLINTEND
 
 public:
@@ -102,7 +102,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string                                 name,
         bool                                          async,
         ::Bedrock::Threading::OSThreadPriority const& priority,
@@ -116,20 +116,20 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isAsync() const;
+    MCNAPI bool $isAsync() const;
 
-    MCAPI bool $canTaskRunAgain() const;
+    MCNAPI bool $canTaskRunAgain() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

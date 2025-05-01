@@ -14,15 +14,15 @@ namespace Core { class Path; }
 namespace Bedrock::Detail {
 // functions
 // NOLINTBEGIN
-MCAPI ::Bedrock::Detail::ErrorInfoBuilder<::std::error_code> createError(::std::errc errc);
+MCNAPI ::Bedrock::Detail::ErrorInfoBuilder<::std::error_code> createError(::std::errc errc);
 
-MCAPI void defaultDataStoreDelete(::Core::Path const& path);
+MCNAPI void defaultDataStoreDelete(::Core::Path const& path);
 
-MCAPI ::std::optional<::std::string> defaultDataStoreLoad(::Core::Path const& path);
+MCNAPI ::std::optional<::std::string> defaultDataStoreLoad(::Core::Path const& path);
 
-MCAPI void defaultDataStoreSave(::Core::Path const& path, ::std::string_view data);
+MCNAPI void defaultDataStoreSave(::Core::Path const& path, ::std::string_view data);
 
-MCAPI ::std::back_insert_iterator<::std::string>
+MCNAPI ::std::back_insert_iterator<::std::string>
 formatCallStackContexts(::std::back_insert_iterator<::std::string> it, ::Bedrock::CallStack const& callStack);
 // NOLINTEND
 

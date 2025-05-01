@@ -26,15 +26,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::std::shared_ptr<::Core::FlatFileManifest const> getManifest() const;
+    MCNAPI ::std::shared_ptr<::Core::FlatFileManifest const> getManifest() const;
 
-    MCAPI ~FlatFileSearchResult();
+    MCNAPI ~FlatFileSearchResult();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

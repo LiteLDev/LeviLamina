@@ -14,13 +14,13 @@ class CongestionControlHandler {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::webrtc::TargetTransferRate> GetUpdate();
+    MCNAPI ::std::optional<::webrtc::TargetTransferRate> GetUpdate();
 
-    MCAPI void SetNetworkAvailability(bool);
+    MCNAPI void SetNetworkAvailability(bool);
 
-    MCAPI void SetPacerQueue(::webrtc::TimeDelta);
+    MCNAPI void SetPacerQueue(::webrtc::TimeDelta);
 
-    MCAPI void SetTargetRate(::webrtc::TargetTransferRate);
+    MCNAPI void SetTargetRate(::webrtc::TargetTransferRate);
     // NOLINTEND
 };
 

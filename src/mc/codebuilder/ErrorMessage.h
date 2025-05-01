@@ -26,25 +26,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ErrorMessage(::std::string const& requestId, ::MCRESULT result);
+    MCNAPI ErrorMessage(::std::string const& requestId, ::MCRESULT result);
 
-    MCAPI ErrorMessage(::std::string const& requestId, ::MCRESULT result, ::std::string const& message);
+    MCNAPI ErrorMessage(::std::string const& requestId, ::MCRESULT result, ::std::string const& message);
 
-    MCAPI ~ErrorMessage();
+    MCNAPI ~ErrorMessage();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& requestId, ::MCRESULT result);
+    MCNAPI void* $ctor(::std::string const& requestId, ::MCRESULT result);
 
-    MCAPI void* $ctor(::std::string const& requestId, ::MCRESULT result, ::std::string const& message);
+    MCNAPI void* $ctor(::std::string const& requestId, ::MCRESULT result, ::std::string const& message);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

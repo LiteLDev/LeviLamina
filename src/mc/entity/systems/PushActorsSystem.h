@@ -12,8 +12,8 @@ struct PushActorsSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
 
-    MCAPI static void pushActors(::ActorOwnerComponent& actorOwnerComponent);
+    MCNAPI static void pushActors(::ActorOwnerComponent& actorOwnerComponent);
     // NOLINTEND
 };

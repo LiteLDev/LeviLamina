@@ -25,24 +25,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SummonSpellData();
+    MCNAPI SummonSpellData();
 
-    MCAPI SummonSpellData(::SummonSpellData const&);
+    MCNAPI SummonSpellData(::SummonSpellData const&);
 
-    MCAPI ~SummonSpellData();
+    MCNAPI ~SummonSpellData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::SummonSpellData const&);
+    MCNAPI void* $ctor(::SummonSpellData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

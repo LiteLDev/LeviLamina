@@ -21,21 +21,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ModuleBindingBundle(::Scripting::ModuleBindingBundle&&);
+    MCNAPI ModuleBindingBundle(::Scripting::ModuleBindingBundle&&);
 
-    MCAPI ~ModuleBindingBundle();
+    MCNAPI ~ModuleBindingBundle();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::Scripting::ModuleBindingBundle&&);
+    MCNAPI void* $ctor(::Scripting::ModuleBindingBundle&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

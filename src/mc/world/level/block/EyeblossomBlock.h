@@ -12,7 +12,6 @@ class BlockPos;
 class BlockSource;
 class Experiments;
 class Random;
-struct BlockAnimateTickData;
 namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
@@ -21,19 +20,13 @@ class EyeblossomBlock : public ::FlowerBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 150
+    // vIndex: 148
     virtual void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const /*override*/;
-
-    // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
-
-    // vIndex: 124
-    virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
-    // vIndex: 149
+    // vIndex: 147
     virtual void entityInside(::BlockSource& region, ::BlockPos const&, ::Actor& entity) const /*override*/;
 
     // vIndex: 0
@@ -43,12 +36,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _tryPlayAmbientSound(::BlockAnimateTickData const& tickData) const;
-
-    MCAPI void
+    MCNAPI void
     _updateEyeblossomState(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool isMainBlock) const;
 
-    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -60,20 +51,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCFOLD void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
-    MCFOLD void $animateTick(::BlockAnimateTickData const& tickData) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
-
-    MCAPI void $entityInside(::BlockSource& region, ::BlockPos const&, ::Actor& entity) const;
+    MCNAPI void $entityInside(::BlockSource& region, ::BlockPos const&, ::Actor& entity) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

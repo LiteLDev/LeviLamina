@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/util/Factory.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/response/CommandResponseBase.h"
 #include "mc/world/response/EventResponse.h"
 
@@ -27,7 +27,7 @@ public:
 
     // vIndex: 3
     virtual void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
         ::Factory<::EventResponse> const&                                                                       factory
     ) const /*override*/;
 
@@ -44,12 +44,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::string const& $getName() const;
+    MCNAPI ::std::string const& $getName() const;
 
-    MCFOLD void $executeAction(::RenderParams& params) const;
+    MCNAPI void $executeAction(::RenderParams& params) const;
 
-    MCAPI void $buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
+    MCNAPI void $buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
         ::Factory<::EventResponse> const&                                                                       factory
     ) const;
     // NOLINTEND
@@ -57,8 +57,8 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForCommandResponseBase();
+    MCNAPI static void** $vftableForCommandResponseBase();
 
-    MCAPI static void** $vftableForEventResponse();
+    MCNAPI static void** $vftableForEventResponse();
     // NOLINTEND
 };

@@ -8,13 +8,13 @@ struct TraceEndOnScopeClose {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~TraceEndOnScopeClose();
+    MCNAPI ~TraceEndOnScopeClose();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

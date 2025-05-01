@@ -13,21 +13,21 @@ class StreamInterfaceChannel {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool OnPacketReceived(char const*, uint64);
+    MCNAPI bool OnPacketReceived(char const*, uint64);
 
-    MCAPI explicit StreamInterfaceChannel(::cricket::IceTransportInternal*);
+    MCNAPI explicit StreamInterfaceChannel(::cricket::IceTransportInternal*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::IceTransportInternal*);
+    MCNAPI void* $ctor(::cricket::IceTransportInternal*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

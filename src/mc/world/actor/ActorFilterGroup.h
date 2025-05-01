@@ -65,59 +65,59 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _addLegacyFilter(
+    MCNAPI bool _addLegacyFilter(
         ::std::string const&                     name,
         ::ActorFilterGroup::LegacyMapping const& legacy,
         ::FilterInput const&                     filterInput
     );
 
-    MCAPI bool _handleUnknownMember(::std::string const& name, ::Json::Value const& jsonVal);
+    MCNAPI bool _handleUnknownMember(::std::string const& name, ::Json::Value const& jsonVal);
 
-    MCAPI bool
+    MCNAPI bool
     _parseMemberCollectionJSONCpp(::FilterGroup::CollectionType collectionType, ::Json::Value const& jsonVal);
 
-    MCAPI bool _parseMemberJSONCpp(::std::string const& name, ::Json::Value const& jsonVal);
+    MCNAPI bool _parseMemberJSONCpp(::std::string const& name, ::Json::Value const& jsonVal);
 
-    MCAPI bool _parseObjectJSONCpp(::std::string const& name, ::Json::Value const& jsonVal);
+    MCNAPI bool _parseObjectJSONCpp(::std::string const& name, ::Json::Value const& jsonVal);
 
-    MCAPI bool _processLegacyArray(
+    MCNAPI bool _processLegacyArray(
         ::std::string const&                     name,
         ::Json::Value const&                     jsonVal,
         ::ActorFilterGroup::LegacyMapping const& legacy
     );
 
-    MCAPI bool _processLegacyMember(
+    MCNAPI bool _processLegacyMember(
         ::std::string const&                     name,
         ::Json::Value const&                     jsonVal,
         ::ActorFilterGroup::LegacyMapping const& legacy
     );
 
-    MCAPI bool evaluateActor(::Actor const& e, ::VariantParameterListConst const& params) const;
+    MCNAPI bool evaluateActor(::Actor const& e, ::VariantParameterListConst const& params) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void initialize();
+    MCNAPI static void initialize();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $parse(::Json::Value const& jsonVal);
+    MCNAPI bool $parse(::Json::Value const& jsonVal);
 
-    MCAPI ::std::shared_ptr<::FilterGroup> $_createSubgroup(::FilterGroup::CollectionType type) const;
+    MCNAPI ::std::shared_ptr<::FilterGroup> $_createSubgroup(::FilterGroup::CollectionType type) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -31,19 +31,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _fitsBlockPatternEntry(int subPattern, int rowIndex, ::BlockPos const& pos, ::Block const& block);
+    MCNAPI bool _fitsBlockPatternEntry(int subPattern, int rowIndex, ::BlockPos const& pos, ::Block const& block);
 
-    MCAPI ::BlockPatternBuilder& aisle(int, ...);
+    MCNAPI ::BlockPatternBuilder& aisle(int, ...);
 
-    MCAPI ::BlockPatternBuilder& build();
+    MCNAPI ::BlockPatternBuilder& build();
 
-    MCAPI ::BlockPatternBuilder& define(char pattern, ::Block const& block);
+    MCNAPI ::BlockPatternBuilder& define(char pattern, ::Block const& block);
 
-    MCAPI ::BuildMatch match(::BlockPos const& pos);
+    MCNAPI ::BuildMatch match(::BlockPos const& pos);
 
-    MCAPI ::BuildMatch match(::BlockPos const& pos, int subPattern, int rowIndex, uchar forward, uchar up);
+    MCNAPI ::BuildMatch match(::BlockPos const& pos, int subPattern, int rowIndex, uchar forward, uchar up);
 
-    MCAPI void replaceBlocks(
+    MCNAPI void replaceBlocks(
         char                                                     buildMatch,
         ::BuildMatch                                             block,
         ::Block const&                                           preReplaceCallback,
@@ -54,6 +54,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::BlockPatternBuilder> start(::BlockSource& region);
+    MCNAPI static ::std::unique_ptr<::BlockPatternBuilder> start(::BlockSource& region);
     // NOLINTEND
 };

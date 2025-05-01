@@ -19,16 +19,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorParticleEffect();
+    MCNAPI ActorParticleEffect();
 
-    MCAPI ActorParticleEffect(::ActorParticleEffect const&);
+    MCNAPI ActorParticleEffect(::ActorParticleEffect const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::ActorParticleEffect const&);
+    MCNAPI void* $ctor(::ActorParticleEffect const&);
     // NOLINTEND
 };

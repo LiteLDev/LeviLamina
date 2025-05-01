@@ -38,17 +38,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Flag();
+        MCNAPI Flag();
 
-        MCAPI void Invalidate();
+        MCNAPI void Invalidate();
 
-        MCAPI bool IsValid() const;
+        MCNAPI bool IsValid() const;
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -60,7 +60,7 @@ public:
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -77,35 +77,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WeakReference();
+    MCNAPI WeakReference();
 
-    MCAPI explicit WeakReference(::rtc::internal::WeakReference::Flag const*);
+    MCNAPI explicit WeakReference(::rtc::internal::WeakReference::Flag const*);
 
-    MCAPI WeakReference(::rtc::internal::WeakReference&&);
+    MCNAPI WeakReference(::rtc::internal::WeakReference&&);
 
-    MCAPI WeakReference(::rtc::internal::WeakReference const&);
+    MCNAPI WeakReference(::rtc::internal::WeakReference const&);
 
-    MCAPI bool is_valid() const;
+    MCNAPI bool is_valid() const;
 
-    MCAPI ~WeakReference();
+    MCNAPI ~WeakReference();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::rtc::internal::WeakReference::Flag const*);
+    MCNAPI void* $ctor(::rtc::internal::WeakReference::Flag const*);
 
-    MCAPI void* $ctor(::rtc::internal::WeakReference&&);
+    MCNAPI void* $ctor(::rtc::internal::WeakReference&&);
 
-    MCAPI void* $ctor(::rtc::internal::WeakReference const&);
+    MCNAPI void* $ctor(::rtc::internal::WeakReference const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

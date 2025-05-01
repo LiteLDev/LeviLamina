@@ -13,19 +13,19 @@ class TurnRefreshRequest {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TurnRefreshRequest(::cricket::TurnPort*, int);
+    MCNAPI TurnRefreshRequest(::cricket::TurnPort*, int);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::TurnPort*, int);
+    MCNAPI void* $ctor(::cricket::TurnPort*, int);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

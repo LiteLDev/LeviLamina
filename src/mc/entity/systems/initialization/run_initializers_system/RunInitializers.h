@@ -52,17 +52,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCNAPI void $tick(::EntityRegistry& registry);
 
-    MCFOLD void $singleTick(::EntityRegistry& registry, ::EntityContext& entity);
+    MCNAPI void $singleTick(::EntityRegistry& registry, ::EntityContext& entity);
 
-    MCFOLD void $singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext);
+    MCNAPI void $singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

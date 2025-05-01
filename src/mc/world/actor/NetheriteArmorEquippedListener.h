@@ -19,7 +19,7 @@ public:
     // vIndex: 0
     virtual ~NetheriteArmorEquippedListener() /*override*/ = default;
 
-    // vIndex: 33
+    // vIndex: 35
     virtual ::EventResult onEvent(::ActorEquippedArmorEvent const& actorEquippedArmorEvent) /*override*/;
     // NOLINTEND
 
@@ -32,12 +32,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ActorEquippedArmorEvent const& actorEquippedArmorEvent);
+    MCNAPI ::EventResult $onEvent(::ActorEquippedArmorEvent const& actorEquippedArmorEvent);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

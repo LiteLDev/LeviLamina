@@ -52,23 +52,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getEnchantSlot() const;
+    MCNAPI int $getEnchantSlot() const;
 
-    MCAPI bool
+    MCNAPI bool
     $isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const;
 
-    MCAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCNAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCAPI float $getAttackDamageBonus(::Actor const& attacker, float) const;
+    MCNAPI float $getAttackDamageBonus(::Actor const& attacker, float) const;
 
-    MCFOLD float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
+    MCNAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 
-    MCAPI bool $canDestroySpecial(::Block const& block) const;
+    MCNAPI bool $canDestroySpecial(::Block const& block) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -28,25 +28,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContentInfo(::cricket::ContentInfo const&);
+    MCNAPI ContentInfo(::cricket::ContentInfo const&);
 
-    MCAPI ::cricket::MediaContentDescription const* media_description() const;
+    MCNAPI ::cricket::MediaContentDescription const* media_description() const;
 
-    MCAPI ::cricket::MediaContentDescription* media_description();
+    MCNAPI ::cricket::MediaContentDescription* media_description();
 
-    MCAPI ~ContentInfo();
+    MCNAPI ~ContentInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::ContentInfo const&);
+    MCNAPI void* $ctor(::cricket::ContentInfo const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

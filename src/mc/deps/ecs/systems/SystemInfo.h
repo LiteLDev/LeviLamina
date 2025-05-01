@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/ecs/systems/Dependencies.h"
+
 // auto generated forward declare list
 // clang-format off
 struct ComponentInfo;
-struct Dependencies;
 // clang-format on
 
 struct SystemInfo {
@@ -24,12 +26,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~SystemInfo();
+    MCNAPI ~SystemInfo();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

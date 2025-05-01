@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/world/level/ChunkPos.h"
 
 // auto generated forward declare list
 // clang-format off
-class ChunkPos;
 class Dimension;
 // clang-format on
 

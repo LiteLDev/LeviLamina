@@ -83,56 +83,54 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EntitySystems(::std::unique_ptr<::IEntitySystemsCollection> systems, ::std::string name);
+    MCNAPI EntitySystems(::std::unique_ptr<::IEntitySystemsCollection> systems, ::std::string name);
 
-    MCAPI ::std::vector<::gsl::not_null<::SystemInfo const*>>
+    MCNAPI ::std::vector<::gsl::not_null<::SystemInfo const*>>
     getSystemInfo(::Bedrock::typeid_t<::SystemCategory> const& filter) const;
 
-    MCAPI void registerEditorOnlyTickingSystem(::TickingSystemWithInfo&& system);
+    MCNAPI void registerEditorOnlyTickingSystem(::TickingSystemWithInfo&& system);
 
-    MCAPI void registerEvents(::EntityRegistry& registry);
+    MCNAPI void registerGameOnlyTickingSystem(::TickingSystemWithInfo&& system);
 
-    MCAPI void registerGameOnlyTickingSystem(::TickingSystemWithInfo&& system);
+    MCNAPI void registerMovementTickingSystem(::TickingSystemWithInfo&& system);
 
-    MCAPI void registerMovementTickingSystem(::TickingSystemWithInfo&& system);
-
-    MCAPI void registerTickingSystem(::TickingSystemWithInfo&& system);
+    MCNAPI void registerTickingSystem(::TickingSystemWithInfo&& system);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::IEntitySystemsCollection> systems, ::std::string name);
+    MCNAPI void* $ctor(::std::unique_ptr<::IEntitySystemsCollection> systems, ::std::string name);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tickMovementCatchup(::EntityRegistry& registry);
+    MCNAPI void $tickMovementCatchup(::EntityRegistry& registry);
 
-    MCAPI void $tickMovementCorrectionReplay(::EntityRegistry& registry);
+    MCNAPI void $tickMovementCorrectionReplay(::EntityRegistry& registry);
 
-    MCAPI void $registerTickingSystem(
+    MCNAPI void $registerTickingSystem(
         ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const> categories,
         ::std::unique_ptr<::ITickingSystem>                      system,
         ::SystemInfo const&                                      info,
         ::EntitySystemTickingMode                                tickingMode
     );
 
-    MCAPI bool $_hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const category) const;
+    MCNAPI bool $_hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const category) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForIEntitySystems();
+    MCNAPI static void** $vftableForIEntitySystems();
     // NOLINTEND
 };

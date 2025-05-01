@@ -22,16 +22,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::GameRulesChangedPacketData& operator=(::GameRulesChangedPacketData&&);
+    MCNAPI ::GameRulesChangedPacketData& operator=(::GameRulesChangedPacketData&&);
 
-    MCAPI void setRules(::std::vector<::GameRule> rules);
+    MCNAPI void setRules(::std::vector<::GameRule> rules);
 
-    MCAPI ~GameRulesChangedPacketData();
+    MCNAPI ~GameRulesChangedPacketData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

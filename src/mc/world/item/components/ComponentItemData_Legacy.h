@@ -38,26 +38,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemData_Legacy(::ComponentItemData_Legacy const&);
+    MCNAPI ComponentItemData_Legacy(::ComponentItemData_Legacy const&);
 
-    MCAPI ComponentItemData_Legacy(::ComponentItemData_Legacy&&);
+    MCNAPI ComponentItemData_Legacy(::ComponentItemData_Legacy&&);
 
-    MCAPI ::ComponentItemData_Legacy& operator=(::ComponentItemData_Legacy&&);
+    MCNAPI ::ComponentItemData_Legacy& operator=(::ComponentItemData_Legacy&&);
 
-    MCAPI ~ComponentItemData_Legacy();
+    MCNAPI ~ComponentItemData_Legacy();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ComponentItemData_Legacy const&);
+    MCNAPI void* $ctor(::ComponentItemData_Legacy const&);
 
-    MCAPI void* $ctor(::ComponentItemData_Legacy&&);
+    MCNAPI void* $ctor(::ComponentItemData_Legacy&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

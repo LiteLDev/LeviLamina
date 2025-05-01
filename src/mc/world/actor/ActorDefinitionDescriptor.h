@@ -91,66 +91,66 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDefinitionDescriptor();
+    MCNAPI ActorDefinitionDescriptor();
 
-    MCAPI ActorDefinitionDescriptor(::ActorDefinitionDescriptor&&);
+    MCNAPI ActorDefinitionDescriptor(::ActorDefinitionDescriptor&&);
 
-    MCAPI ::ActorDefinitionDescriptor& combine(::ActorDefinitionDescriptor const& rhs);
+    MCNAPI ::ActorDefinitionDescriptor& combine(::ActorDefinitionDescriptor const& rhs);
 
-    MCAPI bool contains(::ActorDefinitionDescriptor const& rhs) const;
+    MCNAPI bool contains(::ActorDefinitionDescriptor const& rhs) const;
 
-    MCAPI ::ActorDefinitionDescriptor& operator=(::ActorDefinitionDescriptor&&);
+    MCNAPI ::ActorDefinitionDescriptor& operator=(::ActorDefinitionDescriptor&&);
 
-    MCAPI ::ActorDefinitionDescriptor& operator=(::ActorDefinitionDescriptor const&);
+    MCNAPI ::ActorDefinitionDescriptor& operator=(::ActorDefinitionDescriptor const&);
 
-    MCAPI bool overlaps(::ActorDefinitionDescriptor const& rhs) const;
+    MCNAPI bool overlaps(::ActorDefinitionDescriptor const& rhs) const;
 
-    MCAPI ::ActorDefinitionDescriptor& subtract(::ActorDefinitionDescriptor const& rhs);
+    MCNAPI ::ActorDefinitionDescriptor& subtract(::ActorDefinitionDescriptor const& rhs);
 
-    MCAPI ~ActorDefinitionDescriptor();
+    MCNAPI ~ActorDefinitionDescriptor();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _executeEvent(
+    MCNAPI static bool _executeEvent(
         ::Actor&                                                              entity,
         ::std::string const&                                                  name,
         ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
         ::VariantParameterList const&                                         list
     );
 
-    MCAPI static bool _executeTrigger(
+    MCNAPI static bool _executeTrigger(
         ::Actor&                                                              entity,
         ::ActorDefinitionTrigger const&                                       trigger,
         ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
         ::VariantParameterList const&                                         list
     );
 
-    MCAPI static void _forceExecuteTrigger(
+    MCNAPI static void _forceExecuteTrigger(
         ::Actor&                                                              entity,
         ::ActorDefinitionTrigger const&                                       trigger,
         ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
         ::VariantParameterList const&                                         list
     );
 
-    MCAPI static bool executeEvent(::Actor& entity, ::std::string const& name, ::VariantParameterList const& list);
+    MCNAPI static bool executeEvent(::Actor& entity, ::std::string const& name, ::VariantParameterList const& list);
 
-    MCAPI static bool
+    MCNAPI static bool
     executeTrigger(::Actor& entity, ::ActorDefinitionTrigger const& trigger, ::VariantParameterList const& list);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::ActorDefinitionDescriptor&&);
+    MCNAPI void* $ctor(::ActorDefinitionDescriptor&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

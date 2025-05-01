@@ -16,14 +16,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnkeefdff;
+        ::ll::TypedStorage<1, 1, bool> mIsValid;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ControlBlock& operator=(ControlBlock const&);
-        ControlBlock(ControlBlock const&);
-        ControlBlock();
     };
 
 public:
@@ -46,29 +40,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EnableNonOwnerReferences();
+    MCNAPI EnableNonOwnerReferences();
 
-    MCAPI EnableNonOwnerReferences(::Bedrock::EnableNonOwnerReferences const&);
+    MCNAPI EnableNonOwnerReferences(::Bedrock::EnableNonOwnerReferences const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCFOLD void* $ctor(::Bedrock::EnableNonOwnerReferences const&);
+    MCNAPI void* $ctor(::Bedrock::EnableNonOwnerReferences const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

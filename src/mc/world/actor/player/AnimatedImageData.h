@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/image/Image.h"
 #include "mc/world/actor/player/persona/AnimatedTextureType.h"
 #include "mc/world/actor/player/persona/AnimationExpression.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace mce { struct Image; }
-// clang-format on
 
 class AnimatedImageData {
 public:
@@ -28,20 +24,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AnimatedImageData(
+    MCNAPI AnimatedImageData(
         ::persona::AnimatedTextureType type,
         ::persona::AnimationExpression animationExpression,
         ::mce::Image const&            animatedImage,
         float                          frames
     );
 
-    MCAPI ::AnimatedImageData& operator=(::AnimatedImageData const& rhs);
+    MCNAPI ::AnimatedImageData& operator=(::AnimatedImageData const& rhs);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::persona::AnimatedTextureType type,
         ::persona::AnimationExpression animationExpression,
         ::mce::Image const&            animatedImage,

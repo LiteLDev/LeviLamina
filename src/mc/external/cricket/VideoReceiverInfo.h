@@ -63,21 +63,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VideoReceiverInfo(::cricket::VideoReceiverInfo const&);
+    MCNAPI VideoReceiverInfo(::cricket::VideoReceiverInfo const&);
 
-    MCAPI ~VideoReceiverInfo();
+    MCNAPI ~VideoReceiverInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::VideoReceiverInfo const&);
+    MCNAPI void* $ctor(::cricket::VideoReceiverInfo const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

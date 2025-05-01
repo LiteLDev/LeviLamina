@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/threading/SpinLockImpl.h"
 #include "mc/world/level/dimension/ChunkBuildOrderPolicyBase.h"
 
 // auto generated forward declare list
 // clang-format off
 class ChunkPos;
-class SpinLockImpl;
 class Vec3;
 // clang-format on
 
@@ -44,7 +44,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI int getPriority(::ChunkPos const& cp) const;
+        MCNAPI int getPriority(::ChunkPos const& cp) const;
         // NOLINTEND
     };
 
@@ -102,16 +102,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getChunkRebuildPriority(::ChunkPos const& cp) const;
+    MCNAPI int $getChunkRebuildPriority(::ChunkPos const& cp) const;
 
-    MCAPI uint $registerForUpdates();
+    MCNAPI uint $registerForUpdates();
 
-    MCAPI void $unregisterForUpdates(uint handle);
+    MCNAPI void $unregisterForUpdates(uint handle);
 
-    MCAPI void
+    MCNAPI void
     $setPlayerInfluence(uint handle, ::ChunkPos const& playerPosition, ::Vec3 const& playerMovementDirection);
 
-    MCAPI void $setTickingAreaInfluence(
+    MCNAPI void $setTickingAreaInfluence(
         uint              handle,
         ::ChunkPos const& tickingAreaPosition,
         int               sizeX,
@@ -120,12 +120,12 @@ public:
         bool              preload
     );
 
-    MCAPI void $updateInfluences();
+    MCNAPI void $updateInfluences();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

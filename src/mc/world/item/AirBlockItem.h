@@ -16,13 +16,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AirBlockItem(::std::string const& name, int id);
+    MCNAPI AirBlockItem(::std::string const& name, int id);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
+    MCNAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:
@@ -34,6 +34,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

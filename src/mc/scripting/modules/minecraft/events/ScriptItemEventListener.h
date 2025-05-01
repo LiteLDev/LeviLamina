@@ -75,27 +75,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ItemUsedOnEvent const& itemEvent);
+    MCNAPI ::EventResult $onEvent(::ItemUsedOnEvent const& itemEvent);
 
-    MCAPI ::EventResult $onEvent(::ItemStartUseOnEvent const& itemEvent);
+    MCNAPI ::EventResult $onEvent(::ItemStartUseOnEvent const& itemEvent);
 
-    MCAPI ::EventResult $onEvent(::ItemStopUseOnEvent const& itemEvent);
+    MCNAPI ::EventResult $onEvent(::ItemStopUseOnEvent const& itemEvent);
 
-    MCAPI ::EventResult $onEvent(::ItemUseEvent const& itemEvent);
+    MCNAPI ::EventResult $onEvent(::ItemUseEvent const& itemEvent);
 
-    MCAPI ::EventResult $onEvent(::ItemStartUseEvent const& itemEvent);
+    MCNAPI ::EventResult $onEvent(::ItemStartUseEvent const& itemEvent);
 
-    MCAPI ::EventResult $onEvent(::ItemCompleteUseEvent const& itemEvent);
+    MCNAPI ::EventResult $onEvent(::ItemCompleteUseEvent const& itemEvent);
 
-    MCAPI ::EventResult $onEvent(::ItemReleaseUseEvent const& itemEvent);
+    MCNAPI ::EventResult $onEvent(::ItemReleaseUseEvent const& itemEvent);
 
-    MCAPI ::EventResult $onEvent(::ItemStopUseEvent const& itemEvent);
+    MCNAPI ::EventResult $onEvent(::ItemStopUseEvent const& itemEvent);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -5,7 +5,7 @@
 namespace LegacyVanillaGoalDefinition {
 // functions
 // NOLINTBEGIN
-MCAPI void init();
+MCNAPI void init();
 // NOLINTEND
 
 } // namespace LegacyVanillaGoalDefinition

@@ -17,4 +17,10 @@ public:
     ScatterParamsMolangVariableIndices& operator=(ScatterParamsMolangVariableIndices const&);
     ScatterParamsMolangVariableIndices(ScatterParamsMolangVariableIndices const&);
     ScatterParamsMolangVariableIndices();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void initialize();
+    // NOLINTEND
 };

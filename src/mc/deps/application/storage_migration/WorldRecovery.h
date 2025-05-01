@@ -66,17 +66,16 @@ public:
     virtual void initialize() = 0;
 
     // vIndex: 2
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::WorldRecovery::RecoveryResult>>
-        doRecovery(::std::string_view) = 0;
+    virtual ::std::tuple<
+        ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::WorldRecovery::RecoveryResult>>,
+        ::Bedrock::PubSub::DeferredSubscription>
+        doRecovery(
+            ::std::string_view,
+            ::std::function<void(::Bedrock::WorldRecovery::RecoveryUpdate const&)>,
+            ::Bedrock::PubSub::DeferralType
+        ) = 0;
 
     // vIndex: 3
-    virtual ::Bedrock::PubSub::DeferredSubscription notifyOnUpdate(
-        ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::WorldRecovery::RecoveryResult>>,
-        ::std::function<void(::Bedrock::WorldRecovery::RecoveryUpdate const&)>,
-        ::Bedrock::PubSub::DeferralType
-    ) = 0;
-
-    // vIndex: 4
     virtual ::Core::PathBuffer<::std::string> const& getRecoveryDestinationPath() const = 0;
 
     // vIndex: 0

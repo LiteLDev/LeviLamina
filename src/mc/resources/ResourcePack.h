@@ -7,15 +7,15 @@
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/resources/PackReport.h"
+#include "mc/resources/ResourceSignature.h"
 
 // auto generated forward declare list
 // clang-format off
 class Pack;
 class PackAccessStrategy;
 class PackManifest;
-class PackReport;
 class ResourceLocation;
-class ResourceSignature;
 class SubpackInfoCollection;
 struct SubpackInfo;
 namespace Bedrock::Resources { class PreloadedPathHandle; }

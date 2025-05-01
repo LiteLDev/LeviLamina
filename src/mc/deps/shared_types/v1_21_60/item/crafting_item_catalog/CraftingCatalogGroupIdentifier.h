@@ -25,25 +25,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier&
+    MCNAPI ::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier&
     operator=(::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier&&);
 
-    MCAPI ::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier&
+    MCNAPI ::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier&
     operator=(::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier const&);
 
-    MCAPI ~CraftingCatalogGroupIdentifier();
+    MCNAPI ~CraftingCatalogGroupIdentifier();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

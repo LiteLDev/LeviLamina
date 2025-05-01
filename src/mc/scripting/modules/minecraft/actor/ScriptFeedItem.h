@@ -16,7 +16,7 @@ class ScriptFeedItem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::FeedItem> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::FeedItem> bind();
     // NOLINTEND
 };
 

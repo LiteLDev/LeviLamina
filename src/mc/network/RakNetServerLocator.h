@@ -100,9 +100,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI AnnounceServerData(::RakNetServerLocator::AnnounceServerData const& announceData);
+        MCNAPI AnnounceServerData(::RakNetServerLocator::AnnounceServerData const& announceData);
 
-        MCAPI AnnounceServerData(
+        MCNAPI AnnounceServerData(
             ::std::string const& playerName,
             ::std::string const& worldName,
             ::GameType           gameType,
@@ -113,17 +113,17 @@ public:
             bool                 isHardcore
         );
 
-        MCAPI ::RakNetServerLocator::AnnounceServerData& operator=(::RakNetServerLocator::AnnounceServerData const&);
+        MCNAPI ::RakNetServerLocator::AnnounceServerData& operator=(::RakNetServerLocator::AnnounceServerData const&);
 
-        MCAPI ~AnnounceServerData();
+        MCNAPI ~AnnounceServerData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::RakNetServerLocator::AnnounceServerData const& announceData);
+        MCNAPI void* $ctor(::RakNetServerLocator::AnnounceServerData const& announceData);
 
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::std::string const& playerName,
             ::std::string const& worldName,
             ::GameType           gameType,
@@ -138,7 +138,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -160,13 +160,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~StateChangeRequestData();
+        MCNAPI ~StateChangeRequestData();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -188,13 +188,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~SuspendStateData();
+        MCNAPI ~SuspendStateData();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -299,7 +299,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RakNetServerLocator(
+    MCNAPI RakNetServerLocator(
         ::RakNetConnector&                               rakNetConnector,
         ::RakPeerHelper::IPSupportInterface&             ipInterface,
         ::std::vector<::std::string>                     overrideBroadcastAddresses,
@@ -312,66 +312,66 @@ public:
             createUniqueRakPeerFunc
     );
 
-    MCAPI void _activate();
+    MCNAPI void _activate();
 
-    MCAPI void _addCustomServerFromIpResolver(::AsynchronousIPResolver const& futureIP, int port);
+    MCNAPI void _addCustomServerFromIpResolver(::AsynchronousIPResolver const& futureIP, int port);
 
-    MCAPI bool _addCustomServerV4(::AsynchronousIPResolver const& futureIP, int port);
+    MCNAPI bool _addCustomServerV4(::AsynchronousIPResolver const& futureIP, int port);
 
-    MCAPI bool _addCustomServerV6(::AsynchronousIPResolver const& futureIP, int port);
+    MCNAPI bool _addCustomServerV6(::AsynchronousIPResolver const& futureIP, int port);
 
-    MCAPI void _enqueueStateChangeRequest(
+    MCNAPI void _enqueueStateChangeRequest(
         ::LocatorStateChangeRequest               newState,
         ::RakNetServerLocator::AnnounceServerData newAnnounceData,
         ::PortPair                                newPorts
     );
 
-    MCAPI ::std::string _getHostGuid(::std::string const& address, int port);
+    MCNAPI ::std::string _getHostGuid(::std::string const& address, int port);
 
-    MCAPI void _getServerOriginalAddress(::std::string& originalAddressToSet, ::std::string const& ip);
+    MCNAPI void _getServerOriginalAddress(::std::string& originalAddressToSet, ::std::string const& ip);
 
-    MCAPI bool _handleUnconnectedPong(
+    MCNAPI bool _handleUnconnectedPong(
         ::std::string const&    data,
         ::RakNet::Packet const* p,
         bool                    readTime,
         uint64                  insertAtBeginning
     );
 
-    MCAPI void _initializeBroadcastAddresses();
+    MCNAPI void _initializeBroadcastAddresses();
 
-    MCAPI void _onPingSend(::std::string const& guid, ::std::string const& ipVersion, int addr);
+    MCNAPI void _onPingSend(::std::string const& guid, ::std::string const& ipVersion, int addr);
 
-    MCAPI bool
+    MCNAPI bool
     _onPongReceive(float& latencyToSet, ::RakNet::RakNetGUID const& guid, uint const& receivedTime, int ipVersion);
 
-    MCAPI void _setPingResponder(::RakNetServerLocator::AnnounceServerData const& serverData);
+    MCNAPI void _setPingResponder(::RakNetServerLocator::AnnounceServerData const& serverData);
 
-    MCAPI void _startAnnouncingServer(::RakNetServerLocator::AnnounceServerData const& announceData);
+    MCNAPI void _startAnnouncingServer(::RakNetServerLocator::AnnounceServerData const& announceData);
 
-    MCAPI void _startServerDiscovery(::PortPair const& ports);
+    MCNAPI void _startServerDiscovery(::PortPair const& ports);
 
-    MCAPI void _stopAnnouncingServer();
+    MCNAPI void _stopAnnouncingServer();
 
-    MCAPI void _stopServerDiscovery();
+    MCNAPI void _stopServerDiscovery();
 
-    MCAPI void _updateNetwork();
+    MCNAPI void _updateNetwork();
 
-    MCAPI bool _updateQueuedPings();
+    MCNAPI bool _updateQueuedPings();
 
-    MCAPI void _updateState();
+    MCNAPI void _updateState();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool
+    MCNAPI static bool
     parseUnconnectedPongPacketData(::std::string const& data, ::std::vector<::std::string>& extraData);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::RakNetConnector&                               rakNetConnector,
         ::RakPeerHelper::IPSupportInterface&             ipInterface,
         ::std::vector<::std::string>                     overrideBroadcastAddresses,
@@ -388,13 +388,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $startAnnouncingServer(
+    MCNAPI void $startAnnouncingServer(
         ::std::string const&                      playerName,
         ::std::string const&                      worldName,
         ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
@@ -406,38 +406,38 @@ public:
         bool                                      isHardcore
     );
 
-    MCAPI void $stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform);
+    MCNAPI void $stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform);
 
-    MCAPI void $startServerDiscovery(::PortPair ports);
+    MCNAPI void $startServerDiscovery(::PortPair ports);
 
-    MCAPI void $stopServerDiscovery();
+    MCNAPI void $stopServerDiscovery();
 
-    MCAPI void $addCustomServer(::AsynchronousIPResolver const& futureIP, int port);
+    MCNAPI void $addCustomServer(::AsynchronousIPResolver const& futureIP, int port);
 
-    MCAPI void $addCustomServer(::std::string const& address, int port);
+    MCNAPI void $addCustomServer(::std::string const& address, int port);
 
-    MCAPI ::std::vector<::PingedCompatibleServer> $getServerList() const;
+    MCNAPI ::std::vector<::PingedCompatibleServer> $getServerList() const;
 
-    MCAPI void $clearServerList();
+    MCNAPI void $clearServerList();
 
-    MCAPI void $update();
+    MCNAPI void $update();
 
-    MCAPI float $getPingTimeForGUID(::std::string const& guid);
+    MCNAPI float $getPingTimeForGUID(::std::string const& guid);
 
-    MCAPI void $checkCanConnectToCustomServerAsync(
+    MCNAPI void $checkCanConnectToCustomServerAsync(
         ::std::string                                         hostIpAddress,
         int                                                   port,
         ::std::function<void(::ServerConnectivityTestResult)> callback
     );
 
-    MCAPI void $_onDisable();
+    MCNAPI void $_onDisable();
 
-    MCAPI void $_onEnable();
+    MCNAPI void $_onEnable();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

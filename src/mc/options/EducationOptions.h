@@ -41,19 +41,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EducationOptions(::ResourcePackManager* packMan);
+    MCNAPI explicit EducationOptions(::ResourcePackManager* packMan);
 
-    MCAPI void init(::LevelData const& levelData);
+    MCNAPI void init(::LevelData const& levelData);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ServiceReference<::EducationOptions> _getCurrentOptions();
+    MCNAPI static ::ServiceReference<::EducationOptions> _getCurrentOptions();
 
-    MCFOLD static bool isChemistryEnabled();
+    MCNAPI static bool isChemistryEnabled();
 
-    MCAPI static bool isCodeBuilderEnabled();
+    MCNAPI static bool isCodeBuilderEnabled();
     // NOLINTEND
 
 public:
@@ -65,26 +65,26 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ResourcePackManager* packMan);
+    MCNAPI void* $ctor(::ResourcePackManager* packMan);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onActiveResourcePacksChanged(::ResourcePackManager& manager);
+    MCNAPI void $onActiveResourcePacksChanged(::ResourcePackManager& manager);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForResourcePackListener();
+    MCNAPI static void** $vftableForResourcePackListener();
 
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

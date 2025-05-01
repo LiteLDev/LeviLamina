@@ -31,13 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI ::JigsawEditorData& operator=(::JigsawEditorData&&);
+    MCNAPI ::JigsawEditorData& operator=(::JigsawEditorData&&);
 
-    MCAPI void save(::CompoundTag& tag) const;
+    MCNAPI void save(::CompoundTag& tag) const;
 
-    MCAPI ~JigsawEditorData();
+    MCNAPI ~JigsawEditorData();
     // NOLINTEND
 
 public:
@@ -49,6 +49,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

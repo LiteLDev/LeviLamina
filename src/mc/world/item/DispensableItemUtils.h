@@ -17,9 +17,9 @@ class Level;
 namespace DispensableItemUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void spawnLoot(::Level& level, ::Actor& actor, ::std::string const& lootTable);
+MCNAPI void spawnLoot(::Level& level, ::Actor& actor, ::std::string const& lootTable);
 
-MCAPI bool tryDispenseEquipment(
+MCNAPI bool tryDispenseEquipment(
     ::BlockSource&                       region,
     ::Container&                         container,
     int                                  slot,

@@ -12,11 +12,11 @@ namespace PlayerDestroy { struct DestroyProgressContext; }
 namespace PlayerDestroy {
 // functions
 // NOLINTBEGIN
-MCAPI bool canDestroyOptimally(::Block const& block, ::ItemStack const& selectedItem);
+MCNAPI bool canDestroyOptimally(::Block const& block, ::ItemStack const& selectedItem);
 
-MCAPI float getDestroyProgress(::PlayerDestroy::DestroyProgressContext& context);
+MCNAPI float getDestroyProgress(::PlayerDestroy::DestroyProgressContext& context);
 
-MCAPI float getDestroySpeed(::PlayerDestroy::DestroyProgressContext& context);
+MCNAPI float getDestroySpeed(::PlayerDestroy::DestroyProgressContext& context);
 // NOLINTEND
 
 } // namespace PlayerDestroy

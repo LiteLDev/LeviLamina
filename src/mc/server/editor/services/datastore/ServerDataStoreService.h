@@ -47,13 +47,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ServerDataStoreService(::Editor::ServiceProviderCollection& providers);
+    MCNAPI explicit ServerDataStoreService(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
@@ -65,11 +65,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCAPI ::Scripting::Result<void> $_handleEvents(
+    MCNAPI ::Scripting::Result<void> $_handleEvents(
         ::HashedString const& dataTag,
         ::Editor::DataStore::EventType,
         ::Json::Value const&,
@@ -77,16 +77,16 @@ public:
         bool
     );
 
-    MCFOLD ::Json::Value
+    MCNAPI ::Json::Value
     $_getPayload(::HashedString const& dataTag, ::Editor::DataStore::PayloadDescription const&) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForDataStoreServiceProvider();
+    MCNAPI static void** $vftableForDataStoreServiceProvider();
 
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

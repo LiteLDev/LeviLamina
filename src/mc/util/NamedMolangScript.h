@@ -24,24 +24,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NamedMolangScript(::NamedMolangScript const&);
+    MCNAPI NamedMolangScript(::NamedMolangScript const&);
 
-    MCAPI NamedMolangScript(::HashedString const& name, ::ExpressionNode const& script);
+    MCNAPI NamedMolangScript(::HashedString const& name, ::ExpressionNode const& script);
 
-    MCAPI ~NamedMolangScript();
+    MCNAPI ~NamedMolangScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::NamedMolangScript const&);
+    MCNAPI void* $ctor(::NamedMolangScript const&);
 
-    MCFOLD void* $ctor(::HashedString const& name, ::ExpressionNode const& script);
+    MCNAPI void* $ctor(::HashedString const& name, ::ExpressionNode const& script);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

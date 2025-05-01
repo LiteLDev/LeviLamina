@@ -27,14 +27,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addGeneticVariant(::GeneticVariant const& geneticVariant);
+    MCNAPI void addGeneticVariant(::GeneticVariant const& geneticVariant);
 
-    MCAPI ~GeneDefinition();
+    MCNAPI ~GeneDefinition();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

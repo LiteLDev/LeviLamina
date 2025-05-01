@@ -47,7 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _processBlockChangeIntent(
+    MCNAPI void _processBlockChangeIntent(
         ::BlockSource const&                                              region,
         ::Editor::Transactions::BlockChangeIntentData&                    blockIntentData,
         ::std::vector<::Editor::Transactions::BlockChangedOperationData>& changedBlocks
@@ -63,15 +63,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::Editor::Transactions::IOperation> $_commit(::Editor::ServiceProviderCollection& services);
+    MCNAPI ::std::unique_ptr<::Editor::Transactions::IOperation> $_commit(::Editor::ServiceProviderCollection& services
+    );
 
-    MCAPI ::Scripting::Result_deprecated<bool> $_discard(::Editor::ServiceProviderCollection&);
+    MCNAPI ::Scripting::Result_deprecated<bool> $_discard(::Editor::ServiceProviderCollection&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

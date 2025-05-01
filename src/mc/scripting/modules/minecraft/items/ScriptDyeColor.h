@@ -12,7 +12,7 @@ class ScriptDyeColor {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::ItemColor> bind();
+    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::ItemColor> bind();
     // NOLINTEND
 };
 

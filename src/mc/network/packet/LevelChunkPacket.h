@@ -7,11 +7,11 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/world/level/ChunkPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class ChunkPos;
 class Dimension;
 class ReadOnlyBinaryStream;
 // clang-format on

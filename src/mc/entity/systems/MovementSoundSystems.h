@@ -10,7 +10,7 @@ class EntitySystems;
 namespace MovementSoundSystems {
 // functions
 // NOLINTBEGIN
-MCAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
+MCNAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
 // NOLINTEND
 
 } // namespace MovementSoundSystems

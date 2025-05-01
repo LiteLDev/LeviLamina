@@ -21,7 +21,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::CurrentCmdVersion const getVersionMapping(::SemVersion const& engineVersion);
+    MCNAPI static ::CurrentCmdVersion const getVersionMapping(::SemVersion const& engineVersion);
     // NOLINTEND
 
 public:

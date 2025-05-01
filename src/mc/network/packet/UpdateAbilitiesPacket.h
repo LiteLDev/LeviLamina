@@ -6,12 +6,12 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/world/actor/SerializedAbilitiesData.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-struct SerializedAbilitiesData;
 // clang-format on
 
 class UpdateAbilitiesPacket : public ::Packet {

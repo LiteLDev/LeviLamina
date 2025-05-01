@@ -44,15 +44,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::BlockComponentFactory::ComponentMetadata& operator=(::BlockComponentFactory::ComponentMetadata&&);
+        MCNAPI ::BlockComponentFactory::ComponentMetadata& operator=(::BlockComponentFactory::ComponentMetadata&&);
 
-        MCAPI ~ComponentMetadata();
+        MCNAPI ~ComponentMetadata();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -77,31 +77,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _buildBlockComponentsSchema();
+    MCNAPI void _buildBlockComponentsSchema();
 
-    MCAPI void _registerLegacyDescriptions(::IPackLoadContext const* packLoadContext);
+    MCNAPI void _registerLegacyDescriptions(::IPackLoadContext const* packLoadContext);
 
-    MCAPI ::BlockComponentFactory& operator=(::BlockComponentFactory const&);
+    MCNAPI ::BlockComponentFactory& operator=(::BlockComponentFactory const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>*
+    MCNAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>*
     contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
 
-    MCAPI static void registerAllCerealDescriptions(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void registerAllCerealDescriptions(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

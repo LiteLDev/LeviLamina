@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/BaseMoveToBlockGoal.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSource;
 // clang-format on
 
@@ -53,22 +53,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI bool $findTargetBlock();
+    MCNAPI bool $findTargetBlock();
 
-    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI bool $_canReach(::BlockPos const& pos);
+    MCNAPI bool $_canReach(::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

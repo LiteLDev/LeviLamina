@@ -10,7 +10,7 @@ class EntitySystems;
 namespace ResetTargetSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void registerSystems(::EntitySystems& systemRegistry);
+MCNAPI void registerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
 } // namespace ResetTargetSystem

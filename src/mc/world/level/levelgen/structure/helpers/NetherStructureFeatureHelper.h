@@ -13,7 +13,7 @@ class Random;
 namespace NetherStructureFeatureHelper {
 // functions
 // NOLINTBEGIN
-MCAPI ::HashedString getStructureFeatureTypeForChunk(
+MCNAPI ::HashedString getStructureFeatureTypeForChunk(
     ::BiomeSource const&         biomeSource,
     ::Random&                    random,
     ::ChunkPos const&            chunkPos,

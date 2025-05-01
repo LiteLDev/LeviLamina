@@ -42,18 +42,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool getHeader(::std::string const& name, ::std::string& outValue) const;
+    MCNAPI bool getHeader(::std::string const& name, ::std::string& outValue) const;
 
-    MCAPI ::std::string getStatusCode() const;
+    MCNAPI ::std::string getStatusCode() const;
 
-    MCAPI ::HttpHeaders::ParseState parse(::RakNet::BitStream& data);
+    MCNAPI ::HttpHeaders::ParseState parse(::RakNet::BitStream& data);
 
-    MCAPI ~HttpHeaders();
+    MCNAPI ~HttpHeaders();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

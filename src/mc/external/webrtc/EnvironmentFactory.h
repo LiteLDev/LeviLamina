@@ -16,31 +16,31 @@ class EnvironmentFactory {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::Environment Create() const;
+    MCNAPI ::webrtc::Environment Create() const;
 
-    MCAPI ::webrtc::Environment CreateWithDefaults();
+    MCNAPI ::webrtc::Environment CreateWithDefaults();
 
-    MCAPI explicit EnvironmentFactory(::webrtc::Environment const&);
+    MCNAPI explicit EnvironmentFactory(::webrtc::Environment const&);
 
-    MCAPI void Set(::std::unique_ptr<::webrtc::RtcEventLog>);
+    MCNAPI void Set(::std::unique_ptr<::webrtc::RtcEventLog>);
 
-    MCAPI void Set(::std::unique_ptr<::webrtc::TaskQueueFactory>);
+    MCNAPI void Set(::std::unique_ptr<::webrtc::TaskQueueFactory>);
 
-    MCAPI void Set(::std::unique_ptr<::webrtc::FieldTrialsView const>);
+    MCNAPI void Set(::std::unique_ptr<::webrtc::FieldTrialsView const>);
 
-    MCAPI ~EnvironmentFactory();
+    MCNAPI ~EnvironmentFactory();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::Environment const&);
+    MCNAPI void* $ctor(::webrtc::Environment const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -28,39 +28,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::rtc::IPAddress AsIPv6Address() const;
+    MCNAPI ::rtc::IPAddress AsIPv6Address() const;
 
-    MCAPI bool IsNil() const;
+    MCNAPI bool IsNil() const;
 
-    MCAPI ::std::string ToSensitiveString() const;
+    MCNAPI ::std::string ToSensitiveString() const;
 
-    MCAPI ::std::string ToString() const;
+    MCNAPI ::std::string ToString() const;
 
-    MCAPI ::in_addr ipv4_address() const;
+    MCNAPI ::in_addr ipv4_address() const;
 
-    MCAPI ::in6_addr ipv6_address() const;
+    MCNAPI ::in6_addr ipv6_address() const;
 
-    MCAPI bool operator!=(::rtc::IPAddress const&) const;
+    MCNAPI bool operator!=(::rtc::IPAddress const&) const;
 
-    MCAPI bool operator<(::rtc::IPAddress const&) const;
+    MCNAPI bool operator<(::rtc::IPAddress const&) const;
 
-    MCAPI bool operator==(::rtc::IPAddress const&) const;
+    MCNAPI bool operator==(::rtc::IPAddress const&) const;
 
-    MCAPI int overhead() const;
+    MCNAPI int overhead() const;
 
-    MCAPI uint v4AddressAsHostOrderInteger() const;
+    MCNAPI uint v4AddressAsHostOrderInteger() const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

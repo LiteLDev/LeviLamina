@@ -63,40 +63,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorManager(
+    MCNAPI ActorManager(
         ::std::unique_ptr<::IActorManagerProxy>                actorManagerProxy,
         ::Bedrock::NotNullNonOwnerPtr<::ActorGarbageCollector> actorGarbageCollector
     );
 
-    MCAPI void _onChunkDiscarded(::LevelChunk& levelChunk);
+    MCNAPI void _onChunkDiscarded(::LevelChunk& levelChunk);
 
-    MCAPI ::Actor* addActorEntity(::IAddActorEntityProxy& addActorEntityProxy, ::OwnerPtr<::EntityContext> entity);
+    MCNAPI ::Actor* addActorEntity(::IAddActorEntityProxy& addActorEntityProxy, ::OwnerPtr<::EntityContext> entity);
 
-    MCAPI ::Actor* addGlobalActorEntity(::Dimension& dimension, ::OwnerPtr<::EntityContext> entity);
+    MCNAPI ::Actor* addGlobalActorEntity(::Dimension& dimension, ::OwnerPtr<::EntityContext> entity);
 
-    MCAPI void cleanupActorEntityReferencesGarbageCollect(::OwnerPtr<::EntityContext> entity);
+    MCNAPI void cleanupActorEntityReferencesGarbageCollect(::OwnerPtr<::EntityContext> entity);
 
-    MCAPI ::OwnerPtr<::EntityContext> deleteActorEntityFromWorldAndTakeEntity(::WeakEntityRef entityRef);
+    MCNAPI ::OwnerPtr<::EntityContext> deleteActorEntityFromWorldAndTakeEntity(::WeakEntityRef entityRef);
 
-    MCAPI void forceRemoveActorFromWorld(::Actor& actor);
+    MCNAPI void forceRemoveActorFromWorld(::Actor& actor);
 
-    MCAPI void onChunkDiscarded(::WeakEntityRef entityRef);
+    MCNAPI void onChunkDiscarded(::WeakEntityRef entityRef);
 
-    MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
+    MCNAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
-    MCAPI ::OwnerPtr<::EntityContext> removeActorEntityAndTakeEntity(::WeakEntityRef entityRef);
+    MCNAPI ::OwnerPtr<::EntityContext> removeActorEntityAndTakeEntity(::WeakEntityRef entityRef);
 
-    MCAPI void removeActorEntityReferencesForDeletion(::Actor& actor);
+    MCNAPI void removeActorEntityReferencesForDeletion(::Actor& actor);
 
-    MCAPI ::OwnerPtr<::EntityContext> removeEntity(::WeakEntityRef entityRef);
+    MCNAPI ::OwnerPtr<::EntityContext> removeEntity(::WeakEntityRef entityRef);
 
-    MCAPI ::OwnerPtr<::EntityContext> takeEntity(::WeakEntityRef entityRef, ::LevelChunk& levelChunk);
+    MCNAPI ::OwnerPtr<::EntityContext> takeEntity(::WeakEntityRef entityRef, ::LevelChunk& levelChunk);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::IActorManagerProxy>                actorManagerProxy,
         ::Bedrock::NotNullNonOwnerPtr<::ActorGarbageCollector> actorGarbageCollector
     );
@@ -105,23 +105,23 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterEntityAddedConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterEntityAddedConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::Actor&, ::ActorInitializationMethod)>&
+    MCNAPI ::Bedrock::PubSub::Connector<void(::Actor&, ::ActorInitializationMethod)>&
     $getRegisterPostReloadActorConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterOnRemoveActorEntityReferenceConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterOnRemoveActorEntityReferenceConnector();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

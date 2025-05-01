@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/DefinitionTrigger.h"
 #include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
-class DefinitionTrigger;
 class HashedString;
 class SemVersion;
 namespace cereal { struct ReflectionCtx; }
@@ -37,44 +37,44 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WeaponItemComponent();
+    MCNAPI WeaponItemComponent();
 
-    MCAPI WeaponItemComponent(::WeaponItemComponent&&);
+    MCNAPI WeaponItemComponent(::WeaponItemComponent&&);
 
-    MCAPI ::WeaponItemComponent& operator=(::WeaponItemComponent const&);
+    MCNAPI ::WeaponItemComponent& operator=(::WeaponItemComponent const&);
 
-    MCAPI ::WeaponItemComponent& operator=(::WeaponItemComponent&&);
+    MCNAPI ::WeaponItemComponent& operator=(::WeaponItemComponent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::WeaponItemComponent&&);
+    MCNAPI void* $ctor(::WeaponItemComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

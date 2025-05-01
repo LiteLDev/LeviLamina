@@ -12,7 +12,7 @@ struct ScriptCameraEaseBindings {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::EasingType> bind();
+    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::EasingType> bind();
     // NOLINTEND
 };
 

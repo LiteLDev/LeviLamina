@@ -3,12 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/biome/BiomeHeight.h"
 #include "mc/world/level/biome/components/BiomeComponentBase.h"
-
-// auto generated forward declare list
-// clang-format off
-struct BiomeHeight;
-// clang-format on
 
 class OverworldHeightAttributes : public ::BiomeComponentBase {
 public:

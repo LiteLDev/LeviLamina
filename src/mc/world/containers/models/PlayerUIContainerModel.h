@@ -25,13 +25,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerUIContainerModel(::ContainerEnumName containerName, ::Player& player);
+    MCNAPI PlayerUIContainerModel(::ContainerEnumName containerName, ::Player& player);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerEnumName containerName, ::Player& player);
+    MCNAPI void* $ctor(::ContainerEnumName containerName, ::Player& player);
     // NOLINTEND
 
 public:
@@ -43,12 +43,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $_getContainerOffset() const;
+    MCNAPI int $_getContainerOffset() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

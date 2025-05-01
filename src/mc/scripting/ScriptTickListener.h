@@ -62,7 +62,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptTickListener(
+    MCNAPI ScriptTickListener(
         ::ScriptDeferredEventCoordinator& deferredEventCoordinator,
         ::LevelEventCoordinator&          levelEventCoordinator,
         ::ScriptPluginManager&            pluginManager,
@@ -70,13 +70,13 @@ public:
         ::ScriptAsyncJobCoordinator&      asyncJobCoordinator
     );
 
-    MCAPI ::ServerPerformanceData& _getServerPerfData();
+    MCNAPI ::ServerPerformanceData& _getServerPerfData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ScriptDeferredEventCoordinator& deferredEventCoordinator,
         ::LevelEventCoordinator&          levelEventCoordinator,
         ::ScriptPluginManager&            pluginManager,
@@ -88,26 +88,26 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onLevelTickStart(::Level& level);
+    MCNAPI ::EventResult $onLevelTickStart(::Level& level);
 
-    MCAPI ::EventResult $onLevelTickEnd(::Level&);
+    MCNAPI ::EventResult $onLevelTickEnd(::Level&);
 
-    MCAPI void $onScriptTickStart();
+    MCNAPI void $onScriptTickStart();
 
-    MCAPI void $onScriptTickEnd();
+    MCNAPI void $onScriptTickEnd();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForScriptDeferredEventListener();
+    MCNAPI static void** $vftableForScriptDeferredEventListener();
 
-    MCAPI static void** $vftableForLevelEventListener();
+    MCNAPI static void** $vftableForLevelEventListener();
     // NOLINTEND
 };

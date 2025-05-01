@@ -30,11 +30,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string ToString() const;
+    MCNAPI ::std::string ToString() const;
 
-    MCAPI ::rtc::InterfaceAddress const& operator=(::rtc::InterfaceAddress const&);
+    MCNAPI ::rtc::InterfaceAddress const& operator=(::rtc::InterfaceAddress const&);
 
-    MCAPI bool operator==(::rtc::InterfaceAddress const&) const;
+    MCNAPI bool operator==(::rtc::InterfaceAddress const&) const;
     // NOLINTEND
 
 public:
@@ -46,7 +46,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

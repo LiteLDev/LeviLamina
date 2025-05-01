@@ -11,16 +11,16 @@ class BlockComponentStorageFinalizer {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _checkForCollisionComponentBoxDuplication(::Block& block);
+    MCNAPI void _checkForCollisionComponentBoxDuplication(::Block& block);
 
-    MCAPI void _checkForSelectionBoxComponentDuplication(::Block& block);
+    MCNAPI void _checkForSelectionBoxComponentDuplication(::Block& block);
 
-    MCAPI void _finalizeBlockTriggerComponents(::Block& block);
+    MCNAPI void _finalizeBlockTriggerComponents(::Block& block);
 
-    MCAPI void _finalizeCollisionBoxComponent(::Block& block);
+    MCNAPI void _finalizeCollisionBoxComponent(::Block& block);
 
-    MCAPI void _finalizeSelectionBoxComponent(::Block& block);
+    MCNAPI void _finalizeSelectionBoxComponent(::Block& block);
 
-    MCAPI void addRemainingComponents(::Block& block);
+    MCNAPI void addRemainingComponents(::Block& block);
     // NOLINTEND
 };

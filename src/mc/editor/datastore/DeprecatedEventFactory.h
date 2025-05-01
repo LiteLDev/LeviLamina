@@ -34,13 +34,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~SerializedEvent();
+        MCNAPI ~SerializedEvent();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -60,7 +60,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Editor::DataStore::DeprecatedEventFactory::SerializedEvent
+    MCNAPI static ::Editor::DataStore::DeprecatedEventFactory::SerializedEvent
     getSerializedEvent(::Json::Value const& payload);
     // NOLINTEND
 };

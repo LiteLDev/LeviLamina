@@ -30,13 +30,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MultiRecipe(::std::string const& recipeId, ::HashedString tag);
+    MCNAPI MultiRecipe(::std::string const& recipeId, ::HashedString tag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& recipeId, ::HashedString tag);
+    MCNAPI void* $ctor(::std::string const& recipeId, ::HashedString tag);
     // NOLINTEND
 
 public:
@@ -48,16 +48,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isMultiRecipe() const;
+    MCNAPI bool $isMultiRecipe() const;
 
-    MCFOLD bool $isShapeless() const;
+    MCNAPI bool $isShapeless() const;
 
-    MCFOLD bool $hasDataDrivenResult() const;
+    MCNAPI bool $hasDataDrivenResult() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -12,9 +12,9 @@ struct Tick;
 namespace UseItemGoalUtility {
 // functions
 // NOLINTBEGIN
-MCAPI void finishUsingItem(::Mob& mob, ::Tick& finishUsingItemTick);
+MCNAPI void finishUsingItem(::Mob& mob, ::Tick& finishUsingItemTick);
 
-MCAPI bool startUsingItem(::Mob& mob, ::ItemStack const& item, ::Tick& finishUsingItemTick);
+MCNAPI bool startUsingItem(::Mob& mob, ::ItemStack const& item, ::Tick& finishUsingItemTick);
 // NOLINTEND
 
 } // namespace UseItemGoalUtility

@@ -25,9 +25,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void communicate(::std::string const& method, ::Json::Value const& params);
+    MCNAPI void communicate(::std::string const& method, ::Json::Value const& params);
 
-    MCAPI void sendBandwidthMetric(
+    MCNAPI void sendBandwidthMetric(
         uint64               connectionTotalBytesReceived,
         uint64               connectionTotalBytesSent,
         uint64               playerDeltaBytesReceived,
@@ -35,12 +35,12 @@ public:
         ::std::string const& xuid
     );
 
-    MCAPI void sendServerStarted();
+    MCNAPI void sendServerStarted();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::ServerCommunicationInterface> create(::NetworkAddress const& address);
+    MCNAPI static ::std::unique_ptr<::ServerCommunicationInterface> create(::NetworkAddress const& address);
     // NOLINTEND
 };

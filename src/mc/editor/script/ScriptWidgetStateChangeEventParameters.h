@@ -28,14 +28,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::ScriptModule::ScriptWidgetStateChangeEventParameters&
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetStateChangeEventParameters&
     operator=(::Editor::ScriptModule::ScriptWidgetStateChangeEventParameters&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<
+    MCNAPI static ::Scripting::ClassBindingBuilderReadOnly<
         ::Editor::ScriptModule::ScriptWidgetStateChangeEventParameters>
     bindScript();
     // NOLINTEND

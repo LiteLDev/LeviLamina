@@ -13,11 +13,11 @@ namespace Scripting::Reflection { class IFunction; }
 namespace Scripting {
 // functions
 // NOLINTBEGIN
-MCAPI uint GetInjectedArgCount(::Scripting::Reflection::IFunction* function);
+MCNAPI uint GetInjectedArgCount(::Scripting::Reflection::IFunction* function);
 
-MCAPI ::std::vector<::std::string> _versionSplit(::std::string const& str, char delim);
+MCNAPI ::std::vector<::std::string> _versionSplit(::std::string const& str, char delim);
 
-MCAPI void defaultLogFunction(void*, ::Scripting::LogLevel level, char const*, uint, char const* message);
+MCNAPI void defaultLogFunction(void*, ::Scripting::LogLevel level, char const*, uint, char const* message);
 // NOLINTEND
 
 // static variables

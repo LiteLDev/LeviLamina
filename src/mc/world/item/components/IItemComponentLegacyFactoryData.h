@@ -24,16 +24,16 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Components(::IItemComponentLegacyFactoryData::Components const&);
+        MCNAPI Components(::IItemComponentLegacyFactoryData::Components const&);
 
-        MCFOLD ::IItemComponentLegacyFactoryData::Components&
+        MCNAPI ::IItemComponentLegacyFactoryData::Components&
         operator=(::IItemComponentLegacyFactoryData::Components const&);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void* $ctor(::IItemComponentLegacyFactoryData::Components const&);
+        MCNAPI void* $ctor(::IItemComponentLegacyFactoryData::Components const&);
         // NOLINTEND
     };
 

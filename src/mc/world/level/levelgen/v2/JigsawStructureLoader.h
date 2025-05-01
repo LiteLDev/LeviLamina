@@ -16,10 +16,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>   mUnk1ee9b7;
-    ::ll::UntypedStorage<8, 200> mUnkeb430c;
-    ::ll::UntypedStorage<8, 200> mUnk46b138;
-    ::ll::UntypedStorage<8, 200> mUnka24d43;
-    ::ll::UntypedStorage<8, 200> mUnkc54a45;
+    ::ll::UntypedStorage<8, 232> mUnkeb430c;
+    ::ll::UntypedStorage<8, 232> mUnk46b138;
+    ::ll::UntypedStorage<8, 232> mUnka24d43;
+    ::ll::UntypedStorage<8, 232> mUnkc54a45;
     // NOLINTEND
 
 public:
@@ -38,34 +38,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit JigsawStructureLoader(::cereal::ReflectionCtx const& ctx);
+    MCNAPI explicit JigsawStructureLoader(::cereal::ReflectionCtx const& ctx);
 
-    MCAPI void _parseJigsawDefinitionData(::std::string_view fileWithExtension, ::std::string&& fileData);
+    MCNAPI void _parseJigsawDefinitionData(::std::string_view fileWithExtension, ::std::string&& fileData);
 
-    MCAPI void _parseProcessorsData(::std::string_view fileWithExtension, ::std::string&& fileData);
+    MCNAPI void _parseProcessorsData(::std::string_view fileWithExtension, ::std::string&& fileData);
 
-    MCAPI void _parseStructureSetData(::std::string_view fileWithExtension, ::std::string&& fileData);
+    MCNAPI void _parseStructureSetData(::std::string_view fileWithExtension, ::std::string&& fileData);
 
-    MCAPI void _parseTemplatePoolsData(::std::string_view fileWithExtension, ::std::string&& fileData);
+    MCNAPI void _parseTemplatePoolsData(::std::string_view fileWithExtension, ::std::string&& fileData);
 
-    MCAPI void loadJigsawStructureData(::ResourcePackManager& resourcePackManager);
+    MCNAPI void loadJigsawStructureData(::ResourcePackManager& resourcePackManager);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
+    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

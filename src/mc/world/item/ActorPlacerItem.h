@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/item/Item.h"
 
 // auto generated forward declare list
@@ -23,7 +24,6 @@ class ItemStack;
 class ItemStackBase;
 class Player;
 class Vec3;
-struct ActorDefinitionIdentifier;
 struct ResolvedItemIconInfo;
 namespace mce { class Color; }
 // clang-format on
@@ -87,9 +87,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ActorDefinitionIdentifier _getActorID(::BlockSource& region) const;
+    MCNAPI ::ActorDefinitionIdentifier _getActorID(::BlockSource& region) const;
 
-    MCAPI ::Actor* _spawnActorAt(
+    MCNAPI ::Actor* _spawnActorAt(
         ::BlockSource&     region,
         ::Vec3 const&      pos,
         ::Vec3 const&      playerFeetPos,
@@ -101,14 +101,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _setAgentOwner(::Player& owner, ::Agent& agent);
+    MCNAPI static void _setAgentOwner(::Player& owner, ::Agent& agent);
 
-    MCAPI static void
+    MCNAPI static void
     forEachCustomEgg(::ItemRegistryRef itemRegistry, ::std::function<void(::Item const&)> const& callback);
 
-    MCAPI static void registerCustomEggs(::ItemRegistryRef itemRegistry, ::ActorInfoRegistry const& registry);
+    MCNAPI static void registerCustomEggs(::ItemRegistryRef itemRegistry, ::ActorInfoRegistry const& registry);
 
-    MCAPI static ::Actor* spawnOrMoveAgent(::Vec3 const& pos, ::Actor& owner);
+    MCNAPI static ::Actor* spawnOrMoveAgent(::Vec3 const& pos, ::Actor& owner);
     // NOLINTEND
 
 public:
@@ -128,37 +128,37 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tearDown();
+    MCNAPI void $tearDown();
 
-    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const&, int, bool) const;
+    MCNAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const&, int, bool) const;
 
-    MCAPI ::ActorDefinitionIdentifier $getActorIdentifier(::ItemStack const&) const;
+    MCNAPI ::ActorDefinitionIdentifier $getActorIdentifier(::ItemStack const&) const;
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+    MCNAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
-    MCFOLD bool $isLiquidClipItem() const;
+    MCNAPI bool $isLiquidClipItem() const;
 
-    MCAPI bool $shouldInteractionWithBlockBypassLiquid(::Block const& block) const;
+    MCNAPI bool $shouldInteractionWithBlockBypassLiquid(::Block const& block) const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCFOLD bool $isValidAuxValue(int auxValue) const;
+    MCNAPI bool $isValidAuxValue(int auxValue) const;
 
-    MCFOLD bool $isMultiColorTinted(::ItemStack const&) const;
+    MCNAPI bool $isMultiColorTinted(::ItemStack const&) const;
 
-    MCFOLD ::mce::Color $getBaseColor(::ItemStack const&) const;
+    MCNAPI ::mce::Color $getBaseColor(::ItemStack const&) const;
 
-    MCFOLD ::mce::Color $getSecondaryColor(::ItemStack const&) const;
+    MCNAPI ::mce::Color $getSecondaryColor(::ItemStack const&) const;
 
-    MCFOLD bool $isActorPlacerItem() const;
+    MCNAPI bool $isActorPlacerItem() const;
 
-    MCAPI ::InteractionResult
+    MCNAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

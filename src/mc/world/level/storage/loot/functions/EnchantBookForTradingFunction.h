@@ -43,13 +43,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~EnchantmentOption();
+        MCNAPI ~EnchantmentOption();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -93,18 +93,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::EnchantmentInstance _getRandomEnchantInstance(::Random& random) const;
+    MCNAPI ::EnchantmentInstance _getRandomEnchantInstance(::Random& random) const;
 
-    MCAPI ::std::optional<::EnchantmentInstance> _trySelectEnchantmentFromOptions(::Random& random) const;
+    MCNAPI ::std::optional<::EnchantmentInstance> _trySelectEnchantmentFromOptions(::Random& random) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::EnchantBookForTradingFunction::EnchantmentOption>
+    MCNAPI static ::std::optional<::EnchantBookForTradingFunction::EnchantmentOption>
     _parseEnchantmentOption(::Json::Value const& enchantOptionData);
 
-    MCAPI static ::std::unique_ptr<::EnchantBookForTradingFunction>
+    MCNAPI static ::std::unique_ptr<::EnchantBookForTradingFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
@@ -117,18 +117,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
+    MCNAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
 
-    MCFOLD int $apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
+    MCNAPI int $apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
 
-    MCFOLD void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
+    MCNAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
 
-    MCFOLD int $apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
+    MCNAPI int $apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

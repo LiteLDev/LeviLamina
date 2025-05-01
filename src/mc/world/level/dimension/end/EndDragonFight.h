@@ -3,21 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/dimension/end/EndDragonFightVersion.h"
 #include "mc/world/level/dimension/end/RespawnAnimation.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
+class ActorSoundIdentifier;
 class BlockPatternBuilder;
-class BlockPos;
 class BlockSource;
 class ChunkPos;
 class ChunkViewSource;
 class CompoundTag;
 class EnderCrystal;
 class EnderDragon;
-struct ActorUniqueID;
 struct BuildMatch;
 // clang-format on
 
@@ -47,13 +48,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~GateWayGenerator();
+        MCNAPI ~GateWayGenerator();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -99,23 +100,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EndDragonFight(::BlockSource& level);
+    MCNAPI explicit EndDragonFight(::BlockSource& level);
 
-    MCAPI bool _areaIsLoaded(::ChunkPos const& center, ::ChunkViewSource& source, int radius) const;
+    MCNAPI bool _areaIsLoaded(::ChunkPos const& center, ::ChunkViewSource& source, int radius) const;
 
-    MCAPI bool _canSpawnNewGateway(::ChunkViewSource* source, ::BlockPos const& pos) const;
+    MCNAPI bool _canSpawnNewGateway(::ChunkViewSource* source, ::BlockPos const& pos) const;
 
-    MCAPI void _createNewDragon();
+    MCNAPI void _createNewDragon();
 
-    MCAPI ::BuildMatch _findExitPortal();
+    MCNAPI ::BuildMatch _findExitPortal();
 
-    MCAPI void _initializeDragon(::EnderDragon& enderDragon);
+    MCNAPI void _initializeDragon(::EnderDragon& enderDragon);
 
-    MCAPI void _makeEndIslandFeature(::BlockSource& region, ::BlockPos position);
+    MCNAPI void _makeEndIslandFeature(::BlockSource& region, ::BlockPos position);
 
-    MCAPI void _placeAndLinkNewGatewayPair();
+    MCNAPI ::ActorSoundIdentifier _makeSoundIdentifier() const;
 
-    MCAPI bool _setEndGatewayBlockActorExitPosition(
+    MCNAPI void _placeAndLinkNewGatewayPair();
+
+    MCNAPI bool _setEndGatewayBlockActorExitPosition(
         ::BlockSource&    entrySource,
         ::BlockSource&    exitSource,
         ::BlockPos const& endGatewayActorPos,
@@ -123,41 +126,41 @@ public:
         bool              lookForGateway
     );
 
-    MCAPI void _setRespawnStage(::RespawnAnimation stage);
+    MCNAPI void _setRespawnStage(::RespawnAnimation stage);
 
-    MCAPI void _spawnExitPortal(bool activated);
+    MCNAPI void _spawnExitPortal(bool activated);
 
-    MCAPI void _spawnNewGatewayChunksTask(::std::tuple<
-                                          ::EndDragonFight::GatewayTask,
-                                          ::EndDragonFight::GateWayGenerator,
-                                          ::EndDragonFight::GateWayGenerator>& task);
+    MCNAPI void _spawnNewGatewayChunksTask(::std::tuple<
+                                           ::EndDragonFight::GatewayTask,
+                                           ::EndDragonFight::GateWayGenerator,
+                                           ::EndDragonFight::GateWayGenerator>& task);
 
-    MCAPI void _spawnNewGatewayPair();
+    MCNAPI void _spawnNewGatewayPair();
 
-    MCAPI void _tickRespawnAnimation(::std::vector<::ActorUniqueID> const& crystalIDs, int time);
+    MCNAPI void _tickRespawnAnimation(::std::vector<::ActorUniqueID> const& crystalIDs, int time);
 
-    MCAPI void _updateCrystalCount();
+    MCNAPI void _updateCrystalCount();
 
-    MCAPI void _verifyExitPositionsTask(::std::tuple<
-                                        ::EndDragonFight::GatewayTask,
-                                        ::EndDragonFight::GateWayGenerator,
-                                        ::EndDragonFight::GateWayGenerator>& task);
+    MCNAPI void _verifyExitPositionsTask(::std::tuple<
+                                         ::EndDragonFight::GatewayTask,
+                                         ::EndDragonFight::GateWayGenerator,
+                                         ::EndDragonFight::GateWayGenerator>& task);
 
-    MCAPI void loadData(::CompoundTag const& tag);
+    MCNAPI void loadData(::CompoundTag const& tag);
 
-    MCAPI void onCrystalDestroyed(::EnderCrystal const& crystal, ::ActorDamageSource const& source);
+    MCNAPI void onCrystalDestroyed(::EnderCrystal const& crystal, ::ActorDamageSource const& source);
 
-    MCAPI void resetSpikeCrystals();
+    MCNAPI void resetSpikeCrystals();
 
-    MCAPI void saveData(::CompoundTag& tag);
+    MCNAPI void saveData(::CompoundTag& tag);
 
-    MCAPI void spawnNewGatewayChunks(::BlockPos const& pos, bool placeEntryBlocks, bool placeExitBlocks);
+    MCNAPI void spawnNewGatewayChunks(::BlockPos const& pos, bool placeEntryBlocks, bool placeExitBlocks);
 
-    MCAPI void tick();
+    MCNAPI void tick();
 
-    MCAPI void tryRespawn();
+    MCNAPI void tryRespawn();
 
-    MCAPI ~EndDragonFight();
+    MCNAPI ~EndDragonFight();
     // NOLINTEND
 
 public:
@@ -169,12 +172,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockSource& level);
+    MCNAPI void* $ctor(::BlockSource& level);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

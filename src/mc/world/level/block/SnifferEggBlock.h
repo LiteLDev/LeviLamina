@@ -16,7 +16,6 @@ class BlockSource;
 class Experiments;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
-namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class SnifferEggBlock : public ::BlockLegacy {
@@ -49,21 +48,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _tick(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-
-    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
-
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _addToRandomTickingQueue(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI static void _addToRandomTickingQueue(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI static void
+    MCNAPI static void
     _spawnParticles(::SharedTypes::Legacy::LevelEvent region, ::BlockSource& pos, ::BlockPos const& particleEvent);
     // NOLINTEND
 
@@ -76,22 +71,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+    MCNAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
-    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCNAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCFOLD ::std::string $buildDescriptionId(::Block const&) const;
+    MCNAPI ::std::string $buildDescriptionId(::Block const&) const;
 
-    MCAPI int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

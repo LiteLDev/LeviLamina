@@ -10,7 +10,7 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_21_20::JigsawStructure {
 // functions
 // NOLINTBEGIN
-MCAPI void bindStructureRuleType(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindStructureRuleType(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
 } // namespace SharedTypes::v1_21_20::JigsawStructure

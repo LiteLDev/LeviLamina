@@ -16,9 +16,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::FullContainerName const& rhs) const;
+    MCNAPI bool operator==(::FullContainerName const& rhs) const;
 
-    MCAPI ::std::string toString() const;
+    MCNAPI ::std::string toString() const;
     // NOLINTEND
 
 public:

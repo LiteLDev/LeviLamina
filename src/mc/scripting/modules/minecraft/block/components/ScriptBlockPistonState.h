@@ -12,7 +12,7 @@ struct ScriptBlockPistonState {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::PistonState> bind();
+    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::PistonState> bind();
     // NOLINTEND
 };
 

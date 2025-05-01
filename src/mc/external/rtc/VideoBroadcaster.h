@@ -16,25 +16,25 @@ class VideoBroadcaster {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const& GetBlackFrameBuffer(int, int);
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const& GetBlackFrameBuffer(int, int);
 
-    MCAPI void UpdateWants();
+    MCNAPI void UpdateWants();
 
-    MCAPI VideoBroadcaster();
+    MCNAPI VideoBroadcaster();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForVideoSourceBase();
+    MCNAPI static void** $vftableForVideoSourceBase();
 
-    MCAPI static void** $vftableForVideoSinkInterface();
+    MCNAPI static void** $vftableForVideoSinkInterface();
     // NOLINTEND
 };
 

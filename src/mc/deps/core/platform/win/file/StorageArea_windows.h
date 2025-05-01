@@ -71,7 +71,7 @@ public:
     // vIndex: 19
     virtual uint64 getAvailableUserStorageSize() /*override*/;
 
-    // vIndex: 31
+    // vIndex: 33
     virtual ::Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo() /*override*/;
 
     // vIndex: 0
@@ -87,41 +87,41 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $supportsSizeQuery() const;
+    MCNAPI bool $supportsSizeQuery() const;
 
-    MCAPI uint64 $getTotalSize() const;
+    MCNAPI uint64 $getTotalSize() const;
 
-    MCAPI ::Core::Result $getUsedSize(uint64& outUsedSize);
+    MCNAPI ::Core::Result $getUsedSize(uint64& outUsedSize);
 
-    MCAPI void $setUsedSizeOverride(uint64 fileSize);
+    MCNAPI void $setUsedSizeOverride(uint64 fileSize);
 
-    MCAPI void $clearUsedSizeOverride();
+    MCNAPI void $clearUsedSizeOverride();
 
-    MCAPI bool $supportsExtendSize() const;
+    MCNAPI bool $supportsExtendSize() const;
 
-    MCAPI bool $canExtendSize() const;
+    MCNAPI bool $canExtendSize() const;
 
-    MCAPI void $resetCanAttemptExtendSize();
+    MCNAPI void $resetCanAttemptExtendSize();
 
-    MCAPI ::Core::Result $getExtendSizeThreshold(uint64& outExtendSizeThreshold) const;
+    MCNAPI ::Core::Result $getExtendSizeThreshold(uint64& outExtendSizeThreshold) const;
 
-    MCAPI void $attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback);
+    MCNAPI void $attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback);
 
-    MCAPI void $preemptiveExtendSize(
+    MCNAPI void $preemptiveExtendSize(
         uint64 const            expectedContentSize,
         ::std::function<void()> successCallback,
         ::std::function<void()> failureCallback
     );
 
-    MCAPI uint64 $getAvailableUserStorageSize();
+    MCNAPI uint64 $getAvailableUserStorageSize();
 
-    MCAPI ::Core::FileStorageArea::StorageAreaSpaceInfo $getStorageAreaSpaceInfo();
+    MCNAPI ::Core::FileStorageArea::StorageAreaSpaceInfo $getStorageAreaSpaceInfo();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

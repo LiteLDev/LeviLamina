@@ -17,19 +17,27 @@ struct ScriptLocationInUnloadedChunkError : public ::Scripting::Error {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptLocationInUnloadedChunkError(::Vec3 const& pos);
+    MCNAPI explicit ScriptLocationInUnloadedChunkError(::Vec3 const& pos);
+
+    MCNAPI ~ScriptLocationInUnloadedChunkError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError> bind();
+    MCNAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Vec3 const& pos);
+    MCNAPI void* $ctor(::Vec3 const& pos);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

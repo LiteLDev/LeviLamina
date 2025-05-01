@@ -25,37 +25,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayAnimationOptions(::ScriptModuleMinecraft::ScriptPlayAnimationOptions&&);
+    MCNAPI ScriptPlayAnimationOptions(::ScriptModuleMinecraft::ScriptPlayAnimationOptions&&);
 
-    MCAPI ScriptPlayAnimationOptions(::ScriptModuleMinecraft::ScriptPlayAnimationOptions const&);
+    MCNAPI ScriptPlayAnimationOptions(::ScriptModuleMinecraft::ScriptPlayAnimationOptions const&);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPlayAnimationOptions&
+    MCNAPI ::ScriptModuleMinecraft::ScriptPlayAnimationOptions&
     operator=(::ScriptModuleMinecraft::ScriptPlayAnimationOptions&&);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPlayAnimationOptions&
+    MCNAPI ::ScriptModuleMinecraft::ScriptPlayAnimationOptions&
     operator=(::ScriptModuleMinecraft::ScriptPlayAnimationOptions const&);
 
-    MCAPI ~ScriptPlayAnimationOptions();
+    MCNAPI ~ScriptPlayAnimationOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptPlayAnimationOptions> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptPlayAnimationOptions> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayAnimationOptions&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayAnimationOptions&&);
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayAnimationOptions const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayAnimationOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

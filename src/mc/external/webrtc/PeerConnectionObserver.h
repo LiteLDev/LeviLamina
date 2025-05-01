@@ -102,15 +102,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $OnAddStream(::webrtc::scoped_refptr<::webrtc::MediaStreamInterface> stream);
+    MCNAPI void $OnAddStream(::webrtc::scoped_refptr<::webrtc::MediaStreamInterface> stream);
 
-    MCFOLD void $OnRemoveStream(::webrtc::scoped_refptr<::webrtc::MediaStreamInterface> stream);
+    MCNAPI void $OnRemoveStream(::webrtc::scoped_refptr<::webrtc::MediaStreamInterface> stream);
 
-    MCFOLD void $OnNegotiationNeededEvent(uint event_id);
+    MCNAPI void $OnNegotiationNeededEvent(uint event_id);
 
-    MCFOLD void $OnStandardizedIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState new_state);
+    MCNAPI void $OnStandardizedIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState new_state);
 
-    MCFOLD void $OnIceCandidateError(
+    MCNAPI void $OnIceCandidateError(
         ::std::string const& address,
         int                  port,
         ::std::string const& url,
@@ -118,18 +118,18 @@ public:
         ::std::string const& error_text
     );
 
-    MCFOLD void $OnIceSelectedCandidatePairChanged(::cricket::CandidatePairChangeEvent const& event);
+    MCNAPI void $OnIceSelectedCandidatePairChanged(::cricket::CandidatePairChangeEvent const& event);
 
-    MCFOLD void $OnAddTrack(
+    MCNAPI void $OnAddTrack(
         ::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface>                       receiver,
         ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const& streams
     );
 
-    MCFOLD void $OnTrack(::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface> transceiver);
+    MCNAPI void $OnTrack(::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface> transceiver);
 
-    MCFOLD void $OnRemoveTrack(::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface> receiver);
+    MCNAPI void $OnRemoveTrack(::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface> receiver);
 
-    MCFOLD void $OnInterestingUsage(int usage_pattern);
+    MCNAPI void $OnInterestingUsage(int usage_pattern);
     // NOLINTEND
 };
 

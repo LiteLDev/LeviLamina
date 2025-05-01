@@ -6,6 +6,7 @@
 // clang-format off
 class Actor;
 class LocalPlayer;
+class StrictEntityContext;
 class Vec2;
 // clang-format on
 
@@ -23,18 +24,21 @@ public:
     virtual ::Actor* getCameraActor() = 0;
 
     // vIndex: 3
-    virtual ::std::optional<bool> isUnderLiquid() = 0;
+    virtual ::std::optional<::StrictEntityContext> getCameraEntity() = 0;
 
     // vIndex: 4
-    virtual ::LocalPlayer* getLocalPlayer() = 0;
+    virtual ::std::optional<bool> isUnderLiquid() = 0;
 
     // vIndex: 5
-    virtual ::Vec2 getLookDelta() = 0;
+    virtual ::LocalPlayer* getLocalPlayer() = 0;
 
     // vIndex: 6
-    virtual float getSecondsSinceProgramStart() = 0;
+    virtual ::Vec2 getLookDelta() = 0;
 
     // vIndex: 7
+    virtual float getSecondsSinceProgramStart() = 0;
+
+    // vIndex: 8
     virtual bool isRealityFullVRMode() = 0;
     // NOLINTEND
 

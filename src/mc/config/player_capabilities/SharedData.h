@@ -43,15 +43,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<bool> $isGameRuleEnabled(::GameRuleId const rule) const;
+    MCNAPI ::std::optional<bool> $isGameRuleEnabled(::GameRuleId const rule) const;
 
-    MCAPI ::ChatRestrictionLevel $getChatRestrictionLevel() const;
+    MCNAPI ::ChatRestrictionLevel $getChatRestrictionLevel() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

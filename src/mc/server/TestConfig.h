@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 class TestConfig {
 public:
     // member variables
@@ -23,7 +18,6 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk2212f5;
     ::ll::UntypedStorage<8, 32> mUnkaed291;
     ::ll::UntypedStorage<1, 1>  mUnk36c632;
-    ::ll::UntypedStorage<8, 8>  mUnkacecaa;
     // NOLINTEND
 
 public:
@@ -35,22 +29,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TestConfig(::cereal::ReflectionCtx const& ctx, ::std::string const& fileName);
-
-    MCAPI ::std::string _readFile(::std::string const& fileName) const;
-
-    MCAPI ~TestConfig();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::std::string const& fileName);
+    MCNAPI ~TestConfig();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

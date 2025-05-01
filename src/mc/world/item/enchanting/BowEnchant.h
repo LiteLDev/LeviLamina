@@ -40,18 +40,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getMinCost(int level) const;
+    MCNAPI int $getMinCost(int level) const;
 
-    MCAPI int $getMaxCost(int level) const;
+    MCNAPI int $getMaxCost(int level) const;
 
-    MCAPI int $getMaxLevel() const;
+    MCNAPI int $getMaxLevel() const;
 
-    MCAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
+    MCNAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

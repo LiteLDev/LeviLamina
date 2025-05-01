@@ -18,13 +18,13 @@ struct Degree : public ::type_safe::strong_typedef<::mce::Degree, float>,
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Degree(::mce::Radian rad);
+    MCNAPI explicit Degree(::mce::Radian rad);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::mce::Radian rad);
+    MCNAPI void* $ctor(::mce::Radian rad);
     // NOLINTEND
 };
 

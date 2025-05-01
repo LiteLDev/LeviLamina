@@ -33,42 +33,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<short> getAirSupply() const;
+    MCNAPI ::Scripting::Result_deprecated<short> getAirSupply() const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>
     getBreatheBlocks() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getBreathesAir() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getBreathesAir() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getBreathesLava() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getBreathesLava() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getBreathesSolids() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getBreathesSolids() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getBreathesWater() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getBreathesWater() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getCanBreathe() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getCanBreathe() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getGeneratesBubbles() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getGeneratesBubbles() const;
 
-    MCAPI ::Scripting::Result_deprecated<float> getInhaleTime() const;
+    MCNAPI ::Scripting::Result_deprecated<float> getInhaleTime() const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>
     getNonBreatheBlocks() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getSuffocateTime() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getSuffocateTime() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getTotalSupply() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getTotalSupply() const;
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::PropertyOutOfBoundsError> setAirSupply(short value
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::PropertyOutOfBoundsError> setAirSupply(short value
     ) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBreathableComponent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBreathableComponent>
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
@@ -87,7 +87,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

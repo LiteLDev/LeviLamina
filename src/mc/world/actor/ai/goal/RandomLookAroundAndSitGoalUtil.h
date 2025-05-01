@@ -10,7 +10,7 @@ class Mob;
 namespace RandomLookAroundAndSitGoalUtil {
 // functions
 // NOLINTBEGIN
-MCAPI bool _isMobPulledByLeash(::Mob const& mob);
+MCNAPI bool _isMobPulledByLeash(::Mob const& mob);
 // NOLINTEND
 
 } // namespace RandomLookAroundAndSitGoalUtil

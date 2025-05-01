@@ -22,7 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _sanitize();
+    MCNAPI void _sanitize();
     // NOLINTEND
 };
 

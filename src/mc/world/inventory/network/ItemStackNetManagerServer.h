@@ -75,41 +75,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemStackNetManagerServer(::ServerPlayer& serverPlayer, bool isEnabled);
+    MCNAPI ItemStackNetManagerServer(::ServerPlayer& serverPlayer, bool isEnabled);
 
-    MCAPI void _filterStrings(
+    MCNAPI void _filterStrings(
         ::ItemStackRequestId                requestId,
         ::std::vector<::std::string> const& stringsToFilter,
         ::TextProcessingEventOrigin const&  stringsToFilterOrigin
     );
 
-    MCAPI void _handleLegacyTransactionRequest(
+    MCNAPI void _handleLegacyTransactionRequest(
         ::ItemStackLegacyRequestId const&                                            legacyClientRequestId,
         ::std::vector<::std::pair<::ContainerEnumName, ::std::vector<uchar>>> const& legacySetItemSlots
     );
 
-    MCAPI void
+    MCNAPI void
     _handleRequestData(::std::vector<::ItemStackResponseInfo>& responses, ::ItemStackRequestData const* requestData);
 
-    MCAPI void _processQueue();
+    MCNAPI void _processQueue();
 
-    MCAPI void _queueRequest(::std::unique_ptr<::ItemStackRequestData> request);
+    MCNAPI void _queueRequest(::std::unique_ptr<::ItemStackRequestData> request);
 
-    MCAPI void _queueRequests(::ItemStackRequestBatch const& requestBatch);
+    MCNAPI void _queueRequests(::ItemStackRequestBatch const& requestBatch);
 
-    MCAPI ::gsl::final_action<::std::function<void()>> _retainSetItemStackNetIdVariantScope();
+    MCNAPI ::gsl::final_action<::std::function<void()>> _retainSetItemStackNetIdVariantScope();
 
-    MCAPI void _sendResponsePacket(::std::vector<::ItemStackResponseInfo>&& responses);
+    MCNAPI void _sendResponsePacket(::std::vector<::ItemStackResponseInfo>&& responses);
 
-    MCAPI void _setTextFilterState(::ItemStackNetManagerServer::TextFilterState state);
+    MCNAPI void _setTextFilterState(::ItemStackNetManagerServer::TextFilterState state);
 
-    MCAPI ::CallbackToken tryCloseContainerScreen(::std::function<void()> onContainerScreenCloseCB);
+    MCNAPI ::CallbackToken tryCloseContainerScreen(::std::function<void()> onContainerScreenCloseCB);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ServerPlayer& serverPlayer, bool isEnabled);
+    MCNAPI void* $ctor(::ServerPlayer& serverPlayer, bool isEnabled);
     // NOLINTEND
 
 public:
@@ -121,20 +121,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStackRequestId $getRequestId() const;
+    MCNAPI ::ItemStackRequestId $getRequestId() const;
 
-    MCAPI bool $retainSetItemStackNetIdVariant() const;
+    MCNAPI bool $retainSetItemStackNetIdVariant() const;
 
-    MCAPI bool $allowInventoryTransactionManager() const;
+    MCNAPI bool $allowInventoryTransactionManager() const;
 
-    MCFOLD void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
+    MCNAPI void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
 
-    MCAPI void $_initScreen(::ItemStackNetManagerScreen& screen);
+    MCNAPI void $_initScreen(::ItemStackNetManagerScreen& screen);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

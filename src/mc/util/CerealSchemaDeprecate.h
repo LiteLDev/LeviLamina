@@ -47,7 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CerealSchemaDeprecate(
+    MCNAPI CerealSchemaDeprecate(
         ::SemVersion         deprecateVersion,
         ::std::string const& schemaKey,
         ::std::string const& jsonMemberName
@@ -57,7 +57,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::SemVersion deprecateVersion, ::std::string const& schemaKey, ::std::string const& jsonMemberName);
     // NOLINTEND
 
@@ -70,11 +70,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $previousSchema(::rapidjson::GenericValue<
+    MCNAPI bool $previousSchema(::rapidjson::GenericValue<
                                 ::rapidjson::UTF8<char>,
                                 ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&) const;
 
-    MCAPI void $upgradeToNext(
+    MCNAPI void $upgradeToNext(
         ::rapidjson::GenericDocument<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
@@ -86,6 +86,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

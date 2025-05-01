@@ -30,21 +30,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<bool, ::Scripting::Error> _getPermissionCategoryV1(::ClientInputLockCategory category
+    MCNAPI ::Scripting::Result<bool, ::Scripting::Error> _getPermissionCategoryV1(::ClientInputLockCategory category
     ) const;
 
-    MCAPI ::Scripting::Result<bool, ::Scripting::Error> _getPermissionCategoryV2(::ClientInputLockCategory category
+    MCNAPI ::Scripting::Result<bool, ::Scripting::Error> _getPermissionCategoryV2(::ClientInputLockCategory category
     ) const;
 
-    MCAPI ::Scripting::Result<void> _setPermissionCategoryV1(::ClientInputLockCategory category, bool isEnabled);
+    MCNAPI ::Scripting::Result<void> _setPermissionCategoryV1(::ClientInputLockCategory category, bool isEnabled);
 
-    MCAPI ::Scripting::Result<void> _setPermissionCategoryV2(::ClientInputLockCategory category, bool isEnabled);
+    MCNAPI ::Scripting::Result<void> _setPermissionCategoryV2(::ClientInputLockCategory category, bool isEnabled);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

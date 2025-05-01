@@ -23,7 +23,7 @@ struct SwitchingVehiclesFlagComponent;
 namespace SetActorLinkPacketSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void sendActorLinkPacket(
+MCNAPI void sendActorLinkPacket(
     ::StrictEntityContext const&       vehicleEntity,
     ::ActorUniqueIDComponent const&    actorUniqueIDComponent,
     ::RemovePassengersComponent const& removePassengersComponent,
@@ -36,7 +36,7 @@ MCAPI void sendActorLinkPacket(
     ::EntityModifier<::SendPacketsComponent>                modifier
 );
 
-MCAPI void singleSendActorLinkPacket(
+MCNAPI void singleSendActorLinkPacket(
     ::StrictEntityContext const&                                                                passengerEntity,
     ::PassengerComponent const&                                                                 passengerComponent,
     ::ViewT<::StrictEntityContext, ::ActorUniqueIDComponent const, ::RemovePassengersComponent> vehicleView,

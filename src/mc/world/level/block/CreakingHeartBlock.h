@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/ActorBlockBase.h"
+#include "mc/world/level/block/RotatedPillarBlock.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,10 +14,8 @@ class BlockPos;
 class BlockSource;
 class Experiments;
 class Player;
-class Random;
-class RotatedPillarBlock;
-struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class CreakingHeartBlock : public ::ActorBlockBase<::RotatedPillarBlock> {
@@ -29,9 +28,6 @@ public:
     // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
-
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 89
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
@@ -59,12 +55,6 @@ public:
         ::Actor&             sourceEntity
     ) const /*override*/;
 
-    // vIndex: 124
-    virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
-
-    // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
-
     // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
@@ -75,7 +65,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void _onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -87,23 +79,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onFillBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI void $onFillBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
 
-    MCAPI void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI int $getVariant(::Block const& block) const;
+    MCNAPI bool $hasComparatorSignal() const;
 
-    MCFOLD bool $hasComparatorSignal() const;
+    MCNAPI int
+    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
-
-    MCAPI void $executeEvent(
+    MCNAPI void $executeEvent(
         ::BlockSource&       region,
         ::BlockPos const&    pos,
         ::Block const&       block,
@@ -111,16 +102,12 @@ public:
         ::Actor&             sourceEntity
     ) const;
 
-    MCFOLD void $animateTick(::BlockAnimateTickData const& tickData) const;
-
-    MCFOLD void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

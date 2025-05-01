@@ -39,14 +39,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::LootPoolEntry>
+    MCNAPI static ::std::unique_ptr<::LootPoolEntry>
     deserialize(::Json::Value const& entryJson, bool usingUpcomingCreatorFeaturesExperiment);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -58,6 +58,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

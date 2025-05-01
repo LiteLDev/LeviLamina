@@ -36,16 +36,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance& test);
+    MCNAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance& test);
 
-    MCAPI void $onTestPassed(::gametest::BaseGameTestInstance& test);
+    MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance& test);
 
-    MCAPI void $onTestFailed(::gametest::BaseGameTestInstance& test);
+    MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance& test);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

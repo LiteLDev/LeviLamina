@@ -17,6 +17,18 @@ class PackSourceReport;
 
 class PackSource {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkae54f3;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PackSource& operator=(PackSource const&);
+    PackSource(PackSource const&);
+    PackSource();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -42,10 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void resolveUpgradeDependencies(
-        ::Pack&                                                           pack,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
-    );
+    MCNAPI void resolveUpgradeDependencies(::Pack& pack);
     // NOLINTEND
 
 public:
@@ -57,14 +66,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::PackOrigin $getPackOrigin() const;
+    MCNAPI ::PackOrigin $getPackOrigin() const;
 
-    MCFOLD ::PackType $getPackType() const;
+    MCNAPI ::PackType $getPackType() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

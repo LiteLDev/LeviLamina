@@ -5,10 +5,10 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/BaseMoveToGoal.h"
 #include "mc/world/actor/ai/village/POIType.h"
+#include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class BlockPos;
 class BlockSource;
 class Mob;
@@ -62,50 +62,50 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MoveToPOIGoal(::Mob& mob, float speedModifier, ::POIType poiType, float coolddownTimeout);
+    MCNAPI MoveToPOIGoal(::Mob& mob, float speedModifier, ::POIType poiType, float coolddownTimeout);
 
-    MCAPI bool _canReachPOI(::Vec3 const& pos, float radiusSqr, bool usingBoundingBox);
+    MCNAPI bool _canReachPOI(::Vec3 const& pos, float radiusSqr, bool usingBoundingBox);
 
-    MCAPI void _updatePOIBooking();
+    MCNAPI void _updatePOIBooking();
 
-    MCAPI bool getPOI(::POIType type);
+    MCNAPI bool getPOI(::POIType type);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float speedModifier, ::POIType poiType, float coolddownTimeout);
+    MCNAPI void* $ctor(::Mob& mob, float speedModifier, ::POIType poiType, float coolddownTimeout);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI void $_moveToBlock();
+    MCNAPI void $_moveToBlock();
 
-    MCAPI ::Vec3 $_getTargetPosition() const;
+    MCNAPI ::Vec3 $_getTargetPosition() const;
 
-    MCAPI ::std::weak_ptr<::POIInstance> $_getOwnedPOI(::POIType type) const;
+    MCNAPI ::std::weak_ptr<::POIInstance> $_getOwnedPOI(::POIType type) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

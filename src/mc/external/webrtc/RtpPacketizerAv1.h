@@ -24,9 +24,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uchar AggregationHeader() const;
+    MCNAPI uchar AggregationHeader() const;
 
-    MCAPI RtpPacketizerAv1(
+    MCNAPI RtpPacketizerAv1(
         ::rtc::ArrayView<uchar const>,
         ::webrtc::RtpPacketizer::PayloadSizeLimits,
         ::webrtc::VideoFrameType,
@@ -37,25 +37,25 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int AdditionalBytesForPreviousObuElement(::webrtc::RtpPacketizerAv1::Packet const&);
+    MCNAPI static int AdditionalBytesForPreviousObuElement(::webrtc::RtpPacketizerAv1::Packet const&);
 
-    MCAPI static ::std::vector<::webrtc::RtpPacketizerAv1::Packet>
+    MCNAPI static ::std::vector<::webrtc::RtpPacketizerAv1::Packet>
         Packetize(::rtc::ArrayView<::webrtc::RtpPacketizerAv1::Obu const>, ::webrtc::RtpPacketizer::PayloadSizeLimits);
 
-    MCAPI static ::std::vector<::webrtc::RtpPacketizerAv1::Obu> ParseObus(::rtc::ArrayView<uchar const>);
+    MCNAPI static ::std::vector<::webrtc::RtpPacketizerAv1::Obu> ParseObus(::rtc::ArrayView<uchar const>);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::rtc::ArrayView<uchar const>, ::webrtc::RtpPacketizer::PayloadSizeLimits, ::webrtc::VideoFrameType, bool);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

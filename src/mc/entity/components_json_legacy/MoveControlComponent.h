@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionDescriptor;
 class Mob;
 class MoveControl;
-class Vec3;
 // clang-format on
 
 class MoveControlComponent {
@@ -25,8 +27,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initMultiTypeMovementComponent(::Mob& entity, ::ActorDefinitionDescriptor& initDescription);
+    MCNAPI void initMultiTypeMovementComponent(::Mob& entity, ::ActorDefinitionDescriptor& initDescription);
 
-    MCAPI void setInternalType(::std::unique_ptr<::MoveControl> type);
+    MCNAPI void setInternalType(::std::unique_ptr<::MoveControl> type);
     // NOLINTEND
 };

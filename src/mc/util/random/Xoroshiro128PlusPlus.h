@@ -19,6 +19,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int64 nextLong();
+    MCNAPI int64 nextLong();
     // NOLINTEND
 };

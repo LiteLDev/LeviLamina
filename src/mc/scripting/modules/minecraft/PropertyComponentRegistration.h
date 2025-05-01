@@ -21,22 +21,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     PropertyComponentRegistration(::ScriptModuleMinecraft::ScriptPropertyComponents::PropertyComponentRegistration&&);
 
-    MCAPI ~PropertyComponentRegistration();
+    MCNAPI ~PropertyComponentRegistration();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPropertyComponents::PropertyComponentRegistration&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPropertyComponents::PropertyComponentRegistration&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -25,14 +25,14 @@ public:
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
     // vIndex: 107
-    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
     // vIndex: 108
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
     // vIndex: 3
-    virtual ::RecordItem& setDescriptionId(::std::string const& descriptionId) /*override*/;
+    virtual ::RecordItem& setDescriptionId(::std::string const& description) /*override*/;
 
     // vIndex: 0
     virtual ~RecordItem() /*override*/ = default;
@@ -41,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RecordItem(
+    MCNAPI RecordItem(
         ::std::string const&                   name,
         int                                    id,
         ::cereal::ReflectionCtx&               ctx,
@@ -52,7 +52,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                   name,
         int                                    id,
         ::cereal::ReflectionCtx&               ctx,
@@ -69,20 +69,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string
+    MCNAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
+    MCNAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
-    MCFOLD ::ResolvedItemIconInfo
+    MCNAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCFOLD ::RecordItem& $setDescriptionId(::std::string const& descriptionId);
+    MCNAPI ::RecordItem& $setDescriptionId(::std::string const& description);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

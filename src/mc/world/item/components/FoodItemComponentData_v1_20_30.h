@@ -28,15 +28,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FoodItemComponentData_v1_20_30(::FoodItemComponentData_v1_20_30 const&);
+    MCNAPI FoodItemComponentData_v1_20_30(::FoodItemComponentData_v1_20_30 const&);
 
-    MCAPI ::FoodItemComponentData_v1_20_30& operator=(::FoodItemComponentData_v1_20_30 const&);
+    MCNAPI ::FoodItemComponentData_v1_20_30& operator=(::FoodItemComponentData_v1_20_30 const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
@@ -46,6 +46,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FoodItemComponentData_v1_20_30 const&);
+    MCNAPI void* $ctor(::FoodItemComponentData_v1_20_30 const&);
     // NOLINTEND
 };

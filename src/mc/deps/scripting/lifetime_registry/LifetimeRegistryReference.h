@@ -20,21 +20,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LifetimeRegistryReference();
+    MCNAPI LifetimeRegistryReference();
 
-    MCAPI ~LifetimeRegistryReference();
+    MCNAPI ~LifetimeRegistryReference();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

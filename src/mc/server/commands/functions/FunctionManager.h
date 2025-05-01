@@ -76,13 +76,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~OriginMapping();
+        MCNAPI ~OriginMapping();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -117,19 +117,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FunctionManager(
+    MCNAPI FunctionManager(
         ::std::unique_ptr<::ICommandDispatcher> commandDispatcher,
         ::std::unique_ptr<::CommandOrigin>      tickOrigin,
         ::GameRule const*                       gameRule
     );
 
-    MCAPI ::CommandOrigin const& _addOriginReference(::CommandOrigin const& origin, uint amount);
+    MCNAPI ::CommandOrigin const& _addOriginReference(::CommandOrigin const& origin, uint amount);
 
-    MCAPI void _addTickFunctionsFromJson(::Json::Value const& arrayVal, ::CurrentCmdVersion resourceCommandVersion);
+    MCNAPI void _addTickFunctionsFromJson(::Json::Value const& arrayVal, ::CurrentCmdVersion resourceCommandVersion);
 
-    MCAPI void _loadTickFiles(::ResourcePackManager const& serverPackManager);
+    MCNAPI void _loadTickFiles(::ResourcePackManager const& serverPackManager);
 
-    MCAPI void _processFunctionEntry(
+    MCNAPI void _processFunctionEntry(
         ::std::string const&                functionName,
         ::std::vector<::std::string> const& lines,
         ::std::vector<::std::string>&       errorList,
@@ -137,30 +137,30 @@ public:
         ::CommandRegistry const&            registry
     );
 
-    MCAPI void _queueCommandsAfterCaller(
+    MCNAPI void _queueCommandsAfterCaller(
         ::std::vector<::std::unique_ptr<::IFunctionEntry>> const& toQueue,
         ::CommandOrigin const&                                    origin
     );
 
-    MCAPI void _removeOriginReference(::CommandOrigin const& origin, uint amount);
+    MCNAPI void _removeOriginReference(::CommandOrigin const& origin, uint amount);
 
-    MCAPI int execute(::FunctionEntry& toExecute, ::CommandOrigin const& origin, ::FunctionQueueOrder order);
+    MCNAPI int execute(::FunctionEntry& toExecute, ::CommandOrigin const& origin, ::FunctionQueueOrder order);
 
-    MCAPI int getExecutionLimit() const;
+    MCNAPI int getExecutionLimit() const;
 
-    MCAPI void load(::ResourcePackManager& serverPackManager, ::CommandRegistry& registry);
+    MCNAPI void load(::ResourcePackManager& serverPackManager, ::CommandRegistry& registry);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string getFunctionNameFromPath(::Core::Path const& filename);
+    MCNAPI static ::std::string getFunctionNameFromPath(::Core::Path const& filename);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::ICommandDispatcher> commandDispatcher,
         ::std::unique_ptr<::CommandOrigin>      tickOrigin,
         ::GameRule const*                       gameRule
@@ -170,12 +170,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

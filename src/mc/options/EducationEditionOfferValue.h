@@ -15,6 +15,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::EducationEditionOfferValue& operator=(::EducationEditionOffer value);
+    MCNAPI ::EducationEditionOfferValue& operator=(::EducationEditionOffer value);
     // NOLINTEND
 };

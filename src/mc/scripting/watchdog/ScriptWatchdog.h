@@ -21,9 +21,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWatchdog();
+    MCNAPI ScriptWatchdog();
 
-    MCAPI ::ScriptWatchdog& operator=(::ScriptWatchdog&&);
+    MCNAPI ::ScriptWatchdog& operator=(::ScriptWatchdog&&);
     // NOLINTEND
 
 public:
@@ -35,6 +35,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

@@ -25,20 +25,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptActorHealthChangedAfterEvent();
+    MCNAPI ~ScriptActorHealthChangedAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent>
+    MCNAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent>
     bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

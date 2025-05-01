@@ -106,27 +106,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FileImpl(::Core::FileSystemImpl* pTransaction, ::Core::FileOpenMode openMode);
+    MCNAPI FileImpl(::Core::FileSystemImpl* pTransaction, ::Core::FileOpenMode openMode);
 
-    MCAPI ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> _lockIfWriteBuffered(bool flushBuffer);
+    MCNAPI ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> _lockIfWriteBuffered(bool flushBuffer);
 
-    MCAPI ::Core::Result _writeOperation(::Core::Result&& result, uint64 numBytesWritten);
+    MCNAPI ::Core::Result _writeOperation(::Core::Result&& result, uint64 numBytesWritten);
 
-    MCAPI ::Core::Result close();
+    MCNAPI ::Core::Result close();
 
-    MCAPI ::Core::Result getPosition(uint64* pPosition);
+    MCNAPI ::Core::Result getPosition(uint64* pPosition);
 
-    MCAPI ::Core::Result read(void* buf, uint64 numBytes, uint64* pNumBytesRead);
+    MCNAPI ::Core::Result read(void* buf, uint64 numBytes, uint64* pNumBytesRead);
 
-    MCAPI ::Core::Result readAtPosition(uint64 position, void* pBuf, uint64 numBytes, uint64* pNumBytesRead);
+    MCNAPI ::Core::Result readAtPosition(uint64 position, void* pBuf, uint64 numBytes, uint64* pNumBytesRead);
 
-    MCAPI ::Core::Result readExactly(void* buf, uint64 numBytes);
+    MCNAPI ::Core::Result readExactly(void* buf, uint64 numBytes);
 
-    MCAPI ::Core::Result setPosition(uint64 position);
+    MCNAPI ::Core::Result setPosition(uint64 position);
 
-    MCAPI ::Core::Result skip(uint64 numBytes);
+    MCNAPI ::Core::Result skip(uint64 numBytes);
 
-    MCAPI ::Core::Result write(void const* pBuf, uint64 numBytes);
+    MCNAPI ::Core::Result write(void const* pBuf, uint64 numBytes);
     // NOLINTEND
 
 public:
@@ -140,13 +140,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::FileSystemImpl* pTransaction, ::Core::FileOpenMode openMode);
+    MCNAPI void* $ctor(::Core::FileSystemImpl* pTransaction, ::Core::FileOpenMode openMode);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -158,7 +158,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

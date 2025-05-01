@@ -16,7 +16,7 @@ class ImitateMobSoundsComponent {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool imitateNearbyMobs(::Actor& actor, ::Randomize const& randomize);
+    MCNAPI static bool imitateNearbyMobs(::Actor& actor, ::Randomize const& randomize);
     // NOLINTEND
 
 public:

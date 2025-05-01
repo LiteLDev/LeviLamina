@@ -4,11 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
-
-// auto generated forward declare list
-// clang-format off
-class NetworkIdentifier;
-// clang-format on
+#include "mc/network/NetworkIdentifier.h"
 
 struct ClientJoinedEventData {
 public:
@@ -26,6 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void disconnect(::std::optional<::std::string> message);
+    MCNAPI void disconnect(::std::optional<::std::string> message);
     // NOLINTEND
 };

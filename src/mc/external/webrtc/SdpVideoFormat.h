@@ -22,23 +22,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool IsSameCodec(::webrtc::SdpVideoFormat const&) const;
+    MCNAPI bool IsSameCodec(::webrtc::SdpVideoFormat const&) const;
 
-    MCAPI SdpVideoFormat(::std::string const&, ::std::map<::std::string, ::std::string> const&);
+    MCNAPI SdpVideoFormat(::std::string const&, ::std::map<::std::string, ::std::string> const&);
 
-    MCAPI ~SdpVideoFormat();
+    MCNAPI ~SdpVideoFormat();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const&, ::std::map<::std::string, ::std::string> const&);
+    MCNAPI void* $ctor(::std::string const&, ::std::map<::std::string, ::std::string> const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

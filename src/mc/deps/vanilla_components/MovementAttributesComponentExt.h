@@ -11,7 +11,7 @@ struct MovementAttributeEntry;
 namespace MovementAttributesComponentExt {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::unordered_map<::HashedString, ::MovementAttributeEntry> const& getAttributeMap();
+MCNAPI ::std::unordered_map<::HashedString, ::MovementAttributeEntry> const& getAttributeMap();
 // NOLINTEND
 
 } // namespace MovementAttributesComponentExt

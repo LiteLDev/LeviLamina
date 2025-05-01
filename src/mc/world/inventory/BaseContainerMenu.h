@@ -96,53 +96,53 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseContainerMenu(::Player& player, ::SharedTypes::Legacy::ContainerType containerType);
+    MCNAPI BaseContainerMenu(::Player& player, ::SharedTypes::Legacy::ContainerType containerType);
 
-    MCAPI void _saveLastSlots(::Container* container);
+    MCNAPI void _saveLastSlots(::Container* container);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player, ::SharedTypes::Legacy::ContainerType containerType);
+    MCNAPI void* $ctor(::Player& player, ::SharedTypes::Legacy::ContainerType containerType);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isSlotDirty(int slot);
+    MCNAPI bool $isSlotDirty(int slot);
 
-    MCFOLD bool $isResultSlot(int slot);
+    MCNAPI bool $isResultSlot(int slot);
 
-    MCFOLD void $containerContentChanged(int slot);
+    MCNAPI void $containerContentChanged(int slot);
 
-    MCFOLD void $setData(int id, int value);
+    MCNAPI void $setData(int id, int value);
 
-    MCFOLD ::ContainerID $getContainerId() const;
+    MCNAPI ::ContainerID $getContainerId() const;
 
-    MCAPI void $setContainerId(::ContainerID id);
+    MCNAPI void $setContainerId(::ContainerID id);
 
-    MCFOLD ::SharedTypes::Legacy::ContainerType $getContainerType() const;
+    MCNAPI ::SharedTypes::Legacy::ContainerType $getContainerType() const;
 
-    MCAPI void $setContainerType(::SharedTypes::Legacy::ContainerType type);
+    MCNAPI void $setContainerType(::SharedTypes::Legacy::ContainerType type);
 
-    MCAPI ::Bedrock::PubSub::Subscription
+    MCNAPI ::Bedrock::PubSub::Subscription
     $registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)> callback) const;
 
-    MCAPI void $broadcastChanges();
+    MCNAPI void $broadcastChanges();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForContainerContentChangeListener();
+    MCNAPI static void** $vftableForContainerContentChangeListener();
 
-    MCAPI static void** $vftableForIContainerManager();
+    MCNAPI static void** $vftableForIContainerManager();
     // NOLINTEND
 };

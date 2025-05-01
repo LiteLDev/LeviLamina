@@ -15,7 +15,7 @@ struct BlockLootComponentDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk7318d2;
+    ::ll::UntypedStorage<8, 32> mUnk68f86e;
     // NOLINTEND
 
 public:
@@ -40,7 +40,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -58,14 +58,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getName() const;
+    MCNAPI ::std::string const& $getName() const;
 
-    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

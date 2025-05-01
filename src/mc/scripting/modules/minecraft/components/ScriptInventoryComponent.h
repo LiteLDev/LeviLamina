@@ -6,6 +6,7 @@
 #include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ScriptActorComponent.h"
 
@@ -14,6 +15,7 @@
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptContainerWrapper; }
 namespace ScriptModuleMinecraft { class ScriptInventoryComponentContainer; }
+namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -33,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
+    // vIndex: 3
     virtual bool _isValid() const /*override*/;
 
     // vIndex: 0
@@ -43,33 +45,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptInventoryComponent(::ScriptModuleMinecraft::ScriptInventoryComponent const&);
+    MCNAPI ScriptInventoryComponent(::ScriptModuleMinecraft::ScriptInventoryComponent const&);
 
-    MCAPI ::Scripting::Result_deprecated<int> getAdditionalSlotsPerStrength() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getAdditionalSlotsPerStrength() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getCanBeSiphonedFrom() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getCanBeSiphonedFrom() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getContainerType() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getContainerType() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getInventorySize() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getInventorySize() const;
 
-    MCAPI ::Scripting::Result_deprecated<
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>>>
-    getOrCreateContainer();
-
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptInventoryComponentContainer>>
     getOrCreateContainerV010();
 
-    MCAPI ::Scripting::Result_deprecated<bool> getPrivate() const;
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>>
+    getOrCreateContainerV1();
 
-    MCAPI ::Scripting::Result_deprecated<bool> getRestrictToOwner() const;
+    MCNAPI ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getOrCreateContainerV2();
+
+    MCNAPI ::Scripting::Result_deprecated<bool> getPrivate() const;
+
+    MCNAPI ::Scripting::Result_deprecated<bool> getRestrictToOwner() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptInventoryComponent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptInventoryComponent>
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
@@ -82,7 +88,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptInventoryComponent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptInventoryComponent const&);
     // NOLINTEND
 
 public:
@@ -94,13 +100,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isValid() const;
+    MCNAPI bool $_isValid() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

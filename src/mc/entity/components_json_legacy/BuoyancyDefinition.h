@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -37,17 +37,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addLiquidBlockDescriptor(::BlockDescriptor const& liquidBlockDescriptor);
+    MCNAPI void _addLiquidBlockDescriptor(::BlockDescriptor const& liquidBlockDescriptor);
 
-    MCAPI ::Json::Value _serialize() const;
+    MCNAPI ::Json::Value _serialize() const;
 
-    MCAPI void initialize(::EntityContext& entity, ::BuoyancyComponent& component) const;
+    MCNAPI void initialize(::EntityContext& entity, ::BuoyancyComponent& component) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BuoyancyDefinition>>& root
     );
     // NOLINTEND

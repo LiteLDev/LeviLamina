@@ -17,40 +17,40 @@ class StatsCollection {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::list<::webrtc::StatsReport*> DetachCollection();
+    MCNAPI ::std::list<::webrtc::StatsReport*> DetachCollection();
 
-    MCAPI ::webrtc::StatsReport* Find(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const&);
+    MCNAPI ::webrtc::StatsReport* Find(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const&);
 
-    MCAPI ::webrtc::StatsReport* FindOrAddNew(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const&);
+    MCNAPI ::webrtc::StatsReport* FindOrAddNew(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const&);
 
-    MCAPI ::webrtc::StatsReport* InsertNew(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const&);
+    MCNAPI ::webrtc::StatsReport* InsertNew(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const&);
 
-    MCAPI void MergeCollection(::std::list<::webrtc::StatsReport*>);
+    MCNAPI void MergeCollection(::std::list<::webrtc::StatsReport*>);
 
-    MCAPI ::webrtc::StatsReport* ReplaceOrAddNew(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const&);
+    MCNAPI ::webrtc::StatsReport* ReplaceOrAddNew(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const&);
 
-    MCAPI StatsCollection();
+    MCNAPI StatsCollection();
 
-    MCAPI ::std::_List_const_iterator<::std::_List_val<::std::_List_simple_types<::webrtc::StatsReport*>>>
+    MCNAPI ::std::_List_const_iterator<::std::_List_val<::std::_List_simple_types<::webrtc::StatsReport*>>>
     begin() const;
 
-    MCAPI ::std::_List_const_iterator<::std::_List_val<::std::_List_simple_types<::webrtc::StatsReport*>>> end() const;
+    MCNAPI ::std::_List_const_iterator<::std::_List_val<::std::_List_simple_types<::webrtc::StatsReport*>>> end() const;
 
-    MCAPI uint64 size() const;
+    MCNAPI uint64 size() const;
 
-    MCAPI ~StatsCollection();
+    MCNAPI ~StatsCollection();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

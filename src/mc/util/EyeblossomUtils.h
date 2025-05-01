@@ -12,14 +12,14 @@ class Vec3;
 namespace EyeblossomUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void emitEyeblossomSoundsAndRequestParticles(
+MCNAPI void emitEyeblossomSoundsAndRequestParticles(
     ::BlockSource& region,
     ::Vec3 const&  pos,
     ::Block const& changedTo,
     bool           longSound
 );
 
-MCAPI ::Block const* tryGetEyeblossomForTimeOfDay(::BlockSource& region);
+MCNAPI ::Block const* tryGetEyeblossomForTimeOfDay(::BlockSource& region);
 // NOLINTEND
 
 } // namespace EyeblossomUtils

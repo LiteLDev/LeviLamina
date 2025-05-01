@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelBlockDestroyer(
+    MCNAPI LevelBlockDestroyer(
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> levelEventManager,
         ::std::unique_ptr<::ILevelBlockDestroyerProxy>     levelBlockDestroyerProxy
     );
@@ -37,7 +37,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> levelEventManager,
         ::std::unique_ptr<::ILevelBlockDestroyerProxy>     levelBlockDestroyerProxy
     );

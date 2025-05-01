@@ -39,7 +39,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::HitResult
+    MCNAPI ::HitResult
     $clip(::Block const&, ::BlockSource const&, ::BlockPos const&, ::Vec3 const& A, ::Vec3 const& B, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
     // NOLINTEND
@@ -47,6 +47,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

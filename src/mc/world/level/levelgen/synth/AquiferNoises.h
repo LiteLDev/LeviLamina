@@ -30,9 +30,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AquiferNoises(::AquiferNoises const&);
+    MCNAPI AquiferNoises(::AquiferNoises const&);
 
-    MCAPI AquiferNoises(
+    MCNAPI AquiferNoises(
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> barrierNoise,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> fluidLevelFloodednessNoise,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> lavaNoise,
@@ -40,21 +40,21 @@ public:
         ::XoroshiroPositionalRandomFactory                                            positionalRandomFactory
     );
 
-    MCAPI ~AquiferNoises();
+    MCNAPI ~AquiferNoises();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::AquiferNoises make(::XoroshiroPositionalRandomFactory const& positionalRandom);
+    MCNAPI static ::AquiferNoises make(::XoroshiroPositionalRandomFactory const& positionalRandom);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::AquiferNoises const&);
+    MCNAPI void* $ctor(::AquiferNoises const&);
 
-    MCFOLD void* $ctor(
+    MCNAPI void* $ctor(
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> barrierNoise,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> fluidLevelFloodednessNoise,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> lavaNoise,
@@ -66,6 +66,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

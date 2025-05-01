@@ -14,7 +14,7 @@ struct Schema {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk5ed1d2;
+    ::ll::UntypedStorage<8, 96> mUnk5ed1d2;
     ::ll::UntypedStorage<8, 8>  mUnk75bb3d;
     // NOLINTEND
 
@@ -27,21 +27,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool load(::cereal::SchemaReader& reader, ::entt::meta_handle data, ::entt::meta_any const& loadContext);
+    MCNAPI bool load(::cereal::SchemaReader& reader, ::entt::meta_handle data, ::entt::meta_any const& loadContext);
 
-    MCAPI void loadImpl(::cereal::SchemaReader& reader, ::entt::meta_any instance, ::entt::meta_any const& udata);
+    MCNAPI void loadImpl(::cereal::SchemaReader& reader, ::entt::meta_any instance, ::entt::meta_any const& udata);
 
-    MCAPI ::cereal::internal::Schema& operator=(::cereal::internal::Schema&&);
+    MCNAPI bool save(::cereal::SchemaWriter& writer, ::entt::meta_handle data);
 
-    MCAPI bool save(::cereal::SchemaWriter& writer, ::entt::meta_handle data);
-
-    MCAPI ~Schema();
+    MCNAPI ~Schema();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

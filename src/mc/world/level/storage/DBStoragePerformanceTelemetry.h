@@ -31,23 +31,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DBStoragePerformanceTelemetry(::Bedrock::NonOwnerPointer<::LevelStorageEventing> eventing);
+    MCNAPI explicit DBStoragePerformanceTelemetry(::Bedrock::NonOwnerPointer<::LevelStorageEventing> eventing);
 
-    MCAPI void
+    MCNAPI void
     _fireEventLevelDBPerformanceData(::Bedrock::Threading::LockGuard<::Bedrock::Threading::Mutex>& force, bool);
 
-    MCAPI ~DBStoragePerformanceTelemetry();
+    MCNAPI ~DBStoragePerformanceTelemetry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::LevelStorageEventing> eventing);
+    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::LevelStorageEventing> eventing);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

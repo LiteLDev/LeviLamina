@@ -13,9 +13,24 @@ public:
 
 public:
     // prevent constructor by default
-    FileReference& operator=(FileReference const&);
     FileReference(FileReference const&);
     FileReference();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::CerealHelpers::FileReference& operator=(::CerealHelpers::FileReference const&);
+
+    MCNAPI ::CerealHelpers::FileReference& operator=(::CerealHelpers::FileReference&&);
+
+    MCNAPI ~FileReference();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace CerealHelpers

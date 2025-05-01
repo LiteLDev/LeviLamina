@@ -8,7 +8,7 @@ struct ThreadPoolImpl {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void TPCallback(::_TP_CALLBACK_INSTANCE*, void*, ::_TP_WORK*);
+    MCNAPI static void TPCallback(::_TP_CALLBACK_INSTANCE*, void*, ::_TP_WORK*);
     // NOLINTEND
 };
 

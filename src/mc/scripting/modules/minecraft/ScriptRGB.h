@@ -33,13 +33,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptRGB const& other) const;
+    MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptRGB const& other) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptRGB> bind();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptRGB> bind();
     // NOLINTEND
 
 public:
@@ -51,13 +51,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isValid() const;
+    MCNAPI bool $isValid() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

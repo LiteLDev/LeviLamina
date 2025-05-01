@@ -50,7 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _placeLayerOfLeaves(
+    MCNAPI void _placeLayerOfLeaves(
         ::IBlockWorldGenAPI&            target,
         ::Random&                       random,
         ::BlockPos const&               canopyPos,
@@ -60,7 +60,7 @@ public:
         ::TreeHelper::TreeParams const& treeParams
     ) const;
 
-    MCAPI void _placeLayerOfLeavesWithHangingLeavesBelow(
+    MCNAPI void _placeLayerOfLeavesWithHangingLeavesBelow(
         ::IBlockWorldGenAPI&            target,
         ::Random&                       random,
         ::BlockPos const&               canopyPos,
@@ -70,7 +70,7 @@ public:
         ::TreeHelper::TreeParams const& treeParams
     ) const;
 
-    MCAPI bool _shouldSkipPosition(::Random& random, ::BlockPos const& pos, int radius) const;
+    MCNAPI bool _shouldSkipPosition(::Random& random, ::BlockPos const& pos, int radius) const;
     // NOLINTEND
 
 public:
@@ -82,7 +82,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos>
+    MCNAPI ::std::optional<::BlockPos>
     $placeCanopy(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams&, ::TreeHelper::TreeParams const& treeParams, ::std::vector<::BlockPos> const&)
         const;
     // NOLINTEND
@@ -90,6 +90,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

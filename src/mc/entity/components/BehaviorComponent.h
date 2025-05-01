@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/bhave/BehaviorData.h"
+#include "mc/world/actor/bhave/BehaviorTreeDefinitionPtr.h"
+
 // auto generated forward declare list
 // clang-format off
-class BehaviorData;
 class BehaviorNode;
-class BehaviorTreeDefinitionPtr;
 // clang-format on
 
 class BehaviorComponent {
@@ -26,20 +28,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BehaviorComponent(::BehaviorComponent&&);
+    MCNAPI BehaviorComponent(::BehaviorComponent&&);
 
-    MCAPI ~BehaviorComponent();
+    MCNAPI ~BehaviorComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BehaviorComponent&&);
+    MCNAPI void* $ctor(::BehaviorComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

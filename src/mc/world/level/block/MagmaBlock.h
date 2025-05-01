@@ -35,7 +35,7 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 146
+    // vIndex: 144
     virtual ::Brightness getEmissiveBrightness(::Block const&) const /*override*/;
 
     // vIndex: 135
@@ -48,7 +48,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addToTickQueue(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI void addToTickQueue(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:
@@ -60,24 +60,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI ::Brightness $getEmissiveBrightness(::Block const&) const;
+    MCNAPI ::Brightness $getEmissiveBrightness(::Block const&) const;
 
-    MCFOLD bool $shouldTickOnSetBlock() const;
+    MCNAPI bool $shouldTickOnSetBlock() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

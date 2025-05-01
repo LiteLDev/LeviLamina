@@ -37,7 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void createRuin(::Dimension& dim, ::Random& random, int x, int z);
+    MCNAPI void createRuin(::Dimension& dim, ::Random& random, int x, int z);
     // NOLINTEND
 
 public:
@@ -49,12 +49,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string_view $getStructureName() const;
+    MCNAPI ::std::string_view $getStructureName() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

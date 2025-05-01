@@ -10,7 +10,7 @@ struct TickingSystemWithInfo;
 namespace MobSuffocationDamageSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo create();
+MCNAPI ::TickingSystemWithInfo create();
 // NOLINTEND
 
 } // namespace MobSuffocationDamageSystem

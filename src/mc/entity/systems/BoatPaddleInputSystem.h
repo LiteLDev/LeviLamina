@@ -24,7 +24,7 @@ struct VehicleInputIntentComponent;
 namespace BoatPaddleInputSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void doPassengerTick(
+MCNAPI void doPassengerTick(
     ::entt::type_list<::Include<::PlayerInputRequestComponent>>,
     ::StrictEntityContext const&                               context,
     ::MoveInputComponent const&                                moveInputComponent,
@@ -38,7 +38,7 @@ MCAPI void doPassengerTick(
         ::VehicleInputIntentComponent> const& vehicleView
 );
 
-MCAPI void doVehicleTick(
+MCNAPI void doVehicleTick(
     ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
     ::VehicleInputIntentComponent const& vehicleInputIntent,
     ::BoatPaddleComponent&               boatPaddle

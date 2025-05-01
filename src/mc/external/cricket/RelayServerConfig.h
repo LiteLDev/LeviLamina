@@ -32,30 +32,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RelayServerConfig();
+    MCNAPI RelayServerConfig();
 
-    MCAPI RelayServerConfig(::cricket::RelayServerConfig const&);
+    MCNAPI RelayServerConfig(::cricket::RelayServerConfig const&);
 
-    MCAPI
+    MCNAPI
     RelayServerConfig(::rtc::SocketAddress const&, ::std::string_view, ::std::string_view, ::cricket::ProtocolType);
 
-    MCAPI ~RelayServerConfig();
+    MCNAPI ~RelayServerConfig();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::cricket::RelayServerConfig const&);
+    MCNAPI void* $ctor(::cricket::RelayServerConfig const&);
 
-    MCAPI void* $ctor(::rtc::SocketAddress const&, ::std::string_view, ::std::string_view, ::cricket::ProtocolType);
+    MCNAPI void* $ctor(::rtc::SocketAddress const&, ::std::string_view, ::std::string_view, ::cricket::ProtocolType);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -13,17 +13,6 @@ public:
 public:
     // prevent constructor by default
     BoneAnimationChannel& operator=(BoneAnimationChannel const&);
+    BoneAnimationChannel(BoneAnimationChannel const&);
     BoneAnimationChannel();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BoneAnimationChannel(::BoneAnimationChannel const&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BoneAnimationChannel const&);
-    // NOLINTEND
 };

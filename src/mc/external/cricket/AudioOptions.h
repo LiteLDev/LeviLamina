@@ -29,23 +29,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AudioOptions();
+    MCNAPI AudioOptions();
 
-    MCAPI ::std::string ToString() const;
+    MCNAPI ::std::string ToString() const;
 
-    MCAPI ~AudioOptions();
+    MCNAPI ~AudioOptions();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

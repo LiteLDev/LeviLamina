@@ -3,18 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/world/actor/DefinitionTrigger.h"
 #include "mc/world/item/components/LegacyTriggerItemComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class BlockPos;
-class DefinitionTrigger;
 class HashedString;
 class ItemStack;
 class OnUseOnItemComponentLegacyFactoryData;
 class Vec3;
-namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class LegacyOnUseOnTriggerItemComponent : public ::LegacyTriggerItemComponent {
@@ -38,9 +38,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LegacyOnUseOnTriggerItemComponent(::OnUseOnItemComponentLegacyFactoryData&& data);
+    MCNAPI explicit LegacyOnUseOnTriggerItemComponent(::OnUseOnItemComponentLegacyFactoryData&& data);
 
-    MCAPI void _useOn(
+    MCNAPI void _useOn(
         bool&              result,
         ::ItemStack const& currentItemStack,
         ::ItemStack&       entity,
@@ -54,13 +54,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OnUseOnItemComponentLegacyFactoryData&& data);
+    MCNAPI void* $ctor(::OnUseOnItemComponentLegacyFactoryData&& data);
     // NOLINTEND
 
 public:
@@ -72,12 +72,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent();
+    MCNAPI void $_initializeComponent();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
-class Vec3;
-struct Tick;
 // clang-format on
 
 class FindCoverGoal : public ::Goal {
@@ -48,7 +48,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool getHidePos(::Vec3& result) const;
+    MCNAPI bool getHidePos(::Vec3& result) const;
     // NOLINTEND
 
 public:
@@ -60,20 +60,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCFOLD bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

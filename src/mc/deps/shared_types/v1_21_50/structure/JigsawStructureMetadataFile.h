@@ -26,15 +26,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JigsawStructureMetadataFile(::SharedTypes::v1_21_50::JigsawStructureMetadataFile&&);
+    MCNAPI JigsawStructureMetadataFile(::SharedTypes::v1_21_50::JigsawStructureMetadataFile&&);
 
-    MCAPI ~JigsawStructureMetadataFile();
+    MCNAPI ~JigsawStructureMetadataFile();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -46,13 +46,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_50::JigsawStructureMetadataFile&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_50::JigsawStructureMetadataFile&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

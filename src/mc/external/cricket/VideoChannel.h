@@ -18,25 +18,25 @@ class VideoChannel {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     VideoChannel(::webrtc::TaskQueueBase*, ::rtc::Thread*, ::webrtc::TaskQueueBase*, ::std::unique_ptr<::cricket::VideoMediaSendChannelInterface>, ::std::unique_ptr<::cricket::VideoMediaReceiveChannelInterface>, ::std::string_view, bool, ::webrtc::CryptoOptions, ::rtc::UniqueRandomIdGenerator*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::webrtc::TaskQueueBase*, ::rtc::Thread*, ::webrtc::TaskQueueBase*, ::std::unique_ptr<::cricket::VideoMediaSendChannelInterface>, ::std::unique_ptr<::cricket::VideoMediaReceiveChannelInterface>, ::std::string_view, bool, ::webrtc::CryptoOptions, ::rtc::UniqueRandomIdGenerator*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForMediaChannelNetworkInterface();
+    MCNAPI static void** $vftableForMediaChannelNetworkInterface();
 
-    MCAPI static void** $vftableForRtpPacketSinkInterface();
+    MCNAPI static void** $vftableForRtpPacketSinkInterface();
 
-    MCAPI static void** $vftableForChannelInterface();
+    MCNAPI static void** $vftableForChannelInterface();
     // NOLINTEND
 };
 

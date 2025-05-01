@@ -49,6 +49,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkb47a00;
     ::ll::UntypedStorage<8, 8>  mUnk127318;
     ::ll::UntypedStorage<8, 16> mUnk6b0c93;
+    ::ll::UntypedStorage<8, 8>  mUnkdfb017;
     // NOLINTEND
 
 public:
@@ -91,16 +92,16 @@ public:
     // vIndex: 45
     virtual ::Bedrock::NonOwnerPointer<::DisplayActorManager> getDisplayActorManager() /*override*/;
 
-    // vIndex: 384
+    // vIndex: 386
     virtual ::PlayerSleepManager const& getPlayerSleepManager() const /*override*/;
 
-    // vIndex: 383
+    // vIndex: 385
     virtual ::PlayerSleepManager& getPlayerSleepManager() /*override*/;
 
-    // vIndex: 309
+    // vIndex: 311
     virtual void notifySubChunkRequestManager(::SubChunkPacket const&) /*override*/;
 
-    // vIndex: 310
+    // vIndex: 312
     virtual ::SubChunkRequestManager* getSubChunkRequestManager() /*override*/;
 
     // vIndex: 222
@@ -109,35 +110,35 @@ public:
     // vIndex: 223
     virtual ::Bedrock::NonOwnerPointer<::SubChunkManager> getSubChunkManager() /*override*/;
 
-    // vIndex: 293
+    // vIndex: 295
     virtual bool canUseSkin(::SerializedSkin const&, ::NetworkIdentifier const&, ::ActorUniqueID const&) const
         /*override*/;
 
-    // vIndex: 294
+    // vIndex: 296
     virtual ::Bedrock::NonOwnerPointer<::TrustedSkinHelper const> getTrustedSkinHelper() const /*override*/;
 
-    // vIndex: 368
+    // vIndex: 370
     virtual ::MultiPlayerLevel* asMultiPlayerLevel() /*override*/;
 
-    // vIndex: 370
+    // vIndex: 372
     virtual ::Bedrock::NonOwnerPointer<::CameraRegistry const> getCameraRegistry() const /*override*/;
 
-    // vIndex: 369
+    // vIndex: 371
     virtual ::Bedrock::NonOwnerPointer<::CameraRegistry> getCameraRegistry() /*override*/;
 
-    // vIndex: 371
+    // vIndex: 373
     virtual ::Bedrock::NonOwnerPointer<::EntitySystems> getCameraSystems() /*override*/;
 
-    // vIndex: 382
+    // vIndex: 384
     virtual ::ArmorTrimUnloader* getArmorTrimUnloader() /*override*/;
 
-    // vIndex: 366
+    // vIndex: 368
     virtual ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> getMapDataManager() /*override*/;
 
-    // vIndex: 379
+    // vIndex: 381
     virtual ::MapDataManager& _getMapDataManager() /*override*/;
 
-    // vIndex: 385
+    // vIndex: 387
     virtual void _subTick() /*override*/;
     // NOLINTEND
 

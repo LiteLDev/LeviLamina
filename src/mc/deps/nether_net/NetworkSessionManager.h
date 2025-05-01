@@ -70,73 +70,73 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void ClearPacketData(::NetherNet::NetworkID remoteId, uint64 connectionId);
+    MCNAPI void ClearPacketData(::NetherNet::NetworkID remoteId, uint64 connectionId);
 
-    MCAPI void CloseInactiveSessionsOnSignalThread(
+    MCNAPI void CloseInactiveSessionsOnSignalThread(
         ::NetherNet::NetworkID remoteID,
         ::std::tuple<
             ::std::vector<::std::unique_ptr<::NetherNet::NetworkSession>>&,
             ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const&> const& list
     );
 
-    MCAPI bool CloseSessionWithReason(
+    MCNAPI bool CloseSessionWithReason(
         ::NetherNet::NetworkID     networkIDRemote,
         uint64                     connectionId,
         ::NetherNet::ESessionError reason
     );
 
-    MCAPI void FilterDeadSessions(
+    MCNAPI void FilterDeadSessions(
         ::NetherNet::NetworkID remoteID,
         ::std::tuple<
             ::std::vector<::std::unique_ptr<::NetherNet::NetworkSession>>&,
             ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const&> const& list
     );
 
-    MCAPI ::NetherNet::NetworkSession* FindOrCreateSpecificSession(
+    MCNAPI ::NetherNet::NetworkSession* FindOrCreateSpecificSession(
         ::NetherNet::NetworkID                                          remoteId,
         uint64                                                          connectionId,
         ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const& sessionsLock
     );
 
-    MCAPI ::std::vector<::std::unique_ptr<::NetherNet::NetworkSession>>& GetCurrentSessions(
+    MCNAPI ::std::vector<::std::unique_ptr<::NetherNet::NetworkSession>>& GetCurrentSessions(
         ::NetherNet::NetworkID                                          remoteID,
         ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const& sessionsLock
     );
 
-    MCAPI bool
+    MCNAPI bool
     GetSessionState(::NetherNet::NetworkID peerId, uint64 connectionId, ::NetherNet::SessionState* pConnectionState);
 
-    MCAPI ::NetherNet::NetworkSession* InitiateOutgoingSession(
+    MCNAPI ::NetherNet::NetworkSession* InitiateOutgoingSession(
         ::NetherNet::NetworkID                                          remoteID,
         ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const& sessionsLock
     );
 
-    MCAPI bool IsPacketAvailable(::NetherNet::NetworkID remoteId, uint64 connectionId, uint* pcbMessageSize);
+    MCNAPI bool IsPacketAvailable(::NetherNet::NetworkID remoteId, uint64 connectionId, uint* pcbMessageSize);
 
-    MCAPI void PeriodicDeadSessionCleanupOnSignalThread();
+    MCNAPI void PeriodicDeadSessionCleanupOnSignalThread();
 
-    MCAPI void ProcessSignal(
+    MCNAPI void ProcessSignal(
         ::NetherNet::NetworkID           remoteID,
         ::NetherNet::ConnectError const& signal,
         ::NetherNet::SignalingChannelId
     ) const;
 
-    MCAPI void ProcessSignal(
+    MCNAPI void ProcessSignal(
         ::NetherNet::NetworkID             remoteID,
         ::NetherNet::ConnectRequest const& signal,
         ::NetherNet::SignalingChannelId    sourceChannel
     );
 
-    MCAPI bool
+    MCNAPI bool
     ReadPacket(::NetherNet::NetworkID remoteId, uint64 connectionId, void* pubDest, uint cbDest, uint* pcbMessageSize);
 
-    MCAPI void
+    MCNAPI void
     RemoteMessageReceived(::NetherNet::NetworkID remoteID, uint64 connectionId, void const* pvData, uint64 cbSize);
 
-    MCAPI ::std::vector<::std::unique_ptr<::NetherNet::NetworkSession>>
+    MCNAPI ::std::vector<::std::unique_ptr<::NetherNet::NetworkSession>>
     RemoveSession(::NetherNet::NetworkID remoteID, uint64 connectionId);
 
-    MCAPI ::NetherNet::ErrorOr<void, ::NetherNet::ESessionError> SendToSignalingChannel(
+    MCNAPI ::NetherNet::ErrorOr<void, ::NetherNet::ESessionError> SendToSignalingChannel(
         ::NetherNet::NetworkID networkIDTo,
         ::std::variant<
             ::NetherNet::ConnectRequest,
@@ -156,7 +156,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

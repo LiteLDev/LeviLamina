@@ -32,7 +32,7 @@ public:
     // vIndex: 19
     virtual void dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual void onRemoved(::BlockSource&) /*override*/;
 
     // vIndex: 38
@@ -42,30 +42,30 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $setContainerChanged(int slot);
+    MCNAPI void $setContainerChanged(int slot);
 
-    MCAPI void $startOpen(::Player& player);
+    MCNAPI void $startOpen(::Player& player);
 
-    MCFOLD void $dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot);
+    MCNAPI void $dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot);
 
-    MCFOLD void $dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
+    MCNAPI void $dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
 
-    MCFOLD void $onRemoved(::BlockSource&);
+    MCNAPI void $onRemoved(::BlockSource&);
 
-    MCFOLD void $initializeContainerContents(::BlockSource& region);
+    MCNAPI void $initializeContainerContents(::BlockSource& region);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForFillingContainer();
+    MCNAPI static void** $vftableForFillingContainer();
 
-    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCNAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
 };

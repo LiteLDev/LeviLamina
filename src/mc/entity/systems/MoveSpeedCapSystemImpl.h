@@ -29,7 +29,7 @@ struct VehicleInputIntentComponent;
 namespace VanillaSystems::MoveSpeedCapSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void tickMoveSpeedCap(
+MCNAPI void tickMoveSpeedCap(
     ::StrictEntityContext&  context,
     ::MoveRequestComponent& moveRequestComponent,
     ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const, ::Optional<::ActorIsImmobileFlagComponent const>>

@@ -157,55 +157,55 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BrushShapeManagerService(::Editor::ServiceProviderCollection& providers);
+    MCNAPI explicit BrushShapeManagerService(::Editor::ServiceProviderCollection& providers);
 
-    MCAPI void _handleBlockChangePayload(::Editor::Network::NativeBrushBlockChangeListPayload const& payload);
+    MCNAPI void _handleBlockChangePayload(::Editor::Network::NativeBrushBlockChangeListPayload const& payload);
 
-    MCAPI void _handleClientResponsePayload(::Editor::Network::NativeBrushClientResponsePayload const& payload);
+    MCNAPI void _handleClientResponsePayload(::Editor::Network::NativeBrushClientResponsePayload const& payload);
 
-    MCAPI void _handlePaintEventPayload(::Editor::Network::NativeBrushPaintEventPayload const& payload);
+    MCNAPI void _handlePaintEventPayload(::Editor::Network::NativeBrushPaintEventPayload const& payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCFOLD ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result<void> $ready();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCAPI ::std::shared_ptr<::Editor::Brush::BrushShape> $getCurrentBrushShape() const;
+    MCNAPI ::std::shared_ptr<::Editor::Brush::BrushShape> $getCurrentBrushShape() const;
 
-    MCAPI ::std::shared_ptr<::CompoundBlockVolume> $getCurrentBrushVolume() const;
+    MCNAPI ::std::shared_ptr<::CompoundBlockVolume> $getCurrentBrushVolume() const;
 
-    MCAPI ::Scripting::Result_deprecated<::CompoundBlockVolume> $switchBrushShape(::std::string const& brushName);
+    MCNAPI ::Scripting::Result_deprecated<::CompoundBlockVolume> $switchBrushShape(::std::string const& brushName);
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::std::shared_ptr<::Editor::Brush::UIElement>>>
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::shared_ptr<::Editor::Brush::UIElement>>>
     $getUIElements(::std::string const& brushName);
 
-    MCAPI ::Scripting::Result_deprecated<bool> $uiElementValueChanged(
+    MCNAPI ::Scripting::Result_deprecated<bool> $uiElementValueChanged(
         ::std::string const&                               elementName,
         ::std::variant<float, bool, ::Vec3, ::std::string> newValue
     );
 
-    MCAPI ::std::vector<::std::shared_ptr<::Editor::Brush::BrushShape>> $getBrushShapeList() const;
+    MCNAPI ::std::vector<::std::shared_ptr<::Editor::Brush::BrushShape>> $getBrushShapeList() const;
 
-    MCAPI void $registerBrushShape(
+    MCNAPI void $registerBrushShape(
         ::std::string const& name,
         ::std::string const& icon,
         ::Scripting::Closure<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>()>
@@ -215,43 +215,43 @@ public:
             getSettingsUI
     );
 
-    MCAPI void $activateBrushTool();
+    MCNAPI void $activateBrushTool();
 
-    MCAPI void $switchBrushPaintMode(::Editor::Brush::BrushPaintMode mode);
+    MCNAPI void $switchBrushPaintMode(::Editor::Brush::BrushPaintMode mode);
 
-    MCAPI void $setBrushShape(::std::vector<::Vec3> const& shapeOffsets);
+    MCNAPI void $setBrushShape(::std::vector<::Vec3> const& shapeOffsets);
 
-    MCAPI void $setBrushShape(::CompoundBlockVolume const& volume);
+    MCNAPI void $setBrushShape(::CompoundBlockVolume const& volume);
 
-    MCAPI void $setBrushMask(::Editor::BlockMask::BlockMaskList const& mask);
+    MCNAPI void $setBrushMask(::Editor::BlockMask::BlockMaskList const& mask);
 
-    MCAPI void $beginPainting(::std::function<void(::Editor::Brush::BrushPaintCompletionState)> fnCallback);
+    MCNAPI void $beginPainting(::std::function<void(::Editor::Brush::BrushPaintCompletionState)> fnCallback);
 
-    MCAPI void $endPainting(bool const cancelled);
+    MCNAPI void $endPainting(bool const cancelled);
 
-    MCAPI void $singlePaint(::std::function<void(::Editor::Brush::BrushPaintCompletionState)> fnCallback);
+    MCNAPI void $singlePaint(::std::function<void(::Editor::Brush::BrushPaintCompletionState)> fnCallback);
 
-    MCAPI void $deactivateBrushTool();
+    MCNAPI void $deactivateBrushTool();
 
-    MCAPI void $setBrushShapeOffset(::Vec3 const& offset);
+    MCNAPI void $setBrushShapeOffset(::Vec3 const& offset);
 
-    MCAPI ::Vec3 $getBrushShapeOffset() const;
+    MCNAPI ::Vec3 $getBrushShapeOffset() const;
 
-    MCAPI void $setTerrainStrength(int const terrainStrength);
+    MCNAPI void $setTerrainStrength(int const terrainStrength);
 
-    MCAPI void $setFlattenHeight(int const flattenHeight);
+    MCNAPI void $setFlattenHeight(int const flattenHeight);
 
-    MCAPI void $setFlattenRadius(int const flattenRadius);
+    MCNAPI void $setFlattenRadius(int const flattenRadius);
 
-    MCAPI void $setBrushShapeVisible(bool const visible);
+    MCNAPI void $setBrushShapeVisible(bool const visible);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
 
-    MCAPI static void** $vftableForBrushShapeManagerServiceProvider();
+    MCNAPI static void** $vftableForBrushShapeManagerServiceProvider();
     // NOLINTEND
 };
 

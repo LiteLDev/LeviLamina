@@ -20,11 +20,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Randomize(::Random& random);
+    MCNAPI explicit Randomize(::Random& random);
 
-    MCAPI bool chanceFloatGreaterThan(float improbability) const;
+    MCNAPI bool chanceFloatGreaterThan(float improbability) const;
 
-    MCAPI ~Randomize();
+    MCNAPI ~Randomize();
     // NOLINTEND
 
 public:
@@ -36,12 +36,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Random& random);
+    MCNAPI void* $ctor(::Random& random);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

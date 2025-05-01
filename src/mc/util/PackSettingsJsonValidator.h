@@ -9,6 +9,6 @@ class PackSettingsJsonValidator {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::JsonValidator::Property getValidator();
+    MCNAPI static ::JsonValidator::Property getValidator();
     // NOLINTEND
 };

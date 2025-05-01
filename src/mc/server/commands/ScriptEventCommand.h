@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandMessage.h"
 
 // auto generated forward declare list
 // clang-format off
-class CommandMessage;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;

@@ -24,19 +24,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddSample(int64, int);
+    MCNAPI void AddSample(int64, int);
 
-    MCAPI explicit EventBasedExponentialMovingAverage(int);
+    MCNAPI explicit EventBasedExponentialMovingAverage(int);
 
-    MCAPI void Reset();
+    MCNAPI void Reset();
 
-    MCAPI void SetHalfTime(int);
+    MCNAPI void SetHalfTime(int);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int);
+    MCNAPI void* $ctor(int);
     // NOLINTEND
 };
 

@@ -76,13 +76,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Result();
+        MCNAPI ~Result();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -105,13 +105,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ExportData();
+        MCNAPI ExportData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
         // NOLINTEND
     };
 
@@ -159,27 +159,27 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void setProgressMessage(::std::string const& message);
+        MCNAPI void setProgressMessage(::std::string const& message);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $clear();
+        MCNAPI void $clear();
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftableForZipProgress();
+        MCNAPI static void** $vftableForZipProgress();
 
-        MCAPI static void** $vftableForEnableNonOwnerReferences();
+        MCNAPI static void** $vftableForEnableNonOwnerReferences();
         // NOLINTEND
     };
 
@@ -272,13 +272,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~EduCloudImportInfo();
+        MCNAPI ~EduCloudImportInfo();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -323,7 +323,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FileArchiver(
+    MCNAPI FileArchiver(
         ::Scheduler&                                                    scheduler,
         ::ILevelListCache&                                              levelListCache,
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&   pathManager,
@@ -335,12 +335,12 @@ public:
         ::std::function<void(::std::string const&)>                     displayMessageFunction
     );
 
-    MCAPI void _clearArchiverState();
+    MCNAPI void _clearArchiverState();
 
-    MCAPI void
+    MCNAPI void
     _copyPackToTemp(::PackInstance const& packInstance, ::Core::Path const& tempPath, ::FileArchiver::Result& result);
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::FileArchiver::Result>> _enqueueExportWorldTasks(
+    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::FileArchiver::Result>> _enqueueExportWorldTasks(
         ::Core::Path const&                                         outputFilePath,
         ::std::string const&                                        worldId,
         bool                                                        exportType,
@@ -351,32 +351,34 @@ public:
         ::std::function<void(::LevelData&)>                         isBundle
     );
 
-    MCAPI void _exportLevelFiles(
+    MCNAPI void _exportLevelFiles(
         ::Core::Path const&                           outputFilePath,
         bool                                          isBundle,
         ::std::shared_ptr<::FileArchiver::ExportData> exportData
     );
 
-    MCAPI void _printLevelResultMessage(::FileArchiver::Result const& result);
+    MCNAPI void _printLevelResultMessage(::FileArchiver::Result const& result);
 
-    MCAPI void _printLevelStartMessage();
+    MCNAPI void _printLevelStartMessage();
 
-    MCAPI ::FileArchiverOutcome _processWorldForTemplate(::std::shared_ptr<::FileArchiver::ExportData> const& exportData
-    );
+    MCNAPI void _printMessage(::std::string const& message);
 
-    MCAPI void _revertPremiumUpgradePacks(::Core::Path const& filePath);
+    MCNAPI ::FileArchiverOutcome
+    _processWorldForTemplate(::std::shared_ptr<::FileArchiver::ExportData> const& exportData);
 
-    MCAPI ::FileArchiver::Result _tryBeginExportLevel(
+    MCNAPI void _revertPremiumUpgradePacks(::Core::Path const& filePath);
+
+    MCNAPI ::FileArchiver::Result _tryBeginExportLevel(
         ::std::string const&      levelId,
         ::Core::Path const&       exportFilePath,
         ::FileArchiver::ShowToast showToast
     );
 
-    MCAPI bool _validatePremiumUpgradePacks(::Core::Path const& filePath);
+    MCNAPI bool _validatePremiumUpgradePacks(::Core::Path const& filePath);
 
-    MCAPI ::std::string copyLevel(::std::string const& worldId);
+    MCNAPI ::std::string copyLevel(::std::string const& worldId);
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::FileArchiver::Result>> exportCurrentEditorLevel(
+    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::FileArchiver::Result>> exportCurrentEditorLevel(
         ::Level*                            level,
         ::Core::Path const&                 preExportConvertedCallback,
         ::std::function<void(::LevelData&)> exportType,
@@ -384,14 +386,14 @@ public:
         ::FileArchiver::ShowToast           toast
     );
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::FileArchiver::Result>> exportCurrentLevel(
+    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::FileArchiver::Result>> exportCurrentLevel(
         ::Level*                   level,
         bool                       exportType,
         ::FileArchiver::ExportType exportFilePath,
         ::Core::Path const&        isBundle
     );
 
-    MCAPI void exportCurrentLevel(
+    MCNAPI void exportCurrentLevel(
         ::Level*                                       level,
         bool                                           exportType,
         ::FileArchiver::ExportType                     exportFilePath,
@@ -399,20 +401,20 @@ public:
         ::std::function<void(::FileArchiver::Result&)> isBundle
     );
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::FileArchiver::Result>>
+    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::FileArchiver::Result>>
     exportPack(::Core::Path const& path, ::Core::Path const& exportFilePath);
 
-    MCAPI void exportPack(
+    MCNAPI void exportPack(
         ::Core::Path const&                            path,
         ::Core::Path const&                            exportFilePath,
         ::std::function<void(::FileArchiver::Result&)> exportCallback
     );
 
-    MCAPI ::FileArchiver::State getCurrentState();
+    MCNAPI ::FileArchiver::State getCurrentState();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> getProgressReporter();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> getProgressReporter();
 
-    MCAPI void setWorldConverter(::std::unique_ptr<::FileArchiver::IWorldConverter> worldConverter);
+    MCNAPI void setWorldConverter(::std::unique_ptr<::FileArchiver::IWorldConverter> worldConverter);
     // NOLINTEND
 
 public:
@@ -436,7 +438,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scheduler&                                                    scheduler,
         ::ILevelListCache&                                              levelListCache,
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&   pathManager,
@@ -452,13 +454,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::FilePickerSettings> $generateFilePickerSettings(
+    MCNAPI ::std::shared_ptr<::FilePickerSettings> $generateFilePickerSettings(
         ::std::vector<::FileArchiver::ExportType> const& types,
         ::std::string const&                             worldId
     ) const;
@@ -467,6 +469,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

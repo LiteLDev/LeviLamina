@@ -8,13 +8,13 @@ class DcSctpMessage {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~DcSctpMessage();
+    MCNAPI ~DcSctpMessage();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

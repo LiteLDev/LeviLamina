@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/game_refs/WeakRef.h"
 
 // auto generated forward declare list
@@ -10,7 +11,6 @@
 class Block;
 class BlockSourceHandle;
 class EntityContext;
-class Vec3;
 // clang-format on
 
 struct ActorGriefingBlockEvent {

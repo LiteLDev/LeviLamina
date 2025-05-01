@@ -48,16 +48,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setArmor(int slot, ::ItemStack const& item);
+    MCNAPI void $setArmor(int slot, ::ItemStack const& item);
 
-    MCAPI void $setOffhandSlot(::ItemStack const& item);
+    MCNAPI void $setOffhandSlot(::ItemStack const& item);
 
-    MCAPI void $setPlayerUIItem(int slot, ::ItemStack const& item);
+    MCNAPI void $setPlayerUIItem(int slot, ::ItemStack const& item);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -12,6 +12,6 @@ class IllagerBeastBlockedComponent {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void onBlocked(::Actor& owner, ::ActorDamageSource const& source, ::Actor& blocker);
+    MCNAPI void onBlocked(::Actor& owner, ::ActorDamageSource const& source, ::Actor& blocker);
     // NOLINTEND
 };

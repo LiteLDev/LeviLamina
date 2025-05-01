@@ -19,6 +19,8 @@ MCAPI ::Scripting::Version const& V1_1_0();
 MCAPI ::Scripting::Version const& V1_2_0();
 
 MCAPI ::Scripting::Version const& V1_3_0();
+
+MCAPI ::Scripting::Version const& V2_0_0();
 // NOLINTEND
 
 } // namespace ScriptModuleMinecraftServerUI::Releases

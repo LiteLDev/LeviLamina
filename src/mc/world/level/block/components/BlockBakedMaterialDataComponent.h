@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace ClientBlockPipeline { struct BakedMaterialMap; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/client/renderer/block/tessellation_pipeline/BakedMaterialMap.h"
 
 struct BlockBakedMaterialDataComponent {
 public:

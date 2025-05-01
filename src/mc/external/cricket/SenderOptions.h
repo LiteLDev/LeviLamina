@@ -12,27 +12,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SenderOptions(::cricket::SenderOptions const&);
+    MCNAPI SenderOptions(::cricket::SenderOptions const&);
 
-    MCAPI SenderOptions(::cricket::SenderOptions&&);
+    MCNAPI SenderOptions(::cricket::SenderOptions&&);
 
-    MCAPI ::cricket::SenderOptions& operator=(::cricket::SenderOptions&&);
+    MCNAPI ::cricket::SenderOptions& operator=(::cricket::SenderOptions&&);
 
-    MCAPI ~SenderOptions();
+    MCNAPI ~SenderOptions();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::SenderOptions const&);
+    MCNAPI void* $ctor(::cricket::SenderOptions const&);
 
-    MCAPI void* $ctor(::cricket::SenderOptions&&);
+    MCNAPI void* $ctor(::cricket::SenderOptions&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

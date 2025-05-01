@@ -8,13 +8,13 @@ class DataChunk {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::dcsctp::DataChunk> Parse(::rtc::ArrayView<uchar const>);
+    MCNAPI static ::std::optional<::dcsctp::DataChunk> Parse(::rtc::ArrayView<uchar const>);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

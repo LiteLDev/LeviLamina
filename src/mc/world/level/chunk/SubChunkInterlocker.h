@@ -2,9 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/threading/SpinLockImpl.h"
+
 // auto generated forward declare list
 // clang-format off
-class SpinLockImpl;
 class SubChunkPos;
 // clang-format on
 
@@ -19,8 +21,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool tryLock3x3xN(::SubChunkPos const& bottom, int top);
+    MCNAPI bool tryLock3x3xN(::SubChunkPos const& bottom, int top);
 
-    MCAPI void unlock3x3xN(::SubChunkPos const& bottom, int top);
+    MCNAPI void unlock3x3xN(::SubChunkPos const& bottom, int top);
     // NOLINTEND
 };

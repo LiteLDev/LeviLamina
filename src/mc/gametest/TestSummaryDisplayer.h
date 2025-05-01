@@ -40,9 +40,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _say(::std::string const& text, ::std::string const& chatColor) const;
+    MCNAPI void _say(::std::string const& text, ::std::string const& chatColor) const;
 
-    MCAPI void _showTestSummaryIfAllDone() const;
+    MCNAPI void _showTestSummaryIfAllDone() const;
     // NOLINTEND
 
 public:
@@ -54,14 +54,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onTestPassed(::gametest::BaseGameTestInstance&);
+    MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance&);
 
-    MCFOLD void $onTestFailed(::gametest::BaseGameTestInstance&);
+    MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

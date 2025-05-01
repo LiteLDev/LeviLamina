@@ -23,33 +23,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Add(::cricket::FeedbackParam const&);
+    MCNAPI void Add(::cricket::FeedbackParam const&);
 
-    MCAPI FeedbackParams();
+    MCNAPI FeedbackParams();
 
-    MCAPI FeedbackParams(::cricket::FeedbackParams const&);
+    MCNAPI FeedbackParams(::cricket::FeedbackParams const&);
 
-    MCAPI bool Has(::cricket::FeedbackParam const&) const;
+    MCNAPI bool Has(::cricket::FeedbackParam const&) const;
 
-    MCAPI bool HasDuplicateEntries() const;
+    MCNAPI bool HasDuplicateEntries() const;
 
-    MCAPI void Intersect(::cricket::FeedbackParams const&);
+    MCNAPI void Intersect(::cricket::FeedbackParams const&);
 
-    MCAPI ~FeedbackParams();
+    MCNAPI ~FeedbackParams();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::cricket::FeedbackParams const&);
+    MCNAPI void* $ctor(::cricket::FeedbackParams const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

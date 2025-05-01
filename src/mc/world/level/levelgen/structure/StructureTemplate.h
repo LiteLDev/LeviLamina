@@ -7,6 +7,7 @@
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/IStructureTemplate.h"
+#include "mc/world/level/levelgen/structure/StructureTemplateData.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,7 +25,6 @@ class StructureAnimationData;
 class StructureBlockPalette;
 class StructureSettings;
 class StructureTelemetryServerData;
-class StructureTemplateData;
 class Vec3;
 namespace br::worldgen { struct StructureTemplateBlockPalette; }
 // clang-format on

@@ -26,13 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VideoPlayoutDelay(::webrtc::TimeDelta, ::webrtc::TimeDelta);
+    MCNAPI VideoPlayoutDelay(::webrtc::TimeDelta, ::webrtc::TimeDelta);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::TimeDelta, ::webrtc::TimeDelta);
+    MCNAPI void* $ctor(::webrtc::TimeDelta, ::webrtc::TimeDelta);
     // NOLINTEND
 };
 

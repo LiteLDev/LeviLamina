@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class ActorDamageSource;
-class HashedString;
 class ItemInstance;
 struct EnchantSlotEnumHasher;
 // clang-format on
@@ -195,7 +197,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Enchant(
+    MCNAPI Enchant(
         ::Enchant::Type            type,
         ::Enchant::Frequency       frequency,
         ::std::string_view         stringId,
@@ -210,11 +212,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Enchant::Slot enchantSlotFromString(::std::string_view str);
+    MCNAPI static ::Enchant::Slot enchantSlotFromString(::std::string_view str);
 
-    MCAPI static void initEnchants();
+    MCNAPI static void initEnchants();
 
-    MCAPI static ::std::string stringFromEnchantSlot(::Enchant::Slot const& enchantSlot);
+    MCNAPI static ::std::string stringFromEnchantSlot(::Enchant::Slot const& enchantSlot);
     // NOLINTEND
 
 public:
@@ -234,7 +236,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Enchant::Type            type,
         ::Enchant::Frequency       frequency,
         ::std::string_view         stringId,
@@ -249,48 +251,48 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isCompatibleWith(::Enchant::Type type) const;
+    MCNAPI bool $isCompatibleWith(::Enchant::Type type) const;
 
-    MCAPI int $getMinCost(int level) const;
+    MCNAPI int $getMinCost(int level) const;
 
-    MCAPI int $getMaxCost(int level) const;
+    MCNAPI int $getMaxCost(int level) const;
 
-    MCFOLD int $getMinLevel() const;
+    MCNAPI int $getMinLevel() const;
 
-    MCFOLD int $getMaxLevel() const;
+    MCNAPI int $getMaxLevel() const;
 
-    MCFOLD int $getDamageProtection(int level, ::ActorDamageSource const& source) const;
+    MCNAPI int $getDamageProtection(int level, ::ActorDamageSource const& source) const;
 
-    MCFOLD float $getAfterBreachArmorFraction(int, float) const;
+    MCNAPI float $getAfterBreachArmorFraction(int, float) const;
 
-    MCFOLD float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
+    MCNAPI float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
 
-    MCFOLD void $doPostAttack(::Actor& attacker, ::Actor& victim, int level) const;
+    MCNAPI void $doPostAttack(::Actor& attacker, ::Actor& victim, int level) const;
 
-    MCFOLD void $doPostItemHurtActor(::Actor&, ::Actor&, int) const;
+    MCNAPI void $doPostItemHurtActor(::Actor&, ::Actor&, int) const;
 
-    MCFOLD void $doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
+    MCNAPI void $doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
 
-    MCFOLD bool $isMeleeDamageEnchant() const;
+    MCNAPI bool $isMeleeDamageEnchant() const;
 
-    MCFOLD bool $isProtectionEnchant() const;
+    MCNAPI bool $isProtectionEnchant() const;
 
-    MCFOLD bool $isTreasureOnly() const;
+    MCNAPI bool $isTreasureOnly() const;
 
-    MCFOLD bool $isDiscoverable() const;
+    MCNAPI bool $isDiscoverable() const;
 
-    MCFOLD bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
+    MCNAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

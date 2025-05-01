@@ -41,7 +41,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void setup(::CommandRegistry& registry, ::IMinecraftApp& app);
+    MCNAPI static void setup(::CommandRegistry& registry, ::IMinecraftApp& app);
     // NOLINTEND
 
 public:
@@ -59,12 +59,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

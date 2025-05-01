@@ -37,13 +37,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _handleScriptingWorldInitializeEvent(
+    MCNAPI bool _handleScriptingWorldInitializeEvent(
         ::ScriptingWorldInitializeEvent const&                                            eventData,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     ) const;
 
-    MCAPI bool _handleWeatherChangedEvent(
+    MCNAPI bool _handleWeatherChangedEvent(
         ::LevelWeatherChangedEvent&                                                       weatherChangedEvent,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
@@ -59,14 +59,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::LevelWeatherChangedEvent& event);
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::LevelWeatherChangedEvent& event);
 
-    MCAPI ::HandlerResult $handleEvent(::ScriptingWorldInitializeEvent const& event);
+    MCNAPI ::HandlerResult $handleEvent(::ScriptingWorldInitializeEvent const& event);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

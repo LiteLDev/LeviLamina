@@ -11,11 +11,13 @@ namespace BlockDescriptorSerializer { struct BlockDescriptorProxy; }
 namespace BlockDescriptorSerializer {
 // functions
 // NOLINTBEGIN
-MCAPI ::BlockDescriptor _validateAndCreateFromString(::std::string const& str);
+MCNAPI ::BlockDescriptor _validateAndCreateFromString(::std::string const& str);
 
-MCAPI void fromProxy(::BlockDescriptor& instance, ::BlockDescriptorSerializer::BlockDescriptorProxy& proxy);
+MCNAPI void fromProxy(::BlockDescriptor& instance, ::BlockDescriptorSerializer::BlockDescriptorProxy& proxy);
 
-MCAPI ::BlockDescriptorSerializer::BlockDescriptorProxy toProxy(::BlockDescriptor const& instance);
+MCNAPI void fromString(::BlockDescriptor& instance, ::std::string const& str);
+
+MCNAPI ::BlockDescriptorSerializer::BlockDescriptorProxy toProxy(::BlockDescriptor const& instance);
 // NOLINTEND
 
 } // namespace BlockDescriptorSerializer

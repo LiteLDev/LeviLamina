@@ -8,24 +8,25 @@ struct SSLCertificateStats {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::rtc::SSLCertificateStats> Copy() const;
+    MCNAPI ::std::unique_ptr<::rtc::SSLCertificateStats> Copy() const;
 
-    MCAPI
+    MCNAPI
     SSLCertificateStats(::std::string&&, ::std::string&&, ::std::string&&, ::std::unique_ptr<::rtc::SSLCertificateStats>);
 
-    MCAPI ~SSLCertificateStats();
+    MCNAPI ~SSLCertificateStats();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string&&, ::std::string&&, ::std::string&&, ::std::unique_ptr<::rtc::SSLCertificateStats>);
+    MCNAPI void*
+    $ctor(::std::string&&, ::std::string&&, ::std::string&&, ::std::unique_ptr<::rtc::SSLCertificateStats>);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

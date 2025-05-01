@@ -27,15 +27,15 @@ namespace BlockSourceVisitor { struct CollisionShape; }
 namespace MoveCollisionSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void addCollisionShapes(
+MCNAPI void addCollisionShapes(
     ::std::vector<::BlockSourceVisitor::CollisionShape> const& tempCollisionShapes,
     ::AABB const&                                              terrainIntersectTestBox,
     ::MoveRequestComponent&                                    request
 );
 
-MCAPI ::TickingSystemWithInfo createCollisionShapesCopySystem();
+MCNAPI ::TickingSystemWithInfo createCollisionShapesCopySystem();
 
-MCAPI void fetchCollisionShapes(
+MCNAPI void fetchCollisionShapes(
     ::StrictEntityContext const&                       entity,
     ::AABBShapeComponent const&                        aabb,
     ::MaxAutoStepComponent const&                      autoStep,
@@ -50,7 +50,7 @@ MCAPI void fetchCollisionShapes(
     ::std::vector<::BlockSourceVisitor::CollisionShape>&                          tempCollisionShapes
 );
 
-MCAPI ::std::vector<::AABB> getFetchBoxSubtraction(::AABB const& newBox, ::AABB const& oldBox);
+MCNAPI ::std::vector<::AABB> getFetchBoxSubtraction(::AABB const& newBox, ::AABB const& oldBox);
 // NOLINTEND
 
 } // namespace MoveCollisionSystem

@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/actor/spawn_category/Type.h"
 #include "mc/world/level/levelgen/v2/generation_step/Type.h"
 #include "mc/world/level/levelgen/v2/terrain_adjustment/Type.h"
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class PoolAliasBinding;
 namespace br::worldgen { class GenerationStub; }
 namespace br::worldgen { class StructureInstance; }
@@ -51,22 +51,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Structure(::br::worldgen::Structure const&);
+    MCNAPI Structure(::br::worldgen::Structure const&);
 
-    MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance> generate(::br::worldgen::GenerationContext& context
+    MCNAPI ::std::shared_ptr<::br::worldgen::StructureInstance> generate(::br::worldgen::GenerationContext& context
     ) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::br::worldgen::Structure const&);
+    MCNAPI void* $ctor(::br::worldgen::Structure const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -78,7 +78,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

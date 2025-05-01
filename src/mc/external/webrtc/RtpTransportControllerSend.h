@@ -18,57 +18,66 @@ namespace webrtc {
 
 class RtpTransportControllerSend {
 public:
+    // RtpTransportControllerSend inner types declare
+    // clang-format off
+    struct LossReport;
+    // clang-format on
+
+    // RtpTransportControllerSend inner types define
+    struct LossReport {};
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::webrtc::BitrateConstraints> ApplyOrLiftRelayCap(bool);
+    MCNAPI ::std::optional<::webrtc::BitrateConstraints> ApplyOrLiftRelayCap(bool);
 
-    MCAPI ::std::optional<bool> GetCongestedStateUpdate() const;
+    MCNAPI ::std::optional<bool> GetCongestedStateUpdate() const;
 
-    MCAPI bool IsRelevantRouteChange(::rtc::NetworkRoute const&, ::rtc::NetworkRoute const&) const;
+    MCNAPI bool IsRelevantRouteChange(::rtc::NetworkRoute const&, ::rtc::NetworkRoute const&) const;
 
-    MCAPI void MaybeCreateControllers();
+    MCNAPI void MaybeCreateControllers();
 
-    MCAPI void NotifyBweOfPacedSentPacket(::webrtc::RtpPacketToSend const&, ::webrtc::PacedPacketInfo const&);
+    MCNAPI void NotifyBweOfPacedSentPacket(::webrtc::RtpPacketToSend const&, ::webrtc::PacedPacketInfo const&);
 
-    MCAPI void PostUpdates(::webrtc::NetworkControlUpdate);
+    MCNAPI void PostUpdates(::webrtc::NetworkControlUpdate);
 
-    MCAPI void ProcessSentPacket(::rtc::SentPacket const&);
+    MCNAPI void ProcessSentPacket(::rtc::SentPacket const&);
 
-    MCAPI void ProcessSentPacketUpdates(::webrtc::NetworkControlUpdate);
+    MCNAPI void ProcessSentPacketUpdates(::webrtc::NetworkControlUpdate);
 
-    MCAPI explicit RtpTransportControllerSend(::webrtc::RtpTransportConfig const&);
+    MCNAPI explicit RtpTransportControllerSend(::webrtc::RtpTransportConfig const&);
 
-    MCAPI void StartProcessPeriodicTasks();
+    MCNAPI void StartProcessPeriodicTasks();
 
-    MCAPI void UpdateBitrateConstraints(::webrtc::BitrateConstraints const&);
+    MCNAPI void UpdateBitrateConstraints(::webrtc::BitrateConstraints const&);
 
-    MCAPI void UpdateCongestedState();
+    MCNAPI void UpdateCongestedState();
 
-    MCAPI void UpdateControlState();
+    MCNAPI void UpdateControlState();
 
-    MCAPI void UpdateControllerWithTimeInterval();
+    MCNAPI void UpdateControllerWithTimeInterval();
 
-    MCAPI void UpdateInitialConstraints(::webrtc::TargetRateConstraints);
+    MCNAPI void UpdateInitialConstraints(::webrtc::TargetRateConstraints);
 
-    MCAPI void UpdateNetworkAvailability();
+    MCNAPI void UpdateNetworkAvailability();
 
-    MCAPI void UpdateStreamsConfig();
+    MCNAPI void UpdateStreamsConfig();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::RtpTransportConfig const&);
+    MCNAPI void* $ctor(::webrtc::RtpTransportConfig const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForRtpTransportControllerSendInterface();
+    MCNAPI static void** $vftableForRtpTransportControllerSendInterface();
 
-    MCAPI static void** $vftableForNetworkLinkRtcpObserver();
+    MCNAPI static void** $vftableForNetworkLinkRtcpObserver();
 
-    MCAPI static void** $vftableForNetworkStateEstimateObserver();
+    MCNAPI static void** $vftableForNetworkStateEstimateObserver();
     // NOLINTEND
 };
 

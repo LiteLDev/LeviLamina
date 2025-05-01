@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/buffer_span.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/util/GridArea.h"
 #include "mc/world/level/chunk/ChunkSourceViewGenerateMode.h"
 #include "mc/world/level/chunk/ChunkState.h"
@@ -28,7 +29,6 @@ class LevelStorage;
 class Random;
 struct ActorUnloadedChunkTransferEntry;
 struct LevelChunkFinalDeleter;
-namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class ChunkSource : public ::Bedrock::EnableNonOwnerReferences {

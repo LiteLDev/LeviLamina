@@ -13,7 +13,7 @@ class RNS2_Windows_Linux_360 {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int Send_Windows_Linux_360NoVDP(
+    MCNAPI static int Send_Windows_Linux_360NoVDP(
         int                            rns2Socket,
         ::RakNet::RNS2_SendParameters* sendParameters,
         char const*                    file,

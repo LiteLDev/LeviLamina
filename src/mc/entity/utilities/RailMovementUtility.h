@@ -53,14 +53,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Vec3 calculateGoldenRailSpeedIncrease(
+    MCNAPI static ::Vec3 calculateGoldenRailSpeedIncrease(
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
         int                        direction,
         ::Vec3                     posDelta
     );
 
-    MCAPI static ::Vec3 calculateMoveVelocity(
+    MCNAPI static ::Vec3 calculateMoveVelocity(
         ::Block const&                        block,
         int                                   railDirection,
         float                                 maxSpeed,
@@ -71,7 +71,7 @@ public:
         ::std::function<bool(::Vec3&)> const& calculateAllPassengersInputFunc
     );
 
-    MCAPI static ::Vec3 calculatePostRailMovementMinecartPosition(
+    MCNAPI static ::Vec3 calculatePostRailMovementMinecartPosition(
         ::IConstBlockSource const& region,
         ::Vec3 const&              originalEntityPosition,
         ::Vec3                     entityPos,
@@ -80,7 +80,7 @@ public:
         ::Vec3&                    posDelta
     );
 
-    MCAPI static bool getPos(::IConstBlockSource const& region, ::Vec3& valueVec, ::Vec3 pos);
+    MCNAPI static bool getPos(::IConstBlockSource const& region, ::Vec3& valueVec, ::Vec3 pos);
     // NOLINTEND
 
 public:

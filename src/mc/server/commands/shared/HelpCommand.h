@@ -39,17 +39,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     getCommandHelp(::CommandRegistry const& registry, ::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-    MCAPI void
+    MCNAPI void
     getHelpPage(::CommandRegistry const& registry, ::CommandOrigin const& origin, ::CommandOutput& output) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void setup(::CommandRegistry& registry);
+    MCNAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 
 public:
@@ -61,12 +61,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

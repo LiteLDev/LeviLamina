@@ -25,7 +25,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getCustomHurtSound(::Mob& mob);
+    MCNAPI static ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getCustomHurtSound(::Mob& mob);
     // NOLINTEND
 
 public:
@@ -37,12 +37,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

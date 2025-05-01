@@ -27,21 +27,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AudioProcessingStats(::webrtc::AudioProcessingStats const&);
+    MCNAPI AudioProcessingStats(::webrtc::AudioProcessingStats const&);
 
-    MCAPI ~AudioProcessingStats();
+    MCNAPI ~AudioProcessingStats();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::AudioProcessingStats const&);
+    MCNAPI void* $ctor(::webrtc::AudioProcessingStats const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/structure/StructureLoadResult.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class CompoundTag;
 class StructureBlockPalette;
 // clang-format on
@@ -35,35 +35,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureTemplateData();
+    MCNAPI StructureTemplateData();
 
-    MCAPI ::StructureLoadResult _parseBlockIndices(::CompoundTag const& structureTag);
+    MCNAPI ::StructureLoadResult _parseBlockIndices(::CompoundTag const& structureTag);
 
-    MCAPI ::StructureLoadResult _parseEntities(::CompoundTag const& structureTag);
+    MCNAPI ::StructureLoadResult _parseEntities(::CompoundTag const& structureTag);
 
-    MCAPI ::StructureLoadResult _parseFormatVersion(::CompoundTag const& tag);
+    MCNAPI ::StructureLoadResult _parseFormatVersion(::CompoundTag const& tag);
 
-    MCAPI ::StructureLoadResult _parsePalettes(::CompoundTag const& structureTag);
+    MCNAPI ::StructureLoadResult _parsePalettes(::CompoundTag const& structureTag);
 
-    MCAPI ::StructureLoadResult _parseSize(::CompoundTag const& tag);
+    MCNAPI ::StructureLoadResult _parseSize(::CompoundTag const& tag);
 
-    MCAPI ::StructureLoadResult _parseStructureWorldOrigin(::CompoundTag const& tag);
+    MCNAPI ::StructureLoadResult _parseStructureWorldOrigin(::CompoundTag const& tag);
 
-    MCAPI void _saveBlockIndices(::CompoundTag& structureTag) const;
+    MCNAPI void _saveBlockIndices(::CompoundTag& structureTag) const;
 
-    MCAPI void _saveEntities(::CompoundTag& structureTag) const;
+    MCNAPI void _saveEntities(::CompoundTag& structureTag) const;
 
-    MCAPI void _savePalettes(::CompoundTag& structureTag) const;
+    MCNAPI void _savePalettes(::CompoundTag& structureTag) const;
 
-    MCAPI ::StructureBlockPalette const* getPalette(::std::string const& name) const;
+    MCNAPI ::StructureBlockPalette const* getPalette(::std::string const& name) const;
 
-    MCAPI bool load(::CompoundTag const& tag);
+    MCNAPI bool load(::CompoundTag const& tag);
 
-    MCAPI ::std::unique_ptr<::CompoundTag> save() const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> save() const;
 
-    MCAPI void setBlockIndices(::std::vector<int> blockIndices);
+    MCNAPI void setBlockIndices(::std::vector<int> blockIndices);
 
-    MCAPI void setExtraBlockIndices(::std::vector<int> extraBlockIndices);
+    MCNAPI void setExtraBlockIndices(::std::vector<int> extraBlockIndices);
     // NOLINTEND
 
 public:
@@ -75,18 +75,18 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

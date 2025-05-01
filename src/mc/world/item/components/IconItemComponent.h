@@ -34,29 +34,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit IconItemComponent(::SharedTypes::v1_20_60::IconItemComponent component);
+    MCNAPI explicit IconItemComponent(::SharedTypes::v1_20_60::IconItemComponent component);
 
-    MCAPI ::std::string const& getDefaultTexture() const;
+    MCNAPI ::std::string const& getDefaultTexture() const;
 
-    MCAPI void setTexturePath(::std::string const& texturePath);
+    MCNAPI void setTexturePath(::std::string const& texturePath);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_60::IconItemComponent component);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_60::IconItemComponent component);
     // NOLINTEND
 
 public:
@@ -68,12 +68,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent();
+    MCNAPI void $_initializeComponent();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

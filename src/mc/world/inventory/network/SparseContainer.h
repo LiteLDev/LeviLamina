@@ -94,7 +94,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onItemNetworkChanged(int slot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+    MCNAPI void _onItemNetworkChanged(int slot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
     // NOLINTEND
 
 public:

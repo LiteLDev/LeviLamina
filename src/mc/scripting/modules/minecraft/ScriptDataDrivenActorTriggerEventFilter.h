@@ -40,21 +40,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptDataDrivenActorTriggerEventFilter(::ScriptModuleMinecraft::EventFilters::
-                                                      ScriptDataDrivenActorTriggerEventFilter const&);
+    MCNAPI ScriptDataDrivenActorTriggerEventFilter(::ScriptModuleMinecraft::EventFilters::
+                                                       ScriptDataDrivenActorTriggerEventFilter const&);
 
-    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter&
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<
         ::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter>
     bind();
 
-    MCAPI static ::Scripting::ClassBindingBuilder<
+    MCNAPI static ::Scripting::ClassBindingBuilder<
         ::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter>
     bindV010();
     // NOLINTEND
@@ -62,25 +62,25 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilterData const& filterData);
+    MCNAPI bool $shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilterData const& filterData);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -22,24 +22,24 @@ class GameTestRunner {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void clearAllTests(
+    MCNAPI static void clearAllTests(
         ::BlockSource&                      region,
         ::gametest::GameTestTicker&         testTicker,
         ::std::vector<::BoundingBox> const& gameTestInstanceBounds
     );
 
-    MCAPI static void clearMarkers(::Level& level);
+    MCNAPI static void clearMarkers(::Level& level);
 
-    MCAPI static ::std::vector<::gametest::GameTestBatch> groupTestsIntoBatches(
+    MCNAPI static ::std::vector<::gametest::GameTestBatch> groupTestsIntoBatches(
         ::gametest::GameTestRegistry&                                             registry,
         ::std::vector<::std::shared_ptr<::gametest::BaseGameTestFunction>> const& testFunctions,
         int                                                                       maxTestsPerBatch
     );
 
-    MCAPI static void
+    MCNAPI static void
     runTest(::std::shared_ptr<::gametest::BaseGameTestInstance> test, ::gametest::GameTestTicker& ticker);
 
-    MCAPI static ::std::unique_ptr<::gametest::BaseGameTestBatchRunner> runTestBatches(
+    MCNAPI static ::std::unique_ptr<::gametest::BaseGameTestBatchRunner> runTestBatches(
         ::Dimension&                                           dimension,
         ::std::unique_ptr<::gametest::IGameTestHelperProvider> helperProvider,
         ::gametest::GameTestTicker&                            testTicker,

@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/input/ScriptingInputButton.h"
 #include "mc/input/ScriptingInputButtonState.h"
-
-// auto generated forward declare list
-// clang-format off
-class WeakEntityRef;
-// clang-format on
 
 struct PlayerScriptInputEvent {
 public:
@@ -23,12 +19,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~PlayerScriptInputEvent();
+    MCNAPI ~PlayerScriptInputEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

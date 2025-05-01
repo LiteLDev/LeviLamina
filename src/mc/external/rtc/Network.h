@@ -48,37 +48,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::rtc::IPAddress GetBestIP() const;
+    MCNAPI ::rtc::IPAddress GetBestIP() const;
 
-    MCAPI ushort GetCost(::webrtc::FieldTrialsView const&) const;
+    MCNAPI ushort GetCost(::webrtc::FieldTrialsView const&) const;
 
-    MCAPI ::webrtc::MdnsResponderInterface* GetMdnsResponder() const;
+    MCNAPI ::webrtc::MdnsResponderInterface* GetMdnsResponder() const;
 
-    MCAPI Network(::std::string_view, ::std::string_view, ::rtc::IPAddress const&, int, ::rtc::AdapterType);
+    MCNAPI Network(::std::string_view, ::std::string_view, ::rtc::IPAddress const&, int, ::rtc::AdapterType);
 
-    MCAPI bool SetIPs(::std::vector<::rtc::InterfaceAddress> const&, bool);
+    MCNAPI bool SetIPs(::std::vector<::rtc::InterfaceAddress> const&, bool);
 
-    MCAPI ::std::string ToString() const;
+    MCNAPI ::std::string ToString() const;
 
-    MCAPI ~Network();
+    MCNAPI ~Network();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::pair<::rtc::AdapterType, bool> GuessAdapterFromNetworkCost(int);
+    MCNAPI static ::std::pair<::rtc::AdapterType, bool> GuessAdapterFromNetworkCost(int);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view, ::std::string_view, ::rtc::IPAddress const&, int, ::rtc::AdapterType);
+    MCNAPI void* $ctor(::std::string_view, ::std::string_view, ::rtc::IPAddress const&, int, ::rtc::AdapterType);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -10,7 +10,7 @@ class ItemStack;
 namespace Achievements {
 // functions
 // NOLINTBEGIN
-MCAPI int getIndexForFroglight(::ItemStack const& item);
+MCNAPI int getIndexForFroglight(::ItemStack const& item);
 // NOLINTEND
 
 } // namespace Achievements

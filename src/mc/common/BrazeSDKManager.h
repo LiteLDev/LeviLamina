@@ -52,20 +52,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $enableBrazeSDK();
+    MCNAPI void $enableBrazeSDK();
 
-    MCFOLD void $disableBrazeSDK();
+    MCNAPI void $disableBrazeSDK();
 
-    MCFOLD void $setBrazeId(::std::string const&);
+    MCNAPI void $setBrazeId(::std::string const&);
 
-    MCFOLD void $_enableBrazeSDK();
+    MCNAPI void $_enableBrazeSDK();
 
-    MCFOLD void $_disableBrazeSDK();
+    MCNAPI void $_disableBrazeSDK();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

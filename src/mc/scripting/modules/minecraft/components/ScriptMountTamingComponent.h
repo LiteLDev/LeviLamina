@@ -31,26 +31,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<bool> isTamed() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> isTamed() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> isTamedToPlayer() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> isTamedToPlayer() const;
 
-    MCAPI ::Scripting::Result<void> setTamed(bool showParticles) const;
+    MCNAPI ::Scripting::Result<void> setTamed(bool showParticles) const;
 
-    MCAPI ::Scripting::Result_deprecated<bool>
+    MCNAPI ::Scripting::Result_deprecated<bool>
     setTamedToPlayer(bool showParticles, ::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer) const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
     tamedToPlayer() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> tamedToPlayerId() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> tamedToPlayerId() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptMountTamingComponent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptMountTamingComponent>
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
@@ -69,7 +69,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

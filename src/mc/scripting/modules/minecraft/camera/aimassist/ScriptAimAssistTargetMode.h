@@ -12,7 +12,7 @@ class ScriptAimAssistTargetMode {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::CameraAimAssist::TargetMode> bind();
+    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::CameraAimAssist::TargetMode> bind();
     // NOLINTEND
 };
 

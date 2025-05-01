@@ -21,7 +21,7 @@ class ScriptNpcComponent : public ::ScriptModuleMinecraft::ScriptActorComponent 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
+    // vIndex: 3
     virtual bool _isValid() const /*override*/;
 
     // vIndex: 0
@@ -31,24 +31,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<::std::string> getDefaultScene() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getDefaultScene() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getName() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getName() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getSkinIndex() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getSkinIndex() const;
 
-    MCAPI ::Scripting::Result<void> setDefaultScene(::std::string sceneId);
+    MCNAPI ::Scripting::Result<void> setDefaultScene(::std::string sceneId);
 
-    MCAPI ::Scripting::Result<void> setName(::std::string name);
+    MCNAPI ::Scripting::Result<void> setName(::std::string name);
 
-    MCAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::ArgumentOutOfBoundsError>
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::ArgumentOutOfBoundsError>
     setSkinIndex(int skinIndex);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptNpcComponent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptNpcComponent>
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
@@ -67,13 +67,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isValid() const;
+    MCNAPI bool $_isValid() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

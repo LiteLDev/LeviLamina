@@ -49,7 +49,7 @@ struct VehicleInputIntentComponent;
 namespace ActorMobilityUtils {
 // functions
 // NOLINTBEGIN
-MCAPI bool canJump(
+MCNAPI bool canJump(
     ::ActorDataFlagComponent const&     actorData,
     ::IConstBlockSource const&          region,
     ::StateVectorComponent const&       stateVector,
@@ -57,7 +57,7 @@ MCAPI bool canJump(
     ::GetCollisionShapeInterface const& collisionShape
 );
 
-MCAPI void endJump(
+MCNAPI void endJump(
     ::StrictEntityContext const&      context,
     ::StateVectorComponent const&     stateVectorComponent,
     ::ActorDataJumpDurationComponent& actorDataJumpDurationComponent,
@@ -69,7 +69,7 @@ MCAPI void endJump(
         modifier
 );
 
-MCAPI float getBrightness(
+MCNAPI float getBrightness(
     ::StrictEntityContext const&                                        context,
     float                                                               region,
     ::IConstBlockSource const&                                          aabbShapeComponent,
@@ -80,7 +80,7 @@ MCAPI float getBrightness(
     ::ViewT<::StrictEntityContext, ::Include<::LavaSlimeFlagComponent>> alpha
 );
 
-MCAPI bool isImmobile(
+MCNAPI bool isImmobile(
     ::StrictEntityContext const& context,
     ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const, ::Optional<::ActorIsImmobileFlagComponent const>>*
         actorView,
@@ -99,21 +99,21 @@ MCAPI bool isImmobile(
     ::ViewT<::StrictEntityContext, ::PlayerIsSleepingFlagComponent const, ::PlayerComponent const>* playerView
 );
 
-MCAPI bool
+MCNAPI bool
 isInLava(::IConstBlockSource const& region, ::AABBShapeComponent const& aabb, ::SubBBsComponent const& subBBs);
 
-MCAPI bool isUnderLiquid(
+MCNAPI bool isUnderLiquid(
     ::Vec3 const&              actorPos,
     ::Vec3 const&              actorHeadPos,
     ::IConstBlockSource const& region,
     ::MaterialType             blockType
 );
 
-MCAPI bool onHoverableBlock(::IConstBlockSource const& region, ::Vec3 const& pos, ::AABB const& aabb);
+MCNAPI bool onHoverableBlock(::IConstBlockSource const& region, ::Vec3 const& pos, ::AABB const& aabb);
 
-MCAPI bool shouldApplyLava(::IConstBlockSource const& region, ::EntityContext const& entity);
+MCNAPI bool shouldApplyLava(::IConstBlockSource const& region, ::EntityContext const& entity);
 
-MCAPI void startSpinAttack(::EntityContext& entity, int riptideLevel);
+MCNAPI void startSpinAttack(::EntityContext& entity, int riptideLevel);
 // NOLINTEND
 
 } // namespace ActorMobilityUtils

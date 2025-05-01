@@ -53,32 +53,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void ConsumePadding(::rtc::ByteBufferReader*) const;
+    MCNAPI void ConsumePadding(::rtc::ByteBufferReader*) const;
 
-    MCAPI StunAttribute(ushort, ushort);
+    MCNAPI StunAttribute(ushort, ushort);
 
-    MCAPI void WritePadding(::rtc::ByteBufferWriter*) const;
+    MCNAPI void WritePadding(::rtc::ByteBufferWriter*) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::cricket::StunAttribute*
+    MCNAPI static ::cricket::StunAttribute*
     Create(::cricket::StunAttributeValueType, ushort, ushort, ::cricket::StunMessage*);
 
-    MCAPI static ::std::unique_ptr<::cricket::StunErrorCodeAttribute> CreateErrorCode();
+    MCNAPI static ::std::unique_ptr<::cricket::StunErrorCodeAttribute> CreateErrorCode();
 
-    MCAPI static ::std::unique_ptr<::cricket::StunUInt16ListAttribute> CreateUInt16ListAttribute(ushort);
+    MCNAPI static ::std::unique_ptr<::cricket::StunUInt16ListAttribute> CreateUInt16ListAttribute(ushort);
 
-    MCAPI static ::std::unique_ptr<::cricket::StunUInt32Attribute> CreateUInt32(ushort);
+    MCNAPI static ::std::unique_ptr<::cricket::StunUInt32Attribute> CreateUInt32(ushort);
 
-    MCAPI static ::std::unique_ptr<::cricket::StunUInt16ListAttribute> CreateUnknownAttributes();
+    MCNAPI static ::std::unique_ptr<::cricket::StunUInt16ListAttribute> CreateUnknownAttributes();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(ushort, ushort);
+    MCNAPI void* $ctor(ushort, ushort);
     // NOLINTEND
 
 public:
@@ -96,7 +96,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

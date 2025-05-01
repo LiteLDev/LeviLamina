@@ -9,12 +9,12 @@ struct ItemStopUseEvent : public ::ItemChargeEvent {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ItemStopUseEvent();
+    MCNAPI ~ItemStopUseEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

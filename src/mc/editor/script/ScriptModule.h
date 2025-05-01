@@ -24,26 +24,26 @@ namespace Scripting { class WeakLifetimeScope; }
 namespace Editor::ScriptModule {
 // functions
 // NOLINTBEGIN
-MCAPI ::Scripting::EnumBindingBuilder<::Editor::Axis, ::Editor::Axis> bindAxisEnums();
+MCNAPI ::Scripting::EnumBindingBuilder<::Editor::Axis, ::Editor::Axis> bindAxisEnums();
 
-MCAPI ::Scripting::EnumBindingBuilder<::Editor::Plane, ::Editor::Plane> bindPlaneEnums();
+MCNAPI ::Scripting::EnumBindingBuilder<::Editor::Plane, ::Editor::Plane> bindPlaneEnums();
 
-MCAPI ::Scripting::EnumBindingBuilder<
+MCNAPI ::Scripting::EnumBindingBuilder<
     ::Editor::ScriptModule::ScriptBlockPaletteItemType,
     ::Editor::ScriptModule::ScriptBlockPaletteItemType>
 bindScriptBlockPaletteItemType();
 
-MCAPI ::Scripting::InterfaceBindingBuilder<::Editor::Input::BindingInfo> bindScriptInputBindingInfo();
+MCNAPI ::Scripting::InterfaceBindingBuilder<::Editor::Input::BindingInfo> bindScriptInputBindingInfo();
 
-MCAPI ::Scripting::EnumBindingBuilder<::Editor::Input::Modifier, ::Editor::Input::Modifier> bindScriptInputModifier();
+MCNAPI ::Scripting::EnumBindingBuilder<::Editor::Input::Modifier, ::Editor::Input::Modifier> bindScriptInputModifier();
 
-MCAPI ::Scripting::EnumBindingBuilder<::Editor::Input::KeyInputType, ::Editor::Input::KeyInputType>
+MCNAPI ::Scripting::EnumBindingBuilder<::Editor::Input::KeyInputType, ::Editor::Input::KeyInputType>
 bindScriptKeyInputType();
 
-MCAPI ::Scripting::EnumBindingBuilder<::Editor::Input::MouseActionCategory, ::Editor::Input::MouseActionCategory>
+MCNAPI ::Scripting::EnumBindingBuilder<::Editor::Input::MouseActionCategory, ::Editor::Input::MouseActionCategory>
 bindScriptMouseActionCategory();
 
-MCAPI ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptBlockPalette>
+MCNAPI ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptBlockPalette>
 convertServicePaletteToScriptPalette(
     ::Editor::EditorBlockPalette const&   servicePalette,
     ::Scripting::WeakLifetimeScope const& scope

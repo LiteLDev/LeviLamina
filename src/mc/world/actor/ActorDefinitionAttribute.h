@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct FloatRange;
-// clang-format on
+// auto generated inclusion list
+#include "mc/util/FloatRange.h"
 
 struct ActorDefinitionAttribute {
 public:
@@ -20,12 +18,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ActorDefinitionAttribute();
+    MCNAPI ~ActorDefinitionAttribute();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

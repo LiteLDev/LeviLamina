@@ -28,35 +28,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RtpExtension();
+    MCNAPI RtpExtension();
 
-    MCAPI RtpExtension(::std::string_view, int);
+    MCNAPI RtpExtension(::std::string_view, int);
 
-    MCAPI RtpExtension(::std::string_view, int, bool);
+    MCNAPI RtpExtension(::std::string_view, int, bool);
 
-    MCAPI ::std::string ToString() const;
+    MCNAPI ::std::string ToString() const;
 
-    MCAPI ::webrtc::RtpExtension& operator=(::webrtc::RtpExtension const&);
+    MCNAPI ::webrtc::RtpExtension& operator=(::webrtc::RtpExtension const&);
 
-    MCAPI ~RtpExtension();
+    MCNAPI ~RtpExtension();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::webrtc::RtpExtension> const
+    MCNAPI static ::std::vector<::webrtc::RtpExtension> const
     DeduplicateHeaderExtensions(::std::vector<::webrtc::RtpExtension> const&, ::webrtc::RtpExtension::Filter);
 
-    MCAPI static ::webrtc::RtpExtension const* FindHeaderExtensionByUri(
+    MCNAPI static ::webrtc::RtpExtension const* FindHeaderExtensionByUri(
         ::std::vector<::webrtc::RtpExtension> const&,
         ::std::string_view,
         ::webrtc::RtpExtension::Filter
     );
 
-    MCAPI static ::webrtc::RtpExtension const*
+    MCNAPI static ::webrtc::RtpExtension const*
     FindHeaderExtensionByUriAndEncryption(::std::vector<::webrtc::RtpExtension> const&, ::std::string_view, bool);
 
-    MCAPI static bool IsEncryptionSupported(::std::string_view);
+    MCNAPI static bool IsEncryptionSupported(::std::string_view);
     // NOLINTEND
 
 public:
@@ -88,17 +88,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::std::string_view, int);
+    MCNAPI void* $ctor(::std::string_view, int);
 
-    MCAPI void* $ctor(::std::string_view, int, bool);
+    MCNAPI void* $ctor(::std::string_view, int, bool);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

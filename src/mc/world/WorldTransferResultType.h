@@ -10,7 +10,7 @@ namespace cereal { struct ReflectionCtx; }
 namespace WorldTransferResultType {
 // functions
 // NOLINTBEGIN
-MCAPI void bindType(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindType(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
 } // namespace WorldTransferResultType

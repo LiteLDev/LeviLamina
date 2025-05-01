@@ -26,6 +26,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void postProcess(::LevelChunk& levelChunk, ::BlockSource& region, ::ChunkPos const& chunkPos);
+    MCNAPI void postProcess(::LevelChunk& levelChunk, ::BlockSource& region, ::ChunkPos const& chunkPos);
     // NOLINTEND
 };

@@ -27,9 +27,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void WriteEventData(::Social::Events::Event& event) const;
+    MCNAPI void WriteEventData(::Social::Events::Event& event) const;
 
-    MCAPI ~PacketViolationDetectedTelemetryData();
+    MCNAPI ~PacketViolationDetectedTelemetryData();
     // NOLINTEND
 
 public:
@@ -41,6 +41,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

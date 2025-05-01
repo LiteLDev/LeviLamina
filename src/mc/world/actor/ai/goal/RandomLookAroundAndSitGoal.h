@@ -4,11 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/RandomLookAroundGoal.h"
-
-// auto generated forward declare list
-// clang-format off
-struct Tick;
-// clang-format on
+#include "mc/world/level/Tick.h"
 
 class RandomLookAroundAndSitGoal : public ::RandomLookAroundGoal {
 public:
@@ -57,22 +53,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

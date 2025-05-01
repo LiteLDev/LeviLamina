@@ -108,75 +108,76 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RakWebSocket(::std::unique_ptr<::TcpProxy> proxy, bool isServer);
+    MCNAPI RakWebSocket(::std::unique_ptr<::TcpProxy> proxy, bool isServer);
 
-    MCAPI void _close(::CloseStatusCode code);
+    MCNAPI void _close(::CloseStatusCode code);
 
-    MCAPI void _createWebSocketKey();
+    MCNAPI void _createWebSocketKey();
 
-    MCAPI void _fail(::std::string const& error, ::CloseStatusCode code);
+    MCNAPI void _fail(::std::string const& error, ::CloseStatusCode code);
 
-    MCAPI ::std::string _generateBase64SHA1Key(::std::string const& key);
+    MCNAPI ::std::string _generateBase64SHA1Key(::std::string const& key);
 
-    MCAPI void _processClosingHandshake(bool notifyHandler);
+    MCNAPI void _processClosingHandshake(bool notifyHandler);
 
-    MCAPI void _processDataFrames(::RakNet::BitStream& newIncoming);
+    MCNAPI void _processDataFrames(::RakNet::BitStream& newIncoming);
 
-    MCAPI bool _processPacket(::std::function<void(::RakNet::BitStream&)> const& processStep, bool acceptNewConnection);
+    MCNAPI bool
+    _processPacket(::std::function<void(::RakNet::BitStream&)> const& processStep, bool acceptNewConnection);
 
-    MCAPI void _reset();
+    MCNAPI void _reset();
 
-    MCAPI bool _sendControlFrame(uchar const* payload, uint64 size, ::OpCode opCode);
+    MCNAPI bool _sendControlFrame(uchar const* payload, uint64 size, ::OpCode opCode);
 
-    MCAPI bool _sendDataFrame(uchar const* payload, uint size, ::OpCode opCode, bool isFinalFragment);
+    MCNAPI bool _sendDataFrame(uchar const* payload, uint size, ::OpCode opCode, bool isFinalFragment);
 
-    MCAPI bool _sendNonControlFrame(uchar const* payload, uint64 size, ::OpCode opCode);
+    MCNAPI bool _sendNonControlFrame(uchar const* payload, uint64 size, ::OpCode opCode);
 
-    MCAPI void
+    MCNAPI void
     _splitWebSocketURI(::std::string const& uri, ::std::string& scheme, ::std::string& host, ::std::string& path);
 
-    MCAPI void _subProcessHttpResponse(::RakNet::BitStream& newIncoming);
+    MCNAPI void _subProcessHttpResponse(::RakNet::BitStream& newIncoming);
 
-    MCAPI void _validateFields();
+    MCNAPI void _validateFields();
 
-    MCAPI bool _validateWebSocketURI();
+    MCNAPI bool _validateWebSocketURI();
 
-    MCAPI bool send(::std::string const& message);
+    MCNAPI bool send(::std::string const& message);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::TcpProxy> proxy, bool isServer);
+    MCNAPI void* $ctor(::std::unique_ptr<::TcpProxy> proxy, bool isServer);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::WSConnectionResult $connect(::std::string const& uri, ::std::vector<::std::string> const& subProtocols);
+    MCNAPI ::WSConnectionResult $connect(::std::string const& uri, ::std::vector<::std::string> const& subProtocols);
 
-    MCAPI ::WSConnectionResult $connect(::std::string const& uri);
+    MCNAPI ::WSConnectionResult $connect(::std::string const& uri);
 
-    MCAPI bool $isReady() const;
+    MCNAPI bool $isReady() const;
 
-    MCAPI void $setOnMessageReceivedHandler(::std::function<void(::RakWebSocketDataFrame const&)> const& handler);
+    MCNAPI void $setOnMessageReceivedHandler(::std::function<void(::RakWebSocketDataFrame const&)> const& handler);
 
-    MCAPI void $setOnCloseHandler(::std::function<void(::CloseStatusCode, ::std::string const&)> const& handler);
+    MCNAPI void $setOnCloseHandler(::std::function<void(::CloseStatusCode, ::std::string const&)> const& handler);
 
-    MCAPI void $setOnConnectedHandler(::std::function<void(::std::string const&)> const& handler);
+    MCNAPI void $setOnConnectedHandler(::std::function<void(::std::string const&)> const& handler);
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

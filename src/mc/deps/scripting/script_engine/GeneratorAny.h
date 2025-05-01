@@ -39,27 +39,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GeneratorAny(::Scripting::GeneratorAny const& rhs);
+    MCNAPI GeneratorAny(::Scripting::GeneratorAny const& rhs);
 
-    MCAPI GeneratorAny(
+    MCNAPI GeneratorAny(
         ::Scripting::IRuntime*                                                  runtime,
         ::Scripting::ContextId                                                  contextId,
         ::Scripting::WeakLifetimeScope                                          scope,
         ::Scripting::StrongTypedObjectHandle<::Scripting::GeneratorType> const& generatorHandle
     );
 
-    MCAPI ::Scripting::ResultAny
+    MCNAPI ::Scripting::ResultAny
     nextGeneric(::entt::meta_any& argAny, ::entt::meta_type const& expectedReturnType) const;
 
-    MCFOLD ::Scripting::GeneratorAny& operator=(::Scripting::GeneratorAny&& rhs);
+    MCNAPI ::Scripting::GeneratorAny& operator=(::Scripting::GeneratorAny&& rhs);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::Scripting::GeneratorAny const& rhs);
+    MCNAPI void* $ctor(::Scripting::GeneratorAny const& rhs);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::IRuntime*                                                  runtime,
         ::Scripting::ContextId                                                  contextId,
         ::Scripting::WeakLifetimeScope                                          scope,
@@ -70,13 +70,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

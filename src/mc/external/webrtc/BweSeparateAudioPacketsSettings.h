@@ -14,9 +14,9 @@ struct BweSeparateAudioPacketsSettings {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BweSeparateAudioPacketsSettings(::webrtc::FieldTrialsView const*);
+    MCNAPI explicit BweSeparateAudioPacketsSettings(::webrtc::FieldTrialsView const*);
 
-    MCAPI ::std::unique_ptr<::webrtc::StructParametersParser> Parser();
+    MCNAPI ::std::unique_ptr<::webrtc::StructParametersParser> Parser();
     // NOLINTEND
 
 public:
@@ -28,7 +28,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const*);
     // NOLINTEND
 };
 

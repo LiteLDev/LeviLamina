@@ -20,16 +20,16 @@ struct TickingSystemWithInfo;
 namespace SneakMovementSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo create();
+MCNAPI ::TickingSystemWithInfo create();
 
-MCAPI bool storeSneakStateAndReturnDoSneakMovement(
+MCNAPI bool storeSneakStateAndReturnDoSneakMovement(
     ::ActorDataFlagComponent const&           actorData,
     ::Optional<::MoveInputComponent const>    moveInputComponent,
     ::Optional<::OnGroundFlagComponent const> onGround,
     ::MoveRequestComponent&                   moveRequest
 );
 
-MCAPI void tickSneakMovementSystem(
+MCNAPI void tickSneakMovementSystem(
     ::ActorDataFlagComponent const&           actorData,
     ::AABBShapeComponent const&               aabb,
     ::MaxAutoStepComponent const&             maxAutoStep,

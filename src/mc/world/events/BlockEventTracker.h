@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/BlockChangedEventTarget.h"
 #include "mc/world/level/BlockSourceListener.h"
 
@@ -13,7 +14,6 @@ class Block;
 class BlockPos;
 class BlockSource;
 struct ActorBlockSyncMessage;
-namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class BlockEventTracker : public ::BlockSourceListener {

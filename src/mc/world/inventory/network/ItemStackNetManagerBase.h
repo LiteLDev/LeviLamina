@@ -84,21 +84,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemStackNetManagerBase(::Player& player, bool isEnabled, bool isClientSide);
+    MCNAPI ItemStackNetManagerBase(::Player& player, bool isEnabled, bool isClientSide);
 
-    MCAPI bool _isRequestActionAllowed(::ItemStackRequestAction const& requestAction);
+    MCNAPI bool _isRequestActionAllowed(::ItemStackRequestAction const& requestAction);
 
-    MCAPI void _pushScreen(::ContainerScreenContext screenContext);
+    MCNAPI void _pushScreen(::ContainerScreenContext screenContext);
 
-    MCAPI ::ContainerScreenContext const& getScreenContext() const;
+    MCNAPI ::ContainerScreenContext const& getScreenContext() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::gsl::final_action<::std::function<void()>> _tryBeginClientLegacyTransactionRequest(::Player* player);
+    MCNAPI static ::gsl::final_action<::std::function<void()>> _tryBeginClientLegacyTransactionRequest(::Player* player
+    );
 
-    MCAPI static bool setPlayerContainer(
+    MCNAPI static bool setPlayerContainer(
         ::Player&                                        player,
         ::SharedTypes::Legacy::ContainerType             containerType,
         int                                              slot,
@@ -111,42 +112,42 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player, bool isEnabled, bool isClientSide);
+    MCNAPI void* $ctor(::Player& player, bool isEnabled, bool isClientSide);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isEnabled() const;
+    MCNAPI bool $isEnabled() const;
 
-    MCFOLD bool $retainSetItemStackNetIdVariant() const;
+    MCNAPI bool $retainSetItemStackNetIdVariant() const;
 
-    MCAPI ::gsl::final_action<::std::function<void()>> $_tryBeginClientLegacyTransactionRequest();
+    MCNAPI ::gsl::final_action<::std::function<void()>> $_tryBeginClientLegacyTransactionRequest();
 
-    MCFOLD void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
+    MCNAPI void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
 
-    MCAPI void $onContainerScreenClose();
+    MCNAPI void $onContainerScreenClose();
 
-    MCFOLD ::SparseContainer* $initOpenContainer(::BlockSource&, ::FullContainerName const&, ::ContainerWeakRef const&);
+    MCNAPI ::SparseContainer* $initOpenContainer(::BlockSource&, ::FullContainerName const&, ::ContainerWeakRef const&);
 
-    MCFOLD void $_addLegacyTransactionRequestSetItemSlot(
+    MCNAPI void $_addLegacyTransactionRequestSetItemSlot(
         ::ItemStackNetManagerScreen&,
         ::SharedTypes::Legacy::ContainerType containerType,
         int                                  slot
     );
 
-    MCFOLD void $_initScreen(::ItemStackNetManagerScreen&);
+    MCNAPI void $_initScreen(::ItemStackNetManagerScreen&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

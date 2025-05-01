@@ -11,7 +11,7 @@ struct BlockPosTrackerComponent;
 namespace BlockPosTrackerSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void _tickBlockPosTrackerComponent(::Actor& actor, ::BlockPosTrackerComponent& blockPosTrackerComponent);
+MCNAPI void _tickBlockPosTrackerComponent(::Actor& actor, ::BlockPosTrackerComponent& blockPosTrackerComponent);
 // NOLINTEND
 
 } // namespace BlockPosTrackerSystem

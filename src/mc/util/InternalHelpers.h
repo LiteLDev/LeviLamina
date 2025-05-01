@@ -8,7 +8,7 @@
 namespace InternalHelpers {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string toString(::MovePredictionType type);
+MCNAPI ::std::string toString(::MovePredictionType type);
 // NOLINTEND
 
 // static variables

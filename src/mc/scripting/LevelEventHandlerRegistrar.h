@@ -17,20 +17,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LevelEventHandlerRegistrar(::ServerLevel& level);
+    MCNAPI explicit LevelEventHandlerRegistrar(::ServerLevel& level);
 
-    MCAPI ~LevelEventHandlerRegistrar();
+    MCNAPI ~LevelEventHandlerRegistrar();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ServerLevel& level);
+    MCNAPI void* $ctor(::ServerLevel& level);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

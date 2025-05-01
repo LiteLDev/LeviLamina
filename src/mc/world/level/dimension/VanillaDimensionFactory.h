@@ -15,7 +15,7 @@ class Scheduler;
 namespace VanillaDimensionFactory {
 // functions
 // NOLINTBEGIN
-MCAPI void registerDimensionTypes(::OwnerPtrFactory<::Dimension, ::ILevel&, ::Scheduler&>& dimensionFactory);
+MCNAPI void registerDimensionTypes(::OwnerPtrFactory<::Dimension, ::ILevel&, ::Scheduler&>& dimensionFactory);
 // NOLINTEND
 
 } // namespace VanillaDimensionFactory

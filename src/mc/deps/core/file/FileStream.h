@@ -33,15 +33,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FileStream(::Core::Path const& filename, int openMode);
+    MCNAPI FileStream(::Core::Path const& filename, int openMode);
 
-    MCAPI void open(::Core::Path const& filename, int om);
+    MCNAPI void open(::Core::Path const& filename, int om);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::Path const& filename, int openMode);
+    MCNAPI void* $ctor(::Core::Path const& filename, int openMode);
     // NOLINTEND
 
 public:
@@ -53,7 +53,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

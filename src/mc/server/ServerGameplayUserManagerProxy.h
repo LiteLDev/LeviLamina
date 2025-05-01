@@ -35,15 +35,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::std::string>
+    MCNAPI ::std::optional<::std::string>
     $validatePlayerName(::std::string const& playerName, ::GameplayUserManager const& gameplayUserManager) const;
 
-    MCFOLD bool $shouldGeneratePlayerIndex() const;
+    MCNAPI bool $shouldGeneratePlayerIndex() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

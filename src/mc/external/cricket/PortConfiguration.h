@@ -18,22 +18,22 @@ struct PortConfiguration {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddRelay(::cricket::RelayServerConfig const&);
+    MCNAPI void AddRelay(::cricket::RelayServerConfig const&);
 
-    MCAPI ::std::set<::rtc::SocketAddress> GetRelayServerAddresses(::cricket::ProtocolType) const;
+    MCNAPI ::std::set<::rtc::SocketAddress> GetRelayServerAddresses(::cricket::ProtocolType) const;
 
-    MCAPI
+    MCNAPI
     PortConfiguration(::std::set<::rtc::SocketAddress> const&, ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const&, ::std::string_view, ::std::string_view, ::webrtc::FieldTrialsView const*);
 
-    MCAPI ::std::set<::rtc::SocketAddress> StunServers();
+    MCNAPI ::std::set<::rtc::SocketAddress> StunServers();
 
-    MCAPI bool SupportsProtocol(::cricket::RelayServerConfig const&, ::cricket::ProtocolType) const;
+    MCNAPI bool SupportsProtocol(::cricket::RelayServerConfig const&, ::cricket::ProtocolType) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::set<::rtc::SocketAddress> const&, ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const&, ::std::string_view, ::std::string_view, ::webrtc::FieldTrialsView const*);
     // NOLINTEND
 };

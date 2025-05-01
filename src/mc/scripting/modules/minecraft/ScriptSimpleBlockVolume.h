@@ -37,37 +37,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSimpleBlockVolume();
+    MCNAPI ScriptSimpleBlockVolume();
 
-    MCAPI ScriptSimpleBlockVolume(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& rhs);
+    MCNAPI ScriptSimpleBlockVolume(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& rhs);
 
-    MCAPI ScriptSimpleBlockVolume(::Vec3 const& from, ::Vec3 const& to);
+    MCNAPI ScriptSimpleBlockVolume(::Vec3 const& from, ::Vec3 const& to);
 
-    MCAPI bool doesLocationTouchFaces(::Vec3 const& pos);
+    MCNAPI bool doesLocationTouchFaces(::Vec3 const& pos);
 
-    MCAPI bool doesVolumeTouchFaces(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& other);
+    MCNAPI bool doesVolumeTouchFaces(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& other);
 
-    MCAPI ::Vec3 getFrom() const;
+    MCNAPI ::Vec3 getFrom() const;
 
-    MCAPI ::Vec3 getTo() const;
+    MCNAPI ::Vec3 getTo() const;
 
-    MCAPI ::SimpleBlockVolume::IntersectionResult
+    MCNAPI ::SimpleBlockVolume::IntersectionResult
     intersects(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& other);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptSimpleBlockVolume&
+    MCNAPI ::ScriptModuleMinecraft::ScriptSimpleBlockVolume&
     operator=(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& rhs);
 
-    MCAPI void setFrom(::Vec3 const& from);
+    MCNAPI void setFrom(::Vec3 const& from);
 
-    MCAPI void setTo(::Vec3 const& to);
+    MCNAPI void setTo(::Vec3 const& to);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> bind();
 
-    MCAPI static ::Scripting::
+    MCNAPI static ::Scripting::
         EnumBindingBuilder<::SimpleBlockVolume::IntersectionResult, ::SimpleBlockVolume::IntersectionResult>
         bindEnums();
     // NOLINTEND
@@ -75,11 +75,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& rhs);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& rhs);
 
-    MCAPI void* $ctor(::Vec3 const& from, ::Vec3 const& to);
+    MCNAPI void* $ctor(::Vec3 const& from, ::Vec3 const& to);
     // NOLINTEND
 
 public:
@@ -91,16 +91,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
     $getBlockLocationIterator(::Scripting::WeakLifetimeScope scope);
 
-    MCAPI ::std::unique_ptr<::BaseBlockLocationIterator> $createBlockLocationIterator();
+    MCNAPI ::std::unique_ptr<::BaseBlockLocationIterator> $createBlockLocationIterator();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

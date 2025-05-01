@@ -27,16 +27,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&
+    MCNAPI ::ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&
     operator=(::ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptScoreTargetSelectorOption> bindV010();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptScoreTargetSelectorOption> bindV010();
 
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptScoreTargetSelectorOption>
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptScoreTargetSelectorOption>
     bindV1();
     // NOLINTEND
 };

@@ -26,15 +26,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void compose(::AssertHandlerContext const& context);
+    MCNAPI void compose(::AssertHandlerContext const& context);
 
-    MCAPI ~ComposedAssertMessage();
+    MCNAPI ~ComposedAssertMessage();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

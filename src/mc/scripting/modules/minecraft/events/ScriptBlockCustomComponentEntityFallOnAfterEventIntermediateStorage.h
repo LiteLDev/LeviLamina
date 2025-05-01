@@ -26,13 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage();
+    MCNAPI ~ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

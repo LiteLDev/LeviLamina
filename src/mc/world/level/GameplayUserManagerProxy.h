@@ -34,16 +34,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::optional<::std::string> $validatePlayerName(::std::string const&, ::GameplayUserManager const&) const;
+    MCNAPI ::std::optional<::std::string> $validatePlayerName(::std::string const&, ::GameplayUserManager const&) const;
 
-    MCFOLD bool $shouldGeneratePlayerIndex() const;
+    MCNAPI bool $shouldGeneratePlayerIndex() const;
 
-    MCAPI void $reloadActor(::Actor& actor) const;
+    MCNAPI void $reloadActor(::Actor& actor) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

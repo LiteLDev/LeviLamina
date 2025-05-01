@@ -32,22 +32,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Biome const* _selectBestFittingBiome(::TargetPoint const& current, ::RTree::Hint* hint) const;
+    MCNAPI ::Biome const* _selectBestFittingBiome(::TargetPoint const& current, ::RTree::Hint* hint) const;
 
-    MCAPI ::Biome const* tryGetBiome(::GetBiomeOptions const& getBiomeOptions) const;
+    MCNAPI ::Biome const* tryGetBiome(::GetBiomeOptions const& getBiomeOptions) const;
 
-    MCAPI ::Biome const* tryGetBiome(
+    MCNAPI ::Biome const* tryGetBiome(
         ::GetBiomeOptions const&                  getBiomeOptions,
         ::ChunkLocalNoiseCache::CacheEntry const& xzCacheEntry,
         ::RTree::Hint*                            hint
     ) const;
 
-    MCAPI ~BlendedMultiNoiseBiomeProvider();
+    MCNAPI ~BlendedMultiNoiseBiomeProvider();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

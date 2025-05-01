@@ -26,7 +26,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptClipboardWriteOptions> bindScript();
+    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptClipboardWriteOptions>
+    bindScript();
     // NOLINTEND
 };
 

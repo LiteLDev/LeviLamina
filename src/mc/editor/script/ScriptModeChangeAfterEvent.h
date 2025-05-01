@@ -23,7 +23,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptModeChangeAfterEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptModeChangeAfterEvent> bind();
     // NOLINTEND
 };
 

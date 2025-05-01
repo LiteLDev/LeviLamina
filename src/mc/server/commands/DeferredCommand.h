@@ -41,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DeferredCommand(
+    MCNAPI DeferredCommand(
         ::std::unique_ptr<::CommandContext> context,
         bool                                suppressOutput,
         bool                                isRequest,
@@ -52,7 +52,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::CommandContext> context,
         bool                                suppressOutput,
         bool                                isRequest,
@@ -69,12 +69,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::MinecraftCommands& commands);
+    MCNAPI void $execute(::MinecraftCommands& commands);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

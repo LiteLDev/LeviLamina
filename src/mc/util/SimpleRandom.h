@@ -78,46 +78,46 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $nextInt();
+    MCNAPI int $nextInt();
 
-    MCAPI int $nextInt(int bound);
+    MCNAPI int $nextInt(int bound);
 
-    MCAPI int64 $nextLong();
+    MCNAPI int64 $nextLong();
 
-    MCAPI bool $nextBoolean();
+    MCNAPI bool $nextBoolean();
 
-    MCAPI float $nextFloat();
+    MCNAPI float $nextFloat();
 
-    MCAPI double $nextDouble();
+    MCNAPI double $nextDouble();
 
-    MCAPI double $nextGaussianDouble();
+    MCNAPI double $nextGaussianDouble();
 
-    MCAPI void $consumeCount(uint count);
+    MCNAPI void $consumeCount(uint count);
 
-    MCAPI ::std::unique_ptr<::IRandom> $fork();
+    MCNAPI ::std::unique_ptr<::IRandom> $fork();
 
-    MCAPI ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
+    MCNAPI ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
 
-    MCAPI void $setSeed(int64 seed);
+    MCNAPI void $setSeed(int64 seed);
 
-    MCAPI void $setSeed(::Seed128Bit seed);
+    MCNAPI void $setSeed(::Seed128Bit seed);
 
-    MCFOLD int64 $seed64() const;
+    MCNAPI int64 $seed64() const;
 
-    MCAPI ::Seed128Bit $seed128() const;
+    MCNAPI ::Seed128Bit $seed128() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIRandomSeeded();
+    MCNAPI static void** $vftableForIRandomSeeded();
 
-    MCAPI static void** $vftableForIRandom();
+    MCNAPI static void** $vftableForIRandom();
     // NOLINTEND
 };

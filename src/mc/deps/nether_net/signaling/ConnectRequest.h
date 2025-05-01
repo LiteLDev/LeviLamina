@@ -21,18 +21,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string ToString() const;
+    MCNAPI ::std::string ToString() const;
 
-    MCAPI ~ConnectRequest();
+    MCNAPI ~ConnectRequest();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static ::NetherNet::ConnectRequest Create(uint64 sessionId, ::std::string sdp);
+    MCNAPI static ::NetherNet::ConnectRequest Create(uint64 sessionId, ::std::string sdp);
 
-    MCAPI static ::std::optional<::NetherNet::ConnectRequest> TryParse(::std::array<::std::string_view, 3> const& tokens
-    );
+    MCNAPI static ::std::optional<::NetherNet::ConnectRequest>
+    TryParse(::std::array<::std::string_view, 3> const& tokens);
     // NOLINTEND
 
 public:
@@ -44,7 +44,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

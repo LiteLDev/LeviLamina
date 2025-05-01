@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/actor/ai/goal/target/TargetGoal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
-struct ActorUniqueID;
 struct MobDescriptor;
 struct Tick;
 // clang-format on
@@ -54,44 +54,46 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit NearestAttackableTargetGoal(::Mob& mob);
+    MCNAPI explicit NearestAttackableTargetGoal(::Mob& mob);
 
-    MCAPI bool _isTargetInCooldown(::MobDescriptor const& descriptor) const;
+    MCNAPI bool _canStartSearching();
 
-    MCAPI bool _selectTarget();
+    MCNAPI bool _isTargetInCooldown(::MobDescriptor const& descriptor) const;
 
-    MCAPI bool isTargetVisible(::Mob const& mob, float maxDistance, float maxHeight) const;
+    MCNAPI bool _selectTarget();
+
+    MCNAPI bool isTargetVisible(::Mob const& mob, float maxDistance, float maxHeight) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCNAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI ::ActorUniqueID $_findTarget(::MobDescriptor const** outMobDescriptor);
+    MCNAPI ::ActorUniqueID $_findTarget(::MobDescriptor const** outMobDescriptor);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

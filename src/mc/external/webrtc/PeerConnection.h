@@ -54,55 +54,55 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>>
+    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>>
     AddTrack(::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface>, ::std::vector<::std::string> const&, ::std::vector<::webrtc::RtpEncodingParameters> const*);
 
-    MCAPI bool ConfiguredForMedia() const;
+    MCNAPI bool ConfiguredForMedia() const;
 
-    MCAPI ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>
         FindTransceiverBySender(::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>);
 
-    MCAPI bool GetLocalCandidateMediaIndex(::std::string const&, int*);
+    MCNAPI bool GetLocalCandidateMediaIndex(::std::string const&, int*);
 
-    MCAPI ::webrtc::RTCError
+    MCNAPI ::webrtc::RTCError
     Initialize(::webrtc::PeerConnectionInterface::RTCConfiguration const&, ::webrtc::PeerConnectionDependencies);
 
-    MCAPI ::webrtc::PeerConnection::InitializePortAllocatorResult
+    MCNAPI ::webrtc::PeerConnection::InitializePortAllocatorResult
     InitializePortAllocator_n(::std::set<::rtc::SocketAddress> const&, ::std::vector<::cricket::RelayServerConfig> const&, ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const&, ::webrtc::PeerConnectionInterface::RTCConfiguration const&);
 
-    MCAPI ::std::function<void(::rtc::CopyOnWriteBuffer const&, int64)> InitializeRtcpCallback();
+    MCNAPI ::std::function<void(::rtc::CopyOnWriteBuffer const&, int64)> InitializeRtcpCallback();
 
-    MCAPI ::webrtc::JsepTransportController*
+    MCNAPI ::webrtc::JsepTransportController*
     InitializeTransportController_n(::webrtc::PeerConnectionInterface::RTCConfiguration const&, ::webrtc::PeerConnectionDependencies const&);
 
-    MCAPI ::std::function<void(::webrtc::RtpPacketReceived const&)> InitializeUnDemuxablePacketHandler();
+    MCNAPI ::std::function<void(::webrtc::RtpPacketReceived const&)> InitializeUnDemuxablePacketHandler();
 
-    MCAPI void OnIceCandidate(::std::unique_ptr<::webrtc::IceCandidateInterface>);
+    MCNAPI void OnIceCandidate(::std::unique_ptr<::webrtc::IceCandidateInterface>);
 
-    MCAPI void OnIceCandidateError(::std::string const&, int, ::std::string const&, int, ::std::string const&);
+    MCNAPI void OnIceCandidateError(::std::string const&, int, ::std::string const&, int, ::std::string const&);
 
-    MCAPI void OnIceCandidatesRemoved(::std::vector<::cricket::Candidate> const&);
+    MCNAPI void OnIceCandidatesRemoved(::std::vector<::cricket::Candidate> const&);
 
-    MCAPI void OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState);
+    MCNAPI void OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState);
 
-    MCAPI void OnSelectedCandidatePairChanged(::cricket::CandidatePairChangeEvent const&);
+    MCNAPI void OnSelectedCandidatePairChanged(::cricket::CandidatePairChangeEvent const&);
 
-    MCAPI void OnTransportControllerCandidateChanged(::cricket::CandidatePairChangeEvent const&);
+    MCNAPI void OnTransportControllerCandidateChanged(::cricket::CandidatePairChangeEvent const&);
 
-    MCAPI void OnTransportControllerCandidateError(::cricket::IceCandidateErrorEvent const&);
+    MCNAPI void OnTransportControllerCandidateError(::cricket::IceCandidateErrorEvent const&);
 
-    MCAPI void
+    MCNAPI void
     OnTransportControllerCandidatesGathered(::std::string const&, ::std::vector<::cricket::Candidate> const&);
 
-    MCAPI void OnTransportControllerCandidatesRemoved(::std::vector<::cricket::Candidate> const&);
+    MCNAPI void OnTransportControllerCandidatesRemoved(::std::vector<::cricket::Candidate> const&);
 
-    MCAPI void OnTransportControllerConnectionState(::cricket::IceConnectionState);
+    MCNAPI void OnTransportControllerConnectionState(::cricket::IceConnectionState);
 
-    MCAPI void OnTransportControllerDtlsHandshakeError(::rtc::SSLHandshakeError);
+    MCNAPI void OnTransportControllerDtlsHandshakeError(::rtc::SSLHandshakeError);
 
-    MCAPI void OnTransportControllerGatheringState(::cricket::IceGatheringState);
+    MCNAPI void OnTransportControllerGatheringState(::cricket::IceGatheringState);
 
-    MCAPI PeerConnection(
+    MCNAPI PeerConnection(
         ::webrtc::Environment const&,
         ::webrtc::scoped_refptr<::webrtc::ConnectionContext>,
         ::webrtc::PeerConnectionFactoryInterface::Options const&,
@@ -112,7 +112,7 @@ public:
         bool
     );
 
-    MCAPI bool ReconfigurePortAllocator_n(
+    MCNAPI bool ReconfigurePortAllocator_n(
         ::std::set<::rtc::SocketAddress> const&,
         ::std::vector<::cricket::RelayServerConfig> const&,
         ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const&,
@@ -124,36 +124,36 @@ public:
         bool
     );
 
-    MCAPI void ReportFirstConnectUsageMetrics();
+    MCNAPI void ReportFirstConnectUsageMetrics();
 
-    MCAPI void ReportIceCandidateCollected(::cricket::Candidate const&);
+    MCNAPI void ReportIceCandidateCollected(::cricket::Candidate const&);
 
-    MCAPI void ReportRemoteIceCandidateAdded(::cricket::Candidate const&);
+    MCNAPI void ReportRemoteIceCandidateAdded(::cricket::Candidate const&);
 
-    MCAPI void ReportTransportStats(::std::vector<::webrtc::scoped_refptr<
-                                        ::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>>);
+    MCNAPI void ReportTransportStats(::std::vector<::webrtc::scoped_refptr<
+                                         ::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>>);
 
-    MCAPI void ReportUsagePattern() const;
+    MCNAPI void ReportUsagePattern() const;
 
-    MCAPI void SetConnectionState(::webrtc::PeerConnectionInterface::PeerConnectionState);
+    MCNAPI void SetConnectionState(::webrtc::PeerConnectionInterface::PeerConnectionState);
 
-    MCAPI void SetSctpTransportName(::std::string);
+    MCNAPI void SetSctpTransportName(::std::string);
 
-    MCAPI void SetStandardizedIceConnectionState(::webrtc::PeerConnectionInterface::IceConnectionState);
+    MCNAPI void SetStandardizedIceConnectionState(::webrtc::PeerConnectionInterface::IceConnectionState);
 
-    MCAPI ::std::optional<::std::string> SetupDataChannelTransport_n(::std::string_view);
+    MCNAPI ::std::optional<::std::string> SetupDataChannelTransport_n(::std::string_view);
 
-    MCAPI bool StartRtcEventLog_w(::std::unique_ptr<::webrtc::RtcEventLogOutput>, int64);
+    MCNAPI bool StartRtcEventLog_w(::std::unique_ptr<::webrtc::RtcEventLogOutput>, int64);
 
-    MCAPI void StopRtcEventLog_w();
+    MCNAPI void StopRtcEventLog_w();
 
-    MCAPI void TeardownDataChannelTransport_n(::webrtc::RTCError);
+    MCNAPI void TeardownDataChannelTransport_n(::webrtc::RTCError);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::PeerConnection>> Create(
+    MCNAPI static ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::PeerConnection>> Create(
         ::webrtc::Environment const&,
         ::webrtc::scoped_refptr<::webrtc::ConnectionContext>,
         ::webrtc::PeerConnectionFactoryInterface::Options const&,
@@ -162,16 +162,16 @@ public:
         ::webrtc::PeerConnectionDependencies
     );
 
-    MCAPI static void ReportBestConnectionState(::cricket::TransportStats const&);
+    MCNAPI static void ReportBestConnectionState(::cricket::TransportStats const&);
 
-    MCAPI static void
+    MCNAPI static void
     ReportNegotiatedCiphers(bool, ::cricket::TransportStats const&, ::std::set<::cricket::MediaType> const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::webrtc::Environment const&,
         ::webrtc::scoped_refptr<::webrtc::ConnectionContext>,
         ::webrtc::PeerConnectionFactoryInterface::Options const&,
@@ -185,11 +185,11 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
 
-    MCAPI static void** $vftableForPeerConnectionInterface();
+    MCNAPI static void** $vftableForPeerConnectionInterface();
 
-    MCAPI static void** $vftableForPeerConnectionSdpMethods();
+    MCNAPI static void** $vftableForPeerConnectionSdpMethods();
     // NOLINTEND
 };
 

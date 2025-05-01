@@ -41,21 +41,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit Impl(::Bedrock::NotNullNonOwnerPtr<::ILevel> level);
+        MCNAPI explicit Impl(::Bedrock::NotNullNonOwnerPtr<::ILevel> level);
 
-        MCAPI ~Impl();
+        MCNAPI ~Impl();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ILevel> level);
+        MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ILevel> level);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -74,20 +74,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CraftingContext(::Bedrock::NotNullNonOwnerPtr<::ILevel> level);
+    MCNAPI explicit CraftingContext(::Bedrock::NotNullNonOwnerPtr<::ILevel> level);
 
-    MCAPI ~CraftingContext();
+    MCNAPI ~CraftingContext();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ILevel> level);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ILevel> level);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -39,107 +39,109 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~AudioVideoRtpHeaderExtensions();
+        MCNAPI ~AudioVideoRtpHeaderExtensions();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::
+    MCNAPI ::webrtc::
         RTCError
         AddDataContentForAnswer(::cricket::MediaDescriptionOptions const&, ::cricket::MediaSessionOptions const&, ::cricket::ContentInfo const*, ::cricket::SessionDescription const*, ::cricket::ContentInfo const*, ::cricket::SessionDescription const*, ::cricket::TransportInfo const*, ::std::vector<::cricket::StreamParams>*, ::cricket::SessionDescription*, ::cricket::IceCredentialsIterator*)
             const;
 
-    MCAPI ::webrtc::RTCError
+    MCNAPI ::webrtc::RTCError
     AddDataContentForOffer(::cricket::MediaDescriptionOptions const&, ::cricket::MediaSessionOptions const&, ::cricket::ContentInfo const*, ::cricket::SessionDescription const*, ::std::vector<::cricket::StreamParams>*, ::cricket::SessionDescription*, ::cricket::IceCredentialsIterator*)
         const;
 
-    MCAPI ::webrtc::RTCError AddRtpContentForAnswer(::cricket::MediaDescriptionOptions const&, ::cricket::MediaSessionOptions const&, ::cricket::ContentInfo const*, ::cricket::SessionDescription const*, ::cricket::ContentInfo const*, ::cricket::SessionDescription const*, ::cricket::TransportInfo const*, ::std::vector<::cricket::Codec> const&, ::std::vector<::webrtc::RtpExtension> const&, ::std::vector<::cricket::StreamParams>*, ::cricket::SessionDescription*, ::cricket::IceCredentialsIterator*)
+    MCNAPI ::webrtc::RTCError AddRtpContentForAnswer(::cricket::MediaDescriptionOptions const&, ::cricket::MediaSessionOptions const&, ::cricket::ContentInfo const*, ::cricket::SessionDescription const*, ::cricket::ContentInfo const*, ::cricket::SessionDescription const*, ::cricket::TransportInfo const*, ::std::vector<::cricket::Codec> const&, ::std::vector<::webrtc::RtpExtension> const&, ::std::vector<::cricket::StreamParams>*, ::cricket::SessionDescription*, ::cricket::IceCredentialsIterator*)
         const;
 
-    MCAPI ::webrtc::RTCError AddRtpContentForOffer(::cricket::MediaDescriptionOptions const&, ::cricket::MediaSessionOptions const&, ::cricket::ContentInfo const*, ::cricket::SessionDescription const*, ::std::vector<::webrtc::RtpExtension> const&, ::std::vector<::cricket::Codec> const&, ::std::vector<::cricket::StreamParams>*, ::cricket::SessionDescription*, ::cricket::IceCredentialsIterator*)
+    MCNAPI ::webrtc::RTCError AddRtpContentForOffer(::cricket::MediaDescriptionOptions const&, ::cricket::MediaSessionOptions const&, ::cricket::ContentInfo const*, ::cricket::SessionDescription const*, ::std::vector<::webrtc::RtpExtension> const&, ::std::vector<::cricket::Codec> const&, ::std::vector<::cricket::StreamParams>*, ::cricket::SessionDescription*, ::cricket::IceCredentialsIterator*)
         const;
 
-    MCAPI ::webrtc::RTCError
+    MCNAPI ::webrtc::RTCError
     AddTransportAnswer(::std::string const&, ::cricket::TransportDescription const&, ::cricket::SessionDescription*)
         const;
 
-    MCAPI ::webrtc::RTCError
+    MCNAPI ::webrtc::RTCError
     AddTransportOffer(::std::string const&, ::cricket::TransportOptions const&, ::cricket::SessionDescription const*, ::cricket::SessionDescription*, ::cricket::IceCredentialsIterator*)
         const;
 
-    MCAPI ::webrtc::RTCError
+    MCNAPI ::webrtc::RTCError
     AddUnsupportedContentForAnswer(::cricket::MediaDescriptionOptions const&, ::cricket::MediaSessionOptions const&, ::cricket::ContentInfo const*, ::cricket::SessionDescription const*, ::cricket::ContentInfo const*, ::cricket::SessionDescription const*, ::cricket::TransportInfo const*, ::cricket::SessionDescription*, ::cricket::IceCredentialsIterator*)
         const;
 
-    MCAPI ::webrtc::RTCError
+    MCNAPI ::webrtc::RTCError
     AddUnsupportedContentForOffer(::cricket::MediaDescriptionOptions const&, ::cricket::MediaSessionOptions const&, ::cricket::ContentInfo const*, ::cricket::SessionDescription const*, ::cricket::SessionDescription*, ::cricket::IceCredentialsIterator*)
         const;
 
-    MCAPI void ComputeAudioCodecsIntersectionAndUnion();
+    MCNAPI void ComputeAudioCodecsIntersectionAndUnion();
 
-    MCAPI void ComputeVideoCodecsIntersectionAndUnion();
+    MCNAPI void ComputeVideoCodecsIntersectionAndUnion();
 
-    MCAPI ::webrtc::RTCErrorOr<::std::unique_ptr<::cricket::SessionDescription>>
+    MCNAPI ::webrtc::RTCErrorOr<::std::unique_ptr<::cricket::SessionDescription>>
     CreateAnswerOrError(::cricket::SessionDescription const*, ::cricket::MediaSessionOptions const&, ::cricket::SessionDescription const*)
         const;
 
-    MCAPI ::webrtc::RTCErrorOr<::std::unique_ptr<::cricket::SessionDescription>>
+    MCNAPI ::webrtc::RTCErrorOr<::std::unique_ptr<::cricket::SessionDescription>>
     CreateOfferOrError(::cricket::MediaSessionOptions const&, ::cricket::SessionDescription const*) const;
 
-    MCAPI ::std::unique_ptr<::cricket::TransportDescription>
+    MCNAPI ::std::unique_ptr<::cricket::TransportDescription>
     CreateTransportAnswer(::std::string const&, ::cricket::SessionDescription const*, ::cricket::TransportOptions const&, ::cricket::SessionDescription const*, bool, ::cricket::IceCredentialsIterator*)
         const;
 
-    MCAPI ::std::vector<::cricket::Codec> const&
+    MCNAPI ::std::vector<::cricket::Codec> const&
     GetAudioCodecsForAnswer(::webrtc::RtpTransceiverDirection const&, ::webrtc::RtpTransceiverDirection const&) const;
 
-    MCAPI ::std::vector<::cricket::Codec> const& GetAudioCodecsForOffer(::webrtc::RtpTransceiverDirection const&) const;
+    MCNAPI ::std::vector<::cricket::Codec> const&
+    GetAudioCodecsForOffer(::webrtc::RtpTransceiverDirection const&) const;
 
-    MCAPI void
+    MCNAPI void
     GetCodecsForAnswer(::std::vector<::cricket::ContentInfo const*> const&, ::cricket::SessionDescription const&, ::std::vector<::cricket::Codec>*, ::std::vector<::cricket::Codec>*)
         const;
 
-    MCAPI void
+    MCNAPI void
     GetCodecsForOffer(::std::vector<::cricket::ContentInfo const*> const&, ::std::vector<::cricket::Codec>*, ::std::vector<::cricket::Codec>*)
         const;
 
-    MCAPI ::cricket::MediaSessionDescriptionFactory::AudioVideoRtpHeaderExtensions
+    MCNAPI ::cricket::MediaSessionDescriptionFactory::AudioVideoRtpHeaderExtensions
     GetOfferedRtpHeaderExtensionsWithIds(::std::vector<::cricket::ContentInfo const*> const&, bool, ::std::vector<::cricket::MediaDescriptionOptions> const&)
         const;
 
-    MCAPI ::std::vector<::cricket::Codec> const&
+    MCNAPI ::std::vector<::cricket::Codec> const&
     GetVideoCodecsForAnswer(::webrtc::RtpTransceiverDirection const&, ::webrtc::RtpTransceiverDirection const&) const;
 
-    MCAPI ::std::vector<::cricket::Codec> const& GetVideoCodecsForOffer(::webrtc::RtpTransceiverDirection const&) const;
+    MCNAPI ::std::vector<::cricket::Codec> const&
+    GetVideoCodecsForOffer(::webrtc::RtpTransceiverDirection const&) const;
 
-    MCAPI
+    MCNAPI
     MediaSessionDescriptionFactory(::cricket::MediaEngineInterface*, bool, ::rtc::UniqueRandomIdGenerator*, ::cricket::TransportDescriptionFactory const*);
 
-    MCAPI ::std::vector<::webrtc::RtpExtension>
+    MCNAPI ::std::vector<::webrtc::RtpExtension>
         filtered_rtp_header_extensions(::std::vector<::webrtc::RtpExtension>) const;
 
-    MCAPI ~MediaSessionDescriptionFactory();
+    MCNAPI ~MediaSessionDescriptionFactory();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::cricket::MediaEngineInterface*, bool, ::rtc::UniqueRandomIdGenerator*, ::cricket::TransportDescriptionFactory const*);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

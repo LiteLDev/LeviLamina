@@ -14,6 +14,18 @@ namespace Social::Events {
 
 class PlayStreamEventListener : public ::Social::Events::AggregationEventListener {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkc208cc;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PlayStreamEventListener& operator=(PlayStreamEventListener const&);
+    PlayStreamEventListener(PlayStreamEventListener const&);
+    PlayStreamEventListener();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

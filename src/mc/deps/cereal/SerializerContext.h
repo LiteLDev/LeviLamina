@@ -3,53 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/BasicSerializerContext.h"
 #include "mc/deps/cereal/ResultCode.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
 
 namespace cereal {
 
-class SerializerContext {
+class SerializerContext : public ::cereal::BasicSerializerContext {
 public:
     // SerializerContext inner types declare
     // clang-format off
-    struct LogEntry;
     struct ScopedPop;
     // clang-format on
 
     // SerializerContext inner types define
-    enum class ContextType : int {
-        ArrayElem = 0,
-        Member    = 1,
-        Root      = 2,
-    };
-
-    struct LogEntry {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<2, 2>  mUnk3cc9ca;
-        ::ll::UntypedStorage<8, 24> mUnk428536;
-        ::ll::UntypedStorage<8, 32> mUnk85c0d3;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LogEntry& operator=(LogEntry const&);
-        LogEntry(LogEntry const&);
-        LogEntry();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~LogEntry();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
-    };
-
     struct ScopedPop {
     public:
         // member variables
@@ -66,23 +37,20 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ScopedPop();
+        MCNAPI ~ScopedPop();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkf221bd;
-    ::ll::UntypedStorage<8, 24> mUnk9d8c60;
-    ::ll::UntypedStorage<2, 2>  mUnkfac550;
-    ::ll::UntypedStorage<8, 8>  mUnk71cf13;
+    ::ll::UntypedStorage<1, 1> mUnk7fd416;
     // NOLINTEND
 
 public:
@@ -94,32 +62,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::cereal::SerializerContext detachContext();
+    MCNAPI explicit SerializerContext(::cereal::ReflectionCtx const&);
 
-    MCAPI ::std::vector<::std::string> getErrors() const;
+    MCNAPI void consumeContext(::cereal::SerializerContext const& other);
 
-    MCAPI void log(::cereal::ResultCode res, ::std::string msg);
+    MCNAPI ::cereal::SerializerContext detachContext();
 
-    MCAPI ::cereal::SerializerContext& operator=(::cereal::SerializerContext&&);
+    MCNAPI void log(::cereal::ResultCode res, ::std::string msg);
 
-    MCAPI ::cereal::SerializerContext&
-    pushContext(::cereal::SerializerContext::ContextType contextType, ::std::string contextToken);
+    MCNAPI ::cereal::SerializerContext& operator=(::cereal::SerializerContext&&);
 
-    MCAPI ~SerializerContext();
+    MCNAPI ::cereal::SerializerContext&
+    pushContext(::cereal::BasicSerializerContext::ContextType contextType, ::std::string contextToken);
+
+    MCNAPI ~SerializerContext();
     // NOLINTEND
 
 public:
-    // static functions
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static ::std::string contextString(
-        ::std::vector<::std::pair<::cereal::SerializerContext::ContextType, ::std::string>> const& contextStack
-    );
+    MCNAPI void* $ctor(::cereal::ReflectionCtx const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

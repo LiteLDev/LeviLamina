@@ -14,23 +14,24 @@ class AcknowledgedBitrateEstimator {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AcknowledgedBitrateEstimator(::webrtc::FieldTrialsView const*);
+    MCNAPI explicit AcknowledgedBitrateEstimator(::webrtc::FieldTrialsView const*);
 
-    MCAPI AcknowledgedBitrateEstimator(::webrtc::FieldTrialsView const*, ::std::unique_ptr<::webrtc::BitrateEstimator>);
+    MCNAPI
+    AcknowledgedBitrateEstimator(::webrtc::FieldTrialsView const*, ::std::unique_ptr<::webrtc::BitrateEstimator>);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const*);
 
-    MCAPI void* $ctor(::webrtc::FieldTrialsView const*, ::std::unique_ptr<::webrtc::BitrateEstimator>);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const*, ::std::unique_ptr<::webrtc::BitrateEstimator>);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

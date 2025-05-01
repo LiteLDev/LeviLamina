@@ -31,13 +31,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onUserDisconnectedBecauseConcurrentLogin(::std::string const& id);
+    MCNAPI void $onUserDisconnectedBecauseConcurrentLogin(::std::string const& id);
     // NOLINTEND
 };
 

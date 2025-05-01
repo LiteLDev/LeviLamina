@@ -50,14 +50,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isPattern() const;
+    MCNAPI bool $isPattern() const;
 
-    MCFOLD int $getPatternIndex() const;
+    MCNAPI int $getPatternIndex() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -69,13 +69,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ValueWrapper();
+    MCNAPI ~ValueWrapper();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

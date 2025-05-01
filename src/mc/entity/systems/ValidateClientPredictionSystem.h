@@ -10,6 +10,7 @@
 // clang-format off
 class ReplayStateComponent;
 class StrictEntityContext;
+struct AbilitiesComponent;
 struct ActorDataBoundingBoxComponent;
 struct ActorDataDirtyFlagsComponent;
 struct ActorDataFlagComponent;
@@ -17,6 +18,7 @@ struct ActorMovementTickNeededComponent;
 struct ActorUniqueIDComponent;
 struct AttributesComponent;
 struct MovementAttributesComponent;
+struct SendPacketsComponent;
 struct ServerPlayerMovementSyncComponent;
 struct TickingSystemWithInfo;
 // clang-format on
@@ -24,19 +26,20 @@ struct TickingSystemWithInfo;
 namespace ValidateClientPredictionSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createSystem();
+MCNAPI ::TickingSystemWithInfo createSystem();
 
-MCAPI void tick(
+MCNAPI void tick(
     ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::ReplayStateComponent>>,
-    ::StrictEntityContext const&                          entity,
-    ::ActorDataBoundingBoxComponent const&                actorBoundingBox,
-    ::ActorDataFlagComponent const&                       actorDataFlag,
-    ::ActorUniqueIDComponent const&                       actorUniqueId,
-    ::MovementAttributesComponent const&                  movementAttributes,
-    ::ServerPlayerMovementSyncComponent const&            clientPrediction,
-    ::ActorDataDirtyFlagsComponent&                       actorDataDirtyFlag,
-    ::AttributesComponent&                                attributes,
-    ::EntityModifier<::ServerPlayerMovementSyncComponent> modifier
+    ::StrictEntityContext const&                                                  entity,
+    ::ActorDataBoundingBoxComponent const&                                        actorBoundingBox,
+    ::ActorDataFlagComponent const&                                               actorDataFlag,
+    ::ActorUniqueIDComponent const&                                               actorUniqueId,
+    ::MovementAttributesComponent const&                                          movementAttributes,
+    ::ServerPlayerMovementSyncComponent const&                                    clientPrediction,
+    ::AbilitiesComponent const&                                                   abilities,
+    ::ActorDataDirtyFlagsComponent&                                               actorDataDirtyFlag,
+    ::AttributesComponent&                                                        attributes,
+    ::EntityModifier<::ServerPlayerMovementSyncComponent, ::SendPacketsComponent> modifier
 );
 // NOLINTEND
 

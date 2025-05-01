@@ -24,7 +24,7 @@ public:
     virtual void alignedRelease(void*) = 0;
 
     // vIndex: 5
-    virtual uint64 getUsableSize(void*) = 0;
+    virtual uint64 getUsableSize(void*, bool) = 0;
 
     // vIndex: 6
     virtual void* _realloc(::gsl::not_null<void*>, uint64) = 0;

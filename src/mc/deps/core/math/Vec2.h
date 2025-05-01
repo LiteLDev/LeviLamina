@@ -13,7 +13,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Vec2 normalized() const;
+    MCNAPI ::Vec2 normalized() const;
     // NOLINTEND
 
 public:

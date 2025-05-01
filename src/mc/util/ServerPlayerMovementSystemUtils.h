@@ -23,7 +23,7 @@ struct VehicleInputIntentComponent;
 namespace ServerPlayerMovementSystemUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void checkCheatingIfSupported(
+MCNAPI void checkCheatingIfSupported(
     ::ActorOwnerComponent&                                   actorOwnerComponent,
     ::ServerPlayerCurrentMovementComponent const&            serverPlayerCurrentMovement,
     ::ActorDataFlagComponent const&                          synchedActorData,

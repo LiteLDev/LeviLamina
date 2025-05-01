@@ -24,23 +24,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddChannel(::BedrockLog::LogChannel channel);
+    MCNAPI void AddChannel(::BedrockLog::LogChannel channel);
 
-    MCAPI CategoryLogFile();
+    MCNAPI CategoryLogFile();
 
-    MCAPI ~CategoryLogFile();
+    MCNAPI ~CategoryLogFile();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -25,7 +25,7 @@ struct InterpolatedRidingPositionCalculationHelper {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Vec3 getHorseInterpolatedRidingOffset(
+    MCNAPI static ::Vec3 getHorseInterpolatedRidingOffset(
         ::StrictEntityContext const&                                                                            entity,
         ::ViewT<::StrictEntityContext, ::Include<::HorseFlagComponent>, ::StandAnimationComponent const> const& horses,
         ::ViewT<
@@ -38,7 +38,7 @@ public:
         float                                            alpha
     );
 
-    MCAPI static float getInterpolatedBodyRot(
+    MCNAPI static float getInterpolatedBodyRot(
         ::StrictEntityContext const& entity,
         ::ViewT<
             ::StrictEntityContext,

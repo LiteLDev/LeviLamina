@@ -88,39 +88,39 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Core::PathBuffer<::std::string> $_getPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> $_getPath() const;
 
-    MCAPI uint64 $_getBlockSize() const;
+    MCNAPI uint64 $_getBlockSize() const;
 
-    MCAPI bool $_isOpen();
+    MCNAPI bool $_isOpen();
 
-    MCAPI ::Core::Result $_close();
+    MCNAPI ::Core::Result $_close();
 
-    MCAPI ::Core::Result $_read(void* pBuffer, uint64 numBytes, uint64* pNumBytesRead);
+    MCNAPI ::Core::Result $_read(void* pBuffer, uint64 numBytes, uint64* pNumBytesRead);
 
-    MCAPI ::Core::Result $_readExactly(void* buf, uint64 numBytes);
+    MCNAPI ::Core::Result $_readExactly(void* buf, uint64 numBytes);
 
-    MCAPI ::Core::Result $_skip(uint64 numBytes);
+    MCNAPI ::Core::Result $_skip(uint64 numBytes);
 
-    MCAPI ::Core::Result $_readAtPosition(uint64 position, void* pBuf, uint64 numBytes, uint64* pNumBytesRead);
+    MCNAPI ::Core::Result $_readAtPosition(uint64 position, void* pBuf, uint64 numBytes, uint64* pNumBytesRead);
 
-    MCAPI ::Core::Result $_getPosition(uint64* pPosition);
+    MCNAPI ::Core::Result $_getPosition(uint64* pPosition);
 
-    MCAPI ::Core::Result $_setPosition(uint64 position);
+    MCNAPI ::Core::Result $_setPosition(uint64 position);
 
-    MCFOLD ::Core::Result $_write(void const*, uint64);
+    MCNAPI ::Core::Result $_write(void const*, uint64);
 
-    MCFOLD ::Core::Result $_flush();
+    MCNAPI ::Core::Result $_flush();
 
-    MCAPI ::Core::Result $_getSize(uint64* pSize);
+    MCNAPI ::Core::Result $_getSize(uint64* pSize);
 
-    MCAPI ::Core::Result $_getRemainingSize(uint64* pFileSize);
+    MCNAPI ::Core::Result $_getRemainingSize(uint64* pFileSize);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

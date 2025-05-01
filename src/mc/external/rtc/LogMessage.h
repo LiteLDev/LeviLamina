@@ -33,33 +33,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void FinishPrintStream();
+    MCNAPI void FinishPrintStream();
 
-    MCAPI LogMessage(char const*, int, ::rtc::LoggingSeverity, ::rtc::LogErrorContext, int);
+    MCNAPI LogMessage(char const*, int, ::rtc::LoggingSeverity, ::rtc::LogErrorContext, int);
 
-    MCAPI ::rtc::StringBuilder& stream();
+    MCNAPI ::rtc::StringBuilder& stream();
 
-    MCAPI ~LogMessage();
+    MCNAPI ~LogMessage();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void AddLogToStream(::rtc::LogSink*, ::rtc::LoggingSeverity);
+    MCNAPI static void AddLogToStream(::rtc::LogSink*, ::rtc::LoggingSeverity);
 
-    MCAPI static int GetMinLogSeverity();
+    MCNAPI static int GetMinLogSeverity();
 
-    MCAPI static bool IsNoop(::rtc::LoggingSeverity);
+    MCNAPI static bool IsNoop(::rtc::LoggingSeverity);
 
-    MCAPI static int64 LogStartTime();
+    MCNAPI static int64 LogStartTime();
 
-    MCAPI static void OutputToDebug(::rtc::LogLineRef const&);
+    MCNAPI static void OutputToDebug(::rtc::LogLineRef const&);
 
-    MCAPI static void RemoveLogToStream(::rtc::LogSink*);
+    MCNAPI static void RemoveLogToStream(::rtc::LogSink*);
 
-    MCAPI static void UpdateMinLogSeverity();
+    MCNAPI static void UpdateMinLogSeverity();
 
-    MCAPI static uint WallClockStartTime();
+    MCNAPI static uint WallClockStartTime();
     // NOLINTEND
 
 public:
@@ -79,13 +79,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(char const*, int, ::rtc::LoggingSeverity, ::rtc::LogErrorContext, int);
+    MCNAPI void* $ctor(char const*, int, ::rtc::LoggingSeverity, ::rtc::LogErrorContext, int);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

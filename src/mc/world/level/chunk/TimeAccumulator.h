@@ -20,8 +20,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI float getTimeSumAverageMS() const;
+    MCNAPI float getTimeSumAverageMS() const;
 
-    MCAPI float getTimeSumAverageSeconds() const;
+    MCNAPI float getTimeSumAverageSeconds() const;
     // NOLINTEND
 };

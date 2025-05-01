@@ -10,7 +10,7 @@ class ItemStackBase;
 namespace AppliedPotionUtil {
 // functions
 // NOLINTBEGIN
-MCAPI bool canHaveAppliedPotion(::ItemStackBase const& item);
+MCNAPI bool canHaveAppliedPotion(::ItemStackBase const& item);
 // NOLINTEND
 
 } // namespace AppliedPotionUtil

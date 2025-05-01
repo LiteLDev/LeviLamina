@@ -26,29 +26,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::rtc::SSLCertChain> Clone() const;
+    MCNAPI ::std::unique_ptr<::rtc::SSLCertChain> Clone() const;
 
-    MCAPI ::std::unique_ptr<::rtc::SSLCertificateStats> GetStats() const;
+    MCNAPI ::std::unique_ptr<::rtc::SSLCertificateStats> GetStats() const;
 
-    MCAPI explicit SSLCertChain(::std::vector<::std::unique_ptr<::rtc::SSLCertificate>>);
+    MCNAPI explicit SSLCertChain(::std::vector<::std::unique_ptr<::rtc::SSLCertificate>>);
 
-    MCAPI explicit SSLCertChain(::std::unique_ptr<::rtc::SSLCertificate>);
+    MCNAPI explicit SSLCertChain(::std::unique_ptr<::rtc::SSLCertificate>);
 
-    MCAPI ~SSLCertChain();
+    MCNAPI ~SSLCertChain();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::vector<::std::unique_ptr<::rtc::SSLCertificate>>);
+    MCNAPI void* $ctor(::std::vector<::std::unique_ptr<::rtc::SSLCertificate>>);
 
-    MCAPI void* $ctor(::std::unique_ptr<::rtc::SSLCertificate>);
+    MCNAPI void* $ctor(::std::unique_ptr<::rtc::SSLCertificate>);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

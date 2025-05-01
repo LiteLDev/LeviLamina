@@ -27,19 +27,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::npc::ActionContainer& operator=(::npc::ActionContainer&&);
+    MCNAPI ::npc::ActionContainer& operator=(::npc::ActionContainer&&);
 
-    MCAPI void push(::std::variant<::npc::CommandAction, ::npc::UrlAction>&& action);
+    MCNAPI void push(::std::variant<::npc::CommandAction, ::npc::UrlAction>&& action);
 
-    MCAPI void reset(::std::vector<::std::variant<::npc::CommandAction, ::npc::UrlAction>>&& data);
+    MCNAPI void reset(::std::vector<::std::variant<::npc::CommandAction, ::npc::UrlAction>>&& data);
 
-    MCAPI ~ActionContainer();
+    MCNAPI ~ActionContainer();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -49,11 +49,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     ScriptItemCustomComponentBeforeDurabilityDamageEvent(::ScriptModuleMinecraft::
                                                              ScriptItemCustomComponentBeforeDurabilityDamageEvent&&);
 
-    MCAPI
+    MCNAPI
     ScriptItemCustomComponentBeforeDurabilityDamageEvent(::ScriptModuleMinecraft::
                                                              ScriptItemCustomComponentBeforeDurabilityDamageEvent const&);
     // NOLINTEND
@@ -61,35 +61,35 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent&&);
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $updateEngineEvent(int& durabilityDamage, ::ItemStack& item, ::Actor&, ::Mob&) const;
+    MCNAPI void $updateEngineEvent(int& durabilityDamage, ::ItemStack& item, ::Actor&, ::Mob&) const;
 
-    MCFOLD bool $shouldCancel() const;
+    MCNAPI bool $shouldCancel() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

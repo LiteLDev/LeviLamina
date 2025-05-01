@@ -31,15 +31,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TransactionFrameSourceTarget(::Core::PathView source, ::Core::PathView target);
+    MCNAPI TransactionFrameSourceTarget(::Core::PathView source, ::Core::PathView target);
 
-    MCAPI ~TransactionFrameSourceTarget();
+    MCNAPI ~TransactionFrameSourceTarget();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Core::Result exec(
+    MCNAPI static ::Core::Result exec(
         ::Core::PathView                                                       source,
         ::Core::PathView                                                       target,
         ::std::function<::Core::Result(::Core::TransactionFrameSourceTarget&)> sameStorageAreaFunction,
@@ -50,13 +50,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::PathView source, ::Core::PathView target);
+    MCNAPI void* $ctor(::Core::PathView source, ::Core::PathView target);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

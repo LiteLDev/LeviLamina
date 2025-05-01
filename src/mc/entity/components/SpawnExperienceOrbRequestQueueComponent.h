@@ -32,12 +32,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnExperienceOrbRequestQueueComponent(::SpawnExperienceOrbRequestQueueComponent&&);
+    MCNAPI SpawnExperienceOrbRequestQueueComponent(::SpawnExperienceOrbRequestQueueComponent&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SpawnExperienceOrbRequestQueueComponent&&);
+    MCNAPI void* $ctor(::SpawnExperienceOrbRequestQueueComponent&&);
     // NOLINTEND
 };

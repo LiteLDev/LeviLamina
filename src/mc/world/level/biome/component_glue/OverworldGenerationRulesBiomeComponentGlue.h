@@ -49,24 +49,24 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $resolveAndValidate(
+    MCNAPI bool $resolveAndValidate(
         ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent,
         ::BiomeRegistry const&                              biomeRegistry
     );
 
-    MCAPI void
+    MCNAPI void
     $applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

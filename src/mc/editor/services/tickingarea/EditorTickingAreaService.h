@@ -61,30 +61,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result<void> $init();
 
-    MCFOLD ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result<void> $ready();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCAPI ::Scripting::Result<bool, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<bool, ::Scripting::Error>
     $requestTickingArea(::std::string const& areaIdentifier, ::BlockPos const& from, ::BlockPos const& to);
 
-    MCAPI ::Scripting::Result<bool, ::Scripting::Error> $releaseTickingArea(::std::string const& areaIdentifier);
+    MCNAPI ::Scripting::Result<bool, ::Scripting::Error> $releaseTickingArea(::std::string const& areaIdentifier);
 
-    MCAPI ::Scripting::Result<bool, ::Scripting::Error> $isTickingAreaActive(::std::string const& areaIdentifier);
+    MCNAPI ::Scripting::Result<bool, ::Scripting::Error> $isTickingAreaActive(::std::string const& areaIdentifier);
 
-    MCAPI ::Scripting::Result<bool, ::Scripting::Error> $purgeTickingAreas(::std::string const& areaIdentifierPrefix);
+    MCNAPI ::Scripting::Result<bool, ::Scripting::Error> $purgeTickingAreas(::std::string const& areaIdentifierPrefix);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
 
-    MCAPI static void** $vftableForEditorTickingAreaServiceProvider();
+    MCNAPI static void** $vftableForEditorTickingAreaServiceProvider();
     // NOLINTEND
 };
 

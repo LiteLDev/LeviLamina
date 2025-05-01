@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PriorityPreset(
+    MCNAPI PriorityPreset(
         ::HashedString const&                                       id,
         ::std::unordered_set<::HashedString> const&                 exclusionList,
         ::std::unordered_set<::HashedString> const&                 liquidTargetingItemsList,
@@ -39,7 +39,7 @@ public:
         ::HashedString const&                                       defaultCategory
     );
 
-    MCAPI ~PriorityPreset();
+    MCNAPI ~PriorityPreset();
     // NOLINTEND
 
 public:
@@ -51,7 +51,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::HashedString const&                                       id,
         ::std::unordered_set<::HashedString> const&                 exclusionList,
         ::std::unordered_set<::HashedString> const&                 liquidTargetingItemsList,
@@ -64,7 +64,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

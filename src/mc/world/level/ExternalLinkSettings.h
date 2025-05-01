@@ -18,20 +18,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExternalLinkSettings(::ExternalLinkSettings&&);
+    MCNAPI ExternalLinkSettings(::ExternalLinkSettings&&);
 
-    MCAPI ~ExternalLinkSettings();
+    MCNAPI ~ExternalLinkSettings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ExternalLinkSettings&&);
+    MCNAPI void* $ctor(::ExternalLinkSettings&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

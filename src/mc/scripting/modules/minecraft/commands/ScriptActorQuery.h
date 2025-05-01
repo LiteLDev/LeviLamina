@@ -28,24 +28,24 @@ class ScriptActorQuery {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::Error _incompatableWorldQueryOptionError(::std::string const& propertyName);
+    MCNAPI static ::Scripting::Error _incompatableWorldQueryOptionError(::std::string const& propertyName);
 
-    MCAPI static ::Scripting::Result_deprecated<::ActorSelectorArgs> constructSelectorArgs(
+    MCNAPI static ::Scripting::Result_deprecated<::ActorSelectorArgs> constructSelectorArgs(
         ::ActorSelectorType                                                      selectionType,
         ::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> const& options,
         ::Dimension*                                                             dimension
     );
 
-    MCAPI static ::Scripting::Result_deprecated<
+    MCNAPI static ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
     getAllPlayers(::Scripting::WeakLifetimeScope const& scope, ::Level& level);
 
-    MCAPI static ::Scripting::Result_deprecated<bool> matches(::Actor const& actor, ::ActorSelectorArgs const& args);
+    MCNAPI static ::Scripting::Result_deprecated<bool> matches(::Actor const& actor, ::ActorSelectorArgs const& args);
 
-    MCAPI static ::Scripting::Result_deprecated<bool>
+    MCNAPI static ::Scripting::Result_deprecated<bool>
     matches(::Actor const& actor, ::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> const& options);
 
-    MCAPI static ::Scripting::Result_deprecated<
+    MCNAPI static ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
     queryActors(
         ::ActorSelectorType                                                      options,
@@ -55,7 +55,7 @@ public:
         ::Level&                                                                 selectionType
     );
 
-    MCAPI static ::Scripting::Result_deprecated<
+    MCNAPI static ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorIterator>>
     queryActors_V010(
         ::ActorSelectorType                                                      options,
@@ -65,7 +65,7 @@ public:
         ::Level&                                                                 selectionType
     );
 
-    MCAPI static ::Scripting::Result_deprecated<
+    MCNAPI static ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
     queryPlayers(
         ::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> const& options,
@@ -74,7 +74,7 @@ public:
         ::Level&                                                                 level
     );
 
-    MCAPI static ::Scripting::Result_deprecated<
+    MCNAPI static ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerIterator>>
     queryPlayers_V010(
         ::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> const& options,

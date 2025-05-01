@@ -3,12 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/ai/goal/WorkComposterDefinition.h"
 #include "mc/world/actor/ai/goal/WorkGoal.h"
-
-// auto generated forward declare list
-// clang-format off
-class WorkComposterDefinition;
-// clang-format on
 
 class WorkComposterGoal : public ::WorkGoal {
 public:
@@ -35,9 +31,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _tryCompostItems();
+    MCNAPI bool _tryCompostItems();
 
-    MCAPI bool _tryEmptyComposter();
+    MCNAPI bool _tryEmptyComposter();
     // NOLINTEND
 
 public:
@@ -49,14 +45,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $useWorkstation();
+    MCNAPI void $useWorkstation();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

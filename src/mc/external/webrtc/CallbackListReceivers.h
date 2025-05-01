@@ -37,13 +37,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Callback();
+        MCNAPI ~Callback();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -62,25 +62,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CallbackListReceivers();
+    MCNAPI CallbackListReceivers();
 
-    MCAPI void Foreach(::rtc::FunctionView<void(::webrtc::UntypedFunction&)>);
+    MCNAPI void Foreach(::rtc::FunctionView<void(::webrtc::UntypedFunction&)>);
 
-    MCAPI void RemoveReceivers(void const*);
+    MCNAPI void RemoveReceivers(void const*);
 
-    MCAPI ~CallbackListReceivers();
+    MCNAPI ~CallbackListReceivers();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

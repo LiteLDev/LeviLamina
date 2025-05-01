@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ActorParticleEffect;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/actor/animation/ActorParticleEffect.h"
 
 class ActorParticleEffectEvent {
 public:
@@ -23,14 +21,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ActorParticleEffectEvent& operator=(::ActorParticleEffectEvent&&);
+    MCNAPI ::ActorParticleEffectEvent& operator=(::ActorParticleEffectEvent&&);
 
-    MCAPI ~ActorParticleEffectEvent();
+    MCNAPI ~ActorParticleEffectEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -85,15 +85,15 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI bool $getData(::std::string& output, ::Core::Path path);
+        MCNAPI bool $getData(::std::string& output, ::Core::Path path);
 
-        MCAPI void $setData(::std::string const& data, ::Core::Path path);
+        MCNAPI void $setData(::std::string const& data, ::Core::Path path);
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -140,7 +140,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FileSecureStorage(
+    MCNAPI FileSecureStorage(
         ::Core::PathBuffer<::std::string> const&                        settingsPath,
         ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& sskSystem,
         ::ISecureStorageKeySystem*                                      baseSettingsPath,
@@ -148,21 +148,21 @@ public:
         ::FileSecureStorage::StorageSystem*                             storage
     );
 
-    MCAPI ::std::string _contentKeyObfuscator(::std::string const& codedData, ::std::string const& identifier);
+    MCNAPI ::std::string _contentKeyObfuscator(::std::string const& codedData, ::std::string const& identifier);
 
-    MCAPI ::SecureStorageKey _getSecureStorageKey() const;
+    MCNAPI ::SecureStorageKey _getSecureStorageKey() const;
 
-    MCAPI bool _init(bool expectedFailure);
+    MCNAPI bool _init(bool expectedFailure);
 
-    MCAPI void _initalizeSymmetricEncyrption(::std::string& symmetricKey, bool force);
+    MCNAPI void _initalizeSymmetricEncyrption(::std::string& symmetricKey, bool force);
 
-    MCAPI void _rebuildSecureStorageFile();
+    MCNAPI void _rebuildSecureStorageFile();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Core::PathBuffer<::std::string> const&                        settingsPath,
         ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& sskSystem,
         ::ISecureStorageKeySystem*                                      baseSettingsPath,
@@ -174,24 +174,24 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $add(::std::string const& key, ::std::string const& value);
+    MCNAPI bool $add(::std::string const& key, ::std::string const& value);
 
-    MCAPI bool $addOrUpdate(::std::string const& key, ::std::string const& value);
+    MCNAPI bool $addOrUpdate(::std::string const& key, ::std::string const& value);
 
-    MCAPI bool $remove(::std::string const& key);
+    MCNAPI bool $remove(::std::string const& key);
 
-    MCAPI bool $get(::std::string const& key, ::std::string& outValue);
+    MCNAPI bool $get(::std::string const& key, ::std::string& outValue);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

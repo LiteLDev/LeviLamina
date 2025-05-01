@@ -13,56 +13,56 @@ struct JsepTransportCollection {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::cricket::JsepTransport*> ActiveTransports();
+    MCNAPI ::std::vector<::cricket::JsepTransport*> ActiveTransports();
 
-    MCAPI void CommitTransports();
+    MCNAPI void CommitTransports();
 
-    MCAPI void DestroyAllTransports();
+    MCNAPI void DestroyAllTransports();
 
-    MCAPI void DestroyUnusedTransports();
+    MCNAPI void DestroyUnusedTransports();
 
-    MCAPI ::cricket::JsepTransport const* GetTransportByName(::std::string const&) const;
+    MCNAPI ::cricket::JsepTransport const* GetTransportByName(::std::string const&) const;
 
-    MCAPI ::cricket::JsepTransport* GetTransportByName(::std::string const&);
+    MCNAPI ::cricket::JsepTransport* GetTransportByName(::std::string const&);
 
-    MCAPI ::cricket::JsepTransport const* GetTransportForMid(::std::string_view) const;
+    MCNAPI ::cricket::JsepTransport const* GetTransportForMid(::std::string_view) const;
 
-    MCAPI ::cricket::JsepTransport const* GetTransportForMid(::std::string const&) const;
+    MCNAPI ::cricket::JsepTransport const* GetTransportForMid(::std::string const&) const;
 
-    MCAPI ::cricket::JsepTransport* GetTransportForMid(::std::string const&);
+    MCNAPI ::cricket::JsepTransport* GetTransportForMid(::std::string const&);
 
-    MCAPI
+    MCNAPI
     JsepTransportCollection(::std::function<bool(::std::string const&, ::cricket::JsepTransport*)>, ::std::function<void()>);
 
-    MCAPI void MaybeDestroyJsepTransport(::cricket::JsepTransport*);
+    MCNAPI void MaybeDestroyJsepTransport(::cricket::JsepTransport*);
 
-    MCAPI void RegisterTransport(::std::string const&, ::std::unique_ptr<::cricket::JsepTransport>);
+    MCNAPI void RegisterTransport(::std::string const&, ::std::unique_ptr<::cricket::JsepTransport>);
 
-    MCAPI void RemoveTransportForMid(::std::string const&);
+    MCNAPI void RemoveTransportForMid(::std::string const&);
 
-    MCAPI bool RollbackTransports();
+    MCNAPI bool RollbackTransports();
 
-    MCAPI bool SetTransportForMid(::std::string const&, ::cricket::JsepTransport*);
+    MCNAPI bool SetTransportForMid(::std::string const&, ::cricket::JsepTransport*);
 
-    MCAPI bool TransportInUse(::cricket::JsepTransport*) const;
+    MCNAPI bool TransportInUse(::cricket::JsepTransport*) const;
 
-    MCAPI bool TransportNeededForRollback(::cricket::JsepTransport*) const;
+    MCNAPI bool TransportNeededForRollback(::cricket::JsepTransport*) const;
 
-    MCAPI ::std::vector<::cricket::JsepTransport*> Transports();
+    MCNAPI ::std::vector<::cricket::JsepTransport*> Transports();
 
-    MCAPI ~JsepTransportCollection();
+    MCNAPI ~JsepTransportCollection();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::function<bool(::std::string const&, ::cricket::JsepTransport*)>, ::std::function<void()>);
+    MCNAPI void* $ctor(::std::function<bool(::std::string const&, ::cricket::JsepTransport*)>, ::std::function<void()>);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

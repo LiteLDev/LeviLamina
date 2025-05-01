@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class InteractPacket;
-// clang-format on
+// auto generated inclusion list
+#include "mc/network/packet/InteractPacket.h"
 
 struct ServerPlayerInteractComponent {
 public:

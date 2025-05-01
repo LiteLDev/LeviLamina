@@ -28,29 +28,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Deregister(::std::string_view);
+    MCNAPI void Deregister(::std::string_view);
 
-    MCAPI ::webrtc::RTPExtensionType GetType(int) const;
+    MCNAPI ::webrtc::RTPExtensionType GetType(int) const;
 
-    MCAPI bool Register(int, ::webrtc::RTPExtensionType, ::std::string_view);
+    MCNAPI bool Register(int, ::webrtc::RTPExtensionType, ::std::string_view);
 
-    MCAPI bool RegisterByUri(int, ::std::string_view);
+    MCNAPI bool RegisterByUri(int, ::std::string_view);
 
-    MCAPI RtpHeaderExtensionMap();
+    MCNAPI RtpHeaderExtensionMap();
 
-    MCAPI explicit RtpHeaderExtensionMap(bool);
+    MCNAPI explicit RtpHeaderExtensionMap(bool);
 
-    MCAPI explicit RtpHeaderExtensionMap(::rtc::ArrayView<::webrtc::RtpExtension const>);
+    MCNAPI explicit RtpHeaderExtensionMap(::rtc::ArrayView<::webrtc::RtpExtension const>);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(bool);
+    MCNAPI void* $ctor(bool);
 
-    MCAPI void* $ctor(::rtc::ArrayView<::webrtc::RtpExtension const>);
+    MCNAPI void* $ctor(::rtc::ArrayView<::webrtc::RtpExtension const>);
     // NOLINTEND
 };
 

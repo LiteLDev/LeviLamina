@@ -33,14 +33,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int _calculatePortalHeight(::BlockSource const& source);
+    MCNAPI int _calculatePortalHeight(::BlockSource const& source);
 
-    MCAPI void createPortalBlocks(::WorldChangeTransaction& transaction) const;
+    MCNAPI void createPortalBlocks(::WorldChangeTransaction& transaction) const;
 
-    MCAPI void evaluate(::BlockPos const& originalPosition, ::BlockSource const& source);
+    MCNAPI void evaluate(::BlockPos const& originalPosition, ::BlockSource const& source);
 
-    MCAPI void removePortalBlocks(::WorldChangeTransaction& transaction, ::BlockPos const& firstPortalPosition) const;
+    MCNAPI void removePortalBlocks(::WorldChangeTransaction& transaction, ::BlockPos const& firstPortalPosition) const;
 
-    MCAPI void updateNeighboringBlocks(::BlockSource& source, ::Vec3 const& perpendicularAxis) const;
+    MCNAPI void updateNeighboringBlocks(::BlockSource& source, ::Vec3 const& perpendicularAxis) const;
     // NOLINTEND
 };

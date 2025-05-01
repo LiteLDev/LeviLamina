@@ -19,58 +19,58 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit CallbackHandle(::webrtc::scoped_refptr<::rtc::OperationsChain>);
+        MCNAPI explicit CallbackHandle(::webrtc::scoped_refptr<::rtc::OperationsChain>);
 
-        MCAPI void OnOperationComplete();
+        MCNAPI void OnOperationComplete();
 
-        MCAPI ~CallbackHandle();
+        MCNAPI ~CallbackHandle();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::webrtc::scoped_refptr<::rtc::OperationsChain>);
+        MCNAPI void* $ctor(::webrtc::scoped_refptr<::rtc::OperationsChain>);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::function<void()> CreateOperationsChainCallback();
+    MCNAPI ::std::function<void()> CreateOperationsChainCallback();
 
-    MCAPI bool IsEmpty() const;
+    MCNAPI bool IsEmpty() const;
 
-    MCAPI void OnOperationComplete();
+    MCNAPI void OnOperationComplete();
 
-    MCAPI OperationsChain();
+    MCNAPI OperationsChain();
 
-    MCAPI void SetOnChainEmptyCallback(::std::function<void()>);
+    MCNAPI void SetOnChainEmptyCallback(::std::function<void()>);
 
-    MCAPI ~OperationsChain();
+    MCNAPI ~OperationsChain();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::scoped_refptr<::rtc::OperationsChain> Create();
+    MCNAPI static ::webrtc::scoped_refptr<::rtc::OperationsChain> Create();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -32,20 +32,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::Network::PlaytestBeginSessionTransferPayload&
+    MCNAPI ::Editor::Network::PlaytestBeginSessionTransferPayload&
     operator=(::Editor::Network::PlaytestBeginSessionTransferPayload const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -62,7 +62,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Identity::EduAuthTokenPair getTenantTokens(::std::string tenantID) const;
+    MCNAPI ::Identity::EduAuthTokenPair getTenantTokens(::std::string tenantID) const;
     // NOLINTEND
 
 public:

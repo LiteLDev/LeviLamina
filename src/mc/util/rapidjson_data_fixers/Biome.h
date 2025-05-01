@@ -5,7 +5,7 @@
 namespace RapidJsonDataFixers::Biome {
 // functions
 // NOLINTBEGIN
-MCAPI bool addDescriptionWithIdentifier(
+MCNAPI bool addDescriptionWithIdentifier(
     ::rapidjson::GenericDocument<
         ::rapidjson::UTF8<char>,
         ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
@@ -14,17 +14,17 @@ MCAPI bool addDescriptionWithIdentifier(
     ::std::string const&            identifier
 );
 
-MCAPI void moveBiomeTagsToNewTagsComponent(::rapidjson::GenericDocument<
-                                           ::rapidjson::UTF8<char>,
-                                           ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
-                                           ::rapidjson::CrtAllocator>& document);
+MCNAPI void moveBiomeTagsToNewTagsComponent(::rapidjson::GenericDocument<
+                                            ::rapidjson::UTF8<char>,
+                                            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+                                            ::rapidjson::CrtAllocator>& document);
 
-MCAPI bool moveComponentsUnderNewBiomeParent(::rapidjson::GenericDocument<
-                                             ::rapidjson::UTF8<char>,
-                                             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
-                                             ::rapidjson::CrtAllocator>& document);
+MCNAPI bool moveComponentsUnderNewBiomeParent(::rapidjson::GenericDocument<
+                                              ::rapidjson::UTF8<char>,
+                                              ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+                                              ::rapidjson::CrtAllocator>& document);
 
-MCAPI bool renameObjectMember(
+MCNAPI bool renameObjectMember(
     ::rapidjson::GenericDocument<
         ::rapidjson::UTF8<char>,
         ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,

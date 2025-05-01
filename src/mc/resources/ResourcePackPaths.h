@@ -5,16 +5,36 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
 
+// auto generated forward declare list
+// clang-format off
+class AppPlatform;
+// clang-format on
+
 namespace ResourcePackPaths {
 // functions
 // NOLINTBEGIN
-MCAPI ::Core::PathBuffer<::std::string> getPremiumBehaviorPackPath();
+MCNAPI ::Core::PathBuffer<::std::string> addServiceLocator(::Core::PathBuffer<::std::string> (*fn)(::AppPlatform const&)
+);
 
-MCAPI ::Core::PathBuffer<::std::string> getPremiumPackPath();
+MCNAPI ::Core::PathBuffer<::std::string> getCachedBehaviorPacksPath(::AppPlatform& platform);
 
-MCAPI ::Core::PathBuffer<::std::string> getPremiumResourcePackPath();
+MCNAPI ::Core::PathBuffer<::std::string> getCachedResourcePacksPath(::AppPlatform& platform);
 
-MCAPI ::Core::PathBuffer<::std::string> getPremiumWorldTemplatePath();
+MCNAPI ::Core::PathBuffer<::std::string> getPremiumBehaviorPackPath(::AppPlatform const& platform);
+
+MCNAPI ::Core::PathBuffer<::std::string> getPremiumPackPath();
+
+MCNAPI ::Core::PathBuffer<::std::string> getPremiumPackPath(::AppPlatform const& platform);
+
+MCNAPI ::Core::PathBuffer<::std::string> getPremiumResourcePackPath(::AppPlatform const& platform);
+
+MCNAPI ::Core::PathBuffer<::std::string> getPremiumWorldTemplatePath(::AppPlatform const& platform);
+
+MCNAPI ::Core::PathBuffer<::std::string> getSystemServicePackPath(::AppPlatform const& platform);
+
+MCNAPI ::Core::PathBuffer<::std::string> getTemporaryPremiumBehaviorPacksPath(::AppPlatform& platform);
+
+MCNAPI ::Core::PathBuffer<::std::string> getTemporaryPremiumResourcePacksPath(::AppPlatform& platform);
 // NOLINTEND
 
 // static variables

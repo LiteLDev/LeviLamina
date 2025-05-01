@@ -40,19 +40,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string_view $getServiceName() const;
+    MCNAPI ::std::string_view $getServiceName() const;
 
-    MCAPI ::Scripting::Result<void> $_doSwitchMode(::Editor::Mode newMode);
+    MCNAPI ::Scripting::Result<void> $_doSwitchMode(::Editor::Mode newMode);
 
-    MCAPI void $_handleModeChangedPayload(::Editor::Network::ModeChangedPayload const& payload);
+    MCNAPI void $_handleModeChangedPayload(::Editor::Network::ModeChangedPayload const& payload);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIEditorService();
+    MCNAPI static void** $vftableForIEditorService();
 
-    MCAPI static void** $vftableForModeServiceProvider();
+    MCNAPI static void** $vftableForModeServiceProvider();
     // NOLINTEND
 };
 

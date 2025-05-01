@@ -54,20 +54,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $shouldUpdateWorldTime() const;
+    MCNAPI bool $shouldUpdateWorldTime() const;
 
-    MCAPI void $setWorldTickTime(int time);
+    MCNAPI void $setWorldTickTime(int time);
 
-    MCAPI int $getWorldTickTime() const;
+    MCNAPI int $getWorldTickTime() const;
 
-    MCAPI void $incrementCurrentTick();
+    MCNAPI void $incrementCurrentTick();
 
-    MCAPI ::Tick $getCurrentTick() const;
+    MCNAPI ::Tick $getCurrentTick() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

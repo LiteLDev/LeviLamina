@@ -9,7 +9,7 @@
 // clang-format off
 namespace Scripting { class LifetimeRegistry; }
 namespace Scripting { struct ModuleBinding; }
-namespace Scripting { struct ModuleDescriptor; }
+namespace Scripting { struct ModuleDependency; }
 // clang-format on
 
 namespace Scripting::QuickJS {
@@ -30,8 +30,9 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk988ba0;
     ::ll::UntypedStorage<8, 24>  mUnkefd5be;
     ::ll::UntypedStorage<8, 296> mUnka21b69;
-    ::ll::UntypedStorage<4, 4>   mUnk863b7e;
-    ::ll::UntypedStorage<8, 40>  mUnkcdd4d5;
+    ::ll::UntypedStorage<1, 1>   mUnk863b7e;
+    ::ll::UntypedStorage<8, 24>  mUnkc01688;
+    ::ll::UntypedStorage<8, 64>  mUnk784d87;
     // NOLINTEND
 
 public:
@@ -43,22 +44,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::ModuleBinding const* findSatisfyingModule(::Scripting::ModuleDescriptor const& moduleDescriptor
+    MCNAPI ::Scripting::ModuleBinding const* findSatisfyingModule(::Scripting::ModuleDependency const& moduleDependency
     ) const;
 
-    MCAPI ::Scripting::LifetimeRegistry& getLifetimeRegistry();
+    MCNAPI ::std::string generateParseContextErrorMessage() const;
 
-    MCAPI ::std::string getParseContextErrorMessage();
+    MCNAPI ::Scripting::LifetimeRegistry& getLifetimeRegistry();
 
-    MCAPI void popParseContext();
+    MCNAPI void popParseContext();
 
-    MCAPI void pushParseContext(
+    MCNAPI void pushParseContext(
         ::Scripting::QuickJS::ParseContext       context,
         ::entt::meta_type const&                 type,
         ::std::variant<::std::string_view, uint> arg
     );
 
-    MCAPI void resetParseContext();
+    MCNAPI ~ContextUserData();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -57,11 +57,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int _getBlockKey(::ItemDescriptor const& block) const;
+    MCNAPI int _getBlockKey(::ItemDescriptor const& block) const;
 
-    MCAPI ::std::vector<::ItemStack> const* getReduction(::ItemStackBase const& block) const;
+    MCNAPI ::std::vector<::ItemStack> const* getReduction(::ItemStackBase const& block) const;
 
-    MCAPI ::ItemDescriptor tryGetItemDescriptorFromKey(int blockKey) const;
+    MCNAPI ::ItemDescriptor tryGetItemDescriptorFromKey(int blockKey) const;
     // NOLINTEND
 
 public:
@@ -73,12 +73,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $registerBlock(::ItemStack const& block, ::std::vector<::ItemStack> const& elements);
+    MCNAPI void $registerBlock(::ItemStack const& block, ::std::vector<::ItemStack> const& elements);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

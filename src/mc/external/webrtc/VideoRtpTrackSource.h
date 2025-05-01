@@ -26,29 +26,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void BroadcastRecordableEncodedFrame(::webrtc::RecordableEncodedFrame const&) const;
+    MCNAPI void BroadcastRecordableEncodedFrame(::webrtc::RecordableEncodedFrame const&) const;
 
-    MCAPI void ClearCallback();
+    MCNAPI void ClearCallback();
 
-    MCAPI explicit VideoRtpTrackSource(::webrtc::VideoRtpTrackSource::Callback*);
+    MCNAPI explicit VideoRtpTrackSource(::webrtc::VideoRtpTrackSource::Callback*);
 
-    MCAPI ::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink();
+    MCNAPI ::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::VideoRtpTrackSource::Callback*);
+    MCNAPI void* $ctor(::webrtc::VideoRtpTrackSource::Callback*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
 
-    MCAPI static void** $vftableForRefCountInterface();
+    MCNAPI static void** $vftableForRefCountInterface();
 
-    MCAPI static void** $vftableForNotifierInterface();
+    MCNAPI static void** $vftableForNotifierInterface();
     // NOLINTEND
 };
 

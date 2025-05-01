@@ -24,25 +24,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::rtc::internal::WeakReference GetRef() const;
+    MCNAPI ::rtc::internal::WeakReference GetRef() const;
 
-    MCAPI void Invalidate();
+    MCNAPI void Invalidate();
 
-    MCAPI WeakReferenceOwner();
+    MCNAPI WeakReferenceOwner();
 
-    MCAPI ~WeakReferenceOwner();
+    MCNAPI ~WeakReferenceOwner();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

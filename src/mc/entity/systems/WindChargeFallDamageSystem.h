@@ -29,7 +29,7 @@ struct WindChargeKnockbackComponent;
 namespace WindChargeFallDamageSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void _tickWindChargeFallDamageSystem(
+MCNAPI void _tickWindChargeFallDamageSystem(
     ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::FallDistanceComponent>>,
     ::StrictEntityContext const&                     entity,
     ::StateVectorComponent const&                    svc,

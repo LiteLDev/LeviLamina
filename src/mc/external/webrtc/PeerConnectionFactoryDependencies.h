@@ -45,25 +45,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PeerConnectionFactoryDependencies();
+    MCNAPI PeerConnectionFactoryDependencies();
 
-    MCAPI PeerConnectionFactoryDependencies(::webrtc::PeerConnectionFactoryDependencies&&);
+    MCNAPI PeerConnectionFactoryDependencies(::webrtc::PeerConnectionFactoryDependencies&&);
 
-    MCAPI ~PeerConnectionFactoryDependencies();
+    MCNAPI ~PeerConnectionFactoryDependencies();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::webrtc::PeerConnectionFactoryDependencies&&);
+    MCNAPI void* $ctor(::webrtc::PeerConnectionFactoryDependencies&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

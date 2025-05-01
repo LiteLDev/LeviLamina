@@ -16,26 +16,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ThirdPartyInfo();
+    MCNAPI ThirdPartyInfo();
 
-    MCAPI ThirdPartyInfo(::ThirdPartyInfo const&);
+    MCNAPI ThirdPartyInfo(::ThirdPartyInfo const&);
 
-    MCAPI ::ThirdPartyInfo& operator=(::ThirdPartyInfo const&);
+    MCNAPI ::ThirdPartyInfo& operator=(::ThirdPartyInfo const&);
 
-    MCAPI ~ThirdPartyInfo();
+    MCNAPI ~ThirdPartyInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::ThirdPartyInfo const&);
+    MCNAPI void* $ctor(::ThirdPartyInfo const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

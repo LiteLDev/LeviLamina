@@ -21,6 +21,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnke82580;
     ::ll::UntypedStorage<8, 56> mUnkd7f188;
     ::ll::UntypedStorage<8, 32> mUnk33f5ed;
+    ::ll::UntypedStorage<8, 64> mUnk29f011;
     ::ll::UntypedStorage<1, 1>  mUnkeda44b;
     // NOLINTEND
 
@@ -48,54 +49,48 @@ public:
     // vIndex: 4
     virtual bool isWritable() const /*override*/;
 
-    // vIndex: 6
+    // vIndex: 5
     virtual bool isTrusted() const /*override*/;
 
-    // vIndex: 5
-    virtual void setIsTrusted(bool) /*override*/;
-
-    // vIndex: 7
+    // vIndex: 6
     virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const
         /*override*/;
 
-    // vIndex: 8
+    // vIndex: 7
     virtual bool hasFolder(::Core::Path const& packRelativePath) const /*override*/;
 
-    // vIndex: 9
+    // vIndex: 8
     virtual bool getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const
         /*override*/;
 
-    // vIndex: 10
-    virtual bool deleteAsset(::Core::Path const& packRelativePath) /*override*/;
-
-    // vIndex: 11
+    // vIndex: 9
     virtual bool writeAsset(::Core::Path const& packRelativePath, ::std::string const& fileContent) /*override*/;
 
-    // vIndex: 12
+    // vIndex: 10
     virtual void forEachIn(
         ::Core::Path const&                        packRelativePath,
         ::std::function<void(::Core::Path const&)> callback,
         bool                                       recurseAnyways
     ) const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 11
     virtual void
     forEachInAssetSet(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback) const
         /*override*/;
 
-    // vIndex: 14
+    // vIndex: 12
     virtual ::PackAccessStrategyType getStrategyType() const /*override*/;
 
-    // vIndex: 17
+    // vIndex: 15
     virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
 
-    // vIndex: 20
+    // vIndex: 18
     virtual bool canRecurse() const /*override*/;
 
-    // vIndex: 21
+    // vIndex: 19
     virtual void unload() /*override*/;
 
-    // vIndex: 25
+    // vIndex: 22
     virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> _loadArchive(::Core::Path const& packRelativePath
     ) const /*override*/;
     // NOLINTEND
@@ -103,79 +98,88 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DirectoryPackAccessStrategy(::ResourceLocation const& packLocation, bool recurse);
+    MCNAPI DirectoryPackAccessStrategy(
+        ::ResourceLocation const&                           packLocation,
+        bool                                                recurse,
+        ::std::function<::std::string(::Core::Path const&)> reader
+    );
 
-    MCAPI DirectoryPackAccessStrategy(
-        ::std::unique_ptr<::PackAssetSet>&& assetSet,
-        ::ResourceLocation const&           packLocation,
-        bool                                recurse
+    MCNAPI DirectoryPackAccessStrategy(
+        ::std::unique_ptr<::PackAssetSet>&&                 assetSet,
+        ::ResourceLocation const&                           packLocation,
+        bool                                                recurse,
+        ::std::function<::std::string(::Core::Path const&)> reader
     );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ResourceLocation const& packLocation, bool recurse);
+    MCNAPI void* $ctor(
+        ::ResourceLocation const&                           packLocation,
+        bool                                                recurse,
+        ::std::function<::std::string(::Core::Path const&)> reader
+    );
 
-    MCAPI void*
-    $ctor(::std::unique_ptr<::PackAssetSet>&& assetSet, ::ResourceLocation const& packLocation, bool recurse);
+    MCNAPI void* $ctor(
+        ::std::unique_ptr<::PackAssetSet>&&                 assetSet,
+        ::ResourceLocation const&                           packLocation,
+        bool                                                recurse,
+        ::std::function<::std::string(::Core::Path const&)> reader
+    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint64 $getPackSize() const;
+    MCNAPI uint64 $getPackSize() const;
 
-    MCFOLD ::ResourceLocation const& $getPackLocation() const;
+    MCNAPI ::ResourceLocation const& $getPackLocation() const;
 
-    MCFOLD ::std::string const& $getPackName() const;
+    MCNAPI ::std::string const& $getPackName() const;
 
-    MCFOLD bool $isWritable() const;
+    MCNAPI bool $isWritable() const;
 
-    MCAPI bool $isTrusted() const;
+    MCNAPI bool $isTrusted() const;
 
-    MCFOLD void $setIsTrusted(bool);
+    MCNAPI bool $hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
 
-    MCAPI bool $hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
+    MCNAPI bool $hasFolder(::Core::Path const& packRelativePath) const;
 
-    MCFOLD bool $hasFolder(::Core::Path const& packRelativePath) const;
+    MCNAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
 
-    MCAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
+    MCNAPI bool $writeAsset(::Core::Path const& packRelativePath, ::std::string const& fileContent);
 
-    MCAPI bool $deleteAsset(::Core::Path const& packRelativePath);
-
-    MCAPI bool $writeAsset(::Core::Path const& packRelativePath, ::std::string const& fileContent);
-
-    MCAPI void $forEachIn(
+    MCNAPI void $forEachIn(
         ::Core::Path const&                        packRelativePath,
         ::std::function<void(::Core::Path const&)> callback,
         bool                                       recurseAnyways
     ) const;
 
-    MCAPI void
+    MCNAPI void
     $forEachInAssetSet(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback) const;
 
-    MCFOLD ::PackAccessStrategyType $getStrategyType() const;
+    MCNAPI ::PackAccessStrategyType $getStrategyType() const;
 
-    MCAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
+    MCNAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
 
-    MCAPI bool $canRecurse() const;
+    MCNAPI bool $canRecurse() const;
 
-    MCFOLD void $unload();
+    MCNAPI void $unload();
 
-    MCAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> $_loadArchive(::Core::Path const& packRelativePath
+    MCNAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> $_loadArchive(::Core::Path const& packRelativePath
     ) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

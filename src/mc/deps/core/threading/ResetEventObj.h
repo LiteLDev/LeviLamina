@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::Threading { class Mutex; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/platform/threading/Mutex.h"
 
 class ResetEventObj {
 public:
@@ -20,6 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool wait_until(::std::chrono::steady_clock::time_point t);
+    MCNAPI bool wait_until(::std::chrono::steady_clock::time_point t);
     // NOLINTEND
 };

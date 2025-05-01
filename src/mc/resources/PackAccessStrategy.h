@@ -49,81 +49,72 @@ public:
     virtual bool isWritable() const = 0;
 
     // vIndex: 5
-    virtual void setIsTrusted(bool) = 0;
-
-    // vIndex: 6
     virtual bool isTrusted() const = 0;
 
-    // vIndex: 7
+    // vIndex: 6
     virtual bool hasAsset(::Core::Path const&, bool, bool) const = 0;
 
-    // vIndex: 8
+    // vIndex: 7
     virtual bool hasFolder(::Core::Path const&) const = 0;
 
-    // vIndex: 9
+    // vIndex: 8
     virtual bool getAsset(::Core::Path const&, ::std::string&, bool) const = 0;
 
-    // vIndex: 10
-    virtual bool deleteAsset(::Core::Path const&) = 0;
-
-    // vIndex: 11
+    // vIndex: 9
     virtual bool writeAsset(::Core::Path const&, ::std::string const&) = 0;
 
-    // vIndex: 12
+    // vIndex: 10
     virtual void forEachIn(::Core::Path const&, ::std::function<void(::Core::Path const&)>, bool) const = 0;
 
-    // vIndex: 13
+    // vIndex: 11
     virtual void forEachInAssetSet(::Core::Path const&, ::std::function<void(::Core::Path const&)>) const;
 
-    // vIndex: 14
+    // vIndex: 12
     virtual ::PackAccessStrategyType getStrategyType() const = 0;
 
-    // vIndex: 15
+    // vIndex: 13
     virtual ::Core::PathBuffer<::std::string> const& getSubPath() const;
 
-    // vIndex: 16
+    // vIndex: 14
     virtual bool supportsSignatureVerification() const;
 
-    // vIndex: 17
+    // vIndex: 15
     virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const&) const = 0;
 
-    // vIndex: 18
+    // vIndex: 16
     virtual ::PackAccessAssetGenerationResult generateAssetSet();
 
-    // vIndex: 19
+    // vIndex: 17
     virtual ::PackAccessAssetGenerationResult regenerateAssetSet();
 
-    // vIndex: 20
+    // vIndex: 18
     virtual bool canRecurse() const;
 
-    // vIndex: 21
+    // vIndex: 19
     virtual void unload() = 0;
 
-    // vIndex: 22
-    virtual bool hasUpgradeFiles() const;
-
-    // vIndex: 23
+    // vIndex: 20
     virtual ::ContentIdentity readContentIdentity() const;
 
-    // vIndex: 24
+    // vIndex: 21
     virtual bool isAssetExtractionViable() const;
 
-    // vIndex: 25
+    // vIndex: 22
     virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> _loadArchive(::Core::Path const&) const;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackAccessStrategy();
+    MCNAPI PackAccessStrategy();
 
-    MCAPI void _addToAssetSet(::Core::Path const& path, ::std::string const& data);
+    MCNAPI void _addToAssetSet(::Core::Path const& path, ::std::string const& data);
 
-    MCAPI void _forEachInAssetSet(::std::function<void(::Core::Path const&)> callback) const;
+    MCNAPI void _forEachInAssetSet(::std::function<void(::Core::Path const&)> callback) const;
 
-    MCAPI void _upgradeContentsFile(::Json::Value& root);
+    MCNAPI void _upgradeContentsFile(::Json::Value& root);
 
-    MCAPI ::Bedrock::Resources::PreloadedPathHandle preload(::Core::Path const& packRelativePath) const;
+    MCNAPI ::Bedrock::Resources::PreloadedPathHandle preload(::Core::Path const& packRelativePath) const;
     // NOLINTEND
 
 public:
@@ -135,42 +126,40 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $forEachInAssetSet(::Core::Path const&, ::std::function<void(::Core::Path const&)>) const;
+    MCNAPI void $forEachInAssetSet(::Core::Path const&, ::std::function<void(::Core::Path const&)>) const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const& $getSubPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> const& $getSubPath() const;
 
-    MCFOLD bool $supportsSignatureVerification() const;
+    MCNAPI bool $supportsSignatureVerification() const;
 
-    MCAPI ::PackAccessAssetGenerationResult $generateAssetSet();
+    MCNAPI ::PackAccessAssetGenerationResult $generateAssetSet();
 
-    MCAPI ::PackAccessAssetGenerationResult $regenerateAssetSet();
+    MCNAPI ::PackAccessAssetGenerationResult $regenerateAssetSet();
 
-    MCFOLD bool $canRecurse() const;
+    MCNAPI bool $canRecurse() const;
 
-    MCAPI bool $hasUpgradeFiles() const;
+    MCNAPI ::ContentIdentity $readContentIdentity() const;
 
-    MCAPI ::ContentIdentity $readContentIdentity() const;
+    MCNAPI bool $isAssetExtractionViable() const;
 
-    MCFOLD bool $isAssetExtractionViable() const;
-
-    MCFOLD ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> $_loadArchive(::Core::Path const&) const;
+    MCNAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> $_loadArchive(::Core::Path const&) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

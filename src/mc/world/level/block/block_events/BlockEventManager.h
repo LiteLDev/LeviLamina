@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace BlockEvents { class BlockEventExecutor; }
+namespace BlockEvents { class IBlockEventExecutor; }
 // clang-format on
 
 namespace BlockEvents {
@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1>  mUnkb0af3d;
-    ::ll::UntypedStorage<8, 24> mUnk997875;
+    ::ll::UntypedStorage<8, 24> mUnk40032f;
     // NOLINTEND
 
 public:
@@ -29,19 +29,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _assertMainOrServerThread() const;
+    MCNAPI bool _assertMainOrServerThread() const;
 
-    MCAPI ::BlockEvents::BlockEventExecutor& _getOrAddExecutor(::BlockEvents::EventType type);
+    MCNAPI ::std::unique_ptr<::BlockEvents::IBlockEventExecutor>
+    _createSpecializedExecutor(::BlockEvents::EventType type) const;
 
-    MCAPI ::BlockEvents::BlockEventExecutor const* tryGetExecutor(::BlockEvents::EventType type) const;
+    MCNAPI bool hasExecutor(::BlockEvents::EventType type) const;
 
-    MCAPI ~BlockEventManager();
+    MCNAPI ~BlockEventManager();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

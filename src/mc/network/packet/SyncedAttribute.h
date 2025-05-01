@@ -20,20 +20,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SyncedAttribute(::SyncedAttribute&&);
+    MCNAPI SyncedAttribute(::SyncedAttribute&&);
 
-    MCAPI ~SyncedAttribute();
+    MCNAPI ~SyncedAttribute();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SyncedAttribute&&);
+    MCNAPI void* $ctor(::SyncedAttribute&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

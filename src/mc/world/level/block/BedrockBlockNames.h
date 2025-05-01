@@ -10,7 +10,7 @@ class HashedString;
 namespace BedrockBlockNames {
 // functions
 // NOLINTBEGIN
-MCAPI void initBedrockBlockNames();
+MCNAPI void initBedrockBlockNames();
 // NOLINTEND
 
 // static variables

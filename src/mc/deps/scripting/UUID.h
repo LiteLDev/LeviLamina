@@ -19,25 +19,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UUID();
+    MCNAPI UUID();
 
-    MCAPI UUID(::Scripting::UUID&&);
+    MCNAPI UUID(::Scripting::UUID&&);
 
-    MCAPI ~UUID();
+    MCNAPI ~UUID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCFOLD void* $ctor(::Scripting::UUID&&);
+    MCNAPI void* $ctor(::Scripting::UUID&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

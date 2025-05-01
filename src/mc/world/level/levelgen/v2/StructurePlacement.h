@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/v2/RandomSpreadPlacement.h"
+
 // auto generated forward declare list
 // clang-format off
 class ChunkPos;
-namespace br::worldgen { struct RandomSpreadPlacement; }
 // clang-format on
 
 namespace br::worldgen {

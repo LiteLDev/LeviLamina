@@ -10,11 +10,13 @@ class PauseManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk994f71;
-    ::ll::UntypedStorage<1, 1>  mUnkf88b2a;
-    ::ll::UntypedStorage<1, 1>  mUnk99ce49;
-    ::ll::UntypedStorage<8, 8>  mUnkd10131;
-    ::ll::UntypedStorage<8, 48> mUnk18b65e;
+    ::ll::UntypedStorage<1, 1>   mUnk994f71;
+    ::ll::UntypedStorage<1, 1>   mUnkf88b2a;
+    ::ll::UntypedStorage<1, 1>   mUnk99ce49;
+    ::ll::UntypedStorage<8, 8>   mUnkd10131;
+    ::ll::UntypedStorage<8, 128> mUnk2ad55c;
+    ::ll::UntypedStorage<8, 16>  mUnk903eb4;
+    ::ll::UntypedStorage<8, 48>  mUnk18b65e;
     // NOLINTEND
 
 public:
@@ -26,6 +28,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SimulationType getSimulationType(::StackRefResult<::PauseManager const> pauseManager);
+    MCNAPI static ::SimulationType getSimulationType(::StackRefResult<::PauseManager const> pauseManager);
     // NOLINTEND
 };

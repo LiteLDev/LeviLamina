@@ -25,6 +25,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initializeServer(::ItemRegistryRef itemRegistry);
+    MCNAPI void initializeServer(::ItemRegistryRef itemRegistry);
     // NOLINTEND
 };

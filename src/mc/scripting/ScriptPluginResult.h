@@ -35,13 +35,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Error();
+        MCNAPI ~Error();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -61,13 +61,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Warning();
+        MCNAPI ~Warning();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -87,13 +87,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Info();
+        MCNAPI ~Info();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -113,13 +113,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Verbose();
+        MCNAPI ~Verbose();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -143,36 +143,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPluginResult(::ScriptPluginResult const&);
+    MCNAPI ScriptPluginResult(::ScriptPluginResult const&);
 
-    MCAPI ScriptPluginResult(::ScriptPluginResult&&);
+    MCNAPI ScriptPluginResult(::ScriptPluginResult&&);
 
-    MCAPI ScriptPluginResult(::PackIdVersion packId, ::Scripting::ModuleDescriptor const& descriptor);
+    MCNAPI ScriptPluginResult(::PackIdVersion packId, ::Scripting::ModuleDescriptor const& descriptor);
 
-    MCAPI void logError(::std::string const& error);
+    MCNAPI void logError(::std::string const& error);
 
-    MCAPI void logErrors(::std::vector<::std::string> const& errors);
+    MCNAPI void logErrors(::std::vector<::std::string> const& errors);
 
-    MCAPI void logInfo(::std::string const& info);
+    MCNAPI void logInfo(::std::string const& info);
 
-    MCAPI void logWarning(::std::string const& warning);
+    MCNAPI void logWarning(::std::string const& warning);
 
-    MCAPI ~ScriptPluginResult();
+    MCNAPI ~ScriptPluginResult();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptPluginResult const&);
+    MCNAPI void* $ctor(::ScriptPluginResult const&);
 
-    MCAPI void* $ctor(::ScriptPluginResult&&);
+    MCNAPI void* $ctor(::ScriptPluginResult&&);
 
-    MCAPI void* $ctor(::PackIdVersion packId, ::Scripting::ModuleDescriptor const& descriptor);
+    MCNAPI void* $ctor(::PackIdVersion packId, ::Scripting::ModuleDescriptor const& descriptor);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

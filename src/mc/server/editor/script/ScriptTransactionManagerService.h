@@ -38,9 +38,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk7c7f27;
-        ::ll::UntypedStorage<8, 88> mUnk45542f;
-        ::ll::UntypedStorage<8, 88> mUnk35dabd;
+        ::ll::UntypedStorage<8, 16>  mUnk7c7f27;
+        ::ll::UntypedStorage<8, 232> mUnk45542f;
+        ::ll::UntypedStorage<8, 232> mUnk35dabd;
         // NOLINTEND
 
     public:
@@ -52,13 +52,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ModuleHandlerItem();
+        MCNAPI ~ModuleHandlerItem();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -79,40 +79,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptTransactionManagerService(::Editor::ScriptModule::ScriptTransactionManagerService&&);
+    MCNAPI ScriptTransactionManagerService(::Editor::ScriptModule::ScriptTransactionManagerService&&);
 
-    MCAPI ::Scripting::Error _getInvalidTransactionServiceError() const;
+    MCNAPI ::Scripting::Error _getInvalidTransactionServiceError() const;
 
-    MCAPI ::Scripting::Result<bool, ::Scripting::Error> addEntityOperation(
+    MCNAPI ::Scripting::Result<bool, ::Scripting::Error> addEntityOperation(
         ::ScriptModuleMinecraft::ScriptActor const&            entity,
         ::Editor::Transactions::EntityOperation::OperationType type
     );
 
-    MCAPI ::Scripting::Result<void> addUserDefinedOperation(
+    MCNAPI ::Scripting::Result<void> addUserDefinedOperation(
         ::Scripting::ContextConfig const&                                    contextConfig,
         ::Editor::ScriptModule::ScriptUserDefinedTransactionHandlerId const& transactionHandler,
         ::std::string const&                                                 payload,
         ::std::optional<::std::string const>&                                operationName
     );
 
-    MCAPI ::Scripting::Result_deprecated<bool> commitOpenTransaction();
+    MCNAPI ::Scripting::Result_deprecated<bool> commitOpenTransaction();
 
-    MCAPI ::Scripting::Result_deprecated<int> commitTrackedChanges();
+    MCNAPI ::Scripting::Result_deprecated<int> commitTrackedChanges();
 
-    MCAPI ::Scripting::Result_deprecated<bool> discardOpenTransaction();
+    MCNAPI ::Scripting::Result_deprecated<bool> discardOpenTransaction();
 
-    MCAPI ::Scripting::Result_deprecated<int> discardTrackedChanges();
+    MCNAPI ::Scripting::Result_deprecated<int> discardTrackedChanges();
 
-    MCAPI ::Scripting::Result_deprecated<bool> openTransaction(::std::string const& name);
+    MCNAPI ::Scripting::Result_deprecated<bool> openTransaction(::std::string const& name);
 
-    MCAPI ::Editor::ScriptModule::ScriptTransactionManagerService&
-    operator=(::Editor::ScriptModule::ScriptTransactionManagerService&&);
+    MCNAPI ::Scripting::Result<void> redo();
 
-    MCAPI ::Scripting::Result<void> redo();
+    MCNAPI ::Scripting::Result_deprecated<int> redoSize() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> redoSize() const;
-
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptUserDefinedTransactionHandlerId>>
     registerTransactionHandler(
         ::Scripting::ContextConfig const&         contextConfig,
@@ -120,31 +117,32 @@ public:
         ::Scripting::Closure<void(::std::string)> redoClosure
     );
 
-    MCAPI ::Scripting::Result_deprecated<bool> trackBlockChangeArea(::Vec3 const& from, ::Vec3 const& to);
+    MCNAPI ::Scripting::Result_deprecated<bool> trackBlockChangeArea(::Vec3 const& from, ::Vec3 const& to);
 
-    MCAPI ::Scripting::Result_deprecated<bool>
+    MCNAPI ::Scripting::Result_deprecated<bool>
     trackBlockChangeCompoundBlockVolume(::ScriptModuleMinecraft::ScriptCompoundBlockVolume const& volume);
 
-    MCAPI ::Scripting::Result_deprecated<bool> trackBlockChangeList(::std::vector<::Vec3> const& locations);
+    MCNAPI ::Scripting::Result_deprecated<bool> trackBlockChangeList(::std::vector<::Vec3> const& locations);
 
-    MCAPI ::Scripting::Result_deprecated<bool>
+    MCNAPI ::Scripting::Result_deprecated<bool>
     trackBlockChangeSelection(::Editor::ScriptModule::ScriptSelectionContainer const& selection);
 
-    MCAPI ::Scripting::Result<void> undo();
+    MCNAPI ::Scripting::Result<void> undo();
 
-    MCAPI ::Scripting::Result_deprecated<int> undoSize() const;
+    MCNAPI ::Scripting::Result_deprecated<int> undoSize() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptTransactionManagerService> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptTransactionManagerService>
+    bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ScriptModule::ScriptTransactionManagerService&&);
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptTransactionManagerService&&);
     // NOLINTEND
 };
 

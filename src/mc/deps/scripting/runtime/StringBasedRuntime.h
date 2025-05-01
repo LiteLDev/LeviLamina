@@ -42,7 +42,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::ResultAny $run(
+    MCNAPI ::Scripting::ResultAny $run(
         ::Scripting::ContextId                  contextId,
         ::Scripting::IPayload*                  payload,
         ::std::optional<::Scripting::Privilege> privilege

@@ -13,7 +13,7 @@ struct ScriptDataStorePayloadUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::std::variant<float, bool, ::std::string>>
+    MCNAPI static ::std::optional<::std::variant<float, bool, ::std::string>>
     getScriptPayload(::Json::Value const& payload);
     // NOLINTEND
 };

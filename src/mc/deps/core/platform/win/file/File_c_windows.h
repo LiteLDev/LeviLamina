@@ -84,7 +84,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Core::Result _open(
+    MCNAPI static ::Core::Result _open(
         ::Core::FileSystem_windows*          pTransaction,
         ::std::unique_ptr<::Core::FileImpl>& uptFile,
         ::Core::PathView                     filePath,
@@ -102,39 +102,39 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Core::PathBuffer<::std::string> $_getPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> $_getPath() const;
 
-    MCAPI uint64 $_getBlockSize() const;
+    MCNAPI uint64 $_getBlockSize() const;
 
-    MCFOLD bool $_isOpen();
+    MCNAPI bool $_isOpen();
 
-    MCAPI ::Core::Result $_close();
+    MCNAPI ::Core::Result $_close();
 
-    MCAPI ::Core::Result $_read(void* buf, uint64 numBytes, uint64* pNumBytesRead);
+    MCNAPI ::Core::Result $_read(void* buf, uint64 numBytes, uint64* pNumBytesRead);
 
-    MCAPI ::Core::Result $_readExactly(void* buf, uint64 numBytes);
+    MCNAPI ::Core::Result $_readExactly(void* buf, uint64 numBytes);
 
-    MCAPI ::Core::Result $_readAtPosition(uint64 position, void* buf, uint64 numBytes, uint64* pNumBytesRead);
+    MCNAPI ::Core::Result $_readAtPosition(uint64 position, void* buf, uint64 numBytes, uint64* pNumBytesRead);
 
-    MCAPI ::Core::Result $_write(void const* buf, uint64 numBytes);
+    MCNAPI ::Core::Result $_write(void const* buf, uint64 numBytes);
 
-    MCAPI ::Core::Result $_setPosition(uint64 position);
+    MCNAPI ::Core::Result $_setPosition(uint64 position);
 
-    MCAPI ::Core::Result $_getPosition(uint64* pSizeOut);
+    MCNAPI ::Core::Result $_getPosition(uint64* pSizeOut);
 
-    MCAPI ::Core::Result $_skip(uint64 numBytes);
+    MCNAPI ::Core::Result $_skip(uint64 numBytes);
 
-    MCAPI ::Core::Result $_flush();
+    MCNAPI ::Core::Result $_flush();
 
-    MCAPI ::Core::Result $_getSize(uint64* pSizeOut);
+    MCNAPI ::Core::Result $_getSize(uint64* pSizeOut);
 
-    MCAPI ::Core::Result $_getRemainingSize(uint64* pSizeOut);
+    MCNAPI ::Core::Result $_getRemainingSize(uint64* pSizeOut);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

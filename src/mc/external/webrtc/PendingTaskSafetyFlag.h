@@ -30,26 +30,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void SetAlive();
+    MCNAPI void SetAlive();
 
-    MCAPI void SetNotAlive();
+    MCNAPI void SetNotAlive();
 
-    MCAPI bool alive() const;
+    MCNAPI bool alive() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> Create();
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> Create();
 
-    MCAPI static ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag>
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag>
     CreateAttachedToTaskQueue(bool, ::webrtc::TaskQueueBase*);
 
-    MCAPI static ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> CreateDetached();
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> CreateDetached();
 
-    MCAPI static ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> CreateDetachedInactive();
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> CreateDetachedInactive();
 
-    MCAPI static ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> CreateInternal(bool);
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> CreateInternal(bool);
     // NOLINTEND
 };
 

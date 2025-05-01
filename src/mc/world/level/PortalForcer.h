@@ -72,27 +72,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::PortalRecord>
+    MCNAPI ::std::optional<::PortalRecord>
     _findPortal(::DimensionType dimensionId, ::BlockPos const& centerBlockPos, int targetBlockPos, ::BlockPos& radius)
         const;
 
-    MCAPI ::PortalRecord const& createPortal(::Actor const& entity, int radius);
+    MCNAPI ::PortalRecord const& createPortal(::Actor const& entity, int radius);
 
-    MCAPI void force(::Actor& entity, ::DimensionTransitionComponent const& portalEntranceComponent);
+    MCNAPI void force(::Actor& entity, ::DimensionTransitionComponent const& portalEntranceComponent);
 
-    MCAPI void removeMisalignedPortalRecords(
+    MCNAPI void removeMisalignedPortalRecords(
         ::BlockSource&        region,
         ::PortalShape const&  referenceShape,
         ::PortalRecord const& referenceRecord
     );
 
-    MCAPI void removePortalRecord(::BlockSource& source, ::BlockPos const& pos);
+    MCNAPI void removePortalRecord(::BlockSource& source, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool canPortalReplaceBlock(::BlockSource& region, ::BlockPos const& blockPos);
+    MCNAPI static bool canPortalReplaceBlock(::BlockSource& region, ::BlockPos const& blockPos);
     // NOLINTEND
 
 public:
@@ -106,20 +106,20 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $deserialize(::CompoundTag const& tag);
+    MCNAPI void $deserialize(::CompoundTag const& tag);
 
-    MCAPI void $serialize(::CompoundTag& tag) const;
+    MCNAPI void $serialize(::CompoundTag& tag) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

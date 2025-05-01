@@ -3,8 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Color.h"
 #include "mc/world/item/FertilizerType.h"
 #include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/levelgen/synth/PerlinSimplexNoise.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,13 +14,12 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class ItemStack;
-class PerlinSimplexNoise;
-class Player;
 class Random;
 class Randomize;
 struct Brightness;
-namespace mce { class Color; }
+namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class GrassBlock : public ::BlockLegacy {
@@ -37,7 +38,7 @@ public:
 
     // vIndex: 74
     virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const
         /*override*/;
 
     // vIndex: 76
@@ -51,12 +52,12 @@ public:
     // vIndex: 46
     virtual bool canBeOriginalSurface() const /*override*/;
 
-    // vIndex: 139
-    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
-
     // vIndex: 83
     virtual bool tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const
         /*override*/;
+
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
     virtual ~GrassBlock() /*override*/ = default;
@@ -65,11 +66,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GrassBlock(::std::string const& nameId, int id);
+    MCNAPI GrassBlock(::std::string const& nameId, int id);
 
-    MCAPI bool _canBeGrass(::BlockSource const& region, ::BlockPos const& pos) const;
+    MCNAPI bool _canBeGrass(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    MCAPI bool _plantGrass(::BlockSource& region, ::BlockPos const& abovePos, ::Randomize& randomize) const;
+    MCNAPI bool _plantGrass(::BlockSource& region, ::BlockPos const& abovePos, ::Randomize& randomize) const;
+
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -81,7 +84,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCNAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -93,25 +96,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    MCNAPI bool
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI int $calcVariant(::BlockSource& region, ::BlockPos const& pos, ::mce::Color const& baseColor) const;
+    MCNAPI int $calcVariant(::BlockSource& region, ::BlockPos const& pos, ::mce::Color const& baseColor) const;
 
-    MCFOLD bool $canBeOriginalSurface() const;
+    MCNAPI bool $canBeOriginalSurface() const;
 
-    MCFOLD bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
+    MCNAPI bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
 
-    MCAPI bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

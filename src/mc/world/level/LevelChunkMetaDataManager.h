@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/level/GeneratorType.h"
 
 // auto generated forward declare list
@@ -17,7 +18,6 @@ class LevelChunk;
 class LevelChunkMetaData;
 class LevelChunkMetaDataDictionary;
 class LevelSeed64;
-namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class LevelChunkMetaDataManager {
@@ -32,29 +32,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _consolidateLevelChunkMetaData(::LevelChunk& levelChunk);
+    MCNAPI void _consolidateLevelChunkMetaData(::LevelChunk& levelChunk);
 
-    MCAPI void _onNewDimensionCreated(::Dimension& dimension);
+    MCNAPI void _onNewDimensionCreated(::Dimension& dimension);
 
-    MCFOLD ::std::shared_ptr<::LevelChunkMetaDataDictionary> getLevelChunkMetaDataDictionary() const;
+    MCNAPI ::std::shared_ptr<::LevelChunkMetaDataDictionary> getLevelChunkMetaDataDictionary() const;
 
-    MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
+    MCNAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
-    MCAPI void registerOnNewDimensionCreated(::IDimensionManagerConnector& dimensionManagerConnector);
+    MCNAPI void registerOnNewDimensionCreated(::IDimensionManagerConnector& dimensionManagerConnector);
 
-    MCAPI void updateLevelChunkMetaDataForSaving(
+    MCNAPI void updateLevelChunkMetaDataForSaving(
         ::LevelChunk&                 lc,
         ::BaseGameVersion const&      currentBaseGameVersion,
         ::DimensionHeightRange const& dimensionHeightRange
     );
 
-    MCAPI ~LevelChunkMetaDataManager();
+    MCNAPI ~LevelChunkMetaDataManager();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void inferInitialMetaDataAfterDeserialization(
+    MCNAPI static void inferInitialMetaDataAfterDeserialization(
         ::LevelChunk&                 lc,
         ::LevelSeed64                 generationSeed,
         ::GeneratorType               generatorType,
@@ -65,7 +65,7 @@ public:
         ::LevelChunkMetaData&         metaData
     );
 
-    MCAPI static ::std::shared_ptr<::LevelChunkMetaData> initializeLevelChunkMetaData(
+    MCNAPI static ::std::shared_ptr<::LevelChunkMetaData> initializeLevelChunkMetaData(
         ::DimensionType               dimensionId,
         ::std::string const&          dimensionName,
         ::DimensionHeightRange const& dimensionHeightRange,
@@ -79,6 +79,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

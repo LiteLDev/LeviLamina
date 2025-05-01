@@ -14,23 +14,23 @@ class Tmmbn {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddTmmbr(::webrtc::rtcp::TmmbItem const&);
+    MCNAPI void AddTmmbr(::webrtc::rtcp::TmmbItem const&);
 
-    MCAPI bool Parse(::webrtc::rtcp::CommonHeader const&);
+    MCNAPI bool Parse(::webrtc::rtcp::CommonHeader const&);
 
-    MCAPI Tmmbn();
+    MCNAPI Tmmbn();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

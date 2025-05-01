@@ -39,13 +39,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<
+    MCNAPI ::std::unique_ptr<
         ::NetherNet::INetherNetTransportInterface,
         ::std::function<void(::NetherNet::INetherNetTransportInterface*)>>
     $createTransport(::NetherNet::NetworkID const& id, ::NetherNet::INetherNetTransportInterfaceCallbacks* callbacks)
@@ -55,6 +55,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -11,8 +11,8 @@ struct PlayerMoveSystems {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createLocalPlayerFilterAutoJumpSystem();
+    MCNAPI static ::TickingSystemWithInfo createLocalPlayerFilterAutoJumpSystem();
 
-    MCAPI static ::TickingSystemWithInfo createPlayerPostMoveSystem();
+    MCNAPI static ::TickingSystemWithInfo createPlayerPostMoveSystem();
     // NOLINTEND
 };

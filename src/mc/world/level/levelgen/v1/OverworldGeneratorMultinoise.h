@@ -5,12 +5,19 @@
 // auto generated inclusion list
 #include "mc/util/MultidimensionalArray.h"
 #include "mc/world/level/DividedPos2d.h"
+#include "mc/world/level/levelgen/synth/AquiferNoises.h"
+#include "mc/world/level/levelgen/synth/CavifierNoises.h"
+#include "mc/world/level/levelgen/synth/LegacyBlendedNoise.h"
+#include "mc/world/level/levelgen/synth/OverworldNoises3d.h"
+#include "mc/world/level/levelgen/synth/PerlinSimplexNoise.h"
+#include "mc/world/level/levelgen/v1/DepthBasedBlockSupplier.h"
+#include "mc/world/level/levelgen/v1/NoodleCavifierNoises.h"
+#include "mc/world/level/levelgen/v1/OreVeinifierNoises.h"
 #include "mc/world/level/levelgen/v1/OverworldGenerator.h"
 
 // auto generated forward declare list
 // clang-format off
 class Aquifer;
-class AquiferNoises;
 class Biome;
 class BiomeRegistry;
 class BiomeSource;
@@ -19,26 +26,19 @@ class BlockPos;
 class BlockSource;
 class BlockVolume;
 class Cavifier;
-class CavifierNoises;
 class ChunkBlender;
 class ChunkBlenderFactory;
 class ChunkLocalNoiseCache;
 class ChunkPos;
-class DepthBasedBlockSupplier;
 class Dimension;
-class LegacyBlendedNoise;
 class LevelChunk;
 class LevelSeed64;
 class NoodleCavifier;
-class NoodleCavifierNoises;
 class OreVeinifier;
-class OreVeinifierNoises;
-class PerlinSimplexNoise;
 class Random;
 class SurfaceLevelCache;
 class WorldGenCache;
 class XoroshiroPositionalRandomFactory;
-struct OverworldNoises3d;
 struct TerrainInfo;
 // clang-format on
 
@@ -83,28 +83,28 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Noises(::OverworldGeneratorMultinoise::Noises&&);
+        MCNAPI Noises(::OverworldGeneratorMultinoise::Noises&&);
 
-        MCAPI ~Noises();
+        MCNAPI ~Noises();
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static ::OverworldGeneratorMultinoise::Noises make(::XoroshiroPositionalRandomFactory const& randomFactory
-        );
+        MCNAPI static ::OverworldGeneratorMultinoise::Noises
+        make(::XoroshiroPositionalRandomFactory const& randomFactory);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::OverworldGeneratorMultinoise::Noises&&);
+        MCNAPI void* $ctor(::OverworldGeneratorMultinoise::Noises&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 

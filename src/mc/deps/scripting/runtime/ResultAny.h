@@ -20,33 +20,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResultAny();
+    MCNAPI ResultAny();
 
-    MCAPI ::entt::meta_any toAny() const;
+    MCNAPI explicit ResultAny(::entt::meta_any&& resultAny);
 
-    MCAPI ::entt::meta_any toErrorAny() const;
+    MCNAPI ::entt::meta_any toAny();
 
-    MCAPI ~ResultAny();
+    MCNAPI ::entt::meta_any toAny() const;
+
+    MCNAPI ::entt::meta_any toErrorAny() const;
+
+    MCNAPI ~ResultAny();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ResultAny makeErrorFromAny(::entt::meta_any&& errorAny);
+    MCNAPI static ::Scripting::ResultAny makeErrorFromAny(::entt::meta_any&& errorAny);
 
-    MCAPI static ::Scripting::ResultAny makeResultFromAny(::entt::meta_any const& resultAny);
+    MCNAPI static ::Scripting::ResultAny makeResultFromAny(::entt::meta_any const& resultAny);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(::entt::meta_any&& resultAny);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

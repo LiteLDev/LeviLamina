@@ -21,25 +21,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkControlUpdate();
+    MCNAPI NetworkControlUpdate();
 
-    MCAPI NetworkControlUpdate(::webrtc::NetworkControlUpdate const&);
+    MCNAPI NetworkControlUpdate(::webrtc::NetworkControlUpdate const&);
 
-    MCAPI ~NetworkControlUpdate();
+    MCNAPI ~NetworkControlUpdate();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::webrtc::NetworkControlUpdate const&);
+    MCNAPI void* $ctor(::webrtc::NetworkControlUpdate const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

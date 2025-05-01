@@ -25,12 +25,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VariantParameterList();
+    MCNAPI VariantParameterList();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

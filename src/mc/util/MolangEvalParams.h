@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/platform/threading/ThreadLocalObject.h"
 #include "mc/util/MolangVariableIndex.h"
 
 // auto generated forward declare list
@@ -39,23 +38,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Actor* popActor();
+    MCNAPI ::Actor* popActor();
 
-    MCAPI uint64 popMissingVariableOrActorAddress(::MolangVariableIndex variableIndex);
+    MCNAPI uint64 popMissingVariableOrActorAddress(::MolangVariableIndex variableIndex);
 
-    MCAPI uint64 popMissingVariableOrActorAddress(::HashedString const& variableName);
+    MCNAPI uint64 popMissingVariableOrActorAddress(::HashedString const& variableName);
 
-    MCAPI bool popPublicAccessMode();
+    MCNAPI bool popPublicAccessMode();
 
-    MCAPI void restoreStackState(::MolangEvalStackState&& state);
+    MCNAPI void restoreStackState(::MolangEvalStackState&& state);
 
-    MCAPI ~MolangEvalParams();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::MolangEvalParams& getLocalThreadEvalParams();
+    MCNAPI ~MolangEvalParams();
     // NOLINTEND
 
 public:
@@ -63,12 +56,12 @@ public:
     // NOLINTBEGIN
     MCAPI static ::RenderParams& mErrorRenderParams();
 
-    MCAPI static ::Bedrock::Threading::ThreadLocalObject<::MolangEvalParams>& mThreadLocalMolangEvalParams();
+    MCAPI static ::MolangEvalParams& mThreadLocalMolangEvalParams();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

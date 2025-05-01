@@ -44,17 +44,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onTestStructureLoaded(::gametest::BaseGameTestInstance&);
+    MCNAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance&);
 
-    MCFOLD void $onTestPassed(::gametest::BaseGameTestInstance&);
+    MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance&);
 
-    MCFOLD void $onTestFailed(::gametest::BaseGameTestInstance&);
+    MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance&);
 
-    MCFOLD void $onTestStarted(::gametest::BaseGameTestInstance&);
+    MCNAPI void $onTestStarted(::gametest::BaseGameTestInstance&);
 
-    MCFOLD void $onTestRetryStarted(::gametest::BaseGameTestInstance&);
+    MCNAPI void $onTestRetryStarted(::gametest::BaseGameTestInstance&);
 
-    MCFOLD void $onTestRetryFinished(::gametest::BaseGameTestInstance&);
+    MCNAPI void $onTestRetryFinished(::gametest::BaseGameTestInstance&);
     // NOLINTEND
 };
 

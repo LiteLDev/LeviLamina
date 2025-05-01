@@ -36,13 +36,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~DequeuedEntry();
+        MCNAPI ~DequeuedEntry();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -64,13 +64,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~QueueEntry();
+        MCNAPI ~QueueEntry();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -115,13 +115,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PriorityDeferredSubscriptionHub();
+    MCNAPI PriorityDeferredSubscriptionHub();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -133,21 +133,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $flushPendingEvents();
+    MCNAPI void $flushPendingEvents();
 
-    MCFOLD ::Bedrock::PubSub::DeferredSubscriptionHub::HubType $getHubType() const;
+    MCNAPI ::Bedrock::PubSub::DeferredSubscriptionHub::HubType $getHubType() const;
 
-    MCAPI bool $_runOneEvent();
+    MCNAPI bool $_runOneEvent();
 
-    MCAPI void $_enqueue(::std::function<void()> fn, ::Bedrock::PubSub::ConnectPosition at, ::std::optional<int> group);
+    MCNAPI void
+    $_enqueue(::std::function<void()> fn, ::Bedrock::PubSub::ConnectPosition at, ::std::optional<int> group);
 
-    MCAPI void $_runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry const& entry);
+    MCNAPI void $_runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry const& entry);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

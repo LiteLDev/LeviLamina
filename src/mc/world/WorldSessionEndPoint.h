@@ -52,22 +52,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $log(::LogArea const area, ::LogLevel const level, char const* message);
+    MCNAPI void $log(::LogArea const area, ::LogLevel const level, char const* message);
 
-    MCFOLD void $flush();
+    MCNAPI void $flush();
 
-    MCFOLD void $setEnabled(bool newState);
+    MCNAPI void $setEnabled(bool newState);
 
-    MCFOLD bool $isEnabled() const;
+    MCNAPI bool $isEnabled() const;
 
-    MCFOLD bool $logOnlyOnce() const;
+    MCNAPI bool $logOnlyOnce() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForLogEndPoint();
+    MCNAPI static void** $vftableForLogEndPoint();
 
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

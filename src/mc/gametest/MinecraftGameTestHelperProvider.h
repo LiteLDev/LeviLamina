@@ -35,15 +35,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::gametest::BaseGameTestHelper>
+    MCNAPI ::std::unique_ptr<::gametest::BaseGameTestHelper>
     $createGameTestHelper(::gametest::BaseGameTestInstance& testInstance);
 
-    MCAPI ::std::unique_ptr<::gametest::IGameTestHelperProvider> $clone();
+    MCNAPI ::std::unique_ptr<::gametest::IGameTestHelperProvider> $clone();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

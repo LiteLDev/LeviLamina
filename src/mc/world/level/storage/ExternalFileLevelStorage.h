@@ -20,35 +20,35 @@ namespace Core { class Result; }
 namespace ExternalFileLevelStorage {
 // functions
 // NOLINTBEGIN
-MCAPI ::Core::Result
+MCNAPI ::Core::Result
 _readLevelDataFromFile(::Core::Path const& datFilename, ::std::string const& worldID, ::LevelData& levelData);
 
-MCAPI bool _writeLevelDat(::Core::Path const& datFilename, ::LevelData const& levelData);
+MCNAPI bool _writeLevelDat(::Core::Path const& datFilename, ::LevelData const& levelData);
 
-MCAPI void copyLevelInfoToDiskCache(::Core::Path const& levelRootPath, bool onlyIfNotExisting);
+MCNAPI void copyLevelInfoToDiskCache(::Core::Path const& levelRootPath, bool onlyIfNotExisting);
 
-MCAPI ::std::unique_ptr<::PackAccessStrategy> getAccessStrategy(
+MCNAPI ::std::unique_ptr<::PackAccessStrategy> getAccessStrategy(
     ::Core::Path const&                                               levelDirectory,
     ::ContentIdentity const&                                          contentIdentity,
     ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
 );
 
-MCAPI ::std::vector<::std::string> const getImportantFiles();
+MCNAPI ::std::vector<::std::string> const getImportantFiles();
 
-MCAPI bool isLevelMarkedForSync(::Core::Path const& directory);
+MCNAPI bool isLevelMarkedForSync(::Core::Path const& directory);
 
-MCAPI ::Core::Result readLevelDataFromData(::std::string const& dataStr, ::LevelData& levelData);
+MCNAPI ::Core::Result readLevelDataFromData(::std::string const& dataStr, ::LevelData& levelData);
 
-MCAPI ::Core::Result
+MCNAPI ::Core::Result
 readLevelDataFromFile(::Core::Path const& directory, ::std::string const& levelId, ::LevelData& levelData);
 
-MCAPI bool readShallowLevelSummaryFromSyncFile(
+MCNAPI bool readShallowLevelSummaryFromSyncFile(
     ::Core::Path const&  directory,
     ::std::string const& levelId,
     ::LevelSummary&      summary
 );
 
-MCAPI bool readSyncFileData(
+MCNAPI bool readSyncFileData(
     ::Core::Path const& directory,
     ::std::string&      levelName,
     int64&              levelSize,
@@ -56,23 +56,23 @@ MCAPI bool readSyncFileData(
     bool&               isSyncUsable
 );
 
-MCAPI void saveLevelData(
+MCNAPI void saveLevelData(
     ::Core::Path const&  levelPath,
     ::std::string const& levelId,
     ::LevelData const&   levelData,
     bool                 ignoreCache
 );
 
-MCAPI void
+MCNAPI void
 saveLevelDataToPath(::Core::Path const& fullPath, ::std::string const& levelData, ::LevelData const& levelId);
 
-MCAPI void saveLevelDisplayDataToCache(
+MCNAPI void saveLevelDisplayDataToCache(
     ::std::string const&          levelId,
     ::LevelData const&            levelData,
     ::gsl::not_null<::TaskGroup*> taskGroup
 );
 
-MCAPI ::Core::Result validateLevelDat(::Core::Path filePath);
+MCNAPI ::Core::Result validateLevelDat(::Core::Path filePath);
 // NOLINTEND
 
 // static variables

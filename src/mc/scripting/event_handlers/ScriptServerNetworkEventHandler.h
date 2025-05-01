@@ -7,11 +7,11 @@
 #include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/gameplayhandlers/EventHandlerDispatcher.h"
 #include "mc/gameplayhandlers/GameplayHandlerResult.h"
+#include "mc/gameplayhandlers/ServerNetworkEventHandler.h"
 #include "mc/scripting/event_handlers/ScriptEventHandler.h"
 
 // auto generated forward declare list
 // clang-format off
-class ServerNetworkEventHandler;
 struct ChatEvent;
 struct IncomingPacketEvent;
 struct OutgoingPacketEvent;
@@ -43,19 +43,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _handleChat(
+    MCNAPI bool _handleChat(
         ::ChatEvent&                                                                      chatEvent,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> eventHandler
     ) const;
 
-    MCAPI bool _handleIncomingPacket(
+    MCNAPI bool _handleIncomingPacket(
         ::IncomingPacketEvent&                                                                 packetEvent,
         ::Scripting::WeakLifetimeScope const&                                                  scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraftNet::IScriptNetworkBeforeEvents> eventHandler
     ) const;
 
-    MCAPI bool _handleOutgoingPacket(
+    MCNAPI bool _handleOutgoingPacket(
         ::OutgoingPacketEvent&                                                                 packetEvent,
         ::Scripting::WeakLifetimeScope const&                                                  scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraftNet::IScriptNetworkBeforeEvents> eventHandler
@@ -71,16 +71,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ChatEvent& chatEvent);
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ChatEvent& chatEvent);
 
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::IncomingPacketEvent& packetEvent);
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::IncomingPacketEvent& packetEvent);
 
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::OutgoingPacketEvent& packetEvent);
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::OutgoingPacketEvent& packetEvent);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

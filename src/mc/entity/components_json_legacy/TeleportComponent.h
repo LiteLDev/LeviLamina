@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Vec3;
 // clang-format on
 
 class TeleportComponent {
@@ -26,10 +28,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool randomTeleport(::Actor& owner);
+    MCNAPI bool randomTeleport(::Actor& owner);
 
-    MCAPI bool teleport(::Actor& owner, ::Vec3 const& pos);
+    MCNAPI bool teleport(::Actor& owner, ::Vec3 const& pos);
 
-    MCAPI bool teleportTowards(::Actor& owner, ::Actor const& target);
+    MCNAPI bool teleportTowards(::Actor& owner, ::Actor const& target);
     // NOLINTEND
 };

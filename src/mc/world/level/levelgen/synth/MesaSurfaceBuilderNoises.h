@@ -30,26 +30,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MesaSurfaceBuilderNoises(
+    MCNAPI MesaSurfaceBuilderNoises(
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> clayBandsOffsetNoise,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> surfaceNoise,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> pillarNoise,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> pillarRoofNoise
     );
 
-    MCAPI ~MesaSurfaceBuilderNoises();
+    MCNAPI ~MesaSurfaceBuilderNoises();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::MesaSurfaceBuilderNoises make(::XoroshiroPositionalRandomFactory const& positionalRandom);
+    MCNAPI static ::MesaSurfaceBuilderNoises make(::XoroshiroPositionalRandomFactory const& positionalRandom);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> clayBandsOffsetNoise,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> surfaceNoise,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> pillarNoise,
@@ -60,6 +60,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

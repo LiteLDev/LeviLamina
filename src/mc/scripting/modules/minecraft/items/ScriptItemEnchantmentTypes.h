@@ -31,18 +31,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _generateAllEnchantmentTypeHandles(::Scripting::WeakLifetimeScope& scope);
+    MCNAPI void _generateAllEnchantmentTypeHandles(::Scripting::WeakLifetimeScope& scope);
 
-    MCAPI void _generateRemainingEnchantmentTypeHandles(::Scripting::WeakLifetimeScope& scope);
+    MCNAPI void _generateRemainingEnchantmentTypeHandles(::Scripting::WeakLifetimeScope& scope);
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>>
     get(::Scripting::WeakLifetimeScope& scope, ::std::string const& enchantmentId);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentTypes> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentTypes> bind();
     // NOLINTEND
 };
 

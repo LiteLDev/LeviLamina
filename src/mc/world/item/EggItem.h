@@ -17,6 +17,12 @@ class Vec3;
 
 class EggItem : public ::Item {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string> mInitEvent;
+    // NOLINTEND
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 76
@@ -39,6 +45,18 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI EggItem(::std::string const& name, int id, ::std::string initEvent);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string const& name, int id, ::std::string initEvent);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -47,19 +65,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCFOLD bool $isThrowable() const;
+    MCNAPI bool $isThrowable() const;
 
-    MCAPI ::Actor*
+    MCNAPI ::Actor*
     $createProjectileActor(::BlockSource& region, ::ItemStack const&, ::Vec3 const& pos, ::Vec3 const& direction) const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -26,14 +26,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_60::CraftingCatalogCategory&
+    MCNAPI ::SharedTypes::v1_21_60::CraftingCatalogCategory&
     operator=(::SharedTypes::v1_21_60::CraftingCatalogCategory&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

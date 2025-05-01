@@ -6,10 +6,8 @@
 #include "mc/client/input/KeyboardType.h"
 #include "mc/client/options/AutoUpdateMode.h"
 #include "mc/client/options/DebugHudOptions.h"
-#include "mc/client/options/GraphicsMode.h"
 #include "mc/client/options/RealmsEnvironment.h"
 #include "mc/client/options/SplitScreenDirection.h"
-#include "mc/client/options/UIProfile.h"
 #include "mc/client/options/VRStickyMining.h"
 #include "mc/client/options/XboxSandboxEnvironment.h"
 #include "mc/client/store/DisplayLoggedErrorType.h"
@@ -22,6 +20,8 @@
 #include "mc/diagnostics/bedrock_log/LogCategory.h"
 #include "mc/input/NewInteractionModel.h"
 #include "mc/network/DevConnectionQuality.h"
+#include "mc/options/GraphicsMode.h"
+#include "mc/options/UIProfile.h"
 #include "mc/options/option_types/OptionID.h"
 #include "mc/options/option_types/OptionResetFlags.h"
 
@@ -123,7 +123,7 @@ public:
     virtual ::ChatOptions& getChatOptions() = 0;
 
     // vIndex: 24
-    virtual ::std::array<::std::unique_ptr<::Option>, 783> const& getAllRegisteredOptions() = 0;
+    virtual ::std::array<::std::unique_ptr<::Option>, 788> const& getAllRegisteredOptions() = 0;
 
     // vIndex: 25
     virtual void forEachOption(::std::function<void(::Option*)>) = 0;
@@ -960,10 +960,10 @@ public:
     virtual bool getHasEverLoggedIntoXbl() const = 0;
 
     // vIndex: 303
-    virtual void setHasChosenNotToSignInToXbl(bool) = 0;
+    virtual void setHasShownFirstLaunchWelcomeModal(bool) = 0;
 
     // vIndex: 304
-    virtual bool getHasChosenNotToSignInToXbl() const = 0;
+    virtual bool getHasShownFirstLaunchWelcomeModal() const = 0;
 
     // vIndex: 305
     virtual void setAcknowledgedAutoSave(bool) = 0;

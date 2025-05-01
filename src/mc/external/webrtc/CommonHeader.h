@@ -8,7 +8,7 @@ class CommonHeader {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool Parse(uchar const*, uint64);
+    MCNAPI bool Parse(uchar const*, uint64);
     // NOLINTEND
 };
 

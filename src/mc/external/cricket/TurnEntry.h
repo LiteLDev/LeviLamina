@@ -20,41 +20,41 @@ class TurnEntry {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void OnChannelBindError(::cricket::StunMessage*, int);
+    MCNAPI void OnChannelBindError(::cricket::StunMessage*, int);
 
-    MCAPI void OnChannelBindSuccess();
+    MCNAPI void OnChannelBindSuccess();
 
-    MCAPI void OnChannelBindTimeout();
+    MCNAPI void OnChannelBindTimeout();
 
-    MCAPI void OnCreatePermissionError(::cricket::StunMessage*, int);
+    MCNAPI void OnCreatePermissionError(::cricket::StunMessage*, int);
 
-    MCAPI void OnCreatePermissionSuccess();
+    MCNAPI void OnCreatePermissionSuccess();
 
-    MCAPI void OnCreatePermissionTimeout();
+    MCNAPI void OnCreatePermissionTimeout();
 
-    MCAPI int Send(void const*, uint64, bool, ::rtc::PacketOptions const&);
+    MCNAPI int Send(void const*, uint64, bool, ::rtc::PacketOptions const&);
 
-    MCAPI void SendChannelBindRequest(int);
+    MCNAPI void SendChannelBindRequest(int);
 
-    MCAPI void SendCreatePermissionRequest(int);
+    MCNAPI void SendCreatePermissionRequest(int);
 
-    MCAPI void TrackConnection(::cricket::Connection*);
+    MCNAPI void TrackConnection(::cricket::Connection*);
 
-    MCAPI TurnEntry(::cricket::TurnPort*, ::cricket::Connection*, int);
+    MCNAPI TurnEntry(::cricket::TurnPort*, ::cricket::Connection*, int);
 
-    MCAPI ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> UntrackConnection(::cricket::Connection*);
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> UntrackConnection(::cricket::Connection*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cricket::TurnPort*, ::cricket::Connection*, int);
+    MCNAPI void* $ctor(::cricket::TurnPort*, ::cricket::Connection*, int);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

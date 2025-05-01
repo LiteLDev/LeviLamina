@@ -17,7 +17,7 @@ struct PlayerInputModeComponent;
 namespace VRFlyTravelSystemInternal {
 // functions
 // NOLINTBEGIN
-MCAPI void _prePlayerTravelSystem(
+MCNAPI void _prePlayerTravelSystem(
     ::StrictEntityContext const&                            context,
     ::PlayerInputModeComponent const&                       inputMode,
     ::MobTravelComponent&                                   mobTravel,

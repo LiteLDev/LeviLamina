@@ -18,16 +18,16 @@ class CurrentSwimAmountSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doCurrentSwimAmountSystem(
+    MCNAPI static void _doCurrentSwimAmountSystem(
         ::StrictEntityContext const&,
         ::SwimAmountComponent&          swimAmountComponent,
         ::ActorDataFlagComponent const& synchedActorDataComponent
     );
 
-    MCAPI static void tick(::ViewT<
-                           ::StrictEntityContext,
-                           ::Include<::ActorMovementTickNeededComponent>,
-                           ::SwimAmountComponent,
-                           ::ActorDataFlagComponent const> view);
+    MCNAPI static void tick(::ViewT<
+                            ::StrictEntityContext,
+                            ::Include<::ActorMovementTickNeededComponent>,
+                            ::SwimAmountComponent,
+                            ::ActorDataFlagComponent const> view);
     // NOLINTEND
 };

@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/util/Rotation.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 namespace gametest { class BaseGameTestFunction; }
 // clang-format on
 
@@ -30,13 +30,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~TestParameters();
+    MCNAPI ~TestParameters();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

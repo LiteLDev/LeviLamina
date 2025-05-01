@@ -12,25 +12,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TransportChannelStats();
+    MCNAPI TransportChannelStats();
 
-    MCAPI TransportChannelStats(::cricket::TransportChannelStats const&);
+    MCNAPI TransportChannelStats(::cricket::TransportChannelStats const&);
 
-    MCAPI ~TransportChannelStats();
+    MCNAPI ~TransportChannelStats();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::cricket::TransportChannelStats const&);
+    MCNAPI void* $ctor(::cricket::TransportChannelStats const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

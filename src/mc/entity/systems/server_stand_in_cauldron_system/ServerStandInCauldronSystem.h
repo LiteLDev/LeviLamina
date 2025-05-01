@@ -10,7 +10,7 @@ struct TickingSystemWithInfo;
 namespace ServerStandInCauldronSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createSystem();
+MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
 } // namespace ServerStandInCauldronSystem

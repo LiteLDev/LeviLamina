@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/item/BlockItem.h"
 
 // auto generated forward declare list
@@ -10,7 +11,6 @@
 class Actor;
 class Block;
 class BlockPos;
-class HashedString;
 class InteractionResult;
 class ItemStack;
 class ItemStackBase;
@@ -29,7 +29,7 @@ public:
     // NOLINTBEGIN
     // vIndex: 120
     virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+    _useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
     // vIndex: 118
@@ -43,15 +43,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SlabBlockItem(::std::string const& name, int id, ::HashedString const& doubleSlabId);
+    MCNAPI SlabBlockItem(::std::string const& name, int id, ::HashedString const& doubleSlabId);
 
-    MCAPI bool _canConvertToDoubleBlock(::ItemStackBase& instance, ::Actor& face, uchar& block, ::Block const&) const;
+    MCNAPI bool _canConvertToDoubleBlock(::ItemStackBase& instance, ::Actor& face, uchar& block, ::Block const&) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::HashedString const& doubleSlabId);
+    MCNAPI void* $ctor(::std::string const& name, int id, ::HashedString const& doubleSlabId);
     // NOLINTEND
 
 public:
@@ -63,15 +63,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCNAPI ::InteractionResult
+    $_useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
-    MCAPI bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& actor, uchar& face, ::BlockPos& pos) const;
+    MCNAPI bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& actor, uchar& face, ::BlockPos& pos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -80,8 +80,6 @@ public:
     MCAPI static ::ItemStack const&
     getRandomItemWith(::Enchant::Type type, ::Mob const& equipped, ::EquipmentFilter filter);
 
-    MCAPI static ::std::string getRandomName();
-
     MCAPI static bool hasEnchant(::Enchant::Type enchantType, ::ItemStackBase const& item);
 
     MCAPI static ::ItemEnchants selectEnchantments(::Item const* item, int enchantCost, int valueBuff, bool treasure);

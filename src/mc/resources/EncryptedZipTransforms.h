@@ -40,14 +40,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $readTransform(::std::vector<uchar>& stream) const;
+    MCNAPI bool $readTransform(::std::vector<uchar>& stream) const;
 
-    MCFOLD bool $writeTransform(::std::vector<uchar>& stream) const;
+    MCNAPI bool $writeTransform(::std::vector<uchar>& stream) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

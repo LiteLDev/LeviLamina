@@ -90,34 +90,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::cricket::PortAllocatorSession>
+    MCNAPI ::std::unique_ptr<::cricket::PortAllocatorSession>
     CreateSession(::std::string_view, int, ::std::string_view, ::std::string_view);
 
-    MCAPI void DiscardCandidatePool();
+    MCNAPI void DiscardCandidatePool();
 
-    MCAPI ::std::_Vector_const_iterator<
+    MCNAPI ::std::_Vector_const_iterator<
         ::std::_Vector_val<::std::_Simple_types<::std::unique_ptr<::cricket::PortAllocatorSession>>>>
     FindPooledSession(::cricket::IceParameters const*) const;
 
-    MCAPI ::std::vector<::cricket::IceParameters> GetPooledIceCredentials();
+    MCNAPI ::std::vector<::cricket::IceParameters> GetPooledIceCredentials();
 
-    MCAPI PortAllocator();
+    MCNAPI PortAllocator();
 
-    MCAPI ::cricket::Candidate SanitizeCandidate(::cricket::Candidate const&) const;
+    MCNAPI ::cricket::Candidate SanitizeCandidate(::cricket::Candidate const&) const;
 
-    MCAPI void SetCandidateFilter(uint);
+    MCNAPI void SetCandidateFilter(uint);
 
-    MCAPI bool
+    MCNAPI bool
     SetConfiguration(::std::set<::rtc::SocketAddress> const&, ::std::vector<::cricket::RelayServerConfig> const&, ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const&, int, ::webrtc::PortPrunePolicy, ::webrtc::TurnCustomizer*, ::std::optional<int> const&);
 
-    MCAPI ::std::unique_ptr<::cricket::PortAllocatorSession>
+    MCNAPI ::std::unique_ptr<::cricket::PortAllocatorSession>
     TakePooledSession(::std::string_view, int, ::std::string_view, ::std::string_view);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -135,7 +135,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -23,20 +23,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PackCapabilityRegistry(::std::initializer_list<::PackCapability> const& packCapabilities);
+    MCNAPI explicit PackCapabilityRegistry(::std::initializer_list<::PackCapability> const& packCapabilities);
 
-    MCAPI ~PackCapabilityRegistry();
+    MCNAPI ~PackCapabilityRegistry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::initializer_list<::PackCapability> const& packCapabilities);
+    MCNAPI void* $ctor(::std::initializer_list<::PackCapability> const& packCapabilities);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

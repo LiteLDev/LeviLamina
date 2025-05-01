@@ -31,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerPlaceBlockAfterEvent(
+    MCNAPI ScriptPlayerPlaceBlockAfterEvent(
         ::Player&                             player,
         ::BlockPos const&                     pos,
         ::Scripting::WeakLifetimeScope const& scope
@@ -41,13 +41,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerPlaceBlockAfterEvent> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerPlaceBlockAfterEvent> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player, ::BlockPos const& pos, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void* $ctor(::Player& player, ::BlockPos const& pos, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

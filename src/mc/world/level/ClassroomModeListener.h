@@ -21,10 +21,10 @@ class ClassroomModeListener : public ::LevelListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 17
+    // vIndex: 18
     virtual void onEntityAdded(::Actor& entity) /*override*/;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual void onEntityRemoved(::Actor& entity) /*override*/;
 
     // vIndex: 4
@@ -43,10 +43,10 @@ public:
     // vIndex: 3
     virtual void onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max) /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual void onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual void onChunkUnloaded(::LevelChunk& lc) /*override*/;
 
     // vIndex: 0
@@ -62,11 +62,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onEntityAdded(::Actor& entity);
+    MCNAPI void $onEntityAdded(::Actor& entity);
 
-    MCFOLD void $onEntityRemoved(::Actor& entity);
+    MCNAPI void $onEntityRemoved(::Actor& entity);
 
-    MCFOLD void $onBlockChanged(
+    MCNAPI void $onBlockChanged(
         ::BlockSource&                 source,
         ::BlockPos const&              pos,
         uint                           layer,
@@ -78,16 +78,16 @@ public:
         ::Actor*                       blockChangeSource
     );
 
-    MCFOLD void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
+    MCNAPI void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
 
-    MCFOLD void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
+    MCNAPI void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
 
-    MCFOLD void $onChunkUnloaded(::LevelChunk& lc);
+    MCNAPI void $onChunkUnloaded(::LevelChunk& lc);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

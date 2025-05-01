@@ -23,32 +23,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackDiscoveryError(::PackParseErrorType errorType, ::std::vector<::std::string> const& errorParam);
+    MCNAPI PackDiscoveryError(::PackParseErrorType errorType, ::std::vector<::std::string> const& errorParam);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PackParseErrorType errorType, ::std::vector<::std::string> const& errorParam);
+    MCNAPI void* $ctor(::PackParseErrorType errorType, ::std::vector<::std::string> const& errorParam);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::unordered_map<int, ::std::string> const& $getLocErrorMessageMap() const;
+    MCNAPI ::std::unordered_map<int, ::std::string> const& $getLocErrorMessageMap() const;
 
-    MCFOLD ::std::unordered_map<int, ::std::string> const& $getEventErrorMessageMap() const;
+    MCNAPI ::std::unordered_map<int, ::std::string> const& $getEventErrorMessageMap() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

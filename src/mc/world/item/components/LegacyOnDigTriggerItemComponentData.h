@@ -19,20 +19,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyOnDigTriggerItemComponentData(::LegacyOnDigTriggerItemComponentData&&);
+    MCNAPI LegacyOnDigTriggerItemComponentData(::LegacyOnDigTriggerItemComponentData&&);
 
-    MCAPI ~LegacyOnDigTriggerItemComponentData();
+    MCNAPI ~LegacyOnDigTriggerItemComponentData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LegacyOnDigTriggerItemComponentData&&);
+    MCNAPI void* $ctor(::LegacyOnDigTriggerItemComponentData&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -3,10 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/Brightness.h"
+#include "mc/common/NewBlockID.h"
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/container/Cache.h"
 #include "mc/deps/core/container/EnumSet.h"
+#include "mc/deps/core/math/Color.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/optional_ref.h"
+#include "mc/resources/BaseGameVersion.h"
+#include "mc/util/IntRange.h"
 #include "mc/world/Direction.h"
 #include "mc/world/Flip.h"
 #include "mc/world/item/CreativeItemCategory.h"
@@ -22,15 +28,16 @@
 #include "mc/world/level/block/NoteBlockInstrument.h"
 #include "mc/world/level/block/TintMethod.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
+#include "mc/world/level/block/block_events/BlockEventManager.h"
+#include "mc/world/level/block/components/BlockComponentStorage.h"
+#include "mc/world/level/block/components/NetEaseBlockComponentStorage.h"
+#include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class Actor;
-class BaseGameVersion;
 class Block;
 class BlockActor;
-class BlockComponentStorage;
 class BlockItem;
 class BlockPos;
 class BlockSource;
@@ -44,7 +51,6 @@ class DefinitionTrigger;
 class EntityContext;
 class Experiments;
 class GetCollisionShapeInterface;
-class HashedString;
 class HitResult;
 class IConstBlockSource;
 class IResourceDropsStrategy;
@@ -53,7 +59,6 @@ class ItemInstance;
 class ItemStack;
 class Material;
 class MobSpawnerData;
-class NetEaseBlockComponentStorage;
 class Player;
 class Random;
 class Randomize;
@@ -66,19 +71,14 @@ struct ActorBlockSyncMessage;
 struct BlockAnimateTickData;
 struct BlockComponentDescription;
 struct BlockGraphicsModeChangeContext;
-struct Brightness;
 struct CommandName;
-struct IntRange;
-struct NewBlockID;
 struct ResourceDrops;
 struct ResourceDropsContext;
 struct UpdateEntityAfterFallOnInterface;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
-namespace BlockEvents { class BlockEventManager; }
 namespace BlockTrait { class IGetPlacementBlockCallback; }
 namespace BlockTrait { class ITrait; }
 namespace br::spawn { struct EntityType; }
-namespace mce { class Color; }
 // clang-format on
 
 class BlockLegacy {
@@ -157,7 +157,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static bool _checkVersioningRequirements(::SemVersion const& removedSupportVersion);
+        MCNAPI static bool _checkVersioningRequirements(::SemVersion const& removedSupportVersion);
         // NOLINTEND
 
     public:
@@ -213,7 +213,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void
+        MCNAPI static void
         add(::BlockState const&                                                stateRef,
             ::std::vector<::BlockLegacy::RemovedStateCollection::SplitBlock>&& splitBlocks,
             ::SemVersion const&                                                removedSupportVersion);
@@ -228,15 +228,15 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::std::optional<int> $getState(::BlockLegacy const& blockLegacy, int) const;
+        MCNAPI ::std::optional<int> $getState(::BlockLegacy const& blockLegacy, int) const;
 
-        MCAPI ::Block const* $setState(::BlockLegacy const& blockLegacy, int blockData, int stateData) const;
+        MCNAPI ::Block const* $setState(::BlockLegacy const& blockLegacy, int blockData, int stateData) const;
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -271,7 +271,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI RearrangedStateCollection(
+        MCNAPI RearrangedStateCollection(
             ::BlockState const&                                              stateRef,
             ::std::function<::std::optional<int>(::BlockLegacy const&, int)> getter,
             ::std::function<::Block const*(::BlockLegacy const&, int, int)>  setter
@@ -281,7 +281,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void
+        MCNAPI static void
         add(::BlockLegacy&                                                   blockLegacy,
             ::BlockState const&                                              stateRef,
             ::std::function<::std::optional<int>(::BlockLegacy const&, int)> getter,
@@ -292,7 +292,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::BlockState const&                                              stateRef,
             ::std::function<::std::optional<int>(::BlockLegacy const&, int)> getter,
             ::std::function<::Block const*(::BlockLegacy const&, int, int)>  setter
@@ -308,15 +308,15 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::std::optional<int> $getState(::BlockLegacy const& blockLegacy, int blockData) const;
+        MCNAPI ::std::optional<int> $getState(::BlockLegacy const& blockLegacy, int blockData) const;
 
-        MCAPI ::Block const* $setState(::BlockLegacy const& blockLegacy, int blockData, int stateData) const;
+        MCNAPI ::Block const* $setState(::BlockLegacy const& blockLegacy, int blockData, int stateData) const;
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -331,7 +331,6 @@ public:
     ::ll::TypedStorage<1, 1, ::BlockRenderLayer>             mRenderLayer;
     ::ll::TypedStorage<1, 1, bool>                           mRenderLayerCanRenderAsOpaque;
     ::ll::TypedStorage<4, 4, ::BlockActorType>               mBlockEntityType;
-    ::ll::TypedStorage<1, 1, bool>                           mAnimatedTexture;
     ::ll::TypedStorage<4, 4, float>                          mThickness;
     ::ll::TypedStorage<1, 1, bool>                           mCanSlide;
     ::ll::TypedStorage<1, 1, bool>                           mCanReactToNeighborsDuringInstatick;
@@ -735,10 +734,12 @@ public:
     virtual bool shouldTriggerEntityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
     // vIndex: 98
-    virtual bool canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem) const;
+    virtual bool
+    canBeBuiltOver(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem)
+        const;
 
     // vIndex: 97
-    virtual bool canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos) const;
+    virtual bool canBeBuiltOver(::Block const& block, ::BlockSource&, ::BlockPos const&) const;
 
     // vIndex: 99
     virtual void triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
@@ -867,37 +868,31 @@ public:
     // vIndex: 138
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 140
-    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face, ::std::optional<::Vec3>) const;
-
     // vIndex: 139
-    virtual bool use(::Player&, ::BlockPos const&, uchar) const;
-
-    // vIndex: 141
     virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
 
-    // vIndex: 142
+    // vIndex: 140
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 143
+    // vIndex: 141
     virtual ::BlockRenderLayer getRenderLayer(::Block const& block, ::BlockSource&, ::BlockPos const& pos) const;
 
-    // vIndex: 144
+    // vIndex: 142
     virtual int getExtraRenderLayers() const;
 
-    // vIndex: 145
+    // vIndex: 143
     virtual ::Brightness getLight(::Block const&) const;
 
-    // vIndex: 146
+    // vIndex: 144
     virtual ::Brightness getEmissiveBrightness(::Block const&) const;
 
-    // vIndex: 147
+    // vIndex: 145
     virtual ::mce::Color getMapColor(::BlockSource&, ::BlockPos const&, ::Block const&) const;
 
-    // vIndex: 148
+    // vIndex: 146
     virtual void _onHitByActivatingAttack(::BlockSource&, ::BlockPos const&, ::Actor*) const;
 
-    // vIndex: 149
+    // vIndex: 147
     virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor&) const;
     // NOLINTEND
 
@@ -1009,8 +1004,6 @@ public:
     MCAPI ::BlockLegacy& setMinRequiredBaseGameVersion(::BaseGameVersion const& baseGameVersion);
 
     MCAPI ::BlockLegacy& setNameId(::std::string const& id);
-
-    MCAPI void setRandomTicking(bool tick) const;
 
     MCAPI ::BlockLegacy& setRequiresCorrectToolForDrops();
 
@@ -1313,9 +1306,11 @@ public:
 
     MCAPI bool $shouldTriggerEntityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
-    MCFOLD bool $canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem) const;
+    MCAPI bool
+    $canBeBuiltOver(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem)
+        const;
 
-    MCAPI bool $canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $canBeBuiltOver(::Block const& block, ::BlockSource&, ::BlockPos const&) const;
 
     MCFOLD void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
 
@@ -1403,10 +1398,6 @@ public:
     MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCFOLD bool $isInteractiveBlock() const;
-
-    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face, ::std::optional<::Vec3>) const;
-
-    MCFOLD bool $use(::Player&, ::BlockPos const&, uchar) const;
 
     MCFOLD bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
 

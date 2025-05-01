@@ -33,21 +33,18 @@ public:
     virtual void addAsset(::Core::Path, ::std::string) = 0;
 
     // vIndex: 2
-    virtual void deleteAsset(::Core::Path const&) = 0;
-
-    // vIndex: 3
     virtual void clear() = 0;
 
-    // vIndex: 4
+    // vIndex: 3
     virtual bool hasAsset(::Core::Path const&, bool) const = 0;
 
-    // vIndex: 5
+    // vIndex: 4
     virtual ::std::string const* const getDecryptionKey(::Core::Path const&, bool) const = 0;
 
-    // vIndex: 6
+    // vIndex: 5
     virtual void forEachAsset(::brstd::function_ref<void(::Core::Path const&)>) const = 0;
 
-    // vIndex: 7
+    // vIndex: 6
     virtual bool isEmpty() const = 0;
     // NOLINTEND
 

@@ -31,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AddBiomeIsland(
+    MCNAPI AddBiomeIsland(
         ::BiomeRegistry const& biomeRegistry,
         ::Biome const&         defaultIslandBiome,
         ::Biome const&         specialIslandBiome
@@ -41,7 +41,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::BiomeRegistry const& biomeRegistry, ::Biome const& defaultIslandBiome, ::Biome const& specialIslandBiome);
     // NOLINTEND
 };

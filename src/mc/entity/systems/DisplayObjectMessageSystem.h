@@ -16,9 +16,9 @@ struct LocalPlayerComponent;
 namespace DisplayObjectMessageSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void createSystems(::EntitySystems& systemRegistry);
+MCNAPI void createSystems(::EntitySystems& systemRegistry);
 
-MCAPI void tick(
+MCNAPI void tick(
     ::entt::type_list<::Include<::LocalPlayerComponent>>,
     ::DisplayObjectMessageRequestComponent const& request,
     ::ActorOwnerComponent&                        actorOwner

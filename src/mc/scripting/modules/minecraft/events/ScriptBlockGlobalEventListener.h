@@ -76,7 +76,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onBlockExploded(
+    MCNAPI ::EventResult $onBlockExploded(
         ::Dimension&      dimension,
         ::BlockPos const& blockPos,
         ::Block const&    destroyedBlock,
@@ -87,7 +87,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

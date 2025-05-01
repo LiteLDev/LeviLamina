@@ -42,13 +42,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~TypeStats();
+        MCNAPI ~TypeStats();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -92,7 +92,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptPluginHandleCounter::TypeStats* _getOrMakeStats(::entt::meta_type const& type);
+    MCNAPI ::ScriptPluginHandleCounter::TypeStats* _getOrMakeStats(::entt::meta_type const& type);
     // NOLINTEND
 
 public:
@@ -104,10 +104,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     $onMakeObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const& type, uint size);
 
-    MCAPI void $onDestroyObject(
+    MCNAPI void $onDestroyObject(
         ::Scripting::LifetimeRegistry&,
         ::Scripting::ObjectHandle,
         ::entt::meta_type const& type,
@@ -118,6 +118,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

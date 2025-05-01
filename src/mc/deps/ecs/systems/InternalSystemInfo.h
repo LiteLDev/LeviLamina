@@ -9,12 +9,12 @@ struct InternalSystemInfo : public ::SystemInfo {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~InternalSystemInfo();
+    MCNAPI ~InternalSystemInfo();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

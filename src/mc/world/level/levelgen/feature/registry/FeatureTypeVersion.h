@@ -22,20 +22,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FeatureTypeVersion(::FeatureLoading::FeatureVersion isInternal, bool version);
+    MCNAPI FeatureTypeVersion(::FeatureLoading::FeatureVersion isInternal, bool version);
 
-    MCAPI ~FeatureTypeVersion();
+    MCNAPI ~FeatureTypeVersion();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FeatureLoading::FeatureVersion isInternal, bool version);
+    MCNAPI void* $ctor(::FeatureLoading::FeatureVersion isInternal, bool version);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

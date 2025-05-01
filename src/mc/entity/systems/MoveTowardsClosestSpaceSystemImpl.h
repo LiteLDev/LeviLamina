@@ -147,7 +147,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void doTick(
+    MCNAPI static void doTick(
         ::StrictEntityContext const&                      entity,
         ::ActorDataFlagComponent const&                   synchedActorData,
         ::AABBShapeComponent const&                       aabbShape,
@@ -204,47 +204,47 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::StrictExecutionContext<
-                     ::Filter<
-                         ::CanStandOnSnowFlagComponent,
-                         ::HasLightweightFamilyFlagComponent,
-                         ::HorseFlagComponent,
-                         ::MobFlagComponent,
-                         ::ParrotFlagComponent,
-                         ::VehicleComponent,
-                         ::CamelFlagComponent,
-                         ::PlayerComponent,
-                         ::ActorMovementTickNeededComponent,
-                         ::PassengerComponent>,
-                     ::Read<
-                         ::AABBShapeComponent,
-                         ::MovementAbilitiesComponent,
-                         ::ActorTypeComponent,
-                         ::FallDistanceComponent,
-                         ::PassengerComponent,
-                         ::ActorGameTypeComponent,
-                         ::ActorDataFlagComponent,
-                         ::VehicleComponent,
-                         ::ActorRotationComponent,
-                         ::MobBodyRotationComponent,
-                         ::RenderRotationComponent,
-                         ::StandAnimationComponent,
-                         ::OffsetsComponent,
-                         ::VanillaOffsetComponent,
-                         ::PassengerRenderingRidingOffsetComponent,
-                         ::DepenetrationComponent,
-                         ::DimensionTypeComponent,
-                         ::MovementInterpolatorComponent>,
-                     ::Write<::StateVectorComponent>,
-                     ::AddRemove<::MoveTowardsClosestSpaceFlagComponent>,
-                     ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
-                     ::GlobalWrite<>,
-                     ::EntityFactoryT<>>& context);
+    MCNAPI void $tick(::StrictExecutionContext<
+                      ::Filter<
+                          ::CanStandOnSnowFlagComponent,
+                          ::HasLightweightFamilyFlagComponent,
+                          ::HorseFlagComponent,
+                          ::MobFlagComponent,
+                          ::ParrotFlagComponent,
+                          ::VehicleComponent,
+                          ::CamelFlagComponent,
+                          ::PlayerComponent,
+                          ::ActorMovementTickNeededComponent,
+                          ::PassengerComponent>,
+                      ::Read<
+                          ::AABBShapeComponent,
+                          ::MovementAbilitiesComponent,
+                          ::ActorTypeComponent,
+                          ::FallDistanceComponent,
+                          ::PassengerComponent,
+                          ::ActorGameTypeComponent,
+                          ::ActorDataFlagComponent,
+                          ::VehicleComponent,
+                          ::ActorRotationComponent,
+                          ::MobBodyRotationComponent,
+                          ::RenderRotationComponent,
+                          ::StandAnimationComponent,
+                          ::OffsetsComponent,
+                          ::VanillaOffsetComponent,
+                          ::PassengerRenderingRidingOffsetComponent,
+                          ::DepenetrationComponent,
+                          ::DimensionTypeComponent,
+                          ::MovementInterpolatorComponent>,
+                      ::Write<::StateVectorComponent>,
+                      ::AddRemove<::MoveTowardsClosestSpaceFlagComponent>,
+                      ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& context);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

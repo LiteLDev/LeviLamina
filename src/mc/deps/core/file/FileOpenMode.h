@@ -26,13 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FileOpenMode(char const* p);
+    MCNAPI explicit FileOpenMode(char const* p);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(char const* p);
+    MCNAPI void* $ctor(char const* p);
     // NOLINTEND
 };
 

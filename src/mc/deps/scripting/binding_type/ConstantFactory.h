@@ -31,24 +31,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ConstantFactory(::Scripting::ConstantFactory&&);
+    MCNAPI ConstantFactory(::Scripting::ConstantFactory&&);
 
-    MCAPI ConstantFactory(
+    MCNAPI ConstantFactory(
         ::std::string                                                      name_,
         ::entt::meta_type                                                  type_,
         bool                                                               primitive_,
         ::std::function<::entt::meta_any(::Scripting::WeakLifetimeScope&)> func_
     );
 
-    MCAPI ~ConstantFactory();
+    MCNAPI ~ConstantFactory();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::ConstantFactory&&);
+    MCNAPI void* $ctor(::Scripting::ConstantFactory&&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string                                                      name_,
         ::entt::meta_type                                                  type_,
         bool                                                               primitive_,
@@ -59,7 +59,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

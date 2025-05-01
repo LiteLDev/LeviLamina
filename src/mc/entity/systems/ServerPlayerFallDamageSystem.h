@@ -24,7 +24,7 @@ class ServerPlayerFallDamageSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doServerPlayerFallDamageSystem(
+    MCNAPI static void _doServerPlayerFallDamageSystem(
         ::StrictEntityContext const&                                               entity,
         ::MovementAbilitiesComponent const&                                        abilitiesComponent,
         ::ActorDataFlagComponent const&                                            synchedActorDataComponent,
@@ -37,6 +37,6 @@ public:
         ::EntityModifier<::HasTeleportedFlagComponent, ::WasOnGroundFlagComponent> mod
     );
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

@@ -8,6 +8,8 @@
 #define MCAPI  __declspec(dllimport)
 #define MCTAPI template<> MCAPI
 #define MCFOLD MCAPI /*Identical COMDAT Folding*/
+#define MCNAPI [[deprecated("This API is not available. Open an issue if you need it."\
+                            "https://github.com/LiteLDev/mcapi-requests/issues/new")]] MCAPI
 
 #include <algorithm>     // STL general algorithms
 #include <array>         // STL array container
@@ -62,6 +64,7 @@
 #include "entt/entt.hpp" // Entity Component System Library
 #include "entt/fwd.hpp"  // Entity Component Forward Declarations
 #include "glm/glm.hpp"   // OpenGL Mathematics Library
+#include "glm/ext.hpp"   // OpenGL Mathematics Library
 #include "gsl/gsl"       // Guideline Support Library
 
 // LevelDB C++ Library
@@ -267,36 +270,17 @@ struct UntypedStorage {
 };
 
 template <size_t Align, size_t Size, class T>
-struct TypedStorage {
-    alignas(Align) std::byte data[Size];
-
-    [[nodiscard]] T*        operator->() { return reinterpret_cast<T*>(data); }
-    [[nodiscard]] T const*  operator->() const { return reinterpret_cast<T const*>(data); }
-    [[nodiscard]] T&        get() & { return *reinterpret_cast<T*>(data); }
-    [[nodiscard]] T const&  get() const& { return *reinterpret_cast<T const*>(data); }
-    [[nodiscard]] T&&       get() && { return std::move(*reinterpret_cast<T*>(data)); }
-    [[nodiscard]] T const&& get() const&& { return std::move(*reinterpret_cast<T const*>(data)); }
-    [[nodiscard]] T&        operator*() & { return get(); }
-    [[nodiscard]] T const&  operator*() const& { return get(); }
-    [[nodiscard]] T&&       operator*() && { return std::move(get()); }
-    [[nodiscard]] T const&& operator*() const&& { return std::move(get()); }
+struct TypedStorageImpl {
+    using type = T;
 };
 
-template <class T>
-struct TypedStorage<8, 8, T&> {
-    T* data;
-
-    [[nodiscard]] T*        operator->() { return reinterpret_cast<T*>(data); }
-    [[nodiscard]] T const*  operator->() const { return reinterpret_cast<T const*>(data); }
-    [[nodiscard]] T&        get() & { return *reinterpret_cast<T*>(data); }
-    [[nodiscard]] T const&  get() const& { return *reinterpret_cast<T const*>(data); }
-    [[nodiscard]] T&&       get() && { return std::move(*reinterpret_cast<T*>(data)); }
-    [[nodiscard]] T const&& get() const&& { return std::move(*reinterpret_cast<T const*>(data)); }
-    [[nodiscard]] T&        operator*() & { return get(); }
-    [[nodiscard]] T const&  operator*() const& { return get(); }
-    [[nodiscard]] T&&       operator*() && { return std::move(get()); }
-    [[nodiscard]] T const&& operator*() const&& { return std::move(get()); }
+template <size_t Align, size_t Size>
+struct TypedStorageImpl<Align, Size, ::sockaddr_storage> {
+    using type = ::ll::UntypedStorage<Align, Size>;
 };
+
+template <size_t Align, size_t Size, class T>
+using TypedStorage = typename TypedStorageImpl<Align, Size, T>::type;
 
 } // namespace ll
 

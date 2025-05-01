@@ -20,11 +20,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourceMetadata();
+    MCNAPI ResourceMetadata();
 
-    MCAPI ::ResourceMetadata& operator=(::ResourceMetadata const&);
+    MCNAPI ::ResourceMetadata& operator=(::ResourceMetadata const&);
 
-    MCAPI ~ResourceMetadata();
+    MCNAPI ~ResourceMetadata();
     // NOLINTEND
 
 public:
@@ -36,12 +36,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -27,22 +27,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canMergeDefinitions(
+    MCNAPI bool _canMergeDefinitions(
         ::DynamicPropertiesDefinition const& other,
         ::std::string const&                 identifier,
         uint64                               sizeLimit,
         ::std::string&                       error
     ) const;
 
-    MCAPI ::std::optional<::DynamicPropertyDefinePropertyError>
+    MCNAPI ::std::optional<::DynamicPropertyDefinePropertyError>
     defineProperty(::std::string const& identifier, ::DynamicPropertyDefinition definition);
 
-    MCAPI ::DynamicPropertyDefinition const* tryGetPropertyDefinition(::std::string const& identifier) const;
+    MCNAPI ::DynamicPropertyDefinition const* tryGetPropertyDefinition(::std::string const& identifier) const;
 
-    MCAPI ::std::optional<::std::string>
+    MCNAPI ::std::optional<::std::string>
     tryMergeDefinitions(::DynamicPropertiesDefinition const& other, ::std::string const& identifier, uint64 sizeLimit);
 
-    MCAPI ~DynamicPropertiesDefinition();
+    MCNAPI ~DynamicPropertiesDefinition();
     // NOLINTEND
 
 public:
@@ -58,6 +58,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

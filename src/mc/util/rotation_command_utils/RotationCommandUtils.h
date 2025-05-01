@@ -13,9 +13,9 @@ namespace RotationCommandUtils { class RotationData; }
 namespace RotationCommandUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::Vec2 ComputeFacingRotation(::Vec3 destination, ::Vec3 const& facePosition, int commandVersion);
+MCNAPI ::Vec2 ComputeFacingRotation(::Vec3 destination, ::Vec3 const& facePosition, int commandVersion);
 
-MCAPI ::Vec2 ComputeRotation(
+MCNAPI ::Vec2 ComputeRotation(
     ::Actor const&                                               victim,
     ::std::optional<::RotationCommandUtils::RotationData> const& rotationData,
     int                                                          commandVersion

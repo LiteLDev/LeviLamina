@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::StructureTemplate const* getStructure(::std::string const& name);
+    MCNAPI ::StructureTemplate const* getStructure(::std::string const& name);
     // NOLINTEND
 
 public:

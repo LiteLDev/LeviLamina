@@ -20,10 +20,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_20::JigsawStructureSet::Structure&
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureSet::Structure&
     operator=(::SharedTypes::v1_21_20::JigsawStructureSet::Structure&&);
 
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructureSet::Structure&
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureSet::Structure&
     operator=(::SharedTypes::v1_21_20::JigsawStructureSet::Structure const&);
     // NOLINTEND
 };

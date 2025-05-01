@@ -16,9 +16,9 @@ class StreamCollection {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddStream(::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>);
+    MCNAPI void AddStream(::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>);
 
-    MCAPI void RemoveStream(::webrtc::MediaStreamInterface*);
+    MCNAPI void RemoveStream(::webrtc::MediaStreamInterface*);
     // NOLINTEND
 };
 

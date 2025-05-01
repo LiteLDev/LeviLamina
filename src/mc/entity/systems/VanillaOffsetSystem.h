@@ -68,9 +68,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
+    MCNAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
 
-    MCAPI static ::Vec3 getCameraPosition(::Actor const& actor, float alpha);
+    MCNAPI static ::Vec3 getCameraPosition(::Actor const& actor, float alpha);
     // NOLINTEND
 
 public:
@@ -82,19 +82,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::StrictExecutionContext<
-                     ::Filter<::PlayerComponent, ::ActorMovementTickNeededComponent>,
-                     ::Read<::OffsetsComponent, ::ActorDataFlagComponent, ::PlayerIsSleepingFlagComponent>,
-                     ::Write<::VanillaOffsetComponent>,
-                     ::AddRemove<::IsHorizontalPoseFlagComponent>,
-                     ::GlobalRead<::BaseGameVersionComponent>,
-                     ::GlobalWrite<>,
-                     ::EntityFactoryT<>>& context);
+    MCNAPI void $tick(::StrictExecutionContext<
+                      ::Filter<::PlayerComponent, ::ActorMovementTickNeededComponent>,
+                      ::Read<::OffsetsComponent, ::ActorDataFlagComponent, ::PlayerIsSleepingFlagComponent>,
+                      ::Write<::VanillaOffsetComponent>,
+                      ::AddRemove<::IsHorizontalPoseFlagComponent>,
+                      ::GlobalRead<::BaseGameVersionComponent>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& context);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

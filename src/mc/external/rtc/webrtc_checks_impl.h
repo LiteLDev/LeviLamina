@@ -8,15 +8,15 @@
 namespace rtc::webrtc_checks_impl {
 // functions
 // NOLINTBEGIN
-MCAPI void FatalLog(char const*, int, char const*, ::rtc::webrtc_checks_impl::CheckArgType const*, ...);
+MCNAPI void FatalLog(char const*, int, char const*, ::rtc::webrtc_checks_impl::CheckArgType const*, ...);
 
-MCAPI bool ParseArg(char**, ::rtc::webrtc_checks_impl::CheckArgType const**, ::std::string*);
+MCNAPI bool ParseArg(char**, ::rtc::webrtc_checks_impl::CheckArgType const**, ::std::string*);
 
-MCAPI void UnreachableCodeReached();
+MCNAPI void UnreachableCodeReached();
 
-MCAPI void WriteFatalLog(::std::string_view);
+MCNAPI void WriteFatalLog(::std::string_view);
 
-MCAPI void WriteFatalLog(char const*, int, ::std::string_view);
+MCNAPI void WriteFatalLog(char const*, int, ::std::string_view);
 // NOLINTEND
 
 } // namespace rtc::webrtc_checks_impl

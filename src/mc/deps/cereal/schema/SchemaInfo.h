@@ -23,15 +23,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::cereal::internal::SchemaInfo& operator=(::cereal::internal::SchemaInfo&&);
+    MCNAPI ::cereal::internal::SchemaInfo& operator=(::cereal::internal::SchemaInfo&&);
 
-    MCAPI ~SchemaInfo();
+    MCNAPI ~SchemaInfo();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

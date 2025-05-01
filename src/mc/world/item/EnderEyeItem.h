@@ -29,7 +29,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tryToThrow(::Level& level, ::ItemStack& item, ::Player& player);
+    MCNAPI static void _tryToThrow(::Level& level, ::ItemStack& item, ::Player& player);
     // NOLINTEND
 
 public:
@@ -41,14 +41,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCFOLD bool $isThrowable() const;
+    MCNAPI bool $isThrowable() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

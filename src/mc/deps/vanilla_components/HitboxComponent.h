@@ -21,12 +21,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HitboxComponent(::HitboxComponent const& rhs);
+    MCNAPI HitboxComponent(::HitboxComponent const& rhs);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::HitboxComponent const& rhs);
+    MCNAPI void* $ctor(::HitboxComponent const& rhs);
     // NOLINTEND
 };

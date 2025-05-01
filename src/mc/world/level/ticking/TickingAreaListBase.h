@@ -42,23 +42,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uint countEntityTickingAreas() const;
+    MCNAPI uint countEntityTickingAreas() const;
 
-    MCAPI ::std::vector<::std::shared_ptr<::ITickingArea>> findStandaloneAreasContaining(::BlockPos const& position);
+    MCNAPI ::std::vector<::std::shared_ptr<::ITickingArea>> findStandaloneAreasContaining(::BlockPos const& position);
 
-    MCAPI ::std::vector<::std::shared_ptr<::ITickingArea>> findStandaloneAreasNamed(::std::string const& name) const;
+    MCNAPI ::std::vector<::std::shared_ptr<::ITickingArea>> findStandaloneAreasNamed(::std::string const& name) const;
 
-    MCAPI ::std::shared_ptr<::ITickingArea> getAreaFor(::ActorUniqueID const& entityId) const;
+    MCNAPI ::std::shared_ptr<::ITickingArea> getAreaFor(::ActorUniqueID const& entityId) const;
 
-    MCAPI ::std::vector<::TickingAreaDescription> getStandaloneTickingAreaDescriptions() const;
+    MCNAPI ::std::vector<::TickingAreaDescription> getStandaloneTickingAreaDescriptions() const;
 
-    MCAPI bool hasTickingAreaNamed(::std::string const& name) const;
+    MCNAPI bool hasTickingAreaNamed(::std::string const& name) const;
 
-    MCAPI void processRemoves();
+    MCNAPI void processRemoves();
 
-    MCAPI ::std::vector<::TickingAreaDescription> removeAllStandaloneAreas(::LevelStorage& levelStorage);
+    MCNAPI ::std::vector<::TickingAreaDescription> removeAllStandaloneAreas(::LevelStorage& levelStorage);
 
-    MCAPI ::std::vector<::TickingAreaDescription>
+    MCNAPI ::std::vector<::TickingAreaDescription>
     removeAreas(::std::vector<::std::shared_ptr<::ITickingArea>> const& areasToRemove, ::LevelStorage& levelStorage);
     // NOLINTEND
 
@@ -71,7 +71,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $removeDistantEntityAreasAndCheckForRemoved(
+    MCNAPI bool $removeDistantEntityAreasAndCheckForRemoved(
         ::std::vector<::Vec3> const&                 playerPositions,
         ::std::function<void(::ITickingArea const&)> requeue,
         ::LevelStorage&                              levelStorage
@@ -81,6 +81,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

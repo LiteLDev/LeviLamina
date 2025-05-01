@@ -34,27 +34,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WeatherManager(
+    MCNAPI WeatherManager(
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>      dimensionManager,
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> levelEventCoordinator,
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager>     levelEventManager,
         ::std::unique_ptr<::IWeatherManagerProxy>              weatherManagerProxy
     );
 
-    MCAPI void
+    MCNAPI void
     registerWithServerPlayerSleepManager(::IServerPlayerSleepManagerConnector& serverPlayerSleepManagerConnector);
 
-    MCAPI void stopWeather();
+    MCNAPI void stopWeather();
 
-    MCAPI void updateWeather(float rainLevel, int rainTime, float lightningLevel, int lightningTime);
+    MCNAPI void updateWeather(float rainLevel, int rainTime, float lightningLevel, int lightningTime);
 
-    MCAPI ~WeatherManager();
+    MCNAPI ~WeatherManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>      dimensionManager,
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> levelEventCoordinator,
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager>     levelEventManager,
@@ -65,6 +65,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

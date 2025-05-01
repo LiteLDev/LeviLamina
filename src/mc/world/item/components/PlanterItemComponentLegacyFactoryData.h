@@ -16,13 +16,12 @@ struct PlanterItemComponentLegacyFactoryData : public ::IItemComponentLegacyFact
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk531b01;
+    ::ll::UntypedStorage<8, 32> mUnk818f9b;
     ::ll::UntypedStorage<8, 24> mUnkd8bb46;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    PlanterItemComponentLegacyFactoryData& operator=(PlanterItemComponentLegacyFactoryData const&);
     PlanterItemComponentLegacyFactoryData(PlanterItemComponentLegacyFactoryData const&);
     PlanterItemComponentLegacyFactoryData();
 
@@ -30,13 +29,21 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PlanterItemComponentLegacyFactoryData() /*override*/ = default;
+    virtual ~PlanterItemComponentLegacyFactoryData() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::PlanterItemComponentLegacyFactoryData& operator=(::PlanterItemComponentLegacyFactoryData const&);
+
+    MCNAPI ::PlanterItemComponentLegacyFactoryData& operator=(::PlanterItemComponentLegacyFactoryData&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
@@ -46,12 +53,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

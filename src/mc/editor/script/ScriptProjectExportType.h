@@ -12,7 +12,7 @@ class ScriptProjectExportType {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::EnumBindingBuilder<::Editor::ProjectExportType, ::Editor::ProjectExportType>
+    MCNAPI static ::Scripting::EnumBindingBuilder<::Editor::ProjectExportType, ::Editor::ProjectExportType>
     bindScriptEnumsProjectExportType();
     // NOLINTEND
 };

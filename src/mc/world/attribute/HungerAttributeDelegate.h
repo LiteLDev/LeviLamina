@@ -38,7 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canPlayerBeAffectedByHunger() const;
+    MCNAPI bool _canPlayerBeAffectedByHunger() const;
     // NOLINTEND
 
 public:
@@ -50,14 +50,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context);
+    MCNAPI void $tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context);
 
-    MCAPI void $notify(int64 type, ::AttributeModificationContext& context);
+    MCNAPI void $notify(int64 type, ::AttributeModificationContext& context);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

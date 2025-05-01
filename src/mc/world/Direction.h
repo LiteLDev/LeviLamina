@@ -16,7 +16,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Direction::Type getDirection(float xd, float zd);
+    MCNAPI static ::Direction::Type getDirection(float xd, float zd);
     // NOLINTEND
 
 public:

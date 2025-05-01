@@ -12,7 +12,7 @@ class ScriptSignTextSide {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::SignTextSide> bind();
+    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::SignTextSide> bind();
     // NOLINTEND
 };
 

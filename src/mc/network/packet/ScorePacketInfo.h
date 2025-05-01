@@ -3,14 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/scores/IdentityDefinition.h"
-
-// auto generated forward declare list
-// clang-format off
-struct ActorUniqueID;
-struct PlayerScoreboardId;
-struct ScoreboardId;
-// clang-format on
+#include "mc/world/scores/PlayerScoreboardId.h"
+#include "mc/world/scores/ScoreboardId.h"
 
 struct ScorePacketInfo {
 public:

@@ -27,25 +27,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::std::variant<int, bool, ::std::string>>
+    MCNAPI ::std::optional<::std::variant<int, bool, ::std::string>>
     get(::Editor::ScriptModule::ScriptSettingsGraphicsPropType prop) const;
 
-    MCAPI ::std::unordered_map<::std::string, ::std::optional<::std::variant<int, bool, ::std::string>>> getAll() const;
+    MCNAPI ::std::unordered_map<::std::string, ::std::optional<::std::variant<int, bool, ::std::string>>>
+    getAll() const;
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     set(::Editor::ScriptModule::ScriptSettingsGraphicsPropType prop,
         ::std::variant<int, bool, ::std::string> const&        value);
 
-    MCAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void>
     setAll(::std::unordered_map<::std::string, ::std::optional<::std::variant<int, bool, ::std::string>>> const& props);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptSettingsGraphics> bindScript();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptSettingsGraphics> bindScript();
 
-    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Editor::ScriptModule::ScriptSettingsGraphicsPropType>
+    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Editor::ScriptModule::ScriptSettingsGraphicsPropType>
     bindScriptPropsEnum();
     // NOLINTEND
 };

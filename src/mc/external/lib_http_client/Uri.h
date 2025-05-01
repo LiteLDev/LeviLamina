@@ -15,49 +15,49 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::http_string const& FullPath() const;
+    MCNAPI ::http_string const& FullPath() const;
 
-    MCAPI ::http_string const& Host() const;
+    MCNAPI ::http_string const& Host() const;
 
-    MCAPI bool IsSecure() const;
+    MCNAPI bool IsSecure() const;
 
-    MCAPI bool
+    MCNAPI bool
     ParseAuthority(::http_string const&, ::std::_String_const_iterator<::std::_String_val<::std::_Simple_types<char>>>&);
 
-    MCAPI bool
+    MCNAPI bool
     ParseHost(::http_string const&, ::std::_String_const_iterator<::std::_String_val<::std::_Simple_types<char>>>&);
 
-    MCAPI ushort Port() const;
+    MCNAPI ushort Port() const;
 
-    MCAPI ::http_string Resource() const;
+    MCNAPI ::http_string Resource() const;
 
-    MCAPI ::http_string const& Scheme() const;
+    MCNAPI ::http_string const& Scheme() const;
 
-    MCAPI Uri();
+    MCNAPI Uri();
 
-    MCAPI Uri(::xbox::httpclient::Uri const&);
+    MCNAPI Uri(::xbox::httpclient::Uri const&);
 
-    MCAPI explicit Uri(::http_string const&);
+    MCNAPI explicit Uri(::http_string const&);
 
-    MCAPI ::xbox::httpclient::Uri& operator=(::xbox::httpclient::Uri&&);
+    MCNAPI ::xbox::httpclient::Uri& operator=(::xbox::httpclient::Uri&&);
 
-    MCAPI ~Uri();
+    MCNAPI ~Uri();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::xbox::httpclient::Uri const&);
+    MCNAPI void* $ctor(::xbox::httpclient::Uri const&);
 
-    MCAPI void* $ctor(::http_string const&);
+    MCNAPI void* $ctor(::http_string const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

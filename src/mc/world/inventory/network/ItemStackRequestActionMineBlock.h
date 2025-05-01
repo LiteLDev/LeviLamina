@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/platform/Result.h"
+#include "mc/world/inventory/network/ItemStackNetIdVariant.h"
 #include "mc/world/inventory/network/ItemStackRequestAction.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-struct ItemStackNetIdVariant;
 // clang-format on
 
 class ItemStackRequestActionMineBlock : public ::ItemStackRequestAction {
@@ -52,14 +52,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_write(::BinaryStream& stream) const;
+    MCNAPI void $_write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

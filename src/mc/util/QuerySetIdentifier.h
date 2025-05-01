@@ -10,9 +10,9 @@ class HashedString;
 namespace QuerySetIdentifier {
 // functions
 // NOLINTBEGIN
-MCAPI ::gsl::span<::HashedString const> getDefaultCollection();
+MCNAPI ::gsl::span<::HashedString const> getDefaultCollection();
 
-MCAPI ::gsl::span<::HashedString const> getTagsCollection();
+MCNAPI ::gsl::span<::HashedString const> getTagsCollection();
 // NOLINTEND
 
 // static variables

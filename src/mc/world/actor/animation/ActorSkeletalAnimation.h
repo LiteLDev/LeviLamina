@@ -30,22 +30,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorSkeletalAnimation(::std::string const& name, ::std::string const& sourceFilePathWithExtension);
+    MCNAPI ActorSkeletalAnimation(::std::string const& name, ::std::string const& sourceFilePathWithExtension);
 
-    MCAPI void removeIrrelevantKeyFramesAndConvertAllFloatKeyFramesToSimplifiedVersion();
+    MCNAPI void removeIrrelevantKeyFramesAndConvertAllFloatKeyFramesToSimplifiedVersion();
 
-    MCAPI ~ActorSkeletalAnimation();
+    MCNAPI ~ActorSkeletalAnimation();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, ::std::string const& sourceFilePathWithExtension);
+    MCNAPI void* $ctor(::std::string const& name, ::std::string const& sourceFilePathWithExtension);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

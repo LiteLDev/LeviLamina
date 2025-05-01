@@ -23,30 +23,33 @@ public:
 public:
     // prevent constructor by default
     PropertyBinding& operator=(PropertyBinding const&);
-    PropertyBinding();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PropertyBinding(::Scripting::PropertyBinding const&);
+    MCNAPI PropertyBinding();
 
-    MCAPI PropertyBinding(::Scripting::PropertyBinding&&);
+    MCNAPI PropertyBinding(::Scripting::PropertyBinding const&);
 
-    MCAPI ~PropertyBinding();
+    MCNAPI PropertyBinding(::Scripting::PropertyBinding&&);
+
+    MCNAPI ~PropertyBinding();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::PropertyBinding const&);
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::Scripting::PropertyBinding&&);
+    MCNAPI void* $ctor(::Scripting::PropertyBinding const&);
+
+    MCNAPI void* $ctor(::Scripting::PropertyBinding&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

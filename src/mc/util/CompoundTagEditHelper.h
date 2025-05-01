@@ -25,16 +25,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void pushChild(::std::string const& tagName);
+    MCNAPI void pushChild(::std::string const& tagName);
 
-    MCAPI void replaceWith(::std::string const& newTagName, ::std::unique_ptr<::Tag> newTag);
+    MCNAPI void replaceWith(::std::string const& newTagName, ::std::unique_ptr<::Tag> newTag);
 
-    MCAPI ~CompoundTagEditHelper();
+    MCNAPI ~CompoundTagEditHelper();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -24,8 +24,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::leveldb::Status flushToDisk(::leveldb::Env* env);
+    MCNAPI ::leveldb::Status flushToDisk(::leveldb::Env* env);
 
-    MCAPI uint64 getFlushSize() const;
+    MCNAPI uint64 getFlushSize() const;
     // NOLINTEND
 };

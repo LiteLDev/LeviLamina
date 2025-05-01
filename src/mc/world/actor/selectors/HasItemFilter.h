@@ -21,14 +21,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::HasItemFilter& operator=(::HasItemFilter const&);
+    MCNAPI ::HasItemFilter& operator=(::HasItemFilter const&);
 
-    MCAPI ~HasItemFilter();
+    MCNAPI ~HasItemFilter();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

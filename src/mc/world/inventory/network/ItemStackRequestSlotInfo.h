@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct FullContainerName;
-struct ItemStackNetIdVariant;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/containers/FullContainerName.h"
+#include "mc/world/inventory/network/ItemStackNetIdVariant.h"
 
 struct ItemStackRequestSlotInfo {
 public:
@@ -25,14 +23,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ItemStackRequestSlotInfo& operator=(::ItemStackRequestSlotInfo&&);
+    MCNAPI ::ItemStackRequestSlotInfo& operator=(::ItemStackRequestSlotInfo&&);
 
-    MCAPI ~ItemStackRequestSlotInfo();
+    MCNAPI ~ItemStackRequestSlotInfo();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -282,34 +282,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Vec3 _absoluteVec(::Vec3 const& relativeVec) const;
+    MCNAPI ::Vec3 _absoluteVec(::Vec3 const& relativeVec) const;
 
-    MCAPI ::std::optional<::gametest::GameTestError> assertCondition(bool condition, ::std::string const& message);
+    MCNAPI void failIf(::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
-    MCAPI void failIf(::std::function<::std::optional<::gametest::GameTestError>()> fn);
-
-    MCAPI ::gametest::GameTestError generateErrorWithContext(
+    MCNAPI ::gametest::GameTestError generateErrorWithContext(
         ::gametest::GameTestErrorType message,
         ::std::string                 relativePos,
         ::BlockPos const&             errorType
     ) const;
 
-    MCAPI ::gametest::GameTestError generateErrorWithContext(
+    MCNAPI ::gametest::GameTestError generateErrorWithContext(
         ::gametest::GameTestErrorType errorType,
         ::std::string                 message,
         ::std::vector<::std::string>  params,
         ::BlockPos const&             relativePos
     ) const;
 
-    MCAPI ::std::variant<::gametest::GameTestError, uchar> rotateDirection(uchar direction) const;
+    MCNAPI ::std::variant<::gametest::GameTestError, uchar> rotateDirection(uchar direction) const;
 
-    MCAPI void runAfterDelay(int ticksToDelay, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
+    MCNAPI void runAfterDelay(int ticksToDelay, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
-    MCAPI void runAtTickTime(int tickTime, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
+    MCNAPI void runAtTickTime(int tickTime, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
-    MCAPI void succeedWhen(::std::function<::std::optional<::gametest::GameTestError>()> fn);
+    MCNAPI void succeedWhen(::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
-    MCAPI void until(
+    MCNAPI void until(
         ::std::function<::std::optional<::gametest::GameTestError>()> testFn,
         ::std::function<::std::optional<::gametest::GameTestError>()> doneFn
     );

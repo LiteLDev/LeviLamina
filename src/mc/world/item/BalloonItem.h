@@ -47,9 +47,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::LeashFenceKnotActor* _createKnot(::BlockSource& region, ::BlockPos pos, ::ItemInstance const& item) const;
+    MCNAPI ::LeashFenceKnotActor* _createKnot(::BlockSource& region, ::BlockPos pos, ::ItemInstance const& item) const;
 
-    MCAPI ::ItemColor _getColorIndex(::ItemDescriptor const& itemInstance) const;
+    MCNAPI ::ItemColor _getColorIndex(::ItemDescriptor const& itemInstance) const;
     // NOLINTEND
 
 public:
@@ -61,20 +61,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string
+    MCNAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const& instance) const;
+    MCNAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const& instance) const;
 
-    MCFOLD bool $isDyeable() const;
+    MCNAPI bool $isDyeable() const;
 
-    MCAPI ::InteractionResult
+    MCNAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

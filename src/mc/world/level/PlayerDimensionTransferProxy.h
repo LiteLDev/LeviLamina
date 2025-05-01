@@ -96,49 +96,49 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     $playerDimensionChangedEvent(::Player& player, ::DimensionType fromDimensionId, ::DimensionType toDimensionId);
 
-    MCAPI ::Actor* $getAgent(::Player& player);
+    MCNAPI ::Actor* $getAgent(::Player& player);
 
-    MCAPI void $resetAgent(::Player& player);
+    MCNAPI void $resetAgent(::Player& player);
 
-    MCAPI void $stopUsingItem(::Player& player);
+    MCNAPI void $stopUsingItem(::Player& player);
 
-    MCAPI bool $hasRespawnPosition(::Player const& player) const;
+    MCNAPI bool $hasRespawnPosition(::Player const& player) const;
 
-    MCAPI ::BlockPos const& $getSpawnPosition(::Player const& player) const;
+    MCNAPI ::BlockPos const& $getSpawnPosition(::Player const& player) const;
 
-    MCAPI bool $isRespawningFromTheEnd(::Player const& player) const;
+    MCNAPI bool $isRespawningFromTheEnd(::Player const& player) const;
 
-    MCAPI void $fireWillChangeDimension(::Player& player);
+    MCNAPI void $fireWillChangeDimension(::Player& player);
 
-    MCAPI void $moveTo(::Player& player, ::Vec3 const& position);
+    MCNAPI void $moveTo(::Player& player, ::Vec3 const& position);
 
-    MCAPI void $setPreviousPosition(::Player& player);
+    MCNAPI void $setPreviousPosition(::Player& player);
 
-    MCAPI void $resetInterpolation(::Player& player);
+    MCNAPI void $resetInterpolation(::Player& player);
 
-    MCAPI void $prepareRegion(::Player& player, ::Dimension const& dimension);
+    MCNAPI void $prepareRegion(::Player& player, ::Dimension const& dimension);
 
-    MCAPI ::MovePlayerPacket
+    MCNAPI ::MovePlayerPacket
     $createMovePlayerPacket(::Player const& player, ::PlayerPositionModeComponent::PositionMode resetPosition) const;
 
-    MCAPI void $setAgent(::Player& player, ::Actor& agent);
+    MCNAPI void $setAgent(::Player& player, ::Actor& agent);
 
-    MCAPI ::Vec3 $calculateAgentSpawnPosition(::Player const& player) const;
+    MCNAPI ::Vec3 $calculateAgentSpawnPosition(::Player const& player) const;
 
-    MCAPI bool $isRespawnReady(::Player const& player) const;
+    MCNAPI bool $isRespawnReady(::Player const& player) const;
 
-    MCAPI ::std::pair<bool, ::std::optional<::SubChunkPos>>
+    MCNAPI ::std::pair<bool, ::std::optional<::SubChunkPos>>
     $hasSubChunksAt(::Player const& player, ::BlockPos const& min, ::BlockPos const& max) const;
 
-    MCFOLD void $transferTickingArea(::Actor& actor, ::Dimension& dimension);
+    MCNAPI void $transferTickingArea(::Actor& actor, ::Dimension& dimension);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

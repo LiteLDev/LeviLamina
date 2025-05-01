@@ -50,7 +50,7 @@ public:
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    // vIndex: 142
+    // vIndex: 140
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 87
@@ -70,7 +70,7 @@ public:
         /*override*/;
 
     // vIndex: 48
-    virtual bool isValidAuxValue(int auxValue) const /*override*/;
+    virtual bool isValidAuxValue(int value) const /*override*/;
 
     // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB&) const /*override*/;
@@ -91,17 +91,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Block const& _determineNewBlockState(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI ::Block const& _determineNewBlockState(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::LeafSize _getLeafSize(::Block const& block) const;
+    MCNAPI ::LeafSize _getLeafSize(::Block const& block) const;
 
-    MCAPI ::AABB const& _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue) const;
+    MCNAPI ::AABB const& _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue) const;
 
-    MCAPI ::StalkThickness _getStalkThickness(::Block const& block) const;
+    MCNAPI ::StalkThickness _getStalkThickness(::Block const& block) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -113,46 +113,46 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Vec3 $randomlyModifyPosition(::BlockPos const& pos) const;
+    MCNAPI ::Vec3 $randomlyModifyPosition(::BlockPos const& pos) const;
 
-    MCAPI ::AABB
+    MCNAPI ::AABB
     $getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCAPI ::AABB const&
+    MCNAPI ::AABB const&
     $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
-    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI ::Block const&
+    MCNAPI ::Block const&
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
 
-    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI bool
+    MCNAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
+    MCNAPI bool $mayConsumeFertilizer(::BlockSource& region) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI bool $isValidAuxValue(int auxValue) const;
+    MCNAPI bool $isValidAuxValue(int value) const;
 
-    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB&) const;
+    MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB&) const;
 
-    MCFOLD bool $isLavaBlocking() const;
+    MCNAPI bool $isLavaBlocking() const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

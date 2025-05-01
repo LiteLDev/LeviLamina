@@ -45,27 +45,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void generateBands(::Random& random);
+    MCNAPI void generateBands(::Random& random);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init(::Biome& biome, uint levelSeed);
+    MCNAPI void $init(::Biome& biome, uint levelSeed);
 
-    MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
+    MCNAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

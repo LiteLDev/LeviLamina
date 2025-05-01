@@ -17,13 +17,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Configuration();
+        MCNAPI ~Configuration();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 

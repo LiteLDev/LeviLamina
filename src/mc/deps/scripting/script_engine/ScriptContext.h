@@ -31,27 +31,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptContext(::Scripting::ScriptContext&& rhs);
+    MCNAPI ScriptContext(::Scripting::ScriptContext&& rhs);
 
-    MCAPI void _destroy();
+    MCNAPI void _destroy();
 
-    MCAPI ::Scripting::ScriptContext& operator=(::Scripting::ScriptContext&& rhs);
+    MCNAPI ::Scripting::ScriptContext& operator=(::Scripting::ScriptContext&& rhs);
 
-    MCAPI ::Scripting::ResultAny run(::Scripting::IPayload& payload, ::std::optional<::Scripting::Privilege> privilege);
+    MCNAPI ::Scripting::ResultAny
+    run(::Scripting::IPayload& payload, ::std::optional<::Scripting::Privilege> privilege);
 
-    MCAPI ~ScriptContext();
+    MCNAPI ~ScriptContext();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::ScriptContext&& rhs);
+    MCNAPI void* $ctor(::Scripting::ScriptContext&& rhs);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

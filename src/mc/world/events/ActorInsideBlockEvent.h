@@ -5,11 +5,11 @@
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockLegacy;
-class BlockPos;
 class BlockSourceHandle;
 class EntityContext;
 // clang-format on
@@ -27,12 +27,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ActorInsideBlockEvent();
+    MCNAPI ~ActorInsideBlockEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

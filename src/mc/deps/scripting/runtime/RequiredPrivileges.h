@@ -8,7 +8,7 @@ class RequiredPrivileges {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkfd639e;
+    ::ll::UntypedStorage<1, 1> mUnkfd639e;
     // NOLINTEND
 
 public:

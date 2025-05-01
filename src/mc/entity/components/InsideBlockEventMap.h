@@ -2,9 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/ActorDefinitionTrigger.h"
+
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionTrigger;
 class Block;
 // clang-format on
 
@@ -29,9 +31,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InsideBlockEventMap(::InsideBlockEventMap const&);
+    MCNAPI InsideBlockEventMap(::InsideBlockEventMap const&);
 
-    MCAPI InsideBlockEventMap(
+    MCNAPI InsideBlockEventMap(
         ::Block const&                  block,
         bool                            watchEnter,
         bool                            watchExit,
@@ -40,15 +42,15 @@ public:
         ::ActorDefinitionTrigger const& exitedEvent
     );
 
-    MCAPI ~InsideBlockEventMap();
+    MCNAPI ~InsideBlockEventMap();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::InsideBlockEventMap const&);
+    MCNAPI void* $ctor(::InsideBlockEventMap const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Block const&                  block,
         bool                            watchEnter,
         bool                            watchExit,
@@ -61,6 +63,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

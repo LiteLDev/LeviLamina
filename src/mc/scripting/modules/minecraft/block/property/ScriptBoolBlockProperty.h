@@ -40,31 +40,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBoolBlockProperty(
+    MCNAPI ScriptBoolBlockProperty(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,
         ::std::vector<bool>                                                                   validValues,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
     );
 
-    MCAPI ::Scripting::Result_deprecated<bool> getState() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getState() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptBoolBlockProperty&
+    MCNAPI ::ScriptModuleMinecraft::ScriptBoolBlockProperty&
     operator=(::ScriptModuleMinecraft::ScriptBoolBlockProperty&&);
 
-    MCAPI ::Scripting::Result<void> setState(bool state);
+    MCNAPI ::Scripting::Result<void> setState(bool state);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBoolBlockProperty> bind();
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBoolBlockProperty> bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,
         ::std::vector<bool>                                                                   validValues,
@@ -81,7 +81,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

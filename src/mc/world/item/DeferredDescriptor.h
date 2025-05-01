@@ -70,16 +70,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor>
+    MCNAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor>
     _initFromBlockLegacy(::BlockLegacy const& block, ::WeakPtr<::Item>&& item) const;
 
-    MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> _initFromItem(::WeakPtr<::Item>&& item, short aux) const;
+    MCNAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> _initFromItem(::WeakPtr<::Item>&& item, short aux) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::std::unique_ptr<::DeferredDescriptor>> deserialize(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::std::unique_ptr<::DeferredDescriptor>> deserialize(::ReadOnlyBinaryStream& stream
+    );
     // NOLINTEND
 
 public:
@@ -91,30 +92,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $clone() const;
+    MCNAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $clone() const;
 
-    MCFOLD bool $sameItem(::ItemDescriptor::ItemEntry const&, bool) const;
+    MCNAPI bool $sameItem(::ItemDescriptor::ItemEntry const&, bool) const;
 
-    MCFOLD ::std::string const& $getFullName() const;
+    MCNAPI ::std::string const& $getFullName() const;
 
-    MCAPI ::std::map<::std::string, ::std::string> $toMap() const;
+    MCNAPI ::std::map<::std::string, ::std::string> $toMap() const;
 
-    MCAPI ::std::optional<::CompoundTag> $save() const;
+    MCNAPI ::std::optional<::CompoundTag> $save() const;
 
-    MCAPI void $serialize(::BinaryStream& stream) const;
+    MCNAPI void $serialize(::BinaryStream& stream) const;
 
-    MCFOLD ::ItemDescriptor::InternalType $getType() const;
+    MCNAPI ::ItemDescriptor::InternalType $getType() const;
 
-    MCFOLD uint64 $getHash() const;
+    MCNAPI uint64 $getHash() const;
 
-    MCFOLD bool $shouldResolve() const;
+    MCNAPI bool $shouldResolve() const;
 
-    MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $resolve() const;
+    MCNAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $resolve() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

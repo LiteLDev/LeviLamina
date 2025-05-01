@@ -63,7 +63,7 @@ public:
     virtual uint64 hash() const /*override*/;
 
     // vIndex: 6
-    virtual bool equals(::Tag const& obj) const /*override*/;
+    virtual bool equals(::Tag const& rhs) const /*override*/;
     // NOLINTEND
 
 public:
@@ -100,8 +100,6 @@ public:
     MCAPI float getFloat(::std::string_view name) const;
 
     MCAPI int getInt(::std::string_view name) const;
-
-    MCAPI int64 getInt64(::std::string_view name) const;
 
     MCAPI ::Int64Tag const* getInt64Tag(::std::string_view) const;
 
@@ -177,7 +175,7 @@ public:
 
     MCAPI uint64 $hash() const;
 
-    MCAPI bool $equals(::Tag const& obj) const;
+    MCAPI bool $equals(::Tag const& rhs) const;
     // NOLINTEND
 
 public:

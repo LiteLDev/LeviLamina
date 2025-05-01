@@ -19,31 +19,31 @@ class TransportDescriptionFactory {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::cricket::TransportDescription>
+    MCNAPI ::std::unique_ptr<::cricket::TransportDescription>
     CreateAnswer(::cricket::TransportDescription const*, ::cricket::TransportOptions const&, bool, ::cricket::TransportDescription const*, ::cricket::IceCredentialsIterator*)
         const;
 
-    MCAPI ::std::unique_ptr<::cricket::TransportDescription>
+    MCNAPI ::std::unique_ptr<::cricket::TransportDescription>
     CreateOffer(::cricket::TransportOptions const&, ::cricket::TransportDescription const*, ::cricket::IceCredentialsIterator*)
         const;
 
-    MCAPI bool SetSecurityInfo(::cricket::TransportDescription*, ::cricket::ConnectionRole) const;
+    MCNAPI bool SetSecurityInfo(::cricket::TransportDescription*, ::cricket::ConnectionRole) const;
 
-    MCAPI explicit TransportDescriptionFactory(::webrtc::FieldTrialsView const&);
+    MCNAPI explicit TransportDescriptionFactory(::webrtc::FieldTrialsView const&);
 
-    MCAPI ~TransportDescriptionFactory();
+    MCNAPI ~TransportDescriptionFactory();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::FieldTrialsView const&);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

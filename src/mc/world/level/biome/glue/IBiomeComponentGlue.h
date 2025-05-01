@@ -28,10 +28,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::BlockDescriptor>
+    MCNAPI static ::std::unique_ptr<::BlockDescriptor>
     _getResolvedBlock(::SharedTypes::v1_20_60::BlockSpecifier const& blockSpecifier, ::std::string const& fieldName);
 
-    MCAPI static ::std::vector<::std::unique_ptr<::BlockDescriptor>> _getResolvedBlocks(
+    MCNAPI static ::std::vector<::std::unique_ptr<::BlockDescriptor>> _getResolvedBlocks(
         ::std::vector<::SharedTypes::v1_20_60::BlockSpecifier> const& blockSpecifiers,
         ::std::string const&                                          fieldName
     );

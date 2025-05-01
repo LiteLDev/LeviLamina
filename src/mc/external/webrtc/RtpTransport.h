@@ -24,35 +24,35 @@ class RtpTransport {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void DemuxPacket(::rtc::CopyOnWriteBuffer, ::webrtc::Timestamp, ::rtc::EcnMarking);
+    MCNAPI void DemuxPacket(::rtc::CopyOnWriteBuffer, ::webrtc::Timestamp, ::rtc::EcnMarking);
 
-    MCAPI ::webrtc::flat_containers_internal::
+    MCNAPI ::webrtc::flat_containers_internal::
         flat_tree<uint, ::webrtc::identity, ::std::less<void>, ::std::vector<uint>>
         GetSsrcsForSink(::webrtc::RtpPacketSinkInterface*);
 
-    MCAPI bool IsTransportWritable();
+    MCNAPI bool IsTransportWritable();
 
-    MCAPI void MaybeSignalReadyToSend();
+    MCNAPI void MaybeSignalReadyToSend();
 
-    MCAPI void OnReadPacket(::rtc::PacketTransportInternal*, ::rtc::ReceivedPacket const&);
+    MCNAPI void OnReadPacket(::rtc::PacketTransportInternal*, ::rtc::ReceivedPacket const&);
 
-    MCAPI void OnReadyToSend(::rtc::PacketTransportInternal*);
+    MCNAPI void OnReadyToSend(::rtc::PacketTransportInternal*);
 
-    MCAPI void OnSentPacket(::rtc::PacketTransportInternal*, ::rtc::SentPacket const&);
+    MCNAPI void OnSentPacket(::rtc::PacketTransportInternal*, ::rtc::SentPacket const&);
 
-    MCAPI bool SendPacket(bool, ::rtc::CopyOnWriteBuffer*, ::rtc::PacketOptions const&, int);
+    MCNAPI bool SendPacket(bool, ::rtc::CopyOnWriteBuffer*, ::rtc::PacketOptions const&, int);
 
-    MCAPI void SetReadyToSend(bool, bool);
+    MCNAPI void SetReadyToSend(bool, bool);
 
-    MCAPI void SetRtcpPacketTransport(::rtc::PacketTransportInternal*);
+    MCNAPI void SetRtcpPacketTransport(::rtc::PacketTransportInternal*);
 
-    MCAPI void SetRtpPacketTransport(::rtc::PacketTransportInternal*);
+    MCNAPI void SetRtpPacketTransport(::rtc::PacketTransportInternal*);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -43,30 +43,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::std::string> asStringVector() const;
+    MCNAPI ::std::vector<::std::string> asStringVector() const;
 
-    MCAPI ::TextObjectRoot& operator=(::TextObjectRoot&&);
+    MCNAPI ::TextObjectRoot& operator=(::TextObjectRoot&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Json::Value $resolve(::ResolveData const& resolveData) const;
+    MCNAPI ::Json::Value $resolve(::ResolveData const& resolveData) const;
 
-    MCAPI ::std::string $asString() const;
+    MCNAPI ::std::string $asString() const;
 
-    MCAPI ::Json::Value $asJsonValue() const;
+    MCNAPI ::Json::Value $asJsonValue() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

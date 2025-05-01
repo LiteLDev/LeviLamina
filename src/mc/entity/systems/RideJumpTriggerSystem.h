@@ -25,11 +25,11 @@ struct VehicleInputIntentComponent;
 namespace RideJumpTriggerSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createPassengerSystem();
+MCNAPI ::TickingSystemWithInfo createPassengerSystem();
 
-MCAPI ::TickingSystemWithInfo createVehicleSystem();
+MCNAPI ::TickingSystemWithInfo createVehicleSystem();
 
-MCAPI void tickPassengerJumpTriggerSystem(
+MCNAPI void tickPassengerJumpTriggerSystem(
     ::entt::type_list<::Include<::PlayerInputRequestComponent>>,
     ::StrictEntityContext const&      context,
     ::MoveInputComponent const&       moveInputComponent,

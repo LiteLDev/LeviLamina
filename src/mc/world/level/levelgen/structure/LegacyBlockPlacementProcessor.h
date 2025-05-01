@@ -27,20 +27,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LegacyBlockPlacementProcessor(::LegacyStructureSettings const& settings);
+    MCNAPI explicit LegacyBlockPlacementProcessor(::LegacyStructureSettings const& settings);
 
-    MCAPI ~LegacyBlockPlacementProcessor();
+    MCNAPI ~LegacyBlockPlacementProcessor();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LegacyStructureSettings const& settings);
+    MCNAPI void* $ctor(::LegacyStructureSettings const& settings);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

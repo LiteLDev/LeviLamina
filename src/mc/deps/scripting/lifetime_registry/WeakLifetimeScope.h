@@ -26,23 +26,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WeakLifetimeScope(::Scripting::WeakLifetimeScope&& rhs);
+    MCNAPI WeakLifetimeScope(::Scripting::WeakLifetimeScope&& rhs);
 
-    MCFOLD ::Scripting::LifetimeRegistry* getLifetimeRegistry() const;
+    MCNAPI ::Scripting::LifetimeRegistry* getLifetimeRegistry() const;
 
-    MCAPI ~WeakLifetimeScope();
+    MCNAPI ~WeakLifetimeScope();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::WeakLifetimeScope&& rhs);
+    MCNAPI void* $ctor(::Scripting::WeakLifetimeScope&& rhs);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

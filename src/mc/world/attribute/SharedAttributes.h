@@ -18,25 +18,25 @@ class SharedAttributes {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::AttributeInstance*
+    MCNAPI static ::AttributeInstance*
     _legacyGetInstance(::BaseAttributeMap& attributes, ::std::string const& attributeName);
 
-    MCAPI static ::std::string const& _legacyGetName(::std::string const& attributeName);
+    MCNAPI static ::std::string const& _legacyGetName(::std::string const& attributeName);
 
-    MCAPI static void
+    MCNAPI static void
     _loadAttribute(::AttributeInstance& instance, ::CompoundTag const* tag, ::AttributeModificationContext& context);
 
-    MCAPI static ::std::unique_ptr<::CompoundTag> _saveAttribute(::AttributeInstance const& instance);
+    MCNAPI static ::std::unique_ptr<::CompoundTag> _saveAttribute(::AttributeInstance const& instance);
 
-    MCAPI static ::std::unique_ptr<::CompoundTag> _saveAttributeModifier(::AttributeModifier const& modifier);
+    MCNAPI static ::std::unique_ptr<::CompoundTag> _saveAttributeModifier(::AttributeModifier const& modifier);
 
-    MCAPI static bool checkIsDeprecated(::std::string& name);
+    MCNAPI static bool checkIsDeprecated(::std::string& name);
 
-    MCAPI static ::TemporalAttributeBuff loadAttributeBuff(::CompoundTag const& tag);
+    MCNAPI static ::TemporalAttributeBuff loadAttributeBuff(::CompoundTag const& tag);
 
-    MCAPI static ::std::shared_ptr<::AttributeModifier> loadAttributeModifier(::CompoundTag const& tag);
+    MCNAPI static ::std::shared_ptr<::AttributeModifier> loadAttributeModifier(::CompoundTag const& tag);
 
-    MCAPI static void loadAttributes(::BaseAttributeMap* attributes, ::ListTag const* list);
+    MCNAPI static void loadAttributes(::BaseAttributeMap* attributes, ::ListTag const* list);
     // NOLINTEND
 
 public:

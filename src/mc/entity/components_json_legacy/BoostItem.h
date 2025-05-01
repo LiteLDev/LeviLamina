@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ItemDescriptor;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/item/ItemDescriptor.h"
 
 struct BoostItem {
 public:
@@ -23,22 +21,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BoostItem(::BoostItem const&);
+    MCNAPI BoostItem(::BoostItem const&);
 
-    MCAPI void setReplacementItemDescriptor(::ItemDescriptor const& replacementItemDescriptor);
+    MCNAPI void setReplacementItemDescriptor(::ItemDescriptor const& replacementItemDescriptor);
 
-    MCAPI ~BoostItem();
+    MCNAPI ~BoostItem();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BoostItem const&);
+    MCNAPI void* $ctor(::BoostItem const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

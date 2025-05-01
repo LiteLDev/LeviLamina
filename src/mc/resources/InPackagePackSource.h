@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class IContentKeyProvider;
+class IInPackagePacks;
 class IPackManifestFactory;
 class Pack;
 class PackSourceReport;
@@ -59,31 +60,43 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI InPackagePackSource(::std::shared_ptr<::IInPackagePacks> const& packs, ::PackType packType);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::shared_ptr<::IInPackagePacks> const& packs, ::PackType packType);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $forEachPackConst(::std::function<void(::Pack const&)> callback) const;
+    MCNAPI void $forEachPackConst(::std::function<void(::Pack const&)> callback) const;
 
-    MCFOLD void $forEachPack(::std::function<void(::Pack&)> callback);
+    MCNAPI void $forEachPack(::std::function<void(::Pack&)> callback);
 
-    MCFOLD ::PackOrigin $getPackOrigin() const;
+    MCNAPI ::PackOrigin $getPackOrigin() const;
 
-    MCAPI ::PackSourceReport $load(
+    MCNAPI ::PackSourceReport $load(
         ::IPackManifestFactory&                                           manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     );
 
-    MCFOLD ::PackType $getPackType() const;
+    MCNAPI ::PackType $getPackType() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -14,7 +14,7 @@ struct GameRuleId;
 namespace GameRuleUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void setGameRule(
+MCNAPI void setGameRule(
     ::Level&                         level,
     ::GameRuleId const&              ruleId,
     ::std::variant<int, float, bool> value,

@@ -11,27 +11,27 @@ class MediaStream {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MediaStream(::std::string const&);
+    MCNAPI explicit MediaStream(::std::string const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::webrtc::scoped_refptr<::webrtc::MediaStream> Create(::std::string const&);
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::MediaStream> Create(::std::string const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const&);
+    MCNAPI void* $ctor(::std::string const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForRefCountInterface();
+    MCNAPI static void** $vftableForRefCountInterface();
 
-    MCAPI static void** $vftableForNotifierInterface();
+    MCNAPI static void** $vftableForNotifierInterface();
     // NOLINTEND
 };
 

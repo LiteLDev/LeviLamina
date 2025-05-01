@@ -28,15 +28,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<::std::string> getEntityType() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getEntityType() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getSpawnEvent() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getSpawnEvent() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptAddRiderComponent>
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptAddRiderComponent>
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
@@ -55,7 +55,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

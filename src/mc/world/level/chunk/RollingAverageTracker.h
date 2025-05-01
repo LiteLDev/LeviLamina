@@ -21,6 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::std::chrono::nanoseconds> getLastSamples(uint count) const;
+    MCNAPI ::std::vector<::std::chrono::nanoseconds> getLastSamples(uint count) const;
     // NOLINTEND
 };

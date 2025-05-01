@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct ContextId; }
+namespace Scripting { struct Error; }
 // clang-format on
 
 class ScriptPrintLogger : public ::Scripting::IPrinter {
@@ -27,14 +28,18 @@ public:
     virtual void onError(::Scripting::ContextId, ::std::string_view message) const /*override*/;
 
     // vIndex: 4
-    virtual void onException(::Scripting::ContextId, ::entt::meta_any const& e) const /*override*/;
+    virtual void onException(::Scripting::ContextId, ::Scripting::Error const& error, ::entt::meta_any const&) const
+        /*override*/;
 
     // vIndex: 5
-    virtual bool shouldPrintException(::Scripting::ContextId, ::entt::meta_any const& e) const /*override*/;
+    virtual bool
+    shouldPrintException(::Scripting::ContextId, ::Scripting::Error const&, ::entt::meta_any const& errorAny) const
+        /*override*/;
 
     // vIndex: 6
-    virtual void onPromiseRejection(::Scripting::ContextId, ::std::string_view message, bool isHandled) const
-        /*override*/;
+    virtual void
+    onPromiseRejection(::Scripting::ContextId, ::Scripting::Error const& error, ::entt::meta_any const&, bool isHandled)
+        const /*override*/;
     // NOLINTEND
 
 public:
@@ -46,22 +51,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onInfo(::Scripting::ContextId, ::std::string_view message) const;
+    MCNAPI void $onInfo(::Scripting::ContextId, ::std::string_view message) const;
 
-    MCAPI void $onWarn(::Scripting::ContextId, ::std::string_view message) const;
+    MCNAPI void $onWarn(::Scripting::ContextId, ::std::string_view message) const;
 
-    MCAPI void $onError(::Scripting::ContextId, ::std::string_view message) const;
+    MCNAPI void $onError(::Scripting::ContextId, ::std::string_view message) const;
 
-    MCAPI void $onException(::Scripting::ContextId, ::entt::meta_any const& e) const;
+    MCNAPI void $onException(::Scripting::ContextId, ::Scripting::Error const& error, ::entt::meta_any const&) const;
 
-    MCAPI bool $shouldPrintException(::Scripting::ContextId, ::entt::meta_any const& e) const;
+    MCNAPI bool
+    $shouldPrintException(::Scripting::ContextId, ::Scripting::Error const&, ::entt::meta_any const& errorAny) const;
 
-    MCAPI void $onPromiseRejection(::Scripting::ContextId, ::std::string_view message, bool isHandled) const;
+    MCNAPI void $onPromiseRejection(
+        ::Scripting::ContextId,
+        ::Scripting::Error const& error,
+        ::entt::meta_any const&,
+        bool isHandled
+    ) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

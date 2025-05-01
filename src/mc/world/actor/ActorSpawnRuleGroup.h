@@ -7,7 +7,6 @@
 class Experiments;
 class IWorldRegistriesProvider;
 class MobSpawnRules;
-class MobSpawnerData;
 class Random;
 class ResourcePackManager;
 namespace br::spawn { class SpawnPlacements; }
@@ -18,8 +17,7 @@ class ActorSpawnRuleGroup {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>>                                 mCategoryLookup;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::shared_ptr<::MobSpawnerData>>> mSpawnData;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>> mCategoryLookup;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>> mSpawnDelayStartMap;
     // NOLINTEND
 
@@ -33,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorSpawnRuleGroup(
+    MCNAPI ActorSpawnRuleGroup(
         ::ResourcePackManager&         resourcePackManager,
         ::IWorldRegistriesProvider&    registries,
         ::br::spawn::SpawnPlacements&  spawnPlacements,
@@ -41,13 +39,13 @@ public:
         ::Experiments const&           experiments
     );
 
-    MCAPI void resetDelayEnd(::MobSpawnRules spawnRules, uint64 age, ::Random& random);
+    MCNAPI void resetDelayEnd(::MobSpawnRules spawnRules, uint64 age, ::Random& random);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ResourcePackManager&         resourcePackManager,
         ::IWorldRegistriesProvider&    registries,
         ::br::spawn::SpawnPlacements&  spawnPlacements,
@@ -65,6 +63,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

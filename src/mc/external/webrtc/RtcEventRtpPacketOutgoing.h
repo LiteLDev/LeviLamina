@@ -13,19 +13,19 @@ class RtcEventRtpPacketOutgoing {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RtcEventRtpPacketOutgoing(::webrtc::RtpPacketToSend const&, int);
+    MCNAPI RtcEventRtpPacketOutgoing(::webrtc::RtpPacketToSend const&, int);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::RtpPacketToSend const&, int);
+    MCNAPI void* $ctor(::webrtc::RtpPacketToSend const&, int);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -12,6 +12,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addEffectByName(::std::string const& name);
+    MCNAPI void addEffectByName(::std::string const& name);
     // NOLINTEND
 };

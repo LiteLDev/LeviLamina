@@ -26,6 +26,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::LootTable* lookupByName(::std::string const& dir, ::ResourcePackManager& resourceLoader);
+    MCNAPI ::LootTable* lookupByName(::std::string const& dir, ::ResourcePackManager& resourceLoader);
     // NOLINTEND
 };

@@ -10,7 +10,7 @@ namespace webrtc::rtcp { class RemoteEstimateSerializer; }
 namespace webrtc::rtcp {
 // functions
 // NOLINTBEGIN
-MCAPI ::webrtc::rtcp::RemoteEstimateSerializer const* GetRemoteEstimateSerializer();
+MCNAPI ::webrtc::rtcp::RemoteEstimateSerializer const* GetRemoteEstimateSerializer();
 // NOLINTEND
 
 } // namespace webrtc::rtcp

@@ -20,7 +20,7 @@ public:
     virtual void OnMessage(::webrtc::DataBuffer const&) = 0;
 
     // vIndex: 2
-    virtual void OnBufferedAmountChange(uint64 sent_data_size);
+    virtual void OnBufferedAmountChange(uint64);
 
     // vIndex: 3
     virtual bool IsOkToCallOnTheNetworkThread();
@@ -38,9 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $OnBufferedAmountChange(uint64 sent_data_size);
-
-    MCFOLD bool $IsOkToCallOnTheNetworkThread();
+    MCNAPI bool $IsOkToCallOnTheNetworkThread();
     // NOLINTEND
 };
 

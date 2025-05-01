@@ -34,15 +34,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::IconItemComponentLegacyFactoryData& operator=(::IconItemComponentLegacyFactoryData const&);
+    MCNAPI ::IconItemComponentLegacyFactoryData& operator=(::IconItemComponentLegacyFactoryData const&);
 
-    MCAPI ::IconItemComponentLegacyFactoryData& operator=(::IconItemComponentLegacyFactoryData&&);
+    MCNAPI ::IconItemComponentLegacyFactoryData& operator=(::IconItemComponentLegacyFactoryData&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
@@ -58,6 +58,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

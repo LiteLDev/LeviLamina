@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class EntityId;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/ecs/EntityId.h"
 
 class StrictEntityContext {
 public:

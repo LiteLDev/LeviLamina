@@ -23,6 +23,7 @@ public:
     // RTPSenderVideo inner types declare
     // clang-format off
     struct Config;
+    struct TemporalLayerStats;
     // clang-format on
 
     // RTPSenderVideo inner types define
@@ -30,34 +31,36 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Config();
+        MCNAPI ~Config();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
+
+    struct TemporalLayerStats {};
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddRtpHeaderExtensions(::webrtc::RTPVideoHeader const&, bool, bool, ::webrtc::RtpPacketToSend*) const;
+    MCNAPI void AddRtpHeaderExtensions(::webrtc::RTPVideoHeader const&, bool, bool, ::webrtc::RtpPacketToSend*) const;
 
-    MCAPI bool AllowRetransmission(uchar, int, ::webrtc::TimeDelta);
+    MCNAPI bool AllowRetransmission(uchar, int, ::webrtc::TimeDelta);
 
-    MCAPI uint64 FecPacketOverhead() const;
+    MCNAPI uint64 FecPacketOverhead() const;
 
-    MCAPI void LogAndSendToNetwork(::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>>, uint64);
+    MCNAPI void LogAndSendToNetwork(::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>>, uint64);
 
-    MCAPI void MaybeUpdateCurrentPlayoutDelay(::webrtc::RTPVideoHeader const&);
+    MCNAPI void MaybeUpdateCurrentPlayoutDelay(::webrtc::RTPVideoHeader const&);
 
-    MCAPI ::webrtc::DataRate PostEncodeOverhead() const;
+    MCNAPI ::webrtc::DataRate PostEncodeOverhead() const;
 
-    MCAPI explicit RTPSenderVideo(::webrtc::RTPSenderVideo::Config const&);
+    MCNAPI explicit RTPSenderVideo(::webrtc::RTPSenderVideo::Config const&);
 
-    MCAPI bool SendEncodedImage(
+    MCNAPI bool SendEncodedImage(
         int,
         ::std::optional<::webrtc::VideoCodecType>,
         uint,
@@ -66,23 +69,23 @@ public:
         ::webrtc::TimeDelta
     );
 
-    MCAPI void SetRetransmissionSetting(int);
+    MCNAPI void SetRetransmissionSetting(int);
 
-    MCAPI void SetVideoLayersAllocation(::webrtc::VideoLayersAllocation);
+    MCNAPI void SetVideoLayersAllocation(::webrtc::VideoLayersAllocation);
 
-    MCAPI void SetVideoLayersAllocationInternal(::webrtc::VideoLayersAllocation);
+    MCNAPI void SetVideoLayersAllocationInternal(::webrtc::VideoLayersAllocation);
 
-    MCAPI void SetVideoStructure(::webrtc::FrameDependencyStructure const*);
+    MCNAPI void SetVideoStructure(::webrtc::FrameDependencyStructure const*);
 
-    MCAPI void SetVideoStructureInternal(::webrtc::FrameDependencyStructure const*);
+    MCNAPI void SetVideoStructureInternal(::webrtc::FrameDependencyStructure const*);
 
-    MCAPI bool UpdateConditionalRetransmit(uchar, ::webrtc::TimeDelta);
+    MCNAPI bool UpdateConditionalRetransmit(uchar, ::webrtc::TimeDelta);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static uchar GetTemporalId(::webrtc::RTPVideoHeader const&);
+    MCNAPI static uchar GetTemporalId(::webrtc::RTPVideoHeader const&);
     // NOLINTEND
 
 public:
@@ -94,13 +97,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::RTPSenderVideo::Config const&);
+    MCNAPI void* $ctor(::webrtc::RTPSenderVideo::Config const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

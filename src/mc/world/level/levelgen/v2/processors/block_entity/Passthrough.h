@@ -37,15 +37,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::CompoundTag> $apply(::IRandom&, ::CompoundTag const* existingTag) const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> $apply(::IRandom&, ::CompoundTag const* existingTag) const;
 
-    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

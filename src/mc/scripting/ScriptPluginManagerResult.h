@@ -25,17 +25,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptPluginResult&
+    MCNAPI ::ScriptPluginResult&
     getOrCreatePluginResults(::PackIdVersion packId, ::Scripting::ModuleDescriptor const& descriptor);
 
-    MCAPI void logMessages() const;
+    MCNAPI void logMessages() const;
 
-    MCAPI ~ScriptPluginManagerResult();
+    MCNAPI ~ScriptPluginManagerResult();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

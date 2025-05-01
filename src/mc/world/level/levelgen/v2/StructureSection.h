@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
 #include "mc/world/level/levelgen/structure/structurepools/JigsawReplacement.h"
 #include "mc/world/level/levelgen/v2/terrain_adjustment/Type.h"
 
@@ -10,7 +11,6 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class BoundingBox;
 class IRandom;
 class Random;
 namespace br::worldgen { struct JigsawJunction; }
@@ -65,7 +65,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

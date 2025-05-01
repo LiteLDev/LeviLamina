@@ -41,13 +41,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SynchedActorData _clone() const;
+    MCNAPI ::SynchedActorData _clone() const;
 
-    MCAPI ::std::vector<::std::unique_ptr<::DataItem>> packAll(::EntityContext const& entity) const;
+    MCNAPI ::std::vector<::std::unique_ptr<::DataItem>> packAll(::EntityContext const& entity) const;
 
-    MCAPI ::std::vector<::std::unique_ptr<::DataItem>> packDirty(::EntityContext& entity);
+    MCNAPI ::std::vector<::std::unique_ptr<::DataItem>> packDirty(::EntityContext& entity);
 
-    MCAPI ~SynchedActorData();
+    MCNAPI ~SynchedActorData();
     // NOLINTEND
 
 public:
@@ -63,6 +63,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

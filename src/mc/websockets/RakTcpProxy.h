@@ -70,30 +70,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $start(ushort port, ushort maxIncomming, ushort maxOutgoing);
+    MCNAPI bool $start(ushort port, ushort maxIncomming, ushort maxOutgoing);
 
-    MCAPI ::RakNet::SystemAddress $connect(::std::string const& host, ushort port);
+    MCNAPI ::RakNet::SystemAddress $connect(::std::string const& host, ushort port);
 
-    MCAPI void $send(char const* data, uint length, ::RakNet::SystemAddress address);
+    MCNAPI void $send(char const* data, uint length, ::RakNet::SystemAddress address);
 
-    MCAPI void $close(::RakNet::SystemAddress address);
+    MCNAPI void $close(::RakNet::SystemAddress address);
 
-    MCAPI bool $packetsAvailable();
+    MCNAPI bool $packetsAvailable();
 
-    MCAPI ::RakNet::Packet* $nextPacket();
+    MCNAPI ::RakNet::Packet* $nextPacket();
 
-    MCAPI void $deallocatePacket(::RakNet::Packet* packet);
+    MCNAPI void $deallocatePacket(::RakNet::Packet* packet);
 
-    MCAPI ::RakNet::SystemAddress $nextCompletedConnectionAttempt();
+    MCNAPI ::RakNet::SystemAddress $nextCompletedConnectionAttempt();
 
-    MCAPI ::RakNet::SystemAddress $nextFailedConnectionAttempt();
+    MCNAPI ::RakNet::SystemAddress $nextFailedConnectionAttempt();
 
-    MCAPI ::RakNet::SystemAddress $nextLostConnection();
+    MCNAPI ::RakNet::SystemAddress $nextLostConnection();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

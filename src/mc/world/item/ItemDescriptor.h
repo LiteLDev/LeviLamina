@@ -39,7 +39,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::Block const* getBlock() const;
+        MCNAPI ::Block const* getBlock() const;
         // NOLINTEND
     };
 
@@ -111,35 +111,35 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI bool $sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
+        MCNAPI bool $sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
 
-        MCFOLD ::std::string const& $getFullName() const;
+        MCNAPI ::std::string const& $getFullName() const;
 
-        MCAPI ::std::string $toString() const;
+        MCNAPI ::std::string $toString() const;
 
-        MCFOLD ::ItemDescriptor::ItemEntry $getItem() const;
+        MCNAPI ::ItemDescriptor::ItemEntry $getItem() const;
 
-        MCAPI bool $forEachItemUntil(::std::function<bool(::Item const&, short)> func) const;
+        MCNAPI bool $forEachItemUntil(::std::function<bool(::Item const&, short)> func) const;
 
-        MCAPI void $serialize(::Json::Value& val) const;
+        MCNAPI void $serialize(::Json::Value& val) const;
 
-        MCFOLD bool $isValid() const;
+        MCNAPI bool $isValid() const;
 
-        MCFOLD bool $shouldResolve() const;
+        MCNAPI bool $shouldResolve() const;
 
-        MCFOLD ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $resolve() const;
+        MCNAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $resolve() const;
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 

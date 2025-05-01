@@ -13,17 +13,17 @@ class RecipeIngredient;
 namespace SmithingTrimRecipeUtils {
 // functions
 // NOLINTBEGIN
-MCAPI bool doesItemHaveResultingTrim(
+MCNAPI bool doesItemHaveResultingTrim(
     ::CraftingContext const& craftingContext,
     ::ItemStack const&       item,
     ::std::string const&     templateName,
     ::std::string const&     materialName
 );
 
-MCAPI bool
+MCNAPI bool
 validateAdditionIngredient(::Level const& level, ::RecipeIngredient additionIngredient, ::std::string const& recipeId);
 
-MCAPI bool
+MCNAPI bool
 validateTemplateIngredient(::Level const& level, ::RecipeIngredient templateIngredient, ::std::string const& recipeId);
 // NOLINTEND
 
