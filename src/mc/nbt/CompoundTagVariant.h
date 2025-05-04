@@ -73,16 +73,16 @@ public:
             Iterator res;
             switch (var.index()) {
             case Tag::List:
-                res.iter.emplace<2>(var.get<ListTag>().begin());
+                res.iter.template emplace<2>(var.get<ListTag>().begin());
                 break;
             case Tag::Compound:
-                res.iter.emplace<1>(var.get<CompoundTag>().begin());
+                res.iter.template emplace<1>(var.get<CompoundTag>().begin());
                 break;
             case Tag::End:
-                res.iter.emplace<0>(std::addressof(var) + 1);
+                res.iter.template emplace<0>(std::addressof(var) + 1);
                 break;
             default:
-                res.iter.emplace<0>(std::addressof(var));
+                res.iter.template emplace<0>(std::addressof(var));
             }
             return res;
         }
@@ -91,13 +91,13 @@ public:
             Iterator res;
             switch (var.index()) {
             case Tag::List:
-                res.iter.emplace<2>(var.get<ListTag>().end());
+                res.iter.template emplace<2>(var.get<ListTag>().end());
                 break;
             case Tag::Compound:
-                res.iter.emplace<1>(var.get<CompoundTag>().end());
+                res.iter.template emplace<1>(var.get<CompoundTag>().end());
                 break;
             default:
-                res.iter.emplace<0>(std::addressof(var) + 1);
+                res.iter.template emplace<0>(std::addressof(var) + 1);
             }
             return res;
         }
