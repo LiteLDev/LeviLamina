@@ -58,26 +58,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canShowNameTag() const;
+    MCFOLD bool $canShowNameTag() const;
 
-    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCNAPI ::MinecartType $getType();
+    MCFOLD ::MinecartType $getType();
 
-    MCNAPI ::Block const* $getDefaultDisplayBlock() const;
+    MCAPI ::Block const* $getDefaultDisplayBlock() const;
 
-    MCNAPI void $applyNaturalSlowdown(::BlockSource& region);
+    MCFOLD void $applyNaturalSlowdown(::BlockSource& region);
 
-    MCNAPI void $_lazyInitDisplayBlock();
+    MCAPI void $_lazyInitDisplayBlock();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

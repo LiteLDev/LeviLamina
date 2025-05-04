@@ -43,15 +43,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SlabBlockItem(::std::string const& name, int id, ::HashedString const& doubleSlabId);
+    MCAPI SlabBlockItem(::std::string const& name, int id, ::HashedString const& doubleSlabId);
 
-    MCNAPI bool _canConvertToDoubleBlock(::ItemStackBase& instance, ::Actor& face, uchar& block, ::Block const&) const;
+    MCAPI bool _canConvertToDoubleBlock(::ItemStackBase& instance, ::Actor& face, uchar& block, ::Block const&) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& name, int id, ::HashedString const& doubleSlabId);
+    MCAPI void* $ctor(::std::string const& name, int id, ::HashedString const& doubleSlabId);
     // NOLINTEND
 
 public:
@@ -63,15 +63,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::InteractionResult
+    MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
-    MCNAPI bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& actor, uchar& face, ::BlockPos& pos) const;
+    MCAPI bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& actor, uchar& face, ::BlockPos& pos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

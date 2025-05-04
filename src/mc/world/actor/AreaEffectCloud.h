@@ -50,7 +50,7 @@ public:
     virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
     // vIndex: 55
-    virtual void setOwner(::ActorUniqueID const ownerID) /*override*/;
+    virtual void setOwner(::ActorUniqueID const ownerId) /*override*/;
 
     // vIndex: 24
     virtual void normalTick() /*override*/;
@@ -71,41 +71,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AreaEffectCloud(
+    MCAPI AreaEffectCloud(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCNAPI void _spawnParticles(::Random& random, uint numParticles, float radius);
+    MCAPI void _spawnParticles(::Random& random, uint numParticles, float radius);
 
-    MCNAPI void addAreaEffect(::MobEffectInstance effect);
+    MCAPI void addAreaEffect(::MobEffectInstance effect);
 
-    MCNAPI void calculateAndSetRadiusPerTick();
+    MCAPI void calculateAndSetRadiusPerTick();
 
-    MCNAPI float getEffectiveRadius() const;
+    MCAPI float getEffectiveRadius() const;
 
-    MCNAPI void setDuration(::EffectDuration duration);
+    MCAPI void setDuration(::EffectDuration duration);
 
-    MCNAPI void setInitialRadius(float radius);
+    MCAPI void setInitialRadius(float radius);
 
-    MCNAPI void setParticle(::ParticleType type);
+    MCAPI void setParticle(::ParticleType type);
 
-    MCNAPI void setParticleColor(::mce::Color& c);
+    MCAPI void setParticleColor(::mce::Color& c);
 
-    MCNAPI void setPickupCount(int useCount);
+    MCAPI void setPickupCount(int useCount);
 
-    MCNAPI void setPotion(short potionAUX);
+    MCAPI void setPotion(short potionAUX);
 
-    MCNAPI void setRadiusChangeOnPickup(float changeAmount);
+    MCAPI void setRadiusChangeOnPickup(float changeAmount);
 
-    MCNAPI void setRadiusPerTick(float radiusPerTick);
+    MCAPI void setRadiusPerTick(float radiusPerTick);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -121,20 +121,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $setOwner(::ActorUniqueID const ownerID);
+    MCAPI void $setOwner(::ActorUniqueID const ownerID);
 
-    MCNAPI void $normalTick();
+    MCAPI void $normalTick();
 
-    MCNAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
-    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

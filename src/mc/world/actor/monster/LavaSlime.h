@@ -54,7 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LavaSlime(
+    MCAPI LavaSlime(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -64,7 +64,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -80,28 +80,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCNAPI bool $checkSpawnRules(bool fromSpawner);
+    MCFOLD bool $checkSpawnRules(bool fromSpawner);
 
-    MCNAPI bool $isDarkEnoughToSpawn() const;
+    MCFOLD bool $isDarkEnoughToSpawn() const;
 
-    MCNAPI int $getArmorValue() const;
+    MCAPI int $getArmorValue() const;
 
-    MCNAPI float $getBrightness(float a, ::IConstBlockSource const& region) const;
+    MCFOLD float $getBrightness(float a, ::IConstBlockSource const& region) const;
 
-    MCNAPI ::OwnerPtr<::EntityContext> $createChild(int i);
+    MCAPI ::OwnerPtr<::EntityContext> $createChild(int i);
 
-    MCNAPI bool $isOnFire() const;
+    MCFOLD bool $isOnFire() const;
 
-    MCNAPI void $decreaseSquish();
+    MCAPI void $decreaseSquish();
 
-    MCNAPI bool $doPlayLandSound();
+    MCFOLD bool $doPlayLandSound();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

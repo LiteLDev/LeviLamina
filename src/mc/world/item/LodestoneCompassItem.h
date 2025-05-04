@@ -40,12 +40,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::LodestoneCompassComponent* _tryGetOrAddComponent(
+    MCAPI static ::LodestoneCompassComponent* _tryGetOrAddComponent(
         ::PositionTrackingDB::TrackingRecord*                                            record,
         ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& calcId
     );
 
-    MCNAPI static bool linkCompassToLodestone(::ItemStack& item, ::BlockSource& region, ::BlockPos pos);
+    MCAPI static bool linkCompassToLodestone(::ItemStack& item, ::BlockSource& region, ::BlockPos pos);
     // NOLINTEND
 
 public:
@@ -57,15 +57,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const* item, bool) const;
+    MCAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const* item, bool) const;
 
-    MCNAPI ::InteractionResult
+    MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

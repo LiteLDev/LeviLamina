@@ -39,18 +39,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getMinCost(int level) const;
+    MCAPI int $getMinCost(int level) const;
 
-    MCNAPI int $getMaxCost(int level) const;
+    MCAPI int $getMaxCost(int level) const;
 
-    MCNAPI int $getMaxLevel() const;
+    MCFOLD int $getMaxLevel() const;
 
-    MCNAPI float $getDamageBonus(int level, ::Actor const& target, ::Actor const&) const;
+    MCAPI float $getDamageBonus(int level, ::Actor const& target, ::Actor const&) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

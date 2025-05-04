@@ -53,7 +53,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void preTravel();
+    MCAPI void preTravel();
     // NOLINTEND
 
 public:
@@ -65,22 +65,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
+    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCNAPI float $getBrightness(float a, ::IConstBlockSource const& region) const;
+    MCFOLD float $getBrightness(float a, ::IConstBlockSource const& region) const;
 
-    MCNAPI void $aiStep();
+    MCAPI void $aiStep();
 
-    MCNAPI bool $isOnFire() const;
+    MCAPI bool $isOnFire() const;
 
-    MCNAPI bool $isDarkEnoughToSpawn() const;
+    MCFOLD bool $isDarkEnoughToSpawn() const;
 
-    MCNAPI void $normalTick();
+    MCAPI void $normalTick();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

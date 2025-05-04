@@ -68,43 +68,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Shulker(
+    MCAPI Shulker(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCNAPI void _calculateBB();
+    MCAPI void _calculateBB();
 
-    MCNAPI bool _canOpenLidAt(::BlockPos position, uchar direction) const;
+    MCAPI bool _canOpenLidAt(::BlockPos position, uchar direction) const;
 
-    MCNAPI bool _getAttached() const;
+    MCAPI bool _getAttached() const;
 
-    MCNAPI bool _isPosOccupiedByOtherShulker(::BlockPos blockPos) const;
+    MCAPI bool _isPosOccupiedByOtherShulker(::BlockPos blockPos) const;
 
-    MCNAPI bool _isValidAttach(::BlockPos attachPos, uchar direction);
+    MCAPI bool _isValidAttach(::BlockPos attachPos, uchar direction);
 
-    MCNAPI void _peekAmountTick();
+    MCAPI void _peekAmountTick();
 
-    MCNAPI bool _tryAttachingToNeighbouringFaces(::BlockPos currentPos);
+    MCAPI bool _tryAttachingToNeighbouringFaces(::BlockPos currentPos);
 
-    MCNAPI bool _trySetNewAttachPosition(::BlockPos pos);
+    MCAPI bool _trySetNewAttachPosition(::BlockPos pos);
 
-    MCNAPI void _trySpawnShulker();
+    MCAPI void _trySpawnShulker();
 
-    MCNAPI bool _tryTeleportSomewhere();
+    MCAPI bool _tryTeleportSomewhere();
 
-    MCNAPI void postNormalTick();
+    MCAPI void postNormalTick();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void applyShulkerBounds(::ShulkerBounds const& bounds, ::EntityContext& shulker);
+    MCAPI static void applyShulkerBounds(::ShulkerBounds const& bounds, ::EntityContext& shulker);
 
-    MCNAPI static ::ShulkerBounds computeShulkerBounds(::ShulkerBoundsInput const& input);
+    MCAPI static ::ShulkerBounds computeShulkerBounds(::ShulkerBoundsInput const& input);
 
-    MCNAPI static void setShulkerAttachPos(::SynchedActorDataWriter data, ::BlockPos const& pos);
+    MCAPI static void setShulkerAttachPos(::SynchedActorDataWriter data, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -118,7 +118,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -134,32 +134,32 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCNAPI bool $checkSpawnRules(bool);
+    MCAPI bool $checkSpawnRules(bool);
 
-    MCNAPI int $getArmorValue() const;
+    MCAPI int $getArmorValue() const;
 
-    MCNAPI void $_doInitialMove();
+    MCFOLD void $_doInitialMove();
 
-    MCNAPI ::std::unique_ptr<::BodyControl> $initBodyControl();
+    MCFOLD ::std::unique_ptr<::BodyControl> $initBodyControl();
 
-    MCNAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
-    MCNAPI float $getMaxHeadXRot();
+    MCFOLD float $getMaxHeadXRot();
 
-    MCNAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -48,9 +48,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool hasDuplicationCooldown();
+    MCAPI bool hasDuplicationCooldown();
 
-    MCNAPI void setNewDuplicationCooldown();
+    MCAPI void setNewDuplicationCooldown();
     // NOLINTEND
 
 public:
@@ -62,18 +62,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $aiStep();
+    MCAPI void $aiStep();
 
-    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

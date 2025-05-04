@@ -53,23 +53,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::mce::Color $getDustColor(::Block const& block) const;
+    MCFOLD ::mce::Color $getDustColor(::Block const& block) const;
 
-    MCNAPI ::std::string $getDustParticleName(::Block const& block) const;
+    MCFOLD ::std::string $getDustParticleName(::Block const& block) const;
 
-    MCNAPI bool
+    MCFOLD bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const;
 
-    MCNAPI bool $mayConsumeFertilizer(::BlockSource& region) const;
+    MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
 
-    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCNAPI bool $canBeOriginalSurface() const;
+    MCFOLD bool $canBeOriginalSurface() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

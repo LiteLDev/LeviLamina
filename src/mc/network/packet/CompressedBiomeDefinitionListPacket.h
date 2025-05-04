@@ -43,13 +43,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit CompressedBiomeDefinitionListPacket(::CompoundTag biomeData);
+    MCAPI explicit CompressedBiomeDefinitionListPacket(::CompoundTag biomeData);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::CompoundTag biomeData);
+    MCAPI void* $ctor(::CompoundTag biomeData);
     // NOLINTEND
 
 public:
@@ -61,18 +61,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::MinecraftPacketIds $getId() const;
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCNAPI ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
-    MCNAPI void $write(::BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCNAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

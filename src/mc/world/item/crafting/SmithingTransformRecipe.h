@@ -46,7 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SmithingTransformRecipe(
+    MCAPI SmithingTransformRecipe(
         ::std::string const&      recipeId,
         ::RecipeIngredient const& templateIngredient,
         ::RecipeIngredient const& baseIngredient,
@@ -65,7 +65,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::string const&      recipeId,
         ::RecipeIngredient const& templateIngredient,
         ::RecipeIngredient const& baseIngredient,
@@ -84,15 +84,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $matches(::CraftingContainer const& craftingContainer, ::CraftingContext const&) const;
+    MCAPI bool $matches(::CraftingContainer const& craftingContainer, ::CraftingContext const&) const;
 
-    MCNAPI ::std::vector<::ItemInstance> const&
+    MCAPI ::std::vector<::ItemInstance> const&
     $assemble(::CraftingContainer& craftingContainer, ::CraftingContext&) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

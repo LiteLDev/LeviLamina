@@ -42,28 +42,28 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer&, ::CraftingContext&) const;
+    MCFOLD ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer&, ::CraftingContext&) const;
 
-    MCNAPI int $getCraftingSize() const;
+    MCAPI int $getCraftingSize() const;
 
-    MCNAPI ::RecipeIngredient const& $getIngredient(int x, int y) const;
+    MCFOLD ::RecipeIngredient const& $getIngredient(int x, int y) const;
 
-    MCNAPI bool $isShapeless() const;
+    MCFOLD bool $isShapeless() const;
 
-    MCNAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
+    MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
 
-    MCNAPI int $size() const;
+    MCAPI int $size() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

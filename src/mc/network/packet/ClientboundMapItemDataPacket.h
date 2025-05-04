@@ -73,11 +73,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ClientboundMapItemDataPacket();
+    MCAPI ClientboundMapItemDataPacket();
 
-    MCNAPI ClientboundMapItemDataPacket(::gsl::not_null<::MapItemSavedData*> newMapItem, ::Level& level);
+    MCAPI ClientboundMapItemDataPacket(::gsl::not_null<::MapItemSavedData*> newMapItem, ::Level& level);
 
-    MCNAPI ClientboundMapItemDataPacket(
+    MCAPI ClientboundMapItemDataPacket(
         ::ActorUniqueID mapId,
         schar           scale,
         ::std::vector<::std::pair<::MapItemTrackedActor::UniqueId, ::std::shared_ptr<::MapDecoration>>> const&
@@ -92,17 +92,17 @@ public:
         ::BlockPos const&   mapOrigin
     );
 
-    MCNAPI bool isOfType(::ClientboundMapItemDataPacket::Type type) const;
+    MCAPI bool isOfType(::ClientboundMapItemDataPacket::Type type) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::gsl::not_null<::MapItemSavedData*> newMapItem, ::Level& level);
+    MCAPI void* $ctor(::gsl::not_null<::MapItemSavedData*> newMapItem, ::Level& level);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ActorUniqueID mapId,
         schar           scale,
         ::std::vector<::std::pair<::MapItemTrackedActor::UniqueId, ::std::shared_ptr<::MapDecoration>>> const&
@@ -121,24 +121,24 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $write(::BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCNAPI ::MinecraftPacketIds $getId() const;
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCNAPI ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
-    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

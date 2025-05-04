@@ -53,13 +53,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CoalItem(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx, ::CoalItem::Type type);
+    MCAPI CoalItem(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx, ::CoalItem::Type type);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx, ::CoalItem::Type type);
+    MCAPI void* $ctor(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx, ::CoalItem::Type type);
     // NOLINTEND
 
 public:
@@ -71,20 +71,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Item& $setIconInfo(::std::string const& name, int id);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCNAPI ::ResolvedItemIconInfo
+    MCFOLD ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCNAPI ::std::string
+    MCAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCNAPI float $getFurnaceXPmultiplier(::ItemStackBase const& instance) const;
+    MCAPI float $getFurnaceXPmultiplier(::ItemStackBase const& instance) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

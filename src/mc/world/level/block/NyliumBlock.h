@@ -53,7 +53,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _scatterVegetation(
+    MCAPI bool _scatterVegetation(
         ::BlockSource&                                      region,
         ::BlockPos const&                                   pos,
         ::Random&                                           random,
@@ -64,13 +64,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool canBeNylium(::BlockSource const& region, ::BlockPos const& pos);
+    MCAPI static bool canBeNylium(::BlockSource const& region, ::BlockPos const& pos);
 
-    MCNAPI static ::Block const& crimsonBlockProvider(::Randomize const& randomize);
+    MCAPI static ::Block const& crimsonBlockProvider(::Randomize const& randomize);
 
-    MCNAPI static ::Block const& netherSproutBlockProvider(::Randomize const& randomize);
+    MCAPI static ::Block const& netherSproutBlockProvider(::Randomize const& randomize);
 
-    MCNAPI static ::Block const& warpedBlockProvider(::Randomize const& randomize);
+    MCAPI static ::Block const& warpedBlockProvider(::Randomize const& randomize);
     // NOLINTEND
 
 public:
@@ -82,17 +82,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCNAPI bool
+    MCAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

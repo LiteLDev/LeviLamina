@@ -74,28 +74,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void updateMap(::Level& level, ::Actor& player, ::MapItemSavedData& map) const;
+    MCAPI void updateMap(::Level& level, ::Actor& player, ::MapItemSavedData& map) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _scheduleMapChunkRendering(
+    MCAPI static void _scheduleMapChunkRendering(
         ::Dimension&                    dimension,
         ::MapItemSavedData const&       original,
         ::MapItemSavedData::ChunkBounds bb,
         ::std::shared_ptr<bool>         chunksRefCount
     );
 
-    MCNAPI static bool doesDisplayPlayerMarkers(::ItemStack const& item);
+    MCAPI static bool doesDisplayPlayerMarkers(::ItemStack const& item);
 
-    MCNAPI static ::ActorUniqueID getMapId(::CompoundTag const* tag);
+    MCAPI static ::ActorUniqueID getMapId(::CompoundTag const* tag);
 
-    MCNAPI static void markForRegeneration(::ItemStackBase& item);
+    MCAPI static void markForRegeneration(::ItemStackBase& item);
 
-    MCNAPI static void renderBiomePreviewMap(::Dimension& dimension, ::MapItemSavedData& data);
+    MCAPI static void renderBiomePreviewMap(::Dimension& dimension, ::MapItemSavedData& data);
 
-    MCNAPI static bool sampleMapData(
+    MCAPI static bool sampleMapData(
         ::BlockSource&                       region,
         int                                  blocksPerTexel,
         ::BlockPos const&                    worldOrigin,
@@ -107,7 +107,7 @@ public:
         ::std::vector<::ClientTerrainPixel>* clientPixels
     );
 
-    MCNAPI static void serializeMapData(::std::vector<::MapSample> const& mapSamples, ::std::string& output);
+    MCAPI static void serializeMapData(::std::vector<::MapSample> const& mapSamples, ::std::string& output);
     // NOLINTEND
 
 public:
@@ -137,34 +137,34 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const;
+    MCAPI bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const;
 
-    MCNAPI void $refreshedInContainer(::ItemStackBase const& stack, ::Level& level) const;
+    MCAPI void $refreshedInContainer(::ItemStackBase const& stack, ::Level& level) const;
 
-    MCNAPI ::std::unique_ptr<::Packet> $getUpdatePacket(::ItemStack const& item, ::Level& level, ::Actor& player) const;
+    MCAPI ::std::unique_ptr<::Packet> $getUpdatePacket(::ItemStack const& item, ::Level& level, ::Actor& player) const;
 
-    MCNAPI ::std::string
+    MCAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCNAPI void $appendFormattedHovertext(
+    MCAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
 
-    MCNAPI bool $hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;
+    MCAPI bool $hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;
 
-    MCNAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
+    MCFOLD ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
-    MCNAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
 
-    MCNAPI void $fixupCommon(::ItemStackBase& stack, ::ILevel& level) const;
+    MCAPI void $fixupCommon(::ItemStackBase& stack, ::ILevel& level) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

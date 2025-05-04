@@ -33,14 +33,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isAlliedTo(::Mob* other);
+    MCAPI bool $isAlliedTo(::Mob* other);
 
-    MCNAPI int $getArmorValue() const;
+    MCFOLD int $getArmorValue() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

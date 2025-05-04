@@ -59,7 +59,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI NpcRequestPacket(
+    MCAPI NpcRequestPacket(
         ::ActorRuntimeID                id,
         ::NpcRequestPacket::RequestType type,
         ::std::string                   actions,
@@ -70,39 +70,39 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::NpcRequestPacket requestSetInteractText(::ActorRuntimeID id, ::std::string text);
+    MCAPI static ::NpcRequestPacket requestSetInteractText(::ActorRuntimeID id, ::std::string text);
 
-    MCNAPI static ::NpcRequestPacket requestSetName(::ActorRuntimeID id, ::std::string name);
+    MCAPI static ::NpcRequestPacket requestSetName(::ActorRuntimeID id, ::std::string name);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
+    MCAPI void*
     $ctor(::ActorRuntimeID id, ::NpcRequestPacket::RequestType type, ::std::string actions, uchar actionIndex);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::MinecraftPacketIds $getId() const;
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCNAPI ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
-    MCNAPI void $write(::BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

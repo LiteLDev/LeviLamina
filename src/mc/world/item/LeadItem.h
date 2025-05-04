@@ -31,9 +31,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool bindPlayerMobs(::Actor& holderActor, int x, int y, int z, ::ItemInstance* itemUsed);
+    MCAPI static bool bindPlayerMobs(::Actor& holderActor, int x, int y, int z, ::ItemInstance* itemUsed);
 
-    MCNAPI static bool canBindPlayerMobs(::Actor const& entity, ::BlockPos const& blockPos);
+    MCAPI static bool canBindPlayerMobs(::Actor const& entity, ::BlockPos const& blockPos);
     // NOLINTEND
 
 public:
@@ -45,13 +45,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::InteractionResult
+    MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -81,29 +81,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ExperienceOrb(
+    MCAPI ExperienceOrb(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCNAPI void _handleMending(::Player& player);
+    MCAPI void _handleMending(::Player& player);
 
-    MCNAPI void _tryMergeExistingOrbs();
+    MCAPI void _tryMergeExistingOrbs();
 
-    MCNAPI int getValue() const;
+    MCAPI int getValue() const;
 
-    MCNAPI void postNormalTick();
+    MCAPI void postNormalTick();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _spawnOrb(::BlockSource& region, ::Level& level, ::Vec3 const& pos, int orbXPValue);
+    MCAPI static void _spawnOrb(::BlockSource& region, ::Level& level, ::Vec3 const& pos, int orbXPValue);
 
-    MCNAPI static bool _tryMergeIntoExistingOrbs(::BlockSource& region, ::Vec3 const& pos, int xpValue);
+    MCAPI static bool _tryMergeIntoExistingOrbs(::BlockSource& region, ::Vec3 const& pos, int xpValue);
 
-    MCNAPI static void spawnOrbs(
+    MCAPI static void spawnOrbs(
         ::BlockSource&            region,
         ::Vec3 const&             pos,
         int                       xpValue,
@@ -115,7 +115,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -131,26 +131,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI void $playerTouch(::Player& player);
+    MCAPI void $playerTouch(::Player& player);
 
-    MCNAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
-    MCNAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCNAPI bool $_hurt(::ActorDamageSource const&, float damage, bool, bool);
+    MCAPI bool $_hurt(::ActorDamageSource const&, float damage, bool, bool);
 
-    MCNAPI void $doWaterSplashEffect();
+    MCFOLD void $doWaterSplashEffect();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

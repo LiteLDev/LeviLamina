@@ -92,27 +92,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FallingBlockActor(
+    MCAPI FallingBlockActor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCNAPI void _waitRemoval();
+    MCAPI void _waitRemoval();
 
-    MCNAPI void breakBlock();
+    MCAPI void breakBlock();
 
-    MCNAPI void doNormalTick(::ITickDelegate& tickDelegate);
+    MCAPI void doNormalTick(::ITickDelegate& tickDelegate);
 
-    MCNAPI ::Block const& getFallingBlock() const;
+    MCAPI ::Block const& getFallingBlock() const;
 
-    MCNAPI void setFallingBlock(::Block const& block, bool creative);
+    MCAPI void setFallingBlock(::Block const& block, bool creative);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -128,31 +128,31 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCNAPI void $normalTick();
+    MCAPI void $normalTick();
 
-    MCNAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
-    MCNAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
+    MCAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
 
-    MCNAPI void
+    MCFOLD void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
-    MCNAPI bool $canChangeDimensionsUsingPortal() const;
+    MCAPI bool $canChangeDimensionsUsingPortal() const;
 
-    MCNAPI void $onSynchedDataUpdate(int dataId);
+    MCAPI void $onSynchedDataUpdate(int dataId);
 
-    MCNAPI bool $_hurt(::ActorDamageSource const&, float, bool, bool);
+    MCFOLD bool $_hurt(::ActorDamageSource const&, float, bool, bool);
 
-    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

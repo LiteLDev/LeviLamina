@@ -97,14 +97,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _canEmptyBucketIntoBlock(
+    MCAPI bool _canEmptyBucketIntoBlock(
         ::BlockSource&    region,
         ::BlockPos const& pos,
         ::Block const&    block,
         ::Block const&    extraBlock
     ) const;
 
-    MCNAPI bool _emptyBucket(
+    MCAPI bool _emptyBucket(
         ::BlockSource&     region,
         ::Block const&     contents,
         ::BlockPos const&  pos,
@@ -113,17 +113,17 @@ public:
         uchar              face
     ) const;
 
-    MCNAPI bool _supportsEntityType(::ActorType const& entityType, ::HashedString& bucketType) const;
+    MCAPI bool _supportsEntityType(::ActorType const& entityType, ::HashedString& bucketType) const;
 
-    MCNAPI bool _takeLiquid(::ItemStack& item, ::Actor& entity, ::BlockPos const& pos) const;
+    MCAPI bool _takeLiquid(::ItemStack& item, ::Actor& entity, ::BlockPos const& pos) const;
 
-    MCNAPI bool _takePowderSnow(::ItemStack& item, ::Actor& actor, ::BlockPos const& pos) const;
+    MCAPI bool _takePowderSnow(::ItemStack& item, ::Actor& actor, ::BlockPos const& pos) const;
 
-    MCNAPI ::BlockLegacy const* _tryGetBlock(::BucketFillType contents) const;
+    MCAPI ::BlockLegacy const* _tryGetBlock(::BucketFillType contents) const;
 
-    MCNAPI void addBucketEntitySaveData(::Actor& entity, ::ItemStack& instance) const;
+    MCAPI void addBucketEntitySaveData(::Actor& entity, ::ItemStack& instance) const;
 
-    MCNAPI bool
+    MCAPI bool
     readBucketEntitySaveData(::BlockSource& region, ::Actor* placer, ::BlockPos pos, ::ItemInstance const& instance)
         const;
     // NOLINTEND
@@ -143,41 +143,41 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
-    MCNAPI uchar $getMaxStackSize(::ItemDescriptor const&) const;
+    MCAPI uchar $getMaxStackSize(::ItemDescriptor const&) const;
 
-    MCNAPI bool $canUseOnSimTick() const;
+    MCAPI bool $canUseOnSimTick() const;
 
-    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCNAPI void $releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const;
+    MCFOLD void $releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const;
 
-    MCNAPI bool $uniqueAuxValues() const;
+    MCFOLD bool $uniqueAuxValues() const;
 
-    MCNAPI bool $isBucket() const;
+    MCFOLD bool $isBucket() const;
 
-    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCNAPI bool $isLiquidClipItem() const;
+    MCAPI bool $isLiquidClipItem() const;
 
-    MCNAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const;
 
-    MCNAPI bool $validFishInteraction(int) const;
+    MCAPI bool $validFishInteraction(int) const;
 
-    MCNAPI ::Brightness $getLightEmission(int) const;
+    MCAPI ::Brightness $getLightEmission(int) const;
 
-    MCNAPI bool $isValidAuxValue(int auxValue) const;
+    MCFOLD bool $isValidAuxValue(int auxValue) const;
 
-    MCNAPI bool $isDestructive(int auxValue) const;
+    MCAPI bool $isDestructive(int auxValue) const;
 
-    MCNAPI ::InteractionResult
+    MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

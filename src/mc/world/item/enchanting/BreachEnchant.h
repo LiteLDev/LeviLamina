@@ -42,20 +42,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getMinCost(int level) const;
+    MCFOLD int $getMinCost(int level) const;
 
-    MCNAPI int $getMaxCost(int level) const;
+    MCFOLD int $getMaxCost(int level) const;
 
-    MCNAPI int $getMaxLevel() const;
+    MCFOLD int $getMaxLevel() const;
 
-    MCNAPI float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
+    MCFOLD float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
 
-    MCNAPI float $getAfterBreachArmorFraction(int level, float const armorFraction) const;
+    MCAPI float $getAfterBreachArmorFraction(int level, float const armorFraction) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

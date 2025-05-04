@@ -39,9 +39,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _createBottledItem(::Actor& entity, ::ItemStack& instance, ::std::string_view itemToCreate) const;
+    MCAPI void _createBottledItem(::Actor& entity, ::ItemStack& instance, ::std::string_view itemToCreate) const;
 
-    MCNAPI void _fillBottleViaDispenser(
+    MCAPI void _fillBottleViaDispenser(
         ::BlockSource&     region,
         ::std::string_view bottledItem,
         ::Container&       container,
@@ -60,17 +60,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCNAPI bool $isLiquidClipItem() const;
+    MCFOLD bool $isLiquidClipItem() const;
 
-    MCNAPI ::InteractionResult
+    MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

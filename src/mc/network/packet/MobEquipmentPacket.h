@@ -58,9 +58,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MobEquipmentPacket(::MobEquipmentPacket&&);
+    MCAPI MobEquipmentPacket(::MobEquipmentPacket&&);
 
-    MCNAPI MobEquipmentPacket(
+    MCAPI MobEquipmentPacket(
         ::ActorRuntimeID                    runtimeId,
         ::NetworkItemStackDescriptor const& item,
         int                                 slot,
@@ -68,7 +68,7 @@ public:
         ::ContainerID                       containerId
     );
 
-    MCNAPI MobEquipmentPacket(
+    MCAPI MobEquipmentPacket(
         ::ActorRuntimeID   runtimeId,
         ::ItemStack const& item,
         int                slot,
@@ -76,15 +76,15 @@ public:
         ::ContainerID      containerId
     );
 
-    MCNAPI void _convertFromBytes();
+    MCAPI void _convertFromBytes();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::MobEquipmentPacket&&);
+    MCAPI void* $ctor(::MobEquipmentPacket&&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ActorRuntimeID                    runtimeId,
         ::NetworkItemStackDescriptor const& item,
         int                                 slot,
@@ -92,31 +92,31 @@ public:
         ::ContainerID                       containerId
     );
 
-    MCNAPI void*
+    MCAPI void*
     $ctor(::ActorRuntimeID runtimeId, ::ItemStack const& item, int slot, int selectedSlot, ::ContainerID containerId);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::MinecraftPacketIds $getId() const;
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCNAPI ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
-    MCNAPI void $write(::BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

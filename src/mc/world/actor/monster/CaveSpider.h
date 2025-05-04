@@ -28,14 +28,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI float $getModelScale() const;
+    MCAPI float $getModelScale() const;
 
-    MCNAPI void $getDebugText(::std::vector<::std::string>& outputInfo);
+    MCAPI void $getDebugText(::std::vector<::std::string>& outputInfo);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

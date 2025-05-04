@@ -48,24 +48,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getMinCost(int level) const;
+    MCFOLD int $getMinCost(int level) const;
 
-    MCNAPI int $getMaxCost(int level) const;
+    MCFOLD int $getMaxCost(int level) const;
 
-    MCNAPI int $getMaxLevel() const;
+    MCFOLD int $getMaxLevel() const;
 
-    MCNAPI float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
+    MCFOLD float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
 
-    MCNAPI void $doPostItemHurtActor(::Actor& attacker, ::Actor&, int enchantLevel) const;
+    MCAPI void $doPostItemHurtActor(::Actor& attacker, ::Actor&, int enchantLevel) const;
 
-    MCNAPI bool $isTreasureOnly() const;
+    MCFOLD bool $isTreasureOnly() const;
 
-    MCNAPI bool $isDiscoverable() const;
+    MCFOLD bool $isDiscoverable() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

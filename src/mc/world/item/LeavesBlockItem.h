@@ -50,19 +50,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getLevelDataForAuxValue(int auxValue) const;
+    MCFOLD int $getLevelDataForAuxValue(int auxValue) const;
 
-    MCNAPI ::std::string
+    MCAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCNAPI void $fixupCommon(::ItemStackBase& stack) const;
+    MCAPI void $fixupCommon(::ItemStackBase& stack) const;
 
-    MCNAPI void $fixupCommon(::ItemStackBase& stack, ::ILevel& level) const;
+    MCFOLD void $fixupCommon(::ItemStackBase& stack, ::ILevel& level) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

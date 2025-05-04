@@ -60,11 +60,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MovePlayerPacket();
+    MCAPI MovePlayerPacket();
 
-    MCNAPI MovePlayerPacket(::Player const& player, ::Vec3 const& pos);
+    MCAPI MovePlayerPacket(::Player const& player, ::Vec3 const& pos);
 
-    MCNAPI MovePlayerPacket(
+    MCAPI MovePlayerPacket(
         ::Player const&                             player,
         ::PlayerPositionModeComponent::PositionMode resetPosition,
         int                                         cause,
@@ -75,11 +75,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::Player const& player, ::Vec3 const& pos);
+    MCAPI void* $ctor(::Player const& player, ::Vec3 const& pos);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Player const&                             player,
         ::PlayerPositionModeComponent::PositionMode resetPosition,
         int                                         cause,
@@ -90,26 +90,26 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::MinecraftPacketIds $getId() const;
+    MCFOLD ::MinecraftPacketIds $getId() const;
 
-    MCNAPI ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
-    MCNAPI void $write(::BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCNAPI bool $isValid() const;
+    MCAPI bool $isValid() const;
 
-    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

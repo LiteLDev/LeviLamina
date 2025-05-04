@@ -242,47 +242,47 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LegacyTelemetryEventPacket();
+    MCAPI LegacyTelemetryEventPacket();
 
-    MCNAPI LegacyTelemetryEventPacket(::Player const* player, ::gsl::not_null<::Mob const*> baby);
+    MCAPI LegacyTelemetryEventPacket(::Player const* player, ::gsl::not_null<::Mob const*> baby);
 
-    MCNAPI LegacyTelemetryEventPacket(::Player const& player, ::std::string const& codebuilderRuntimeAction);
+    MCAPI LegacyTelemetryEventPacket(::Player const& player, ::std::string const& codebuilderRuntimeAction);
 
-    MCNAPI LegacyTelemetryEventPacket(::Player const* player, ::LegacyTelemetryEventPacket::Data const& data);
+    MCAPI LegacyTelemetryEventPacket(::Player const* player, ::LegacyTelemetryEventPacket::Data const& data);
 
-    MCNAPI LegacyTelemetryEventPacket(::Player const* player, ::DimensionType portalBuiltInDimension);
+    MCAPI LegacyTelemetryEventPacket(::Player const* player, ::DimensionType portalBuiltInDimension);
 
-    MCNAPI LegacyTelemetryEventPacket(
+    MCAPI LegacyTelemetryEventPacket(
         ::Player const*                     player,
         ::MinecraftEventing::AchievementIds achievementId,
         bool                                usePlayerID
     );
 
-    MCNAPI
+    MCAPI
     LegacyTelemetryEventPacket(::Player const* player, ::DimensionType fromDimension, ::DimensionType toDimension);
 
-    MCNAPI LegacyTelemetryEventPacket(
+    MCAPI LegacyTelemetryEventPacket(
         ::Player const*                      player,
         ::gsl::not_null<::Actor const*>      interactedEntity,
         ::MinecraftEventing::InteractionType interactionType
     );
 
-    MCNAPI LegacyTelemetryEventPacket(::Player const& player, ::std::string const& objective, int score);
+    MCAPI LegacyTelemetryEventPacket(::Player const& player, ::std::string const& objective, int score);
 
-    MCNAPI LegacyTelemetryEventPacket(::Player const* player, int partySize, ::gsl::not_null<::Actor const*> e);
+    MCAPI LegacyTelemetryEventPacket(::Player const* player, int partySize, ::gsl::not_null<::Actor const*> e);
 
-    MCNAPI LegacyTelemetryEventPacket(::Player const* player, ::Raid const& raid, bool success);
+    MCAPI LegacyTelemetryEventPacket(::Player const* player, ::Raid const& raid, bool success);
 
-    MCNAPI LegacyTelemetryEventPacket(::Player const* player, short contentsType, uint contentsColor, short fillLevel);
+    MCAPI LegacyTelemetryEventPacket(::Player const* player, short contentsType, uint contentsColor, short fillLevel);
 
-    MCNAPI LegacyTelemetryEventPacket(
+    MCAPI LegacyTelemetryEventPacket(
         ::Player const&        player,
         ::ItemStackBase const& item,
         ::ItemUseMethod        useCount,
         int                    useMethod
     );
 
-    MCNAPI LegacyTelemetryEventPacket(
+    MCAPI LegacyTelemetryEventPacket(
         ::Player const*      player,
         ::std::string const& commandName,
         int                  successCount,
@@ -290,7 +290,7 @@ public:
         ::std::string const& errorList
     );
 
-    MCNAPI LegacyTelemetryEventPacket(
+    MCAPI LegacyTelemetryEventPacket(
         ::Player const*                         player,
         ::Actor const*                          killerEntity,
         ::ActorUniqueID const&                  killedMobID,
@@ -298,7 +298,7 @@ public:
         ::ActorType                             damageChildType
     );
 
-    MCNAPI LegacyTelemetryEventPacket(
+    MCAPI LegacyTelemetryEventPacket(
         ::Player const*                         player,
         int                                     killerId,
         int                                     killerVariant,
@@ -306,7 +306,7 @@ public:
         bool                                    inRaid
     );
 
-    MCNAPI LegacyTelemetryEventPacket(
+    MCAPI LegacyTelemetryEventPacket(
         ::Player const*                         player,
         ::Actor const*                          killerEntity,
         ::ActorUniqueID const&                  killedMobID,
@@ -316,43 +316,43 @@ public:
         ::ActorType                             damageChildType
     );
 
-    MCNAPI ::LegacyTelemetryEventPacket& operator=(::LegacyTelemetryEventPacket&&);
+    MCAPI ::LegacyTelemetryEventPacket& operator=(::LegacyTelemetryEventPacket&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::Player const* player, ::gsl::not_null<::Mob const*> baby);
+    MCAPI void* $ctor(::Player const* player, ::gsl::not_null<::Mob const*> baby);
 
-    MCNAPI void* $ctor(::Player const& player, ::std::string const& codebuilderRuntimeAction);
+    MCAPI void* $ctor(::Player const& player, ::std::string const& codebuilderRuntimeAction);
 
-    MCNAPI void* $ctor(::Player const* player, ::LegacyTelemetryEventPacket::Data const& data);
+    MCAPI void* $ctor(::Player const* player, ::LegacyTelemetryEventPacket::Data const& data);
 
-    MCNAPI void* $ctor(::Player const* player, ::DimensionType portalBuiltInDimension);
+    MCAPI void* $ctor(::Player const* player, ::DimensionType portalBuiltInDimension);
 
-    MCNAPI void* $ctor(::Player const* player, ::MinecraftEventing::AchievementIds achievementId, bool usePlayerID);
+    MCAPI void* $ctor(::Player const* player, ::MinecraftEventing::AchievementIds achievementId, bool usePlayerID);
 
-    MCNAPI void* $ctor(::Player const* player, ::DimensionType fromDimension, ::DimensionType toDimension);
+    MCAPI void* $ctor(::Player const* player, ::DimensionType fromDimension, ::DimensionType toDimension);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Player const*                      player,
         ::gsl::not_null<::Actor const*>      interactedEntity,
         ::MinecraftEventing::InteractionType interactionType
     );
 
-    MCNAPI void* $ctor(::Player const& player, ::std::string const& objective, int score);
+    MCAPI void* $ctor(::Player const& player, ::std::string const& objective, int score);
 
-    MCNAPI void* $ctor(::Player const* player, int partySize, ::gsl::not_null<::Actor const*> e);
+    MCAPI void* $ctor(::Player const* player, int partySize, ::gsl::not_null<::Actor const*> e);
 
-    MCNAPI void* $ctor(::Player const* player, ::Raid const& raid, bool success);
+    MCAPI void* $ctor(::Player const* player, ::Raid const& raid, bool success);
 
-    MCNAPI void* $ctor(::Player const* player, short contentsType, uint contentsColor, short fillLevel);
+    MCAPI void* $ctor(::Player const* player, short contentsType, uint contentsColor, short fillLevel);
 
-    MCNAPI void* $ctor(::Player const& player, ::ItemStackBase const& item, ::ItemUseMethod useCount, int useMethod);
+    MCAPI void* $ctor(::Player const& player, ::ItemStackBase const& item, ::ItemUseMethod useCount, int useMethod);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Player const*      player,
         ::std::string const& commandName,
         int                  successCount,
@@ -360,7 +360,7 @@ public:
         ::std::string const& errorList
     );
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Player const*                         player,
         ::Actor const*                          killerEntity,
         ::ActorUniqueID const&                  killedMobID,
@@ -368,7 +368,7 @@ public:
         ::ActorType                             damageChildType
     );
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Player const*                         player,
         int                                     killerId,
         int                                     killerVariant,
@@ -376,7 +376,7 @@ public:
         bool                                    inRaid
     );
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Player const*                         player,
         ::Actor const*                          killerEntity,
         ::ActorUniqueID const&                  killedMobID,
@@ -390,24 +390,24 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::MinecraftPacketIds $getId() const;
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCNAPI ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
-    MCNAPI void $write(::BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

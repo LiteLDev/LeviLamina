@@ -47,18 +47,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCNAPI bool $isThrowable() const;
+    MCFOLD bool $isThrowable() const;
 
-    MCNAPI ::HashedString const& $getCooldownType() const;
+    MCAPI ::HashedString const& $getCooldownType() const;
 
-    MCNAPI int $getCooldownTime() const;
+    MCFOLD int $getCooldownTime() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

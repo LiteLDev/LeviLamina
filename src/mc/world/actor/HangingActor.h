@@ -83,27 +83,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI HangingActor(
+    MCAPI HangingActor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCNAPI bool _blockIsObstruction(::BlockSource const& region, ::BlockPos const& blockPos) const;
+    MCAPI bool _blockIsObstruction(::BlockSource const& region, ::BlockPos const& blockPos) const;
 
-    MCNAPI void _calculateAABB();
+    MCAPI void _calculateAABB();
 
-    MCNAPI void _calculateActorPositionFromPlacementPosition(::BlockPos const& blockPos);
+    MCAPI void _calculateActorPositionFromPlacementPosition(::BlockPos const& blockPos);
 
-    MCNAPI bool _canSurviveOnBlock(::BlockSource const& region, ::BlockPos const& blockPos, bool beingPlaced) const;
+    MCAPI bool _canSurviveOnBlock(::BlockSource const& region, ::BlockPos const& blockPos, bool beingPlaced) const;
 
-    MCNAPI bool _wouldSurvive(::BlockSource& region, ::BlockPos const& blockPos, bool beingPlaced);
+    MCAPI bool _wouldSurvive(::BlockSource& region, ::BlockPos const& blockPos, bool beingPlaced);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -113,32 +113,32 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $normalTick();
+    MCAPI void $normalTick();
 
-    MCNAPI float $getBrightness(float a, ::IConstBlockSource const& region) const;
+    MCAPI float $getBrightness(float a, ::IConstBlockSource const& region) const;
 
-    MCNAPI bool $placeHangingEntity(::BlockSource& region, int direction);
+    MCFOLD bool $placeHangingEntity(::BlockSource& region, int direction);
 
-    MCNAPI bool $wouldSurvive(::BlockSource& region);
+    MCAPI bool $wouldSurvive(::BlockSource& region);
 
-    MCNAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCFOLD bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCNAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
