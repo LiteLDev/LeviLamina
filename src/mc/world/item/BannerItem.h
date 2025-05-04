@@ -70,7 +70,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::std::pair<::gsl::not_null<::BannerPattern const*>, ::ItemColor>>
+    MCAPI static ::std::vector<::std::pair<::gsl::not_null<::BannerPattern const*>, ::ItemColor>>
     getPatternAndColorPairsFromItemStack(::ItemStackBase const& item);
     // NOLINTEND
 
@@ -83,29 +83,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::InteractionResult
+    MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
-    MCNAPI ::std::string
+    MCAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCNAPI void $appendFormattedHovertext(
+    MCAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
 
-    MCNAPI bool $isValidAuxValue(int auxValue) const;
+    MCFOLD bool $isValidAuxValue(int auxValue) const;
 
-    MCNAPI bool $isWearableThroughLootTable(::CompoundTag const* userData) const;
+    MCAPI bool $isWearableThroughLootTable(::CompoundTag const* userData) const;
 
-    MCNAPI void $fixupCommon(::ItemStackBase& item) const;
+    MCAPI void $fixupCommon(::ItemStackBase& item) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

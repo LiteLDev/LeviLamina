@@ -92,62 +92,62 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PotionItem(::std::string const& name, int id);
+    MCAPI PotionItem(::std::string const& name, int id);
 
-    MCNAPI bool const _isBlockConvertibleToMud(::BlockLegacy const& block) const;
+    MCAPI bool const _isBlockConvertibleToMud(::BlockLegacy const& block) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& name, int id);
+    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Potion::PotionType $getPotionType() const;
+    MCFOLD ::Potion::PotionType $getPotionType() const;
 
-    MCNAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
-    MCNAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
 
-    MCNAPI void $appendFormattedHovertext(
+    MCAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
 
-    MCNAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack) const;
+    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack) const;
 
-    MCNAPI bool $uniqueAuxValues() const;
+    MCFOLD bool $uniqueAuxValues() const;
 
-    MCNAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
+    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
-    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCNAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& instance, ::Level* level, ::Player* player) const;
+    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& instance, ::Level* level, ::Player* player) const;
 
-    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCNAPI bool $isValidAuxValue(int auxValue) const;
+    MCAPI bool $isValidAuxValue(int auxValue) const;
 
-    MCNAPI bool $isDestructive(int auxValue) const;
+    MCAPI bool $isDestructive(int auxValue) const;
 
-    MCNAPI ::InteractionResult
+    MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

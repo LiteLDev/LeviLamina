@@ -57,20 +57,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canBePulledIntoVehicle() const;
+    MCFOLD bool $canBePulledIntoVehicle() const;
 
-    MCNAPI float $_getWalkTargetValue(::BlockPos const& pos);
+    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
-    MCNAPI void $aiStep();
+    MCAPI void $aiStep();
 
-    MCNAPI bool $createAIGoals();
+    MCAPI bool $createAIGoals();
 
-    MCNAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

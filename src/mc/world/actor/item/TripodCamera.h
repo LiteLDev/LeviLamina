@@ -59,19 +59,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TripodCamera(
+    MCAPI TripodCamera(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCNAPI void startTakingPicture(::Player& player);
+    MCAPI void startTakingPicture(::Player& player);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -87,22 +87,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCNAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
-    MCNAPI bool $isTargetable() const;
+    MCFOLD bool $isTargetable() const;
 
-    MCNAPI bool $canExistWhenDisallowMob() const;
+    MCFOLD bool $canExistWhenDisallowMob() const;
 
-    MCNAPI void $remove();
+    MCAPI void $remove();
 
-    MCNAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

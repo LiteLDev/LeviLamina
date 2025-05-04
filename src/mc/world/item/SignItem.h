@@ -50,41 +50,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SignItem(::std::string const& name, int id, ::SignBlock::SignType type);
+    MCAPI SignItem(::std::string const& name, int id, ::SignBlock::SignType type);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool calculatePlacePos(::Actor& entity, uchar& face, ::BlockPos& pos);
+    MCAPI static bool calculatePlacePos(::Actor& entity, uchar& face, ::BlockPos& pos);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& name, int id, ::SignBlock::SignType type);
+    MCAPI void* $ctor(::std::string const& name, int id, ::SignBlock::SignType type);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Block const* $getBlockToPlace(uchar const face, ::Actor const& entity, ::BlockPos const pos) const;
+    MCAPI ::Block const* $getBlockToPlace(uchar const face, ::Actor const& entity, ::BlockPos const pos) const;
 
-    MCNAPI bool $_calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    MCFOLD bool $_calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
-    MCNAPI ::InteractionResult
+    MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

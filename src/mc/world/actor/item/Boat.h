@@ -77,19 +77,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Boat(
+    MCAPI Boat(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCNAPI uchar getWoodID() const;
+    MCFOLD uchar getWoodID() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -105,32 +105,32 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCNAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
+    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCNAPI void $destroy(::Actor* source);
+    MCAPI void $destroy(::Actor* source);
 
-    MCNAPI void $normalTick();
+    MCAPI void $normalTick();
 
-    MCNAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
-    MCNAPI ::std::string $getExitTip(::std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const;
+    MCAPI ::std::string $getExitTip(::std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const;
 
-    MCNAPI bool $canAddPassenger(::Actor& passenger) const;
+    MCAPI bool $canAddPassenger(::Actor& passenger) const;
 
-    MCNAPI ::ActorUniqueID $getControllingPlayer() const;
+    MCAPI ::ActorUniqueID $getControllingPlayer() const;
 
-    MCNAPI float $getPassengerYRotation(::Actor const& passenger) const;
+    MCAPI float $getPassengerYRotation(::Actor const& passenger) const;
 
-    MCNAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCFOLD bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCNAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

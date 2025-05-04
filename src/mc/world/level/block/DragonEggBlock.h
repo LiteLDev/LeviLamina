@@ -44,13 +44,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _attemptTeleport(::BlockSource& region, ::Random& random, ::BlockPos const& pos);
+    MCAPI static void _attemptTeleport(::BlockSource& region, ::Random& random, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -62,20 +62,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::mce::Color $getDustColor(::Block const&) const;
+    MCFOLD ::mce::Color $getDustColor(::Block const&) const;
 
-    MCNAPI ::std::string $getDustParticleName(::Block const&) const;
+    MCAPI ::std::string $getDustParticleName(::Block const&) const;
 
-    MCNAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
+    MCAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
 
-    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

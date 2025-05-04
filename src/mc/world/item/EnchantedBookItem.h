@@ -42,16 +42,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getEnchantSlot() const;
+    MCFOLD int $getEnchantSlot() const;
 
-    MCNAPI int $getEnchantValue() const;
+    MCFOLD int $getEnchantValue() const;
 
-    MCNAPI bool $isGlint(::ItemStackBase const& stack) const;
+    MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

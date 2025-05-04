@@ -81,19 +81,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ThrownTrident(
+    MCAPI ThrownTrident(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCNAPI void returnWithLoyalty(int enchantLevel);
+    MCAPI void returnWithLoyalty(int enchantLevel);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -109,30 +109,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCNAPI void $shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
+    MCFOLD void $shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
 
-    MCNAPI void $playerTouch(::Player& player);
+    MCAPI void $playerTouch(::Player& player);
 
-    MCNAPI void $despawn();
+    MCAPI void $despawn();
 
-    MCNAPI void $outOfWorld();
+    MCAPI void $outOfWorld();
 
-    MCNAPI bool $isEnchanted() const;
+    MCAPI bool $isEnchanted() const;
 
-    MCNAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI ::ItemStack $_getPickupItem() const;
+    MCAPI ::ItemStack $_getPickupItem() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

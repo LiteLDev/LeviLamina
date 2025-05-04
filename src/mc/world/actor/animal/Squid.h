@@ -74,24 +74,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Squid(
+    MCAPI Squid(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext,
         ::mce::Color const&                inkParticleColor
     );
 
-    MCNAPI ::Vec3 _randomInkDir();
+    MCAPI ::Vec3 _randomInkDir();
 
-    MCNAPI void postAiStep();
+    MCAPI void postAiStep();
 
-    MCNAPI void spawnInkParticles();
+    MCAPI void spawnInkParticles();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext,
@@ -102,26 +102,26 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $checkSpawnObstruction() const;
+    MCFOLD bool $checkSpawnObstruction() const;
 
-    MCNAPI bool $checkSpawnRules(bool fromSpawner);
+    MCAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCNAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $_getInkSquirtSoundEvent() const;
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $_getInkSquirtSoundEvent() const;
 
-    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

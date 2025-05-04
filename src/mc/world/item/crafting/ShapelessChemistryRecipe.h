@@ -42,14 +42,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::mce::UUID const& $getId() const;
+    MCAPI ::mce::UUID const& $getId() const;
 
-    MCNAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const;
+    MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -71,11 +71,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _avoidSnowBury();
+    MCAPI void _avoidSnowBury();
 
-    MCNAPI void _updateTintColor();
+    MCAPI void _updateTintColor();
 
-    MCNAPI void postNormalTick();
+    MCAPI void postNormalTick();
     // NOLINTEND
 
 public:
@@ -87,26 +87,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $newServerAiStep();
+    MCAPI void $newServerAiStep();
 
-    MCNAPI bool $load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI bool $load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI void $onBorn(::Actor&, ::Actor& parentRight);
+    MCAPI void $onBorn(::Actor&, ::Actor& parentRight);
 
-    MCNAPI void $onSynchedDataUpdate(int dataId);
+    MCAPI void $onSynchedDataUpdate(int dataId);
 
-    MCNAPI void $setSitting(bool value);
+    MCFOLD void $setSitting(bool value);
 
-    MCNAPI bool $isAlliedTo(::Mob* other);
+    MCAPI bool $isAlliedTo(::Mob* other);
 
-    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
 
-    MCNAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

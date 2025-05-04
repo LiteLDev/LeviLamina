@@ -88,27 +88,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Slime(
+    MCAPI Slime(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCNAPI int getSlimeSize() const;
+    MCFOLD int getSlimeSize() const;
 
-    MCNAPI void justJumped();
+    MCAPI void justJumped();
 
-    MCNAPI void justLanded();
+    MCAPI void justLanded();
 
-    MCNAPI void postNormalTick(bool wasOnGround);
+    MCAPI void postNormalTick(bool wasOnGround);
 
-    MCNAPI void setSlimeSize(int size);
+    MCAPI void setSlimeSize(int size);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -118,40 +118,40 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCNAPI float $getShadowRadius() const;
+    MCAPI float $getShadowRadius() const;
 
-    MCNAPI void $onSynchedDataUpdate(int dataId);
+    MCAPI void $onSynchedDataUpdate(int dataId);
 
-    MCNAPI void $remove();
+    MCAPI void $remove();
 
-    MCNAPI bool $checkSpawnRules(bool fromSpawner);
+    MCAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCNAPI bool $doPlayLandSound();
+    MCAPI bool $doPlayLandSound();
 
-    MCNAPI void $playJumpSound();
+    MCAPI void $playJumpSound();
 
-    MCNAPI float $_getWalkTargetValue(::BlockPos const& pos);
+    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
-    MCNAPI void $decreaseSquish();
+    MCAPI void $decreaseSquish();
 
-    MCNAPI ::OwnerPtr<::EntityContext> $createChild(int i);
+    MCAPI ::OwnerPtr<::EntityContext> $createChild(int i);
 
-    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

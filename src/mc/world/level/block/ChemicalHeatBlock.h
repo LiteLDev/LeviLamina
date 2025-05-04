@@ -38,15 +38,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _queueTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void _queueTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::BlockPos> const& _getRelativeOffsets();
+    MCAPI static ::std::vector<::BlockPos> const& _getRelativeOffsets();
     // NOLINTEND
 
 public:
@@ -58,18 +58,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCNAPI int $getExtraRenderLayers() const;
+    MCFOLD int $getExtraRenderLayers() const;
 
-    MCNAPI bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
+    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

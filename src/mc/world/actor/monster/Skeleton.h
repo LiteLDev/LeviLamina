@@ -69,13 +69,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Skeleton(
+    MCAPI Skeleton(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCNAPI void setSkeletonType(::Skeleton::SkeletonType type);
+    MCFOLD void setSkeletonType(::Skeleton::SkeletonType type);
     // NOLINTEND
 
 public:
@@ -87,7 +87,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -103,22 +103,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $die(::ActorDamageSource const& source);
+    MCAPI void $die(::ActorDamageSource const& source);
 
-    MCNAPI bool $canBeAffected(uint id) const;
+    MCAPI bool $canBeAffected(uint id) const;
 
-    MCNAPI void $setTarget(::Actor* entity);
+    MCFOLD void $setTarget(::Actor* entity);
 
-    MCNAPI void $normalTick();
+    MCAPI void $normalTick();
 
-    MCNAPI bool $canFreeze() const;
+    MCAPI bool $canFreeze() const;
 
-    MCNAPI void $getDebugText(::std::vector<::std::string>& outputInfo);
+    MCAPI void $getDebugText(::std::vector<::std::string>& outputInfo);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

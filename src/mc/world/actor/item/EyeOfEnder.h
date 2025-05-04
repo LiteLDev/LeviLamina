@@ -50,7 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void preNormalTick();
+    MCAPI void preNormalTick();
     // NOLINTEND
 
 public:
@@ -62,18 +62,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCNAPI void $lerpMotion(::Vec3 const& delta);
+    MCAPI void $lerpMotion(::Vec3 const& delta);
 
-    MCNAPI void $normalTick();
+    MCAPI void $normalTick();
 
-    MCNAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

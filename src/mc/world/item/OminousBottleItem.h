@@ -74,7 +74,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI OminousBottleItem(::std::string const& name, int id);
+    MCAPI OminousBottleItem(::std::string const& name, int id);
     // NOLINTEND
 
 public:
@@ -86,7 +86,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& name, int id);
+    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:
@@ -98,35 +98,35 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Potion::PotionType $getPotionType() const;
+    MCFOLD ::Potion::PotionType $getPotionType() const;
 
-    MCNAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
-    MCNAPI void $appendFormattedHovertext(
+    MCAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
 
-    MCNAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& item) const;
+    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& item) const;
 
-    MCNAPI bool $uniqueAuxValues() const;
+    MCFOLD bool $uniqueAuxValues() const;
 
-    MCNAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const&, int, bool) const;
+    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const&, int, bool) const;
 
-    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCNAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
-    MCNAPI bool $isValidAuxValue(int auxValue) const;
+    MCAPI bool $isValidAuxValue(int auxValue) const;
 
-    MCNAPI bool $isDestructive(int) const;
+    MCFOLD bool $isDestructive(int) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

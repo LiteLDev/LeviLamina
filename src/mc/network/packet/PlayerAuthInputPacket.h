@@ -150,42 +150,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PlayerAuthInputPacket(::PlayerAuthInputPacket&&);
+    MCAPI PlayerAuthInputPacket(::PlayerAuthInputPacket&&);
 
-    MCNAPI ::PlayerAuthInputPacket& operator=(::PlayerAuthInputPacket&&);
+    MCAPI ::PlayerAuthInputPacket& operator=(::PlayerAuthInputPacket&&);
 
-    MCNAPI ::PlayerActionComponent readIntoComponent() const;
+    MCAPI ::PlayerActionComponent readIntoComponent() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PlayerAuthInputPacket&&);
+    MCAPI void* $ctor(::PlayerAuthInputPacket&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::MinecraftPacketIds $getId() const;
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCNAPI ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
-    MCNAPI void $write(::BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCNAPI bool $isValid() const;
+    MCAPI bool $isValid() const;
 
-    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

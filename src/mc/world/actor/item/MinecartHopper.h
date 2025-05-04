@@ -57,20 +57,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $destroy(::ActorDamageSource const& source, bool dropMinecartComponents);
+    MCAPI void $destroy(::ActorDamageSource const& source, bool dropMinecartComponents);
 
-    MCNAPI void $applyNaturalSlowdown(::BlockSource& region);
+    MCFOLD void $applyNaturalSlowdown(::BlockSource& region);
 
-    MCNAPI ::MinecartType $getType();
+    MCFOLD ::MinecartType $getType();
 
-    MCNAPI ::Block const* $getDefaultDisplayBlock() const;
+    MCAPI ::Block const* $getDefaultDisplayBlock() const;
 
-    MCNAPI int $getDefaultDisplayOffset() const;
+    MCFOLD int $getDefaultDisplayOffset() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

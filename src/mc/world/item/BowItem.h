@@ -49,19 +49,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
-    MCNAPI ::ResolvedItemIconInfo
+    MCFOLD ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCNAPI int $getEnchantSlot() const;
+    MCFOLD int $getEnchantSlot() const;
 
-    MCNAPI void $enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
+    MCAPI void $enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

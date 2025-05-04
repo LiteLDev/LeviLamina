@@ -39,7 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TropicalFish(
+    MCAPI TropicalFish(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -49,7 +49,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -65,18 +65,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
+    MCFOLD bool $startRiding(::Actor& vehicle, bool forceRiding);
 
-    MCNAPI bool $createAIGoals();
+    MCAPI bool $createAIGoals();
 
-    MCNAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCNAPI void $onSynchedDataUpdate(int dataId);
+    MCAPI void $onSynchedDataUpdate(int dataId);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

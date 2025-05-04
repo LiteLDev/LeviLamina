@@ -78,12 +78,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Vec3 _getShootDir(::Player const& player, float angleOffset) const;
+    MCAPI ::Vec3 _getShootDir(::Player const& player, float angleOffset) const;
 
-    MCNAPI void
+    MCAPI void
     _shootArrow(::ItemInstance const& crossbow, ::ItemInstance const& projectileInstance, ::Player& player) const;
 
-    MCNAPI void _shootFirework(::ItemInstance const& projectileInstance, ::Player& player) const;
+    MCAPI void _shootFirework(::ItemInstance const& projectileInstance, ::Player& player) const;
     // NOLINTEND
 
 public:
@@ -95,32 +95,32 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Item& $setIconInfo(::std::string const& name, int id);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCNAPI ::ResolvedItemIconInfo
+    MCFOLD ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCNAPI int
+    MCAPI int
     $getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const;
 
-    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCNAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+    MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
-    MCNAPI void $playSoundIncrementally(::ItemStack const& item, ::Mob& mob) const;
+    MCAPI void $playSoundIncrementally(::ItemStack const& item, ::Mob& mob) const;
 
-    MCNAPI int $getEnchantSlot() const;
+    MCAPI int $getEnchantSlot() const;
 
-    MCNAPI bool $canBeCharged() const;
+    MCFOLD bool $canBeCharged() const;
 
-    MCNAPI int $getMaxUseDuration(::ItemStack const* instance) const;
+    MCAPI int $getMaxUseDuration(::ItemStack const* instance) const;
 
-    MCNAPI void $enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
+    MCAPI void $enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

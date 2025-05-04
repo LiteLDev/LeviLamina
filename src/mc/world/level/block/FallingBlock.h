@@ -57,39 +57,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _scheduleCheck(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, int delay) const;
+    MCAPI void _scheduleCheck(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, int delay) const;
 
-    MCNAPI void _tickBlocksAround2D(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock) const;
+    MCAPI void _tickBlocksAround2D(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock) const;
 
-    MCNAPI void checkSlide(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void checkSlide(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCNAPI bool $falling() const;
+    MCFOLD bool $falling() const;
 
-    MCNAPI void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void
+    MCAPI void
     $startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 };

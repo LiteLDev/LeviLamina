@@ -38,7 +38,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void addPlayerMarker(::ItemStackBase& map);
+    MCAPI static void addPlayerMarker(::ItemStackBase& map);
     // NOLINTEND
 
 public:
@@ -50,18 +50,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCNAPI bool $requiresInteract() const;
+    MCFOLD bool $requiresInteract() const;
 
-    MCNAPI ::std::string $getInteractText(::Player const& player) const;
+    MCAPI ::std::string $getInteractText(::Player const& player) const;
 
-    MCNAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -87,9 +87,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ActorDefinitionIdentifier _getActorID(::BlockSource& region) const;
+    MCAPI ::ActorDefinitionIdentifier _getActorID(::BlockSource& region) const;
 
-    MCNAPI ::Actor* _spawnActorAt(
+    MCAPI ::Actor* _spawnActorAt(
         ::BlockSource&     region,
         ::Vec3 const&      pos,
         ::Vec3 const&      playerFeetPos,
@@ -101,14 +101,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _setAgentOwner(::Player& owner, ::Agent& agent);
+    MCAPI static void _setAgentOwner(::Player& owner, ::Agent& agent);
 
-    MCNAPI static void
+    MCAPI static void
     forEachCustomEgg(::ItemRegistryRef itemRegistry, ::std::function<void(::Item const&)> const& callback);
 
-    MCNAPI static void registerCustomEggs(::ItemRegistryRef itemRegistry, ::ActorInfoRegistry const& registry);
+    MCAPI static void registerCustomEggs(::ItemRegistryRef itemRegistry, ::ActorInfoRegistry const& registry);
 
-    MCNAPI static ::Actor* spawnOrMoveAgent(::Vec3 const& pos, ::Actor& owner);
+    MCAPI static ::Actor* spawnOrMoveAgent(::Vec3 const& pos, ::Actor& owner);
     // NOLINTEND
 
 public:
@@ -128,37 +128,37 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tearDown();
+    MCAPI void $tearDown();
 
-    MCNAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const&, int, bool) const;
+    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const&, int, bool) const;
 
-    MCNAPI ::ActorDefinitionIdentifier $getActorIdentifier(::ItemStack const&) const;
+    MCAPI ::ActorDefinitionIdentifier $getActorIdentifier(::ItemStack const&) const;
 
-    MCNAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
-    MCNAPI bool $isLiquidClipItem() const;
+    MCFOLD bool $isLiquidClipItem() const;
 
-    MCNAPI bool $shouldInteractionWithBlockBypassLiquid(::Block const& block) const;
+    MCAPI bool $shouldInteractionWithBlockBypassLiquid(::Block const& block) const;
 
-    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCNAPI bool $isValidAuxValue(int auxValue) const;
+    MCFOLD bool $isValidAuxValue(int auxValue) const;
 
-    MCNAPI bool $isMultiColorTinted(::ItemStack const&) const;
+    MCFOLD bool $isMultiColorTinted(::ItemStack const&) const;
 
-    MCNAPI ::mce::Color $getBaseColor(::ItemStack const&) const;
+    MCFOLD ::mce::Color $getBaseColor(::ItemStack const&) const;
 
-    MCNAPI ::mce::Color $getSecondaryColor(::ItemStack const&) const;
+    MCFOLD ::mce::Color $getSecondaryColor(::ItemStack const&) const;
 
-    MCNAPI bool $isActorPlacerItem() const;
+    MCFOLD bool $isActorPlacerItem() const;
 
-    MCNAPI ::InteractionResult
+    MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

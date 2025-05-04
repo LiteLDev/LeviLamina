@@ -61,7 +61,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI WolfArmorItem(::std::string const& nameId, short id, ::cereal::ReflectionCtx& ctx);
+    MCAPI WolfArmorItem(::std::string const& nameId, short id, ::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -75,7 +75,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& nameId, short id, ::cereal::ReflectionCtx& ctx);
+    MCAPI void* $ctor(::std::string const& nameId, short id, ::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -87,30 +87,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool
+    MCAPI bool
     $isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const;
 
-    MCNAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
+    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
-    MCNAPI int $getAnimationFrameFor(::Mob*, bool, ::ItemStack const* item, bool) const;
+    MCAPI int $getAnimationFrameFor(::Mob*, bool, ::ItemStack const* item, bool) const;
 
-    MCNAPI void $appendFormattedHovertext(
+    MCAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               item,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
 
-    MCNAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
-    MCNAPI int $getArmorValue() const;
+    MCFOLD int $getArmorValue() const;
 
-    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $getBreakSound() const;
+    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getBreakSound() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

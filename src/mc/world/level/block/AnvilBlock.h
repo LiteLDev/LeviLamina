@@ -79,15 +79,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::AABB const& _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue);
+    MCAPI static ::AABB const& _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue);
 
-    MCNAPI static int getDamageForName(::HashedString const& name);
+    MCAPI static int getDamageForName(::HashedString const& name);
     // NOLINTEND
 
 public:
@@ -99,38 +99,38 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::AABB
+    MCAPI ::AABB
     $getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCNAPI ::AABB const&
+    MCAPI ::AABB const&
     $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
-    MCNAPI ::mce::Color $getDustColor(::Block const&) const;
+    MCFOLD ::mce::Color $getDustColor(::Block const&) const;
 
-    MCNAPI ::std::string $getDustParticleName(::Block const&) const;
+    MCFOLD ::std::string $getDustParticleName(::Block const&) const;
 
-    MCNAPI void $animateTick(::BlockAnimateTickData const&) const;
+    MCFOLD void $animateTick(::BlockAnimateTickData const&) const;
 
-    MCNAPI bool $falling() const;
+    MCFOLD bool $falling() const;
 
-    MCNAPI void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $isCraftingBlock() const;
+    MCFOLD bool $isCraftingBlock() const;
 
-    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCNAPI bool
+    MCFOLD bool
     $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
-    MCNAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

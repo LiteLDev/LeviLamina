@@ -47,25 +47,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Panda(
+    MCAPI Panda(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCNAPI float getSitAmount(float a) const;
+    MCAPI float getSitAmount(float a) const;
 
-    MCNAPI void postNormalTick();
+    MCAPI void postNormalTick();
 
-    MCNAPI void updateLaying();
+    MCAPI void updateLaying();
 
-    MCNAPI void updateSitting();
+    MCAPI void updateSitting();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -81,16 +81,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $setTransitioningSitting(bool value);
+    MCAPI void $setTransitioningSitting(bool value);
 
-    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
 
-    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

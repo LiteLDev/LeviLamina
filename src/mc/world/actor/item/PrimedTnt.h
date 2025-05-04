@@ -84,19 +84,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PrimedTnt(
+    MCAPI PrimedTnt(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCNAPI void postNormalTick();
+    MCAPI void postNormalTick();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -112,33 +112,33 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCNAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
+    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCNAPI void $normalTick();
+    MCAPI void $normalTick();
 
-    MCNAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
-    MCNAPI ::ActorUniqueID $getSourceUniqueID() const;
+    MCAPI ::ActorUniqueID $getSourceUniqueID() const;
 
-    MCNAPI ::ActorType $getOwnerEntityType();
+    MCFOLD ::ActorType $getOwnerEntityType();
 
-    MCNAPI void
+    MCFOLD void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
-    MCNAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCNAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
+    MCFOLD void $addAdditionalSaveData(::CompoundTag& entityTag) const;
 
-    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCFOLD void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

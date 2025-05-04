@@ -43,17 +43,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isGlint(::ItemStackBase const& stack) const;
+    MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
 
-    MCNAPI bool $isDestructive(int auxValue) const;
+    MCFOLD bool $isDestructive(int auxValue) const;
 
-    MCNAPI ::InteractionResult
+    MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& usingActor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

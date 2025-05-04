@@ -36,16 +36,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $kill();
+    MCAPI void $kill();
 
-    MCNAPI void $destroy(::Actor* sourceActor);
+    MCAPI void $destroy(::Actor* sourceActor);
 
-    MCNAPI ::std::string $getEntityLocNameString() const;
+    MCAPI ::std::string $getEntityLocNameString() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

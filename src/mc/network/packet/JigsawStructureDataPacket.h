@@ -44,36 +44,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit JigsawStructureDataPacket(::SharedTypes::v1_21_20::JigsawStructureData const& jigsawStructureData);
+    MCAPI explicit JigsawStructureDataPacket(::SharedTypes::v1_21_20::JigsawStructureData const& jigsawStructureData);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureData const& jigsawStructureData);
+    MCAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureData const& jigsawStructureData);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::MinecraftPacketIds $getId() const;
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCNAPI ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
-    MCNAPI void $write(::BinaryStream& stream) const;
+    MCFOLD void $write(::BinaryStream& stream) const;
 
-    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

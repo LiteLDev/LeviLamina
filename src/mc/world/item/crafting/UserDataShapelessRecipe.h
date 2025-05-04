@@ -46,9 +46,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit UserDataShapelessRecipe(::Recipe::ConstructionContext&& context);
+    MCAPI explicit UserDataShapelessRecipe(::Recipe::ConstructionContext&& context);
 
-    MCNAPI bool _itemShouldKeepUserData(::ItemStack const& item) const;
+    MCAPI bool _itemShouldKeepUserData(::ItemStack const& item) const;
     // NOLINTEND
 
 public:
@@ -60,7 +60,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Recipe::ConstructionContext&& context);
+    MCAPI void* $ctor(::Recipe::ConstructionContext&& context);
     // NOLINTEND
 
 public:
@@ -72,14 +72,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const;
+    MCAPI ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const;
 
-    MCNAPI bool $itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs) const;
+    MCAPI bool $itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

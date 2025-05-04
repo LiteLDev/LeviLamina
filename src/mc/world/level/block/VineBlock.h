@@ -74,25 +74,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _canGrowDown(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool _canGrowDown(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool _canSideSpread(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool _canSideSpread(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI int _nextVineDirections(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI int _nextVineDirections(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void growDown(::BlockSource& region, ::BlockPos const& pos, int spawnFacings) const;
+    MCAPI void growDown(::BlockSource& region, ::BlockPos const& pos, int spawnFacings) const;
 
-    MCNAPI void growSideways(::BlockSource& region, ::BlockPos const& pos, int testDirection) const;
+    MCAPI void growSideways(::BlockSource& region, ::BlockPos const& pos, int testDirection) const;
 
-    MCNAPI void growUp(::BlockSource& region, ::BlockPos const& pos, int spawnFacings) const;
+    MCAPI void growUp(::BlockSource& region, ::BlockPos const& pos, int spawnFacings) const;
 
-    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool isAcceptableNeighbour(::Block const& block);
+    MCAPI static bool isAcceptableNeighbour(::Block const& block);
     // NOLINTEND
 
 public:
@@ -118,41 +118,41 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::AABB const& $getVisualShapeInWorld(
+    MCAPI ::AABB const& $getVisualShapeInWorld(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
         ::AABB&                    bufferAABB
     ) const;
 
-    MCNAPI ::AABB
+    MCFOLD ::AABB
     $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCNAPI ::AABB const&
+    MCFOLD ::AABB const&
     $getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
         const;
 
-    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCNAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCNAPI ::Block const&
+    MCAPI ::Block const&
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
-    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI ::Block const& $sanitizeFillBlock(::Block const& block) const;
+    MCAPI ::Block const& $sanitizeFillBlock(::Block const& block) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

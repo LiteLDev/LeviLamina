@@ -66,47 +66,47 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FishingHook(
+    MCAPI FishingHook(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCNAPI void _fishPosEvent();
+    MCAPI void _fishPosEvent();
 
-    MCNAPI void _fishTeaseEvent();
+    MCAPI void _fishTeaseEvent();
 
-    MCNAPI void _fishhookEvent();
+    MCAPI void _fishhookEvent();
 
-    MCNAPI int _getServerFishSpeed();
+    MCAPI int _getServerFishSpeed();
 
-    MCNAPI float _getWaterPercentage();
+    MCAPI float _getWaterPercentage();
 
-    MCNAPI ::HitResult _hitCheck();
+    MCAPI ::HitResult _hitCheck();
 
-    MCNAPI void _pullCloser(::Actor& inEntity, float inSpeed);
+    MCAPI void _pullCloser(::Actor& inEntity, float inSpeed);
 
-    MCNAPI bool _serverHooked();
+    MCAPI bool _serverHooked();
 
-    MCNAPI bool _serverLured();
+    MCAPI bool _serverLured();
 
-    MCNAPI void _updateGravity();
+    MCAPI void _updateGravity();
 
-    MCNAPI ::Actor* getFishingTarget();
+    MCAPI ::Actor* getFishingTarget();
 
-    MCNAPI ::Actor* getOwner();
+    MCAPI ::Actor* getOwner();
 
-    MCNAPI void postNormalTick();
+    MCAPI void postNormalTick();
 
-    MCNAPI int retrieve();
+    MCAPI int retrieve();
 
-    MCNAPI void shoot(::Vec3 dir, float pow, float uncertainty);
+    MCAPI void shoot(::Vec3 dir, float pow, float uncertainty);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -122,18 +122,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $remove();
+    MCAPI void $remove();
 
-    MCNAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
-    MCNAPI ::ActorUniqueID $getSourceUniqueID() const;
+    MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
 
-    MCNAPI bool $shouldDropDeathLoot() const;
+    MCFOLD bool $shouldDropDeathLoot() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

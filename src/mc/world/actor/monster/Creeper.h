@@ -47,14 +47,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $normalTick();
+    MCAPI void $normalTick();
 
-    MCNAPI void $die(::ActorDamageSource const& source);
+    MCAPI void $die(::ActorDamageSource const& source);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

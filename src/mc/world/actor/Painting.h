@@ -69,28 +69,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
-    MCNAPI ::std::unique_ptr<::AddActorBasePacket> $tryCreateAddActorPacket();
+    MCAPI ::std::unique_ptr<::AddActorBasePacket> $tryCreateAddActorPacket();
 
-    MCNAPI int $getWidth() const;
+    MCAPI int $getWidth() const;
 
-    MCNAPI int $getHeight() const;
+    MCAPI int $getHeight() const;
 
-    MCNAPI void $dropItem();
+    MCAPI void $dropItem();
 
-    MCNAPI void $remove();
+    MCAPI void $remove();
 
-    MCNAPI bool $placeHangingEntity(::BlockSource& region, int direction);
+    MCAPI bool $placeHangingEntity(::BlockSource& region, int direction);
 
-    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

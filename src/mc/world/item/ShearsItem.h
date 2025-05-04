@@ -51,7 +51,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _tryShearActor(::BlockSource& region, ::Actor& mob);
+    MCAPI static bool _tryShearActor(::BlockSource& region, ::Actor& mob);
     // NOLINTEND
 
 public:
@@ -63,23 +63,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCNAPI bool $canDestroySpecial(::Block const& block) const;
+    MCAPI bool $canDestroySpecial(::Block const& block) const;
 
-    MCNAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
+    MCAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 
-    MCNAPI int $getEnchantSlot() const;
+    MCFOLD int $getEnchantSlot() const;
 
-    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
-    MCNAPI ::InteractionResult
+    MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

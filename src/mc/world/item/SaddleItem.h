@@ -29,9 +29,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _tryEquipSaddleViaComponents(::Actor& actor, ::ItemStack const& saddle);
+    MCAPI static bool _tryEquipSaddleViaComponents(::Actor& actor, ::ItemStack const& saddle);
 
-    MCNAPI static bool _tryEquipSaddleViaEvents(::Actor& actor);
+    MCAPI static bool _tryEquipSaddleViaEvents(::Actor& actor);
     // NOLINTEND
 
 public:
@@ -43,12 +43,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

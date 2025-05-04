@@ -72,27 +72,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Throwable(
+    MCAPI Throwable(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCNAPI void shoot(::Mob& shooter);
+    MCAPI void shoot(::Mob& shooter);
 
-    MCNAPI void shoot(::Vec3 const& dir, float pow, float baseSpeed, ::Vec3 const& uncertainty);
+    MCAPI void shoot(::Vec3 const& dir, float pow, float baseSpeed, ::Vec3 const& uncertainty);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Actor* spawnPlayerProjectile(::ActorDefinitionIdentifier const& id, ::Player& player);
+    MCAPI static ::Actor* spawnPlayerProjectile(::ActorDefinitionIdentifier const& id, ::Player& player);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -102,32 +102,32 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCNAPI void $lerpMotion(::Vec3 const& delta);
+    MCAPI void $lerpMotion(::Vec3 const& delta);
 
-    MCNAPI float $getThrowPower();
+    MCAPI float $getThrowPower();
 
-    MCNAPI ::ActorUniqueID $getSourceUniqueID() const;
+    MCAPI ::ActorUniqueID $getSourceUniqueID() const;
 
-    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI float $getThrowUpAngleOffset();
+    MCFOLD float $getThrowUpAngleOffset();
 
-    MCNAPI float $getGravity();
+    MCAPI float $getGravity();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

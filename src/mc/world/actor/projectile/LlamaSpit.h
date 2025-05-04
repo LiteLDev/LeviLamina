@@ -49,16 +49,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $normalTick();
+    MCAPI void $normalTick();
 
-    MCNAPI float $getBrightness(float a, ::IConstBlockSource const& region) const;
+    MCFOLD float $getBrightness(float a, ::IConstBlockSource const& region) const;
 
-    MCNAPI ::ActorUniqueID $getSourceUniqueID() const;
+    MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

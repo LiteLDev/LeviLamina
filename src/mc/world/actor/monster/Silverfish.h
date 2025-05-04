@@ -43,18 +43,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isDarkEnoughToSpawn() const;
+    MCFOLD bool $isDarkEnoughToSpawn() const;
 
-    MCNAPI void $spawnAnim();
+    MCAPI void $spawnAnim();
 
-    MCNAPI float $_getWalkTargetValue(::BlockPos const& pos);
+    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
-    MCNAPI bool $checkSpawnRules(bool fromSpawner);
+    MCAPI bool $checkSpawnRules(bool fromSpawner);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

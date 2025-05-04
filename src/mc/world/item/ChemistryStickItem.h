@@ -68,15 +68,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _storeActivationTimestamp(::ItemStack& item, uint64 curTime, int desiredPercent) const;
+    MCAPI void _storeActivationTimestamp(::ItemStack& item, uint64 curTime, int desiredPercent) const;
 
-    MCNAPI bool _tick(::ItemStack& item, uint64 curTime) const;
+    MCAPI bool _tick(::ItemStack& item, uint64 curTime) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool isChemistryStick(::ItemStackBase const& item);
+    MCAPI static bool isChemistryStick(::ItemStackBase const& item);
     // NOLINTEND
 
 public:
@@ -94,26 +94,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCNAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
-    MCNAPI bool $uniqueAuxValues() const;
+    MCFOLD bool $uniqueAuxValues() const;
 
-    MCNAPI bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const;
+    MCAPI bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const;
 
-    MCNAPI ::Item& $setMaxDamage(int maxDamage);
+    MCAPI ::Item& $setMaxDamage(int maxDamage);
 
-    MCNAPI void $hurtActor(::ItemStack& instance, ::Actor& actor, ::Mob& attacker) const;
+    MCFOLD void $hurtActor(::ItemStack& instance, ::Actor& actor, ::Mob& attacker) const;
 
-    MCNAPI bool $isValidRepairItem(
+    MCFOLD bool $isValidRepairItem(
         ::ItemStackBase const&   source,
         ::ItemStackBase const&   repairItem,
         ::BaseGameVersion const& baseGameVersion
     ) const;
 
-    MCNAPI bool $showsDurabilityInCreative() const;
+    MCFOLD bool $showsDurabilityInCreative() const;
 
-    MCNAPI void $fixupCommon(::ItemStackBase& stack) const;
+    MCAPI void $fixupCommon(::ItemStackBase& stack) const;
     // NOLINTEND
 };

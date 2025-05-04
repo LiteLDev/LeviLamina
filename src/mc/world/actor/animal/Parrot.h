@@ -51,19 +51,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Parrot(
+    MCAPI Parrot(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCNAPI void postAiStep();
+    MCAPI void postAiStep();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -79,26 +79,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI float $_getWalkTargetValue(::BlockPos const& pos);
+    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
-    MCNAPI void $playAmbientSound();
+    MCAPI void $playAmbientSound();
 
-    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
 
-    MCNAPI void $setSitting(bool value);
+    MCAPI void $setSitting(bool value);
 
-    MCNAPI bool $canBePulledIntoVehicle() const;
+    MCAPI bool $canBePulledIntoVehicle() const;
 
-    MCNAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCNAPI float $getShadowRadius() const;
+    MCAPI float $getShadowRadius() const;
 
-    MCNAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
+    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

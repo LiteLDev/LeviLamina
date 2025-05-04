@@ -72,31 +72,31 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
+    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
-    MCNAPI ::Rarity $getRarity(::ItemStackBase const& stack) const;
+    MCAPI ::Rarity $getRarity(::ItemStackBase const& stack) const;
 
-    MCNAPI int $getLevelDataForAuxValue(int auxValue) const;
+    MCFOLD int $getLevelDataForAuxValue(int auxValue) const;
 
-    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCNAPI ::BlockShape $getBlockShape() const;
+    MCFOLD ::BlockShape $getBlockShape() const;
 
-    MCNAPI int $getEnchantSlot() const;
+    MCAPI int $getEnchantSlot() const;
 
-    MCNAPI ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
+    MCFOLD ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
 
-    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
+    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 
-    MCNAPI ::InteractionResult
+    MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
-    MCNAPI bool $_calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    MCAPI bool $_calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

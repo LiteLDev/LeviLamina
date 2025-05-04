@@ -49,18 +49,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::CopperBehavior const* $tryGetCopperBehavior() const;
+    MCFOLD ::CopperBehavior const* $tryGetCopperBehavior() const;
 
-    MCNAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCFOLD void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCNAPI void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $_useTrapDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCAPI void $_useTrapDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

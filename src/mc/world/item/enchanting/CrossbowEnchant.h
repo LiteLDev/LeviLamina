@@ -31,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CrossbowEnchant(
+    MCAPI CrossbowEnchant(
         ::Enchant::Type __param6,
         ::Enchant::Frequency,
         ::std::string_view,
@@ -51,7 +51,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Enchant::Type __param6,
         ::Enchant::Frequency,
         ::std::string_view,
@@ -71,20 +71,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getMinCost(int level) const;
+    MCAPI int $getMinCost(int level) const;
 
-    MCNAPI int $getMaxCost(int level) const;
+    MCAPI int $getMaxCost(int level) const;
 
-    MCNAPI int $getMaxLevel() const;
+    MCAPI int $getMaxLevel() const;
 
-    MCNAPI bool $isCompatibleWith(::Enchant::Type type) const;
+    MCAPI bool $isCompatibleWith(::Enchant::Type type) const;
 
-    MCNAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
+    MCAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

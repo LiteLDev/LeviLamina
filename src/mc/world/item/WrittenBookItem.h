@@ -62,9 +62,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static int getPageCount(::ItemStack const& book);
+    MCAPI static int getPageCount(::ItemStack const& book);
 
-    MCNAPI static ::std::vector<::PageContent> getPages(::ItemStack const& book);
+    MCAPI static ::std::vector<::PageContent> getPages(::ItemStack const& book);
     // NOLINTEND
 
 public:
@@ -110,29 +110,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCNAPI bool $requiresInteract() const;
+    MCFOLD bool $requiresInteract() const;
 
-    MCNAPI ::std::string $getInteractText(::Player const& player) const;
+    MCAPI ::std::string $getInteractText(::Player const& player) const;
 
-    MCNAPI ::std::string $buildDescriptionId(::ItemDescriptor const& item, ::CompoundTag const* userData) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& item, ::CompoundTag const* userData) const;
 
-    MCNAPI void $appendFormattedHovertext(
+    MCAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
 
-    MCNAPI bool $inventoryTick(::ItemStack&, ::Level& level, ::Actor& owner, int, bool) const;
+    MCAPI bool $inventoryTick(::ItemStack&, ::Level& level, ::Actor& owner, int, bool) const;
 
-    MCNAPI bool $isGlint(::ItemStackBase const& stack) const;
+    MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
