@@ -17,7 +17,7 @@ LL_TYPE_INSTANCE_HOOK(
     NetworkIdentifier const&                 identifier,
     SetLocalPlayerAsInitializedPacket const& packet
 ) {
-    if (auto player = thisFor<NetEventCallback>()->_getServerPlayer(identifier, packet.mClientSubId); player) {
+    if (auto player = thisFor<NetEventCallback>()->_getServerPlayer(identifier, packet.mSenderSubId); player) {
         auto event = PlayerJoinEvent{*player};
         EventBus::getInstance().publish(event);
         if (event.isCancelled()) {

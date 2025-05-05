@@ -17,8 +17,14 @@ SimulatedPlayer::create(std::string const& name, Vec3 const& pos, DimensionType 
     if (!handler) {
         return nullptr;
     }
-    auto player =
-        create(name, BlockPos{pos}, dimId, *handler, std::to_string(ll::random_utils::rand<int64>(INT64_MIN, -1)));
+    auto player = create(
+        name,
+        BlockPos{pos},
+        dimId,
+        *handler,
+        std::to_string(ll::random_utils::rand<int64>(INT64_MIN, -1)),
+        std::nullopt
+    );
     if (!player) {
         return nullptr;
     }

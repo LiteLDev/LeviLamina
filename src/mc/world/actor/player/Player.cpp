@@ -2,6 +2,7 @@
 
 #include "ll/api/service/Bedrock.h"
 
+#include "mc/certificates/WebToken.h"
 #include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/network/ConnectionRequest.h"
@@ -47,7 +48,7 @@ optional_ref<ConnectionRequest const> Player::getConnectionRequest() const {
 NetworkIdentifier const& Player::getNetworkIdentifier() const { return getUserEntityIdentifier().mNetworkId; }
 
 optional_ref<Certificate const> Player::getCertificate() const {
-    return getUserEntityIdentifier().mGameServerToken.mCertificate.get();
+    return getUserEntityIdentifier().mGameServerToken->mCertificate.get();
 }
 
 SubClientId const& Player::getClientSubId() const { return getUserEntityIdentifier().mClientSubId; }
@@ -74,8 +75,8 @@ std::optional<NetworkPeer::NetworkStatus> Player::getNetworkStatus() const {
 std::string Player::getRealName() const {
     return getEntityContext()
         .tryGetComponent<UserEntityIdentifierComponent>()
-        .and_then([&](auto& identifier) { return optional_ref{identifier.mGameServerToken}; })
-        .transform([](auto& token) { return token.getIdentityName(); })
+        .and_then([&](UserEntityIdentifierComponent const& identifier) { return optional_ref{identifier.mGameServerToken}; })
+        .transform([](GameServerToken const& token) { return token.getIdentityName(); })
         .value_or(*mName);
 }
 

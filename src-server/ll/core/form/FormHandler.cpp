@@ -158,7 +158,7 @@ LL_TYPE_INSTANCE_HOOK(
     std::shared_ptr<Packet>& packet
 ) {
     auto handle = static_cast<ServerNetworkHandler*>(&callback);
-    if (auto player = handle->_getServerPlayer(source, packet->mClientSubId); player) {
+    if (auto player = handle->_getServerPlayer(source, packet->mSenderSubId); player) {
         auto& modalPacket = (ModalFormResponsePacket&)*packet;
         if (ll::form::handler::handleFormPacket(
                 *player,
