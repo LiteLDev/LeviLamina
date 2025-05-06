@@ -42,23 +42,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void* $allocate(uint64 size);
+    MCAPI void* $allocate(uint64 size);
 
-    MCNAPI void $release(void* ptr);
+    MCAPI void $release(void* ptr);
 
-    MCNAPI void* $alignedAllocate(uint64 size, uint64 alignment);
+    MCAPI void* $alignedAllocate(uint64 size, uint64 alignment);
 
-    MCNAPI void $alignedRelease(void* ptr);
+    MCAPI void $alignedRelease(void* ptr);
 
-    MCNAPI uint64 $getUsableSize(void* ptr, bool alignedAllocation);
+    MCAPI uint64 $getUsableSize(void* ptr, bool alignedAllocation);
 
-    MCNAPI void* $_realloc(::gsl::not_null<void*> p, uint64 newSize);
+    MCAPI void* $_realloc(::gsl::not_null<void*> p, uint64 newSize);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -87,38 +87,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit PropertiesSettings(::std::string const& filename);
+    MCAPI explicit PropertiesSettings(::std::string const& filename);
 
-    MCNAPI ::std::unordered_map<::std::string, ::std::string> getChangedValues() const;
+    MCAPI ::std::unordered_map<::std::string, ::std::string> getChangedValues() const;
 
-    MCNAPI ::SharedTypes::Legacy::Difficulty getDifficulty() const;
+    MCAPI ::SharedTypes::Legacy::Difficulty getDifficulty() const;
 
-    MCNAPI ::CommandPermissionLevel getOpPermissionLevel() const;
+    MCAPI ::CommandPermissionLevel getOpPermissionLevel() const;
 
-    MCNAPI float websocketRetryTime() const;
+    MCAPI float websocketRetryTime() const;
 
-    MCNAPI ~PropertiesSettings();
+    MCAPI ~PropertiesSettings();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool parseBoolValue(::std::string const& value);
+    MCAPI static bool parseBoolValue(::std::string const& value);
 
-    MCNAPI static ::GameType parseGameMode(::std::string const& value);
+    MCAPI static ::GameType parseGameMode(::std::string const& value);
 
-    MCNAPI static int parseInt32Value(::std::string const& value);
+    MCAPI static int parseInt32Value(::std::string const& value);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& filename);
+    MCAPI void* $ctor(::std::string const& filename);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

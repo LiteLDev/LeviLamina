@@ -9,7 +9,7 @@ struct Brightness : public ::NewType<uchar> {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit Brightness(uchar&&);
+    MCAPI explicit Brightness(uchar&&);
     // NOLINTEND
 
 public:
@@ -23,6 +23,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(uchar&&);
+    MCAPI void* $ctor(uchar&&);
     // NOLINTEND
 };

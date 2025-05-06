@@ -14,13 +14,13 @@ namespace RakNet { struct SystemAddress; }
 namespace RakNet {
 // functions
 // NOLINTBEGIN
-MCNAPI uint ConnectionAttemptLoop(void* arguments);
+MCAPI uint ConnectionAttemptLoop(void* arguments);
 
-MCNAPI uint64 GetTime();
+MCFOLD uint64 GetTime();
 
-MCNAPI uint GetTimeMS();
+MCFOLD uint GetTimeMS();
 
-MCNAPI void ProcessNetworkPacket(
+MCAPI void ProcessNetworkPacket(
     ::RakNet::SystemAddress  systemAddress,
     char const*              data,
     int                      length,
@@ -30,7 +30,7 @@ MCNAPI void ProcessNetworkPacket(
     ::RakNet::BitStream&     updateBitStream
 );
 
-MCNAPI bool ProcessOfflineNetworkPacket(
+MCAPI bool ProcessOfflineNetworkPacket(
     ::RakNet::SystemAddress  systemAddress,
     char const*              data,
     int                      length,
@@ -40,15 +40,15 @@ MCNAPI bool ProcessOfflineNetworkPacket(
     uint64                   timeRead
 );
 
-MCNAPI uint UpdateNetworkLoop(void* arguments);
+MCAPI uint UpdateNetworkLoop(void* arguments);
 
-MCNAPI uint UpdateTCPInterfaceLoop(void* arguments);
+MCAPI uint UpdateTCPInterfaceLoop(void* arguments);
 
-MCNAPI void _RakFree_Ex(void* p, char const* file, uint line);
+MCFOLD void _RakFree_Ex(void* p, char const* file, uint line);
 
-MCNAPI void* _RakMalloc_Ex(uint64 size, char const* file, uint line);
+MCFOLD void* _RakMalloc_Ex(uint64 size, char const* file, uint line);
 
-MCNAPI void* _RakRealloc_Ex(void* p, uint64 size, char const* file, uint line);
+MCAPI void* _RakRealloc_Ex(void* p, uint64 size, char const* file, uint line);
 // NOLINTEND
 
 // static variables

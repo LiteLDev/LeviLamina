@@ -87,70 +87,70 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit DispenserBlockActor(::BlockPos pos);
+    MCAPI explicit DispenserBlockActor(::BlockPos pos);
 
-    MCNAPI DispenserBlockActor(::BlockPos pos, ::BlockActorType type);
+    MCAPI DispenserBlockActor(::BlockPos pos, ::BlockActorType type);
 
-    MCNAPI int getRandomSlot(::Random& random);
+    MCAPI int getRandomSlot(::Random& random);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockPos pos);
+    MCAPI void* $ctor(::BlockPos pos);
 
-    MCNAPI void* $ctor(::BlockPos pos, ::BlockActorType type);
+    MCAPI void* $ctor(::BlockPos pos, ::BlockActorType type);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getContainerSize() const;
+    MCFOLD int $getContainerSize() const;
 
-    MCNAPI ::Container* $getContainer();
+    MCFOLD ::Container* $getContainer();
 
-    MCNAPI ::Container const* $getContainer() const;
+    MCFOLD ::Container const* $getContainer() const;
 
-    MCNAPI ::ItemStack const& $getItem(int slot) const;
+    MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCNAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
-    MCNAPI int $getMaxStackSize() const;
+    MCFOLD int $getMaxStackSize() const;
 
-    MCNAPI ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
-    MCNAPI void $startOpen(::Player& player);
+    MCFOLD void $startOpen(::Player& player);
 
-    MCNAPI void $stopOpen(::Player& player);
+    MCFOLD void $stopOpen(::Player& player);
 
-    MCNAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI void $onMove();
+    MCFOLD void $onMove();
 
-    MCNAPI void $serverInitItemStackIds(
+    MCAPI void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForContainer();
+    MCAPI static void** $vftableForContainer();
 
-    MCNAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
 };

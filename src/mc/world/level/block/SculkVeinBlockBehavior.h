@@ -54,7 +54,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _attemptPlaceSculk(
+    MCAPI static bool _attemptPlaceSculk(
         ::IBlockWorldGenAPI& target,
         ::BlockSource*       region,
         ::BlockPos const&    pos,
@@ -62,24 +62,24 @@ public:
         ::Random&            random
     );
 
-    MCNAPI static void
+    MCAPI static void
     _cleanUpVeinsWithSculkSubstrate(::IBlockWorldGenAPI& target, ::BlockSource* region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $updateDecayDelay(int const) const;
+    MCFOLD int $updateDecayDelay(int const) const;
 
-    MCNAPI int $updateFacingData(int const, ::Block const& block) const;
+    MCAPI int $updateFacingData(int const, ::Block const& block) const;
 
-    MCNAPI bool $canChangeBlockOnSpread() const;
+    MCFOLD bool $canChangeBlockOnSpread() const;
 
-    MCNAPI bool
+    MCFOLD bool
     $attemptSpreadVeins(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block, int, ::SculkSpreader&)
         const;
 
-    MCNAPI int $attemptUseCharge(
+    MCAPI int $attemptUseCharge(
         ::IBlockWorldGenAPI& target,
         ::BlockSource*       region,
         ::BlockPos const&,
@@ -91,12 +91,12 @@ public:
         bool const       spreadVeins
     ) const;
 
-    MCNAPI void $onDischarged(::IBlockWorldGenAPI& target, ::BlockSource* region, ::BlockPos const& pos) const;
+    MCAPI void $onDischarged(::IBlockWorldGenAPI& target, ::BlockSource* region, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

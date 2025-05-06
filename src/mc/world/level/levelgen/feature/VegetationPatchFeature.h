@@ -55,13 +55,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _isExposedDirection(::IBlockWorldGenAPI& target, ::BlockPos const& pos, uchar direction) const;
+    MCAPI bool _isExposedDirection(::IBlockWorldGenAPI& target, ::BlockPos const& pos, uchar direction) const;
 
-    MCNAPI bool
+    MCAPI bool
     _placeGround(::IBlockWorldGenAPI& target, ::Random& random, ::BlockPos const& posAtSurface, uchar towardsSurface)
         const;
 
-    MCNAPI ::std::vector<::BlockPos>
+    MCAPI ::std::vector<::BlockPos>
     _placeGroundPatch(::IBlockWorldGenAPI& target, ::Random& random, ::BlockPos const& origin, int xRadius, int zRadius)
         const;
     // NOLINTEND
@@ -75,12 +75,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

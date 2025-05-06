@@ -25,14 +25,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LayeredAbilities();
+    MCAPI LayeredAbilities();
 
-    MCNAPI void forEachAbility(
+    MCAPI void forEachAbility(
         ::std::function<void(::Ability const&, ::AbilitiesIndex)> const& callback,
         ::Ability::Options                                               requiredOptions
     ) const;
 
-    MCNAPI void setPlayerPermissions(::PlayerPermissionLevel permissions);
+    MCAPI void setPlayerPermissions(::PlayerPermissionLevel permissions);
     // NOLINTEND
 
 public:
@@ -44,6 +44,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 };

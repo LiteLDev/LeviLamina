@@ -17,27 +17,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Color();
+    MCAPI Color();
 
-    MCNAPI Color(float r_, float g_, float b_, float a_);
+    MCAPI Color(float r_, float g_, float b_, float a_);
 
-    MCNAPI bool operator!=(::mce::Color const& c) const;
+    MCAPI bool operator!=(::mce::Color const& c) const;
 
-    MCNAPI bool operator==(::mce::Color const& c) const;
+    MCAPI bool operator==(::mce::Color const& c) const;
 
-    MCNAPI int toARGB() const;
+    MCAPI int toARGB() const;
 
-    MCNAPI ::std::string toHexString() const;
+    MCAPI ::std::string toHexString() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::mce::Color fromARGB(int col);
+    MCAPI static ::mce::Color fromARGB(int col);
 
-    MCNAPI static ::mce::Color fromHexString(::std::string const& hexStr);
+    MCAPI static ::mce::Color fromHexString(::std::string const& hexStr);
 
-    MCNAPI static ::mce::Color fromRGBHexString(::std::string const& hexStr);
+    MCAPI static ::mce::Color fromRGBHexString(::std::string const& hexStr);
     // NOLINTEND
 
 public:
@@ -83,9 +83,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCFOLD void* $ctor();
 
-    MCNAPI void* $ctor(float r_, float g_, float b_, float a_);
+    MCAPI void* $ctor(float r_, float g_, float b_, float a_);
     // NOLINTEND
 };
 

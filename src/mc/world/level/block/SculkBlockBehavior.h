@@ -53,7 +53,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _placeGrowthAt(
+    MCAPI static void _placeGrowthAt(
         ::IBlockWorldGenAPI& target,
         ::BlockSource*       region,
         ::BlockPos const&    pos,
@@ -65,17 +65,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $updateDecayDelay(int const) const;
+    MCFOLD int $updateDecayDelay(int const) const;
 
-    MCNAPI int $updateFacingData(int const, ::Block const&) const;
+    MCAPI int $updateFacingData(int const, ::Block const&) const;
 
-    MCNAPI bool $canChangeBlockOnSpread() const;
+    MCFOLD bool $canChangeBlockOnSpread() const;
 
-    MCNAPI bool
+    MCFOLD bool
     $attemptSpreadVeins(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block, int, ::SculkSpreader&)
         const;
 
-    MCNAPI int $attemptUseCharge(
+    MCAPI int $attemptUseCharge(
         ::IBlockWorldGenAPI& target,
         ::BlockSource*       region,
         ::BlockPos const&    originPos,
@@ -87,12 +87,12 @@ public:
         bool const
     ) const;
 
-    MCNAPI void $onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const;
+    MCFOLD void $onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

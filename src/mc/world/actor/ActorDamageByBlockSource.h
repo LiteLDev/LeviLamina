@@ -44,17 +44,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isBlockSource() const;
+    MCFOLD bool $isBlockSource() const;
 
-    MCNAPI ::std::pair<::std::string, ::std::vector<::std::string>>
+    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
     $getDeathMessage(::std::string deadName, ::Actor* dead) const;
 
-    MCNAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
+    MCAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

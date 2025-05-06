@@ -30,34 +30,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ItemDescriptorCount(::ItemDescriptorCount const&);
+    MCAPI ItemDescriptorCount(::ItemDescriptorCount const&);
 
-    MCNAPI explicit operator bool() const;
+    MCAPI explicit operator bool() const;
 
-    MCNAPI ::ItemDescriptorCount& operator=(::ItemDescriptorCount const&);
+    MCFOLD ::ItemDescriptorCount& operator=(::ItemDescriptorCount const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ItemDescriptorCount const&);
+    MCAPI void* $ctor(::ItemDescriptorCount const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $serialize(::BinaryStream& stream) const;
+    MCAPI void $serialize(::BinaryStream& stream) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

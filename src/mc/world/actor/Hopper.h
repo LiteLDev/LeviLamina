@@ -24,25 +24,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _addItem(::BlockSource& region, ::Container& container, ::ItemStack& item, int face, int itemCount);
+    MCAPI bool _addItem(::BlockSource& region, ::Container& container, ::ItemStack& item, int face, int itemCount);
 
-    MCNAPI ::Container* _getContainerInBlock(::BlockSource& region, ::Vec3 const& pos);
+    MCAPI ::Container* _getContainerInBlock(::BlockSource& region, ::Vec3 const& pos);
 
-    MCNAPI ::std::vector<::Container*> _getContainersAt(::BlockSource& region, ::Vec3 const& pos);
+    MCAPI ::std::vector<::Container*> _getContainersAt(::BlockSource& region, ::Vec3 const& pos);
 
-    MCNAPI bool _isEmptyContainer(::Container& container, int face);
+    MCAPI bool _isEmptyContainer(::Container& container, int face);
 
-    MCNAPI bool _isFullContainer(::Container& container, int);
+    MCAPI bool _isFullContainer(::Container& container, int);
 
-    MCNAPI bool
+    MCAPI bool
     _pushOutItems(::BlockSource& region, ::Container& fromContainer, ::Vec3 const& position, int attachedFace);
 
-    MCNAPI bool _tryAddItemsFromPos(::BlockSource& region, ::Container& toContainer, ::Vec3 const& pos);
+    MCAPI bool _tryAddItemsFromPos(::BlockSource& region, ::Container& toContainer, ::Vec3 const& pos);
 
-    MCNAPI bool
+    MCAPI bool
     _tryMoveInItem(::BlockSource& region, ::Container& container, ::ItemStack& item, int slot, int face, int itemCount);
 
-    MCNAPI bool _tryMoveItems(
+    MCAPI bool _tryMoveItems(
         ::BlockSource& region,
         ::Container&   fromContainer,
         ::Vec3 const&  pos,
@@ -50,12 +50,12 @@ public:
         bool           canPushItems
     );
 
-    MCNAPI bool _tryPullInItemsFromAboveContainer(::BlockSource& region, ::Container& toContainer, ::Vec3 const& pos);
+    MCAPI bool _tryPullInItemsFromAboveContainer(::BlockSource& region, ::Container& toContainer, ::Vec3 const& pos);
 
-    MCNAPI bool
+    MCAPI bool
     _tryPushToComposter(::BlockSource& region, ::Container& fromContainer, ::BlockPos hopperPos, int facingDirection);
 
-    MCNAPI bool _tryTakeInItemFromSlot(
+    MCAPI bool _tryTakeInItemFromSlot(
         ::BlockSource& region,
         ::Container&   toContainer,
         ::Container&   fromContainer,

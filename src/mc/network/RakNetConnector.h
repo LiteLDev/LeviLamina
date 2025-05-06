@@ -147,15 +147,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI RakNetNetworkPeer(::RakNet::RakPeerInterface& rakPeer, ::NetworkIdentifier const& id);
+        MCAPI RakNetNetworkPeer(::RakNet::RakPeerInterface& rakPeer, ::NetworkIdentifier const& id);
 
-        MCNAPI void newData(::std::string data);
+        MCAPI void newData(::std::string data);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::RakNet::RakPeerInterface& rakPeer, ::NetworkIdentifier const& id);
+        MCAPI void* $ctor(::RakNet::RakPeerInterface& rakPeer, ::NetworkIdentifier const& id);
         // NOLINTEND
 
     public:
@@ -167,26 +167,26 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
+        MCAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
 
-        MCNAPI ::NetworkPeer::DataStatus $receivePacket(
+        MCAPI ::NetworkPeer::DataStatus $receivePacket(
             ::std::string&                                                    outData,
             ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
         );
 
-        MCNAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
+        MCAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 
-        MCNAPI void $update();
+        MCAPI void $update();
 
-        MCNAPI bool $isLocal() const;
+        MCFOLD bool $isLocal() const;
 
-        MCNAPI bool $isEncrypted() const;
+        MCFOLD bool $isEncrypted() const;
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
-        MCNAPI static void** $vftable();
+        MCAPI static void** $vftable();
         // NOLINTEND
     };
 

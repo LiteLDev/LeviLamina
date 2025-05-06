@@ -29,36 +29,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _canSpawnAtPosition(::BlockPos const& pos, ::BlockSource& region) const;
+    MCAPI bool _canSpawnAtPosition(::BlockPos const& pos, ::BlockSource& region) const;
 
-    MCNAPI bool _canWanderingTraderBeMoved() const;
+    MCAPI bool _canWanderingTraderBeMoved() const;
 
-    MCNAPI bool _doesWanderingTraderExist() const;
+    MCAPI bool _doesWanderingTraderExist() const;
 
-    MCNAPI ::std::optional<::BlockPos> _findValidSpawnPosUnder(::BlockPos const& pos, ::BlockSource& region) const;
+    MCAPI ::std::optional<::BlockPos> _findValidSpawnPosUnder(::BlockPos const& pos, ::BlockSource& region) const;
 
-    MCNAPI ::BlockPos _getRandomHeightmapPosAroundOrigin(
+    MCAPI ::BlockPos _getRandomHeightmapPosAroundOrigin(
         ::BlockSource const& region,
         ::BlockPos const&    origin,
         int                  distFromOrigin,
         bool                 exactDist
     );
 
-    MCNAPI ::Actor* _getRandomPlayerInOverworld() const;
+    MCAPI ::Actor* _getRandomPlayerInOverworld() const;
 
-    MCNAPI ::std::optional<::BlockPos>
+    MCAPI ::std::optional<::BlockPos>
     _getRandomWildernessPosAroundSpecifiedPos(::BlockPos const& position, ::BlockSource& region);
 
-    MCNAPI ::std::optional<::BlockPos>
+    MCAPI ::std::optional<::BlockPos>
     _getSpawnPosFromNearestVillageToPlayerPos(::BlockPos const& playerPos, ::BlockSource& region);
 
-    MCNAPI void _spawnWanderingTraderAtPos(::BlockPos const& pos, ::BlockSource& region);
+    MCAPI void _spawnWanderingTraderAtPos(::BlockPos const& pos, ::BlockSource& region);
 
-    MCNAPI void readSaveData();
+    MCAPI void readSaveData();
 
-    MCNAPI void tick();
+    MCAPI void tick();
 
-    MCNAPI void writeSaveData() const;
+    MCAPI void writeSaveData() const;
     // NOLINTEND
 
 public:

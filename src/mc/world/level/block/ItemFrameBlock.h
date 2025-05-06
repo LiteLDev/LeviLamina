@@ -102,13 +102,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _checkAchievements(::Player& player, ::BlockPos const& currentPos) const;
+    MCAPI void _checkAchievements(::Player& player, ::BlockPos const& currentPos) const;
 
-    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -120,52 +120,51 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Block const&
+    MCFOLD ::Block const&
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
 
-    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
+    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCNAPI ::AABB
+    MCFOLD ::AABB
     $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCNAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
-    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const* blockActor) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const* blockActor) const;
 
-    MCNAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
+    MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCNAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
+    MCAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
 
-    MCNAPI bool $getIgnoresDestroyPermissions(::Actor& entity, ::BlockPos const& pos) const;
+    MCAPI bool $getIgnoresDestroyPermissions(::Actor& entity, ::BlockPos const& pos) const;
 
-    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCNAPI bool $hasComparatorSignal() const;
+    MCFOLD bool $hasComparatorSignal() const;
 
-    MCNAPI int
-    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $isLavaBlocking() const;
+    MCFOLD bool $isLavaBlocking() const;
 
-    MCNAPI ::HashedString $getSpawnedItemName() const;
+    MCAPI ::HashedString $getSpawnedItemName() const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
-    MCNAPI void
+    MCAPI void
     $spawnAfterBreak(::BlockSource& region, ::Block const&, ::BlockPos const& pos, ::ResourceDropsContext const&) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

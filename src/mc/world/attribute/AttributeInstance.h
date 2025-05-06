@@ -61,54 +61,54 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AttributeInstance(::AttributeInstance const&);
+    MCAPI AttributeInstance(::AttributeInstance const&);
 
-    MCNAPI float _calculateValue();
+    MCAPI float _calculateValue();
 
-    MCNAPI float _sanitizeValue(float value);
+    MCAPI float _sanitizeValue(float value);
 
-    MCNAPI void addBuff(::AttributeBuff const& buff, ::AttributeModificationContext context);
+    MCAPI void addBuff(::AttributeBuff const& buff, ::AttributeModificationContext context);
 
-    MCNAPI void addModifier(::AttributeModifier const& modifier, ::AttributeModificationContext context);
+    MCAPI void addModifier(::AttributeModifier const& modifier, ::AttributeModificationContext context);
 
-    MCNAPI ::std::vector<::AttributeModifier> getModifiers() const;
+    MCAPI ::std::vector<::AttributeModifier> getModifiers() const;
 
-    MCNAPI bool hasModifier(::AttributeModifier const& modifier) const;
+    MCAPI bool hasModifier(::AttributeModifier const& modifier) const;
 
-    MCNAPI bool hasModifier(::std::shared_ptr<::AttributeModifier> modifier) const;
+    MCAPI bool hasModifier(::std::shared_ptr<::AttributeModifier> modifier) const;
 
-    MCNAPI void removeBuff(::AttributeBuff const& buff);
+    MCAPI void removeBuff(::AttributeBuff const& buff);
 
-    MCNAPI void removeModifier(::AttributeModifier const& modifier, ::AttributeModificationContext context);
+    MCAPI void removeModifier(::AttributeModifier const& modifier, ::AttributeModificationContext context);
 
-    MCNAPI void removeModifiers(::AttributeModificationContext context);
+    MCAPI void removeModifiers(::AttributeModificationContext context);
 
-    MCNAPI void setRange(float min, float defaultValue, float max, ::AttributeModificationContext context);
+    MCAPI void setRange(float min, float defaultValue, float max, ::AttributeModificationContext context);
 
-    MCNAPI void updateModifier(::AttributeModifier const& takeOver, ::AttributeModificationContext context);
+    MCAPI void updateModifier(::AttributeModifier const& takeOver, ::AttributeModificationContext context);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::AttributeInstance const&);
+    MCAPI void* $ctor(::AttributeInstance const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::AttributeModificationContext context);
+    MCAPI void $tick(::AttributeModificationContext context);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

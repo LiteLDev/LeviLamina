@@ -49,11 +49,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $forEachPackConst(::std::function<void(::Pack const&)> callback) const;
+    MCAPI void $forEachPackConst(::std::function<void(::Pack const&)> callback) const;
 
-    MCNAPI void $forEachPack(::std::function<void(::Pack&)> callback);
+    MCAPI void $forEachPack(::std::function<void(::Pack&)> callback);
 
-    MCNAPI ::PackSourceReport $load(
+    MCAPI ::PackSourceReport $load(
         ::IPackManifestFactory&                                           manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     );
@@ -62,6 +62,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

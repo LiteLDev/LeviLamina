@@ -149,9 +149,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ProfilerLite();
+    MCAPI ProfilerLite();
 
-    MCNAPI ~ProfilerLite();
+    MCAPI ~ProfilerLite();
     // NOLINTEND
 
 public:
@@ -165,12 +165,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

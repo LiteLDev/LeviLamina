@@ -20,12 +20,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit StackResultStorageEntity(::WeakStorageEntity const& weakStorage);
+    MCAPI explicit StackResultStorageEntity(::WeakStorageEntity const& weakStorage);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::WeakStorageEntity const& weakStorage);
+    MCAPI void* $ctor(::WeakStorageEntity const& weakStorage);
     // NOLINTEND
 };

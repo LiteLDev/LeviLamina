@@ -33,10 +33,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::string const& getName(::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver
+    MCAPI ::std::string const& getName(::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver
     ) const;
 
-    MCNAPI ~IdentityDefinition();
+    MCAPI ~IdentityDefinition();
     // NOLINTEND
 
 public:
@@ -48,6 +48,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

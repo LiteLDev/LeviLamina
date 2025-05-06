@@ -72,7 +72,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LevelContainerModel(
+    MCAPI LevelContainerModel(
         ::ContainerEnumName containerName,
         int                 containerSize,
         ::Player&           player,
@@ -80,7 +80,7 @@ public:
         ::ContainerCategory category
     );
 
-    MCNAPI LevelContainerModel(
+    MCAPI LevelContainerModel(
         ::ContainerEnumName containerName,
         int                 containerSize,
         ::Player&           player,
@@ -89,15 +89,15 @@ public:
         ::ContainerCategory category
     );
 
-    MCNAPI void _refreshSlot(int modelSlot);
+    MCAPI void _refreshSlot(int modelSlot);
 
-    MCNAPI void containerRemoved();
+    MCAPI void containerRemoved();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ContainerEnumName containerName,
         int                 containerSize,
         ::Player&           player,
@@ -105,7 +105,7 @@ public:
         ::ContainerCategory category
     );
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ContainerEnumName containerName,
         int                 containerSize,
         ::Player&           player,
@@ -124,28 +124,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $releaseResources();
+    MCAPI void $releaseResources();
 
-    MCNAPI void $containerContentChanged(int slot);
+    MCAPI void $containerContentChanged(int slot);
 
-    MCNAPI bool $isValid();
+    MCAPI bool $isValid();
 
-    MCNAPI ::ContainerWeakRef $getContainerWeakRef() const;
+    MCAPI ::ContainerWeakRef $getContainerWeakRef() const;
 
-    MCNAPI void $postInit();
+    MCAPI void $postInit();
 
-    MCNAPI bool $isSlotDisabled(int slot) const;
+    MCAPI bool $isSlotDisabled(int slot) const;
 
-    MCNAPI int $_getContainerOffset() const;
+    MCAPI int $_getContainerOffset() const;
 
-    MCNAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+    MCFOLD void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
-    MCNAPI ::Container* $_getContainer() const;
+    MCAPI ::Container* $_getContainer() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

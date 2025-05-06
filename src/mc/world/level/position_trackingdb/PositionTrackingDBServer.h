@@ -36,37 +36,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PositionTrackingDBServer(::Level& level, ::Scheduler& callbackContext);
+    MCAPI PositionTrackingDBServer(::Level& level, ::Scheduler& callbackContext);
 
-    MCNAPI void _addRecordToPendingUpdateQueue(::PositionTrackingDB::TrackingRecord* record);
+    MCAPI void _addRecordToPendingUpdateQueue(::PositionTrackingDB::TrackingRecord* record);
 
-    MCNAPI void
+    MCAPI void
     _beginWriteTrackingRecordToLevelStorage(::PositionTrackingDB::TrackingRecord const* record, bool forceWrite);
 
-    MCNAPI void _broadcastUpdateToClients(::PositionTrackingDB::TrackingRecord const* record);
+    MCAPI void _broadcastUpdateToClients(::PositionTrackingDB::TrackingRecord const* record);
 
-    MCNAPI void _initializeNewPositionTrackerId(::PositionTrackingId& inOut, bool writeToPersistent);
+    MCAPI void _initializeNewPositionTrackerId(::PositionTrackingId& inOut, bool writeToPersistent);
 
-    MCNAPI ::PositionTrackingDB::ResultCode destroyTracker(::PositionTrackingId const& id, bool forceLocalCacheEntry);
+    MCAPI ::PositionTrackingDB::ResultCode destroyTracker(::PositionTrackingId const& id, bool forceLocalCacheEntry);
 
-    MCNAPI ::PositionTrackingDB::ResultCode
+    MCAPI ::PositionTrackingDB::ResultCode
     findTracker(::PositionTrackingId const& id, ::PositionTrackingDB::TrackingRecord** outRecord);
 
-    MCNAPI bool tick();
+    MCAPI bool tick();
 
-    MCNAPI ~PositionTrackingDBServer();
+    MCAPI ~PositionTrackingDBServer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Level& level, ::Scheduler& callbackContext);
+    MCAPI void* $ctor(::Level& level, ::Scheduler& callbackContext);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -68,11 +68,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _tryPlaceFlower(::Player& player, ::BlockPos const& blockPos) const;
+    MCAPI bool _tryPlaceFlower(::Player& player, ::BlockPos const& blockPos) const;
 
-    MCNAPI bool _tryTakeFlower(::Player& player, ::BlockPos const& blockPos) const;
+    MCAPI bool _tryTakeFlower(::Player& player, ::BlockPos const& blockPos) const;
 
-    MCNAPI void _updateFlowerPotEntity(
+    MCAPI void _updateFlowerPotEntity(
         ::BlockSource&         region,
         ::BlockPos const&      blockPos,
         ::FlowerPotBlockActor* flowerPotEntity,
@@ -80,15 +80,15 @@ public:
         ::Actor*               sourceActor
     ) const;
 
-    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool isValidResource(::Block const& plant);
+    MCAPI static bool isValidResource(::Block const& plant);
     // NOLINTEND
 
 public:
@@ -100,32 +100,32 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
-    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCNAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $isValidAuxValue(int value) const;
+    MCFOLD bool $isValidAuxValue(int value) const;
 
-    MCNAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
+    MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const* blockActor) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const* blockActor) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

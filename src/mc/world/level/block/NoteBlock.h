@@ -54,13 +54,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _triggerNoteParticle(::Level& level, ::Vec3 const& vPos, int note) const;
+    MCAPI void _triggerNoteParticle(::Level& level, ::Vec3 const& vPos, int note) const;
 
-    MCNAPI ::NoteBlock& enableSkullPlacement(bool enabled);
+    MCAPI ::NoteBlock& enableSkullPlacement(bool enabled);
 
-    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -72,22 +72,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
-    MCNAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
+    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    MCNAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
+    MCAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
 
-    MCNAPI void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
+    MCAPI void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

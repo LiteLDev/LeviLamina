@@ -62,7 +62,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorDamageByChildActorSource(
+    MCAPI ActorDamageByChildActorSource(
         ::Actor const&                          childActor,
         ::Actor const&                          actor,
         ::SharedTypes::Legacy::ActorDamageCause cause
@@ -72,39 +72,39 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Actor const& childActor, ::Actor const& actor, ::SharedTypes::Legacy::ActorDamageCause cause);
+    MCAPI void* $ctor(::Actor const& childActor, ::Actor const& actor, ::SharedTypes::Legacy::ActorDamageCause cause);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isChildEntitySource() const;
+    MCFOLD bool $isChildEntitySource() const;
 
-    MCNAPI ::std::pair<::std::string, ::std::vector<::std::string>>
+    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
     $getDeathMessage(::std::string deadName, ::Actor* dead) const;
 
-    MCNAPI bool $getDamagingEntityIsCreative() const;
+    MCFOLD bool $getDamagingEntityIsCreative() const;
 
-    MCNAPI bool $getDamagingEntityIsWorldBuilder() const;
+    MCFOLD bool $getDamagingEntityIsWorldBuilder() const;
 
-    MCNAPI ::ActorUniqueID $getDamagingEntityUniqueID() const;
+    MCAPI ::ActorUniqueID $getDamagingEntityUniqueID() const;
 
-    MCNAPI ::ActorType $getDamagingEntityType() const;
+    MCFOLD ::ActorType $getDamagingEntityType() const;
 
-    MCNAPI ::ActorCategory $getDamagingEntityCategories() const;
+    MCAPI ::ActorCategory $getDamagingEntityCategories() const;
 
-    MCNAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
+    MCAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

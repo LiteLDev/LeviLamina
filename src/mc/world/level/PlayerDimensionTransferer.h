@@ -136,7 +136,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PlayerDimensionTransferer(
+    MCAPI PlayerDimensionTransferer(
         ::std::unique_ptr<::IPlayerDimensionTransferProxy>   playerDimensionTransferProxy,
         bool                                                 isClientSide,
         ::Bedrock::NotNullNonOwnerPtr<::PortalForcer>        portalForcer,
@@ -145,9 +145,9 @@ public:
         ::Bedrock::NonOwnerPointer<::LoadingScreenIdManager> loadingScreenIdManager
     );
 
-    MCNAPI void _finalizeDimensionChange(::Player& player, ::ChangeDimensionRequest const& changeRequest);
+    MCAPI void _finalizeDimensionChange(::Player& player, ::ChangeDimensionRequest const& changeRequest);
 
-    MCNAPI void _loadAgentFromTag(
+    MCAPI void _loadAgentFromTag(
         ::Player&                 player,
         ::ChangeDimensionRequest& changeRequest,
         ::AddLimboActorHelper&    addLimboActorHelper
@@ -157,7 +157,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::unique_ptr<::IPlayerDimensionTransferProxy>   playerDimensionTransferProxy,
         bool                                                 isClientSide,
         ::Bedrock::NotNullNonOwnerPtr<::PortalForcer>        portalForcer,
@@ -170,69 +170,69 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $playerSaveLimboActors(
+    MCAPI void $playerSaveLimboActors(
         ::Player&                  player,
         ::ChangeDimensionRequest&  changeRequest,
         ::Dimension&               toDimension,
         ::PlayerLimboActorManager* playerLimboActorManager
     );
 
-    MCNAPI void $playerDestroyRemotePlayers(::GameplayUserManager& gameplayUserManager);
+    MCAPI void $playerDestroyRemotePlayers(::GameplayUserManager& gameplayUserManager);
 
-    MCNAPI void $playerStartChangeDimensionSuspendRegion(::Player& player, ::DimensionType fromDimension);
+    MCAPI void $playerStartChangeDimensionSuspendRegion(::Player& player, ::DimensionType fromDimension);
 
-    MCNAPI void
+    MCAPI void
     $setTransitionLocation(::Player& player, ::ChangeDimensionRequest& changeRequest, ::Dimension& toDimension);
 
-    MCNAPI void $syncTransitionComponentTargetPosition(::Player& player, ::ChangeDimensionRequest const& changeRequest);
+    MCAPI void $syncTransitionComponentTargetPosition(::Player& player, ::ChangeDimensionRequest const& changeRequest);
 
-    MCNAPI void $playerDestroyRegion(::Player& player, ::ChangeDimensionRequest const& changeRequest);
+    MCAPI void $playerDestroyRegion(::Player& player, ::ChangeDimensionRequest const& changeRequest);
 
-    MCNAPI void $playerPrepareRegion(
+    MCAPI void $playerPrepareRegion(
         ::Player&                       player,
         ::ChangeDimensionRequest const& changeRequest,
         ::Dimension const&              toDimension
     );
 
-    MCNAPI ::Bedrock::PubSub::Connector<void(::DimensionType)>&
+    MCFOLD ::Bedrock::PubSub::Connector<void(::DimensionType)>&
     $getOnAnyPlayerChangeDimensionPreSuspendRegionConnector();
 
-    MCNAPI ::Bedrock::PubSub::Connector<void()>& $getOnAnyPlayerChangeDimensionPrepareRegionCompleteConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnAnyPlayerChangeDimensionPrepareRegionCompleteConnector();
 
-    MCNAPI bool $playerWaitForServer(::Player& player, ::std::chrono::steady_clock::time_point currentTime);
+    MCAPI bool $playerWaitForServer(::Player& player, ::std::chrono::steady_clock::time_point currentTime);
 
-    MCNAPI bool $playerWaitForDimensionTransitionSystem(::Player const& player, ::EntityRegistry& entityRegistry);
+    MCAPI bool $playerWaitForDimensionTransitionSystem(::Player const& player, ::EntityRegistry& entityRegistry);
 
-    MCNAPI void $sendClientRespawnMovePacketFromServer(::Player const& player, ::ChangeDimensionRequest& changeRequest);
+    MCAPI void $sendClientRespawnMovePacketFromServer(::Player const& player, ::ChangeDimensionRequest& changeRequest);
 
-    MCNAPI bool $waitForSubChunks(::Player& player, ::Dimension const& toDimension);
+    MCAPI bool $waitForSubChunks(::Player& player, ::Dimension const& toDimension);
 
-    MCNAPI void $startWaitForRespawn(::Player const& player);
+    MCAPI void $startWaitForRespawn(::Player const& player);
 
-    MCNAPI void $playerSwitchDimension(
+    MCAPI void $playerSwitchDimension(
         ::Player&                 player,
         ::ChangeDimensionRequest& changeRequest,
         ::AddLimboActorHelper*    addLimboActorHelper
     );
 
-    MCNAPI bool $doRespawnIfReady(
+    MCAPI bool $doRespawnIfReady(
         ::Player&                 player,
         ::ChangeDimensionRequest& changeRequest,
         ::AddLimboActorHelper*    addLimboActorHelper
     );
 
-    MCNAPI void $setPacketSender(::PacketSender& packetSender);
+    MCAPI void $setPacketSender(::PacketSender& packetSender);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

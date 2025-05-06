@@ -213,33 +213,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Container(::Container const&);
+    MCAPI Container(::Container const&);
 
-    MCNAPI explicit Container(::SharedTypes::Legacy::ContainerType type);
+    MCAPI explicit Container(::SharedTypes::Legacy::ContainerType type);
 
-    MCNAPI Container(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
+    MCAPI Container(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
 
-    MCNAPI void
+    MCAPI void
     _dropSlotContent(::BlockSource& region, ::Random& random, ::Vec3 const& pos, bool randomizeDrop, int slot);
 
-    MCNAPI void
+    MCAPI void
     _serverInitId(int slot, ::ItemStack& item, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
-    MCNAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
+    MCAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
 
-    MCNAPI int getRedstoneSignalFromContainer(::BlockSource& region);
+    MCAPI int getRedstoneSignalFromContainer(::BlockSource& region);
 
-    MCNAPI ::Container& operator=(::Container const&);
+    MCAPI ::Container& operator=(::Container const&);
 
-    MCNAPI void removeCloseListener(::ContainerCloseListener* listener);
+    MCAPI void removeCloseListener(::ContainerCloseListener* listener);
 
-    MCNAPI void triggerTransactionChange(int slot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+    MCAPI void triggerTransactionChange(int slot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::SharedTypes::Legacy::ContainerType getContainerTypeId(::std::string const& name);
+    MCAPI static ::SharedTypes::Legacy::ContainerType getContainerTypeId(::std::string const& name);
     // NOLINTEND
 
 public:
@@ -252,97 +252,97 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Container const&);
+    MCAPI void* $ctor(::Container const&);
 
-    MCNAPI void* $ctor(::SharedTypes::Legacy::ContainerType type);
+    MCAPI void* $ctor(::SharedTypes::Legacy::ContainerType type);
 
-    MCNAPI void* $ctor(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
+    MCAPI void* $ctor(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $init();
+    MCFOLD void $init();
 
-    MCNAPI void $addContentChangeListener(::ContainerContentChangeListener* listener);
+    MCAPI void $addContentChangeListener(::ContainerContentChangeListener* listener);
 
-    MCNAPI void $removeContentChangeListener(::ContainerContentChangeListener* listener);
+    MCAPI void $removeContentChangeListener(::ContainerContentChangeListener* listener);
 
-    MCNAPI ::Bedrock::PubSub::Connector<void()>* $getContainerRemovedConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void()>* $getContainerRemovedConnector();
 
-    MCNAPI bool $hasRemovedSubscribers() const;
+    MCAPI bool $hasRemovedSubscribers() const;
 
-    MCNAPI bool $hasRoomForItem(::ItemStack const& item);
+    MCAPI bool $hasRoomForItem(::ItemStack const& item);
 
-    MCNAPI bool $addItem(::ItemStack& item);
+    MCAPI bool $addItem(::ItemStack& item);
 
-    MCNAPI bool $addItemWithForceBalance(::ItemStack& item);
+    MCAPI bool $addItemWithForceBalance(::ItemStack& item);
 
-    MCNAPI bool $addItemToFirstEmptySlot(::ItemStack const& item);
+    MCAPI bool $addItemToFirstEmptySlot(::ItemStack const& item);
 
-    MCNAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
+    MCFOLD void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
-    MCNAPI void $removeItem(int slot, int count);
+    MCAPI void $removeItem(int slot, int count);
 
-    MCNAPI void $removeAllItems();
+    MCAPI void $removeAllItems();
 
-    MCNAPI void $removeAllItemsWithForceBalance();
+    MCAPI void $removeAllItemsWithForceBalance();
 
-    MCNAPI void $containerRemoved();
+    MCAPI void $containerRemoved();
 
-    MCNAPI void $dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot);
+    MCAPI void $dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot);
 
-    MCNAPI void $dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
+    MCAPI void $dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
 
-    MCNAPI void $stopOpen(::Player& player);
+    MCAPI void $stopOpen(::Player& player);
 
-    MCNAPI ::std::vector<::ItemStack> $getSlotCopies() const;
+    MCAPI ::std::vector<::ItemStack> $getSlotCopies() const;
 
-    MCNAPI ::std::vector<::ItemStack const*> const $getSlots() const;
+    MCAPI ::std::vector<::ItemStack const*> const $getSlots() const;
 
-    MCNAPI int $getEmptySlotsCount() const;
+    MCFOLD int $getEmptySlotsCount() const;
 
-    MCNAPI int $getItemCount(::ItemStack const& compare) const;
+    MCAPI int $getItemCount(::ItemStack const& compare) const;
 
-    MCNAPI int $findFirstSlotForItem(::ItemStack const& item) const;
+    MCAPI int $findFirstSlotForItem(::ItemStack const& item) const;
 
-    MCNAPI bool $canPushInItem(int, int, ::ItemStack const&) const;
+    MCFOLD bool $canPushInItem(int, int, ::ItemStack const&) const;
 
-    MCNAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
+    MCFOLD bool $canPullOutItem(int, int, ::ItemStack const&) const;
 
-    MCNAPI void $setContainerChanged(int slot);
+    MCAPI void $setContainerChanged(int slot);
 
-    MCNAPI void $setContainerMoved();
+    MCAPI void $setContainerMoved();
 
-    MCNAPI void $setCustomName(::Bedrock::Safety::RedactableString const& name);
+    MCAPI void $setCustomName(::Bedrock::Safety::RedactableString const& name);
 
-    MCNAPI bool $hasCustomName() const;
+    MCAPI bool $hasCustomName() const;
 
-    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag);
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag);
 
-    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag);
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag);
 
-    MCNAPI void $createTransactionContext(
+    MCAPI void $createTransactionContext(
         ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
         ::std::function<void()>                                                          execute
     );
 
-    MCNAPI void $initializeContainerContents(::BlockSource& region);
+    MCFOLD void $initializeContainerContents(::BlockSource& region);
 
-    MCNAPI bool $isEmpty() const;
+    MCAPI bool $isEmpty() const;
 
-    MCNAPI bool $isSlotDisabled(int) const;
+    MCFOLD bool $isSlotDisabled(int) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

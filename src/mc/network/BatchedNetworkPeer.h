@@ -107,44 +107,44 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BatchedNetworkPeer(::std::shared_ptr<::NetworkPeer> peer, ::Scheduler& scheduler);
+    MCAPI BatchedNetworkPeer(::std::shared_ptr<::NetworkPeer> peer, ::Scheduler& scheduler);
 
-    MCNAPI void _startSendTask();
+    MCAPI void _startSendTask();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::shared_ptr<::NetworkPeer> peer, ::Scheduler& scheduler);
+    MCAPI void* $ctor(::std::shared_ptr<::NetworkPeer> peer, ::Scheduler& scheduler);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $flush(::std::function<void()>&& callback);
+    MCAPI void $flush(::std::function<void()>&& callback);
 
-    MCNAPI void
+    MCAPI void
     $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
 
-    MCNAPI ::NetworkPeer::DataStatus $receivePacket(
+    MCAPI ::NetworkPeer::DataStatus $receivePacket(
         ::std::string&                                                    outData,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     );
 
-    MCNAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
+    MCFOLD ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 
-    MCNAPI void $update();
+    MCAPI void $update();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -70,15 +70,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit SculkCatalystBlockActor(::BlockPos const& pos);
+    MCAPI explicit SculkCatalystBlockActor(::BlockPos const& pos);
 
-    MCNAPI void _tryConsumeOnDeathExperience(::Level& level, ::Actor& actor);
+    MCAPI void _tryConsumeOnDeathExperience(::Level& level, ::Actor& actor);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _trySendItSpreadsEventPacket(::Actor& actor);
+    MCAPI static void _trySendItSpreadsEventPacket(::Actor& actor);
     // NOLINTEND
 
 public:
@@ -92,7 +92,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockPos const& pos);
+    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -104,29 +104,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI void $tick(::BlockSource& region);
+    MCAPI void $tick(::BlockSource& region);
 
-    MCNAPI void $onRemoved(::BlockSource& region);
+    MCAPI void $onRemoved(::BlockSource& region);
 
-    MCNAPI void
+    MCAPI void
     $handleGameEvent(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, ::BlockSource& region);
 
-    MCNAPI ::GameEvents::PositionSource const& $getPositionSource() const;
+    MCFOLD ::GameEvents::PositionSource const& $getPositionSource() const;
 
-    MCNAPI uint $getRange() const;
+    MCFOLD uint $getRange() const;
 
-    MCNAPI ::GameEventListener::DeliveryMode $getDeliveryMode() const;
+    MCFOLD ::GameEventListener::DeliveryMode $getDeliveryMode() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForBlockActor();
+    MCAPI static void** $vftableForBlockActor();
 
-    MCNAPI static void** $vftableForGameEventListener();
+    MCAPI static void** $vftableForGameEventListener();
     // NOLINTEND
 };
