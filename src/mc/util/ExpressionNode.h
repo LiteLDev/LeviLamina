@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/util/molang/MolangParseConfig.h"
 
 // auto generated inclusion list
 #include "mc/molang/MolangVersion.h"
@@ -87,7 +88,10 @@ public:
         ::gsl::span<::HashedString const> querySetID
     )
     : ExpressionNode() {
-        parse(value, molangVersion, querySetID);
+        MolangParseConfig config;
+        config.mVersion          = molangVersion;
+        config.mAllowedQuerySets = querySetID;
+        parse(value, config);
     }
 
 public:
