@@ -11,6 +11,7 @@
 // clang-format off
 class BinaryStream;
 class CompoundTag;
+class ExpressionNode;
 class ReadOnlyBinaryStream;
 namespace Json { class Value; }
 // clang-format on
@@ -19,14 +20,8 @@ struct MolangDescriptor : public ::ItemDescriptor::BaseDescriptor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnke20da5;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ExpressionNode>> mExpressionTags;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MolangDescriptor& operator=(MolangDescriptor const&);
-    MolangDescriptor(MolangDescriptor const&);
-    MolangDescriptor();
 
 public:
     // virtual functions

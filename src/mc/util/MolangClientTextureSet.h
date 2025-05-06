@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+
 struct MolangClientTextureSet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk44f08b;
+    ::ll::TypedStorage<8, 48, ::HashedString> mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MolangClientTextureSet& operator=(MolangClientTextureSet const&);
-    MolangClientTextureSet(MolangClientTextureSet const&);
-    MolangClientTextureSet();
 };

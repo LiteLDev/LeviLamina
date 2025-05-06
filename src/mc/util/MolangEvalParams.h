@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/util/MolangVariableIndex.h"
+#include "mc/util/MolangVariableMap.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,29 +12,24 @@ class Actor;
 class HashedString;
 class RenderParams;
 struct MolangEvalStackState;
+struct MolangScriptArg;
 // clang-format on
 
 struct MolangEvalParams {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk8afdb8;
-    ::ll::UntypedStorage<8, 8>  mUnk90ada9;
-    ::ll::UntypedStorage<8, 56> mUnkaafdf8;
-    ::ll::UntypedStorage<8, 56> mUnkca0934;
-    ::ll::UntypedStorage<8, 24> mUnkaee104;
-    ::ll::UntypedStorage<8, 24> mUnke3c715;
-    ::ll::UntypedStorage<8, 24> mUnkaed887;
-    ::ll::UntypedStorage<8, 24> mUnk42ab10;
-    ::ll::UntypedStorage<8, 8>  mUnk6fdf61;
-    ::ll::UntypedStorage<8, 8>  mUnk3b133b;
+    ::ll::TypedStorage<8, 8, uint64>                            mPC;
+    ::ll::TypedStorage<8, 8, ::MolangScriptArg const*>          mRet;
+    ::ll::TypedStorage<8, 56, ::MolangVariableMap>              mTempVariables;
+    ::ll::TypedStorage<8, 56, ::MolangVariableMap>              mContextVariables;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>            mContinueIndexStack;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>            mBreakIndexStack;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MolangScriptArg>> mDataStack;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>            mMissingVariableOrActorIndexStack;
+    ::ll::TypedStorage<8, 8, uint64>                            mPublicAccessModeStack;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::RenderParams*>>  mRenderParams;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MolangEvalParams& operator=(MolangEvalParams const&);
-    MolangEvalParams(MolangEvalParams const&);
-    MolangEvalParams();
 
 public:
     // member functions

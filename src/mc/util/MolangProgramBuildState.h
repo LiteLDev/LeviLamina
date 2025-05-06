@@ -11,18 +11,12 @@ struct MolangProgramBuildState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk6d7665;
-    ::ll::UntypedStorage<1, 1>  mUnk4f5f68;
-    ::ll::UntypedStorage<1, 1>  mUnk9e9a91;
-    ::ll::UntypedStorage<8, 24> mUnk36b9d4;
-    ::ll::UntypedStorage<8, 32> mUnk4e3b47;
+    ::ll::TypedStorage<8, 8, uint64> mUsedRegCount;
+    ::ll::TypedStorage<1, 1, bool>   mStoreStackState;
+    ::ll::TypedStorage<1, 1, bool>   mShouldPreserveTreeAfterCompilation;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::IMolangInstruction>>> mDestProgram;
+    ::ll::TypedStorage<8, 32, ::std::string>                                          mExpressionString;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MolangProgramBuildState& operator=(MolangProgramBuildState const&);
-    MolangProgramBuildState(MolangProgramBuildState const&);
-    MolangProgramBuildState();
 
 public:
     // member functions
