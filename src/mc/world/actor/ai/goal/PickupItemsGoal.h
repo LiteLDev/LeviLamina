@@ -72,47 +72,47 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _dropItem(::ItemStack const& item) const;
+    MCAPI void _dropItem(::ItemStack const& item) const;
 
-    MCNAPI ::std::vector<::WeakEntityRef> _filterValidTargets(::std::vector<::DistanceSortedActor> const& entities
+    MCAPI ::std::vector<::WeakEntityRef> _filterValidTargets(::std::vector<::DistanceSortedActor> const& entities
     ) const;
 
-    MCNAPI ::Shareable const* _getShareableItem(::ItemStack const& item) const;
+    MCAPI ::Shareable const* _getShareableItem(::ItemStack const& item) const;
 
-    MCNAPI void _handlePickupItem(::Actor& itemEntity);
+    MCAPI void _handlePickupItem(::Actor& itemEntity);
 
-    MCNAPI bool _hasRoomForCarriedItem() const;
+    MCAPI bool _hasRoomForCarriedItem() const;
 
-    MCNAPI bool _isSameItemAsInHand(::ItemStack const& item) const;
+    MCAPI bool _isSameItemAsInHand(::ItemStack const& item) const;
 
-    MCNAPI void _pickItemUp(::ItemActor* itemActor);
+    MCAPI void _pickItemUp(::ItemActor* itemActor);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

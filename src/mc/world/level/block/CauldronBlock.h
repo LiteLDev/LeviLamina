@@ -117,23 +117,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _checkForStalactiteDrip(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void _checkForStalactiteDrip(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void _explodeCauldronContents(::BlockSource& region, ::BlockPos const& pos, ushort) const;
+    MCAPI void _explodeCauldronContents(::BlockSource& region, ::BlockPos const& pos, ushort) const;
 
-    MCNAPI bool const _mayUpdateLiquidLevel(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool const _mayUpdateLiquidLevel(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void _sendCauldronUsedEventToClient(
+    MCAPI void _sendCauldronUsedEventToClient(
         ::Player const&                              player,
         short                                        itemId,
         ::MinecraftEventing::POIBlockInteractionType interactionType
     ) const;
 
-    MCNAPI void
+    MCAPI void
     _spawnCauldronEvent(::BlockSource& region, ::BlockPos const& pos, ::SharedTypes::Legacy::LevelEvent levelEvent)
         const;
 
-    MCNAPI bool _useDyeableComponent(
+    MCAPI bool _useDyeableComponent(
         ::ItemStack&          itemInstance,
         ::Player&             player,
         ::BlockPos const&     pos,
@@ -145,25 +145,24 @@ public:
         bool                  isCleanWater
     ) const;
 
-    MCNAPI void _useInventory(::Player& player, ::ItemStack& current, ::ItemStack& replaceWith, int useCount) const;
+    MCAPI void _useInventory(::Player& player, ::ItemStack& current, ::ItemStack& replaceWith, int useCount) const;
 
-    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCNAPI void
+    MCAPI void
     setLiquidLevel(::BlockSource& region, ::BlockPos const& pos, int liquidLevel, ::CauldronLiquidType type) const;
 
-    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool
-    canReceiveStalactiteDrip(::BlockSource& region, ::BlockPos const& pos, ::MaterialType liquidType);
+    MCAPI static bool canReceiveStalactiteDrip(::BlockSource& region, ::BlockPos const& pos, ::MaterialType liquidType);
 
-    MCNAPI static void spawnPotionParticles(::Level& level, ::Vec3 const& pos, ::Random& color, int, int count);
+    MCAPI static void spawnPotionParticles(::Level& level, ::Vec3 const& pos, ::Random& color, int, int count);
     // NOLINTEND
 
 public:
@@ -181,7 +180,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $addCollisionShapes(
+    MCFOLD bool $addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
         ::BlockPos const&                                  pos,
@@ -190,7 +189,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCNAPI void $addAABBs(
+    MCAPI void $addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
@@ -198,38 +197,37 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
 
-    MCNAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
-    MCNAPI void
+    MCAPI void
     $handlePrecipitation(::BlockSource& region, ::BlockPos const& pos, float downfallAmount, float temperature) const;
 
-    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCNAPI bool $hasComparatorSignal() const;
+    MCFOLD bool $hasComparatorSignal() const;
 
-    MCNAPI int
-    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCNAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
-    MCNAPI int $getExtraRenderLayers() const;
+    MCFOLD int $getExtraRenderLayers() const;
 
-    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCNAPI ::Brightness $getLight(::Block const& block) const;
+    MCAPI ::Brightness $getLight(::Block const& block) const;
 
-    MCNAPI ::Brightness $getLightEmission(::Block const& block) const;
+    MCAPI ::Brightness $getLightEmission(::Block const& block) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

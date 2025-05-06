@@ -22,17 +22,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addSaveData(::CompoundTag& parentTag) const;
+    MCAPI void addSaveData(::CompoundTag& parentTag) const;
 
-    MCNAPI bool loadSaveData(::CompoundTag const& parentTag);
+    MCAPI bool loadSaveData(::CompoundTag const& parentTag);
 
-    MCNAPI void setFromPermissions(::PlayerPermissionLevel permissions);
+    MCAPI void setFromPermissions(::PlayerPermissionLevel permissions);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Ability const& getDefault(::AbilitiesIndex abilityIndex);
+    MCAPI static ::Ability const& getDefault(::AbilitiesIndex abilityIndex);
     // NOLINTEND
 
 public:

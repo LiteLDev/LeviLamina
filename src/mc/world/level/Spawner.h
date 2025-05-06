@@ -143,14 +143,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool findNextSpawnBlockUnder(
+    MCAPI static bool findNextSpawnBlockUnder(
         ::BlockSource const&            region,
         ::BlockPos&                     pos,
         ::std::optional<::MaterialType> materialToSpawnIn,
         ::SpawnBlockRequirements        spawnBlockRequirements
     );
 
-    MCNAPI static bool isSpawnPositionOk(
+    MCAPI static bool isSpawnPositionOk(
         ::MobSpawnRules const& rules,
         ::BlockSource&         region,
         ::BlockPos const&      pos,
@@ -161,13 +161,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Mob* $spawnMob(
+    MCAPI ::Mob* $spawnMob(
         ::BlockSource&                     region,
         ::ActorDefinitionIdentifier const& id,
         ::Actor*                           spawner,
@@ -177,10 +177,10 @@ public:
         bool                               fromSpawner
     );
 
-    MCNAPI ::ItemActor*
+    MCAPI ::ItemActor*
     $spawnItem(::BlockSource& region, ::ItemStack const& inst, ::Actor* spawner, ::Vec3 const& pos, int throwTime);
 
-    MCNAPI ::Actor* $spawnProjectile(
+    MCAPI ::Actor* $spawnProjectile(
         ::BlockSource&                     region,
         ::ActorDefinitionIdentifier const& id,
         ::Actor*                           spawner,
@@ -188,19 +188,19 @@ public:
         ::Vec3 const&                      direction
     );
 
-    MCNAPI ::std::tuple<::std::array<::SpawnCategory::Type, 8>, uint64>
+    MCAPI ::std::tuple<::std::array<::SpawnCategory::Type, 8>, uint64>
     $filteredSpawningCategories(::br::spawn::State const&, bool, bool, bool) const;
 
-    MCNAPI void
+    MCFOLD void
     $spawnForChunk(::BlockSource&, ::LevelChunkVolumeData const&, ::br::spawn::State&, ::gsl::span<::SpawnCategory::Type>, ::IRandom&)
         const;
 
-    MCNAPI void $spawnMobsForChunkGeneration(::BlockSource&, ::Biome const&, ::ChunkPos, ::IRandom&) const;
+    MCFOLD void $spawnMobsForChunkGeneration(::BlockSource&, ::Biome const&, ::ChunkPos, ::IRandom&) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

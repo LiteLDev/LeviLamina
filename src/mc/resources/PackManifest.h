@@ -86,43 +86,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PackManifest(::PackManifest const&);
+    MCAPI PackManifest(::PackManifest const&);
 
-    MCNAPI explicit PackManifest(::ManifestType type);
+    MCAPI explicit PackManifest(::ManifestType type);
 
-    MCNAPI void _serailizeLegacyModuleDependencies(::Json::Value& destination) const;
+    MCAPI void _serailizeLegacyModuleDependencies(::Json::Value& destination) const;
 
-    MCNAPI void _serializeDependencies(::Json::Value& destination) const;
+    MCAPI void _serializeDependencies(::Json::Value& destination) const;
 
-    MCNAPI void _serializeHeader(::Json::Value& destination) const;
+    MCAPI void _serializeHeader(::Json::Value& destination) const;
 
-    MCNAPI void _serializeMeta(::Json::Value& destination) const;
+    MCAPI void _serializeMeta(::Json::Value& destination) const;
 
-    MCNAPI void _serializeModules(::Json::Value& destination) const;
+    MCAPI void _serializeModules(::Json::Value& destination) const;
 
-    MCNAPI void addModule(::ResourceInformation const& resourceInfo);
+    MCAPI void addModule(::ResourceInformation const& resourceInfo);
 
-    MCNAPI void addPackCapability(::std::string_view capability, ::PackCapability::TrustLevel trustLevel);
+    MCAPI void addPackCapability(::std::string_view capability, ::PackCapability::TrustLevel trustLevel);
 
-    MCNAPI void addPackDependency(::PackIdVersion const& packId);
+    MCAPI void addPackDependency(::PackIdVersion const& packId);
 
-    MCNAPI ::std::string getDescription() const;
+    MCAPI ::std::string getDescription() const;
 
-    MCNAPI ::std::string getName() const;
+    MCAPI ::std::string getName() const;
 
-    MCNAPI ::std::string getNameForTelemetry() const;
+    MCAPI ::std::string getNameForTelemetry() const;
 
-    MCNAPI bool hasPackCapability(::std::string_view capability) const;
+    MCAPI bool hasPackCapability(::std::string_view capability) const;
 
-    MCNAPI bool isRestrictedPack() const;
+    MCAPI bool isRestrictedPack() const;
 
-    MCNAPI bool isUsingPackNameKeyword() const;
+    MCAPI bool isUsingPackNameKeyword() const;
 
-    MCNAPI void setDescription(::std::string const& description);
+    MCAPI void setDescription(::std::string const& description);
 
-    MCNAPI void setLastModifiedDate(int64 lastModifiedDate);
+    MCAPI void setLastModifiedDate(int64 lastModifiedDate);
 
-    MCNAPI void setLocalizedNameKeywords(::std::unordered_map<::std::string, ::std::string> const& localizationNameMap);
+    MCAPI void setLocalizedNameKeywords(::std::unordered_map<::std::string, ::std::string> const& localizationNameMap);
     // NOLINTEND
 
 public:
@@ -136,26 +136,26 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PackManifest const&);
+    MCAPI void* $ctor(::PackManifest const&);
 
-    MCNAPI void* $ctor(::ManifestType type);
+    MCAPI void* $ctor(::ManifestType type);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::PackManifest> $clone() const;
+    MCAPI ::std::unique_ptr<::PackManifest> $clone() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

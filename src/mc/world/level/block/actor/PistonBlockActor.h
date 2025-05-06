@@ -75,31 +75,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PistonBlockActor(::BlockPos const& pos, bool isSticky);
+    MCAPI PistonBlockActor(::BlockPos const& pos, bool isSticky);
 
-    MCNAPI bool _attachedBlockWalker(
+    MCAPI bool _attachedBlockWalker(
         ::BlockSource&    region,
         ::BlockPos const& curPos,
         uchar             curBranchFacing,
         uchar             pistonMoveFacing
     );
 
-    MCNAPI bool _checkAttachedBlocks(::BlockSource& region);
+    MCAPI bool _checkAttachedBlocks(::BlockSource& region);
 
-    MCNAPI void _checkInceptionAchievement(::BlockActor& be, ::BlockSource& region, ::BlockPos const& facingDir);
+    MCAPI void _checkInceptionAchievement(::BlockActor& be, ::BlockSource& region, ::BlockPos const& facingDir);
 
-    MCNAPI bool _handleSlimeConnections(
+    MCAPI bool _handleSlimeConnections(
         ::BlockSource&    region,
         ::BlockPos const& curPos,
         uchar             curBranchFacing,
         uchar             pistonMoveFacing
     );
 
-    MCNAPI bool _hasBlockAttached(::BlockPos const& blockPos);
+    MCAPI bool _hasBlockAttached(::BlockPos const& blockPos);
 
-    MCNAPI void _moveCollidedEntities(::BlockSource& region);
+    MCAPI void _moveCollidedEntities(::BlockSource& region);
 
-    MCNAPI void _moveCollidedEntitiesHelper(
+    MCAPI void _moveCollidedEntitiesHelper(
         ::BlockSource&    region,
         ::AABB const&     insideBlockAABB,
         ::BlockPos const& facingDir,
@@ -107,21 +107,21 @@ public:
         uint              searchHeight
     );
 
-    MCNAPI void _sortAttachedBlocks(::BlockSource& region);
+    MCAPI void _sortAttachedBlocks(::BlockSource& region);
 
-    MCNAPI void _spawnBlocks(::BlockSource& region);
+    MCAPI void _spawnBlocks(::BlockSource& region);
 
-    MCNAPI void _spawnMovingBlock(::BlockSource& region, ::BlockPos const& blockPos);
+    MCAPI void _spawnMovingBlock(::BlockSource& region, ::BlockPos const& blockPos);
 
-    MCNAPI void _spawnMovingBlocks(::BlockSource& region);
+    MCAPI void _spawnMovingBlocks(::BlockSource& region);
 
-    MCNAPI void moveEntityLastProgress(::Actor& entity, ::Vec3 delta);
+    MCAPI void moveEntityLastProgress(::Actor& entity, ::Vec3 delta);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _spawnResourcesForBlockAndExtraBlock(
+    MCAPI static void _spawnResourcesForBlockAndExtraBlock(
         ::BlockSource&                region,
         ::BlockPos const&             blockPos,
         ::Randomize                   randomize,
@@ -132,38 +132,38 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockPos const& pos, bool isSticky);
+    MCAPI void* $ctor(::BlockPos const& pos, bool isSticky);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI void $tick(::BlockSource& region);
+    MCAPI void $tick(::BlockSource& region);
 
-    MCNAPI void $onRemoved(::BlockSource& region);
+    MCAPI void $onRemoved(::BlockSource& region);
 
-    MCNAPI ::PistonBlockActor* $getOwningPiston(::BlockSource&);
+    MCFOLD ::PistonBlockActor* $getOwningPiston(::BlockSource&);
 
-    MCNAPI ::PistonBlockActor const* $getOwningPiston(::BlockSource&) const;
+    MCFOLD ::PistonBlockActor const* $getOwningPiston(::BlockSource&) const;
 
-    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

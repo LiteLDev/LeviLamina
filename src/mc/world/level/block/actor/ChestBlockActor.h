@@ -189,7 +189,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ChestBlockActor(
+    MCAPI ChestBlockActor(
         ::BlockActorType       type,
         ::std::string const&   renderId,
         ::BlockActorRendererId pos,
@@ -197,31 +197,31 @@ public:
         bool                   isTrapped
     );
 
-    MCNAPI void _closeChest(::BlockSource& region, ::Player* player);
+    MCAPI void _closeChest(::BlockSource& region, ::Player* player);
 
-    MCNAPI bool _detectBlockObstruction(::BlockSource& region) const;
+    MCAPI bool _detectBlockObstruction(::BlockSource& region) const;
 
-    MCNAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI void _tryToPairWith(::BlockSource& region, ::BlockPos const& position);
+    MCAPI void _tryToPairWith(::BlockSource& region, ::BlockPos const& position);
 
-    MCNAPI void _unpair();
+    MCAPI void _unpair();
 
-    MCNAPI void _validatePairedChest(::BlockSource& region);
+    MCAPI void _validatePairedChest(::BlockSource& region);
 
-    MCNAPI bool canPairWith(::BlockActor* entity, ::BlockSource& region);
+    MCAPI bool canPairWith(::BlockActor* entity, ::BlockSource& region);
 
-    MCNAPI void forceCloseChest(::BlockSource& region);
+    MCAPI void forceCloseChest(::BlockSource& region);
 
-    MCNAPI void pairWith(::ChestBlockActor* chest, bool lead);
+    MCAPI void pairWith(::ChestBlockActor* chest, bool lead);
 
-    MCNAPI void unpair(::BlockSource& region);
+    MCAPI void unpair(::BlockSource& region);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::BlockActorType       type,
         ::std::string const&   renderId,
         ::BlockActorRendererId pos,
@@ -233,104 +233,104 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getContainerSize() const;
+    MCAPI int $getContainerSize() const;
 
-    MCNAPI int $getMaxStackSize() const;
+    MCFOLD int $getMaxStackSize() const;
 
-    MCNAPI ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
-    MCNAPI ::ItemStack const& $getItem(int slot) const;
+    MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCNAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCNAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
+    MCFOLD void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
-    MCNAPI void $serverInitItemStackIds(
+    MCAPI void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCNAPI void $loadItems(::CompoundTag const& base, ::ILevel& level);
+    MCAPI void $loadItems(::CompoundTag const& base, ::ILevel& level);
 
-    MCNAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI bool $saveItems(::CompoundTag& base, ::SaveContext const& saveContext) const;
+    MCAPI bool $saveItems(::CompoundTag& base, ::SaveContext const& saveContext) const;
 
-    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI bool $saveItemInstanceData(::CompoundTag& base, ::SaveContext const& saveContext) const;
+    MCAPI bool $saveItemInstanceData(::CompoundTag& base, ::SaveContext const& saveContext) const;
 
-    MCNAPI void $clearCache();
+    MCFOLD void $clearCache();
 
-    MCNAPI void $tick(::BlockSource& region);
+    MCAPI void $tick(::BlockSource& region);
 
-    MCNAPI void $triggerEvent(int b0, int b1);
+    MCAPI void $triggerEvent(int b0, int b1);
 
-    MCNAPI void $startOpen(::Player& player);
+    MCAPI void $startOpen(::Player& player);
 
-    MCNAPI void $onRemoved(::BlockSource& region);
+    MCAPI void $onRemoved(::BlockSource& region);
 
-    MCNAPI void $stopOpen(::Player& player);
+    MCAPI void $stopOpen(::Player& player);
 
-    MCNAPI void $onChanged(::BlockSource& region);
+    MCAPI void $onChanged(::BlockSource& region);
 
-    MCNAPI void $onNeighborChanged(::BlockSource& region, ::BlockPos const& position);
+    MCFOLD void $onNeighborChanged(::BlockSource& region, ::BlockPos const& position);
 
-    MCNAPI ::BlockActor* $getCrackEntity(::BlockSource& region, ::BlockPos const& pos);
+    MCAPI ::BlockActor* $getCrackEntity(::BlockSource& region, ::BlockPos const& pos);
 
-    MCNAPI int $clearInventory(int resizeTo);
+    MCAPI int $clearInventory(int resizeTo);
 
-    MCNAPI ::Container* $getContainer();
+    MCFOLD ::Container* $getContainer();
 
-    MCNAPI ::Container const* $getContainer() const;
+    MCFOLD ::Container const* $getContainer() const;
 
-    MCNAPI void $onMove();
+    MCFOLD void $onMove();
 
-    MCNAPI void $onPlace(::BlockSource& region);
+    MCAPI void $onPlace(::BlockSource& region);
 
-    MCNAPI void $openBy(::Player& p);
+    MCAPI void $openBy(::Player& p);
 
-    MCNAPI void $setContainerChanged(int slot);
+    MCAPI void $setContainerChanged(int slot);
 
-    MCNAPI bool $canPushInItem(int, int, ::ItemStack const&) const;
+    MCFOLD bool $canPushInItem(int, int, ::ItemStack const&) const;
 
-    MCNAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
+    MCFOLD bool $canPullOutItem(int, int, ::ItemStack const&) const;
 
-    MCNAPI void $getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos) const;
+    MCAPI void $getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos) const;
 
-    MCNAPI void $addContentChangeListener(::ContainerContentChangeListener* listener);
+    MCAPI void $addContentChangeListener(::ContainerContentChangeListener* listener);
 
-    MCNAPI void $removeContentChangeListener(::ContainerContentChangeListener* listener);
+    MCAPI void $removeContentChangeListener(::ContainerContentChangeListener* listener);
 
-    MCNAPI void $initializeContainerContents(::BlockSource& region);
+    MCAPI void $initializeContainerContents(::BlockSource& region);
 
-    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
-    MCNAPI void $playOpenSound(::BlockSource& region);
+    MCAPI void $playOpenSound(::BlockSource& region);
 
-    MCNAPI void $playCloseSound(::BlockSource& region);
+    MCAPI void $playCloseSound(::BlockSource& region);
 
-    MCNAPI bool $_canOpenThis(::BlockSource& region) const;
+    MCAPI bool $_canOpenThis(::BlockSource& region) const;
 
-    MCNAPI ::AABB $getObstructionAABB() const;
+    MCAPI ::AABB $getObstructionAABB() const;
 
-    MCNAPI bool $_detectEntityObstruction(::BlockSource& region) const;
+    MCAPI bool $_detectEntityObstruction(::BlockSource& region) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForFillingContainer();
+    MCAPI static void** $vftableForFillingContainer();
 
-    MCNAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
 };

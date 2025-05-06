@@ -64,13 +64,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Random();
+    MCAPI Random();
 
-    MCNAPI Random(uint seed, bool onlyUsedDeterministically);
+    MCAPI Random(uint seed, bool onlyUsedDeterministically);
 
-    MCNAPI uint _genRandInt32();
+    MCAPI uint _genRandInt32();
 
-    MCNAPI float nextGaussian();
+    MCAPI float nextGaussian();
     // NOLINTEND
 
 public:
@@ -84,43 +84,43 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(uint seed, bool onlyUsedDeterministically);
+    MCAPI void* $ctor(uint seed, bool onlyUsedDeterministically);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $nextBoolean();
+    MCAPI bool $nextBoolean();
 
-    MCNAPI float $nextFloat();
+    MCAPI float $nextFloat();
 
-    MCNAPI double $nextDouble();
+    MCAPI double $nextDouble();
 
-    MCNAPI int $nextInt();
+    MCAPI int $nextInt();
 
-    MCNAPI int $nextInt(int n);
+    MCAPI int $nextInt(int n);
 
-    MCNAPI int64 $nextLong();
+    MCAPI int64 $nextLong();
 
-    MCNAPI void $consumeCount(uint count);
+    MCAPI void $consumeCount(uint count);
 
-    MCNAPI double $nextGaussianDouble();
+    MCAPI double $nextGaussianDouble();
 
-    MCNAPI ::std::unique_ptr<::IRandom> $fork();
+    MCAPI ::std::unique_ptr<::IRandom> $fork();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -676,15 +676,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddPacketToProducer(::RakNet::Packet* p);
+    MCAPI void AddPacketToProducer(::RakNet::Packet* p);
 
-    MCNAPI ::RakNet::Packet* AllocPacket(uint dataSize, char const* file, uint line);
+    MCAPI ::RakNet::Packet* AllocPacket(uint dataSize, char const* file, uint line);
 
-    MCNAPI ::RakNet::Packet* AllocPacket(uint dataSize, uchar* data, char const* file, uint line);
+    MCAPI ::RakNet::Packet* AllocPacket(uint dataSize, uchar* data, char const* file, uint line);
 
-    MCNAPI bool AllowIncomingConnections() const;
+    MCAPI bool AllowIncomingConnections() const;
 
-    MCNAPI ::RakNet::RakPeer::RemoteSystemStruct* AssignSystemAddressToRemoteSystemList(
+    MCAPI ::RakNet::RakPeer::RemoteSystemStruct* AssignSystemAddressToRemoteSystemList(
         ::RakNet::SystemAddress                            systemAddress,
         ::RakNet::RakPeer::RemoteSystemStruct::ConnectMode incomingRakNetSocket,
         ::RakNet::RakNetSocket2*                           thisIPConnectedRecently,
@@ -695,14 +695,14 @@ public:
         bool                                               useSecurity
     );
 
-    MCNAPI void
+    MCAPI void
     CallPluginCallbacks(::DataStructures::List<::RakNet::PluginInterface2*>& pluginList, ::RakNet::Packet* packet);
 
-    MCNAPI void ClearBufferedPackets();
+    MCAPI void ClearBufferedPackets();
 
-    MCNAPI void ClearRequestedConnectionList();
+    MCAPI void ClearRequestedConnectionList();
 
-    MCNAPI void CloseConnectionInternal(
+    MCAPI void CloseConnectionInternal(
         ::RakNet::AddressOrGUID const& systemIdentifier,
         bool                           sendDisconnectionNotification,
         bool                           performImmediate,
@@ -710,52 +710,52 @@ public:
         ::PacketPriority               disconnectionNotificationPriority
     );
 
-    MCNAPI void DerefAllSockets();
+    MCAPI void DerefAllSockets();
 
-    MCNAPI void DereferenceRemoteSystem(::RakNet::SystemAddress const& sa);
+    MCAPI void DereferenceRemoteSystem(::RakNet::SystemAddress const& sa);
 
-    MCNAPI void FillIPList();
+    MCAPI void FillIPList();
 
-    MCNAPI uint64 GetBestClockDifferential(::RakNet::SystemAddress systemAddress) const;
+    MCAPI uint64 GetBestClockDifferential(::RakNet::SystemAddress systemAddress) const;
 
-    MCNAPI int GetIndexFromSystemAddress(::RakNet::SystemAddress systemAddress, bool calledFromNetworkThread) const;
+    MCAPI int GetIndexFromSystemAddress(::RakNet::SystemAddress systemAddress, bool calledFromNetworkThread) const;
 
-    MCNAPI ::RakNet::RakPeer::RemoteSystemStruct* GetRemoteSystemFromSystemAddress(
+    MCAPI ::RakNet::RakPeer::RemoteSystemStruct* GetRemoteSystemFromSystemAddress(
         ::RakNet::SystemAddress systemAddress,
         bool                    calledFromNetworkThread,
         bool                    onlyActive
     ) const;
 
-    MCNAPI uint GetRemoteSystemIndex(::RakNet::SystemAddress const& sa) const;
+    MCAPI uint GetRemoteSystemIndex(::RakNet::SystemAddress const& sa) const;
 
-    MCNAPI bool IsLoopbackAddress(::RakNet::AddressOrGUID const& systemIdentifier, bool matchPort) const;
+    MCAPI bool IsLoopbackAddress(::RakNet::AddressOrGUID const& systemIdentifier, bool matchPort) const;
 
-    MCNAPI void NotifyAndFlagForShutdown(
+    MCAPI void NotifyAndFlagForShutdown(
         ::RakNet::SystemAddress systemAddress,
         bool                    performImmediate,
         uchar                   orderingChannel,
         ::PacketPriority        disconnectionNotificationPriority
     );
 
-    MCNAPI void
+    MCAPI void
     OnConnectedPong(uint64 sendPingTime, uint64 sendPongTime, ::RakNet::RakPeer::RemoteSystemStruct* remoteSystem);
 
-    MCNAPI void OnConnectionRequest(::RakNet::RakPeer::RemoteSystemStruct* remoteSystem, uint64 incomingTimestamp);
+    MCAPI void OnConnectionRequest(::RakNet::RakPeer::RemoteSystemStruct* remoteSystem, uint64 incomingTimestamp);
 
-    MCNAPI void ParseConnectionRequestPacket(
+    MCAPI void ParseConnectionRequestPacket(
         ::RakNet::RakPeer::RemoteSystemStruct* remoteSystem,
         ::RakNet::SystemAddress const&         systemAddress,
         char const*                            data,
         int                                    byteSize
     );
 
-    MCNAPI void PingInternal(::RakNet::SystemAddress target, bool performImmediate, ::PacketReliability reliability);
+    MCAPI void PingInternal(::RakNet::SystemAddress target, bool performImmediate, ::PacketReliability reliability);
 
-    MCNAPI RakPeer();
+    MCAPI RakPeer();
 
-    MCNAPI void ReferenceRemoteSystem(::RakNet::SystemAddress const& sa, uint remoteSystemListIndex);
+    MCAPI void ReferenceRemoteSystem(::RakNet::SystemAddress const& sa, uint remoteSystemListIndex);
 
-    MCNAPI void SendBuffered(
+    MCAPI void SendBuffered(
         char const*                                        data,
         uint                                               numberOfBitsToSend,
         ::PacketPriority                                   priority,
@@ -767,7 +767,7 @@ public:
         uint                                               receipt
     );
 
-    MCNAPI void SendBufferedList(
+    MCAPI void SendBufferedList(
         char const**                                       data,
         int const*                                         lengths,
         int                                                numParameters,
@@ -780,7 +780,7 @@ public:
         uint                                               connectionMode
     );
 
-    MCNAPI ::RakNet::ConnectionAttemptResult SendConnectionRequest(
+    MCAPI ::RakNet::ConnectionAttemptResult SendConnectionRequest(
         char const*          host,
         ushort               remotePort,
         char const*          passwordData,
@@ -793,7 +793,7 @@ public:
         uint                 extraData
     );
 
-    MCNAPI ::RakNet::ConnectionAttemptResult SendConnectionRequest(
+    MCAPI ::RakNet::ConnectionAttemptResult SendConnectionRequest(
         char const*              host,
         ushort                   remotePort,
         char const*              passwordData,
@@ -807,7 +807,7 @@ public:
         ::RakNet::RakNetSocket2* extraData
     );
 
-    MCNAPI bool SendImmediate(
+    MCAPI bool SendImmediate(
         char*                   data,
         uint                    numberOfBitsToSend,
         ::PacketPriority        priority,
@@ -824,48 +824,48 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $InitializeConfiguration(::std::unique_ptr<::RakNet::ShadowBanList> banList);
+    MCAPI void $InitializeConfiguration(::std::unique_ptr<::RakNet::ShadowBanList> banList);
 
-    MCNAPI ::RakNet::StartupResult $Startup(
+    MCAPI ::RakNet::StartupResult $Startup(
         uint                        maxConnections,
         ::RakNet::SocketDescriptor* socketDescriptors,
         uint                        socketDescriptorCount,
         int                         threadPriority
     );
 
-    MCNAPI bool $InitializeSecurity(char const* public_key, char const* private_key, bool bRequireClientKey);
+    MCFOLD bool $InitializeSecurity(char const* public_key, char const* private_key, bool bRequireClientKey);
 
-    MCNAPI void $DisableSecurity();
+    MCFOLD void $DisableSecurity();
 
-    MCNAPI void $AddToSecurityExceptionList(char const* ip);
+    MCAPI void $AddToSecurityExceptionList(char const* ip);
 
-    MCNAPI void $RemoveFromSecurityExceptionList(char const* ip);
+    MCAPI void $RemoveFromSecurityExceptionList(char const* ip);
 
-    MCNAPI bool $IsInSecurityExceptionList(char const* ip);
+    MCAPI bool $IsInSecurityExceptionList(char const* ip);
 
-    MCNAPI void $SetMaximumIncomingConnections(ushort numberAllowed);
+    MCAPI void $SetMaximumIncomingConnections(ushort numberAllowed);
 
-    MCNAPI uint $GetMaximumIncomingConnections() const;
+    MCFOLD uint $GetMaximumIncomingConnections() const;
 
-    MCNAPI ushort $NumberOfConnections() const;
+    MCAPI ushort $NumberOfConnections() const;
 
-    MCNAPI void $SetIncomingPassword(char const* passwordData, int passwordDataLength);
+    MCAPI void $SetIncomingPassword(char const* passwordData, int passwordDataLength);
 
-    MCNAPI void $GetIncomingPassword(char* passwordData, int* passwordDataLength);
+    MCAPI void $GetIncomingPassword(char* passwordData, int* passwordDataLength);
 
-    MCNAPI ::RakNet::ConnectionAttemptResult $Connect(
+    MCAPI ::RakNet::ConnectionAttemptResult $Connect(
         char const*          host,
         ushort               remotePort,
         char const*          passwordData,
@@ -877,7 +877,7 @@ public:
         uint                 timeoutTime
     );
 
-    MCNAPI ::RakNet::ConnectionAttemptResult $ConnectWithSocket(
+    MCAPI ::RakNet::ConnectionAttemptResult $ConnectWithSocket(
         char const*              host,
         ushort                   remotePort,
         char const*              passwordData,
@@ -889,20 +889,19 @@ public:
         uint                     timeoutTime
     );
 
-    MCNAPI void
-    $Shutdown(uint blockDuration, uchar orderingChannel, ::PacketPriority disconnectionNotificationPriority);
+    MCAPI void $Shutdown(uint blockDuration, uchar orderingChannel, ::PacketPriority disconnectionNotificationPriority);
 
-    MCNAPI bool $SetApplicationHandshakeCompleted(::RakNet::AddressOrGUID systemIdentifier);
+    MCAPI bool $SetApplicationHandshakeCompleted(::RakNet::AddressOrGUID systemIdentifier);
 
-    MCNAPI bool $IsActive() const;
+    MCAPI bool $IsActive() const;
 
-    MCNAPI bool $GetConnectionList(::RakNet::SystemAddress* remoteSystems, ushort* numberOfSystems) const;
+    MCAPI bool $GetConnectionList(::RakNet::SystemAddress* remoteSystems, ushort* numberOfSystems) const;
 
-    MCNAPI uint $GetNextSendReceipt();
+    MCAPI uint $GetNextSendReceipt();
 
-    MCNAPI uint $IncrementNextSendReceipt();
+    MCAPI uint $IncrementNextSendReceipt();
 
-    MCNAPI uint $Send(
+    MCAPI uint $Send(
         char const*                   data,
         int const                     length,
         ::PacketPriority              priority,
@@ -913,7 +912,7 @@ public:
         uint                          forceReceiptNumber
     );
 
-    MCNAPI uint $Send(
+    MCAPI uint $Send(
         ::RakNet::BitStream const*    bitStream,
         ::PacketPriority              priority,
         ::PacketReliability           reliability,
@@ -923,9 +922,9 @@ public:
         uint                          forceReceiptNumber
     );
 
-    MCNAPI void $SendLoopback(char const* data, int const length);
+    MCAPI void $SendLoopback(char const* data, int const length);
 
-    MCNAPI uint $SendList(
+    MCAPI uint $SendList(
         char const**                  data,
         int const*                    lengths,
         int const                     numParameters,
@@ -937,177 +936,177 @@ public:
         uint                          forceReceiptNumber
     );
 
-    MCNAPI ::RakNet::Packet* $Receive();
+    MCAPI ::RakNet::Packet* $Receive();
 
-    MCNAPI void $DeallocatePacket(::RakNet::Packet* packet);
+    MCAPI void $DeallocatePacket(::RakNet::Packet* packet);
 
-    MCNAPI uint $GetMaximumNumberOfPeers() const;
+    MCFOLD uint $GetMaximumNumberOfPeers() const;
 
-    MCNAPI void $CloseConnection(
+    MCAPI void $CloseConnection(
         ::RakNet::AddressOrGUID const target,
         bool                          sendDisconnectionNotification,
         uchar                         orderingChannel,
         ::PacketPriority              disconnectionNotificationPriority
     );
 
-    MCNAPI void $CancelConnectionAttempt(::RakNet::SystemAddress const target);
+    MCAPI void $CancelConnectionAttempt(::RakNet::SystemAddress const target);
 
-    MCNAPI ::RakNet::ConnectionState $GetConnectionState(::RakNet::AddressOrGUID const systemIdentifier);
+    MCAPI ::RakNet::ConnectionState $GetConnectionState(::RakNet::AddressOrGUID const systemIdentifier);
 
-    MCNAPI int $GetIndexFromSystemAddress(::RakNet::SystemAddress const systemAddress) const;
+    MCAPI int $GetIndexFromSystemAddress(::RakNet::SystemAddress const systemAddress) const;
 
-    MCNAPI ::RakNet::SystemAddress $GetSystemAddressFromIndex(uint index);
+    MCAPI ::RakNet::SystemAddress $GetSystemAddressFromIndex(uint index);
 
-    MCNAPI ::RakNet::RakNetGUID $GetGUIDFromIndex(uint index);
+    MCAPI ::RakNet::RakNetGUID $GetGUIDFromIndex(uint index);
 
-    MCNAPI void $GetSystemList(
+    MCAPI void $GetSystemList(
         ::DataStructures::List<::RakNet::SystemAddress>& addresses,
         ::DataStructures::List<::RakNet::RakNetGUID>&    guids
     ) const;
 
-    MCNAPI void $AddToBanList(char const* IP, uint milliseconds);
+    MCAPI void $AddToBanList(char const* IP, uint milliseconds);
 
-    MCNAPI void $RemoveFromBanList(char const* IP);
+    MCAPI void $RemoveFromBanList(char const* IP);
 
-    MCNAPI void $ClearBanList();
+    MCAPI void $ClearBanList();
 
-    MCNAPI bool $IsBanned(char const* IP);
+    MCAPI bool $IsBanned(char const* IP);
 
-    MCNAPI void $SetLimitIPConnectionFrequency(bool b);
+    MCAPI void $SetLimitIPConnectionFrequency(bool b);
 
-    MCNAPI void $Ping(::RakNet::SystemAddress const target);
+    MCAPI void $Ping(::RakNet::SystemAddress const target);
 
-    MCNAPI bool
+    MCAPI bool
     $Ping(char const* host, ushort remotePort, bool onlyReplyOnAcceptingConnections, uint connectionSocketIndex);
 
-    MCNAPI void $SendNatTraversalMessage(::RakNet::SystemAddress const target);
+    MCAPI void $SendNatTraversalMessage(::RakNet::SystemAddress const target);
 
-    MCNAPI int $GetAveragePing(::RakNet::AddressOrGUID const systemIdentifier);
+    MCAPI int $GetAveragePing(::RakNet::AddressOrGUID const systemIdentifier);
 
-    MCNAPI int $GetLastPing(::RakNet::AddressOrGUID const systemIdentifier) const;
+    MCAPI int $GetLastPing(::RakNet::AddressOrGUID const systemIdentifier) const;
 
-    MCNAPI int $GetLowestPing(::RakNet::AddressOrGUID const systemIdentifier) const;
+    MCAPI int $GetLowestPing(::RakNet::AddressOrGUID const systemIdentifier) const;
 
-    MCNAPI void $SetOccasionalPing(bool doPing);
+    MCAPI void $SetOccasionalPing(bool doPing);
 
-    MCNAPI uint64 $GetClockDifferential(::RakNet::AddressOrGUID const systemIdentifier);
+    MCAPI uint64 $GetClockDifferential(::RakNet::AddressOrGUID const systemIdentifier);
 
-    MCNAPI void $SetOfflinePingResponse(char const* data, uint const length);
+    MCAPI void $SetOfflinePingResponse(char const* data, uint const length);
 
-    MCNAPI void $GetOfflinePingResponse(char** data, uint* length);
+    MCAPI void $GetOfflinePingResponse(char** data, uint* length);
 
-    MCNAPI ::RakNet::SystemAddress $GetInternalID(::RakNet::SystemAddress const systemAddress, int const index) const;
+    MCAPI ::RakNet::SystemAddress $GetInternalID(::RakNet::SystemAddress const systemAddress, int const index) const;
 
-    MCNAPI void $SetInternalID(::RakNet::SystemAddress systemAddress, int index);
+    MCAPI void $SetInternalID(::RakNet::SystemAddress systemAddress, int index);
 
-    MCNAPI ::RakNet::SystemAddress $GetExternalID(::RakNet::SystemAddress const target) const;
+    MCAPI ::RakNet::SystemAddress $GetExternalID(::RakNet::SystemAddress const target) const;
 
-    MCNAPI ::RakNet::RakNetGUID const $GetMyGUID() const;
+    MCAPI ::RakNet::RakNetGUID const $GetMyGUID() const;
 
-    MCNAPI void $resetMyGUID();
+    MCAPI void $resetMyGUID();
 
-    MCNAPI ::RakNet::SystemAddress $GetMyBoundAddress(int const socketIndex);
+    MCAPI ::RakNet::SystemAddress $GetMyBoundAddress(int const socketIndex);
 
-    MCNAPI void $SetAllowUnconnectedPings(bool unconnectedPings);
+    MCAPI void $SetAllowUnconnectedPings(bool unconnectedPings);
 
-    MCNAPI bool $GetAllowUnconnectedPings() const;
+    MCAPI bool $GetAllowUnconnectedPings() const;
 
-    MCNAPI ::RakNet::RakNetGUID const& $GetGuidFromSystemAddress(::RakNet::SystemAddress const input) const;
+    MCAPI ::RakNet::RakNetGUID const& $GetGuidFromSystemAddress(::RakNet::SystemAddress const input) const;
 
-    MCNAPI ::RakNet::SystemAddress $GetSystemAddressFromGuid(::RakNet::RakNetGUID const input) const;
+    MCAPI ::RakNet::SystemAddress $GetSystemAddressFromGuid(::RakNet::RakNetGUID const input) const;
 
-    MCNAPI bool
+    MCFOLD bool
     $GetClientPublicKeyFromSystemAddress(::RakNet::SystemAddress const input, char* client_public_key) const;
 
-    MCNAPI void $SetTimeoutTime(uint timeMS, ::RakNet::SystemAddress const target);
+    MCAPI void $SetTimeoutTime(uint timeMS, ::RakNet::SystemAddress const target);
 
-    MCNAPI uint $GetTimeoutTime(::RakNet::SystemAddress const target);
+    MCAPI uint $GetTimeoutTime(::RakNet::SystemAddress const target);
 
-    MCNAPI int $GetMTUSize(::RakNet::SystemAddress const target) const;
+    MCAPI int $GetMTUSize(::RakNet::SystemAddress const target) const;
 
-    MCNAPI uint $GetNumberOfAdapters();
+    MCAPI uint $GetNumberOfAdapters();
 
-    MCNAPI ::RakNet::NetworkAdapter& $GetLocalAdapter(uint index);
+    MCAPI ::RakNet::NetworkAdapter& $GetLocalAdapter(uint index);
 
-    MCNAPI uint $GetNumberOfAddresses();
+    MCAPI uint $GetNumberOfAddresses();
 
-    MCNAPI char const* $GetLocalIP(uint index);
+    MCAPI char const* $GetLocalIP(uint index);
 
-    MCNAPI bool $IsLocalIP(char const* ip);
+    MCAPI bool $IsLocalIP(char const* ip);
 
-    MCNAPI void $AllowConnectionResponseIPMigration(bool allow);
+    MCAPI void $AllowConnectionResponseIPMigration(bool allow);
 
-    MCNAPI bool
+    MCAPI bool
     $AdvertiseSystem(char const* host, ushort remotePort, char const* data, int dataLength, uint connectionSocketIndex);
 
-    MCNAPI void $SetSplitMessageProgressInterval(int interval);
+    MCAPI void $SetSplitMessageProgressInterval(int interval);
 
-    MCNAPI int $GetSplitMessageProgressInterval() const;
+    MCAPI int $GetSplitMessageProgressInterval() const;
 
-    MCNAPI void $SetUnreliableTimeout(uint timeoutMS);
+    MCAPI void $SetUnreliableTimeout(uint timeoutMS);
 
-    MCNAPI void $SendTTL(char const* host, ushort remotePort, int ttl, uint connectionSocketIndex);
+    MCAPI void $SendTTL(char const* host, ushort remotePort, int ttl, uint connectionSocketIndex);
 
-    MCNAPI void $AttachPlugin(::RakNet::PluginInterface2* plugin);
+    MCAPI void $AttachPlugin(::RakNet::PluginInterface2* plugin);
 
-    MCNAPI void $DetachPlugin(::RakNet::PluginInterface2* plugin);
+    MCAPI void $DetachPlugin(::RakNet::PluginInterface2* plugin);
 
-    MCNAPI void $PushBackPacket(::RakNet::Packet* packet, bool pushAtHead);
+    MCAPI void $PushBackPacket(::RakNet::Packet* packet, bool pushAtHead);
 
-    MCNAPI void $ChangeSystemAddress(::RakNet::RakNetGUID guid, ::RakNet::SystemAddress const& systemAddress);
+    MCAPI void $ChangeSystemAddress(::RakNet::RakNetGUID guid, ::RakNet::SystemAddress const& systemAddress);
 
-    MCNAPI ::RakNet::Packet* $AllocatePacket(uint dataSize);
+    MCAPI ::RakNet::Packet* $AllocatePacket(uint dataSize);
 
-    MCNAPI ::RakNet::RakNetSocket2* $GetSocket(::RakNet::SystemAddress const target);
+    MCAPI ::RakNet::RakNetSocket2* $GetSocket(::RakNet::SystemAddress const target);
 
-    MCNAPI void $GetSockets(::DataStructures::List<::RakNet::RakNetSocket2*>& sockets);
+    MCAPI void $GetSockets(::DataStructures::List<::RakNet::RakNetSocket2*>& sockets);
 
-    MCNAPI void $ReleaseSockets(::DataStructures::List<::RakNet::RakNetSocket2*>& sockets);
+    MCAPI void $ReleaseSockets(::DataStructures::List<::RakNet::RakNetSocket2*>& sockets);
 
-    MCNAPI void $WriteOutOfBandHeader(::RakNet::BitStream* bitStream);
+    MCAPI void $WriteOutOfBandHeader(::RakNet::BitStream* bitStream);
 
-    MCNAPI void
+    MCAPI void
     $SetUserUpdateThread(void (*_userUpdateThreadPtr)(::RakNet::RakPeerInterface*, void*), void* _userUpdateThreadData);
 
-    MCNAPI void $SetIncomingDatagramEventHandler(bool (*_incomingDatagramEventHandler)(::RakNet::RNS2RecvStruct*));
+    MCAPI void $SetIncomingDatagramEventHandler(bool (*_incomingDatagramEventHandler)(::RakNet::RNS2RecvStruct*));
 
-    MCNAPI void $ApplyNetworkSimulator(float packetloss, ushort minExtraPing, ushort extraPingVariance);
+    MCFOLD void $ApplyNetworkSimulator(float packetloss, ushort minExtraPing, ushort extraPingVariance);
 
-    MCNAPI void $SetPerConnectionOutgoingBandwidthLimit(uint maxBitsPerSecond);
+    MCAPI void $SetPerConnectionOutgoingBandwidthLimit(uint maxBitsPerSecond);
 
-    MCNAPI bool $IsNetworkSimulatorActive();
+    MCFOLD bool $IsNetworkSimulatorActive();
 
-    MCNAPI ::RakNet::RakNetStatistics*
+    MCAPI ::RakNet::RakNetStatistics*
     $GetStatistics(::RakNet::SystemAddress const systemAddress, ::RakNet::RakNetStatistics* rns);
 
-    MCNAPI bool $GetStatistics(uint const index, ::RakNet::RakNetStatistics* rns);
+    MCAPI bool $GetStatistics(uint const index, ::RakNet::RakNetStatistics* rns);
 
-    MCNAPI void $GetStatisticsList(
+    MCAPI void $GetStatisticsList(
         ::DataStructures::List<::RakNet::SystemAddress>&    addresses,
         ::DataStructures::List<::RakNet::RakNetGUID>&       guids,
         ::DataStructures::List<::RakNet::RakNetStatistics>& statistics
     );
 
-    MCNAPI uint $GetReceiveBufferSize();
+    MCAPI uint $GetReceiveBufferSize();
 
-    MCNAPI bool $RunUpdateCycle(::RakNet::BitStream& updateBitStream);
+    MCAPI bool $RunUpdateCycle(::RakNet::BitStream& updateBitStream);
 
-    MCNAPI bool
+    MCAPI bool
     $SendOutOfBand(char const* host, ushort remotePort, char const* data, uint dataLength, uint connectionSocketIndex);
 
-    MCNAPI void $DeallocRNS2RecvStruct(::RakNet::RNS2RecvStruct* s, char const* file, uint line);
+    MCAPI void $DeallocRNS2RecvStruct(::RakNet::RNS2RecvStruct* s, char const* file, uint line);
 
-    MCNAPI ::RakNet::RNS2RecvStruct* $AllocRNS2RecvStruct(char const* file, uint line);
+    MCAPI ::RakNet::RNS2RecvStruct* $AllocRNS2RecvStruct(char const* file, uint line);
 
-    MCNAPI void $OnRNS2Recv(::RakNet::RNS2RecvStruct* recvStruct);
+    MCAPI void $OnRNS2Recv(::RakNet::RNS2RecvStruct* recvStruct);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForRakPeerInterface();
+    MCAPI static void** $vftableForRakPeerInterface();
 
-    MCNAPI static void** $vftableForRNS2EventHandler();
+    MCAPI static void** $vftableForRNS2EventHandler();
     // NOLINTEND
 };
 

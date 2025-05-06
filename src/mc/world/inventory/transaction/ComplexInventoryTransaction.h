@@ -60,9 +60,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _setDepenetrationOverride(::EntityContext& entity);
+    MCAPI static void _setDepenetrationOverride(::EntityContext& entity);
 
-    MCNAPI static ::std::unique_ptr<::ComplexInventoryTransaction>
+    MCAPI static ::std::unique_ptr<::ComplexInventoryTransaction>
     fromType(::ComplexInventoryTransaction::Type type, ::InventoryTransaction const& transaction);
     // NOLINTEND
 
@@ -76,26 +76,26 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream&);
+    MCFOLD ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream&);
 
-    MCNAPI void $write(::BinaryStream& stream) const;
+    MCFOLD void $write(::BinaryStream& stream) const;
 
-    MCNAPI void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
+    MCFOLD void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
-    MCNAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
+    MCAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
 
-    MCNAPI void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
+    MCFOLD void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

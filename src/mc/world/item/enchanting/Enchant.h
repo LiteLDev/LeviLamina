@@ -197,7 +197,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Enchant(
+    MCAPI Enchant(
         ::Enchant::Type            type,
         ::Enchant::Frequency       frequency,
         ::std::string_view         stringId,
@@ -212,11 +212,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Enchant::Slot enchantSlotFromString(::std::string_view str);
+    MCAPI static ::Enchant::Slot enchantSlotFromString(::std::string_view str);
 
-    MCNAPI static void initEnchants();
+    MCAPI static void initEnchants();
 
-    MCNAPI static ::std::string stringFromEnchantSlot(::Enchant::Slot const& enchantSlot);
+    MCAPI static ::std::string stringFromEnchantSlot(::Enchant::Slot const& enchantSlot);
     // NOLINTEND
 
 public:
@@ -236,7 +236,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Enchant::Type            type,
         ::Enchant::Frequency       frequency,
         ::std::string_view         stringId,
@@ -251,48 +251,48 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isCompatibleWith(::Enchant::Type type) const;
+    MCAPI bool $isCompatibleWith(::Enchant::Type type) const;
 
-    MCNAPI int $getMinCost(int level) const;
+    MCAPI int $getMinCost(int level) const;
 
-    MCNAPI int $getMaxCost(int level) const;
+    MCAPI int $getMaxCost(int level) const;
 
-    MCNAPI int $getMinLevel() const;
+    MCFOLD int $getMinLevel() const;
 
-    MCNAPI int $getMaxLevel() const;
+    MCFOLD int $getMaxLevel() const;
 
-    MCNAPI int $getDamageProtection(int level, ::ActorDamageSource const& source) const;
+    MCFOLD int $getDamageProtection(int level, ::ActorDamageSource const& source) const;
 
-    MCNAPI float $getAfterBreachArmorFraction(int, float) const;
+    MCFOLD float $getAfterBreachArmorFraction(int, float) const;
 
-    MCNAPI float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
+    MCFOLD float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
 
-    MCNAPI void $doPostAttack(::Actor& attacker, ::Actor& victim, int level) const;
+    MCFOLD void $doPostAttack(::Actor& attacker, ::Actor& victim, int level) const;
 
-    MCNAPI void $doPostItemHurtActor(::Actor&, ::Actor&, int) const;
+    MCFOLD void $doPostItemHurtActor(::Actor&, ::Actor&, int) const;
 
-    MCNAPI void $doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
+    MCFOLD void $doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
 
-    MCNAPI bool $isMeleeDamageEnchant() const;
+    MCFOLD bool $isMeleeDamageEnchant() const;
 
-    MCNAPI bool $isProtectionEnchant() const;
+    MCFOLD bool $isProtectionEnchant() const;
 
-    MCNAPI bool $isTreasureOnly() const;
+    MCFOLD bool $isTreasureOnly() const;
 
-    MCNAPI bool $isDiscoverable() const;
+    MCFOLD bool $isDiscoverable() const;
 
-    MCNAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
+    MCFOLD bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

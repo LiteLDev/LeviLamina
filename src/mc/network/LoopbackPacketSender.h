@@ -78,30 +78,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isInitialized() const;
+    MCAPI bool $isInitialized() const;
 
-    MCNAPI void $send(::Packet& packet);
+    MCAPI void $send(::Packet& packet);
 
-    MCNAPI void $sendTo(::NetworkIdentifier const& id, ::SubClientId subid, ::Packet& packet);
+    MCAPI void $sendTo(::NetworkIdentifier const& id, ::SubClientId subid, ::Packet& packet);
 
-    MCNAPI void $sendToServer(::Packet& packet);
+    MCAPI void $sendToServer(::Packet& packet);
 
-    MCNAPI void $sendToClient(::NetworkIdentifier const& id, ::Packet const& packet, ::SubClientId recipientSubId);
+    MCAPI void $sendToClient(::NetworkIdentifier const& id, ::Packet const& packet, ::SubClientId recipientSubId);
 
-    MCNAPI void $sendToClient(::UserEntityIdentifierComponent const* userIdentifier, ::Packet const& packet);
+    MCAPI void $sendToClient(::UserEntityIdentifierComponent const* userIdentifier, ::Packet const& packet);
 
-    MCNAPI void $sendToClients(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet);
+    MCAPI void $sendToClients(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet);
 
-    MCNAPI void $sendBroadcast(::Packet const& packet);
+    MCAPI void $sendBroadcast(::Packet const& packet);
 
-    MCNAPI void $sendBroadcast(::NetworkIdentifier const& exceptId, ::SubClientId exceptSubid, ::Packet const& packet);
+    MCAPI void $sendBroadcast(::NetworkIdentifier const& exceptId, ::SubClientId exceptSubid, ::Packet const& packet);
 
-    MCNAPI void $flush(::NetworkIdentifier const& id, ::std::function<void()>&& callback);
+    MCAPI void $flush(::NetworkIdentifier const& id, ::std::function<void()>&& callback);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

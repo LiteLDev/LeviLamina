@@ -267,7 +267,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ResourcePackRepository(
+    MCAPI ResourcePackRepository(
         ::IMinecraftEventing&                                                 eventing,
         ::PackManifestFactory&                                                manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider> const& contentAccessibility,
@@ -276,35 +276,35 @@ public:
         bool                                                                  initAsync
     );
 
-    MCNAPI bool _addResourcePackIfNotAlreadyAdded(::Pack& pack);
+    MCAPI bool _addResourcePackIfNotAlreadyAdded(::Pack& pack);
 
-    MCNAPI void _findVanillaPacks();
+    MCAPI void _findVanillaPacks();
 
-    MCNAPI void _initialize();
+    MCAPI void _initialize();
 
-    MCNAPI void _initializeCachedPackSource();
+    MCAPI void _initializeCachedPackSource();
 
-    MCNAPI void _initializePackSource();
+    MCAPI void _initializePackSource();
 
-    MCNAPI void _initializeWorldPackSource();
+    MCAPI void _initializeWorldPackSource();
 
-    MCNAPI void _loadPacks();
+    MCAPI void _loadPacks();
 
-    MCNAPI bool _packExists(::mce::UUID const& packId, ::SemVersion const& version, ::PackOrigin origin) const;
+    MCAPI bool _packExists(::mce::UUID const& packId, ::SemVersion const& version, ::PackOrigin origin) const;
 
-    MCNAPI void _reloadUserPacks();
+    MCAPI void _reloadUserPacks();
 
-    MCNAPI bool _removePack(::ResourceLocation const& packLocation, bool unregisterDeleteCallback);
+    MCAPI bool _removePack(::ResourceLocation const& packLocation, bool unregisterDeleteCallback);
 
-    MCNAPI void _triggerRemoveResourcePackCallback(::ResourcePack* resourcePack);
+    MCAPI void _triggerRemoveResourcePackCallback(::ResourcePack* resourcePack);
 
-    MCNAPI void _validateDependencies();
+    MCAPI void _validateDependencies();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::PackSourceReport loadAndUpgradePacks(
+    MCAPI static ::PackSourceReport loadAndUpgradePacks(
         ::PackSource&                packSource,
         ::PackManifestFactory&       manifestFactory,
         ::IContentKeyProvider const& keyProvider
@@ -320,7 +320,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::IMinecraftEventing&                                                 eventing,
         ::PackManifestFactory&                                                manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider> const& contentAccessibility,
@@ -333,122 +333,122 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $getResourcePacksByPackId(
+    MCAPI void $getResourcePacksByPackId(
         ::std::vector<::PackInstanceId> const& packInstanceIds,
         ::std::vector<::PackInstance>&         result
     ) const;
 
-    MCNAPI ::ResourcePack* $getResourcePackForPackId(::PackIdVersion const& idAndVersion) const;
+    MCAPI ::ResourcePack* $getResourcePackForPackId(::PackIdVersion const& idAndVersion) const;
 
-    MCNAPI ::ResourcePack*
+    MCAPI ::ResourcePack*
     $getResourcePackForPackIdInPath(::PackIdVersion const& idAndVersion, ::Core::Path const& fullPath) const;
 
-    MCNAPI ::ResourcePack* $getResourcePackByUUID(::mce::UUID const& id) const;
+    MCAPI ::ResourcePack* $getResourcePackByUUID(::mce::UUID const& id) const;
 
-    MCNAPI ::ResourcePack* $getResourcePackForPackIdOwned(::PackIdVersion const& idAndVersion) const;
+    MCAPI ::ResourcePack* $getResourcePackForPackIdOwned(::PackIdVersion const& idAndVersion) const;
 
-    MCNAPI ::ResourcePack*
+    MCAPI ::ResourcePack*
     $getResourcePackSatisfiesPackId(::PackIdVersion const& idAndVersion, bool requireOwnership) const;
 
-    MCNAPI ::ResourcePack* $getResourcePackContainingModule(::PackIdVersion const& idAndVersion) const;
+    MCAPI ::ResourcePack* $getResourcePackContainingModule(::PackIdVersion const& idAndVersion) const;
 
-    MCNAPI ::ResourcePack* $getResourcePackInPath(::Core::Path const& path) const;
+    MCAPI ::ResourcePack* $getResourcePackInPath(::Core::Path const& path) const;
 
-    MCNAPI bool $isResourcePackLoaded(::PackIdVersion const& identity, ::PackOrigin const& location);
+    MCAPI bool $isResourcePackLoaded(::PackIdVersion const& identity, ::PackOrigin const& location);
 
-    MCNAPI ::PackSourceReport const* $getPackLoadingReport() const;
+    MCFOLD ::PackSourceReport const* $getPackLoadingReport() const;
 
-    MCNAPI ::ResourcePack* $getEditorPack() const;
+    MCFOLD ::ResourcePack* $getEditorPack() const;
 
-    MCNAPI ::ResourcePack* $getVanillaPack() const;
+    MCFOLD ::ResourcePack* $getVanillaPack() const;
 
-    MCNAPI bool $setServicePacks(::std::vector<::PackIdVersion> servicePackIds);
+    MCAPI bool $setServicePacks(::std::vector<::PackIdVersion> servicePackIds);
 
-    MCNAPI bool $hasServicePacks(::std::vector<::PackIdVersion> const& servicePacksIds) const;
+    MCAPI bool $hasServicePacks(::std::vector<::PackIdVersion> const& servicePacksIds) const;
 
-    MCNAPI ::std::vector<::PackIdVersion> const& $getServicePacks() const;
+    MCFOLD ::std::vector<::PackIdVersion> const& $getServicePacks() const;
 
-    MCNAPI void $addServicePacksToStack(::ResourcePackStack& stack) const;
+    MCAPI void $addServicePacksToStack(::ResourcePackStack& stack) const;
 
-    MCNAPI void $addCachedResourcePacks(::std::unordered_map<::ContentIdentity, ::std::string> const* tempCacheKeys);
+    MCAPI void $addCachedResourcePacks(::std::unordered_map<::ContentIdentity, ::std::string> const* tempCacheKeys);
 
-    MCNAPI void $addWorldResourcePacks(::Core::Path const& levelPath);
+    MCAPI void $addWorldResourcePacks(::Core::Path const& levelPath);
 
-    MCNAPI void $addPremiumWorldTemplateResourcePacks(
+    MCAPI void $addPremiumWorldTemplateResourcePacks(
         ::Core::Path const&      worldTemplatePath,
         ::ContentIdentity const& premiumWorldIdentity
     );
 
-    MCNAPI void $addTempWorldTemplateResourcePacks(::mce::UUID const& worldTemplateUUID);
+    MCAPI void $addTempWorldTemplateResourcePacks(::mce::UUID const& worldTemplateUUID);
 
-    MCNAPI void $removePacksLoadedFromCache();
+    MCAPI void $removePacksLoadedFromCache();
 
-    MCNAPI void $removePacksLoadedFromWorld();
+    MCAPI void $removePacksLoadedFromWorld();
 
-    MCNAPI ::Core::PathBuffer<::std::string> const $getResourcePacksPath() const;
+    MCAPI ::Core::PathBuffer<::std::string> const $getResourcePacksPath() const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> const $getBehaviorPacksPath() const;
+    MCAPI ::Core::PathBuffer<::std::string> const $getBehaviorPacksPath() const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> const $getSkinPacksPath() const;
+    MCAPI ::Core::PathBuffer<::std::string> const $getSkinPacksPath() const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> const $getDevelopmentResourcePacksPath() const;
+    MCAPI ::Core::PathBuffer<::std::string> const $getDevelopmentResourcePacksPath() const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> const $getDevelopmentBehaviorPacksPath() const;
+    MCAPI ::Core::PathBuffer<::std::string> const $getDevelopmentBehaviorPacksPath() const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> const $getDevelopmentSkinPacksPath() const;
+    MCAPI ::Core::PathBuffer<::std::string> const $getDevelopmentSkinPacksPath() const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> const $getTreatmentPacksPath() const;
+    MCAPI ::Core::PathBuffer<::std::string> const $getTreatmentPacksPath() const;
 
-    MCNAPI void $refreshPacks();
+    MCAPI void $refreshPacks();
 
-    MCNAPI void $requestReloadUserPacks();
+    MCAPI void $requestReloadUserPacks();
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> $getKeyProvider() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> $getKeyProvider() const;
 
-    MCNAPI ::PackManifestFactory& $getPackManifestFactory();
+    MCAPI ::PackManifestFactory& $getPackManifestFactory();
 
-    MCNAPI ::PackSettingsFactory& $getPackSettingsFactory() const;
+    MCFOLD ::PackSettingsFactory& $getPackSettingsFactory() const;
 
-    MCNAPI ::PackSourceFactory& $getPackSourceFactory();
+    MCFOLD ::PackSourceFactory& $getPackSourceFactory();
 
-    MCNAPI ::CompositePackSource const* $getWorldPackSource() const;
+    MCFOLD ::CompositePackSource const* $getWorldPackSource() const;
 
-    MCNAPI ::std::vector<::ResourcePack*> $getPacksByResourceLocation(::PackOrigin type) const;
+    MCAPI ::std::vector<::ResourcePack*> $getPacksByResourceLocation(::PackOrigin type) const;
 
-    MCNAPI ::std::vector<::ResourcePack*> $getPacksByType(::PackType type) const;
+    MCAPI ::std::vector<::ResourcePack*> $getPacksByType(::PackType type) const;
 
-    MCNAPI ::std::vector<::ResourcePack*> $getPacksByCategory(::PackCategory category) const;
+    MCAPI ::std::vector<::ResourcePack*> $getPacksByCategory(::PackCategory category) const;
 
-    MCNAPI void $addInvalidPack(::ResourceLocation const& packLocation, ::PackType type);
+    MCAPI void $addInvalidPack(::ResourceLocation const& packLocation, ::PackType type);
 
-    MCNAPI ::std::vector<::ResourceLocation> const& $getInvalidPacks(::PackType type) const;
+    MCAPI ::std::vector<::ResourceLocation> const& $getInvalidPacks(::PackType type) const;
 
-    MCNAPI ::std::vector<::ResourceLocation> $getInvalidPacks(::InvalidPacksFilterGroup const& packTypes) const;
+    MCAPI ::std::vector<::ResourceLocation> $getInvalidPacks(::InvalidPacksFilterGroup const& packTypes) const;
 
-    MCNAPI void $deletePack(::ResourceLocation const& packLocation);
+    MCAPI void $deletePack(::ResourceLocation const& packLocation);
 
-    MCNAPI void $deletePackFiles(::ResourceLocation const& packLocation);
+    MCAPI void $deletePackFiles(::ResourceLocation const& packLocation);
 
-    MCNAPI void $postDeletePack(::ResourceLocation const& packLocation);
+    MCAPI void $postDeletePack(::ResourceLocation const& packLocation);
 
-    MCNAPI void $untrackInvalidPack(::ResourceLocation const& packLocation);
+    MCAPI void $untrackInvalidPack(::ResourceLocation const& packLocation);
 
-    MCNAPI void $registerResourcePackRemovedCallback(void* ptr, ::std::function<void(::ResourcePack*)> callback);
+    MCAPI void $registerResourcePackRemovedCallback(void* ptr, ::std::function<void(::ResourcePack*)> callback);
 
-    MCNAPI void $unregisterResourcePackRemovedCallback(void* ptr);
+    MCAPI void $unregisterResourcePackRemovedCallback(void* ptr);
 
-    MCNAPI bool $isInitialized();
+    MCAPI bool $isInitialized();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

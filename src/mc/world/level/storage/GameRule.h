@@ -77,49 +77,49 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI GameRule(::GameRule const&);
+    MCAPI GameRule(::GameRule const&);
 
-    MCNAPI GameRule(::GameRule&&);
+    MCAPI GameRule(::GameRule&&);
 
-    MCNAPI GameRule(::std::string const& name, bool canBeModifiedByPlayer);
+    MCAPI GameRule(::std::string const& name, bool canBeModifiedByPlayer);
 
-    MCNAPI ::GameRule& _setDefaultValue(bool b);
+    MCAPI ::GameRule& _setDefaultValue(bool b);
 
-    MCNAPI ::GameRule& _setDefaultValue(int i);
+    MCAPI ::GameRule& _setDefaultValue(int i);
 
-    MCNAPI ::std::string getLowercaseName() const;
+    MCAPI ::std::string getLowercaseName() const;
 
-    MCNAPI ::GameRule& operator=(::GameRule&&);
+    MCAPI ::GameRule& operator=(::GameRule&&);
 
-    MCNAPI ::GameRule& operator=(::GameRule const&);
+    MCAPI ::GameRule& operator=(::GameRule const&);
 
-    MCNAPI bool setBool(bool value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
+    MCAPI bool setBool(bool value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
 
-    MCNAPI bool setFloat(float value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
+    MCAPI bool setFloat(float value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
 
-    MCNAPI bool setInt(int value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
+    MCAPI bool setInt(int value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
 
-    MCNAPI ::GameRule& setTagDataNotFoundCallback(::std::function<void(::GameRule&, ::BaseGameVersion const&)> cb);
+    MCAPI ::GameRule& setTagDataNotFoundCallback(::std::function<void(::GameRule&, ::BaseGameVersion const&)> cb);
 
-    MCNAPI ::GameRule&
+    MCAPI ::GameRule&
     setValidateValueCallback(::std::function<bool(::GameRule::Value const&, ::GameRule::ValidationError*)> cb);
 
-    MCNAPI ~GameRule();
+    MCAPI ~GameRule();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::GameRule const&);
+    MCAPI void* $ctor(::GameRule const&);
 
-    MCNAPI void* $ctor(::GameRule&&);
+    MCAPI void* $ctor(::GameRule&&);
 
-    MCNAPI void* $ctor(::std::string const& name, bool canBeModifiedByPlayer);
+    MCAPI void* $ctor(::std::string const& name, bool canBeModifiedByPlayer);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

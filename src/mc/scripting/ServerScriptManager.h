@@ -135,7 +135,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ServerScriptManager(
+    MCAPI ServerScriptManager(
         ::ScriptSettings&&                      settings,
         ::ServerLevel&                          serverLevel,
         ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler,
@@ -146,27 +146,27 @@ public:
         ::Scripting::RegistryManager&           registry
     );
 
-    MCNAPI void _initModules(::ServerInstance& server, ::ServerLevel& serverLevel);
+    MCAPI void _initModules(::ServerInstance& server, ::ServerLevel& serverLevel);
 
-    MCNAPI void _loadPlugins(::ServerLevel& serverLevel, bool fromReload);
+    MCAPI void _loadPlugins(::ServerLevel& serverLevel, bool fromReload);
 
-    MCNAPI void _onPreReload(
+    MCAPI void _onPreReload(
         ::ServerInstance&                   serverInstance,
         ::ServerLevel&                      level,
         ::optional_ref<::MinecraftGameTest> optionalGameTest
     );
 
-    MCNAPI void _runPlugins(::PluginExecutionGroup exeGroup, ::ServerInstance& serverInstance);
+    MCAPI void _runPlugins(::PluginExecutionGroup exeGroup, ::ServerInstance& serverInstance);
 
-    MCNAPI void _sendScriptModuleStartupEvent(::ServerLevel& level) const;
+    MCAPI void _sendScriptModuleStartupEvent(::ServerLevel& level) const;
 
-    MCNAPI void _sendWorldInitializeEvent(::ServerLevel& level) const;
+    MCAPI void _sendWorldInitializeEvent(::ServerLevel& level) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _sendWorldInitializeEventImpl(
+    MCAPI static void _sendWorldInitializeEventImpl(
         ::ServerLevel&                                                level,
         ::ScriptModuleMinecraft::IScriptItemCustomComponentRegistry&  itemCustomComponentRegistry,
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry& blockCustomComponentRegistry,
@@ -178,7 +178,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ScriptSettings&&                      settings,
         ::ServerLevel&                          serverLevel,
         ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler,
@@ -193,26 +193,26 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult $onEvent(::ServerInstanceRequestResourceReload const& reloadEvent);
+    MCAPI ::EventResult $onEvent(::ServerInstanceRequestResourceReload const& reloadEvent);
 
-    MCNAPI ::EventResult $onEvent(::LevelStartLeaveGameEvent const& levelStartLeaveGameEvent);
+    MCAPI ::EventResult $onEvent(::LevelStartLeaveGameEvent const& levelStartLeaveGameEvent);
 
-    MCNAPI ::EventResult $onServerUpdateEnd(::ServerInstance& instance);
+    MCAPI ::EventResult $onServerUpdateEnd(::ServerInstance& instance);
 
-    MCNAPI ::EventResult $onServerThreadStarted(::ServerInstance& instance);
+    MCAPI ::EventResult $onServerThreadStarted(::ServerInstance& instance);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForEventListenerDispatcherLevelEventListener();
+    MCAPI static void** $vftableForEventListenerDispatcherLevelEventListener();
 
-    MCNAPI static void** $vftableForEventListenerDispatcherServerInstanceEventListener();
+    MCAPI static void** $vftableForEventListenerDispatcherServerInstanceEventListener();
     // NOLINTEND
 };

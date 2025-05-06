@@ -128,10 +128,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI int
+    MCAPI int
     _handlePopulationCap(::MobSpawnerData const* mobType, ::SpawnConditions const& conditions, int inSpawnCount);
 
-    MCNAPI void _postProcessSpawnMobs(
+    MCAPI void _postProcessSpawnMobs(
         ::BlockSource&                                                      region,
         int                                                                 xo,
         int                                                                 zo,
@@ -141,11 +141,11 @@ public:
         ::std::function<bool(::BlockSource const&, ::BlockPos)> const&      isInsideAncientCity
     );
 
-    MCNAPI void _sendHerdEvents(::MobSpawnHerdInfo const& herdInfo, ::std::vector<::Mob*>& spawnGroup) const;
+    MCAPI void _sendHerdEvents(::MobSpawnHerdInfo const& herdInfo, ::std::vector<::Mob*>& spawnGroup) const;
 
-    MCNAPI void _spawnMobCluster(::BlockSource& region, ::BlockPos const& pos, ::SpawnConditions& conditions);
+    MCAPI void _spawnMobCluster(::BlockSource& region, ::BlockPos const& pos, ::SpawnConditions& conditions);
 
-    MCNAPI void _spawnMobInCluster(
+    MCAPI void _spawnMobInCluster(
         ::BlockSource&                     region,
         ::ActorDefinitionIdentifier const& id,
         ::BlockPos const&                  pos,
@@ -153,15 +153,15 @@ public:
         ::std::vector<::Mob*>&             spawnGroup
     );
 
-    MCNAPI void _updateBaseTypeCount(::BlockSource& region, ::ChunkPos const& center);
+    MCAPI void _updateBaseTypeCount(::BlockSource& region, ::ChunkPos const& center);
 
-    MCNAPI void _updateGroupPersistence(::MobSpawnRules const& spawnRules, ::std::vector<::Mob*> const& spawnGroup);
+    MCAPI void _updateGroupPersistence(::MobSpawnRules const& spawnRules, ::std::vector<::Mob*> const& spawnGroup);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _isInsideAncientCity(::BlockSource const& region, ::BlockPos pos);
+    MCAPI static bool _isInsideAncientCity(::BlockSource const& region, ::BlockPos pos);
     // NOLINTEND
 
 public:
@@ -179,35 +179,35 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeServerSide(::ResourcePackManager& rpm, ::IWorldRegistriesProvider& registries);
+    MCAPI void $initializeServerSide(::ResourcePackManager& rpm, ::IWorldRegistriesProvider& registries);
 
-    MCNAPI ::SpawnSettings const& $getSpawnSettings() const;
+    MCFOLD ::SpawnSettings const& $getSpawnSettings() const;
 
-    MCNAPI void $setSpawnSettings(::SpawnSettings const& spawnSettings);
+    MCAPI void $setSpawnSettings(::SpawnSettings const& spawnSettings);
 
-    MCNAPI ::ActorSpawnRuleGroup const* $getSpawnRules() const;
+    MCFOLD ::ActorSpawnRuleGroup const* $getSpawnRules() const;
 
-    MCNAPI ::ActorSpawnRuleGroup* $getSpawnRulesMutable() const;
+    MCFOLD ::ActorSpawnRuleGroup* $getSpawnRulesMutable() const;
 
-    MCNAPI ::SpawnGroupRegistry const* $getSpawnGroupRegistry() const;
+    MCFOLD ::SpawnGroupRegistry const* $getSpawnGroupRegistry() const;
 
-    MCNAPI ::br::spawn::EntityTypeCache* $getEntityTypeCache() const;
+    MCFOLD ::br::spawn::EntityTypeCache* $getEntityTypeCache() const;
 
-    MCNAPI ::ItemActor*
+    MCAPI ::ItemActor*
     $spawnItem(::BlockSource& region, ::ItemStack const& inst, ::Actor* spawner, ::Vec3 const& pos, int throwTime);
 
-    MCNAPI void $postProcessSpawnMobs(::BlockSource& region, int xo, int zo, ::Random& random);
+    MCAPI void $postProcessSpawnMobs(::BlockSource& region, int xo, int zo, ::Random& random);
 
-    MCNAPI void
+    MCAPI void
     $tick(::BlockSource& region, ::LevelChunkVolumeData const& levelChunkVolumeData, ::ChunkPos const chunkPos);
 
-    MCNAPI void $tickMobCount();
+    MCAPI void $tickMobCount();
 
-    MCNAPI void $incrementSpawnableTickedMob();
+    MCAPI void $incrementSpawnableTickedMob();
 
-    MCNAPI uint $getSpawnableTickedMobCountPrevious() const;
+    MCAPI uint $getSpawnableTickedMobCountPrevious() const;
 
-    MCNAPI ::std::unordered_set<::ActorUniqueID> $spawnMobGroup(
+    MCAPI ::std::unordered_set<::ActorUniqueID> $spawnMobGroup(
         ::BlockSource&                  region,
         ::std::string const&            spawnGroupId,
         ::Vec3 const&                   pos,
@@ -216,12 +216,12 @@ public:
         ::std::function<void(::Mob&)>&& spawnedCallback
     );
 
-    MCNAPI ::br::spawn::SpawnPlacements& $getSpawnPlacements();
+    MCFOLD ::br::spawn::SpawnPlacements& $getSpawnPlacements();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

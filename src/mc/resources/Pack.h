@@ -48,26 +48,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Pack(
+    MCAPI Pack(
         ::std::unique_ptr<::PackManifest>          manifest,
         ::std::unique_ptr<::PackAccessStrategy>    accessStrategy,
         ::std::unique_ptr<::SubpackInfoCollection> subpacks,
         ::std::unique_ptr<::PackMetadata>          metadata
     );
 
-    MCNAPI void _loadLocalizationFiles();
+    MCAPI void _loadLocalizationFiles();
 
-    MCNAPI void move(::Pack&& pack);
+    MCAPI void move(::Pack&& pack);
 
-    MCNAPI void notifyUpdated();
+    MCAPI void notifyUpdated();
 
-    MCNAPI void upgradeLegacyDependencies(::std::unique_ptr<::LegacyDependenciesUpgrade const> upgrade);
+    MCAPI void upgradeLegacyDependencies(::std::unique_ptr<::LegacyDependenciesUpgrade const> upgrade);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::Pack> createPack(
+    MCAPI static ::std::unique_ptr<::Pack> createPack(
         ::IPackIOProvider const&                                io,
         ::ResourceLocation const&                               fileLocation,
         ::PackType                                              type,
@@ -78,7 +78,7 @@ public:
         ::Core::Path const&                                     zipSubDir
     );
 
-    MCNAPI static ::std::unique_ptr<::PackMetadata> createPackMetadata(
+    MCAPI static ::std::unique_ptr<::PackMetadata> createPackMetadata(
         ::PackType                  type,
         ::PackManifest&             manifest,
         ::PackAccessStrategy const& accessStrategy,
@@ -95,7 +95,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::unique_ptr<::PackManifest>          manifest,
         ::std::unique_ptr<::PackAccessStrategy>    accessStrategy,
         ::std::unique_ptr<::SubpackInfoCollection> subpacks,
@@ -106,12 +106,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
