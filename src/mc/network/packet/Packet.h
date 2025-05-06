@@ -33,7 +33,7 @@ public:
     )
     : mPriority(priority),
       mReliability(reliability),
-      mClientSubId(clientSubId),
+      mSenderSubId(clientSubId),
       mCompressible(compress ? Compressibility::Compressible : Compressibility::Incompressible) {}
 
     /**

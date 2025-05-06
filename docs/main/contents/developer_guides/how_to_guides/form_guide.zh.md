@@ -20,14 +20,14 @@ void test() { uint formId = ll::form::FormIdManager::genFormId(); }
 
 SimpleForm是一个简单的表单，提供了标题、内容和按钮。   
 SimpleForm的头文件位于`ll/api/form/SimpleForm.h`。  
-此外，由于SimpleForm的方法例如`addButton`返回SimpleForm的引用，所以可以链式调用。
+此外，由于SimpleForm的方法例如`appendButton`返回SimpleForm的引用，所以可以链式调用。
 
 ### 用法
 
 1. 引用头文件`ll/api/form/SimpleForm.h`
 2. 构造一个SimpleForm对象，可以使用带参数和不带参数的构造函数，使用带参数的构造函数需要传入标题和内容，使用不带参数的构造函数需要手动调用
    `setTitle`和`setContent`方法来设置标题和内容
-3. 通过`appendButton`方法添加按钮
+3. 通过`appendButton`方法添加按钮，通过`appendHeader`、`appendLabel`和`appendDivider`方法添加仅视觉效果元素。
 4. 使用`sendTo`方法将表单发送给玩家，需要传入`Player`对象的引用和一个回调函数，回调函数的参数为`Player`
    对象的引用、玩家选择的按钮索引和取消原因的枚举。具体参数可以参考头文件`ll/api/form/SimpleForm.h`中`Callback`的声明。
 
@@ -47,9 +47,13 @@ void sendSimpleFormToPlayer(Player& player) {
     // Or
     //    ll::form::SimpleForm form;
     //    form.setTitle("I'm title").setContent("I'm content");
-    form.addButton("Button1").addButton("Button2").sendTo(
-        player,
-        [](Player& player, int selected, FormCancelReason reason) {
+    form.appendHeader("header")
+        .appendButton("Button1")
+        .appendDivider()
+        .appendHeader("header")
+        .appendLabel("label")
+        .appendButton("Button2")
+        .sendTo(player, [](Player& player, int selected, ll::form::FormCancelReason reason) {
             switch (selected) {
             case 0: {
                 player.sendMessage("You clicked Button1");
@@ -61,14 +65,13 @@ void sendSimpleFormToPlayer(Player& player) {
             }
             case -1: {
                 player.sendMessage("You closed the form");
-                if (reason) {
-                    player.sendMessage("Reason: " + magic_enum::enum_name(reason));
-                }
+                player.sendMessage(
+                    reason.transform(magic_enum::enum_name<ModalFormCancelReason>).value_or("Unknown Reason")
+                );
                 break;
             }
             }
-        }
-    );
+        });
 }
 ```
 
@@ -82,7 +85,7 @@ CustomForm是一个复杂的表单，提供了标题、标签(Label)、输入框
 1. 引用头文件`ll/api/form/CustomForm.h`
 2. 构造一个CustomForm对象，可以使用带参数和不带参数的构造函数，使用带参数的构造函数需要传入标题，使用不带参数的构造函数需要手动调用
    `setTitle`方法来设置标题
-3. 通过`appendLabel`、`appendInput`、`appendToggle`、`appendDropdown`、`appendSlider`和`appendStepSlider`方法添加各种元素。
+3. 通过`appendInput`、`appendToggle`、`appendDropdown`、`appendSlider`和`appendStepSlider`方法添加各种自定义表单元素，通过`appendHeader`、`appendLabel`、`appendDivider`方法添加各种仅视觉效果元素
 4. 使用`sendTo`方法将表单发送给玩家，需要传入`Player`对象的引用和一个回调函数，回调函数的参数为`Player`
    对象的引用、表单的结果和取消原因的枚举。具体参数可以参考头文件`ll/api/form/CustomForm.h`中`Callback`的声明。
 
@@ -102,31 +105,43 @@ void sendCustomFormToPlayer(Player& player) {
     ll::form::CustomForm     form;
     std::vector<std::string> names;
     form.setTitle("CustomForm")
+        .appendHeader("header")
         .appendLabel("label")
         .appendInput("input1", "input")
         .appendToggle("toggle", "toggle")
         .appendSlider("slider", "slider", 0, 100, 1)
+        .appendDivider()
         .appendStepSlider("stepSlider", "stepSlider", {"a", "b", "c"})
         .appendDropdown("dropdown", "dropdown", {"a", "b", "c"})
+        .appendLabel("label")
         .appendDropdown("emptydropdown", "empty dropdown", names)
-        .sendTo(player, [](Player& player, ll::form::CustomFormResult const& data, ll::form::FormCancelReason reason) {
-            if (!data) {
-                player.sendMessage("CustomForm callback canceled");
-                if (reason) {
-                    player.sendMessage("Reason: " + magic_enum::enum_name(reason));
+        .setSubmitButton("Apply")
+        .sendTo(
+            player,
+            [](Player& player, ll::form::CustomFormResult const& data, ll::form::FormCancelReason reason) {
+                if (!data) {
+                    player.sendMessage("CustomForm callback canceled");
+                    player.sendMessage(reason.transform(magic_enum::enum_name<ModalFormCancelReason>)
+                                            .value_or("Unknown Reason"));
+                    return;
                 }
-                return;
-            }
-            for (auto [name, result] : *data) {
-                if (std::holds_alternative<uint64_t>(result)) {
-                    player.sendMessage(fmt::format("CustomForm callback {} = {}", name, std::get<uint64_t>(result)));
-                } else if (std::holds_alternative<double>(result)) {
-                    player.sendMessage(fmt::format("CustomForm callback {} = {}", name, std::get<double>(result)));
-                } else if (std::holds_alternative<std::string>(result)) {
-                    player.sendMessage(fmt::format("CustomForm callback {} = {}", name, std::get<std::string>(result)));
+                for (auto [name, result] : *data) {
+                    if (std::holds_alternative<uint64_t>(result)) {
+                        player.sendMessage(
+                            fmt::format("CustomForm callback {} = {}", name, std::get<uint64_t>(result))
+                        );
+                    } else if (std::holds_alternative<double>(result)) {
+                        player.sendMessage(
+                            fmt::format("CustomForm callback {} = {}", name, std::get<double>(result))
+                        );
+                    } else if (std::holds_alternative<std::string>(result)) {
+                        player.sendMessage(
+                            fmt::format("CustomForm callback {} = {}", name, std::get<std::string>(result))
+                        );
+                    }
                 }
             }
-        });
+        );
 }
 ```
 
@@ -157,15 +172,17 @@ void sendModalFormToPlayer(Player& player) {
     form.setTitle("ModalForm")
         .setUpperButton("Upper")
         .setLowerButton("Lower")
-        .sendTo(player, [](Player& player, ll::form::ModalFormResult selected, ll::form::FormCancelReason reason) {
-            if (!selected) {
-                player.sendMessage("ModalForm callback canceled");
-                if (reason) {
-                    player.sendMessage(fmt::format("ModalForm callback reason {}", magic_enum::enum_name(reason)));
+        .sendTo(
+            player,
+            [](Player& player, ll::form::ModalFormResult selected, ll::form::FormCancelReason reason) {
+                if (!selected) {
+                    player.sendMessage("ModalForm callback canceled");
+                    player.sendMessage(reason.transform(magic_enum::enum_name<ModalFormCancelReason>)
+                                            .value_or("Unknown Reason"));
+                    return;
                 }
-                return;
+                player.sendMessage(fmt::format("ModalForm callback {}", (bool)selected));
             }
-            player.sendMessage(fmt::format("ModalForm callback {}", (bool)selected));
-        });
+        );
 }
 ```

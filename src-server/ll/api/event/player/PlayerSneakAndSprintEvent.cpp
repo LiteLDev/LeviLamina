@@ -20,17 +20,17 @@ LL_TYPE_INSTANCE_HOOK(
     auto handle = thisFor<NetEventCallback>();
     switch (packet.mAction) {
     case PlayerActionType::StartSprinting:
-        if (auto player = handle->_getServerPlayer(id, packet.mClientSubId); player) {
+        if (auto player = handle->_getServerPlayer(id, packet.mSenderSubId); player) {
             EventBus::getInstance().publish(PlayerSprintingEvent(*player));
             break;
         }
     case PlayerActionType::StopSprinting:
-        if (auto player = handle->_getServerPlayer(id, packet.mClientSubId); player) {
+        if (auto player = handle->_getServerPlayer(id, packet.mSenderSubId); player) {
             EventBus::getInstance().publish(PlayerSprintedEvent(*player));
             break;
         }
     case PlayerActionType::StartSneaking:
-        if (auto player = handle->_getServerPlayer(id, packet.mClientSubId); player) {
+        if (auto player = handle->_getServerPlayer(id, packet.mSenderSubId); player) {
             auto ev = PlayerSneakingEvent(*player);
             EventBus::getInstance().publish(ev);
             if (ev.isCancelled()) {
@@ -39,7 +39,7 @@ LL_TYPE_INSTANCE_HOOK(
             break;
         }
     case PlayerActionType::StopSneaking:
-        if (auto player = handle->_getServerPlayer(id, packet.mClientSubId); player) {
+        if (auto player = handle->_getServerPlayer(id, packet.mSenderSubId); player) {
             auto ev = PlayerSneakedEvent(*player);
             EventBus::getInstance().publish(ev);
             if (ev.isCancelled()) {

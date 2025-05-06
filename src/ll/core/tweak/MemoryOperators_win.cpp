@@ -55,7 +55,7 @@ public:
     virtual void alignedRelease(void* ptr) try { mi_free(ptr); } catch (...) {
     }
 
-    virtual uint64 getUsableSize(void* ptr) try { return mi_usable_size(ptr); } catch (...) {
+    virtual uint64 getUsableSize(void* ptr, bool) try { return mi_usable_size(ptr); } catch (...) {
         return 0ull;
     }
 

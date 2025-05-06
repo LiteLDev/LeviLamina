@@ -1,4 +1,5 @@
 #include "ll/core/form/FormHandler.h"
+#include "CustomFormElement.h"
 #include "ll/api/base/StdInt.h"
 #include "ll/api/form/CustomForm.h"
 #include "ll/api/form/FormIdManager.h"
@@ -12,8 +13,6 @@
 #include "mc/network/PacketHandlerDispatcherInstance.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/network/packet/ModalFormResponsePacket.h"
-#include "mc/scripting/ServerScriptManager.h"
-#include "mc/server/ServerInstance.h"
 #include "mc/server/ServerPlayer.h"
 
 #include "nlohmann/json.hpp"
@@ -101,9 +100,6 @@ void CustomFormHandler::handle(
     for (size_t i = 0; i < mFormElements.size(); ++i) {
         auto& element = mFormElements[i];
         auto& value   = dataJson[i];
-        if (element->getType() == CustomFormElement::Type::Label) {
-            continue;
-        }
         result->emplace(element->mName, element->parseResult(value));
     }
 
@@ -158,7 +154,7 @@ LL_TYPE_INSTANCE_HOOK(
     std::shared_ptr<Packet>& packet
 ) {
     auto handle = static_cast<ServerNetworkHandler*>(&callback);
-    if (auto player = handle->_getServerPlayer(source, packet->mClientSubId); player) {
+    if (auto player = handle->_getServerPlayer(source, packet->mSenderSubId); player) {
         auto& modalPacket = (ModalFormResponsePacket&)*packet;
         if (ll::form::handler::handleFormPacket(
                 *player,
