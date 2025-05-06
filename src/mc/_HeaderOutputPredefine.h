@@ -13,7 +13,7 @@
 #define MCAPI  LL_SHARED_IMPORT
 #define MCTAPI template<> MCAPI
 #define MCFOLD MCAPI /*Identical COMDAT Folding*/
-#define MCNAPI [[deprecated("This API is not available. Open an issue if you need it."\
+#define MCNAPI [[deprecated("This API is not available. Open an issue if you need it. "\
                             "https://github.com/LiteLDev/mcapi-requests/issues/new")]] MCAPI
 
 #include <algorithm>          // STL general algorithms
