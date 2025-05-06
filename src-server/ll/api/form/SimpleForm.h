@@ -25,6 +25,12 @@ public:
 
     LLAPI SimpleForm& setContent(std::string const& content);
 
+    LLAPI SimpleForm& appendHeader(std::string const& text);
+    
+    LLAPI SimpleForm& appendLabel(std::string const& text);
+
+    LLAPI SimpleForm& appendDivider();
+
     /**
      * @brief  Append a button to the form
      * @param  text      The text of the button

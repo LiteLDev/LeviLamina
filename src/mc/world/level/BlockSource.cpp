@@ -65,5 +65,4 @@ optional_ref<Actor> BlockSource::spawnActor(CompoundTag const& nbt) {
     level.addEntity(*this, std::move(actorOwnerPtr));
     actor->refresh();
     return actor;
-    return std::nullopt;
 }
