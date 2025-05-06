@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 struct MolangActorPtr {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk2b49a1;
+    ::ll::TypedStorage<8, 8, ::Actor*> mActor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MolangActorPtr& operator=(MolangActorPtr const&);
-    MolangActorPtr(MolangActorPtr const&);
-    MolangActorPtr();
 };

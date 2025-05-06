@@ -2,24 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ExpressionNode;
-class HashedString;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+#include "mc/util/ExpressionNode.h"
 
 struct NamedMolangScript {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48>  mUnke67d89;
-    ::ll::UntypedStorage<8, 216> mUnkc8da3a;
+    ::ll::TypedStorage<8, 48, ::HashedString>    mName;
+    ::ll::TypedStorage<8, 216, ::ExpressionNode> mScript;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     NamedMolangScript& operator=(NamedMolangScript const&);
-    NamedMolangScript();
 
 public:
     // member functions

@@ -6,12 +6,6 @@ struct MolangMatrix {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 64> mUnk3865c0;
+    ::ll::TypedStorage<4, 64, float[4][4]> mMatrix;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MolangMatrix& operator=(MolangMatrix const&);
-    MolangMatrix(MolangMatrix const&);
-    MolangMatrix();
 };

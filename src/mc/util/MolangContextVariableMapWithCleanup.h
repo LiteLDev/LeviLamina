@@ -2,18 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct MolangEvalParams;
+// clang-format on
+
 struct MolangContextVariableMapWithCleanup {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnka53d0c;
+    ::ll::TypedStorage<8, 8, ::MolangEvalParams&> mEvalParams;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MolangContextVariableMapWithCleanup& operator=(MolangContextVariableMapWithCleanup const&);
-    MolangContextVariableMapWithCleanup(MolangContextVariableMapWithCleanup const&);
-    MolangContextVariableMapWithCleanup();
 
 public:
     // member functions

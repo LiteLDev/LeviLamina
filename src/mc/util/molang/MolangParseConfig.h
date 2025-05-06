@@ -2,31 +2,34 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/molang/MolangVersion.h"
+#include "mc/platform/brstd/bitset.h"
+
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
+
 struct MolangParseConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2>  mUnk78716a;
-    ::ll::UntypedStorage<8, 16> mUnkb34600;
-    ::ll::UntypedStorage<8, 16> mUnk66f964;
-    ::ll::UntypedStorage<8, 24> mUnkcd662b;
+    ::ll::TypedStorage<2, 2, ::MolangVersion>                    mVersion;
+    ::ll::TypedStorage<8, 16, ::gsl::span<::HashedString const>> mAllowedQuerySets;
+    ::ll::TypedStorage<8, 16, ::brstd::bitset<77, uint64>>       mAllowedOperations;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>      mAllowedSpecificQueries;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MolangParseConfig& operator=(MolangParseConfig const&);
-    MolangParseConfig(MolangParseConfig const&);
-    MolangParseConfig();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~MolangParseConfig();
+    MCAPI ~MolangParseConfig();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

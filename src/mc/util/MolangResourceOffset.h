@@ -6,12 +6,6 @@ struct MolangResourceOffset {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk31cb21;
+    ::ll::TypedStorage<4, 4, uint> mOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MolangResourceOffset& operator=(MolangResourceOffset const&);
-    MolangResourceOffset(MolangResourceOffset const&);
-    MolangResourceOffset();
 };
