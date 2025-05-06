@@ -88,15 +88,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RenderParams();
+    MCAPI RenderParams();
 
-    MCNAPI RenderParams(::RenderParams&&);
+    MCAPI RenderParams(::RenderParams&&);
 
-    MCNAPI RenderParams(::RenderParams const&);
+    MCAPI RenderParams(::RenderParams const&);
 
-    MCNAPI ::Actor* getActorTarget(::SharedTypes::Legacy::FilterSubject subject) const;
+    MCAPI ::Actor* getActorTarget(::SharedTypes::Legacy::FilterSubject subject) const;
 
-    MCNAPI ::RenderParams& init(
+    MCAPI ::RenderParams& init(
         ::BaseActorRenderContext*            actor,
         ::Actor*                             animationComponent,
         ::AnimationComponent*                variableMap,
@@ -106,26 +106,26 @@ public:
         float                                frameAlpha
     );
 
-    MCNAPI ::RenderParams& operator=(::RenderParams const&);
+    MCAPI ::RenderParams& operator=(::RenderParams const&);
 
-    MCNAPI ::RenderParams& operator=(::RenderParams&&);
+    MCAPI ::RenderParams& operator=(::RenderParams&&);
 
-    MCNAPI ~RenderParams();
+    MCAPI ~RenderParams();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::RenderParams&&);
+    MCAPI void* $ctor(::RenderParams&&);
 
-    MCNAPI void* $ctor(::RenderParams const&);
+    MCAPI void* $ctor(::RenderParams const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

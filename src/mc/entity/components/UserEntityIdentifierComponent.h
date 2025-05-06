@@ -27,14 +27,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::UserEntityIdentifierComponent& operator=(::UserEntityIdentifierComponent&&);
+    MCAPI ::UserEntityIdentifierComponent& operator=(::UserEntityIdentifierComponent&&);
 
-    MCNAPI ~UserEntityIdentifierComponent();
+    MCAPI ~UserEntityIdentifierComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
