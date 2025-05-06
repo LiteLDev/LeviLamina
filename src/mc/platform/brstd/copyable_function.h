@@ -1,6 +1,6 @@
 #pragma once
 
-#include "mc/platform/brstd/detail/function.h"
+#include "mc/platform/brstd/detail/function_invoke.h"
 
 namespace brstd {
 
