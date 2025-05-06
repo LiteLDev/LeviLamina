@@ -13,28 +13,8 @@ class EntityContext;
 
 class WeakEntityRef : public ::WeakRef<::EntityContext> {
 public:
+    using Base = ::WeakRef<::EntityContext>;
+    using Base::Base;
     WeakEntityRef(::WeakEntityRef&&)      = default;
     WeakEntityRef(::WeakEntityRef const&) = default;
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit WeakEntityRef(::WeakRef<::EntityContext> entityRef);
-
-    MCNAPI ::WeakEntityRef& operator=(::WeakEntityRef&&);
-
-    MCNAPI ~WeakEntityRef();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::WeakRef<::EntityContext> entityRef);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
