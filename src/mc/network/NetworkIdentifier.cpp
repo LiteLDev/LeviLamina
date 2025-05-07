@@ -14,6 +14,9 @@ std::string NetworkIdentifier::getIPAndPort() const {
                     std::ranges::views::split(ipAndPort, '|')
                     | std::views::transform([](auto&& part) { return std::string_view{part.begin(), part.end()}; })
                     | std::views::take(2) | std::ranges::to<std::vector>();
+                if (result.size() != 2) {
+                    return std::nullopt;
+                }
                 auto& ip   = result[0];
                 auto& port = result[1];
                 if (ip.find(':') != std::string::npos) {

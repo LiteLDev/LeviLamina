@@ -1,4 +1,5 @@
 #include "mc/world/level/levelgen/structure/StructureTemplate.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/structure/StructureTemplateData.h"
 
 #include "mc/server/ServerLevel.h"
@@ -19,11 +20,12 @@ void StructureTemplate::placeInWorld(
     bool            ignoreEntities
 ) const {
     StructureSettings setting;
-    setting.mIgnoreBlocks   = ignoreBlocks;
-    setting.mIgnoreEntities = ignoreEntities;
-    *setting.mStructureSize = *mStructureTemplateData->mSize;
-    setting.mMirror         = mirror;
-    setting.mRotation       = rotation;
+    setting.mIgnoreBlocks     = ignoreBlocks;
+    setting.mIgnoreEntities   = ignoreEntities;
+    *setting.mStructureSize   = *mStructureTemplateData->mSize;
+    *setting.mStructureOffset = BlockPos{0, 0, 0};
+    setting.mMirror           = mirror;
+    setting.mRotation         = rotation;
     placeInWorld(blockSource, blockSource.getLevel().getBlockPalette(), minCorner, setting, nullptr, true);
 }
 
@@ -50,9 +52,10 @@ std::unique_ptr<StructureTemplate> StructureTemplate::create(
 ) {
     auto res = std::make_unique<StructureTemplate>(name, blockSource.getLevel().getUnknownBlockTypeRegistry());
     StructureSettings setting;
-    setting.mIgnoreBlocks   = ignoreBlocks;
-    setting.mIgnoreEntities = ignoreEntities;
-    *setting.mStructureSize = boundingBox.getSideLength();
+    setting.mIgnoreBlocks     = ignoreBlocks;
+    setting.mIgnoreEntities   = ignoreEntities;
+    *setting.mStructureSize   = boundingBox.getSideLength();
+    *setting.mStructureOffset = BlockPos{0, 0, 0};
     res->fillFromWorld(blockSource, boundingBox.min, setting);
     return res;
 }
