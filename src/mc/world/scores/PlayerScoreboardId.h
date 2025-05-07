@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/legacy/ActorUniqueID.h"
+#include <cstddef>
 
 struct PlayerScoreboardId {
 public:
@@ -22,6 +24,8 @@ public:
 namespace std {
 template <>
 struct hash<PlayerScoreboardId> {
-    int64 operator()(PlayerScoreboardId const& d) const noexcept { return d.mActorUniqueId; }
+    size_t operator()(PlayerScoreboardId const& d) const noexcept {
+        return hash<ActorUniqueID>()(ActorUniqueID{d.mActorUniqueId});
+    }
 };
 } // namespace std
