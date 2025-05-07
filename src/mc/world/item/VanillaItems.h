@@ -17,16 +17,16 @@ class VanillaItems {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void registerHardCodedItemTags(::ItemRegistryRef itemRegistry);
+    MCAPI static void registerHardCodedItemTags(::ItemRegistryRef itemRegistry);
 
-    MCNAPI static void registerItems(
+    MCAPI static void registerItems(
         ::cereal::ReflectionCtx& ctx,
         ::ItemRegistryRef        itemRegistry,
         ::BaseGameVersion const& baseGameVersion,
         ::Experiments const&     experiments
     );
 
-    MCNAPI static void serverInitCreativeItemsCallback(
+    MCAPI static void serverInitCreativeItemsCallback(
         ::ItemRegistryRef              itemRegistry,
         ::BlockDefinitionGroup const&  blockDefinitionGroup,
         ::CreativeItemRegistry*        creativeItemRegistry,

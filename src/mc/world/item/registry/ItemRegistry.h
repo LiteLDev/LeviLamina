@@ -208,29 +208,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ItemRegistry();
+    MCAPI ItemRegistry();
 
-    MCNAPI void
+    MCAPI void
     _loadItemDefinition(::ItemRegistry::LoadedItemAsset const& loadedItemAsset, ::ItemParseContext& parseContext);
 
-    MCNAPI void addItemToTagMap(::Item const& item);
+    MCAPI void addItemToTagMap(::Item const& item);
 
-    MCNAPI void alterAvailableCreativeItems(::ActorInfoRegistry* registry, ::LevelData& levelData);
+    MCAPI void alterAvailableCreativeItems(::ActorInfoRegistry* registry, ::LevelData& levelData);
 
-    MCNAPI void clearItemAndCreativeItemRegistry();
+    MCAPI void clearItemAndCreativeItemRegistry();
 
-    MCNAPI void finishedRegistration();
+    MCAPI void finishedRegistration();
 
-    MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const&
+    MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const&
     getComplexAliasSplitNames(::HashedString const& oldName) const;
 
-    MCNAPI ::WeakPtr<::Item> getItem(short id);
+    MCAPI ::WeakPtr<::Item> getItem(short id);
 
-    MCNAPI ::std::pair<::HashedString, int> getNameFromAlias(::HashedString const& name, int aux) const;
+    MCAPI ::std::pair<::HashedString, int> getNameFromAlias(::HashedString const& name, int aux) const;
 
-    MCNAPI ::HashedString getNameFromLegacyID(short id);
+    MCAPI ::HashedString getNameFromLegacyID(short id);
 
-    MCNAPI void initCreativeItemsServer(
+    MCAPI void initCreativeItemsServer(
         ::BlockDefinitionGroup const& blockDefinitionGroup,
         ::Experiments const&          experiments,
         ::ResourcePackManager const&  resourcePackManager,
@@ -239,57 +239,57 @@ public:
             registerCallback
     );
 
-    MCNAPI void initServer(
+    MCAPI void initServer(
         ::Experiments const&                               experiments,
         ::BaseGameVersion const&                           baseGameVersion,
         ::ResourcePackManager*                             rpm,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
-    MCNAPI ::WeakPtr<::Item> lookupByName(int& inOutItemAux, ::std::string_view inString) const;
+    MCAPI ::WeakPtr<::Item> lookupByName(int& inOutItemAux, ::std::string_view inString) const;
 
-    MCNAPI ::WeakPtr<::Item> lookupByNameNoAlias(::std::string_view inString) const;
+    MCAPI ::WeakPtr<::Item> lookupByNameNoAlias(::std::string_view inString) const;
 
-    MCNAPI ::WeakPtr<::Item> lookupByNameNoParsing(int& inOutItemAux, ::HashedString const& fullName) const;
+    MCAPI ::WeakPtr<::Item> lookupByNameNoParsing(int& inOutItemAux, ::HashedString const& fullName) const;
 
-    MCNAPI void onLevelInit(::WeakRef<::IDynamicContainerSerialization> containerSerialization);
+    MCAPI void onLevelInit(::WeakRef<::IDynamicContainerSerialization> containerSerialization);
 
-    MCNAPI void
+    MCAPI void
     registerAlias(::HashedString const& alias, ::HashedString const& name, ::BaseGameVersion const& fromVersion);
 
-    MCNAPI ::WeakPtr<::Item>
+    MCAPI ::WeakPtr<::Item>
     registerComplexAlias(::HashedString const& alias, ::ItemRegistryComplexAlias const& complexAlias);
 
-    MCNAPI void registerItem(::SharedPtr<::Item> item);
+    MCAPI void registerItem(::SharedPtr<::Item> item);
 
-    MCNAPI void registerLegacyID(::HashedString const& name, short id);
+    MCAPI void registerLegacyID(::HashedString const& name, short id);
 
-    MCNAPI void registerLegacyMapping(
+    MCAPI void registerLegacyMapping(
         ::HashedString const&    alias,
         ::HashedString const&    name,
         ::BaseGameVersion const& fromVersion
     );
 
-    MCNAPI void setCheckForItemWorldCompatibility(bool value);
+    MCAPI void setCheckForItemWorldCompatibility(bool value);
 
-    MCNAPI void unregisterItem(::HashedString const& itemName);
+    MCAPI void unregisterItem(::HashedString const& itemName);
 
-    MCNAPI ::std::vector<::std::string> validateServerItemComponents(::std::vector<::ItemData> const& items);
+    MCAPI ::std::vector<::std::string> validateServerItemComponents(::std::vector<::ItemData> const& items);
 
-    MCNAPI ~ItemRegistry();
+    MCAPI ~ItemRegistry();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::ItemRegistry::LoadedItemAsset> _loadAllItemAssets(
+    MCAPI static ::std::vector<::ItemRegistry::LoadedItemAsset> _loadAllItemAssets(
         ::ResourcePackManager const&                       resourcePackManager,
         ::Experiments const&                               experiments,
         ::cereal::ReflectionCtx const&                     ctx,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
-    MCNAPI static ::ItemRegistry::ItemLoadResult _tryLoadItemAsset(
+    MCAPI static ::ItemRegistry::ItemLoadResult _tryLoadItemAsset(
         ::std::string                         jsonData,
         ::std::shared_ptr<::IPackLoadContext> packLoadContext,
         ::Core::Path const&                   filenameWithExtension,
@@ -300,18 +300,18 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& MINECRAFT_NAMESPACE();
+    MCAPI static ::std::string_view const& MINECRAFT_NAMESPACE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

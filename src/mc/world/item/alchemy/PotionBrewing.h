@@ -39,53 +39,53 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
+    MCAPI static void
     addContainerRecipe(::Item const& from, ::PotionBrewing::Ingredient const& ingredient, ::Item const& to);
 
-    MCNAPI static void addPotionMix(
+    MCAPI static void addPotionMix(
         ::ItemDescriptor const&            from,
         ::PotionBrewing::Ingredient const& ingredient,
         ::ItemDescriptor const&            to
     );
 
-    MCNAPI static ::ItemInstance getChemistryMix(::ItemDescriptor const& from, ::ItemDescriptor const& ingredient);
+    MCAPI static ::ItemInstance getChemistryMix(::ItemDescriptor const& from, ::ItemDescriptor const& ingredient);
 
-    MCNAPI static int getFuelValue(::ItemDescriptor const& item);
+    MCAPI static int getFuelValue(::ItemDescriptor const& item);
 
-    MCNAPI static bool hasMix(::ItemInstance const& source, ::ItemDescriptor const& ingredient);
+    MCAPI static bool hasMix(::ItemInstance const& source, ::ItemDescriptor const& ingredient);
 
-    MCNAPI static void initPotionBrewing();
+    MCAPI static void initPotionBrewing();
 
-    MCNAPI static bool isContainerIngredient(::ItemDescriptor const& item);
+    MCAPI static bool isContainerIngredient(::ItemDescriptor const& item);
 
-    MCNAPI static bool isFuel(::ItemDescriptor const& item);
+    MCAPI static bool isFuel(::ItemDescriptor const& item);
 
-    MCNAPI static bool isPotionContainer(::ItemDescriptor const& item);
+    MCAPI static bool isPotionContainer(::ItemDescriptor const& item);
 
-    MCNAPI static bool isPotionIngredient(::ItemDescriptor const& item);
+    MCAPI static bool isPotionIngredient(::ItemDescriptor const& item);
 
-    MCNAPI static bool isPotionRecipeInput(::ItemDescriptor const& item);
+    MCAPI static bool isPotionRecipeInput(::ItemDescriptor const& item);
 
-    MCNAPI static ::ItemInstance mix(::ItemDescriptor const& ingredient, ::ItemInstance const& source);
+    MCAPI static ::ItemInstance mix(::ItemDescriptor const& ingredient, ::ItemInstance const& source);
 
-    MCNAPI static void shutdown();
+    MCAPI static void shutdown();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::PotionBrewing::Mix<::ItemInstance>>& mChemistryMixes();
+    MCAPI static ::std::vector<::PotionBrewing::Mix<::ItemInstance>>& mChemistryMixes();
 
-    MCNAPI static ::std::vector<::PotionBrewing::Mix<::Item const&>>& mContainerMixes();
+    MCAPI static ::std::vector<::PotionBrewing::Mix<::Item const&>>& mContainerMixes();
 
-    MCNAPI static bool& mIsInitialized();
+    MCAPI static bool& mIsInitialized();
 
-    MCNAPI static ::std::vector<::PotionBrewing::Mix<::ItemDescriptor>>& mPotionMixes();
+    MCAPI static ::std::vector<::PotionBrewing::Mix<::ItemDescriptor>>& mPotionMixes();
 
-    MCNAPI static ::std::vector<::PotionBrewing::Ingredient>& mValidContainers();
+    MCAPI static ::std::vector<::PotionBrewing::Ingredient>& mValidContainers();
 
-    MCNAPI static ::std::unordered_set<::PotionBrewing::Ingredient>& mValidIngredients();
+    MCAPI static ::std::unordered_set<::PotionBrewing::Ingredient>& mValidIngredients();
 
-    MCNAPI static ::std::unordered_set<::PotionBrewing::Ingredient>& mValidRecipeInputs();
+    MCAPI static ::std::unordered_set<::PotionBrewing::Ingredient>& mValidRecipeInputs();
     // NOLINTEND
 };

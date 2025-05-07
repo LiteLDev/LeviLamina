@@ -72,13 +72,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FeatureRegistry();
+    MCAPI FeatureRegistry();
 
-    MCNAPI ::std::string const _featureNamespaceFromInput(::std::string const& filePath, ::std::string const& contents);
+    MCAPI ::std::string const _featureNamespaceFromInput(::std::string const& filePath, ::std::string const& contents);
 
-    MCNAPI void _registerFeature(::std::string const& name, ::std::unique_ptr<::IFeature> featurePtr);
+    MCAPI void _registerFeature(::std::string const& name, ::std::unique_ptr<::IFeature> featurePtr);
 
-    MCNAPI bool _setupFeature(
+    MCAPI bool _setupFeature(
         ::IWorldRegistriesProvider&  worldRegistries,
         bool                         isBasePack,
         ::ResourcePackManager const& rpm,
@@ -88,58 +88,58 @@ public:
         bool                         serializeFeatures
     );
 
-    MCNAPI void loadFromDefinitions(
+    MCAPI void loadFromDefinitions(
         ::IWorldRegistriesProvider&  worldRegistries,
         ::ResourcePackManager const& rpm,
         bool                         clientSideGenEnabled
     );
 
-    MCNAPI ::WeakRef<::IFeature> lookupByName(::std::string const& name) const;
+    MCAPI ::WeakRef<::IFeature> lookupByName(::std::string const& name) const;
 
-    MCNAPI ::WeakRef<::IFeature> lookupOrReserveFeature(::std::string const& featureName);
+    MCAPI ::WeakRef<::IFeature> lookupOrReserveFeature(::std::string const& featureName);
 
-    MCNAPI ::WeakRef<::IFeature> reserveFeature(::std::string const& name);
+    MCAPI ::WeakRef<::IFeature> reserveFeature(::std::string const& name);
 
-    MCNAPI ~FeatureRegistry();
+    MCAPI ~FeatureRegistry();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& AFTER_SKY_PASS();
+    MCAPI static ::std::string const& AFTER_SKY_PASS();
 
-    MCNAPI static ::std::string const& AFTER_SURFACE_PASS();
+    MCAPI static ::std::string const& AFTER_SURFACE_PASS();
 
-    MCNAPI static ::std::string const& AFTER_UNDERGROUND_PASS();
+    MCAPI static ::std::string const& AFTER_UNDERGROUND_PASS();
 
-    MCNAPI static ::std::string const& BEFORE_SKY_PASS();
+    MCAPI static ::std::string const& BEFORE_SKY_PASS();
 
-    MCNAPI static ::std::string const& BEFORE_SURFACE_PASS();
+    MCAPI static ::std::string const& BEFORE_SURFACE_PASS();
 
-    MCNAPI static ::std::string const& BEFORE_UNDERGROUND_PASS();
+    MCAPI static ::std::string const& BEFORE_UNDERGROUND_PASS();
 
-    MCNAPI static ::std::string const& FINAL_PASS();
+    MCAPI static ::std::string const& FINAL_PASS();
 
-    MCNAPI static ::std::string const& FIRST_PASS();
+    MCAPI static ::std::string const& FIRST_PASS();
 
-    MCNAPI static ::std::string const& PREGENERATION_PASS();
+    MCAPI static ::std::string const& PREGENERATION_PASS();
 
-    MCNAPI static ::std::string const& SKY_PASS();
+    MCAPI static ::std::string const& SKY_PASS();
 
-    MCNAPI static ::std::string const& SURFACE_PASS();
+    MCAPI static ::std::string const& SURFACE_PASS();
 
-    MCNAPI static ::std::string const& UNDERGROUND_PASS();
+    MCAPI static ::std::string const& UNDERGROUND_PASS();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -39,23 +39,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EnableNonOwnerReferences();
+    MCAPI EnableNonOwnerReferences();
 
-    MCNAPI EnableNonOwnerReferences(::Bedrock::EnableNonOwnerReferences const&);
+    MCAPI EnableNonOwnerReferences(::Bedrock::EnableNonOwnerReferences const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCFOLD void* $ctor();
 
-    MCNAPI void* $ctor(::Bedrock::EnableNonOwnerReferences const&);
+    MCFOLD void* $ctor(::Bedrock::EnableNonOwnerReferences const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

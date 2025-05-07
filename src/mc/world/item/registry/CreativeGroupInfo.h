@@ -40,9 +40,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CreativeGroupInfo(::CreativeGroupInfo const&);
+    MCAPI CreativeGroupInfo(::CreativeGroupInfo const&);
 
-    MCNAPI CreativeGroupInfo(
+    MCAPI CreativeGroupInfo(
         ::CreativeItemRegistry* registry,
         ::CreativeItemCategory  category,
         ::HashedString const&   name,
@@ -50,15 +50,15 @@ public:
         ::ItemInstance const&   icon
     );
 
-    MCNAPI void addCreativeItem(::CreativeItemEntry* itemEntry);
+    MCAPI void addCreativeItem(::CreativeItemEntry* itemEntry);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::CreativeGroupInfo const&);
+    MCAPI void* $ctor(::CreativeGroupInfo const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::CreativeItemRegistry* registry,
         ::CreativeItemCategory  category,
         ::HashedString const&   name,
@@ -70,7 +70,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

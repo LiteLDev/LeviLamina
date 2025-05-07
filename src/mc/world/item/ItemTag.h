@@ -9,20 +9,20 @@ struct ItemTag : public ::HashedString {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ItemTag(::std::string const& str);
+    MCAPI explicit ItemTag(::std::string const& str);
 
-    MCNAPI ~ItemTag();
+    MCAPI ~ItemTag();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& str);
+    MCFOLD void* $ctor(::std::string const& str);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
