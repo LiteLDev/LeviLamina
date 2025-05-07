@@ -60,7 +60,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& NameID();
+    MCNAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
@@ -69,12 +69,6 @@ public:
     MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeBoxComponent const&);
 
     MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeBoxComponent&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

@@ -101,10 +101,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void resetAll();
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

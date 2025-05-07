@@ -22,10 +22,4 @@ public:
     // vIndex: 0
     virtual ~TextureOffset() = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

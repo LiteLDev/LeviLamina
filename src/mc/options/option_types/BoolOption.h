@@ -40,12 +40,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);

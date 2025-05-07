@@ -70,7 +70,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::PersonaPiece const& INVALID_PIECE();
+    MCNAPI static ::PersonaPiece const& INVALID_PIECE();
     // NOLINTEND
 
 public:

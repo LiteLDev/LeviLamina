@@ -10,9 +10,9 @@ struct BlendingConfig;
 namespace BlendingDataUtil {
 // static variables
 // NOLINTBEGIN
-MCAPI ::BlendingConfig const& config119();
+MCNAPI ::BlendingConfig const& config119();
 
-MCAPI ::BlendingConfig const& configPre118();
+MCNAPI ::BlendingConfig const& configPre118();
 // NOLINTEND
 
 } // namespace BlendingDataUtil

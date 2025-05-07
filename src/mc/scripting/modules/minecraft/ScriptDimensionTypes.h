@@ -54,7 +54,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& sMinecraftNamespace();
+    MCNAPI static ::std::string const& sMinecraftNamespace();
     // NOLINTEND
 };
 

@@ -98,9 +98,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BaseGameVersion const& MIN_PORTAL_REPLACE_BLOCK_FIX_VERSION();
+    MCNAPI static ::BaseGameVersion const& MIN_PORTAL_REPLACE_BLOCK_FIX_VERSION();
 
-    MCAPI static ::std::string const& PORTAL_FILE_ID();
+    MCNAPI static ::std::string const& PORTAL_FILE_ID();
     // NOLINTEND
 
 public:

@@ -26,13 +26,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::IMinecraftApp*& mApp();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::IMinecraftApp*& mApp();
     // NOLINTEND
 
 public:

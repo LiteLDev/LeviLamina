@@ -140,17 +140,17 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::bitset<196608>& mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits();
+    MCNAPI static ::std::bitset<196608>& mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits();
 
-    MCAPI static ::std::bitset<196608>& mOuterEdgeOfComputationBits();
+    MCNAPI static ::std::bitset<196608>& mOuterEdgeOfComputationBits();
 
-    MCAPI static ::SpinLockImpl& sDarkSpinLock();
+    MCNAPI static ::SpinLockImpl& sDarkSpinLock();
 
-    MCAPI static ::std::unique_ptr<::SubChunk>& sFullyDarkSubChunk();
+    MCNAPI static ::std::unique_ptr<::SubChunk>& sFullyDarkSubChunk();
 
-    MCAPI static ::std::unique_ptr<::SubChunk>& sFullyLitSubChunk();
+    MCNAPI static ::std::unique_ptr<::SubChunk>& sFullyLitSubChunk();
 
-    MCAPI static ::SpinLockImpl& sLitSpinLock();
+    MCNAPI static ::SpinLockImpl& sLitSpinLock();
     // NOLINTEND
 
 public:

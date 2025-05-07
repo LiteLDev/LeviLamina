@@ -26,12 +26,6 @@ public:
     // vIndex: 0
     virtual ~WebSocket_DEPRECATED() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Http

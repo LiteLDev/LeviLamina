@@ -23,12 +23,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
@@ -40,12 +34,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~TimerActorFlag1Goal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

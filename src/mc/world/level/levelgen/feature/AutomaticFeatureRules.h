@@ -108,7 +108,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& SCHEMA_VERSION_1();
+    MCNAPI static ::SemVersionConstant const& SCHEMA_VERSION_1();
     // NOLINTEND
 
 public:

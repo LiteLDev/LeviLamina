@@ -38,13 +38,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& BOOKS_DIR();
+    MCNAPI static ::std::string const& BOOKS_DIR();
 
-    MCAPI static ::std::string const& MANIFEST_NAME();
+    MCNAPI static ::std::string const& MANIFEST_NAME();
 
-    MCAPI static ::std::string const& PHOTOITEM_DIR();
+    MCNAPI static ::std::string const& PHOTOITEM_DIR();
 
-    MCAPI static ::std::string const& PHOTO_DIR();
+    MCNAPI static ::std::string const& PHOTO_DIR();
     // NOLINTEND
 
 public:

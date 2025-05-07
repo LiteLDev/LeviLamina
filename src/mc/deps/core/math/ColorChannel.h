@@ -18,6 +18,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ColorChannel const& INVALID();
+    MCNAPI static ::ColorChannel const& INVALID();
     // NOLINTEND
 };

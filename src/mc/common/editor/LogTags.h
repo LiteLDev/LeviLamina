@@ -10,9 +10,9 @@ class HashedString;
 namespace Editor::LogTags {
 // static variables
 // NOLINTBEGIN
-MCAPI ::HashedString const& CONTENT_LOG();
+MCNAPI ::HashedString const& CONTENT_LOG();
 
-MCAPI ::HashedString const& EDITOR();
+MCNAPI ::HashedString const& EDITOR();
 // NOLINTEND
 
 } // namespace Editor::LogTags

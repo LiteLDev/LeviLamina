@@ -193,11 +193,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ConstantFactory& mEmptyConstantFactory();
+    MCNAPI static ::Scripting::ConstantFactory& mEmptyConstantFactory();
 
-    MCAPI static ::Scripting::FunctionBinding& mEmptyFunctionBinding();
+    MCNAPI static ::Scripting::FunctionBinding& mEmptyFunctionBinding();
 
-    MCAPI static ::Scripting::ObjectFactory& mEmptyObjectFactory();
+    MCNAPI static ::Scripting::ObjectFactory& mEmptyObjectFactory();
     // NOLINTEND
 
 public:

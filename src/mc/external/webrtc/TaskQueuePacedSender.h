@@ -56,7 +56,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& kNoPacketHoldback();
+    MCNAPI static int const& kNoPacketHoldback();
     // NOLINTEND
 
 public:

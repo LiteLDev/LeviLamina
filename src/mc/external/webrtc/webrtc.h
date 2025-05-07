@@ -394,13 +394,13 @@ operator==(::webrtc::scoped_refptr<::rtc::RTCCertificate> const&, ::webrtc::scop
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::add_lvalue_reference_t<char const[]> kBweTypeHistogram();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> kBweTypeHistogram();
 
-MCAPI ::webrtc::DataRate const& kCongestionControllerMinBitrate();
+MCNAPI ::webrtc::DataRate const& kCongestionControllerMinBitrate();
 
-MCAPI double const& kDefaultBitratePriority();
+MCNAPI double const& kDefaultBitratePriority();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> kVP9FmtpProfileId();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> kVP9FmtpProfileId();
 // NOLINTEND
 
 } // namespace webrtc

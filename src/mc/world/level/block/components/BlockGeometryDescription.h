@@ -91,13 +91,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& CROSS_GEO_NAME();
+    MCNAPI static ::HashedString const& CROSS_GEO_NAME();
 
-    MCAPI static ::HashedString const& FULL_BLOCK_GEO_NAME();
+    MCNAPI static ::HashedString const& FULL_BLOCK_GEO_NAME();
 
-    MCAPI static ::std::string const& GEO_NAME_CONSTRAINT();
+    MCNAPI static ::std::string const& GEO_NAME_CONSTRAINT();
 
-    MCAPI static ::std::string const& NameID();
+    MCNAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:

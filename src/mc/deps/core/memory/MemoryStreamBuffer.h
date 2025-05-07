@@ -22,10 +22,4 @@ public:
     // vIndex: 0
     virtual ~MemoryStreamBuffer() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

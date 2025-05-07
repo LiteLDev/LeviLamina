@@ -74,18 +74,18 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::PotionBrewing::Mix<::ItemInstance>>& mChemistryMixes();
+    MCNAPI static ::std::vector<::PotionBrewing::Mix<::ItemInstance>>& mChemistryMixes();
 
-    MCAPI static ::std::vector<::PotionBrewing::Mix<::Item const&>>& mContainerMixes();
+    MCNAPI static ::std::vector<::PotionBrewing::Mix<::Item const&>>& mContainerMixes();
 
-    MCAPI static bool& mIsInitialized();
+    MCNAPI static bool& mIsInitialized();
 
-    MCAPI static ::std::vector<::PotionBrewing::Mix<::ItemDescriptor>>& mPotionMixes();
+    MCNAPI static ::std::vector<::PotionBrewing::Mix<::ItemDescriptor>>& mPotionMixes();
 
-    MCAPI static ::std::vector<::PotionBrewing::Ingredient>& mValidContainers();
+    MCNAPI static ::std::vector<::PotionBrewing::Ingredient>& mValidContainers();
 
-    MCAPI static ::std::unordered_set<::PotionBrewing::Ingredient>& mValidIngredients();
+    MCNAPI static ::std::unordered_set<::PotionBrewing::Ingredient>& mValidIngredients();
 
-    MCAPI static ::std::unordered_set<::PotionBrewing::Ingredient>& mValidRecipeInputs();
+    MCNAPI static ::std::unordered_set<::PotionBrewing::Ingredient>& mValidRecipeInputs();
     // NOLINTEND
 };

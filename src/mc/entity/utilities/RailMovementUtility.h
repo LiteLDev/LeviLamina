@@ -86,6 +86,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::array<::RailMovementUtility::RailExits, 10> const& RAIL_EXITS();
+    MCNAPI static ::std::array<::RailMovementUtility::RailExits, 10> const& RAIL_EXITS();
     // NOLINTEND
 };

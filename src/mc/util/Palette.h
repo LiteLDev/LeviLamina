@@ -20,36 +20,36 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::mce::Color const& BLACK();
+    MCNAPI static ::mce::Color const& BLACK();
 
-    MCAPI static ::mce::Color const& BLUE();
+    MCNAPI static ::mce::Color const& BLUE();
 
-    MCAPI static ::mce::Color const& BROWN();
+    MCNAPI static ::mce::Color const& BROWN();
 
-    MCAPI static ::mce::Color const& CYAN();
+    MCNAPI static ::mce::Color const& CYAN();
 
-    MCAPI static ::mce::Color const& GRAY();
+    MCNAPI static ::mce::Color const& GRAY();
 
-    MCAPI static ::mce::Color const& GREEN();
+    MCNAPI static ::mce::Color const& GREEN();
 
-    MCAPI static ::mce::Color const& LIGHT_BLUE();
+    MCNAPI static ::mce::Color const& LIGHT_BLUE();
 
-    MCAPI static ::mce::Color const& LIGHT_GREEN();
+    MCNAPI static ::mce::Color const& LIGHT_GREEN();
 
-    MCAPI static ::mce::Color const& MAGENTA();
+    MCNAPI static ::mce::Color const& MAGENTA();
 
-    MCAPI static ::mce::Color const& ORANGE();
+    MCNAPI static ::mce::Color const& ORANGE();
 
-    MCAPI static ::mce::Color const& PINK();
+    MCNAPI static ::mce::Color const& PINK();
 
-    MCAPI static ::mce::Color const& PURPLE();
+    MCNAPI static ::mce::Color const& PURPLE();
 
-    MCAPI static ::mce::Color const& RED();
+    MCNAPI static ::mce::Color const& RED();
 
-    MCAPI static ::mce::Color const& SILVER();
+    MCNAPI static ::mce::Color const& SILVER();
 
-    MCAPI static ::mce::Color const& WHITE();
+    MCNAPI static ::mce::Color const& WHITE();
 
-    MCAPI static ::mce::Color const& YELLOW();
+    MCNAPI static ::mce::Color const& YELLOW();
     // NOLINTEND
 };

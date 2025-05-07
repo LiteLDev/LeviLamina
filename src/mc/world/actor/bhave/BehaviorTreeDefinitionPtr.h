@@ -25,7 +25,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BehaviorTreeDefinitionPtr const& NONE();
+    MCNAPI static ::BehaviorTreeDefinitionPtr const& NONE();
     // NOLINTEND
 
 public:

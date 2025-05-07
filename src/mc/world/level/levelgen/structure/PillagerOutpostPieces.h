@@ -171,12 +171,12 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::array<::std::string_view, 7>& MSC_FEATURES();
+    MCNAPI static ::std::array<::std::string_view, 7>& MSC_FEATURES();
 
-    MCAPI static ::std::string_view& PILLAGER_LOOT();
+    MCNAPI static ::std::string_view& PILLAGER_LOOT();
 
-    MCAPI static ::std::string_view& STRUCTURE_WATCHTOWER();
+    MCNAPI static ::std::string_view& STRUCTURE_WATCHTOWER();
 
-    MCAPI static ::std::string_view& STRUCTURE_WATCHTOWER_OVERGROWN();
+    MCNAPI static ::std::string_view& STRUCTURE_WATCHTOWER_OVERGROWN();
     // NOLINTEND
 };

@@ -28,7 +28,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Matrix const& IDENTITY();
+    MCNAPI static ::Matrix const& IDENTITY();
     // NOLINTEND
 
 public:

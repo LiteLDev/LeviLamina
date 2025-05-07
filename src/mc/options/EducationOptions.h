@@ -59,7 +59,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::EducationOptions& DEFAULT_OPTION();
+    MCNAPI static ::EducationOptions& DEFAULT_OPTION();
     // NOLINTEND
 
 public:

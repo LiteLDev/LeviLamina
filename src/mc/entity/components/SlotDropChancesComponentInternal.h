@@ -5,7 +5,7 @@
 namespace SlotDropChancesComponentInternal {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& TAG_KEY();
+MCNAPI ::std::string const& TAG_KEY();
 // NOLINTEND
 
 } // namespace SlotDropChancesComponentInternal

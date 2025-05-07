@@ -23,6 +23,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& sWildCardModuleName();
+    MCNAPI static ::std::string const& sWildCardModuleName();
     // NOLINTEND
 };

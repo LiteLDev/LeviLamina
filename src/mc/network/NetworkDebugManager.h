@@ -86,13 +86,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& UPDATE_INTERVAL_MILLISECONDS();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static int const& UPDATE_INTERVAL_MILLISECONDS();
     // NOLINTEND
 
 public:

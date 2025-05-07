@@ -255,7 +255,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::
+    MCNAPI static ::std::
         unordered_map<::std::string, ::std::function<::std::unique_ptr<::Goal>(::Mob&, ::LegacyGoalDefinition const&)>>&
         mGoalMap();
     // NOLINTEND

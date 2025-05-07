@@ -83,9 +83,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& AUTONOMOUS_ACTOR_KEY();
+    MCNAPI static ::std::string_view const& AUTONOMOUS_ACTOR_KEY();
 
-    MCAPI static ::std::string_view const& AUTONOMOUS_ACTOR_LIST_KEY();
+    MCNAPI static ::std::string_view const& AUTONOMOUS_ACTOR_LIST_KEY();
     // NOLINTEND
 
 public:

@@ -66,17 +66,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::mce::Color const& X_AXIS_COLOR();
+    MCNAPI static ::mce::Color const& X_AXIS_COLOR();
 
-    MCAPI static ::mce::Color const& Y_AXIS_COLOR();
+    MCNAPI static ::mce::Color const& Y_AXIS_COLOR();
 
-    MCAPI static ::mce::Color const& Z_AXIS_COLOR();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::mce::Color const& Z_AXIS_COLOR();
     // NOLINTEND
 
 public:

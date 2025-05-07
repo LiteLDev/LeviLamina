@@ -18,6 +18,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BaseGameVersion const& FRICTION_FIX_VERSION();
+    MCNAPI static ::BaseGameVersion const& FRICTION_FIX_VERSION();
     // NOLINTEND
 };

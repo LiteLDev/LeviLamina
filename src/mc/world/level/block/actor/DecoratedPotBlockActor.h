@@ -112,19 +112,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::array<::std::string, 4> const& DEFAULT_SHERD_LIST();
+    MCNAPI static ::std::array<::std::string, 4> const& DEFAULT_SHERD_LIST();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

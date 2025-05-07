@@ -5,9 +5,9 @@
 namespace AreaAttackDefaults {
 // static variables
 // NOLINTBEGIN
-MCAPI float const& ATTACK_COOLDOWN_TIME();
+MCNAPI float const& ATTACK_COOLDOWN_TIME();
 
-MCAPI float const& DAMAGE_RANGE();
+MCNAPI float const& DAMAGE_RANGE();
 // NOLINTEND
 
 } // namespace AreaAttackDefaults

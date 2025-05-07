@@ -65,15 +65,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static bool& log_thread_();
+    MCNAPI static bool& log_thread_();
 
-    MCAPI static bool& log_timestamp_();
+    MCNAPI static bool& log_timestamp_();
 
-    MCAPI static bool& log_to_stderr_();
+    MCNAPI static bool& log_to_stderr_();
 
-    MCAPI static ::rtc::LogSink*& streams_();
+    MCNAPI static ::rtc::LogSink*& streams_();
 
-    MCAPI static ::std::atomic<bool>& streams_empty_();
+    MCNAPI static ::std::atomic<bool>& streams_empty_();
     // NOLINTEND
 
 public:

@@ -50,13 +50,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Memory::MemoryTracker*& mInstance();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::Memory::MemoryTracker*& mInstance();
     // NOLINTEND
 
 public:

@@ -22,6 +22,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::ActorType, ::SharedTypes::Legacy::LevelSoundEvent> const& imitateMobMap();
+    MCNAPI static ::std::unordered_map<::ActorType, ::SharedTypes::Legacy::LevelSoundEvent> const& imitateMobMap();
     // NOLINTEND
 };

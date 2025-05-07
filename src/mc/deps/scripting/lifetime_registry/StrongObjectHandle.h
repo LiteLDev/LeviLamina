@@ -40,7 +40,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Scripting::StrongObjectHandle const& InvalidHandle();
+    MCNAPI static ::Scripting::StrongObjectHandle const& InvalidHandle();
     // NOLINTEND
 
 public:

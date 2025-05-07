@@ -92,13 +92,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static bool& mTrialHasEnded();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static bool& mTrialHasEnded();
     // NOLINTEND
 
 public:

@@ -28,6 +28,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ContentIdentity& EMPTY();
+    MCNAPI static ::ContentIdentity& EMPTY();
     // NOLINTEND
 };

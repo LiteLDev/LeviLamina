@@ -22,7 +22,7 @@ defaults();
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::br::spawn::ObstructionPredicateToken const& MOB();
+MCNAPI ::br::spawn::ObstructionPredicateToken const& MOB();
 // NOLINTEND
 
 } // namespace br::spawn::ObstructionTypes

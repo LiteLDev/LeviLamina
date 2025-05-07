@@ -62,6 +62,8 @@ constexpr inline std::string_view MATERIAL_QUARTZ = "§h";
 
 constexpr inline std::string_view MATERIAL_REDSTONE = "§m";
 
+constexpr inline std::string_view MATERIAL_RESIN = "§v";
+
 constexpr inline std::string_view MINECOIN_GOLD = "§g";
 
 constexpr inline std::string_view OBFUSCATED = "§k";

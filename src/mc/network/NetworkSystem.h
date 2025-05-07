@@ -250,10 +250,10 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForConnectionCallbacks();
+    MCNAPI static void** $vftableForConnectionCallbacks();
 
-    MCAPI static void** $vftableForIPSupportInterface();
+    MCNAPI static void** $vftableForIPSupportInterface();
 
-    MCAPI static void** $vftableForNetworkEnableDisableListener();
+    MCNAPI static void** $vftableForNetworkEnableDisableListener();
     // NOLINTEND
 };

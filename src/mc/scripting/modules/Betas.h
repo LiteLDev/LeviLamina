@@ -10,7 +10,7 @@ namespace Scripting { struct Version; }
 namespace ScriptLiveEventsUtilities::Betas {
 // static variables
 // NOLINTBEGIN
-MCAPI ::Scripting::Version const& CURRENT();
+MCNAPI ::Scripting::Version const& CURRENT();
 // NOLINTEND
 
 } // namespace ScriptLiveEventsUtilities::Betas

@@ -16,13 +16,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::NullLogger& instance();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::NullLogger& instance();
     // NOLINTEND
 
 public:

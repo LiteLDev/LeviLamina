@@ -116,12 +116,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
@@ -163,8 +157,8 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIPreliminarySurfaceProvider();
+    MCNAPI static void** $vftableForIPreliminarySurfaceProvider();
 
-    MCAPI static void** $vftableForChunkSource();
+    MCNAPI static void** $vftableForChunkSource();
     // NOLINTEND
 };

@@ -56,12 +56,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
@@ -105,12 +99,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::optional<::BlockPos> const _hasLastVibrationAtNoteblock();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

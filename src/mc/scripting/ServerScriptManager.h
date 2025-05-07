@@ -211,8 +211,8 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEventListenerDispatcherLevelEventListener();
+    MCNAPI static void** $vftableForEventListenerDispatcherLevelEventListener();
 
-    MCAPI static void** $vftableForEventListenerDispatcherServerInstanceEventListener();
+    MCNAPI static void** $vftableForEventListenerDispatcherServerInstanceEventListener();
     // NOLINTEND
 };

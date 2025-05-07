@@ -34,7 +34,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& kIdentifier();
+    MCNAPI static ::std::string_view const& kIdentifier();
     // NOLINTEND
 };
 

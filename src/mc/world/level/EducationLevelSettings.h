@@ -54,7 +54,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& DEFAULT_BORDER_PATH();
+    MCNAPI static ::std::string const& DEFAULT_BORDER_PATH();
     // NOLINTEND
 
 public:

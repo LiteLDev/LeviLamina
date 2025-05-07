@@ -10,7 +10,7 @@ class AABB;
 namespace PowderSnowBlockContstants {
 // static variables
 // NOLINTBEGIN
-MCAPI ::AABB const& FALL_INTO_COLLISION_SHAPE();
+MCNAPI ::AABB const& FALL_INTO_COLLISION_SHAPE();
 // NOLINTEND
 
 } // namespace PowderSnowBlockContstants

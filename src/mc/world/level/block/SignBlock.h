@@ -185,12 +185,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;

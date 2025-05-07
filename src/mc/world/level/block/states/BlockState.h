@@ -30,7 +30,7 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::BlockState::StateListNode*& mHead();
+        MCNAPI static ::BlockState::StateListNode*& mHead();
         // NOLINTEND
     };
 

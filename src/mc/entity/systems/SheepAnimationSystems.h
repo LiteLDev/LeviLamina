@@ -15,7 +15,7 @@ MCNAPI void registerSystems(::EntitySystems& registry, bool isClientSide);
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& JEB_NAME();
+MCNAPI ::std::string const& JEB_NAME();
 // NOLINTEND
 
 } // namespace SheepAnimationSystems

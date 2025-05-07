@@ -40,13 +40,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<::BrazeSDKManager>& mInstance();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::shared_ptr<::BrazeSDKManager>& mInstance();
     // NOLINTEND
 
 public:

@@ -2405,25 +2405,25 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::Social::Events::AchievementEventing>& mAchievementEventing();
+    MCNAPI static ::std::unique_ptr<::Social::Events::AchievementEventing>& mAchievementEventing();
 
-    MCAPI static ::std::map<::std::string, int>& mCachedUUIDs();
+    MCNAPI static ::std::map<::std::string, int>& mCachedUUIDs();
 
-    MCAPI static ::std::unordered_map<uint, ::Social::Events::PlayerTelemetry>& mPlayerTelemetry();
+    MCNAPI static ::std::unordered_map<uint, ::Social::Events::PlayerTelemetry>& mPlayerTelemetry();
 
-    MCAPI static ::std::optional<::Social::Events::RealmsTelemetry>& mRealmsTelemetry();
+    MCNAPI static ::std::optional<::Social::Events::RealmsTelemetry>& mRealmsTelemetry();
 
-    MCAPI static ::Social::Events::RealtimeRoute& mRealtimeRoute();
+    MCNAPI static ::Social::Events::RealtimeRoute& mRealtimeRoute();
 
-    MCAPI static ::Social::Events::ScreenFlow& mScreenFlow();
+    MCNAPI static ::Social::Events::ScreenFlow& mScreenFlow();
 
-    MCAPI static ::Bedrock::Threading::Mutex& sHeartbeatMutex();
+    MCNAPI static ::Bedrock::Threading::Mutex& sHeartbeatMutex();
 
-    MCAPI static ::Bedrock::Threading::Mutex& sMutex();
+    MCNAPI static ::Bedrock::Threading::Mutex& sMutex();
 
-    MCAPI static ::Bedrock::Threading::Mutex& sPlayerTelemetryMutex();
+    MCNAPI static ::Bedrock::Threading::Mutex& sPlayerTelemetryMutex();
 
-    MCAPI static ::Bedrock::Threading::Mutex& sRealmsTelemetryMutex();
+    MCNAPI static ::Bedrock::Threading::Mutex& sRealmsTelemetryMutex();
     // NOLINTEND
 
 public:

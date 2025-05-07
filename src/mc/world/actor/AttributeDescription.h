@@ -12,10 +12,4 @@ public:
     // vIndex: 1
     virtual ~AttributeDescription() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

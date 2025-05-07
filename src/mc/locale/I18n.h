@@ -118,7 +118,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NeutralLangCode();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NeutralLangCode();
     // NOLINTEND
 
 public:

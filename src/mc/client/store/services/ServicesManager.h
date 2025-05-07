@@ -44,12 +44,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
 
@@ -139,11 +133,5 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ServicesManager() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

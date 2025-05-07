@@ -34,7 +34,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ActorDefinitionPtr const& NONE();
+    MCNAPI static ::ActorDefinitionPtr const& NONE();
     // NOLINTEND
 
 public:

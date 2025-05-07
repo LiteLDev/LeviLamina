@@ -70,7 +70,7 @@ public:
     ) /*override*/;
 
     // vIndex: 28
-    virtual void setCustomName(::Bedrock::Safety::RedactableString const& name) /*override*/;
+    virtual void setCustomName(::Bedrock::Safety::RedactableString const& str) /*override*/;
 
     // vIndex: 44
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
@@ -124,12 +124,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
@@ -151,7 +145,7 @@ public:
     MCNAPI ::std::string const& $getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context
     );
 
-    MCNAPI void $setCustomName(::Bedrock::Safety::RedactableString const& name);
+    MCNAPI void $setCustomName(::Bedrock::Safety::RedactableString const& str);
 
     MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 

@@ -63,21 +63,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> CATEGORY_CORE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> CATEGORY_CORE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> CATEGORY_EXPERIMENTAL();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> CATEGORY_EXPERIMENTAL();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> CATEGORY_EXTENSION();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> CATEGORY_EXTENSION();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> PROPERTY_CATEGORY();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> PROPERTY_CATEGORY();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> TAG_DATA();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> TAG_DATA();
     // NOLINTEND
 
 public:

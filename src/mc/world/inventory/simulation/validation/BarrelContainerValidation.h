@@ -24,12 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;

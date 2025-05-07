@@ -169,32 +169,32 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view& BIG_RUIN_LOOT();
+    MCNAPI static ::std::string_view& BIG_RUIN_LOOT();
 
-    MCAPI static ::std::string_view& RUIN_LOOT();
+    MCNAPI static ::std::string_view& RUIN_LOOT();
 
-    MCAPI static ::std::string_view& STRUCTURE_BIG_RUIN1_BRICK();
+    MCNAPI static ::std::string_view& STRUCTURE_BIG_RUIN1_BRICK();
 
-    MCAPI static ::std::string_view& STRUCTURE_BIG_RUIN8_BRICK();
+    MCNAPI static ::std::string_view& STRUCTURE_BIG_RUIN8_BRICK();
 
-    MCAPI static ::std::string_view& STRUCTURE_RUIN_2_BRICK();
+    MCNAPI static ::std::string_view& STRUCTURE_RUIN_2_BRICK();
 
-    MCAPI static ::std::string_view& STRUCTURE_RUIN_3_BRICK();
+    MCNAPI static ::std::string_view& STRUCTURE_RUIN_3_BRICK();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[]> bigRuinsBrick();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[]> bigRuinsBrick();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[]> bigRuinsCracked();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[]> bigRuinsCracked();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[]> bigRuinsMossy();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[]> bigRuinsMossy();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[]> bigWarmRuins();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[]> bigWarmRuins();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[]> ruinsBrick();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[]> ruinsBrick();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[]> ruinsCracked();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[]> ruinsCracked();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[]> ruinsMossy();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[]> ruinsMossy();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[]> warmRuins();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[]> warmRuins();
     // NOLINTEND
 };

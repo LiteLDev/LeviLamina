@@ -75,13 +75,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& DEFAULT_OPERATION_NAME();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::string const& DEFAULT_OPERATION_NAME();
     // NOLINTEND
 
 public:

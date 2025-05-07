@@ -36,7 +36,7 @@ public:
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
     // vIndex: 3
-    virtual ::SnowballItem& setDescriptionId(::std::string const& descriptionId) /*override*/;
+    virtual ::SnowballItem& setDescriptionId(::std::string const& description) /*override*/;
 
     // vIndex: 77
     virtual ::Actor*
@@ -64,12 +64,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
@@ -80,7 +74,7 @@ public:
     MCFOLD ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCFOLD ::SnowballItem& $setDescriptionId(::std::string const& descriptionId);
+    MCFOLD ::SnowballItem& $setDescriptionId(::std::string const& description);
 
     MCAPI ::Actor*
     $createProjectileActor(::BlockSource& region, ::ItemStack const&, ::Vec3 const& pos, ::Vec3 const& direction) const;
@@ -91,6 +85,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

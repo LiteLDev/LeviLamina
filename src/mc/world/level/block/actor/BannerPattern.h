@@ -46,15 +46,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const* const& BASE_NAME();
+    MCNAPI static char const* const& BASE_NAME();
 
-    MCAPI static char const* const& CREEPER_NAME_ID();
+    MCNAPI static char const* const& CREEPER_NAME_ID();
 
-    MCAPI static char const* const& CURLY_BORDER_NAME_ID();
+    MCNAPI static char const* const& CURLY_BORDER_NAME_ID();
 
-    MCAPI static char const* const& SQUARE_TOP_LEFT_NAME_ID();
+    MCNAPI static char const* const& SQUARE_TOP_LEFT_NAME_ID();
 
-    MCAPI static ::std::vector<::BannerPattern> const& mPatterns();
+    MCNAPI static ::std::vector<::BannerPattern> const& mPatterns();
     // NOLINTEND
 
 public:

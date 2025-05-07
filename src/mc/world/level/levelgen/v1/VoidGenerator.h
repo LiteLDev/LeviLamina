@@ -109,12 +109,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::BiomeSource const& $getBiomeSource() const;
@@ -158,8 +152,8 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForChunkSource();
+    MCNAPI static void** $vftableForChunkSource();
 
-    MCAPI static void** $vftableForIPreliminarySurfaceProvider();
+    MCNAPI static void** $vftableForIPreliminarySurfaceProvider();
     // NOLINTEND
 };

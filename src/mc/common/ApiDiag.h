@@ -5,7 +5,7 @@
 namespace ApiDiag {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::atomic<uint>& g_globalApiRefs();
+MCNAPI ::std::atomic<uint>& g_globalApiRefs();
 // NOLINTEND
 
 } // namespace ApiDiag

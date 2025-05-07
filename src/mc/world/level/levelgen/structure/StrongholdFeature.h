@@ -113,13 +113,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BlockPos const& START_OFFSET();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::BlockPos const& START_OFFSET();
     // NOLINTEND
 
 public:

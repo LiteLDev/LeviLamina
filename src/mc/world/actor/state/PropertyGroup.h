@@ -113,9 +113,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static uint64 const& MAX_ENUM_SIZE();
+    MCNAPI static uint64 const& MAX_ENUM_SIZE();
 
-    MCAPI static uint64 const& MAX_ENUM_VALUE_SIZE();
+    MCNAPI static uint64 const& MAX_ENUM_VALUE_SIZE();
     // NOLINTEND
 
 public:

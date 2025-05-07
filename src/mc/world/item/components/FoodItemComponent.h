@@ -71,7 +71,7 @@ public:
     virtual ::Item const* eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level) /*override*/;
 
     // vIndex: 5
-    virtual void use(bool& result, ::ItemStack& item, ::Player& player) /*override*/;
+    virtual void use(bool& result, ::ItemStack& instance, ::Player& player) /*override*/;
 
     // vIndex: 6
     virtual ::Item const*
@@ -105,12 +105,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $_initializeComponent();
@@ -123,7 +117,7 @@ public:
 
     MCNAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
 
-    MCNAPI void $use(bool& result, ::ItemStack& item, ::Player& player);
+    MCNAPI void $use(bool& result, ::ItemStack& instance, ::Player& player);
     // NOLINTEND
 
 public:

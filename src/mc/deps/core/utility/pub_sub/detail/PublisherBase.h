@@ -47,12 +47,6 @@ public:
         ::std::optional<int>                                                      group
     );
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock::PubSub::Detail

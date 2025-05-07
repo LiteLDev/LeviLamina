@@ -20,7 +20,7 @@ computeBottomSidesForSingleBlock(::BlockSource const& region, ::BlockPos const& 
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::array<::PaleMossCarpetSide, 4> const& NO_SIDES();
+MCNAPI ::std::array<::PaleMossCarpetSide, 4> const& NO_SIDES();
 // NOLINTEND
 
 } // namespace PaleMossCarpetUtils

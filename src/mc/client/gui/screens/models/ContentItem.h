@@ -34,10 +34,4 @@ public:
     // vIndex: 0
     virtual ~ContentItem() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

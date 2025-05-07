@@ -86,11 +86,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& COMPONENT_TAG();
+    MCNAPI static ::std::string const& COMPONENT_TAG();
 
-    MCAPI static ::std::string const& UNLOCKED_RECIPES_TAG();
+    MCNAPI static ::std::string const& UNLOCKED_RECIPES_TAG();
 
-    MCAPI static ::std::string const& USED_CONTEXTS_TAG();
+    MCNAPI static ::std::string const& USED_CONTEXTS_TAG();
     // NOLINTEND
 
 public:

@@ -20,6 +20,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::DeviceMemoryTier& mDefaultMemoryTier();
+    MCNAPI static ::DeviceMemoryTier& mDefaultMemoryTier();
     // NOLINTEND
 };

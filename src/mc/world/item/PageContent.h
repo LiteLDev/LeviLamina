@@ -55,7 +55,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::PageContent const& BLANK_PAGE();
+    MCNAPI static ::PageContent const& BLANK_PAGE();
     // NOLINTEND
 
 public:

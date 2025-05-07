@@ -27,13 +27,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float& sBaseYMax();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static float& sBaseYMax();
     // NOLINTEND
 
 public:

@@ -35,21 +35,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const*& ModuleName();
+    MCNAPI static char const*& ModuleName();
 
-    MCAPI static ::mce::UUID const& ModuleUUID();
+    MCNAPI static ::mce::UUID const& ModuleUUID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

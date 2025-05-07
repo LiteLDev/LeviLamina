@@ -11,17 +11,17 @@ class Vec3;
 namespace MobMovement {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Vec3 const& getLocalMoveVelocity(::EntityContext const& provider);
+MCAPI ::Vec3 const& getLocalMoveVelocity(::EntityContext const& provider);
 
-MCNAPI void initializeMob(::EntityContext& provider);
+MCAPI void initializeMob(::EntityContext& provider);
 
-MCNAPI void resetLocalMoveVelocity(::EntityContext& provider);
+MCAPI void resetLocalMoveVelocity(::EntityContext& provider);
 
-MCNAPI void setDiscardFriction(::EntityContext& provider, bool discardFriction);
+MCAPI void setDiscardFriction(::EntityContext& provider, bool discardFriction);
 
-MCNAPI void setLocalMoveVelocity(::EntityContext& provider, ::Vec3 const& localMoveVelocity);
+MCAPI void setLocalMoveVelocity(::EntityContext& provider, ::Vec3 const& localMoveVelocity);
 
-MCNAPI void setLocalMoveVelocity(
+MCAPI void setLocalMoveVelocity(
     ::EntityContext&       provider,
     ::std::optional<float> x,
     ::std::optional<float> y,

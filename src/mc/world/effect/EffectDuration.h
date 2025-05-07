@@ -18,6 +18,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::EffectDuration const& INFINITE_DURATION();
+    MCNAPI static ::EffectDuration const& INFINITE_DURATION();
     // NOLINTEND
 };

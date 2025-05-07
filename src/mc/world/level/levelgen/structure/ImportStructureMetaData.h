@@ -31,10 +31,4 @@ public:
     // NOLINTBEGIN
     MCNAPI ::StructureTemplate const* getStructure(::std::string const& name);
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

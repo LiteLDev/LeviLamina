@@ -41,7 +41,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SeatDescription const& EMPTY();
+    MCNAPI static ::SeatDescription const& EMPTY();
     // NOLINTEND
 
 public:

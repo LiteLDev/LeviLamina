@@ -96,7 +96,7 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::std::array<::std::pair<::LevelChunkNeighbor, ::ChunkPos>, 8> const& sOffsetMap();
+        MCNAPI static ::std::array<::std::pair<::LevelChunkNeighbor, ::ChunkPos>, 8> const& sOffsetMap();
         // NOLINTEND
     };
 

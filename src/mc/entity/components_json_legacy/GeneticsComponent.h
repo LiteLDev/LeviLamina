@@ -59,10 +59,10 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& GENE_ARRAY();
+    MCNAPI static ::std::string const& GENE_ARRAY();
 
-    MCAPI static ::std::string const& HIDDEN_ALLELE();
+    MCNAPI static ::std::string const& HIDDEN_ALLELE();
 
-    MCAPI static ::std::string const& MAIN_ALLELE();
+    MCNAPI static ::std::string const& MAIN_ALLELE();
     // NOLINTEND
 };

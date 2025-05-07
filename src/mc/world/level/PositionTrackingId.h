@@ -24,8 +24,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::PositionTrackingId const& INVALID_ID();
+    MCNAPI static ::PositionTrackingId const& INVALID_ID();
 
-    MCAPI static uint& sNextId();
+    MCNAPI static uint& sNextId();
     // NOLINTEND
 };

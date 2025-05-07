@@ -114,8 +114,8 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForIRandom();
+    MCNAPI static void** $vftableForIRandom();
     // NOLINTEND
 };

@@ -10,7 +10,7 @@ namespace Social { class GameConnectionInfo; }
 namespace Social {
 // static variables
 // NOLINTBEGIN
-MCAPI ::Social::GameConnectionInfo const& INVALID_CONNECTION();
+MCNAPI ::Social::GameConnectionInfo const& INVALID_CONNECTION();
 // NOLINTEND
 
 } // namespace Social

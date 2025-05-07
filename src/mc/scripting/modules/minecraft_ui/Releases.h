@@ -10,17 +10,17 @@ namespace Scripting { struct Version; }
 namespace ScriptModuleMinecraftServerUI::Releases {
 // static variables
 // NOLINTBEGIN
-MCAPI ::Scripting::Version const& V0_1_0();
+MCNAPI ::Scripting::Version const& V0_1_0();
 
-MCAPI ::Scripting::Version const& V1_0_0();
+MCNAPI ::Scripting::Version const& V1_0_0();
 
-MCAPI ::Scripting::Version const& V1_1_0();
+MCNAPI ::Scripting::Version const& V1_1_0();
 
-MCAPI ::Scripting::Version const& V1_2_0();
+MCNAPI ::Scripting::Version const& V1_2_0();
 
-MCAPI ::Scripting::Version const& V1_3_0();
+MCNAPI ::Scripting::Version const& V1_3_0();
 
-MCAPI ::Scripting::Version const& V2_0_0();
+MCNAPI ::Scripting::Version const& V2_0_0();
 // NOLINTEND
 
 } // namespace ScriptModuleMinecraftServerUI::Releases

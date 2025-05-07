@@ -47,16 +47,10 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& BINARY_EXTENSION();
+    MCNAPI static ::std::string_view const& BINARY_EXTENSION();
 
-    MCAPI static ::std::string_view const& GLB_EXTENSION();
+    MCNAPI static ::std::string_view const& GLB_EXTENSION();
 
-    MCAPI static ::std::string_view const& GLTF_EXTENSION();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::string_view const& GLTF_EXTENSION();
     // NOLINTEND
 };

@@ -14,23 +14,23 @@ class ResourceLoader;
 namespace ResourceLoaders {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& EMPTY_STRING();
+MCNAPI ::std::string const& EMPTY_STRING();
 
-MCAPI ::std::string const& IMGEXT_JPEG();
+MCNAPI ::std::string const& IMGEXT_JPEG();
 
-MCAPI ::std::string const& IMGEXT_JPG();
+MCNAPI ::std::string const& IMGEXT_JPG();
 
-MCAPI ::std::string const& IMGEXT_PNG();
+MCNAPI ::std::string const& IMGEXT_PNG();
 
-MCAPI ::std::string const& IMGEXT_TARGA();
+MCNAPI ::std::string const& IMGEXT_TARGA();
 
-MCAPI ::std::string const& IMGEXT_TEXTURESET();
+MCNAPI ::std::string const& IMGEXT_TEXTURESET();
 
-MCAPI ::BackwardsCompatTextureGroup& backCompatGroup();
+MCNAPI ::BackwardsCompatTextureGroup& backCompatGroup();
 
-MCAPI ::std::map<::ResourceFileSystem, ::std::unique_ptr<::ResourceLoader>>& loaders();
+MCNAPI ::std::map<::ResourceFileSystem, ::std::unique_ptr<::ResourceLoader>>& loaders();
 
-MCAPI ::std::vector<::std::string> const& supportedImageExtensions();
+MCNAPI ::std::vector<::std::string> const& supportedImageExtensions();
 // NOLINTEND
 
 } // namespace ResourceLoaders

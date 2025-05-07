@@ -5,7 +5,7 @@
 namespace DanceComponentInternal {
 // static variables
 // NOLINTBEGIN
-MCAPI float& DEFAULT_DISTANCE();
+MCNAPI float& DEFAULT_DISTANCE();
 // NOLINTEND
 
 } // namespace DanceComponentInternal

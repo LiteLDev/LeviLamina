@@ -10,7 +10,7 @@ class AABB;
 namespace SoulSandBlockUtils {
 // static variables
 // NOLINTBEGIN
-MCAPI ::AABB const& SOUL_SAND_BLOCK_AABB();
+MCNAPI ::AABB const& SOUL_SAND_BLOCK_AABB();
 // NOLINTEND
 
 } // namespace SoulSandBlockUtils

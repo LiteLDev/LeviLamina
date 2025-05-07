@@ -80,7 +80,7 @@ public:
     virtual ::Scripting::Result<void> setCursorState(::Editor::Cursor::CursorState&& state) /*override*/;
 
     // vIndex: 6
-    virtual ::Scripting::Result<void> setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& properties
+    virtual ::Scripting::Result<void> setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& props
     ) /*override*/;
 
     // vIndex: 7
@@ -133,7 +133,7 @@ public:
 
     MCNAPI ::Scripting::Result<void> $setCursorState(::Editor::Cursor::CursorState&& state);
 
-    MCNAPI ::Scripting::Result<void> $setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& properties);
+    MCNAPI ::Scripting::Result<void> $setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& props);
 
     MCNAPI ::Scripting::Result_deprecated<::BlockPos> $moveBy(::glm::ivec3 const& offset);
 

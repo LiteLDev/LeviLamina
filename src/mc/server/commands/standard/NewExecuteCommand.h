@@ -95,73 +95,67 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static char const*& CHAINED_OPTION_0();
+        MCNAPI static char const*& CHAINED_OPTION_0();
 
-        MCAPI static char const*& CONDITION_SUBCOMMAND_OPTION_BLOCK();
+        MCNAPI static char const*& CONDITION_SUBCOMMAND_OPTION_BLOCK();
 
-        MCAPI static char const*& CONDITION_SUBCOMMAND_OPTION_BLOCKS();
+        MCNAPI static char const*& CONDITION_SUBCOMMAND_OPTION_BLOCKS();
 
-        MCAPI static char const*& CONDITION_SUBCOMMAND_OPTION_ENTITY();
+        MCNAPI static char const*& CONDITION_SUBCOMMAND_OPTION_ENTITY();
 
-        MCAPI static char const*& CONDITION_SUBCOMMAND_OPTION_SCORE();
+        MCNAPI static char const*& CONDITION_SUBCOMMAND_OPTION_SCORE();
 
-        MCAPI static char const*& SUBCOMMAND_ALIGN();
+        MCNAPI static char const*& SUBCOMMAND_ALIGN();
 
-        MCAPI static char const*& SUBCOMMAND_ANCHORED();
+        MCNAPI static char const*& SUBCOMMAND_ANCHORED();
 
-        MCAPI static char const*& SUBCOMMAND_AS();
+        MCNAPI static char const*& SUBCOMMAND_AS();
 
-        MCAPI static char const*& SUBCOMMAND_AT();
+        MCNAPI static char const*& SUBCOMMAND_AT();
 
-        MCAPI static char const*& SUBCOMMAND_BLOCK();
+        MCNAPI static char const*& SUBCOMMAND_BLOCK();
 
-        MCAPI static char const*& SUBCOMMAND_BLOCKS();
+        MCNAPI static char const*& SUBCOMMAND_BLOCKS();
 
-        MCAPI static char const*& SUBCOMMAND_ENTITY();
+        MCNAPI static char const*& SUBCOMMAND_ENTITY();
 
-        MCAPI static char const*& SUBCOMMAND_FACING();
+        MCNAPI static char const*& SUBCOMMAND_FACING();
 
-        MCAPI static char const*& SUBCOMMAND_IF();
+        MCNAPI static char const*& SUBCOMMAND_IF();
 
-        MCAPI static char const*& SUBCOMMAND_IN();
+        MCNAPI static char const*& SUBCOMMAND_IN();
 
-        MCAPI static char const*& SUBCOMMAND_OPTION_ALIGN();
+        MCNAPI static char const*& SUBCOMMAND_OPTION_ALIGN();
 
-        MCAPI static char const*& SUBCOMMAND_OPTION_ANCHORED();
+        MCNAPI static char const*& SUBCOMMAND_OPTION_ANCHORED();
 
-        MCAPI static char const*& SUBCOMMAND_OPTION_AS();
+        MCNAPI static char const*& SUBCOMMAND_OPTION_AS();
 
-        MCAPI static char const*& SUBCOMMAND_OPTION_AT();
+        MCNAPI static char const*& SUBCOMMAND_OPTION_AT();
 
-        MCAPI static char const*& SUBCOMMAND_OPTION_ENTITY();
+        MCNAPI static char const*& SUBCOMMAND_OPTION_ENTITY();
 
-        MCAPI static char const*& SUBCOMMAND_OPTION_FACING();
+        MCNAPI static char const*& SUBCOMMAND_OPTION_FACING();
 
-        MCAPI static char const*& SUBCOMMAND_OPTION_IF_UNLESS();
+        MCNAPI static char const*& SUBCOMMAND_OPTION_IF_UNLESS();
 
-        MCAPI static char const*& SUBCOMMAND_OPTION_IN();
+        MCNAPI static char const*& SUBCOMMAND_OPTION_IN();
 
-        MCAPI static char const*& SUBCOMMAND_OPTION_POSITIONED();
+        MCNAPI static char const*& SUBCOMMAND_OPTION_POSITIONED();
 
-        MCAPI static char const*& SUBCOMMAND_OPTION_ROTATED();
+        MCNAPI static char const*& SUBCOMMAND_OPTION_ROTATED();
 
-        MCAPI static char const*& SUBCOMMAND_OPTION_RUN();
+        MCNAPI static char const*& SUBCOMMAND_OPTION_RUN();
 
-        MCAPI static char const*& SUBCOMMAND_POSITIONED();
+        MCNAPI static char const*& SUBCOMMAND_POSITIONED();
 
-        MCAPI static char const*& SUBCOMMAND_ROTATED();
+        MCNAPI static char const*& SUBCOMMAND_ROTATED();
 
-        MCAPI static char const*& SUBCOMMAND_RUN();
+        MCNAPI static char const*& SUBCOMMAND_RUN();
 
-        MCAPI static char const*& SUBCOMMAND_SCORE();
+        MCNAPI static char const*& SUBCOMMAND_SCORE();
 
-        MCAPI static char const*& SUBCOMMAND_UNLESS();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
+        MCNAPI static char const*& SUBCOMMAND_UNLESS();
         // NOLINTEND
 
     public:
@@ -276,6 +270,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

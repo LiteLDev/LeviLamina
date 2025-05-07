@@ -13,17 +13,17 @@ class PersonaColors {
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::pair<::mce::Color, ::std::string>> const& mHairColors();
+    MCNAPI static ::std::vector<::std::pair<::mce::Color, ::std::string>> const& mHairColors();
 
-    MCAPI static ::std::vector<::std::pair<::mce::Color, ::std::string>> const& mIrisColors();
+    MCNAPI static ::std::vector<::std::pair<::mce::Color, ::std::string>> const& mIrisColors();
 
-    MCAPI static ::std::vector<::std::pair<::mce::Color, ::std::string>> const& mMouthColors();
+    MCNAPI static ::std::vector<::std::pair<::mce::Color, ::std::string>> const& mMouthColors();
 
-    MCAPI static ::std::vector<::std::pair<::mce::Color, ::std::string>> const& mPremiumColors();
+    MCNAPI static ::std::vector<::std::pair<::mce::Color, ::std::string>> const& mPremiumColors();
 
-    MCAPI static ::std::vector<::std::pair<::mce::Color, ::std::string>> const& mScleraColors();
+    MCNAPI static ::std::vector<::std::pair<::mce::Color, ::std::string>> const& mScleraColors();
 
-    MCAPI static ::std::vector<::std::pair<::mce::Color, ::std::string>> const& mSkinColors();
+    MCNAPI static ::std::vector<::std::pair<::mce::Color, ::std::string>> const& mSkinColors();
     // NOLINTEND
 };
 

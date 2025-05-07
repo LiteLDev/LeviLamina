@@ -25,7 +25,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SlotData& UNKNOWN_LOCATION();
+    MCNAPI static ::SlotData& UNKNOWN_LOCATION();
     // NOLINTEND
 
 public:

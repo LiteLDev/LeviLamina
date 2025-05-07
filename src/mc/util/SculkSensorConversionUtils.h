@@ -11,9 +11,9 @@ class BlockLegacy;
 namespace SculkSensorConversionUtils {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::function<::std::optional<int>(::BlockLegacy const&, int)>& SculkSensorPhaseStateGetter();
+MCNAPI ::std::function<::std::optional<int>(::BlockLegacy const&, int)>& SculkSensorPhaseStateGetter();
 
-MCAPI ::std::function<::Block const*(::BlockLegacy const&, int, int)>& SculkSensorPhaseStateSetter();
+MCNAPI ::std::function<::Block const*(::BlockLegacy const&, int, int)>& SculkSensorPhaseStateSetter();
 // NOLINTEND
 
 } // namespace SculkSensorConversionUtils

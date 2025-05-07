@@ -53,21 +53,21 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& DEFAULT_EXPORT_NAME();
+    MCNAPI static ::std::string const& DEFAULT_EXPORT_NAME();
 
-    MCAPI static ::std::string const& DEFAULT_STRUCTURE_NAMESPACE();
+    MCNAPI static ::std::string const& DEFAULT_STRUCTURE_NAMESPACE();
 
-    MCAPI static ::StructureBlockType const& DEFAULT_STRUCTURE_TYPE();
+    MCNAPI static ::StructureBlockType const& DEFAULT_STRUCTURE_TYPE();
 
-    MCAPI static ::BlockPos const& MAX_STRUCTURE_OFFSET();
+    MCNAPI static ::BlockPos const& MAX_STRUCTURE_OFFSET();
 
-    MCAPI static ::BlockPos const& MIN_STRUCTURE_OFFSET();
+    MCNAPI static ::BlockPos const& MIN_STRUCTURE_OFFSET();
 
-    MCAPI static ::BlockPos const& MIN_STRUCTURE_SIZE();
+    MCNAPI static ::BlockPos const& MIN_STRUCTURE_SIZE();
 
-    MCAPI static char const& NAMESPACE_DELIMITER();
+    MCNAPI static char const& NAMESPACE_DELIMITER();
 
-    MCAPI static ::std::string const& NAME_PREFIX();
+    MCNAPI static ::std::string const& NAME_PREFIX();
     // NOLINTEND
 
 public:

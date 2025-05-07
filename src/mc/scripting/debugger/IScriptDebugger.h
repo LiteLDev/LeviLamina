@@ -34,9 +34,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& DIAGNOSTICS_CAPTURES_FOLDER();
+    MCNAPI static ::std::string_view const& DIAGNOSTICS_CAPTURES_FOLDER();
 
-    MCAPI static ::std::string_view const& PROFILER_CAPTURES_FOLDER();
+    MCNAPI static ::std::string_view const& PROFILER_CAPTURES_FOLDER();
     // NOLINTEND
 
 public:

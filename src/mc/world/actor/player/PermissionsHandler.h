@@ -38,8 +38,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& DIFF_COMMAND_PERMISSION();
+    MCNAPI static ::std::string const& DIFF_COMMAND_PERMISSION();
 
-    MCAPI static ::std::string const& DIFF_PLAYER_PERMISSION();
+    MCNAPI static ::std::string const& DIFF_PLAYER_PERMISSION();
     // NOLINTEND
 };

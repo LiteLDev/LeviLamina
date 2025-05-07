@@ -21,10 +21,4 @@ public:
     // vIndex: 0
     virtual ~AchievementOfferInfo() = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -25,7 +25,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static uint64 const& PAYLOAD_SIZE_MAX();
+    MCNAPI static uint64 const& PAYLOAD_SIZE_MAX();
     // NOLINTEND
 };
 

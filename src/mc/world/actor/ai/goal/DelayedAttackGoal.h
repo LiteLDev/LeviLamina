@@ -65,13 +65,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BaseGameVersion const& mMinLineOfSightFixVersion();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::BaseGameVersion const& mMinLineOfSightFixVersion();
     // NOLINTEND
 
 public:

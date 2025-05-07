@@ -10,7 +10,7 @@ class AABB;
 namespace FarmBlockConsts {
 // static variables
 // NOLINTBEGIN
-MCAPI ::AABB const& FARM_BLOCK_VISUAL_SHAPE();
+MCNAPI ::AABB const& FARM_BLOCK_VISUAL_SHAPE();
 // NOLINTEND
 
 } // namespace FarmBlockConsts

@@ -89,7 +89,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& INTEGRITY_MAX();
+    MCNAPI static float const& INTEGRITY_MAX();
     // NOLINTEND
 
 public:

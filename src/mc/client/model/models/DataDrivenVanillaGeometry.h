@@ -5,7 +5,7 @@
 namespace DataDrivenVanillaGeometry {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::vector<::std::string> const& GeometryModels();
+MCNAPI ::std::vector<::std::string> const& GeometryModels();
 // NOLINTEND
 
 } // namespace DataDrivenVanillaGeometry

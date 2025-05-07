@@ -64,12 +64,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
 
@@ -100,12 +94,6 @@ public:
 
     // vIndex: 4
     virtual void doneCrashProcessing() = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

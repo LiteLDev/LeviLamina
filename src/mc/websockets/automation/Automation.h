@@ -5,9 +5,9 @@
 namespace Automation {
 // static variables
 // NOLINTBEGIN
-MCAPI char const*& BodyData();
+MCNAPI char const*& BodyData();
 
-MCAPI char const*& HeaderData();
+MCNAPI char const*& HeaderData();
 // NOLINTEND
 
 } // namespace Automation

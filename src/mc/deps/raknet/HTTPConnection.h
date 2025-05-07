@@ -86,12 +86,6 @@ public:
     // vIndex: 0
     virtual ~HTTPConnection() = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace RakNet

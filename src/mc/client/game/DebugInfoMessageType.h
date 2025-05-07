@@ -10,27 +10,27 @@ class HashedString;
 namespace DebugInfoMessageType {
 // static variables
 // NOLINTBEGIN
-MCAPI ::HashedString const& COMPONENT_GROUPS();
+MCNAPI ::HashedString const& COMPONENT_GROUPS();
 
-MCAPI ::HashedString const& DEBUG_BLOCK();
+MCNAPI ::HashedString const& DEBUG_BLOCK();
 
-MCAPI ::HashedString const& EVENTS();
+MCNAPI ::HashedString const& EVENTS();
 
-MCAPI ::HashedString const& GOALS();
+MCNAPI ::HashedString const& GOALS();
 
-MCAPI ::HashedString const& MOB_EQUIPMENT();
+MCNAPI ::HashedString const& MOB_EQUIPMENT();
 
-MCAPI ::HashedString const& MOB_GENERAL();
+MCNAPI ::HashedString const& MOB_GENERAL();
 
-MCAPI ::HashedString const& MOB_INVENTORY();
+MCNAPI ::HashedString const& MOB_INVENTORY();
 
-MCAPI ::HashedString const& MOB_PERMUTATIONS();
+MCNAPI ::HashedString const& MOB_PERMUTATIONS();
 
-MCAPI ::HashedString const& MOB_PROPERTIES();
+MCNAPI ::HashedString const& MOB_PROPERTIES();
 
-MCAPI ::HashedString const& PLAYER_INVENTORY();
+MCNAPI ::HashedString const& PLAYER_INVENTORY();
 
-MCAPI ::HashedString const& PLAYER_SPAWN();
+MCNAPI ::HashedString const& PLAYER_SPAWN();
 // NOLINTEND
 
 } // namespace DebugInfoMessageType

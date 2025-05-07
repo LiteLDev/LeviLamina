@@ -106,15 +106,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::RenderOffsetsItemComponent::ItemTransforms& Main_Hand_Defaults();
+    MCNAPI static ::RenderOffsetsItemComponent::ItemTransforms& Main_Hand_Defaults();
 
-    MCAPI static ::RenderOffsetsItemComponent::ItemTransforms& Off_Hand_Defaults();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::RenderOffsetsItemComponent::ItemTransforms& Off_Hand_Defaults();
     // NOLINTEND
 
 public:

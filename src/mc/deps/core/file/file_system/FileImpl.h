@@ -132,9 +132,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::Core::FileImpl*>& sAllFiles();
+    MCNAPI static ::std::vector<::Core::FileImpl*>& sAllFiles();
 
-    MCAPI static ::Bedrock::Threading::Mutex& sAllFilesLock();
+    MCNAPI static ::Bedrock::Threading::Mutex& sAllFilesLock();
     // NOLINTEND
 
 public:

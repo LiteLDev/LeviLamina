@@ -157,15 +157,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& TRANSFER_NO_DESTINATION();
+    MCNAPI static ::std::string_view const& TRANSFER_NO_DESTINATION();
 
-    MCAPI static ::std::string_view const& TRANSFER_NO_ORIGIN();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::string_view const& TRANSFER_NO_ORIGIN();
     // NOLINTEND
 
 public:

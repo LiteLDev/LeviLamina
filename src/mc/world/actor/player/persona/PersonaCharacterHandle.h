@@ -21,7 +21,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::persona::PersonaCharacterHandle const& INVALID();
+    MCNAPI static ::persona::PersonaCharacterHandle const& INVALID();
     // NOLINTEND
 };
 

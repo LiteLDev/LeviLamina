@@ -19,8 +19,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::set<::HashedString> const& mExposedGameEvents();
+    MCNAPI static ::std::set<::HashedString> const& mExposedGameEvents();
 
-    MCAPI static ::std::vector<::GameEventPair> const& mGameEventPairs();
+    MCNAPI static ::std::vector<::GameEventPair> const& mGameEventPairs();
     // NOLINTEND
 };

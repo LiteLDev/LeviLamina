@@ -40,12 +40,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $test(::BlockPos, ::BlockPos worldPos, ::BlockPos worldReference, ::IRandom& random) const;

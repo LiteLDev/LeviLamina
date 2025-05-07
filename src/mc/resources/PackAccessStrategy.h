@@ -120,7 +120,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Core::PathBuffer<::std::string> const& PACK_IMPORT_LOCK_FILE();
+    MCNAPI static ::Core::PathBuffer<::std::string> const& PACK_IMPORT_LOCK_FILE();
     // NOLINTEND
 
 public:

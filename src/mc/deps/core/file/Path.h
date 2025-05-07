@@ -47,7 +47,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Core::Path const& EMPTY();
+    MCNAPI static ::Core::Path const& EMPTY();
     // NOLINTEND
 
 public:

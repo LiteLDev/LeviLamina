@@ -35,6 +35,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::PlayerMovementSettings const& INVALID();
+    MCNAPI static ::PlayerMovementSettings const& INVALID();
     // NOLINTEND
 };

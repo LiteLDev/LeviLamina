@@ -46,17 +46,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float& SITTING_ATTACK_VIEW_RANGE();
+    MCNAPI static float& SITTING_ATTACK_VIEW_RANGE();
 
-    MCAPI static float& SITTING_CHARGE_VIEW_RANGE();
+    MCNAPI static float& SITTING_CHARGE_VIEW_RANGE();
 
-    MCAPI static int& SITTING_SCANNING_IDLE_TICKS();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static int& SITTING_SCANNING_IDLE_TICKS();
     // NOLINTEND
 
 public:

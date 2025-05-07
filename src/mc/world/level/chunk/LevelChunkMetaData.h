@@ -25,7 +25,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static uint64 const& INVALID_META_DATA();
+    MCNAPI static uint64 const& INVALID_META_DATA();
     // NOLINTEND
 
 public:

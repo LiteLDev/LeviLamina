@@ -40,7 +40,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::webrtc::TimeDelta const& kForever();
+    MCNAPI static ::webrtc::TimeDelta const& kForever();
     // NOLINTEND
 
 public:

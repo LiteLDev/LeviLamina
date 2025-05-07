@@ -42,7 +42,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersion const& VERSION();
+    MCNAPI static ::SemVersion const& VERSION();
     // NOLINTEND
 
 public:

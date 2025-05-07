@@ -5,9 +5,9 @@
 namespace DamageSensor::Defaults {
 // static variables
 // NOLINTBEGIN
-MCAPI float const& DAMAGE_MODIFIER();
+MCNAPI float const& DAMAGE_MODIFIER();
 
-MCAPI float const& DAMAGE_MULTIPLIER();
+MCNAPI float const& DAMAGE_MULTIPLIER();
 // NOLINTEND
 
 } // namespace DamageSensor::Defaults

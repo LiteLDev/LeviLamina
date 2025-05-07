@@ -10,17 +10,17 @@ class HashedString;
 namespace VanillaBlockGeometryIds {
 // static variables
 // NOLINTBEGIN
-MCAPI ::HashedString const& Beacon();
+MCNAPI ::HashedString const& Beacon();
 
-MCAPI ::HashedString const& BigDripleaf();
+MCNAPI ::HashedString const& BigDripleaf();
 
-MCAPI ::HashedString const& EnchantingTable();
+MCNAPI ::HashedString const& EnchantingTable();
 
-MCAPI ::HashedString const& Hopper();
+MCNAPI ::HashedString const& Hopper();
 
-MCAPI ::HashedString const& HopperSide();
+MCNAPI ::HashedString const& HopperSide();
 
-MCAPI ::HashedString const& Lectern();
+MCNAPI ::HashedString const& Lectern();
 // NOLINTEND
 
 } // namespace VanillaBlockGeometryIds

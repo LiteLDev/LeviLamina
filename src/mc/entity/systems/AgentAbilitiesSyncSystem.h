@@ -42,10 +42,4 @@ public:
         ::EntityModifier<::AbilitiesDirtyComponent>                             modifier
     );
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

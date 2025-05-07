@@ -36,7 +36,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::atomic<uint>& mRegistryCount();
+    MCNAPI static ::std::atomic<uint>& mRegistryCount();
     // NOLINTEND
 
 public:

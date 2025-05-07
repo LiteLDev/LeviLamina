@@ -31,10 +31,4 @@ public:
     // vIndex: 0
     virtual ~DataDrivenGeometry() = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -56,7 +56,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<
+    MCNAPI static ::std::unordered_map<
         ::HashedString,
         ::std::function<::std::unique_ptr<
             ::LootItemFunction>(::Json::Value&, ::std::vector<::std::unique_ptr<::LootItemCondition>>&)>> const&

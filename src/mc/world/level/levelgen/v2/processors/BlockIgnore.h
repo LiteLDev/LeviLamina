@@ -57,7 +57,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>> const& STRUCTURE_BLOCK();
+    MCNAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>> const& STRUCTURE_BLOCK();
     // NOLINTEND
 
 public:

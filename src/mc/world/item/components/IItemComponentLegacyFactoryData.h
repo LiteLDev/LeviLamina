@@ -43,10 +43,4 @@ public:
     // vIndex: 0
     virtual ~IItemComponentLegacyFactoryData() = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

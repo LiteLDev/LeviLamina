@@ -43,12 +43,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI void $onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
@@ -102,7 +96,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata<
+    MCNAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata<
         ::Editor::ScriptModule::ScriptDataStoreAfterEvents> const&
     mMetadata();
     // NOLINTEND

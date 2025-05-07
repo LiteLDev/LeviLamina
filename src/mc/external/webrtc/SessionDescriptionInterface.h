@@ -62,19 +62,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> kAnswer();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> kAnswer();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> kOffer();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> kOffer();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> kPrAnswer();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> kPrAnswer();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> kRollback();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> kRollback();
     // NOLINTEND
 
 public:

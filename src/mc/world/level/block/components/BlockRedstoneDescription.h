@@ -60,11 +60,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static bool const& ALLOWS_WIRE_TO_STEP_DOWN_DEFAULT();
+    MCNAPI static bool const& ALLOWS_WIRE_TO_STEP_DOWN_DEFAULT();
 
-    MCAPI static ::std::string const& NameID();
+    MCNAPI static ::std::string const& NameID();
 
-    MCAPI static bool const& REDSTONE_CONDUCTOR_DEFAULT();
+    MCNAPI static bool const& REDSTONE_CONDUCTOR_DEFAULT();
     // NOLINTEND
 
 public:

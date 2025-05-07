@@ -48,19 +48,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR();
+    MCNAPI static ::std::string const& STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR();
 
-    MCAPI static ::std::string const& STRUCTURE_LOCATION_IGLOO_TRAPDOOR();
+    MCNAPI static ::std::string const& STRUCTURE_LOCATION_IGLOO_TRAPDOOR();
 
-    MCAPI static ::std::string const& STRUCTURE_LOCATION_LABORATORY();
+    MCNAPI static ::std::string const& STRUCTURE_LOCATION_LABORATORY();
 
-    MCAPI static ::std::string const& STRUCTURE_LOCATION_LADDER();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::string const& STRUCTURE_LOCATION_LADDER();
     // NOLINTEND
 
 public:

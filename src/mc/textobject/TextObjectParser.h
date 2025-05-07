@@ -111,26 +111,26 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& RAW_TEXT_ERROR_NOT_ARRAY();
+    MCNAPI static ::std::string const& RAW_TEXT_ERROR_NOT_ARRAY();
 
-    MCAPI static ::std::string const& RAW_TEXT_ERROR_NOT_OBJECT();
+    MCNAPI static ::std::string const& RAW_TEXT_ERROR_NOT_OBJECT();
 
-    MCAPI static ::std::string const& RAW_TEXT_ERROR_NO_DATA();
+    MCNAPI static ::std::string const& RAW_TEXT_ERROR_NO_DATA();
 
-    MCAPI static ::std::string const& RAW_TEXT_ERROR_PARSE_FAILED();
+    MCNAPI static ::std::string const& RAW_TEXT_ERROR_PARSE_FAILED();
 
-    MCAPI static ::std::string const& RAW_TEXT_ERROR_SCORE_NAME_NOT_STRING();
+    MCNAPI static ::std::string const& RAW_TEXT_ERROR_SCORE_NAME_NOT_STRING();
 
-    MCAPI static ::std::string const& RAW_TEXT_ERROR_SCORE_NOT_OBJECT();
+    MCNAPI static ::std::string const& RAW_TEXT_ERROR_SCORE_NOT_OBJECT();
 
-    MCAPI static ::std::string const& RAW_TEXT_ERROR_SCORE_OBJECTIVE_NOT_STRING();
+    MCNAPI static ::std::string const& RAW_TEXT_ERROR_SCORE_OBJECTIVE_NOT_STRING();
 
-    MCAPI static ::std::string const& RAW_TEXT_ERROR_SELECTOR_NOT_STRING();
+    MCNAPI static ::std::string const& RAW_TEXT_ERROR_SELECTOR_NOT_STRING();
 
-    MCAPI static ::std::string const& RAW_TEXT_ERROR_TEXT_NOT_STRING();
+    MCNAPI static ::std::string const& RAW_TEXT_ERROR_TEXT_NOT_STRING();
 
-    MCAPI static ::std::string const& RAW_TEXT_ERROR_TRANSLATE_NOT_STRING();
+    MCNAPI static ::std::string const& RAW_TEXT_ERROR_TRANSLATE_NOT_STRING();
 
-    MCAPI static ::std::string const& RAW_TEXT_ERROR_WITH_NOT_ARRAY_OR_RAW_TEXT();
+    MCNAPI static ::std::string const& RAW_TEXT_ERROR_WITH_NOT_ARRAY_OR_RAW_TEXT();
     // NOLINTEND
 };

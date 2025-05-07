@@ -21,12 +21,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::mce::UUID const& ModuleUUID();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::mce::UUID const& ModuleUUID();
     // NOLINTEND
 };

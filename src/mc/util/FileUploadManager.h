@@ -116,7 +116,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& BOUNDARY();
+    MCNAPI static ::std::string const& BOUNDARY();
     // NOLINTEND
 
 public:

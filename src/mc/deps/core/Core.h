@@ -24,13 +24,13 @@ MCNAPI ::Core::Result transferDirectory(
 
 // static variables
 // NOLINTBEGIN
-MCAPI char const*& RESULT_SUCCEEDED_MESSAGE();
+MCNAPI char const*& RESULT_SUCCEEDED_MESSAGE();
 
-MCAPI ::std::string const& sLockBlobName();
+MCNAPI ::std::string const& sLockBlobName();
 
-MCAPI ::std::string const& sMultiChunkTag();
+MCNAPI ::std::string const& sMultiChunkTag();
 
-MCAPI ::std::shared_ptr<::Core::FileStorageArea>& sRootStorageArea();
+MCNAPI ::std::shared_ptr<::Core::FileStorageArea>& sRootStorageArea();
 // NOLINTEND
 
 } // namespace Core

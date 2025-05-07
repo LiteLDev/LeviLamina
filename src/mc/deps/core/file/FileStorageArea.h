@@ -242,11 +242,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::Core::FileStats*>& sStorageAreaFileStats();
+    MCNAPI static ::std::vector<::Core::FileStats*>& sStorageAreaFileStats();
 
-    MCAPI static ::std::recursive_mutex& sStorageAreaLock();
+    MCNAPI static ::std::recursive_mutex& sStorageAreaLock();
 
-    MCAPI static ::Core::StorageAreasTree& sStorageAreas();
+    MCNAPI static ::Core::StorageAreasTree& sStorageAreas();
     // NOLINTEND
 
 public:

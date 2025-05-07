@@ -79,10 +79,4 @@ public:
     // vIndex: 0
     virtual ~ThrottledFileWriteManager() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

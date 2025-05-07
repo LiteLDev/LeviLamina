@@ -10,15 +10,15 @@ class HashedString;
 namespace CraftingTag {
 // static variables
 // NOLINTBEGIN
-MCAPI ::HashedString const& CARTOGRAPHY_TABLE();
+MCNAPI ::HashedString const& CARTOGRAPHY_TABLE();
 
-MCAPI ::HashedString const& CRAFTING_TABLE();
+MCNAPI ::HashedString const& CRAFTING_TABLE();
 
-MCAPI ::HashedString const& DEPRECATED();
+MCNAPI ::HashedString const& DEPRECATED();
 
-MCAPI ::HashedString const& SMITHING_TABLE();
+MCNAPI ::HashedString const& SMITHING_TABLE();
 
-MCAPI ::HashedString const& STONECUTTER();
+MCNAPI ::HashedString const& STONECUTTER();
 // NOLINTEND
 
 } // namespace CraftingTag

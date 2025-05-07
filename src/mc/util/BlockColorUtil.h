@@ -8,7 +8,7 @@
 namespace BlockColorUtil {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::array<::BlockColor, 16>& RAINBOW();
+MCNAPI ::std::array<::BlockColor, 16>& RAINBOW();
 // NOLINTEND
 
 } // namespace BlockColorUtil

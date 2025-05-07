@@ -10,9 +10,9 @@ class Vec3;
 namespace LecternBlockUtil {
 // static variables
 // NOLINTBEGIN
-MCAPI ::Vec3 const& LECTERN_AABB_ORIGIN();
+MCNAPI ::Vec3 const& LECTERN_AABB_ORIGIN();
 
-MCAPI ::Vec3 const& LECTERN_AABB_SIZE();
+MCNAPI ::Vec3 const& LECTERN_AABB_SIZE();
 // NOLINTEND
 
 } // namespace LecternBlockUtil

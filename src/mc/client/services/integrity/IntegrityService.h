@@ -28,10 +28,4 @@ public:
     // vIndex: 0
     virtual ~IntegrityService() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

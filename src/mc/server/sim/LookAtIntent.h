@@ -30,31 +30,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit LookAtIntent(::std::variant<
-                                 ::sim::VoidLookAtIntent,
-                                 ::sim::LookAtPositionIntent,
-                                 ::sim::ContinuousLookAtPositionIntent,
-                                 ::sim::LookAtEntityIntent,
-                                 ::sim::ContinuousLookAtEntityIntent> type);
+    MCAPI explicit LookAtIntent(::std::variant<
+                                ::sim::VoidLookAtIntent,
+                                ::sim::LookAtPositionIntent,
+                                ::sim::ContinuousLookAtPositionIntent,
+                                ::sim::LookAtEntityIntent,
+                                ::sim::ContinuousLookAtEntityIntent> type);
 
-    MCNAPI ~LookAtIntent();
+    MCAPI ~LookAtIntent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::variant<
-                       ::sim::VoidLookAtIntent,
-                       ::sim::LookAtPositionIntent,
-                       ::sim::ContinuousLookAtPositionIntent,
-                       ::sim::LookAtEntityIntent,
-                       ::sim::ContinuousLookAtEntityIntent> type);
+    MCAPI void* $ctor(::std::variant<
+                      ::sim::VoidLookAtIntent,
+                      ::sim::LookAtPositionIntent,
+                      ::sim::ContinuousLookAtPositionIntent,
+                      ::sim::LookAtEntityIntent,
+                      ::sim::ContinuousLookAtEntityIntent> type);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

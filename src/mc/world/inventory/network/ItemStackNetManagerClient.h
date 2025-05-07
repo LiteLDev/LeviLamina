@@ -49,12 +49,6 @@ public:
         // vIndex: 0
         virtual ~PredictiveContainer() = default;
         // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     struct OwningPredictiveContainer : public ::ItemStackNetManagerClient::PredictiveContainer {
@@ -75,12 +69,6 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~OwningPredictiveContainer() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
         // NOLINTEND
     };
 
@@ -162,12 +150,6 @@ public:
 
     // vIndex: 10
     virtual void _initScreen(::ItemStackNetManagerScreen&) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

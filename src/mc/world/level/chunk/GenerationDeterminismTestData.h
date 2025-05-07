@@ -68,10 +68,4 @@ public:
     // vIndex: 0
     virtual ~GenerationDeterminismTestData() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

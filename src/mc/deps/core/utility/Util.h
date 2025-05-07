@@ -148,13 +148,13 @@ MCNAPI bool validateIdentifierChunk(::std::string const& chunk, ::LogArea logAre
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& EMPTY_GUID();
+MCNAPI ::std::string const& EMPTY_GUID();
 
-MCAPI ::std::string const& EMPTY_STRING();
+MCNAPI ::std::string const& EMPTY_STRING();
 
-MCAPI ::std::string const& HEX_CHARS();
+MCNAPI ::std::string const& HEX_CHARS();
 
-MCAPI ::std::string const& NEW_LINE();
+MCNAPI ::std::string const& NEW_LINE();
 // NOLINTEND
 
 } // namespace Util

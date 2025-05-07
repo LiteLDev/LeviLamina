@@ -321,12 +321,12 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForGameCallbacks();
+    MCNAPI static void** $vftableForGameCallbacks();
 
-    MCAPI static void** $vftableForStorageAreaStateListener();
+    MCNAPI static void** $vftableForStorageAreaStateListener();
 
-    MCAPI static void** $vftableForAppPlatformListener();
+    MCNAPI static void** $vftableForAppPlatformListener();
 
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

@@ -70,8 +70,8 @@ public:
 
     // vIndex: 7
     virtual void addFeature(
-        ::IBlockWorldGenAPI&                                                blocks,
-        ::ChunkPos const&                                                   chunkPos,
+        ::IBlockWorldGenAPI&                                                target,
+        ::ChunkPos const&                                                   pos,
         ::Random&                                                           random,
         ::ChunkPos const&                                                   startChunk,
         ::RenderParams&                                                     renderParams,
@@ -80,12 +80,6 @@ public:
 
     // vIndex: 0
     virtual ~NetherCaveFeature() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:
@@ -122,8 +116,8 @@ public:
     ) const;
 
     MCNAPI void $addFeature(
-        ::IBlockWorldGenAPI&                                                blocks,
-        ::ChunkPos const&                                                   chunkPos,
+        ::IBlockWorldGenAPI&                                                target,
+        ::ChunkPos const&                                                   pos,
         ::Random&                                                           random,
         ::ChunkPos const&                                                   startChunk,
         ::RenderParams&                                                     renderParams,

@@ -37,15 +37,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const*& ModuleName();
+    MCNAPI static char const*& ModuleName();
 
-    MCAPI static ::Scripting::UUID const& ModuleUUID();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::Scripting::UUID const& ModuleUUID();
     // NOLINTEND
 
 public:

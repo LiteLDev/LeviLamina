@@ -39,7 +39,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Core::PathBuffer<::std::string> const& SIGNATURE_FILENAME();
+    MCNAPI static ::Core::PathBuffer<::std::string> const& SIGNATURE_FILENAME();
     // NOLINTEND
 
 public:

@@ -18,6 +18,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& START();
+    MCNAPI static ::std::string_view const& START();
     // NOLINTEND
 };

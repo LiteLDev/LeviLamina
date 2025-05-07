@@ -53,15 +53,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& MIN_DELTA_TO_MOVE();
+    MCNAPI static float const& MIN_DELTA_TO_MOVE();
 
-    MCAPI static float const& MIN_SPEED_SQR();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static float const& MIN_SPEED_SQR();
     // NOLINTEND
 
 public:

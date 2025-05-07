@@ -20,6 +20,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::PersonaAnimationDefinition const& INVALID_ANIMATION_DEFINITION();
+    MCNAPI static ::PersonaAnimationDefinition const& INVALID_ANIMATION_DEFINITION();
     // NOLINTEND
 };

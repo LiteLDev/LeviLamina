@@ -78,12 +78,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
 
@@ -195,12 +189,6 @@ public:
 
     // vIndex: 14
     virtual ::IMinecraftEventing& getMinecraftEventing() const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

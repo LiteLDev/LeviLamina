@@ -27,10 +27,4 @@ public:
     // vIndex: 0
     virtual ~GeometryGroup() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

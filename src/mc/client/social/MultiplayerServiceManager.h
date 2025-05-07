@@ -37,12 +37,6 @@ public:
     // vIndex: 0
     virtual ~MultiplayerServiceManager() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Social

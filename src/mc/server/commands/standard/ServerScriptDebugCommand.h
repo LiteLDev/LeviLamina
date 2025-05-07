@@ -44,17 +44,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ScriptDiagnosticsPublishToFile*& sDiagnosticsPublishToFile();
+    MCNAPI static ::ScriptDiagnosticsPublishToFile*& sDiagnosticsPublishToFile();
 
-    MCAPI static ::std::optional<ushort>& sForcedPort();
+    MCNAPI static ::std::optional<ushort>& sForcedPort();
 
-    MCAPI static ::IScriptDebugger*& sServerScriptDebugger();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::IScriptDebugger*& sServerScriptDebugger();
     // NOLINTEND
 
 public:

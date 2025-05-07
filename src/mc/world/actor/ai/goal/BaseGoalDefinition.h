@@ -38,7 +38,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::std::string, int>& mControlFlagMap();
+    MCNAPI static ::std::unordered_map<::std::string, int>& mControlFlagMap();
     // NOLINTEND
 
 public:

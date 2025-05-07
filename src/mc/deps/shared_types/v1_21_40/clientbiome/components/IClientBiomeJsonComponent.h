@@ -11,12 +11,6 @@ public:
     // vIndex: 0
     virtual ~IClientBiomeJsonComponent() = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_21_40

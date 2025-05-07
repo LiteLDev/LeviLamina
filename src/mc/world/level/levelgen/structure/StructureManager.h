@@ -177,9 +177,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const*& BEHAVIOR_PACK_STRUCTURES_FOLDER();
+    MCNAPI static char const*& BEHAVIOR_PACK_STRUCTURES_FOLDER();
 
-    MCAPI static char const*& LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX();
+    MCNAPI static char const*& LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX();
     // NOLINTEND
 
 public:

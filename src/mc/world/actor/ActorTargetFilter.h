@@ -36,7 +36,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<
+    MCNAPI static ::std::add_lvalue_reference_t<
         ::std::unordered_map<::HashedString, bool (*)(::ActorTargetFilter const&, ::Actor&)>>
     ConditionPredicates();
     // NOLINTEND

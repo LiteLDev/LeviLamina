@@ -17,6 +17,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::Scheduler>& mInstance();
+    MCNAPI static ::std::unique_ptr<::Scheduler>& mInstance();
     // NOLINTEND
 };

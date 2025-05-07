@@ -18,11 +18,11 @@ MCNAPI void trySendWaxingTelemetryEventToClient(::Player& player, ::BlockLegacy 
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::mce::Color const& WAX_OFF_COLOR();
+MCNAPI ::mce::Color const& WAX_OFF_COLOR();
 
-MCAPI ::mce::Color const& WAX_ON_COLOR();
+MCNAPI ::mce::Color const& WAX_ON_COLOR();
 
-MCAPI ::HashedString const& nullname();
+MCNAPI ::HashedString const& nullname();
 // NOLINTEND
 
 } // namespace CopperUtil

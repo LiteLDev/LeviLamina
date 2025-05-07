@@ -16,6 +16,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BidirectionalUnorderedMap<::ItemStackNetResult, ::std::string> const& mMap();
+    MCNAPI static ::BidirectionalUnorderedMap<::ItemStackNetResult, ::std::string> const& mMap();
     // NOLINTEND
 };

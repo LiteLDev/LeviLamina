@@ -126,7 +126,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::FeatureToggles>& mFeatureToggles();
+    MCNAPI static ::std::unique_ptr<::FeatureToggles>& mFeatureToggles();
     // NOLINTEND
 
 public:

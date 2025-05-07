@@ -111,9 +111,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& WORLD_BEHAVIOR_PACKS_FILE();
+    MCNAPI static ::std::string const& WORLD_BEHAVIOR_PACKS_FILE();
 
-    MCAPI static ::std::string const& WORLD_RESOURCE_PACKS_FILE();
+    MCNAPI static ::std::string const& WORLD_RESOURCE_PACKS_FILE();
     // NOLINTEND
 
 public:

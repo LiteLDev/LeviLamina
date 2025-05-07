@@ -5,7 +5,7 @@
 namespace Redstone {
 // static variables
 // NOLINTBEGIN
-MCAPI int const& SIGNAL_MAX();
+MCNAPI int const& SIGNAL_MAX();
 // NOLINTEND
 
 } // namespace Redstone

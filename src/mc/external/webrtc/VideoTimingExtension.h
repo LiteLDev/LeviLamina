@@ -21,11 +21,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static uchar const& kNetwork2TimestampDeltaOffset();
+    MCNAPI static uchar const& kNetwork2TimestampDeltaOffset();
 
-    MCAPI static uchar const& kPacerExitDeltaOffset();
+    MCNAPI static uchar const& kPacerExitDeltaOffset();
 
-    MCAPI static uchar const& kPacketizationFinishDeltaOffset();
+    MCNAPI static uchar const& kPacketizationFinishDeltaOffset();
     // NOLINTEND
 };
 

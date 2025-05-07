@@ -84,15 +84,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& ENDPOINT_IDENTIFIER();
+    MCNAPI static ::std::string const& ENDPOINT_IDENTIFIER();
 
-    MCAPI static ::std::string const& ONEDS_URL();
+    MCNAPI static ::std::string const& ONEDS_URL();
 
-    MCAPI static ::std::string const& PARTA_IDENTIFIER();
+    MCNAPI static ::std::string const& PARTA_IDENTIFIER();
 
-    MCAPI static ::std::string const& SAFETY_ENDPOINT_IDENTIFIER();
+    MCNAPI static ::std::string const& SAFETY_ENDPOINT_IDENTIFIER();
 
-    MCAPI static ::std::string const& SAFETY_PARTA_IDENTIFIER();
+    MCNAPI static ::std::string const& SAFETY_PARTA_IDENTIFIER();
     // NOLINTEND
 
 public:

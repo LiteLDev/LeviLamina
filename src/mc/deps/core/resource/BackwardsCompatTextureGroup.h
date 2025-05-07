@@ -23,6 +23,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BackwardsCompatTextureInfo const& invalidInfo();
+    MCNAPI static ::BackwardsCompatTextureInfo const& invalidInfo();
     // NOLINTEND
 };

@@ -82,9 +82,9 @@ parseFilterTestData(::SharedTypes::v1_21_20::FilterTestData& data, ::Json::Value
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::add_lvalue_reference_t<char const[]> REGEX_MATERIAL_NAME();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> REGEX_MATERIAL_NAME();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> REGEX_NAMESPACE_NAME();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> REGEX_NAMESPACE_NAME();
 // NOLINTEND
 
 } // namespace CerealHelpers

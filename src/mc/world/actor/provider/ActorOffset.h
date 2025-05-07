@@ -37,7 +37,7 @@ MCNAPI void setHeightOffset(::EntityContext& entity, float heightOffset);
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::Vec3 const& DEFAULT_DROP_OFFSET();
+MCNAPI ::Vec3 const& DEFAULT_DROP_OFFSET();
 // NOLINTEND
 
 } // namespace ActorOffset

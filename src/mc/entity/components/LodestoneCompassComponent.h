@@ -55,7 +55,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::CompassSpriteCalculator& mSpinningLodestone();
+    MCNAPI static ::CompassSpriteCalculator& mSpinningLodestone();
     // NOLINTEND
 
 public:

@@ -24,6 +24,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::optional<uint> const& NON_DYNAMIC_ID();
+    MCNAPI static ::std::optional<uint> const& NON_DYNAMIC_ID();
     // NOLINTEND
 };

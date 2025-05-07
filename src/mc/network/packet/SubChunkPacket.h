@@ -54,9 +54,9 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static schar const& HEIGHT_COLUMN_ABOVE_SUBCHUNK();
+        MCNAPI static schar const& HEIGHT_COLUMN_ABOVE_SUBCHUNK();
 
-        MCAPI static schar const& HEIGHT_COLUMN_BELOW_SUBCHUNK();
+        MCNAPI static schar const& HEIGHT_COLUMN_BELOW_SUBCHUNK();
         // NOLINTEND
     };
 
@@ -174,6 +174,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

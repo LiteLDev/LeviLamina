@@ -12,10 +12,4 @@ public:
     // vIndex: 8
     virtual ~DebugInfoMob() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

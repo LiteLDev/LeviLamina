@@ -69,19 +69,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& NUM_OPTIONS();
+    MCNAPI static int const& NUM_OPTIONS();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

@@ -77,13 +77,13 @@ MCNAPI ::Core::Result validateLevelDat(::Core::Path filePath);
 
 // static variables
 // NOLINTBEGIN
-MCAPI char const* const& CLOUD_SYNC_LOCK();
+MCNAPI char const* const& CLOUD_SYNC_LOCK();
 
-MCAPI char const* const& FN_CORRUPTED_WORLD_MARKER();
+MCNAPI char const* const& FN_CORRUPTED_WORLD_MARKER();
 
-MCAPI char const* const& FN_LEVEL_DAT();
+MCNAPI char const* const& FN_LEVEL_DAT();
 
-MCAPI ::std::atomic<bool>& writingToCache();
+MCNAPI ::std::atomic<bool>& writingToCache();
 // NOLINTEND
 
 } // namespace ExternalFileLevelStorage

@@ -49,12 +49,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::NetherNet::ErrorOr<void, ::std::error_code> $SetKey(uint64 id);

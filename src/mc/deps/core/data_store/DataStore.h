@@ -86,12 +86,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
 
@@ -117,12 +111,6 @@ public:
 
         // vIndex: 0
         virtual ~Editor() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
         // NOLINTEND
 
     public:

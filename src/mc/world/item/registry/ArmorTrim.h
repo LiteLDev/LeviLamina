@@ -53,17 +53,17 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& TAG_TRIM();
+    MCNAPI static ::std::string const& TAG_TRIM();
 
-    MCAPI static ::std::string const& TAG_TRIM_MATERIAL();
+    MCNAPI static ::std::string const& TAG_TRIM_MATERIAL();
 
-    MCAPI static ::std::string const& TAG_TRIM_PATTERN();
+    MCNAPI static ::std::string const& TAG_TRIM_PATTERN();
 
-    MCAPI static ::std::string const& UPGRADE_DESCRIPTION();
+    MCNAPI static ::std::string const& UPGRADE_DESCRIPTION();
 
-    MCAPI static ::std::string const& UPGRADE_DESCRIPTION_FORMAT();
+    MCNAPI static ::std::string const& UPGRADE_DESCRIPTION_FORMAT();
 
-    MCAPI static ::std::string const& WRONG_VERSION_OR_ITEM_ERROR();
+    MCNAPI static ::std::string const& WRONG_VERSION_OR_ITEM_ERROR();
     // NOLINTEND
 
 public:

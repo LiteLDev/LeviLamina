@@ -49,11 +49,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BaseGameVersion const& ANY();
+    MCNAPI static ::BaseGameVersion const& ANY();
 
-    MCAPI static ::BaseGameVersion const& EMPTY();
+    MCNAPI static ::BaseGameVersion const& EMPTY();
 
-    MCAPI static ::BaseGameVersion const& INCOMPATIBLE();
+    MCNAPI static ::BaseGameVersion const& INCOMPATIBLE();
     // NOLINTEND
 
 public:

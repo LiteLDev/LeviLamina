@@ -38,13 +38,13 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::ToFloatFunction<::TerrainShaper::Point>& CONTINENTS_EXTRACTOR();
+        MCNAPI static ::ToFloatFunction<::TerrainShaper::Point>& CONTINENTS_EXTRACTOR();
 
-        MCAPI static ::ToFloatFunction<::TerrainShaper::Point>& EROSION_EXTRACTOR();
+        MCNAPI static ::ToFloatFunction<::TerrainShaper::Point>& EROSION_EXTRACTOR();
 
-        MCAPI static ::ToFloatFunction<::TerrainShaper::Point>& RIDGES_EXTRACTOR();
+        MCNAPI static ::ToFloatFunction<::TerrainShaper::Point>& RIDGES_EXTRACTOR();
 
-        MCAPI static ::ToFloatFunction<::TerrainShaper::Point>& WEIRDNESS_EXTRACTOR();
+        MCNAPI static ::ToFloatFunction<::TerrainShaper::Point>& WEIRDNESS_EXTRACTOR();
         // NOLINTEND
     };
 

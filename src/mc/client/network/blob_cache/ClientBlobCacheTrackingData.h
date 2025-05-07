@@ -63,10 +63,4 @@ public:
     // vIndex: 0
     virtual ~ClientBlobCacheTrackingData() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

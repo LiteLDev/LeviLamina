@@ -10,71 +10,71 @@ class BaseGameVersion;
 namespace VanillaGameVersions {
 // static variables
 // NOLINTBEGIN
-MCAPI ::BaseGameVersion const& BeeUpdate();
+MCNAPI ::BaseGameVersion const& BeeUpdate();
 
-MCAPI ::BaseGameVersion const& CavesAndCliffsUpdate();
+MCNAPI ::BaseGameVersion const& CavesAndCliffsUpdate();
 
-MCAPI ::BaseGameVersion const& CavesAndCliffsUpdate_U1();
+MCNAPI ::BaseGameVersion const& CavesAndCliffsUpdate_U1();
 
-MCAPI ::BaseGameVersion const& CavesAndCliffsUpdate_U3();
+MCNAPI ::BaseGameVersion const& CavesAndCliffsUpdate_U3();
 
-MCAPI ::BaseGameVersion const& CavesAndCliffs_Part1();
+MCNAPI ::BaseGameVersion const& CavesAndCliffs_Part1();
 
-MCAPI ::BaseGameVersion const& CavesAndCliffs_Part1_U1();
+MCNAPI ::BaseGameVersion const& CavesAndCliffs_Part1_U1();
 
-MCAPI ::BaseGameVersion const& LastLegacyGeneratorUpdate();
+MCNAPI ::BaseGameVersion const& LastLegacyGeneratorUpdate();
 
-MCAPI ::BaseGameVersion const& NetherUpdate();
+MCNAPI ::BaseGameVersion const& NetherUpdate();
 
-MCAPI ::BaseGameVersion const& NetherUpdate_U3();
+MCNAPI ::BaseGameVersion const& NetherUpdate_U3();
 
-MCAPI ::BaseGameVersion const& RecipeUnlockingVersion();
+MCNAPI ::BaseGameVersion const& RecipeUnlockingVersion();
 
-MCAPI ::BaseGameVersion const& SneakingHeightChangeVersion();
+MCNAPI ::BaseGameVersion const& SneakingHeightChangeVersion();
 
-MCAPI ::BaseGameVersion const& Summer24UpdateVersion();
+MCNAPI ::BaseGameVersion const& Summer24UpdateVersion();
 
-MCAPI ::BaseGameVersion const& Summer24UpdateVersion_U1();
+MCNAPI ::BaseGameVersion const& Summer24UpdateVersion_U1();
 
-MCAPI ::BaseGameVersion const& Summer24UpdateVersion_U3();
+MCNAPI ::BaseGameVersion const& Summer24UpdateVersion_U3();
 
-MCAPI ::BaseGameVersion const& Summer24UpdateVersion_U4();
+MCNAPI ::BaseGameVersion const& Summer24UpdateVersion_U4();
 
-MCAPI ::BaseGameVersion const& Summer24UpdateVersion_U5();
+MCNAPI ::BaseGameVersion const& Summer24UpdateVersion_U5();
 
-MCAPI ::BaseGameVersion const& Summer24UpdateVersion_U6();
+MCNAPI ::BaseGameVersion const& Summer24UpdateVersion_U6();
 
-MCAPI ::BaseGameVersion const& TrailsAndTalesVersion();
+MCNAPI ::BaseGameVersion const& TrailsAndTalesVersion();
 
-MCAPI ::BaseGameVersion const& TrailsAndTalesVersion_U1();
+MCNAPI ::BaseGameVersion const& TrailsAndTalesVersion_U1();
 
-MCAPI ::BaseGameVersion const& TrailsAndTalesVersion_U2();
+MCNAPI ::BaseGameVersion const& TrailsAndTalesVersion_U2();
 
-MCAPI ::BaseGameVersion const& TrailsAndTalesVersion_U3();
+MCNAPI ::BaseGameVersion const& TrailsAndTalesVersion_U3();
 
-MCAPI ::BaseGameVersion const& TrailsAndTalesVersion_U4();
+MCNAPI ::BaseGameVersion const& TrailsAndTalesVersion_U4();
 
-MCAPI ::BaseGameVersion const& TrailsAndTalesVersion_U5();
+MCNAPI ::BaseGameVersion const& TrailsAndTalesVersion_U5();
 
-MCAPI ::BaseGameVersion const& TrailsAndTalesVersion_U6();
+MCNAPI ::BaseGameVersion const& TrailsAndTalesVersion_U6();
 
-MCAPI ::BaseGameVersion const& TrailsAndTalesVersion_U7();
+MCNAPI ::BaseGameVersion const& TrailsAndTalesVersion_U7();
 
-MCAPI ::BaseGameVersion const& TrailsAndTalesVersion_U8();
+MCNAPI ::BaseGameVersion const& TrailsAndTalesVersion_U8();
 
-MCAPI ::BaseGameVersion const& WildUpdateVersion();
+MCNAPI ::BaseGameVersion const& WildUpdateVersion();
 
-MCAPI ::BaseGameVersion const& WildUpdateVersion_U1();
+MCNAPI ::BaseGameVersion const& WildUpdateVersion_U1();
 
-MCAPI ::BaseGameVersion const& WildUpdateVersion_U3();
+MCNAPI ::BaseGameVersion const& WildUpdateVersion_U3();
 
-MCAPI ::BaseGameVersion const& WildUpdateVersion_U4();
+MCNAPI ::BaseGameVersion const& WildUpdateVersion_U4();
 
-MCAPI ::BaseGameVersion const& WildUpdateVersion_U6();
+MCNAPI ::BaseGameVersion const& WildUpdateVersion_U6();
 
-MCAPI ::BaseGameVersion const& WildUpdateVersion_U8();
+MCNAPI ::BaseGameVersion const& WildUpdateVersion_U8();
 
-MCAPI ::BaseGameVersion const& Y2025Drop1Version();
+MCNAPI ::BaseGameVersion const& Y2025Drop1Version();
 // NOLINTEND
 
 } // namespace VanillaGameVersions

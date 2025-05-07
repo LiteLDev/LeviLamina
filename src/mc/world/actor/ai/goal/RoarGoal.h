@@ -42,12 +42,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
@@ -92,12 +86,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::optional<::WeakEntityRef> _findRoarTarget() const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

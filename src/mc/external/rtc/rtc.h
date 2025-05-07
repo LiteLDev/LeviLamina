@@ -209,37 +209,37 @@ MCNAPI int win32_inet_pton(int, char const*, void*);
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::add_lvalue_reference_t<char const[]> DIGEST_MD5();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> DIGEST_MD5();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> DIGEST_SHA_1();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> DIGEST_SHA_1();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> DIGEST_SHA_224();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> DIGEST_SHA_224();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> DIGEST_SHA_256();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> DIGEST_SHA_256();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> DIGEST_SHA_384();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> DIGEST_SHA_384();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> DIGEST_SHA_512();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> DIGEST_SHA_512();
 
-MCAPI ::rtc::ClockInterface*& g_clock();
+MCNAPI ::rtc::ClockInterface*& g_clock();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> kCsAeadAes128Gcm();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> kCsAeadAes128Gcm();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> kCsAeadAes256Gcm();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> kCsAeadAes256Gcm();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> kCsAesCm128HmacSha1_32();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> kCsAesCm128HmacSha1_32();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> kCsAesCm128HmacSha1_80();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> kCsAesCm128HmacSha1_80();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> kPemTypeCertificate();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> kPemTypeCertificate();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> kPemTypeEcPrivateKey();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> kPemTypeEcPrivateKey();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> kPemTypeRsaPrivateKey();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> kPemTypeRsaPrivateKey();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> kPublicIPv4Host();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> kPublicIPv4Host();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> kPublicIPv6Host();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> kPublicIPv6Host();
 // NOLINTEND
 
 } // namespace rtc

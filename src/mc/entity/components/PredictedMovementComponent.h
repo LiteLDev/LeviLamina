@@ -85,12 +85,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI ::std::string $toString() const;
@@ -146,12 +140,6 @@ public:
 
         // vIndex: 0
         virtual ~MoveHistoryItem() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
         // NOLINTEND
 
     public:
@@ -229,12 +217,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
 
@@ -259,7 +241,7 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static uint& mSequenceIdGenerator();
+        MCNAPI static uint& mSequenceIdGenerator();
         // NOLINTEND
     };
 
@@ -353,12 +335,6 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI void reset();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
         // NOLINTEND
 
     public:
@@ -465,6 +441,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::PredictedMovementComponent::RuntimePredictionData>& mGlobalRuntimePredictionData();
+    MCNAPI static ::std::unique_ptr<::PredictedMovementComponent::RuntimePredictionData>&
+    mGlobalRuntimePredictionData();
     // NOLINTEND
 };

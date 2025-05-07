@@ -144,15 +144,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::mce::Color const& mDefaultBorderColor();
+    MCNAPI static ::mce::Color const& mDefaultBorderColor();
 
-    MCAPI static ::mce::Color const& mDefaultFillColor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::mce::Color const& mDefaultFillColor();
     // NOLINTEND
 
 public:

@@ -64,15 +64,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> TAG_CONTROL_DATA();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> TAG_CONTROL_DATA();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> TAG_INVOKE();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> TAG_INVOKE();
     // NOLINTEND
 
 public:

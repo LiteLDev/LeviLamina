@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI float $getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const;

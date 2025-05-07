@@ -69,7 +69,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& DEFAULT_NOT_SUPPORTED_PASS();
+    MCNAPI static ::std::string_view const& DEFAULT_NOT_SUPPORTED_PASS();
     // NOLINTEND
 
 public:

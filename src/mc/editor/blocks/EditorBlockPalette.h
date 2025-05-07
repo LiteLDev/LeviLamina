@@ -54,9 +54,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> DEFAULT_DISPLAY_NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> DEFAULT_DISPLAY_NAME();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> DEFAULT_ID();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> DEFAULT_ID();
     // NOLINTEND
 
 public:

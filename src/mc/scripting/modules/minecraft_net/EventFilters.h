@@ -8,9 +8,9 @@
 namespace ScriptModuleMinecraftNet::EventFilters {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::vector<::MinecraftPacketIds>& mIgnoredPacketIds();
+MCNAPI ::std::vector<::MinecraftPacketIds>& mIgnoredPacketIds();
 
-MCAPI ::std::vector<::MinecraftPacketIds>& mMonitoredPacketIds();
+MCNAPI ::std::vector<::MinecraftPacketIds>& mMonitoredPacketIds();
 // NOLINTEND
 
 } // namespace ScriptModuleMinecraftNet::EventFilters

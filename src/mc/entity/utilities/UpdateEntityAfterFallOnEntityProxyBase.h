@@ -11,6 +11,6 @@ struct UpdateEntityAfterFallOnEntityProxyBase {
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Vec3& mDummy();
+    MCNAPI static ::Vec3& mDummy();
     // NOLINTEND
 };

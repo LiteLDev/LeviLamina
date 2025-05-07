@@ -57,11 +57,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& DIFF_ITEM();
+    MCNAPI static ::std::string const& DIFF_ITEM();
 
-    MCAPI static ::std::string const& DIFF_ITEMS_SIZE();
+    MCNAPI static ::std::string const& DIFF_ITEMS_SIZE();
 
-    MCAPI static ::std::string const& DIFF_ITEM_NULL();
+    MCNAPI static ::std::string const& DIFF_ITEM_NULL();
     // NOLINTEND
 
 public:

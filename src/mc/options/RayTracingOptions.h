@@ -84,13 +84,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& RAY_TRACING_TAG();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::string_view const& RAY_TRACING_TAG();
     // NOLINTEND
 
 public:

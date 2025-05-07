@@ -51,13 +51,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& sTagName_Handle();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::string const& sTagName_Handle();
     // NOLINTEND
 
 public:

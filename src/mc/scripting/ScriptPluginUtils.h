@@ -30,17 +30,17 @@ MCNAPI ::std::vector<::std::string> ValidatePlugin(::ScriptPlugin const& plugin)
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& BETA_RELEASE();
+MCNAPI ::std::string const& BETA_RELEASE();
 
-MCAPI ::std::string const& INTERNAL_RELEASE();
+MCNAPI ::std::string const& INTERNAL_RELEASE();
 
-MCAPI ::std::string const& JAVA_SCRIPT_RUNTIME_EXTENSION();
+MCNAPI ::std::string const& JAVA_SCRIPT_RUNTIME_EXTENSION();
 
-MCAPI ::std::string const& JAVA_SCRIPT_RUNTIME_IDENTIFIER_V1();
+MCNAPI ::std::string const& JAVA_SCRIPT_RUNTIME_IDENTIFIER_V1();
 
-MCAPI ::std::string const& JAVA_SCRIPT_RUNTIME_IDENTIFIER_V2();
+MCNAPI ::std::string const& JAVA_SCRIPT_RUNTIME_IDENTIFIER_V2();
 
-MCAPI ::std::string const& JAVA_SCRIPT_RUNTIME_NAME();
+MCNAPI ::std::string const& JAVA_SCRIPT_RUNTIME_NAME();
 // NOLINTEND
 
 } // namespace ScriptPluginUtils

@@ -38,6 +38,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& TICKING_AREA_PREFIX();
+    MCNAPI static ::std::string const& TICKING_AREA_PREFIX();
     // NOLINTEND
 };

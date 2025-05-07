@@ -6,6 +6,6 @@ class EasingInverse {
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::function<float(float, float, float)>>& mEasingFuncs();
+    MCNAPI static ::std::vector<::std::function<float(float, float, float)>>& mEasingFuncs();
     // NOLINTEND
 };

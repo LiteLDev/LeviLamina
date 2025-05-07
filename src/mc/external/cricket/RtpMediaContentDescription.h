@@ -14,12 +14,6 @@ public:
     // vIndex: 0
     virtual ~RtpMediaContentDescription() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace cricket

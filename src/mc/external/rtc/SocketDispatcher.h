@@ -23,7 +23,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int& next_id_();
+    MCNAPI static int& next_id_();
     // NOLINTEND
 
 public:

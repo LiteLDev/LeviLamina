@@ -34,15 +34,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Threading::Mutex& sMutex();
+    MCNAPI static ::Bedrock::Threading::Mutex& sMutex();
 
-    MCAPI static ::std::weak_ptr<::Bedrock::Http::LibHttpClientInstance>& sWeakInstance();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::weak_ptr<::Bedrock::Http::LibHttpClientInstance>& sWeakInstance();
     // NOLINTEND
 
 public:

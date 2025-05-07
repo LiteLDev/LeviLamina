@@ -24,7 +24,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ActorSkeletalAnimationPtr const& NONE();
+    MCNAPI static ::ActorSkeletalAnimationPtr const& NONE();
     // NOLINTEND
 
 public:

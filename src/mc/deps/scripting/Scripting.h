@@ -22,9 +22,9 @@ MCNAPI void defaultLogFunction(void*, ::Scripting::LogLevel level, char const*, 
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::add_lvalue_reference_t<void (*)(void*, ::Scripting::LogLevel, char const*, uint, char const*)> logFn();
+MCNAPI ::std::add_lvalue_reference_t<void (*)(void*, ::Scripting::LogLevel, char const*, uint, char const*)> logFn();
 
-MCAPI void*& logUserData();
+MCNAPI void*& logUserData();
 // NOLINTEND
 
 } // namespace Scripting

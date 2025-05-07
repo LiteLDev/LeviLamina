@@ -231,7 +231,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::PreferredPathDescription const& DEFAULT_DESC();
+    MCNAPI static ::PreferredPathDescription const& DEFAULT_DESC();
     // NOLINTEND
 
 public:

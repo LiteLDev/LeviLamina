@@ -35,7 +35,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& mEventName();
+    MCNAPI static ::std::string const& mEventName();
     // NOLINTEND
 
 public:

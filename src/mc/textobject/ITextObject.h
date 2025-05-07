@@ -28,19 +28,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& RAW_TEXT_OBJECT_KEY();
+    MCNAPI static ::std::string const& RAW_TEXT_OBJECT_KEY();
 
-    MCAPI static ::std::string const& RAW_TEXT_TEXT_KEY();
+    MCNAPI static ::std::string const& RAW_TEXT_TEXT_KEY();
 
-    MCAPI static ::std::string const& RAW_TEXT_TRANSLATE_KEY();
+    MCNAPI static ::std::string const& RAW_TEXT_TRANSLATE_KEY();
 
-    MCAPI static ::std::string const& RAW_TEXT_WITH_KEY();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::string const& RAW_TEXT_WITH_KEY();
     // NOLINTEND
 
 public:

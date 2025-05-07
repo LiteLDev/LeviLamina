@@ -22,7 +22,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::function<::std::vector<::std::string>()>& mPlatformAdapterOverride();
+    MCNAPI static ::std::function<::std::vector<::std::string>()>& mPlatformAdapterOverride();
     // NOLINTEND
 };
 

@@ -60,10 +60,4 @@ public:
     MCNAPI ::std::vector<::WeakRef<::EntityContext>>
     getAllVolumesOverlappingChunkPosition(::ChunkPos const& pos, ::DimensionType chunkDimension) const;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

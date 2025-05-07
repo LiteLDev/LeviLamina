@@ -36,7 +36,7 @@ public:
     virtual void setContainerSize(int size);
 
     // vIndex: 12
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 13
     virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced) /*override*/;
@@ -55,12 +55,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $init();
@@ -75,7 +69,7 @@ public:
 
     MCNAPI void $setContainerSize(int size);
 
-    MCNAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCNAPI void $setItem(int slot, ::ItemStack const& item);
 
     MCNAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
     // NOLINTEND

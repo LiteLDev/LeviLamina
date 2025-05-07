@@ -43,7 +43,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<int, ::std::string> const& JOINT_TYPE_TO_NAME();
+    MCNAPI static ::std::unordered_map<int, ::std::string> const& JOINT_TYPE_TO_NAME();
     // NOLINTEND
 
 public:

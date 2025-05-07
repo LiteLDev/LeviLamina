@@ -16,6 +16,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::PropertyBag& EMPTY();
+    MCNAPI static ::PropertyBag& EMPTY();
     // NOLINTEND
 };

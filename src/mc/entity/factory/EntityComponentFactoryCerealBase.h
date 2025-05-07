@@ -25,10 +25,4 @@ public:
     // vIndex: 0
     virtual ~EntityComponentFactoryCerealBase() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

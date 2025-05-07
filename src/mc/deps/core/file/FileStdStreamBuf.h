@@ -51,7 +51,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static uint64 const& DEFAULT_BUFFER_SIZE();
+    MCNAPI static uint64 const& DEFAULT_BUFFER_SIZE();
     // NOLINTEND
 
 public:

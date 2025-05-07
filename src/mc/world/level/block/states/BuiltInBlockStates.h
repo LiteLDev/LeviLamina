@@ -10,13 +10,13 @@
 namespace BuiltInBlockStates {
 // static variables
 // NOLINTBEGIN
-MCAPI ::BuiltInBlockStateVariant<uchar> const& BlockFace();
+MCNAPI ::BuiltInBlockStateVariant<uchar> const& BlockFace();
 
-MCAPI ::BuiltInBlockStateVariant<::Direction::Type> const& CardinalDirection();
+MCNAPI ::BuiltInBlockStateVariant<::Direction::Type> const& CardinalDirection();
 
-MCAPI ::BuiltInBlockStateVariant<uchar> const& FacingDirection();
+MCNAPI ::BuiltInBlockStateVariant<uchar> const& FacingDirection();
 
-MCAPI ::BuiltInBlockStateVariant<::VerticalHalfEnum> const& VerticalHalf();
+MCNAPI ::BuiltInBlockStateVariant<::VerticalHalfEnum> const& VerticalHalf();
 // NOLINTEND
 
 } // namespace BuiltInBlockStates

@@ -66,12 +66,6 @@ public:
     // vIndex: 0
     virtual ~PersonaPieceCollectionModel() = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace persona

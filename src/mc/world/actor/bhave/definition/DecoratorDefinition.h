@@ -38,10 +38,4 @@ public:
     MCNAPI static ::std::unique_ptr<::BehaviorDefinition>
     _decoratorLoadChildBehavior(::Json::Value value, ::BehaviorFactory const& factory, ::BehaviorTreeDefinitionPtr ptr);
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

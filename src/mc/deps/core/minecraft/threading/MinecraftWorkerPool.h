@@ -33,30 +33,30 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& ASYNC();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& ASYNC();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& CONNECTEDSTORAGE();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& CONNECTEDSTORAGE();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& DISK();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& DISK();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& GAMEFACE_LAYOUT();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& GAMEFACE_LAYOUT();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& INPUT();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& INPUT();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& LEVELDB();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& LEVELDB();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& LEVELDB_COMPACTION();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& LEVELDB_COMPACTION();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& NETWORK();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& NETWORK();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& PYTHONRUNTIME();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& PYTHONRUNTIME();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& RENDERING();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& RENDERING();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& RENDERING_HELPERS();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& RENDERING_HELPERS();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& VR();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& VR();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& WATCHDOG();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& WATCHDOG();
     // NOLINTEND
 };

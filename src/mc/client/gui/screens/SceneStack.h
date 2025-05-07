@@ -52,12 +52,6 @@ public:
         // vIndex: 0
         virtual ~SceneStackEvent() = default;
         // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     class PushScreenEvent : public ::SceneStack::SceneStackEvent {
@@ -79,12 +73,6 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~PushScreenEvent() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
         // NOLINTEND
     };
 
@@ -109,12 +97,6 @@ public:
         // vIndex: 0
         virtual ~PopScreenEvent() /*override*/ = default;
         // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     class PopRangeOfTypeScreenEvent : public ::SceneStack::SceneStackEvent {
@@ -138,12 +120,6 @@ public:
         // vIndex: 0
         virtual ~PopRangeOfTypeScreenEvent() /*override*/ = default;
         // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     class FlushScreenEvent : public ::SceneStack::SceneStackEvent {
@@ -166,12 +142,6 @@ public:
         // vIndex: 0
         virtual ~FlushScreenEvent() /*override*/ = default;
         // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     struct SceneElement {
@@ -193,12 +163,6 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~SceneElement() = default;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
         // NOLINTEND
     };
 
@@ -313,12 +277,6 @@ public:
 
     // vIndex: 14
     virtual void setBufferTextCharEvents(bool) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

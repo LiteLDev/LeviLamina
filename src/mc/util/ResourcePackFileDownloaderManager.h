@@ -31,10 +31,4 @@ public:
     // vIndex: 0
     virtual ~ResourcePackFileDownloaderManager() = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

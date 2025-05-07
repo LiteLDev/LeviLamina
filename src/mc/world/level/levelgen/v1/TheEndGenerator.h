@@ -79,7 +79,7 @@ public:
     virtual ~TheEndGenerator() /*override*/;
 
     // vIndex: 11
-    virtual void loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad) /*override*/;
+    virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 
     // vIndex: 9
     virtual bool postProcess(::ChunkViewSource& neighborhood) /*override*/;
@@ -166,7 +166,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad);
+    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
     MCAPI bool $postProcess(::ChunkViewSource& neighborhood);
 
@@ -207,8 +207,8 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForChunkSource();
+    MCNAPI static void** $vftableForChunkSource();
 
-    MCAPI static void** $vftableForIPreliminarySurfaceProvider();
+    MCNAPI static void** $vftableForIPreliminarySurfaceProvider();
     // NOLINTEND
 };

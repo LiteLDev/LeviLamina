@@ -38,25 +38,19 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
-    MCNAPI void $onPlace(::BlockSource& region);
+    MCFOLD void $onPlace(::BlockSource& region);
 
-    MCNAPI void $startOpen(::Player& player);
+    MCAPI void $startOpen(::Player& player);
 
-    MCNAPI void $stopOpen(::Player& player);
+    MCAPI void $stopOpen(::Player& player);
 
-    MCNAPI void $playOpenSound(::BlockSource& region);
+    MCAPI void $playOpenSound(::BlockSource& region);
 
-    MCNAPI void $playCloseSound(::BlockSource& region);
+    MCAPI void $playCloseSound(::BlockSource& region);
     // NOLINTEND
 
 public:

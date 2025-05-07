@@ -63,10 +63,10 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::DefaultSculkBehavior const& sDefaultSculkBehavior();
+    MCNAPI static ::DefaultSculkBehavior const& sDefaultSculkBehavior();
 
-    MCAPI static ::SculkBlockBehavior const& sSculkBlockBehavior();
+    MCNAPI static ::SculkBlockBehavior const& sSculkBlockBehavior();
 
-    MCAPI static ::SculkVeinBlockBehavior const& sSculkVeinBlockBehavior();
+    MCNAPI static ::SculkVeinBlockBehavior const& sSculkVeinBlockBehavior();
     // NOLINTEND
 };
