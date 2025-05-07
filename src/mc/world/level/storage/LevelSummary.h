@@ -130,19 +130,19 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Core::PathBuffer<::std::string> const& CUSTOM_ICON_FILENAME();
+    MCNAPI static ::Core::PathBuffer<::std::string> const& CUSTOM_ICON_FILENAME();
 
-    MCAPI static ::std::string const& DEFAULT_EDU_CLOUD_WORLD_ICON_FILENAME();
+    MCNAPI static ::std::string const& DEFAULT_EDU_CLOUD_WORLD_ICON_FILENAME();
 
-    MCAPI static ::std::string const& DEFAULT_WORLD_ICON_FILENAME();
+    MCNAPI static ::std::string const& DEFAULT_WORLD_ICON_FILENAME();
 
-    MCAPI static ::std::string const& INVALID_LEVEL_ID();
+    MCNAPI static ::std::string const& INVALID_LEVEL_ID();
 
-    MCAPI static ::std::string const& SCREENSHOT_WORLD_ICON_FILENAME_EXTENSION();
+    MCNAPI static ::std::string const& SCREENSHOT_WORLD_ICON_FILENAME_EXTENSION();
 
-    MCAPI static ::std::string const& SCREENSHOT_WORLD_ICON_FILENAME_PREFIX();
+    MCNAPI static ::std::string const& SCREENSHOT_WORLD_ICON_FILENAME_PREFIX();
 
-    MCAPI static ::Core::PathBuffer<::std::string> const& WORLD_ICON_FILENAME();
+    MCNAPI static ::Core::PathBuffer<::std::string> const& WORLD_ICON_FILENAME();
     // NOLINTEND
 
 public:

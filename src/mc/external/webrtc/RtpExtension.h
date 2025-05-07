@@ -62,27 +62,27 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> kAbsSendTimeUri();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> kAbsSendTimeUri();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> kAbsoluteCaptureTimeUri();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> kAbsoluteCaptureTimeUri();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> kDependencyDescriptorUri();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> kDependencyDescriptorUri();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> kEncryptHeaderExtensionsUri();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> kEncryptHeaderExtensionsUri();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> kGenericFrameDescriptorUri00();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> kGenericFrameDescriptorUri00();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> kMidUri();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> kMidUri();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> kRepairedRidUri();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> kRepairedRidUri();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> kRidUri();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> kRidUri();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> kTimestampOffsetUri();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> kTimestampOffsetUri();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> kTransportSequenceNumberUri();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> kTransportSequenceNumberUri();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> kVideoLayersAllocationUri();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> kVideoLayersAllocationUri();
     // NOLINTEND
 
 public:

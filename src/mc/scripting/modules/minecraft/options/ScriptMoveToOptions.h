@@ -41,11 +41,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static bool const& FACE_TARGET_DEFAULT();
+    MCNAPI static bool const& FACE_TARGET_DEFAULT();
 
-    MCAPI static float const& SPEED_DEFAULT();
+    MCNAPI static float const& SPEED_DEFAULT();
 
-    MCAPI static float const& SPEED_MIN();
+    MCNAPI static float const& SPEED_MIN();
     // NOLINTEND
 };
 

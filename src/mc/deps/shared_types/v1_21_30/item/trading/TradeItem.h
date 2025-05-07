@@ -71,9 +71,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& DEPRECATED_FILTERS_FIELD();
+    MCNAPI static ::std::string_view const& DEPRECATED_FILTERS_FIELD();
 
-    MCAPI static ::std::string_view const& DEPRECATED_FUNCTIONS_FIELD();
+    MCNAPI static ::std::string_view const& DEPRECATED_FUNCTIONS_FIELD();
     // NOLINTEND
 
 public:

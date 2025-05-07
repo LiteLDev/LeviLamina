@@ -10,11 +10,11 @@ namespace Json { class Value; }
 namespace JsonHelpers {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::string getAsString(::Json::Value const& value, ::std::string_view defaultString);
+MCAPI ::std::string getAsString(::Json::Value const& value, ::std::string_view defaultString);
 
-MCNAPI bool parseJson(::std::string const& str, ::Json::Value& root);
+MCAPI bool parseJson(::std::string const& str, ::Json::Value& root);
 
-MCNAPI ::std::string serialize(::Json::Value const& root);
+MCAPI ::std::string serialize(::Json::Value const& root);
 // NOLINTEND
 
 } // namespace JsonHelpers

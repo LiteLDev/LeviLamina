@@ -11,6 +11,6 @@ class Performance {
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::StopwatchHandler& watches();
+    MCNAPI static ::StopwatchHandler& watches();
     // NOLINTEND
 };

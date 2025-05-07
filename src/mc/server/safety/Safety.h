@@ -13,9 +13,9 @@ namespace Safety { struct ChatFloodingActionEnumHasher; }
 namespace Safety {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::unordered_map<::std::string, ::Safety::ChatFloodingAction> const& ChatFloodingActionEnumMap();
+MCNAPI ::std::unordered_map<::std::string, ::Safety::ChatFloodingAction> const& ChatFloodingActionEnumMap();
 
-MCAPI ::std::unordered_map<
+MCNAPI ::std::unordered_map<
     ::Safety::ChatFloodingAction,
     ::std::string,
     ::Safety::ChatFloodingActionEnumHasher,

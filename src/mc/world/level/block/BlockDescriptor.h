@@ -180,11 +180,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> JSON_NAME_FIELD();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> JSON_NAME_FIELD();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> JSON_STATES_FIELD();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> JSON_STATES_FIELD();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> JSON_TAGS_FIELD();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> JSON_TAGS_FIELD();
     // NOLINTEND
 
 public:

@@ -14,9 +14,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> Base64Table();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> Base64Table();
 
-    MCAPI static ::std::add_lvalue_reference_t<uchar const[]> DecodeTable();
+    MCNAPI static ::std::add_lvalue_reference_t<uchar const[]> DecodeTable();
     // NOLINTEND
 };
 

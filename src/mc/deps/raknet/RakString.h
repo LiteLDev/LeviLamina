@@ -72,9 +72,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::RakNet::RakString::SharedString& emptyString();
+    MCNAPI static ::RakNet::RakString::SharedString& emptyString();
 
-    MCAPI static ::DataStructures::List<::RakNet::RakString::SharedString*>& freeList();
+    MCNAPI static ::DataStructures::List<::RakNet::RakString::SharedString*>& freeList();
     // NOLINTEND
 
 public:

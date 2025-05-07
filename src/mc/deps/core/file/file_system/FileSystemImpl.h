@@ -345,7 +345,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Core::FileStats& sStats();
+    MCNAPI static ::Core::FileStats& sStats();
     // NOLINTEND
 
 public:
@@ -357,12 +357,6 @@ public:
         ::Core::TransactionFlags                           manifestTracker,
         ::std::shared_ptr<::Core::FlatFileManifestTracker> transactionFlags
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

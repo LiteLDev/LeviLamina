@@ -96,15 +96,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> ERROR_BUSY_SERVICE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> ERROR_BUSY_SERVICE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> ERROR_NO_OPEN_TRANSACTION();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> ERROR_NO_OPEN_TRANSACTION();
     // NOLINTEND
 
 public:

@@ -27,12 +27,6 @@ public:
     // vIndex: 0
     virtual ~TreatmentToggles() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace flighting

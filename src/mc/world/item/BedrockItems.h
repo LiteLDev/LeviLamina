@@ -21,6 +21,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::WeakPtr<::Item>& mAir();
+    MCNAPI static ::WeakPtr<::Item>& mAir();
     // NOLINTEND
 };

@@ -48,11 +48,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static uint64 const& ACTOR_TOTAL_DYNAMIC_PROPERTY_SIZE_LIMIT();
+    MCNAPI static uint64 const& ACTOR_TOTAL_DYNAMIC_PROPERTY_SIZE_LIMIT();
 
-    MCAPI static uint64 const& IDENTIFIER_SIZE_LIMIT();
+    MCNAPI static uint64 const& IDENTIFIER_SIZE_LIMIT();
 
-    MCAPI static uint64 const& WORLD_TOTAL_DYNAMIC_PROPERTY_SIZE_LIMIT();
+    MCNAPI static uint64 const& WORLD_TOTAL_DYNAMIC_PROPERTY_SIZE_LIMIT();
     // NOLINTEND
 
 public:

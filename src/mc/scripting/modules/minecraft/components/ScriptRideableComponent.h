@@ -72,13 +72,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const*& ComponentId();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

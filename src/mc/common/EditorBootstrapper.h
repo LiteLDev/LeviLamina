@@ -44,15 +44,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& EDITOR_MODE_ARGUMENT_KEY();
+    MCNAPI static ::std::string const& EDITOR_MODE_ARGUMENT_KEY();
 
-    MCAPI static ::std::string const& EDITOR_MODE_ARGUMENT_VALUE();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::string const& EDITOR_MODE_ARGUMENT_VALUE();
     // NOLINTEND
 
 public:

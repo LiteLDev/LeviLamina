@@ -27,7 +27,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::
+    MCNAPI static ::std::
         unordered_map<::Connection::DisconnectFailReason, ::std::pair<::std::string, ::std::string>> const&
         DISCONNECT_TO_ERRORSTRING_MAP();
     // NOLINTEND

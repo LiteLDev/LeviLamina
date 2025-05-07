@@ -33,7 +33,7 @@ MCNAPI void checkAndConvertInBlock(::SemVersion const& version, ::Json::Value& r
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::SemVersionConstant const& BLOCK_PROPERTY_RENAMED_TO_STATE_1_20_20();
+MCNAPI ::SemVersionConstant const& BLOCK_PROPERTY_RENAMED_TO_STATE_1_20_20();
 // NOLINTEND
 
 } // namespace BlockPropertyToStateConverter

@@ -43,15 +43,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& RAW_TEXT_SELECTOR_KEY();
+    MCNAPI static ::std::string const& RAW_TEXT_SELECTOR_KEY();
 
-    MCAPI static ::std::string const& RAW_TEXT_SELECTOR_STAR();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::string const& RAW_TEXT_SELECTOR_STAR();
     // NOLINTEND
 
 public:

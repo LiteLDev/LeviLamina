@@ -5,9 +5,9 @@
 namespace DefaultGameTestBatches {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& Day();
+MCNAPI ::std::string const& Day();
 
-MCAPI ::std::string const& Night();
+MCNAPI ::std::string const& Night();
 // NOLINTEND
 
 } // namespace DefaultGameTestBatches

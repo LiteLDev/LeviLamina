@@ -112,7 +112,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Vec3 const& INVALID_SPAWN_POINT();
+    MCNAPI static ::Vec3 const& INVALID_SPAWN_POINT();
     // NOLINTEND
 
 public:

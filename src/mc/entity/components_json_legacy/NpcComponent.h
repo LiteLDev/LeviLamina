@@ -58,55 +58,55 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI NpcComponent();
+    MCAPI NpcComponent();
 
-    MCNAPI NpcComponent(::NpcComponent&& rhs);
+    MCAPI NpcComponent(::NpcComponent&& rhs);
 
-    MCNAPI void _defineEntityDataString(::Actor& owner, ::ActorDataIDs id);
+    MCAPI void _defineEntityDataString(::Actor& owner, ::ActorDataIDs id);
 
-    MCNAPI void _deserializeData(::Json::Value const& npcData);
+    MCAPI void _deserializeData(::Json::Value const& npcData);
 
-    MCNAPI void _loadData(::Actor& owner);
+    MCAPI void _loadData(::Actor& owner);
 
-    MCNAPI void addAdditionalSaveData(::CompoundTag& tag, ::Actor const& owner) const;
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag, ::Actor const& owner) const;
 
-    MCNAPI void executeClosingCommands(::Actor& owner, ::Player& sourcePlayer, ::std::string const& sceneName);
+    MCAPI void executeClosingCommands(::Actor& owner, ::Player& sourcePlayer, ::std::string const& sceneName);
 
-    MCNAPI void
+    MCAPI void
     executeCommandAction(::Actor& owner, ::Player& sourcePlayer, int actionIndex, ::std::string const& sceneName);
 
-    MCNAPI void executeOpeningCommands(::Actor& owner, ::Player& sourcePlayer, ::std::string const& sceneName);
+    MCAPI void executeOpeningCommands(::Actor& owner, ::Player& sourcePlayer, ::std::string const& sceneName);
 
-    MCNAPI ::std::vector<int> getCommandCounts() const;
+    MCAPI ::std::vector<int> getCommandCounts() const;
 
-    MCNAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
-    MCNAPI ::std::string const& getInteractiveText(::Actor& owner) const;
+    MCAPI ::std::string const& getInteractiveText(::Actor& owner) const;
 
-    MCNAPI void initClientOnlyData(::Actor& owner);
+    MCAPI void initClientOnlyData(::Actor& owner);
 
-    MCNAPI void initFromDefinition(::Actor& owner);
+    MCAPI void initFromDefinition(::Actor& owner);
 
-    MCNAPI void loadActions(::Actor& owner);
+    MCAPI void loadActions(::Actor& owner);
 
-    MCNAPI void loadInteractiveRawText(::Actor& owner);
+    MCAPI void loadInteractiveRawText(::Actor& owner);
 
-    MCNAPI ::NpcComponent& operator=(::NpcComponent&& rhs);
+    MCAPI ::NpcComponent& operator=(::NpcComponent&& rhs);
 
-    MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI ::std::string sanitizeRawText(::std::string const& rawText) const;
+    MCAPI ::std::string sanitizeRawText(::std::string const& rawText) const;
 
-    MCNAPI void
+    MCAPI void
     setActions(::Actor& owner, ::std::vector<::std::variant<::npc::CommandAction, ::npc::UrlAction>>&& newActions);
 
-    MCNAPI bool setDialogueScene(::Actor& owner, ::std::string const& sceneName);
+    MCAPI bool setDialogueScene(::Actor& owner, ::std::string const& sceneName);
 
-    MCNAPI void setInteractiveText(::Actor& owner, ::std::string const& text, bool setLocal);
+    MCAPI void setInteractiveText(::Actor& owner, ::std::string const& text, bool setLocal);
 
-    MCNAPI void setName(::Actor& owner, ::std::string const& name, bool setLocal);
+    MCAPI void setName(::Actor& owner, ::std::string const& name, bool setLocal);
 
-    MCNAPI bool setSkinIndex(::Actor& owner, int skinIndex, bool setLocal);
+    MCAPI bool setSkinIndex(::Actor& owner, int skinIndex, bool setLocal);
     // NOLINTEND
 
 public:
@@ -130,15 +130,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::NpcComponent&& rhs);
+    MCAPI void* $ctor(::NpcComponent&& rhs);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -13,7 +13,7 @@ MCNAPI ::Rarity getRarityFromName(::std::string const& name);
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::unordered_map<::std::string, ::Rarity> const& NAME_TO_ENUM();
+MCNAPI ::std::unordered_map<::std::string, ::Rarity> const& NAME_TO_ENUM();
 // NOLINTEND
 
 } // namespace RarityUtil

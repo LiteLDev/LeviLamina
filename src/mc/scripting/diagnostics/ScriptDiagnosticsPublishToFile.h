@@ -47,12 +47,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI ::Core::Result $_flushBuffer(void const* data, uint64 amount);
@@ -110,12 +104,6 @@ public:
     MCNAPI bool startCapture();
 
     MCNAPI ::std::optional<::Core::Path> stopCapture();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

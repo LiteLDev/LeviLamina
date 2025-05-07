@@ -189,7 +189,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::FileAccessTransforms const& EMPTY_TRANSFORMS();
+    MCNAPI static ::FileAccessTransforms const& EMPTY_TRANSFORMS();
     // NOLINTEND
 
 public:

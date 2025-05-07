@@ -36,10 +36,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void initialize(::EntityContext& entity, ::MoveTowardsRestrictionGoal& goal) const;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

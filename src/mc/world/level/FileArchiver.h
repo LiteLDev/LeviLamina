@@ -203,12 +203,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
 
@@ -420,19 +414,19 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& EXTENSION_ADDON();
+    MCNAPI static ::std::string const& EXTENSION_ADDON();
 
-    MCAPI static ::std::string const& EXTENSION_EDITOR_ADDON();
+    MCNAPI static ::std::string const& EXTENSION_EDITOR_ADDON();
 
-    MCAPI static ::std::string const& EXTENSION_PROJECT();
+    MCNAPI static ::std::string const& EXTENSION_PROJECT();
 
-    MCAPI static ::std::string const& EXTENSION_RESOURCEPACK();
+    MCNAPI static ::std::string const& EXTENSION_RESOURCEPACK();
 
-    MCAPI static ::std::string const& EXTENSION_TEMPLATE();
+    MCNAPI static ::std::string const& EXTENSION_TEMPLATE();
 
-    MCAPI static ::std::string const& EXTENSION_VANILLA();
+    MCNAPI static ::std::string const& EXTENSION_VANILLA();
 
-    MCAPI static ::std::string const& IMPORT_LOCK_FILE();
+    MCNAPI static ::std::string const& IMPORT_LOCK_FILE();
     // NOLINTEND
 
 public:

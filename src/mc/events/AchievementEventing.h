@@ -54,7 +54,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::std::string, ::std::pair<short, short>>& mLegacyIdMap();
+    MCNAPI static ::std::unordered_map<::std::string, ::std::pair<short, short>>& mLegacyIdMap();
     // NOLINTEND
 
 public:

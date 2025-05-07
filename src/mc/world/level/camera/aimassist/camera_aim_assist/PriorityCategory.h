@@ -41,7 +41,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::CameraAimAssist::PriorityCategory const& NO_PRIORITY();
+    MCNAPI static ::CameraAimAssist::PriorityCategory const& NO_PRIORITY();
     // NOLINTEND
 
 public:

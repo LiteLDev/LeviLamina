@@ -29,12 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;

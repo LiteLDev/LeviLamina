@@ -34,7 +34,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::weak_ptr<::VanillaWorldSystems::Impl>& mInstance();
+    MCNAPI static ::std::weak_ptr<::VanillaWorldSystems::Impl>& mInstance();
     // NOLINTEND
 
 public:

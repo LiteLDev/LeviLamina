@@ -42,7 +42,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Puv::VersionRange const& SUPPORTED_VERSIONS();
+    MCNAPI static ::Puv::VersionRange const& SUPPORTED_VERSIONS();
     // NOLINTEND
 
 public:

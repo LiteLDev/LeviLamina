@@ -25,13 +25,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::ChunkPos> const& mChunksNeededForLoadOffsets();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::vector<::ChunkPos> const& mChunksNeededForLoadOffsets();
     // NOLINTEND
 
 public:

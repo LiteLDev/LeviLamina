@@ -10,11 +10,11 @@ class Vec3;
 namespace SeatDefaults {
 // static variables
 // NOLINTBEGIN
-MCAPI int const& MAX_SEAT_COUNT();
+MCNAPI int const& MAX_SEAT_COUNT();
 
-MCAPI int const& MIN_SEAT_COUNT();
+MCNAPI int const& MIN_SEAT_COUNT();
 
-MCAPI ::Vec3 const& POSITION();
+MCNAPI ::Vec3 const& POSITION();
 // NOLINTEND
 
 } // namespace SeatDefaults

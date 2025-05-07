@@ -35,6 +35,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::mce::UUID const& SPEED_MODIFIER_BOOSTING_UUID();
+    MCNAPI static ::mce::UUID const& SPEED_MODIFIER_BOOSTING_UUID();
     // NOLINTEND
 };

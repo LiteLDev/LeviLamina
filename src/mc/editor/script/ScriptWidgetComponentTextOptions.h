@@ -48,7 +48,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_COLOR();
+    MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_COLOR();
     // NOLINTEND
 
 public:

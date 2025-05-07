@@ -40,13 +40,13 @@ TryParseSignalingMessage(::std::string const& message);
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::rtc::IPAddress const& IPv4Any();
+MCNAPI ::rtc::IPAddress const& IPv4Any();
 
-MCAPI ::rtc::IPAddress const& IPv4Broadcast();
+MCNAPI ::rtc::IPAddress const& IPv4Broadcast();
 
-MCAPI ::rtc::IPAddress const& IPv6AllHostsLinkLocal();
+MCNAPI ::rtc::IPAddress const& IPv6AllHostsLinkLocal();
 
-MCAPI ::rtc::IPAddress const& IPv6Any();
+MCNAPI ::rtc::IPAddress const& IPv6Any();
 // NOLINTEND
 
 } // namespace NetherNet

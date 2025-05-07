@@ -37,6 +37,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::unique_ptr<::Material>>& mMaterials();
+    MCNAPI static ::std::vector<::std::unique_ptr<::Material>>& mMaterials();
     // NOLINTEND
 };

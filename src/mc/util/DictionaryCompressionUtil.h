@@ -27,7 +27,7 @@ MCNAPI ::Bedrock::Result<::std::string> dictionaryDecompressString(::std::string
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& DICTIONARY_COMPRESSION_INDICATOR();
+MCNAPI ::std::string const& DICTIONARY_COMPRESSION_INDICATOR();
 // NOLINTEND
 
 } // namespace DictionaryCompressionUtil

@@ -83,15 +83,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& ComponentIdV1();
+    MCNAPI static ::std::string const& ComponentIdV1();
 
-    MCAPI static ::std::string const& ComponentIdV2();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::string const& ComponentIdV2();
     // NOLINTEND
 
 public:

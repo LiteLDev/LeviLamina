@@ -28,6 +28,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ContentTierIncompatibleReason& NoError();
+    MCNAPI static ::ContentTierIncompatibleReason& NoError();
     // NOLINTEND
 };

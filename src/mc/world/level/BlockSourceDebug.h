@@ -25,10 +25,4 @@ public:
     // vIndex: 0
     virtual ~BlockSourceDebug() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

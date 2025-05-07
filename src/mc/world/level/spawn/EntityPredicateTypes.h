@@ -26,7 +26,7 @@ defaults();
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::br::spawn::EntityPredicateToken const& MOB();
+MCNAPI ::br::spawn::EntityPredicateToken const& MOB();
 // NOLINTEND
 
 } // namespace br::spawn::EntityPredicateTypes

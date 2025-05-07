@@ -183,29 +183,29 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& BURN_DURATION_KEY();
+    MCNAPI static ::std::string const& BURN_DURATION_KEY();
 
-    MCAPI static int const& BURN_INTERVAL();
+    MCNAPI static int const& BURN_INTERVAL();
 
-    MCAPI static ::std::string const& BURN_TIME_KEY();
+    MCNAPI static ::std::string const& BURN_TIME_KEY();
 
-    MCAPI static ::std::string const& COOK_TIME_KEY();
+    MCNAPI static ::std::string const& COOK_TIME_KEY();
 
-    MCAPI static ::std::string const& CUSTOM_NAME_KEY();
+    MCNAPI static ::std::string const& CUSTOM_NAME_KEY();
 
-    MCAPI static float const& DEFAULT_SMELTING_TIME();
+    MCNAPI static float const& DEFAULT_SMELTING_TIME();
 
-    MCAPI static ::std::string const& FILTERED_CUSTOM_NAME_KEY();
+    MCNAPI static ::std::string const& FILTERED_CUSTOM_NAME_KEY();
 
-    MCAPI static ::std::string const& ITEMS_LIST_KEY();
+    MCNAPI static ::std::string const& ITEMS_LIST_KEY();
 
-    MCAPI static ::std::string const& LAST_FUEL_KEY();
+    MCNAPI static ::std::string const& LAST_FUEL_KEY();
 
-    MCAPI static ::std::string const& SLOT_KEY();
+    MCNAPI static ::std::string const& SLOT_KEY();
 
-    MCAPI static ::std::string const& STORED_XP_DEPRECATED_KEY();
+    MCNAPI static ::std::string const& STORED_XP_DEPRECATED_KEY();
 
-    MCAPI static ::std::string const& STORED_XP_KEY();
+    MCNAPI static ::std::string const& STORED_XP_KEY();
     // NOLINTEND
 
 public:

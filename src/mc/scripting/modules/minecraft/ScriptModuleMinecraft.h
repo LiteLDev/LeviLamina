@@ -147,11 +147,11 @@ makeAimAssistPresetDefinition(::ScriptModuleMinecraft::ScriptAimAssistPresetSett
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& POSITION_IN_UNLOADED_CHUNK_TAG();
+MCNAPI ::std::string const& POSITION_IN_UNLOADED_CHUNK_TAG();
 
-MCAPI ::std::string const& POSITION_OUT_OF_WORLD_BOUNDS_TAG();
+MCNAPI ::std::string const& POSITION_OUT_OF_WORLD_BOUNDS_TAG();
 
-MCAPI ::std::string const& UNLOADED_CHUNK_TAG();
+MCNAPI ::std::string const& UNLOADED_CHUNK_TAG();
 // NOLINTEND
 
 } // namespace ScriptModuleMinecraft

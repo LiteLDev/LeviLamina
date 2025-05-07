@@ -64,15 +64,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& MANIFEST_PACK_UUID_UPGRADE_SALT();
+    MCNAPI static ::std::string const& MANIFEST_PACK_UUID_UPGRADE_SALT();
 
-    MCAPI static ::Core::Path const& MANIFEST_PATH();
+    MCNAPI static ::Core::Path const& MANIFEST_PATH();
 
-    MCAPI static ::Core::Path const& MANIFEST_PATH_OLD();
+    MCNAPI static ::Core::Path const& MANIFEST_PATH_OLD();
 
-    MCAPI static ::std::unordered_map<::std::string, ::std::vector<char> const>& mAlternateContentKeys();
+    MCNAPI static ::std::unordered_map<::std::string, ::std::vector<char> const>& mAlternateContentKeys();
 
-    MCAPI static ::std::unordered_map<::std::string, ::std::vector<char> const>& mContentKeys();
+    MCNAPI static ::std::unordered_map<::std::string, ::std::vector<char> const>& mContentKeys();
     // NOLINTEND
 
 public:

@@ -10,9 +10,9 @@ class HashedString;
 namespace VanillaBlockCullingIds {
 // static variables
 // NOLINTBEGIN
-MCAPI ::HashedString const& EnchantingTable();
+MCNAPI ::HashedString const& EnchantingTable();
 
-MCAPI ::HashedString const& Lectern();
+MCNAPI ::HashedString const& Lectern();
 // NOLINTEND
 
 } // namespace VanillaBlockCullingIds

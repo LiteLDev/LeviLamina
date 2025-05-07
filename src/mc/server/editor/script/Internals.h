@@ -10,7 +10,7 @@ namespace Scripting { struct Version; }
 namespace Editor::ScriptModule::EditorServerModule::Internals {
 // static variables
 // NOLINTBEGIN
-MCAPI ::Scripting::Version const& CURRENT();
+MCNAPI ::Scripting::Version const& CURRENT();
 // NOLINTEND
 
 } // namespace Editor::ScriptModule::EditorServerModule::Internals

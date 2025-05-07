@@ -10,7 +10,7 @@ class SemVersionConstant;
 namespace ItemEventResponse {
 // static variables
 // NOLINTBEGIN
-MCAPI ::SemVersionConstant const& EVENT_RESPONSE_VERSION_1_16_100();
+MCNAPI ::SemVersionConstant const& EVENT_RESPONSE_VERSION_1_16_100();
 // NOLINTEND
 
 } // namespace ItemEventResponse

@@ -47,10 +47,4 @@ public:
     // vIndex: 0
     virtual ~BaseActorRenderContext() = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

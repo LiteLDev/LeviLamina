@@ -5,7 +5,7 @@
 namespace ResourceDefinition {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& VANILLA_NAMESPACE();
+MCNAPI ::std::string const& VANILLA_NAMESPACE();
 // NOLINTEND
 
 } // namespace ResourceDefinition

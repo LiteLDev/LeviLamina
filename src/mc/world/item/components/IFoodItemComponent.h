@@ -43,17 +43,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> CAN_ALWAYS_EAT();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> CAN_ALWAYS_EAT();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NUTRITION();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NUTRITION();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> SATURATION_MODIFIER();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SATURATION_MODIFIER();
     // NOLINTEND
 
 public:

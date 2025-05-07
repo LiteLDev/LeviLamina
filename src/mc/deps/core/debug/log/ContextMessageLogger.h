@@ -23,10 +23,4 @@ public:
     // vIndex: 0
     virtual ~ContextMessageLogger() = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

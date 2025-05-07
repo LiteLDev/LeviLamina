@@ -52,7 +52,7 @@ public:
         ::BlockPos const&    pos,
         ::Block const&       block,
         ::std::string const& eventName,
-        ::Actor&             sourceEntity
+        ::Actor&             actor
     ) const /*override*/;
 
     // vIndex: 131
@@ -68,12 +68,6 @@ public:
     MCNAPI void _onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:
@@ -99,7 +93,7 @@ public:
         ::BlockPos const&    pos,
         ::Block const&       block,
         ::std::string const& eventName,
-        ::Actor&             sourceEntity
+        ::Actor&             actor
     ) const;
 
     MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);

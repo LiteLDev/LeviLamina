@@ -116,7 +116,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::webrtc::TimeDelta const& kMinPacketDuration();
+    MCNAPI static ::webrtc::TimeDelta const& kMinPacketDuration();
     // NOLINTEND
 
 public:

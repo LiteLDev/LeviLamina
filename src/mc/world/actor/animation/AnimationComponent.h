@@ -111,11 +111,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::atomic<int64>& mClientFrameIndex();
+    MCNAPI static ::std::atomic<int64>& mClientFrameIndex();
 
-    MCAPI static ::std::atomic<int64>& mReloadTimeStampClient();
+    MCNAPI static ::std::atomic<int64>& mReloadTimeStampClient();
 
-    MCAPI static ::std::atomic<int64>& mServerFrameIndex();
+    MCNAPI static ::std::atomic<int64>& mServerFrameIndex();
     // NOLINTEND
 
 public:

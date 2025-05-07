@@ -5,11 +5,11 @@
 namespace gametest::tags {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& SuiteAll();
+MCNAPI ::std::string const& SuiteAll();
 
-MCAPI ::std::string const& SuiteDefault();
+MCNAPI ::std::string const& SuiteDefault();
 
-MCAPI ::std::string const& SuiteDisabled();
+MCNAPI ::std::string const& SuiteDisabled();
 // NOLINTEND
 
 } // namespace gametest::tags

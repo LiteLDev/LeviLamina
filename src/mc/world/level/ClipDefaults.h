@@ -11,7 +11,7 @@ class BlockSource;
 namespace ClipDefaults {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const& CHECK_ALL_PICKABLE_BLOCKS();
+MCNAPI ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const& CHECK_ALL_PICKABLE_BLOCKS();
 // NOLINTEND
 
 } // namespace ClipDefaults

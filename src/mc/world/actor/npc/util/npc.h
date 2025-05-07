@@ -33,11 +33,11 @@ MCNAPI ::std::string toString(::npc::ActionContainer const& container);
 
 // static variables
 // NOLINTBEGIN
-MCAPI char const& COMMAND_DELIMITER();
+MCNAPI char const& COMMAND_DELIMITER();
 
-MCAPI ::CommandPermissionLevel const& COMMAND_PERMISSION();
+MCNAPI ::CommandPermissionLevel const& COMMAND_PERMISSION();
 
-MCAPI uint64 const& MAX_NAME_LENGTH();
+MCNAPI uint64 const& MAX_NAME_LENGTH();
 // NOLINTEND
 
 } // namespace npc

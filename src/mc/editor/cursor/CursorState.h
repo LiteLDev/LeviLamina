@@ -43,9 +43,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& MAX_FIXED_DISTANCE();
+    MCNAPI static int const& MAX_FIXED_DISTANCE();
 
-    MCAPI static int const& MIN_FIXED_DISTANCE();
+    MCNAPI static int const& MIN_FIXED_DISTANCE();
     // NOLINTEND
 };
 

@@ -30,7 +30,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const*& PRODUCT_TYPE_ADD_ON();
+    MCNAPI static char const*& PRODUCT_TYPE_ADD_ON();
     // NOLINTEND
 
 public:

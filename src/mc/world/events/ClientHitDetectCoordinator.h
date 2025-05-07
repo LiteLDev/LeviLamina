@@ -17,10 +17,4 @@ public:
     // vIndex: 0
     virtual ~ClientHitDetectCoordinator() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

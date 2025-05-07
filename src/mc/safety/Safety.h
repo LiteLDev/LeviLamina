@@ -10,7 +10,7 @@ namespace Bedrock::Safety { class RedactableString; }
 namespace Bedrock::Safety {
 // static variables
 // NOLINTBEGIN
-MCAPI ::Bedrock::Safety::RedactableString const& EMPTY_REDACTABLE_STRING();
+MCNAPI ::Bedrock::Safety::RedactableString const& EMPTY_REDACTABLE_STRING();
 // NOLINTEND
 
 } // namespace Bedrock::Safety

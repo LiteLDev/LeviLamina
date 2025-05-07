@@ -69,10 +69,4 @@ public:
 
     MCNAPI static void logSubChunkEvent(::SubChunkPos const& subChunkPos, char const* message, bool isClientSide);
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

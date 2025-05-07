@@ -285,7 +285,7 @@ public:
     virtual bool canBeCharged() const /*override*/;
 
     // vIndex: 3
-    virtual ::ComponentItem& setDescriptionId(::std::string const& descriptionId) /*override*/;
+    virtual ::ComponentItem& setDescriptionId(::std::string const& description) /*override*/;
 
     // vIndex: 123
     virtual bool shouldUseJsonForRenderMatrix() const;
@@ -544,7 +544,7 @@ public:
 
     MCAPI bool $canBeCharged() const;
 
-    MCAPI ::ComponentItem& $setDescriptionId(::std::string const& descriptionId);
+    MCAPI ::ComponentItem& $setDescriptionId(::std::string const& description);
 
     MCAPI bool $shouldUseJsonForRenderMatrix() const;
 
@@ -568,6 +568,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

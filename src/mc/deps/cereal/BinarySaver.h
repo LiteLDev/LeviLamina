@@ -26,12 +26,6 @@ public:
     // vIndex: 0
     virtual ~BinarySaver() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace cereal

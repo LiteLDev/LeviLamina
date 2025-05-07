@@ -10,7 +10,7 @@ class Vec3;
 namespace FireAtTargetDefaults {
 // static variables
 // NOLINTBEGIN
-MCAPI ::Vec3 const& OFFSET();
+MCNAPI ::Vec3 const& OFFSET();
 // NOLINTEND
 
 } // namespace FireAtTargetDefaults

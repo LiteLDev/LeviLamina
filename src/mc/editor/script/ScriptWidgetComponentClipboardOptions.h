@@ -66,27 +66,27 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Mirror const& DEFAULT_CLIPBOARD_MIRROR();
+    MCNAPI static ::Mirror const& DEFAULT_CLIPBOARD_MIRROR();
 
-    MCAPI static ::Vec3 const& DEFAULT_CLIPBOARD_OFFSET();
+    MCNAPI static ::Vec3 const& DEFAULT_CLIPBOARD_OFFSET();
 
-    MCAPI static ::Vec3 const& DEFAULT_CLIPBOARD_ORIGIN();
+    MCNAPI static ::Vec3 const& DEFAULT_CLIPBOARD_ORIGIN();
 
-    MCAPI static ::Rotation const& DEFAULT_CLIPBOARD_ROTATION();
+    MCNAPI static ::Rotation const& DEFAULT_CLIPBOARD_ROTATION();
 
-    MCAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_OUTER_BOUNDS_FILL_COLOR();
+    MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_OUTER_BOUNDS_FILL_COLOR();
 
-    MCAPI static bool const& DEFAULT_OUTER_BOUNDS_VISIBLE();
+    MCNAPI static bool const& DEFAULT_OUTER_BOUNDS_VISIBLE();
 
-    MCAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_OUTER_BOUNDS_WIREFRAME_COLOR();
+    MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_OUTER_BOUNDS_WIREFRAME_COLOR();
 
-    MCAPI static ::Vec3 const& MAX_CLIPBOARD_OFFSET();
+    MCNAPI static ::Vec3 const& MAX_CLIPBOARD_OFFSET();
 
-    MCAPI static ::Vec3 const& MAX_CLIPBOARD_ORIGIN();
+    MCNAPI static ::Vec3 const& MAX_CLIPBOARD_ORIGIN();
 
-    MCAPI static ::Vec3 const& MIN_CLIPBOARD_OFFSET();
+    MCNAPI static ::Vec3 const& MIN_CLIPBOARD_OFFSET();
 
-    MCAPI static ::Vec3 const& MIN_CLIPBOARD_ORIGIN();
+    MCNAPI static ::Vec3 const& MIN_CLIPBOARD_ORIGIN();
     // NOLINTEND
 
 public:

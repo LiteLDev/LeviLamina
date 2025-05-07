@@ -31,15 +31,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& sFailedOptionalTest();
+    MCNAPI static ::std::string const& sFailedOptionalTest();
 
-    MCAPI static ::std::string const& sFailedRequiredTest();
+    MCNAPI static ::std::string const& sFailedRequiredTest();
 
-    MCAPI static ::std::string const& sNotStartedTest();
+    MCNAPI static ::std::string const& sNotStartedTest();
 
-    MCAPI static ::std::string const& sOnGoingTest();
+    MCNAPI static ::std::string const& sOnGoingTest();
 
-    MCAPI static ::std::string const& sSuccessfulTest();
+    MCNAPI static ::std::string const& sSuccessfulTest();
     // NOLINTEND
 };
 

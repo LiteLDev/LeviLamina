@@ -300,7 +300,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& MINECRAFT_NAMESPACE();
+    MCNAPI static ::std::string_view const& MINECRAFT_NAMESPACE();
     // NOLINTEND
 
 public:

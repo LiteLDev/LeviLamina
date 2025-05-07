@@ -59,10 +59,4 @@ public:
     // vIndex: 0
     virtual ~StoreVisualStyle() = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

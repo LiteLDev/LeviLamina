@@ -10,71 +10,71 @@ MCNAPI ::std::string_view const FormatCodeFromName(::std::string const& str);
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& AQUA();
+MCNAPI ::std::string const& AQUA();
 
-MCAPI ::std::string const& BLACK();
+MCNAPI ::std::string const& BLACK();
 
-MCAPI ::std::string const& BLUE();
+MCNAPI ::std::string const& BLUE();
 
-MCAPI ::std::string const& BOLD();
+MCNAPI ::std::string const& BOLD();
 
-MCAPI ::std::string const& DARK_AQUA();
+MCNAPI ::std::string const& DARK_AQUA();
 
-MCAPI ::std::string const& DARK_BLUE();
+MCNAPI ::std::string const& DARK_BLUE();
 
-MCAPI ::std::string const& DARK_GRAY();
+MCNAPI ::std::string const& DARK_GRAY();
 
-MCAPI ::std::string const& DARK_GREEN();
+MCNAPI ::std::string const& DARK_GREEN();
 
-MCAPI ::std::string const& DARK_PURPLE();
+MCNAPI ::std::string const& DARK_PURPLE();
 
-MCAPI ::std::string const& DARK_RED();
+MCNAPI ::std::string const& DARK_RED();
 
-MCAPI ::std::string const& ESCAPE();
+MCNAPI ::std::string const& ESCAPE();
 
-MCAPI ::std::string const& GOLD();
+MCNAPI ::std::string const& GOLD();
 
-MCAPI ::std::string const& GRAY();
+MCNAPI ::std::string const& GRAY();
 
-MCAPI ::std::string const& GREEN();
+MCNAPI ::std::string const& GREEN();
 
-MCAPI ::std::string const& ITALIC();
+MCNAPI ::std::string const& ITALIC();
 
-MCAPI ::std::string const& LIGHT_PURPLE();
+MCNAPI ::std::string const& LIGHT_PURPLE();
 
-MCAPI ::std::string const& MATERIAL_AMETHYST();
+MCNAPI ::std::string const& MATERIAL_AMETHYST();
 
-MCAPI ::std::string const& MATERIAL_COPPER();
+MCNAPI ::std::string const& MATERIAL_COPPER();
 
-MCAPI ::std::string const& MATERIAL_DIAMOND();
+MCNAPI ::std::string const& MATERIAL_DIAMOND();
 
-MCAPI ::std::string const& MATERIAL_EMERALD();
+MCNAPI ::std::string const& MATERIAL_EMERALD();
 
-MCAPI ::std::string const& MATERIAL_GOLD();
+MCNAPI ::std::string const& MATERIAL_GOLD();
 
-MCAPI ::std::string const& MATERIAL_IRON();
+MCNAPI ::std::string const& MATERIAL_IRON();
 
-MCAPI ::std::string const& MATERIAL_LAPIS();
+MCNAPI ::std::string const& MATERIAL_LAPIS();
 
-MCAPI ::std::string const& MATERIAL_NETHERITE();
+MCNAPI ::std::string const& MATERIAL_NETHERITE();
 
-MCAPI ::std::string const& MATERIAL_QUARTZ();
+MCNAPI ::std::string const& MATERIAL_QUARTZ();
 
-MCAPI ::std::string const& MATERIAL_REDSTONE();
+MCNAPI ::std::string const& MATERIAL_REDSTONE();
 
-MCAPI ::std::string const& MATERIAL_RESIN();
+MCNAPI ::std::string const& MATERIAL_RESIN();
 
-MCAPI ::std::string const& MINECOIN_GOLD();
+MCNAPI ::std::string const& MINECOIN_GOLD();
 
-MCAPI ::std::string const& OBFUSCATED();
+MCNAPI ::std::string const& OBFUSCATED();
 
-MCAPI ::std::string const& RED();
+MCNAPI ::std::string const& RED();
 
-MCAPI ::std::string const& RESET();
+MCNAPI ::std::string const& RESET();
 
-MCAPI ::std::string const& WHITE();
+MCNAPI ::std::string const& WHITE();
 
-MCAPI ::std::string const& YELLOW();
+MCNAPI ::std::string const& YELLOW();
 // NOLINTEND
 
 } // namespace ColorFormat

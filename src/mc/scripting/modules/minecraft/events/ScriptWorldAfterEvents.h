@@ -120,12 +120,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI void $onFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
@@ -437,7 +431,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const*& bindingName();
+    MCNAPI static char const*& bindingName();
     // NOLINTEND
 
 public:

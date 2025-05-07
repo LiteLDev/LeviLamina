@@ -51,7 +51,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static uint64 const& kBitrateItemSizeBytes();
+    MCNAPI static uint64 const& kBitrateItemSizeBytes();
     // NOLINTEND
 
 public:

@@ -109,10 +109,4 @@ public:
     // vIndex: 0
     virtual ~SoundMapping() = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -44,19 +44,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& RAW_TEXT_SCORE_KEY();
+    MCNAPI static ::std::string const& RAW_TEXT_SCORE_KEY();
 
-    MCAPI static ::std::string const& RAW_TEXT_SCORE_NAME_KEY();
+    MCNAPI static ::std::string const& RAW_TEXT_SCORE_NAME_KEY();
 
-    MCAPI static ::std::string const& RAW_TEXT_SCORE_OBJECTIVE_KEY();
+    MCNAPI static ::std::string const& RAW_TEXT_SCORE_OBJECTIVE_KEY();
 
-    MCAPI static ::std::string const& RAW_TEXT_SCORE_STAR();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::string const& RAW_TEXT_SCORE_STAR();
     // NOLINTEND
 
 public:

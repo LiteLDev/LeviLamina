@@ -31,9 +31,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::RakNet::StringCompressor*& instance();
+    MCNAPI static ::RakNet::StringCompressor*& instance();
 
-    MCAPI static int& referenceCount();
+    MCNAPI static int& referenceCount();
     // NOLINTEND
 
 public:

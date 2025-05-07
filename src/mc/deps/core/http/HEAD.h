@@ -8,7 +8,7 @@ struct HEAD {
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& name();
+    MCNAPI static ::std::string const& name();
     // NOLINTEND
 };
 

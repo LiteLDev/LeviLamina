@@ -69,6 +69,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::CompoundTagUpdaterContext>& mContext();
+    MCNAPI static ::std::unique_ptr<::CompoundTagUpdaterContext>& mContext();
     // NOLINTEND
 };

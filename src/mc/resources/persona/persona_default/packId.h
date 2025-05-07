@@ -10,9 +10,9 @@ namespace mce { class UUID; }
 namespace personaDefault::packId {
 // static variables
 // NOLINTBEGIN
-MCAPI ::mce::UUID const& PERSONA_BUILTIN_PACK();
+MCNAPI ::mce::UUID const& PERSONA_BUILTIN_PACK();
 
-MCAPI ::mce::UUID const& PERSONA_TESTING_PACK();
+MCNAPI ::mce::UUID const& PERSONA_TESTING_PACK();
 // NOLINTEND
 
 } // namespace personaDefault::packId

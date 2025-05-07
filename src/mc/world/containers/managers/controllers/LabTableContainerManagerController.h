@@ -26,10 +26,4 @@ public:
     // vIndex: 0
     virtual ~LabTableContainerManagerController() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

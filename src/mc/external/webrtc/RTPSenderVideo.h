@@ -91,7 +91,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::webrtc::TimeDelta const& kTLRateWindowSize();
+    MCNAPI static ::webrtc::TimeDelta const& kTLRateWindowSize();
     // NOLINTEND
 
 public:

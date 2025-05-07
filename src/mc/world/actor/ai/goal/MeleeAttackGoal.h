@@ -85,9 +85,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BaseGameVersion const& min3DAttackVersion();
+    MCNAPI static ::BaseGameVersion const& min3DAttackVersion();
 
-    MCAPI static ::BaseGameVersion const& minHitThroughWallFixVersion();
+    MCNAPI static ::BaseGameVersion const& minHitThroughWallFixVersion();
     // NOLINTEND
 
 public:

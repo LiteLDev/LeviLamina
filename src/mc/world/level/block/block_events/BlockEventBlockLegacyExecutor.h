@@ -26,12 +26,6 @@ public:
     // vIndex: 0
     virtual ~BlockEventBlockLegacyExecutor() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace BlockEvents::Detail

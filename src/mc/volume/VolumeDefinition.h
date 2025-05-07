@@ -41,6 +41,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& NAME();
+    MCNAPI static ::std::string const& NAME();
     // NOLINTEND
 };

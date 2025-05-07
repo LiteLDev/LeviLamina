@@ -83,21 +83,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::AABB& EAST_AABB();
+    MCNAPI static ::AABB& EAST_AABB();
 
-    MCAPI static ::AABB& NORTH_AABB();
+    MCNAPI static ::AABB& NORTH_AABB();
 
-    MCAPI static ::AABB& SOUTH_AABB();
+    MCNAPI static ::AABB& SOUTH_AABB();
 
-    MCAPI static ::AABB& STANDING_AABB();
+    MCNAPI static ::AABB& STANDING_AABB();
 
-    MCAPI static ::AABB& WEST_AABB();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::AABB& WEST_AABB();
     // NOLINTEND
 
 public:

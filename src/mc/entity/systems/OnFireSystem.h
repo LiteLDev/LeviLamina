@@ -27,10 +27,4 @@ public:
 
     MCAPI static void setOnFireNoEffects(::Actor& actor, int seconds);
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

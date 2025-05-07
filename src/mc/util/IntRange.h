@@ -39,7 +39,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::IntRange const& ZERO();
+    MCNAPI static ::IntRange const& ZERO();
     // NOLINTEND
 
 public:

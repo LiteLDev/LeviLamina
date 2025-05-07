@@ -50,7 +50,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString& defaultErrorValue();
+    MCNAPI static ::HashedString& defaultErrorValue();
     // NOLINTEND
 
 public:

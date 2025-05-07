@@ -19,6 +19,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& mOculusAppId();
+    MCNAPI static ::std::string const& mOculusAppId();
     // NOLINTEND
 };

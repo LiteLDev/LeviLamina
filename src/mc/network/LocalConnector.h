@@ -75,19 +75,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::LocalConnectivitySystem& sLocalConnectivitySystem();
+    MCNAPI static ::LocalConnectivitySystem& sLocalConnectivitySystem();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Connector::ConnectionCallbacks& callbacks, ::NetworkIdentifier const& localId);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

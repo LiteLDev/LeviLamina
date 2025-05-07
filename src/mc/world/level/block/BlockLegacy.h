@@ -161,12 +161,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
 
@@ -217,12 +211,6 @@ public:
         add(::BlockState const&                                                stateRef,
             ::std::vector<::BlockLegacy::RemovedStateCollection::SplitBlock>&& splitBlocks,
             ::SemVersion const&                                                removedSupportVersion);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
         // NOLINTEND
 
     public:
@@ -297,12 +285,6 @@ public:
             ::std::function<::std::optional<int>(::BlockLegacy const&, int)> getter,
             ::std::function<::Block const*(::BlockLegacy const&, int, int)>  setter
         );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
         // NOLINTEND
 
     public:
@@ -1421,6 +1403,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

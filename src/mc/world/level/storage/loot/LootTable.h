@@ -28,14 +28,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void deserialize(::Json::Value const& table, bool usingUpcomingCreatorFeaturesExperiment);
+    MCAPI void deserialize(::Json::Value const& table, bool usingUpcomingCreatorFeaturesExperiment);
 
-    MCNAPI void fill(::Container& container, ::Random& random, ::LootTableContext& context);
+    MCAPI void fill(::Container& container, ::Random& random, ::LootTableContext& context);
 
-    MCNAPI ::std::vector<int> getAvailableSlots(::Container& container, ::Random& random);
+    MCAPI ::std::vector<int> getAvailableSlots(::Container& container, ::Random& random);
 
-    MCNAPI ::std::vector<::ItemStack> getRandomItems(::Random& random, ::LootTableContext& context) const;
+    MCAPI ::std::vector<::ItemStack> getRandomItems(::Random& random, ::LootTableContext& context) const;
 
-    MCNAPI void shuffleAndSplitItems(::std::vector<::ItemStack>& result, int availableSlots, ::Random& random);
+    MCAPI void shuffleAndSplitItems(::std::vector<::ItemStack>& result, int availableSlots, ::Random& random);
     // NOLINTEND
 };

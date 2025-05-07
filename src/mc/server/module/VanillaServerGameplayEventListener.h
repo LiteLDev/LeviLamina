@@ -56,25 +56,19 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult $onEvent(::ActorHurtEvent const& actorHurtEvent);
+    MCFOLD ::EventResult $onEvent(::ActorHurtEvent const& actorHurtEvent);
 
-    MCNAPI ::EventResult $onEvent(::PlayerDamageEvent const& playerDamageEvent);
+    MCFOLD ::EventResult $onEvent(::PlayerDamageEvent const& playerDamageEvent);
 
-    MCNAPI ::EventResult $onEvent(::PlayerOpenContainerEvent const& playerOpenContainerEvent);
+    MCAPI ::EventResult $onEvent(::PlayerOpenContainerEvent const& playerOpenContainerEvent);
 
-    MCNAPI ::EventResult $onActorCreationAttemptFailed(::Actor& actor, ::std::string_view message);
+    MCAPI ::EventResult $onActorCreationAttemptFailed(::Actor& actor, ::std::string_view message);
 
-    MCNAPI ::EventResult $onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos);
+    MCAPI ::EventResult $onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos);
 
-    MCNAPI ::EventResult
+    MCAPI ::EventResult
     $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
     // NOLINTEND
 

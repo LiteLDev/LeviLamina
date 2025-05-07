@@ -16,7 +16,7 @@ MCNAPI void setTemporaryOverride(::DepenetrationComponent& depenetrationComponen
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::Vec3 const& TEMP_Y_OVERRIDE();
+MCNAPI ::Vec3 const& TEMP_Y_OVERRIDE();
 // NOLINTEND
 
 } // namespace DepenetrationComponentUtility

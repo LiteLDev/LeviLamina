@@ -60,12 +60,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
 
@@ -152,12 +146,6 @@ public:
 
     // vIndex: 8
     virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const&) const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

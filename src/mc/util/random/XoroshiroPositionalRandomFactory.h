@@ -51,7 +51,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Crypto::Hash::md5& mThreadLocalDigest();
+    MCNAPI static ::Crypto::Hash::md5& mThreadLocalDigest();
     // NOLINTEND
 
 public:

@@ -1052,14 +1052,14 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForNetEventCallback();
+    MCNAPI static void** $vftableForNetEventCallback();
 
-    MCAPI static void** $vftableForMultiplayerServiceObserver();
+    MCNAPI static void** $vftableForMultiplayerServiceObserver();
 
-    MCAPI static void** $vftableForXboxLiveUserObserver();
+    MCNAPI static void** $vftableForXboxLiveUserObserver();
 
-    MCAPI static void** $vftableForLevelListener();
+    MCNAPI static void** $vftableForLevelListener();
 
-    MCAPI static void** $vftableForEnableQueueForMainThread();
+    MCNAPI static void** $vftableForEnableQueueForMainThread();
     // NOLINTEND
 };

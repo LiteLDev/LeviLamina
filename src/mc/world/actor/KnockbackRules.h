@@ -19,7 +19,7 @@ MCNAPI float getScaledKnockbackForce(::Actor const& actor, float knockbackPower)
 
 // static variables
 // NOLINTBEGIN
-MCAPI float const& KNOCKBACK_DAMPENING();
+MCNAPI float const& KNOCKBACK_DAMPENING();
 // NOLINTEND
 
 } // namespace KnockbackRules

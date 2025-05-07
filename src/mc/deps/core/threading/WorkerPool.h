@@ -78,10 +78,10 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::brstd::flat_set<::WorkerPool*, ::std::less<::WorkerPool*>, ::std::vector<::WorkerPool*>>&
+    MCNAPI static ::brstd::flat_set<::WorkerPool*, ::std::less<::WorkerPool*>, ::std::vector<::WorkerPool*>>&
     sAllPools();
 
-    MCAPI static ::Bedrock::Threading::Mutex& sAllPoolsMutex();
+    MCNAPI static ::Bedrock::Threading::Mutex& sAllPoolsMutex();
     // NOLINTEND
 
 public:

@@ -64,11 +64,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::pair<int, int> const& DEFAULT_LEVEL();
+    MCNAPI static ::std::pair<int, int> const& DEFAULT_LEVEL();
 
-    MCAPI static ::std::pair<float, float> const& DEFAULT_X_ROTATION();
+    MCNAPI static ::std::pair<float, float> const& DEFAULT_X_ROTATION();
 
-    MCAPI static ::std::pair<float, float> const& DEFAULT_Y_ROTATION();
+    MCNAPI static ::std::pair<float, float> const& DEFAULT_Y_ROTATION();
     // NOLINTEND
 
 public:

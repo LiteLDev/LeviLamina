@@ -35,11 +35,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static bool const& ALLOW_UNDERWATER_DEFAULT();
+    MCNAPI static bool const& ALLOW_UNDERWATER_DEFAULT();
 
-    MCAPI static bool const& BREAKS_BLOCKS_DEFAULT();
+    MCNAPI static bool const& BREAKS_BLOCKS_DEFAULT();
 
-    MCAPI static bool const& CAUSES_FIRE_DEFAULT();
+    MCNAPI static bool const& CAUSES_FIRE_DEFAULT();
     // NOLINTEND
 };
 

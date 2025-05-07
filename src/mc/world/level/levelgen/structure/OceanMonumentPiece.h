@@ -86,19 +86,19 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int& mGridroomLeftWingConnectIndex();
+    MCNAPI static int& mGridroomLeftWingConnectIndex();
 
-    MCAPI static int& mGridroomRightWingConnectIndex();
+    MCNAPI static int& mGridroomRightWingConnectIndex();
 
-    MCAPI static int& mGridroomSourceIndex();
+    MCNAPI static int& mGridroomSourceIndex();
 
-    MCAPI static int& mGridroomTopConnectIndex();
+    MCNAPI static int& mGridroomTopConnectIndex();
 
-    MCAPI static int const& mLeftWingIndex();
+    MCNAPI static int const& mLeftWingIndex();
 
-    MCAPI static int const& mPenthouseIndex();
+    MCNAPI static int const& mPenthouseIndex();
 
-    MCAPI static int const& mRightWingIndex();
+    MCNAPI static int const& mRightWingIndex();
     // NOLINTEND
 
 public:

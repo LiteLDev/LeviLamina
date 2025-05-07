@@ -96,7 +96,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BackgroundWorker*& gLocalWorkerMappingSingleton();
+    MCNAPI static ::BackgroundWorker*& gLocalWorkerMappingSingleton();
     // NOLINTEND
 
 public:

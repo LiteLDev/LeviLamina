@@ -9,7 +9,7 @@
 namespace PillarAxisUtils {
 // static variables
 // NOLINTBEGIN
-MCAPI ::Bedrock::DenseEnumMap<::PillarAxis, ::std::string_view, 3> const& AXIS_NAME();
+MCNAPI ::Bedrock::DenseEnumMap<::PillarAxis, ::std::string_view, 3> const& AXIS_NAME();
 // NOLINTEND
 
 } // namespace PillarAxisUtils

@@ -22,16 +22,16 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Item::Tier const& DIAMOND();
+    MCNAPI static ::Item::Tier const& DIAMOND();
 
-    MCAPI static ::Item::Tier const& GOLD();
+    MCNAPI static ::Item::Tier const& GOLD();
 
-    MCAPI static ::Item::Tier const& IRON();
+    MCNAPI static ::Item::Tier const& IRON();
 
-    MCAPI static ::Item::Tier const& NETHERITE();
+    MCNAPI static ::Item::Tier const& NETHERITE();
 
-    MCAPI static ::Item::Tier const& STONE();
+    MCNAPI static ::Item::Tier const& STONE();
 
-    MCAPI static ::Item::Tier const& WOOD();
+    MCNAPI static ::Item::Tier const& WOOD();
     // NOLINTEND
 };

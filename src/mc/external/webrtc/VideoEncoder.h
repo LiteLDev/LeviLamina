@@ -133,12 +133,6 @@ public:
         // vIndex: 0
         virtual ~RateControlParameters() = default;
         // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     struct LossNotification {
@@ -227,12 +221,6 @@ public:
 
     // vIndex: 11
     virtual ::webrtc::VideoEncoder::EncoderInfo GetEncoderInfo() const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

@@ -31,7 +31,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::thread::id const& NoAffinity();
+    MCNAPI static ::std::thread::id const& NoAffinity();
     // NOLINTEND
 
 public:

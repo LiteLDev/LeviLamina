@@ -26,12 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;

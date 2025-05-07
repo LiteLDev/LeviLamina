@@ -38,9 +38,9 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static int& DEFAULT_DROP_PACKET_CHANCE();
+        MCNAPI static int& DEFAULT_DROP_PACKET_CHANCE();
 
-        MCAPI static int& DEFAULT_SEND_EVERY_N_PACKETS();
+        MCNAPI static int& DEFAULT_SEND_EVERY_N_PACKETS();
         // NOLINTEND
     };
 
@@ -108,8 +108,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SpatialActorNetworkData::DebugSendRateModifiers& mDebugSendRateModifiers();
+    MCNAPI static ::SpatialActorNetworkData::DebugSendRateModifiers& mDebugSendRateModifiers();
 
-    MCAPI static ::SpatialActorNetworkData::DebugSpatialPacketModifiers& mDebugSpatialPacketModifiers();
+    MCNAPI static ::SpatialActorNetworkData::DebugSpatialPacketModifiers& mDebugSpatialPacketModifiers();
     // NOLINTEND
 };

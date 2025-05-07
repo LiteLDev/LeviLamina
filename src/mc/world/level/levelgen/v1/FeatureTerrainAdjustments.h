@@ -103,7 +103,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BeardKernel& mBeardKernel();
+    MCNAPI static ::BeardKernel& mBeardKernel();
     // NOLINTEND
 
 public:

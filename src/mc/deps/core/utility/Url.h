@@ -26,9 +26,9 @@ MCNAPI ::std::string urlEncode(::std::string_view value, ::std::function<bool(uc
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::vector<::std::pair<::std::string, ::std::string>> const& EMPTY_QUERY_PARAMETERS();
+MCNAPI ::std::vector<::std::pair<::std::string, ::std::string>> const& EMPTY_QUERY_PARAMETERS();
 
-MCAPI ::Util::Url::Components const& EMPTY_URL();
+MCNAPI ::Util::Url::Components const& EMPTY_URL();
 // NOLINTEND
 
 } // namespace Util::Url

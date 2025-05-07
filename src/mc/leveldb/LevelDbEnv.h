@@ -90,13 +90,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::LevelDbEnv*& sSingleton();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::LevelDbEnv*& sSingleton();
     // NOLINTEND
 
 public:

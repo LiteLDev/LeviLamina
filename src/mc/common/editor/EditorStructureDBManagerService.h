@@ -154,15 +154,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& DEFAULT_EDITOR_NAMESPACE();
+    MCNAPI static ::std::string const& DEFAULT_EDITOR_NAMESPACE();
 
-    MCAPI static ::std::string const& EDITOR_PROJECT_STRUCTUREDB_FOLDER();
+    MCNAPI static ::std::string const& EDITOR_PROJECT_STRUCTUREDB_FOLDER();
 
-    MCAPI static ::std::string const& LEVELDB_STRUCTURE_TAG_PREFIX();
+    MCNAPI static ::std::string const& LEVELDB_STRUCTURE_TAG_PREFIX();
 
-    MCAPI static ::std::string const& STRUCTURE_EXT();
+    MCNAPI static ::std::string const& STRUCTURE_EXT();
 
-    MCAPI static ::std::string const& STRUCTURE_FOLDER();
+    MCNAPI static ::std::string const& STRUCTURE_FOLDER();
     // NOLINTEND
 
 public:

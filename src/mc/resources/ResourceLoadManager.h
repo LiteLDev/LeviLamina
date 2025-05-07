@@ -128,10 +128,4 @@ public:
         uint                                        taskPriority
     );
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

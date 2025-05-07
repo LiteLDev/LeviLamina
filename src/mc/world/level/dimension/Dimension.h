@@ -509,12 +509,12 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForSavedData();
+    MCNAPI static void** $vftableForSavedData();
 
-    MCAPI static void** $vftableForEnableNonOwnerReferences();
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForIDimension();
+    MCNAPI static void** $vftableForIDimension();
 
-    MCAPI static void** $vftableForLevelListener();
+    MCNAPI static void** $vftableForLevelListener();
     // NOLINTEND
 };

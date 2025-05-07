@@ -21,12 +21,6 @@ public:
         // vIndex: 0
         virtual ~ComponentBase() = default;
         // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     template <typename T0>

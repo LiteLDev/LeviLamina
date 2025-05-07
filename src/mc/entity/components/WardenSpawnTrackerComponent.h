@@ -14,6 +14,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& MAX_THREAT_LEVEL();
+    MCNAPI static int const& MAX_THREAT_LEVEL();
     // NOLINTEND
 };

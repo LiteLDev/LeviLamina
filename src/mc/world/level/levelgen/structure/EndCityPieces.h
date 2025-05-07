@@ -139,12 +139,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
 
@@ -181,12 +175,6 @@ public:
 
         // vIndex: 1
         virtual ~TowerGenerator() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
         // NOLINTEND
 
     public:
@@ -227,12 +215,6 @@ public:
 
         // vIndex: 1
         virtual ~FatTowerGenerator() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
         // NOLINTEND
 
     public:
@@ -288,12 +270,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI bool $generate(
@@ -331,12 +307,6 @@ public:
 
         // vIndex: 1
         virtual ~HouseTowerGenerator() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
         // NOLINTEND
 
     public:

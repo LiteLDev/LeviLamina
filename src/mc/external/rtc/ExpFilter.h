@@ -16,7 +16,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& kValueUndefined();
+    MCNAPI static float const& kValueUndefined();
     // NOLINTEND
 };
 

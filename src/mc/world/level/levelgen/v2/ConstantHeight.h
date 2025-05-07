@@ -32,12 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI int $sample(::IRandom&, ::br::worldgen::WorldGenContext const& heightAccessor) const;

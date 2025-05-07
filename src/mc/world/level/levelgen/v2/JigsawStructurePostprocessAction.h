@@ -52,13 +52,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::cereal::ReflectionCtx>& mCerealContext();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::unique_ptr<::cereal::ReflectionCtx>& mCerealContext();
     // NOLINTEND
 
 public:

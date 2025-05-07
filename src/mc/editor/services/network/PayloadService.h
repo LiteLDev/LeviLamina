@@ -200,7 +200,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& msPayloadNameKey();
+    MCNAPI static ::std::string const& msPayloadNameKey();
     // NOLINTEND
 
 public:

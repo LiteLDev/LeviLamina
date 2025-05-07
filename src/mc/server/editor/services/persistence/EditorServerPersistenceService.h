@@ -67,13 +67,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& LEVEL_STORAGE_PERSISTDATA_KEY_SUFFIX();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::string const& LEVEL_STORAGE_PERSISTDATA_KEY_SUFFIX();
     // NOLINTEND
 
 public:

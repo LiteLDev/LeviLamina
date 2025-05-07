@@ -45,15 +45,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& FADE_DEFAULT();
+    MCNAPI static float const& FADE_DEFAULT();
 
-    MCAPI static float const& FADE_MIN();
+    MCNAPI static float const& FADE_MIN();
 
-    MCAPI static bool const& LOOP_DEFAULT();
+    MCNAPI static bool const& LOOP_DEFAULT();
 
-    MCAPI static float const& VOLUME_DEFAULT();
+    MCNAPI static float const& VOLUME_DEFAULT();
 
-    MCAPI static float const& VOLUME_MIN();
+    MCNAPI static float const& VOLUME_MIN();
     // NOLINTEND
 };
 

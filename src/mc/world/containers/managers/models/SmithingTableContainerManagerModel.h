@@ -64,23 +64,17 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& INPUT_SLOT();
+    MCNAPI static int const& INPUT_SLOT();
 
-    MCAPI static int const& MATERIAL_SLOT();
+    MCNAPI static int const& MATERIAL_SLOT();
 
-    MCAPI static int const& TEMPLATE_SLOT();
+    MCNAPI static int const& TEMPLATE_SLOT();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

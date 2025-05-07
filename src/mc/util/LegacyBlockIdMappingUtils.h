@@ -20,9 +20,9 @@ MCNAPI void addLegacyBlockIdMappings();
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::unordered_map<uint, ::WeakPtr<::BlockLegacy const>>& mBlockIdToVanillaBlockTypesMap();
+MCNAPI ::std::unordered_map<uint, ::WeakPtr<::BlockLegacy const>>& mBlockIdToVanillaBlockTypesMap();
 
-MCAPI ::std::unordered_map<::std::string, int>& mBlockNameToBlockIdMap();
+MCNAPI ::std::unordered_map<::std::string, int>& mBlockNameToBlockIdMap();
 // NOLINTEND
 
 } // namespace LegacyBlockIdMappingUtils

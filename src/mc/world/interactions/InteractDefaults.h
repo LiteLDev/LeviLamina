@@ -10,27 +10,27 @@ class GameEvent;
 namespace InteractDefaults {
 // static variables
 // NOLINTBEGIN
-MCAPI int const& ADJUST_HEALTH_AMOUNT();
+MCNAPI int const& ADJUST_HEALTH_AMOUNT();
 
-MCAPI bool const& ADMIRE();
+MCNAPI bool const& ADMIRE();
 
-MCAPI bool const& BARTER();
+MCNAPI bool const& BARTER();
 
-MCAPI float const& COOLDOWN();
+MCNAPI float const& COOLDOWN();
 
-MCAPI float const& COOLDOWN_AFTER_ATTACK();
+MCNAPI float const& COOLDOWN_AFTER_ATTACK();
 
-MCAPI bool const& GIVE_ITEM();
+MCNAPI bool const& GIVE_ITEM();
 
-MCAPI int const& HURT_ITEM();
+MCNAPI int const& HURT_ITEM();
 
-MCAPI bool const& SWING();
+MCNAPI bool const& SWING();
 
-MCAPI bool const& TAKE_ITEM();
+MCNAPI bool const& TAKE_ITEM();
 
-MCAPI bool const& USE_ITEM();
+MCNAPI bool const& USE_ITEM();
 
-MCAPI ::GameEvent const&& VIBRATION();
+MCNAPI ::GameEvent const&& VIBRATION();
 // NOLINTEND
 
 } // namespace InteractDefaults

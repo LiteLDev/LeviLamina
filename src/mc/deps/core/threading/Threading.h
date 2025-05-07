@@ -13,9 +13,9 @@ MCNAPI ::std::error_code MakeErrorCode(::Bedrock::Threading::AsyncErrc id);
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::defer_lock_t const&& DeferLock();
+MCNAPI ::std::defer_lock_t const&& DeferLock();
 
-MCAPI ::std::try_to_lock_t const&& TryToLock();
+MCNAPI ::std::try_to_lock_t const&& TryToLock();
 // NOLINTEND
 
 } // namespace Bedrock::Threading

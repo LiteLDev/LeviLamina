@@ -22,9 +22,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& kScreenshareProbingBweExperimentName();
+    MCNAPI static ::std::string_view const& kScreenshareProbingBweExperimentName();
 
-    MCAPI static ::std::string_view const& kStrictPacingAndProbingExperimentName();
+    MCNAPI static ::std::string_view const& kStrictPacingAndProbingExperimentName();
     // NOLINTEND
 };
 

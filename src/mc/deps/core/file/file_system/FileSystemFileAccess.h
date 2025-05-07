@@ -33,12 +33,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI uint64 $fread(void* buffer, uint64 size, uint64 count, void* file) const;
@@ -60,12 +54,6 @@ public:
 
         // vIndex: 0
         virtual ~FileSystemFileWriteAccess() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
         // NOLINTEND
 
     public:
@@ -121,12 +109,6 @@ public:
 
     // vIndex: 7
     virtual void unload() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

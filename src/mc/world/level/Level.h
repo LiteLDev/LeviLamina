@@ -2790,10 +2790,10 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIWorldRegistriesProvider();
+    MCNAPI static void** $vftableForIWorldRegistriesProvider();
 
-    MCAPI static void** $vftableForBlockSourceListener();
+    MCNAPI static void** $vftableForBlockSourceListener();
 
-    MCAPI static void** $vftableForILevel();
+    MCNAPI static void** $vftableForILevel();
     // NOLINTEND
 };

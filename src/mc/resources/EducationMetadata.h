@@ -50,9 +50,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::std::string, ::EducationMetadata::ContentType> const& STRING_TO_CONTENT_TYPE();
+    MCNAPI static ::std::unordered_map<::std::string, ::EducationMetadata::ContentType> const& STRING_TO_CONTENT_TYPE();
 
-    MCAPI static ::std::unordered_map<::std::string, ::EducationMetadata::UserType> const& STRING_TO_USER_TYPE();
+    MCNAPI static ::std::unordered_map<::std::string, ::EducationMetadata::UserType> const& STRING_TO_USER_TYPE();
     // NOLINTEND
 
 public:

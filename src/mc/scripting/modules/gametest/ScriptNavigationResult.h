@@ -24,21 +24,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::Vec3> getPath() const;
+    MCAPI ::std::vector<::Vec3> getPath() const;
 
-    MCNAPI ~ScriptNavigationResult();
+    MCAPI ~ScriptNavigationResult();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleGameTest::ScriptNavigationResult> bind();
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleGameTest::ScriptNavigationResult> bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

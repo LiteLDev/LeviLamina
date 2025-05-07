@@ -104,7 +104,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::array<::std::pair<int, int>, 13> const& chunkOffset();
+    MCNAPI static ::std::array<::std::pair<int, int>, 13> const& chunkOffset();
     // NOLINTEND
 
 public:

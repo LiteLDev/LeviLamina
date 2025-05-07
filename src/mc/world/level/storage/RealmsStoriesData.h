@@ -42,9 +42,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& REALMS_STORIES_PREFIX();
+    MCNAPI static ::std::string const& REALMS_STORIES_PREFIX();
 
-    MCAPI static ::std::map<::RealmEventId, ::std::string> const& mRealmEventInternalNames();
+    MCNAPI static ::std::map<::RealmEventId, ::std::string> const& mRealmEventInternalNames();
     // NOLINTEND
 
 public:

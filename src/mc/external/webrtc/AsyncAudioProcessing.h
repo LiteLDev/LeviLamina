@@ -36,12 +36,6 @@ public:
         // vIndex: 2
         virtual ~Factory() /*override*/ = default;
         // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
 public:

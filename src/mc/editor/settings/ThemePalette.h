@@ -38,13 +38,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& DARK_THEME_ID();
+    MCNAPI static ::HashedString const& DARK_THEME_ID();
 
-    MCAPI static ::HashedString const& HIGH_CONTRAST_THEME_ID();
+    MCNAPI static ::HashedString const& HIGH_CONTRAST_THEME_ID();
 
-    MCAPI static ::HashedString const& LIGHT_THEME_ID();
+    MCNAPI static ::HashedString const& LIGHT_THEME_ID();
 
-    MCAPI static ::HashedString const& REDSTONE_THEME_ID();
+    MCNAPI static ::HashedString const& REDSTONE_THEME_ID();
     // NOLINTEND
 
 public:

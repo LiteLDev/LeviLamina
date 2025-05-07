@@ -11,9 +11,9 @@ class BlockLegacy;
 namespace CreakingHeartConversionUtils {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::function<::std::optional<int>(::BlockLegacy const&, int)>& CreakingHeartStateGetter();
+MCNAPI ::std::function<::std::optional<int>(::BlockLegacy const&, int)>& CreakingHeartStateGetter();
 
-MCAPI ::std::function<::Block const*(::BlockLegacy const&, int, int)>& CreakingHeartStateSetter();
+MCNAPI ::std::function<::Block const*(::BlockLegacy const&, int, int)>& CreakingHeartStateSetter();
 // NOLINTEND
 
 } // namespace CreakingHeartConversionUtils

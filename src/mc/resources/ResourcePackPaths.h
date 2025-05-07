@@ -39,27 +39,27 @@ MCNAPI ::Core::PathBuffer<::std::string> getTemporaryPremiumResourcePacksPath(::
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& BEHAVIOR_PACK_PATH();
+MCNAPI ::std::string const& BEHAVIOR_PACK_PATH();
 
-MCAPI ::std::string const& DEVELOPMENT_BEHAVIOR_PACKS_PATH();
+MCNAPI ::std::string const& DEVELOPMENT_BEHAVIOR_PACKS_PATH();
 
-MCAPI ::std::string const& DEVELOPMENT_RESOURCE_PACKS_PATH();
+MCNAPI ::std::string const& DEVELOPMENT_RESOURCE_PACKS_PATH();
 
-MCAPI ::std::string const& DEVELOPMENT_SKIN_PACKS_PATH();
+MCNAPI ::std::string const& DEVELOPMENT_SKIN_PACKS_PATH();
 
-MCAPI ::Core::PathBuffer<::std::string> const& GLOBAL_RESOURCE_PACKS_FILENAME();
+MCNAPI ::Core::PathBuffer<::std::string> const& GLOBAL_RESOURCE_PACKS_FILENAME();
 
-MCAPI ::Core::PathBuffer<::std::string> const& KNOWN_INVALID_PACKS_FILE_NAME();
+MCNAPI ::Core::PathBuffer<::std::string> const& KNOWN_INVALID_PACKS_FILE_NAME();
 
-MCAPI ::Core::PathBuffer<::std::string> const& KNOWN_VALID_PACKS_FILE_NAME();
+MCNAPI ::Core::PathBuffer<::std::string> const& KNOWN_VALID_PACKS_FILE_NAME();
 
-MCAPI ::std::string const& RESOURCE_PACKS_PATH();
+MCNAPI ::std::string const& RESOURCE_PACKS_PATH();
 
-MCAPI ::std::string const& SKIN_PACKS_PATH();
+MCNAPI ::std::string const& SKIN_PACKS_PATH();
 
-MCAPI ::std::string const& SYSTEM_SERVICE_PACK_PATH();
+MCNAPI ::std::string const& SYSTEM_SERVICE_PACK_PATH();
 
-MCAPI ::std::string const& TREATMENT_PACK_PATH();
+MCNAPI ::std::string const& TREATMENT_PACK_PATH();
 // NOLINTEND
 
 } // namespace ResourcePackPaths

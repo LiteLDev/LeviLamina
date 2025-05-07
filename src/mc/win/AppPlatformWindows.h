@@ -110,7 +110,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& EXPERIMENTS_ACTIVE_KEY();
+    MCNAPI static ::std::string const& EXPERIMENTS_ACTIVE_KEY();
     // NOLINTEND
 
 public:

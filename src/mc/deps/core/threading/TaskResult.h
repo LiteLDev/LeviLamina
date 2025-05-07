@@ -19,8 +19,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::TaskResult const& Done();
+    MCNAPI static ::TaskResult const& Done();
 
-    MCAPI static ::TaskResult const& Requeue();
+    MCNAPI static ::TaskResult const& Requeue();
     // NOLINTEND
 };

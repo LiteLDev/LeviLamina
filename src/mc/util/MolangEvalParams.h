@@ -50,9 +50,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::RenderParams& mErrorRenderParams();
+    MCNAPI static ::RenderParams& mErrorRenderParams();
 
-    MCAPI static ::MolangEvalParams& mThreadLocalMolangEvalParams();
+    MCNAPI static ::MolangEvalParams& mThreadLocalMolangEvalParams();
     // NOLINTEND
 
 public:

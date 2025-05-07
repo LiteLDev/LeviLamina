@@ -44,17 +44,17 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static int const& GOLEM_DEATH_PENALTY();
+        MCNAPI static int const& GOLEM_DEATH_PENALTY();
 
-        MCAPI static int const& LARGE_PENALTY();
+        MCNAPI static int const& LARGE_PENALTY();
 
-        MCAPI static int const& LARGE_REWARD();
+        MCNAPI static int const& LARGE_REWARD();
 
-        MCAPI static int const& MEDIUM_PENALTY();
+        MCNAPI static int const& MEDIUM_PENALTY();
 
-        MCAPI static int const& SMALL_PENALTY();
+        MCNAPI static int const& SMALL_PENALTY();
 
-        MCAPI static int const& SMALL_REWARD();
+        MCNAPI static int const& SMALL_REWARD();
         // NOLINTEND
     };
 

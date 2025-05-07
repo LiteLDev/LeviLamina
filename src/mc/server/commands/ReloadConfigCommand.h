@@ -26,13 +26,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ScriptSettings*& sScriptSettings();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::ScriptSettings*& sScriptSettings();
     // NOLINTEND
 
 public:

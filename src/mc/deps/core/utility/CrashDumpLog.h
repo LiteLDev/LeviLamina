@@ -28,30 +28,30 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::CrashDump_AllData*& mAllData();
+    MCNAPI static ::CrashDump_AllData*& mAllData();
 
-    MCAPI static ::Bedrock::Threading::Mutex& mAssertDataMutex();
+    MCNAPI static ::Bedrock::Threading::Mutex& mAssertDataMutex();
 
-    MCAPI static ::std::unique_ptr<::std::thread>& mCrashDumpLog_logThread();
+    MCNAPI static ::std::unique_ptr<::std::thread>& mCrashDumpLog_logThread();
 
-    MCAPI static ::Bedrock::Threading::Mutex& mCrashDumpThreadMutex();
+    MCNAPI static ::Bedrock::Threading::Mutex& mCrashDumpThreadMutex();
 
-    MCAPI static ::std::condition_variable& mCrashDumpThreadMutexCV();
+    MCNAPI static ::std::condition_variable& mCrashDumpThreadMutexCV();
 
-    MCAPI static ::Bedrock::Threading::Mutex& mEventDataMutex();
+    MCNAPI static ::Bedrock::Threading::Mutex& mEventDataMutex();
 
-    MCAPI static ::Bedrock::Threading::Mutex& mFrameDataMutex();
+    MCNAPI static ::Bedrock::Threading::Mutex& mFrameDataMutex();
 
-    MCAPI static ::Bedrock::Threading::Mutex& mGameplayDataMutex();
+    MCNAPI static ::Bedrock::Threading::Mutex& mGameplayDataMutex();
 
-    MCAPI static ::Bedrock::Threading::Mutex& mGlobalDataMutex();
+    MCNAPI static ::Bedrock::Threading::Mutex& mGlobalDataMutex();
 
-    MCAPI static bool& mIsThreadRunning();
+    MCNAPI static bool& mIsThreadRunning();
 
-    MCAPI static ::Bedrock::Threading::Mutex& mKeyValueDataMutex();
+    MCNAPI static ::Bedrock::Threading::Mutex& mKeyValueDataMutex();
 
-    MCAPI static ::Bedrock::Threading::Mutex& mPlayerDataMutex();
+    MCNAPI static ::Bedrock::Threading::Mutex& mPlayerDataMutex();
 
-    MCAPI static ::Bedrock::Threading::Mutex& mRenderDataMutex();
+    MCNAPI static ::Bedrock::Threading::Mutex& mRenderDataMutex();
     // NOLINTEND
 };

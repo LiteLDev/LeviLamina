@@ -29,6 +29,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BaseGameVersion const& WATER_BUCKET_USEABLE_VERSION();
+    MCNAPI static ::BaseGameVersion const& WATER_BUCKET_USEABLE_VERSION();
     // NOLINTEND
 };

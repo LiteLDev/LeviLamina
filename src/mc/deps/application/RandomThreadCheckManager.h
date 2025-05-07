@@ -37,15 +37,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::RandomThreadCheckManager>& mInstance();
+    MCNAPI static ::std::unique_ptr<::RandomThreadCheckManager>& mInstance();
 
-    MCAPI static ::std::recursive_mutex& mMutex();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::recursive_mutex& mMutex();
     // NOLINTEND
 
 public:

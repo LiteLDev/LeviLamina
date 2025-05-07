@@ -15,8 +15,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::bitset<123> const& ALL_HIGHER_ONES();
+    MCNAPI static ::std::bitset<123> const& ALL_HIGHER_ONES();
 
-    MCAPI static ::std::bitset<123> const& ALL_LOWER_ONES();
+    MCNAPI static ::std::bitset<123> const& ALL_LOWER_ONES();
     // NOLINTEND
 };

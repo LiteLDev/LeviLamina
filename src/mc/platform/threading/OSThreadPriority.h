@@ -20,13 +20,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Threading::OSThreadPriority const& Elevated();
+    MCNAPI static ::Bedrock::Threading::OSThreadPriority const& Elevated();
 
-    MCAPI static ::Bedrock::Threading::OSThreadPriority const& High();
+    MCNAPI static ::Bedrock::Threading::OSThreadPriority const& High();
 
-    MCAPI static ::Bedrock::Threading::OSThreadPriority const& Low();
+    MCNAPI static ::Bedrock::Threading::OSThreadPriority const& Low();
 
-    MCAPI static ::Bedrock::Threading::OSThreadPriority const& Normal();
+    MCNAPI static ::Bedrock::Threading::OSThreadPriority const& Normal();
     // NOLINTEND
 };
 

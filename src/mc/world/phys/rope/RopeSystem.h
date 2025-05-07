@@ -91,7 +91,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static bool& sEnabled();
+    MCNAPI static bool& sEnabled();
     // NOLINTEND
 
 public:

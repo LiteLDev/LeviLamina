@@ -31,9 +31,9 @@ MCNAPI bool upgradeBaseGameVersionFromWorldTemplate(
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::BaseGameVersion const& PATCH_UPGRADE_VERSION();
+MCNAPI ::BaseGameVersion const& PATCH_UPGRADE_VERSION();
 
-MCAPI ::BaseGameVersion const& REQUIRED_BASE_GAME_VERSION_FOR_OLD_CONTENT();
+MCNAPI ::BaseGameVersion const& REQUIRED_BASE_GAME_VERSION_FOR_OLD_CONTENT();
 // NOLINTEND
 
 } // namespace BaseGameVersioning

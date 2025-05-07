@@ -5,7 +5,7 @@
 namespace ExperienceConstants {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::array<int, 10> const& XP_TRUNCATION_THRESHHOLDS();
+MCNAPI ::std::array<int, 10> const& XP_TRUNCATION_THRESHHOLDS();
 // NOLINTEND
 
 } // namespace ExperienceConstants

@@ -39,12 +39,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI bool $isFoundationBlock(::Block const& block) const;
@@ -86,12 +80,6 @@ public:
 
     // vIndex: 0
     virtual ~CappedSurfaceBuilder() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

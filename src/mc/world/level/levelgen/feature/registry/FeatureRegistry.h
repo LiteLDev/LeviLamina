@@ -106,29 +106,29 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& AFTER_SKY_PASS();
+    MCNAPI static ::std::string const& AFTER_SKY_PASS();
 
-    MCAPI static ::std::string const& AFTER_SURFACE_PASS();
+    MCNAPI static ::std::string const& AFTER_SURFACE_PASS();
 
-    MCAPI static ::std::string const& AFTER_UNDERGROUND_PASS();
+    MCNAPI static ::std::string const& AFTER_UNDERGROUND_PASS();
 
-    MCAPI static ::std::string const& BEFORE_SKY_PASS();
+    MCNAPI static ::std::string const& BEFORE_SKY_PASS();
 
-    MCAPI static ::std::string const& BEFORE_SURFACE_PASS();
+    MCNAPI static ::std::string const& BEFORE_SURFACE_PASS();
 
-    MCAPI static ::std::string const& BEFORE_UNDERGROUND_PASS();
+    MCNAPI static ::std::string const& BEFORE_UNDERGROUND_PASS();
 
-    MCAPI static ::std::string const& FINAL_PASS();
+    MCNAPI static ::std::string const& FINAL_PASS();
 
-    MCAPI static ::std::string const& FIRST_PASS();
+    MCNAPI static ::std::string const& FIRST_PASS();
 
-    MCAPI static ::std::string const& PREGENERATION_PASS();
+    MCNAPI static ::std::string const& PREGENERATION_PASS();
 
-    MCAPI static ::std::string const& SKY_PASS();
+    MCNAPI static ::std::string const& SKY_PASS();
 
-    MCAPI static ::std::string const& SURFACE_PASS();
+    MCNAPI static ::std::string const& SURFACE_PASS();
 
-    MCAPI static ::std::string const& UNDERGROUND_PASS();
+    MCNAPI static ::std::string const& UNDERGROUND_PASS();
     // NOLINTEND
 
 public:

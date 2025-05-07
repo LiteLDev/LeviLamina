@@ -24,10 +24,4 @@ public:
     // vIndex: 0
     virtual ~EnumOption() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

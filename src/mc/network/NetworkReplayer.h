@@ -32,10 +32,4 @@ public:
     // vIndex: 0
     virtual ~NetworkReplayer() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

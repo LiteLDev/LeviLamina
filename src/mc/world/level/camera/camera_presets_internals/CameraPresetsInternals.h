@@ -11,7 +11,7 @@ _doContentError(::std::string const& message, ::std::string_view filename, ::std
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::vector<::std::string>& ALLOWED_MC_INHERIT();
+MCNAPI ::std::vector<::std::string>& ALLOWED_MC_INHERIT();
 // NOLINTEND
 
 } // namespace CameraPresetsInternals

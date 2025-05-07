@@ -77,23 +77,17 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& MAX_PATTERNS();
+    MCNAPI static int const& MAX_PATTERNS();
 
-    MCAPI static ::std::string const& TAG_BASE_COLOR();
+    MCNAPI static ::std::string const& TAG_BASE_COLOR();
 
-    MCAPI static ::std::string const& TAG_COLOR();
+    MCNAPI static ::std::string const& TAG_COLOR();
 
-    MCAPI static ::std::string const& TAG_PATTERN();
+    MCNAPI static ::std::string const& TAG_PATTERN();
 
-    MCAPI static ::std::string const& TAG_PATTERNS();
+    MCNAPI static ::std::string const& TAG_PATTERNS();
 
-    MCAPI static ::std::string const& TAG_TYPE();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::std::string const& TAG_TYPE();
     // NOLINTEND
 
 public:

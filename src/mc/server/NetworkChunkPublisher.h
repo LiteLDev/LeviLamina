@@ -68,40 +68,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI NetworkChunkPublisher(::Level& level, ::NetworkIdentifier const& owner, ::SubClientId subClientId);
+    MCAPI NetworkChunkPublisher(::Level& level, ::NetworkIdentifier const& owner, ::SubClientId subClientId);
 
-    MCNAPI bool _isWaitingForFullyBuiltChunks() const;
+    MCAPI bool _isWaitingForFullyBuiltChunks() const;
 
-    MCNAPI bool _sendQueuedChunk(
+    MCAPI bool _sendQueuedChunk(
         ::ChunkPositionAndDimension const&          queuedChunk,
         ::ClientBlobCache::Server::TransferBuilder* cachedTransfer
     );
 
-    MCNAPI void _serializeAndCache(
+    MCAPI void _serializeAndCache(
         ::LevelChunkPacket&                          packet,
         ::ClientBlobCache::Server::TransferBuilder&  transfer,
         ::std::function<void(::VarIntDataOutput&)>&& serialize
     );
 
-    MCNAPI void clearRegion();
+    MCAPI void clearRegion();
 
-    MCNAPI void moveRegion(::BlockPos const& position, uint blockRadius, ::Vec3 const& direction, float minDistance);
+    MCAPI void moveRegion(::BlockPos const& position, uint blockRadius, ::Vec3 const& direction, float minDistance);
 
-    MCNAPI void prepareRegion(::ChunkSource& mainChunkSource, ::ChunkPos const& center);
+    MCAPI void prepareRegion(::ChunkSource& mainChunkSource, ::ChunkPos const& center);
 
-    MCNAPI void sendQueuedChunks();
+    MCAPI void sendQueuedChunks();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Level& level, ::NetworkIdentifier const& owner, ::SubClientId subClientId);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCAPI void* $ctor(::Level& level, ::NetworkIdentifier const& owner, ::SubClientId subClientId);
     // NOLINTEND
 
 public:

@@ -13,7 +13,7 @@ MCNAPI ::std::string toString(::MovePredictionType type);
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::chrono::steady_clock::time_point& lastRenderTime();
+MCNAPI ::std::chrono::steady_clock::time_point& lastRenderTime();
 // NOLINTEND
 
 } // namespace InternalHelpers

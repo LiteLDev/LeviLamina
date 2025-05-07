@@ -55,9 +55,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Minecraft*& mGame();
+    MCNAPI static ::Minecraft*& mGame();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::TextFilteringProcessor>& mTextFilteringProcessor();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::TextFilteringProcessor>& mTextFilteringProcessor();
     // NOLINTEND
 
 public:

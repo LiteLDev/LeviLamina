@@ -5,7 +5,7 @@
 namespace ClientSideChunkGeneration {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::optional<float>& ServerBuildRatioOverride();
+MCNAPI ::std::optional<float>& ServerBuildRatioOverride();
 // NOLINTEND
 
 } // namespace ClientSideChunkGeneration

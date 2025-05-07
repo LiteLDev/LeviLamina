@@ -18,10 +18,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string generateStorageKey(int64 actorId);
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

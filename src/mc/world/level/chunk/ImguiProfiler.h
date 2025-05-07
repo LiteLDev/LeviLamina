@@ -68,12 +68,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
@@ -305,17 +299,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::ImguiProfiler::Record>& sPendingRecords();
+    MCNAPI static ::std::vector<::ImguiProfiler::Record>& sPendingRecords();
 
-    MCAPI static int& sProduceRecords();
+    MCNAPI static int& sProduceRecords();
 
-    MCAPI static ::Bedrock::Threading::Mutex& sRecordMutex();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::Bedrock::Threading::Mutex& sRecordMutex();
     // NOLINTEND
 
 public:

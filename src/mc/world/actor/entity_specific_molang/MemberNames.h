@@ -10,21 +10,21 @@ class HashedString;
 namespace EntitySpecificMolang::MemberNames {
 // static variables
 // NOLINTBEGIN
-MCAPI ::HashedString const& ANIM_STATE();
+MCNAPI ::HashedString const& ANIM_STATE();
 
-MCAPI ::HashedString const& EASE_IN();
+MCNAPI ::HashedString const& EASE_IN();
 
-MCAPI ::HashedString const& FACING_DIRECTION();
+MCNAPI ::HashedString const& FACING_DIRECTION();
 
-MCAPI ::HashedString const& IS_HOVERING();
+MCNAPI ::HashedString const& IS_HOVERING();
 
-MCAPI ::HashedString const& MOVE_SPEED_SCALAR();
+MCNAPI ::HashedString const& MOVE_SPEED_SCALAR();
 
-MCAPI ::HashedString const& PEEK_AMOUNT();
+MCNAPI ::HashedString const& PEEK_AMOUNT();
 
-MCAPI ::HashedString const& SWING_ANIMATION_DURATION();
+MCNAPI ::HashedString const& SWING_ANIMATION_DURATION();
 
-MCAPI ::HashedString const& SWING_ANIMATION_TICK();
+MCNAPI ::HashedString const& SWING_ANIMATION_TICK();
 // NOLINTEND
 
 } // namespace EntitySpecificMolang::MemberNames

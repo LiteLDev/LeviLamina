@@ -112,15 +112,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::webrtc::TimeDelta const& kMaxEarlyProbeProcessing();
+    MCNAPI static ::webrtc::TimeDelta const& kMaxEarlyProbeProcessing();
 
-    MCAPI static ::webrtc::TimeDelta const& kMaxPaddingReplayDuration();
+    MCNAPI static ::webrtc::TimeDelta const& kMaxPaddingReplayDuration();
 
-    MCAPI static ::webrtc::TimeDelta const& kMinSleepTime();
+    MCNAPI static ::webrtc::TimeDelta const& kMinSleepTime();
 
-    MCAPI static ::webrtc::TimeDelta const& kPausedProcessInterval();
+    MCNAPI static ::webrtc::TimeDelta const& kPausedProcessInterval();
 
-    MCAPI static ::webrtc::TimeDelta const& kTargetPaddingDuration();
+    MCNAPI static ::webrtc::TimeDelta const& kTargetPaddingDuration();
     // NOLINTEND
 
 public:

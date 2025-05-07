@@ -102,21 +102,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::weak_ptr<::Bedrock::Http::LibHttpClientImpl>& sWeakThis();
+    MCNAPI static ::std::weak_ptr<::Bedrock::Http::LibHttpClientImpl>& sWeakThis();
 
-    MCAPI static ::Bedrock::Threading::Mutex& sWeakThisMutex();
+    MCNAPI static ::Bedrock::Threading::Mutex& sWeakThisMutex();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

@@ -37,9 +37,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& PARSER_VERSION();
+    MCNAPI static ::SemVersionConstant const& PARSER_VERSION();
 
-    MCAPI static ::Puv::VersionRange const& SUPPORTED_VERSIONS();
+    MCNAPI static ::Puv::VersionRange const& SUPPORTED_VERSIONS();
     // NOLINTEND
 
 public:

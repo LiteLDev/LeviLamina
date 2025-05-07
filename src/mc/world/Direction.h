@@ -22,22 +22,22 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<::Direction::Type const[]> DIRECTION_COUNTER_CLOCKWISE();
+    MCNAPI static ::std::add_lvalue_reference_t<::Direction::Type const[]> DIRECTION_COUNTER_CLOCKWISE();
 
-    MCAPI static ::std::array<uchar, 4> const& DIRECTION_FACING();
+    MCNAPI static ::std::array<uchar, 4> const& DIRECTION_FACING();
 
-    MCAPI static ::std::add_lvalue_reference_t<::Direction::Type const[]> DIRECTION_OPPOSITE();
+    MCNAPI static ::std::add_lvalue_reference_t<::Direction::Type const[]> DIRECTION_OPPOSITE();
 
-    MCAPI static ::std::add_lvalue_reference_t<::Direction::Type const[]> FACING_DIRECTION();
+    MCNAPI static ::std::add_lvalue_reference_t<::Direction::Type const[]> FACING_DIRECTION();
 
-    MCAPI static ::std::unordered_map<::std::string, ::Direction::Type> const& FROM_STRING_MAP();
+    MCNAPI static ::std::unordered_map<::std::string, ::Direction::Type> const& FROM_STRING_MAP();
 
-    MCAPI static ::std::add_lvalue_reference_t<uchar[][6]> RELATIVE_DIRECTION_FACING();
+    MCNAPI static ::std::add_lvalue_reference_t<uchar[][6]> RELATIVE_DIRECTION_FACING();
 
-    MCAPI static ::std::add_lvalue_reference_t<int const[]> STEP_X();
+    MCNAPI static ::std::add_lvalue_reference_t<int const[]> STEP_X();
 
-    MCAPI static ::std::add_lvalue_reference_t<int const[]> STEP_Z();
+    MCNAPI static ::std::add_lvalue_reference_t<int const[]> STEP_Z();
 
-    MCAPI static ::std::unordered_map<uint, ::std::string> const& TO_STRING_MAP();
+    MCNAPI static ::std::unordered_map<uint, ::std::string> const& TO_STRING_MAP();
     // NOLINTEND
 };

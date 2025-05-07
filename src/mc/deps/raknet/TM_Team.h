@@ -29,12 +29,6 @@ public:
     // vIndex: 0
     virtual ~TM_Team() = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace RakNet

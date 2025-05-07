@@ -78,13 +78,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& ENDPOINT_IDENTIFIER();
+    MCNAPI static ::std::string const& ENDPOINT_IDENTIFIER();
 
-    MCAPI static ::std::string const& EVENT_NAMESPACE();
+    MCNAPI static ::std::string const& EVENT_NAMESPACE();
 
-    MCAPI static ::std::string const& ONEDS_URL();
+    MCNAPI static ::std::string const& ONEDS_URL();
 
-    MCAPI static ::std::string const& PARTA_IDENTIFIER();
+    MCNAPI static ::std::string const& PARTA_IDENTIFIER();
     // NOLINTEND
 
 public:

@@ -49,7 +49,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& MAX_ENUM_SIZE();
+    MCNAPI static int const& MAX_ENUM_SIZE();
     // NOLINTEND
 
 public:

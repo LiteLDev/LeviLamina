@@ -64,6 +64,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::weak_ptr<::ItemRegistry>& mThreadLocalRegistry();
+    MCNAPI static ::std::weak_ptr<::ItemRegistry>& mThreadLocalRegistry();
     // NOLINTEND
 };

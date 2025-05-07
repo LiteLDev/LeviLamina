@@ -10,9 +10,9 @@ struct XTaskQueueObject;
 namespace ProcessGlobals {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::atomic<::XTaskQueueObject*>& g_defaultProcessQueue();
+MCNAPI ::std::atomic<::XTaskQueueObject*>& g_defaultProcessQueue();
 
-MCAPI ::std::atomic<::XTaskQueueObject*>& g_processQueue();
+MCNAPI ::std::atomic<::XTaskQueueObject*>& g_processQueue();
 // NOLINTEND
 
 } // namespace ProcessGlobals

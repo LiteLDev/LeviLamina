@@ -47,12 +47,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
@@ -88,12 +82,6 @@ public:
 
         // vIndex: 0
         virtual ~UpdateVerticalHalfGetPlacementBlockCallback() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-
         // NOLINTEND
 
     public:

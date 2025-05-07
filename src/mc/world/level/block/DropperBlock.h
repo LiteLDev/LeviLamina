@@ -23,12 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;

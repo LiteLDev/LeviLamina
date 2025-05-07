@@ -30,12 +30,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
@@ -74,12 +68,6 @@ public:
     MCNAPI void _dropItem(::ItemStack const& item) const;
 
     MCNAPI void _sendMobEquipmentPacket(::MobEquipmentPacket packet) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

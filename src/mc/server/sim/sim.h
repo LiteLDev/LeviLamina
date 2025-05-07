@@ -17,11 +17,11 @@ namespace sim { struct LookAtIntent; }
 namespace sim {
 // functions
 // NOLINTBEGIN
-MCNAPI ::sim::LookAtIntent lookAt(::SimulatedPlayer& player, ::EntityContext& entity, ::sim::LookDuration duration);
+MCAPI ::sim::LookAtIntent lookAt(::SimulatedPlayer& player, ::EntityContext& entity, ::sim::LookDuration duration);
 
-MCNAPI ::sim::LookAtIntent lookAt(::SimulatedPlayer& player, ::glm::vec3 position, ::sim::LookDuration duration);
+MCAPI ::sim::LookAtIntent lookAt(::SimulatedPlayer& player, ::glm::vec3 position, ::sim::LookDuration duration);
 
-MCNAPI ::sim::BuildIntent startBuild(::SimulatedPlayer& player, ::BlockSource& region, int slot);
+MCAPI ::sim::BuildIntent startBuild(::SimulatedPlayer& player, ::BlockSource& region, int slot);
 // NOLINTEND
 
 } // namespace sim

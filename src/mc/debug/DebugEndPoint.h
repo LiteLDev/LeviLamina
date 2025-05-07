@@ -127,19 +127,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::LogArea, bool> const& mAssertAreas();
+    MCNAPI static ::std::unordered_map<::LogArea, bool> const& mAssertAreas();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::optional<::LogLevel> minLogLevel);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

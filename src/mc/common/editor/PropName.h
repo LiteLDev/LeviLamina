@@ -5,9 +5,9 @@
 namespace Editor::DataStore::PropName {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::add_lvalue_reference_t<char const[]> CHILDREN();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> CHILDREN();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> ID();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> ID();
 // NOLINTEND
 
 } // namespace Editor::DataStore::PropName

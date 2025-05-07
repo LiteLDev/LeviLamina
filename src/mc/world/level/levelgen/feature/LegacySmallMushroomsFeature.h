@@ -50,12 +50,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;

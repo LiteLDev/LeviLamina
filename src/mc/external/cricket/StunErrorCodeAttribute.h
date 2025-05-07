@@ -60,19 +60,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ushort const& MIN_SIZE();
+    MCNAPI static ushort const& MIN_SIZE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(ushort, ushort);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

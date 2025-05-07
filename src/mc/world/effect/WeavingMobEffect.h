@@ -25,13 +25,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Vec3 const& COBWEB_SLOWDOWN_OVERRIDE();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    MCNAPI static ::Vec3 const& COBWEB_SLOWDOWN_OVERRIDE();
     // NOLINTEND
 
 public:

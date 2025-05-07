@@ -171,8 +171,8 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForAppIsland();
+    MCNAPI static void** $vftableForAppIsland();
 
-    MCAPI static void** $vftableForIMinecraftApp();
+    MCNAPI static void** $vftableForIMinecraftApp();
     // NOLINTEND
 };

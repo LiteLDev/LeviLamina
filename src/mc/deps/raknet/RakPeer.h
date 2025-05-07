@@ -1104,9 +1104,9 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForRakPeerInterface();
+    MCNAPI static void** $vftableForRakPeerInterface();
 
-    MCAPI static void** $vftableForRNS2EventHandler();
+    MCNAPI static void** $vftableForRNS2EventHandler();
     // NOLINTEND
 };
 

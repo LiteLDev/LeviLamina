@@ -10,29 +10,29 @@ class HashedString;
 namespace LevelDataKeys {
 // static variables
 // NOLINTBEGIN
-MCAPI ::HashedString& DAYLIGHT_CYCLE();
+MCNAPI ::HashedString& DAYLIGHT_CYCLE();
 
-MCAPI ::HashedString& EDUCATION_OID();
+MCNAPI ::HashedString& EDUCATION_OID();
 
-MCAPI ::HashedString& EDUCATION_SHARED_RESOURCE();
+MCNAPI ::HashedString& EDUCATION_SHARED_RESOURCE();
 
-MCAPI ::HashedString& FLAT_WORLD_VERSION();
+MCNAPI ::HashedString& FLAT_WORLD_VERSION();
 
-MCAPI ::HashedString& GAME_TYPE();
+MCNAPI ::HashedString& GAME_TYPE();
 
-MCAPI ::HashedString& GENERATOR();
+MCNAPI ::HashedString& GENERATOR();
 
-MCAPI ::HashedString& LIMITED_WORLD_DEPTH();
+MCNAPI ::HashedString& LIMITED_WORLD_DEPTH();
 
-MCAPI ::HashedString& LIMITED_WORLD_WIDTH();
+MCNAPI ::HashedString& LIMITED_WORLD_WIDTH();
 
-MCAPI ::HashedString& LOADED_PLAYER_TAG();
+MCNAPI ::HashedString& LOADED_PLAYER_TAG();
 
-MCAPI ::HashedString& SEED();
+MCNAPI ::HashedString& SEED();
 
-MCAPI ::HashedString& SERVER_AUTH_OPT_OUT_VERSION();
+MCNAPI ::HashedString& SERVER_AUTH_OPT_OUT_VERSION();
 
-MCAPI ::HashedString& SPAWN_POS();
+MCNAPI ::HashedString& SPAWN_POS();
 // NOLINTEND
 
 } // namespace LevelDataKeys

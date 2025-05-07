@@ -23,12 +23,6 @@ public:
     // vIndex: 0
     virtual ~RefCountedBase() = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace rtc

@@ -5,9 +5,9 @@
 namespace TitleInfo {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& BedrockVanillaTag();
+MCNAPI ::std::string const& BedrockVanillaTag();
 
-MCAPI ::std::string const& EarthTag();
+MCNAPI ::std::string const& EarthTag();
 // NOLINTEND
 
 } // namespace TitleInfo

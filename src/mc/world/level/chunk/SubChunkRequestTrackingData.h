@@ -55,10 +55,4 @@ public:
     // vIndex: 0
     virtual ~SubChunkRequestTrackingData() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

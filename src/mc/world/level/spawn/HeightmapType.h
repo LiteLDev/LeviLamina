@@ -18,7 +18,7 @@ MCNAPI ::std::vector<::std::tuple<::std::string, ::std::function<bool(::Block co
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::br::spawn::HeightmapToken const& MOTION_BLOCKING_NO_LEAVES();
+MCNAPI ::br::spawn::HeightmapToken const& MOTION_BLOCKING_NO_LEAVES();
 // NOLINTEND
 
 } // namespace br::spawn::HeightmapType

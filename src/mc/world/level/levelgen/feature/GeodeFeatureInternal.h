@@ -8,7 +8,7 @@
 namespace GeodeFeatureInternal {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::vector<::MaterialType>& geodeInvalidMaterials();
+MCNAPI ::std::vector<::MaterialType>& geodeInvalidMaterials();
 // NOLINTEND
 
 } // namespace GeodeFeatureInternal

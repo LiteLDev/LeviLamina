@@ -21,12 +21,6 @@ public:
     // vIndex: 0
     virtual ~ScriptItemCustomComponentAfterEvent() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

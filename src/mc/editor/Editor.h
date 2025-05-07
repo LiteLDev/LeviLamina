@@ -5,7 +5,7 @@
 namespace Editor {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string_view const& EDITOR_PACK_CAPABILITY();
+MCNAPI ::std::string_view const& EDITOR_PACK_CAPABILITY();
 // NOLINTEND
 
 } // namespace Editor

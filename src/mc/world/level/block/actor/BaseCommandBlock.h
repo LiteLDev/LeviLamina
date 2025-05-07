@@ -40,23 +40,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _performCommand(::BlockSource& region, ::CommandOrigin const& origin, bool& markForSaving);
+    MCAPI bool _performCommand(::BlockSource& region, ::CommandOrigin const& origin, bool& markForSaving);
 
-    MCNAPI void _setCommand(::BlockSource& region, ::CommandOrigin const& origin, ::std::string const& command);
+    MCAPI void _setCommand(::BlockSource& region, ::CommandOrigin const& origin, ::std::string const& command);
 
-    MCNAPI void compile(::CommandOrigin const& origin, ::Level& level);
+    MCAPI void compile(::CommandOrigin const& origin, ::Level& level);
 
-    MCNAPI ::std::string getLastOutput() const;
+    MCAPI ::std::string getLastOutput() const;
 
-    MCNAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI ::BaseCommandBlock& operator=(::BaseCommandBlock&&);
+    MCAPI ::BaseCommandBlock& operator=(::BaseCommandBlock&&);
 
-    MCNAPI bool save(::CompoundTag& tag) const;
+    MCAPI bool save(::CompoundTag& tag) const;
 
-    MCNAPI void setLastOutput(::std::string const& lastOutput, ::std::vector<::std::string> const& params);
+    MCAPI void setLastOutput(::std::string const& lastOutput, ::std::vector<::std::string> const& params);
 
-    MCNAPI ~BaseCommandBlock();
+    MCAPI ~BaseCommandBlock();
     // NOLINTEND
 
 public:
@@ -68,6 +68,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

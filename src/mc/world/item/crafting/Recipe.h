@@ -155,52 +155,51 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit Recipe(::Recipe::ConstructionContext&& context);
+    MCAPI explicit Recipe(::Recipe::ConstructionContext&& context);
 
-    MCNAPI int countQuantityOfIngredient(::ItemInstance const& ingredient) const;
+    MCAPI int countQuantityOfIngredient(::ItemInstance const& ingredient) const;
 
-    MCNAPI void generateUUID();
+    MCAPI void generateUUID();
 
-    MCNAPI ::Recipe::ConstructionContext getConstructionContext() const;
+    MCAPI ::Recipe::ConstructionContext getConstructionContext() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool isAnyAuxValue(::ItemDescriptor const& ii);
+    MCAPI static bool isAnyAuxValue(::ItemDescriptor const& ii);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Recipe::ConstructionContext&& context);
+    MCAPI void* $ctor(::Recipe::ConstructionContext&& context);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::mce::UUID const& $getId() const;
+    MCFOLD ::mce::UUID const& $getId() const;
 
-    MCNAPI ::std::vector<::ItemInstance> const& $getResultItems() const;
+    MCFOLD ::std::vector<::ItemInstance> const& $getResultItems() const;
 
-    MCNAPI bool $isMultiRecipe() const;
+    MCFOLD bool $isMultiRecipe() const;
 
-    MCNAPI bool $hasDataDrivenResult() const;
+    MCFOLD bool $hasDataDrivenResult() const;
 
-    MCNAPI bool $itemValidForRecipe(::ItemDescriptor const& recipeItem, ::ItemStack const& item) const;
+    MCAPI bool $itemValidForRecipe(::ItemDescriptor const& recipeItem, ::ItemStack const& item) const;
 
-    MCNAPI bool $itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs) const;
+    MCAPI bool $itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs) const;
 
-    MCNAPI bool
-    $itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs, ::CompoundTag const* rhsTag) const;
+    MCAPI bool $itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs, ::CompoundTag const* rhsTag) const;
 
-    MCNAPI uint64 $getIngredientsHash() const;
+    MCAPI uint64 $getIngredientsHash() const;
     // NOLINTEND
 
 public:

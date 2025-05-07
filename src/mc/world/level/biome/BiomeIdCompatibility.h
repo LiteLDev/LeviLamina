@@ -17,7 +17,7 @@ MCNAPI bool isReserved(ushort id, ::BaseGameVersion const& baseGameVersion);
 
 // static variables
 // NOLINTBEGIN
-MCAPI ushort const& MAX_CUSTOM_BIOMES();
+MCNAPI ushort const& MAX_CUSTOM_BIOMES();
 // NOLINTEND
 
 } // namespace BiomeIdCompatibility

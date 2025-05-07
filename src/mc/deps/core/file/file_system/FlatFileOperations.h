@@ -63,15 +63,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static uint64 const& FLAT_FILE_CURRENT_VERSION();
+    MCNAPI static uint64 const& FLAT_FILE_CURRENT_VERSION();
 
-    MCAPI static ::std::string const& FLAT_FILE_EMPTY_MANIFEST_FILE();
+    MCNAPI static ::std::string const& FLAT_FILE_EMPTY_MANIFEST_FILE();
 
-    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& FLAT_FILE_EXTENSION();
+    MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& FLAT_FILE_EXTENSION();
 
-    MCAPI static uint64 const& FLAT_FILE_INVALID_VERSION();
+    MCNAPI static uint64 const& FLAT_FILE_INVALID_VERSION();
 
-    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& FLAT_FILE_MANIFEST_EXTENSION();
+    MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& FLAT_FILE_MANIFEST_EXTENSION();
     // NOLINTEND
 };
 

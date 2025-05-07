@@ -34,12 +34,6 @@ public:
     // vIndex: 0
     virtual ~TextureSetLayerDefinition() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace cg
