@@ -2,7 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/legacy/ActorUniqueID.h"
-#include <cstddef>
 
 struct PlayerScoreboardId {
 public:
