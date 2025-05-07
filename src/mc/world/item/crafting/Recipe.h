@@ -49,13 +49,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~Results();
+        MCAPI ~Results();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -76,13 +76,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~ConstructionContext();
+        MCAPI ~ConstructionContext();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 

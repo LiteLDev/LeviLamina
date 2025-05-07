@@ -62,28 +62,28 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool
+    MCAPI static bool
     isExposedTo(::IBlockWorldGenAPI const& target, ::BlockPos const& candidatePos, ::BlockDescriptor const& exposedTo);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& DEFAULT_NOT_SUPPORTED_PASS();
+    MCAPI static ::std::string_view const& DEFAULT_NOT_SUPPORTED_PASS();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isValidPlacement(::std::string const& pass);
+    MCAPI bool $isValidPlacement(::std::string const& pass);
 
-    MCNAPI void $upgradeFormat(::SemVersion const&);
+    MCFOLD void $upgradeFormat(::SemVersion const&);
     // NOLINTEND
 
 public:

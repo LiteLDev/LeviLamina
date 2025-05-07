@@ -54,13 +54,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~FurnaceRecipeKey();
+        MCAPI ~FurnaceRecipeKey();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
