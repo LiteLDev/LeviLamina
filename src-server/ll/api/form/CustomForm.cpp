@@ -15,13 +15,11 @@ namespace ll::form {
 class Input : public CustomFormElement {
 
 public:
-    std::string mText{};
     std::string mPlaceholder{};
     std::string mDefault{};
 
     Input(std::string name, std::string text, std::string placeholder = {}, std::string defaultVal = {})
-    : CustomFormElement(std::move(name)),
-      mText(std::move(text)),
+    : CustomFormElement(std::move(name), std::move(text)),
       mPlaceholder(std::move(placeholder)),
       mDefault(std::move(defaultVal)) {}
     ~Input() override = default;
@@ -29,17 +27,17 @@ public:
     [[nodiscard]] Type getType() const override { return Type::Input; }
 
     [[nodiscard]] nlohmann::ordered_json serialize() const override {
-        nlohmann::ordered_json input = {
+        auto data = CustomFormElement::serialize();
+        data.update({
             {"type", "input"},
-            {"text",   mText}
-        };
+        });
         if (!mPlaceholder.empty()) {
-            input["placeholder"] = mPlaceholder;
+            data["placeholder"] = mPlaceholder;
         }
         if (!mDefault.empty()) {
-            input["default"] = mDefault;
+            data["default"] = mDefault;
         }
-        return input;
+        return data;
     }
 
     [[nodiscard]] CustomFormElementResult parseResult(nlohmann::ordered_json const& data) const override {
@@ -50,23 +48,22 @@ public:
 class Toggle : public CustomFormElement {
 
 public:
-    std::string mText{};
-    bool        mDefault = false;
+    bool mDefault = false;
 
     Toggle(std::string name, std::string text, bool defaultVal = false)
-    : CustomFormElement(std::move(name)),
-      mText(std::move(text)),
+    : CustomFormElement(std::move(name), std::move(text)),
       mDefault(defaultVal) {}
     ~Toggle() override = default;
 
     [[nodiscard]] Type getType() const override { return Type::Toggle; }
 
     [[nodiscard]] nlohmann::ordered_json serialize() const override {
-        return {
+        auto data = CustomFormElement::serialize();
+        data.update({
             {   "type", "toggle"},
-            {   "text",    mText},
             {"default", mDefault}
-        };
+        });
+        return data;
     }
 
     [[nodiscard]] CustomFormElementResult parseResult(nlohmann::ordered_json const& data) const override {
@@ -77,13 +74,11 @@ public:
 class Dropdown : public CustomFormElement {
 
 public:
-    std::string              mText{};
     std::vector<std::string> mOptions{};
     size_t                   mDefault{};
 
     Dropdown(std::string name, std::string text, std::vector<std::string> options, size_t defaultVal = 0)
-    : CustomFormElement(std::move(name)),
-      mText(std::move(text)),
+    : CustomFormElement(std::move(name), std::move(text)),
       mOptions(std::move(options)),
       mDefault(defaultVal) {}
     ~Dropdown() override = default;
@@ -91,12 +86,13 @@ public:
     [[nodiscard]] Type getType() const override { return Type::Dropdown; }
 
     [[nodiscard]] nlohmann::ordered_json serialize() const override {
-        return {
+        auto data = CustomFormElement::serialize();
+        data.update({
             {   "type", "dropdown"},
-            {   "text",      mText},
             {"options",   mOptions},
             {"default",   mDefault}
-        };
+        });
+        return data;
     }
 
     [[nodiscard]] CustomFormElementResult parseResult(nlohmann::ordered_json const& data) const override {
@@ -114,11 +110,10 @@ public:
 class Slider : public CustomFormElement {
 
 public:
-    std::string mText{};
-    double      mMin     = 0.0;
-    double      mMax     = 0.0;
-    double      mStep    = 1.0;
-    double      mDefault = 0.0;
+    double mMin     = 0.0;
+    double mMax     = 0.0;
+    double mStep    = 1.0;
+    double mDefault = 0.0;
 
     [[nodiscard]] bool isValid() const { return mMin <= mMax && mStep > 0.0 && mDefault >= mMin && mDefault <= mMax; }
 
@@ -137,8 +132,7 @@ public:
     }
 
     Slider(std::string name, std::string text, double min, double max, double step, double defaultVal)
-    : CustomFormElement(std::move(name)),
-      mText(std::move(text)),
+    : CustomFormElement(std::move(name), std::move(text)),
       mMin(min),
       mMax(max),
       mStep(step),
@@ -154,14 +148,15 @@ public:
             ll::getLogger().error("Failed to serialize Slider: invalid data");
             return {};
         }
-        return {
+        auto data = CustomFormElement::serialize();
+        data.update({
             {   "type", "slider"},
-            {   "text",    mText},
             {    "min",     mMin},
             {    "max",     mMax},
             {   "step",    mStep},
             {"default", mDefault}
-        };
+        });
+        return data;
     }
 
     [[nodiscard]] CustomFormElementResult parseResult(nlohmann::ordered_json const& data) const override {
@@ -172,7 +167,6 @@ public:
 class StepSlider : public CustomFormElement {
 
 public:
-    std::string              mText{};
     std::vector<std::string> mSteps{};
     size_t                   mDefault = 0;
 
@@ -185,8 +179,7 @@ public:
     }
 
     StepSlider(std::string name, std::string text, std::vector<std::string> steps, size_t defaultVal = 0)
-    : CustomFormElement(std::move(name)),
-      mText(std::move(text)),
+    : CustomFormElement(std::move(name), std::move(text)),
       mSteps(std::move(steps)),
       mDefault(defaultVal) {
         validate();
@@ -200,12 +193,13 @@ public:
             ll::getLogger().error("Failed to serialize StepSlider: invalid data");
             return {};
         }
-        return {
+        auto data = CustomFormElement::serialize();
+        data.update({
             {   "type", "step_slider"},
-            {   "text",         mText},
             {  "steps",        mSteps},
             {"default",      mDefault}
-        };
+        });
+        return data;
     }
 
     [[nodiscard]] CustomFormElementResult parseResult(nlohmann::ordered_json const& data) const override {
