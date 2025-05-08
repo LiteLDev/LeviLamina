@@ -46,7 +46,7 @@ public:
     ) const /*override*/;
 
     // vIndex: 88
-    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& item) const /*override*/;
+    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack) const /*override*/;
 
     // vIndex: 63
     virtual bool uniqueAuxValues() const /*override*/;
@@ -58,8 +58,7 @@ public:
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     // vIndex: 79
-    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
-        /*override*/;
+    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& item, ::Level* level, ::Player* player) const /*override*/;
 
     // vIndex: 60
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
@@ -103,7 +102,7 @@ public:
         bool const                           showCategory
     ) const;
 
-    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& item) const;
+    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack) const;
 
     MCFOLD bool $uniqueAuxValues() const;
 
@@ -111,7 +110,7 @@ public:
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& item, ::Level* level, ::Player* player) const;
 
     MCAPI bool $isValidAuxValue(int auxValue) const;
 

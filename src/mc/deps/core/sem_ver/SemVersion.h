@@ -35,7 +35,13 @@ public:
 
     MCAPI explicit SemVersion(::SemVersionConstant const& other);
 
-    MCAPI SemVersion(ushort, ushort, ushort, ::Bedrock::StaticOptimizedString, ::Bedrock::StaticOptimizedString);
+    MCAPI SemVersion(
+        ushort                           major,
+        ushort                           minor,
+        ushort                           patch,
+        ::Bedrock::StaticOptimizedString preRelease,
+        ::Bedrock::StaticOptimizedString buildMeta
+    );
 
     MCAPI ::SemVersion& operator=(::SemVersion const&);
 
@@ -63,7 +69,13 @@ public:
 
     MCAPI void* $ctor(::SemVersionConstant const& other);
 
-    MCAPI void* $ctor(ushort, ushort, ushort, ::Bedrock::StaticOptimizedString, ::Bedrock::StaticOptimizedString);
+    MCAPI void* $ctor(
+        ushort                           major,
+        ushort                           minor,
+        ushort                           patch,
+        ::Bedrock::StaticOptimizedString preRelease,
+        ::Bedrock::StaticOptimizedString buildMeta
+    );
     // NOLINTEND
 
 public:

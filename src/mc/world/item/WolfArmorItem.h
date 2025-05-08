@@ -39,7 +39,7 @@ public:
 
     // vIndex: 52
     virtual void appendFormattedHovertext(
-        ::ItemStackBase const&               item,
+        ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
@@ -89,7 +89,7 @@ public:
     MCAPI int $getAnimationFrameFor(::Mob*, bool, ::ItemStack const* item, bool) const;
 
     MCAPI void $appendFormattedHovertext(
-        ::ItemStackBase const&               item,
+        ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
