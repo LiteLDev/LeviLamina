@@ -186,3 +186,51 @@ void sendModalFormToPlayer(Player& player) {
         );
 }
 ```
+
+## sendUpdate
+
+玩家处于表单打开状态时使用`SimpleForm::sendUpdate`、`CustomForm::sendUpdate`和`ModalForm::sendUpdate`可以更新表单，且不限制更新的表单内容和类型，参数同`sendTo`。这些方法需要保证玩家处于表单打开中的状态，否则无效果。
+
+### 示例
+
+```cpp
+#include "ll/api/chrono/GameChrono.h"
+#include "ll/api/coro/CoroTask.h"
+#include "ll/api/form/CustomForm.h"
+#include "ll/api/service/Bedrock.h"
+#include "ll/api/thread/ServerThreadExecutor.h"
+#include "mc/server/ServerLevel.h"
+#include <fmt/chrono.h>
+
+std::unique_ptr<ll::form::CustomForm> buildStatusWindow() {
+    auto form = std::make_unique<ll::form::CustomForm>("Status");
+    auto now  = std::chrono::system_clock::now();
+    auto ticks =
+        ll::service::getLevel().transform([](auto& level) { return level.getCurrentServerTick().tickID; }).value_or(-1);
+    form->appendHeader("System Info")
+        .appendLabel(fmt::format("Time: {}", now))
+        .appendLabel(fmt::format("Ticks: {}", ticks))
+        .appendDivider()
+        .setSubmitButton("Close");
+    return std::move(form);
+}
+
+void openStatusWindow(Player& player) {
+    ll::coro::keepThis([uid = player.getOrCreateUniqueID()]() -> ll::coro::CoroTask<void> {
+        auto closed   = std::make_shared<bool>(false);
+        auto callback = [closed](auto const&...) { *closed = true; };
+
+        auto player = ll::service::getLevel().transform([uid](auto& level) { return level.getPlayer(uid); });
+        if (!player || *closed) co_return;
+        buildStatusWindow()->sendTo(*player, callback);
+
+        while (true) {
+            co_await ll::chrono::ticks{20};
+
+            player = ll::service::getLevel().transform([uid](Level& level) { return level.getPlayer(uid); });
+            if (!player || *closed) co_return;
+            buildStatusWindow()->sendUpdate(*player, callback);
+        }
+    }).launch(ll::thread::ServerThreadExecutor::getDefault());
+}
+```
