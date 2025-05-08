@@ -1,7 +1,6 @@
 #include "ll/api/form/ModalForm.h"
 #include "ll/core/form/FormHandler.h"
 #include "ll/core/form/FormImplBase.h"
-#include "mc/network/packet/ModalFormRequestPacket.h"
 
 namespace ll::form {
 
@@ -33,11 +32,9 @@ public:
 
     void setLowerButton(std::string const& lowerButton) { mLowerButton = lowerButton; }
 
-    bool sendTo(Player& player, Callback callback) {
-        uint id   = handler::addFormHandler(std::make_unique<handler::ModalFormHandler>(std::move(callback)));
-        auto json = serialize();
-        ModalFormRequestPacket(id, json.dump()).sendTo(player);
-        return true;
+    bool sendTo(Player& player, Callback callback, bool update = false) {
+        auto handler = std::make_unique<handler::ModalFormHandler>(std::move(callback));
+        return sendImpl(player, serialize(), std::move(handler), update);
     }
 
 protected:
@@ -86,6 +83,10 @@ ModalForm& ModalForm::setLowerButton(std::string const& lowerButton) {
     return *this;
 }
 
-bool ModalForm::sendTo(Player& player, Callback callback) { return impl->sendTo(player, std::move(callback)); }
+bool ModalForm::sendTo(Player& player, Callback callback) { return impl->sendTo(player, std::move(callback), false); }
+
+bool ModalForm::sendUpdate(Player& player, Callback callback) {
+    return impl->sendTo(player, std::move(callback), true);
+}
 
 } // namespace ll::form

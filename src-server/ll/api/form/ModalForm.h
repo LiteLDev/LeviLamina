@@ -36,6 +36,8 @@ public:
     LLAPI ModalForm& setLowerButton(std::string const& lowerButton);
 
     LLAPI bool sendTo(Player& player, Callback callback = {});
+
+    LLAPI bool sendUpdate(Player& player, Callback callback = {});
 };
 
 } // namespace ll::form

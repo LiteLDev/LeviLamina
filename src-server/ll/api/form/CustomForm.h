@@ -65,6 +65,8 @@ public:
     );
 
     LLAPI CustomForm& sendTo(Player& player, Callback callback = {});
+
+    LLAPI CustomForm& sendUpdate(Player& player, Callback callback = {});
 };
 
 } // namespace ll::form

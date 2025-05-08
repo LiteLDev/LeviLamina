@@ -64,6 +64,9 @@ public:
      * @note   If `callback` is set, the callbacks of each buttons will be ignored
      */
     LLAPI SimpleForm& sendTo(Player& player, Callback callback = Callback());
+
+    LLAPI SimpleForm& sendUpdate(Player& player, Callback callback = Callback());
+
 };
 
 } // namespace ll::form

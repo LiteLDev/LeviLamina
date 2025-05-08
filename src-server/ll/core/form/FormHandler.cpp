@@ -3,13 +3,13 @@
 #include "ll/api/base/StdInt.h"
 #include "ll/api/form/CustomForm.h"
 #include "ll/api/form/FormIdManager.h"
-#include "ll/api/form/SimpleForm.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/core/LeviLamina.h"
 
 #include "mc/deps/json/ValueConstIterator.h"
 #include "mc/deps/json/ValueIterator.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/network/PacketHandlerDispatcherInstance.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/network/packet/ModalFormResponsePacket.h"
@@ -126,6 +126,35 @@ void ModalFormHandler::handle(
 }
 
 ConcurrentDenseMap<uint, std::unique_ptr<FormHandler>> formHandlers = {};
+ConcurrentDenseMap<ActorUniqueID, std::set<uint>>      formViewers  = {};
+
+bool updateViewer(ActorUniqueID uid, uint formId, bool update) {
+    auto iter = formViewers.find(uid);
+    if (update && iter == formViewers.end()) {
+        return false; // Update without a previous form
+    }
+    if (iter == formViewers.end()) {
+        iter = formViewers.emplace(uid, std::set<uint>{formId}).first;
+    }
+    if (update) {
+        iter->second.insert(formId);
+    }
+    return true;
+}
+
+bool tryRemoveViewer(ActorUniqueID uid, uint formId) {
+    auto iter = formViewers.find(uid);
+    if (iter != formViewers.end()) {
+        if (iter->second.find(formId) == iter->second.end()) {
+            return false;
+        }
+        for (auto id : iter->second) {
+            formHandlers.erase(id);
+        }
+        formViewers.erase(iter);
+    }
+    return true;
+}
 
 bool handleFormPacket(
     Player&                              player,
@@ -139,6 +168,7 @@ bool handleFormPacket(
     }
     auto handler = std::move(it->second);
     formHandlers.erase(it);
+    tryRemoveViewer(player.getOrCreateUniqueID(), formId);
     handler->handle(player, std::move(data), cancelReason);
     return true;
 }
@@ -168,12 +198,15 @@ LL_TYPE_INSTANCE_HOOK(
     origin(source, callback, packet);
 }
 
-
-uint addFormHandler(std::unique_ptr<FormHandler>&& data) {
+uint addFormHandler(std::unique_ptr<FormHandler>&& data, ActorUniqueID uid, bool update) {
     static ll::memory::HookRegistrar<FormResponseHandler> hook;
+    // listen player leave event to clear form handlers?
 
     uint formId = ll::form::FormIdManager::genFormId();
-    formHandlers.emplace(formId, std::move(data));
+
+    if (updateViewer(uid, formId, update)) {
+        formHandlers.emplace(formId, std::move(data));
+    }
 
     return formId;
 }

@@ -2,8 +2,6 @@
 #include "ll/core/form/CommonFormElements.h"
 #include "ll/core/form/FormHandler.h"
 #include "ll/core/form/FormImplBase.h"
-#include "mc/network/packet/ModalFormRequestPacket.h"
-#include <utility>
 
 namespace ll::form {
 
@@ -78,17 +76,15 @@ public:
 
     void append(std::shared_ptr<FormElementBase> const& element) { mElements.push_back(element); }
 
-    void sendTo(Player& player, Callback callback) {
+    bool sendTo(Player& player, Callback callback, bool update = false) {
         std::vector<SimpleForm::ButtonCallback> buttonCallbacks;
         buttonCallbacks.reserve(mElements.size());
         for (auto& element : mElements) {
             if (element->getCategory() == FormElementBase::Category::Simple)
                 buttonCallbacks.push_back(reinterpret_cast<Button*>(element.get())->mCallback);
         }
-        uint id =
-            handler::addFormHandler(std::make_unique<handler::SimpleFormHandler>(std::move(callback), buttonCallbacks));
-        auto json = serialize();
-        ModalFormRequestPacket(id, json.dump()).sendTo(player);
+        auto handler = std::make_unique<handler::SimpleFormHandler>(std::move(callback), buttonCallbacks);
+        return sendImpl(player, serialize(), std::move(handler), update);
     }
 
 protected:
@@ -159,7 +155,12 @@ SimpleForm& SimpleForm::appendButton(std::string const& text, ButtonCallback cal
 }
 
 SimpleForm& SimpleForm::sendTo(Player& player, Callback callback) {
-    impl->sendTo(player, std::move(callback));
+    impl->sendTo(player, std::move(callback), false);
+    return *this;
+}
+
+SimpleForm& SimpleForm::sendUpdate(Player& player, Callback callback) {
+    impl->sendTo(player, std::move(callback), true);
     return *this;
 }
 

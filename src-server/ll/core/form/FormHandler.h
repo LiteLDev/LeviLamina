@@ -67,6 +67,6 @@ public:
     [[nodiscard]] FormType getType() const override { return FormType::ModalForm; }
 };
 
-uint addFormHandler(std::unique_ptr<FormHandler>&& data);
+uint addFormHandler(std::unique_ptr<FormHandler>&& data, ActorUniqueID uid, bool update);
 
 } // namespace ll::form::handler

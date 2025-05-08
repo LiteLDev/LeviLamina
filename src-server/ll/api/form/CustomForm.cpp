@@ -1,14 +1,10 @@
 
-#include <string>
-#include <utility>
-
 #include "ll/api/form/CustomForm.h"
 #include "ll/core/LeviLamina.h"
 #include "ll/core/form/CommonFormElements.h"
 #include "ll/core/form/CustomFormElement.h"
 #include "ll/core/form/FormHandler.h"
 #include "ll/core/form/FormImplBase.h"
-#include "mc/network/packet/ModalFormRequestPacket.h"
 
 namespace ll::form {
 
@@ -236,16 +232,14 @@ public:
 
     void append(std::shared_ptr<FormElementBase> const& element) { mElements.push_back(element); }
 
-    void sendTo(Player& player, Callback callback) {
+    bool sendTo(Player& player, Callback callback, bool update = false) {
         std::vector<std::shared_ptr<CustomFormElement>> elements{};
         for (auto& element : mElements) {
             if (element->getCategory() == FormElementBase::Category::Custom)
                 elements.push_back(std::reinterpret_pointer_cast<CustomFormElement>(element));
         }
-
-        uint id = handler::addFormHandler(std::make_unique<handler::CustomFormHandler>(std::move(callback), std::move(elements)));
-        auto json = serialize();
-        ModalFormRequestPacket(id, json.dump()).sendTo(player);
+        auto handler = std::make_unique<handler::CustomFormHandler>(std::move(callback), std::move(elements));
+        return sendImpl(player, serialize(), std::move(handler), update);
     }
 
 protected:
@@ -355,7 +349,12 @@ CustomForm& CustomForm::appendStepSlider(
 }
 
 CustomForm& CustomForm::sendTo(Player& player, Callback callback) {
-    impl->sendTo(player, std::move(callback));
+    impl->sendTo(player, std::move(callback), false);
+    return *this;
+}
+
+CustomForm& CustomForm::sendUpdate(Player& player, Callback callback) {
+    impl->sendTo(player, std::move(callback), true);
     return *this;
 }
 
