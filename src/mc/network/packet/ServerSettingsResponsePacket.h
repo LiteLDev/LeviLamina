@@ -15,6 +15,9 @@ class ReadOnlyBinaryStream;
 
 class ServerSettingsResponsePacket : public ::Packet {
 public:
+    ServerSettingsResponsePacket(uint formId, ::std::string const& formJSON) : mFormId(formId), mFormJSON(formJSON) {}
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, uint>           mFormId;
