@@ -48,7 +48,8 @@ public:
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 60
-    virtual void transformOnFall(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, float fallDistance) const
+    virtual void
+    transformOnFall(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, float fallDistance) const
         /*override*/;
 
     // vIndex: 87
@@ -101,7 +102,8 @@ public:
 
     MCFOLD void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $transformOnFall(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, float fallDistance) const;
+    MCAPI void
+    $transformOnFall(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, float fallDistance) const;
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 

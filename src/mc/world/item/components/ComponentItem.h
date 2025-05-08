@@ -279,13 +279,13 @@ public:
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
     // vIndex: 107
-    virtual ::Item& setIconInfo(::std::string const& name, int frame) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
     // vIndex: 113
     virtual bool canBeCharged() const /*override*/;
 
     // vIndex: 3
-    virtual ::ComponentItem& setDescriptionId(::std::string const& description) /*override*/;
+    virtual ::ComponentItem& setDescriptionId(::std::string const& descriptionId) /*override*/;
 
     // vIndex: 123
     virtual bool shouldUseJsonForRenderMatrix() const;
@@ -540,11 +540,11 @@ public:
     MCAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int frame);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
     MCAPI bool $canBeCharged() const;
 
-    MCAPI ::ComponentItem& $setDescriptionId(::std::string const& description);
+    MCAPI ::ComponentItem& $setDescriptionId(::std::string const& descriptionId);
 
     MCAPI bool $shouldUseJsonForRenderMatrix() const;
 

@@ -76,10 +76,6 @@ def format_code_files(
             file_batch = code_files[i: i + FILE_COUNT_PER_TASK]
             executor.submit(format_file, file_batch, clang_format_path)
 
-    with ThreadPoolExecutor(max_workers=threads) as executor:
-        for file in code_files:
-            executor.submit(convert_line_endings, file, file)
-
 
 if __name__ == "__main__":
     clang_format_path = r"clang-format"

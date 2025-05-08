@@ -30,7 +30,7 @@ public:
     virtual ::BlockPalette::PaletteType getPaletteType() /*override*/;
 
     // vIndex: 2
-    virtual void appendBlock(::Block const& block) /*override*/;
+    virtual void appendBlock(::Block const& blockState) /*override*/;
 
     // vIndex: 3
     virtual ::Block const& getBlock(uint const& networkId) const /*override*/;
@@ -47,7 +47,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::BlockPalette::PaletteType $getPaletteType();
 
-    MCNAPI void $appendBlock(::Block const& block);
+    MCNAPI void $appendBlock(::Block const& blockState);
 
     MCNAPI ::Block const& $getBlock(uint const& networkId) const;
 

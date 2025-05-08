@@ -78,11 +78,11 @@ public:
 
     MCAPI ::MolangMemberArray* getAsNonConstMolangMemberArray();
 
-    MCAPI ::MolangScriptArg& operator=(::MolangMemberArray const&);
-
     MCAPI ::MolangScriptArg& operator=(::MolangScriptArg const&);
 
     MCAPI ::MolangScriptArg& operator=(::MolangScriptArg&&);
+
+    MCAPI ::MolangScriptArg& operator=(::MolangMemberArray const& value);
 
     MCAPI void reportGetFailure() const;
 

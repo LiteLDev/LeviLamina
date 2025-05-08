@@ -59,7 +59,7 @@ public:
     virtual bool checkSpawnRules(bool) /*override*/;
 
     // vIndex: 51
-    virtual void setTarget(::Actor* entity) /*override*/;
+    virtual void setTarget(::Actor* target) /*override*/;
 
     // vIndex: 152
     virtual float getMaxHeadXRot() /*override*/;
