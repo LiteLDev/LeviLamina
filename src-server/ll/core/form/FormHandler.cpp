@@ -86,7 +86,7 @@ void CustomFormHandler::handle(
 
     nlohmann::ordered_json dataJson = jsonCppValueToNlohmannOrderedJson(data.value());
 
-    if (!dataJson.is_array()) {
+    if (!dataJson.is_null() && !dataJson.is_array()) {
         getLogger().error("Failed to parse CustomForm result: not an array");
         return;
     }
