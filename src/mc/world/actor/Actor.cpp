@@ -14,6 +14,7 @@
 #include "mc/deps/vanilla_components/AABBShapeComponent.h"
 #include "mc/entity/components/ActorRotationComponent.h"
 #include "mc/entity/components/OnFireComponent.h"
+#include "mc/entity/components/PostTickPositionDeltaComponent.h"
 #include "mc/entity/systems/OnFireSystem.h"
 #include "mc/nbt/CompoundTag.h"
 #include "mc/server/ServerLevel.h"
@@ -84,6 +85,19 @@ void Actor::stopFire() {
         getEntityContext().removeComponent<OnFireComponent>();
         setStatusFlag(ActorFlags::Onfire, false);
     }
+}
+
+Vec3 Actor::getVelocity() const {
+    // Refer to ScriptModuleMinecraft::ScriptActor::getVelocity
+    if (!hasCategory(ActorCategory::Mob) && !hasCategory(ActorCategory::Ridable)) {
+        return getPosDelta();
+    }
+    Actor const* actor = getVehicle();
+    if (!actor) actor = this;
+    return actor->getEntityContext()
+        .tryGetComponent<PostTickPositionDeltaComponent>()
+        .transform([](auto& comp) { return *comp.mValue; })
+        .value_or(actor->getPosDelta());
 }
 
 float Actor::getPosDeltaPerSecLength() const { return static_cast<float>(getPosDelta().length() * 20.0); }
