@@ -130,6 +130,7 @@ public:
     LLAPI void setOnFire(int time, bool isEffect = true);
     LLAPI void stopFire();
 
+    LLNDAPI Vec3  getVelocity() const;
     LLNDAPI float getPosDeltaPerSecLength() const;
 
     LLAPI bool hurtByCause(
