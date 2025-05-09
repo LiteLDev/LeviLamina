@@ -20,7 +20,8 @@ protected:
     [[nodiscard]] virtual FormType               getType() const   = 0;
     [[nodiscard]] virtual nlohmann::ordered_json serialize() const = 0;
 
-    inline bool sendImpl(
+public:
+    inline static bool sendImpl(
         Player&                                 player,
         nlohmann::ordered_json const&           json,
         std::unique_ptr<handler::FormHandler>&& handler,
