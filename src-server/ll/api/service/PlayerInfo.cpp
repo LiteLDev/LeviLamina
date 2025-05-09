@@ -25,6 +25,9 @@ public:
         auto entry = std::make_shared<PlayerInfoEntry>(uuid, std::move(xuid), std::move(name));
         uuids.insert_or_assign(entry->uuid, entry);
         xuids.insert_or_assign(entry->xuid, entry);
+        if (xuid.empty() && names.contains(entry->name)) {
+            return;
+        }
         names.insert_or_assign(entry->name, entry);
     }
     void removePlayer(mce::UUID uuid) {
