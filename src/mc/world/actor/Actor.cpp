@@ -100,7 +100,7 @@ Vec3 Actor::getVelocity() const {
         .value_or(actor->getPosDelta());
 }
 
-float Actor::getPosDeltaPerSecLength() const { return static_cast<float>(getPosDelta().length() * 20.0); }
+float Actor::getPosDeltaPerSecLength() const { return static_cast<float>(getVelocity().length() * 20.0); }
 
 bool Actor::hurtByCause(float damage, ::SharedTypes::Legacy::ActorDamageCause cause, optional_ref<Actor> attacker) {
     if (attacker) {
