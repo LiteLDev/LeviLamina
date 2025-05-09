@@ -358,4 +358,6 @@ CustomForm& CustomForm::sendUpdate(Player& player, Callback callback) {
     return *this;
 }
 
+std::string CustomForm::getFormData() const { return impl->getFormData(); }
+
 } // namespace ll::form

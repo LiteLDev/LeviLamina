@@ -21,6 +21,7 @@ protected:
     [[nodiscard]] virtual nlohmann::ordered_json serialize() const = 0;
 
 public:
+    inline std::string getFormData() { return serialize().dump(); }
     inline static bool sendImpl(
         Player&                                 player,
         nlohmann::ordered_json const&           json,
