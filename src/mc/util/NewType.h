@@ -7,19 +7,23 @@ struct NewType {
 public:
     T0 mValue;
 
+    [[nodiscard]] NewType() : mValue{} {}
+
+    [[nodiscard]] NewType(T0 const& t) : mValue{t} {}
+
     // not trivially copyable
-    NewType(NewType const& other) : mValue{other.mValue} {}
+    [[nodiscard]] NewType(NewType const& other) : mValue{other.mValue} {}
 
     NewType& operator=(NewType const& other) {
         mValue = other.mValue;
         return *this;
     }
-    [[nodiscard]] inline bool operator==(NewType const& other) const
+    [[nodiscard]] bool operator==(NewType const& other) const
         requires(requires { mValue == other.mValue; })
     {
         return mValue == other.mValue;
     }
-    [[nodiscard]] inline bool operator==(T0 const& other) const
+    [[nodiscard]] bool operator==(T0 const& other) const
         requires(requires { mValue == other; })
     {
         return mValue == other;
