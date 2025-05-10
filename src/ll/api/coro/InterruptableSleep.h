@@ -20,7 +20,7 @@ class InterruptableSleep {
           dur(std::chrono::duration_cast<Duration>(dur)) {}
         template <class C, class D>
         constexpr DurAwaiter(std::chrono::time_point<C, D> time, InterruptableSleep& s)
-        : SleepAwaiter(time - C::now(), s) {}
+        : DurAwaiter(time - C::now(), s) {}
         constexpr void setExecutor(ExecutorRef ex) { self.exec = ex; }
         constexpr bool await_ready() const noexcept { return dur <= Duration{0}; }
         void await_suspend(std::coroutine_handle<> handle) { self.sleeped = self.exec->executeAfter(handle, dur); }
