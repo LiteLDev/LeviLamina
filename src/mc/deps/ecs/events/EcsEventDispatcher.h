@@ -4,11 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
-#include "mc/deps/minecraft_camera/events/CameraClearInstructionEvent.h"
-#include "mc/deps/minecraft_camera/events/CameraFadeInstructionEvent.h"
-#include "mc/deps/minecraft_camera/events/CameraRemoveTargetInstructionEvent.h"
-#include "mc/deps/minecraft_camera/events/CameraSetInstructionEvent.h"
-#include "mc/deps/minecraft_camera/events/CameraTargetInstructionEvent.h"
+
+// auto generated forward declare list
+// clang-format off
+struct CameraClearInstructionEvent;
+struct CameraFadeInstructionEvent;
+struct CameraRemoveTargetInstructionEvent;
+struct CameraSetInstructionEvent;
+struct CameraTargetInstructionEvent;
+// clang-format on
 
 class EcsEventDispatcher : public ::std::enable_shared_from_this<::EcsEventDispatcher>,
                            public ::EnableGetWeakRef<::EcsEventDispatcher> {

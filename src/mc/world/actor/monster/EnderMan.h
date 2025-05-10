@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/NewBlockID.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/monster/Monster.h"
 
@@ -24,17 +25,11 @@ class EnderMan : public ::Monster {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk2aaf59;
-    ::ll::UntypedStorage<8, 8> mUnk6e0dae;
-    ::ll::UntypedStorage<2, 2> mUnk9e5069;
-    ::ll::UntypedStorage<2, 2> mUnkf2775f;
+    ::ll::TypedStorage<1, 1, bool>                             mAggroedByPlayer;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>> mCarryBlockSerId;
+    ::ll::TypedStorage<2, 2, ::NewBlockID>                     mCarryBlockId;
+    ::ll::TypedStorage<2, 2, ushort>                           mCarryBlockData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EnderMan& operator=(EnderMan const&);
-    EnderMan(EnderMan const&);
-    EnderMan();
 
 public:
     // virtual functions

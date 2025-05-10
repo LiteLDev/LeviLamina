@@ -25,29 +25,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StaticOptimizedString(::Bedrock::StaticOptimizedString const& other);
+    MCAPI StaticOptimizedString(::Bedrock::StaticOptimizedString const& other);
 
-    MCNAPI StaticOptimizedString(::std::string_view s, ::Bedrock::StaticOptimizedString::StorageType storageType);
+    MCAPI StaticOptimizedString(::std::string_view s, ::Bedrock::StaticOptimizedString::StorageType storageType);
 
-    MCNAPI void _set(char const* data, uint64 length, ::Bedrock::StaticOptimizedString::StorageType storageType);
+    MCAPI void _set(char const* data, uint64 length, ::Bedrock::StaticOptimizedString::StorageType storageType);
 
-    MCNAPI ::Bedrock::StaticOptimizedString& operator=(::Bedrock::StaticOptimizedString const& other);
+    MCAPI ::Bedrock::StaticOptimizedString& operator=(::Bedrock::StaticOptimizedString const& other);
 
-    MCNAPI ~StaticOptimizedString();
+    MCAPI ~StaticOptimizedString();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::StaticOptimizedString const& other);
+    MCAPI void* $ctor(::Bedrock::StaticOptimizedString const& other);
 
-    MCNAPI void* $ctor(::std::string_view s, ::Bedrock::StaticOptimizedString::StorageType storageType);
+    MCAPI void* $ctor(::std::string_view s, ::Bedrock::StaticOptimizedString::StorageType storageType);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

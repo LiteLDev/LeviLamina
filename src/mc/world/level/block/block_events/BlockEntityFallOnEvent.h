@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class BlockSource;
 // clang-format on
 
@@ -16,16 +17,10 @@ class BlockEntityFallOnEvent : public ::BlockEvents::BlockEventBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk6a7b56;
-    ::ll::UntypedStorage<8, 8> mUnk421401;
-    ::ll::UntypedStorage<4, 4> mUnk249941;
+    ::ll::TypedStorage<8, 8, ::BlockSource&> mRegion;
+    ::ll::TypedStorage<8, 8, ::Actor&>       mEntity;
+    ::ll::TypedStorage<4, 4, float>          mFallDistance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockEntityFallOnEvent& operator=(BlockEntityFallOnEvent const&);
-    BlockEntityFallOnEvent(BlockEntityFallOnEvent const&);
-    BlockEntityFallOnEvent();
 
 public:
     // virtual functions
@@ -40,13 +35,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BlockSource const& $getBlockSource() const;
+    MCFOLD ::BlockSource const& $getBlockSource() const;
     // NOLINTEND
 
 public:

@@ -7,6 +7,7 @@
 #include "mc/external/rtc/NetworkBindingResult.h"
 #include "mc/external/rtc/NetworkManagerBase.h"
 #include "mc/external/sigslot/has_slots.h"
+#include "mc/external/sigslot/single_threaded.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +16,6 @@ namespace rtc { class Network; }
 namespace rtc { class NetworkMask; }
 namespace rtc { class NetworkMonitorFactory; }
 namespace rtc { class SocketFactory; }
-namespace sigslot { class single_threaded; }
 namespace webrtc { class FieldTrialsView; }
 // clang-format on
 

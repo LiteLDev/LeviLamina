@@ -28,26 +28,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RideableComponent(::RideableComponent&&);
+    MCAPI RideableComponent(::RideableComponent&&);
 
-    MCNAPI void _setCanPlayerRide(::Player& player, bool canRide) const;
+    MCAPI void _setCanPlayerRide(::Player& player, bool canRide) const;
 
-    MCNAPI bool areSeatsFull(::Actor const& owner) const;
+    MCAPI bool areSeatsFull(::Actor const& owner) const;
 
-    MCNAPI bool canAddPassenger(::Actor const& vehicle, ::Actor& passenger) const;
+    MCAPI bool canAddPassenger(::Actor const& vehicle, ::Actor& passenger) const;
 
-    MCNAPI bool getFirstAvailableSeatPosition(::Actor const& owner, ::Actor& potentialPassenger, ::Vec3& result) const;
+    MCAPI bool getFirstAvailableSeatPosition(::Actor const& owner, ::Actor& potentialPassenger, ::Vec3& result) const;
 
-    MCNAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction) const;
+    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction) const;
 
-    MCNAPI ::RideableComponent& operator=(::RideableComponent&&);
+    MCAPI ::RideableComponent& operator=(::RideableComponent&&);
 
-    MCNAPI bool pullInEntity(::Actor& vehicle, ::Actor& passenger) const;
+    MCAPI bool pullInEntity(::Actor& vehicle, ::Actor& passenger) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::RideableComponent&&);
+    MCAPI void* $ctor(::RideableComponent&&);
     // NOLINTEND
 };

@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace BedrockLog { struct CategoryLogFile; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/debug/bedrock_log/CategoryLogFile.h"
 
 namespace BedrockLog {
 

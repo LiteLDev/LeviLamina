@@ -13,20 +13,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Vec2 normalized() const;
+    MCAPI ::Vec2 normalized() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Vec2 const& MAX();
+    MCAPI static ::Vec2 const& MAX();
 
-    MCNAPI static ::Vec2 const& MIN();
+    MCAPI static ::Vec2 const& MIN();
 
-    MCNAPI static ::Vec2 const& ONE();
+    MCAPI static ::Vec2 const& ONE();
 
-    MCNAPI static ::Vec2 const& UNIT_Y();
+    MCAPI static ::Vec2 const& UNIT_Y();
 
-    MCNAPI static ::Vec2 const& ZERO();
+    MCAPI static ::Vec2 const& ZERO();
     // NOLINTEND
 };

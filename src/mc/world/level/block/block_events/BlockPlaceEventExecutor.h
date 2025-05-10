@@ -26,7 +26,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $dispatch(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCAPI void $dispatch(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
 public:

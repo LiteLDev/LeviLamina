@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/sigslot/has_slots.h"
+#include "mc/external/sigslot/single_threaded.h"
 #include "mc/external/webrtc/PortPrunePolicy.h"
 #include "mc/external/webrtc/VpnPreference.h"
 
@@ -16,7 +17,6 @@ namespace cricket { struct IceParameters; }
 namespace cricket { struct RelayServerConfig; }
 namespace rtc { class NetworkMask; }
 namespace rtc { class SocketAddress; }
-namespace sigslot { class single_threaded; }
 namespace webrtc { class TurnCustomizer; }
 // clang-format on
 

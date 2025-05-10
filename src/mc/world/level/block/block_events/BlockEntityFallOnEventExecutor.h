@@ -16,14 +16,8 @@ class BlockEntityFallOnEventExecutor : public ::BlockEvents::BlockEventExecutor<
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk44dade;
+    ::ll::TypedStorage<1, 1, bool> mShouldCallBase;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockEntityFallOnEventExecutor& operator=(BlockEntityFallOnEventExecutor const&);
-    BlockEntityFallOnEventExecutor(BlockEntityFallOnEventExecutor const&);
-    BlockEntityFallOnEventExecutor();
 
 public:
     // virtual functions
@@ -38,7 +32,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $dispatch(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    MCAPI void $dispatch(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
     // NOLINTEND
 
 public:

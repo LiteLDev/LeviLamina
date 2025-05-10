@@ -16,33 +16,27 @@ class BlockEventManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkb0af3d;
-    ::ll::UntypedStorage<8, 24> mUnk40032f;
+    ::ll::TypedStorage<1, 1, bool>                                                                  mFinalized;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::BlockEvents::IBlockEventExecutor>>> mEventExecutors;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockEventManager& operator=(BlockEventManager const&);
-    BlockEventManager(BlockEventManager const&);
-    BlockEventManager();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _assertMainOrServerThread() const;
+    MCAPI bool _assertMainOrServerThread() const;
 
-    MCNAPI ::std::unique_ptr<::BlockEvents::IBlockEventExecutor>
-    _createSpecializedExecutor(::BlockEvents::EventType type) const;
+    MCAPI ::std::unique_ptr<::BlockEvents::IBlockEventExecutor> _createSpecializedExecutor(::BlockEvents::EventType type
+    ) const;
 
-    MCNAPI bool hasExecutor(::BlockEvents::EventType type) const;
+    MCAPI bool hasExecutor(::BlockEvents::EventType type) const;
 
-    MCNAPI ~BlockEventManager();
+    MCAPI ~BlockEventManager();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

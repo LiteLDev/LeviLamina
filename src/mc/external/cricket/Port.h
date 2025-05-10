@@ -9,6 +9,7 @@
 #include "mc/external/rtc/DiffServCodePoint.h"
 #include "mc/external/rtc/WeakPtr.h"
 #include "mc/external/sigslot/has_slots.h"
+#include "mc/external/sigslot/single_threaded.h"
 #include "mc/external/webrtc/IceCandidateType.h"
 
 // auto generated forward declare list
@@ -26,7 +27,6 @@ namespace rtc { class SocketAddress; }
 namespace rtc { struct PacketInfo; }
 namespace rtc { struct ProxyInfo; }
 namespace rtc { struct SentPacket; }
-namespace sigslot { class single_threaded; }
 namespace webrtc { class FieldTrialsView; }
 namespace webrtc { class TaskQueueBase; }
 // clang-format on

@@ -5,10 +5,10 @@
 // auto generated inclusion list
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
+#include "mc/world/events/ScriptingEventListener.h"
 
 // auto generated forward declare list
 // clang-format off
-class ScriptingEventListener;
 struct ScriptCommandMessageEvent;
 // clang-format on
 

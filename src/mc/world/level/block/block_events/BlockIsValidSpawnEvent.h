@@ -9,6 +9,7 @@
 // clang-format off
 class Block;
 class BlockSource;
+namespace br::spawn { struct EntityType; }
 // clang-format on
 
 namespace BlockEvents {
@@ -17,17 +18,11 @@ class BlockIsValidSpawnEvent : public ::BlockEvents::BlockEventBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnka4f3ee;
-    ::ll::UntypedStorage<8, 8> mUnkb56cbe;
-    ::ll::UntypedStorage<8, 8> mUnk2a207f;
-    ::ll::UntypedStorage<8, 8> mUnkb779fd;
+    ::ll::TypedStorage<1, 1, bool>                           canSpawn;
+    ::ll::TypedStorage<8, 8, ::BlockSource&>                 mRegion;
+    ::ll::TypedStorage<8, 8, ::Block const&>                 mState;
+    ::ll::TypedStorage<8, 8, ::br::spawn::EntityType const&> mEntityType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockIsValidSpawnEvent& operator=(BlockIsValidSpawnEvent const&);
-    BlockIsValidSpawnEvent(BlockIsValidSpawnEvent const&);
-    BlockIsValidSpawnEvent();
 
 public:
     // virtual functions
@@ -45,15 +40,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Block const& $getBlock() const;
+    MCFOLD ::Block const& $getBlock() const;
 
-    MCNAPI ::BlockSource const& $getBlockSource() const;
+    MCFOLD ::BlockSource const& $getBlockSource() const;
     // NOLINTEND
 
 public:

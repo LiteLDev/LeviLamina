@@ -8,11 +8,11 @@
 #include "mc/gameplayhandlers/EventHandlerDispatcher.h"
 #include "mc/gameplayhandlers/GameplayHandlerResult.h"
 #include "mc/gameplayhandlers/HandlerResult.h"
+#include "mc/gameplayhandlers/LevelGameplayHandler.h"
 #include "mc/scripting/event_handlers/ScriptEventHandler.h"
 
 // auto generated forward declare list
 // clang-format off
-class LevelGameplayHandler;
 struct LevelWeatherChangedEvent;
 struct ScriptingWorldInitializeEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldBeforeEvents; }

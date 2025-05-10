@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/external/rtc/RefCountedObject.h"
+#include "mc/external/webrtc/SetRemoteDescriptionObserverInterface.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace webrtc { class RTCError; }
-namespace webrtc { class SetRemoteDescriptionObserverInterface; }
 // clang-format on
 
 namespace NetherNet {

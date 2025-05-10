@@ -246,21 +246,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Signature(::CommandRegistry::Signature&&);
+        MCAPI Signature(::CommandRegistry::Signature&&);
 
-        MCNAPI ~Signature();
+        MCAPI ~Signature();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::CommandRegistry::Signature&&);
+        MCAPI void* $ctor(::CommandRegistry::Signature&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -278,7 +278,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::CommandRegistry::LexicalToken& operator=(::CommandLexer::Token const& token);
+        MCAPI ::CommandRegistry::LexicalToken& operator=(::CommandLexer::Token const& token);
         // NOLINTEND
     };
 
@@ -326,7 +326,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::CommandRegistry::ParseRule& operator=(::CommandRegistry::ParseRule&& rhs);
+        MCAPI ::CommandRegistry::ParseRule& operator=(::CommandRegistry::ParseRule&& rhs);
         // NOLINTEND
     };
 
@@ -336,30 +336,18 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkdcc5ea;
-        ::ll::UntypedStorage<4, 4> mUnk61affa;
-        ::ll::UntypedStorage<4, 4> mUnka4c53c;
+        ::ll::TypedStorage<4, 4, int>                       parameterCount;
+        ::ll::TypedStorage<4, 4, int>                       followingRuleIndex;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> paramSymbol;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        OptionalParameterChain& operator=(OptionalParameterChain const&);
-        OptionalParameterChain(OptionalParameterChain const&);
-        OptionalParameterChain();
     };
 
     struct Factorization {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk6c8d20;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> commandSymbol;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Factorization& operator=(Factorization const&);
-        Factorization(Factorization const&);
-        Factorization();
     };
 
     using ParseFunction =
@@ -386,13 +374,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~Enum();
+        MCAPI ~Enum();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -416,13 +404,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~ChainedSubcommand();
+        MCAPI ~ChainedSubcommand();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -439,16 +427,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk1f98ad;
-        ::ll::UntypedStorage<4, 4>  mUnk426cb0;
-        ::ll::UntypedStorage<8, 24> mUnkc30381;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> mValue;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> mEnum;
+        ::ll::TypedStorage<8, 24, ::std::vector<uchar>>     mConstraints;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ConstrainedValue& operator=(ConstrainedValue const&);
-        ConstrainedValue(ConstrainedValue const&);
-        ConstrainedValue();
     };
 
     struct ParamSymbols {
@@ -485,13 +467,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ParamSymbols();
+        MCAPI ParamSymbols();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor();
+        MCAPI void* $ctor();
         // NOLINTEND
     };
 
@@ -520,13 +502,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~RegistryState();
+        MCAPI ~RegistryState();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -571,18 +553,12 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnka0701b;
-        ::ll::UntypedStorage<8, 24> mUnke3831e;
-        ::ll::UntypedStorage<8, 32> mUnk220a81;
-        ::ll::UntypedStorage<8, 32> mUnkb80526;
-        ::ll::UntypedStorage<8, 16> mUnk88e4b6;
+        ::ll::TypedStorage<1, 1, bool>                                      mIsValid;
+        ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Symbol>> mConstrainedParams;
+        ::ll::TypedStorage<8, 32, ::std::string>                            mSoftEnumText;
+        ::ll::TypedStorage<8, 32, ::std::string>                            mSoftEnumEscapeCharExceptions;
+        ::ll::TypedStorage<8, 16, ::std::set<::CommandRegistry::Symbol>>    mAlreadyCompletedSymbols;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SemanticInfo& operator=(SemanticInfo const&);
-        SemanticInfo(SemanticInfo const&);
-        SemanticInfo();
     };
 
     using ParamVisitCallback = ::std::function<
@@ -613,32 +589,32 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Parser(::CommandRegistry const& registry, int version);
+        MCAPI Parser(::CommandRegistry const& registry, int version);
 
-        MCNAPI bool _parse(::std::string const& in);
+        MCAPI bool _parse(::std::string const& in);
 
-        MCNAPI ::std::unique_ptr<::CommandSelector<::Actor>>
+        MCAPI ::std::unique_ptr<::CommandSelector<::Actor>>
         createSelector(::std::string const& selectorString, ::CommandOrigin const& origin);
 
-        MCNAPI ::std::vector<::std::string> getErrorParams() const;
+        MCAPI ::std::vector<::std::string> getErrorParams() const;
 
-        MCNAPI bool parseCommand(::std::string const& in);
+        MCAPI bool parseCommand(::std::string const& in);
 
-        MCNAPI bool parseSelector(::std::string const& in);
+        MCAPI bool parseSelector(::std::string const& in);
 
-        MCNAPI ~Parser();
+        MCAPI ~Parser();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::CommandRegistry const& registry, int version);
+        MCAPI void* $ctor(::CommandRegistry const& registry, int version);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 

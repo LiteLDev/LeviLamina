@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
+
 // auto generated forward declare list
 // clang-format off
 class Block;
@@ -14,14 +17,8 @@ class BlockEventBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkd82caf;
+    ::ll::TypedStorage<4, 12, ::BlockPos const> mPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockEventBase& operator=(BlockEventBase const&);
-    BlockEventBase(BlockEventBase const&);
-    BlockEventBase();
 
 public:
     // virtual functions
@@ -39,7 +36,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Block const& $getBlock() const;
+    MCAPI ::Block const& $getBlock() const;
     // NOLINTEND
 
 public:

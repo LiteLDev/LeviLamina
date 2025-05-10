@@ -7,11 +7,11 @@
 #include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/gameplayhandlers/EventHandlerDispatcher.h"
 #include "mc/gameplayhandlers/GameplayHandlerResult.h"
+#include "mc/gameplayhandlers/ItemGameplayHandler.h"
 #include "mc/scripting/event_handlers/ScriptEventHandler.h"
 
 // auto generated forward declare list
 // clang-format off
-class ItemGameplayHandler;
 struct ItemUseEvent;
 struct ItemUseOnEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldBeforeEvents; }

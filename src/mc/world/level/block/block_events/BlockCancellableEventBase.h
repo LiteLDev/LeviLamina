@@ -11,14 +11,8 @@ class BlockCancellableEventBase : public ::BlockEvents::BlockEventBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkc44d17;
+    ::ll::TypedStorage<1, 1, bool> mCancel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockCancellableEventBase& operator=(BlockCancellableEventBase const&);
-    BlockCancellableEventBase(BlockCancellableEventBase const&);
-    BlockCancellableEventBase();
 
 public:
     // virtual functions

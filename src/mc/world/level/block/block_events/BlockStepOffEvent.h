@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class BlockSource;
 // clang-format on
 
@@ -16,14 +17,8 @@ class BlockStepOffEvent : public ::BlockEvents::BlockEventBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk6ef124;
+    ::ll::TypedStorage<8, 8, ::Actor&> mEntity;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockStepOffEvent& operator=(BlockStepOffEvent const&);
-    BlockStepOffEvent(BlockStepOffEvent const&);
-    BlockStepOffEvent();
 
 public:
     // virtual functions
@@ -38,13 +33,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BlockSource const& $getBlockSource() const;
+    MCFOLD ::BlockSource const& $getBlockSource() const;
     // NOLINTEND
 
 public:

@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class Block;
 class BlockSource;
 // clang-format on
 
@@ -16,17 +18,11 @@ class BlockPlayerPlacingEvent : public ::BlockEvents::BlockCancellableEventBase 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8309f9;
-    ::ll::UntypedStorage<8, 8> mUnk7cb3ad;
-    ::ll::UntypedStorage<8, 8> mUnk20e934;
-    ::ll::UntypedStorage<1, 1> mUnk73a7ef;
+    ::ll::TypedStorage<8, 8, ::BlockSource&>                  mRegion;
+    ::ll::TypedStorage<8, 8, ::Actor&>                        mActor;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Block const*>> mPermutationToPlace;
+    ::ll::TypedStorage<1, 1, uchar const>                     mFace;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockPlayerPlacingEvent& operator=(BlockPlayerPlacingEvent const&);
-    BlockPlayerPlacingEvent(BlockPlayerPlacingEvent const&);
-    BlockPlayerPlacingEvent();
 
 public:
     // virtual functions
@@ -41,13 +37,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BlockSource const& $getBlockSource() const;
+    MCFOLD ::BlockSource const& $getBlockSource() const;
     // NOLINTEND
 
 public:

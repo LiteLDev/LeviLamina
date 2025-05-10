@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
+class Random;
 // clang-format on
 
 namespace BlockEvents {
@@ -16,15 +17,9 @@ class BlockRandomTickEvent : public ::BlockEvents::BlockEventBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkbf17e9;
-    ::ll::UntypedStorage<8, 8> mUnk9904dd;
+    ::ll::TypedStorage<8, 8, ::BlockSource&> mRegion;
+    ::ll::TypedStorage<8, 8, ::Random&>      mRandom;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockRandomTickEvent& operator=(BlockRandomTickEvent const&);
-    BlockRandomTickEvent(BlockRandomTickEvent const&);
-    BlockRandomTickEvent();
 
 public:
     // virtual functions
@@ -39,13 +34,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BlockSource const& $getBlockSource() const;
+    MCFOLD ::BlockSource const& $getBlockSource() const;
     // NOLINTEND
 
 public:

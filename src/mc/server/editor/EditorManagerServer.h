@@ -8,6 +8,7 @@
 #include "mc/editor/EditorManager.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
+#include "mc/world/events/LevelEventListener.h"
 #include "mc/world/events/ServerInstanceEventListener.h"
 #include "mc/world/level/FileArchiver.h"
 
@@ -17,7 +18,6 @@ class IContentKeyProvider;
 class ILevelListCache;
 class IResourcePackRepository;
 class Level;
-class LevelEventListener;
 class Player;
 class Scheduler;
 class ServerInstance;
