@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/events/BlockEventListener.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 
@@ -10,7 +11,6 @@
 // clang-format off
 class Actor;
 class Block;
-class BlockEventListener;
 class BlockPos;
 class Dimension;
 // clang-format on

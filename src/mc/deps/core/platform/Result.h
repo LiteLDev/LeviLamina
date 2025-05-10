@@ -4,13 +4,9 @@
 #include "mc/deps/core/platform/OSError.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/platform/OSError.h"
 #include "mc/platform/ErrorInfo.h"
 #include "mc/platform/Result.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock { class OSError; }
-// clang-format on
 
 namespace Core {
 

@@ -5,11 +5,11 @@
 // auto generated inclusion list
 #include "mc/external/rtc/Socket.h"
 #include "mc/external/sigslot/has_slots.h"
+#include "mc/external/sigslot/single_threaded.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace rtc { class SocketAddress; }
-namespace sigslot { class single_threaded; }
 // clang-format on
 
 namespace rtc {

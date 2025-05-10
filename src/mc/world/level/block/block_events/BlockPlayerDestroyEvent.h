@@ -7,7 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockSource;
+class Player;
 // clang-format on
 
 namespace BlockEvents {
@@ -16,15 +18,9 @@ class BlockPlayerDestroyEvent : public ::BlockEvents::BlockEventBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkaf93d6;
-    ::ll::UntypedStorage<8, 8> mUnka113c9;
+    ::ll::TypedStorage<8, 8, ::Player&>      mPlayer;
+    ::ll::TypedStorage<8, 8, ::Block const&> mDestroyedBlock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockPlayerDestroyEvent& operator=(BlockPlayerDestroyEvent const&);
-    BlockPlayerDestroyEvent(BlockPlayerDestroyEvent const&);
-    BlockPlayerDestroyEvent();
 
 public:
     // virtual functions
@@ -39,13 +35,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BlockSource const& $getBlockSource() const;
+    MCFOLD ::BlockSource const& $getBlockSource() const;
     // NOLINTEND
 
 public:

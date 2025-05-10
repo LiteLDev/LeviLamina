@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/gameplayhandlers/BlockGameplayHandler.h"
 #include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/gameplayhandlers/EventHandlerDispatcher.h"
 #include "mc/gameplayhandlers/GameplayHandlerResult.h"
@@ -11,7 +12,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockGameplayHandler;
 struct BlockTryDestroyByPlayerEvent;
 struct BlockTryPlaceByPlayerEvent;
 struct ExplosionStartedEvent;

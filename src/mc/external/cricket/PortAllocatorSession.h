@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/external/sigslot/has_slots.h"
+#include "mc/external/sigslot/single_threaded.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace cricket { class Candidate; }
 namespace cricket { class CandidateStats; }
 namespace cricket { class PortInterface; }
-namespace sigslot { class single_threaded; }
 // clang-format on
 
 namespace cricket {

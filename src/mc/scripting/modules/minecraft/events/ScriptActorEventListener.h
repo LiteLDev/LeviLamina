@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/events/ActorEventListener.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorEventListener;
 struct ActorAttackEvent;
 struct ActorDiedEvent;
 struct ActorHealthChangedEvent;

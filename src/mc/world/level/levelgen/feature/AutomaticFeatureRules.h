@@ -69,16 +69,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit AutomaticFeatureRules(::cereal::ReflectionCtx const& ctx);
+    MCAPI explicit AutomaticFeatureRules(::cereal::ReflectionCtx const& ctx);
 
-    MCNAPI void _applyAutomaticFeatureRuleDefinition(
+    MCAPI void _applyAutomaticFeatureRuleDefinition(
         ::AutomaticFeatureRules::AutomaticFeatureRule&            automaticFeatureRule,
         ::SharedTypes::v1_21_20::AutomaticFeatureRulesData const& automaticFeatureRulesData,
         ::MinEngineVersion const&                                 minEngineVersion,
         ::FeatureRegistry&                                        featureRegistry
     ) const;
 
-    MCNAPI void _parseAndInsertUnsorted(
+    MCAPI void _parseAndInsertUnsorted(
         ::std::string const&        filename,
         ::std::string&&             data,
         ::MinEngineVersion const&   minEngineVersion,
@@ -89,13 +89,13 @@ public:
         bool                                                                                      isBasePack
     ) const;
 
-    MCNAPI void attachAutomaticFeatures(
+    MCAPI void attachAutomaticFeatures(
         ::ResourcePackManager&                                          resourcePackManager,
         ::IWorldRegistriesProvider&                                     worldRegistries,
         ::std::unordered_map<::HashedString, ::BiomeDecorationFeature>& biomeDecorationFeatureMap
     ) const;
 
-    MCNAPI ::std::unordered_map<
+    MCAPI ::std::unordered_map<
         ::std::string,
         ::std::unordered_map<::HashedString, ::AutomaticFeatureRules::AutomaticFeatureRule>>
     parseAutomaticFeatures(
@@ -108,12 +108,12 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::SemVersionConstant const& SCHEMA_VERSION_1();
+    MCAPI static ::SemVersionConstant const& SCHEMA_VERSION_1();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
+    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 };

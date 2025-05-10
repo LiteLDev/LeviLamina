@@ -8,13 +8,13 @@
 #include "mc/gameplayhandlers/EventHandlerDispatcher.h"
 #include "mc/gameplayhandlers/GameplayHandlerResult.h"
 #include "mc/gameplayhandlers/HandlerResult.h"
+#include "mc/gameplayhandlers/PlayerGameplayHandler.h"
 #include "mc/scripting/event_handlers/ScriptEventHandler.h"
 #include "mc/world/events/MutablePlayerGameplayEvent.h"
 #include "mc/world/events/PlayerGameplayEvent.h"
 
 // auto generated forward declare list
 // clang-format off
-class PlayerGameplayHandler;
 struct ClientJoinedEvent;
 struct PlayerDisconnectEvent;
 struct PlayerGameModeChangeEvent;

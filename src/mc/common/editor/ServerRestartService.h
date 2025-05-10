@@ -9,10 +9,10 @@
 #include "mc/editor/services/PayloadStoreHelper.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
+#include "mc/world/events/LevelEventListener.h"
 
 // auto generated forward declare list
 // clang-format off
-class LevelEventListener;
 struct ScriptingWorldInitializeEvent;
 namespace Editor::Network { class RestartServiceRequestRestartPayload; }
 // clang-format on

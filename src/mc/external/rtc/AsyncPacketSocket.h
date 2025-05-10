@@ -6,13 +6,13 @@
 #include "mc/external/absl/AnyInvocable.h"
 #include "mc/external/rtc/Socket.h"
 #include "mc/external/sigslot/has_slots.h"
+#include "mc/external/sigslot/single_threaded.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace rtc { class ReceivedPacket; }
 namespace rtc { class SocketAddress; }
 namespace rtc { struct PacketOptions; }
-namespace sigslot { class single_threaded; }
 // clang-format on
 
 namespace rtc {

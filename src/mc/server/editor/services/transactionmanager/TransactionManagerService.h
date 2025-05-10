@@ -10,6 +10,7 @@
 #include "mc/server/editor/serviceproviders/TransactionManagerServiceProvider.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
+#include "mc/world/events/PlayerEventListener.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,7 +18,6 @@ class Actor;
 class BlockPos;
 class BlockSource;
 class CompoundBlockVolume;
-class PlayerEventListener;
 struct PlayerDimensionChangeBeforeEvent;
 namespace Editor::Network { class RedoOperationPayload; }
 namespace Editor::Network { class UndoOperationPayload; }

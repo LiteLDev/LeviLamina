@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/level/block/block_events/IBlockEventExecutor.h"
 
 namespace BlockEvents::Detail {
@@ -11,14 +12,8 @@ class BlockEventBlockLegacyExecutor : public ::BlockEvents::IBlockEventExecutor 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkde0bfc;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOwnerSubscription;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockEventBlockLegacyExecutor& operator=(BlockEventBlockLegacyExecutor const&);
-    BlockEventBlockLegacyExecutor(BlockEventBlockLegacyExecutor const&);
-    BlockEventBlockLegacyExecutor();
 
 public:
     // virtual functions

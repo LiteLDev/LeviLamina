@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/external/rtc/RefCountedObject.h"
+#include "mc/external/webrtc/CreateSessionDescriptionObserver.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace webrtc { class CreateSessionDescriptionObserver; }
 namespace webrtc { class RTCError; }
 namespace webrtc { class SessionDescriptionInterface; }
 // clang-format on

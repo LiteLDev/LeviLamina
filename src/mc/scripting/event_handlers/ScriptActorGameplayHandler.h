@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/gameplayhandlers/ActorGameplayHandler.h"
 #include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/gameplayhandlers/EventHandlerDispatcher.h"
 #include "mc/gameplayhandlers/GameplayHandlerResult.h"
@@ -12,7 +13,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorGameplayHandler;
 struct ActorAddEffectEvent;
 struct ActorRemovedEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldBeforeEvents; }

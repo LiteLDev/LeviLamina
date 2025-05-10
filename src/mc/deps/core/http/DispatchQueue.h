@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/http/DispatcherProcess.h"
+#include "mc/deps/core/http/Response.h"
 #include "mc/deps/core/threading/AsyncResultBase.h"
 #include "mc/deps/core/threading/IAsyncResult.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::Http { class Request; }
-namespace Bedrock::Http { class Response; }
 // clang-format on
 
 namespace Bedrock::Http {

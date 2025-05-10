@@ -7,6 +7,7 @@
 #include "mc/deps/nether_net/Controller.h"
 #include "mc/external/rtc/Thread.h"
 #include "mc/external/sigslot/has_slots.h"
+#include "mc/external/sigslot/single_threaded.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,7 +17,6 @@ namespace NetherNet { struct ThreadInit; }
 namespace rtc { class AsyncPacketSocket; }
 namespace rtc { class ReceivedPacket; }
 namespace rtc { class SocketAddress; }
-namespace sigslot { class single_threaded; }
 // clang-format on
 
 namespace NetherNet {

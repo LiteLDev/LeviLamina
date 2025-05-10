@@ -5,12 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
+#include "mc/world/events/LevelEventListener.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class Level;
-class LevelEventListener;
 class Player;
 struct LevelGameRuleChangeEvent;
 struct LevelStartLeaveGameEvent;
