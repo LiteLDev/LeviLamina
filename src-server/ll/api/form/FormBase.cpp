@@ -44,7 +44,7 @@ bool Form::sendRawTo(Player& player, std::string const& formData, Form::RawFormC
 }
 
 bool Form::sendRawUpdate(Player& player, std::string const& formData, Form::RawFormCallback callback) {
-    return sendRawImpl(player, formData, std::move(callback), false);
+    return sendRawImpl(player, formData, std::move(callback), true);
 }
 
 } // namespace ll::form
