@@ -19,7 +19,7 @@
                 "github.com/LiteLDev/levilamina-loc": "1.5.*",
                 "github.com/LiteLDev/PeEditor": "3.9.*",
                 "github.com/LiteLDev/PreLoader": "1.13.*",
-                "github.com/LiteLDev/bedrock-runtime-data": "1.21.7004-server.4"
+                "github.com/LiteLDev/bedrock-runtime-data": "1.21.7004-server.5"
             },
             "assets": [
                 {
