@@ -29,7 +29,7 @@ add_requires("nlohmann_json v3.11.3")
 add_requires("rapidjson v1.1.0")
 add_requires("type_safe v0.2.4")
 add_requires("mimalloc v2.1.7")
-add_requires("cpr 1.11.1", {configs = {ssl = true}})
+add_requires("cpr[ssl=y] 1.11.1")
 add_requires("parallel-hashmap v2.0.0")
 add_requires("concurrentqueue v1.0.4")
 
