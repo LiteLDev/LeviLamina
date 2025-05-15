@@ -28,6 +28,7 @@ public:
     // prevent constructor by default
     StructureTemplateDataResponsePacket& operator=(StructureTemplateDataResponsePacket const&);
     StructureTemplateDataResponsePacket(StructureTemplateDataResponsePacket const&);
+    StructureTemplateDataResponsePacket();
 
 public:
     // virtual functions

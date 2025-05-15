@@ -55,6 +55,7 @@ public:
     public:
         // prevent constructor by default
         FactorCalculationData(FactorCalculationData const&);
+        FactorCalculationData();
 
     public:
         // member functions
@@ -104,6 +105,10 @@ public:
                                                                   mAttributeModifiers;
     ::ll::TypedStorage<8, 96, ::MobEffect::FactorCalculationData> mFactorCalculationData;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MobEffect();
 
 public:
     // virtual functions

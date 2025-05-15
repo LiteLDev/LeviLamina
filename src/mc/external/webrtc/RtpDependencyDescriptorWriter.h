@@ -22,6 +22,10 @@ public:
     struct TemplateMatch {};
 
 public:
+    // prevent constructor by default
+    RtpDependencyDescriptorWriter();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::webrtc::RtpDependencyDescriptorWriter::TemplateMatch

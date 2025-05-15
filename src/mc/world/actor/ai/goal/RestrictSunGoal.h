@@ -18,6 +18,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RestrictSunGoal& operator=(RestrictSunGoal const&);
+    RestrictSunGoal(RestrictSunGoal const&);
+    RestrictSunGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -40,6 +40,12 @@ public:
         ::ll::TypedStorage<4, 12, ::BlockPos>            mOrigin;
         ::ll::TypedStorage<4, 4, uint>                   mIterations;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ScatteredPositions& operator=(ScatteredPositions const&);
+        ScatteredPositions(ScatteredPositions const&);
+        ScatteredPositions();
     };
 
     enum class NeedsMolang : int {

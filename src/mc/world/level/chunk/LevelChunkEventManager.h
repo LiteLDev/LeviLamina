@@ -41,6 +41,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LevelChunkEventManager();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

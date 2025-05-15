@@ -15,6 +15,10 @@ class Player;
 
 class DropperContainerManagerModel : public ::LevelContainerManagerModel {
 public:
+    // prevent constructor by default
+    DropperContainerManagerModel();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

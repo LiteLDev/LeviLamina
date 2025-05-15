@@ -36,6 +36,7 @@ public:
 public:
     // prevent constructor by default
     Structure& operator=(Structure const&);
+    Structure();
 
 public:
     // virtual functions

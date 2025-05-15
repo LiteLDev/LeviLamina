@@ -14,6 +14,10 @@ public:
     // TargetBitrate inner types define
     struct BitrateItem {
     public:
+        // prevent constructor by default
+        BitrateItem();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI BitrateItem(uchar, uchar, uint);

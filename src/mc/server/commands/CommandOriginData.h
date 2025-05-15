@@ -17,24 +17,28 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CommandOriginData();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CommandOriginData(::CommandOriginData const& other);
+    MCAPI CommandOriginData(::CommandOriginData const& other);
 
-    MCNAPI ::CommandOriginData& operator=(::CommandOriginData const& rhs);
+    MCAPI ::CommandOriginData& operator=(::CommandOriginData const& rhs);
 
-    MCNAPI ~CommandOriginData();
+    MCAPI ~CommandOriginData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::CommandOriginData const& other);
+    MCAPI void* $ctor(::CommandOriginData const& other);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

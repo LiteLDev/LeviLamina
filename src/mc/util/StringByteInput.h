@@ -15,6 +15,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StringByteInput();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 9

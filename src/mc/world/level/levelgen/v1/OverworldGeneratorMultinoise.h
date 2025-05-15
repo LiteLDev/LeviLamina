@@ -79,6 +79,7 @@ public:
         // prevent constructor by default
         Noises& operator=(Noises const&);
         Noises(Noises const&);
+        Noises();
 
     public:
         // member functions
@@ -118,6 +119,10 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkBlender>>                          mFixedChunkBlender;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkBlenderFactory>>                   mChunkBlenderFactory;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    OverworldGeneratorMultinoise();
 
 public:
     // virtual functions

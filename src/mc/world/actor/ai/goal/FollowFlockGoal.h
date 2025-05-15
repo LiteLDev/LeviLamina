@@ -21,6 +21,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FollowFlockGoal& operator=(FollowFlockGoal const&);
+    FollowFlockGoal(FollowFlockGoal const&);
+    FollowFlockGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

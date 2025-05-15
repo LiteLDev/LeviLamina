@@ -18,6 +18,10 @@ namespace dcsctp {
 
 class Timer {
 public:
+    // prevent constructor by default
+    Timer();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void Start();

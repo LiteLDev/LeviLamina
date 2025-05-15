@@ -21,6 +21,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MoveThroughVillageGoal& operator=(MoveThroughVillageGoal const&);
+    MoveThroughVillageGoal(MoveThroughVillageGoal const&);
+    MoveThroughVillageGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

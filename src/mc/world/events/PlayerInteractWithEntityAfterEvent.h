@@ -24,6 +24,7 @@ public:
 public:
     // prevent constructor by default
     PlayerInteractWithEntityAfterEvent& operator=(PlayerInteractWithEntityAfterEvent const&);
+    PlayerInteractWithEntityAfterEvent();
 
 public:
     // member functions

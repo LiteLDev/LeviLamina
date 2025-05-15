@@ -24,6 +24,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptCommandMessageEvent& operator=(ScriptCommandMessageEvent const&);
+    ScriptCommandMessageEvent(ScriptCommandMessageEvent const&);
+    ScriptCommandMessageEvent();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ~ScriptCommandMessageEvent();

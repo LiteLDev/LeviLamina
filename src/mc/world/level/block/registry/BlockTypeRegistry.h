@@ -72,6 +72,7 @@ public:
         // prevent constructor by default
         BlockComplexAliasContent& operator=(BlockComplexAliasContent const&);
         BlockComplexAliasContent(BlockComplexAliasContent const&);
+        BlockComplexAliasContent();
 
     public:
         // member functions
@@ -100,6 +101,10 @@ public:
         ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockLegacy const>> mBlockLegacy;
         ::ll::TypedStorage<8, 8, ::Block const*>                 mBlock;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        LookupByNameImplReturnType();
 
     public:
         // member functions
@@ -137,6 +142,12 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::BlockLegacy const&> mAirBlock;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        DirectAccessBlocks& operator=(DirectAccessBlocks const&);
+        DirectAccessBlocks(DirectAccessBlocks const&);
+        DirectAccessBlocks();
     };
 
     enum class LookupByNameImplResolve : int {

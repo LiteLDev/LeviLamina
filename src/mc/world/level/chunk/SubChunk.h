@@ -68,72 +68,73 @@ public:
     // prevent constructor by default
     SubChunk& operator=(SubChunk const&);
     SubChunk(SubChunk const&);
+    SubChunk();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
+    MCAPI
     SubChunk(::Block const* initBlock, bool maxSkyLight, bool fullyLit, ::SpinLockImpl& spinLock, schar absoluteIndex);
 
-    MCNAPI void _createBlockLightStorage();
+    MCAPI void _createBlockLightStorage();
 
-    MCNAPI void _createSkyLightStorage();
+    MCAPI void _createSkyLightStorage();
 
-    MCNAPI void _resetLight(bool maxSkyLight, bool maxLight);
+    MCAPI void _resetLight(bool maxSkyLight, bool maxLight);
 
-    MCNAPI void _setBlock(uchar layer, ushort index, ::Block const& block);
+    MCAPI void _setBlock(uchar layer, ushort index, ::Block const& block);
 
-    MCNAPI void deserialize(
+    MCAPI void deserialize(
         ::IDataInput&                              stream,
         ::BlockPalette const&                      palette,
         ::SubChunkPos const&                       subChunkPos,
         ::std::optional<::DeserializationChanges*> deserializationChanges
     );
 
-    MCNAPI void fetchBlocks(
+    MCAPI void fetchBlocks(
         ::BlockPos const& subChunkOrigin,
         ::BlockPos const& volumeOrigin,
         short             dimensionMinHeight,
         ::BlockVolume&    volume
     ) const;
 
-    MCNAPI bool isUniform(::Block const& block) const;
+    MCAPI bool isUniform(::Block const& block) const;
 
-    MCNAPI ::SubChunk& operator=(::SubChunk&& rhs);
+    MCAPI ::SubChunk& operator=(::SubChunk&& rhs);
 
-    MCNAPI void prune(::SubChunkStorageUnit::PruneType pruneType);
+    MCAPI void prune(::SubChunkStorageUnit::PruneType pruneType);
 
-    MCNAPI ::std::string recalculateHashAndSerialize(bool network);
+    MCAPI ::std::string recalculateHashAndSerialize(bool network);
 
-    MCNAPI void reset(::Block const* resetBlock, bool maxSkyLight, bool fullyLit);
+    MCAPI void reset(::Block const* resetBlock, bool maxSkyLight, bool fullyLit);
 
-    MCNAPI void serialize(::IDataOutput& stream, bool network) const;
+    MCAPI void serialize(::IDataOutput& stream, bool network) const;
 
-    MCNAPI void setBlocksToUniform(::Block const& initBlock, bool maxSkyLight, bool fullyLit);
+    MCAPI void setBlocksToUniform(::Block const& initBlock, bool maxSkyLight, bool fullyLit);
 
-    MCNAPI void setFromBlockVolume(::BlockVolume const& box, short height);
+    MCAPI void setFromBlockVolume(::BlockVolume const& box, short height);
 
-    MCNAPI void setSkyLight(ushort index, uchar lightValue);
+    MCAPI void setSkyLight(ushort index, uchar lightValue);
 
-    MCNAPI ~SubChunk();
+    MCAPI ~SubChunk();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void flushGarbageCollectors();
+    MCAPI static void flushGarbageCollectors();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
+    MCAPI void*
     $ctor(::Block const* initBlock, bool maxSkyLight, bool fullyLit, ::SpinLockImpl& spinLock, schar absoluteIndex);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

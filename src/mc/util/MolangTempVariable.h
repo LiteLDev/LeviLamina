@@ -22,6 +22,7 @@ public:
     // prevent constructor by default
     MolangTempVariable& operator=(MolangTempVariable const&);
     MolangTempVariable(MolangTempVariable const&);
+    MolangTempVariable();
 
 public:
     // member functions

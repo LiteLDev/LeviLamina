@@ -47,6 +47,7 @@ public:
 public:
     // prevent constructor by default
     AttributeInstance& operator=(AttributeInstance const&);
+    AttributeInstance();
 
 public:
     // virtual functions

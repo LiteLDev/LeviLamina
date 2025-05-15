@@ -19,6 +19,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FloatGoal& operator=(FloatGoal const&);
+    FloatGoal(FloatGoal const&);
+    FloatGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

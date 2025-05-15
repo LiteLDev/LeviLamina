@@ -14,6 +14,10 @@ public:
     // RateStatistics inner types define
     struct Bucket {
     public:
+        // prevent constructor by default
+        Bucket();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI explicit Bucket(int64);
@@ -29,6 +33,7 @@ public:
 public:
     // prevent constructor by default
     RateStatistics& operator=(RateStatistics const&);
+    RateStatistics();
 
 public:
     // member functions

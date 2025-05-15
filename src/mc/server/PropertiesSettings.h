@@ -85,6 +85,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PropertiesSettings();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit PropertiesSettings(::std::string const& filename);

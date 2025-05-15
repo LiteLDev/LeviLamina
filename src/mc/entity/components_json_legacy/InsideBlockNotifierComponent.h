@@ -18,6 +18,7 @@ public:
     // prevent constructor by default
     InsideBlockNotifierComponent& operator=(InsideBlockNotifierComponent const&);
     InsideBlockNotifierComponent(InsideBlockNotifierComponent const&);
+    InsideBlockNotifierComponent();
 
 public:
     // member functions

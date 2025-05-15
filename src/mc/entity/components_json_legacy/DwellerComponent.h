@@ -49,6 +49,7 @@ public:
     // prevent constructor by default
     DwellerComponent& operator=(DwellerComponent const&);
     DwellerComponent(DwellerComponent const&);
+    DwellerComponent();
 
 public:
     // member functions

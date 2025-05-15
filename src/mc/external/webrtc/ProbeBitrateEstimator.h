@@ -23,6 +23,10 @@ public:
     struct AggregatedCluster {};
 
 public:
+    // prevent constructor by default
+    ProbeBitrateEstimator();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void EraseOldClusters(::webrtc::Timestamp);

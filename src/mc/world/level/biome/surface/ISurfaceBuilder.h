@@ -41,6 +41,12 @@ public:
         ::ll::TypedStorage<8, 8, ::HeightmapWrapper const&>                      mPreWorldGenHeightmap;
         ::ll::TypedStorage<1, 1, bool const>                                     mUseCCOrLater;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        BuildParameters& operator=(BuildParameters const&);
+        BuildParameters(BuildParameters const&);
+        BuildParameters();
     };
 
 public:

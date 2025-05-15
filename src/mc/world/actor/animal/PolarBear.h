@@ -14,6 +14,10 @@ struct ActorDefinitionIdentifier;
 
 class PolarBear : public ::Animal {
 public:
+    // prevent constructor by default
+    PolarBear();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 85

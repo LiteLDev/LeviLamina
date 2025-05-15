@@ -8,6 +8,7 @@ struct IceTransportStats {
 public:
     // prevent constructor by default
     IceTransportStats& operator=(IceTransportStats const&);
+    IceTransportStats();
 
 public:
     // member functions

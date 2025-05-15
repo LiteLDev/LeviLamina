@@ -25,6 +25,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LevelChunkPerformanceTelemetry& operator=(LevelChunkPerformanceTelemetry const&);
+    LevelChunkPerformanceTelemetry(LevelChunkPerformanceTelemetry const&);
+    LevelChunkPerformanceTelemetry();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void sendPerformanceTelemetry(::Bedrock::NonOwnerPointer<::ChunkPerformanceData> chunkPerformanceData);

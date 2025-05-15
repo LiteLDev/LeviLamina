@@ -245,6 +245,11 @@ namespace asio::ssl {
 class verify_context;
 }
 
+namespace leveldb {
+class Compressor;
+class DecompressAllocator;
+}
+
 namespace ll {
 
 template <size_t Align, size_t Size>

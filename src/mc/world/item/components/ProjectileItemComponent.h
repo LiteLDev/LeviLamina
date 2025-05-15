@@ -30,6 +30,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ProjectileItemComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

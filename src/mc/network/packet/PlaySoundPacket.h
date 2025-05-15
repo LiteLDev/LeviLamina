@@ -26,6 +26,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PlaySoundPacket();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

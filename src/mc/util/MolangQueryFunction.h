@@ -32,6 +32,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MolangQueryFunction();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI MolangQueryFunction(

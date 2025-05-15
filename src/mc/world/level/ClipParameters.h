@@ -30,6 +30,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ClipParameters& operator=(ClipParameters const&);
+    ClipParameters(ClipParameters const&);
+    ClipParameters();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ~ClipParameters();

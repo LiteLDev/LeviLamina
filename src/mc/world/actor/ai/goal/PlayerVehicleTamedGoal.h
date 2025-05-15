@@ -18,6 +18,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PlayerVehicleTamedGoal& operator=(PlayerVehicleTamedGoal const&);
+    PlayerVehicleTamedGoal(PlayerVehicleTamedGoal const&);
+    PlayerVehicleTamedGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

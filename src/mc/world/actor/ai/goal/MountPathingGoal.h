@@ -25,6 +25,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MountPathingGoal& operator=(MountPathingGoal const&);
+    MountPathingGoal(MountPathingGoal const&);
+    MountPathingGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 10

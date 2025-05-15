@@ -11,6 +11,10 @@ namespace webrtc {
 
 class RateLimiter {
 public:
+    // prevent constructor by default
+    RateLimiter();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RateLimiter(::webrtc::Clock*, int64);

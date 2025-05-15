@@ -21,6 +21,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ServerToClientHandshakePacket();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

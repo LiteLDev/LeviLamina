@@ -30,6 +30,7 @@ public:
 public:
     // prevent constructor by default
     GameVersion& operator=(GameVersion const&);
+    GameVersion();
 
 public:
     // member functions

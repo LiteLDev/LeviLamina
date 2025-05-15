@@ -14,6 +14,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActorDefinitionFeedItem();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ActorDefinitionFeedItem(::ActorDefinitionFeedItem const&);

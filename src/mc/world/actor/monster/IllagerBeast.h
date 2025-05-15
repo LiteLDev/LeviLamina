@@ -16,6 +16,10 @@ struct ActorDefinitionIdentifier;
 
 class IllagerBeast : public ::Monster {
 public:
+    // prevent constructor by default
+    IllagerBeast();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 19

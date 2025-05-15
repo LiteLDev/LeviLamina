@@ -31,6 +31,7 @@ public:
 public:
     // prevent constructor by default
     ChunkViewSource& operator=(ChunkViewSource const&);
+    ChunkViewSource();
 
 public:
     // virtual functions

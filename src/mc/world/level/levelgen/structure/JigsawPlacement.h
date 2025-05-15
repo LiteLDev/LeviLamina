@@ -48,7 +48,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI JigsawPlacement(
+    MCAPI JigsawPlacement(
         uint64                                              maxDepth,
         uint64                                              globalContextSize,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieceList,
@@ -60,7 +60,7 @@ public:
         ::Dimension&                     dimension
     );
 
-    MCNAPI void _addPiece(
+    MCAPI void _addPiece(
         ::PoolElementStructurePiece const&         sourcePiece,
         ::BlockPos const&                          position,
         ::Rotation const&                          rotation,
@@ -69,14 +69,14 @@ public:
         ::PoolAliasBinding::PoolAliasLookup const& poolAliasLookup
     );
 
-    MCNAPI ::BlockPos _findLocalAnchorOffset(
+    MCAPI ::BlockPos _findLocalAnchorOffset(
         ::StructurePoolElement const& initialElement,
         ::BlockPos const&             pieceCornerPosition,
         ::Rotation const&             rotation,
         ::std::string_view            startAnchorName
     ) const;
 
-    MCNAPI bool _tryPlacingPiece(
+    MCAPI bool _tryPlacingPiece(
         ::PoolElementStructurePiece const&         sourcePiece,
         ::BoundingBox const&                       sourceBB,
         ::JigsawBlockInfo const&                   sourceJigsaw,
@@ -87,7 +87,7 @@ public:
         ::PoolAliasBinding::PoolAliasLookup const& poolAliasLookup
     );
 
-    MCNAPI void addPieces(
+    MCAPI void addPieces(
         ::StructurePoolElement const&              initialElement,
         ::BlockPos const&                          startPosition,
         ::Rotation const&                          rotation,
@@ -95,13 +95,13 @@ public:
         ::PoolAliasBinding::PoolAliasLookup const& poolAliasLookup
     );
 
-    MCNAPI ~JigsawPlacement();
+    MCAPI ~JigsawPlacement();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         uint64                                              maxDepth,
         uint64                                              globalContextSize,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieceList,
@@ -117,6 +117,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

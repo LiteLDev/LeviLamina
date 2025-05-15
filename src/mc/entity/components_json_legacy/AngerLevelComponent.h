@@ -106,6 +106,7 @@ public:
 public:
     // prevent constructor by default
     AngerLevelComponent& operator=(AngerLevelComponent const&);
+    AngerLevelComponent();
 
 public:
     // member functions

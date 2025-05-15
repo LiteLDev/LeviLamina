@@ -18,6 +18,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    AgentCommandExecutionGoal& operator=(AgentCommandExecutionGoal const&);
+    AgentCommandExecutionGoal(AgentCommandExecutionGoal const&);
+    AgentCommandExecutionGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

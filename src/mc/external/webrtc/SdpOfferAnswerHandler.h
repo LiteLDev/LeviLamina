@@ -82,6 +82,10 @@ public:
 
     class RemoteDescriptionOperation {
     public:
+        // prevent constructor by default
+        RemoteDescriptionOperation();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI bool HaveSessionError();
@@ -125,6 +129,10 @@ public:
         MCNAPI static void** $vftableForSetRemoteDescriptionObserverInterface();
         // NOLINTEND
     };
+
+public:
+    // prevent constructor by default
+    SdpOfferAnswerHandler();
 
 public:
     // member functions

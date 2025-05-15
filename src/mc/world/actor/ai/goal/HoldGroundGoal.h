@@ -26,6 +26,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    HoldGroundGoal& operator=(HoldGroundGoal const&);
+    HoldGroundGoal(HoldGroundGoal const&);
+    HoldGroundGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

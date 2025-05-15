@@ -31,6 +31,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SummonActorGoal& operator=(SummonActorGoal const&);
+    SummonActorGoal(SummonActorGoal const&);
+    SummonActorGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7

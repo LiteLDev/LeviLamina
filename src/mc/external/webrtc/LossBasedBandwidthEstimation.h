@@ -15,6 +15,10 @@ namespace webrtc {
 
 struct LossBasedBandwidthEstimation {
 public:
+    // prevent constructor by default
+    LossBasedBandwidthEstimation();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void Initialize(::webrtc::DataRate);

@@ -11,6 +11,10 @@ namespace webrtc {
 
 struct InternalDataChannelInit {
 public:
+    // prevent constructor by default
+    InternalDataChannelInit();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit InternalDataChannelInit(::webrtc::DataChannelInit const&);

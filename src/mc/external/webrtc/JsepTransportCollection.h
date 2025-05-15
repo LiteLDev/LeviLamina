@@ -11,6 +11,10 @@ namespace webrtc {
 
 struct JsepTransportCollection {
 public:
+    // prevent constructor by default
+    JsepTransportCollection();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::vector<::cricket::JsepTransport*> ActiveTransports();

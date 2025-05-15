@@ -36,6 +36,7 @@ public:
     // prevent constructor by default
     BaseCommandBlock& operator=(BaseCommandBlock const&);
     BaseCommandBlock(BaseCommandBlock const&);
+    BaseCommandBlock();
 
 public:
     // member functions

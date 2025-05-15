@@ -20,6 +20,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ClimateParameters();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ClimateParameters(

@@ -26,6 +26,7 @@ public:
     // prevent constructor by default
     BaseAttributeMap& operator=(BaseAttributeMap const&);
     BaseAttributeMap(BaseAttributeMap const&);
+    BaseAttributeMap();
 
 public:
     // member functions

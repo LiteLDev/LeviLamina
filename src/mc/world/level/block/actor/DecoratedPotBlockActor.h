@@ -42,6 +42,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DecoratedPotBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

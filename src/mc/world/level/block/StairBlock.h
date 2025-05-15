@@ -34,6 +34,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StairBlock& operator=(StairBlock const&);
+    StairBlock(StairBlock const&);
+    StairBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

@@ -9,6 +9,10 @@ namespace ScriptModuleMinecraftNet {
 
 class ScriptMalformedHttpRequestError : public ::Scripting::Error {
 public:
+    // prevent constructor by default
+    ScriptMalformedHttpRequestError();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ScriptMalformedHttpRequestError(::std::string message);

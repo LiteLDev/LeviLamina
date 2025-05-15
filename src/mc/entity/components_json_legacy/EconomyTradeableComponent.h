@@ -38,6 +38,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EconomyTradeableComponent& operator=(EconomyTradeableComponent const&);
+    EconomyTradeableComponent(EconomyTradeableComponent const&);
+    EconomyTradeableComponent();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void _calculateDemandPrices(

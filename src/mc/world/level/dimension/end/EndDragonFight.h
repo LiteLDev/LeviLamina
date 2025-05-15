@@ -98,6 +98,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EndDragonFight();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EndDragonFight(::BlockSource& level);

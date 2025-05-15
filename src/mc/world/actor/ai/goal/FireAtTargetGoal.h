@@ -113,6 +113,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FireAtTargetGoal& operator=(FireAtTargetGoal const&);
+    FireAtTargetGoal(FireAtTargetGoal const&);
+    FireAtTargetGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

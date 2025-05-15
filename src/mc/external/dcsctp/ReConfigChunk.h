@@ -11,6 +11,10 @@ namespace dcsctp {
 
 class ReConfigChunk {
 public:
+    // prevent constructor by default
+    ReConfigChunk();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ReConfigChunk(::dcsctp::Parameters);

@@ -26,6 +26,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FollowCaravanGoal& operator=(FollowCaravanGoal const&);
+    FollowCaravanGoal(FollowCaravanGoal const&);
+    FollowCaravanGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

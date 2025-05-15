@@ -25,6 +25,10 @@ public:
     // ModuleRtpRtcpImpl2 inner types define
     struct RtpSenderContext {
     public:
+        // prevent constructor by default
+        RtpSenderContext();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI RtpSenderContext(::webrtc::TaskQueueBase&, ::webrtc::RtpRtcpInterface::Configuration const&);
@@ -36,6 +40,10 @@ public:
         MCNAPI void* $ctor(::webrtc::TaskQueueBase&, ::webrtc::RtpRtcpInterface::Configuration const&);
         // NOLINTEND
     };
+
+public:
+    // prevent constructor by default
+    ModuleRtpRtcpImpl2();
 
 public:
     // member functions

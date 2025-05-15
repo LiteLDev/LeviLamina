@@ -26,6 +26,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EntityRegistry();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit EntityRegistry(::std::string identifier);

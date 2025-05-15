@@ -30,6 +30,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LevelChunkVolumeData& operator=(LevelChunkVolumeData const&);
+    LevelChunkVolumeData(LevelChunkVolumeData const&);
+    LevelChunkVolumeData();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addStructure(::std::shared_ptr<::br::worldgen::StructureInstance const> instance);

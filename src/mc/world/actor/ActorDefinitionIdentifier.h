@@ -18,6 +18,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActorDefinitionIdentifier();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ActorDefinitionIdentifier(::ActorDefinitionIdentifier&&);

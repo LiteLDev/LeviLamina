@@ -19,6 +19,7 @@ public:
 public:
     // prevent constructor by default
     ActorEquippedArmorEvent& operator=(ActorEquippedArmorEvent const&);
+    ActorEquippedArmorEvent();
 
 public:
     // member functions

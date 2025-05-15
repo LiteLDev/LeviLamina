@@ -24,6 +24,10 @@ namespace cereal { struct ReflectionCtx; }
 
 class WolfArmorItem : public ::ComponentItem {
 public:
+    // prevent constructor by default
+    WolfArmorItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 53

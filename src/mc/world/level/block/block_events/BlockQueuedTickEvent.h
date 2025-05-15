@@ -23,6 +23,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockQueuedTickEvent& operator=(BlockQueuedTickEvent const&);
+    BlockQueuedTickEvent(BlockQueuedTickEvent const&);
+    BlockQueuedTickEvent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

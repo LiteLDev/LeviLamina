@@ -135,17 +135,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _canChangeSign(::SignBlockActor& blockActor, ::Player& player);
+    MCAPI static bool _canChangeSign(::SignBlockActor& blockActor, ::Player& player);
 
-    MCNAPI static ::SignBlock::SignInteractionResult _getInteractResult(
+    MCAPI static ::SignBlock::SignInteractionResult _getInteractResult(
         ::SignBlockActor& blockActor,
         ::SignTextSide    side,
         ::ItemStack&      item,
@@ -154,7 +154,7 @@ public:
         uchar             face
     );
 
-    MCNAPI static void _useDye(
+    MCAPI static void _useDye(
         ::SignBlockActor& blockActor,
         ::SignTextSide    side,
         ::ItemStack&      dyeStack,
@@ -162,7 +162,7 @@ public:
         ::Player&         player
     );
 
-    MCNAPI static void _useGlowInkSac(
+    MCAPI static void _useGlowInkSac(
         ::SignBlockActor& blockActor,
         ::SignTextSide    side,
         ::ItemStack&      glowInkSacStack,
@@ -170,10 +170,10 @@ public:
         ::Player&         player
     );
 
-    MCNAPI static void
+    MCAPI static void
     _useHoneyComb(::SignBlockActor& blockActor, ::ItemStack& honeyCombStack, ::BlockPos const& pos, ::Player& player);
 
-    MCNAPI static void _useInkSac(
+    MCAPI static void _useInkSac(
         ::SignBlockActor& blockActor,
         ::SignTextSide    side,
         ::ItemStack&      inkSacStack,
@@ -181,42 +181,42 @@ public:
         ::Player&         player
     );
 
-    MCNAPI static ::mce::Color getSignTextColorFromDyeItem(::Item const& dyeItem);
+    MCAPI static ::mce::Color getSignTextColorFromDyeItem(::Item const& dyeItem);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
+    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCNAPI ::AABB
+    MCFOLD ::AABB
     $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCNAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
-    MCNAPI float $getYRotationInDegrees(::Block const& block) const;
+    MCAPI float $getYRotationInDegrees(::Block const& block) const;
 
-    MCNAPI bool $_canSurvive(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCAPI bool $_canSurvive(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCNAPI ::ItemInstance $_getItemInstance() const;
+    MCAPI ::ItemInstance $_getItemInstance() const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

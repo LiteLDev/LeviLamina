@@ -22,22 +22,23 @@ public:
 public:
     // prevent constructor by default
     InventoryTransactionItemGroup(InventoryTransactionItemGroup const&);
+    InventoryTransactionItemGroup();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool equals(::ItemStack const& item) const;
+    MCAPI bool equals(::ItemStack const& item) const;
 
-    MCNAPI ::ItemStack getItemInstance() const;
+    MCAPI ::ItemStack getItemInstance() const;
 
-    MCNAPI ::InventoryTransactionItemGroup& operator=(::InventoryTransactionItemGroup const& rhs);
+    MCAPI ::InventoryTransactionItemGroup& operator=(::InventoryTransactionItemGroup const& rhs);
 
-    MCNAPI ~InventoryTransactionItemGroup();
+    MCAPI ~InventoryTransactionItemGroup();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

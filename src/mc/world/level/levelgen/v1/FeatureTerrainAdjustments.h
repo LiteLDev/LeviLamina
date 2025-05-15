@@ -36,6 +36,7 @@ public:
     public:
         // prevent constructor by default
         Descriptions& operator=(Descriptions const&);
+        Descriptions();
 
     public:
         // member functions

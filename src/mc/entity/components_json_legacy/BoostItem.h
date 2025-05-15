@@ -17,6 +17,7 @@ public:
 public:
     // prevent constructor by default
     BoostItem& operator=(BoostItem const&);
+    BoostItem();
 
 public:
     // member functions

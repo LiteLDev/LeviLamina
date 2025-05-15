@@ -44,6 +44,10 @@ public:
 
     class StreamQueue {
     public:
+        // prevent constructor by default
+        StreamQueue();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ::std::array<::std::deque<::webrtc::PrioritizedPacketQueue::QueuedPacket>, 5> DequeueAll();
@@ -69,6 +73,10 @@ public:
         MCNAPI void* $ctor(::webrtc::Timestamp);
         // NOLINTEND
     };
+
+public:
+    // prevent constructor by default
+    PrioritizedPacketQueue();
 
 public:
     // member functions

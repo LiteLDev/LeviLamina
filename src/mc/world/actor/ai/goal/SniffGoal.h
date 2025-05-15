@@ -80,6 +80,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SniffGoal& operator=(SniffGoal const&);
+    SniffGoal(SniffGoal const&);
+    SniffGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

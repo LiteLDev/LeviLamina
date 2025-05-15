@@ -20,6 +20,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CraftingContainer();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

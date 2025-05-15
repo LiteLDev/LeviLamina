@@ -13,6 +13,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StringByteOutput& operator=(StringByteOutput const&);
+    StringByteOutput(StringByteOutput const&);
+    StringByteOutput();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 9

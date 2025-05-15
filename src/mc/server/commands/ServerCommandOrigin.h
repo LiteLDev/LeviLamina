@@ -31,6 +31,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ServerCommandOrigin& operator=(ServerCommandOrigin const&);
+    ServerCommandOrigin(ServerCommandOrigin const&);
+    ServerCommandOrigin();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

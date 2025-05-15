@@ -53,6 +53,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ChestBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -23,6 +23,7 @@ public:
 public:
     // prevent constructor by default
     PerlinNoise& operator=(PerlinNoise const&);
+    PerlinNoise();
 
 public:
     // member functions

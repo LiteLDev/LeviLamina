@@ -21,6 +21,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TradeWithPlayerGoal& operator=(TradeWithPlayerGoal const&);
+    TradeWithPlayerGoal(TradeWithPlayerGoal const&);
+    TradeWithPlayerGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

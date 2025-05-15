@@ -29,6 +29,7 @@ public:
     // prevent constructor by default
     EntitySensorComponent& operator=(EntitySensorComponent const&);
     EntitySensorComponent(EntitySensorComponent const&);
+    EntitySensorComponent();
 
 public:
     // member functions

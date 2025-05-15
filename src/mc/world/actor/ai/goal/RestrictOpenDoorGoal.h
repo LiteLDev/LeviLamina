@@ -18,6 +18,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RestrictOpenDoorGoal& operator=(RestrictOpenDoorGoal const&);
+    RestrictOpenDoorGoal(RestrictOpenDoorGoal const&);
+    RestrictOpenDoorGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

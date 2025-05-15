@@ -23,6 +23,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ChunkViewTrackerManager();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ChunkViewTrackerManager(

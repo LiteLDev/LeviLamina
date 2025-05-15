@@ -23,6 +23,10 @@ public:
     // SendQueue inner types define
     struct DataToSend {
     public:
+        // prevent constructor by default
+        DataToSend();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI DataToSend(::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint>, ::dcsctp::Data);

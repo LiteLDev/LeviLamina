@@ -70,6 +70,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    VillagerCelebrationGoal& operator=(VillagerCelebrationGoal const&);
+    VillagerCelebrationGoal(VillagerCelebrationGoal const&);
+    VillagerCelebrationGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

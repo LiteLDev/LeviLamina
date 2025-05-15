@@ -11,6 +11,10 @@ namespace dcsctp {
 
 class AbortChunk {
 public:
+    // prevent constructor by default
+    AbortChunk();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI AbortChunk(bool, ::dcsctp::Parameters);

@@ -25,6 +25,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockTryPlaceByPlayerEvent& operator=(BlockTryPlaceByPlayerEvent const&);
+    BlockTryPlaceByPlayerEvent(BlockTryPlaceByPlayerEvent const&);
+    BlockTryPlaceByPlayerEvent();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ~BlockTryPlaceByPlayerEvent();

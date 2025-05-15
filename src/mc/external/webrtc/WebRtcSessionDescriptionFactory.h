@@ -45,6 +45,10 @@ public:
     };
 
 public:
+    // prevent constructor by default
+    WebRtcSessionDescriptionFactory();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void CreateAnswer(::webrtc::CreateSessionDescriptionObserver*, ::cricket::MediaSessionOptions const&);

@@ -30,6 +30,7 @@ public:
     // prevent constructor by default
     CraftingDataEntry& operator=(CraftingDataEntry const&);
     CraftingDataEntry(CraftingDataEntry const&);
+    CraftingDataEntry();
 
 public:
     // member functions

@@ -22,6 +22,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockPos();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit BlockPos(::Vec3 const& v);

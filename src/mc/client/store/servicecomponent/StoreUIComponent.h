@@ -31,6 +31,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StoreUIComponent& operator=(StoreUIComponent const&);
+    StoreUIComponent(StoreUIComponent const&);
+    StoreUIComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

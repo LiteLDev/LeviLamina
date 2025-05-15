@@ -24,6 +24,10 @@ public:
     class Callback {};
 
 public:
+    // prevent constructor by default
+    VideoRtpTrackSource();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void BroadcastRecordableEncodedFrame(::webrtc::RecordableEncodedFrame const&) const;

@@ -12,6 +12,7 @@ public:
     // prevent constructor by default
     FilterStringMap& operator=(FilterStringMap const&);
     FilterStringMap(FilterStringMap const&);
+    FilterStringMap();
 
 public:
     // member functions

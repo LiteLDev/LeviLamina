@@ -6,6 +6,10 @@ namespace webrtc {
 
 class RtcEventProbeClusterCreated {
 public:
+    // prevent constructor by default
+    RtcEventProbeClusterCreated();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RtcEventProbeClusterCreated(int, int, uint, uint);

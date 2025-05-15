@@ -23,6 +23,7 @@ public:
 public:
     // prevent constructor by default
     SpawnSettings& operator=(SpawnSettings const&);
+    SpawnSettings();
 
 public:
     // member functions

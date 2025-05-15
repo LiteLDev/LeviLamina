@@ -18,6 +18,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RakDataOutput& operator=(RakDataOutput const&);
+    RakDataOutput(RakDataOutput const&);
+    RakDataOutput();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 9

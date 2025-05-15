@@ -13,6 +13,10 @@ class Player;
 
 class PlayerUIContainerModel : public ::PlayerUIContainerModelBase {
 public:
+    // prevent constructor by default
+    PlayerUIContainerModel();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

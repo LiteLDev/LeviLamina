@@ -15,6 +15,7 @@ public:
     // prevent constructor by default
     EntityStorageKeyComponent& operator=(EntityStorageKeyComponent const&);
     EntityStorageKeyComponent(EntityStorageKeyComponent const&);
+    EntityStorageKeyComponent();
 
 public:
     // member functions

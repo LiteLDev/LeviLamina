@@ -47,6 +47,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    OverworldGenerator2d();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 41

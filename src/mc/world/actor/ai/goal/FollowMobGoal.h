@@ -24,6 +24,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FollowMobGoal& operator=(FollowMobGoal const&);
+    FollowMobGoal(FollowMobGoal const&);
+    FollowMobGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -22,6 +22,7 @@ public:
 public:
     // prevent constructor by default
     CameraAttachComponent& operator=(CameraAttachComponent const&);
+    CameraAttachComponent();
 
 public:
     // member functions

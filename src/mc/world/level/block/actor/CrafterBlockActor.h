@@ -65,6 +65,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CrafterBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 27

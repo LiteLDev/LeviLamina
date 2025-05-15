@@ -17,6 +17,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockMaterialInstancesComponent();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit BlockMaterialInstancesComponent(

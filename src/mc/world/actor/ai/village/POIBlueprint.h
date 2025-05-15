@@ -22,6 +22,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    POIBlueprint();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI POIBlueprint(

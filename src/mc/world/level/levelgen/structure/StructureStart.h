@@ -45,23 +45,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void calculateBoundingBox();
+    MCAPI void calculateBoundingBox();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
 
-    MCNAPI int $getMaxYSpawnOffset() const;
+    MCFOLD int $getMaxYSpawnOffset() const;
     // NOLINTEND
 
 public:

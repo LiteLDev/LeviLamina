@@ -38,6 +38,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TradeInterestGoal& operator=(TradeInterestGoal const&);
+    TradeInterestGoal(TradeInterestGoal const&);
+    TradeInterestGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

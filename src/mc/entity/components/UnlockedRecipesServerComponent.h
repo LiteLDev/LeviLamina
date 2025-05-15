@@ -68,6 +68,7 @@ public:
 public:
     // prevent constructor by default
     UnlockedRecipesServerComponent& operator=(UnlockedRecipesServerComponent const&);
+    UnlockedRecipesServerComponent();
 
 public:
     // member functions

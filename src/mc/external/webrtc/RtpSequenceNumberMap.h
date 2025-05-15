@@ -18,6 +18,10 @@ public:
     struct Info {};
 
 public:
+    // prevent constructor by default
+    RtpSequenceNumberMap();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::optional<::webrtc::RtpSequenceNumberMap::Info> Get(ushort) const;

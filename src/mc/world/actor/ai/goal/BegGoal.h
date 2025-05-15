@@ -27,6 +27,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BegGoal& operator=(BegGoal const&);
+    BegGoal(BegGoal const&);
+    BegGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

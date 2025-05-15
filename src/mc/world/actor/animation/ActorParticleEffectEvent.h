@@ -17,6 +17,7 @@ public:
     // prevent constructor by default
     ActorParticleEffectEvent& operator=(ActorParticleEffectEvent const&);
     ActorParticleEffectEvent(ActorParticleEffectEvent const&);
+    ActorParticleEffectEvent();
 
 public:
     // member functions

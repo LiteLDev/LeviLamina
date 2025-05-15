@@ -26,6 +26,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StyledStreamWriter();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit StyledStreamWriter(::std::string indentation);

@@ -12,12 +12,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::string toString() const;
+    MCAPI ::std::string toString() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::EffectDuration const& INFINITE_DURATION();
+    MCAPI static ::EffectDuration const& INFINITE_DURATION();
     // NOLINTEND
 };

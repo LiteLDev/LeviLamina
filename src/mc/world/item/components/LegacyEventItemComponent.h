@@ -23,6 +23,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LegacyEventItemComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7

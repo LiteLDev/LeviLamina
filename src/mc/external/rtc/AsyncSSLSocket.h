@@ -11,6 +11,10 @@ namespace rtc {
 
 class AsyncSSLSocket {
 public:
+    // prevent constructor by default
+    AsyncSSLSocket();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit AsyncSSLSocket(::rtc::Socket*);

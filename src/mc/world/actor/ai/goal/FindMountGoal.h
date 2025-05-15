@@ -32,6 +32,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FindMountGoal& operator=(FindMountGoal const&);
+    FindMountGoal(FindMountGoal const&);
+    FindMountGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

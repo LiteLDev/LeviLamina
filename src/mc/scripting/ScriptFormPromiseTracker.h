@@ -88,6 +88,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptFormPromiseTracker& operator=(ScriptFormPromiseTracker const&);
+    ScriptFormPromiseTracker(ScriptFormPromiseTracker const&);
+    ScriptFormPromiseTracker();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 61

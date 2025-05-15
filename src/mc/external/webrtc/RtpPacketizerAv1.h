@@ -22,6 +22,10 @@ public:
     struct Packet {};
 
 public:
+    // prevent constructor by default
+    RtpPacketizerAv1();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI uchar AggregationHeader() const;

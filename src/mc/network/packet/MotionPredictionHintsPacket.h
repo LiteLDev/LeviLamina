@@ -26,6 +26,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MotionPredictionHintsPacket();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

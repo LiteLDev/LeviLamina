@@ -42,6 +42,7 @@ public:
         // prevent constructor by default
         StoredPacket& operator=(StoredPacket const&);
         StoredPacket(StoredPacket const&);
+        StoredPacket();
 
     public:
         // member functions
@@ -69,6 +70,10 @@ public:
         MCNAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // prevent constructor by default
+    RtpPacketHistory();
 
 public:
     // member functions

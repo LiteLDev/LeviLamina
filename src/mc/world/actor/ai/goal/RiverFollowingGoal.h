@@ -22,6 +22,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RiverFollowingGoal& operator=(RiverFollowingGoal const&);
+    RiverFollowingGoal(RiverFollowingGoal const&);
+    RiverFollowingGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

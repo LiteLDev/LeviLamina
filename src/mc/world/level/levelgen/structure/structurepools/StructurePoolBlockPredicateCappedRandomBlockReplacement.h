@@ -29,6 +29,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StructurePoolBlockPredicateCappedRandomBlockReplacement();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

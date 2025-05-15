@@ -29,6 +29,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FindUnderwaterTreasureGoal& operator=(FindUnderwaterTreasureGoal const&);
+    FindUnderwaterTreasureGoal(FindUnderwaterTreasureGoal const&);
+    FindUnderwaterTreasureGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

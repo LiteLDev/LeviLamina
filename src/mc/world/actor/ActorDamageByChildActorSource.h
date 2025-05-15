@@ -28,6 +28,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActorDamageByChildActorSource();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

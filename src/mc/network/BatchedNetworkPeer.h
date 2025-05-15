@@ -36,6 +36,7 @@ public:
         // prevent constructor by default
         DataCallback& operator=(DataCallback const&);
         DataCallback(DataCallback const&);
+        DataCallback();
 
     public:
         // member functions
@@ -74,6 +75,10 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                                                mSentPackets;
     ::ll::TypedStorage<1, 1, bool>                                                  mAsyncEnabled;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BatchedNetworkPeer();
 
 public:
     // virtual functions

@@ -32,6 +32,7 @@ public:
     // prevent constructor by default
     IsSolidMobNearbyComponent& operator=(IsSolidMobNearbyComponent const&);
     IsSolidMobNearbyComponent(IsSolidMobNearbyComponent const&);
+    IsSolidMobNearbyComponent();
 
 public:
     // member functions

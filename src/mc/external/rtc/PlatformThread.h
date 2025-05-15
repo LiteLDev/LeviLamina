@@ -11,6 +11,10 @@ namespace rtc {
 
 class PlatformThread {
 public:
+    // prevent constructor by default
+    PlatformThread();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void Finalize();

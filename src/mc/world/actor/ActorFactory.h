@@ -43,6 +43,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActorFactory();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

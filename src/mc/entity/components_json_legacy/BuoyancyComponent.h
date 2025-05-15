@@ -27,6 +27,7 @@ public:
 public:
     // prevent constructor by default
     BuoyancyComponent(BuoyancyComponent const&);
+    BuoyancyComponent();
 
 public:
     // member functions

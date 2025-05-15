@@ -11,6 +11,10 @@ namespace rtc {
 
 class BufferedReadAdapter {
 public:
+    // prevent constructor by default
+    BufferedReadAdapter();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void BufferInput(bool);

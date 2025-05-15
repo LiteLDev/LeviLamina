@@ -45,33 +45,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void dropSlot(int slot, bool onlyClearContainer, bool dropAll, bool randomly);
+    MCAPI void dropSlot(int slot, bool onlyClearContainer, bool dropAll, bool randomly);
 
-    MCNAPI ::std::vector<::ItemStack> getComplexItems();
+    MCAPI ::std::vector<::ItemStack> getComplexItems();
 
-    MCNAPI void setupDefault();
+    MCAPI void setupDefault();
 
-    MCNAPI void tick(int selectedSlot);
+    MCAPI void tick(int selectedSlot);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $init();
+    MCAPI void $init();
 
-    MCNAPI bool $add(::ItemStack& item);
+    MCAPI bool $add(::ItemStack& item);
 
-    MCNAPI bool $canAdd(::ItemStack const& item) const;
+    MCAPI bool $canAdd(::ItemStack const& item) const;
 
-    MCNAPI int $getFirstEmptySlot() const;
+    MCAPI int $getFirstEmptySlot() const;
 
-    MCNAPI int $getEmptySlotsCount() const;
+    MCFOLD int $getEmptySlotsCount() const;
 
-    MCNAPI void $setContainerSize(int size);
+    MCAPI void $setContainerSize(int size);
 
-    MCNAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCFOLD void $setItem(int modelSlot, ::ItemStack const& item);
 
-    MCNAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
+    MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
     // NOLINTEND
 
 public:

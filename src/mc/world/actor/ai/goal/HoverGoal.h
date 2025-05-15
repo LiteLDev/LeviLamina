@@ -21,6 +21,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    HoverGoal& operator=(HoverGoal const&);
+    HoverGoal(HoverGoal const&);
+    HoverGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

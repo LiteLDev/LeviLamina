@@ -84,64 +84,64 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ItemUseInventoryTransaction();
+    MCAPI ItemUseInventoryTransaction();
 
-    MCNAPI ItemUseInventoryTransaction(::ItemUseInventoryTransaction const&);
+    MCAPI ItemUseInventoryTransaction(::ItemUseInventoryTransaction const&);
 
-    MCNAPI explicit ItemUseInventoryTransaction(::InventoryTransaction const& transaction);
+    MCAPI explicit ItemUseInventoryTransaction(::InventoryTransaction const& transaction);
 
-    MCNAPI ::InventoryTransactionError
+    MCAPI ::InventoryTransactionError
     handle(::IItemUseTransactionSubject& player, ::ILegacyItemUseTransactionSubject& legacy, bool isSenderAuthority)
         const;
 
-    MCNAPI ::ItemUseInventoryTransaction& operator=(::ItemUseInventoryTransaction const&);
+    MCAPI ::ItemUseInventoryTransaction& operator=(::ItemUseInventoryTransaction const&);
 
-    MCNAPI ::ItemUseInventoryTransaction& setSelectedItem(::ItemStack const& item);
+    MCAPI ::ItemUseInventoryTransaction& setSelectedItem(::ItemStack const& item);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void resendBlocksAroundArea(::Player& player, ::BlockPos const& pos, uchar facing);
+    MCAPI static void resendBlocksAroundArea(::Player& player, ::BlockPos const& pos, uchar facing);
 
-    MCNAPI static void resendPlayerState(::Player& player);
+    MCAPI static void resendPlayerState(::Player& player);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::BidirectionalUnorderedMap<::ItemUseInventoryTransaction::ActionType, ::std::string> const&
+    MCAPI static ::BidirectionalUnorderedMap<::ItemUseInventoryTransaction::ActionType, ::std::string> const&
     actionTypeMap();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::ItemUseInventoryTransaction const&);
+    MCAPI void* $ctor(::ItemUseInventoryTransaction const&);
 
-    MCNAPI void* $ctor(::InventoryTransaction const& transaction);
+    MCAPI void* $ctor(::InventoryTransaction const& transaction);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
 
-    MCNAPI void $write(::BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCNAPI void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
+    MCFOLD void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
-    MCNAPI void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
+    MCAPI void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
 
-    MCNAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
+    MCAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
     // NOLINTEND
 
 public:

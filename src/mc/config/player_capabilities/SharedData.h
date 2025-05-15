@@ -22,6 +22,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SharedData& operator=(SharedData const&);
+    SharedData(SharedData const&);
+    SharedData();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

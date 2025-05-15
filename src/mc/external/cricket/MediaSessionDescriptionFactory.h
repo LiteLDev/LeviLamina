@@ -50,6 +50,10 @@ public:
     };
 
 public:
+    // prevent constructor by default
+    MediaSessionDescriptionFactory();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::webrtc::

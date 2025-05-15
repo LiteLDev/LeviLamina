@@ -22,6 +22,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StructurePoolBlockPredicateStateMatchRandom& operator=(StructurePoolBlockPredicateStateMatchRandom const&);
+    StructurePoolBlockPredicateStateMatchRandom(StructurePoolBlockPredicateStateMatchRandom const&);
+    StructurePoolBlockPredicateStateMatchRandom();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

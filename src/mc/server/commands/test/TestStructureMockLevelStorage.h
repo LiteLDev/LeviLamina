@@ -23,6 +23,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TestStructureMockLevelStorage& operator=(TestStructureMockLevelStorage const&);
+    TestStructureMockLevelStorage(TestStructureMockLevelStorage const&);
+    TestStructureMockLevelStorage();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

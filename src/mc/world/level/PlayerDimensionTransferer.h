@@ -49,6 +49,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PlayerDimensionTransferer();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -24,6 +24,7 @@ public:
 public:
     // prevent constructor by default
     UpdateSubChunkNetworkBlockInfo& operator=(UpdateSubChunkNetworkBlockInfo const&);
+    UpdateSubChunkNetworkBlockInfo();
 
 public:
     // member functions

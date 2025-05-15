@@ -13,6 +13,10 @@ class Random;
 
 class BuriedTreasureStart : public ::StructureStart {
 public:
+    // prevent constructor by default
+    BuriedTreasureStart();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

@@ -49,6 +49,7 @@ public:
     // prevent constructor by default
     FlockingComponent& operator=(FlockingComponent const&);
     FlockingComponent(FlockingComponent const&);
+    FlockingComponent();
 
 public:
     // member functions

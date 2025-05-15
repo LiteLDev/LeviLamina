@@ -29,6 +29,7 @@ public:
     // prevent constructor by default
     TimerComponent& operator=(TimerComponent const&);
     TimerComponent(TimerComponent const&);
+    TimerComponent();
 
 public:
     // member functions

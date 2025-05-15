@@ -18,6 +18,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SitGoal& operator=(SitGoal const&);
+    SitGoal(SitGoal const&);
+    SitGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

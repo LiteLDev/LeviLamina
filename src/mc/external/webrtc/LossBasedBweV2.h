@@ -55,6 +55,10 @@ public:
     struct Result {};
 
 public:
+    // prevent constructor by default
+    LossBasedBweV2();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI double AdjustBiasFactor(double, double) const;

@@ -32,6 +32,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    WorkGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7

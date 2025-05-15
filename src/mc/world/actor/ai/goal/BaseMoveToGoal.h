@@ -36,6 +36,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BaseMoveToGoal& operator=(BaseMoveToGoal const&);
+    BaseMoveToGoal(BaseMoveToGoal const&);
+    BaseMoveToGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

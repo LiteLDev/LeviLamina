@@ -6,6 +6,10 @@ namespace webrtc {
 
 class RtcEventAlrState {
 public:
+    // prevent constructor by default
+    RtcEventAlrState();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit RtcEventAlrState(bool);

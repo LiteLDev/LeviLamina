@@ -29,6 +29,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PackInfoData();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI PackInfoData(

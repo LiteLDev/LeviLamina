@@ -8,6 +8,10 @@
 
 class InstantaneousAttributeBuff : public ::AttributeBuff {
 public:
+    // prevent constructor by default
+    InstantaneousAttributeBuff();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

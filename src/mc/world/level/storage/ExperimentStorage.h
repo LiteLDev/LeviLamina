@@ -18,6 +18,7 @@ public:
 public:
     // prevent constructor by default
     ExperimentStorage(ExperimentStorage const&);
+    ExperimentStorage();
 
 public:
     // member functions

@@ -15,6 +15,10 @@ namespace cricket {
 
 class BasicPortAllocator {
 public:
+    // prevent constructor by default
+    BasicPortAllocator();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI

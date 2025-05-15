@@ -36,6 +36,7 @@ public:
     // prevent constructor by default
     HomeComponent& operator=(HomeComponent const&);
     HomeComponent(HomeComponent const&);
+    HomeComponent();
 
 public:
     // member functions

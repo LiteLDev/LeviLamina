@@ -16,6 +16,10 @@ class BlockSource;
 
 class BushBlock : public ::FoliageBlock {
 public:
+    // prevent constructor by default
+    BushBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 79

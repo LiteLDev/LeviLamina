@@ -6,6 +6,10 @@ namespace rtc {
 
 struct BitBufferWriter {
 public:
+    // prevent constructor by default
+    BitBufferWriter();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI BitBufferWriter(uchar*, uint64);

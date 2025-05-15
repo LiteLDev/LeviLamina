@@ -6,6 +6,10 @@ namespace rtc {
 
 struct SSLCertificateStats {
 public:
+    // prevent constructor by default
+    SSLCertificateStats();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::rtc::SSLCertificateStats> Copy() const;

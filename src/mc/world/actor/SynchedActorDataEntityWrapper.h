@@ -26,6 +26,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SynchedActorDataEntityWrapper();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit SynchedActorDataEntityWrapper(::EntityContext& entity);

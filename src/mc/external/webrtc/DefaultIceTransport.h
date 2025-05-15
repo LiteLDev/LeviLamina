@@ -11,6 +11,10 @@ namespace webrtc {
 
 class DefaultIceTransport {
 public:
+    // prevent constructor by default
+    DefaultIceTransport();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit DefaultIceTransport(::std::unique_ptr<::cricket::P2PTransportChannel>);

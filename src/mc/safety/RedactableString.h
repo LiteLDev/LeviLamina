@@ -19,6 +19,7 @@ public:
     // prevent constructor by default
     RedactableString& operator=(RedactableString const&);
     RedactableString(RedactableString const&);
+    RedactableString();
 
 public:
     // member functions

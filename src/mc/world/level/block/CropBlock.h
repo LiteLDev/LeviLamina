@@ -23,6 +23,10 @@ class Random;
 
 class CropBlock : public ::FoliageBlock {
 public:
+    // prevent constructor by default
+    CropBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 81

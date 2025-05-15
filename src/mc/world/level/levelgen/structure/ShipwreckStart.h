@@ -13,6 +13,10 @@ class Random;
 
 class ShipwreckStart : public ::StructureStart {
 public:
+    // prevent constructor by default
+    ShipwreckStart();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

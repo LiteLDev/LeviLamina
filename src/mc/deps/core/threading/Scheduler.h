@@ -51,6 +51,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Scheduler();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

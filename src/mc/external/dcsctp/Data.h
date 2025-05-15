@@ -24,6 +24,7 @@ public:
     // prevent constructor by default
     Data& operator=(Data const&);
     Data(Data const&);
+    Data();
 
 public:
     // member functions

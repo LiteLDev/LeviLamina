@@ -47,6 +47,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    AvoidMobTypeGoal& operator=(AvoidMobTypeGoal const&);
+    AvoidMobTypeGoal(AvoidMobTypeGoal const&);
+    AvoidMobTypeGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -20,4 +20,10 @@ public:
     ::ll::TypedStorage<8, 8, ::Block const&>                   mExtraBlock;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>> mTag;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    LegacyStructureBlockInfo& operator=(LegacyStructureBlockInfo const&);
+    LegacyStructureBlockInfo(LegacyStructureBlockInfo const&);
+    LegacyStructureBlockInfo();
 };

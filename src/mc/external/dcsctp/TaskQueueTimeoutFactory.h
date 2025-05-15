@@ -17,6 +17,10 @@ public:
     // TaskQueueTimeoutFactory inner types define
     class TaskQueueTimeout {
     public:
+        // prevent constructor by default
+        TaskQueueTimeout();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI TaskQueueTimeout(::dcsctp::TaskQueueTimeoutFactory&, ::webrtc::TaskQueueBase::DelayPrecision);

@@ -21,6 +21,7 @@ public:
     // prevent constructor by default
     RepeatingTaskHandle& operator=(RepeatingTaskHandle const&);
     RepeatingTaskHandle(RepeatingTaskHandle const&);
+    RepeatingTaskHandle();
 
 public:
     // member functions

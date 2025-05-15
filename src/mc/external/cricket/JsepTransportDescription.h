@@ -13,6 +13,7 @@ struct JsepTransportDescription {
 public:
     // prevent constructor by default
     JsepTransportDescription& operator=(JsepTransportDescription const&);
+    JsepTransportDescription();
 
 public:
     // member functions

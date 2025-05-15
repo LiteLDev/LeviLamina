@@ -67,6 +67,10 @@ public:
         enum class FilterMode : uint {};
 
     public:
+        // prevent constructor by default
+        RequestInfo();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI explicit RequestInfo(::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>);
@@ -109,6 +113,7 @@ public:
     public:
         // prevent constructor by default
         RtpTransceiverStatsInfo& operator=(RtpTransceiverStatsInfo const&);
+        RtpTransceiverStatsInfo();
 
     public:
         // member functions
@@ -126,6 +131,10 @@ public:
         MCNAPI void* $ctor(::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo&&);
         // NOLINTEND
     };
+
+public:
+    // prevent constructor by default
+    RTCStatsCollector();
 
 public:
     // member functions

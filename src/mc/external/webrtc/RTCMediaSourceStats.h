@@ -13,6 +13,7 @@ class RTCMediaSourceStats {
 public:
     // prevent constructor by default
     RTCMediaSourceStats& operator=(RTCMediaSourceStats const&);
+    RTCMediaSourceStats();
 
 public:
     // member functions

@@ -13,6 +13,10 @@ namespace webrtc {
 
 struct FrequencyTracker {
 public:
+    // prevent constructor by default
+    FrequencyTracker();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit FrequencyTracker(::webrtc::TimeDelta);

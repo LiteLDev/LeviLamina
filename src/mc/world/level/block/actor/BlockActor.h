@@ -61,6 +61,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

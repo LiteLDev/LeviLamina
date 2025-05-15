@@ -15,6 +15,10 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptLocationOutOfWorldBoundsError : public ::Scripting::Error {
 public:
+    // prevent constructor by default
+    ScriptLocationOutOfWorldBoundsError();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptLocationOutOfWorldBoundsError(::std::string const& details, ::Vec3 const& pos);

@@ -73,6 +73,7 @@ public:
 public:
     // prevent constructor by default
     ItemRegistryRef& operator=(ItemRegistryRef const&);
+    ItemRegistryRef();
 
 public:
     // member functions

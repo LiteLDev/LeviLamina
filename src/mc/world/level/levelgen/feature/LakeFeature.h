@@ -25,6 +25,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LakeFeature& operator=(LakeFeature const&);
+    LakeFeature(LakeFeature const&);
+    LakeFeature();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

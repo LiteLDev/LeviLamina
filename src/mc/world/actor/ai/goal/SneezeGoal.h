@@ -31,6 +31,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SneezeGoal& operator=(SneezeGoal const&);
+    SneezeGoal(SneezeGoal const&);
+    SneezeGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

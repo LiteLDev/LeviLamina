@@ -11,6 +11,10 @@ namespace webrtc {
 
 class RTCAudioSourceStats {
 public:
+    // prevent constructor by default
+    RTCAudioSourceStats();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RTCAudioSourceStats(::std::string, ::webrtc::Timestamp);

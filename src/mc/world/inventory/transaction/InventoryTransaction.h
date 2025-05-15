@@ -29,6 +29,7 @@ public:
 public:
     // prevent constructor by default
     InventoryTransaction& operator=(InventoryTransaction const&);
+    InventoryTransaction();
 
 public:
     // member functions

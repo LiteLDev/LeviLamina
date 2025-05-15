@@ -18,6 +18,10 @@ namespace VanillaWorldSystems {
 
 class Impl {
 public:
+    // prevent constructor by default
+    Impl();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI Impl(

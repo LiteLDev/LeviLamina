@@ -52,6 +52,10 @@ public:
     struct InitializePortAllocatorResult {};
 
 public:
+    // prevent constructor by default
+    PeerConnection();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>>

@@ -30,6 +30,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CoalItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 107

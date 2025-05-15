@@ -29,6 +29,7 @@ public:
     // prevent constructor by default
     DamageSensorComponent& operator=(DamageSensorComponent const&);
     DamageSensorComponent(DamageSensorComponent const&);
+    DamageSensorComponent();
 
 public:
     // member functions

@@ -24,6 +24,7 @@ public:
 public:
     // prevent constructor by default
     TemporalAttributeBuff& operator=(TemporalAttributeBuff const&);
+    TemporalAttributeBuff();
 
 public:
     // virtual functions

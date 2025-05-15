@@ -9,6 +9,7 @@ struct BlockPatternPostEvent : public ::BlockPatternEvent {
 public:
     // prevent constructor by default
     BlockPatternPostEvent& operator=(BlockPatternPostEvent const&);
+    BlockPatternPostEvent();
 
 public:
     // member functions

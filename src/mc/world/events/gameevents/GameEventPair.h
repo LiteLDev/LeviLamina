@@ -19,6 +19,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GameEventPair& operator=(GameEventPair const&);
+    GameEventPair(GameEventPair const&);
+    GameEventPair();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ~GameEventPair();

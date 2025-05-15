@@ -21,6 +21,7 @@ public:
     // prevent constructor by default
     WeakEntityRef& operator=(WeakEntityRef const&);
     WeakEntityRef(WeakEntityRef const&);
+    WeakEntityRef();
 
 public:
     // member functions

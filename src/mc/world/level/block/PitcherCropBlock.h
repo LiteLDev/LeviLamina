@@ -32,6 +32,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PitcherCropBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 90

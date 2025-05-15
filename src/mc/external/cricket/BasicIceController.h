@@ -18,6 +18,10 @@ namespace cricket {
 
 class BasicIceController {
 public:
+    // prevent constructor by default
+    BasicIceController();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit BasicIceController(::cricket::IceControllerFactoryArgs const&);

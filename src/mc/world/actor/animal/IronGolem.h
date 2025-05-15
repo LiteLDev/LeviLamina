@@ -27,6 +27,10 @@ public:
     };
 
 public:
+    // prevent constructor by default
+    IronGolem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 154

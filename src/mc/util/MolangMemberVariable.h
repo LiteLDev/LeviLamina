@@ -17,6 +17,7 @@ public:
 public:
     // prevent constructor by default
     MolangMemberVariable& operator=(MolangMemberVariable const&);
+    MolangMemberVariable();
 
 public:
     // member functions

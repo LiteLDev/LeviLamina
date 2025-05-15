@@ -75,6 +75,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    InvestigateSuspiciousLocationGoal& operator=(InvestigateSuspiciousLocationGoal const&);
+    InvestigateSuspiciousLocationGoal(InvestigateSuspiciousLocationGoal const&);
+    InvestigateSuspiciousLocationGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

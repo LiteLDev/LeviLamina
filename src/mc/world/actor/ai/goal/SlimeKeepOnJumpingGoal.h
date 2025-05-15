@@ -19,6 +19,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SlimeKeepOnJumpingGoal& operator=(SlimeKeepOnJumpingGoal const&);
+    SlimeKeepOnJumpingGoal(SlimeKeepOnJumpingGoal const&);
+    SlimeKeepOnJumpingGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

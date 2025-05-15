@@ -23,6 +23,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LevelChunkGarbageCollector& operator=(LevelChunkGarbageCollector const&);
+    LevelChunkGarbageCollector(LevelChunkGarbageCollector const&);
+    LevelChunkGarbageCollector();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void flush();

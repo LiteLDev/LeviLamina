@@ -12,6 +12,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    HashedString();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit HashedString(nullptr_t);

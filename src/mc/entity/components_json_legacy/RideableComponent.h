@@ -24,6 +24,7 @@ public:
     // prevent constructor by default
     RideableComponent& operator=(RideableComponent const&);
     RideableComponent(RideableComponent const&);
+    RideableComponent();
 
 public:
     // member functions

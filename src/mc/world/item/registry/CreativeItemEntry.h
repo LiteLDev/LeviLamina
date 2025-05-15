@@ -25,6 +25,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CreativeItemEntry();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

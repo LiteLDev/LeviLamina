@@ -37,6 +37,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ExploreOutskirtsGoal& operator=(ExploreOutskirtsGoal const&);
+    ExploreOutskirtsGoal(ExploreOutskirtsGoal const&);
+    ExploreOutskirtsGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7

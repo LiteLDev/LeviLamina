@@ -11,6 +11,10 @@ namespace cricket {
 
 class SctpTransportFactory {
 public:
+    // prevent constructor by default
+    SctpTransportFactory();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit SctpTransportFactory(::rtc::Thread*);

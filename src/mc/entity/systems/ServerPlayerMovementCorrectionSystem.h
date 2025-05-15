@@ -26,7 +26,7 @@ struct TickingSystemWithInfo;
 namespace ServerPlayerMovementCorrectionSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _afterMovementSimulation(
+MCAPI void _afterMovementSimulation(
     ::UserEntityIdentifierComponent const& userIdentifier,
     ::Actor&                               actor,
     ::PlayerAuthInputPacket const&         packet,
@@ -37,7 +37,7 @@ MCNAPI void _afterMovementSimulation(
     ::BoatMovementComponent const*         boat
 );
 
-MCNAPI void _tickServerPlayerMovementCorrectionSystem(
+MCAPI void _tickServerPlayerMovementCorrectionSystem(
     ::StrictEntityContext const&                  player,
     ::ServerPlayerCurrentMovementComponent const& serverPlayerCurrentMovementComponent,
     ::UserEntityIdentifierComponent const&        userIdentifierComponent,
@@ -53,7 +53,7 @@ MCNAPI void _tickServerPlayerMovementCorrectionSystem(
         ::Optional<::BoatMovementComponent const>> const& replayableEntityView
 );
 
-MCNAPI ::TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
 } // namespace ServerPlayerMovementCorrectionSystem

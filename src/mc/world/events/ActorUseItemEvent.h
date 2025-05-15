@@ -23,6 +23,7 @@ public:
 public:
     // prevent constructor by default
     ActorUseItemEvent& operator=(ActorUseItemEvent const&);
+    ActorUseItemEvent();
 
 public:
     // member functions

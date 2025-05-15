@@ -27,6 +27,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    WeaponItem& operator=(WeaponItem const&);
+    WeaponItem(WeaponItem const&);
+    WeaponItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 81

@@ -29,6 +29,7 @@ public:
 public:
     // prevent constructor by default
     AttributeBuff(AttributeBuff const&);
+    AttributeBuff();
 
 public:
     // virtual functions
@@ -49,33 +50,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AttributeBuff(float amount, int operand, ::AttributeBuffType type);
+    MCAPI AttributeBuff(float amount, int operand, ::AttributeBuffType type);
 
-    MCNAPI AttributeBuff(float amount, int operand, ::ActorDamageSource const& source, ::AttributeBuffType type);
+    MCAPI AttributeBuff(float amount, int operand, ::ActorDamageSource const& source, ::AttributeBuffType type);
 
-    MCNAPI float getAmount() const;
+    MCAPI float getAmount() const;
 
-    MCNAPI ::AttributeBuff& operator=(::AttributeBuff const&);
+    MCAPI ::AttributeBuff& operator=(::AttributeBuff const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(float amount, int operand, ::AttributeBuffType type);
+    MCAPI void* $ctor(float amount, int operand, ::AttributeBuffType type);
 
-    MCNAPI void* $ctor(float amount, int operand, ::ActorDamageSource const& source, ::AttributeBuffType type);
+    MCAPI void* $ctor(float amount, int operand, ::ActorDamageSource const& source, ::AttributeBuffType type);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
+    MCAPI void $setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
     // NOLINTEND
 
 public:

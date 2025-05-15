@@ -66,6 +66,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DiggerItemComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

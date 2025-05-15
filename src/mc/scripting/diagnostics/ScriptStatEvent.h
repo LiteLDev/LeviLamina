@@ -19,6 +19,7 @@ public:
 public:
     // prevent constructor by default
     ScriptStatEvent(ScriptStatEvent const&);
+    ScriptStatEvent();
 
 public:
     // member functions

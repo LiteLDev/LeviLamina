@@ -14,6 +14,10 @@ class IPreliminarySurfaceProvider;
 
 class RuinedPortalStart : public ::StructureStart {
 public:
+    // prevent constructor by default
+    RuinedPortalStart();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

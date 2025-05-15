@@ -39,6 +39,10 @@ public:
     };
 
 public:
+    // prevent constructor by default
+    TCPPort();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::rtc::AsyncPacketSocket* GetIncoming(::rtc::SocketAddress const&, bool);

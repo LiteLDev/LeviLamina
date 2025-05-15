@@ -22,6 +22,7 @@ public:
     // prevent constructor by default
     BlockEventDispatcherToken& operator=(BlockEventDispatcherToken const&);
     BlockEventDispatcherToken(BlockEventDispatcherToken const&);
+    BlockEventDispatcherToken();
 
 public:
     // member functions

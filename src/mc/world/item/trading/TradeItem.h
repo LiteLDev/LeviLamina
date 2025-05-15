@@ -28,6 +28,7 @@ public:
     // prevent constructor by default
     TradeItem& operator=(TradeItem const&);
     TradeItem(TradeItem const&);
+    TradeItem();
 
 public:
     // member functions

@@ -13,6 +13,10 @@ class BlockSource;
 
 class DaylightDetectorBlockActor : public ::BlockActor {
 public:
+    // prevent constructor by default
+    DaylightDetectorBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

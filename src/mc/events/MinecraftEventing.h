@@ -378,6 +378,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MinecraftEventing();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

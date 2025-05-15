@@ -110,6 +110,12 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        RakNetNetworkPeer& operator=(RakNetNetworkPeer const&);
+        RakNetNetworkPeer(RakNetNetworkPeer const&);
+        RakNetNetworkPeer();
+
+    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 1
@@ -214,6 +220,12 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::RakNetConnector::PingCallbackData>>     mPingTimeCallbacks;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MPMCQueue<::std::function<void()>>>> mOwnedThreadWork;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RakNetConnector& operator=(RakNetConnector const&);
+    RakNetConnector(RakNetConnector const&);
+    RakNetConnector();
 
 public:
     // virtual functions

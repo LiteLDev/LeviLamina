@@ -87,6 +87,7 @@ public:
         // prevent constructor by default
         SoftEnumData& operator=(SoftEnumData const&);
         SoftEnumData(SoftEnumData const&);
+        SoftEnumData();
 
     public:
         // member functions
@@ -122,6 +123,7 @@ public:
         // prevent constructor by default
         ConstrainedValueData& operator=(ConstrainedValueData const&);
         ConstrainedValueData(ConstrainedValueData const&);
+        ConstrainedValueData();
 
     public:
         // member functions
@@ -158,25 +160,26 @@ public:
         // prevent constructor by default
         ParamData& operator=(ParamData const&);
         ParamData(ParamData const&);
+        ParamData();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ParamData(::AvailableCommandsPacket::ParamData&&);
+        MCAPI ParamData(::AvailableCommandsPacket::ParamData&&);
 
-        MCNAPI ~ParamData();
+        MCAPI ~ParamData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::AvailableCommandsPacket::ParamData&&);
+        MCAPI void* $ctor(::AvailableCommandsPacket::ParamData&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -192,25 +195,26 @@ public:
         // prevent constructor by default
         OverloadData& operator=(OverloadData const&);
         OverloadData(OverloadData const&);
+        OverloadData();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI OverloadData(::AvailableCommandsPacket::OverloadData&&);
+        MCAPI OverloadData(::AvailableCommandsPacket::OverloadData&&);
 
-        MCNAPI ~OverloadData();
+        MCAPI ~OverloadData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::AvailableCommandsPacket::OverloadData&&);
+        MCAPI void* $ctor(::AvailableCommandsPacket::OverloadData&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -231,6 +235,7 @@ public:
         // prevent constructor by default
         CommandData& operator=(CommandData const&);
         CommandData(CommandData const&);
+        CommandData();
 
     public:
         // member functions

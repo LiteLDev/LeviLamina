@@ -19,6 +19,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScaredGoal& operator=(ScaredGoal const&);
+    ScaredGoal(ScaredGoal const&);
+    ScaredGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

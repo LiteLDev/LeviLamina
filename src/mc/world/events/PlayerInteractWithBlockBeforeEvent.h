@@ -27,6 +27,7 @@ public:
 public:
     // prevent constructor by default
     PlayerInteractWithBlockBeforeEvent& operator=(PlayerInteractWithBlockBeforeEvent const&);
+    PlayerInteractWithBlockBeforeEvent();
 
 public:
     // member functions

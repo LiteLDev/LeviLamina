@@ -32,6 +32,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BannerItem& operator=(BannerItem const&);
+    BannerItem(BannerItem const&);
+    BannerItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 120

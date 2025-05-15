@@ -22,6 +22,7 @@ public:
     // prevent constructor by default
     MolangContextVariable& operator=(MolangContextVariable const&);
     MolangContextVariable(MolangContextVariable const&);
+    MolangContextVariable();
 
 public:
     // member functions

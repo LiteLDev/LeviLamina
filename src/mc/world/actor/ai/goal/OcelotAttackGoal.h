@@ -29,6 +29,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    OcelotAttackGoal& operator=(OcelotAttackGoal const&);
+    OcelotAttackGoal(OcelotAttackGoal const&);
+    OcelotAttackGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

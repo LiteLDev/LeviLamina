@@ -26,6 +26,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PetSleepWithOwnerGoal& operator=(PetSleepWithOwnerGoal const&);
+    PetSleepWithOwnerGoal(PetSleepWithOwnerGoal const&);
+    PetSleepWithOwnerGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

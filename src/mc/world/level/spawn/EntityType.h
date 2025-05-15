@@ -28,6 +28,7 @@ public:
 public:
     // prevent constructor by default
     EntityType& operator=(EntityType const&);
+    EntityType();
 
 public:
     // member functions

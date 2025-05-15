@@ -8,6 +8,7 @@ struct SsrcInfo {
 public:
     // prevent constructor by default
     SsrcInfo& operator=(SsrcInfo const&);
+    SsrcInfo();
 
 public:
     // member functions

@@ -14,6 +14,10 @@ namespace cereal {
 
 class StrictJSONCppSchemaReader : public ::cereal::JSONCppSchemaReaderBase {
 public:
+    // prevent constructor by default
+    StrictJSONCppSchemaReader();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 23

@@ -19,6 +19,7 @@ public:
 public:
     // prevent constructor by default
     PackIdVersion& operator=(PackIdVersion const&);
+    PackIdVersion();
 
 public:
     // member functions

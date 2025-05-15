@@ -89,6 +89,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GoAndGiveItemsToNoteblockGoal& operator=(GoAndGiveItemsToNoteblockGoal const&);
+    GoAndGiveItemsToNoteblockGoal(GoAndGiveItemsToNoteblockGoal const&);
+    GoAndGiveItemsToNoteblockGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

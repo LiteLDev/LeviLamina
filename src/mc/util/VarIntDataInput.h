@@ -19,6 +19,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    VarIntDataInput& operator=(VarIntDataInput const&);
+    VarIntDataInput(VarIntDataInput const&);
+    VarIntDataInput();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -31,6 +31,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActorDefinitionEvent();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ActorDefinitionEvent(::ActorDefinitionEvent const&);

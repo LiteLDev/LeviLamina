@@ -29,6 +29,7 @@ public:
     // prevent constructor by default
     BlockGeometryComponent& operator=(BlockGeometryComponent const&);
     BlockGeometryComponent(BlockGeometryComponent const&);
+    BlockGeometryComponent();
 
 public:
     // member functions

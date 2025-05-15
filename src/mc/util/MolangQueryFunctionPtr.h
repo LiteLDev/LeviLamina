@@ -29,6 +29,7 @@ public:
 public:
     // prevent constructor by default
     MolangQueryFunctionPtr& operator=(MolangQueryFunctionPtr const&);
+    MolangQueryFunctionPtr();
 
 public:
     // member functions

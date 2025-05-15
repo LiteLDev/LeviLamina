@@ -30,6 +30,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ServerFileChunkUploader& operator=(ServerFileChunkUploader const&);
+    ServerFileChunkUploader(ServerFileChunkUploader const&);
+    ServerFileChunkUploader();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

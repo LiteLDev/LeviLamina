@@ -26,6 +26,7 @@ public:
     // prevent constructor by default
     CommandBlockComponent& operator=(CommandBlockComponent const&);
     CommandBlockComponent(CommandBlockComponent const&);
+    CommandBlockComponent();
 
 public:
     // member functions

@@ -44,6 +44,10 @@ public:
         // OutgoingStream inner types define
         struct Item {
         public:
+            // prevent constructor by default
+            Item();
+
+        public:
             // member functions
             // NOLINTBEGIN
             MCNAPI Item(
@@ -63,6 +67,10 @@ public:
             );
             // NOLINTEND
         };
+
+    public:
+        // prevent constructor by default
+        OutgoingStream();
 
     public:
         // member functions
@@ -101,6 +109,10 @@ public:
 
     struct ThresholdWatcher {
     public:
+        // prevent constructor by default
+        ThresholdWatcher();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI void Decrease(uint64);
@@ -124,6 +136,10 @@ public:
         MCNAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // prevent constructor by default
+    RRSendQueue();
 
 public:
     // member functions

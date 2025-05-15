@@ -38,6 +38,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SleepGoal& operator=(SleepGoal const&);
+    SleepGoal(SleepGoal const&);
+    SleepGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

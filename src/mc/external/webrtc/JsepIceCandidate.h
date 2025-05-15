@@ -12,6 +12,10 @@ namespace webrtc {
 
 class JsepIceCandidate {
 public:
+    // prevent constructor by default
+    JsepIceCandidate();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool Initialize(::std::string const&, ::webrtc::SdpParseError*);

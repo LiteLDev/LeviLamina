@@ -7,6 +7,10 @@
 
 class CrossbowEnchant : public ::Enchant {
 public:
+    // prevent constructor by default
+    CrossbowEnchant();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

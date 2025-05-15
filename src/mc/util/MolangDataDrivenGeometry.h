@@ -21,6 +21,7 @@ public:
 public:
     // prevent constructor by default
     MolangDataDrivenGeometry& operator=(MolangDataDrivenGeometry const&);
+    MolangDataDrivenGeometry();
 
 public:
     // member functions

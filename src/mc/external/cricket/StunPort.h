@@ -15,6 +15,10 @@ namespace cricket {
 
 class StunPort {
 public:
+    // prevent constructor by default
+    StunPort();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI

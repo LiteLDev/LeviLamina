@@ -55,6 +55,10 @@ public:
 
     struct RegisteredSsrcs {
     public:
+        // prevent constructor by default
+        RegisteredSsrcs();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI RegisteredSsrcs(bool, ::webrtc::RtpRtcpInterface::Configuration const&);
@@ -105,6 +109,7 @@ public:
         // prevent constructor by default
         TmmbrInformation& operator=(TmmbrInformation const&);
         TmmbrInformation(TmmbrInformation const&);
+        TmmbrInformation();
 
     public:
         // member functions
@@ -126,6 +131,10 @@ public:
         MCNAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // prevent constructor by default
+    RTCPReceiver();
 
 public:
     // member functions

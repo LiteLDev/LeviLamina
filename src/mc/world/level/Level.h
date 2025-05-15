@@ -388,6 +388,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Level& operator=(Level const&);
+    Level(Level const&);
+    Level();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

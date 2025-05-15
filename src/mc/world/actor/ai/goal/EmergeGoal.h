@@ -73,6 +73,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EmergeGoal& operator=(EmergeGoal const&);
+    EmergeGoal(EmergeGoal const&);
+    EmergeGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

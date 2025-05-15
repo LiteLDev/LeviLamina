@@ -44,6 +44,10 @@ public:
     struct TemporalLayerStats {};
 
 public:
+    // prevent constructor by default
+    RTPSenderVideo();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void AddRtpHeaderExtensions(::webrtc::RTPVideoHeader const&, bool, bool, ::webrtc::RtpPacketToSend*) const;

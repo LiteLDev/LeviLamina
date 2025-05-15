@@ -11,6 +11,10 @@ namespace dcsctp {
 
 class DurationMs {
 public:
+    // prevent constructor by default
+    DurationMs();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit DurationMs(::webrtc::TimeDelta);

@@ -20,6 +20,10 @@ namespace webrtc {
 
 class ProbeController {
 public:
+    // prevent constructor by default
+    ProbeController();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void EnablePeriodicAlrProbing(bool);

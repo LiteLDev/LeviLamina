@@ -18,6 +18,10 @@ namespace webrtc {
 
 class RTPSender {
 public:
+    // prevent constructor by default
+    RTPSender();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> AllocatePacket(::rtc::ArrayView<uint const>);

@@ -26,6 +26,7 @@ public:
     // prevent constructor by default
     AdmireItemComponent& operator=(AdmireItemComponent const&);
     AdmireItemComponent(AdmireItemComponent const&);
+    AdmireItemComponent();
 
 public:
     // member functions

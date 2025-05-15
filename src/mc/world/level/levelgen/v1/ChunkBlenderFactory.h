@@ -69,6 +69,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ChunkBlenderFactory& operator=(ChunkBlenderFactory const&);
+    ChunkBlenderFactory(ChunkBlenderFactory const&);
+    ChunkBlenderFactory();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::shared_ptr<::ChunkBlender> _createChunkBlendingAttenuator(::ChunkPos const& lcPosition) const;

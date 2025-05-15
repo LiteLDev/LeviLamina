@@ -42,6 +42,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StructureFeature();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -79,9 +83,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StructureFeature(uint seed, ::HashedString structureFeatureType);
+    MCAPI StructureFeature(uint seed, ::HashedString structureFeatureType);
 
-    MCNAPI void addFeature(
+    MCAPI void addFeature(
         ::Dimension&                         dimension,
         ::Random&                            random,
         ::ChunkPos const&                    cp,
@@ -89,28 +93,28 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
 
-    MCNAPI void createBlueprints(
+    MCAPI void createBlueprints(
         ::Dimension&                         dimension,
         ::ChunkPos const&                    cp,
         ::BiomeSource const&                 biomeSource,
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
 
-    MCNAPI ::std::vector<::ChunkPos> findFarAwayStructures(::buffer_span<::ChunkPos> activeChunks, uint safetyBorder);
+    MCAPI ::std::vector<::ChunkPos> findFarAwayStructures(::buffer_span<::ChunkPos> activeChunks, uint safetyBorder);
 
-    MCNAPI void foreachIntersectingStructureStart(::BoundingBox const& bb, ::std::function<void(::StructureStart&)> fn);
+    MCAPI void foreachIntersectingStructureStart(::BoundingBox const& bb, ::std::function<void(::StructureStart&)> fn);
 
-    MCNAPI void garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks, uint safetyBorder);
+    MCAPI void garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks, uint safetyBorder);
 
-    MCNAPI bool isInsideBoundingFeature(int cellX, int cellY, int cellZ);
+    MCAPI bool isInsideBoundingFeature(int cellX, int cellY, int cellZ);
 
-    MCNAPI void postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random);
+    MCAPI void postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool findNearestFeaturePositionBySpacing(
+    MCAPI static bool findNearestFeaturePositionBySpacing(
         ::Dimension&                           dimension,
         ::IPreliminarySurfaceProvider const&   preliminarySurfaceLevel,
         ::StructureFeature&                    feature,
@@ -126,7 +130,7 @@ public:
         bool                                   maxSearchRadius
     );
 
-    MCNAPI static ::ChunkPos getChunkPosInSpace(
+    MCAPI static ::ChunkPos getChunkPosInSpace(
         ::ChunkPos const& cp,
         ::Random&         random,
         uint              levelSeed,
@@ -140,23 +144,23 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(uint seed, ::HashedString structureFeatureType);
+    MCAPI void* $ctor(uint seed, ::HashedString structureFeatureType);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $shouldAddHardcodedSpawnAreas() const;
+    MCFOLD bool $shouldAddHardcodedSpawnAreas() const;
 
-    MCNAPI bool $shouldPostProcessMobs() const;
+    MCFOLD bool $shouldPostProcessMobs() const;
 
-    MCNAPI bool $getNearestGeneratedFeature(
+    MCAPI bool $getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
         ::BlockPos const&                      origin,
@@ -166,7 +170,7 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCNAPI ::StructureStart* $getStructureAt(int cellX, int cellY, int cellZ);
+    MCAPI ::StructureStart* $getStructureAt(int cellX, int cellY, int cellZ);
     // NOLINTEND
 
 public:

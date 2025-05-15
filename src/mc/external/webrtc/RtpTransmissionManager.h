@@ -38,6 +38,10 @@ namespace webrtc {
 
 class RtpTransmissionManager {
 public:
+    // prevent constructor by default
+    RtpTransmissionManager();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void AddAudioTrack(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*);

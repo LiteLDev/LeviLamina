@@ -11,6 +11,10 @@ namespace cricket {
 
 class IceCredentialsIterator {
 public:
+    // prevent constructor by default
+    IceCredentialsIterator();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::cricket::IceParameters GetIceCredentials();

@@ -35,6 +35,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PanicGoal& operator=(PanicGoal const&);
+    PanicGoal(PanicGoal const&);
+    PanicGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

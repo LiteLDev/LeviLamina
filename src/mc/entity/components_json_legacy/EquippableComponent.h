@@ -21,6 +21,7 @@ public:
     // prevent constructor by default
     EquippableComponent& operator=(EquippableComponent const&);
     EquippableComponent(EquippableComponent const&);
+    EquippableComponent();
 
 public:
     // member functions

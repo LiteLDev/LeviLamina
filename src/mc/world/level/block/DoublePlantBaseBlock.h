@@ -31,6 +31,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DoublePlantBaseBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

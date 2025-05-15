@@ -13,6 +13,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Parameter();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI Parameter(float min, float max);

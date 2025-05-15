@@ -38,6 +38,7 @@ public:
 public:
     // prevent constructor by default
     Test& operator=(Test const&);
+    Test();
 
 public:
     // virtual functions

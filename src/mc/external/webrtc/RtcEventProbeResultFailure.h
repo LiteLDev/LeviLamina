@@ -9,6 +9,10 @@ namespace webrtc {
 
 class RtcEventProbeResultFailure {
 public:
+    // prevent constructor by default
+    RtcEventProbeResultFailure();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RtcEventProbeResultFailure(int, ::webrtc::ProbeFailureReason);

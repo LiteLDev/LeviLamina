@@ -56,6 +56,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MolangScriptArg();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI MolangScriptArg(::MolangScriptArg const&);

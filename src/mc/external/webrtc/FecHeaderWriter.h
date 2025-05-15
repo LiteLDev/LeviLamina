@@ -6,6 +6,10 @@ namespace webrtc {
 
 class FecHeaderWriter {
 public:
+    // prevent constructor by default
+    FecHeaderWriter();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI FecHeaderWriter(uint64, uint64, uint64);

@@ -20,6 +20,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SilverfishMergeWithStoneGoal& operator=(SilverfishMergeWithStoneGoal const&);
+    SilverfishMergeWithStoneGoal(SilverfishMergeWithStoneGoal const&);
+    SilverfishMergeWithStoneGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

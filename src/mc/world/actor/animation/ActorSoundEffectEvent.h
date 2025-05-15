@@ -17,6 +17,7 @@ public:
     // prevent constructor by default
     ActorSoundEffectEvent& operator=(ActorSoundEffectEvent const&);
     ActorSoundEffectEvent(ActorSoundEffectEvent const&);
+    ActorSoundEffectEvent();
 
 public:
     // member functions

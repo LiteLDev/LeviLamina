@@ -43,6 +43,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StructureTemplate();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

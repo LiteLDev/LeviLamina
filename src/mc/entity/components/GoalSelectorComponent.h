@@ -27,6 +27,7 @@ public:
     // prevent constructor by default
     GoalSelectorComponent& operator=(GoalSelectorComponent const&);
     GoalSelectorComponent(GoalSelectorComponent const&);
+    GoalSelectorComponent();
 
 public:
     // member functions

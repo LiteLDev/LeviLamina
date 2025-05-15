@@ -28,6 +28,7 @@ public:
     // prevent constructor by default
     SpawnExperienceOrbRequestQueueComponent& operator=(SpawnExperienceOrbRequestQueueComponent const&);
     SpawnExperienceOrbRequestQueueComponent(SpawnExperienceOrbRequestQueueComponent const&);
+    SpawnExperienceOrbRequestQueueComponent();
 
 public:
     // member functions

@@ -44,8 +44,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $finalize(::BlockSource&, ::IRandom&);
+    MCFOLD bool $finalize(::BlockSource&, ::IRandom&);
 
-    MCNAPI ::std::string $validate() const;
+    MCFOLD ::std::string $validate() const;
     // NOLINTEND
 };

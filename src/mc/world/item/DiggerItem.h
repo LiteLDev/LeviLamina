@@ -26,6 +26,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DiggerItem& operator=(DiggerItem const&);
+    DiggerItem(DiggerItem const&);
+    DiggerItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 36

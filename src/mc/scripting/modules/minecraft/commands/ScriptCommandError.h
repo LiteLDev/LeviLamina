@@ -15,6 +15,10 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptCommandError : public ::Scripting::Error {
 public:
+    // prevent constructor by default
+    ScriptCommandError();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptCommandError(::std::string messages, ::MCRESULT const& result);

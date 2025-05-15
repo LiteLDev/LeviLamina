@@ -15,6 +15,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MolangContextVariableMapWithCleanup& operator=(MolangContextVariableMapWithCleanup const&);
+    MolangContextVariableMapWithCleanup(MolangContextVariableMapWithCleanup const&);
+    MolangContextVariableMapWithCleanup();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ~MolangContextVariableMapWithCleanup();

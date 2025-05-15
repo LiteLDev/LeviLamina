@@ -40,6 +40,10 @@ public:
     };
 
 public:
+    // prevent constructor by default
+    DelayBasedBwe();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI DelayBasedBwe(::webrtc::FieldTrialsView const*, ::webrtc::RtcEventLog*, ::webrtc::NetworkStatePredictor*);

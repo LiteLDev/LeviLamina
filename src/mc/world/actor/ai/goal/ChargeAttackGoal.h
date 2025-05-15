@@ -24,6 +24,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ChargeAttackGoal& operator=(ChargeAttackGoal const&);
+    ChargeAttackGoal(ChargeAttackGoal const&);
+    ChargeAttackGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

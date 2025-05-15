@@ -18,6 +18,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    VexRandomMoveGoal& operator=(VexRandomMoveGoal const&);
+    VexRandomMoveGoal(VexRandomMoveGoal const&);
+    VexRandomMoveGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

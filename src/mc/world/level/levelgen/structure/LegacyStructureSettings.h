@@ -66,6 +66,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LegacyStructureSettings();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI LegacyStructureSettings(::LegacyStructureSettings const&);

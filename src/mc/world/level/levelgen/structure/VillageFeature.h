@@ -27,6 +27,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    VillageFeature();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

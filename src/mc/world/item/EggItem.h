@@ -23,6 +23,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EggItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 76

@@ -21,6 +21,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RunAroundLikeCrazyGoal& operator=(RunAroundLikeCrazyGoal const&);
+    RunAroundLikeCrazyGoal(RunAroundLikeCrazyGoal const&);
+    RunAroundLikeCrazyGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

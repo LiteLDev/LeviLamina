@@ -92,6 +92,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DigGoal& operator=(DigGoal const&);
+    DigGoal(DigGoal const&);
+    DigGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

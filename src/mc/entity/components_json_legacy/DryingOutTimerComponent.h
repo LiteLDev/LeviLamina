@@ -74,6 +74,7 @@ public:
     // prevent constructor by default
     DryingOutTimerComponent& operator=(DryingOutTimerComponent const&);
     DryingOutTimerComponent(DryingOutTimerComponent const&);
+    DryingOutTimerComponent();
 
 public:
     // member functions

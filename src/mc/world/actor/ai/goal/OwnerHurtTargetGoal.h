@@ -21,6 +21,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    OwnerHurtTargetGoal& operator=(OwnerHurtTargetGoal const&);
+    OwnerHurtTargetGoal(OwnerHurtTargetGoal const&);
+    OwnerHurtTargetGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

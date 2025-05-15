@@ -18,6 +18,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EndermanLeaveBlockGoal& operator=(EndermanLeaveBlockGoal const&);
+    EndermanLeaveBlockGoal(EndermanLeaveBlockGoal const&);
+    EndermanLeaveBlockGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

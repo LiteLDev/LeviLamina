@@ -31,6 +31,10 @@ namespace webrtc {
 
 class RtpVideoSender {
 public:
+    // prevent constructor by default
+    RtpVideoSender();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::webrtc::DataRate

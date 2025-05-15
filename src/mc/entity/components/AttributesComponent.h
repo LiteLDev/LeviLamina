@@ -16,6 +16,7 @@ public:
     // prevent constructor by default
     AttributesComponent& operator=(AttributesComponent const&);
     AttributesComponent(AttributesComponent const&);
+    AttributesComponent();
 
 public:
     // member functions

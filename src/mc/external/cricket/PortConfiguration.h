@@ -16,6 +16,10 @@ namespace cricket {
 
 struct PortConfiguration {
 public:
+    // prevent constructor by default
+    PortConfiguration();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void AddRelay(::cricket::RelayServerConfig const&);

@@ -124,6 +124,7 @@ public:
     // prevent constructor by default
     PlayerAuthInputPacket& operator=(PlayerAuthInputPacket const&);
     PlayerAuthInputPacket(PlayerAuthInputPacket const&);
+    PlayerAuthInputPacket();
 
 public:
     // virtual functions

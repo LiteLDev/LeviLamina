@@ -11,6 +11,10 @@ namespace rtc {
 
 struct CritScope {
 public:
+    // prevent constructor by default
+    CritScope();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit CritScope(::rtc::RecursiveCriticalSection const*);

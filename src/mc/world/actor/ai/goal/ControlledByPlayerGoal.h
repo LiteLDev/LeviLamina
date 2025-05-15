@@ -21,6 +21,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ControlledByPlayerGoal& operator=(ControlledByPlayerGoal const&);
+    ControlledByPlayerGoal(ControlledByPlayerGoal const&);
+    ControlledByPlayerGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

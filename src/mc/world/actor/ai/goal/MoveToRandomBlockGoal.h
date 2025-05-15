@@ -29,6 +29,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MoveToRandomBlockGoal& operator=(MoveToRandomBlockGoal const&);
+    MoveToRandomBlockGoal(MoveToRandomBlockGoal const&);
+    MoveToRandomBlockGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

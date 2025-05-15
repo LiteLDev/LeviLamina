@@ -50,6 +50,10 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        CZString();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI explicit CZString(char const* cstr);
@@ -101,6 +105,10 @@ public:
     ::ll::TypedStorage<8, 8, ::Json::Value::ValueHolder> value_;
     ::ll::TypedStorage<1, 1, ::Json::ValueType>          type_;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Value();
 
 public:
     // member functions

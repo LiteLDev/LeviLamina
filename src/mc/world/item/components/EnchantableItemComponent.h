@@ -25,6 +25,7 @@ public:
 public:
     // prevent constructor by default
     EnchantableItemComponent(EnchantableItemComponent const&);
+    EnchantableItemComponent();
 
 public:
     // virtual functions

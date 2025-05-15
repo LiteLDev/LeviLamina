@@ -30,6 +30,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SnackGoal& operator=(SnackGoal const&);
+    SnackGoal(SnackGoal const&);
+    SnackGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

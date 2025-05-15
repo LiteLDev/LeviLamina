@@ -38,6 +38,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LegacyChunkStorage& operator=(LegacyChunkStorage const&);
+    LegacyChunkStorage(LegacyChunkStorage const&);
+    LegacyChunkStorage();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

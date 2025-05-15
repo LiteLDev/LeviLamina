@@ -24,6 +24,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LeapAtTargetGoal& operator=(LeapAtTargetGoal const&);
+    LeapAtTargetGoal(LeapAtTargetGoal const&);
+    LeapAtTargetGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

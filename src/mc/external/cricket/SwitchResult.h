@@ -8,6 +8,7 @@ struct SwitchResult {
 public:
     // prevent constructor by default
     SwitchResult& operator=(SwitchResult const&);
+    SwitchResult();
 
 public:
     // member functions

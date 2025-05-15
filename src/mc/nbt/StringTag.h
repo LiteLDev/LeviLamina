@@ -20,6 +20,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StringTag();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

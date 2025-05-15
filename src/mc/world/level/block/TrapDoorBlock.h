@@ -26,6 +26,10 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 
 class TrapDoorBlock : public ::BlockLegacy {
 public:
+    // prevent constructor by default
+    TrapDoorBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 11

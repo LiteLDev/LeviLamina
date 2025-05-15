@@ -6,6 +6,10 @@ namespace webrtc {
 
 struct Random {
 public:
+    // prevent constructor by default
+    Random();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI int Rand(int, int);

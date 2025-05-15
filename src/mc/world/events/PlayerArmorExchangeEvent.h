@@ -27,6 +27,7 @@ public:
 public:
     // prevent constructor by default
     PlayerArmorExchangeEvent& operator=(PlayerArmorExchangeEvent const&);
+    PlayerArmorExchangeEvent();
 
 public:
     // member functions

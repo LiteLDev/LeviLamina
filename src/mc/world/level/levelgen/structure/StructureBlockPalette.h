@@ -48,6 +48,7 @@ public:
     public:
         // prevent constructor by default
         BlockPositionData& operator=(BlockPositionData const&);
+        BlockPositionData();
 
     public:
         // member functions

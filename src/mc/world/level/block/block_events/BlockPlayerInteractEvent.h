@@ -25,6 +25,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockPlayerInteractEvent& operator=(BlockPlayerInteractEvent const&);
+    BlockPlayerInteractEvent(BlockPlayerInteractEvent const&);
+    BlockPlayerInteractEvent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

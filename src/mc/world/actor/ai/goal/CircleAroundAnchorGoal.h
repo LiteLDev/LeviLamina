@@ -34,6 +34,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CircleAroundAnchorGoal& operator=(CircleAroundAnchorGoal const&);
+    CircleAroundAnchorGoal(CircleAroundAnchorGoal const&);
+    CircleAroundAnchorGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

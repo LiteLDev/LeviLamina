@@ -21,6 +21,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ChargeHeldItemGoal& operator=(ChargeHeldItemGoal const&);
+    ChargeHeldItemGoal(ChargeHeldItemGoal const&);
+    ChargeHeldItemGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

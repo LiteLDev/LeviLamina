@@ -94,6 +94,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SonicBoomGoal& operator=(SonicBoomGoal const&);
+    SonicBoomGoal(SonicBoomGoal const&);
+    SonicBoomGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

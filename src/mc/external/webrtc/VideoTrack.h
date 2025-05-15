@@ -16,6 +16,10 @@ namespace webrtc {
 
 class VideoTrack {
 public:
+    // prevent constructor by default
+    VideoTrack();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI

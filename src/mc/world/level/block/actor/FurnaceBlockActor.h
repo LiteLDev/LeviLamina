@@ -63,6 +63,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FurnaceBlockActor& operator=(FurnaceBlockActor const&);
+    FurnaceBlockActor(FurnaceBlockActor const&);
+    FurnaceBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7

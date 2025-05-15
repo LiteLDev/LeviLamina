@@ -23,6 +23,7 @@ public:
 public:
     // prevent constructor by default
     PlayerInteractWithEntityBeforeEvent& operator=(PlayerInteractWithEntityBeforeEvent const&);
+    PlayerInteractWithEntityBeforeEvent();
 
 public:
     // member functions

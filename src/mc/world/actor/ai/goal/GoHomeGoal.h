@@ -86,6 +86,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GoHomeGoal& operator=(GoHomeGoal const&);
+    GoHomeGoal(GoHomeGoal const&);
+    GoHomeGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

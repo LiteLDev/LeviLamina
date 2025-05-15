@@ -65,6 +65,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CommandLexer& operator=(CommandLexer const&);
+    CommandLexer(CommandLexer const&);
+    CommandLexer();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void step();

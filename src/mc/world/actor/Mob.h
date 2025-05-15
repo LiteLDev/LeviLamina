@@ -74,6 +74,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Mob();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

@@ -64,21 +64,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ItemUseOnActorInventoryTransaction& setSelectedItem(::ItemStack const& item);
+    MCAPI ::ItemUseOnActorInventoryTransaction& setSelectedItem(::ItemStack const& item);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
 
-    MCNAPI void $write(::BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCNAPI void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
+    MCFOLD void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
-    MCNAPI void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
+    MCFOLD void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
 
-    MCNAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
+    MCAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
     // NOLINTEND
 
 public:

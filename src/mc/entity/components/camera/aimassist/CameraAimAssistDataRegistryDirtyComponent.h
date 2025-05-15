@@ -17,6 +17,7 @@ public:
     // prevent constructor by default
     CameraAimAssistDataRegistryDirtyComponent& operator=(CameraAimAssistDataRegistryDirtyComponent const&);
     CameraAimAssistDataRegistryDirtyComponent(CameraAimAssistDataRegistryDirtyComponent const&);
+    CameraAimAssistDataRegistryDirtyComponent();
 
 public:
     // member functions

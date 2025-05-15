@@ -17,4 +17,10 @@ public:
     ::ll::TypedStorage<8, 8, ::SubChunkRequestManager&>                                       mManager;
     ::ll::TypedStorage<8, 64, ::std::function<void(::SubChunkPacket::SubChunkRequestResult)>> mCallback;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SubChunkRequestSubscriber& operator=(SubChunkRequestSubscriber const&);
+    SubChunkRequestSubscriber(SubChunkRequestSubscriber const&);
+    SubChunkRequestSubscriber();
 };

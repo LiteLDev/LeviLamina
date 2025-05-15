@@ -31,6 +31,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EntityContext& operator=(EntityContext const&);
+    EntityContext(EntityContext const&);
+    EntityContext();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::WeakRef<::EntityContext> getWeakRef() const;

@@ -21,6 +21,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DragonHoldingPatternGoal& operator=(DragonHoldingPatternGoal const&);
+    DragonHoldingPatternGoal(DragonHoldingPatternGoal const&);
+    DragonHoldingPatternGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

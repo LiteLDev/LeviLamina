@@ -25,6 +25,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockIsValidSpawnEvent& operator=(BlockIsValidSpawnEvent const&);
+    BlockIsValidSpawnEvent(BlockIsValidSpawnEvent const&);
+    BlockIsValidSpawnEvent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

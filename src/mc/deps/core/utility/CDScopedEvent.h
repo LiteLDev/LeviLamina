@@ -14,6 +14,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CDScopedEvent();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI CDScopedEvent(::CrashDumpLogStringID tag, ::CrashDumpLogStringID tagStart, ::CrashDumpLogStringID tagEnd);

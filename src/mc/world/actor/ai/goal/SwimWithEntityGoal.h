@@ -41,6 +41,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SwimWithEntityGoal& operator=(SwimWithEntityGoal const&);
+    SwimWithEntityGoal(SwimWithEntityGoal const&);
+    SwimWithEntityGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

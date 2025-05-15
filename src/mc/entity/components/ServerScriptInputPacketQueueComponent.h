@@ -18,6 +18,7 @@ public:
     // prevent constructor by default
     ServerScriptInputPacketQueueComponent& operator=(ServerScriptInputPacketQueueComponent const&);
     ServerScriptInputPacketQueueComponent(ServerScriptInputPacketQueueComponent const&);
+    ServerScriptInputPacketQueueComponent();
 
 public:
     // member functions

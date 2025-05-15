@@ -39,6 +39,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DropItemForGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

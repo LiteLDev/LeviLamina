@@ -25,6 +25,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SculkSensorBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

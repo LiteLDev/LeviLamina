@@ -21,6 +21,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EatCarriedItemGoal& operator=(EatCarriedItemGoal const&);
+    EatCarriedItemGoal(EatCarriedItemGoal const&);
+    EatCarriedItemGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

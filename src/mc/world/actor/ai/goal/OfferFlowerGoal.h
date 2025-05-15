@@ -83,6 +83,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    OfferFlowerGoal& operator=(OfferFlowerGoal const&);
+    OfferFlowerGoal(OfferFlowerGoal const&);
+    OfferFlowerGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

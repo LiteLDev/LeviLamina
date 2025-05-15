@@ -18,6 +18,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActorDefinitionStartedEvent& operator=(ActorDefinitionStartedEvent const&);
+    ActorDefinitionStartedEvent(ActorDefinitionStartedEvent const&);
+    ActorDefinitionStartedEvent();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ~ActorDefinitionStartedEvent();

@@ -29,6 +29,10 @@ public:
     };
 
 public:
+    // prevent constructor by default
+    Zombie();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 95

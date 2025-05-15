@@ -15,6 +15,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LevelEventHandlerRegistrar& operator=(LevelEventHandlerRegistrar const&);
+    LevelEventHandlerRegistrar(LevelEventHandlerRegistrar const&);
+    LevelEventHandlerRegistrar();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit LevelEventHandlerRegistrar(::ServerLevel& level);

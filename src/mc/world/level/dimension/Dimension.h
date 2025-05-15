@@ -152,6 +152,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Dimension& operator=(Dimension const&);
+    Dimension(Dimension const&);
+    Dimension();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

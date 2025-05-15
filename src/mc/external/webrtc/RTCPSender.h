@@ -78,6 +78,10 @@ public:
 
     class PacketSender {
     public:
+        // prevent constructor by default
+        PacketSender();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI PacketSender(::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)>, uint64);
@@ -101,6 +105,10 @@ public:
     struct ReportFlag {};
 
     class RtcpContext {};
+
+public:
+    // prevent constructor by default
+    RTCPSender();
 
 public:
     // member functions

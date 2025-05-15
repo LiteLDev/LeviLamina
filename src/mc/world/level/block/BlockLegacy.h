@@ -107,6 +107,7 @@ public:
         // prevent constructor by default
         NameInfo& operator=(NameInfo const&);
         NameInfo(NameInfo const&);
+        NameInfo();
 
     public:
         // member functions
@@ -243,6 +244,10 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        RearrangedStateCollection();
+
+    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
@@ -376,6 +381,12 @@ public:
     ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::BlockClientPredictionOverrides, 7>> mClientPredictionOverrides;
     ::ll::TypedStorage<8, 32, ::BlockEvents::BlockEventManager>                       mEventManager;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BlockLegacy& operator=(BlockLegacy const&);
+    BlockLegacy(BlockLegacy const&);
+    BlockLegacy();
 
 public:
     // virtual functions

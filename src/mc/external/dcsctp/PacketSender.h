@@ -15,6 +15,10 @@ namespace dcsctp {
 
 class PacketSender {
 public:
+    // prevent constructor by default
+    PacketSender();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI

@@ -122,6 +122,7 @@ public:
     // prevent constructor by default
     SoundEventRequest& operator=(SoundEventRequest const&);
     SoundEventRequest(SoundEventRequest const&);
+    SoundEventRequest();
 
 public:
     // member functions

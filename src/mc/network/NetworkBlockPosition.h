@@ -9,6 +9,7 @@ class NetworkBlockPosition : public ::BlockPos {
 public:
     // prevent constructor by default
     NetworkBlockPosition& operator=(NetworkBlockPosition const&);
+    NetworkBlockPosition();
 
 public:
     // member functions

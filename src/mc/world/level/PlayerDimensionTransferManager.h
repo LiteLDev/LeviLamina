@@ -41,6 +41,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PlayerDimensionTransferManager();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI PlayerDimensionTransferManager(

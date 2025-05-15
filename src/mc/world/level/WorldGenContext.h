@@ -22,6 +22,7 @@ public:
 public:
     // prevent constructor by default
     WorldGenContext& operator=(WorldGenContext const&);
+    WorldGenContext();
 
 public:
     // member functions

@@ -41,6 +41,7 @@ public:
         // prevent constructor by default
         Context& operator=(Context const&);
         Context(Context const&);
+        Context();
 
     public:
         // member functions
@@ -67,6 +68,7 @@ public:
         // prevent constructor by default
         FrameWithContext& operator=(FrameWithContext const&);
         FrameWithContext(FrameWithContext const&);
+        FrameWithContext();
 
     public:
         // member functions
@@ -94,6 +96,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::CallStack::FrameWithContext>> mFrames;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CallStack();
 
 public:
     // member functions

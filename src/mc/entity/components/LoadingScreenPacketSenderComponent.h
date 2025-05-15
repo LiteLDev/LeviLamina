@@ -17,6 +17,7 @@ public:
 public:
     // prevent constructor by default
     LoadingScreenPacketSenderComponent& operator=(LoadingScreenPacketSenderComponent const&);
+    LoadingScreenPacketSenderComponent();
 
 public:
     // member functions

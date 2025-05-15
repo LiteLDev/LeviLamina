@@ -34,6 +34,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    JigsawStructureBuilder();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -42,6 +42,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    OfferCollectionComponent& operator=(OfferCollectionComponent const&);
+    OfferCollectionComponent(OfferCollectionComponent const&);
+    OfferCollectionComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

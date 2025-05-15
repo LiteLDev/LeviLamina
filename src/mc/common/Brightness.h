@@ -7,6 +7,10 @@
 
 struct Brightness : public ::NewType<uchar> {
 public:
+    // prevent constructor by default
+    Brightness();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit Brightness(uchar&&);

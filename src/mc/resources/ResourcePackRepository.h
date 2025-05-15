@@ -96,6 +96,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ResourcePackRepository& operator=(ResourcePackRepository const&);
+    ResourcePackRepository(ResourcePackRepository const&);
+    ResourcePackRepository();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

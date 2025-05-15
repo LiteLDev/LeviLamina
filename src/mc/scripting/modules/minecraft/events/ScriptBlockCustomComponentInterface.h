@@ -12,6 +12,7 @@ public:
     // prevent constructor by default
     ScriptBlockCustomComponentInterface& operator=(ScriptBlockCustomComponentInterface const&);
     ScriptBlockCustomComponentInterface(ScriptBlockCustomComponentInterface const&);
+    ScriptBlockCustomComponentInterface();
 
 public:
     // member functions

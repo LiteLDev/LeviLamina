@@ -54,6 +54,7 @@ public:
 public:
     // prevent constructor by default
     CameraPresets(CameraPresets const&);
+    CameraPresets();
 
 public:
     // member functions

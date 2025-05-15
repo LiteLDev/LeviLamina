@@ -48,28 +48,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::gsl::not_null<::std::shared_ptr<
+    MCAPI ::std::optional<::gsl::not_null<::std::shared_ptr<
         ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>> const>>>
     get(::std::string_view key) const;
 
-    MCNAPI ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const* lookupByName(::std::string name) const;
+    MCFOLD ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const* lookupByName(::std::string name) const;
 
-    MCNAPI void record(
+    MCAPI void record(
         ::std::string_view                                                                          key,
         ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>> processors
     );
 
-    MCNAPI void registerBlockRules(
+    MCAPI void registerBlockRules(
         ::std::string                                                                   name,
         ::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockRule>>>&& ruleList
     );
 
-    MCNAPI ~JigsawStructureBlockRulesRegistry();
+    MCAPI ~JigsawStructureBlockRulesRegistry();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

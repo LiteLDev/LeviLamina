@@ -122,6 +122,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GameMode& operator=(GameMode const&);
+    GameMode(GameMode const&);
+    GameMode();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

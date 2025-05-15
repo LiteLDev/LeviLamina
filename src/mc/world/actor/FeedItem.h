@@ -55,6 +55,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FeedItem();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI FeedItem(::FeedItem const&);

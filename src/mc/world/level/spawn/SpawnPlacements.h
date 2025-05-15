@@ -41,6 +41,12 @@ public:
         ::ll::TypedStorage<8, 8, ::br::spawn::SpawnPlacements&> mParent;
         ::ll::TypedStorage<8, 8, uint64>                        mIdx;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PlacementRecord& operator=(PlacementRecord const&);
+        PlacementRecord(PlacementRecord const&);
+        PlacementRecord();
     };
 
     struct EntityRecord {

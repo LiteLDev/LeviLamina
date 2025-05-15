@@ -12,6 +12,10 @@ namespace cricket {
 
 class SrtpSession {
 public:
+    // prevent constructor by default
+    SrtpSession();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool DoSetKey(int, int, uchar const*, uint64, ::std::vector<int> const&);

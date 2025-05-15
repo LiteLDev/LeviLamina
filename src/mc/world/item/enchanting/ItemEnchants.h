@@ -26,6 +26,7 @@ public:
     // prevent constructor by default
     ItemEnchants& operator=(ItemEnchants const&);
     ItemEnchants(ItemEnchants const&);
+    ItemEnchants();
 
 public:
     // member functions

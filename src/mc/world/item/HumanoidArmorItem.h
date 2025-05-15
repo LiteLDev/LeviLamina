@@ -76,6 +76,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    HumanoidArmorItem& operator=(HumanoidArmorItem const&);
+    HumanoidArmorItem(HumanoidArmorItem const&);
+    HumanoidArmorItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 10

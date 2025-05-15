@@ -12,6 +12,10 @@ namespace cricket {
 
 class StunBindingRequest {
 public:
+    // prevent constructor by default
+    StunBindingRequest();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI StunBindingRequest(::cricket::UDPPort*, ::rtc::SocketAddress const&, int64);

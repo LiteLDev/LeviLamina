@@ -83,6 +83,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Biome();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

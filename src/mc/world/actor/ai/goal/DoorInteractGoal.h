@@ -31,6 +31,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DoorInteractGoal& operator=(DoorInteractGoal const&);
+    DoorInteractGoal(DoorInteractGoal const&);
+    DoorInteractGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

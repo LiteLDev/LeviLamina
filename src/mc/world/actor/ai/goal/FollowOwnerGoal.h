@@ -36,6 +36,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FollowOwnerGoal& operator=(FollowOwnerGoal const&);
+    FollowOwnerGoal(FollowOwnerGoal const&);
+    FollowOwnerGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

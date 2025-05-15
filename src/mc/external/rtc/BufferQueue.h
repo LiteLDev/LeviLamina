@@ -6,6 +6,10 @@ namespace rtc {
 
 struct BufferQueue {
 public:
+    // prevent constructor by default
+    BufferQueue();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI BufferQueue(uint64, uint64);

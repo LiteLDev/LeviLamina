@@ -37,6 +37,7 @@ public:
     // prevent constructor by default
     DepenetrationComponent& operator=(DepenetrationComponent const&);
     DepenetrationComponent(DepenetrationComponent const&);
+    DepenetrationComponent();
 
 public:
     // member functions

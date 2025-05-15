@@ -21,6 +21,10 @@ namespace cereal { struct ReflectionCtx; }
 
 class FishingRodItem : public ::ComponentItem {
 public:
+    // prevent constructor by default
+    FishingRodItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 108

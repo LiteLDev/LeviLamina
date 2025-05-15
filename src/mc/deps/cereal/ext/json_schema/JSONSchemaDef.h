@@ -20,6 +20,7 @@ struct JSONSchemaDef : public ::cereal::ext::internal::JSONSchemaInfo, public ::
 public:
     // prevent constructor by default
     JSONSchemaDef& operator=(JSONSchemaDef const&);
+    JSONSchemaDef();
 
 public:
     // member functions

@@ -13,6 +13,7 @@ public:
 public:
     // prevent constructor by default
     NetworkAddress(NetworkAddress const&);
+    NetworkAddress();
 
 public:
     // member functions

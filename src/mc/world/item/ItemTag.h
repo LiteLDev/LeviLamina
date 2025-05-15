@@ -7,6 +7,10 @@
 
 struct ItemTag : public ::HashedString {
 public:
+    // prevent constructor by default
+    ItemTag();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ItemTag(::std::string const& str);

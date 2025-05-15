@@ -27,6 +27,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SwimUpForBreathGoal& operator=(SwimUpForBreathGoal const&);
+    SwimUpForBreathGoal(SwimUpForBreathGoal const&);
+    SwimUpForBreathGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -75,6 +75,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Aquifer& operator=(Aquifer const&);
+    Aquifer(Aquifer const&);
+    Aquifer();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI Aquifer(

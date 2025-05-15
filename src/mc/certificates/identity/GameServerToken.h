@@ -24,6 +24,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GameServerToken();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI GameServerToken(::GameServerToken const& other);

@@ -32,6 +32,7 @@ public:
 public:
     // prevent constructor by default
     JigsawSectionData& operator=(JigsawSectionData const&);
+    JigsawSectionData();
 
 public:
     // member functions

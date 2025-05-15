@@ -21,6 +21,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MoveTowardsRestrictionGoal& operator=(MoveTowardsRestrictionGoal const&);
+    MoveTowardsRestrictionGoal(MoveTowardsRestrictionGoal const&);
+    MoveTowardsRestrictionGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

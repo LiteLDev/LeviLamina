@@ -30,6 +30,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MobEffectInstance();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI MobEffectInstance(::MobEffectInstance&&);

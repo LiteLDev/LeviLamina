@@ -23,6 +23,10 @@ struct VariantParameterList;
 
 class Horse : public ::Animal {
 public:
+    // prevent constructor by default
+    Horse();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

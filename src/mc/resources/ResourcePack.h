@@ -46,6 +46,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ResourcePack();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

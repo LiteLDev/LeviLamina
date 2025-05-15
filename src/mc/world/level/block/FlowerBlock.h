@@ -31,6 +31,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FlowerBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 15

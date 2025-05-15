@@ -19,6 +19,7 @@ public:
 public:
     // prevent constructor by default
     AddressOrGUID& operator=(AddressOrGUID const&);
+    AddressOrGUID();
 
 public:
     // member functions

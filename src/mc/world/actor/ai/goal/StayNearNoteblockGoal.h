@@ -71,6 +71,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StayNearNoteblockGoal& operator=(StayNearNoteblockGoal const&);
+    StayNearNoteblockGoal(StayNearNoteblockGoal const&);
+    StayNearNoteblockGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

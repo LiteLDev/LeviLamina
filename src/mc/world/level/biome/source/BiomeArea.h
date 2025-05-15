@@ -18,6 +18,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BiomeArea();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI BiomeArea(::BoundingBox const& area, uint scale);

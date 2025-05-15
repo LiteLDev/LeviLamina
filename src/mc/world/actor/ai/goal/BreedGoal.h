@@ -25,6 +25,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BreedGoal& operator=(BreedGoal const&);
+    BreedGoal(BreedGoal const&);
+    BreedGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -34,6 +34,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    WorldBlockTarget& operator=(WorldBlockTarget const&);
+    WorldBlockTarget(WorldBlockTarget const&);
+    WorldBlockTarget();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

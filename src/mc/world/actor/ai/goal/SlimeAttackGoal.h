@@ -24,6 +24,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SlimeAttackGoal& operator=(SlimeAttackGoal const&);
+    SlimeAttackGoal(SlimeAttackGoal const&);
+    SlimeAttackGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

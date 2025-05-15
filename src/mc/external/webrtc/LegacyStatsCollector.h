@@ -58,6 +58,10 @@ public:
 
     struct TransportStats {
     public:
+        // prevent constructor by default
+        TransportStats();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI TransportStats(::std::string, ::cricket::TransportStats);
@@ -69,6 +73,10 @@ public:
         MCNAPI void* $ctor(::std::string, ::cricket::TransportStats);
         // NOLINTEND
     };
+
+public:
+    // prevent constructor by default
+    LegacyStatsCollector();
 
 public:
     // member functions

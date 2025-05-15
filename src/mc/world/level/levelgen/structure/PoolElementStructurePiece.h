@@ -41,6 +41,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PoolElementStructurePiece& operator=(PoolElementStructurePiece const&);
+    PoolElementStructurePiece(PoolElementStructurePiece const&);
+    PoolElementStructurePiece();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4
@@ -76,13 +82,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI void $moveBoundingBox(int dx, int dy, int dz);
+    MCAPI void $moveBoundingBox(int dx, int dy, int dz);
 
-    MCNAPI bool $_needsPostProcessing(::BlockSource& region);
+    MCFOLD bool $_needsPostProcessing(::BlockSource& region);
     // NOLINTEND
 
 public:

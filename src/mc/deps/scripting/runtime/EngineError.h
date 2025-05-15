@@ -9,6 +9,10 @@ namespace Scripting {
 
 struct EngineError : public ::Scripting::Error {
 public:
+    // prevent constructor by default
+    EngineError();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit EngineError(::std::string const& message);

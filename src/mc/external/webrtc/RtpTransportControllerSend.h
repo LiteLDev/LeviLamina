@@ -27,6 +27,10 @@ public:
     struct LossReport {};
 
 public:
+    // prevent constructor by default
+    RtpTransportControllerSend();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::optional<::webrtc::BitrateConstraints> ApplyOrLiftRelayCap(bool);

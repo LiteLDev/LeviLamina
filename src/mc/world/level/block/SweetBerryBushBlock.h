@@ -34,6 +34,10 @@ public:
     };
 
 public:
+    // prevent constructor by default
+    SweetBerryBushBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 79

@@ -51,6 +51,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SubChunkRelighter();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI SubChunkRelighter(

@@ -28,6 +28,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EatBlockGoal& operator=(EatBlockGoal const&);
+    EatBlockGoal(EatBlockGoal const&);
+    EatBlockGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

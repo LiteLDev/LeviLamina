@@ -27,6 +27,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GuardianAttackGoal& operator=(GuardianAttackGoal const&);
+    GuardianAttackGoal(GuardianAttackGoal const&);
+    GuardianAttackGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

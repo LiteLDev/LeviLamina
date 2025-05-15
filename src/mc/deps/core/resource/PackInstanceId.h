@@ -17,6 +17,7 @@ public:
     // prevent constructor by default
     PackInstanceId& operator=(PackInstanceId const&);
     PackInstanceId(PackInstanceId const&);
+    PackInstanceId();
 
 public:
     // member functions
