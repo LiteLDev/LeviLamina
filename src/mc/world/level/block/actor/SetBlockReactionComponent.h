@@ -22,6 +22,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SetBlockReactionComponent& operator=(SetBlockReactionComponent const&);
+    SetBlockReactionComponent(SetBlockReactionComponent const&);
+    SetBlockReactionComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

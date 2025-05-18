@@ -14,6 +14,10 @@ namespace SharedTypes {
 
 struct Color255RGB : public ::Detail::ColorBase {
 public:
+    // prevent constructor by default
+    Color255RGB();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit Color255RGB(::mce::Color const&);

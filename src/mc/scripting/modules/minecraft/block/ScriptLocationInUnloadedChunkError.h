@@ -15,6 +15,10 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptLocationInUnloadedChunkError : public ::Scripting::Error {
 public:
+    // prevent constructor by default
+    ScriptLocationInUnloadedChunkError();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ScriptLocationInUnloadedChunkError(::Vec3 const& pos);

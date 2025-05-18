@@ -54,6 +54,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ChunkSource();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

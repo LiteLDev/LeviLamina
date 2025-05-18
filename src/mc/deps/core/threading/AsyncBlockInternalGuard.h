@@ -9,6 +9,10 @@ struct XAsyncBlock;
 
 struct AsyncBlockInternalGuard {
 public:
+    // prevent constructor by default
+    AsyncBlockInternalGuard();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit AsyncBlockInternalGuard(::XAsyncBlock*);

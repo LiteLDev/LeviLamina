@@ -72,6 +72,10 @@ public:
     };
 
 public:
+    // prevent constructor by default
+    ForwardErrorCorrection();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI int

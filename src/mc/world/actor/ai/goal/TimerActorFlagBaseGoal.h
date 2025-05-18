@@ -28,6 +28,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TimerActorFlagBaseGoal& operator=(TimerActorFlagBaseGoal const&);
+    TimerActorFlagBaseGoal(TimerActorFlagBaseGoal const&);
+    TimerActorFlagBaseGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

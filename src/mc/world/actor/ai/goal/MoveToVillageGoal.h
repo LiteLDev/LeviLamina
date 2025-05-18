@@ -22,6 +22,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MoveToVillageGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

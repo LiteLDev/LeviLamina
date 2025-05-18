@@ -30,6 +30,10 @@ public:
     class PortData {};
 
 public:
+    // prevent constructor by default
+    BasicPortAllocatorSession();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void AddAllocatedPort(::cricket::Port*, ::cricket::AllocationSequence*);

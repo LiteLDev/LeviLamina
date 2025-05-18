@@ -12,6 +12,10 @@ namespace webrtc {
 
 class TrendlineEstimator {
 public:
+    // prevent constructor by default
+    TrendlineEstimator();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void Detect(double, double, int64);

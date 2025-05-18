@@ -24,6 +24,7 @@ public:
 public:
     // prevent constructor by default
     ConditionalBandwidthOptimizationComponent& operator=(ConditionalBandwidthOptimizationComponent const&);
+    ConditionalBandwidthOptimizationComponent();
 
 public:
     // member functions

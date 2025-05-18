@@ -34,6 +34,10 @@ namespace webrtc {
 
 class RtpTransceiver {
 public:
+    // prevent constructor by default
+    RtpTransceiver();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void

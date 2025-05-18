@@ -14,6 +14,10 @@ namespace Scripting {
 
 struct RuntimeConditionError : public ::Scripting::Error {
 public:
+    // prevent constructor by default
+    RuntimeConditionError();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI

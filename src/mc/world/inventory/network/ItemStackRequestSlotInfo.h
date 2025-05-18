@@ -21,6 +21,7 @@ public:
     // prevent constructor by default
     ItemStackRequestSlotInfo& operator=(ItemStackRequestSlotInfo const&);
     ItemStackRequestSlotInfo(ItemStackRequestSlotInfo const&);
+    ItemStackRequestSlotInfo();
 
 public:
     // member functions

@@ -24,6 +24,7 @@ public:
 public:
     // prevent constructor by default
     PlayerShootArrowEvent& operator=(PlayerShootArrowEvent const&);
+    PlayerShootArrowEvent();
 
 public:
     // member functions

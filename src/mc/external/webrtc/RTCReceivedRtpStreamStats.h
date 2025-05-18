@@ -11,6 +11,10 @@ namespace webrtc {
 
 class RTCReceivedRtpStreamStats {
 public:
+    // prevent constructor by default
+    RTCReceivedRtpStreamStats();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RTCReceivedRtpStreamStats(::std::string, ::webrtc::Timestamp);

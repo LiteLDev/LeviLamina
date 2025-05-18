@@ -18,6 +18,10 @@ struct VariantParameterList;
 
 class Animal : public ::Mob {
 public:
+    // prevent constructor by default
+    Animal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 64

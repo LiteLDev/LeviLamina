@@ -56,6 +56,7 @@ public:
 public:
     // prevent constructor by default
     MapDecoration& operator=(MapDecoration const&);
+    MapDecoration();
 
 public:
     // member functions

@@ -11,6 +11,10 @@ namespace webrtc {
 
 struct ProbeControllerConfig {
 public:
+    // prevent constructor by default
+    ProbeControllerConfig();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ProbeControllerConfig(::webrtc::FieldTrialsView const*);

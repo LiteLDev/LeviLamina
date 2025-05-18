@@ -42,31 +42,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI JigsawStructureRegistry();
+    MCAPI JigsawStructureRegistry();
 
-    MCNAPI void initialize(
+    MCAPI void initialize(
         ::StructureSpawnRegistry&   structureSpawnRegistry,
         ::BaseGameVersion const&    baseGameVersion,
         ::Experiments const&        experiments,
         ::IWorldRegistriesProvider& registries
     );
 
-    MCNAPI ::StructureTemplatePool const* lookupByName(::std::string const& name) const;
+    MCAPI ::StructureTemplatePool const* lookupByName(::std::string const& name) const;
 
-    MCNAPI void registerPool(::std::unique_ptr<::StructureTemplatePool>&& pool);
+    MCAPI void registerPool(::std::unique_ptr<::StructureTemplatePool>&& pool);
 
-    MCNAPI ~JigsawStructureRegistry();
+    MCAPI ~JigsawStructureRegistry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

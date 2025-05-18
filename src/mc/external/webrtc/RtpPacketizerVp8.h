@@ -15,6 +15,10 @@ namespace webrtc {
 
 class RtpPacketizerVp8 {
 public:
+    // prevent constructor by default
+    RtpPacketizerVp8();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI

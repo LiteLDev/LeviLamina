@@ -11,6 +11,10 @@ namespace webrtc {
 
 class RtcEventRtpPacketOutgoing {
 public:
+    // prevent constructor by default
+    RtcEventRtpPacketOutgoing();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RtcEventRtpPacketOutgoing(::webrtc::RtpPacketToSend const&, int);

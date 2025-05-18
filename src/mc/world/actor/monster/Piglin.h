@@ -17,6 +17,10 @@ struct ActorDefinitionIdentifier;
 
 class Piglin : public ::HumanoidMonster {
 public:
+    // prevent constructor by default
+    Piglin();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 118

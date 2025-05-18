@@ -21,6 +21,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BreakDoorGoal& operator=(BreakDoorGoal const&);
+    BreakDoorGoal(BreakDoorGoal const&);
+    BreakDoorGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

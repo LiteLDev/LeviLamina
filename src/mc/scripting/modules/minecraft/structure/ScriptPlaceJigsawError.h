@@ -10,6 +10,10 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptPlaceJigsawError : public ::Scripting::Error {
 public:
+    // prevent constructor by default
+    ScriptPlaceJigsawError();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ScriptPlaceJigsawError(::std::string message);

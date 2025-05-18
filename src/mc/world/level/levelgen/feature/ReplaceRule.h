@@ -14,6 +14,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ReplaceRule();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ReplaceRule(::BlockDescriptor block, ::std::vector<::BlockDescriptor> mayReplace);

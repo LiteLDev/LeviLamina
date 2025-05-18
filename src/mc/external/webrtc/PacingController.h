@@ -34,6 +34,10 @@ public:
     class PacketSender {};
 
 public:
+    // prevent constructor by default
+    PacingController();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void CreateProbeClusters(::rtc::ArrayView<::webrtc::ProbeClusterConfig const>);

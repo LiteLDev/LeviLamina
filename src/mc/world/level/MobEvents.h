@@ -29,6 +29,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MobEvents& operator=(MobEvents const&);
+    MobEvents(MobEvents const&);
+    MobEvents();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

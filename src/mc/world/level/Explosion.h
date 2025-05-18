@@ -43,6 +43,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Explosion& operator=(Explosion const&);
+    Explosion(Explosion const&);
+    Explosion();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::vector<::gsl::not_null<::Actor*>> _getActorsInRange(::Actor* optSource, float range) const;

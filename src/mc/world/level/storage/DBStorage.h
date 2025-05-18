@@ -4,11 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/common/CompactionStatus.h"
+#include "mc/deps/core/file/LevelStorageResult.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/threading/IAsyncResult.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/platform/brstd/flat_set.h"
 #include "mc/platform/brstd/move_only_function.h"
+#include "mc/platform/threading/Mutex.h"
+#include "mc/world/level/storage/DBStoragePerformanceTelemetry.h"
 #include "mc/world/level/storage/LevelStorage.h"
+#include "mc/world/level/storage/LevelStorageWriteBatch.h"
 #include "mc/world/level/storage/StorageVersion.h"
 #include "mc/world/level/storage/db_helpers/Category.h"
 
@@ -17,15 +22,19 @@
 class ChunkSource;
 class CompoundTag;
 class ContentIdentity;
+class DBChunkStorage;
+class DBStorageEnvironmentChain;
+class DBStorageFolderWatcher;
 class LevelData;
 class LevelDbEnv;
+class LevelStorageEventing;
 class LevelStorageObserver;
-class LevelStorageWriteBatch;
+class SaveTransactionManager;
+class TaskGroup;
 class TaskResult;
 struct DBStorageConfig;
 struct SnapshotFilenameAndLength;
 namespace Core { class Path; }
-namespace Core { struct LevelStorageResult; }
 // clang-format on
 
 class DBStorage : public ::LevelStorage {
@@ -43,31 +52,19 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 2152> mUnkb95cf3;
-        ::ll::UntypedStorage<8, 24>   mUnk59eddf;
-        ::ll::UntypedStorage<1, 1>    mUnk8c72a3;
+        ::ll::TypedStorage<8, 2152, ::leveldb::Options>   options;
+        ::ll::TypedStorage<8, 24, ::leveldb::ReadOptions> read;
+        ::ll::TypedStorage<1, 1, ::leveldb::WriteOptions> write;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Options& operator=(Options const&);
-        Options(Options const&);
-        Options();
     };
 
     struct PendingWriteResult {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk71f540;
-        ::ll::UntypedStorage<1, 1>  mUnkb4b9b4;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::std::string const>> mLatestValue;
+        ::ll::TypedStorage<1, 1, bool>                                    mIsDeleted;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PendingWriteResult& operator=(PendingWriteResult const&);
-        PendingWriteResult(PendingWriteResult const&);
-        PendingWriteResult();
 
     public:
         // member functions
@@ -86,14 +83,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk444a8c;
+        ::ll::TypedStorage<8, 8, ::std::atomic<int>*> mRefCounter;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DBStorageToken& operator=(DBStorageToken const&);
-        DBStorageToken(DBStorageToken const&);
-        DBStorageToken();
 
     public:
         // member functions
@@ -112,17 +103,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkee6e8d;
-        ::ll::UntypedStorage<8, 16> mUnk7e551c;
-        ::ll::UntypedStorage<4, 4>  mUnk9568c9;
-        ::ll::UntypedStorage<1, 1>  mUnk33b805;
+        ::ll::TypedStorage<8, 32, ::std::string>                    mKey;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::std::string>> mValue;
+        ::ll::TypedStorage<4, 4, ::DBHelpers::Category>             mCategory;
+        ::ll::TypedStorage<1, 1, bool>                              mIsDelete;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CommitOperation& operator=(CommitOperation const&);
-        CommitOperation(CommitOperation const&);
-        CommitOperation();
 
     public:
         // member functions
@@ -140,59 +125,61 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk584256;
-    ::ll::UntypedStorage<8, 8>   mUnk7480b3;
-    ::ll::UntypedStorage<8, 8>   mUnkf30503;
-    ::ll::UntypedStorage<8, 8>   mUnk127577;
-    ::ll::UntypedStorage<8, 8>   mUnk577c71;
-    ::ll::UntypedStorage<8, 8>   mUnk2f7026;
-    ::ll::UntypedStorage<8, 8>   mUnkd052f4;
-    ::ll::UntypedStorage<8, 8>   mUnked7cce;
-    ::ll::UntypedStorage<8, 8>   mUnk4494bc;
-    ::ll::UntypedStorage<8, 8>   mUnkf94590;
-    ::ll::UntypedStorage<8, 16>  mUnkab642c;
-    ::ll::UntypedStorage<8, 16>  mUnkc0ab81;
-    ::ll::UntypedStorage<8, 40>  mUnkf05e89;
-    ::ll::UntypedStorage<8, 8>   mUnkf3b524;
-    ::ll::UntypedStorage<8, 32>  mUnk5ba4d4;
-    ::ll::UntypedStorage<8, 32>  mUnk4bed4b;
-    ::ll::UntypedStorage<8, 32>  mUnk5454a7;
-    ::ll::UntypedStorage<8, 80>  mUnk221b92;
-    ::ll::UntypedStorage<8, 8>   mUnkcaf9d0;
-    ::ll::UntypedStorage<8, 80>  mUnk6fbf11;
-    ::ll::UntypedStorage<8, 8>   mUnk6bff93;
-    ::ll::UntypedStorage<8, 8>   mUnk6b42b9;
-    ::ll::UntypedStorage<8, 8>   mUnk862ca1;
-    ::ll::UntypedStorage<1, 1>   mUnka23ec7;
-    ::ll::UntypedStorage<1, 1>   mUnk9a917e;
-    ::ll::UntypedStorage<1, 1>   mUnk760a7f;
-    ::ll::UntypedStorage<1, 1>   mUnk2868b1;
-    ::ll::UntypedStorage<1, 1>   mUnk6f3319;
-    ::ll::UntypedStorage<1, 1>   mUnk3019dd;
-    ::ll::UntypedStorage<4, 4>   mUnk42fafc;
-    ::ll::UntypedStorage<8, 24>  mUnk67fb43;
-    ::ll::UntypedStorage<8, 64>  mUnk3bbb25;
-    ::ll::UntypedStorage<8, 64>  mUnkff454d;
-    ::ll::UntypedStorage<8, 40>  mUnkfc7d2a;
-    ::ll::UntypedStorage<8, 24>  mUnk863951;
-    ::ll::UntypedStorage<1, 1>   mUnkd274df;
-    ::ll::UntypedStorage<1, 1>   mUnk42ad31;
-    ::ll::UntypedStorage<1, 1>   mUnk5e8844;
-    ::ll::UntypedStorage<8, 32>  mUnkb2458b;
-    ::ll::UntypedStorage<8, 128> mUnk8d2c43;
-    ::ll::UntypedStorage<8, 24>  mUnkafd875;
-    ::ll::UntypedStorage<8, 8>   mUnk7c4834;
-    ::ll::UntypedStorage<8, 24>  mUnk817c44;
-    ::ll::UntypedStorage<8, 8>   mUnk440898;
-    ::ll::UntypedStorage<8, 8>   mUnk69426f;
-    ::ll::UntypedStorage<8, 8>   mUnk9a9098;
-    ::ll::UntypedStorage<8, 192> mUnkc63a35;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DBStorageEnvironmentChain>>               mEnvChain;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::Cache>>                          mCache;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::FilterPolicy const>>             mFilterPolicy;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::Compressor>>                     mCompressor;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::Compressor>>                     mLegacyCompressor;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DBStorage::Options>>                      mOptions;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::DecompressAllocator>>            mDecompressAllocator;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::DB>>                             mDb;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                               mIOTaskGroup;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                               mCompactionTaskGroup;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>> mCompactionTask;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>> mWriteTask;
+    ::ll::TypedStorage<8, 40, ::Core::LevelStorageResult>                                  mState;
+    ::ll::TypedStorage<8, 8, ::ContentIdentity const*>                                     mContentIdentity;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                           mFullPath;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                           mDbPath;
+    ::ll::TypedStorage<8, 32, ::std::string>                                               mLevelId;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                 mCompactionMutex;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                          mWriteCacheMutex;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                 mCacheFlushMutex;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                      mLastCompactionStartTime;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                                   mCompactionInterval;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                                   mWriteFlushInterval;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                          mAllowFlush;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                          mSavingInProgress;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                          mSnapshotInProgress;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                          mShutdownStarted;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                          mNoMoreWrites;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                          mShutdownDone;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>                                           mOutstandingJobs;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::SaveTransactionManager>>        mSaveTransactionManager;
+    ::ll::TypedStorage<8, 64, ::std::function<void()>>                                     mCriticalSyncSaveCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::CompactionStatus)>> mExternallyRegisteredCompactionCallback;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::brstd::flat_set<::DBChunkStorage*, ::std::less<::DBChunkStorage*>, ::std::vector<::DBChunkStorage*>>>
+                                                                                        mChunkStorages;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::LevelStorageObserver>>> mObservers;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                       mDestructorInProgress;
+    ::ll::TypedStorage<1, 1, bool>                                                      mForceCorrupt;
+    ::ll::TypedStorage<1, 1, bool const>                                                mStorageEnabled;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                        mDbSubfolder;
+    ::ll::TypedStorage<8, 128, ::LevelStorageWriteBatch>                                mSingleKeyWrites;
+    ::ll::TypedStorage<8, 24, ::std::vector<::LevelStorageWriteBatch>>                  mBatchWrites;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelStorageEventing>>                 mEventing;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>>              mLevelDbEnv;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DBStorageFolderWatcher>>               mFolderTelemetryWatcher;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                   mNextSizeTelemetryCaptureTime;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds const>                          mSizeTelemetryCaptureInterval;
+    ::ll::TypedStorage<8, 192, ::DBStoragePerformanceTelemetry>                         mDBStoragePerformanceTelemetry;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    DBStorage& operator=(DBStorage const&);
-    DBStorage(DBStorage const&);
     DBStorage();
 
 public:

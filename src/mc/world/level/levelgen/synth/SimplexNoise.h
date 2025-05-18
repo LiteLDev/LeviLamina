@@ -20,6 +20,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SimplexNoise();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI SimplexNoise(::IRandom& random, bool parityInitialization);

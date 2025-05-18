@@ -390,6 +390,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Player& operator=(Player const&);
+    Player(Player const&);
+    Player();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

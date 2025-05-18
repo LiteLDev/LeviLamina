@@ -149,6 +149,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RamAttackGoal& operator=(RamAttackGoal const&);
+    RamAttackGoal(RamAttackGoal const&);
+    RamAttackGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

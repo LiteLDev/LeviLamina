@@ -61,6 +61,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DoorBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 118

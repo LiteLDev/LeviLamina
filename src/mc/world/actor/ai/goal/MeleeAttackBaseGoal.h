@@ -51,6 +51,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MeleeAttackBaseGoal& operator=(MeleeAttackBaseGoal const&);
+    MeleeAttackBaseGoal(MeleeAttackBaseGoal const&);
+    MeleeAttackBaseGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

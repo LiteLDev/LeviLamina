@@ -11,6 +11,10 @@ namespace rtc {
 
 class AsyncTcpListenSocket {
 public:
+    // prevent constructor by default
+    AsyncTcpListenSocket();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit AsyncTcpListenSocket(::std::unique_ptr<::rtc::Socket>);

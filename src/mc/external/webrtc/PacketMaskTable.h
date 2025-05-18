@@ -9,6 +9,10 @@ namespace webrtc::internal {
 
 class PacketMaskTable {
 public:
+    // prevent constructor by default
+    PacketMaskTable();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::rtc::ArrayView<uchar const> LookUp(int, int);

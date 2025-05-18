@@ -28,6 +28,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SendEventGoal& operator=(SendEventGoal const&);
+    SendEventGoal(SendEventGoal const&);
+    SendEventGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7

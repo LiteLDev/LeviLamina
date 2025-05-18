@@ -61,6 +61,7 @@ public:
 public:
     // prevent constructor by default
     TerrainShaper& operator=(TerrainShaper const&);
+    TerrainShaper();
 
 public:
     // member functions

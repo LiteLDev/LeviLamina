@@ -45,6 +45,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RangedAttackGoal& operator=(RangedAttackGoal const&);
+    RangedAttackGoal(RangedAttackGoal const&);
+    RangedAttackGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

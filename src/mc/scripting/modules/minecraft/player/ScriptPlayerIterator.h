@@ -21,6 +21,7 @@ public:
     // prevent constructor by default
     ScriptPlayerIterator& operator=(ScriptPlayerIterator const&);
     ScriptPlayerIterator(ScriptPlayerIterator const&);
+    ScriptPlayerIterator();
 
 public:
     // member functions

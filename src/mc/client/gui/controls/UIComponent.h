@@ -22,6 +22,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    UIComponent& operator=(UIComponent const&);
+    UIComponent(UIComponent const&);
+    UIComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

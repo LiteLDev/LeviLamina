@@ -26,6 +26,7 @@ public:
 public:
     // prevent constructor by default
     InteractButtonItemComponent(InteractButtonItemComponent const&);
+    InteractButtonItemComponent();
 
 public:
     // virtual functions

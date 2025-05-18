@@ -339,166 +339,166 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::gametest::GameTestError> _assertEntityInstancePresent(
+    MCAPI ::std::optional<::gametest::GameTestError> _assertEntityInstancePresent(
         ::Actor const*    actor,
         ::AABB const&     searchBounds,
         ::BlockPos const& relativeTestPosition,
         bool              expectedPresent
     ) const;
 
-    MCNAPI ::std::optional<::gametest::GameTestError> _assertEntityPresent(
+    MCAPI ::std::optional<::gametest::GameTestError> _assertEntityPresent(
         ::ActorDefinitionIdentifier const& actorIdentifier,
         ::AABB const&                      searchBounds,
         ::BlockPos const&                  pos,
         bool                               expectedPresent
     ) const;
 
-    MCNAPI ::Block const& _getBlock(::BlockPos const& pos);
+    MCAPI ::Block const& _getBlock(::BlockPos const& pos);
 
-    MCNAPI ::Container const* _getContainer(::BlockPos const& pos);
+    MCAPI ::Container const* _getContainer(::BlockPos const& pos);
 
-    MCNAPI ::std::optional<::gametest::GameTestError> _getStructureBlockMissingError() const;
+    MCAPI ::std::optional<::gametest::GameTestError> _getStructureBlockMissingError() const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void
+    MCAPI void
     $succeedWhenEntityPresent(::ActorDefinitionIdentifier const& actorIdentifier, int x, int y, int z, bool isPresent);
 
-    MCNAPI void $succeedWhenEntityPresent(
+    MCAPI void $succeedWhenEntityPresent(
         ::ActorDefinitionIdentifier const& actorIdentifier,
         ::BlockPos const&                  pos,
         bool                               isPresent
     );
 
-    MCNAPI void $succeedWhenEntityData(
+    MCAPI void $succeedWhenEntityData(
         ::BlockPos const&                  pos,
         ::ActorDefinitionIdentifier const& actorIdentifier,
         ::std::function<bool(::Actor&)>    dataPredicate
     );
 
-    MCNAPI void $succeedWhenEntityHasComponent(
+    MCAPI void $succeedWhenEntityHasComponent(
         ::ActorDefinitionIdentifier const& actorIdentifier,
         ::std::string const&               componentName,
         ::BlockPos const&                  pos,
         bool                               hasComponent
     );
 
-    MCNAPI void $succeedWhenBlockPresent(::Block const& block, int x, int y, int z, bool isPresent);
+    MCAPI void $succeedWhenBlockPresent(::Block const& block, int x, int y, int z, bool isPresent);
 
-    MCNAPI void $succeedWhenBlockPresent(::Block const& block, ::BlockPos const& pos, bool isPresent);
+    MCAPI void $succeedWhenBlockPresent(::Block const& block, ::BlockPos const& pos, bool isPresent);
 
-    MCNAPI void $succeedWhenBlockPresent(::BlockLegacy const& block, ::BlockPos const& position, bool isPresent);
+    MCAPI void $succeedWhenBlockPresent(::BlockLegacy const& block, ::BlockPos const& position, bool isPresent);
 
-    MCNAPI void $setNight();
+    MCAPI void $setNight();
 
-    MCNAPI void $setDayTime(int time);
+    MCAPI void $setDayTime(int time);
 
-    MCNAPI ::std::optional<::gametest::GameTestError>
+    MCAPI ::std::optional<::gametest::GameTestError>
     $setBlock(int x, int y, int z, ::Block const& block, int updateFlags);
 
-    MCNAPI ::std::optional<::gametest::GameTestError>
+    MCAPI ::std::optional<::gametest::GameTestError>
     $setBlock(::BlockPos const& pos, ::Block const& block, int updateFlags);
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $destroyBlock(::BlockPos const& pos, bool dropResources);
+    MCAPI ::std::optional<::gametest::GameTestError> $destroyBlock(::BlockPos const& pos, bool dropResources);
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $pressButton(int x, int y, int z);
+    MCAPI ::std::optional<::gametest::GameTestError> $pressButton(int x, int y, int z);
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $pressButton(::BlockPos const& buttonPos);
+    MCAPI ::std::optional<::gametest::GameTestError> $pressButton(::BlockPos const& buttonPos);
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $pullLever(int x, int y, int z);
+    MCAPI ::std::optional<::gametest::GameTestError> $pullLever(int x, int y, int z);
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $pullLever(::BlockPos const& leverPos);
+    MCAPI ::std::optional<::gametest::GameTestError> $pullLever(::BlockPos const& leverPos);
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $killAllEntities();
+    MCAPI ::std::optional<::gametest::GameTestError> $killAllEntities();
 
-    MCNAPI ::std::variant<::gametest::GameTestError, ::Actor*>
+    MCAPI ::std::variant<::gametest::GameTestError, ::Actor*>
     $spawn(::ActorDefinitionIdentifier const& actorIdentifier, int x, int y, int z);
 
-    MCNAPI ::std::variant<::gametest::GameTestError, ::Actor*>
+    MCAPI ::std::variant<::gametest::GameTestError, ::Actor*>
     $spawn(::ActorDefinitionIdentifier const& actorIdentifier, ::BlockPos const& pos);
 
-    MCNAPI ::std::variant<::gametest::GameTestError, ::Actor*>
+    MCAPI ::std::variant<::gametest::GameTestError, ::Actor*>
     $spawn(::ActorDefinitionIdentifier const& actorIdentifier, ::Vec3 const& pos);
 
-    MCNAPI ::std::variant<::gametest::GameTestError, ::Actor*>
+    MCAPI ::std::variant<::gametest::GameTestError, ::Actor*>
     $spawnItem(::ItemStack const& itemType, ::Vec3 const& pos);
 
-    MCNAPI ::std::variant<::gametest::GameTestError, ::Actor*>
+    MCAPI ::std::variant<::gametest::GameTestError, ::Actor*>
     $spawnWithoutBehaviors(::ActorDefinitionIdentifier const& actorIdentifier, ::BlockPos const& pos);
 
-    MCNAPI ::std::variant<::gametest::GameTestError, ::Actor*>
+    MCAPI ::std::variant<::gametest::GameTestError, ::Actor*>
     $spawnWithoutBehaviors(::ActorDefinitionIdentifier const& actorIdentifier, ::Vec3 const& pos);
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $walkTo(::Mob& mob, ::BlockPos const& pos, float speedModifier);
+    MCAPI ::std::optional<::gametest::GameTestError> $walkTo(::Mob& mob, ::BlockPos const& pos, float speedModifier);
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $walkTo(::Mob& mob, ::Vec3 const& pos, float speedModifier);
+    MCAPI ::std::optional<::gametest::GameTestError> $walkTo(::Mob& mob, ::Vec3 const& pos, float speedModifier);
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $setTntFuse(::Actor& actor, int fuseLength);
+    MCAPI ::std::optional<::gametest::GameTestError> $setTntFuse(::Actor& actor, int fuseLength);
 
-    MCNAPI ::std::optional<::gametest::GameTestError>
+    MCAPI ::std::optional<::gametest::GameTestError>
     $assertEntityPresent(::ActorDefinitionIdentifier const& actorIdentifier, bool isPresent);
 
-    MCNAPI ::std::optional<::gametest::GameTestError>
+    MCAPI ::std::optional<::gametest::GameTestError>
     $assertEntityPresent(::ActorDefinitionIdentifier const& actorIdentifier, int x, int y, int z, bool isPresent);
 
-    MCNAPI ::std::optional<::gametest::GameTestError>
+    MCAPI ::std::optional<::gametest::GameTestError>
     $assertEntityPresent(::ActorDefinitionIdentifier const& actorIdentifier, ::BlockPos const& pos, bool isPresent);
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $assertEntityPresent(
+    MCAPI ::std::optional<::gametest::GameTestError> $assertEntityPresent(
         ::ActorDefinitionIdentifier const& actorIdentifier,
         ::BlockPos const&                  pos,
         float const                        distance,
         bool                               isPresent
     );
 
-    MCNAPI ::std::optional<::gametest::GameTestError>
+    MCAPI ::std::optional<::gametest::GameTestError>
     $assertEntityInstancePresent(::Actor const* actor, ::BlockPos const& pos, bool expectedPresent);
 
-    MCNAPI ::std::optional<::gametest::GameTestError>
+    MCAPI ::std::optional<::gametest::GameTestError>
     $assertEntityInstancePresent(::Actor const* actor, bool expectedPresent) const;
 
-    MCNAPI ::std::optional<::gametest::GameTestError>
+    MCAPI ::std::optional<::gametest::GameTestError>
     $assertEntityTouching(::ActorDefinitionIdentifier const& actorIdentifier, ::Vec3 const& pos, bool isTouching);
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $assertEntityState(
+    MCAPI ::std::optional<::gametest::GameTestError> $assertEntityState(
         ::BlockPos const&                  pos,
         ::ActorDefinitionIdentifier const& actorIdentifier,
         ::std::function<bool(::Actor&)>    dataPredicate
     );
 
-    MCNAPI ::std::optional<::gametest::GameTestError>
+    MCAPI ::std::optional<::gametest::GameTestError>
     $assertBlockPresent(::BlockLegacy const& blockType, int x, int y, int z, bool isPresent);
 
-    MCNAPI ::std::optional<::gametest::GameTestError>
+    MCAPI ::std::optional<::gametest::GameTestError>
     $assertBlockPresent(::BlockLegacy const& blockType, ::BlockPos const& pos, bool isPresent);
 
-    MCNAPI ::std::optional<::gametest::GameTestError>
+    MCAPI ::std::optional<::gametest::GameTestError>
     $assertBlockState(::BlockPos const& blockPos, ::std::function<bool(::Block const&)> predicate);
 
-    MCNAPI ::std::optional<::gametest::GameTestError>
+    MCAPI ::std::optional<::gametest::GameTestError>
     $assertItemEntityPresent(::Item const& item, int x, int y, int z, float searchDistance, bool isPresent);
 
-    MCNAPI ::std::optional<::gametest::GameTestError>
+    MCAPI ::std::optional<::gametest::GameTestError>
     $assertItemEntityPresent(::Item const& item, ::BlockPos const& pos, float searchDistance, bool isPresent);
 
-    MCNAPI ::std::optional<::gametest::GameTestError>
+    MCAPI ::std::optional<::gametest::GameTestError>
     $assertItemEntityCountIs(::Item const& itemType, ::BlockPos const& pos, float searchDistance, int expectedCount);
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $assertContainerEmpty(::BlockPos const& pos);
+    MCAPI ::std::optional<::gametest::GameTestError> $assertContainerEmpty(::BlockPos const& pos);
 
-    MCNAPI ::std::optional<::gametest::GameTestError>
+    MCAPI ::std::optional<::gametest::GameTestError>
     $assertContainerContains(::ItemStack const& item, ::BlockPos const& pos);
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $assertEntityHasComponent(
+    MCAPI ::std::optional<::gametest::GameTestError> $assertEntityHasComponent(
         ::ActorDefinitionIdentifier const& actorIdentifier,
         ::std::string const&               componentName,
         ::BlockPos const&                  pos,
         bool                               hasComponent
     );
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $assertEntityHasArmor(
+    MCAPI ::std::optional<::gametest::GameTestError> $assertEntityHasArmor(
         ::ActorDefinitionIdentifier const& actorIdentifier,
         ::SharedTypes::Legacy::ArmorSlot   armorSlot,
         ::std::string const&               armorName,
@@ -507,53 +507,53 @@ public:
         bool                               hasArmor
     );
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $print(::std::string const& text);
+    MCAPI ::std::optional<::gametest::GameTestError> $print(::std::string const& text);
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $assertRedstonePower(::BlockPos const& pos, int expectedPower);
+    MCAPI ::std::optional<::gametest::GameTestError> $assertRedstonePower(::BlockPos const& pos, int expectedPower);
 
-    MCNAPI ::std::optional<::gametest::GameTestError>
+    MCAPI ::std::optional<::gametest::GameTestError>
     $assertIsWaterlogged(::BlockPos const& pos, bool expectedWaterlogged);
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $pulseRedstone(::BlockPos const& pos, int duration);
+    MCAPI ::std::optional<::gametest::GameTestError> $pulseRedstone(::BlockPos const& pos, int duration);
 
-    MCNAPI ::std::variant<::gametest::GameTestError, ::ScriptModuleGameTest::ScriptGameTestConnectivity>
+    MCAPI ::std::variant<::gametest::GameTestError, ::ScriptModuleGameTest::ScriptGameTestConnectivity>
     $getFenceConnectivity(::BlockPos const& relativePos);
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $setFluidContainer(::BlockPos const& pos, int _fluidType);
+    MCAPI ::std::optional<::gametest::GameTestError> $setFluidContainer(::BlockPos const& pos, int _fluidType);
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $triggerInternalBlockEvent(
+    MCAPI ::std::optional<::gametest::GameTestError> $triggerInternalBlockEvent(
         ::BlockPos const&           pos,
         ::std::string const&        event,
         ::std::vector<float> const& parameters
     );
 
-    MCNAPI ::std::variant<::gametest::GameTestError, ::BlockPos> $worldPosition(::BlockPos const& relativePos) const;
+    MCAPI ::std::variant<::gametest::GameTestError, ::BlockPos> $worldPosition(::BlockPos const& relativePos) const;
 
-    MCNAPI ::std::variant<::gametest::GameTestError, ::Vec3> $worldPosition(::Vec3 const& relativePos) const;
+    MCAPI ::std::variant<::gametest::GameTestError, ::Vec3> $worldPosition(::Vec3 const& relativePos) const;
 
-    MCNAPI ::std::variant<::gametest::GameTestError, ::BlockPos> $relativePosition(::BlockPos const& worldPos) const;
+    MCAPI ::std::variant<::gametest::GameTestError, ::BlockPos> $relativePosition(::BlockPos const& worldPos) const;
 
-    MCNAPI ::std::variant<::gametest::GameTestError, ::Vec3> $relativePosition(::Vec3 const& worldPos) const;
+    MCAPI ::std::variant<::gametest::GameTestError, ::Vec3> $relativePosition(::Vec3 const& worldPos) const;
 
-    MCNAPI ::std::optional<::gametest::GameTestError>
+    MCAPI ::std::optional<::gametest::GameTestError>
     $assertCanReachLocation(::Mob& mob, ::BlockPos const& pos, bool expectedReach);
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $spreadFromFaceTowardDirection(
+    MCAPI ::std::optional<::gametest::GameTestError> $spreadFromFaceTowardDirection(
         ::BlockPos const&                     pos,
         ::ScriptModuleMinecraft::ScriptFacing fromFace,
         ::ScriptModuleMinecraft::ScriptFacing direction
     );
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $getBlockSource(::BlockSource*& blockSourceResult);
+    MCAPI ::std::optional<::gametest::GameTestError> $getBlockSource(::BlockSource*& blockSourceResult);
 
-    MCNAPI ::std::variant<::gametest::GameTestError, ::SimulatedPlayer*>
+    MCAPI ::std::variant<::gametest::GameTestError, ::SimulatedPlayer*>
     $spawnSimulatedPlayer(::std::string const& name, ::BlockPos const& pos, ::GameType gameMode);
 
-    MCNAPI void $removeSimulatedPlayer(::SimulatedPlayer& simulatedPlayer);
+    MCAPI void $removeSimulatedPlayer(::SimulatedPlayer& simulatedPlayer);
 
-    MCNAPI ::std::variant<::gametest::GameTestError, ::Dimension*> $getDimension();
+    MCAPI ::std::variant<::gametest::GameTestError, ::Dimension*> $getDimension();
 
-    MCNAPI ::std::optional<::gametest::GameTestError> $onPlayerJump(::Mob& mob, int jumpAmount);
+    MCAPI ::std::optional<::gametest::GameTestError> $onPlayerJump(::Mob& mob, int jumpAmount);
     // NOLINTEND
 
 public:

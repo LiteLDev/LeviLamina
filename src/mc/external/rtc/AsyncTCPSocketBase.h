@@ -11,6 +11,10 @@ namespace rtc {
 
 class AsyncTCPSocketBase {
 public:
+    // prevent constructor by default
+    AsyncTCPSocketBase();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void AppendToOutBuffer(void const*, uint64);

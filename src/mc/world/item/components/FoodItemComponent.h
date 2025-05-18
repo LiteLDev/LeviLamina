@@ -50,6 +50,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FoodItemComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

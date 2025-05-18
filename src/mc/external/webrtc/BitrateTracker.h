@@ -13,6 +13,10 @@ namespace webrtc {
 
 class BitrateTracker {
 public:
+    // prevent constructor by default
+    BitrateTracker();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit BitrateTracker(::webrtc::TimeDelta);

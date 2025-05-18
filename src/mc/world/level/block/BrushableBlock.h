@@ -36,6 +36,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BrushableBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 125

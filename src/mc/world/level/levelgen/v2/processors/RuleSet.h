@@ -29,6 +29,7 @@ public:
 public:
     // prevent constructor by default
     RuleSet& operator=(RuleSet const&);
+    RuleSet();
 
 public:
     // member functions

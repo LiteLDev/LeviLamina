@@ -15,6 +15,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DeserializedChunkLoadedRequest();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI DeserializedChunkLoadedRequest(

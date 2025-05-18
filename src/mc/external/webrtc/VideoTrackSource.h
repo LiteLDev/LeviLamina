@@ -9,6 +9,10 @@ namespace webrtc {
 
 class VideoTrackSource {
 public:
+    // prevent constructor by default
+    VideoTrackSource();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void SetState(::webrtc::MediaSourceInterface::SourceState);

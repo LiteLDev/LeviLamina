@@ -141,6 +141,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RandomSearchAndDigGoal& operator=(RandomSearchAndDigGoal const&);
+    RandomSearchAndDigGoal(RandomSearchAndDigGoal const&);
+    RandomSearchAndDigGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

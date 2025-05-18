@@ -33,6 +33,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    JukeboxBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

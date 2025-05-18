@@ -99,6 +99,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ShooterItemComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

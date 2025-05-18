@@ -20,6 +20,10 @@ public:
     enum class OnAudioChannelGoneAction : uint {};
 
 public:
+    // prevent constructor by default
+    RemoteAudioSource();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void OnAudioChannelGone();

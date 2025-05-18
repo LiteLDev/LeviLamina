@@ -18,6 +18,7 @@ public:
 public:
     // prevent constructor by default
     EduSharedUriResource(EduSharedUriResource const&);
+    EduSharedUriResource();
 
 public:
     // member functions

@@ -6,6 +6,10 @@ namespace webrtc {
 
 struct IntervalBudget {
 public:
+    // prevent constructor by default
+    IntervalBudget();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void IncreaseBudget(int64);

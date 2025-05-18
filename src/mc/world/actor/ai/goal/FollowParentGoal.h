@@ -23,6 +23,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FollowParentGoal& operator=(FollowParentGoal const&);
+    FollowParentGoal(FollowParentGoal const&);
+    FollowParentGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

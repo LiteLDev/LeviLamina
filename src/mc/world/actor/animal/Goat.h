@@ -20,6 +20,10 @@ struct VariantParameterList;
 
 class Goat : public ::Animal {
 public:
+    // prevent constructor by default
+    Goat();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 136

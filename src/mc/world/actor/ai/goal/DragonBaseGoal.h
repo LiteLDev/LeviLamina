@@ -23,6 +23,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DragonBaseGoal& operator=(DragonBaseGoal const&);
+    DragonBaseGoal(DragonBaseGoal const&);
+    DragonBaseGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

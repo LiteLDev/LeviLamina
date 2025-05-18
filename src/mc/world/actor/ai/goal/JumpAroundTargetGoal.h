@@ -132,6 +132,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    JumpAroundTargetGoal& operator=(JumpAroundTargetGoal const&);
+    JumpAroundTargetGoal(JumpAroundTargetGoal const&);
+    JumpAroundTargetGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

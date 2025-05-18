@@ -10,6 +10,10 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptItemEnchantmentLevelOutOfBoundsError : public ::Scripting::Error {
 public:
+    // prevent constructor by default
+    ScriptItemEnchantmentLevelOutOfBoundsError();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptItemEnchantmentLevelOutOfBoundsError(

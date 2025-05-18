@@ -16,6 +16,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActorDefinitionTriggeredEvent& operator=(ActorDefinitionTriggeredEvent const&);
+    ActorDefinitionTriggeredEvent(ActorDefinitionTriggeredEvent const&);
+    ActorDefinitionTriggeredEvent();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ~ActorDefinitionTriggeredEvent();

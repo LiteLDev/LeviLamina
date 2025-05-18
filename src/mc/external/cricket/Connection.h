@@ -81,6 +81,10 @@ public:
 
     class ConnectionRequest {
     public:
+        // prevent constructor by default
+        ConnectionRequest();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI

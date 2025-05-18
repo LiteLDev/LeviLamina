@@ -26,6 +26,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RandomLookAroundGoal& operator=(RandomLookAroundGoal const&);
+    RandomLookAroundGoal(RandomLookAroundGoal const&);
+    RandomLookAroundGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

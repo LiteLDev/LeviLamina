@@ -35,6 +35,7 @@ public:
         // prevent constructor by default
         FeatureBinaryJsonFormat& operator=(FeatureBinaryJsonFormat const&);
         FeatureBinaryJsonFormat(FeatureBinaryJsonFormat const&);
+        FeatureBinaryJsonFormat();
 
     public:
         // member functions

@@ -29,6 +29,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    UpdateAttributesPacket();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

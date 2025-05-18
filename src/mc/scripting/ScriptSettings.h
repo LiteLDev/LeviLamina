@@ -34,6 +34,7 @@ public:
 public:
     // prevent constructor by default
     ScriptSettings& operator=(ScriptSettings const&);
+    ScriptSettings();
 
 public:
     // member functions

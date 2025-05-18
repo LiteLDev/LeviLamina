@@ -32,6 +32,7 @@ public:
 public:
     // prevent constructor by default
     ScriptingWorldInitializeEvent& operator=(ScriptingWorldInitializeEvent const&);
+    ScriptingWorldInitializeEvent();
 
 public:
     // member functions

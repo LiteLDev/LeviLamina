@@ -30,6 +30,10 @@ public:
     MCAPI void set(ushort id, T const& value);
 
 public:
+    // prevent constructor by default
+    SynchedActorDataEntityWrapper();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit SynchedActorDataEntityWrapper(::EntityContext& entity);

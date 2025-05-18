@@ -9,6 +9,10 @@ namespace cereal { struct ReflectionCtx; }
 
 class RegisterDiagnosticsStatsTypes {
 public:
+    // prevent constructor by default
+    RegisterDiagnosticsStatsTypes();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit RegisterDiagnosticsStatsTypes(::cereal::ReflectionCtx& ctx);

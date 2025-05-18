@@ -27,6 +27,7 @@ public:
 public:
     // prevent constructor by default
     ChatEvent& operator=(ChatEvent const&);
+    ChatEvent();
 
 public:
     // member functions

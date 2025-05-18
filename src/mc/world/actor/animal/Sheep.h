@@ -15,6 +15,10 @@ struct ActorDefinitionIdentifier;
 
 class Sheep : public ::Animal {
 public:
+    // prevent constructor by default
+    Sheep();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 69

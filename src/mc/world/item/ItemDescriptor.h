@@ -152,6 +152,7 @@ public:
 public:
     // prevent constructor by default
     ItemDescriptor(ItemDescriptor const&);
+    ItemDescriptor();
 
 public:
     // virtual functions

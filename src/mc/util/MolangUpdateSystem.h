@@ -19,6 +19,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MolangUpdateSystem& operator=(MolangUpdateSystem const&);
+    MolangUpdateSystem(MolangUpdateSystem const&);
+    MolangUpdateSystem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

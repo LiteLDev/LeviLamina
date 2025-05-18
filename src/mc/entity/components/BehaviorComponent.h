@@ -24,6 +24,7 @@ public:
     // prevent constructor by default
     BehaviorComponent& operator=(BehaviorComponent const&);
     BehaviorComponent(BehaviorComponent const&);
+    BehaviorComponent();
 
 public:
     // member functions

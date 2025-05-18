@@ -24,6 +24,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LegacyOnCompleteTriggerItemComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7

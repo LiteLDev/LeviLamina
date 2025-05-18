@@ -26,6 +26,10 @@ public:
     struct Stats {};
 
 public:
+    // prevent constructor by default
+    TaskQueuePacedSender();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void EnsureStarted();

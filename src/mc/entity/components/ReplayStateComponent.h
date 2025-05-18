@@ -31,6 +31,7 @@ public:
     // prevent constructor by default
     ReplayStateComponent& operator=(ReplayStateComponent const&);
     ReplayStateComponent(ReplayStateComponent const&);
+    ReplayStateComponent();
 
 public:
     // member functions

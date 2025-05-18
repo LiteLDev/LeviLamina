@@ -28,6 +28,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActorDimensionTransferer();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

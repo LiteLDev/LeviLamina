@@ -39,6 +39,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FishingHook();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

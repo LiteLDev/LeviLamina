@@ -38,19 +38,23 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MerchantRecipe();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MerchantRecipe(::MerchantRecipe const&);
+    MCAPI MerchantRecipe(::MerchantRecipe const&);
 
-    MCNAPI explicit MerchantRecipe(::CompoundTag const* tag);
+    MCAPI explicit MerchantRecipe(::CompoundTag const* tag);
 
-    MCNAPI MerchantRecipe(::MerchantRecipe&&);
+    MCAPI MerchantRecipe(::MerchantRecipe&&);
 
-    MCNAPI MerchantRecipe(::ItemInstance const& buy, ::ItemInstance const& sell);
+    MCAPI MerchantRecipe(::ItemInstance const& buy, ::ItemInstance const& sell);
 
-    MCNAPI MerchantRecipe(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
+    MCAPI MerchantRecipe(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
 
-    MCNAPI void calculateDemandPrices(
+    MCAPI void calculateDemandPrices(
         int               minorPositiveGossip,
         int               majorPositiveGossip,
         int               nearbyCuredDiscount,
@@ -59,36 +63,36 @@ public:
         ::BaseGameVersion baseGameVersion
     );
 
-    MCNAPI ::std::unique_ptr<::CompoundTag> createTag(bool includeNetInfo, ::SaveContext const& saveContext) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> createTag(bool includeNetInfo, ::SaveContext const& saveContext) const;
 
-    MCNAPI bool isSame(::MerchantRecipe const& lhs) const;
+    MCAPI bool isSame(::MerchantRecipe const& lhs) const;
 
-    MCNAPI void legacyCalculateDemandPrices(int lowTierDiscount, int highTierDiscount);
+    MCAPI void legacyCalculateDemandPrices(int lowTierDiscount, int highTierDiscount);
 
-    MCNAPI void load(::CompoundTag const* tag);
+    MCAPI void load(::CompoundTag const* tag);
 
-    MCNAPI ::MerchantRecipe& operator=(::MerchantRecipe const&);
+    MCAPI ::MerchantRecipe& operator=(::MerchantRecipe const&);
 
-    MCNAPI ~MerchantRecipe();
+    MCAPI ~MerchantRecipe();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::MerchantRecipe const&);
+    MCFOLD void* $ctor(::MerchantRecipe const&);
 
-    MCNAPI void* $ctor(::CompoundTag const* tag);
+    MCAPI void* $ctor(::CompoundTag const* tag);
 
-    MCNAPI void* $ctor(::MerchantRecipe&&);
+    MCAPI void* $ctor(::MerchantRecipe&&);
 
-    MCNAPI void* $ctor(::ItemInstance const& buy, ::ItemInstance const& sell);
+    MCAPI void* $ctor(::ItemInstance const& buy, ::ItemInstance const& sell);
 
-    MCNAPI void* $ctor(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
+    MCAPI void* $ctor(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

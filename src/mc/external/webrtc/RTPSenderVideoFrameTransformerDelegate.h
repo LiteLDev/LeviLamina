@@ -23,6 +23,10 @@ namespace webrtc {
 
 class RTPSenderVideoFrameTransformerDelegate {
 public:
+    // prevent constructor by default
+    RTPSenderVideoFrameTransformerDelegate();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void Init();

@@ -20,6 +20,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LayDownGoal& operator=(LayDownGoal const&);
+    LayDownGoal(LayDownGoal const&);
+    LayDownGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

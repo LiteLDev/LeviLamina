@@ -27,6 +27,7 @@ public:
     // prevent constructor by default
     ItemStackNetIdVariant& operator=(ItemStackNetIdVariant const&);
     ItemStackNetIdVariant(ItemStackNetIdVariant const&);
+    ItemStackNetIdVariant();
 
 public:
     // member functions

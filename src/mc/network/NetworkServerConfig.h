@@ -23,12 +23,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~NetworkServerConfig();
+    MCAPI ~NetworkServerConfig();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

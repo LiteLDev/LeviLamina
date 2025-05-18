@@ -11,6 +11,10 @@ namespace webrtc {
 
 class RTCRemoteIceCandidateStats {
 public:
+    // prevent constructor by default
+    RTCRemoteIceCandidateStats();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RTCRemoteIceCandidateStats(::std::string, ::webrtc::Timestamp);

@@ -16,6 +16,7 @@ public:
     // prevent constructor by default
     SyncedAttribute& operator=(SyncedAttribute const&);
     SyncedAttribute(SyncedAttribute const&);
+    SyncedAttribute();
 
 public:
     // member functions

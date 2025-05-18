@@ -19,6 +19,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SimplePlayerContainer& operator=(SimplePlayerContainer const&);
+    SimplePlayerContainer(SimplePlayerContainer const&);
+    SimplePlayerContainer();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

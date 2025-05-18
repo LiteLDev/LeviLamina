@@ -21,6 +21,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RiseToLiquidLevelGoal& operator=(RiseToLiquidLevelGoal const&);
+    RiseToLiquidLevelGoal(RiseToLiquidLevelGoal const&);
+    RiseToLiquidLevelGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

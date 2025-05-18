@@ -17,6 +17,7 @@ public:
     // prevent constructor by default
     ScriptGameOptions& operator=(ScriptGameOptions const&);
     ScriptGameOptions(ScriptGameOptions const&);
+    ScriptGameOptions();
 
 public:
     // member functions

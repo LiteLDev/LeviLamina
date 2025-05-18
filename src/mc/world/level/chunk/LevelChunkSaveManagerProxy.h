@@ -27,6 +27,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LevelChunkSaveManagerProxy& operator=(LevelChunkSaveManagerProxy const&);
+    LevelChunkSaveManagerProxy(LevelChunkSaveManagerProxy const&);
+    LevelChunkSaveManagerProxy();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

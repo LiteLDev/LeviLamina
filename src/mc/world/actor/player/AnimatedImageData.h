@@ -20,6 +20,7 @@ public:
 public:
     // prevent constructor by default
     AnimatedImageData(AnimatedImageData const&);
+    AnimatedImageData();
 
 public:
     // member functions

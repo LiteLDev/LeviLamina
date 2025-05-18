@@ -23,6 +23,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BaseGameVersion();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI BaseGameVersion(::BaseGameVersion const& rhs);

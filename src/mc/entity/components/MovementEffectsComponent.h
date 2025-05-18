@@ -17,6 +17,7 @@ public:
 public:
     // prevent constructor by default
     MovementEffectsComponent& operator=(MovementEffectsComponent const&);
+    MovementEffectsComponent();
 
 public:
     // member functions

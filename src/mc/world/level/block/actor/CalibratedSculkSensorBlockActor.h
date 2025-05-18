@@ -12,6 +12,10 @@ class BlockPos;
 
 class CalibratedSculkSensorBlockActor : public ::SculkSensorBlockActor {
 public:
+    // prevent constructor by default
+    CalibratedSculkSensorBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

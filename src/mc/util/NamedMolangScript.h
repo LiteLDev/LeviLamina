@@ -17,6 +17,7 @@ public:
 public:
     // prevent constructor by default
     NamedMolangScript& operator=(NamedMolangScript const&);
+    NamedMolangScript();
 
 public:
     // member functions

@@ -64,6 +64,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LeavesBlock& operator=(LeavesBlock const&);
+    LeavesBlock(LeavesBlock const&);
+    LeavesBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 132

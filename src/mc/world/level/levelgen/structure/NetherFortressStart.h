@@ -12,6 +12,10 @@ class Random;
 
 class NetherFortressStart : public ::StructureStart {
 public:
+    // prevent constructor by default
+    NetherFortressStart();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

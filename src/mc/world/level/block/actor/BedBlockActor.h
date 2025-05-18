@@ -29,6 +29,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BedBlockActor& operator=(BedBlockActor const&);
+    BedBlockActor(BedBlockActor const&);
+    BedBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

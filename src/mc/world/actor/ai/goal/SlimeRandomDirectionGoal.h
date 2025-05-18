@@ -23,6 +23,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SlimeRandomDirectionGoal& operator=(SlimeRandomDirectionGoal const&);
+    SlimeRandomDirectionGoal(SlimeRandomDirectionGoal const&);
+    SlimeRandomDirectionGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

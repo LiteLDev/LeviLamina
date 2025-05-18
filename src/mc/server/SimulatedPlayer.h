@@ -84,6 +84,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SimulatedPlayer();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

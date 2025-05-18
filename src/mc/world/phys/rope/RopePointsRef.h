@@ -15,4 +15,10 @@ public:
     ::ll::TypedStorage<8, 8, ::RopePoints const&>          mPoints;
     ::ll::TypedStorage<8, 8, ::Bedrock::Threading::Mutex&> mPointMutex;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RopePointsRef& operator=(RopePointsRef const&);
+    RopePointsRef(RopePointsRef const&);
+    RopePointsRef();
 };

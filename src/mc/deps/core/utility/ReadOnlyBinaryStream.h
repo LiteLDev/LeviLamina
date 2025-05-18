@@ -16,6 +16,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ReadOnlyBinaryStream();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

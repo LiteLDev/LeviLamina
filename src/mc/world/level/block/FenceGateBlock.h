@@ -25,6 +25,10 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 
 class FenceGateBlock : public ::BlockLegacy {
 public:
+    // prevent constructor by default
+    FenceGateBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 67

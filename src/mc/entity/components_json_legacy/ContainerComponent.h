@@ -42,6 +42,7 @@ public:
     // prevent constructor by default
     ContainerComponent& operator=(ContainerComponent const&);
     ContainerComponent(ContainerComponent const&);
+    ContainerComponent();
 
 public:
     // virtual functions

@@ -81,6 +81,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RakPeerHelper& operator=(RakPeerHelper const&);
+    RakPeerHelper(RakPeerHelper const&);
+    RakPeerHelper();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void LogIPSupport(::RakPeerHelper::PeerPurpose purpose);

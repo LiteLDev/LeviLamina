@@ -26,6 +26,7 @@ public:
 public:
     // prevent constructor by default
     BlockTryDestroyByPlayerEvent& operator=(BlockTryDestroyByPlayerEvent const&);
+    BlockTryDestroyByPlayerEvent();
 
 public:
     // member functions

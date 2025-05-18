@@ -30,6 +30,10 @@ namespace cricket {
 
 class TurnPort {
 public:
+    // prevent constructor by default
+    TurnPort();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void AddRequestAuthInfo(::cricket::StunMessage*);

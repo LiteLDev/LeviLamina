@@ -21,4 +21,10 @@ public:
     ::ll::TypedStorage<1, 1, ::MovementAttributeAccess>                             mAccess;
     ::ll::TypedStorage<1, 1, ::MovementAttributeCorrectionMode>                     mCorrectionMode;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MovementAttributeEntry& operator=(MovementAttributeEntry const&);
+    MovementAttributeEntry(MovementAttributeEntry const&);
+    MovementAttributeEntry();
 };

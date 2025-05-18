@@ -64,6 +64,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PathFinder();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI PathFinder(::BlockSource& region, ::NavigationComponent const& navigation);

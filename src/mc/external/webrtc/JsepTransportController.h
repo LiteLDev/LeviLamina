@@ -68,6 +68,10 @@ public:
     };
 
 public:
+    // prevent constructor by default
+    JsepTransportController();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::webrtc::RTCError AddRemoteCandidates(::std::string const&, ::std::vector<::cricket::Candidate> const&);

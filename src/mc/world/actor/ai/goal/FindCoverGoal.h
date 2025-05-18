@@ -24,6 +24,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FindCoverGoal& operator=(FindCoverGoal const&);
+    FindCoverGoal(FindCoverGoal const&);
+    FindCoverGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

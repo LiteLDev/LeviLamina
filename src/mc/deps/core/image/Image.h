@@ -29,6 +29,7 @@ public:
     // prevent constructor by default
     Image& operator=(Image const&);
     Image(Image const&);
+    Image();
 
 public:
     // member functions

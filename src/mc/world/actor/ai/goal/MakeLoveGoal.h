@@ -19,6 +19,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MakeLoveGoal& operator=(MakeLoveGoal const&);
+    MakeLoveGoal(MakeLoveGoal const&);
+    MakeLoveGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -34,6 +34,7 @@ public:
     // prevent constructor by default
     AngryComponent& operator=(AngryComponent const&);
     AngryComponent(AngryComponent const&);
+    AngryComponent();
 
 public:
     // member functions

@@ -77,6 +77,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    AnimationComponent();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI

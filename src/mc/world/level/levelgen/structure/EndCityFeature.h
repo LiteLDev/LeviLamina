@@ -25,6 +25,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EndCityFeature& operator=(EndCityFeature const&);
+    EndCityFeature(EndCityFeature const&);
+    EndCityFeature();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

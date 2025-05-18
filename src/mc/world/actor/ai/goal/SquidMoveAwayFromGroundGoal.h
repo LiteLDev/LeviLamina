@@ -18,6 +18,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SquidMoveAwayFromGroundGoal& operator=(SquidMoveAwayFromGroundGoal const&);
+    SquidMoveAwayFromGroundGoal(SquidMoveAwayFromGroundGoal const&);
+    SquidMoveAwayFromGroundGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

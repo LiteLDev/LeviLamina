@@ -262,6 +262,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ServerNetworkHandler& operator=(ServerNetworkHandler const&);
+    ServerNetworkHandler(ServerNetworkHandler const&);
+    ServerNetworkHandler();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

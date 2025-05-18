@@ -21,6 +21,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TargetWhenPushedGoal& operator=(TargetWhenPushedGoal const&);
+    TargetWhenPushedGoal(TargetWhenPushedGoal const&);
+    TargetWhenPushedGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -26,6 +26,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActorDimensionTransferManager();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ActorDimensionTransferManager(

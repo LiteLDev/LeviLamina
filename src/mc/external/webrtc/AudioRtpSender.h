@@ -16,6 +16,10 @@ namespace webrtc {
 
 class AudioRtpSender {
 public:
+    // prevent constructor by default
+    AudioRtpSender();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI

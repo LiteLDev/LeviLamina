@@ -11,6 +11,10 @@ namespace webrtc {
 
 class GoogCcNetworkControllerFactory {
 public:
+    // prevent constructor by default
+    GoogCcNetworkControllerFactory();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit GoogCcNetworkControllerFactory(::webrtc::NetworkStatePredictorFactoryInterface*);

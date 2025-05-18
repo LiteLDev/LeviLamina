@@ -90,6 +90,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Minecraft& operator=(Minecraft const&);
+    Minecraft(Minecraft const&);
+    Minecraft();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

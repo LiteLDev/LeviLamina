@@ -6,6 +6,10 @@ namespace webrtc {
 
 struct AttributeInit {
 public:
+    // prevent constructor by default
+    AttributeInit();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI

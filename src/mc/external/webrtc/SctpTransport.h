@@ -18,6 +18,10 @@ namespace webrtc {
 
 class SctpTransport {
 public:
+    // prevent constructor by default
+    SctpTransport();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void Clear();

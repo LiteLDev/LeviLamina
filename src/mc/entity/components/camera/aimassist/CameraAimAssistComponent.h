@@ -21,6 +21,7 @@ public:
     // prevent constructor by default
     CameraAimAssistComponent& operator=(CameraAimAssistComponent const&);
     CameraAimAssistComponent(CameraAimAssistComponent const&);
+    CameraAimAssistComponent();
 
 public:
     // member functions

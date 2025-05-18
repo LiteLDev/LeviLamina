@@ -27,6 +27,7 @@ public:
     // prevent constructor by default
     PlayerActionComponent& operator=(PlayerActionComponent const&);
     PlayerActionComponent(PlayerActionComponent const&);
+    PlayerActionComponent();
 
 public:
     // member functions

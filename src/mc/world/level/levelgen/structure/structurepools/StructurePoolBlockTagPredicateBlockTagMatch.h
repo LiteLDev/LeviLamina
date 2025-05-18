@@ -21,6 +21,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StructurePoolBlockTagPredicateBlockTagMatch& operator=(StructurePoolBlockTagPredicateBlockTagMatch const&);
+    StructurePoolBlockTagPredicateBlockTagMatch(StructurePoolBlockTagPredicateBlockTagMatch const&);
+    StructurePoolBlockTagPredicateBlockTagMatch();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

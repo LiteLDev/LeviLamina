@@ -86,6 +86,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TakeFlowerGoal& operator=(TakeFlowerGoal const&);
+    TakeFlowerGoal(TakeFlowerGoal const&);
+    TakeFlowerGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

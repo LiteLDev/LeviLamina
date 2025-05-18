@@ -248,6 +248,7 @@ public:
     // prevent constructor by default
     ScriptV010Events& operator=(ScriptV010Events const&);
     ScriptV010Events(ScriptV010Events const&);
+    ScriptV010Events();
 
 public:
     // virtual functions

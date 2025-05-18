@@ -31,6 +31,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DimensionFactory& operator=(DimensionFactory const&);
+    DimensionFactory(DimensionFactory const&);
+    DimensionFactory();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -13,6 +13,7 @@ class RTCOutboundRtpStreamStats {
 public:
     // prevent constructor by default
     RTCOutboundRtpStreamStats& operator=(RTCOutboundRtpStreamStats const&);
+    RTCOutboundRtpStreamStats();
 
 public:
     // member functions

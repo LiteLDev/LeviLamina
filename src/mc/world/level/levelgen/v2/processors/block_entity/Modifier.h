@@ -38,6 +38,7 @@ public:
 public:
     // prevent constructor by default
     Modifier& operator=(Modifier const&);
+    Modifier();
 
 public:
     // virtual functions

@@ -42,6 +42,7 @@ public:
     // prevent constructor by default
     ServerCameraStatesComponent& operator=(ServerCameraStatesComponent const&);
     ServerCameraStatesComponent(ServerCameraStatesComponent const&);
+    ServerCameraStatesComponent();
 
 public:
     // member functions

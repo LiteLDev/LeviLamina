@@ -21,6 +21,7 @@ public:
 public:
     // prevent constructor by default
     ProjectileHitEvent& operator=(ProjectileHitEvent const&);
+    ProjectileHitEvent();
 
 public:
     // member functions

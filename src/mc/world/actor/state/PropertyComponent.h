@@ -33,6 +33,7 @@ public:
     // prevent constructor by default
     PropertyComponent& operator=(PropertyComponent const&);
     PropertyComponent(PropertyComponent const&);
+    PropertyComponent();
 
 public:
     // member functions

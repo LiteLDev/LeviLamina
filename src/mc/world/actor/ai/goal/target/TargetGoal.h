@@ -35,6 +35,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TargetGoal& operator=(TargetGoal const&);
+    TargetGoal(TargetGoal const&);
+    TargetGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

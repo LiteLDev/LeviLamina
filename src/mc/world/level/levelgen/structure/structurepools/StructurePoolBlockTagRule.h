@@ -19,6 +19,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StructurePoolBlockTagRule();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI StructurePoolBlockTagRule(

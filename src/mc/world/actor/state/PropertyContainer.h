@@ -27,6 +27,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PropertyContainer();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI PropertyContainer(

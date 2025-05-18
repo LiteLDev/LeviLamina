@@ -26,7 +26,8 @@ public:
     // NOLINTEND
 
 public:
-    SetScorePacket() = default;
+    // prevent constructor by default
+    SetScorePacket();
 
 public:
     // virtual functions

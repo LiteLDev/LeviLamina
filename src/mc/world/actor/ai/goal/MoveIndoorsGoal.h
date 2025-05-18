@@ -84,6 +84,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MoveIndoorsGoal& operator=(MoveIndoorsGoal const&);
+    MoveIndoorsGoal(MoveIndoorsGoal const&);
+    MoveIndoorsGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

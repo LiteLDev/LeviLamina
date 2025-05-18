@@ -88,6 +88,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Block();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

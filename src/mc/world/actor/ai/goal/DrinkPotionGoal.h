@@ -27,6 +27,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DrinkPotionGoal& operator=(DrinkPotionGoal const&);
+    DrinkPotionGoal(DrinkPotionGoal const&);
+    DrinkPotionGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

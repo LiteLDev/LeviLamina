@@ -33,6 +33,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    AdmireItemGoal& operator=(AdmireItemGoal const&);
+    AdmireItemGoal(AdmireItemGoal const&);
+    AdmireItemGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

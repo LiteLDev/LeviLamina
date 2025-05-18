@@ -32,6 +32,7 @@ public:
 public:
     // prevent constructor by default
     ConnectionRequest& operator=(ConnectionRequest const&);
+    ConnectionRequest();
 
 public:
     // member functions

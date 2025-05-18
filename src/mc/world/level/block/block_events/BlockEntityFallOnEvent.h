@@ -23,6 +23,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockEntityFallOnEvent& operator=(BlockEntityFallOnEvent const&);
+    BlockEntityFallOnEvent(BlockEntityFallOnEvent const&);
+    BlockEntityFallOnEvent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

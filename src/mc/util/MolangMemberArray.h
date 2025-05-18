@@ -30,6 +30,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MolangMemberArray();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI MolangMemberArray(::MolangStruct_RGBA color, ::mce::Color const&);

@@ -87,6 +87,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GoAndGiveItemsToOwnerGoal& operator=(GoAndGiveItemsToOwnerGoal const&);
+    GoAndGiveItemsToOwnerGoal(GoAndGiveItemsToOwnerGoal const&);
+    GoAndGiveItemsToOwnerGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

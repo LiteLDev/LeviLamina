@@ -38,6 +38,7 @@ public:
 public:
     // prevent constructor by default
     CommandBlockUpdatePacket& operator=(CommandBlockUpdatePacket const&);
+    CommandBlockUpdatePacket();
 
 public:
     // virtual functions

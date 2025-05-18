@@ -29,6 +29,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MoveToPOIGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -22,6 +22,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    WorldLimitChunkSource();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

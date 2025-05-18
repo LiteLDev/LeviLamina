@@ -42,6 +42,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ItemFrameBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

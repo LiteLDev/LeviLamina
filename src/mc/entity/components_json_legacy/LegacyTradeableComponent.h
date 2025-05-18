@@ -39,6 +39,7 @@ public:
     // prevent constructor by default
     LegacyTradeableComponent& operator=(LegacyTradeableComponent const&);
     LegacyTradeableComponent(LegacyTradeableComponent const&);
+    LegacyTradeableComponent();
 
 public:
     // member functions

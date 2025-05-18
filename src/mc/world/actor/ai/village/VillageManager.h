@@ -100,6 +100,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    VillageManager& operator=(VillageManager const&);
+    VillageManager(VillageManager const&);
+    VillageManager();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

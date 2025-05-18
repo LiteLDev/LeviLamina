@@ -38,6 +38,10 @@ public:
     };
 
 public:
+    // prevent constructor by default
+    UlpfecGenerator();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::webrtc::FecProtectionParams const& CurrentParams() const;

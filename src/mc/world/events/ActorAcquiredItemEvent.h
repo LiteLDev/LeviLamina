@@ -26,6 +26,7 @@ public:
 public:
     // prevent constructor by default
     ActorAcquiredItemEvent& operator=(ActorAcquiredItemEvent const&);
+    ActorAcquiredItemEvent();
 
 public:
     // member functions

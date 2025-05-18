@@ -24,6 +24,10 @@ public:
     struct ProbeCluster {};
 
 public:
+    // prevent constructor by default
+    BitrateProber();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit BitrateProber(::webrtc::FieldTrialsView const&);

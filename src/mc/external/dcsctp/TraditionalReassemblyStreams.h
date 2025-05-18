@@ -28,6 +28,10 @@ public:
     // TraditionalReassemblyStreams inner types define
     class OrderedStream {
     public:
+        // prevent constructor by default
+        OrderedStream();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI int
@@ -83,6 +87,10 @@ public:
                                                ::dcsctp::Data>>>>);
         // NOLINTEND
     };
+
+public:
+    // prevent constructor by default
+    TraditionalReassemblyStreams();
 
 public:
     // member functions

@@ -44,6 +44,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EquipItemGoal& operator=(EquipItemGoal const&);
+    EquipItemGoal(EquipItemGoal const&);
+    EquipItemGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

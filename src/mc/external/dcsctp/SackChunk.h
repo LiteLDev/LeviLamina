@@ -23,6 +23,10 @@ public:
     struct GapAckBlock {};
 
 public:
+    // prevent constructor by default
+    SackChunk();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI

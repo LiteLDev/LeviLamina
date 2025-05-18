@@ -34,6 +34,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MeleeAttackGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

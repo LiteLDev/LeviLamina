@@ -31,6 +31,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LegacyOnDigTriggerItemComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6

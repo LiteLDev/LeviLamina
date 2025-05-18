@@ -43,6 +43,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SpikeFeature& operator=(SpikeFeature const&);
+    SpikeFeature(SpikeFeature const&);
+    SpikeFeature();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

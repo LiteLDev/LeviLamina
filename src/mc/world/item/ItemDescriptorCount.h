@@ -18,6 +18,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ItemDescriptorCount();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

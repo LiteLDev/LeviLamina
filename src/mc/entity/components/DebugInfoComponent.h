@@ -71,6 +71,7 @@ public:
 public:
     // prevent constructor by default
     DebugInfoComponent& operator=(DebugInfoComponent const&);
+    DebugInfoComponent();
 
 public:
     // virtual functions

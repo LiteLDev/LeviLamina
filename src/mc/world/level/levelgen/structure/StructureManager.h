@@ -56,6 +56,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StructureManager();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

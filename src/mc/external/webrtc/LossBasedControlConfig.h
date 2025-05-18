@@ -11,6 +11,10 @@ namespace webrtc {
 
 struct LossBasedControlConfig {
 public:
+    // prevent constructor by default
+    LossBasedControlConfig();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit LossBasedControlConfig(::webrtc::FieldTrialsView const*);

@@ -16,6 +16,10 @@ namespace webrtc {
 
 class JsepSessionDescription {
 public:
+    // prevent constructor by default
+    JsepSessionDescription();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool GetMediasectionIndex(::webrtc::IceCandidateInterface const*, uint64*);

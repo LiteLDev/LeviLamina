@@ -79,6 +79,7 @@ public:
     // prevent constructor by default
     LevelStorageWriteBatch& operator=(LevelStorageWriteBatch const&);
     LevelStorageWriteBatch(LevelStorageWriteBatch const&);
+    LevelStorageWriteBatch();
 
 public:
     // virtual functions

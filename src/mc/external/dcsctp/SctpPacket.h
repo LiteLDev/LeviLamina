@@ -25,6 +25,10 @@ public:
     // SctpPacket inner types define
     class Builder {
     public:
+        // prevent constructor by default
+        Builder();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ::dcsctp::SctpPacket::Builder& Add(::dcsctp::Chunk const&);

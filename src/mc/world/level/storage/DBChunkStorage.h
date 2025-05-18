@@ -83,6 +83,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DBChunkStorage& operator=(DBChunkStorage const&);
+    DBChunkStorage(DBChunkStorage const&);
+    DBChunkStorage();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

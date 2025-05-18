@@ -28,6 +28,10 @@ public:
     // WebSocket inner types define
     struct ConnectContext {
     public:
+        // prevent constructor by default
+        ConnectContext();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ConnectContext(::std::shared_ptr<::xbox::httpclient::WebSocket>, ::XAsyncBlock*);

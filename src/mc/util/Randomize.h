@@ -18,6 +18,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Randomize();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit Randomize(::Random& random);

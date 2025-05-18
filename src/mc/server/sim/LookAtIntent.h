@@ -28,6 +28,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LookAtIntent();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit LookAtIntent(::std::variant<

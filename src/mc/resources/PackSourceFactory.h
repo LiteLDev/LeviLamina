@@ -59,6 +59,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PackSourceFactory();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

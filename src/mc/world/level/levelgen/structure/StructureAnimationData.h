@@ -34,6 +34,7 @@ public:
     // prevent constructor by default
     StructureAnimationData& operator=(StructureAnimationData const&);
     StructureAnimationData(StructureAnimationData const&);
+    StructureAnimationData();
 
 public:
     // member functions

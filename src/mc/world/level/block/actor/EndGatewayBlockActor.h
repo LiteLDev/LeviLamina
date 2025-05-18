@@ -64,36 +64,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void teleportEntity(::Actor& entity);
+    MCAPI void teleportEntity(::Actor& entity);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static int _getHighestSection(::WorldGenerator& endGenerator, ::BlockVolume& box, ::BlockPos const& pos);
+    MCAPI static int _getHighestSection(::WorldGenerator& endGenerator, ::BlockVolume& box, ::BlockPos const& pos);
 
-    MCNAPI static ::BlockPos findExitPortal(::WorldGenerator& endGenerator, ::BlockPos const& origin);
+    MCAPI static ::BlockPos findExitPortal(::WorldGenerator& endGenerator, ::BlockPos const& origin);
 
-    MCNAPI static ::BlockPos
+    MCAPI static ::BlockPos
     findValidSpawnAround(::BlockSource& region, ::BlockPos const& around, bool searchForEndStoneOnly, int searchRadius);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI void $tick(::BlockSource& region);
+    MCAPI void $tick(::BlockSource& region);
 
-    MCNAPI void $onChanged(::BlockSource& region);
+    MCFOLD void $onChanged(::BlockSource& region);
 
-    MCNAPI bool $hasAlphaLayer() const;
+    MCFOLD bool $hasAlphaLayer() const;
 
-    MCNAPI void $triggerEvent(int b0, int b1);
+    MCAPI void $triggerEvent(int b0, int b1);
 
-    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
     // NOLINTEND
 
 public:

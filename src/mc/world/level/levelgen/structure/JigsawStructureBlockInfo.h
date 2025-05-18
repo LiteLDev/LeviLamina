@@ -19,4 +19,10 @@ public:
     ::ll::TypedStorage<8, 8, ::Block const&>                   mBlock;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>> mTag;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    JigsawStructureBlockInfo& operator=(JigsawStructureBlockInfo const&);
+    JigsawStructureBlockInfo(JigsawStructureBlockInfo const&);
+    JigsawStructureBlockInfo();
 };

@@ -13,6 +13,7 @@ class RTCIceCandidateStats {
 public:
     // prevent constructor by default
     RTCIceCandidateStats& operator=(RTCIceCandidateStats const&);
+    RTCIceCandidateStats();
 
 public:
     // member functions

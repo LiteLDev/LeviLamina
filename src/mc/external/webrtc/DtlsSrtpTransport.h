@@ -16,6 +16,10 @@ namespace webrtc {
 
 class DtlsSrtpTransport {
 public:
+    // prevent constructor by default
+    DtlsSrtpTransport();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool DtlsHandshakeCompleted();

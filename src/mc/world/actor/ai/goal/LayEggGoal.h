@@ -33,6 +33,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LayEggGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 17

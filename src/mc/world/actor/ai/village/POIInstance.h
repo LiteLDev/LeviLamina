@@ -36,6 +36,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    POIInstance();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI POIInstance(

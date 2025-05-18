@@ -282,6 +282,7 @@ public:
         // prevent constructor by default
         Signature& operator=(Signature const&);
         Signature(Signature const&);
+        Signature();
 
     public:
         // member functions
@@ -314,6 +315,12 @@ public:
         ::CommandRegistry::Symbol mIdentifierInfo;
         ::CommandRegistry const&  mRegistry;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        LexicalToken& operator=(LexicalToken const&);
+        LexicalToken(LexicalToken const&);
+        LexicalToken();
 
     public:
         // member functions
@@ -362,6 +369,7 @@ public:
         // prevent constructor by default
         ParseRule& operator=(ParseRule const&);
         ParseRule(ParseRule const&);
+        ParseRule();
 
     public:
         // member functions
@@ -608,6 +616,12 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        Parser& operator=(Parser const&);
+        Parser(Parser const&);
+        Parser();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCAPI Parser(::CommandRegistry const& registry, int version);
@@ -707,6 +721,10 @@ public:
                    [](auto& pair, auto& child) { return pair.first < child; }
         )->second;
     }
+
+public:
+    // prevent constructor by default
+    CommandRegistry();
 
 public:
     // member functions

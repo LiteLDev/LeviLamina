@@ -91,6 +91,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PlayDeadGoal& operator=(PlayDeadGoal const&);
+    PlayDeadGoal(PlayDeadGoal const&);
+    PlayDeadGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -39,6 +39,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RealmsStoriesGameplayEventListener();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 43

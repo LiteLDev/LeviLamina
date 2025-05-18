@@ -15,6 +15,10 @@ struct XAsyncProviderData;
 
 struct HC_CALL {
 public:
+    // prevent constructor by default
+    HC_CALL();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Result<::std::chrono::seconds> GetRetryAfterHeaderTime();

@@ -36,6 +36,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PlanterItemComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6

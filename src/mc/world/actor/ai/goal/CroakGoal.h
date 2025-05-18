@@ -77,6 +77,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CroakGoal& operator=(CroakGoal const&);
+    CroakGoal(CroakGoal const&);
+    CroakGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

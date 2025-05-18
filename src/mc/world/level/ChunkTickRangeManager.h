@@ -25,6 +25,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ChunkTickRangeManager();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ChunkTickRangeManager(uint chunkTickRange, uint maxSimRadiusInChunks);

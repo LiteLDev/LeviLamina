@@ -29,6 +29,10 @@ public:
     // UDPPort inner types define
     class AddressResolver {
     public:
+        // prevent constructor by default
+        AddressResolver();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI AddressResolver(::rtc::PacketSocketFactory*, ::std::function<void(::rtc::SocketAddress const&, int)>);
@@ -44,6 +48,10 @@ public:
         MCNAPI void* $ctor(::rtc::PacketSocketFactory*, ::std::function<void(::rtc::SocketAddress const&, int)>);
         // NOLINTEND
     };
+
+public:
+    // prevent constructor by default
+    UDPPort();
 
 public:
     // member functions

@@ -9,6 +9,10 @@ namespace webrtc {
 
 class MediaStream {
 public:
+    // prevent constructor by default
+    MediaStream();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit MediaStream(::std::string const&);

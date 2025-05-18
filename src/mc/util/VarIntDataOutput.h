@@ -20,6 +20,12 @@ public:
     VarIntDataOutput(BinaryStream& bs) : mStream(bs) {}
 
 public:
+    // prevent constructor by default
+    VarIntDataOutput& operator=(VarIntDataOutput const&);
+    VarIntDataOutput(VarIntDataOutput const&);
+    VarIntDataOutput();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

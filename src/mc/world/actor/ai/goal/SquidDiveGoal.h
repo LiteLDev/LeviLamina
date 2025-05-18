@@ -18,6 +18,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SquidDiveGoal& operator=(SquidDiveGoal const&);
+    SquidDiveGoal(SquidDiveGoal const&);
+    SquidDiveGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

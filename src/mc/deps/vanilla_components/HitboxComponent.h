@@ -17,6 +17,7 @@ public:
 public:
     // prevent constructor by default
     HitboxComponent& operator=(HitboxComponent const&);
+    HitboxComponent();
 
 public:
     // member functions

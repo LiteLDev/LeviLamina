@@ -14,4 +14,10 @@ public:
     ::ll::TypedStorage<8, 8, ::Block const&> mBlock;
     ::ll::TypedStorage<4, 4, int const>      mWeight;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    WeightedBlock& operator=(WeightedBlock const&);
+    WeightedBlock(WeightedBlock const&);
+    WeightedBlock();
 };

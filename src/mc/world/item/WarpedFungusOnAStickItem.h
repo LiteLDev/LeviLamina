@@ -12,6 +12,10 @@ namespace cereal { struct ReflectionCtx; }
 
 class WarpedFungusOnAStickItem : public ::ComponentItem {
 public:
+    // prevent constructor by default
+    WarpedFungusOnAStickItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 38

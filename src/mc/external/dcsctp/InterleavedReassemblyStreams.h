@@ -31,6 +31,10 @@ public:
 
     class Stream {
     public:
+        // prevent constructor by default
+        Stream();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI int
@@ -63,6 +67,10 @@ public:
         $ctor(::dcsctp::InterleavedReassemblyStreams::FullStreamId, ::dcsctp::InterleavedReassemblyStreams*, ::webrtc::StrongAlias<::dcsctp::MIDTag, uint>);
         // NOLINTEND
     };
+
+public:
+    // prevent constructor by default
+    InterleavedReassemblyStreams();
 
 public:
     // member functions

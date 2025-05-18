@@ -29,6 +29,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    InventoryContentPacket();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

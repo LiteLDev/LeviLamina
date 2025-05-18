@@ -12,6 +12,7 @@ public:
     // prevent constructor by default
     Subscription& operator=(Subscription const&);
     Subscription(Subscription const&);
+    Subscription();
 
 public:
     // member functions

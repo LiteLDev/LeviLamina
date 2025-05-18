@@ -30,6 +30,7 @@ public:
     // prevent constructor by default
     RepairableItemComponent& operator=(RepairableItemComponent const&);
     RepairableItemComponent(RepairableItemComponent const&);
+    RepairableItemComponent();
 
 public:
     // virtual functions

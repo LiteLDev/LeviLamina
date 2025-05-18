@@ -23,6 +23,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SkeletonHorseTrapGoal& operator=(SkeletonHorseTrapGoal const&);
+    SkeletonHorseTrapGoal(SkeletonHorseTrapGoal const&);
+    SkeletonHorseTrapGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6

@@ -57,6 +57,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EntitySystems();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

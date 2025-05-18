@@ -24,6 +24,7 @@ public:
     // prevent constructor by default
     Beardifier& operator=(Beardifier const&);
     Beardifier(Beardifier const&);
+    Beardifier();
 
 public:
     // member functions

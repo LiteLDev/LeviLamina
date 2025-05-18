@@ -17,6 +17,10 @@ public:
     using intN2::intN2;
 
 public:
+    // prevent constructor by default
+    ChunkPos();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ChunkPos(::BlockPos const& pos);

@@ -27,6 +27,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StemBlock& operator=(StemBlock const&);
+    StemBlock(StemBlock const&);
+    StemBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 81

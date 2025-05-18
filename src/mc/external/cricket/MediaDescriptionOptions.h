@@ -14,6 +14,7 @@ struct MediaDescriptionOptions {
 public:
     // prevent constructor by default
     MediaDescriptionOptions& operator=(MediaDescriptionOptions const&);
+    MediaDescriptionOptions();
 
 public:
     // member functions

@@ -20,6 +20,7 @@ public:
 public:
     // prevent constructor by default
     SerializedPersonaPieceHandle(SerializedPersonaPieceHandle const&);
+    SerializedPersonaPieceHandle();
 
 public:
     // member functions

@@ -37,6 +37,7 @@ public:
     // prevent constructor by default
     ChunkGeneratorStructureState& operator=(ChunkGeneratorStructureState const&);
     ChunkGeneratorStructureState(ChunkGeneratorStructureState const&);
+    ChunkGeneratorStructureState();
 
 public:
     // member functions

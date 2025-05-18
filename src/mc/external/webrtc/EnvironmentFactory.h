@@ -14,6 +14,10 @@ namespace webrtc {
 
 class EnvironmentFactory {
 public:
+    // prevent constructor by default
+    EnvironmentFactory();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::webrtc::Environment Create() const;

@@ -6,6 +6,10 @@ namespace webrtc {
 
 class RtcEventBweUpdateLossBased {
 public:
+    // prevent constructor by default
+    RtcEventBweUpdateLossBased();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RtcEventBweUpdateLossBased(int, uchar, int);

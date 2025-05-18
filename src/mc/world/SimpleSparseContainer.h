@@ -31,6 +31,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SimpleSparseContainer& operator=(SimpleSparseContainer const&);
+    SimpleSparseContainer(SimpleSparseContainer const&);
+    SimpleSparseContainer();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

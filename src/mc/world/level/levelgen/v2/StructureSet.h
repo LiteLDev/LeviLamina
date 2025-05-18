@@ -50,6 +50,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StructureSet();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI StructureSet(

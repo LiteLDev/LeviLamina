@@ -11,6 +11,10 @@ namespace webrtc {
 
 class RTCIceCandidatePairStats {
 public:
+    // prevent constructor by default
+    RTCIceCandidatePairStats();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RTCIceCandidatePairStats(::std::string, ::webrtc::Timestamp);

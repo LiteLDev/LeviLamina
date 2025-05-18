@@ -17,6 +17,10 @@ namespace cricket {
 
 class TransportDescriptionFactory {
 public:
+    // prevent constructor by default
+    TransportDescriptionFactory();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::cricket::TransportDescription>

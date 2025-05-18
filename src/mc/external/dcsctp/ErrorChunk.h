@@ -11,6 +11,10 @@ namespace dcsctp {
 
 class ErrorChunk {
 public:
+    // prevent constructor by default
+    ErrorChunk();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ErrorChunk(::dcsctp::Parameters);

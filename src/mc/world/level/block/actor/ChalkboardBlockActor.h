@@ -122,6 +122,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ChalkboardBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

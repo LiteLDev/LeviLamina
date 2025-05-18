@@ -16,6 +16,10 @@ namespace cricket {
 
 class VideoChannel {
 public:
+    // prevent constructor by default
+    VideoChannel();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI

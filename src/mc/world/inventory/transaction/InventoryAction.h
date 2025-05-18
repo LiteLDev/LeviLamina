@@ -25,6 +25,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    InventoryAction();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI InventoryAction(::InventoryAction const&);

@@ -20,6 +20,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SlimeFloatGoal& operator=(SlimeFloatGoal const&);
+    SlimeFloatGoal(SlimeFloatGoal const&);
+    SlimeFloatGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -23,6 +23,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    JigsawStructureDataPacket();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

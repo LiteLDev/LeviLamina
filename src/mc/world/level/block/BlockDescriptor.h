@@ -43,6 +43,7 @@ public:
     public:
         // prevent constructor by default
         State(State const&);
+        State();
 
     public:
         // member functions
@@ -99,6 +100,12 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::BlockDescriptor&> mBlockDescriptor;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ResolveHelper& operator=(ResolveHelper const&);
+        ResolveHelper(ResolveHelper const&);
+        ResolveHelper();
 
     public:
         // member functions

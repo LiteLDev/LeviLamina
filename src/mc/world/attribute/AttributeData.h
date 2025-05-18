@@ -31,6 +31,7 @@ public:
 public:
     // prevent constructor by default
     AttributeData& operator=(AttributeData const&);
+    AttributeData();
 
 public:
     // member functions

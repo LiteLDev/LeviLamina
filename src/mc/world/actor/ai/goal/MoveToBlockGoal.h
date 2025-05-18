@@ -48,6 +48,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MoveToBlockGoal& operator=(MoveToBlockGoal const&);
+    MoveToBlockGoal(MoveToBlockGoal const&);
+    MoveToBlockGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

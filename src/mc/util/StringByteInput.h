@@ -17,6 +17,10 @@ public:
     StringByteInput(std::string_view sv, size_t offset) noexcept : mIdx(offset), mBuffer(sv) {}
 
 public:
+    // prevent constructor by default
+    StringByteInput();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 9

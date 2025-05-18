@@ -54,6 +54,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::std::vector<short>> computeHeightMap() const;
+    MCAPI ::std::unique_ptr<::std::vector<short>> computeHeightMap() const;
     // NOLINTEND
 };

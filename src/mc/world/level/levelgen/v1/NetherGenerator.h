@@ -67,6 +67,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    NetherGenerator();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

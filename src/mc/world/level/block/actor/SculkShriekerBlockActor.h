@@ -49,6 +49,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SculkShriekerBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

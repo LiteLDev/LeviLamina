@@ -21,6 +21,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockStepOffEvent& operator=(BlockStepOffEvent const&);
+    BlockStepOffEvent(BlockStepOffEvent const&);
+    BlockStepOffEvent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

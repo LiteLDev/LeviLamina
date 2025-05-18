@@ -40,6 +40,7 @@ public:
 public:
     // prevent constructor by default
     DimensionDefinitionGroup& operator=(DimensionDefinitionGroup const&);
+    DimensionDefinitionGroup();
 
 public:
     // member functions

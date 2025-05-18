@@ -90,67 +90,67 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI int _addResource(::ItemStack const& item);
+    MCAPI int _addResource(::ItemStack const& item);
 
-    MCNAPI int _getFreeSlot() const;
+    MCAPI int _getFreeSlot() const;
 
-    MCNAPI int _getSlotWithRemainingSpace(::ItemStack const& newItem) const;
+    MCAPI int _getSlotWithRemainingSpace(::ItemStack const& newItem) const;
 
-    MCNAPI bool _isCreative() const;
+    MCAPI bool _isCreative() const;
 
-    MCNAPI void _release(int slot);
+    MCAPI void _release(int slot);
 
-    MCNAPI int getSlotWithItem(::ItemStack const& item, bool checkAux, bool checkData) const;
+    MCAPI int getSlotWithItem(::ItemStack const& item, bool checkAux, bool checkData) const;
 
-    MCNAPI bool removeResource(int type);
+    MCAPI bool removeResource(int type);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $removeResource(::ItemStack const& item, bool requireExactAux, bool requireExactData, int maxCount);
+    MCAPI int $removeResource(::ItemStack const& item, bool requireExactAux, bool requireExactData, int maxCount);
 
-    MCNAPI void $swapSlots(int from, int to);
+    MCAPI void $swapSlots(int from, int to);
 
-    MCNAPI bool $add(::ItemStack& item);
+    MCAPI bool $add(::ItemStack& item);
 
-    MCNAPI bool $canAdd(::ItemStack const& item) const;
+    MCAPI bool $canAdd(::ItemStack const& item) const;
 
-    MCNAPI void $removeItem(int slot, int count);
+    MCAPI void $removeItem(int slot, int count);
 
-    MCNAPI void $clearSlot(int slot);
+    MCAPI void $clearSlot(int slot);
 
-    MCNAPI int $clearInventory(int resizeTo);
+    MCAPI int $clearInventory(int resizeTo);
 
-    MCNAPI ::std::unique_ptr<::ListTag> $saveToTag(::SaveContext const& saveContext) const;
+    MCAPI ::std::unique_ptr<::ListTag> $saveToTag(::SaveContext const& saveContext) const;
 
-    MCNAPI void $loadFromTag(::ListTag const& inventoryList);
+    MCAPI void $loadFromTag(::ListTag const& inventoryList);
 
-    MCNAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCFOLD void $setItem(int modelSlot, ::ItemStack const& item);
 
-    MCNAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
+    MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
-    MCNAPI ::ItemStack const& $getItem(int slot) const;
+    MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCNAPI int $getMaxStackSize() const;
+    MCFOLD int $getMaxStackSize() const;
 
-    MCNAPI int $getContainerSize() const;
+    MCFOLD int $getContainerSize() const;
 
-    MCNAPI void $startOpen(::Player&);
+    MCFOLD void $startOpen(::Player&);
 
-    MCNAPI void $serverInitItemStackIds(
+    MCFOLD void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCNAPI void $_trySetInSlot(::ItemStack& item, int const& slot, int const& inventorySize, int& backCompatOffset);
+    MCAPI void $_trySetInSlot(::ItemStack& item, int const& slot, int const& inventorySize, int& backCompatOffset);
     // NOLINTEND
 
 public:

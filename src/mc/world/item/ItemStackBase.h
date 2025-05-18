@@ -75,6 +75,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ItemStackBase();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

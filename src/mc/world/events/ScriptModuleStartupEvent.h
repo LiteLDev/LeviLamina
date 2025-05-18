@@ -21,4 +21,10 @@ public:
     ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::ScriptCustomSpawnRulesRegistry&>      mSpawnRulesRegistry;
     ::ll::TypedStorage<8, 24, ::std::optional<::Scripting::WeakLifetimeScope>>              mSpecificScopeForEvent;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptModuleStartupEvent& operator=(ScriptModuleStartupEvent const&);
+    ScriptModuleStartupEvent(ScriptModuleStartupEvent const&);
+    ScriptModuleStartupEvent();
 };

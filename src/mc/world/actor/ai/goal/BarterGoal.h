@@ -20,6 +20,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BarterGoal& operator=(BarterGoal const&);
+    BarterGoal(BarterGoal const&);
+    BarterGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -39,6 +39,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MoveActorAbsoluteData();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit MoveActorAbsoluteData(::Actor const& entity);

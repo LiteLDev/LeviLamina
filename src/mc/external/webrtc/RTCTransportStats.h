@@ -13,6 +13,7 @@ class RTCTransportStats {
 public:
     // prevent constructor by default
     RTCTransportStats& operator=(RTCTransportStats const&);
+    RTCTransportStats();
 
 public:
     // member functions

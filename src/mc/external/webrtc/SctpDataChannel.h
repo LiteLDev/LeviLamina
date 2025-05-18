@@ -48,6 +48,10 @@ public:
     };
 
 public:
+    // prevent constructor by default
+    SctpDataChannel();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void CloseAbruptlyWithDataChannelFailure(::std::string const&);

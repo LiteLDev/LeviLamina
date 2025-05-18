@@ -26,6 +26,7 @@ public:
 public:
     // prevent constructor by default
     ScriptPackConfigurationManager& operator=(ScriptPackConfigurationManager const&);
+    ScriptPackConfigurationManager();
 
 public:
     // virtual functions

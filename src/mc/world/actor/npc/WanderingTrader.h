@@ -14,6 +14,10 @@ struct ActorDefinitionIdentifier;
 
 class WanderingTrader : public ::Mob {
 public:
+    // prevent constructor by default
+    WanderingTrader();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

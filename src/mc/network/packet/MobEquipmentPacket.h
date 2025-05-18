@@ -35,6 +35,7 @@ public:
     // prevent constructor by default
     MobEquipmentPacket& operator=(MobEquipmentPacket const&);
     MobEquipmentPacket(MobEquipmentPacket const&);
+    MobEquipmentPacket();
 
 public:
     // virtual functions

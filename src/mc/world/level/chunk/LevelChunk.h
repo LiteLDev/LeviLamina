@@ -226,6 +226,7 @@ public:
     // prevent constructor by default
     LevelChunk& operator=(LevelChunk const&);
     LevelChunk(LevelChunk const&);
+    LevelChunk();
 
 public:
     // member functions

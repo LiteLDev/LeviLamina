@@ -11,6 +11,10 @@ namespace webrtc {
 
 class RobustThroughputEstimator {
 public:
+    // prevent constructor by default
+    RobustThroughputEstimator();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool FirstPacketOutsideWindow();

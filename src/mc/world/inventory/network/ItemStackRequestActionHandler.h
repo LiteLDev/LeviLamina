@@ -90,6 +90,10 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        PlayerLegacyRequestSlotIdAssignment();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI PlayerLegacyRequestSlotIdAssignment(::ContainerEnumName containerName, ::Container& container);
@@ -130,6 +134,7 @@ public:
         // prevent constructor by default
         ScreenData& operator=(ScreenData const&);
         ScreenData(ScreenData const&);
+        ScreenData();
 
     public:
         // member functions
@@ -172,6 +177,12 @@ public:
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::vector<::std::string>>> mStrings;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ContainerScreenValidation>>           mScreenValidation;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ItemStackRequestActionHandler& operator=(ItemStackRequestActionHandler const&);
+    ItemStackRequestActionHandler(ItemStackRequestActionHandler const&);
+    ItemStackRequestActionHandler();
 
 public:
     // member functions

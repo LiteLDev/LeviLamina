@@ -27,6 +27,7 @@ public:
     // prevent constructor by default
     BlockBreakSensorComponent& operator=(BlockBreakSensorComponent const&);
     BlockBreakSensorComponent(BlockBreakSensorComponent const&);
+    BlockBreakSensorComponent();
 
 public:
     // member functions

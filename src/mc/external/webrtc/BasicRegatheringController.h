@@ -23,6 +23,10 @@ public:
     struct Config {};
 
 public:
+    // prevent constructor by default
+    BasicRegatheringController();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI

@@ -138,6 +138,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Recipes();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit Recipes(::Level* level);

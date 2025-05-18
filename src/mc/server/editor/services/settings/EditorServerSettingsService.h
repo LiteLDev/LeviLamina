@@ -27,6 +27,10 @@ namespace Editor::Services {
 
 class EditorServerSettingsService : public ::Editor::Services::EditorSettingsService {
 public:
+    // prevent constructor by default
+    EditorServerSettingsService();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

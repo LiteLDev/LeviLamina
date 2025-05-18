@@ -19,6 +19,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DragonDeathGoal& operator=(DragonDeathGoal const&);
+    DragonDeathGoal(DragonDeathGoal const&);
+    DragonDeathGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

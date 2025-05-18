@@ -101,6 +101,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    AvoidBlockGoal& operator=(AvoidBlockGoal const&);
+    AvoidBlockGoal(AvoidBlockGoal const&);
+    AvoidBlockGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

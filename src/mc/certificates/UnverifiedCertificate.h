@@ -23,6 +23,7 @@ public:
 public:
     // prevent constructor by default
     UnverifiedCertificate& operator=(UnverifiedCertificate const&);
+    UnverifiedCertificate();
 
 public:
     // member functions

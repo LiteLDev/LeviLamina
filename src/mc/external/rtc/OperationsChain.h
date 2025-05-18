@@ -17,6 +17,10 @@ public:
     // OperationsChain inner types define
     class CallbackHandle {
     public:
+        // prevent constructor by default
+        CallbackHandle();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI explicit CallbackHandle(::webrtc::scoped_refptr<::rtc::OperationsChain>);

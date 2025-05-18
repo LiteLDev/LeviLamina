@@ -29,6 +29,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    NapGoal& operator=(NapGoal const&);
+    NapGoal(NapGoal const&);
+    NapGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

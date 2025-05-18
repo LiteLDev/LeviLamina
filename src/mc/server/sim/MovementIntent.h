@@ -33,6 +33,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MovementIntent();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit MovementIntent(::std::variant<

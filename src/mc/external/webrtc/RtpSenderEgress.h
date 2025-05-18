@@ -35,6 +35,10 @@ public:
     // RtpSenderEgress inner types define
     class NonPacedPacketSender {
     public:
+        // prevent constructor by default
+        NonPacedPacketSender();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI NonPacedPacketSender(::webrtc::TaskQueueBase&, ::webrtc::RtpSenderEgress*, ::webrtc::PacketSequencer*);
@@ -68,6 +72,10 @@ public:
         MCNAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // prevent constructor by default
+    RtpSenderEgress();
 
 public:
     // member functions

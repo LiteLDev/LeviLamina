@@ -250,4 +250,9 @@ namespace asio::ssl {
 class verify_context;
 }
 
+namespace leveldb {
+class Compressor;
+class DecompressAllocator;
+}
+
 // clang-format on

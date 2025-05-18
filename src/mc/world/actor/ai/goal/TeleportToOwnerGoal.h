@@ -25,6 +25,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TeleportToOwnerGoal& operator=(TeleportToOwnerGoal const&);
+    TeleportToOwnerGoal(TeleportToOwnerGoal const&);
+    TeleportToOwnerGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -20,6 +20,7 @@ public:
 public:
     // prevent constructor by default
     ActorCarriedItemChangedEvent& operator=(ActorCarriedItemChangedEvent const&);
+    ActorCarriedItemChangedEvent();
 
 public:
     // member functions

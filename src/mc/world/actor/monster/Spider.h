@@ -21,6 +21,10 @@ public:
     };
 
 public:
+    // prevent constructor by default
+    Spider();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 105

@@ -6,6 +6,10 @@ namespace webrtc {
 
 class FecHeaderReader {
 public:
+    // prevent constructor by default
+    FecHeaderReader();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI FecHeaderReader(uint64, uint64);

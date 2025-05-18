@@ -16,6 +16,7 @@ public:
     public:
         // prevent constructor by default
         SpatialLayer& operator=(SpatialLayer const&);
+        SpatialLayer();
 
     public:
         // member functions
@@ -33,6 +34,7 @@ public:
 public:
     // prevent constructor by default
     VideoLayersAllocation& operator=(VideoLayersAllocation const&);
+    VideoLayersAllocation();
 
 public:
     // member functions

@@ -38,6 +38,7 @@ public:
     // prevent constructor by default
     RaidBossComponent& operator=(RaidBossComponent const&);
     RaidBossComponent(RaidBossComponent const&);
+    RaidBossComponent();
 
 public:
     // member functions

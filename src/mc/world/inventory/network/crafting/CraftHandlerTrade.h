@@ -29,6 +29,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CraftHandlerTrade& operator=(CraftHandlerTrade const&);
+    CraftHandlerTrade(CraftHandlerTrade const&);
+    CraftHandlerTrade();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -52,33 +58,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::tuple<::ItemStackNetResult, ::MerchantRecipe const*>
+    MCAPI ::std::tuple<::ItemStackNetResult, ::MerchantRecipe const*>
     _getMerchantRecipeFromNetId(::RecipeNetId const& tradeRecipeNetId);
 
-    MCNAPI ::ItemStackNetResult _handleTrade1(::ItemStackRequestActionCraft<::RecipeNetId, 12> const& requestAction);
+    MCAPI ::ItemStackNetResult _handleTrade1(::ItemStackRequestActionCraft<::RecipeNetId, 12> const& requestAction);
 
-    MCNAPI ::ItemStackNetResult _initResultItem(::RecipeNetId const& tradeRecipeNetId, uchar numCrafts);
+    MCAPI ::ItemStackNetResult _initResultItem(::RecipeNetId const& tradeRecipeNetId, uchar numCrafts);
 
-    MCNAPI ::ItemStackNetResult _initTrade2Consumes();
+    MCAPI ::ItemStackNetResult _initTrade2Consumes();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
+    MCAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
 
-    MCNAPI ::ItemStackNetResult $handleConsumedItem(
+    MCAPI ::ItemStackNetResult $handleConsumedItem(
         ::FullContainerName const& openContainerNetId,
         uchar const                slot,
         ::ItemStack const&         consumedItem
     );
 
-    MCNAPI void $_postCraftRequest(bool const wasSuccess);
+    MCAPI void $_postCraftRequest(bool const wasSuccess);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

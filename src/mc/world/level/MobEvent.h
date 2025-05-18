@@ -15,6 +15,7 @@ public:
 public:
     // prevent constructor by default
     MobEvent& operator=(MobEvent const&);
+    MobEvent();
 
 public:
     // member functions

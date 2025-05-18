@@ -99,6 +99,12 @@ public:
     LLAPI void addCustomResourcePackPath(std::filesystem::path const& path, PackType type);
 
 public:
+    // prevent constructor by default
+    ResourcePackRepository& operator=(ResourcePackRepository const&);
+    ResourcePackRepository(ResourcePackRepository const&);
+    ResourcePackRepository();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

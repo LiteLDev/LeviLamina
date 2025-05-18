@@ -21,6 +21,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PlayerData& operator=(PlayerData const&);
+    PlayerData(PlayerData const&);
+    PlayerData();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

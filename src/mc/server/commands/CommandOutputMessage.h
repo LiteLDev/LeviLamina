@@ -17,6 +17,7 @@ public:
 public:
     CommandOutputMessage& operator=(CommandOutputMessage const&) = default;
     CommandOutputMessage(CommandOutputMessage const&)            = default;
+    CommandOutputMessage()                                       = default;
 
 public:
     // member functions

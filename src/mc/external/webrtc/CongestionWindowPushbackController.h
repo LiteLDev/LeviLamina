@@ -12,6 +12,10 @@ namespace webrtc {
 
 class CongestionWindowPushbackController {
 public:
+    // prevent constructor by default
+    CongestionWindowPushbackController();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit CongestionWindowPushbackController(::webrtc::FieldTrialsView const*);

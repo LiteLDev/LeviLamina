@@ -22,6 +22,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RollGoal& operator=(RollGoal const&);
+    RollGoal(RollGoal const&);
+    RollGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

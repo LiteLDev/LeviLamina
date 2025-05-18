@@ -18,6 +18,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ReceiveLoveGoal& operator=(ReceiveLoveGoal const&);
+    ReceiveLoveGoal(ReceiveLoveGoal const&);
+    ReceiveLoveGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

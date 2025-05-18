@@ -58,6 +58,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SparseContainer& operator=(SparseContainer const&);
+    SparseContainer(SparseContainer const&);
+    SparseContainer();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

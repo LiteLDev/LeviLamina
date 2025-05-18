@@ -14,6 +14,7 @@ public:
     // prevent constructor by default
     DisplayObjectMessageRequestComponent& operator=(DisplayObjectMessageRequestComponent const&);
     DisplayObjectMessageRequestComponent(DisplayObjectMessageRequestComponent const&);
+    DisplayObjectMessageRequestComponent();
 
 public:
     // member functions

@@ -119,6 +119,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ServerPlayer& operator=(ServerPlayer const&);
+    ServerPlayer(ServerPlayer const&);
+    ServerPlayer();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

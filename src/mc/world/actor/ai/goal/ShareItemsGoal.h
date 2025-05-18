@@ -29,6 +29,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ShareItemsGoal& operator=(ShareItemsGoal const&);
+    ShareItemsGoal(ShareItemsGoal const&);
+    ShareItemsGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

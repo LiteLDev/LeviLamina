@@ -29,6 +29,7 @@ public:
 public:
     // prevent constructor by default
     CreativeGroupInfo& operator=(CreativeGroupInfo const&);
+    CreativeGroupInfo();
 
 public:
     // virtual functions

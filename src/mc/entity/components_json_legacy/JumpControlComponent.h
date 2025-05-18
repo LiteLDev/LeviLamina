@@ -26,6 +26,7 @@ public:
 public:
     // prevent constructor by default
     JumpControlComponent& operator=(JumpControlComponent const&);
+    JumpControlComponent();
 
 public:
     // member functions

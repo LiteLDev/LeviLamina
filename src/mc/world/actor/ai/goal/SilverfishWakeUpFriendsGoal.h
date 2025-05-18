@@ -19,6 +19,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SilverfishWakeUpFriendsGoal& operator=(SilverfishWakeUpFriendsGoal const&);
+    SilverfishWakeUpFriendsGoal(SilverfishWakeUpFriendsGoal const&);
+    SilverfishWakeUpFriendsGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

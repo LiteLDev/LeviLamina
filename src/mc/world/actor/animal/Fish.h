@@ -17,6 +17,10 @@ struct VariantParameterList;
 
 class Fish : public ::WaterAnimal {
 public:
+    // prevent constructor by default
+    Fish();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 27

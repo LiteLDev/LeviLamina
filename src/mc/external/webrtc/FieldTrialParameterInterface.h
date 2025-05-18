@@ -6,6 +6,10 @@ namespace webrtc {
 
 class FieldTrialParameterInterface {
 public:
+    // prevent constructor by default
+    FieldTrialParameterInterface();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit FieldTrialParameterInterface(::std::string_view);

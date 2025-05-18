@@ -31,6 +31,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TheEndDimension();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

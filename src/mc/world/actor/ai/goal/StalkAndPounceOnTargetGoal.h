@@ -44,6 +44,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StalkAndPounceOnTargetGoal& operator=(StalkAndPounceOnTargetGoal const&);
+    StalkAndPounceOnTargetGoal(StalkAndPounceOnTargetGoal const&);
+    StalkAndPounceOnTargetGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

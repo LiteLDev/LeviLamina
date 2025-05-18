@@ -57,6 +57,7 @@ public:
     // prevent constructor by default
     NavigationComponent& operator=(NavigationComponent const&);
     NavigationComponent(NavigationComponent const&);
+    NavigationComponent();
 
 public:
     // member functions

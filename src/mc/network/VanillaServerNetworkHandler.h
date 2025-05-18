@@ -26,6 +26,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    VanillaServerNetworkHandler& operator=(VanillaServerNetworkHandler const&);
+    VanillaServerNetworkHandler(VanillaServerNetworkHandler const&);
+    VanillaServerNetworkHandler();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -13,6 +13,10 @@ class BlockSource;
 
 class HangingSignBlockActor : public ::SignBlockActor {
 public:
+    // prevent constructor by default
+    HangingSignBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 20

@@ -87,6 +87,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RaiderCelebrationGoal& operator=(RaiderCelebrationGoal const&);
+    RaiderCelebrationGoal(RaiderCelebrationGoal const&);
+    RaiderCelebrationGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

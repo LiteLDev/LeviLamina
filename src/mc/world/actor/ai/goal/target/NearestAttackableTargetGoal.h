@@ -30,6 +30,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    NearestAttackableTargetGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -24,6 +24,10 @@ public:
     struct PacketUnit {};
 
 public:
+    // prevent constructor by default
+    RtpPacketizerH264();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool GeneratePackets(::webrtc::H264PacketizationMode);

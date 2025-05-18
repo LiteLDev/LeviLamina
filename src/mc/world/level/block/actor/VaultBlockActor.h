@@ -270,6 +270,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    VaultBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

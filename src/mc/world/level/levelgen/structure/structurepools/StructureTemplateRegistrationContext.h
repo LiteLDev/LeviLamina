@@ -28,6 +28,7 @@ public:
 public:
     // prevent constructor by default
     StructureTemplateRegistrationContext& operator=(StructureTemplateRegistrationContext const&);
+    StructureTemplateRegistrationContext();
 
 public:
     // member functions

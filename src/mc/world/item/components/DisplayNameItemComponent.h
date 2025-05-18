@@ -23,6 +23,7 @@ public:
 public:
     // prevent constructor by default
     DisplayNameItemComponent(DisplayNameItemComponent const&);
+    DisplayNameItemComponent();
 
 public:
     // virtual functions

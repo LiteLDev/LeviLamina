@@ -19,6 +19,7 @@ public:
 public:
     // prevent constructor by default
     ItemStopUseOnEvent& operator=(ItemStopUseOnEvent const&);
+    ItemStopUseOnEvent();
 
 public:
     // member functions

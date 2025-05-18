@@ -26,6 +26,7 @@ public:
 public:
     // prevent constructor by default
     Certificate& operator=(Certificate const&);
+    Certificate();
 
 public:
     // member functions

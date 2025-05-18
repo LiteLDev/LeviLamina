@@ -21,6 +21,10 @@ namespace webrtc {
 
 class SendSideBandwidthEstimation {
 public:
+    // prevent constructor by default
+    SendSideBandwidthEstimation();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void ApplyTargetLimits(::webrtc::Timestamp);

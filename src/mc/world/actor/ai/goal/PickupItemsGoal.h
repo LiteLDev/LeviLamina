@@ -45,6 +45,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PickupItemsGoal& operator=(PickupItemsGoal const&);
+    PickupItemsGoal(PickupItemsGoal const&);
+    PickupItemsGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

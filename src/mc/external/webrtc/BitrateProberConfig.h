@@ -11,6 +11,10 @@ namespace webrtc {
 
 struct BitrateProberConfig {
 public:
+    // prevent constructor by default
+    BitrateProberConfig();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit BitrateProberConfig(::webrtc::FieldTrialsView const*);

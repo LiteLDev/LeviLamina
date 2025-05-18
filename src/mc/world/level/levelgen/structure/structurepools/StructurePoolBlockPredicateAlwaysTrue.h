@@ -37,13 +37,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $test(::Block const& block, ::Randomize& randomize) const;
+    MCFOLD bool $test(::Block const& block, ::Randomize& randomize) const;
 
-    MCNAPI bool $test(::BlockPos const&, ::BlockPos const&, ::Randomize&) const;
+    MCFOLD bool $test(::BlockPos const&, ::BlockPos const&, ::Randomize&) const;
 
-    MCNAPI ::StructurePoolBlockPredicateType $getType() const;
+    MCFOLD ::StructurePoolBlockPredicateType $getType() const;
 
-    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCFOLD void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND
 
 public:

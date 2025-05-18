@@ -17,6 +17,7 @@ public:
 public:
     // prevent constructor by default
     ActorPlacedItemEvent& operator=(ActorPlacedItemEvent const&);
+    ActorPlacedItemEvent();
 
 public:
     // member functions

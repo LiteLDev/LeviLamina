@@ -30,6 +30,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LookAtActorGoal& operator=(LookAtActorGoal const&);
+    LookAtActorGoal(LookAtActorGoal const&);
+    LookAtActorGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -44,6 +44,7 @@ public:
 public:
     // prevent constructor by default
     SetTitlePacket& operator=(SetTitlePacket const&);
+    SetTitlePacket();
 
 public:
     // virtual functions

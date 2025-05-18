@@ -52,6 +52,10 @@ public:
         enum class NackAction : uint {};
 
     public:
+        // prevent constructor by default
+        Item();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI void Abandon();
@@ -87,6 +91,10 @@ public:
         );
         // NOLINTEND
     };
+
+public:
+    // prevent constructor by default
+    OutstandingData();
 
 public:
     // member functions

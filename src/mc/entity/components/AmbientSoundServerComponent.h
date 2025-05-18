@@ -20,6 +20,7 @@ public:
 public:
     // prevent constructor by default
     AmbientSoundServerComponent& operator=(AmbientSoundServerComponent const&);
+    AmbientSoundServerComponent();
 
 public:
     // member functions

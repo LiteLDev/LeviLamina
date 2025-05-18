@@ -59,6 +59,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    NetworkChunkPublisher& operator=(NetworkChunkPublisher const&);
+    NetworkChunkPublisher(NetworkChunkPublisher const&);
+    NetworkChunkPublisher();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

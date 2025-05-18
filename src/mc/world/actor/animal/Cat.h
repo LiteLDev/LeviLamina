@@ -15,6 +15,10 @@ struct ActorDefinitionIdentifier;
 
 class Cat : public ::Animal {
 public:
+    // prevent constructor by default
+    Cat();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 57

@@ -30,6 +30,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ChunkAccessor();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ChunkAccessor(::Dimension& dimension, ::BiomeSource const& biomeSource);

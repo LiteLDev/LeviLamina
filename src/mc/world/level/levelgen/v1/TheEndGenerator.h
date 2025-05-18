@@ -73,6 +73,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TheEndGenerator();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

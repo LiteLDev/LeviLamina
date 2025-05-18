@@ -40,6 +40,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ChestBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 125

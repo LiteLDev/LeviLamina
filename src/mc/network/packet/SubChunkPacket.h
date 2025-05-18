@@ -82,30 +82,31 @@ public:
         // NOLINTEND
 
     public:
-        SubChunkPacketData() = default;
+        // prevent constructor by default
+        SubChunkPacketData();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI SubChunkPacketData(
+        MCAPI SubChunkPacketData(
             ::SubChunkPacket::SubChunkPosOffset const& pos,
             ::SubChunkPacket::SubChunkRequestResult    requestResult
         );
 
-        MCNAPI ~SubChunkPacketData();
+        MCAPI ~SubChunkPacketData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void*
+        MCAPI void*
         $ctor(::SubChunkPacket::SubChunkPosOffset const& pos, ::SubChunkPacket::SubChunkRequestResult requestResult);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -121,6 +122,7 @@ public:
 public:
     // prevent constructor by default
     SubChunkPacket& operator=(SubChunkPacket const&);
+    SubChunkPacket();
 
 public:
     // virtual functions

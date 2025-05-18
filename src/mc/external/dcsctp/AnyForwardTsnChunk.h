@@ -23,6 +23,10 @@ public:
     struct SkippedStream {};
 
 public:
+    // prevent constructor by default
+    AnyForwardTsnChunk();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI

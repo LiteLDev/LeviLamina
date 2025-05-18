@@ -34,6 +34,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EnchantingTableBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

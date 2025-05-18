@@ -25,6 +25,7 @@ public:
 public:
     // prevent constructor by default
     OnUseItemComponent(OnUseItemComponent const&);
+    OnUseItemComponent();
 
 public:
     // virtual functions

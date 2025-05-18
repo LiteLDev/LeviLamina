@@ -15,6 +15,10 @@ namespace webrtc {
 
 class DtlsTransport {
 public:
+    // prevent constructor by default
+    DtlsTransport();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void Clear();

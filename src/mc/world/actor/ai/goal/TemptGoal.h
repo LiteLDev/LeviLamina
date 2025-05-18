@@ -42,6 +42,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TemptGoal& operator=(TemptGoal const&);
+    TemptGoal(TemptGoal const&);
+    TemptGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

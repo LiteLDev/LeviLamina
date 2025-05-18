@@ -131,6 +131,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    JumpToBlockGoal& operator=(JumpToBlockGoal const&);
+    JumpToBlockGoal(JumpToBlockGoal const&);
+    JumpToBlockGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

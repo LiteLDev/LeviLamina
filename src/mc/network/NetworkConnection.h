@@ -87,6 +87,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    NetworkConnection();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI NetworkConnection(

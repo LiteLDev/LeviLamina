@@ -16,6 +16,10 @@ class Random;
 
 class MineshaftStart : public ::StructureStart {
 public:
+    // prevent constructor by default
+    MineshaftStart();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

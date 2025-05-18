@@ -47,6 +47,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BeaconBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -18,6 +18,7 @@ public:
 public:
     // prevent constructor by default
     ItemDefinitionEventTriggeredEvent& operator=(ItemDefinitionEventTriggeredEvent const&);
+    ItemDefinitionEventTriggeredEvent();
 
 public:
     // member functions

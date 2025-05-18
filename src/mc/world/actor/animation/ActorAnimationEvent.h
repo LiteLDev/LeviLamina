@@ -28,6 +28,7 @@ public:
 public:
     // prevent constructor by default
     ActorAnimationEvent& operator=(ActorAnimationEvent const&);
+    ActorAnimationEvent();
 
 public:
     // member functions

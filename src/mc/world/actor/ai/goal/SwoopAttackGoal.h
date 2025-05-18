@@ -24,6 +24,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SwoopAttackGoal& operator=(SwoopAttackGoal const&);
+    SwoopAttackGoal(SwoopAttackGoal const&);
+    SwoopAttackGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

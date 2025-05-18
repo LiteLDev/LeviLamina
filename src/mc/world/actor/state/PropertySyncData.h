@@ -52,6 +52,7 @@ public:
     // prevent constructor by default
     PropertySyncData& operator=(PropertySyncData const&);
     PropertySyncData(PropertySyncData const&);
+    PropertySyncData();
 
 public:
     // member functions

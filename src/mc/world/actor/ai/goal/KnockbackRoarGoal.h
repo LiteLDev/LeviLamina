@@ -100,6 +100,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    KnockbackRoarGoal& operator=(KnockbackRoarGoal const&);
+    KnockbackRoarGoal(KnockbackRoarGoal const&);
+    KnockbackRoarGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

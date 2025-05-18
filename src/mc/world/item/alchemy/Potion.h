@@ -67,6 +67,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Potion();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit Potion(::std::string_view nameId);

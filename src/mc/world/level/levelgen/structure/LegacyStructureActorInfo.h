@@ -17,6 +17,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LegacyStructureActorInfo();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI LegacyStructureActorInfo(::Vec3 const& pos, ::BlockPos const& blockPos, ::CompoundTag tag);

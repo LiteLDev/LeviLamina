@@ -21,6 +21,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SwimIdleGoal& operator=(SwimIdleGoal const&);
+    SwimIdleGoal(SwimIdleGoal const&);
+    SwimIdleGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

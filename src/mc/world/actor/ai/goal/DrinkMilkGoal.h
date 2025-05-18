@@ -72,6 +72,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DrinkMilkGoal& operator=(DrinkMilkGoal const&);
+    DrinkMilkGoal(DrinkMilkGoal const&);
+    DrinkMilkGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

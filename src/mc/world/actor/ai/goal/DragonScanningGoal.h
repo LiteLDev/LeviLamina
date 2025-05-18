@@ -19,6 +19,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DragonScanningGoal& operator=(DragonScanningGoal const&);
+    DragonScanningGoal(DragonScanningGoal const&);
+    DragonScanningGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

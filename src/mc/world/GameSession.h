@@ -33,6 +33,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GameSession& operator=(GameSession const&);
+    GameSession(GameSession const&);
+    GameSession();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI GameSession(

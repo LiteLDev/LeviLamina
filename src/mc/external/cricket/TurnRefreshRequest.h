@@ -11,6 +11,10 @@ namespace cricket {
 
 class TurnRefreshRequest {
 public:
+    // prevent constructor by default
+    TurnRefreshRequest();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI TurnRefreshRequest(::cricket::TurnPort*, int);

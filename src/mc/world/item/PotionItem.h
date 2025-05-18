@@ -35,6 +35,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PotionItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 121

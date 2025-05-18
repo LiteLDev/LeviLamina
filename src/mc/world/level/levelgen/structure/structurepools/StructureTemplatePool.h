@@ -23,15 +23,19 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StructureTemplatePool();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StructureTemplatePool(
+    MCAPI StructureTemplatePool(
         ::std::string                                                         name,
         ::std::string                                                         fallback,
         ::std::vector<::std::pair<::StructurePoolElement const*, int>> const& templates
     );
 
-    MCNAPI StructureTemplatePool(
+    MCAPI StructureTemplatePool(
         ::StructureTemplateRegistrationContext                           context,
         ::std::string_view                                               name,
         ::std::string_view                                               fallback,
@@ -39,15 +43,15 @@ public:
         ::std::initializer_list<::WeightedStructureTemplateRegistration> pieces
     );
 
-    MCNAPI ::std::vector<uint64> getShuffledTemplateIndexes(::Random& random) const;
+    MCAPI ::std::vector<uint64> getShuffledTemplateIndexes(::Random& random) const;
 
-    MCNAPI ~StructureTemplatePool();
+    MCAPI ~StructureTemplatePool();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::StructureTemplatePool> create(
+    MCAPI static ::std::unique_ptr<::StructureTemplatePool> create(
         ::StructureTemplateRegistrationContext                           context,
         ::std::string_view                                               name,
         ::std::string_view                                               fallback,
@@ -59,13 +63,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::string                                                         name,
         ::std::string                                                         fallback,
         ::std::vector<::std::pair<::StructurePoolElement const*, int>> const& templates
     );
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::StructureTemplateRegistrationContext                           context,
         ::std::string_view                                               name,
         ::std::string_view                                               fallback,
@@ -77,6 +81,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

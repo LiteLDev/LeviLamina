@@ -66,6 +66,7 @@ public:
 public:
     // prevent constructor by default
     CommandOutput& operator=(CommandOutput const&);
+    CommandOutput();
 
 public:
     // member functions

@@ -28,6 +28,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CachedChunkBlockSource& operator=(CachedChunkBlockSource const&);
+    CachedChunkBlockSource(CachedChunkBlockSource const&);
+    CachedChunkBlockSource();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ushort _updateCacheAndGetIndex(::BlockPos const& position);

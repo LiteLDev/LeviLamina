@@ -40,6 +40,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockPalette();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

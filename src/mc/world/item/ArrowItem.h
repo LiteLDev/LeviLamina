@@ -36,6 +36,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ArrowItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 107

@@ -52,6 +52,10 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        ContentLogScope();
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI explicit ContentLogScope(::Bedrock::StaticOptimizedString scope);

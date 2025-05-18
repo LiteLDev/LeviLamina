@@ -140,6 +140,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Enchant();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

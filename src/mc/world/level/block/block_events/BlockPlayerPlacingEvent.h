@@ -25,6 +25,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockPlayerPlacingEvent& operator=(BlockPlayerPlacingEvent const&);
+    BlockPlayerPlacingEvent(BlockPlayerPlacingEvent const&);
+    BlockPlayerPlacingEvent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

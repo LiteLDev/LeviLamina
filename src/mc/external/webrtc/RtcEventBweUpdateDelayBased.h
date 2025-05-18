@@ -9,6 +9,10 @@ namespace webrtc {
 
 class RtcEventBweUpdateDelayBased {
 public:
+    // prevent constructor by default
+    RtcEventBweUpdateDelayBased();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RtcEventBweUpdateDelayBased(int, ::webrtc::BandwidthUsage);

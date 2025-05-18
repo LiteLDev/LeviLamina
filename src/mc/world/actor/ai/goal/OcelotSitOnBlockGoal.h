@@ -20,6 +20,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    OcelotSitOnBlockGoal& operator=(OcelotSitOnBlockGoal const&);
+    OcelotSitOnBlockGoal(OcelotSitOnBlockGoal const&);
+    OcelotSitOnBlockGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

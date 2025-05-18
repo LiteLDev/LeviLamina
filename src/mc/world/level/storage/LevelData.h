@@ -138,6 +138,7 @@ public:
     // prevent constructor by default
     LevelData& operator=(LevelData const&);
     LevelData(LevelData const&);
+    LevelData();
 
 public:
     // member functions

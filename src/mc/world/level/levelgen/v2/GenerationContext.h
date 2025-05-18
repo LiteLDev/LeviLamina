@@ -27,6 +27,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GenerationContext& operator=(GenerationContext const&);
+    GenerationContext(GenerationContext const&);
+    GenerationContext();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ~GenerationContext();

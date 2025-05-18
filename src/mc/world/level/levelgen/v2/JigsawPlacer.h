@@ -45,6 +45,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    JigsawPlacer& operator=(JigsawPlacer const&);
+    JigsawPlacer(JigsawPlacer const&);
+    JigsawPlacer();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void tryPlacingChildren(::br::worldgen::JigsawPieceState state);

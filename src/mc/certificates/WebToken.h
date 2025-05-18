@@ -25,6 +25,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    WebToken();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit WebToken(::std::string token);

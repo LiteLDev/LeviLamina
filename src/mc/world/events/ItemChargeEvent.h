@@ -18,6 +18,7 @@ public:
 public:
     // prevent constructor by default
     ItemChargeEvent& operator=(ItemChargeEvent const&);
+    ItemChargeEvent();
 
 public:
     // member functions

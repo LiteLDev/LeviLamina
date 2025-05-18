@@ -26,6 +26,12 @@ public:
     ::ll::TypedStorage<8, 8, ::std::vector<::br::worldgen::JigsawJunction> const&> mJunctions;
     ::ll::TypedStorage<8, 8, ::BoundingBox const&>                                 mBox;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    JigsawSectionEntry& operator=(JigsawSectionEntry const&);
+    JigsawSectionEntry(JigsawSectionEntry const&);
+    JigsawSectionEntry();
 };
 
 } // namespace br::worldgen

@@ -27,6 +27,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SetActorMotionPacket();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

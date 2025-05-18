@@ -15,6 +15,10 @@ namespace cricket {
 
 class ProxyConnection {
 public:
+    // prevent constructor by default
+    ProxyConnection();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ProxyConnection(::rtc::WeakPtr<::cricket::PortInterface>, uint64, ::cricket::Candidate const&);

@@ -27,6 +27,7 @@ public:
 public:
     // prevent constructor by default
     InsideBlockEventMap& operator=(InsideBlockEventMap const&);
+    InsideBlockEventMap();
 
 public:
     // member functions

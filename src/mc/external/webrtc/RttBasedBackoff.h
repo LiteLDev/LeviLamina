@@ -13,6 +13,10 @@ namespace webrtc {
 
 struct RttBasedBackoff {
 public:
+    // prevent constructor by default
+    RttBasedBackoff();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::webrtc::TimeDelta CorrectedRtt() const;

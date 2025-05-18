@@ -40,6 +40,7 @@ public:
     // prevent constructor by default
     LodestoneCompassComponent& operator=(LodestoneCompassComponent const&);
     LodestoneCompassComponent(LodestoneCompassComponent const&);
+    LodestoneCompassComponent();
 
 public:
     // member functions

@@ -114,6 +114,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Village& operator=(Village const&);
+    Village(Village const&);
+    Village();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI Village(::Dimension& dimension, ::mce::UUID id, ::BlockPos const& origin);

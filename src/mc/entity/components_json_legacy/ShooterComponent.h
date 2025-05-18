@@ -28,6 +28,7 @@ public:
     // prevent constructor by default
     ShooterComponent& operator=(ShooterComponent const&);
     ShooterComponent(ShooterComponent const&);
+    ShooterComponent();
 
 public:
     // member functions

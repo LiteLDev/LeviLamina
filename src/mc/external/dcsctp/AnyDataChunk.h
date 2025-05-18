@@ -15,6 +15,10 @@ namespace dcsctp {
 
 class AnyDataChunk {
 public:
+    // prevent constructor by default
+    AnyDataChunk();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI AnyDataChunk(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::dcsctp::Data, bool);

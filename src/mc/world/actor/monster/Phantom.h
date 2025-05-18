@@ -14,6 +14,10 @@ struct ActorDefinitionIdentifier;
 
 class Phantom : public ::Monster {
 public:
+    // prevent constructor by default
+    Phantom();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 24

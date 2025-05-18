@@ -58,6 +58,7 @@ public:
 public:
     // prevent constructor by default
     SpawnerData& operator=(SpawnerData const&);
+    SpawnerData();
 
 public:
     // member functions

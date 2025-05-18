@@ -22,6 +22,10 @@ public:
     class SetStreamsObserver {};
 
 public:
+    // prevent constructor by default
+    RtpSenderBase();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::webrtc::RTCError CheckSetParameters(::webrtc::RtpParameters const&);

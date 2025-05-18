@@ -24,6 +24,10 @@ public:
     }
 
 public:
+    // prevent constructor by default
+    StackResultStorageEntity();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit StackResultStorageEntity(::WeakStorageEntity const& weakStorage);

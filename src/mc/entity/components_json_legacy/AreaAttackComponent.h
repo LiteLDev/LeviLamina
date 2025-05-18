@@ -33,6 +33,7 @@ public:
     // prevent constructor by default
     AreaAttackComponent& operator=(AreaAttackComponent const&);
     AreaAttackComponent(AreaAttackComponent const&);
+    AreaAttackComponent();
 
 public:
     // member functions

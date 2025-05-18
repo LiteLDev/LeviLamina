@@ -11,6 +11,10 @@ namespace rtc {
 
 class SocketDispatcher {
 public:
+    // prevent constructor by default
+    SocketDispatcher();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool Initialize();

@@ -37,6 +37,7 @@ public:
 public:
     // prevent constructor by default
     MoveInputComponent(MoveInputComponent const&);
+    MoveInputComponent();
 
 public:
     // member functions

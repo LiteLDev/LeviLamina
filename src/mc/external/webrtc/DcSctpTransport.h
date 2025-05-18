@@ -24,6 +24,10 @@ public:
     struct StreamState {};
 
 public:
+    // prevent constructor by default
+    DcSctpTransport();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void ConnectTransportSignals();

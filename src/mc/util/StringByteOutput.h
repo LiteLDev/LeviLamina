@@ -15,6 +15,12 @@ public:
     StringByteOutput(std::string& str) noexcept : mBuffer(str) {}
 
 public:
+    // prevent constructor by default
+    StringByteOutput& operator=(StringByteOutput const&);
+    StringByteOutput(StringByteOutput const&);
+    StringByteOutput();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 9

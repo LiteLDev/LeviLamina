@@ -43,6 +43,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CircuitTrackingInfo();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI

@@ -55,6 +55,7 @@ public:
     // prevent constructor by default
     SerializedAbilitiesData& operator=(SerializedAbilitiesData const&);
     SerializedAbilitiesData(SerializedAbilitiesData const&);
+    SerializedAbilitiesData();
 
 public:
     // member functions

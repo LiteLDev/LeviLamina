@@ -12,6 +12,10 @@ namespace webrtc {
 
 class RateControlSettings {
 public:
+    // prevent constructor by default
+    RateControlSettings();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::optional<::webrtc::DataSize> CongestionWindowInitialDataWindow() const;

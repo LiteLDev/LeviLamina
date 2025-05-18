@@ -27,6 +27,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RandomHoverGoal& operator=(RandomHoverGoal const&);
+    RandomHoverGoal(RandomHoverGoal const&);
+    RandomHoverGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

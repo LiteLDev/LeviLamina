@@ -30,6 +30,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SignItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 121
