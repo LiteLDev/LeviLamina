@@ -26,10 +26,6 @@ public:
     LLNDAPI Vec3 center() const;
 
 public:
-    // prevent constructor by default
-    BlockPos();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI BlockPos(::Vec3 const& v);
