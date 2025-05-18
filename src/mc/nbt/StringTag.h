@@ -18,10 +18,6 @@ public:
     [[nodiscard]] constexpr StringTag(char const (&str)[N]) : std::string(str) {}
 
 public:
-    // prevent constructor by default
-    StringTag();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
