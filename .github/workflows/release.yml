@@ -54,7 +54,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: levilamina-${{ matrix.mode }}-windows-x64-${{ github.sha }}
+          name: levilamina-${{ github.sha }}-${{ matrix.mode }}-windows-x64
           path: |
             bin/
 
@@ -75,6 +75,7 @@ jobs:
 
       - uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ github.event.release.tag_name }}
           body: |-
             ${{ steps.extract-release-notes.outputs.release_notes }}
 
@@ -98,24 +99,24 @@ jobs:
 
       - uses: actions/download-artifact@v4
         with:
-          name: levilamina-${{ matrix.mode }}-windows-x64-${{ github.sha }}
+          name: levilamina-${{ github.sha }}-${{ matrix.mode }}-windows-x64
           path: artifact
 
       - run: |
           cp CHANGELOG.md COPYING COPYING.LESSER README.md artifact/
 
       - run: |
-          zip -r ../levilamina-${{ matrix.mode }}-windows-x64.zip *
+          zip -r ../levilamina-${{ github.event.release.tag_name }}-${{ matrix.mode }}-windows-x64.zip *
         working-directory: artifact
 
       - id: calculate-sha256
         run: |
-          echo sha256=$(sha256sum levilamina-${{ matrix.mode }}-windows-x64.zip | awk '{print $1}') >> $GITHUB_OUTPUT
+          echo sha256=$(sha256sum levilamina-${{ github.event.release.tag_name }}-${{ matrix.mode }}-windows-x64.zip | awk '{print $1}') >> $GITHUB_OUTPUT
 
       - uses: softprops/action-gh-release@v2
         with:
           append_body: true
           body: |-
-            | levilamina-${{ matrix.mode }}-windows-x64.zip | ${{ steps.calculate-sha256.outputs.sha256 }} |
+            | levilamina-${{ github.event.release.tag_name }}-${{ matrix.mode }}-windows-x64.zip | ${{ steps.calculate-sha256.outputs.sha256 }} |
           files: |
-            levilamina-${{ matrix.mode }}-windows-x64.zip
+            levilamina-${{ github.event.release.tag_name }}-${{ matrix.mode }}-windows-x64.zip
