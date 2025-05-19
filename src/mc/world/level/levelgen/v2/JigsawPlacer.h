@@ -36,7 +36,15 @@ public:
     ::ll::TypedStorage<
         8,
         8,
-        int (*)(::JigsawStructureUtils::MetadataCache&, ::BlockPos const&, ::Rotation, ::BoundingBox const&, ::std::vector<::SharedTypes::v1_21_50::JigsawBlockMetadata> const&, ::std::vector<uint64> const&, ::JigsawStructureRegistry const&)>
+        int (*)(
+            ::JigsawStructureUtils::MetadataCache&,
+            ::BlockPos const&,
+            ::Rotation,
+            ::BoundingBox const&,
+            ::std::vector<::SharedTypes::v1_21_50::JigsawBlockMetadata> const&,
+            ::std::vector<uint64> const&,
+            ::JigsawStructureRegistry const&
+        )>
                                                                           mExpansionCalc;
     ::ll::TypedStorage<8, 8, void (*)(int, ::BoundingBox&)>               mExpansionEval;
     ::ll::TypedStorage<1, 1, bool>                                        mIsDataDrivenJigsawExperimentEnabled;

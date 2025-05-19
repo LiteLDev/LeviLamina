@@ -64,7 +64,8 @@ public:
     virtual ::Scripting::Result<void> setActivePalette(::HashedString const& paletteId) /*override*/;
 
     // vIndex: 8
-    virtual void _handleBlockPaletteItemChangedPayload(::Editor::Network::BlockPaletteItemChangedPayload const& payload
+    virtual void _handleBlockPaletteItemChangedPayload(
+        ::Editor::Network::BlockPaletteItemChangedPayload const& payload
     ) /*override*/;
 
     // vIndex: 9
@@ -78,12 +79,12 @@ public:
     ) /*override*/;
 
     // vIndex: 10
-    virtual void _handleBlockPaletteChangedPayload(::Editor::Network::BlockPaletteChangedPayload const& payload
-    ) /*override*/;
+    virtual void
+    _handleBlockPaletteChangedPayload(::Editor::Network::BlockPaletteChangedPayload const& payload) /*override*/;
 
     // vIndex: 11
-    virtual void _handleBlockPaletteRemovedPayload(::Editor::Network::BlockPaletteRemovedPayload const& payload
-    ) /*override*/;
+    virtual void
+    _handleBlockPaletteRemovedPayload(::Editor::Network::BlockPaletteRemovedPayload const& payload) /*override*/;
     // NOLINTEND
 
 public:
@@ -93,8 +94,8 @@ public:
 
     MCNAPI bool _loadAllBlockPalettes();
 
-    MCNAPI ::std::shared_ptr<::Editor::EditorBlockPalette> _loadBlockPalette(::HashedString const& blockPaletteId
-    ) const;
+    MCNAPI ::std::shared_ptr<::Editor::EditorBlockPalette>
+    _loadBlockPalette(::HashedString const& blockPaletteId) const;
 
     MCNAPI bool _loadSelectedBlockPaletteItem();
 
@@ -144,8 +145,8 @@ public:
 
     MCNAPI ::Scripting::Result<void> $setActivePalette(::HashedString const& paletteId);
 
-    MCNAPI void $_handleBlockPaletteItemChangedPayload(::Editor::Network::BlockPaletteItemChangedPayload const& payload
-    );
+    MCNAPI void
+    $_handleBlockPaletteItemChangedPayload(::Editor::Network::BlockPaletteItemChangedPayload const& payload);
 
     MCNAPI void $_handleBlockPaletteSelectedIndexChangedPayload(
         ::Editor::Network::BlockPaletteSelectedIndexChangedPayload const& payload

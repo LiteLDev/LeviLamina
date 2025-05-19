@@ -516,8 +516,12 @@ public:
     ) = 0;
 
     // vIndex: 17
-    virtual int
-    ProcessReverseStream(float const* const*, ::webrtc::StreamConfig const&, ::webrtc::StreamConfig const&, float* const*) = 0;
+    virtual int ProcessReverseStream(
+        float const* const*,
+        ::webrtc::StreamConfig const&,
+        ::webrtc::StreamConfig const&,
+        float* const*
+    ) = 0;
 
     // vIndex: 19
     virtual int AnalyzeReverseStream(float const* const*, ::webrtc::StreamConfig const&) = 0;

@@ -56,9 +56,11 @@ public:
     ) const /*override*/;
 
     // vIndex: 5
-    virtual bool
-    doesLevelChunkNeedSaving(::LevelChunk const& levelChunk, int minTicksBeforeLiveSave, int maxTicksBeforeLiveSave)
-        const /*override*/;
+    virtual bool doesLevelChunkNeedSaving(
+        ::LevelChunk const& levelChunk,
+        int                 minTicksBeforeLiveSave,
+        int                 maxTicksBeforeLiveSave
+    ) const /*override*/;
 
     // vIndex: 6
     virtual void saveLiveChunk(::Dimension& dimension, ::LevelChunk& levelChunk) /*override*/;
@@ -85,9 +87,11 @@ public:
         int                 maxTicksBeforeLiveSave
     ) const;
 
-    MCNAPI bool
-    $doesLevelChunkNeedSaving(::LevelChunk const& levelChunk, int minTicksBeforeLiveSave, int maxTicksBeforeLiveSave)
-        const;
+    MCNAPI bool $doesLevelChunkNeedSaving(
+        ::LevelChunk const& levelChunk,
+        int                 minTicksBeforeLiveSave,
+        int                 maxTicksBeforeLiveSave
+    ) const;
 
     MCNAPI void $saveLiveChunk(::Dimension& dimension, ::LevelChunk& levelChunk);
 

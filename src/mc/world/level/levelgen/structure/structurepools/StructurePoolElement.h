@@ -410,9 +410,11 @@ public:
     MCAPI void
     $placeEntities(::BlockSource& region, ::BlockPos position, ::Rotation rotation, ::BoundingBox overlapBB) const;
 
-    MCAPI void
-    $handleJigsawBlock(::BlockSource& region, ::JigsawBlockInfo& jigsawBlock, ::LegacyStructureSettings& settings)
-        const;
+    MCAPI void $handleJigsawBlock(
+        ::BlockSource&             region,
+        ::JigsawBlockInfo&         jigsawBlock,
+        ::LegacyStructureSettings& settings
+    ) const;
 
     MCAPI void $handleDataMarker(
         ::BlockSource&                                                                  region,

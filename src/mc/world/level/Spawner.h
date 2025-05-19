@@ -132,9 +132,13 @@ public:
     filteredSpawningCategories(::br::spawn::State const&, bool, bool, bool) const;
 
     // vIndex: 19
-    virtual void
-    spawnForChunk(::BlockSource&, ::LevelChunkVolumeData const&, ::br::spawn::State&, ::gsl::span<::SpawnCategory::Type>, ::IRandom&)
-        const;
+    virtual void spawnForChunk(
+        ::BlockSource&,
+        ::LevelChunkVolumeData const&,
+        ::br::spawn::State&,
+        ::gsl::span<::SpawnCategory::Type>,
+        ::IRandom&
+    ) const;
 
     // vIndex: 20
     virtual void spawnMobsForChunkGeneration(::BlockSource&, ::Biome const&, ::ChunkPos, ::IRandom&) const;
@@ -191,9 +195,13 @@ public:
     MCAPI ::std::tuple<::std::array<::SpawnCategory::Type, 8>, uint64>
     $filteredSpawningCategories(::br::spawn::State const&, bool, bool, bool) const;
 
-    MCFOLD void
-    $spawnForChunk(::BlockSource&, ::LevelChunkVolumeData const&, ::br::spawn::State&, ::gsl::span<::SpawnCategory::Type>, ::IRandom&)
-        const;
+    MCFOLD void $spawnForChunk(
+        ::BlockSource&,
+        ::LevelChunkVolumeData const&,
+        ::br::spawn::State&,
+        ::gsl::span<::SpawnCategory::Type>,
+        ::IRandom&
+    ) const;
 
     MCFOLD void $spawnMobsForChunkGeneration(::BlockSource&, ::Biome const&, ::ChunkPos, ::IRandom&) const;
     // NOLINTEND

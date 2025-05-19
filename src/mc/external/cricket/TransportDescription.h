@@ -41,8 +41,14 @@ public:
 
     MCNAPI TransportDescription(::std::string_view, ::std::string_view);
 
-    MCNAPI
-    TransportDescription(::std::vector<::std::string> const&, ::std::string_view, ::std::string_view, ::cricket::IceMode, ::cricket::ConnectionRole, ::rtc::SSLFingerprint const*);
+    MCNAPI TransportDescription(
+        ::std::vector<::std::string> const&,
+        ::std::string_view,
+        ::std::string_view,
+        ::cricket::IceMode,
+        ::cricket::ConnectionRole,
+        ::rtc::SSLFingerprint const*
+    );
 
     MCNAPI ~TransportDescription();
     // NOLINTEND
@@ -56,8 +62,14 @@ public:
 
     MCNAPI void* $ctor(::std::string_view, ::std::string_view);
 
-    MCNAPI void*
-    $ctor(::std::vector<::std::string> const&, ::std::string_view, ::std::string_view, ::cricket::IceMode, ::cricket::ConnectionRole, ::rtc::SSLFingerprint const*);
+    MCNAPI void* $ctor(
+        ::std::vector<::std::string> const&,
+        ::std::string_view,
+        ::std::string_view,
+        ::cricket::IceMode,
+        ::cricket::ConnectionRole,
+        ::rtc::SSLFingerprint const*
+    );
     // NOLINTEND
 
 public:

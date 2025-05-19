@@ -53,8 +53,8 @@ public:
     MCNAPI ::Scripting::Result_deprecated<::Editor::ScriptModule::ScriptEditorStructure>
     loadStructure(::Scripting::DependencyLocator& locator, ::std::string storageLocation, ::std::string structureName);
 
-    MCNAPI ::Scripting::Result<void> saveStructure(::Editor::ScriptModule::ScriptEditorStructure const& scriptStructure
-    );
+    MCNAPI ::Scripting::Result<void>
+    saveStructure(::Editor::ScriptModule::ScriptEditorStructure const& scriptStructure);
 
     MCNAPI ::Scripting::Result_deprecated<::std::vector<::Editor::ScriptModule::ScriptEditorStructure>>
     searchStructures(

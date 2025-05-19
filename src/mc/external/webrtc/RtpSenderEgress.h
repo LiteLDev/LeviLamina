@@ -105,8 +105,11 @@ public:
 
     MCNAPI void SendPacket(::std::unique_ptr<::webrtc::RtpPacketToSend>, ::webrtc::PacedPacketInfo const&);
 
-    MCNAPI bool
-    SendPacketToNetwork(::webrtc::RtpPacketToSend const&, ::webrtc::PacketOptions const&, ::webrtc::PacedPacketInfo const&);
+    MCNAPI bool SendPacketToNetwork(
+        ::webrtc::RtpPacketToSend const&,
+        ::webrtc::PacketOptions const&,
+        ::webrtc::PacedPacketInfo const&
+    );
 
     MCNAPI void SetFecProtectionParameters(::webrtc::FecProtectionParams const&, ::webrtc::FecProtectionParams const&);
 

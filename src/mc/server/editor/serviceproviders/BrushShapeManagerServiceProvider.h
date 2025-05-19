@@ -50,8 +50,14 @@ public:
     virtual ::std::vector<::std::shared_ptr<::Editor::Brush::BrushShape>> getBrushShapeList() const = 0;
 
     // vIndex: 7
-    virtual void
-    registerBrushShape(::std::string const&, ::std::string const&, ::Scripting::Closure<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>()>, ::Scripting::Closure<::std::vector<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptUIElement>>()>) = 0;
+    virtual void registerBrushShape(
+        ::std::string const&,
+        ::std::string const&,
+        ::Scripting::Closure<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>()>,
+        ::Scripting::Closure<
+            ::std::vector<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptUIElement>>()>
+    ) = 0;
 
     // vIndex: 8
     virtual void activateBrushTool() = 0;

@@ -85,17 +85,20 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<::std::vector<::Enchant::Slot>> getSlots() const;
 
-    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError>
-    hasEnchantment(::std::variant<
-                   ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>,
-                   ::std::string> enchantmentTypeOrId) const;
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError> hasEnchantment(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>,
+            ::std::string> enchantmentTypeOrId
+    ) const;
 
     MCNAPI ::Scripting::Result<void> removeAllEnchantments();
 
     MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError, ::Scripting::Error>
-    removeEnchantment(::std::variant<
-                      ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>,
-                      ::std::string> enchantmentTypeOrId);
+    removeEnchantment(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>,
+            ::std::string> enchantmentTypeOrId
+    );
     // NOLINTEND
 
 public:

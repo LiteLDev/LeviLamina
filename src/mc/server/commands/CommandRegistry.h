@@ -358,9 +358,14 @@ public:
         // NOLINTEND
     };
 
-    using ParseFunction =
-        bool (::CommandRegistry::*)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
-            const;
+    using ParseFunction = bool (::CommandRegistry::*)(
+        void*,
+        ::CommandRegistry::ParseToken const&,
+        ::CommandOrigin const&,
+        int,
+        ::std::string&,
+        ::std::vector<::std::string>&
+    ) const;
 
     using EnumConversionFunction = ::std::function<void(void*, uint64)>;
 
@@ -373,8 +378,14 @@ public:
         ::ll::TypedStorage<
             8,
             8,
-            bool (::CommandRegistry::*)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
-                const>
+            bool (::CommandRegistry::*)(
+                void*,
+                ::CommandRegistry::ParseToken const&,
+                ::CommandOrigin const&,
+                int,
+                ::std::string&,
+                ::std::vector<::std::string>&
+            ) const>
                                                                               parse;
         ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<uint64, uint64>>> values;
         // NOLINTEND
@@ -403,8 +414,14 @@ public:
         ::ll::TypedStorage<
             8,
             8,
-            bool (::CommandRegistry::*)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
-                const>
+            bool (::CommandRegistry::*)(
+                void*,
+                ::CommandRegistry::ParseToken const&,
+                ::CommandOrigin const&,
+                int,
+                ::std::string&,
+                ::std::vector<::std::string>&
+            ) const>
                                                                             parse;
         ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<uint64, uint>>> values;
         // NOLINTEND
@@ -685,9 +702,14 @@ public:
         ::std::string const&                                   name,
         ::std::vector<::std::pair<::std::string, uint>> const& strings,
         ::Bedrock::typeid_t<::CommandRegistry>                 type,
-        bool (CommandRegistry::*
-                  signature)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
-            const,
+        bool (CommandRegistry::*signature)(
+            void*,
+            ::CommandRegistry::ParseToken const&,
+            ::CommandOrigin const&,
+            int,
+            ::std::string&,
+            ::std::vector<::std::string>&
+        ) const,
         ::CommandRegistry::Signature* parse
     );
 
@@ -695,9 +717,14 @@ public:
         ::std::string const&                            name,
         ::std::vector<::std::pair<uint64, uint>> const& values,
         ::Bedrock::typeid_t<::CommandRegistry>          type,
-        bool (CommandRegistry::*
-                  signature)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
-            const,
+        bool (CommandRegistry::*signature)(
+            void*,
+            ::CommandRegistry::ParseToken const&,
+            ::CommandOrigin const&,
+            int,
+            ::std::string&,
+            ::std::vector<::std::string>&
+        ) const,
         ::CommandRegistry::Signature* parse
     );
 
@@ -705,18 +732,28 @@ public:
         ::std::string const&                                     name,
         ::std::vector<::std::pair<::std::string, uint64>> const& strings,
         ::Bedrock::typeid_t<::CommandRegistry>                   type,
-        bool (CommandRegistry::*
-                  parse)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
-            const
+        bool (CommandRegistry::*parse)(
+            void*,
+            ::CommandRegistry::ParseToken const&,
+            ::CommandOrigin const&,
+            int,
+            ::std::string&,
+            ::std::vector<::std::string>&
+        ) const
     );
 
     MCAPI ::CommandRegistry::Symbol _addEnumValuesInternal(
         ::std::string const&                              name,
         ::std::vector<::std::pair<uint64, uint64>> const& values,
         ::Bedrock::typeid_t<::CommandRegistry>            type,
-        bool (CommandRegistry::*
-                  parse)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
-            const
+        bool (CommandRegistry::*parse)(
+            void*,
+            ::CommandRegistry::ParseToken const&,
+            ::CommandOrigin const&,
+            int,
+            ::std::string&,
+            ::std::vector<::std::string>&
+        ) const
     );
 
     MCAPI ::CommandRegistry::Symbol _addFunctionSoftEnum();
@@ -981,8 +1018,14 @@ public:
     MCAPI static char const*& HASPROPERTY_PARAM_PROPERTY_NAME();
 
     MCAPI static ::std::add_lvalue_reference_t<::std::pair<
-        bool (CommandRegistry::*)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
-            const,
+        bool (CommandRegistry::*)(
+            void*,
+            ::CommandRegistry::ParseToken const&,
+            ::CommandOrigin const&,
+            int,
+            ::std::string&,
+            ::std::vector<::std::string>&
+        ) const,
         ::CommandRegistry::Symbol> const[]>
     ParseRuleSymbols();
 

@@ -4,32 +4,32 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/world/containers/FullContainerName.h"
 
 // auto generated forward declare list
 // clang-format off
+class DynamicContainerManager;
 class IContainerRegistryAccess;
 class IContainerRegistryTracker;
 class ItemStack;
 class StorageItemComponent;
 class StorageWeightLimitItemComponent;
 struct ContainerOwner;
-struct FullContainerName;
 // clang-format on
 
 class DynamicContainerTracker {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk723614;
-    ::ll::UntypedStorage<8, 16> mUnk94d240;
-    ::ll::UntypedStorage<8, 64> mUnk1a61c3;
-    ::ll::UntypedStorage<8, 64> mUnkc74df6;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::IContainerRegistryAccess>>  mContainerRegistryAccess;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::IContainerRegistryTracker>> mContainerRegistryManager;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::FullContainerName, ::std::unique_ptr<::DynamicContainerManager>>>
+                                                                         mTrackedContainers;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::FullContainerName>> mMarkedReachable;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    DynamicContainerTracker& operator=(DynamicContainerTracker const&);
-    DynamicContainerTracker(DynamicContainerTracker const&);
     DynamicContainerTracker();
 
 public:

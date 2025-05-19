@@ -5,42 +5,43 @@
 // auto generated inclusion list
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
 #include "mc/world/containers/models/FilterResult.h"
+#include "mc/world/item/ItemInstance.h"
+#include "mc/world/item/ItemStack.h"
+#include "mc/world/item/crafting/RecipeIngredientSet.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
+class ContainerModel;
 class ContainerScreenContext;
-class ItemInstance;
-class ItemStack;
 // clang-format on
 
 class CraftingContainerManagerModel : public ::ContainerManagerModel {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12>  mUnke10e7a;
-    ::ll::UntypedStorage<1, 1>   mUnka3a651;
-    ::ll::UntypedStorage<1, 1>   mUnkf72d28;
-    ::ll::UntypedStorage<1, 1>   mUnkf7bb2c;
-    ::ll::UntypedStorage<8, 32>  mUnk8645c4;
-    ::ll::UntypedStorage<8, 32>  mUnk36c339;
-    ::ll::UntypedStorage<8, 16>  mUnkebc2a3;
-    ::ll::UntypedStorage<8, 16>  mUnkc8355f;
-    ::ll::UntypedStorage<8, 16>  mUnk34e6f8;
-    ::ll::UntypedStorage<8, 152> mUnka7fefd;
-    ::ll::UntypedStorage<8, 64>  mUnk76ba93;
-    ::ll::UntypedStorage<8, 128> mUnkf4a0d1;
-    ::ll::UntypedStorage<4, 4>   mUnkc2a017;
-    ::ll::UntypedStorage<8, 8>   mUnk10203a;
-    ::ll::UntypedStorage<8, 8>   mUnk6d4275;
-    ::ll::UntypedStorage<8, 8>   mUnk446f9e;
-    ::ll::UntypedStorage<8, 8>   mUnk75de44;
-    // NOLINTEND
+    // CraftingContainerManagerModel inner types define
+    using FilterFunction = ::std::function<::FilterResult(::ItemInstance const&, bool)>;
 
 public:
-    // prevent constructor by default
-    CraftingContainerManagerModel& operator=(CraftingContainerManagerModel const&);
-    CraftingContainerManagerModel(CraftingContainerManagerModel const&);
-    CraftingContainerManagerModel();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 12, ::BlockPos>                          mBlockPos;
+    ::ll::TypedStorage<1, 1, bool>                                 mWorkbench;
+    ::ll::TypedStorage<1, 1, bool>                                 mPocket;
+    ::ll::TypedStorage<1, 1, bool>                                 mFiltering;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mSearchString;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mCaseFoldedSearchString;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ContainerModel>> mInventoryContainerModel;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ContainerModel>> mCraftingInputContainerModel;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ContainerModel>> mHotbarContainerModel;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                        mInHand;
+    ::ll::TypedStorage<8, 64, ::RecipeIngredientSet>               mIngredientSet;
+    ::ll::TypedStorage<8, 128, ::ItemInstance>                     mLastCraftedItem;
+    ::ll::TypedStorage<4, 4, int>                                  mContainerPopulationTabIndex;
+    ::ll::TypedStorage<8, 8, uint64>                               mContainerPopulationGroupIndex;
+    ::ll::TypedStorage<8, 8, uint64>                               mContainerPopulationGroupItemIndex;
+    ::ll::TypedStorage<8, 8, uint64>                               mContainerPopulationItemIndex;
+    ::ll::TypedStorage<8, 8, uint64>                               mContainerPopulationTotalItemCount;
+    // NOLINTEND
 
 public:
     // virtual functions

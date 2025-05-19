@@ -60,8 +60,10 @@ public:
     _tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
 
     // vIndex: 7
-    virtual bool
-    _quit(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr, ::PositionTrackingDB::TrackingRecord&);
+    virtual bool _quit(
+        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
+        ::PositionTrackingDB::TrackingRecord&
+    );
 
     // vIndex: 0
     virtual ~AsyncOperationBase() /*override*/ = default;
@@ -79,8 +81,10 @@ public:
 
     MCNAPI bool $isComplete() const;
 
-    MCNAPI bool
-    $_quit(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr, ::PositionTrackingDB::TrackingRecord&);
+    MCNAPI bool $_quit(
+        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
+        ::PositionTrackingDB::TrackingRecord&
+    );
     // NOLINTEND
 };
 

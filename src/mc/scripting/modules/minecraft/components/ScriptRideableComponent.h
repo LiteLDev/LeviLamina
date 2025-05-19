@@ -32,8 +32,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<bool> addPassenger(::ScriptModuleMinecraft::ScriptActor& scriptPassenger
-    ) const;
+    MCNAPI ::Scripting::Result_deprecated<bool>
+    addPassenger(::ScriptModuleMinecraft::ScriptActor& scriptPassenger) const;
 
     MCNAPI ::Scripting::Result<void> ejectPassenger(::ScriptModuleMinecraft::ScriptActor& scriptPassenger) const;
 

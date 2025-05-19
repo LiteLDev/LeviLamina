@@ -40,9 +40,11 @@ public:
     virtual void succeedWhenEntityPresent(::ActorDefinitionIdentifier const&, ::BlockPos const&, bool) /*override*/;
 
     // vIndex: 3
-    virtual void
-    succeedWhenEntityData(::BlockPos const&, ::ActorDefinitionIdentifier const&, ::std::function<bool(::Actor&)>) /*override*/
-        ;
+    virtual void succeedWhenEntityData(
+        ::BlockPos const&,
+        ::ActorDefinitionIdentifier const&,
+        ::std::function<bool(::Actor&)>
+    ) /*override*/;
 
     // vIndex: 4
     virtual void succeedWhenEntityHasComponent(
@@ -153,9 +155,11 @@ public:
     assertEntityTouching(::ActorDefinitionIdentifier const&, ::Vec3 const&, bool) /*override*/;
 
     // vIndex: 34
-    virtual ::std::optional<::gametest::GameTestError>
-    assertEntityState(::BlockPos const&, ::ActorDefinitionIdentifier const&, ::std::function<bool(::Actor&)>) /*override*/
-        ;
+    virtual ::std::optional<::gametest::GameTestError> assertEntityState(
+        ::BlockPos const&,
+        ::ActorDefinitionIdentifier const&,
+        ::std::function<bool(::Actor&)>
+    ) /*override*/;
 
     // vIndex: 36
     virtual ::std::optional<::gametest::GameTestError>

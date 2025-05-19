@@ -176,8 +176,17 @@ public:
         bool
     );
 
-    MCNAPI
-    P2PTransportChannel(::std::string_view, int, ::cricket::PortAllocator*, ::webrtc::AsyncDnsResolverFactoryInterface*, ::std::unique_ptr<::webrtc::AsyncDnsResolverFactoryInterface>, ::webrtc::RtcEventLog*, ::cricket::IceControllerFactoryInterface*, ::cricket::ActiveIceControllerFactoryInterface*, ::webrtc::FieldTrialsView const*);
+    MCNAPI P2PTransportChannel(
+        ::std::string_view,
+        int,
+        ::cricket::PortAllocator*,
+        ::webrtc::AsyncDnsResolverFactoryInterface*,
+        ::std::unique_ptr<::webrtc::AsyncDnsResolverFactoryInterface>,
+        ::webrtc::RtcEventLog*,
+        ::cricket::IceControllerFactoryInterface*,
+        ::cricket::ActiveIceControllerFactoryInterface*,
+        ::webrtc::FieldTrialsView const*
+    );
 
     MCNAPI void ParseFieldTrials(::webrtc::FieldTrialsView const*);
 
@@ -226,8 +235,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::std::string_view, int, ::cricket::PortAllocator*, ::webrtc::AsyncDnsResolverFactoryInterface*, ::std::unique_ptr<::webrtc::AsyncDnsResolverFactoryInterface>, ::webrtc::RtcEventLog*, ::cricket::IceControllerFactoryInterface*, ::cricket::ActiveIceControllerFactoryInterface*, ::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(
+        ::std::string_view,
+        int,
+        ::cricket::PortAllocator*,
+        ::webrtc::AsyncDnsResolverFactoryInterface*,
+        ::std::unique_ptr<::webrtc::AsyncDnsResolverFactoryInterface>,
+        ::webrtc::RtcEventLog*,
+        ::cricket::IceControllerFactoryInterface*,
+        ::cricket::ActiveIceControllerFactoryInterface*,
+        ::webrtc::FieldTrialsView const*
+    );
     // NOLINTEND
 
 public:

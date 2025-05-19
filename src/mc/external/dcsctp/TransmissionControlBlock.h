@@ -55,13 +55,43 @@ public:
 
     MCNAPI void SendBufferedPackets(::dcsctp::SctpPacket::Builder&, ::webrtc::Timestamp);
 
-    MCNAPI TransmissionControlBlock(::dcsctp::TimerManager&, ::std::string_view, ::dcsctp::DcSctpOptions const&, ::dcsctp::Capabilities const&, ::dcsctp::DcSctpSocketCallbacks&, ::dcsctp::SendQueue&, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, uint64, ::webrtc::StrongAlias<::dcsctp::TieTagTag, uint64>, ::dcsctp::PacketSender&, ::std::function<bool()>);
+    MCNAPI TransmissionControlBlock(
+        ::dcsctp::TimerManager&,
+        ::std::string_view,
+        ::dcsctp::DcSctpOptions const&,
+        ::dcsctp::Capabilities const&,
+        ::dcsctp::DcSctpSocketCallbacks&,
+        ::dcsctp::SendQueue&,
+        ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>,
+        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>,
+        ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>,
+        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>,
+        uint64,
+        ::webrtc::StrongAlias<::dcsctp::TieTagTag, uint64>,
+        ::dcsctp::PacketSender&,
+        ::std::function<bool()>
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::dcsctp::TimerManager&, ::std::string_view, ::dcsctp::DcSctpOptions const&, ::dcsctp::Capabilities const&, ::dcsctp::DcSctpSocketCallbacks&, ::dcsctp::SendQueue&, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, uint64, ::webrtc::StrongAlias<::dcsctp::TieTagTag, uint64>, ::dcsctp::PacketSender&, ::std::function<bool()>);
+    MCNAPI void* $ctor(
+        ::dcsctp::TimerManager&,
+        ::std::string_view,
+        ::dcsctp::DcSctpOptions const&,
+        ::dcsctp::Capabilities const&,
+        ::dcsctp::DcSctpSocketCallbacks&,
+        ::dcsctp::SendQueue&,
+        ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>,
+        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>,
+        ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>,
+        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>,
+        uint64,
+        ::webrtc::StrongAlias<::dcsctp::TieTagTag, uint64>,
+        ::dcsctp::PacketSender&,
+        ::std::function<bool()>
+    );
     // NOLINTEND
 
 public:

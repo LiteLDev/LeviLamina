@@ -38,8 +38,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
-    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GeneticsDefinition>>& root
+    MCNAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GeneticsDefinition>>& root
     );
     // NOLINTEND
 };

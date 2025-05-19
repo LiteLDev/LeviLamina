@@ -25,16 +25,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6
-    virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::ExplosionStartedEvent& explosionStartedEvent
-    ) /*override*/;
+    virtual ::GameplayHandlerResult<::CoordinatorResult>
+    handleEvent(::ExplosionStartedEvent& explosionStartedEvent) /*override*/;
 
     // vIndex: 5
-    virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::BlockTryDestroyByPlayerEvent& eventData
-    ) /*override*/;
+    virtual ::GameplayHandlerResult<::CoordinatorResult>
+    handleEvent(::BlockTryDestroyByPlayerEvent& eventData) /*override*/;
 
     // vIndex: 8
-    virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::BlockTryPlaceByPlayerEvent const& eventData
-    ) /*override*/;
+    virtual ::GameplayHandlerResult<::CoordinatorResult>
+    handleEvent(::BlockTryPlaceByPlayerEvent const& eventData) /*override*/;
 
     // vIndex: 0
     virtual ~ScriptBlockGameplayHandler() /*override*/ = default;

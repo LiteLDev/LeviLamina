@@ -23,9 +23,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void
-    addComponents(::EntityRegistry& registry, ::EntityContext& entity, ::DefinitionInstanceGroup const& definitionGroup)
-        const;
+    MCNAPI void addComponents(
+        ::EntityRegistry&                registry,
+        ::EntityContext&                 entity,
+        ::DefinitionInstanceGroup const& definitionGroup
+    ) const;
 
     MCNAPI void removeComponents(
         ::EntityRegistry&                registry,

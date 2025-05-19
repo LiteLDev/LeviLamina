@@ -32,17 +32,23 @@ public:
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
     // vIndex: 10
-    virtual ::AABB const&
-    getVisualShapeInWorld(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferAABB)
-        const /*override*/;
+    virtual ::AABB const& getVisualShapeInWorld(
+        ::Block const&,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferAABB
+    ) const /*override*/;
 
     // vIndex: 103
     virtual bool pushesUpFallingBlocks() const /*override*/;
 
     // vIndex: 5
-    virtual ::AABB
-    getCollisionShape(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
-        const /*override*/;
+    virtual ::AABB getCollisionShape(
+        ::Block const&,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 68
     virtual void updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const
@@ -68,15 +74,21 @@ public:
 
     MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCNAPI ::AABB const&
-    $getVisualShapeInWorld(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferAABB)
-        const;
+    MCNAPI ::AABB const& $getVisualShapeInWorld(
+        ::Block const&,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferAABB
+    ) const;
 
     MCNAPI bool $pushesUpFallingBlocks() const;
 
-    MCNAPI ::AABB
-    $getCollisionShape(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
+    MCNAPI ::AABB $getCollisionShape(
+        ::Block const&,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
 
     MCNAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
 

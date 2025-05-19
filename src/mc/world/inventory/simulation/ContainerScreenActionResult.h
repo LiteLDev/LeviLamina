@@ -2,18 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ContainerScreenActionResultData;
+struct ContainerValidationResult;
+// clang-format on
+
 struct ContainerScreenActionResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnka0ab71;
-    ::ll::UntypedStorage<8, 24> mUnkb16160;
-    ::ll::UntypedStorage<8, 24> mUnk75de80;
+    ::ll::TypedStorage<1, 1, bool>                                                                 mActionSucceeded;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ContainerValidationResult>>                          mValidationResults;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::ContainerScreenActionResultData>>> mResultData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerScreenActionResult& operator=(ContainerScreenActionResult const&);
-    ContainerScreenActionResult(ContainerScreenActionResult const&);
-    ContainerScreenActionResult();
 };

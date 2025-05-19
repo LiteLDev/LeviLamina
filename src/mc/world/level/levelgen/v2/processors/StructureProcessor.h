@@ -27,14 +27,24 @@ public:
     virtual ~StructureProcessor() = default;
 
     // vIndex: 1
-    virtual ::std::optional<::br::worldgen::StructureBlockInfo>
-    process(::IBlockSource&, ::BlockPos, ::BlockPos, ::br::worldgen::StructureBlockInfo const&, ::br::worldgen::StructureBlockInfo&& processedBlockInfo, ::br::worldgen::StructurePlaceSettings const&)
-        const;
+    virtual ::std::optional<::br::worldgen::StructureBlockInfo> process(
+        ::IBlockSource&,
+        ::BlockPos,
+        ::BlockPos,
+        ::br::worldgen::StructureBlockInfo const&,
+        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
+        ::br::worldgen::StructurePlaceSettings const&
+    ) const;
 
     // vIndex: 2
-    virtual ::std::vector<::br::worldgen::StructureBlockInfo>
-    finalize(::IBlockSource&, ::BlockPos, ::BlockPos, ::std::vector<::br::worldgen::StructureBlockInfo> const&, ::std::vector<::br::worldgen::StructureBlockInfo>&& processedBlocks, ::br::worldgen::StructurePlaceSettings const&)
-        const;
+    virtual ::std::vector<::br::worldgen::StructureBlockInfo> finalize(
+        ::IBlockSource&,
+        ::BlockPos,
+        ::BlockPos,
+        ::std::vector<::br::worldgen::StructureBlockInfo> const&,
+        ::std::vector<::br::worldgen::StructureBlockInfo>&& processedBlocks,
+        ::br::worldgen::StructurePlaceSettings const&
+    ) const;
 
     // vIndex: 3
     virtual ::br::worldgen::StructureProcessorType type() const;
@@ -67,13 +77,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::br::worldgen::StructureBlockInfo>
-    $process(::IBlockSource&, ::BlockPos, ::BlockPos, ::br::worldgen::StructureBlockInfo const&, ::br::worldgen::StructureBlockInfo&& processedBlockInfo, ::br::worldgen::StructurePlaceSettings const&)
-        const;
+    MCNAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
+        ::IBlockSource&,
+        ::BlockPos,
+        ::BlockPos,
+        ::br::worldgen::StructureBlockInfo const&,
+        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
+        ::br::worldgen::StructurePlaceSettings const&
+    ) const;
 
-    MCNAPI ::std::vector<::br::worldgen::StructureBlockInfo>
-    $finalize(::IBlockSource&, ::BlockPos, ::BlockPos, ::std::vector<::br::worldgen::StructureBlockInfo> const&, ::std::vector<::br::worldgen::StructureBlockInfo>&& processedBlocks, ::br::worldgen::StructurePlaceSettings const&)
-        const;
+    MCNAPI ::std::vector<::br::worldgen::StructureBlockInfo> $finalize(
+        ::IBlockSource&,
+        ::BlockPos,
+        ::BlockPos,
+        ::std::vector<::br::worldgen::StructureBlockInfo> const&,
+        ::std::vector<::br::worldgen::StructureBlockInfo>&& processedBlocks,
+        ::br::worldgen::StructurePlaceSettings const&
+    ) const;
 
     MCNAPI ::br::worldgen::StructureProcessorType $type() const;
 

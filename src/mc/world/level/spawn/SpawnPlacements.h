@@ -71,8 +71,13 @@ public:
         24,
         ::std::vector<::std::tuple<
             ::std::string,
-            ::std::function<
-                bool(::br::spawn::EntityType const&, ::BlockSource&, ::br::spawn::EntitySpawnReason&, ::BlockPos, ::IRandom&)>>>>
+            ::std::function<bool(
+                ::br::spawn::EntityType const&,
+                ::BlockSource&,
+                ::br::spawn::EntitySpawnReason&,
+                ::BlockPos,
+                ::IRandom&
+            )>>>>
         mEntityPredicates;
     ::ll::TypedStorage<
         8,
@@ -86,8 +91,14 @@ public:
         24,
         ::std::vector<::std::tuple<
             ::std::string,
-            ::std::function<
-                void(::BlockSource const&, ::SharedTypes::Legacy::Difficulty, ::br::spawn::EntitySpawnReason, ::Mob&, ::IRandom&, ::br::spawn::transform::PropertyBag&)>>>>
+            ::std::function<void(
+                ::BlockSource const&,
+                ::SharedTypes::Legacy::Difficulty,
+                ::br::spawn::EntitySpawnReason,
+                ::Mob&,
+                ::IRandom&,
+                ::br::spawn::transform::PropertyBag&
+            )>>>>
         mFinalizeMobTransform;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::tuple<::std::string, ::std::function<bool(::Block const&)>>>>
         mHeightmapTypes;
@@ -121,9 +132,13 @@ public:
 
     MCNAPI ::br::spawn::EntityPredicateToken record(
         ::std::string_view key,
-        ::std::function<
-            bool(::br::spawn::EntityType const&, ::BlockSource&, ::br::spawn::EntitySpawnReason&, ::BlockPos, ::IRandom&)>
-            predicate
+        ::std::function<bool(
+            ::br::spawn::EntityType const&,
+            ::BlockSource&,
+            ::br::spawn::EntitySpawnReason&,
+            ::BlockPos,
+            ::IRandom&
+        )>                 predicate
     );
 
     MCNAPI ::br::spawn::ObstructionPredicateToken record(
@@ -133,9 +148,13 @@ public:
 
     MCNAPI ::br::spawn::EntityPredicateToken recordReloadable(
         ::std::string_view key,
-        ::std::function<
-            bool(::br::spawn::EntityType const&, ::BlockSource&, ::br::spawn::EntitySpawnReason&, ::BlockPos, ::IRandom&)>
-            predicate
+        ::std::function<bool(
+            ::br::spawn::EntityType const&,
+            ::BlockSource&,
+            ::br::spawn::EntitySpawnReason&,
+            ::BlockPos,
+            ::IRandom&
+        )>                 predicate
     );
 
     MCNAPI ::br::spawn::ObstructionPredicateToken recordReloadable(

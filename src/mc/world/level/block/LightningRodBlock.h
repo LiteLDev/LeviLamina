@@ -89,9 +89,13 @@ public:
     MCFOLD bool
     $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCFOLD ::Block const&
-    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
-        const;
+    MCFOLD ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     MCAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const;
 

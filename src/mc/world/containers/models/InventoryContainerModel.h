@@ -10,13 +10,14 @@
 class Container;
 class ContainerWeakRef;
 class ItemStack;
+class Player;
 // clang-format on
 
 class InventoryContainerModel : public ::ContainerModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk1fe61c;
+    ::ll::TypedStorage<8, 8, ::Player&> mPlayer;
     // NOLINTEND
 
 public:

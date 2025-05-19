@@ -32,8 +32,17 @@ public:
     virtual void onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
 
     // vIndex: 4
-    virtual void
-    onBlockChanged(::BlockSource&, ::BlockPos const&, uint, ::Block const&, ::Block const&, int, ::ActorBlockSyncMessage const*, ::BlockChangedEventTarget, ::Actor*);
+    virtual void onBlockChanged(
+        ::BlockSource&,
+        ::BlockPos const&,
+        uint,
+        ::Block const&,
+        ::Block const&,
+        int,
+        ::ActorBlockSyncMessage const*,
+        ::BlockChangedEventTarget,
+        ::Actor*
+    );
 
     // vIndex: 5
     virtual void onBrightnessChanged(::BlockSource& source, ::BlockPos const& pos);

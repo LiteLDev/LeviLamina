@@ -62,14 +62,15 @@ public:
         listenForCurrentThemeChanged(::std::function<void(::std::string const&)>) = 0;
 
     // vIndex: 11
-    virtual ::Bedrock::PubSub::Subscription
-        listenForNewThemeCreated(::std::function<
-                                 void(::std::string const&, ::std::optional<::std::string> const&, ::std::optional<::std::string> const&)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription listenForNewThemeCreated(
+        ::std::function<
+            void(::std::string const&, ::std::optional<::std::string> const&, ::std::optional<::std::string> const&)>
+    ) = 0;
 
     // vIndex: 12
-    virtual ::Bedrock::PubSub::Subscription
-        listenForThemeColorUpdated(::std::function<
-                                   void(::std::string const&, ::Editor::Settings::ThemeSettingsColorKey, ::mce::Color const&)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription listenForThemeColorUpdated(
+        ::std::function<void(::std::string const&, ::Editor::Settings::ThemeSettingsColorKey, ::mce::Color const&)>
+    ) = 0;
 
     // vIndex: 13
     virtual ::Bedrock::PubSub::Subscription listenForThemeDeleted(::std::function<void(::std::string const&)>) = 0;

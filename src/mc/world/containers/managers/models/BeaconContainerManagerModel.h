@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContainerModel;
 class ContainerScreenContext;
 class ItemStack;
 // clang-format on
@@ -15,19 +16,13 @@ class BeaconContainerManagerModel : public ::LevelContainerManagerModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkc0e70a;
-    ::ll::UntypedStorage<4, 4>  mUnk15baed;
-    ::ll::UntypedStorage<4, 4>  mUnkbca55e;
-    ::ll::UntypedStorage<4, 4>  mUnk18c358;
-    ::ll::UntypedStorage<4, 4>  mUnk5239c7;
-    ::ll::UntypedStorage<1, 1>  mUnk28b1fe;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ContainerModel>> mPaymentContainerModel;
+    ::ll::TypedStorage<4, 4, int>                                mPrimaryEffectPreviousId;
+    ::ll::TypedStorage<4, 4, int>                                mSecondaryEffectPreviousId;
+    ::ll::TypedStorage<4, 4, int>                                mSelectedPrimaryEffectId;
+    ::ll::TypedStorage<4, 4, int>                                mSelectedSecondaryEffectId;
+    ::ll::TypedStorage<1, 1, bool>                               mEffectSelectionsChanged;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BeaconContainerManagerModel& operator=(BeaconContainerManagerModel const&);
-    BeaconContainerManagerModel(BeaconContainerManagerModel const&);
-    BeaconContainerManagerModel();
 
 public:
     // virtual functions

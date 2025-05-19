@@ -91,10 +91,10 @@ public:
     MCNAPI ::Scripting::Result<void, ::Scripting::Error>
     setBrushMask(::Editor::ScriptModule::ScriptBlockMaskList const& mask);
 
-    MCNAPI void
-    setBrushShape(::std::variant<
-                  ::std::vector<::Vec3>,
-                  ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>> const& shape
+    MCNAPI void setBrushShape(
+        ::std::variant<
+            ::std::vector<::Vec3>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>> const& shape
     );
 
     MCNAPI void setBrushShapeOffset(::Vec3 const& offset);

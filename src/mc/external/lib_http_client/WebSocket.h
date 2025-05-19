@@ -66,8 +66,13 @@ public:
 
     MCNAPI ::http_string const& ProxyUri() const;
 
-    MCNAPI
-    uint RegisterEventCallbacks(void (*)(::HC_WEBSOCKET_OBSERVER*, char const*, void*), void (*)(::HC_WEBSOCKET_OBSERVER*, uchar const*, uint, void*), void (*)(::HC_WEBSOCKET_OBSERVER*, uchar const*, uint, bool, void*), void (*)(::HC_WEBSOCKET_OBSERVER*, ::HCWebSocketCloseStatus, void*), void*);
+    MCNAPI uint RegisterEventCallbacks(
+        void (*)(::HC_WEBSOCKET_OBSERVER*, char const*, void*),
+        void (*)(::HC_WEBSOCKET_OBSERVER*, uchar const*, uint, void*),
+        void (*)(::HC_WEBSOCKET_OBSERVER*, uchar const*, uint, bool, void*),
+        void (*)(::HC_WEBSOCKET_OBSERVER*, ::HCWebSocketCloseStatus, void*),
+        void*
+    );
 
     MCNAPI long SendAsync(char const*, ::XAsyncBlock*);
     // NOLINTEND

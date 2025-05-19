@@ -107,8 +107,15 @@ public:
 
     MCNAPI void SetCandidateFilter(uint);
 
-    MCNAPI bool
-    SetConfiguration(::std::set<::rtc::SocketAddress> const&, ::std::vector<::cricket::RelayServerConfig> const&, ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const&, int, ::webrtc::PortPrunePolicy, ::webrtc::TurnCustomizer*, ::std::optional<int> const&);
+    MCNAPI bool SetConfiguration(
+        ::std::set<::rtc::SocketAddress> const&,
+        ::std::vector<::cricket::RelayServerConfig> const&,
+        ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const&,
+        int,
+        ::webrtc::PortPrunePolicy,
+        ::webrtc::TurnCustomizer*,
+        ::std::optional<int> const&
+    );
 
     MCNAPI ::std::unique_ptr<::cricket::PortAllocatorSession>
     TakePooledSession(::std::string_view, int, ::std::string_view, ::std::string_view);

@@ -58,9 +58,14 @@ public:
     ) /*override*/;
 
     // vIndex: 4
-    virtual bool
-    isFeatureChunk(::BiomeSource const&, ::Random& random, ::ChunkPos const& pos, uint levelSeed, ::IPreliminarySurfaceProvider const&, ::Dimension const&) /*override*/
-        ;
+    virtual bool isFeatureChunk(
+        ::BiomeSource const&,
+        ::Random&         random,
+        ::ChunkPos const& pos,
+        uint              levelSeed,
+        ::IPreliminarySurfaceProvider const&,
+        ::Dimension const&
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~RuinedPortalFeature() /*override*/ = default;
@@ -87,8 +92,14 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
 
-    MCNAPI bool
-    $isFeatureChunk(::BiomeSource const&, ::Random& random, ::ChunkPos const& pos, uint levelSeed, ::IPreliminarySurfaceProvider const&, ::Dimension const&);
+    MCNAPI bool $isFeatureChunk(
+        ::BiomeSource const&,
+        ::Random&         random,
+        ::ChunkPos const& pos,
+        uint              levelSeed,
+        ::IPreliminarySurfaceProvider const&,
+        ::Dimension const&
+    );
     // NOLINTEND
 
 public:

@@ -47,8 +47,17 @@ public:
 
     MCNAPI void ClearChannel();
 
-    MCNAPI ::webrtc::RTCError
-    CreateChannel(::std::string_view, ::webrtc::Call*, ::cricket::MediaConfig const&, bool, ::webrtc::CryptoOptions, ::cricket::AudioOptions const&, ::cricket::VideoOptions const&, ::webrtc::VideoBitrateAllocatorFactory*, ::std::function<::webrtc::RtpTransportInternal*(::std::string_view)>);
+    MCNAPI ::webrtc::RTCError CreateChannel(
+        ::std::string_view,
+        ::webrtc::Call*,
+        ::cricket::MediaConfig const&,
+        bool,
+        ::webrtc::CryptoOptions,
+        ::cricket::AudioOptions const&,
+        ::cricket::VideoOptions const&,
+        ::webrtc::VideoBitrateAllocatorFactory*,
+        ::std::function<::webrtc::RtpTransportInternal*(::std::string_view)>
+    );
 
     MCNAPI void OnFirstPacketReceived();
 
@@ -62,11 +71,18 @@ public:
 
     MCNAPI RtpTransceiver(::cricket::MediaType, ::webrtc::ConnectionContext*);
 
-    MCNAPI
-    RtpTransceiver(::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>>, ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>>, ::webrtc::ConnectionContext*, ::std::vector<::webrtc::RtpHeaderExtensionCapability>, ::std::function<void()>);
+    MCNAPI RtpTransceiver(
+        ::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>>,
+        ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>>,
+        ::webrtc::ConnectionContext*,
+        ::std::vector<::webrtc::RtpHeaderExtensionCapability>,
+        ::std::function<void()>
+    );
 
-    MCNAPI void
-        SetChannel(::std::unique_ptr<::cricket::ChannelInterface>, ::std::function<::webrtc::RtpTransportInternal*(::std::string const&)>);
+    MCNAPI void SetChannel(
+        ::std::unique_ptr<::cricket::ChannelInterface>,
+        ::std::function<::webrtc::RtpTransportInternal*(::std::string const&)>
+    );
 
     MCNAPI void SetPeerConnectionClosed();
 
@@ -93,7 +109,13 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::cricket::MediaType, ::webrtc::ConnectionContext*);
 
-    MCNAPI void* $ctor(::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>>, ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>>, ::webrtc::ConnectionContext*, ::std::vector<::webrtc::RtpHeaderExtensionCapability>, ::std::function<void()>);
+    MCNAPI void* $ctor(
+        ::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>>,
+        ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>>,
+        ::webrtc::ConnectionContext*,
+        ::std::vector<::webrtc::RtpHeaderExtensionCapability>,
+        ::std::function<void()>
+    );
     // NOLINTEND
 
 public:

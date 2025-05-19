@@ -79,8 +79,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Result<::std::unique_ptr<::DeferredDescriptor>> deserialize(::ReadOnlyBinaryStream& stream
-    );
+    MCNAPI static ::Bedrock::Result<::std::unique_ptr<::DeferredDescriptor>>
+    deserialize(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:

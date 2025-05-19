@@ -49,12 +49,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(::ScriptModuleMinecraft::
-                                                                ScriptBlockCustomComponentPlayerPlaceBeforeEvent&&);
+    MCNAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent&&
+    );
 
-    MCNAPI
-    ScriptBlockCustomComponentPlayerPlaceBeforeEvent(::ScriptModuleMinecraft::
-                                                         ScriptBlockCustomComponentPlayerPlaceBeforeEvent const&);
+    MCNAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent const&
+    );
 
     MCNAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(
         ::BlockEvents::BlockPlayerPlacingEvent const& engineEvent,

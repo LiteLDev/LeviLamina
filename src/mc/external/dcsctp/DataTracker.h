@@ -76,8 +76,10 @@ public:
 
     MCNAPI bool IsTSNValid(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>) const;
 
-    MCNAPI bool
-        Observe(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::webrtc::StrongAlias<::dcsctp::ImmediateAckFlagTag, bool>);
+    MCNAPI bool Observe(
+        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>,
+        ::webrtc::StrongAlias<::dcsctp::ImmediateAckFlagTag, bool>
+    );
 
     MCNAPI void ObservePacketEnd();
 

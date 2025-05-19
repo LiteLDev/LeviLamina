@@ -92,8 +92,8 @@ public:
     getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const /*override*/;
 
     // vIndex: 10
-    virtual ::Core::PathBuffer<::std::string> getPathContainingResource(::ResourceLocation const& resourceLocation
-    ) const /*override*/;
+    virtual ::Core::PathBuffer<::std::string>
+    getPathContainingResource(::ResourceLocation const& resourceLocation) const /*override*/;
 
     // vIndex: 9
     virtual ::Core::PathBuffer<::std::string> getPathContainingResource(
@@ -202,8 +202,8 @@ public:
     MCNAPI ::Core::PathBuffer<::std::string>
     $getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> $getPathContainingResource(::ResourceLocation const& resourceLocation
-    ) const;
+    MCNAPI ::Core::PathBuffer<::std::string>
+    $getPathContainingResource(::ResourceLocation const& resourceLocation) const;
 
     MCNAPI ::Core::PathBuffer<::std::string> $getPathContainingResource(
         ::ResourceLocation const&        resourceLocation,

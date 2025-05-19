@@ -73,15 +73,15 @@ public:
     virtual ::std::vector<::std::unique_ptr<::WorldTemplateInfo>> const& getLocalTemplates() const /*override*/;
 
     // vIndex: 1
-    virtual ::WorldTemplateInfo const* findInstalledWorldTemplateByUUID(::std::vector<::mce::UUID> const& packUUIDs
-    ) const /*override*/;
+    virtual ::WorldTemplateInfo const*
+    findInstalledWorldTemplateByUUID(::std::vector<::mce::UUID> const& packUUIDs) const /*override*/;
 
     // vIndex: 7
     virtual void deleteWorldTemplateAndFiles(::PackIdVersion const& packIdentity) /*override*/;
 
     // vIndex: 2
-    virtual ::Bedrock::PubSub::Subscription
-    registerModifiedCallback(::std::function<void(::std::pair<::std::string, bool> const&)> newCallbackFunction
+    virtual ::Bedrock::PubSub::Subscription registerModifiedCallback(
+        ::std::function<void(::std::pair<::std::string, bool> const&)> newCallbackFunction
     ) /*override*/;
     // NOLINTEND
 
@@ -147,8 +147,8 @@ public:
 
     MCNAPI ::std::vector<::std::unique_ptr<::WorldTemplateInfo>> const& $getLocalTemplates() const;
 
-    MCNAPI ::WorldTemplateInfo const* $findInstalledWorldTemplateByUUID(::std::vector<::mce::UUID> const& packUUIDs
-    ) const;
+    MCNAPI ::WorldTemplateInfo const*
+    $findInstalledWorldTemplateByUUID(::std::vector<::mce::UUID> const& packUUIDs) const;
 
     MCNAPI void $deleteWorldTemplateAndFiles(::PackIdVersion const& packIdentity);
 

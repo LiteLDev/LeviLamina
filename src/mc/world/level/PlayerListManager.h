@@ -40,8 +40,8 @@ public:
 
     MCNAPI void _onGameplayUserRemoved(::EntityContext& entity);
 
-    MCNAPI void initializeWithGameplayUserManagerOnServer(::IGameplayUserManagerConnector& gameplayUserManagerConnector
-    );
+    MCNAPI void
+    initializeWithGameplayUserManagerOnServer(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
     MCNAPI void removeByUUID(::mce::UUID const& uuid);
 

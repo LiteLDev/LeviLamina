@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContainerModel;
 class ContainerScreenContext;
 class ItemInstance;
 class ItemStackBase;
@@ -18,15 +19,9 @@ class ContainerController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk4c9590;
-    ::ll::UntypedStorage<1, 1>  mUnk9c1c1c;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ContainerModel>> mContainerModel;
+    ::ll::TypedStorage<1, 1, bool>                               mDrop;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerController& operator=(ContainerController const&);
-    ContainerController(ContainerController const&);
-    ContainerController();
 
 public:
     // virtual functions

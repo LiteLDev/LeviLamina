@@ -68,9 +68,15 @@ public:
     ) const /*override*/;
 
     // vIndex: 4
-    virtual ::HitResult
-    clip(::Block const& block, ::BlockSource const&, ::BlockPos const& pos, ::Vec3 const& origin, ::Vec3 const& end, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
-        const /*override*/;
+    virtual ::HitResult clip(
+        ::Block const& block,
+        ::BlockSource const&,
+        ::BlockPos const& pos,
+        ::Vec3 const&     origin,
+        ::Vec3 const&     end,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 23
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
@@ -150,15 +156,25 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
 
-    MCAPI ::HitResult
-    $clip(::Block const& block, ::BlockSource const&, ::BlockPos const& pos, ::Vec3 const& origin, ::Vec3 const& end, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
+    MCAPI ::HitResult $clip(
+        ::Block const& block,
+        ::BlockSource const&,
+        ::BlockPos const& pos,
+        ::Vec3 const&     origin,
+        ::Vec3 const&     end,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
 
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
-    MCAPI ::Block const&
-    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
-        const;
+    MCAPI ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     MCFOLD bool $hasComparatorSignal() const;
 

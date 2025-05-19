@@ -14,14 +14,8 @@ class MaterialReducerOutputContainerController : public ::ContainerController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkb69341;
+    ::ll::TypedStorage<1, 1, bool> mIsItemAllowed;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MaterialReducerOutputContainerController& operator=(MaterialReducerOutputContainerController const&);
-    MaterialReducerOutputContainerController(MaterialReducerOutputContainerController const&);
-    MaterialReducerOutputContainerController();
 
 public:
     // virtual functions

@@ -26,8 +26,11 @@ public:
     virtual void initialize() = 0;
 
     // vIndex: 3
-    virtual void
-    registerOptionObserverCallback(::Bedrock::PubSub::Subscription&, ::FlightingToggleId, ::std::function<void(::Option const&)>) = 0;
+    virtual void registerOptionObserverCallback(
+        ::Bedrock::PubSub::Subscription&,
+        ::FlightingToggleId,
+        ::std::function<void(::Option const&)>
+    ) = 0;
 
     // vIndex: 4
     virtual void visit(::std::function<void(::FlightingToggleMetadata const&)> const&) const = 0;

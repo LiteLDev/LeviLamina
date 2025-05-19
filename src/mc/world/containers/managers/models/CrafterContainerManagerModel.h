@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/models/LevelContainerManagerModel.h"
+#include "mc/world/item/ItemInstance.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,13 +19,11 @@ class CrafterContainerManagerModel : public ::LevelContainerManagerModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 128> mUnk13517c;
+    ::ll::TypedStorage<8, 128, ::ItemInstance> mLastCachedResultItem;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    CrafterContainerManagerModel& operator=(CrafterContainerManagerModel const&);
-    CrafterContainerManagerModel(CrafterContainerManagerModel const&);
     CrafterContainerManagerModel();
 
 public:

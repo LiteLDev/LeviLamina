@@ -123,9 +123,12 @@ public:
 
     MCAPI void addBucketEntitySaveData(::Actor& entity, ::ItemStack& instance) const;
 
-    MCAPI bool
-    readBucketEntitySaveData(::BlockSource& region, ::Actor* placer, ::BlockPos pos, ::ItemInstance const& instance)
-        const;
+    MCAPI bool readBucketEntitySaveData(
+        ::BlockSource&        region,
+        ::Actor*              placer,
+        ::BlockPos            pos,
+        ::ItemInstance const& instance
+    ) const;
     // NOLINTEND
 
 public:

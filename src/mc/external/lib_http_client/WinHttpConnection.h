@@ -68,8 +68,14 @@ public:
     MCNAPI static ::Result<::std::shared_ptr<::xbox::httpclient::WinHttpConnection>>
     Initialize(void*, ::HC_CALL*, ::xbox::httpclient::proxy_type, ::xbox::httpclient::XPlatSecurityInformation&&);
 
-    MCNAPI static ::Result<::std::shared_ptr<::xbox::httpclient::WinHttpConnection>>
-    Initialize(void*, ::HC_WEBSOCKET_OBSERVER*, char const*, char const*, ::xbox::httpclient::proxy_type, ::xbox::httpclient::XPlatSecurityInformation&&);
+    MCNAPI static ::Result<::std::shared_ptr<::xbox::httpclient::WinHttpConnection>> Initialize(
+        void*,
+        ::HC_WEBSOCKET_OBSERVER*,
+        char const*,
+        char const*,
+        ::xbox::httpclient::proxy_type,
+        ::xbox::httpclient::XPlatSecurityInformation&&
+    );
 
     MCNAPI static long WebSocketConnectProvider(::XAsyncOp, ::XAsyncProviderData const*);
 

@@ -143,8 +143,8 @@ public:
     virtual int getLevelGenHeight() const /*override*/;
 
     // vIndex: 48
-    virtual ::Util::MultidimensionalArray<float, 5, 5, 41> generateDensityCellsForChunk(::ChunkPos const& chunkPos
-    ) const /*override*/;
+    virtual ::Util::MultidimensionalArray<float, 5, 5, 41>
+    generateDensityCellsForChunk(::ChunkPos const& chunkPos) const /*override*/;
 
     // vIndex: 33
     virtual bool chunkPosNeedsBlending(::ChunkPos const& cp) /*override*/;
@@ -204,12 +204,22 @@ public:
         ::OreVeinifier*        oreVeinifier
     ) const;
 
-    MCAPI ::std::unique_ptr<::BiomeSource>
-    _makeBiomeSource(::XoroshiroPositionalRandomFactory const& biomeRegistry, ::BiomeRegistry const& overrideBiome, ::Biome const*);
+    MCAPI ::std::unique_ptr<::BiomeSource> _makeBiomeSource(
+        ::XoroshiroPositionalRandomFactory const& biomeRegistry,
+        ::BiomeRegistry const&                    overrideBiome,
+        ::Biome const*
+    );
 
-    MCAPI ::OverworldGeneratorMultinoise::BlockGenerationResult const
-    _updateNoiseAndGenerateBaseBlock(float noiseValue, ::BlockPos const& worldPosition, short aquiferPtr, ::Aquifer* shouldTickUpdate, bool chunkBlender, ::ChunkBlender const* stone, ::Block const& oreVeinifier, ::OreVeinifier*)
-        const;
+    MCAPI ::OverworldGeneratorMultinoise::BlockGenerationResult const _updateNoiseAndGenerateBaseBlock(
+        float                 noiseValue,
+        ::BlockPos const&     worldPosition,
+        short                 aquiferPtr,
+        ::Aquifer*            shouldTickUpdate,
+        bool                  chunkBlender,
+        ::ChunkBlender const* stone,
+        ::Block const&        oreVeinifier,
+        ::OreVeinifier*
+    ) const;
     // NOLINTEND
 
 public:
@@ -241,8 +251,8 @@ public:
 
     MCFOLD int $getLevelGenHeight() const;
 
-    MCAPI ::Util::MultidimensionalArray<float, 5, 5, 41> $generateDensityCellsForChunk(::ChunkPos const& chunkPos
-    ) const;
+    MCAPI ::Util::MultidimensionalArray<float, 5, 5, 41>
+    $generateDensityCellsForChunk(::ChunkPos const& chunkPos) const;
 
     MCAPI bool $chunkPosNeedsBlending(::ChunkPos const& cp);
 

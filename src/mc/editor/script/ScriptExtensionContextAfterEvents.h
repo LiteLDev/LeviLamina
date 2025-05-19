@@ -40,8 +40,8 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 4
-        virtual void onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker
-        ) /*override*/;
+        virtual void
+        onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
 
         // vIndex: 0
         virtual ~ScriptExtensionContextAfterEventsDeferredEventListener() /*override*/ = default;

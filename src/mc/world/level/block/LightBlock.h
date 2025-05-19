@@ -44,9 +44,12 @@ public:
     ) const /*override*/;
 
     // vIndex: 5
-    virtual ::AABB
-    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
-        const /*override*/;
+    virtual ::AABB getCollisionShape(
+        ::Block const&,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 71
     virtual bool isFilteredOut(::BlockRenderLayer heldItemRenderLayer) const /*override*/;
@@ -98,9 +101,12 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCFOLD ::AABB
-    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
+    MCFOLD ::AABB $getCollisionShape(
+        ::Block const&,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
 
     MCAPI bool $isFilteredOut(::BlockRenderLayer heldItemRenderLayer) const;
 

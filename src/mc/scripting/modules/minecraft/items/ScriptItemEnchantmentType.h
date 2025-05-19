@@ -43,10 +43,11 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentType> bind();
 
-    MCNAPI static ::Enchant::Type
-    getEnchantType(::std::variant<
-                   ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>,
-                   ::std::string> const& enchantmentTypeOrId);
+    MCNAPI static ::Enchant::Type getEnchantType(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>,
+            ::std::string> const& enchantmentTypeOrId
+    );
 
     MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>
     getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::Enchant::Type enchantmentType);

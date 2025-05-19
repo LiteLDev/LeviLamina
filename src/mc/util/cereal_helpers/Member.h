@@ -44,13 +44,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool check(::rapidjson::GenericValue<
-                      ::rapidjson::UTF8<char>,
-                      ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value) const;
+    MCNAPI bool check(
+        ::rapidjson::GenericValue<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
+    ) const;
 
-    MCNAPI bool doCheck(::rapidjson::GenericValue<
-                        ::rapidjson::UTF8<char>,
-                        ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value) const;
+    MCNAPI bool doCheck(
+        ::rapidjson::GenericValue<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
+    ) const;
 
     MCNAPI ~Member();
     // NOLINTEND

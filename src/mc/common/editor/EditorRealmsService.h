@@ -63,8 +63,8 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 10
-    virtual ::Bedrock::PubSub::Subscription
-    listenForRealmsWorldListLoaded(::std::function<void(::std::vector<::Editor::Services::EditorRealmsWorld>)> callback
+    virtual ::Bedrock::PubSub::Subscription listenForRealmsWorldListLoaded(
+        ::std::function<void(::std::vector<::Editor::Services::EditorRealmsWorld>)> callback
     ) /*override*/;
 
     // vIndex: 11
@@ -73,8 +73,8 @@ public:
     ) /*override*/;
 
     // vIndex: 12
-    virtual ::Bedrock::PubSub::Subscription listenForRealmsWorldDownload(::std::function<void(bool)> callback
-    ) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription
+    listenForRealmsWorldDownload(::std::function<void(bool)> callback) /*override*/;
 
     // vIndex: 1
     virtual ::std::vector<::Editor::Services::EditorRealmsWorld> const getRealmWorldlist() const /*override*/;
@@ -86,9 +86,13 @@ public:
     virtual ::Editor::Services::RealmsServiceStatus const getServiceStatus() const /*override*/;
 
     // vIndex: 13
-    virtual void
-    beginUploadToRealms(::std::string, int, ::WeakEntityRef, ::Editor::GameOptions const&, ::std::function<void(::Editor::Services::RealmsWorldUploadResult const&)>) /*override*/
-        ;
+    virtual void beginUploadToRealms(
+        ::std::string,
+        int,
+        ::WeakEntityRef,
+        ::Editor::GameOptions const&,
+        ::std::function<void(::Editor::Services::RealmsWorldUploadResult const&)>
+    ) /*override*/;
 
     // vIndex: 7
     virtual void beginLoadRealmWorldList(::WeakEntityRef playerRef) /*override*/;
@@ -140,8 +144,8 @@ public:
 
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI ::Bedrock::PubSub::Subscription
-    $listenForRealmsWorldListLoaded(::std::function<void(::std::vector<::Editor::Services::EditorRealmsWorld>)> callback
+    MCNAPI ::Bedrock::PubSub::Subscription $listenForRealmsWorldListLoaded(
+        ::std::function<void(::std::vector<::Editor::Services::EditorRealmsWorld>)> callback
     );
 
     MCNAPI ::Bedrock::PubSub::Subscription $listenForRealmsWorldSlotsLoaded(
@@ -156,8 +160,13 @@ public:
 
     MCNAPI ::Editor::Services::RealmsServiceStatus const $getServiceStatus() const;
 
-    MCNAPI void
-    $beginUploadToRealms(::std::string, int, ::WeakEntityRef, ::Editor::GameOptions const&, ::std::function<void(::Editor::Services::RealmsWorldUploadResult const&)>);
+    MCNAPI void $beginUploadToRealms(
+        ::std::string,
+        int,
+        ::WeakEntityRef,
+        ::Editor::GameOptions const&,
+        ::std::function<void(::Editor::Services::RealmsWorldUploadResult const&)>
+    );
 
     MCNAPI void $beginLoadRealmWorldList(::WeakEntityRef playerRef);
 

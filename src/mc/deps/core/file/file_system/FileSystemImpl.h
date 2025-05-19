@@ -143,8 +143,11 @@ public:
     virtual ::Core::Result _renameDirectory(::Core::PathView, ::Core::PathView) = 0;
 
     // vIndex: 26
-    virtual ::Core::Result
-        _iterateOverDirectory(::Core::PathView, ::Core::DirectoryIterationFlags, ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>) = 0;
+    virtual ::Core::Result _iterateOverDirectory(
+        ::Core::PathView,
+        ::Core::DirectoryIterationFlags,
+        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>
+    ) = 0;
 
     // vIndex: 27
     virtual ::Core::Result

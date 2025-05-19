@@ -52,17 +52,19 @@ public:
         forEachExtension(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)>) = 0;
 
     // vIndex: 5
-    virtual void forEachExtensionOrdered(::std::function<
-                                         void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)>) = 0;
+    virtual void forEachExtensionOrdered(
+        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)>
+    ) = 0;
 
     // vIndex: 6
-    virtual void forEachExtensionReverse(::std::function<
-                                         void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)>) = 0;
+    virtual void forEachExtensionReverse(
+        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)>
+    ) = 0;
 
     // vIndex: 7
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-        registerForScriptSystemRebuildEvent(::std::function<
-                                            ::Scripting::Result<void>(::std::optional<::Scripting::ContextId>)>) = 0;
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> registerForScriptSystemRebuildEvent(
+        ::std::function<::Scripting::Result<void>(::std::optional<::Scripting::ContextId>)>
+    ) = 0;
 
     // vIndex: 8
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>

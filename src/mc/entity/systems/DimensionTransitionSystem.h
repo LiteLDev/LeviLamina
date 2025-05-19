@@ -45,11 +45,12 @@ public:
         ::EntityModifier<::DimensionTransitionComponent> mod
     );
 
-    MCNAPI static void
-    _tickReadyToContinueServer(::ViewT<
-                               ::StrictEntityContext,
-                               ::Exclude<::PassengerComponent, ::VehicleComponent, ::DimensionTransitionComponent>,
-                               ::PlayerChangeDimensionRequestComponent> view);
+    MCNAPI static void _tickReadyToContinueServer(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Exclude<::PassengerComponent, ::VehicleComponent, ::DimensionTransitionComponent>,
+            ::PlayerChangeDimensionRequestComponent> view
+    );
 
     MCNAPI static void _tickVehicleDismount(
         ::ViewT<::StrictEntityContext, ::Include<::PlayerChangeDimensionRequestComponent, ::PassengerComponent>>

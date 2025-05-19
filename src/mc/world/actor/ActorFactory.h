@@ -139,8 +139,11 @@ public:
     MCAPI static void registerEntityMapping(
         ::ActorType const& actorType,
         bool               allowSummon,
-        ::std::unique_ptr<
-            ::Actor> (*const& factory)(::ActorDefinitionGroup*, ::ActorDefinitionIdentifier const&, ::EntityContext&),
+        ::std::unique_ptr<::Actor> (*const& factory)(
+            ::ActorDefinitionGroup*,
+            ::ActorDefinitionIdentifier const&,
+            ::EntityContext&
+        ),
         ::std::optional<int> experimentIndex
     );
     // NOLINTEND

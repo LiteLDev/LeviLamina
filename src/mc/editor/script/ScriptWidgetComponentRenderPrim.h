@@ -77,11 +77,13 @@ public:
         void,
         ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent,
         ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
-    _setPrimitive(::std::variant<
-                  ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Box,
-                  ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Line,
-                  ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Disc,
-                  ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere> const& primitive);
+    _setPrimitive(
+        ::std::variant<
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Box,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Line,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Disc,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere> const& primitive
+    );
     // NOLINTEND
 
 public:

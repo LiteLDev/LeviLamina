@@ -170,8 +170,8 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit JumpAroundTargetGoal(::Mob& mob);
 
-    MCNAPI ::std::optional<::JumpAroundTargetGoal::Jump> _calculateOptimalJumpVector(::Vec3 const& targetPosition
-    ) const;
+    MCNAPI ::std::optional<::JumpAroundTargetGoal::Jump>
+    _calculateOptimalJumpVector(::Vec3 const& targetPosition) const;
 
     MCNAPI bool _canJumpFromCurrentPosition() const;
 

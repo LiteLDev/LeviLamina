@@ -22,9 +22,15 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4
-    virtual ::HitResult
-    clip(::Block const&, ::BlockSource const&, ::BlockPos const&, ::Vec3 const& A, ::Vec3 const& B, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
-        const /*override*/;
+    virtual ::HitResult clip(
+        ::Block const&,
+        ::BlockSource const&,
+        ::BlockPos const&,
+        ::Vec3 const& A,
+        ::Vec3 const& B,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 0
     virtual ~InvisibleBlock() /*override*/ = default;
@@ -33,9 +39,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::HitResult
-    $clip(::Block const&, ::BlockSource const&, ::BlockPos const&, ::Vec3 const& A, ::Vec3 const& B, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
+    MCFOLD ::HitResult $clip(
+        ::Block const&,
+        ::BlockSource const&,
+        ::BlockPos const&,
+        ::Vec3 const& A,
+        ::Vec3 const& B,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
     // NOLINTEND
 
 public:

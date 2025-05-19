@@ -46,16 +46,17 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 7
-    virtual void _handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const& payload
+    virtual void _handleGraphicsSettingsChangedPayload(
+        ::Editor::Network::GraphicsSettingsChangedPayload const& payload
     ) /*override*/;
 
     // vIndex: 8
-    virtual void _handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const& payload
-    ) /*override*/;
+    virtual void
+    _handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const& payload) /*override*/;
 
     // vIndex: 9
-    virtual void _handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const& payload
-    ) /*override*/;
+    virtual void
+    _handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const& payload) /*override*/;
 
     // vIndex: 10
     virtual void _handleThemeSettingsCurrentThemeChangedPayload(
@@ -63,18 +64,18 @@ public:
     ) /*override*/;
 
     // vIndex: 11
-    virtual void
-    _handleThemeSettingsNewThemeCreatedPayload(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const& payload
+    virtual void _handleThemeSettingsNewThemeCreatedPayload(
+        ::Editor::Network::ThemeSettingsNewThemeCreatedPayload const& payload
     ) /*override*/;
 
     // vIndex: 12
-    virtual void
-    _handleThemeSettingsThemeColorUpdatedPayload(::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const& payload
+    virtual void _handleThemeSettingsThemeColorUpdatedPayload(
+        ::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const& payload
     ) /*override*/;
 
     // vIndex: 13
-    virtual void
-    _handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const& payload
+    virtual void _handleThemeSettingsThemeDeletedPayload(
+        ::Editor::Network::ThemeSettingsThemeDeletedPayload const& payload
     ) /*override*/;
     // NOLINTEND
 
@@ -121,8 +122,8 @@ public:
 
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI void $_handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const& payload
-    );
+    MCNAPI void
+    $_handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const& payload);
 
     MCNAPI void $_handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const& payload);
 

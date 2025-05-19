@@ -83,9 +83,11 @@ public:
     );
 
     MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent>>
-    getComponents(::std::unordered_map<
-                  ::std::string,
-                  ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>> const& factories);
+    getComponents(
+        ::std::unordered_map<
+            ::std::string,
+            ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>> const& factories
+    );
 
     MCNAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>
     getDynamicProperty(::Scripting::ContextConfig const& contextConfig, ::std::string const& key);
@@ -126,11 +128,11 @@ public:
 
     MCNAPI ::Scripting::Result<void> setAmount(int amount);
 
-    MCNAPI ::Scripting::Result<void> setCanDestroy(::std::optional<::std::vector<::std::string>> const& blockIdentifiers
-    );
+    MCNAPI ::Scripting::Result<void>
+    setCanDestroy(::std::optional<::std::vector<::std::string>> const& blockIdentifiers);
 
-    MCNAPI ::Scripting::Result<void> setCanPlaceOn(::std::optional<::std::vector<::std::string>> const& blockIdentifiers
-    );
+    MCNAPI ::Scripting::Result<void>
+    setCanPlaceOn(::std::optional<::std::vector<::std::string>> const& blockIdentifiers);
 
     MCNAPI ::Scripting::Result<void> setDynamicProperties(
         ::Scripting::ContextConfig const& contextConfig,

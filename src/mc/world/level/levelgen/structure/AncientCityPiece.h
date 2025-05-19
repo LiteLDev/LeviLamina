@@ -25,9 +25,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 13
-    virtual int
-    generateHeightAtPosition(::BlockPos const&, ::Dimension&, ::BlockVolume&, ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>&)
-        const /*override*/;
+    virtual int generateHeightAtPosition(
+        ::BlockPos const&,
+        ::Dimension&,
+        ::BlockVolume&,
+        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>&
+    ) const /*override*/;
 
     // vIndex: 14
     virtual ::Block const* getSupportBlock(::BlockSource&, ::BlockPos const&, ::Block const&) const /*override*/;
@@ -58,9 +61,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int
-    $generateHeightAtPosition(::BlockPos const&, ::Dimension&, ::BlockVolume&, ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>&)
-        const;
+    MCNAPI int $generateHeightAtPosition(
+        ::BlockPos const&,
+        ::Dimension&,
+        ::BlockVolume&,
+        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>&
+    ) const;
 
     MCNAPI ::Block const* $getSupportBlock(::BlockSource&, ::BlockPos const&, ::Block const&) const;
 

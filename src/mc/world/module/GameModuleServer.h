@@ -42,8 +42,13 @@ public:
     ) = 0;
 
     // vIndex: 3
-    virtual void
-    configureLevel(::Bedrock::NotNullNonOwnerPtr<::Level> const&, ::Experiments const&, ::ResourcePackManager&, ::BaseGameVersion const&, ::ServerScriptManager const*) = 0;
+    virtual void configureLevel(
+        ::Bedrock::NotNullNonOwnerPtr<::Level> const&,
+        ::Experiments const&,
+        ::ResourcePackManager&,
+        ::BaseGameVersion const&,
+        ::ServerScriptManager const*
+    ) = 0;
 
     // vIndex: 4
     virtual void configureNewPlayer(::Player&) = 0;

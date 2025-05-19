@@ -46,12 +46,12 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ModuleData(
-            ::std::string          _alias,
-            ::Scripting::Version&& _version,
-            ::std::function<::std::optional<
-                ::Scripting::
-                    ModuleBinding>(::Scripting::ModuleBindingBuilder&, ::std::optional<::Scripting::ContextConfig> const&)>&&
-                                                           _moduleCreatorFn,
+            ::std::string                                  _alias,
+            ::Scripting::Version&&                         _version,
+            ::std::function<::std::optional<::Scripting::ModuleBinding>(
+                ::Scripting::ModuleBindingBuilder&,
+                ::std::optional<::Scripting::ContextConfig> const&
+            )>&&                                           _moduleCreatorFn,
             ::std::vector<::Scripting::ModuleDependency>&& _dependencies,
             bool                                           _importRestricted
         );
@@ -63,12 +63,12 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(
-            ::std::string          _alias,
-            ::Scripting::Version&& _version,
-            ::std::function<::std::optional<
-                ::Scripting::
-                    ModuleBinding>(::Scripting::ModuleBindingBuilder&, ::std::optional<::Scripting::ContextConfig> const&)>&&
-                                                           _moduleCreatorFn,
+            ::std::string                                  _alias,
+            ::Scripting::Version&&                         _version,
+            ::std::function<::std::optional<::Scripting::ModuleBinding>(
+                ::Scripting::ModuleBindingBuilder&,
+                ::std::optional<::Scripting::ContextConfig> const&
+            )>&&                                           _moduleCreatorFn,
             ::std::vector<::Scripting::ModuleDependency>&& _dependencies,
             bool                                           _importRestricted
         );
@@ -135,23 +135,23 @@ public:
     );
 
     MCNAPI void addVersionedModuleBinding(
-        ::Scripting::Version version,
-        ::std::function<::std::optional<
-            ::Scripting::
-                ModuleBinding>(::Scripting::ModuleBindingBuilder&, ::std::optional<::Scripting::ContextConfig> const&)>
-                                                     moduleCreatorFn,
+        ::Scripting::Version                         version,
+        ::std::function<::std::optional<::Scripting::ModuleBinding>(
+            ::Scripting::ModuleBindingBuilder&,
+            ::std::optional<::Scripting::ContextConfig> const&
+        )>                                           moduleCreatorFn,
         ::Scripting::Version                         runtimeVersion,
         ::std::vector<::Scripting::ModuleDependency> dependencies,
         bool                                         importRestricted
     );
 
     MCNAPI void addVersionedModuleBinding(
-        ::std::string        alias,
-        ::Scripting::Version version,
-        ::std::function<::std::optional<
-            ::Scripting::
-                ModuleBinding>(::Scripting::ModuleBindingBuilder&, ::std::optional<::Scripting::ContextConfig> const&)>
-                                                     moduleCreatorFn,
+        ::std::string                                alias,
+        ::Scripting::Version                         version,
+        ::std::function<::std::optional<::Scripting::ModuleBinding>(
+            ::Scripting::ModuleBindingBuilder&,
+            ::std::optional<::Scripting::ContextConfig> const&
+        )>                                           moduleCreatorFn,
         ::Scripting::Version                         runtimeVersion,
         ::std::vector<::Scripting::ModuleDependency> dependencies,
         bool                                         importRestricted

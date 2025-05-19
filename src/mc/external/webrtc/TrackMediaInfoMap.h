@@ -48,8 +48,12 @@ public:
 
     MCNAPI ::cricket::VoiceSenderInfo const* GetVoiceSenderInfoBySsrc(uint) const;
 
-    MCNAPI void
-        Initialize(::std::optional<::cricket::VoiceMediaInfo>, ::std::optional<::cricket::VideoMediaInfo>, ::rtc::ArrayView<::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>>, ::rtc::ArrayView<::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>>);
+    MCNAPI void Initialize(
+        ::std::optional<::cricket::VoiceMediaInfo>,
+        ::std::optional<::cricket::VideoMediaInfo>,
+        ::rtc::ArrayView<::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>>,
+        ::rtc::ArrayView<::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>>
+    );
 
     MCNAPI TrackMediaInfoMap();
 

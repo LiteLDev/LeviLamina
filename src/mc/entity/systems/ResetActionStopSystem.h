@@ -21,9 +21,11 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::TickingSystemWithInfo createResetActionStopSystem();
 
-    MCNAPI static void tickResetActionStopSystem(::ViewT<
-                                                 ::StrictEntityContext,
-                                                 ::Include<::ActorMovementTickNeededComponent, ::LocalPlayerComponent>,
-                                                 ::ActionOrStopComponent> view);
+    MCNAPI static void tickResetActionStopSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::LocalPlayerComponent>,
+            ::ActionOrStopComponent> view
+    );
     // NOLINTEND
 };

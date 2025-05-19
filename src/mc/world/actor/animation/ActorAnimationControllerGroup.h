@@ -53,8 +53,8 @@ public:
         ::CurrentCmdVersion       packCommandVersion
     );
 
-    MCNAPI ::std::shared_ptr<::ActorAnimationControllerInfo> getActorAnimationControllerInfo(::HashedString const& name
-    );
+    MCNAPI ::std::shared_ptr<::ActorAnimationControllerInfo>
+    getActorAnimationControllerInfo(::HashedString const& name);
 
     MCNAPI void loadActorAnimationControllersSync(::ResourcePackManager& resourcePackManager);
     // NOLINTEND

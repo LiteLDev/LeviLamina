@@ -49,9 +49,10 @@ public:
     virtual void fireEventOreUIScreenPerformance(::OreUI::DataTracker const&) /*override*/;
 
     // vIndex: 5
-    virtual void
-    fireEventButtonPressed(::std::string const&, ::std::unordered_map<::std::string, ::std::string> const&) /*override*/
-        ;
+    virtual void fireEventButtonPressed(
+        ::std::string const&,
+        ::std::unordered_map<::std::string, ::std::string> const&
+    ) /*override*/;
 
     // vIndex: 7
     virtual void

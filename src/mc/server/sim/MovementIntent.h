@@ -39,12 +39,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit MovementIntent(::std::variant<
-                                   ::sim::VoidMoveIntent,
-                                   ::sim::MoveInDirectionIntent,
-                                   ::sim::MoveToPositionIntent,
-                                   ::sim::NavigateToPositionsIntent,
-                                   ::sim::NavigateToEntityIntent> type);
+    MCNAPI explicit MovementIntent(
+        ::std::variant<
+            ::sim::VoidMoveIntent,
+            ::sim::MoveInDirectionIntent,
+            ::sim::MoveToPositionIntent,
+            ::sim::NavigateToPositionsIntent,
+            ::sim::NavigateToEntityIntent> type
+    );
 
     MCNAPI void finalize(::SimulatedPlayer& player);
 
@@ -54,12 +56,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::variant<
-                       ::sim::VoidMoveIntent,
-                       ::sim::MoveInDirectionIntent,
-                       ::sim::MoveToPositionIntent,
-                       ::sim::NavigateToPositionsIntent,
-                       ::sim::NavigateToEntityIntent> type);
+    MCNAPI void* $ctor(
+        ::std::variant<
+            ::sim::VoidMoveIntent,
+            ::sim::MoveInDirectionIntent,
+            ::sim::MoveToPositionIntent,
+            ::sim::NavigateToPositionsIntent,
+            ::sim::NavigateToEntityIntent> type
+    );
     // NOLINTEND
 
 public:

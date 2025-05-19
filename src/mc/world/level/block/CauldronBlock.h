@@ -54,9 +54,15 @@ public:
     ) const /*override*/;
 
     // vIndex: 4
-    virtual ::HitResult
-    clip(::Block const&, ::BlockSource const&, ::BlockPos const&, ::Vec3 const&, ::Vec3 const&, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
-        const /*override*/;
+    virtual ::HitResult clip(
+        ::Block const&,
+        ::BlockSource const&,
+        ::BlockPos const&,
+        ::Vec3 const&,
+        ::Vec3 const&,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 8
     virtual void addAABBs(
@@ -129,9 +135,11 @@ public:
         ::MinecraftEventing::POIBlockInteractionType interactionType
     ) const;
 
-    MCAPI void
-    _spawnCauldronEvent(::BlockSource& region, ::BlockPos const& pos, ::SharedTypes::Legacy::LevelEvent levelEvent)
-        const;
+    MCAPI void _spawnCauldronEvent(
+        ::BlockSource&                    region,
+        ::BlockPos const&                 pos,
+        ::SharedTypes::Legacy::LevelEvent levelEvent
+    ) const;
 
     MCAPI bool _useDyeableComponent(
         ::ItemStack&          itemInstance,

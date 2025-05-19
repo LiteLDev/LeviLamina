@@ -58,15 +58,15 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> startExtensions(::std::optional<::Scripting::ContextId> optionalContextId
-    ) /*override*/;
+    virtual ::Scripting::Result<void>
+    startExtensions(::std::optional<::Scripting::ContextId> optionalContextId) /*override*/;
 
     // vIndex: 2
     virtual ::Scripting::Result<void> stopExtensions() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void>
-    forEachExtension(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
+    virtual ::Scripting::Result<void> forEachExtension(
+        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
     ) /*override*/;
 
     // vIndex: 4
@@ -82,8 +82,8 @@ public:
     MCNAPI ::Scripting::Result<void>
     _createAndStartExtensionContexts(::std::optional<::Scripting::ContextId> optionalContextId);
 
-    MCNAPI ::Scripting::Result<void> _createExtensionContexts(::std::optional<::Scripting::ContextId> optionalContextId
-    );
+    MCNAPI ::Scripting::Result<void>
+    _createExtensionContexts(::std::optional<::Scripting::ContextId> optionalContextId);
 
     MCNAPI ::Scripting::Result<void> _destroyExtensionContexts();
 

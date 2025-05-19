@@ -49,19 +49,20 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void
-    tick(::StrictExecutionContext<
-         ::Filter<
-             ::ActorMovementTickNeededComponent,
-             ::BlazeFlagComponent,
-             ::LavaSlimeFlagComponent,
-             ::MonsterFlagComponent>,
-         ::Read<::AABBShapeComponent, ::DimensionTypeComponent, ::OffsetsComponent, ::StateVectorComponent>,
-         ::Write<::NoActionTimeComponent>,
-         ::AddRemove<>,
-         ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
-         ::GlobalWrite<>,
-         ::EntityFactoryT<>>& strictContext) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorMovementTickNeededComponent,
+                ::BlazeFlagComponent,
+                ::LavaSlimeFlagComponent,
+                ::MonsterFlagComponent>,
+            ::Read<::AABBShapeComponent, ::DimensionTypeComponent, ::OffsetsComponent, ::StateVectorComponent>,
+            ::Write<::NoActionTimeComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& strictContext
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~MonsterAiStepSystem() /*override*/ = default;
@@ -87,19 +88,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void
-    $tick(::StrictExecutionContext<
-          ::Filter<
-              ::ActorMovementTickNeededComponent,
-              ::BlazeFlagComponent,
-              ::LavaSlimeFlagComponent,
-              ::MonsterFlagComponent>,
-          ::Read<::AABBShapeComponent, ::DimensionTypeComponent, ::OffsetsComponent, ::StateVectorComponent>,
-          ::Write<::NoActionTimeComponent>,
-          ::AddRemove<>,
-          ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
-          ::GlobalWrite<>,
-          ::EntityFactoryT<>>& strictContext);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorMovementTickNeededComponent,
+                ::BlazeFlagComponent,
+                ::LavaSlimeFlagComponent,
+                ::MonsterFlagComponent>,
+            ::Read<::AABBShapeComponent, ::DimensionTypeComponent, ::OffsetsComponent, ::StateVectorComponent>,
+            ::Write<::NoActionTimeComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& strictContext
+    );
     // NOLINTEND
 
 public:

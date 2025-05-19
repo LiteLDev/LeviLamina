@@ -58,9 +58,13 @@ public:
     ) /*override*/;
 
     // vIndex: 5
-    virtual ::std::unique_ptr<::StructureStart>
-    createStructureStart(::Dimension& dimension, ::BiomeSource const&, ::Random& random, ::ChunkPos const& pos, ::IPreliminarySurfaceProvider const&) /*override*/
-        ;
+    virtual ::std::unique_ptr<::StructureStart> createStructureStart(
+        ::Dimension& dimension,
+        ::BiomeSource const&,
+        ::Random&         random,
+        ::ChunkPos const& pos,
+        ::IPreliminarySurfaceProvider const&
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~EndCityFeature() /*override*/ = default;
@@ -90,8 +94,13 @@ public:
         ::Dimension const&                   dimension
     );
 
-    MCNAPI ::std::unique_ptr<::StructureStart>
-    $createStructureStart(::Dimension& dimension, ::BiomeSource const&, ::Random& random, ::ChunkPos const& pos, ::IPreliminarySurfaceProvider const&);
+    MCNAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
+        ::Dimension& dimension,
+        ::BiomeSource const&,
+        ::Random&         random,
+        ::ChunkPos const& pos,
+        ::IPreliminarySurfaceProvider const&
+    );
     // NOLINTEND
 
 public:

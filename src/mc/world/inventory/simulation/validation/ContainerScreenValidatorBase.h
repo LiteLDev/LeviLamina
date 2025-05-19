@@ -19,14 +19,8 @@ class ContainerScreenValidatorBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk4ceace;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ContainerEnumName>> mValidContainerEnumNames;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerScreenValidatorBase& operator=(ContainerScreenValidatorBase const&);
-    ContainerScreenValidatorBase(ContainerScreenValidatorBase const&);
-    ContainerScreenValidatorBase();
 
 public:
     // virtual functions

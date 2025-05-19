@@ -2,17 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/item/CreativeItemCategory.h"
+
 struct ContainerPopulationData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkb988ed;
-    ::ll::UntypedStorage<4, 4> mUnkbc4583;
+    ::ll::TypedStorage<1, 1, ::ContainerEnumName>    containerName;
+    ::ll::TypedStorage<4, 4, ::CreativeItemCategory> itemCategory;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerPopulationData& operator=(ContainerPopulationData const&);
-    ContainerPopulationData(ContainerPopulationData const&);
-    ContainerPopulationData();
 };

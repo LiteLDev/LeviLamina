@@ -260,14 +260,16 @@ public:
     virtual ::Level& getLevel() const /*override*/;
 
     // vIndex: 3
-    virtual void
-    onWeatherChanged(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>&
-                         weatherChangedEvent) /*override*/;
+    virtual void onWeatherChanged(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>&
+            weatherChangedEvent
+    ) /*override*/;
 
     // vIndex: 4
-    virtual void
-    onWorldInitialize(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldInitializeAfterEvent>&
-                          worldInitializeEvent) /*override*/;
+    virtual void onWorldInitialize(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldInitializeAfterEvent>&
+            worldInitializeEvent
+    ) /*override*/;
 
     // vIndex: 5
     virtual void onPlayerJoin(
@@ -284,14 +286,16 @@ public:
     onBeforeChat(::ChatEvent const& chatEvent, ::Player const& player) /*override*/;
 
     // vIndex: 11
-    virtual void
-    onActorRemoved(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const& removedActor, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent>&) /*override*/
-        ;
+    virtual void onActorRemoved(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const& removedActor,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent>&
+    ) /*override*/;
 
     // vIndex: 12
-    virtual void
-    onActorHitEntity(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent>&
-                         actorHitEntityEvent) /*override*/;
+    virtual void onActorHitEntity(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent>&
+            actorHitEntityEvent
+    ) /*override*/;
 
     // vIndex: 13
     virtual void onActorHitBlock(
@@ -305,8 +309,8 @@ public:
     ) /*override*/;
 
     // vIndex: 16
-    virtual void
-    onActorHurt(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHurtAfterEvent>& hurtEvent
+    virtual void onActorHurt(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHurtAfterEvent>& hurtEvent
     ) /*override*/;
 
     // vIndex: 13
@@ -318,8 +322,8 @@ public:
     onBeforeItemUseOn(::Player const& player, ::ItemUseOnEvent const& itemEvent) /*override*/;
 
     // vIndex: 40
-    virtual void
-    onItemUseOn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent>& itemEvent
+    virtual void onItemUseOn(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent>& itemEvent
     ) /*override*/;
 
     // vIndex: 43
@@ -338,8 +342,8 @@ public:
     ) /*override*/;
 
     // vIndex: 46
-    virtual void
-    onItemStopUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent>& itemEvent
+    virtual void onItemStopUse(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent>& itemEvent
     ) /*override*/;
     // NOLINTEND
 
@@ -383,13 +387,15 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Level& $getLevel() const;
 
-    MCNAPI void
-    $onWeatherChanged(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>&
-                          weatherChangedEvent);
+    MCNAPI void $onWeatherChanged(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>&
+            weatherChangedEvent
+    );
 
-    MCNAPI void
-    $onWorldInitialize(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldInitializeAfterEvent>&
-                           worldInitializeEvent);
+    MCNAPI void $onWorldInitialize(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldInitializeAfterEvent>&
+            worldInitializeEvent
+    );
 
     MCNAPI void $onPlayerJoin(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent>& playerJoinEvent
@@ -402,12 +408,15 @@ public:
     MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent>>
     $onBeforeChat(::ChatEvent const& chatEvent, ::Player const& player);
 
-    MCNAPI void
-    $onActorRemoved(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const& removedActor, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent>&);
+    MCNAPI void $onActorRemoved(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const& removedActor,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent>&
+    );
 
-    MCNAPI void
-    $onActorHitEntity(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent>&
-                          actorHitEntityEvent);
+    MCNAPI void $onActorHitEntity(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent>&
+            actorHitEntityEvent
+    );
 
     MCNAPI void $onActorHitBlock(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHitBlockAfterEvent>& actorHitBlockEvent
@@ -442,8 +451,8 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent>& itemEvent
     );
 
-    MCNAPI void
-    $onItemStopUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent>& itemEvent
+    MCNAPI void $onItemStopUse(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent>& itemEvent
     );
     // NOLINTEND
 

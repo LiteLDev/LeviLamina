@@ -51,9 +51,12 @@ public:
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 5
-    virtual ::AABB
-    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
-        const /*override*/;
+    virtual ::AABB getCollisionShape(
+        ::Block const&,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
@@ -90,9 +93,12 @@ public:
 
     MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD ::AABB
-    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
+    MCFOLD ::AABB $getCollisionShape(
+        ::Block const&,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 

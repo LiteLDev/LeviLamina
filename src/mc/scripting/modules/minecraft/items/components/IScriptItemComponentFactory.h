@@ -25,9 +25,10 @@ public:
     virtual ~IScriptItemComponentFactory() = default;
 
     // vIndex: 1
-    virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent>
-    createComponent(::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>, ::Scripting::WeakLifetimeScope const&)
-        const = 0;
+    virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent> createComponent(
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>,
+        ::Scripting::WeakLifetimeScope const&
+    ) const = 0;
 
     // vIndex: 2
     virtual ::Scripting::ClassBinding bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&) const = 0;

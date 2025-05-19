@@ -20,8 +20,15 @@ public:
     // NOLINTBEGIN
     MCNAPI bool BelongsToBurst(::webrtc::Timestamp, ::webrtc::Timestamp) const;
 
-    MCNAPI bool
-    ComputeDeltas(::webrtc::Timestamp, ::webrtc::Timestamp, ::webrtc::Timestamp, uint64, ::webrtc::TimeDelta*, ::webrtc::TimeDelta*, int*);
+    MCNAPI bool ComputeDeltas(
+        ::webrtc::Timestamp,
+        ::webrtc::Timestamp,
+        ::webrtc::Timestamp,
+        uint64,
+        ::webrtc::TimeDelta*,
+        ::webrtc::TimeDelta*,
+        int*
+    );
 
     MCNAPI explicit InterArrivalDelta(::webrtc::TimeDelta);
 

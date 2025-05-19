@@ -46,9 +46,13 @@ public:
     CreateServerTcpSocket(::rtc::SocketAddress const&, ushort, ushort, int) /*override*/;
 
     // vIndex: 3
-    virtual ::rtc::AsyncPacketSocket*
-    CreateClientTcpSocket(::rtc::SocketAddress const&, ::rtc::SocketAddress const&, ::rtc::ProxyInfo const&, ::std::string const&, ::rtc::PacketSocketTcpOptions const&) /*override*/
-        ;
+    virtual ::rtc::AsyncPacketSocket* CreateClientTcpSocket(
+        ::rtc::SocketAddress const&,
+        ::rtc::SocketAddress const&,
+        ::rtc::ProxyInfo const&,
+        ::std::string const&,
+        ::rtc::PacketSocketTcpOptions const&
+    ) /*override*/;
 
     // vIndex: 4
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> CreateAsyncDnsResolver() /*override*/;

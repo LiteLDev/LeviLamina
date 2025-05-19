@@ -80,8 +80,8 @@ public:
     virtual ::Scripting::Result<void> setCursorState(::Editor::Cursor::CursorState&& state) /*override*/;
 
     // vIndex: 6
-    virtual ::Scripting::Result<void> setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& props
-    ) /*override*/;
+    virtual ::Scripting::Result<void>
+    setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& props) /*override*/;
 
     // vIndex: 7
     virtual ::Scripting::Result_deprecated<::BlockPos> moveBy(::glm::ivec3 const& offset) /*override*/;

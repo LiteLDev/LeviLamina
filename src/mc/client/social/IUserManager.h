@@ -56,8 +56,11 @@ public:
     virtual void setSecondaryUserCreationAllowed(int) = 0;
 
     // vIndex: 6
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-    addSecondaryUserAsync(int, ::std::shared_ptr<::Options>, ::std::function<void(::Social::UserPlatformConnectionResult)>) = 0;
+    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> addSecondaryUserAsync(
+        int,
+        ::std::shared_ptr<::Options>,
+        ::std::function<void(::Social::UserPlatformConnectionResult)>
+    ) = 0;
 
     // vIndex: 7
     virtual bool controllerChanged(int&, int&) = 0;
@@ -130,9 +133,10 @@ public:
     getLinkedXuids(::std::function<void(::std::string, ::std::string)>, ::std::vector<::std::string> const&) const = 0;
 
     // vIndex: 30
-    virtual void
-    getLinkedPlatformIds(::std::function<void(::std::string, ::std::string)>, ::std::vector<::std::string> const&)
-        const = 0;
+    virtual void getLinkedPlatformIds(
+        ::std::function<void(::std::string, ::std::string)>,
+        ::std::vector<::std::string> const&
+    ) const = 0;
 
     // vIndex: 31
     virtual void onAppResumed() = 0;
@@ -178,13 +182,15 @@ public:
         registerIdentitySignInCallback(::Social::IdentityType, ::std::function<void(uint, ::Social::IdentityType)>) = 0;
 
     // vIndex: 45
-    virtual ::Bedrock::PubSub::Subscription
-        registerIdentitySignOutCallback(::Social::IdentityType, ::std::function<void(uint, ::Social::IdentityType)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription registerIdentitySignOutCallback(
+        ::Social::IdentityType,
+        ::std::function<void(uint, ::Social::IdentityType)>
+    ) = 0;
 
     // vIndex: 46
-    virtual ::Bedrock::PubSub::Subscription
-        registerProfileImageChangedCallback(::std::function<
-                                            void(::Social::ProfileImageOptions, ::std::shared_ptr<::mce::Image>)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription registerProfileImageChangedCallback(
+        ::std::function<void(::Social::ProfileImageOptions, ::std::shared_ptr<::mce::Image>)>
+    ) = 0;
 
     // vIndex: 47
     virtual bool needGamepadDisconnectScreen(int) = 0;

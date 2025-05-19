@@ -15,14 +15,8 @@ class Trade1Ingredient2ContainerValidation : public ::ContainerValidationBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk8f25e2;
+    ::ll::TypedStorage<1, 1, bool const> mIsServerSide;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Trade1Ingredient2ContainerValidation& operator=(Trade1Ingredient2ContainerValidation const&);
-    Trade1Ingredient2ContainerValidation(Trade1Ingredient2ContainerValidation const&);
-    Trade1Ingredient2ContainerValidation();
 
 public:
     // virtual functions

@@ -53,9 +53,13 @@ public:
 
     MCFOLD uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCFOLD ::Block const&
-    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
-        const;
+    MCFOLD ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     MCAPI bool $isValidAuxValue(int value) const;
     // NOLINTEND

@@ -68,9 +68,13 @@ public:
     // NOLINTBEGIN
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI ::Block const&
-    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
-        const;
+    MCAPI ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 

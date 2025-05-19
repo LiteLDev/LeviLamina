@@ -75,8 +75,15 @@ public:
         // NOLINTEND
     };
 
-    using CreativeItemsServerInitCallbackSignature =
-        void(::ItemRegistryRef, ::BlockDefinitionGroup const&, ::CreativeItemRegistry*, ::BaseGameVersion const&, ::Experiments const&, ::ResourcePackManager const&, ::cereal::ReflectionCtx const&);
+    using CreativeItemsServerInitCallbackSignature = void(
+        ::ItemRegistryRef,
+        ::BlockDefinitionGroup const&,
+        ::CreativeItemRegistry*,
+        ::BaseGameVersion const&,
+        ::Experiments const&,
+        ::ResourcePackManager const&,
+        ::cereal::ReflectionCtx const&
+    );
 
     struct ItemAlias {
     public:
@@ -234,9 +241,15 @@ public:
         ::BlockDefinitionGroup const& blockDefinitionGroup,
         ::Experiments const&          experiments,
         ::ResourcePackManager const&  resourcePackManager,
-        ::std::function<
-            void(::ItemRegistryRef, ::BlockDefinitionGroup const&, ::CreativeItemRegistry*, ::BaseGameVersion const&, ::Experiments const&, ::ResourcePackManager const&, ::cereal::ReflectionCtx const&)>
-            registerCallback
+        ::std::function<void(
+            ::ItemRegistryRef,
+            ::BlockDefinitionGroup const&,
+            ::CreativeItemRegistry*,
+            ::BaseGameVersion const&,
+            ::Experiments const&,
+            ::ResourcePackManager const&,
+            ::cereal::ReflectionCtx const&
+        )>                            registerCallback
     );
 
     MCAPI void initServer(

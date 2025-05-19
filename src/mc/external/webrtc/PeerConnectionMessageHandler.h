@@ -20,8 +20,11 @@ public:
     // NOLINTBEGIN
     MCNAPI void PostCreateSessionDescriptionFailure(::webrtc::CreateSessionDescriptionObserver*, ::webrtc::RTCError);
 
-    MCNAPI void
-    PostGetStats(::webrtc::StatsObserver*, ::webrtc::LegacyStatsCollectorInterface*, ::webrtc::MediaStreamTrackInterface*);
+    MCNAPI void PostGetStats(
+        ::webrtc::StatsObserver*,
+        ::webrtc::LegacyStatsCollectorInterface*,
+        ::webrtc::MediaStreamTrackInterface*
+    );
 
     MCNAPI void PostSetSessionDescriptionFailure(::webrtc::SetSessionDescriptionObserver*, ::webrtc::RTCError&&);
 

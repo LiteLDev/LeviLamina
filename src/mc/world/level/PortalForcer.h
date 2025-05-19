@@ -72,9 +72,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::PortalRecord>
-    _findPortal(::DimensionType dimensionId, ::BlockPos const& centerBlockPos, int targetBlockPos, ::BlockPos& radius)
-        const;
+    MCNAPI ::std::optional<::PortalRecord> _findPortal(
+        ::DimensionType   dimensionId,
+        ::BlockPos const& centerBlockPos,
+        int               targetBlockPos,
+        ::BlockPos&       radius
+    ) const;
 
     MCNAPI ::PortalRecord const& createPortal(::Actor const& entity, int radius);
 

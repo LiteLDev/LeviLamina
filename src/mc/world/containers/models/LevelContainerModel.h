@@ -3,30 +3,31 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/models/ContainerCategory.h"
 #include "mc/world/containers/models/ContainerModel.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class Container;
 class ContainerWeakRef;
 class ItemStack;
 class Player;
-struct ActorUniqueID;
 // clang-format on
 
 class LevelContainerModel : public ::ContainerModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk84d147;
-    ::ll::UntypedStorage<4, 12> mUnk74419a;
-    ::ll::UntypedStorage<4, 4>  mUnka0f22e;
-    ::ll::UntypedStorage<8, 8>  mUnk63c8d2;
-    ::ll::UntypedStorage<8, 16> mUnk4911bb;
+    ::ll::TypedStorage<8, 8, ::Player&>                        mPlayer;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                      mBlockPos;
+    ::ll::TypedStorage<4, 4, ::BlockActorType>                 mBlockEntityType;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                  mEntityUniqueId;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mContainerRemovedSubscription;
     // NOLINTEND
 
 public:

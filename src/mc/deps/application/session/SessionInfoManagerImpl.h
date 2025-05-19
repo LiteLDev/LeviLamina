@@ -55,8 +55,10 @@ public:
     editCurrentSession() /*override*/;
 
     // vIndex: 5
-    virtual ::Bedrock::PubSub::Connector<
-        void(::Bedrock::NonOwnerPointer<::Bedrock::SessionInfoManager> const&, ::std::shared_ptr<::Bedrock::SessionInfo const> const&)>&
+    virtual ::Bedrock::PubSub::Connector<void(
+        ::Bedrock::NonOwnerPointer<::Bedrock::SessionInfoManager> const&,
+        ::std::shared_ptr<::Bedrock::SessionInfo const> const&
+    )>&
     onCurrentSessionChanged() /*override*/;
 
     // vIndex: 6

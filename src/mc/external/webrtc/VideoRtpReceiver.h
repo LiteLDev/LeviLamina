@@ -43,8 +43,11 @@ public:
 
     MCNAPI VideoRtpReceiver(::rtc::Thread*, ::std::string, ::std::vector<::std::string>);
 
-    MCNAPI
-    VideoRtpReceiver(::rtc::Thread*, ::std::string const&, ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const&);
+    MCNAPI VideoRtpReceiver(
+        ::rtc::Thread*,
+        ::std::string const&,
+        ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const&
+    );
     // NOLINTEND
 
 public:
@@ -52,8 +55,11 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::rtc::Thread*, ::std::string, ::std::vector<::std::string>);
 
-    MCNAPI void*
-    $ctor(::rtc::Thread*, ::std::string const&, ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const&);
+    MCNAPI void* $ctor(
+        ::rtc::Thread*,
+        ::std::string const&,
+        ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const&
+    );
     // NOLINTEND
 
 public:

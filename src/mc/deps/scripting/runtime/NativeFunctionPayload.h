@@ -35,9 +35,11 @@ public:
     virtual ~NativeFunctionPayload() /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::ResultAny
-    runOn(::Scripting::ContextId contextId, ::Scripting::NativeRuntime& runtime, ::std::optional<::Scripting::Privilege>) /*override*/
-        ;
+    virtual ::Scripting::ResultAny runOn(
+        ::Scripting::ContextId      contextId,
+        ::Scripting::NativeRuntime& runtime,
+        ::std::optional<::Scripting::Privilege>
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -49,8 +51,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::ResultAny
-    $runOn(::Scripting::ContextId contextId, ::Scripting::NativeRuntime& runtime, ::std::optional<::Scripting::Privilege>);
+    MCNAPI ::Scripting::ResultAny $runOn(
+        ::Scripting::ContextId      contextId,
+        ::Scripting::NativeRuntime& runtime,
+        ::std::optional<::Scripting::Privilege>
+    );
     // NOLINTEND
 
 public:

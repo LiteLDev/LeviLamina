@@ -27,9 +27,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual ::AABB
-    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
-        const /*override*/;
+    virtual ::AABB getCollisionShape(
+        ::Block const&,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 81
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -82,9 +85,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::AABB
-    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
+    MCFOLD ::AABB $getCollisionShape(
+        ::Block const&,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
 
     MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 

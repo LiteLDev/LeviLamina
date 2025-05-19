@@ -29,15 +29,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    AnyForwardTsnChunk(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::std::vector<::dcsctp::AnyForwardTsnChunk::SkippedStream>);
+    MCNAPI AnyForwardTsnChunk(
+        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>,
+        ::std::vector<::dcsctp::AnyForwardTsnChunk::SkippedStream>
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-        $ctor(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::std::vector<::dcsctp::AnyForwardTsnChunk::SkippedStream>);
+    MCNAPI void* $ctor(
+        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>,
+        ::std::vector<::dcsctp::AnyForwardTsnChunk::SkippedStream>
+    );
     // NOLINTEND
 
 public:

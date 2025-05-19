@@ -2,22 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/world/TypedRuntimeId.h"
+#include "mc/world/inventory/ActorContainerType.h"
+#include "mc/world/level/BlockPos.h"
+
+// auto generated forward declare list
+// clang-format off
+class Container;
+struct ContainerRuntimeIdTag;
+// clang-format on
+
 class ContainerWeakRef {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkabc989;
-    ::ll::UntypedStorage<4, 4>  mUnk8eeae7;
-    ::ll::UntypedStorage<4, 12> mUnk89aa5f;
-    ::ll::UntypedStorage<4, 4>  mUnk65441a;
-    ::ll::UntypedStorage<8, 16> mUnkbf5130;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>               mContainerActor;
+    ::ll::TypedStorage<4, 4, ::ActorContainerType>          mActorContainerType;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                   mBlockPosition;
+    ::ll::TypedStorage<4, 4, ::ContainerRuntimeId>          mContainerRuntimeId;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Container>> mWeakContainer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerWeakRef& operator=(ContainerWeakRef const&);
-    ContainerWeakRef(ContainerWeakRef const&);
-    ContainerWeakRef();
 
 public:
     // member functions

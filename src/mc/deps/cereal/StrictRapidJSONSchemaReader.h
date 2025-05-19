@@ -139,9 +139,11 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string const& data);
 
-    MCNAPI void* $ctor(::rapidjson::GenericValue<
-                       ::rapidjson::UTF8<char>,
-                       ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value);
+    MCNAPI void* $ctor(
+        ::rapidjson::GenericValue<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
+    );
     // NOLINTEND
 
 public:

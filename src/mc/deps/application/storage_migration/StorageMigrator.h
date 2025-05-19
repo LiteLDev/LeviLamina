@@ -50,9 +50,12 @@ public:
     virtual bool doQuickCompletionCheck() = 0;
 
     // vIndex: 2
-    virtual void
-        _runMigration(::std::shared_ptr<::Bedrock::StorageMigration::ManifestData>, ::std::shared_ptr<::Bedrock::StorageMigration::FoundFiles>, ::std::function<void(::Bedrock::StorageMigration::StorageMigrator::MigrationProgress)>, ::std::function<void(::Bedrock::StorageMigration::MigrationResult)>)
-            const = 0;
+    virtual void _runMigration(
+        ::std::shared_ptr<::Bedrock::StorageMigration::ManifestData>,
+        ::std::shared_ptr<::Bedrock::StorageMigration::FoundFiles>,
+        ::std::function<void(::Bedrock::StorageMigration::StorageMigrator::MigrationProgress)>,
+        ::std::function<void(::Bedrock::StorageMigration::MigrationResult)>
+    ) const = 0;
     // NOLINTEND
 
 public:

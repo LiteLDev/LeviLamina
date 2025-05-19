@@ -5,17 +5,19 @@
 // auto generated forward declare list
 // clang-format off
 class InventoryAction;
+class InventoryTransaction;
 class ItemStack;
+class Player;
 // clang-format on
 
 class InventoryTransactionManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk3df60a;
-    ::ll::UntypedStorage<8, 8>  mUnk3a87e0;
-    ::ll::UntypedStorage<8, 24> mUnkddc924;
-    ::ll::UntypedStorage<1, 1>  mUnkda4522;
+    ::ll::TypedStorage<8, 8, ::Player&>                                 mPlayer;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::InventoryTransaction>> mCurrentTransaction;
+    ::ll::TypedStorage<8, 24, ::std::vector<::InventoryAction>>         mExpectedActions;
+    ::ll::TypedStorage<1, 1, bool>                                      mEnableLogs;
     // NOLINTEND
 
 public:

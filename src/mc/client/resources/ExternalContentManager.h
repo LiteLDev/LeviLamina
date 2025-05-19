@@ -93,8 +93,15 @@ public:
     virtual ~ExternalContentManager() /*override*/ = default;
 
     // vIndex: 1
-    virtual void
-    importContent(::std::shared_ptr<::ImportContext>, ::Core::PathBuffer<::std::string> const&, bool, ::LoadImportedLevelData, bool, bool, ::std::string const&);
+    virtual void importContent(
+        ::std::shared_ptr<::ImportContext>,
+        ::Core::PathBuffer<::std::string> const&,
+        bool,
+        ::LoadImportedLevelData,
+        bool,
+        bool,
+        ::std::string const&
+    );
     // NOLINTEND
 
 public:

@@ -37,9 +37,12 @@ public:
         /*override*/;
 
     // vIndex: 6
-    virtual void
-    onPromiseRejection(::Scripting::ContextId, ::Scripting::Error const& error, ::entt::meta_any const&, bool isHandled)
-        const /*override*/;
+    virtual void onPromiseRejection(
+        ::Scripting::ContextId,
+        ::Scripting::Error const& error,
+        ::entt::meta_any const&,
+        bool isHandled
+    ) const /*override*/;
     // NOLINTEND
 
 public:

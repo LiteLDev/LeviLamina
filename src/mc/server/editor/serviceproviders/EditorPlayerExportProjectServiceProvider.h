@@ -21,8 +21,11 @@ public:
     virtual ~EditorPlayerExportProjectServiceProvider() = default;
 
     // vIndex: 1
-    virtual void
-    beginExportProject(::WeakEntityRef, ::Editor::GameOptions const&, ::std::function<void(::Editor::ExportResult const&)>) = 0;
+    virtual void beginExportProject(
+        ::WeakEntityRef,
+        ::Editor::GameOptions const&,
+        ::std::function<void(::Editor::ExportResult const&)>
+    ) = 0;
 
     // vIndex: 2
     virtual bool canExportProject() = 0;

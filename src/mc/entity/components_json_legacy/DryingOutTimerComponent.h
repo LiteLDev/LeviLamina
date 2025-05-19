@@ -44,9 +44,11 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
-                                           ::JsonUtil::EmptyClass,
-                                           ::DryingOutTimerComponent::DryingOutTimerDefinition>>& root);
+        MCNAPI static void buildSchema(
+            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+                ::JsonUtil::EmptyClass,
+                ::DryingOutTimerComponent::DryingOutTimerDefinition>>& root
+        );
         // NOLINTEND
 
     public:

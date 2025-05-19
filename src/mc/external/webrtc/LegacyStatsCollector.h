@@ -85,8 +85,13 @@ public:
 
     MCNAPI ::webrtc::StatsReport* AddCertificateReports(::std::unique_ptr<::rtc::SSLCertificateStats>);
 
-    MCNAPI ::webrtc::StatsReport*
-    AddConnectionInfoReport(::std::string const&, int, int, ::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const&, ::cricket::ConnectionInfo const&);
+    MCNAPI ::webrtc::StatsReport* AddConnectionInfoReport(
+        ::std::string const&,
+        int,
+        int,
+        ::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const&,
+        ::cricket::ConnectionInfo const&
+    );
 
     MCNAPI void AddStream(::webrtc::MediaStreamInterface*);
 
@@ -102,8 +107,12 @@ public:
 
     MCNAPI ::std::map<::std::string, ::std::string> ExtractSessionAndDataInfo();
 
-    MCNAPI ::webrtc::LegacyStatsCollector::SessionStats
-    ExtractSessionInfo_n(::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>> const&, ::std::optional<::std::string>, ::std::optional<::std::string>);
+    MCNAPI ::webrtc::LegacyStatsCollector::SessionStats ExtractSessionInfo_n(
+        ::std::vector<
+            ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>> const&,
+        ::std::optional<::std::string>,
+        ::std::optional<::std::string>
+    );
 
     MCNAPI void ExtractSessionInfo_s(::webrtc::LegacyStatsCollector::SessionStats&);
 

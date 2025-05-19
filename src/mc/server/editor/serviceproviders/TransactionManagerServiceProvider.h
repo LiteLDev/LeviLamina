@@ -77,8 +77,12 @@ public:
     virtual ::Scripting::Result_deprecated<bool> discardOpenTransaction() = 0;
 
     // vIndex: 17
-    virtual ::Scripting::Result_deprecated<bool>
-    addUserDefinedOperation(::std::string const&, ::std::string const&, ::std::function<::Scripting::Result<void>(::std::string const&)>, ::std::function<::Scripting::Result<void>(::std::string const&)>) = 0;
+    virtual ::Scripting::Result_deprecated<bool> addUserDefinedOperation(
+        ::std::string const&,
+        ::std::string const&,
+        ::std::function<::Scripting::Result<void>(::std::string const&)>,
+        ::std::function<::Scripting::Result<void>(::std::string const&)>
+    ) = 0;
 
     // vIndex: 18
     virtual uint64 pendingOperationsSize() const = 0;

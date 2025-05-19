@@ -27,9 +27,12 @@ public:
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
     // vIndex: 5
-    virtual ::AABB
-    getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
-        const /*override*/;
+    virtual ::AABB getCollisionShape(
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const& pos,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 140
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -71,9 +74,12 @@ public:
     // NOLINTBEGIN
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI ::AABB
-    $getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
+    MCAPI ::AABB $getCollisionShape(
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const& pos,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 

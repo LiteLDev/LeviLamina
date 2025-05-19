@@ -32,9 +32,12 @@ public:
     virtual bool mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const /*override*/;
 
     // vIndex: 5
-    virtual ::AABB
-    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
-        const /*override*/;
+    virtual ::AABB getCollisionShape(
+        ::Block const&,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 123
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
@@ -82,9 +85,12 @@ public:
     // NOLINTBEGIN
     MCAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
 
-    MCFOLD ::AABB
-    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
+    MCFOLD ::AABB $getCollisionShape(
+        ::Block const&,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
 
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 

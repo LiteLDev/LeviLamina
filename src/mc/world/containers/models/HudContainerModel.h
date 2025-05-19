@@ -17,7 +17,7 @@ class HudContainerModel : public ::ContainerModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8707fa;
+    ::ll::TypedStorage<8, 8, ::Player&> mPlayer;
     // NOLINTEND
 
 public:

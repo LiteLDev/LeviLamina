@@ -20,6 +20,7 @@ class StorageItemContainerModel;
 class StorageWeightLimitItemComponent;
 struct DynamicTrackedContainer;
 struct FullContainerName;
+namespace Bedrock::Threading { class SharedRecursiveMutex; }
 // clang-format on
 
 class ContainerRegistry : public ::IDynamicContainerSerialization,
@@ -28,17 +29,15 @@ class ContainerRegistry : public ::IDynamicContainerSerialization,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk8800e8;
-    ::ll::UntypedStorage<8, 64> mUnk1382fd;
-    ::ll::UntypedStorage<1, 1>  mUnkedb65c;
-    ::ll::UntypedStorage<4, 4>  mUnk108ca9;
-    ::ll::UntypedStorage<8, 16> mUnk8669df;
+    ::ll::TypedStorage<4, 4, uint>                                                                  mNextDynamicId;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::FullContainerName, ::DynamicTrackedContainer>> mContainers;
+    ::ll::TypedStorage<1, 1, bool const>                                                            mIsClientSide;
+    ::ll::TypedStorage<4, 4, int>                                                            mTicksSinceLastCleanup;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Threading::SharedRecursiveMutex>> mContainerContextMutex;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ContainerRegistry& operator=(ContainerRegistry const&);
-    ContainerRegistry(ContainerRegistry const&);
     ContainerRegistry();
 
 public:

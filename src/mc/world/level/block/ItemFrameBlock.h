@@ -44,9 +44,12 @@ public:
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
     // vIndex: 5
-    virtual ::AABB
-    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
-        const /*override*/;
+    virtual ::AABB getCollisionShape(
+        ::Block const&,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 138
     virtual bool isInteractiveBlock() const /*override*/;
@@ -114,17 +117,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Block const&
-    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
-        const;
+    MCFOLD ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCFOLD ::AABB
-    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
+    MCFOLD ::AABB $getCollisionShape(
+        ::Block const&,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
 
     MCFOLD bool $isInteractiveBlock() const;
 

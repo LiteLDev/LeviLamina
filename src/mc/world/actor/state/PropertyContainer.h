@@ -45,8 +45,8 @@ public:
 
     MCNAPI bool getMolangValue(uint64 propertyNameHash, ::MolangScriptArg& out) const;
 
-    MCNAPI ::std::optional<::std::variant<int, float, bool, ::std::string>> getValueVariant(uint64 propertyNameHash
-    ) const;
+    MCNAPI ::std::optional<::std::variant<int, float, bool, ::std::string>>
+    getValueVariant(uint64 propertyNameHash) const;
 
     MCNAPI void readLoadedProperties(::CompoundTag const& loadedPropertyTag);
 

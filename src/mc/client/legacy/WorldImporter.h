@@ -54,12 +54,19 @@ public:
     virtual void _setupImport(::Core::Path const&);
 
     // vIndex: 4
-    virtual void
-        _doRetrieve(::std::shared_ptr<::Social::User>, ::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Legacy::RetrieveStatus)>>>) = 0;
+    virtual void _doRetrieve(
+        ::std::shared_ptr<::Social::User>,
+        ::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Legacy::RetrieveStatus)>>>
+    ) = 0;
 
     // vIndex: 5
-    virtual void
-    _doImport(::std::shared_ptr<::Social::User>, ::LegacyWorldInfo const&, ::Core::Path const&, ::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Legacy::ImportStatus, float, ::std::shared_ptr<::ImportResult>)>>>) = 0;
+    virtual void _doImport(
+        ::std::shared_ptr<::Social::User>,
+        ::LegacyWorldInfo const&,
+        ::Core::Path const&,
+        ::std::shared_ptr<::CallbackTokenContext<
+            ::std::function<void(::Legacy::ImportStatus, float, ::std::shared_ptr<::ImportResult>)>>>
+    ) = 0;
     // NOLINTEND
 
 public:

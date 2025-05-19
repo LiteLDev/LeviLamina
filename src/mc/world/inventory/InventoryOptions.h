@@ -2,20 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/inventory/InventoryLayout.h"
+#include "mc/world/inventory/InventoryLeftTabIndex.h"
+#include "mc/world/inventory/InventoryRightTabIndex.h"
+
 struct InventoryOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk3ca555;
-    ::ll::UntypedStorage<4, 4> mUnk3aeb6f;
-    ::ll::UntypedStorage<1, 1> mUnk3fb6cb;
-    ::ll::UntypedStorage<4, 4> mUnk468848;
-    ::ll::UntypedStorage<4, 4> mUnk344d63;
+    ::ll::TypedStorage<4, 4, ::InventoryLeftTabIndex>  mLeftInventoryTab;
+    ::ll::TypedStorage<4, 4, ::InventoryRightTabIndex> mRightInventoryTab;
+    ::ll::TypedStorage<1, 1, bool>                     mFiltering;
+    ::ll::TypedStorage<4, 4, ::InventoryLayout>        mLayoutInv;
+    ::ll::TypedStorage<4, 4, ::InventoryLayout>        mLayoutCraft;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InventoryOptions& operator=(InventoryOptions const&);
-    InventoryOptions(InventoryOptions const&);
-    InventoryOptions();
 };

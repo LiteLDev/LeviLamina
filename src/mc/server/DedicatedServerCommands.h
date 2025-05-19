@@ -20,8 +20,15 @@ class DedicatedServerCommands {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
-    setupStandaloneServer(::Bedrock::NotNullNonOwnerPtr<::Minecraft> const& minecraft, ::IMinecraftApp& app, ::Level& dedicatedServer, ::LevelStorage& allowListFile, ::DedicatedServer& scriptSettings, ::AllowListFile& level, ::ScriptSettings*);
+    MCAPI static void setupStandaloneServer(
+        ::Bedrock::NotNullNonOwnerPtr<::Minecraft> const& minecraft,
+        ::IMinecraftApp&                                  app,
+        ::Level&                                          dedicatedServer,
+        ::LevelStorage&                                   allowListFile,
+        ::DedicatedServer&                                scriptSettings,
+        ::AllowListFile&                                  level,
+        ::ScriptSettings*
+    );
     // NOLINTEND
 
 public:

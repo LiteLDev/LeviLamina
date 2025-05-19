@@ -43,9 +43,15 @@ public:
     virtual int getTreeHeight(::Random& random) const /*override*/;
 
     // vIndex: 1
-    virtual ::std::optional<::BlockPos>
-    placeTrunk(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, int treeHeight, ::RenderParams& renderParams, ::TreeHelper::TreeParams const& treeParams, ::ITreeCanopy const*)
-        const /*override*/;
+    virtual ::std::optional<::BlockPos> placeTrunk(
+        ::IBlockWorldGenAPI&            target,
+        ::BlockPos const&               pos,
+        ::Random&                       random,
+        int                             treeHeight,
+        ::RenderParams&                 renderParams,
+        ::TreeHelper::TreeParams const& treeParams,
+        ::ITreeCanopy const*
+    ) const /*override*/;
     // NOLINTEND
 
 public:
@@ -53,9 +59,15 @@ public:
     // NOLINTBEGIN
     MCNAPI int $getTreeHeight(::Random& random) const;
 
-    MCNAPI ::std::optional<::BlockPos>
-    $placeTrunk(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, int treeHeight, ::RenderParams& renderParams, ::TreeHelper::TreeParams const& treeParams, ::ITreeCanopy const*)
-        const;
+    MCNAPI ::std::optional<::BlockPos> $placeTrunk(
+        ::IBlockWorldGenAPI&            target,
+        ::BlockPos const&               pos,
+        ::Random&                       random,
+        int                             treeHeight,
+        ::RenderParams&                 renderParams,
+        ::TreeHelper::TreeParams const& treeParams,
+        ::ITreeCanopy const*
+    ) const;
     // NOLINTEND
 
 public:

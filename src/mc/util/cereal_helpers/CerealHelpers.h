@@ -28,13 +28,15 @@ MCNAPI bool checkBrightnessSchema(
     uchar                                                                                                         max
 );
 
-MCNAPI bool checkColor255RGBSchema(::rapidjson::GenericValue<
-                                   ::rapidjson::UTF8<char>,
-                                   ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value);
+MCNAPI bool checkColor255RGBSchema(
+    ::rapidjson::
+        GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
+);
 
-MCNAPI bool checkDefinitionTriggerSchema(::rapidjson::GenericValue<
-                                         ::rapidjson::UTF8<char>,
-                                         ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value);
+MCNAPI bool checkDefinitionTriggerSchema(
+    ::rapidjson::
+        GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
+);
 
 MCNAPI bool checkEnumSchema(
     ::rapidjson::
@@ -42,9 +44,10 @@ MCNAPI bool checkEnumSchema(
     ::gsl::span<::std::string const>                                                                              values
 );
 
-MCNAPI bool checkExpressionNodeSchema(::rapidjson::GenericValue<
-                                      ::rapidjson::UTF8<char>,
-                                      ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value);
+MCNAPI bool checkExpressionNodeSchema(
+    ::rapidjson::
+        GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
+);
 
 MCNAPI bool checkFloatSchema(
     ::rapidjson::
@@ -53,13 +56,15 @@ MCNAPI bool checkFloatSchema(
     ::std::optional<float> const&                                                                                 max
 );
 
-MCNAPI bool checkIdentifierStringSchema(::rapidjson::GenericValue<
-                                        ::rapidjson::UTF8<char>,
-                                        ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value);
+MCNAPI bool checkIdentifierStringSchema(
+    ::rapidjson::
+        GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
+);
 
-MCNAPI bool checkItemDescriptorSchema(::rapidjson::GenericValue<
-                                      ::rapidjson::UTF8<char>,
-                                      ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value);
+MCNAPI bool checkItemDescriptorSchema(
+    ::rapidjson::
+        GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
+);
 
 MCNAPI bool checkMembers(
     ::rapidjson::
@@ -67,9 +72,10 @@ MCNAPI bool checkMembers(
     ::std::initializer_list<::CerealHelpers::Member> members
 );
 
-MCNAPI bool checkVec3Schema(::rapidjson::GenericValue<
-                            ::rapidjson::UTF8<char>,
-                            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value);
+MCNAPI bool checkVec3Schema(
+    ::rapidjson::
+        GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
+);
 
 MCNAPI void initialize(::cereal::ReflectionCtx& ctx);
 

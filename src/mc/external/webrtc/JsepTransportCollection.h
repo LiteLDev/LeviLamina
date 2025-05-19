@@ -35,8 +35,10 @@ public:
 
     MCNAPI ::cricket::JsepTransport* GetTransportForMid(::std::string const&);
 
-    MCNAPI
-    JsepTransportCollection(::std::function<bool(::std::string const&, ::cricket::JsepTransport*)>, ::std::function<void()>);
+    MCNAPI JsepTransportCollection(
+        ::std::function<bool(::std::string const&, ::cricket::JsepTransport*)>,
+        ::std::function<void()>
+    );
 
     MCNAPI void MaybeDestroyJsepTransport(::cricket::JsepTransport*);
 

@@ -35,9 +35,12 @@ public:
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
     // vIndex: 5
-    virtual ::AABB
-    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
-        const /*override*/;
+    virtual ::AABB getCollisionShape(
+        ::Block const&,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 148
     virtual int getTickDelay() const;
@@ -106,9 +109,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
-    checkPressed(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceEntity, int oldSignal, int newSignal)
-        const;
+    MCAPI void checkPressed(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Actor*          sourceEntity,
+        int               oldSignal,
+        int               newSignal
+    ) const;
 
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
@@ -120,9 +127,12 @@ public:
     // NOLINTBEGIN
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCFOLD ::AABB
-    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
+    MCFOLD ::AABB $getCollisionShape(
+        ::Block const&,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
 
     MCFOLD int $getTickDelay() const;
 

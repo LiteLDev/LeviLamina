@@ -59,9 +59,15 @@ public:
     ) const /*override*/;
 
     // vIndex: 4
-    virtual ::HitResult
-    clip(::Block const& block, ::BlockSource const& region, ::BlockPos const& pos, ::Vec3 const& A, ::Vec3 const& B, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
-        const /*override*/;
+    virtual ::HitResult clip(
+        ::Block const&       block,
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::Vec3 const&        A,
+        ::Vec3 const&        B,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 23
     virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const /*override*/;
@@ -120,9 +126,15 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI ::HitResult
-    $clip(::Block const& block, ::BlockSource const& region, ::BlockPos const& pos, ::Vec3 const& A, ::Vec3 const& B, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
+    MCAPI ::HitResult $clip(
+        ::Block const&       block,
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::Vec3 const&        A,
+        ::Vec3 const&        B,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
 
     MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const;
 

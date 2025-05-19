@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockReducer;
 class ItemStackBase;
 // clang-format on
 
@@ -14,15 +15,9 @@ class MaterialReducerInputContainerController : public ::ContainerController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkdd30df;
-    ::ll::UntypedStorage<8, 8> mUnk8dc168;
+    ::ll::TypedStorage<1, 1, bool>            mEnabled;
+    ::ll::TypedStorage<8, 8, ::BlockReducer*> mBlockReducer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MaterialReducerInputContainerController& operator=(MaterialReducerInputContainerController const&);
-    MaterialReducerInputContainerController(MaterialReducerInputContainerController const&);
-    MaterialReducerInputContainerController();
 
 public:
     // virtual functions

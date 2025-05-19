@@ -76,8 +76,12 @@ public:
     // NOLINTBEGIN
     MCNAPI ::webrtc::RTCError AddRemoteCandidates(::std::string const&, ::std::vector<::cricket::Candidate> const&);
 
-    MCNAPI ::webrtc::RTCError
-    ApplyDescription_n(bool, ::webrtc::SdpType, ::cricket::SessionDescription const*, ::cricket::SessionDescription const*);
+    MCNAPI ::webrtc::RTCError ApplyDescription_n(
+        bool,
+        ::webrtc::SdpType,
+        ::cricket::SessionDescription const*,
+        ::cricket::SessionDescription const*
+    );
 
     MCNAPI ::std::unique_ptr<::webrtc::DtlsSrtpTransport>
     CreateDtlsSrtpTransport(::std::string const&, ::cricket::DtlsTransportInternal*, ::cricket::DtlsTransportInternal*);
@@ -94,8 +98,11 @@ public:
         int
     );
 
-    MCNAPI ::std::unique_ptr<::webrtc::RtpTransport>
-    CreateUnencryptedRtpTransport(::std::string const&, ::rtc::PacketTransportInternal*, ::rtc::PacketTransportInternal*);
+    MCNAPI ::std::unique_ptr<::webrtc::RtpTransport> CreateUnencryptedRtpTransport(
+        ::std::string const&,
+        ::rtc::PacketTransportInternal*,
+        ::rtc::PacketTransportInternal*
+    );
 
     MCNAPI void DestroyAllJsepTransports_n();
 
@@ -209,8 +216,12 @@ public:
 
     MCNAPI void UpdateAggregateStates_n();
 
-    MCNAPI ::webrtc::RTCError
-    ValidateAndMaybeUpdateBundleGroups(bool, ::webrtc::SdpType, ::cricket::SessionDescription const*, ::cricket::SessionDescription const*);
+    MCNAPI ::webrtc::RTCError ValidateAndMaybeUpdateBundleGroups(
+        bool,
+        ::webrtc::SdpType,
+        ::cricket::SessionDescription const*,
+        ::cricket::SessionDescription const*
+    );
 
     MCNAPI ::webrtc::RTCError ValidateContent(::cricket::ContentInfo const&);
     // NOLINTEND

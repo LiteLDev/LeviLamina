@@ -105,16 +105,16 @@ public:
     ) /*override*/;
 
     // vIndex: 8
-    virtual void
-    SetSignalingInterface(::std::shared_ptr<::NetherNet::ISignalingInterface> const& pWebRTCSignalingInterface
+    virtual void SetSignalingInterface(
+        ::std::shared_ptr<::NetherNet::ISignalingInterface> const& pWebRTCSignalingInterface
     ) /*override*/;
 
     // vIndex: 9
     virtual void SetRelayConfig(::std::vector<::NetherNet::StunRelayServer> const& config) /*override*/;
 
     // vIndex: 14
-    virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler
-    ) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription
+    RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler) /*override*/;
 
     // vIndex: 13
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ILanEventHandler* handler) /*override*/;

@@ -171,9 +171,12 @@ public:
     ) const;
 
     // vIndex: 6
-    virtual void
-    doLoad(::cereal::SchemaReader&, ::entt::meta_any&, ::entt::meta_any const&, ::cereal::SerializerContext& context)
-        const;
+    virtual void doLoad(
+        ::cereal::SchemaReader&,
+        ::entt::meta_any&,
+        ::entt::meta_any const&,
+        ::cereal::SerializerContext& context
+    ) const;
 
     // vIndex: 7
     virtual void doSave(::cereal::SchemaWriter&, ::entt::meta_any const&, ::cereal::SerializerContext& context) const;
@@ -214,9 +217,12 @@ public:
         ::cereal::SerializerContext& context
     ) const;
 
-    MCNAPI void
-    $doLoad(::cereal::SchemaReader&, ::entt::meta_any&, ::entt::meta_any const&, ::cereal::SerializerContext& context)
-        const;
+    MCNAPI void $doLoad(
+        ::cereal::SchemaReader&,
+        ::entt::meta_any&,
+        ::entt::meta_any const&,
+        ::cereal::SerializerContext& context
+    ) const;
 
     MCNAPI void $doSave(::cereal::SchemaWriter&, ::entt::meta_any const&, ::cereal::SerializerContext& context) const;
 

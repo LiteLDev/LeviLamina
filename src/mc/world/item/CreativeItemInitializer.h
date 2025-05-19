@@ -47,8 +47,8 @@ public:
 
     MCNAPI void addLooseBlocks(::std::vector<::BlockDefinition const*> const& blockDefinitions);
 
-    MCNAPI void initializeFromCraftingItemCatalog(::CraftingItemCatalogMergeResult const& craftingItemCatalogMergeResult
-    );
+    MCNAPI void
+    initializeFromCraftingItemCatalog(::CraftingItemCatalogMergeResult const& craftingItemCatalogMergeResult);
 
     MCNAPI ~CreativeItemInitializer();
     // NOLINTEND

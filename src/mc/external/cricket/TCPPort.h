@@ -53,8 +53,17 @@ public:
 
     MCNAPI void OnReadyToSend(::rtc::AsyncPacketSocket*);
 
-    MCNAPI
-    TCPPort(::rtc::Thread*, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ushort, ushort, ::std::string_view, ::std::string_view, bool, ::webrtc::FieldTrialsView const*);
+    MCNAPI TCPPort(
+        ::rtc::Thread*,
+        ::rtc::PacketSocketFactory*,
+        ::rtc::Network const*,
+        ushort,
+        ushort,
+        ::std::string_view,
+        ::std::string_view,
+        bool,
+        ::webrtc::FieldTrialsView const*
+    );
 
     MCNAPI void TryCreateServerSocket();
     // NOLINTEND
@@ -62,8 +71,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::rtc::Thread*, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ushort, ushort, ::std::string_view, ::std::string_view, bool, ::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(
+        ::rtc::Thread*,
+        ::rtc::PacketSocketFactory*,
+        ::rtc::Network const*,
+        ushort,
+        ushort,
+        ::std::string_view,
+        ::std::string_view,
+        bool,
+        ::webrtc::FieldTrialsView const*
+    );
     // NOLINTEND
 
 public:

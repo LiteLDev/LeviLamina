@@ -236,8 +236,8 @@ public:
 
     MCAPI bool isNull() const;
 
-    MCAPI bool isOneOfBlockInstances(::std::vector<::std::reference_wrapper<::HashedString const>> const& blockTypeIds
-    ) const;
+    MCAPI bool
+    isOneOfBlockInstances(::std::vector<::std::reference_wrapper<::HashedString const>> const& blockTypeIds) const;
 
     MCAPI bool isOneOfInstances(
         ::std::initializer_list<::std::reference_wrapper<::HashedString const>> items,

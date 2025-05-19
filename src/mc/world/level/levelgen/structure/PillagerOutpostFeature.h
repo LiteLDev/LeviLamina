@@ -47,9 +47,14 @@ public:
     ) /*override*/;
 
     // vIndex: 4
-    virtual bool
-    isFeatureChunk(::BiomeSource const& biomeSource, ::Random& random, ::ChunkPos const& lc, uint levelSeed, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel, ::Dimension const&) /*override*/
-        ;
+    virtual bool isFeatureChunk(
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    lc,
+        uint                                 levelSeed,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        ::Dimension const&
+    ) /*override*/;
 
     // vIndex: 1
     virtual bool shouldAddHardcodedSpawnAreas() const /*override*/;
@@ -58,9 +63,13 @@ public:
     virtual bool shouldPostProcessMobs() const /*override*/;
 
     // vIndex: 5
-    virtual ::std::unique_ptr<::StructureStart>
-    createStructureStart(::Dimension& generator, ::BiomeSource const&, ::Random& random, ::ChunkPos const& lc, ::IPreliminarySurfaceProvider const&) /*override*/
-        ;
+    virtual ::std::unique_ptr<::StructureStart> createStructureStart(
+        ::Dimension& generator,
+        ::BiomeSource const&,
+        ::Random&         random,
+        ::ChunkPos const& lc,
+        ::IPreliminarySurfaceProvider const&
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~PillagerOutpostFeature() /*override*/ = default;
@@ -91,15 +100,26 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCNAPI bool
-    $isFeatureChunk(::BiomeSource const& biomeSource, ::Random& random, ::ChunkPos const& lc, uint levelSeed, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel, ::Dimension const&);
+    MCNAPI bool $isFeatureChunk(
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    lc,
+        uint                                 levelSeed,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        ::Dimension const&
+    );
 
     MCNAPI bool $shouldAddHardcodedSpawnAreas() const;
 
     MCNAPI bool $shouldPostProcessMobs() const;
 
-    MCNAPI ::std::unique_ptr<::StructureStart>
-    $createStructureStart(::Dimension& generator, ::BiomeSource const&, ::Random& random, ::ChunkPos const& lc, ::IPreliminarySurfaceProvider const&);
+    MCNAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
+        ::Dimension& generator,
+        ::BiomeSource const&,
+        ::Random&         random,
+        ::ChunkPos const& lc,
+        ::IPreliminarySurfaceProvider const&
+    );
     // NOLINTEND
 
 public:

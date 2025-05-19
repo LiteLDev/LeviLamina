@@ -46,9 +46,12 @@ public:
     virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
     // vIndex: 77
-    virtual ::Actor*
-    createProjectileActor(::BlockSource& region, ::ItemStack const& stack, ::Vec3 const& pos, ::Vec3 const& direction)
-        const /*override*/;
+    virtual ::Actor* createProjectileActor(
+        ::BlockSource&     region,
+        ::ItemStack const& stack,
+        ::Vec3 const&      pos,
+        ::Vec3 const&      direction
+    ) const /*override*/;
 
     // vIndex: 78
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
@@ -103,9 +106,12 @@ public:
     // NOLINTBEGIN
     MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
-    MCAPI ::Actor*
-    $createProjectileActor(::BlockSource& region, ::ItemStack const& stack, ::Vec3 const& pos, ::Vec3 const& direction)
-        const;
+    MCAPI ::Actor* $createProjectileActor(
+        ::BlockSource&     region,
+        ::ItemStack const& stack,
+        ::Vec3 const&      pos,
+        ::Vec3 const&      direction
+    ) const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 

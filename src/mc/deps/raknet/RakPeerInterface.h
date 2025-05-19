@@ -174,9 +174,10 @@ public:
     virtual ::RakNet::RakNetGUID GetGUIDFromIndex(uint) = 0;
 
     // vIndex: 34
-    virtual void
-    GetSystemList(::DataStructures::List<::RakNet::SystemAddress>&, ::DataStructures::List<::RakNet::RakNetGUID>&)
-        const = 0;
+    virtual void GetSystemList(
+        ::DataStructures::List<::RakNet::SystemAddress>&,
+        ::DataStructures::List<::RakNet::RakNetGUID>&
+    ) const = 0;
 
     // vIndex: 35
     virtual void AddToBanList(char const*, uint) = 0;
@@ -347,8 +348,11 @@ public:
     virtual bool GetStatistics(uint const, ::RakNet::RakNetStatistics*) = 0;
 
     // vIndex: 91
-    virtual void
-    GetStatisticsList(::DataStructures::List<::RakNet::SystemAddress>&, ::DataStructures::List<::RakNet::RakNetGUID>&, ::DataStructures::List<::RakNet::RakNetStatistics>&) = 0;
+    virtual void GetStatisticsList(
+        ::DataStructures::List<::RakNet::SystemAddress>&,
+        ::DataStructures::List<::RakNet::RakNetGUID>&,
+        ::DataStructures::List<::RakNet::RakNetStatistics>&
+    ) = 0;
 
     // vIndex: 92
     virtual uint GetReceiveBufferSize() = 0;

@@ -19,8 +19,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ::webrtc::RTCErrorOr<::cricket::RidDescription> DeserializeRidDescription(::std::string_view) const;
 
-    MCNAPI ::webrtc::RTCErrorOr<::cricket::SimulcastDescription> DeserializeSimulcastDescription(::std::string_view
-    ) const;
+    MCNAPI ::webrtc::RTCErrorOr<::cricket::SimulcastDescription>
+        DeserializeSimulcastDescription(::std::string_view) const;
 
     MCNAPI ::std::string SerializeRidDescription(::cricket::RidDescription const&) const;
 

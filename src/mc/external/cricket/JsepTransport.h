@@ -47,13 +47,28 @@ public:
 
     MCNAPI bool GetTransportStats(::cricket::DtlsTransportInternal*, int, ::cricket::TransportStats*);
 
-    MCNAPI
-    JsepTransport(::std::string const&, ::webrtc::scoped_refptr<::rtc::RTCCertificate> const&, ::webrtc::scoped_refptr<::webrtc::IceTransportInterface>, ::webrtc::scoped_refptr<::webrtc::IceTransportInterface>, ::std::unique_ptr<::webrtc::RtpTransport>, ::std::unique_ptr<::webrtc::SrtpTransport>, ::std::unique_ptr<::webrtc::DtlsSrtpTransport>, ::std::unique_ptr<::cricket::DtlsTransportInternal>, ::std::unique_ptr<::cricket::DtlsTransportInternal>, ::std::unique_ptr<::cricket::SctpTransportInternal>, ::std::function<void()>);
+    MCNAPI JsepTransport(
+        ::std::string const&,
+        ::webrtc::scoped_refptr<::rtc::RTCCertificate> const&,
+        ::webrtc::scoped_refptr<::webrtc::IceTransportInterface>,
+        ::webrtc::scoped_refptr<::webrtc::IceTransportInterface>,
+        ::std::unique_ptr<::webrtc::RtpTransport>,
+        ::std::unique_ptr<::webrtc::SrtpTransport>,
+        ::std::unique_ptr<::webrtc::DtlsSrtpTransport>,
+        ::std::unique_ptr<::cricket::DtlsTransportInternal>,
+        ::std::unique_ptr<::cricket::DtlsTransportInternal>,
+        ::std::unique_ptr<::cricket::SctpTransportInternal>,
+        ::std::function<void()>
+    );
 
     MCNAPI ::webrtc::RTCError NegotiateAndSetDtlsParameters(::webrtc::SdpType);
 
-    MCNAPI ::webrtc::RTCError
-    NegotiateDtlsRole(::webrtc::SdpType, ::cricket::ConnectionRole, ::cricket::ConnectionRole, ::std::optional<::rtc::SSLRole>*);
+    MCNAPI ::webrtc::RTCError NegotiateDtlsRole(
+        ::webrtc::SdpType,
+        ::cricket::ConnectionRole,
+        ::cricket::ConnectionRole,
+        ::std::optional<::rtc::SSLRole>*
+    );
 
     MCNAPI void SetActiveResetSrtpParams(bool);
 
@@ -78,14 +93,29 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::webrtc::RTCError
-    SetNegotiatedDtlsParameters(::cricket::DtlsTransportInternal*, ::std::optional<::rtc::SSLRole>, ::rtc::SSLFingerprint*);
+    MCNAPI static ::webrtc::RTCError SetNegotiatedDtlsParameters(
+        ::cricket::DtlsTransportInternal*,
+        ::std::optional<::rtc::SSLRole>,
+        ::rtc::SSLFingerprint*
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const&, ::webrtc::scoped_refptr<::rtc::RTCCertificate> const&, ::webrtc::scoped_refptr<::webrtc::IceTransportInterface>, ::webrtc::scoped_refptr<::webrtc::IceTransportInterface>, ::std::unique_ptr<::webrtc::RtpTransport>, ::std::unique_ptr<::webrtc::SrtpTransport>, ::std::unique_ptr<::webrtc::DtlsSrtpTransport>, ::std::unique_ptr<::cricket::DtlsTransportInternal>, ::std::unique_ptr<::cricket::DtlsTransportInternal>, ::std::unique_ptr<::cricket::SctpTransportInternal>, ::std::function<void()>);
+    MCNAPI void* $ctor(
+        ::std::string const&,
+        ::webrtc::scoped_refptr<::rtc::RTCCertificate> const&,
+        ::webrtc::scoped_refptr<::webrtc::IceTransportInterface>,
+        ::webrtc::scoped_refptr<::webrtc::IceTransportInterface>,
+        ::std::unique_ptr<::webrtc::RtpTransport>,
+        ::std::unique_ptr<::webrtc::SrtpTransport>,
+        ::std::unique_ptr<::webrtc::DtlsSrtpTransport>,
+        ::std::unique_ptr<::cricket::DtlsTransportInternal>,
+        ::std::unique_ptr<::cricket::DtlsTransportInternal>,
+        ::std::unique_ptr<::cricket::SctpTransportInternal>,
+        ::std::function<void()>
+    );
     // NOLINTEND
 
 public:

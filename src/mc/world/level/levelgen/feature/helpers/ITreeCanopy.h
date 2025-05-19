@@ -19,9 +19,14 @@ public:
     virtual ~ITreeCanopy() = default;
 
     // vIndex: 1
-    virtual ::std::optional<::BlockPos>
-    placeCanopy(::IBlockWorldGenAPI&, ::BlockPos const&, ::Random&, ::RenderParams&, ::TreeHelper::TreeParams const&, ::std::vector<::BlockPos> const&)
-        const = 0;
+    virtual ::std::optional<::BlockPos> placeCanopy(
+        ::IBlockWorldGenAPI&,
+        ::BlockPos const&,
+        ::Random&,
+        ::RenderParams&,
+        ::TreeHelper::TreeParams const&,
+        ::std::vector<::BlockPos> const&
+    ) const = 0;
     // NOLINTEND
 
 public:

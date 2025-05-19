@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/world/inventory/BaseContainerMenu.h"
 
 // auto generated forward declare list
 // clang-format off
 class Container;
+class IContainerRegistryAccess;
 class ItemStack;
 struct FullContainerName;
 // clang-format on
@@ -16,15 +18,9 @@ class InventoryMenu : public ::BaseContainerMenu {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk74c69d;
-    ::ll::UntypedStorage<8, 16> mUnk79a9c1;
+    ::ll::TypedStorage<8, 8, ::Container*>                           mContainer;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::IContainerRegistryAccess>> mContainerRegistryAccess;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InventoryMenu& operator=(InventoryMenu const&);
-    InventoryMenu(InventoryMenu const&);
-    InventoryMenu();
 
 public:
     // virtual functions

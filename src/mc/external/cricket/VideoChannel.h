@@ -22,15 +22,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    VideoChannel(::webrtc::TaskQueueBase*, ::rtc::Thread*, ::webrtc::TaskQueueBase*, ::std::unique_ptr<::cricket::VideoMediaSendChannelInterface>, ::std::unique_ptr<::cricket::VideoMediaReceiveChannelInterface>, ::std::string_view, bool, ::webrtc::CryptoOptions, ::rtc::UniqueRandomIdGenerator*);
+    MCNAPI VideoChannel(
+        ::webrtc::TaskQueueBase*,
+        ::rtc::Thread*,
+        ::webrtc::TaskQueueBase*,
+        ::std::unique_ptr<::cricket::VideoMediaSendChannelInterface>,
+        ::std::unique_ptr<::cricket::VideoMediaReceiveChannelInterface>,
+        ::std::string_view,
+        bool,
+        ::webrtc::CryptoOptions,
+        ::rtc::UniqueRandomIdGenerator*
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::webrtc::TaskQueueBase*, ::rtc::Thread*, ::webrtc::TaskQueueBase*, ::std::unique_ptr<::cricket::VideoMediaSendChannelInterface>, ::std::unique_ptr<::cricket::VideoMediaReceiveChannelInterface>, ::std::string_view, bool, ::webrtc::CryptoOptions, ::rtc::UniqueRandomIdGenerator*);
+    MCNAPI void* $ctor(
+        ::webrtc::TaskQueueBase*,
+        ::rtc::Thread*,
+        ::webrtc::TaskQueueBase*,
+        ::std::unique_ptr<::cricket::VideoMediaSendChannelInterface>,
+        ::std::unique_ptr<::cricket::VideoMediaReceiveChannelInterface>,
+        ::std::string_view,
+        bool,
+        ::webrtc::CryptoOptions,
+        ::rtc::UniqueRandomIdGenerator*
+    );
     // NOLINTEND
 
 public:

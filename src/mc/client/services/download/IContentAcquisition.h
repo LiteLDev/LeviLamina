@@ -47,8 +47,10 @@ public:
     virtual ::std::vector<::DlcId> getPendingAndActiveImports() const = 0;
 
     // vIndex: 5
-    virtual void
-    searchForDlcIdsByPackIds(::std::vector<::PackIdVersion> const&, ::std::function<void(::std::vector<::DlcId> const&)>) = 0;
+    virtual void searchForDlcIdsByPackIds(
+        ::std::vector<::PackIdVersion> const&,
+        ::std::function<void(::std::vector<::DlcId> const&)>
+    ) = 0;
 
     // vIndex: 6
     virtual void checkStorageRequirements(::std::vector<::DlcId> const&, ::std::function<void(bool, uint64)>) = 0;

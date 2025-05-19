@@ -3,10 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/managers/controllers/ContainerManagerController.h"
 
 // auto generated forward declare list
 // clang-format off
+class FurnaceContainerManagerModel;
 class ItemInstance;
 struct SelectedSlotInfo;
 struct SlotData;
@@ -16,15 +18,9 @@ class FurnaceContainerManagerController : public ::ContainerManagerController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk1cdedc;
-    ::ll::UntypedStorage<1, 1>  mUnk5b6721;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::FurnaceContainerManagerModel>> mFurnaceContainerManagerModel;
+    ::ll::TypedStorage<1, 1, ::ContainerEnumName const>                        mIngredientName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FurnaceContainerManagerController& operator=(FurnaceContainerManagerController const&);
-    FurnaceContainerManagerController(FurnaceContainerManagerController const&);
-    FurnaceContainerManagerController();
 
 public:
     // virtual functions

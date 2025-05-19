@@ -200,9 +200,13 @@ public:
     virtual void PostAddAddress(bool);
 
     // vIndex: 36
-    virtual bool
-    GetStunMessage(char const*, uint64, ::rtc::SocketAddress const&, ::std::unique_ptr<::cricket::IceMessage>*, ::std::string*) /*override*/
-        ;
+    virtual bool GetStunMessage(
+        char const*,
+        uint64,
+        ::rtc::SocketAddress const&,
+        ::std::unique_ptr<::cricket::IceMessage>*,
+        ::std::string*
+    ) /*override*/;
 
     // vIndex: 35
     virtual ::rtc::DiffServCodePoint StunDscpValue() const /*override*/;
@@ -260,8 +264,15 @@ public:
 
     MCNAPI void OnReadyToSend();
 
-    MCNAPI
-    Port(::webrtc::TaskQueueBase*, ::webrtc::IceCandidateType, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ::std::string_view, ::std::string_view, ::webrtc::FieldTrialsView const*);
+    MCNAPI Port(
+        ::webrtc::TaskQueueBase*,
+        ::webrtc::IceCandidateType,
+        ::rtc::PacketSocketFactory*,
+        ::rtc::Network const*,
+        ::std::string_view,
+        ::std::string_view,
+        ::webrtc::FieldTrialsView const*
+    );
 
     MCNAPI Port(
         ::webrtc::TaskQueueBase*,
@@ -282,8 +293,11 @@ public:
 
     MCNAPI void SendPortDestroyed(::cricket::Port*);
 
-    MCNAPI void
-    SendUnknownAttributesErrorResponse(::cricket::StunMessage*, ::rtc::SocketAddress const&, ::std::vector<ushort> const&);
+    MCNAPI void SendUnknownAttributesErrorResponse(
+        ::cricket::StunMessage*,
+        ::rtc::SocketAddress const&,
+        ::std::vector<ushort> const&
+    );
 
     MCNAPI void SetIceParameters(int, ::std::string_view, ::std::string_view);
 
@@ -295,8 +309,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::webrtc::TaskQueueBase*, ::webrtc::IceCandidateType, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ::std::string_view, ::std::string_view, ::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(
+        ::webrtc::TaskQueueBase*,
+        ::webrtc::IceCandidateType,
+        ::rtc::PacketSocketFactory*,
+        ::rtc::Network const*,
+        ::std::string_view,
+        ::std::string_view,
+        ::webrtc::FieldTrialsView const*
+    );
 
     MCNAPI void* $ctor(
         ::webrtc::TaskQueueBase*,

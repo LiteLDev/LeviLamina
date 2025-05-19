@@ -21,8 +21,10 @@ public:
 
     MCNAPI bool IsSecure() const;
 
-    MCNAPI bool
-    ParseAuthority(::http_string const&, ::std::_String_const_iterator<::std::_String_val<::std::_Simple_types<char>>>&);
+    MCNAPI bool ParseAuthority(
+        ::http_string const&,
+        ::std::_String_const_iterator<::std::_String_val<::std::_Simple_types<char>>>&
+    );
 
     MCNAPI bool
     ParseHost(::http_string const&, ::std::_String_const_iterator<::std::_String_val<::std::_Simple_types<char>>>&);

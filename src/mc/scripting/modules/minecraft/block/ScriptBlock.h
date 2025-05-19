@@ -257,9 +257,11 @@ public:
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError,
         ::Scripting::Error>
-    setType(::std::variant<
+    setType(
+        ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
-            ::std::string> const& blockType);
+            ::std::string> const& blockType
+    );
 
     MCNAPI void setType_010(::ScriptModuleMinecraft::ScriptBlockType const& blockType);
 

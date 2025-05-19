@@ -74,19 +74,28 @@ public:
     virtual ::Block const* getNextBlockPermutation(::Block const& currentBlock) const /*override*/;
 
     // vIndex: 10
-    virtual ::AABB const&
-    getVisualShapeInWorld(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferAABB)
-        const /*override*/;
+    virtual ::AABB const& getVisualShapeInWorld(
+        ::Block const&,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferAABB
+    ) const /*override*/;
 
     // vIndex: 5
-    virtual ::AABB
-    getCollisionShape(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
-        const /*override*/;
+    virtual ::AABB getCollisionShape(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 9
-    virtual ::AABB const&
-    getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
-        const /*override*/;
+    virtual ::AABB const& getOutline(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferValue
+    ) const /*override*/;
 
     // vIndex: 13
     virtual bool
@@ -199,17 +208,26 @@ public:
 
     MCFOLD ::Block const* $getNextBlockPermutation(::Block const& currentBlock) const;
 
-    MCAPI ::AABB const&
-    $getVisualShapeInWorld(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferAABB)
-        const;
+    MCAPI ::AABB const& $getVisualShapeInWorld(
+        ::Block const&,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferAABB
+    ) const;
 
-    MCAPI ::AABB
-    $getCollisionShape(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
+    MCAPI ::AABB $getCollisionShape(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
 
-    MCFOLD ::AABB const&
-    $getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
-        const;
+    MCFOLD ::AABB const& $getOutline(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferValue
+    ) const;
 
     MCAPI bool
     $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;

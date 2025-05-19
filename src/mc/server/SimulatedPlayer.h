@@ -127,8 +127,8 @@ public:
 
     MCAPI void _addMoveComponent();
 
-    MCAPI ::ScriptModuleGameTest::ScriptNavigationResult _createNavigationResult(::NavigationComponent* navigation
-    ) const;
+    MCAPI ::ScriptModuleGameTest::ScriptNavigationResult
+    _createNavigationResult(::NavigationComponent* navigation) const;
 
     MCFOLD ::BlockSource& _getRegion();
 

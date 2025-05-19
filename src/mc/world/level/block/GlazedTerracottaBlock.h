@@ -32,9 +32,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const&
-    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
-        const;
+    MCAPI ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     MCFOLD bool $isValidAuxValue(int value) const;
     // NOLINTEND

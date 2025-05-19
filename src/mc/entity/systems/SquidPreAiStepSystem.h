@@ -24,9 +24,11 @@ public:
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
 
-    MCNAPI static void tick(::ViewT<
-                            ::StrictEntityContext,
-                            ::Include<::ActorMovementTickNeededComponent, ::SquidFlagComponent>,
-                            ::LocalMoveVelocityComponent> view);
+    MCNAPI static void tick(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::SquidFlagComponent>,
+            ::LocalMoveVelocityComponent> view
+    );
     // NOLINTEND
 };

@@ -20,15 +20,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    FlexfecSender(int, uint, uint, ::std::string_view, ::std::vector<::webrtc::RtpExtension> const&, ::rtc::ArrayView<::webrtc::RtpExtensionSize const>, ::webrtc::RtpState const*, ::webrtc::Clock*);
+    MCNAPI FlexfecSender(
+        int,
+        uint,
+        uint,
+        ::std::string_view,
+        ::std::vector<::webrtc::RtpExtension> const&,
+        ::rtc::ArrayView<::webrtc::RtpExtensionSize const>,
+        ::webrtc::RtpState const*,
+        ::webrtc::Clock*
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(int, uint, uint, ::std::string_view, ::std::vector<::webrtc::RtpExtension> const&, ::rtc::ArrayView<::webrtc::RtpExtensionSize const>, ::webrtc::RtpState const*, ::webrtc::Clock*);
+    MCNAPI void* $ctor(
+        int,
+        uint,
+        uint,
+        ::std::string_view,
+        ::std::vector<::webrtc::RtpExtension> const&,
+        ::rtc::ArrayView<::webrtc::RtpExtensionSize const>,
+        ::webrtc::RtpState const*,
+        ::webrtc::Clock*
+    );
     // NOLINTEND
 
 public:

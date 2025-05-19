@@ -173,14 +173,19 @@ public:
     virtual void Delete() /*override*/;
 
     // vIndex: 1
-    virtual void
-    PostTaskImpl(::absl::AnyInvocable<void() &&>, ::webrtc::TaskQueueBase::PostTaskTraits const&, ::webrtc::Location const&) /*override*/
-        ;
+    virtual void PostTaskImpl(
+        ::absl::AnyInvocable<void() &&>,
+        ::webrtc::TaskQueueBase::PostTaskTraits const&,
+        ::webrtc::Location const&
+    ) /*override*/;
 
     // vIndex: 2
-    virtual void
-    PostDelayedTaskImpl(::absl::AnyInvocable<void() &&>, ::webrtc::TimeDelta, ::webrtc::TaskQueueBase::PostDelayedTaskTraits const&, ::webrtc::Location const&) /*override*/
-        ;
+    virtual void PostDelayedTaskImpl(
+        ::absl::AnyInvocable<void() &&>,
+        ::webrtc::TimeDelta,
+        ::webrtc::TaskQueueBase::PostDelayedTaskTraits const&,
+        ::webrtc::Location const&
+    ) /*override*/;
 
     // vIndex: 11
     virtual void BlockingCallImpl(::rtc::FunctionView<void()>, ::webrtc::Location const&);

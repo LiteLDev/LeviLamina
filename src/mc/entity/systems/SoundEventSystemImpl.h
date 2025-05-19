@@ -63,30 +63,32 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(::StrictExecutionContext<
-                      ::Filter<
-                          ::HorseFlagComponent,
-                          ::MobFlagComponent,
-                          ::ParrotFlagComponent,
-                          ::VehicleComponent,
-                          ::CamelFlagComponent,
-                          ::PlayerComponent>,
-                      ::Read<
-                          ::ActorRotationComponent,
-                          ::MobBodyRotationComponent,
-                          ::PassengerComponent,
-                          ::RenderRotationComponent,
-                          ::StandAnimationComponent,
-                          ::ActorDataFlagComponent,
-                          ::AABBShapeComponent,
-                          ::OffsetsComponent,
-                          ::VanillaOffsetComponent,
-                          ::PassengerRenderingRidingOffsetComponent>,
-                      ::Write<::LevelComponent, ::SoundEventRequestQueueComponent>,
-                      ::AddRemove<>,
-                      ::GlobalRead<>,
-                      ::GlobalWrite<>,
-                      ::EntityFactoryT<>>& context) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent>,
+            ::Read<
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::PassengerComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::ActorDataFlagComponent,
+                ::AABBShapeComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent>,
+            ::Write<::LevelComponent, ::SoundEventRequestQueueComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~SoundEventSystemImpl() /*override*/ = default;
@@ -95,30 +97,32 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::StrictExecutionContext<
-                      ::Filter<
-                          ::HorseFlagComponent,
-                          ::MobFlagComponent,
-                          ::ParrotFlagComponent,
-                          ::VehicleComponent,
-                          ::CamelFlagComponent,
-                          ::PlayerComponent>,
-                      ::Read<
-                          ::ActorRotationComponent,
-                          ::MobBodyRotationComponent,
-                          ::PassengerComponent,
-                          ::RenderRotationComponent,
-                          ::StandAnimationComponent,
-                          ::ActorDataFlagComponent,
-                          ::AABBShapeComponent,
-                          ::OffsetsComponent,
-                          ::VanillaOffsetComponent,
-                          ::PassengerRenderingRidingOffsetComponent>,
-                      ::Write<::LevelComponent, ::SoundEventRequestQueueComponent>,
-                      ::AddRemove<>,
-                      ::GlobalRead<>,
-                      ::GlobalWrite<>,
-                      ::EntityFactoryT<>>& context);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent>,
+            ::Read<
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::PassengerComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::ActorDataFlagComponent,
+                ::AABBShapeComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent>,
+            ::Write<::LevelComponent, ::SoundEventRequestQueueComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    );
     // NOLINTEND
 
 public:

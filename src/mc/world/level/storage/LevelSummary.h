@@ -113,8 +113,8 @@ public:
         ::std::optional<::CloudSaveLevelInfo> cloudSaveInfo
     );
 
-    MCNAPI ::std::optional<::Core::PathBuffer<::std::string>> _getScreenshotIconPath(::Core::Path const& worldDirectory
-    );
+    MCNAPI ::std::optional<::Core::PathBuffer<::std::string>>
+    _getScreenshotIconPath(::Core::Path const& worldDirectory);
 
     MCNAPI void _initializeWorldIconPath(::Core::Path const& directory);
 

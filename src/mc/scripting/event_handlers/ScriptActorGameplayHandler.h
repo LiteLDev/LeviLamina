@@ -25,8 +25,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::ActorAddEffectEvent& actorEffectAddedEvent
-    ) /*override*/;
+    virtual ::GameplayHandlerResult<::CoordinatorResult>
+    handleEvent(::ActorAddEffectEvent& actorEffectAddedEvent) /*override*/;
 
     // vIndex: 17
     virtual ::HandlerResult handleEvent(::ActorRemovedEvent const& actorRemovedEvent) /*override*/;

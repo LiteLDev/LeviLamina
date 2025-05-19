@@ -25,11 +25,13 @@ public:
         ::RenderPositionComponent&    renderPositionComponent
     );
 
-    MCNAPI static void _tickUpdateRenderPosSystem(::ViewT<
-                                                  ::StrictEntityContext,
-                                                  ::Include<::ActorMovementTickNeededComponent>,
-                                                  ::StateVectorComponent const,
-                                                  ::RenderPositionComponent> view);
+    MCNAPI static void _tickUpdateRenderPosSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent>,
+            ::StateVectorComponent const,
+            ::RenderPositionComponent> view
+    );
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND

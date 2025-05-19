@@ -67,8 +67,8 @@ public:
 
     MCNAPI ComponentItemComponentData(::SharedTypes::v1_21_60::ComponentItemComponentData const&);
 
-    MCNAPI ::std::shared_ptr<::cereal::DynamicValue> getCustomComponent(::cereal::SerializerContext const& context
-    ) const;
+    MCNAPI ::std::shared_ptr<::cereal::DynamicValue>
+    getCustomComponent(::cereal::SerializerContext const& context) const;
 
     MCNAPI ::SharedTypes::v1_21_60::ComponentItemComponentData&
     operator=(::SharedTypes::v1_21_60::ComponentItemComponentData&&);

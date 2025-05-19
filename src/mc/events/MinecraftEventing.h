@@ -590,9 +590,23 @@ public:
     ) /*override*/;
 
     // vIndex: 26
-    virtual void
-    fireEventPlayerJoinWorld(uint const&, ::SubClientId const, bool, ::std::optional<bool>, ::IConnectionEventing::PlayerJoinWorldAttemptState const, int, ::Connection::DisconnectFailReason, ::TransportLayer, ::IMinecraftEventing::NetworkType, ::Social::MultiplayerState, bool, bool, ::Social::MultiplayerServiceIdentifier, ::std::string const&, ::std::string const&) /*override*/
-        ;
+    virtual void fireEventPlayerJoinWorld(
+        uint const&,
+        ::SubClientId const,
+        bool,
+        ::std::optional<bool>,
+        ::IConnectionEventing::PlayerJoinWorldAttemptState const,
+        int,
+        ::Connection::DisconnectFailReason,
+        ::TransportLayer,
+        ::IMinecraftEventing::NetworkType,
+        ::Social::MultiplayerState,
+        bool,
+        bool,
+        ::Social::MultiplayerServiceIdentifier,
+        ::std::string const&,
+        ::std::string const&
+    ) /*override*/;
 
     // vIndex: 27
     virtual void fireEventSignalServiceConnect(
@@ -613,9 +627,14 @@ public:
     virtual void fireEventOnClientDisconnect(::SubClientId, bool, ::Connection::DisconnectFailReason) /*override*/;
 
     // vIndex: 30
-    virtual void
-    fireEventOnServerDisconnect(::Connection::DisconnectFailReason, ::std::string const&, ::SubClientId, ::std::string const&, uint64, ::std::string const&) /*override*/
-        ;
+    virtual void fireEventOnServerDisconnect(
+        ::Connection::DisconnectFailReason,
+        ::std::string const&,
+        ::SubClientId,
+        ::std::string const&,
+        uint64,
+        ::std::string const&
+    ) /*override*/;
 
     // vIndex: 2
     virtual void fireEventConnectionFailed(::IConnectionEventing::ConnectionFailureReason failure) /*override*/;
@@ -645,14 +664,23 @@ public:
     ) /*override*/;
 
     // vIndex: 227
-    virtual void
-    fireEventSignInEdu(::std::string const&, ::edu::Role, ::Identity::EduSignInStage, ::std::string const&, ::std::string const&, ::std::vector<::std::pair<::std::string, ::std::string>> const&) /*override*/
-        ;
+    virtual void fireEventSignInEdu(
+        ::std::string const&,
+        ::edu::Role,
+        ::Identity::EduSignInStage,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::vector<::std::pair<::std::string, ::std::string>> const&
+    ) /*override*/;
 
     // vIndex: 228
-    virtual void
-    fireEventSignOutEdu(::std::string const&, ::edu::Role, ::std::string const&, ::std::string const&, ::std::string const&) /*override*/
-        ;
+    virtual void fireEventSignOutEdu(
+        ::std::string const&,
+        ::edu::Role,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&
+    ) /*override*/;
 
     // vIndex: 229
     virtual void fireEventSwitchAccountEdu(::std::string const&, ::edu::Role, ::std::string const&) /*override*/;
@@ -972,8 +1000,8 @@ public:
     fireEventStoreOfferClicked(::std::string const telemetryId, ::std::string const& productId) /*override*/;
 
     // vIndex: 253
-    virtual void fireEventPersonaOfferClicked(::Social::eventData::PersonaOfferClickedData const& eventData
-    ) /*override*/;
+    virtual void
+    fireEventPersonaOfferClicked(::Social::eventData::PersonaOfferClickedData const& eventData) /*override*/;
 
     // vIndex: 254
     virtual void fireEventStoreSearch(::storeSearch::TelemetryData const& telemetryData) /*override*/;
@@ -1424,8 +1452,9 @@ public:
     ) /*override*/;
 
     // vIndex: 174
-    virtual void fireLessonCompleteDialogOpened(::IMinecraftEventing::LessonCompleteDialogEntryPoint const entryPoint
-    ) const /*override*/;
+    virtual void
+    fireLessonCompleteDialogOpened(::IMinecraftEventing::LessonCompleteDialogEntryPoint const entryPoint) const
+        /*override*/;
 
     // vIndex: 180
     virtual void fireEventEduiOSPurchaseTransaction(::TransactionStatus const& status) const /*override*/;
@@ -1639,8 +1668,8 @@ public:
     ) /*override*/;
 
     // vIndex: 37
-    virtual void fireEventOnAppStart(::std::vector<::SerialWorkListLogEntry> const& performanceCountsAndTimings
-    ) /*override*/;
+    virtual void
+    fireEventOnAppStart(::std::vector<::SerialWorkListLogEntry> const& performanceCountsAndTimings) /*override*/;
 
     // vIndex: 38
     virtual void fireEventOnAppSuspend(
@@ -1649,12 +1678,12 @@ public:
     ) /*override*/;
 
     // vIndex: 39
-    virtual void fireEventOnAppResume(::std::vector<::SerialWorkListLogEntry> const& performanceCountsAndTimings
-    ) /*override*/;
+    virtual void
+    fireEventOnAppResume(::std::vector<::SerialWorkListLogEntry> const& performanceCountsAndTimings) /*override*/;
 
     // vIndex: 40
-    virtual void fireEventOnDeviceLost(::std::vector<::SerialWorkListLogEntry> const& performanceCountsAndTimings
-    ) /*override*/;
+    virtual void
+    fireEventOnDeviceLost(::std::vector<::SerialWorkListLogEntry> const& performanceCountsAndTimings) /*override*/;
 
     // vIndex: 263
     virtual void
@@ -1687,12 +1716,12 @@ public:
     ) /*override*/;
 
     // vIndex: 75
-    virtual void fireRealmConnectionEventStart(::IMinecraftEventing::RealmConnectionFlow realmConnectionFlow
-    ) /*override*/;
+    virtual void
+    fireRealmConnectionEventStart(::IMinecraftEventing::RealmConnectionFlow realmConnectionFlow) /*override*/;
 
     // vIndex: 267
-    virtual void fireRealmConnectionEventRealmAPIRequest(::IMinecraftEventing::RealmConnectionFlow realmConnectionFlow
-    ) /*override*/;
+    virtual void
+    fireRealmConnectionEventRealmAPIRequest(::IMinecraftEventing::RealmConnectionFlow realmConnectionFlow) /*override*/;
 
     // vIndex: 268
     virtual void fireRealmConnectionEventRealmAPIResponse(
@@ -3191,8 +3220,8 @@ public:
         bool                 includesResource
     );
 
-    MCNAPI void $fireLessonCompleteDialogOpened(::IMinecraftEventing::LessonCompleteDialogEntryPoint const entryPoint
-    ) const;
+    MCNAPI void
+    $fireLessonCompleteDialogOpened(::IMinecraftEventing::LessonCompleteDialogEntryPoint const entryPoint) const;
 
     MCNAPI void $fireEventEduiOSPurchaseTransaction(::TransactionStatus const& status) const;
 

@@ -91,8 +91,8 @@ public:
     virtual void unload() /*override*/;
 
     // vIndex: 22
-    virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> _loadArchive(::Core::Path const& packRelativePath
-    ) const /*override*/;
+    virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
+    _loadArchive(::Core::Path const& packRelativePath) const /*override*/;
     // NOLINTEND
 
 public:
@@ -173,8 +173,8 @@ public:
 
     MCNAPI void $unload();
 
-    MCNAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> $_loadArchive(::Core::Path const& packRelativePath
-    ) const;
+    MCNAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
+    $_loadArchive(::Core::Path const& packRelativePath) const;
     // NOLINTEND
 
 public:

@@ -22,10 +22,12 @@ public:
     MCNAPI static void
     _doBlazePreTravelSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
 
-    MCNAPI static void _tickBlazePreTravelSystem(::ViewT<
-                                                 ::StrictEntityContext,
-                                                 ::Include<::ActorMovementTickNeededComponent, ::BlazeFlagComponent>,
-                                                 ::ActorOwnerComponent> view);
+    MCNAPI static void _tickBlazePreTravelSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::BlazeFlagComponent>,
+            ::ActorOwnerComponent> view
+    );
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND

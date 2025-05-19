@@ -39,8 +39,12 @@ public:
     virtual ::std::unique_ptr<::Editor::IEditorPlayer> createPlayer(::Player&) = 0;
 
     // vIndex: 4
-    virtual ::std::unique_ptr<::FileArchiver::IWorldConverter>
-    createWorldConverter(::ILevelListCache&, ::Scheduler&, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>) = 0;
+    virtual ::std::unique_ptr<::FileArchiver::IWorldConverter> createWorldConverter(
+        ::ILevelListCache&,
+        ::Scheduler&,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>
+    ) = 0;
 
     // vIndex: 5
     virtual void cleanupOrphanedTemporaryPlaytestWorlds(::ILevelListCache&) const = 0;

@@ -103,11 +103,13 @@ public:
 
     MCNAPI void SetIsLastFrameInPicture(bool);
 
-    MCNAPI void SetRTPVideoHeaderCodecSpecifics(::std::variant<
-                                                ::std::monostate,
-                                                ::webrtc::RTPVideoHeaderVP8,
-                                                ::webrtc::RTPVideoHeaderVP9,
-                                                ::webrtc::RTPVideoHeaderH264>);
+    MCNAPI void SetRTPVideoHeaderCodecSpecifics(
+        ::std::variant<
+            ::std::monostate,
+            ::webrtc::RTPVideoHeaderVP8,
+            ::webrtc::RTPVideoHeaderVP9,
+            ::webrtc::RTPVideoHeaderH264>
+    );
 
     MCNAPI void SetRotation(::webrtc::VideoRotation);
 

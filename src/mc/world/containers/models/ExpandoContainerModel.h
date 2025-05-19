@@ -3,32 +3,33 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/containers/models/ContainerExpandStatus.h"
 #include "mc/world/containers/models/ContainerModel.h"
 
 // auto generated forward declare list
 // clang-format off
+class CreativeItemRegistry;
 class ItemInstance;
 class ItemStack;
 class ItemStackBase;
+struct ExpandoModelElement;
 // clang-format on
 
 class ExpandoContainerModel : public ::ContainerModel {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk3772c4;
-    ::ll::UntypedStorage<8, 24> mUnkdede7c;
-    ::ll::UntypedStorage<8, 24> mUnk349a86;
-    ::ll::UntypedStorage<8, 24> mUnk68ec95;
-    ::ll::UntypedStorage<8, 64> mUnkeb5b0e;
-    // NOLINTEND
+    // ExpandoContainerModel inner types define
+    using OnItemExpandedCallback = ::std::function<void(::std::string const&, int, int)>;
 
 public:
-    // prevent constructor by default
-    ExpandoContainerModel& operator=(ExpandoContainerModel const&);
-    ExpandoContainerModel(ExpandoContainerModel const&);
-    ExpandoContainerModel();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ItemInstance, uint>>>      mItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpandoModelElement>>                  mCurrentItems;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry>> mCreativeItemRegistry;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpandoModelElement>>                  mExpandedItems;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&, int, int)>> mOnItemExpanded;
+    // NOLINTEND
 
 public:
     // virtual functions

@@ -48,11 +48,23 @@ public:
 
     MCNAPI void SetCodecSpecific(::webrtc::RTPVideoHeader*, bool);
 
-    MCNAPI void
-    SetDependenciesVp8Deprecated(::webrtc::CodecSpecificInfoVP8 const&, int64, bool, int, int, bool, ::webrtc::RTPVideoHeader::GenericDescriptorInfo*);
+    MCNAPI void SetDependenciesVp8Deprecated(
+        ::webrtc::CodecSpecificInfoVP8 const&,
+        int64,
+        bool,
+        int,
+        int,
+        bool,
+        ::webrtc::RTPVideoHeader::GenericDescriptorInfo*
+    );
 
-    MCNAPI void
-    SetDependenciesVp8New(::webrtc::CodecSpecificInfoVP8 const&, int64, bool, bool, ::webrtc::RTPVideoHeader::GenericDescriptorInfo*);
+    MCNAPI void SetDependenciesVp8New(
+        ::webrtc::CodecSpecificInfoVP8 const&,
+        int64,
+        bool,
+        bool,
+        ::webrtc::RTPVideoHeader::GenericDescriptorInfo*
+    );
 
     MCNAPI void SetGeneric(::webrtc::CodecSpecificInfo const*, int64, bool, ::webrtc::RTPVideoHeader*);
 

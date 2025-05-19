@@ -9,6 +9,7 @@
 // clang-format off
 class Container;
 class ContainerScreenContext;
+class ItemDescriptor;
 class ItemStackBase;
 // clang-format on
 
@@ -16,14 +17,12 @@ class HorseEquipContainerValidation : public ::ContainerValidationBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkf0fcc9;
-    ::ll::UntypedStorage<8, 24> mUnk38e3b5;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mArmorAllowedItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mSaddleAllowedItems;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    HorseEquipContainerValidation& operator=(HorseEquipContainerValidation const&);
-    HorseEquipContainerValidation(HorseEquipContainerValidation const&);
     HorseEquipContainerValidation();
 
 public:

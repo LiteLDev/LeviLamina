@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class EnchantingContainerManagerModel;
 struct SelectedSlotInfo;
 struct SlotData;
 // clang-format on
@@ -24,14 +25,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkca2181;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::EnchantingContainerManagerModel>> mEnchantingContainerManagerModel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EnchantingContainerManagerController& operator=(EnchantingContainerManagerController const&);
-    EnchantingContainerManagerController(EnchantingContainerManagerController const&);
-    EnchantingContainerManagerController();
 
 public:
     // virtual functions

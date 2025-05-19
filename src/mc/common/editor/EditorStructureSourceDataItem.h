@@ -32,11 +32,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit EditorStructureSourceDataItem(::std::variant<
-                                                  ::Editor::EditorFileStructureData,
-                                                  ::Editor::EditorBPStructureData,
-                                                  ::Editor::EditorLevelStructureData,
-                                                  ::Editor::EditorProjectStructureData> const& dataSource);
+    MCNAPI explicit EditorStructureSourceDataItem(
+        ::std::variant<
+            ::Editor::EditorFileStructureData,
+            ::Editor::EditorBPStructureData,
+            ::Editor::EditorLevelStructureData,
+            ::Editor::EditorProjectStructureData> const& dataSource
+    );
 
     MCNAPI ::std::string getFullStructureName() const;
 
@@ -49,11 +51,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::variant<
-                       ::Editor::EditorFileStructureData,
-                       ::Editor::EditorBPStructureData,
-                       ::Editor::EditorLevelStructureData,
-                       ::Editor::EditorProjectStructureData> const& dataSource);
+    MCNAPI void* $ctor(
+        ::std::variant<
+            ::Editor::EditorFileStructureData,
+            ::Editor::EditorBPStructureData,
+            ::Editor::EditorLevelStructureData,
+            ::Editor::EditorProjectStructureData> const& dataSource
+    );
     // NOLINTEND
 
 public:

@@ -23,11 +23,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    AudioRtpReceiver(::rtc::Thread*, ::std::string const&, ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const&, bool, ::cricket::VoiceMediaReceiveChannelInterface*);
+    MCNAPI AudioRtpReceiver(
+        ::rtc::Thread*,
+        ::std::string const&,
+        ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const&,
+        bool,
+        ::cricket::VoiceMediaReceiveChannelInterface*
+    );
 
-    MCNAPI
-    AudioRtpReceiver(::rtc::Thread*, ::std::string, ::std::vector<::std::string>, bool, ::cricket::VoiceMediaReceiveChannelInterface*);
+    MCNAPI AudioRtpReceiver(
+        ::rtc::Thread*,
+        ::std::string,
+        ::std::vector<::std::string>,
+        bool,
+        ::cricket::VoiceMediaReceiveChannelInterface*
+    );
 
     MCNAPI void Reconfigure(bool);
 
@@ -41,11 +51,21 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::rtc::Thread*, ::std::string const&, ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const&, bool, ::cricket::VoiceMediaReceiveChannelInterface*);
+    MCNAPI void* $ctor(
+        ::rtc::Thread*,
+        ::std::string const&,
+        ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const&,
+        bool,
+        ::cricket::VoiceMediaReceiveChannelInterface*
+    );
 
-    MCNAPI void*
-    $ctor(::rtc::Thread*, ::std::string, ::std::vector<::std::string>, bool, ::cricket::VoiceMediaReceiveChannelInterface*);
+    MCNAPI void* $ctor(
+        ::rtc::Thread*,
+        ::std::string,
+        ::std::vector<::std::string>,
+        bool,
+        ::cricket::VoiceMediaReceiveChannelInterface*
+    );
     // NOLINTEND
 
 public:

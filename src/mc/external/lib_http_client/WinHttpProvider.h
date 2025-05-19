@@ -46,8 +46,14 @@ public:
 
     MCNAPI static long SetGlobalProxyForHSession(void*, char const*);
 
-    MCNAPI static long
-    WebSocketConnectAsyncHandler(char const*, char const*, ::HC_WEBSOCKET_OBSERVER*, ::XAsyncBlock*, void*, ::HC_PERFORM_ENV*);
+    MCNAPI static long WebSocketConnectAsyncHandler(
+        char const*,
+        char const*,
+        ::HC_WEBSOCKET_OBSERVER*,
+        ::XAsyncBlock*,
+        void*,
+        ::HC_PERFORM_ENV*
+    );
 
     MCNAPI static long WebSocketDisconnectHandler(::HC_WEBSOCKET_OBSERVER*, ::HCWebSocketCloseStatus, void*);
 

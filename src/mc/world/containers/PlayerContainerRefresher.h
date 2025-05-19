@@ -7,20 +7,15 @@
 class Container;
 class DynamicContainerManager;
 class ItemStack;
+class Packet;
 // clang-format on
 
 struct PlayerContainerRefresher {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk507ff8;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::Packet&)>> mSendNetworkPacket;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerContainerRefresher& operator=(PlayerContainerRefresher const&);
-    PlayerContainerRefresher(PlayerContainerRefresher const&);
-    PlayerContainerRefresher();
 
 public:
     // member functions

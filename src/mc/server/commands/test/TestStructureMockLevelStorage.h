@@ -32,9 +32,11 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void
-    forEachKeyWithPrefix(::std::string_view, ::DBHelpers::Category, ::std::function<void(::std::string_view, ::std::string_view)> const&)
-        const /*override*/;
+    virtual void forEachKeyWithPrefix(
+        ::std::string_view,
+        ::DBHelpers::Category,
+        ::std::function<void(::std::string_view, ::std::string_view)> const&
+    ) const /*override*/;
 
     // vIndex: 0
     virtual ~TestStructureMockLevelStorage() /*override*/ = default;

@@ -39,12 +39,6 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkec0b1f;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ContainerOwner::OwnedContainer>> mOwnedContainers;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerOwner& operator=(ContainerOwner const&);
-    ContainerOwner(ContainerOwner const&);
-    ContainerOwner();
 };

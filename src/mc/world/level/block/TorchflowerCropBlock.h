@@ -28,14 +28,21 @@ public:
     virtual int getVariant(::Block const& block) const /*override*/;
 
     // vIndex: 9
-    virtual ::AABB const&
-    getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
-        const /*override*/;
+    virtual ::AABB const& getOutline(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferValue
+    ) const /*override*/;
 
     // vIndex: 150
-    virtual ::Block const&
-    setGrowth(::BlockSource& region, ::BlockPos const& pos, ::Block const& baseBlock, ushort newGrowth, int updateFlags)
-        const /*override*/;
+    virtual ::Block const& setGrowth(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Block const&    baseBlock,
+        ushort            newGrowth,
+        int               updateFlags
+    ) const /*override*/;
 
     // vIndex: 74
     virtual bool
@@ -53,9 +60,12 @@ public:
 
     MCAPI int $getVariant(::Block const& block) const;
 
-    MCAPI ::AABB const&
-    $getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
-        const;
+    MCAPI ::AABB const& $getOutline(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferValue
+    ) const;
 
     MCAPI ::Block const& $setGrowth(
         ::BlockSource&    region,

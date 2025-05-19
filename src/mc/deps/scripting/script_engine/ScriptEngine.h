@@ -53,10 +53,10 @@ public:
     MCNAPI ::std::vector<::Scripting::SupportedBindingModule> getSupportedBindingModules() const;
 
     MCNAPI void setRuntimeFactory(
-        ::std::function<::std::shared_ptr<
-            ::Scripting::
-                IRuntime>(::Scripting::ContextConfig const&, ::std::vector<::Scripting::ModuleDescriptor> const&)>
-            factoryFn
+        ::std::function<::std::shared_ptr<::Scripting::IRuntime>(
+            ::Scripting::ContextConfig const&,
+            ::std::vector<::Scripting::ModuleDescriptor> const&
+        )> factoryFn
     );
 
     MCNAPI ~ScriptEngine();

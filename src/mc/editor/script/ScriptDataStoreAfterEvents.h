@@ -76,8 +76,12 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptDataStoreAfterEvents(::Editor::ScriptModule::ScriptDataStoreAfterEvents&&);
 
-    MCNAPI void
-    _handleDataStorePayloadEvent(::HashedString const& dataTag, ::Editor::DataStore::EventType, ::Json::Value const& payload, ::Editor::DataStore::PayloadDescription const&);
+    MCNAPI void _handleDataStorePayloadEvent(
+        ::HashedString const& dataTag,
+        ::Editor::DataStore::EventType,
+        ::Json::Value const& payload,
+        ::Editor::DataStore::PayloadDescription const&
+    );
 
     MCNAPI ::Editor::ScriptModule::ScriptDataStoreAfterEvents&
     operator=(::Editor::ScriptModule::ScriptDataStoreAfterEvents&&);

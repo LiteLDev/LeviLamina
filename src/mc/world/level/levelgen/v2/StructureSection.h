@@ -42,9 +42,13 @@ public:
     virtual bool postProcess(::BlockSource&, ::Random&, ::BoundingBox const&) const = 0;
 
     // vIndex: 3
-    virtual bool
-    postProcess(::BlockSource&, ::IRandom&, ::BlockPos, ::BoundingBox const&, ::br::worldgen::JigsawReplacement)
-        const = 0;
+    virtual bool postProcess(
+        ::BlockSource&,
+        ::IRandom&,
+        ::BlockPos,
+        ::BoundingBox const&,
+        ::br::worldgen::JigsawReplacement
+    ) const = 0;
 
     // vIndex: 5
     virtual void placeEntities(::BlockSource&, ::BoundingBox const&) const = 0;

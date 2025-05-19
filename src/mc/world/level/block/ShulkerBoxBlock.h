@@ -51,9 +51,12 @@ public:
     ) const /*override*/;
 
     // vIndex: 9
-    virtual ::AABB const&
-    getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
-        const /*override*/;
+    virtual ::AABB const& getOutline(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferValue
+    ) const /*override*/;
 
     // vIndex: 84
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
@@ -76,9 +79,13 @@ public:
     // NOLINTBEGIN
     MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI ::Block const&
-    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
-        const;
+    MCAPI ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -91,9 +98,12 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI ::AABB const&
-    $getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
-        const;
+    MCAPI ::AABB const& $getOutline(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferValue
+    ) const;
 
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 

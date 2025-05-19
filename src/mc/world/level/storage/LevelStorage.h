@@ -52,9 +52,11 @@ public:
     virtual bool hasKey(::std::string_view, ::DBHelpers::Category) const = 0;
 
     // vIndex: 5
-    virtual void
-    forEachKeyWithPrefix(::std::string_view, ::DBHelpers::Category, ::std::function<void(::std::string_view, ::std::string_view)> const&)
-        const = 0;
+    virtual void forEachKeyWithPrefix(
+        ::std::string_view,
+        ::DBHelpers::Category,
+        ::std::function<void(::std::string_view, ::std::string_view)> const&
+    ) const = 0;
 
     // vIndex: 6
     virtual bool loadLevelData(::LevelData&) = 0;

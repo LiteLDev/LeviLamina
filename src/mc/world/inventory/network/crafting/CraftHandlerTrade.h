@@ -41,8 +41,8 @@ public:
     virtual ~CraftHandlerTrade() /*override*/ = default;
 
     // vIndex: 4
-    virtual ::ItemStackNetResult _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction
-    ) /*override*/;
+    virtual ::ItemStackNetResult
+    _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
 
     // vIndex: 1
     virtual ::ItemStackNetResult handleConsumedItem(

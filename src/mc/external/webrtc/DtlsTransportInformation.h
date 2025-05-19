@@ -37,8 +37,14 @@ public:
 
     MCNAPI explicit DtlsTransportInformation(::webrtc::DtlsTransportState);
 
-    MCNAPI
-    DtlsTransportInformation(::webrtc::DtlsTransportState, ::std::optional<::webrtc::DtlsTransportTlsRole>, ::std::optional<int>, ::std::optional<int>, ::std::optional<int>, ::std::unique_ptr<::rtc::SSLCertChain>);
+    MCNAPI DtlsTransportInformation(
+        ::webrtc::DtlsTransportState,
+        ::std::optional<::webrtc::DtlsTransportTlsRole>,
+        ::std::optional<int>,
+        ::std::optional<int>,
+        ::std::optional<int>,
+        ::std::unique_ptr<::rtc::SSLCertChain>
+    );
 
     MCNAPI ~DtlsTransportInformation();
     // NOLINTEND
@@ -50,8 +56,14 @@ public:
 
     MCNAPI void* $ctor(::webrtc::DtlsTransportState);
 
-    MCNAPI void*
-        $ctor(::webrtc::DtlsTransportState, ::std::optional<::webrtc::DtlsTransportTlsRole>, ::std::optional<int>, ::std::optional<int>, ::std::optional<int>, ::std::unique_ptr<::rtc::SSLCertChain>);
+    MCNAPI void* $ctor(
+        ::webrtc::DtlsTransportState,
+        ::std::optional<::webrtc::DtlsTransportTlsRole>,
+        ::std::optional<int>,
+        ::std::optional<int>,
+        ::std::optional<int>,
+        ::std::unique_ptr<::rtc::SSLCertChain>
+    );
     // NOLINTEND
 
 public:

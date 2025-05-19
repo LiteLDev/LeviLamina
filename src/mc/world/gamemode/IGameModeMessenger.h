@@ -17,9 +17,9 @@ public:
     virtual ~IGameModeMessenger() = default;
 
     // vIndex: 1
-    virtual ::gsl::final_action<::std::function<void()>>
-        createBlockBreakCaptureScope(::std::function<
-                                     void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)>) = 0;
+    virtual ::gsl::final_action<::std::function<void()>> createBlockBreakCaptureScope(
+        ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)>
+    ) = 0;
 
     // vIndex: 2
     virtual void sendDenyDestroyBlock(::BlockPos const&, int) = 0;

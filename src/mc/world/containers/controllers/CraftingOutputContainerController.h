@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/world/containers/controllers/CraftingContainerController.h"
+#include "mc/world/item/ItemInstance.h"
 
 // auto generated forward declare list
 // clang-format off
-class ItemInstance;
 class Recipe;
 // clang-format on
 
@@ -15,15 +15,9 @@ class CraftingOutputContainerController : public ::CraftingContainerController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 128> mUnk730667;
-    ::ll::UntypedStorage<1, 1>   mUnk1402b4;
+    ::ll::TypedStorage<8, 128, ::ItemInstance> mRecipeItem;
+    ::ll::TypedStorage<1, 1, bool>             mIsRecipeCraftable;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CraftingOutputContainerController& operator=(CraftingOutputContainerController const&);
-    CraftingOutputContainerController(CraftingOutputContainerController const&);
-    CraftingOutputContainerController();
 
 public:
     // virtual functions

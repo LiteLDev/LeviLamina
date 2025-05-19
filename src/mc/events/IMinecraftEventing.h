@@ -455,8 +455,10 @@ public:
     virtual ~IMinecraftEventing() /*override*/;
 
     // vIndex: 1
-    virtual void
-    init(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&, ::Bedrock::NonOwnerPointer<::AppPlatform> const&) = 0;
+    virtual void init(
+        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&,
+        ::Bedrock::NonOwnerPointer<::AppPlatform> const&
+    ) = 0;
 
     // vIndex: 2
     virtual void initDeviceAndSessionIds() = 0;
@@ -527,8 +529,12 @@ public:
     ) = 0;
 
     // vIndex: 23
-    virtual void
-    fireEventBlockTypeRegistryChecksumMismatch(::std::string const&, uint64 const&, uint64 const&, ::std::string const&) = 0;
+    virtual void fireEventBlockTypeRegistryChecksumMismatch(
+        ::std::string const&,
+        uint64 const&,
+        uint64 const&,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 3
     virtual void fireEventOnSuccessfulClientLogin(::MultiPlayerLevel const*) = 0;
@@ -544,12 +550,32 @@ public:
     ) = 0;
 
     // vIndex: 26
-    virtual void
-    fireEventPlayerJoinWorld(uint const&, ::SubClientId const, bool, ::std::optional<bool>, ::IConnectionEventing::PlayerJoinWorldAttemptState const, int, ::Connection::DisconnectFailReason, ::TransportLayer, ::IMinecraftEventing::NetworkType, ::Social::MultiplayerState, bool, bool, ::Social::MultiplayerServiceIdentifier, ::std::string const&, ::std::string const&) = 0;
+    virtual void fireEventPlayerJoinWorld(
+        uint const&,
+        ::SubClientId const,
+        bool,
+        ::std::optional<bool>,
+        ::IConnectionEventing::PlayerJoinWorldAttemptState const,
+        int,
+        ::Connection::DisconnectFailReason,
+        ::TransportLayer,
+        ::IMinecraftEventing::NetworkType,
+        ::Social::MultiplayerState,
+        bool,
+        bool,
+        ::Social::MultiplayerServiceIdentifier,
+        ::std::string const&,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 27
-    virtual void
-    fireEventSignalServiceConnect(::SignalServiceConnectStage, bool, ::Json::Value const&, uint64, ::std::string const&) = 0;
+    virtual void fireEventSignalServiceConnect(
+        ::SignalServiceConnectStage,
+        bool,
+        ::Json::Value const&,
+        uint64,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 28
     virtual void fireEventSignalMessagePerformance(uint64, ::MessagePerformance const&) = 0;
@@ -558,8 +584,14 @@ public:
     virtual void fireEventOnClientDisconnect(::SubClientId, bool, ::Connection::DisconnectFailReason) = 0;
 
     // vIndex: 30
-    virtual void
-    fireEventOnServerDisconnect(::Connection::DisconnectFailReason, ::std::string const&, ::SubClientId, ::std::string const&, uint64, ::std::string const&) = 0;
+    virtual void fireEventOnServerDisconnect(
+        ::Connection::DisconnectFailReason,
+        ::std::string const&,
+        ::SubClientId,
+        ::std::string const&,
+        uint64,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 31
     virtual void fireEventHttpClientError(::std::string const&) = 0;
@@ -568,8 +600,13 @@ public:
     virtual void fireGlobalResourcePackCrashRecovery(::PackInstance&, ::mce::UUID, int) = 0;
 
     // vIndex: 1
-    virtual void
-    fireServerConnectionEvent(::IConnectionEventing::ServerConnectionOutcome, uint, double, ::std::string const&, ::std::string const&) = 0;
+    virtual void fireServerConnectionEvent(
+        ::IConnectionEventing::ServerConnectionOutcome,
+        uint,
+        double,
+        ::std::string const&,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 33
     virtual void fireServerConnectionAttemptEvent(::std::string const&, bool, ::std::string const&) = 0;
@@ -582,8 +619,11 @@ public:
     fireEventAppInitFileOpenStats(::Core::Profile::FileCounters const&, ::Core::Profile::FileCounters const&) = 0;
 
     // vIndex: 36
-    virtual void
-    fireEventStartupPerformance(::std::vector<::SerialWorkListLogEntry> const&, ::std::vector<::SerialWorkListLogEntry> const&, ::std::vector<::SerialWorkListLogEntry> const&) = 0;
+    virtual void fireEventStartupPerformance(
+        ::std::vector<::SerialWorkListLogEntry> const&,
+        ::std::vector<::SerialWorkListLogEntry> const&,
+        ::std::vector<::SerialWorkListLogEntry> const&
+    ) = 0;
 
     // vIndex: 37
     virtual void fireEventOnAppStart(::std::vector<::SerialWorkListLogEntry> const&) = 0;
@@ -629,9 +669,10 @@ public:
     virtual void fireEventDevSlashCommandExecuted(::std::string const&, ::std::string const&) = 0;
 
     // vIndex: 51
-    virtual void
-    fireCommandParseTableTelemetry(bool const, ::std::vector<::IMinecraftEventing::CommandParseTableEntry> const&)
-        const = 0;
+    virtual void fireCommandParseTableTelemetry(
+        bool const,
+        ::std::vector<::IMinecraftEventing::CommandParseTableEntry> const&
+    ) const = 0;
 
     // vIndex: 52
     virtual void fireEventPlayerTravelled(::Player*, float) = 0;
@@ -647,16 +688,35 @@ public:
     tryFireEventProgressLoadTimes(::std::string const&, ::std::vector<::std::pair<::std::string, float>> const) = 0;
 
     // vIndex: 56
-    virtual void
-    fireCDNDownloadEvent(::std::string const&, ::std::string const&, ::std::string const&, ::IMinecraftEventing::CDNDownloadResult const&, ::IMinecraftEventing::CDNDownloadEventOrigin const&, float const&) = 0;
+    virtual void fireCDNDownloadEvent(
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&,
+        ::IMinecraftEventing::CDNDownloadResult const&,
+        ::IMinecraftEventing::CDNDownloadEventOrigin const&,
+        float const&
+    ) = 0;
 
     // vIndex: 57
-    virtual void
-    fireEventSignInToIdentity(::IMinecraftEventing::SignInAccountType, ::Social::IdentitySignInTrigger, ::std::string const&, bool, ::IMinecraftEventing::SignInStage, ::Social::SignInResult, int, ::Social::PlayerIDs, ::std::string const&) = 0;
+    virtual void fireEventSignInToIdentity(
+        ::IMinecraftEventing::SignInAccountType,
+        ::Social::IdentitySignInTrigger,
+        ::std::string const&,
+        bool,
+        ::IMinecraftEventing::SignInStage,
+        ::Social::SignInResult,
+        int,
+        ::Social::PlayerIDs,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 58
-    virtual void
-    fireEventSignOutOfIdentity(::IMinecraftEventing::SignInAccountType, ::Social::IdentitySignInTrigger, ::std::string const&, ::std::string const&) = 0;
+    virtual void fireEventSignOutOfIdentity(
+        ::IMinecraftEventing::SignInAccountType,
+        ::Social::IdentitySignInTrigger,
+        ::std::string const&,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 59
     virtual void fireEventAppPaused() = 0;
@@ -783,12 +843,20 @@ public:
     virtual void fireEventJoinCanceled(::LoadingState) = 0;
 
     // vIndex: 95
-    virtual void
-    fireIgnoredNotificationsEvent(::IMinecraftEventing::IgnoredNotificationsType, int, ::std::set<::IMinecraftEventing::IgnoredNotificationSource>) = 0;
+    virtual void fireIgnoredNotificationsEvent(
+        ::IMinecraftEventing::IgnoredNotificationsType,
+        int,
+        ::std::set<::IMinecraftEventing::IgnoredNotificationSource>
+    ) = 0;
 
     // vIndex: 96
-    virtual void
-    fireClubsEngagementEvent(::IMinecraftEventing::ClubsEngagementAction, ::IMinecraftEventing::ClubsEngagementTargetType, char const*, ::Realms::RealmId const, ::std::string const&) = 0;
+    virtual void fireClubsEngagementEvent(
+        ::IMinecraftEventing::ClubsEngagementAction,
+        ::IMinecraftEventing::ClubsEngagementTargetType,
+        char const*,
+        ::Realms::RealmId const,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 97
     virtual void fireClubsOpenFeedScreenEvent(
@@ -913,8 +981,16 @@ public:
     virtual void fireEventServerDrivenLayoutPageLoaded(::RequestTelemetry&, ::std::string, int, int, int, int, int) = 0;
 
     // vIndex: 125
-    virtual void
-    fireEventServerDrivenLayoutImagesLoaded(::RequestTelemetry&, ::std::string, int, uint64, int, int, int, ::std::vector<ushort>&) = 0;
+    virtual void fireEventServerDrivenLayoutImagesLoaded(
+        ::RequestTelemetry&,
+        ::std::string,
+        int,
+        uint64,
+        int,
+        int,
+        int,
+        ::std::vector<ushort>&
+    ) = 0;
 
     // vIndex: 126
     virtual void fireEventArmorStandItemEquipped(::ArmorStand const&, ::ItemDescriptor const&) = 0;
@@ -953,8 +1029,11 @@ public:
     virtual void fireInviteStatusSentImpl(uint, ::std::vector<::std::string>) = 0;
 
     // vIndex: 138
-    virtual void
-        fireDayOneExperienceStateChanged(::IMinecraftEventing::DayOneExperienceState, ::std::optional<uint>, ::std::optional<uint64>) = 0;
+    virtual void fireDayOneExperienceStateChanged(
+        ::IMinecraftEventing::DayOneExperienceState,
+        ::std::optional<uint>,
+        ::std::optional<uint64>
+    ) = 0;
 
     // vIndex: 139
     virtual void fireContentDecryptionFailure(::std::string const&, ::std::string const&, ::std::string const&) = 0;
@@ -1018,8 +1097,10 @@ public:
     virtual void fireEditorScriptAction(::std::string const&, ::std::string const&, ::std::string const&) = 0;
 
     // vIndex: 157
-    virtual void
-        fireEventWorldLoadedClassroomCustomization(::IMinecraftEventing::WorldClassroomCustomization, ::buffer_span<::std::pair<::std::string_view, ::std::string_view>>) = 0;
+    virtual void fireEventWorldLoadedClassroomCustomization(
+        ::IMinecraftEventing::WorldClassroomCustomization,
+        ::buffer_span<::std::pair<::std::string_view, ::std::string_view>>
+    ) = 0;
 
     // vIndex: 158
     virtual void fireClassroomSettingUpdated(::ClassroomSetting, ::SettingsScreenMode) = 0;
@@ -1054,9 +1135,11 @@ public:
     virtual void fireUserGeneratedUriLaunched(::UserGeneratedUriSource) const = 0;
 
     // vIndex: 167
-    virtual void
-    fireUserGeneratedUriLaunchFailed(::UserGeneratedUriSource, ::Util::ResourceUri::ValidationStatus, ::std::string const&)
-        const = 0;
+    virtual void fireUserGeneratedUriLaunchFailed(
+        ::UserGeneratedUriSource,
+        ::Util::ResourceUri::ValidationStatus,
+        ::std::string const&
+    ) const = 0;
 
     // vIndex: 168
     virtual void fireEventEmptyLibraryCategoryError(::std::string const&) const = 0;
@@ -1095,9 +1178,12 @@ public:
     virtual void fireLessonCompleteDialogOpened(::IMinecraftEventing::LessonCompleteDialogEntryPoint const) const = 0;
 
     // vIndex: 175
-    virtual void
-    fireInAppCodeBuilderActivated(::OpenCodeMethod, ::std::string const&, ::std::string const&, ::std::string const&)
-        const = 0;
+    virtual void fireInAppCodeBuilderActivated(
+        ::OpenCodeMethod,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&
+    ) const = 0;
 
     // vIndex: 176
     virtual void fireInAppCodeBuilderDismissed(::std::string const&) const = 0;
@@ -1118,9 +1204,11 @@ public:
     virtual void fireEventCodeBuilderClosed() const = 0;
 
     // vIndex: 182
-    virtual void
-    fireEventCodeBuilderLog(::Webview::TelemetryCommonProperties const&, ::std::string const&, ::std::string&)
-        const = 0;
+    virtual void fireEventCodeBuilderLog(
+        ::Webview::TelemetryCommonProperties const&,
+        ::std::string const&,
+        ::std::string&
+    ) const = 0;
 
     // vIndex: 183
     virtual void fireEventCodeBuilderScoreChanged(::std::string const&, int const) const = 0;
@@ -1129,17 +1217,23 @@ public:
     virtual void fireEventCodeBuilderRuntimeAction(::std::string const&) const = 0;
 
     // vIndex: 185
-    virtual void
-    fireEventEduServiceStatus(::std::string const&, ::std::string const&, int, ::buffer_span<::std::pair<::std::string_view, ::std::string_view>>)
-        const = 0;
+    virtual void fireEventEduServiceStatus(
+        ::std::string const&,
+        ::std::string const&,
+        int,
+        ::buffer_span<::std::pair<::std::string_view, ::std::string_view>>
+    ) const = 0;
 
     // vIndex: 186
     virtual void fireEventWebviewDownload(::std::string const&, ::WebviewDownloadInfo const&) const = 0;
 
     // vIndex: 187
-    virtual void
-    fireEduServiceRequestFailed(::std::string const&, ::std::string const&, ::std::string const&, ::buffer_span<::std::pair<::std::string_view, ::std::string_view>>)
-        const = 0;
+    virtual void fireEduServiceRequestFailed(
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&,
+        ::buffer_span<::std::pair<::std::string_view, ::std::string_view>>
+    ) const = 0;
 
     // vIndex: 188
     virtual void
@@ -1272,12 +1366,23 @@ public:
     virtual void fireEventUnknownBlockReceived(::NewBlockID const&, ushort) = 0;
 
     // vIndex: 227
-    virtual void
-    fireEventSignInEdu(::std::string const&, ::edu::Role, ::Identity::EduSignInStage, ::std::string const&, ::std::string const&, ::std::vector<::std::pair<::std::string, ::std::string>> const&) = 0;
+    virtual void fireEventSignInEdu(
+        ::std::string const&,
+        ::edu::Role,
+        ::Identity::EduSignInStage,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::vector<::std::pair<::std::string, ::std::string>> const&
+    ) = 0;
 
     // vIndex: 228
-    virtual void
-    fireEventSignOutEdu(::std::string const&, ::edu::Role, ::std::string const&, ::std::string const&, ::std::string const&) = 0;
+    virtual void fireEventSignOutEdu(
+        ::std::string const&,
+        ::edu::Role,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 229
     virtual void fireEventSwitchAccountEdu(::std::string const&, ::edu::Role, ::std::string const&) = 0;
@@ -1295,18 +1400,36 @@ public:
     ) = 0;
 
     // vIndex: 232
-    virtual void
-    fireEventPlayIntegrityCheck(::std::string const&, ::std::string const&, ::std::string const&, ::std::string const&) = 0;
+    virtual void fireEventPlayIntegrityCheck(
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 233
-    virtual void
-    fireEventCloudOperationStartedEdu(::EduCloudUtils::Operation const, ::std::string const&, uint64 const, ::std::optional<::std::string> const&) = 0;
+    virtual void fireEventCloudOperationStartedEdu(
+        ::EduCloudUtils::Operation const,
+        ::std::string const&,
+        uint64 const,
+        ::std::optional<::std::string> const&
+    ) = 0;
 
     // vIndex: 234
     virtual void fireEventCloudMyWorldsSummary(int const, int const, int const, int const, int const) = 0;
 
     // vIndex: 235
-    virtual void fireEventCloudOperationEndedEdu(::EduCloudUtils::Operation const, ::std::string const&, ::std::chrono::milliseconds const, uint const, uint64 const, ::std::optional<::std::string> const&, ::std::optional<::std::string> const&, ::std::optional<::std::string> const&, ::std::optional<::std::string> const&) = 0;
+    virtual void fireEventCloudOperationEndedEdu(
+        ::EduCloudUtils::Operation const,
+        ::std::string const&,
+        ::std::chrono::milliseconds const,
+        uint const,
+        uint64 const,
+        ::std::optional<::std::string> const&,
+        ::std::optional<::std::string> const&,
+        ::std::optional<::std::string> const&,
+        ::std::optional<::std::string> const&
+    ) = 0;
 
     // vIndex: 236
     virtual void fireEventCloudConflictCheckEdu(::std::string const&, ::EduCloud::ConflictResolutionStatus const) = 0;
@@ -1333,8 +1456,15 @@ public:
     virtual void fireEventPushNotificationOpened(::std::string const&, ::std::string const&) = 0;
 
     // vIndex: 244
-    virtual void
-    firePerfTestEvent(::std::string const&, ::std::string const&, ::std::string const&, uint, uint, ::std::string const&, ::std::vector<::std::pair<::std::string, float>> const&) = 0;
+    virtual void firePerfTestEvent(
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&,
+        uint,
+        uint,
+        ::std::string const&,
+        ::std::vector<::std::pair<::std::string, float>> const&
+    ) = 0;
 
     // vIndex: 245
     virtual void fireEventLicenseCheck(bool, ::ExtraLicenseData&) = 0;
@@ -1352,8 +1482,14 @@ public:
     virtual void fireEventCopyWorldEducationEnabled() = 0;
 
     // vIndex: 250
-    virtual void
-    fireEventBundleSubOfferClicked(int, int, ::std::string const&, ::std::string const&, bool, ::std::string const&) = 0;
+    virtual void fireEventBundleSubOfferClicked(
+        int,
+        int,
+        ::std::string const&,
+        ::std::string const&,
+        bool,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 252
     virtual void fireEventStoreOfferClicked(::Social::eventData::StoreOfferClickedData const&) = 0;
@@ -1368,8 +1504,15 @@ public:
     virtual void fireEventStoreSearch(::storeSearch::TelemetryData const&) = 0;
 
     // vIndex: 255
-    virtual void
-    fireEventSearchItemSelected(int const, int const, ::std::string const&, int const, int const, int const, ::std::string const&) = 0;
+    virtual void fireEventSearchItemSelected(
+        int const,
+        int const,
+        ::std::string const&,
+        int const,
+        int const,
+        int const,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 256
     virtual void fireEventRealmsSubscriptionPurchaseStarted(::ProductSku const&, ::RealmsPurchaseIntent) = 0;
@@ -1385,12 +1528,25 @@ public:
     ) = 0;
 
     // vIndex: 259
-    virtual void
-    fireEventRealmsPurchaseFulfillment(::std::string const&, ::std::string const&, ::std::string const&, ::PurchasePath, ::RealmsPurchaseFlow, ::RealmsPurchaseFulfillmentStage, ::std::string const&) = 0;
+    virtual void fireEventRealmsPurchaseFulfillment(
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&,
+        ::PurchasePath,
+        ::RealmsPurchaseFlow,
+        ::RealmsPurchaseFulfillmentStage,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 260
-    virtual void
-    fireEventRealmsPurchaseFailure(::RealmsOfferPeriod, ::RealmsOfferTier, bool, ::RealmsPurchaseFailureStage, ::RealmsPurchaseFailureReason, ::std::vector<::Offer*> const&) = 0;
+    virtual void fireEventRealmsPurchaseFailure(
+        ::RealmsOfferPeriod,
+        ::RealmsOfferTier,
+        bool,
+        ::RealmsPurchaseFailureStage,
+        ::RealmsPurchaseFailureReason,
+        ::std::vector<::Offer*> const&
+    ) = 0;
 
     // vIndex: 261
     virtual void fireEventUserListUpdated(::std::string const&, ::std::string const&, ::std::string const&, bool) = 0;
@@ -1461,8 +1617,11 @@ public:
     virtual void fireEventLevelDatLoadFailed(::std::string const&, ::std::string const&, bool) = 0;
 
     // vIndex: 279
-    virtual void
-    fireEventWorldCorruptionCausedWorldShutdown(::LevelStorageEventingContext const&, ::std::string const&, ::std::optional<bool>) = 0;
+    virtual void fireEventWorldCorruptionCausedWorldShutdown(
+        ::LevelStorageEventingContext const&,
+        ::std::string const&,
+        ::std::optional<bool>
+    ) = 0;
 
     // vIndex: 280
     virtual void fireEventClientLeftGameDueToUnrecoverableError(::std::string const&, bool) = 0;
@@ -1478,8 +1637,10 @@ public:
     ) = 0;
 
     // vIndex: 283
-    virtual void
-    fireEventLevelDBPerformanceData(::LevelStorageEventingContext const&, ::DBStoragePerformanceTelemetryData const&) = 0;
+    virtual void fireEventLevelDBPerformanceData(
+        ::LevelStorageEventingContext const&,
+        ::DBStoragePerformanceTelemetryData const&
+    ) = 0;
 
     // vIndex: 284
     virtual void fireEventSidebarNavigation(
@@ -1518,8 +1679,20 @@ public:
     virtual void fireEventPersonaSkinChanged(::std::string const&, ::std::string const&, bool) = 0;
 
     // vIndex: 289
-    virtual void
-    fireEventPersonaAvatarUpdated(::std::string const&, ::std::vector<::std::string> const&, ::std::vector<bool> const&, ::std::vector<bool> const&, bool, bool, ::std::string const&, ::std::string const&, ::std::string const&, bool, ::std::vector<::std::string> const&, ::std::vector<::std::string> const&) = 0;
+    virtual void fireEventPersonaAvatarUpdated(
+        ::std::string const&,
+        ::std::vector<::std::string> const&,
+        ::std::vector<bool> const&,
+        ::std::vector<bool> const&,
+        bool,
+        bool,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&,
+        bool,
+        ::std::vector<::std::string> const&,
+        ::std::vector<::std::string> const&
+    ) = 0;
 
     // vIndex: 290
     virtual void fireEventPersonaAvatarsListed(::std::vector<::std::string> const&) = 0;
@@ -1555,8 +1728,14 @@ public:
     ) = 0;
 
     // vIndex: 297
-    virtual void
-    fireEventPersonaCreationFailed(::std::string const&, ::std::string const&, bool, bool, ::std::string const&, ::std::string const&) = 0;
+    virtual void fireEventPersonaCreationFailed(
+        ::std::string const&,
+        ::std::string const&,
+        bool,
+        bool,
+        ::std::string const&,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 298
     virtual void fireEventPersonaCategoryInformation(::std::string const&) = 0;
@@ -1565,16 +1744,25 @@ public:
     virtual void fireEventDisplayLoggedError(::std::string const) = 0;
 
     // vIndex: 300
-    virtual void
-    fireEventWorldHistoryPackSourceMissingDuringUpgrade(::std::string const&, ::std::string const&, ::std::string const&) = 0;
+    virtual void fireEventWorldHistoryPackSourceMissingDuringUpgrade(
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 301
-    virtual void
-    fireStructureBlockAction(::IMinecraftEventing::StructureBlockActionType, ::StructureEditorData const&, ::StructureTelemetryClientData const*) = 0;
+    virtual void fireStructureBlockAction(
+        ::IMinecraftEventing::StructureBlockActionType,
+        ::StructureEditorData const&,
+        ::StructureTelemetryClientData const*
+    ) = 0;
 
     // vIndex: 302
-    virtual void
-    fireStructureBlockRedstoneActivated(::IMinecraftEventing::StructureBlockActionType, ::StructureEditorData const&, ::StructureTelemetryClientData const*) = 0;
+    virtual void fireStructureBlockRedstoneActivated(
+        ::IMinecraftEventing::StructureBlockActionType,
+        ::StructureEditorData const&,
+        ::StructureTelemetryClientData const*
+    ) = 0;
 
     // vIndex: 303
     virtual void fireEventOreUIError(uint const&, ::std::string const&) = 0;
@@ -1596,8 +1784,12 @@ public:
     virtual void fireEventDeviceAccountSuccess(bool, ::std::string const&) = 0;
 
     // vIndex: 309
-    virtual void
-    fireEventDeviceAccountFailure(::IMinecraftEventing::SignInStage, ::IMinecraftEventing::DeviceAccountFailurePhase, uint, ::std::string const&) = 0;
+    virtual void fireEventDeviceAccountFailure(
+        ::IMinecraftEventing::SignInStage,
+        ::IMinecraftEventing::DeviceAccountFailurePhase,
+        uint,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 310
     virtual ::std::shared_ptr<void*> requestEventDeferment() = 0;
@@ -1618,8 +1810,11 @@ public:
     virtual void fireDBStorageError(::LevelStorageEventingContext const&, ::std::string const&) = 0;
 
     // vIndex: 316
-    virtual void
-    fireServerStarted(::IMinecraftEventing::ServerType, ::std::string const&, ::std::unordered_map<::std::string, ::std::string> const&) = 0;
+    virtual void fireServerStarted(
+        ::IMinecraftEventing::ServerType,
+        ::std::string const&,
+        ::std::unordered_map<::std::string, ::std::string> const&
+    ) = 0;
 
     // vIndex: 317
     virtual void fireServerShutdown(::std::string const&) = 0;
@@ -1640,8 +1835,14 @@ public:
     ) = 0;
 
     // vIndex: 319
-    virtual void
-    fireBannedSkinVerificationEvent(uint const&, ::std::string const&, ::std::string const&, bool, int const, ::std::string const&) = 0;
+    virtual void fireBannedSkinVerificationEvent(
+        uint const&,
+        ::std::string const&,
+        ::std::string const&,
+        bool,
+        int const,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 320
     virtual void fireEventPlayerReportSent(bool, ::std::string const&, ::std::string const&, ::std::string const&) = 0;
@@ -1681,12 +1882,28 @@ public:
     virtual void fireEventMuteUser(::std::string const&, bool, bool) = 0;
 
     // vIndex: 329
-    virtual void
-    fireStorageMigrationEvent(bool, ::Bedrock::StorageMigration::StorageMigrationType, int, int, ::std::chrono::nanoseconds, ::std::string const&) = 0;
+    virtual void fireStorageMigrationEvent(
+        bool,
+        ::Bedrock::StorageMigration::StorageMigrationType,
+        int,
+        int,
+        ::std::chrono::nanoseconds,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 330
-    virtual void
-    fireEventConnectedStorageResult(::ConnectedStorageEventType, bool, uint, ::std::optional<uint>, ::std::string const&, ::std::string const&, int64, ::std::optional<uint>, ::std::optional<uint>, ::std::optional<uint>) = 0;
+    virtual void fireEventConnectedStorageResult(
+        ::ConnectedStorageEventType,
+        bool,
+        uint,
+        ::std::optional<uint>,
+        ::std::string const&,
+        ::std::string const&,
+        int64,
+        ::std::optional<uint>,
+        ::std::optional<uint>,
+        ::std::optional<uint>
+    ) = 0;
 
     // vIndex: 331
     virtual void fireEventConnectedStorageError(char const*, ::std::string const&, int64) = 0;
@@ -1773,11 +1990,30 @@ public:
     virtual void fireEventWriteBudgetLow(uint64, float, ::std::chrono::nanoseconds, bool, ::std::string const&) = 0;
 
     // vIndex: 355
-    virtual void
-    fireEventWriteBudgetReplenished(::std::chrono::nanoseconds, uint64, ::std::optional<uint64>, ::std::chrono::nanoseconds, bool, ::std::string const&) = 0;
+    virtual void fireEventWriteBudgetReplenished(
+        ::std::chrono::nanoseconds,
+        uint64,
+        ::std::optional<uint64>,
+        ::std::chrono::nanoseconds,
+        bool,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 356
-    virtual void fireEventLargeFileWriteStall(uint64, ::std::vector<::std::string> const&, ::std::chrono::nanoseconds, ::std::chrono::nanoseconds, ::std::string const&, uint64, bool, ::std::chrono::nanoseconds, ::std::chrono::nanoseconds, int, uint64, ::std::vector<::std::string> const&) = 0;
+    virtual void fireEventLargeFileWriteStall(
+        uint64,
+        ::std::vector<::std::string> const&,
+        ::std::chrono::nanoseconds,
+        ::std::chrono::nanoseconds,
+        ::std::string const&,
+        uint64,
+        bool,
+        ::std::chrono::nanoseconds,
+        ::std::chrono::nanoseconds,
+        int,
+        uint64,
+        ::std::vector<::std::string> const&
+    ) = 0;
 
     // vIndex: 357
     virtual void fireEventLowMemoryDetected(::LowMemoryReport const&) = 0;

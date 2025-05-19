@@ -65,9 +65,13 @@ public:
 
     MCNAPI bool $isInteractiveBlock() const;
 
-    MCNAPI ::Block const&
-    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
-        const;
+    MCNAPI ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     MCNAPI int $getVariant(::Block const& block) const;
 

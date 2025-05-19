@@ -22,8 +22,8 @@ namespace CameraAimAssistSystemUtil {
 // NOLINTBEGIN
 MCNAPI void clearAimAssistForServerPlayer(::ServerPlayer& player);
 
-MCNAPI ::std::optional<::CameraAimAssistPacket::TargetMode> getPacketTargetMode(::CameraAimAssist::TargetMode targetMode
-);
+MCNAPI ::std::optional<::CameraAimAssistPacket::TargetMode>
+getPacketTargetMode(::CameraAimAssist::TargetMode targetMode);
 
 MCNAPI ::Bedrock::Result<
     void,

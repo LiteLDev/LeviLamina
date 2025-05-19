@@ -19,8 +19,13 @@ class StructureTemplate;
 namespace gametest::StructureUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI void
-AddCommandBlockAndButtonToStartTest(::BlockPos const& structureBlockPos, ::Rotation commandBlockPosRelativeToTestPos, ::BlockPos const& testName, ::std::string const& region, ::BlockSource&);
+MCNAPI void AddCommandBlockAndButtonToStartTest(
+    ::BlockPos const&    structureBlockPos,
+    ::Rotation           commandBlockPosRelativeToTestPos,
+    ::BlockPos const&    testName,
+    ::std::string const& region,
+    ::BlockSource&
+);
 
 MCNAPI void ClearSpaceForStructure(::BoundingBox const& structureBoundingBox, int structureYPos, ::BlockSource& region);
 
@@ -44,8 +49,13 @@ MCNAPI ::StructureEditorData GetStructureEditorData(::StructureTemplate const& s
 
 MCNAPI ::StructureTemplate* GetStructureTemplate(::std::string const& structureName, ::Level& level);
 
-MCNAPI ::StructureBlockActor*
-SpawnStructure(::std::string const& structureName, ::BlockPos const& northWestCorner, ::Rotation rotation, int region, ::BlockSource&);
+MCNAPI ::StructureBlockActor* SpawnStructure(
+    ::std::string const& structureName,
+    ::BlockPos const&    northWestCorner,
+    ::Rotation           rotation,
+    int                  region,
+    ::BlockSource&
+);
 // NOLINTEND
 
 } // namespace gametest::StructureUtils

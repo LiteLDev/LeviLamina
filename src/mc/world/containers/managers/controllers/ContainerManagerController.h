@@ -3,16 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/containers/controllers/ItemTakeType.h"
 #include "mc/world/inventory/simulation/ContainerScreenRequestActionType.h"
 
 // auto generated forward declare list
 // clang-format off
+class ContainerController;
+class ContainerManagerModel;
+class ContainerScreenSimulation;
 class ItemInstance;
 class ItemStackBase;
 struct AutoPlaceItem;
 struct AutoPlaceResult;
 struct ContainerScreenActionResult;
+struct ContainerSimulationSplitStack;
+struct ContainerSplitControl;
 struct CreateContainerItemScope;
 struct ItemStackRequestScope;
 struct ItemTransferAmount;
@@ -25,22 +31,17 @@ class ContainerManagerController : public ::std::enable_shared_from_this<::Conta
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkadaa15;
-    ::ll::UntypedStorage<8, 64> mUnk2dbc14;
-    ::ll::UntypedStorage<8, 24> mUnke71ce9;
-    ::ll::UntypedStorage<8, 24> mUnk971323;
-    ::ll::UntypedStorage<4, 4>  mUnk2c60ae;
-    ::ll::UntypedStorage<1, 1>  mUnkc572c7;
-    ::ll::UntypedStorage<1, 1>  mUnk30c438;
-    ::ll::UntypedStorage<8, 8>  mUnk21b1d4;
-    ::ll::UntypedStorage<8, 16> mUnkdde86c;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ContainerManagerModel>> mContainerManagerModel;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::shared_ptr<::ContainerController>>>
+                                                                              mContainers;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ContainerSplitControl>>         mContainerSplitItemStackItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ContainerSimulationSplitStack>> mContainerSimulationSplitItemStacks;
+    ::ll::TypedStorage<4, 4, int>                                             mSplitItemRemainder;
+    ::ll::TypedStorage<1, 1, bool>                                            mContainerDirty;
+    ::ll::TypedStorage<1, 1, bool>                                            mContainersClosed;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ContainerScreenSimulation>>  mSimulation;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mDynamicContainerNotifier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerManagerController& operator=(ContainerManagerController const&);
-    ContainerManagerController(ContainerManagerController const&);
-    ContainerManagerController();
 
 public:
     // virtual functions
@@ -95,8 +96,12 @@ public:
     handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&);
 
     // vIndex: 16
-    virtual int
-    handleAutoPlaceStack(::SlotData const&, ::ItemTakeType, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&);
+    virtual int handleAutoPlaceStack(
+        ::SlotData const&,
+        ::ItemTakeType,
+        ::std::vector<::AutoPlaceItem> const&,
+        ::std::vector<::AutoPlaceResult>&
+    );
 
     // vIndex: 17
     virtual void handleSplitSingle(::SlotData const&, ::SlotData const&);
@@ -132,8 +137,11 @@ public:
     virtual bool isOutputSlot(::std::string const&) const;
 
     // vIndex: 28
-    virtual void
-    _updateItemStackRequest(::ContainerScreenRequestActionType, ::ContainerScreenActionResult const&, ::ItemStackRequestScope&);
+    virtual void _updateItemStackRequest(
+        ::ContainerScreenRequestActionType,
+        ::ContainerScreenActionResult const&,
+        ::ItemStackRequestScope&
+    );
 
     // vIndex: 29
     virtual ::CreateContainerItemScope _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&);

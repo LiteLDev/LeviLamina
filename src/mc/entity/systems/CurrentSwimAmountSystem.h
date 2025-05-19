@@ -24,10 +24,12 @@ public:
         ::ActorDataFlagComponent const& synchedActorDataComponent
     );
 
-    MCNAPI static void tick(::ViewT<
-                            ::StrictEntityContext,
-                            ::Include<::ActorMovementTickNeededComponent>,
-                            ::SwimAmountComponent,
-                            ::ActorDataFlagComponent const> view);
+    MCNAPI static void tick(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent>,
+            ::SwimAmountComponent,
+            ::ActorDataFlagComponent const> view
+    );
     // NOLINTEND
 };

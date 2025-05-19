@@ -37,8 +37,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual ::Bedrock::PubSub::Subscription subscribeToBossEvent(::std::function<void(::BossEventUpdateType)> callback
-    ) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription
+    subscribeToBossEvent(::std::function<void(::BossEventUpdateType)> callback) /*override*/;
 
     // vIndex: 1
     virtual ::Bedrock::PubSub::Subscription subscribeToBossEvent(

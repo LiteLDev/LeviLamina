@@ -79,9 +79,13 @@ public:
     virtual void entitySpawned(::Player const* player, int mobType, uint spawnMethod) const /*override*/;
 
     // vIndex: 12
-    virtual void
-    itemAcquired(::Player const* player, ::ItemDescriptor const& item, int, uint amountAcquired, int acquisitionMethod)
-        const /*override*/;
+    virtual void itemAcquired(
+        ::Player const*         player,
+        ::ItemDescriptor const& item,
+        int,
+        uint amountAcquired,
+        int  acquisitionMethod
+    ) const /*override*/;
 
     // vIndex: 13
     virtual void itemCrafted(
@@ -169,9 +173,12 @@ public:
     virtual void playerTransform(::Player const* player) const /*override*/;
 
     // vIndex: 29
-    virtual void
-    playerTravelled(::Player const* player, float metersTravelledSinceLastEvent, int travelMethodType, int newBiome)
-        const /*override*/;
+    virtual void playerTravelled(
+        ::Player const* player,
+        float           metersTravelledSinceLastEvent,
+        int             travelMethodType,
+        int             newBiome
+    ) const /*override*/;
 
     // vIndex: 30
     virtual void targetBlockHit(::Player const* player, int const redstoneLevel) const /*override*/;
@@ -216,9 +223,13 @@ public:
 
     MCNAPI void $entitySpawned(::Player const* player, int mobType, uint spawnMethod) const;
 
-    MCNAPI void
-    $itemAcquired(::Player const* player, ::ItemDescriptor const& item, int, uint amountAcquired, int acquisitionMethod)
-        const;
+    MCNAPI void $itemAcquired(
+        ::Player const*         player,
+        ::ItemDescriptor const& item,
+        int,
+        uint amountAcquired,
+        int  acquisitionMethod
+    ) const;
 
     MCNAPI void $itemCrafted(
         ::Player const*       player,
@@ -284,9 +295,12 @@ public:
 
     MCNAPI void $playerTransform(::Player const* player) const;
 
-    MCNAPI void
-    $playerTravelled(::Player const* player, float metersTravelledSinceLastEvent, int travelMethodType, int newBiome)
-        const;
+    MCNAPI void $playerTravelled(
+        ::Player const* player,
+        float           metersTravelledSinceLastEvent,
+        int             travelMethodType,
+        int             newBiome
+    ) const;
 
     MCNAPI void $targetBlockHit(::Player const* player, int const redstoneLevel) const;
 

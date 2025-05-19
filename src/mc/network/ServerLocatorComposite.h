@@ -78,9 +78,11 @@ public:
     virtual float getPingTimeForGUID(::std::string const&) /*override*/;
 
     // vIndex: 13
-    virtual void
-    checkCanConnectToCustomServerAsync(::std::string, int, ::std::function<void(::ServerConnectivityTestResult)>) /*override*/
-        ;
+    virtual void checkCanConnectToCustomServerAsync(
+        ::std::string,
+        int,
+        ::std::function<void(::ServerConnectivityTestResult)>
+    ) /*override*/;
 
     // vIndex: 1
     virtual void _onDisable() /*override*/;

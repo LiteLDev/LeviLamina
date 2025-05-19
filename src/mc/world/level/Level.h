@@ -1296,8 +1296,8 @@ public:
     virtual ::std::vector<::ChunkPos> const& getClientTickingOffsets() const /*override*/;
 
     // vIndex: 253
-    virtual ::std::vector<::ChunkPos> getSortedPositionsFromClientOffsets(::std::vector<::ChunkPos> const& centers
-    ) const /*override*/;
+    virtual ::std::vector<::ChunkPos>
+    getSortedPositionsFromClientOffsets(::std::vector<::ChunkPos> const& centers) const /*override*/;
 
     // vIndex: 254
     virtual ::Bedrock::NotNullNonOwnerPtr<::ChunkTickOffsetManager const> getChunkTickOffsetManager() const
@@ -2491,8 +2491,8 @@ public:
 
     MCAPI ::std::vector<::ChunkPos> const& $getClientTickingOffsets() const;
 
-    MCAPI ::std::vector<::ChunkPos> $getSortedPositionsFromClientOffsets(::std::vector<::ChunkPos> const& centers
-    ) const;
+    MCAPI ::std::vector<::ChunkPos>
+    $getSortedPositionsFromClientOffsets(::std::vector<::ChunkPos> const& centers) const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ChunkTickOffsetManager const> $getChunkTickOffsetManager() const;
 

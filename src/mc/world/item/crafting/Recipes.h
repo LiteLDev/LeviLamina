@@ -216,12 +216,22 @@ public:
         ::std::vector<::Recipes::Type> const& types,
         ::std::vector<::HashedString> const&  tags,
         int                                   constructor,
-        ::std::function<::std::unique_ptr<
-            ::ShapedRecipe>(::std::string, int, int, ::std::vector<::RecipeIngredient> const&, ::std::vector<::ItemInstance> const&, ::HashedString, bool, int, ::mce::UUID const*, ::RecipeUnlockingRequirement const&, ::SemVersion const&)>
-                                            unlockingReq,
-        ::RecipeUnlockingRequirement const& formatVersion,
-        ::SemVersion const&                 priority,
-        bool                                assumeSymmetry
+        ::std::function<::std::unique_ptr<::ShapedRecipe>(
+            ::std::string,
+            int,
+            int,
+            ::std::vector<::RecipeIngredient> const&,
+            ::std::vector<::ItemInstance> const&,
+            ::HashedString,
+            bool,
+            int,
+            ::mce::UUID const*,
+            ::RecipeUnlockingRequirement const&,
+            ::SemVersion const&
+        )>                                    unlockingReq,
+        ::RecipeUnlockingRequirement const&   formatVersion,
+        ::SemVersion const&                   priority,
+        bool                                  assumeSymmetry
     );
 
     MCAPI void addShapedRecipe(
@@ -231,12 +241,22 @@ public:
         ::std::vector<::Recipes::Type> const& types,
         ::std::vector<::HashedString> const&  tags,
         int                                   priority,
-        ::std::function<::std::unique_ptr<
-            ::ShapedRecipe>(::std::string, int, int, ::std::vector<::RecipeIngredient> const&, ::std::vector<::ItemInstance> const&, ::HashedString, bool, int, ::mce::UUID const*, ::RecipeUnlockingRequirement const&, ::SemVersion const&)>
-                                            constructor,
-        ::RecipeUnlockingRequirement const& unlockingReq,
-        ::SemVersion const&                 formatVersion,
-        bool                                assumeSymmetry
+        ::std::function<::std::unique_ptr<::ShapedRecipe>(
+            ::std::string,
+            int,
+            int,
+            ::std::vector<::RecipeIngredient> const&,
+            ::std::vector<::ItemInstance> const&,
+            ::HashedString,
+            bool,
+            int,
+            ::mce::UUID const*,
+            ::RecipeUnlockingRequirement const&,
+            ::SemVersion const&
+        )>                                    constructor,
+        ::RecipeUnlockingRequirement const&   unlockingReq,
+        ::SemVersion const&                   formatVersion,
+        bool                                  assumeSymmetry
     );
 
     MCAPI void addShapedRecipe(
@@ -246,12 +266,22 @@ public:
         ::std::vector<::Recipes::Type> const& types,
         ::std::vector<::HashedString> const&  tags,
         int                                   priority,
-        ::std::function<::std::unique_ptr<
-            ::ShapedRecipe>(::std::string, int, int, ::std::vector<::RecipeIngredient> const&, ::std::vector<::ItemInstance> const&, ::HashedString, bool, int, ::mce::UUID const*, ::RecipeUnlockingRequirement const&, ::SemVersion const&)>
-                                            constructor,
-        ::RecipeUnlockingRequirement const& unlockingReq,
-        ::SemVersion const&                 formatVersion,
-        bool                                assumeSymmetry
+        ::std::function<::std::unique_ptr<::ShapedRecipe>(
+            ::std::string,
+            int,
+            int,
+            ::std::vector<::RecipeIngredient> const&,
+            ::std::vector<::ItemInstance> const&,
+            ::HashedString,
+            bool,
+            int,
+            ::mce::UUID const*,
+            ::RecipeUnlockingRequirement const&,
+            ::SemVersion const&
+        )>                                    constructor,
+        ::RecipeUnlockingRequirement const&   unlockingReq,
+        ::SemVersion const&                   formatVersion,
+        bool                                  assumeSymmetry
     );
 
     MCAPI void addShapedRecipe(
@@ -262,12 +292,22 @@ public:
         ::std::vector<::Recipes::Type> const& types,
         ::std::vector<::HashedString> const&  tags,
         int                                   priority,
-        ::std::function<::std::unique_ptr<
-            ::ShapedRecipe>(::std::string, int, int, ::std::vector<::RecipeIngredient> const&, ::std::vector<::ItemInstance> const&, ::HashedString, bool, int, ::mce::UUID const*, ::RecipeUnlockingRequirement const&, ::SemVersion const&)>
-                                            constructor,
-        ::RecipeUnlockingRequirement const& unlockingReq,
-        ::SemVersion const&                 formatVersion,
-        bool                                assumeSymmetry
+        ::std::function<::std::unique_ptr<::ShapedRecipe>(
+            ::std::string,
+            int,
+            int,
+            ::std::vector<::RecipeIngredient> const&,
+            ::std::vector<::ItemInstance> const&,
+            ::HashedString,
+            bool,
+            int,
+            ::mce::UUID const*,
+            ::RecipeUnlockingRequirement const&,
+            ::SemVersion const&
+        )>                                    constructor,
+        ::RecipeUnlockingRequirement const&   unlockingReq,
+        ::SemVersion const&                   formatVersion,
+        bool                                  assumeSymmetry
     );
 
     MCAPI void addShapedRecipe(
@@ -279,12 +319,22 @@ public:
         ::std::vector<::Recipes::Type> const& types,
         ::std::vector<::HashedString> const&  tags,
         int                                   priority,
-        ::std::function<::std::unique_ptr<
-            ::ShapedRecipe>(::std::string, int, int, ::std::vector<::RecipeIngredient> const&, ::std::vector<::ItemInstance> const&, ::HashedString, bool, int, ::mce::UUID const*, ::RecipeUnlockingRequirement const&, ::SemVersion const&)>
-                                            constructor,
-        ::RecipeUnlockingRequirement const& unlockingReq,
-        ::SemVersion const&                 formatVersion,
-        bool                                assumeSymmetry
+        ::std::function<::std::unique_ptr<::ShapedRecipe>(
+            ::std::string,
+            int,
+            int,
+            ::std::vector<::RecipeIngredient> const&,
+            ::std::vector<::ItemInstance> const&,
+            ::HashedString,
+            bool,
+            int,
+            ::mce::UUID const*,
+            ::RecipeUnlockingRequirement const&,
+            ::SemVersion const&
+        )>                                    constructor,
+        ::RecipeUnlockingRequirement const&   unlockingReq,
+        ::SemVersion const&                   formatVersion,
+        bool                                  assumeSymmetry
     );
 
     MCAPI void addShapelessRecipe(
@@ -293,11 +343,18 @@ public:
         ::std::vector<::Recipes::Type> const& types,
         ::std::vector<::HashedString> const&  tags,
         int                                   priority,
-        ::std::function<::std::unique_ptr<
-            ::ShapelessRecipe>(::std::string, ::std::vector<::RecipeIngredient> const&, ::std::vector<::ItemInstance> const&, ::HashedString, int, ::mce::UUID const*, ::RecipeUnlockingRequirement const&, ::SemVersion const&)>
-                                            constructor,
-        ::RecipeUnlockingRequirement const& unlockingReq,
-        ::SemVersion const&                 formatVersion
+        ::std::function<::std::unique_ptr<::ShapelessRecipe>(
+            ::std::string,
+            ::std::vector<::RecipeIngredient> const&,
+            ::std::vector<::ItemInstance> const&,
+            ::HashedString,
+            int,
+            ::mce::UUID const*,
+            ::RecipeUnlockingRequirement const&,
+            ::SemVersion const&
+        )>                                    constructor,
+        ::RecipeUnlockingRequirement const&   unlockingReq,
+        ::SemVersion const&                   formatVersion
     );
 
     MCAPI void addShulkerBoxRecipe(

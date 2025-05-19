@@ -3,21 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/containers/managers/controllers/ContainerManagerController.h"
+
+// auto generated forward declare list
+// clang-format off
+class HudContainerManagerModel;
+// clang-format on
 
 class HudContainerManagerController : public ::ContainerManagerController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk482ac7;
-    ::ll::UntypedStorage<8, 16> mUnk2f0be3;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::HudContainerManagerModel>> mHudContainerManagerModel;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>             mDynamicContainerRemovalNotifier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HudContainerManagerController& operator=(HudContainerManagerController const&);
-    HudContainerManagerController(HudContainerManagerController const&);
-    HudContainerManagerController();
 
 public:
     // virtual functions

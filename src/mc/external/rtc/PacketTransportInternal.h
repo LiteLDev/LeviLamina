@@ -24,8 +24,10 @@ public:
 
     MCNAPI PacketTransportInternal();
 
-    MCNAPI void
-    RegisterReceivedPacketCallback(void*, ::absl::AnyInvocable<void(::rtc::PacketTransportInternal*, ::rtc::ReceivedPacket const&)>);
+    MCNAPI void RegisterReceivedPacketCallback(
+        void*,
+        ::absl::AnyInvocable<void(::rtc::PacketTransportInternal*, ::rtc::ReceivedPacket const&)>
+    );
 
     MCNAPI void SetOnCloseCallback(::absl::AnyInvocable<void() &&>);
     // NOLINTEND

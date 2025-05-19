@@ -3,17 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/ContainerID.h"
+#include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class ContainerScreenContext;
 class FurnaceBlockActor;
-class HashedString;
 class ItemStack;
 class Player;
 // clang-format on
@@ -22,24 +23,22 @@ class FurnaceContainerManagerModel : public ::ContainerManagerModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk420209;
-    ::ll::UntypedStorage<4, 4>  mUnk346601;
-    ::ll::UntypedStorage<4, 4>  mUnkf1b243;
-    ::ll::UntypedStorage<4, 4>  mUnk628aee;
-    ::ll::UntypedStorage<4, 4>  mUnkd60ec5;
-    ::ll::UntypedStorage<4, 4>  mUnk96aaa6;
-    ::ll::UntypedStorage<4, 4>  mUnk3d7132;
-    ::ll::UntypedStorage<8, 32> mUnkc67781;
-    ::ll::UntypedStorage<4, 4>  mUnkcc9a84;
-    ::ll::UntypedStorage<4, 4>  mUnk726d31;
-    ::ll::UntypedStorage<1, 1>  mUnk4eae60;
-    ::ll::UntypedStorage<8, 48> mUnk2497a7;
+    ::ll::TypedStorage<4, 12, ::BlockPos>               mBlockPos;
+    ::ll::TypedStorage<4, 4, int>                       mLastTickCount;
+    ::ll::TypedStorage<4, 4, int>                       mLastLitTime;
+    ::ll::TypedStorage<4, 4, int>                       mLastLitDuration;
+    ::ll::TypedStorage<4, 4, int>                       mLastStoredXP;
+    ::ll::TypedStorage<4, 4, int>                       mLastInputId;
+    ::ll::TypedStorage<4, 4, int>                       mLastInputAux;
+    ::ll::TypedStorage<8, 32, ::std::string>            mLastOutputName;
+    ::ll::TypedStorage<4, 4, int>                       mLastResultDisplayId;
+    ::ll::TypedStorage<4, 4, ::BlockActorType const>    mBlockActorType;
+    ::ll::TypedStorage<1, 1, ::ContainerEnumName const> mIngredientContainerName;
+    ::ll::TypedStorage<8, 48, ::HashedString const>     mRecipeTag;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    FurnaceContainerManagerModel& operator=(FurnaceContainerManagerModel const&);
-    FurnaceContainerManagerModel(FurnaceContainerManagerModel const&);
     FurnaceContainerManagerModel();
 
 public:

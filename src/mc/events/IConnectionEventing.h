@@ -40,8 +40,13 @@ public:
     virtual ~IConnectionEventing() = default;
 
     // vIndex: 1
-    virtual void
-    fireServerConnectionEvent(::IConnectionEventing::ServerConnectionOutcome, uint, double, ::std::string const&, ::std::string const&) = 0;
+    virtual void fireServerConnectionEvent(
+        ::IConnectionEventing::ServerConnectionOutcome,
+        uint,
+        double,
+        ::std::string const&,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 2
     virtual void fireEventConnectionFailed(::IConnectionEventing::ConnectionFailureReason) = 0;

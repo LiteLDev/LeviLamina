@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/actor/ActorComponentDescription.h"
 
 // auto generated forward declare list
@@ -14,19 +15,13 @@ struct ContainerDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk264b18;
-    ::ll::UntypedStorage<1, 1> mUnkbb137e;
-    ::ll::UntypedStorage<1, 1> mUnkd4a163;
-    ::ll::UntypedStorage<1, 1> mUnkc20ac2;
-    ::ll::UntypedStorage<4, 4> mUnkad1a97;
-    ::ll::UntypedStorage<1, 1> mUnka8e38a;
+    ::ll::TypedStorage<4, 4, int>                                  mSize;
+    ::ll::TypedStorage<1, 1, bool>                                 mCanBesiphonedFrom;
+    ::ll::TypedStorage<1, 1, bool>                                 mPrivate;
+    ::ll::TypedStorage<1, 1, bool>                                 mRestrictToOwner;
+    ::ll::TypedStorage<4, 4, int>                                  mSlotsPerStrength;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType> mContainerType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerDescription& operator=(ContainerDescription const&);
-    ContainerDescription(ContainerDescription const&);
-    ContainerDescription();
 
 public:
     // virtual functions

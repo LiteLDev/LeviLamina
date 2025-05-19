@@ -97,37 +97,42 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void
-    tick(::StrictExecutionContext<
-         ::Filter<
-             ::ActorMovementTickNeededComponent,
-             ::BoatFlagComponent,
-             ::FreezeImmuneFlagComponent,
-             ::IsDeadFlagComponent,
-             ::PlayerComponent,
-             ::WasInWaterFlagComponent>,
-         ::Read<::AABBShapeComponent, ::MovementAbilitiesComponent, ::ActorGameTypeComponent, ::DimensionTypeComponent>,
-         ::Write<
-             ::BlockMovementSlowdownMultiplierComponent,
-             ::FallDistanceComponent,
-             ::InsideBlockComponent,
-             ::StateVectorComponent>,
-         ::AddRemove<
-             ::BlockMovementSlowdownAppliedComponent,
-             ::FreezingComponent,
-             ::IgnoresEntityInsideFlagComponent,
-             ::InsideBubbleColumnBlockComponent,
-             ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
-             ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
-             ::InsideGenericBlockComponent,
-             ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
-             ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
-             ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
-             ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
-             ::InsideWebBlockComponent>,
-         ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
-         ::GlobalWrite<>,
-         ::EntityFactoryT<>>& executionContext) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorMovementTickNeededComponent,
+                ::BoatFlagComponent,
+                ::FreezeImmuneFlagComponent,
+                ::IsDeadFlagComponent,
+                ::PlayerComponent,
+                ::WasInWaterFlagComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorGameTypeComponent,
+                ::DimensionTypeComponent>,
+            ::Write<
+                ::BlockMovementSlowdownMultiplierComponent,
+                ::FallDistanceComponent,
+                ::InsideBlockComponent,
+                ::StateVectorComponent>,
+            ::AddRemove<
+                ::BlockMovementSlowdownAppliedComponent,
+                ::FreezingComponent,
+                ::IgnoresEntityInsideFlagComponent,
+                ::InsideBubbleColumnBlockComponent,
+                ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
+                ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
+                ::InsideGenericBlockComponent,
+                ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
+                ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
+                ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
+                ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
+                ::InsideWebBlockComponent>,
+            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext
+    ) /*override*/;
 
     // vIndex: 6
     virtual void singleTick(
@@ -175,116 +180,120 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static auto
-    createContextObjects(::StrictExecutionContext<
-                         ::Filter<
-                             ::ActorMovementTickNeededComponent,
-                             ::BoatFlagComponent,
-                             ::FreezeImmuneFlagComponent,
-                             ::IsDeadFlagComponent,
-                             ::PlayerComponent,
-                             ::WasInWaterFlagComponent>,
-                         ::Read<
-                             ::AABBShapeComponent,
-                             ::MovementAbilitiesComponent,
-                             ::ActorGameTypeComponent,
-                             ::DimensionTypeComponent>,
-                         ::Write<
-                             ::BlockMovementSlowdownMultiplierComponent,
-                             ::FallDistanceComponent,
-                             ::InsideBlockComponent,
-                             ::StateVectorComponent>,
-                         ::AddRemove<
-                             ::BlockMovementSlowdownAppliedComponent,
-                             ::FreezingComponent,
-                             ::IgnoresEntityInsideFlagComponent,
-                             ::InsideBubbleColumnBlockComponent,
-                             ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
-                             ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
-                             ::InsideGenericBlockComponent,
-                             ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
-                             ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
-                             ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
-                             ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
-                             ::InsideWebBlockComponent>,
-                         ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
-                         ::GlobalWrite<>,
-                         ::EntityFactoryT<>>& executionContext);
+    MCNAPI static auto createContextObjects(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorMovementTickNeededComponent,
+                ::BoatFlagComponent,
+                ::FreezeImmuneFlagComponent,
+                ::IsDeadFlagComponent,
+                ::PlayerComponent,
+                ::WasInWaterFlagComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorGameTypeComponent,
+                ::DimensionTypeComponent>,
+            ::Write<
+                ::BlockMovementSlowdownMultiplierComponent,
+                ::FallDistanceComponent,
+                ::InsideBlockComponent,
+                ::StateVectorComponent>,
+            ::AddRemove<
+                ::BlockMovementSlowdownAppliedComponent,
+                ::FreezingComponent,
+                ::IgnoresEntityInsideFlagComponent,
+                ::InsideBubbleColumnBlockComponent,
+                ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
+                ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
+                ::InsideGenericBlockComponent,
+                ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
+                ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
+                ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
+                ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
+                ::InsideWebBlockComponent>,
+            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext
+    );
 
-    MCNAPI static auto
-    createServerSideContextObjects(::StrictExecutionContext<
-                                   ::Filter<
-                                       ::ActorMovementTickNeededComponent,
-                                       ::BoatFlagComponent,
-                                       ::FreezeImmuneFlagComponent,
-                                       ::IsDeadFlagComponent,
-                                       ::PlayerComponent,
-                                       ::WasInWaterFlagComponent>,
-                                   ::Read<
-                                       ::AABBShapeComponent,
-                                       ::MovementAbilitiesComponent,
-                                       ::ActorGameTypeComponent,
-                                       ::DimensionTypeComponent>,
-                                   ::Write<
-                                       ::BlockMovementSlowdownMultiplierComponent,
-                                       ::FallDistanceComponent,
-                                       ::InsideBlockComponent,
-                                       ::StateVectorComponent>,
-                                   ::AddRemove<
-                                       ::BlockMovementSlowdownAppliedComponent,
-                                       ::FreezingComponent,
-                                       ::IgnoresEntityInsideFlagComponent,
-                                       ::InsideBubbleColumnBlockComponent,
-                                       ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
-                                       ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
-                                       ::InsideGenericBlockComponent,
-                                       ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
-                                       ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
-                                       ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
-                                       ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
-                                       ::InsideWebBlockComponent>,
-                                   ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
-                                   ::GlobalWrite<>,
-                                   ::EntityFactoryT<>>& executionContext);
+    MCNAPI static auto createServerSideContextObjects(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorMovementTickNeededComponent,
+                ::BoatFlagComponent,
+                ::FreezeImmuneFlagComponent,
+                ::IsDeadFlagComponent,
+                ::PlayerComponent,
+                ::WasInWaterFlagComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorGameTypeComponent,
+                ::DimensionTypeComponent>,
+            ::Write<
+                ::BlockMovementSlowdownMultiplierComponent,
+                ::FallDistanceComponent,
+                ::InsideBlockComponent,
+                ::StateVectorComponent>,
+            ::AddRemove<
+                ::BlockMovementSlowdownAppliedComponent,
+                ::FreezingComponent,
+                ::IgnoresEntityInsideFlagComponent,
+                ::InsideBubbleColumnBlockComponent,
+                ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
+                ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
+                ::InsideGenericBlockComponent,
+                ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
+                ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
+                ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
+                ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
+                ::InsideWebBlockComponent>,
+            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext
+    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::StrictExecutionContext<
-                      ::Filter<
-                          ::ActorMovementTickNeededComponent,
-                          ::BoatFlagComponent,
-                          ::FreezeImmuneFlagComponent,
-                          ::IsDeadFlagComponent,
-                          ::PlayerComponent,
-                          ::WasInWaterFlagComponent>,
-                      ::Read<
-                          ::AABBShapeComponent,
-                          ::MovementAbilitiesComponent,
-                          ::ActorGameTypeComponent,
-                          ::DimensionTypeComponent>,
-                      ::Write<
-                          ::BlockMovementSlowdownMultiplierComponent,
-                          ::FallDistanceComponent,
-                          ::InsideBlockComponent,
-                          ::StateVectorComponent>,
-                      ::AddRemove<
-                          ::BlockMovementSlowdownAppliedComponent,
-                          ::FreezingComponent,
-                          ::IgnoresEntityInsideFlagComponent,
-                          ::InsideBubbleColumnBlockComponent,
-                          ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
-                          ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
-                          ::InsideGenericBlockComponent,
-                          ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
-                          ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
-                          ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
-                          ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
-                          ::InsideWebBlockComponent>,
-                      ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
-                      ::GlobalWrite<>,
-                      ::EntityFactoryT<>>& executionContext);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorMovementTickNeededComponent,
+                ::BoatFlagComponent,
+                ::FreezeImmuneFlagComponent,
+                ::IsDeadFlagComponent,
+                ::PlayerComponent,
+                ::WasInWaterFlagComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorGameTypeComponent,
+                ::DimensionTypeComponent>,
+            ::Write<
+                ::BlockMovementSlowdownMultiplierComponent,
+                ::FallDistanceComponent,
+                ::InsideBlockComponent,
+                ::StateVectorComponent>,
+            ::AddRemove<
+                ::BlockMovementSlowdownAppliedComponent,
+                ::FreezingComponent,
+                ::IgnoresEntityInsideFlagComponent,
+                ::InsideBubbleColumnBlockComponent,
+                ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
+                ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
+                ::InsideGenericBlockComponent,
+                ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
+                ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
+                ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
+                ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
+                ::InsideWebBlockComponent>,
+            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext
+    );
 
     MCNAPI void $singleTick(
         ::StrictExecutionContext<

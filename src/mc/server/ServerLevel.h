@@ -131,14 +131,16 @@ public:
     virtual void runCommand(::Command&, ::CommandOrigin&, ::CommandOriginSystem) /*override*/;
 
     // vIndex: 274
-    virtual void
-    decrementTagCache(::std::string const& tag, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&) /*override*/
-        ;
+    virtual void decrementTagCache(
+        ::std::string const& tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
+    ) /*override*/;
 
     // vIndex: 275
-    virtual void
-    incrementTagCache(::std::string const& tag, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&) /*override*/
-        ;
+    virtual void incrementTagCache(
+        ::std::string const& tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
+    ) /*override*/;
 
     // vIndex: 276
     virtual ::Bedrock::NonOwnerPointer<::TagCacheManager> getTagCacheManager() /*override*/;
@@ -275,11 +277,15 @@ public:
 
     MCAPI ::TradeTables* $getTradeTables();
 
-    MCAPI void
-    $decrementTagCache(::std::string const& tag, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&);
+    MCAPI void $decrementTagCache(
+        ::std::string const& tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
+    );
 
-    MCAPI void
-    $incrementTagCache(::std::string const& tag, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&);
+    MCAPI void $incrementTagCache(
+        ::std::string const& tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
+    );
 
     MCAPI ::Bedrock::NonOwnerPointer<::TagCacheManager> $getTagCacheManager();
 

@@ -68,9 +68,13 @@ public:
 
     MCNAPI bool $isLavaBlocking() const;
 
-    MCNAPI ::Block const&
-    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
-        const;
+    MCNAPI ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 

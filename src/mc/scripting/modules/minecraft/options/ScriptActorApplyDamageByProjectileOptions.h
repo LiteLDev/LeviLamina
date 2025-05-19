@@ -23,8 +23,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptActorApplyDamageByProjectileOptions(::ScriptModuleMinecraft::
-                                                         ScriptActorApplyDamageByProjectileOptions const&);
+    MCNAPI ScriptActorApplyDamageByProjectileOptions(
+        ::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const&
+    );
 
     MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const& other) const;
 

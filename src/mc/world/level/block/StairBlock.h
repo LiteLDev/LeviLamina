@@ -43,9 +43,15 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4
-    virtual ::HitResult
-    clip(::Block const&, ::BlockSource const&, ::BlockPos const&, ::Vec3 const&, ::Vec3 const&, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
-        const /*override*/;
+    virtual ::HitResult clip(
+        ::Block const&,
+        ::BlockSource const&,
+        ::BlockPos const&,
+        ::Vec3 const&,
+        ::Vec3 const&,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 9
     virtual ::AABB const&
@@ -223,9 +229,13 @@ public:
 
     MCAPI void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
 
-    MCAPI ::Block const&
-    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
-        const;
+    MCAPI ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     MCFOLD bool $isStairBlock() const;
 

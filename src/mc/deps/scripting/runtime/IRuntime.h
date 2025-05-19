@@ -47,8 +47,12 @@ public:
     virtual void moveToThread();
 
     // vIndex: 3
-    virtual ::std::optional<::Scripting::ScriptContext>
-    createContext(::Scripting::ModuleBindingBundle&&, ::Scripting::IDependencyLoader*, ::Scripting::IPrinter*, ::Scripting::ContextConfig const&) = 0;
+    virtual ::std::optional<::Scripting::ScriptContext> createContext(
+        ::Scripting::ModuleBindingBundle&&,
+        ::Scripting::IDependencyLoader*,
+        ::Scripting::IPrinter*,
+        ::Scripting::ContextConfig const&
+    ) = 0;
 
     // vIndex: 4
     virtual void destroyContext(::Scripting::ContextId) = 0;
@@ -58,8 +62,14 @@ public:
     run(::Scripting::ContextId, ::Scripting::IPayload*, ::std::optional<::Scripting::Privilege>) = 0;
 
     // vIndex: 6
-    virtual ::Scripting::ResultAny
-    call(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::ClosureType>, ::entt::meta_any*, uint, ::entt::meta_type const&, ::std::optional<::Scripting::Privilege>) = 0;
+    virtual ::Scripting::ResultAny call(
+        ::Scripting::ContextId,
+        ::Scripting::TypedObjectHandle<::Scripting::ClosureType>,
+        ::entt::meta_any*,
+        uint,
+        ::entt::meta_type const&,
+        ::std::optional<::Scripting::Privilege>
+    ) = 0;
 
     // vIndex: 7
     virtual ::Scripting::ResultAny
@@ -74,9 +84,11 @@ public:
         getFutureStatus(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>) const = 0;
 
     // vIndex: 10
-    virtual ::Scripting::ResultAny
-    getFutureResult(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>, ::entt::meta_type const&)
-        const = 0;
+    virtual ::Scripting::ResultAny getFutureResult(
+        ::Scripting::ContextId,
+        ::Scripting::TypedObjectHandle<::Scripting::FutureType>,
+        ::entt::meta_type const&
+    ) const = 0;
 
     // vIndex: 11
     virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
@@ -95,8 +107,10 @@ public:
     virtual void startProfiler() = 0;
 
     // vIndex: 16
-    virtual void
-        stopProfiler(::std::function<void(::std::string_view)>, ::std::optional<::std::reference_wrapper<::std::string const>>) = 0;
+    virtual void stopProfiler(
+        ::std::function<void(::std::string_view)>,
+        ::std::optional<::std::reference_wrapper<::std::string const>>
+    ) = 0;
 
     // vIndex: 17
     virtual ::Scripting::RuntimeStats computeRuntimeStats() const = 0;

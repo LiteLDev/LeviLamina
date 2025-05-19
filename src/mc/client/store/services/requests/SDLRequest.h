@@ -54,8 +54,8 @@ public:
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::string>> getAuthToken() /*override*/;
 
     // vIndex: 3
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>> send(::std::string
-    ) /*override*/;
+    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
+        send(::std::string) /*override*/;
     // NOLINTEND
 
 public:

@@ -331,9 +331,13 @@ public:
     onTransferRequest(::NetworkIdentifier const& id, ::std::string const& serverAddress, int serverPort) /*override*/;
 
     // vIndex: 7
-    virtual void
-    onDisconnect(::NetworkIdentifier const&, ::Connection::DisconnectFailReason const, ::std::string const&, bool, ::std::string const&) /*override*/
-        ;
+    virtual void onDisconnect(
+        ::NetworkIdentifier const&,
+        ::Connection::DisconnectFailReason const,
+        ::std::string const&,
+        bool,
+        ::std::string const&
+    ) /*override*/;
 
     // vIndex: 8
     virtual ::IncomingPacketFilterResult allowIncomingPacketId(
@@ -653,9 +657,11 @@ public:
 
     MCAPI int _getActiveAndInProgressPlayerCount(::mce::UUID excludePlayer) const;
 
-    MCAPI ::std::string
-    _getDisplayName(::GameServerToken const& token, bool isThirdPartyNameOnly, ::std::string const& thirdPartyName)
-        const;
+    MCAPI ::std::string _getDisplayName(
+        ::GameServerToken const& token,
+        bool                     isThirdPartyNameOnly,
+        ::std::string const&     thirdPartyName
+    ) const;
 
     MCAPI ::std::optional<::MessToken> _getMessToken(::std::string const& eduTokenChain, bool isHostingPlayer);
 

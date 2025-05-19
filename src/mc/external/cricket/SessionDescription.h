@@ -35,11 +35,20 @@ public:
     // NOLINTBEGIN
     MCNAPI void AddContent(::cricket::ContentInfo&&);
 
-    MCNAPI void
-    AddContent(::std::string const&, ::cricket::MediaProtocolType, bool, ::std::unique_ptr<::cricket::MediaContentDescription>);
+    MCNAPI void AddContent(
+        ::std::string const&,
+        ::cricket::MediaProtocolType,
+        bool,
+        ::std::unique_ptr<::cricket::MediaContentDescription>
+    );
 
-    MCNAPI void
-    AddContent(::std::string const&, ::cricket::MediaProtocolType, bool, bool, ::std::unique_ptr<::cricket::MediaContentDescription>);
+    MCNAPI void AddContent(
+        ::std::string const&,
+        ::cricket::MediaProtocolType,
+        bool,
+        bool,
+        ::std::unique_ptr<::cricket::MediaContentDescription>
+    );
 
     MCNAPI void AddTransportInfo(::cricket::TransportInfo const&);
 

@@ -51,9 +51,13 @@ public:
 
     MCNAPI ::Vec3 getShootDir(::Player const& player, float angleOffset) const;
 
-    MCNAPI ::Actor*
-    shootProjectile(::BlockSource& region, ::Vec3 const& aimPos, ::Vec3 const& aimDir, float power, ::Player* player)
-        const;
+    MCNAPI ::Actor* shootProjectile(
+        ::BlockSource& region,
+        ::Vec3 const&  aimPos,
+        ::Vec3 const&  aimDir,
+        float          power,
+        ::Player*      player
+    ) const;
     // NOLINTEND
 
 public:

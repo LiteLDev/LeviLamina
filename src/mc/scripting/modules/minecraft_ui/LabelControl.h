@@ -43,7 +43,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit LabelControl(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> text
+    MCNAPI explicit LabelControl(
+        ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> text
     );
     // NOLINTEND
 

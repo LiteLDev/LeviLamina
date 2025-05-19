@@ -75,14 +75,22 @@ public:
         // NOLINTBEGIN
         MCNAPI explicit RequestInfo(::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>);
 
-        MCNAPI
-        RequestInfo(::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>, ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>);
+        MCNAPI RequestInfo(
+            ::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>,
+            ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>
+        );
 
-        MCNAPI
-        RequestInfo(::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>, ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>);
+        MCNAPI RequestInfo(
+            ::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>,
+            ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>
+        );
 
-        MCNAPI
-        RequestInfo(::webrtc::RTCStatsCollector::RequestInfo::FilterMode, ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>, ::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>, ::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>);
+        MCNAPI RequestInfo(
+            ::webrtc::RTCStatsCollector::RequestInfo::FilterMode,
+            ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>,
+            ::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>,
+            ::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>
+        );
 
         MCNAPI ~RequestInfo();
         // NOLINTEND
@@ -92,14 +100,22 @@ public:
         // NOLINTBEGIN
         MCNAPI void* $ctor(::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>);
 
-        MCNAPI void*
-            $ctor(::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>, ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>);
+        MCNAPI void* $ctor(
+            ::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>,
+            ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>
+        );
 
-        MCNAPI void*
-            $ctor(::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>, ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>);
+        MCNAPI void* $ctor(
+            ::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>,
+            ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>
+        );
 
-        MCNAPI void*
-            $ctor(::webrtc::RTCStatsCollector::RequestInfo::FilterMode, ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>, ::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>, ::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>);
+        MCNAPI void* $ctor(
+            ::webrtc::RTCStatsCollector::RequestInfo::FilterMode,
+            ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>,
+            ::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>,
+            ::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>
+        );
         // NOLINTEND
 
     public:
@@ -141,19 +157,29 @@ public:
     // NOLINTBEGIN
     MCNAPI void ClearCachedStatsReport();
 
-    MCNAPI ::webrtc::scoped_refptr<::webrtc::RTCStatsReport>
-    CreateReportFilteredBySelector(bool, ::webrtc::scoped_refptr<::webrtc::RTCStatsReport const>, ::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>, ::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>);
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::RTCStatsReport> CreateReportFilteredBySelector(
+        bool,
+        ::webrtc::scoped_refptr<::webrtc::RTCStatsReport const>,
+        ::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>,
+        ::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>
+    );
 
-    MCNAPI void
-        DeliverCachedReport(::webrtc::scoped_refptr<::webrtc::RTCStatsReport const>, ::std::vector<::webrtc::RTCStatsCollector::RequestInfo>);
+    MCNAPI void DeliverCachedReport(
+        ::webrtc::scoped_refptr<::webrtc::RTCStatsReport const>,
+        ::std::vector<::webrtc::RTCStatsCollector::RequestInfo>
+    );
 
     MCNAPI void GetStatsReport(::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>);
 
-    MCNAPI void
-        GetStatsReport(::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>, ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>);
+    MCNAPI void GetStatsReport(
+        ::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>,
+        ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>
+    );
 
-    MCNAPI void
-        GetStatsReport(::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>, ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>);
+    MCNAPI void GetStatsReport(
+        ::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>,
+        ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>
+    );
 
     MCNAPI void GetStatsReportInternal(::webrtc::RTCStatsCollector::RequestInfo);
 
@@ -168,19 +194,26 @@ public:
 
     MCNAPI void ProduceAudioPlayoutStats_s(::webrtc::Timestamp, ::webrtc::RTCStatsReport*) const;
 
-    MCNAPI void
-    ProduceAudioRTPStreamStats_n(::webrtc::Timestamp, ::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo const&, ::webrtc::RTCStatsReport*)
-        const;
+    MCNAPI void ProduceAudioRTPStreamStats_n(
+        ::webrtc::Timestamp,
+        ::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo const&,
+        ::webrtc::RTCStatsReport*
+    ) const;
 
-    MCNAPI void
-    ProduceCertificateStats_n(::webrtc::Timestamp, ::std::map<::std::string, ::webrtc::RTCStatsCollector::CertificateStatsPair> const&, ::webrtc::RTCStatsReport*)
-        const;
+    MCNAPI void ProduceCertificateStats_n(
+        ::webrtc::Timestamp,
+        ::std::map<::std::string, ::webrtc::RTCStatsCollector::CertificateStatsPair> const&,
+        ::webrtc::RTCStatsReport*
+    ) const;
 
     MCNAPI void ProduceDataChannelStats_n(::webrtc::Timestamp, ::webrtc::RTCStatsReport*) const;
 
-    MCNAPI void
-    ProduceIceCandidateAndPairStats_n(::webrtc::Timestamp, ::std::map<::std::string, ::cricket::TransportStats> const&, ::webrtc::Call::Stats const&, ::webrtc::RTCStatsReport*)
-        const;
+    MCNAPI void ProduceIceCandidateAndPairStats_n(
+        ::webrtc::Timestamp,
+        ::std::map<::std::string, ::cricket::TransportStats> const&,
+        ::webrtc::Call::Stats const&,
+        ::webrtc::RTCStatsReport*
+    ) const;
 
     MCNAPI void ProduceMediaSourceStats_s(::webrtc::Timestamp, ::webrtc::RTCStatsReport*) const;
 
@@ -190,17 +223,24 @@ public:
 
     MCNAPI void ProducePeerConnectionStats_s(::webrtc::Timestamp, ::webrtc::RTCStatsReport*) const;
 
-    MCNAPI void
-    ProduceRTPStreamStats_n(::webrtc::Timestamp, ::std::vector<::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo> const&, ::webrtc::RTCStatsReport*)
-        const;
+    MCNAPI void ProduceRTPStreamStats_n(
+        ::webrtc::Timestamp,
+        ::std::vector<::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo> const&,
+        ::webrtc::RTCStatsReport*
+    ) const;
 
-    MCNAPI void
-    ProduceTransportStats_n(::webrtc::Timestamp, ::std::map<::std::string, ::cricket::TransportStats> const&, ::std::map<::std::string, ::webrtc::RTCStatsCollector::CertificateStatsPair> const&, ::webrtc::RTCStatsReport*)
-        const;
+    MCNAPI void ProduceTransportStats_n(
+        ::webrtc::Timestamp,
+        ::std::map<::std::string, ::cricket::TransportStats> const&,
+        ::std::map<::std::string, ::webrtc::RTCStatsCollector::CertificateStatsPair> const&,
+        ::webrtc::RTCStatsReport*
+    ) const;
 
-    MCNAPI void
-    ProduceVideoRTPStreamStats_n(::webrtc::Timestamp, ::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo const&, ::webrtc::RTCStatsReport*)
-        const;
+    MCNAPI void ProduceVideoRTPStreamStats_n(
+        ::webrtc::Timestamp,
+        ::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo const&,
+        ::webrtc::RTCStatsReport*
+    ) const;
 
     MCNAPI RTCStatsCollector(::webrtc::PeerConnectionInternal*, int64);
 

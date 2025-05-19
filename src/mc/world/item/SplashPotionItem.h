@@ -63,9 +63,12 @@ public:
     virtual bool isThrowable() const /*override*/;
 
     // vIndex: 77
-    virtual ::Actor*
-    createProjectileActor(::BlockSource& region, ::ItemStack const& stack, ::Vec3 const& pos, ::Vec3 const& direction)
-        const /*override*/;
+    virtual ::Actor* createProjectileActor(
+        ::BlockSource&     region,
+        ::ItemStack const& stack,
+        ::Vec3 const&      pos,
+        ::Vec3 const&      direction
+    ) const /*override*/;
 
     // vIndex: 78
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
@@ -99,9 +102,12 @@ public:
 
     MCFOLD bool $isThrowable() const;
 
-    MCAPI ::Actor*
-    $createProjectileActor(::BlockSource& region, ::ItemStack const& stack, ::Vec3 const& pos, ::Vec3 const& direction)
-        const;
+    MCAPI ::Actor* $createProjectileActor(
+        ::BlockSource&     region,
+        ::ItemStack const& stack,
+        ::Vec3 const&      pos,
+        ::Vec3 const&      direction
+    ) const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
     // NOLINTEND

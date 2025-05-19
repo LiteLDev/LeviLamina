@@ -89,8 +89,10 @@ public:
     beginCrashProcessing(uint64, ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface>, ::Scheduler&) = 0;
 
     // vIndex: 3
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>>
-    processCrash(::gsl::not_null<::std::shared_ptr<::Bedrock::CrashFileProcessor::CrashHandler>> const&, ::Core::PathBuffer<::std::string> const&) = 0;
+    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>> processCrash(
+        ::gsl::not_null<::std::shared_ptr<::Bedrock::CrashFileProcessor::CrashHandler>> const&,
+        ::Core::PathBuffer<::std::string> const&
+    ) = 0;
 
     // vIndex: 4
     virtual void doneCrashProcessing() = 0;

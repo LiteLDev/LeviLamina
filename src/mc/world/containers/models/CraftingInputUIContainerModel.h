@@ -9,14 +9,8 @@ class CraftingInputUIContainerModel : public ::PlayerUIContainerModelBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk781af5;
+    ::ll::TypedStorage<1, 1, bool const> mWorkBench;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CraftingInputUIContainerModel& operator=(CraftingInputUIContainerModel const&);
-    CraftingInputUIContainerModel(CraftingInputUIContainerModel const&);
-    CraftingInputUIContainerModel();
 
 public:
     // virtual functions

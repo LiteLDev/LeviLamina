@@ -47,9 +47,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI void IncrementTimesRetransmitted(::std::set<
-                                                ::webrtc::RtpPacketHistory::StoredPacket*,
-                                                ::webrtc::RtpPacketHistory::MoreUseful>*);
+        MCNAPI void IncrementTimesRetransmitted(
+            ::std::set<::webrtc::RtpPacketHistory::StoredPacket*, ::webrtc::RtpPacketHistory::MoreUseful>*
+        );
 
         MCNAPI StoredPacket(::std::unique_ptr<::webrtc::RtpPacketToSend>, ::webrtc::Timestamp, uint64);
 
@@ -84,14 +84,16 @@ public:
 
     MCNAPI void CullOldPackets();
 
-    MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend>
-        GetPacketAndMarkAsPending(ushort, ::rtc::FunctionView<::std::unique_ptr<::webrtc::RtpPacketToSend>(::webrtc::RtpPacketToSend const&)>);
+    MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> GetPacketAndMarkAsPending(
+        ushort,
+        ::rtc::FunctionView<::std::unique_ptr<::webrtc::RtpPacketToSend>(::webrtc::RtpPacketToSend const&)>
+    );
 
     MCNAPI int GetPacketIndex(ushort) const;
 
-    MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend>
-        GetPayloadPaddingPacket(::rtc::FunctionView<
-                                ::std::unique_ptr<::webrtc::RtpPacketToSend>(::webrtc::RtpPacketToSend const&)>);
+    MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> GetPayloadPaddingPacket(
+        ::rtc::FunctionView<::std::unique_ptr<::webrtc::RtpPacketToSend>(::webrtc::RtpPacketToSend const&)>
+    );
 
     MCNAPI ::webrtc::RtpPacketHistory::StorageMode GetStorageMode() const;
 

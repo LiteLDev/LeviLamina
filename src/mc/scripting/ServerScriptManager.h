@@ -97,8 +97,12 @@ public:
     ::ll::TypedStorage<
         8,
         24,
-        ::std::vector<::std::function<
-            bool(::PackManifest const&, ::Scripting::ModuleDescriptor const&, ::Scripting::ModuleDescriptor const&, ::ScriptPluginResult&)>>>
+        ::std::vector<::std::function<bool(
+            ::PackManifest const&,
+            ::Scripting::ModuleDescriptor const&,
+            ::Scripting::ModuleDescriptor const&,
+            ::ScriptPluginResult&
+        )>>>
         mModuleFilters;
     // NOLINTEND
 

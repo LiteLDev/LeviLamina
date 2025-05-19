@@ -39,8 +39,13 @@ public:
     virtual void sendServerLegacyParticle(::ParticleType, ::Vec3 const&, ::Vec3 const&, int);
 
     // vIndex: 11
-    virtual void
-    addParticleEffect(::HashedString const&, ::Actor const&, ::HashedString const&, ::Vec3 const&, ::MolangVariableMap const&);
+    virtual void addParticleEffect(
+        ::HashedString const&,
+        ::Actor const&,
+        ::HashedString const&,
+        ::Vec3 const&,
+        ::MolangVariableMap const&
+    );
 
     // vIndex: 12
     virtual void addTerrainParticleEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
@@ -53,8 +58,12 @@ public:
     addBreakingItemParticleEffect(::Vec3 const&, ::BreakingItemParticleData const&, ::ResolvedItemIconInfo const&);
 
     // vIndex: 15
-    virtual void
-    addBiomeTintedParticleEffect(::HashedString const&, ::BlockPos const&, ::Block const&, ::std::optional<::mce::Color>);
+    virtual void addBiomeTintedParticleEffect(
+        ::HashedString const&,
+        ::BlockPos const&,
+        ::Block const&,
+        ::std::optional<::mce::Color>
+    );
 
     // vIndex: 16
     virtual void playMusic(::std::string const&, ::Vec3 const&, float, float);
@@ -90,8 +99,13 @@ public:
     virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&);
 
     // vIndex: 27
-    virtual void
-    takePicture(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&, ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>);
+    virtual void takePicture(
+        ::cg::ImageBuffer&,
+        ::Actor*,
+        ::Actor*,
+        ::ScreenshotOptions&,
+        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>
+    );
 
     // vIndex: 28
     virtual void playerListChanged();
@@ -116,8 +130,13 @@ public:
 
     MCFOLD void $sendServerLegacyParticle(::ParticleType, ::Vec3 const&, ::Vec3 const&, int);
 
-    MCFOLD void
-    $addParticleEffect(::HashedString const&, ::Actor const&, ::HashedString const&, ::Vec3 const&, ::MolangVariableMap const&);
+    MCFOLD void $addParticleEffect(
+        ::HashedString const&,
+        ::Actor const&,
+        ::HashedString const&,
+        ::Vec3 const&,
+        ::MolangVariableMap const&
+    );
 
     MCFOLD void $addTerrainParticleEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
 
@@ -126,8 +145,12 @@ public:
     MCFOLD void
     $addBreakingItemParticleEffect(::Vec3 const&, ::BreakingItemParticleData const&, ::ResolvedItemIconInfo const&);
 
-    MCFOLD void
-    $addBiomeTintedParticleEffect(::HashedString const&, ::BlockPos const&, ::Block const&, ::std::optional<::mce::Color>);
+    MCFOLD void $addBiomeTintedParticleEffect(
+        ::HashedString const&,
+        ::BlockPos const&,
+        ::Block const&,
+        ::std::optional<::mce::Color>
+    );
 
     MCFOLD void $playMusic(::std::string const&, ::Vec3 const&, float, float);
 
@@ -147,8 +170,13 @@ public:
 
     MCFOLD void $onLevelDestruction(::std::string const&);
 
-    MCAPI void
-    $takePicture(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&, ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>);
+    MCAPI void $takePicture(
+        ::cg::ImageBuffer&,
+        ::Actor*,
+        ::Actor*,
+        ::ScreenshotOptions&,
+        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>
+    );
 
     MCFOLD void $playerListChanged();
 

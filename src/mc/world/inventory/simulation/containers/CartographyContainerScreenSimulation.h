@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/safety/RedactableString.h"
+#include "mc/world/containers/managers/controllers/MapOutputType.h"
 #include "mc/world/inventory/simulation/ContainerScreenAutoplaceBehaviour.h"
 #include "mc/world/inventory/simulation/ContainerScreenSimulationCrafting.h"
 
@@ -18,15 +20,9 @@ class CartographyContainerScreenSimulation : public ::ContainerScreenSimulationC
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnk8eb216;
-    ::ll::UntypedStorage<4, 4>  mUnkb3a7ff;
+    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mItemName;
+    ::ll::TypedStorage<4, 4, ::MapOutputType>                      mMapOutputType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CartographyContainerScreenSimulation& operator=(CartographyContainerScreenSimulation const&);
-    CartographyContainerScreenSimulation(CartographyContainerScreenSimulation const&);
-    CartographyContainerScreenSimulation();
 
 public:
     // virtual functions

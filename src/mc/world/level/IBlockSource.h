@@ -114,9 +114,17 @@ public:
     virtual short getHeight(::std::function<bool(::Block const&)> const&, int, int) const = 0;
 
     // vIndex: 49
-    virtual ::HitResult
-    clip(::Vec3 const&, ::Vec3 const&, bool, ::ShapeType, int, bool, bool, ::Actor*, ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const&)
-        const = 0;
+    virtual ::HitResult clip(
+        ::Vec3 const&,
+        ::Vec3 const&,
+        bool,
+        ::ShapeType,
+        int,
+        bool,
+        bool,
+        ::Actor*,
+        ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const&
+    ) const = 0;
 
     // vIndex: 48
     virtual ::HitResult clip(::ClipParameters const&) const = 0;

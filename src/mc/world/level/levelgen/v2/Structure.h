@@ -54,8 +54,8 @@ public:
     // NOLINTBEGIN
     MCNAPI Structure(::br::worldgen::Structure const&);
 
-    MCNAPI ::std::shared_ptr<::br::worldgen::StructureInstance> generate(::br::worldgen::GenerationContext& context
-    ) const;
+    MCNAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
+    generate(::br::worldgen::GenerationContext& context) const;
     // NOLINTEND
 
 public:

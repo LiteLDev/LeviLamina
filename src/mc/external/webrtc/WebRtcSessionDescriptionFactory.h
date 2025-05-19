@@ -53,8 +53,11 @@ public:
     // NOLINTBEGIN
     MCNAPI void CreateAnswer(::webrtc::CreateSessionDescriptionObserver*, ::cricket::MediaSessionOptions const&);
 
-    MCNAPI void
-    CreateOffer(::webrtc::CreateSessionDescriptionObserver*, ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&, ::cricket::MediaSessionOptions const&);
+    MCNAPI void CreateOffer(
+        ::webrtc::CreateSessionDescriptionObserver*,
+        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&,
+        ::cricket::MediaSessionOptions const&
+    );
 
     MCNAPI void FailPendingRequests(::std::string const&);
 
@@ -68,12 +71,23 @@ public:
 
     MCNAPI void PostCreateSessionDescriptionFailed(::webrtc::CreateSessionDescriptionObserver*, ::webrtc::RTCError);
 
-    MCNAPI void
-    PostCreateSessionDescriptionSucceeded(::webrtc::CreateSessionDescriptionObserver*, ::std::unique_ptr<::webrtc::SessionDescriptionInterface>);
+    MCNAPI void PostCreateSessionDescriptionSucceeded(
+        ::webrtc::CreateSessionDescriptionObserver*,
+        ::std::unique_ptr<::webrtc::SessionDescriptionInterface>
+    );
 
     MCNAPI void SetCertificate(::webrtc::scoped_refptr<::rtc::RTCCertificate>);
 
-    MCNAPI WebRtcSessionDescriptionFactory(::webrtc::ConnectionContext*, ::webrtc::SdpStateProvider const*, ::std::string const&, bool, ::std::unique_ptr<::rtc::RTCCertificateGeneratorInterface>, ::webrtc::scoped_refptr<::rtc::RTCCertificate>, ::std::function<void(::webrtc::scoped_refptr<::rtc::RTCCertificate> const&)>, ::webrtc::FieldTrialsView const&);
+    MCNAPI WebRtcSessionDescriptionFactory(
+        ::webrtc::ConnectionContext*,
+        ::webrtc::SdpStateProvider const*,
+        ::std::string const&,
+        bool,
+        ::std::unique_ptr<::rtc::RTCCertificateGeneratorInterface>,
+        ::webrtc::scoped_refptr<::rtc::RTCCertificate>,
+        ::std::function<void(::webrtc::scoped_refptr<::rtc::RTCCertificate> const&)>,
+        ::webrtc::FieldTrialsView const&
+    );
 
     MCNAPI ~WebRtcSessionDescriptionFactory();
     // NOLINTEND
@@ -81,15 +95,26 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
-    CopyCandidatesFromSessionDescription(::webrtc::SessionDescriptionInterface const*, ::std::string const&, ::webrtc::SessionDescriptionInterface*);
+    MCNAPI static void CopyCandidatesFromSessionDescription(
+        ::webrtc::SessionDescriptionInterface const*,
+        ::std::string const&,
+        ::webrtc::SessionDescriptionInterface*
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::webrtc::ConnectionContext*, ::webrtc::SdpStateProvider const*, ::std::string const&, bool, ::std::unique_ptr<::rtc::RTCCertificateGeneratorInterface>, ::webrtc::scoped_refptr<::rtc::RTCCertificate>, ::std::function<void(::webrtc::scoped_refptr<::rtc::RTCCertificate> const&)>, ::webrtc::FieldTrialsView const&);
+    MCNAPI void* $ctor(
+        ::webrtc::ConnectionContext*,
+        ::webrtc::SdpStateProvider const*,
+        ::std::string const&,
+        bool,
+        ::std::unique_ptr<::rtc::RTCCertificateGeneratorInterface>,
+        ::webrtc::scoped_refptr<::rtc::RTCCertificate>,
+        ::std::function<void(::webrtc::scoped_refptr<::rtc::RTCCertificate> const&)>,
+        ::webrtc::FieldTrialsView const&
+    );
     // NOLINTEND
 
 public:

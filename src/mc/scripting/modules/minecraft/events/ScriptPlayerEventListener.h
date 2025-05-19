@@ -56,8 +56,8 @@ public:
     virtual ::EventResult onEvent(::PlayerInputPermissionCategoryChangeEvent const& event) /*override*/;
 
     // vIndex: 50
-    virtual ::EventResult onEvent(::PlayerInteractWithEntityAfterEvent const& playerInteractWithEntityEvent
-    ) /*override*/;
+    virtual ::EventResult
+    onEvent(::PlayerInteractWithEntityAfterEvent const& playerInteractWithEntityEvent) /*override*/;
 
     // vIndex: 49
     virtual ::EventResult onEvent(::PlayerInteractWithBlockAfterEvent const& playerInteractWithBlockEvent) /*override*/;

@@ -59,8 +59,8 @@ public:
     getItem(int slot) const;
 
     // vIndex: 6
-    virtual ::Scripting::Result<void> addItemV010(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack
-    ) const;
+    virtual ::Scripting::Result<void>
+    addItemV010(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
 
     // vIndex: 7
     virtual ::Scripting::Result_deprecated<bool>
@@ -130,8 +130,8 @@ public:
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
     $getItem(int slot) const;
 
-    MCNAPI ::Scripting::Result<void> $addItemV010(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack
-    ) const;
+    MCNAPI ::Scripting::Result<void>
+    $addItemV010(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
 
     MCNAPI ::Scripting::Result_deprecated<bool>
     $transferItemV010(int fromSlot, int toSlot, ::ScriptModuleMinecraft::ScriptContainer& toScriptContainer) const;

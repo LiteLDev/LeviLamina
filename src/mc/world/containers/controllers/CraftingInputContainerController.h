@@ -14,14 +14,8 @@ class CraftingInputContainerController : public ::CraftingContainerController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkb0aecb;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mRecipeItems;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CraftingInputContainerController& operator=(CraftingInputContainerController const&);
-    CraftingInputContainerController(CraftingInputContainerController const&);
-    CraftingInputContainerController();
 
 public:
     // virtual functions

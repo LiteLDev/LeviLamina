@@ -21,8 +21,12 @@ public:
     virtual ~IWorldApi() = default;
 
     // vIndex: 1
-    virtual void
-    initializeWorld(::Realms::RealmId, ::std::string const&, ::std::string const&, ::std::function<void(::Realms::GenericStatus, ::Realms::FailureReason)>) = 0;
+    virtual void initializeWorld(
+        ::Realms::RealmId,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::function<void(::Realms::GenericStatus, ::Realms::FailureReason)>
+    ) = 0;
 
     // vIndex: 2
     virtual void

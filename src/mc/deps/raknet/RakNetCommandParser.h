@@ -33,9 +33,14 @@ public:
     virtual ~RakNetCommandParser() /*override*/ = default;
 
     // vIndex: 5
-    virtual bool
-    OnCommand(char const*, uint, char**, ::RakNet::TransportInterface*, ::RakNet::SystemAddress const&, char const*) /*override*/
-        ;
+    virtual bool OnCommand(
+        char const*,
+        uint,
+        char**,
+        ::RakNet::TransportInterface*,
+        ::RakNet::SystemAddress const&,
+        char const*
+    ) /*override*/;
 
     // vIndex: 1
     virtual char const* GetName() const /*override*/;

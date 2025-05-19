@@ -46,17 +46,26 @@ public:
     ) /*override*/;
 
     // vIndex: 4
-    virtual bool
-    isFeatureChunk(::BiomeSource const& biomeSource, ::Random& random, ::ChunkPos const& chunkPos, uint levelSeed, ::IPreliminarySurfaceProvider const&, ::Dimension const&) /*override*/
-        ;
+    virtual bool isFeatureChunk(
+        ::BiomeSource const& biomeSource,
+        ::Random&            random,
+        ::ChunkPos const&    chunkPos,
+        uint                 levelSeed,
+        ::IPreliminarySurfaceProvider const&,
+        ::Dimension const&
+    ) /*override*/;
 
     // vIndex: 2
     virtual bool shouldPostProcessMobs() const /*override*/;
 
     // vIndex: 5
-    virtual ::std::unique_ptr<::StructureStart>
-    createStructureStart(::Dimension& generator, ::BiomeSource const& biomeSource, ::Random& random, ::ChunkPos const& chunkPos, ::IPreliminarySurfaceProvider const&) /*override*/
-        ;
+    virtual ::std::unique_ptr<::StructureStart> createStructureStart(
+        ::Dimension&         generator,
+        ::BiomeSource const& biomeSource,
+        ::Random&            random,
+        ::ChunkPos const&    chunkPos,
+        ::IPreliminarySurfaceProvider const&
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~BastionFeature() /*override*/ = default;
@@ -87,13 +96,24 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCNAPI bool
-    $isFeatureChunk(::BiomeSource const& biomeSource, ::Random& random, ::ChunkPos const& chunkPos, uint levelSeed, ::IPreliminarySurfaceProvider const&, ::Dimension const&);
+    MCNAPI bool $isFeatureChunk(
+        ::BiomeSource const& biomeSource,
+        ::Random&            random,
+        ::ChunkPos const&    chunkPos,
+        uint                 levelSeed,
+        ::IPreliminarySurfaceProvider const&,
+        ::Dimension const&
+    );
 
     MCNAPI bool $shouldPostProcessMobs() const;
 
-    MCNAPI ::std::unique_ptr<::StructureStart>
-    $createStructureStart(::Dimension& generator, ::BiomeSource const& biomeSource, ::Random& random, ::ChunkPos const& chunkPos, ::IPreliminarySurfaceProvider const&);
+    MCNAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
+        ::Dimension&         generator,
+        ::BiomeSource const& biomeSource,
+        ::Random&            random,
+        ::ChunkPos const&    chunkPos,
+        ::IPreliminarySurfaceProvider const&
+    );
     // NOLINTEND
 
 public:

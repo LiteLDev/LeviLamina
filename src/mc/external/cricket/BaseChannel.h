@@ -32,8 +32,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    BaseChannel(::webrtc::TaskQueueBase*, ::rtc::Thread*, ::webrtc::TaskQueueBase*, ::std::unique_ptr<::cricket::MediaSendChannelInterface>, ::std::unique_ptr<::cricket::MediaReceiveChannelInterface>, ::std::string_view, bool, ::webrtc::CryptoOptions, ::rtc::UniqueRandomIdGenerator*);
+    MCNAPI BaseChannel(
+        ::webrtc::TaskQueueBase*,
+        ::rtc::Thread*,
+        ::webrtc::TaskQueueBase*,
+        ::std::unique_ptr<::cricket::MediaSendChannelInterface>,
+        ::std::unique_ptr<::cricket::MediaReceiveChannelInterface>,
+        ::std::string_view,
+        bool,
+        ::webrtc::CryptoOptions,
+        ::rtc::UniqueRandomIdGenerator*
+    );
 
     MCNAPI void ChannelNotWritable_n();
 
@@ -87,8 +96,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::webrtc::TaskQueueBase*, ::rtc::Thread*, ::webrtc::TaskQueueBase*, ::std::unique_ptr<::cricket::MediaSendChannelInterface>, ::std::unique_ptr<::cricket::MediaReceiveChannelInterface>, ::std::string_view, bool, ::webrtc::CryptoOptions, ::rtc::UniqueRandomIdGenerator*);
+    MCNAPI void* $ctor(
+        ::webrtc::TaskQueueBase*,
+        ::rtc::Thread*,
+        ::webrtc::TaskQueueBase*,
+        ::std::unique_ptr<::cricket::MediaSendChannelInterface>,
+        ::std::unique_ptr<::cricket::MediaReceiveChannelInterface>,
+        ::std::string_view,
+        bool,
+        ::webrtc::CryptoOptions,
+        ::rtc::UniqueRandomIdGenerator*
+    );
     // NOLINTEND
 
 public:

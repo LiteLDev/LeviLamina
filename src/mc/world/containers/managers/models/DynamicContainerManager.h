@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/ContainerID.h"
+#include "mc/world/containers/FullContainerName.h"
+#include "mc/world/item/ItemStack.h"
+
 // auto generated forward declare list
 // clang-format off
 class Container;
 class ContainerModel;
-class ItemStack;
-struct FullContainerName;
 struct PlayerContainerRefresher;
 // clang-format on
 
@@ -15,18 +18,16 @@ class DynamicContainerManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12>  mUnkaed41d;
-    ::ll::UntypedStorage<8, 16>  mUnkf03e6c;
-    ::ll::UntypedStorage<8, 16>  mUnk18ae91;
-    ::ll::UntypedStorage<8, 24>  mUnk6e971f;
-    ::ll::UntypedStorage<1, 1>   mUnk73167d;
-    ::ll::UntypedStorage<8, 152> mUnk66980f;
+    ::ll::TypedStorage<4, 12, ::FullContainerName const>           mFullContainerName;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ContainerModel>> mModel;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Container>>        mContainer;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>>          mLastSlots;
+    ::ll::TypedStorage<1, 1, ::ContainerID>                        mContainerID;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                        mStorageItem;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    DynamicContainerManager& operator=(DynamicContainerManager const&);
-    DynamicContainerManager(DynamicContainerManager const&);
     DynamicContainerManager();
 
 public:

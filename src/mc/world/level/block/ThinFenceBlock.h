@@ -56,9 +56,12 @@ public:
     ) const /*override*/;
 
     // vIndex: 5
-    virtual ::AABB
-    getCollisionShape(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
-        const /*override*/;
+    virtual ::AABB getCollisionShape(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 6
     virtual bool getCollisionShapeForCamera(
@@ -69,9 +72,12 @@ public:
     ) const /*override*/;
 
     // vIndex: 9
-    virtual ::AABB const&
-    getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
-        const /*override*/;
+    virtual ::AABB const& getOutline(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferValue
+    ) const /*override*/;
 
     // vIndex: 23
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
@@ -127,9 +133,12 @@ public:
         ::AABB&                    bufferAABB
     ) const;
 
-    MCAPI ::AABB
-    $getCollisionShape(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
+    MCAPI ::AABB $getCollisionShape(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
 
     MCAPI bool $getCollisionShapeForCamera(
         ::AABB&                    outAABB,
@@ -138,9 +147,12 @@ public:
         ::BlockPos const&          pos
     ) const;
 
-    MCFOLD ::AABB const&
-    $getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
-        const;
+    MCFOLD ::AABB const& $getOutline(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferValue
+    ) const;
 
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 

@@ -20,8 +20,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    RtpPacketizerVp9(::rtc::ArrayView<uchar const>, ::webrtc::RtpPacketizer::PayloadSizeLimits, ::webrtc::RTPVideoHeaderVP9 const&);
+    MCNAPI RtpPacketizerVp9(
+        ::rtc::ArrayView<uchar const>,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits,
+        ::webrtc::RTPVideoHeaderVP9 const&
+    );
 
     MCNAPI bool WriteHeader(bool, bool, ::rtc::ArrayView<uchar>) const;
     // NOLINTEND
@@ -29,8 +32,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::rtc::ArrayView<uchar const>, ::webrtc::RtpPacketizer::PayloadSizeLimits, ::webrtc::RTPVideoHeaderVP9 const&);
+    MCNAPI void* $ctor(
+        ::rtc::ArrayView<uchar const>,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits,
+        ::webrtc::RTPVideoHeaderVP9 const&
+    );
     // NOLINTEND
 
 public:

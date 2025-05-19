@@ -34,9 +34,10 @@ public:
     virtual ~UpdateOperation() /*override*/ = default;
 
     // vIndex: 1
-    virtual bool
-    tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&) /*override*/
-        ;
+    virtual bool tick(
+        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>,
+        ::PositionTrackingDB::TrackingRecord&
+    ) /*override*/;
 
     // vIndex: 2
     virtual char const* getDescription() const /*override*/;

@@ -21,8 +21,10 @@ public:
     virtual ~ServerDataTransferServiceProvider() = default;
 
     // vIndex: 1
-    virtual void
-    requestData(::std::string const&, ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::string const&)> const&) = 0;
+    virtual void requestData(
+        ::std::string const&,
+        ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::string const&)> const&
+    ) = 0;
 
     // vIndex: 2
     virtual ::Scripting::Result<::std::string const, ::Scripting::Error> requestSchema(::std::string const&) = 0;

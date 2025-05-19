@@ -19,7 +19,9 @@ public:
     // prevent constructor by default
     ScriptBlockCustomComponentPlayerDestroyAfterEventIntermediateStorage&
     operator=(ScriptBlockCustomComponentPlayerDestroyAfterEventIntermediateStorage const&);
-    ScriptBlockCustomComponentPlayerDestroyAfterEventIntermediateStorage(ScriptBlockCustomComponentPlayerDestroyAfterEventIntermediateStorage const&);
+    ScriptBlockCustomComponentPlayerDestroyAfterEventIntermediateStorage(
+        ScriptBlockCustomComponentPlayerDestroyAfterEventIntermediateStorage const&
+    );
     ScriptBlockCustomComponentPlayerDestroyAfterEventIntermediateStorage();
 
 public:

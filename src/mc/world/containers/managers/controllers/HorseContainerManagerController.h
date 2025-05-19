@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class HorseContainerManagerModel;
 struct SelectedSlotInfo;
 struct SlotData;
 // clang-format on
@@ -15,15 +16,9 @@ class HorseContainerManagerController : public ::ContainerManagerController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkbc77f0;
-    ::ll::UntypedStorage<1, 1>  mUnk6aee66;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::HorseContainerManagerModel>> mHorseContainerManagerModel;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsEquipTabOpen;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HorseContainerManagerController& operator=(HorseContainerManagerController const&);
-    HorseContainerManagerController(HorseContainerManagerController const&);
-    HorseContainerManagerController();
 
 public:
     // virtual functions

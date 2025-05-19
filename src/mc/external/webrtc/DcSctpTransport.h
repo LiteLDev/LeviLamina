@@ -34,8 +34,12 @@ public:
 
     MCNAPI DcSctpTransport(::webrtc::Environment const&, ::rtc::Thread*, ::rtc::PacketTransportInternal*);
 
-    MCNAPI
-    DcSctpTransport(::webrtc::Environment const&, ::rtc::Thread*, ::rtc::PacketTransportInternal*, ::std::unique_ptr<::dcsctp::DcSctpSocketFactory>);
+    MCNAPI DcSctpTransport(
+        ::webrtc::Environment const&,
+        ::rtc::Thread*,
+        ::rtc::PacketTransportInternal*,
+        ::std::unique_ptr<::dcsctp::DcSctpSocketFactory>
+    );
 
     MCNAPI void DisconnectTransportSignals();
 
@@ -51,8 +55,12 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::Environment const&, ::rtc::Thread*, ::rtc::PacketTransportInternal*);
 
-    MCNAPI void*
-    $ctor(::webrtc::Environment const&, ::rtc::Thread*, ::rtc::PacketTransportInternal*, ::std::unique_ptr<::dcsctp::DcSctpSocketFactory>);
+    MCNAPI void* $ctor(
+        ::webrtc::Environment const&,
+        ::rtc::Thread*,
+        ::rtc::PacketTransportInternal*,
+        ::std::unique_ptr<::dcsctp::DcSctpSocketFactory>
+    );
     // NOLINTEND
 
 public:

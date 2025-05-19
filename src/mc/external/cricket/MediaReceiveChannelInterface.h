@@ -66,8 +66,10 @@ public:
     virtual void SetFrameDecryptor(uint, ::webrtc::scoped_refptr<::webrtc::FrameDecryptorInterface>) = 0;
 
     // vIndex: 14
-    virtual void
-        SetDepacketizerToDecoderFrameTransformer(uint, ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>) = 0;
+    virtual void SetDepacketizerToDecoderFrameTransformer(
+        uint,
+        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>
+    ) = 0;
 
     // vIndex: 15
     virtual bool SetBaseMinimumPlayoutDelayMs(uint, int) = 0;

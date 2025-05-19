@@ -48,8 +48,24 @@ public:
 
     MCNAPI bool NackEnabled() const;
 
-    MCNAPI
-    RtpVideoSender(::webrtc::Clock*, ::std::map<uint, ::webrtc::RtpState> const&, ::std::map<uint, ::webrtc::RtpPayloadState> const&, ::webrtc::RtpConfig const&, int, ::webrtc::Transport*, ::webrtc::RtpSenderObservers const&, ::webrtc::RtpTransportControllerSendInterface*, ::webrtc::RtcEventLog*, ::webrtc::RateLimiter*, ::std::unique_ptr<::webrtc::FecController>, ::webrtc::FrameEncryptorInterface*, ::webrtc::CryptoOptions const&, ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>, ::webrtc::FieldTrialsView const&, ::webrtc::TaskQueueFactory*);
+    MCNAPI RtpVideoSender(
+        ::webrtc::Clock*,
+        ::std::map<uint, ::webrtc::RtpState> const&,
+        ::std::map<uint, ::webrtc::RtpPayloadState> const&,
+        ::webrtc::RtpConfig const&,
+        int,
+        ::webrtc::Transport*,
+        ::webrtc::RtpSenderObservers const&,
+        ::webrtc::RtpTransportControllerSendInterface*,
+        ::webrtc::RtcEventLog*,
+        ::webrtc::RateLimiter*,
+        ::std::unique_ptr<::webrtc::FecController>,
+        ::webrtc::FrameEncryptorInterface*,
+        ::webrtc::CryptoOptions const&,
+        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>,
+        ::webrtc::FieldTrialsView const&,
+        ::webrtc::TaskQueueFactory*
+    );
 
     MCNAPI void SetActiveModulesLocked(bool);
     // NOLINTEND
@@ -57,8 +73,24 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::webrtc::Clock*, ::std::map<uint, ::webrtc::RtpState> const&, ::std::map<uint, ::webrtc::RtpPayloadState> const&, ::webrtc::RtpConfig const&, int, ::webrtc::Transport*, ::webrtc::RtpSenderObservers const&, ::webrtc::RtpTransportControllerSendInterface*, ::webrtc::RtcEventLog*, ::webrtc::RateLimiter*, ::std::unique_ptr<::webrtc::FecController>, ::webrtc::FrameEncryptorInterface*, ::webrtc::CryptoOptions const&, ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>, ::webrtc::FieldTrialsView const&, ::webrtc::TaskQueueFactory*);
+    MCNAPI void* $ctor(
+        ::webrtc::Clock*,
+        ::std::map<uint, ::webrtc::RtpState> const&,
+        ::std::map<uint, ::webrtc::RtpPayloadState> const&,
+        ::webrtc::RtpConfig const&,
+        int,
+        ::webrtc::Transport*,
+        ::webrtc::RtpSenderObservers const&,
+        ::webrtc::RtpTransportControllerSendInterface*,
+        ::webrtc::RtcEventLog*,
+        ::webrtc::RateLimiter*,
+        ::std::unique_ptr<::webrtc::FecController>,
+        ::webrtc::FrameEncryptorInterface*,
+        ::webrtc::CryptoOptions const&,
+        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>,
+        ::webrtc::FieldTrialsView const&,
+        ::webrtc::TaskQueueFactory*
+    );
     // NOLINTEND
 
 public:

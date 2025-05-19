@@ -120,8 +120,8 @@ public:
 
     MCAPI void initServerFromPacks(::ResourcePackManager& loader, ::IWorldRegistriesProvider& worldRegistries);
 
-    MCAPI void initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector
-    );
+    MCAPI void
+    initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
     MCAPI void loadBiomeData(::LevelStorage const& levelStorage);
 

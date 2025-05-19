@@ -32,8 +32,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ActorSpawnRuleDataLoader(::cereal::ReflectionCtx const& ctx, ::br::spawn::SpawnPlacements& spawnPlacements);
 
-    MCNAPI ::Puv::LoadResult<::ActorSpawnRuleData> load(::Bedrock::Resources::MinecraftDocumentInput const& input
-    ) const;
+    MCNAPI ::Puv::LoadResult<::ActorSpawnRuleData>
+    load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
 
     MCNAPI ~ActorSpawnRuleDataLoader();
     // NOLINTEND

@@ -20,9 +20,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6
-    virtual void
-    doLoad(::cereal::SchemaReader&, ::entt::meta_any&, ::entt::meta_any const&, ::cereal::SerializerContext& context)
-        const /*override*/;
+    virtual void doLoad(
+        ::cereal::SchemaReader&,
+        ::entt::meta_any&,
+        ::entt::meta_any const&,
+        ::cereal::SerializerContext& context
+    ) const /*override*/;
 
     // vIndex: 9
     virtual ::cereal::SchemaDescription
@@ -36,9 +39,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void
-    $doLoad(::cereal::SchemaReader&, ::entt::meta_any&, ::entt::meta_any const&, ::cereal::SerializerContext& context)
-        const;
+    MCNAPI void $doLoad(
+        ::cereal::SchemaReader&,
+        ::entt::meta_any&,
+        ::entt::meta_any const&,
+        ::cereal::SerializerContext& context
+    ) const;
 
     MCNAPI ::cereal::SchemaDescription
     $makeDescription(::cereal::ReflectionCtx const&, ::cereal::internal::BasicSchema::DescriptionMode) const;

@@ -104,8 +104,8 @@ public:
     virtual ::Scripting::Result<void> _clearContainer();
 
     // vIndex: 19
-    virtual ::Scripting::Result<void> _replaceContainerContents(::WeakRef<::Editor::Selection::SelectionContainer> other
-    );
+    virtual ::Scripting::Result<void>
+    _replaceContainerContents(::WeakRef<::Editor::Selection::SelectionContainer> other);
 
     // vIndex: 18
     virtual ::Scripting::Result<void> _replaceContainerContents(::CompoundBlockVolume const& other);
@@ -167,8 +167,8 @@ public:
 
     MCNAPI ::Scripting::Result<void> $_clearContainer();
 
-    MCNAPI ::Scripting::Result<void> $_replaceContainerContents(::WeakRef<::Editor::Selection::SelectionContainer> other
-    );
+    MCNAPI ::Scripting::Result<void>
+    $_replaceContainerContents(::WeakRef<::Editor::Selection::SelectionContainer> other);
 
     MCNAPI ::Scripting::Result<void> $_replaceContainerContents(::CompoundBlockVolume const& other);
 

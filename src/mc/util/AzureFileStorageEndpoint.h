@@ -38,9 +38,11 @@ public:
     virtual ::Bedrock::Http::Request makeListFilesRequest(::Core::Path const&) const;
 
     // vIndex: 2
-    virtual void
-    sendListFilesRequest(::Bedrock::Http::Request&, ::TaskGroup&, ::std::function<void(::Bedrock::Http::Response const&, ::std::string const&)>)
-        const;
+    virtual void sendListFilesRequest(
+        ::Bedrock::Http::Request&,
+        ::TaskGroup&,
+        ::std::function<void(::Bedrock::Http::Response const&, ::std::string const&)>
+    ) const;
 
     // vIndex: 3
     virtual void

@@ -53,11 +53,13 @@ public:
     MCNAPI static void
     _handleInstructionUnlocks(::ServerPlayer* serverPlayer, ::UnlockedRecipesServerComponent& unlockedComp);
 
-    MCNAPI static void _tick(::ViewT<
-                             ::StrictEntityContext,
-                             ::Include<::ServerPlayerComponent>,
-                             ::UnlockedRecipesServerComponent,
-                             ::ActorOwnerComponent> view);
+    MCNAPI static void _tick(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ServerPlayerComponent>,
+            ::UnlockedRecipesServerComponent,
+            ::ActorOwnerComponent> view
+    );
 
     MCNAPI static ::std::vector<::std::string> _unlockRecipes(
         ::UnlockedRecipesServerComponent&                                     unlockedComp,

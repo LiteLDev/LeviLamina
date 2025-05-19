@@ -26,8 +26,13 @@ public:
 
     MCNAPI ::std::set<::rtc::SocketAddress> GetRelayServerAddresses(::cricket::ProtocolType) const;
 
-    MCNAPI
-    PortConfiguration(::std::set<::rtc::SocketAddress> const&, ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const&, ::std::string_view, ::std::string_view, ::webrtc::FieldTrialsView const*);
+    MCNAPI PortConfiguration(
+        ::std::set<::rtc::SocketAddress> const&,
+        ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const&,
+        ::std::string_view,
+        ::std::string_view,
+        ::webrtc::FieldTrialsView const*
+    );
 
     MCNAPI ::std::set<::rtc::SocketAddress> StunServers();
 
@@ -37,8 +42,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::std::set<::rtc::SocketAddress> const&, ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const&, ::std::string_view, ::std::string_view, ::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(
+        ::std::set<::rtc::SocketAddress> const&,
+        ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const&,
+        ::std::string_view,
+        ::std::string_view,
+        ::webrtc::FieldTrialsView const*
+    );
     // NOLINTEND
 };
 

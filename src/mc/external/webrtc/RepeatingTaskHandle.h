@@ -38,8 +38,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::webrtc::RepeatingTaskHandle
-    DelayedStart(::webrtc::TaskQueueBase*, ::webrtc::TimeDelta, ::absl::AnyInvocable<::webrtc::TimeDelta()>, ::webrtc::TaskQueueBase::DelayPrecision, ::webrtc::Clock*, ::webrtc::Location const&);
+    MCNAPI static ::webrtc::RepeatingTaskHandle DelayedStart(
+        ::webrtc::TaskQueueBase*,
+        ::webrtc::TimeDelta,
+        ::absl::AnyInvocable<::webrtc::TimeDelta()>,
+        ::webrtc::TaskQueueBase::DelayPrecision,
+        ::webrtc::Clock*,
+        ::webrtc::Location const&
+    );
     // NOLINTEND
 
 public:

@@ -99,10 +99,13 @@ public:
         ::ResourceInformation::ResourceType     pluginEnumerator,
         ::IScriptPluginSourceEnumerator&        packConfigManager,
         ::ScriptPackConfigurationManager const& moduleFilters,
-        ::std::vector<::std::function<
-            bool(::PackManifest const&, ::Scripting::ModuleDescriptor const&, ::Scripting::ModuleDescriptor const&, ::ScriptPluginResult&)>> const&
-                                     excludeModuleIDs,
-        ::std::vector<::std::string> pluginExecutionGroupSelector,
+        ::std::vector<::std::function<bool(
+            ::PackManifest const&,
+            ::Scripting::ModuleDescriptor const&,
+            ::Scripting::ModuleDescriptor const&,
+            ::ScriptPluginResult&
+        )>> const&                              excludeModuleIDs,
+        ::std::vector<::std::string>            pluginExecutionGroupSelector,
         ::std::function<::PluginExecutionGroup(::std::vector<::Scripting::ModuleDescriptor> const&)>&& moduleType
     );
 

@@ -239,9 +239,13 @@ public:
     MCAPI ::std::optional<::ItemStack>
     _sendTryDestroyBlockEvent(::Block const& block, ::BlockPos const& pos, ::ItemStack itemBeforeEvent) const;
 
-    MCAPI ::InteractionResult
-    _sendUseItemOnEvents(::ItemStack& item, ::BlockPos const& at, uchar face, ::Vec3 const& hit, bool isFirstEvent)
-        const;
+    MCAPI ::InteractionResult _sendUseItemOnEvents(
+        ::ItemStack&      item,
+        ::BlockPos const& at,
+        uchar             face,
+        ::Vec3 const&     hit,
+        bool              isFirstEvent
+    ) const;
 
     MCAPI bool baseUseItem(::ItemStack& item);
 

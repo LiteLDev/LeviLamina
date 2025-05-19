@@ -64,12 +64,12 @@ public:
     virtual void _setValid(bool valid) /*override*/;
 
     // vIndex: 2
-    virtual void _handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const& payload
-    ) /*override*/;
+    virtual void
+    _handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const& payload) /*override*/;
 
     // vIndex: 3
-    virtual void
-    _handleWidgetComponentStateChangePayload(::Editor::Network::WidgetComponentStateChangePayload const& payload
+    virtual void _handleWidgetComponentStateChangePayload(
+        ::Editor::Network::WidgetComponentStateChangePayload const& payload
     ) /*override*/;
 
     // vIndex: 4
@@ -81,7 +81,8 @@ public:
         ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject,
         ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject,
         ::Scripting::Error>
-    _deleteWidget(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> widgetToDelete
+    _deleteWidget(
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> widgetToDelete
     ) /*override*/;
     // NOLINTEND
 
@@ -105,8 +106,8 @@ public:
 
     MCNAPI void _deleteThisGroup();
 
-    MCNAPI void
-    _forEachWidget(::std::function<bool(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>)> fn
+    MCNAPI void _forEachWidget(
+        ::std::function<bool(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>)> fn
     ) const;
 
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject> _scriptDeselectAll();

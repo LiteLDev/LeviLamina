@@ -34,8 +34,12 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptItemUseAfterEvent(::ScriptModuleMinecraft::ScriptItemUseAfterEvent const&);
 
-    MCNAPI
-    ScriptItemUseAfterEvent(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Player const& player, ::ItemUseEvent const& scope, ::Scripting::WeakLifetimeScope const&);
+    MCNAPI ScriptItemUseAfterEvent(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Player const&                                                                player,
+        ::ItemUseEvent const&                                                          scope,
+        ::Scripting::WeakLifetimeScope const&
+    );
 
     MCNAPI ~ScriptItemUseAfterEvent();
     // NOLINTEND
@@ -53,8 +57,12 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemUseAfterEvent const&);
 
-    MCNAPI void*
-    $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Player const& player, ::ItemUseEvent const& scope, ::Scripting::WeakLifetimeScope const&);
+    MCNAPI void* $ctor(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Player const&                                                                player,
+        ::ItemUseEvent const&                                                          scope,
+        ::Scripting::WeakLifetimeScope const&
+    );
     // NOLINTEND
 
 public:

@@ -113,8 +113,14 @@ public:
     );
 
     // vIndex: 13
-    virtual void
-    SendConstruction(::DataStructures::List<::RakNet::Replica3*>&, ::DataStructures::List<::RakNet::Replica3*>&, ::RakNet::PRO, ::RakNet::RakPeerInterface*, uchar, ::RakNet::ReplicaManager3*);
+    virtual void SendConstruction(
+        ::DataStructures::List<::RakNet::Replica3*>&,
+        ::DataStructures::List<::RakNet::Replica3*>&,
+        ::RakNet::PRO,
+        ::RakNet::RakPeerInterface*,
+        uchar,
+        ::RakNet::ReplicaManager3*
+    );
     // NOLINTEND
 
 public:

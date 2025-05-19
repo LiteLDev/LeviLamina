@@ -168,9 +168,11 @@ public:
 
     MCAPI void addAttributeModifier(::Attribute const& attribute, ::std::shared_ptr<::AttributeModifier> modifier);
 
-    MCAPI void
-    applyModsAndBuffs(::BaseAttributeMap& attributeMapToRemoveFrom, ::EffectDuration durationTicks, int amplification)
-        const;
+    MCAPI void applyModsAndBuffs(
+        ::BaseAttributeMap& attributeMapToRemoveFrom,
+        ::EffectDuration    durationTicks,
+        int                 amplification
+    ) const;
 
     MCAPI void setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
 
@@ -180,9 +182,11 @@ public:
 
     MCAPI void setValueAmplifier(::std::shared_ptr<::Amplifier> amplifier);
 
-    MCAPI void
-    updateModsAndBuffs(::BaseAttributeMap& attributeMapToRemoveFrom, ::EffectDuration durationTicks, int amplification)
-        const;
+    MCAPI void updateModsAndBuffs(
+        ::BaseAttributeMap& attributeMapToRemoveFrom,
+        ::EffectDuration    durationTicks,
+        int                 amplification
+    ) const;
     // NOLINTEND
 
 public:

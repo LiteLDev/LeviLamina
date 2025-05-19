@@ -63,8 +63,8 @@ public:
     virtual int getLevelGenHeight() const /*override*/;
 
     // vIndex: 48
-    virtual ::Util::MultidimensionalArray<float, 5, 5, 41> generateDensityCellsForChunk(::ChunkPos const& chunkPos
-    ) const /*override*/;
+    virtual ::Util::MultidimensionalArray<float, 5, 5, 41>
+    generateDensityCellsForChunk(::ChunkPos const& chunkPos) const /*override*/;
 
     // vIndex: 54
     virtual ::PerlinSimplexNoise const& getSurfaceNoise() /*override*/;
@@ -102,8 +102,8 @@ public:
     // NOLINTBEGIN
     MCNAPI OverworldGenerator2d(::Dimension& dimension, uint seed, bool isLegacyWorld, ::Biome const* biomeOverride);
 
-    MCNAPI ::Util::MultidimensionalArray<float, 5, 5, 41> _generateDensityCellsForChunk(::ChunkPos const& chunkPos
-    ) const;
+    MCNAPI ::Util::MultidimensionalArray<float, 5, 5, 41>
+    _generateDensityCellsForChunk(::ChunkPos const& chunkPos) const;
     // NOLINTEND
 
 public:
@@ -127,8 +127,8 @@ public:
 
     MCNAPI int $getLevelGenHeight() const;
 
-    MCNAPI ::Util::MultidimensionalArray<float, 5, 5, 41> $generateDensityCellsForChunk(::ChunkPos const& chunkPos
-    ) const;
+    MCNAPI ::Util::MultidimensionalArray<float, 5, 5, 41>
+    $generateDensityCellsForChunk(::ChunkPos const& chunkPos) const;
 
     MCNAPI ::PerlinSimplexNoise const& $getSurfaceNoise();
 

@@ -55,9 +55,9 @@ public:
         listenForPersistDataChanged(::std::function<void(::Editor::Persistence::PersistentData const&)>) = 0;
 
     // vIndex: 9
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-        listenForPersistDataRemoved(::std::function<
-                                    void(::HashedString const&, ::Editor::Services::PersistentDataType)>) = 0;
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForPersistDataRemoved(
+        ::std::function<void(::HashedString const&, ::Editor::Services::PersistentDataType)>
+    ) = 0;
 
     // vIndex: 10
     virtual ::std::unique_ptr<::cereal::ReflectionCtx>& getCerealContext() = 0;

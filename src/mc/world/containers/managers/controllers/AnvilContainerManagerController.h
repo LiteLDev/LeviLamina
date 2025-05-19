@@ -3,44 +3,43 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/safety/RedactableString.h"
+#include "mc/world/containers/SlotData.h"
 #include "mc/world/containers/managers/controllers/ContainerManagerController.h"
+#include "mc/world/containers/managers/controllers/ItemResultPreview.h"
+#include "mc/world/inventory/network/TypedServerNetId.h"
 #include "mc/world/inventory/simulation/ContainerScreenRequestActionType.h"
 
 // auto generated forward declare list
 // clang-format off
+class AnvilContainerManagerModel;
 class ItemInstance;
 class ItemStackBase;
+class Recipe;
 struct AutoPlaceItem;
 struct AutoPlaceResult;
 struct ContainerScreenActionResult;
 struct CreateContainerItemScope;
 struct ItemStackRequestScope;
 struct ItemTransferAmount;
-struct SlotData;
-namespace Bedrock::Safety { class RedactableString; }
+struct RecipeNetIdTag;
 // clang-format on
 
 class AnvilContainerManagerController : public ::ContainerManagerController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnk618879;
-    ::ll::UntypedStorage<4, 4>   mUnk13819a;
-    ::ll::UntypedStorage<8, 72>  mUnk329f5d;
-    ::ll::UntypedStorage<8, 72>  mUnk79aa88;
-    ::ll::UntypedStorage<1, 1>   mUnkfbb4ec;
-    ::ll::UntypedStorage<8, 136> mUnkc5eab2;
-    ::ll::UntypedStorage<4, 4>   mUnka66304;
-    ::ll::UntypedStorage<4, 4>   mUnkc60e1a;
-    ::ll::UntypedStorage<8, 8>   mUnkbe3acb;
-    ::ll::UntypedStorage<8, 40>  mUnke2b5e4;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::AnvilContainerManagerModel>> mAnvilContainerManagerModel;
+    ::ll::TypedStorage<4, 4, int>                                            mCost;
+    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString>           mPreviewName;
+    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString>           mItemName;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsMapRecipe;
+    ::ll::TypedStorage<8, 136, ::ItemResultPreview>                          mResultPreview;
+    ::ll::TypedStorage<4, 4, int>                                            mRepairItemCountCost;
+    ::ll::TypedStorage<4, 4, ::RecipeNetId>                                  mCurrentRecipeNetId;
+    ::ll::TypedStorage<8, 8, ::Recipe const*>                                mMapCraftingRecipe;
+    ::ll::TypedStorage<8, 40, ::SlotData const>                              mCreatedItemOutputSlot;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AnvilContainerManagerController& operator=(AnvilContainerManagerController const&);
-    AnvilContainerManagerController(AnvilContainerManagerController const&);
-    AnvilContainerManagerController();
 
 public:
     // virtual functions
@@ -82,9 +81,12 @@ public:
     virtual void handleTakeHalf(::SlotData const&, ::SlotData const&) /*override*/;
 
     // vIndex: 15
-    virtual int
-    handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&) /*override*/
-        ;
+    virtual int handleAutoPlace(
+        ::SlotData const&,
+        int,
+        ::std::vector<::AutoPlaceItem> const&,
+        ::std::vector<::AutoPlaceResult>&
+    ) /*override*/;
 
     // vIndex: 32
     virtual void _onItemAcquired(::ItemInstance const&, ::SlotData const&) /*override*/;
@@ -94,9 +96,11 @@ public:
     _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
 
     // vIndex: 28
-    virtual void
-    _updateItemStackRequest(::ContainerScreenRequestActionType, ::ContainerScreenActionResult const&, ::ItemStackRequestScope&) /*override*/
-        ;
+    virtual void _updateItemStackRequest(
+        ::ContainerScreenRequestActionType,
+        ::ContainerScreenActionResult const&,
+        ::ItemStackRequestScope&
+    ) /*override*/;
     // NOLINTEND
 
 public:

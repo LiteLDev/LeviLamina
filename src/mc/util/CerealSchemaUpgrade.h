@@ -30,14 +30,19 @@ public:
     virtual ~CerealSchemaUpgrade();
 
     // vIndex: 1
-    virtual bool previousSchema(::rapidjson::GenericValue<
-                                ::rapidjson::UTF8<char>,
-                                ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&) const = 0;
+    virtual bool previousSchema(
+        ::rapidjson::
+            GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&
+    ) const = 0;
 
     // vIndex: 2
-    virtual void
-    upgradeToNext(::rapidjson::GenericDocument<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>, ::rapidjson::CrtAllocator>&, ::SemVersion const&)
-        const;
+    virtual void upgradeToNext(
+        ::rapidjson::GenericDocument<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+            ::rapidjson::CrtAllocator>&,
+        ::SemVersion const&
+    ) const;
     // NOLINTEND
 
 public:
@@ -79,9 +84,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void
-    $upgradeToNext(::rapidjson::GenericDocument<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>, ::rapidjson::CrtAllocator>&, ::SemVersion const&)
-        const;
+    MCNAPI void $upgradeToNext(
+        ::rapidjson::GenericDocument<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+            ::rapidjson::CrtAllocator>&,
+        ::SemVersion const&
+    ) const;
     // NOLINTEND
 
 public:

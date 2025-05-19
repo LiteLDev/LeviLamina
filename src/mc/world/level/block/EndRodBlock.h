@@ -63,9 +63,13 @@ public:
 
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCAPI ::Block const&
-    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
-        const;
+    MCAPI ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 

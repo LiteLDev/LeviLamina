@@ -39,11 +39,11 @@ public:
     virtual ~ScriptSimpleBlockPaletteItem() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void, ::Scripting::Error>
-    setBlock(::std::variant<
-             ::std::string,
-             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
-             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const& block
+    virtual ::Scripting::Result<void, ::Scripting::Error> setBlock(
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const& block
     ) /*override*/;
 
     // vIndex: 2
@@ -70,11 +70,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error>
-    $setBlock(::std::variant<
-              ::std::string,
-              ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
-              ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const& block);
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error> $setBlock(
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const& block
+    );
 
     MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
     $getBlock() const;

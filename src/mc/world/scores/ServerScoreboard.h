@@ -149,8 +149,8 @@ public:
 
     MCAPI void deserialize(::std::unique_ptr<::CompoundTag> root);
 
-    MCAPI void initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector
-    );
+    MCAPI void
+    initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
     MCAPI void intializeWithActorManager(::IActorManagerConnector& actorManagerConnector);
 

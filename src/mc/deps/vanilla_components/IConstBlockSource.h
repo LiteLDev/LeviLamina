@@ -86,14 +86,22 @@ public:
     virtual void fetchAABBs(::std::vector<::AABB>&, ::AABB const&, bool) const = 0;
 
     // vIndex: 20
-    virtual void
-    fetchCollisionShapes(::std::vector<::AABB>&, ::AABB const&, bool, ::optional_ref<::GetCollisionShapeInterface const>, ::std::vector<::AABB>*)
-        const = 0;
+    virtual void fetchCollisionShapes(
+        ::std::vector<::AABB>&,
+        ::AABB const&,
+        bool,
+        ::optional_ref<::GetCollisionShapeInterface const>,
+        ::std::vector<::AABB>*
+    ) const = 0;
 
     // vIndex: 21
-    virtual void
-    fetchCollisionShapesAndBlocks(::std::vector<::BlockSourceVisitor::CollisionShape>&, ::AABB const&, bool, ::optional_ref<::GetCollisionShapeInterface const>, ::std::vector<::AABB>*)
-        const = 0;
+    virtual void fetchCollisionShapesAndBlocks(
+        ::std::vector<::BlockSourceVisitor::CollisionShape>&,
+        ::AABB const&,
+        bool,
+        ::optional_ref<::GetCollisionShapeInterface const>,
+        ::std::vector<::AABB>*
+    ) const = 0;
 
     // vIndex: 22
     virtual ::AABB

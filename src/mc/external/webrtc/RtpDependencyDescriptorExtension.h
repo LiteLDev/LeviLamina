@@ -17,8 +17,12 @@ public:
     MCNAPI static uint64
     ValueSize(::webrtc::FrameDependencyStructure const&, ::std::bitset<32>, ::webrtc::DependencyDescriptor const&);
 
-    MCNAPI static bool
-    Write(::rtc::ArrayView<uchar>, ::webrtc::FrameDependencyStructure const&, ::std::bitset<32>, ::webrtc::DependencyDescriptor const&);
+    MCNAPI static bool Write(
+        ::rtc::ArrayView<uchar>,
+        ::webrtc::FrameDependencyStructure const&,
+        ::std::bitset<32>,
+        ::webrtc::DependencyDescriptor const&
+    );
     // NOLINTEND
 };
 

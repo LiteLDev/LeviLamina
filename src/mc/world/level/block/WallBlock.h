@@ -54,14 +54,20 @@ public:
         /*override*/;
 
     // vIndex: 5
-    virtual ::AABB
-    getCollisionShape(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
-        const /*override*/;
+    virtual ::AABB getCollisionShape(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 9
-    virtual ::AABB const&
-    getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
-        const /*override*/;
+    virtual ::AABB const& getOutline(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferValue
+    ) const /*override*/;
 
     // vIndex: 23
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
@@ -81,9 +87,15 @@ public:
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     // vIndex: 4
-    virtual ::HitResult
-    clip(::Block const& block, ::BlockSource const& region, ::BlockPos const& pos, ::Vec3 const& origin, ::Vec3 const& end, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
-        const /*override*/;
+    virtual ::HitResult clip(
+        ::Block const&       block,
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::Vec3 const&        origin,
+        ::Vec3 const&        end,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
@@ -122,9 +134,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const&
-    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
-        const;
+    MCAPI ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     MCFOLD void $onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -134,17 +150,26 @@ public:
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI ::AABB const&
-    $getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB)
-        const;
+    MCAPI ::AABB const& $getVisualShapeInWorld(
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::AABB& bufferAABB
+    ) const;
 
-    MCAPI ::AABB
-    $getCollisionShape(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
+    MCAPI ::AABB $getCollisionShape(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
 
-    MCFOLD ::AABB const&
-    $getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
-        const;
+    MCFOLD ::AABB const& $getOutline(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferValue
+    ) const;
 
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
@@ -157,9 +182,15 @@ public:
 
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCFOLD ::HitResult
-    $clip(::Block const& block, ::BlockSource const& region, ::BlockPos const& pos, ::Vec3 const& origin, ::Vec3 const& end, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
+    MCFOLD ::HitResult $clip(
+        ::Block const&       block,
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::Vec3 const&        origin,
+        ::Vec3 const&        end,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND

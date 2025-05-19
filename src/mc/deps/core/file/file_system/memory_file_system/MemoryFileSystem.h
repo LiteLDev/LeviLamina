@@ -80,9 +80,11 @@ public:
     virtual ::Core::Result _renameDirectory(::Core::PathView, ::Core::PathView) /*override*/;
 
     // vIndex: 26
-    virtual ::Core::Result
-        _iterateOverDirectory(::Core::PathView, ::Core::DirectoryIterationFlags, ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>) /*override*/
-        ;
+    virtual ::Core::Result _iterateOverDirectory(
+        ::Core::PathView,
+        ::Core::DirectoryIterationFlags,
+        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>
+    ) /*override*/;
 
     // vIndex: 32
     virtual bool _fileOrDirectoryExists(::Core::PathView) /*override*/;

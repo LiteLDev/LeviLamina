@@ -2,17 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/inventory/simulation/ContainerValidationSlotData.h"
+
 struct ContainerSimulationSplitStack {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnkda5984;
-    ::ll::UntypedStorage<4, 4>  mUnk4cd3bf;
+    ::ll::TypedStorage<4, 16, ::ContainerValidationSlotData> mContainerSlot;
+    ::ll::TypedStorage<4, 4, int>                            mAddedCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerSimulationSplitStack& operator=(ContainerSimulationSplitStack const&);
-    ContainerSimulationSplitStack(ContainerSimulationSplitStack const&);
-    ContainerSimulationSplitStack();
 };

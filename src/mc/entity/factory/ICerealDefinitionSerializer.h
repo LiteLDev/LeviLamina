@@ -30,14 +30,19 @@ public:
     virtual ~ICerealDefinitionSerializer() = default;
 
     // vIndex: 2
-    virtual ::std::shared_ptr<::IDefinitionInstance>
-    serializeDefinitionInstance(::rapidjson::GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&, ::MinEngineVersion const&, ::cereal::ReflectionCtx const&)
-        const = 0;
+    virtual ::std::shared_ptr<::IDefinitionInstance> serializeDefinitionInstance(
+        ::rapidjson::
+            GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&,
+        ::MinEngineVersion const&,
+        ::cereal::ReflectionCtx const&
+    ) const = 0;
 
     // vIndex: 1
-    virtual ::std::shared_ptr<::IDefinitionInstance>
-    serializeDefinitionInstance(::gsl::not_null<::CompoundTag const*>, ::MinEngineVersion const&, ::cereal::ReflectionCtx const&)
-        const = 0;
+    virtual ::std::shared_ptr<::IDefinitionInstance> serializeDefinitionInstance(
+        ::gsl::not_null<::CompoundTag const*>,
+        ::MinEngineVersion const&,
+        ::cereal::ReflectionCtx const&
+    ) const = 0;
     // NOLINTEND
 
 public:

@@ -86,8 +86,10 @@ public:
 
     MCNAPI void StartT3RtxTimerIfOutstandingData();
 
-    MCNAPI void
-        UpdateRTT(::webrtc::Timestamp, ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>);
+    MCNAPI void UpdateRTT(
+        ::webrtc::Timestamp,
+        ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>
+    );
 
     MCNAPI void UpdateReceiverWindow(uint);
 

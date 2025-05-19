@@ -53,8 +53,12 @@ public:
         ::Scripting::WeakLifetimeScope const&              scope
     );
 
-    MCNAPI void
-    _handleDataStorePayloadEvent(::HashedString const& dataTag, ::Editor::DataStore::EventType eventType, ::Json::Value const& payload, ::Editor::DataStore::PayloadDescription const&);
+    MCNAPI void _handleDataStorePayloadEvent(
+        ::HashedString const&          dataTag,
+        ::Editor::DataStore::EventType eventType,
+        ::Json::Value const&           payload,
+        ::Editor::DataStore::PayloadDescription const&
+    );
 
     MCNAPI ::Editor::ScriptModule::ScriptDataStoreService& operator=(::Editor::ScriptModule::ScriptDataStoreService&&);
 

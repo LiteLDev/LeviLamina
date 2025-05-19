@@ -41,14 +41,24 @@ public:
     virtual bool isAreaLoaded(::AABB const&) const = 0;
 
     // vIndex: 6
-    virtual ::CompoundBlockVolume
-    getContiguousSelection(int const, ::Facing::Name const&, ::Vec3 const&, bool const, int const, bool const, ::Editor::BlockUtils::ContiguousSelectionType const&, ::std::vector<::std::string> const&)
-        const = 0;
+    virtual ::CompoundBlockVolume getContiguousSelection(
+        int const,
+        ::Facing::Name const&,
+        ::Vec3 const&,
+        bool const,
+        int const,
+        bool const,
+        ::Editor::BlockUtils::ContiguousSelectionType const&,
+        ::std::vector<::std::string> const&
+    ) const = 0;
 
     // vIndex: 7
-    virtual bool
-    areBlocksContiguous(::Editor::BlockUtils::ContiguousSelectionType const&, ::Block const&, ::Block const&, ::std::vector<::std::string> const&)
-        const = 0;
+    virtual bool areBlocksContiguous(
+        ::Editor::BlockUtils::ContiguousSelectionType const&,
+        ::Block const&,
+        ::Block const&,
+        ::std::vector<::std::string> const&
+    ) const = 0;
 
     // vIndex: 8
     virtual ::Vec3 getDeltaFromDirection(::Facing::Name const&) const = 0;

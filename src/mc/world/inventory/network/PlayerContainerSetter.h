@@ -8,13 +8,14 @@
 // auto generated forward declare list
 // clang-format off
 class ItemStack;
+class Player;
 // clang-format on
 
 class PlayerContainerSetter : public ::IPlayerContainerSetter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk9fc8eb;
+    ::ll::TypedStorage<8, 8, ::Player&> mPlayer;
     // NOLINTEND
 
 public:

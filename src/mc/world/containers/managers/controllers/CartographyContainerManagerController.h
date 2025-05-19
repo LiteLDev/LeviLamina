@@ -3,11 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/safety/RedactableString.h"
+#include "mc/world/containers/SlotData.h"
 #include "mc/world/containers/managers/controllers/ContainerManagerController.h"
+#include "mc/world/containers/managers/controllers/ItemResultPreview.h"
+#include "mc/world/containers/managers/controllers/MapOutputType.h"
 #include "mc/world/inventory/simulation/ContainerScreenRequestActionType.h"
 
 // auto generated forward declare list
 // clang-format off
+class CartographyContainerManagerModel;
 class ItemInstance;
 class ItemStackBase;
 struct AutoPlaceItem;
@@ -17,31 +22,23 @@ struct CreateContainerItemScope;
 struct ItemStackRequestScope;
 struct ItemTransferAmount;
 struct SelectedSlotInfo;
-struct SlotData;
-namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class CartographyContainerManagerController : public ::ContainerManagerController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnk8db3e2;
-    ::ll::UntypedStorage<8, 72>  mUnk56e4c5;
-    ::ll::UntypedStorage<8, 72>  mUnkecb494;
-    ::ll::UntypedStorage<8, 32>  mUnka0023f;
-    ::ll::UntypedStorage<8, 40>  mUnkb20872;
-    ::ll::UntypedStorage<1, 1>   mUnk125e73;
-    ::ll::UntypedStorage<1, 1>   mUnke25743;
-    ::ll::UntypedStorage<1, 1>   mUnk74bf34;
-    ::ll::UntypedStorage<4, 4>   mUnk2ece7c;
-    ::ll::UntypedStorage<8, 136> mUnkb7daa9;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::CartographyContainerManagerModel>> mCartographyContainerManagerModel;
+    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString>                 mPreviewName;
+    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString>                 mItemName;
+    ::ll::TypedStorage<8, 32, ::std::string>                                       mItemResultLocName;
+    ::ll::TypedStorage<8, 40, ::SlotData const>                                    mCreatedItemOutputSlot;
+    ::ll::TypedStorage<1, 1, bool>                                                 mCurrentlyCrafting;
+    ::ll::TypedStorage<1, 1, bool>                                                 mIsCurrentlyRenaming;
+    ::ll::TypedStorage<1, 1, bool>                                                 mWasPreviouslyRenaming;
+    ::ll::TypedStorage<4, 4, ::MapOutputType>                                      mMapOutputType;
+    ::ll::TypedStorage<8, 136, ::ItemResultPreview>                                mResultPreview;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CartographyContainerManagerController& operator=(CartographyContainerManagerController const&);
-    CartographyContainerManagerController(CartographyContainerManagerController const&);
-    CartographyContainerManagerController();
 
 public:
     // virtual functions
@@ -89,9 +86,12 @@ public:
     virtual void handlePlaceOne(::SlotData const&, ::SlotData const&) /*override*/;
 
     // vIndex: 15
-    virtual int
-    handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&) /*override*/
-        ;
+    virtual int handleAutoPlace(
+        ::SlotData const&,
+        int,
+        ::std::vector<::AutoPlaceItem> const&,
+        ::std::vector<::AutoPlaceResult>&
+    ) /*override*/;
 
     // vIndex: 34
     virtual void _onContainerScreenAction(::ContainerScreenActionResult const&) /*override*/;
@@ -104,9 +104,11 @@ public:
     virtual void _onItemAcquired(::ItemInstance const&, ::SlotData const&) /*override*/;
 
     // vIndex: 28
-    virtual void
-    _updateItemStackRequest(::ContainerScreenRequestActionType, ::ContainerScreenActionResult const&, ::ItemStackRequestScope&) /*override*/
-        ;
+    virtual void _updateItemStackRequest(
+        ::ContainerScreenRequestActionType,
+        ::ContainerScreenActionResult const&,
+        ::ItemStackRequestScope&
+    ) /*override*/;
     // NOLINTEND
 
 public:

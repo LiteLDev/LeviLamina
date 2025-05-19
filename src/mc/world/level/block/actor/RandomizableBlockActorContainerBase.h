@@ -22,15 +22,9 @@ class RandomizableBlockActorContainerBase : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk4eae51;
-    ::ll::UntypedStorage<4, 4>  mUnk7a2f42;
+    ::ll::TypedStorage<8, 32, ::std::string> mLootTable;
+    ::ll::TypedStorage<4, 4, int>            mLootTableSeed;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RandomizableBlockActorContainerBase& operator=(RandomizableBlockActorContainerBase const&);
-    RandomizableBlockActorContainerBase(RandomizableBlockActorContainerBase const&);
-    RandomizableBlockActorContainerBase();
 
 public:
     // virtual functions

@@ -70,8 +70,8 @@ public:
     virtual ::Bedrock::Safety::RedactableString const& getCustomName() const /*override*/;
 
     // vIndex: 26
-    virtual ::std::string const& getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context
-    ) /*override*/;
+    virtual ::std::string const&
+    getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context) /*override*/;
 
     // vIndex: 28
     virtual void setCustomName(::Bedrock::Safety::RedactableString const& str) /*override*/;
@@ -146,8 +146,8 @@ public:
 
     MCNAPI ::Bedrock::Safety::RedactableString const& $getCustomName() const;
 
-    MCNAPI ::std::string const& $getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context
-    );
+    MCNAPI ::std::string const&
+    $getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context);
 
     MCNAPI void $setCustomName(::Bedrock::Safety::RedactableString const& str);
 

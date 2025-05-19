@@ -216,9 +216,13 @@ public:
 
         MCNAPI void _setupThirdFloor();
 
-        MCNAPI uchar
-        get1x2RoomDirection(::WoodlandMansionPieces::SimpleGrid const& x, int y, int floorNum, int roomId, int grid)
-            const;
+        MCNAPI uchar get1x2RoomDirection(
+            ::WoodlandMansionPieces::SimpleGrid const& x,
+            int                                        y,
+            int                                        floorNum,
+            int                                        roomId,
+            int                                        grid
+        ) const;
         // NOLINTEND
 
     public:

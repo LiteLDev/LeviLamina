@@ -56,9 +56,12 @@ public:
     virtual ~NativeRuntime() /*override*/ = default;
 
     // vIndex: 3
-    virtual ::std::optional<::Scripting::ScriptContext>
-    createContext(::Scripting::ModuleBindingBundle&& bindings, ::Scripting::IDependencyLoader* loader, ::Scripting::IPrinter* printer, ::Scripting::ContextConfig const&) /*override*/
-        ;
+    virtual ::std::optional<::Scripting::ScriptContext> createContext(
+        ::Scripting::ModuleBindingBundle&& bindings,
+        ::Scripting::IDependencyLoader*    loader,
+        ::Scripting::IPrinter*             printer,
+        ::Scripting::ContextConfig const&
+    ) /*override*/;
 
     // vIndex: 4
     virtual void destroyContext(::Scripting::ContextId contextId) /*override*/;
@@ -70,19 +73,28 @@ public:
         ::std::optional<::Scripting::Privilege> privilege) /*override*/;
 
     // vIndex: 6
-    virtual ::Scripting::ResultAny
-    call(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::ClosureType>, ::entt::meta_any*, uint, ::entt::meta_type const&, ::std::optional<::Scripting::Privilege>) /*override*/
-        ;
+    virtual ::Scripting::ResultAny call(
+        ::Scripting::ContextId,
+        ::Scripting::TypedObjectHandle<::Scripting::ClosureType>,
+        ::entt::meta_any*,
+        uint,
+        ::entt::meta_type const&,
+        ::std::optional<::Scripting::Privilege>
+    ) /*override*/;
 
     // vIndex: 7
-    virtual ::Scripting::ResultAny
-    resolve(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&) /*override*/
-        ;
+    virtual ::Scripting::ResultAny resolve(
+        ::Scripting::ContextId,
+        ::Scripting::TypedObjectHandle<::Scripting::PromiseType>,
+        ::entt::meta_any&
+    ) /*override*/;
 
     // vIndex: 8
-    virtual ::Scripting::ResultAny
-    reject(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&) /*override*/
-        ;
+    virtual ::Scripting::ResultAny reject(
+        ::Scripting::ContextId,
+        ::Scripting::TypedObjectHandle<::Scripting::PromiseType>,
+        ::entt::meta_any&
+    ) /*override*/;
 
     // vIndex: 9
     virtual ::Scripting::FutureStatus
@@ -90,9 +102,11 @@ public:
         /*override*/;
 
     // vIndex: 10
-    virtual ::Scripting::ResultAny
-    getFutureResult(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>, ::entt::meta_type const&)
-        const /*override*/;
+    virtual ::Scripting::ResultAny getFutureResult(
+        ::Scripting::ContextId,
+        ::Scripting::TypedObjectHandle<::Scripting::FutureType>,
+        ::entt::meta_type const&
+    ) const /*override*/;
 
     // vIndex: 11
     virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
@@ -111,9 +125,10 @@ public:
     virtual void startProfiler() /*override*/;
 
     // vIndex: 16
-    virtual void
-        stopProfiler(::std::function<void(::std::string_view)>, ::std::optional<::std::reference_wrapper<::std::string const>>) /*override*/
-        ;
+    virtual void stopProfiler(
+        ::std::function<void(::std::string_view)>,
+        ::std::optional<::std::reference_wrapper<::std::string const>>
+    ) /*override*/;
 
     // vIndex: 17
     virtual ::Scripting::RuntimeStats computeRuntimeStats() const /*override*/;
@@ -139,10 +154,14 @@ public:
 
     MCNAPI ::Scripting::ResultAny runFunction(
         ::Scripting::ContextId contextId,
-        ::std::function<
-            ::Scripting::
-                ResultAny(::Scripting::NativeRuntime&, ::Scripting::ContextId, ::Scripting::WeakLifetimeScope, ::Scripting::ModuleBindingBundle const&, ::Scripting::IDependencyLoader*, ::Scripting::IPrinter*)> const&
-            function
+        ::std::function<::Scripting::ResultAny(
+            ::Scripting::NativeRuntime&,
+            ::Scripting::ContextId,
+            ::Scripting::WeakLifetimeScope,
+            ::Scripting::ModuleBindingBundle const&,
+            ::Scripting::IDependencyLoader*,
+            ::Scripting::IPrinter*
+        )> const&              function
     );
     // NOLINTEND
 
@@ -155,8 +174,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::Scripting::ScriptContext>
-    $createContext(::Scripting::ModuleBindingBundle&& bindings, ::Scripting::IDependencyLoader* loader, ::Scripting::IPrinter* printer, ::Scripting::ContextConfig const&);
+    MCNAPI ::std::optional<::Scripting::ScriptContext> $createContext(
+        ::Scripting::ModuleBindingBundle&& bindings,
+        ::Scripting::IDependencyLoader*    loader,
+        ::Scripting::IPrinter*             printer,
+        ::Scripting::ContextConfig const&
+    );
 
     MCNAPI void $destroyContext(::Scripting::ContextId contextId);
 
@@ -166,8 +189,14 @@ public:
         ::std::optional<::Scripting::Privilege> privilege
     );
 
-    MCNAPI ::Scripting::ResultAny
-    $call(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::ClosureType>, ::entt::meta_any*, uint, ::entt::meta_type const&, ::std::optional<::Scripting::Privilege>);
+    MCNAPI ::Scripting::ResultAny $call(
+        ::Scripting::ContextId,
+        ::Scripting::TypedObjectHandle<::Scripting::ClosureType>,
+        ::entt::meta_any*,
+        uint,
+        ::entt::meta_type const&,
+        ::std::optional<::Scripting::Privilege>
+    );
 
     MCNAPI ::Scripting::ResultAny
     $resolve(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&);
@@ -178,9 +207,11 @@ public:
     MCNAPI ::Scripting::FutureStatus
         $getFutureStatus(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>) const;
 
-    MCNAPI ::Scripting::ResultAny
-    $getFutureResult(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>, ::entt::meta_type const&)
-        const;
+    MCNAPI ::Scripting::ResultAny $getFutureResult(
+        ::Scripting::ContextId,
+        ::Scripting::TypedObjectHandle<::Scripting::FutureType>,
+        ::entt::meta_type const&
+    ) const;
 
     MCNAPI ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
         $executeCoroutines(::std::optional<::std::chrono::microseconds>);
@@ -193,8 +224,10 @@ public:
 
     MCNAPI void $startProfiler();
 
-    MCNAPI void
-        $stopProfiler(::std::function<void(::std::string_view)>, ::std::optional<::std::reference_wrapper<::std::string const>>);
+    MCNAPI void $stopProfiler(
+        ::std::function<void(::std::string_view)>,
+        ::std::optional<::std::reference_wrapper<::std::string const>>
+    );
 
     MCNAPI ::Scripting::RuntimeStats $computeRuntimeStats() const;
 

@@ -51,13 +51,13 @@ public:
 
     MCNAPI ::Scripting::Result<::ScriptModuleMinecraft::ScriptFluidType, ::Scripting::Error> getFluidType() const;
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error> setCustomColor(::ScriptModuleMinecraft::ScriptRGBA const& color
-    );
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error>
+    setCustomColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
 
     MCNAPI ::Scripting::Result<void, ::Scripting::Error> setFillLevel(int level) const;
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error> setFluidType(::ScriptModuleMinecraft::ScriptFluidType fluidType
-    );
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error>
+    setFluidType(::ScriptModuleMinecraft::ScriptFluidType fluidType);
 
     MCNAPI ::Scripting::Result<void, ::Scripting::Error>
     setPotionType(::ScriptModuleMinecraft::ScriptItemStack const& item);

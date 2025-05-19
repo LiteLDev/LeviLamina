@@ -63,21 +63,23 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(::StrictExecutionContext<
-                      ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
-                      ::Read<
-                          ::ActorDataFlagComponent,
-                          ::ActorDefinitionIdentifierComponent,
-                          ::ActorUniqueIDComponent,
-                          ::DimensionTypeComponent,
-                          ::SoundEventPlayerComponent,
-                          ::StateVectorComponent,
-                          ::AABBShapeComponent>,
-                      ::Write<>,
-                      ::AddRemove<>,
-                      ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
-                      ::GlobalWrite<>,
-                      ::EntityFactoryT<>>& context) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
+            ::Read<
+                ::ActorDataFlagComponent,
+                ::ActorDefinitionIdentifierComponent,
+                ::ActorUniqueIDComponent,
+                ::DimensionTypeComponent,
+                ::SoundEventPlayerComponent,
+                ::StateVectorComponent,
+                ::AABBShapeComponent>,
+            ::Write<>,
+            ::AddRemove<>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    ) /*override*/;
 
     // vIndex: 6
     virtual void singleTick(
@@ -124,21 +126,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::StrictExecutionContext<
-                      ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
-                      ::Read<
-                          ::ActorDataFlagComponent,
-                          ::ActorDefinitionIdentifierComponent,
-                          ::ActorUniqueIDComponent,
-                          ::DimensionTypeComponent,
-                          ::SoundEventPlayerComponent,
-                          ::StateVectorComponent,
-                          ::AABBShapeComponent>,
-                      ::Write<>,
-                      ::AddRemove<>,
-                      ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
-                      ::GlobalWrite<>,
-                      ::EntityFactoryT<>>& context);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
+            ::Read<
+                ::ActorDataFlagComponent,
+                ::ActorDefinitionIdentifierComponent,
+                ::ActorUniqueIDComponent,
+                ::DimensionTypeComponent,
+                ::SoundEventPlayerComponent,
+                ::StateVectorComponent,
+                ::AABBShapeComponent>,
+            ::Write<>,
+            ::AddRemove<>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    );
 
     MCNAPI void $singleTick(
         ::StrictExecutionContext<

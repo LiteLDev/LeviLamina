@@ -28,16 +28,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::webrtc::RtpDependencyDescriptorWriter::TemplateMatch
-        CalculateMatch(::std::_Vector_const_iterator<
-                       ::std::_Vector_val<::std::_Simple_types<::webrtc::FrameDependencyTemplate>>>) const;
+    MCNAPI ::webrtc::RtpDependencyDescriptorWriter::TemplateMatch CalculateMatch(
+        ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::webrtc::FrameDependencyTemplate>>>
+    ) const;
 
     MCNAPI void FindBestTemplate();
 
     MCNAPI bool HasExtendedFields() const;
 
-    MCNAPI
-    RtpDependencyDescriptorWriter(::rtc::ArrayView<uchar>, ::webrtc::FrameDependencyStructure const&, ::std::bitset<32>, ::webrtc::DependencyDescriptor const&);
+    MCNAPI RtpDependencyDescriptorWriter(
+        ::rtc::ArrayView<uchar>,
+        ::webrtc::FrameDependencyStructure const&,
+        ::std::bitset<32>,
+        ::webrtc::DependencyDescriptor const&
+    );
 
     MCNAPI bool ShouldWriteActiveDecodeTargetsBitmask() const;
 
@@ -81,8 +85,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::rtc::ArrayView<uchar>, ::webrtc::FrameDependencyStructure const&, ::std::bitset<32>, ::webrtc::DependencyDescriptor const&);
+    MCNAPI void* $ctor(
+        ::rtc::ArrayView<uchar>,
+        ::webrtc::FrameDependencyStructure const&,
+        ::std::bitset<32>,
+        ::webrtc::DependencyDescriptor const&
+    );
     // NOLINTEND
 };
 

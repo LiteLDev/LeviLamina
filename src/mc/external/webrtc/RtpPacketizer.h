@@ -25,8 +25,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::webrtc::RtpPacketizer>
-    Create(::std::optional<::webrtc::VideoCodecType>, ::rtc::ArrayView<uchar const>, ::webrtc::RtpPacketizer::PayloadSizeLimits, ::webrtc::RTPVideoHeader const&);
+    MCNAPI static ::std::unique_ptr<::webrtc::RtpPacketizer> Create(
+        ::std::optional<::webrtc::VideoCodecType>,
+        ::rtc::ArrayView<uchar const>,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits,
+        ::webrtc::RTPVideoHeader const&
+    );
 
     MCNAPI static ::std::vector<int> SplitAboutEqually(int, ::webrtc::RtpPacketizer::PayloadSizeLimits const&);
     // NOLINTEND

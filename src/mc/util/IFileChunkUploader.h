@@ -45,8 +45,13 @@ public:
     virtual ~IFileChunkUploader() = default;
 
     // vIndex: 1
-    virtual void
-    initFileUploader(::std::string const&, ::FileInfo const&, int, ::Json::Value const&, ::std::function<void(bool)>) = 0;
+    virtual void initFileUploader(
+        ::std::string const&,
+        ::FileInfo const&,
+        int,
+        ::Json::Value const&,
+        ::std::function<void(bool)>
+    ) = 0;
 
     // vIndex: 2
     virtual void getServerMissingChunks(

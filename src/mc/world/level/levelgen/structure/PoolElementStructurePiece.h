@@ -59,9 +59,12 @@ public:
     virtual void moveBoundingBox(int dx, int dy, int dz) /*override*/;
 
     // vIndex: 13
-    virtual int
-    generateHeightAtPosition(::BlockPos const&, ::Dimension&, ::BlockVolume&, ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>&)
-        const = 0;
+    virtual int generateHeightAtPosition(
+        ::BlockPos const&,
+        ::Dimension&,
+        ::BlockVolume&,
+        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>&
+    ) const = 0;
 
     // vIndex: 14
     virtual ::Block const* getSupportBlock(::BlockSource&, ::BlockPos const&, ::Block const&) const = 0;
