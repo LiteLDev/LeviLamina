@@ -67,8 +67,10 @@ public:
     virtual ::ActorUniqueID loadOwnerID(::ActorUniqueID) = 0;
 
     // vIndex: 15
-    virtual ::InternalComponentRegistry::ComponentInfo const*
-    loadActorInternalComponentInfo(::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const&, ::std::string const&) = 0;
+    virtual ::InternalComponentRegistry::ComponentInfo const* loadActorInternalComponentInfo(
+        ::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const&,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 16
     virtual ::DataLoadHelperType getType() const = 0;

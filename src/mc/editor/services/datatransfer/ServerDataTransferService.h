@@ -144,8 +144,8 @@ public:
         ::Editor::Network::DataTransferServiceDataRequestResponsePayload const& payload
     );
 
-    MCNAPI void
-    _onRegisterCollectionPayloadReceived(::Editor::Network::DataTransferServiceRegisterCollectionPayload const& payload
+    MCNAPI void _onRegisterCollectionPayloadReceived(
+        ::Editor::Network::DataTransferServiceRegisterCollectionPayload const& payload
     );
     // NOLINTEND
 

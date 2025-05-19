@@ -322,8 +322,11 @@ public:
     AddTrack(::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface>, ::std::vector<::std::string> const&) = 0;
 
     // vIndex: 7
-    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>>
-    AddTrack(::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface>, ::std::vector<::std::string> const&, ::std::vector<::webrtc::RtpEncodingParameters> const&) = 0;
+    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> AddTrack(
+        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface>,
+        ::std::vector<::std::string> const&,
+        ::std::vector<::webrtc::RtpEncodingParameters> const&
+    ) = 0;
 
     // vIndex: 9
     virtual ::webrtc::RTCError RemoveTrackOrError(::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>);
@@ -333,8 +336,10 @@ public:
         AddTransceiver(::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface>) = 0;
 
     // vIndex: 12
-    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>>
-    AddTransceiver(::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface>, ::webrtc::RtpTransceiverInit const&) = 0;
+    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> AddTransceiver(
+        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface>,
+        ::webrtc::RtpTransceiverInit const&
+    ) = 0;
 
     // vIndex: 11
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>>
@@ -368,12 +373,16 @@ public:
     virtual void GetStats(::webrtc::RTCStatsCollectorCallback*) = 0;
 
     // vIndex: 19
-    virtual void
-        GetStats(::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>, ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>) = 0;
+    virtual void GetStats(
+        ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>,
+        ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>
+    ) = 0;
 
     // vIndex: 18
-    virtual void
-        GetStats(::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface>, ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>) = 0;
+    virtual void GetStats(
+        ::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface>,
+        ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>
+    ) = 0;
 
     // vIndex: 22
     virtual void ClearStatsCache();
@@ -408,16 +417,22 @@ public:
     virtual void RestartIce() = 0;
 
     // vIndex: 32
-    virtual void
-    CreateOffer(::webrtc::CreateSessionDescriptionObserver*, ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&) = 0;
+    virtual void CreateOffer(
+        ::webrtc::CreateSessionDescriptionObserver*,
+        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&
+    ) = 0;
 
     // vIndex: 33
-    virtual void
-    CreateAnswer(::webrtc::CreateSessionDescriptionObserver*, ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&) = 0;
+    virtual void CreateAnswer(
+        ::webrtc::CreateSessionDescriptionObserver*,
+        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&
+    ) = 0;
 
     // vIndex: 37
-    virtual void
-        SetLocalDescription(::std::unique_ptr<::webrtc::SessionDescriptionInterface>, ::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface>);
+    virtual void SetLocalDescription(
+        ::std::unique_ptr<::webrtc::SessionDescriptionInterface>,
+        ::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface>
+    );
 
     // vIndex: 36
     virtual void SetLocalDescription(::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface>);
@@ -430,8 +445,10 @@ public:
     virtual void SetLocalDescription(::webrtc::SetSessionDescriptionObserver*);
 
     // vIndex: 39
-    virtual void
-        SetRemoteDescription(::std::unique_ptr<::webrtc::SessionDescriptionInterface>, ::webrtc::scoped_refptr<::webrtc::SetRemoteDescriptionObserverInterface>) = 0;
+    virtual void SetRemoteDescription(
+        ::std::unique_ptr<::webrtc::SessionDescriptionInterface>,
+        ::webrtc::scoped_refptr<::webrtc::SetRemoteDescriptionObserverInterface>
+    ) = 0;
 
     // vIndex: 38
     virtual void SetRemoteDescription(::webrtc::SetSessionDescriptionObserver*, ::webrtc::SessionDescriptionInterface*);

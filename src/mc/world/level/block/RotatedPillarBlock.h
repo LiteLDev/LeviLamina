@@ -39,9 +39,13 @@ public:
     // NOLINTBEGIN
     MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCAPI ::Block const&
-    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
-        const;
+    MCAPI ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
     // NOLINTEND

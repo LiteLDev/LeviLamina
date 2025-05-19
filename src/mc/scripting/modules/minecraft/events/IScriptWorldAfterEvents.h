@@ -105,8 +105,10 @@ public:
     onActorSpawn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorSpawnAfterEvent>&);
 
     // vIndex: 11
-    virtual void
-    onActorRemoved(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const&, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent>&);
+    virtual void onActorRemoved(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const&,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent>&
+    );
 
     // vIndex: 12
     virtual void
@@ -121,16 +123,17 @@ public:
     onServerMessage(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptServerMessageAfterEvent>&);
 
     // vIndex: 15
-    virtual void
-    onDataDrivenActorEventSend(::std::shared_ptr<
-                               ::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEventIntermediateData>&);
+    virtual void onDataDrivenActorEventSend(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEventIntermediateData>&
+    );
 
     // vIndex: 16
     virtual void onActorHurt(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHurtAfterEvent>&);
 
     // vIndex: 17
-    virtual void onActorHealthChanged(::Scripting::StrongTypedObjectHandle<
-                                      ::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent>&);
+    virtual void onActorHealthChanged(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent>&
+    );
 
     // vIndex: 18
     virtual void onActorDie(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorDieAfterEvent>&);
@@ -140,37 +143,44 @@ public:
     onPlayerSpawn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerSpawnAfterEvent>&);
 
     // vIndex: 20
-    virtual void onPlayerDimensionChange(::Scripting::StrongTypedObjectHandle<
-                                         ::ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent>&);
+    virtual void onPlayerDimensionChange(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent>&
+    );
 
     // vIndex: 21
-    virtual void onPlayerInputModeChange(::Scripting::StrongTypedObjectHandle<
-                                         ::ScriptModuleMinecraft::ScriptPlayerInputModeChangeAfterEvent>&);
+    virtual void onPlayerInputModeChange(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInputModeChangeAfterEvent>&
+    );
 
     // vIndex: 22
-    virtual void onPlayerInputPermissionCategoryChange(::Scripting::StrongTypedObjectHandle<
-                                                       ::ScriptModuleMinecraft::
-                                                           ScriptPlayerInputPermissionCategoryChangeAfterEvent>&);
+    virtual void onPlayerInputPermissionCategoryChange(
+        ::Scripting::StrongTypedObjectHandle<
+            ::ScriptModuleMinecraft::ScriptPlayerInputPermissionCategoryChangeAfterEvent>&
+    );
 
     // vIndex: 23
-    virtual void onPlayerInteractWithEntity(::Scripting::StrongTypedObjectHandle<
-                                            ::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent>&);
+    virtual void onPlayerInteractWithEntity(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent>&
+    );
 
     // vIndex: 24
-    virtual void onPlayerInteractWithBlock(::Scripting::StrongTypedObjectHandle<
-                                           ::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent>&);
+    virtual void onPlayerInteractWithBlock(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent>&
+    );
 
     // vIndex: 25
-    virtual void onPlayerGameModeChange(::Scripting::StrongTypedObjectHandle<
-                                        ::ScriptModuleMinecraft::ScriptPlayerGameModeChangeAfterEvent>&);
+    virtual void onPlayerGameModeChange(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeAfterEvent>&
+    );
 
     // vIndex: 26
     virtual void
     onPlayerEmote(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerEmoteAfterEvent>&);
 
     // vIndex: 27
-    virtual void onPlayerButtonInput(::Scripting::StrongTypedObjectHandle<
-                                     ::ScriptModuleMinecraft::ScriptPlayerButtonInputAfterEvent>&);
+    virtual void onPlayerButtonInput(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerButtonInputAfterEvent>&
+    );
 
     // vIndex: 28
     virtual void
@@ -193,20 +203,24 @@ public:
     onExplodeBlock(::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEventIntermediateData>&);
 
     // vIndex: 33
-    virtual void onPlayerPlaceBlock(::Scripting::StrongTypedObjectHandle<
-                                    ::ScriptModuleMinecraft::ScriptPlayerPlaceBlockAfterEvent>&);
+    virtual void onPlayerPlaceBlock(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerPlaceBlockAfterEvent>&
+    );
 
     // vIndex: 34
-    virtual void onPlayerBreakBlock(::Scripting::StrongTypedObjectHandle<
-                                    ::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent>&);
+    virtual void onPlayerBreakBlock(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent>&
+    );
 
     // vIndex: 35
-    virtual void onPushPressurePlate(::Scripting::StrongTypedObjectHandle<
-                                     ::ScriptModuleMinecraft::ScriptPressurePlatePushAfterEvent>&);
+    virtual void onPushPressurePlate(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPressurePlatePushAfterEvent>&
+    );
 
     // vIndex: 36
-    virtual void onPopPressurePlate(::Scripting::StrongTypedObjectHandle<
-                                    ::ScriptModuleMinecraft::ScriptPressurePlatePopAfterEvent>&);
+    virtual void onPopPressurePlate(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPressurePlatePopAfterEvent>&
+    );
 
     // vIndex: 37
     virtual void
@@ -247,12 +261,14 @@ public:
     onItemStopUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent>&);
 
     // vIndex: 47
-    virtual void onProjectileHitEntity(::Scripting::StrongTypedObjectHandle<
-                                       ::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent>&);
+    virtual void onProjectileHitEntity(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent>&
+    );
 
     // vIndex: 48
-    virtual void onProjectileHitBlock(::Scripting::StrongTypedObjectHandle<
-                                      ::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent>&);
+    virtual void onProjectileHitBlock(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent>&
+    );
     // NOLINTEND
 
 public:
@@ -274,38 +290,46 @@ public:
     MCNAPI void
     $onServerMessage(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptServerMessageAfterEvent>&);
 
-    MCNAPI void $onActorHealthChanged(::Scripting::StrongTypedObjectHandle<
-                                      ::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent>&);
+    MCNAPI void $onActorHealthChanged(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent>&
+    );
 
     MCNAPI void $onActorDie(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorDieAfterEvent>&);
 
     MCNAPI void
     $onPlayerSpawn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerSpawnAfterEvent>&);
 
-    MCNAPI void $onPlayerDimensionChange(::Scripting::StrongTypedObjectHandle<
-                                         ::ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent>&);
+    MCNAPI void $onPlayerDimensionChange(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent>&
+    );
 
-    MCNAPI void $onPlayerInputModeChange(::Scripting::StrongTypedObjectHandle<
-                                         ::ScriptModuleMinecraft::ScriptPlayerInputModeChangeAfterEvent>&);
+    MCNAPI void $onPlayerInputModeChange(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInputModeChangeAfterEvent>&
+    );
 
-    MCNAPI void $onPlayerInputPermissionCategoryChange(::Scripting::StrongTypedObjectHandle<
-                                                       ::ScriptModuleMinecraft::
-                                                           ScriptPlayerInputPermissionCategoryChangeAfterEvent>&);
+    MCNAPI void $onPlayerInputPermissionCategoryChange(
+        ::Scripting::StrongTypedObjectHandle<
+            ::ScriptModuleMinecraft::ScriptPlayerInputPermissionCategoryChangeAfterEvent>&
+    );
 
-    MCNAPI void $onPlayerInteractWithEntity(::Scripting::StrongTypedObjectHandle<
-                                            ::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent>&);
+    MCNAPI void $onPlayerInteractWithEntity(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent>&
+    );
 
-    MCNAPI void $onPlayerInteractWithBlock(::Scripting::StrongTypedObjectHandle<
-                                           ::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent>&);
+    MCNAPI void $onPlayerInteractWithBlock(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent>&
+    );
 
-    MCNAPI void $onPlayerGameModeChange(::Scripting::StrongTypedObjectHandle<
-                                        ::ScriptModuleMinecraft::ScriptPlayerGameModeChangeAfterEvent>&);
+    MCNAPI void $onPlayerGameModeChange(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeAfterEvent>&
+    );
 
     MCNAPI void
     $onPlayerEmote(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerEmoteAfterEvent>&);
 
-    MCNAPI void $onPlayerButtonInput(::Scripting::StrongTypedObjectHandle<
-                                     ::ScriptModuleMinecraft::ScriptPlayerButtonInputAfterEvent>&);
+    MCNAPI void $onPlayerButtonInput(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerButtonInputAfterEvent>&
+    );
 
     MCNAPI void
     $onActivatePiston(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPistonActionAfterEvent>&);
@@ -322,17 +346,21 @@ public:
     MCNAPI void
     $onExplodeBlock(::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEventIntermediateData>&);
 
-    MCNAPI void $onPlayerPlaceBlock(::Scripting::StrongTypedObjectHandle<
-                                    ::ScriptModuleMinecraft::ScriptPlayerPlaceBlockAfterEvent>&);
+    MCNAPI void $onPlayerPlaceBlock(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerPlaceBlockAfterEvent>&
+    );
 
-    MCNAPI void $onPlayerBreakBlock(::Scripting::StrongTypedObjectHandle<
-                                    ::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent>&);
+    MCNAPI void $onPlayerBreakBlock(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent>&
+    );
 
-    MCNAPI void $onPushPressurePlate(::Scripting::StrongTypedObjectHandle<
-                                     ::ScriptModuleMinecraft::ScriptPressurePlatePushAfterEvent>&);
+    MCNAPI void $onPushPressurePlate(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPressurePlatePushAfterEvent>&
+    );
 
-    MCNAPI void $onPopPressurePlate(::Scripting::StrongTypedObjectHandle<
-                                    ::ScriptModuleMinecraft::ScriptPressurePlatePopAfterEvent>&);
+    MCNAPI void $onPopPressurePlate(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPressurePlatePopAfterEvent>&
+    );
 
     MCNAPI void
     $onHitTargetBlock(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptTargetBlockHitAfterEvent>&);
@@ -348,11 +376,13 @@ public:
     MCNAPI void
     $onItemStopUseOn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseOnAfterEvent>&);
 
-    MCNAPI void $onProjectileHitEntity(::Scripting::StrongTypedObjectHandle<
-                                       ::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent>&);
+    MCNAPI void $onProjectileHitEntity(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent>&
+    );
 
-    MCNAPI void $onProjectileHitBlock(::Scripting::StrongTypedObjectHandle<
-                                      ::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent>&);
+    MCNAPI void $onProjectileHitBlock(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent>&
+    );
     // NOLINTEND
 };
 

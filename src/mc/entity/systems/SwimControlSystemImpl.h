@@ -46,19 +46,21 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(::StrictExecutionContext<
-                      ::Filter<::MobTravelComponent, ::WasInWaterFlagComponent, ::MobIsJumpingFlagComponent>,
-                      ::Read<
-                          ::ActorDataFlagComponent,
-                          ::MovementAbilitiesComponent,
-                          ::ActorRotationComponent,
-                          ::MoveInputComponent,
-                          ::PlayerInputRequestComponent>,
-                      ::Write<::StateVectorComponent>,
-                      ::AddRemove<>,
-                      ::GlobalRead<>,
-                      ::GlobalWrite<>,
-                      ::EntityFactoryT<>>& context) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<::MobTravelComponent, ::WasInWaterFlagComponent, ::MobIsJumpingFlagComponent>,
+            ::Read<
+                ::ActorDataFlagComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorRotationComponent,
+                ::MoveInputComponent,
+                ::PlayerInputRequestComponent>,
+            ::Write<::StateVectorComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~SwimControlSystemImpl() /*override*/ = default;
@@ -67,19 +69,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::StrictExecutionContext<
-                      ::Filter<::MobTravelComponent, ::WasInWaterFlagComponent, ::MobIsJumpingFlagComponent>,
-                      ::Read<
-                          ::ActorDataFlagComponent,
-                          ::MovementAbilitiesComponent,
-                          ::ActorRotationComponent,
-                          ::MoveInputComponent,
-                          ::PlayerInputRequestComponent>,
-                      ::Write<::StateVectorComponent>,
-                      ::AddRemove<>,
-                      ::GlobalRead<>,
-                      ::GlobalWrite<>,
-                      ::EntityFactoryT<>>& context);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<::MobTravelComponent, ::WasInWaterFlagComponent, ::MobIsJumpingFlagComponent>,
+            ::Read<
+                ::ActorDataFlagComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorRotationComponent,
+                ::MoveInputComponent,
+                ::PlayerInputRequestComponent>,
+            ::Write<::StateVectorComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    );
     // NOLINTEND
 
 public:

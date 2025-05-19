@@ -76,33 +76,35 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(::StrictExecutionContext<
-                      ::Filter<
-                          ::HorseFlagComponent,
-                          ::MobFlagComponent,
-                          ::ParrotFlagComponent,
-                          ::VehicleComponent,
-                          ::CamelFlagComponent,
-                          ::PlayerComponent>,
-                      ::Read<
-                          ::DimensionTypeComponent,
-                          ::StateVectorComponent,
-                          ::UpdateWaterStateRequestComponent,
-                          ::ActorRotationComponent,
-                          ::MobBodyRotationComponent,
-                          ::PassengerComponent,
-                          ::RenderRotationComponent,
-                          ::StandAnimationComponent,
-                          ::ActorDataFlagComponent,
-                          ::AABBShapeComponent,
-                          ::OffsetsComponent,
-                          ::VanillaOffsetComponent,
-                          ::PassengerRenderingRidingOffsetComponent>,
-                      ::Write<>,
-                      ::AddRemove<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent>,
-                      ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
-                      ::GlobalWrite<>,
-                      ::EntityFactoryT<>>& context) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent>,
+            ::Read<
+                ::DimensionTypeComponent,
+                ::StateVectorComponent,
+                ::UpdateWaterStateRequestComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::PassengerComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::ActorDataFlagComponent,
+                ::AABBShapeComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent>,
+            ::Write<>,
+            ::AddRemove<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    ) /*override*/;
 
     // vIndex: 6
     virtual void singleTick(
@@ -159,33 +161,35 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::StrictExecutionContext<
-                      ::Filter<
-                          ::HorseFlagComponent,
-                          ::MobFlagComponent,
-                          ::ParrotFlagComponent,
-                          ::VehicleComponent,
-                          ::CamelFlagComponent,
-                          ::PlayerComponent>,
-                      ::Read<
-                          ::DimensionTypeComponent,
-                          ::StateVectorComponent,
-                          ::UpdateWaterStateRequestComponent,
-                          ::ActorRotationComponent,
-                          ::MobBodyRotationComponent,
-                          ::PassengerComponent,
-                          ::RenderRotationComponent,
-                          ::StandAnimationComponent,
-                          ::ActorDataFlagComponent,
-                          ::AABBShapeComponent,
-                          ::OffsetsComponent,
-                          ::VanillaOffsetComponent,
-                          ::PassengerRenderingRidingOffsetComponent>,
-                      ::Write<>,
-                      ::AddRemove<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent>,
-                      ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
-                      ::GlobalWrite<>,
-                      ::EntityFactoryT<>>& context);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent>,
+            ::Read<
+                ::DimensionTypeComponent,
+                ::StateVectorComponent,
+                ::UpdateWaterStateRequestComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::PassengerComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::ActorDataFlagComponent,
+                ::AABBShapeComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent>,
+            ::Write<>,
+            ::AddRemove<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    );
 
     MCNAPI void $singleTick(
         ::StrictExecutionContext<

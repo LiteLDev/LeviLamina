@@ -4,38 +4,60 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/IContainerManager.h"
+#include "mc/world/inventory/network/ContainerScreenContext.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class ContainerManagerController;
 class ContainerModel;
-class ContainerScreenContext;
+class DynamicContainerTracker;
+class IContainerRegistryAccess;
 class ItemStack;
 class Player;
 struct FullContainerName;
+struct PlayerContainerRefresher;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
+namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 
 class ContainerManagerModel : public ::IContainerManager {
 public:
+    // ContainerManagerModel inner types define
+    using DynamicContainerPublisher =
+        ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnkc2376e;
-    ::ll::UntypedStorage<8, 16>  mUnk38654c;
-    ::ll::UntypedStorage<8, 16>  mUnk1bfaad;
-    ::ll::UntypedStorage<8, 8>   mUnkfee45b;
-    ::ll::UntypedStorage<8, 24>  mUnkf245ae;
-    ::ll::UntypedStorage<1, 1>   mUnk5c726e;
-    ::ll::UntypedStorage<1, 1>   mUnkb3fe56;
-    ::ll::UntypedStorage<8, 8>   mUnk3505e0;
-    ::ll::UntypedStorage<8, 64>  mUnk466296;
-    ::ll::UntypedStorage<8, 40>  mUnkbb37fd;
-    ::ll::UntypedStorage<8, 64>  mUnke23970;
-    ::ll::UntypedStorage<8, 128> mUnkb06eac;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::PlayerContainerRefresher>>> mContainerRefresher;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::DynamicContainerTracker>>> mDynamicContainerTracker;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::IContainerRegistryAccess>>                         mRegistryAccess;
+    ::ll::TypedStorage<8, 8, ::Player&>                                                      mPlayer;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>>                                    mLastSlots;
+    ::ll::TypedStorage<1, 1, ::ContainerID>                                                  mContainerId;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType>                           mContainerType;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::unique_ptr<::Bedrock::PubSub::Publisher<
+            void(::SharedTypes::Legacy::ContainerType),
+            ::Bedrock::PubSub::ThreadModel::SingleThreaded>>>
+        mContainerTypeSubscribers;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::ContainerManagerController const*, ::std::function<void(::ContainerManagerModel&)>>>
+                                                        mInformControllerOfDestructionCallbacks;
+    ::ll::TypedStorage<8, 40, ::ContainerScreenContext> mScreenContext;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::shared_ptr<::ContainerModel>>> mContainers;
+    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+        mOnDynamicContainerChangePublisher;
     // NOLINTEND
 
 public:

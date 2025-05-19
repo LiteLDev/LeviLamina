@@ -37,8 +37,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::RecipeUnlockingRequirement::UnlockingContext unlockingContextFromString(::std::string const& context
-    );
+    MCAPI static ::RecipeUnlockingRequirement::UnlockingContext
+    unlockingContextFromString(::std::string const& context);
     // NOLINTEND
 
 public:

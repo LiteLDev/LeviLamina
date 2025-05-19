@@ -57,9 +57,11 @@ public:
     virtual int _getNumCandles(::Block const&) const /*override*/;
 
     // vIndex: 149
-    virtual void
-    _iterateCandles(::Block const& block, ::BlockPos const& pos, ::std::function<void(::Vec3 const&, int)> callback)
-        const /*override*/;
+    virtual void _iterateCandles(
+        ::Block const&                            block,
+        ::BlockPos const&                         pos,
+        ::std::function<void(::Vec3 const&, int)> callback
+    ) const /*override*/;
 
     // vIndex: 150
     virtual void _tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const /*override*/;
@@ -114,9 +116,11 @@ public:
 
     MCFOLD int $_getNumCandles(::Block const&) const;
 
-    MCAPI void
-    $_iterateCandles(::Block const& block, ::BlockPos const& pos, ::std::function<void(::Vec3 const&, int)> callback)
-        const;
+    MCAPI void $_iterateCandles(
+        ::Block const&                            block,
+        ::BlockPos const&                         pos,
+        ::std::function<void(::Vec3 const&, int)> callback
+    ) const;
 
     MCAPI void $_tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
 

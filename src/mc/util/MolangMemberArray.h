@@ -50,8 +50,12 @@ public:
 
     MCAPI MolangMemberArray(::MolangStruct_SpeedAndDirection speed, float direction, ::Vec3 const&);
 
-    MCAPI
-    MolangMemberArray(::MolangStruct_TRS translation, ::MolangMemberArray&& rotation, ::MolangMemberArray&& scale, ::MolangMemberArray&&);
+    MCAPI MolangMemberArray(
+        ::MolangStruct_TRS    translation,
+        ::MolangMemberArray&& rotation,
+        ::MolangMemberArray&& scale,
+        ::MolangMemberArray&&
+    );
 
     MCAPI ::MolangScriptArg& getOrAdd(::HashedString const& name);
 
@@ -75,8 +79,12 @@ public:
 
     MCAPI void* $ctor(::MolangStruct_SpeedAndDirection speed, float direction, ::Vec3 const&);
 
-    MCAPI void*
-    $ctor(::MolangStruct_TRS translation, ::MolangMemberArray&& rotation, ::MolangMemberArray&& scale, ::MolangMemberArray&&);
+    MCAPI void* $ctor(
+        ::MolangStruct_TRS    translation,
+        ::MolangMemberArray&& rotation,
+        ::MolangMemberArray&& scale,
+        ::MolangMemberArray&&
+    );
     // NOLINTEND
 
 public:

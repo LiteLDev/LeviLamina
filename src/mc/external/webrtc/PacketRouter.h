@@ -31,8 +31,9 @@ public:
 
     MCNAPI PacketRouter();
 
-    MCNAPI void RegisterNotifyBweCallback(::absl::AnyInvocable<
-                                          void(::webrtc::RtpPacketToSend const&, ::webrtc::PacedPacketInfo const&)>);
+    MCNAPI void RegisterNotifyBweCallback(
+        ::absl::AnyInvocable<void(::webrtc::RtpPacketToSend const&, ::webrtc::PacedPacketInfo const&)>
+    );
 
     MCNAPI void RemoveSendRtpModule(::webrtc::RtpRtcpInterface*);
 

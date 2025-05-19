@@ -63,13 +63,18 @@ public:
 
     // vIndex: 11
     virtual ::Scripting::Result_deprecated<::WeakRef<::Editor::Selection::SelectionContainer>>
-    getPredictedWriteAsSelection(::mce::UUID const&, ::BlockPos const&, ::Editor::Services::ClipboardWriteOptions const*)
-        const = 0;
+    getPredictedWriteAsSelection(
+        ::mce::UUID const&,
+        ::BlockPos const&,
+        ::Editor::Services::ClipboardWriteOptions const*
+    ) const = 0;
 
     // vIndex: 12
-    virtual ::Scripting::Result_deprecated<::CompoundBlockVolume>
-    getPredictedWriteAsCompoundBlockVolume(::mce::UUID const&, ::BlockPos const&, ::Editor::Services::ClipboardWriteOptions const*)
-        const = 0;
+    virtual ::Scripting::Result_deprecated<::CompoundBlockVolume> getPredictedWriteAsCompoundBlockVolume(
+        ::mce::UUID const&,
+        ::BlockPos const&,
+        ::Editor::Services::ClipboardWriteOptions const*
+    ) const = 0;
 
     // vIndex: 13
     virtual ::Scripting::Result<void> clear(::mce::UUID const&) = 0;

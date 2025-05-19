@@ -22,8 +22,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    VideoTrack(::std::string_view, ::webrtc::scoped_refptr<::webrtc::VideoTrackSourceProxyWithInternal<::webrtc::VideoTrackSourceInterface>>, ::rtc::Thread*);
+    MCNAPI VideoTrack(
+        ::std::string_view,
+        ::webrtc::scoped_refptr<::webrtc::VideoTrackSourceProxyWithInternal<::webrtc::VideoTrackSourceInterface>>,
+        ::rtc::Thread*
+    );
     // NOLINTEND
 
 public:
@@ -36,8 +39,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::std::string_view, ::webrtc::scoped_refptr<::webrtc::VideoTrackSourceProxyWithInternal<::webrtc::VideoTrackSourceInterface>>, ::rtc::Thread*);
+    MCNAPI void* $ctor(
+        ::std::string_view,
+        ::webrtc::scoped_refptr<::webrtc::VideoTrackSourceProxyWithInternal<::webrtc::VideoTrackSourceInterface>>,
+        ::rtc::Thread*
+    );
     // NOLINTEND
 
 public:

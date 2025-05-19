@@ -33,10 +33,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
-    _buildSchema(::JsonUtil::JsonSchemaObjectNode<
-                 ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
-                 ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode);
+    MCNAPI static void _buildSchema(
+        ::JsonUtil::JsonSchemaObjectNode<
+            ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
+            ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode
+    );
 
     MCNAPI static void _buildVanillaCanopyVariants(
         ::JsonUtil::JsonSchemaObjectNode<

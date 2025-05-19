@@ -28,15 +28,20 @@ public:
 
     MCNAPI int CalculateActiveWritablePingInterval(::cricket::Connection const*, int64) const;
 
-    MCNAPI int
-    CompareCandidatePairNetworks(::cricket::Connection const*, ::cricket::Connection const*, ::std::optional<::rtc::AdapterType>)
-        const;
+    MCNAPI int CompareCandidatePairNetworks(
+        ::cricket::Connection const*,
+        ::cricket::Connection const*,
+        ::std::optional<::rtc::AdapterType>
+    ) const;
 
     MCNAPI int CompareConnectionCandidates(::cricket::Connection const*, ::cricket::Connection const*) const;
 
-    MCNAPI int
-    CompareConnectionStates(::cricket::Connection const*, ::cricket::Connection const*, ::std::optional<int64>, bool*)
-        const;
+    MCNAPI int CompareConnectionStates(
+        ::cricket::Connection const*,
+        ::cricket::Connection const*,
+        ::std::optional<int64>,
+        bool*
+    ) const;
 
     MCNAPI int
     CompareConnections(::cricket::Connection const*, ::cricket::Connection const*, ::std::optional<int64>, bool*) const;

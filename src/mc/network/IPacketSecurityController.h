@@ -22,8 +22,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::PacketViolationResponse
-    checkForViolation(::MinecraftPacketIds, ::SubClientId, ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const&, bool*) = 0;
+    virtual ::PacketViolationResponse checkForViolation(
+        ::MinecraftPacketIds,
+        ::SubClientId,
+        ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const&,
+        bool*
+    ) = 0;
 
     // vIndex: 2
     virtual uint getTelemetryData() = 0;

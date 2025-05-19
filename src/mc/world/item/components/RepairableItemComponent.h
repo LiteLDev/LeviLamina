@@ -44,9 +44,11 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit RepairableItemComponent(::SharedTypes::v1_20_50::RepairableItemComponent component);
 
-    MCNAPI int
-    _repairItem(::ItemStackBase& materialItem, ::ItemStackBase& resultItem, ::ExpressionNode repairAmountExpression)
-        const;
+    MCNAPI int _repairItem(
+        ::ItemStackBase& materialItem,
+        ::ItemStackBase& resultItem,
+        ::ExpressionNode repairAmountExpression
+    ) const;
 
     MCNAPI ::RepairItemResult
     handleItemRepair(::ItemStack& inputItem, ::ItemStack& materialItem, bool allowBidirectionalRepair) const;

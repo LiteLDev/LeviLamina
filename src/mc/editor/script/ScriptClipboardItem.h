@@ -63,8 +63,8 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<bool> isEmpty() const;
 
-    MCNAPI ::Scripting::Result<void> readFromSelection(::Editor::ScriptModule::ScriptSelectionContainer const& selection
-    );
+    MCNAPI ::Scripting::Result<void>
+    readFromSelection(::Editor::ScriptModule::ScriptSelectionContainer const& selection);
 
     MCNAPI ::Scripting::Result<void, ::Scripting::Error>
     readFromStructure(::Editor::ScriptModule::ScriptEditorStructure const& structure);

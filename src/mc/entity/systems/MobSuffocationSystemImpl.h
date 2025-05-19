@@ -59,23 +59,24 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void
-    tick(::StrictExecutionContext<
-         ::Filter<::MobFlagComponent, ::ActorMovementTickNeededComponent, ::PlayerComponent, ::PassengerComponent>,
-         ::Read<
-             ::StateVectorComponent,
-             ::AABBShapeComponent,
-             ::SynchedActorDataComponent,
-             ::OffsetsComponent,
-             ::VehicleComponent,
-             ::ActorRotationComponent,
-             ::VanillaOffsetComponent,
-             ::PassengerRenderingRidingOffsetComponent>,
-         ::Write<::ActorInWallDetectionComponent>,
-         ::AddRemove<::MobIsSuffocatingFlagComponent>,
-         ::GlobalRead<>,
-         ::GlobalWrite<>,
-         ::EntityFactoryT<>>& executionContext) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<::MobFlagComponent, ::ActorMovementTickNeededComponent, ::PlayerComponent, ::PassengerComponent>,
+            ::Read<
+                ::StateVectorComponent,
+                ::AABBShapeComponent,
+                ::SynchedActorDataComponent,
+                ::OffsetsComponent,
+                ::VehicleComponent,
+                ::ActorRotationComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent>,
+            ::Write<::ActorInWallDetectionComponent>,
+            ::AddRemove<::MobIsSuffocatingFlagComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~MobSuffocationSystemImpl() /*override*/ = default;
@@ -118,23 +119,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void
-    $tick(::StrictExecutionContext<
-          ::Filter<::MobFlagComponent, ::ActorMovementTickNeededComponent, ::PlayerComponent, ::PassengerComponent>,
-          ::Read<
-              ::StateVectorComponent,
-              ::AABBShapeComponent,
-              ::SynchedActorDataComponent,
-              ::OffsetsComponent,
-              ::VehicleComponent,
-              ::ActorRotationComponent,
-              ::VanillaOffsetComponent,
-              ::PassengerRenderingRidingOffsetComponent>,
-          ::Write<::ActorInWallDetectionComponent>,
-          ::AddRemove<::MobIsSuffocatingFlagComponent>,
-          ::GlobalRead<>,
-          ::GlobalWrite<>,
-          ::EntityFactoryT<>>& executionContext);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<::MobFlagComponent, ::ActorMovementTickNeededComponent, ::PlayerComponent, ::PassengerComponent>,
+            ::Read<
+                ::StateVectorComponent,
+                ::AABBShapeComponent,
+                ::SynchedActorDataComponent,
+                ::OffsetsComponent,
+                ::VehicleComponent,
+                ::ActorRotationComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent>,
+            ::Write<::ActorInWallDetectionComponent>,
+            ::AddRemove<::MobIsSuffocatingFlagComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext
+    );
     // NOLINTEND
 
 public:

@@ -42,12 +42,12 @@ public:
     virtual ~ScriptProbabilityBlockPaletteItem() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void, ::Scripting::Error>
-    setBlock(::std::variant<
-             ::std::string,
-             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
-             ::Scripting::StrongTypedObjectHandle<
-                 ::ScriptModuleMinecraft::ScriptBlockPermutation>> const&) /*override*/;
+    virtual ::Scripting::Result<void, ::Scripting::Error> setBlock(
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const&
+    ) /*override*/;
 
     // vIndex: 2
     virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
@@ -71,8 +71,8 @@ public:
 
     MCNAPI ::std::vector<::Editor::ScriptModule::ScriptWeightedBlock> getBlocks() const;
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError, ::Scripting::Error> removeBlockAt(int index
-    );
+    MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError, ::Scripting::Error>
+    removeBlockAt(int index);
     // NOLINTEND
 
 public:
@@ -91,11 +91,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error>
-    $setBlock(::std::variant<
-              ::std::string,
-              ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
-              ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const&);
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error> $setBlock(
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const&
+    );
 
     MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
     $getBlock() const;

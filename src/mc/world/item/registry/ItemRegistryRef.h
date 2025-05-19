@@ -35,8 +35,15 @@ public:
     // clang-format on
 
     // ItemRegistryRef inner types define
-    using CreativeItemsServerInitCallbackSignature =
-        void(::ItemRegistryRef, ::BlockDefinitionGroup const&, ::CreativeItemRegistry*, ::BaseGameVersion const&, ::Experiments const&, ::ResourcePackManager const&, ::cereal::ReflectionCtx const&);
+    using CreativeItemsServerInitCallbackSignature = void(
+        ::ItemRegistryRef,
+        ::BlockDefinitionGroup const&,
+        ::CreativeItemRegistry*,
+        ::BaseGameVersion const&,
+        ::Experiments const&,
+        ::ResourcePackManager const&,
+        ::cereal::ReflectionCtx const&
+    );
 
     class LockGuard {
     public:
@@ -112,9 +119,15 @@ public:
         ::BlockDefinitionGroup const& blockDefinitionGroup,
         ::Experiments const&          experiment,
         ::ResourcePackManager const&  resourcePackManager,
-        ::std::function<
-            void(::ItemRegistryRef, ::BlockDefinitionGroup const&, ::CreativeItemRegistry*, ::BaseGameVersion const&, ::Experiments const&, ::ResourcePackManager const&, ::cereal::ReflectionCtx const&)>
-            registerCallback
+        ::std::function<void(
+            ::ItemRegistryRef,
+            ::BlockDefinitionGroup const&,
+            ::CreativeItemRegistry*,
+            ::BaseGameVersion const&,
+            ::Experiments const&,
+            ::ResourcePackManager const&,
+            ::cereal::ReflectionCtx const&
+        )>                            registerCallback
     ) const;
 
     MCAPI void initServer(
@@ -152,9 +165,11 @@ public:
 
     MCAPI void registerLegacyID(::HashedString const& name, short id) const;
 
-    MCAPI void
-    registerLegacyMapping(::HashedString const& alias, ::HashedString const& name, ::BaseGameVersion const& fromVersion)
-        const;
+    MCAPI void registerLegacyMapping(
+        ::HashedString const&    alias,
+        ::HashedString const&    name,
+        ::BaseGameVersion const& fromVersion
+    ) const;
 
     MCAPI uint64 remapToFullLegacyNameByHash(uint64 newHash) const;
 

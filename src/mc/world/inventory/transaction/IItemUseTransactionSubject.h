@@ -58,8 +58,10 @@ public:
     virtual void setPosition(::Vec3 const&) = 0;
 
     // vIndex: 11
-    virtual void
-    createTransactionContext(::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)>&&, ::std::function<void()>&&) = 0;
+    virtual void createTransactionContext(
+        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)>&&,
+        ::std::function<void()>&&
+    ) = 0;
 
     // vIndex: 12
     virtual void addExpectedAction(::InventoryAction const&) = 0;

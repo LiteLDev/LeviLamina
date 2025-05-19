@@ -379,9 +379,11 @@ public:
         bool                   includeLeaves
     ) const;
 
-    MCAPI void
-    getActors(::ActorDefinitionIdentifier const& actorDefinitionId, ::AABB const& bb, ::std::vector<::Actor*>& actors)
-        const;
+    MCAPI void getActors(
+        ::ActorDefinitionIdentifier const& actorDefinitionId,
+        ::AABB const&                      bb,
+        ::std::vector<::Actor*>&           actors
+    ) const;
 
     MCAPI ::Biome const& getBiome(::ChunkBlockPos const& pos) const;
 

@@ -161,10 +161,10 @@ public:
     MCNAPI ::DynamicPropertyDefinition const*
     _getDynamicPropertyDefinition(::Actor& self, ::std::string const& key) const;
 
-    MCNAPI ::MobEffect const*
-    _getEffectHelper(::std::variant<
-                     ::std::string,
-                     ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>> const& effect
+    MCNAPI ::MobEffect const* _getEffectHelper(
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>> const& effect
     ) const;
 
     MCNAPI ::Scripting::Result_deprecated<bool> _teleport(
@@ -345,13 +345,13 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<::Vec3> getVelocity(::Actor const& self) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptVector> getVelocity_010(::Actor const& self
-    ) const;
+    MCNAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptVector>
+    getVelocity_010(::Actor const& self) const;
 
     MCNAPI ::Scripting::Result_deprecated<::Vec3> getViewDirection(::Actor const& self) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptVector> getViewVector_010(::Actor const& self
-    ) const;
+    MCNAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptVector>
+    getViewVector_010(::Actor const& self) const;
 
     MCNAPI bool hasComponent(
         ::Scripting::WeakLifetimeScope scope,
@@ -502,9 +502,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptActor>
-    bind(::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>>&
-             supportedComponentFactories);
+    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptActor> bind(
+        ::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>>&
+            supportedComponentFactories
+    );
 
     MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
     getHandle(::WeakEntityRef entityRef, ::Scripting::WeakLifetimeScope const& scope);

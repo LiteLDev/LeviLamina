@@ -36,8 +36,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBlockCustomComponentPlayerInteractAfterEvent(::ScriptModuleMinecraft::
-                                                                  ScriptBlockCustomComponentPlayerInteractAfterEvent&&);
+    MCNAPI ScriptBlockCustomComponentPlayerInteractAfterEvent(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerInteractAfterEvent&&
+    );
 
     MCNAPI ScriptBlockCustomComponentPlayerInteractAfterEvent(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerInteractAfterEventIntermediateStorage const& eventData,

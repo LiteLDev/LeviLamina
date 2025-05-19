@@ -39,11 +39,15 @@ public:
 
     MCNAPI void HandleReConfig(::dcsctp::ReConfigChunk);
 
-    MCNAPI void
-    HandleResetIncoming(::dcsctp::ParameterDescriptor const&, ::std::vector<::dcsctp::ReconfigurationResponseParameter>&);
+    MCNAPI void HandleResetIncoming(
+        ::dcsctp::ParameterDescriptor const&,
+        ::std::vector<::dcsctp::ReconfigurationResponseParameter>&
+    );
 
-    MCNAPI void
-    HandleResetOutgoing(::dcsctp::ParameterDescriptor const&, ::std::vector<::dcsctp::ReconfigurationResponseParameter>&);
+    MCNAPI void HandleResetOutgoing(
+        ::dcsctp::ParameterDescriptor const&,
+        ::std::vector<::dcsctp::ReconfigurationResponseParameter>&
+    );
 
     MCNAPI void HandleResponse(::dcsctp::ParameterDescriptor const&);
 
@@ -58,13 +62,22 @@ public:
 
     MCNAPI void ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>);
 
-    MCNAPI
-    StreamResetHandler(::std::string_view, ::dcsctp::Context*, ::dcsctp::TimerManager*, ::dcsctp::DataTracker*, ::dcsctp::ReassemblyQueue*, ::dcsctp::RetransmissionQueue*, ::dcsctp::DcSctpSocketHandoverState const*);
+    MCNAPI StreamResetHandler(
+        ::std::string_view,
+        ::dcsctp::Context*,
+        ::dcsctp::TimerManager*,
+        ::dcsctp::DataTracker*,
+        ::dcsctp::ReassemblyQueue*,
+        ::dcsctp::RetransmissionQueue*,
+        ::dcsctp::DcSctpSocketHandoverState const*
+    );
 
     MCNAPI bool Validate(::dcsctp::ReConfigChunk const&);
 
-    MCNAPI bool
-    ValidateReqSeqNbr(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::ReconfigRequestSNTag, uint>>, ::std::vector<::dcsctp::ReconfigurationResponseParameter>&);
+    MCNAPI bool ValidateReqSeqNbr(
+        ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::ReconfigRequestSNTag, uint>>,
+        ::std::vector<::dcsctp::ReconfigurationResponseParameter>&
+    );
 
     MCNAPI ~StreamResetHandler();
     // NOLINTEND
@@ -72,8 +85,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::std::string_view, ::dcsctp::Context*, ::dcsctp::TimerManager*, ::dcsctp::DataTracker*, ::dcsctp::ReassemblyQueue*, ::dcsctp::RetransmissionQueue*, ::dcsctp::DcSctpSocketHandoverState const*);
+    MCNAPI void* $ctor(
+        ::std::string_view,
+        ::dcsctp::Context*,
+        ::dcsctp::TimerManager*,
+        ::dcsctp::DataTracker*,
+        ::dcsctp::ReassemblyQueue*,
+        ::dcsctp::RetransmissionQueue*,
+        ::dcsctp::DcSctpSocketHandoverState const*
+    );
     // NOLINTEND
 
 public:

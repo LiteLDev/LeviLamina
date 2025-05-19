@@ -91,8 +91,8 @@ public:
     virtual bool postProcess(::ChunkViewSource& neighborhood) /*override*/;
 
     // vIndex: 48
-    virtual ::Util::MultidimensionalArray<float, 5, 5, 41> generateDensityCellsForChunk(::ChunkPos const& chunkPos
-    ) const = 0;
+    virtual ::Util::MultidimensionalArray<float, 5, 5, 41>
+    generateDensityCellsForChunk(::ChunkPos const& chunkPos) const = 0;
 
     // vIndex: 42
     virtual ::WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const /*override*/;

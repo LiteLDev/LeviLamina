@@ -57,14 +57,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk36b026;
-    ::ll::UntypedStorage<4, 4> mUnk1d1855;
-    ::ll::UntypedStorage<4, 4> mUnkb8f982;
+    ::ll::TypedStorage<4, 4, ::ContainerValidationDebug::Client const>       mClient;
+    ::ll::TypedStorage<4, 4, ::ContainerValidationDebug::ServerAuth const>   mServerAuth;
+    ::ll::TypedStorage<4, 4, ::ContainerValidationDebug::ServerScript const> mServerScript;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerValidationDebug& operator=(ContainerValidationDebug const&);
-    ContainerValidationDebug(ContainerValidationDebug const&);
-    ContainerValidationDebug();
 };

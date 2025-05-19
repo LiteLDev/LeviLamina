@@ -52,12 +52,13 @@ public:
     virtual void resetAnimation() /*override*/;
 
     // vIndex: 4
-    virtual void bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap
+    virtual void bindParticleEffects(
+        ::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap
     ) /*override*/;
 
     // vIndex: 5
-    virtual void bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap
-    ) /*override*/;
+    virtual void
+    bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap) /*override*/;
 
     // vIndex: 6
     virtual bool hasAnimationFinished() const /*override*/;
@@ -124,8 +125,8 @@ public:
 
     MCNAPI void $resetAnimation();
 
-    MCNAPI void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap
-    );
+    MCNAPI void
+    $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap);
 
     MCNAPI void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap);
 

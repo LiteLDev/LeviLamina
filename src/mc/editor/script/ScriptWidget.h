@@ -101,12 +101,12 @@ public:
     virtual void _setValid(bool valid) /*override*/;
 
     // vIndex: 2
-    virtual void _handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const& payload
-    ) /*override*/;
+    virtual void
+    _handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const& payload) /*override*/;
 
     // vIndex: 3
-    virtual void
-    _handleWidgetComponentStateChangePayload(::Editor::Network::WidgetComponentStateChangePayload const& payload
+    virtual void _handleWidgetComponentStateChangePayload(
+        ::Editor::Network::WidgetComponentStateChangePayload const& payload
     ) /*override*/;
 
     // vIndex: 4
@@ -211,9 +211,11 @@ public:
         ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject,
         ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent,
         ::Scripting::Error>
-    _deleteComponentCommand(::std::variant<
-                            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentBase>,
-                            ::std::string> componentHandleOrName);
+    _deleteComponentCommand(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentBase>,
+            ::std::string> componentHandleOrName
+    );
 
     MCNAPI ::Scripting::Result<
         void,
@@ -286,9 +288,9 @@ public:
     _setBindPositionToBlockCursor(bool bindToBlockCursor);
 
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject> _setChangeEventClosure(
-        ::std::optional<
-            ::Scripting::Closure<void(::Scripting::StrongTypedObjectHandle<
-                                      ::Editor::ScriptModule::ScriptWidgetStateChangeEventParameters>)>> const& closure
+        ::std::optional<::Scripting::Closure<void(
+            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetStateChangeEventParameters>
+        )>> const& closure
     );
 
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject, ::Scripting::Error>

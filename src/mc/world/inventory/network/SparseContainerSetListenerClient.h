@@ -9,13 +9,14 @@
 // clang-format off
 class Container;
 class ItemStack;
+class ItemStackNetManagerClient;
 // clang-format on
 
 class SparseContainerSetListenerClient : public ::ISparseContainerSetListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk59b3d6;
+    ::ll::TypedStorage<8, 8, ::ItemStackNetManagerClient&> mItemStackNetManager;
     // NOLINTEND
 
 public:

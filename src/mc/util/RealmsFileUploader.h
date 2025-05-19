@@ -107,9 +107,13 @@ public:
     virtual ~RealmsFileUploader() /*override*/ = default;
 
     // vIndex: 1
-    virtual void
-    initFileUploader(::std::string const&, ::FileInfo const&, int, ::Json::Value const&, ::std::function<void(bool)>) /*override*/
-        ;
+    virtual void initFileUploader(
+        ::std::string const&,
+        ::FileInfo const&,
+        int,
+        ::Json::Value const&,
+        ::std::function<void(bool)>
+    ) /*override*/;
 
     // vIndex: 5
     virtual void uploadStream(

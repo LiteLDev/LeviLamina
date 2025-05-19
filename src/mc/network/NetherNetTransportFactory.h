@@ -32,8 +32,10 @@ public:
     virtual ::std::unique_ptr<
         ::NetherNet::INetherNetTransportInterface,
         ::std::function<void(::NetherNet::INetherNetTransportInterface*)>>
-    createTransport(::NetherNet::NetworkID const& id, ::NetherNet::INetherNetTransportInterfaceCallbacks* callbacks)
-        const;
+    createTransport(
+        ::NetherNet::NetworkID const&                       id,
+        ::NetherNet::INetherNetTransportInterfaceCallbacks* callbacks
+    ) const;
     // NOLINTEND
 
 public:
@@ -48,8 +50,10 @@ public:
     MCNAPI ::std::unique_ptr<
         ::NetherNet::INetherNetTransportInterface,
         ::std::function<void(::NetherNet::INetherNetTransportInterface*)>>
-    $createTransport(::NetherNet::NetworkID const& id, ::NetherNet::INetherNetTransportInterfaceCallbacks* callbacks)
-        const;
+    $createTransport(
+        ::NetherNet::NetworkID const&                       id,
+        ::NetherNet::INetherNetTransportInterfaceCallbacks* callbacks
+    ) const;
     // NOLINTEND
 
 public:

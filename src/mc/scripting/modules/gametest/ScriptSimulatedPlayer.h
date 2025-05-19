@@ -53,8 +53,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<bool> attack() const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> attackEntity(::ScriptModuleMinecraft::ScriptActor const& scriptActor
-    ) const;
+    MCNAPI ::Scripting::Result_deprecated<bool>
+    attackEntity(::ScriptModuleMinecraft::ScriptActor const& scriptActor) const;
 
     MCNAPI ::Scripting::Result_deprecated<bool>
     breakBlock(::Vec3 const& pos, ::ScriptModuleMinecraft::ScriptFacing face) const;
@@ -147,8 +147,8 @@ public:
 
     MCNAPI ::Scripting::Result<void> swim() const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> useItem(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack
-    ) const;
+    MCNAPI ::Scripting::Result_deprecated<bool>
+    useItem(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
 
     MCNAPI ::Scripting::Result_deprecated<bool> useItemInSlot(int slot) const;
 

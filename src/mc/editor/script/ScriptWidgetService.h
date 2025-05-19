@@ -53,8 +53,8 @@ public:
     virtual ~ScriptWidgetService();
 
     // vIndex: 0
-    virtual ::Scripting::Result<void, ::Scripting::Error>
-    _groupDeleteGroup(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup> groupToDelete
+    virtual ::Scripting::Result<void, ::Scripting::Error> _groupDeleteGroup(
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup> groupToDelete
     ) /*override*/;
     // NOLINTEND
 

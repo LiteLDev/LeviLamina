@@ -64,8 +64,8 @@ public:
     virtual ~CachedHttpRequest() /*override*/ = default;
 
     // vIndex: 3
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>> send(::std::string
-    ) /*override*/;
+    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
+        send(::std::string) /*override*/;
 
     // vIndex: 10
     virtual ::Bedrock::Http::Request _createRequest(::std::string) = 0;

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/containers/controllers/ContainerController.h"
+#include "mc/world/item/ItemStack.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,14 +15,8 @@ class TradeIngredientContainerController : public ::ContainerController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 152> mUnkc9e68c;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mItem;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TradeIngredientContainerController& operator=(TradeIngredientContainerController const&);
-    TradeIngredientContainerController(TradeIngredientContainerController const&);
-    TradeIngredientContainerController();
 
 public:
     // virtual functions

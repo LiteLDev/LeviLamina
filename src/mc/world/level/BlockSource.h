@@ -155,9 +155,12 @@ public:
     virtual ::LevelChunk* getChunkAt(::BlockPos const& pos) const /*override*/;
 
     // vIndex: 44
-    virtual short
-    getAboveTopSolidBlock(::BlockPos const& pos, bool includeWater, bool includeLeaves, bool iteratePastInitialBlocking)
-        const /*override*/;
+    virtual short getAboveTopSolidBlock(
+        ::BlockPos const& pos,
+        bool              includeWater,
+        bool              includeLeaves,
+        bool              iteratePastInitialBlocking
+    ) const /*override*/;
 
     // vIndex: 45
     virtual short getAboveTopSolidBlock(int x, int z, bool includeWater, bool includeLeaves) const /*override*/;

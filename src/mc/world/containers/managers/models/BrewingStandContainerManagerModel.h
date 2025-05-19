@@ -5,10 +5,10 @@
 // auto generated inclusion list
 #include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BrewingStandBlockActor;
 class ContainerScreenContext;
 class ItemStack;
@@ -19,16 +19,14 @@ class BrewingStandContainerManagerModel : public ::ContainerManagerModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkd70144;
-    ::ll::UntypedStorage<4, 4>  mUnkb8fd3e;
-    ::ll::UntypedStorage<4, 4>  mUnk76db16;
-    ::ll::UntypedStorage<4, 4>  mUnkb0a67e;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mBlockPos;
+    ::ll::TypedStorage<4, 4, int>         mLastTickCount;
+    ::ll::TypedStorage<4, 4, int>         mLastFuelAmount;
+    ::ll::TypedStorage<4, 4, int>         mLastFuelTotal;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BrewingStandContainerManagerModel& operator=(BrewingStandContainerManagerModel const&);
-    BrewingStandContainerManagerModel(BrewingStandContainerManagerModel const&);
     BrewingStandContainerManagerModel();
 
 public:

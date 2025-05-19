@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ChestContainerManagerModel;
 class ItemInstance;
 struct SlotData;
 // clang-format on
@@ -15,14 +16,8 @@ class ChestContainerManagerController : public ::ContainerManagerController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkab93d7;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ChestContainerManagerModel>> mChestContainerManagerModel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChestContainerManagerController& operator=(ChestContainerManagerController const&);
-    ChestContainerManagerController(ChestContainerManagerController const&);
-    ChestContainerManagerController();
 
 public:
     // virtual functions

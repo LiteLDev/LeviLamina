@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/containers/FullContainerName.h"
 #include "mc/world/inventory/simulation/validation/ContainerValidationBase.h"
 
 // auto generated forward declare list
@@ -16,14 +17,8 @@ class DynamicContainerValidation : public ::ContainerValidationBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk65b6f4;
+    ::ll::TypedStorage<4, 12, ::FullContainerName> mContainerName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DynamicContainerValidation& operator=(DynamicContainerValidation const&);
-    DynamicContainerValidation(DynamicContainerValidation const&);
-    DynamicContainerValidation();
 
 public:
     // virtual functions

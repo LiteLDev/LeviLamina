@@ -80,8 +80,8 @@ public:
     // NOLINTBEGIN
     MCAPI void _dropItem(::ItemStack const& item) const;
 
-    MCAPI ::std::vector<::WeakEntityRef> _filterValidTargets(::std::vector<::DistanceSortedActor> const& entities
-    ) const;
+    MCAPI ::std::vector<::WeakEntityRef>
+    _filterValidTargets(::std::vector<::DistanceSortedActor> const& entities) const;
 
     MCAPI ::Shareable const* _getShareableItem(::ItemStack const& item) const;
 

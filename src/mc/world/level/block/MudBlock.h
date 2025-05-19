@@ -35,9 +35,12 @@ public:
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 5
-    virtual ::AABB
-    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
-        const /*override*/;
+    virtual ::AABB getCollisionShape(
+        ::Block const&,
+        ::IConstBlockSource const&,
+        ::BlockPos const& pos,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 6
     virtual bool getCollisionShapeForCamera(
@@ -68,9 +71,12 @@ public:
 
     MCFOLD void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::AABB
-    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
+    MCAPI ::AABB $getCollisionShape(
+        ::Block const&,
+        ::IConstBlockSource const&,
+        ::BlockPos const& pos,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
 
     MCFOLD bool $getCollisionShapeForCamera(
         ::AABB&                    outAABB,

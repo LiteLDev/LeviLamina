@@ -47,19 +47,21 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(::StrictExecutionContext<
-                      ::Filter<::MinecartFlagComponent, ::PlayerComponent, ::VerticalCollisionFlagComponent>,
-                      ::Read<
-                          ::DimensionTypeComponent,
-                          ::StateVectorComponent,
-                          ::ActorDataFlagComponent,
-                          ::MoveRequestComponent,
-                          ::AABBShapeComponent>,
-                      ::Write<::StateVectorComponent>,
-                      ::AddRemove<::BounceComponent>,
-                      ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
-                      ::GlobalWrite<>,
-                      ::EntityFactoryT<>>& strictContext) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<::MinecartFlagComponent, ::PlayerComponent, ::VerticalCollisionFlagComponent>,
+            ::Read<
+                ::DimensionTypeComponent,
+                ::StateVectorComponent,
+                ::ActorDataFlagComponent,
+                ::MoveRequestComponent,
+                ::AABBShapeComponent>,
+            ::Write<::StateVectorComponent>,
+            ::AddRemove<::BounceComponent>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& strictContext
+    ) /*override*/;
 
     // vIndex: 6
     virtual void singleTick(
@@ -111,19 +113,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::StrictExecutionContext<
-                      ::Filter<::MinecartFlagComponent, ::PlayerComponent, ::VerticalCollisionFlagComponent>,
-                      ::Read<
-                          ::DimensionTypeComponent,
-                          ::StateVectorComponent,
-                          ::ActorDataFlagComponent,
-                          ::MoveRequestComponent,
-                          ::AABBShapeComponent>,
-                      ::Write<::StateVectorComponent>,
-                      ::AddRemove<::BounceComponent>,
-                      ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
-                      ::GlobalWrite<>,
-                      ::EntityFactoryT<>>& strictContext);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<::MinecartFlagComponent, ::PlayerComponent, ::VerticalCollisionFlagComponent>,
+            ::Read<
+                ::DimensionTypeComponent,
+                ::StateVectorComponent,
+                ::ActorDataFlagComponent,
+                ::MoveRequestComponent,
+                ::AABBShapeComponent>,
+            ::Write<::StateVectorComponent>,
+            ::AddRemove<::BounceComponent>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& strictContext
+    );
 
     MCNAPI void $singleTick(
         ::StrictExecutionContext<

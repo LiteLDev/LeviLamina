@@ -26,7 +26,12 @@ MCNAPI void _calculateBoatControlledByLocalInstanceSystem(
     ::VehicleComponent const&    vehicleComponent,
     ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const& players,
     ::EntityModifier<::ControlledByLocalInstanceComponent>                                                  modifier,
-    void (*setCBLI)(::StrictEntityContext const&, ::std::optional<::StrictEntityContext> const&, ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const&, ::EntityModifier<::ControlledByLocalInstanceComponent>)
+    void (*setCBLI)(
+        ::StrictEntityContext const&,
+        ::std::optional<::StrictEntityContext> const&,
+        ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const&,
+        ::EntityModifier<::ControlledByLocalInstanceComponent>
+    )
 );
 
 MCNAPI void _calculateHorseControlledByLocalInstanceSystem(
@@ -35,7 +40,12 @@ MCNAPI void _calculateHorseControlledByLocalInstanceSystem(
     ::ActorDataFlagComponent const& actorData,
     ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const& players,
     ::EntityModifier<::ControlledByLocalInstanceComponent>                                                  modifier,
-    void (*setCBLI)(::StrictEntityContext const&, ::std::optional<::StrictEntityContext> const&, ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const&, ::EntityModifier<::ControlledByLocalInstanceComponent>)
+    void (*setCBLI)(
+        ::StrictEntityContext const&,
+        ::std::optional<::StrictEntityContext> const&,
+        ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const&,
+        ::EntityModifier<::ControlledByLocalInstanceComponent>
+    )
 );
 
 MCNAPI void setControlledByLocalInstanceClient(

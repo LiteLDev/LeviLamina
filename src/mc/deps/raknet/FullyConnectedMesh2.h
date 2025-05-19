@@ -120,12 +120,20 @@ public:
     virtual void RespondOnVerifiedJoinCapable(::RakNet::Packet*, bool, ::RakNet::BitStream*);
 
     // vIndex: 19
-    virtual void
-    GetVerifiedJoinRequiredProcessingList(::RakNet::RakNetGUID, ::DataStructures::List<::RakNet::SystemAddress>&, ::DataStructures::List<::RakNet::RakNetGUID>&, ::DataStructures::List<::RakNet::BitStream*>&);
+    virtual void GetVerifiedJoinRequiredProcessingList(
+        ::RakNet::RakNetGUID,
+        ::DataStructures::List<::RakNet::SystemAddress>&,
+        ::DataStructures::List<::RakNet::RakNetGUID>&,
+        ::DataStructures::List<::RakNet::BitStream*>&
+    );
 
     // vIndex: 20
-    virtual void
-    GetVerifiedJoinAcceptedAdditionalData(::RakNet::Packet*, bool*, ::DataStructures::List<::RakNet::RakNetGUID>&, ::RakNet::BitStream*);
+    virtual void GetVerifiedJoinAcceptedAdditionalData(
+        ::RakNet::Packet*,
+        bool*,
+        ::DataStructures::List<::RakNet::RakNetGUID>&,
+        ::RakNet::BitStream*
+    );
 
     // vIndex: 21
     virtual void GetVerifiedJoinRejectedAdditionalData(::RakNet::Packet*, ::RakNet::BitStream*);

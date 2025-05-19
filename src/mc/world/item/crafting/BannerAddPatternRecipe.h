@@ -60,8 +60,8 @@ public:
     // NOLINTBEGIN
     MCAPI BannerAddPatternRecipe(::std::string const& recipeId, ::mce::UUID const& uuid);
 
-    MCAPI ::Bedrock::NonOwnerPointer<::BannerPattern const> const matchPatterns(::CraftingContainer const& craftSlots
-    ) const;
+    MCAPI ::Bedrock::NonOwnerPointer<::BannerPattern const> const
+    matchPatterns(::CraftingContainer const& craftSlots) const;
     // NOLINTEND
 
 public:

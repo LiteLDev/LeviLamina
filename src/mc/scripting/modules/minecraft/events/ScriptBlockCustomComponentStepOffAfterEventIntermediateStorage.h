@@ -19,7 +19,9 @@ public:
     // prevent constructor by default
     ScriptBlockCustomComponentStepOffAfterEventIntermediateStorage&
     operator=(ScriptBlockCustomComponentStepOffAfterEventIntermediateStorage const&);
-    ScriptBlockCustomComponentStepOffAfterEventIntermediateStorage(ScriptBlockCustomComponentStepOffAfterEventIntermediateStorage const&);
+    ScriptBlockCustomComponentStepOffAfterEventIntermediateStorage(
+        ScriptBlockCustomComponentStepOffAfterEventIntermediateStorage const&
+    );
     ScriptBlockCustomComponentStepOffAfterEventIntermediateStorage();
 
 public:

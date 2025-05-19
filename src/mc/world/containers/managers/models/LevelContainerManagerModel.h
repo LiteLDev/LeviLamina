@@ -3,7 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,16 +20,10 @@ class LevelContainerManagerModel : public ::ContainerManagerModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk6fc970;
-    ::ll::UntypedStorage<8, 8>  mUnkeb138a;
-    ::ll::UntypedStorage<4, 4>  mUnk4952b7;
+    ::ll::TypedStorage<4, 12, ::BlockPos>      mBlockPos;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>  mEntityUniqueID;
+    ::ll::TypedStorage<4, 4, ::BlockActorType> mBlockActorType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelContainerManagerModel& operator=(LevelContainerManagerModel const&);
-    LevelContainerManagerModel(LevelContainerManagerModel const&);
-    LevelContainerManagerModel();
 
 public:
     // virtual functions

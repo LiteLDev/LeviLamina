@@ -32,9 +32,17 @@ public:
     virtual ~BlockEventTracker() /*override*/ = default;
 
     // vIndex: 4
-    virtual void
-    onBlockChanged(::BlockSource&, ::BlockPos const&, uint, ::Block const&, ::Block const&, int, ::ActorBlockSyncMessage const*, ::BlockChangedEventTarget, ::Actor*) /*override*/
-        ;
+    virtual void onBlockChanged(
+        ::BlockSource&,
+        ::BlockPos const&,
+        uint,
+        ::Block const&,
+        ::Block const&,
+        int,
+        ::ActorBlockSyncMessage const*,
+        ::BlockChangedEventTarget,
+        ::Actor*
+    ) /*override*/;
     // NOLINTEND
 
 public:

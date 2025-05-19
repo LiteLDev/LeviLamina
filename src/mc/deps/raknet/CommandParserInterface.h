@@ -43,8 +43,14 @@ public:
     virtual void SendHelp(::RakNet::TransportInterface*, ::RakNet::SystemAddress const&) = 0;
 
     // vIndex: 5
-    virtual bool
-    OnCommand(char const*, uint, char**, ::RakNet::TransportInterface*, ::RakNet::SystemAddress const&, char const*) = 0;
+    virtual bool OnCommand(
+        char const*,
+        uint,
+        char**,
+        ::RakNet::TransportInterface*,
+        ::RakNet::SystemAddress const&,
+        char const*
+    ) = 0;
 
     // vIndex: 6
     virtual void OnTransportChange(::RakNet::TransportInterface*);

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/safety/RedactableString.h"
 #include "mc/world/inventory/simulation/ContainerScreenAutoplaceBehaviour.h"
 #include "mc/world/inventory/simulation/ContainerScreenSimulationCrafting.h"
 
@@ -18,15 +19,9 @@ class AnvilContainerScreenSimulation : public ::ContainerScreenSimulationCraftin
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnkb49bd9;
-    ::ll::UntypedStorage<8, 72> mUnk40a598;
+    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mItemName;
+    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mItemPreview;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AnvilContainerScreenSimulation& operator=(AnvilContainerScreenSimulation const&);
-    AnvilContainerScreenSimulation(AnvilContainerScreenSimulation const&);
-    AnvilContainerScreenSimulation();
 
 public:
     // virtual functions

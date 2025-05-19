@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BrewingStandContainerManagerModel;
 class ItemInstance;
 struct SlotData;
 // clang-format on
@@ -15,14 +16,8 @@ class BrewingStandContainerManagerController : public ::ContainerManagerControll
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkda4365;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::BrewingStandContainerManagerModel>> mBrewingContainerManagerModel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BrewingStandContainerManagerController& operator=(BrewingStandContainerManagerController const&);
-    BrewingStandContainerManagerController(BrewingStandContainerManagerController const&);
-    BrewingStandContainerManagerController();
 
 public:
     // virtual functions

@@ -17,14 +17,19 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual bool previousSchema(::rapidjson::GenericValue<
-                                ::rapidjson::UTF8<char>,
-                                ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&) const /*override*/;
+    virtual bool previousSchema(
+        ::rapidjson::
+            GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&
+    ) const /*override*/;
 
     // vIndex: 2
-    virtual void
-    upgradeToNext(::rapidjson::GenericDocument<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>, ::rapidjson::CrtAllocator>&, ::SemVersion const&)
-        const /*override*/;
+    virtual void upgradeToNext(
+        ::rapidjson::GenericDocument<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+            ::rapidjson::CrtAllocator>&,
+        ::SemVersion const&
+    ) const /*override*/;
 
     // vIndex: 0
     virtual ~BlockPartVisibility11980Upgrade() /*override*/ = default;

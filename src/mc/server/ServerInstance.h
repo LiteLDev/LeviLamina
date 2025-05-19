@@ -257,8 +257,8 @@ public:
 
     MCAPI void setScriptWatchdogCriticalErrorCallback(::std::function<void(char const*)> criticalErrorCallback);
 
-    MCAPI void setUnrecoverableErrorCallback(::std::function<void(char const*, char const*)> unrecoverableErrorCallback
-    );
+    MCAPI void
+    setUnrecoverableErrorCallback(::std::function<void(char const*, char const*)> unrecoverableErrorCallback);
 
     MCAPI void setWakeupFrequency(int hertz);
 

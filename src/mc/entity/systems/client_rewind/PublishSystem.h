@@ -45,24 +45,39 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(::StrictExecutionContext<
-                      ::Filter<::ActorMovementTickNeededComponent>,
-                      ::Read<
-                          ::ActorDataFlagComponent,
-                          ::ActorDataHorseFlagComponent,
-                          ::ActorDataJumpDurationComponent,
-                          ::ActorDataBoundingBoxComponent,
-                          ::ActorDataSeatOffsetComponent>,
-                      ::Write<::ReplayStateTrackerComponent, ::ReplayStateComponent>,
-                      ::AddRemove<>,
-                      ::GlobalRead<>,
-                      ::GlobalWrite<>,
-                      ::EntityFactoryT<>>&) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<::ActorMovementTickNeededComponent>,
+            ::Read<
+                ::ActorDataFlagComponent,
+                ::ActorDataHorseFlagComponent,
+                ::ActorDataJumpDurationComponent,
+                ::ActorDataBoundingBoxComponent,
+                ::ActorDataSeatOffsetComponent>,
+            ::Write<::ReplayStateTrackerComponent, ::ReplayStateComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>&
+    ) /*override*/;
 
     // vIndex: 6
-    virtual void
-    singleTick(::StrictExecutionContext<::Filter<::ActorMovementTickNeededComponent>, ::Read<::ActorDataFlagComponent, ::ActorDataHorseFlagComponent, ::ActorDataJumpDurationComponent, ::ActorDataBoundingBoxComponent, ::ActorDataSeatOffsetComponent>, ::Write<::ReplayStateTrackerComponent, ::ReplayStateComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>&, ::StrictEntityContext&) /*override*/
-        ;
+    virtual void singleTick(
+        ::StrictExecutionContext<
+            ::Filter<::ActorMovementTickNeededComponent>,
+            ::Read<
+                ::ActorDataFlagComponent,
+                ::ActorDataHorseFlagComponent,
+                ::ActorDataJumpDurationComponent,
+                ::ActorDataBoundingBoxComponent,
+                ::ActorDataSeatOffsetComponent>,
+            ::Write<::ReplayStateTrackerComponent, ::ReplayStateComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>&,
+        ::StrictEntityContext&
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~PublishSystem() /*override*/ = default;

@@ -35,9 +35,12 @@ public:
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 5
-    virtual ::AABB
-    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
-        const /*override*/;
+    virtual ::AABB getCollisionShape(
+        ::Block const&,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
@@ -49,9 +52,13 @@ public:
     virtual void checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
 
     // vIndex: 150
-    virtual ::Block const&
-    setGrowth(::BlockSource& region, ::BlockPos const& pos, ::Block const& baseBlock, ushort newGrowth, int updateFlags)
-        const;
+    virtual ::Block const& setGrowth(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Block const&    baseBlock,
+        ushort            newGrowth,
+        int               updateFlags
+    ) const;
 
     // vIndex: 0
     virtual ~FoliageBlock() /*override*/;
@@ -86,9 +93,12 @@ public:
 
     MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD ::AABB
-    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
+    MCFOLD ::AABB $getCollisionShape(
+        ::Block const&,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
 
     MCFOLD void $_addHardCodedBlockComponents(::Experiments const&);
 

@@ -20,10 +20,9 @@ public:
     virtual ~IWorldTransfer() = default;
 
     // vIndex: 1
-    virtual void setWorldTransferAction(::std::variant<
-                                        ::LocalWorldTransferActionFunc,
-                                        ::ExternalWorldTransferActionFunc,
-                                        ::std::monostate>) = 0;
+    virtual void setWorldTransferAction(
+        ::std::variant<::LocalWorldTransferActionFunc, ::ExternalWorldTransferActionFunc, ::std::monostate>
+    ) = 0;
 
     // vIndex: 2
     virtual ::Bedrock::NonOwnerPointer<::WorldTransferAgent> const getWorldTransferAgent() const = 0;

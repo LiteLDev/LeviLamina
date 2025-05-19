@@ -31,8 +31,10 @@ public:
     virtual void unregisterPrePushSceneCallback(void*) = 0;
 
     // vIndex: 5
-    virtual void
-    registerPushSceneCallback(void*, ::std::function<void(::std::shared_ptr<::AbstractScene>, ::std::optional<::OreUI::RouteAction>)>) = 0;
+    virtual void registerPushSceneCallback(
+        void*,
+        ::std::function<void(::std::shared_ptr<::AbstractScene>, ::std::optional<::OreUI::RouteAction>)>
+    ) = 0;
 
     // vIndex: 6
     virtual void unregisterPushSceneCallback(void*) = 0;
@@ -44,8 +46,10 @@ public:
     virtual void unregisterPrePopSceneCallback(void*) = 0;
 
     // vIndex: 9
-    virtual void
-    registerPopSceneCallback(void*, ::std::function<void(::std::shared_ptr<::AbstractScene>, bool, ::std::optional<::OreUI::RouteAction>)>) = 0;
+    virtual void registerPopSceneCallback(
+        void*,
+        ::std::function<void(::std::shared_ptr<::AbstractScene>, bool, ::std::optional<::OreUI::RouteAction>)>
+    ) = 0;
 
     // vIndex: 10
     virtual void unregisterPopSceneCallback(void*) = 0;

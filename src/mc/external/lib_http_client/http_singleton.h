@@ -32,8 +32,11 @@ public:
 
     MCNAPI ::xbox::httpclient::http_retry_after_api_state get_retry_state(uint);
 
-    MCNAPI
-    http_singleton(::HttpPerformInfo const&, ::WebSocketPerformInfo const&, ::std::unique_ptr<::HC_PERFORM_ENV, ::http_alloc_deleter<::HC_PERFORM_ENV>>&&);
+    MCNAPI http_singleton(
+        ::HttpPerformInfo const&,
+        ::WebSocketPerformInfo const&,
+        ::std::unique_ptr<::HC_PERFORM_ENV, ::http_alloc_deleter<::HC_PERFORM_ENV>>&&
+    );
 
     MCNAPI void set_retry_state(uint, ::xbox::httpclient::http_retry_after_api_state const&);
 
@@ -45,15 +48,21 @@ public:
     // NOLINTBEGIN
     MCNAPI static long create(::HCInitArgs*);
 
-    MCNAPI static long
-    singleton_access(::xbox::httpclient::http_singleton::singleton_access_mode, ::HCInitArgs*, ::std::shared_ptr<::xbox::httpclient::http_singleton>&);
+    MCNAPI static long singleton_access(
+        ::xbox::httpclient::http_singleton::singleton_access_mode,
+        ::HCInitArgs*,
+        ::std::shared_ptr<::xbox::httpclient::http_singleton>&
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::HttpPerformInfo const&, ::WebSocketPerformInfo const&, ::std::unique_ptr<::HC_PERFORM_ENV, ::http_alloc_deleter<::HC_PERFORM_ENV>>&&);
+    MCNAPI void* $ctor(
+        ::HttpPerformInfo const&,
+        ::WebSocketPerformInfo const&,
+        ::std::unique_ptr<::HC_PERFORM_ENV, ::http_alloc_deleter<::HC_PERFORM_ENV>>&&
+    );
     // NOLINTEND
 
 public:

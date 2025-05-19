@@ -85,8 +85,12 @@ public:
     );
 
     // vIndex: 5
-    virtual ::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>
-    CreatePeerConnection(::webrtc::PeerConnectionInterface::RTCConfiguration const&, ::std::unique_ptr<::cricket::PortAllocator>, ::std::unique_ptr<::rtc::RTCCertificateGeneratorInterface>, ::webrtc::PeerConnectionObserver*);
+    virtual ::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface> CreatePeerConnection(
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const&,
+        ::std::unique_ptr<::cricket::PortAllocator>,
+        ::std::unique_ptr<::rtc::RTCCertificateGeneratorInterface>,
+        ::webrtc::PeerConnectionObserver*
+    );
 
     // vIndex: 7
     virtual ::webrtc::RtpCapabilities GetRtpSenderCapabilities(::cricket::MediaType) const;

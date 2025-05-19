@@ -40,9 +40,10 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI
-        SurfaceMaterialAdjustmentMaterials(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
-                                               SurfaceMaterialAdjustmentMaterials const&);
+        MCNAPI SurfaceMaterialAdjustmentMaterials(
+            ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
+                SurfaceMaterialAdjustmentMaterials const&
+        );
 
         MCNAPI ~SurfaceMaterialAdjustmentMaterials();
         // NOLINTEND
@@ -50,8 +51,10 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
-                               SurfaceMaterialAdjustmentMaterials const&);
+        MCNAPI void* $ctor(
+            ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
+                SurfaceMaterialAdjustmentMaterials const&
+        );
         // NOLINTEND
 
     public:
@@ -79,12 +82,14 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI SurfaceMaterialAdjustment(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
-                                             SurfaceMaterialAdjustment&&);
+        MCNAPI SurfaceMaterialAdjustment(
+            ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&&
+        );
 
         MCNAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&
-        operator=(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
-                      SurfaceMaterialAdjustment const&);
+        operator=(
+            ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment const&
+        );
 
         MCNAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&
         operator=(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&&);

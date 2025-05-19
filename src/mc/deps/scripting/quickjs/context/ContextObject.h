@@ -133,9 +133,10 @@ public:
         ::entt::meta_type const&                                 expectedReturnType
     );
 
-    MCNAPI ::Scripting::ResultAny
-    getFutureResult(::Scripting::TypedObjectHandle<::Scripting::FutureType> futureHandle, ::entt::meta_type const&)
-        const;
+    MCNAPI ::Scripting::ResultAny getFutureResult(
+        ::Scripting::TypedObjectHandle<::Scripting::FutureType> futureHandle,
+        ::entt::meta_type const&
+    ) const;
 
     MCNAPI ::Scripting::TypeNameInfo getNameForType(::entt::meta_type const& type, bool allowUnknownTypes) const;
 

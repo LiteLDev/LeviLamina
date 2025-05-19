@@ -44,8 +44,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    RtcEventIceCandidatePairConfig(::webrtc::IceCandidatePairConfigType, uint, ::webrtc::IceCandidatePairDescription const&);
+    MCNAPI RtcEventIceCandidatePairConfig(
+        ::webrtc::IceCandidatePairConfigType,
+        uint,
+        ::webrtc::IceCandidatePairDescription const&
+    );
     // NOLINTEND
 
 public:

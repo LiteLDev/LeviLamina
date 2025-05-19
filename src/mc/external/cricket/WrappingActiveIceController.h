@@ -38,15 +38,21 @@ public:
 
     MCNAPI void UpdateStateOnConnectionsResorted();
 
-    MCNAPI
-    WrappingActiveIceController(::cricket::IceAgentInterface*, ::cricket::IceControllerFactoryInterface*, ::cricket::IceControllerFactoryArgs const&);
+    MCNAPI WrappingActiveIceController(
+        ::cricket::IceAgentInterface*,
+        ::cricket::IceControllerFactoryInterface*,
+        ::cricket::IceControllerFactoryArgs const&
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::cricket::IceAgentInterface*, ::cricket::IceControllerFactoryInterface*, ::cricket::IceControllerFactoryArgs const&);
+    MCNAPI void* $ctor(
+        ::cricket::IceAgentInterface*,
+        ::cricket::IceControllerFactoryInterface*,
+        ::cricket::IceControllerFactoryArgs const&
+    );
     // NOLINTEND
 
 public:

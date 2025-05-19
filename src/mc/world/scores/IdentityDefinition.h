@@ -33,8 +33,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string const& getName(::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver
-    ) const;
+    MCAPI ::std::string const&
+    getName(::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver) const;
 
     MCAPI ~IdentityDefinition();
     // NOLINTEND

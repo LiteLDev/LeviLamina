@@ -38,8 +38,10 @@ public:
 
     // vIndex: 1
     virtual void
-    log(::std::string&& msg, ::Player* player, ::Editor::LogLevel level, ::std::vector<::HashedString>&& areaTags
-    ) /*override*/;
+    log(::std::string&&                 msg,
+        ::Player*                       player,
+        ::Editor::LogLevel              level,
+        ::std::vector<::HashedString>&& areaTags) /*override*/;
 
     // vIndex: 2
     virtual void flush() /*override*/;

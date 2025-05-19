@@ -109,9 +109,13 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $isInteractiveBlock() const;
 
-    MCAPI ::Block const&
-    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
-        const;
+    MCAPI ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 

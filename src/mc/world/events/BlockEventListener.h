@@ -35,8 +35,13 @@ public:
     onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
 
     // vIndex: 2
-    virtual ::EventResult
-    onBlockDestroyedByPlayer(::Player& player, ::Block const& destroyedBlock, ::BlockPos const& pos, ::ItemStackBase const&, ::ItemStackBase const&);
+    virtual ::EventResult onBlockDestroyedByPlayer(
+        ::Player&         player,
+        ::Block const&    destroyedBlock,
+        ::BlockPos const& pos,
+        ::ItemStackBase const&,
+        ::ItemStackBase const&
+    );
 
     // vIndex: 3
     virtual ::EventResult onBlockInPosWillBeDestroyedByPlayer(::Player& player, ::BlockPos const& pos);
@@ -74,8 +79,13 @@ public:
     MCNAPI ::EventResult
     $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
 
-    MCNAPI ::EventResult
-    $onBlockDestroyedByPlayer(::Player& player, ::Block const& destroyedBlock, ::BlockPos const& pos, ::ItemStackBase const&, ::ItemStackBase const&);
+    MCNAPI ::EventResult $onBlockDestroyedByPlayer(
+        ::Player&         player,
+        ::Block const&    destroyedBlock,
+        ::BlockPos const& pos,
+        ::ItemStackBase const&,
+        ::ItemStackBase const&
+    );
 
     MCNAPI ::EventResult $onBlockInPosWillBeDestroyedByPlayer(::Player& player, ::BlockPos const& pos);
 

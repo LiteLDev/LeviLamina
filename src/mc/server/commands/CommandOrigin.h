@@ -150,9 +150,12 @@ public:
     MCAPI ::std::unique_ptr<::CommandArea>
     getAreaAt(::BlockPos const& min, ::BlockPos const& max, int commandVersion, bool allowUnloadedChunks) const;
 
-    MCAPI ::std::unique_ptr<::CommandArea>
-    getAreaAtWithBuffer(::BlockPos const& min, ::BlockPos const& max, int commandVersion, bool allowUnloadedChunks)
-        const;
+    MCAPI ::std::unique_ptr<::CommandArea> getAreaAtWithBuffer(
+        ::BlockPos const& min,
+        ::BlockPos const& max,
+        int               commandVersion,
+        bool              allowUnloadedChunks
+    ) const;
     // NOLINTEND
 
 public:

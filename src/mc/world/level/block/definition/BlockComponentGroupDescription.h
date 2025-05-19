@@ -39,8 +39,8 @@ public:
             bool                                             overridePlayerPlacing
         );
 
-        MCNAPI ::std::shared_ptr<::cereal::DynamicValue> getCustomComponent(::cereal::SerializerContext const& context
-        ) const;
+        MCNAPI ::std::shared_ptr<::cereal::DynamicValue>
+        getCustomComponent(::cereal::SerializerContext const& context) const;
 
         MCNAPI ::BlockComponentGroupDescription::Components&
         operator=(::BlockComponentGroupDescription::Components const&);

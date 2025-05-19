@@ -14,15 +14,19 @@ MCNAPI bool addDescriptionWithIdentifier(
     ::std::string const&            identifier
 );
 
-MCNAPI void moveBiomeTagsToNewTagsComponent(::rapidjson::GenericDocument<
-                                            ::rapidjson::UTF8<char>,
-                                            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
-                                            ::rapidjson::CrtAllocator>& document);
+MCNAPI void moveBiomeTagsToNewTagsComponent(
+    ::rapidjson::GenericDocument<
+        ::rapidjson::UTF8<char>,
+        ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+        ::rapidjson::CrtAllocator>& document
+);
 
-MCNAPI bool moveComponentsUnderNewBiomeParent(::rapidjson::GenericDocument<
-                                              ::rapidjson::UTF8<char>,
-                                              ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
-                                              ::rapidjson::CrtAllocator>& document);
+MCNAPI bool moveComponentsUnderNewBiomeParent(
+    ::rapidjson::GenericDocument<
+        ::rapidjson::UTF8<char>,
+        ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+        ::rapidjson::CrtAllocator>& document
+);
 
 MCNAPI bool renameObjectMember(
     ::rapidjson::GenericDocument<

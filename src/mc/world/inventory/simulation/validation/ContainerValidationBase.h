@@ -17,9 +17,11 @@ public:
     virtual ~ContainerValidationBase() = default;
 
     // vIndex: 1
-    virtual bool
-    isValidSlotForContainer(::ContainerScreenContext const& screenContext, ::Container const& container, int const slot)
-        const;
+    virtual bool isValidSlotForContainer(
+        ::ContainerScreenContext const& screenContext,
+        ::Container const&              container,
+        int const                       slot
+    ) const;
 
     // vIndex: 2
     virtual bool isItemAllowedInSlot(

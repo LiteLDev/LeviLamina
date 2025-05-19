@@ -3,38 +3,33 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/containers/SlotData.h"
 #include "mc/world/containers/managers/controllers/ContainerManagerController.h"
+#include "mc/world/item/ItemInstance.h"
 
 // auto generated forward declare list
 // clang-format off
-class ItemInstance;
 class ItemStackBase;
+class LoomContainerManagerModel;
 struct AutoPlaceItem;
 struct AutoPlaceResult;
 struct CreateContainerItemScope;
 struct ItemTransferAmount;
 struct SelectedSlotInfo;
-struct SlotData;
 // clang-format on
 
 class LoomContainerManagerController : public ::ContainerManagerController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnk9272d0;
-    ::ll::UntypedStorage<8, 24>  mUnk3434b7;
-    ::ll::UntypedStorage<4, 4>   mUnk34bcff;
-    ::ll::UntypedStorage<1, 1>   mUnk6cfdf3;
-    ::ll::UntypedStorage<8, 40>  mUnkd03699;
-    ::ll::UntypedStorage<8, 128> mUnk3f64df;
-    ::ll::UntypedStorage<8, 32>  mUnk90f020;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::LoomContainerManagerModel>> mLoomContainerManagerModel;
+    ::ll::TypedStorage<8, 24, ::std::vector<int>>                           mFilteredPatterns;
+    ::ll::TypedStorage<4, 4, int>                                           mSelectedPatternIndex;
+    ::ll::TypedStorage<1, 1, bool>                                          mCurrentlyCrafting;
+    ::ll::TypedStorage<8, 40, ::SlotData const>                             mCreatedItemOutputSlot;
+    ::ll::TypedStorage<8, 128, ::ItemInstance>                              mResultItemPreview;
+    ::ll::TypedStorage<8, 32, ::std::string>                                mResultPatternNameId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LoomContainerManagerController& operator=(LoomContainerManagerController const&);
-    LoomContainerManagerController(LoomContainerManagerController const&);
-    LoomContainerManagerController();
 
 public:
     // virtual functions
@@ -61,9 +56,12 @@ public:
     virtual void handlePlaceOne(::SlotData const&, ::SlotData const&) /*override*/;
 
     // vIndex: 15
-    virtual int
-    handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&) /*override*/
-        ;
+    virtual int handleAutoPlace(
+        ::SlotData const&,
+        int,
+        ::std::vector<::AutoPlaceItem> const&,
+        ::std::vector<::AutoPlaceResult>&
+    ) /*override*/;
 
     // vIndex: 8
     virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const&) const /*override*/;

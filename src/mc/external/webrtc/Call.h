@@ -79,8 +79,11 @@ public:
         CreateVideoSendStream(::webrtc::VideoSendStream::Config, ::webrtc::VideoEncoderConfig) = 0;
 
     // vIndex: 4
-    virtual ::webrtc::VideoSendStream*
-        CreateVideoSendStream(::webrtc::VideoSendStream::Config, ::webrtc::VideoEncoderConfig, ::std::unique_ptr<::webrtc::FecController>);
+    virtual ::webrtc::VideoSendStream* CreateVideoSendStream(
+        ::webrtc::VideoSendStream::Config,
+        ::webrtc::VideoEncoderConfig,
+        ::std::unique_ptr<::webrtc::FecController>
+    );
 
     // vIndex: 6
     virtual void DestroyVideoSendStream(::webrtc::VideoSendStream*) = 0;
@@ -93,8 +96,8 @@ public:
     virtual void DestroyVideoReceiveStream(::webrtc::VideoReceiveStreamInterface*) = 0;
 
     // vIndex: 9
-    virtual ::webrtc::FlexfecReceiveStream* CreateFlexfecReceiveStream(::webrtc::FlexfecReceiveStream::Config const
-    ) = 0;
+    virtual ::webrtc::FlexfecReceiveStream*
+    CreateFlexfecReceiveStream(::webrtc::FlexfecReceiveStream::Config const) = 0;
 
     // vIndex: 10
     virtual void DestroyFlexfecReceiveStream(::webrtc::FlexfecReceiveStream*) = 0;

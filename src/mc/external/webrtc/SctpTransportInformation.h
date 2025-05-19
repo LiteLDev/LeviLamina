@@ -32,8 +32,12 @@ public:
     // NOLINTBEGIN
     MCNAPI SctpTransportInformation(::webrtc::SctpTransportInformation const&);
 
-    MCNAPI
-    SctpTransportInformation(::webrtc::SctpTransportState, ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface>, ::std::optional<double>, ::std::optional<int>);
+    MCNAPI SctpTransportInformation(
+        ::webrtc::SctpTransportState,
+        ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface>,
+        ::std::optional<double>,
+        ::std::optional<int>
+    );
 
     MCNAPI ::webrtc::SctpTransportInformation& operator=(::webrtc::SctpTransportInformation const&);
 
@@ -45,8 +49,12 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::SctpTransportInformation const&);
 
-    MCNAPI void*
-        $ctor(::webrtc::SctpTransportState, ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface>, ::std::optional<double>, ::std::optional<int>);
+    MCNAPI void* $ctor(
+        ::webrtc::SctpTransportState,
+        ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface>,
+        ::std::optional<double>,
+        ::std::optional<int>
+    );
     // NOLINTEND
 
 public:

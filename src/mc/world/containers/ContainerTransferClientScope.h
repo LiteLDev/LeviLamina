@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/containers/ContainerTransferScope.h"
+#include "mc/world/inventory/network/ItemStackRequestScope.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,14 +16,8 @@ struct ContainerTransferClientScope : public ::ContainerTransferScope {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk808ea7;
+    ::ll::TypedStorage<8, 16, ::ItemStackRequestScope> mItemStackRequestScope;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerTransferClientScope& operator=(ContainerTransferClientScope const&);
-    ContainerTransferClientScope(ContainerTransferClientScope const&);
-    ContainerTransferClientScope();
 
 public:
     // virtual functions

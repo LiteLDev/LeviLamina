@@ -96,9 +96,11 @@ public:
 
     MCAPI void _outputSuccess(::CommandOutput& output, int numItemsDropped) const;
 
-    MCAPI void
-    _placeItemsInTarget(::CommandOrigin const& origin, ::CommandOutput& output, ::std::vector<::ItemStack>& items)
-        const;
+    MCAPI void _placeItemsInTarget(
+        ::CommandOrigin const&      origin,
+        ::CommandOutput&            output,
+        ::std::vector<::ItemStack>& items
+    ) const;
 
     MCAPI ::ItemStack getToolItemStack(::CommandOrigin const& origin, ::CommandOutput& output) const;
     // NOLINTEND

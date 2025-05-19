@@ -37,13 +37,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk5b666c;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FurnaceContainerScreenValidator::ExperienceRewards>>
+        mExperienceRewards;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FurnaceContainerScreenValidator& operator=(FurnaceContainerScreenValidator const&);
-    FurnaceContainerScreenValidator(FurnaceContainerScreenValidator const&);
 
 public:
     // virtual functions

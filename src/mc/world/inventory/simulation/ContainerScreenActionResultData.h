@@ -15,12 +15,6 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk822044;
+    ::ll::TypedStorage<4, 4, ::ContainerScreenActionResultData::Type> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerScreenActionResultData& operator=(ContainerScreenActionResultData const&);
-    ContainerScreenActionResultData(ContainerScreenActionResultData const&);
-    ContainerScreenActionResultData();
 };

@@ -6,11 +6,16 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/controllers/ItemTakeType.h"
+#include "mc/world/inventory/network/ContainerScreenContext.h"
 #include "mc/world/inventory/simulation/ContainerScreenAutoplaceBehaviour.h"
 
 // auto generated forward declare list
 // clang-format off
+class ContainerScreenActionScope;
+class ContainerScreenValidation;
+class IContainerTransfer;
 class ItemInstance;
+struct AutoPlaceTarget;
 struct ContainerScreenActionResult;
 struct ContainerSimulationSplitStack;
 struct ContainerValidationSlotData;
@@ -21,19 +26,15 @@ class ContainerScreenSimulation : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk17f23a;
-    ::ll::UntypedStorage<8, 40> mUnk453c22;
-    ::ll::UntypedStorage<8, 8>  mUnka52675;
-    ::ll::UntypedStorage<8, 8>  mUnk41ec16;
-    ::ll::UntypedStorage<8, 64> mUnk69f53c;
-    ::ll::UntypedStorage<8, 64> mUnk2f254c;
+    ::ll::TypedStorage<8, 8, ::ContainerScreenActionScope*>                  mCurrentScope;
+    ::ll::TypedStorage<8, 40, ::ContainerScreenContext>                      mScreenContext;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ContainerScreenValidation>> mScreenValidation;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IContainerTransfer>>        mContainerTransferInterface;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ContainerEnumName, ::std::vector<::ContainerEnumName>>>
+        mCoalesceOrderMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ContainerEnumName, ::std::vector<::AutoPlaceTarget>>>
+        mAutoPlaceOrderMap;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerScreenSimulation& operator=(ContainerScreenSimulation const&);
-    ContainerScreenSimulation(ContainerScreenSimulation const&);
-    ContainerScreenSimulation();
 
 public:
     // virtual functions
@@ -81,12 +82,21 @@ public:
     tryAutoPlace(::ContainerValidationSlotData const&, ::ItemTransferAmount, ::ContainerScreenAutoplaceBehaviour);
 
     // vIndex: 11
-    virtual ::ContainerScreenActionResult
-    trySplitSingle(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&, ::std::vector<::ContainerSimulationSplitStack>&);
+    virtual ::ContainerScreenActionResult trySplitSingle(
+        ::ContainerValidationSlotData const&,
+        ::ContainerValidationSlotData const&,
+        ::std::vector<::ContainerSimulationSplitStack>&
+    );
 
     // vIndex: 12
-    virtual ::ContainerScreenActionResult
-    trySplitMultiple(::ContainerValidationSlotData const&, int, ::ItemInstance const&, ::ContainerValidationSlotData const&, ::std::vector<::ContainerSimulationSplitStack>&, int&);
+    virtual ::ContainerScreenActionResult trySplitMultiple(
+        ::ContainerValidationSlotData const&,
+        int,
+        ::ItemInstance const&,
+        ::ContainerValidationSlotData const&,
+        ::std::vector<::ContainerSimulationSplitStack>&,
+        int&
+    );
 
     // vIndex: 13
     virtual ::ContainerScreenActionResult

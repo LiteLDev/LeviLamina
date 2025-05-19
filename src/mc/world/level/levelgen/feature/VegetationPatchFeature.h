@@ -57,13 +57,20 @@ public:
     // NOLINTBEGIN
     MCAPI bool _isExposedDirection(::IBlockWorldGenAPI& target, ::BlockPos const& pos, uchar direction) const;
 
-    MCAPI bool
-    _placeGround(::IBlockWorldGenAPI& target, ::Random& random, ::BlockPos const& posAtSurface, uchar towardsSurface)
-        const;
+    MCAPI bool _placeGround(
+        ::IBlockWorldGenAPI& target,
+        ::Random&            random,
+        ::BlockPos const&    posAtSurface,
+        uchar                towardsSurface
+    ) const;
 
-    MCAPI ::std::vector<::BlockPos>
-    _placeGroundPatch(::IBlockWorldGenAPI& target, ::Random& random, ::BlockPos const& origin, int xRadius, int zRadius)
-        const;
+    MCAPI ::std::vector<::BlockPos> _placeGroundPatch(
+        ::IBlockWorldGenAPI& target,
+        ::Random&            random,
+        ::BlockPos const&    origin,
+        int                  xRadius,
+        int                  zRadius
+    ) const;
     // NOLINTEND
 
 public:

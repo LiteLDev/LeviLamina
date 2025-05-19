@@ -40,15 +40,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void
-    tick(::StrictExecutionContext<
-         ::Filter<::ShouldPlayMovementSoundComponent>,
-         ::Read<::ActorOwnerComponent, ::DimensionTypeComponent, ::StateVectorComponent, ::AABBShapeComponent>,
-         ::Write<>,
-         ::AddRemove<::CurrentlyStandingOnBlockComponent>,
-         ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
-         ::GlobalWrite<>,
-         ::EntityFactoryT<>>& context) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<::ShouldPlayMovementSoundComponent>,
+            ::Read<::ActorOwnerComponent, ::DimensionTypeComponent, ::StateVectorComponent, ::AABBShapeComponent>,
+            ::Write<>,
+            ::AddRemove<::CurrentlyStandingOnBlockComponent>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~CurrentlyStandingOnBlockSystemImpl() /*override*/ = default;
@@ -70,15 +71,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void
-    $tick(::StrictExecutionContext<
-          ::Filter<::ShouldPlayMovementSoundComponent>,
-          ::Read<::ActorOwnerComponent, ::DimensionTypeComponent, ::StateVectorComponent, ::AABBShapeComponent>,
-          ::Write<>,
-          ::AddRemove<::CurrentlyStandingOnBlockComponent>,
-          ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
-          ::GlobalWrite<>,
-          ::EntityFactoryT<>>& context);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<::ShouldPlayMovementSoundComponent>,
+            ::Read<::ActorOwnerComponent, ::DimensionTypeComponent, ::StateVectorComponent, ::AABBShapeComponent>,
+            ::Write<>,
+            ::AddRemove<::CurrentlyStandingOnBlockComponent>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    );
     // NOLINTEND
 
 public:

@@ -28,14 +28,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkbd8b3d;
-    ::ll::UntypedStorage<4, 4> mUnkf59d34;
+    ::ll::TypedStorage<4, 4, int> mSelectedTrade;
+    ::ll::TypedStorage<4, 4, int> mTraderVariant;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Trade2ContainerManagerModel& operator=(Trade2ContainerManagerModel const&);
-    Trade2ContainerManagerModel(Trade2ContainerManagerModel const&);
     Trade2ContainerManagerModel();
 
 public:

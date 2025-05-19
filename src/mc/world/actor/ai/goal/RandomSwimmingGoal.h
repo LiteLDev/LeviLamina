@@ -39,9 +39,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void
-    _getWaterHeights(::BlockPos testPos, short& groundLevel, float& waterLevel, float& minHeight, float& maxHeight)
-        const;
+    MCNAPI void _getWaterHeights(
+        ::BlockPos testPos,
+        short&     groundLevel,
+        float&     waterLevel,
+        float&     minHeight,
+        float&     maxHeight
+    ) const;
     // NOLINTEND
 
 public:

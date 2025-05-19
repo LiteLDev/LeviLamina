@@ -68,9 +68,11 @@ public:
     virtual void onError(::Scripting::ContextId contextId, ::std::string_view message) const /*override*/;
 
     // vIndex: 4
-    virtual void
-    onException(::Scripting::ContextId contextId, ::Scripting::Error const& error, ::entt::meta_any const& errorAny)
-        const /*override*/;
+    virtual void onException(
+        ::Scripting::ContextId    contextId,
+        ::Scripting::Error const& error,
+        ::entt::meta_any const&   errorAny
+    ) const /*override*/;
 
     // vIndex: 5
     virtual bool shouldPrintException(
@@ -143,9 +145,11 @@ public:
 
     MCNAPI void $onError(::Scripting::ContextId contextId, ::std::string_view message) const;
 
-    MCNAPI void
-    $onException(::Scripting::ContextId contextId, ::Scripting::Error const& error, ::entt::meta_any const& errorAny)
-        const;
+    MCNAPI void $onException(
+        ::Scripting::ContextId    contextId,
+        ::Scripting::Error const& error,
+        ::entt::meta_any const&   errorAny
+    ) const;
 
     MCNAPI bool $shouldPrintException(
         ::Scripting::ContextId    contextId,

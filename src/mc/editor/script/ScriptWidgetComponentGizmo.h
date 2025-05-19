@@ -49,8 +49,8 @@ public:
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
 
     // vIndex: 0
-    virtual void _handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const& payload
-    ) /*override*/;
+    virtual void
+    _handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const& payload) /*override*/;
     // NOLINTEND
 
 public:

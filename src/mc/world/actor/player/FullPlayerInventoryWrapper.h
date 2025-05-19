@@ -7,7 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class InventoryTransactionManager;
 class ItemStack;
+class Player;
+class PlayerInventory;
 class SimpleContainer;
 // clang-format on
 
@@ -15,11 +18,11 @@ class FullPlayerInventoryWrapper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk62d28c;
-    ::ll::UntypedStorage<8, 8> mUnk9d1952;
-    ::ll::UntypedStorage<8, 8> mUnkc14899;
-    ::ll::UntypedStorage<8, 8> mUnkef44d3;
-    ::ll::UntypedStorage<8, 8> mUnk6b016b;
+    ::ll::TypedStorage<8, 8, ::PlayerInventory&>             mPlayerInventory;
+    ::ll::TypedStorage<8, 8, ::SimpleContainer&>             mArmorInventory;
+    ::ll::TypedStorage<8, 8, ::SimpleContainer&>             mHandInventory;
+    ::ll::TypedStorage<8, 8, ::InventoryTransactionManager*> mTransactionManager;
+    ::ll::TypedStorage<8, 8, ::Player*>                      mPlayer;
     // NOLINTEND
 
 public:

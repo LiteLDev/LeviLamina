@@ -104,10 +104,40 @@ public:
 
     MCNAPI void TurnCustomizerMaybeModifyOutgoingStunMessage(::cricket::StunMessage*);
 
-    MCNAPI TurnPort(::webrtc::TaskQueueBase*, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ::rtc::AsyncPacketSocket*, ::std::string_view, ::std::string_view, ::cricket::ProtocolAddress const&, ::cricket::RelayCredentials const&, int, ::std::vector<::std::string> const&, ::std::vector<::std::string> const&, ::webrtc::TurnCustomizer*, ::rtc::SSLCertificateVerifier*, ::webrtc::FieldTrialsView const*);
+    MCNAPI TurnPort(
+        ::webrtc::TaskQueueBase*,
+        ::rtc::PacketSocketFactory*,
+        ::rtc::Network const*,
+        ::rtc::AsyncPacketSocket*,
+        ::std::string_view,
+        ::std::string_view,
+        ::cricket::ProtocolAddress const&,
+        ::cricket::RelayCredentials const&,
+        int,
+        ::std::vector<::std::string> const&,
+        ::std::vector<::std::string> const&,
+        ::webrtc::TurnCustomizer*,
+        ::rtc::SSLCertificateVerifier*,
+        ::webrtc::FieldTrialsView const*
+    );
 
-    MCNAPI
-    TurnPort(::webrtc::TaskQueueBase*, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ushort, ushort, ::std::string_view, ::std::string_view, ::cricket::ProtocolAddress const&, ::cricket::RelayCredentials const&, int, ::std::vector<::std::string> const&, ::std::vector<::std::string> const&, ::webrtc::TurnCustomizer*, ::rtc::SSLCertificateVerifier*, ::webrtc::FieldTrialsView const*);
+    MCNAPI TurnPort(
+        ::webrtc::TaskQueueBase*,
+        ::rtc::PacketSocketFactory*,
+        ::rtc::Network const*,
+        ushort,
+        ushort,
+        ::std::string_view,
+        ::std::string_view,
+        ::cricket::ProtocolAddress const&,
+        ::cricket::RelayCredentials const&,
+        int,
+        ::std::vector<::std::string> const&,
+        ::std::vector<::std::string> const&,
+        ::webrtc::TurnCustomizer*,
+        ::rtc::SSLCertificateVerifier*,
+        ::webrtc::FieldTrialsView const*
+    );
 
     MCNAPI void UpdateHash();
 
@@ -129,9 +159,40 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::TaskQueueBase*, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ::rtc::AsyncPacketSocket*, ::std::string_view, ::std::string_view, ::cricket::ProtocolAddress const&, ::cricket::RelayCredentials const&, int, ::std::vector<::std::string> const&, ::std::vector<::std::string> const&, ::webrtc::TurnCustomizer*, ::rtc::SSLCertificateVerifier*, ::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(
+        ::webrtc::TaskQueueBase*,
+        ::rtc::PacketSocketFactory*,
+        ::rtc::Network const*,
+        ::rtc::AsyncPacketSocket*,
+        ::std::string_view,
+        ::std::string_view,
+        ::cricket::ProtocolAddress const&,
+        ::cricket::RelayCredentials const&,
+        int,
+        ::std::vector<::std::string> const&,
+        ::std::vector<::std::string> const&,
+        ::webrtc::TurnCustomizer*,
+        ::rtc::SSLCertificateVerifier*,
+        ::webrtc::FieldTrialsView const*
+    );
 
-    MCNAPI void* $ctor(::webrtc::TaskQueueBase*, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ushort, ushort, ::std::string_view, ::std::string_view, ::cricket::ProtocolAddress const&, ::cricket::RelayCredentials const&, int, ::std::vector<::std::string> const&, ::std::vector<::std::string> const&, ::webrtc::TurnCustomizer*, ::rtc::SSLCertificateVerifier*, ::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(
+        ::webrtc::TaskQueueBase*,
+        ::rtc::PacketSocketFactory*,
+        ::rtc::Network const*,
+        ushort,
+        ushort,
+        ::std::string_view,
+        ::std::string_view,
+        ::cricket::ProtocolAddress const&,
+        ::cricket::RelayCredentials const&,
+        int,
+        ::std::vector<::std::string> const&,
+        ::std::vector<::std::string> const&,
+        ::webrtc::TurnCustomizer*,
+        ::rtc::SSLCertificateVerifier*,
+        ::webrtc::FieldTrialsView const*
+    );
     // NOLINTEND
 
 public:

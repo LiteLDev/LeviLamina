@@ -22,15 +22,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    VoiceChannel(::webrtc::TaskQueueBase*, ::rtc::Thread*, ::webrtc::TaskQueueBase*, ::std::unique_ptr<::cricket::VoiceMediaSendChannelInterface>, ::std::unique_ptr<::cricket::VoiceMediaReceiveChannelInterface>, ::std::string_view, bool, ::webrtc::CryptoOptions, ::rtc::UniqueRandomIdGenerator*);
+    MCNAPI VoiceChannel(
+        ::webrtc::TaskQueueBase*,
+        ::rtc::Thread*,
+        ::webrtc::TaskQueueBase*,
+        ::std::unique_ptr<::cricket::VoiceMediaSendChannelInterface>,
+        ::std::unique_ptr<::cricket::VoiceMediaReceiveChannelInterface>,
+        ::std::string_view,
+        bool,
+        ::webrtc::CryptoOptions,
+        ::rtc::UniqueRandomIdGenerator*
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::webrtc::TaskQueueBase*, ::rtc::Thread*, ::webrtc::TaskQueueBase*, ::std::unique_ptr<::cricket::VoiceMediaSendChannelInterface>, ::std::unique_ptr<::cricket::VoiceMediaReceiveChannelInterface>, ::std::string_view, bool, ::webrtc::CryptoOptions, ::rtc::UniqueRandomIdGenerator*);
+    MCNAPI void* $ctor(
+        ::webrtc::TaskQueueBase*,
+        ::rtc::Thread*,
+        ::webrtc::TaskQueueBase*,
+        ::std::unique_ptr<::cricket::VoiceMediaSendChannelInterface>,
+        ::std::unique_ptr<::cricket::VoiceMediaReceiveChannelInterface>,
+        ::std::string_view,
+        bool,
+        ::webrtc::CryptoOptions,
+        ::rtc::UniqueRandomIdGenerator*
+    );
     // NOLINTEND
 
 public:

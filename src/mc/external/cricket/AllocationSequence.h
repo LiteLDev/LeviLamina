@@ -23,8 +23,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    AllocationSequence(::cricket::BasicPortAllocatorSession*, ::rtc::Network const*, ::cricket::PortConfiguration*, uint, ::std::function<void()>);
+    MCNAPI AllocationSequence(
+        ::cricket::BasicPortAllocatorSession*,
+        ::rtc::Network const*,
+        ::cricket::PortConfiguration*,
+        uint,
+        ::std::function<void()>
+    );
 
     MCNAPI void Clear();
 
@@ -60,8 +65,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::cricket::BasicPortAllocatorSession*, ::rtc::Network const*, ::cricket::PortConfiguration*, uint, ::std::function<void()>);
+    MCNAPI void* $ctor(
+        ::cricket::BasicPortAllocatorSession*,
+        ::rtc::Network const*,
+        ::cricket::PortConfiguration*,
+        uint,
+        ::std::function<void()>
+    );
     // NOLINTEND
 
 public:

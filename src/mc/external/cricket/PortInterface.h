@@ -163,8 +163,13 @@ public:
     virtual ::rtc::DiffServCodePoint StunDscpValue() const = 0;
 
     // vIndex: 36
-    virtual bool
-    GetStunMessage(char const*, uint64, ::rtc::SocketAddress const&, ::std::unique_ptr<::cricket::IceMessage>*, ::std::string*) = 0;
+    virtual bool GetStunMessage(
+        char const*,
+        uint64,
+        ::rtc::SocketAddress const&,
+        ::std::unique_ptr<::cricket::IceMessage>*,
+        ::std::string*
+    ) = 0;
 
     // vIndex: 37
     virtual bool ParseStunUsername(::cricket::StunMessage const*, ::std::string*, ::std::string*) const = 0;

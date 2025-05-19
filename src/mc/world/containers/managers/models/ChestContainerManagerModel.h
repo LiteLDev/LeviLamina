@@ -19,13 +19,11 @@ class ChestContainerManagerModel : public ::LevelContainerManagerModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkb77461;
+    ::ll::TypedStorage<4, 4, ::BlockActorType> mBlockActorType;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ChestContainerManagerModel& operator=(ChestContainerManagerModel const&);
-    ChestContainerManagerModel(ChestContainerManagerModel const&);
     ChestContainerManagerModel();
 
 public:

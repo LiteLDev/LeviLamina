@@ -55,8 +55,8 @@ public:
     virtual ::ItemStackNetResult preHandleAction(::ItemStackRequestActionType requestActionType) /*override*/;
 
     // vIndex: 4
-    virtual ::ItemStackNetResult _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction
-    ) /*override*/;
+    virtual ::ItemStackNetResult
+    _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
 
     // vIndex: 6
     virtual ::Recipes const* _getLevelRecipes() const /*override*/;
@@ -72,8 +72,8 @@ public:
     MCNAPI ::ItemStackNetResult
     _handleCraftCreative(::ItemStackRequestActionCraft<::CreativeItemNetId, 14> const& requestAction);
 
-    MCNAPI ::ItemStackNetResult _handleCraftOutput(::ItemStackRequestActionCraft<::RecipeNetId, 12> const& requestAction
-    );
+    MCNAPI ::ItemStackNetResult
+    _handleCraftOutput(::ItemStackRequestActionCraft<::RecipeNetId, 12> const& requestAction);
     // NOLINTEND
 
 public:

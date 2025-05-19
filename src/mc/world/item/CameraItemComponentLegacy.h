@@ -96,9 +96,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::CameraItemComponentLegacy::UseAction
-    _tryPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3& spawnPos)
-        const;
+    MCNAPI ::CameraItemComponentLegacy::UseAction _tryPlace(
+        ::ItemStack const& instance,
+        ::Actor&           actor,
+        ::BlockPos const&  blockPos,
+        uchar              face,
+        ::Vec3&            spawnPos
+    ) const;
 
     MCNAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
 

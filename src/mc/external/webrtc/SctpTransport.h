@@ -30,8 +30,10 @@ public:
 
     MCNAPI void OnDtlsStateChange(::cricket::DtlsTransportInternal*, ::webrtc::DtlsTransportState);
 
-    MCNAPI
-    SctpTransport(::std::unique_ptr<::cricket::SctpTransportInternal>, ::webrtc::scoped_refptr<::webrtc::DtlsTransport>);
+    MCNAPI SctpTransport(
+        ::std::unique_ptr<::cricket::SctpTransportInternal>,
+        ::webrtc::scoped_refptr<::webrtc::DtlsTransport>
+    );
 
     MCNAPI void Start(int, int, int);
 

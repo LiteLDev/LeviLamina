@@ -54,9 +54,13 @@ public:
         ::Scripting::InvalidArgumentError>
     registerEntitySpawnCallback(
         ::std::string const& id,
-        ::std::function<
-            bool(::br::spawn::EntityType const&, ::BlockSource&, ::br::spawn::EntitySpawnReason&, ::BlockPos, ::IRandom&)>
-            callback
+        ::std::function<bool(
+            ::br::spawn::EntityType const&,
+            ::BlockSource&,
+            ::br::spawn::EntitySpawnReason&,
+            ::BlockPos,
+            ::IRandom&
+        )>                   callback
     );
 
     MCNAPI ::Scripting::Result<

@@ -24,16 +24,25 @@ public:
     virtual ~DataStoreServiceProvider() = default;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void>
-    dispatchEvent(::HashedString const&, ::Editor::DataStore::EventType, ::Json::Value const&, ::Editor::DataStore::PayloadDescription const&) = 0;
+    virtual ::Scripting::Result<void> dispatchEvent(
+        ::HashedString const&,
+        ::Editor::DataStore::EventType,
+        ::Json::Value const&,
+        ::Editor::DataStore::PayloadDescription const&
+    ) = 0;
 
     // vIndex: 2
     virtual ::Json::Value getPayload(::HashedString const&, ::Editor::DataStore::PayloadDescription const&) const = 0;
 
     // vIndex: 3
-    virtual ::Bedrock::PubSub::Subscription
-        listenForEvent(::std::function<
-                       void(::HashedString const&, ::Editor::DataStore::EventType, ::Json::Value const&, ::Editor::DataStore::PayloadDescription const&)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription listenForEvent(
+        ::std::function<void(
+            ::HashedString const&,
+            ::Editor::DataStore::EventType,
+            ::Json::Value const&,
+            ::Editor::DataStore::PayloadDescription const&
+        )>
+    ) = 0;
     // NOLINTEND
 
 public:

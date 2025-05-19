@@ -19,14 +19,8 @@ class FillContainerFunction : public ::LootItemFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk1ae109;
+    ::ll::TypedStorage<8, 32, ::std::string> mLootTable;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FillContainerFunction& operator=(FillContainerFunction const&);
-    FillContainerFunction(FillContainerFunction const&);
-    FillContainerFunction();
 
 public:
     // virtual functions

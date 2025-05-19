@@ -47,8 +47,8 @@ public:
     virtual ~Watchdog() /*override*/;
 
     // vIndex: 1
-    virtual void setWatchdogEventHandler(::std::function<void(::Scripting::WatchdogEvent)> watchdogEventHandler
-    ) /*override*/;
+    virtual void
+    setWatchdogEventHandler(::std::function<void(::Scripting::WatchdogEvent)> watchdogEventHandler) /*override*/;
 
     // vIndex: 2
     virtual void beginTiming(::Scripting::ContextId contextId) /*override*/;

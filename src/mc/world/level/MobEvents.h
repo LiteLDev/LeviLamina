@@ -50,8 +50,8 @@ public:
 
     MCNAPI ::MobEventsIndex getIndexFromName(::std::string const& name) const;
 
-    MCNAPI void initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector
-    );
+    MCNAPI void
+    initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
     MCNAPI void readFromLevelStorage();
 

@@ -49,8 +49,8 @@ public:
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> jaggedNoise
     );
 
-    MCNAPI ::ChunkLocalNoiseCache::CacheEntry _computeBaseValueSetForCacheEntry(::DividedPos2d<4> const& worldQuartPos
-    ) const;
+    MCNAPI ::ChunkLocalNoiseCache::CacheEntry
+    _computeBaseValueSetForCacheEntry(::DividedPos2d<4> const& worldQuartPos) const;
 
     MCNAPI ::std::pair<float, float> computeErosionAndDepth(::BlockPos position) const;
 

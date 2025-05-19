@@ -68,8 +68,8 @@ public:
     virtual void clearLanguages() /*override*/;
 
     // vIndex: 2
-    virtual ::std::vector<::std::string> findAvailableLanguages(::ResourcePackManager& resourcePackManager
-    ) /*override*/;
+    virtual ::std::vector<::std::string>
+    findAvailableLanguages(::ResourcePackManager& resourcePackManager) /*override*/;
 
     // vIndex: 3
     virtual ::std::unordered_map<::std::string, ::std::string>
@@ -86,8 +86,8 @@ public:
     virtual void loadAllLanguages(::ResourcePackManager& resourcePackManager) /*override*/;
 
     // vIndex: 6
-    virtual ::std::vector<::std::string> getLanguageCodesFromPack(::PackAccessStrategy const& accessStrategy
-    ) /*override*/;
+    virtual ::std::vector<::std::string>
+    getLanguageCodesFromPack(::PackAccessStrategy const& accessStrategy) /*override*/;
 
     // vIndex: 8
     virtual void loadLanguageKeywordsFromPack(

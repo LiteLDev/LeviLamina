@@ -165,8 +165,8 @@ public:
     virtual void addServicePacksToStack(::ResourcePackStack& stack) const /*override*/;
 
     // vIndex: 17
-    virtual void addCachedResourcePacks(::std::unordered_map<::ContentIdentity, ::std::string> const* tempCacheKeys
-    ) /*override*/;
+    virtual void
+    addCachedResourcePacks(::std::unordered_map<::ContentIdentity, ::std::string> const* tempCacheKeys) /*override*/;
 
     // vIndex: 18
     virtual void addWorldResourcePacks(::Core::Path const& levelPath) /*override*/;

@@ -2,21 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/world/inventory/simulation/ContainerScreenActionResult.h"
+
+// auto generated forward declare list
+// clang-format off
+class ContainerScreenSimulation;
+// clang-format on
+
 class ContainerScreenActionScope {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk713e28;
-    ::ll::UntypedStorage<8, 8>  mUnk5ab914;
-    ::ll::UntypedStorage<8, 24> mUnk807903;
-    ::ll::UntypedStorage<8, 56> mUnk2c02bf;
+    ::ll::TypedStorage<1, 1, bool>                                                        mTemporaryScope;
+    ::ll::TypedStorage<8, 8, ::ContainerScreenActionScope*>                               mParentScope;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ContainerScreenSimulation>> mSimulation;
+    ::ll::TypedStorage<8, 56, ::ContainerScreenActionResult>                              mScreenSimulationResult;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerScreenActionScope& operator=(ContainerScreenActionScope const&);
-    ContainerScreenActionScope(ContainerScreenActionScope const&);
-    ContainerScreenActionScope();
 
 public:
     // virtual functions

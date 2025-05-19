@@ -23,8 +23,12 @@ public:
     virtual ~ServerPlayerInputServiceProvider() = default;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void>
-    registerKeyBinding(::HashedString const&, ::HashedString const&, ::Editor::Input::KeyBinding const&, ::Editor::Input::BindingInfo const&) = 0;
+    virtual ::Scripting::Result<void> registerKeyBinding(
+        ::HashedString const&,
+        ::HashedString const&,
+        ::Editor::Input::KeyBinding const&,
+        ::Editor::Input::BindingInfo const&
+    ) = 0;
 
     // vIndex: 2
     virtual ::Scripting::Result<void> unregisterKeyBinding(::HashedString const&, ::HashedString const&) = 0;

@@ -25,12 +25,17 @@ public:
     virtual ::Editor::Playtest::SessionResult getPlaytestSessionAvailability(::WeakEntityRef) = 0;
 
     // vIndex: 2
-    virtual void
-    beginPlaytestSession(::WeakEntityRef, ::Editor::GameOptions const&, ::std::function<void(::Editor::Playtest::SessionResult const&)>) = 0;
+    virtual void beginPlaytestSession(
+        ::WeakEntityRef,
+        ::Editor::GameOptions const&,
+        ::std::function<void(::Editor::Playtest::SessionResult const&)>
+    ) = 0;
 
     // vIndex: 3
-    virtual void
-    _handlePlayersSessionTransferResponse(::WeakEntityRef, ::Editor::Network::PlaytestBeginSessionTransferResponsePayload const&) = 0;
+    virtual void _handlePlayersSessionTransferResponse(
+        ::WeakEntityRef,
+        ::Editor::Network::PlaytestBeginSessionTransferResponsePayload const&
+    ) = 0;
     // NOLINTEND
 
 public:

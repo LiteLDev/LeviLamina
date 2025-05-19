@@ -27,8 +27,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::NetherNet::CandidateAdd> TryParse(::std::array<::std::string_view, 3> const& tokens
-    );
+    MCNAPI static ::std::optional<::NetherNet::CandidateAdd>
+    TryParse(::std::array<::std::string_view, 3> const& tokens);
     // NOLINTEND
 
 public:

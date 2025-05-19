@@ -68,9 +68,13 @@ public:
 
     MCNAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
 
-    MCNAPI ::Block const&
-    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
-        const;
+    MCNAPI ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND

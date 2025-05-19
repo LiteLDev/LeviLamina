@@ -26,8 +26,8 @@ public:
     virtual void registerMolangQueries() /*override*/;
 
     // vIndex: 4
-    virtual void registerServerInstanceHandler(::ServerInstanceEventCoordinator& serverInstanceCoordinator
-    ) /*override*/;
+    virtual void
+    registerServerInstanceHandler(::ServerInstanceEventCoordinator& serverInstanceCoordinator) /*override*/;
 
     // vIndex: 0
     virtual ~VanillaGameModuleDedicatedServer() /*override*/ = default;

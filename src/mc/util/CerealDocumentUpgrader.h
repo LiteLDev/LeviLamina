@@ -72,10 +72,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::string getVersion(::rapidjson::GenericDocument<
-                                           ::rapidjson::UTF8<char>,
-                                           ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
-                                           ::rapidjson::CrtAllocator> const& document);
+    MCNAPI static ::std::string getVersion(
+        ::rapidjson::GenericDocument<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+            ::rapidjson::CrtAllocator> const& document
+    );
     // NOLINTEND
 
 public:

@@ -40,16 +40,16 @@ public:
     requestTickingArea(::std::string const& areaIdentifier, ::BlockPos const& from, ::BlockPos const& to) /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result<bool, ::Scripting::Error> releaseTickingArea(::std::string const& areaIdentifier
-    ) /*override*/;
+    virtual ::Scripting::Result<bool, ::Scripting::Error>
+    releaseTickingArea(::std::string const& areaIdentifier) /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<bool, ::Scripting::Error> isTickingAreaActive(::std::string const& areaIdentifier
-    ) /*override*/;
+    virtual ::Scripting::Result<bool, ::Scripting::Error>
+    isTickingAreaActive(::std::string const& areaIdentifier) /*override*/;
 
     // vIndex: 4
-    virtual ::Scripting::Result<bool, ::Scripting::Error> purgeTickingAreas(::std::string const& areaIdentifierPrefix
-    ) /*override*/;
+    virtual ::Scripting::Result<bool, ::Scripting::Error>
+    purgeTickingAreas(::std::string const& areaIdentifierPrefix) /*override*/;
     // NOLINTEND
 
 public:

@@ -68,9 +68,12 @@ public:
 
     // vIndex: 3
     virtual ::Bedrock::PubSub::Subscription listenForEvent(
-        ::std::function<
-            void(::HashedString const&, ::Editor::DataStore::EventType, ::Json::Value const&, ::Editor::DataStore::PayloadDescription const&)>
-            callback
+        ::std::function<void(
+            ::HashedString const&,
+            ::Editor::DataStore::EventType,
+            ::Json::Value const&,
+            ::Editor::DataStore::PayloadDescription const&
+        )> callback
     ) /*override*/;
 
     // vIndex: 7
@@ -148,9 +151,12 @@ public:
     $getPayload(::HashedString const& dataTag, ::Editor::DataStore::PayloadDescription const& desc) const;
 
     MCNAPI ::Bedrock::PubSub::Subscription $listenForEvent(
-        ::std::function<
-            void(::HashedString const&, ::Editor::DataStore::EventType, ::Json::Value const&, ::Editor::DataStore::PayloadDescription const&)>
-            callback
+        ::std::function<void(
+            ::HashedString const&,
+            ::Editor::DataStore::EventType,
+            ::Json::Value const&,
+            ::Editor::DataStore::PayloadDescription const&
+        )> callback
     );
     // NOLINTEND
 

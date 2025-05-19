@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/ContainerContentChangeListener.h"
 #include "mc/world/ContainerID.h"
@@ -11,23 +12,32 @@
 // auto generated forward declare list
 // clang-format off
 class Container;
+class DynamicContainerTracker;
 class ItemStack;
 class Player;
+struct PlayerContainerRefresher;
 namespace Bedrock::PubSub { class Subscription; }
+namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 
 class BaseContainerMenu : public ::ContainerContentChangeListener, public ::IContainerManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk1a8093;
-    ::ll::UntypedStorage<8, 24> mUnk2692a8;
-    ::ll::UntypedStorage<8, 8>  mUnkfaaaf0;
-    ::ll::UntypedStorage<8, 16> mUnk8690bc;
-    ::ll::UntypedStorage<1, 1>  mUnk1149f4;
-    ::ll::UntypedStorage<1, 1>  mUnk56cb6d;
-    ::ll::UntypedStorage<4, 4>  mUnkdde237;
-    ::ll::UntypedStorage<8, 8>  mUnkc9caf8;
+    ::ll::TypedStorage<8, 8, ::Player&>                                     mPlayer;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>>                   mLastSlots;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlayerContainerRefresher>> mContainerRefresher;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::DynamicContainerTracker>> mDynamicContainerTracker;
+    ::ll::TypedStorage<1, 1, ::ContainerID>                                 mContainerId;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType>          mContainerType;
+    ::ll::TypedStorage<4, 4, int>                                           mTicksSinceLastCleanup;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::unique_ptr<::Bedrock::PubSub::Publisher<
+            void(::SharedTypes::Legacy::ContainerType),
+            ::Bedrock::PubSub::ThreadModel::SingleThreaded>>>
+        mContainerTypeSubscribers;
     // NOLINTEND
 
 public:

@@ -44,8 +44,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::ModuleBinding const* findSatisfyingModule(::Scripting::ModuleDependency const& moduleDependency
-    ) const;
+    MCNAPI ::Scripting::ModuleBinding const*
+    findSatisfyingModule(::Scripting::ModuleDependency const& moduleDependency) const;
 
     MCNAPI ::std::string generateParseContextErrorMessage() const;
 

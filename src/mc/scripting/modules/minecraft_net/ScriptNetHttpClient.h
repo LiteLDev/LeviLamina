@@ -53,7 +53,11 @@ public:
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
             ::Scripting::Error,
             void>
-        process(::Scripting::WeakLifetimeScope const& factory, ::Scripting::ScriptObjectFactory& requestHandle, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> const&);
+        process(
+            ::Scripting::WeakLifetimeScope const& factory,
+            ::Scripting::ScriptObjectFactory&     requestHandle,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> const&
+        );
         // NOLINTEND
 
     public:
@@ -86,8 +90,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
         ::Scripting::Error,
         void>
-    get(::Scripting::WeakLifetimeScope const& scope, ::Scripting::ScriptObjectFactory& factory, ::std::string const& uri
-    );
+    get(::Scripting::WeakLifetimeScope const& scope,
+        ::Scripting::ScriptObjectFactory&     factory,
+        ::std::string const&                  uri);
 
     MCNAPI ::ScriptModuleMinecraftNet::ScriptNetHttpClient&
     operator=(::ScriptModuleMinecraftNet::ScriptNetHttpClient const&);

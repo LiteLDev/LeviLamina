@@ -39,8 +39,8 @@ public:
     virtual ~ServerMapDataManager() /*override*/ = default;
 
     // vIndex: 1
-    virtual void registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector
-    ) /*override*/;
+    virtual void
+    registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector) /*override*/;
 
     // vIndex: 0
     virtual ::Bedrock::PubSub::Connector<void(::MapItemSavedData&)>& getOnCreateMapSavedDataConnector() /*override*/;

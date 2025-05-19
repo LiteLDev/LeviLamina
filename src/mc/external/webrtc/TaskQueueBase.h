@@ -85,12 +85,19 @@ public:
     virtual void Delete() = 0;
 
     // vIndex: 1
-    virtual void
-    PostTaskImpl(::absl::AnyInvocable<void() &&>, ::webrtc::TaskQueueBase::PostTaskTraits const&, ::webrtc::Location const&) = 0;
+    virtual void PostTaskImpl(
+        ::absl::AnyInvocable<void() &&>,
+        ::webrtc::TaskQueueBase::PostTaskTraits const&,
+        ::webrtc::Location const&
+    ) = 0;
 
     // vIndex: 2
-    virtual void
-    PostDelayedTaskImpl(::absl::AnyInvocable<void() &&>, ::webrtc::TimeDelta, ::webrtc::TaskQueueBase::PostDelayedTaskTraits const&, ::webrtc::Location const&) = 0;
+    virtual void PostDelayedTaskImpl(
+        ::absl::AnyInvocable<void() &&>,
+        ::webrtc::TimeDelta,
+        ::webrtc::TaskQueueBase::PostDelayedTaskTraits const&,
+        ::webrtc::Location const&
+    ) = 0;
 
     // vIndex: 3
     virtual ~TaskQueueBase() = default;
@@ -105,8 +112,12 @@ public:
         ::webrtc::Location const&       location
     );
 
-    MCNAPI void
-    PostDelayedTaskWithPrecision(::webrtc::TaskQueueBase::DelayPrecision, ::absl::AnyInvocable<void() &&>, ::webrtc::TimeDelta, ::webrtc::Location const&);
+    MCNAPI void PostDelayedTaskWithPrecision(
+        ::webrtc::TaskQueueBase::DelayPrecision,
+        ::absl::AnyInvocable<void() &&>,
+        ::webrtc::TimeDelta,
+        ::webrtc::Location const&
+    );
 
     MCNAPI void PostTask(::absl::AnyInvocable<void() &&> task, ::webrtc::Location const& location);
     // NOLINTEND

@@ -408,9 +408,15 @@ public:
     virtual void onDestroyMinecraftGame() /*override*/;
 
     // vIndex: 3
-    virtual void
-    init(::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&, ::ClientNetworkSystem&, ::Timer&, ::Timer&, ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&, int, ::IGameModuleApp&) /*override*/
-        ;
+    virtual void init(
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&,
+        ::ClientNetworkSystem&,
+        ::Timer&,
+        ::Timer&,
+        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&,
+        int,
+        ::IGameModuleApp&
+    ) /*override*/;
 
     // vIndex: 4
     virtual void
@@ -483,9 +489,11 @@ public:
     virtual void startSubClientLateJoin(bool, ::std::unique_ptr<::GameModuleClient>) /*override*/;
 
     // vIndex: 28
-    virtual void
-    setupClientGame(::std::function<void(::ClientGameSetupResult)>&&, bool, ::std::unique_ptr<::GameModuleClient>) /*override*/
-        ;
+    virtual void setupClientGame(
+        ::std::function<void(::ClientGameSetupResult)>&&,
+        bool,
+        ::std::unique_ptr<::GameModuleClient>
+    ) /*override*/;
 
     // vIndex: 27
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::ClientGameSetupResult>>
@@ -878,9 +886,10 @@ public:
     virtual void stopDestroying() /*override*/;
 
     // vIndex: 157
-    virtual void
-        onClientCreatedLevel(::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>>, ::OwnerPtr<::EntityContext>) /*override*/
-        ;
+    virtual void onClientCreatedLevel(
+        ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>>,
+        ::OwnerPtr<::EntityContext>
+    ) /*override*/;
 
     // vIndex: 158
     virtual uint64 getClientRandomId() const /*override*/;
@@ -1279,9 +1288,11 @@ public:
     virtual ::Vec2 getSafeZoneScale() const /*override*/;
 
     // vIndex: 289
-    virtual void
-    verifySkinApproval(::std::string const&, ::std::function<void(::std::string)> const&, ::std::function<void()> const&)
-        const /*override*/;
+    virtual void verifySkinApproval(
+        ::std::string const&,
+        ::std::function<void(::std::string)> const&,
+        ::std::function<void()> const&
+    ) const /*override*/;
 
     // vIndex: 290
     virtual ::InputMode getCurrentInputMode() const /*override*/;
@@ -1536,9 +1547,10 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::DevConsoleLogger> getDevConsoleLogger() const /*override*/;
 
     // vIndex: 373
-    virtual ::std::shared_ptr<::FileDataRequest>
-    requestImageFromUrl(::std::string const&, ::std::function<void(::Bedrock::Http::Status, ::Core::Path const&, uint64)>) /*override*/
-        ;
+    virtual ::std::shared_ptr<::FileDataRequest> requestImageFromUrl(
+        ::std::string const&,
+        ::std::function<void(::Bedrock::Http::Status, ::Core::Path const&, uint64)>
+    ) /*override*/;
 
     // vIndex: 418
     virtual void setActiveFileStorageArea(::std::shared_ptr<::Core::FileStorageArea>) /*override*/;

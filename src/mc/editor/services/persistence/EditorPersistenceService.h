@@ -74,8 +74,8 @@ public:
     ) /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> addOrUpdatePersistData(::Editor::Persistence::PersistentData const& data
-    ) /*override*/;
+    virtual ::Scripting::Result<void>
+    addOrUpdatePersistData(::Editor::Persistence::PersistentData const& data) /*override*/;
 
     // vIndex: 2
     virtual ::Scripting::Result<void> addPersistData(::Editor::Persistence::PersistentData const& data) /*override*/;

@@ -220,8 +220,8 @@ public:
         ::std::variant<float, bool, ::std::string> const& value
     );
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::PropertyOutOfBoundsError> setSelectedSlot(int slot
-    ) const;
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::PropertyOutOfBoundsError>
+    setSelectedSlot(int slot) const;
 
     MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError, ::Scripting::Error>
     setSpawnPoint(::std::optional<::ScriptModuleMinecraft::ScriptDimensionLocation> const& dimensionLocation) const;

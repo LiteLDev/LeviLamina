@@ -2,17 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/ContainerID.h"
+
 struct PlayerInventorySlotData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkadd8ab;
-    ::ll::UntypedStorage<4, 4> mUnk972fd9;
+    ::ll::TypedStorage<1, 1, ::ContainerID> mContainerId;
+    ::ll::TypedStorage<4, 4, int>           mSlot;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerInventorySlotData& operator=(PlayerInventorySlotData const&);
-    PlayerInventorySlotData(PlayerInventorySlotData const&);
-    PlayerInventorySlotData();
 };

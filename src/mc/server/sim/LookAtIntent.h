@@ -34,12 +34,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LookAtIntent(::std::variant<
-                                ::sim::VoidLookAtIntent,
-                                ::sim::LookAtPositionIntent,
-                                ::sim::ContinuousLookAtPositionIntent,
-                                ::sim::LookAtEntityIntent,
-                                ::sim::ContinuousLookAtEntityIntent> type);
+    MCAPI explicit LookAtIntent(
+        ::std::variant<
+            ::sim::VoidLookAtIntent,
+            ::sim::LookAtPositionIntent,
+            ::sim::ContinuousLookAtPositionIntent,
+            ::sim::LookAtEntityIntent,
+            ::sim::ContinuousLookAtEntityIntent> type
+    );
 
     MCAPI ~LookAtIntent();
     // NOLINTEND
@@ -47,12 +49,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::variant<
-                      ::sim::VoidLookAtIntent,
-                      ::sim::LookAtPositionIntent,
-                      ::sim::ContinuousLookAtPositionIntent,
-                      ::sim::LookAtEntityIntent,
-                      ::sim::ContinuousLookAtEntityIntent> type);
+    MCAPI void* $ctor(
+        ::std::variant<
+            ::sim::VoidLookAtIntent,
+            ::sim::LookAtPositionIntent,
+            ::sim::ContinuousLookAtPositionIntent,
+            ::sim::LookAtEntityIntent,
+            ::sim::ContinuousLookAtEntityIntent> type
+    );
     // NOLINTEND
 
 public:

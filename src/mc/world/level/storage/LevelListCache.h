@@ -133,8 +133,8 @@ public:
     virtual ::LevelData* getLevelData(::std::string const& levelId) /*override*/;
 
     // vIndex: 20
-    virtual ::Bedrock::NonOwnerPointer<::LevelData> getLevelDataNonOwnerPointer(::std::string const& levelId
-    ) /*override*/;
+    virtual ::Bedrock::NonOwnerPointer<::LevelData>
+    getLevelDataNonOwnerPointer(::std::string const& levelId) /*override*/;
 
     // vIndex: 21
     virtual ::LevelSummary* getShallowLevelSummary(::std::string const& levelId) /*override*/;

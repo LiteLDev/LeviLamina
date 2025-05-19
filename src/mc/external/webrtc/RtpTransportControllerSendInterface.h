@@ -46,7 +46,17 @@ public:
     virtual ::webrtc::PacketRouter* packet_router() = 0;
 
     // vIndex: 2
-    virtual ::webrtc::RtpVideoSenderInterface* CreateRtpVideoSender(::std::map<uint, ::webrtc::RtpState> const&, ::std::map<uint, ::webrtc::RtpPayloadState> const&, ::webrtc::RtpConfig const&, int, ::webrtc::Transport*, ::webrtc::RtpSenderObservers const&, ::std::unique_ptr<::webrtc::FecController>, ::webrtc::RtpSenderFrameEncryptionConfig const&, ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>) = 0;
+    virtual ::webrtc::RtpVideoSenderInterface* CreateRtpVideoSender(
+        ::std::map<uint, ::webrtc::RtpState> const&,
+        ::std::map<uint, ::webrtc::RtpPayloadState> const&,
+        ::webrtc::RtpConfig const&,
+        int,
+        ::webrtc::Transport*,
+        ::webrtc::RtpSenderObservers const&,
+        ::std::unique_ptr<::webrtc::FecController>,
+        ::webrtc::RtpSenderFrameEncryptionConfig const&,
+        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>
+    ) = 0;
 
     // vIndex: 3
     virtual void DestroyRtpVideoSender(::webrtc::RtpVideoSenderInterface*) = 0;

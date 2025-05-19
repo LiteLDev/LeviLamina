@@ -85,9 +85,12 @@ public:
 
     MCNAPI void _sendBellUsedEventToClient(::BlockSource const& region, ::Actor const& sourceActor) const;
 
-    MCNAPI void
-    _tryAttachToNeighbors(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos, int updateFlags)
-        const;
+    MCNAPI void _tryAttachToNeighbors(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::BlockPos const& neighborPos,
+        int               updateFlags
+    ) const;
 
     MCNAPI bool hasValidAttachment(::Block const& block, ::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -103,9 +106,13 @@ public:
     // NOLINTBEGIN
     MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCNAPI ::Block const&
-    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
-        const;
+    MCNAPI ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     MCNAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& actor) const;
 

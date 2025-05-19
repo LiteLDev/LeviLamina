@@ -52,11 +52,12 @@ public:
 
     MCNAPI ::std::string_view _getPlaceErrorMessage(::std::string_view key) const;
 
-    MCNAPI ::StructureTemplate const*
-    _getStructure(::std::variant<
-                  ::std::string,
-                  ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>> const&
-                      scriptStructureOrName) const;
+    MCNAPI ::StructureTemplate const* _getStructure(
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>> const&
+            scriptStructureOrName
+    ) const;
 
     MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>,
@@ -75,11 +76,12 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptStructureCreateOptions> const&         options
     );
 
-    MCNAPI ::Scripting::Result<bool, ::Scripting::InvalidArgumentError>
-    deleteStructure(::std::variant<
-                    ::std::string,
-                    ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>> const&
-                        scriptStructureOrName);
+    MCNAPI ::Scripting::Result<bool, ::Scripting::InvalidArgumentError> deleteStructure(
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>> const&
+            scriptStructureOrName
+    );
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>
     getOrCreateScriptStructure(::StructureTemplate& structureTemplate);

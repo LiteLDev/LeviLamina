@@ -134,10 +134,12 @@ public:
 
     MCAPI void _spawnExitPortal(bool activated);
 
-    MCAPI void _spawnNewGatewayChunksTask(::std::tuple<
-                                          ::EndDragonFight::GatewayTask,
-                                          ::EndDragonFight::GateWayGenerator,
-                                          ::EndDragonFight::GateWayGenerator>& task);
+    MCAPI void _spawnNewGatewayChunksTask(
+        ::std::tuple<
+            ::EndDragonFight::GatewayTask,
+            ::EndDragonFight::GateWayGenerator,
+            ::EndDragonFight::GateWayGenerator>& task
+    );
 
     MCAPI void _spawnNewGatewayPair();
 
@@ -145,10 +147,12 @@ public:
 
     MCAPI void _updateCrystalCount();
 
-    MCAPI void _verifyExitPositionsTask(::std::tuple<
-                                        ::EndDragonFight::GatewayTask,
-                                        ::EndDragonFight::GateWayGenerator,
-                                        ::EndDragonFight::GateWayGenerator>& task);
+    MCAPI void _verifyExitPositionsTask(
+        ::std::tuple<
+            ::EndDragonFight::GatewayTask,
+            ::EndDragonFight::GateWayGenerator,
+            ::EndDragonFight::GateWayGenerator>& task
+    );
 
     MCAPI void loadData(::CompoundTag const& tag);
 

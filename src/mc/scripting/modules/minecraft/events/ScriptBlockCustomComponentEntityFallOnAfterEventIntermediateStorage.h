@@ -20,7 +20,9 @@ public:
     // prevent constructor by default
     ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage&
     operator=(ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage const&);
-    ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage(ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage const&);
+    ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage(
+        ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage const&
+    );
     ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage();
 
 public:

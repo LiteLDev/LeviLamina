@@ -34,8 +34,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    ScriptLeverActionAfterEvent(::LeverActionEvent const& leverActionEvent, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player, ::BlockPos const& scope, ::Scripting::WeakLifetimeScope const&);
+    MCNAPI ScriptLeverActionAfterEvent(
+        ::LeverActionEvent const&                                                   leverActionEvent,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
+        ::BlockPos const&                                                           scope,
+        ::Scripting::WeakLifetimeScope const&
+    );
     // NOLINTEND
 
 public:
@@ -47,8 +51,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::LeverActionEvent const& leverActionEvent, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player, ::BlockPos const& scope, ::Scripting::WeakLifetimeScope const&);
+    MCNAPI void* $ctor(
+        ::LeverActionEvent const&                                                   leverActionEvent,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
+        ::BlockPos const&                                                           scope,
+        ::Scripting::WeakLifetimeScope const&
+    );
     // NOLINTEND
 };
 

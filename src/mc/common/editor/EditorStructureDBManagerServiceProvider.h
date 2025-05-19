@@ -23,8 +23,11 @@ public:
     virtual ~EditorStructureDBManagerServiceProvider() = default;
 
     // vIndex: 1
-    virtual ::std::optional<::std::string>
-    createNewEditorProjectStructure(::Editor::EditorStructureTemplate&, ::std::optional<::std::string> const&, ::std::optional<::std::string> const&) = 0;
+    virtual ::std::optional<::std::string> createNewEditorProjectStructure(
+        ::Editor::EditorStructureTemplate&,
+        ::std::optional<::std::string> const&,
+        ::std::optional<::std::string> const&
+    ) = 0;
 
     // vIndex: 2
     virtual bool replaceMCStructureFromTemplate(::mce::UUID const&, ::Editor::EditorStructureTemplate const&, bool) = 0;

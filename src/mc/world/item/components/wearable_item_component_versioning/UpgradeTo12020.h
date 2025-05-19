@@ -12,10 +12,11 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual bool previousSchema(::rapidjson::GenericValue<
-                                ::rapidjson::UTF8<char>,
-                                ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component) const
-        /*override*/;
+    virtual bool previousSchema(
+        ::rapidjson::GenericValue<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component
+    ) const /*override*/;
 
     // vIndex: 0
     virtual ~UpgradeTo12020() /*override*/ = default;
@@ -36,9 +37,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $previousSchema(::rapidjson::GenericValue<
-                                ::rapidjson::UTF8<char>,
-                                ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component) const;
+    MCNAPI bool $previousSchema(
+        ::rapidjson::GenericValue<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component
+    ) const;
     // NOLINTEND
 
 public:

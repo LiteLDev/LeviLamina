@@ -14,8 +14,12 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::rtc::SSLCertificateStats> Copy() const;
 
-    MCNAPI
-    SSLCertificateStats(::std::string&&, ::std::string&&, ::std::string&&, ::std::unique_ptr<::rtc::SSLCertificateStats>);
+    MCNAPI SSLCertificateStats(
+        ::std::string&&,
+        ::std::string&&,
+        ::std::string&&,
+        ::std::unique_ptr<::rtc::SSLCertificateStats>
+    );
 
     MCNAPI ~SSLCertificateStats();
     // NOLINTEND

@@ -38,17 +38,27 @@ public:
     virtual ~RoofedTreeCanopy() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::std::optional<::BlockPos>
-    placeCanopy(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams&, ::TreeHelper::TreeParams const&, ::std::vector<::BlockPos> const&)
-        const /*override*/;
+    virtual ::std::optional<::BlockPos> placeCanopy(
+        ::IBlockWorldGenAPI& target,
+        ::BlockPos const&    pos,
+        ::Random&            random,
+        ::RenderParams&,
+        ::TreeHelper::TreeParams const&,
+        ::std::vector<::BlockPos> const&
+    ) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos>
-    $placeCanopy(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams&, ::TreeHelper::TreeParams const&, ::std::vector<::BlockPos> const&)
-        const;
+    MCNAPI ::std::optional<::BlockPos> $placeCanopy(
+        ::IBlockWorldGenAPI& target,
+        ::BlockPos const&    pos,
+        ::Random&            random,
+        ::RenderParams&,
+        ::TreeHelper::TreeParams const&,
+        ::std::vector<::BlockPos> const&
+    ) const;
     // NOLINTEND
 
 public:

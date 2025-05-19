@@ -3,8 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/containers/SlotData.h"
 #include "mc/world/containers/controllers/ItemTakeType.h"
 #include "mc/world/containers/managers/controllers/ContainerManagerController.h"
+#include "mc/world/containers/managers/controllers/CraftingSessionInfo.h"
+#include "mc/world/item/ItemInstance.h"
 #include "mc/world/level/BlockChangedEventTarget.h"
 #include "mc/world/level/BlockSourceListener.h"
 
@@ -14,14 +17,17 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class ItemInstance;
+class CraftingContainerManagerModel;
+class ItemStack;
 class ItemStackBase;
+class Recipe;
+class Recipes;
 struct ActorBlockSyncMessage;
 struct AutoPlaceItem;
 struct AutoPlaceResult;
+struct ItemStateData;
 struct ItemTransferAmount;
 struct SelectedSlotInfo;
-struct SlotData;
 // clang-format on
 
 class CraftingContainerManagerController : public ::ContainerManagerController {
@@ -54,9 +60,17 @@ public:
         virtual ~BlockChangeListener() /*override*/ = default;
 
         // vIndex: 4
-        virtual void
-        onBlockChanged(::BlockSource&, ::BlockPos const&, uint, ::Block const&, ::Block const&, int, ::ActorBlockSyncMessage const*, ::BlockChangedEventTarget, ::Actor*) /*override*/
-            ;
+        virtual void onBlockChanged(
+            ::BlockSource&,
+            ::BlockPos const&,
+            uint,
+            ::Block const&,
+            ::Block const&,
+            int,
+            ::ActorBlockSyncMessage const*,
+            ::BlockChangedEventTarget,
+            ::Actor*
+        ) /*override*/;
         // NOLINTEND
 
     public:
@@ -69,31 +83,26 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnk2bf0be;
-    ::ll::UntypedStorage<4, 4>   mUnkda28b6;
-    ::ll::UntypedStorage<8, 8>   mUnkd36e42;
-    ::ll::UntypedStorage<8, 24>  mUnk7a7e0c;
-    ::ll::UntypedStorage<8, 8>   mUnkbaccab;
-    ::ll::UntypedStorage<8, 8>   mUnke59753;
-    ::ll::UntypedStorage<1, 1>   mUnk8be0fa;
-    ::ll::UntypedStorage<1, 1>   mUnkf73bb0;
-    ::ll::UntypedStorage<8, 40>  mUnk4c6a1a;
-    ::ll::UntypedStorage<8, 24>  mUnkc97ffd;
-    ::ll::UntypedStorage<8, 48>  mUnke4fd79;
-    ::ll::UntypedStorage<8, 24>  mUnk789bce;
-    ::ll::UntypedStorage<8, 128> mUnk5c5af2;
-    ::ll::UntypedStorage<8, 24>  mUnk2af8c4;
-    ::ll::UntypedStorage<8, 16>  mUnk7b6004;
-    ::ll::UntypedStorage<8, 8>   mUnkf63545;
-    ::ll::UntypedStorage<1, 1>   mUnkb18d9a;
-    ::ll::UntypedStorage<1, 1>   mUnk797b8f;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::CraftingContainerManagerModel>>        mCraftingContainerManagerModel;
+    ::ll::TypedStorage<4, 4, int>                                                      mGridSize;
+    ::ll::TypedStorage<8, 8, ::Recipes*>                                               mLevelRecipes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::reference_wrapper<::Recipe const>>> mRecipes;
+    ::ll::TypedStorage<8, 8, ::Recipe const*>                                          mCraftingRecipe;
+    ::ll::TypedStorage<8, 8, ::Recipe const*>                                          mSelectedRecipe;
+    ::ll::TypedStorage<1, 1, bool>                                                     mDisplayingInvalidRecipe;
+    ::ll::TypedStorage<1, 1, bool>                                                     mClearInputGridOnChange;
+    ::ll::TypedStorage<8, 40, ::SlotData const>                                        mCreatedItemOutputSlot;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStateData>>                          mSavedInventoryState;
+    ::ll::TypedStorage<8, 48, ::CraftingSessionInfo>                                   mCraftingInformation;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>>                              mRemainingItems;
+    ::ll::TypedStorage<8, 128, ::ItemInstance>                                         mResultPreviewItem;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>>                           mAllResults;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>>                                 mListenerLifeIndicator;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CraftingContainerManagerController::BlockChangeListener>>
+                                   mBlockChangeListener;
+    ::ll::TypedStorage<1, 1, bool> mCloseCraftingContainer;
+    ::ll::TypedStorage<1, 1, bool> mIsCrafting;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CraftingContainerManagerController& operator=(CraftingContainerManagerController const&);
-    CraftingContainerManagerController(CraftingContainerManagerController const&);
-    CraftingContainerManagerController();
 
 public:
     // virtual functions
@@ -120,14 +129,20 @@ public:
     virtual void handlePlaceOne(::SlotData const&, ::SlotData const&) /*override*/;
 
     // vIndex: 15
-    virtual int
-    handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&) /*override*/
-        ;
+    virtual int handleAutoPlace(
+        ::SlotData const&,
+        int,
+        ::std::vector<::AutoPlaceItem> const&,
+        ::std::vector<::AutoPlaceResult>&
+    ) /*override*/;
 
     // vIndex: 16
-    virtual int
-    handleAutoPlaceStack(::SlotData const&, ::ItemTakeType, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&) /*override*/
-        ;
+    virtual int handleAutoPlaceStack(
+        ::SlotData const&,
+        ::ItemTakeType,
+        ::std::vector<::AutoPlaceItem> const&,
+        ::std::vector<::AutoPlaceResult>&
+    ) /*override*/;
 
     // vIndex: 17
     virtual void handleSplitSingle(::SlotData const&, ::SlotData const&) /*override*/;

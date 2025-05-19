@@ -25,8 +25,14 @@ public:
     virtual void setupActorForTransfer(::Actor&) = 0;
 
     // vIndex: 2
-    virtual ::Vec3
-    findTargetPositionAndSetPosition(::Actor&, ::DimensionType, ::DimensionType, ::IDimension const&, ::PortalForcer const&, ::std::optional<::Vec3> const&) = 0;
+    virtual ::Vec3 findTargetPositionAndSetPosition(
+        ::Actor&,
+        ::DimensionType,
+        ::DimensionType,
+        ::IDimension const&,
+        ::PortalForcer const&,
+        ::std::optional<::Vec3> const&
+    ) = 0;
 
     // vIndex: 3
     virtual void transferActor(::Actor&, ::Dimension&, ::Vec3 const&) = 0;

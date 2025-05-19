@@ -143,8 +143,11 @@ public:
     virtual ::Core::Result renameDirectory(::Core::PathView, ::Core::PathView) = 0;
 
     // vIndex: 19
-    virtual ::Core::Result
-        iterateOverDirectory(::Core::PathView, ::Core::DirectoryIterationFlags, ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>) = 0;
+    virtual ::Core::Result iterateOverDirectory(
+        ::Core::PathView,
+        ::Core::DirectoryIterationFlags,
+        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>
+    ) = 0;
 
     // vIndex: 20
     virtual ::Core::Result getDirectoryFiles(::std::vector<::Core::PathBuffer<::std::string>>&, ::Core::PathView) = 0;
@@ -200,8 +203,12 @@ public:
     virtual bool isDirectoryPathAFlatFile(::Core::PathView) = 0;
 
     // vIndex: 37
-    virtual ::Core::Result
-    copyFlatFile(::Core::PathView, ::Core::PathView, ::std::vector<::Core::ExcludedPath> const&, ::std::vector<::Core::ExcludedPath> const&) = 0;
+    virtual ::Core::Result copyFlatFile(
+        ::Core::PathView,
+        ::Core::PathView,
+        ::std::vector<::Core::ExcludedPath> const&,
+        ::std::vector<::Core::ExcludedPath> const&
+    ) = 0;
 
     // vIndex: 38
     virtual ::Core::Result createDirectoryForFile(::Core::PathView) = 0;
@@ -210,8 +217,8 @@ public:
     virtual ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> getUniqueFilePathForFile(::Core::PathView) = 0;
 
     // vIndex: 40
-    virtual ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> getUniqueFilePathForDirectory(::Core::PathView
-    ) = 0;
+    virtual ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
+        getUniqueFilePathForDirectory(::Core::PathView) = 0;
 
     // vIndex: 41
     virtual ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
@@ -238,20 +245,38 @@ public:
     virtual ::std::unique_ptr<::Core::FileSizePresetToken> presetFileInitialSize(::Core::PathView, uint64) = 0;
 
     // vIndex: 48
-    virtual ::Core::Result
-    _getDirectoriesAndFileSizesRecursively(::Core::PathView, ::std::vector<::Core::PathBuffer<::std::string>>&, ::std::vector<::Core::FileSystem::BasicFileData>&) = 0;
+    virtual ::Core::Result _getDirectoriesAndFileSizesRecursively(
+        ::Core::PathView,
+        ::std::vector<::Core::PathBuffer<::std::string>>&,
+        ::std::vector<::Core::FileSystem::BasicFileData>&
+    ) = 0;
 
     // vIndex: 49
-    virtual ::Core::Result
-    _copyDirectoryStructure(::Core::PathView, ::Core::PathView, ::std::vector<::Core::PathBuffer<::std::string>> const&, ::Core::FileSystemImpl*) = 0;
+    virtual ::Core::Result _copyDirectoryStructure(
+        ::Core::PathView,
+        ::Core::PathView,
+        ::std::vector<::Core::PathBuffer<::std::string>> const&,
+        ::Core::FileSystemImpl*
+    ) = 0;
 
     // vIndex: 50
-    virtual ::Core::Result
-    _copyFilesWithLimit(::Core::PathView, ::Core::PathView, ::std::vector<::Core::FileSystem::BasicFileData>&, uint64&, uint64 const, ::std::function<::Core::Result(::Core::PathView, ::Core::PathView, ::Core::FileSystem::FileTransferProgress&)> const&) = 0;
+    virtual ::Core::Result _copyFilesWithLimit(
+        ::Core::PathView,
+        ::Core::PathView,
+        ::std::vector<::Core::FileSystem::BasicFileData>&,
+        uint64&,
+        uint64 const,
+        ::std::function<
+            ::Core::Result(::Core::PathView, ::Core::PathView, ::Core::FileSystem::FileTransferProgress&)> const&
+    ) = 0;
 
     // vIndex: 51
-    virtual ::Core::Result
-    _copyFlatFile(::Core::PathView, ::Core::PathView, ::std::vector<::Core::ExcludedPath> const&, ::std::vector<::Core::ExcludedPath> const&) = 0;
+    virtual ::Core::Result _copyFlatFile(
+        ::Core::PathView,
+        ::Core::PathView,
+        ::std::vector<::Core::ExcludedPath> const&,
+        ::std::vector<::Core::ExcludedPath> const&
+    ) = 0;
 
     // vIndex: 52
     virtual ::std::optional<uint64> _checkFileInitialSize(::Core::PathView) = 0;

@@ -168,8 +168,11 @@ public:
     // NOLINTBEGIN
     MCNAPI NetherNetConnector(::NetherNetTransportFactory const& factory, ::Connector::ConnectionCallbacks& callbacks);
 
-    MCNAPI ::gsl::not_null<::std::shared_ptr<::WebRTCNetworkPeer>>
-    _getOrCreatePeer(uint64 remoteId, uint64 sessionId, ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const&);
+    MCNAPI ::gsl::not_null<::std::shared_ptr<::WebRTCNetworkPeer>> _getOrCreatePeer(
+        uint64 remoteId,
+        uint64 sessionId,
+        ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const&
+    );
 
     MCNAPI void _prepareForNewSession();
 

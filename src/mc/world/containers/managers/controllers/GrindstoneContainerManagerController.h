@@ -3,33 +3,30 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/containers/SlotData.h"
 #include "mc/world/containers/managers/controllers/ContainerManagerController.h"
+#include "mc/world/inventory/network/ItemStackNetIdVariant.h"
+#include "mc/world/item/ItemInstance.h"
 
 // auto generated forward declare list
 // clang-format off
+class GrindstoneContainerManagerModel;
 class ItemStackBase;
 struct AutoPlaceItem;
 struct AutoPlaceResult;
 struct CreateContainerItemScope;
 struct ItemTransferAmount;
-struct SlotData;
 // clang-format on
 
 class GrindstoneContainerManagerController : public ::ContainerManagerController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnkaf0bad;
-    ::ll::UntypedStorage<8, 40>  mUnk28e4d9;
-    ::ll::UntypedStorage<8, 128> mUnk3e1761;
-    ::ll::UntypedStorage<4, 24>  mUnk91cb01;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::GrindstoneContainerManagerModel>> mGrindstoneContainerManagerModel;
+    ::ll::TypedStorage<8, 40, ::SlotData const>                                   mCreatedItemOutputSlot;
+    ::ll::TypedStorage<8, 128, ::ItemInstance>                                    mResultItemPreview;
+    ::ll::TypedStorage<4, 24, ::ItemStackNetIdVariant>                            mSrcItemNetId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GrindstoneContainerManagerController& operator=(GrindstoneContainerManagerController const&);
-    GrindstoneContainerManagerController(GrindstoneContainerManagerController const&);
-    GrindstoneContainerManagerController();
 
 public:
     // virtual functions
@@ -53,9 +50,12 @@ public:
     virtual void handleTakeHalf(::SlotData const&, ::SlotData const&) /*override*/;
 
     // vIndex: 15
-    virtual int
-    handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&) /*override*/
-        ;
+    virtual int handleAutoPlace(
+        ::SlotData const&,
+        int,
+        ::std::vector<::AutoPlaceItem> const&,
+        ::std::vector<::AutoPlaceResult>&
+    ) /*override*/;
 
     // vIndex: 29
     virtual ::CreateContainerItemScope

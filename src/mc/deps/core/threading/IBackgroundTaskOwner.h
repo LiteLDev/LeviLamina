@@ -22,8 +22,11 @@ public:
     virtual ~IBackgroundTaskOwner() = default;
 
     // vIndex: 1
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-    queue_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&, ::std::function<void()>&&) = 0;
+    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> queue_DEPRECATED(
+        ::TaskStartInfo const&,
+        ::brstd::move_only_function<::TaskResult()>&&,
+        ::std::function<void()>&&
+    ) = 0;
 
     // vIndex: 2
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>

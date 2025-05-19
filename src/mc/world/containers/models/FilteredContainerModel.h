@@ -14,21 +14,19 @@ class ItemStackBase;
 
 class FilteredContainerModel : public ::ExpandoContainerModel {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk57811c;
-    ::ll::UntypedStorage<1, 1>  mUnk46ae6f;
-    ::ll::UntypedStorage<4, 4>  mUnkb73c96;
-    ::ll::UntypedStorage<8, 24> mUnke78c25;
-    ::ll::UntypedStorage<8, 24> mUnkd626b7;
-    ::ll::UntypedStorage<8, 64> mUnk654fdf;
-    // NOLINTEND
+    // FilteredContainerModel inner types define
+    using FilterFunction = ::std::function<::FilterResult(::ItemInstance const&, bool)>;
 
 public:
-    // prevent constructor by default
-    FilteredContainerModel& operator=(FilteredContainerModel const&);
-    FilteredContainerModel(FilteredContainerModel const&);
-    FilteredContainerModel();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool>                                              mDoExpandoGroups;
+    ::ll::TypedStorage<1, 1, bool>                                              mIsFiltering;
+    ::ll::TypedStorage<4, 4, int>                                               mFilteredItemCount;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ItemInstance, uint>>> mSavedItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ItemInstance, uint>>> mActiveFilteredExpandableSetHeads;
+    ::ll::TypedStorage<8, 64, ::std::function<::FilterResult(::ItemInstance const&, bool)>> mFilterRule;
+    // NOLINTEND
 
 public:
     // virtual functions

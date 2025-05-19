@@ -53,9 +53,11 @@ public:
     // NOLINTBEGIN
     MCAPI DamageCommand();
 
-    MCAPI void
-    _applyDamage(::CommandSelectorResults<::Actor>& targets, ::ActorDamageSource const& source, ::CommandOutput& output)
-        const;
+    MCAPI void _applyDamage(
+        ::CommandSelectorResults<::Actor>& targets,
+        ::ActorDamageSource const&         source,
+        ::CommandOutput&                   output
+    ) const;
     // NOLINTEND
 
 public:

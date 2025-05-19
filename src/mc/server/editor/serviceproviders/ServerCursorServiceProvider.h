@@ -49,14 +49,14 @@ public:
     virtual ::Scripting::Result_deprecated<::BlockPos> moveBy(::glm::ivec3 const& offset) = 0;
 
     // vIndex: 8
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-        listenForCursorStateChanges(::std::function<
-                                    void(::Editor::Cursor::CursorState const&, ::Editor::Cursor::CursorState const&)>) = 0;
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForCursorStateChanges(
+        ::std::function<void(::Editor::Cursor::CursorState const&, ::Editor::Cursor::CursorState const&)>
+    ) = 0;
 
     // vIndex: 9
-    virtual ::Bedrock::PubSub::Subscription
-        listenForCursorPositionChanges(::std::function<
-                                       void(::std::optional<::Editor::Cursor::Position> const&, ::Editor::Cursor::CursorState const&)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription listenForCursorPositionChanges(
+        ::std::function<void(::std::optional<::Editor::Cursor::Position> const&, ::Editor::Cursor::CursorState const&)>
+    ) = 0;
     // NOLINTEND
 
 public:

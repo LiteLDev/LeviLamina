@@ -141,9 +141,11 @@ public:
     virtual void setSecondaryUserCreationAllowed(int) /*override*/;
 
     // vIndex: 6
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-    addSecondaryUserAsync(int, ::std::shared_ptr<::Options>, ::std::function<void(::Social::UserPlatformConnectionResult)>) /*override*/
-        ;
+    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> addSecondaryUserAsync(
+        int,
+        ::std::shared_ptr<::Options>,
+        ::std::function<void(::Social::UserPlatformConnectionResult)>
+    ) /*override*/;
 
     // vIndex: 48
     virtual void tick(::IMinecraftGame&) /*override*/;
@@ -227,20 +229,21 @@ public:
     registerSignInListener(::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const&) /*override*/;
 
     // vIndex: 44
-    virtual ::Bedrock::PubSub::Subscription
-        registerIdentitySignInCallback(::Social::IdentityType, ::std::function<void(uint, ::Social::IdentityType)>) /*override*/
-        ;
+    virtual ::Bedrock::PubSub::Subscription registerIdentitySignInCallback(
+        ::Social::IdentityType,
+        ::std::function<void(uint, ::Social::IdentityType)>
+    ) /*override*/;
 
     // vIndex: 45
-    virtual ::Bedrock::PubSub::Subscription
-        registerIdentitySignOutCallback(::Social::IdentityType, ::std::function<void(uint, ::Social::IdentityType)>) /*override*/
-        ;
+    virtual ::Bedrock::PubSub::Subscription registerIdentitySignOutCallback(
+        ::Social::IdentityType,
+        ::std::function<void(uint, ::Social::IdentityType)>
+    ) /*override*/;
 
     // vIndex: 46
-    virtual ::Bedrock::PubSub::Subscription
-        registerProfileImageChangedCallback(::std::function<
-                                            void(::Social::ProfileImageOptions, ::std::shared_ptr<::mce::Image>)>) /*override*/
-        ;
+    virtual ::Bedrock::PubSub::Subscription registerProfileImageChangedCallback(
+        ::std::function<void(::Social::ProfileImageOptions, ::std::shared_ptr<::mce::Image>)>
+    ) /*override*/;
 
     // vIndex: 47
     virtual bool needGamepadDisconnectScreen(int) /*override*/;

@@ -34,14 +34,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(::StrictExecutionContext<
-                      ::Filter<::UpdateWaterStateRequestComponent>,
-                      ::Read<::ActorOwnerComponent>,
-                      ::Write<>,
-                      ::AddRemove<>,
-                      ::GlobalRead<>,
-                      ::GlobalWrite<>,
-                      ::EntityFactoryT<>>& executionContext) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<::UpdateWaterStateRequestComponent>,
+            ::Read<::ActorOwnerComponent>,
+            ::Write<>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext
+    ) /*override*/;
 
     // vIndex: 6
     virtual void singleTick(
@@ -69,14 +71,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::StrictExecutionContext<
-                      ::Filter<::UpdateWaterStateRequestComponent>,
-                      ::Read<::ActorOwnerComponent>,
-                      ::Write<>,
-                      ::AddRemove<>,
-                      ::GlobalRead<>,
-                      ::GlobalWrite<>,
-                      ::EntityFactoryT<>>& executionContext);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<::UpdateWaterStateRequestComponent>,
+            ::Read<::ActorOwnerComponent>,
+            ::Write<>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext
+    );
 
     MCNAPI void $singleTick(
         ::StrictExecutionContext<

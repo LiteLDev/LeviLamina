@@ -17,9 +17,14 @@ class CommandRegistry;
 class CommandParameterData {
 public:
     // CommandParameterData inner types define
-    using ParseFunction =
-        bool (::CommandRegistry::*)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
-            const;
+    using ParseFunction = bool (::CommandRegistry::*)(
+        void*,
+        ::CommandRegistry::ParseToken const&,
+        ::CommandOrigin const&,
+        int,
+        ::std::string&,
+        ::std::vector<::std::string>&
+    ) const;
 
 public:
     // member variables

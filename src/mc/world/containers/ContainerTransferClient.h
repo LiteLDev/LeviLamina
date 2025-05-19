@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContainerManagerController;
 struct ContainerScreenActionResult;
 struct ContainerTransferScope;
 // clang-format on
@@ -15,14 +16,8 @@ class ContainerTransferClient : public ::IContainerTransfer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk37cc58;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ContainerManagerController>> mContainerManagerController;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerTransferClient& operator=(ContainerTransferClient const&);
-    ContainerTransferClient(ContainerTransferClient const&);
-    ContainerTransferClient();
 
 public:
     // virtual functions

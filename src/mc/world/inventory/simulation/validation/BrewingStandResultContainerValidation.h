@@ -41,9 +41,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool
-    $isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const& item, int const, bool)
-        const;
+    MCNAPI bool $isItemAllowedInSlot(
+        ::ContainerScreenContext const&,
+        int const,
+        ::ItemStackBase const& item,
+        int const,
+        bool
+    ) const;
 
     MCNAPI int $getAvailableSetCount(int const slot, ::ItemStackBase const& item) const;
 

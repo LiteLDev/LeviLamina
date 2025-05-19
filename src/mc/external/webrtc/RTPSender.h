@@ -52,8 +52,11 @@ public:
 
     MCNAPI void OnReceivedNack(::std::vector<ushort> const&, int64);
 
-    MCNAPI
-    RTPSender(::webrtc::RtpRtcpInterface::Configuration const&, ::webrtc::RtpPacketHistory*, ::webrtc::RtpPacketSender*);
+    MCNAPI RTPSender(
+        ::webrtc::RtpRtcpInterface::Configuration const&,
+        ::webrtc::RtpPacketHistory*,
+        ::webrtc::RtpPacketSender*
+    );
 
     MCNAPI int ReSendPacket(ushort);
 

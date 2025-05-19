@@ -87,8 +87,11 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI
-        ConnectionRequest(::cricket::StunRequestManager&, ::cricket::Connection*, ::std::unique_ptr<::cricket::IceMessage>);
+        MCNAPI ConnectionRequest(
+            ::cricket::StunRequestManager&,
+            ::cricket::Connection*,
+            ::std::unique_ptr<::cricket::IceMessage>
+        );
         // NOLINTEND
 
     public:
@@ -253,8 +256,9 @@ public:
 
     MCNAPI void ReceivedPingResponse(int, ::std::string_view, ::std::optional<uint> const&);
 
-    MCNAPI void RegisterReceivedPacketCallback(::absl::AnyInvocable<
-                                               void(::cricket::Connection*, ::rtc::ReceivedPacket const&)>);
+    MCNAPI void RegisterReceivedPacketCallback(
+        ::absl::AnyInvocable<void(::cricket::Connection*, ::rtc::ReceivedPacket const&)>
+    );
 
     MCNAPI void SendGoogPingResponse(::cricket::StunMessage const*);
 
@@ -266,8 +270,10 @@ public:
 
     MCNAPI void SetLocalCandidateNetworkCost(ushort);
 
-    MCNAPI void
-        SetStunDictConsumer(::std::function<::std::unique_ptr<::cricket::StunAttribute>(::cricket::StunByteStringAttribute const*)>, ::std::function<void(::webrtc::RTCErrorOr<::cricket::StunUInt64Attribute const*>)>);
+    MCNAPI void SetStunDictConsumer(
+        ::std::function<::std::unique_ptr<::cricket::StunAttribute>(::cricket::StunByteStringAttribute const*)>,
+        ::std::function<void(::webrtc::RTCErrorOr<::cricket::StunUInt64Attribute const*>)>
+    );
 
     MCNAPI bool ShouldSendGoogPing(::cricket::StunMessage const*);
 

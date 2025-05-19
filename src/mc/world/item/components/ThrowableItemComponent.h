@@ -48,9 +48,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void
-    _doThrow(::ItemStack& item, ::Player& player, ::ProjectileItemComponent const& projectileComponent, float power)
-        const;
+    MCNAPI void _doThrow(
+        ::ItemStack&                     item,
+        ::Player&                        player,
+        ::ProjectileItemComponent const& projectileComponent,
+        float                            power
+    ) const;
     // NOLINTEND
 
 public:

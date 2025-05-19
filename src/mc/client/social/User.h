@@ -93,12 +93,16 @@ public:
     virtual bool hasNetworkPrivileges() const = 0;
 
     // vIndex: 16
-    virtual ::Bedrock::PubSub::Subscription
-        registerIdentitySignInSubscriber(::Social::IdentityType, ::std::function<void(uint, ::Social::IdentityType)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription registerIdentitySignInSubscriber(
+        ::Social::IdentityType,
+        ::std::function<void(uint, ::Social::IdentityType)>
+    ) = 0;
 
     // vIndex: 17
-    virtual ::Bedrock::PubSub::Subscription
-        registerIdentitySignOutSubscriber(::Social::IdentityType, ::std::function<void(uint, ::Social::IdentityType)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription registerIdentitySignOutSubscriber(
+        ::Social::IdentityType,
+        ::std::function<void(uint, ::Social::IdentityType)>
+    ) = 0;
 
     // vIndex: 18
     virtual ::CallbackToken connectAsync(::std::function<void(::Social::UserPlatformConnectionResult)>, bool) = 0;
@@ -281,8 +285,10 @@ public:
     getPlatformProfile(::std::string const&, ::std::function<void(::Social::PlatformUserProfileData&)>) = 0;
 
     // vIndex: 76
-    virtual void
-    getPlatformProfiles(::std::vector<::std::string> const&, ::std::function<void(::std::vector<::Social::PlatformUserProfileData>&&)>) = 0;
+    virtual void getPlatformProfiles(
+        ::std::vector<::std::string> const&,
+        ::std::function<void(::std::vector<::Social::PlatformUserProfileData>&&)>
+    ) = 0;
 
     // vIndex: 77
     virtual ::Social::ProfileImageOptions getDefaultProfileImageOptions() const = 0;
@@ -353,8 +359,10 @@ public:
     virtual void _onSignOut(::Social::IdentityType) = 0;
 
     // vIndex: 99
-    virtual void
-        _notifyIdentitiesOfSignIn(::std::shared_ptr<::Social::Identity>, ::std::function<bool(::Social::IdentityEventResponse, ::std::shared_ptr<::Social::Identity>)>) = 0;
+    virtual void _notifyIdentitiesOfSignIn(
+        ::std::shared_ptr<::Social::Identity>,
+        ::std::function<bool(::Social::IdentityEventResponse, ::std::shared_ptr<::Social::Identity>)>
+    ) = 0;
 
     // vIndex: 100
     virtual void _notifyIdentitySignInEventSubscribers(::Social::IdentityType) = 0;
@@ -369,8 +377,11 @@ public:
     virtual void _postSignInSteps(::Social::MultiIdentitySigninResult, ::std::vector<::Social::IdentityType>&) = 0;
 
     // vIndex: 104
-    virtual void
-    _finalizeSignIn(::Social::MultiIdentitySigninResult&&, ::std::vector<::Social::IdentityType>&&, ::std::set<::Social::IdentityType>&&) = 0;
+    virtual void _finalizeSignIn(
+        ::Social::MultiIdentitySigninResult&&,
+        ::std::vector<::Social::IdentityType>&&,
+        ::std::set<::Social::IdentityType>&&
+    ) = 0;
     // NOLINTEND
 
 public:

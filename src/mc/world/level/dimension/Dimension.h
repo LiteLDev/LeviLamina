@@ -182,8 +182,8 @@ public:
     virtual void fixWallChunk(::ChunkSource&, ::LevelChunk&) = 0;
 
     // vIndex: 6
-    virtual void
-    initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector
+    virtual void initializeWithLevelStorageManagerConnector(
+        ::ILevelStorageManagerConnector& levelStorageManagerConnector
     ) /*override*/;
 
     // vIndex: 20
@@ -428,8 +428,8 @@ public:
 
     MCAPI void $tickRedstone();
 
-    MCAPI void $initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector
-    );
+    MCAPI void
+    $initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
     MCFOLD bool $isNaturalDimension() const;
 

@@ -28,8 +28,14 @@ public:
 
     MCNAPI void Stop();
 
-    MCNAPI
-    Timer(::webrtc::StrongAlias<::dcsctp::TimerIDTag, uint>, ::std::string_view, ::std::function<::webrtc::TimeDelta()>, ::std::function<void()>, ::std::unique_ptr<::dcsctp::Timeout>, ::dcsctp::TimerOptions const&);
+    MCNAPI Timer(
+        ::webrtc::StrongAlias<::dcsctp::TimerIDTag, uint>,
+        ::std::string_view,
+        ::std::function<::webrtc::TimeDelta()>,
+        ::std::function<void()>,
+        ::std::unique_ptr<::dcsctp::Timeout>,
+        ::dcsctp::TimerOptions const&
+    );
 
     MCNAPI void Trigger(::webrtc::StrongAlias<::dcsctp::TimerGenerationTag, uint>);
 
@@ -39,8 +45,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::webrtc::StrongAlias<::dcsctp::TimerIDTag, uint>, ::std::string_view, ::std::function<::webrtc::TimeDelta()>, ::std::function<void()>, ::std::unique_ptr<::dcsctp::Timeout>, ::dcsctp::TimerOptions const&);
+    MCNAPI void* $ctor(
+        ::webrtc::StrongAlias<::dcsctp::TimerIDTag, uint>,
+        ::std::string_view,
+        ::std::function<::webrtc::TimeDelta()>,
+        ::std::function<void()>,
+        ::std::unique_ptr<::dcsctp::Timeout>,
+        ::dcsctp::TimerOptions const&
+    );
     // NOLINTEND
 
 public:

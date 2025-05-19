@@ -71,8 +71,8 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 1
-    virtual void addTransaction(::std::unique_ptr<::Editor::Transactions::TransactionContext> transactionContext
-    ) /*override*/;
+    virtual void
+    addTransaction(::std::unique_ptr<::Editor::Transactions::TransactionContext> transactionContext) /*override*/;
 
     // vIndex: 2
     virtual void clearTransactions() /*override*/;
@@ -90,8 +90,8 @@ public:
     virtual uint64 redoSize() const /*override*/;
 
     // vIndex: 7
-    virtual ::Scripting::Result_deprecated<bool> trackBlockChangeList(::std::vector<::BlockPos> const& locations
-    ) /*override*/;
+    virtual ::Scripting::Result_deprecated<bool>
+    trackBlockChangeList(::std::vector<::BlockPos> const& locations) /*override*/;
 
     // vIndex: 8
     virtual ::Scripting::Result_deprecated<bool>

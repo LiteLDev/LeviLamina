@@ -51,8 +51,8 @@ public:
     virtual void bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const&) /*override*/;
 
     // vIndex: 5
-    virtual void bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap
-    ) /*override*/;
+    virtual void
+    bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap) /*override*/;
 
     // vIndex: 6
     virtual bool hasAnimationFinished() const /*override*/;

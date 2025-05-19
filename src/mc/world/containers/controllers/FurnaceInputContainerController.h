@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/containers/controllers/ContainerController.h"
 
 // auto generated forward declare list
@@ -15,14 +16,8 @@ class FurnaceInputContainerController : public ::ContainerController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnkfcf1d0;
+    ::ll::TypedStorage<8, 48, ::HashedString> mRecipeTag;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FurnaceInputContainerController& operator=(FurnaceInputContainerController const&);
-    FurnaceInputContainerController(FurnaceInputContainerController const&);
-    FurnaceInputContainerController();
 
 public:
     // virtual functions

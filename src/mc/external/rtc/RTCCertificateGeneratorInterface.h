@@ -22,8 +22,11 @@ public:
     virtual ~RTCCertificateGeneratorInterface() = default;
 
     // vIndex: 1
-    virtual void
-    GenerateCertificateAsync(::rtc::KeyParams const&, ::std::optional<uint64> const&, ::absl::AnyInvocable<void(::webrtc::scoped_refptr<::rtc::RTCCertificate>) &&>) = 0;
+    virtual void GenerateCertificateAsync(
+        ::rtc::KeyParams const&,
+        ::std::optional<uint64> const&,
+        ::absl::AnyInvocable<void(::webrtc::scoped_refptr<::rtc::RTCCertificate>) &&>
+    ) = 0;
     // NOLINTEND
 
 public:

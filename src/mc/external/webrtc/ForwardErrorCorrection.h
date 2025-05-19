@@ -78,8 +78,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI int
-    EncodeFec(::std::list<::std::unique_ptr<::webrtc::ForwardErrorCorrection::Packet>> const&, uchar, int, bool, ::webrtc::FecMaskType, ::std::list<::webrtc::ForwardErrorCorrection::Packet*>*);
+    MCNAPI int EncodeFec(
+        ::std::list<::std::unique_ptr<::webrtc::ForwardErrorCorrection::Packet>> const&,
+        uchar,
+        int,
+        bool,
+        ::webrtc::FecMaskType,
+        ::std::list<::webrtc::ForwardErrorCorrection::Packet*>*
+    );
 
     MCNAPI void FinalizeFecHeaders(uint64, uint, ushort);
 
@@ -117,8 +123,12 @@ public:
     MCNAPI static void
     XorHeaders(::webrtc::ForwardErrorCorrection::Packet const&, ::webrtc::ForwardErrorCorrection::Packet*);
 
-    MCNAPI static void
-    XorPayloads(::webrtc::ForwardErrorCorrection::Packet const&, uint64, uint64, ::webrtc::ForwardErrorCorrection::Packet*);
+    MCNAPI static void XorPayloads(
+        ::webrtc::ForwardErrorCorrection::Packet const&,
+        uint64,
+        uint64,
+        ::webrtc::ForwardErrorCorrection::Packet*
+    );
     // NOLINTEND
 
 public:

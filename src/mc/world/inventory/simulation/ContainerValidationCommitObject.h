@@ -19,14 +19,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk6fbc7d;
+    ::ll::TypedStorage<4, 4, ::ContainerValidationCommitObject::Type> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerValidationCommitObject& operator=(ContainerValidationCommitObject const&);
-    ContainerValidationCommitObject(ContainerValidationCommitObject const&);
-    ContainerValidationCommitObject();
 
 public:
     // virtual functions

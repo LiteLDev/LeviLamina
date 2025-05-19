@@ -142,8 +142,13 @@ public:
     MCNAPI ::std::optional<::webrtc::VideoBitrateAllocation>
     CheckAndUpdateLayerStructure(::webrtc::VideoBitrateAllocation const&) const;
 
-    MCNAPI ::std::optional<int>
-    ComputeCompoundRTCPPacket(::webrtc::RTCPSender::FeedbackState const&, ::webrtc::RTCPPacketType, int, ushort const*, ::webrtc::RTCPSender::PacketSender&);
+    MCNAPI ::std::optional<int> ComputeCompoundRTCPPacket(
+        ::webrtc::RTCPSender::FeedbackState const&,
+        ::webrtc::RTCPPacketType,
+        int,
+        ushort const*,
+        ::webrtc::RTCPSender::PacketSender&
+    );
 
     MCNAPI ::webrtc::TimeDelta ComputeTimeUntilNextReport(::webrtc::DataRate);
 

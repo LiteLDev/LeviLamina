@@ -131,8 +131,8 @@ public:
     MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidContainerSlotError>
     setItem(::std::optional<::ScriptModuleMinecraft::ScriptItemStack> const& scriptItemStack);
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidContainerSlotError> setKeepOnDeath(bool value
-    );
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidContainerSlotError>
+    setKeepOnDeath(bool value);
 
     MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidContainerSlotError>
     setLockMode(::ItemLockMode lockMode);

@@ -21,8 +21,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    BasicPortAllocator(::rtc::NetworkManager*, ::rtc::PacketSocketFactory*, ::webrtc::TurnCustomizer*, ::cricket::RelayPortFactoryInterface*, ::webrtc::FieldTrialsView const*);
+    MCNAPI BasicPortAllocator(
+        ::rtc::NetworkManager*,
+        ::rtc::PacketSocketFactory*,
+        ::webrtc::TurnCustomizer*,
+        ::cricket::RelayPortFactoryInterface*,
+        ::webrtc::FieldTrialsView const*
+    );
 
     MCNAPI int GetNetworkIgnoreMask() const;
     // NOLINTEND
@@ -30,8 +35,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::rtc::NetworkManager*, ::rtc::PacketSocketFactory*, ::webrtc::TurnCustomizer*, ::cricket::RelayPortFactoryInterface*, ::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(
+        ::rtc::NetworkManager*,
+        ::rtc::PacketSocketFactory*,
+        ::webrtc::TurnCustomizer*,
+        ::cricket::RelayPortFactoryInterface*,
+        ::webrtc::FieldTrialsView const*
+    );
     // NOLINTEND
 
 public:

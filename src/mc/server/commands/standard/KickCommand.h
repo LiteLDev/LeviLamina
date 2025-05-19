@@ -54,13 +54,20 @@ public:
         ::std::string const&   reason
     ) const;
 
-    MCAPI void
-    _generateSuccessOutput(::CommandOutput& output, ::std::string const& playerNameTag, ::std::string const& reason)
-        const;
+    MCAPI void _generateSuccessOutput(
+        ::CommandOutput&     output,
+        ::std::string const& playerNameTag,
+        ::std::string const& reason
+    ) const;
 
-    MCAPI ::Player const*
-    _loopPlayers(::CommandOrigin const& level, ::CommandOutput& condition, ::Level&, ::std::string const&, ::std::string const&, ::std::function<bool(::Player const*)>)
-        const;
+    MCAPI ::Player const* _loopPlayers(
+        ::CommandOrigin const& level,
+        ::CommandOutput&       condition,
+        ::Level&,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::function<bool(::Player const*)>
+    ) const;
 
     MCAPI void _refreshJoinCode(::Level& level) const;
     // NOLINTEND

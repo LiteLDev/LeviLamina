@@ -78,8 +78,8 @@ public:
 
     MCNAPI ::CameraAimAssistPresetsPacket makePresetsPacketFromFullRegistry() const;
 
-    MCNAPI ::CameraAimAssistPresetsPacket
-    makeUpdatePresetsPacketFromDirtyRegistry(::CameraAimAssistDataRegistryDirtyComponent const& registryDirtyComponent
+    MCNAPI ::CameraAimAssistPresetsPacket makeUpdatePresetsPacketFromDirtyRegistry(
+        ::CameraAimAssistDataRegistryDirtyComponent const& registryDirtyComponent
     ) const;
 
     MCNAPI void synchronizeWithClients(
@@ -87,8 +87,8 @@ public:
         ::PacketSender&                                    packetSender
     );
 
-    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const* tryGetCategory(::HashedString const& id
-    ) const;
+    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const*
+    tryGetCategory(::HashedString const& id) const;
 
     MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const* tryGetPreset(::HashedString const& id) const;
     // NOLINTEND

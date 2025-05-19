@@ -49,14 +49,17 @@ public:
     virtual void setSkin(::std::string const&) /*override*/;
 
     // vIndex: 4
-    virtual void signinForDemo(::std::function<void(::std::variant<
-                                                    ::WebServices::EduSignin::SigninResponse,
-                                                    ::WebServices::EduSignin::SigninError>)>) /*override*/;
+    virtual void signinForDemo(
+        ::std::function<
+            void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>
+    ) /*override*/;
 
     // vIndex: 5
-    virtual void
-    signin(::std::function<void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>, ::std::string const&) /*override*/
-        ;
+    virtual void signin(
+        ::std::function<
+            void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>,
+        ::std::string const&
+    ) /*override*/;
 
     // vIndex: 6
     virtual void sendInitialPackRequest(::std::function<void(::std::vector<::ServicePack>)>) /*override*/;

@@ -64,9 +64,12 @@ public:
 
     MCAPI ::AABB const& $getVisualShape(::Block const&, ::AABB& bufferAABB) const;
 
-    MCFOLD ::AABB const&
-    $getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB)
-        const;
+    MCFOLD ::AABB const& $getVisualShapeInWorld(
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::AABB& bufferAABB
+    ) const;
 
     MCFOLD int $getVariant(::Block const& block) const;
 

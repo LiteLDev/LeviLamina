@@ -54,10 +54,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockLegacy const*>
-    _getBlockFromVariant(::std::variant<
-                         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
-                         ::std::string> const& block);
+    MCNAPI ::std::optional<::BlockLegacy const*> _getBlockFromVariant(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
+            ::std::string> const& block
+    );
 
     MCNAPI ::Scripting::Result<void, ::gametest::GameTestError> assertBlockState(
         ::Vec3 const&                                                                                    position,

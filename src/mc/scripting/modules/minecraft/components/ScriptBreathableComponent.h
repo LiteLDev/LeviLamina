@@ -61,8 +61,8 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<int> getTotalSupply() const;
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::PropertyOutOfBoundsError> setAirSupply(short value
-    ) const;
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::PropertyOutOfBoundsError>
+    setAirSupply(short value) const;
     // NOLINTEND
 
 public:

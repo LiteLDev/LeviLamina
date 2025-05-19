@@ -44,9 +44,12 @@ public:
     getMarkers(::BlockPos const& position, ::LegacyStructureSettings& settings) const /*override*/;
 
     // vIndex: 1
-    virtual void
-    placeInWorld(::BlockSource& region, ::BlockPos const& pos, ::LegacyStructureSettings& settings, ::Random& random)
-        const /*override*/;
+    virtual void placeInWorld(
+        ::BlockSource&             region,
+        ::BlockPos const&          pos,
+        ::LegacyStructureSettings& settings,
+        ::Random&                  random
+    ) const /*override*/;
 
     // vIndex: 2
     virtual ::BlockPos rawSize() const /*override*/;
@@ -152,9 +155,12 @@ public:
     MCNAPI ::std::unordered_map<::BlockPos, ::std::string>
     $getMarkers(::BlockPos const& position, ::LegacyStructureSettings& settings) const;
 
-    MCNAPI void
-    $placeInWorld(::BlockSource& region, ::BlockPos const& pos, ::LegacyStructureSettings& settings, ::Random& random)
-        const;
+    MCNAPI void $placeInWorld(
+        ::BlockSource&             region,
+        ::BlockPos const&          pos,
+        ::LegacyStructureSettings& settings,
+        ::Random&                  random
+    ) const;
 
     MCNAPI ::BlockPos $rawSize() const;
 

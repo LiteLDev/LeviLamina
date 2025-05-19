@@ -36,8 +36,11 @@ public:
     virtual ~IEduAuth() = default;
 
     // vIndex: 1
-    virtual void
-    Authenticate(::Identity::AuthArgs const&, ::std::function<void()>, ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>) = 0;
+    virtual void Authenticate(
+        ::Identity::AuthArgs const&,
+        ::std::function<void()>,
+        ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>
+    ) = 0;
 
     // vIndex: 2
     virtual void resetAuthenticationState() = 0;
@@ -49,8 +52,11 @@ public:
     virtual void signOut(::std::string_view, ::std::function<void(::Identity::SignOutResult)>) = 0;
 
     // vIndex: 5
-    virtual void
-    authenticateSilently(::std::string_view, ::std::string const&, ::std::function<void(::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>)>) = 0;
+    virtual void authenticateSilently(
+        ::std::string_view,
+        ::std::string const&,
+        ::std::function<void(::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>)>
+    ) = 0;
 
     // vIndex: 6
     virtual void authenticateSilentlyCredentialed();

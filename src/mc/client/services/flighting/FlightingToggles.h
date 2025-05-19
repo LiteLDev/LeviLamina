@@ -66,9 +66,11 @@ public:
     virtual void initialize() /*override*/;
 
     // vIndex: 3
-    virtual void
-    registerOptionObserverCallback(::Bedrock::PubSub::Subscription&, ::FlightingToggleId, ::std::function<void(::Option const&)>) /*override*/
-        ;
+    virtual void registerOptionObserverCallback(
+        ::Bedrock::PubSub::Subscription&,
+        ::FlightingToggleId,
+        ::std::function<void(::Option const&)>
+    ) /*override*/;
 
     // vIndex: 4
     virtual void visit(::std::function<void(::FlightingToggleMetadata const&)> const&) const /*override*/;

@@ -17,7 +17,9 @@ public:
     // prevent constructor by default
     ScriptDataDrivenActorTriggerAfterEventIntermediateData&
     operator=(ScriptDataDrivenActorTriggerAfterEventIntermediateData const&);
-    ScriptDataDrivenActorTriggerAfterEventIntermediateData(ScriptDataDrivenActorTriggerAfterEventIntermediateData const&);
+    ScriptDataDrivenActorTriggerAfterEventIntermediateData(
+        ScriptDataDrivenActorTriggerAfterEventIntermediateData const&
+    );
     ScriptDataDrivenActorTriggerAfterEventIntermediateData();
 
 public:

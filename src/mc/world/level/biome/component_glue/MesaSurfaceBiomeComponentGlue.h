@@ -35,9 +35,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual bool
-    resolveAndValidate(::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent, ::BiomeRegistry const&) /*override*/
-        ;
+    virtual bool resolveAndValidate(
+        ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent,
+        ::BiomeRegistry const&
+    ) /*override*/;
 
     // vIndex: 2
     virtual void

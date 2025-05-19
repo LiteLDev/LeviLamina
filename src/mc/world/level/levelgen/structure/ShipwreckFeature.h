@@ -51,9 +51,13 @@ public:
     ) /*override*/;
 
     // vIndex: 5
-    virtual ::std::unique_ptr<::StructureStart>
-    createStructureStart(::Dimension& generator, ::BiomeSource const& biomeSource, ::Random& random, ::ChunkPos const& lc, ::IPreliminarySurfaceProvider const&) /*override*/
-        ;
+    virtual ::std::unique_ptr<::StructureStart> createStructureStart(
+        ::Dimension&         generator,
+        ::BiomeSource const& biomeSource,
+        ::Random&            random,
+        ::ChunkPos const&    lc,
+        ::IPreliminarySurfaceProvider const&
+    ) /*override*/;
 
     // vIndex: 4
     virtual bool isFeatureChunk(
@@ -94,8 +98,13 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCNAPI ::std::unique_ptr<::StructureStart>
-    $createStructureStart(::Dimension& generator, ::BiomeSource const& biomeSource, ::Random& random, ::ChunkPos const& lc, ::IPreliminarySurfaceProvider const&);
+    MCNAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
+        ::Dimension&         generator,
+        ::BiomeSource const& biomeSource,
+        ::Random&            random,
+        ::ChunkPos const&    lc,
+        ::IPreliminarySurfaceProvider const&
+    );
 
     MCNAPI bool $isFeatureChunk(
         ::BiomeSource const&                 biomeSource,

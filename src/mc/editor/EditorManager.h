@@ -46,9 +46,12 @@ public:
     virtual ~EditorManager() /*override*/;
 
     // vIndex: 4
-    virtual ::std::unique_ptr<::FileArchiver::IWorldConverter>
-    createWorldConverter(::ILevelListCache&, ::Scheduler&, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>) /*override*/
-        ;
+    virtual ::std::unique_ptr<::FileArchiver::IWorldConverter> createWorldConverter(
+        ::ILevelListCache&,
+        ::Scheduler&,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>
+    ) /*override*/;
 
     // vIndex: 5
     virtual void cleanupOrphanedTemporaryPlaytestWorlds(::ILevelListCache& levelListCache) const /*override*/;
@@ -87,8 +90,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::FileArchiver::IWorldConverter>
-    $createWorldConverter(::ILevelListCache&, ::Scheduler&, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>);
+    MCNAPI ::std::unique_ptr<::FileArchiver::IWorldConverter> $createWorldConverter(
+        ::ILevelListCache&,
+        ::Scheduler&,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>
+    );
 
     MCNAPI void $cleanupOrphanedTemporaryPlaytestWorlds(::ILevelListCache& levelListCache) const;
 

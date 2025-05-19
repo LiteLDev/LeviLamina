@@ -20,9 +20,11 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-    queue_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&, ::std::function<void()>&&) /*override*/
-        ;
+    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> queue_DEPRECATED(
+        ::TaskStartInfo const&,
+        ::brstd::move_only_function<::TaskResult()>&&,
+        ::std::function<void()>&&
+    ) /*override*/;
 
     // vIndex: 2
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>

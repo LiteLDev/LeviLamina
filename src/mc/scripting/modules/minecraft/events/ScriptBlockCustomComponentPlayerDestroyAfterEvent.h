@@ -33,12 +33,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBlockCustomComponentPlayerDestroyAfterEvent(::ScriptModuleMinecraft::
-                                                                 ScriptBlockCustomComponentPlayerDestroyAfterEvent&&);
+    MCNAPI ScriptBlockCustomComponentPlayerDestroyAfterEvent(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerDestroyAfterEvent&&
+    );
 
-    MCNAPI
-    ScriptBlockCustomComponentPlayerDestroyAfterEvent(::ScriptModuleMinecraft::
-                                                          ScriptBlockCustomComponentPlayerDestroyAfterEvent const&);
+    MCNAPI ScriptBlockCustomComponentPlayerDestroyAfterEvent(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerDestroyAfterEvent const&
+    );
 
     MCNAPI ~ScriptBlockCustomComponentPlayerDestroyAfterEvent();
     // NOLINTEND

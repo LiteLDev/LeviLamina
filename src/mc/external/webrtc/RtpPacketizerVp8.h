@@ -21,8 +21,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    RtpPacketizerVp8(::rtc::ArrayView<uchar const>, ::webrtc::RtpPacketizer::PayloadSizeLimits, ::webrtc::RTPVideoHeaderVP8 const&);
+    MCNAPI RtpPacketizerVp8(
+        ::rtc::ArrayView<uchar const>,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits,
+        ::webrtc::RTPVideoHeaderVP8 const&
+    );
     // NOLINTEND
 
 public:
@@ -35,8 +38,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::rtc::ArrayView<uchar const>, ::webrtc::RtpPacketizer::PayloadSizeLimits, ::webrtc::RTPVideoHeaderVP8 const&);
+    MCNAPI void* $ctor(
+        ::rtc::ArrayView<uchar const>,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits,
+        ::webrtc::RTPVideoHeaderVP8 const&
+    );
     // NOLINTEND
 
 public:

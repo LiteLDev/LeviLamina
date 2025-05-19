@@ -18,14 +18,8 @@ class StonecutterContainerScreenSimulation : public ::ContainerScreenSimulationC
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkddfb68;
+    ::ll::TypedStorage<4, 4, uint> mSelectedStoneIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StonecutterContainerScreenSimulation& operator=(StonecutterContainerScreenSimulation const&);
-    StonecutterContainerScreenSimulation(StonecutterContainerScreenSimulation const&);
-    StonecutterContainerScreenSimulation();
 
 public:
     // virtual functions

@@ -80,9 +80,13 @@ public:
     ) /*override*/;
 
     // vIndex: 5
-    virtual ::std::unique_ptr<::StructureStart>
-    createStructureStart(::Dimension& generator, ::BiomeSource const&, ::Random& random, ::ChunkPos const& cp, ::IPreliminarySurfaceProvider const&) /*override*/
-        ;
+    virtual ::std::unique_ptr<::StructureStart> createStructureStart(
+        ::Dimension& generator,
+        ::BiomeSource const&,
+        ::Random&         random,
+        ::ChunkPos const& cp,
+        ::IPreliminarySurfaceProvider const&
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~StrongholdFeature() /*override*/ = default;
@@ -138,8 +142,13 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCNAPI ::std::unique_ptr<::StructureStart>
-    $createStructureStart(::Dimension& generator, ::BiomeSource const&, ::Random& random, ::ChunkPos const& cp, ::IPreliminarySurfaceProvider const&);
+    MCNAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
+        ::Dimension& generator,
+        ::BiomeSource const&,
+        ::Random&         random,
+        ::ChunkPos const& cp,
+        ::IPreliminarySurfaceProvider const&
+    );
     // NOLINTEND
 
 public:

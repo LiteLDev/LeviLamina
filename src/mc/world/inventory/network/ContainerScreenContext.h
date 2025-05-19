@@ -2,26 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ContainerType.h"
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/world/level/BlockPos.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class BlockActor;
+class Player;
 // clang-format on
 
 class ContainerScreenContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk2d14c0;
-    ::ll::UntypedStorage<1, 1>  mUnk2a0ccb;
-    ::ll::UntypedStorage<8, 24> mUnk4c6b57;
+    ::ll::TypedStorage<8, 8, ::Player*>                                                      mPlayer;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType>                           mScreenContainerType;
+    ::ll::TypedStorage<8, 24, ::std::variant<::std::monostate, ::ActorUniqueID, ::BlockPos>> mOwner;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerScreenContext& operator=(ContainerScreenContext const&);
-    ContainerScreenContext(ContainerScreenContext const&);
-    ContainerScreenContext();
 
 public:
     // member functions

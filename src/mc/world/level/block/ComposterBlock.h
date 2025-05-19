@@ -60,9 +60,15 @@ public:
         /*override*/;
 
     // vIndex: 4
-    virtual ::HitResult
-    clip(::Block const&, ::BlockSource const&, ::BlockPos const&, ::Vec3 const&, ::Vec3 const&, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
-        const /*override*/;
+    virtual ::HitResult clip(
+        ::Block const&,
+        ::BlockSource const&,
+        ::BlockPos const&,
+        ::Vec3 const&,
+        ::Vec3 const&,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 7
     virtual bool addCollisionShapes(

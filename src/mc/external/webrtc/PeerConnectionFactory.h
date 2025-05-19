@@ -106,8 +106,10 @@ public:
 
     MCNAPI explicit PeerConnectionFactory(::webrtc::PeerConnectionFactoryDependencies);
 
-    MCNAPI
-    PeerConnectionFactory(::webrtc::scoped_refptr<::webrtc::ConnectionContext>, ::webrtc::PeerConnectionFactoryDependencies*);
+    MCNAPI PeerConnectionFactory(
+        ::webrtc::scoped_refptr<::webrtc::ConnectionContext>,
+        ::webrtc::PeerConnectionFactoryDependencies*
+    );
 
     MCNAPI ::cricket::MediaEngineInterface* media_engine() const;
     // NOLINTEND

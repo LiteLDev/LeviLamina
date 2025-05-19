@@ -201,9 +201,13 @@ public:
         ::ActorBlockSyncMessage const* syncMsg
     ) const;
 
-    MCAPI ::Block const&
-    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
-        const;
+    MCAPI ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     MCAPI bool $isPreservingMediumWhenPlaced(::BlockLegacy const* medium) const;
 
@@ -221,9 +225,12 @@ public:
 
     MCAPI bool $shouldStopFalling(::Actor& entity) const;
 
-    MCAPI bool
-    $canBeBuiltOver(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem)
-        const;
+    MCAPI bool $canBeBuiltOver(
+        ::Block const&     block,
+        ::BlockSource&     region,
+        ::BlockPos const&  pos,
+        ::BlockItem const& newItem
+    ) const;
 
     MCAPI bool $canBeBuiltOver(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
 

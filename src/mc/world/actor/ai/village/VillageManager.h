@@ -166,8 +166,8 @@ public:
 
     MCAPI bool hasPOI(::BlockPos const& position, ::POIType type) const;
 
-    MCAPI void initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector
-    );
+    MCAPI void
+    initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
     MCAPI void insertPOI(::std::shared_ptr<::POIInstance>&& poi);
 

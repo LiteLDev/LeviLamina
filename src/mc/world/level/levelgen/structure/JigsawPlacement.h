@@ -52,12 +52,18 @@ public:
         uint64                                              maxDepth,
         uint64                                              globalContextSize,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieceList,
-        ::std::function<::std::unique_ptr<
-            ::PoolElementStructurePiece>(::StructurePoolElement const&, ::BlockPos const&, ::Rotation const&, int, ::JigsawJunction&, ::BoundingBox const&, ::BlockPos const&)>
-                                         factory,
-        ::Random&                        random,
-        ::JigsawStructureRegistry const& pools,
-        ::Dimension&                     dimension
+        ::std::function<::std::unique_ptr<::PoolElementStructurePiece>(
+            ::StructurePoolElement const&,
+            ::BlockPos const&,
+            ::Rotation const&,
+            int,
+            ::JigsawJunction&,
+            ::BoundingBox const&,
+            ::BlockPos const&
+        )>                                                  factory,
+        ::Random&                                           random,
+        ::JigsawStructureRegistry const&                    pools,
+        ::Dimension&                                        dimension
     );
 
     MCAPI void _addPiece(
@@ -105,12 +111,18 @@ public:
         uint64                                              maxDepth,
         uint64                                              globalContextSize,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieceList,
-        ::std::function<::std::unique_ptr<
-            ::PoolElementStructurePiece>(::StructurePoolElement const&, ::BlockPos const&, ::Rotation const&, int, ::JigsawJunction&, ::BoundingBox const&, ::BlockPos const&)>
-                                         factory,
-        ::Random&                        random,
-        ::JigsawStructureRegistry const& pools,
-        ::Dimension&                     dimension
+        ::std::function<::std::unique_ptr<::PoolElementStructurePiece>(
+            ::StructurePoolElement const&,
+            ::BlockPos const&,
+            ::Rotation const&,
+            int,
+            ::JigsawJunction&,
+            ::BoundingBox const&,
+            ::BlockPos const&
+        )>                                                  factory,
+        ::Random&                                           random,
+        ::JigsawStructureRegistry const&                    pools,
+        ::Dimension&                                        dimension
     );
     // NOLINTEND
 

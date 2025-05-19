@@ -69,12 +69,23 @@ public:
     );
 
     // vIndex: 4
-    virtual bool
-    isFeatureChunk(::BiomeSource const&, ::Random&, ::ChunkPos const&, uint, ::IPreliminarySurfaceProvider const&, ::Dimension const&) = 0;
+    virtual bool isFeatureChunk(
+        ::BiomeSource const&,
+        ::Random&,
+        ::ChunkPos const&,
+        uint,
+        ::IPreliminarySurfaceProvider const&,
+        ::Dimension const&
+    ) = 0;
 
     // vIndex: 5
-    virtual ::std::unique_ptr<::StructureStart>
-    createStructureStart(::Dimension&, ::BiomeSource const&, ::Random&, ::ChunkPos const&, ::IPreliminarySurfaceProvider const&) = 0;
+    virtual ::std::unique_ptr<::StructureStart> createStructureStart(
+        ::Dimension&,
+        ::BiomeSource const&,
+        ::Random&,
+        ::ChunkPos const&,
+        ::IPreliminarySurfaceProvider const&
+    ) = 0;
 
     // vIndex: 6
     virtual ::StructureStart* getStructureAt(int cellX, int cellY, int cellZ);

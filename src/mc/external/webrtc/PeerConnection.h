@@ -58,8 +58,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>>
-    AddTrack(::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface>, ::std::vector<::std::string> const&, ::std::vector<::webrtc::RtpEncodingParameters> const*);
+    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> AddTrack(
+        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface>,
+        ::std::vector<::std::string> const&,
+        ::std::vector<::webrtc::RtpEncodingParameters> const*
+    );
 
     MCNAPI bool ConfiguredForMedia() const;
 
@@ -71,13 +74,19 @@ public:
     MCNAPI ::webrtc::RTCError
     Initialize(::webrtc::PeerConnectionInterface::RTCConfiguration const&, ::webrtc::PeerConnectionDependencies);
 
-    MCNAPI ::webrtc::PeerConnection::InitializePortAllocatorResult
-    InitializePortAllocator_n(::std::set<::rtc::SocketAddress> const&, ::std::vector<::cricket::RelayServerConfig> const&, ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const&, ::webrtc::PeerConnectionInterface::RTCConfiguration const&);
+    MCNAPI ::webrtc::PeerConnection::InitializePortAllocatorResult InitializePortAllocator_n(
+        ::std::set<::rtc::SocketAddress> const&,
+        ::std::vector<::cricket::RelayServerConfig> const&,
+        ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const&,
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const&
+    );
 
     MCNAPI ::std::function<void(::rtc::CopyOnWriteBuffer const&, int64)> InitializeRtcpCallback();
 
-    MCNAPI ::webrtc::JsepTransportController*
-    InitializeTransportController_n(::webrtc::PeerConnectionInterface::RTCConfiguration const&, ::webrtc::PeerConnectionDependencies const&);
+    MCNAPI ::webrtc::JsepTransportController* InitializeTransportController_n(
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const&,
+        ::webrtc::PeerConnectionDependencies const&
+    );
 
     MCNAPI ::std::function<void(::webrtc::RtpPacketReceived const&)> InitializeUnDemuxablePacketHandler();
 
@@ -134,8 +143,9 @@ public:
 
     MCNAPI void ReportRemoteIceCandidateAdded(::cricket::Candidate const&);
 
-    MCNAPI void ReportTransportStats(::std::vector<::webrtc::scoped_refptr<
-                                         ::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>>);
+    MCNAPI void ReportTransportStats(
+        ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>>
+    );
 
     MCNAPI void ReportUsagePattern() const;
 

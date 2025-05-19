@@ -33,14 +33,26 @@ public:
     virtual ~RealmsFileDownloader() /*override*/ = default;
 
     // vIndex: 2
-    virtual void
-    initRealmsFileDownloader(::std::string const&, int const, ::std::string const&, ::FileInfo const&, uint64, ::std::string const&, ::std::function<void(::DownloaderResult)>) /*override*/
-        ;
+    virtual void initRealmsFileDownloader(
+        ::std::string const&,
+        int const,
+        ::std::string const&,
+        ::FileInfo const&,
+        uint64,
+        ::std::string const&,
+        ::std::function<void(::DownloaderResult)>
+    ) /*override*/;
 
     // vIndex: 3
-    virtual void
-    initFileDownloader(::std::string const&, ::std::string const&, ::FileInfo const&, uint64, uint64, ::std::string const&, ::std::function<void(::DownloaderResult)>) /*override*/
-        ;
+    virtual void initFileDownloader(
+        ::std::string const&,
+        ::std::string const&,
+        ::FileInfo const&,
+        uint64,
+        uint64,
+        ::std::string const&,
+        ::std::function<void(::DownloaderResult)>
+    ) /*override*/;
 
     // vIndex: 10
     virtual ::Bedrock::Http::Request _makeRequest() /*override*/;

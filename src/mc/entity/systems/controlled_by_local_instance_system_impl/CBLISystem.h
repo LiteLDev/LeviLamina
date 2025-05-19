@@ -65,19 +65,21 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(::StrictExecutionContext<
-                      ::Filter<
-                          ::ActorMovementTickNeededComponent,
-                          ::BoatFlagComponent,
-                          ::HorseFlagComponent,
-                          ::PlayerComponent,
-                          ::RecalculateControlledByLocalInstanceRequestComponent>,
-                      ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>,
-                      ::Write<>,
-                      ::AddRemove<::ControlledByLocalInstanceComponent>,
-                      ::GlobalRead<>,
-                      ::GlobalWrite<>,
-                      ::EntityFactoryT<>>& strictContext) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorMovementTickNeededComponent,
+                ::BoatFlagComponent,
+                ::HorseFlagComponent,
+                ::PlayerComponent,
+                ::RecalculateControlledByLocalInstanceRequestComponent>,
+            ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>,
+            ::Write<>,
+            ::AddRemove<::ControlledByLocalInstanceComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& strictContext
+    ) /*override*/;
 
     // vIndex: 6
     virtual void singleTick(
@@ -104,19 +106,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::StrictExecutionContext<
-                      ::Filter<
-                          ::ActorMovementTickNeededComponent,
-                          ::BoatFlagComponent,
-                          ::HorseFlagComponent,
-                          ::PlayerComponent,
-                          ::RecalculateControlledByLocalInstanceRequestComponent>,
-                      ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>,
-                      ::Write<>,
-                      ::AddRemove<::ControlledByLocalInstanceComponent>,
-                      ::GlobalRead<>,
-                      ::GlobalWrite<>,
-                      ::EntityFactoryT<>>& strictContext);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorMovementTickNeededComponent,
+                ::BoatFlagComponent,
+                ::HorseFlagComponent,
+                ::PlayerComponent,
+                ::RecalculateControlledByLocalInstanceRequestComponent>,
+            ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>,
+            ::Write<>,
+            ::AddRemove<::ControlledByLocalInstanceComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& strictContext
+    );
 
     MCNAPI void $singleTick(
         ::StrictExecutionContext<

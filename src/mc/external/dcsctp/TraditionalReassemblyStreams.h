@@ -68,7 +68,14 @@ public:
             ::dcsctp::Data
         );
 
-        MCNAPI uint64 AssembleMessage(::std::_Tree_iterator<::std::_Tree_val<::std::_Tree_simple_types<::std::pair<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const, ::dcsctp::Data>>>>, ::std::_Tree_iterator<::std::_Tree_val<::std::_Tree_simple_types<::std::pair<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const, ::dcsctp::Data>>>>);
+        MCNAPI uint64 AssembleMessage(
+            ::std::_Tree_iterator<::std::_Tree_val<::std::_Tree_simple_types<::std::pair<
+                ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const,
+                ::dcsctp::Data>>>>,
+            ::std::_Tree_iterator<::std::_Tree_val<::std::_Tree_simple_types<::std::pair<
+                ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const,
+                ::dcsctp::Data>>>>
+        );
         // NOLINTEND
     };
 
@@ -81,10 +88,11 @@ public:
 
         MCNAPI uint64 EraseTo(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>);
 
-        MCNAPI uint64 TryToAssembleMessage(::std::_Tree_iterator<::std::_Tree_val<::std::_Tree_simple_types<::std::pair<
-                                               ::dcsctp::UnwrappedSequenceNumber<
-                                                   ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const,
-                                               ::dcsctp::Data>>>>);
+        MCNAPI uint64 TryToAssembleMessage(
+            ::std::_Tree_iterator<::std::_Tree_val<::std::_Tree_simple_types<::std::pair<
+                ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const,
+                ::dcsctp::Data>>>>
+        );
         // NOLINTEND
     };
 
@@ -95,15 +103,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    TraditionalReassemblyStreams(::std::string_view, ::std::function<void(::rtc::ArrayView<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const>, ::dcsctp::DcSctpMessage)>);
+    MCNAPI TraditionalReassemblyStreams(
+        ::std::string_view,
+        ::std::function<void(
+            ::rtc::ArrayView<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const>,
+            ::dcsctp::DcSctpMessage
+        )>
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-        $ctor(::std::string_view, ::std::function<void(::rtc::ArrayView<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const>, ::dcsctp::DcSctpMessage)>);
+    MCNAPI void* $ctor(
+        ::std::string_view,
+        ::std::function<void(
+            ::rtc::ArrayView<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const>,
+            ::dcsctp::DcSctpMessage
+        )>
+    );
     // NOLINTEND
 
 public:

@@ -21,23 +21,53 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    StunPort(::rtc::Thread*, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ushort, ushort, ::std::string_view, ::std::string_view, ::std::set<::rtc::SocketAddress> const&, ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const&, ::webrtc::FieldTrialsView const*);
+    MCNAPI StunPort(
+        ::rtc::Thread*,
+        ::rtc::PacketSocketFactory*,
+        ::rtc::Network const*,
+        ushort,
+        ushort,
+        ::std::string_view,
+        ::std::string_view,
+        ::std::set<::rtc::SocketAddress> const&,
+        ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const&,
+        ::webrtc::FieldTrialsView const*
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::
-        unique_ptr<::cricket::StunPort>
-        Create(::rtc::Thread*, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ushort, ushort, ::std::string_view, ::std::string_view, ::std::set<::rtc::SocketAddress> const&, ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const&, ::std::optional<int>, ::webrtc::FieldTrialsView const*);
+    MCNAPI static ::std::unique_ptr<::cricket::StunPort> Create(
+        ::rtc::Thread*,
+        ::rtc::PacketSocketFactory*,
+        ::rtc::Network const*,
+        ushort,
+        ushort,
+        ::std::string_view,
+        ::std::string_view,
+        ::std::set<::rtc::SocketAddress> const&,
+        ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const&,
+        ::std::optional<int>,
+        ::webrtc::FieldTrialsView const*
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::rtc::Thread*, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ushort, ushort, ::std::string_view, ::std::string_view, ::std::set<::rtc::SocketAddress> const&, ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const&, ::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(
+        ::rtc::Thread*,
+        ::rtc::PacketSocketFactory*,
+        ::rtc::Network const*,
+        ushort,
+        ushort,
+        ::std::string_view,
+        ::std::string_view,
+        ::std::set<::rtc::SocketAddress> const&,
+        ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const&,
+        ::webrtc::FieldTrialsView const*
+    );
     // NOLINTEND
 
 public:

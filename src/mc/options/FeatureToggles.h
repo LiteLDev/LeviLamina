@@ -100,8 +100,8 @@ public:
         ::std::vector<::FeatureOptionID> expectedEnabledOptions
     );
 
-    MCNAPI ::std::function<void(bool&)> _getLockIfOtherOptionDisabledLockCallback(::FeatureOptionID optionIdToCheck
-    ) const;
+    MCNAPI ::std::function<void(bool&)>
+    _getLockIfOtherOptionDisabledLockCallback(::FeatureOptionID optionIdToCheck) const;
 
     MCNAPI void _initialize(::AppPlatform& appPlatform);
 

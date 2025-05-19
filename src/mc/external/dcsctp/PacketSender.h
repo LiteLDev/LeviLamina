@@ -21,8 +21,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    PacketSender(::dcsctp::DcSctpSocketCallbacks&, ::std::function<void(::rtc::ArrayView<uchar const>, ::dcsctp::SendPacketStatus)>);
+    MCNAPI PacketSender(
+        ::dcsctp::DcSctpSocketCallbacks&,
+        ::std::function<void(::rtc::ArrayView<uchar const>, ::dcsctp::SendPacketStatus)>
+    );
 
     MCNAPI bool Send(::dcsctp::SctpPacket::Builder&, bool);
 
@@ -32,8 +34,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::dcsctp::DcSctpSocketCallbacks&, ::std::function<void(::rtc::ArrayView<uchar const>, ::dcsctp::SendPacketStatus)>);
+    MCNAPI void* $ctor(
+        ::dcsctp::DcSctpSocketCallbacks&,
+        ::std::function<void(::rtc::ArrayView<uchar const>, ::dcsctp::SendPacketStatus)>
+    );
     // NOLINTEND
 
 public:

@@ -21,8 +21,11 @@ public:
     virtual ~IECSModulesCollection() = default;
 
     // vIndex: 1
-    virtual void
-    init(::WeakRef<::EntityRegistry>, ::VanillaSystemsRegistration::RegistrationOptions&, ::Bedrock::NonOwnerPointer<::IMinecraftEventing>) = 0;
+    virtual void init(
+        ::WeakRef<::EntityRegistry>,
+        ::VanillaSystemsRegistration::RegistrationOptions&,
+        ::Bedrock::NonOwnerPointer<::IMinecraftEventing>
+    ) = 0;
     // NOLINTEND
 
 public:

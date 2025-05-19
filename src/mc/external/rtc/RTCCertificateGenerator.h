@@ -37,9 +37,11 @@ public:
     virtual ~RTCCertificateGenerator() /*override*/ = default;
 
     // vIndex: 1
-    virtual void
-    GenerateCertificateAsync(::rtc::KeyParams const&, ::std::optional<uint64> const&, ::absl::AnyInvocable<void(::webrtc::scoped_refptr<::rtc::RTCCertificate>) &&>) /*override*/
-        ;
+    virtual void GenerateCertificateAsync(
+        ::rtc::KeyParams const&,
+        ::std::optional<uint64> const&,
+        ::absl::AnyInvocable<void(::webrtc::scoped_refptr<::rtc::RTCCertificate>) &&>
+    ) /*override*/;
     // NOLINTEND
 
 public:

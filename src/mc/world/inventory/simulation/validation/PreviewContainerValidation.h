@@ -32,9 +32,11 @@ public:
     virtual int getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const /*override*/;
 
     // vIndex: 1
-    virtual bool
-    isValidSlotForContainer(::ContainerScreenContext const& screenContext, ::Container const& container, int const slot)
-        const /*override*/;
+    virtual bool isValidSlotForContainer(
+        ::ContainerScreenContext const& screenContext,
+        ::Container const&              container,
+        int const                       slot
+    ) const /*override*/;
     // NOLINTEND
 
 public:

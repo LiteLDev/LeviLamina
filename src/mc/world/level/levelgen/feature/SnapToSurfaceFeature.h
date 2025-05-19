@@ -50,9 +50,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos>
-    _findSnapPos(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::SnapToSurfaceFeature::Surface targetSurface)
-        const;
+    MCNAPI ::std::optional<::BlockPos> _findSnapPos(
+        ::IBlockWorldGenAPI&            target,
+        ::BlockPos const&               pos,
+        ::SnapToSurfaceFeature::Surface targetSurface
+    ) const;
     // NOLINTEND
 
 public:

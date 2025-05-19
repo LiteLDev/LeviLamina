@@ -210,9 +210,12 @@ public:
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     // vIndex: 77
-    virtual ::Actor*
-    createProjectileActor(::BlockSource& region, ::ItemStack const& stack, ::Vec3 const& pos, ::Vec3 const& direction)
-        const /*override*/;
+    virtual ::Actor* createProjectileActor(
+        ::BlockSource&     region,
+        ::ItemStack const& stack,
+        ::Vec3 const&      pos,
+        ::Vec3 const&      direction
+    ) const /*override*/;
 
     // vIndex: 78
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
@@ -326,8 +329,8 @@ public:
     // NOLINTBEGIN
     MCAPI ComponentItem(::std::string const& nameId, short id, ::cereal::ReflectionCtx const& ctx);
 
-    MCAPI void
-    _addRegisteredCerealComponent(::std::pair<::std::string const, ::std::shared_ptr<::ItemComponent>>& cerealComponent
+    MCAPI void _addRegisteredCerealComponent(
+        ::std::pair<::std::string const, ::std::shared_ptr<::ItemComponent>>& cerealComponent
     );
 
     MCAPI ::std::unique_ptr<::CompoundTag> _buildItemPropertiesNetworkTag(::cereal::ReflectionCtx const& ctx) const;
@@ -501,9 +504,12 @@ public:
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI ::Actor*
-    $createProjectileActor(::BlockSource& region, ::ItemStack const& stack, ::Vec3 const& pos, ::Vec3 const& direction)
-        const;
+    MCAPI ::Actor* $createProjectileActor(
+        ::BlockSource&     region,
+        ::ItemStack const& stack,
+        ::Vec3 const&      pos,
+        ::Vec3 const&      direction
+    ) const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 

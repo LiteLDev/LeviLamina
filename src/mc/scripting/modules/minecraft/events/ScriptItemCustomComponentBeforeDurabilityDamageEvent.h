@@ -49,13 +49,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    ScriptItemCustomComponentBeforeDurabilityDamageEvent(::ScriptModuleMinecraft::
-                                                             ScriptItemCustomComponentBeforeDurabilityDamageEvent&&);
+    MCNAPI ScriptItemCustomComponentBeforeDurabilityDamageEvent(
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent&&
+    );
 
-    MCNAPI
-    ScriptItemCustomComponentBeforeDurabilityDamageEvent(::ScriptModuleMinecraft::
-                                                             ScriptItemCustomComponentBeforeDurabilityDamageEvent const&);
+    MCNAPI ScriptItemCustomComponentBeforeDurabilityDamageEvent(
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent const&
+    );
     // NOLINTEND
 
 public:

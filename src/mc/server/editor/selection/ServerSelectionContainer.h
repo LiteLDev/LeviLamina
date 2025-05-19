@@ -47,8 +47,8 @@ public:
     virtual ::Scripting::Result<void> clearContainer() /*override*/;
 
     // vIndex: 11
-    virtual ::Scripting::Result<void> replaceContainerContents(::WeakRef<::Editor::Selection::SelectionContainer> other
-    ) /*override*/;
+    virtual ::Scripting::Result<void>
+    replaceContainerContents(::WeakRef<::Editor::Selection::SelectionContainer> other) /*override*/;
 
     // vIndex: 10
     virtual ::Scripting::Result<void> replaceContainerContents(::CompoundBlockVolume const& other) /*override*/;
@@ -78,8 +78,8 @@ public:
     virtual ::Scripting::Result<void> _clearContainer() /*override*/;
 
     // vIndex: 19
-    virtual ::Scripting::Result<void> _replaceContainerContents(::WeakRef<::Editor::Selection::SelectionContainer> other
-    ) /*override*/;
+    virtual ::Scripting::Result<void>
+    _replaceContainerContents(::WeakRef<::Editor::Selection::SelectionContainer> other) /*override*/;
 
     // vIndex: 18
     virtual ::Scripting::Result<void> _replaceContainerContents(::CompoundBlockVolume const& other) /*override*/;
@@ -120,8 +120,8 @@ public:
 
     MCNAPI ::Scripting::Result<void> $clearContainer();
 
-    MCNAPI ::Scripting::Result<void> $replaceContainerContents(::WeakRef<::Editor::Selection::SelectionContainer> other
-    );
+    MCNAPI ::Scripting::Result<void>
+    $replaceContainerContents(::WeakRef<::Editor::Selection::SelectionContainer> other);
 
     MCNAPI ::Scripting::Result<void> $replaceContainerContents(::CompoundBlockVolume const& other);
 
@@ -141,8 +141,8 @@ public:
 
     MCNAPI ::Scripting::Result<void> $_clearContainer();
 
-    MCNAPI ::Scripting::Result<void> $_replaceContainerContents(::WeakRef<::Editor::Selection::SelectionContainer> other
-    );
+    MCNAPI ::Scripting::Result<void>
+    $_replaceContainerContents(::WeakRef<::Editor::Selection::SelectionContainer> other);
 
     MCNAPI ::Scripting::Result<void> $_replaceContainerContents(::CompoundBlockVolume const& other);
 

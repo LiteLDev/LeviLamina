@@ -56,9 +56,14 @@ public:
         ::gsl::not_null<::Block const*>                block
     ) const;
 
-    MCNAPI void
-    _buildSmallClump(::BlockSource& region, ::BlockPos const& pos, ::Random& random, ::std::vector<::BlockPos>& topDec, ::std::vector<::std::pair<::BlockPos, uchar>>& block, ::gsl::not_null<::Block const*>)
-        const;
+    MCNAPI void _buildSmallClump(
+        ::BlockSource&                                 region,
+        ::BlockPos const&                              pos,
+        ::Random&                                      random,
+        ::std::vector<::BlockPos>&                     topDec,
+        ::std::vector<::std::pair<::BlockPos, uchar>>& block,
+        ::gsl::not_null<::Block const*>
+    ) const;
 
     MCNAPI void _buildSpire(
         ::BlockSource&                                 region,
@@ -80,9 +85,12 @@ public:
     MCNAPI bool
     _setBlock(::BlockSource& region, ::BlockPos const& pos, ::gsl::not_null<::Block const*> block, int color) const;
 
-    MCNAPI bool
-    _setBlockOnSolid(::BlockSource& region, ::BlockPos const& pos, ::gsl::not_null<::Block const*> block, int color)
-        const;
+    MCNAPI bool _setBlockOnSolid(
+        ::BlockSource&                  region,
+        ::BlockPos const&               pos,
+        ::gsl::not_null<::Block const*> block,
+        int                             color
+    ) const;
 
     MCNAPI void _starCorners(
         ::BlockSource&                  region,

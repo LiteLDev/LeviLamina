@@ -17,10 +17,11 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual bool previousSchema(::rapidjson::GenericValue<
-                                ::rapidjson::UTF8<char>,
-                                ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& document) const
-        /*override*/;
+    virtual bool previousSchema(
+        ::rapidjson::GenericValue<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& document
+    ) const /*override*/;
 
     // vIndex: 2
     virtual void upgradeToNext(
@@ -50,9 +51,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $previousSchema(::rapidjson::GenericValue<
-                                ::rapidjson::UTF8<char>,
-                                ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& document) const;
+    MCNAPI bool $previousSchema(
+        ::rapidjson::GenericValue<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& document
+    ) const;
 
     MCNAPI void $upgradeToNext(
         ::rapidjson::GenericDocument<

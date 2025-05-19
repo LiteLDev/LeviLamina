@@ -26,11 +26,12 @@ public:
         ::ITickDelegate&       onLand
     );
 
-    MCNAPI static void
-    _tickFallingBlockNormalTickSystem(::ViewT<
-                                      ::StrictEntityContext,
-                                      ::Include<::ActorMovementTickNeededComponent, ::FallingBlockFlagComponent>,
-                                      ::ActorOwnerComponent> view);
+    MCNAPI static void _tickFallingBlockNormalTickSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::FallingBlockFlagComponent>,
+            ::ActorOwnerComponent> view
+    );
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND

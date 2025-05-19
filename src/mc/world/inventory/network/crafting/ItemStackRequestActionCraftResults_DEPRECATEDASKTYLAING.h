@@ -28,7 +28,9 @@ public:
     // prevent constructor by default
     ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING&
     operator=(ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const&);
-    ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const&);
+    ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(
+        ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const&
+    );
     ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
 
 public:

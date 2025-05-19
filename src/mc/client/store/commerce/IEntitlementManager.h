@@ -39,8 +39,12 @@ public:
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> loadEntitlementCacheIfNeeded() = 0;
 
     // vIndex: 4
-    virtual void
-    processLegacyOfferOwnership(::std::string const&, bool, ::std::vector<::PurchaseInfo> const&, ::std::string const&) = 0;
+    virtual void processLegacyOfferOwnership(
+        ::std::string const&,
+        bool,
+        ::std::vector<::PurchaseInfo> const&,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 5
     virtual void purchaseCoinOffer(::PurchaseInfo const&, ::std::string const&, ::std::function<void(bool)>) = 0;
@@ -49,8 +53,12 @@ public:
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> processExternalStorePurchases() = 0;
 
     // vIndex: 7
-    virtual void
-    processSubscriptionPurchase(::StorePlatform, ::PurchaseInfo const&, ::std::string const&, ::std::function<void(::TransactionStatus, ::Bedrock::Http::Status)>) = 0;
+    virtual void processSubscriptionPurchase(
+        ::StorePlatform,
+        ::PurchaseInfo const&,
+        ::std::string const&,
+        ::std::function<void(::TransactionStatus, ::Bedrock::Http::Status)>
+    ) = 0;
 
     // vIndex: 8
     virtual int getBalance() = 0;
@@ -98,12 +106,22 @@ public:
     virtual ::std::string const& getThirdPartyReceipt(::std::string const&) = 0;
 
     // vIndex: 23
-    virtual void
-    purchaseCatalogOffer(::std::string const&, ::std::string const&, ::std::string const&, ::IMinecraftEventing::StoreType, ::std::string const&, ::std::string const&, ::std::function<void(::TransactionStatus)>) = 0;
+    virtual void purchaseCatalogOffer(
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&,
+        ::IMinecraftEventing::StoreType,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::function<void(::TransactionStatus)>
+    ) = 0;
 
     // vIndex: 24
-    virtual void
-    redeemRealmsCatalogOffer(::std::string const&, ::std::string const&, ::std::function<void(::TransactionStatus)>) = 0;
+    virtual void redeemRealmsCatalogOffer(
+        ::std::string const&,
+        ::std::string const&,
+        ::std::function<void(::TransactionStatus)>
+    ) = 0;
 
     // vIndex: 25
     virtual void transferDeviceAccountToXboxLive(::std::function<void(bool)>) = 0;

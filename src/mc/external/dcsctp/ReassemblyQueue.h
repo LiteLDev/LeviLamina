@@ -36,15 +36,19 @@ public:
         ::dcsctp::DcSctpMessage
     );
 
-    MCNAPI void
-        EnterDeferredReset(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>);
+    MCNAPI void EnterDeferredReset(
+        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>,
+        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>
+    );
 
     MCNAPI ::std::vector<::dcsctp::DcSctpMessage> FlushMessages();
 
     MCNAPI ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const;
 
-    MCNAPI void
-        HandleForwardTsn(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::rtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const>);
+    MCNAPI void HandleForwardTsn(
+        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>,
+        ::rtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const>
+    );
 
     MCNAPI ReassemblyQueue(::std::string_view, uint64, bool);
 

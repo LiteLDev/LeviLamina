@@ -109,30 +109,32 @@ public:
     ) /*override*/;
 
     // vIndex: 5
-    virtual void tick(::StrictExecutionContext<
-                      ::Filter<
-                          ::ActorAddedFlagComponent,
-                          ::ActorRemovedFlagComponent,
-                          ::LocalPlayerComponent,
-                          ::PaintingFlagComponent,
-                          ::PlayerComponent,
-                          ::ShulkerFlagComponent>,
-                      ::Read<::ActorOwnerComponent, ::ChunkPositionComponent, ::OffsetsComponent>,
-                      ::Write<
-                          ::AABBShapeComponent,
-                          ::ActorSetPositionRequestComponent,
-                          ::HitboxComponent,
-                          ::StateVectorComponent,
-                          ::SynchedActorDataComponent,
-                          ::ActorDataFlagComponent,
-                          ::ActorDataDirtyFlagsComponent>,
-                      ::AddRemove<
-                          ::ActorChunkMoveFlagComponent,
-                          ::ActorLocalPlayerEntityMovedFlagComponent,
-                          ::ActorSetPositionRequestComponent>,
-                      ::GlobalRead<>,
-                      ::GlobalWrite<>,
-                      ::EntityFactoryT<>>& executionContext) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorAddedFlagComponent,
+                ::ActorRemovedFlagComponent,
+                ::LocalPlayerComponent,
+                ::PaintingFlagComponent,
+                ::PlayerComponent,
+                ::ShulkerFlagComponent>,
+            ::Read<::ActorOwnerComponent, ::ChunkPositionComponent, ::OffsetsComponent>,
+            ::Write<
+                ::AABBShapeComponent,
+                ::ActorSetPositionRequestComponent,
+                ::HitboxComponent,
+                ::StateVectorComponent,
+                ::SynchedActorDataComponent,
+                ::ActorDataFlagComponent,
+                ::ActorDataDirtyFlagsComponent>,
+            ::AddRemove<
+                ::ActorChunkMoveFlagComponent,
+                ::ActorLocalPlayerEntityMovedFlagComponent,
+                ::ActorSetPositionRequestComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~ActorSetPosSystem() /*override*/ = default;
@@ -179,30 +181,32 @@ public:
         ::StrictEntityContext&   entityContext
     );
 
-    MCNAPI void $tick(::StrictExecutionContext<
-                      ::Filter<
-                          ::ActorAddedFlagComponent,
-                          ::ActorRemovedFlagComponent,
-                          ::LocalPlayerComponent,
-                          ::PaintingFlagComponent,
-                          ::PlayerComponent,
-                          ::ShulkerFlagComponent>,
-                      ::Read<::ActorOwnerComponent, ::ChunkPositionComponent, ::OffsetsComponent>,
-                      ::Write<
-                          ::AABBShapeComponent,
-                          ::ActorSetPositionRequestComponent,
-                          ::HitboxComponent,
-                          ::StateVectorComponent,
-                          ::SynchedActorDataComponent,
-                          ::ActorDataFlagComponent,
-                          ::ActorDataDirtyFlagsComponent>,
-                      ::AddRemove<
-                          ::ActorChunkMoveFlagComponent,
-                          ::ActorLocalPlayerEntityMovedFlagComponent,
-                          ::ActorSetPositionRequestComponent>,
-                      ::GlobalRead<>,
-                      ::GlobalWrite<>,
-                      ::EntityFactoryT<>>& executionContext);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorAddedFlagComponent,
+                ::ActorRemovedFlagComponent,
+                ::LocalPlayerComponent,
+                ::PaintingFlagComponent,
+                ::PlayerComponent,
+                ::ShulkerFlagComponent>,
+            ::Read<::ActorOwnerComponent, ::ChunkPositionComponent, ::OffsetsComponent>,
+            ::Write<
+                ::AABBShapeComponent,
+                ::ActorSetPositionRequestComponent,
+                ::HitboxComponent,
+                ::StateVectorComponent,
+                ::SynchedActorDataComponent,
+                ::ActorDataFlagComponent,
+                ::ActorDataDirtyFlagsComponent>,
+            ::AddRemove<
+                ::ActorChunkMoveFlagComponent,
+                ::ActorLocalPlayerEntityMovedFlagComponent,
+                ::ActorSetPositionRequestComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext
+    );
     // NOLINTEND
 
 public:

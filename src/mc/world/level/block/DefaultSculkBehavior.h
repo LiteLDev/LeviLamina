@@ -29,9 +29,13 @@ public:
     virtual bool canChangeBlockOnSpread() const /*override*/;
 
     // vIndex: 3
-    virtual bool
-    attemptSpreadVeins(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block, int facingData, ::SculkSpreader&)
-        const /*override*/;
+    virtual bool attemptSpreadVeins(
+        ::IBlockWorldGenAPI& target,
+        ::BlockPos const&    pos,
+        ::Block const&       block,
+        int                  facingData,
+        ::SculkSpreader&
+    ) const /*override*/;
 
     // vIndex: 4
     virtual int attemptUseCharge(
@@ -59,9 +63,13 @@ public:
 
     MCNAPI bool $canChangeBlockOnSpread() const;
 
-    MCNAPI bool
-    $attemptSpreadVeins(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block, int facingData, ::SculkSpreader&)
-        const;
+    MCNAPI bool $attemptSpreadVeins(
+        ::IBlockWorldGenAPI& target,
+        ::BlockPos const&    pos,
+        ::Block const&       block,
+        int                  facingData,
+        ::SculkSpreader&
+    ) const;
 
     MCNAPI int $attemptUseCharge(
         ::IBlockWorldGenAPI&,

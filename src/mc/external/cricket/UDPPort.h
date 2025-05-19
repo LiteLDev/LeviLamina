@@ -86,11 +86,30 @@ public:
 
     MCNAPI void SendStunBindingRequests();
 
-    MCNAPI
-    UDPPort(::rtc::Thread*, ::webrtc::IceCandidateType, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ::rtc::AsyncPacketSocket*, ::std::string_view, ::std::string_view, bool, ::webrtc::FieldTrialsView const*);
+    MCNAPI UDPPort(
+        ::rtc::Thread*,
+        ::webrtc::IceCandidateType,
+        ::rtc::PacketSocketFactory*,
+        ::rtc::Network const*,
+        ::rtc::AsyncPacketSocket*,
+        ::std::string_view,
+        ::std::string_view,
+        bool,
+        ::webrtc::FieldTrialsView const*
+    );
 
-    MCNAPI
-    UDPPort(::rtc::Thread*, ::webrtc::IceCandidateType, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ushort, ushort, ::std::string_view, ::std::string_view, bool, ::webrtc::FieldTrialsView const*);
+    MCNAPI UDPPort(
+        ::rtc::Thread*,
+        ::webrtc::IceCandidateType,
+        ::rtc::PacketSocketFactory*,
+        ::rtc::Network const*,
+        ushort,
+        ushort,
+        ::std::string_view,
+        ::std::string_view,
+        bool,
+        ::webrtc::FieldTrialsView const*
+    );
 
     MCNAPI void set_stun_keepalive_delay(::std::optional<int> const&);
     // NOLINTEND
@@ -98,11 +117,30 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::rtc::Thread*, ::webrtc::IceCandidateType, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ::rtc::AsyncPacketSocket*, ::std::string_view, ::std::string_view, bool, ::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(
+        ::rtc::Thread*,
+        ::webrtc::IceCandidateType,
+        ::rtc::PacketSocketFactory*,
+        ::rtc::Network const*,
+        ::rtc::AsyncPacketSocket*,
+        ::std::string_view,
+        ::std::string_view,
+        bool,
+        ::webrtc::FieldTrialsView const*
+    );
 
-    MCNAPI void*
-    $ctor(::rtc::Thread*, ::webrtc::IceCandidateType, ::rtc::PacketSocketFactory*, ::rtc::Network const*, ushort, ushort, ::std::string_view, ::std::string_view, bool, ::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(
+        ::rtc::Thread*,
+        ::webrtc::IceCandidateType,
+        ::rtc::PacketSocketFactory*,
+        ::rtc::Network const*,
+        ushort,
+        ushort,
+        ::std::string_view,
+        ::std::string_view,
+        bool,
+        ::webrtc::FieldTrialsView const*
+    );
     // NOLINTEND
 
 public:

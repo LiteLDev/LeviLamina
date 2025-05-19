@@ -32,8 +32,11 @@ public:
     virtual ::std::unordered_map<::std::string, ::std::string> findAvailableLanguageNames(::ResourcePackManager&) = 0;
 
     // vIndex: 4
-    virtual void
-    loadLanguages(::ResourcePackManager&, ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>, ::std::string const&) = 0;
+    virtual void loadLanguages(
+        ::ResourcePackManager&,
+        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 5
     virtual void loadAllLanguages(::ResourcePackManager&) = 0;
@@ -45,21 +48,26 @@ public:
     virtual void loadLanguageKeywordsFromPack(::PackManifest const&, ::PackAccessStrategy const&) = 0;
 
     // vIndex: 7
-    virtual void
-    loadLanguageKeywordsFromPack(::PackManifest const&, ::PackAccessStrategy const&, ::std::vector<::std::string> const&) = 0;
+    virtual void loadLanguageKeywordsFromPack(
+        ::PackManifest const&,
+        ::PackAccessStrategy const&,
+        ::std::vector<::std::string> const&
+    ) = 0;
 
     // vIndex: 9
-    virtual void
-    appendLanguageStringsFromPack(::PackManifest const&, ::std::multimap<::std::string, ::std::pair<::std::string, ::std::string>> const&) = 0;
+    virtual void appendLanguageStringsFromPack(
+        ::PackManifest const&,
+        ::std::multimap<::std::string, ::std::pair<::std::string, ::std::string>> const&
+    ) = 0;
 
     // vIndex: 10
     virtual ::std::unordered_map<::std::string, ::std::string>
     getLanguageKeywordsFromPack(::PackManifest const&, ::std::string const&) = 0;
 
     // vIndex: 11
-    virtual void
-    loadLangaugesByLocale(::std::
-                              unordered_multimap<::std::string, ::std::pair<::std::string, ::std::string>> const&) = 0;
+    virtual void loadLangaugesByLocale(
+        ::std::unordered_multimap<::std::string, ::std::pair<::std::string, ::std::string>> const&
+    ) = 0;
 
     // vIndex: 12
     virtual void

@@ -131,8 +131,15 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual bool
-        generate(::Bedrock::NotNullNonOwnerPtr<::StructureManager>, ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const&, int, ::EndCityPieces::EndCityPiece*, ::BlockPos const&, ::std::vector<::std::unique_ptr<::StructurePiece>>&, ::Random&) = 0;
+        virtual bool generate(
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager>,
+            ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const&,
+            int,
+            ::EndCityPieces::EndCityPiece*,
+            ::BlockPos const&,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&,
+            ::Random&
+        ) = 0;
 
         // vIndex: 1
         virtual ~SectionGenerator() = default;

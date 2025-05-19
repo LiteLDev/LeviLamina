@@ -17,16 +17,26 @@ namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 
 class HudContainerManagerModel : public ::ContainerManagerModel {
 public:
+    // HudContainerManagerModel inner types define
+    using DynamicContainerRemovalPublisher = ::Bedrock::PubSub::
+        Publisher<void(::std::vector<::std::string> const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded>;
+
+    using ItemStackVector = ::std::vector<::ItemStack>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk6ffa22;
-    ::ll::UntypedStorage<8, 128> mUnk17cd07;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mLastSlots;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::
+            Publisher<void(::std::vector<::std::string> const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+        mOnDynamicContainerRemovalPublisher;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    HudContainerManagerModel& operator=(HudContainerManagerModel const&);
-    HudContainerManagerModel(HudContainerManagerModel const&);
     HudContainerManagerModel();
 
 public:

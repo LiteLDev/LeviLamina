@@ -120,8 +120,8 @@ public:
     ) /*override*/;
 
     // vIndex: 13
-    virtual ::Bedrock::PubSub::Subscription listenForThemeDeleted(::std::function<void(::std::string const&)> func
-    ) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription
+    listenForThemeDeleted(::std::function<void(::std::string const&)> func) /*override*/;
 
     // vIndex: 7
     virtual void _handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const&);

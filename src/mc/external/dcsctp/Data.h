@@ -33,7 +33,17 @@ public:
 
     MCNAPI Data(::dcsctp::Data&&);
 
-    MCNAPI Data(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>, ::webrtc::StrongAlias<::dcsctp::SSNTag, ushort>, ::webrtc::StrongAlias<::dcsctp::MIDTag, uint>, ::webrtc::StrongAlias<::dcsctp::FSNTag, uint>, ::webrtc::StrongAlias<::dcsctp::PPIDTag, uint>, ::std::vector<uchar>, ::webrtc::StrongAlias<::dcsctp::IsBeginningTag, bool>, ::webrtc::StrongAlias<::dcsctp::IsEndTag, bool>, ::webrtc::StrongAlias<::dcsctp::IsUnorderedTag, bool>);
+    MCNAPI Data(
+        ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>,
+        ::webrtc::StrongAlias<::dcsctp::SSNTag, ushort>,
+        ::webrtc::StrongAlias<::dcsctp::MIDTag, uint>,
+        ::webrtc::StrongAlias<::dcsctp::FSNTag, uint>,
+        ::webrtc::StrongAlias<::dcsctp::PPIDTag, uint>,
+        ::std::vector<uchar>,
+        ::webrtc::StrongAlias<::dcsctp::IsBeginningTag, bool>,
+        ::webrtc::StrongAlias<::dcsctp::IsEndTag, bool>,
+        ::webrtc::StrongAlias<::dcsctp::IsUnorderedTag, bool>
+    );
 
     MCNAPI ~Data();
     // NOLINTEND
@@ -43,8 +53,17 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::dcsctp::Data&&);
 
-    MCNAPI void*
-        $ctor(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>, ::webrtc::StrongAlias<::dcsctp::SSNTag, ushort>, ::webrtc::StrongAlias<::dcsctp::MIDTag, uint>, ::webrtc::StrongAlias<::dcsctp::FSNTag, uint>, ::webrtc::StrongAlias<::dcsctp::PPIDTag, uint>, ::std::vector<uchar>, ::webrtc::StrongAlias<::dcsctp::IsBeginningTag, bool>, ::webrtc::StrongAlias<::dcsctp::IsEndTag, bool>, ::webrtc::StrongAlias<::dcsctp::IsUnorderedTag, bool>);
+    MCNAPI void* $ctor(
+        ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>,
+        ::webrtc::StrongAlias<::dcsctp::SSNTag, ushort>,
+        ::webrtc::StrongAlias<::dcsctp::MIDTag, uint>,
+        ::webrtc::StrongAlias<::dcsctp::FSNTag, uint>,
+        ::webrtc::StrongAlias<::dcsctp::PPIDTag, uint>,
+        ::std::vector<uchar>,
+        ::webrtc::StrongAlias<::dcsctp::IsBeginningTag, bool>,
+        ::webrtc::StrongAlias<::dcsctp::IsEndTag, bool>,
+        ::webrtc::StrongAlias<::dcsctp::IsUnorderedTag, bool>
+    );
     // NOLINTEND
 
 public:

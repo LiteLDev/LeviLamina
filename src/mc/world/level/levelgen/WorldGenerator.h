@@ -118,9 +118,13 @@ public:
     virtual void debugRender();
 
     // vIndex: 46
-    virtual void
-    decorateWorldGenLoadChunk(::Biome const&, ::LevelChunk&, ::BlockVolumeTarget&, ::Random&, ::ChunkPos const&)
-        const = 0;
+    virtual void decorateWorldGenLoadChunk(
+        ::Biome const&,
+        ::LevelChunk&,
+        ::BlockVolumeTarget&,
+        ::Random&,
+        ::ChunkPos const&
+    ) const = 0;
 
     // vIndex: 47
     virtual void decorateWorldGenPostProcess(::Biome const&, ::LevelChunk&, ::BlockSource&, ::Random&) const = 0;

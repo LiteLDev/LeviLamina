@@ -192,8 +192,15 @@ public:
     virtual void onDestroyMinecraftGame() = 0;
 
     // vIndex: 3
-    virtual void
-    init(::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&, ::ClientNetworkSystem&, ::Timer&, ::Timer&, ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&, int, ::IGameModuleApp&) = 0;
+    virtual void init(
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&,
+        ::ClientNetworkSystem&,
+        ::Timer&,
+        ::Timer&,
+        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&,
+        int,
+        ::IGameModuleApp&
+    ) = 0;
 
     // vIndex: 4
     virtual void initSceneFactory(::std::unique_ptr<::SceneFactory>, ::std::unique_ptr<::OreUI::SceneProvider>) = 0;
@@ -657,8 +664,10 @@ public:
     virtual void stopDestroying() = 0;
 
     // vIndex: 157
-    virtual void
-        onClientCreatedLevel(::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>>, ::OwnerPtr<::EntityContext>) = 0;
+    virtual void onClientCreatedLevel(
+        ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>>,
+        ::OwnerPtr<::EntityContext>
+    ) = 0;
 
     // vIndex: 158
     virtual uint64 getClientRandomId() const = 0;
@@ -1056,9 +1065,11 @@ public:
     virtual ::Vec2 getSafeZoneScale() const = 0;
 
     // vIndex: 289
-    virtual void
-    verifySkinApproval(::std::string const&, ::std::function<void(::std::string)> const&, ::std::function<void()> const&)
-        const = 0;
+    virtual void verifySkinApproval(
+        ::std::string const&,
+        ::std::function<void(::std::string)> const&,
+        ::std::function<void()> const&
+    ) const = 0;
 
     // vIndex: 290
     virtual ::InputMode getCurrentInputMode() const = 0;
@@ -1310,8 +1321,10 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::DevConsoleLogger> getDevConsoleLogger() const = 0;
 
     // vIndex: 373
-    virtual ::std::shared_ptr<::FileDataRequest>
-    requestImageFromUrl(::std::string const&, ::std::function<void(::Bedrock::Http::Status, ::Core::Path const&, uint64)>) = 0;
+    virtual ::std::shared_ptr<::FileDataRequest> requestImageFromUrl(
+        ::std::string const&,
+        ::std::function<void(::Bedrock::Http::Status, ::Core::Path const&, uint64)>
+    ) = 0;
 
     // vIndex: 374
     virtual void initializeRenderResources() = 0;

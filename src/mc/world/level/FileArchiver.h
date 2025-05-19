@@ -191,15 +191,22 @@ public:
         virtual ~IWorldConverter() = default;
 
         // vIndex: 1
-        virtual void
-        enqueueConvertImportingWorldTasks(::std::shared_ptr<::FileArchiver::Result>&, ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter>, ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>&) = 0;
+        virtual void enqueueConvertImportingWorldTasks(
+            ::std::shared_ptr<::FileArchiver::Result>&,
+            ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter>,
+            ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>&
+        ) = 0;
 
         // vIndex: 2
         virtual bool shouldCopyWorldForConversion(::std::string const&) const = 0;
 
         // vIndex: 3
-        virtual void
-        enqueueConvertExportingWorldTasks(::std::shared_ptr<::FileArchiver::ExportData>&, ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter>, ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>&, ::std::function<void(::LevelData&)>) = 0;
+        virtual void enqueueConvertExportingWorldTasks(
+            ::std::shared_ptr<::FileArchiver::ExportData>&,
+            ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter>,
+            ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>&,
+            ::std::function<void(::LevelData&)>
+        ) = 0;
         // NOLINTEND
 
     public:

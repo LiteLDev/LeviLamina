@@ -62,9 +62,10 @@ public:
 
     MCNAPI ::cricket::Port* GetBestTurnPortForNetwork(::std::string_view) const;
 
-    MCNAPI void
-    GetCandidatesFromPort(::cricket::BasicPortAllocatorSession::PortData const&, ::std::vector<::cricket::Candidate>*)
-        const;
+    MCNAPI void GetCandidatesFromPort(
+        ::cricket::BasicPortAllocatorSession::PortData const&,
+        ::std::vector<::cricket::Candidate>*
+    ) const;
 
     MCNAPI ::std::vector<::rtc::Network const*> GetFailedNetworks();
 

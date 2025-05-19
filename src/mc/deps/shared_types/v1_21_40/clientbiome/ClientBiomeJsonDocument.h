@@ -42,12 +42,14 @@ public:
             // member functions
             // NOLINTBEGIN
             MCNAPI ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription&
-            operator=(::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::
-                          ClientBiomeDescription&&);
+            operator=(
+                ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription&&
+            );
 
             MCNAPI ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription&
-            operator=(::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::
-                          ClientBiomeDescription const&);
+            operator=(
+                ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription const&
+            );
 
             MCNAPI ~ClientBiomeDescription();
             // NOLINTEND

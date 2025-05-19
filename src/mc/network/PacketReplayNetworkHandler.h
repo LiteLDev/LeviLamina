@@ -60,9 +60,13 @@ public:
     virtual void onUnableToConnect(::Connection::DisconnectFailReason, ::std::string const&) /*override*/;
 
     // vIndex: 7
-    virtual void
-    onDisconnect(::NetworkIdentifier const&, ::Connection::DisconnectFailReason const, ::std::string const&, bool, ::std::string const&) /*override*/
-        ;
+    virtual void onDisconnect(
+        ::NetworkIdentifier const&,
+        ::Connection::DisconnectFailReason const,
+        ::std::string const&,
+        bool,
+        ::std::string const&
+    ) /*override*/;
 
     // vIndex: 229
     virtual void handle(::NetworkIdentifier const&, ::DisconnectPacket const&) /*override*/;

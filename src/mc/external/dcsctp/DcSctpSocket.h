@@ -44,11 +44,22 @@ public:
     // NOLINTBEGIN
     MCNAPI void CloseConnectionBecauseOfTooManyTransmissionErrors();
 
-    MCNAPI void
-    CreateTransmissionControlBlock(::dcsctp::Capabilities const&, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, uint64, ::webrtc::StrongAlias<::dcsctp::TieTagTag, uint64>);
+    MCNAPI void CreateTransmissionControlBlock(
+        ::dcsctp::Capabilities const&,
+        ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>,
+        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>,
+        ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>,
+        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>,
+        uint64,
+        ::webrtc::StrongAlias<::dcsctp::TieTagTag, uint64>
+    );
 
-    MCNAPI
-    DcSctpSocket(::std::string_view, ::dcsctp::DcSctpSocketCallbacks&, ::std::unique_ptr<::dcsctp::PacketObserver>, ::dcsctp::DcSctpOptions const&);
+    MCNAPI DcSctpSocket(
+        ::std::string_view,
+        ::dcsctp::DcSctpSocketCallbacks&,
+        ::std::unique_ptr<::dcsctp::PacketObserver>,
+        ::dcsctp::DcSctpOptions const&
+    );
 
     MCNAPI bool Dispatch(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const&);
 
@@ -132,8 +143,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::std::string_view, ::dcsctp::DcSctpSocketCallbacks&, ::std::unique_ptr<::dcsctp::PacketObserver>, ::dcsctp::DcSctpOptions const&);
+    MCNAPI void* $ctor(
+        ::std::string_view,
+        ::dcsctp::DcSctpSocketCallbacks&,
+        ::std::unique_ptr<::dcsctp::PacketObserver>,
+        ::dcsctp::DcSctpOptions const&
+    );
     // NOLINTEND
 
 public:

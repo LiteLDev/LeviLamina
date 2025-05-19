@@ -313,14 +313,14 @@ public:
     virtual bool isResuming() const = 0;
 
     // vIndex: 48
-    virtual void
-    setTestExecuteCommandCallback(::std::function<
-                                  void(::TestCommandType, ::std::vector<::std::string> const&, int)> const&) = 0;
+    virtual void setTestExecuteCommandCallback(
+        ::std::function<void(::TestCommandType, ::std::vector<::std::string> const&, int)> const&
+    ) = 0;
 
     // vIndex: 49
-    virtual void
-    setTestAssetCommandCallback(::std::function<
-                                void(::TestAssetCommandType, ::std::vector<::std::string> const&)> const&) = 0;
+    virtual void setTestAssetCommandCallback(
+        ::std::function<void(::TestAssetCommandType, ::std::vector<::std::string> const&)> const&
+    ) = 0;
 
     // vIndex: 50
     virtual void runTestExecuteCommandCallback(::TestCommandType, ::std::vector<::std::string> const&, int) const = 0;
@@ -377,8 +377,14 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem const> getNewPlayerSystem() const = 0;
 
     // vIndex: 65
-    virtual void
-    createAndUploadWorldToRealm(::std::string const&, ::std::string const&, ::ContentIdentity const&, ::LevelSettings const&, ::Realms::World, ::std::function<void(::Realms::World)>) = 0;
+    virtual void createAndUploadWorldToRealm(
+        ::std::string const&,
+        ::std::string const&,
+        ::ContentIdentity const&,
+        ::LevelSettings const&,
+        ::Realms::World,
+        ::std::function<void(::Realms::World)>
+    ) = 0;
 
     // vIndex: 66
     virtual ::ILevelListCache& getLevelListCache() = 0;

@@ -55,23 +55,25 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(::StrictExecutionContext<
-                      ::Filter<::ShouldPlayMovementSoundComponent>,
-                      ::Read<
-                          ::ActorDataFlagComponent,
-                          ::ActorDefinitionIdentifierComponent,
-                          ::ActorUniqueIDComponent,
-                          ::DimensionTypeComponent,
-                          ::SoundEventPlayerComponent,
-                          ::StateVectorComponent,
-                          ::MovementSoundComponent,
-                          ::ClimbingLadderBlockComponent,
-                          ::CurrentlyStandingOnBlockComponent>,
-                      ::Write<>,
-                      ::AddRemove<::ShouldPlayStepSoundComponent>,
-                      ::GlobalRead<>,
-                      ::GlobalWrite<>,
-                      ::EntityFactoryT<>>& context) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<::ShouldPlayMovementSoundComponent>,
+            ::Read<
+                ::ActorDataFlagComponent,
+                ::ActorDefinitionIdentifierComponent,
+                ::ActorUniqueIDComponent,
+                ::DimensionTypeComponent,
+                ::SoundEventPlayerComponent,
+                ::StateVectorComponent,
+                ::MovementSoundComponent,
+                ::ClimbingLadderBlockComponent,
+                ::CurrentlyStandingOnBlockComponent>,
+            ::Write<>,
+            ::AddRemove<::ShouldPlayStepSoundComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    ) /*override*/;
 
     // vIndex: 6
     virtual void singleTick(
@@ -129,23 +131,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::StrictExecutionContext<
-                      ::Filter<::ShouldPlayMovementSoundComponent>,
-                      ::Read<
-                          ::ActorDataFlagComponent,
-                          ::ActorDefinitionIdentifierComponent,
-                          ::ActorUniqueIDComponent,
-                          ::DimensionTypeComponent,
-                          ::SoundEventPlayerComponent,
-                          ::StateVectorComponent,
-                          ::MovementSoundComponent,
-                          ::ClimbingLadderBlockComponent,
-                          ::CurrentlyStandingOnBlockComponent>,
-                      ::Write<>,
-                      ::AddRemove<::ShouldPlayStepSoundComponent>,
-                      ::GlobalRead<>,
-                      ::GlobalWrite<>,
-                      ::EntityFactoryT<>>& context);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<::ShouldPlayMovementSoundComponent>,
+            ::Read<
+                ::ActorDataFlagComponent,
+                ::ActorDefinitionIdentifierComponent,
+                ::ActorUniqueIDComponent,
+                ::DimensionTypeComponent,
+                ::SoundEventPlayerComponent,
+                ::StateVectorComponent,
+                ::MovementSoundComponent,
+                ::ClimbingLadderBlockComponent,
+                ::CurrentlyStandingOnBlockComponent>,
+            ::Write<>,
+            ::AddRemove<::ShouldPlayStepSoundComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    );
 
     MCNAPI void $singleTick(
         ::StrictExecutionContext<

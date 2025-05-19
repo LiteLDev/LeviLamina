@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ContainerModel;
 class ContainerScreenContext;
 class ItemStack;
 // clang-format on
@@ -16,14 +17,8 @@ class HorseContainerManagerModel : public ::LevelContainerManagerModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkd3fa92;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ContainerModel>> mEquipContainerModel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HorseContainerManagerModel& operator=(HorseContainerManagerModel const&);
-    HorseContainerManagerModel(HorseContainerManagerModel const&);
-    HorseContainerManagerModel();
 
 public:
     // virtual functions

@@ -29,8 +29,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    SackChunk(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, uint, ::std::vector<::dcsctp::SackChunk::GapAckBlock>, ::std::set<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>);
+    MCNAPI SackChunk(
+        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>,
+        uint,
+        ::std::vector<::dcsctp::SackChunk::GapAckBlock>,
+        ::std::set<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>
+    );
     // NOLINTEND
 
 public:
@@ -42,8 +46,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-        $ctor(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, uint, ::std::vector<::dcsctp::SackChunk::GapAckBlock>, ::std::set<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>);
+    MCNAPI void* $ctor(
+        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>,
+        uint,
+        ::std::vector<::dcsctp::SackChunk::GapAckBlock>,
+        ::std::set<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>
+    );
     // NOLINTEND
 
 public:

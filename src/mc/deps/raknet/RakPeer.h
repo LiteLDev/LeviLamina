@@ -622,8 +622,8 @@ public:
     ) /*override*/;
 
     // vIndex: 85
-    virtual void SetIncomingDatagramEventHandler(bool (*_incomingDatagramEventHandler)(::RakNet::RNS2RecvStruct*)
-    ) /*override*/;
+    virtual void
+    SetIncomingDatagramEventHandler(bool (*_incomingDatagramEventHandler)(::RakNet::RNS2RecvStruct*)) /*override*/;
 
     // vIndex: 86
     virtual void ApplyNetworkSimulator(float packetloss, ushort minExtraPing, ushort extraPingVariance) /*override*/;

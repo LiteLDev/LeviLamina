@@ -39,12 +39,13 @@ MCNAPI long WebSocketppSendBinaryMessageAsync(::HC_WEBSOCKET_OBSERVER*, uchar co
 
 MCNAPI long WebSocketppSendMessageAsync(::HC_WEBSOCKET_OBSERVER*, char const*, ::XAsyncBlock*, void*);
 
-MCNAPI ::http_wstring
-flatten_http_headers(::std::map<
-                     ::http_string,
-                     ::http_string,
-                     ::xbox::httpclient::HeaderCompare,
-                     ::http_stl_allocator<::std::pair<::http_string const, ::http_string>>> const&);
+MCNAPI ::http_wstring flatten_http_headers(
+    ::std::map<
+        ::http_string,
+        ::http_string,
+        ::xbox::httpclient::HeaderCompare,
+        ::http_stl_allocator<::std::pair<::http_string const, ::http_string>>> const&
+);
 
 MCNAPI ::std::shared_ptr<::xbox::httpclient::http_singleton> get_http_singleton();
 

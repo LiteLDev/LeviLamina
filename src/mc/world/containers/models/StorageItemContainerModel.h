@@ -19,15 +19,13 @@ class StorageItemContainerModel : public ::ContainerModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk73691b;
-    ::ll::UntypedStorage<8, 8>  mUnkf04aff;
-    ::ll::UntypedStorage<8, 16> mUnke587b9;
+    ::ll::TypedStorage<8, 8, ::StorageItemComponent const*>            mStorageItemComponent;
+    ::ll::TypedStorage<8, 8, ::StorageWeightLimitItemComponent const*> mStorageWeightLimitComponent;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Container>>            mContainer;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    StorageItemContainerModel& operator=(StorageItemContainerModel const&);
-    StorageItemContainerModel(StorageItemContainerModel const&);
     StorageItemContainerModel();
 
 public:

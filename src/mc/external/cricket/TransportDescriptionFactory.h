@@ -23,13 +23,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::cricket::TransportDescription>
-    CreateAnswer(::cricket::TransportDescription const*, ::cricket::TransportOptions const&, bool, ::cricket::TransportDescription const*, ::cricket::IceCredentialsIterator*)
-        const;
+    MCNAPI ::std::unique_ptr<::cricket::TransportDescription> CreateAnswer(
+        ::cricket::TransportDescription const*,
+        ::cricket::TransportOptions const&,
+        bool,
+        ::cricket::TransportDescription const*,
+        ::cricket::IceCredentialsIterator*
+    ) const;
 
-    MCNAPI ::std::unique_ptr<::cricket::TransportDescription>
-    CreateOffer(::cricket::TransportOptions const&, ::cricket::TransportDescription const*, ::cricket::IceCredentialsIterator*)
-        const;
+    MCNAPI ::std::unique_ptr<::cricket::TransportDescription> CreateOffer(
+        ::cricket::TransportOptions const&,
+        ::cricket::TransportDescription const*,
+        ::cricket::IceCredentialsIterator*
+    ) const;
 
     MCNAPI bool SetSecurityInfo(::cricket::TransportDescription*, ::cricket::ConnectionRole) const;
 

@@ -137,9 +137,12 @@ public:
         ::CommandOutput&                           output
     ) const;
 
-    MCAPI ::Objective*
-    _getObjective(::Scoreboard const& scoreboard, ::std::string const& name, bool forWrite, ::CommandOutput& output)
-        const;
+    MCAPI ::Objective* _getObjective(
+        ::Scoreboard const&  scoreboard,
+        ::std::string const& name,
+        bool                 forWrite,
+        ::CommandOutput&     output
+    ) const;
 
     MCAPI ::std::vector<::ScoreboardId> _getScoreboardIdsForSelector(
         ::Scoreboard&                             scoreboard,

@@ -187,8 +187,8 @@ public:
     virtual ::Core::Result createDirectoryForFile(::Core::PathView filePath) /*override*/;
 
     // vIndex: 39
-    virtual ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> getUniqueFilePathForFile(::Core::PathView filePath
-    ) /*override*/;
+    virtual ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
+    getUniqueFilePathForFile(::Core::PathView filePath) /*override*/;
 
     // vIndex: 40
     virtual ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
@@ -199,8 +199,8 @@ public:
     createUniquePathFromSeed(::Core::PathView basePath, ::std::function<::std::string(int)> seedGenerator) /*override*/;
 
     // vIndex: 42
-    virtual ::std::vector<::Core::PathBuffer<::std::string>> splitPathIntoFullPathSegments(::Core::PathView path
-    ) /*override*/;
+    virtual ::std::vector<::Core::PathBuffer<::std::string>>
+    splitPathIntoFullPathSegments(::Core::PathView path) /*override*/;
 
     // vIndex: 43
     virtual ::Core::Result readFileDataExt(
@@ -376,8 +376,8 @@ public:
 
     MCNAPI ::Core::Result $createDirectoryForFile(::Core::PathView filePath);
 
-    MCNAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> $getUniqueFilePathForFile(::Core::PathView filePath
-    );
+    MCNAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
+    $getUniqueFilePathForFile(::Core::PathView filePath);
 
     MCNAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
     $getUniqueFilePathForDirectory(::Core::PathView directoryPath);

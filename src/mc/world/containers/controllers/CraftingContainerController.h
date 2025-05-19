@@ -15,17 +15,11 @@ class CraftingContainerController : public ::ContainerController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk830a7e;
-    ::ll::UntypedStorage<4, 4>  mUnk91b314;
-    ::ll::UntypedStorage<1, 1>  mUnk2398ce;
-    ::ll::UntypedStorage<8, 24> mUnk897a0f;
+    ::ll::TypedStorage<8, 8, ::Recipe const*>                mCurrentRecipe;
+    ::ll::TypedStorage<4, 4, int>                            mGridSize;
+    ::ll::TypedStorage<1, 1, bool>                           mDisplayOnlyGhostItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mGhostItems;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CraftingContainerController& operator=(CraftingContainerController const&);
-    CraftingContainerController(CraftingContainerController const&);
-    CraftingContainerController();
 
 public:
     // virtual functions

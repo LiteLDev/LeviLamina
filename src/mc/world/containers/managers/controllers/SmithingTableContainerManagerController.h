@@ -3,33 +3,30 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/containers/SlotData.h"
 #include "mc/world/containers/managers/controllers/ContainerManagerController.h"
+#include "mc/world/containers/managers/controllers/ItemResultPreview.h"
 
 // auto generated forward declare list
 // clang-format off
 class ItemInstance;
 class ItemStackBase;
+class SmithingTableContainerManagerModel;
 struct AutoPlaceItem;
 struct AutoPlaceResult;
 struct CreateContainerItemScope;
 struct ItemTransferAmount;
-struct SlotData;
 // clang-format on
 
 class SmithingTableContainerManagerController : public ::ContainerManagerController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnkd90bb7;
-    ::ll::UntypedStorage<8, 40>  mUnk369da2;
-    ::ll::UntypedStorage<8, 136> mUnk3024c2;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::SmithingTableContainerManagerModel>>
+                                                    mSmithingTableContainerManagerModel;
+    ::ll::TypedStorage<8, 40, ::SlotData const>     mCreatedItemOutputSlot;
+    ::ll::TypedStorage<8, 136, ::ItemResultPreview> mResultPreview;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SmithingTableContainerManagerController& operator=(SmithingTableContainerManagerController const&);
-    SmithingTableContainerManagerController(SmithingTableContainerManagerController const&);
-    SmithingTableContainerManagerController();
 
 public:
     // virtual functions
@@ -53,9 +50,12 @@ public:
     virtual void handleTakeHalf(::SlotData const&, ::SlotData const&) /*override*/;
 
     // vIndex: 15
-    virtual int
-    handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&) /*override*/
-        ;
+    virtual int handleAutoPlace(
+        ::SlotData const&,
+        int,
+        ::std::vector<::AutoPlaceItem> const&,
+        ::std::vector<::AutoPlaceResult>&
+    ) /*override*/;
 
     // vIndex: 32
     virtual void _onItemAcquired(::ItemInstance const&, ::SlotData const&) /*override*/;

@@ -3,7 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/ContainerContentChangeListener.h"
+#include "mc/world/containers/FullContainerName.h"
 #include "mc/world/containers/models/ContainerCategory.h"
 #include "mc/world/containers/models/ContainerExpandStatus.h"
 
@@ -15,32 +18,44 @@ class ItemInstance;
 class ItemStack;
 class ItemStackBase;
 class SparseContainerClient;
-struct FullContainerName;
 struct SlotData;
+namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 
 class ContainerModel : public ::ContainerContentChangeListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk853b36;
-    ::ll::UntypedStorage<8, 32> mUnkdae880;
-    ::ll::UntypedStorage<4, 12> mUnk510e36;
-    ::ll::UntypedStorage<8, 64> mUnke0d973;
-    ::ll::UntypedStorage<8, 24> mUnk77eb28;
-    ::ll::UntypedStorage<8, 64> mUnk4e59ea;
-    ::ll::UntypedStorage<8, 24> mUnk6fb30b;
-    ::ll::UntypedStorage<4, 4>  mUnk61eff7;
-    ::ll::UntypedStorage<8, 24> mUnkb820cb;
-    ::ll::UntypedStorage<8, 8>  mUnk4832d9;
-    ::ll::UntypedStorage<8, 48> mUnk4435e0;
-    ::ll::UntypedStorage<8, 24> mUnkf85de3;
+    ::ll::TypedStorage<1, 1, bool const>                 mIsClientSide;
+    ::ll::TypedStorage<8, 32, ::std::string>             mContainerStringName;
+    ::ll::TypedStorage<4, 12, ::FullContainerName const> mFullContainerName;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::SharedTypes::Legacy::ContainerType,
+            ::std::function<void(int, ::ItemStack const&, ::ItemStack const&)>>>
+        mTrackedOnContainerChangedCallbacks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void(int, ::ItemStack const&, ::ItemStack const&)>>>
+        mOnContainerChangedCallbacks;
+    ::ll::TypedStorage<8, 64, ::std::function<void(int, ::ItemStack const&, ::ItemStack const&)>>
+        mPlayerNotificationCallbacks;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<
+            ::Bedrock::PubSub::Publisher<void(::ItemStackBase const&), ::Bedrock::PubSub::ThreadModel::SingleThreaded>>>
+                                                         mContainerSlotChangePublishers;
+    ::ll::TypedStorage<4, 4, ::ContainerCategory>        mContainerCategory;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SlotData>> mItemSource;
+    ::ll::TypedStorage<8, 8, ::SparseContainerClient*>   mClientUIContainer;
+    ::ll::TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(int), ::Bedrock::PubSub::ThreadModel::SingleThreaded>>
+                                                          mContainerSizeChangePublisher;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mItems;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ContainerModel& operator=(ContainerModel const&);
-    ContainerModel(ContainerModel const&);
     ContainerModel();
 
 public:

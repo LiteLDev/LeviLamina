@@ -16,14 +16,8 @@ class TradeContainerManagerModel : public ::LevelContainerManagerModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk42ca25;
+    ::ll::TypedStorage<4, 4, int> mCurrentIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TradeContainerManagerModel& operator=(TradeContainerManagerModel const&);
-    TradeContainerManagerModel(TradeContainerManagerModel const&);
-    TradeContainerManagerModel();
 
 public:
     // virtual functions

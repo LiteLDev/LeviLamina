@@ -2,19 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/containers/FullContainerName.h"
+
 struct ContainerValidationSlotData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkb5d9ba;
-    ::ll::UntypedStorage<4, 4>  mUnk1caff5;
+    ::ll::TypedStorage<4, 12, ::FullContainerName> mContainerEnumName;
+    ::ll::TypedStorage<4, 4, int>                  mSlotIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerValidationSlotData& operator=(ContainerValidationSlotData const&);
-    ContainerValidationSlotData(ContainerValidationSlotData const&);
-    ContainerValidationSlotData();
 
 public:
     // static variables

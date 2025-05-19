@@ -32,8 +32,11 @@ public:
     virtual void resumeTransport() = 0;
 
     // vIndex: 4
-    virtual ::NetherNet::INetherNetTransportInterface*
-    createTransportInterface(::NetherNet::NetworkID, ::NetherNet::NetherNetTransportServerConfiguration*, ::NetherNet::INetherNetTransportInterfaceCallbacks*) = 0;
+    virtual ::NetherNet::INetherNetTransportInterface* createTransportInterface(
+        ::NetherNet::NetworkID,
+        ::NetherNet::NetherNetTransportServerConfiguration*,
+        ::NetherNet::INetherNetTransportInterfaceCallbacks*
+    ) = 0;
 
     // vIndex: 5
     virtual void destroyTransportInterface(::NetherNet::INetherNetTransportInterface*) = 0;

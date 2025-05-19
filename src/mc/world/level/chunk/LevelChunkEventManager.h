@@ -65,7 +65,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit LevelChunkEventManager(::std::unique_ptr<::ILevelChunkEventManagerProxy> levelChunkEventManagerProxy
+    MCNAPI explicit LevelChunkEventManager(
+        ::std::unique_ptr<::ILevelChunkEventManagerProxy> levelChunkEventManagerProxy
     );
     // NOLINTEND
 

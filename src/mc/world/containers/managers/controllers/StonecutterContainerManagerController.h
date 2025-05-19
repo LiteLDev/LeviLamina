@@ -3,13 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/containers/SlotData.h"
 #include "mc/world/containers/managers/controllers/ContainerManagerController.h"
+#include "mc/world/containers/managers/controllers/ItemResultPreview.h"
 #include "mc/world/inventory/simulation/ContainerScreenRequestActionType.h"
 
 // auto generated forward declare list
 // clang-format off
 class ItemInstance;
 class ItemStackBase;
+class StonecutterContainerManagerModel;
 struct AutoPlaceItem;
 struct AutoPlaceResult;
 struct ContainerScreenActionResult;
@@ -17,24 +20,17 @@ struct CreateContainerItemScope;
 struct ItemStackRequestScope;
 struct ItemTransferAmount;
 struct SelectedSlotInfo;
-struct SlotData;
 // clang-format on
 
 class StonecutterContainerManagerController : public ::ContainerManagerController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnke4f415;
-    ::ll::UntypedStorage<8, 16>  mUnk638fef;
-    ::ll::UntypedStorage<8, 40>  mUnkcff77b;
-    ::ll::UntypedStorage<8, 136> mUnk2bec90;
+    ::ll::TypedStorage<4, 4, int>                                                  mSelectedStoneIndex;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::StonecutterContainerManagerModel>> mStonecutterContainerManagerModel;
+    ::ll::TypedStorage<8, 40, ::SlotData const>                                    mCreatedItemOutputSlot;
+    ::ll::TypedStorage<8, 136, ::ItemResultPreview>                                mResultPreview;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StonecutterContainerManagerController& operator=(StonecutterContainerManagerController const&);
-    StonecutterContainerManagerController(StonecutterContainerManagerController const&);
-    StonecutterContainerManagerController();
 
 public:
     // virtual functions
@@ -64,9 +60,12 @@ public:
     virtual void handlePlaceOne(::SlotData const&, ::SlotData const&) /*override*/;
 
     // vIndex: 15
-    virtual int
-    handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&) /*override*/
-        ;
+    virtual int handleAutoPlace(
+        ::SlotData const&,
+        int,
+        ::std::vector<::AutoPlaceItem> const&,
+        ::std::vector<::AutoPlaceResult>&
+    ) /*override*/;
 
     // vIndex: 8
     virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const&) const /*override*/;
@@ -82,9 +81,11 @@ public:
     virtual void _onItemAcquired(::ItemInstance const&, ::SlotData const&) /*override*/;
 
     // vIndex: 28
-    virtual void
-    _updateItemStackRequest(::ContainerScreenRequestActionType, ::ContainerScreenActionResult const&, ::ItemStackRequestScope&) /*override*/
-        ;
+    virtual void _updateItemStackRequest(
+        ::ContainerScreenRequestActionType,
+        ::ContainerScreenActionResult const&,
+        ::ItemStackRequestScope&
+    ) /*override*/;
     // NOLINTEND
 
 public:

@@ -53,8 +53,11 @@ public:
     virtual int getSelectedPaletteItemIndex() const = 0;
 
     // vIndex: 8
-    virtual ::Scripting::Result<void>
-    setPaletteItem(::HashedString const&, int, ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const&) = 0;
+    virtual ::Scripting::Result<void> setPaletteItem(
+        ::HashedString const&,
+        int,
+        ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const&
+    ) = 0;
 
     // vIndex: 9
     virtual ::Scripting::Result<void> pickBlock(::Block const&) = 0;
@@ -77,13 +80,14 @@ public:
     virtual void forEachBlockType(::std::function<void(::BlockLegacy const&, bool)>) const = 0;
 
     // vIndex: 15
-    virtual ::Bedrock::PubSub::Subscription
-        registerEventListener(::std::function<void(::std::variant<
-                                                   ::Editor::EditorBlockPaletteEventItemUpdated,
-                                                   ::Editor::EditorBlockPaletteEventSelectedItemIndexChanged,
-                                                   ::Editor::EditorBlockPaletteEventActivePaletteChanged,
-                                                   ::Editor::EditorBlockPaletteEventPaletteUpdated,
-                                                   ::Editor::EditorBlockPaletteEventPaletteRemoved> const&)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription registerEventListener(
+        ::std::function<void(::std::variant<
+                             ::Editor::EditorBlockPaletteEventItemUpdated,
+                             ::Editor::EditorBlockPaletteEventSelectedItemIndexChanged,
+                             ::Editor::EditorBlockPaletteEventActivePaletteChanged,
+                             ::Editor::EditorBlockPaletteEventPaletteUpdated,
+                             ::Editor::EditorBlockPaletteEventPaletteRemoved> const&)>
+    ) = 0;
     // NOLINTEND
 
 public:

@@ -80,8 +80,8 @@ public:
     virtual ::std::shared_ptr<::CompoundBlockVolume> getCurrentBrushVolume() const /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result_deprecated<::CompoundBlockVolume> switchBrushShape(::std::string const& brushName
-    ) /*override*/;
+    virtual ::Scripting::Result_deprecated<::CompoundBlockVolume>
+    switchBrushShape(::std::string const& brushName) /*override*/;
 
     // vIndex: 4
     virtual ::Scripting::Result_deprecated<::std::vector<::std::shared_ptr<::Editor::Brush::UIElement>>>
@@ -123,8 +123,8 @@ public:
     virtual void setBrushMask(::Editor::BlockMask::BlockMaskList const& mask) /*override*/;
 
     // vIndex: 13
-    virtual void beginPainting(::std::function<void(::Editor::Brush::BrushPaintCompletionState)> fnCallback
-    ) /*override*/;
+    virtual void
+    beginPainting(::std::function<void(::Editor::Brush::BrushPaintCompletionState)> fnCallback) /*override*/;
 
     // vIndex: 14
     virtual void endPainting(bool const cancelled) /*override*/;

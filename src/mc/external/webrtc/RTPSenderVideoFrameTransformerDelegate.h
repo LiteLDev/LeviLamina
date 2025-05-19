@@ -31,8 +31,12 @@ public:
     // NOLINTBEGIN
     MCNAPI void Init();
 
-    MCNAPI
-    RTPSenderVideoFrameTransformerDelegate(::webrtc::RTPVideoFrameSenderInterface*, ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>, uint, ::webrtc::TaskQueueFactory*);
+    MCNAPI RTPSenderVideoFrameTransformerDelegate(
+        ::webrtc::RTPVideoFrameSenderInterface*,
+        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>,
+        uint,
+        ::webrtc::TaskQueueFactory*
+    );
 
     MCNAPI void Reset();
 
@@ -55,8 +59,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::webrtc::RTPVideoFrameSenderInterface*, ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>, uint, ::webrtc::TaskQueueFactory*);
+    MCNAPI void* $ctor(
+        ::webrtc::RTPVideoFrameSenderInterface*,
+        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>,
+        uint,
+        ::webrtc::TaskQueueFactory*
+    );
     // NOLINTEND
 
 public:

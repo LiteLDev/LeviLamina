@@ -83,8 +83,14 @@ public:
 
         MCNAPI void HandleMessageExpired(::dcsctp::RRSendQueue::OutgoingStream::Item&);
 
-        MCNAPI
-        OutgoingStream(::dcsctp::RRSendQueue*, ::dcsctp::StreamScheduler*, ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>, ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>, ::std::function<void()>, ::dcsctp::DcSctpSocketHandoverState::OutgoingStream const*);
+        MCNAPI OutgoingStream(
+            ::dcsctp::RRSendQueue*,
+            ::dcsctp::StreamScheduler*,
+            ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>,
+            ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>,
+            ::std::function<void()>,
+            ::dcsctp::DcSctpSocketHandoverState::OutgoingStream const*
+        );
 
         MCNAPI void Pause();
 
@@ -96,8 +102,14 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void*
-        $ctor(::dcsctp::RRSendQueue*, ::dcsctp::StreamScheduler*, ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>, ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>, ::std::function<void()>, ::dcsctp::DcSctpSocketHandoverState::OutgoingStream const*);
+        MCNAPI void* $ctor(
+            ::dcsctp::RRSendQueue*,
+            ::dcsctp::StreamScheduler*,
+            ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>,
+            ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>,
+            ::std::function<void()>,
+            ::dcsctp::DcSctpSocketHandoverState::OutgoingStream const*
+        );
         // NOLINTEND
 
     public:
@@ -168,8 +180,10 @@ public:
 
     MCNAPI void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const&);
 
-    MCNAPI void
-        SetStreamPriority(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>, ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>);
+    MCNAPI void SetStreamPriority(
+        ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>,
+        ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>
+    );
     // NOLINTEND
 
 public:

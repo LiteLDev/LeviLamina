@@ -31,9 +31,15 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void
-    onSignalReceive(::BlockSource& region, ::BlockPos const&, ::GameEvent const& gameEvent, ::Actor* source, float distance, uint listenerRange, ::Actor*) /*override*/
-        ;
+    virtual void onSignalReceive(
+        ::BlockSource& region,
+        ::BlockPos const&,
+        ::GameEvent const& gameEvent,
+        ::Actor*           source,
+        float              distance,
+        uint               listenerRange,
+        ::Actor*
+    ) /*override*/;
 
     // vIndex: 3
     virtual bool shouldListen(
@@ -55,8 +61,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void
-    $onSignalReceive(::BlockSource& region, ::BlockPos const&, ::GameEvent const& gameEvent, ::Actor* source, float distance, uint listenerRange, ::Actor*);
+    MCNAPI void $onSignalReceive(
+        ::BlockSource& region,
+        ::BlockPos const&,
+        ::GameEvent const& gameEvent,
+        ::Actor*           source,
+        float              distance,
+        uint               listenerRange,
+        ::Actor*
+    );
 
     MCNAPI bool
     $shouldListen(::BlockSource& region, ::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext);

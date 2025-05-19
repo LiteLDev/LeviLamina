@@ -29,9 +29,9 @@ public:
     virtual ::Bedrock::PubSub::Subscription subscribeToBossEvent(::std::function<void(::BossEventUpdateType)>) = 0;
 
     // vIndex: 1
-    virtual ::Bedrock::PubSub::Subscription
-        subscribeToBossEvent(::std::function<
-                             void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription subscribeToBossEvent(
+        ::std::function<void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&)>
+    ) = 0;
 
     // vIndex: 4
     virtual void broadcastBossEvent(::BossEventUpdateType) = 0;

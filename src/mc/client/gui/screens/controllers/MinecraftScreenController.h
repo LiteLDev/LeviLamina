@@ -103,9 +103,15 @@ public:
     virtual void onDictationEvent(::std::string const&) /*override*/;
 
     // vIndex: 19
-    virtual bool
-    bind(::std::string const&, uint, int, ::std::string const&, uint, ::std::string const&, ::UIPropertyBag&) /*override*/
-        ;
+    virtual bool bind(
+        ::std::string const&,
+        uint,
+        int,
+        ::std::string const&,
+        uint,
+        ::std::string const&,
+        ::UIPropertyBag&
+    ) /*override*/;
 
     // vIndex: 18
     virtual bool bind(::std::string const&, uint, ::std::string const&, ::UIPropertyBag&) /*override*/;

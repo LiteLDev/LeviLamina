@@ -31,12 +31,20 @@ public:
     OnReleaseRequest(::RakNet::RakNetGUID, ::RakNet::SystemAddress, ::DataStructures::List<::RakNet::CloudKey>&) = 0;
 
     // vIndex: 3
-    virtual bool
-    OnGetRequest(::RakNet::RakNetGUID, ::RakNet::SystemAddress, ::RakNet::CloudQuery&, ::DataStructures::List<::RakNet::RakNetGUID>&) = 0;
+    virtual bool OnGetRequest(
+        ::RakNet::RakNetGUID,
+        ::RakNet::SystemAddress,
+        ::RakNet::CloudQuery&,
+        ::DataStructures::List<::RakNet::RakNetGUID>&
+    ) = 0;
 
     // vIndex: 4
-    virtual bool
-    OnUnsubscribeRequest(::RakNet::RakNetGUID, ::RakNet::SystemAddress, ::DataStructures::List<::RakNet::CloudKey>&, ::DataStructures::List<::RakNet::RakNetGUID>&) = 0;
+    virtual bool OnUnsubscribeRequest(
+        ::RakNet::RakNetGUID,
+        ::RakNet::SystemAddress,
+        ::DataStructures::List<::RakNet::CloudKey>&,
+        ::DataStructures::List<::RakNet::RakNetGUID>&
+    ) = 0;
     // NOLINTEND
 
 public:

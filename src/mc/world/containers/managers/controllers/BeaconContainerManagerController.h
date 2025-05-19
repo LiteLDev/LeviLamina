@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BeaconContainerManagerModel;
 struct SelectedSlotInfo;
 struct SlotData;
 // clang-format on
@@ -43,14 +44,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkfc9498;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::BeaconContainerManagerModel>> mBeaconContainerManagerModel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BeaconContainerManagerController& operator=(BeaconContainerManagerController const&);
-    BeaconContainerManagerController(BeaconContainerManagerController const&);
-    BeaconContainerManagerController();
 
 public:
     // virtual functions

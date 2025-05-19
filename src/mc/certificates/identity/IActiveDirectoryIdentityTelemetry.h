@@ -15,8 +15,14 @@ public:
     virtual ~IActiveDirectoryIdentityTelemetry() = default;
 
     // vIndex: 1
-    virtual void
-    fireEventSignInEdu(::std::string const&, ::edu::Role, ::Identity::EduSignInStage, ::std::string const&, ::std::string const&, ::std::vector<::std::pair<::std::string, ::std::string>> const&) = 0;
+    virtual void fireEventSignInEdu(
+        ::std::string const&,
+        ::edu::Role,
+        ::Identity::EduSignInStage,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::vector<::std::pair<::std::string, ::std::string>> const&
+    ) = 0;
 
     // vIndex: 2
     virtual void fireEventEduDemoConversion(::edu::Role, ::LastClickedSource) = 0;

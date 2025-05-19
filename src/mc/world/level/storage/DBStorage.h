@@ -222,8 +222,8 @@ public:
     saveData(::std::string const& key, ::std::string&& data, ::DBHelpers::Category category) /*override*/;
 
     // vIndex: 10
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> saveData(::LevelStorageWriteBatch const& batch
-    ) /*override*/;
+    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
+    saveData(::LevelStorageWriteBatch const& batch) /*override*/;
 
     // vIndex: 12
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>

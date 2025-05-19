@@ -277,8 +277,11 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>>
-    getTopmostBlock(::Scripting::WeakLifetimeScope scope, ::VecXZ const& locationXZ, ::std::optional<float> minHeight)
-        const;
+    getTopmostBlock(
+        ::Scripting::WeakLifetimeScope scope,
+        ::VecXZ const&                 locationXZ,
+        ::std::optional<float>         minHeight
+    ) const;
 
     MCNAPI ::ScriptModuleMinecraft::ScriptWeatherType getWeather() const;
 

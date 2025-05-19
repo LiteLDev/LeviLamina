@@ -112,44 +112,59 @@ public:
     virtual ~RealmsAPI() /*override*/ = default;
 
     // vIndex: 1
-    virtual void
-    initializeWorld(::Realms::RealmId, ::std::string const&, ::std::string const&, ::std::function<void(::Realms::GenericStatus, ::Realms::FailureReason)>) /*override*/
-        ;
+    virtual void initializeWorld(
+        ::Realms::RealmId,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::function<void(::Realms::GenericStatus, ::Realms::FailureReason)>
+    ) /*override*/;
 
     // vIndex: 2
-    virtual void
-        openWorld(::Realms::RealmId, ::std::function<void(::Realms::GenericStatus)>, ::std::function<void(int)>) /*override*/
-        ;
+    virtual void openWorld(
+        ::Realms::RealmId,
+        ::std::function<void(::Realms::GenericStatus)>,
+        ::std::function<void(int)>
+    ) /*override*/;
 
     // vIndex: 3
-    virtual void
-        closeWorld(::Realms::RealmId, ::std::function<void(::Realms::GenericStatus)>, ::std::function<void(int)>) /*override*/
-        ;
+    virtual void closeWorld(
+        ::Realms::RealmId,
+        ::std::function<void(::Realms::GenericStatus)>,
+        ::std::function<void(int)>
+    ) /*override*/;
 
     // vIndex: 4
-    virtual void
-        resetWorld(::Realms::RealmId, ::std::function<void(::Realms::GenericStatus)>, ::std::function<void(int)>) /*override*/
-        ;
+    virtual void resetWorld(
+        ::Realms::RealmId,
+        ::std::function<void(::Realms::GenericStatus)>,
+        ::std::function<void(int)>
+    ) /*override*/;
 
     // vIndex: 1
-    virtual void
-    applyContentOnRealm(::Realms::RealmId const, ::std::vector<::Realms::Content> const&, ::std::function<void(::Realms::GenericStatus)>) /*override*/
-        ;
+    virtual void applyContentOnRealm(
+        ::Realms::RealmId const,
+        ::std::vector<::Realms::Content> const&,
+        ::std::function<void(::Realms::GenericStatus)>
+    ) /*override*/;
 
     // vIndex: 2
-    virtual void
-        fetchAppliedPacks(::Realms::RealmId, ::std::function<void(::Realms::GenericStatus, ::std::vector<::Realms::Content>)>) /*override*/
-        ;
+    virtual void fetchAppliedPacks(
+        ::Realms::RealmId,
+        ::std::function<void(::Realms::GenericStatus, ::std::vector<::Realms::Content>)>
+    ) /*override*/;
 
     // vIndex: 3
-    virtual void
-    checkForExistingPack(::std::string const&, ::std::string const&, ::std::function<void(::Realms::GenericStatus, bool)>) /*override*/
-        ;
+    virtual void checkForExistingPack(
+        ::std::string const&,
+        ::std::string const&,
+        ::std::function<void(::Realms::GenericStatus, bool)>
+    ) /*override*/;
 
     // vIndex: 1
-    virtual void
-        getSubscriptionDetails(::Realms::RealmId, ::std::function<void(::Realms::GenericStatus, ::Realms::SubscriptionInfo)>) /*override*/
-        ;
+    virtual void getSubscriptionDetails(
+        ::Realms::RealmId,
+        ::std::function<void(::Realms::GenericStatus, ::Realms::SubscriptionInfo)>
+    ) /*override*/;
     // NOLINTEND
 
 public:

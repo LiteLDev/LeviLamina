@@ -84,18 +84,18 @@ public:
     virtual bool hasExtension(::std::string const& extensionName) /*override*/;
 
     // vIndex: 4
-    virtual void
-    forEachExtension(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
+    virtual void forEachExtension(
+        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
     ) /*override*/;
 
     // vIndex: 5
-    virtual void
-    forEachExtensionOrdered(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
+    virtual void forEachExtensionOrdered(
+        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
     ) /*override*/;
 
     // vIndex: 6
-    virtual void
-    forEachExtensionReverse(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
+    virtual void forEachExtensionReverse(
+        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
     ) /*override*/;
 
     // vIndex: 7

@@ -3,18 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/inventory/network/ContainerScreenContext.h"
 #include "mc/world/inventory/simulation/ContainerScreenRequestActionType.h"
 #include "mc/world/inventory/simulation/ContainerValidationCaller.h"
+#include "mc/world/inventory/simulation/ContainerValidationDebug.h"
 
 // auto generated forward declare list
 // clang-format off
 class Container;
-class ContainerScreenContext;
+class ContainerScreenValidatorBase;
 class ContainerValidationBase;
 class ItemStack;
 class SimpleSparseContainer;
 struct ContainerValidationCraftInputs;
 struct ContainerValidationCraftResult;
+struct ContainerValidationLayer;
 struct ContainerValidationResult;
 struct ContainerValidationSlotData;
 struct ContainerValidationSlotInfo;
@@ -25,20 +28,23 @@ class ContainerScreenValidation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk7e4898;
-    ::ll::UntypedStorage<4, 4>  mUnk3f6c24;
-    ::ll::UntypedStorage<8, 64> mUnkeb3752;
-    ::ll::UntypedStorage<8, 64> mUnk3bbfa5;
-    ::ll::UntypedStorage<8, 64> mUnk634049;
-    ::ll::UntypedStorage<8, 8>  mUnkc71b5a;
-    ::ll::UntypedStorage<8, 24> mUnk877768;
-    ::ll::UntypedStorage<4, 12> mUnk6f491a;
+    ::ll::TypedStorage<8, 40, ::ContainerScreenContext>                          mScreenContext;
+    ::ll::TypedStorage<4, 4, ::ContainerValidationCaller>                        mCaller;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::FullContainerName, uint64>> mContainerIndexMap;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::ContainerValidationBase const>>>
+        mContainerValidatorMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>>>
+                                                                                mPredictiveContainers;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ContainerScreenValidatorBase>> mContainerScreenValidator;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ContainerValidationLayer>>        mValidationStack;
+    ::ll::TypedStorage<4, 12, ::ContainerValidationDebug const>                 mDebug;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ContainerScreenValidation& operator=(ContainerScreenValidation const&);
-    ContainerScreenValidation(ContainerScreenValidation const&);
     ContainerScreenValidation();
 
 public:
@@ -70,8 +76,8 @@ public:
 
     MCNAPI void _commit();
 
-    MCNAPI ::ContainerValidationSlotInfo _createContainerValidatorSlotInfo(::ContainerValidationSlotData const& slotData
-    );
+    MCNAPI ::ContainerValidationSlotInfo
+    _createContainerValidatorSlotInfo(::ContainerValidationSlotData const& slotData);
 
     MCNAPI bool _dropItems();
 

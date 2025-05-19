@@ -46,12 +46,12 @@ public:
     virtual void tick() /*override*/;
 
     // vIndex: 4
-    virtual void setOnMessageReceivedHandler(::std::function<void(::RakWebSocketDataFrame const&)> const& handler
-    ) /*override*/;
+    virtual void
+    setOnMessageReceivedHandler(::std::function<void(::RakWebSocketDataFrame const&)> const& handler) /*override*/;
 
     // vIndex: 5
-    virtual void setOnCloseHandler(::std::function<void(::CloseStatusCode, ::std::string const&)> const& handler
-    ) /*override*/;
+    virtual void
+    setOnCloseHandler(::std::function<void(::CloseStatusCode, ::std::string const&)> const& handler) /*override*/;
 
     // vIndex: 6
     virtual void setOnConnectedHandler(::std::function<void(::std::string const&)> const& handler) /*override*/;

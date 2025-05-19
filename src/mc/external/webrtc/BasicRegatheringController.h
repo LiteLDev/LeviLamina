@@ -29,8 +29,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    BasicRegatheringController(::webrtc::BasicRegatheringController::Config const&, ::cricket::IceTransportInternal*, ::rtc::Thread*);
+    MCNAPI BasicRegatheringController(
+        ::webrtc::BasicRegatheringController::Config const&,
+        ::cricket::IceTransportInternal*,
+        ::rtc::Thread*
+    );
 
     MCNAPI void OnIceTransportNetworkRouteChanged(::std::optional<::rtc::NetworkRoute>);
 

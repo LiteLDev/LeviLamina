@@ -42,17 +42,25 @@ public:
     virtual ::Json::Value clientConfig(::Json::Value const&) const /*override*/;
 
     // vIndex: 2
-    virtual ::Identity::_TokenRefreshState::Enum
-    refreshToken(::Identity::IEduAuth&, ::AccessTokenInfo const&, int64, ::Identity::EduResourceType, ::std::function<void(::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>)>, ::std::function<void()>) /*override*/
-        ;
+    virtual ::Identity::_TokenRefreshState::Enum refreshToken(
+        ::Identity::IEduAuth&,
+        ::AccessTokenInfo const&,
+        int64,
+        ::Identity::EduResourceType,
+        ::std::function<void(::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>)>,
+        ::std::function<void()>
+    ) /*override*/;
 
     // vIndex: 3
     virtual void onRefreshedToken(bool, ::Identity::EduResourceType) /*override*/;
 
     // vIndex: 4
-    virtual ::Identity::SsoPromptMode
-    signIn(::Identity::IEduAuth&, int64, ::std::function<void()>, ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>) /*override*/
-        ;
+    virtual ::Identity::SsoPromptMode signIn(
+        ::Identity::IEduAuth&,
+        int64,
+        ::std::function<void()>,
+        ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>
+    ) /*override*/;
 
     // vIndex: 5
     virtual void signInSuccess(::std::string const&) /*override*/;
@@ -67,9 +75,11 @@ public:
     virtual bool isDemoConversion() const /*override*/;
 
     // vIndex: 9
-    virtual void
-    signInGraph(::Identity::IEduAuth&, ::std::string const&, ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>) /*override*/
-        ;
+    virtual void signInGraph(
+        ::Identity::IEduAuth&,
+        ::std::string const&,
+        ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~EduSso() /*override*/ = default;

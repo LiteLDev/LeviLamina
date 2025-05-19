@@ -40,8 +40,15 @@ MCNAPI void expansionHackEval(int expandTo, ::BoundingBox& box);
 
 MCNAPI bool isEmptyPool(::StructureTemplatePool const& pool);
 
-MCNAPI int
-noopCalc(::JigsawStructureUtils::MetadataCache&, ::BlockPos const&, ::Rotation, ::BoundingBox const&, ::std::vector<::SharedTypes::v1_21_50::JigsawBlockMetadata> const&, ::std::vector<uint64> const&, ::JigsawStructureRegistry const&);
+MCNAPI int noopCalc(
+    ::JigsawStructureUtils::MetadataCache&,
+    ::BlockPos const&,
+    ::Rotation,
+    ::BoundingBox const&,
+    ::std::vector<::SharedTypes::v1_21_50::JigsawBlockMetadata> const&,
+    ::std::vector<uint64> const&,
+    ::JigsawStructureRegistry const&
+);
 
 MCNAPI void noopEval(int, ::BoundingBox&);
 

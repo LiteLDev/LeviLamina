@@ -25,8 +25,8 @@ public:
     // NOLINTBEGIN
     MCAPI bool _assertMainOrServerThread() const;
 
-    MCAPI ::std::unique_ptr<::BlockEvents::IBlockEventExecutor> _createSpecializedExecutor(::BlockEvents::EventType type
-    ) const;
+    MCAPI ::std::unique_ptr<::BlockEvents::IBlockEventExecutor>
+    _createSpecializedExecutor(::BlockEvents::EventType type) const;
 
     MCAPI bool hasExecutor(::BlockEvents::EventType type) const;
 

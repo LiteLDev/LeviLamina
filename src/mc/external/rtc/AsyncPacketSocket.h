@@ -91,8 +91,9 @@ public:
 
     MCNAPI void NotifyPacketReceived(::rtc::ReceivedPacket const&);
 
-    MCNAPI void RegisterReceivedPacketCallback(::absl::AnyInvocable<
-                                               void(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const&)>);
+    MCNAPI void RegisterReceivedPacketCallback(
+        ::absl::AnyInvocable<void(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const&)>
+    );
 
     MCNAPI void SubscribeCloseEvent(void const*, ::std::function<void(::rtc::AsyncPacketSocket*, int)>);
 

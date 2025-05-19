@@ -35,9 +35,11 @@ public:
         ::CommandOutput&                    output,
         ::std::vector<::std::string> const& text,
         ::TextProcessingEventOrigin const&  textOrigin,
-        ::std::function<
-            void(::std::vector<::std::string> const&, ::std::vector<::std::string> const&, ::std::vector<::Safety::TextFilteringEvent> const&)>
-            callback
+        ::std::function<void(
+            ::std::vector<::std::string> const&,
+            ::std::vector<::std::string> const&,
+            ::std::vector<::Safety::TextFilteringEvent> const&
+        )>                                  callback
     ) const;
     // NOLINTEND
 

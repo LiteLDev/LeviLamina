@@ -39,8 +39,11 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI
-        ConstIterator(::webrtc::scoped_refptr<::webrtc::RTCStatsReport const> const&, ::std::_Tree_const_iterator<::std::_Tree_val<::std::_Tree_simple_types<::std::pair<::std::string const, ::std::unique_ptr<::webrtc::RTCStats const>>>>>);
+        MCNAPI ConstIterator(
+            ::webrtc::scoped_refptr<::webrtc::RTCStatsReport const> const&,
+            ::std::_Tree_const_iterator<::std::_Tree_val<::std::_Tree_simple_types<
+                ::std::pair<::std::string const, ::std::unique_ptr<::webrtc::RTCStats const>>>>>
+        );
 
         MCNAPI bool operator!=(::webrtc::RTCStatsReport::ConstIterator const&) const;
 
@@ -58,8 +61,11 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void*
-        $ctor(::webrtc::scoped_refptr<::webrtc::RTCStatsReport const> const&, ::std::_Tree_const_iterator<::std::_Tree_val<::std::_Tree_simple_types<::std::pair<::std::string const, ::std::unique_ptr<::webrtc::RTCStats const>>>>>);
+        MCNAPI void* $ctor(
+            ::webrtc::scoped_refptr<::webrtc::RTCStatsReport const> const&,
+            ::std::_Tree_const_iterator<::std::_Tree_val<::std::_Tree_simple_types<
+                ::std::pair<::std::string const, ::std::unique_ptr<::webrtc::RTCStats const>>>>>
+        );
         // NOLINTEND
 
     public:

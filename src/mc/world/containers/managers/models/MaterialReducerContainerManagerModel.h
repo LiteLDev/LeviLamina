@@ -5,10 +5,10 @@
 // auto generated inclusion list
 #include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class ContainerScreenContext;
 class ItemStack;
 class Player;
@@ -18,13 +18,11 @@ class MaterialReducerContainerManagerModel : public ::ContainerManagerModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnke2e7fe;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mBlockPos;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    MaterialReducerContainerManagerModel& operator=(MaterialReducerContainerManagerModel const&);
-    MaterialReducerContainerManagerModel(MaterialReducerContainerManagerModel const&);
     MaterialReducerContainerManagerModel();
 
 public:

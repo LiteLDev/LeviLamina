@@ -817,12 +817,19 @@ public:
     virtual void handleStopMusicEvent() = 0;
 
     // vIndex: 199
-    virtual void
-    broadcastLevelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int, ::UserEntityIdentifierComponent const*) = 0;
+    virtual void broadcastLevelEvent(
+        ::SharedTypes::Legacy::LevelEvent,
+        ::Vec3 const&,
+        int,
+        ::UserEntityIdentifierComponent const*
+    ) = 0;
 
     // vIndex: 198
-    virtual void
-    broadcastLevelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&, ::UserEntityIdentifierComponent const*) = 0;
+    virtual void broadcastLevelEvent(
+        ::SharedTypes::Legacy::LevelEvent,
+        ::CompoundTag const&,
+        ::UserEntityIdentifierComponent const*
+    ) = 0;
 
     // vIndex: 201
     virtual void broadcastLocalEvent(::BlockSource&, ::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int) = 0;
@@ -992,8 +999,12 @@ public:
     addBreakingItemParticleEffect(::Vec3 const&, ::BreakingItemParticleData const&, ::ResolvedItemIconInfo const&) = 0;
 
     // vIndex: 248
-    virtual void
-    addBiomeTintedParticleEffect(::HashedString const&, ::BlockPos const&, ::Block const&, ::std::optional<::mce::Color>) = 0;
+    virtual void addBiomeTintedParticleEffect(
+        ::HashedString const&,
+        ::BlockPos const&,
+        ::Block const&,
+        ::std::optional<::mce::Color>
+    ) = 0;
 
     // vIndex: 249
     virtual ::ActorUniqueID getNewUniqueID() = 0;
@@ -1072,12 +1083,16 @@ public:
     virtual ::TradeTables* getTradeTables();
 
     // vIndex: 274
-    virtual void
-    decrementTagCache(::std::string const&, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&) = 0;
+    virtual void decrementTagCache(
+        ::std::string const&,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
+    ) = 0;
 
     // vIndex: 275
-    virtual void
-    incrementTagCache(::std::string const&, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&) = 0;
+    virtual void incrementTagCache(
+        ::std::string const&,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
+    ) = 0;
 
     // vIndex: 276
     virtual ::Bedrock::NonOwnerPointer<::TagCacheManager> getTagCacheManager() = 0;
@@ -1262,8 +1277,13 @@ public:
     virtual bool getTearingDown() const = 0;
 
     // vIndex: 336
-    virtual void
-    takePicture(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&, ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>) = 0;
+    virtual void takePicture(
+        ::cg::ImageBuffer&,
+        ::Actor*,
+        ::Actor*,
+        ::ScreenshotOptions&,
+        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>
+    ) = 0;
 
     // vIndex: 337
     virtual ::Bedrock::NotNullNonOwnerPtr<::LevelSoundManager> getLevelSoundManager() = 0;

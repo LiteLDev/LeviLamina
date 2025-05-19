@@ -194,11 +194,13 @@ public:
         bool                                                   isServerAuthSoundEnabled
     );
 
-    MCNAPI void _queueSoundPacket(::std::variant<
-                                  ::LevelSoundManager::QueuedSoundSendPacket,
-                                  ::LevelSoundManager::QueuedSoundBroadcastPacket,
-                                  ::LevelSoundManager::QueuedSoundBroadcastUserIdPacket,
-                                  ::LevelSoundManager::QueuedSoundBroadcastMultipleUserIdsPacket> packet);
+    MCNAPI void _queueSoundPacket(
+        ::std::variant<
+            ::LevelSoundManager::QueuedSoundSendPacket,
+            ::LevelSoundManager::QueuedSoundBroadcastPacket,
+            ::LevelSoundManager::QueuedSoundBroadcastUserIdPacket,
+            ::LevelSoundManager::QueuedSoundBroadcastMultipleUserIdsPacket> packet
+    );
 
     MCNAPI void broadcastSoundEvent(
         ::IDimension&                          dimension,

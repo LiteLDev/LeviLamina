@@ -90,9 +90,11 @@ public:
 
     MCAPI explicit ItemUseInventoryTransaction(::InventoryTransaction const& transaction);
 
-    MCAPI ::InventoryTransactionError
-    handle(::IItemUseTransactionSubject& player, ::ILegacyItemUseTransactionSubject& legacy, bool isSenderAuthority)
-        const;
+    MCAPI ::InventoryTransactionError handle(
+        ::IItemUseTransactionSubject&       player,
+        ::ILegacyItemUseTransactionSubject& legacy,
+        bool                                isSenderAuthority
+    ) const;
 
     MCAPI ::ItemUseInventoryTransaction& operator=(::ItemUseInventoryTransaction const&);
 

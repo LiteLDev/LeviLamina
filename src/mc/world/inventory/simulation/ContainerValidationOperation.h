@@ -2,19 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/inventory/simulation/ContainerValidationOperationType.h"
+#include "mc/world/inventory/simulation/ContainerValidationSlotData.h"
+#include "mc/world/item/ItemStack.h"
+
 struct ContainerValidationOperation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnka5ccc8;
-    ::ll::UntypedStorage<4, 16>  mUnk374070;
-    ::ll::UntypedStorage<4, 4>   mUnka33f82;
-    ::ll::UntypedStorage<8, 152> mUnk22ab88;
+    ::ll::TypedStorage<4, 4, ::ContainerValidationOperationType> mType;
+    ::ll::TypedStorage<4, 16, ::ContainerValidationSlotData>     mSlotData;
+    ::ll::TypedStorage<4, 4, int>                                mAmount;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                      mStack;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerValidationOperation& operator=(ContainerValidationOperation const&);
-    ContainerValidationOperation(ContainerValidationOperation const&);
-    ContainerValidationOperation();
 };

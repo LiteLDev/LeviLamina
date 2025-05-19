@@ -100,25 +100,27 @@ public:
     getPaletteItem(::HashedString const& paletteId, int index) const /*override*/;
 
     // vIndex: 15
-    virtual ::Bedrock::PubSub::Subscription
-    registerEventListener(::std::function<void(::std::variant<
-                                               ::Editor::EditorBlockPaletteEventItemUpdated,
-                                               ::Editor::EditorBlockPaletteEventSelectedItemIndexChanged,
-                                               ::Editor::EditorBlockPaletteEventActivePaletteChanged,
-                                               ::Editor::EditorBlockPaletteEventPaletteUpdated,
-                                               ::Editor::EditorBlockPaletteEventPaletteRemoved> const&)> callback
+    virtual ::Bedrock::PubSub::Subscription registerEventListener(
+        ::std::function<void(::std::variant<
+                             ::Editor::EditorBlockPaletteEventItemUpdated,
+                             ::Editor::EditorBlockPaletteEventSelectedItemIndexChanged,
+                             ::Editor::EditorBlockPaletteEventActivePaletteChanged,
+                             ::Editor::EditorBlockPaletteEventPaletteUpdated,
+                             ::Editor::EditorBlockPaletteEventPaletteRemoved> const&)> callback
     ) /*override*/;
 
     // vIndex: 7
-    virtual void _handleBlockPaletteActivePaletteChangedPayload(::Editor::Network::
-                                                                    BlockPaletteActivePaletteChangedPayload const&) = 0;
+    virtual void _handleBlockPaletteActivePaletteChangedPayload(
+        ::Editor::Network::BlockPaletteActivePaletteChangedPayload const&
+    ) = 0;
 
     // vIndex: 8
     virtual void _handleBlockPaletteItemChangedPayload(::Editor::Network::BlockPaletteItemChangedPayload const&) = 0;
 
     // vIndex: 9
-    virtual void _handleBlockPaletteSelectedIndexChangedPayload(::Editor::Network::
-                                                                    BlockPaletteSelectedIndexChangedPayload const&) = 0;
+    virtual void _handleBlockPaletteSelectedIndexChangedPayload(
+        ::Editor::Network::BlockPaletteSelectedIndexChangedPayload const&
+    ) = 0;
 
     // vIndex: 10
     virtual void _handleBlockPaletteChangedPayload(::Editor::Network::BlockPaletteChangedPayload const&) = 0;
@@ -199,13 +201,14 @@ public:
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>>
     $getPaletteItem(::HashedString const& paletteId, int index) const;
 
-    MCNAPI ::Bedrock::PubSub::Subscription
-    $registerEventListener(::std::function<void(::std::variant<
-                                                ::Editor::EditorBlockPaletteEventItemUpdated,
-                                                ::Editor::EditorBlockPaletteEventSelectedItemIndexChanged,
-                                                ::Editor::EditorBlockPaletteEventActivePaletteChanged,
-                                                ::Editor::EditorBlockPaletteEventPaletteUpdated,
-                                                ::Editor::EditorBlockPaletteEventPaletteRemoved> const&)> callback);
+    MCNAPI ::Bedrock::PubSub::Subscription $registerEventListener(
+        ::std::function<void(::std::variant<
+                             ::Editor::EditorBlockPaletteEventItemUpdated,
+                             ::Editor::EditorBlockPaletteEventSelectedItemIndexChanged,
+                             ::Editor::EditorBlockPaletteEventActivePaletteChanged,
+                             ::Editor::EditorBlockPaletteEventPaletteUpdated,
+                             ::Editor::EditorBlockPaletteEventPaletteRemoved> const&)> callback
+    );
     // NOLINTEND
 
 public:

@@ -78,8 +78,14 @@ public:
 
     MCNAPI void OnTransportReady();
 
-    MCNAPI
-    SctpDataChannel(::webrtc::InternalDataChannelInit const&, ::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface>, ::std::string const&, bool, ::rtc::Thread*, ::rtc::Thread*);
+    MCNAPI SctpDataChannel(
+        ::webrtc::InternalDataChannelInit const&,
+        ::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface>,
+        ::std::string const&,
+        bool,
+        ::rtc::Thread*,
+        ::rtc::Thread*
+    );
 
     MCNAPI bool SendControlMessage(::rtc::CopyOnWriteBuffer const&);
 
@@ -97,18 +103,32 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::webrtc::scoped_refptr<::webrtc::SctpDataChannel>
-    Create(::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface>, ::std::string const&, bool, ::webrtc::InternalDataChannelInit const&, ::rtc::Thread*, ::rtc::Thread*);
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::SctpDataChannel> Create(
+        ::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface>,
+        ::std::string const&,
+        bool,
+        ::webrtc::InternalDataChannelInit const&,
+        ::rtc::Thread*,
+        ::rtc::Thread*
+    );
 
-    MCNAPI static ::webrtc::scoped_refptr<::webrtc::DataChannelInterface>
-        CreateProxy(::webrtc::scoped_refptr<::webrtc::SctpDataChannel>, ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag>);
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::DataChannelInterface> CreateProxy(
+        ::webrtc::scoped_refptr<::webrtc::SctpDataChannel>,
+        ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag>
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::webrtc::InternalDataChannelInit const&, ::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface>, ::std::string const&, bool, ::rtc::Thread*, ::rtc::Thread*);
+    MCNAPI void* $ctor(
+        ::webrtc::InternalDataChannelInit const&,
+        ::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface>,
+        ::std::string const&,
+        bool,
+        ::rtc::Thread*,
+        ::rtc::Thread*
+    );
     // NOLINTEND
 
 public:

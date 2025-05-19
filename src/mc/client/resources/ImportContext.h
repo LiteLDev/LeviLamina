@@ -80,8 +80,13 @@ public:
     virtual void notifyMultiImportStarted(int) = 0;
 
     // vIndex: 14
-    virtual void
-    notifyImportSucceeded(::ResourcePack const*, ::ImportSuccess, ::PackManifest const&, ::PackReport const&, ::Core::Path const&) = 0;
+    virtual void notifyImportSucceeded(
+        ::ResourcePack const*,
+        ::ImportSuccess,
+        ::PackManifest const&,
+        ::PackReport const&,
+        ::Core::Path const&
+    ) = 0;
 
     // vIndex: 15
     virtual void notifyImportFailed(::ImportFailure, ::PackManifest const*, ::PackReport*, ::Core::Path const&) = 0;

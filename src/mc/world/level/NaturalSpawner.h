@@ -58,9 +58,13 @@ public:
     filteredSpawningCategories(::br::spawn::State const&, bool, bool, bool) const /*override*/;
 
     // vIndex: 19
-    virtual void
-    spawnForChunk(::BlockSource&, ::LevelChunkVolumeData const&, ::br::spawn::State&, ::gsl::span<::SpawnCategory::Type>, ::IRandom&)
-        const /*override*/;
+    virtual void spawnForChunk(
+        ::BlockSource&,
+        ::LevelChunkVolumeData const&,
+        ::br::spawn::State&,
+        ::gsl::span<::SpawnCategory::Type>,
+        ::IRandom&
+    ) const /*override*/;
 
     // vIndex: 20
     virtual void spawnMobsForChunkGeneration(::BlockSource&, ::Biome const&, ::ChunkPos, ::IRandom&) const /*override*/;
@@ -105,9 +109,14 @@ public:
     virtual uint getSpawnableTickedMobCountPrevious() const /*override*/;
 
     // vIndex: 16
-    virtual ::std::unordered_set<::ActorUniqueID>
-    spawnMobGroup(::BlockSource&, ::std::string const&, ::Vec3 const&, bool, bool, ::std::function<void(::Mob&)>&&) /*override*/
-        ;
+    virtual ::std::unordered_set<::ActorUniqueID> spawnMobGroup(
+        ::BlockSource&,
+        ::std::string const&,
+        ::Vec3 const&,
+        bool,
+        bool,
+        ::std::function<void(::Mob&)>&&
+    ) /*override*/;
     // NOLINTEND
 
 public:

@@ -22,11 +22,12 @@ public:
     MCNAPI static void
     _doEyeOfEnderPreNormalTickSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
 
-    MCNAPI static void
-    _tickEyeOfEnderPreNormalTickSystem(::ViewT<
-                                       ::StrictEntityContext,
-                                       ::Include<::ActorMovementTickNeededComponent, ::EyeOfEnderFlagComponent>,
-                                       ::ActorOwnerComponent> view);
+    MCNAPI static void _tickEyeOfEnderPreNormalTickSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::EyeOfEnderFlagComponent>,
+            ::ActorOwnerComponent> view
+    );
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND

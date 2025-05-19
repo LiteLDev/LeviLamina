@@ -2,13 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/inventory/simulation/ContainerScreenRequestActionType.h"
+#include "mc/world/inventory/simulation/ContainerValidationOutcome.h"
+
+// auto generated forward declare list
+// clang-format off
+struct ContainerValidationOperation;
+// clang-format on
+
 struct ContainerValidationResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk4a3990;
-    ::ll::UntypedStorage<4, 4>  mUnkd9c671;
-    ::ll::UntypedStorage<1, 1>  mUnk25938f;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ContainerValidationOperation>> mOperations;
+    ::ll::TypedStorage<4, 4, ::ContainerValidationOutcome>                   mOutcome;
+    ::ll::TypedStorage<1, 1, ::ContainerScreenRequestActionType>             mRequestActionType;
     // NOLINTEND
 
 public:

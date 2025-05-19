@@ -30,9 +30,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void
-    _incrementAge(::BlockSource& region, ::Block const& block, ::BlockPos const& pos, float generatedOxidizeChance)
-        const;
+    MCNAPI void _incrementAge(
+        ::BlockSource&    region,
+        ::Block const&    block,
+        ::BlockPos const& pos,
+        float             generatedOxidizeChance
+    ) const;
 
     MCNAPI ::Block const& getCorrespondingWaxedBlock(::Block const& block) const;
 

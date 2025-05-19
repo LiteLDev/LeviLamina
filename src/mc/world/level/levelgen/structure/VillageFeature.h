@@ -34,9 +34,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4
-    virtual bool
-    isFeatureChunk(::BiomeSource const& biomeSource, ::Random& random, ::ChunkPos const& chunkPos, uint levelSeed, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel, ::Dimension const&) /*override*/
-        ;
+    virtual bool isFeatureChunk(
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    chunkPos,
+        uint                                 levelSeed,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        ::Dimension const&
+    ) /*override*/;
 
     // vIndex: 3
     virtual bool getNearestGeneratedFeature(
@@ -80,8 +85,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool
-    $isFeatureChunk(::BiomeSource const& biomeSource, ::Random& random, ::ChunkPos const& chunkPos, uint levelSeed, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel, ::Dimension const&);
+    MCAPI bool $isFeatureChunk(
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    chunkPos,
+        uint                                 levelSeed,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        ::Dimension const&
+    );
 
     MCAPI bool $getNearestGeneratedFeature(
         ::Dimension&                           dimension,

@@ -150,8 +150,8 @@ public:
     virtual ::Scripting::Result<void> _broadcastToClients(::Editor::Network::INetworkPayload& payload) /*override*/;
 
     // vIndex: 7
-    virtual ::Scripting::Result<void> _broadcastToClientManagers(::Editor::Network::INetworkPayload& payload
-    ) /*override*/;
+    virtual ::Scripting::Result<void>
+    _broadcastToClientManagers(::Editor::Network::INetworkPayload& payload) /*override*/;
 
     // vIndex: 8
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> _listenFor(

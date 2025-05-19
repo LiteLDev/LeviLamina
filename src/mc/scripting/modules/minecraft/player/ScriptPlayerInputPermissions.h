@@ -30,11 +30,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<bool, ::Scripting::Error> _getPermissionCategoryV1(::ClientInputLockCategory category
-    ) const;
+    MCNAPI ::Scripting::Result<bool, ::Scripting::Error>
+    _getPermissionCategoryV1(::ClientInputLockCategory category) const;
 
-    MCNAPI ::Scripting::Result<bool, ::Scripting::Error> _getPermissionCategoryV2(::ClientInputLockCategory category
-    ) const;
+    MCNAPI ::Scripting::Result<bool, ::Scripting::Error>
+    _getPermissionCategoryV2(::ClientInputLockCategory category) const;
 
     MCNAPI ::Scripting::Result<void> _setPermissionCategoryV1(::ClientInputLockCategory category, bool isEnabled);
 

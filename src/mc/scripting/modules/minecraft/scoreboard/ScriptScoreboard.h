@@ -90,10 +90,11 @@ public:
 
     MCNAPI void removeIdentityById(::ScoreboardId const& id);
 
-    MCNAPI ::Scripting::Result_deprecated<bool>
-    removeObjective(::std::variant<
-                    ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective>,
-                    ::std::string> const& objectiveId);
+    MCNAPI ::Scripting::Result_deprecated<bool> removeObjective(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective>,
+            ::std::string> const& objectiveId
+    );
 
     MCNAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective>>>

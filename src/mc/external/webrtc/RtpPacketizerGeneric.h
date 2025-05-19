@@ -24,8 +24,11 @@ public:
 
     MCNAPI RtpPacketizerGeneric(::rtc::ArrayView<uchar const>, ::webrtc::RtpPacketizer::PayloadSizeLimits);
 
-    MCNAPI
-    RtpPacketizerGeneric(::rtc::ArrayView<uchar const>, ::webrtc::RtpPacketizer::PayloadSizeLimits, ::webrtc::RTPVideoHeader const&);
+    MCNAPI RtpPacketizerGeneric(
+        ::rtc::ArrayView<uchar const>,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits,
+        ::webrtc::RTPVideoHeader const&
+    );
     // NOLINTEND
 
 public:

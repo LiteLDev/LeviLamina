@@ -73,8 +73,8 @@ public:
     createContainer() /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void> destroyContainer(::WeakRef<::Editor::Selection::SelectionContainer> containerRef
-    ) /*override*/;
+    virtual ::Scripting::Result<void>
+    destroyContainer(::WeakRef<::Editor::Selection::SelectionContainer> containerRef) /*override*/;
 
     // vIndex: 3
     virtual ::StackRefResult<::Editor::Selection::SelectionContainer> getPrimaryContainer() const /*override*/;
@@ -87,8 +87,8 @@ public:
     virtual ::Scripting::Result_deprecated<::std::vector<::mce::UUID>> getContainerIdList() const /*override*/;
 
     // vIndex: 6
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-    registerSelectionEventListener(::std::function<void(::Editor::Services::SelectionEvent const&)> callback
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> registerSelectionEventListener(
+        ::std::function<void(::Editor::Services::SelectionEvent const&)> callback
     ) /*override*/;
     // NOLINTEND
 

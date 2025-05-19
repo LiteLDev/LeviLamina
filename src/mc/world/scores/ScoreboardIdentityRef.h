@@ -25,8 +25,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::string const& getName(::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver
-    ) const;
+    MCNAPI ::std::string const&
+    getName(::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver) const;
 
     MCNAPI bool modifyScoreInObjective(int& result, ::Objective& objective, int score, ::PlayerScoreSetFunction fn);
 

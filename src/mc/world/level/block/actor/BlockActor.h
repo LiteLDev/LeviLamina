@@ -153,8 +153,8 @@ public:
     virtual ::Bedrock::Safety::RedactableString const& getCustomName() const;
 
     // vIndex: 26
-    virtual ::std::string const& getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context
-    );
+    virtual ::std::string const&
+    getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context);
 
     // vIndex: 27
     virtual ::std::string getName() const;

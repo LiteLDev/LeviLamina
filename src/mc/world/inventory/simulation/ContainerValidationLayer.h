@@ -2,21 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ContainerValidationCommitObject;
+class ItemStack;
+class SimpleSparseContainer;
+struct AllowedAnywhereConsume;
+struct ExpectedAnywhereConsume;
+struct ExpectedSlotConsume;
+// clang-format on
+
 struct ContainerValidationLayer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk1b50e7;
-    ::ll::UntypedStorage<8, 24> mUnkf351c0;
-    ::ll::UntypedStorage<8, 24> mUnk85d597;
-    ::ll::UntypedStorage<8, 24> mUnk73baa3;
-    ::ll::UntypedStorage<8, 24> mUnk403f60;
-    ::ll::UntypedStorage<8, 24> mUnk259a6e;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::SimpleSparseContainer>>> mContainers;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ItemStack, bool>>>             mDropItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpectedSlotConsume>>                      mExpectedSlotConsumes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpectedAnywhereConsume>>                  mExpectedAnywhereConsumes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AllowedAnywhereConsume>>                   mAllowedAnywhereConsumes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::ContainerValidationCommitObject>>> mCommitObjects;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerValidationLayer& operator=(ContainerValidationLayer const&);
-    ContainerValidationLayer(ContainerValidationLayer const&);
-    ContainerValidationLayer();
 };

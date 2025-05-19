@@ -54,8 +54,12 @@ public:
     // NOLINTBEGIN
     MCAPI ResourcePackFileUploadManager(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
 
-    MCAPI void
-    _archiveAndUploadPackToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int slotIndex, ::std::string const&);
+    MCAPI void _archiveAndUploadPackToRealmStorage(
+        ::std::string const& uploadId,
+        ::Core::Path const&  path,
+        int                  slotIndex,
+        ::std::string const&
+    );
 
     MCAPI void _extractPackFromZipAndUpload(
         ::std::string const&                     resourcePack,
