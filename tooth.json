@@ -25,7 +25,7 @@
                 {
                     "type": "zip",
                     "urls": [
-                        "https://{{tooth}}/releases/download/v{{version}}/levilamina-release-windows-x64.zip"
+                        "https://{{tooth}}/releases/download/v{{version}}/levilamina-v{{version}}-release-windows-x64.zip"
                     ],
                     "placements": [
                         {

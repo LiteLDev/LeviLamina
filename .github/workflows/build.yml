@@ -72,6 +72,6 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: levilamina-${{ matrix.target_type }}-${{ matrix.mode }}${{ matrix.tests == true && '-tests' || '' }}-windows-x64-${{ github.sha }}
+          name: levilamina-${{ github.sha }}-${{ matrix.target_type }}-${{ matrix.mode }}${{ matrix.tests == true && '-tests' || '' }}-windows-x64
           path: |
             bin/
