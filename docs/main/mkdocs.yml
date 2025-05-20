@@ -35,6 +35,8 @@ nav:
   - Maintainer Guides:
     - maintainer_guides/cpp_style_guide.md
 
+  - Supported Versions: versions.md
+
 theme:
   name: material
   features:
@@ -106,5 +108,6 @@ plugins:
             How-to Guides: 如何做到······
             API 🔗: 接口 🔗
             Maintainer Guides: 维护者指南
+            Supported Versions: 支持的版本
 
   - search
