@@ -11,20 +11,15 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
+struct ItemData;
 // clang-format on
 
 class ItemRegistryPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk160084;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemData>> mItems;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemRegistryPacket& operator=(ItemRegistryPacket const&);
-    ItemRegistryPacket(ItemRegistryPacket const&);
-    ItemRegistryPacket();
 
 public:
     // virtual functions

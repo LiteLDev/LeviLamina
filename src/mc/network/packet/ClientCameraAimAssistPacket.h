@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/packet/ClientCameraAimAssistPacketAction.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
@@ -17,16 +18,10 @@ class ClientCameraAimAssistPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkea905b;
-    ::ll::UntypedStorage<1, 1>  mUnke72235;
-    ::ll::UntypedStorage<1, 1>  mUnkd4537e;
+    ::ll::TypedStorage<8, 32, ::std::string>                      mCameraPresetId;
+    ::ll::TypedStorage<1, 1, ::ClientCameraAimAssistPacketAction> mAction;
+    ::ll::TypedStorage<1, 1, bool>                                mAllowAimAssist;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClientCameraAimAssistPacket& operator=(ClientCameraAimAssistPacket const&);
-    ClientCameraAimAssistPacket(ClientCameraAimAssistPacket const&);
-    ClientCameraAimAssistPacket();
 
 public:
     // virtual functions

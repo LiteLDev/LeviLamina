@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/options/SyncedClientOptionsUpdate.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
@@ -17,14 +18,8 @@ class UpdateClientOptionsPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 2> mUnk4b582d;
+    ::ll::TypedStorage<1, 2, ::SyncedClientOptionsUpdate> mUpdate;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UpdateClientOptionsPacket& operator=(UpdateClientOptionsPacket const&);
-    UpdateClientOptionsPacket(UpdateClientOptionsPacket const&);
-    UpdateClientOptionsPacket();
 
 public:
     // virtual functions

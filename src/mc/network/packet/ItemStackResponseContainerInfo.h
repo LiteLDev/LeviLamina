@@ -27,20 +27,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ItemStackResponseContainerInfo(::ItemStackResponseContainerInfo&&);
+    MCAPI ItemStackResponseContainerInfo(::ItemStackResponseContainerInfo&&);
 
-    MCNAPI ~ItemStackResponseContainerInfo();
+    MCAPI ~ItemStackResponseContainerInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ItemStackResponseContainerInfo&&);
+    MCAPI void* $ctor(::ItemStackResponseContainerInfo&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

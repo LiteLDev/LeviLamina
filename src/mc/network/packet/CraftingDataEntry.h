@@ -35,26 +35,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CraftingDataEntry(::CraftingDataEntry&& entry);
+    MCAPI CraftingDataEntry(::CraftingDataEntry&& entry);
 
-    MCNAPI void fillFromFurnaceAuxRecipe(int itemData, ::ItemInstance const& result, ::HashedString const& tag);
+    MCAPI void fillFromFurnaceAuxRecipe(int itemData, ::ItemInstance const& result, ::HashedString const& tag);
 
-    MCNAPI void fillFromMultiRecipe(::MultiRecipe const& recipe);
+    MCAPI void fillFromMultiRecipe(::MultiRecipe const& recipe);
 
-    MCNAPI void fillFromRecipe(::Recipe const& recipe);
+    MCAPI void fillFromRecipe(::Recipe const& recipe);
 
-    MCNAPI ~CraftingDataEntry();
+    MCAPI ~CraftingDataEntry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::CraftingDataEntry&& entry);
+    MCAPI void* $ctor(::CraftingDataEntry&& entry);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

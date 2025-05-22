@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Color.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
@@ -11,8 +13,6 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-class Vec3;
-namespace mce { class Color; }
 // clang-format on
 
 class ClientboundDebugRendererPacket : public ::Packet {
@@ -33,35 +33,30 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnke77363;
-        ::ll::UntypedStorage<4, 12> mUnkaf4e19;
-        ::ll::UntypedStorage<4, 16> mUnkb348c8;
-        ::ll::UntypedStorage<8, 8>  mUnk6b0c15;
+        ::ll::TypedStorage<8, 32, ::std::string>              text;
+        ::ll::TypedStorage<4, 12, ::Vec3>                     position;
+        ::ll::TypedStorage<4, 16, ::mce::Color>               color;
+        ::ll::TypedStorage<8, 8, ::std::chrono::milliseconds> duration;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DebugMarkerData& operator=(DebugMarkerData const&);
-        DebugMarkerData(DebugMarkerData const&);
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI DebugMarkerData();
+        MCAPI DebugMarkerData();
 
-        MCNAPI ~DebugMarkerData();
+        MCAPI ~DebugMarkerData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor();
+        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
