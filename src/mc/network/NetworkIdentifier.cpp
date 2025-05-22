@@ -1,6 +1,7 @@
 #include "mc/network/NetworkIdentifier.h"
 #include "mc/deps/raknet/RakNet.h"
 #include "mc/deps/raknet/RakPeer.h"
+#include "mc/deps/raknet/SystemAddress.h"
 
 #include "ll/api/service/Bedrock.h"
 

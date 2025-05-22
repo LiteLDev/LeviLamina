@@ -47,6 +47,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Adapted to `1.21.70` @ShrBox @OEOTYAN @RimuruChan
 
+## [1.1.2] - 2025-05-22
+
+### Added
+
+- Added `Actor::getVelocity` (@xiaoqch)
+- Added more constructors to `NewType` (@OEOTYAN)
+
+### Changed
+
+- CI now includes version in release package names (@RimuruChan)
+
+### Fixed
+
+- Fixed hashing for `PlayerScoreboardId` (@xiaoqch)
+- Fixed output format of `NetworkIdentifier::getIPAndPort` (@xiaoqch)
+- Fixed offsets in `StructureTemplate::placeInWorld` (@xiaoqch)
+- Fixed `Actor::getPosDeltaPerSecLength` (#1654) (@xiaoqch)
+- Fixed `PlayerInfo::fromName` (#1655) (@xiaoqch)
+- Fixed `ll:coro::InterruptableSleep::sleepUntil` (@xiaoqch)
+
 ## [1.1.1] - 2025-03-15
 
 ### Fixed
@@ -894,7 +914,8 @@ For lip and tooth-hub test only.
 
 [Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.2.0-rc.2...HEAD
 [1.2.0-rc.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.2.0-rc.1...v1.2.0-rc.2
-[1.2.0-rc.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.1.1...v1.2.0-rc.1
+[1.2.0-rc.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.1.2...v1.2.0-rc.1
+[1.1.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.1.0-rc.1...v1.1.0
 [1.1.0-rc.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.1...v1.1.0-rc.1
