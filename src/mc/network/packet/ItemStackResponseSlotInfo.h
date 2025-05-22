@@ -32,20 +32,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ItemStackResponseSlotInfo(::ItemStackResponseSlotInfo&&);
+    MCAPI ItemStackResponseSlotInfo(::ItemStackResponseSlotInfo&&);
 
-    MCNAPI ~ItemStackResponseSlotInfo();
+    MCAPI ~ItemStackResponseSlotInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ItemStackResponseSlotInfo&&);
+    MCAPI void* $ctor(::ItemStackResponseSlotInfo&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

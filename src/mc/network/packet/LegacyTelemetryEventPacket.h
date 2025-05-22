@@ -83,92 +83,92 @@ public:
         ::ll::TypedStorage<1, 1, uchar>                              mUsePlayerID;
         union {
             struct {
-                ::ll::UntypedStorage<4, 4> mUnkdb4be3;
+                ::ll::TypedStorage<4, 4, ::MinecraftEventing::AchievementIds> mAchievementId;
             } Achievement;
             struct {
-                ::ll::UntypedStorage<8, 8> mUnkb274d3;
-                ::ll::UntypedStorage<4, 4> mUnkbb6585;
-                ::ll::UntypedStorage<4, 4> mUnk55e0e4;
-                ::ll::UntypedStorage<4, 4> mUnk99deb4;
-                ::ll::UntypedStorage<1, 1> mUnk1f638a;
+                ::ll::TypedStorage<8, 8, int64>                                mInteractedEntityId;
+                ::ll::TypedStorage<4, 4, int>                                  mInteractedEntityType;
+                ::ll::TypedStorage<4, 4, ::MinecraftEventing::InteractionType> mInteractionType;
+                ::ll::TypedStorage<4, 4, int>                                  mInteractedEntityVariant;
+                ::ll::TypedStorage<1, 1, uchar>                                mInteractedEntityColor;
             } Interaction;
             struct {
-                ::ll::UntypedStorage<4, 4> mUnk5b8083;
+                ::ll::TypedStorage<4, 4, int> mBuiltInDimension;
             } PortalCreated;
             struct {
-                ::ll::UntypedStorage<4, 4> mUnkb9fbc9;
-                ::ll::UntypedStorage<4, 4> mUnk43c3ff;
+                ::ll::TypedStorage<4, 4, int> mFromDimension;
+                ::ll::TypedStorage<4, 4, int> mToDimension;
             } PortalUsed;
             struct {
-                ::ll::UntypedStorage<8, 8> mUnk9a2c1e;
-                ::ll::UntypedStorage<8, 8> mUnk3e0977;
-                ::ll::UntypedStorage<4, 4> mUnk8eff09;
-                ::ll::UntypedStorage<4, 4> mUnk680d77;
-                ::ll::UntypedStorage<4, 4> mUnkfbdd6e;
+                ::ll::TypedStorage<8, 8, int64>       mKillerEntityId;
+                ::ll::TypedStorage<8, 8, int64>       mKilledMobId;
+                ::ll::TypedStorage<4, 4, ::ActorType> mDamageChildType;
+                ::ll::TypedStorage<4, 4, int>         mDamageSource;
+                ::ll::TypedStorage<4, 4, int>         mTraderTier;
             } MobKilled;
             struct {
-                ::ll::UntypedStorage<2, 2> mUnkbcdce3;
-                ::ll::UntypedStorage<4, 4> mUnk3a1996;
-                ::ll::UntypedStorage<2, 2> mUnkc523de;
+                ::ll::TypedStorage<2, 2, short> mContentsType;
+                ::ll::TypedStorage<4, 4, uint>  mContentsColor;
+                ::ll::TypedStorage<2, 2, short> mFillLevel;
             } CauldronUsed;
             struct {
-                ::ll::UntypedStorage<4, 4> mUnk874988;
-                ::ll::UntypedStorage<4, 4> mUnk8f020b;
-                ::ll::UntypedStorage<4, 4> mUnkea1370;
-                ::ll::UntypedStorage<1, 1> mUnk7082cc;
+                ::ll::TypedStorage<4, 4, int>  mKillerId;
+                ::ll::TypedStorage<4, 4, int>  mKillerVariant;
+                ::ll::TypedStorage<4, 4, int>  mDamageSource;
+                ::ll::TypedStorage<1, 1, bool> mInRaid;
             } PlayerDied;
             struct {
-                ::ll::UntypedStorage<4, 4> mUnk5caf87;
-                ::ll::UntypedStorage<8, 8> mUnk10731e;
-                ::ll::UntypedStorage<4, 4> mUnkd9ef6c;
+                ::ll::TypedStorage<4, 4, int>   mPartySize;
+                ::ll::TypedStorage<8, 8, int64> mBossUniqueId;
+                ::ll::TypedStorage<4, 4, int>   mBossType;
             } BossKilled;
             struct {
-                ::ll::UntypedStorage<4, 4> mUnkc66542;
-                ::ll::UntypedStorage<4, 4> mUnk13a5ca;
+                ::ll::TypedStorage<4, 4, int> mResult;
+                ::ll::TypedStorage<4, 4, int> mResultNumber;
             } AgentCommand;
             struct {
-                ::ll::UntypedStorage<4, 4> mUnk49f527;
-                ::ll::UntypedStorage<4, 4> mUnkc99546;
+                ::ll::TypedStorage<4, 4, int> mSuccessCount;
+                ::ll::TypedStorage<4, 4, int> mErrorCount;
             } SlashCommand;
             struct {
-                ::ll::UntypedStorage<4, 4> mUnk4f57ec;
-                ::ll::UntypedStorage<4, 4> mUnkbbbeb6;
-                ::ll::UntypedStorage<1, 1> mUnk3bb98f;
+                ::ll::TypedStorage<4, 4, int>   mBabyType;
+                ::ll::TypedStorage<4, 4, int>   mBabyVariant;
+                ::ll::TypedStorage<1, 1, uchar> mBabyColor;
             } MobBorn;
             struct {
-                ::ll::UntypedStorage<2, 2> mUnk24c1fa;
-                ::ll::UntypedStorage<4, 4> mUnk4aef55;
+                ::ll::TypedStorage<2, 2, short>                                        mItemId;
+                ::ll::TypedStorage<4, 4, ::MinecraftEventing::POIBlockInteractionType> mInteractionType;
             } POICauldronUsed;
             struct {
-                ::ll::UntypedStorage<2, 2> mUnk7119ba;
-                ::ll::UntypedStorage<4, 4> mUnk762659;
+                ::ll::TypedStorage<2, 2, short>                                        mItemId;
+                ::ll::TypedStorage<4, 4, ::MinecraftEventing::POIBlockInteractionType> mInteractionType;
             } ComposterUsed;
             struct {
-                ::ll::UntypedStorage<2, 2> mUnk20ab2e;
+                ::ll::TypedStorage<2, 2, short> mItemId;
             } BellUsed;
             struct {
-                ::ll::UntypedStorage<4, 4> mUnk2d4fb9;
-                ::ll::UntypedStorage<4, 4> mUnk13af5c;
-                ::ll::UntypedStorage<1, 1> mUnk2fa508;
+                ::ll::TypedStorage<4, 4, int>  mCurrentWave;
+                ::ll::TypedStorage<4, 4, int>  mTotalWaves;
+                ::ll::TypedStorage<1, 1, bool> mSuccess;
             } RaidUpdate;
             struct {
-                ::ll::UntypedStorage<4, 4> mUnk7e052c;
+                ::ll::TypedStorage<4, 4, int> mRedstoneLevel;
             } TargetBlockHit;
             struct {
-                ::ll::UntypedStorage<4, 4> mUnkd2152b;
-                ::ll::UntypedStorage<1, 1> mUnkd18694;
+                ::ll::TypedStorage<4, 4, int>  mItemId;
+                ::ll::TypedStorage<1, 1, bool> mWasTargetingBarteringPlayer;
             } PiglinBarter;
             struct {
-                ::ll::UntypedStorage<4, 4> mUnkee799b;
+                ::ll::TypedStorage<4, 4, int> mBlockID;
             } PlayerWaxedOrUnwaxedCopper;
             struct {
-                ::ll::UntypedStorage<4, 4> mUnke2ed2e;
+                ::ll::TypedStorage<4, 4, int> score;
             } CodeBuilderScoreboard;
             struct {
-                ::ll::UntypedStorage<2, 2> mUnk5e4d71;
-                ::ll::UntypedStorage<4, 4> mUnkc09cc4;
-                ::ll::UntypedStorage<4, 4> mUnk5c7bb4;
-                ::ll::UntypedStorage<4, 4> mUnk7bb7ce;
+                ::ll::TypedStorage<2, 2, short> mItemId;
+                ::ll::TypedStorage<4, 4, int>   mItemAux;
+                ::ll::TypedStorage<4, 4, int>   mUseMethod;
+                ::ll::TypedStorage<4, 4, int>   mCount;
             } ItemUsedEvent;
         };
         ::ll::TypedStorage<8, 32, ::std::string> mEntityName;
@@ -188,23 +188,23 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Data();
+        MCAPI Data();
 
-        MCNAPI ::LegacyTelemetryEventPacket::Data& operator=(::LegacyTelemetryEventPacket::Data&&);
+        MCAPI ::LegacyTelemetryEventPacket::Data& operator=(::LegacyTelemetryEventPacket::Data&&);
 
-        MCNAPI ~Data();
+        MCAPI ~Data();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor();
+        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 

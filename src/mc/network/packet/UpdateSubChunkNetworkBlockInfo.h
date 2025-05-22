@@ -29,9 +29,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI UpdateSubChunkNetworkBlockInfo(::UpdateSubChunkNetworkBlockInfo const&);
+    MCAPI UpdateSubChunkNetworkBlockInfo(::UpdateSubChunkNetworkBlockInfo const&);
 
-    MCNAPI UpdateSubChunkNetworkBlockInfo(
+    MCAPI UpdateSubChunkNetworkBlockInfo(
         ::BlockPos const&              pos,
         uint                           blockId,
         uchar                          updateFlags,
@@ -42,8 +42,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::UpdateSubChunkNetworkBlockInfo const&);
+    MCAPI void* $ctor(::UpdateSubChunkNetworkBlockInfo const&);
 
-    MCNAPI void* $ctor(::BlockPos const& pos, uint blockId, uchar updateFlags, ::ActorBlockSyncMessage const& syncMsg);
+    MCAPI void* $ctor(::BlockPos const& pos, uint blockId, uchar updateFlags, ::ActorBlockSyncMessage const& syncMsg);
     // NOLINTEND
 };

@@ -24,12 +24,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~PacksInfoData();
+    MCAPI ~PacksInfoData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

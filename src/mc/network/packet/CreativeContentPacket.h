@@ -7,12 +7,16 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/world/inventory/network/TypedServerNetId.h"
+#include "mc/world/item/CreativeItemCategory.h"
+#include "mc/world/item/NetworkItemInstanceDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
 class CreativeItemRegistry;
 class ReadOnlyBinaryStream;
+struct CreativeItemNetIdTag;
 // clang-format on
 
 class CreativeContentPacket : public ::Packet {
@@ -28,33 +32,21 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnkccf04d;
-        ::ll::UntypedStorage<8, 32> mUnkdd7edd;
-        ::ll::UntypedStorage<8, 64> mUnkba42b6;
+        ::ll::TypedStorage<4, 4, ::CreativeItemCategory const>           mCreativeItemCategory;
+        ::ll::TypedStorage<8, 32, ::std::string const>                   mName;
+        ::ll::TypedStorage<8, 64, ::NetworkItemInstanceDescriptor const> mIcon;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CreativeGroupInfoDescription& operator=(CreativeGroupInfoDescription const&);
-        CreativeGroupInfoDescription(CreativeGroupInfoDescription const&);
-        CreativeGroupInfoDescription();
     };
 
     struct CreativeItemEntryDescription {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnkc332b5;
-        ::ll::UntypedStorage<8, 64> mUnk6cc13a;
-        ::ll::UntypedStorage<4, 4>  mUnk16e343;
-        ::ll::UntypedStorage<4, 4>  mUnk293c03;
+        ::ll::TypedStorage<4, 4, ::CreativeItemNetId const>              mCreativeItemNetId;
+        ::ll::TypedStorage<8, 64, ::NetworkItemInstanceDescriptor const> mItemDescriptor;
+        ::ll::TypedStorage<4, 4, uint const>                             mIndex;
+        ::ll::TypedStorage<4, 4, uint const>                             mGroupIndex;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CreativeItemEntryDescription& operator=(CreativeItemEntryDescription const&);
-        CreativeItemEntryDescription(CreativeItemEntryDescription const&);
-        CreativeItemEntryDescription();
     };
 
 public:
