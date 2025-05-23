@@ -56,7 +56,7 @@ public:
 
     template <class T>
     LL_CONSTEXPR23 bool isA() noexcept {
-        return mInfo ? typeid(T) == typeid(mInfo.get()) : false;
+        return mInfo ? typeid(T) == typeid(*mInfo) : false;
     }
     template <class T>
     LL_CONSTEXPR23 T& as() noexcept {
