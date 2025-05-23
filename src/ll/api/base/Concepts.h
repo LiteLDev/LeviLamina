@@ -68,7 +68,7 @@ concept IsDispatcher = requires(T t) {
     t.call();
 };
 
-struct LL_EBO VectorBaseTag {};
+struct LL_EBO VectorBaseTag{};
 
 template <typename T>
 concept IsVectorBase = std::is_base_of_v<VectorBaseTag, T>;
@@ -79,7 +79,9 @@ concept Specializes = traits::is_specialization_of_v<T, Z>;
 template <class T>
 concept TupleLike = requires(T t) {
     std::tuple_size<std::remove_cvref_t<T>>::value;
-    std::get<0>(t);
+    []<std::size_t... I>(T&& t, std::index_sequence<I...>) {
+        ((void)std::get<I>(std::forward<T>(t)), ...);
+    }(std::forward<T>(t), std::make_index_sequence<std::tuple_size<std::remove_cvref_t<T>>::value>{});
 };
 
 template <class T>
