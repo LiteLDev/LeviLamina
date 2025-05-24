@@ -45,7 +45,7 @@ public:
         other.mLastMatch = nullptr;
     }
 
-    [[nodiscard]] constexpr HashedString& operator=(HashedString const& other) noexcept {
+    constexpr HashedString& operator=(HashedString const& other) noexcept {
         if (this == &other) {
             return *this;
         }
@@ -55,7 +55,7 @@ public:
         return *this;
     }
 
-    [[nodiscard]] constexpr HashedString& operator=(HashedString&& other) noexcept {
+    constexpr HashedString& operator=(HashedString&& other) noexcept {
         if (this == &other) {
             return *this;
         }
