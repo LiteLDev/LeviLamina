@@ -20,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                     mIncludeNetIds;
-    ::ll::TypedStorage<4, 24, ::ItemStackNetIdVariant> mNetIdVariant;
+    ::ll::TypedStorage<8, 24, ::ItemStackNetIdVariant> mNetIdVariant;
     ::ll::TypedStorage<4, 4, uint>                     mBlockRuntimeId;
     ::ll::TypedStorage<8, 32, ::std::string>           mUserDataBuffer;
     // NOLINTEND
