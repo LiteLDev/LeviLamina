@@ -26,12 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FullPlayerInventoryWrapper& operator=(FullPlayerInventoryWrapper const&);
-    FullPlayerInventoryWrapper(FullPlayerInventoryWrapper const&);
-    FullPlayerInventoryWrapper();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI int _clearSimpleContainerItem(::SimpleContainer& container, ::ContainerID containerId, int slot);
