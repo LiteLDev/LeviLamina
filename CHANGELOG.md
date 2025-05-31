@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2025-05-31
+
+### Added
+
+- Completed IAsyncResult @Dofes
+- Completed NetworkedItemComponent @Dofes
+
+### Changed
+
+- Removed unnecessary [[nodiscard]] attributes from HashedString assignment operators @xiaoqch
+- Removed constructor for ChunkPos @ShrBox
+- Removed constructor prevention for FullPlayerInventoryWrapper @RimuruChan
+- Update headers @RimuruChan
+
+### Fixed
+
+- Fixed the performance issue in 1.2.0-rc.2
+- Corrected type check in ll::Expected::isA method @xiaoqch
+- Fixed ll::concepts::TupleLike for zero-size tuple @xiaoqch
+- Fixed NetworkItemStackDescriptor align @Dofes
+- Improved ActorHurtEvent [#1664] @ShrBox
+
 ## [1.2.0-rc.2] - 2025-05-20
 
 ### Added
@@ -911,8 +933,10 @@ For lip and tooth-hub test only.
 [#1622]: https://github.com/LiteLDev/LeviLamina/issues/1622
 [#1631]: https://github.com/LiteLDev/LeviLamina/issues/1631
 [#1636]: https://github.com/LiteLDev/LeviLamina/issues/1636
+[#1664]: https://github.com/LiteLDev/LeviLamina/issues/1664
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.2.0-rc.2...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.2.0-rc.2...v1.2.0
 [1.2.0-rc.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.2.0-rc.1...v1.2.0-rc.2
 [1.2.0-rc.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.1.2...v1.2.0-rc.1
 [1.1.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.1.1...v1.1.2
