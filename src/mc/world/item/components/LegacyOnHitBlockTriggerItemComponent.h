@@ -44,27 +44,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit LegacyOnHitBlockTriggerItemComponent(::LegacyOnHitBlockTriggerItemComponentData&& componentData);
+    MCAPI explicit LegacyOnHitBlockTriggerItemComponent(::LegacyOnHitBlockTriggerItemComponentData&& componentData);
 
-    MCNAPI void _onHitBlock(::ItemStack& item, ::Block const& blockPos, ::BlockPos const& attacker, ::Mob&);
+    MCAPI void _onHitBlock(::ItemStack& item, ::Block const& blockPos, ::BlockPos const& attacker, ::Mob&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::LegacyOnHitBlockTriggerItemComponentData&& componentData);
+    MCAPI void* $ctor(::LegacyOnHitBlockTriggerItemComponentData&& componentData);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent();
     // NOLINTEND
 
 public:

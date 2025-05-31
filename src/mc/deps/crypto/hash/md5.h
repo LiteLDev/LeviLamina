@@ -11,21 +11,15 @@ class md5 : public ::Crypto::Hash::IHash {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkc62ebb;
-    ::ll::UntypedStorage<4, 4>  mUnk114d4c;
-    ::ll::UntypedStorage<4, 4>  mUnk9cb5c7;
-    ::ll::UntypedStorage<4, 4>  mUnkeed0ca;
-    ::ll::UntypedStorage<4, 4>  mUnk26ccef;
-    ::ll::UntypedStorage<4, 4>  mUnkdd0605;
-    ::ll::UntypedStorage<1, 64> mUnk899a7b;
-    ::ll::UntypedStorage<4, 64> mUnkc290fc;
+    ::ll::TypedStorage<4, 4, uint>       _lo;
+    ::ll::TypedStorage<4, 4, uint>       _hi;
+    ::ll::TypedStorage<4, 4, uint>       _a;
+    ::ll::TypedStorage<4, 4, uint>       _b;
+    ::ll::TypedStorage<4, 4, uint>       _c;
+    ::ll::TypedStorage<4, 4, uint>       _d;
+    ::ll::TypedStorage<1, 64, uchar[64]> _buffer;
+    ::ll::TypedStorage<4, 64, uint[16]>  _block;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    md5& operator=(md5 const&);
-    md5(md5 const&);
-    md5();
 
 public:
     // virtual functions
@@ -49,19 +43,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void const* _body(void const* data, uint size);
+    MCAPI void const* _body(void const* data, uint size);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $reset();
+    MCAPI void $reset();
 
-    MCNAPI void $update(void const* data, uint size);
+    MCAPI void $update(void const* data, uint size);
 
-    MCNAPI void $final(uchar* result);
+    MCAPI void $final(uchar* result);
 
-    MCNAPI uint64 $resultSize() const;
+    MCFOLD uint64 $resultSize() const;
     // NOLINTEND
 
 public:

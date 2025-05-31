@@ -47,34 +47,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::ListTag>
+    MCAPI ::std::unique_ptr<::ListTag>
     serializeStorageItem(::FullContainerName const& name, ::SaveContext const& saveContext) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(
+    MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
 
-    MCNAPI static void use(bool& result, ::ItemStack const& item, ::Player& player);
+    MCAPI static void use(bool& result, ::ItemStack const& item, ::Player& player);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent();
     // NOLINTEND
 
 public:

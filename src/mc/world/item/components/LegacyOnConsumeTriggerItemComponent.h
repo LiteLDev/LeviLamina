@@ -42,27 +42,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit LegacyOnConsumeTriggerItemComponent(::LegacyOnConsumeTriggerItemComponentData&& data);
+    MCAPI explicit LegacyOnConsumeTriggerItemComponent(::LegacyOnConsumeTriggerItemComponentData&& data);
 
-    MCNAPI void _consume(::ItemStack const& item, ::ItemStack& actor, ::Actor&);
+    MCAPI void _consume(::ItemStack const& item, ::ItemStack& actor, ::Actor&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::LegacyOnConsumeTriggerItemComponentData&& data);
+    MCAPI void* $ctor(::LegacyOnConsumeTriggerItemComponentData&& data);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent();
     // NOLINTEND
 
 public:

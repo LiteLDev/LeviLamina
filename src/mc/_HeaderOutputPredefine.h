@@ -139,6 +139,7 @@ struct _IP_ADAPTER_PREFIX_XP;
 struct sockaddr_storage;
 struct sockaddr_in;
 struct sockaddr_in6;
+struct evp_md_ctx_st;
 
 #include "mc/deps/core/utility/optional_ref.h" // replace optional<reference_wrapper<>>
 #include "mc/platform/brstd/function_ref.h"    // function reference

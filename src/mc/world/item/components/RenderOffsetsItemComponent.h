@@ -92,23 +92,23 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _fromString(::RenderOffsetsItemComponent&, ::std::string const&);
+    MCFOLD static void _fromString(::RenderOffsetsItemComponent&, ::std::string const&);
 
-    MCNAPI static void bindType(
+    MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::RenderOffsetsItemComponent::ItemTransforms& Main_Hand_Defaults();
+    MCAPI static ::RenderOffsetsItemComponent::ItemTransforms& Main_Hand_Defaults();
 
-    MCNAPI static ::RenderOffsetsItemComponent::ItemTransforms& Off_Hand_Defaults();
+    MCAPI static ::RenderOffsetsItemComponent::ItemTransforms& Off_Hand_Defaults();
     // NOLINTEND
 
 public:

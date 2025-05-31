@@ -34,19 +34,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(
+    MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent();
     // NOLINTEND
 
 public:

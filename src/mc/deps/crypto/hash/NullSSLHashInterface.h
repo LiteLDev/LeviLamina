@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/crypto/hash/IHash.h"
+#include "mc/deps/crypto/hash/md5.h"
 
 namespace Crypto::Hash {
 
@@ -11,14 +12,8 @@ class NullSSLHashInterface : public ::Crypto::Hash::IHash {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 160> mUnk45fda1;
+    ::ll::TypedStorage<4, 160, ::Crypto::Hash::md5> mMd5;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NullSSLHashInterface& operator=(NullSSLHashInterface const&);
-    NullSSLHashInterface(NullSSLHashInterface const&);
-    NullSSLHashInterface();
 
 public:
     // virtual functions

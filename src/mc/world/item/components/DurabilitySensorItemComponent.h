@@ -33,23 +33,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit DurabilitySensorItemComponent(::SharedTypes::v1_21_10::DurabilitySensorItemComponent data);
+    MCAPI explicit DurabilitySensorItemComponent(::SharedTypes::v1_21_10::DurabilitySensorItemComponent data);
 
-    MCNAPI explicit DurabilitySensorItemComponent(::std::vector<::DurabilityThreshold> const& durabilityThresholds);
+    MCAPI explicit DurabilitySensorItemComponent(::std::vector<::DurabilityThreshold> const& durabilityThresholds);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_21_10::DurabilitySensorItemComponent data);
+    MCAPI void* $ctor(::SharedTypes::v1_21_10::DurabilitySensorItemComponent data);
 
-    MCNAPI void* $ctor(::std::vector<::DurabilityThreshold> const& durabilityThresholds);
+    MCAPI void* $ctor(::std::vector<::DurabilityThreshold> const& durabilityThresholds);
     // NOLINTEND
 
 public:

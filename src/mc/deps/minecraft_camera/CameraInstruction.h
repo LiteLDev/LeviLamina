@@ -88,15 +88,9 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<4, 4> mUnkdb9bc9;
-            ::ll::UntypedStorage<4, 4> mUnk77063f;
+            ::ll::TypedStorage<4, 4, float> mViewOffsetX;
+            ::ll::TypedStorage<4, 4, float> mViewOffsetY;
             // NOLINTEND
-
-        public:
-            // prevent constructor by default
-            ViewOffsetOption& operator=(ViewOffsetOption const&);
-            ViewOffsetOption(ViewOffsetOption const&);
-            ViewOffsetOption();
 
         public:
             // static functions
@@ -110,16 +104,10 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<4, 4> mUnk1c17b8;
-            ::ll::UntypedStorage<4, 4> mUnkdce2a5;
-            ::ll::UntypedStorage<4, 4> mUnk8dd762;
+            ::ll::TypedStorage<4, 4, float> mEntityOffsetX;
+            ::ll::TypedStorage<4, 4, float> mEntityOffsetY;
+            ::ll::TypedStorage<4, 4, float> mEntityOffsetZ;
             // NOLINTEND
-
-        public:
-            // prevent constructor by default
-            EntityOffsetOption& operator=(EntityOffsetOption const&);
-            EntityOffsetOption(EntityOffsetOption const&);
-            EntityOffsetOption();
 
         public:
             // static functions

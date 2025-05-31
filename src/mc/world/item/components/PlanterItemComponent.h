@@ -61,9 +61,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit PlanterItemComponent(::SharedTypes::v1_21_40::PlanterItemComponent component);
+    MCAPI explicit PlanterItemComponent(::SharedTypes::v1_21_40::PlanterItemComponent component);
 
-    MCNAPI bool _placeBlock(
+    MCAPI bool _placeBlock(
         ::ItemStack&      item,
         ::Actor&          entity,
         ::Block const&    block,
@@ -72,7 +72,7 @@ public:
         ::Vec3 const&     clickPos
     ) const;
 
-    MCNAPI void _useOn(
+    MCAPI void _useOn(
         bool&              result,
         ::ItemStack const& currentItemStack,
         ::ItemStack&       entity,
@@ -82,39 +82,39 @@ public:
         ::Vec3 const&      initialItemStack
     );
 
-    MCNAPI bool calculatePlacePos(::ItemStackBase const& entity, ::Actor& face, uchar& pos, ::BlockPos& instance) const;
+    MCAPI bool calculatePlacePos(::ItemStackBase const& entity, ::Actor& face, uchar& pos, ::BlockPos& instance) const;
 
-    MCNAPI bool canUseOn(::ItemStack const& instance, ::Actor& entity, ::BlockPos const& pos, uchar face) const;
+    MCAPI bool canUseOn(::ItemStack const& instance, ::Actor& entity, ::BlockPos const& pos, uchar face) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(
+    MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_21_40::PlanterItemComponent component);
+    MCAPI void* $ctor(::SharedTypes::v1_21_40::PlanterItemComponent component);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
+    MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
-    MCNAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent();
 
-    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCNAPI bool $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCAPI bool $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:

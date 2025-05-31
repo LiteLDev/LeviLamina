@@ -26,9 +26,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 4> mUnk29fff1;
-        ::ll::UntypedStorage<4, 4> mUnk2ab4f3;
-        ::ll::UntypedStorage<4, 4> mUnk768db5;
+        ::ll::TypedStorage<1, 4, bool>  boolVal;
+        ::ll::TypedStorage<4, 4, int>   intVal;
+        ::ll::TypedStorage<4, 4, float> floatVal;
         // NOLINTEND
     };
     class ValidationError {

@@ -40,35 +40,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit EnchantableItemComponent(::SharedTypes::v1_20_50::EnchantableItemComponent component);
+    MCAPI explicit EnchantableItemComponent(::SharedTypes::v1_20_50::EnchantableItemComponent component);
 
-    MCNAPI ::EnchantableItemComponent& operator=(::EnchantableItemComponent&&);
+    MCFOLD ::EnchantableItemComponent& operator=(::EnchantableItemComponent&&);
 
-    MCNAPI ::EnchantableItemComponent& operator=(::EnchantableItemComponent const&);
+    MCFOLD ::EnchantableItemComponent& operator=(::EnchantableItemComponent const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(
+    MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_50::EnchantableItemComponent component);
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::EnchantableItemComponent component);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent();
     // NOLINTEND
 
 public:

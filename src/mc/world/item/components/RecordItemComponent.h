@@ -34,21 +34,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void appendFormattedHovertext(::Bedrock::Safety::RedactableString& hovertext) const;
+    MCAPI void appendFormattedHovertext(::Bedrock::Safety::RedactableString& hovertext) const;
 
-    MCNAPI ::std::string getRecordDescription() const;
+    MCAPI ::std::string getRecordDescription() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(
+    MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:

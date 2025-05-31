@@ -85,43 +85,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit FoodItemComponent(::SharedTypes::v1_20_50::FoodItemComponent component);
+    MCAPI explicit FoodItemComponent(::SharedTypes::v1_20_50::FoodItemComponent component);
 
-    MCNAPI ::Bedrock::PubSub::Connector<void(::ItemStack const&, ::ItemStack&, ::Actor&)>& onConsume();
+    MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack const&, ::ItemStack&, ::Actor&)>& onConsume();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(
+    MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_50::FoodItemComponent component);
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::FoodItemComponent component);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent();
 
-    MCNAPI int $getNutrition() const;
+    MCFOLD int $getNutrition() const;
 
-    MCNAPI float $getSaturationModifier() const;
+    MCFOLD float $getSaturationModifier() const;
 
-    MCNAPI bool $canAlwaysEat() const;
+    MCFOLD bool $canAlwaysEat() const;
 
-    MCNAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
+    MCAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
 
-    MCNAPI void $use(bool& result, ::ItemStack& item, ::Player& player);
+    MCAPI void $use(bool& result, ::ItemStack& item, ::Player& player);
     // NOLINTEND
 
 public:

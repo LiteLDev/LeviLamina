@@ -33,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit CustomComponentsItemComponent(
+    MCAPI explicit CustomComponentsItemComponent(
         ::SharedTypes::v1_21_60::CustomComponentsItemComponent const& component
     );
     // NOLINTEND
@@ -41,13 +41,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_21_60::CustomComponentsItemComponent const& component);
+    MCAPI void* $ctor(::SharedTypes::v1_21_60::CustomComponentsItemComponent const& component);
     // NOLINTEND
 
 public:

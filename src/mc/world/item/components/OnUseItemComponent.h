@@ -37,27 +37,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::OnUseItemComponent& operator=(::OnUseItemComponent&&);
+    MCFOLD ::OnUseItemComponent& operator=(::OnUseItemComponent&&);
 
-    MCNAPI ::OnUseItemComponent& operator=(::OnUseItemComponent const&);
+    MCFOLD ::OnUseItemComponent& operator=(::OnUseItemComponent const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(
+    MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

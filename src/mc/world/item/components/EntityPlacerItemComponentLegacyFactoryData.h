@@ -37,13 +37,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EntityPlacerItemComponentLegacyFactoryData(::EntityPlacerItemComponentLegacyFactoryData&&);
+    MCAPI EntityPlacerItemComponentLegacyFactoryData(::EntityPlacerItemComponentLegacyFactoryData&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(
+    MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
@@ -53,13 +53,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::EntityPlacerItemComponentLegacyFactoryData&&);
+    MCAPI void* $ctor(::EntityPlacerItemComponentLegacyFactoryData&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

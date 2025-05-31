@@ -35,21 +35,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::DisplayNameItemComponent& operator=(::DisplayNameItemComponent&&);
+    MCAPI ::DisplayNameItemComponent& operator=(::DisplayNameItemComponent&&);
 
-    MCNAPI ::DisplayNameItemComponent& operator=(::DisplayNameItemComponent const&);
+    MCAPI ::DisplayNameItemComponent& operator=(::DisplayNameItemComponent const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(
+    MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:

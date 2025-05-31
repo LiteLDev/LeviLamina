@@ -42,36 +42,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit RepairableItemComponent(::SharedTypes::v1_20_50::RepairableItemComponent component);
+    MCAPI explicit RepairableItemComponent(::SharedTypes::v1_20_50::RepairableItemComponent component);
 
-    MCNAPI int _repairItem(
+    MCAPI int _repairItem(
         ::ItemStackBase& materialItem,
         ::ItemStackBase& resultItem,
         ::ExpressionNode repairAmountExpression
     ) const;
 
-    MCNAPI ::RepairItemResult
+    MCAPI ::RepairItemResult
     handleItemRepair(::ItemStack& inputItem, ::ItemStack& materialItem, bool allowBidirectionalRepair) const;
 
-    MCNAPI ::RepairableItemComponent& operator=(::RepairableItemComponent&&);
+    MCAPI ::RepairableItemComponent& operator=(::RepairableItemComponent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(
+    MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_50::RepairableItemComponent component);
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::RepairableItemComponent component);
     // NOLINTEND
 
 public:

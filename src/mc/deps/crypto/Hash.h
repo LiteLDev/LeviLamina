@@ -43,25 +43,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::mce::UUID getUUID();
+    MCAPI ::mce::UUID getUUID();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $reset();
+    MCFOLD void $reset();
 
-    MCNAPI void $update(void const* data, uint size);
+    MCAPI void $update(void const* data, uint size);
 
-    MCNAPI void $final(uchar* result);
+    MCAPI void $final(uchar* result);
 
-    MCNAPI uint64 $resultSize() const;
+    MCAPI uint64 $resultSize() const;
     // NOLINTEND
 
 public:

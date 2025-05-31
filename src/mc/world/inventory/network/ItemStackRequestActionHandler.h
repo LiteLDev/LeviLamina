@@ -69,15 +69,15 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnke19412;
-        ::ll::UntypedStorage<8, 64> mUnkc38ec0;
+        ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mExpireTime;
+        ::ll::TypedStorage<
+            8,
+            64,
+            ::std::unordered_map<
+                ::ContainerRuntimeId,
+                ::std::unordered_map<uchar, ::ItemStackRequestActionHandler::RequestSlotIdAssignment>>>
+            mContainers;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RequestIdAssignments& operator=(RequestIdAssignments const&);
-        RequestIdAssignments(RequestIdAssignments const&);
-        RequestIdAssignments();
     };
 
     struct PlayerLegacyRequestSlotIdAssignment {

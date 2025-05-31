@@ -38,39 +38,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI HoverTextColorItemComponent(::HoverTextColorItemComponent const&);
+    MCAPI HoverTextColorItemComponent(::HoverTextColorItemComponent const&);
 
-    MCNAPI explicit HoverTextColorItemComponent(::SharedTypes::v1_20_50::HoverTextColorItemComponent component);
+    MCAPI explicit HoverTextColorItemComponent(::SharedTypes::v1_20_50::HoverTextColorItemComponent component);
 
-    MCNAPI ::HoverTextColorItemComponent& operator=(::HoverTextColorItemComponent const&);
+    MCAPI ::HoverTextColorItemComponent& operator=(::HoverTextColorItemComponent const&);
 
-    MCNAPI ::HoverTextColorItemComponent& operator=(::HoverTextColorItemComponent&&);
+    MCAPI ::HoverTextColorItemComponent& operator=(::HoverTextColorItemComponent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(
+    MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::HoverTextColorItemComponent const&);
+    MCAPI void* $ctor(::HoverTextColorItemComponent const&);
 
-    MCNAPI void* $ctor(::SharedTypes::v1_20_50::HoverTextColorItemComponent component);
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::HoverTextColorItemComponent component);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent();
     // NOLINTEND
 
 public:
