@@ -18,8 +18,8 @@
                 "github.com/LiteLDev/CrashLogger": "1.3.*",
                 "github.com/LiteLDev/levilamina-loc": "1.5.*",
                 "github.com/LiteLDev/PeEditor": "3.9.*",
-                "github.com/LiteLDev/PreLoader": "1.14.1",
-                "github.com/LiteLDev/bedrock-runtime-data": "1.21.7004-server.6"
+                "github.com/LiteLDev/PreLoader": "1.15.2",
+                "github.com/LiteLDev/bedrock-runtime-data": "1.21.7004-server.7"
             },
             "assets": [
                 {
