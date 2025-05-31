@@ -8,8 +8,8 @@ struct ReflectionContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnk3078a3;
-    ::ll::UntypedStorage<8, 64> mUnk8a188a;
+    ::ll::TypedStorage<8, 72, ::entt::meta_ctx>                                       mMetaCtx;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::entt::type_info>> mKnownProperties;
     // NOLINTEND
 
 public:
@@ -21,21 +21,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ReflectionContext(::cereal::internal::ReflectionContext&&);
+    MCAPI ReflectionContext(::cereal::internal::ReflectionContext&&);
 
-    MCNAPI ~ReflectionContext();
+    MCAPI ~ReflectionContext();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::internal::ReflectionContext&&);
+    MCAPI void* $ctor(::cereal::internal::ReflectionContext&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

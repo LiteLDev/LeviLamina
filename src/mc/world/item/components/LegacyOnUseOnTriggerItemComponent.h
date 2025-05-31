@@ -42,9 +42,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit LegacyOnUseOnTriggerItemComponent(::OnUseOnItemComponentLegacyFactoryData&& data);
+    MCAPI explicit LegacyOnUseOnTriggerItemComponent(::OnUseOnItemComponentLegacyFactoryData&& data);
 
-    MCNAPI void _useOn(
+    MCAPI void _useOn(
         bool&              result,
         ::ItemStack const& currentItemStack,
         ::ItemStack&       entity,
@@ -58,19 +58,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::OnUseOnItemComponentLegacyFactoryData&& data);
+    MCAPI void* $ctor(::OnUseOnItemComponentLegacyFactoryData&& data);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent();
     // NOLINTEND
 
 public:

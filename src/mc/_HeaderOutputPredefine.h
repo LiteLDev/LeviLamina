@@ -121,6 +121,7 @@ struct _IP_ADAPTER_PREFIX_XP;
 struct sockaddr_storage;
 struct sockaddr_in;
 struct sockaddr_in6;
+struct evp_md_ctx_st;
 
 using uchar  = uint8_t;
 using ushort = uint16_t;

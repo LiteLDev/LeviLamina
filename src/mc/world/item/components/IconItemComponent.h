@@ -38,35 +38,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit IconItemComponent(::SharedTypes::v1_20_60::IconItemComponent component);
+    MCAPI explicit IconItemComponent(::SharedTypes::v1_20_60::IconItemComponent component);
 
-    MCNAPI ::std::string const& getDefaultTexture() const;
+    MCAPI ::std::string const& getDefaultTexture() const;
 
-    MCNAPI void setTexturePath(::std::string const& texturePath);
+    MCAPI void setTexturePath(::std::string const& texturePath);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(
+    MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_60::IconItemComponent component);
+    MCAPI void* $ctor(::SharedTypes::v1_20_60::IconItemComponent component);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent();
     // NOLINTEND
 
 public:

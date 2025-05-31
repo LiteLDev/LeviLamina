@@ -36,28 +36,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void
+    MCAPI void
     appendFormattedHovertext(::ItemStackBase const& item, ::Bedrock::Safety::RedactableString& hovertext, bool) const;
 
-    MCNAPI void clearColor(::ItemStackBase& instance) const;
+    MCFOLD void clearColor(::ItemStackBase& instance) const;
 
-    MCNAPI ::mce::Color getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
+    MCAPI ::mce::Color getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
 
-    MCNAPI bool hasCustomColor(::ItemStackBase const& instance) const;
+    MCAPI bool hasCustomColor(::ItemStackBase const& instance) const;
 
-    MCNAPI void setColor(::ItemStackBase& instance, ::mce::Color const& color) const;
+    MCAPI void setColor(::ItemStackBase& instance, ::mce::Color const& color) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(
+    MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:

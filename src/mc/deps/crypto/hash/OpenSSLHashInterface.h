@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/crypto/hash/HashType.h"
 #include "mc/deps/crypto/hash/IHash.h"
 
 namespace Crypto::Hash {
@@ -11,15 +12,9 @@ class OpenSSLHashInterface : public ::Crypto::Hash::IHash {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkf67a52;
-    ::ll::UntypedStorage<8, 8> mUnk3bbd85;
+    ::ll::TypedStorage<4, 4, ::Crypto::Hash::HashType>           mHashType;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::evp_md_ctx_st>> mHashPointer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OpenSSLHashInterface& operator=(OpenSSLHashInterface const&);
-    OpenSSLHashInterface(OpenSSLHashInterface const&);
-    OpenSSLHashInterface();
 
 public:
     // virtual functions
@@ -43,13 +38,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $reset();
+    MCAPI void $reset();
 
-    MCNAPI void $update(void const* data, uint size);
+    MCAPI void $update(void const* data, uint size);
 
-    MCNAPI void $final(uchar* result);
+    MCAPI void $final(uchar* result);
 
-    MCNAPI uint64 $resultSize() const;
+    MCAPI uint64 $resultSize() const;
     // NOLINTEND
 
 public:

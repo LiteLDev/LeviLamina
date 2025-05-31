@@ -117,9 +117,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ShooterItemComponent(::SharedTypes::v1_20_50::ShooterItemComponent const& component);
+    MCAPI explicit ShooterItemComponent(::SharedTypes::v1_20_50::ShooterItemComponent const& component);
 
-    MCNAPI void _consumeAmmunition(
+    MCAPI void _consumeAmmunition(
         ::Player*          player,
         ::ItemStack const& ammunition,
         int                slotIndex,
@@ -127,39 +127,39 @@ public:
         bool               fromOffhand
     ) const;
 
-    MCNAPI int _getAmmunition(::Player const* player, bool ammo, ::ItemStack& fromOffhand, bool&) const;
+    MCAPI int _getAmmunition(::Player const* player, bool ammo, ::ItemStack& fromOffhand, bool&) const;
 
-    MCNAPI void _shootProjectiles(::ItemStack& shooterStack, ::Player* player, int durationLeft) const;
+    MCAPI void _shootProjectiles(::ItemStack& shooterStack, ::Player* player, int durationLeft) const;
 
-    MCNAPI bool releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+    MCAPI bool releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
-    MCNAPI void use(bool& result, ::ItemStack& instance, ::Player& player) const;
+    MCAPI void use(bool& result, ::ItemStack& instance, ::Player& player) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(
+    MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_50::ShooterItemComponent const& component);
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::ShooterItemComponent const& component);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent();
 
-    MCNAPI bool $checkComponentDataForContentErrors() const;
+    MCAPI bool $checkComponentDataForContentErrors() const;
     // NOLINTEND
 
 public:

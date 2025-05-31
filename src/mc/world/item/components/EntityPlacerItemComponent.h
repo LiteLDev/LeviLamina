@@ -56,9 +56,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit EntityPlacerItemComponent(::SharedTypes::v1_20_50::EntityPlacerItemComponent component);
+    MCAPI explicit EntityPlacerItemComponent(::SharedTypes::v1_20_50::EntityPlacerItemComponent component);
 
-    MCNAPI void _positionAndRotateActor(
+    MCAPI void _positionAndRotateActor(
         ::Actor&             actor,
         ::Vec3               position,
         uchar                face,
@@ -66,9 +66,9 @@ public:
         ::BlockLegacy const* blockLegacy
     ) const;
 
-    MCNAPI void _setActorCustomName(::Actor& actor, ::ItemStack const& item) const;
+    MCAPI void _setActorCustomName(::Actor& actor, ::ItemStack const& item) const;
 
-    MCNAPI void _useOn(
+    MCAPI void _useOn(
         bool&              result,
         ::ItemStack const& currentItemStack,
         ::ItemStack&       usingActor,
@@ -78,42 +78,42 @@ public:
         ::Vec3 const&      initialItemStack
     );
 
-    MCNAPI void
+    MCAPI void
     _validateBlocks(::std::vector<::BlockDescriptor> const& blocks, ::std::string const& blocksParameterName) const;
 
-    MCNAPI bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCAPI bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(
+    MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_50::EntityPlacerItemComponent component);
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::EntityPlacerItemComponent component);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
+    MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
-    MCNAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent();
     // NOLINTEND
 
 public:

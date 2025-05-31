@@ -51,19 +51,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $checkComponentDataForContentErrors() const;
+    MCFOLD bool $checkComponentDataForContentErrors() const;
 
-    MCNAPI void $writeSettings();
+    MCFOLD void $writeSettings();
 
-    MCNAPI bool $isNetworkComponent() const;
+    MCFOLD bool $isNetworkComponent() const;
 
-    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCFOLD ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCNAPI bool $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCFOLD bool $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
-    MCNAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
+    MCFOLD void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
-    MCNAPI void $_initializeComponent();
+    MCFOLD void $_initializeComponent();
     // NOLINTEND
 
 public:

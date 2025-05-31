@@ -23,31 +23,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ReflectionCtx();
+    MCAPI ReflectionCtx();
 
-    MCNAPI ReflectionCtx(::cereal::ReflectionCtx const&);
+    MCAPI ReflectionCtx(::cereal::ReflectionCtx const&);
 
-    MCNAPI ::std::optional<::entt::type_info> getKnownPropertyType(::std::string_view name) const;
+    MCAPI ::std::optional<::entt::type_info> getKnownPropertyType(::std::string_view name) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::cereal::ReflectionCtx& global();
+    MCAPI static ::cereal::ReflectionCtx& global();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::cereal::ReflectionCtx const&);
+    MCAPI void* $ctor(::cereal::ReflectionCtx const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

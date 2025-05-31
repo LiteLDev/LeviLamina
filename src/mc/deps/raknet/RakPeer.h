@@ -57,15 +57,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<2, 2> mUnk4d0860;
-        ::ll::UntypedStorage<8, 8> mUnk384efe;
+        ::ll::TypedStorage<2, 2, ushort> pingTime;
+        ::ll::TypedStorage<8, 8, uint64> clockDifferential;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PingAndClockDifferential& operator=(PingAndClockDifferential const&);
-        PingAndClockDifferential(PingAndClockDifferential const&);
-        PingAndClockDifferential();
     };
 
     struct RemoteSystemStruct {
@@ -130,15 +124,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk4332b7;
-        ::ll::UntypedStorage<4, 4> mUnk4c8b8f;
+        ::ll::TypedStorage<8, 8, char*> IP;
+        ::ll::TypedStorage<4, 4, uint>  timeout;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BanStruct& operator=(BanStruct const&);
-        BanStruct(BanStruct const&);
-        BanStruct();
     };
 
     struct RequestedConnectionStruct {

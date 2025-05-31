@@ -24,17 +24,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk3a6c7c;
-        ::ll::UntypedStorage<8, 8>  mUnk5e72ec;
-        ::ll::UntypedStorage<8, 32> mUnk87e063;
-        ::ll::UntypedStorage<8, 8>  mUnk530951;
+        ::ll::TypedStorage<8, 8, uint64>         mOperation;
+        ::ll::TypedStorage<8, 8, uint64>         mSize;
+        ::ll::TypedStorage<8, 32, ::std::string> mKey;
+        ::ll::TypedStorage<8, 8, char const*>    mReason;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PerfContext& operator=(PerfContext const&);
-        PerfContext(PerfContext const&);
-        PerfContext();
     };
 
     struct BatchEntry {

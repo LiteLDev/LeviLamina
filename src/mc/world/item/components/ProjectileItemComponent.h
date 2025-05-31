@@ -43,15 +43,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ProjectileItemComponent(::SharedTypes::v1_20_50::ProjectileItemComponent component);
+    MCAPI explicit ProjectileItemComponent(::SharedTypes::v1_20_50::ProjectileItemComponent component);
 
-    MCNAPI ProjectileItemComponent(::ActorType actorType, float minCriticalPower);
+    MCAPI ProjectileItemComponent(::ActorType actorType, float minCriticalPower);
 
-    MCNAPI bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCAPI bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCNAPI ::Vec3 getShootDir(::Player const& player, float angleOffset) const;
+    MCAPI ::Vec3 getShootDir(::Player const& player, float angleOffset) const;
 
-    MCNAPI ::Actor* shootProjectile(
+    MCAPI ::Actor* shootProjectile(
         ::BlockSource& region,
         ::Vec3 const&  aimPos,
         ::Vec3 const&  aimDir,
@@ -63,27 +63,27 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(
+    MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_50::ProjectileItemComponent component);
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::ProjectileItemComponent component);
 
-    MCNAPI void* $ctor(::ActorType actorType, float minCriticalPower);
+    MCAPI void* $ctor(::ActorType actorType, float minCriticalPower);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

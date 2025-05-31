@@ -17,12 +17,18 @@ public:
     // clang-format on
 
     // DynamicProperties inner types define
+    using PropertyVariant = ::std::variant<double, float, bool, ::std::string, ::Vec3>;
+
     struct PropertyCollection {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnkd25089;
-        ::ll::UntypedStorage<8, 64> mUnk531965;
+        ::ll::TypedStorage<8, 8, uint64> mByteCount;
+        ::ll::TypedStorage<
+            8,
+            64,
+            ::std::unordered_map<::std::string, ::std::variant<double, float, bool, ::std::string, ::Vec3>>>
+            mProperties;
         // NOLINTEND
 
     public:
@@ -34,19 +40,19 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::DynamicProperties::PropertyCollection& operator=(::DynamicProperties::PropertyCollection&&);
+        MCAPI ::DynamicProperties::PropertyCollection& operator=(::DynamicProperties::PropertyCollection&&);
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void fromVariantMap(
+        MCAPI static void fromVariantMap(
             ::DynamicProperties::PropertyCollection& collection,
             ::std::unordered_map<::std::string, ::std::variant<double, float, bool, ::std::string, ::Vec3>> const&
                 properties
         );
 
-        MCNAPI static ::std::unordered_map<::std::string, ::std::variant<double, float, bool, ::std::string, ::Vec3>>
+        MCAPI static ::std::unordered_map<::std::string, ::std::variant<double, float, bool, ::std::string, ::Vec3>>
         toVariantMap(::DynamicProperties::PropertyCollection const& collection);
         // NOLINTEND
     };
@@ -54,7 +60,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk2db2c1;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::DynamicProperties::PropertyCollection>>
+        mPropertyCollections;
     // NOLINTEND
 
 public:
@@ -66,31 +73,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DynamicProperties(::DynamicProperties&&);
+    MCAPI DynamicProperties(::DynamicProperties&&);
 
-    MCNAPI void deserialize(::CompoundTag const& root, ::cereal::ReflectionCtx const& ctx);
+    MCAPI void deserialize(::CompoundTag const& root, ::cereal::ReflectionCtx const& ctx);
 
-    MCNAPI ::std::vector<::std::string> getDynamicPropertyIds(::std::string const& collectionName) const;
+    MCAPI ::std::vector<::std::string> getDynamicPropertyIds(::std::string const& collectionName) const;
 
-    MCNAPI bool removeDynamicProperty(::std::string const& key, ::std::string const& collectionName);
+    MCAPI bool removeDynamicProperty(::std::string const& key, ::std::string const& collectionName);
 
-    MCNAPI ::std::unique_ptr<::CompoundTag> serialize(::cereal::ReflectionCtx const& ctx) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> serialize(::cereal::ReflectionCtx const& ctx) const;
 
-    MCNAPI void setDynamicProperty(
+    MCAPI void setDynamicProperty(
         ::std::string const&                                              key,
         ::std::variant<double, float, bool, ::std::string, ::Vec3> const& value,
         ::std::string const&                                              collectionName
     );
 
-    MCNAPI void updateCollectionName(::std::string const& from, ::std::string const& to);
+    MCAPI void updateCollectionName(::std::string const& from, ::std::string const& to);
 
-    MCNAPI ~DynamicProperties();
+    MCAPI ~DynamicProperties();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::std::string> validateDynamicProperty(
+    MCAPI static ::std::optional<::std::string> validateDynamicProperty(
         ::std::string const&                                              key,
         ::std::variant<double, float, bool, ::std::string, ::Vec3> const* value
     );
@@ -99,18 +106,18 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& STORAGE_TAG();
+    MCAPI static ::std::string const& STORAGE_TAG();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::DynamicProperties&&);
+    MCAPI void* $ctor(::DynamicProperties&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

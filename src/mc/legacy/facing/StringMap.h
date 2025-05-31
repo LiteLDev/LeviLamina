@@ -8,14 +8,8 @@ class StringMap {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 144> mUnkef3729;
+    ::ll::TypedStorage<8, 144, ::std::array<::std::pair<::std::string_view, uchar>, 6>> mArray;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StringMap& operator=(StringMap const&);
-    StringMap(StringMap const&);
-    StringMap();
 };
 
 } // namespace Facing

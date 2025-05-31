@@ -79,27 +79,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit DiggerItemComponent(::SharedTypes::v1_20_50::DiggerItemComponent component);
+    MCAPI explicit DiggerItemComponent(::SharedTypes::v1_20_50::DiggerItemComponent component);
 
-    MCNAPI float getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
+    MCAPI float getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(
+    MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
         ::std::optional<::SemVersion>          requiredToggles
     );
 
-    MCNAPI static ::HashedString const& getIdentifier();
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_50::DiggerItemComponent component);
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::DiggerItemComponent component);
     // NOLINTEND
 
 public:

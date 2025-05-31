@@ -25,12 +25,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void advanceTime(float preferredFrameStep);
+    MCAPI void advanceTime(float preferredFrameStep);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static int64 getMillisecondsSinceLaunch();
+    MCAPI static int64 getMillisecondsSinceLaunch();
     // NOLINTEND
 };

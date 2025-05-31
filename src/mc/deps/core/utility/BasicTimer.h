@@ -14,18 +14,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~BasicTimer();
+    MCAPI ~BasicTimer();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static double getSecondsSinceLaunch();
+    MCAPI static double getSecondsSinceLaunch();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
