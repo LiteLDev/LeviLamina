@@ -4,9 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
+#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/utility/BinaryStream.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/DevConnectionQuality.h"
 #include "mc/network/NetworkEnableDisableListener.h"
+#include "mc/network/NetworkSettingOptions.h"
 #include "mc/network/RakNetConnector.h"
 #include "mc/network/RakPeerHelper.h"
 #include "mc/network/connection/DisconnectFailReason.h"
@@ -14,11 +17,18 @@
 // auto generated forward declare list
 // clang-format off
 class EncryptedNetworkPeer;
+class IPacketObserver;
+class LocalConnector;
 class NetworkConnection;
 class NetworkIdentifier;
 class NetworkPeer;
+class NetworkSessionOwner;
+class NetworkStatistics;
 class Packet;
 class RemoteConnector;
+class Scheduler;
+class ServerLocator;
+class TaskGroup;
 class WeakEntityRef;
 struct NetworkIdentifierWithSubId;
 // clang-format on
@@ -84,30 +94,30 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5bafd9;
-    ::ll::UntypedStorage<8, 24> mUnk61fe2a;
-    ::ll::UntypedStorage<8, 8>  mUnkb013f4;
-    ::ll::UntypedStorage<8, 8>  mUnk4f704b;
-    ::ll::UntypedStorage<8, 8>  mUnk5a14ca;
-    ::ll::UntypedStorage<8, 80> mUnk3e85f1;
-    ::ll::UntypedStorage<8, 8>  mUnk66bc0b;
-    ::ll::UntypedStorage<8, 16> mUnk28a780;
-    ::ll::UntypedStorage<8, 8>  mUnk6b882c;
-    ::ll::UntypedStorage<8, 24> mUnk7aff31;
-    ::ll::UntypedStorage<8, 8>  mUnk9115c6;
-    ::ll::UntypedStorage<8, 32> mUnk3b9a02;
-    ::ll::UntypedStorage<8, 32> mUnka48e1c;
-    ::ll::UntypedStorage<8, 80> mUnk71a258;
-    ::ll::UntypedStorage<8, 32> mUnkacc61e;
-    ::ll::UntypedStorage<1, 1>  mUnkb3ee22;
-    ::ll::UntypedStorage<2, 2>  mUnkee3efc;
-    ::ll::UntypedStorage<2, 2>  mUnk5e3f1d;
-    ::ll::UntypedStorage<1, 1>  mUnk148327;
-    ::ll::UntypedStorage<8, 8>  mUnk71c9a9;
-    ::ll::UntypedStorage<1, 1>  mUnk9b4c2b;
-    ::ll::UntypedStorage<1, 1>  mUnk214764;
-    ::ll::UntypedStorage<4, 24> mUnk7bbd3c;
-    ::ll::UntypedStorage<1, 1>  mUnk248b46;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner>>        mNetworkSessionOwner;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::NetworkConnection>>>       mConnections;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LocalConnector>>                          mLocalConnector;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RemoteConnector>>                         mRemoteConnector;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerLocator>>                           mServerLocator;
+    ::ll::TypedStorage<8, 80, ::std::recursive_mutex>                                      mConnectionsMutex;
+    ::ll::TypedStorage<8, 8, uint64>                                                       mCurrentConnection;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>> mReceiveTask;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                               mReceiveTaskGroup;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IPacketObserver>>               mPacketObserver;
+    ::ll::TypedStorage<8, 8, ::Scheduler&>                                                 mMainThread;
+    ::ll::TypedStorage<8, 32, ::std::string>                                               mReceiveBuffer;
+    ::ll::TypedStorage<8, 32, ::std::string>                                               mSendBuffer;
+    ::ll::TypedStorage<8, 80, ::BinaryStream>                                              mSendStream;
+    ::ll::TypedStorage<8, 32, ::std::unique_ptr<::NetworkSystem::IncomingPacketQueue>[4]>  mIncomingPackets;
+    ::ll::TypedStorage<1, 1, bool>                                                         mUseIPv6Only;
+    ::ll::TypedStorage<2, 2, ushort>                                                       mDefaultGamePort;
+    ::ll::TypedStorage<2, 2, ushort>                                                       mDefaultGamePortv6;
+    ::ll::TypedStorage<1, 1, bool>                                                         mIsLanDiscoveryEnabled;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::NetworkStatistics>>                       mNetworkStatistics;
+    ::ll::TypedStorage<1, 1, bool>                                                         mEnablePacketRateLimiting;
+    ::ll::TypedStorage<1, 1, bool>                                                         mWebsocketsEnabled;
+    ::ll::TypedStorage<4, 24, ::NetworkSettingOptions>                                     mNetworkSettingOptions;
+    ::ll::TypedStorage<1, 1, bool>                                                         mRawRecordingEnabled;
     // NOLINTEND
 
 public:

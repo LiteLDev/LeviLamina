@@ -98,69 +98,69 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit CauldronBlockActor(::BlockPos const& pos);
+    MCAPI explicit CauldronBlockActor(::BlockPos const& pos);
 
-    MCNAPI ::mce::Color getCustomColor() const;
+    MCAPI ::mce::Color getCustomColor() const;
 
-    MCNAPI ::mce::Color getMixDyeColor();
+    MCAPI ::mce::Color getMixDyeColor();
 
-    MCNAPI ::mce::Color getPotionColor() const;
+    MCAPI ::mce::Color getPotionColor() const;
 
-    MCNAPI void mixDyes();
+    MCAPI void mixDyes();
 
-    MCNAPI void setCustomColor(::mce::Color const& color);
+    MCAPI void setCustomColor(::mce::Color const& color);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::mce::Color& WATER_COLOR();
+    MCAPI static ::mce::Color& WATER_COLOR();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockPos const& pos);
+    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ItemStack const& $getItem(int slot) const;
+    MCFOLD ::ItemStack const& $getItem(int slot) const;
 
-    MCNAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCNAPI ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
-    MCNAPI int $getMaxStackSize() const;
+    MCFOLD int $getMaxStackSize() const;
 
-    MCNAPI int $getContainerSize() const;
+    MCFOLD int $getContainerSize() const;
 
-    MCNAPI void $startOpen(::Player&);
+    MCFOLD void $startOpen(::Player&);
 
-    MCNAPI void $stopOpen(::Player& player);
+    MCFOLD void $stopOpen(::Player& player);
 
-    MCNAPI ::Container* $getContainer();
+    MCFOLD ::Container* $getContainer();
 
-    MCNAPI ::Container const* $getContainer() const;
+    MCFOLD ::Container const* $getContainer() const;
 
-    MCNAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI void $tick(::BlockSource& region);
+    MCFOLD void $tick(::BlockSource& region);
 
-    MCNAPI void $onChanged(::BlockSource& region);
+    MCFOLD void $onChanged(::BlockSource& region);
 
-    MCNAPI void $serverInitItemStackIds(
+    MCAPI void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:

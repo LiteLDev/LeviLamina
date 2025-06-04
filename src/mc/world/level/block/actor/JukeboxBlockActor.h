@@ -101,62 +101,62 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit JukeboxBlockActor(::BlockPos const& pos);
+    MCAPI explicit JukeboxBlockActor(::BlockPos const& pos);
 
-    MCNAPI void _onChanged(::BlockSource& region, ::SharedTypes::Legacy::LevelSoundEvent sound);
+    MCAPI void _onChanged(::BlockSource& region, ::SharedTypes::Legacy::LevelSoundEvent sound);
 
-    MCNAPI void _spawnMusicParticles(::Level& level, float recordDuration);
+    MCAPI void _spawnMusicParticles(::Level& level, float recordDuration);
 
-    MCNAPI void setRecord(::ItemStack const& record, bool startPlaying);
+    MCAPI void setRecord(::ItemStack const& record, bool startPlaying);
 
-    MCNAPI void startPlayingRecord(::BlockSource& region);
+    MCAPI void startPlayingRecord(::BlockSource& region);
 
-    MCNAPI void stopPlayingRecord(::BlockSource& region);
+    MCAPI void stopPlayingRecord(::BlockSource& region);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockPos const& pos);
+    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI void $tick(::BlockSource& region);
+    MCAPI void $tick(::BlockSource& region);
 
-    MCNAPI int $getContainerSize() const;
+    MCFOLD int $getContainerSize() const;
 
-    MCNAPI int $getMaxStackSize() const;
+    MCFOLD int $getMaxStackSize() const;
 
-    MCNAPI bool $canPushInItem(int, int, ::ItemStack const& item) const;
+    MCAPI bool $canPushInItem(int, int, ::ItemStack const& item) const;
 
-    MCNAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
+    MCAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
 
-    MCNAPI ::ItemStack const& $getItem(int) const;
+    MCAPI ::ItemStack const& $getItem(int) const;
 
-    MCNAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCNAPI void $startOpen(::Player&);
+    MCFOLD void $startOpen(::Player&);
 
-    MCNAPI void $stopOpen(::Player& player);
+    MCFOLD void $stopOpen(::Player& player);
 
-    MCNAPI ::Container* $getContainer();
+    MCFOLD ::Container* $getContainer();
 
-    MCNAPI ::Container const* $getContainer() const;
+    MCFOLD ::Container const* $getContainer() const;
 
-    MCNAPI void $onChanged(::BlockSource& region);
+    MCAPI void $onChanged(::BlockSource& region);
 
-    MCNAPI void
+    MCAPI void
     $serverInitItemStackIds(int containerSlot, int, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
-    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:
