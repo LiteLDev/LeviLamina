@@ -17,10 +17,10 @@ class LevelSettings;
 namespace LevelDataHelper {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Bedrock::UniqueOwnerPointer<::LevelData>
+MCAPI ::Bedrock::UniqueOwnerPointer<::LevelData>
 createLevelDataFromLevelSettings(::LevelSettings const& levelSettings, ::std::string const& levelName);
 
-MCNAPI void setDifficulty(
+MCAPI void setDifficulty(
     ::LevelData&                      levelData,
     ::SharedTypes::Legacy::Difficulty difficulty,
     ::IMinecraftEventing*             eventing,

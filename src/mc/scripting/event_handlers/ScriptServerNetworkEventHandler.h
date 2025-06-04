@@ -43,19 +43,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _handleChat(
+    MCAPI bool _handleChat(
         ::ChatEvent&                                                                      chatEvent,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> eventHandler
     ) const;
 
-    MCNAPI bool _handleIncomingPacket(
+    MCAPI bool _handleIncomingPacket(
         ::IncomingPacketEvent&                                                                 packetEvent,
         ::Scripting::WeakLifetimeScope const&                                                  scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraftNet::IScriptNetworkBeforeEvents> eventHandler
     ) const;
 
-    MCNAPI bool _handleOutgoingPacket(
+    MCAPI bool _handleOutgoingPacket(
         ::OutgoingPacketEvent&                                                                 packetEvent,
         ::Scripting::WeakLifetimeScope const&                                                  scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraftNet::IScriptNetworkBeforeEvents> eventHandler
@@ -65,11 +65,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ChatEvent& chatEvent);
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ChatEvent& chatEvent);
 
-    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::IncomingPacketEvent& packetEvent);
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::IncomingPacketEvent& packetEvent);
 
-    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::OutgoingPacketEvent& packetEvent);
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::OutgoingPacketEvent& packetEvent);
     // NOLINTEND
 
 public:
