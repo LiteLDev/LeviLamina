@@ -34,6 +34,7 @@
 #include <cwctype>            // Wide character classification
 #include <deque>              // STL double ended queue container
 #include <exception>          // Exception handling classes
+#include <expected>           // STL expected
 #include <filesystem>         // STL file system
 #include <forward_list>       // STL forward list container
 #include <fstream>            // File stream classes
@@ -123,6 +124,7 @@
 
 // fmt C++ Library
 #include "fmt/format.h"
+#include "fmt/std.h"
 
 struct HWND__;
 struct _TP_CALLBACK_INSTANCE;

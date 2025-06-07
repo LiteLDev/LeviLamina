@@ -21,7 +21,7 @@
 #include "mc/server/commands/CommandUtils.h"
 #include "mc/server/commands/standard/TeleportCommand.h"
 #include "mc/server/commands/standard/TeleportTarget.h" // IWYU pragma: keep for TeleportCommand::computeTarget
-#include "mc/util/ExpressionNode.h"
+#include "mc/util/molang/ExpressionNode.h"
 #include "mc/util/rotation_command_utils/RotationData.h"
 #include "mc/world//actor/player/Player.h"
 #include "mc/world/actor/ActorDamageByActorSource.h"

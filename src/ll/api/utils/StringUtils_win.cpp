@@ -146,8 +146,8 @@ std::string getMcCodeFromTextStyle(fmt::text_style style) {
     if (style.has_foreground()) {
         hasMcStyle = true;
         auto fg    = style.get_foreground();
-        if (fg.is_rgb) {
-            auto             color  = mce::Color(fg.value.rgb_color);
+        if (!fg.is_terminal_color()) {
+            auto             color  = mce::Color(fg.value());
             double           minDis = std::numeric_limits<double>::max();
             std::string_view minStr;
             for (auto& [k, v] : formatColorPairs) {
@@ -159,7 +159,7 @@ std::string getMcCodeFromTextStyle(fmt::text_style style) {
             }
             res += minStr;
         } else {
-            switch ((fmt::terminal_color)(fg.value.term_color)) {
+            switch ((fmt::terminal_color)(fg.value())) {
                 // clang-format off
             case fmt::terminal_color::black:          res += cf::BLACK; break;
             case fmt::terminal_color::red:            res += cf::DARK_RED; break;

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/util/molang/MolangParseConfig.h"
 
 // auto generated inclusion list
 #include "mc/molang/MolangVersion.h"
@@ -62,6 +63,19 @@ public:
 public:
     // prevent constructor by default
     ExpressionNode();
+
+public:
+    ExpressionNode(
+        std::string const&                expression,
+        ::MolangVersion                   molangVersion,
+        ::gsl::span<::HashedString const> querySetID
+    )
+    : ExpressionNode(expression, molangVersion) {
+        MolangParseConfig config;
+        config.mVersion          = molangVersion;
+        config.mAllowedQuerySets = querySetID;
+        parse(expression, config);
+    }
 
 public:
     // member functions

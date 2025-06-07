@@ -1,12 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/util/ExpressionNode.h"
-#include "mc/util/MolangScriptArg.h"
-
-class RenderParams;
-
-using QueryFunctionAccessor = std::function<MolangScriptArg const&(RenderParams&, std::vector<ExpressionNode> const&)>;
 
 // auto generated inclusion list
 #include "mc/molang/MolangVersion.h"

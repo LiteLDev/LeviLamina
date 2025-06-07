@@ -19,7 +19,10 @@ private:
     int                   precision{0};
 
 public:
-    constexpr formatter() { this->format_str_ = detail::string_literal<Char, '%', 'T'>{}; }
+    constexpr formatter() {
+        parse_context<Char> ctx{detail::string_literal<Char, '%', 'T'>{}};
+        this->do_parse(ctx, false);
+    }
 
     template <typename FormatContext>
     auto format(ll::data::TmWithMs const& val, FormatContext& ctx) const -> decltype(ctx.out()) {
@@ -34,7 +37,7 @@ public:
         auto it = ctx.begin(), end = ctx.end();
         if (it == end || *it == '}') return it;
         if (*it == '.') {
-            it = detail::parse_precision(it, end, precision, precisionRef, ctx);
+            it = detail::parse_dynamic_spec(it, end, precision, precisionRef, ctx).end;
         }
         ctx.advance_to(it);
         return formatter<std::tm, Char>::parse(ctx);

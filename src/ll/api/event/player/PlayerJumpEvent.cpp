@@ -33,13 +33,15 @@ LL_TYPE_INSTANCE_HOOK(
 ) {
     if (auto settings = ll::service::getPropertiesSettings(); settings) {
         auto& mode = settings->mPlayerMovementSettings->AuthorityMode;
-        if (mode == ServerAuthMovementMode::LegacyClientAuthoritativeV1) {
-            if (packet.mAction == PlayerActionType::StartJump) {
-                if (auto player = thisFor<NetEventCallback>()->_getServerPlayer(source, packet.mSenderSubId); player) {
-                    EventBus::getInstance().publish(PlayerJumpEvent(*player));
-                }
-            }
-        }
+        // TODO:
+        //  if (mode == ServerAuthMovementMode::LegacyClientAuthoritativeV1) {
+        //      if (packet.mAction == PlayerActionType::StartJump) {
+        //          if (auto player = thisFor<NetEventCallback>()->_getServerPlayer(source, packet.mSenderSubId);
+        //          player) {
+        //              EventBus::getInstance().publish(PlayerJumpEvent(*player));
+        //          }
+        //      }
+        //  }
     }
     return origin(source, packet);
 }

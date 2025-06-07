@@ -17,6 +17,13 @@ class Actor;
 
 class WeakStorageEntity {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::WeakRef<::EntityRegistry> mRegistry;
+    ::EntityId                  mEntity;
+    // NOLINTEND
+
+public:
     template <class Entity = Actor, bool IncludeRemoved = false>
     [[nodiscard]] optional_ref<Entity> tryUnwrap() const {
         return StackResultStorageEntity(*this).tryUnwrap<Entity, IncludeRemoved>();
@@ -27,23 +34,4 @@ public:
     WeakStorageEntity(::WeakStorageEntity const&)            = default;
     WeakStorageEntity& operator=(::WeakStorageEntity&&)      = default;
     WeakStorageEntity& operator=(::WeakStorageEntity const&) = default;
-
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::WeakRef<::EntityRegistry> mRegistry;
-    ::EntityId                  mEntity;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WeakStorageEntity& operator=(WeakStorageEntity const&);
-    WeakStorageEntity(WeakStorageEntity const&);
-    WeakStorageEntity();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::WeakStorageEntity& operator=(::WeakStorageEntity&&);
-    // NOLINTEND
 };

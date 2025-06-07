@@ -1,7 +1,7 @@
 #include "mc/util/MolangScriptArg.h"
 #include "mc/world/actor/RenderParams.h"
 
-#include "mc/util/ExpressionNode.h"
+#include "mc/util/molang/ExpressionNode.h"
 
 
 #include "ll/api/memory/Hook.h"

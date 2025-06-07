@@ -74,7 +74,11 @@ static bool saveCrashInfo(
     std::string const&           traceName,
     std::string const&           susModules
 ) {
-    auto path = logPath / fmt::format("sentry_{:%Y-%m-%d_%H-%M-%S}", fmt::localtime(_time64(nullptr)));
+    auto path = logPath
+              / fmt::format(
+                    "sentry_{:%Y-%m-%d_%H-%M-%S}",
+                    std::chrono::current_zone()->to_local(std::chrono::system_clock::now())
+              );
     return file_utils::writeFile(path, fmt::format("{}\n{}\n{}", minidumpName, traceName, susModules));
 }
 
@@ -179,17 +183,19 @@ void CrashLogger::init() {
     sa.lpSecurityDescriptor = nullptr;
     sa.nLength              = sizeof(SECURITY_ATTRIBUTES);
 
-    std::wstring cmd = string_utils::str2wstr(fmt::format(
-        R"({} -p {} -b "{}" --lv "{}" {} --username "{}" --moddir "{}" {})",
-        getSelfModIns()->getModDir() / sv2u8sv(config.externalpath.value_or("CrashLogger.exe")),
-        GetCurrentProcessId(),
-        getGameVersion().to_string(),
-        getLoaderVersion().to_string(),
-        getLoaderVersion().to_string().find('+') != std::string::npos ? "--isdev" : "",
-        getServiceUuid(),
-        mod::getModsRoot(),
-        config.uploadToSentry ? "--enablesentry" : ""
-    ));
+    std::wstring cmd = string_utils::str2wstr(
+        fmt::format(
+            R"({} -p {} -b "{}" --lv "{}" {} --username "{}" --moddir "{}" {})",
+            getSelfModIns()->getModDir() / sv2u8sv(config.externalpath.value_or("CrashLogger.exe")),
+            GetCurrentProcessId(),
+            getGameVersion().to_string(),
+            getLoaderVersion().to_string(),
+            getLoaderVersion().to_string().find('+') != std::string::npos ? "--isdev" : "",
+            getServiceUuid(),
+            mod::getModsRoot(),
+            config.uploadToSentry ? "--enablesentry" : ""
+        )
+    );
 
     if (!CreateProcess(nullptr, cmd.data(), &sa, &sa, true, 0, nullptr, nullptr, &si, &pi)) {
         crashLoggerPtr->error("Couldn't Create CrashLogger Daemon Process"_tr());
@@ -295,7 +301,7 @@ static void dumpSystemInfo() {
                                   (totalPhyMem - availPhyMem) / totalPhyMem * 100
                               );
                           }()));
-    crashInfo.logger.info("  |LocalTime: {}", fmt::format("{0:%F %T} (UTC{0:%z})", fmt::localtime(_time64(nullptr))));
+    crashInfo.logger.info("  |SysTime: {}", fmt::format("{0:%F %T})", std::chrono::system_clock::now()));
 }
 
 static void dumpMemoryInfo() {
@@ -384,7 +390,10 @@ static bool genMiniDumpFile(PEXCEPTION_POINTERS e, std::filesystem::path& dumpFi
 
 static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
     try {
-        crashInfo.date     = fmt::format("{:%Y-%m-%d_%H-%M-%S}", fmt::localtime(_time64(nullptr)));
+        crashInfo.date = fmt::format(
+            "{:%Y-%m-%d_%H-%M-%S}",
+            std::chrono::current_zone()->to_local(std::chrono::system_clock::now())
+        );
         crashInfo.settings = getLeviConfig().modules.crashLogger;
         crashInfo.path     = file_utils::u8path(pl::pl_log_path) / u8"crash";
         auto logFilePath   = crashInfo.path / ("trace_" + crashInfo.date + ".log");
@@ -412,10 +421,12 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
              }
         };
         crashInfo.logger.getSink(0)->setFormatter(std::move(formatter));
-        crashInfo.logger.addSink(std::make_shared<io::FileSink>(
-            logFilePath,
-            makePolymorphic<io::PatternFormatter>("{tm:.3%F %T.} [{lvl}] {msg}", false)
-        ));
+        crashInfo.logger.addSink(
+            std::make_shared<io::FileSink>(
+                logFilePath,
+                makePolymorphic<io::PatternFormatter>("{tm:.3%F %T.} [{lvl}] {msg}", false)
+            )
+        );
         crashInfo.logger.setLevel(io::LogLevel::Trace);
         crashInfo.logger.setFlushLevel(io::LogLevel::Info);
 
@@ -489,7 +500,8 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
 static LONG uncatchableExceptionHandler(_In_ struct _EXCEPTION_POINTERS* e) {
     static std::atomic_bool onceFlag{false};
     auto const&             code = e->ExceptionRecord->ExceptionCode;
-    if (code == STATUS_HEAP_CORRUPTION || code == STATUS_STACK_BUFFER_OVERRUN
+    if (
+        code == STATUS_HEAP_CORRUPTION || code == STATUS_STACK_BUFFER_OVERRUN
         // need to add all can't catch status code
     ) {
         if (!onceFlag) {

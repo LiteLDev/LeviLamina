@@ -20,7 +20,7 @@ local is_client = false
 add_requires("ctre 3.8.1")
 add_requires("entt v3.14.0")
 add_requires("expected-lite v0.8.0")
-add_requires("fmt 11")
+add_requires("fmt 11.2.0")
 add_requires("gsl v4.0.0")
 add_requires("glm 1.0.1")
 add_requires("leveldb 1.23")
@@ -56,7 +56,7 @@ end
 
 if is_server then
     if is_windows then
-        add_requires("bedrockdata v1.21.7004-server.9")
+        add_requires("bedrockdata v1.21.803-server.1")
     end
 else
     if is_windows then
