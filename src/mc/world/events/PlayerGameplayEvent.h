@@ -1,7 +1,6 @@
 #pragma once
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/gameplayhandlers/CoordinatorResult.h"
-#include "mc/world/events/ClientJoinedEvent.h"
 #include "mc/world/events/EventVariantImpl.h"
 #include "mc/world/events/PlayerAddEvent.h"
 #include "mc/world/events/PlayerAddExpEvent.h"
@@ -68,7 +67,6 @@ struct PlayerGameplayEvent<void> : ConstEventVariant<
                                        PlayerInteractWithEntityAfterEvent,
                                        PlayerInteractWithBlockAfterEvent,
                                        PlayerEmoteEvent,
-                                       ClientJoinedEvent,
                                        PlayerScriptInputEvent,
                                        PlayerInputPermissionCategoryChangeEvent> {};
 

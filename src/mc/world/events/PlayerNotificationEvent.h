@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/events/ClientJoinedEvent.h"
 #include "mc/world/events/PlayerAddEvent.h"
 #include "mc/world/events/PlayerAddExpEvent.h"
 #include "mc/world/events/PlayerAddLevelEvent.h"
