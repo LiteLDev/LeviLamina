@@ -151,7 +151,7 @@ inline Expected<> deserialize_impl(T& map, J const& j, meta::PriorityTag<2>) {
                     std::forward<decltype((v))>(v)
                 );
                 !res) {
-                res = makeSerKeyError(magic_enum::enum_cast<typename T::key_type>(k).value(), res.error());
+                res = makeSerKeyError(k, res.error());
                 return res;
             }
         } else {
