@@ -5,7 +5,7 @@
 #include "ll/api/form/FormBase.h"
 #include "ll/api/form/ModalForm.h"
 #include "ll/api/form/SimpleForm.h"
-#include "ll/core/form/CustomFormElement.h"
+#include "ll/core/form/FormElementBase.h"
 #include "mc/deps/json/Value.h"
 #include "mc/network/packet/ModalFormCancelReason.h"
 #include "mc/world/actor/player/Player.h"
@@ -43,9 +43,9 @@ public:
 class CustomFormHandler : public FormHandler {
 public:
     CustomForm::Callback                            mCallback;
-    std::vector<std::shared_ptr<CustomFormElement>> mFormElements;
+    std::vector<std::shared_ptr<FormElementBase>> mFormElements;
 
-    CustomFormHandler(CustomForm::Callback callback, std::vector<std::shared_ptr<CustomFormElement>> formElements)
+    CustomFormHandler(CustomForm::Callback callback, std::vector<std::shared_ptr<FormElementBase>> formElements)
     : mCallback(std::move(callback)),
       mFormElements(std::move(formElements)) {}
 

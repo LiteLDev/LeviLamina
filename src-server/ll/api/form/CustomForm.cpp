@@ -233,12 +233,7 @@ public:
     void append(std::shared_ptr<FormElementBase> const& element) { mElements.push_back(element); }
 
     bool sendTo(Player& player, Callback callback, bool update = false) {
-        std::vector<std::shared_ptr<CustomFormElement>> elements{};
-        for (auto& element : mElements) {
-            if (element->getCategory() == FormElementBase::Category::Custom)
-                elements.push_back(std::reinterpret_pointer_cast<CustomFormElement>(element));
-        }
-        auto handler = std::make_unique<handler::CustomFormHandler>(std::move(callback), std::move(elements));
+        auto handler = std::make_unique<handler::CustomFormHandler>(std::move(callback), mElements);
         return sendImpl(player, serialize(), std::move(handler), update);
     }
 
