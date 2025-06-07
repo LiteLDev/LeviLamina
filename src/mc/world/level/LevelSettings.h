@@ -6,6 +6,7 @@
 #include "mc/common/editor/WorldType.h"
 #include "mc/config/ChatRestrictionLevel.h"
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/json/Value.h"
 #include "mc/deps/shared_types/legacy/Difficulty.h"
 #include "mc/network/GamePublishSetting.h"
 #include "mc/options/EduSharedUriResource.h"
@@ -43,6 +44,7 @@ public:
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::Difficulty>           mGameDifficulty;
     ::ll::TypedStorage<1, 1, bool>                                        mForceGameType;
     ::ll::TypedStorage<4, 4, ::GeneratorType>                             mGenerator;
+    ::ll::TypedStorage<8, 16, ::Json::Value>                              mFlatWorldOptions;
     ::ll::TypedStorage<1, 1, ::WorldVersion>                              mWorldVersion;
     ::ll::TypedStorage<1, 1, ::NetherWorldType>                           mNetherType;
     ::ll::TypedStorage<8, 48, ::SpawnSettings>                            mSpawnSettings;

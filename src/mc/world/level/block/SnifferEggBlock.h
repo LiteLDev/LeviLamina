@@ -22,23 +22,23 @@ class SnifferEggBlock : public ::BlockLegacy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 79
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 23
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
+    // vIndex: 22
+    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
-    // vIndex: 57
+    // vIndex: 56
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
-    // vIndex: 112
+    // vIndex: 111
     virtual ::std::string buildDescriptionId(::Block const&) const /*override*/;
 
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -59,15 +59,13 @@ public:
     MCAPI static void _addToRandomTickingQueue(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static void
-    _spawnParticles(::SharedTypes::Legacy::LevelEvent region, ::BlockSource& pos, ::BlockPos const& particleEvent);
+    _spawnParticles(::SharedTypes::Legacy::LevelEvent particleEvent, ::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
     MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 

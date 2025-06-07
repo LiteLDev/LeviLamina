@@ -29,7 +29,7 @@ class FenceBlock : public ::BlockLegacy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 25
+    // vIndex: 24
     virtual bool canConnect(::Block const& otherBlock, uchar, ::Block const&) const /*override*/;
 
     // vIndex: 10
@@ -66,16 +66,16 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
-    // vIndex: 23
+    // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 112
+    // vIndex: 111
     virtual ::std::string buildDescriptionId(::Block const& block) const /*override*/;
 
-    // vIndex: 32
+    // vIndex: 31
     virtual bool isFenceBlock() const /*override*/;
 
     // vIndex: 13
@@ -83,24 +83,24 @@ public:
     getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
         /*override*/;
 
-    // vIndex: 79
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 84
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     // vIndex: 4
     virtual ::HitResult clip(
-        ::Block const&       block,
-        ::BlockSource const& region,
-        ::BlockPos const&    pos,
-        ::Vec3 const&        origin,
-        ::Vec3 const&        end,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -175,16 +175,6 @@ public:
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
-
-    MCFOLD ::HitResult $clip(
-        ::Block const&       block,
-        ::BlockSource const& region,
-        ::BlockPos const&    pos,
-        ::Vec3 const&        origin,
-        ::Vec3 const&        end,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND

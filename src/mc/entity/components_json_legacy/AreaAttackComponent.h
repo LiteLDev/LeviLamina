@@ -42,7 +42,7 @@ public:
 
     MCNAPI ::AreaAttackComponent& operator=(::AreaAttackComponent&&);
 
-    MCNAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const&, ::DataLoadHelper&);
+    MCNAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
     MCNAPI ~AreaAttackComponent();
     // NOLINTEND

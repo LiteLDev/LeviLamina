@@ -9,6 +9,7 @@
 #include "mc/deps/ecs/strict/AddRemove.h"
 #include "mc/deps/ecs/strict/EntityFactoryT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
+#include "mc/deps/ecs/strict/Exclude.h"
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
@@ -38,6 +39,7 @@ struct ActorTypeComponent;
 struct CamelFlagComponent;
 struct CanStandOnSnowFlagComponent;
 struct DimensionTypeComponent;
+struct DoesServerAuthOnlyDismountFlagComponent;
 struct EjectedByActivatorRailFlagComponent;
 struct ExitFromPassengerFlagComponent;
 struct ExternalDataComponent;
@@ -215,6 +217,7 @@ public:
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::VehicleComponent>,
+            ::Exclude<::DoesServerAuthOnlyDismountFlagComponent>,
             ::StateVectorComponent const,
             ::ActorRotationComponent const,
             ::Optional<::PostTickPositionDeltaComponent const>,

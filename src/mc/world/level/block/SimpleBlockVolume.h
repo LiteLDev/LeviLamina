@@ -7,9 +7,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class BaseBlockLocationIterator;
 class BlockPos;
 class BoundingBox;
 class ChunkPos;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class SimpleBlockVolume : public ::BlockVolumeBase {
@@ -75,6 +77,12 @@ public:
     // vIndex: 9
     virtual ::std::set<::ChunkPos> getChunks() const /*override*/;
 
+    // vIndex: 10
+    virtual ::std::unordered_set<::BlockPos> getFlattenedBlockPositions() const /*override*/;
+
+    // vIndex: 11
+    virtual ::std::unique_ptr<::BaseBlockLocationIterator> getIterator() const /*override*/;
+
     // vIndex: 0
     virtual ~SimpleBlockVolume() /*override*/;
     // NOLINTEND
@@ -85,8 +93,12 @@ public:
     MCNAPI bool doesAreaTouchFaces(::BlockPos const& min, ::BlockPos const& max) const;
 
     MCNAPI ::SimpleBlockVolume::IntersectionResult intersects(::SimpleBlockVolume const& other) const;
+    // NOLINTEND
 
-    MCNAPI ::std::string toString() const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void cerealBindTypes(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -115,6 +127,10 @@ public:
     MCNAPI void $forEach(::std::function<bool(::BlockPos const&)> callback) const;
 
     MCNAPI ::std::set<::ChunkPos> $getChunks() const;
+
+    MCNAPI ::std::unordered_set<::BlockPos> $getFlattenedBlockPositions() const;
+
+    MCNAPI ::std::unique_ptr<::BaseBlockLocationIterator> $getIterator() const;
     // NOLINTEND
 
 public:

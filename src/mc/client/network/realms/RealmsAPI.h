@@ -14,12 +14,13 @@
 namespace Realms { struct Content; }
 namespace Realms { struct RealmId; }
 namespace Realms { struct SubscriptionInfo; }
+namespace Social { class GameConnectionInfo; }
 // clang-format on
 
-class RealmsAPI : public ::std::enable_shared_from_this<::RealmsAPI>,
-                  public ::Realms::IContentApi,
+class RealmsAPI : public ::Realms::IContentApi,
                   public ::Realms::ISubscriptionApi,
-                  public ::Realms::IWorldApi {
+                  public ::Realms::IWorldApi,
+                  public ::std::enable_shared_from_this<::RealmsAPI> {
 public:
     // RealmsAPI inner types declare
     // clang-format off
@@ -83,8 +84,9 @@ public:
     ::ll::UntypedStorage<8, 32>  mUnk7ec7da;
     ::ll::UntypedStorage<8, 32>  mUnkc5672a;
     ::ll::UntypedStorage<8, 16>  mUnk5121fd;
-    ::ll::UntypedStorage<8, 16>  mUnk3dc1e8;
+    ::ll::UntypedStorage<8, 16>  mUnk971b5e;
     ::ll::UntypedStorage<8, 16>  mUnkcde4a1;
+    ::ll::UntypedStorage<8, 16>  mUnk3dc1e8;
     ::ll::UntypedStorage<8, 16>  mUnk8508b2;
     ::ll::UntypedStorage<8, 64>  mUnkf80c4d;
     ::ll::UntypedStorage<8, 64>  mUnk8ae990;
@@ -96,7 +98,7 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnkfe7c75;
     ::ll::UntypedStorage<8, 16>  mUnk739a87;
     ::ll::UntypedStorage<8, 16>  mUnk3c792e;
-    ::ll::UntypedStorage<8, 128> mUnka3d57a;
+    ::ll::UntypedStorage<8, 128> mUnk816d47;
     // NOLINTEND
 
 public:

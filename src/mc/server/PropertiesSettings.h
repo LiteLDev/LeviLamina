@@ -5,15 +5,24 @@
 // auto generated inclusion list
 #include "mc/config/ChatRestrictionLevel.h"
 #include "mc/deps/core/debug/log/LogLevel.h"
+#include "mc/deps/nether_net/LogSeverity.h"
+#include "mc/deps/nether_net/NetworkID.h"
 #include "mc/deps/shared_types/legacy/Difficulty.h"
+#include "mc/external/lib_http_client/HCTraceLevel.h"
 #include "mc/network/NetworkAddress.h"
 #include "mc/network/NetworkPermissions.h"
 #include "mc/network/NetworkSettingOptions.h"
 #include "mc/network/TransportLayer.h"
+#include "mc/network/services/discovery/DiscoveryConfig.h"
 #include "mc/scripting/ScriptSettings.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/actor/player/PlayerMovementSettings.h"
 #include "mc/world/level/GameType.h"
+
+// auto generated forward declare list
+// clang-format off
+struct MappedPorts;
+// clang-format on
 
 class PropertiesSettings {
 public:
@@ -55,6 +64,7 @@ public:
     ::ll::TypedStorage<4, 4, ::std::chrono::minutes>                              mMaxIdleTime;
     ::ll::TypedStorage<4, 4, int>                                                 mServerWakeupFrequency;
     ::ll::TypedStorage<4, 4, ::TransportLayer>                                    mTransportLayerType;
+    ::ll::TypedStorage<8, 32, ::std::optional<::NetherNet::NetworkID>>            mNetherNetId;
     ::ll::TypedStorage<8, 40, ::NetworkAddress>                                   mRemoteServerCommunicationEndpoint;
     ::ll::TypedStorage<8, 32, ::std::string>                                      mDefaultPlayerPermissionLevel;
     ::ll::TypedStorage<4, 4, ::std::bitset<3>>                                    mServerTextSettings;
@@ -62,6 +72,8 @@ public:
     ::ll::TypedStorage<4, 4, ::LogLevel>                                          mContentLogLevel;
     ::ll::TypedStorage<1, 1, bool>                                                mIsContentLogConsoleOutputEnabled;
     ::ll::TypedStorage<1, 1, bool>                                                mIsContentLogFileEnabled;
+    ::ll::TypedStorage<4, 4, ::NetherNet::LogSeverity>                            mTransportLogLevel;
+    ::ll::TypedStorage<4, 4, ::HCTraceLevel>                                      mHttpLogLevel;
     ::ll::TypedStorage<4, 4, float>                                               mWebsocketRetryTime;
     ::ll::TypedStorage<1, 1, bool>                                                mUseWebsocketEncryption;
     ::ll::TypedStorage<4, 24, ::NetworkSettingOptions>                            mNetworkSettings;
@@ -82,6 +94,9 @@ public:
     ::ll::TypedStorage<1, 1, ::NetworkPermissions>                                mNetworkPermissions;
     ::ll::TypedStorage<8, 32, ::std::string>                                      mAppId;
     ::ll::TypedStorage<8, 32, ::std::string>                                      mAppTenantId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                      mServerPublicIP;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MappedPorts>>                       mPortMappings;
+    ::ll::TypedStorage<4, 8, ::Bedrock::Services::DiscoveryConfig>                mDiscoveryConfig;
     // NOLINTEND
 
 public:
@@ -98,8 +113,6 @@ public:
     MCAPI ::SharedTypes::Legacy::Difficulty getDifficulty() const;
 
     MCAPI ::CommandPermissionLevel getOpPermissionLevel() const;
-
-    MCAPI float websocketRetryTime() const;
 
     MCAPI ~PropertiesSettings();
     // NOLINTEND

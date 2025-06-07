@@ -12,14 +12,15 @@
 class IContentKeyProvider;
 class IPackManifestFactory;
 class PackSourceReport;
+struct WorldTemplatePackSourceOptions;
 // clang-format on
 
 class WorldTemplatePackSource : public ::DirectoryPackSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkdebaad;
-    ::ll::UntypedStorage<8, 16> mUnk8986d1;
+    ::ll::UntypedStorage<8, 24> mUnkc34428;
+    ::ll::UntypedStorage<8, 16> mUnk866f94;
     ::ll::UntypedStorage<1, 1>  mUnkedfcff;
     // NOLINTEND
 
@@ -45,12 +46,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit WorldTemplatePackSource(::WorldTemplatePackSourceOptions options);
+
     MCNAPI ::PackSourceReport _tryLoadFromZip(
         ::IPackManifestFactory&                                           manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
         ::Core::PathBuffer<::std::string> const&                          worldTemplatePath,
         ::std::string const&                                              subDir
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::WorldTemplatePackSourceOptions options);
     // NOLINTEND
 
 public:

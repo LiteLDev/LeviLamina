@@ -2,12 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-
 // auto generated forward declare list
 // clang-format off
-struct FeedItem;
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -16,7 +13,7 @@ class ScriptFeedItem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::FeedItem> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

@@ -16,8 +16,8 @@ namespace Scripting { struct ClassBinding; }
 namespace ScriptModuleMinecraft {
 
 struct ScriptBlockCustomComponentPlayerPlaceBeforeEvent
-: public ::ScriptModuleMinecraft::ScriptBlockEvent,
-  public ::ScriptModuleMinecraft::ScriptCustomComponentBeforeEvent<::BlockEvents::BlockPlayerPlacingEvent&> {
+: public ::ScriptModuleMinecraft::ScriptCustomComponentBeforeEvent<::BlockEvents::BlockPlayerPlacingEvent&>,
+  public ::ScriptModuleMinecraft::ScriptBlockEvent {
 public:
     // member variables
     // NOLINTBEGIN

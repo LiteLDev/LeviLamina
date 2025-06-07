@@ -12,6 +12,7 @@
 struct HC_WEBSOCKET_OBSERVER;
 struct XAsyncBlock;
 struct XAsyncProviderData;
+namespace xbox::httpclient { class IWebSocketProvider; }
 namespace xbox::httpclient { struct HeaderCompare; }
 // clang-format on
 
@@ -47,6 +48,10 @@ public:
     struct EventCallbacks {};
 
 public:
+    // prevent constructor by default
+    WebSocket();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI long ConnectAsync(::http_string&&, ::http_string&&, ::XAsyncBlock*);
@@ -62,9 +67,7 @@ public:
 
     MCNAPI uint64 MaxReceiveBufferSize() const;
 
-    MCNAPI bool const ProxyDecryptsHttps() const;
-
-    MCNAPI ::http_string const& ProxyUri() const;
+    MCNAPI uint PingInterval() const;
 
     MCNAPI uint RegisterEventCallbacks(
         void (*)(::HC_WEBSOCKET_OBSERVER*, char const*, void*),
@@ -75,6 +78,12 @@ public:
     );
 
     MCNAPI long SendAsync(char const*, ::XAsyncBlock*);
+
+    MCNAPI long SetHeader(::http_string&&, ::http_string&&);
+
+    MCNAPI long SetPingInterval(uint);
+
+    MCNAPI WebSocket(uint64, ::xbox::httpclient::IWebSocketProvider&);
     // NOLINTEND
 
 public:
@@ -93,6 +102,18 @@ public:
     MCNAPI static void MessageFunc(::HC_WEBSOCKET_OBSERVER*, char const*, void*);
 
     MCNAPI static void NotifyWebSocketRoutedHandlers(::HC_WEBSOCKET_OBSERVER*, bool, char const*, uchar const*, uint64);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(uint64, ::xbox::httpclient::IWebSocketProvider&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

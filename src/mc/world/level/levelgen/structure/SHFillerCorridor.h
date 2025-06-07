@@ -45,11 +45,11 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::BoundingBox findPieceBox(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           footX,
-        int                                                 footY,
-        int                                                 footZ,
-        int                                                 direction,
-        int
+        ::Random&,
+        int footX,
+        int footY,
+        int footZ,
+        int direction
     );
     // NOLINTEND
 

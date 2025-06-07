@@ -689,6 +689,8 @@ public:
 
     MCFOLD ::std::vector<::std::string> $validateFromNetwork(::CompoundTag const&);
 
+    MCFOLD ::BlockShape $getBlockShape() const;
+
     MCAPI bool $canBeDepleted() const;
 
     MCFOLD bool $canDestroySpecial(::Block const&) const;

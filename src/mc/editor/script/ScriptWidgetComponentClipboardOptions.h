@@ -3,16 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/script/ScriptWidgetComponentBaseOptions.h"
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptRGBA; }
+namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -25,14 +26,27 @@ public:
     ::ll::UntypedStorage<1, 2>  mUnkc882fe;
     ::ll::UntypedStorage<4, 16> mUnk320886;
     ::ll::UntypedStorage<4, 16> mUnkac6d6a;
-    ::ll::UntypedStorage<1, 2>  mUnkd33090;
-    ::ll::UntypedStorage<4, 32> mUnk1ac6be;
-    ::ll::UntypedStorage<4, 32> mUnk6e0c8f;
+    ::ll::UntypedStorage<1, 2>  mUnk12aa80;
+    ::ll::UntypedStorage<4, 32> mUnk4bcb08;
+    ::ll::UntypedStorage<4, 32> mUnkfd7ba1;
+    ::ll::UntypedStorage<4, 32> mUnk10d5e2;
+    ::ll::UntypedStorage<4, 32> mUnk44a836;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ScriptWidgetComponentClipboardOptions();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 1
+    virtual ::Scripting::Result_deprecated<void>
+    validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const /*override*/;
+
+    // vIndex: 0
+    virtual ~ScriptWidgetComponentClipboardOptions() /*override*/;
+    // NOLINTEND
 
 public:
     // member functions
@@ -46,21 +60,16 @@ public:
 
     MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&
     operator=(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&&);
-
-    MCNAPI ::Scripting::Result<void> validate() const;
-
-    MCNAPI ~ScriptWidgetComponentClipboardOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions>
-    bindScript();
+    MCNAPI static ::Scripting::InterfaceBinding bindScript();
 
-    MCNAPI static ::Scripting::Result<void> validateOffsetValues(::Vec3 const& offset);
+    MCNAPI static ::Scripting::Result_deprecated<void> validateOffsetValues(::Vec3 const& offset);
 
-    MCNAPI static ::Scripting::Result<void> validateOriginValues(::Vec3 const& origin);
+    MCNAPI static ::Scripting::Result_deprecated<void> validateOriginValues(::Vec3 const& origin);
     // NOLINTEND
 
 public:
@@ -74,19 +83,15 @@ public:
 
     MCNAPI static ::Rotation const& DEFAULT_CLIPBOARD_ROTATION();
 
-    MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_OUTER_BOUNDS_FILL_COLOR();
+    MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_HIGHLIGHT_HULL_COLOR();
 
-    MCNAPI static bool const& DEFAULT_OUTER_BOUNDS_VISIBLE();
+    MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_HIGHLIGHT_OUTLINE_COLOR();
 
-    MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_OUTER_BOUNDS_WIREFRAME_COLOR();
+    MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_HULL_COLOR();
 
-    MCNAPI static ::Vec3 const& MAX_CLIPBOARD_OFFSET();
+    MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_OUTLINE_COLOR();
 
-    MCNAPI static ::Vec3 const& MAX_CLIPBOARD_ORIGIN();
-
-    MCNAPI static ::Vec3 const& MIN_CLIPBOARD_OFFSET();
-
-    MCNAPI static ::Vec3 const& MIN_CLIPBOARD_ORIGIN();
+    MCNAPI static bool const& DEFAULT_SHOW_OUTLINE();
     // NOLINTEND
 
 public:
@@ -101,6 +106,19 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

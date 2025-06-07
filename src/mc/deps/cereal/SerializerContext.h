@@ -6,11 +6,6 @@
 #include "mc/deps/cereal/BasicSerializerContext.h"
 #include "mc/deps/cereal/ResultCode.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace cereal {
 
 class SerializerContext : public ::cereal::BasicSerializerContext {
@@ -56,13 +51,13 @@ public:
 public:
     // prevent constructor by default
     SerializerContext& operator=(SerializerContext const&);
-    SerializerContext(SerializerContext const&);
-    SerializerContext();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit SerializerContext(::cereal::ReflectionCtx const&);
+    MCNAPI SerializerContext();
+
+    MCNAPI SerializerContext(::cereal::SerializerContext const&);
 
     MCNAPI void consumeContext(::cereal::SerializerContext const& other);
 
@@ -71,6 +66,8 @@ public:
     MCNAPI void log(::cereal::ResultCode res, ::std::string msg);
 
     MCNAPI ::cereal::SerializerContext& operator=(::cereal::SerializerContext&&);
+
+    MCNAPI void popContext();
 
     MCNAPI ::cereal::SerializerContext&
     pushContext(::cereal::BasicSerializerContext::ContextType contextType, ::std::string contextToken);
@@ -81,7 +78,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::ReflectionCtx const&);
+    MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(::cereal::SerializerContext const&);
     // NOLINTEND
 
 public:

@@ -18,8 +18,8 @@ public:
     // NOLINTBEGIN
     MCNAPI static void initialize(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager> manager,
-        ::FeatureRegistry&                                registry,
-        ::JigsawStructureRegistry&                        featureRegistry
+        ::FeatureRegistry&                                featureRegistry,
+        ::JigsawStructureRegistry&                        registry
     );
     // NOLINTEND
 };

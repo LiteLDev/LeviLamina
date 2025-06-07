@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
@@ -15,6 +13,7 @@ namespace Editor::ScriptModule { class ScriptEditorStructure; }
 namespace Editor::ScriptModule { class ScriptEditorStructureSearchOptions; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -53,7 +52,7 @@ public:
     MCNAPI ::Scripting::Result_deprecated<::Editor::ScriptModule::ScriptEditorStructure>
     loadStructure(::Scripting::DependencyLocator& locator, ::std::string storageLocation, ::std::string structureName);
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     saveStructure(::Editor::ScriptModule::ScriptEditorStructure const& scriptStructure);
 
     MCNAPI ::Scripting::Result_deprecated<::std::vector<::Editor::ScriptModule::ScriptEditorStructure>>
@@ -66,7 +65,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptEditorStructureManager> bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 
 public:

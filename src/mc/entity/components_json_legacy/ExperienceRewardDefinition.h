@@ -27,5 +27,13 @@ public:
     MCNAPI void addBredExpressionNode(::ExpressionNode const& node);
 
     MCNAPI void addDeathExpressionNode(::ExpressionNode const& node);
+
+    MCNAPI ~ExperienceRewardDefinition();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

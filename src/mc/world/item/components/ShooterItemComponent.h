@@ -128,7 +128,7 @@ public:
         bool               fromOffhand
     ) const;
 
-    MCAPI int _getAmmunition(::Player const* player, bool ammo, ::ItemStack& fromOffhand, bool&) const;
+    MCAPI int _getAmmunition(::Player const* player, bool, ::ItemStack& ammo, bool& fromOffhand) const;
 
     MCAPI void _shootProjectiles(::ItemStack& shooterStack, ::Player* player, int durationLeft) const;
 
@@ -142,8 +142,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
-        ::std::optional<::SemVersion>          requiredToggles
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
 
     MCAPI static ::HashedString const& getIdentifier();

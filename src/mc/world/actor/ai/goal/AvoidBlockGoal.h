@@ -12,7 +12,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class Mob;
 class Path;
 namespace JsonUtil { class EmptyClass; }
@@ -58,8 +57,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI void initialize(::EntityContext& entity, ::AvoidBlockGoal& goal) const;
-
         MCNAPI void setSoundEvent(::std::string const& soundEvent);
 
         MCNAPI void setTargetSelectionMethod(::std::string const& methodCased);
@@ -96,7 +93,7 @@ public:
     ::ll::TypedStorage<8, 8, ::Mob&>                         mMob;
     ::ll::TypedStorage<8, 8, ::Tick>                         mNextStartTick;
     ::ll::TypedStorage<4, 12, ::BlockPos>                    mTargetBlockToAvoidPos;
-    ::ll::TypedStorage<8, 136, ::AvoidBlockGoal::Definition> mDefinition;
+    ::ll::TypedStorage<8, 104, ::AvoidBlockGoal::Definition> mDefinition;
     ::ll::TypedStorage<8, 8, ::Tick>                         mNextSoundEventTick;
     // NOLINTEND
 

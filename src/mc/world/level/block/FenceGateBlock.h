@@ -18,9 +18,9 @@ class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class Player;
-class Random;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class FenceGateBlock : public ::BlockLegacy {
@@ -31,10 +31,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 67
+    // vIndex: 66
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 61
+    // vIndex: 60
     virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
         /*override*/;
 
@@ -51,20 +51,17 @@ public:
     getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
         /*override*/;
 
-    // vIndex: 87
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
     // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    // vIndex: 138
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 73
+    // vIndex: 72
     virtual bool ignoreEntitiesOnPistonMove(::Block const& block) const /*override*/;
 
-    // vIndex: 25
+    // vIndex: 24
     virtual bool canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const /*override*/;
 
     // vIndex: 13
@@ -72,13 +69,13 @@ public:
     getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
         /*override*/;
 
-    // vIndex: 33
+    // vIndex: 32
     virtual bool isFenceGateBlock() const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 146
+    // vIndex: 145
     virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const /*override*/;
 
     // vIndex: 0
@@ -101,6 +98,8 @@ public:
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void resolveIsInWall(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
@@ -136,8 +135,6 @@ public:
     $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
-
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCFOLD bool $isInteractiveBlock() const;
 

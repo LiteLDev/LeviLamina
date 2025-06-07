@@ -218,9 +218,9 @@ public:
 
     MCAPI ::ItemStackNetResult _handleTransfer(
         ::ItemStackRequestActionTransferBase const& requestAction,
-        bool                                        isSwap,
         bool                                        isSrcHintSlot,
-        bool                                        isDstHintSlot
+        bool                                        isDstHintSlot,
+        bool                                        isSwap
     );
 
     MCAPI void _initScreen(::ItemStackNetManagerScreen& screen);

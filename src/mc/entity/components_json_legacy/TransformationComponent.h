@@ -20,8 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initFromDefinition(::Actor& actor);
-
     MCAPI void maintainOldData(
         ::Actor&                           originalActor,
         ::Actor&                           transformed,

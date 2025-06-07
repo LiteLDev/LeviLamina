@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/nether_net/ContextProxy.h"
+#include "mc/deps/nether_net/ESendType.h"
 #include "mc/deps/nether_net/ESessionError.h"
 #include "mc/deps/nether_net/SignalingChannelId.h"
 #include "mc/deps/nether_net/utils/ErrorOr.h"
@@ -16,8 +17,10 @@ namespace NetherNet { class ConnectError; }
 namespace NetherNet { class ConnectRequest; }
 namespace NetherNet { class ConnectResponse; }
 namespace NetherNet { class NetworkSession; }
+namespace NetherNet { class SimpleNetworkInterfaceImpl; }
 namespace NetherNet { struct NetworkID; }
 namespace NetherNet { struct SessionState; }
+namespace webrtc { class SessionDescriptionInterface; }
 // clang-format on
 
 namespace NetherNet {
@@ -106,6 +109,14 @@ public:
     MCNAPI bool
     GetSessionState(::NetherNet::NetworkID peerId, uint64 connectionId, ::NetherNet::SessionState* pConnectionState);
 
+    MCNAPI ::NetherNet::ESessionError InitiateIncomingSession(
+        ::NetherNet::NetworkID                                          remoteID,
+        uint64 const&                                                   connectionId,
+        ::std::unique_ptr<::webrtc::SessionDescriptionInterface>        pSessionDescription,
+        ::NetherNet::SignalingChannelId                                 preference,
+        ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const& sessionsLock
+    );
+
     MCNAPI ::NetherNet::NetworkSession* InitiateOutgoingSession(
         ::NetherNet::NetworkID                                          remoteID,
         ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const& sessionsLock
@@ -113,13 +124,36 @@ public:
 
     MCNAPI bool IsPacketAvailable(::NetherNet::NetworkID remoteId, uint64 connectionId, uint* pcbMessageSize);
 
+    MCNAPI NetworkSessionManager(
+        ::NetherNet::ContextProxy const&         ctx,
+        ::NetherNet::SimpleNetworkInterfaceImpl& networkInterface
+    );
+
+    MCNAPI void NotifyOnSessionOpen(::NetherNet::NetworkID networkIDRemote, uint64 connectionId);
+
+    MCNAPI bool NotifyOnSessionRequested(::NetherNet::NetworkID networkIDRemote, uint64 connectionId);
+
     MCNAPI void PeriodicDeadSessionCleanupOnSignalThread();
+
+    MCNAPI void ProcessError(::NetherNet::NetworkID remoteID, uint64 connectionId, ::NetherNet::ESessionError error);
 
     MCNAPI void ProcessSignal(
         ::NetherNet::NetworkID           remoteID,
         ::NetherNet::ConnectError const& signal,
         ::NetherNet::SignalingChannelId
     ) const;
+
+    MCNAPI void ProcessSignal(
+        ::NetherNet::NetworkID              remoteID,
+        ::NetherNet::ConnectResponse const& signal,
+        ::NetherNet::SignalingChannelId
+    ) const;
+
+    MCNAPI void ProcessSignal(
+        ::NetherNet::NetworkID           remoteID,
+        ::NetherNet::CandidateAdd const& signal,
+        ::NetherNet::SignalingChannelId
+    );
 
     MCNAPI void ProcessSignal(
         ::NetherNet::NetworkID             remoteID,
@@ -133,8 +167,13 @@ public:
     MCNAPI void
     RemoteMessageReceived(::NetherNet::NetworkID remoteID, uint64 connectionId, void const* pvData, uint64 cbSize);
 
-    MCNAPI ::std::vector<::std::unique_ptr<::NetherNet::NetworkSession>>
-    RemoveSession(::NetherNet::NetworkID remoteID, uint64 connectionId);
+    MCNAPI bool SendPacket(
+        ::NetherNet::NetworkID networkIDRemote,
+        uint64                 connectionId,
+        char const*            pbData,
+        uint                   cbData,
+        ::NetherNet::ESendType eSendType
+    );
 
     MCNAPI ::NetherNet::ErrorOr<void, ::NetherNet::ESessionError> SendToSignalingChannel(
         ::NetherNet::NetworkID networkIDTo,
@@ -145,6 +184,12 @@ public:
             ::NetherNet::CandidateAdd> const&            signal,
         ::std::optional<::NetherNet::SignalingChannelId> preference
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::NetherNet::ContextProxy const& ctx, ::NetherNet::SimpleNetworkInterfaceImpl& networkInterface);
     // NOLINTEND
 
 public:

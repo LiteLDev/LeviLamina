@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/scripting/modules/minecraft/ScriptCustomComponentRegistry.h"
+#include "mc/scripting/modules/minecraft/block/IScriptBlockCustomComponentReader.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockCustomComponentEventTypes.h"
 #include "mc/scripting/modules/minecraft/events/metadata/ScriptCustomComponentEventMetadata.h"
 #include "mc/world/events/ScriptDeferredEventListener.h"
@@ -14,7 +15,9 @@
 class Block;
 class BlockCustomComponentsComponent;
 class BlockLegacy;
+class BlockPos;
 class HashedString;
+class IBlockSource;
 class ScriptDeferredEventCoordinator;
 class ScriptDeferredFlushTracker;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
@@ -24,6 +27,7 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockPlayerPlacingEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace BlockEvents { class BlockRandomTickEvent; }
+namespace BlockEvents { class BlockRandomTickLegacyEvent; }
 namespace BlockEvents { class BlockStepOffEvent; }
 namespace BlockEvents { class BlockStepOnEvent; }
 namespace Json { class Value; }
@@ -40,7 +44,8 @@ namespace Scripting { struct ModuleDescriptor; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBlockCustomComponentsRegistry : public ::ScriptDeferredEventListener,
+class ScriptBlockCustomComponentsRegistry : public ::ScriptModuleMinecraft::IScriptBlockCustomComponentReader,
+                                            public ::ScriptDeferredEventListener,
                                             public ::ScriptModuleMinecraft::ScriptCustomComponentRegistry {
 public:
     // ScriptBlockCustomComponentsRegistry inner types declare
@@ -53,8 +58,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<2, 2>   mUnk6a4664;
-        ::ll::UntypedStorage<8, 208> mUnk346989;
+        ::ll::UntypedStorage<2, 2>   mUnkaac3ad;
+        ::ll::UntypedStorage<8, 224> mUnk346989;
         ::ll::UntypedStorage<8, 40>  mUnk53a6c9;
         ::ll::UntypedStorage<1, 1>   mUnk9ffddb;
         // NOLINTEND
@@ -91,7 +96,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk61196d;
     ::ll::UntypedStorage<8, 64> mUnkb5c618;
     ::ll::UntypedStorage<8, 24> mUnkc6a9fb;
-    ::ll::UntypedStorage<2, 2>  mUnkf295dd;
+    ::ll::UntypedStorage<2, 2>  mUnk8db1d0;
     // NOLINTEND
 
 public:
@@ -120,6 +125,11 @@ public:
 
     // vIndex: 0
     virtual ~ScriptBlockCustomComponentsRegistry() /*override*/;
+
+    // vIndex: 1
+    virtual bool
+    isValidComponentForBlock(::IBlockSource const& region, ::BlockPos blockPos, ::std::string_view componentName) const
+        /*override*/;
     // NOLINTEND
 
 public:
@@ -185,6 +195,8 @@ public:
     MCNAPI void onQueuedTick(::BlockEvents::BlockQueuedTickEvent const& eventData) const;
 
     MCNAPI void onRandomTick(::BlockEvents::BlockRandomTickEvent const& eventData) const;
+
+    MCNAPI void onRandomTickLegacy(::BlockEvents::BlockRandomTickLegacyEvent const& eventData) const;
 
     MCNAPI void onStepOff(::BlockEvents::BlockStepOffEvent const& eventData) const;
 
@@ -256,12 +268,20 @@ public:
     MCNAPI void $_onScriptInitializationComplete();
 
     MCNAPI void $_onReload();
+
+    MCNAPI bool $isValidComponentForBlock(
+        ::IBlockSource const& region,
+        ::BlockPos            blockPos,
+        ::std::string_view    componentName
+    ) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftableForScriptDeferredEventListener();
+
+    MCNAPI static void** $vftableForIScriptBlockCustomComponentReader();
 
     MCNAPI static void** $vftableForScriptCustomComponentRegistry();
     // NOLINTEND

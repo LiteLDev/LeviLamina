@@ -36,5 +36,13 @@ public:
     );
 
     MCNAPI ::BoneOrientation& operator=(::BoneOrientation const& rhs);
+
+    MCNAPI ~BoneOrientation();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

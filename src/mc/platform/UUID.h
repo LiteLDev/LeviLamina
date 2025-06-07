@@ -36,7 +36,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string asString() const;
+    MCFOLD ::std::string asString() const;
+
+    MCAPI bool isEmpty() const;
     // NOLINTEND
 
 public:

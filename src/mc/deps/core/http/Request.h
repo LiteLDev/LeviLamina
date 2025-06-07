@@ -16,7 +16,7 @@ class Request {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk55580c;
+    ::ll::UntypedStorage<8, 32> mUnkcb7d93;
     ::ll::UntypedStorage<1, 2>  mUnk67e7ed;
     ::ll::UntypedStorage<8, 64> mUnk3aa28a;
     ::ll::UntypedStorage<8, 16> mUnkb7733e;
@@ -24,6 +24,7 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnkf34d9b;
     ::ll::UntypedStorage<8, 8>  mUnka3dac0;
     ::ll::UntypedStorage<8, 64> mUnkbee43e;
+    ::ll::UntypedStorage<1, 1>  mUnk7f9c7c;
     // NOLINTEND
 
 public:
@@ -32,8 +33,6 @@ public:
     MCNAPI Request();
 
     MCNAPI Request(::Bedrock::Http::Request const&);
-
-    MCNAPI ::std::error_code _validate() const;
 
     MCNAPI ::Bedrock::Http::Request& operator=(::Bedrock::Http::Request const&);
 

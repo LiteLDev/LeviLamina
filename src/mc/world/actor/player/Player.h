@@ -203,9 +203,6 @@ public:
         // NOLINTEND
     };
 
-    using ContainerManagerSubscriber = ::Bedrock::PubSub::
-        Publisher<void(::ContainerManagerModel const*), ::Bedrock::PubSub::ThreadModel::SingleThreaded>;
-
 public:
     LLNDAPI UserEntityIdentifierComponent const& getUserEntityIdentifier() const;
 
@@ -280,32 +277,38 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<ushort>>                         mOceanBiomes;
-    ::ll::TypedStorage<8, 24, ::std::vector<ushort>>                         mFroglights;
-    ::ll::TypedStorage<4, 4, float const>                                    mSneakHeight;
-    ::ll::TypedStorage<4, 4, float const>                                    mSneakOffset;
-    ::ll::TypedStorage<4, 4, int>                                            mScore;
-    ::ll::TypedStorage<4, 4,  ::BuildPlatform>                                mBuildPlatform;
-    ::ll::TypedStorage<8, 32, ::std::string>                                 mUniqueName;
-    ::ll::TypedStorage<8, 32, ::std::string>                                 mServerId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                 mSelfSignedId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                 mPlatformOfflineId;
-    ::ll::TypedStorage<8, 8, uint64>                                         mClientRandomId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                 mPlatformId;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                mPendingVehicleID;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                mPendingLeftShoulderPassengerID;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                mPendingRightShoulderPassengerID;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                mInteractTarget;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                        mInteractTargetPos;
-    ::ll::TypedStorage<1, 1, bool>                                           mHasFakeInventory;
-    ::ll::TypedStorage<1, 1, bool>                                           mIsRegionSuspended;
-    ::ll::TypedStorage<1, 1, bool>                                           mUpdateMobs;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ChunkViewSource>>          mChunkSource;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ChunkViewSource>>          mSpawnChunkSource;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                        mCapePosO;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                        mCapePos;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ContainerManagerModel>>    mContainerManager;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<ContainerManagerSubscriber>>  mContainerManagerSubscribers;
+    ::ll::TypedStorage<8, 24, ::std::vector<ushort>>                      mOceanBiomes;
+    ::ll::TypedStorage<8, 24, ::std::vector<ushort>>                      mFroglights;
+    ::ll::TypedStorage<4, 4, float const>                                 mSneakHeight;
+    ::ll::TypedStorage<4, 4, float const>                                 mSneakOffset;
+    ::ll::TypedStorage<4, 4, int>                                         mScore;
+    ::ll::TypedStorage<4, 4, ::BuildPlatform>                             mBuildPlatform;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mUniqueName;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mServerId;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mSelfSignedId;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mPlatformOfflineId;
+    ::ll::TypedStorage<8, 8, uint64>                                      mClientRandomId;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mPlatformId;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                             mPendingVehicleID;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                             mPendingLeftShoulderPassengerID;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                             mPendingRightShoulderPassengerID;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                             mInteractTarget;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                     mInteractTargetPos;
+    ::ll::TypedStorage<1, 1, bool>                                        mHasFakeInventory;
+    ::ll::TypedStorage<1, 1, bool>                                        mIsRegionSuspended;
+    ::ll::TypedStorage<1, 1, bool>                                        mUpdateMobs;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ChunkViewSource>>       mChunkSource;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ChunkViewSource>>       mSpawnChunkSource;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                     mCapePosO;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                     mCapePos;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ContainerManagerModel>> mContainerManager;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::unique_ptr<
+            ::Bedrock::PubSub::
+                Publisher<void(::ContainerManagerModel const*), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>>
+                                                                             mContainerManagerSubscribers;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlayerInventory>>           mInventory;
     ::ll::TypedStorage<4, 20, ::InventoryOptions>                            mInventoryOptions;
     ::ll::TypedStorage<4, 4, float>                                          mDistanceSinceTransformEvent;
@@ -340,7 +343,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EnderChestContainer>>       mEnderChestInventory;
     ::ll::TypedStorage<8, 24, ::std::vector<::ActorUniqueID>>                mTrackedBossIDs;
     ::ll::TypedStorage<8, 136, ::ItemGroup>                                  mCursorSelectedItemGroup;
-    ::ll::TypedStorage<8, 520, ::PlayerUIContainer>                          mPlayerUIContainer;
+    ::ll::TypedStorage<8, 440, ::PlayerUIContainer>                          mPlayerUIContainer;
     ::ll::TypedStorage<8, 48, ::InventoryTransactionManager>                 mTransactionManager;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::GameMode>>                  mGameMode;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlayerRespawnRandomizer>>   mSpawnRandomizer;
@@ -502,7 +505,7 @@ public:
     virtual bool isInTrialMode();
 
     // vIndex: 143
-    virtual void setSpeed(float _speed) /*override*/;
+    virtual void setSpeed(float speed) /*override*/;
 
     // vIndex: 149
     virtual int getItemUseDuration() const /*override*/;
@@ -660,7 +663,7 @@ public:
     virtual bool isImmobile() const /*override*/;
 
     // vIndex: 98
-    virtual void sendMotionPacketIfNeeded(::PlayerMovementSettings const& playerMovementSettings) /*override*/;
+    virtual void sendMotionPacketIfNeeded() /*override*/;
 
     // vIndex: 216
     virtual ::IMinecraftEventing* getEventing() const;
@@ -916,11 +919,11 @@ public:
     MCAPI void _saveInventoryOptions(::CompoundTag& tag) const;
 
     MCAPI void _sendShieldUpdatePacket(
-        ::ShieldItem const& before,
+        ::ShieldItem const& shieldItem,
+        ::ItemStack const&  before,
         ::ItemStack const&  after,
-        ::ItemStack const&  slot,
-        ::ContainerID       shieldItem,
-        int                 container
+        ::ContainerID       container,
+        int                 slot
     );
 
     MCAPI void _setPlayerGameType(::GameType gameType);
@@ -934,6 +937,8 @@ public:
         ::BlockSource*      blockSourceChunkCheck,
         ::Vec3 const* const AABBoffset
     ) const;
+
+    MCAPI bool canBeSeenOnMap() const;
 
     MCAPI bool canJump();
 
@@ -1004,11 +1009,11 @@ public:
     MCAPI bool interact(::Actor& actor, ::Vec3 const& location);
 
     MCAPI void inventoryChanged(
-        ::Container&       slot,
-        int                oldItem,
+        ::Container&,
+        int                slot,
+        ::ItemStack const& oldItem,
         ::ItemStack const& newItem,
-        ::ItemStack const& forceBalanced,
-        bool
+        bool               forceBalanced
     );
 
     MCAPI bool is2DPositionRelevant(::DimensionType dimension, ::BlockPos const& position);
@@ -1085,7 +1090,7 @@ public:
 
     MCAPI void stopUsingItem();
 
-    MCAPI bool take(::Actor& actor, int favoredSlot, int);
+    MCAPI bool take(::Actor& actor, int, int favoredSlot);
 
     MCAPI void tickArmor();
 
@@ -1112,11 +1117,11 @@ public:
         ::std::vector<::gsl::not_null<::BlockSource*>> regions,
         ::AABB                                         aabb,
         bool                                           adjustYToSolidGround,
-        bool                                           searchUp,
-        bool                                           positionFromSave,
-        bool                                           spawningAtForcedSpawn,
-        bool                                           dimensionHeight,
-        short
+        bool,
+        bool  searchUp,
+        bool  positionFromSave,
+        bool  spawningAtForcedSpawn,
+        short dimensionHeight
     );
 
     MCAPI static bool checkNeedAutoJump(
@@ -1267,7 +1272,7 @@ public:
 
     MCFOLD bool $isInTrialMode();
 
-    MCAPI void $setSpeed(float _speed);
+    MCAPI void $setSpeed(float speed);
 
     MCAPI int $getItemUseDuration() const;
 
@@ -1374,7 +1379,7 @@ public:
 
     MCAPI bool $isImmobile() const;
 
-    MCFOLD void $sendMotionPacketIfNeeded(::PlayerMovementSettings const& playerMovementSettings);
+    MCFOLD void $sendMotionPacketIfNeeded();
 
     MCAPI ::IMinecraftEventing* $getEventing() const;
 
@@ -1383,8 +1388,6 @@ public:
     MCAPI void $addExperience(int xp);
 
     MCAPI void $addLevels(int levels);
-
-    MCAPI void $setArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
 
     MCAPI void $setOffhandSlot(::ItemStack const& item);
 
@@ -1464,8 +1467,6 @@ public:
     MCAPI void $onMovePlayerPacketNormal(::Vec3 const& pos, ::Vec2 const& rot, float yHeadRot);
 
     MCAPI bool $_shouldProvideFeedbackOnHandContainerItemSet(::HandSlot handSlot, ::ItemStack const& item) const;
-
-    MCAPI bool $_shouldProvideFeedbackOnArmorSet(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item) const;
 
     MCAPI ::std::shared_ptr<::ChunkViewSource> $_createChunkSource(::ChunkSource& mainChunkSource);
 

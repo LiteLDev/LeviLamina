@@ -24,7 +24,7 @@ public:
 
 public:
     // prevent constructor by default
-    ParticleMotionParametricComponent& operator=(ParticleMotionParametricComponent const&);
+    ParticleMotionParametricComponent(ParticleMotionParametricComponent const&);
     ParticleMotionParametricComponent();
 
 public:
@@ -42,10 +42,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ParticleMotionParametricComponent(::SharedTypes::v1_20_80::ParticleMotionParametricComponent&&);
 
-    MCNAPI ParticleMotionParametricComponent(::SharedTypes::v1_20_80::ParticleMotionParametricComponent const&);
-
     MCNAPI ::SharedTypes::v1_20_80::ParticleMotionParametricComponent&
-    operator=(::SharedTypes::v1_20_80::ParticleMotionParametricComponent&&);
+    operator=(::SharedTypes::v1_20_80::ParticleMotionParametricComponent const&);
     // NOLINTEND
 
 public:
@@ -64,8 +62,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleMotionParametricComponent&&);
-
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleMotionParametricComponent const&);
     // NOLINTEND
 
 public:

@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/script/ScriptWidgetGroup_ServiceInterface.h"
 #include "mc/editor/script/ScriptWidgetGroup_WidgetInterface.h"
 
@@ -18,19 +18,18 @@ namespace Editor::Network { class WidgetComponentStateChangePayload; }
 namespace Editor::Network { class WidgetStateChangePayload; }
 namespace Editor::ScriptModule { class ScriptWidget; }
 namespace Editor::ScriptModule { class ScriptWidgetCreateOptions; }
-namespace Editor::ScriptModule { class ScriptWidgetErrorInvalidObject; }
 namespace Editor::ScriptModule { class ScriptWidgetGroupCreateOptions; }
 namespace Editor::ScriptModule { class ScriptWidgetGroupErrorInvalidObject; }
 namespace Editor::ScriptModule { class ScriptWidgetService; }
 namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct Error; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
 
-class ScriptWidgetGroup : public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptWidgetGroup>,
-                          public ::Editor::ScriptModule::ScriptWidgetGroup_ServiceInterface,
-                          public ::Editor::ScriptModule::ScriptWidgetGroup_WidgetInterface {
+class ScriptWidgetGroup : public ::Editor::ScriptModule::ScriptWidgetGroup_ServiceInterface,
+                          public ::Editor::ScriptModule::ScriptWidgetGroup_WidgetInterface,
+                          public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptWidgetGroup> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -76,12 +75,7 @@ public:
     virtual void _servicePendingStateChanges() /*override*/;
 
     // vIndex: 0
-    virtual ::Scripting::Result<
-        void,
-        ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject,
-        ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject,
-        ::Scripting::Error>
-    _deleteWidget(
+    virtual ::Scripting::Result_deprecated<void> _deleteWidget(
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> widgetToDelete
     ) /*override*/;
     // NOLINTEND
@@ -96,9 +90,7 @@ public:
         ::Scripting::WeakLifetimeScope const&                                          scope
     );
 
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>,
-        ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>>
     _createWidget(
         ::Vec3 const&                                                             position,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetCreateOptions> const& options
@@ -133,7 +125,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetGroup> bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 
 public:
@@ -161,11 +153,7 @@ public:
 
     MCNAPI void $_servicePendingStateChanges();
 
-    MCNAPI ::Scripting::Result<
-        void,
-        ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject,
-        ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject,
-        ::Scripting::Error>
+    MCNAPI ::Scripting::Result_deprecated<void>
     $_deleteWidget(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> widgetToDelete);
     // NOLINTEND
 

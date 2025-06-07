@@ -6,7 +6,7 @@ struct ScriptDiagnosticsPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 48> mUnk4389a3;
+    ::ll::UntypedStorage<8, 72> mUnk4389a3;
     ::ll::UntypedStorage<8, 32> mUnk66dbe6;
     // NOLINTEND
 
@@ -15,4 +15,18 @@ public:
     ScriptDiagnosticsPayload& operator=(ScriptDiagnosticsPayload const&);
     ScriptDiagnosticsPayload(ScriptDiagnosticsPayload const&);
     ScriptDiagnosticsPayload();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::ScriptDiagnosticsPayload& operator=(::ScriptDiagnosticsPayload&&);
+
+    MCNAPI ~ScriptDiagnosticsPayload();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };

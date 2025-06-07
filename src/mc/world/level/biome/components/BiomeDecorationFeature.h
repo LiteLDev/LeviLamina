@@ -16,7 +16,7 @@ struct BiomeDecorationFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1816, ::ScatterParams>     mScatter;
+    ::ll::TypedStorage<8, 216, ::ScatterParams>      mScatter;
     ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mFeature;
     ::ll::TypedStorage<8, 48, ::HashedString>        mIdentifier;
     ::ll::TypedStorage<8, 32, ::std::string>         mPass;
@@ -26,11 +26,12 @@ public:
 public:
     // prevent constructor by default
     BiomeDecorationFeature& operator=(BiomeDecorationFeature const&);
-    BiomeDecorationFeature();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI BiomeDecorationFeature();
+
     MCNAPI BiomeDecorationFeature(::BiomeDecorationFeature&&);
 
     MCNAPI BiomeDecorationFeature(::BiomeDecorationFeature const&);
@@ -43,6 +44,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
     MCNAPI void* $ctor(::BiomeDecorationFeature&&);
 
     MCNAPI void* $ctor(::BiomeDecorationFeature const&);

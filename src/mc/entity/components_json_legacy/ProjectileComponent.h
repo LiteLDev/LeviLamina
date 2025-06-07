@@ -161,7 +161,7 @@ public:
 
     MCAPI ::ProjectileComponent& operator=(::ProjectileComponent&&);
 
-    MCAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const& dataLoadHelper, ::DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI void setHitResult(::HitResult result);
 

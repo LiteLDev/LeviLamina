@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FrozenOceanSurfaceBiomeJsonComponent() /*override*/ = default;
+    virtual ~FrozenOceanSurfaceBiomeJsonComponent() /*override*/;
     // NOLINTEND
 
 public:
@@ -40,9 +40,6 @@ public:
 
     MCNAPI ::SharedTypes::v1_20_60::FrozenOceanSurfaceBiomeJsonComponent&
     operator=(::SharedTypes::v1_20_60::FrozenOceanSurfaceBiomeJsonComponent const&);
-
-    MCNAPI ::SharedTypes::v1_20_60::FrozenOceanSurfaceBiomeJsonComponent&
-    operator=(::SharedTypes::v1_20_60::FrozenOceanSurfaceBiomeJsonComponent&&);
     // NOLINTEND
 
 public:
@@ -65,6 +62,12 @@ public:
     MCNAPI void* $ctor();
 
     MCNAPI void* $ctor(::SharedTypes::v1_20_60::FrozenOceanSurfaceBiomeJsonComponent const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

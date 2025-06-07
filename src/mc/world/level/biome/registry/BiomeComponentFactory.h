@@ -2,29 +2,30 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/IDType.h"
+#include "mc/util/TagRegistry.h"
+
+// auto generated forward declare list
+// clang-format off
+class BaseGameVersion;
+class Biome;
+class BiomeRegistry;
+class BlockPalette;
+class FeatureRegistry;
+struct BiomeDefinitionData;
+struct BiomeStringList;
+struct BiomeTagIDType;
+struct BiomeTagSetIDType;
+// clang-format on
+
 class BiomeComponentFactory {
-public:
-    // BiomeComponentFactory inner types define
-    enum class FactoryScope : int {
-        Client = 0,
-        Server = 1,
-    };
-
-    enum class ComponentScope : int {
-        Client          = 0,
-        Server          = 1,
-        ClientAndServer = 2,
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkf669f8;
-    ::ll::UntypedStorage<8, 24> mUnkd8de80;
-    ::ll::UntypedStorage<4, 4>  mUnkf09523;
-    ::ll::UntypedStorage<1, 1>  mUnkbf5004;
-    ::ll::UntypedStorage<1, 1>  mUnk489c98;
     ::ll::UntypedStorage<8, 16> mUnk7fbe74;
+    ::ll::UntypedStorage<8, 64> mUnk41c5ce;
+    ::ll::UntypedStorage<8, 64> mUnkfd048a;
     // NOLINTEND
 
 public:
@@ -36,12 +37,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~BiomeComponentFactory();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void registerBiomeDefinitionSerializers(
+        ::std::function<void(
+            ::Biome const&,
+            ::BiomeDefinitionData&,
+            bool,
+            ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>> const&,
+            ::FeatureRegistry const&,
+            ::BaseGameVersion const&,
+            ::BiomeStringList&
+        )> serializeToData,
+        ::std::function<void(
+            ::BiomeDefinitionData const&,
+            ::Biome&,
+            ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>&,
+            ::BlockPalette const&,
+            ::BiomeRegistry const&,
+            ::FeatureRegistry&,
+            ::BiomeStringList const&
+        )> applyFromData
+    );
     // NOLINTEND
 };

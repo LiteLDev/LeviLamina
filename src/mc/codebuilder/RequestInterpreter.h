@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IMinecraftEventing;
 namespace CodeBuilder { class IRequestHandler; }
 namespace CodeBuilder { struct CommandRequest; }
 namespace CodeBuilder { struct RequestHeader; }
@@ -19,7 +20,8 @@ public:
     MCNAPI void process(
         ::CodeBuilder::IRequestHandler&     sender,
         ::CodeBuilder::RequestHeader const& header,
-        ::Json::Value const&                body
+        ::Json::Value const&                body,
+        ::IMinecraftEventing*               eventing
     ) const;
     // NOLINTEND
 

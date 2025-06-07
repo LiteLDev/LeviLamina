@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/services/blocks/EditorBlockPaletteService.h"
 
 // auto generated forward declare list
@@ -30,38 +30,38 @@ public:
     virtual ~ServerBlockPaletteService() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> quit() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void> ready() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
     // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 6
-    virtual ::Scripting::Result<void> setSelectedPaletteItemIndex(int index) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> setSelectedPaletteItemIndex(int index) /*override*/;
 
     // vIndex: 8
-    virtual ::Scripting::Result<void> setPaletteItem(
+    virtual ::Scripting::Result_deprecated<void> setPaletteItem(
         ::HashedString const&                                                                          paletteId,
         int                                                                                            index,
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
     ) /*override*/;
 
     // vIndex: 9
-    virtual ::Scripting::Result<void> pickBlock(::Block const&) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> pickBlock(::Block const&) /*override*/;
 
     // vIndex: 3
     virtual void addOrReplacePalette(::Editor::EditorBlockPalette const& palette) /*override*/;
 
     // vIndex: 4
-    virtual ::Scripting::Result<void> removePalette(::HashedString const& paletteId) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> removePalette(::HashedString const& paletteId) /*override*/;
 
     // vIndex: 5
-    virtual ::Scripting::Result<void> setActivePalette(::HashedString const& paletteId) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> setActivePalette(::HashedString const& paletteId) /*override*/;
 
     // vIndex: 8
     virtual void _handleBlockPaletteItemChangedPayload(
@@ -107,43 +107,43 @@ public:
 
     MCNAPI void _saveSelectedBlockPaletteItem(int index);
 
-    MCNAPI ::Scripting::Result<void> _setActiveAndSyncPalette(::HashedString const& paletteId);
+    MCNAPI ::Scripting::Result_deprecated<void> _setActiveAndSyncPalette(::HashedString const& paletteId);
 
-    MCNAPI ::Scripting::Result<void> _updateAndSyncPaletteItem(
+    MCNAPI ::Scripting::Result_deprecated<void> _updateAndSyncPaletteItem(
         ::HashedString const&                                                                          paletteId,
         int                                                                                            index,
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
     );
 
-    MCNAPI ::Scripting::Result<void> _updateAndSyncSelectedPaletteIndex(int index);
+    MCNAPI ::Scripting::Result_deprecated<void> _updateAndSyncSelectedPaletteIndex(int index);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
-    MCNAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result_deprecated<void> $ready();
 
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI ::Scripting::Result<void> $setSelectedPaletteItemIndex(int index);
+    MCNAPI ::Scripting::Result_deprecated<void> $setSelectedPaletteItemIndex(int index);
 
-    MCNAPI ::Scripting::Result<void> $setPaletteItem(
+    MCNAPI ::Scripting::Result_deprecated<void> $setPaletteItem(
         ::HashedString const&                                                                          paletteId,
         int                                                                                            index,
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
     );
 
-    MCNAPI ::Scripting::Result<void> $pickBlock(::Block const&);
+    MCNAPI ::Scripting::Result_deprecated<void> $pickBlock(::Block const&);
 
     MCNAPI void $addOrReplacePalette(::Editor::EditorBlockPalette const& palette);
 
-    MCNAPI ::Scripting::Result<void> $removePalette(::HashedString const& paletteId);
+    MCNAPI ::Scripting::Result_deprecated<void> $removePalette(::HashedString const& paletteId);
 
-    MCNAPI ::Scripting::Result<void> $setActivePalette(::HashedString const& paletteId);
+    MCNAPI ::Scripting::Result_deprecated<void> $setActivePalette(::HashedString const& paletteId);
 
     MCNAPI void
     $_handleBlockPaletteItemChangedPayload(::Editor::Network::BlockPaletteItemChangedPayload const& payload);

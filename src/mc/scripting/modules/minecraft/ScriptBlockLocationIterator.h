@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/deps/scripting/runtime/Result.h"
@@ -12,6 +11,7 @@
 // clang-format off
 class BaseBlockLocationIterator;
 namespace ScriptModuleMinecraft { class ScriptBlockVolumeIterable; }
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EngineError; }
 // clang-format on
 
@@ -47,7 +47,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockLocationIterator> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:

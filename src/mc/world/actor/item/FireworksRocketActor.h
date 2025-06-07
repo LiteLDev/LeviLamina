@@ -74,12 +74,12 @@ public:
     MCAPI void dealExplosionDamage();
 
     MCAPI void init(
-        ::Level&             level,
-        ::Vec3 const&        rocketUserData,
-        ::CompoundTag const& dir,
-        ::Vec3 const&        attachedEntity,
-        ::ActorUniqueID      isProjectile,
-        bool
+        ::Level& level,
+        ::Vec3 const&,
+        ::CompoundTag const& rocketUserData,
+        ::Vec3 const&        dir,
+        ::ActorUniqueID      attachedEntity,
+        bool                 isProjectile
     );
 
     MCAPI void initTagData(::Random& random);
@@ -114,6 +114,8 @@ public:
     MCFOLD float $getShadowRadius() const;
 
     MCAPI void $lerpMotion(::Vec3 const& delta);
+
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI void $onSynchedDataUpdate(int dataId);
 

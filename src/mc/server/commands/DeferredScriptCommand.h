@@ -11,7 +11,7 @@
 // clang-format off
 class CommandContext;
 class MinecraftCommands;
-class ScriptCommand;
+class ScriptCommandOutput;
 namespace ScriptModuleMinecraft { struct ScriptCommandError; }
 namespace ScriptModuleMinecraft { struct ScriptCommandResult; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -21,7 +21,7 @@ class DeferredScriptCommand : public ::DeferredCommandBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkbd43df;
+    ::ll::UntypedStorage<8, 8>  mUnk413124;
     ::ll::UntypedStorage<8, 8>  mUnkb39f82;
     ::ll::UntypedStorage<8, 16> mUnk79b626;
     ::ll::UntypedStorage<8, 80> mUnkf01e9a;
@@ -47,9 +47,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI DeferredScriptCommand(
-        ::std::unique_ptr<::ScriptCommand>  scriptCommand,
-        ::std::unique_ptr<::CommandContext> commandContext,
-        ::Scripting::WeakLifetimeScope      scope,
+        ::std::unique_ptr<::ScriptCommandOutput> scriptCommandOutput,
+        ::std::unique_ptr<::CommandContext>      commandContext,
+        ::Scripting::WeakLifetimeScope           scope,
         ::Scripting::Promise<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>,
             ::ScriptModuleMinecraft::ScriptCommandError,
@@ -61,9 +61,9 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::std::unique_ptr<::ScriptCommand>  scriptCommand,
-        ::std::unique_ptr<::CommandContext> commandContext,
-        ::Scripting::WeakLifetimeScope      scope,
+        ::std::unique_ptr<::ScriptCommandOutput> scriptCommandOutput,
+        ::std::unique_ptr<::CommandContext>      commandContext,
+        ::Scripting::WeakLifetimeScope           scope,
         ::Scripting::Promise<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>,
             ::ScriptModuleMinecraft::ScriptCommandError,

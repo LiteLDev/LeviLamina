@@ -34,4 +34,16 @@ public:
     ::WeakRef<::EntityRegistry> mRegistry;
     ::EntityId                  mEntity;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    WeakStorageEntity& operator=(WeakStorageEntity const&);
+    WeakStorageEntity(WeakStorageEntity const&);
+    WeakStorageEntity();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::WeakStorageEntity& operator=(::WeakStorageEntity&&);
+    // NOLINTEND
 };

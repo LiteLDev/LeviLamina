@@ -16,6 +16,8 @@ MCNAPI void updateAlwaysShowNameTag(::EntityContext& entity, ::SynchedActorDataE
 
 MCNAPI void updateBoundingBox(::EntityContext& entity, ::SynchedActorDataEntityWrapper const& entityData);
 
+MCNAPI void updateBuoyancyData(::EntityContext& entity, ::SynchedActorDataEntityWrapper const& entityData);
+
 MCNAPI void updateCommandBlock(::Actor& actor, int dataId, ::std::string& filteredNameTag);
 
 MCNAPI void updateContainer(::Actor& actor);

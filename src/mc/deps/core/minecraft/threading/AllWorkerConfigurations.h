@@ -18,7 +18,6 @@ public:
     ::ll::UntypedStorage<8, 40> mUnk8900fd;
     ::ll::UntypedStorage<8, 40> mUnk5df57d;
     ::ll::UntypedStorage<8, 40> mUnkbf2915;
-    ::ll::UntypedStorage<8, 40> mUnk87c868;
     ::ll::UntypedStorage<8, 40> mUnka63633;
     ::ll::UntypedStorage<8, 40> mUnke48668;
     ::ll::UntypedStorage<8, 40> mUnkabe22f;
@@ -28,16 +27,5 @@ public:
     // prevent constructor by default
     AllWorkerConfigurations& operator=(AllWorkerConfigurations const&);
     AllWorkerConfigurations(AllWorkerConfigurations const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI AllWorkerConfigurations();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
+    AllWorkerConfigurations();
 };

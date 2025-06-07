@@ -36,9 +36,9 @@ public:
     MCNAPI float* getRegion(
         float*        buffer,
         ::Vec2 const& pos,
-        int           scale,
         int           xSize,
-        ::Vec2 const& ySize,
+        int           ySize,
+        ::Vec2 const& scale,
         float         sizeScale,
         float         powScale
     ) const;

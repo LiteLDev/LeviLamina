@@ -42,16 +42,16 @@ public:
     MCNAPI void _addSpawnRules(::std::string const& identifier, ::MobSpawnRules& spawnRules);
 
     MCNAPI void _getResources(
-        ::ResourcePackManager& callback,
+        ::ResourcePackManager& resourcePackManager,
         ::std::function<void(::std::string const&, int, ::BiomeFilterGroup&, ::MobSpawnRules&, ::SemVersion const&)>
-            resourcePackManager
+            callback
     );
 
     MCNAPI bool _readJson(::std::string&& data, ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& dataMap);
 
     MCNAPI void readResourceFiles(
-        ::ResourcePackManager&                                     dataMap,
-        ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& resourcePackManager
+        ::ResourcePackManager&                                     resourcePackManager,
+        ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& dataMap
     );
     // NOLINTEND
 

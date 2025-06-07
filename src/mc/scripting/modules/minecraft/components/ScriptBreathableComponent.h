@@ -3,9 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ECSScriptActorComponent.h"
 
@@ -15,8 +13,7 @@ class BreathableComponent;
 class BreathableDefinition;
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
-namespace Scripting { struct Error; }
-namespace Scripting { struct PropertyOutOfBoundsError; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -61,14 +58,13 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<int> getTotalSupply() const;
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::PropertyOutOfBoundsError>
-    setAirSupply(short value) const;
+    MCNAPI ::Scripting::Result_deprecated<void> setAirSupply(short value) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBreathableComponent>
+    MCNAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 

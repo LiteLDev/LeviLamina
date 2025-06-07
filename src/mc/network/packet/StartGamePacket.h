@@ -30,7 +30,7 @@ class StartGamePacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1384, ::LevelSettings>              mSettings;
+    ::ll::TypedStorage<8, 1408, ::LevelSettings>              mSettings;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                 mEntityId;
     ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                mRuntimeId;
     ::ll::TypedStorage<4, 4, ::GameType>                      mEntityGameType;

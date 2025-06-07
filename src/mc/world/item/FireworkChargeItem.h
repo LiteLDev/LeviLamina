@@ -37,7 +37,7 @@ public:
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           advancedToolTips
+        bool const                           showCategory
     ) const /*override*/;
 
     // vIndex: 105
@@ -88,9 +88,9 @@ public:
 
     MCAPI static ::ItemStack const& initFireworkChargeItem(
         ::ItemStack&                item,
-        ::FireworkChargeItem::Shape colors,
+        ::FireworkChargeItem::Shape shape,
+        ::std::vector<uchar>        colors,
         ::std::vector<uchar>        fadeColors,
-        ::std::vector<uchar>        shape,
         bool                        hasTrail,
         bool                        hasFlicker
     );
@@ -121,7 +121,7 @@ public:
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           advancedToolTips
+        bool const                           showCategory
     ) const;
 
     MCAPI bool $hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;

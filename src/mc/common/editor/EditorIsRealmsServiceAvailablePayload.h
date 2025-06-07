@@ -12,7 +12,7 @@ class EditorIsRealmsServiceAvailablePayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkdb4c77;
+    ::ll::UntypedStorage<4, 4> mUnk97a66f;
     // NOLINTEND
 
 public:

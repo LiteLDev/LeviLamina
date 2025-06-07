@@ -64,7 +64,7 @@ public:
 
     MCNAPI ::HashedString const& getCampfireTag(::BlockSource const& region) const;
 
-    MCNAPI bool setItem(::BlockSource& item, ::ItemInstance const&);
+    MCNAPI bool setItem(::BlockSource&, ::ItemInstance const& item);
     // NOLINTEND
 
 public:

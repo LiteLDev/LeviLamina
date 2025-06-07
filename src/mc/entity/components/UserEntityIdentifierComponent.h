@@ -12,7 +12,7 @@ class UserEntityIdentifierComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 160, ::NetworkIdentifier> mNetworkId;
+    ::ll::TypedStorage<8, 176, ::NetworkIdentifier> mNetworkId;
     ::ll::TypedStorage<1, 1, ::SubClientId>         mClientSubId;
     ::ll::TypedStorage<8, 32, ::std::string>        mPlayFabIdUnverified;
     ::ll::TypedStorage<8, 16, ::mce::UUID>          mClientUUID;

@@ -115,7 +115,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BiomeSource const& $getBiomeSource() const;
+    MCAPI ::BiomeSource const& $getBiomeSource() const;
 
     MCFOLD ::BlockPos $findSpawnPosition() const;
 

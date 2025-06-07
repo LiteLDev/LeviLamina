@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/IOperation.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -41,19 +41,19 @@ public:
     virtual ::std::string_view getName() /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void> _undo(::Editor::ServiceProviderCollection& services) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> _undo(::Editor::ServiceProviderCollection& services) /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> _redo(::Editor::ServiceProviderCollection& services) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection& services) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     _performOperation(::Editor::ServiceProviderCollection& services, bool isUndo) const;
 
-    MCNAPI ::Scripting::Result<void> _setBlock(
+    MCNAPI ::Scripting::Result_deprecated<void> _setBlock(
         ::Level&          level,
         ::BlockSource&    region,
         uint const&       blockToPlace,
@@ -81,9 +81,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::string_view $getName();
 
-    MCNAPI ::Scripting::Result<void> $_undo(::Editor::ServiceProviderCollection& services);
+    MCNAPI ::Scripting::Result_deprecated<void> $_undo(::Editor::ServiceProviderCollection& services);
 
-    MCNAPI ::Scripting::Result<void> $_redo(::Editor::ServiceProviderCollection& services);
+    MCNAPI ::Scripting::Result_deprecated<void> $_redo(::Editor::ServiceProviderCollection& services);
     // NOLINTEND
 
 public:

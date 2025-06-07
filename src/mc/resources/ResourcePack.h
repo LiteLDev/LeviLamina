@@ -34,7 +34,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                              mError;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Pack>>            mPack;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackAccessStrategy>>           mSubpackAccessStrategy;
-    ::ll::TypedStorage<8, 256, ::PackReport>                                    mPackReport;
+    ::ll::TypedStorage<8, 248, ::PackReport>                                    mPackReport;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::Pack>>>         mSubPacks;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::ResourcePack>>> mSubResourcePacks;
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                mIconPath;
@@ -81,7 +81,7 @@ public:
 
     MCAPI void generateAssetSet();
 
-    MCAPI ::PackManifest& getManifest();
+    MCAPI ::PackManifest const& getManifest() const;
 
     MCAPI ::PackOrigin getPackOrigin() const;
 

@@ -37,6 +37,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+
     MCFOLD bool $isDarkEnoughToSpawn() const;
 
     MCAPI void $spawnAnim();

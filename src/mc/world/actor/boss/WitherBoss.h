@@ -55,11 +55,9 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk9b6d2a;
     ::ll::UntypedStorage<4, 4>  mUnkb77d38;
     ::ll::UntypedStorage<4, 4>  mUnk62a4f1;
-    ::ll::UntypedStorage<4, 4>  mUnkb46cbf;
     ::ll::UntypedStorage<4, 4>  mUnkc1a831;
     ::ll::UntypedStorage<4, 4>  mUnk8cedff;
     ::ll::UntypedStorage<4, 4>  mUnkd4292b;
-    ::ll::UntypedStorage<4, 4>  mUnkfcfb2e;
     ::ll::UntypedStorage<4, 4>  mUnkcb987d;
     ::ll::UntypedStorage<4, 4>  mUnkc03dfe;
     ::ll::UntypedStorage<1, 1>  mUnk5db70c;
@@ -75,8 +73,6 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk21dcc1;
     ::ll::UntypedStorage<4, 4>  mUnk5bb727;
     ::ll::UntypedStorage<1, 1>  mUnk33834c;
-    ::ll::UntypedStorage<4, 4>  mUnkfa9266;
-    ::ll::UntypedStorage<4, 4>  mUnk18c426;
     ::ll::UntypedStorage<4, 4>  mUnke678ef;
     ::ll::UntypedStorage<8, 8>  mUnk9c9e88;
     ::ll::UntypedStorage<4, 4>  mUnk42962d;
@@ -107,7 +103,7 @@ public:
     virtual bool canFreeze() const /*override*/;
 
     // vIndex: 105
-    virtual bool canBeAffected(uint id) const /*override*/;
+    virtual bool canBeAffected(uint effectId) const /*override*/;
 
     // vIndex: 106
     virtual bool canBeAffectedByArrow(::MobEffectInstance const& effect) const /*override*/;
@@ -137,7 +133,7 @@ public:
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
@@ -244,6 +240,8 @@ public:
     MCAPI void $remove();
 
     MCFOLD bool $startRiding(::Actor& vehicle, bool forceRiding);
+
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 

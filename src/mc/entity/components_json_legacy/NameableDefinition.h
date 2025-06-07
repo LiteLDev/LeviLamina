@@ -31,6 +31,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void addNameAction(::NameAction const& nameAction);
+
+    MCNAPI ~NameableDefinition();
     // NOLINTEND
 
 public:
@@ -39,5 +41,11 @@ public:
     MCNAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::NameableDefinition>>& root
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

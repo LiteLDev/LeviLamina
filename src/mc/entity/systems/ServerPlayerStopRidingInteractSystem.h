@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorOwnerComponent;
+class ActorRuntimeID;
 class StrictEntityContext;
 struct ActorMovementTickNeededComponent;
 struct PassengerComponent;
@@ -23,12 +24,18 @@ namespace ServerPlayerStopRidingInteractSystem {
 // NOLINTBEGIN
 MCNAPI ::TickingSystemWithInfo createSystem();
 
+MCNAPI void makePassengerStopRiding(
+    ::ActorOwnerComponent&           actorOwnerComponent,
+    ::ServerPlayerMovementComponent* serverPlayerMovementComponent,
+    ::ActorRuntimeID const&          vehicleID
+);
+
 MCNAPI void tickServerPlayerStopRidingPacket(
     ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
     ::StrictEntityContext const&                      entity,
     ::ServerPlayerInteractComponent const&            stopRidingRequest,
     ::Optional<::PassengerComponent const>            isPassenger,
-    ::Optional<::ServerPlayerMovementComponent>       serverPlayerMovement,
+    ::Optional<::ServerPlayerMovementComponent>       serverPlayerMovementComponent,
     ::ActorOwnerComponent&                            actorOwnerComponent,
     ::EntityModifier<::ServerPlayerInteractComponent> modifier
 );

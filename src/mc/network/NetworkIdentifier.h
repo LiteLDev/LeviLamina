@@ -4,6 +4,7 @@
 #include "mc/deps/raknet/RakNetGUID.h"
 
 // auto generated inclusion list
+#include "mc/deps/nether_net/NetworkID.h"
 #include "mc/deps/raknet/RakNetGUID.h"
 
 class NetworkIdentifier {
@@ -23,7 +24,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    uint64                       mNetherNetIdValue;
+    ::NetherNet::NetworkID       mNetherNetId;
     ::RakNet::RakNetGUID         mGuid;
     ::ll::UntypedStorage<8, 128> mSock;
     ::NetworkIdentifier::Type    mType;
@@ -32,6 +33,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool equalsTypeData(::NetworkIdentifier const& other) const;
+
     MCAPI ::std::string getAddress() const;
 
     MCAPI ::std::string getCorrelationId() const;
@@ -40,16 +43,12 @@ public:
 
     MCAPI bool isUnassigned() const;
 
-    MCAPI bool operator==(::NetworkIdentifier const& other) const;
-
     MCAPI ::std::string toString() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string calculateCorrelationId(uint64 netherNetId);
-
     MCAPI static ::std::string calculateCorrelationId(::RakNet::RakNetGUID const& rakId);
     // NOLINTEND
 

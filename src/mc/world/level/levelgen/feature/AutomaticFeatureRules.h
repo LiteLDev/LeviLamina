@@ -31,8 +31,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 1928> mUnk6ed10e;
-        ::ll::UntypedStorage<8, 64>   mUnk9f3a19;
+        ::ll::UntypedStorage<8, 328> mUnk6ed10e;
+        ::ll::UntypedStorage<8, 64>  mUnk9f3a19;
         // NOLINTEND
 
     public:

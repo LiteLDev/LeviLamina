@@ -72,16 +72,13 @@ public:
 
     MCAPI void _useOn(
         bool&              result,
-        ::ItemStack const& currentItemStack,
-        ::ItemStack&       usingActor,
-        ::Actor&           pos,
-        ::BlockPos const&  face,
-        uchar              clickPos,
-        ::Vec3 const&      initialItemStack
+        ::ItemStack const& initialItemStack,
+        ::ItemStack&       currentItemStack,
+        ::Actor&           usingActor,
+        ::BlockPos const&  pos,
+        uchar              face,
+        ::Vec3 const&      clickPos
     );
-
-    MCAPI void
-    _validateBlocks(::std::vector<::BlockDescriptor> const& blocks, ::std::string const& blocksParameterName) const;
 
     MCAPI bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
     // NOLINTEND
@@ -91,8 +88,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
-        ::std::optional<::SemVersion>          requiredToggles
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
 
     MCAPI static ::HashedString const& getIdentifier();

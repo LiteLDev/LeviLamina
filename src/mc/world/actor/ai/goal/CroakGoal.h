@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class Mob;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -46,12 +45,6 @@ public:
         // NOLINTEND
 
     public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI void initialize(::EntityContext& entity, ::CroakGoal& goal) const;
-        // NOLINTEND
-
-    public:
         // static functions
         // NOLINTBEGIN
         MCNAPI static void buildSchema(
@@ -70,10 +63,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                    mMob;
-    ::ll::TypedStorage<8, 128, ::CroakGoal::Definition> mDefinition;
-    ::ll::TypedStorage<8, 8, ::Tick>                    mTickOfNextCroak;
-    ::ll::TypedStorage<8, 8, ::Tick>                    mTickOfEndCroak;
+    ::ll::TypedStorage<8, 8, ::Mob&>                   mMob;
+    ::ll::TypedStorage<8, 96, ::CroakGoal::Definition> mDefinition;
+    ::ll::TypedStorage<8, 8, ::Tick>                   mTickOfNextCroak;
+    ::ll::TypedStorage<8, 8, ::Tick>                   mTickOfEndCroak;
     // NOLINTEND
 
 public:

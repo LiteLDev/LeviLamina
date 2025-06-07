@@ -44,7 +44,7 @@ public:
     virtual bool forEachItemUntil(::std::function<bool(::Item const&, short)> func) const /*override*/;
 
     // vIndex: 3
-    virtual ::std::string const& getFullName() const /*override*/;
+    virtual ::std::string getFullName() const /*override*/;
 
     // vIndex: 5
     virtual ::ItemDescriptor::ItemEntry getItem() const /*override*/;
@@ -98,7 +98,7 @@ public:
 
     MCNAPI bool $forEachItemUntil(::std::function<bool(::Item const&, short)> func) const;
 
-    MCNAPI ::std::string const& $getFullName() const;
+    MCNAPI ::std::string $getFullName() const;
 
     MCNAPI ::ItemDescriptor::ItemEntry $getItem() const;
 

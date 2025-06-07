@@ -75,8 +75,8 @@ public:
     MCNAPI ::std::optional<::PortalRecord> _findPortal(
         ::DimensionType   dimensionId,
         ::BlockPos const& centerBlockPos,
-        int               targetBlockPos,
-        ::BlockPos&       radius
+        int               radius,
+        ::BlockPos&       targetBlockPos
     ) const;
 
     MCNAPI ::PortalRecord const& createPortal(::Actor const& entity, int radius);

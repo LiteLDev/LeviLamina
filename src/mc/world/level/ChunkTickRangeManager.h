@@ -40,10 +40,10 @@ public:
     MCNAPI bool isChunkInTickRange(
         ::ChunkPos const&  chunkPos,
         ::Dimension const& dimension,
-        bool               serverBuildRatio,
-        float              chunkViewRadius,
-        int                numActiveUsers,
-        int                shouldServerGenerate
+        bool               shouldServerGenerate,
+        float              serverBuildRatio,
+        int                chunkViewRadius,
+        int                numActiveUsers
     ) const;
 
     MCNAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);

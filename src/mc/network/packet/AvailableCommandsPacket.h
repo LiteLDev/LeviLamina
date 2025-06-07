@@ -40,12 +40,11 @@ public:
         // prevent constructor by default
         EnumData& operator=(EnumData const&);
         EnumData(EnumData const&);
+        EnumData();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI EnumData();
-
         MCAPI EnumData(::AvailableCommandsPacket::EnumData&&);
 
         MCAPI ~EnumData();
@@ -54,8 +53,6 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
-
         MCFOLD void* $ctor(::AvailableCommandsPacket::EnumData&&);
         // NOLINTEND
 

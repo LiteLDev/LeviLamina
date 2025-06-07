@@ -3,10 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
@@ -16,6 +14,7 @@ namespace ScriptModuleMinecraft { class ScriptColor; }
 namespace ScriptModuleMinecraft { class ScriptRGB; }
 namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace ScriptModuleMinecraft { class ScriptVector; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -39,21 +38,21 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<::std::string> _prependVariable(::std::string const& variableName);
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     setColorRBGA_V010(::std::string const& variableName, ::ScriptModuleMinecraft::ScriptColor const& color);
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     setColorRBG_V010(::std::string const& variableName, ::ScriptModuleMinecraft::ScriptColor const& color);
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     setColorRGB(::std::string const& variableName, ::ScriptModuleMinecraft::ScriptRGB const& color);
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     setColorRGBA(::std::string const& variableName, ::ScriptModuleMinecraft::ScriptRGBA const& color);
 
-    MCNAPI ::Scripting::Result<void> setFloat(::std::string const& variableName, float number);
+    MCNAPI ::Scripting::Result_deprecated<void> setFloat(::std::string const& variableName, float number);
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     setSpeedAndDirection(::std::string const& variableName, float speed, ::Vec3 const& direction);
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptMolangVariableMap>
@@ -63,7 +62,7 @@ public:
         ::ScriptModuleMinecraft::ScriptVector const& direction
     );
 
-    MCNAPI ::Scripting::Result<void> setVector3(::std::string const& variableName, ::Vec3 const& vector);
+    MCNAPI ::Scripting::Result_deprecated<void> setVector3(::std::string const& variableName, ::Vec3 const& vector);
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptMolangVariableMap>
     setVector3_V010(::std::string const& variableName, ::ScriptModuleMinecraft::ScriptVector const& vector);
@@ -72,7 +71,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptMolangVariableMap> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

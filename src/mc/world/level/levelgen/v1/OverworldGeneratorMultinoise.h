@@ -204,22 +204,22 @@ public:
         ::OreVeinifier*        oreVeinifier
     ) const;
 
-    MCAPI ::std::unique_ptr<::BiomeSource> _makeBiomeSource(
-        ::XoroshiroPositionalRandomFactory const& biomeRegistry,
-        ::BiomeRegistry const&                    overrideBiome,
-        ::Biome const*
-    );
-
     MCAPI ::OverworldGeneratorMultinoise::BlockGenerationResult const _updateNoiseAndGenerateBaseBlock(
-        float                 noiseValue,
-        ::BlockPos const&     worldPosition,
-        short                 aquiferPtr,
-        ::Aquifer*            shouldTickUpdate,
-        bool                  chunkBlender,
-        ::ChunkBlender const* stone,
-        ::Block const&        oreVeinifier,
-        ::OreVeinifier*
+        float             noiseValue,
+        ::BlockPos const& worldPosition,
+        short,
+        ::Aquifer*            aquiferPtr,
+        bool                  shouldTickUpdate,
+        ::ChunkBlender const* chunkBlender,
+        ::Block const&        stone,
+        ::OreVeinifier*       oreVeinifier
     ) const;
+
+    MCAPI ::std::unique_ptr<::BiomeSource> makeBiomeSource(
+        ::XoroshiroPositionalRandomFactory const& random,
+        ::BiomeRegistry const&                    biomeRegistry,
+        ::Biome const*                            overrideBiome
+    );
     // NOLINTEND
 
 public:

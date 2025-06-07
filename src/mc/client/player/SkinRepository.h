@@ -7,8 +7,8 @@
 #include "mc/platform/ImagePickingCallback.h"
 
 class SkinRepository : public ::Bedrock::EnableNonOwnerReferences,
-                       public ::std::enable_shared_from_this<::SkinRepository>,
-                       public ::ImagePickingCallback {
+                       public ::ImagePickingCallback,
+                       public ::std::enable_shared_from_this<::SkinRepository> {
 public:
     // SkinRepository inner types declare
     // clang-format off
@@ -51,6 +51,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnkdbc0b1;
     ::ll::UntypedStorage<8, 8>  mUnk65c979;
     ::ll::UntypedStorage<1, 1>  mUnk44a0c2;
+    ::ll::UntypedStorage<8, 16> mUnk922c43;
     ::ll::UntypedStorage<8, 8>  mUnkbe90bf;
     // NOLINTEND
 

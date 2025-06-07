@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/events/ActorEventListener.h"
 #include "mc/world/events/BlockEventListener.h"
 #include "mc/world/events/EventListenerDispatcher.h"
@@ -31,14 +32,17 @@ public:
     // vIndex: 34
     virtual ::EventResult onEvent(::ActorHurtEvent const& actorHurtEvent) /*override*/;
 
-    // vIndex: 64
+    // vIndex: 63
     virtual ::EventResult onEvent(::PlayerDamageEvent const& playerDamageEvent) /*override*/;
 
-    // vIndex: 58
+    // vIndex: 57
     virtual ::EventResult onEvent(::PlayerOpenContainerEvent const& playerOpenContainerEvent) /*override*/;
 
     // vIndex: 8
     virtual ::EventResult onActorCreationAttemptFailed(::Actor& actor, ::std::string_view message) /*override*/;
+
+    // vIndex: 7
+    virtual ::EventResult onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod) /*override*/;
 
     // vIndex: 7
     virtual ::EventResult onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos) /*override*/;
@@ -65,6 +69,8 @@ public:
     MCAPI ::EventResult $onEvent(::PlayerOpenContainerEvent const& playerOpenContainerEvent);
 
     MCAPI ::EventResult $onActorCreationAttemptFailed(::Actor& actor, ::std::string_view message);
+
+    MCAPI ::EventResult $onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod);
 
     MCAPI ::EventResult $onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos);
 

@@ -33,45 +33,45 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 126
+    // vIndex: 125
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
-    // vIndex: 20
+    // vIndex: 19
     virtual bool hasVariableLighting() const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
-    // vIndex: 57
+    // vIndex: 56
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
-    // vIndex: 23
+    // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 79
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 132
+    // vIndex: 131
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 119
+    // vIndex: 118
     virtual bool canSpawnOn(::Actor*) const /*override*/;
 
-    // vIndex: 31
+    // vIndex: 30
     virtual bool isLavaBlocking() const /*override*/;
 
-    // vIndex: 87
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 123
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0

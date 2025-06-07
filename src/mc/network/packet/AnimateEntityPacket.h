@@ -60,8 +60,8 @@ public:
         ::std::string const&                   nextState,
         float                                  blendOutTime,
         ::std::string const&                   stopExpression,
-        ::MolangVersion                        controller,
-        ::std::string const&                   stopExpressionVersion
+        ::MolangVersion                        stopExpressionVersion,
+        ::std::string const&                   controller
     );
     // NOLINTEND
 
@@ -74,8 +74,8 @@ public:
         ::std::string const&                   nextState,
         float                                  blendOutTime,
         ::std::string const&                   stopExpression,
-        ::MolangVersion                        controller,
-        ::std::string const&                   stopExpressionVersion
+        ::MolangVersion                        stopExpressionVersion,
+        ::std::string const&                   controller
     );
     // NOLINTEND
 

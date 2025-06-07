@@ -13,7 +13,7 @@ class SemVersion;
 struct BetaItemComponentData;
 struct ComponentItemDataAll_Latest;
 struct ComponentItemData_Legacy;
-struct ComponentItemData_v1_21_60;
+struct ComponentItemData_v1_21_80;
 struct LegacyEventItemComponentData;
 namespace Json { class Value; }
 namespace cereal { struct ReflectionCtx; }
@@ -24,7 +24,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24>  mUnkffd516;
-    ::ll::UntypedStorage<8, 136> mUnk281520;
+    ::ll::UntypedStorage<8, 256> mUnk281520;
     ::ll::UntypedStorage<8, 8>   mUnk64a026;
     ::ll::UntypedStorage<1, 1>   mUnk87b58c;
     ::ll::UntypedStorage<8, 64>  mUnk58eec3;
@@ -50,7 +50,7 @@ public:
     MCNAPI ::Puv::LoadResult<::BetaItemComponentData>
     _parseBeta(::Json::Value const& input, ::JsonBetaState canUseBeta) const;
 
-    MCNAPI ::Puv::LoadResult<::ComponentItemData_v1_21_60> _parseCereal(::Json::Value const& input) const;
+    MCNAPI ::Puv::LoadResult<::ComponentItemData_v1_21_80> _parseCereal(::Json::Value const& input) const;
 
     MCNAPI ::std::optional<::LegacyEventItemComponentData> _parseEvents(::Json::Value const& input) const;
 

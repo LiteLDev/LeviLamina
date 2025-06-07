@@ -45,6 +45,8 @@ public:
 
     MCNAPI StringConstraint(::cereal::StringConstraint&&);
 
+    MCNAPI void doValidate(::std::string const& str, ::cereal::SerializerContext& context) const;
+
     MCNAPI ::cereal::StringConstraint& regex(::std::string str);
     // NOLINTEND
 

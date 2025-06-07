@@ -674,12 +674,12 @@ public:
 
     MCAPI ::RakNet::RakPeer::RemoteSystemStruct* AssignSystemAddressToRemoteSystemList(
         ::RakNet::SystemAddress                            systemAddress,
-        ::RakNet::RakPeer::RemoteSystemStruct::ConnectMode incomingRakNetSocket,
-        ::RakNet::RakNetSocket2*                           thisIPConnectedRecently,
-        bool*                                              bindingAddress,
-        ::RakNet::SystemAddress                            incomingMTU,
-        int                                                guid,
-        ::RakNet::RakNetGUID                               connectionMode,
+        ::RakNet::RakPeer::RemoteSystemStruct::ConnectMode connectionMode,
+        ::RakNet::RakNetSocket2*                           incomingRakNetSocket,
+        bool*                                              thisIPConnectedRecently,
+        ::RakNet::SystemAddress                            bindingAddress,
+        int                                                incomingMTU,
+        ::RakNet::RakNetGUID                               guid,
         bool                                               useSecurity
     );
 
@@ -764,8 +764,8 @@ public:
         char                                               orderingChannel,
         ::RakNet::AddressOrGUID                            systemIdentifier,
         bool                                               broadcast,
-        ::RakNet::RakPeer::RemoteSystemStruct::ConnectMode receipt,
-        uint                                               connectionMode
+        ::RakNet::RakPeer::RemoteSystemStruct::ConnectMode connectionMode,
+        uint                                               receipt
     );
 
     MCAPI ::RakNet::ConnectionAttemptResult SendConnectionRequest(
@@ -773,12 +773,12 @@ public:
         ushort               remotePort,
         char const*          passwordData,
         int                  passwordDataLength,
-        ::RakNet::PublicKey* connectionSocketIndex,
+        ::RakNet::PublicKey* publicKey,
+        uint                 connectionSocketIndex,
+        uint                 extraData,
         uint                 sendConnectionAttemptCount,
         uint                 timeBetweenSendConnectionAttemptsMS,
-        uint                 timeoutTime,
-        uint                 publicKey,
-        uint                 extraData
+        uint                 timeoutTime
     );
 
     MCAPI ::RakNet::ConnectionAttemptResult SendConnectionRequest(
@@ -786,13 +786,13 @@ public:
         ushort                   remotePort,
         char const*              passwordData,
         int                      passwordDataLength,
-        ::RakNet::PublicKey*     sendConnectionAttemptCount,
+        ::RakNet::PublicKey*     publicKey,
+        uint                     connectionSocketIndex,
+        uint                     extraData,
+        uint                     sendConnectionAttemptCount,
         uint                     timeBetweenSendConnectionAttemptsMS,
         uint                     timeoutTime,
-        uint                     socket,
-        uint                     publicKey,
-        uint                     connectionSocketIndex,
-        ::RakNet::RakNetSocket2* extraData
+        ::RakNet::RakNetSocket2* socket
     );
 
     MCAPI bool SendImmediate(

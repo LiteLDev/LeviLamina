@@ -88,8 +88,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RTree(::RTree&&);
-
     MCNAPI ~RTree();
     // NOLINTEND
 
@@ -99,12 +97,6 @@ public:
     MCNAPI static ::std::optional<::RTree::Node> build(::std::vector<::RTree::Node>&& children);
 
     MCNAPI static ::std::optional<::RTree> create(::std::vector<::BiomeNoiseTarget> const& biomes);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::RTree&&);
     // NOLINTEND
 
 public:

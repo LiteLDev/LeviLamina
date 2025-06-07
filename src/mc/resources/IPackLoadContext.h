@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BedrockLoadContext;
 class Experiments;
 class LinkedAssetValidator;
 class MinEngineVersion;
@@ -52,6 +53,9 @@ public:
 
     // vIndex: 10
     virtual void setMinEngineVersion(::MinEngineVersion const&) = 0;
+
+    // vIndex: 11
+    virtual ::BedrockLoadContext toBedrockLoadContext() const = 0;
     // NOLINTEND
 
 public:

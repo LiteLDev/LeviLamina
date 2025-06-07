@@ -5,13 +5,10 @@
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
-#include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
-class SemVersion;
 namespace SharedTypes::v1_20_50 { struct HoverTextColorItemComponent; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class HoverTextColorItemComponent : public ::NetworkedItemComponent<::HoverTextColorItemComponent> {
@@ -50,12 +47,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
-        ::std::optional<::SemVersion>          requiredToggles
-    );
-
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 

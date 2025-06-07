@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
@@ -12,6 +11,7 @@
 class BlockLegacy;
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -66,7 +66,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockType> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
     MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>
     getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::BlockLegacy const& block);

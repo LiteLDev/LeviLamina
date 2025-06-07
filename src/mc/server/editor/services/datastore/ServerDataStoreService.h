@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/datastore/EventType.h"
 #include "mc/editor/services/datastore/DataStoreService.h"
 
@@ -29,13 +29,13 @@ public:
     virtual ~ServerDataStoreService() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 7
-    virtual ::Scripting::Result<void> _handleEvents(
+    virtual ::Scripting::Result_deprecated<void> _handleEvents(
         ::HashedString const& dataTag,
         ::Editor::DataStore::EventType,
         ::Json::Value const&,
@@ -63,11 +63,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI ::Scripting::Result<void> $_handleEvents(
+    MCNAPI ::Scripting::Result_deprecated<void> $_handleEvents(
         ::HashedString const& dataTag,
         ::Editor::DataStore::EventType,
         ::Json::Value const&,

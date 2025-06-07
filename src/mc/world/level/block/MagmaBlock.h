@@ -10,36 +10,36 @@
 class Block;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class Random;
 struct BlockAnimateTickData;
 struct Brightness;
+namespace BlockEvents { class BlockQueuedTickEvent; }
+namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class MagmaBlock : public ::BlockLegacy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 137
-    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    // vIndex: 123
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 87
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 144
+    // vIndex: 143
     virtual ::Brightness getEmissiveBrightness(::Block const&) const /*override*/;
 
-    // vIndex: 135
+    // vIndex: 134
     virtual bool shouldTickOnSetBlock() const /*override*/;
+
+    // vIndex: 130
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
     virtual ~MagmaBlock() /*override*/ = default;
@@ -49,16 +49,16 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addToTickQueue(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD int $getVariant(::Block const& block) const;
-
-    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
@@ -67,6 +67,8 @@ public:
     MCAPI ::Brightness $getEmissiveBrightness(::Block const&) const;
 
     MCFOLD bool $shouldTickOnSetBlock() const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

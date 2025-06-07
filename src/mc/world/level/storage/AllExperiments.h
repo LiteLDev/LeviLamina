@@ -23,5 +23,6 @@ enum class AllExperiments : int {
     ExperimentalGraphics                   = 17,
     SimplifiedSpawnRules                   = 18,
     Y2025Drop2                             = 19,
-    Count                                  = 20,
+    LocatorBar                             = 20,
+    Count                                  = 21,
 };

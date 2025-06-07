@@ -13,8 +13,6 @@ class Random;
 namespace RotationUtil {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Rotation getRotated(::Rotation original, ::Rotation rotation);
-
 MCNAPI ::std::vector<::Rotation> getShuffledRotations(::Random& random);
 
 MCNAPI uchar rotate(::Rotation source, uchar direction);

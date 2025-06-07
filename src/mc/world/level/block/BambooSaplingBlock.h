@@ -13,51 +13,48 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class ItemInstance;
-class Random;
-class Vec3;
+namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class BambooSaplingBlock : public ::FoliageBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 137
-    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 74
+    // vIndex: 73
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    // vIndex: 76
+    // vIndex: 75
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    // vIndex: 87
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 113
+    // vIndex: 112
     virtual bool isAuxValueRelevantForPicking() const /*override*/;
 
-    // vIndex: 79
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 138
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 15
-    virtual ::Vec3 randomlyModifyPosition(::BlockPos const& pos) const /*override*/;
-
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 48
+    // vIndex: 47
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
+
+    // vIndex: 130
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0
     virtual ~BambooSaplingBlock() /*override*/ = default;
@@ -67,13 +64,13 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool _grow(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCFOLD int $getVariant(::Block const& block) const;
 
     MCAPI bool
@@ -89,11 +86,11 @@ public:
 
     MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::Vec3 $randomlyModifyPosition(::BlockPos const& pos) const;
-
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
     MCAPI bool $isValidAuxValue(int auxValue) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:

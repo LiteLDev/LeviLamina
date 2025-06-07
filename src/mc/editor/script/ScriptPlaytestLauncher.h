@@ -2,10 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/common/editor/SessionResult.h"
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct EnumBinding; }
+// clang-format on
 
 namespace Editor::ScriptModule {
 
@@ -34,10 +35,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptPlaytestLauncher> bindClass();
+    MCNAPI static ::Scripting::ClassBinding bindClass();
 
-    MCNAPI static ::Scripting::EnumBindingBuilder<::Editor::Playtest::SessionResult, ::Editor::Playtest::SessionResult>
-    bindSessionResultEnums();
+    MCNAPI static ::Scripting::EnumBinding bindSessionResultEnums();
     // NOLINTEND
 
 public:

@@ -99,6 +99,8 @@ public:
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+
     MCAPI void $onLightningHit();
     // NOLINTEND
 

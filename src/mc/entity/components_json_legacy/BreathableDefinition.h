@@ -43,6 +43,8 @@ public:
     MCNAPI void addNonBreathableBlockDescriptor(::BlockDescriptor const& blockDescriptor);
 
     MCNAPI void initialize(::EntityContext& entity, ::BreathableComponent& component) const;
+
+    MCNAPI ~BreathableDefinition();
     // NOLINTEND
 
 public:
@@ -51,5 +53,11 @@ public:
     MCNAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BreathableDefinition>>& root
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

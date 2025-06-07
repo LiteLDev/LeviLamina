@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
@@ -13,12 +13,15 @@
 class BaseGameVersion;
 class ItemStackBase;
 class Vec3;
-namespace ScriptModuleMinecraft { class IScriptItemComponentFactory; }
+namespace ScriptModuleMinecraft { class IScriptItemCustomComponentReader; }
 namespace ScriptModuleMinecraft { class ScriptItemComponent; }
+namespace ScriptModuleMinecraft { class ScriptItemComponents; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace ScriptModuleMinecraft { struct ScriptPotionOptions; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
+namespace Scripting { struct EngineError; }
 namespace Scripting { struct Error; }
 namespace Scripting { struct Version; }
 // clang-format on
@@ -76,18 +79,13 @@ public:
 
     MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent>>
     getComponent(
-        ::std::unordered_map<
-            ::std::string,
-            ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>> const& factories,
-        ::std::string const&                                                                id
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemComponents> components,
+        ::std::string_view                                               id,
+        bool                                                             includeCustom
     );
 
     MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent>>
-    getComponents(
-        ::std::unordered_map<
-            ::std::string,
-            ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>> const& factories
-    );
+    getComponents(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemComponents> components, bool includeCustom);
 
     MCNAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>
     getDynamicProperty(::Scripting::ContextConfig const& contextConfig, ::std::string const& key);
@@ -95,6 +93,8 @@ public:
     MCNAPI ::std::vector<::std::string> getDynamicPropertyIds(::Scripting::ContextConfig const& contextConfig);
 
     MCNAPI int getDynamicPropertyTotalByteCount(::Scripting::ContextConfig const& contextConfig);
+
+    MCNAPI ::Scripting::Result<::std::string, ::Scripting::EngineError> getLocalizationKey() const;
 
     MCNAPI ::std::vector<::std::string> getLore() const;
 
@@ -107,10 +107,9 @@ public:
     MCNAPI ::std::string getTypeId() const;
 
     MCNAPI bool hasComponent(
-        ::std::unordered_map<
-            ::std::string,
-            ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>> const& factories,
-        ::std::string const&                                                                id
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemComponents> components,
+        ::std::string_view                                               id,
+        bool                                                             includeCustom
     );
 
     MCNAPI bool hasTag(::std::string const& tag) const;
@@ -126,30 +125,30 @@ public:
 
     MCNAPI ::ScriptModuleMinecraft::ScriptItemStack& operator=(::ScriptModuleMinecraft::ScriptItemStack&&);
 
-    MCNAPI ::Scripting::Result<void> setAmount(int amount);
+    MCNAPI ::Scripting::Result_deprecated<void> setAmount(int amount);
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     setCanDestroy(::std::optional<::std::vector<::std::string>> const& blockIdentifiers);
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     setCanPlaceOn(::std::optional<::std::vector<::std::string>> const& blockIdentifiers);
 
-    MCNAPI ::Scripting::Result<void> setDynamicProperties(
+    MCNAPI ::Scripting::Result_deprecated<void> setDynamicProperties(
         ::Scripting::ContextConfig const& contextConfig,
         ::std::unordered_map<::std::string, ::std::variant<double, float, bool, ::std::string, ::Vec3>> const& values
     );
 
-    MCNAPI ::Scripting::Result<void> setDynamicProperty(
+    MCNAPI ::Scripting::Result_deprecated<void> setDynamicProperty(
         ::Scripting::ContextConfig const&                                                  contextConfig,
         ::std::string const&                                                               key,
         ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> const& optionalValue
     );
 
-    MCNAPI ::Scripting::Result<void> setLore(::std::optional<::std::vector<::std::string>> const& loreList);
+    MCNAPI ::Scripting::Result_deprecated<void> setLore(::std::optional<::std::vector<::std::string>> const& loreList);
 
     MCNAPI void setLoreV010(::std::optional<::std::vector<::std::string>> const& loreList);
 
-    MCNAPI ::Scripting::Result<void> setNameTag(::std::optional<::std::string> nameTag);
+    MCNAPI ::Scripting::Result_deprecated<void> setNameTag(::std::optional<::std::string> nameTag);
 
     MCNAPI void setNameTagV010(::std::optional<::std::string> nameTag);
 
@@ -163,8 +162,11 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>
     _createPotion(::Scripting::WeakLifetimeScope& scope, ::ScriptModuleMinecraft::ScriptPotionOptions const& options);
 
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemStack>
-    bind(::BaseGameVersion const& baseGameVersion, ::Scripting::Version const& version);
+    MCNAPI static ::Scripting::ClassBinding bind(
+        ::BaseGameVersion const&                                                   baseGameVersion,
+        ::Scripting::Version const&                                                version,
+        ::WeakRef<::ScriptModuleMinecraft::IScriptItemCustomComponentReader const> itemCustomComponentRegistry
+    );
 
     MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>
     createHandle(::Scripting::WeakLifetimeScope scope, ::ItemStackBase const& item);

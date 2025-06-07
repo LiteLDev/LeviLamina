@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/StackRefResult.h"
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
@@ -40,10 +39,11 @@ public:
     virtual ::Scripting::Result_deprecated<::Editor::Cursor::AttachmentProperties> getAttachmentProperties() const = 0;
 
     // vIndex: 5
-    virtual ::Scripting::Result<void> setCursorState(::Editor::Cursor::CursorState&& state) = 0;
+    virtual ::Scripting::Result_deprecated<void> setCursorState(::Editor::Cursor::CursorState&& state) = 0;
 
     // vIndex: 6
-    virtual ::Scripting::Result<void> setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& props) = 0;
+    virtual ::Scripting::Result_deprecated<void>
+    setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& props) = 0;
 
     // vIndex: 7
     virtual ::Scripting::Result_deprecated<::BlockPos> moveBy(::glm::ivec3 const& offset) = 0;

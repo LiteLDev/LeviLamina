@@ -2,22 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/client/screenshots/IShowcasedScreenshots.h"
-#include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
-
 namespace Screenshots {
 
-class ShowcasedScreenshots : public ::Screenshots::IShowcasedScreenshots {
+class ShowcasedScreenshots {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk501be4;
-    ::ll::UntypedStorage<8, 8>  mUnkc598fa;
-    ::ll::UntypedStorage<8, 8>  mUnk4f71e5;
-    ::ll::UntypedStorage<8, 32> mUnkab068e;
-    ::ll::UntypedStorage<8, 8>  mUnk91ad15;
+    ::ll::UntypedStorage<8, 8>   mUnk501be4;
+    ::ll::UntypedStorage<8, 8>   mUnkc598fa;
+    ::ll::UntypedStorage<8, 8>   mUnk4f71e5;
+    ::ll::UntypedStorage<8, 32>  mUnkab068e;
+    ::ll::UntypedStorage<8, 24>  mUnk12c9dd;
+    ::ll::UntypedStorage<8, 32>  mUnk7f774b;
+    ::ll::UntypedStorage<8, 184> mUnk792f8e;
+    ::ll::UntypedStorage<8, 8>   mUnk2dcc43;
+    ::ll::UntypedStorage<1, 1>   mUnk555533;
+    ::ll::UntypedStorage<1, 1>   mUnk27792e;
+    ::ll::UntypedStorage<1, 1>   mUnk707dc3;
+    ::ll::UntypedStorage<8, 128> mUnk4ff035;
+    ::ll::UntypedStorage<8, 8>   mUnk91ad15;
     // NOLINTEND
 
 public:
@@ -25,47 +28,6 @@ public:
     ShowcasedScreenshots& operator=(ShowcasedScreenshots const&);
     ShowcasedScreenshots(ShowcasedScreenshots const&);
     ShowcasedScreenshots();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ShowcasedScreenshots() /*override*/ = default;
-
-    // vIndex: 1
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>> loadGallery() /*override*/;
-
-    // vIndex: 2
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>> loadCount() /*override*/;
-
-    // vIndex: 3
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>>
-    loadShowcasedScreenshot(::std::string const&) /*override*/;
-
-    // vIndex: 4
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>> loadFeaturedScreenshot() /*override*/;
-
-    // vIndex: 5
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::string>>
-    addScreenshotToShowcase(int64, bool, ::Core::PathBuffer<::std::string> const&) /*override*/;
-
-    // vIndex: 6
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>>
-    removeShowcasedScreenshot(::std::string const&) /*override*/;
-
-    // vIndex: 7
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>>
-    setFeaturedScreenshot(::std::string const&) /*override*/;
-
-    // vIndex: 8
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>> removeFeaturedScreenshot() /*override*/;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Screenshots

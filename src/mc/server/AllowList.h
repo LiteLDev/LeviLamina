@@ -80,7 +80,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool isIgnoringPlayerLimit(::mce::UUID const& uuid, ::std::string const& xuid) const;
 
-    MCNAPI void tryUpdateEntries(::mce::UUID const& xuid, ::std::string const& name, ::std::string const& uuid);
+    MCNAPI void tryUpdateEntries(::mce::UUID const& uuid, ::std::string const& xuid, ::std::string const& name);
     // NOLINTEND
 
 public:

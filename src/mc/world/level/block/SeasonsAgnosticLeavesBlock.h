@@ -18,11 +18,11 @@ class SeasonsAgnosticLeavesBlock : public ::LeavesBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 141
+    // vIndex: 139
     virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const
         /*override*/;
 
-    // vIndex: 115
+    // vIndex: 114
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
 
     // vIndex: 0

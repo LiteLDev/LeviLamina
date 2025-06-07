@@ -29,9 +29,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _setupMaterials();
-
     MCNAPI static ::Material const& getMaterial(::MaterialType type);
+
+    MCNAPI static void initMaterials();
     // NOLINTEND
 
 public:

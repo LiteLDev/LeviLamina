@@ -14,6 +14,8 @@ MCNAPI ::TickingSystemWithInfo createAntiCheatSystem();
 
 MCNAPI ::TickingSystemWithInfo createApplySystem();
 
+MCNAPI ::TickingSystemWithInfo createClearSystem();
+
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 

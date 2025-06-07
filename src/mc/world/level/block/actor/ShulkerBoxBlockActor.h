@@ -53,7 +53,7 @@ public:
     // vIndex: 8
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 29
+    // vIndex: 32
     virtual bool canPushInItem(int slot, int face, ::ItemStack const& item) const /*override*/;
 
     // vIndex: 22

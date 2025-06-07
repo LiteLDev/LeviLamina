@@ -2,10 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilderReadOnly.h"
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/editor/script/ScriptWidgetMouseButtonEventType.h"
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct EnumBinding; }
+// clang-format on
 
 namespace Editor::ScriptModule {
 
@@ -28,14 +29,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilderReadOnly<
-        ::Editor::ScriptModule::ScriptWidgetMouseButtonEventParameters>
-    bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
 
-    MCNAPI static ::Scripting::EnumBindingBuilder<
-        ::Editor::ScriptModule::ScriptWidgetMouseButtonEventType,
-        ::Editor::ScriptModule::ScriptWidgetMouseButtonEventType>
-    bindScriptEnum();
+    MCNAPI static ::Scripting::EnumBinding bindScriptEnum();
     // NOLINTEND
 };
 

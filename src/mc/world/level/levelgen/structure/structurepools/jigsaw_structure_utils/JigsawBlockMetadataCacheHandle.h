@@ -8,7 +8,7 @@ struct JigsawBlockMetadataCacheHandle {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnke4c592;
+    ::ll::UntypedStorage<8, 8> mUnke9578d;
     ::ll::UntypedStorage<8, 8> mUnk40f85c;
     ::ll::UntypedStorage<8, 8> mUnkef6e6c;
     // NOLINTEND

@@ -14,7 +14,7 @@ class TransferBuilder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 232> mUnkd248eb;
+    ::ll::UntypedStorage<8, 248> mUnkd248eb;
     // NOLINTEND
 
 public:

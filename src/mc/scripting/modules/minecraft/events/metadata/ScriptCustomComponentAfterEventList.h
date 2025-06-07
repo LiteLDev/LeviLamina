@@ -8,7 +8,7 @@ class ScriptCustomComponentAfterEventList {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk45a237;
+    ::ll::UntypedStorage<8, 24> mUnk4788d4;
     // NOLINTEND
 
 public:

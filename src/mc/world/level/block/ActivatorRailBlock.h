@@ -16,10 +16,10 @@ class ActivatorRailBlock : public ::BaseRailBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 61
+    // vIndex: 60
     virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
         /*override*/;
 

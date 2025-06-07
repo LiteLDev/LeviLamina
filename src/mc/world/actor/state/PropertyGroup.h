@@ -55,8 +55,24 @@ public:
         ::std::vector<::HashedString> const& enumValues
     );
 
+    MCNAPI void _addFloatProperty(
+        ::std::string const& name,
+        bool                 clientSync,
+        ::ExpressionNode&&   defaultExpression,
+        float                rangeMin,
+        float                rangeMax
+    );
+
     MCNAPI void
     _addFloatProperty(::std::string const& name, bool clientSync, float defaultValue, float rangeMin, float rangeMax);
+
+    MCNAPI void _addIntProperty(
+        ::std::string const& name,
+        bool                 clientSync,
+        ::ExpressionNode&&   defaultExpression,
+        int                  rangeMin,
+        int                  rangeMax
+    );
 
     MCNAPI void
     _addIntProperty(::std::string const& name, bool clientSync, int defaultValue, int rangeMin, int rangeMax);

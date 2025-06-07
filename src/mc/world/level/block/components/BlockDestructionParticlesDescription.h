@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/TintMethod.h"
-#include "mc/world/level/block/components/BlockComponentDescription.h"
+#include "mc/world/level/block/components/NetworkedBlockComponentDescription.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,8 @@ class BlockComponentStorage;
 class SemVersion;
 // clang-format on
 
-struct BlockDestructionParticlesDescription : public ::BlockComponentDescription {
+struct BlockDestructionParticlesDescription
+: public ::NetworkedBlockComponentDescription<::BlockDestructionParticlesDescription> {
 public:
     // member variables
     // NOLINTBEGIN

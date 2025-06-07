@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Exclude.h"
 #include "mc/deps/ecs/strict/Include.h"
@@ -14,16 +13,12 @@ class CameraComponent;
 class StrictEntityContext;
 struct ActiveCameraComponent;
 struct ActorMovementTickNeededComponent;
-struct BoatFlagComponent;
-struct CameraAlignWithTargetForwardComponent;
 struct CameraAttachComponent;
-struct CameraThirdPersonBoomComponent;
+struct ControlSchemeComponent;
 struct DefaultInputCameraComponent;
 struct LocalPlayerComponent;
 struct MoveInputComponent;
-struct PassengerComponent;
 struct TickingSystemWithInfo;
-struct VehicleComponent;
 // clang-format on
 
 namespace CameraInputTransferSystem {
@@ -34,9 +29,7 @@ MCNAPI void _tickMoveInputUpdate(
         ::StrictEntityContext,
         ::Include<::ActiveCameraComponent>,
         ::CameraComponent const,
-        ::CameraAttachComponent const,
-        ::Optional<::CameraThirdPersonBoomComponent const>,
-        ::Optional<::CameraAlignWithTargetForwardComponent const>> activeAttachedCameraView,
+        ::CameraAttachComponent const> activeAttachedCameraView,
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActiveCameraComponent>,
@@ -47,9 +40,8 @@ MCNAPI void _tickMoveInputUpdate(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorMovementTickNeededComponent, ::LocalPlayerComponent>,
-        ::MoveInputComponent>                                                                     localPlayerView,
-    ::ViewT<::StrictEntityContext, ::PassengerComponent>                                          passengerView,
-    ::ViewT<::StrictEntityContext, ::Include<::BoatFlagComponent>, ::Include<::VehicleComponent>> boatView
+        ::MoveInputComponent,
+        ::ControlSchemeComponent> localPlayerView
 );
 
 MCNAPI ::TickingSystemWithInfo createMoveInputUpdateSystem();

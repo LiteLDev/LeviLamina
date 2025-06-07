@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
 
@@ -14,6 +13,7 @@ namespace ScriptModuleMinecraft { class ScriptAimAssistCategorySettings; }
 namespace ScriptModuleMinecraft { class ScriptAimAssistPreset; }
 namespace ScriptModuleMinecraft { class ScriptAimAssistPresetSettings; }
 namespace ScriptModuleMinecraft { struct ScriptNamespaceNameError; }
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EngineError; }
 namespace Scripting { struct Error; }
 namespace Scripting { struct InvalidArgumentError; }
@@ -45,17 +45,17 @@ public:
 
     MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistCategory>,
+        ::Scripting::Error,
         ::Scripting::InvalidArgumentError,
         ::Scripting::EngineError,
-        ::Scripting::Error,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError>
     _addCategory(::ScriptModuleMinecraft::ScriptAimAssistCategorySettings const& categorySettings);
 
     MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistPreset>,
+        ::Scripting::Error,
         ::Scripting::InvalidArgumentError,
         ::Scripting::EngineError,
-        ::Scripting::Error,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError>
     _addPreset(::ScriptModuleMinecraft::ScriptAimAssistPresetSettings const& presetSettings);
 
@@ -84,7 +84,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptAimAssistRegistry> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:

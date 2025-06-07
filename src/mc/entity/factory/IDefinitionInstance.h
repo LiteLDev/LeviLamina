@@ -7,7 +7,6 @@
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
-class EntityRegistry;
 // clang-format on
 
 class IDefinitionInstance {
@@ -27,22 +26,22 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual void _initialize(::EntityRegistry&, ::EntityContext&) const = 0;
+    virtual void _initialize(::EntityContext&) const = 0;
 
     // vIndex: 1
-    virtual void _uninitialize(::EntityRegistry&, ::EntityContext&) const = 0;
+    virtual void _uninitialize(::EntityContext&) const = 0;
 
     // vIndex: 2
-    virtual void _save(::EntityRegistry const&, ::EntityContext const&, ::CompoundTag&) const = 0;
+    virtual void _save(::EntityContext const&, ::CompoundTag&) const = 0;
 
     // vIndex: 3
-    virtual void _load(::EntityRegistry&, ::EntityContext&, ::CompoundTag const&, ::DataLoadHelper&) const = 0;
+    virtual void _load(::EntityContext&, ::CompoundTag const&, ::DataLoadHelper&) const = 0;
 
     // vIndex: 4
-    virtual void _reload(::EntityRegistry&, ::EntityContext&) const = 0;
+    virtual void _reload(::EntityContext&) const = 0;
 
     // vIndex: 5
-    virtual ~IDefinitionInstance() = default;
+    virtual ~IDefinitionInstance();
 
     // vIndex: 6
     virtual ushort getDefinitionTypeId() const = 0;
@@ -52,14 +51,14 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI ushort $getRuntimeTypeId() const;
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI ushort $getRuntimeTypeId() const;
     // NOLINTEND
 };

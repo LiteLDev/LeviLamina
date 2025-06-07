@@ -16,10 +16,10 @@ namespace ActorPropertyUtils {
 // functions
 // NOLINTBEGIN
 MCNAPI bool _checkAndQueueBoolValue(
-    ::PropertyGroup const&     overallIndex,
-    uint64                     actorDiffList,
-    ::ActorDefinitionDiffList* value,
-    bool
+    ::PropertyGroup const&,
+    uint64                     overallIndex,
+    ::ActorDefinitionDiffList* actorDiffList,
+    bool                       value
 );
 
 MCNAPI bool _checkAndQueueEnumIndexValueByHash(
@@ -31,19 +31,19 @@ MCNAPI bool _checkAndQueueEnumIndexValueByHash(
 );
 
 MCNAPI bool _checkAndQueueFloatValue(
-    ::PropertyGroup const& overallIndex,
-    uint64                 actorDiffList,
-    uint64                 value,
-    ::ActorDefinitionDiffList*,
-    float
+    ::PropertyGroup const&,
+    uint64,
+    uint64                     overallIndex,
+    ::ActorDefinitionDiffList* actorDiffList,
+    float                      value
 );
 
 MCNAPI bool _checkAndQueueIntValue(
-    ::PropertyGroup const& overallIndex,
-    uint64                 actorDiffList,
-    uint64                 value,
-    ::ActorDefinitionDiffList*,
-    int
+    ::PropertyGroup const&,
+    uint64,
+    uint64                     overallIndex,
+    ::ActorDefinitionDiffList* actorDiffList,
+    int                        value
 );
 
 MCNAPI void addPendingEventResponseChange(

@@ -38,6 +38,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI CreativeItemRegistry();
+
     MCNAPI ::brstd::flat_map<
         ::CreativeItemCategory,
         ::gsl::not_null<::CreativeItemGroupCategory*>,
@@ -51,6 +53,12 @@ public:
     MCNAPI ::CreativeItemGroupCategory* newCreativeCategory(::std::string const& name, ::CreativeItemCategory category);
 
     MCNAPI void updateNetIdMap();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

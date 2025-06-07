@@ -23,23 +23,23 @@ class ConcretePowderBlock : public ::FallingBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 148
+    // vIndex: 147
     virtual ::mce::Color getDustColor(::Block const& block) const /*override*/;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual ::std::string getDustParticleName(::Block const& block) const /*override*/;
 
-    // vIndex: 87
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 102
+    // vIndex: 101
     virtual bool shouldStopFalling(::Actor& entity) const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0

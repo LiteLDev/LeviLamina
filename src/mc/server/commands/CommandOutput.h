@@ -85,6 +85,8 @@ public:
 
     MCAPI void error(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params);
 
+    MCAPI bool hasErrorMessage() const;
+
     MCAPI void load(
         ::CommandOutputType                       type,
         int                                       successCount,

@@ -50,6 +50,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI CameraAimAssistDataRegistryComponent();
+
     MCNAPI void _parseAndLoadAimAssistCategories(
         ::EntityContext&                                                             levelEntity,
         ::Puv::Loader<::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile> const& loader,
@@ -91,6 +93,12 @@ public:
     tryGetCategory(::HashedString const& id) const;
 
     MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const* tryGetPreset(::HashedString const& id) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

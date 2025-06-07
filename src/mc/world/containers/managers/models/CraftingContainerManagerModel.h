@@ -6,7 +6,6 @@
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
 #include "mc/world/containers/models/FilterResult.h"
 #include "mc/world/item/ItemInstance.h"
-#include "mc/world/item/ItemStack.h"
 #include "mc/world/item/crafting/RecipeIngredientSet.h"
 #include "mc/world/level/BlockPos.h"
 
@@ -14,6 +13,7 @@
 // clang-format off
 class ContainerModel;
 class ContainerScreenContext;
+class ItemStack;
 // clang-format on
 
 class CraftingContainerManagerModel : public ::ContainerManagerModel {
@@ -33,7 +33,6 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ContainerModel>> mInventoryContainerModel;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ContainerModel>> mCraftingInputContainerModel;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ContainerModel>> mHotbarContainerModel;
-    ::ll::TypedStorage<8, 152, ::ItemStack>                        mInHand;
     ::ll::TypedStorage<8, 64, ::RecipeIngredientSet>               mIngredientSet;
     ::ll::TypedStorage<8, 128, ::ItemInstance>                     mLastCraftedItem;
     ::ll::TypedStorage<4, 4, int>                                  mContainerPopulationTabIndex;

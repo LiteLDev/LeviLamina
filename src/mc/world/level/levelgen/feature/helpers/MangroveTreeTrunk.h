@@ -63,18 +63,18 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void _placeBranch(
-        ::IBlockWorldGenAPI&            target,
-        ::std::vector<::BlockPos>*      canopyAttachmentPositions,
-        ::Random&                       random,
-        int                             treeHeight,
-        ::RenderParams&                 treeParams,
-        ::TreeHelper::TreeParams const& logPos,
-        ::BlockPos&                     currentHeight,
-        int                             branchDir,
-        uchar                           branchPos,
+        ::IBlockWorldGenAPI&       target,
+        ::std::vector<::BlockPos>* canopyAttachmentPositions,
+        ::Random&                  random,
+        int                        treeHeight,
+        ::RenderParams&,
+        ::TreeHelper::TreeParams const& treeParams,
+        ::BlockPos&                     logPos,
+        int                             currentHeight,
+        uchar                           branchDir,
+        int                             branchPos,
         int                             branchSteps,
-        int                             trunkBlock,
-        ::Block const*
+        ::Block const*                  trunkBlock
     ) const;
     // NOLINTEND
 

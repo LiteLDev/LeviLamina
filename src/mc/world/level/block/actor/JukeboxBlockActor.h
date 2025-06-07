@@ -54,10 +54,10 @@ public:
     // vIndex: 21
     virtual int getMaxStackSize() const /*override*/;
 
-    // vIndex: 29
+    // vIndex: 32
     virtual bool canPushInItem(int, int, ::ItemStack const& item) const /*override*/;
 
-    // vIndex: 30
+    // vIndex: 33
     virtual bool canPullOutItem(int, int, ::ItemStack const&) const /*override*/;
 
     // vIndex: 7

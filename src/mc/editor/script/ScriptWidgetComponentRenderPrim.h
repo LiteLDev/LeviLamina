@@ -4,11 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/WidgetComponentType.h"
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/script/ScriptWidgetComponentBase.h"
-#include "mc/editor/services/render_helper/PrimitiveType.h"
+#include "mc/scripting/PrimitiveType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,6 +21,7 @@ namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimType_Disc;
 namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimType_Line; }
 namespace Editor::ScriptModule { class ScriptWidgetErrorInvalidObject; }
 namespace Editor::ScriptModule { class ScriptWidgetService; }
+namespace Scripting { struct ClassBinding; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -37,22 +37,23 @@ public:
 public:
     // prevent constructor by default
     ScriptWidgetComponentRenderPrim& operator=(ScriptWidgetComponentRenderPrim const&);
-    ScriptWidgetComponentRenderPrim(ScriptWidgetComponentRenderPrim const&);
     ScriptWidgetComponentRenderPrim();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
+    // vIndex: 2
     virtual ~ScriptWidgetComponentRenderPrim() /*override*/ = default;
 
-    // vIndex: 2
+    // vIndex: 3
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptWidgetComponentRenderPrim(::Editor::ScriptModule::ScriptWidgetComponentRenderPrim const&);
+
     MCNAPI ScriptWidgetComponentRenderPrim(
         ::Editor::ServiceProviderCollection&                                     serviceProviders,
         ::mce::UUID const&                                                       componentId,
@@ -68,7 +69,7 @@ public:
     );
 
     MCNAPI ::Scripting::Result<
-        ::Editor::RenderHelper::PrimitiveType,
+        ::Scripting::RenderHelper::PrimitiveType,
         ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent,
         ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
     _getPrimitiveType() const;
@@ -89,13 +90,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentRenderPrim>
-    bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentRenderPrim const&);
+
     MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                     serviceProviders,
         ::mce::UUID const&                                                       componentId,

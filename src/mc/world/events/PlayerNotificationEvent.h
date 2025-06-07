@@ -42,7 +42,6 @@
 
 // auto generated forward declare list
 // clang-format off
-struct ClientJoinedEvent;
 struct PlayerAddEvent;
 struct PlayerAddExpEvent;
 struct PlayerAddLevelEvent;
@@ -106,7 +105,6 @@ struct PlayerNotificationEvent : public ::EventVariantImpl<
                                      ::PlayerInteractWithEntityAfterEvent const,
                                      ::PlayerInteractWithBlockAfterEvent const,
                                      ::PlayerEmoteEvent const,
-                                     ::ClientJoinedEvent const,
                                      ::PlayerScriptInputEvent const,
                                      ::PlayerInputPermissionCategoryChangeEvent const,
                                      ::PlayerSayCommandEvent const,

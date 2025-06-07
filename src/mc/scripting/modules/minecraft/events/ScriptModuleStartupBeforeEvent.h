@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptSpawnRulesRegistry; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -20,6 +20,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk7edc14;
     ::ll::UntypedStorage<8, 32> mUnkd5888e;
     ::ll::UntypedStorage<8, 32> mUnk85d31c;
+    ::ll::UntypedStorage<8, 32> mUnkcbd0db;
     // NOLINTEND
 
 public:
@@ -41,7 +42,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptModuleStartupBeforeEvent> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:

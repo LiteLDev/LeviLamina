@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class RenderParams;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -11,19 +12,20 @@ class DefinitionTrigger {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnk7493a2;
-    ::ll::UntypedStorage<2, 2>   mUnk3f7da8;
-    ::ll::UntypedStorage<8, 216> mUnk801453;
+    ::ll::UntypedStorage<8, 32> mUnk7493a2;
+    ::ll::UntypedStorage<2, 2>  mUnk3f7da8;
+    ::ll::UntypedStorage<8, 16> mUnk801453;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    DefinitionTrigger(DefinitionTrigger const&);
     DefinitionTrigger();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DefinitionTrigger(::DefinitionTrigger const&);
+    MCNAPI bool canTrigger(::RenderParams& params) const;
 
     MCNAPI ::DefinitionTrigger& operator=(::DefinitionTrigger&&);
 
@@ -36,12 +38,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::DefinitionTrigger const&);
     // NOLINTEND
 
 public:

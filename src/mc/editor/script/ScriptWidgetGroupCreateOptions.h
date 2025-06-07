@@ -2,10 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/common/editor/GroupSelectionMode.h"
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct EnumBinding; }
+namespace Scripting { struct InterfaceBinding; }
+// clang-format on
 
 namespace Editor::ScriptModule {
 
@@ -27,10 +28,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Editor::Widgets::GroupSelectionMode> bindEnums();
+    MCNAPI static ::Scripting::EnumBinding bindEnums();
 
-    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetGroupCreateOptions>
-    bindScript();
+    MCNAPI static ::Scripting::InterfaceBinding bindScript();
     // NOLINTEND
 };
 

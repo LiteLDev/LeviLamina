@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/deps/scripting/runtime/Result.h"
@@ -17,12 +16,14 @@ class Player;
 namespace Json { class Value; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
+namespace ScriptModuleMinecraft { struct ScriptRawMessageError; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraftServerUI { class ScriptFormRejectError; }
 namespace ScriptModuleMinecraftServerUI { class ScriptMessageFormResponse; }
 namespace ScriptModuleMinecraftServerUI { class ScriptMessageFormResponseV2; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class ScriptObjectFactory; }
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct EngineError; }
 // clang-format on
@@ -52,10 +53,10 @@ public:
 
     MCNAPI ScriptMessageFormData(::ScriptModuleMinecraftServerUI::ScriptMessageFormData const&);
 
-    MCNAPI ::Scripting::Result_deprecated<::Json::Value>
+    MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
     _buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::Json::Value>
+    MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
     _buildJsonV2(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptMessageFormData>
@@ -96,7 +97,8 @@ public:
             ::ScriptModuleMinecraftServerUI::ScriptFormRejectError,
             void>,
         ::Scripting::EngineError,
-        ::ScriptModuleMinecraft::ScriptInvalidActorError>
+        ::ScriptModuleMinecraft::ScriptInvalidActorError,
+        ::ScriptModuleMinecraft::ScriptRawMessageError>
     showV2(
         ::Scripting::ContextConfig const&      config,
         ::Scripting::ScriptObjectFactory&      factory,
@@ -116,7 +118,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftServerUI::ScriptMessageFormData> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:

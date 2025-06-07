@@ -20,7 +20,7 @@ local is_client = false
 add_requires("ctre 3.8.1")
 add_requires("entt v3.14.0")
 add_requires("expected-lite v0.8.0")
-add_requires("fmt 10.2.1")
+add_requires("fmt 11")
 add_requires("gsl v4.0.0")
 add_requires("glm 1.0.1")
 add_requires("leveldb 1.23")

@@ -22,9 +22,9 @@ customWhenSilkTouch(
 
 MCNAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
 customWhenSilkTouchOrToolOtherwise(
-    ::HashedString const&                                                                         dropStrategy,
-    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> otherDropStrategy,
-    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> toolItemId
+    ::HashedString const&                                                                         toolItemId,
+    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> dropStrategy,
+    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> otherDropStrategy
 );
 
 MCNAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
@@ -34,15 +34,15 @@ customWhenSilkTouchOtherwise(
 );
 
 MCNAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> customWhenTool(
-    ::HashedString const&                                                                         dropStrategy,
-    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> toolItemId
+    ::HashedString const&                                                                         toolItemId,
+    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> dropStrategy
 );
 
 MCNAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
 customWhenToolOtherwise(
-    ::HashedString const&                                                                         dropStrategy,
-    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> otherDropStrategy,
-    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> toolItemId
+    ::HashedString const&                                                                         toolItemId,
+    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> dropStrategy,
+    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> otherDropStrategy
 );
 
 MCNAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> item(
@@ -62,12 +62,12 @@ MCNAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceD
 selfWhenSilkTouch(::std::vector<::BlockState const*> statesToKeep);
 
 MCNAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
-selfWhenSilkTouchOrTool(::HashedString const& statesToKeep, ::std::vector<::BlockState const*> toolItemId);
+selfWhenSilkTouchOrTool(::HashedString const& toolItemId, ::std::vector<::BlockState const*> statesToKeep);
 
 MCNAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
 selfWhenSilkTouchOrToolOtherwise(
-    ::HashedString const&                                                                         otherDropStrategy,
-    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> toolItemId
+    ::HashedString const&                                                                         toolItemId,
+    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> otherDropStrategy
 );
 
 MCNAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>

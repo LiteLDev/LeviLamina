@@ -3,8 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 #include "mc/editor/script/ScriptWidgetComponentBaseOptions.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct InterfaceBinding; }
+// clang-format on
 
 namespace Editor::ScriptModule {
 
@@ -20,40 +24,39 @@ public:
 public:
     // prevent constructor by default
     ScriptWidgetComponentEntityOptions& operator=(ScriptWidgetComponentEntityOptions const&);
+    ScriptWidgetComponentEntityOptions(ScriptWidgetComponentEntityOptions const&);
     ScriptWidgetComponentEntityOptions();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~ScriptWidgetComponentEntityOptions() /*override*/;
+    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptWidgetComponentEntityOptions(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions&&);
-
-    MCNAPI ScriptWidgetComponentEntityOptions(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions const&);
-
     MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentEntityOptions&
     operator=(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions&&);
-
-    MCNAPI ~ScriptWidgetComponentEntityOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentEntityOptions>
-    bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions&&);
-
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions const&);
+    MCNAPI static ::Scripting::InterfaceBinding bindScript();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

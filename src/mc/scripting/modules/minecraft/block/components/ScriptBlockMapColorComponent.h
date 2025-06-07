@@ -3,11 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/block/ScriptTintMethod.h"
-#include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
+#include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockDefinitionalComponent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,12 +14,12 @@ class BlockPos;
 class BlockSource;
 namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct Error; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBlockMapColorComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
+class ScriptBlockMapColorComponent : public ::ScriptModuleMinecraft::BaseScriptBlockDefinitionalComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -31,9 +30,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<::ScriptModuleMinecraft::ScriptRGBA, ::Scripting::Error> color() const;
+    MCNAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptRGBA> color() const;
 
-    MCNAPI ::Scripting::Result<::ScriptModuleMinecraft::ScriptTintMethod, ::Scripting::Error> tintMethod() const;
+    MCNAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptTintMethod> tintMethod() const;
 
     MCNAPI ::ScriptModuleMinecraft::ScriptRGBA tintedColor() const;
     // NOLINTEND
@@ -41,7 +40,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockMapColorComponent> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
     MCNAPI static ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockMapColorComponent>>

@@ -287,9 +287,9 @@ public:
     MCNAPI void failIf(::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
     MCNAPI ::gametest::GameTestError generateErrorWithContext(
-        ::gametest::GameTestErrorType message,
-        ::std::string                 relativePos,
-        ::BlockPos const&             errorType
+        ::gametest::GameTestErrorType errorType,
+        ::std::string                 message,
+        ::BlockPos const&             relativePos
     ) const;
 
     MCNAPI ::gametest::GameTestError generateErrorWithContext(

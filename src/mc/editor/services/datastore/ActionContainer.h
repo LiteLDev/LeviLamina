@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/datastore/EventType.h"
 #include "mc/editor/datastore/container/Container.h"
 
@@ -48,13 +48,13 @@ public:
 
     MCNAPI ::Json::Value getControlActionPayload(::Editor::DataStore::PayloadDescription const& desc) const;
 
-    MCNAPI ::Scripting::Result<void> handleControlActionEvent(
+    MCNAPI ::Scripting::Result_deprecated<void> handleControlActionEvent(
         ::Editor::DataStore::EventType                 eventType,
         ::Json::Value const&                           payload,
         ::Editor::DataStore::PayloadDescription const& desc
     );
 
-    MCNAPI ::Scripting::Result<void> handleInvokeEvent(
+    MCNAPI ::Scripting::Result_deprecated<void> handleInvokeEvent(
         ::Editor::DataStore::EventType                 eventType,
         ::Json::Value const&                           payload,
         ::Editor::DataStore::PayloadDescription const& desc

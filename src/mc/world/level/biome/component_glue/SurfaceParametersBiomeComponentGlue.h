@@ -16,11 +16,11 @@ struct SurfaceParametersBiomeComponentGlue : public ::IBiomeComponentGlue {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk561ef4;
-    ::ll::UntypedStorage<8, 8> mUnk3dcd9d;
-    ::ll::UntypedStorage<8, 8> mUnk7d9ac1;
-    ::ll::UntypedStorage<8, 8> mUnkdff524;
-    ::ll::UntypedStorage<8, 8> mUnkf27323;
+    ::ll::UntypedStorage<8, 8> mUnkfb4c8c;
+    ::ll::UntypedStorage<8, 8> mUnkc4377d;
+    ::ll::UntypedStorage<8, 8> mUnk5f6d98;
+    ::ll::UntypedStorage<8, 8> mUnk4156cd;
+    ::ll::UntypedStorage<8, 8> mUnkaa4ad0;
     // NOLINTEND
 
 public:

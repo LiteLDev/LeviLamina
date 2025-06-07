@@ -18,8 +18,8 @@ namespace SurfaceMatAdjustGlueInternals {
 MCNAPI bool resolveAndVerifyMolang(
     ::std::optional<::ExpressionNode>& expressionNode,
     ::MolangJsonContainer const&       molangJson,
-    ::MolangVersion                    querySetID,
-    ::gsl::span<::HashedString const>  molangVersion
+    ::MolangVersion                    molangVersion,
+    ::gsl::span<::HashedString const>  querySetID
 );
 // NOLINTEND
 

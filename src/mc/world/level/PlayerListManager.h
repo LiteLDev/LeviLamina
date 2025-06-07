@@ -2,11 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
 class IGameplayUserManagerConnector;
 class PacketSender;
+class PlayerLocationReceiver;
+class PlayerLocationSender;
 namespace mce { class UUID; }
 // clang-format on
 
@@ -16,8 +21,10 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64>  mUnk1a674c;
     ::ll::UntypedStorage<8, 24>  mUnke5760d;
-    ::ll::UntypedStorage<8, 128> mUnkf12915;
-    ::ll::UntypedStorage<8, 128> mUnkc4af1d;
+    ::ll::UntypedStorage<8, 24>  mUnk2ade5e;
+    ::ll::UntypedStorage<8, 24>  mUnk1e3a79;
+    ::ll::UntypedStorage<8, 128> mUnk86130e;
+    ::ll::UntypedStorage<8, 128> mUnk5e1e17;
     ::ll::UntypedStorage<8, 16>  mUnka300dc;
     ::ll::UntypedStorage<8, 16>  mUnkadd5e8;
     ::ll::UntypedStorage<8, 16>  mUnk7dba24;
@@ -46,6 +53,10 @@ public:
     MCNAPI void removeByUUID(::mce::UUID const& uuid);
 
     MCNAPI void setPacketSender(::PacketSender& packetSender);
+
+    MCNAPI void setPlayerLocationReceiver(::Bedrock::NonOwnerPointer<::PlayerLocationReceiver> playerLocationReceiver);
+
+    MCNAPI void setPlayerLocationSender(::Bedrock::NonOwnerPointer<::PlayerLocationSender> playerLocationSender);
 
     MCNAPI ~PlayerListManager();
     // NOLINTEND

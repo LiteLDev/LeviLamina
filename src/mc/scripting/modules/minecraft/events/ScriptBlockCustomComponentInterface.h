@@ -7,7 +7,7 @@
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBlockCustomComponentInterface : public ::ScriptModuleMinecraft::ScriptCustomComponentScriptInterface<9> {
+class ScriptBlockCustomComponentInterface : public ::ScriptModuleMinecraft::ScriptCustomComponentScriptInterface<10> {
 public:
     // prevent constructor by default
     ScriptBlockCustomComponentInterface& operator=(ScriptBlockCustomComponentInterface const&);

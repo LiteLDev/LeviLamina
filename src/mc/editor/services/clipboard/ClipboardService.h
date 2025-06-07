@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/serviceproviders/ClipboardServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
@@ -12,10 +10,10 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class CompoundBlockVolume;
+class BlockVolumeBase;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class EditorStructureTemplate; }
-namespace Editor::Selection { class SelectionContainer; }
+namespace Editor { class RelativeVolumeListBlockVolume; }
 namespace Editor::Services { class ClipboardItem; }
 namespace Editor::Services { struct ClipboardWriteOptions; }
 namespace mce { class UUID; }
@@ -30,7 +28,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk77bff1;
     ::ll::UntypedStorage<8, 24> mUnk1b2191;
-    ::ll::UntypedStorage<8, 48> mUnk5ac402;
+    ::ll::UntypedStorage<8, 48> mUnka57520;
     // NOLINTEND
 
 public:
@@ -46,13 +44,13 @@ public:
     virtual ~ClipboardService() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void> ready() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> quit() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
@@ -72,57 +70,45 @@ public:
     // vIndex: 5
     virtual ::Editor::Services::ClipboardItem* getPrimaryItem() /*override*/;
 
-    // vIndex: 6
-    virtual ::Scripting::Result<void>
-    readFromSelection(::mce::UUID const& itemId, ::Editor::Selection::SelectionContainer const& selection) /*override*/;
-
     // vIndex: 7
-    virtual ::Scripting::Result<void>
-    readFromVolume(::mce::UUID const& itemId, ::CompoundBlockVolume const& volume) /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    readFromWorld(::mce::UUID const& itemId, ::Editor::RelativeVolumeListBlockVolume const& volume) /*override*/;
+
+    // vIndex: 6
+    virtual ::Scripting::Result_deprecated<void>
+    readFromWorld(::mce::UUID const& itemId, ::BlockVolumeBase const& volume) /*override*/;
 
     // vIndex: 8
-    virtual ::Scripting::Result<void>
-    readFromWorld(::mce::UUID const& itemId, ::BlockPos const& from, ::BlockPos const& to) /*override*/;
-
-    // vIndex: 9
-    virtual ::Scripting::Result<void> readFromEditorStructure(
+    virtual ::Scripting::Result_deprecated<void> readFromEditorStructure(
         ::mce::UUID const&                       itemId,
         ::Editor::EditorStructureTemplate const& editorStructure
     ) /*override*/;
 
-    // vIndex: 10
+    // vIndex: 9
     virtual ::Scripting::Result_deprecated<bool> writeToWorld(
         ::mce::UUID const&                               itemId,
         ::BlockPos const&                                position,
         ::Editor::Services::ClipboardWriteOptions const* options
     ) const /*override*/;
 
-    // vIndex: 11
-    virtual ::Scripting::Result_deprecated<::WeakRef<::Editor::Selection::SelectionContainer>>
-    getPredictedWriteAsSelection(
+    // vIndex: 10
+    virtual ::Scripting::Result_deprecated<::Editor::RelativeVolumeListBlockVolume> getPredictedWriteVolume(
         ::mce::UUID const&                               itemId,
         ::BlockPos const&                                position,
         ::Editor::Services::ClipboardWriteOptions const* options
     ) const /*override*/;
+
+    // vIndex: 11
+    virtual ::Scripting::Result_deprecated<void> clear(::mce::UUID const& itemId) /*override*/;
 
     // vIndex: 12
-    virtual ::Scripting::Result_deprecated<::CompoundBlockVolume> getPredictedWriteAsCompoundBlockVolume(
-        ::mce::UUID const&                               itemId,
-        ::BlockPos const&                                position,
-        ::Editor::Services::ClipboardWriteOptions const* options
-    ) const /*override*/;
+    virtual bool isEmpty(::mce::UUID const& itemId) const /*override*/;
 
     // vIndex: 13
-    virtual ::Scripting::Result<void> clear(::mce::UUID const& itemId) /*override*/;
+    virtual ::BlockPos getSize(::mce::UUID const& itemId) const /*override*/;
 
     // vIndex: 14
-    virtual ::Scripting::Result_deprecated<bool> isEmpty(::mce::UUID const& itemId) const /*override*/;
-
-    // vIndex: 15
-    virtual ::Scripting::Result_deprecated<::BlockPos> getSize(::mce::UUID const& itemId) const /*override*/;
-
-    // vIndex: 16
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
+    virtual ::Bedrock::PubSub::Subscription
     listenForClipboardItemChanges(::std::function<void(::mce::UUID const&, bool)> callback) /*override*/;
     // NOLINTEND
 
@@ -141,11 +127,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result_deprecated<void> $ready();
 
-    MCNAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
     MCNAPI ::std::string_view $getServiceName() const;
 
@@ -159,15 +145,13 @@ public:
 
     MCNAPI ::Editor::Services::ClipboardItem* $getPrimaryItem();
 
-    MCNAPI ::Scripting::Result<void>
-    $readFromSelection(::mce::UUID const& itemId, ::Editor::Selection::SelectionContainer const& selection);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $readFromWorld(::mce::UUID const& itemId, ::Editor::RelativeVolumeListBlockVolume const& volume);
 
-    MCNAPI ::Scripting::Result<void> $readFromVolume(::mce::UUID const& itemId, ::CompoundBlockVolume const& volume);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $readFromWorld(::mce::UUID const& itemId, ::BlockVolumeBase const& volume);
 
-    MCNAPI ::Scripting::Result<void>
-    $readFromWorld(::mce::UUID const& itemId, ::BlockPos const& from, ::BlockPos const& to);
-
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     $readFromEditorStructure(::mce::UUID const& itemId, ::Editor::EditorStructureTemplate const& editorStructure);
 
     MCNAPI ::Scripting::Result_deprecated<bool> $writeToWorld(
@@ -176,26 +160,19 @@ public:
         ::Editor::Services::ClipboardWriteOptions const* options
     ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::WeakRef<::Editor::Selection::SelectionContainer>>
-    $getPredictedWriteAsSelection(
+    MCNAPI ::Scripting::Result_deprecated<::Editor::RelativeVolumeListBlockVolume> $getPredictedWriteVolume(
         ::mce::UUID const&                               itemId,
         ::BlockPos const&                                position,
         ::Editor::Services::ClipboardWriteOptions const* options
     ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::CompoundBlockVolume> $getPredictedWriteAsCompoundBlockVolume(
-        ::mce::UUID const&                               itemId,
-        ::BlockPos const&                                position,
-        ::Editor::Services::ClipboardWriteOptions const* options
-    ) const;
+    MCNAPI ::Scripting::Result_deprecated<void> $clear(::mce::UUID const& itemId);
 
-    MCNAPI ::Scripting::Result<void> $clear(::mce::UUID const& itemId);
+    MCNAPI bool $isEmpty(::mce::UUID const& itemId) const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> $isEmpty(::mce::UUID const& itemId) const;
+    MCNAPI ::BlockPos $getSize(::mce::UUID const& itemId) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::BlockPos> $getSize(::mce::UUID const& itemId) const;
-
-    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
+    MCNAPI ::Bedrock::PubSub::Subscription
     $listenForClipboardItemChanges(::std::function<void(::mce::UUID const&, bool)> callback);
     // NOLINTEND
 

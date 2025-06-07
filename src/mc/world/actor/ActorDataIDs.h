@@ -137,5 +137,7 @@ enum class ActorDataIDs : uchar {
     VisibleMobEffects                = 131,
     FilteredName                     = 132,
     EnterBedPosition                 = 133,
-    Count                            = 134,
+    SeatThirdPersonCameraRadius      = 134,
+    SeatCameraRelaxDistanceSmoothing = 135,
+    Count                            = 136,
 };

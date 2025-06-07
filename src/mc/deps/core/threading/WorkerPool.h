@@ -58,8 +58,8 @@ public:
         uint64                                        threadCount,
         ::Bedrock::Threading::OSThreadPriority const& priority,
         ::std::optional<uint64>                       coreAffinityMask,
-        bool                                          idealCore,
-        ::std::optional<int>                          suppressWorkerProfiling
+        bool                                          suppressWorkerProfiling,
+        ::std::optional<int>                          idealCore
     );
 
     MCNAPI bool _checkPendingWork();
@@ -94,8 +94,8 @@ public:
         uint64                                        threadCount,
         ::Bedrock::Threading::OSThreadPriority const& priority,
         ::std::optional<uint64>                       coreAffinityMask,
-        bool                                          idealCore,
-        ::std::optional<int>                          suppressWorkerProfiling
+        bool                                          suppressWorkerProfiling,
+        ::std::optional<int>                          idealCore
     );
     // NOLINTEND
 

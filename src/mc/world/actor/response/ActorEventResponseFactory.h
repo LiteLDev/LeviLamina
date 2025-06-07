@@ -15,7 +15,7 @@ struct ActorEventResponseCollection;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class ActorEventResponseFactory : public ::Factory<::ActorEventResponse>, public ::IPackLoadScoped {
+class ActorEventResponseFactory : public ::IPackLoadScoped, public ::Factory<::ActorEventResponse> {
 public:
     // member variables
     // NOLINTBEGIN

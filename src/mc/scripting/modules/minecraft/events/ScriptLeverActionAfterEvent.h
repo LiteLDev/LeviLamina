@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 
@@ -13,6 +12,7 @@ class BlockPos;
 struct LeverActionEvent;
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -37,15 +37,15 @@ public:
     MCNAPI ScriptLeverActionAfterEvent(
         ::LeverActionEvent const&                                                   leverActionEvent,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
-        ::BlockPos const&                                                           scope,
-        ::Scripting::WeakLifetimeScope const&
+        ::BlockPos const&,
+        ::Scripting::WeakLifetimeScope const& scope
     );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptLeverActionAfterEvent> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
@@ -54,8 +54,8 @@ public:
     MCNAPI void* $ctor(
         ::LeverActionEvent const&                                                   leverActionEvent,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
-        ::BlockPos const&                                                           scope,
-        ::Scripting::WeakLifetimeScope const&
+        ::BlockPos const&,
+        ::Scripting::WeakLifetimeScope const& scope
     );
     // NOLINTEND
 };

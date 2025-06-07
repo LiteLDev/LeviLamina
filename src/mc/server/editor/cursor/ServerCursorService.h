@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
@@ -26,17 +25,17 @@ namespace Editor::Network { class CursorServicePositionChangePayload; }
 namespace Editor::Cursor {
 
 class ServerCursorService : public ::Editor::Services::IEditorService,
-                            public ::Editor::Services::PayloadStoreHelper,
-                            public ::Editor::Cursor::ServerCursorServiceProvider {
+                            public ::Editor::Cursor::ServerCursorServiceProvider,
+                            public ::Editor::Services::PayloadStoreHelper {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkb8f196;
     ::ll::UntypedStorage<8, 16> mUnkcf80cc;
     ::ll::UntypedStorage<8, 24> mUnka7b08b;
-    ::ll::UntypedStorage<8, 48> mUnkb594c0;
-    ::ll::UntypedStorage<8, 48> mUnk282724;
-    ::ll::UntypedStorage<8, 48> mUnk50310b;
+    ::ll::UntypedStorage<8, 48> mUnk6fe9e8;
+    ::ll::UntypedStorage<8, 48> mUnk8dce3c;
+    ::ll::UntypedStorage<8, 48> mUnk353ef0;
     // NOLINTEND
 
 public:
@@ -52,13 +51,13 @@ public:
     virtual ~ServerCursorService() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void> ready() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> quit() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
@@ -77,10 +76,10 @@ public:
         /*override*/;
 
     // vIndex: 5
-    virtual ::Scripting::Result<void> setCursorState(::Editor::Cursor::CursorState&& state) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> setCursorState(::Editor::Cursor::CursorState&& state) /*override*/;
 
     // vIndex: 6
-    virtual ::Scripting::Result<void>
+    virtual ::Scripting::Result_deprecated<void>
     setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& props) /*override*/;
 
     // vIndex: 7
@@ -115,11 +114,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result_deprecated<void> $ready();
 
-    MCNAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
     MCNAPI ::std::string_view $getServiceName() const;
 
@@ -131,9 +130,10 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<::Editor::Cursor::AttachmentProperties> $getAttachmentProperties() const;
 
-    MCNAPI ::Scripting::Result<void> $setCursorState(::Editor::Cursor::CursorState&& state);
+    MCNAPI ::Scripting::Result_deprecated<void> $setCursorState(::Editor::Cursor::CursorState&& state);
 
-    MCNAPI ::Scripting::Result<void> $setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& props);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& props);
 
     MCNAPI ::Scripting::Result_deprecated<::BlockPos> $moveBy(::glm::ivec3 const& offset);
 

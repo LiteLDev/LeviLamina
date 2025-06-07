@@ -15,8 +15,9 @@ class BlockActor;
 class BlockLegacy;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class ItemInstance;
-class Random;
+namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class StemBlock : public ::FoliageBlock {
@@ -35,33 +36,33 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 81
+    // vIndex: 80
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 87
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
-
-    // vIndex: 137
-    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 74
+    // vIndex: 73
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    // vIndex: 76
+    // vIndex: 75
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    // vIndex: 28
+    // vIndex: 27
     virtual bool isStemBlock() const /*override*/;
+
+    // vIndex: 130
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0
     virtual ~StemBlock() /*override*/ = default;
@@ -71,6 +72,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI float getGrowthSpeed(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -79,8 +82,6 @@ public:
     MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
-
-    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
@@ -92,6 +93,8 @@ public:
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCFOLD bool $isStemBlock() const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:

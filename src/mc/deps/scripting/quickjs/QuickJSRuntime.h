@@ -130,8 +130,10 @@ public:
     ) const /*override*/;
 
     // vIndex: 11
-    virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
-    executeCoroutines(::std::optional<::std::chrono::microseconds> timeSlice) /*override*/;
+    virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult> executeCoroutines(
+        ::std::optional<::std::chrono::microseconds> timeSlice,
+        ::std::optional<::Scripting::Privilege>      privilege
+    ) /*override*/;
 
     // vIndex: 12
     virtual bool hasPendingJobs() /*override*/;
@@ -267,8 +269,10 @@ public:
         ::entt::meta_type const&                                expectedResultType
     ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
-    $executeCoroutines(::std::optional<::std::chrono::microseconds> timeSlice);
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::CoRoutineResult> $executeCoroutines(
+        ::std::optional<::std::chrono::microseconds> timeSlice,
+        ::std::optional<::Scripting::Privilege>      privilege
+    );
 
     MCNAPI bool $hasPendingJobs();
 

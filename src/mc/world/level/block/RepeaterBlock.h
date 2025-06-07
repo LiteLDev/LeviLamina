@@ -25,55 +25,55 @@ class RepeaterBlock : public ::DiodeBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 67
+    // vIndex: 66
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual bool isLocked(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 138
+    // vIndex: 136
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 123
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 79
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 138
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 87
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 132
+    // vIndex: 131
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 54
+    // vIndex: 53
     virtual bool
     shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
         /*override*/;
 
-    // vIndex: 70
+    // vIndex: 69
     virtual bool isPreservingMediumWhenPlaced(::BlockLegacy const* medium) const /*override*/;
 
-    // vIndex: 159
+    // vIndex: 158
     virtual int getTurnOnDelay(::Block const& block) const /*override*/;
 
-    // vIndex: 160
+    // vIndex: 159
     virtual ::Block const* getOnBlock(::Block const* block) const /*override*/;
 
-    // vIndex: 161
+    // vIndex: 160
     virtual ::Block const* getOffBlock(::Block const* block) const /*override*/;
 
-    // vIndex: 155
+    // vIndex: 154
     virtual bool isAlternateInput(::Block const& block) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0

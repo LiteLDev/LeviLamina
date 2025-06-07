@@ -10,7 +10,7 @@ class ObservingNetworkPeer : public ::NetworkPeer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 160> mUnkb97280;
+    ::ll::UntypedStorage<8, 176> mUnkb97280;
     ::ll::UntypedStorage<8, 24>  mUnk372c7f;
     // NOLINTEND
 

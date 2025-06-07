@@ -13,22 +13,21 @@ class BlockSource;
 class Experiments;
 class Random;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
+namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class ChemicalHeatBlock : public ::BlockLegacy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    // vIndex: 142
+    // vIndex: 140
     virtual int getExtraRenderLayers() const /*override*/;
 
-    // vIndex: 56
+    // vIndex: 55
     virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -40,7 +39,13 @@ public:
     // NOLINTBEGIN
     MCAPI void _queueTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
+    MCAPI void _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -52,8 +57,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCFOLD int $getExtraRenderLayers() const;
 
     MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;

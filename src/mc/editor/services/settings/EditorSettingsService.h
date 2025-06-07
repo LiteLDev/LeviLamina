@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/ThemeSettingsColorKey.h"
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/serviceproviders/EditorSettingsServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
@@ -37,21 +36,21 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk9c3dd4;
-    ::ll::UntypedStorage<8, 48> mUnkd51a0e;
+    ::ll::UntypedStorage<8, 48> mUnke91689;
     ::ll::UntypedStorage<8, 8>  mUnkc9079a;
     ::ll::UntypedStorage<8, 16> mUnk5cae67;
-    ::ll::UntypedStorage<8, 48> mUnkb47dc7;
+    ::ll::UntypedStorage<8, 48> mUnk9c041c;
     ::ll::UntypedStorage<8, 8>  mUnk901f2d;
     ::ll::UntypedStorage<8, 16> mUnk5fc265;
-    ::ll::UntypedStorage<8, 48> mUnkdbf920;
+    ::ll::UntypedStorage<8, 48> mUnk2415fc;
     ::ll::UntypedStorage<8, 16> mUnk1bc51d;
-    ::ll::UntypedStorage<8, 48> mUnkd7306b;
+    ::ll::UntypedStorage<8, 48> mUnk910a77;
     ::ll::UntypedStorage<8, 16> mUnk14b933;
-    ::ll::UntypedStorage<8, 48> mUnkab7c40;
+    ::ll::UntypedStorage<8, 48> mUnk8c2666;
     ::ll::UntypedStorage<8, 16> mUnk7a6024;
-    ::ll::UntypedStorage<8, 48> mUnkefaceb;
+    ::ll::UntypedStorage<8, 48> mUnkc7ac71;
     ::ll::UntypedStorage<8, 16> mUnkc01e6e;
-    ::ll::UntypedStorage<8, 48> mUnk6e6ec0;
+    ::ll::UntypedStorage<8, 48> mUnk42fa03;
     ::ll::UntypedStorage<8, 8>  mUnk86ce36;
     // NOLINTEND
 
@@ -68,10 +67,10 @@ public:
     virtual ~EditorSettingsService() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> quit() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     // vIndex: 2
     virtual ::Editor::Settings::Graphics& getGraphicsSettings() /*override*/;
@@ -169,9 +168,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
     MCNAPI ::Editor::Settings::Graphics& $getGraphicsSettings();
 

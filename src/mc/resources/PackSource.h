@@ -13,13 +13,15 @@ class IContentKeyProvider;
 class IPackManifestFactory;
 class Pack;
 class PackSourceReport;
+struct PackSourceOptions;
+namespace PackCommand { struct UpgradeLegacyDependenciesBatch; }
 // clang-format on
 
 class PackSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkae54f3;
+    ::ll::UntypedStorage<8, 8> mUnkbebb21;
     // NOLINTEND
 
 public:
@@ -54,7 +56,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void resolveUpgradeDependencies(::Pack& pack);
+    MCNAPI explicit PackSource(::PackSourceOptions options);
+
+    MCNAPI void resolveUpgradeDependencies(::Pack& pack, ::PackCommand::UpgradeLegacyDependenciesBatch& commands);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::PackSourceOptions options);
     // NOLINTEND
 
 public:

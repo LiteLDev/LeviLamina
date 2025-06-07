@@ -25,6 +25,7 @@ namespace ScriptModuleMinecraftServerUI { class ScriptFormRejectError; }
 namespace ScriptModuleMinecraftServerUI { class ScriptMessageFormResponse; }
 namespace ScriptModuleMinecraftServerUI { class ScriptMessageFormResponseV2; }
 namespace ScriptModuleMinecraftServerUI { class ScriptModalFormResponse; }
+namespace ScriptModuleMinecraftServerUI { class ScriptModalFormResponseV2; }
 // clang-format on
 
 class ScriptFormPromiseTracker : public ::Bedrock::EnableNonOwnerReferences,
@@ -58,11 +59,15 @@ public:
                     ::ScriptModuleMinecraftServerUI::ScriptFormRejectError,
                     void>,
                 ::Scripting::Promise<
+                    ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormResponseV2>,
+                    ::ScriptModuleMinecraftServerUI::ScriptFormRejectError,
+                    void>,
+                ::Scripting::Promise<
                     ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptActionFormResponse>,
                     ::ScriptModuleMinecraftServerUI::ScriptFormRejectError,
                     void>>>
                                                         mPromise;
-        ::ll::TypedStorage<8, 160, ::NetworkIdentifier> mClientNetworkIdentifier;
+        ::ll::TypedStorage<8, 176, ::NetworkIdentifier> mClientNetworkIdentifier;
         // NOLINTEND
 
     public:
@@ -96,10 +101,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 61
+    // vIndex: 60
     virtual ::EventResult onEvent(::PlayerFormResponseEvent const& formResponseEvent) /*override*/;
 
-    // vIndex: 62
+    // vIndex: 61
     virtual ::EventResult onEvent(::PlayerFormCloseEvent const& formCloseEvent) /*override*/;
 
     // vIndex: 0
@@ -112,15 +117,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void handleFormResponse(uint formId, ::Json::Value const& formResponse);
+    MCNAPI ScriptFormPromiseTracker(
+        ::LevelEventCoordinator&        levelEventCoordinator,
+        ::ServerPlayerEventCoordinator& playerEventCooordinator
+    );
 
-    MCNAPI void handlePlayerQuit(::NetworkIdentifier const& playerId);
+    MCNAPI void handleFormClose(::PlayerFormCloseEvent const& formResponse);
+
+    MCNAPI void handleFormResponse(uint formId, ::Json::Value const& formResponse);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void _sendToClient(::Player const& player, ::Json::Value formJson, uint formId);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(::LevelEventCoordinator& levelEventCoordinator, ::ServerPlayerEventCoordinator& playerEventCooordinator);
     // NOLINTEND
 
 public:

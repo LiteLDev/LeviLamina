@@ -66,7 +66,7 @@ public:
         virtual bool sameItem(::ItemDescriptor::ItemEntry const&, bool) const = 0;
 
         // vIndex: 3
-        virtual ::std::string const& getFullName() const;
+        virtual ::std::string getFullName() const;
 
         // vIndex: 4
         virtual ::std::string toString() const;
@@ -119,7 +119,7 @@ public:
         // NOLINTBEGIN
         MCNAPI bool $sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
 
-        MCNAPI ::std::string const& $getFullName() const;
+        MCNAPI ::std::string $getFullName() const;
 
         MCNAPI ::std::string $toString() const;
 
@@ -191,6 +191,8 @@ public:
     MCAPI short getAuxValue() const;
 
     MCAPI ::Block const* getBlock() const;
+
+    MCAPI ::std::string getFullName() const;
 
     MCAPI short getId() const;
 

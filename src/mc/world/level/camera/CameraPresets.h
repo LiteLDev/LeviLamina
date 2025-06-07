@@ -11,7 +11,7 @@
 class Experiments;
 class ReadOnlyBinaryStream;
 class ResourcePackManager;
-namespace SharedTypes::v1_21_70 { struct CameraPreset; }
+namespace SharedTypes::v1_21_80 { struct CameraPreset; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -47,12 +47,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_70::CameraPreset>> mPresets;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_80::CameraPreset>> mPresets;
     ::ll::TypedStorage<8, 24, ::std::vector<::CameraPresets::CameraList>>           mLists;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    CameraPresets& operator=(CameraPresets const&);
     CameraPresets(CameraPresets const&);
     CameraPresets();
 
@@ -81,8 +82,6 @@ public:
     MCNAPI ::std::optional<uint> getCameraPresetIndex(::std::string const& presetName) const;
 
     MCNAPI void loadPresets(::ResourcePackManager& resourcePackManager, ::Experiments const&);
-
-    MCNAPI ::CameraPresets& operator=(::CameraPresets const&);
 
     MCNAPI ::CameraPresets& operator=(::CameraPresets&&);
 

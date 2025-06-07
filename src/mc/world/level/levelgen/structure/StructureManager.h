@@ -32,8 +32,8 @@ class StructureSettings;
 class StructureTemplate;
 struct Tick;
 namespace Core { class Path; }
-namespace SharedTypes::v1_21_50 { struct JigsawStructureMetadataFile; }
-namespace SharedTypes::v1_21_50 { struct JigsawStructureMetadataRegistry; }
+namespace SharedTypes::v1_21_80 { struct JigsawStructureMetadataFile; }
+namespace SharedTypes::v1_21_80 { struct JigsawStructureMetadataRegistry; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -50,7 +50,7 @@ public:
     ::ll::TypedStorage<4, 4, uint>                                                     mStructurePlacementSaveCounter;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry>> mUnknownBlockRegistry;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ResourcePackManager> const> mPackManager;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SharedTypes::v1_21_50::JigsawStructureMetadataRegistry>>
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadataRegistry>>
                                                                          mMetadataRegistry;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::ReflectionCtx>> mCerealContext;
     // NOLINTEND
@@ -85,7 +85,7 @@ public:
         ::std::string&                                                  resourceStream
     );
 
-    MCNAPI ::SharedTypes::v1_21_50::JigsawStructureMetadataRegistry& _getMetadataRegistry() const;
+    MCNAPI ::SharedTypes::v1_21_80::JigsawStructureMetadataRegistry& _getMetadataRegistry() const;
 
     MCNAPI bool _placeSegment(::StructureAnimationData& structureAnimationData);
 
@@ -160,12 +160,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::SharedTypes::v1_21_50::JigsawStructureMetadataRegistry>
+    MCNAPI static ::std::unique_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadataRegistry>
     _loadMetadataRegistries(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager& packManager, bool excludeLatest);
 
     MCNAPI static void _metadataPackForEachCallback(
-        ::SharedTypes::v1_21_50::JigsawStructureMetadataRegistry&            registry,
-        ::Puv::Loader<::SharedTypes::v1_21_50::JigsawStructureMetadataFile>& loader,
+        ::SharedTypes::v1_21_80::JigsawStructureMetadataRegistry&            registry,
+        ::Puv::Loader<::SharedTypes::v1_21_80::JigsawStructureMetadataFile>& loader,
         ::PackInstance const&                                                pack,
         ::std::string&                                                       fileData,
         ::Core::Path const&                                                  filenameWithExtension

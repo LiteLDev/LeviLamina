@@ -31,10 +31,10 @@ public:
     // NOLINTBEGIN
     MCNAPI PriorityCategory(
         ::HashedString const&                            id,
-        int                                              blockPriority,
-        ::std::unordered_map<::HashedString, int> const& entityPriority,
         int                                              defaultBlockPriority,
-        ::std::unordered_map<::HashedString, int> const& defaultEntityPriority
+        ::std::unordered_map<::HashedString, int> const& blockPriority,
+        int                                              defaultEntityPriority,
+        ::std::unordered_map<::HashedString, int> const& entityPriority
     );
     // NOLINTEND
 
@@ -49,10 +49,10 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(
         ::HashedString const&                            id,
-        int                                              blockPriority,
-        ::std::unordered_map<::HashedString, int> const& entityPriority,
         int                                              defaultBlockPriority,
-        ::std::unordered_map<::HashedString, int> const& defaultEntityPriority
+        ::std::unordered_map<::HashedString, int> const& blockPriority,
+        int                                              defaultEntityPriority,
+        ::std::unordered_map<::HashedString, int> const& entityPriority
     );
     // NOLINTEND
 };

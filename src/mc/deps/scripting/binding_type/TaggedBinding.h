@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class MajorVersionLimit; }
+namespace Scripting { class RemovedInMajorVersion; }
 namespace Scripting { struct Version; }
 // clang-format on
 
@@ -32,8 +32,8 @@ public:
     MCNAPI ::Scripting::TaggedBinding& onlyStable();
 
     MCNAPI ::Scripting::TaggedBinding& release(
-        ::Scripting::Version                            inclusiveLowerVersion,
-        ::std::optional<::Scripting::MajorVersionLimit> exclusiveMajorVersionLimit
+        ::Scripting::Version                                inclusiveLowerVersion,
+        ::std::optional<::Scripting::RemovedInMajorVersion> exclusiveMajorVersionLimit
     );
 
     MCNAPI ~TaggedBinding();

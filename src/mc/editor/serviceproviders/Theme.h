@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/ThemeSettingsColorKey.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -55,7 +55,7 @@ public:
 
     MCNAPI ::Scripting::Error _getThemeDoesNotExistError(::std::string const& themeId, bool isCustom) const;
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error> addNewTheme(
+    MCNAPI ::Scripting::Result_deprecated<void> addNewTheme(
         ::std::string const&                  id,
         ::std::optional<::std::string> const& name,
         ::std::optional<::std::string> const& sourceThemeId,
@@ -64,23 +64,22 @@ public:
 
     MCNAPI bool canThemeBeModified(::std::string const& id) const;
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error> deleteTheme(::std::string const& id, bool notifyUpdate);
+    MCNAPI ::Scripting::Result_deprecated<void> deleteTheme(::std::string const& id, bool notifyUpdate);
 
     MCNAPI ::std::optional<::Editor::Settings::ThemePalette> getThemeColors(::std::string const& id) const;
 
-    MCNAPI ::Scripting::Result<::std::string, ::Scripting::Error> getThemeName(::std::string const& id) const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getThemeName(::std::string const& id) const;
 
-    MCNAPI ::Scripting::Result<::Editor::Settings::ThemePalette, ::Scripting::Error>
+    MCNAPI ::Scripting::Result_deprecated<::Editor::Settings::ThemePalette>
     getThemePalette(::std::string const& id) const;
 
     MCNAPI ::mce::Color const& resolveColorKey(::Editor::Settings::ThemeSettingsColorKey key) const;
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error> setCurrentTheme(::std::string const& id, bool notifyUpdate);
+    MCNAPI ::Scripting::Result_deprecated<void> setCurrentTheme(::std::string const& id, bool notifyUpdate);
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error>
-    setThemeName(::std::string const& id, ::std::string const& name);
+    MCNAPI ::Scripting::Result_deprecated<void> setThemeName(::std::string const& id, ::std::string const& name);
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error> updateThemeColor(
+    MCNAPI ::Scripting::Result_deprecated<void> updateThemeColor(
         ::std::string const&                      id,
         ::Editor::Settings::ThemeSettingsColorKey key,
         ::mce::Color const&                       newColor,

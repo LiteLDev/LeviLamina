@@ -24,6 +24,9 @@ public:
     virtual ::std::function<::std::string(::Core::Path const&)> getAssetReader() const /*override*/;
 
     // vIndex: 3
+    virtual ::Core::Path getOnDiskScratchPath() const /*override*/;
+
+    // vIndex: 4
     virtual ::std::unique_ptr<::IPackIOProvider> clone() const /*override*/;
 
     // vIndex: 0
@@ -36,6 +39,8 @@ public:
     MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> $getFileAccess(::ResourceFileSystem system) const;
 
     MCNAPI ::std::function<::std::string(::Core::Path const&)> $getAssetReader() const;
+
+    MCNAPI ::Core::Path $getOnDiskScratchPath() const;
 
     MCNAPI ::std::unique_ptr<::IPackIOProvider> $clone() const;
     // NOLINTEND

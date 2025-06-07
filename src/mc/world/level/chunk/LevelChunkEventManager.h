@@ -23,18 +23,18 @@ public:
         8,
         128,
         ::Bedrock::PubSub::
-            Publisher<void(::ChunkSource&, ::LevelChunk&, int), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+            Publisher<void(::ChunkSource&, ::LevelChunk&, int), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
         mOnChunkLoadedPublisher;
     ::ll::TypedStorage<
         8,
         128,
         ::Bedrock::PubSub::
-            Publisher<void(::ChunkSource&, ::LevelChunk&), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+            Publisher<void(::ChunkSource&, ::LevelChunk&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
         mOnChunkReloadedPublisher;
     ::ll::TypedStorage<
         8,
         128,
-        ::Bedrock::PubSub::Publisher<void(::LevelChunk&), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+        ::Bedrock::PubSub::Publisher<void(::LevelChunk&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
         mOnChunkDiscardedPublisher;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ILevelChunkEventManagerProxy>> const>
         mLevelChunkEventManagerProxy;

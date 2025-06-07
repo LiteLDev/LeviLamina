@@ -32,6 +32,11 @@ public:
     Path() = default;
 
 public:
+    // prevent constructor by default
+    Path& operator=(Path const&);
+    Path(Path const&);
+
+public:
     // member variables
     // NOLINTBEGIN
     ::Core::PathPart mPathPart;
@@ -40,8 +45,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Core::Result
-    makeFailure(::fmt::v10::basic_format_string<char, char const*> const& format, ::Core::PathView path);
+    MCNAPI static ::Core::Result makeFailure(::fmt::v11::fstring<char const*> const& format, ::Core::PathView path);
     // NOLINTEND
 
 public:
@@ -54,6 +58,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(char const* str);
     // NOLINTEND
 
 public:

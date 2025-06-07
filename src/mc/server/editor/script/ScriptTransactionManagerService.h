@@ -4,20 +4,18 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/EntityOperation.h"
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/deps/scripting/script_engine/Closure.h"
 
 // auto generated forward declare list
 // clang-format off
 class Vec3;
-namespace Editor::ScriptModule { class ScriptSelectionContainer; }
 namespace Editor::ScriptModule { class ScriptUserDefinedTransactionHandlerId; }
 namespace ScriptModuleMinecraft { class ScriptActor; }
-namespace ScriptModuleMinecraft { class ScriptCompoundBlockVolume; }
+namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct Error; }
 namespace mce { class UUID; }
@@ -83,12 +81,12 @@ public:
 
     MCNAPI ::Scripting::Error _getInvalidTransactionServiceError() const;
 
-    MCNAPI ::Scripting::Result<bool, ::Scripting::Error> addEntityOperation(
+    MCNAPI ::Scripting::Result_deprecated<bool> addEntityOperation(
         ::ScriptModuleMinecraft::ScriptActor const&            entity,
         ::Editor::Transactions::EntityOperation::OperationType type
     );
 
-    MCNAPI ::Scripting::Result<void> addUserDefinedOperation(
+    MCNAPI ::Scripting::Result_deprecated<void> addUserDefinedOperation(
         ::Scripting::ContextConfig const&                                    contextConfig,
         ::Editor::ScriptModule::ScriptUserDefinedTransactionHandlerId const& transactionHandler,
         ::std::string const&                                                 payload,
@@ -105,7 +103,7 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<bool> openTransaction(::std::string const& name);
 
-    MCNAPI ::Scripting::Result<void> redo();
+    MCNAPI ::Scripting::Result_deprecated<void> redo();
 
     MCNAPI ::Scripting::Result_deprecated<int> redoSize() const;
 
@@ -119,15 +117,12 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<bool> trackBlockChangeArea(::Vec3 const& from, ::Vec3 const& to);
 
-    MCNAPI ::Scripting::Result_deprecated<bool>
-    trackBlockChangeCompoundBlockVolume(::ScriptModuleMinecraft::ScriptCompoundBlockVolume const& volume);
-
     MCNAPI ::Scripting::Result_deprecated<bool> trackBlockChangeList(::std::vector<::Vec3> const& locations);
 
     MCNAPI ::Scripting::Result_deprecated<bool>
-    trackBlockChangeSelection(::Editor::ScriptModule::ScriptSelectionContainer const& selection);
+    trackBlockChangeVolume(::ScriptModuleMinecraft::ScriptBlockVolumeBase const& volume);
 
-    MCNAPI ::Scripting::Result<void> undo();
+    MCNAPI ::Scripting::Result_deprecated<void> undo();
 
     MCNAPI ::Scripting::Result_deprecated<int> undoSize() const;
     // NOLINTEND
@@ -135,8 +130,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptTransactionManagerService>
-    bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 
 public:

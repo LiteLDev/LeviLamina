@@ -87,6 +87,10 @@ public:
 
     using ConstrainedValueLookupKey = ::std::pair<uint64, uint>;
 
+    using CustomStorageGetFn = void* (*)(::Command*, int);
+
+    using CustomStorageIsSetFn = bool* (*)(::Command*, int);
+
     using CommandOverrideFunctor =
         ::std::function<void(::std::string const&, ::CommandFlag&, ::CommandPermissionLevel&)>;
 
@@ -740,7 +744,7 @@ public:
         ::std::string const&                                   name,
         ::std::vector<::std::pair<::std::string, uint>> const& strings,
         ::Bedrock::typeid_t<::CommandRegistry>                 type,
-        bool (CommandRegistry::*signature)(
+        bool (CommandRegistry::*parse)(
             void*,
             ::CommandRegistry::ParseToken const&,
             ::CommandOrigin const&,
@@ -748,14 +752,14 @@ public:
             ::std::string&,
             ::std::vector<::std::string>&
         ) const,
-        ::CommandRegistry::Signature* parse
+        ::CommandRegistry::Signature* signature
     );
 
     MCAPI ::CommandRegistry::Symbol _addChainedSubcommandValuesInternal(
         ::std::string const&                            name,
         ::std::vector<::std::pair<uint64, uint>> const& values,
         ::Bedrock::typeid_t<::CommandRegistry>          type,
-        bool (CommandRegistry::*signature)(
+        bool (CommandRegistry::*parse)(
             void*,
             ::CommandRegistry::ParseToken const&,
             ::CommandOrigin const&,
@@ -763,7 +767,7 @@ public:
             ::std::string&,
             ::std::vector<::std::string>&
         ) const,
-        ::CommandRegistry::Signature* parse
+        ::CommandRegistry::Signature* signature
     );
 
     MCAPI ::CommandRegistry::Symbol _addEnumValuesInternal(
@@ -886,12 +890,12 @@ public:
     MCAPI ::std::string describe(::CommandRegistry::Symbol symbol) const;
 
     MCAPI ::std::string describe(
-        ::CommandRegistry::Signature const& alias,
-        ::std::string const&                overload,
-        ::CommandRegistry::Overload const&  highlight,
-        uint                                start,
-        uint*                               length,
-        uint*                               command
+        ::CommandRegistry::Signature const& command,
+        ::std::string const&                alias,
+        ::CommandRegistry::Overload const&  overload,
+        uint                                highlight,
+        uint*                               start,
+        uint*                               length
     ) const;
 
     MCAPI ::CommandRegistry::Signature const* findCommand(::std::string const&) const;
@@ -944,6 +948,13 @@ public:
         ::CommandPermissionLevel requirement,
         ::CommandFlag            f1,
         ::CommandFlag            f2 = {}
+    );
+
+    MCAPI void registerOverload(
+        char const*                                     command,
+        ::CommandVersion                                version,
+        ::std::function<::std::unique_ptr<::Command>()> allocFn,
+        ::std::vector<::CommandParameterData>           params
     );
 
     MCAPI void registerOverloadInternal(::CommandRegistry::Signature& signature, ::CommandRegistry::Overload& overload);

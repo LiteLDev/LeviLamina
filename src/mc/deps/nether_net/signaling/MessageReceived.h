@@ -8,7 +8,7 @@ struct MessageReceived {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk940828;
+    ::ll::UntypedStorage<8, 24> mUnk940828;
     ::ll::UntypedStorage<8, 32> mUnk67074a;
     ::ll::UntypedStorage<8, 32> mUnkcb2417;
     // NOLINTEND
@@ -18,6 +18,18 @@ public:
     MessageReceived& operator=(MessageReceived const&);
     MessageReceived(MessageReceived const&);
     MessageReceived();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~MessageReceived();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace NetherNet::SignalingEvents

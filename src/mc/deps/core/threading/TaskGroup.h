@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/SubClientId.h"
 #include "mc/common/editor/SessionResult.h"
+#include "mc/common/editor/WorldType.h"
 #include "mc/deps/application/crash_manager/CrashFileProcessor.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/ResourceFileSystem.h"
@@ -11,14 +13,20 @@
 #include "mc/deps/core/threading/IBackgroundTaskOwner.h"
 #include "mc/deps/core/threading/TaskGroupState.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/nether_net/ESessionError.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/deps/scripting/script_engine/Promise.h"
 #include "mc/editor/services/export/ExportResult.h"
+#include "mc/events/TextProcessingEventOrigin.h"
+#include "mc/network/services/signaling/SignalingServiceConfig.h"
 #include "mc/platform/Copyable.h"
+#include "mc/platform/ErrorInfo.h"
 #include "mc/platform/Result.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/platform/threading/UniqueLock.h"
+#include "mc/server/commands/AsyncCommandExecutor.h"
+#include "mc/server/safety/TextFilteringEvent.h"
 #include "mc/util/DownloaderState.h"
 #include "mc/world/level/FileArchiver.h"
 #include "mc/world/level/saveddata/maps/MapItemSavedData.h"
@@ -29,9 +37,11 @@ class AppPlatform;
 class BackgroundTaskBase;
 class BlockPos;
 class BlockSource;
+class CallbackToken;
 class ChunkViewSource;
 class CommandOrigin;
 class CommandOutput;
+class ConnectionRequest;
 class Dimension;
 class IContentAccessibilityProvider;
 class IContentKeyProvider;
@@ -42,11 +52,15 @@ class LevelChunk;
 class LevelData;
 class LevelDbEnv;
 class MapItemSavedData;
+class NetworkIdentifier;
 class PackManifestFactory;
 class PackSourceFactory;
+class Player;
 class ResourceLocation;
 class RopeSystem;
 class Scheduler;
+class ServicesManager;
+class SubClientConnectionRequest;
 class TaskResult;
 class WeakEntityRef;
 class WorkerPool;
@@ -57,15 +71,24 @@ struct HC_CALL;
 struct ServicePack;
 struct TaskStartInfo;
 namespace Bedrock { class CrashFileProcessor; }
+namespace Bedrock::Http { class HeaderCollection; }
 namespace Bedrock::Http { class Request; }
 namespace Bedrock::Http { class Response; }
+namespace Bedrock::Http { class RetryPolicy; }
 namespace Bedrock::Http { class Status; }
+namespace Bedrock::Http { struct Url; }
+namespace Bedrock::Services { struct EnvironmentQueryResponse; }
 namespace Bedrock::Threading { class Mutex; }
+namespace Bedrock::Threading { struct CachedAsyncRetry; }
 namespace Core { class FilePathManager; }
 namespace Core { class Path; }
 namespace Core::ZipUtils { struct ZipProgressList; }
 namespace Editor { class GameOptions; }
 namespace Json { class Value; }
+namespace NetherNet { struct NetworkID; }
+namespace PackCommand { class IPackCommandPipeline; }
+namespace PackCommand { struct PackCommandHandle; }
+namespace PackCommand { struct PackCommandResult; }
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
 namespace PositionTrackingDB { class TrackingRecord; }
 namespace ScriptModuleMinecraftNet { struct ScriptNetRequest; }

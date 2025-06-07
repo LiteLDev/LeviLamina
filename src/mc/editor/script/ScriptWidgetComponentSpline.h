@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/SplineType.h"
 #include "mc/common/editor/WidgetComponentType.h"
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/SplineType.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/script/ScriptWidgetComponentBase.h"
 
 // auto generated forward declare list
@@ -20,6 +20,7 @@ namespace Editor::ScriptModule { class ScriptWidgetComponentErrorInvalidComponen
 namespace Editor::ScriptModule { class ScriptWidgetComponentSplineOptions; }
 namespace Editor::ScriptModule { class ScriptWidgetErrorInvalidObject; }
 namespace Editor::ScriptModule { class ScriptWidgetService; }
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct Error; }
 namespace mce { class UUID; }
 // clang-format on
@@ -30,7 +31,7 @@ class ScriptWidgetComponentSpline : public ::Editor::ScriptModule::ScriptWidgetC
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkb72cb3;
+    ::ll::UntypedStorage<4, 4>  mUnkbf7162;
     ::ll::UntypedStorage<8, 24> mUnk4ae7ae;
     ::ll::UntypedStorage<8, 8>  mUnkf926f3;
     // NOLINTEND
@@ -44,10 +45,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
+    // vIndex: 2
     virtual ~ScriptWidgetComponentSpline() /*override*/ = default;
 
-    // vIndex: 2
+    // vIndex: 3
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
     // NOLINTEND
 
@@ -70,11 +71,7 @@ public:
         ::Scripting::Error>
     _getControlPoints() const;
 
-    MCNAPI ::Scripting::Result<
-        ::std::vector<::Vec3>,
-        ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent,
-        ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject,
-        ::Scripting::Error>
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::Vec3>>
     _getInterpolatedPoints(::std::optional<int> maxPointsPerControlSegment);
 
     MCNAPI ::Scripting::Result<
@@ -89,12 +86,12 @@ public:
         void,
         ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent,
         ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
-    _setSplineType(::Editor::RenderHelper::SplineType t);
+    _setSplineType(::Scripting::RenderHelper::SplineType t);
 
     MCNAPI void _setupSplineHelper();
 
     MCNAPI ::Scripting::Result<
-        ::Editor::RenderHelper::SplineType,
+        ::Scripting::RenderHelper::SplineType,
         ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent,
         ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
     getSplineType() const;
@@ -103,7 +100,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentSpline> bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 
 public:

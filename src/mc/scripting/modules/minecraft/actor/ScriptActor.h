@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/StackRefResult.h"
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
@@ -42,11 +41,13 @@ namespace ScriptModuleMinecraft { struct ScriptCommandError; }
 namespace ScriptModuleMinecraft { struct ScriptCommandResult; }
 namespace ScriptModuleMinecraft { struct ScriptEntityEffectOptions; }
 namespace ScriptModuleMinecraft { struct ScriptEntityRaycastOptions; }
+namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace ScriptModuleMinecraft { struct ScriptPlayAnimationOptions; }
 namespace ScriptModuleMinecraft { struct ScriptTeleportOptions; }
 namespace ScriptModuleMinecraft { struct ScriptXYRotation; }
 namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct EngineError; }
 namespace Scripting { struct Error; }
@@ -109,28 +110,28 @@ public:
     virtual void setUnloaded(::Actor& actor);
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> clearVelocity(::Actor& self);
+    virtual ::Scripting::Result_deprecated<void> clearVelocity(::Actor& self);
 
     // vIndex: 4
-    virtual ::Scripting::Result<void> lookAt(::Actor& self, ::Vec3 const& targetLocation);
+    virtual ::Scripting::Result_deprecated<void> lookAt(::Actor& self, ::Vec3 const& targetLocation);
 
     // vIndex: 5
     virtual ::Scripting::Result_deprecated<::std::string> getNameTag(::Actor const& self) const;
 
     // vIndex: 6
-    virtual ::Scripting::Result<void> setNameTag(::Actor& self, ::std::string const& nameTag);
+    virtual ::Scripting::Result_deprecated<void> setNameTag(::Actor& self, ::std::string const& nameTag);
 
     // vIndex: 7
     virtual ::Scripting::Result_deprecated<bool> getSneaking(::Actor const& self) const;
 
     // vIndex: 8
-    virtual ::Scripting::Result<void> setSneaking(::Actor& self, bool isSneaking);
+    virtual ::Scripting::Result_deprecated<void> setSneaking(::Actor& self, bool isSneaking);
 
     // vIndex: 9
-    virtual ::Scripting::Result<void> applyImpulse(::Actor& self, ::Vec3 const& vector);
+    virtual ::Scripting::Result_deprecated<void> applyImpulse(::Actor& self, ::Vec3 const& vector);
 
     // vIndex: 10
-    virtual ::Scripting::Result<void> remove(::Actor& self);
+    virtual ::Scripting::Result_deprecated<void> remove(::Actor& self);
 
     // vIndex: 11
     virtual bool isValid() const;
@@ -197,7 +198,7 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptEntityEffectOptions> const&                  options
     );
 
-    MCNAPI ::Scripting::Result<void> addEffect_V010(
+    MCNAPI ::Scripting::Result_deprecated<void> addEffect_V010(
         ::Actor&                                         self,
         ::ScriptModuleMinecraft::ScriptEffectType const& effectType,
         int                                              duration,
@@ -217,7 +218,7 @@ public:
             ::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions>> const& options
     );
 
-    MCNAPI ::Scripting::Result<void> applyKnockback_V1(
+    MCNAPI ::Scripting::Result_deprecated<void> applyKnockback_V1(
         ::Actor& self,
         float    directionX,
         float    directionZ,
@@ -225,10 +226,10 @@ public:
         float    verticalStrength
     );
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     applyKnockback_V2(::Actor& self, ::VecXZ const& horizontalForce, float verticalStrength);
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     clearDynamicProperties(::Actor& self, ::Scripting::ContextConfig const& contextConfig);
 
     MCNAPI ::Scripting::Result_deprecated<bool> extinguishFire(::Actor& self, bool useEffects);
@@ -319,6 +320,9 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<::std::string> getId_010(::Actor const& self) const;
 
+    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getLocalizationKey() const;
+
     MCNAPI ::Scripting::Result_deprecated<::Vec3> getLocation(::Actor const& self) const;
 
     MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::variant<float, bool, ::std::string>>>
@@ -378,14 +382,14 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<bool> kill(::Actor& self);
 
-    MCNAPI ::Scripting::Result<void> kill_010(::Actor& self);
+    MCNAPI ::Scripting::Result_deprecated<void> kill_010(::Actor& self);
 
     MCNAPI ::Scripting::Result_deprecated<bool>
     matches(::Actor const& self, ::ScriptModuleMinecraft::ScriptActorQueryOptions options) const;
 
     MCNAPI ::ScriptModuleMinecraft::ScriptActor& operator=(::ScriptModuleMinecraft::ScriptActor&& rhs);
 
-    MCNAPI ::Scripting::Result<void> playAnimation(
+    MCNAPI ::Scripting::Result_deprecated<void> playAnimation(
         ::Actor&                                                                    self,
         ::std::string const&                                                        animationName,
         ::std::optional<::ScriptModuleMinecraft::ScriptPlayAnimationOptions> const& options
@@ -412,7 +416,7 @@ public:
     MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>,
         ::ScriptModuleMinecraft::ScriptCommandError,
-        ::Scripting::Error>
+        ::ScriptModuleMinecraft::ScriptInvalidActorError>
     runCommand(::Actor& self, ::Scripting::ContextConfig const& contextConfig, ::std::string const& commandString);
 
     MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<
@@ -429,20 +433,20 @@ public:
     MCNAPI ::Scripting::Result_deprecated<::Scripting::JSON>
     runCommand_V010(::Actor& self, ::Scripting::ContextConfig const& contextConfig, ::std::string const& commandString);
 
-    MCNAPI ::Scripting::Result<void> setDynamicProperties(
+    MCNAPI ::Scripting::Result_deprecated<void> setDynamicProperties(
         ::Actor&                          self,
         ::Scripting::ContextConfig const& contextConfig,
         ::std::unordered_map<::std::string, ::std::variant<double, float, bool, ::std::string, ::Vec3>> const& values
     );
 
-    MCNAPI ::Scripting::Result<void> setDynamicProperty(
+    MCNAPI ::Scripting::Result_deprecated<void> setDynamicProperty(
         ::Actor&                                                                           self,
         ::Scripting::ContextConfig const&                                                  contextConfig,
         ::std::string const&                                                               key,
         ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> const& value
     );
 
-    MCNAPI ::Scripting::Result<void> setDynamicProperty_V010(
+    MCNAPI ::Scripting::Result_deprecated<void> setDynamicProperty_V010(
         ::Actor&                                                    self,
         ::Scripting::ContextConfig const&                           contextConfig,
         ::std::string const&                                        key,
@@ -451,27 +455,28 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<bool> setOnFire(::Actor& self, int seconds, bool useEffects);
 
-    MCNAPI ::Scripting::Result<void> setProperty(
+    MCNAPI ::Scripting::Result_deprecated<void> setProperty(
         ::Actor&                                          self,
         ::std::string const&                              identifier,
         ::std::variant<float, bool, ::std::string> const& value
     );
 
-    MCNAPI ::Scripting::Result<void> setRotation(::Actor& self, ::Vec2 rotation);
+    MCNAPI ::Scripting::Result_deprecated<void> setRotation(::Actor& self, ::Vec2 rotation);
 
-    MCNAPI ::Scripting::Result<void> setRotation_V010(::Actor& self, float x, float y);
+    MCNAPI ::Scripting::Result_deprecated<void> setRotation_V010(::Actor& self, float x, float y);
 
-    MCNAPI ::Scripting::Result<void> setTarget(::Actor& self, ::ScriptModuleMinecraft::ScriptActor& target);
+    MCNAPI ::Scripting::Result_deprecated<void> setTarget(::Actor& self, ::ScriptModuleMinecraft::ScriptActor& target);
 
-    MCNAPI ::Scripting::Result<void> setVelocity_010(::Actor& self, ::ScriptModuleMinecraft::ScriptVector const& vel);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    setVelocity_010(::Actor& self, ::ScriptModuleMinecraft::ScriptVector const& vel);
 
-    MCNAPI ::Scripting::Result<void> teleport(
+    MCNAPI ::Scripting::Result_deprecated<void> teleport(
         ::Actor&                                                               self,
         ::Vec3 const&                                                          location,
         ::std::optional<::ScriptModuleMinecraft::ScriptTeleportOptions> const& options
     );
 
-    MCNAPI ::Scripting::Result<void> teleportFacing_V010(
+    MCNAPI ::Scripting::Result_deprecated<void> teleportFacing_V010(
         ::Actor&                                  self,
         ::Vec3 const&                             location,
         ::ScriptModuleMinecraft::ScriptDimension& dimension,
@@ -479,7 +484,7 @@ public:
         bool                                      keepVelocity
     );
 
-    MCNAPI ::Scripting::Result<void> teleport_V010(
+    MCNAPI ::Scripting::Result_deprecated<void> teleport_V010(
         ::Actor&                                  self,
         ::Vec3 const&                             location,
         ::ScriptModuleMinecraft::ScriptDimension& dimension,
@@ -488,9 +493,9 @@ public:
         bool                                      keepVelocity
     );
 
-    MCNAPI ::Scripting::Result<void> triggerEvent(::Actor& self, ::std::string const& eventName);
+    MCNAPI ::Scripting::Result_deprecated<void> triggerEvent(::Actor& self, ::std::string const& eventName);
 
-    MCNAPI ::Scripting::Result<void> triggerEvent_V010(::Actor& self, ::std::string const& eventName);
+    MCNAPI ::Scripting::Result_deprecated<void> triggerEvent_V010(::Actor& self, ::std::string const& eventName);
 
     MCNAPI ::Scripting::Result_deprecated<bool> tryTeleport(
         ::Actor&                                                               self,
@@ -502,7 +507,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptActor> bind(
+    MCNAPI static ::Scripting::ClassBinding bind(
         ::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>>&
             supportedComponentFactories
     );
@@ -543,21 +548,21 @@ public:
 
     MCNAPI void $setUnloaded(::Actor& actor);
 
-    MCNAPI ::Scripting::Result<void> $clearVelocity(::Actor& self);
+    MCNAPI ::Scripting::Result_deprecated<void> $clearVelocity(::Actor& self);
 
-    MCNAPI ::Scripting::Result<void> $lookAt(::Actor& self, ::Vec3 const& targetLocation);
+    MCNAPI ::Scripting::Result_deprecated<void> $lookAt(::Actor& self, ::Vec3 const& targetLocation);
 
     MCNAPI ::Scripting::Result_deprecated<::std::string> $getNameTag(::Actor const& self) const;
 
-    MCNAPI ::Scripting::Result<void> $setNameTag(::Actor& self, ::std::string const& nameTag);
+    MCNAPI ::Scripting::Result_deprecated<void> $setNameTag(::Actor& self, ::std::string const& nameTag);
 
     MCNAPI ::Scripting::Result_deprecated<bool> $getSneaking(::Actor const& self) const;
 
-    MCNAPI ::Scripting::Result<void> $setSneaking(::Actor& self, bool isSneaking);
+    MCNAPI ::Scripting::Result_deprecated<void> $setSneaking(::Actor& self, bool isSneaking);
 
-    MCNAPI ::Scripting::Result<void> $applyImpulse(::Actor& self, ::Vec3 const& vector);
+    MCNAPI ::Scripting::Result_deprecated<void> $applyImpulse(::Actor& self, ::Vec3 const& vector);
 
-    MCNAPI ::Scripting::Result<void> $remove(::Actor& self);
+    MCNAPI ::Scripting::Result_deprecated<void> $remove(::Actor& self);
 
     MCNAPI bool $isValid() const;
 

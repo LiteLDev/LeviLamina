@@ -21,7 +21,6 @@ public:
 public:
     // prevent constructor by default
     CommandsRegistryConfiguration& operator=(CommandsRegistryConfiguration const&);
-    CommandsRegistryConfiguration(CommandsRegistryConfiguration const&);
 
 public:
     // virtual functions
@@ -34,6 +33,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI CommandsRegistryConfiguration();
+
+    MCNAPI CommandsRegistryConfiguration(::CommandsRegistryConfiguration const&);
 
     MCNAPI CommandsRegistryConfiguration(::CommandsRegistryConfiguration&&);
 
@@ -50,6 +51,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(::CommandsRegistryConfiguration const&);
 
     MCNAPI void* $ctor(::CommandsRegistryConfiguration&&);
     // NOLINTEND

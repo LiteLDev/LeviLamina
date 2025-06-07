@@ -17,12 +17,12 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnk225951;
     ::ll::UntypedStorage<8, 48> mUnk284a47;
+    ::ll::UntypedStorage<8, 48> mUnkfab9af;
     ::ll::UntypedStorage<8, 16> mUnk854b50;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Proxy& operator=(Proxy const&);
     Proxy();
 
 public:
@@ -31,6 +31,10 @@ public:
     MCNAPI Proxy(::BlockGeometrySerializer::Proxy const&);
 
     MCNAPI ::std::map<::std::string, ::SharedTypes::Legacy::ExpressionNode> getBoneVisibility() const;
+
+    MCNAPI ::BlockGeometrySerializer::Proxy& operator=(::BlockGeometrySerializer::Proxy&&);
+
+    MCNAPI ::BlockGeometrySerializer::Proxy& operator=(::BlockGeometrySerializer::Proxy const&);
 
     MCNAPI void setBoneVisibility(::std::map<::std::string, ::SharedTypes::Legacy::ExpressionNode>& boneVisibilities);
 

@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
+class Level;
 class Mob;
 class Vec3;
 // clang-format on
@@ -14,7 +14,7 @@ namespace KnockbackRules {
 // NOLINTBEGIN
 MCNAPI void doKnockbackAttack(::Mob& self, ::Mob& target, ::Vec3 const& direction, float force, float heightCap);
 
-MCNAPI float getScaledKnockbackForce(::Actor const& actor, float knockbackPower);
+MCNAPI bool useLegacyKnockback(::Level const& level);
 // NOLINTEND
 
 // static variables

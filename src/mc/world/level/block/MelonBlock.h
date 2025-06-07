@@ -14,7 +14,7 @@ class MelonBlock : public ::BlockLegacy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 25
+    // vIndex: 24
     virtual bool canConnect(::Block const&, uchar, ::Block const&) const /*override*/;
 
     // vIndex: 0

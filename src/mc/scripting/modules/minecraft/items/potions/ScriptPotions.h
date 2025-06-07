@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/world/item/alchemy/Potion.h"
 
@@ -14,6 +13,7 @@ namespace ScriptModuleMinecraft { class ScriptPotionEffectType; }
 namespace ScriptModuleMinecraft { class ScriptPotionLiquidType; }
 namespace ScriptModuleMinecraft { class ScriptPotionModifierType; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -63,7 +63,7 @@ public:
     MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotions>
     _getHandle(::Scripting::WeakLifetimeScope& scope);
 
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPotions> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
     MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionEffectType>>
     getPotionEffectType(::Scripting::WeakLifetimeScope scope, ::std::string const& potionTypeId);

@@ -4,7 +4,7 @@
 
 namespace Bedrock::PubSub {
 
-template <typename T0, typename T1>
+template <typename T0, typename T1, int T2>
 class Publisher {};
 
 } // namespace Bedrock::PubSub

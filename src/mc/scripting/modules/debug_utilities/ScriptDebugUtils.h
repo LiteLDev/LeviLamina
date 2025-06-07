@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,7 +25,7 @@ public:
     MCNAPI static ::ScriptModuleDebugUtilities::ScriptRuntimeStats
     collectRuntimeStats(::Scripting::DependencyLocator& locator);
 
-    MCNAPI static ::Scripting::Result<void> disableWatchdogTimingWarnings(
+    MCNAPI static ::Scripting::Result_deprecated<void> disableWatchdogTimingWarnings(
         ::Scripting::WeakLifetimeScope& scope,
         ::Scripting::DependencyLocator& locator,
         bool                            disable

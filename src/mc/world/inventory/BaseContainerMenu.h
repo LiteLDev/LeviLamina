@@ -36,7 +36,8 @@ public:
         8,
         ::std::unique_ptr<::Bedrock::PubSub::Publisher<
             void(::SharedTypes::Legacy::ContainerType),
-            ::Bedrock::PubSub::ThreadModel::SingleThreaded>>>
+            ::Bedrock::PubSub::ThreadModel::SingleThreaded,
+            0>>>
         mContainerTypeSubscribers;
     // NOLINTEND
 

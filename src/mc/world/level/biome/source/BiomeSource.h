@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/biome/source/BiomeSourceType.h"
+
 // auto generated forward declare list
 // clang-format off
 class Biome;
@@ -46,6 +49,9 @@ public:
 
     // vIndex: 9
     virtual bool hasByHashId(uint64) const = 0;
+
+    // vIndex: 10
+    virtual ::BiomeSourceType const getType() const = 0;
     // NOLINTEND
 
 public:

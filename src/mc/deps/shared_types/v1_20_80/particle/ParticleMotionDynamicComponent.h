@@ -25,6 +25,8 @@ public:
 
 public:
     // prevent constructor by default
+    ParticleMotionDynamicComponent& operator=(ParticleMotionDynamicComponent const&);
+    ParticleMotionDynamicComponent(ParticleMotionDynamicComponent const&);
     ParticleMotionDynamicComponent();
 
 public:
@@ -41,14 +43,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ParticleMotionDynamicComponent(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent&&);
-
-    MCNAPI ParticleMotionDynamicComponent(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent const&);
-
-    MCNAPI ::SharedTypes::v1_20_80::ParticleMotionDynamicComponent&
-    operator=(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent&&);
-
-    MCNAPI ::SharedTypes::v1_20_80::ParticleMotionDynamicComponent&
-    operator=(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent const&);
     // NOLINTEND
 
 public:
@@ -67,8 +61,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent&&);
-
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent const&);
     // NOLINTEND
 
 public:

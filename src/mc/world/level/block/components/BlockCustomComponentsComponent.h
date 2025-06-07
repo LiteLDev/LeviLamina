@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/scripting/modules/minecraft/events/ScriptCustomComponentToExecute.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,6 +27,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnkf66582;
+        ::ll::UntypedStorage<8, 8> mUnk584e98;
         ::ll::UntypedStorage<8, 8> mUnk29a4ca;
         // NOLINTEND
 
@@ -51,7 +53,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::vector<::BlockCustomComponentsComponent::ExecutableComponent> _gatherComponentsToExecute() const;
 
-    MCNAPI ::std::vector<::gsl::not_null<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const*>>
+    MCNAPI ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&,
+        void>>
     tryGetComponentsToExecute(::BlockLegacy const& baseBlock) const;
     // NOLINTEND
 };

@@ -25,11 +25,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk392bc3;
-        ::ll::UntypedStorage<8, 8> mUnkcf5027;
-        ::ll::UntypedStorage<8, 8> mUnkc32840;
-        ::ll::UntypedStorage<8, 8> mUnk9bb876;
-        ::ll::UntypedStorage<8, 8> mUnk96b447;
+        ::ll::UntypedStorage<8, 8> mUnk4f4521;
+        ::ll::UntypedStorage<8, 8> mUnk11b4f4;
+        ::ll::UntypedStorage<8, 8> mUnkd474c1;
+        ::ll::UntypedStorage<8, 8> mUnkb4b385;
+        ::ll::UntypedStorage<8, 8> mUnk9d08cc;
         // NOLINTEND
 
     public:
@@ -37,26 +37,14 @@ public:
         SurfaceMaterialAdjustmentBlocks& operator=(SurfaceMaterialAdjustmentBlocks const&);
         SurfaceMaterialAdjustmentBlocks(SurfaceMaterialAdjustmentBlocks const&);
         SurfaceMaterialAdjustmentBlocks();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~SurfaceMaterialAdjustmentBlocks();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct ResolvedSurfaceMaterialAdjustments {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 40>  mUnkea2601;
-        ::ll::UntypedStorage<8, 448> mUnk1e9415;
+        ::ll::UntypedStorage<8, 40> mUnkea2601;
+        ::ll::UntypedStorage<8, 48> mUnk1e9415;
         // NOLINTEND
 
     public:

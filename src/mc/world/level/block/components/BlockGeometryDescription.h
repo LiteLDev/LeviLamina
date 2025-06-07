@@ -42,12 +42,9 @@ public:
     ::ll::UntypedStorage<8, 48> mUnk82c02d;
     ::ll::UntypedStorage<1, 1>  mUnkc74705;
     ::ll::UntypedStorage<1, 1>  mUnk6249a9;
+    ::ll::UntypedStorage<8, 48> mUnkddf5e8;
     ::ll::UntypedStorage<8, 16> mUnk32eaa1;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockGeometryDescription();
 
 public:
     // virtual functions
@@ -71,11 +68,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI BlockGeometryDescription();
+
     MCNAPI BlockGeometryDescription(::BlockGeometryDescription const&);
 
-    MCNAPI explicit BlockGeometryDescription(::HashedString const& geometryName);
-
-    MCNAPI BlockGeometryDescription(::HashedString const& geometryName, ::HashedString const& cullingName);
+    MCNAPI BlockGeometryDescription(
+        ::HashedString const& geometryName,
+        ::HashedString const& cullingName,
+        ::HashedString const& cullingLayer
+    );
 
     MCNAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription&&);
 
@@ -93,6 +94,14 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::HashedString const& CROSS_GEO_NAME();
 
+    MCNAPI static ::std::string const& CULLING_LAYER_DOCUMENTATION();
+
+    MCNAPI static ::HashedString const& CULLING_LAYER_LEAVES();
+
+    MCNAPI static ::std::string const& CULLING_LAYER_NAME_CONSTRAINT();
+
+    MCNAPI static ::HashedString const& CULLING_LAYER_UNDEFINED();
+
     MCNAPI static ::HashedString const& FULL_BLOCK_GEO_NAME();
 
     MCNAPI static ::std::string const& GEO_NAME_CONSTRAINT();
@@ -103,11 +112,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
     MCNAPI void* $ctor(::BlockGeometryDescription const&);
 
-    MCNAPI void* $ctor(::HashedString const& geometryName);
-
-    MCNAPI void* $ctor(::HashedString const& geometryName, ::HashedString const& cullingName);
+    MCNAPI void*
+    $ctor(::HashedString const& geometryName, ::HashedString const& cullingName, ::HashedString const& cullingLayer);
     // NOLINTEND
 
 public:

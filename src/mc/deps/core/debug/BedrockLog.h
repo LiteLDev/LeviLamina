@@ -36,9 +36,9 @@ MCAPI ::std::string _messageIdString(int _messageId);
 MCAPI void _openChannel(
     ::Core::Path const&       path,
     ::std::string const&      filename,
-    ::std::string const&      channel,
-    ::BedrockLog::LogCategory _debugLogTimestamp,
-    ::BedrockLog::LogChannel  category,
+    ::std::string const&      _debugLogTimestamp,
+    ::BedrockLog::LogCategory category,
+    ::BedrockLog::LogChannel  channel,
     bool                      _createLogFile,
     ::LogSettingsUpdater*     _settings,
     double                    _logCycleInS
@@ -51,9 +51,9 @@ MCAPI void closeAndResetAllLogs();
 MCAPI void createLog(
     ::Core::Path const&       _path,
     ::std::string const&      _labelDescription,
-    ::std::string const&      _channels,
-    ::BedrockLog::LogCategory _debugLogTimestamp,
-    ::std::bitset<3>          _category,
+    ::std::string const&      _debugLogTimestamp,
+    ::BedrockLog::LogCategory _category,
+    ::std::bitset<3>          _channels,
     bool                      _createLogFile,
     ::LogSettingsUpdater*     _settings,
     double                    _logCycleInS

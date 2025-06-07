@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/serviceproviders/EditorPersistenceServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
@@ -15,7 +14,6 @@ class HashedString;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Persistence { struct PersistentData; }
-namespace Scripting { struct Error; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -26,8 +24,8 @@ class EditorPersistenceService : public ::Editor::Services::IEditorService,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk7b2522;
-    ::ll::UntypedStorage<8, 48> mUnkff56eb;
+    ::ll::UntypedStorage<8, 48> mUnk95c2f0;
+    ::ll::UntypedStorage<8, 48> mUnk76e3f8;
     ::ll::UntypedStorage<8, 8>  mUnk5f20cb;
     ::ll::UntypedStorage<8, 16> mUnkbccd2b;
     ::ll::UntypedStorage<8, 16> mUnk3eb25a;
@@ -53,13 +51,13 @@ public:
     virtual ~EditorPersistenceService() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> quit() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void> ready() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
     // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
@@ -74,29 +72,31 @@ public:
     ) /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void>
+    virtual ::Scripting::Result_deprecated<void>
     addOrUpdatePersistData(::Editor::Persistence::PersistentData const& data) /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void> addPersistData(::Editor::Persistence::PersistentData const& data) /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    addPersistData(::Editor::Persistence::PersistentData const& data) /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> updatePersistData(::Editor::Persistence::PersistentData const& data) /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    updatePersistData(::Editor::Persistence::PersistentData const& data) /*override*/;
 
     // vIndex: 4
-    virtual ::Scripting::Result<void>
+    virtual ::Scripting::Result_deprecated<void>
     removePersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) /*override*/;
 
     // vIndex: 5
-    virtual ::Scripting::Result<::std::string, ::Scripting::Error>
+    virtual ::Scripting::Result_deprecated<::std::string>
     getPersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) const /*override*/;
 
     // vIndex: 7
-    virtual ::Scripting::Result<bool, ::Scripting::Error>
+    virtual ::Scripting::Result_deprecated<bool>
     hasData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) const /*override*/;
 
     // vIndex: 6
-    virtual ::Scripting::Result<::std::vector<::HashedString>, ::Scripting::Error>
+    virtual ::Scripting::Result_deprecated<::std::vector<::HashedString>>
     getKeysStartWith(::std::string const prefix, ::Editor::Services::PersistentDataType const dataType) const
         /*override*/;
 
@@ -133,11 +133,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
-    MCNAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result_deprecated<void> $ready();
 
     MCNAPI ::std::string_view $getServiceName() const;
 
@@ -148,22 +148,23 @@ public:
         ::std::function<void(::HashedString const&, ::Editor::Services::PersistentDataType)> func
     );
 
-    MCNAPI ::Scripting::Result<void> $addOrUpdatePersistData(::Editor::Persistence::PersistentData const& data);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $addOrUpdatePersistData(::Editor::Persistence::PersistentData const& data);
 
-    MCNAPI ::Scripting::Result<void> $addPersistData(::Editor::Persistence::PersistentData const& data);
+    MCNAPI ::Scripting::Result_deprecated<void> $addPersistData(::Editor::Persistence::PersistentData const& data);
 
-    MCNAPI ::Scripting::Result<void> $updatePersistData(::Editor::Persistence::PersistentData const& data);
+    MCNAPI ::Scripting::Result_deprecated<void> $updatePersistData(::Editor::Persistence::PersistentData const& data);
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     $removePersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType);
 
-    MCNAPI ::Scripting::Result<::std::string, ::Scripting::Error>
+    MCNAPI ::Scripting::Result_deprecated<::std::string>
     $getPersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) const;
 
-    MCNAPI ::Scripting::Result<bool, ::Scripting::Error>
+    MCNAPI ::Scripting::Result_deprecated<bool>
     $hasData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) const;
 
-    MCNAPI ::Scripting::Result<::std::vector<::HashedString>, ::Scripting::Error>
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::HashedString>>
     $getKeysStartWith(::std::string const prefix, ::Editor::Services::PersistentDataType const dataType) const;
 
     MCNAPI void $_removePersistData(::HashedString const&, ::Editor::Services::PersistentDataType const);

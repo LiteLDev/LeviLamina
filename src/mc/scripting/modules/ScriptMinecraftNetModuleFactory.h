@@ -48,8 +48,8 @@ public:
     MCNAPI ::Scripting::ModuleBinding _generateBindings(
         ::Scripting::ModuleBindingBuilder&          moduleBuilder,
         ::std::optional<::Scripting::ContextConfig> contextConfig,
-        bool                                        allowedTags,
-        ::std::vector<::std::string> const&         allowUntagged
+        bool                                        allowUntagged,
+        ::std::vector<::std::string> const&         allowedTags
     );
     // NOLINTEND
 

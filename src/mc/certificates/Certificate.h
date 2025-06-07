@@ -54,8 +54,8 @@ public:
         int64                notBeforeDate,
         int64                expirationDate,
         ::std::string const& identityPublicKey,
-        bool                 extraData,
-        ::Json::Value const* isCertificateAuthority
+        bool                 isCertificateAuthority,
+        ::Json::Value const* extraData
     );
 
     MCNAPI static ::std::unique_ptr<::Certificate> createWrappedCertificate(
@@ -63,9 +63,9 @@ public:
         int64                            notBeforeDate,
         int64                            expirationDate,
         ::std::string const&             identityPublicKey,
-        bool                             extraData,
-        ::Json::Value const*             parentCertificate,
-        ::std::unique_ptr<::Certificate> isCertificateAuthority
+        bool                             isCertificateAuthority,
+        ::Json::Value const*             extraData,
+        ::std::unique_ptr<::Certificate> parentCertificate
     );
     // NOLINTEND
 

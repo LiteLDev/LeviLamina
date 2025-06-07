@@ -54,9 +54,9 @@ public:
     ::ll::TypedStorage<
         8,
         8,
-        ::std::unique_ptr<::Bedrock::PubSub::Publisher<
-            void(::ScriptDeferredFlushTracker&),
-            ::Bedrock::PubSub::ThreadModel::MultiThreaded>>>
+        ::std::unique_ptr<
+            ::Bedrock::PubSub::
+                Publisher<void(::ScriptDeferredFlushTracker&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>>
         mFlushCoroutinePublisher;
     // NOLINTEND
 

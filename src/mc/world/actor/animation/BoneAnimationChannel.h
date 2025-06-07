@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class KeyFrameTransform;
+// clang-format on
+
 class BoneAnimationChannel {
 public:
     // member variables
@@ -15,4 +20,12 @@ public:
     BoneAnimationChannel& operator=(BoneAnimationChannel const&);
     BoneAnimationChannel(BoneAnimationChannel const&);
     BoneAnimationChannel();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::KeyFrameTransform& addKeyFrame(float time);
+
+    MCNAPI void sortKeyFrames();
+    // NOLINTEND
 };

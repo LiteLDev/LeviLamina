@@ -5,14 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
-#include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-class SemVersion;
 namespace Bedrock::Safety { class RedactableString; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class RecordItemComponent : public ::NetworkedItemComponent<::RecordItemComponent> {
@@ -42,12 +39,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
-        ::std::optional<::SemVersion>          requiredToggles
-    );
-
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 

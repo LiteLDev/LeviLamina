@@ -3,13 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 
 // auto generated forward declare list
 // clang-format off
 class Player;
 namespace Json { class Value; }
+namespace ScriptModuleMinecraft { struct ScriptRawMessageError; }
 // clang-format on
 
 namespace ScriptModuleMinecraftServerUI {
@@ -22,7 +23,8 @@ public:
     virtual ~IControl();
 
     // vIndex: 1
-    virtual ::Scripting::Result_deprecated<::Json::Value> buildJson(::Player&, ::CurrentCmdVersion) const = 0;
+    virtual ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
+    buildJson(::Player&, ::CurrentCmdVersion) const = 0;
     // NOLINTEND
 
 public:

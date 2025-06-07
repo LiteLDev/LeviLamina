@@ -25,6 +25,11 @@
 #include "mc/util/MolangTempVariable.h"
 #include "mc/util/MolangTextureVariable.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
+
 struct MolangScriptArg {
 public:
     using MolangScriptArgData = std::variant<
@@ -82,11 +87,15 @@ public:
 
     MCAPI ::MolangMemberArray* getAsNonConstMolangMemberArray();
 
+    MCAPI ::HashedString const& getName() const;
+
     MCAPI ::MolangScriptArg& operator=(::MolangScriptArg const&);
 
     MCAPI ::MolangScriptArg& operator=(::MolangScriptArg&&);
 
     MCAPI ::MolangScriptArg& operator=(::MolangMemberArray const& value);
+
+    MCAPI bool operator==(::MolangScriptArg const& rhs) const;
 
     MCAPI void reportGetFailure() const;
 

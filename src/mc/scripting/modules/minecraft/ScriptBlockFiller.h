@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,9 +13,6 @@ namespace ScriptModuleMinecraft { class ScriptBlockType; }
 namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
 namespace ScriptModuleMinecraft { class ScriptCompoundBlockVolume; }
 namespace ScriptModuleMinecraft { class ScriptListBlockVolume; }
-namespace ScriptModuleMinecraft { struct ScriptUnloadedChunksError; }
-namespace Scripting { struct EngineError; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -39,11 +36,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptListBlockVolume>,
-        ::ScriptModuleMinecraft::ScriptUnloadedChunksError,
-        ::Scripting::EngineError,
-        ::Scripting::Error>
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptListBlockVolume>>
     fillBlocks(
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase>,

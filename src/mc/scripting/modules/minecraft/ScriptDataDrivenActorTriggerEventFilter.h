@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/ScriptActorEventFilter.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft::EventFilters { struct ScriptActorEventFilterData; }
 namespace ScriptModuleMinecraft::EventFilters { struct ScriptDataDrivenActorTriggerEventFilterData; }
+namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft::EventFilters {
@@ -51,13 +51,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBindingBuilder<
-        ::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter>
-    bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
 
-    MCNAPI static ::Scripting::ClassBindingBuilder<
-        ::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter>
-    bindV010();
+    MCNAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:

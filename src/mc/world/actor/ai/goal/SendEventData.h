@@ -31,21 +31,14 @@ public:
 public:
     // prevent constructor by default
     SendEventData(SendEventData const&);
+    SendEventData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SendEventData();
-
     MCNAPI ::SendEventData& operator=(::SendEventData const&);
 
     MCNAPI ~SendEventData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

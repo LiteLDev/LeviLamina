@@ -50,21 +50,46 @@ MCNAPI bool parseVec2(::Vec2& outVec, ::Json::Value const& root);
 
 MCNAPI bool parseVec3(::Vec3& outVec, ::Json::Value const& root);
 
-MCNAPI void printJsonSchema_childNode(
-    ::std::string&        output,
-    ::std::string const&  indent,
-    ::HashedString const& typeName,
-    ::std::string const&  memberName,
-    bool                  isRequired,
-    uint64                minChildren,
-    uint64                maxChildren,
-    ::std::string const&  validValuesDocumentation,
-    ::std::string const&  documentation
-);
-
 MCNAPI void setDefaultPrettyName(::std::string& destPrettyName, ::HashedString const& sourceName);
 
 MCNAPI void unregisterSchema(::HashedString const& name, ::SemVersion const& version);
+// NOLINTEND
+
+// static variables
+// NOLINTBEGIN
+MCNAPI ::HashedString const& ACTOR_DEFINITION_TRIGGER_TYPE_NAME();
+
+MCNAPI ::HashedString const& ACTOR_FILTER_GROUP_TYPE_NAME();
+
+MCNAPI ::HashedString const& ARRAY_TYPE_NAME();
+
+MCNAPI ::HashedString const& BOOL_TYPE_NAME();
+
+MCNAPI ::HashedString const& ENTITIES_TYPE_NAME();
+
+MCNAPI ::HashedString const& ENUM_TYPE_NAME();
+
+MCNAPI ::HashedString const& FLOAT_RANGE_TYPE_NAME();
+
+MCNAPI ::HashedString const& FLOAT_TYPE_NAME();
+
+MCNAPI ::HashedString const& INT_RANGE_TYPE_NAME();
+
+MCNAPI ::HashedString const& INT_TYPE_NAME();
+
+MCNAPI ::HashedString const& MOLANG_TYPE_NAME();
+
+MCNAPI ::HashedString const& OBJECT_TYPE_NAME();
+
+MCNAPI ::HashedString const& STRING_TYPE_NAME();
+
+MCNAPI ::HashedString const& VEC2_TYPE_NAME();
+
+MCNAPI ::HashedString const& VEC3_TYPE_NAME();
+
+MCNAPI ::HashedString const& VEC4_TYPE_NAME();
+
+MCNAPI ::HashedString const& VERSION_TYPE_NAME();
 // NOLINTEND
 
 } // namespace JsonUtil

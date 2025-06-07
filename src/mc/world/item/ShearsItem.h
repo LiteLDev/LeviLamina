@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/item/Item.h"
 
 // auto generated forward declare list
@@ -15,6 +16,7 @@ class Container;
 class InteractionResult;
 class ItemStack;
 class ItemStackBase;
+class Level;
 class Mob;
 class Vec3;
 // clang-format on
@@ -51,7 +53,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _tryShearActor(::BlockSource& region, ::Actor& mob);
+    MCAPI static void onShearsUsed(
+        ::BlockSource&                         region,
+        ::Level&                               level,
+        ::Actor*                               owner,
+        ::ItemStack&                           shears,
+        ::BlockPos const&                      pos,
+        ::SharedTypes::Legacy::LevelSoundEvent levelSoundEvent
+    );
     // NOLINTEND
 
 public:

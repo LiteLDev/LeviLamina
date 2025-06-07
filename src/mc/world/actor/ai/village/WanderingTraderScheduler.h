@@ -52,8 +52,6 @@ public:
     MCAPI ::std::optional<::BlockPos>
     _getSpawnPosFromNearestVillageToPlayerPos(::BlockPos const& playerPos, ::BlockSource& region);
 
-    MCAPI void _spawnWanderingTraderAtPos(::BlockPos const& pos, ::BlockSource& region);
-
     MCAPI void readSaveData();
 
     MCAPI void tick();

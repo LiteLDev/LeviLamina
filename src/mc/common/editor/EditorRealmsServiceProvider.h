@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/EditorRealmsServiceAvailability.h"
 #include "mc/common/editor/RealmsServiceStatus.h"
 #include "mc/common/editor/RealmsWorldUploadResult.h"
 
@@ -76,7 +77,7 @@ public:
     virtual bool const canUploadWorld() const = 0;
 
     // vIndex: 15
-    virtual bool const isRealmsServiceAvailable() const = 0;
+    virtual ::Editor::Services::EditorRealmsServiceAvailability const isRealmsServiceAvailable() const = 0;
     // NOLINTEND
 
 public:

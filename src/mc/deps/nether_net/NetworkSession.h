@@ -50,7 +50,7 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk3ebc21;
     ::ll::UntypedStorage<1, 1>  mUnk266d1b;
     ::ll::UntypedStorage<8, 8>  mUnk91aff3;
-    ::ll::UntypedStorage<8, 8>  mUnkb2ad91;
+    ::ll::UntypedStorage<8, 24> mUnkb2ad91;
     ::ll::UntypedStorage<8, 8>  mUnkea75f3;
     ::ll::UntypedStorage<8, 24> mUnk67ae30;
     ::ll::UntypedStorage<8, 8>  mUnk11904d;
@@ -61,12 +61,10 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk8f808f;
     ::ll::UntypedStorage<8, 80> mUnkab1f83;
     ::ll::UntypedStorage<8, 8>  mUnk3f0d55;
-    ::ll::UntypedStorage<8, 40> mUnk4a45c9;
     ::ll::UntypedStorage<4, 4>  mUnk8129d9;
     ::ll::UntypedStorage<8, 8>  mUnkd4f9be;
-    ::ll::UntypedStorage<8, 40> mUnk3ba4a7;
+    ::ll::UntypedStorage<8, 40> mUnkcbacc5;
     ::ll::UntypedStorage<4, 4>  mUnk9694d4;
-    ::ll::UntypedStorage<1, 1>  mUnk65cb85;
     ::ll::UntypedStorage<8, 80> mUnk3ff530;
     ::ll::UntypedStorage<8, 80> mUnkd90e28;
     ::ll::UntypedStorage<1, 1>  mUnk8e829f;
@@ -128,7 +126,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void CheckSendDeferredData();
+    MCNAPI void CheckSendReliableData();
 
     MCNAPI void CheckUpdateStats();
 

@@ -13,7 +13,6 @@
 class IContentTierManager;
 class LoadedResourceData;
 class PackInstance;
-class PackSourceReport;
 class ResourceGroup;
 class ResourceLocation;
 class ResourceLocationPair;
@@ -72,42 +71,45 @@ public:
     ) const /*override*/;
 
     // vIndex: 4
+    virtual bool loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const /*override*/;
+
+    // vIndex: 5
     virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const& resourceLocation) const
         /*override*/;
 
-    // vIndex: 6
+    // vIndex: 7
     virtual bool isInStreamableLocation(::ResourceLocation const& resourceLocation) const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual bool isInStreamableLocation(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensions
     ) const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual ::Core::PathBuffer<::std::string> getPath(::ResourceLocation const& resourceLocation) const /*override*/;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual ::Core::PathBuffer<::std::string>
     getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const /*override*/;
 
-    // vIndex: 10
+    // vIndex: 11
     virtual ::Core::PathBuffer<::std::string>
     getPathContainingResource(::ResourceLocation const& resourceLocation) const /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual ::Core::PathBuffer<::std::string> getPathContainingResource(
-        ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensionList
-    ) const /*override*/;
-
-    // vIndex: 11
-    virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensions
     ) const /*override*/;
 
     // vIndex: 12
+    virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(
+        ::ResourceLocation const&        resourceLocation,
+        ::gsl::span<::std::string const> extensionList
+    ) const /*override*/;
+
+    // vIndex: 13
     virtual bool hasCapability(::std::string_view requiredCapability) const;
     // NOLINTEND
 
@@ -130,6 +132,8 @@ public:
         ::std::vector<::Core::Path>& resources
     ) const;
 
+    MCNAPI bool _shouldRebuildStack() const;
+
     MCNAPI void _updateLanguageSubpacks();
 
     MCNAPI int composeFullStack(
@@ -148,8 +152,6 @@ public:
     MCNAPI void iteratePacks(::std::function<void(::PackInstance const&)> const& pred) const;
 
     MCNAPI void removeIf(::std::function<bool(::PackInstance const&)> const& pred);
-
-    MCNAPI void setPackSourceReport(::PackSourceReport&& report);
 
     MCNAPI bool
     setStack(::std::unique_ptr<::ResourcePackStack> stack, ::ResourcePackStackType stackType, bool composeStack);
@@ -188,6 +190,8 @@ public:
         ::gsl::span<::std::string const> extensionList
     ) const;
 
+    MCNAPI bool $loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
+
     MCNAPI ::std::vector<::LoadedResourceData> $loadAllVersionsOf(::ResourceLocation const& resourceLocation) const;
 
     MCNAPI bool $isInStreamableLocation(::ResourceLocation const& resourceLocation) const;
@@ -207,12 +211,12 @@ public:
 
     MCNAPI ::Core::PathBuffer<::std::string> $getPathContainingResource(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensionList
+        ::gsl::span<::std::string const> extensions
     ) const;
 
     MCNAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
+        ::gsl::span<::std::string const> extensionList
     ) const;
 
     MCNAPI bool $hasCapability(::std::string_view requiredCapability) const;

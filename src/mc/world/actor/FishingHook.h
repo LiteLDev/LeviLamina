@@ -64,7 +64,7 @@ public:
     virtual bool shouldDropDeathLoot() const /*override*/;
 
     // vIndex: 2
-    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
     // NOLINTEND
 
 public:
@@ -122,11 +122,15 @@ public:
     // NOLINTBEGIN
     MCAPI void $remove();
 
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+
     MCFOLD float $getShadowRadius() const;
 
     MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
 
     MCFOLD bool $shouldDropDeathLoot() const;
+
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
     // NOLINTEND
 
 public:

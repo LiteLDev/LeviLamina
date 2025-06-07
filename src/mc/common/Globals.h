@@ -8,12 +8,11 @@
 #include "mc/deps/core/file/file_system/FileType.h"
 #include "mc/deps/core/sem_ver/SemVersionBase.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/json/ValueType.h"
+#include "mc/deps/nether_net/LogSeverity.h"
 #include "mc/deps/shared_types/legacy/FilterSubject.h"
 #include "mc/deps/shared_types/legacy/item/UseAnimation.h"
 #include "mc/events/TextProcessingEventOrigin.h"
-#include "mc/external/lib_http_client/HCTraceLevel.h"
 #include "mc/external/lib_http_client/http_stl_allocator.h"
 #include "mc/external/libsrtp/srtp_err_status_t.h"
 #include "mc/network/packet/AgentActionType.h"
@@ -36,6 +35,7 @@
 #include "mc/world/level/chunk/LevelChunkTag.h"
 #include "mc/world/level/chunk/SubChunkDelayedDeleter.h"
 #include "mc/world/level/chunk/SubChunkStorage.h"
+#include "mc/world/level/levelgen/flat/FlatWorldPresetID.h"
 #include "mc/world/level/material/MaterialType.h"
 #include "mc/world/level/saveddata/maps/MapItemSavedData.h"
 #include "mc/world/redstone/circuit/components/CircuitComponentType.h"
@@ -49,7 +49,6 @@ class BiomeArea;
 class Block;
 class BlockLegacy;
 class BlockPos;
-class BlockSource;
 class BlockState;
 class BoundingBox;
 class BribeableComponent;
@@ -58,18 +57,18 @@ class CircuitSceneGraph;
 class CircuitTrackingInfo;
 class DefinitionTrigger;
 class Dimension;
+class ExpressionNode;
 class GatheringServerInfo;
 class HashedString;
 class I18n;
 class IFileAccess;
 class InternalTaskGroup;
 class ItemInstance;
-class LeashFenceKnotActor;
 class LevelData;
 class ListTag;
 class RecipeIngredient;
+class RedstoneTorchCapacitor;
 class SemVersionConstant;
-class StrictEntityContext;
 class SubChunkBrightnessStorage;
 class ThirdPartyInfo;
 class WorkerPool;
@@ -77,19 +76,19 @@ struct AccessorTypeEnumHasher;
 struct ActorDefinitionIdentifier;
 struct ActorFactoryData;
 struct ActorMapping;
+struct AllWorkerConfigurations;
 struct AssertHandlerContext;
 struct BlockLayer;
 struct BlockMaterialInstance;
 struct DynDnsResult;
+struct FlatWorldPreset;
 struct HCTraceImplArea;
 struct HC_CALL;
 struct ImageMimeTypeEnumHasher;
 struct KeyOrNameResult;
 struct MCRESULT;
 struct MaterialAlphaModeEnumHasher;
-struct MobOnPlayerJumpRequestComponent;
 struct ScatterParamsMolangVariableIndices;
-struct SendPacketsComponent;
 struct TextProcessingEventOriginEnumHasher;
 struct ThreadConfiguration;
 struct TypeMapping;
@@ -138,10 +137,6 @@ MCAPI ::std::unordered_map<::std::string, ::ActorFactoryData>& GetActorDataRegis
 
 MCAPI double GetEngagementMetricsTimeSinceAppStart_DEPRECATED();
 
-MCAPI void Internal_HCTraceMessage(char const*, ::HCTraceLevel, char const*);
-
-MCAPI uint64 Internal_ThisThreadId();
-
 MCAPI ::std::optional<::LogLevel> LogLevelFromString(::std::string const& str);
 
 MCFOLD bool MOCK_ASSERT_HANDLER(::AssertHandlerContext const& context);
@@ -152,7 +147,15 @@ MCAPI bool Mock_Internal_HCHttpCallPerformAsync(::HC_CALL*);
 
 MCAPI long Mock_Internal_ReadRequestBodyIntoMemory(::HC_CALL*, ::std::vector<uchar, ::http_stl_allocator<uchar>>*);
 
+MCAPI ::std::optional<::NetherNet::LogSeverity> NetherNetLogSeverityFromString(::std::string const& str);
+
 MCAPI void PlatformBedrockLogOut(uint _priority, char const* buf, uint64 nullTerminatorPos);
+
+MCAPI void PushCircularReference(
+    ::std::unordered_map<::BlockPos, ::RedstoneTorchCapacitor*>&                      relatedTorches,
+    ::BlockPos const&                                                                 pos,
+    ::std::queue<::RedstoneTorchCapacitor*, ::std::deque<::RedstoneTorchCapacitor*>>& list
+);
 
 MCAPI ::std::string StringFromCreativeItemCategory(::CreativeItemCategory category);
 
@@ -162,11 +165,11 @@ MCAPI ::SharedTypes::Legacy::UseAnimation UseAnimationFromString(::std::string c
 
 MCAPI void _addEnvironmentSubfilter(
     ::std::string const&                 legacyPredicate,
-    ::FilterGroup::CollectionType        filterName,
-    ::std::string const&                 op,
-    ::SharedTypes::Legacy::FilterSubject process,
-    ::FilterOperator                     type,
-    ::ActorFilterGroup::Processing       subject
+    ::FilterGroup::CollectionType        type,
+    ::std::string const&                 filterName,
+    ::SharedTypes::Legacy::FilterSubject subject,
+    ::FilterOperator                     op,
+    ::ActorFilterGroup::Processing       process
 );
 
 MCAPI void _addLegacyFilterDefinition(
@@ -257,12 +260,6 @@ MCAPI ::Bedrock::NonOwnerPointer<::WorkerPool> createWorkerPool(
     ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface>& destHandle
 );
 
-MCAPI void doSendPacket(
-    ::StrictEntityContext const&              entity,
-    ::MobOnPlayerJumpRequestComponent const&  mobOnPlayerJumpRequestComponent,
-    ::EntityModifier<::SendPacketsComponent>& modifier
-);
-
 MCAPI ::ActorCategory entityCategoriesFromString(::std::string const& str);
 
 MCAPI ::ActorCategory entityCategoryFromString(::std::string const& str);
@@ -283,7 +280,7 @@ MCAPI ::srtp_err_status_t external_hmac_update(void*, uchar const*, int);
 
 MCAPI int fclose(::Core::File& file);
 
-MCAPI ::LeashFenceKnotActor* findKnotAt(::BlockSource& region, ::BlockPos const& pos);
+MCAPI ::std::optional<::FlatWorldPresetID> flatWorldPresetIDFromString(::std::string const& str);
 
 MCAPI void forEachEntityType(::std::function<bool(::ActorType, ::std::string const&)> callback);
 
@@ -293,9 +290,15 @@ MCAPI int fseek(::Core::File& file, int64 offset, int origin);
 
 MCAPI ::std::string gatherTypeStrings(::std::vector<::Json::ValueType> const& types);
 
+MCAPI ::std::string getDiscoveryServiceURL(::DiscoveryEnvironment environment);
+
 MCAPI ::std::string const getEdition();
 
-MCAPI ::FileType getFileType(::Core::PathView filePath, ::IFileAccess& fileAccess);
+MCAPI ::Bedrock::FileType getFileType(::Core::PathView filePath, ::IFileAccess& fileAccess);
+
+MCAPI ::FlatWorldPreset const& getFlatWorldPresetWithID(::FlatWorldPresetID id);
+
+MCAPI ::std::unordered_map<::FlatWorldPresetID, ::FlatWorldPreset> const& getFlatWorldPresets();
 
 MCAPI ::I18n& getI18n();
 
@@ -305,11 +308,13 @@ MCAPI ::std::unordered_map<int, ::std::string> const& getPackParseErrorTypeEvent
 
 MCAPI ::std::unordered_map<int, ::std::string> const& getPackParseErrorTypeLOCMapAccess();
 
+MCAPI ::AllWorkerConfigurations getWorkerConfiguration(uint highPowerCores, uint totalCores);
+
 MCAPI ::std::string join(::std::string prefix, ::std::string_view chunkKey);
 
 MCAPI ::std::string join(::std::string_view prefix, ::LevelChunkTag tag);
 
-MCAPI ::std::string join(::std::string_view prefix, ::LevelChunkTag i, uint tag);
+MCAPI ::std::string join(::std::string_view prefix, ::LevelChunkTag tag, uint i);
 
 MCAPI bool operator<(
     ::SemVersionBase<::std::string_view> const&               lhs,
@@ -327,6 +332,8 @@ MCAPI bool operator<(
 );
 
 MCAPI bool operator==(::DefinitionTrigger const& a, ::DefinitionTrigger const& b);
+
+MCAPI bool operator==(::ExpressionNode const& lhs, ::ExpressionNode const& rhs);
 
 MCAPI bool operator==(::BlockMaterialInstance const& lhs, ::BlockMaterialInstance const& rhs);
 
@@ -350,11 +357,15 @@ MCAPI void renderMapChunk(
     ::MapItemSavedData::ChunkBounds pixelsBB
 );
 
+MCAPI ::DiscoveryEnvironment stringToDiscoveryEnvironment(::std::string const& str);
+
 MCAPI ::ItemInstance toItemInstance(::RecipeIngredient const& ingredient);
 
 MCAPI ::leveldb::Status toLevelDbStatus(::Core::Result const& result);
 
 MCAPI ::std::string toString(::AgentActionType type);
+
+MCAPI ::std::optional<::std::locale> tryGetLocaleFromName(::std::string const& localeName);
 
 MCAPI ::http_wstring utf16_from_utf8(::http_string const&);
 
@@ -526,9 +537,6 @@ MCAPI ::HCTraceImplArea& g_traceWEBSOCKET();
 MCAPI ::EducationServicesEnvironment& mCachedServicesEnvironment();
 
 MCAPI ::std::add_lvalue_reference_t<void (*)(char const*, long)> notifyOutOfMemory();
-
-MCAPI ::std::unordered_map<uint64, ::std::pair<::std::pair<::std::string, ::std::string>, ::std::string>>&
-preOptimizedHashes();
 
 MCAPI ::std::add_lvalue_reference_t<void (*)(void*, char const*, uint)> rakFree_Ex();
 

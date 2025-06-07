@@ -9,7 +9,7 @@ class ActorParticleEffectEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 320, ::ActorParticleEffect> mParticleEffect;
+    ::ll::TypedStorage<8, 120, ::ActorParticleEffect> mParticleEffect;
     ::ll::TypedStorage<4, 4, float>                   mTime;
     // NOLINTEND
 
@@ -23,13 +23,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::ActorParticleEffectEvent& operator=(::ActorParticleEffectEvent&&);
-
-    MCNAPI ~ActorParticleEffectEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

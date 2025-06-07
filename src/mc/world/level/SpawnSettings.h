@@ -22,7 +22,6 @@ public:
 
 public:
     // prevent constructor by default
-    SpawnSettings& operator=(SpawnSettings const&);
     SpawnSettings();
 
 public:
@@ -31,6 +30,8 @@ public:
     MCAPI SpawnSettings(::SpawnSettings&&);
 
     MCAPI SpawnSettings(::SpawnSettings const&);
+
+    MCAPI ::SpawnSettings& operator=(::SpawnSettings const&);
 
     MCAPI ~SpawnSettings();
     // NOLINTEND

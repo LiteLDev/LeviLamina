@@ -28,7 +28,7 @@ class EndPortalBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 7
@@ -41,19 +41,19 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
-    // vIndex: 123
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 72
+    // vIndex: 71
     virtual bool canRenderSelectionOverlay(::BlockRenderLayer) const /*override*/;
 
-    // vIndex: 31
+    // vIndex: 30
     virtual bool isLavaBlocking() const /*override*/;
 
     // vIndex: 0

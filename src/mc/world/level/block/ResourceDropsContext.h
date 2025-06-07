@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class IBlockSource;
+class ItemStack;
+// clang-format on
+
 struct ResourceDropsContext {
 public:
     // member variables
@@ -26,5 +33,12 @@ public:
     MCNAPI int getMiningLootBonusLevel() const;
 
     MCNAPI bool isUsingSilkTouch() const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::ResourceDropsContext
+    fromPlayerMining(::IBlockSource const& region, ::BlockPos const& position, ::ItemStack const& usedItem);
     // NOLINTEND
 };

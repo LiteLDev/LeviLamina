@@ -82,7 +82,49 @@ class Dimension : public ::IDimension,
                   public ::EnableGetWeakRef<::Dimension>,
                   public ::std::enable_shared_from_this<::Dimension> {
 public:
+    // Dimension inner types declare
+    // clang-format off
+    struct ChaoticDirectionalLightControls;
+    struct DirectionalLightState;
+    // clang-format on
+
     // Dimension inner types define
+    struct DirectionalLightState {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnkc3428f;
+        ::ll::UntypedStorage<4, 4> mUnkff4708;
+        ::ll::UntypedStorage<4, 4> mUnk2d8810;
+        ::ll::UntypedStorage<4, 4> mUnk8baae1;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        DirectionalLightState& operator=(DirectionalLightState const&);
+        DirectionalLightState(DirectionalLightState const&);
+        DirectionalLightState();
+    };
+
+    struct ChaoticDirectionalLightControls {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnkcec13a;
+        ::ll::UntypedStorage<4, 4> mUnkcf25a7;
+        ::ll::UntypedStorage<4, 4> mUnkaf1fb7;
+        ::ll::UntypedStorage<4, 4> mUnkb93f34;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ChaoticDirectionalLightControls& operator=(ChaoticDirectionalLightControls const&);
+        ChaoticDirectionalLightControls(ChaoticDirectionalLightControls const&);
+        ChaoticDirectionalLightControls();
+    };
+
+    using DirectionalLightControls = ::std::variant<::Dimension::ChaoticDirectionalLightControls>;
+
     using ActorTagList = ::std::vector<::std::unique_ptr<::CompoundTag>>;
 
     using ChunkPosToActorListMap = ::std::unordered_map<::ChunkPos, ::std::vector<::std::unique_ptr<::CompoundTag>>>;
@@ -219,6 +261,13 @@ public:
     // vIndex: 29
     virtual float getTimeOfDay(int time, float a) const;
 
+    // vIndex: 30
+    virtual void
+    setDimensionDirectionalLightControls(::std::variant<::Dimension::ChaoticDirectionalLightControls> const&);
+
+    // vIndex: 31
+    virtual ::Dimension::DirectionalLightState getDimensionDirectionalLightSourceState(float a) const;
+
     // vIndex: 2
     virtual ::DimensionType getDimensionId() const /*override*/;
 
@@ -246,10 +295,10 @@ public:
     // vIndex: 2
     virtual void serialize(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 30
+    // vIndex: 32
     virtual void sendBroadcast(::Packet const& packet, ::Player* except);
 
-    // vIndex: 31
+    // vIndex: 33
     virtual bool is2DPositionRelevantForPlayer(::BlockPos const& position, ::Player& player) const;
 
     // vIndex: 13
@@ -266,7 +315,7 @@ public:
     // vIndex: 4
     virtual void sendPacketForEntity(::Actor const& actor, ::Packet const& packet, ::Player const* except) /*override*/;
 
-    // vIndex: 32
+    // vIndex: 34
     virtual bool isActorRelevantForPlayer(::Player& player, ::Actor const& actor) const;
 
     // vIndex: 8
@@ -288,25 +337,25 @@ public:
     // vIndex: 24
     virtual void onLevelDestruction(::std::string const&) /*override*/;
 
-    // vIndex: 33
+    // vIndex: 35
     virtual ::BaseLightTextureImageBuilder* getLightTextureImageBuilder() const;
 
-    // vIndex: 34
+    // vIndex: 36
     virtual ::DimensionBrightnessRamp const& getBrightnessRamp() const;
 
-    // vIndex: 35
+    // vIndex: 37
     virtual void startLeaveGame();
 
     // vIndex: 5
     virtual void flushLevelChunkGarbageCollector() /*override*/;
 
-    // vIndex: 36
+    // vIndex: 38
     virtual ::std::unique_ptr<::ChunkBuildOrderPolicyBase> _createChunkBuildOrderPolicy();
 
-    // vIndex: 37
+    // vIndex: 39
     virtual void _upgradeOldLimboEntity(::CompoundTag&, ::LimboEntitiesVersion) = 0;
 
-    // vIndex: 38
+    // vIndex: 40
     virtual ::std::unique_ptr<::ChunkSource>
         _wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource>, ::StorageVersion) = 0;
     // NOLINTEND
@@ -358,8 +407,6 @@ public:
     MCAPI ::Player* findPlayer(::brstd::function_ref<bool(::Player const&)> pred) const;
 
     MCAPI void flagEntityforChunkMove(::Actor& e);
-
-    MCAPI ushort getHeightInSubchunks() const;
 
     MCAPI float getMoonBrightness() const;
 
@@ -450,6 +497,11 @@ public:
     MCFOLD bool $showSky() const;
 
     MCAPI float $getTimeOfDay(int time, float a) const;
+
+    MCFOLD void
+    $setDimensionDirectionalLightControls(::std::variant<::Dimension::ChaoticDirectionalLightControls> const&);
+
+    MCAPI ::Dimension::DirectionalLightState $getDimensionDirectionalLightSourceState(float a) const;
 
     MCAPI ::DimensionType $getDimensionId() const;
 

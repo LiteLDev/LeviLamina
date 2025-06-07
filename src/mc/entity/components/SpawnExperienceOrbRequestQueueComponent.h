@@ -23,22 +23,4 @@ public:
             ::std::queue<::SpawnExperienceOrbRequest, ::std::deque<::SpawnExperienceOrbRequest>>>>
         mRequestQueues;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SpawnExperienceOrbRequestQueueComponent& operator=(SpawnExperienceOrbRequestQueueComponent const&);
-    SpawnExperienceOrbRequestQueueComponent(SpawnExperienceOrbRequestQueueComponent const&);
-    SpawnExperienceOrbRequestQueueComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI SpawnExperienceOrbRequestQueueComponent(::SpawnExperienceOrbRequestQueueComponent&&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::SpawnExperienceOrbRequestQueueComponent&&);
-    // NOLINTEND
 };

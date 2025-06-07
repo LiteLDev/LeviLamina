@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct JSON; }
 // clang-format on
 
@@ -39,7 +37,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleServerAdmin::ScriptServerVariables> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:

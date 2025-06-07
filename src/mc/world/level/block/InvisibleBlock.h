@@ -23,13 +23,13 @@ public:
     // NOLINTBEGIN
     // vIndex: 4
     virtual ::HitResult clip(
-        ::Block const&,
-        ::BlockSource const&,
-        ::BlockPos const&,
-        ::Vec3 const& A,
-        ::Vec3 const& B,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
     // vIndex: 0
@@ -40,13 +40,13 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::HitResult $clip(
-        ::Block const&,
-        ::BlockSource const&,
-        ::BlockPos const&,
-        ::Vec3 const& A,
-        ::Vec3 const& B,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
     // NOLINTEND
 

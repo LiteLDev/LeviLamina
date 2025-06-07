@@ -2,14 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/common/editor/WidgetComponentType.h"
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct EnumBinding; }
+// clang-format on
 
 namespace Editor::ScriptModule::ScriptWidgetComponentType {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Scripting::EnumBindingBuilder<::std::string, ::Editor::Widgets::WidgetComponentType> bindEnums();
+MCNAPI ::Scripting::EnumBinding bindEnums();
 // NOLINTEND
 
 } // namespace Editor::ScriptModule::ScriptWidgetComponentType

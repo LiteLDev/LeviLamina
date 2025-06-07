@@ -31,9 +31,9 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI int removeRequestWithAction(
-            ::DimensionDataSerializer          levelStorage,
-            ::LevelStorage&                    actionToRemove,
-            ::gsl::not_null<::IRequestAction*> dimensionDataSerializer
+            ::DimensionDataSerializer          dimensionDataSerializer,
+            ::LevelStorage&                    levelStorage,
+            ::gsl::not_null<::IRequestAction*> actionToRemove
         );
         // NOLINTEND
     };

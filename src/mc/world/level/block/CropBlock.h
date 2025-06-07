@@ -15,10 +15,11 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
-class Random;
+namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class CropBlock : public ::FoliageBlock {
@@ -29,23 +30,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 81
+    // vIndex: 80
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 137
-    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    // vIndex: 87
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 140
+    // vIndex: 138
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
     // vIndex: 5
@@ -61,7 +59,7 @@ public:
     getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
         /*override*/;
 
-    // vIndex: 100
+    // vIndex: 99
     virtual void executeEvent(
         ::BlockSource&       region,
         ::BlockPos const&    pos,
@@ -75,17 +73,20 @@ public:
     hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const
         /*override*/;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual ::ItemInstance const getBaseSeed() const;
 
-    // vIndex: 74
+    // vIndex: 73
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    // vIndex: 76
+    // vIndex: 75
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
+
+    // vIndex: 130
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0
     virtual ~CropBlock() /*override*/ = default;
@@ -95,6 +96,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CropBlock(::std::string const& nameId, int id);
+
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -107,8 +110,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
@@ -145,6 +146,8 @@ public:
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:

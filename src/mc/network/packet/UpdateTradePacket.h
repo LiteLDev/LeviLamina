@@ -59,15 +59,15 @@ public:
 
     MCAPI UpdateTradePacket(
         ::ContainerID                        containerID,
-        ::SharedTypes::Legacy::ContainerType displayName,
-        int                                  tag,
-        ::std::string const&                 entityID,
-        ::CompoundTag&&                      playerID,
-        ::ActorUniqueID const&               traderTier,
-        ::ActorUniqueID const&               useNewTradeScreen,
-        int                                  usingEconomyTrade,
-        bool                                 type,
-        bool                                 size
+        ::SharedTypes::Legacy::ContainerType type,
+        int                                  size,
+        ::std::string const&                 displayName,
+        ::CompoundTag&&                      tag,
+        ::ActorUniqueID const&               entityID,
+        ::ActorUniqueID const&               playerID,
+        int                                  traderTier,
+        bool                                 useNewTradeScreen,
+        bool                                 usingEconomyTrade
     );
     // NOLINTEND
 
@@ -78,15 +78,15 @@ public:
 
     MCAPI void* $ctor(
         ::ContainerID                        containerID,
-        ::SharedTypes::Legacy::ContainerType displayName,
-        int                                  tag,
-        ::std::string const&                 entityID,
-        ::CompoundTag&&                      playerID,
-        ::ActorUniqueID const&               traderTier,
-        ::ActorUniqueID const&               useNewTradeScreen,
-        int                                  usingEconomyTrade,
-        bool                                 type,
-        bool                                 size
+        ::SharedTypes::Legacy::ContainerType type,
+        int                                  size,
+        ::std::string const&                 displayName,
+        ::CompoundTag&&                      tag,
+        ::ActorUniqueID const&               entityID,
+        ::ActorUniqueID const&               playerID,
+        int                                  traderTier,
+        bool                                 useNewTradeScreen,
+        bool                                 usingEconomyTrade
     );
     // NOLINTEND
 

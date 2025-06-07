@@ -15,8 +15,8 @@ MCNAPI uint getZoomedVoronoiCellIndex(
     ::BlockPos                   inPos,
     ::std::vector<::Vec3> const& voronoiCellOffsets,
     uint                         minCellIndex,
-    uint                         bufferYSize,
-    uint                         bufferXZSize
+    uint                         bufferXZSize,
+    uint                         bufferYSize
 );
 // NOLINTEND
 

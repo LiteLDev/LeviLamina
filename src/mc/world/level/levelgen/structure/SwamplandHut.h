@@ -50,7 +50,7 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void
-    placeCauldron(::BlockSource& region, ::Random& random, int chunkBB, int x, int y, ::BoundingBox const& z);
+    placeCauldron(::BlockSource& region, ::Random& random, int x, int y, int z, ::BoundingBox const& chunkBB);
     // NOLINTEND
 
 public:

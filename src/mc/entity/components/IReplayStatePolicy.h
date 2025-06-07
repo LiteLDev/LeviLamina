@@ -23,16 +23,10 @@ public:
     virtual bool isReplayNeeded(::AdvanceFrameResult) const = 0;
 
     // vIndex: 2
-    virtual bool canRewind(::EntityContext const&) = 0;
-
-    // vIndex: 3
     virtual ::MovementCorrection
     shouldCorrectMovement(::EntityContext&, ::PlayerAuthInputPacket const&, uint64, uchar, bool) = 0;
 
-    // vIndex: 4
-    virtual bool validateFrameSupport(::EntityContext&) = 0;
-
-    // vIndex: 5
+    // vIndex: 3
     virtual void notifyOfExternalCorrection(uint64) = 0;
     // NOLINTEND
 

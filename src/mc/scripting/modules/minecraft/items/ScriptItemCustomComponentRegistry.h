@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/scripting/modules/minecraft/ScriptCustomComponentRegistry.h"
 #include "mc/scripting/modules/minecraft/items/IScriptItemCustomComponentRegistry.h"
@@ -16,6 +17,7 @@ class ScriptDeferredEventCoordinator;
 class ScriptDeferredEventListener;
 namespace ScriptModuleMinecraft { class IScriptItemCustomComponentSignalCollection; }
 namespace ScriptModuleMinecraft { class ScriptItemCustomComponentInterface; }
+namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { struct ScriptCustomComponentInvalidRegistryError; }
 namespace ScriptModuleMinecraft { struct ScriptItemCustomComponentAlreadyRegisteredError; }
 namespace ScriptModuleMinecraft { struct ScriptItemCustomComponentReloadNewComponentError; }
@@ -112,6 +114,17 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
     ) /*override*/;
 
+    // vIndex: 1
+    virtual ::std::vector<::std::string_view> getValidComponentsForItem(
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle
+    ) const /*override*/;
+
+    // vIndex: 2
+    virtual bool isValidComponentForItem(
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle,
+        ::std::string_view                                                           componentName
+    ) const /*override*/;
+
     // vIndex: 6
     virtual ::ScriptDeferredEventListener& getEventListener() /*override*/;
 
@@ -205,6 +218,15 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
     );
 
+    MCNAPI ::std::vector<::std::string_view> $getValidComponentsForItem(
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle
+    ) const;
+
+    MCNAPI bool $isValidComponentForItem(
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle,
+        ::std::string_view                                                           componentName
+    ) const;
+
     MCNAPI ::ScriptDeferredEventListener& $getEventListener();
 
     MCNAPI void $onReload();
@@ -223,9 +245,11 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForIScriptItemCustomComponentRegistry();
+    MCNAPI static void** $vftable();
 
-    MCNAPI static void** $vftableForScriptCustomComponentRegistry();
+    MCNAPI static void** $vftableForIScriptItemCustomComponentWriter();
+
+    MCNAPI static void** $vftableForIScriptItemCustomComponentReader();
     // NOLINTEND
 };
 

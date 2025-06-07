@@ -26,6 +26,8 @@ public:
 
     MCNAPI static ::Block const* transformBlock(::Block const& block, ::Rotation rotation, ::Mirror mirror);
 
+    MCNAPI static ::Block const* transformCardinalDirection(::Block const& block, ::Rotation rotation, ::Mirror mirror);
+
     MCNAPI static ::Block const*
     transformMultiFaceDirectionBits(::Block const& block, ::Rotation rotation, ::Mirror mirror);
     // NOLINTEND

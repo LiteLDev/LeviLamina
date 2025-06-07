@@ -14,7 +14,7 @@ class CobblestoneBlock : public ::BlockLegacy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 129
+    // vIndex: 128
     virtual ::Block const* tryGetInfested(::Block const& block) const /*override*/;
 
     // vIndex: 0

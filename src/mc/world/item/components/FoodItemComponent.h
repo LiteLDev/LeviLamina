@@ -10,7 +10,6 @@
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/IFoodItemComponent.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
-#include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,10 +19,8 @@ class Item;
 class ItemStack;
 class Level;
 class Player;
-class SemVersion;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace SharedTypes::v1_20_50 { struct FoodItemComponent; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class FoodItemComponent : public ::NetworkedItemComponent<::FoodItemComponent>, public ::IFoodItemComponent {
@@ -43,7 +40,8 @@ public:
         8,
         ::std::unique_ptr<::Bedrock::PubSub::Publisher<
             void(::ItemStack const&, ::ItemStack&, ::Actor&),
-            ::Bedrock::PubSub::ThreadModel::MultiThreaded>>>
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+            0>>>
                                                                mOnConsumePublisher;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnUseTimeDepletedSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnUseSubscription;
@@ -93,12 +91,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
-        ::std::optional<::SemVersion>          requiredToggles
-    );
-
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 

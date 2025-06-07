@@ -11,7 +11,7 @@ struct DiscoveryPacket : public ::NetherNet::DiscoveryPacketHeader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk571fe1;
+    ::ll::UntypedStorage<8, 8> mUnkb0714a;
     ::ll::UntypedStorage<1, 8> mUnkdd53a8;
     // NOLINTEND
 

@@ -16,25 +16,23 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk73b536;
     ::ll::UntypedStorage<8, 40> mUnk1a3f89;
     ::ll::UntypedStorage<8, 32> mUnkcacf96;
-    ::ll::UntypedStorage<8, 64> mUnk7a6a40;
+    ::ll::UntypedStorage<8, 64> mUnka6f161;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     SupportedScriptComponentFactoriesEntry& operator=(SupportedScriptComponentFactoriesEntry const&);
+    SupportedScriptComponentFactoriesEntry(SupportedScriptComponentFactoriesEntry const&);
     SupportedScriptComponentFactoriesEntry();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    SupportedScriptComponentFactoriesEntry(::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry const&);
-
     MCNAPI SupportedScriptComponentFactoriesEntry(
-        ::BaseGameVersion                   minVersion,
-        ::std::unordered_set<::std::string> supportedComponentTypeNames,
-        ::std::string                       prerelease,
-        ::std::optional<::BaseGameVersion>  maxVersionExclusive
+        ::BaseGameVersion                        minVersion,
+        ::std::unordered_set<::std::string_view> supportedComponentTypeNames,
+        ::std::string                            prerelease,
+        ::std::optional<::BaseGameVersion>       maxVersionExclusive
     );
 
     MCNAPI ~SupportedScriptComponentFactoriesEntry();
@@ -43,13 +41,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry const&);
-
     MCNAPI void* $ctor(
-        ::BaseGameVersion                   minVersion,
-        ::std::unordered_set<::std::string> supportedComponentTypeNames,
-        ::std::string                       prerelease,
-        ::std::optional<::BaseGameVersion>  maxVersionExclusive
+        ::BaseGameVersion                        minVersion,
+        ::std::unordered_set<::std::string_view> supportedComponentTypeNames,
+        ::std::string                            prerelease,
+        ::std::optional<::BaseGameVersion>       maxVersionExclusive
     );
     // NOLINTEND
 

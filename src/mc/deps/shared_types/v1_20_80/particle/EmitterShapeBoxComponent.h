@@ -25,6 +25,8 @@ public:
 
 public:
     // prevent constructor by default
+    EmitterShapeBoxComponent& operator=(EmitterShapeBoxComponent const&);
+    EmitterShapeBoxComponent(EmitterShapeBoxComponent const&);
     EmitterShapeBoxComponent();
 
 public:
@@ -34,21 +36,13 @@ public:
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
     // vIndex: 0
-    virtual ~EmitterShapeBoxComponent() /*override*/ = default;
+    virtual ~EmitterShapeBoxComponent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EmitterShapeBoxComponent(::SharedTypes::v1_20_80::EmitterShapeBoxComponent const&);
-
     MCNAPI EmitterShapeBoxComponent(::SharedTypes::v1_20_80::EmitterShapeBoxComponent&&);
-
-    MCNAPI ::SharedTypes::v1_20_80::EmitterShapeBoxComponent&
-    operator=(::SharedTypes::v1_20_80::EmitterShapeBoxComponent&&);
-
-    MCNAPI ::SharedTypes::v1_20_80::EmitterShapeBoxComponent&
-    operator=(::SharedTypes::v1_20_80::EmitterShapeBoxComponent const&);
     // NOLINTEND
 
 public:
@@ -66,9 +60,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeBoxComponent const&);
-
     MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeBoxComponent&&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

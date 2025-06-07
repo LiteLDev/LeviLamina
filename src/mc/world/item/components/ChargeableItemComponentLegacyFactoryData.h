@@ -17,13 +17,13 @@ struct ChargeableItemComponentLegacyFactoryData : public ::IItemComponentLegacyF
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 256> mUnkbe7d0d;
-    ::ll::UntypedStorage<4, 4>   mUnkf044a1;
+    ::ll::UntypedStorage<8, 56> mUnkbe7d0d;
+    ::ll::UntypedStorage<4, 4>  mUnkf044a1;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ChargeableItemComponentLegacyFactoryData(ChargeableItemComponentLegacyFactoryData const&);
+    ChargeableItemComponentLegacyFactoryData& operator=(ChargeableItemComponentLegacyFactoryData const&);
     ChargeableItemComponentLegacyFactoryData();
 
 public:
@@ -36,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ChargeableItemComponentLegacyFactoryData& operator=(::ChargeableItemComponentLegacyFactoryData const&);
+    MCAPI ChargeableItemComponentLegacyFactoryData(::ChargeableItemComponentLegacyFactoryData const&);
 
     MCAPI ::ChargeableItemComponentLegacyFactoryData& operator=(::ChargeableItemComponentLegacyFactoryData&&);
     // NOLINTEND
@@ -46,11 +46,17 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
-        ::std::optional<::SemVersion>          requiredToggles
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
 
     MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ChargeableItemComponentLegacyFactoryData const&);
     // NOLINTEND
 
 public:

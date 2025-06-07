@@ -33,15 +33,13 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FlatFileManifestInfo& operator=(FlatFileManifestInfo const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI FlatFileManifestInfo();
 
     MCNAPI FlatFileManifestInfo(::Core::FlatFileManifestInfo const&);
+
+    MCNAPI ::Core::FlatFileManifestInfo& operator=(::Core::FlatFileManifestInfo const&);
 
     MCNAPI ::Bedrock::Result<void> readFromStream(::ReadOnlyBinaryStream& manifestFileStream);
 

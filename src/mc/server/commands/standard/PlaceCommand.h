@@ -126,7 +126,7 @@ public:
     MCAPI static void setup(
         ::CommandRegistry&                                                    registry,
         ::std::unordered_map<::HashedString, ::BiomeDecorationFeature> const& biomeDecorationFeatures,
-        ::Experiments const&                                                  experiments
+        ::Experiments const&
     );
     // NOLINTEND
 

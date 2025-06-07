@@ -3,12 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { struct Error; }
+namespace Scripting { struct ClassBinding; }
 namespace SharedTypes::v1_21_50 { struct CameraAimAssistPresetDefinition; }
 // clang-format on
 
@@ -33,16 +32,15 @@ public:
     // NOLINTBEGIN
     MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const* _getPresetDefinition() const;
 
-    MCNAPI ::Scripting::Result<::std::optional<::std::string>, ::Scripting::Error> getDefaultItemSettings() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getDefaultItemSettings() const;
 
-    MCNAPI ::Scripting::Result<::std::vector<::std::string>, ::Scripting::Error> getExcludedTargets() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getExcludedTargets() const;
 
-    MCNAPI ::Scripting::Result<::std::optional<::std::string>, ::Scripting::Error> getHandSettings() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getHandSettings() const;
 
-    MCNAPI ::Scripting::Result<::std::unordered_map<::std::string, ::std::string>, ::Scripting::Error>
-    getItemSettings() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::unordered_map<::std::string, ::std::string>> getItemSettings() const;
 
-    MCNAPI ::Scripting::Result<::std::vector<::std::string>, ::Scripting::Error> getLiquidTargetingItems() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getLiquidTargetingItems() const;
 
     MCNAPI ::ScriptModuleMinecraft::ScriptAimAssistPreset& operator=(::ScriptModuleMinecraft::ScriptAimAssistPreset&&);
     // NOLINTEND
@@ -50,7 +48,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptAimAssistPreset> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

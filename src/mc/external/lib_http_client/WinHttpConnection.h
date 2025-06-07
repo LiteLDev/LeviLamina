@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/Result.h"
 #include "mc/deps/core/threading/XAsyncOp.h"
 #include "mc/external/lib_http_client/HCWebSocketCloseStatus.h"
+#include "mc/external/lib_http_client/Result.h"
 #include "mc/external/lib_http_client/proxy_type.h"
 
 // auto generated forward declare list
@@ -29,6 +29,10 @@ public:
 
     // WinHttpConnection inner types define
     struct WebSocketSendContext {};
+
+public:
+    // prevent constructor by default
+    WinHttpConnection();
 
 public:
     // member functions
@@ -57,6 +61,13 @@ public:
 
     MCNAPI long WebSocketSendMessageAsync(::XAsyncBlock*, uchar const*, uint64, ::_WINHTTP_WEB_SOCKET_BUFFER_TYPE);
 
+    MCNAPI WinHttpConnection(
+        void*,
+        ::HC_CALL*,
+        ::xbox::httpclient::proxy_type,
+        ::xbox::httpclient::XPlatSecurityInformation&&
+    );
+
     MCNAPI void complete_task(long, uint);
 
     MCNAPI void on_websocket_disconnected(ushort);
@@ -65,10 +76,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Result<::std::shared_ptr<::xbox::httpclient::WinHttpConnection>>
+    MCNAPI static ::xbox::httpclient::Result<::std::shared_ptr<::xbox::httpclient::WinHttpConnection>>
     Initialize(void*, ::HC_CALL*, ::xbox::httpclient::proxy_type, ::xbox::httpclient::XPlatSecurityInformation&&);
 
-    MCNAPI static ::Result<::std::shared_ptr<::xbox::httpclient::WinHttpConnection>> Initialize(
+    MCNAPI static ::xbox::httpclient::Result<::std::shared_ptr<::xbox::httpclient::WinHttpConnection>> Initialize(
         void*,
         ::HC_WEBSOCKET_OBSERVER*,
         char const*,
@@ -82,6 +93,8 @@ public:
     MCNAPI static long WebSocketSendProvider(::XAsyncOp, ::XAsyncProviderData const*);
 
     MCNAPI static void _multiple_segment_write_data(::xbox::httpclient::WinHttpConnection*);
+
+    MCNAPI static void callback_status_data_available(void*, ::xbox::httpclient::WinHttpConnection*, void*);
 
     MCNAPI static void callback_status_headers_available(void*, ::xbox::httpclient::WinHttpConnection*, void*);
 
@@ -98,6 +111,13 @@ public:
     MCNAPI static uint parse_status_code(::HC_CALL*, void*, ::xbox::httpclient::WinHttpConnection*);
 
     MCNAPI static void read_next_response_chunk(::xbox::httpclient::WinHttpConnection*, ulong);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(void*, ::HC_CALL*, ::xbox::httpclient::proxy_type, ::xbox::httpclient::XPlatSecurityInformation&&);
     // NOLINTEND
 
 public:

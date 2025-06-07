@@ -5,14 +5,10 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
-#include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-class SemVersion;
-namespace Bedrock::PubSub { class Subscription; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class UseModifiersItemComponent : public ::NetworkedItemComponent<::UseModifiersItemComponent> {
@@ -37,12 +33,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
-        ::std::optional<::SemVersion>          requiredToggles
-    );
-
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 

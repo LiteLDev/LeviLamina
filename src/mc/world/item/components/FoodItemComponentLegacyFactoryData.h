@@ -16,17 +16,17 @@ struct FoodItemComponentLegacyFactoryData : public ::IItemComponentLegacyFactory
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk31717e;
-    ::ll::UntypedStorage<4, 4>   mUnkda2c2f;
-    ::ll::UntypedStorage<8, 16>  mUnkd22262;
-    ::ll::UntypedStorage<1, 1>   mUnk82f616;
-    ::ll::UntypedStorage<8, 256> mUnk178e77;
+    ::ll::UntypedStorage<4, 4>  mUnk31717e;
+    ::ll::UntypedStorage<4, 4>  mUnkda2c2f;
+    ::ll::UntypedStorage<8, 16> mUnkd22262;
+    ::ll::UntypedStorage<1, 1>  mUnk82f616;
+    ::ll::UntypedStorage<8, 56> mUnk178e77;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     FoodItemComponentLegacyFactoryData& operator=(FoodItemComponentLegacyFactoryData const&);
-    FoodItemComponentLegacyFactoryData(FoodItemComponentLegacyFactoryData const&);
+    FoodItemComponentLegacyFactoryData();
 
 public:
     // virtual functions
@@ -38,7 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FoodItemComponentLegacyFactoryData();
+    MCAPI FoodItemComponentLegacyFactoryData(::FoodItemComponentLegacyFactoryData const&);
     // NOLINTEND
 
 public:
@@ -46,15 +46,15 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
-        ::std::optional<::SemVersion>          requiredToggles
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::FoodItemComponentLegacyFactoryData const&);
     // NOLINTEND
 
 public:

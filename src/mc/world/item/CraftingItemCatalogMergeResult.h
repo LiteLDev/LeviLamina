@@ -62,11 +62,12 @@ public:
         // prevent constructor by default
         Group& operator=(Group const&);
         Group(Group const&);
+        Group();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Group();
+        MCNAPI Group(::CraftingItemCatalogMergeResult::Group&&);
 
         MCNAPI ::CraftingItemCatalogMergeResult::Group& operator=(::CraftingItemCatalogMergeResult::Group&&);
 
@@ -76,7 +77,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor();
+        MCNAPI void* $ctor(::CraftingItemCatalogMergeResult::Group&&);
         // NOLINTEND
 
     public:
@@ -132,9 +133,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void insertAfterItemsGroup(
-        ::SharedTypes::v1_21_60::CraftingCatalogItemCategory itemName,
-        ::std::string_view                                   insertGroup,
-        ::CraftingItemCatalogMergeResult::Group              itemCategory
+        ::SharedTypes::v1_21_60::CraftingCatalogItemCategory itemCategory,
+        ::std::string_view                                   itemName,
+        ::CraftingItemCatalogMergeResult::Group              insertGroup
     );
 
     MCNAPI ~CraftingItemCatalogMergeResult();

@@ -11,8 +11,6 @@ namespace SharedTypes::v1_21_10 {
 // functions
 // NOLINTBEGIN
 MCNAPI void bindCoordinateEvaluationOrder(::cereal::ReflectionCtx& ctx);
-
-MCNAPI void bindItemComponentTypes(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
 } // namespace SharedTypes::v1_21_10

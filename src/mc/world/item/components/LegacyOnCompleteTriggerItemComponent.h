@@ -19,8 +19,8 @@ class LegacyOnCompleteTriggerItemComponent : public ::LegacyTriggerItemComponent
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mOnUseTimeDepletedSubscription;
-    ::ll::TypedStorage<8, 264, ::std::optional<::DefinitionTrigger>> mOnComplete;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>      mOnUseTimeDepletedSubscription;
+    ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>> mOnComplete;
     // NOLINTEND
 
 public:

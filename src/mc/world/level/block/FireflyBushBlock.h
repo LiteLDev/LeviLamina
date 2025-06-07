@@ -14,7 +14,7 @@ class FireflyBushBlock : public ::BushBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 124
+    // vIndex: 123
     virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 0

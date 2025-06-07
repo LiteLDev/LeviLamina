@@ -19,7 +19,7 @@ struct MolangEvalParams {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, uint64>                            mPC;
+    ::ll::TypedStorage<4, 4, uint>                              mPC;
     ::ll::TypedStorage<8, 8, ::MolangScriptArg const*>          mRet;
     ::ll::TypedStorage<8, 56, ::MolangVariableMap>              mTempVariables;
     ::ll::TypedStorage<8, 56, ::MolangVariableMap>              mContextVariables;

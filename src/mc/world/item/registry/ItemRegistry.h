@@ -129,17 +129,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ItemHashAlias(uint64 nameHash, ::BaseGameVersion const& version);
-
-        MCNAPI ::ItemRegistry::ItemHashAlias& operator=(::ItemRegistry::ItemHashAlias&&);
-
         MCNAPI ~ItemHashAlias();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(uint64 nameHash, ::BaseGameVersion const& version);
         // NOLINTEND
 
     public:
@@ -202,7 +192,7 @@ public:
     ::ll::TypedStorage<
         8,
         8,
-        ::std::unique_ptr<::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>>
+        ::std::unique_ptr<::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>>
                                                                               mFinishedInitServerPublisher;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::std::atomic<int>>>          mCanUpdateTags;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedPtr<::Item>>>             mDeadItemRegistry;

@@ -59,12 +59,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void sendToPrimaryClient(::NetworkIdentifier const& id, ::Packet const& packet);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 

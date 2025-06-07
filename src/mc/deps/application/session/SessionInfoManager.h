@@ -52,7 +52,13 @@ public:
     virtual ::std::shared_ptr<::Bedrock::SessionInfo> deserializeSession(::std::string_view) const = 0;
 
     // vIndex: 0
-    virtual ~SessionInfoManager() /*override*/ = default;
+    virtual ~SessionInfoManager() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

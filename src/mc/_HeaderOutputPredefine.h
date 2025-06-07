@@ -218,11 +218,21 @@ class ThreadLocalObject;
 }
 
 namespace Core {
-template <typename T0, typename T1>
+template <typename... Params>
 class CallbackListeners {
 public:
     class Listener {};
 };
+template <typename TKey, typename TValue, typename TValuePtr, typename... TNewInstanceArgs>
+class LRUCache {
+public:
+    void* mUnk[14];
+};
+}
+
+namespace Puv {
+template <typename From, typename To, typename CustomData>
+class CerealUpgrader;
 }
 
 namespace Social {

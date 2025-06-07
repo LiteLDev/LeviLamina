@@ -26,7 +26,7 @@ public:
         ::br::worldgen::GenerationContext&        context,
         ::br::worldgen::WorldGenContext const&    worldGenContext,
         ::std::string_view                        startPool,
-        ::std::string_view                        anchorName,
+        ::std::string_view                        startJigsawName,
         int                                       maxDepth,
         ::BlockPos                                startPos,
         ::br::worldgen::HeightmapProjection::Type heightmapProjection,

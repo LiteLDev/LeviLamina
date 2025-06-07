@@ -161,5 +161,6 @@ enum class BlockShape : int {
     Eyeblossom                  = 154,
     DoublesidedWideCrossTexture = 155,
     FireflyBush                 = 156,
-    Count                       = 157,
+    DriedGhast                  = 157,
+    Count                       = 158,
 };

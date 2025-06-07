@@ -53,6 +53,8 @@ public:
 
     MCNAPI static ::ItemTag const& HangingSign();
 
+    MCNAPI static ::ItemTag const& Harness();
+
     MCNAPI static ::ItemTag const& Hatchet();
 
     MCNAPI static ::ItemTag const& Hoe();

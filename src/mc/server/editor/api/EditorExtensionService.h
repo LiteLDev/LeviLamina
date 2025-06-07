@@ -6,7 +6,6 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/deps/scripting/script_engine/Closure.h"
 #include "mc/editor/script/ServerScriptPackType.h"
@@ -17,6 +16,7 @@
 // clang-format off
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor::API { class EditorExtension; }
 namespace Editor::API { class EditorExtensionContext; }
 namespace Editor::API { struct EditorExtensionOptionalParameters; }
@@ -34,8 +34,8 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk35849b;
     ::ll::UntypedStorage<8, 24> mUnkc7b66d;
     ::ll::UntypedStorage<8, 24> mUnk988000;
-    ::ll::UntypedStorage<8, 48> mUnk618abb;
-    ::ll::UntypedStorage<8, 48> mUnk54deb9;
+    ::ll::UntypedStorage<8, 48> mUnkf52108;
+    ::ll::UntypedStorage<8, 48> mUnkdbb512;
     ::ll::UntypedStorage<8, 16> mUnkf82241;
     // NOLINTEND
 
@@ -52,13 +52,13 @@ public:
     virtual ~EditorExtensionService() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void> ready() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> quit() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
@@ -100,25 +100,33 @@ public:
 
     // vIndex: 7
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> registerForScriptSystemRebuildEvent(
-        ::std::function<::Scripting::Result<void>(::std::optional<::Scripting::ContextId>)> handler
+        ::std::function<::Scripting::Result_deprecated<void>(::std::optional<::Scripting::ContextId>)> handler
     ) /*override*/;
 
     // vIndex: 8
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-    registerForScriptSystemTeardownEvent(::std::function<::Scripting::Result<void>()> handler) /*override*/;
+    registerForScriptSystemTeardownEvent(::std::function<::Scripting::Result_deprecated<void>()> handler) /*override*/;
 
     // vIndex: 9
-    virtual ::Scripting::Result<void> destroyRegisteredExtensions() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> destroyRegisteredExtensions() /*override*/;
 
     // vIndex: 10
-    virtual ::Scripting::Result<void>
+    virtual ::Scripting::Result_deprecated<void>
     createExtensionContexts(::Scripting::ContextId contextId, bool finalEvent) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit EditorExtensionService(::Editor::ServiceProviderCollection& providers);
+
     MCNAPI void _sortExtensionListIntoExecutionOrder();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
@@ -130,11 +138,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result_deprecated<void> $ready();
 
-    MCNAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
     MCNAPI ::std::string_view $getServiceName() const;
 
@@ -165,15 +173,16 @@ public:
     $forEachExtensionReverse(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func);
 
     MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $registerForScriptSystemRebuildEvent(
-        ::std::function<::Scripting::Result<void>(::std::optional<::Scripting::ContextId>)> handler
+        ::std::function<::Scripting::Result_deprecated<void>(::std::optional<::Scripting::ContextId>)> handler
     );
 
     MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-    $registerForScriptSystemTeardownEvent(::std::function<::Scripting::Result<void>()> handler);
+    $registerForScriptSystemTeardownEvent(::std::function<::Scripting::Result_deprecated<void>()> handler);
 
-    MCNAPI ::Scripting::Result<void> $destroyRegisteredExtensions();
+    MCNAPI ::Scripting::Result_deprecated<void> $destroyRegisteredExtensions();
 
-    MCNAPI ::Scripting::Result<void> $createExtensionContexts(::Scripting::ContextId contextId, bool finalEvent);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $createExtensionContexts(::Scripting::ContextId contextId, bool finalEvent);
     // NOLINTEND
 
 public:

@@ -71,28 +71,28 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnkb22c58;
-    ::ll::UntypedStorage<8, 216> mUnk517d2c;
-    ::ll::UntypedStorage<4, 4>   mUnkc4a96b;
-    ::ll::UntypedStorage<4, 4>   mUnk309cc7;
-    ::ll::UntypedStorage<4, 8>   mUnkc49fd4;
-    ::ll::UntypedStorage<4, 8>   mUnkfcde6a;
-    ::ll::UntypedStorage<4, 8>   mUnk7fcf24;
-    ::ll::UntypedStorage<4, 8>   mUnkd31917;
-    ::ll::UntypedStorage<4, 4>   mUnk981efd;
-    ::ll::UntypedStorage<4, 4>   mUnk92ad90;
-    ::ll::UntypedStorage<4, 4>   mUnkfe575b;
-    ::ll::UntypedStorage<4, 4>   mUnk2cca96;
-    ::ll::UntypedStorage<4, 4>   mUnk1f73a7;
-    ::ll::UntypedStorage<4, 4>   mUnk1b5461;
-    ::ll::UntypedStorage<4, 4>   mUnkc07cc0;
-    ::ll::UntypedStorage<4, 4>   mUnk2d5fac;
-    ::ll::UntypedStorage<4, 4>   mUnkb74db5;
-    ::ll::UntypedStorage<8, 32>  mUnk2b3090;
-    ::ll::UntypedStorage<8, 64>  mUnk72d7de;
-    ::ll::UntypedStorage<8, 80>  mUnkd9c652;
-    ::ll::UntypedStorage<4, 4>   mUnk31fc06;
-    ::ll::UntypedStorage<1, 1>   mUnke54e3a;
+    ::ll::UntypedStorage<8, 8>  mUnkb22c58;
+    ::ll::UntypedStorage<8, 16> mUnk517d2c;
+    ::ll::UntypedStorage<4, 4>  mUnkc4a96b;
+    ::ll::UntypedStorage<4, 4>  mUnk309cc7;
+    ::ll::UntypedStorage<4, 8>  mUnkc49fd4;
+    ::ll::UntypedStorage<4, 8>  mUnkfcde6a;
+    ::ll::UntypedStorage<4, 8>  mUnk7fcf24;
+    ::ll::UntypedStorage<4, 8>  mUnkd31917;
+    ::ll::UntypedStorage<4, 4>  mUnk981efd;
+    ::ll::UntypedStorage<4, 4>  mUnk92ad90;
+    ::ll::UntypedStorage<4, 4>  mUnkfe575b;
+    ::ll::UntypedStorage<4, 4>  mUnk2cca96;
+    ::ll::UntypedStorage<4, 4>  mUnk1f73a7;
+    ::ll::UntypedStorage<4, 4>  mUnk1b5461;
+    ::ll::UntypedStorage<4, 4>  mUnkc07cc0;
+    ::ll::UntypedStorage<4, 4>  mUnk2d5fac;
+    ::ll::UntypedStorage<4, 4>  mUnkb74db5;
+    ::ll::UntypedStorage<8, 32> mUnk2b3090;
+    ::ll::UntypedStorage<8, 64> mUnk72d7de;
+    ::ll::UntypedStorage<8, 80> mUnkd9c652;
+    ::ll::UntypedStorage<4, 4>  mUnk31fc06;
+    ::ll::UntypedStorage<1, 1>  mUnke54e3a;
     // NOLINTEND
 
 public:
@@ -104,7 +104,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CaveFeature() /*override*/ = default;
+    virtual ~CaveFeature() /*override*/;
 
     // vIndex: 1
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
@@ -200,6 +200,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

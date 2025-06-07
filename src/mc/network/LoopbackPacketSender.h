@@ -72,7 +72,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isInitialized() const;
+    MCFOLD bool $isInitialized() const;
 
     MCAPI void $send(::Packet& packet);
 

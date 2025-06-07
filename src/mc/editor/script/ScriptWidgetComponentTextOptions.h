@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 #include "mc/editor/script/ScriptWidgetComponentBaseOptions.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptRGBA; }
+namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -22,27 +22,30 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptWidgetComponentTextOptions(ScriptWidgetComponentTextOptions const&);
     ScriptWidgetComponentTextOptions();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~ScriptWidgetComponentTextOptions() /*override*/;
+    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptWidgetComponentTextOptions(::Editor::ScriptModule::ScriptWidgetComponentTextOptions const&);
-
     MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentTextOptions&
     operator=(::Editor::ScriptModule::ScriptWidgetComponentTextOptions&&);
 
     MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentTextOptions&
     operator=(::Editor::ScriptModule::ScriptWidgetComponentTextOptions const&);
-
-    MCNAPI ~ScriptWidgetComponentTextOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentTextOptions>
-    bindScript();
+    MCNAPI static ::Scripting::InterfaceBinding bindScript();
     // NOLINTEND
 
 public:
@@ -52,15 +55,15 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentTextOptions const&);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

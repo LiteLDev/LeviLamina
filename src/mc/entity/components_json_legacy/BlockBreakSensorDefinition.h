@@ -16,4 +16,16 @@ public:
     BlockBreakSensorDefinition& operator=(BlockBreakSensorDefinition const&);
     BlockBreakSensorDefinition(BlockBreakSensorDefinition const&);
     BlockBreakSensorDefinition();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~BlockBreakSensorDefinition();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };

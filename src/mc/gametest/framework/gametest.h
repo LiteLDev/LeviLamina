@@ -2,14 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/gametest/framework/GameTestErrorType.h"
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct EnumBinding; }
+// clang-format on
 
 namespace gametest {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Scripting::EnumBindingBuilder<::std::string, ::gametest::GameTestErrorType> bindGameTestErrorType();
+MCNAPI ::Scripting::EnumBinding bindGameTestErrorType();
 // NOLINTEND
 
 // static variables

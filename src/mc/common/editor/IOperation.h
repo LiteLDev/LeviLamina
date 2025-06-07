@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,10 +23,10 @@ public:
     virtual ::std::string_view getName() = 0;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void> _undo(::Editor::ServiceProviderCollection&) = 0;
+    virtual ::Scripting::Result_deprecated<void> _undo(::Editor::ServiceProviderCollection&) = 0;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> _redo(::Editor::ServiceProviderCollection&) = 0;
+    virtual ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection&) = 0;
     // NOLINTEND
 
 public:

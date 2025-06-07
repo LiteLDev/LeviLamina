@@ -8,7 +8,6 @@
 #include "mc/world/level/chunk/ChunkSource.h"
 #include "mc/world/level/chunk/LevelChunkFormat.h"
 #include "mc/world/level/storage/ConsoleChunkBlender.h"
-#include "mc/world/level/storage/db_helpers/Category.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -163,14 +162,6 @@ public:
         ::DBStorage&                     storage,
         ::Scheduler&                     scheduler,
         ::Experiments const&             experiments
-    );
-
-    MCAPI void _batchPut(
-        ::LevelStorageWriteBatch& batch,
-        ::std::string const&      key,
-        ::std::string&&           buffer,
-        ::DBHelpers::Category     category,
-        ::std::string_view        reason
     );
 
     MCAPI ::std::pair<bool, ::std::shared_ptr<::BlendingData>> _cacheSeamlessChunkBlendingData(

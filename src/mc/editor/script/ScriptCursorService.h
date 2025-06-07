@@ -3,9 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
@@ -13,7 +11,7 @@
 class Vec3;
 namespace Editor::ScriptModule { class ScriptCursorProperties; }
 namespace Editor::ScriptModule { class ScriptCursorRay; }
-namespace Scripting { struct Error; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -41,21 +39,22 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<::Editor::ScriptModule::ScriptCursorProperties> getProperties() const;
 
-    MCNAPI ::Scripting::Result<::Editor::ScriptModule::ScriptCursorRay, ::Scripting::Error> getRay() const;
+    MCNAPI ::Scripting::Result_deprecated<::Editor::ScriptModule::ScriptCursorRay> getRay() const;
 
     MCNAPI ::Scripting::Result_deprecated<bool> isVisible() const;
 
     MCNAPI ::Scripting::Result_deprecated<::Vec3> moveBy(::glm::ivec3 const& offset);
 
-    MCNAPI ::Scripting::Result<void> setProperties(::Editor::ScriptModule::ScriptCursorProperties const& properties);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    setProperties(::Editor::ScriptModule::ScriptCursorProperties const& properties);
 
-    MCNAPI ::Scripting::Result<void> setVisible(bool value);
+    MCNAPI ::Scripting::Result_deprecated<void> setVisible(bool value);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptCursorService> bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 };
 

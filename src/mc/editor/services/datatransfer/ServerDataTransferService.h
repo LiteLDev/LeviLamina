@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/serviceproviders/ServerDataTransferServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
@@ -14,15 +14,14 @@ namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class DataTransferServiceDataRequestResponsePayload; }
 namespace Editor::Network { class DataTransferServiceRegisterCollectionPayload; }
 namespace Editor::ScriptModule { class ScriptTransferCollectionNameData; }
-namespace Scripting { struct Error; }
 namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Services {
 
 class ServerDataTransferService : public ::Editor::Services::IEditorService,
-                                  public ::Editor::Services::PayloadStoreHelper,
-                                  public ::Editor::Services::ServerDataTransferServiceProvider {
+                                  public ::Editor::Services::ServerDataTransferServiceProvider,
+                                  public ::Editor::Services::PayloadStoreHelper {
 public:
     // ServerDataTransferService inner types declare
     // clang-format off
@@ -105,10 +104,10 @@ public:
     virtual ~ServerDataTransferService() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> quit() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
@@ -120,15 +119,15 @@ public:
     ) /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result<::std::string const, ::Scripting::Error>
+    virtual ::Scripting::Result_deprecated<::std::string const>
     requestSchema(::std::string const& collectionName) /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void>
+    virtual ::Scripting::Result_deprecated<void>
     sendData(::std::string const& collectionName, ::std::string const& jsonData) /*override*/;
 
     // vIndex: 4
-    virtual ::Scripting::Result<void> sendDataToClipboard(::std::string const& jsonData) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> sendDataToClipboard(::std::string const& jsonData) /*override*/;
 
     // vIndex: 5
     virtual ::std::vector<::Editor::ScriptModule::ScriptTransferCollectionNameData> getRegisteredCollections() const
@@ -164,9 +163,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
     MCNAPI ::std::string_view $getServiceName() const;
 
@@ -175,12 +174,12 @@ public:
         ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::string const&)> const& callback
     );
 
-    MCNAPI ::Scripting::Result<::std::string const, ::Scripting::Error>
-    $requestSchema(::std::string const& collectionName);
+    MCNAPI ::Scripting::Result_deprecated<::std::string const> $requestSchema(::std::string const& collectionName);
 
-    MCNAPI ::Scripting::Result<void> $sendData(::std::string const& collectionName, ::std::string const& jsonData);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $sendData(::std::string const& collectionName, ::std::string const& jsonData);
 
-    MCNAPI ::Scripting::Result<void> $sendDataToClipboard(::std::string const& jsonData);
+    MCNAPI ::Scripting::Result_deprecated<void> $sendDataToClipboard(::std::string const& jsonData);
 
     MCNAPI ::std::vector<::Editor::ScriptModule::ScriptTransferCollectionNameData> $getRegisteredCollections() const;
     // NOLINTEND

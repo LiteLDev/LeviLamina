@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/selection/PayloadServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
@@ -99,7 +98,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnke68287;
+    ::ll::UntypedStorage<8, 64> mUnk261442;
     ::ll::UntypedStorage<8, 64> mUnk633e21;
     ::ll::UntypedStorage<1, 1>  mUnk880d81;
     ::ll::UntypedStorage<8, 24> mUnk5cce2e;
@@ -120,16 +119,17 @@ public:
     virtual ~PayloadService() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> quit() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> dispatchToSelf(::Editor::Network::INetworkPayload& payload) /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    dispatchToSelf(::Editor::Network::INetworkPayload& payload) /*override*/;
 
     // vIndex: 2
     virtual void onReceivePayload(::EditorNetworkPacket const& packet) /*override*/;
@@ -141,16 +141,18 @@ public:
     ) /*override*/;
 
     // vIndex: 4
-    virtual ::Scripting::Result<void> _send(::Editor::Network::INetworkPayload& payload) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> _send(::Editor::Network::INetworkPayload& payload) /*override*/;
 
     // vIndex: 5
-    virtual ::Scripting::Result<void> _sendToManager(::Editor::Network::INetworkPayload& payload) /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    _sendToManager(::Editor::Network::INetworkPayload& payload) /*override*/;
 
     // vIndex: 6
-    virtual ::Scripting::Result<void> _broadcastToClients(::Editor::Network::INetworkPayload& payload) /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    _broadcastToClients(::Editor::Network::INetworkPayload& payload) /*override*/;
 
     // vIndex: 7
-    virtual ::Scripting::Result<void>
+    virtual ::Scripting::Result_deprecated<void>
     _broadcastToClientManagers(::Editor::Network::INetworkPayload& payload) /*override*/;
 
     // vIndex: 8
@@ -171,10 +173,10 @@ public:
     );
 
     MCNAPI ::Bedrock::PubSub::
-        Publisher<void(::Editor::Network::INetworkPayload const&), ::Bedrock::PubSub::ThreadModel::SingleThreaded>*
+        Publisher<void(::Editor::Network::INetworkPayload const&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>*
         _findOrCreatePublisher(uint hashVal);
 
-    MCNAPI ::std::shared_ptr<::Editor::Network::INetworkPayload> _load(::CompoundTag const* data);
+    MCNAPI ::std::shared_ptr<::Editor::Network::INetworkPayload> _load(::CompoundTag const* dataContainer);
 
     MCNAPI ::Scripting::Result_deprecated<::EditorNetworkPacket>
     _populatePacket(::Editor::Network::INetworkPayload* payload, ::Editor::Network::PayloadService::SendTarget target);
@@ -184,13 +186,13 @@ public:
         ::std::function<::std::shared_ptr<::Editor::Network::INetworkPayload>()> constructorFunc
     );
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     _sendToClient(::Editor::Network::INetworkPayload& payload, ::Editor::Network::PayloadService::SendTarget target);
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     _sendToServer(::Editor::Network::INetworkPayload& payload, ::Editor::Network::PayloadService::SendTarget target);
 
-    MCNAPI ::Scripting::Result<void> _sendToTarget(
+    MCNAPI ::Scripting::Result_deprecated<void> _sendToTarget(
         ::Actor*                                      actor,
         ::EditorNetworkPacket&                        outPacket,
         ::Editor::Network::PayloadService::SendTarget toWhom
@@ -223,13 +225,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI ::Scripting::Result<void> $dispatchToSelf(::Editor::Network::INetworkPayload& payload);
+    MCNAPI ::Scripting::Result_deprecated<void> $dispatchToSelf(::Editor::Network::INetworkPayload& payload);
 
     MCNAPI void $onReceivePayload(::EditorNetworkPacket const& packet);
 
@@ -238,13 +240,14 @@ public:
         ::std::function<::std::shared_ptr<::Editor::Network::INetworkPayload>()> constructorFunc
     );
 
-    MCNAPI ::Scripting::Result<void> $_send(::Editor::Network::INetworkPayload& payload);
+    MCNAPI ::Scripting::Result_deprecated<void> $_send(::Editor::Network::INetworkPayload& payload);
 
-    MCNAPI ::Scripting::Result<void> $_sendToManager(::Editor::Network::INetworkPayload& payload);
+    MCNAPI ::Scripting::Result_deprecated<void> $_sendToManager(::Editor::Network::INetworkPayload& payload);
 
-    MCNAPI ::Scripting::Result<void> $_broadcastToClients(::Editor::Network::INetworkPayload& payload);
+    MCNAPI ::Scripting::Result_deprecated<void> $_broadcastToClients(::Editor::Network::INetworkPayload& payload);
 
-    MCNAPI ::Scripting::Result<void> $_broadcastToClientManagers(::Editor::Network::INetworkPayload& payload);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $_broadcastToClientManagers(::Editor::Network::INetworkPayload& payload);
 
     MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     $_listenFor(char const* payloadName, ::std::function<void(::Editor::Network::INetworkPayload const&)> func);

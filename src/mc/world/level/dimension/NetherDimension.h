@@ -69,10 +69,10 @@ public:
     // vIndex: 19
     virtual void fixWallChunk(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
-    // vIndex: 37
+    // vIndex: 39
     virtual void _upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers) /*override*/;
 
-    // vIndex: 38
+    // vIndex: 40
     virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(
         ::std::unique_ptr<::ChunkSource> storageSource,
         ::StorageVersion                 levelVersion

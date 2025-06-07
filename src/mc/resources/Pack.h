@@ -21,21 +21,21 @@ class PackReport;
 class PackSourceReport;
 class ResourceLocation;
 class SubpackInfoCollection;
-struct LegacyDependenciesUpgrade;
 namespace Core { class Path; }
+namespace PackCommand { struct UpgradeLegacyDependencies; }
 // clang-format on
 
 class Pack : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackManifest>>                    mManifest;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackAccessStrategy>>              mAccessStrategy;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SubpackInfoCollection>>           mSubpackInfoStack;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackMetadata>>                    mMetadata;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LegacyDependenciesUpgrade const>> mDependenciesUpgrade;
-    ::ll::TypedStorage<8, 16, ::std::map<void*, ::std::function<void(::Pack&)>>>   mPackUpdatedCallbacks;
-    ::ll::TypedStorage<8, 16, ::std::map<void*, ::std::function<void(::Pack&)>>>   mPackDeletedCallbacks;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackManifest>>                                 mManifest;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackAccessStrategy>>                           mAccessStrategy;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SubpackInfoCollection>>                        mSubpackInfoStack;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackMetadata>>                                 mMetadata;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackCommand::UpgradeLegacyDependencies const>> mDependenciesUpgrade;
+    ::ll::TypedStorage<8, 16, ::std::map<void*, ::std::function<void(::Pack&)>>>                mPackUpdatedCallbacks;
+    ::ll::TypedStorage<8, 16, ::std::map<void*, ::std::function<void(::Pack&)>>>                mPackDeletedCallbacks;
     // NOLINTEND
 
 public:
@@ -63,9 +63,7 @@ public:
 
     MCAPI void move(::Pack&& pack);
 
-    MCAPI void notifyUpdated();
-
-    MCAPI void upgradeLegacyDependencies(::std::unique_ptr<::LegacyDependenciesUpgrade const> upgrade);
+    MCAPI void upgradeLegacyDependencies(::std::unique_ptr<::PackCommand::UpgradeLegacyDependencies const> upgrade);
     // NOLINTEND
 
 public:

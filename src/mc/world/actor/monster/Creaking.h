@@ -22,7 +22,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
     MCFOLD bool $checkSpawnRules(bool);
     // NOLINTEND

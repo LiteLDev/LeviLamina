@@ -36,22 +36,6 @@ public:
         ::std::optional<::Bedrock::LogLevel> mLogLevel;
         ::std::optional<::LogAreaID>         mLogArea;
         // NOLINTEND
-
-    public:
-        Context& operator=(Context const&) = default;
-        Context(Context const&)            = default;
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI Context(::Bedrock::CallStack::Context&&);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::Bedrock::CallStack::Context&&);
-        // NOLINTEND
     };
 
     struct FrameWithContext {

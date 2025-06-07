@@ -84,8 +84,6 @@ public:
 
     MCNAPI void _useBreedItem(::Actor& owner, ::Player& player, ::ItemStack const&);
 
-    MCNAPI bool canMate(::Actor const& owner, ::Actor const& partner) const;
-
     MCNAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
     MCNAPI ::Player* getLoveCause(::Actor const& owner) const;

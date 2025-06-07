@@ -113,6 +113,7 @@ public:
         ::IMinecraftEventing::StoreType,
         ::std::string const&,
         ::std::string const&,
+        ::std::optional<uint64>,
         ::std::function<void(::TransactionStatus)>
     ) = 0;
 

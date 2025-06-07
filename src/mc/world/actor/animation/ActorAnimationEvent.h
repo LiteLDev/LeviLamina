@@ -6,7 +6,7 @@
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/molang/MolangVersion.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
-#include "mc/util/ExpressionNode.h"
+#include "mc/util/molang/ExpressionNode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,7 +18,7 @@ class ActorAnimationEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 216, ::ExpressionNode>  mExpression;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode>   mExpression;
     ::ll::TypedStorage<8, 48, ::HashedString>     mCommand;
     ::ll::TypedStorage<4, 4, ::CurrentCmdVersion> mCommandVersion;
     ::ll::TypedStorage<8, 32, ::std::string>      mEvent;
@@ -28,13 +28,12 @@ public:
 public:
     // prevent constructor by default
     ActorAnimationEvent& operator=(ActorAnimationEvent const&);
+    ActorAnimationEvent(ActorAnimationEvent const&);
     ActorAnimationEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorAnimationEvent(::ActorAnimationEvent const&);
-
     MCNAPI ActorAnimationEvent(
         float                time,
         ::std::string const& event,
@@ -52,8 +51,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ActorAnimationEvent const&);
-
     MCNAPI void*
     $ctor(float time, ::std::string const& event, ::CurrentCmdVersion commandVersion, ::MolangVersion molangVersion);
     // NOLINTEND

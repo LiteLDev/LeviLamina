@@ -54,6 +54,9 @@ public:
 
     // vIndex: 12
     virtual void error(::std::string const&, ::CodeBuilder::ErrorMessage const&) = 0;
+
+    // vIndex: 13
+    virtual bool tutorialCached(::std::string const&) = 0;
     // NOLINTEND
 
 public:

@@ -3,10 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/EditorRealmsServiceAvailability.h"
 #include "mc/common/editor/EditorRealmsServiceProvider.h"
 #include "mc/common/editor/RealmsServiceStatus.h"
 #include "mc/common/editor/RealmsWorldUploadResult.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
 
@@ -23,19 +24,19 @@ namespace Editor::Services { struct EditorRealmsWorldSlot; }
 namespace Editor::Services {
 
 class EditorRealmsService : public ::Editor::Services::IEditorService,
-                            public ::Editor::Services::PayloadStoreHelper,
-                            public ::Editor::Services::EditorRealmsServiceProvider {
+                            public ::Editor::Services::EditorRealmsServiceProvider,
+                            public ::Editor::Services::PayloadStoreHelper {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkfece8a;
     ::ll::UntypedStorage<8, 24> mUnkd35a23;
     ::ll::UntypedStorage<4, 4>  mUnk671b06;
-    ::ll::UntypedStorage<1, 1>  mUnk3b2eef;
+    ::ll::UntypedStorage<4, 4>  mUnk529e3a;
     ::ll::UntypedStorage<8, 16> mUnk82d02c;
-    ::ll::UntypedStorage<8, 48> mUnka82a4e;
-    ::ll::UntypedStorage<8, 48> mUnkde2986;
-    ::ll::UntypedStorage<8, 48> mUnke7e923;
+    ::ll::UntypedStorage<8, 48> mUnk12beb6;
+    ::ll::UntypedStorage<8, 48> mUnkf6dc65;
+    ::ll::UntypedStorage<8, 48> mUnkf4e06e;
     // NOLINTEND
 
 public:
@@ -51,13 +52,13 @@ public:
     virtual ~EditorRealmsService() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> quit() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void> ready() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
     // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
@@ -116,7 +117,7 @@ public:
     virtual bool const canUploadWorld() const /*override*/;
 
     // vIndex: 15
-    virtual bool const isRealmsServiceAvailable() const /*override*/;
+    virtual ::Editor::Services::EditorRealmsServiceAvailability const isRealmsServiceAvailable() const /*override*/;
     // NOLINTEND
 
 public:
@@ -136,11 +137,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
-    MCNAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result_deprecated<void> $ready();
 
     MCNAPI ::std::string_view $getServiceName() const;
 
@@ -182,7 +183,7 @@ public:
 
     MCNAPI bool const $canUploadWorld() const;
 
-    MCNAPI bool const $isRealmsServiceAvailable() const;
+    MCNAPI ::Editor::Services::EditorRealmsServiceAvailability const $isRealmsServiceAvailable() const;
     // NOLINTEND
 
 public:

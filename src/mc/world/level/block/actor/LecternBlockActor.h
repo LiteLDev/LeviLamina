@@ -90,7 +90,7 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit LecternBlockActor(::BlockPos const& pos);
 
-    MCNAPI void setItemFromBlock(int item, ::ItemStack const& slot);
+    MCNAPI void setItemFromBlock(int slot, ::ItemStack const& item);
     // NOLINTEND
 
 public:

@@ -34,7 +34,7 @@ public:
 
     MCNAPI void _setRestrictionType(::std::string const& restrictionType);
 
-    MCNAPI void initialize(::EntityContext& component, ::HomeComponent&) const;
+    MCNAPI void initialize(::EntityContext&, ::HomeComponent& component) const;
     // NOLINTEND
 
 public:

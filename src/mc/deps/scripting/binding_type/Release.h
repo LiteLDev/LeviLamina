@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class MajorVersionLimit; }
+namespace Scripting { class RemovedInMajorVersion; }
 namespace Scripting { struct Version; }
 // clang-format on
 
@@ -19,7 +19,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4>  mUnkd7338f;
     ::ll::UntypedStorage<8, 40> mUnkf154f7;
-    ::ll::UntypedStorage<2, 4>  mUnkcc8304;
+    ::ll::UntypedStorage<2, 4>  mUnk63e5f1;
     // NOLINTEND
 
 public:
@@ -32,9 +32,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI Release(
-        ::Scripting::Comparison                         comparison_,
-        ::Scripting::Version                            version_,
-        ::std::optional<::Scripting::MajorVersionLimit> exclusiveMajorVersionLimit_
+        ::Scripting::Comparison                             comparison_,
+        ::Scripting::Version                                version_,
+        ::std::optional<::Scripting::RemovedInMajorVersion> exclusiveMajorVersionLimit_
     );
 
     MCNAPI ~Release();
@@ -44,9 +44,9 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::Scripting::Comparison                         comparison_,
-        ::Scripting::Version                            version_,
-        ::std::optional<::Scripting::MajorVersionLimit> exclusiveMajorVersionLimit_
+        ::Scripting::Comparison                             comparison_,
+        ::Scripting::Version                                version_,
+        ::std::optional<::Scripting::RemovedInMajorVersion> exclusiveMajorVersionLimit_
     );
     // NOLINTEND
 

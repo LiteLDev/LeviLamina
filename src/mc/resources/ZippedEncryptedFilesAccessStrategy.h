@@ -40,29 +40,29 @@ public:
     // vIndex: 7
     virtual bool hasFolder(::Core::Path const& packRelativePath) const /*override*/;
 
-    // vIndex: 10
+    // vIndex: 9
     virtual void forEachIn(
         ::Core::Path const&                        packRelativePath,
         ::std::function<void(::Core::Path const&)> callback,
         bool                                       recurseAnyways
     ) const /*override*/;
 
-    // vIndex: 12
+    // vIndex: 11
     virtual ::PackAccessStrategyType getStrategyType() const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 12
     virtual ::Core::PathBuffer<::std::string> const& getSubPath() const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 13
     virtual bool supportsSignatureVerification() const /*override*/;
 
-    // vIndex: 15
+    // vIndex: 14
     virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
 
-    // vIndex: 23
+    // vIndex: 22
     virtual ::std::string _getContentsFile() /*override*/;
 
-    // vIndex: 24
+    // vIndex: 23
     virtual ::std::string _getEncryptedAssetStream(::Core::Path const& packRelativePath) const /*override*/;
 
     // vIndex: 0
@@ -79,12 +79,6 @@ public:
         ::Core::Path const&                                               subPath,
         ::std::unique_ptr<::PackAccessStrategy>                           zipSubPack
     );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::std::string _getRawContentsFile(::Core::Path const& pathToPack, ::Core::Path const& subPath);
     // NOLINTEND
 
 public:

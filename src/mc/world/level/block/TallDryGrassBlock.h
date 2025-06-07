@@ -17,7 +17,7 @@ class TallDryGrassBlock : public ::ShortDryGrassBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 74
+    // vIndex: 73
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;

@@ -4,7 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Puv { class VersionRange; }
+class SemVersionConstant;
+struct ComponentItemData_v1_20;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -32,12 +33,15 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCNAPI static void
+    upgrade(::Puv::CerealUpgrader<::ComponentItemData_v1_20, ::ComponentItemData_v1_20_20, nullptr_t>& upgrader);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Puv::VersionRange const& SUPPORTED_VERSIONS();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:

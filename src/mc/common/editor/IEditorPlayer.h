@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,13 +21,13 @@ public:
     virtual ~IEditorPlayer() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() = 0;
+    virtual ::Scripting::Result_deprecated<void> init() = 0;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void> ready() = 0;
+    virtual ::Scripting::Result_deprecated<void> ready() = 0;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> quit() = 0;
+    virtual ::Scripting::Result_deprecated<void> quit() = 0;
 
     // vIndex: 4
     virtual ::Editor::ServiceProviderCollection& getServiceProviders() = 0;

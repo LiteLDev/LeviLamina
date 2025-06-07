@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/EntityOperation.h"
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/server/editor/serviceproviders/TransactionManagerServiceProvider.h"
@@ -17,13 +16,11 @@
 class Actor;
 class BlockPos;
 class BlockSource;
-class CompoundBlockVolume;
+class BlockVolumeBase;
 struct PlayerDimensionChangeBeforeEvent;
 namespace Editor::Network { class RedoOperationPayload; }
 namespace Editor::Network { class UndoOperationPayload; }
-namespace Editor::Selection { class SelectionContainer; }
 namespace Editor::Transactions { class TransactionContext; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 namespace Editor::Services {
@@ -52,20 +49,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 52
+    // vIndex: 51
     virtual ::EventResult onEvent(::PlayerDimensionChangeBeforeEvent const&) /*override*/;
 
     // vIndex: 0
     virtual ~TransactionManagerService() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void> ready() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> quit() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
@@ -78,10 +75,10 @@ public:
     virtual void clearTransactions() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> undo() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> undo() /*override*/;
 
     // vIndex: 4
-    virtual ::Scripting::Result<void> redo() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> redo() /*override*/;
 
     // vIndex: 5
     virtual uint64 undoSize() const /*override*/;
@@ -98,50 +95,45 @@ public:
     trackBlockChangeArea(::BlockPos const& from, ::BlockPos const& to) /*override*/;
 
     // vIndex: 9
-    virtual ::Scripting::Result_deprecated<bool>
-    trackBlockChangeSelection(::Editor::Selection::SelectionContainer const& selection) /*override*/;
+    virtual ::Scripting::Result_deprecated<bool> trackBlockChangeVolume(::BlockVolumeBase const& volume) /*override*/;
 
     // vIndex: 10
     virtual ::Scripting::Result_deprecated<bool>
-    trackBlockChangeCompoundBlockVolume(::CompoundBlockVolume const& compoundVolume) /*override*/;
-
-    // vIndex: 11
-    virtual ::Scripting::Result<bool, ::Scripting::Error>
     addEntityOperation(::Actor* entity, ::Editor::Transactions::EntityOperation::OperationType type) /*override*/;
 
-    // vIndex: 12
+    // vIndex: 11
     virtual ::Scripting::Result_deprecated<int> commitTrackedChanges() /*override*/;
 
-    // vIndex: 13
+    // vIndex: 12
     virtual ::Scripting::Result_deprecated<int> discardTrackedChanges() /*override*/;
 
-    // vIndex: 14
+    // vIndex: 13
     virtual ::Scripting::Result_deprecated<bool> openTransaction(::std::string const& name) /*override*/;
 
-    // vIndex: 15
+    // vIndex: 14
     virtual ::Scripting::Result_deprecated<bool> commitOpenTransaction() /*override*/;
 
-    // vIndex: 16
+    // vIndex: 15
     virtual ::Scripting::Result_deprecated<bool> discardOpenTransaction() /*override*/;
 
-    // vIndex: 17
+    // vIndex: 16
     virtual ::Scripting::Result_deprecated<bool> addUserDefinedOperation(
-        ::std::string const&                                             payload,
-        ::std::string const&                                             operationName,
-        ::std::function<::Scripting::Result<void>(::std::string const&)> fnUndo,
-        ::std::function<::Scripting::Result<void>(::std::string const&)> fnRedo
+        ::std::string const&                                                        payload,
+        ::std::string const&                                                        operationName,
+        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnUndo,
+        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnRedo
     ) /*override*/;
 
-    // vIndex: 18
+    // vIndex: 17
     virtual uint64 pendingOperationsSize() const /*override*/;
 
-    // vIndex: 19
+    // vIndex: 18
     virtual bool hasOpenTransaction() const /*override*/;
 
-    // vIndex: 20
+    // vIndex: 19
     virtual void clearAllTransactionData() /*override*/;
 
-    // vIndex: 21
+    // vIndex: 20
     virtual bool isBusy() const /*override*/;
     // NOLINTEND
 
@@ -152,12 +144,12 @@ public:
 
     MCNAPI void _handleUndoMessage(::Editor::Network::UndoOperationPayload const&);
 
-    MCNAPI ::Scripting::Result<void> _redo();
+    MCNAPI ::Scripting::Result_deprecated<void> _redo();
 
     MCNAPI ::Scripting::Result_deprecated<bool>
     _trackBlockChanges(::BlockSource const& region, ::std::vector<::BlockPos> const& locations);
 
-    MCNAPI ::Scripting::Result<void> _undo();
+    MCNAPI ::Scripting::Result_deprecated<void> _undo();
     // NOLINTEND
 
 public:
@@ -171,11 +163,11 @@ public:
     // NOLINTBEGIN
     MCNAPI ::EventResult $onEvent(::PlayerDimensionChangeBeforeEvent const&);
 
-    MCNAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result_deprecated<void> $ready();
 
-    MCNAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
     MCNAPI ::std::string_view $getServiceName() const;
 
@@ -183,9 +175,9 @@ public:
 
     MCNAPI void $clearTransactions();
 
-    MCNAPI ::Scripting::Result<void> $undo();
+    MCNAPI ::Scripting::Result_deprecated<void> $undo();
 
-    MCNAPI ::Scripting::Result<void> $redo();
+    MCNAPI ::Scripting::Result_deprecated<void> $redo();
 
     MCNAPI uint64 $undoSize() const;
 
@@ -195,13 +187,9 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<bool> $trackBlockChangeArea(::BlockPos const& from, ::BlockPos const& to);
 
-    MCNAPI ::Scripting::Result_deprecated<bool>
-    $trackBlockChangeSelection(::Editor::Selection::SelectionContainer const& selection);
+    MCNAPI ::Scripting::Result_deprecated<bool> $trackBlockChangeVolume(::BlockVolumeBase const& volume);
 
     MCNAPI ::Scripting::Result_deprecated<bool>
-    $trackBlockChangeCompoundBlockVolume(::CompoundBlockVolume const& compoundVolume);
-
-    MCNAPI ::Scripting::Result<bool, ::Scripting::Error>
     $addEntityOperation(::Actor* entity, ::Editor::Transactions::EntityOperation::OperationType type);
 
     MCNAPI ::Scripting::Result_deprecated<int> $commitTrackedChanges();
@@ -215,10 +203,10 @@ public:
     MCNAPI ::Scripting::Result_deprecated<bool> $discardOpenTransaction();
 
     MCNAPI ::Scripting::Result_deprecated<bool> $addUserDefinedOperation(
-        ::std::string const&                                             payload,
-        ::std::string const&                                             operationName,
-        ::std::function<::Scripting::Result<void>(::std::string const&)> fnUndo,
-        ::std::function<::Scripting::Result<void>(::std::string const&)> fnRedo
+        ::std::string const&                                                        payload,
+        ::std::string const&                                                        operationName,
+        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnUndo,
+        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnRedo
     );
 
     MCNAPI uint64 $pendingOperationsSize() const;

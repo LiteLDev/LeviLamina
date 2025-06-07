@@ -15,7 +15,6 @@
 
 // auto generated forward declare list
 // clang-format off
-struct ClientJoinedEvent;
 struct PlayerDisconnectEvent;
 struct PlayerGameModeChangeEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldBeforeEvents; }
@@ -27,11 +26,8 @@ class ScriptPlayerGameplayHandler : public ::EventHandlerDispatcher<::PlayerGame
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 28
+    // vIndex: 27
     virtual ::HandlerResult handleEvent(::PlayerDisconnectEvent const& playerDisconnectEvent) /*override*/;
-
-    // vIndex: 12
-    virtual ::HandlerResult handleEvent(::ClientJoinedEvent const& playerJoined) /*override*/;
 
     // vIndex: 1
     virtual ::GameplayHandlerResult<::CoordinatorResult>
@@ -48,12 +44,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _handleClientJoinedEvent(
-        ::ClientJoinedEvent const&                                                        joinEventData,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
-    ) const;
-
     MCNAPI bool _handleCoordinatorPlayerGameplayEvent(
         ::PlayerGameplayEvent<::CoordinatorResult> const&                                 event,
         ::Scripting::WeakLifetimeScope const&                                             scope,
@@ -83,8 +73,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::HandlerResult $handleEvent(::PlayerDisconnectEvent const& playerDisconnectEvent);
-
-    MCNAPI ::HandlerResult $handleEvent(::ClientJoinedEvent const& playerJoined);
 
     MCNAPI ::GameplayHandlerResult<::CoordinatorResult>
     $handleEvent(::MutablePlayerGameplayEvent<::CoordinatorResult>& event);

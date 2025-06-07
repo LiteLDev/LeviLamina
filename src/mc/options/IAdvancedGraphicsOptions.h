@@ -23,9 +23,12 @@ public:
     virtual bool isDeferredShadingAvailable() const = 0;
 
     // vIndex: 9
-    virtual ::dragon::rendering::LightingModels getLightingModel() const = 0;
+    virtual bool supportsVibrantVisualsPackStack() const = 0;
 
     // vIndex: 10
+    virtual ::dragon::rendering::LightingModels getLightingModel() const = 0;
+
+    // vIndex: 11
     virtual void setLightingModel(::dragon::rendering::LightingModels const) = 0;
 
     // vIndex: 0

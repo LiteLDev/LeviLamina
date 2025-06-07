@@ -14,8 +14,8 @@ namespace Editor::DataStore {
 // functions
 // NOLINTBEGIN
 MCNAPI ::Json::Value _createClientActionEvent(
-    ::Editor::DataStore::DeprecatedEventFactory::ClientActionEventType payload,
-    ::Json::Value const&                                               type
+    ::Editor::DataStore::DeprecatedEventFactory::ClientActionEventType type,
+    ::Json::Value const&                                               payload
 );
 
 MCNAPI ::Json::Value

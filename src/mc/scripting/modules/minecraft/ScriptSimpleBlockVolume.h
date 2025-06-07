@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/ScriptBlockVolumeBase.h"
 #include "mc/world/level/block/SimpleBlockVolume.h"
@@ -15,6 +13,8 @@ class BaseBlockLocationIterator;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptBlockLocationIterator; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct EnumBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -65,11 +65,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::
-        EnumBindingBuilder<::SimpleBlockVolume::IntersectionResult, ::SimpleBlockVolume::IntersectionResult>
-        bindEnums();
+    MCNAPI static ::Scripting::EnumBinding bindEnums();
     // NOLINTEND
 
 public:

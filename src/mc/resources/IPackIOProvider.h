@@ -26,6 +26,9 @@ public:
     virtual ::std::function<::std::string(::Core::Path const&)> getAssetReader() const = 0;
 
     // vIndex: 3
+    virtual ::Core::Path getOnDiskScratchPath() const = 0;
+
+    // vIndex: 4
     virtual ::std::unique_ptr<::IPackIOProvider> clone() const = 0;
     // NOLINTEND
 

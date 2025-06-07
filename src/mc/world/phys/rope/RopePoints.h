@@ -16,9 +16,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RopePoints& operator=(RopePoints const&);
+    RopePoints();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI RopePoints(::RopePoints const&);
+
     MCNAPI ~RopePoints();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::RopePoints const&);
     // NOLINTEND
 
 public:

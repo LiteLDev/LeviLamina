@@ -2,15 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
-#include "mc/editor/cursor/ControlMode.h"
-#include "mc/editor/cursor/TargetMode.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace Editor::Cursor { struct CursorState; }
+namespace Scripting { struct EnumBinding; }
+namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -49,13 +45,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptCursorProperties> bindScript();
+    MCNAPI static ::Scripting::InterfaceBinding bindScript();
 
-    MCNAPI static ::Scripting::EnumBindingBuilder<::Editor::Cursor::ControlMode, ::Editor::Cursor::ControlMode>
-    bindScriptEnumsControlMode();
+    MCNAPI static ::Scripting::EnumBinding bindScriptEnumsControlMode();
 
-    MCNAPI static ::Scripting::EnumBindingBuilder<::Editor::Cursor::TargetMode, ::Editor::Cursor::TargetMode>
-    bindScriptEnumsTargetMode();
+    MCNAPI static ::Scripting::EnumBinding bindScriptEnumsTargetMode();
     // NOLINTEND
 
 public:

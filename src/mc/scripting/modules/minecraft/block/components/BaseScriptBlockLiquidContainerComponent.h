@@ -3,14 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
+#include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockActorComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ClassBinding; }
+// clang-format on
 
 namespace ScriptModuleMinecraft {
 
-class BaseScriptBlockLiquidContainerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
+class BaseScriptBlockLiquidContainerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockActorComponent {
 public:
     // member variables
     // NOLINTBEGIN
@@ -28,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4
-    virtual ::Scripting::Result<void> setFillLevel(int level);
+    virtual ::Scripting::Result_deprecated<void> setFillLevel(int level);
 
     // vIndex: 3
     virtual bool _isValid() const /*override*/;
@@ -46,14 +49,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent>
-    bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> $setFillLevel(int level);
+    MCNAPI ::Scripting::Result_deprecated<void> $setFillLevel(int level);
 
     MCNAPI bool $_isValid() const;
     // NOLINTEND

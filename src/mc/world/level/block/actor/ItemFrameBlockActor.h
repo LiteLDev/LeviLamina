@@ -81,7 +81,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ItemFrameBlockActor(::BlockPos pos);
 
-    MCAPI ItemFrameBlockActor(::BlockPos pos, ::BlockActorType id, ::std::string const& type);
+    MCAPI ItemFrameBlockActor(::BlockPos pos, ::BlockActorType type, ::std::string const& id);
 
     MCAPI void _checkMapRemoval(::BlockSource& region, ::ItemInstance& item);
 
@@ -108,7 +108,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPos pos);
 
-    MCAPI void* $ctor(::BlockPos pos, ::BlockActorType id, ::std::string const& type);
+    MCAPI void* $ctor(::BlockPos pos, ::BlockActorType type, ::std::string const& id);
     // NOLINTEND
 
 public:

@@ -31,10 +31,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI FilterInputs(
-        ::SharedTypes::Legacy::FilterSubject domain,
-        ::FilterInput                        value,
-        ::FilterOperator                     subject,
-        ::FilterInput                        op
+        ::SharedTypes::Legacy::FilterSubject subject,
+        ::FilterInput                        domain,
+        ::FilterOperator                     op,
+        ::FilterInput                        value
     );
 
     MCNAPI ~FilterInputs();
@@ -44,7 +44,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void*
-    $ctor(::SharedTypes::Legacy::FilterSubject domain, ::FilterInput value, ::FilterOperator subject, ::FilterInput op);
+    $ctor(::SharedTypes::Legacy::FilterSubject subject, ::FilterInput domain, ::FilterOperator op, ::FilterInput value);
     // NOLINTEND
 
 public:

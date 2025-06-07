@@ -77,7 +77,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _canAttack(::Actor* target, bool outDescriptorMatch, ::MobDescriptor const** allowInvulnerable);
+    MCNAPI bool _canAttack(::Actor* target, bool allowInvulnerable, ::MobDescriptor const** outDescriptorMatch);
 
     MCNAPI bool _canReach(::Actor& target);
 

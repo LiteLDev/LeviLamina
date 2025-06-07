@@ -76,29 +76,14 @@ public:
 
         public:
             // prevent constructor by default
+            ComponentMap& operator=(ComponentMap const&);
+            ComponentMap(ComponentMap const&);
             ComponentMap();
-
-        public:
-            // member functions
-            // NOLINTBEGIN
-            MCNAPI
-            ComponentMap(::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap const&);
-
-            MCNAPI ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap&
-            operator=(::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap const&);
-            // NOLINTEND
 
         public:
             // static functions
             // NOLINTBEGIN
             MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-            // NOLINTEND
-
-        public:
-            // constructor thunks
-            // NOLINTBEGIN
-            MCNAPI void*
-            $ctor(::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap const&);
             // NOLINTEND
         };
 
@@ -153,9 +138,21 @@ public:
     ClientBiomeJsonDocument();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~ClientBiomeJsonDocument();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

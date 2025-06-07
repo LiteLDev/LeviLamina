@@ -43,7 +43,7 @@ public:
     virtual ~StoreUIComponent() = default;
 
     // vIndex: 1
-    virtual void onScreenClosed();
+    virtual void onScreenClosed(::StoreDataDrivenScreenController&);
 
     // vIndex: 2
     virtual void onScreenEntered();

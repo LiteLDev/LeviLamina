@@ -13,6 +13,7 @@
 class BlockPos;
 class ChunkSource;
 class CompoundTag;
+class EndChaosLightManager;
 class EndDragonFight;
 class HashedString;
 class ILevel;
@@ -27,7 +28,8 @@ class TheEndDimension : public ::Dimension {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EndDragonFight>> mDragonFight;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EndDragonFight>>       mDragonFight;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EndChaosLightManager>> mEndChaosLightManager;
     // NOLINTEND
 
 public:
@@ -40,7 +42,7 @@ public:
     // vIndex: 0
     virtual ~TheEndDimension() /*override*/ = default;
 
-    // vIndex: 35
+    // vIndex: 37
     virtual void startLeaveGame() /*override*/;
 
     // vIndex: 14
@@ -95,14 +97,20 @@ public:
     // vIndex: 19
     virtual void fixWallChunk(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
-    // vIndex: 37
+    // vIndex: 31
+    virtual ::Dimension::DirectionalLightState getDimensionDirectionalLightSourceState(float a) const /*override*/;
+
+    // vIndex: 30
+    virtual void setDimensionDirectionalLightControls(
+        ::std::variant<::Dimension::ChaoticDirectionalLightControls> const& directionalLightControls
+    ) /*override*/;
+
+    // vIndex: 39
     virtual void _upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers) /*override*/;
 
-    // vIndex: 38
-    virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(
-        ::std::unique_ptr<::ChunkSource> storageSource,
-        ::StorageVersion                 levelVersion
-    ) /*override*/;
+    // vIndex: 40
+    virtual ::std::unique_ptr<::ChunkSource>
+        _wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource>, ::StorageVersion) /*override*/;
     // NOLINTEND
 
 public:
@@ -157,10 +165,13 @@ public:
 
     MCNAPI void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
 
-    MCNAPI void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
+    MCNAPI ::Dimension::DirectionalLightState $getDimensionDirectionalLightSourceState(float a) const;
 
-    MCNAPI ::std::unique_ptr<::ChunkSource>
-    $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
+    MCNAPI void $setDimensionDirectionalLightControls(
+        ::std::variant<::Dimension::ChaoticDirectionalLightControls> const& directionalLightControls
+    );
+
+    MCNAPI void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
     // NOLINTEND
 
 public:

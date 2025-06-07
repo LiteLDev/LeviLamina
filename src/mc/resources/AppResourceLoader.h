@@ -29,10 +29,10 @@ public:
         ::gsl::span<::std::string const> extensions
     ) const /*override*/;
 
-    // vIndex: 4
+    // vIndex: 5
     virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const&) const /*override*/;
 
-    // vIndex: 11
+    // vIndex: 12
     virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensions

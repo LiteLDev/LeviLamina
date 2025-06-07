@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/nether_net/LogSeverity.h"
 #include "mc/network/NetworkSystem.h"
 
 // auto generated forward declare list
@@ -18,6 +19,8 @@ class Scheduler;
 struct ConnectionDefinition;
 struct NetworkSettingOptions;
 struct NetworkSystemToggles;
+struct PortMappingInfo;
+namespace NetherNet { struct NetworkID; }
 // clang-format on
 
 class ServerNetworkSystem : public ::Bedrock::EnableNonOwnerReferences, public ::NetworkSystem {
@@ -42,7 +45,10 @@ public:
         ::Bedrock::NonOwnerPointer<::NetworkDebugManager>    networkDebugManager,
         ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>         appPlatform,
         ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner,
-        ::NetworkSettingOptions const&                       networkSettingOption
+        ::NetworkSettingOptions const&                       networkSettingOption,
+        ::PortMappingInfo const&                             portMappingInfo,
+        ::NetherNet::LogSeverity                             defaultLogSeverity,
+        ::std::optional<::NetherNet::NetworkID>              networkId
     );
 
     MCNAPI void _createNetworkStatistics(
@@ -66,7 +72,8 @@ public:
         ::NetherNetTransportFactory const&                   transportFactory,
         ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>         appPlatform,
         ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner,
-        ::NetworkSettingOptions const&                       networkSettingOptions
+        ::NetworkSettingOptions const&                       networkSettingOptions,
+        ::std::optional<::NetherNet::NetworkID>              networkId
     );
     // NOLINTEND
 
@@ -80,7 +87,10 @@ public:
         ::Bedrock::NonOwnerPointer<::NetworkDebugManager>    networkDebugManager,
         ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>         appPlatform,
         ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner,
-        ::NetworkSettingOptions const&                       networkSettingOption
+        ::NetworkSettingOptions const&                       networkSettingOption,
+        ::PortMappingInfo const&                             portMappingInfo,
+        ::NetherNet::LogSeverity                             defaultLogSeverity,
+        ::std::optional<::NetherNet::NetworkID>              networkId
     );
     // NOLINTEND
 

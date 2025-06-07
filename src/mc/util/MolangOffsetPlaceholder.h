@@ -14,14 +14,14 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~MolangOffsetPlaceholder();
-    // NOLINTEND
+    // prevent constructor by default
+    MolangOffsetPlaceholder& operator=(MolangOffsetPlaceholder const&);
+    MolangOffsetPlaceholder(MolangOffsetPlaceholder const&);
+    MolangOffsetPlaceholder();
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI ::MolangOffsetPlaceholder& operator=(::MolangOffsetPlaceholder&&);
     // NOLINTEND
 };

@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class BaseBlockLocationIterator;
 class Block;
 class BlockPalette;
 class BlockPos;
@@ -17,6 +18,8 @@ class BoundingBox;
 class CompoundTag;
 class IUnknownBlockTypeRegistry;
 class StructureSettings;
+class Vec3;
+namespace Editor { class RelativeVolumeListBlockVolume; }
 // clang-format on
 
 namespace Editor {
@@ -25,7 +28,7 @@ class EditorStructureTemplate : public ::StructureTemplate {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 88> mUnkb140e7;
+    ::ll::UntypedStorage<8, 88> mUnk64c2f5;
     ::ll::UntypedStorage<8, 32> mUnkfcd3e5;
     ::ll::UntypedStorage<8, 24> mUnk30c525;
     ::ll::UntypedStorage<4, 12> mUnkd4367e;
@@ -77,14 +80,40 @@ public:
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
     );
 
+    MCNAPI void _editorFillBlockInfo(
+        ::BlockSource&                                 region,
+        ::std::unique_ptr<::BaseBlockLocationIterator> locationIterator,
+        ::BlockPos const&                              posMin,
+        ::BlockPos const&                              size,
+        ::BlockPos const&                              structureOffset
+    );
+
+    MCNAPI bool _parseOrigin(::CompoundTag const& tag);
+
+    MCNAPI void editorFillFromWorld(
+        ::BlockSource&                                 region,
+        ::StructureSettings const&                     structureSettings,
+        ::Editor::RelativeVolumeListBlockVolume const& volume
+    );
+
+    MCNAPI void editorFillFromWorld(
+        ::BlockSource&                                 region,
+        ::StructureSettings const&                     structureSettings,
+        ::std::unique_ptr<::BaseBlockLocationIterator> locationIterator,
+        ::BlockPos const&                              posMin,
+        ::BlockPos const&                              span
+    );
+
     MCNAPI void placeStructureTemplateInWorldForEditor(
         ::BlockSource&             region,
-        ::BlockPalette const&      transformedBounds,
-        ::BoundingBox const&       structureSettings,
-        ::StructureSettings const& globalBlockPalette
+        ::BlockPalette const&      globalBlockPalette,
+        ::BoundingBox const&       transformedBounds,
+        ::StructureSettings const& structureSettings
     ) const;
 
     MCNAPI void setLocation(::std::string location);
+
+    MCNAPI bool setOrigin(::Vec3 newOrigin);
     // NOLINTEND
 
 public:

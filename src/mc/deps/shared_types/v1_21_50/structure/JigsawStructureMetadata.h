@@ -23,14 +23,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool operator==(::SharedTypes::v1_21_50::JigsawStructureMetadata const&) const;
-
-    MCNAPI ~JigsawStructureMetadata();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

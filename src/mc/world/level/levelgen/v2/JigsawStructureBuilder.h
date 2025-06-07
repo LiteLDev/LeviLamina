@@ -26,7 +26,7 @@ public:
     ::ll::TypedStorage<4, 4, int>                                                   mMaxDistanceFromCenter;
     ::ll::TypedStorage<4, 8, ::br::worldgen::DimensionPadding>                      mDimensionPadding;
     ::ll::TypedStorage<8, 32, ::std::string>                                        mStart;
-    ::ll::TypedStorage<8, 32, ::std::string>                                        mAnchorName;
+    ::ll::TypedStorage<8, 32, ::std::string>                                        mStartJigsawName;
     ::ll::TypedStorage<8, 56, ::br::worldgen::StructureHeightProvider>              mStartHeight;
     ::ll::TypedStorage<1, 1, ::br::worldgen::HeightmapProjection::Type>             mProjectStartToHeightmap;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::PoolAliasBinding>>> mPoolAliases;

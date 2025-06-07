@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class ItemStack;
 class LabTableReactionComponent;
 class Vec3;
 // clang-format on
@@ -44,19 +43,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LabTableReaction(
-        ::LabTableReactionType type,
-        ::BlockPos const&      pos,
-        bool                   isClientSide,
-        int                    maxLifetime,
-        int                    startDelay
-    );
-
     MCNAPI ::Vec3 _getTableTop() const;
 
     MCNAPI void addComponent(::std::unique_ptr<::LabTableReactionComponent> comp);
-
-    MCNAPI void addResultItem(::ItemStack const& resultItem);
     // NOLINTEND
 
 public:
@@ -64,13 +53,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::unique_ptr<::LabTableReaction>
     createReaction(::LabTableReactionType type, ::BlockPos const& pos, bool isClientSide);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::LabTableReactionType type, ::BlockPos const& pos, bool isClientSide, int maxLifetime, int startDelay);
     // NOLINTEND
 
 public:

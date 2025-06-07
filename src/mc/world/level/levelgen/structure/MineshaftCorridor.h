@@ -56,23 +56,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _fillPillarDownOrChainUp(::BlockSource& region, int x, int z, int chunkBB, ::BoundingBox const& y);
+    MCNAPI void _fillPillarDownOrChainUp(::BlockSource& region, int x, int y, int z, ::BoundingBox const& chunkBB);
 
     MCNAPI void
-    _placeCobWeb(::BlockSource& region, ::BoundingBox const& chunkBB, ::Random& random, float p, int x0, int z, int y1);
+    _placeCobWeb(::BlockSource& region, ::BoundingBox const& chunkBB, ::Random& random, float p, int x0, int y1, int z);
 
     MCNAPI void
-    _placeDoubleLowerOrUpperSupport(::BlockSource& region, ::BoundingBox const& chunkBB, int z, int x, int y);
+    _placeDoubleLowerOrUpperSupport(::BlockSource& region, ::BoundingBox const& chunkBB, int x, int y, int z);
 
     MCNAPI void _placeSupport(
         ::BlockSource&       region,
         ::BoundingBox const& chunkBB,
-        int                  z,
-        int                  random,
         int                  x0,
         int                  y0,
+        int                  z,
         int                  y1,
-        ::Random&            x1
+        int                  x1,
+        ::Random&            random
     );
     // NOLINTEND
 

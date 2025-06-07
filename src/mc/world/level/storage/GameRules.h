@@ -45,34 +45,35 @@ public:
         MobGriefing               = 14,
         Pvp                       = 15,
         ShowCoordinates           = 16,
-        ShowDaysPlayed            = 17,
-        DoNaturalRegeneration     = 18,
-        DoTntExplode              = 19,
-        SendCommandFeedback       = 20,
-        MaxCommandChainLength     = 21,
-        DoInsomnia                = 22,
-        CommandBlocksEnabled      = 23,
-        RandomTickSpeed           = 24,
-        DoImmediateRespawn        = 25,
-        ShowDeathMessages         = 26,
-        FunctionCommandLimit      = 27,
-        PlayerSpawnRadius         = 28,
-        ShowTags                  = 29,
-        FreezeDamage              = 30,
-        RespawnBlocksExplode      = 31,
-        ShowBorderEffect          = 32,
-        ShowRecipeMessages        = 33,
-        PlayerSleepingPercentage  = 34,
-        ProjectilesCanBreakBlocks = 35,
-        TntExplosionDropDecay     = 36,
-        VanillaGameRuleCount      = 37,
-        GlobalMute                = 37,
-        AllowDestructiveObjects   = 38,
-        AllowMobs                 = 39,
-        CodeBuilder               = 40,
-        EduCloudSave              = 41,
-        EduGameRuleCount          = 42,
-        GameRuleCount             = 42,
+        LocatorBar                = 17,
+        ShowDaysPlayed            = 18,
+        DoNaturalRegeneration     = 19,
+        DoTntExplode              = 20,
+        SendCommandFeedback       = 21,
+        MaxCommandChainLength     = 22,
+        DoInsomnia                = 23,
+        CommandBlocksEnabled      = 24,
+        RandomTickSpeed           = 25,
+        DoImmediateRespawn        = 26,
+        ShowDeathMessages         = 27,
+        FunctionCommandLimit      = 28,
+        PlayerSpawnRadius         = 29,
+        ShowTags                  = 30,
+        FreezeDamage              = 31,
+        RespawnBlocksExplode      = 32,
+        ShowBorderEffect          = 33,
+        ShowRecipeMessages        = 34,
+        PlayerSleepingPercentage  = 35,
+        ProjectilesCanBreakBlocks = 36,
+        TntExplosionDropDecay     = 37,
+        VanillaGameRuleCount      = 38,
+        GlobalMute                = 38,
+        AllowDestructiveObjects   = 39,
+        AllowMobs                 = 40,
+        CodeBuilder               = 41,
+        EduCloudSave              = 42,
+        EduGameRuleCount          = 43,
+        GameRuleCount             = 43,
     };
 
 public:
@@ -84,7 +85,7 @@ public:
         8,
         128,
         ::Bedrock::PubSub::
-            Publisher<void(::GameRules const&, ::GameRuleId const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+            Publisher<void(::GameRules const&, ::GameRuleId const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
         mGameRuleChangePublisher;
     // NOLINTEND
 
@@ -111,9 +112,9 @@ public:
         ::GameRule::Value            value,
         ::GameRule::Type             type,
         bool                         returnPacket,
-        bool*                        errorOutput,
         bool*                        pValueValidated,
-        ::GameRule::ValidationError* pValueChanged
+        bool*                        pValueChanged,
+        ::GameRule::ValidationError* errorOutput
     );
 
     MCAPI ::std::unique_ptr<::GameRulesChangedPacket> createAllGameRulesPacket() const;
@@ -136,9 +137,9 @@ public:
         ::GameRuleId                 rule,
         bool                         value,
         bool                         returnPacket,
-        bool*                        errorOutput,
         bool*                        pValueValidated,
-        ::GameRule::ValidationError* pValueChanged
+        bool*                        pValueChanged,
+        ::GameRule::ValidationError* errorOutput
     );
 
     MCAPI void setTagData(::CompoundTag& tag) const;

@@ -61,7 +61,7 @@ public:
     ::ll::TypedStorage<4, 12, ::ClockSpriteCalculator>   mClockSpriteCalc;
     ::ll::TypedStorage<4, 4, float>                      mAttackAnim;
     ::ll::TypedStorage<4, 4, int>                        mSwingTime;
-    ::ll::TypedStorage<8, 16, ::BuiltInMobComponents>    mBuiltInMobComponents;
+    ::ll::TypedStorage<8, 24, ::BuiltInMobComponents>    mBuiltInMobComponents;
     ::ll::TypedStorage<4, 4, float>                      mMovementComponentCurrentSpeed;
     ::ll::TypedStorage<1, 1, bool>                       mSwinging;
     ::ll::TypedStorage<1, 1, bool>                       mSurfaceMob;
@@ -169,7 +169,7 @@ public:
     virtual bool checkSpawnObstruction() const;
 
     // vIndex: 28
-    virtual void addPassenger(::Actor& newPassenger) /*override*/;
+    virtual void addPassenger(::Actor& passenger) /*override*/;
 
     // vIndex: 27
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
@@ -451,8 +451,6 @@ public:
 
     MCAPI void lookAt(::Actor* lookAt, float yMax, float xMax);
 
-    MCAPI void onPlayerJump(int jumpAmount);
-
     MCAPI void removeSpeedModifier(::mce::UUID const& attributeID);
 
     MCAPI void resetAttributes();
@@ -461,13 +459,13 @@ public:
 
     MCAPI void sendArmorSlot(::SharedTypes::Legacy::ArmorSlot slot);
 
-    MCAPI void setDeathTime(int ticks);
-
     MCAPI void setEatCounter(int value);
 
     MCAPI void setJumpTicks(int ticks);
 
     MCAPI void setYBodyRotation(float rotation);
+
+    MCAPI void setYBodyRotations(float rotation, float oldRotation);
 
     MCAPI bool shouldApplyWaterGravity();
 
@@ -580,7 +578,7 @@ public:
 
     MCAPI bool $checkSpawnObstruction() const;
 
-    MCAPI void $addPassenger(::Actor& newPassenger);
+    MCAPI void $addPassenger(::Actor& passenger);
 
     MCAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
 

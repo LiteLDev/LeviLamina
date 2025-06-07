@@ -20,9 +20,9 @@ class ScatterFeature : public ::IFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>   mUnkdd3a61;
-    ::ll::UntypedStorage<8, 1816> mUnk35a126;
-    ::ll::UntypedStorage<1, 1>    mUnk80a297;
+    ::ll::UntypedStorage<8, 24>  mUnkdd3a61;
+    ::ll::UntypedStorage<8, 216> mUnk35a126;
+    ::ll::UntypedStorage<1, 1>   mUnk80a297;
     // NOLINTEND
 
 public:

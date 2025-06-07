@@ -3,11 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/block/ScriptFluidType.h"
-#include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
+#include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,13 +15,12 @@ namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace ScriptModuleMinecraft { class ScriptRGBA; }
-namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct Error; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBlockFluidContainerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
+class ScriptBlockFluidContainerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockActorComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -43,24 +40,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error> addDye(::ScriptModuleMinecraft::ScriptItemType const& dye);
+    MCNAPI ::Scripting::Result_deprecated<void> addDye(::ScriptModuleMinecraft::ScriptItemType const& dye);
 
-    MCNAPI ::Scripting::Result<::ScriptModuleMinecraft::ScriptRGBA, ::Scripting::Error> getCustomColor() const;
+    MCNAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptRGBA> getCustomColor() const;
 
-    MCNAPI ::Scripting::Result<int, ::Scripting::Error> getFillLevel() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getFillLevel() const;
 
-    MCNAPI ::Scripting::Result<::ScriptModuleMinecraft::ScriptFluidType, ::Scripting::Error> getFluidType() const;
+    MCNAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptFluidType> getFluidType() const;
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error>
-    setCustomColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
+    MCNAPI ::Scripting::Result_deprecated<void> setCustomColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error> setFillLevel(int level) const;
+    MCNAPI ::Scripting::Result_deprecated<void> setFillLevel(int level) const;
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error>
-    setFluidType(::ScriptModuleMinecraft::ScriptFluidType fluidType);
+    MCNAPI ::Scripting::Result_deprecated<void> setFluidType(::ScriptModuleMinecraft::ScriptFluidType fluidType);
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error>
-    setPotionType(::ScriptModuleMinecraft::ScriptItemStack const& item);
+    MCNAPI ::Scripting::Result_deprecated<void> setPotionType(::ScriptModuleMinecraft::ScriptItemStack const& item);
     // NOLINTEND
 
 public:
@@ -69,15 +63,11 @@ public:
     MCNAPI static ::ScriptModuleMinecraft::ScriptFluidType
     _getActualCauldronFluidType(::BlockSource& region, ::BlockPos position);
 
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockFluidContainerComponent>
+    MCNAPI static ::Scripting::ClassBinding
     bindV1(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
 
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockFluidContainerComponent>
+    MCNAPI static ::Scripting::ClassBinding
     bindV2(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
-
-    MCNAPI static ::std::optional<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockFluidContainerComponent>>
-    tryCreate(::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:

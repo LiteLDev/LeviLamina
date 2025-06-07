@@ -137,8 +137,8 @@ public:
         int                                    minFeatureSeparation,
         int                                    randomSalt,
         bool                                   tiltedSpacing,
-        int                                    mustBeInNewChunks,
-        bool                                   maxSearchRadius
+        int                                    maxSearchRadius,
+        bool                                   mustBeInNewChunks
     );
 
     MCAPI static ::ChunkPos getChunkPosInSpace(

@@ -21,9 +21,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RuntimeConditionError(
-        ::std::string const&                  missingRuntimeConditions,
-        ::Scripting::RuntimeConditions const& apiName,
-        ::std::string const&
+        ::std::string const&,
+        ::Scripting::RuntimeConditions const& missingRuntimeConditions,
+        ::std::string const&                  apiName
     );
 
     MCNAPI ~RuntimeConditionError();
@@ -33,9 +33,9 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::std::string const&                  missingRuntimeConditions,
-        ::Scripting::RuntimeConditions const& apiName,
-        ::std::string const&
+        ::std::string const&,
+        ::Scripting::RuntimeConditions const& missingRuntimeConditions,
+        ::std::string const&                  apiName
     );
     // NOLINTEND
 

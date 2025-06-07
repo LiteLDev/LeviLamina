@@ -43,13 +43,14 @@ public:
     ::ll::TypedStorage<
         8,
         24,
-        ::std::vector<
-            ::Bedrock::PubSub::Publisher<void(::ItemStackBase const&), ::Bedrock::PubSub::ThreadModel::SingleThreaded>>>
+        ::std::vector<::Bedrock::PubSub::
+                          Publisher<void(::ItemStackBase const&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>>
                                                          mContainerSlotChangePublishers;
     ::ll::TypedStorage<4, 4, ::ContainerCategory>        mContainerCategory;
     ::ll::TypedStorage<8, 24, ::std::vector<::SlotData>> mItemSource;
     ::ll::TypedStorage<8, 8, ::SparseContainerClient*>   mClientUIContainer;
-    ::ll::TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(int), ::Bedrock::PubSub::ThreadModel::SingleThreaded>>
+    ::ll::
+        TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(int), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
                                                           mContainerSizeChangePublisher;
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mItems;
     // NOLINTEND

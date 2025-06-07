@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 namespace Scripting { class WeakLifetimeScope; }
 namespace mce { class UUID; }
 // clang-format on
@@ -19,6 +20,9 @@ public:
 
     // vIndex: 1
     virtual void _deleteComponent(::mce::UUID const&) = 0;
+
+    // vIndex: 2
+    virtual ::AABB const& _getWorldBounds() const = 0;
     // NOLINTEND
 
 public:

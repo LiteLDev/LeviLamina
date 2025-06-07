@@ -74,9 +74,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk7dfb60;
-        ::ll::UntypedStorage<8, 8> mUnk3ff588;
-        ::ll::UntypedStorage<4, 4> mUnkabfbdc;
+        ::ll::UntypedStorage<8, 24> mUnk7dfb60;
+        ::ll::UntypedStorage<8, 8>  mUnk3ff588;
+        ::ll::UntypedStorage<4, 4>  mUnkabfbdc;
         // NOLINTEND
 
     public:
@@ -90,7 +90,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk1bd5e8;
-    ::ll::UntypedStorage<8, 8>  mUnk2e641f;
+    ::ll::UntypedStorage<8, 24> mUnk2e641f;
     ::ll::UntypedStorage<8, 72> mUnkdab955;
     ::ll::UntypedStorage<8, 80> mUnka70516;
     ::ll::UntypedStorage<8, 64> mUnke5eec7;
@@ -166,11 +166,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI NetherNetConnector(::NetherNetTransportFactory const& factory, ::Connector::ConnectionCallbacks& callbacks);
+    MCNAPI NetherNetConnector(
+        ::NetherNetTransportFactory const&      factory,
+        ::Connector::ConnectionCallbacks&       callbacks,
+        ::std::optional<::NetherNet::NetworkID> networkId
+    );
 
     MCNAPI ::gsl::not_null<::std::shared_ptr<::WebRTCNetworkPeer>> _getOrCreatePeer(
-        uint64 remoteId,
-        uint64 sessionId,
+        ::NetherNet::NetworkID const& remoteId,
+        uint64                        sessionId,
         ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const&
     );
 
@@ -186,7 +190,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::NetherNetTransportFactory const& factory, ::Connector::ConnectionCallbacks& callbacks);
+    MCNAPI void* $ctor(
+        ::NetherNetTransportFactory const&      factory,
+        ::Connector::ConnectionCallbacks&       callbacks,
+        ::std::optional<::NetherNet::NetworkID> networkId
+    );
     // NOLINTEND
 
 public:

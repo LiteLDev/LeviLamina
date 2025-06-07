@@ -25,6 +25,7 @@ class Vec3;
 struct ActorBlockSyncMessage;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
+namespace BlockEvents { class BlockRandomTickEvent; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -39,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 57
+    // vIndex: 56
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
@@ -62,13 +63,13 @@ public:
         ::BlockPos const&          pos
     ) const /*override*/;
 
-    // vIndex: 133
+    // vIndex: 132
     virtual void onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const /*override*/;
 
-    // vIndex: 79
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 82
+    // vIndex: 81
     virtual bool tryToPlace(
         ::BlockSource&                 region,
         ::BlockPos const&              pos,
@@ -76,60 +77,57 @@ public:
         ::ActorBlockSyncMessage const* syncMsg
     ) const /*override*/;
 
-    // vIndex: 92
+    // vIndex: 91
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    // vIndex: 70
+    // vIndex: 69
     virtual bool isPreservingMediumWhenPlaced(::BlockLegacy const* medium) const /*override*/;
 
-    // vIndex: 84
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 87
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 89
+    // vIndex: 88
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
-    // vIndex: 137
-    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    // vIndex: 148
+    // vIndex: 147
     virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
-    // vIndex: 102
+    // vIndex: 101
     virtual bool shouldStopFalling(::Actor& entity) const /*override*/;
 
-    // vIndex: 98
+    // vIndex: 97
     virtual bool
     canBeBuiltOver(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem) const
         /*override*/;
 
-    // vIndex: 97
+    // vIndex: 96
     virtual bool canBeBuiltOver(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 104
+    // vIndex: 103
     virtual bool canHaveExtraData() const /*override*/;
 
-    // vIndex: 31
+    // vIndex: 30
     virtual bool isLavaBlocking() const /*override*/;
 
-    // vIndex: 152
+    // vIndex: 151
     virtual bool isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 153
+    // vIndex: 152
     virtual void
     startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const
         /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -144,6 +142,8 @@ public:
     MCAPI bool melt(::BlockSource& region, ::BlockPos const& pos, int meltHeight) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCAPI void startFallingIfLostSupport(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
@@ -216,8 +216,6 @@ public:
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
-
-    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCFOLD ::mce::Color $getDustColor(::Block const&) const;
 

@@ -30,12 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void remove(bool shouldPop);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);

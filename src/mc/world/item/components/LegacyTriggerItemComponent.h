@@ -27,7 +27,8 @@ public:
         128,
         ::Bedrock::PubSub::Publisher<
             void(bool&, ::ItemStackBase&, ::DefinitionTrigger const&, ::RenderParams&),
-            ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+            0>>
         mOnTriggerPublisher;
     // NOLINTEND
 
@@ -35,13 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LegacyTriggerItemComponent() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    virtual ~LegacyTriggerItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

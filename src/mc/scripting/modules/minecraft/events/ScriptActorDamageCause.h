@@ -2,9 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct EnumBinding; }
+// clang-format on
 
 namespace ScriptModuleMinecraft {
 
@@ -12,9 +13,9 @@ struct ScriptActorDamageCause {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::std::string> bindV010();
+    MCNAPI static ::Scripting::EnumBinding bindV010();
 
-    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::SharedTypes::Legacy::ActorDamageCause> bindV1();
+    MCNAPI static ::Scripting::EnumBinding bindV1();
     // NOLINTEND
 };
 

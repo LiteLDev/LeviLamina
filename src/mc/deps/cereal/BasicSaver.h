@@ -17,7 +17,7 @@ class BasicSaver : public ::cereal::BasicContextOwner {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 104> mUnke6b1a6;
+    ::ll::UntypedStorage<8, 112> mUnke6b1a6;
     // NOLINTEND
 
 public:

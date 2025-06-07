@@ -16,6 +16,8 @@ namespace ResourcePackPaths {
 MCNAPI ::Core::PathBuffer<::std::string>
     addServiceLocator(::Core::PathBuffer<::std::string> (*fn)(::AppPlatform const&));
 
+MCNAPI ::Core::PathBuffer<::std::string> getCachedBehaviorPacksPath();
+
 MCNAPI ::Core::PathBuffer<::std::string> getCachedBehaviorPacksPath(::AppPlatform& platform);
 
 MCNAPI ::Core::PathBuffer<::std::string> getCachedResourcePacksPath(::AppPlatform& platform);

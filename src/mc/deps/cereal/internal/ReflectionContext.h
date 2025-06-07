@@ -8,20 +8,19 @@ struct ReflectionContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 72, ::entt::meta_ctx>                                       mMetaCtx;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::entt::type_info>> mKnownProperties;
+    ::ll::TypedStorage<8, 72, ::entt::meta_ctx>                                             mMetaCtx;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::string, ::entt::type_info>>> mKnownProperties;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ReflectionContext& operator=(ReflectionContext const&);
-    ReflectionContext(ReflectionContext const&);
     ReflectionContext();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ReflectionContext(::cereal::internal::ReflectionContext&&);
+    MCAPI ReflectionContext(::cereal::internal::ReflectionContext const&);
 
     MCAPI ~ReflectionContext();
     // NOLINTEND
@@ -29,7 +28,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::internal::ReflectionContext&&);
+    MCAPI void* $ctor(::cereal::internal::ReflectionContext const&);
     // NOLINTEND
 
 public:

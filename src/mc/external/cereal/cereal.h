@@ -15,6 +15,8 @@ namespace cereal {
 // NOLINTBEGIN
 MCNAPI ::std::string const* documentation(::entt::meta_type const& type, uint member);
 
+MCNAPI ::std::string_view getName(::entt::meta_data const& data);
+
 MCNAPI ::std::string_view getName(::entt::meta_type const& type);
 
 MCNAPI ::std::string_view getName(::entt::meta_type const& type, uint member);

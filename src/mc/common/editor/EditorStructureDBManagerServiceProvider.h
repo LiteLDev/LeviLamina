@@ -25,6 +25,7 @@ public:
     // vIndex: 1
     virtual ::std::optional<::std::string> createNewEditorProjectStructure(
         ::Editor::EditorStructureTemplate&,
+        ::std::string const&,
         ::std::optional<::std::string> const&,
         ::std::optional<::std::string> const&
     ) = 0;

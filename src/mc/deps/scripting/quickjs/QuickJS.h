@@ -23,6 +23,7 @@ namespace Scripting::QuickJS { class RegisteredClass; }
 namespace Scripting::QuickJS { class RegisteredEnum; }
 namespace Scripting::QuickJS { class RegisteredInterface; }
 namespace Scripting::QuickJS { class RuntimeUserData; }
+namespace Scripting::QuickJS { struct ArgConversionResult; }
 namespace Scripting::QuickJS { struct ArrayProxy; }
 namespace Scripting::QuickJS { struct PropertyGetSet; }
 namespace Scripting::Reflection { class IFunction; }
@@ -151,21 +152,23 @@ MCNAPI ::JSValue NativeAnyToJSProtoClass(
     ::Scripting::QuickJS::ContextUserData&       contextData
 );
 
-MCNAPI ::JSValue NativeAnyToJSValue(::JSContext* ctx, ::entt::meta_any& any, bool addRef, bool allowCopy);
+MCNAPI ::Scripting::QuickJS::ArgConversionResult
+NativeAnyToJSValue(::JSContext* ctx, ::entt::meta_any& any, bool addRef, bool allowCopy);
 
-MCNAPI ::JSValue NativeEnumToJSValue(::JSContext* ctx, ::entt::meta_any& any, bool addRef, bool allowCopy);
+MCNAPI ::Scripting::QuickJS::ArgConversionResult
+NativeEnumToJSValue(::JSContext* ctx, ::entt::meta_any& any, bool addRef, bool allowCopy);
 
 MCNAPI ::JSValue NativeErrorToJSValue(::JSContext* ctx, ::entt::meta_any& any);
 
 MCNAPI ::JSValue NativeErrorToJSValueInternal(
     ::JSContext*                           ctx,
-    ::Scripting::QuickJS::ContextUserData& any,
-    ::entt::meta_any&                      jsClassId,
-    uint                                   registry,
-    ::Scripting::LifetimeRegistry&         contextData
+    ::Scripting::QuickJS::ContextUserData& contextData,
+    ::entt::meta_any&                      any,
+    uint                                   jsClassId,
+    ::Scripting::LifetimeRegistry&         registry
 );
 
-MCNAPI ::JSValue NativeInterfaceToJSValue(
+MCNAPI ::Scripting::QuickJS::ArgConversionResult NativeInterfaceToJSValue(
     ::JSContext*                                     ctx,
     ::entt::meta_any&                                any,
     ::Scripting::QuickJS::RegisteredInterface const& registeredInterface,
@@ -185,11 +188,11 @@ MCNAPI ::JSValue NativeObjectHandleToJSValue(
     ::JSContext*                                ctx,
     ::Scripting::ObjectHandle                   objectHandle,
     bool                                        addRef,
-    bool                                        ownership,
-    ::Scripting::QuickJS::NativeObjectOwnership allowCopy
+    bool                                        allowCopy,
+    ::Scripting::QuickJS::NativeObjectOwnership ownership
 );
 
-MCNAPI ::JSValue NativeRegisteredEnumToJSValue(
+MCNAPI ::Scripting::QuickJS::ArgConversionResult NativeRegisteredEnumToJSValue(
     ::JSContext*                                ctx,
     ::entt::meta_any&                           any,
     ::Scripting::QuickJS::RegisteredEnum const& registeredEnum

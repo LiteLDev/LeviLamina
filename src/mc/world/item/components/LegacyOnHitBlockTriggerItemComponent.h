@@ -23,8 +23,8 @@ class LegacyOnHitBlockTriggerItemComponent : public ::LegacyTriggerItemComponent
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mOnHitBlockSubscription;
-    ::ll::TypedStorage<8, 264, ::std::optional<::DefinitionTrigger>> mOnHitBlock;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>      mOnHitBlockSubscription;
+    ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>> mOnHitBlock;
     // NOLINTEND
 
 public:
@@ -46,7 +46,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit LegacyOnHitBlockTriggerItemComponent(::LegacyOnHitBlockTriggerItemComponentData&& componentData);
 
-    MCAPI void _onHitBlock(::ItemStack& item, ::Block const& blockPos, ::BlockPos const& attacker, ::Mob&);
+    MCAPI void _onHitBlock(::ItemStack& item, ::Block const&, ::BlockPos const& blockPos, ::Mob& attacker);
     // NOLINTEND
 
 public:

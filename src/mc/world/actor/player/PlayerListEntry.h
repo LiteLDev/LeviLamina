@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/platform/BuildPlatform.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/platform/Result.h"
@@ -26,6 +27,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>     mPlatformOnlineId;
     ::ll::TypedStorage<4, 4, ::BuildPlatform>    mBuildPlatform;
     ::ll::TypedStorage<8, 528, ::SerializedSkin> mSkin;
+    ::ll::TypedStorage<4, 16, ::mce::Color>      mColor;
     ::ll::TypedStorage<1, 1, bool>               mIsTeacher;
     ::ll::TypedStorage<1, 1, bool>               mIsHost;
     ::ll::TypedStorage<1, 1, bool>               mIsSubClient;

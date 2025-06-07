@@ -7,10 +7,10 @@
 struct TickingSystemWithInfo;
 // clang-format on
 
-struct PostEntityDismountGameEventSystem {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createSystem();
-    // NOLINTEND
-};
+namespace PostEntityDismountGameEventSystem {
+// functions
+// NOLINTBEGIN
+MCNAPI ::TickingSystemWithInfo createSystem();
+// NOLINTEND
+
+} // namespace PostEntityDismountGameEventSystem

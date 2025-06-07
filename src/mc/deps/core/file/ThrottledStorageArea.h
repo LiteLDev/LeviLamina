@@ -46,13 +46,13 @@ public:
     // vIndex: 22
     virtual void flushImmediately() /*override*/;
 
-    // vIndex: 36
+    // vIndex: 37
     virtual void _onTeardown() /*override*/;
 
-    // vIndex: 37
+    // vIndex: 38
     virtual void _initialize(::Scheduler&, ::WorkerPool&);
 
-    // vIndex: 38
+    // vIndex: 39
     virtual void _finalize();
     // NOLINTEND
 

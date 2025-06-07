@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/FilterSubject.h"
-#include "mc/util/ExpressionNode.h"
 #include "mc/util/Factory.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/util/molang/ExpressionNode.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/response/EventResponse.h"
 
@@ -23,8 +23,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier>        mProjectile;
     ::ll::TypedStorage<2, 2, ::SharedTypes::Legacy::FilterSubject> mTarget;
-    ::ll::TypedStorage<8, 216, ::ExpressionNode>                   mLaunchPower;
-    ::ll::TypedStorage<8, 216, ::ExpressionNode>                   mAngleOffset;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode>                    mLaunchPower;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode>                    mAngleOffset;
     // NOLINTEND
 
 public:
@@ -38,7 +38,7 @@ public:
 
     // vIndex: 3
     virtual void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
         ::Factory<::EventResponse> const&                                                                       factory
     ) const /*override*/;
 
@@ -47,21 +47,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ShootEventResponse();
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -72,7 +60,7 @@ public:
     MCNAPI void $executeAction(::RenderParams& params) const;
 
     MCNAPI void $buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
         ::Factory<::EventResponse> const&                                                                       factory
     ) const;
     // NOLINTEND

@@ -62,8 +62,10 @@ public:
     ::ll::TypedStorage<
         8,
         128,
-        ::Bedrock::PubSub::
-            Publisher<void(::ChunkSource&, ::LevelChunk&, short, bool), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+        ::Bedrock::PubSub::Publisher<
+            void(::ChunkSource&, ::LevelChunk&, short, bool),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+            0>>
                                                                mSubChunkLoaded;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnChangeDimensionSubscription;
     // NOLINTEND

@@ -14,7 +14,7 @@ class BlockPos;
 class BoundingBox;
 class JigsawStructureRegistry;
 namespace JigsawStructureUtils { class MetadataCache; }
-namespace SharedTypes::v1_21_50 { class JigsawBlockMetadata; }
+namespace SharedTypes::v1_21_80 { class JigsawBlockMetadata; }
 namespace br::worldgen { class ChunkAccessor; }
 namespace br::worldgen { struct JigsawPieceState; }
 namespace br::worldgen { struct JigsawSpace; }
@@ -41,14 +41,13 @@ public:
             ::BlockPos const&,
             ::Rotation,
             ::BoundingBox const&,
-            ::std::vector<::SharedTypes::v1_21_50::JigsawBlockMetadata> const&,
+            ::std::vector<::SharedTypes::v1_21_80::JigsawBlockMetadata> const&,
             ::std::vector<uint64> const&,
             ::JigsawStructureRegistry const&
         )>
-                                                                          mExpansionCalc;
-    ::ll::TypedStorage<8, 8, void (*)(int, ::BoundingBox&)>               mExpansionEval;
-    ::ll::TypedStorage<1, 1, bool>                                        mIsDataDrivenJigsawExperimentEnabled;
-    ::ll::TypedStorage<8, 24, ::std::vector<::br::worldgen::JigsawSpace>> mPlacementSpaces;
+                                                                                                    mExpansionCalc;
+    ::ll::TypedStorage<8, 8, void (*)(int, ::BoundingBox&)>                                         mExpansionEval;
+    ::ll::TypedStorage<8, 24, ::std::vector<::br::worldgen::JigsawSpace>>                           mPlacementSpaces;
     ::ll::TypedStorage<8, 40, ::StablePriorityQueue<::br::worldgen::JigsawPieceState, ::std::less>> mPlacingQueue;
     // NOLINTEND
 

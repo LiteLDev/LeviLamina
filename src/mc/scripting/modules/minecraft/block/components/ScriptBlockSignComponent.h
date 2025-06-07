@@ -3,10 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
+#include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockActorComponent.h"
 #include "mc/world/item/ItemColor.h"
 #include "mc/world/level/block/actor/SignTextSide.h"
 
@@ -15,11 +13,12 @@
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraft { struct ScriptRawTextInterface; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBlockSignComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
+class ScriptBlockSignComponent : public ::ScriptModuleMinecraft::BaseScriptBlockActorComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -39,7 +38,7 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<bool> getWaxed() const;
 
-    MCNAPI ::Scripting::Result<void> setText(
+    MCNAPI ::Scripting::Result_deprecated<void> setText(
         ::std::variant<
             ::std::string,
             ::ScriptModuleMinecraft::ScriptRawMessageInterface,
@@ -47,15 +46,16 @@ public:
         ::SignTextSide                                              side
     );
 
-    MCNAPI ::Scripting::Result<void> setTextDyeColor(::std::optional<::ItemColor> color, ::SignTextSide side);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    setTextDyeColor(::std::optional<::ItemColor> color, ::SignTextSide side);
 
-    MCNAPI ::Scripting::Result<void> setWaxed(bool waxed);
+    MCNAPI ::Scripting::Result_deprecated<void> setWaxed(bool waxed);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockSignComponent>
+    MCNAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 

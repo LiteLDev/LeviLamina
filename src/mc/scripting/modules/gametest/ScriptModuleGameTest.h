@@ -2,14 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/server/sim/LookDuration.h"
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct EnumBinding; }
+// clang-format on
 
 namespace ScriptModuleGameTest {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Scripting::EnumBindingBuilder<::std::string, ::sim::LookDuration> bindLookDurationEnumV1();
+MCNAPI ::Scripting::EnumBinding bindLookDurationEnumV1();
 // NOLINTEND
 
 } // namespace ScriptModuleGameTest

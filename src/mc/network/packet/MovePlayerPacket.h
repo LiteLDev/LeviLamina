@@ -36,6 +36,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MovePlayerPacket();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -60,8 +64,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MovePlayerPacket();
-
     MCAPI MovePlayerPacket(::Player const& player, ::Vec3 const& pos);
 
     MCAPI MovePlayerPacket(
@@ -75,8 +77,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::Player const& player, ::Vec3 const& pos);
 
     MCAPI void* $ctor(

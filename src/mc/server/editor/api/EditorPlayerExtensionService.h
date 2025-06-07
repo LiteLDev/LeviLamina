@@ -5,18 +5,18 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/server/editor/api/EditorPlayerExtensionServiceProvider.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor::API { class EditorExtension; }
 namespace Editor::API { class EditorExtensionContext; }
 namespace Editor::ScriptModule { class ScriptInternalPlayerServiceContext; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextId; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 namespace Editor::API {
@@ -46,48 +46,56 @@ public:
     virtual ~EditorPlayerExtensionService() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void> ready() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> quit() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void>
+    virtual ::Scripting::Result_deprecated<void>
     startExtensions(::std::optional<::Scripting::ContextId> optionalContextId) /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void> stopExtensions() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> stopExtensions() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> forEachExtension(
+    virtual ::Scripting::Result_deprecated<void> forEachExtension(
         ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
     ) /*override*/;
 
     // vIndex: 4
-    virtual ::Scripting::Result<
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>,
-        ::Scripting::Error>
+    virtual ::Scripting::Result_deprecated<
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>>
     getInternalServiceContext(::Scripting::WeakLifetimeScope const& scope) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI explicit EditorPlayerExtensionService(::Editor::ServiceProviderCollection& providers);
+
+    MCNAPI ::Scripting::Result_deprecated<void>
     _createAndStartExtensionContexts(::std::optional<::Scripting::ContextId> optionalContextId);
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     _createExtensionContexts(::std::optional<::Scripting::ContextId> optionalContextId);
 
-    MCNAPI ::Scripting::Result<void> _destroyExtensionContexts();
+    MCNAPI ::Scripting::Result_deprecated<void> _destroyExtensionContexts();
 
-    MCNAPI ::Scripting::Result<void> _handleStartExtensions(::std::optional<::Scripting::ContextId> optionalContextId);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    _handleStartExtensions(::std::optional<::Scripting::ContextId> optionalContextId);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
@@ -99,24 +107,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result_deprecated<void> $ready();
 
-    MCNAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI ::Scripting::Result<void> $startExtensions(::std::optional<::Scripting::ContextId> optionalContextId);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $startExtensions(::std::optional<::Scripting::ContextId> optionalContextId);
 
-    MCNAPI ::Scripting::Result<void> $stopExtensions();
+    MCNAPI ::Scripting::Result_deprecated<void> $stopExtensions();
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     $forEachExtension(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func);
 
-    MCNAPI ::Scripting::Result<
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>,
-        ::Scripting::Error>
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>>
     $getInternalServiceContext(::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 

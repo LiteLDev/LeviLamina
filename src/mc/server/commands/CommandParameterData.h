@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Command;
 class CommandOrigin;
 class CommandRegistry;
 // clang-format on
@@ -26,6 +27,10 @@ public:
         ::std::vector<::std::string>&
     ) const;
 
+    using CustomStorageGetFn = void* (*)(::Command*, int);
+
+    using CustomStorageIsSetFn = bool* (*)(::Command*, int);
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -41,6 +46,8 @@ public:
     int                                    mSetOffset;
     bool                                   mIsOptional;
     ::CommandParameterOption               mOptions;
+    ::ll::TypedStorage<8, 8, void* (*)(::Command*, int)> mValueGetFn;
+    ::ll::TypedStorage<8, 8, bool* (*)(::Command*, int)> mValueIsSetFn;
     // NOLINTEND
 
 

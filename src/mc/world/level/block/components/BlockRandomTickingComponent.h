@@ -11,14 +11,14 @@
 class DefinitionTrigger;
 namespace Bedrock::PubSub { class Subscription; }
 namespace BlockEvents { class BlockEventManager; }
-namespace BlockEvents { class BlockRandomTickEvent; }
+namespace BlockEvents { class BlockRandomTickLegacyEvent; }
 // clang-format on
 
 struct BlockRandomTickingComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 256, ::DefinitionTrigger>            mOnTimeDown;
+    ::ll::TypedStorage<8, 56, ::DefinitionTrigger>             mOnTimeDown;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mEventSubscription;
     // NOLINTEND
 
@@ -34,7 +34,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void finalize(::BlockEvents::BlockEventManager& manager);
 
-    MCNAPI void onTick(::BlockEvents::BlockRandomTickEvent const& eventData) const;
+    MCNAPI void onTick(::BlockEvents::BlockRandomTickLegacyEvent const& eventData) const;
     // NOLINTEND
 
 public:

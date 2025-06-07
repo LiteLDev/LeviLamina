@@ -127,7 +127,7 @@ public:
     virtual void setRenderDistanceConfiguration(::RenderDistanceConfiguration const&) = 0;
 
     // vIndex: 32
-    virtual ::std::vector<int> const getDeferredRenderDistanceLevels(int&) const = 0;
+    virtual ::std::vector<int> const getDeferredRenderDistanceLevels() const = 0;
     // NOLINTEND
 
 public:

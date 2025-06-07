@@ -2,13 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
+namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -37,7 +35,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptRawTextInterface> bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
 
     MCNAPI static ::ScriptModuleMinecraft::ScriptRawTextInterface fromJSON(::Json::Value const& json);
     // NOLINTEND

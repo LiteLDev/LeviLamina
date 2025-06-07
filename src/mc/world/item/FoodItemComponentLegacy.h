@@ -119,7 +119,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _applyEatEffects(::ItemStack const& actor, ::Actor& level, ::Level&);
+    MCAPI void _applyEatEffects(::ItemStack const&, ::Actor& actor, ::Level& level);
 
     MCAPI void _loadEffects(::Json::Value const& effectsData);
 

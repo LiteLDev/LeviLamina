@@ -20,6 +20,7 @@ class CompositePackSource;
 class IContentAccessibilityProvider;
 class IContentKeyProvider;
 class IMinecraftEventing;
+class IPackManifestFactory;
 class Pack;
 class PackInstance;
 class PackManifestFactory;
@@ -35,6 +36,7 @@ struct InvalidPacksFilterGroup;
 struct PackInstanceId;
 namespace Core { class FilePathManager; }
 namespace Core { class Path; }
+namespace PackCommand { class IPackCommandPipeline; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -85,6 +87,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ContentIdentity, ::std::string>> mTempCacheContentKeys;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackSettingsFactory>>                mPackSettingsFactory;
     ::ll::TypedStorage<8, 8, ::PackSourceFactory&>                                    mPackSourceFactory;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PackCommand::IPackCommandPipeline>> mCommands;
     ::ll::TypedStorage<8, 16, ::std::map<void*, ::std::function<void(::ResourcePack*)>>> mRemoveResourcePackCallback;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                             mInitTaskGroup;
     ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                               mInitializeMutex;
@@ -278,6 +281,7 @@ public:
         ::PackManifestFactory&                                                manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider> const& contentAccessibility,
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&         pathManager,
+        ::Bedrock::NonOwnerPointer<::PackCommand::IPackCommandPipeline>       commands,
         ::PackSourceFactory&                                                  packSourceFactory,
         bool                                                                  initAsync
     );
@@ -311,9 +315,10 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::PackSourceReport loadAndUpgradePacks(
-        ::PackSource&                packSource,
-        ::PackManifestFactory&       manifestFactory,
-        ::IContentKeyProvider const& keyProvider
+        ::PackSource&                        packSource,
+        ::IPackManifestFactory&              manifestFactory,
+        ::IContentKeyProvider const&         keyProvider,
+        ::PackCommand::IPackCommandPipeline* commands
     );
     // NOLINTEND
 
@@ -331,6 +336,7 @@ public:
         ::PackManifestFactory&                                                manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider> const& contentAccessibility,
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&         pathManager,
+        ::Bedrock::NonOwnerPointer<::PackCommand::IPackCommandPipeline>       commands,
         ::PackSourceFactory&                                                  packSourceFactory,
         bool                                                                  initAsync
     );

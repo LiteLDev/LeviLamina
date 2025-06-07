@@ -24,10 +24,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 130
+    // vIndex: 129
     virtual ::Block const* tryGetUninfested(::Block const& block) const /*override*/;
 
-    // vIndex: 91
+    // vIndex: 90
     virtual void spawnAfterBreak(
         ::BlockSource& region,
         ::Block const&,

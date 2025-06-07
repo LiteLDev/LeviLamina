@@ -6,7 +6,7 @@
 #include "mc/common/editor/IEditorPlayer.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/serviceproviders/EditorPlayerServiceProvider.h"
 #include "mc/editor/services/EditorServiceList.h"
 #include "mc/world/events/EventResult.h"
@@ -19,7 +19,6 @@ class PlayerEventCoordinator;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 namespace Editor { class ServiceProviderCollection; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 namespace Editor {
@@ -43,7 +42,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkb995b8;
-    ::ll::UntypedStorage<8, 48> mUnk53047f;
+    ::ll::UntypedStorage<8, 48> mUnk6374b5;
     ::ll::UntypedStorage<8, 24> mUnk6b14f6;
     ::ll::UntypedStorage<4, 4>  mUnk2b7012;
     // NOLINTEND
@@ -61,19 +60,19 @@ public:
     virtual ~EditorPlayerCommon() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void> ready() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> quit() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     // vIndex: 4
     virtual ::Editor::ServiceProviderCollection& getServiceProviders() /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result<::Bedrock::PubSub::Subscription, ::Scripting::Error>
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     registerTickSubscriber(::std::function<void(::Editor::ServiceProviderCollection&)> fnTick) /*override*/;
 
     // vIndex: 1
@@ -110,15 +109,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result_deprecated<void> $ready();
 
-    MCNAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
     MCNAPI ::Editor::ServiceProviderCollection& $getServiceProviders();
 
-    MCNAPI ::Scripting::Result<::Bedrock::PubSub::Subscription, ::Scripting::Error>
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     $registerTickSubscriber(::std::function<void(::Editor::ServiceProviderCollection&)> fnTick);
 
     MCNAPI ::Player* $getPlayer() const;

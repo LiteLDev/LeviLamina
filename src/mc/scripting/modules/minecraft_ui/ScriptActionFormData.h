@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/deps/scripting/script_engine/Promise.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
@@ -15,12 +15,16 @@
 class Player;
 namespace Json { class Value; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
+namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
+namespace ScriptModuleMinecraft { struct ScriptRawMessageError; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraftServerUI { class ScriptActionFormResponse; }
 namespace ScriptModuleMinecraftServerUI { class ScriptFormRejectError; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class ScriptObjectFactory; }
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
+namespace Scripting { struct EngineError; }
 // clang-format on
 
 namespace ScriptModuleMinecraftServerUI {
@@ -85,7 +89,7 @@ public:
 
     MCNAPI ScriptActionFormData(::ScriptModuleMinecraftServerUI::ScriptActionFormData const&);
 
-    MCNAPI ::Scripting::Result_deprecated<::Json::Value>
+    MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
     _buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptActionFormData>
@@ -113,11 +117,26 @@ public:
     MCNAPI ::ScriptModuleMinecraftServerUI::ScriptActionFormData&
     operator=(::ScriptModuleMinecraftServerUI::ScriptActionFormData&&);
 
+    MCNAPI ::Scripting::Result<
+        ::Scripting::Promise<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptActionFormResponse>,
+            ::ScriptModuleMinecraftServerUI::ScriptFormRejectError,
+            void>,
+        ::ScriptModuleMinecraft::ScriptRawMessageError,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError,
+        ::Scripting::EngineError>
+    show(
+        ::Scripting::ContextConfig const&      config,
+        ::Scripting::ScriptObjectFactory&      factory,
+        ::Scripting::DependencyLocator&        locator,
+        ::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer
+    );
+
     MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptActionFormResponse>,
         ::ScriptModuleMinecraftServerUI::ScriptFormRejectError,
         void>>
-    show(
+    showV010(
         ::Scripting::ContextConfig const&      config,
         ::Scripting::ScriptObjectFactory&      factory,
         ::Scripting::DependencyLocator&        locator,
@@ -136,7 +155,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftServerUI::ScriptActionFormData> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:

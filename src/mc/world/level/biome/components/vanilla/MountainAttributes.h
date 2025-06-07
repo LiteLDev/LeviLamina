@@ -18,11 +18,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 184> mUnk804c17;
-        ::ll::UntypedStorage<1, 1>   mUnk4f320b;
-        ::ll::UntypedStorage<1, 1>   mUnk3f0cc1;
-        ::ll::UntypedStorage<1, 1>   mUnk30bf99;
-        ::ll::UntypedStorage<1, 1>   mUnk882b62;
+        ::ll::UntypedStorage<8, 8> mUnk3961d6;
+        ::ll::UntypedStorage<1, 1> mUnk4f320b;
+        ::ll::UntypedStorage<1, 1> mUnk3f0cc1;
+        ::ll::UntypedStorage<1, 1> mUnk30bf99;
+        ::ll::UntypedStorage<1, 1> mUnk882b62;
         // NOLINTEND
 
     public:
@@ -49,7 +49,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 192, ::MountainAttributes::SteepMaterial>  mSteepMaterial;
+    ::ll::TypedStorage<8, 16, ::MountainAttributes::SteepMaterial>   mSteepMaterial;
     ::ll::TypedStorage<1, 1, ::MountainAttributes::TopSlideSettings> mTopSlideSettings;
     // NOLINTEND
 

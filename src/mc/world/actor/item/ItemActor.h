@@ -148,6 +148,8 @@ public:
 
     MCFOLD bool $canSynchronizeNewEntity() const;
 
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+
     MCAPI bool $isFireImmune() const;
 
     MCAPI bool $_hurt(::ActorDamageSource const&, float damage, bool, bool);

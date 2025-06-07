@@ -55,12 +55,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI OceanMonumentPiece(
-        int                                 orientation,
-        int&                                roomDefinition,
-        ::std::shared_ptr<::RoomDefinition> roomWidth,
+        int                                 genDepth,
+        int&                                orientation,
+        ::std::shared_ptr<::RoomDefinition> roomDefinition,
+        int                                 roomWidth,
         int                                 roomHeight,
-        int                                 roomDepth,
-        int                                 genDepth
+        int                                 roomDepth
     );
 
     MCNAPI bool chunkIntersects(::BoundingBox const& chunkBB, int x0, int z0, int x1, int z1);
@@ -80,7 +80,7 @@ public:
     MCNAPI void
     generateDefaultFloor(::BlockSource& region, ::BoundingBox const& chunkBB, int xOff, int zOff, bool downOpening);
 
-    MCNAPI void spawnElder(::BlockSource& region, ::BoundingBox const& x, int z, int chunkBB, int y);
+    MCNAPI void spawnElder(::BlockSource& region, ::BoundingBox const& chunkBB, int x, int y, int z);
     // NOLINTEND
 
 public:
@@ -105,12 +105,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        int                                 orientation,
-        int&                                roomDefinition,
-        ::std::shared_ptr<::RoomDefinition> roomWidth,
+        int                                 genDepth,
+        int&                                orientation,
+        ::std::shared_ptr<::RoomDefinition> roomDefinition,
+        int                                 roomWidth,
         int                                 roomHeight,
-        int                                 roomDepth,
-        int                                 genDepth
+        int                                 roomDepth
     );
     // NOLINTEND
 

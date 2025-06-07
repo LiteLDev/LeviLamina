@@ -39,6 +39,7 @@ public:
 
     public:
         // prevent constructor by default
+        Definition& operator=(Definition const&);
         Definition(Definition const&);
         Definition();
 
@@ -46,13 +47,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~Definition() /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::EatMobGoal::Definition& operator=(::EatMobGoal::Definition const&);
+        virtual ~Definition() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -62,12 +57,6 @@ public:
             ::std::string const&                                                                                   name,
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EatMobGoal::Definition>>& root
         );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -86,15 +75,15 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                     mMob;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>            mTargetId;
-    ::ll::TypedStorage<8, 128, ::EatMobGoal::Definition> mDefinition;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>  mPath;
-    ::ll::TypedStorage<4, 4, ::EatMobGoal::State>        mState;
-    ::ll::TypedStorage<8, 8, ::Tick>                     mEatAnimationTimer;
-    ::ll::TypedStorage<8, 8, ::Tick>                     mLastPathCalculationTick;
-    ::ll::TypedStorage<1, 1, bool>                       mShouldKillTarget;
-    ::ll::TypedStorage<4, 12, ::Vec3>                    mDropPos;
+    ::ll::TypedStorage<8, 8, ::Mob&>                    mMob;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>           mTargetId;
+    ::ll::TypedStorage<8, 96, ::EatMobGoal::Definition> mDefinition;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mPath;
+    ::ll::TypedStorage<4, 4, ::EatMobGoal::State>       mState;
+    ::ll::TypedStorage<8, 8, ::Tick>                    mEatAnimationTimer;
+    ::ll::TypedStorage<8, 8, ::Tick>                    mLastPathCalculationTick;
+    ::ll::TypedStorage<1, 1, bool>                      mShouldKillTarget;
+    ::ll::TypedStorage<4, 12, ::Vec3>                   mDropPos;
     // NOLINTEND
 
 public:
@@ -125,7 +114,13 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 0
-    virtual ~EatMobGoal() /*override*/ = default;
+    virtual ~EatMobGoal() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -2,8 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct InterfaceBinding; }
+// clang-format on
 
 namespace Editor::ScriptModule {
 
@@ -18,18 +20,22 @@ public:
     ::ll::UntypedStorage<1, 2>   mUnk91901b;
     ::ll::UntypedStorage<1, 2>   mUnkebb8cf;
     ::ll::UntypedStorage<1, 2>   mUnkdf15ce;
+    ::ll::UntypedStorage<8, 40>  mUnk45e023;
+    ::ll::UntypedStorage<4, 16>  mUnk41ac7c;
+    ::ll::UntypedStorage<4, 16>  mUnkfc3427;
     ::ll::UntypedStorage<8, 240> mUnkd41faf;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ScriptWidgetCreateOptions& operator=(ScriptWidgetCreateOptions const&);
-    ScriptWidgetCreateOptions(ScriptWidgetCreateOptions const&);
     ScriptWidgetCreateOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptWidgetCreateOptions(::Editor::ScriptModule::ScriptWidgetCreateOptions const&);
+
     MCNAPI ::Editor::ScriptModule::ScriptWidgetCreateOptions&
     operator=(::Editor::ScriptModule::ScriptWidgetCreateOptions&&);
 
@@ -39,7 +45,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetCreateOptions> bindScript();
+    MCNAPI static ::Scripting::InterfaceBinding bindScript();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetCreateOptions const&);
     // NOLINTEND
 
 public:

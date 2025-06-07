@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class ExpressionNode;
 // clang-format on
 
@@ -19,6 +20,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI int getOnDeathExperience(::Actor& owner) const;
+
     MCNAPI ~ExperienceRewardComponent();
     // NOLINTEND
 

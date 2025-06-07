@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/components/ScriptComponentType.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { struct EnumBinding; }
 namespace Scripting { struct Version; }
 // clang-format on
 
@@ -32,8 +32,7 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit ScriptComponentTypeEnumBuilder(::ScriptModuleMinecraft::ScriptComponentType componentType);
 
-    MCNAPI ::Scripting::EnumBindingBuilder<::std::string, ::std::string>
-    bind(::std::optional<::Scripting::Version> releaseVersion);
+    MCNAPI ::Scripting::EnumBinding bind(::std::optional<::Scripting::Version> releaseVersion);
 
     MCNAPI ~ScriptComponentTypeEnumBuilder();
     // NOLINTEND

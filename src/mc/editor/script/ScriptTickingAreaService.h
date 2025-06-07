@@ -3,13 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 class Vec3;
-namespace Scripting { struct Error; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -31,20 +30,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<bool, ::Scripting::Error> isTickingAreaActive(::std::string const& areaIdentifier);
+    MCNAPI ::Scripting::Result_deprecated<bool> isTickingAreaActive(::std::string const& areaIdentifier);
 
-    MCNAPI ::Scripting::Result<bool, ::Scripting::Error> purgeTickingAreas(::std::string const& areaIdentifier);
+    MCNAPI ::Scripting::Result_deprecated<bool> purgeTickingAreas(::std::string const& areaIdentifier);
 
-    MCNAPI ::Scripting::Result<bool, ::Scripting::Error> releaseTickingArea(::std::string const& areaIdentifier);
+    MCNAPI ::Scripting::Result_deprecated<bool> releaseTickingArea(::std::string const& areaIdentifier);
 
-    MCNAPI ::Scripting::Result<bool, ::Scripting::Error>
+    MCNAPI ::Scripting::Result_deprecated<bool>
     requestTickingArea(::std::string const& areaIdentifier, ::Vec3 const& from, ::Vec3 const& to);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptTickingAreaService> bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 };
 

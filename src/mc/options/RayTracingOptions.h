@@ -21,6 +21,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnkaa0968;
     ::ll::UntypedStorage<1, 1>  mUnk247eaa;
     ::ll::UntypedStorage<1, 1>  mUnk8ff52e;
+    ::ll::UntypedStorage<1, 1>  mUnk654568;
     ::ll::UntypedStorage<4, 4>  mUnk18bb5b;
     ::ll::UntypedStorage<8, 24> mUnke3b45f;
     // NOLINTEND
@@ -61,13 +62,16 @@ public:
     // vIndex: 8
     virtual bool isDeferredShadingAvailable() const /*override*/;
 
+    // vIndex: 9
+    virtual bool supportsVibrantVisualsPackStack() const /*override*/;
+
     // vIndex: 4
     virtual bool isUpscalingAvailable() const /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual ::dragon::rendering::LightingModels getLightingModel() const /*override*/;
 
-    // vIndex: 10
+    // vIndex: 11
     virtual void setLightingModel(::dragon::rendering::LightingModels const) /*override*/;
     // NOLINTEND
 

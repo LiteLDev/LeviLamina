@@ -65,6 +65,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit BlockPalette(::BlockPalette::ConstructorToken);
+
     MCNAPI explicit BlockPalette(::Level& level);
 
     MCNAPI ::Block const& getBlockFromLegacyData(::NewBlockID id, uint data) const;
@@ -79,6 +81,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::BlockPalette::ConstructorToken);
+
     MCNAPI void* $ctor(::Level& level);
     // NOLINTEND
 

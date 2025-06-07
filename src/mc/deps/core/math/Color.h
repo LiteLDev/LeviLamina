@@ -260,8 +260,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int toARGB() const;
-
     MCAPI ::std::string toHexString() const;
     // NOLINTEND
 

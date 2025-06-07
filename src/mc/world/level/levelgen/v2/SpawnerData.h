@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/util/WeightedRandom.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
+#include "mc/world/actor/ActorType.h"
 #include "mc/world/level/levelgen/v2/OverrideState.h"
 
 // auto generated forward declare list
@@ -83,6 +84,9 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::br::worldgen::SpawnerData
     make(::std::string_view id, short probabilityWeight, short minCount, short maxCount);
+
+    MCNAPI static ::br::worldgen::SpawnerData
+    make(::ActorType id, short probabilityWeight, short minCount, short maxCount);
     // NOLINTEND
 
 public:

@@ -192,8 +192,11 @@ public:
     ::ll::TypedStorage<4, 4, int>                                            mResetHMDAfterSleepTickDelay;
     ::ll::TypedStorage<4, 4, int>                                            mRenderChunkRadiusLowMemoryWatermark;
     ::ll::TypedStorage<8, 32, ::std::string>                                 mLastDeathInfo;
-    ::ll::TypedStorage<8, 112, ::OreUI::GameplayRouteHandler>                mGameplayRouteHandler;
+    ::ll::TypedStorage<8, 120, ::OreUI::GameplayRouteHandler>                mGameplayRouteHandler;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Editor::IEditorPlayer>>     mEditorClientPlayer;
+    ::ll::TypedStorage<4, 4, float>                                          mCurrentExpCache;
+    ::ll::TypedStorage<4, 4, int>                                            mCurrentLevelCache;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>        mLastLevelChangedTimePoint;
     ::ll::TypedStorage<1, 1, bool>                                           mPreparedMainChunkSource;
     // NOLINTEND
 
@@ -365,7 +368,7 @@ public:
     virtual void setOffhandSlot(::ItemStack const& item) /*override*/;
 
     // vIndex: 72
-    virtual void setArmor(::SharedTypes::Legacy::ArmorSlot, ::ItemStack const&) /*override*/;
+    virtual void setArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 216
     virtual ::IMinecraftEventing* getEventing() const /*override*/;

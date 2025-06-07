@@ -120,8 +120,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit DebugEndPoint(::std::optional<::LogLevel> minLogLevel);
-
-    MCNAPI void initializeContentLogging(::ResourcePackManager& mgr, ::Core::Path const& levelPath);
     // NOLINTEND
 
 public:

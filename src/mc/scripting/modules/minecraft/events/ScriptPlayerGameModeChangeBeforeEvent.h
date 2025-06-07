@@ -3,8 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/events/ScriptPlayerGameModeChangeAfterEvent.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ClassBinding; }
+// clang-format on
 
 namespace ScriptModuleMinecraft {
 
@@ -24,8 +28,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>
-    bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

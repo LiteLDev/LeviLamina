@@ -64,7 +64,7 @@ MCNAPI void saveLevelData(
 );
 
 MCNAPI void
-saveLevelDataToPath(::Core::Path const& fullPath, ::std::string const& levelData, ::LevelData const& levelId);
+saveLevelDataToPath(::Core::Path const& fullPath, ::std::string const& levelId, ::LevelData const& levelData);
 
 MCNAPI void saveLevelDisplayDataToCache(
     ::std::string const&          levelId,

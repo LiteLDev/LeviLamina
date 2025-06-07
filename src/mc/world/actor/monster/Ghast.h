@@ -24,6 +24,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+
+    // vIndex: 35
+    virtual float getShadowRadius() const /*override*/;
+
     // vIndex: 177
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
@@ -32,9 +38,6 @@ public:
 
     // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
-
-    // vIndex: 2
-    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     // vIndex: 8
     virtual ~Ghast() /*override*/ = default;
@@ -63,13 +66,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+    MCFOLD float $getShadowRadius() const;
+
     MCFOLD bool $isDarkEnoughToSpawn() const;
 
     MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
-
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
     // NOLINTEND
 
 public:

@@ -18,20 +18,20 @@ class SlimeBlock : public ::BlockLegacy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 134
+    // vIndex: 133
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 68
+    // vIndex: 67
     virtual void updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const
         /*override*/;
 
-    // vIndex: 69
+    // vIndex: 68
     virtual bool isBounceBlock() const /*override*/;
 
-    // vIndex: 142
+    // vIndex: 140
     virtual int getExtraRenderLayers() const /*override*/;
 
     // vIndex: 0

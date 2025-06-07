@@ -3,9 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
@@ -13,6 +11,7 @@
 class Block;
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace Scripting { struct Error; }
+namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -65,25 +64,25 @@ public:
 
     MCNAPI ::ScriptModuleMinecraft::ScriptBlockFilter& operator=(::ScriptModuleMinecraft::ScriptBlockFilter&&);
 
-    MCNAPI ::Scripting::Result<void> setExcludePermutations(
+    MCNAPI ::Scripting::Result_deprecated<void> setExcludePermutations(
         ::std::optional<
             ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>> const&
             permutations
     );
 
-    MCNAPI ::Scripting::Result<void> setExcludeTags(::std::optional<::std::vector<::std::string>> strings);
+    MCNAPI ::Scripting::Result_deprecated<void> setExcludeTags(::std::optional<::std::vector<::std::string>> strings);
 
-    MCNAPI ::Scripting::Result<void> setExcludeTypes(::std::optional<::std::vector<::std::string>> strings);
+    MCNAPI ::Scripting::Result_deprecated<void> setExcludeTypes(::std::optional<::std::vector<::std::string>> strings);
 
-    MCNAPI ::Scripting::Result<void> setIncludePermutations(
+    MCNAPI ::Scripting::Result_deprecated<void> setIncludePermutations(
         ::std::optional<
             ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>> const&
             permutations
     );
 
-    MCNAPI ::Scripting::Result<void> setIncludeTags(::std::optional<::std::vector<::std::string>> strings);
+    MCNAPI ::Scripting::Result_deprecated<void> setIncludeTags(::std::optional<::std::vector<::std::string>> strings);
 
-    MCNAPI ::Scripting::Result<void> setIncludeTypes(::std::optional<::std::vector<::std::string>> strings);
+    MCNAPI ::Scripting::Result_deprecated<void> setIncludeTypes(::std::optional<::std::vector<::std::string>> strings);
 
     MCNAPI ~ScriptBlockFilter();
     // NOLINTEND
@@ -91,7 +90,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptBlockFilter> bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:

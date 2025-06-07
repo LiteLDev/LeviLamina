@@ -15,11 +15,12 @@ public:
     // prevent constructor by default
     HeaderCollection& operator=(HeaderCollection const&);
     HeaderCollection(HeaderCollection const&);
-    HeaderCollection();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI HeaderCollection();
+
     MCNAPI void _addHeader(::std::string const& headerName, ::std::string const& headerValue, bool setValue);
 
     MCNAPI void add(::std::string const& headerName, ::std::string const& headerValue);
@@ -31,6 +32,12 @@ public:
     MCNAPI void set(::std::string const& headerName, ::std::string const& headerValue);
 
     MCNAPI ~HeaderCollection();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/Mode.h"
 #include "mc/editor/services/state/ModeService.h"
 
@@ -22,7 +22,7 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 7
-    virtual ::Scripting::Result<void> _doSwitchMode(::Editor::Mode newMode) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> _doSwitchMode(::Editor::Mode newMode) /*override*/;
 
     // vIndex: 8
     virtual void _handleModeChangedPayload(::Editor::Network::ModeChangedPayload const& payload) /*override*/;
@@ -36,7 +36,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI ::Scripting::Result<void> $_doSwitchMode(::Editor::Mode newMode);
+    MCNAPI ::Scripting::Result_deprecated<void> $_doSwitchMode(::Editor::Mode newMode);
 
     MCNAPI void $_handleModeChangedPayload(::Editor::Network::ModeChangedPayload const& payload);
     // NOLINTEND

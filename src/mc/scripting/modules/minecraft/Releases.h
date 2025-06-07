@@ -35,6 +35,8 @@ MCNAPI ::Scripting::Version const& V1_17_0();
 
 MCNAPI ::Scripting::Version const& V1_18_0();
 
+MCNAPI ::Scripting::Version const& V1_19_0();
+
 MCNAPI ::Scripting::Version const& V1_1_0();
 
 MCNAPI ::Scripting::Version const& V1_2_0();

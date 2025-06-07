@@ -22,8 +22,6 @@ public:
 
     MCAPI static void initBiomeComponentGlue(::BiomeComponentFactory& factory);
 
-    MCAPI static void initBiomeComponents(::BiomeComponentFactory& factory);
-
     MCAPI static void initBiomeDimensionComponent(::BiomeRegistry& registry);
 
     MCAPI static void initBiomes(

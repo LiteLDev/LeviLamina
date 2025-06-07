@@ -44,10 +44,10 @@ public:
     MCNAPI ::BuildMatch match(::BlockPos const& pos, int subPattern, int rowIndex, uchar forward, uchar up);
 
     MCNAPI void replaceBlocks(
-        char                                                     buildMatch,
-        ::BuildMatch                                             block,
-        ::Block const&                                           preReplaceCallback,
-        ::std::function<void(::Block const&, ::BlockPos const&)> subPattern
+        char                                                     subPattern,
+        ::BuildMatch                                             buildMatch,
+        ::Block const&                                           block,
+        ::std::function<void(::Block const&, ::BlockPos const&)> preReplaceCallback
     );
     // NOLINTEND
 

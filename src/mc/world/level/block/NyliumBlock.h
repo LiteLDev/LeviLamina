@@ -12,8 +12,10 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class Random;
 class Randomize;
+namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class NyliumBlock : public ::BlockLegacy {
@@ -34,17 +36,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 137
-    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    // vIndex: 76
+    // vIndex: 75
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    // vIndex: 74
+    // vIndex: 73
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const
         /*override*/;
+
+    // vIndex: 130
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
     virtual ~NyliumBlock() /*override*/ = default;
@@ -59,6 +61,8 @@ public:
         ::Random&                                           random,
         ::std::function<::Block const&(::Randomize const&)> plantProvider
     ) const;
+
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -76,12 +80,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

@@ -14,8 +14,8 @@ struct Schema {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 96> mUnk5ed1d2;
-    ::ll::UntypedStorage<8, 8>  mUnk75bb3d;
+    ::ll::UntypedStorage<8, 104> mUnk5ed1d2;
+    ::ll::UntypedStorage<8, 8>   mUnk75bb3d;
     // NOLINTEND
 
 public:

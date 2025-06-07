@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Puv { class VersionRange; }
+class SemVersionConstant;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -37,7 +37,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Puv::VersionRange const& SUPPORTED_VERSIONS();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:

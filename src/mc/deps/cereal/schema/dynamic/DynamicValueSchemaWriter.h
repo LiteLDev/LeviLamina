@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { class PropertyReader; }
 namespace cereal { struct NullType; }
 // clang-format on
 
@@ -31,55 +30,55 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 13
-    virtual bool write(::cereal::NullType, ::cereal::PropertyReader const&) /*override*/;
+    virtual bool write(::cereal::NullType) /*override*/;
 
     // vIndex: 12
-    virtual bool write(bool value, ::cereal::PropertyReader const&) /*override*/;
+    virtual bool write(bool value) /*override*/;
 
     // vIndex: 11
-    virtual bool write(char value, ::cereal::PropertyReader const&) /*override*/;
+    virtual bool write(char value) /*override*/;
 
     // vIndex: 10
-    virtual bool write(uchar value, ::cereal::PropertyReader const&) /*override*/;
+    virtual bool write(uchar value) /*override*/;
 
     // vIndex: 9
-    virtual bool write(short value, ::cereal::PropertyReader const&) /*override*/;
+    virtual bool write(short value) /*override*/;
 
     // vIndex: 8
-    virtual bool write(ushort value, ::cereal::PropertyReader const&) /*override*/;
+    virtual bool write(ushort value) /*override*/;
 
     // vIndex: 7
-    virtual bool write(int value, ::cereal::PropertyReader const&) /*override*/;
+    virtual bool write(int value) /*override*/;
 
     // vIndex: 6
-    virtual bool write(uint value, ::cereal::PropertyReader const&) /*override*/;
+    virtual bool write(uint value) /*override*/;
 
     // vIndex: 5
-    virtual bool write(int64 value, ::cereal::PropertyReader const&) /*override*/;
+    virtual bool write(int64 value) /*override*/;
 
     // vIndex: 4
-    virtual bool write(uint64 value, ::cereal::PropertyReader const&) /*override*/;
+    virtual bool write(uint64 value) /*override*/;
 
     // vIndex: 3
-    virtual bool write(float value, ::cereal::PropertyReader const&) /*override*/;
+    virtual bool write(float value) /*override*/;
 
     // vIndex: 2
-    virtual bool write(double value, ::cereal::PropertyReader const&) /*override*/;
+    virtual bool write(double value) /*override*/;
 
     // vIndex: 1
-    virtual bool write(::std::string_view const value, ::cereal::PropertyReader const&) /*override*/;
+    virtual bool write(::std::string_view const value) /*override*/;
 
     // vIndex: 14
-    virtual bool pushMember(::std::string_view const value, ::cereal::PropertyReader const&) /*override*/;
+    virtual bool pushMember(::std::string_view const value) /*override*/;
 
     // vIndex: 15
     virtual void popMember() /*override*/;
 
     // vIndex: 16
-    virtual bool openObject(::cereal::PropertyReader const&) /*override*/;
+    virtual bool openObject() /*override*/;
 
     // vIndex: 17
-    virtual bool openArray(uint64 len, ::cereal::PropertyReader const&) /*override*/;
+    virtual bool openArray(uint64 len) /*override*/;
 
     // vIndex: 18
     virtual void close() /*override*/;
@@ -97,39 +96,39 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $write(::cereal::NullType, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(::cereal::NullType);
 
-    MCNAPI bool $write(bool value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(bool value);
 
-    MCNAPI bool $write(char value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(char value);
 
-    MCNAPI bool $write(uchar value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(uchar value);
 
-    MCNAPI bool $write(short value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(short value);
 
-    MCNAPI bool $write(ushort value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(ushort value);
 
-    MCNAPI bool $write(int value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(int value);
 
-    MCNAPI bool $write(uint value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(uint value);
 
-    MCNAPI bool $write(int64 value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(int64 value);
 
-    MCNAPI bool $write(uint64 value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(uint64 value);
 
-    MCNAPI bool $write(float value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(float value);
 
-    MCNAPI bool $write(double value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(double value);
 
-    MCNAPI bool $write(::std::string_view const value, ::cereal::PropertyReader const&);
+    MCNAPI bool $write(::std::string_view const value);
 
-    MCNAPI bool $pushMember(::std::string_view const value, ::cereal::PropertyReader const&);
+    MCNAPI bool $pushMember(::std::string_view const value);
 
     MCNAPI void $popMember();
 
-    MCNAPI bool $openObject(::cereal::PropertyReader const&);
+    MCNAPI bool $openObject();
 
-    MCNAPI bool $openArray(uint64 len, ::cereal::PropertyReader const&);
+    MCNAPI bool $openArray(uint64 len);
 
     MCNAPI void $close();
     // NOLINTEND

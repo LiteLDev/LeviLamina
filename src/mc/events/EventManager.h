@@ -66,6 +66,8 @@ public:
         ::std::vector<::std::string> const&                              exclude
     ) const;
 
+    MCNAPI ::Social::Events::Property getGlobalProperty(::std::string const& name) const;
+
     MCNAPI ::Social::Events::Property getPlayerCommonProperty(uint userId, ::std::string const& name) const;
 
     MCNAPI ::Social::Events::Property getPlayerGlobalProperty(uint userId, ::std::string const& name) const;

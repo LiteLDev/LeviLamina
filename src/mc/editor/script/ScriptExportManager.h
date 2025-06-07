@@ -3,16 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/deps/scripting/runtime/Result.h"
-#include "mc/editor/services/export/ExportResult.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 class LevelData;
 namespace Editor::ScriptModule { class ScriptGameOptions; }
-namespace Scripting { struct Error; }
+namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct EnumBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -45,16 +43,15 @@ public:
 
     MCNAPI ::Editor::ScriptModule::ScriptGameOptions getGameOptions(::std::optional<bool> useDefault);
 
-    MCNAPI ::Scripting::Result<::std::string, ::Scripting::Error> getGameVersion() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getGameVersion() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptExportManager> bindClass();
+    MCNAPI static ::Scripting::ClassBinding bindClass();
 
-    MCNAPI static ::Scripting::EnumBindingBuilder<::Editor::ExportResult, ::Editor::ExportResult>
-    bindExportResultEnums();
+    MCNAPI static ::Scripting::EnumBinding bindExportResultEnums();
     // NOLINTEND
 
 public:

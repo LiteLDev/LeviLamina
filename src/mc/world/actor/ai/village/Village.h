@@ -132,6 +132,8 @@ public:
 
     MCAPI void _createRaid();
 
+    MCAPI void _deleteOldDataIfNeeded(::LevelStorage& levelStorage, ::std::string const& key) const;
+
     MCAPI bool _findAvailablePOI(uint64 index, ::Level& level, ::Random& random, ::ActorUniqueID id);
 
     MCAPI bool _findPlayerCentricSpawnPointForRaid(::Vec3& outSpawnPoint, bool snapToSurface) const;

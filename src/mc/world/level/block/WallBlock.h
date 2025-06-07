@@ -21,30 +21,27 @@ class Experiments;
 class GetCollisionShapeInterface;
 class HitResult;
 class IConstBlockSource;
-class Random;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class WallBlock : public ::BlockLegacy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 92
+    // vIndex: 91
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    // vIndex: 65
+    // vIndex: 64
     virtual void onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 66
+    // vIndex: 65
     virtual void onStructureNeighborBlockPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    // vIndex: 87
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
@@ -69,10 +66,10 @@ public:
         ::AABB&                    bufferValue
     ) const /*override*/;
 
-    // vIndex: 23
+    // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
-    // vIndex: 25
+    // vIndex: 24
     virtual bool canConnect(::Block const& otherBlock, uchar, ::Block const&) const /*override*/;
 
     // vIndex: 13
@@ -80,24 +77,24 @@ public:
     getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
         /*override*/;
 
-    // vIndex: 35
+    // vIndex: 34
     virtual bool isWallBlock() const /*override*/;
 
-    // vIndex: 84
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     // vIndex: 4
     virtual ::HitResult clip(
-        ::Block const&       block,
-        ::BlockSource const& region,
-        ::BlockPos const&    pos,
-        ::Vec3 const&        origin,
-        ::Vec3 const&        end,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -119,6 +116,8 @@ public:
     MCAPI bool _tryAddToTickingQueue(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void tryFixWallStates(::BlockSource& region, ::BlockPos const& pos, int updateFlags) const;
     // NOLINTEND
@@ -145,8 +144,6 @@ public:
     MCFOLD void $onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $onStructureNeighborBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
@@ -181,16 +178,6 @@ public:
     MCFOLD bool $isWallBlock() const;
 
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
-
-    MCFOLD ::HitResult $clip(
-        ::Block const&       block,
-        ::BlockSource const& region,
-        ::BlockPos const&    pos,
-        ::Vec3 const&        origin,
-        ::Vec3 const&        end,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND

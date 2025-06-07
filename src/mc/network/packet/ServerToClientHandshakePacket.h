@@ -21,10 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ServerToClientHandshakePacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -41,18 +37,6 @@ public:
 
     // vIndex: 0
     virtual ~ServerToClientHandshakePacket() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ServerToClientHandshakePacket(::std::string const& webTokenData);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& webTokenData);
     // NOLINTEND
 
 public:

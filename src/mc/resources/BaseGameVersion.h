@@ -37,6 +37,8 @@ public:
 
     MCNAPI bool isCompatibleWith(::BaseGameVersion const& baseGameVersion) const;
 
+    MCNAPI bool operator<=(::BaseGameVersion const& rhs) const;
+
     MCNAPI ::BaseGameVersion& operator=(::BaseGameVersion const&);
 
     MCNAPI bool operator>=(::BaseGameVersion const& rhs) const;

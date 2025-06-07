@@ -11,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockActorDataPacket;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
@@ -33,10 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CauldronBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -46,7 +41,7 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 27
     virtual ::std::string getName() const /*override*/;
@@ -98,8 +93,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CauldronBlockActor(::BlockPos const& pos);
-
     MCAPI ::mce::Color getCustomColor() const;
 
     MCAPI ::mce::Color getMixDyeColor();
@@ -118,17 +111,11 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCAPI ::std::string $getName() const;
 

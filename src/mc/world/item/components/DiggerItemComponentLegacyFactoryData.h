@@ -16,14 +16,14 @@ struct DiggerItemComponentLegacyFactoryData : public ::IItemComponentLegacyFacto
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnk3f3f82;
-    ::ll::UntypedStorage<8, 24>  mUnk94d125;
-    ::ll::UntypedStorage<8, 256> mUnk19543e;
+    ::ll::UntypedStorage<1, 1>  mUnk3f3f82;
+    ::ll::UntypedStorage<8, 24> mUnk94d125;
+    ::ll::UntypedStorage<8, 56> mUnk19543e;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    DiggerItemComponentLegacyFactoryData(DiggerItemComponentLegacyFactoryData const&);
+    DiggerItemComponentLegacyFactoryData& operator=(DiggerItemComponentLegacyFactoryData const&);
     DiggerItemComponentLegacyFactoryData();
 
 public:
@@ -36,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::DiggerItemComponentLegacyFactoryData& operator=(::DiggerItemComponentLegacyFactoryData const&);
+    MCAPI DiggerItemComponentLegacyFactoryData(::DiggerItemComponentLegacyFactoryData const&);
 
     MCAPI ::DiggerItemComponentLegacyFactoryData& operator=(::DiggerItemComponentLegacyFactoryData&&);
     // NOLINTEND
@@ -46,9 +46,15 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
-        ::std::optional<::SemVersion>          requiredToggles
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::DiggerItemComponentLegacyFactoryData const&);
     // NOLINTEND
 
 public:

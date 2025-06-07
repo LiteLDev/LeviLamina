@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class TargetGoal;
 struct MobDescriptor;
 // clang-format on
 
@@ -36,12 +34,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~TargetGoalDefinition() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void initialize(::EntityContext& goal, ::TargetGoal& entity) const;
     // NOLINTEND
 
 public:

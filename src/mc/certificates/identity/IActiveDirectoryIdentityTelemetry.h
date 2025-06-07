@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/certificates/identity/LastClickedSource.h"
 #include "mc/certificates/identity/edu/Role.h"
+#include "mc/codebuilder/CodeBuilderPerformance.h"
 #include "mc/events/identity/EduSignInStage.h"
 
 class IActiveDirectoryIdentityTelemetry {
@@ -28,6 +29,9 @@ public:
     virtual void fireEventEduDemoConversion(::edu::Role, ::LastClickedSource) = 0;
 
     // vIndex: 3
+    virtual void fireCodeBuilderLoadPerformanceEvent(::CodeBuilderPerformance::Stage) = 0;
+
+    // vIndex: 4
     virtual ::std::string getAppSessionId() = 0;
     // NOLINTEND
 

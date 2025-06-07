@@ -40,6 +40,17 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void registerTickingSystem(
+        ::std::initializer_list<::Bedrock::typeid_t<::SystemCategory>> categories,
+        ::std::unique_ptr<::ITickingSystem>                            system,
+        ::SystemInfo const&                                            info,
+        ::EntitySystemTickingMode                                      tickingMode
+    );
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
 

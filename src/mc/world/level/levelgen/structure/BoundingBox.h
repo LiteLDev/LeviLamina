@@ -95,11 +95,11 @@ public:
         int footZ,
         int offX,
         int offY,
+        int offZ,
         int width,
         int height,
         int depth,
-        int orientation,
-        int offZ
+        int orientation
     );
     // NOLINTEND
 

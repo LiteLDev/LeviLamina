@@ -126,7 +126,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::JumpToBlockGoal::WeightedJumpToBlockPos>> mJumpableBlocksPositions;
     ::ll::TypedStorage<4, 12, ::Vec3>                                                   mVelocityVector;
     ::ll::TypedStorage<8, 8, ::Tick>                                                    mFaceJumpTimer;
-    ::ll::TypedStorage<8, 136, ::JumpToBlockGoal::Definition>                           mDefinition;
+    ::ll::TypedStorage<8, 104, ::JumpToBlockGoal::Definition>                           mDefinition;
     ::ll::TypedStorage<4, 24, ::AABB const>                                             mOriginalAabb;
     // NOLINTEND
 

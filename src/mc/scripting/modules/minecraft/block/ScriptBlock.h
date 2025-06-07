@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
@@ -16,6 +16,8 @@ class BlockPos;
 class BlockSource;
 class Vec3;
 namespace ScriptModuleMinecraft { class BaseScriptBlockComponent; }
+namespace ScriptModuleMinecraft { class IScriptBlockCustomComponentReader; }
+namespace ScriptModuleMinecraft { class ScriptBlockComponents; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptBlockType; }
 namespace ScriptModuleMinecraft { class ScriptDimension; }
@@ -23,6 +25,7 @@ namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace ScriptModuleMinecraft { struct ScriptLocationInUnloadedChunkError; }
 namespace ScriptModuleMinecraft { struct ScriptLocationOutOfWorldBoundsError; }
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct Error; }
 // clang-format on
 
@@ -97,21 +100,23 @@ public:
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     east(int steps) const;
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>>
-    getComponent_010(::std::string const& componentName);
+    MCNAPI ::Scripting::Result<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>,
+        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
+    getComponent_V1(
+        ::ScriptModuleMinecraft::ScriptBlockComponents const& components,
+        ::std::string const&                                  componentName
+    );
 
     MCNAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
-    getComponent_V1(::std::string const& componentName);
-
-    MCNAPI ::Scripting::Result<
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>,
-        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
-        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
-    getComponent_V2(::std::string const& componentName);
+    getComponent_V2(
+        ::ScriptModuleMinecraft::ScriptBlockComponents const& components,
+        ::std::string const&                                  componentName
+    );
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension> getDimension() const;
 
@@ -122,6 +127,12 @@ public:
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     getItemStack(int amount, bool withData) const;
+
+    MCNAPI ::Scripting::Result<
+        ::std::string,
+        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
+    getLocalizationKey() const;
 
     MCNAPI ::Scripting::Result_deprecated<::Vec3> getLocation() const;
 
@@ -294,7 +305,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlock> bind();
+    MCNAPI static ::Scripting::ClassBinding
+    bind(::WeakRef<::ScriptModuleMinecraft::IScriptBlockCustomComponentReader const> blockCustomComponentReader);
 
     MCNAPI static ::Scripting::Result<
         void,

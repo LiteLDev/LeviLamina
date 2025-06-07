@@ -162,20 +162,20 @@ public:
         8,
         40,
         ::brstd::flat_set<::DBChunkStorage*, ::std::less<::DBChunkStorage*>, ::std::vector<::DBChunkStorage*>>>
-                                                                                        mChunkStorages;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::LevelStorageObserver>>> mObservers;
-    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                       mDestructorInProgress;
-    ::ll::TypedStorage<1, 1, bool>                                                      mForceCorrupt;
-    ::ll::TypedStorage<1, 1, bool const>                                                mStorageEnabled;
-    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                        mDbSubfolder;
-    ::ll::TypedStorage<8, 128, ::LevelStorageWriteBatch>                                mSingleKeyWrites;
-    ::ll::TypedStorage<8, 24, ::std::vector<::LevelStorageWriteBatch>>                  mBatchWrites;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelStorageEventing>>                 mEventing;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>>              mLevelDbEnv;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DBStorageFolderWatcher>>               mFolderTelemetryWatcher;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                   mNextSizeTelemetryCaptureTime;
-    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds const>                          mSizeTelemetryCaptureInterval;
-    ::ll::TypedStorage<8, 192, ::DBStoragePerformanceTelemetry>                         mDBStoragePerformanceTelemetry;
+                                                                                           mChunkStorages;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::LevelStorageObserver>>>    mObservers;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                          mDestructorInProgress;
+    ::ll::TypedStorage<1, 1, bool>                                                         mForceCorrupt;
+    ::ll::TypedStorage<1, 1, bool const>                                                   mStorageEnabled;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                           mDbSubfolder;
+    ::ll::TypedStorage<8, 128, ::LevelStorageWriteBatch>                                   mSingleKeyWrites;
+    ::ll::TypedStorage<8, 24, ::std::vector<::LevelStorageWriteBatch>>                     mBatchWrites;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelStorageEventing>>                    mEventing;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>>                 mLevelDbEnv;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::DBStorageFolderWatcher>>> mFolderTelemetryWatcher;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mNextSizeTelemetryCaptureTime;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds const>        mSizeTelemetryCaptureInterval;
+    ::ll::TypedStorage<8, 192, ::DBStoragePerformanceTelemetry>       mDBStoragePerformanceTelemetry;
     // NOLINTEND
 
 public:
@@ -351,7 +351,7 @@ public:
 
     MCFOLD ::Core::LevelStorageResult $getState() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const& $getFullPath() const;
+    MCFOLD ::Core::PathBuffer<::std::string> const& $getFullPath() const;
 
     MCAPI ::std::unique_ptr<::CompoundTag> $getCompoundTag(::std::string const& key, ::DBHelpers::Category category);
 

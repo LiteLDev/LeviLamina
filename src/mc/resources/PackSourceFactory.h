@@ -11,18 +11,21 @@
 
 // auto generated forward declare list
 // clang-format off
+class CompositePackSource;
 class ContentCatalogPackSource;
 class DirectoryPackSource;
 class IInPackagePacks;
 class IPackIOProvider;
+class IWorldTemplateManager;
 class InPackagePackSource;
+class PackSource;
 class TreatmentPackSource;
 class WorldHistoryPackSource;
-class WorldTemplateManager;
 class WorldTemplatePackSource;
 struct PackIdVersion;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Core { class Path; }
+namespace PackCommand { class IPackCommandPipeline; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -56,6 +59,7 @@ public:
     ::ll::TypedStorage<8, 16, ::RealmsUnknownPackSources>                mRealmsUnknownPackSources;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IInPackagePacks>>      mInPackagePacksProvider;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IPackIOProvider> const> mIO;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::PackCommand::IPackCommandPipeline>> mCommands;
     // NOLINTEND
 
 public:
@@ -70,10 +74,10 @@ public:
 
     // vIndex: 1
     virtual ::WorldTemplatePackSource& createWorldTemplatePackSource(
-        ::Bedrock::NotNullNonOwnerPtr<::WorldTemplateManager const> const& worldTemplateManager,
-        ::mce::UUID const&                                                 worldTemplateId,
-        ::PackType                                                         packType,
-        ::PackOrigin                                                       packOrigin
+        ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager const> const& worldTemplateManager,
+        ::mce::UUID const&                                                  worldTemplateId,
+        ::PackType                                                          packType,
+        ::PackOrigin                                                        packOrigin
     ) /*override*/;
 
     // vIndex: 2
@@ -106,31 +110,42 @@ public:
     virtual ::WorldHistoryPackSource*
     getWorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType packType) const /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual ::DirectoryPackSource* getDirectoryPackSourceContaining(::PackIdVersion const& packId) const /*override*/;
 
-    // vIndex: 10
+    // vIndex: 11
     virtual void removeFromDirectoryPackSource(::Core::Path const& fullPathToPack) /*override*/;
+
+    // vIndex: 9
+    virtual ::std::unique_ptr<::CompositePackSource>
+    createCompositePackSource(::std::vector<::PackSource*> sources) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit PackSourceFactory(::std::shared_ptr<::IInPackagePacks> const& inPackagePacks);
-
     MCNAPI PackSourceFactory(
-        ::std::shared_ptr<::IInPackagePacks> const& inPackagePacks,
-        ::std::unique_ptr<::IPackIOProvider>        io
+        ::gsl::not_null<::std::shared_ptr<::IInPackagePacks> const>        inPackagePacks,
+        ::std::unique_ptr<::IPackIOProvider>                               io,
+        ::Bedrock::NotNullNonOwnerPtr<::PackCommand::IPackCommandPipeline> commands
+    );
+
+    MCNAPI ::std::unique_ptr<::DirectoryPackSource> createOwnedDirectoryPackSource(
+        ::Core::Path const& path,
+        ::PackType          packType,
+        ::PackOrigin        packOrigin,
+        bool                isDevDirectory
     );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::shared_ptr<::IInPackagePacks> const& inPackagePacks);
-
-    MCNAPI void*
-    $ctor(::std::shared_ptr<::IInPackagePacks> const& inPackagePacks, ::std::unique_ptr<::IPackIOProvider> io);
+    MCNAPI void* $ctor(
+        ::gsl::not_null<::std::shared_ptr<::IInPackagePacks> const>        inPackagePacks,
+        ::std::unique_ptr<::IPackIOProvider>                               io,
+        ::Bedrock::NotNullNonOwnerPtr<::PackCommand::IPackCommandPipeline> commands
+    );
     // NOLINTEND
 
 public:
@@ -143,10 +158,10 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::WorldTemplatePackSource& $createWorldTemplatePackSource(
-        ::Bedrock::NotNullNonOwnerPtr<::WorldTemplateManager const> const& worldTemplateManager,
-        ::mce::UUID const&                                                 worldTemplateId,
-        ::PackType                                                         packType,
-        ::PackOrigin                                                       packOrigin
+        ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager const> const& worldTemplateManager,
+        ::mce::UUID const&                                                  worldTemplateId,
+        ::PackType                                                          packType,
+        ::PackOrigin                                                        packOrigin
     );
 
     MCNAPI ::WorldTemplatePackSource*
@@ -174,6 +189,8 @@ public:
     MCNAPI ::DirectoryPackSource* $getDirectoryPackSourceContaining(::PackIdVersion const& packId) const;
 
     MCNAPI void $removeFromDirectoryPackSource(::Core::Path const& fullPathToPack);
+
+    MCNAPI ::std::unique_ptr<::CompositePackSource> $createCompositePackSource(::std::vector<::PackSource*> sources);
     // NOLINTEND
 
 public:

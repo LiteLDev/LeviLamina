@@ -48,6 +48,9 @@ public:
 
     // vIndex: 10
     virtual void sendStopItemUseOn(::BlockPos const&) = 0;
+
+    // vIndex: 11
+    virtual void tryRotateTowardsAimAssist() = 0;
     // NOLINTEND
 
 public:

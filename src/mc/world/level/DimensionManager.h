@@ -30,7 +30,7 @@ public:
     ::ll::TypedStorage<
         8,
         128,
-        ::Bedrock::PubSub::Publisher<void(::Dimension&), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+        ::Bedrock::PubSub::Publisher<void(::Dimension&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
                                                                            mOnNewDimensionCreatedPublisher;
     ::ll::TypedStorage<8, 24, ::std::optional<::DimensionDefinitionGroup>> mDimensionDefinitions;
     // NOLINTEND

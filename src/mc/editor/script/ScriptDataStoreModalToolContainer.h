@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,7 +19,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkf88096;
     ::ll::UntypedStorage<8, 8>  mUnk16164e;
-    ::ll::UntypedStorage<8, 32> mUnk15a62c;
+    ::ll::UntypedStorage<8, 32> mUnk12984e;
     ::ll::UntypedStorage<1, 1>  mUnk517e55;
     // NOLINTEND
 
@@ -43,17 +43,17 @@ public:
 
     MCNAPI bool hasToolProperty(::std::string id, ::std::string property) const;
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     registerTool(::Scripting::ContextConfig const& contextConfig, ::std::string id, ::std::string const& payload);
 
-    MCNAPI ::Scripting::Result<void> unregisterTool(::std::string id);
+    MCNAPI ::Scripting::Result_deprecated<void> unregisterTool(::std::string id);
 
-    MCNAPI ::Scripting::Result<void> updateRegisteredTool(::std::string id, ::std::string const& payload);
+    MCNAPI ::Scripting::Result_deprecated<void> updateRegisteredTool(::std::string id, ::std::string const& payload);
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     updateRegisteredToolProperty(::std::string id, ::std::string const& payload, ::std::string const& prop);
 
-    MCNAPI ::Scripting::Result<void> updateSelectedTool(::std::optional<::std::string> toolId);
+    MCNAPI ::Scripting::Result_deprecated<void> updateSelectedTool(::std::optional<::std::string> toolId);
     // NOLINTEND
 
 public:

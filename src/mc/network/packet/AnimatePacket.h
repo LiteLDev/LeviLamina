@@ -23,8 +23,6 @@ public:
         WakeUp           = 3,
         CriticalHit      = 4,
         MagicCriticalHit = 5,
-        RowRight         = 128,
-        RowLeft          = 129,
     };
 
 public:

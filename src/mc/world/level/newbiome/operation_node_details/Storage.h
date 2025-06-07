@@ -19,18 +19,6 @@ public:
     Storage& operator=(Storage const&);
     Storage(Storage const&);
     Storage();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit Storage(uint64 size);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(uint64 size);
-    // NOLINTEND
 };
 
 } // namespace OperationNodeDetails

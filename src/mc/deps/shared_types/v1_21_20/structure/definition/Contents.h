@@ -15,18 +15,18 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32>  mUnke02bd9;
+    ::ll::UntypedStorage<8, 32>  mUnka3ae36;
     ::ll::UntypedStorage<8, 328> mUnk989779;
     ::ll::UntypedStorage<1, 1>   mUnkad9785;
     ::ll::UntypedStorage<1, 1>   mUnke2bde2;
     ::ll::UntypedStorage<8, 32>  mUnk2c6a3a;
     ::ll::UntypedStorage<1, 1>   mUnkf1c1e9;
-    ::ll::UntypedStorage<2, 2>   mUnk1f6a8a;
+    ::ll::UntypedStorage<2, 10>  mUnk5493bb;
     ::ll::UntypedStorage<1, 1>   mUnkb5abae;
+    ::ll::UntypedStorage<4, 16>  mUnkfc5f08;
+    ::ll::UntypedStorage<4, 4>   mUnkb78c60;
+    ::ll::UntypedStorage<8, 24>  mUnk34d063;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Contents(Contents const&);
 
 public:
     // member functions
@@ -34,6 +34,8 @@ public:
     MCNAPI Contents();
 
     MCNAPI Contents(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&&);
+
+    MCNAPI Contents(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents const&);
 
     MCNAPI ::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&
     operator=(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents const&);
@@ -62,6 +64,8 @@ public:
     MCNAPI void* $ctor();
 
     MCNAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&&);
+
+    MCNAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents const&);
     // NOLINTEND
 
 public:

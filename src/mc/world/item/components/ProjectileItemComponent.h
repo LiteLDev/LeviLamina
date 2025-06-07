@@ -6,7 +6,6 @@
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
-#include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,11 +14,9 @@ class BlockSource;
 class Container;
 class HashedString;
 class Player;
-class SemVersion;
 class Vec3;
 struct ActorDefinitionIdentifier;
 namespace SharedTypes::v1_20_50 { struct ProjectileItemComponent; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class ProjectileItemComponent : public ::NetworkedItemComponent<::ProjectileItemComponent> {
@@ -64,12 +61,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
-        ::std::optional<::SemVersion>          requiredToggles
-    );
-
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 

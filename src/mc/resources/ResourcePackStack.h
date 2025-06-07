@@ -72,6 +72,8 @@ public:
 
     MCAPI void removeDuplicates();
 
+    MCAPI void removeIf(::std::function<bool(::PackInstance const&)> const& callback);
+
     MCAPI void removeInvalidPacks();
     // NOLINTEND
 

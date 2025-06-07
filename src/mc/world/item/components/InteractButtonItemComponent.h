@@ -4,13 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/world/item/components/ItemComponent.h"
-#include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
 class HashedString;
-class SemVersion;
 namespace SharedTypes::v1_20_50 { struct InteractButtonItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -60,12 +58,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
-        ::std::optional<::SemVersion>          requiredToggles
-    );
-
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 

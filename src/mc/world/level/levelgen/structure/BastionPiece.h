@@ -54,8 +54,8 @@ public:
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
         ::JigsawStructureRegistry&                          pools,
-        ::VanillaBiomeTypes                                 dimension,
-        ::Dimension&                                        biomeType
+        ::VanillaBiomeTypes                                 biomeType,
+        ::Dimension&                                        dimension
     );
     // NOLINTEND
 

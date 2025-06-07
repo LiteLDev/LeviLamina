@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/ServerRestartServiceProvider.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
 #include "mc/world/events/EventListenerDispatcher.h"
@@ -21,8 +21,8 @@ namespace Editor::Services {
 
 class ServerRestartService : public ::Editor::Services::IEditorService,
                              public ::Editor::Services::ServerRestartServiceProvider,
-                             public ::Editor::Services::PayloadStoreHelper,
-                             public ::EventListenerDispatcher<::LevelEventListener> {
+                             public ::EventListenerDispatcher<::LevelEventListener>,
+                             public ::Editor::Services::PayloadStoreHelper {
 public:
     // ServerRestartService inner types define
     enum class State : int {
@@ -55,10 +55,10 @@ public:
     virtual ~ServerRestartService() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> quit() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
@@ -89,9 +89,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::EventResult $onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent);
 
-    MCNAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
     MCNAPI ::std::string_view $getServiceName() const;
 

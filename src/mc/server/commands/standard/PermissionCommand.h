@@ -56,7 +56,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void list(::CommandOrigin const& output, ::CommandOutput& origin) const;
+    MCAPI void list(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
     MCAPI void reload(::CommandOrigin const& origin, ::CommandOutput& output) const;
 

@@ -32,14 +32,16 @@ public:
         128,
         ::Bedrock::PubSub::Publisher<
             void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int),
-            ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+            0>>
         mLevelEventDataPublisher;
     ::ll::TypedStorage<
         8,
         128,
         ::Bedrock::PubSub::Publisher<
             void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&),
-            ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+            0>>
         mLevelEventCompoundTagPublisher;
     // NOLINTEND
 

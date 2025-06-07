@@ -54,9 +54,9 @@ public:
     ::ll::UntypedStorage<8, 16> mUnke94250;
     ::ll::UntypedStorage<8, 16> mUnk1881fb;
     ::ll::UntypedStorage<8, 8>  mUnk578908;
-    ::ll::UntypedStorage<8, 32> mUnk8513df;
-    ::ll::UntypedStorage<8, 32> mUnka9f66b;
-    ::ll::UntypedStorage<8, 32> mUnk6701a7;
+    ::ll::UntypedStorage<8, 32> mUnkb07964;
+    ::ll::UntypedStorage<8, 32> mUnkd8d158;
+    ::ll::UntypedStorage<8, 32> mUnkc1b293;
     // NOLINTEND
 
 public:

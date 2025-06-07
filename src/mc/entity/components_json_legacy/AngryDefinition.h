@@ -43,6 +43,8 @@ public:
     MCNAPI void addBroadcastTargetByName(::std::string const& name);
 
     MCNAPI void initialize(::EntityContext& entity, ::AngryComponent& component) const;
+
+    MCNAPI ~AngryDefinition();
     // NOLINTEND
 
 public:
@@ -50,5 +52,11 @@ public:
     // NOLINTBEGIN
     MCNAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AngryDefinition>>& root);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

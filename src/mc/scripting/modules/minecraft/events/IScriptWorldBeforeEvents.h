@@ -15,7 +15,6 @@ struct ActorAddEffectEvent;
 struct BlockTryDestroyByPlayerEvent;
 struct BlockTryPlaceByPlayerEvent;
 struct ChatEvent;
-struct ClientJoinedEvent;
 struct ExplosionStartedEvent;
 struct ItemUseEvent;
 struct ItemUseOnEvent;
@@ -112,9 +111,6 @@ public:
     // vIndex: 14
     virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
     onBeforeItemUseOn(::Player const&, ::ItemUseOnEvent const&);
-
-    // vIndex: 15
-    virtual void onClientJoinedEvent(::ClientJoinedEvent const&);
     // NOLINTEND
 
 public:
@@ -126,14 +122,6 @@ public:
     MCNAPI void $onBeforeWorldInitialize(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockComponentRegistry> const&,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponentRegistry> const&
-    );
-
-    MCNAPI ::std::optional<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>>
-    $onBeforeWeatherChangedEvent(
-        ::ScriptModuleMinecraft::ScriptWeatherType,
-        ::ScriptModuleMinecraft::ScriptWeatherType,
-        int
     );
 
     MCNAPI ::std::optional<
@@ -173,8 +161,6 @@ public:
 
     MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
     $onBeforeItemUseOn(::Player const&, ::ItemUseOnEvent const&);
-
-    MCNAPI void $onClientJoinedEvent(::ClientJoinedEvent const&);
     // NOLINTEND
 
 public:

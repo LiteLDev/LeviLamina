@@ -81,7 +81,7 @@ public:
         ::BoundingBox const& boundingBox
     );
 
-    MCNAPI ::Block const& getSwappedBlock(::BlockPalette const& oldBlock, ::Block const& palette) const;
+    MCNAPI ::Block const& getSwappedBlock(::BlockPalette const& palette, ::Block const& oldBlock) const;
 
     MCNAPI ::LegacyStructureSettings& operator=(::LegacyStructureSettings const&);
 

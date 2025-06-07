@@ -62,10 +62,10 @@ public:
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
     // vIndex: 2
-    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     // vIndex: 3
-    virtual void reloadHardcodedClient(::ActorInitializationMethod) /*override*/;
+    virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
     // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
@@ -128,6 +128,10 @@ public:
     MCAPI bool $wouldSurvive(::BlockSource& region);
 
     MCFOLD bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 

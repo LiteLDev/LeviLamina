@@ -73,6 +73,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI UnlockedRecipesServerComponent(::UnlockedRecipesServerComponent&&);
+
     MCNAPI UnlockedRecipesServerComponent(::UnlockedRecipesServerComponent const&);
 
     MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
@@ -81,7 +83,7 @@ public:
 
     MCNAPI ::UnlockedRecipesServerComponent& operator=(::UnlockedRecipesServerComponent&&);
 
-    MCNAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const&, ::DataLoadHelper&);
+    MCNAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
     // NOLINTEND
 
 public:
@@ -97,6 +99,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::UnlockedRecipesServerComponent&&);
+
     MCNAPI void* $ctor(::UnlockedRecipesServerComponent const&);
     // NOLINTEND
 };

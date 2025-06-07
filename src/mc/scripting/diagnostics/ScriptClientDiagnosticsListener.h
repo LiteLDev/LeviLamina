@@ -15,8 +15,8 @@ class ScriptClientDiagnosticsListener : public ::ServerNetworkEventListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk2405d5;
-    ::ll::UntypedStorage<8, 88> mUnkb8ac67;
+    ::ll::UntypedStorage<8, 8>   mUnk2405d5;
+    ::ll::UntypedStorage<8, 112> mUnkb8ac67;
     // NOLINTEND
 
 public:

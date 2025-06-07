@@ -95,10 +95,10 @@ public:
     // vIndex: 23
     virtual void stopOpen(::Player& player) /*override*/;
 
-    // vIndex: 29
+    // vIndex: 32
     virtual bool canPushInItem(int slot, int face, ::ItemStack const& item) const /*override*/;
 
-    // vIndex: 30
+    // vIndex: 33
     virtual bool canPullOutItem(int slot, int face, ::ItemStack const& item) const /*override*/;
 
     // vIndex: 34

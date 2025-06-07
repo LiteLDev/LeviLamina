@@ -6,7 +6,7 @@ class TrustedSkinHelper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 160> mUnkfffbb1;
+    ::ll::UntypedStorage<8, 176> mUnkfffbb1;
     ::ll::UntypedStorage<8, 8>   mUnkf3bdd1;
     ::ll::UntypedStorage<8, 16>  mUnk2ebe2c;
     ::ll::UntypedStorage<8, 16>  mUnk7c3db9;

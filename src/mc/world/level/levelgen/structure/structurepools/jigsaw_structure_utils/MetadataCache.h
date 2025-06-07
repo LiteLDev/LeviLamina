@@ -5,7 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class StructurePoolElement;
+namespace SharedTypes::v1_21_80 { struct JigsawStructureMetadata; }
 // clang-format on
 
 namespace JigsawStructureUtils {
@@ -14,7 +14,7 @@ class MetadataCache {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk7f8f75;
+    ::ll::UntypedStorage<8, 8>  mUnk70ffba;
     ::ll::UntypedStorage<8, 24> mUnkfe7328;
     ::ll::UntypedStorage<8, 24> mUnkd8ad64;
     // NOLINTEND
@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit MetadataCache(::StructurePoolElement const& element);
+    MCNAPI explicit MetadataCache(::SharedTypes::v1_21_80::JigsawStructureMetadata const& metadata);
 
     MCNAPI ::Block const* getOrCreateBlockCache(uint64 index);
 
@@ -38,7 +38,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::StructurePoolElement const& element);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_80::JigsawStructureMetadata const& metadata);
     // NOLINTEND
 
 public:

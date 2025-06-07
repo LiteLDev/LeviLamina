@@ -2,8 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct InterfaceBinding; }
+// clang-format on
 
 namespace Editor::API {
 
@@ -36,8 +38,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::API::EditorExtensionOptionalParameters>
-    bindInterface();
+    MCNAPI static ::Scripting::InterfaceBinding bindInterface();
     // NOLINTEND
 
 public:

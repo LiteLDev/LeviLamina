@@ -27,6 +27,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class AsyncJoinRegistrar;
 class IMinecraftEventing;
 class IScriptTelemetryLogger;
 class ItemRegistryRef;
@@ -51,6 +52,7 @@ class ServerInstance;
 class ServerLevel;
 struct LevelStartLeaveGameEvent;
 struct ServerInstanceRequestResourceReload;
+namespace ScriptModuleMinecraft { class CustomCommandRegistry; }
 namespace ScriptModuleMinecraft { class IScriptItemCustomComponentRegistry; }
 namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentsRegistry; }
 namespace ScriptModuleMinecraft { class ScriptCustomSpawnRulesRegistry; }
@@ -84,9 +86,10 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IScriptTelemetryLogger>>          mTelemetryLogger;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptClientDiagnosticsListener>> mClientDiagnosticsListener;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelEventHandlerRegistrar>>      mLevelEventHandlerRegistrar;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::CustomCommandRegistry>> mCustomCommandRegistry;
     ::ll::TypedStorage<8, 16, ::OwnerPtr<::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry>>
         mBlockCustomComponentsRegistry;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::IScriptItemCustomComponentRegistry>>
+    ::ll::TypedStorage<8, 16, ::OwnerPtr<::ScriptModuleMinecraft::IScriptItemCustomComponentRegistry>>
         mItemCustomComponentRegistry;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptCustomSpawnRulesRegistry>>
         mCustomSpawnRulesRegistry;
@@ -103,6 +106,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptTickListener>>                  mScriptTickListener;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptContentLogEndPoint>>            mScriptContentLogEndPoint;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptWatchdog>>                      mScriptWatchdog;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::AsyncJoinRegistrar>>                  mAsyncJoinRegistrar;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Scripting::DependencyLocator>>        mDependencyLocator;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::Scripting::IRuntime>>> mSharedRuntimes;
     ::ll::TypedStorage<
@@ -146,14 +150,15 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ServerScriptManager(
-        ::ScriptSettings&&                      settings,
-        ::ServerLevel&                          serverLevel,
-        ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler,
-        ::MinecraftCommands&                    commands,
-        ::IMinecraftEventing&                   minecraftEventings,
-        ::ItemRegistryRef                       itemRegistry,
-        ::ServerInstance&                       server,
-        ::Scripting::RegistryManager&           registry
+        ::ScriptSettings&&                        settings,
+        ::ServerLevel&                            serverLevel,
+        ::Bedrock::NonOwnerPointer<::Scheduler>   serverScheduler,
+        ::MinecraftCommands&                      commands,
+        ::IMinecraftEventing&                     eventing,
+        ::ItemRegistryRef                         itemRegistry,
+        ::ServerInstance&                         server,
+        ::Scripting::RegistryManager&             registry,
+        ::std::unique_ptr<::AsyncJoinRegistrar>&& asyncJoinRegistrar
     );
 
     MCAPI void _initModules(::ServerInstance& server, ::ServerLevel& serverLevel);
@@ -189,14 +194,15 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::ScriptSettings&&                      settings,
-        ::ServerLevel&                          serverLevel,
-        ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler,
-        ::MinecraftCommands&                    commands,
-        ::IMinecraftEventing&                   minecraftEventings,
-        ::ItemRegistryRef                       itemRegistry,
-        ::ServerInstance&                       server,
-        ::Scripting::RegistryManager&           registry
+        ::ScriptSettings&&                        settings,
+        ::ServerLevel&                            serverLevel,
+        ::Bedrock::NonOwnerPointer<::Scheduler>   serverScheduler,
+        ::MinecraftCommands&                      commands,
+        ::IMinecraftEventing&                     eventing,
+        ::ItemRegistryRef                         itemRegistry,
+        ::ServerInstance&                         server,
+        ::Scripting::RegistryManager&             registry,
+        ::std::unique_ptr<::AsyncJoinRegistrar>&& asyncJoinRegistrar
     );
     // NOLINTEND
 

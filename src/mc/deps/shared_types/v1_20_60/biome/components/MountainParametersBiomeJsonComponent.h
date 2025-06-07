@@ -42,6 +42,9 @@ public:
         // NOLINTBEGIN
         MCNAPI SteepMaterial(::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial const&);
 
+        MCNAPI ::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial&
+        operator=(::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial&&);
+
         MCNAPI ~SteepMaterial();
         // NOLINTEND
 

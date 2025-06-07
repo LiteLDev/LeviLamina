@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/OwnerPtr.h"
-#include "mc/world/level/biome/registry/BiomeComponentFactory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,7 +26,7 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnk5f2b2c;
     ::ll::UntypedStorage<8, 8>   mUnk6f2312;
     ::ll::UntypedStorage<8, 64>  mUnk3a5e8f;
-    ::ll::UntypedStorage<8, 128> mUnk524485;
+    ::ll::UntypedStorage<8, 128> mUnk8597ca;
     // NOLINTEND
 
 public:
@@ -39,12 +38,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BiomeManager(
-        ::OwnerPtr<::BiomeRegistry>                biomes,
-        ::BiomeComponentFactory::FactoryScope      factoryScope,
-        bool                                       clientSideChunkGenerationEnabled,
-        ::std::unique_ptr<::AutomaticFeatureRules> automaticFeatureRules
-    );
+    MCNAPI
+    BiomeManager(::OwnerPtr<::BiomeRegistry> biomes, ::std::unique_ptr<::AutomaticFeatureRules> automaticFeatureRules);
 
     MCNAPI void initializeBiomeRegistryAndAutomaticFeatureRulesOnServer(
         ::Experiments const&        experiments,
@@ -61,12 +56,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::OwnerPtr<::BiomeRegistry>                biomes,
-        ::BiomeComponentFactory::FactoryScope      factoryScope,
-        bool                                       clientSideChunkGenerationEnabled,
-        ::std::unique_ptr<::AutomaticFeatureRules> automaticFeatureRules
-    );
+    MCNAPI void*
+    $ctor(::OwnerPtr<::BiomeRegistry> biomes, ::std::unique_ptr<::AutomaticFeatureRules> automaticFeatureRules);
     // NOLINTEND
 
 public:

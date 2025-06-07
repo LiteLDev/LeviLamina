@@ -33,9 +33,6 @@ public:
     getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
         /*override*/;
 
-    // vIndex: 138
-    virtual bool isInteractiveBlock() const /*override*/;
-
     // vIndex: 0
     virtual ~MobSpawnerBlock() /*override*/ = default;
     // NOLINTEND
@@ -52,8 +49,6 @@ public:
 
     MCNAPI ::AABB const&
     $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
-
-    MCNAPI bool $isInteractiveBlock() const;
     // NOLINTEND
 
 public:

@@ -44,7 +44,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool
-    _tryMoveInItemsAndDepleteStack(::Container& container, ::ItemStack& item, int slot, int face, int stackSizeLimit);
+    _tryMoveInItemsAndDepleteStack(::Container& container, ::ItemStack& item, int stackSizeLimit, int slot, int face);
 
     MCAPI static ::Container* getContainerAt(::BlockSource& region, ::Vec3 const& pos);
     // NOLINTEND

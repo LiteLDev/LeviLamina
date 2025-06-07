@@ -116,8 +116,6 @@ public:
 
     MCNAPI static ::std::string const& BLOCK_TAG_STATE();
 
-    MCNAPI static int const& CHUNK_SIZE();
-
     MCNAPI static ::std::string const& DATA_VERSION_TAG();
 
     MCNAPI static ::std::string const& ENTITIES_TAG();

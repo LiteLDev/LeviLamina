@@ -19,11 +19,11 @@ namespace VanillaSystemsRegistration {
 // functions
 // NOLINTBEGIN
 MCNAPI ::VanillaSystemsRegistration::RegistrationOptions getDefault(
-    bool                            movementSettings,
-    bool                            baseGameVersion,
-    ::PlayerMovementSettings const& experiments,
-    ::BaseGameVersion const&        isClientSide,
-    ::Experiments const&            connectedToThirdPartyServer
+    bool                            isClientSide,
+    bool                            connectedToThirdPartyServer,
+    ::PlayerMovementSettings const& movementSettings,
+    ::BaseGameVersion const&        baseGameVersion,
+    ::Experiments const&            experiments
 );
 
 MCNAPI void registerActorAiStepSystems(

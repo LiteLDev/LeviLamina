@@ -10,6 +10,8 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_21_20 {
 // functions
 // NOLINTBEGIN
+MCNAPI void bindDimensionPaddingTypes(::cereal::ReflectionCtx& ctx);
+
 MCNAPI void bindIntProviderTypes(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 

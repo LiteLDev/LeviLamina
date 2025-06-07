@@ -3,14 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/items/components/ScriptItemComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptRGB; }
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct Error; }
 namespace Scripting { struct InvalidArgumentError; }
 // clang-format on
@@ -28,10 +29,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<::std::optional<::ScriptModuleMinecraft::ScriptRGB>, ::Scripting::Error> getColor();
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::ScriptModuleMinecraft::ScriptRGB>> getColor();
 
-    MCNAPI ::Scripting::Result<::std::optional<::ScriptModuleMinecraft::ScriptRGB>, ::Scripting::Error>
-    getDefaultColor();
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::ScriptModuleMinecraft::ScriptRGB>> getDefaultColor();
 
     MCNAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::InvalidArgumentError>
     setColor(::std::optional<::ScriptModuleMinecraft::ScriptRGB> const& color);
@@ -40,7 +40,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemDyeableComponent>
+    MCNAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 

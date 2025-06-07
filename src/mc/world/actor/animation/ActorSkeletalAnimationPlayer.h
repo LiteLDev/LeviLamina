@@ -75,7 +75,7 @@ public:
     virtual ::HashedString const& getRawName() const /*override*/;
 
     // vIndex: 0
-    virtual ~ActorSkeletalAnimationPlayer() /*override*/ = default;
+    virtual ~ActorSkeletalAnimationPlayer() /*override*/;
     // NOLINTEND
 
 public:
@@ -98,6 +98,12 @@ public:
         ::AnimationComponent&       animationComponent,
         ::ExpressionNode const&     blendExpression
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

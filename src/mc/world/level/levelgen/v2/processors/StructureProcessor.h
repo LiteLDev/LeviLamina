@@ -57,9 +57,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
-    BlockIgnore(::std::vector<::std::string> const& blocks);
-
-    MCNAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
     Capped(::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>> delegate, ::IntProvider limit);
 
     MCNAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
@@ -70,8 +67,6 @@ public:
 
     MCNAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
     Rule(::std::vector<::br::worldgen::processors::RuleSet> rules);
-
-    MCNAPI static void bootstrap();
     // NOLINTEND
 
 public:

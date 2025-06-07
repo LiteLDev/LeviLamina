@@ -21,12 +21,11 @@ public:
 public:
     // prevent constructor by default
     SummonSpellData& operator=(SummonSpellData const&);
+    SummonSpellData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SummonSpellData();
-
     MCNAPI SummonSpellData(::SummonSpellData const&);
 
     MCNAPI ~SummonSpellData();
@@ -35,8 +34,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::SummonSpellData const&);
     // NOLINTEND
 

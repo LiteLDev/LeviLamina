@@ -9,7 +9,7 @@ class ReinforcedDeepslateBlock : public ::BlockLegacy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 46
+    // vIndex: 45
     virtual bool canBeOriginalSurface() const /*override*/;
 
     // vIndex: 0

@@ -99,7 +99,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI int _findStrongestStrength(::BlockPos const& targetPos, ::CircuitSystem& bPowerFromSelf, bool&);
+    MCNAPI int _findStrongestStrength(::BlockPos const& targetPos, ::CircuitSystem&, bool& bPowerFromSelf);
     // NOLINTEND
 
 public:

@@ -55,10 +55,10 @@ public:
     virtual ::mce::Color getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const
         /*override*/;
 
-    // vIndex: 37
+    // vIndex: 39
     virtual void _upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers) /*override*/;
 
-    // vIndex: 38
+    // vIndex: 40
     virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(
         ::std::unique_ptr<::ChunkSource> storageSource,
         ::StorageVersion                 levelVersion

@@ -3,15 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/Result.h"
-#include "mc/external/lib_http_client/HCWebSocketCloseStatus.h"
+#include "mc/external/lib_http_client/Result.h"
+#include "mc/external/lib_http_client/http_alloc_deleter.h"
 #include "mc/external/lib_http_client/http_stl_allocator.h"
 #include "mc/external/lib_http_client/proxy_type.h"
 
 // auto generated forward declare list
 // clang-format off
 struct HC_CALL;
-struct HC_PERFORM_ENV;
 struct HC_WEBSOCKET_OBSERVER;
 struct XAsyncBlock;
 namespace xbox::httpclient { class Uri; }
@@ -26,11 +25,11 @@ public:
     // NOLINTBEGIN
     MCNAPI long CloseAllConnections();
 
-    MCNAPI ::Result<void*> GetHSession(uint);
+    MCNAPI long ConnectAsync(::http_string const&, ::http_string const&, ::HC_WEBSOCKET_OBSERVER*, ::XAsyncBlock*);
 
-    MCNAPI long HttpCallPerformAsync(::HC_CALL*, ::XAsyncBlock*);
+    MCNAPI ::xbox::httpclient::Result<void*> GetHSession(uint);
 
-    MCNAPI long WebSocketConnectAsync(char const*, char const*, ::HC_WEBSOCKET_OBSERVER*, ::XAsyncBlock*);
+    MCNAPI long PerformAsync(::HC_CALL*, ::XAsyncBlock*);
     // NOLINTEND
 
 public:
@@ -40,27 +39,12 @@ public:
 
     MCNAPI static ::xbox::httpclient::WinHttpWebSocketExports GetWinHttpWebSocketExports();
 
-    MCNAPI static void HttpCallPerformAsyncHandler(::HC_CALL*, ::XAsyncBlock*, void*, ::HC_PERFORM_ENV*);
-
-    MCNAPI static ::Result<::std::shared_ptr<::xbox::httpclient::WinHttpProvider>> Initialize();
+    MCNAPI static ::xbox::httpclient::Result<::std::unique_ptr<
+        ::xbox::httpclient::WinHttpProvider,
+        ::http_alloc_deleter<::xbox::httpclient::WinHttpProvider>>>
+    Initialize();
 
     MCNAPI static long SetGlobalProxyForHSession(void*, char const*);
-
-    MCNAPI static long WebSocketConnectAsyncHandler(
-        char const*,
-        char const*,
-        ::HC_WEBSOCKET_OBSERVER*,
-        ::XAsyncBlock*,
-        void*,
-        ::HC_PERFORM_ENV*
-    );
-
-    MCNAPI static long WebSocketDisconnectHandler(::HC_WEBSOCKET_OBSERVER*, ::HCWebSocketCloseStatus, void*);
-
-    MCNAPI static long WebSocketSendAsyncHandler(::HC_WEBSOCKET_OBSERVER*, char const*, ::XAsyncBlock*, void*);
-
-    MCNAPI static long
-    WebSocketSendBinaryAsyncHandler(::HC_WEBSOCKET_OBSERVER*, uchar const*, uint, ::XAsyncBlock*, void*);
     // NOLINTEND
 
 public:

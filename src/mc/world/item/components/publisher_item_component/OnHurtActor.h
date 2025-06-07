@@ -12,14 +12,15 @@ class Actor;
 class HashedString;
 class ItemStack;
 class Mob;
-namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
+namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 
 namespace PublisherItemComponent {
 
-class OnHurtActor : public ::ItemComponent,
-                    public ::Bedrock::PubSub::
-                        Publisher<void(::ItemStack&, ::Actor&, ::Mob&), ::Bedrock::PubSub::ThreadModel::MultiThreaded> {
+class OnHurtActor
+: public ::ItemComponent,
+  public ::Bedrock::PubSub::
+      Publisher<void(::ItemStack&, ::Actor&, ::Mob&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
 public:
     // virtual functions
     // NOLINTBEGIN

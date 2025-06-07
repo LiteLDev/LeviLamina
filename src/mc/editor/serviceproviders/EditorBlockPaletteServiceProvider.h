@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
@@ -41,26 +40,26 @@ public:
     virtual void addOrReplacePalette(::Editor::EditorBlockPalette const&) = 0;
 
     // vIndex: 4
-    virtual ::Scripting::Result<void> removePalette(::HashedString const&) = 0;
+    virtual ::Scripting::Result_deprecated<void> removePalette(::HashedString const&) = 0;
 
     // vIndex: 5
-    virtual ::Scripting::Result<void> setActivePalette(::HashedString const&) = 0;
+    virtual ::Scripting::Result_deprecated<void> setActivePalette(::HashedString const&) = 0;
 
     // vIndex: 6
-    virtual ::Scripting::Result<void> setSelectedPaletteItemIndex(int) = 0;
+    virtual ::Scripting::Result_deprecated<void> setSelectedPaletteItemIndex(int) = 0;
 
     // vIndex: 7
     virtual int getSelectedPaletteItemIndex() const = 0;
 
     // vIndex: 8
-    virtual ::Scripting::Result<void> setPaletteItem(
+    virtual ::Scripting::Result_deprecated<void> setPaletteItem(
         ::HashedString const&,
         int,
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const&
     ) = 0;
 
     // vIndex: 9
-    virtual ::Scripting::Result<void> pickBlock(::Block const&) = 0;
+    virtual ::Scripting::Result_deprecated<void> pickBlock(::Block const&) = 0;
 
     // vIndex: 10
     virtual ::Scripting::Result_deprecated<::BlockLegacy const*> getSelectedBlockType() const = 0;

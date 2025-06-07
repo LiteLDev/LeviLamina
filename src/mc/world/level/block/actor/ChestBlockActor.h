@@ -100,7 +100,7 @@ public:
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     // vIndex: 3
-    virtual bool saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
+    virtual bool saveItemInstanceData(::CompoundTag& base, ::SaveContext const& saveContext) const /*override*/;
 
     // vIndex: 18
     virtual void clearCache() /*override*/;
@@ -129,7 +129,7 @@ public:
     // vIndex: 22
     virtual ::BlockActor* getCrackEntity(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 49
     virtual int clearInventory(int resizeTo) /*override*/;
 
     // vIndex: 34
@@ -147,13 +147,13 @@ public:
     // vIndex: 49
     virtual void openBy(::Player& p);
 
-    // vIndex: 31
+    // vIndex: 34
     virtual void setContainerChanged(int slot) /*override*/;
 
-    // vIndex: 29
+    // vIndex: 32
     virtual bool canPushInItem(int, int, ::ItemStack const&) const /*override*/;
 
-    // vIndex: 30
+    // vIndex: 33
     virtual bool canPullOutItem(int, int, ::ItemStack const&) const /*override*/;
 
     // vIndex: 24
@@ -165,7 +165,7 @@ public:
     // vIndex: 4
     virtual void removeContentChangeListener(::ContainerContentChangeListener* listener) /*override*/;
 
-    // vIndex: 38
+    // vIndex: 41
     virtual void initializeContainerContents(::BlockSource& region) /*override*/;
 
     // vIndex: 44
@@ -195,9 +195,9 @@ public:
     // NOLINTBEGIN
     MCAPI ChestBlockActor(
         ::BlockActorType       type,
-        ::std::string const&   renderId,
-        ::BlockActorRendererId pos,
-        ::BlockPos const&      id,
+        ::std::string const&   id,
+        ::BlockActorRendererId renderId,
+        ::BlockPos const&      pos,
         bool                   isTrapped
     );
 
@@ -227,9 +227,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::BlockActorType       type,
-        ::std::string const&   renderId,
-        ::BlockActorRendererId pos,
-        ::BlockPos const&      id,
+        ::std::string const&   id,
+        ::BlockActorRendererId renderId,
+        ::BlockPos const&      pos,
         bool                   isTrapped
     );
     // NOLINTEND
@@ -269,7 +269,7 @@ public:
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI bool $saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $saveItemInstanceData(::CompoundTag& base, ::SaveContext const& saveContext) const;
 
     MCFOLD void $clearCache();
 

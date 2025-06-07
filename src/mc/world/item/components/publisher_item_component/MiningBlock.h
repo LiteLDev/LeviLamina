@@ -12,7 +12,7 @@ class Actor;
 class Block;
 class HashedString;
 class ItemStack;
-namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
+namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 
 namespace PublisherItemComponent {
@@ -20,7 +20,8 @@ namespace PublisherItemComponent {
 class MiningBlock : public ::ItemComponent,
                     public ::Bedrock::PubSub::Publisher<
                         void(bool&, ::ItemStack&, ::Block const&, int, int, int, ::Actor&),
-                        ::Bedrock::PubSub::ThreadModel::MultiThreaded> {
+                        ::Bedrock::PubSub::ThreadModel::SingleThreaded,
+                        0> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -37,11 +38,11 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
+    MCNAPI static void** $vftableForDispatchingPublisherBase();
+
     MCNAPI static void** $vftable();
 
     MCNAPI static void** $vftableForConnector();
-
-    MCNAPI static void** $vftableForDispatchingPublisherBase();
     // NOLINTEND
 };
 

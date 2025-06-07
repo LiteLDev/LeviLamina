@@ -20,7 +20,7 @@ MCNAPI ::std::set<::Block const*> const generateSculkReplaceableBlocks();
 MCNAPI ::std::set<::Block const*> const generateSculkReplaceableBlocksWorldgen();
 
 MCNAPI void
-requestChargeEffects(::IBlockWorldGenAPI& region, ::BlockSource* pos, ::BlockPos const& charge, int facingData, int);
+requestChargeEffects(::IBlockWorldGenAPI&, ::BlockSource* region, ::BlockPos const& pos, int charge, int facingData);
 // NOLINTEND
 
 } // namespace SculkUtils

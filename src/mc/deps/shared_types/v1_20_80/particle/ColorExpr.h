@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::Legacy { struct ExpressionNode; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_20_80 {
@@ -31,6 +32,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
     MCNAPI static void fromExprArrayRGB(
         ::SharedTypes::v1_20_80::ColorExpr&                    instance,
         ::std::array<::SharedTypes::Legacy::ExpressionNode, 3> exprRGB

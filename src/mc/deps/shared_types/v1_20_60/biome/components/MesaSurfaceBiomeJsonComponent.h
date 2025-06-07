@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MesaSurfaceBiomeJsonComponent() /*override*/ = default;
+    virtual ~MesaSurfaceBiomeJsonComponent() /*override*/;
     // NOLINTEND
 
 public:
@@ -44,9 +44,6 @@ public:
 
     MCNAPI ::SharedTypes::v1_20_60::MesaSurfaceBiomeJsonComponent&
     operator=(::SharedTypes::v1_20_60::MesaSurfaceBiomeJsonComponent const&);
-
-    MCNAPI ::SharedTypes::v1_20_60::MesaSurfaceBiomeJsonComponent&
-    operator=(::SharedTypes::v1_20_60::MesaSurfaceBiomeJsonComponent&&);
     // NOLINTEND
 
 public:
@@ -69,6 +66,12 @@ public:
     MCNAPI void* $ctor();
 
     MCNAPI void* $ctor(::SharedTypes::v1_20_60::MesaSurfaceBiomeJsonComponent const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

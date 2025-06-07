@@ -7,6 +7,7 @@
 #include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/deps/scripting/script_engine/Closure.h"
 #include "mc/deps/scripting/script_engine/Promise.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
@@ -148,9 +149,9 @@ public:
     MCNAPI ::Scripting::Result<void, ::gametest::GameTestError>
     destroyBlock(::Vec3 const& position, bool dropResources);
 
-    MCNAPI ::Scripting::Result<void> fail(::std::string const& error);
+    MCNAPI ::Scripting::Result_deprecated<void> fail(::std::string const& error);
 
-    MCNAPI ::Scripting::Result<void> failIf(::Scripting::Closure<void()> fn);
+    MCNAPI ::Scripting::Result_deprecated<void> failIf(::Scripting::Closure<void()> fn);
 
     MCNAPI ::Scripting::
         Result<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>, ::gametest::GameTestError>
@@ -200,9 +201,9 @@ public:
 
     MCNAPI ::Scripting::Result<::Vec3, ::gametest::GameTestError> rotateVector(::Vec3 const& scriptVector) const;
 
-    MCNAPI ::Scripting::Result<void> runAfterDelay(int ticksToDelay, ::Scripting::Closure<void()> fn);
+    MCNAPI ::Scripting::Result_deprecated<void> runAfterDelay(int ticksToDelay, ::Scripting::Closure<void()> fn);
 
-    MCNAPI ::Scripting::Result<void> runAtTickTime(int tickTime, ::Scripting::Closure<void()> fn);
+    MCNAPI ::Scripting::Result_deprecated<void> runAtTickTime(int tickTime, ::Scripting::Closure<void()> fn);
 
     MCNAPI ::Scripting::Result<void, ::gametest::GameTestError>
     setBlockPermutation(::ScriptModuleMinecraft::ScriptBlockPermutation const& block, ::Vec3 const& position);
@@ -253,15 +254,15 @@ public:
 
     MCNAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence> startSequence();
 
-    MCNAPI ::Scripting::Result<void> succeed();
+    MCNAPI ::Scripting::Result_deprecated<void> succeed();
 
-    MCNAPI ::Scripting::Result<void> succeedIf(::Scripting::Closure<void()> fn);
+    MCNAPI ::Scripting::Result_deprecated<void> succeedIf(::Scripting::Closure<void()> fn);
 
-    MCNAPI ::Scripting::Result<void> succeedOnTick(int tick);
+    MCNAPI ::Scripting::Result_deprecated<void> succeedOnTick(int tick);
 
-    MCNAPI ::Scripting::Result<void> succeedOnTickWhen(int tick, ::Scripting::Closure<void()> fn);
+    MCNAPI ::Scripting::Result_deprecated<void> succeedOnTickWhen(int tick, ::Scripting::Closure<void()> fn);
 
-    MCNAPI ::Scripting::Result<void> succeedWhen(::Scripting::Closure<void()> fn);
+    MCNAPI ::Scripting::Result_deprecated<void> succeedWhen(::Scripting::Closure<void()> fn);
 
     MCNAPI ::Scripting::Result<void, ::gametest::GameTestError> succeedWhenBlockPresent(
         ::std::variant<
@@ -271,14 +272,14 @@ public:
         bool                      isPresent
     );
 
-    MCNAPI ::Scripting::Result<void> succeedWhenEntityHasComponent(
+    MCNAPI ::Scripting::Result_deprecated<void> succeedWhenEntityHasComponent(
         ::std::string const& actorIdentifier,
         ::std::string const& componentName,
         ::Vec3 const&        position,
         bool                 hasComponent
     );
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     succeedWhenEntityPresent(::std::string const& entityIdentifier, ::Vec3 const& position, bool isPresent);
 
     MCNAPI ::Scripting::Result<void, ::gametest::GameTestError>

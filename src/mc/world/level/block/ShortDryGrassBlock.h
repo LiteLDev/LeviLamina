@@ -8,40 +8,29 @@
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class IConstBlockSource;
-class Vec3;
 // clang-format on
 
 class ShortDryGrassBlock : public ::FoliageBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 79
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 81
+    // vIndex: 80
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 76
+    // vIndex: 75
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    // vIndex: 74
+    // vIndex: 73
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
-        /*override*/;
-
-    // vIndex: 15
-    virtual ::Vec3 randomlyModifyPosition(::BlockPos const& pos) const /*override*/;
-
-    // vIndex: 9
-    virtual ::AABB const&
-    getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
         /*override*/;
 
     // vIndex: 0
@@ -59,11 +48,6 @@ public:
 
     MCAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
-
-    MCAPI ::Vec3 $randomlyModifyPosition(::BlockPos const& pos) const;
-
-    MCFOLD ::AABB const&
-    $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
     // NOLINTEND
 
 public:

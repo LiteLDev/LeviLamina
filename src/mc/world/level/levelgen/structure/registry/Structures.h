@@ -19,11 +19,11 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bootstrap(
-        ::br::worldgen::StructureRegistry&                                                 context,
-        ::BaseGameVersion const&                                                           experiments,
-        ::Experiments const&                                                               jigsawDefinitions,
-        ::std::vector<::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents> const* registries,
-        ::IWorldRegistriesProvider&
+        ::br::worldgen::StructureRegistry& context,
+        ::BaseGameVersion const&,
+        ::Experiments const&                                                               experiments,
+        ::std::vector<::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents> const* jigsawDefinitions,
+        ::IWorldRegistriesProvider&                                                        registries
     );
 
     MCNAPI static ::std::shared_ptr<::br::worldgen::JigsawStructure> makeTrailRuinsJigsaw();

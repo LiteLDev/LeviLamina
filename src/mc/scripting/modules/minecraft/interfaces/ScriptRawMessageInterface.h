@@ -3,14 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 namespace Json { class Value; }
+namespace ScriptModuleMinecraft { struct ScriptRawMessageError; }
+namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -43,13 +44,15 @@ public:
 
     MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptRawMessageInterface const& other) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::Json::Value>
+    MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
     resolveAsJson(::Actor& recipient, ::CurrentCmdVersion commandVersion) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::string>
+    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageError>
     resolveAsJsonString(::Actor& recipient, ::CurrentCmdVersion commandVersion) const;
 
     MCNAPI ::Json::Value toJson() const;
+
+    MCNAPI ::std::string toString() const;
 
     MCNAPI ~ScriptRawMessageInterface();
     // NOLINTEND
@@ -57,7 +60,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptRawMessageInterface> bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
 
     MCNAPI static ::ScriptModuleMinecraft::ScriptRawMessageInterface fromJSON(::Json::Value const& json);
 

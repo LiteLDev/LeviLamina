@@ -164,8 +164,8 @@ public:
         uint64                   time,
         ::RakNet::RakNetSocket2* s,
         ::RakNet::SystemAddress& systemAddress,
-        ::RakNet::RakNetRandom*  updateBitStream,
-        ::RakNet::BitStream&     rnr
+        ::RakNet::RakNetRandom*  rnr,
+        ::RakNet::BitStream&     updateBitStream
     );
 
     MCNAPI void ClearPacketsAndDatagrams();
@@ -185,18 +185,18 @@ public:
         uint                                                 length,
         ::RakNet::SystemAddress&                             systemAddress,
         ::DataStructures::List<::RakNet::PluginInterface2*>& messageHandlerList,
-        int                                                  s,
-        ::RakNet::RakNetSocket2*                             timeRead,
-        ::RakNet::RakNetRandom*                              updateBitStream,
-        uint64                                               MTUSize,
-        ::RakNet::BitStream&                                 rnr
+        int                                                  MTUSize,
+        ::RakNet::RakNetSocket2*                             s,
+        ::RakNet::RakNetRandom*                              rnr,
+        uint64                                               timeRead,
+        ::RakNet::BitStream&                                 updateBitStream
     );
 
     MCNAPI void InitializeVariables();
 
     MCNAPI void InsertIntoSplitPacketList(::RakNet::InternalPacket* internalPacket, uint64 time);
 
-    MCNAPI void PushPacket(uint64 internalPacket, ::RakNet::InternalPacket* isReliable, bool time);
+    MCNAPI void PushPacket(uint64 time, ::RakNet::InternalPacket* internalPacket, bool isReliable);
 
     MCNAPI void ReleaseToInternalPacketPool(::RakNet::InternalPacket* ip);
 
@@ -220,25 +220,25 @@ public:
         ::PacketReliability reliability,
         uchar               orderingChannel,
         bool                makeDataCopy,
-        int                 currentTime,
-        uint64              receipt,
-        uint                MTUSize
+        int                 MTUSize,
+        uint64              currentTime,
+        uint                receipt
     );
 
     MCNAPI void SendACKs(
         ::RakNet::RakNetSocket2* s,
         ::RakNet::SystemAddress& systemAddress,
         uint64                   time,
-        ::RakNet::RakNetRandom*  updateBitStream,
-        ::RakNet::BitStream&     rnr
+        ::RakNet::RakNetRandom*  rnr,
+        ::RakNet::BitStream&     updateBitStream
     );
 
     MCNAPI void SendBitStream(
         ::RakNet::RakNetSocket2* s,
         ::RakNet::SystemAddress& systemAddress,
         ::RakNet::BitStream*     bitStream,
-        ::RakNet::RakNetRandom*  currentTime,
-        uint64                   rnr
+        ::RakNet::RakNetRandom*  rnr,
+        uint64                   currentTime
     );
 
     MCNAPI void SplitPacket(::RakNet::InternalPacket* internalPacket);
@@ -246,12 +246,12 @@ public:
     MCNAPI void Update(
         ::RakNet::RakNetSocket2*                             s,
         ::RakNet::SystemAddress&                             systemAddress,
-        int                                                  time,
-        uint64                                               bitsPerSecondLimit,
-        uint                                                 messageHandlerList,
-        ::DataStructures::List<::RakNet::PluginInterface2*>& updateBitStream,
-        ::RakNet::RakNetRandom*                              MTUSize,
-        ::RakNet::BitStream&                                 rnr
+        int                                                  MTUSize,
+        uint64                                               time,
+        uint                                                 bitsPerSecondLimit,
+        ::DataStructures::List<::RakNet::PluginInterface2*>& messageHandlerList,
+        ::RakNet::RakNetRandom*                              rnr,
+        ::RakNet::BitStream&                                 updateBitStream
     );
 
     MCNAPI uint WriteToBitStreamFromInternalPacket(

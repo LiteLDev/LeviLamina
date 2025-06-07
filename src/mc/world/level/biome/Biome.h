@@ -13,10 +13,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class BaseGameVersion;
 class BlockPos;
 class BlockSource;
-class CompoundTag;
 class MobSpawnerData;
 class WellKnownTagID;
 struct BiomeTagIDType;
@@ -98,9 +96,6 @@ public:
     // NOLINTBEGIN
     MCAPI Biome(ushort id, ::std::string_view name);
 
-    MCAPI ::Biome&
-    addTag(::HashedString tag, ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>& tagRegistry);
-
     MCAPI ::VanillaBiomeTypes getBiomeType() const;
 
     MCAPI int getMapFoliageColor() const;
@@ -128,12 +123,6 @@ public:
     MCAPI bool isHumid() const;
 
     MCAPI ::Biome& setMapWaterColor(int color);
-
-    MCAPI void writePacketData(
-        ::CompoundTag&                                                            tag,
-        ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>& tagRegistry,
-        ::BaseGameVersion const&                                                  baseGameVersion
-    ) const;
     // NOLINTEND
 
 public:

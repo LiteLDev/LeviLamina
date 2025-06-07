@@ -8,6 +8,8 @@
 namespace Bedrock::PlatformUtils {
 // functions
 // NOLINTBEGIN
+MCNAPI ::std::string createUUID();
+
 MCNAPI ::Core::PathBuffer<::std::string> const& getExternalStoragePath();
 
 MCNAPI ::std::string const& getPackageFamilyName();

@@ -21,7 +21,7 @@ MCNAPI bool ignoreVibrationIfOnVibrationDampeningBlock(
 );
 
 MCNAPI bool
-ignoreVibrationIfSneaking(::BlockSource& gameEvent, ::GameEvent const& gameEventContext, ::GameEventContext const&);
+ignoreVibrationIfSneaking(::BlockSource&, ::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext);
 // NOLINTEND
 
 } // namespace VibrationListenerUtils

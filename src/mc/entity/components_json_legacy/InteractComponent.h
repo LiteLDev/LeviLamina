@@ -43,7 +43,8 @@ public:
         ::Interaction const& description
     );
 
-    MCNAPI static void _tryDropItem(::BlockSource& region, ::Actor& owner, ::ItemSlotInfo const& itemSlotInfo);
+    MCNAPI static void
+    _tryDropItem(::BlockSource& region, ::Actor& owner, ::ItemSlotInfo const& itemSlotInfo, float dropOffsetY);
 
     MCNAPI static void _tryEquipItem(
         ::Actor&              owner,

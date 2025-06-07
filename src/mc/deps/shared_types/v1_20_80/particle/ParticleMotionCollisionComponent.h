@@ -27,6 +27,8 @@ public:
 
 public:
     // prevent constructor by default
+    ParticleMotionCollisionComponent& operator=(ParticleMotionCollisionComponent const&);
+    ParticleMotionCollisionComponent(ParticleMotionCollisionComponent const&);
     ParticleMotionCollisionComponent();
 
 public:
@@ -40,18 +42,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ParticleMotionCollisionComponent(::SharedTypes::v1_20_80::ParticleMotionCollisionComponent const&);
-
-    MCNAPI ::SharedTypes::v1_20_80::ParticleMotionCollisionComponent&
-    operator=(::SharedTypes::v1_20_80::ParticleMotionCollisionComponent const&);
-
-    MCNAPI ::SharedTypes::v1_20_80::ParticleMotionCollisionComponent&
-    operator=(::SharedTypes::v1_20_80::ParticleMotionCollisionComponent&&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -61,12 +51,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::HashedString const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleMotionCollisionComponent const&);
     // NOLINTEND
 
 public:

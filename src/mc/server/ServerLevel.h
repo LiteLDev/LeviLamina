@@ -29,6 +29,7 @@ class LevelChunkMetaDataManager;
 class LevelData;
 class LevelSettings;
 class LevelStorage;
+class LinkedAssetValidator;
 class MapDataManager;
 class MinecraftCommands;
 class PacketSender;
@@ -95,91 +96,91 @@ public:
         ::std::string const*   levelId
     ) /*override*/;
 
-    // vIndex: 386
+    // vIndex: 388
     virtual ::PlayerSleepManager const& getPlayerSleepManager() const /*override*/;
 
-    // vIndex: 385
+    // vIndex: 387
     virtual ::PlayerSleepManager& getPlayerSleepManager() /*override*/;
 
-    // vIndex: 154
+    // vIndex: 155
     virtual ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager> getServerPlayerSleepManager() /*override*/;
 
-    // vIndex: 153
+    // vIndex: 154
     virtual ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager const> getServerPlayerSleepManager() const
         /*override*/;
 
-    // vIndex: 155
+    // vIndex: 156
     virtual void setCommandsEnabled(bool commandsEnabled) /*override*/;
 
-    // vIndex: 156
+    // vIndex: 157
     virtual void setWorldTemplateOptionsUnlocked() /*override*/;
 
-    // vIndex: 271
+    // vIndex: 272
     virtual ::ResourcePackManager* getClientResourcePackManager() const /*override*/;
 
-    // vIndex: 272
+    // vIndex: 273
     virtual ::ResourcePackManager* getServerResourcePackManager() const /*override*/;
 
-    // vIndex: 273
+    // vIndex: 274
     virtual ::TradeTables* getTradeTables() /*override*/;
 
-    // vIndex: 288
+    // vIndex: 289
     virtual void
     runCommand(::HashedString const&, ::CommandOrigin&, ::CommandOriginSystem, ::CurrentCmdVersion const) /*override*/;
 
-    // vIndex: 287
+    // vIndex: 288
     virtual void runCommand(::Command&, ::CommandOrigin&, ::CommandOriginSystem) /*override*/;
 
-    // vIndex: 274
+    // vIndex: 275
     virtual void decrementTagCache(
         ::std::string const& tag,
         ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
     ) /*override*/;
 
-    // vIndex: 275
+    // vIndex: 276
     virtual void incrementTagCache(
         ::std::string const& tag,
         ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
     ) /*override*/;
 
-    // vIndex: 276
+    // vIndex: 277
     virtual ::Bedrock::NonOwnerPointer<::TagCacheManager> getTagCacheManager() /*override*/;
 
-    // vIndex: 227
+    // vIndex: 228
     virtual ::LevelChunkMetaDataManager* getLevelChunkMetaDataManager() /*override*/;
 
-    // vIndex: 234
+    // vIndex: 235
     virtual void loadFunctionManager() /*override*/;
 
-    // vIndex: 319
+    // vIndex: 320
     virtual ::Random& getThreadRandom() const /*override*/;
 
-    // vIndex: 298
+    // vIndex: 299
     virtual ::PositionTrackingDB::PositionTrackingDBServer* getPositionTrackerDBServer() const /*override*/;
 
-    // vIndex: 286
+    // vIndex: 287
     virtual ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> tryGetVolumeEntityManagerServer() const
         /*override*/;
 
-    // vIndex: 367
+    // vIndex: 368
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> getChunkGenerationManager() /*override*/;
 
-    // vIndex: 366
+    // vIndex: 367
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> getChunkGenerationManager() const /*override*/;
 
-    // vIndex: 368
+    // vIndex: 369
     virtual ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> getMapDataManager() /*override*/;
 
-    // vIndex: 387
+    // vIndex: 389
     virtual void _subTick() /*override*/;
 
-    // vIndex: 380
+    // vIndex: 382
     virtual ::PlayerDeathManager* _getPlayerDeathManager() /*override*/;
 
-    // vIndex: 381
+    // vIndex: 383
     virtual ::MapDataManager& _getMapDataManager() /*override*/;
 
-    // vIndex: 388
+    // vIndex: 390
     virtual void _initializeMapDataManager() /*override*/;
     // NOLINTEND
 
@@ -203,7 +204,8 @@ public:
         bool                                                         clientSideChunkGenerationEnabled,
         bool                                                         blockNetworkIdsAreHashes,
         ::NetworkPermissions const&                                  networkPermissions,
-        ::std::weak_ptr<::BlockTypeRegistry>                         blockRegistry
+        ::std::weak_ptr<::BlockTypeRegistry>                         blockRegistry,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>           validator
     );
 
     MCAPI void _initializeActorManager();
@@ -239,7 +241,8 @@ public:
         bool                                                         clientSideChunkGenerationEnabled,
         bool                                                         blockNetworkIdsAreHashes,
         ::NetworkPermissions const&                                  networkPermissions,
-        ::std::weak_ptr<::BlockTypeRegistry>                         blockRegistry
+        ::std::weak_ptr<::BlockTypeRegistry>                         blockRegistry,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>           validator
     );
     // NOLINTEND
 

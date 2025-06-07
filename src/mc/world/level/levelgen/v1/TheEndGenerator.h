@@ -143,12 +143,12 @@ public:
     MCAPI void _prepareHeights(
         ::BlockVolume&        box,
         ::ChunkPos const&     chunkPos,
-        bool                  ZXheights,
-        ::std::vector<short>* factorInBeardsAndShavers,
+        bool                  factorInBeardsAndShavers,
+        ::std::vector<short>* ZXheights,
         int                   skipTopN
     );
 
-    MCAPI void buildSurfaces(::BlockVolume& box, ::ChunkPos const& levelChunk, ::LevelChunk& chunkPos);
+    MCAPI void buildSurfaces(::BlockVolume& box, ::ChunkPos const& chunkPos, ::LevelChunk& levelChunk);
 
     MCAPI ::Util::MultidimensionalArray<float, 3, 3, 33> generateDensityCellsForChunk(::ChunkPos const& chunkPos) const;
 

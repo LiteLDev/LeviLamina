@@ -45,7 +45,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~Definition() /*override*/;
+        virtual ~Definition() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -56,12 +56,6 @@ public:
             ::std::shared_ptr<
                 ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GoAndGiveItemsToOwnerGoal::Definition>>& root
         );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -80,7 +74,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Mob&>                                   mMob;
-    ::ll::TypedStorage<8, 96, ::GoAndGiveItemsToOwnerGoal::Definition> mDefinition;
+    ::ll::TypedStorage<8, 64, ::GoAndGiveItemsToOwnerGoal::Definition> mDefinition;
     ::ll::TypedStorage<4, 4, ::GoAndGiveItemsToOwnerGoal::State>       mState;
     ::ll::TypedStorage<8, 8, ::Tick>                                   mLastPathCalculationTick;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>                mPath;
@@ -114,13 +108,19 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 0
-    virtual ~GoAndGiveItemsToOwnerGoal() /*override*/ = default;
+    virtual ~GoAndGiveItemsToOwnerGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool _attemptToGiveItem();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -176,9 +176,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static bool anyMatch(::std::vector<::BlockDescriptor> const& blockDescriptors, ::Block const& block);
 
-    MCNAPI static bool
-    anyMatch(::std::vector<::BlockDescriptor> const& blockDescriptors, ::BlockDescriptor const& otherBlockDescriptor);
-
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
     MCNAPI static ::BlockDescriptor fromCompoundTag(::CompoundTag const& tag);

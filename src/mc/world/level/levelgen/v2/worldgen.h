@@ -16,8 +16,8 @@ class JigsawStructureRegistry;
 class StructurePoolElement;
 class StructureTemplatePool;
 namespace JigsawStructureUtils { class MetadataCache; }
-namespace SharedTypes::v1_21_50 { class JigsawBlockMetadata; }
-namespace SharedTypes::v1_21_50 { struct JigsawStructureMetadata; }
+namespace SharedTypes::v1_21_80 { class JigsawBlockMetadata; }
+namespace SharedTypes::v1_21_80 { struct JigsawStructureMetadata; }
 namespace br::worldgen { struct StructureBlockInfo; }
 namespace br::worldgen { struct StructurePlaceSettings; }
 namespace br::worldgen { struct StructureTemplateBlockPalette; }
@@ -31,7 +31,7 @@ MCNAPI int expansionHackCalc(
     ::BlockPos const&                                                  offset,
     ::Rotation                                                         rotation,
     ::BoundingBox const&                                               box,
-    ::std::vector<::SharedTypes::v1_21_50::JigsawBlockMetadata> const& targetJigsaws,
+    ::std::vector<::SharedTypes::v1_21_80::JigsawBlockMetadata> const& targetJigsaws,
     ::std::vector<uint64> const&                                       targetJigsawIndexes,
     ::JigsawStructureRegistry const&                                   pools
 );
@@ -45,7 +45,7 @@ MCNAPI int noopCalc(
     ::BlockPos const&,
     ::Rotation,
     ::BoundingBox const&,
-    ::std::vector<::SharedTypes::v1_21_50::JigsawBlockMetadata> const&,
+    ::std::vector<::SharedTypes::v1_21_80::JigsawBlockMetadata> const&,
     ::std::vector<uint64> const&,
     ::JigsawStructureRegistry const&
 );
@@ -80,7 +80,7 @@ MCNAPI ::std::optional<::BlockPos> randomNamedJigsawLocation(
 MCNAPI ::std::vector<uint64> shuffledJigsawBlockId(::StructureTemplatePool const& pool, ::IRandom& random);
 
 MCNAPI ::std::vector<uint64>
-shuffledJigsawBlockIndexes(::SharedTypes::v1_21_50::JigsawStructureMetadata const& metadata, ::IRandom& random);
+shuffledJigsawBlockIndexes(::SharedTypes::v1_21_80::JigsawStructureMetadata const& metadata, ::IRandom& random);
 // NOLINTEND
 
 } // namespace br::worldgen

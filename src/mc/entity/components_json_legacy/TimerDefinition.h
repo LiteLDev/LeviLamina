@@ -32,6 +32,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void addWeightedChoiceEntry(::WeightChoiceEntry const& entry);
+
+    MCNAPI ~TimerDefinition();
     // NOLINTEND
 
 public:
@@ -39,5 +41,11 @@ public:
     // NOLINTBEGIN
     MCNAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TimerDefinition>>& root);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

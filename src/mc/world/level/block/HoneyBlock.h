@@ -23,7 +23,7 @@ class HoneyBlock : public ::BlockLegacy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 5
@@ -34,10 +34,10 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    // vIndex: 134
+    // vIndex: 133
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 142
+    // vIndex: 140
     virtual int getExtraRenderLayers() const /*override*/;
 
     // vIndex: 11

@@ -190,12 +190,15 @@ public:
     virtual ::Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo();
 
     // vIndex: 34
-    virtual ::Core::Result _commit();
+    virtual ::std::optional<::std::string> getIntegrityResults() const;
 
     // vIndex: 35
-    virtual ::Core::Result _onTransactionsEmpty(bool fromChild);
+    virtual ::Core::Result _commit();
 
     // vIndex: 36
+    virtual ::Core::Result _onTransactionsEmpty(bool fromChild);
+
+    // vIndex: 37
     virtual void _onTeardown();
     // NOLINTEND
 
@@ -206,8 +209,8 @@ public:
         ::Core::FileAccessType                     type,
         ::Core::PathView                           rootPath,
         bool                                       usesFlatFiles,
-        bool                                       parent,
-        ::std::shared_ptr<::Core::FileStorageArea> isAccessedDirectly
+        bool                                       isAccessedDirectly,
+        ::std::shared_ptr<::Core::FileStorageArea> parent
     );
 
     MCNAPI void _addReadOperation(bool succeeded, uint64 numBytesRead);
@@ -256,8 +259,8 @@ public:
         ::Core::FileAccessType                     type,
         ::Core::PathView                           rootPath,
         bool                                       usesFlatFiles,
-        bool                                       parent,
-        ::std::shared_ptr<::Core::FileStorageArea> isAccessedDirectly
+        bool                                       isAccessedDirectly,
+        ::std::shared_ptr<::Core::FileStorageArea> parent
     );
     // NOLINTEND
 
@@ -332,6 +335,8 @@ public:
     MCNAPI void $trackWriteOperation(::Core::PathView targetPath, ::Core::WriteOperation writeOperation);
 
     MCNAPI ::Core::FileStorageArea::StorageAreaSpaceInfo $getStorageAreaSpaceInfo();
+
+    MCNAPI ::std::optional<::std::string> $getIntegrityResults() const;
 
     MCNAPI ::Core::Result $_commit();
 

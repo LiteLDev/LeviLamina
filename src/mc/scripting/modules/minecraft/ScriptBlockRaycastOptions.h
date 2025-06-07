@@ -3,9 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/ScriptBlockFilter.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct InterfaceBinding; }
+// clang-format on
 
 namespace ScriptModuleMinecraft {
 
@@ -33,9 +37,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptBlockRaycastOptions> bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
 
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockRaycastOptions> bindV010();
+    MCNAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:

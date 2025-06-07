@@ -15,8 +15,6 @@ namespace Crypto::Hash {
 // NOLINTBEGIN
 MCAPI ::mce::UUID generateUUID(void const* in, uint size, ::Crypto::Hash::HashType type);
 
-MCAPI ::std::string hash(::Crypto::Hash::HashType type, ::std::string const& in);
-
 MCAPI ::std::string hash(::Crypto::Hash::HashType type, void const* in, uint size);
 // NOLINTEND
 

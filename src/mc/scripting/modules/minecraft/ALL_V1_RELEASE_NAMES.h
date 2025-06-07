@@ -24,7 +24,8 @@ enum class ALL_V1_RELEASE_NAMES : int {
     V1_16_0     = 16,
     V1_17_0     = 17,
     V1_18_0     = 18,
-    NumReleases = 19,
+    V1_19_0     = 19,
+    NumReleases = 20,
 };
 
 }

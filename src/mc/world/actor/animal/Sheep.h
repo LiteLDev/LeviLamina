@@ -51,7 +51,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
     // NOLINTEND
 
 public:

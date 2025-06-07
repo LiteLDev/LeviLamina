@@ -18,11 +18,7 @@ MCNAPI ::TickingSystemWithInfo createAntiCheatSystem(::TickingSystemWithInfo sys
 MCNAPI ::TickingSystemWithInfo
 createAuthorityDependentSystem(::TickingSystemWithInfo system, ::AuthorityDependentSystem::MovementFilter requiredMode);
 
-MCNAPI ::TickingSystemWithInfo createClientAuthoritativeSystem(::TickingSystemWithInfo system);
-
 MCNAPI ::TickingSystemWithInfo createNotAntiCheatSystem(::TickingSystemWithInfo system);
-
-MCNAPI ::TickingSystemWithInfo createNotClientAuthoritativeSystem(::TickingSystemWithInfo system);
 // NOLINTEND
 
 } // namespace AuthorityDependentSystem

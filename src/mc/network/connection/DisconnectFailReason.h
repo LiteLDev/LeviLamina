@@ -123,6 +123,7 @@ enum class DisconnectFailReason : int {
     NetherNetClientSignalingError                 = 115,
     SubClientLoginDisabled                        = 116,
     DeepLinkTryingToOpenDemoWorldWhileSignedIn    = 117,
+    AsyncJoinTaskDenied                           = 118,
 };
 
 }

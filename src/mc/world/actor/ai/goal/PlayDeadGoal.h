@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class Mob;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -45,15 +44,13 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~Definition() /*override*/;
+        virtual ~Definition() /*override*/ = default;
         // NOLINTEND
 
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI void addDamageCause(::std::string const& causeCased);
-
-        MCNAPI void initialize(::EntityContext& entity, ::PlayDeadGoal& goal) const;
         // NOLINTEND
 
     public:
@@ -67,12 +64,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-
-    public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
@@ -82,7 +73,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 160, ::PlayDeadGoal::Definition> mDefinition;
+    ::ll::TypedStorage<8, 128, ::PlayDeadGoal::Definition> mDefinition;
     ::ll::TypedStorage<8, 8, ::Mob&>                       mMob;
     ::ll::TypedStorage<8, 8, uint64>                       mPlayDeadDuration;
     ::ll::TypedStorage<8, 8, uint64>                       mStopPlayingDeadTime;

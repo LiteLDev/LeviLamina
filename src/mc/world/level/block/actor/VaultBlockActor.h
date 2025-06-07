@@ -285,7 +285,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void
-    _javaSpawnItem(::BlockSource& region, ::ItemStack const& item, int position, uchar accuracy, ::Vec3 direction);
+    _javaSpawnItem(::BlockSource& region, ::ItemStack const& item, int accuracy, uchar direction, ::Vec3 position);
     // NOLINTEND
 
 public:

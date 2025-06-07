@@ -46,7 +46,7 @@ public:
     // NOLINTBEGIN
     MCNAPI MolangQueryFunction(
         ::std::function<::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)> accessor,
-        ::std::string const&                documentation,
+        ::std::string_view                  documentation,
         uint64                              minArgumentCount,
         uint64                              maxArgumentCount,
         ::std::initializer_list<int> const& experiments,
@@ -61,7 +61,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(
         ::std::function<::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)> accessor,
-        ::std::string const&                documentation,
+        ::std::string_view                  documentation,
         uint64                              minArgumentCount,
         uint64                              maxArgumentCount,
         ::std::initializer_list<int> const& experiments,

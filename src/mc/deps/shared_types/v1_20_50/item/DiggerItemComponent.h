@@ -55,11 +55,12 @@ public:
     // prevent constructor by default
     DiggerItemComponent& operator=(DiggerItemComponent const&);
     DiggerItemComponent(DiggerItemComponent const&);
-    DiggerItemComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI DiggerItemComponent();
+
     MCNAPI ~DiggerItemComponent();
     // NOLINTEND
 
@@ -67,6 +68,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

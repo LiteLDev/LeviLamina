@@ -2,8 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/nether_net/LogSeverity.h"
+
 // auto generated forward declare list
 // clang-format off
+struct NetworkSystemToggles;
+struct PortMappingInfo;
 namespace NetherNet { class INetherNetTransportInterface; }
 namespace NetherNet { class INetherNetTransportInterfaceCallbacks; }
 namespace NetherNet { struct NetworkID; }
@@ -13,7 +18,9 @@ class NetherNetTransportFactory {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk78837c;
+    ::ll::UntypedStorage<8, 48> mUnk78837c;
+    ::ll::UntypedStorage<8, 56> mUnkdaf441;
+    ::ll::UntypedStorage<4, 4>  mUnkda3cbc;
     // NOLINTEND
 
 public:
@@ -36,6 +43,26 @@ public:
         ::NetherNet::NetworkID const&                       id,
         ::NetherNet::INetherNetTransportInterfaceCallbacks* callbacks
     ) const;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI NetherNetTransportFactory(
+        ::NetworkSystemToggles const& toggles,
+        ::PortMappingInfo             portMappingInfo,
+        ::NetherNet::LogSeverity      defaultLogSeverity
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::NetworkSystemToggles const& toggles,
+        ::PortMappingInfo             portMappingInfo,
+        ::NetherNet::LogSeverity      defaultLogSeverity
+    );
     // NOLINTEND
 
 public:

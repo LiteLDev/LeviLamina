@@ -28,8 +28,6 @@ class EnderDragon : public ::Monster {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnkac943d;
-    ::ll::UntypedStorage<4, 4>   mUnke5a802;
     ::ll::UntypedStorage<8, 8>   mUnk1062c1;
     ::ll::UntypedStorage<4, 768> mUnk11c904;
     ::ll::UntypedStorage<4, 4>   mUnk5d54df;
@@ -131,7 +129,7 @@ public:
     MCAPI void _knockBack(::gsl::span<::gsl::not_null<::Actor*>> actors) const;
 
     MCAPI ::std::unique_ptr<::Path>
-    _reconstructPath(::PathfinderNode& to, ::PathfinderNode& completionType, ::PathCompletionType from);
+    _reconstructPath(::PathfinderNode& from, ::PathfinderNode& to, ::PathCompletionType completionType);
 
     MCAPI void dieNaturally();
 
@@ -188,6 +186,8 @@ public:
     MCFOLD bool $canBeAffected(uint id) const;
 
     MCFOLD bool $isImmobile() const;
+
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI ::Vec3 $getHeadLookVector(float a) const;
 

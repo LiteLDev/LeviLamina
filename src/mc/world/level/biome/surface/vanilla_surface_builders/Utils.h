@@ -15,7 +15,6 @@ class HeightmapWrapper;
 class Pos;
 class Random;
 struct SurfaceMaterialAdjustmentEvaluated;
-struct SurfaceMaterialAttributes;
 struct SurfaceMaterialBlocks;
 // clang-format on
 
@@ -39,8 +38,6 @@ MCNAPI void _buildSurface(
 );
 
 MCNAPI void buildSurface(::ISurfaceBuilder::BuildParameters const& buildParameters);
-
-MCNAPI void ensureValidSurfaceMaterials(::SurfaceMaterialAttributes& surfaceMaterials);
 
 MCNAPI short findGroundHeight(::BlockVolume const& blocks, ::Pos p, ::HeightmapWrapper const& preWorldGenHeightmap);
 

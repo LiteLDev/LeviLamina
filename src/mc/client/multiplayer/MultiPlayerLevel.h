@@ -34,7 +34,7 @@ struct ActorUniqueID;
 struct Tick;
 // clang-format on
 
-class MultiPlayerLevel : public ::BeforeLevelForLevelHoldingOwnership, public ::Level {
+class MultiPlayerLevel : public ::Level, public ::BeforeLevelForLevelHoldingOwnership {
 public:
     // member variables
     // NOLINTBEGIN
@@ -68,7 +68,7 @@ public:
     virtual bool
     initialize(::std::string const&, ::LevelSettings const&, ::Experiments const&, ::std::string const*) /*override*/;
 
-    // vIndex: 73
+    // vIndex: 74
     virtual ::Tick const getCurrentServerTick() const /*override*/;
 
     // vIndex: 2
@@ -77,10 +77,10 @@ public:
     // vIndex: 39
     virtual ::Actor* addEntity(::BlockSource&, ::OwnerPtr<::EntityContext>) /*override*/;
 
-    // vIndex: 52
+    // vIndex: 53
     virtual ::OwnerPtr<::EntityContext> removeActorFromWorldAndTakeEntity(::WeakEntityRef) /*override*/;
 
-    // vIndex: 53
+    // vIndex: 54
     virtual ::OwnerPtr<::EntityContext> takeEntity(::WeakEntityRef, ::LevelChunk&) /*override*/;
 
     // vIndex: 43
@@ -92,53 +92,56 @@ public:
     // vIndex: 45
     virtual ::Bedrock::NonOwnerPointer<::DisplayActorManager> getDisplayActorManager() /*override*/;
 
-    // vIndex: 386
+    // vIndex: 388
     virtual ::PlayerSleepManager const& getPlayerSleepManager() const /*override*/;
 
-    // vIndex: 385
+    // vIndex: 387
     virtual ::PlayerSleepManager& getPlayerSleepManager() /*override*/;
 
-    // vIndex: 311
+    // vIndex: 312
     virtual void notifySubChunkRequestManager(::SubChunkPacket const&) /*override*/;
 
-    // vIndex: 312
+    // vIndex: 313
     virtual ::SubChunkRequestManager* getSubChunkRequestManager() /*override*/;
 
-    // vIndex: 222
+    // vIndex: 223
     virtual void onSubChunkLoaded(::ChunkSource&, ::LevelChunk&, short, bool) /*override*/;
 
-    // vIndex: 223
+    // vIndex: 224
     virtual ::Bedrock::NonOwnerPointer<::SubChunkManager> getSubChunkManager() /*override*/;
 
-    // vIndex: 295
+    // vIndex: 296
     virtual bool canUseSkin(::SerializedSkin const&, ::NetworkIdentifier const&, ::ActorUniqueID const&) const
         /*override*/;
 
-    // vIndex: 296
+    // vIndex: 297
     virtual ::Bedrock::NonOwnerPointer<::TrustedSkinHelper const> getTrustedSkinHelper() const /*override*/;
 
-    // vIndex: 370
+    // vIndex: 371
     virtual ::MultiPlayerLevel* asMultiPlayerLevel() /*override*/;
 
-    // vIndex: 372
+    // vIndex: 373
     virtual ::Bedrock::NonOwnerPointer<::CameraRegistry const> getCameraRegistry() const /*override*/;
 
-    // vIndex: 371
+    // vIndex: 372
     virtual ::Bedrock::NonOwnerPointer<::CameraRegistry> getCameraRegistry() /*override*/;
 
-    // vIndex: 373
+    // vIndex: 374
     virtual ::Bedrock::NonOwnerPointer<::EntitySystems> getCameraSystems() /*override*/;
 
-    // vIndex: 384
+    // vIndex: 386
     virtual ::ArmorTrimUnloader* getArmorTrimUnloader() /*override*/;
 
-    // vIndex: 368
+    // vIndex: 369
     virtual ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> getMapDataManager() /*override*/;
 
     // vIndex: 381
+    virtual void subChunkTickAndSendRequests() /*override*/;
+
+    // vIndex: 383
     virtual ::MapDataManager& _getMapDataManager() /*override*/;
 
-    // vIndex: 387
+    // vIndex: 389
     virtual void _subTick() /*override*/;
     // NOLINTEND
 

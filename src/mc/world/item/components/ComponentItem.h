@@ -535,7 +535,7 @@ public:
 
     MCAPI int $getCooldownTime() const;
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
+    MCAPI ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
 
     MCFOLD bool $useVariant(int, int, bool) const;
 

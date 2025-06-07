@@ -8,8 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class BaseGameVersion;
+class IWorldTemplateManager;
 class LevelData;
-class WorldTemplateManager;
 // clang-format on
 
 namespace BaseGameVersioning {
@@ -24,8 +24,8 @@ MCNAPI ::std::vector<::BaseGameVersion> const& getAvailableVanillaBehaviorPackGa
 MCNAPI ::std::vector<::BaseGameVersion> const& getAvailableVanillaResourcePackGameVersions();
 
 MCNAPI bool upgradeBaseGameVersionFromWorldTemplate(
-    ::Bedrock::NotNullNonOwnerPtr<::WorldTemplateManager const> const& worldTemplateManager,
-    ::LevelData&                                                       levelData
+    ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager const> const& worldTemplateManager,
+    ::LevelData&                                                        levelData
 );
 // NOLINTEND
 

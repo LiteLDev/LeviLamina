@@ -11,24 +11,24 @@ struct ComponentItemComponentData_v1_20_30 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 280> mUnkcf5289;
+    ::ll::UntypedStorage<8, 80>  mUnkcf5289;
     ::ll::UntypedStorage<8, 80>  mUnkd240aa;
     ::ll::UntypedStorage<8, 40>  mUnk8ab560;
-    ::ll::UntypedStorage<8, 304> mUnk53d280;
+    ::ll::UntypedStorage<8, 104> mUnk53d280;
     ::ll::UntypedStorage<8, 56>  mUnkfeeaa0;
     ::ll::UntypedStorage<8, 240> mUnk2c5468;
     ::ll::UntypedStorage<8, 40>  mUnkea62ae;
     ::ll::UntypedStorage<8, 32>  mUnk1769fd;
     ::ll::UntypedStorage<8, 48>  mUnk438306;
-    ::ll::UntypedStorage<8, 272> mUnk50359e;
-    ::ll::UntypedStorage<8, 272> mUnka0229b;
+    ::ll::UntypedStorage<8, 72>  mUnk50359e;
+    ::ll::UntypedStorage<8, 72>  mUnka0229b;
     ::ll::UntypedStorage<8, 72>  mUnk2c028a;
     ::ll::UntypedStorage<8, 208> mUnk3b222e;
     ::ll::UntypedStorage<8, 168> mUnkcaca34;
     ::ll::UntypedStorage<8, 48>  mUnk8e34cb;
     ::ll::UntypedStorage<8, 48>  mUnkd26818;
     ::ll::UntypedStorage<4, 40>  mUnk5ab2e7;
-    ::ll::UntypedStorage<8, 784> mUnk6e0601;
+    ::ll::UntypedStorage<8, 184> mUnk6e0601;
     ::ll::UntypedStorage<4, 24>  mUnk1d1791;
     ::ll::UntypedStorage<8, 40>  mUnkaff3c4;
     ::ll::UntypedStorage<8, 32>  mUnk8a6787;

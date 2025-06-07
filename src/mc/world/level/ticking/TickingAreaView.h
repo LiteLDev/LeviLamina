@@ -10,6 +10,7 @@
 // clang-format off
 class BlockSource;
 class ChunkPos;
+class ChunkSource;
 class ChunkViewSource;
 class Dimension;
 class Level;
@@ -82,6 +83,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit TickingAreaView(::ChunkSource& parent);
+
     MCNAPI bool _tickChunk(
         ::Tick const&                  currentTick,
         ::BlockSource&                 region,
@@ -89,6 +92,12 @@ public:
         ::ChunkPos const&              cp,
         ::LevelChunkTicking::Registry* registry
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ChunkSource& parent);
     // NOLINTEND
 
 public:

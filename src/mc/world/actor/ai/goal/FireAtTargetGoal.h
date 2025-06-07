@@ -15,7 +15,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class EntityContext;
 class Mob;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -63,8 +62,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI void initialize(::EntityContext& entity, ::FireAtTargetGoal& goal) const;
-
         MCNAPI void setOwnerAnchor(int const& value);
 
         MCNAPI void setProjectileDefinitionByName(::std::string const& name);

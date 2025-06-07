@@ -41,6 +41,9 @@ public:
 
     // vIndex: 7
     virtual void deleteWorldTemplateAndFiles(::PackIdVersion const&) = 0;
+
+    // vIndex: 8
+    virtual ::WorldTemplateInfo const* findInstalledWorldTemplate(::PackIdVersion const&) const = 0;
     // NOLINTEND
 
 public:

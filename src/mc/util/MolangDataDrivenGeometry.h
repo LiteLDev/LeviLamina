@@ -28,20 +28,14 @@ public:
     // NOLINTBEGIN
     MCAPI MolangDataDrivenGeometry(::MolangDataDrivenGeometry const&);
 
-    MCFOLD bool operator==(::MolangDataDrivenGeometry const& rhs) const;
+    MCAPI ::MolangDataDrivenGeometry& operator=(::MolangDataDrivenGeometry&&);
 
-    MCAPI ~MolangDataDrivenGeometry();
+    MCFOLD bool operator==(::MolangDataDrivenGeometry const& rhs) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::MolangDataDrivenGeometry const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

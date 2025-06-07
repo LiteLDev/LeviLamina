@@ -26,13 +26,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 25
+    // vIndex: 24
     virtual bool canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const /*override*/;
 
-    // vIndex: 56
-    virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
+    // vIndex: 55
+    virtual bool canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const /*override*/;
 
-    // vIndex: 84
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     // vIndex: 6
@@ -52,7 +52,7 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const;
 
-    MCAPI bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
+    MCAPI bool $canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const;
 
     MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 

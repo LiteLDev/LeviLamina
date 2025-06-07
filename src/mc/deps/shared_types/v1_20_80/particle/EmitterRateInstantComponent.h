@@ -23,6 +23,7 @@ public:
 public:
     // prevent constructor by default
     EmitterRateInstantComponent& operator=(EmitterRateInstantComponent const&);
+    EmitterRateInstantComponent(EmitterRateInstantComponent const&);
     EmitterRateInstantComponent();
 
 public:
@@ -36,12 +37,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI EmitterRateInstantComponent(::SharedTypes::v1_20_80::EmitterRateInstantComponent const&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -51,12 +46,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::HashedString const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterRateInstantComponent const&);
     // NOLINTEND
 
 public:

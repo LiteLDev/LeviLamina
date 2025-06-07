@@ -38,24 +38,19 @@ public:
 
     public:
         // prevent constructor by default
-        ComponentMetadata& operator=(ComponentMetadata const&);
+        ComponentMetadata(ComponentMetadata const&);
         ComponentMetadata();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ComponentMetadata(::CerealItemComponentFactory::ComponentMetadata const&);
-
         MCNAPI ::CerealItemComponentFactory::ComponentMetadata&
         operator=(::CerealItemComponentFactory::ComponentMetadata&&);
 
-        MCNAPI ~ComponentMetadata();
-        // NOLINTEND
+        MCNAPI ::CerealItemComponentFactory::ComponentMetadata&
+        operator=(::CerealItemComponentFactory::ComponentMetadata const&);
 
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::CerealItemComponentFactory::ComponentMetadata const&);
+        MCNAPI ~ComponentMetadata();
         // NOLINTEND
 
     public:
@@ -95,12 +90,6 @@ public:
     constructItemComponent(::std::string const& name, ::cereal::ReflectionCtx const& ctx);
 
     MCNAPI static ::CerealItemComponentFactory* contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
-
-    MCNAPI static void deprecateComponentStartingFromVersion(
-        ::std::string const&           name,
-        ::SemVersion                   deprecatedVersion,
-        ::cereal::ReflectionCtx const& ctx
-    );
 
     MCNAPI static bool isComponentBasedItemSchema(
         ::SemVersion const&            formatVersion,

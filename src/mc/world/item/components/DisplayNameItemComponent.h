@@ -4,13 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/world/item/components/NetworkedItemComponent.h"
-#include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-class SemVersion;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class DisplayNameItemComponent : public ::NetworkedItemComponent<::DisplayNameItemComponent> {
@@ -35,6 +32,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DisplayNameItemComponent(::DisplayNameItemComponent&&);
+
     MCAPI ::DisplayNameItemComponent& operator=(::DisplayNameItemComponent&&);
 
     MCAPI ::DisplayNameItemComponent& operator=(::DisplayNameItemComponent const&);
@@ -43,13 +42,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
-        ::std::optional<::SemVersion>          requiredToggles
-    );
-
     MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::DisplayNameItemComponent&&);
     // NOLINTEND
 
 public:

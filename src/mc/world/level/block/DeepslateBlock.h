@@ -14,10 +14,10 @@ class DeepslateBlock : public ::RotatedPillarBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 46
+    // vIndex: 45
     virtual bool canBeOriginalSurface() const /*override*/;
 
-    // vIndex: 129
+    // vIndex: 128
     virtual ::Block const* tryGetInfested(::Block const& block) const /*override*/;
 
     // vIndex: 0

@@ -6,7 +6,6 @@
 // clang-format off
 class SemVersionConstant;
 struct ComponentItemData_v1_21_10;
-namespace Puv { class VersionRange; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -16,7 +15,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 96>   mUnkc7ff83;
     ::ll::UntypedStorage<8, 1064> mUnk647fce;
-    ::ll::UntypedStorage<8, 2640> mUnk64da54;
+    ::ll::UntypedStorage<8, 840>  mUnk64da54;
     // NOLINTEND
 
 public:
@@ -38,14 +37,15 @@ public:
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
     MCNAPI static void moveDeprecatedData(::ComponentItemData_v1_21_10& oldData, ::ComponentItemData_v1_21_30& newData);
+
+    MCNAPI static void
+    upgrade(::Puv::CerealUpgrader<::ComponentItemData_v1_21_10, ::ComponentItemData_v1_21_30, nullptr_t>& upgrader);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::SemVersionConstant const& STRICT_VERSION();
-
-    MCNAPI static ::Puv::VersionRange const& SUPPORTED_VERSIONS();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
