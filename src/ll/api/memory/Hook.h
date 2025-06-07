@@ -64,7 +64,7 @@ LLNDAPI bool shouldHookSuspendThreads();
 LLAPI int
 hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority priority, bool suspendThreads = true);
 
-LLAPI int hook_ex(
+LLAPI int hookEx(
     FuncPtr             target,
     FuncPtr             detour,
     FuncPtr*            originalFunc,
@@ -75,7 +75,7 @@ LLAPI int hook_ex(
 
 LLAPI bool unhook(FuncPtr target, FuncPtr detour, bool suspendThreads = true);
 
-LLAPI bool hook_options(FuncPtr target, RegisterSaveOptions options, bool replace = true, bool suspendThreads = true);
+LLAPI bool hookOptions(FuncPtr target, RegisterSaveOptions options, bool replace = true, bool suspendThreads = true);
 
 template <class T>
 concept FuncPtrType = std::is_function_v<std::remove_pointer_t<T>> || std::is_member_function_pointer_v<T>;
@@ -208,7 +208,7 @@ struct LL_EBO Hook {};
         static int hook(bool suspendThreads = true) {                                                                  \
             _Detector<_OriginFuncType>();                                                                              \
             if (!_HookTarget) _HookTarget = ::ll::memory::resolveIdentifier<_OriginFuncType>(IDENTIFIER);              \
-            return ::ll::memory::hook_ex(                                                                              \
+            return ::ll::memory::hookEx(                                                                              \
                 _HookTarget,                                                                                           \
                 ::ll::memory::toFuncPtr(&DEF_TYPE::detour),                                                            \
                 reinterpret_cast<_FuncPtr*>(&_OriginalFunc),                                                           \

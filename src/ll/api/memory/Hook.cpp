@@ -20,7 +20,7 @@ int hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority pri
     }
     return pl::hook::pl_hook(target, detour, originalFunc, static_cast<pl::hook::Priority>(priority));
 }
-int hook_ex(
+int hookEx(
     FuncPtr             target,
     FuncPtr             detour,
     FuncPtr*            originalFunc,
@@ -50,7 +50,7 @@ bool unhook(FuncPtr target, FuncPtr detour, bool suspendThreads) {
     }
     return pl::hook::pl_unhook(target, detour);
 }
-bool hook_options(FuncPtr target, RegisterSaveOptions options, bool replace, bool suspendThreads) {
+bool hookOptions(FuncPtr target, RegisterSaveOptions options, bool replace, bool suspendThreads) {
     if (target == nullptr) {
         return false;
     }
