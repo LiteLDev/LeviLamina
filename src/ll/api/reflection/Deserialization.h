@@ -145,17 +145,17 @@ inline Expected<> deserialize_impl(T& map, J const& j, meta::PriorityTag<2>) {
     if (!j.is_object()) return makeStringError("field must be an object");
     map.clear();
     for (auto&& [k, v] : j.items()) {
-        if constexpr (std::is_enum_v<typename T::key_type>) {
+        if constexpr (concepts::IsString<typename T::key_type>) {
+            if (auto res = deserialize<typename T::mapped_type>(map[k], std::forward<decltype((v))>(v)); !res) {
+                res = makeSerKeyError(k, res.error());
+                return res;
+            }
+        } else {
             if (auto res = deserialize<typename T::mapped_type>(
                     map[magic_enum::enum_cast<typename T::key_type>(k).value()],
                     std::forward<decltype((v))>(v)
                 );
                 !res) {
-                res = makeSerKeyError(k, res.error());
-                return res;
-            }
-        } else {
-            if (auto res = deserialize<typename T::mapped_type>(map[k], std::forward<decltype((v))>(v)); !res) {
                 res = makeSerKeyError(k, res.error());
                 return res;
             }
@@ -197,9 +197,13 @@ template <concepts::Require<std::is_enum> T, class J>
 inline Expected<> deserialize_impl(T& e, J const& j, meta::PriorityTag<1>) {
     using enum_type = std::remove_cvref_t<T>;
     if (j.is_string()) {
-        e = magic_enum::enum_cast<enum_type>(std::string{j}).value();
+        if constexpr (magic_enum::detail::subtype_v<enum_type> == magic_enum::detail::enum_subtype::flags) {
+            e = magic_enum::enum_flags_cast<enum_type>(std::string{j}).value();
+        } else {
+            e = magic_enum::enum_cast<enum_type>(std::string{j}).value();
+        }
     } else {
-        e = magic_enum::enum_cast<enum_type>(std::underlying_type_t<enum_type>{j}).value();
+        e = (enum_type)(std::underlying_type_t<enum_type>{j});
     }
     return {};
 }

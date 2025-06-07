@@ -10,7 +10,7 @@
 #include "fmt/color.h"
 #include "fmt/core.h"
 #include "fmt/format.h"
-#include "magic_enum/magic_enum.hpp"
+#include "magic_enum/magic_enum_all.hpp"
 
 #include "ll/api/base/StdInt.h"
 

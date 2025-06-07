@@ -22,7 +22,7 @@
 #include "mc/world/level/Level.h"
 
 #include "cpr/cpr.h"
-#include "magic_enum/magic_enum.hpp"
+#include "magic_enum/magic_enum_all.hpp"
 #include "nlohmann/json.hpp"
 #include "nlohmann/json_fwd.hpp"
 

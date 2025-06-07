@@ -155,10 +155,10 @@ inline Expected<J> serialize_impl(T&& map, meta::PriorityTag<2>)
     Expected<J> res{J::object()};
     for (auto&& [k, v] : map) {
         std::string key;
-        if constexpr (std::is_enum_v<typename RT::key_type>) {
-            key = magic_enum::enum_name(std::forward<decltype((k))>(k));
-        } else {
+        if constexpr (concepts::IsString<typename RT::key_type>) {
             key = std::string{std::forward<decltype((k))>(k)};
+        } else {
+            key = magic_enum::enum_name(std::forward<decltype((k))>(k));
         }
         if (auto sv = serialize<J>(std::forward<decltype((v))>(v)); sv) {
             (*res)[key] = *std::move(sv);
@@ -196,7 +196,19 @@ template <class J, class T>
 inline Expected<J> serialize_impl(T&& e, meta::PriorityTag<1>)
     requires(std::is_enum_v<std::remove_cvref_t<T>>)
 {
-    return magic_enum::enum_name(std::forward<T>(e));
+    using enum_type = std::remove_cvref_t<T>;
+    if constexpr (magic_enum::detail::supported<enum_type>::value) {
+        if constexpr (magic_enum::detail::subtype_v<enum_type> == magic_enum::detail::enum_subtype::flags) {
+            if (const auto name = magic_enum::enum_flags_name<enum_type>(e); !name.empty()) {
+                return name;
+            }
+        } else {
+            if (const auto name = magic_enum::enum_name<enum_type>(e); !name.empty()) {
+                return name;
+            }
+        }
+    }
+    return (std::underlying_type_t<enum_type>)e;
 }
 template <class J, class T>
 inline Expected<J> serialize_impl(T&& obj, meta::PriorityTag<0>)
