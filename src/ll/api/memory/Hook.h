@@ -75,7 +75,7 @@ LLAPI int hook_ex(
 
 LLAPI bool unhook(FuncPtr target, FuncPtr detour, bool suspendThreads = true);
 
-LLAPI bool hook_options(FuncPtr target, RegisterSaveOptions options, bool replace = true);
+LLAPI bool hook_options(FuncPtr target, RegisterSaveOptions options, bool replace = true, bool suspendThreads = true);
 
 template <class T>
 concept FuncPtrType = std::is_function_v<std::remove_pointer_t<T>> || std::is_member_function_pointer_v<T>;
