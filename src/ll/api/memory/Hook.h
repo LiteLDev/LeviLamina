@@ -13,6 +13,7 @@
 #include "ll/api/memory/Memory.h"
 #include "ll/api/reflection/TypeName.h"
 #include "ll/api/thread/GlobalThreadPauser.h"
+#include "ll/api/memory/SignatureCache.hpp"
 
 namespace ll::memory {
 
@@ -66,8 +67,14 @@ constexpr FuncPtr resolveIdentifier(T identifier) {
 }
 
 template <class T>
-constexpr FuncPtr resolveIdentifier(SignatureView identifier) {
-    return identifier.resolve();
+FuncPtr resolveIdentifier(SignatureView identifier) {
+    const std::string sigStr = identifier.toString();
+    if (auto cached = SignatureCache::get(sigStr)) {
+        return cached;
+    }
+    FuncPtr result = identifier.resolve();
+    SignatureCache::set(sigStr, result);
+    return result;
 }
 
 template <class T>
@@ -122,7 +129,7 @@ public:
     HookRegistrar& operator=(HookRegistrar&&) noexcept = default;
 };
 
-struct LL_EBO Hook {};
+struct LL_EBO Hook{};
 
 } // namespace ll::memory
 
