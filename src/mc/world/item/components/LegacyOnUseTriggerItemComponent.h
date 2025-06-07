@@ -19,8 +19,8 @@ class LegacyOnUseTriggerItemComponent : public ::LegacyTriggerItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mOnUseSubscription;
-    ::ll::TypedStorage<8, 264, ::std::optional<::DefinitionTrigger>> mOnUseTrigger;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>      mOnUseSubscription;
+    ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>> mOnUseTrigger;
     // NOLINTEND
 
 public:

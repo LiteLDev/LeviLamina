@@ -28,8 +28,6 @@ public:
 
 public:
     // prevent constructor by default
-    RepairableItemComponent& operator=(RepairableItemComponent const&);
-    RepairableItemComponent(RepairableItemComponent const&);
     RepairableItemComponent();
 
 public:
@@ -52,8 +50,6 @@ public:
 
     MCAPI ::RepairItemResult
     handleItemRepair(::ItemStack& inputItem, ::ItemStack& materialItem, bool allowBidirectionalRepair) const;
-
-    MCAPI ::RepairableItemComponent& operator=(::RepairableItemComponent&&);
     // NOLINTEND
 
 public:
@@ -61,8 +57,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
-        ::std::optional<::SemVersion>          requiredToggles
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
 
     MCAPI static ::HashedString const& getIdentifier();

@@ -11,9 +11,8 @@ class BaseGoalDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk8d09b6;
-    ::ll::UntypedStorage<4, 4>  mUnk28fb77;
-    ::ll::UntypedStorage<8, 32> mUnk9beb99;
+    ::ll::UntypedStorage<4, 4> mUnk8d09b6;
+    ::ll::UntypedStorage<4, 4> mUnk28fb77;
     // NOLINTEND
 
 public:

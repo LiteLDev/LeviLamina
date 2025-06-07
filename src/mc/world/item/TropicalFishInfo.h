@@ -22,7 +22,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI TropicalFishInfo(int color, int color2, int variant, int markVariant, ::std::string name);
+
     MCNAPI ~TropicalFishInfo();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(int color, int color2, int variant, int markVariant, ::std::string name);
     // NOLINTEND
 
 public:

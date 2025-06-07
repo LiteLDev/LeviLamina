@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class TimeAccumulator;
 namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
@@ -293,6 +294,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::TimeAccumulator
+    getTimeAccumulator(::std::string const& group, ::std::string const& name, bool isClientSide);
+
     MCNAPI void update();
     // NOLINTEND
 

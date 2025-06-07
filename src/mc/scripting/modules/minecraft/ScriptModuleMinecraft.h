@@ -3,28 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/scripting/modules/minecraft/ScriptFacing.h"
-#include "mc/scripting/modules/minecraft/ScriptTimeOfDay.h"
-#include "mc/scripting/modules/minecraft/events/ScriptEventSource.h"
-#include "mc/scripting/modules/minecraft/scoreboard/ScriptDisplayObjectiveSlotId.h"
-#include "mc/world/item/ItemLockMode.h"
 #include "mc/world/item/alchemy/Potion.h"
-#include "mc/world/level/block/LiquidType.h"
 #include "mc/world/persistence/DynamicPropertyDefinePropertyError.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class Block;
-class BlockPos;
+class CommandParameterData;
 class PlayerUpdateEntityOverridesPacket;
 class Potion;
 class PropertyComponent;
 class PropertyMetadata;
 namespace ScriptModuleMinecraft { class IScriptItemComponentFactory; }
+namespace ScriptModuleMinecraft { class ParamStorageBase; }
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptAimAssistCategorySettings; }
 namespace ScriptModuleMinecraft { class ScriptAimAssistPresetSettings; }
@@ -33,7 +26,9 @@ namespace ScriptModuleMinecraft { class ScriptBlockType; }
 namespace ScriptModuleMinecraft { class ScriptPotionEffectType; }
 namespace ScriptModuleMinecraft { class ScriptPotionModifierType; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
+namespace ScriptModuleMinecraft { struct ScriptCustomCommandInterface; }
 namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EnumBinding; }
 namespace Scripting { struct Error; }
 namespace SharedTypes::v1_21_50 { struct CameraAimAssistCategoryDefinition; }
@@ -43,9 +38,17 @@ namespace SharedTypes::v1_21_50 { struct CameraAimAssistPresetDefinition; }
 namespace ScriptModuleMinecraft {
 // functions
 // NOLINTBEGIN
+MCNAPI ::std::vector<::CommandParameterData> CreateCommandParameters(
+    ::ScriptModuleMinecraft::ScriptCustomCommandInterface const& commandInterface,
+    ::std::vector<::std::unique_ptr<::std::string>>&             enumNameStorage
+);
+
+MCNAPI ::std::vector<::std::unique_ptr<::ScriptModuleMinecraft::ParamStorageBase>>
+CreateParamStorage(::ScriptModuleMinecraft::ScriptCustomCommandInterface const& commandInterface);
+
 MCNAPI ::std::
-    unordered_map<::std::string, ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>> const&
-    _getAllSupportedItemComponents();
+    unordered_map<::std::string_view, ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>> const&
+    _getOrCreateNativeItemComponentFactories();
 
 MCNAPI ::Scripting::Error
 _handleDefinePropertyError(::DynamicPropertyDefinePropertyError error, ::std::string const& identifier);
@@ -73,40 +76,43 @@ MCNAPI ::std::optional<::Scripting::Error> _validatePropertyMetadata(
     ::std::string const&      identifier
 );
 
-MCNAPI ::Scripting::ClassBindingBuilder<::BlockPos> bindBlockLocation();
+MCNAPI ::Scripting::ClassBinding bindBlockLocation();
 
 MCNAPI ::Scripting::EnumBinding bindButtonInputAction();
 
 MCNAPI ::Scripting::EnumBinding bindButtonInputState();
 
+MCNAPI ::Scripting::EnumBinding bindCommandPermissionLevels();
+
+MCNAPI ::Scripting::EnumBinding bindCustomCommandParamTypes();
+
+MCNAPI ::Scripting::EnumBinding bindCustomCommandSource();
+
+MCNAPI ::Scripting::EnumBinding bindCustomCommandStatus();
+
 MCNAPI ::Scripting::EnumBinding bindEntitySpawnCategory();
 
 MCNAPI ::Scripting::EnumBinding bindEntitySpawnReason();
 
-MCNAPI ::Scripting::EnumBindingBuilder<::ScriptModuleMinecraft::ScriptFacing, ::ScriptModuleMinecraft::ScriptFacing>
-bindFacingEnumV010();
+MCNAPI ::Scripting::EnumBinding bindFacingEnumV010();
 
-MCNAPI ::Scripting::EnumBindingBuilder<::std::string, ::ScriptModuleMinecraft::ScriptFacing> bindFacingEnumV1();
+MCNAPI ::Scripting::EnumBinding bindFacingEnumV1();
 
 MCNAPI void bindHudElements(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
 MCNAPI void bindHudVisibility(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
-MCNAPI ::Scripting::EnumBindingBuilder<::std::string, ::ItemLockMode> bindItemLockMode();
+MCNAPI ::Scripting::EnumBinding bindItemLockMode();
 
-MCNAPI ::Scripting::EnumBindingBuilder<::std::string, ::LiquidType> bindLiquidTypeEnum();
+MCNAPI ::Scripting::EnumBinding bindLiquidTypeEnum();
 
 MCNAPI void bindMoonPhases(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
-MCNAPI ::Scripting::EnumBindingBuilder<::std::string, ::ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId>
-bindScriptDisplayObjectiveSlotId();
+MCNAPI ::Scripting::EnumBinding bindScriptDisplayObjectiveSlotId();
 
-MCNAPI ::Scripting::EnumBindingBuilder<::std::string, ::ScriptModuleMinecraft::ScriptEventSource>
-bindScriptEventSource();
+MCNAPI ::Scripting::EnumBinding bindScriptEventSource();
 
-MCNAPI ::Scripting::
-    EnumBindingBuilder<::ScriptModuleMinecraft::ScriptTimeOfDay, ::ScriptModuleMinecraft::ScriptTimeOfDay>
-    bindTimeOfDay();
+MCNAPI ::Scripting::EnumBinding bindTimeOfDay();
 
 MCNAPI ::Block const* extractBlockFromVariant(
     ::std::variant<

@@ -91,6 +91,8 @@ public:
 
     MCFOLD void $setSitting(bool value);
 
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+
     MCAPI bool $isAlliedTo(::Mob* other);
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;

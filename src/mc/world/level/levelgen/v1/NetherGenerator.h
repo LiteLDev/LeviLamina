@@ -130,8 +130,8 @@ public:
     MCAPI void _prepareHeights(
         ::BlockVolume&        box,
         ::ChunkPos const&     chunkPos,
-        bool                  ZXheights,
-        ::std::vector<short>* factorInBeardsAndShavers,
+        bool                  factorInBeardsAndShavers,
+        ::std::vector<short>* ZXheights,
         int                   skipTopN
     );
 

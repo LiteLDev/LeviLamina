@@ -21,8 +21,8 @@ class LegacyOnUseOnTriggerItemComponent : public ::LegacyTriggerItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mOnUseOnSubscription;
-    ::ll::TypedStorage<8, 264, ::std::optional<::DefinitionTrigger>> mOnUseOnTrigger;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>      mOnUseOnSubscription;
+    ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>> mOnUseOnTrigger;
     // NOLINTEND
 
 public:
@@ -46,12 +46,12 @@ public:
 
     MCAPI void _useOn(
         bool&              result,
-        ::ItemStack const& currentItemStack,
-        ::ItemStack&       entity,
-        ::Actor&           pos,
-        ::BlockPos const&  face,
-        uchar              clickPos,
-        ::Vec3 const&      initialItemStack
+        ::ItemStack const& initialItemStack,
+        ::ItemStack&       currentItemStack,
+        ::Actor&           entity,
+        ::BlockPos const&  pos,
+        uchar              face,
+        ::Vec3 const&      clickPos
     );
     // NOLINTEND
 

@@ -13,6 +13,7 @@
 class AllowListFile;
 class FileArchiver;
 class IGameModuleShared;
+class IMinecraftEventing;
 class LevelSettings;
 class Minecraft;
 class PermissionsFile;
@@ -39,7 +40,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk68043b;
     ::ll::UntypedStorage<8, 24> mUnkbdf2c1;
-    ::ll::UntypedStorage<8, 8>  mUnkceb2ec;
+    ::ll::UntypedStorage<8, 16> mUnkb072ba;
     ::ll::UntypedStorage<1, 1>  mUnk193fee;
     ::ll::UntypedStorage<4, 4>  mUnkacb014;
     ::ll::UntypedStorage<8, 8>  mUnka2d04f;
@@ -59,6 +60,8 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk646615;
     ::ll::UntypedStorage<8, 8>  mUnkdadb88;
     ::ll::UntypedStorage<8, 8>  mUnk5d6b3b;
+    ::ll::UntypedStorage<8, 8>  mUnk7c88b4;
+    ::ll::UntypedStorage<8, 8>  mUnk9b9036;
     // NOLINTEND
 
 public:
@@ -112,11 +115,16 @@ public:
 
     MCAPI void initializeCodeBuilder();
 
-    MCAPI void initializeHttp();
+    MCAPI void initializeHttp(::PropertiesSettings const& properties);
 
     MCAPI void initializeImguiProfiler();
 
     MCAPI void initializeLogging(::TestConfig& testConfig);
+
+    MCAPI void initializeServices(
+        ::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing> minecraftEventing,
+        ::PropertiesSettings&                               properties
+    );
 
     MCAPI ::DedicatedServer::StartResult runDedicatedServerLoop(
         ::Core::FilePathManager&              filePathManager,
@@ -127,6 +135,8 @@ public:
         ::Bedrock::ActivationArguments const& args,
         ::TestConfig&                         testConfig
     );
+
+    MCAPI void shutdownServices();
 
     MCAPI ::DedicatedServer::StartResult
     start(::std::string const& sessionID, ::Bedrock::ActivationArguments const& args);

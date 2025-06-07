@@ -118,11 +118,11 @@ public:
         ::SubClientId                                      subid,
         ::std::function<void(::ServerPlayer&)>             playerLoadedCallback,
         ::mce::UUID                                        uuid,
-        ::std::string const&                               token,
-        ::GameServerToken const&                           maxChunkRadius,
-        int                                                enableItemStackNetManager,
-        bool                                               entityContext,
-        ::EntityContext&                                   deviceId
+        ::std::string const&                               deviceId,
+        ::GameServerToken const&                           token,
+        int                                                maxChunkRadius,
+        bool                                               enableItemStackNetManager,
+        ::EntityContext&                                   entityContext
     );
 
     MCAPI void _addMoveComponent();
@@ -192,13 +192,13 @@ public:
     MCAPI static ::SimulatedPlayer* create(
         ::std::string const&                                  name,
         ::BlockPos const&                                     spawnPos,
-        ::Vec3 const&                                         dimensionId,
-        ::Vec2 const&                                         serverNetworkHandler,
-        bool                                                  xuid,
-        ::DimensionType                                       idOverride,
-        ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> spawnPosDelta,
-        ::std::string const&                                  spawnRotation,
-        ::std::optional<::ActorUniqueID>                      spawnLoadedFromSave
+        ::Vec3 const&                                         spawnPosDelta,
+        ::Vec2 const&                                         spawnRotation,
+        bool                                                  spawnLoadedFromSave,
+        ::DimensionType                                       dimensionId,
+        ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> serverNetworkHandler,
+        ::std::string const&                                  xuid,
+        ::std::optional<::ActorUniqueID>                      idOverride
     );
     // NOLINTEND
 
@@ -215,11 +215,11 @@ public:
         ::SubClientId                                      subid,
         ::std::function<void(::ServerPlayer&)>             playerLoadedCallback,
         ::mce::UUID                                        uuid,
-        ::std::string const&                               token,
-        ::GameServerToken const&                           maxChunkRadius,
-        int                                                enableItemStackNetManager,
-        bool                                               entityContext,
-        ::EntityContext&                                   deviceId
+        ::std::string const&                               deviceId,
+        ::GameServerToken const&                           token,
+        int                                                maxChunkRadius,
+        bool                                               enableItemStackNetManager,
+        ::EntityContext&                                   entityContext
     );
     // NOLINTEND
 

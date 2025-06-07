@@ -15,4 +15,16 @@ public:
     ActorSoundEffect& operator=(ActorSoundEffect const&);
     ActorSoundEffect(ActorSoundEffect const&);
     ActorSoundEffect();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~ActorSoundEffect();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };

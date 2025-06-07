@@ -42,6 +42,8 @@ public:
 
     MCNAPI ::std::string getFullStructureName() const;
 
+    MCNAPI bool renameMCStructureFile(::std::string const& name, ::mce::UUID const& guid, ::LevelStorage& levelStorage);
+
     MCNAPI bool
     verifyResource(::mce::UUID const& guid, ::ResourcePackStack const& packStack, ::LevelStorage& levelStorage);
 

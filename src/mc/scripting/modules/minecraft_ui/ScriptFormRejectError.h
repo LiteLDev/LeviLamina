@@ -3,9 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ErrorBindingBuilder.h"
 #include "mc/deps/scripting/runtime/Error.h"
 #include "mc/scripting/modules/minecraft_ui/ScriptFormRejectReason.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ErrorBinding; }
+// clang-format on
 
 namespace ScriptModuleMinecraftServerUI {
 
@@ -33,7 +37,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraftServerUI::ScriptFormRejectError> bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:

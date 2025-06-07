@@ -29,13 +29,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 149
+    // vIndex: 148
     virtual int getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual int getSignalForData(int data) const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual int getRedstoneSignal(int signal) const /*override*/;
 
     // vIndex: 0

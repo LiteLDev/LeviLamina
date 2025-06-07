@@ -72,6 +72,8 @@ MCNAPI ::std::string generateRandomId(int modifier);
 
 MCNAPI ::std::string getNameWithoutNamespace(::std::string const& name);
 
+MCNAPI ::std::string getNamespace(::std::string const& name);
+
 MCNAPI bool isValidNamespaceFormat(::std::string const& name);
 
 MCNAPI bool isValidUTF8(::std::string const& content);
@@ -107,6 +109,8 @@ MCNAPI ::std::vector<::std::string>& splitString(::std::string_view s, char deli
 MCNAPI ::std::vector<::std::string_view>&
 splitStringAsViews(::std::string_view s, char delim, ::std::vector<::std::string_view>& elems);
 
+MCNAPI ::std::vector<::std::string_view> splitToViews(::std::string_view view, char delim);
+
 MCNAPI bool startsWith(::std::string_view s, ::std::string_view start);
 
 MCNAPI ::std::string& stringReplace(::std::string& s, ::std::string const& src, ::std::string const& dst, int maxCount);
@@ -128,11 +132,9 @@ MCNAPI ::std::string toLower(char const* inString);
 
 MCNAPI ::std::string toLower(::std::string_view inString);
 
-MCNAPI ::std::string toString(float f, int precision);
-
 MCNAPI ::std::string toStringWithPaddedZeroes(uint number, uchar digitCount);
 
-MCNAPI int utf8len(::std::string const& str);
+MCNAPI int utf8len(::std::string_view str);
 
 MCNAPI ::std::string utf8substring(::std::string const& str, int startIndex, int endIndex);
 

@@ -16,7 +16,7 @@ namespace Json { class Value; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class BlockComponentFactory : public ::Factory<::BlockComponentDescription>, public ::IPackLoadScoped {
+class BlockComponentFactory : public ::IPackLoadScoped, public ::Factory<::BlockComponentDescription> {
 public:
     // BlockComponentFactory inner types declare
     // clang-format off
@@ -33,6 +33,7 @@ public:
         ::ll::UntypedStorage<8, 32> mUnk6beadb;
         ::ll::UntypedStorage<8, 24> mUnk445a76;
         ::ll::UntypedStorage<8, 64> mUnk9ed2fe;
+        ::ll::UntypedStorage<1, 1>  mUnk5e7d13;
         // NOLINTEND
 
     public:
@@ -91,6 +92,9 @@ public:
     contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
 
     MCNAPI static void registerAllCerealDescriptions(::cereal::ReflectionCtx& ctx);
+
+    MCNAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>&
+    setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

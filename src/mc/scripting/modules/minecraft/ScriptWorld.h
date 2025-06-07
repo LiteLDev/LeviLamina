@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
@@ -34,6 +33,7 @@ namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraft { struct ScriptSoundOptions; }
 namespace ScriptModuleMinecraft { struct ScriptWorldSoundOptions; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct Error; }
 // clang-format on
@@ -70,13 +70,13 @@ public:
         ::ScriptModuleMinecraft::ScriptGlobalEventListeners& listeners
     );
 
-    MCNAPI ::Scripting::Result<void> _playOrQueueMusic(
+    MCNAPI ::Scripting::Result_deprecated<void> _playOrQueueMusic(
         ::std::string const&                                         trackID,
         ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions,
         bool                                                         shouldQueue
     );
 
-    MCNAPI ::Scripting::Result<void> _playSoundInternal(
+    MCNAPI ::Scripting::Result_deprecated<void> _playSoundInternal(
         ::std::string const&                                              soundID,
         ::Vec3 const&                                                     location,
         ::std::optional<::ScriptModuleMinecraft::ScriptWorldSoundOptions> soundOptions
@@ -153,27 +153,27 @@ public:
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptV010Events> getWorldV010Events();
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     playMusic(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions);
 
-    MCNAPI ::Scripting::Result<void> playSound(
+    MCNAPI ::Scripting::Result_deprecated<void> playSound(
         ::std::string const&                                              soundID,
         ::Vec3 const&                                                     location,
         ::std::optional<::ScriptModuleMinecraft::ScriptWorldSoundOptions> soundOptions
     );
 
-    MCNAPI ::Scripting::Result<void> playSound_V010(
+    MCNAPI ::Scripting::Result_deprecated<void> playSound_V010(
         ::std::string const&                                         soundID,
         ::std::optional<::ScriptModuleMinecraft::ScriptSoundOptions> soundOptions
     );
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     queueMusic(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions);
 
     MCNAPI ::Scripting::Result_deprecated<bool>
     removeDynamicProperty_V010(::Scripting::ContextConfig const& contextConfig, ::std::string const& key);
 
-    MCNAPI ::Scripting::Result<void> sendMessage(
+    MCNAPI ::Scripting::Result_deprecated<void> sendMessage(
         ::Scripting::ContextConfig const& contextConfig,
         ::std::variant<
             ::std::string,
@@ -188,25 +188,27 @@ public:
 
     MCNAPI void setDifficulty(::SharedTypes::Legacy::Difficulty difficulty);
 
-    MCNAPI ::Scripting::Result<void> setDynamicProperties(
+    MCNAPI ::Scripting::Result_deprecated<void> setDynamicProperties(
         ::Scripting::ContextConfig const& contextConfig,
         ::std::unordered_map<::std::string, ::std::variant<double, float, bool, ::std::string, ::Vec3>> const& values
     );
 
-    MCNAPI ::Scripting::Result<void> setDynamicProperty(
+    MCNAPI ::Scripting::Result_deprecated<void> setDynamicProperty(
         ::Scripting::ContextConfig const&                                                  contextConfig,
         ::std::string const&                                                               key,
         ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> const& value
     );
 
-    MCNAPI ::Scripting::Result<void> setDynamicProperty_V010(
+    MCNAPI ::Scripting::Result_deprecated<void> setDynamicProperty_V010(
         ::Scripting::ContextConfig const&                           contextConfig,
         ::std::string const&                                        key,
         ::std::variant<double, float, bool, ::std::string, ::Vec3>& value
     );
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     setTimeOfDay(::std::variant<int, ::ScriptModuleMinecraft::ScriptTimeOfDay> timeOfDay);
+
+    MCNAPI void stopMusic();
 
     MCNAPI ~ScriptWorld();
     // NOLINTEND
@@ -214,7 +216,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptWorld> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:

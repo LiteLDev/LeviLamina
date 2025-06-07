@@ -11,10 +11,10 @@
 // auto generated forward declare list
 // clang-format off
 class IContentKeyProvider;
-class IPackIOProvider;
 class IPackManifestFactory;
 class Pack;
 class PackSourceReport;
+struct DirectoryPackSourceOptions;
 namespace Core { class Path; }
 // clang-format on
 
@@ -23,13 +23,14 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk821c35;
-    ::ll::UntypedStorage<1, 1>  mUnk414a1e;
-    ::ll::UntypedStorage<1, 1>  mUnk8650d4;
+    ::ll::UntypedStorage<1, 1>  mUnkb21a6a;
+    ::ll::UntypedStorage<1, 1>  mUnkafda18;
     ::ll::UntypedStorage<1, 1>  mUnk22bc19;
-    ::ll::UntypedStorage<1, 1>  mUnk38aea0;
-    ::ll::UntypedStorage<1, 1>  mUnkd4f382;
+    ::ll::UntypedStorage<1, 1>  mUnk780433;
+    ::ll::UntypedStorage<1, 1>  mUnka63529;
     ::ll::UntypedStorage<8, 24> mUnke75300;
     ::ll::UntypedStorage<8, 64> mUnkd51275;
+    ::ll::UntypedStorage<8, 24> mUnke5288a;
     // NOLINTEND
 
 public:
@@ -66,13 +67,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DirectoryPackSource(
-        ::Core::Path const&                  path,
-        ::PackType                           packType,
-        ::PackOrigin                         packOrigin,
-        bool                                 isDeveloperDirectory,
-        ::std::unique_ptr<::IPackIOProvider> io
-    );
+    MCNAPI explicit DirectoryPackSource(::DirectoryPackSourceOptions options);
 
     MCNAPI void addPack(::std::unique_ptr<::Pack>&& pack);
 
@@ -90,13 +85,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Core::Path const&                  path,
-        ::PackType                           packType,
-        ::PackOrigin                         packOrigin,
-        bool                                 isDeveloperDirectory,
-        ::std::unique_ptr<::IPackIOProvider> io
-    );
+    MCNAPI void* $ctor(::DirectoryPackSourceOptions options);
     // NOLINTEND
 
 public:

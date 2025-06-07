@@ -43,13 +43,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~BatchEntry();
+        MCAPI ~BatchEntry();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -104,38 +104,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LevelStorageWriteBatch(::LevelStorageWriteBatch&& rhs);
+    MCAPI LevelStorageWriteBatch(::LevelStorageWriteBatch&& rhs);
 
-    MCNAPI void clear();
+    MCAPI void clear();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::LevelStorageWriteBatch&& rhs);
+    MCAPI void* $ctor(::LevelStorageWriteBatch&& rhs);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $putKey(::std::string const& key, ::std::string_view data, ::DBHelpers::Category category);
+    MCAPI void $putKey(::std::string const& key, ::std::string_view data, ::DBHelpers::Category category);
 
-    MCNAPI void $putKey(::std::string const& key, ::std::string const& data, ::DBHelpers::Category category);
+    MCAPI void $putKey(::std::string const& key, ::std::string const& data, ::DBHelpers::Category category);
 
-    MCNAPI void $putKey(::std::string const& key, ::std::string&& data, ::DBHelpers::Category category);
+    MCAPI void $putKey(::std::string const& key, ::std::string&& data, ::DBHelpers::Category category);
 
-    MCNAPI void
-    $putKey(::std::string const& key, ::std::shared_ptr<::std::string> data, ::DBHelpers::Category category);
+    MCAPI void $putKey(::std::string const& key, ::std::shared_ptr<::std::string> data, ::DBHelpers::Category category);
 
-    MCNAPI void $deleteKey(::std::string const& key, ::DBHelpers::Category category);
+    MCAPI void $deleteKey(::std::string const& key, ::DBHelpers::Category category);
 
-    MCNAPI void $flush(::LevelStorage& db);
+    MCAPI void $flush(::LevelStorage& db);
     // NOLINTEND
 
 public:

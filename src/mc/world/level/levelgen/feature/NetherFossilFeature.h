@@ -37,6 +37,18 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _tryPlaceDriedGhastBlock(
+        ::BlockSource&    region,
+        ::BlockPos const& aabbMin,
+        ::BlockPos const& aabbMax,
+        int               fossilHeight,
+        ::Random&         random
+    ) const;
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::add_lvalue_reference_t<::std::string const[]> STRUCTURE_LOCATION_FOSSIL();

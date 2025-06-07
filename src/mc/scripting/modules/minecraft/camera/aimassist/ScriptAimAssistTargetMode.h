@@ -2,9 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/world/level/camera/aimassist/camera_aim_assist/TargetMode.h"
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct EnumBinding; }
+// clang-format on
 
 namespace ScriptModuleMinecraft {
 
@@ -12,7 +13,7 @@ class ScriptAimAssistTargetMode {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::CameraAimAssist::TargetMode> bind();
+    MCNAPI static ::Scripting::EnumBinding bind();
     // NOLINTEND
 };
 

@@ -8,8 +8,8 @@ struct DiscoveryRequest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkcadee7;
-    ::ll::UntypedStorage<8, 8> mUnk809892;
+    ::ll::UntypedStorage<8, 24> mUnkcadee7;
+    ::ll::UntypedStorage<8, 8>  mUnk809892;
     // NOLINTEND
 
 public:

@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/common/editor/StructureData.h"
 
-// auto generated forward declare list
-// clang-format off
-struct PackIdVersion;
-// clang-format on
-
 namespace Editor {
 
 struct EditorBPStructureData : public ::Editor::StructureData {
@@ -23,34 +18,13 @@ public:
 public:
     // prevent constructor by default
     EditorBPStructureData& operator=(EditorBPStructureData const&);
+    EditorBPStructureData(EditorBPStructureData const&);
     EditorBPStructureData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EditorBPStructureData(::Editor::EditorBPStructureData const&);
-
-    MCNAPI EditorBPStructureData(
-        ::std::string const& strucNamespace,
-        ::std::string const& name,
-        ::PackIdVersion      idVersion,
-        ::std::string const& path
-    );
-
     MCNAPI ~EditorBPStructureData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::EditorBPStructureData const&);
-
-    MCNAPI void* $ctor(
-        ::std::string const& strucNamespace,
-        ::std::string const& name,
-        ::PackIdVersion      idVersion,
-        ::std::string const& path
-    );
     // NOLINTEND
 
 public:

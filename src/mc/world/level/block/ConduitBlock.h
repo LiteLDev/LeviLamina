@@ -19,7 +19,7 @@ public:
     // vIndex: 0
     virtual ~ConduitBlock() /*override*/ = default;
 
-    // vIndex: 80
+    // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
     // NOLINTEND
 

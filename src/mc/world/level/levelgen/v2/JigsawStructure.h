@@ -21,7 +21,7 @@ struct JigsawStructure : public ::br::worldgen::Structure {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                            mAnchorName;
+    ::ll::TypedStorage<8, 32, ::std::string>                            mStartJigsawName;
     ::ll::TypedStorage<8, 32, ::std::string>                            mStart;
     ::ll::TypedStorage<1, 1, char>                                      mMaxDepth;
     ::ll::TypedStorage<8, 56, ::br::worldgen::StructureHeightProvider>  mStartHeight;

@@ -2,13 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/platform/Result.h"
-
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
-class ReadOnlyBinaryStream;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -58,8 +53,6 @@ public:
     // NOLINTBEGIN
     MCNAPI CameraPreset(::SharedTypes::v1_21_70::CameraPreset const&);
 
-    MCNAPI CameraPreset(::SharedTypes::v1_21_70::CameraPreset&&);
-
     MCNAPI ::SharedTypes::v1_21_70::CameraPreset& operator=(::SharedTypes::v1_21_70::CameraPreset&&);
 
     MCNAPI ::SharedTypes::v1_21_70::CameraPreset& operator=(::SharedTypes::v1_21_70::CameraPreset const&);
@@ -68,8 +61,6 @@ public:
 
     MCNAPI void setVerticalRotationLimit(::std::array<float, 2> const& arr);
 
-    MCNAPI void write(::BinaryStream& stream) const;
-
     MCNAPI ~CameraPreset();
     // NOLINTEND
 
@@ -77,16 +68,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCNAPI static ::Bedrock::Result<::SharedTypes::v1_21_70::CameraPreset> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::SharedTypes::v1_21_70::CameraPreset const&);
-
-    MCNAPI void* $ctor(::SharedTypes::v1_21_70::CameraPreset&&);
     // NOLINTEND
 
 public:

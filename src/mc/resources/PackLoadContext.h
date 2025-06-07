@@ -72,6 +72,9 @@ public:
     // vIndex: 10
     virtual void setMinEngineVersion(::MinEngineVersion const& minEngineVersion) /*override*/;
 
+    // vIndex: 11
+    virtual ::BedrockLoadContext toBedrockLoadContext() const /*override*/;
+
     // vIndex: 0
     virtual ~PackLoadContext() /*override*/;
     // NOLINTEND
@@ -130,6 +133,8 @@ public:
     MCNAPI ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const $getLinkedAssetValidator() const;
 
     MCNAPI void $setMinEngineVersion(::MinEngineVersion const& minEngineVersion);
+
+    MCNAPI ::BedrockLoadContext $toBedrockLoadContext() const;
     // NOLINTEND
 
 public:

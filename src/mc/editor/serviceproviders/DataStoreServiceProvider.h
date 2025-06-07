@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/datastore/EventType.h"
 
 // auto generated forward declare list
@@ -24,7 +24,7 @@ public:
     virtual ~DataStoreServiceProvider() = default;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> dispatchEvent(
+    virtual ::Scripting::Result_deprecated<void> dispatchEvent(
         ::HashedString const&,
         ::Editor::DataStore::EventType,
         ::Json::Value const&,

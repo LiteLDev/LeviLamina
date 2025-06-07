@@ -21,10 +21,10 @@ class TorchflowerCropBlock : public ::CropBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 151
+    // vIndex: 150
     virtual ::ItemInstance const getBaseSeed() const /*override*/;
 
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
     // vIndex: 9
@@ -35,7 +35,7 @@ public:
         ::AABB&                    bufferValue
     ) const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual ::Block const& setGrowth(
         ::BlockSource&    region,
         ::BlockPos const& pos,
@@ -44,7 +44,7 @@ public:
         int               updateFlags
     ) const /*override*/;
 
-    // vIndex: 74
+    // vIndex: 73
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;

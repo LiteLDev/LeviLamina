@@ -59,6 +59,9 @@ public:
     MCNAPI static void parse(::Json::Value const& val, uchar& face, uchar defaultValue);
 
     MCNAPI static void
+    parse(::Json::Value const& val, ::MolangVersion molangVersion, ::BlockDescriptor& blockDescriptor);
+
+    MCNAPI static void
     parse(::Json::Value const& val, ::MolangVersion molangVersion, ::std::vector<::BlockDescriptor>& blockDescriptors);
 
     MCNAPI static void parse(::Json::Value const& val, ::std::vector<::std::string>& variable, char const* jsonName);

@@ -72,6 +72,8 @@ public:
     MCNAPI static uint64 const& FLAT_FILE_INVALID_VERSION();
 
     MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& FLAT_FILE_MANIFEST_EXTENSION();
+
+    MCNAPI static uint64 const& FLAT_FILE_WRITE_CHUNK_SIZE();
     // NOLINTEND
 };
 

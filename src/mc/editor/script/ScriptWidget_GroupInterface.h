@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 namespace Editor::Network { class WidgetComponentStateChangePayload; }
 namespace Editor::Network { class WidgetStateChangePayload; }
 // clang-format on
@@ -32,6 +33,9 @@ public:
 
     // vIndex: 5
     virtual void _setSelectedNoBroadcast(bool) = 0;
+
+    // vIndex: 6
+    virtual ::AABB const& _getWorldBounds() const = 0;
     // NOLINTEND
 
 public:

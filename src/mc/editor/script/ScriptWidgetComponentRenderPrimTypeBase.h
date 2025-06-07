@@ -2,8 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ClassBinding; }
+// clang-format on
 
 namespace Editor::ScriptModule {
 
@@ -11,7 +13,7 @@ class ScriptWidgetComponentRenderPrimTypeBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk34d863;
+    ::ll::UntypedStorage<4, 4> mUnk441514;
     // NOLINTEND
 
 public:
@@ -30,8 +32,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentRenderPrimTypeBase>
-    bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 
 public:

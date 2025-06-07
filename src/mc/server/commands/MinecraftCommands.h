@@ -22,9 +22,9 @@ class CommandRegistry;
 class DeferredCommandBase;
 class Experiments;
 class HashedString;
+class ICommandsContextProvider;
 class ItemRegistryRef;
 class Level;
-class Minecraft;
 class Recipes;
 struct MCRESULT;
 namespace br::worldgen { class StructureRegistry; }
@@ -34,10 +34,10 @@ class MinecraftCommands {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandOutputSender>> mOutputSender;
+    ::ll::TypedStorage<8, 8, ::ICommandsContextProvider&>              mContextProvider;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandRegistry>>     mRegistry;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandOutputSender>> mOutputSender;
     ::ll::TypedStorage<1, 1, ::CommandPermissionLevel>                 mOpPermissionLevel;
-    ::ll::TypedStorage<8, 8, ::Minecraft&>                             mMinecraft;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                 mChatPermissionsCallback;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::std::unique_ptr<::Command>>> mCompiledCommandMap;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DeferredCommandBase>>>            mDeferredCommands;
@@ -60,7 +60,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MinecraftCommands(::Minecraft& minecraft);
+    MCAPI
+    MinecraftCommands(::ICommandsContextProvider& contextProvider, ::std::unique_ptr<::CommandRegistry>&& registry);
 
     MCAPI ::Command* compileCommand(
         ::HashedString const&                       commandStr,
@@ -71,9 +72,9 @@ public:
 
     MCAPI void enqueueDeferredCommand(
         ::std::unique_ptr<::CommandContext> context,
+        bool                                suppressOutput,
         bool                                isRequest,
-        bool                                callback,
-        ::std::function<void(::MCRESULT)>   suppressOutput
+        ::std::function<void(::MCRESULT)>   callback
     );
 
     MCAPI ::MCRESULT executeCommand(::CommandContext& context, bool suppressOutput) const;
@@ -119,8 +120,8 @@ public:
 
     MCAPI static void initStructureFeatureEnum(
         ::CommandRegistry&                       registry,
-        ::Experiments const&                     structureRegistry,
-        ::br::worldgen::StructureRegistry const& experiments
+        ::Experiments const&                     experiments,
+        ::br::worldgen::StructureRegistry const& structureRegistry
     );
 
     MCAPI static void initUnlockableRecipesEnum(::CommandRegistry& registry, ::Recipes const& recipes);
@@ -131,7 +132,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Minecraft& minecraft);
+    MCAPI void* $ctor(::ICommandsContextProvider& contextProvider, ::std::unique_ptr<::CommandRegistry>&& registry);
     // NOLINTEND
 
 public:

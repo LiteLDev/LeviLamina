@@ -16,7 +16,7 @@ struct IconItemComponentLegacyFactoryData : public ::IItemComponentLegacyFactory
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk9ccf05;
+    ::ll::UntypedStorage<8, 32> mUnk855b16;
     // NOLINTEND
 
 public:
@@ -44,8 +44,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
-        ::std::optional<::SemVersion>          requiredToggles
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
     // NOLINTEND
 

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/block_utils/CommonBlockUtilityService.h"
 #include "mc/editor/script/ServerBlockUtilityServiceProvider.h"
 
@@ -12,6 +12,7 @@
 class Block;
 class BlockVolumeBase;
 class CompoundBlockVolume;
+namespace Editor { class RelativeVolumeListBlockVolume; }
 namespace Editor::BlockUtils { class CommonBlockUtilityServiceProvider; }
 // clang-format on
 
@@ -30,18 +31,21 @@ public:
 
     // vIndex: 2
     virtual void fillVolume(
-        ::std::variant<::BlockVolumeBase const*, ::CompoundBlockVolume const*> const volume,
-        ::std::optional<::Block const*> const                                        optBlock
+        ::std::variant<
+            ::BlockVolumeBase const*,
+            ::CompoundBlockVolume const*,
+            ::Editor::RelativeVolumeListBlockVolume const*> const volume,
+        ::std::optional<::Block const*> const                     optBlock
     ) /*override*/;
 
     // vIndex: 7
-    virtual ::Scripting::Result<void> _implInit() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> _implInit() /*override*/;
 
     // vIndex: 8
-    virtual ::Scripting::Result<void> _implReady() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> _implReady() /*override*/;
 
     // vIndex: 9
-    virtual ::Scripting::Result<void> _implQuit() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> _implQuit() /*override*/;
     // NOLINTEND
 
 public:
@@ -50,15 +54,18 @@ public:
     MCNAPI ::Editor::BlockUtils::CommonBlockUtilityServiceProvider& $getCommonInterface();
 
     MCNAPI void $fillVolume(
-        ::std::variant<::BlockVolumeBase const*, ::CompoundBlockVolume const*> const volume,
-        ::std::optional<::Block const*> const                                        optBlock
+        ::std::variant<
+            ::BlockVolumeBase const*,
+            ::CompoundBlockVolume const*,
+            ::Editor::RelativeVolumeListBlockVolume const*> const volume,
+        ::std::optional<::Block const*> const                     optBlock
     );
 
-    MCNAPI ::Scripting::Result<void> $_implInit();
+    MCNAPI ::Scripting::Result_deprecated<void> $_implInit();
 
-    MCNAPI ::Scripting::Result<void> $_implReady();
+    MCNAPI ::Scripting::Result_deprecated<void> $_implReady();
 
-    MCNAPI ::Scripting::Result<void> $_implQuit();
+    MCNAPI ::Scripting::Result_deprecated<void> $_implQuit();
     // NOLINTEND
 
 public:

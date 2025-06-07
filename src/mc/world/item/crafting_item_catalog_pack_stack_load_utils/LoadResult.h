@@ -21,7 +21,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI LoadResult(::CraftingItemCatalogPackStackLoadUtils::LoadResult&&);
+
     MCNAPI ~LoadResult();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::CraftingItemCatalogPackStackLoadUtils::LoadResult&&);
     // NOLINTEND
 
 public:

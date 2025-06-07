@@ -16,7 +16,7 @@ class PlayerDeathManager : public ::IPlayerDeathManagerConnector {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 128> mUnk236073;
+    ::ll::UntypedStorage<8, 128> mUnkb4fcec;
     ::ll::UntypedStorage<8, 8>   mUnkbc01aa;
     ::ll::UntypedStorage<8, 24>  mUnkbddb5a;
     // NOLINTEND

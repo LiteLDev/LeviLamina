@@ -102,9 +102,9 @@ public:
     MCNAPI void _saveBlockPositionDataList(::CompoundTag& tag) const;
 
     MCNAPI ::Block const& getBlock(
-        ::BlockPalette const&                                   paletteId,
-        uint64                                                  unknownBlockRegistry,
-        ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> blockPalette
+        ::BlockPalette const&                                   blockPalette,
+        uint64                                                  paletteId,
+        ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
     ) const;
 
     MCNAPI ::StructureBlockPalette::BlockPositionData const* getBlockPositionData(uint64 blockIndex) const;

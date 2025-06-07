@@ -42,14 +42,14 @@ public:
     );
 
     MCNAPI int updateFromPosition(
-        ::BlockSource const* lookTowards,
-        ::BlockPos const&    x,
-        float                z,
-        float                yRot,
-        float                isZFlipped,
-        bool                 spin,
-        bool,
-        bool instant
+        ::BlockSource const*,
+        ::BlockPos const& lookTowards,
+        float             x,
+        float             z,
+        float             yRot,
+        bool              isZFlipped,
+        bool              instant,
+        bool              spin
     );
     // NOLINTEND
 

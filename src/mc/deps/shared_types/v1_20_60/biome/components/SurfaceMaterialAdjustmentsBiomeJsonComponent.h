@@ -45,6 +45,11 @@ public:
                 SurfaceMaterialAdjustmentMaterials const&
         );
 
+        MCNAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
+            SurfaceMaterialAdjustmentMaterials&
+            operator=(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
+                          SurfaceMaterialAdjustmentMaterials&&);
+
         MCNAPI ~SurfaceMaterialAdjustmentMaterials();
         // NOLINTEND
 
@@ -90,9 +95,6 @@ public:
         operator=(
             ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment const&
         );
-
-        MCNAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&
-        operator=(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&&);
         // NOLINTEND
 
     public:

@@ -28,7 +28,7 @@ class BaseOptions : public ::IOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 6304> mUnkdc7feb;
+    ::ll::UntypedStorage<8, 6360> mUnkab4d4e;
     ::ll::UntypedStorage<8, 16>   mUnk8e592b;
     ::ll::UntypedStorage<1, 1>    mUnk4523d5;
     ::ll::UntypedStorage<1, 1>    mUnkb0c321;
@@ -62,7 +62,7 @@ public:
     virtual ::std::optional<::Option const*> getIfValid(::OptionID) const /*override*/;
 
     // vIndex: 24
-    virtual ::std::array<::std::unique_ptr<::Option>, 788> const& getAllRegisteredOptions() /*override*/;
+    virtual ::std::array<::std::unique_ptr<::Option>, 795> const& getAllRegisteredOptions() /*override*/;
 
     // vIndex: 25
     virtual void forEachOption(::std::function<void(::Option*)>) /*override*/;

@@ -18,7 +18,6 @@ namespace Scripting { struct FunctionBinding; }
 namespace Scripting { struct InterfaceBinding; }
 namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleDependency; }
-namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct ObjectFactory; }
 namespace Scripting { struct TaggedBinding; }
 namespace Scripting { struct TypeMapData; }
@@ -156,8 +155,6 @@ public:
     MCNAPI ::Scripting::ModuleBindingBuilder& enumBinding(::Scripting::EnumBinding&& enumBinding);
 
     MCNAPI ::Scripting::ModuleBindingBuilder& errorBinding(::Scripting::ErrorBinding&& errorBinding);
-
-    MCNAPI ::Scripting::ModuleDescriptor getModuleDescriptor() const;
 
     MCNAPI ::Scripting::ModuleBindingBuilder& interfaceBinding(::Scripting::InterfaceBinding&& interfaceBinding);
 

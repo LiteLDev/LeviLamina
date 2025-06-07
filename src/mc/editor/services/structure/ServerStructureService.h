@@ -3,20 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/serviceproviders/ServerStructureServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockSource;
+class BlockVolumeBase;
 namespace Editor { class EditorStructureTemplate; }
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class StructureCopyToClipboardPayload; }
 namespace Editor::Network { class StructureDeletePayload; }
 namespace Editor::Network { class StructureDuplicatePayload; }
 namespace Editor::Network { class StructureEditPayload; }
 namespace Editor::Network { class StructureFromClipboardPayload; }
+namespace Editor::Network { class StructureFromSelectionPayload; }
 namespace Editor::Network { class StructureQueryPayload; }
 namespace Editor::Network { class StructureReplaceFromClipboardPayload; }
 // clang-format on
@@ -30,8 +32,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1>  mUnk8a3486;
-    ::ll::UntypedStorage<8, 8>  mUnkd54e7f;
-    ::ll::UntypedStorage<8, 24> mUnk60d695;
     ::ll::UntypedStorage<8, 24> mUnkb9858c;
     // NOLINTEND
 
@@ -48,10 +48,10 @@ public:
     virtual ~ServerStructureService() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> quit() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
@@ -63,8 +63,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ServerStructureService(::Editor::ServiceProviderCollection& serviceProviders, bool isHostInstance);
-
     MCNAPI void _dispatchMetadataToClients();
 
     MCNAPI void _handleCopyToClipboardPayload(::Editor::Network::StructureCopyToClipboardPayload const& payload);
@@ -79,14 +77,13 @@ public:
 
     MCNAPI void _handleStructureFromClipboardPayload(::Editor::Network::StructureFromClipboardPayload const& payload);
 
+    MCNAPI void _handleStructureFromSelectionPayload(::Editor::Network::StructureFromSelectionPayload const& payload);
+
     MCNAPI void
     _handleStructureReplaceFromClipboardPayload(::Editor::Network::StructureReplaceFromClipboardPayload const& payload);
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& serviceProviders, bool isHostInstance);
+    MCNAPI ::Editor::EditorStructureTemplate
+    _makeStructureTemplateFromVolume(::BlockSource* region, ::BlockVolumeBase const& volume);
     // NOLINTEND
 
 public:
@@ -98,9 +95,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
     MCNAPI ::std::string_view $getServiceName() const;
 

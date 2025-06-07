@@ -42,10 +42,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PistonBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -79,8 +75,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PistonBlockActor(::BlockPos const& pos, bool isSticky);
-
     MCAPI bool _attachedBlockWalker(
         ::BlockSource&    region,
         ::BlockPos const& curPos,
@@ -131,12 +125,6 @@ public:
         ::Randomize                   randomize,
         ::ResourceDropsContext const& resourceDropsContext
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos, bool isSticky);
     // NOLINTEND
 
 public:

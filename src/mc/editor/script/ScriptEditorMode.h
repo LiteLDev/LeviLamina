@@ -2,9 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/editor/Mode.h"
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct EnumBinding; }
+// clang-format on
 
 namespace Editor::ScriptModule {
 
@@ -24,7 +25,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Editor::Mode> bindScript();
+    MCNAPI static ::Scripting::EnumBinding bindScript();
     // NOLINTEND
 };
 

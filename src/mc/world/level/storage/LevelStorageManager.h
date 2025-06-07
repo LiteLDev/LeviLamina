@@ -28,12 +28,12 @@ public:
     ::ll::UntypedStorage<8, 80>  mUnk6f5c89;
     ::ll::UntypedStorage<8, 8>   mUnk24c5f1;
     ::ll::UntypedStorage<8, 8>   mUnkf8c968;
-    ::ll::UntypedStorage<8, 128> mUnk6626a0;
-    ::ll::UntypedStorage<8, 128> mUnk7a64ad;
-    ::ll::UntypedStorage<8, 128> mUnkab7b3a;
-    ::ll::UntypedStorage<8, 128> mUnkb83608;
-    ::ll::UntypedStorage<8, 128> mUnk612f75;
-    ::ll::UntypedStorage<8, 128> mUnkac98df;
+    ::ll::UntypedStorage<8, 128> mUnke50fcd;
+    ::ll::UntypedStorage<8, 128> mUnk689bfe;
+    ::ll::UntypedStorage<8, 128> mUnk5c2eaa;
+    ::ll::UntypedStorage<8, 128> mUnk9fc96a;
+    ::ll::UntypedStorage<8, 128> mUnke7857a;
+    ::ll::UntypedStorage<8, 128> mUnkeee9f5;
     ::ll::UntypedStorage<8, 16>  mUnk4f2d81;
     ::ll::UntypedStorage<8, 16>  mUnkd9bcd3;
     ::ll::UntypedStorage<1, 1>   mUnkdde89a;
@@ -133,7 +133,7 @@ public:
 
     MCAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnStartLeaveGameConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnAppSuspendConnector();
+    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnAppSuspendConnector();
     // NOLINTEND
 
 public:

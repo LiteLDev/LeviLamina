@@ -24,6 +24,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockDefinition& operator=(BlockDefinition const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI BlockDefinition();
@@ -33,8 +37,6 @@ public:
     MCNAPI BlockDefinition(::BlockDefinition&&);
 
     MCNAPI ::BlockDefinition& operator=(::BlockDefinition&&);
-
-    MCNAPI ::BlockDefinition& operator=(::BlockDefinition const&);
 
     MCNAPI ~BlockDefinition();
     // NOLINTEND

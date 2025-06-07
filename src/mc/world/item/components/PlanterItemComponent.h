@@ -6,7 +6,6 @@
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/item/components/BlockLegacyPtr.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
-#include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -74,15 +73,15 @@ public:
 
     MCAPI void _useOn(
         bool&              result,
-        ::ItemStack const& currentItemStack,
-        ::ItemStack&       entity,
-        ::Actor&           blockPos,
-        ::BlockPos const&  face,
-        uchar              clickPos,
-        ::Vec3 const&      initialItemStack
+        ::ItemStack const& initialItemStack,
+        ::ItemStack&       currentItemStack,
+        ::Actor&           entity,
+        ::BlockPos const&  blockPos,
+        uchar              face,
+        ::Vec3 const&      clickPos
     );
 
-    MCAPI bool calculatePlacePos(::ItemStackBase const& entity, ::Actor& face, uchar& pos, ::BlockPos& instance) const;
+    MCAPI bool calculatePlacePos(::ItemStackBase const& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
     MCAPI bool canUseOn(::ItemStack const& instance, ::Actor& entity, ::BlockPos const& pos, uchar face) const;
     // NOLINTEND
@@ -90,12 +89,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
-        ::std::optional<::SemVersion>          requiredToggles
-    );
-
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 

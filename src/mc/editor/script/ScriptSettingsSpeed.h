@@ -3,10 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/script/ScriptSettingsSpeedPropType.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct EnumBinding; }
+// clang-format on
 
 namespace Editor::ScriptModule {
 
@@ -31,20 +35,19 @@ public:
 
     MCNAPI ::std::unordered_map<::std::string, ::std::optional<::std::variant<float>>> getAll() const;
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     set(::Editor::ScriptModule::ScriptSettingsSpeedPropType prop, ::std::variant<float> const& value);
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     setAll(::std::unordered_map<::std::string, ::std::optional<::std::variant<float>>> const& props);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptSettingsSpeed> bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
 
-    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Editor::ScriptModule::ScriptSettingsSpeedPropType>
-    bindScriptPropsEnum();
+    MCNAPI static ::Scripting::EnumBinding bindScriptPropsEnum();
     // NOLINTEND
 };
 

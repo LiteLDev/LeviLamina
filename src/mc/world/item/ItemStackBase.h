@@ -70,10 +70,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemStackBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -101,6 +97,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ItemStackBase();
+
     MCAPI explicit ItemStackBase(::RecipeIngredient const& ingredient);
 
     MCAPI ItemStackBase(::ItemStackBase const& rhs);
@@ -339,6 +337,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::RecipeIngredient const& ingredient);
 
     MCAPI void* $ctor(::ItemStackBase const& rhs);

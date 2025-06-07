@@ -10,7 +10,7 @@ struct NetworkIdentifierWithSubId {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 160, ::NetworkIdentifier> id;
+    ::ll::TypedStorage<8, 176, ::NetworkIdentifier> id;
     ::ll::TypedStorage<1, 1, ::SubClientId>         subClientId;
     // NOLINTEND
 };

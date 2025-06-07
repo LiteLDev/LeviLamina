@@ -63,7 +63,7 @@ public:
     virtual uint64 hash() const /*override*/;
 
     // vIndex: 6
-    virtual bool equals(::Tag const& rhs) const /*override*/;
+    virtual bool equals(::Tag const& obj) const /*override*/;
     // NOLINTEND
 
 public:
@@ -165,7 +165,7 @@ public:
 
     MCAPI ::Bedrock::Result<void> $load(::IDataInput& dis);
 
-    MCAPI ::Tag::Type $getId() const;
+    MCFOLD ::Tag::Type $getId() const;
 
     MCAPI ::std::string $toString() const;
 
@@ -175,7 +175,7 @@ public:
 
     MCAPI uint64 $hash() const;
 
-    MCAPI bool $equals(::Tag const& rhs) const;
+    MCAPI bool $equals(::Tag const& obj) const;
     // NOLINTEND
 
 public:

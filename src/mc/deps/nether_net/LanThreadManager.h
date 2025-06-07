@@ -22,16 +22,16 @@ namespace rtc { class SocketAddress; }
 namespace NetherNet {
 
 class LanThreadManager : public ::NetherNet::ContextProxy,
-                         public ::NetherNet::RunLoop::Controller,
                          public ::rtc::Thread,
-                         public ::sigslot::has_slots<::sigslot::single_threaded> {
+                         public ::sigslot::has_slots<::sigslot::single_threaded>,
+                         public ::NetherNet::RunLoop::Controller {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 144> mUnk15d021;
     ::ll::UntypedStorage<8, 16>  mUnk1df5ad;
     ::ll::UntypedStorage<8, 8>   mUnk91c766;
-    ::ll::UntypedStorage<8, 128> mUnk4506fd;
+    ::ll::UntypedStorage<8, 128> mUnk1aa682;
     ::ll::UntypedStorage<8, 8>   mUnk8c874b;
     ::ll::UntypedStorage<8, 80>  mUnk604495;
     ::ll::UntypedStorage<8, 8>   mUnk3774a6;
@@ -71,11 +71,11 @@ public:
     MCNAPI void EnableBroadcastDiscovery(::NetherNet::NetworkID id);
 
     MCNAPI void Initialize(
-        char const*                    threadInit,
-        ::NetherNet::ThreadInit const& applicationId,
-        uint64                         port,
-        ushort                         interval,
-        ::std::chrono::milliseconds    threadName
+        char const*                    threadName,
+        ::NetherNet::ThreadInit const& threadInit,
+        uint64                         applicationId,
+        ushort                         port,
+        ::std::chrono::milliseconds    interval
     );
 
     MCNAPI bool IsBroadcastDiscoveryEnabled(::NetherNet::NetworkID id);
@@ -84,7 +84,7 @@ public:
 
     MCNAPI void OnNetworkDiscoveryComplete();
 
-    MCNAPI void OnPacket(::rtc::AsyncPacketSocket* packet, ::rtc::ReceivedPacket const&);
+    MCNAPI void OnPacket(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const& packet);
 
     MCNAPI void SendLanBroadcastRequest(::std::unique_ptr<::rtc::AsyncPacketSocket>& socket, ::NetherNet::NetworkID id);
 

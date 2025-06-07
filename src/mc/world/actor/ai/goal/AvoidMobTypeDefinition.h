@@ -42,7 +42,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AvoidMobTypeDefinition() /*override*/ = default;
+    virtual ~AvoidMobTypeDefinition() /*override*/;
     // NOLINTEND
 
 public:
@@ -52,6 +52,12 @@ public:
         ::std::string const&                                                                                   name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AvoidMobTypeDefinition>>& root
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

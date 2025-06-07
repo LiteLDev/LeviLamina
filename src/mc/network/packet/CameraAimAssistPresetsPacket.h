@@ -55,9 +55,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CameraAimAssistPresetsPacket(
-        ::CameraAimAssistPresetsPacketOperation                                   presets,
-        ::std::vector<::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition>   categories,
-        ::std::vector<::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition> operation
+        ::CameraAimAssistPresetsPacketOperation                                   operation,
+        ::std::vector<::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition>   presets,
+        ::std::vector<::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition> categories
     );
     // NOLINTEND
 
@@ -65,9 +65,9 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::CameraAimAssistPresetsPacketOperation                                   presets,
-        ::std::vector<::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition>   categories,
-        ::std::vector<::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition> operation
+        ::CameraAimAssistPresetsPacketOperation                                   operation,
+        ::std::vector<::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition>   presets,
+        ::std::vector<::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition> categories
     );
     // NOLINTEND
 

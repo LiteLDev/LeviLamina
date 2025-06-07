@@ -55,6 +55,7 @@ public:
 
     public:
         // prevent constructor by default
+        Definition& operator=(Definition const&);
         Definition(Definition const&);
 
     public:
@@ -72,8 +73,6 @@ public:
         MCNAPI void addBlockDescriptor(::BlockDescriptor const& blockDescriptor);
 
         MCNAPI void initialize(::EntityContext& entity, ::RandomSearchAndDigGoal& goal) const;
-
-        MCNAPI ::RandomSearchAndDigGoal::Definition& operator=(::RandomSearchAndDigGoal::Definition const&);
         // NOLINTEND
 
     public:
@@ -124,7 +123,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 776, ::RandomSearchAndDigGoal::Definition> mDefinition;
+    ::ll::TypedStorage<8, 744, ::RandomSearchAndDigGoal::Definition> mDefinition;
     ::ll::TypedStorage<8, 8, ::Mob&>                                 mMob;
     ::ll::TypedStorage<4, 4, ::RandomSearchAndDigGoal::State>        mState;
     ::ll::TypedStorage<4, 4, float>                                  mGoalRadiusSqr;

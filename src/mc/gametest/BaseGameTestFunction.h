@@ -58,14 +58,14 @@ public:
         ::std::string                batchName,
         ::std::string                testName,
         ::std::string                structureName,
-        int                          tags,
         int                          maxTicks,
         int                          setupTicks,
-        bool                         padding,
+        int                          padding,
         bool                         rotate,
-        int                          required,
+        bool                         required,
         int                          requiredSuccesses,
-        ::std::vector<::std::string> attempts
+        int                          attempts,
+        ::std::vector<::std::string> tags
     );
 
     MCNAPI bool hasTag(::std::string const& tag) const;
@@ -78,14 +78,14 @@ public:
         ::std::string                batchName,
         ::std::string                testName,
         ::std::string                structureName,
-        int                          tags,
         int                          maxTicks,
         int                          setupTicks,
-        bool                         padding,
+        int                          padding,
         bool                         rotate,
-        int                          required,
+        bool                         required,
         int                          requiredSuccesses,
-        ::std::vector<::std::string> attempts
+        int                          attempts,
+        ::std::vector<::std::string> tags
     );
     // NOLINTEND
 

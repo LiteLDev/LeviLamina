@@ -23,9 +23,33 @@ public:
 
 public:
     // prevent constructor by default
-    SessionInfo& operator=(SessionInfo const&);
     SessionInfo(SessionInfo const&);
-    SessionInfo();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI SessionInfo();
+
+    MCNAPI ::Bedrock::SessionInfo& operator=(::Bedrock::SessionInfo const&);
+
+    MCNAPI ::Bedrock::SessionInfo& operator=(::Bedrock::SessionInfo&&);
+
+    MCNAPI bool operator==(::Bedrock::SessionInfo const& rhs) const;
+
+    MCNAPI ~SessionInfo();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Bedrock

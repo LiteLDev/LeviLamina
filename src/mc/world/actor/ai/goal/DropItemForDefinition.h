@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class DropItemForGoal;
-class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -46,13 +44,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DropItemForDefinition() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void initialize(::EntityContext& entity, ::DropItemForGoal& goal) const;
+    virtual ~DropItemForDefinition() /*override*/;
     // NOLINTEND
 
 public:
@@ -62,6 +54,12 @@ public:
         ::std::string const&                                                                                  name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DropItemForDefinition>>& root
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

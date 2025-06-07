@@ -3,29 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 #include "mc/editor/script/ScriptWidgetComponentBaseOptions.h"
 
 namespace Editor::ScriptModule {
 
 class ScriptWidgetComponentRenderPrimOptions : public ::Editor::ScriptModule::ScriptWidgetComponentBaseOptions {
 public:
-    // member functions
+    // virtual functions
     // NOLINTBEGIN
-    MCNAPI ~ScriptWidgetComponentRenderPrimOptions();
+    // vIndex: 0
+    virtual ~ScriptWidgetComponentRenderPrimOptions() /*override*/ = default;
     // NOLINTEND
 
 public:
-    // static functions
+    // vftables
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentRenderPrimOptions>
-    bindScript();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -16,10 +16,10 @@ class AmethystBlock : public ::BlockLegacy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 17
+    // vIndex: 16
     virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const /*override*/;
 
-    // vIndex: 47
+    // vIndex: 46
     virtual bool isSilentWhenJumpingOff() const /*override*/;
 
     // vIndex: 0

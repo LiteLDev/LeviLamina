@@ -80,7 +80,7 @@ public:
 
     MCNAPI ::DwellerComponent& operator=(::DwellerComponent&&);
 
-    MCNAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const& owner, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCNAPI void setDwellingUniqueID(::Actor& owner, ::mce::UUID id);
 

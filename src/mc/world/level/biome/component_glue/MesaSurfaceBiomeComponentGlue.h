@@ -16,13 +16,13 @@ struct MesaSurfaceBiomeComponentGlue : public ::IBiomeComponentGlue {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk456120;
-    ::ll::UntypedStorage<8, 8> mUnk39a049;
-    ::ll::UntypedStorage<8, 8> mUnk4cb516;
-    ::ll::UntypedStorage<8, 8> mUnk906edf;
-    ::ll::UntypedStorage<8, 8> mUnk2aee26;
-    ::ll::UntypedStorage<8, 8> mUnke3a3c8;
-    ::ll::UntypedStorage<8, 8> mUnk5e74ea;
+    ::ll::UntypedStorage<8, 8> mUnkdbee4d;
+    ::ll::UntypedStorage<8, 8> mUnk66bd7c;
+    ::ll::UntypedStorage<8, 8> mUnka30f5a;
+    ::ll::UntypedStorage<8, 8> mUnkcb30a2;
+    ::ll::UntypedStorage<8, 8> mUnk318d22;
+    ::ll::UntypedStorage<8, 8> mUnkcb23d4;
+    ::ll::UntypedStorage<8, 8> mUnke18a51;
     // NOLINTEND
 
 public:

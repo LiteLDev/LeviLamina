@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/container/small_vector.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Puv::internal { struct PathElement; }
@@ -13,9 +16,9 @@ struct PathSwapper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkb0a94f;
-    ::ll::UntypedStorage<8, 24> mUnk290eff;
-    ::ll::UntypedStorage<1, 1>  mUnkb0d597;
+    ::ll::UntypedStorage<8, 8>   mUnkb4921f;
+    ::ll::UntypedStorage<8, 208> mUnkb6ad25;
+    ::ll::UntypedStorage<1, 1>   mUnkb0d597;
     // NOLINTEND
 
 public:
@@ -27,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void swap(::std::vector<::Puv::internal::PathElement> temp);
+    MCNAPI void swap(::Bedrock::small_vector<::Puv::internal::PathElement, 1> temp);
 
     MCNAPI ~PathSwapper();
     // NOLINTEND

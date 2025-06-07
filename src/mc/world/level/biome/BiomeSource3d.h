@@ -4,14 +4,17 @@
 
 // auto generated inclusion list
 #include "mc/world/level/biome/source/BiomeSource.h"
+#include "mc/world/level/biome/source/BiomeSourceType.h"
 
 // auto generated forward declare list
 // clang-format off
 class Biome;
 class BiomeArea;
+class BlendedMultiNoiseBiomeProvider;
 class BlockPos;
 class BoundingBox;
 class ChunkLocalNoiseCache;
+class DimensionHeightRange;
 class LevelChunk;
 struct GetBiomeOptions;
 // clang-format on
@@ -84,8 +87,29 @@ public:
     // vIndex: 9
     virtual bool hasByHashId(uint64 id) const /*override*/;
 
+    // vIndex: 10
+    virtual ::BiomeSourceType const getType() const /*override*/;
+
     // vIndex: 0
-    virtual ~BiomeSource3d() /*override*/ = default;
+    virtual ~BiomeSource3d() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI BiomeSource3d(::BlendedMultiNoiseBiomeProvider biomeProvider, ::DimensionHeightRange dimensionHeight);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::BlendedMultiNoiseBiomeProvider biomeProvider, ::DimensionHeightRange dimensionHeight);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -109,6 +133,8 @@ public:
     MCNAPI bool $has(uint64 id) const;
 
     MCNAPI bool $hasByHashId(uint64 id) const;
+
+    MCNAPI ::BiomeSourceType const $getType() const;
     // NOLINTEND
 
 public:

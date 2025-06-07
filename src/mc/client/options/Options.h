@@ -49,7 +49,6 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk23ba8d;
     ::ll::UntypedStorage<4, 4>  mUnk8f9ddd;
     ::ll::UntypedStorage<4, 4>  mUnkf45021;
-    ::ll::UntypedStorage<4, 4>  mUnkfb7113;
     ::ll::UntypedStorage<4, 4>  mUnk8a28e3;
     ::ll::UntypedStorage<8, 24> mUnkdc670b;
     ::ll::UntypedStorage<8, 24> mUnk33bec3;
@@ -158,7 +157,7 @@ public:
     virtual ::ChatOptions& getChatOptions() /*override*/;
 
     // vIndex: 24
-    virtual ::std::array<::std::unique_ptr<::Option>, 788> const& getAllRegisteredOptions() /*override*/;
+    virtual ::std::array<::std::unique_ptr<::Option>, 795> const& getAllRegisteredOptions() /*override*/;
 
     // vIndex: 25
     virtual void forEachOption(::std::function<void(::Option*)>) /*override*/;

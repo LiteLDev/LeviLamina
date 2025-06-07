@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
@@ -19,6 +18,7 @@ namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentType; }
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentTypeNotCompatibleError; }
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentUnknownIdError; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct Error; }
 // clang-format on
 
@@ -91,7 +91,7 @@ public:
             ::std::string> enchantmentTypeOrId
     ) const;
 
-    MCNAPI ::Scripting::Result<void> removeAllEnchantments();
+    MCNAPI ::Scripting::Result_deprecated<void> removeAllEnchantments();
 
     MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError, ::Scripting::Error>
     removeEnchantment(
@@ -104,7 +104,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentComponent>
+    MCNAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 

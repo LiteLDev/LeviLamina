@@ -418,7 +418,7 @@ public:
     getFineGrainedSignalSubscriberStats() const;
 
     MCNAPI void
-    registerListeners(bool globalEventListeners, ::ScriptModuleMinecraft::ScriptGlobalEventListeners& worldListener);
+    registerListeners(bool worldListener, ::ScriptModuleMinecraft::ScriptGlobalEventListeners& globalEventListeners);
     // NOLINTEND
 
 public:

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/deps/scripting/runtime/Result.h"
@@ -23,6 +22,7 @@ namespace ScriptModuleMinecraft { struct ScriptPlaceJigsawError; }
 namespace ScriptModuleMinecraft { struct ScriptStructureCreateOptions; }
 namespace ScriptModuleMinecraft { struct ScriptStructurePlaceOptions; }
 namespace Scripting { struct ArgumentOutOfBoundsError; }
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EngineError; }
 namespace Scripting { struct InvalidArgumentError; }
 // clang-format on
@@ -131,7 +131,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptStructureManager> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:

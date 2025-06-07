@@ -29,7 +29,6 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk5887d5;
     ::ll::UntypedStorage<1, 1>  mUnkcea598;
     ::ll::UntypedStorage<1, 1>  mUnk773214;
-    ::ll::UntypedStorage<8, 24> mUnk1bb513;
     // NOLINTEND
 
 public:
@@ -71,31 +70,28 @@ public:
         /*override*/;
 
     // vIndex: 9
-    virtual bool writeAsset(::Core::Path const& packRelativePath, ::std::string const& fileContent) /*override*/;
-
-    // vIndex: 10
     virtual void forEachIn(
         ::Core::Path const&                        packRelativePath,
         ::std::function<void(::Core::Path const&)> callback,
         bool                                       recurseAnyways
     ) const /*override*/;
 
-    // vIndex: 12
+    // vIndex: 11
     virtual ::PackAccessStrategyType getStrategyType() const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 12
     virtual ::Core::PathBuffer<::std::string> const& getSubPath() const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 13
     virtual bool supportsSignatureVerification() const /*override*/;
 
-    // vIndex: 15
+    // vIndex: 14
     virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
 
-    // vIndex: 19
+    // vIndex: 18
     virtual void unload() /*override*/;
 
-    // vIndex: 20
+    // vIndex: 19
     virtual ::ContentIdentity readContentIdentity() const /*override*/;
     // NOLINTEND
 
@@ -108,11 +104,7 @@ public:
         ::ZipPackArgs&& args
     );
 
-    MCNAPI bool _tryReadFromPendingQueue(::Core::Path const& packRelativePath, ::std::string& result) const;
-
-    MCNAPI bool initZipFile() const;
-
-    MCNAPI void shutdown();
+    MCNAPI ::gsl::not_null<::IFileAccess*> getFileAccess() const;
     // NOLINTEND
 
 public:
@@ -149,8 +141,6 @@ public:
     MCNAPI bool $hasFolder(::Core::Path const& packRelativePath) const;
 
     MCNAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
-
-    MCNAPI bool $writeAsset(::Core::Path const& packRelativePath, ::std::string const& fileContent);
 
     MCNAPI void $forEachIn(
         ::Core::Path const&                        packRelativePath,

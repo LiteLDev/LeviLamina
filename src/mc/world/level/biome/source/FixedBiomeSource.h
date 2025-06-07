@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/biome/source/BiomeSource.h"
+#include "mc/world/level/biome/source/BiomeSourceType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -61,6 +62,9 @@ public:
     // vIndex: 9
     virtual bool hasByHashId(uint64 id) const /*override*/;
 
+    // vIndex: 10
+    virtual ::BiomeSourceType const getType() const /*override*/;
+
     // vIndex: 0
     virtual ~FixedBiomeSource() /*override*/ = default;
     // NOLINTEND
@@ -86,6 +90,8 @@ public:
     MCAPI bool $has(uint64 id) const;
 
     MCAPI bool $hasByHashId(uint64 id) const;
+
+    MCFOLD ::BiomeSourceType const $getType() const;
     // NOLINTEND
 
 public:

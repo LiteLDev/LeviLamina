@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/items/components/ScriptItemComponent.h"
 
@@ -12,6 +10,7 @@
 // clang-format off
 struct FloatRange;
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct NumberRange; }
 // clang-format on
 
@@ -38,13 +37,13 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<int> getMaxDurability();
 
-    MCNAPI ::Scripting::Result<void> setCurrentDamage(int damage);
+    MCNAPI ::Scripting::Result_deprecated<void> setCurrentDamage(int damage);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemDurabilityComponent>
+    MCNAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 

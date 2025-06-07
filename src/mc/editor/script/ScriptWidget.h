@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/deps/scripting/script_engine/Closure.h"
 #include "mc/editor/script/ScriptWidget_ComponentInterface.h"
 #include "mc/editor/script/ScriptWidget_GroupInterface.h"
@@ -15,17 +15,20 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 class Vec3;
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class WidgetComponentStateChangePayload; }
 namespace Editor::Network { class WidgetStateChangePayload; }
 namespace Editor::ScriptModule { class ScriptClipboardItem; }
+namespace Editor::ScriptModule { class ScriptRelativeVolumeListBlockVolume; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentBase; }
+namespace Editor::ScriptModule { class ScriptWidgetComponentBoundingBox; }
+namespace Editor::ScriptModule { class ScriptWidgetComponentBoundingBoxOptions; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentClipboard; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentClipboardOptions; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentEntity; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentEntityOptions; }
-namespace Editor::ScriptModule { class ScriptWidgetComponentErrorInvalidComponent; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentGizmo; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentGizmoOptions; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentGuideSensor; }
@@ -40,23 +43,25 @@ namespace Editor::ScriptModule { class ScriptWidgetComponentSpline; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentSplineOptions; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentText; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentTextOptions; }
+namespace Editor::ScriptModule { class ScriptWidgetComponentVolumeOutline; }
+namespace Editor::ScriptModule { class ScriptWidgetComponentVolumeOutlineOptions; }
 namespace Editor::ScriptModule { class ScriptWidgetCreateOptions; }
 namespace Editor::ScriptModule { class ScriptWidgetErrorInvalidObject; }
 namespace Editor::ScriptModule { class ScriptWidgetGroup; }
-namespace Editor::ScriptModule { class ScriptWidgetGroupErrorInvalidObject; }
 namespace Editor::ScriptModule { class ScriptWidgetService; }
 namespace Editor::ScriptModule { class ScriptWidgetStateChangeEventParameters; }
+namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
 namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct Error; }
+namespace Scripting { struct ClassBinding; }
 namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::ScriptModule {
 
-class ScriptWidget : public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptWidget>,
-                     public ::Editor::ScriptModule::ScriptWidget_GroupInterface,
+class ScriptWidget : public ::Editor::ScriptModule::ScriptWidget_GroupInterface,
                      public ::Editor::ScriptModule::ScriptWidget_ServiceInterface,
-                     public ::Editor::ScriptModule::ScriptWidget_ComponentInterface {
+                     public ::Editor::ScriptModule::ScriptWidget_ComponentInterface,
+                     public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptWidget> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -77,6 +82,8 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnk3faea0;
     ::ll::UntypedStorage<1, 1>   mUnk1d10b8;
     ::ll::UntypedStorage<1, 1>   mUnkcc57da;
+    ::ll::UntypedStorage<8, 32>  mUnk65f63a;
+    ::ll::UntypedStorage<4, 24>  mUnk8b3e64;
     ::ll::UntypedStorage<8, 232> mUnk30dd27;
     ::ll::UntypedStorage<8, 64>  mUnkfa8e26;
     ::ll::UntypedStorage<8, 24>  mUnk100eaa;
@@ -91,8 +98,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 6
+    // vIndex: 7
     virtual ~ScriptWidget();
+
+    // vIndex: 6
+    virtual ::AABB const& _getWorldBounds() const /*override*/;
 
     // vIndex: 0
     virtual void _performDeleteWidget(bool suppressClientMessage) /*override*/;
@@ -134,10 +144,16 @@ public:
         ::Scripting::WeakLifetimeScope const&                                         scope
     );
 
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentClipboard>,
-        ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject,
-        ::Scripting::Error>
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentBoundingBox>>
+    _addBoundingBoxComponent(
+        ::std::string const&                                                                    componentName,
+        ::Vec3 const&                                                                           size,
+        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions> const& options
+    );
+
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentClipboard>>
     _addClipboardComponent(
         ::std::string const& componentName,
         ::std::optional<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptClipboardItem>> const&
@@ -145,38 +161,30 @@ public:
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions> const& options
     );
 
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentEntity>,
-        ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject,
-        ::Scripting::Error>
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentEntity>>
     _addEntityComponent(
         ::std::string const&                                                               componentName,
         ::std::string const&                                                               actorNameId,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentEntityOptions> const& options
     );
 
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentGizmo>,
-        ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject,
-        ::Scripting::Error>
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentGizmo>>
     _addGizmoComponent(
         ::std::string const&                                                              componentName,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions> const& options
     );
 
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentGuideSensor>,
-        ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject,
-        ::Scripting::Error>
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentGuideSensor>>
     _addGuideSensorComponent(
         ::std::string const&                                                                    componentName,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentGuideSensorOptions> const& options
     );
 
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentRenderPrim>,
-        ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject,
-        ::Scripting::Error>
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentRenderPrim>>
     _addRenderPrimComponent(
         ::std::string const& componentName,
         ::std::variant<
@@ -187,42 +195,39 @@ public:
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentRenderPrimOptions> const& options
     );
 
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentSpline>,
-        ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject,
-        ::Scripting::Error>
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentSpline>>
     _addSplineComponent(
         ::std::string const&                                                               componentName,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentSplineOptions> const& options
     );
 
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentText>,
-        ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject,
-        ::Scripting::Error>
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentText>>
     _addTextComponent(
         ::std::string const&                                                             componentName,
         ::std::string const&                                                             textString,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentTextOptions> const& options
     );
 
-    MCNAPI ::Scripting::Result<
-        void,
-        ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject,
-        ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent,
-        ::Scripting::Error>
-    _deleteComponentCommand(
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentVolumeOutline>>
+    _addVolumeOutlineComponent(
+        ::std::string const& componentName,
+        ::std::optional<::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase>,
+            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>>> const&
+                                                                                                  volume,
+        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions> const& options
+    );
+
+    MCNAPI ::Scripting::Result_deprecated<void> _deleteComponentCommand(
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentBase>,
             ::std::string> componentHandleOrName
     );
 
-    MCNAPI ::Scripting::Result<
-        void,
-        ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject,
-        ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject,
-        ::Scripting::Error>
-    _deleteWidget();
+    MCNAPI ::Scripting::Result_deprecated<void> _deleteWidget();
 
     MCNAPI void _forEachComponent(
         ::std::function<bool(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentBase>)>
@@ -243,10 +248,8 @@ public:
     MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
     _getCollisionRadiusVisible() const;
 
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentBase>,
-        ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject,
-        ::Scripting::Error>
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentBase>>
     _getComponentByName(::std::string const& componentName) const;
 
     MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject> _getLockToSurface() const;
@@ -269,14 +272,17 @@ public:
 
     MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject> _scriptGetVisible() const;
 
+    MCNAPI ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup>,
+        ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _scriptGetWidgetGroup() const;
+
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
     _scriptSetCollisionOffset(::Vec3 const& position);
 
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
-    _scriptSetPosition(::Vec3 const& position);
+    MCNAPI ::Scripting::Result_deprecated<void> _scriptSetPosition(::Vec3 const& position);
 
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject, ::Scripting::Error>
-    _scriptSetSelected(bool selected);
+    MCNAPI ::Scripting::Result_deprecated<void> _scriptSetSelected(bool selected);
 
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
     _scriptSetShowBoundingBox(bool visible);
@@ -293,8 +299,7 @@ public:
         )>> const& closure
     );
 
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject, ::Scripting::Error>
-    _setCollisionRadius(float radius);
+    MCNAPI ::Scripting::Result_deprecated<void> _setCollisionRadius(float radius);
 
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
     _setCollisionRadiusVisible(bool visible);
@@ -309,15 +314,17 @@ public:
 
     MCNAPI ::mce::UUID const& getGroupId() const;
 
+    MCNAPI bool isValid() const;
+
     MCNAPI void setPosition(::Vec3 const& pos);
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error> setSelected(bool selected);
+    MCNAPI ::Scripting::Result_deprecated<void> setSelected(bool selected);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidget> bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 
 public:
@@ -342,6 +349,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::AABB const& $_getWorldBounds() const;
+
     MCNAPI void $_performDeleteWidget(bool suppressClientMessage);
 
     MCNAPI void $_setValid(bool valid);

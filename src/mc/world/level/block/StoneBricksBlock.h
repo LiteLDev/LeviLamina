@@ -23,10 +23,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 129
+    // vIndex: 128
     virtual ::Block const* tryGetInfested(::Block const& block) const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
     // vIndex: 0

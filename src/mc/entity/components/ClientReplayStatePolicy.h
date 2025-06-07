@@ -34,16 +34,10 @@ public:
     virtual bool isReplayNeeded(::AdvanceFrameResult result) const /*override*/;
 
     // vIndex: 2
-    virtual bool canRewind(::EntityContext const& entity) /*override*/;
-
-    // vIndex: 3
     virtual ::MovementCorrection
     shouldCorrectMovement(::EntityContext&, ::PlayerAuthInputPacket const&, uint64, uchar, bool) /*override*/;
 
-    // vIndex: 4
-    virtual bool validateFrameSupport(::EntityContext& entity) /*override*/;
-
-    // vIndex: 5
+    // vIndex: 3
     virtual void notifyOfExternalCorrection(uint64) /*override*/;
 
     // vIndex: 0
@@ -51,28 +45,12 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI bool _checkSupportedFrame(::EntityContext& entity) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static bool _isSupportedMovementMode(::EntityContext const& entity);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $isReplayNeeded(::AdvanceFrameResult result) const;
 
-    MCNAPI bool $canRewind(::EntityContext const& entity);
-
     MCNAPI ::MovementCorrection
     $shouldCorrectMovement(::EntityContext&, ::PlayerAuthInputPacket const&, uint64, uchar, bool);
-
-    MCNAPI bool $validateFrameSupport(::EntityContext& entity);
 
     MCNAPI void $notifyOfExternalCorrection(uint64);
     // NOLINTEND

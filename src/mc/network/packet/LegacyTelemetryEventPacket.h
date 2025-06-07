@@ -278,8 +278,8 @@ public:
     MCAPI LegacyTelemetryEventPacket(
         ::Player const&        player,
         ::ItemStackBase const& item,
-        ::ItemUseMethod        useCount,
-        int                    useMethod
+        ::ItemUseMethod        useMethod,
+        int                    useCount
     );
 
     MCAPI LegacyTelemetryEventPacket(
@@ -350,7 +350,7 @@ public:
 
     MCAPI void* $ctor(::Player const* player, short contentsType, uint contentsColor, short fillLevel);
 
-    MCAPI void* $ctor(::Player const& player, ::ItemStackBase const& item, ::ItemUseMethod useCount, int useMethod);
+    MCAPI void* $ctor(::Player const& player, ::ItemStackBase const& item, ::ItemUseMethod useMethod, int useCount);
 
     MCAPI void* $ctor(
         ::Player const*      player,

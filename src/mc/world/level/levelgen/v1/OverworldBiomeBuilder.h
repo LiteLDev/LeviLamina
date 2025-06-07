@@ -80,19 +80,19 @@ public:
         ::ClimateUtils::Parameter const&   continentalness,
         ::ClimateUtils::Parameter const&   erosion,
         ::ClimateUtils::Parameter const&   weirdness,
-        float                              second,
-        ::Biome const*                     offset
+        float                              offset,
+        ::Biome const*                     second
     ) const;
 
     MCAPI void _addUndergroundBiome(
         ::std::vector<::BiomeNoiseTarget>& biomes,
+        ::ClimateUtils::Parameter const&   temperature,
         ::ClimateUtils::Parameter const&   humidity,
         ::ClimateUtils::Parameter const&   continentalness,
-        ::ClimateUtils::Parameter const&   second,
-        ::ClimateUtils::Parameter const&   temperature,
         ::ClimateUtils::Parameter const&   erosion,
-        float                              weirdness,
-        ::Biome const*                     offset
+        ::ClimateUtils::Parameter const&   weirdness,
+        float                              offset,
+        ::Biome const*                     second
     ) const;
 
     MCAPI void _addValleys(

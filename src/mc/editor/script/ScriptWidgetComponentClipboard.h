@@ -4,9 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/WidgetComponentType.h"
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/script/ScriptWidgetComponentBase.h"
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
@@ -18,8 +19,10 @@ namespace Editor { class ServiceProviderCollection; }
 namespace Editor::ScriptModule { class ScriptClipboardItem; }
 namespace Editor::ScriptModule { class ScriptWidget; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentClipboardOptions; }
+namespace Editor::ScriptModule { class ScriptWidgetComponentErrorInvalidComponent; }
 namespace Editor::ScriptModule { class ScriptWidgetService; }
 namespace ScriptModuleMinecraft { class ScriptRGBA; }
+namespace Scripting { struct ClassBinding; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -34,9 +37,11 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnkd4706b;
     ::ll::UntypedStorage<4, 12> mUnk62bf0a;
     ::ll::UntypedStorage<4, 12> mUnk865513;
-    ::ll::UntypedStorage<1, 1>  mUnk7203d5;
-    ::ll::UntypedStorage<4, 24> mUnka9f0b6;
-    ::ll::UntypedStorage<4, 24> mUnke8c048;
+    ::ll::UntypedStorage<1, 1>  mUnkba9362;
+    ::ll::UntypedStorage<4, 24> mUnk86fec1;
+    ::ll::UntypedStorage<4, 24> mUnkaa0b3f;
+    ::ll::UntypedStorage<4, 24> mUnk75e7a4;
+    ::ll::UntypedStorage<4, 24> mUnk118379;
     // NOLINTEND
 
 public:
@@ -47,10 +52,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
+    // vIndex: 2
     virtual ~ScriptWidgetComponentClipboard() /*override*/ = default;
 
-    // vIndex: 2
+    // vIndex: 3
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
     // NOLINTEND
 
@@ -70,25 +75,34 @@ public:
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions> options
     );
 
-    MCNAPI void _setClipboardMirror(::Mirror m);
+    MCNAPI ::Scripting::Result<::Vec3, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _scriptGetClipboardOffset() const;
+
+    MCNAPI ::Scripting::Result_deprecated<void> _scriptSetClipboardOffset(::Vec3 const& offset);
 
     MCNAPI void _setClipboardOffset(::Vec3 const& offset);
 
-    MCNAPI void _setClipboardOrigin(::Vec3 const& pivot);
+    MCNAPI void _setHighlightHullColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
 
-    MCNAPI void _setClipboardRotation(::Rotation r);
+    MCNAPI void _setHighlightOutlineColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
 
-    MCNAPI void _setOuterBoundsFillColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
+    MCNAPI void _setHullColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
 
-    MCNAPI void _setOuterBoundsVisible(bool visible);
+    MCNAPI void _setMirror(::Mirror m);
 
-    MCNAPI void _setOuterBoundsWireframeColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
+    MCNAPI void _setNormalizedOrigin(::Vec3 const& pivot);
+
+    MCNAPI void _setOutlineColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
+
+    MCNAPI void _setRotation(::Rotation r);
+
+    MCNAPI void _setShowOutline(bool visible);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentClipboard> bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 
 public:

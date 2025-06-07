@@ -34,13 +34,7 @@ public:
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
     // vIndex: 0
-    virtual ~EmitterShapePointComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI EmitterShapePointComponent(::SharedTypes::v1_20_80::EmitterShapePointComponent&&);
+    virtual ~EmitterShapePointComponent() /*override*/;
     // NOLINTEND
 
 public:
@@ -56,9 +50,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapePointComponent&&);
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

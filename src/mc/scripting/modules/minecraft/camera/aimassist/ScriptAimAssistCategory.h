@@ -3,12 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { struct Error; }
+namespace Scripting { struct ClassBinding; }
 namespace SharedTypes::v1_21_50 { struct CameraAimAssistCategoryDefinition; }
 // clang-format on
 
@@ -33,14 +32,13 @@ public:
     // NOLINTBEGIN
     MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const* _getCategoryDefinition() const;
 
-    MCNAPI ::Scripting::Result<::std::unordered_map<::std::string, int>, ::Scripting::Error> getBlockPriorities() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::unordered_map<::std::string, int>> getBlockPriorities() const;
 
-    MCNAPI ::Scripting::Result<int, ::Scripting::Error> getDefaultBlockPriority() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getDefaultBlockPriority() const;
 
-    MCNAPI ::Scripting::Result<int, ::Scripting::Error> getDefaultEntityPriority() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getDefaultEntityPriority() const;
 
-    MCNAPI ::Scripting::Result<::std::unordered_map<::std::string, int>, ::Scripting::Error>
-    getEntityPriorities() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::unordered_map<::std::string, int>> getEntityPriorities() const;
 
     MCNAPI ::ScriptModuleMinecraft::ScriptAimAssistCategory&
     operator=(::ScriptModuleMinecraft::ScriptAimAssistCategory&&);
@@ -49,7 +47,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptAimAssistCategory> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

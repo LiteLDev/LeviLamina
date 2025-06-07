@@ -15,8 +15,8 @@ class ToastMessage;
 
 class ToastManager : public ::IToastManager,
                      public ::Bedrock::Threading::EnableQueueForMainThread,
-                     public ::std::enable_shared_from_this<::ToastManager>,
-                     public ::ResourcePackListener {
+                     public ::ResourcePackListener,
+                     public ::std::enable_shared_from_this<::ToastManager> {
 public:
     // member variables
     // NOLINTBEGIN

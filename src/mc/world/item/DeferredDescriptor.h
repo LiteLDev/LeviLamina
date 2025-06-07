@@ -40,7 +40,7 @@ public:
     virtual bool sameItem(::ItemDescriptor::ItemEntry const&, bool) const /*override*/;
 
     // vIndex: 3
-    virtual ::std::string const& getFullName() const /*override*/;
+    virtual ::std::string getFullName() const /*override*/;
 
     // vIndex: 7
     virtual ::std::map<::std::string, ::std::string> toMap() const /*override*/;
@@ -90,7 +90,7 @@ public:
 
     MCNAPI bool $sameItem(::ItemDescriptor::ItemEntry const&, bool) const;
 
-    MCNAPI ::std::string const& $getFullName() const;
+    MCNAPI ::std::string $getFullName() const;
 
     MCNAPI ::std::map<::std::string, ::std::string> $toMap() const;
 

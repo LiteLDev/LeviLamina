@@ -30,7 +30,7 @@ class ContainerManagerModel : public ::IContainerManager {
 public:
     // ContainerManagerModel inner types define
     using DynamicContainerPublisher =
-        ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded>;
+        ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>;
 
 public:
     // member variables
@@ -47,7 +47,8 @@ public:
         8,
         ::std::unique_ptr<::Bedrock::PubSub::Publisher<
             void(::SharedTypes::Legacy::ContainerType),
-            ::Bedrock::PubSub::ThreadModel::SingleThreaded>>>
+            ::Bedrock::PubSub::ThreadModel::SingleThreaded,
+            0>>>
         mContainerTypeSubscribers;
     ::ll::TypedStorage<
         8,
@@ -56,7 +57,7 @@ public:
                                                         mInformControllerOfDestructionCallbacks;
     ::ll::TypedStorage<8, 40, ::ContainerScreenContext> mScreenContext;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::shared_ptr<::ContainerModel>>> mContainers;
-    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
         mOnDynamicContainerChangePublisher;
     // NOLINTEND
 
@@ -79,7 +80,7 @@ public:
     virtual ::ContainerID getContainerId() const /*override*/;
 
     // vIndex: 2
-    virtual void setContainerId(::ContainerID id) /*override*/;
+    virtual void setContainerId(::ContainerID) /*override*/;
 
     // vIndex: 3
     virtual ::SharedTypes::Legacy::ContainerType getContainerType() const /*override*/;
@@ -154,10 +155,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $tick();
-
-    MCNAPI ::ContainerID $getContainerId() const;
-
-    MCNAPI void $setContainerId(::ContainerID id);
 
     MCNAPI ::SharedTypes::Legacy::ContainerType $getContainerType() const;
 

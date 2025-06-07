@@ -24,16 +24,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 27
+    // vIndex: 26
     virtual ::CopperBehavior const* tryGetCopperBehavior() const /*override*/;
 
-    // vIndex: 137
+    // vIndex: 135
     virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 18
+    // vIndex: 17
     virtual void onLightningHit(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual void _useTrapDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const /*override*/;
 
     // vIndex: 0

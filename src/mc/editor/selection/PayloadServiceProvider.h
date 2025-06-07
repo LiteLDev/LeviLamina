@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
@@ -23,7 +22,7 @@ public:
     virtual ~PayloadServiceProvider() = default;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> dispatchToSelf(::Editor::Network::INetworkPayload&) = 0;
+    virtual ::Scripting::Result_deprecated<void> dispatchToSelf(::Editor::Network::INetworkPayload&) = 0;
 
     // vIndex: 2
     virtual void onReceivePayload(::EditorNetworkPacket const&) = 0;
@@ -33,16 +32,16 @@ public:
     _registerPayload(char const*, ::std::function<::std::shared_ptr<::Editor::Network::INetworkPayload>()>) = 0;
 
     // vIndex: 4
-    virtual ::Scripting::Result<void> _send(::Editor::Network::INetworkPayload&) = 0;
+    virtual ::Scripting::Result_deprecated<void> _send(::Editor::Network::INetworkPayload&) = 0;
 
     // vIndex: 5
-    virtual ::Scripting::Result<void> _sendToManager(::Editor::Network::INetworkPayload&) = 0;
+    virtual ::Scripting::Result_deprecated<void> _sendToManager(::Editor::Network::INetworkPayload&) = 0;
 
     // vIndex: 6
-    virtual ::Scripting::Result<void> _broadcastToClients(::Editor::Network::INetworkPayload&) = 0;
+    virtual ::Scripting::Result_deprecated<void> _broadcastToClients(::Editor::Network::INetworkPayload&) = 0;
 
     // vIndex: 7
-    virtual ::Scripting::Result<void> _broadcastToClientManagers(::Editor::Network::INetworkPayload&) = 0;
+    virtual ::Scripting::Result_deprecated<void> _broadcastToClientManagers(::Editor::Network::INetworkPayload&) = 0;
 
     // vIndex: 8
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>

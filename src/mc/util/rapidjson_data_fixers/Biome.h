@@ -27,15 +27,6 @@ MCNAPI bool moveComponentsUnderNewBiomeParent(
         ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
         ::rapidjson::CrtAllocator>& document
 );
-
-MCNAPI bool renameObjectMember(
-    ::rapidjson::GenericDocument<
-        ::rapidjson::UTF8<char>,
-        ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
-        ::rapidjson::CrtAllocator>& document,
-    ::std::string const&            oldName,
-    ::std::string const&            newName
-);
 // NOLINTEND
 
 } // namespace RapidJsonDataFixers::Biome

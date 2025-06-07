@@ -22,8 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::string_view asSpan() const;
-
     MCNAPI uint64 hashCode() const;
     // NOLINTEND
 };

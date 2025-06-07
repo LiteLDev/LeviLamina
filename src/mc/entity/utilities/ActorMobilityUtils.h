@@ -71,13 +71,13 @@ MCAPI void endJump(
 
 MCAPI float getBrightness(
     ::StrictEntityContext const&                                        context,
-    float                                                               region,
-    ::IConstBlockSource const&                                          aabbShapeComponent,
-    ::AABBShapeComponent const&                                         offsetsComponent,
-    ::OffsetsComponent const&                                           stateVectorComponent,
-    ::StateVectorComponent const&                                       blazeView,
-    ::ViewT<::StrictEntityContext, ::Include<::BlazeFlagComponent>>     lavaSlimeView,
-    ::ViewT<::StrictEntityContext, ::Include<::LavaSlimeFlagComponent>> alpha
+    float                                                               alpha,
+    ::IConstBlockSource const&                                          region,
+    ::AABBShapeComponent const&                                         aabbShapeComponent,
+    ::OffsetsComponent const&                                           offsetsComponent,
+    ::StateVectorComponent const&                                       stateVectorComponent,
+    ::ViewT<::StrictEntityContext, ::Include<::BlazeFlagComponent>>     blazeView,
+    ::ViewT<::StrictEntityContext, ::Include<::LavaSlimeFlagComponent>> lavaSlimeView
 );
 
 MCAPI bool isImmobile(

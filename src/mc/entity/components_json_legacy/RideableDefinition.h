@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class RideableComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -23,6 +25,9 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk1a2df4;
     ::ll::UntypedStorage<1, 1>  mUnk26e121;
     ::ll::UntypedStorage<4, 4>  mUnk3e3757;
+    ::ll::UntypedStorage<1, 1>  mUnk4cd163;
+    ::ll::UntypedStorage<8, 32> mUnk2a85ad;
+    ::ll::UntypedStorage<8, 32> mUnk1c982d;
     // NOLINTEND
 
 public:
@@ -35,6 +40,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void addFamilyTypeByName(::std::string const& name);
+
+    MCNAPI void initialize(::EntityContext& entity, ::RideableComponent& component) const;
+
+    MCNAPI void setDismountMode(::std::string const& mode);
+
+    MCNAPI ~RideableDefinition();
     // NOLINTEND
 
 public:
@@ -43,5 +54,11 @@ public:
     MCNAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RideableDefinition>>& root
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

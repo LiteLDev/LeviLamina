@@ -79,7 +79,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1>    mUnk21a88e;
     ::ll::UntypedStorage<8, 8>    mUnka4780b;
-    ::ll::UntypedStorage<8, 6768> mUnka99eed;
+    ::ll::UntypedStorage<8, 6912> mUnka99eed;
     ::ll::UntypedStorage<8, 144>  mUnk3d7cec;
     ::ll::UntypedStorage<8, 24>   mUnk99b67a;
     ::ll::UntypedStorage<8, 8>    mUnk880742;
@@ -110,8 +110,8 @@ public:
         ::std::unique_ptr<::Scripting::QuickJS::ObjectInspector>&& inspector,
         ::Scripting::IPrinter*                                     printer,
         ::Scripting::IDependencyLoader*                            loader,
-        ::JSRuntime*                                               contextConfig,
-        ::Scripting::ContextConfig const&                          jsRuntime
+        ::JSRuntime*                                               jsRuntime,
+        ::Scripting::ContextConfig const&                          contextConfig
     );
 
     MCNAPI void _bindGlobals(::Scripting::GlobalBinding const& global);
@@ -258,8 +258,8 @@ public:
         ::std::unique_ptr<::Scripting::QuickJS::ObjectInspector>&& inspector,
         ::Scripting::IPrinter*                                     printer,
         ::Scripting::IDependencyLoader*                            loader,
-        ::JSRuntime*                                               contextConfig,
-        ::Scripting::ContextConfig const&                          jsRuntime
+        ::JSRuntime*                                               jsRuntime,
+        ::Scripting::ContextConfig const&                          contextConfig
     );
     // NOLINTEND
 

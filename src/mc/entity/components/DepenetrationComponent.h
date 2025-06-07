@@ -28,7 +28,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::std::bitset<5>>         mBits;
-    ::ll::TypedStorage<4, 12, ::Vec3>                  mMaxDepenetration;
+    ::ll::TypedStorage<4, 12, ::Vec3>                  mMinDepenetration;
     ::ll::TypedStorage<8, 24, ::std::vector<::AABB>>   mOneWayPhysicsBlocks;
     ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mTemporaryOverride;
     // NOLINTEND

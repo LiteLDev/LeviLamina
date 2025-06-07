@@ -80,7 +80,7 @@ public:
 
     MCAPI void shoot(::Mob& shooter);
 
-    MCAPI void shoot(::Vec3 const& dir, float pow, float baseSpeed, ::Vec3 const& uncertainty);
+    MCAPI void shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
     // NOLINTEND
 
 public:

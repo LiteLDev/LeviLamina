@@ -3,9 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/scripting/modules/minecraft/player/ScriptPlayer.h"
@@ -22,6 +20,7 @@ namespace ScriptModuleGameTest { struct ScriptMoveToOptions; }
 namespace ScriptModuleGameTest { struct ScriptNavigationResult; }
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace Scripting { struct ClassBinding; }
 namespace gametest { class BaseGameTestHelper; }
 namespace gametest { struct GameTestError; }
 // clang-format on
@@ -33,13 +32,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 9
-    virtual ::Scripting::Result<void> applyImpulse(::Actor& self, ::Vec3 const& vector) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> applyImpulse(::Actor& self, ::Vec3 const& vector) /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> clearVelocity(::Actor& self) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> clearVelocity(::Actor& self) /*override*/;
 
     // vIndex: 10
-    virtual ::Scripting::Result<void> remove(::Actor& self) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> remove(::Actor& self) /*override*/;
 
     // vIndex: 11
     virtual bool isValid() const /*override*/;
@@ -59,13 +58,13 @@ public:
     MCNAPI ::Scripting::Result_deprecated<bool>
     breakBlock(::Vec3 const& pos, ::ScriptModuleMinecraft::ScriptFacing face) const;
 
-    MCNAPI ::Scripting::Result<void> chat(::std::string const& message) const;
+    MCNAPI ::Scripting::Result_deprecated<void> chat(::std::string const& message) const;
 
-    MCNAPI ::Scripting::Result<void> disconnect() const;
+    MCNAPI ::Scripting::Result_deprecated<void> disconnect() const;
 
     MCNAPI ::Scripting::Result_deprecated<bool> dropSelectedItem() const;
 
-    MCNAPI ::Scripting::Result<void> fly() const;
+    MCNAPI ::Scripting::Result_deprecated<void> fly() const;
 
     MCNAPI ::Scripting::Result_deprecated<::Vec2> getHeadRotation();
 
@@ -86,21 +85,21 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<bool> jump() const;
 
-    MCNAPI ::Scripting::Result<void> lookAtBlock(::Vec3 const& blockPos, ::sim::LookDuration duration) const;
+    MCNAPI ::Scripting::Result_deprecated<void> lookAtBlock(::Vec3 const& blockPos, ::sim::LookDuration duration) const;
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     lookAtEntity(::ScriptModuleMinecraft::ScriptActor const& scriptActor, ::sim::LookDuration duration) const;
 
-    MCNAPI ::Scripting::Result<void> lookAtLocation(::Vec3 const& pos, ::sim::LookDuration duration) const;
+    MCNAPI ::Scripting::Result_deprecated<void> lookAtLocation(::Vec3 const& pos, ::sim::LookDuration duration) const;
 
-    MCNAPI ::Scripting::Result<void> move(float directionX, float directionZ, float speed) const;
+    MCNAPI ::Scripting::Result_deprecated<void> move(float directionX, float directionZ, float speed) const;
 
-    MCNAPI ::Scripting::Result<void> moveRelative(float directionX, float directionZ, float speed) const;
+    MCNAPI ::Scripting::Result_deprecated<void> moveRelative(float directionX, float directionZ, float speed) const;
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     moveToBlock(::Vec3 const& position, ::std::optional<::ScriptModuleGameTest::ScriptMoveToOptions> options) const;
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     moveToLocation(::Vec3 const& position, ::std::optional<::ScriptModuleGameTest::ScriptMoveToOptions> options) const;
 
     MCNAPI ::Scripting::Result_deprecated<::ScriptModuleGameTest::ScriptNavigationResult>
@@ -112,40 +111,41 @@ public:
     MCNAPI ::Scripting::Result_deprecated<::ScriptModuleGameTest::ScriptNavigationResult>
     navigateToLocation(::Vec3 const& position, float speed) const;
 
-    MCNAPI ::Scripting::Result<void> navigateToLocations(::std::vector<::Vec3> const& positions, float speed) const;
+    MCNAPI ::Scripting::Result_deprecated<void>
+    navigateToLocations(::std::vector<::Vec3> const& positions, float speed) const;
 
     MCNAPI ::Scripting::Result_deprecated<bool> respawn() const;
 
-    MCNAPI ::Scripting::Result<void> rotateBody(float angleInDegrees) const;
+    MCNAPI ::Scripting::Result_deprecated<void> rotateBody(float angleInDegrees) const;
 
-    MCNAPI ::Scripting::Result<void> setBodyRotation(float angleInDegrees) const;
+    MCNAPI ::Scripting::Result_deprecated<void> setBodyRotation(float angleInDegrees) const;
 
     MCNAPI ::Scripting::Result_deprecated<bool>
     setItem(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack, int slot, bool selectSlot) const;
 
-    MCNAPI ::Scripting::Result<void> setSprinting(bool sprinting) const;
+    MCNAPI ::Scripting::Result_deprecated<void> setSprinting(bool sprinting) const;
 
-    MCNAPI ::Scripting::Result<void> startBuild(int slot) const;
+    MCNAPI ::Scripting::Result_deprecated<void> startBuild(int slot) const;
 
-    MCNAPI ::Scripting::Result<void> stopBreakingBlock() const;
+    MCNAPI ::Scripting::Result_deprecated<void> stopBreakingBlock() const;
 
-    MCNAPI ::Scripting::Result<void> stopBuild() const;
+    MCNAPI ::Scripting::Result_deprecated<void> stopBuild() const;
 
-    MCNAPI ::Scripting::Result<void> stopFlying() const;
+    MCNAPI ::Scripting::Result_deprecated<void> stopFlying() const;
 
-    MCNAPI ::Scripting::Result<void> stopGliding() const;
+    MCNAPI ::Scripting::Result_deprecated<void> stopGliding() const;
 
-    MCNAPI ::Scripting::Result<void> stopInteracting() const;
+    MCNAPI ::Scripting::Result_deprecated<void> stopInteracting() const;
 
-    MCNAPI ::Scripting::Result<void> stopMoving() const;
+    MCNAPI ::Scripting::Result_deprecated<void> stopMoving() const;
 
-    MCNAPI ::Scripting::Result<void> stopSwimming() const;
+    MCNAPI ::Scripting::Result_deprecated<void> stopSwimming() const;
 
     MCNAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
     stopUsingItem() const;
 
-    MCNAPI ::Scripting::Result<void> swim() const;
+    MCNAPI ::Scripting::Result_deprecated<void> swim() const;
 
     MCNAPI ::Scripting::Result_deprecated<bool>
     useItem(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
@@ -180,17 +180,17 @@ public:
         ::ScriptModuleGameTest::ScriptNavigationResult navigationResult
     );
 
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleGameTest::ScriptSimulatedPlayer> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> $applyImpulse(::Actor& self, ::Vec3 const& vector);
+    MCNAPI ::Scripting::Result_deprecated<void> $applyImpulse(::Actor& self, ::Vec3 const& vector);
 
-    MCNAPI ::Scripting::Result<void> $clearVelocity(::Actor& self);
+    MCNAPI ::Scripting::Result_deprecated<void> $clearVelocity(::Actor& self);
 
-    MCNAPI ::Scripting::Result<void> $remove(::Actor& self);
+    MCNAPI ::Scripting::Result_deprecated<void> $remove(::Actor& self);
 
     MCNAPI bool $isValid() const;
     // NOLINTEND

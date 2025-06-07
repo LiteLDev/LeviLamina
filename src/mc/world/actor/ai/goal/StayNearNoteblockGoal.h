@@ -66,7 +66,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Mob&>                               mMob;
-    ::ll::TypedStorage<8, 64, ::StayNearNoteblockGoal::Definition> mDefinition;
+    ::ll::TypedStorage<4, 32, ::StayNearNoteblockGoal::Definition> mDefinition;
     ::ll::TypedStorage<4, 4, int>                                  mTimeToRecalcPath;
     // NOLINTEND
 

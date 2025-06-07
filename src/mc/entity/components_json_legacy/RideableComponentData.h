@@ -15,6 +15,9 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnkc7ffd7;
     ::ll::UntypedStorage<1, 1>  mUnk87d44f;
     ::ll::UntypedStorage<4, 4>  mUnkc10431;
+    ::ll::UntypedStorage<1, 1>  mUnkfdb669;
+    ::ll::UntypedStorage<8, 32> mUnkdde8a5;
+    ::ll::UntypedStorage<8, 32> mUnk72d236;
     // NOLINTEND
 
 public:
@@ -26,7 +29,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI RideableComponentData(::RideableComponentData&&);
+
+    MCNAPI ::RideableComponentData& operator=(::RideableComponentData&&);
+
     MCNAPI ~RideableComponentData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::RideableComponentData&&);
     // NOLINTEND
 
 public:

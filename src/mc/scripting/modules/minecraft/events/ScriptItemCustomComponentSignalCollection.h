@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/scripting/modules/minecraft/events/IScriptItemCustomComponentSignalCollection.h"
+#include "mc/scripting/modules/minecraft/events/metadata/ScriptCustomComponentEventMetadata.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,10 +12,8 @@ class ComponentItem;
 class HashedString;
 class ScriptDeferredFlushTracker;
 struct ItemCustomComponentData;
-namespace Json { class Value; }
 namespace ScriptModuleMinecraft { class ScriptItemCustomComponentInterface; }
 namespace Scripting { class ModuleBindingBuilder; }
-namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -70,6 +69,11 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptItemCustomComponentSignalCollection();
 
+    MCNAPI explicit ScriptItemCustomComponentSignalCollection(
+        ::ScriptModuleMinecraft::ScriptCustomComponentEventMetadata<
+            ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface>&& metadata
+    );
+
     MCNAPI void bindMetadata(::Scripting::ModuleBindingBuilder& moduleBuilder);
     // NOLINTEND
 
@@ -77,17 +81,17 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
-
-    MCNAPI static void generateOrderDocumentationForVersion(
-        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
-        ::Json::Value&                       eventOrderArray
-    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(
+        ::ScriptModuleMinecraft::ScriptCustomComponentEventMetadata<
+            ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface>&& metadata
+    );
     // NOLINTEND
 
 public:

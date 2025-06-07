@@ -36,6 +36,8 @@ public:
     // NOLINTBEGIN
     MCAPI MolangQueryFunctionPtr(::MolangQueryFunctionPtr const&);
 
+    MCAPI ::MolangQueryFunctionPtr& operator=(::MolangQueryFunctionPtr&&);
+
     MCAPI ~MolangQueryFunctionPtr();
     // NOLINTEND
 

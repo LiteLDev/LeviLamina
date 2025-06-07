@@ -46,35 +46,38 @@ public:
     ) const;
 
     // vIndex: 4
-    virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const&) const = 0;
-
-    // vIndex: 6
-    virtual bool isInStreamableLocation(::ResourceLocation const& resourceLocation) const;
+    virtual bool loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
 
     // vIndex: 5
+    virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const&) const = 0;
+
+    // vIndex: 7
+    virtual bool isInStreamableLocation(::ResourceLocation const& resourceLocation) const;
+
+    // vIndex: 6
     virtual bool isInStreamableLocation(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensions
     ) const;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual ::Core::PathBuffer<::std::string> getPath(::ResourceLocation const& resourceLocation) const;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual ::Core::PathBuffer<::std::string>
     getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const;
 
-    // vIndex: 10
+    // vIndex: 11
     virtual ::Core::PathBuffer<::std::string>
     getPathContainingResource(::ResourceLocation const& resourceLocation) const;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual ::Core::PathBuffer<::std::string> getPathContainingResource(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensions
     ) const;
 
-    // vIndex: 11
+    // vIndex: 12
     virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensions
@@ -95,6 +98,8 @@ public:
         ::std::string&                   resourceStream,
         ::gsl::span<::std::string const> extensions
     ) const;
+
+    MCNAPI bool $loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
 
     MCNAPI bool $isInStreamableLocation(::ResourceLocation const& resourceLocation) const;
 

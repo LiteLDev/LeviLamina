@@ -32,6 +32,7 @@ public:
     ::ll::UntypedStorage<4, 4>   mUnke0db27;
     ::ll::UntypedStorage<1, 1>   mUnk6d76db;
     ::ll::UntypedStorage<4, 4>   mUnk1808c6;
+    ::ll::UntypedStorage<4, 4>   mUnk57a1d3;
     ::ll::UntypedStorage<8, 24>  mUnk968bff;
     ::ll::UntypedStorage<8, 24>  mUnke9ec1d;
     ::ll::UntypedStorage<8, 104> mUnk1b388c;
@@ -58,6 +59,8 @@ public:
     MCNAPI void setCooldown(float const& seconds);
 
     MCNAPI void setCooldownAfterBeingAttacked(float const& seconds);
+
+    MCNAPI void setDropItemOffsetY(float const& offset);
 
     MCNAPI void setDropItemSlot(::std::string const& slot);
 

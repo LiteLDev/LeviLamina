@@ -16,8 +16,8 @@ class HeartbeatDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnkc972be;
-    ::ll::UntypedStorage<8, 216> mUnk6a3f0a;
+    ::ll::UntypedStorage<8, 32> mUnkc972be;
+    ::ll::UntypedStorage<8, 16> mUnk6a3f0a;
     // NOLINTEND
 
 public:

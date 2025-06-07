@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BaseBlockLocationIterator;
 class BlockPos;
 class BoundingBox;
 class ChunkPos;
@@ -25,6 +26,7 @@ public:
 
 public:
     // prevent constructor by default
+    ListBlockVolume& operator=(ListBlockVolume const&);
     ListBlockVolume();
 
 public:
@@ -57,6 +59,12 @@ public:
     // vIndex: 9
     virtual ::std::set<::ChunkPos> getChunks() const /*override*/;
 
+    // vIndex: 10
+    virtual ::std::unordered_set<::BlockPos> getFlattenedBlockPositions() const /*override*/;
+
+    // vIndex: 11
+    virtual ::std::unique_ptr<::BaseBlockLocationIterator> getIterator() const /*override*/;
+
     // vIndex: 0
     virtual ~ListBlockVolume() /*override*/ = default;
     // NOLINTEND
@@ -69,8 +77,6 @@ public:
     MCNAPI ListBlockVolume(::ListBlockVolume const& rhs);
 
     MCNAPI void insert(::std::vector<::Vec3> const& blockPositions);
-
-    MCNAPI ::ListBlockVolume& operator=(::ListBlockVolume const& rhs);
     // NOLINTEND
 
 public:
@@ -101,6 +107,10 @@ public:
     MCNAPI void $forEach(::std::function<bool(::BlockPos const&)> callback) const;
 
     MCNAPI ::std::set<::ChunkPos> $getChunks() const;
+
+    MCNAPI ::std::unordered_set<::BlockPos> $getFlattenedBlockPositions() const;
+
+    MCNAPI ::std::unique_ptr<::BaseBlockLocationIterator> $getIterator() const;
     // NOLINTEND
 
 public:

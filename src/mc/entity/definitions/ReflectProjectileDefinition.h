@@ -14,24 +14,25 @@ class ReflectProjectileDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 216> mUnk77b87e;
-    ::ll::UntypedStorage<8, 216> mUnk5fa002;
-    ::ll::UntypedStorage<8, 216> mUnkafaef4;
-    ::ll::UntypedStorage<8, 24>  mUnk9caa5a;
-    ::ll::UntypedStorage<8, 32>  mUnkd8b3bd;
+    ::ll::UntypedStorage<8, 16> mUnk77b87e;
+    ::ll::UntypedStorage<8, 16> mUnk5fa002;
+    ::ll::UntypedStorage<8, 16> mUnkafaef4;
+    ::ll::UntypedStorage<8, 24> mUnk9caa5a;
+    ::ll::UntypedStorage<8, 32> mUnkd8b3bd;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ReflectProjectileDefinition& operator=(ReflectProjectileDefinition const&);
     ReflectProjectileDefinition(ReflectProjectileDefinition const&);
+    ReflectProjectileDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ReflectProjectileDefinition();
-
     MCNAPI void _addProjectileToReflect(::std::string const& projectileName);
+
+    MCNAPI ~ReflectProjectileDefinition();
     // NOLINTEND
 
 public:
@@ -43,8 +44,8 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

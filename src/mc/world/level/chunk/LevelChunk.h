@@ -65,6 +65,7 @@ struct ActorLink;
 struct BiomeChunkState;
 struct BlockID;
 struct DeserializationChanges;
+struct LevelChunkPhase1Deleter;
 struct NibblePair;
 struct SubChunk;
 namespace LevelChunkTicking { struct Registry; }
@@ -519,6 +520,9 @@ public:
         ::std::optional<::LevelChunkFormat> const& lcFormat,
         bool                                       isClientSide
     );
+
+    MCAPI static ::std::unique_ptr<::LevelChunk, ::LevelChunkPhase1Deleter>
+    createNew(::Dimension& dimension, ::ChunkPos cp, bool readOnly, ::SubChunkInitMode initBlocks);
 
     MCAPI static ::std::pair<ushort, ::std::vector<::std::unique_ptr<::SubChunkStorage<::Biome>>>> deserialize3DBiomes(
         ::IDataInput&          stream,

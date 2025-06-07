@@ -3,9 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockLiquidContainerComponent.h"
 
 // auto generated forward declare list
@@ -14,11 +13,17 @@ class BlockPos;
 class BlockSource;
 namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class ScriptBlockWaterContainerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent {
+public:
+    // prevent constructor by default
+    ScriptBlockWaterContainerComponent& operator=(ScriptBlockWaterContainerComponent const&);
+    ScriptBlockWaterContainerComponent();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -29,13 +34,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> addDye(::ScriptModuleMinecraft::ScriptItemType const& dye);
+    MCNAPI ScriptBlockWaterContainerComponent(::ScriptModuleMinecraft::ScriptBlockWaterContainerComponent const&);
+
+    MCNAPI ::Scripting::Result_deprecated<void> addDye(::ScriptModuleMinecraft::ScriptItemType const& dye);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockWaterContainerComponent> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
     MCNAPI static ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockWaterContainerComponent>>
@@ -46,6 +53,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static char const*& ComponentId();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockWaterContainerComponent const&);
     // NOLINTEND
 
 public:

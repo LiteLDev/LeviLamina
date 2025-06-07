@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SurfaceParametersBiomeJsonComponent() /*override*/ = default;
+    virtual ~SurfaceParametersBiomeJsonComponent() /*override*/;
     // NOLINTEND
 
 public:
@@ -37,9 +37,6 @@ public:
     MCNAPI SurfaceParametersBiomeJsonComponent();
 
     MCNAPI SurfaceParametersBiomeJsonComponent(::SharedTypes::v1_20_60::SurfaceParametersBiomeJsonComponent const&);
-
-    MCNAPI ::SharedTypes::v1_20_60::SurfaceParametersBiomeJsonComponent&
-    operator=(::SharedTypes::v1_20_60::SurfaceParametersBiomeJsonComponent&&);
 
     MCNAPI ::SharedTypes::v1_20_60::SurfaceParametersBiomeJsonComponent&
     operator=(::SharedTypes::v1_20_60::SurfaceParametersBiomeJsonComponent const&);
@@ -65,6 +62,12 @@ public:
     MCNAPI void* $ctor();
 
     MCNAPI void* $ctor(::SharedTypes::v1_20_60::SurfaceParametersBiomeJsonComponent const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

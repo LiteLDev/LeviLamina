@@ -16,9 +16,9 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void initActorComponents(
-        ::EntityHost               actor,
-        ::std::unique_ptr<::Actor> entity,
-        ::EntityContext&           host,
+        ::EntityHost               host,
+        ::std::unique_ptr<::Actor> actor,
+        ::EntityContext&           entity,
         ::EntityContext const&
     );
 

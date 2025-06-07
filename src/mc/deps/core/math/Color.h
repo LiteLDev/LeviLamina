@@ -25,8 +25,6 @@ public:
 
     MCAPI bool operator==(::mce::Color const& c) const;
 
-    MCAPI int toARGB() const;
-
     MCAPI ::std::string toHexString() const;
     // NOLINTEND
 

@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/storage/EncryptedProxyReadMode.h"
+
+// auto generated forward declare list
+// clang-format off
+class ContentIdentity;
+// clang-format on
+
 class EncryptedProxyEnv : public ::leveldb::EnvWrapper {
 public:
     // member variables
@@ -38,6 +46,28 @@ public:
 
     // vIndex: 0
     virtual ~EncryptedProxyEnv() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI EncryptedProxyEnv(
+        ::leveldb::Env*          env,
+        ::ContentIdentity const& contentIdentity,
+        ::std::string const&     contentKey,
+        ::EncryptedProxyReadMode mode
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::leveldb::Env*          env,
+        ::ContentIdentity const& contentIdentity,
+        ::std::string const&     contentKey,
+        ::EncryptedProxyReadMode mode
+    );
     // NOLINTEND
 
 public:

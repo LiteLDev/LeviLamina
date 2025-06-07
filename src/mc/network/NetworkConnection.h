@@ -58,7 +58,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 160, ::NetworkIdentifier>                     mId;
+    ::ll::TypedStorage<8, 176, ::NetworkIdentifier>                     mId;
     ::ll::TypedStorage<4, 4, ::NetworkConnection::Type>                 mType;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::NetworkPacketRecorder>> mNetworkPacketRecorder;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::EncryptedNetworkPeer>>  mEncryptedPeer;
@@ -94,9 +94,9 @@ public:
         bool                                           isSafeAndFast,
         ::Bedrock::NonOwnerPointer<::IPacketObserver>  packetObserver,
         ::Scheduler&                                   mainThread,
-        bool                                           settings,
-        ::NetworkSettingOptions const&                 packetSecurityController,
-        ::std::shared_ptr<::IPacketSecurityController> isRawRecordingEnabled
+        bool                                           isRawRecordingEnabled,
+        ::NetworkSettingOptions const&                 settings,
+        ::std::shared_ptr<::IPacketSecurityController> packetSecurityController
     );
 
     MCNAPI ::NetworkPeer::DataStatus receivePacket(
@@ -116,9 +116,9 @@ public:
         bool                                           isSafeAndFast,
         ::Bedrock::NonOwnerPointer<::IPacketObserver>  packetObserver,
         ::Scheduler&                                   mainThread,
-        bool                                           settings,
-        ::NetworkSettingOptions const&                 packetSecurityController,
-        ::std::shared_ptr<::IPacketSecurityController> isRawRecordingEnabled
+        bool                                           isRawRecordingEnabled,
+        ::NetworkSettingOptions const&                 settings,
+        ::std::shared_ptr<::IPacketSecurityController> packetSecurityController
     );
     // NOLINTEND
 

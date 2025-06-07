@@ -6,7 +6,7 @@ struct EduContentCustom {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 1248> mUnkec7d26;
+    ::ll::UntypedStorage<8, 1264> mUnkec7d26;
     ::ll::UntypedStorage<8, 32>   mUnkae4a9e;
     ::ll::UntypedStorage<4, 4>    mUnk3d3ac7;
     ::ll::UntypedStorage<4, 4>    mUnkf4e1f4;

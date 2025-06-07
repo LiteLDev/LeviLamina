@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class PlatformType : int {
-    Desktop   = 0,
-    Pocket    = 1,
-    Console   = 2,
-    SetTopBox = 3,
+    Desktop             = 0,
+    Pocket              = 1,
+    Console             = 2,
+    SetTopBoxDeprecated = 3,
 };

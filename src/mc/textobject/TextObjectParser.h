@@ -94,8 +94,8 @@ public:
     MCNAPI static bool _textObjectFromString(
         ::std::string const&                   jsonAsString,
         ::TextObjectRoot&                      parsedObject,
-        ::TextObjectParser::ServerData*        errorLocalization,
-        ::TextObjectParser::ErrorLocalization& serverData
+        ::TextObjectParser::ServerData*        serverData,
+        ::TextObjectParser::ErrorLocalization& errorLocalization
     );
 
     MCNAPI static bool

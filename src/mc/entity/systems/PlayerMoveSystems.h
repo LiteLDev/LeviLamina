@@ -12,7 +12,5 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::TickingSystemWithInfo createLocalPlayerFilterAutoJumpSystem();
-
-    MCNAPI static ::TickingSystemWithInfo createPlayerPostMoveSystem();
     // NOLINTEND
 };

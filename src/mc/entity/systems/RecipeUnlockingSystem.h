@@ -65,6 +65,7 @@ public:
         ::UnlockedRecipesServerComponent&                                     unlockedComp,
         ::Recipes const&                                                      recipes,
         bool                                                                  playerIsInWater,
+        bool                                                                  doLimitedCrafting,
         ::std::optional<::RecipeUnlockingSystem::InventoryChangedData> const& inventoryChanged
     );
 

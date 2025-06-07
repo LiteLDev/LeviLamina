@@ -11,12 +11,15 @@
 class StrictEntityContext;
 struct ActorIsBeingDestroyedFlagComponent;
 struct StopRidingRequestComponent;
+struct TickingSystemWithInfo;
 struct VehicleComponent;
 // clang-format on
 
 namespace RemoveAllPassengersSystem {
 // functions
 // NOLINTBEGIN
+MCNAPI ::TickingSystemWithInfo createRideableComponentRemovalSystem();
+
 MCNAPI void removeAllPassengers(
     ::VehicleComponent const&                                                             vehicleComponent,
     bool                                                                                  actorIsBeingDestroyed,

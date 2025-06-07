@@ -8,7 +8,7 @@ struct ScopedPath {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkf9ce6e;
+    ::ll::UntypedStorage<8, 8> mUnk16802b;
     // NOLINTEND
 
 public:

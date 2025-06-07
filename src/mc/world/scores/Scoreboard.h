@@ -42,7 +42,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::Bedrock::NonOwnerPointer<::Objective>>>
         mObjectivesHashLookup;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::unique_ptr<::ObjectiveCriteria>>> mCriteria;
-    ::ll::TypedStorage<8, 112, ::ScoreboardEventCoordinator>   mScoreboardEventCoordinator;
+    ::ll::TypedStorage<8, 96, ::ScoreboardEventCoordinator>    mScoreboardEventCoordinator;
     ::ll::TypedStorage<8, 72, ::PlayerScoreboardEventListener> mPlayerListener;
     // NOLINTEND
 

@@ -24,7 +24,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                                           mCanUseOnDig;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>               mOnMineBlockSubscription;
-    ::ll::TypedStorage<8, 264, ::std::optional<::DefinitionTrigger>>         mOnDigDefault;
+    ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>>          mOnDigDefault;
     ::ll::TypedStorage<8, 24, ::std::vector<::DiggerBlockDefinitionTrigger>> mOnDigTriggers;
     // NOLINTEND
 
@@ -42,7 +42,7 @@ public:
     virtual void _initializeComponent() /*override*/;
 
     // vIndex: 0
-    virtual ~LegacyOnDigTriggerItemComponent() /*override*/ = default;
+    virtual ~LegacyOnDigTriggerItemComponent() /*override*/;
     // NOLINTEND
 
 public:
@@ -63,6 +63,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::LegacyOnDigTriggerItemComponentData&& componentData);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

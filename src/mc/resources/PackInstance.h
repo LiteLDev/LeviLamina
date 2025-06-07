@@ -28,7 +28,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 256, ::PackReport>                              mPackReport;
+    ::ll::TypedStorage<8, 248, ::PackReport>                              mPackReport;
     ::ll::TypedStorage<8, 8, ::PackSettings*>                             mPackSettings;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ResourcePack>> mPack;
     ::ll::TypedStorage<4, 16, ::PackStats>                                mStats;
@@ -45,24 +45,20 @@ public:
     MCAPI PackInstance(
         ::Bedrock::NotNullNonOwnerPtr<::ResourcePack> pack,
         int                                           subpackIndex,
-        bool                                          packSettings,
-        ::PackSettings*                               isDependent
+        bool                                          isDependent,
+        ::PackSettings*                               packSettings
     );
 
     MCAPI PackInstance(
         ::Bedrock::NotNullNonOwnerPtr<::ResourcePack> pack,
         ::std::string const&                          subpackName,
-        bool                                          packSettings,
-        ::PackSettings*                               isDependent
+        bool                                          isDependent,
+        ::PackSettings*                               packSettings
     );
-
-    MCAPI void forEachInAssetSet(::Core::Path const& path, ::std::function<void(::Core::Path const&)> callback) const;
 
     MCAPI ::std::string const& getFolderName() const;
 
     MCAPI ::PackManifest const& getManifest() const;
-
-    MCAPI ::PackManifest& getManifest();
 
     MCAPI ::PackCategory getPackCategory() const;
 
@@ -87,15 +83,15 @@ public:
     MCAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::ResourcePack> pack,
         int                                           subpackIndex,
-        bool                                          packSettings,
-        ::PackSettings*                               isDependent
+        bool                                          isDependent,
+        ::PackSettings*                               packSettings
     );
 
     MCAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::ResourcePack> pack,
         ::std::string const&                          subpackName,
-        bool                                          packSettings,
-        ::PackSettings*                               isDependent
+        bool                                          isDependent,
+        ::PackSettings*                               packSettings
     );
     // NOLINTEND
 

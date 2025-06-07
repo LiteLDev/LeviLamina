@@ -28,4 +28,16 @@ public:
     MessagePerformance& operator=(MessagePerformance const&);
     MessagePerformance(MessagePerformance const&);
     MessagePerformance();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~MessagePerformance();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };

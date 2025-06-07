@@ -24,7 +24,7 @@ public:
     MCNAPI ::JsonUtil::SchemaConverterCollection&
     operator()(::std::string const& filterString, bool forceCaseInsensitive);
 
-    MCNAPI ::JsonUtil::SchemaConverterCollection& operator()(uint64 maxIndex, uint64 minIndex, bool);
+    MCNAPI ::JsonUtil::SchemaConverterCollection& operator()(uint64 minIndex, uint64 maxIndex, bool);
 
     MCNAPI ~SchemaConverterCollection();
     // NOLINTEND

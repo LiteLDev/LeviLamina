@@ -39,8 +39,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ActorDefinitionEvent(::ActorDefinitionEvent const&);
 
-    MCNAPI ActorDefinitionEvent(::ActorDefinitionEvent&&);
-
     MCNAPI void _evaluateGroups(
         ::Actor&                                  entity,
         ::std::vector<::ActorDefinitionModifier>& modifications,
@@ -56,8 +54,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ActorDefinitionEvent const&);
-
-    MCNAPI void* $ctor(::ActorDefinitionEvent&&);
     // NOLINTEND
 
 public:

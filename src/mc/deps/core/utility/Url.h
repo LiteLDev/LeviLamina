@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Util::ResourceUri { struct ValidationResult; }
 namespace Util::Url { struct Components; }
 namespace Util::Url { struct ComponentsView; }
 // clang-format on
@@ -11,8 +12,6 @@ namespace Util::Url { struct ComponentsView; }
 namespace Util::Url {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::string addUrlSchemeIfNotPresent(::std::string const& url, ::std::string const& scheme);
-
 MCNAPI ::std::string anonymizeIPAddress(::std::string const& ipAddress);
 
 MCNAPI ::std::string anonymizeIPv6Address(::std::string const& ipAddress);
@@ -22,6 +21,8 @@ MCNAPI bool isValidIP(::std::string_view ipAddrStr, bool considerIPv4Valid, bool
 MCNAPI ::Util::Url::ComponentsView parseUrl(::std::string_view url);
 
 MCNAPI ::std::string urlEncode(::std::string_view value, ::std::function<bool(uchar)> isAlphaNum);
+
+MCNAPI ::Util::ResourceUri::ValidationResult validateAbsoluteUrl(::std::string const& url);
 // NOLINTEND
 
 // static variables

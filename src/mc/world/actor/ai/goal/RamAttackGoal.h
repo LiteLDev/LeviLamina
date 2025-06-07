@@ -13,7 +13,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class Mob;
 class Path;
 namespace JsonUtil { class EmptyClass; }
@@ -65,8 +64,6 @@ public:
         MCNAPI void addPreRamSoundEventByName(::std::string const& name);
 
         MCNAPI void addRamImpactSoundEventByName(::std::string const& name);
-
-        MCNAPI void initialize(::EntityContext& entity, ::RamAttackGoal& goal) const;
         // NOLINTEND
 
     public:
@@ -141,7 +138,7 @@ public:
     ::ll::TypedStorage<8, 8, ::Tick>                                     mRamRetryTimeout;
     ::ll::TypedStorage<4, 4, ::RamAttackGoal::State>                     mState;
     ::ll::TypedStorage<8, 24, ::std::vector<::RamAttackGoal::AttackPos>> mAttackPosVector;
-    ::ll::TypedStorage<8, 160, ::RamAttackGoal::Definition>              mDefinition;
+    ::ll::TypedStorage<8, 128, ::RamAttackGoal::Definition>              mDefinition;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                            mTargetId;
     ::ll::TypedStorage<1, 1, bool>                                       mHasKnockbacked;
     ::ll::TypedStorage<8, 8, ::Tick>                                     mCooldownTimeout;

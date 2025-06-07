@@ -18,4 +18,16 @@ public:
     RecipeOptionalCraftInputs& operator=(RecipeOptionalCraftInputs const&);
     RecipeOptionalCraftInputs(RecipeOptionalCraftInputs const&);
     RecipeOptionalCraftInputs();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~RecipeOptionalCraftInputs();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };

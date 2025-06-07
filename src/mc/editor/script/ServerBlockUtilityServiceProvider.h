@@ -7,6 +7,7 @@
 class Block;
 class BlockVolumeBase;
 class CompoundBlockVolume;
+namespace Editor { class RelativeVolumeListBlockVolume; }
 namespace Editor::BlockUtils { class CommonBlockUtilityServiceProvider; }
 // clang-format on
 
@@ -24,7 +25,10 @@ public:
 
     // vIndex: 2
     virtual void fillVolume(
-        ::std::variant<::BlockVolumeBase const*, ::CompoundBlockVolume const*> const,
+        ::std::variant<
+            ::BlockVolumeBase const*,
+            ::CompoundBlockVolume const*,
+            ::Editor::RelativeVolumeListBlockVolume const*> const,
         ::std::optional<::Block const*> const
     ) = 0;
     // NOLINTEND

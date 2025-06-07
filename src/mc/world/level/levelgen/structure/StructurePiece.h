@@ -99,9 +99,9 @@ public:
         int                    x1,
         int                    y1,
         int                    z1,
-        bool                   random,
-        ::Random&              selector,
-        ::BlockSelector const& skipAir
+        bool                   skipAir,
+        ::Random&              random,
+        ::BlockSelector const& selector
     );
 
     MCAPI void generateMaybeBox(
@@ -117,8 +117,8 @@ public:
         int                  z1,
         ::Block const&       edgeBlock,
         ::Block const&       fillBlock,
-        bool                 excludeSky,
-        bool                 skipAir
+        bool                 skipAir,
+        bool                 excludeSky
     );
 
     MCAPI ::Block const& getBlock(::BlockSource& region, int x, int y, int z, ::BoundingBox const& chunkBB);

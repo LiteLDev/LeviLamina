@@ -25,7 +25,7 @@ public:
     virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
     // vIndex: 3
-    virtual void reloadHardcodedClient(::ActorInitializationMethod) /*override*/;
+    virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
     // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
@@ -70,14 +70,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int numberofAnimalsAttached();
-
-    MCAPI void removeAnimals();
+    MCAPI void _removeAttachedActors();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
+
+    MCFOLD void $reloadHardcodedClient(::ActorInitializationMethod method);
+
     MCFOLD float $getShadowRadius() const;
 
     MCFOLD int $getWidth() const;

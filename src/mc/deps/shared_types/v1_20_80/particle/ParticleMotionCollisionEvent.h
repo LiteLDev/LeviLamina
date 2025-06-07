@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_20_80 {
 
 struct ParticleMotionCollisionEvent {
@@ -26,6 +31,12 @@ public:
 
     MCNAPI ::SharedTypes::v1_20_80::ParticleMotionCollisionEvent&
     operator=(::SharedTypes::v1_20_80::ParticleMotionCollisionEvent const&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -16,7 +16,7 @@ class StoreCatalogRepository;
 struct PackIdVersion;
 // clang-format on
 
-class MinecraftScreenModel : public ::std::enable_shared_from_this<::MinecraftScreenModel>, public ::IDlcBatcher {
+class MinecraftScreenModel : public ::IDlcBatcher, public ::std::enable_shared_from_this<::MinecraftScreenModel> {
 public:
     // MinecraftScreenModel inner types declare
     // clang-format off

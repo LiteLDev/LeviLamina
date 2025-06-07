@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
-#include "mc/deps/ecs/strict/EntityModifier.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,31 +19,23 @@ namespace VanillaOffsetSystemUtil {
 // functions
 // NOLINTBEGIN
 MCNAPI void _clientTick(
-    ::StrictEntityContext&                            entity,
+    ::StrictEntityContext&,
     ::VanillaOffsetComponent&                         vanillaOffsetComponent,
     ::OffsetsComponent const&                         offsetComponent,
     ::ActorDataFlagComponent const&                   actorDataFlag,
     ::Optional<::PlayerIsSleepingFlagComponent const> isSleepingFlag,
     ::Optional<::IsHorizontalPoseFlagComponent const> isHorizontalFlag,
-    float                                             sneakHeight,
-    ::EntityModifier<::IsHorizontalPoseFlagComponent> modifier
+    float                                             sneakHeight
 );
 
 MCNAPI void _serverTick(
-    ::StrictEntityContext&                            entity,
+    ::StrictEntityContext&,
     ::VanillaOffsetComponent&                         vanillaOffsetComponent,
     ::OffsetsComponent const&                         offsetComponent,
     ::ActorDataFlagComponent const&                   actorDataFlag,
     ::Optional<::PlayerIsSleepingFlagComponent const> isSleepingFlag,
     ::Optional<::IsHorizontalPoseFlagComponent const> isHorizontalFlag,
-    float                                             sneakHeight,
-    ::EntityModifier<::IsHorizontalPoseFlagComponent> modifier
-);
-
-MCNAPI void _updateHorizontalFlagComponent(
-    ::StrictEntityContext&                            entity,
-    ::ActorDataFlagComponent const&                   actorDataFlag,
-    ::EntityModifier<::IsHorizontalPoseFlagComponent> modifier
+    float                                             sneakHeight
 );
 
 MCNAPI float getCameraOffset(

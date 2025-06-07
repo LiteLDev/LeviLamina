@@ -19,7 +19,7 @@ class HudContainerManagerModel : public ::ContainerManagerModel {
 public:
     // HudContainerManagerModel inner types define
     using DynamicContainerRemovalPublisher = ::Bedrock::PubSub::
-        Publisher<void(::std::vector<::std::string> const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded>;
+        Publisher<void(::std::vector<::std::string> const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>;
 
     using ItemStackVector = ::std::vector<::ItemStack>;
 
@@ -31,7 +31,7 @@ public:
         8,
         128,
         ::Bedrock::PubSub::
-            Publisher<void(::std::vector<::std::string> const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+            Publisher<void(::std::vector<::std::string> const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
         mOnDynamicContainerRemovalPublisher;
     // NOLINTEND
 

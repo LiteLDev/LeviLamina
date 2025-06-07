@@ -25,10 +25,10 @@ class MovingBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
     // vIndex: 10
@@ -39,7 +39,7 @@ public:
         ::AABB&                    bufferAABB
     ) const /*override*/;
 
-    // vIndex: 103
+    // vIndex: 102
     virtual bool pushesUpFallingBlocks() const /*override*/;
 
     // vIndex: 5
@@ -50,11 +50,11 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    // vIndex: 68
+    // vIndex: 67
     virtual void updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const
         /*override*/;
 
-    // vIndex: 26
+    // vIndex: 25
     virtual bool isMovingBlock() const /*override*/;
 
     // vIndex: 0

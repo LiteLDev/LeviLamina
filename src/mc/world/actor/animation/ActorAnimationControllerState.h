@@ -37,8 +37,6 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit ActorAnimationControllerState(::HashedString const& name);
 
-    MCNAPI void addAnimation(::HashedString const& name);
-
     MCNAPI ::StateAnimationVariable& addVariable(::std::string const& variableName);
 
     MCNAPI ~ActorAnimationControllerState();

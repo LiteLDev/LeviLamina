@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BaseBlockLocationIterator;
 class BlockPos;
 class BoundingBox;
 class ChunkPos;
@@ -42,6 +43,12 @@ public:
 
     // vIndex: 9
     virtual ::std::set<::ChunkPos> getChunks() const = 0;
+
+    // vIndex: 10
+    virtual ::std::unordered_set<::BlockPos> getFlattenedBlockPositions() const = 0;
+
+    // vIndex: 11
+    virtual ::std::unique_ptr<::BaseBlockLocationIterator> getIterator() const = 0;
     // NOLINTEND
 
 public:

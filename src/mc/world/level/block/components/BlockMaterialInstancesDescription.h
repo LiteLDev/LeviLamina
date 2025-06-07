@@ -119,7 +119,7 @@ public:
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
     MCNAPI static bool
-    postParseConstraint(::Experiments const& experiments, ::Json::Value const& componentJson, ::SemVersion const&);
+    postParseConstraint(::Experiments const&, ::Json::Value const& componentJson, ::SemVersion const& jsonVersion);
     // NOLINTEND
 
 public:

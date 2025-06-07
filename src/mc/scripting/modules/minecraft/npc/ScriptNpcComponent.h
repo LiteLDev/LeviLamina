@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ScriptActorComponent.h"
@@ -12,6 +11,7 @@
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace Scripting { struct ArgumentOutOfBoundsError; }
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct Error; }
 // clang-format on
 
@@ -37,9 +37,9 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<int> getSkinIndex() const;
 
-    MCNAPI ::Scripting::Result<void> setDefaultScene(::std::string sceneId);
+    MCNAPI ::Scripting::Result_deprecated<void> setDefaultScene(::std::string sceneId);
 
-    MCNAPI ::Scripting::Result<void> setName(::std::string name);
+    MCNAPI ::Scripting::Result_deprecated<void> setName(::std::string name);
 
     MCNAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::ArgumentOutOfBoundsError>
     setSkinIndex(int skinIndex);
@@ -48,7 +48,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptNpcComponent>
+    MCNAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 

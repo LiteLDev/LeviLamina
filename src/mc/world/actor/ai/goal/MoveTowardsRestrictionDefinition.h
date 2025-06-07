@@ -5,12 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 
-// auto generated forward declare list
-// clang-format off
-class EntityContext;
-class MoveTowardsRestrictionGoal;
-// clang-format on
-
 class MoveTowardsRestrictionDefinition : public ::BaseGoalDefinition {
 public:
     // member variables
@@ -29,11 +23,5 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~MoveTowardsRestrictionDefinition() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void initialize(::EntityContext& entity, ::MoveTowardsRestrictionGoal& goal) const;
     // NOLINTEND
 };

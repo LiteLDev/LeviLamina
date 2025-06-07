@@ -16,7 +16,7 @@ struct BlockItemVisualDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 88>  mUnk5cb854;
+    ::ll::UntypedStorage<8, 136> mUnk5cb854;
     ::ll::UntypedStorage<8, 144> mUnk9341c7;
     // NOLINTEND
 

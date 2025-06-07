@@ -7,15 +7,17 @@
 #include "mc/deps/shared_types/v1_21_10/scatter_params/CoordinateEvaluationOrder.h"
 #include "mc/deps/shared_types/v1_21_10/scatter_params/RandomDistributionType.h"
 #include "mc/molang/MolangVersion.h"
-#include "mc/util/ExpressionNode.h"
 #include "mc/util/IntRange.h"
+#include "mc/util/molang/ExpressionNode.h"
+#include "mc/util/molang/ExpressionOp.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
-class CompoundTag;
 class Random;
 class RenderParams;
+struct BiomeScatterParamData;
+struct BiomeStringList;
 namespace SharedTypes::v1_21_10 { struct CoordinateRangeData; }
 namespace SharedTypes::v1_21_10 { struct ScatterParamsData; }
 // clang-format on
@@ -57,8 +59,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 216, ::ExpressionNode>                              mMinOrSingleValue;
-        ::ll::TypedStorage<8, 216, ::ExpressionNode>                              mMax;
+        ::ll::TypedStorage<8, 16, ::ExpressionNode>                               mMinOrSingleValue;
+        ::ll::TypedStorage<8, 16, ::ExpressionNode>                               mMax;
         ::ll::TypedStorage<4, 4, uint>                                            mGridStepSize;
         ::ll::TypedStorage<4, 4, uint>                                            mGridOffset;
         ::ll::TypedStorage<4, 4, ::SharedTypes::v1_21_10::RandomDistributionType> mDistribution;
@@ -104,9 +106,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 216, ::ExpressionNode> mChancePercent;
-        ::ll::TypedStorage<4, 4, int>                mNumerator;
-        ::ll::TypedStorage<4, 4, int>                mDenominator;
+        ::ll::TypedStorage<8, 16, ::ExpressionNode> mChancePercent;
+        ::ll::TypedStorage<4, 4, int>               mNumerator;
+        ::ll::TypedStorage<4, 4, int>               mDenominator;
         // NOLINTEND
 
     public:
@@ -125,23 +127,20 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1368, ::ScatterParams::CoordinateRange[3]>             mCoordinateRanges;
+    ::ll::TypedStorage<8, 168, ::ScatterParams::CoordinateRange[3]>              mCoordinateRanges;
     ::ll::TypedStorage<4, 4, ::SharedTypes::v1_21_10::CoordinateEvaluationOrder> mEvalOrder;
-    ::ll::TypedStorage<8, 224, ::ScatterParams::ChanceInformation>               mScatterChance;
-    ::ll::TypedStorage<8, 216, ::ExpressionNode>                                 mIterations;
+    ::ll::TypedStorage<8, 24, ::ScatterParams::ChanceInformation>                mScatterChance;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode>                                  mIterations;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScatterParams& operator=(ScatterParams const&);
+    ScatterParams(ScatterParams const&);
+    ScatterParams();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScatterParams();
-
-    MCNAPI ScatterParams(::ScatterParams const&);
-
     MCNAPI void _fillCoordinateRangeFromData(
         ::std::string const&                                coordinateName,
         ::ScatterParams::CoordinateRange&                   coordinateRange,
@@ -153,23 +152,21 @@ public:
     MCNAPI ::BlockPos
     _getPos(uint stepIndex, ::BlockPos const& origin, ::Random& random, ::RenderParams& molangParams) const;
 
-    MCNAPI void _parseExpressionNodeFloat(
-        ::CompoundTag const& tag,
-        ::std::string const& tagName,
-        ::std::string const& tagNameType,
-        ::ExpressionNode&    node,
-        float                defaultValue
-    );
-
-    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
-
     MCNAPI void fillFromData(
         ::SharedTypes::v1_21_10::ScatterParamsData const& data,
         ::MolangVersion                                   molangVersion,
         ::LogArea                                         logArea
     );
 
-    MCNAPI void readAdditionalSaveData(::CompoundTag const& tag);
+    MCNAPI ::ScatterParams& operator=(::ScatterParams const&);
+
+    MCNAPI void
+    readSerializedScatterParamData(::BiomeScatterParamData const& data, ::BiomeStringList const& stringList);
+
+    MCNAPI ::ScatterParams::ScatteredPositions
+    scatter(::RenderParams& molangParams, ::BlockPos const& pos, ::Random& random) const;
+
+    MCNAPI void serializeScatterParamData(::BiomeScatterParamData& data, ::BiomeStringList& stringList) const;
 
     MCNAPI ~ScatterParams();
     // NOLINTEND
@@ -177,15 +174,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static void _parseExpressionNodeFloat(
+        ::ExpressionOp       op,
+        ::std::string const& expression,
+        ::ExpressionNode&    node,
+        float                defaultValue
+    );
+
     MCNAPI static void initMolangParams(::RenderParams& molangParams, ::BlockPos const& pos, ::Random& random);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::ScatterParams const&);
     // NOLINTEND
 
 public:

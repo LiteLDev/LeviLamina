@@ -4,14 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/MouseActionCategory.h"
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/input/Modifier.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Editor::Input { struct BindingInfo; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -34,12 +34,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> focusViewport();
+    MCNAPI ::Scripting::Result_deprecated<void> focusViewport();
 
     MCNAPI ::std::optional<int>
     getKeyBindingProcessingState(::std::string const& contextId, ::std::string const& bindingId) const;
 
-    MCNAPI ::Scripting::Result<void> registerKeyBinding(
+    MCNAPI ::Scripting::Result_deprecated<void> registerKeyBinding(
         ::std::string const&                contextId,
         ::std::string const&                bindingId,
         int                                 key,
@@ -47,19 +47,19 @@ public:
         ::Editor::Input::BindingInfo const& info
     );
 
-    MCNAPI ::Scripting::Result<void> registerMouseBinding(
+    MCNAPI ::Scripting::Result_deprecated<void> registerMouseBinding(
         ::std::string const&                 contextId,
         ::std::string const&                 bindingId,
         ::Editor::Input::MouseActionCategory mouseAction
     );
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     unregisterKeyBinding(::std::string const& contextId, ::std::string const& bindingId);
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     unregisterMouseBinding(::std::string const& contextId, ::std::string const& bindingId);
 
-    MCNAPI ::Scripting::Result<void> updateKeyBindingProcessingState(
+    MCNAPI ::Scripting::Result_deprecated<void> updateKeyBindingProcessingState(
         ::std::string const& contextId,
         ::std::string const& bindingId,
         ::std::optional<int> state
@@ -69,7 +69,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptPlayerInputService> bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 };
 

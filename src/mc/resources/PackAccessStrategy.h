@@ -61,45 +61,42 @@ public:
     virtual bool getAsset(::Core::Path const&, ::std::string&, bool) const = 0;
 
     // vIndex: 9
-    virtual bool writeAsset(::Core::Path const&, ::std::string const&) = 0;
-
-    // vIndex: 10
     virtual void forEachIn(::Core::Path const&, ::std::function<void(::Core::Path const&)>, bool) const = 0;
 
-    // vIndex: 11
+    // vIndex: 10
     virtual void forEachInAssetSet(::Core::Path const&, ::std::function<void(::Core::Path const&)>) const;
 
-    // vIndex: 12
+    // vIndex: 11
     virtual ::PackAccessStrategyType getStrategyType() const = 0;
 
-    // vIndex: 13
+    // vIndex: 12
     virtual ::Core::PathBuffer<::std::string> const& getSubPath() const;
 
-    // vIndex: 14
+    // vIndex: 13
     virtual bool supportsSignatureVerification() const;
 
-    // vIndex: 15
+    // vIndex: 14
     virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const&) const = 0;
 
-    // vIndex: 16
+    // vIndex: 15
     virtual ::PackAccessAssetGenerationResult generateAssetSet();
 
-    // vIndex: 17
+    // vIndex: 16
     virtual ::PackAccessAssetGenerationResult regenerateAssetSet();
 
-    // vIndex: 18
+    // vIndex: 17
     virtual bool canRecurse() const;
 
-    // vIndex: 19
+    // vIndex: 18
     virtual void unload() = 0;
 
-    // vIndex: 20
+    // vIndex: 19
     virtual ::ContentIdentity readContentIdentity() const;
 
-    // vIndex: 21
+    // vIndex: 20
     virtual bool isAssetExtractionViable() const;
 
-    // vIndex: 22
+    // vIndex: 21
     virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> _loadArchive(::Core::Path const&) const;
     // NOLINTEND
 
@@ -107,8 +104,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI PackAccessStrategy();
-
-    MCNAPI void _addToAssetSet(::Core::Path const& path, ::std::string const& data);
 
     MCNAPI void _forEachInAssetSet(::std::function<void(::Core::Path const&)> callback) const;
 

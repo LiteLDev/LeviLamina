@@ -3,10 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/EditorRealmsServiceAvailability.h"
 #include "mc/common/editor/RealmsServiceStatus.h"
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/common/editor/RealmsWorldUploadResult.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/deps/scripting/script_engine/Promise.h"
@@ -20,7 +19,10 @@ namespace Editor::Services { struct EditorRealmsWorld; }
 namespace Editor::Services { struct EditorRealmsWorldSlot; }
 namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct EnumBinding; }
 namespace Scripting { struct Error; }
+namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -60,7 +62,9 @@ public:
     MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<::std::string const, ::Scripting::Error, void>>
     beginDownloadFromRealms(::std::string realmsWorldId, int slotId, ::Scripting::ScriptObjectFactory& factory);
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<bool, ::Scripting::Error, void>> beginUploadToRealms(
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::Promise<::Editor::Services::RealmsWorldUploadResult, ::Scripting::Error, void>>
+    beginUploadToRealms(
         ::std::string                             realmsWorldId,
         int                                       slotId,
         ::Editor::ScriptModule::ScriptGameOptions gameOptions,
@@ -79,7 +83,7 @@ public:
         ::Scripting::Promise<::std::vector<::Editor::Services::EditorRealmsWorldSlot>, ::Scripting::Error, void>>
     getSlots(::std::string const& worldId, ::Scripting::ScriptObjectFactory& factory);
 
-    MCNAPI bool isRealmsServiceAvailable();
+    MCNAPI ::Editor::Services::EditorRealmsServiceAvailability isRealmsServiceAvailable();
 
     MCNAPI ::Editor::ScriptModule::ScriptRealmsService& operator=(::Editor::ScriptModule::ScriptRealmsService&&);
 
@@ -89,16 +93,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::Services::EditorRealmsWorld> bindEditorRealmsWorld();
+    MCNAPI static ::Scripting::EnumBinding bindEditorRealmsServiceAvailabilityEnum();
 
-    MCNAPI static ::Scripting::InterfaceBindingBuilder<::Editor::Services::EditorRealmsWorldSlot>
-    bindEditorRealmsWorldSlot();
+    MCNAPI static ::Scripting::InterfaceBinding bindEditorRealmsWorld();
 
-    MCNAPI static ::Scripting::
-        EnumBindingBuilder<::Editor::Services::RealmsServiceStatus, ::Editor::Services::RealmsServiceStatus>
-        bindRealmsServiceStatusEnum();
+    MCNAPI static ::Scripting::InterfaceBinding bindEditorRealmsWorldSlot();
 
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptRealmsService> bindScript();
+    MCNAPI static ::Scripting::EnumBinding bindRealmsServiceStatusEnum();
+
+    MCNAPI static ::Scripting::EnumBinding bindRealmsWorldUploadResultEnum();
+
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 
 public:

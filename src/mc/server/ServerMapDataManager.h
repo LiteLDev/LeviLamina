@@ -22,7 +22,7 @@ class ServerMapDataManager : public ::MapDataManager, public ::IServerMapDataMan
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 128> mUnkd83502;
+    ::ll::UntypedStorage<8, 128> mUnke5daeb;
     ::ll::UntypedStorage<8, 16>  mUnk3a525e;
     // NOLINTEND
 

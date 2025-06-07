@@ -6,7 +6,7 @@ struct ReplayStateTrackerDiff {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk71a5c4;
+    ::ll::UntypedStorage<8, 32> mUnk52287e;
     ::ll::UntypedStorage<8, 16> mUnk49779f;
     ::ll::UntypedStorage<1, 2>  mUnk9e9943;
     ::ll::UntypedStorage<4, 16> mUnke8275a;

@@ -200,7 +200,7 @@ public:
         ::CommandOutput&                                              output
     ) const;
 
-    MCAPI void objectives(::Scoreboard& scoreboard, ::CommandOrigin const& output, ::CommandOutput& origin) const;
+    MCAPI void objectives(::Scoreboard& scoreboard, ::CommandOrigin const& origin, ::CommandOutput& output) const;
 
     MCAPI void players(::Scoreboard& scoreboard, ::CommandOrigin const& origin, ::CommandOutput& output) const;
 

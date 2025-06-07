@@ -36,7 +36,7 @@ public:
     virtual bool sameItem(::ItemDescriptor::ItemEntry const& otherItem, bool compareAux) const /*override*/;
 
     // vIndex: 3
-    virtual ::std::string const& getFullName() const /*override*/;
+    virtual ::std::string getFullName() const /*override*/;
 
     // vIndex: 5
     virtual ::ItemDescriptor::ItemEntry getItem() const /*override*/;
@@ -74,7 +74,7 @@ public:
 
     MCNAPI bool $sameItem(::ItemDescriptor::ItemEntry const& otherItem, bool compareAux) const;
 
-    MCNAPI ::std::string const& $getFullName() const;
+    MCNAPI ::std::string $getFullName() const;
 
     MCNAPI ::ItemDescriptor::ItemEntry $getItem() const;
 

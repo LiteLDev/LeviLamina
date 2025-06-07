@@ -3,13 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/entity/enums/ClientInputLockCategory.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -30,15 +29,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<bool, ::Scripting::Error>
-    _getPermissionCategoryV1(::ClientInputLockCategory category) const;
+    MCNAPI ::Scripting::Result_deprecated<bool> _getPermissionCategoryV1(::ClientInputLockCategory category) const;
 
-    MCNAPI ::Scripting::Result<bool, ::Scripting::Error>
-    _getPermissionCategoryV2(::ClientInputLockCategory category) const;
+    MCNAPI ::Scripting::Result_deprecated<bool> _getPermissionCategoryV2(::ClientInputLockCategory category) const;
 
-    MCNAPI ::Scripting::Result<void> _setPermissionCategoryV1(::ClientInputLockCategory category, bool isEnabled);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    _setPermissionCategoryV1(::ClientInputLockCategory category, bool isEnabled);
 
-    MCNAPI ::Scripting::Result<void> _setPermissionCategoryV2(::ClientInputLockCategory category, bool isEnabled);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    _setPermissionCategoryV2(::ClientInputLockCategory category, bool isEnabled);
     // NOLINTEND
 
 public:

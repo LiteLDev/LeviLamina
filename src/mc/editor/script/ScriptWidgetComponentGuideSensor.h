@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/WidgetComponentType.h"
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/editor/script/ScriptWidgetComponentBase.h"
 
@@ -14,6 +13,7 @@ namespace Editor { class ServiceProviderCollection; }
 namespace Editor::ScriptModule { class ScriptWidget; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentGuideSensorOptions; }
 namespace Editor::ScriptModule { class ScriptWidgetService; }
+namespace Scripting { struct ClassBinding; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -22,21 +22,24 @@ namespace Editor::ScriptModule {
 class ScriptWidgetComponentGuideSensor : public ::Editor::ScriptModule::ScriptWidgetComponentBase {
 public:
     // prevent constructor by default
+    ScriptWidgetComponentGuideSensor& operator=(ScriptWidgetComponentGuideSensor const&);
     ScriptWidgetComponentGuideSensor();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
+    // vIndex: 2
     virtual ~ScriptWidgetComponentGuideSensor() /*override*/ = default;
 
-    // vIndex: 2
+    // vIndex: 3
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptWidgetComponentGuideSensor(::Editor::ScriptModule::ScriptWidgetComponentGuideSensor const&);
+
     MCNAPI ScriptWidgetComponentGuideSensor(
         ::Editor::ServiceProviderCollection&                                             serviceProviders,
         ::mce::UUID const&                                                               componentId,
@@ -50,13 +53,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentGuideSensor>
-    bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentGuideSensor const&);
+
     MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                             serviceProviders,
         ::mce::UUID const&                                                               componentId,

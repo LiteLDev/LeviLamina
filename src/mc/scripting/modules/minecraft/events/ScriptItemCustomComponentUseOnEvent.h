@@ -20,8 +20,8 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptItemCustomComponentUseOnEvent : public ::ScriptModuleMinecraft::ScriptItemUseOnEvent,
-                                             public ::ScriptModuleMinecraft::ScriptItemCustomComponentAfterEvent {
+struct ScriptItemCustomComponentUseOnEvent : public ::ScriptModuleMinecraft::ScriptItemCustomComponentAfterEvent,
+                                             public ::ScriptModuleMinecraft::ScriptItemUseOnEvent {
 public:
     // ScriptItemCustomComponentUseOnEvent inner types declare
     // clang-format off
@@ -54,11 +54,11 @@ public:
         MCNAPI IntermediateStorage(
             bool&              result,
             ::ItemStack const& initialItemStack,
-            ::ItemStack&       actor,
-            ::Actor&           location,
-            ::BlockPos         face,
-            uchar              clickPos,
-            ::Vec3
+            ::ItemStack&,
+            ::Actor&   actor,
+            ::BlockPos location,
+            uchar      face,
+            ::Vec3     clickPos
         );
 
         MCNAPI ~IntermediateStorage();
@@ -70,11 +70,11 @@ public:
         MCNAPI void* $ctor(
             bool&              result,
             ::ItemStack const& initialItemStack,
-            ::ItemStack&       actor,
-            ::Actor&           location,
-            ::BlockPos         face,
-            uchar              clickPos,
-            ::Vec3
+            ::ItemStack&,
+            ::Actor&   actor,
+            ::BlockPos location,
+            uchar      face,
+            ::Vec3     clickPos
         );
         // NOLINTEND
 

@@ -15,6 +15,7 @@
 // auto generated forward declare list
 // clang-format off
 class AllowList;
+class DefaultCommandsContextProvider;
 class EntityContext;
 class EntityRegistry;
 class EntitySystems;
@@ -71,6 +72,7 @@ public:
     ::ll::TypedStorage<8, 8, double>                                                  mFrameDuration;
     ::ll::TypedStorage<8, 8, double>                                                  mLastFrameStart;
     ::ll::TypedStorage<8, 8, ::std::chrono::seconds>                                  mMaxPlayerIdleTime;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DefaultCommandsContextProvider>>     mDefaultCommandsContextProvider;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftCommands>>                  mCommands;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::GameSession>>                        mGameSession;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::GameTestLevelListener>>              mGameTestLevelListener;
@@ -85,7 +87,8 @@ public:
     ::ll::TypedStorage<
         8,
         8,
-        ::std::unique_ptr<::Bedrock::PubSub::Publisher<void(::Level*), ::Bedrock::PubSub::ThreadModel::SingleThreaded>>>
+        ::std::unique_ptr<
+            ::Bedrock::PubSub::Publisher<void(::Level*), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>>
         mLevelSubscribers;
     // NOLINTEND
 
@@ -163,19 +166,21 @@ public:
     MCAPI bool hostMultiplayer(
         ::std::string const&                                                 serverName,
         ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity,
-        ::Player*                                                            localPlayerId,
-        ::mce::UUID const&                                                   clientNetworkHandler,
-        ::std::unique_ptr<::NetEventCallback>                                maxChunkRadius,
-        int                                                                  connectionDefinition,
-        bool                                                                 packIdToContentKey,
-        ::ConnectionDefinition const&                                        scheduler,
-        ::std::unordered_map<::PackIdVersion, ::std::string> const&          textFilteringProcessor,
-        ::Scheduler&                                                         packetHandlerConfig,
-        ::TextFilteringProcessor*                                            localPlayer,
-        ::NetworkServerConfig const&                                         shouldAnnounce
+        ::Player*                                                            localPlayer,
+        ::mce::UUID const&                                                   localPlayerId,
+        ::std::unique_ptr<::NetEventCallback>                                clientNetworkHandler,
+        int                                                                  maxChunkRadius,
+        bool                                                                 shouldAnnounce,
+        ::ConnectionDefinition const&                                        connectionDefinition,
+        ::std::unordered_map<::PackIdVersion, ::std::string> const&          packIdToContentKey,
+        ::Scheduler&                                                         scheduler,
+        ::TextFilteringProcessor*                                            textFilteringProcessor,
+        ::NetworkServerConfig const&                                         packetHandlerConfig
     );
 
     MCAPI void init();
+
+    MCAPI void initCommands();
 
     MCAPI void setupServerCommands(::std::string const& networkCommands, ::std::string const& networkTestCommands);
 

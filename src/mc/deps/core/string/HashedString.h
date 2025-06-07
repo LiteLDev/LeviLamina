@@ -34,6 +34,8 @@ public:
 
     MCNAPI bool empty() const;
 
+    MCNAPI ::std::string const& getString() const;
+
     MCNAPI explicit operator ::std::string_view() const;
 
     MCNAPI ::HashedString& operator=(::HashedString const& rhs);

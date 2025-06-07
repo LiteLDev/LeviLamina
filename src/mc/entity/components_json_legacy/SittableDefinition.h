@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace JsonUtil { class EmptyClass; }
-// clang-format on
-
 class SittableDefinition {
 public:
     // member variables
@@ -25,10 +17,14 @@ public:
     SittableDefinition();
 
 public:
-    // static functions
+    // member functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SittableDefinition>>& root
-    );
+    MCNAPI ~SittableDefinition();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

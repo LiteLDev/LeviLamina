@@ -4,16 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/world/item/components/NetworkedItemComponent.h"
-#include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
 class HashedString;
 class ItemStackBase;
-class SemVersion;
 namespace SharedTypes::v1_20_50 { struct DiggerItemComponent; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class DiggerItemComponent : public ::NetworkedItemComponent<::DiggerItemComponent> {
@@ -87,12 +84,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
-        ::std::optional<::SemVersion>          requiredToggles
-    );
-
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 

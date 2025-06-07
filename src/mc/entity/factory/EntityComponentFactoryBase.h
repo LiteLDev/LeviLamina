@@ -9,7 +9,6 @@
 // clang-format off
 class DefinitionInstanceGroup;
 class EntityContext;
-class EntityRegistry;
 // clang-format on
 
 class EntityComponentFactoryBase : public ::Bedrock::EnableNonOwnerReferences {
@@ -21,19 +20,11 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCNAPI void addComponents(
-        ::EntityRegistry&                registry,
-        ::EntityContext&                 entity,
-        ::DefinitionInstanceGroup const& definitionGroup
-    ) const;
+    MCNAPI static void addComponents(::EntityContext& entity, ::DefinitionInstanceGroup const& definitionGroup);
 
-    MCNAPI void removeComponents(
-        ::EntityRegistry&                registry,
-        ::EntityContext&                 entity,
-        ::DefinitionInstanceGroup const& definitionGroup
-    ) const;
+    MCNAPI static void removeComponents(::EntityContext& entity, ::DefinitionInstanceGroup const& definitionGroup);
     // NOLINTEND
 
 public:

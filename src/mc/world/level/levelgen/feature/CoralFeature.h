@@ -57,12 +57,12 @@ public:
     ) const;
 
     MCNAPI void _buildSmallClump(
-        ::BlockSource&                                 region,
-        ::BlockPos const&                              pos,
-        ::Random&                                      random,
-        ::std::vector<::BlockPos>&                     topDec,
-        ::std::vector<::std::pair<::BlockPos, uchar>>& block,
-        ::gsl::not_null<::Block const*>
+        ::BlockSource&             region,
+        ::BlockPos const&          pos,
+        ::Random&                  random,
+        ::std::vector<::BlockPos>& topDec,
+        ::std::vector<::std::pair<::BlockPos, uchar>>&,
+        ::gsl::not_null<::Block const*> block
     ) const;
 
     MCNAPI void _buildSpire(
@@ -97,8 +97,8 @@ public:
         ::Random&                       random,
         ::BlockPos const&               pos,
         ::gsl::not_null<::Block const*> block,
-        float                           iteration,
-        int                             chance,
+        float                           chance,
+        int                             iteration,
         bool                            negateChance
     ) const;
 

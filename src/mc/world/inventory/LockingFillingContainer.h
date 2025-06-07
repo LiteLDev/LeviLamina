@@ -30,16 +30,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 46
+    // vIndex: 49
     virtual int clearInventory(int resizeTo) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 45
     virtual void swapSlots(int from, int to) /*override*/;
 
     // vIndex: 13
     virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced) /*override*/;
 
-    // vIndex: 47
+    // vIndex: 50
     virtual ::std::unique_ptr<::ListTag> saveToTag(::SaveContext const& saveContext) const /*override*/;
 
     // vIndex: 7
@@ -52,7 +52,7 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    // vIndex: 49
+    // vIndex: 52
     virtual void
     _trySetInSlot(::ItemStack& item, int const& slot, int const& inventorySize, int& backCompatOffset) /*override*/;
 

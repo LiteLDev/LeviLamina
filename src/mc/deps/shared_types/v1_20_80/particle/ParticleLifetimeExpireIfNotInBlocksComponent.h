@@ -33,7 +33,7 @@ public:
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
     // vIndex: 0
-    virtual ~ParticleLifetimeExpireIfNotInBlocksComponent() /*override*/ = default;
+    virtual ~ParticleLifetimeExpireIfNotInBlocksComponent() /*override*/;
     // NOLINTEND
 
 public:
@@ -46,6 +46,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::HashedString const& NameID();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

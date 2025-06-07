@@ -3,8 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ClassBinding; }
+// clang-format on
 
 namespace Editor::ScriptModule {
 
@@ -26,13 +30,13 @@ public:
     // NOLINTBEGIN
     MCNAPI bool isPaused() const;
 
-    MCNAPI ::Scripting::Result<void> setPaused(bool isPaused);
+    MCNAPI ::Scripting::Result_deprecated<void> setPaused(bool isPaused);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::EditorSimulationState> bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 };
 

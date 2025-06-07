@@ -72,16 +72,16 @@ public:
     // vIndex: 23
     virtual void stopOpen(::Player& player) /*override*/;
 
-    // vIndex: 31
+    // vIndex: 34
     virtual void setContainerChanged(int slot) /*override*/;
 
     // vIndex: 14
     virtual void onRemoved(::BlockSource&) /*override*/;
 
-    // vIndex: 29
+    // vIndex: 32
     virtual bool canPushInItem(int slot, int face, ::ItemStack const& item) const /*override*/;
 
-    // vIndex: 30
+    // vIndex: 33
     virtual bool canPullOutItem(int slot, int face, ::ItemStack const&) const /*override*/;
 
     // vIndex: 34

@@ -17,20 +17,12 @@ class RideableComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 96, ::RideableComponentData> mData;
+    ::ll::TypedStorage<8, 168, ::RideableComponentData> mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RideableComponent& operator=(RideableComponent const&);
-    RideableComponent(RideableComponent const&);
-    RideableComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RideableComponent(::RideableComponent&&);
-
     MCAPI void _setCanPlayerRide(::Player& player, bool canRide) const;
 
     MCAPI bool areSeatsFull(::Actor const& owner) const;
@@ -41,14 +33,6 @@ public:
 
     MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction) const;
 
-    MCAPI ::RideableComponent& operator=(::RideableComponent&&);
-
     MCAPI bool pullInEntity(::Actor& vehicle, ::Actor& passenger) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::RideableComponent&&);
     // NOLINTEND
 };

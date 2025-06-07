@@ -16,11 +16,11 @@ struct CappedSurfaceBiomeComponentGlue : public ::IBiomeComponentGlue {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkcda77f;
-    ::ll::UntypedStorage<8, 24> mUnk1425f2;
-    ::ll::UntypedStorage<8, 8>  mUnkbd03ef;
-    ::ll::UntypedStorage<8, 8>  mUnk8fd969;
-    ::ll::UntypedStorage<8, 8>  mUnk5cea50;
+    ::ll::UntypedStorage<8, 24> mUnk51c66e;
+    ::ll::UntypedStorage<8, 24> mUnkcaf8a8;
+    ::ll::UntypedStorage<8, 8>  mUnk70b64c;
+    ::ll::UntypedStorage<8, 8>  mUnk1e1153;
+    ::ll::UntypedStorage<8, 8>  mUnk70dea7;
     // NOLINTEND
 
 public:
@@ -44,13 +44,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~CappedSurfaceBiomeComponentGlue() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ~CappedSurfaceBiomeComponentGlue() /*override*/ = default;
     // NOLINTEND
 
 public:

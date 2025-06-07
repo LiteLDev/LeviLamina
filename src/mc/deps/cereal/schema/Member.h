@@ -24,8 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::cereal::internal::Member& operator=(::cereal::internal::Member&&);
-
     MCNAPI ::cereal::internal::Member& operator=(::cereal::internal::Member const&);
 
     MCNAPI ~Member();

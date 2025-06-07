@@ -28,7 +28,7 @@ class ContainerComponent : public ::ContainerContentChangeListener, public ::Con
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 520, ::FillingContainer> mContainer;
+    ::ll::TypedStorage<8, 440, ::FillingContainer> mContainer;
     ::ll::TypedStorage<8, 8, ::Actor*>             mListenerShim;
     ::ll::TypedStorage<1, 1, bool>                 mCanBeSiphonedFrom;
     ::ll::TypedStorage<1, 1, bool>                 mPrivate;
@@ -81,15 +81,15 @@ public:
 
     MCNAPI ::ContainerComponent& operator=(::ContainerComponent&& other);
 
-    MCNAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const&, ::DataLoadHelper&);
+    MCNAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
     MCNAPI void rebuildContainer(
         ::Actor&                             owner,
         ::SharedTypes::Legacy::ContainerType type,
         int                                  size,
         bool                                 canBesiphonedFrom,
-        int                                  isPrivate,
-        bool
+        int,
+        bool isPrivate
     );
 
     MCNAPI void removeItemsOfType(::ItemStack const& item, int count);

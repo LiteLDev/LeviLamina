@@ -3,24 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/ContiguousSelectionType.h"
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
+class BoundingBox;
+class Vec3;
+namespace Editor::ScriptModule { class ScriptBlockMaskList; }
 namespace Editor::ScriptModule { class ScriptContiguousSelectionProperties; }
 namespace Editor::ScriptModule { class ScriptQuickExtrudeProperties; }
-namespace Editor::ScriptModule { class ScriptSelectionContainer; }
+namespace Editor::ScriptModule { class ScriptRelativeVolumeListBlockVolume; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptBlockType; }
 namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
 namespace ScriptModuleMinecraft { class ScriptCompoundBlockVolume; }
 namespace ScriptModuleMinecraft { class ScriptListBlockVolume; }
-namespace Scripting { struct Error; }
+namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct EnumBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -44,44 +45,74 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> _fillVolume(
+    MCNAPI ::Scripting::Result_deprecated<void> _fillVolume(
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase>,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>,
-            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptSelectionContainer>> const&
+            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>> const&
             volumeVariant,
         ::std::optional<::std::variant<
             ::std::string,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const> const&
             optblockVariant
-    );
+    ) const;
 
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>,
-        ::Scripting::Error>
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>>
     _getContiguousSelection(
         ::std::optional<::Editor::ScriptModule::ScriptContiguousSelectionProperties>& scriptContiguousProperties
     );
 
-    MCNAPI ::Scripting::
-        Result<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptListBlockVolume>, ::Scripting::Error>
-        _getFacePreviewSelection(
-            ::std::optional<::Editor::ScriptModule::ScriptQuickExtrudeProperties>& scriptQuickExtrudeProperties
-        );
+    MCNAPI ::Vec3 _getDimensionMaxLocation() const;
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Vec3 _getDimensionMinLocation() const;
+
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptListBlockVolume>>
+    _getFacePreviewSelection(
+        ::std::optional<::Editor::ScriptModule::ScriptQuickExtrudeProperties>& scriptQuickExtrudeProperties
+    );
+
+    MCNAPI bool _isLocationInsideCurrentDimensionBounds(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase>,
+            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>,
+            ::Vec3,
+            ::BoundingBox> volumeVariant
+    ) const;
+
+    MCNAPI ::Scripting::Result_deprecated<void>
     _quickExtrude(::std::optional<::Editor::ScriptModule::ScriptQuickExtrudeProperties>& scriptQuickExtrudeProperties);
+
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>
+    _shrinkWrapVolume(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase>,
+            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>> const&
+            volumeVariant
+    );
+
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>>
+    _trimVolumeToFitContents(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase>,
+            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>> const&
+                                                                            volumeVariant,
+        bool                                                                retainMarqueeAfterTrimming,
+        bool                                                                ignoreLiquid,
+        bool                                                                ignoreNoCollision,
+        ::std::optional<::Editor::ScriptModule::ScriptBlockMaskList> const& optionalScriptBlockMask
+    ) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::
-        EnumBindingBuilder<::Editor::BlockUtils::ContiguousSelectionType, ::Editor::BlockUtils::ContiguousSelectionType>
-        bindContiguousSelectionTypeEnums();
+    MCNAPI static ::Scripting::EnumBinding bindContiguousSelectionTypeEnums();
 
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptBlockUtilityService> bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 };
 

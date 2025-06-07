@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/comprehensive/ParticleType.h"
-#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/level/block/DripstoneThickness.h"
 #include "mc/world/level/block/FallingBlock.h"
 #include "mc/world/level/material/MaterialType.h"
@@ -18,13 +17,11 @@ class BlockLegacy;
 class BlockPos;
 class BlockSource;
 class Experiments;
-class GetCollisionShapeInterface;
-class IConstBlockSource;
-class Random;
 class Vec3;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
+namespace BlockEvents { class BlockRandomTickEvent; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -32,72 +29,53 @@ class PointedDripstoneBlock : public ::FallingBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 125
+    // vIndex: 124
     virtual ::BlockLegacy& init() /*override*/;
 
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 138
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 79
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 123
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 87
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 137
-    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    // vIndex: 15
-    virtual ::Vec3 randomlyModifyPosition(::BlockPos const& pos) const /*override*/;
-
-    // vIndex: 92
+    // vIndex: 91
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    // vIndex: 17
+    // vIndex: 16
     virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const
         /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual bool falling() const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual void onLand(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
     // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
-    // vIndex: 5
-    virtual ::AABB getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const& pos,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const /*override*/;
-
-    // vIndex: 9
-    virtual ::AABB const&
-    getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
-        /*override*/;
-
-    // vIndex: 153
+    // vIndex: 152
     virtual void
     startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const
         /*override*/;
@@ -114,6 +92,8 @@ public:
     MCAPI void _updateBlockThickness(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
@@ -178,6 +158,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static float const& MAX_HORIZONTAL_OFFSET();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
@@ -193,10 +179,6 @@ public:
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
-
-    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCAPI ::Vec3 $randomlyModifyPosition(::BlockPos const& pos) const;
 
     MCAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
@@ -217,16 +199,6 @@ public:
     MCFOLD ::std::string $getDustParticleName(::Block const&) const;
 
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
-
-    MCAPI ::AABB $getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const& pos,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const;
-
-    MCAPI ::AABB const&
-    $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
     MCAPI void
     $startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const;

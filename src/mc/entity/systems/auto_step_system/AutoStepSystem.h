@@ -12,14 +12,11 @@ struct AutoStepRequestFlagComponent;
 struct MaxAutoStepComponent;
 struct MoveRequestComponent;
 struct SubBBsComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 namespace AutoStepSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createSystem();
-
 MCNAPI void doAutoStepSystemImpl(
     ::entt::type_list<::Include<::AutoStepRequestFlagComponent>>,
     ::MaxAutoStepComponent const& maxAutoStepComponent,

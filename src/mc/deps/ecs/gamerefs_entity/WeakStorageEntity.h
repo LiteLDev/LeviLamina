@@ -18,4 +18,16 @@ public:
     ::ll::TypedStorage<8, 16, ::WeakRef<::EntityRegistry>> mRegistry;
     ::ll::TypedStorage<4, 4, ::EntityId>                   mEntity;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    WeakStorageEntity& operator=(WeakStorageEntity const&);
+    WeakStorageEntity(WeakStorageEntity const&);
+    WeakStorageEntity();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::WeakStorageEntity& operator=(::WeakStorageEntity&&);
+    // NOLINTEND
 };

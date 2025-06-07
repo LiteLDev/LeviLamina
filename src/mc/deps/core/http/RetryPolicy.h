@@ -21,6 +21,27 @@ public:
     RetryPolicy& operator=(RetryPolicy const&);
     RetryPolicy(RetryPolicy const&);
     RetryPolicy();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~RetryPolicy();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::function<::std::optional<::std::chrono::seconds>(::Bedrock::Http::Response const&)> Chained(
+        ::std::initializer_list<
+            ::std::function<::std::optional<::std::chrono::seconds>(::Bedrock::Http::Response const&)>>&& retryChain
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Bedrock::Http

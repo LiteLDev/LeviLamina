@@ -34,13 +34,12 @@ public:
 public:
     // prevent constructor by default
     ScriptSettings& operator=(ScriptSettings const&);
+    ScriptSettings(ScriptSettings const&);
     ScriptSettings();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptSettings(::ScriptSettings const&);
-
     MCNAPI ScriptSettings(::ScriptSettings&&);
 
     MCNAPI ~ScriptSettings();
@@ -49,8 +48,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptSettings const&);
-
     MCNAPI void* $ctor(::ScriptSettings&&);
     // NOLINTEND
 

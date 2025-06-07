@@ -2,19 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/common/editor/SplineType.h"
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/editor/services/render_helper/PrimitiveType.h"
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct EnumBinding; }
+// clang-format on
 
 namespace Editor::ScriptModule::RenderHelper {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Scripting::EnumBindingBuilder<::Editor::RenderHelper::PrimitiveType, ::Editor::RenderHelper::PrimitiveType>
-bindPrimitiveTypeEnums();
+MCNAPI ::Scripting::EnumBinding bindPrimitiveTypeEnums();
 
-MCNAPI ::Scripting::EnumBindingBuilder<::Editor::RenderHelper::SplineType, ::Editor::RenderHelper::SplineType>
-bindSplineEnums();
+MCNAPI ::Scripting::EnumBinding bindSplineEnums();
 // NOLINTEND
 
 } // namespace Editor::ScriptModule::RenderHelper

@@ -97,13 +97,13 @@ public:
     MCAPI ::Actor* getActorTarget(::SharedTypes::Legacy::FilterSubject subject) const;
 
     MCAPI ::RenderParams& init(
-        ::BaseActorRenderContext*            actor,
-        ::Actor*                             animationComponent,
-        ::AnimationComponent*                variableMap,
-        ::MolangVariableMap*                 model,
-        ::std::shared_ptr<::DataDrivenModel> modelScale,
-        float                                baseActorRenderContext,
-        float                                frameAlpha
+        ::BaseActorRenderContext*            baseActorRenderContext,
+        ::Actor*                             actor,
+        ::AnimationComponent*                animationComponent,
+        ::MolangVariableMap*                 variableMap,
+        ::std::shared_ptr<::DataDrivenModel> model,
+        float                                frameAlpha,
+        float                                modelScale
     );
 
     MCAPI ::RenderParams& operator=(::RenderParams const&);

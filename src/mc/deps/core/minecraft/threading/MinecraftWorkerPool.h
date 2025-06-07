@@ -55,8 +55,6 @@ public:
 
     MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& RENDERING_HELPERS();
 
-    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& VR();
-
     MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& WATCHDOG();
     // NOLINTEND
 };

@@ -11,6 +11,7 @@ enum class SortBy : uint {
     StartDate     = 3,
     Relevance     = 4,
     Installed     = 5,
+    Count         = 6,
 };
 
 }

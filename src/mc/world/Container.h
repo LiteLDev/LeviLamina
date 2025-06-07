@@ -36,7 +36,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 128> mUnk6f83ba;
+        ::ll::UntypedStorage<8, 48> mUnka32e8c;
         // NOLINTEND
 
     public:
@@ -68,7 +68,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::ContainerContentChangeListener*>> mContentChangeListeners;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::ContainerSizeChangeListener*>>    mSizeChangeListeners;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::ContainerCloseListener*>>         mCloseListeners;
-    ::ll::TypedStorage<8, 128, ::Container::PublisherWrapper>                          mRemovedPublisher;
+    ::ll::TypedStorage<8, 48, ::Container::PublisherWrapper>                           mRemovedPublisher;
     ::ll::TypedStorage<
         8,
         40,
@@ -172,45 +172,54 @@ public:
     virtual int getItemCount(::ItemStack const& compare) const;
 
     // vIndex: 28
-    virtual int findFirstSlotForItem(::ItemStack const& item) const;
+    virtual int firstEmptySlot() const;
 
     // vIndex: 29
-    virtual bool canPushInItem(int, int, ::ItemStack const&) const;
+    virtual int firstItem() const;
 
     // vIndex: 30
-    virtual bool canPullOutItem(int, int, ::ItemStack const&) const;
+    virtual int findFirstSlotForItem(::ItemStack const& item) const;
 
     // vIndex: 31
-    virtual void setContainerChanged(int slot);
+    virtual int reverseFindFirstSlotForItem(::ItemStack const& item) const;
 
     // vIndex: 32
-    virtual void setContainerMoved();
+    virtual bool canPushInItem(int, int, ::ItemStack const&) const;
 
     // vIndex: 33
-    virtual void setCustomName(::Bedrock::Safety::RedactableString const& name);
+    virtual bool canPullOutItem(int, int, ::ItemStack const&) const;
 
     // vIndex: 34
-    virtual bool hasCustomName() const;
+    virtual void setContainerChanged(int slot);
 
     // vIndex: 35
-    virtual void readAdditionalSaveData(::CompoundTag const& tag);
+    virtual void setContainerMoved();
 
     // vIndex: 36
-    virtual void addAdditionalSaveData(::CompoundTag& tag);
+    virtual void setCustomName(::Bedrock::Safety::RedactableString const& name);
 
     // vIndex: 37
+    virtual bool hasCustomName() const;
+
+    // vIndex: 38
+    virtual void readAdditionalSaveData(::CompoundTag const& tag);
+
+    // vIndex: 39
+    virtual void addAdditionalSaveData(::CompoundTag& tag);
+
+    // vIndex: 40
     virtual void createTransactionContext(
         ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
         ::std::function<void()>                                                          execute
     );
 
-    // vIndex: 38
+    // vIndex: 41
     virtual void initializeContainerContents(::BlockSource& region);
 
-    // vIndex: 39
+    // vIndex: 42
     virtual bool isEmpty() const;
 
-    // vIndex: 40
+    // vIndex: 43
     virtual bool isSlotDisabled(int) const;
     // NOLINTEND
 
@@ -314,7 +323,13 @@ public:
 
     MCAPI int $getItemCount(::ItemStack const& compare) const;
 
+    MCAPI int $firstEmptySlot() const;
+
+    MCAPI int $firstItem() const;
+
     MCAPI int $findFirstSlotForItem(::ItemStack const& item) const;
+
+    MCAPI int $reverseFindFirstSlotForItem(::ItemStack const& item) const;
 
     MCFOLD bool $canPushInItem(int, int, ::ItemStack const&) const;
 

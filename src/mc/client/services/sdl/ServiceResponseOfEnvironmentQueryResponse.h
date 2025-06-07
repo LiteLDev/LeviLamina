@@ -8,7 +8,7 @@ struct ServiceResponseOfEnvironmentQueryResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk718f8d;
+    ::ll::UntypedStorage<8, 32> mUnkffe712;
     ::ll::UntypedStorage<8, 32> mUnk7695fe;
     // NOLINTEND
 

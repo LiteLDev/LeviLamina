@@ -27,6 +27,7 @@ public:
 
 public:
     // prevent constructor by default
+    WorkDefinition& operator=(WorkDefinition const&);
     WorkDefinition(WorkDefinition const&);
     WorkDefinition();
 
@@ -34,21 +35,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~WorkDefinition() /*override*/;
+    virtual ~WorkDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void initialize(::EntityContext& entity, ::WorkGoal& goal) const;
-
-    MCNAPI ::WorkDefinition& operator=(::WorkDefinition const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

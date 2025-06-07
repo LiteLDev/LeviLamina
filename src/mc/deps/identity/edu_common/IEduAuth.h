@@ -20,7 +20,7 @@ class IEduAuth {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk6cf795;
+    ::ll::UntypedStorage<8, 432> mUnkc8d11d;
     // NOLINTEND
 
 public:
@@ -60,15 +60,12 @@ public:
 
     // vIndex: 6
     virtual void authenticateSilentlyCredentialed();
-
-    // vIndex: 7
-    virtual void setAppSessionId(::std::string const&);
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Identity::EduAuthTokenPair getTenantTokens(::std::string tenantID) const;
+    MCNAPI ::Identity::EduAuthTokenPair getHostTokens() const;
     // NOLINTEND
 
 public:

@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual uint checkPacket(::MinecraftPacketIds packet) /*override*/;
+    virtual uint checkPacket(::MinecraftPacketIds) /*override*/;
 
     // vIndex: 1
     virtual ~CompositePacketLimitAlgorithm() /*override*/ = default;
@@ -32,7 +32,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI uint $checkPacket(::MinecraftPacketIds packet);
+
     // NOLINTEND
 
 public:

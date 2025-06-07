@@ -12,8 +12,6 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-struct PackIdVersion;
-struct PackInfoData;
 // clang-format on
 
 class ResourcePacksInfoPacket : public ::Packet {
@@ -22,10 +20,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 80, ::PacksInfoData> mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ResourcePacksInfoPacket();
 
 public:
     // virtual functions
@@ -44,28 +38,6 @@ public:
 
     // vIndex: 0
     virtual ~ResourcePacksInfoPacket() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ResourcePacksInfoPacket(
-        bool                           resourcePackRequired,
-        ::std::vector<::PackInfoData>& resourcePacks,
-        bool                           hasAddonPacks,
-        ::PackIdVersion const&         worldTemplateIdVersion
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        bool                           resourcePackRequired,
-        ::std::vector<::PackInfoData>& resourcePacks,
-        bool                           hasAddonPacks,
-        ::PackIdVersion const&         worldTemplateIdVersion
-    );
     // NOLINTEND
 
 public:

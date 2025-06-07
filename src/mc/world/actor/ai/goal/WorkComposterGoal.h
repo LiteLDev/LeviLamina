@@ -10,7 +10,7 @@ class WorkComposterGoal : public ::WorkGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 208, ::WorkComposterDefinition> mDefinition;
+    ::ll::TypedStorage<8, 176, ::WorkComposterDefinition> mDefinition;
     ::ll::TypedStorage<4, 4, int>                         mTimesComposted;
     ::ll::TypedStorage<8, 8, uint64>                      mNextUseTick;
     // NOLINTEND

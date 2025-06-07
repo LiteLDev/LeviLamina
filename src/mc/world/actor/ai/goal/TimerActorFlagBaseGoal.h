@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Mob&>                           mMob;
     ::ll::TypedStorage<4, 4, ::ActorFlags>                     mActorFlag;
-    ::ll::TypedStorage<8, 272, ::TimerActorFlagBaseDefinition> mDefinition;
+    ::ll::TypedStorage<8, 240, ::TimerActorFlagBaseDefinition> mDefinition;
     ::ll::TypedStorage<4, 8, ::IntRange>                       mDurationRangeTicks;
     ::ll::TypedStorage<4, 8, ::IntRange>                       mCooldownRangeTicks;
     ::ll::TypedStorage<8, 8, ::Tick>                           mCooldownEndTick;

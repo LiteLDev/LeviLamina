@@ -33,6 +33,8 @@ public:
 
     MCNAPI void set(::ExpressionNode const& expression);
 
+    MCNAPI void set(::ExpressionNode const& expression, ::Vec3 const& axis);
+
     MCNAPI void set(::ExpressionNode const& expression, int axisIndex);
 
     MCNAPI ~KeyFrameTransform();

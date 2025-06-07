@@ -8,9 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 struct HCInitArgs;
-struct HC_PERFORM_ENV;
-struct HttpPerformInfo;
-struct WebSocketPerformInfo;
+namespace xbox::httpclient { class NetworkState; }
 namespace xbox::httpclient { struct http_retry_after_api_state; }
 // clang-format on
 
@@ -32,10 +30,8 @@ public:
 
     MCNAPI ::xbox::httpclient::http_retry_after_api_state get_retry_state(uint);
 
-    MCNAPI http_singleton(
-        ::HttpPerformInfo const&,
-        ::WebSocketPerformInfo const&,
-        ::std::unique_ptr<::HC_PERFORM_ENV, ::http_alloc_deleter<::HC_PERFORM_ENV>>&&
+    MCNAPI explicit http_singleton(
+        ::std::unique_ptr<::xbox::httpclient::NetworkState, ::http_alloc_deleter<::xbox::httpclient::NetworkState>>
     );
 
     MCNAPI void set_retry_state(uint, ::xbox::httpclient::http_retry_after_api_state const&);
@@ -59,9 +55,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::HttpPerformInfo const&,
-        ::WebSocketPerformInfo const&,
-        ::std::unique_ptr<::HC_PERFORM_ENV, ::http_alloc_deleter<::HC_PERFORM_ENV>>&&
+        ::std::unique_ptr<::xbox::httpclient::NetworkState, ::http_alloc_deleter<::xbox::httpclient::NetworkState>>
     );
     // NOLINTEND
 

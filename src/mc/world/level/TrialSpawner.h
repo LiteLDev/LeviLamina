@@ -18,12 +18,10 @@ class Level;
 class Mob;
 class Random;
 class SpawnData;
-class Tag;
 class TrialSpawnerConfigRegistry;
 class Vec3;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
-struct TrialSpawnerConfig;
 // clang-format on
 
 class TrialSpawner {
@@ -237,8 +235,6 @@ public:
     MCNAPI static bool _isOminous(::BlockSource& region, ::BlockPos pos);
 
     MCNAPI static void _removeMobByGameplay(::Level& level, ::Actor& mob);
-
-    MCNAPI static ::std::unique_ptr<::Tag> _saveConfig(::TrialSpawnerConfig& config);
     // NOLINTEND
 
 public:

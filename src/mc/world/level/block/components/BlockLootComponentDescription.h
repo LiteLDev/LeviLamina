@@ -15,7 +15,7 @@ struct BlockLootComponentDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk68f86e;
+    ::ll::UntypedStorage<8, 32> mUnk9e32a8;
     // NOLINTEND
 
 public:

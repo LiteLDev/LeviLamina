@@ -15,12 +15,12 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk63fa6d;
     ::ll::UntypedStorage<8, 32> mUnkf3fb41;
     ::ll::UntypedStorage<8, 24> mUnk777e87;
-    ::ll::UntypedStorage<8, 16> mUnk5d1d16;
+    ::ll::UntypedStorage<8, 16> mUnkc1df02;
     ::ll::UntypedStorage<8, 16> mUnk9af3c4;
     ::ll::UntypedStorage<8, 8>  mUnkc0023e;
     ::ll::UntypedStorage<1, 1>  mUnkf27daa;
     ::ll::UntypedStorage<8, 16> mUnkc9df62;
-    ::ll::UntypedStorage<8, 16> mUnk7bccef;
+    ::ll::UntypedStorage<8, 16> mUnk7b74cc;
     // NOLINTEND
 
 public:

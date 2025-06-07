@@ -17,12 +17,12 @@ class GlazedTerracottaBlock : public ::FaceDirectionalBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 92
+    // vIndex: 91
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    // vIndex: 48
+    // vIndex: 47
     virtual bool isValidAuxValue(int value) const /*override*/;
 
     // vIndex: 0

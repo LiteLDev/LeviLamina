@@ -21,8 +21,8 @@ class WorldHistoryPackSource : public ::PackSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf5b2e1;
-    ::ll::UntypedStorage<1, 1>  mUnke41f05;
+    ::ll::UntypedStorage<8, 32> mUnkbc6895;
+    ::ll::UntypedStorage<1, 1>  mUnk712674;
     ::ll::UntypedStorage<8, 24> mUnk9aff05;
     ::ll::UntypedStorage<8, 24> mUnk4f8c50;
     ::ll::UntypedStorage<1, 1>  mUnkb16dc9;

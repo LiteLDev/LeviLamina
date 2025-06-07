@@ -33,12 +33,12 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::unique_ptr<::NetherFortressPiece> createPiece(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           footX,
+        ::Random&                                           random,
+        int                                                 footX,
         int                                                 footY,
         int                                                 footZ,
         int                                                 direction,
-        int                                                 genDepth,
-        int                                                 random
+        int                                                 genDepth
     );
     // NOLINTEND
 

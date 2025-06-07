@@ -29,6 +29,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void addTamingItemByName(::std::string const& name);
+
+    MCNAPI ~TameableDefinition();
     // NOLINTEND
 
 public:
@@ -37,5 +39,11 @@ public:
     MCNAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TameableDefinition>>& root
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

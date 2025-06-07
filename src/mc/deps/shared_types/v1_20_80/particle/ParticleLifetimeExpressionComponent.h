@@ -23,7 +23,7 @@ public:
 
 public:
     // prevent constructor by default
-    ParticleLifetimeExpressionComponent& operator=(ParticleLifetimeExpressionComponent const&);
+    ParticleLifetimeExpressionComponent(ParticleLifetimeExpressionComponent const&);
     ParticleLifetimeExpressionComponent();
 
 public:
@@ -39,12 +39,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ParticleLifetimeExpressionComponent(::SharedTypes::v1_20_80::ParticleLifetimeExpressionComponent const&);
-
-    MCNAPI ParticleLifetimeExpressionComponent(::SharedTypes::v1_20_80::ParticleLifetimeExpressionComponent&&);
-
     MCNAPI ::SharedTypes::v1_20_80::ParticleLifetimeExpressionComponent&
-    operator=(::SharedTypes::v1_20_80::ParticleLifetimeExpressionComponent&&);
+    operator=(::SharedTypes::v1_20_80::ParticleLifetimeExpressionComponent const&);
     // NOLINTEND
 
 public:
@@ -57,14 +53,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::HashedString const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleLifetimeExpressionComponent const&);
-
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleLifetimeExpressionComponent&&);
     // NOLINTEND
 
 public:

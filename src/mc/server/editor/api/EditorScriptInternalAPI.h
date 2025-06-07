@@ -3,11 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/deps/scripting/script_engine/Closure.h"
 
 // auto generated forward declare list
@@ -19,8 +18,8 @@ namespace Editor::API { struct EditorExtensionOptionalParameters; }
 namespace Editor::ScriptModule { class ScriptInternalPlayerServiceContext; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace ScriptModuleMinecraft { class ScriptRGBA; }
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 namespace Editor::API {
@@ -52,19 +51,18 @@ public:
         ::std::optional<::Editor::API::EditorExtensionOptionalParameters> options
     );
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error> fireTelemetryEvent(
+    MCNAPI ::Scripting::Result_deprecated<void> fireTelemetryEvent(
         ::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer,
         ::std::string const&                   source,
         ::std::string const&                   eventName,
         ::std::string const&                   metadata
     );
 
-    MCNAPI ::Scripting::Result<::ScriptModuleMinecraft::ScriptRGBA, ::Scripting::Error>
+    MCNAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptRGBA>
     getMapColorUnsafe(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer, ::Vec3 const& coordinate);
 
-    MCNAPI ::Scripting::Result<
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>,
-        ::Scripting::Error>
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>>
     getPlayerServiceContext(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer);
 
     MCNAPI ::Editor::API::EditorScriptInternalAPI& operator=(::Editor::API::EditorScriptInternalAPI&&);
@@ -73,7 +71,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::API::EditorScriptInternalAPI> bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 };
 

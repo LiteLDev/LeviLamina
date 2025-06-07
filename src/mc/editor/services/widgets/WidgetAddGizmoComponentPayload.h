@@ -19,10 +19,11 @@ class WidgetAddGizmoComponentPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnke3ecbc;
-    ::ll::UntypedStorage<1, 1> mUnk7ee091;
-    ::ll::UntypedStorage<1, 1> mUnk55b3c0;
-    ::ll::UntypedStorage<1, 1> mUnkd92587;
+    ::ll::UntypedStorage<1, 1>  mUnke3ecbc;
+    ::ll::UntypedStorage<1, 1>  mUnk7ee091;
+    ::ll::UntypedStorage<1, 1>  mUnk55b3c0;
+    ::ll::UntypedStorage<1, 1>  mUnkd92587;
+    ::ll::UntypedStorage<4, 16> mUnkd2003f;
     // NOLINTEND
 
 public:

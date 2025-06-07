@@ -10,8 +10,8 @@
 // clang-format off
 class BlockPos;
 namespace JigsawStructureUtils { struct JigsawBlockMetadataCacheHandle; }
-namespace SharedTypes::v1_21_50 { class JigsawBlockMetadata; }
-namespace SharedTypes::v1_21_50 { struct JigsawStructureMetadataFile; }
+namespace SharedTypes::v1_21_80 { class JigsawBlockMetadata; }
+namespace SharedTypes::v1_21_80 { struct JigsawStructureMetadataFile; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -25,11 +25,11 @@ MCNAPI bool canAttach(
     ::Rotation                                             rhsRotation
 );
 
-MCNAPI ::Puv::Loader<::SharedTypes::v1_21_50::JigsawStructureMetadataFile>
+MCNAPI ::Puv::Loader<::SharedTypes::v1_21_80::JigsawStructureMetadataFile>
 createMetadataLoader(::cereal::ReflectionCtx const& ctx);
 
 MCNAPI ::BlockPos getPosition(
-    ::SharedTypes::v1_21_50::JigsawBlockMetadata const& metadata,
+    ::SharedTypes::v1_21_80::JigsawBlockMetadata const& metadata,
     ::BlockPos const&                                   offset,
     ::Rotation                                          rotation
 );

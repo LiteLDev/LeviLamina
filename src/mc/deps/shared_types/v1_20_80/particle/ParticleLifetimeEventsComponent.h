@@ -41,9 +41,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ParticleLifetimeEventsComponent(::SharedTypes::v1_20_80::ParticleLifetimeEventsComponent const&);
-
-    MCNAPI ::SharedTypes::v1_20_80::ParticleLifetimeEventsComponent&
-    operator=(::SharedTypes::v1_20_80::ParticleLifetimeEventsComponent&&);
     // NOLINTEND
 
 public:

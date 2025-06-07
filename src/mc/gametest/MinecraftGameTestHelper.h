@@ -357,6 +357,8 @@ public:
 
     MCAPI ::Container const* _getContainer(::BlockPos const& pos);
 
+    MCAPI int _getItemEntityCount(::Item const& item, ::AABB const& searchBounds);
+
     MCAPI ::std::optional<::gametest::GameTestError> _getStructureBlockMissingError() const;
     // NOLINTEND
 

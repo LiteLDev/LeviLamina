@@ -27,6 +27,10 @@ public:
     };
 
 public:
+    // prevent constructor by default
+    SemVersion& operator=(SemVersion const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI SemVersion();
@@ -42,8 +46,6 @@ public:
         ::Bedrock::StaticOptimizedString preRelease,
         ::Bedrock::StaticOptimizedString buildMeta
     );
-
-    MCAPI ::SemVersion& operator=(::SemVersion const&);
 
     MCAPI ~SemVersion();
     // NOLINTEND

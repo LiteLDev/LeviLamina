@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/scripting/modules/minecraft_ui/IControl.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 
@@ -11,6 +11,7 @@
 // clang-format off
 class Player;
 namespace Json { class Value; }
+namespace ScriptModuleMinecraft { struct ScriptRawMessageError; }
 // clang-format on
 
 namespace ScriptModuleMinecraftServerUI {
@@ -32,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::Scripting::Result_deprecated<::Json::Value>
+    virtual ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
     buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const /*override*/;
 
     // vIndex: 0
@@ -42,7 +43,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<::Json::Value>
+    MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
     $buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
     // NOLINTEND
 

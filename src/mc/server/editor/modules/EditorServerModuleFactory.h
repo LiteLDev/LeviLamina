@@ -32,8 +32,8 @@ public:
     MCNAPI ::Scripting::ModuleBinding _generateBindings(
         ::Editor::ServiceProviderCollection& managerServices,
         ::Scripting::ModuleBindingBuilder&   builder,
-        bool                                 additionalTags,
-        ::std::vector<::std::string> const&  allowUntagged
+        bool                                 allowUntagged,
+        ::std::vector<::std::string> const&  additionalTags
     );
 
     MCNAPI ::Scripting::Result_deprecated<::std::string>

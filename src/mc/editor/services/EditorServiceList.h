@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
@@ -40,13 +39,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> _destroyServices();
+    MCNAPI ::Scripting::Result_deprecated<void> _destroyServices();
 
-    MCNAPI ::Scripting::Result<void> _initServices();
+    MCNAPI ::Editor::Services::IEditorService* _findService(::std::string const& serviceName) const;
 
-    MCNAPI ::Scripting::Result<void> _readyServices();
+    MCNAPI ::Scripting::Result_deprecated<void> _initServices();
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void> _readyServices();
+
+    MCNAPI ::Scripting::Result_deprecated<void>
     _registerAndInitServiceList(::std::vector<::std::unique_ptr<::Editor::Services::IEditorService>> serviceList);
 
     MCNAPI ::Scripting::Result_deprecated<::Editor::Services::IEditorService*>

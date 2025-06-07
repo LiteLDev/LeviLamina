@@ -19,8 +19,8 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptItemCustomComponentCompleteUseEvent : public ::ScriptModuleMinecraft::ScriptItemCompleteUseEvent,
-                                                   public ::ScriptModuleMinecraft::ScriptItemCustomComponentAfterEvent {
+struct ScriptItemCustomComponentCompleteUseEvent : public ::ScriptModuleMinecraft::ScriptItemCustomComponentAfterEvent,
+                                                   public ::ScriptModuleMinecraft::ScriptItemCompleteUseEvent {
 public:
     // ScriptItemCustomComponentCompleteUseEvent inner types declare
     // clang-format off

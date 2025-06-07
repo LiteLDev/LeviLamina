@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -45,9 +45,9 @@ public:
         ::Editor::Transactions::TransactionContext::OperationErrorHandling errorHandling
     );
 
-    MCNAPI ::Scripting::Result<void> _redo(::Editor::ServiceProviderCollection& serviceProviders) const;
+    MCNAPI ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection& serviceProviders) const;
 
-    MCNAPI ::Scripting::Result<void> _undo(::Editor::ServiceProviderCollection& serviceProviders) const;
+    MCNAPI ::Scripting::Result_deprecated<void> _undo(::Editor::ServiceProviderCollection& serviceProviders) const;
 
     MCNAPI void addOperation(::std::unique_ptr<::Editor::Transactions::IOperation> operation);
 

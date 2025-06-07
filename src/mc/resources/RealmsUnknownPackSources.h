@@ -15,4 +15,16 @@ public:
     RealmsUnknownPackSources& operator=(RealmsUnknownPackSources const&);
     RealmsUnknownPackSources(RealmsUnknownPackSources const&);
     RealmsUnknownPackSources();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~RealmsUnknownPackSources();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };

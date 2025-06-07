@@ -34,14 +34,16 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mItemsArray;
-    ::ll::TypedStorage<8, 24, ::std::bitset<134>>                           mDirtyFlags;
-    ::ll::TypedStorage<8, 24, ::std::bitset<134>>                           mHasComponentData;
+    ::ll::TypedStorage<8, 24, ::std::bitset<136>>                           mDirtyFlags;
+    ::ll::TypedStorage<8, 24, ::std::bitset<136>>                           mHasComponentData;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::SynchedActorData _clone() const;
+
+    MCNAPI void markDirty(::DataItem& item);
 
     MCNAPI ::std::vector<::std::unique_ptr<::DataItem>> packAll(::EntityContext const& entity) const;
 

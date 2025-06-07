@@ -11,14 +11,14 @@
 class HashedString;
 class ItemStack;
 class Player;
-namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
+namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 
 namespace PublisherItemComponent {
 
 class OnUse : public ::ItemComponent,
               public ::Bedrock::PubSub::
-                  Publisher<void(bool&, ::ItemStack&, ::Player&), ::Bedrock::PubSub::ThreadModel::MultiThreaded> {
+                  Publisher<void(bool&, ::ItemStack&, ::Player&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
 public:
     // virtual functions
     // NOLINTBEGIN

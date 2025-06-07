@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 namespace Editor::Services {
 
@@ -37,13 +37,13 @@ public:
     virtual ~IEditorService() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() = 0;
+    virtual ::Scripting::Result_deprecated<void> init() = 0;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void> ready();
+    virtual ::Scripting::Result_deprecated<void> ready();
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> quit() = 0;
+    virtual ::Scripting::Result_deprecated<void> quit() = 0;
 
     // vIndex: 4
     virtual ::std::string_view getServiceName() const = 0;
@@ -64,7 +64,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result_deprecated<void> $ready();
 
     MCNAPI bool $isServiceInitialized() const;
 

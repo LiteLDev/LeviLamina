@@ -3,18 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/scripting/modules/minecraft/ScriptBlockVolumeIterable.h"
-#include "mc/world/level/block/CompoundBlockVolumeAction.h"
-#include "mc/world/level/block/CompoundBlockVolumePositionRelativity.h"
+
+// auto generated forward declare list
+// clang-format off
+class CompoundBlockVolume;
+namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct EnumBinding; }
+// clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class ScriptCompoundBlockVolume
-: public ::Scripting::WeakHandleFromThis<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>,
-  public ::ScriptModuleMinecraft::ScriptBlockVolumeIterable {
+: public ::ScriptModuleMinecraft::ScriptBlockVolumeIterable,
+  public ::Scripting::WeakHandleFromThis<::ScriptModuleMinecraft::ScriptCompoundBlockVolume> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -37,6 +41,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptCompoundBlockVolume(::CompoundBlockVolume const& volume, ::Scripting::WeakLifetimeScope const& scope);
+
     MCNAPI ::ScriptModuleMinecraft::ScriptCompoundBlockVolume&
     operator=(::ScriptModuleMinecraft::ScriptCompoundBlockVolume const&);
     // NOLINTEND
@@ -44,14 +50,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::EnumBindingBuilder<::CompoundBlockVolumeAction, ::CompoundBlockVolumeAction>
-    bindActionEnums();
+    MCNAPI static ::Scripting::EnumBinding bindActionEnums();
 
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptCompoundBlockVolume> bindClass();
+    MCNAPI static ::Scripting::ClassBinding bindClass();
 
-    MCNAPI static ::Scripting::
-        EnumBindingBuilder<::CompoundBlockVolumePositionRelativity, ::CompoundBlockVolumePositionRelativity>
-        bindRelativeEnums();
+    MCNAPI static ::Scripting::EnumBinding bindRelativeEnums();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::CompoundBlockVolume const& volume, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:

@@ -19,6 +19,7 @@ class BlockLegacy;
 class BlockPos;
 class BlockSource;
 class BlockState;
+class DefinitionTrigger;
 class GetCollisionShapeInterface;
 class HashedString;
 class HitResult;
@@ -28,6 +29,7 @@ class ItemInstance;
 class ItemStackBase;
 class Player;
 class Random;
+class RenderParams;
 class Vec3;
 namespace mce { class Color; }
 // clang-format on
@@ -113,6 +115,8 @@ public:
         ::Actor*             actor
     ) const;
 
+    MCAPI bool executeTrigger(::DefinitionTrigger const& trigger, ::RenderParams& params) const;
+
     MCAPI bool getCollisionShape(
         ::AABB&                                            outAABB,
         ::IConstBlockSource const&                         region,
@@ -178,6 +182,8 @@ public:
     MCAPI void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI ::Block const& sanitizeFillBlock() const;
+
+    MCAPI bool shouldRandomTick() const;
 
     MCAPI ::std::string toDebugString() const;
 

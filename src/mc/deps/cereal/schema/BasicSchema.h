@@ -9,7 +9,6 @@
 // clang-format off
 namespace cereal { class Constraint; }
 namespace cereal { class SerializerContext; }
-namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
@@ -152,16 +151,16 @@ public:
     virtual ~BasicSchema() = default;
 
     // vIndex: 1
-    virtual bool isGreedy(::cereal::ReflectionCtx const&) const;
+    virtual bool isGreedy(::entt::meta_ctx const&) const;
 
     // vIndex: 2
-    virtual void members(::cereal::ReflectionCtx const&, ::std::function<void(uint, ::entt::meta_data)>) const;
+    virtual void members(::entt::meta_ctx const&, ::std::function<void(uint, ::entt::meta_data)>) const;
 
     // vIndex: 3
-    virtual ::cereal::internal::BasicSchema::MemberDescriptor const* member(::cereal::ReflectionCtx const&, uint) const;
+    virtual ::cereal::internal::BasicSchema::MemberDescriptor const* member(::entt::meta_ctx const&, uint) const;
 
     // vIndex: 4
-    virtual ::cereal::internal::VariantPriorityLevel minVariantPriorityLevel(::cereal::ReflectionCtx const&) const;
+    virtual ::cereal::internal::VariantPriorityLevel minVariantPriorityLevel(::entt::meta_ctx const&) const;
 
     // vIndex: 5
     virtual void validateConstraint(
@@ -171,12 +170,8 @@ public:
     ) const;
 
     // vIndex: 6
-    virtual void doLoad(
-        ::cereal::SchemaReader&,
-        ::entt::meta_any&,
-        ::entt::meta_any const&,
-        ::cereal::SerializerContext& context
-    ) const;
+    virtual void
+    doLoad(::cereal::SchemaReader&, ::entt::meta_any&, ::entt::meta_any const&, ::cereal::SerializerContext&) const;
 
     // vIndex: 7
     virtual void doSave(::cereal::SchemaWriter&, ::entt::meta_any const&, ::cereal::SerializerContext& context) const;
@@ -186,7 +181,7 @@ public:
 
     // vIndex: 9
     virtual ::cereal::SchemaDescription
-    makeDescription(::cereal::ReflectionCtx const&, ::cereal::internal::BasicSchema::DescriptionMode) const = 0;
+    makeDescription(::entt::meta_ctx const&, ::cereal::internal::BasicSchema::DescriptionMode) const = 0;
     // NOLINTEND
 
 public:
@@ -203,24 +198,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isGreedy(::cereal::ReflectionCtx const&) const;
+    MCNAPI bool $isGreedy(::entt::meta_ctx const&) const;
 
-    MCNAPI void $members(::cereal::ReflectionCtx const&, ::std::function<void(uint, ::entt::meta_data)>) const;
+    MCNAPI void $members(::entt::meta_ctx const&, ::std::function<void(uint, ::entt::meta_data)>) const;
 
-    MCNAPI ::cereal::internal::BasicSchema::MemberDescriptor const* $member(::cereal::ReflectionCtx const&, uint) const;
+    MCNAPI ::cereal::internal::BasicSchema::MemberDescriptor const* $member(::entt::meta_ctx const&, uint) const;
 
-    MCNAPI ::cereal::internal::VariantPriorityLevel $minVariantPriorityLevel(::cereal::ReflectionCtx const&) const;
+    MCNAPI ::cereal::internal::VariantPriorityLevel $minVariantPriorityLevel(::entt::meta_ctx const&) const;
 
     MCNAPI void $validateConstraint(
         ::cereal::Constraint const&  constraint,
         ::entt::meta_any const&      any,
-        ::cereal::SerializerContext& context
-    ) const;
-
-    MCNAPI void $doLoad(
-        ::cereal::SchemaReader&,
-        ::entt::meta_any&,
-        ::entt::meta_any const&,
         ::cereal::SerializerContext& context
     ) const;
 

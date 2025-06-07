@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/util/HudElement.h"
@@ -12,8 +11,12 @@
 // auto generated forward declare list
 // clang-format off
 class Player;
+namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
+namespace ScriptModuleMinecraft { struct ScriptRawMessageError; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraft { struct ScriptTitleDisplayOptions; }
+namespace Scripting { struct ArgumentOutOfBoundsError; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -36,7 +39,7 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit ScriptScreenDisplay(::Player const& player);
 
-    MCNAPI ::Scripting::Result_deprecated<::std::string> _getJsonString(
+    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageError> _getJsonString(
         ::Player& player,
         ::std::variant<
             ::std::string,
@@ -47,17 +50,30 @@ public:
 
     MCNAPI bool _isValid() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::vector<::HudElement>> getHiddenHudElements();
+    MCNAPI ::Scripting::Result<::std::vector<::HudElement>, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getHiddenHudElements();
 
-    MCNAPI ::Scripting::Result<void> hideAllExcept(::std::optional<::std::vector<::HudElement>> hudElement);
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    hideAllExcept(::std::optional<::std::vector<::HudElement>> hudElement);
 
-    MCNAPI ::Scripting::Result_deprecated<bool> isForcedHidden(::HudElement hudElement);
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    isForcedHidden(::HudElement hudElement);
 
     MCNAPI ::ScriptModuleMinecraft::ScriptScreenDisplay& operator=(::ScriptModuleMinecraft::ScriptScreenDisplay&&);
 
-    MCNAPI ::Scripting::Result<void> resetHudElements();
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError> resetHudElements();
 
-    MCNAPI ::Scripting::Result<void> setActionBar(
+    MCNAPI ::Scripting::
+        Result<void, ::ScriptModuleMinecraft::ScriptRawMessageError, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+        setActionBar(
+            ::std::variant<
+                ::std::string,
+                ::ScriptModuleMinecraft::ScriptRawMessageInterface,
+                ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
+                text
+        ) const;
+
+    MCNAPI ::Scripting::Result_deprecated<void> setActionBar_V010(
         ::std::variant<
             ::std::string,
             ::ScriptModuleMinecraft::ScriptRawMessageInterface,
@@ -65,10 +81,15 @@ public:
             text
     ) const;
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     setHudVisibility(::HudVisibility visible, ::std::optional<::std::vector<::HudElement>> hudElement);
 
-    MCNAPI ::Scripting::Result<void> setTitle(
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptRawMessageError,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError,
+        ::Scripting::ArgumentOutOfBoundsError>
+    setTitle(
         ::std::variant<
             ::std::string,
             ::ScriptModuleMinecraft::ScriptRawMessageInterface,
@@ -77,7 +98,26 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptTitleDisplayOptions> options
     ) const;
 
-    MCNAPI ::Scripting::Result<void> updateSubtitle(
+    MCNAPI ::Scripting::Result_deprecated<void> setTitle_V010(
+        ::std::variant<
+            ::std::string,
+            ::ScriptModuleMinecraft::ScriptRawMessageInterface,
+            ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
+                                                                            title,
+        ::std::optional<::ScriptModuleMinecraft::ScriptTitleDisplayOptions> options
+    ) const;
+
+    MCNAPI ::Scripting::
+        Result<void, ::ScriptModuleMinecraft::ScriptRawMessageError, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+        updateSubtitle(
+            ::std::variant<
+                ::std::string,
+                ::ScriptModuleMinecraft::ScriptRawMessageInterface,
+                ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
+                subtitle
+        ) const;
+
+    MCNAPI ::Scripting::Result_deprecated<void> updateSubtitle_V010(
         ::std::variant<
             ::std::string,
             ::ScriptModuleMinecraft::ScriptRawMessageInterface,
@@ -89,7 +129,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptScreenDisplay> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:

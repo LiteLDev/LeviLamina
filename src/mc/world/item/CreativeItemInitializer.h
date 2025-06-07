@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BaseGameVersion;
 class CraftingItemCatalogMergeResult;
 class CreativeGroupInfo;
 class CreativeItemRegistry;
@@ -42,8 +41,6 @@ public:
     MCNAPI void _addCreativeItemServer(::CreativeGroupInfo& creativeGroupInfo, ::ItemInstance const& itemInstance);
 
     MCNAPI void _addLooseCreativeItem(::ItemInstance const& itemInstance);
-
-    MCNAPI void _addLooseCreativeItemsServer(::BaseGameVersion const& worldVersion);
 
     MCNAPI void addLooseBlocks(::std::vector<::BlockDefinition const*> const& blockDefinitions);
 

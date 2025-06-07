@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/deps/scripting/script_engine/Closure.h"
 #include "mc/editor/script/ServerScriptPackType.h"
@@ -63,18 +62,18 @@ public:
 
     // vIndex: 7
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> registerForScriptSystemRebuildEvent(
-        ::std::function<::Scripting::Result<void>(::std::optional<::Scripting::ContextId>)>
+        ::std::function<::Scripting::Result_deprecated<void>(::std::optional<::Scripting::ContextId>)>
     ) = 0;
 
     // vIndex: 8
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-        registerForScriptSystemTeardownEvent(::std::function<::Scripting::Result<void>()>) = 0;
+        registerForScriptSystemTeardownEvent(::std::function<::Scripting::Result_deprecated<void>()>) = 0;
 
     // vIndex: 9
-    virtual ::Scripting::Result<void> destroyRegisteredExtensions() = 0;
+    virtual ::Scripting::Result_deprecated<void> destroyRegisteredExtensions() = 0;
 
     // vIndex: 10
-    virtual ::Scripting::Result<void> createExtensionContexts(::Scripting::ContextId, bool) = 0;
+    virtual ::Scripting::Result_deprecated<void> createExtensionContexts(::Scripting::ContextId, bool) = 0;
     // NOLINTEND
 
 public:

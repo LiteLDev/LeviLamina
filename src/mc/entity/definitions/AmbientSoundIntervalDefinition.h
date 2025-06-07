@@ -35,6 +35,8 @@ public:
     MCNAPI void addDynamic(::DynamicAmbientSound const& definition);
 
     MCNAPI void initialize(::EntityContext& entity, ::AmbientSoundServerComponent& component) const;
+
+    MCNAPI ~AmbientSoundIntervalDefinition();
     // NOLINTEND
 
 public:
@@ -44,5 +46,11 @@ public:
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AmbientSoundIntervalDefinition>>&
             root
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

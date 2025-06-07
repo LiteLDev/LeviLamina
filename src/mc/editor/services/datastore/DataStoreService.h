@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/datastore/EventType.h"
 #include "mc/editor/serviceproviders/DataStoreServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
@@ -31,7 +31,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk53a18a;
     ::ll::UntypedStorage<8, 8>   mUnk77d480;
     ::ll::UntypedStorage<8, 128> mUnk906987;
-    ::ll::UntypedStorage<8, 48>  mUnk8f2fc8;
+    ::ll::UntypedStorage<8, 48>  mUnk16dd40;
     ::ll::UntypedStorage<8, 16>  mUnke703fc;
     ::ll::UntypedStorage<8, 16>  mUnkd4e093;
     // NOLINTEND
@@ -49,13 +49,13 @@ public:
     virtual ~DataStoreService() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> quit() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> dispatchEvent(
+    virtual ::Scripting::Result_deprecated<void> dispatchEvent(
         ::HashedString const&                          dataTag,
         ::Editor::DataStore::EventType                 eventType,
         ::Json::Value const&                           payload,
@@ -77,7 +77,7 @@ public:
     ) /*override*/;
 
     // vIndex: 7
-    virtual ::Scripting::Result<void> _handleEvents(
+    virtual ::Scripting::Result_deprecated<void> _handleEvents(
         ::HashedString const&,
         ::Editor::DataStore::EventType,
         ::Json::Value const&,
@@ -98,7 +98,7 @@ public:
 
     MCNAPI void _handleScriptReloadEventPacket(::Editor::Network::ServerScriptTeardownRebuildPayload const& packet);
 
-    MCNAPI ::Scripting::Result<void> _processEvent(
+    MCNAPI ::Scripting::Result_deprecated<void> _processEvent(
         ::HashedString const&                          dataTag,
         ::Editor::DataStore::EventType                 eventType,
         ::Json::Value const&                           payload,
@@ -136,11 +136,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
-    MCNAPI ::Scripting::Result<void> $dispatchEvent(
+    MCNAPI ::Scripting::Result_deprecated<void> $dispatchEvent(
         ::HashedString const&                          dataTag,
         ::Editor::DataStore::EventType                 eventType,
         ::Json::Value const&                           payload,

@@ -24,6 +24,7 @@
 #include "mc/world/level/SpawnSettings.h"
 #include "mc/world/level/Tick.h"
 #include "mc/world/level/WorldVersion.h"
+#include "mc/world/level/levelgen/flat/FlatWorldPresetID.h"
 #include "mc/world/level/storage/AdventureSettings.h"
 #include "mc/world/level/storage/CloudSaveLevelInfo.h"
 #include "mc/world/level/storage/ExperimentStorage.h"
@@ -108,6 +109,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                          mEducationCreatorId;
     ::ll::TypedStorage<8, 32, ::std::string>                                          mEducationCreatorWorldId;
     ::ll::TypedStorage<8, 32, ::std::string>                                          mEducationReferrerId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                          mEducationReferrerType;
     ::ll::TypedStorage<1, 1, bool>                                                    mUseMsaGamertagsOnly;
     ::ll::TypedStorage<1, 1, bool>                                                    mBonusChestEnabled;
     ::ll::TypedStorage<1, 1, bool>                                                    mBonusChestSpawned;
@@ -129,7 +131,7 @@ public:
     ::ll::TypedStorage<
         8,
         8,
-        ::std::unique_ptr<::Bedrock::PubSub::Publisher<void(bool), ::Bedrock::PubSub::ThreadModel::SingleThreaded>>>
+        ::std::unique_ptr<::Bedrock::PubSub::Publisher<void(bool), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>>
                                                                mIsHardcoreSubscribers;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnSaveLevelData;
     // NOLINTEND
@@ -172,6 +174,8 @@ public:
 
     MCAPI ::BaseGameVersion const& getBaseGameVersion() const;
 
+    MCAPI ::DaylightCycle getDaylightCycle() const;
+
     MCAPI ::CompoundTag const& getEduSharedUriResource() const;
 
     MCAPI ::std::string const& getEducationOid() const;
@@ -203,6 +207,8 @@ public:
     MCAPI void setEducationOid(::std::string const& educationOid);
 
     MCAPI void setFlatWorldOptions(::Json::Value const& options);
+
+    MCAPI void setFlatWorldPreset(::FlatWorldPresetID preset);
 
     MCAPI void setGameType(::GameType type);
 

@@ -11,6 +11,8 @@ class BlockLegacyComponentStorageFinalizer {
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void _addDestructionParticlesComponent(::BlockLegacy& blockLegacy);
+
     MCNAPI void _finalizeBlockTriggerComponents(::BlockLegacy& blockLegacy);
 
     MCNAPI void finalizeComponentData(::BlockLegacy& blockLegacy);

@@ -123,6 +123,8 @@ public:
 
     MCAPI explicit Value(::std::string const& value);
 
+    MCAPI ::std::vector<::Json::Value*>* _copyArray(::std::vector<::Json::Value*> const& values);
+
     MCAPI ::Json::Value& _resolveReference(char const* key);
 
     MCAPI ::Json::Value& append(::Json::Value&& value);
@@ -138,6 +140,8 @@ public:
     MCAPI int asInt(int defaultValue) const;
 
     MCAPI int64 asInt64(int64 defaultValue) const;
+
+    MCAPI uint64 asLargestUInt() const;
 
     MCAPI ::std::string asString(::std::string const& defaultValue) const;
 

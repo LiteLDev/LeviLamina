@@ -2,4 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct UpdateAttributesSystem {};
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct UpdateAttributesSystem {
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::TickingSystemWithInfo createProcessRequestSystem();
+    // NOLINTEND
+};

@@ -26,8 +26,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI JigsawStructureMetadataFile(::SharedTypes::v1_21_50::JigsawStructureMetadataFile&&);
-
     MCNAPI ~JigsawStructureMetadataFile();
     // NOLINTEND
 
@@ -41,12 +39,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_21_50::JigsawStructureMetadataFile&&);
     // NOLINTEND
 
 public:

@@ -25,6 +25,8 @@ public:
 
     MCNAPI ::BlockDescriptorSerializer::TagsProxy& operator=(::BlockDescriptorSerializer::TagsProxy&&);
 
+    MCNAPI ::std::string const& toString() const;
+
     MCNAPI ~TagsProxy();
     // NOLINTEND
 

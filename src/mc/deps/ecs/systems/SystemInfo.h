@@ -24,9 +24,23 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SystemInfo& operator=(SystemInfo const&);
+    SystemInfo(SystemInfo const&);
+    SystemInfo();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI SystemInfo(::SystemInfo&&);
+
     MCNAPI ~SystemInfo();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::SystemInfo&&);
     // NOLINTEND
 
 public:

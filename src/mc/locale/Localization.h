@@ -39,6 +39,9 @@ public:
 
     MCAPI void _replaceTokens(::std::string& string, ::std::vector<::std::string> const& params) const;
 
+    MCAPI void
+    _replaceUTCDateTimeIdentifier(::std::string& strToParse, ::std::optional<::std::locale> const& locale) const;
+
     MCAPI void appendTranslations(
         ::std::unordered_multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& locStrings
     );

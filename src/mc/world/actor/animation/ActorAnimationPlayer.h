@@ -19,10 +19,10 @@ class ActorAnimationPlayer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48>  mUnkd5fe13;
-    ::ll::UntypedStorage<8, 216> mUnkad5060;
-    ::ll::UntypedStorage<1, 1>   mUnk923d16;
-    ::ll::UntypedStorage<1, 1>   mUnkdcf6cd;
+    ::ll::UntypedStorage<8, 48> mUnkd5fe13;
+    ::ll::UntypedStorage<8, 16> mUnkad5060;
+    ::ll::UntypedStorage<1, 1>  mUnk923d16;
+    ::ll::UntypedStorage<1, 1>  mUnkdcf6cd;
     // NOLINTEND
 
 public:

@@ -53,8 +53,9 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<2, 2>  mUnk661e44;
-        ::ll::UntypedStorage<4, 4>  mUnk47ae14;
         ::ll::UntypedStorage<8, 32> mUnk45999d;
+        ::ll::UntypedStorage<4, 4>  mUnk47ae14;
+        ::ll::UntypedStorage<8, 8>  mUnk1b2a23;
         // NOLINTEND
 
     public:
@@ -95,9 +96,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnka1cb6b;
-    ::ll::UntypedStorage<8, 56> mUnke42d72;
+    ::ll::UntypedStorage<8, 72> mUnke42d72;
     ::ll::UntypedStorage<2, 2>  mUnkbb4d26;
-    ::ll::UntypedStorage<8, 8>  mUnk9dbc22;
     // NOLINTEND
 
 public:
@@ -113,6 +113,8 @@ public:
 
     MCNAPI ::std::vector<::cereal::BasicSerializerContext::Context>
     contextFor(::cereal::BasicSerializerContext::LogEntry const& entry) const;
+
+    MCNAPI ::std::pair<::cereal::BasicSerializerContext::ContextType, ::std::string_view> currentContext() const;
 
     MCNAPI ::std::vector<::std::string> errors() const;
     // NOLINTEND

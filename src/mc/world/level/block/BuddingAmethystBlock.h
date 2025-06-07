@@ -19,13 +19,13 @@ class BuddingAmethystBlock : public ::AmethystBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 137
+    // vIndex: 135
     virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 47
+    // vIndex: 46
     virtual bool isSilentWhenJumpingOff() const /*override*/;
 
     // vIndex: 0

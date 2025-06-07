@@ -134,7 +134,7 @@ public:
 
     MCNAPI ushort _sanitizePort(uint port) const;
 
-    MCNAPI void _sendNotification(::LogLevel message, ::std::string_view logLevel);
+    MCNAPI void _sendNotification(::LogLevel logLevel, ::std::string_view message);
 
     MCNAPI bool _tryAttachRuntime(bool expectRuntime);
 

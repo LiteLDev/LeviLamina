@@ -9,7 +9,6 @@
 // clang-format off
 namespace cereal { class SerializerContext; }
 namespace cereal { struct SchemaReader; }
-namespace cereal { struct SchemaWriter; }
 // clang-format on
 
 namespace cereal::internal {
@@ -25,8 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BasicGenericTypeSchema();
-
     MCNAPI void doLoadWithSchema(
         ::entt::meta_type const&     type,
         ::cereal::SchemaReader&      value,
@@ -35,25 +32,6 @@ public:
         ::cereal::SerializerContext& context,
         ::entt::type_info const&     info
     ) const;
-
-    MCNAPI void doSaveWithSchema(
-        ::cereal::SchemaWriter&      value,
-        ::entt::meta_any const&      any,
-        ::cereal::SerializerContext& context,
-        ::entt::type_info const&     info
-    ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

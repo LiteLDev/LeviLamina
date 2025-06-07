@@ -25,9 +25,21 @@ public:
     Graphics();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit Graphics(::std::function<void(::Editor::Settings::GraphicsProps const&)> callback);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::function<void(::Editor::Settings::GraphicsProps const&)> callback);
     // NOLINTEND
 };
 

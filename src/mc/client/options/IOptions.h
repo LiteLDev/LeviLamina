@@ -123,7 +123,7 @@ public:
     virtual ::ChatOptions& getChatOptions() = 0;
 
     // vIndex: 24
-    virtual ::std::array<::std::unique_ptr<::Option>, 788> const& getAllRegisteredOptions() = 0;
+    virtual ::std::array<::std::unique_ptr<::Option>, 795> const& getAllRegisteredOptions() = 0;
 
     // vIndex: 25
     virtual void forEachOption(::std::function<void(::Option*)>) = 0;

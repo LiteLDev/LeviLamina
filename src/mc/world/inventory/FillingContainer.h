@@ -31,31 +31,31 @@ public:
     // vIndex: 0
     virtual ~FillingContainer() /*override*/;
 
-    // vIndex: 41
+    // vIndex: 44
     virtual int removeResource(::ItemStack const& item, bool requireExactAux, bool requireExactData, int maxCount);
 
-    // vIndex: 42
+    // vIndex: 45
     virtual void swapSlots(int from, int to);
 
-    // vIndex: 43
+    // vIndex: 46
     virtual bool add(::ItemStack& item);
 
-    // vIndex: 44
+    // vIndex: 47
     virtual bool canAdd(::ItemStack const& item) const;
 
     // vIndex: 14
     virtual void removeItem(int slot, int count) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 48
     virtual void clearSlot(int slot);
 
-    // vIndex: 46
+    // vIndex: 49
     virtual int clearInventory(int resizeTo);
 
-    // vIndex: 47
+    // vIndex: 50
     virtual ::std::unique_ptr<::ListTag> saveToTag(::SaveContext const& saveContext) const;
 
-    // vIndex: 48
+    // vIndex: 51
     virtual void loadFromTag(::ListTag const& inventoryList);
 
     // vIndex: 12
@@ -83,7 +83,7 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    // vIndex: 49
+    // vIndex: 52
     virtual void _trySetInSlot(::ItemStack& item, int const& slot, int const& inventorySize, int& backCompatOffset);
     // NOLINTEND
 

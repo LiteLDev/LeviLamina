@@ -22,7 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FeatureTypeVersion(::FeatureLoading::FeatureVersion isInternal, bool version);
+    MCNAPI FeatureTypeVersion(::FeatureLoading::FeatureVersion version, bool isInternal);
 
     MCNAPI ~FeatureTypeVersion();
     // NOLINTEND
@@ -30,7 +30,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::FeatureLoading::FeatureVersion isInternal, bool version);
+    MCNAPI void* $ctor(::FeatureLoading::FeatureVersion version, bool isInternal);
     // NOLINTEND
 
 public:

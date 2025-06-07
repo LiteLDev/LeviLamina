@@ -29,14 +29,11 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    // vIndex: 126
+    // vIndex: 125
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
-
-    // vIndex: 138
-    virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 0
     virtual ~TrialSpawnerBlock() /*override*/ = default;
@@ -55,8 +52,6 @@ public:
     MCNAPI ::Brightness $getLightEmission(::Block const& block) const;
 
     MCNAPI int $getVariant(::Block const& block) const;
-
-    MCNAPI bool $isInteractiveBlock() const;
     // NOLINTEND
 
 public:

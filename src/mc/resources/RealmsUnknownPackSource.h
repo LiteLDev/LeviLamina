@@ -20,8 +20,8 @@ class RealmsUnknownPackSource : public ::PackSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkac394c;
-    ::ll::UntypedStorage<1, 1>  mUnk1bfb8f;
+    ::ll::UntypedStorage<1, 1>  mUnkfcb077;
+    ::ll::UntypedStorage<1, 1>  mUnk811301;
     ::ll::UntypedStorage<8, 24> mUnk50ff23;
     ::ll::UntypedStorage<8, 64> mUnk7ccdc2;
     // NOLINTEND
@@ -36,7 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RealmsUnknownPackSource() /*override*/;
+    virtual ~RealmsUnknownPackSource() /*override*/ = default;
 
     // vIndex: 1
     virtual void forEachPackConst(::std::function<void(::Pack const&)> callback) const /*override*/;
@@ -55,12 +55,6 @@ public:
         ::IPackManifestFactory&                                           manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

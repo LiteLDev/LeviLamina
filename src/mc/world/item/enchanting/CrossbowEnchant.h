@@ -36,7 +36,7 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CrossbowEnchant(
-        ::Enchant::Type __param6,
+        ::Enchant::Type,
         ::Enchant::Frequency,
         ::std::string_view,
         ::std::string_view,
@@ -56,7 +56,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::Enchant::Type __param6,
+        ::Enchant::Type,
         ::Enchant::Frequency,
         ::std::string_view,
         ::std::string_view,

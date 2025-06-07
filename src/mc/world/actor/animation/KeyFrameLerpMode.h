@@ -18,8 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::glm::mat4x4 const& getPrecomputedCubicCoeffs() const;
-
     MCNAPI ::KeyFrameLerpMode& operator=(::KeyFrameLerpMode const& rhs);
     // NOLINTEND
 };

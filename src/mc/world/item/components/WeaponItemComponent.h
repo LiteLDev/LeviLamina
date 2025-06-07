@@ -5,27 +5,25 @@
 // auto generated inclusion list
 #include "mc/world/actor/DefinitionTrigger.h"
 #include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
-#include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-class SemVersion;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct WeaponItemComponent : public ::IItemComponentLegacyFactoryData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 256, ::DefinitionTrigger> mOnHurtActor;
-    ::ll::TypedStorage<8, 256, ::DefinitionTrigger> mOnHitActor;
-    ::ll::TypedStorage<8, 256, ::DefinitionTrigger> mOnHitBlock;
+    ::ll::TypedStorage<8, 56, ::DefinitionTrigger> mOnHurtActor;
+    ::ll::TypedStorage<8, 56, ::DefinitionTrigger> mOnHitActor;
+    ::ll::TypedStorage<8, 56, ::DefinitionTrigger> mOnHitBlock;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    WeaponItemComponent(WeaponItemComponent const&);
+    WeaponItemComponent& operator=(WeaponItemComponent const&);
+    WeaponItemComponent();
 
 public:
     // virtual functions
@@ -37,11 +35,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WeaponItemComponent();
-
     MCAPI WeaponItemComponent(::WeaponItemComponent&&);
 
-    MCAPI ::WeaponItemComponent& operator=(::WeaponItemComponent const&);
+    MCAPI WeaponItemComponent(::WeaponItemComponent const&);
 
     MCAPI ::WeaponItemComponent& operator=(::WeaponItemComponent&&);
     // NOLINTEND
@@ -49,21 +45,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
-        ::std::optional<::SemVersion>          requiredToggles
-    );
-
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::WeaponItemComponent&&);
+
+    MCAPI void* $ctor(::WeaponItemComponent const&);
     // NOLINTEND
 
 public:

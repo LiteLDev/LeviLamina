@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/nether_net/NetworkID.h"
 #include "mc/network/Compressibility.h"
 #include "mc/network/NetworkPeer.h"
 
@@ -17,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::NetherNetConnector> const> mNetherNetConnector;
-    ::ll::TypedStorage<8, 8, uint64 const>                                               mPeerId;
+    ::ll::TypedStorage<8, 24, ::NetherNet::NetworkID const>                              mPeerId;
     ::ll::TypedStorage<8, 8, uint64 const>                                               mSessionId;
     ::ll::TypedStorage<8, 56, ::NetworkPeer::NetworkStatus>                              mNetherNetNetworkStatus;
     ::ll::TypedStorage<4, 4, uint>                                                       mNumNetworkStatusUpdates;

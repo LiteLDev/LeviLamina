@@ -57,6 +57,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mAvoidDamageBlocks;
     ::ll::TypedStorage<1, 1, bool>                                                mCanFloat;
     ::ll::TypedStorage<1, 1, bool>                                                mCanPathOverLava;
+    ::ll::TypedStorage<1, 1, bool>                                                mCanWalkInLava;
     ::ll::TypedStorage<1, 1, bool>                                                mIsAmphibious;
     ::ll::TypedStorage<1, 1, bool>                                                mAvoidPortals;
     ::ll::TypedStorage<1, 1, bool>                                                mCanBreach;

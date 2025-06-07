@@ -19,12 +19,12 @@ MCNAPI bool isValidTreePosition(::IBlockWorldGenAPI const& target, ::BlockPos co
 MCNAPI ::std::optional<::BlockPos> placeRadialBlockGroup(
     ::IBlockWorldGenAPI& target,
     ::BlockPos const&    pos,
-    ::Random&            block,
-    ::Block const&       radius,
-    int                  coreWidth,
-    int                  simplify,
-    bool                 mayGrowThrough,
-    ::std::vector<::BlockDescriptor> const&
+    ::Random&,
+    ::Block const&                          block,
+    int                                     radius,
+    int                                     coreWidth,
+    bool                                    simplify,
+    ::std::vector<::BlockDescriptor> const& mayGrowThrough
 );
 
 MCNAPI bool prepareSpawn(

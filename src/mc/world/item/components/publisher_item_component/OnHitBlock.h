@@ -13,7 +13,7 @@ class BlockPos;
 class HashedString;
 class ItemStack;
 class Mob;
-namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
+namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 
 namespace PublisherItemComponent {
@@ -21,7 +21,8 @@ namespace PublisherItemComponent {
 class OnHitBlock : public ::ItemComponent,
                    public ::Bedrock::PubSub::Publisher<
                        void(::ItemStack&, ::Block const&, ::BlockPos const&, ::Mob&),
-                       ::Bedrock::PubSub::ThreadModel::MultiThreaded> {
+                       ::Bedrock::PubSub::ThreadModel::SingleThreaded,
+                       0> {
 public:
     // virtual functions
     // NOLINTBEGIN

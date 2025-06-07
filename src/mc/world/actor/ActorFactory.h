@@ -88,8 +88,8 @@ public:
 
     MCAPI ::OwnerPtr<::EntityContext> clientCreateDisplayActor(
         ::ActorDefinitionIdentifier const& identifier,
-        ::Actor*                           position,
-        ::Vec3 const&                      spawner,
+        ::Actor*                           spawner,
+        ::Vec3 const&                      position,
         ::Vec2 const&                      rotation
     );
 

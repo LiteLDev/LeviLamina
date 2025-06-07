@@ -6,7 +6,6 @@
 // clang-format off
 class ActorAnimationControllerState;
 class HashedString;
-class SemVersion;
 // clang-format on
 
 class ActorAnimationController {
@@ -29,31 +28,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorAnimationController(
-        ::HashedString const& name,
-        ::SemVersion const&   version,
-        ::std::string const&  sourceFilePathWithExtension
-    );
-
     MCNAPI ::std::shared_ptr<::ActorAnimationControllerState>& addState(::HashedString const& name);
 
     MCNAPI uint64 findStateIndex(::std::string const& name, bool missingIsOkay, uint64 defaultState) const;
 
     MCNAPI void resolveTransitionStateIndices();
-
-    MCNAPI ~ActorAnimationController();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::HashedString const& name, ::SemVersion const& version, ::std::string const& sourceFilePathWithExtension);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

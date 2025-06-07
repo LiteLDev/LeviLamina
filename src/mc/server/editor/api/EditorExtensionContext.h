@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,9 +14,9 @@ namespace Editor::Services { class BrushShapeManagerServiceProvider; }
 namespace Editor::Services { class ClipboardServiceProvider; }
 namespace Editor::Services { class EditorBlockPaletteServiceProvider; }
 namespace Editor::Services { class EditorSettingsServiceProvider; }
-namespace Editor::Services { class SelectionServiceProvider; }
 namespace Editor::Services { class TransactionManagerServiceProvider; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace Editor::API {
@@ -32,7 +31,6 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk62a176;
     ::ll::UntypedStorage<8, 32> mUnke0dd26;
     ::ll::UntypedStorage<8, 32> mUnkcbf87c;
-    ::ll::UntypedStorage<8, 32> mUnk934584;
     ::ll::UntypedStorage<8, 32> mUnk39a1b2;
     ::ll::UntypedStorage<8, 32> mUnkba0f2a;
     ::ll::UntypedStorage<8, 32> mUnkda10a3;
@@ -44,6 +42,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk700723;
     ::ll::UntypedStorage<8, 32> mUnk382c65;
     ::ll::UntypedStorage<8, 32> mUnk3c9355;
+    ::ll::UntypedStorage<8, 32> mUnk1a5b9d;
     ::ll::UntypedStorage<1, 1>  mUnk907821;
     // NOLINTEND
 
@@ -67,7 +66,6 @@ public:
         ::Player&                                              player,
         ::Editor::ServiceProviderCollection&                   serviceProviders,
         ::Editor::Services::EditorSettingsServiceProvider*     settingsService,
-        ::Editor::Services::SelectionServiceProvider*          selectionService,
         ::Editor::Services::TransactionManagerServiceProvider* transactionManagerServiceProvider,
         ::Editor::Services::ClipboardServiceProvider*          clipboardService,
         ::Editor::Services::EditorBlockPaletteServiceProvider* blockPaletteService,
@@ -80,7 +78,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::API::EditorExtensionContext> bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 
 public:
@@ -90,7 +88,6 @@ public:
         ::Player&                                              player,
         ::Editor::ServiceProviderCollection&                   serviceProviders,
         ::Editor::Services::EditorSettingsServiceProvider*     settingsService,
-        ::Editor::Services::SelectionServiceProvider*          selectionService,
         ::Editor::Services::TransactionManagerServiceProvider* transactionManagerServiceProvider,
         ::Editor::Services::ClipboardServiceProvider*          clipboardService,
         ::Editor::Services::EditorBlockPaletteServiceProvider* blockPaletteService,

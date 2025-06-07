@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CompoundTag;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -35,8 +34,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit NBTSaver(::cereal::ReflectionCtx const&);
-
-    MCNAPI ::CompoundTag getSavedCompoundTag();
     // NOLINTEND
 
 public:

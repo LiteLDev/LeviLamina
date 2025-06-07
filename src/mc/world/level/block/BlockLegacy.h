@@ -406,13 +406,13 @@ public:
 
     // vIndex: 4
     virtual ::HitResult clip(
-        ::Block const&,
-        ::BlockSource const&,
-        ::BlockPos const&,
-        ::Vec3 const&,
-        ::Vec3 const&,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
     // vIndex: 5
@@ -475,216 +475,213 @@ public:
     // vIndex: 14
     virtual bool isObstructingChests(::BlockSource& region, ::BlockPos const& pos, ::Block const& thisBlock) const;
 
-    // vIndex: 16
-    virtual ::Vec3 randomlyModifyPosition(::BlockPos const& pos, int& seed) const;
-
     // vIndex: 15
     virtual ::Vec3 randomlyModifyPosition(::BlockPos const& pos) const;
 
-    // vIndex: 17
+    // vIndex: 16
     virtual void onProjectileHit(::BlockSource&, ::BlockPos const&, ::Actor const&) const;
 
-    // vIndex: 18
+    // vIndex: 17
     virtual void onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 19
+    // vIndex: 18
     virtual bool liquidCanFlowIntoFromDirection(
         uchar                                                     flowIntoFacing,
         ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
         ::BlockPos const&                                         pos
     ) const;
 
-    // vIndex: 20
+    // vIndex: 19
     virtual bool hasVariableLighting() const;
 
-    // vIndex: 21
+    // vIndex: 20
     virtual bool isStrippable(::Block const& srcBlock) const;
 
-    // vIndex: 22
+    // vIndex: 21
     virtual ::Block const& getStrippedBlock(::Block const& srcBlock) const;
 
-    // vIndex: 23
+    // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
-    // vIndex: 24
+    // vIndex: 23
     virtual bool canProvideMultifaceSupport(::Block const& block, uchar face) const;
 
-    // vIndex: 25
+    // vIndex: 24
     virtual bool canConnect(::Block const&, uchar toOther, ::Block const& thisBlock) const;
 
-    // vIndex: 26
+    // vIndex: 25
     virtual bool isMovingBlock() const;
 
-    // vIndex: 27
+    // vIndex: 26
     virtual ::CopperBehavior const* tryGetCopperBehavior() const;
 
-    // vIndex: 28
+    // vIndex: 27
     virtual bool isStemBlock() const;
 
-    // vIndex: 29
+    // vIndex: 28
     virtual bool isContainerBlock() const;
 
-    // vIndex: 30
+    // vIndex: 29
     virtual bool isCraftingBlock() const;
 
-    // vIndex: 31
+    // vIndex: 30
     virtual bool isLavaBlocking() const;
 
-    // vIndex: 32
+    // vIndex: 31
     virtual bool isFenceBlock() const;
 
-    // vIndex: 33
+    // vIndex: 32
     virtual bool isFenceGateBlock() const;
 
-    // vIndex: 34
+    // vIndex: 33
     virtual bool isThinFenceBlock() const;
 
-    // vIndex: 35
+    // vIndex: 34
     virtual bool isWallBlock() const;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual bool isStairBlock() const;
 
-    // vIndex: 37
+    // vIndex: 36
     virtual bool isSlabBlock() const;
 
-    // vIndex: 38
+    // vIndex: 37
     virtual bool isDoorBlock() const;
 
-    // vIndex: 39
+    // vIndex: 38
     virtual bool isRailBlock() const;
 
-    // vIndex: 40
+    // vIndex: 39
     virtual bool isButtonBlock() const;
 
-    // vIndex: 41
+    // vIndex: 40
     virtual bool isLeverBlock() const;
 
-    // vIndex: 42
+    // vIndex: 41
     virtual bool isCandleCakeBlock() const;
 
-    // vIndex: 43
+    // vIndex: 42
     virtual bool isMultifaceBlock() const;
 
-    // vIndex: 44
+    // vIndex: 43
     virtual bool isSignalSource() const;
 
-    // vIndex: 45
+    // vIndex: 44
     virtual bool isConsumerComponent() const;
 
-    // vIndex: 46
+    // vIndex: 45
     virtual bool canBeOriginalSurface() const;
 
-    // vIndex: 47
+    // vIndex: 46
     virtual bool isSilentWhenJumpingOff() const;
 
-    // vIndex: 48
+    // vIndex: 47
     virtual bool isValidAuxValue(int value) const;
 
-    // vIndex: 49
+    // vIndex: 48
     virtual bool canFillAtPos(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
-    // vIndex: 50
+    // vIndex: 49
     virtual ::Block const& sanitizeFillBlock(::Block const& block) const;
 
-    // vIndex: 51
+    // vIndex: 50
     virtual void onFillBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
-    // vIndex: 52
+    // vIndex: 51
     virtual int getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
 
-    // vIndex: 53
+    // vIndex: 52
     virtual ::std::optional<::HashedString> getRequiredMedium() const;
 
-    // vIndex: 54
+    // vIndex: 53
     virtual bool
     shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    // vIndex: 55
+    // vIndex: 54
     virtual void
     handlePrecipitation(::BlockSource& region, ::BlockPos const& pos, float downfallAmount, float temperature) const;
 
-    // vIndex: 56
+    // vIndex: 55
     virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
-    // vIndex: 57
+    // vIndex: 56
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    // vIndex: 58
+    // vIndex: 57
     virtual bool shouldDispense(::BlockSource& region, ::Container& container) const;
 
-    // vIndex: 59
+    // vIndex: 58
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    // vIndex: 60
+    // vIndex: 59
     virtual void
     transformOnFall(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, float fallDistance) const;
 
-    // vIndex: 61
+    // vIndex: 60
     virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    // vIndex: 62
+    // vIndex: 61
     virtual void onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to) const;
 
-    // vIndex: 63
+    // vIndex: 62
     virtual bool detachesOnPistonMove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 64
+    // vIndex: 63
     virtual void movedByPiston(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 65
+    // vIndex: 64
     virtual void onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 66
+    // vIndex: 65
     virtual void onStructureNeighborBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 67
+    // vIndex: 66
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 68
+    // vIndex: 67
     virtual void updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
 
-    // vIndex: 69
+    // vIndex: 68
     virtual bool isBounceBlock() const;
 
-    // vIndex: 70
+    // vIndex: 69
     virtual bool isPreservingMediumWhenPlaced(::BlockLegacy const* medium) const;
 
-    // vIndex: 71
+    // vIndex: 70
     virtual bool isFilteredOut(::BlockRenderLayer) const;
 
-    // vIndex: 72
+    // vIndex: 71
     virtual bool canRenderSelectionOverlay(::BlockRenderLayer) const;
 
-    // vIndex: 73
+    // vIndex: 72
     virtual bool ignoreEntitiesOnPistonMove(::Block const& block) const;
 
-    // vIndex: 74
+    // vIndex: 73
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    // vIndex: 75
+    // vIndex: 74
     virtual bool mayConsumeFertilizer(::BlockSource& region) const;
 
-    // vIndex: 76
+    // vIndex: 75
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    // vIndex: 78
+    // vIndex: 77
     virtual bool mayPick() const;
 
-    // vIndex: 77
+    // vIndex: 76
     virtual bool mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
 
-    // vIndex: 80
+    // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    // vIndex: 79
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 81
+    // vIndex: 80
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 82
+    // vIndex: 81
     virtual bool tryToPlace(
         ::BlockSource&                 region,
         ::BlockPos const&              pos,
@@ -692,36 +689,36 @@ public:
         ::ActorBlockSyncMessage const* syncMsg
     ) const;
 
-    // vIndex: 83
+    // vIndex: 82
     virtual bool tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
 
-    // vIndex: 84
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    // vIndex: 85
+    // vIndex: 84
     virtual void
     destroy(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor* entitySource) const;
 
-    // vIndex: 86
+    // vIndex: 85
     virtual bool getIgnoresDestroyPermissions(::Actor& entity, ::BlockPos const& pos) const;
 
-    // vIndex: 87
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    // vIndex: 88
+    // vIndex: 87
     virtual bool getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
 
-    // vIndex: 89
+    // vIndex: 88
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    // vIndex: 91
+    // vIndex: 90
     virtual void
     spawnAfterBreak(::BlockSource&, ::Block const&, ::BlockPos const&, ::ResourceDropsContext const&) const;
 
-    // vIndex: 92
+    // vIndex: 91
     virtual ::Block const& getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
@@ -730,19 +727,19 @@ public:
         int               itemValue
     ) const;
 
-    // vIndex: 93
+    // vIndex: 92
     virtual int calcVariant(::BlockSource& region, ::BlockPos const& pos, ::mce::Color const& baseColor) const;
 
-    // vIndex: 94
+    // vIndex: 93
     virtual bool isAttachedTo(::BlockSource& region, ::BlockPos const& pos, ::BlockPos& outAttachedTo) const;
 
-    // vIndex: 95
+    // vIndex: 94
     virtual bool attack(::Player* player, ::BlockPos const& pos) const;
 
-    // vIndex: 96
+    // vIndex: 95
     virtual bool shouldTriggerEntityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
-    // vIndex: 98
+    // vIndex: 97
     virtual bool canBeBuiltOver(
         ::Block const&     block,
         ::BlockSource&     region,
@@ -750,13 +747,13 @@ public:
         ::BlockItem const& newItem
     ) const;
 
-    // vIndex: 97
+    // vIndex: 96
     virtual bool canBeBuiltOver(::Block const& block, ::BlockSource&, ::BlockPos const&) const;
 
-    // vIndex: 99
+    // vIndex: 98
     virtual void triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
 
-    // vIndex: 100
+    // vIndex: 99
     virtual void executeEvent(
         ::BlockSource&       region,
         ::BlockPos const&    pos,
@@ -765,146 +762,146 @@ public:
         ::Actor&             sourceEntity
     ) const;
 
-    // vIndex: 101
+    // vIndex: 100
     virtual ::MobSpawnerData const* getMobToSpawn(::SpawnConditions const& conditions, ::BlockSource& region) const;
 
-    // vIndex: 102
+    // vIndex: 101
     virtual bool shouldStopFalling(::Actor& entity) const;
 
-    // vIndex: 103
+    // vIndex: 102
     virtual bool pushesUpFallingBlocks() const;
 
-    // vIndex: 104
+    // vIndex: 103
     virtual bool canHaveExtraData() const;
 
-    // vIndex: 105
+    // vIndex: 104
     virtual bool hasComparatorSignal() const;
 
-    // vIndex: 106
+    // vIndex: 105
     virtual int
     getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    // vIndex: 107
+    // vIndex: 106
     virtual bool canSlide(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 108
+    // vIndex: 107
     virtual bool canInstatick() const;
 
-    // vIndex: 109
+    // vIndex: 108
     virtual bool canSpawnAt(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    // vIndex: 110
+    // vIndex: 109
     virtual void notifySpawnedAt(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 111
+    // vIndex: 110
     virtual bool causesFreezeEffect() const;
 
-    // vIndex: 112
+    // vIndex: 111
     virtual ::std::string buildDescriptionId(::Block const&) const;
 
-    // vIndex: 113
+    // vIndex: 112
     virtual bool isAuxValueRelevantForPicking() const;
 
-    // vIndex: 114
+    // vIndex: 113
     virtual bool isSeasonTinted(::Block const& block, ::BlockSource& region, ::BlockPos const& p) const;
 
-    // vIndex: 115
+    // vIndex: 114
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
 
-    // vIndex: 116
+    // vIndex: 115
     virtual float getShadeBrightness(::Block const& block) const;
 
-    // vIndex: 117
+    // vIndex: 116
     virtual int telemetryVariant(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const;
 
-    // vIndex: 119
+    // vIndex: 118
     virtual bool canSpawnOn(::Actor*) const;
 
-    // vIndex: 120
+    // vIndex: 119
     virtual ::Block const& getRenderBlock() const;
 
-    // vIndex: 121
+    // vIndex: 120
     virtual uchar getMappedFace(uchar face, ::Block const& block) const;
 
-    // vIndex: 122
+    // vIndex: 121
     virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const;
 
-    // vIndex: 123
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const&) const;
 
-    // vIndex: 124
+    // vIndex: 123
     virtual void animateTick(::BlockAnimateTickData const&) const;
 
-    // vIndex: 125
+    // vIndex: 124
     virtual ::BlockLegacy& init();
 
-    // vIndex: 126
+    // vIndex: 125
     virtual ::Brightness getLightEmission(::Block const&) const;
 
-    // vIndex: 127
+    // vIndex: 126
     virtual ::Block const* tryLegacyUpgrade(ushort) const;
 
-    // vIndex: 128
+    // vIndex: 127
     virtual bool dealsContactDamage(::Actor const& actor, ::Block const& block, bool isPathFinding) const;
 
-    // vIndex: 129
+    // vIndex: 128
     virtual ::Block const* tryGetInfested(::Block const&) const;
 
-    // vIndex: 130
+    // vIndex: 129
     virtual ::Block const* tryGetUninfested(::Block const&) const;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&);
 
-    // vIndex: 132
+    // vIndex: 131
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 133
+    // vIndex: 132
     virtual void onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
 
-    // vIndex: 134
+    // vIndex: 133
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
-    // vIndex: 135
+    // vIndex: 134
     virtual bool shouldTickOnSetBlock() const;
 
+    // vIndex: 135
+    virtual void randomTick(::BlockSource&, ::BlockPos const&, ::Random&) const;
+
     // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    // vIndex: 137
-    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    // vIndex: 138
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 139
+    // vIndex: 137
     virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
 
-    // vIndex: 140
+    // vIndex: 138
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 141
+    // vIndex: 139
     virtual ::BlockRenderLayer getRenderLayer(::Block const& block, ::BlockSource&, ::BlockPos const& pos) const;
 
-    // vIndex: 142
+    // vIndex: 140
     virtual int getExtraRenderLayers() const;
 
-    // vIndex: 143
+    // vIndex: 141
+    virtual ::HashedString const& getCullingLayer() const;
+
+    // vIndex: 142
     virtual ::Brightness getLight(::Block const&) const;
 
-    // vIndex: 144
+    // vIndex: 143
     virtual ::Brightness getEmissiveBrightness(::Block const&) const;
 
-    // vIndex: 145
+    // vIndex: 144
     virtual ::mce::Color getMapColor(::BlockSource&, ::BlockPos const&, ::Block const&) const;
 
-    // vIndex: 146
+    // vIndex: 145
     virtual void _onHitByActivatingAttack(::BlockSource&, ::BlockPos const&, ::Actor*) const;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor&) const;
     // NOLINTEND
 
@@ -946,8 +943,6 @@ public:
     MCAPI ::WeakPtr<::BlockLegacy> createWeakPtr() const;
 
     MCAPI void executeEvent(::std::string const& name, ::RenderParams& params) const;
-
-    MCAPI bool executeTrigger(::DefinitionTrigger const& trigger, ::RenderParams& params) const;
 
     MCAPI void finalizeBlockComponentStorage();
 
@@ -1100,6 +1095,16 @@ public:
     MCFOLD bool
     $hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const;
 
+    MCAPI ::HitResult $clip(
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const;
+
     MCAPI ::AABB $getCollisionShape(
         ::Block const& block,
         ::IConstBlockSource const&,
@@ -1150,9 +1155,7 @@ public:
 
     MCAPI bool $isObstructingChests(::BlockSource& region, ::BlockPos const& pos, ::Block const& thisBlock) const;
 
-    MCAPI ::Vec3 $randomlyModifyPosition(::BlockPos const& pos, int& seed) const;
-
-    MCFOLD ::Vec3 $randomlyModifyPosition(::BlockPos const& pos) const;
+    MCAPI ::Vec3 $randomlyModifyPosition(::BlockPos const& pos) const;
 
     MCFOLD void $onProjectileHit(::BlockSource&, ::BlockPos const&, ::Actor const&) const;
 
@@ -1423,9 +1426,7 @@ public:
 
     MCFOLD bool $shouldTickOnSetBlock() const;
 
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCFOLD void $randomTick(::BlockSource&, ::BlockPos const&, ::Random&) const;
 
     MCFOLD bool $isInteractiveBlock() const;
 
@@ -1436,6 +1437,8 @@ public:
     MCAPI ::BlockRenderLayer $getRenderLayer(::Block const& block, ::BlockSource&, ::BlockPos const& pos) const;
 
     MCFOLD int $getExtraRenderLayers() const;
+
+    MCAPI ::HashedString const& $getCullingLayer() const;
 
     MCAPI ::Brightness $getLight(::Block const&) const;
 

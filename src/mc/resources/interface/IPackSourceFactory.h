@@ -9,10 +9,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class CompositePackSource;
 class DirectoryPackSource;
+class IWorldTemplateManager;
 class InPackagePackSource;
+class PackSource;
 class WorldHistoryPackSource;
-class WorldTemplateManager;
 class WorldTemplatePackSource;
 struct PackIdVersion;
 namespace Core { class Path; }
@@ -28,7 +30,7 @@ public:
 
     // vIndex: 1
     virtual ::WorldTemplatePackSource& createWorldTemplatePackSource(
-        ::Bedrock::NotNullNonOwnerPtr<::WorldTemplateManager const> const&,
+        ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager const> const&,
         ::mce::UUID const&,
         ::PackType,
         ::PackOrigin
@@ -56,9 +58,12 @@ public:
     virtual ::WorldHistoryPackSource* getWorldHistoryPackSource(::Core::Path const&, ::PackType) const = 0;
 
     // vIndex: 9
-    virtual ::DirectoryPackSource* getDirectoryPackSourceContaining(::PackIdVersion const&) const = 0;
+    virtual ::std::unique_ptr<::CompositePackSource> createCompositePackSource(::std::vector<::PackSource*>) = 0;
 
     // vIndex: 10
+    virtual ::DirectoryPackSource* getDirectoryPackSourceContaining(::PackIdVersion const&) const = 0;
+
+    // vIndex: 11
     virtual void removeFromDirectoryPackSource(::Core::Path const&) = 0;
     // NOLINTEND
 

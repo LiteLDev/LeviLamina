@@ -125,8 +125,6 @@ public:
     MCNAPI void
     _loadComponentsForLegacyCompabitility(::SemVersion const& originalJsonVersion, ::BlockDefinition& definition);
 
-    MCNAPI bool _loadDefinitionFormatVersion(::Json::Value const& root, ::SemVersion& version);
-
     MCNAPI bool
     _loadEvents(::Json::Value const& root, ::BlockDefinition& definition, ::IPackLoadContext& packLoadContext);
 
@@ -140,6 +138,11 @@ public:
     );
 
     MCNAPI ::CreativeItemCategory _stringToCreativeItemCategory(::std::string const& str);
+
+    MCNAPI bool _validateCrossComponentConstraints(
+        ::BlockComponentGroupDescription const& description,
+        ::SemVersion const&                     mOriginalJsonVersion
+    ) const;
 
     MCNAPI bool _validatePrereleaseRequirements(
         ::LogArea                                   logArea,
@@ -155,6 +158,13 @@ public:
 
     MCNAPI ::std::unique_ptr<::BlockDefinition>
     generateBlockDefinition(::BlockDefinitionGroup::BlockResource const& resource, ::IPackLoadContext& packLoadContext);
+
+    MCNAPI bool generateBlockResource(
+        ::Json::Value const&                   root,
+        ::IPackLoadContext const&              packLoadContext,
+        ::SemVersion const&                    originalJsonVersion,
+        ::BlockDefinitionGroup::BlockResource& out
+    );
 
     MCNAPI ::std::vector<::std::pair<::std::string, ::CompoundTag>> generateServerBlockProperties() const;
 

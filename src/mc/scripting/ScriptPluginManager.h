@@ -96,17 +96,18 @@ public:
     MCNAPI ::ScriptPluginManagerResult createContextsForGroup(::PluginExecutionGroup group);
 
     MCNAPI ::ScriptPluginManagerResult discoverPlugins(
-        ::ResourceInformation::ResourceType     pluginEnumerator,
-        ::IScriptPluginSourceEnumerator&        packConfigManager,
-        ::ScriptPackConfigurationManager const& moduleFilters,
+        ::ResourceInformation::ResourceType     moduleType,
+        ::IScriptPluginSourceEnumerator&        pluginEnumerator,
+        ::ScriptPackConfigurationManager const& packConfigManager,
         ::std::vector<::std::function<bool(
             ::PackManifest const&,
             ::Scripting::ModuleDescriptor const&,
             ::Scripting::ModuleDescriptor const&,
             ::ScriptPluginResult&
-        )>> const&                              excludeModuleIDs,
-        ::std::vector<::std::string>            pluginExecutionGroupSelector,
-        ::std::function<::PluginExecutionGroup(::std::vector<::Scripting::ModuleDescriptor> const&)>&& moduleType
+        )>> const&                              moduleFilters,
+        ::std::vector<::std::string>            excludeModuleIDs,
+        ::std::function<::PluginExecutionGroup(::std::vector<::Scripting::ModuleDescriptor> const&)>&&
+            pluginExecutionGroupSelector
     );
 
     MCNAPI void forEachPlugin(::std::function<void(::ScriptPlugin&)> func);
@@ -116,13 +117,5 @@ public:
     MCNAPI ::std::vector<::ScriptPluginManager::PackNameAndWeakScope> getPluginScopes() const;
 
     MCNAPI ::ScriptPluginManagerResult runGroup(::PluginExecutionGroup group);
-
-    MCNAPI ~ScriptPluginManager();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

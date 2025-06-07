@@ -3,9 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/script/ScriptIBlockPaletteItem.h"
 
 // auto generated forward declare list
@@ -15,8 +14,7 @@ namespace Editor { struct SimpleBlockPaletteItem; }
 namespace Editor::ScriptModule { class ScriptWeightedBlock; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptBlockType; }
-namespace Scripting { struct ArgumentOutOfBoundsError; }
-namespace Scripting { struct Error; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -42,7 +40,7 @@ public:
     virtual ~ScriptProbabilityBlockPaletteItem() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void, ::Scripting::Error> setBlock(
+    virtual ::Scripting::Result_deprecated<void> setBlock(
         ::std::variant<
             ::std::string,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
@@ -61,7 +59,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error> addBlock(
+    MCNAPI ::Scripting::Result_deprecated<void> addBlock(
         ::std::variant<
             ::std::string,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
@@ -71,15 +69,13 @@ public:
 
     MCNAPI ::std::vector<::Editor::ScriptModule::ScriptWeightedBlock> getBlocks() const;
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError, ::Scripting::Error>
-    removeBlockAt(int index);
+    MCNAPI ::Scripting::Result_deprecated<void> removeBlockAt(int index);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptProbabilityBlockPaletteItem>
-    bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 
 public:
@@ -91,7 +87,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error> $setBlock(
+    MCNAPI ::Scripting::Result_deprecated<void> $setBlock(
         ::std::variant<
             ::std::string,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,

@@ -2,13 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class Vec3;
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleGameTest {
@@ -32,7 +30,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleGameTest::ScriptNavigationResult> bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:

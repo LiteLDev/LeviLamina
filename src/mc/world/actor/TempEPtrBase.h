@@ -25,7 +25,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ~TempEPtrBase() /*override*/ = default;
+    virtual ~TempEPtrBase() /*override*/;
 
     // vIndex: 0
     virtual void invalidate() /*override*/;
@@ -37,6 +37,12 @@ public:
     MCNAPI bool isValid() const;
 
     MCNAPI void unset();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

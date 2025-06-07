@@ -8,7 +8,7 @@ class PrivilegeScope {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk5e29bd;
+    ::ll::UntypedStorage<8, 8> mUnkf87478;
     ::ll::UntypedStorage<1, 2> mUnk80be42;
     // NOLINTEND
 

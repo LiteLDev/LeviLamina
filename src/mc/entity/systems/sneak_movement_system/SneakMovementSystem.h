@@ -14,14 +14,11 @@ struct MoveInputComponent;
 struct MoveRequestComponent;
 struct OnGroundFlagComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 namespace SneakMovementSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo create();
-
 MCNAPI bool storeSneakStateAndReturnDoSneakMovement(
     ::ActorDataFlagComponent const&           actorData,
     ::Optional<::MoveInputComponent const>    moveInputComponent,

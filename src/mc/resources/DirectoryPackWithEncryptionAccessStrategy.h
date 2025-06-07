@@ -70,28 +70,25 @@ public:
         /*override*/;
 
     // vIndex: 9
-    virtual bool writeAsset(::Core::Path const& packRelativePath, ::std::string const& fileContent) /*override*/;
-
-    // vIndex: 10
     virtual void forEachIn(
         ::Core::Path const&                        packRelativePath,
         ::std::function<void(::Core::Path const&)> callback,
         bool                                       recurseAnyways
     ) const /*override*/;
 
-    // vIndex: 12
+    // vIndex: 11
     virtual ::PackAccessStrategyType getStrategyType() const /*override*/;
 
-    // vIndex: 15
+    // vIndex: 14
     virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
 
-    // vIndex: 16
+    // vIndex: 15
     virtual ::PackAccessAssetGenerationResult generateAssetSet() /*override*/;
 
-    // vIndex: 19
+    // vIndex: 18
     virtual void unload() /*override*/;
 
-    // vIndex: 20
+    // vIndex: 19
     virtual ::ContentIdentity readContentIdentity() const /*override*/;
     // NOLINTEND
 
@@ -143,8 +140,6 @@ public:
     MCNAPI bool $hasFolder(::Core::Path const& packRelativePath) const;
 
     MCNAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
-
-    MCNAPI bool $writeAsset(::Core::Path const& packRelativePath, ::std::string const& fileContent);
 
     MCNAPI void $forEachIn(
         ::Core::Path const&                        packRelativePath,

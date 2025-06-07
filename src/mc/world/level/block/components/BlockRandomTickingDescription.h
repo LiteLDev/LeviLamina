@@ -14,7 +14,7 @@ struct BlockRandomTickingDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 256> mUnk6ff9cd;
+    ::ll::UntypedStorage<8, 56> mUnk6ff9cd;
     // NOLINTEND
 
 public:

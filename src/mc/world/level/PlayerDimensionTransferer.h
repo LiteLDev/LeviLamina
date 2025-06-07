@@ -42,9 +42,9 @@ public:
     ::ll::TypedStorage<
         8,
         128,
-        ::Bedrock::PubSub::Publisher<void(::DimensionType), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+        ::Bedrock::PubSub::Publisher<void(::DimensionType), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
         mOnAnyPlayerChangeDimensionPreSuspendRegion;
-    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
         mOnAnyPlayerChangeDimensionPrepareRegionComplete;
     // NOLINTEND
 

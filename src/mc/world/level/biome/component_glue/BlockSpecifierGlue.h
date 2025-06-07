@@ -12,7 +12,7 @@ namespace BlockSpecifierGlue {
 // functions
 // NOLINTBEGIN
 MCNAPI ::std::unique_ptr<::BlockDescriptor>
-getResolvedBlock(::SharedTypes::v1_20_60::BlockSpecifier const& blockSpecifier);
+getResolvedBlockDescriptor(::SharedTypes::v1_20_60::BlockSpecifier const& blockSpecifier);
 // NOLINTEND
 
 } // namespace BlockSpecifierGlue

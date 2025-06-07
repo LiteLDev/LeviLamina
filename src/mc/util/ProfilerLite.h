@@ -126,6 +126,7 @@ public:
     ::ll::TypedStorage<8, 8, double>                                                mNextUpdateTime;
     ::ll::TypedStorage<8, 8, double>                                                mLastUpdateTime;
     ::ll::TypedStorage<8, 8, double>                                                mBenchmarkModeTime;
+    ::ll::TypedStorage<4, 4, int>                                                   mTicksToNextMemoryUpdate;
     ::ll::TypedStorage<1, 1, bool>                                                  mBenchmarkModeDone;
     ::ll::TypedStorage<1, 1, bool>                                                  mBenchmarkModeIsSetup;
     ::ll::TypedStorage<1, 1, bool>                                                  mDefaultEnabled;
@@ -138,7 +139,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                            mDebugServerTickTime;
     ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                            mDebugServerNetworkTime;
     ::ll::TypedStorage<4, 4, float>                                                 mDebugRemoteServerTickTime;
-    ::ll::TypedStorage<4, 48, ::ProfilerLiteTelemetry>                              mTelemetry;
+    ::ll::TypedStorage<8, 72, ::ProfilerLiteTelemetry>                              mTelemetry;
     ::ll::TypedStorage<8, 32, ::std::string>                                        mCachedProfileString;
     ::ll::TypedStorage<4, 16, ::std::array<uint, 4>>                                mLastNetworkStatSampleNum;
     ::ll::TypedStorage<8, 8, uint64>                                                mPrevTotalBytesWritten;

@@ -12,7 +12,7 @@ public:
     // vIndex: 0
     virtual ~SimpleBlockVolumeIterator() /*override*/ = default;
 
-    // vIndex: 2
+    // vIndex: 4
     virtual bool isValid() const /*override*/;
     // NOLINTEND
 

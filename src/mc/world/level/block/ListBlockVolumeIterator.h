@@ -27,16 +27,16 @@ public:
     // vIndex: 0
     virtual ~ListBlockVolumeIterator() /*override*/ = default;
 
-    // vIndex: 1
+    // vIndex: 3
     virtual ::BaseBlockLocationIterator& operator++() /*override*/;
 
-    // vIndex: 2
+    // vIndex: 4
     virtual bool isValid() const /*override*/;
 
-    // vIndex: 3
+    // vIndex: 5
     virtual void _begin() /*override*/;
 
-    // vIndex: 4
+    // vIndex: 6
     virtual void _end() /*override*/;
     // NOLINTEND
 

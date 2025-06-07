@@ -158,7 +158,7 @@ public:
     virtual void moveView() /*override*/;
 
     // vIndex: 186
-    virtual void moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimensionType) /*override*/;
+    virtual void moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimension) /*override*/;
 
     // vIndex: 183
     virtual void frameUpdate(::FrameUpdateContextBase&) /*override*/;
@@ -177,7 +177,7 @@ public:
     virtual void sendArmor(::std::bitset<5> const armorSlots) /*override*/;
 
     // vIndex: 157
-    virtual void setDamagedArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item) /*override*/;
+    virtual void setDamagedArmor(::SharedTypes::Legacy::ArmorSlot, ::ItemStack const&) /*override*/;
 
     // vIndex: 165
     virtual void sendInventory(bool shouldSelectSlot) /*override*/;
@@ -201,7 +201,7 @@ public:
 
     // vIndex: 203
     virtual void displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& textObject,
+        ::ResolvedTextObject const& resolvedTextObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     ) /*override*/;
@@ -247,7 +247,7 @@ public:
     virtual ::HashedString getCurrentStructureFeature() const /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     // vIndex: 220
     virtual void setContainerData(::IContainerManager& menu, int id, int value) /*override*/;
@@ -269,7 +269,7 @@ public:
     virtual void stopSleepInBed(bool forcefulWakeUp, bool updateLevelList) /*override*/;
 
     // vIndex: 72
-    virtual void setArmor(::SharedTypes::Legacy::ArmorSlot const armorSlot, ::ItemStack const& item) /*override*/;
+    virtual void setArmor(::SharedTypes::Legacy::ArmorSlot const slot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 79
     virtual void setOffhandSlot(::ItemStack const& item) /*override*/;
@@ -420,8 +420,6 @@ public:
         ::HudVisibility                                     hudVisibility,
         ::std::optional<::std::vector<::HudElement>> const& hudElements
     );
-
-    MCAPI void setPlayerInput(float xxa, float zza, bool jumping, bool sneaking);
     // NOLINTEND
 
 public:
@@ -487,7 +485,7 @@ public:
 
     MCAPI void $moveView();
 
-    MCAPI void $moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimensionType);
+    MCAPI void $moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimension);
 
     MCFOLD void $frameUpdate(::FrameUpdateContextBase&);
 
@@ -498,8 +496,6 @@ public:
     MCAPI void $sendArmorDamage(::std::bitset<5> const damagedSlots);
 
     MCAPI void $sendArmor(::std::bitset<5> const armorSlots);
-
-    MCAPI void $setDamagedArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
 
     MCAPI void $sendInventory(bool shouldSelectSlot);
 
@@ -516,7 +512,7 @@ public:
     );
 
     MCAPI void $displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& textObject,
+        ::ResolvedTextObject const& resolvedTextObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     );
@@ -551,6 +547,8 @@ public:
 
     MCAPI ::HashedString $getCurrentStructureFeature() const;
 
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+
     MCAPI void $setContainerData(::IContainerManager& menu, int id, int value);
 
     MCAPI void $slotChanged(
@@ -565,8 +563,6 @@ public:
     MCAPI void $refreshContainer(::IContainerManager& menu);
 
     MCAPI void $stopSleepInBed(bool forcefulWakeUp, bool updateLevelList);
-
-    MCAPI void $setArmor(::SharedTypes::Legacy::ArmorSlot const armorSlot, ::ItemStack const& item);
 
     MCAPI void $setOffhandSlot(::ItemStack const& item);
 

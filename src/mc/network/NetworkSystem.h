@@ -16,7 +16,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EncryptedNetworkPeer;
 class IPacketObserver;
 class LocalConnector;
 class NetworkConnection;
@@ -160,10 +159,10 @@ public:
 
     // vIndex: 3
     virtual void onConnectionClosed(
-        ::NetworkIdentifier const&,
-        ::Connection::DisconnectFailReason const,
-        ::std::string const&,
-        bool
+        ::NetworkIdentifier const&               id,
+        ::Connection::DisconnectFailReason const discoReason,
+        ::std::string const&                     reasonMessage,
+        bool                                     skipDisconnectMessage
     ) /*override*/;
 
     // vIndex: 4
@@ -174,7 +173,10 @@ public:
     onAllRemoteConnectionsClosed(::Connection::DisconnectFailReason, ::std::string const&, bool) /*override*/;
 
     // vIndex: 6
-    virtual void onOutgoingConnectionFailed(::Connection::DisconnectFailReason, ::std::string const&) /*override*/;
+    virtual void onOutgoingConnectionFailed(
+        ::Connection::DisconnectFailReason discoReason,
+        ::std::string const&               reasonMessage
+    ) /*override*/;
 
     // vIndex: 7
     virtual void onWebsocketRequest(
@@ -189,9 +191,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit NetworkSystem(::NetworkSystem::Dependencies&& deps);
 
-    MCAPI ::NetworkConnection* _getConnectionFromId(::NetworkIdentifier const& id) const;
-
     MCAPI bool _isUsingNetherNetTransportLayer() const;
+
+    MCAPI void _sendInternal(::NetworkIdentifier const& id, ::Packet const& packet, ::std::string const& data);
 
     MCAPI bool
     _sortAndPacketizeEvents(::NetworkConnection& connection, ::std::chrono::steady_clock::time_point endTime);
@@ -199,8 +201,6 @@ public:
     MCAPI void disconnect();
 
     MCAPI void enableAsyncFlush(::NetworkIdentifier const& id);
-
-    MCAPI ::std::weak_ptr<::EncryptedNetworkPeer> getEncryptedPeerForUser(::NetworkIdentifier const& id);
 
     MCAPI ::NetworkPeer* getPeerForUser(::NetworkIdentifier const& id);
 
@@ -249,6 +249,16 @@ public:
     MCAPI bool $onNewIncomingConnection(::NetworkIdentifier const& id, ::std::shared_ptr<::NetworkPeer>&& peer);
 
     MCAPI bool $onNewOutgoingConnection(::NetworkIdentifier const& id, ::std::shared_ptr<::NetworkPeer>&& peer);
+
+    MCAPI void $onConnectionClosed(
+        ::NetworkIdentifier const&               id,
+        ::Connection::DisconnectFailReason const discoReason,
+        ::std::string const&                     reasonMessage,
+        bool                                     skipDisconnectMessage
+    );
+
+    MCAPI void
+    $onOutgoingConnectionFailed(::Connection::DisconnectFailReason discoReason, ::std::string const& reasonMessage);
 
     MCAPI void $onWebsocketRequest(
         ::std::string const&    serverAddress,

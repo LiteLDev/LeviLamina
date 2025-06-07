@@ -29,6 +29,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void addTrustItemByName(::std::string const& name);
+
+    MCNAPI ~TrustingDefinition();
     // NOLINTEND
 
 public:
@@ -37,5 +39,11 @@ public:
     MCNAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TrustingDefinition>>& root
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

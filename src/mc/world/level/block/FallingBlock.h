@@ -21,33 +21,33 @@ class FallingBlock : public ::BlockLegacy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 87
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 123
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual ::mce::Color getDustColor(::Block const&) const = 0;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual ::std::string getDustParticleName(::Block const&) const = 0;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual bool falling() const;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual void onLand(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 152
+    // vIndex: 151
     virtual bool isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 153
+    // vIndex: 152
     virtual void
     startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0

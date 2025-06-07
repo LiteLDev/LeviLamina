@@ -119,6 +119,13 @@ public:
         ::std::string const& platformId
     );
 
+    MCAPI static ::TextPacket createTranslatedChat(
+        ::std::string const& author,
+        ::std::string const& message,
+        ::std::string const& xuid,
+        ::std::string const& platformId
+    );
+
     MCAPI static ::TextPacket createWhisper(
         ::std::string const&           author,
         ::std::string const&           message,

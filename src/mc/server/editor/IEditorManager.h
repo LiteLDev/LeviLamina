@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/world/level/FileArchiver.h"
 
 // auto generated forward declare list
@@ -50,12 +50,15 @@ public:
     virtual void cleanupOrphanedTemporaryPlaytestWorlds(::ILevelListCache&) const = 0;
 
     // vIndex: 6
-    virtual ::Scripting::Result<void> scriptingTeardown() = 0;
+    virtual void cleanupOrphanedTemporaryRealmsUploadWorlds() = 0;
 
     // vIndex: 7
-    virtual ::Scripting::Result<void> scriptingRebuild(::Scripting::ContextId, bool) = 0;
+    virtual ::Scripting::Result_deprecated<void> scriptingTeardown() = 0;
 
     // vIndex: 8
+    virtual ::Scripting::Result_deprecated<void> scriptingRebuild(::Scripting::ContextId, bool) = 0;
+
+    // vIndex: 9
     virtual void tryClearPlaytestRoundtripInfo() = 0;
     // NOLINTEND
 

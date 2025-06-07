@@ -45,7 +45,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk4fa3c5;
     ::ll::UntypedStorage<8, 64>  mUnk5edc72;
     ::ll::UntypedStorage<8, 64>  mUnkd6b698;
-    ::ll::UntypedStorage<8, 128> mUnk54cec9;
+    ::ll::UntypedStorage<8, 128> mUnk45ddcd;
     // NOLINTEND
 
 public:
@@ -75,6 +75,10 @@ public:
     // vIndex: 1
     virtual ::WorldTemplateInfo const*
     findInstalledWorldTemplateByUUID(::std::vector<::mce::UUID> const& packUUIDs) const /*override*/;
+
+    // vIndex: 8
+    virtual ::WorldTemplateInfo const* findInstalledWorldTemplate(::PackIdVersion const& packIdentityToFind) const
+        /*override*/;
 
     // vIndex: 7
     virtual void deleteWorldTemplateAndFiles(::PackIdVersion const& packIdentity) /*override*/;
@@ -108,8 +112,6 @@ public:
     MCNAPI void _initializePackSources();
 
     MCNAPI void _onDiscoverWorldTemplate(::Pack const& pack);
-
-    MCNAPI ::WorldTemplateInfo const* findInstalledWorldTemplate(::PackIdVersion const& packIdentityToFind) const;
 
     MCNAPI ::Core::PathBuffer<::std::string> getWorldTemplatesPath() const;
 
@@ -149,6 +151,8 @@ public:
 
     MCNAPI ::WorldTemplateInfo const*
     $findInstalledWorldTemplateByUUID(::std::vector<::mce::UUID> const& packUUIDs) const;
+
+    MCNAPI ::WorldTemplateInfo const* $findInstalledWorldTemplate(::PackIdVersion const& packIdentityToFind) const;
 
     MCNAPI void $deleteWorldTemplateAndFiles(::PackIdVersion const& packIdentity);
 

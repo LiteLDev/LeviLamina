@@ -9,7 +9,7 @@ struct DiagnosticsEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 48, ::ProfilerLiteTelemetry> mTelemetry;
+    ::ll::TypedStorage<8, 72, ::ProfilerLiteTelemetry> mTelemetry;
     ::ll::TypedStorage<8, 32, ::std::string>           mPlayerName;
     // NOLINTEND
 

@@ -5,8 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
-class GeometryGroup : public ::std::enable_shared_from_this<::GeometryGroup>,
-                      public ::Bedrock::EnableNonOwnerReferences {
+class GeometryGroup : public ::Bedrock::EnableNonOwnerReferences,
+                      public ::std::enable_shared_from_this<::GeometryGroup> {
 public:
     // member variables
     // NOLINTBEGIN

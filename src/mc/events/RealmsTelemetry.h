@@ -63,11 +63,12 @@ public:
         // prevent constructor by default
         CallCount& operator=(CallCount const&);
         CallCount(CallCount const&);
-        CallCount();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI CallCount();
+
         MCNAPI CallCount(::Social::Events::RealmsTelemetry::CallCount&&);
 
         MCNAPI void addAllCalls(::Social::Events::RealmsTelemetry::CallCount const& other);
@@ -80,6 +81,8 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
+        MCNAPI void* $ctor();
+
         MCNAPI void* $ctor(::Social::Events::RealmsTelemetry::CallCount&&);
         // NOLINTEND
 

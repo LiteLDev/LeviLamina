@@ -43,14 +43,6 @@ MCNAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
     ::Core::Path const&                    outputFolderPath,
     ::Core::ZipUtils::ZipProgress&         progress,
     bool                                   useLowMemMode,
-    ::Core::ZipUtils::UnzipSettings const& unzipSettings
-);
-
-MCNAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
-    ::Core::Path const&                    zipInputPath,
-    ::Core::Path const&                    outputFolderPath,
-    ::Core::ZipUtils::ZipProgress&         progress,
-    bool                                   useLowMemMode,
     ::Core::ZipUtils::UnzipSettings const& unzipSettings,
     ::Core::Result&                        transactionCommitResult
 );

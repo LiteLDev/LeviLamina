@@ -8,8 +8,8 @@ struct MessageReceived {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk8571db;
-    ::ll::UntypedStorage<8, 8>  mUnk3bf291;
+    ::ll::UntypedStorage<8, 24> mUnk8571db;
+    ::ll::UntypedStorage<8, 24> mUnk3bf291;
     ::ll::UntypedStorage<8, 32> mUnk5978c9;
     ::ll::UntypedStorage<8, 32> mUnk2f5088;
     // NOLINTEND

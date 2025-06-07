@@ -16,11 +16,11 @@ struct SwampSurfaceBiomeComponentGlue : public ::IBiomeComponentGlue {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkfeac19;
-    ::ll::UntypedStorage<8, 8> mUnk6a0a33;
-    ::ll::UntypedStorage<8, 8> mUnk96056f;
-    ::ll::UntypedStorage<8, 8> mUnkb814ed;
-    ::ll::UntypedStorage<8, 8> mUnkc6eb30;
+    ::ll::UntypedStorage<8, 8> mUnkc589f3;
+    ::ll::UntypedStorage<8, 8> mUnk2c4840;
+    ::ll::UntypedStorage<8, 8> mUnk7ffe21;
+    ::ll::UntypedStorage<8, 8> mUnkb2410f;
+    ::ll::UntypedStorage<8, 8> mUnkb4f236;
     // NOLINTEND
 
 public:

@@ -732,6 +732,8 @@ MCAPI ::HashedString const& DragonEgg();
 
 MCAPI ::HashedString const& DragonHead();
 
+MCAPI ::HashedString const& DriedGhast();
+
 MCAPI ::HashedString const& DriedKelpBlock();
 
 MCAPI ::HashedString const& Dripstone();

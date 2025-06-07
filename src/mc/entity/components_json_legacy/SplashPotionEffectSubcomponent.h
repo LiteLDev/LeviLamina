@@ -52,14 +52,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void applyMobEffects(
-        ::MobEffectInstance const&               effectInst,
-        ::std::vector<::Actor*> const&           actors,
-        ::Actor&                                 projectile,
-        ::std::shared_ptr<::Potion const> const& splashRange,
-        float                                    effect,
-        ::MobEffect*                             res,
-        ::HitResult&                             aux,
-        int
+        ::MobEffectInstance const&     effectInst,
+        ::std::vector<::Actor*> const& actors,
+        ::Actor&                       projectile,
+        ::std::shared_ptr<::Potion const> const&,
+        float        splashRange,
+        ::MobEffect* effect,
+        ::HitResult& res,
+        int          aux
     );
     // NOLINTEND
 

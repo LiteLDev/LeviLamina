@@ -11,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class ResourceInformation;
-struct PackIdVersion;
 namespace Json { class Value; }
 // clang-format on
 
@@ -103,8 +102,6 @@ public:
     MCAPI void addModule(::ResourceInformation const& resourceInfo);
 
     MCAPI void addPackCapability(::std::string_view capability, ::PackCapability::TrustLevel trustLevel);
-
-    MCAPI void addPackDependency(::PackIdVersion const& packId);
 
     MCAPI ::std::string getDescription() const;
 

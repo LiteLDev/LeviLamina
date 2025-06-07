@@ -30,6 +30,6 @@ public:
 
     MCNAPI ::SpawnActorComponent& operator=(::SpawnActorComponent&&);
 
-    MCNAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const&, ::DataLoadHelper&);
+    MCNAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
     // NOLINTEND
 };

@@ -23,8 +23,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void fromStringList(::std::vector<::std::string> const& blockNames);
 
-    MCNAPI ::Editor::BlockMask::BlockMaskList& operator=(::Editor::BlockMask::BlockMaskList&&);
-
     MCNAPI ::std::vector<::std::string> toStringList() const;
 
     MCNAPI ~BlockMaskList();

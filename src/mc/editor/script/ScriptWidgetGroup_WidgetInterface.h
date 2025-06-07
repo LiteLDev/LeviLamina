@@ -4,14 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Editor::ScriptModule { class ScriptWidget; }
-namespace Editor::ScriptModule { class ScriptWidgetErrorInvalidObject; }
-namespace Editor::ScriptModule { class ScriptWidgetGroupErrorInvalidObject; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -21,11 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ::Scripting::Result<
-        void,
-        ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject,
-        ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject,
-        ::Scripting::Error>
+    virtual ::Scripting::Result_deprecated<void>
         _deleteWidget(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>) = 0;
     // NOLINTEND
 

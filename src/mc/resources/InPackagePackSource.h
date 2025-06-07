@@ -11,18 +11,18 @@
 // auto generated forward declare list
 // clang-format off
 class IContentKeyProvider;
-class IInPackagePacks;
 class IPackManifestFactory;
 class Pack;
 class PackSourceReport;
+struct InPackagePackSourceOptions;
 // clang-format on
 
 class InPackagePackSource : public ::PackSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk2affad;
-    ::ll::UntypedStorage<1, 1>  mUnk2f70be;
+    ::ll::UntypedStorage<8, 16> mUnk3f8820;
+    ::ll::UntypedStorage<1, 1>  mUnk5a812f;
     ::ll::UntypedStorage<1, 1>  mUnkf76cd7;
     ::ll::UntypedStorage<8, 24> mUnk8c0083;
     ::ll::UntypedStorage<8, 64> mUnka6bb16;
@@ -38,7 +38,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~InPackagePackSource() /*override*/;
+    virtual ~InPackagePackSource() /*override*/ = default;
 
     // vIndex: 1
     virtual void forEachPackConst(::std::function<void(::Pack const&)> callback) const /*override*/;
@@ -62,19 +62,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI InPackagePackSource(::std::shared_ptr<::IInPackagePacks> const& packs, ::PackType packType);
+    MCNAPI explicit InPackagePackSource(::InPackagePackSourceOptions options);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::shared_ptr<::IInPackagePacks> const& packs, ::PackType packType);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::InPackagePackSourceOptions options);
     // NOLINTEND
 
 public:

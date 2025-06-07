@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 #include "mc/world/level/Tick.h"
@@ -11,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class RoarGoal : public ::Goal {
@@ -39,6 +41,15 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~Definition() /*override*/ = default;
+        // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCNAPI static void buildSchema(
+            ::std::string const&                                                                                 name,
+            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RoarGoal::Definition>>& root
+        );
         // NOLINTEND
 
     public:

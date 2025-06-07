@@ -72,7 +72,7 @@ public:
         ::std::vector<::SpecificEnchantFunction::EnchantInfo> const& enchantments
     );
 
-    MCNAPI void _applyInner(::ItemStackBase& item, ::Random& random, ::LootTableContext& allowNonVanilla, bool);
+    MCNAPI void _applyInner(::ItemStackBase& item, ::Random& random, ::LootTableContext&, bool allowNonVanilla);
     // NOLINTEND
 
 public:

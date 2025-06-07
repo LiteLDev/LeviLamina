@@ -6,7 +6,7 @@
 // clang-format off
 class Biome;
 class BiomeRegistry;
-class BlockDescriptor;
+class Block;
 namespace SharedTypes::v1_20_60 { struct BlockSpecifier; }
 namespace SharedTypes::v1_20_60 { struct IBiomeJsonComponent; }
 // clang-format on
@@ -28,13 +28,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::BlockDescriptor>
+    MCNAPI static ::Block const*
     _getResolvedBlock(::SharedTypes::v1_20_60::BlockSpecifier const& blockSpecifier, ::std::string const& fieldName);
-
-    MCNAPI static ::std::vector<::std::unique_ptr<::BlockDescriptor>> _getResolvedBlocks(
-        ::std::vector<::SharedTypes::v1_20_60::BlockSpecifier> const& blockSpecifiers,
-        ::std::string const&                                          fieldName
-    );
     // NOLINTEND
 
 public:

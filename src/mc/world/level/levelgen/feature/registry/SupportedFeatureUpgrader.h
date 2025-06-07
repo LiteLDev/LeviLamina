@@ -15,16 +15,4 @@ public:
     SupportedFeatureUpgrader& operator=(SupportedFeatureUpgrader const&);
     SupportedFeatureUpgrader(SupportedFeatureUpgrader const&);
     SupportedFeatureUpgrader();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~SupportedFeatureUpgrader();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

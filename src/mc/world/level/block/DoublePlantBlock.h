@@ -16,7 +16,7 @@ class DoublePlantBlock : public ::DoublePlantBaseBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 67
+    // vIndex: 66
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 0

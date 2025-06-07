@@ -20,7 +20,7 @@ public:
     // vIndex: 0
     virtual ~RandomizableBlockActorContainer() /*override*/;
 
-    // vIndex: 31
+    // vIndex: 34
     virtual void setContainerChanged(int slot) /*override*/;
 
     // vIndex: 22
@@ -35,7 +35,7 @@ public:
     // vIndex: 14
     virtual void onRemoved(::BlockSource&) /*override*/;
 
-    // vIndex: 38
+    // vIndex: 41
     virtual void initializeContainerContents(::BlockSource& region) /*override*/;
     // NOLINTEND
 

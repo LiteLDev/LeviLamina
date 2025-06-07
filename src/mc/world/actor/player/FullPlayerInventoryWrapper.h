@@ -42,6 +42,8 @@ public:
         ::std::function<bool(::ItemStack const&)> comparator
     );
 
+    MCAPI int _removeCursorItem();
+
     MCAPI int _removeCursorItem(::ItemStack const& item, bool requireExactAux, int maxCount);
 
     MCAPI int _removeSimpleContainerItem(

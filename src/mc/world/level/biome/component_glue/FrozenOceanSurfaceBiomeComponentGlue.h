@@ -16,11 +16,11 @@ struct FrozenOceanSurfaceBiomeComponentGlue : public ::IBiomeComponentGlue {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk5072df;
-    ::ll::UntypedStorage<8, 8> mUnk7fad3a;
-    ::ll::UntypedStorage<8, 8> mUnk7c4f0c;
-    ::ll::UntypedStorage<8, 8> mUnkd62ebd;
-    ::ll::UntypedStorage<8, 8> mUnka27b68;
+    ::ll::UntypedStorage<8, 8> mUnkae7958;
+    ::ll::UntypedStorage<8, 8> mUnk92573d;
+    ::ll::UntypedStorage<8, 8> mUnk9f2f4b;
+    ::ll::UntypedStorage<8, 8> mUnk399ca1;
+    ::ll::UntypedStorage<8, 8> mUnk9e033e;
     // NOLINTEND
 
 public:

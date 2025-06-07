@@ -83,6 +83,8 @@ public:
 
     MCAPI ::std::string const& getInteractiveText(::Actor& owner) const;
 
+    MCAPI ::std::string const& getSceneStateForPlayer(::ActorUniqueID const& playerID) const;
+
     MCAPI void initClientOnlyData(::Actor& owner);
 
     MCAPI void initFromDefinition(::Actor& owner);

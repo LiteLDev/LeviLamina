@@ -3,9 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
@@ -14,6 +12,7 @@ class Player;
 struct ChatEvent;
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -56,9 +55,9 @@ public:
     MCNAPI ::ScriptModuleMinecraft::ScriptChatSendAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptChatSendAfterEvent const&);
 
-    MCNAPI ::Scripting::Result<void> setSendToTargets_V010(bool sendToTargets);
+    MCNAPI ::Scripting::Result_deprecated<void> setSendToTargets_V010(bool sendToTargets);
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     setTargets_V010(::std::vector<::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> targets);
 
     MCNAPI ~ScriptChatSendAfterEvent();
@@ -67,9 +66,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptChatSendAfterEvent> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptChatSendAfterEvent> bindV010();
+    MCNAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:

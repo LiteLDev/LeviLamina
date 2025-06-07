@@ -14,17 +14,18 @@ class Level;
 class StructureBlockActor;
 class StructureEditorData;
 class StructureTemplate;
+class Vec3;
 // clang-format on
 
 namespace gametest::StructureUtils {
 // functions
 // NOLINTBEGIN
 MCNAPI void AddCommandBlockAndButtonToStartTest(
-    ::BlockPos const&    structureBlockPos,
-    ::Rotation           commandBlockPosRelativeToTestPos,
-    ::BlockPos const&    testName,
-    ::std::string const& region,
-    ::BlockSource&
+    ::BlockPos const& structureBlockPos,
+    ::Rotation,
+    ::BlockPos const&    commandBlockPosRelativeToTestPos,
+    ::std::string const& testName,
+    ::BlockSource&       region
 );
 
 MCNAPI void ClearSpaceForStructure(::BoundingBox const& structureBoundingBox, int structureYPos, ::BlockSource& region);
@@ -33,8 +34,8 @@ MCNAPI void CreateNewEmptyStructureBlock(
     ::std::string const& testName,
     ::BlockPos const&    structurePos,
     ::BlockPos const&    size,
-    ::Rotation           region,
-    ::BlockSource&       rotation
+    ::Rotation           rotation,
+    ::BlockSource&       region
 );
 
 MCNAPI ::std::optional<::BlockPos>
@@ -47,14 +48,17 @@ MCNAPI ::BoundingBox GetStructureBoundingBox(::StructureBlockActor const& struct
 
 MCNAPI ::StructureEditorData GetStructureEditorData(::StructureTemplate const& structure, ::Rotation const& rotation);
 
+MCNAPI ::Vec3
+GetStructureRelativePos(::BlockPos const& structureBlockPos, ::Vec3 const& worldPos, ::Vec3 pivot, ::Rotation rotation);
+
 MCNAPI ::StructureTemplate* GetStructureTemplate(::std::string const& structureName, ::Level& level);
 
 MCNAPI ::StructureBlockActor* SpawnStructure(
     ::std::string const& structureName,
     ::BlockPos const&    northWestCorner,
     ::Rotation           rotation,
-    int                  region,
-    ::BlockSource&
+    int,
+    ::BlockSource& region
 );
 // NOLINTEND
 

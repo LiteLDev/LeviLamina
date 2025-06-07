@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/IOperation.h"
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 class Level;
 namespace Editor { class ServiceProviderCollection; }
+namespace Scripting { struct EnumBinding; }
 // clang-format on
 
 namespace Editor::Transactions {
@@ -47,29 +47,27 @@ public:
     virtual ::std::string_view getName() /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void> _undo(::Editor::ServiceProviderCollection& services) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> _undo(::Editor::ServiceProviderCollection& services) /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> _redo(::Editor::ServiceProviderCollection& services) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection& services) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> _loadEntity(::Level* level);
+    MCNAPI ::Scripting::Result_deprecated<void> _loadEntity(::Level* level);
 
-    MCNAPI ::Scripting::Result<void> _performOperation(::Editor::ServiceProviderCollection& services, bool isUndo);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    _performOperation(::Editor::ServiceProviderCollection& services, bool isUndo);
 
-    MCNAPI ::Scripting::Result<void> _saveEntity(::Level* level);
+    MCNAPI ::Scripting::Result_deprecated<void> _saveEntity(::Level* level);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::EnumBindingBuilder<
-        ::Editor::Transactions::EntityOperation::OperationType,
-        ::Editor::Transactions::EntityOperation::OperationType>
-    bindOperationType();
+    MCNAPI static ::Scripting::EnumBinding bindOperationType();
     // NOLINTEND
 
 public:
@@ -83,9 +81,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::string_view $getName();
 
-    MCNAPI ::Scripting::Result<void> $_undo(::Editor::ServiceProviderCollection& services);
+    MCNAPI ::Scripting::Result_deprecated<void> $_undo(::Editor::ServiceProviderCollection& services);
 
-    MCNAPI ::Scripting::Result<void> $_redo(::Editor::ServiceProviderCollection& services);
+    MCNAPI ::Scripting::Result_deprecated<void> $_redo(::Editor::ServiceProviderCollection& services);
     // NOLINTEND
 
 public:

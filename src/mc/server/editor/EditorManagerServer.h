@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/EditorManager.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
@@ -68,11 +68,12 @@ public:
     // vIndex: 11
     virtual ::EventResult onStartLeaveGame(::ServerInstance& instance) /*override*/;
 
-    // vIndex: 6
-    virtual ::Scripting::Result<void> scriptingTeardown() /*override*/;
-
     // vIndex: 7
-    virtual ::Scripting::Result<void> scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> scriptingTeardown() /*override*/;
+
+    // vIndex: 8
+    virtual ::Scripting::Result_deprecated<void>
+    scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent) /*override*/;
 
     // vIndex: 4
     virtual ::std::unique_ptr<::FileArchiver::IWorldConverter> createWorldConverter(
@@ -118,9 +119,9 @@ public:
 
     MCNAPI ::EventResult $onStartLeaveGame(::ServerInstance& instance);
 
-    MCNAPI ::Scripting::Result<void> $scriptingTeardown();
+    MCNAPI ::Scripting::Result_deprecated<void> $scriptingTeardown();
 
-    MCNAPI ::Scripting::Result<void> $scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent);
+    MCNAPI ::Scripting::Result_deprecated<void> $scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent);
 
     MCNAPI ::std::unique_ptr<::FileArchiver::IWorldConverter> $createWorldConverter(
         ::ILevelListCache&                                              levelListCache,

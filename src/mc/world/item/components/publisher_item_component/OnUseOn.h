@@ -14,7 +14,7 @@ class CompoundTag;
 class HashedString;
 class ItemStack;
 class Vec3;
-namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
+namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -23,7 +23,8 @@ namespace PublisherItemComponent {
 class OnUseOn : public ::ItemComponent,
                 public ::Bedrock::PubSub::Publisher<
                     void(bool&, ::ItemStack const&, ::ItemStack&, ::Actor&, ::BlockPos, uchar, ::Vec3 const&),
-                    ::Bedrock::PubSub::ThreadModel::MultiThreaded> {
+                    ::Bedrock::PubSub::ThreadModel::SingleThreaded,
+                    0> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -34,6 +35,7 @@ public:
     // prevent constructor by default
     OnUseOn& operator=(OnUseOn const&);
     OnUseOn(OnUseOn const&);
+    OnUseOn();
 
 public:
     // virtual functions
@@ -52,21 +54,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI OnUseOn();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

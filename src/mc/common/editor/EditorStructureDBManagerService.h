@@ -4,13 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/EditorStructureDBManagerServiceProvider.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-class ServerInstance;
 namespace Core { class Path; }
 namespace Editor { class EditorStructureSourceDataItem; }
 namespace Editor { class EditorStructureTemplate; }
@@ -34,7 +33,6 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk9916fb;
     ::ll::UntypedStorage<8, 8>  mUnk478604;
     ::ll::UntypedStorage<8, 32> mUnk7c250a;
-    ::ll::UntypedStorage<8, 8>  mUnke1fb46;
     ::ll::UntypedStorage<8, 8>  mUnkfbbcb2;
     ::ll::UntypedStorage<8, 8>  mUnkd2ea0d;
     // NOLINTEND
@@ -52,13 +50,13 @@ public:
     virtual ~EditorStructureDBManagerService() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> quit() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void> ready() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
     // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
@@ -66,8 +64,9 @@ public:
     // vIndex: 1
     virtual ::std::optional<::std::string> createNewEditorProjectStructure(
         ::Editor::EditorStructureTemplate&    templateData,
-        ::std::optional<::std::string> const& id,
-        ::std::optional<::std::string> const& fullName
+        ::std::string const&                  id,
+        ::std::optional<::std::string> const& fullName,
+        ::std::optional<::std::string> const& displayName
     ) /*override*/;
 
     // vIndex: 2
@@ -106,8 +105,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    EditorStructureDBManagerService(::Editor::ServiceProviderCollection& providers, ::ServerInstance& serverInstance);
+    MCNAPI explicit EditorStructureDBManagerService(::Editor::ServiceProviderCollection& providers);
 
     MCNAPI ::std::optional<::mce::UUID> _addToEditorStructureDB(
         ::Editor::EditorStructureDBMetadata const& metaData,
@@ -116,7 +114,8 @@ public:
 
     MCNAPI ::std::pair<::std::optional<::mce::UUID>, ::std::optional<::std::string>> _addToEditorStructureDB(
         ::Editor::EditorStructureSourceDataItem const& mcStructureData,
-        ::std::optional<::std::string> const&          id
+        ::std::optional<::std::string> const&          id,
+        ::std::optional<::std::string> const&          displayName
     );
 
     MCNAPI void _addToMetadataEntries(
@@ -124,8 +123,6 @@ public:
         ::Editor::EditorStructureSourceDataItem const& mcStructureData,
         ::Editor::EditorStructureDBMetadata const&     metaData
     );
-
-    MCNAPI ::std::string _createNewEditorStructureTemplateName();
 
     MCNAPI ::std::string const _getJsonStringFromMetadata(::Editor::EditorStructureDBMetadata const& metaData) const;
 
@@ -168,7 +165,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers, ::ServerInstance& serverInstance);
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
@@ -180,18 +177,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
-    MCNAPI ::Scripting::Result<void> $ready();
+    MCNAPI ::Scripting::Result_deprecated<void> $ready();
 
     MCNAPI ::std::string_view $getServiceName() const;
 
     MCNAPI ::std::optional<::std::string> $createNewEditorProjectStructure(
         ::Editor::EditorStructureTemplate&    templateData,
-        ::std::optional<::std::string> const& id,
-        ::std::optional<::std::string> const& fullName
+        ::std::string const&                  id,
+        ::std::optional<::std::string> const& fullName,
+        ::std::optional<::std::string> const& displayName
     );
 
     MCNAPI bool $replaceMCStructureFromTemplate(

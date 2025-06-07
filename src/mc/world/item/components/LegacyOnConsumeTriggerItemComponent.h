@@ -19,8 +19,8 @@ class LegacyOnConsumeTriggerItemComponent : public ::LegacyTriggerItemComponent 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mOnConsumeSubscription;
-    ::ll::TypedStorage<8, 264, ::std::optional<::DefinitionTrigger>> mOnConsumeTrigger;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>      mOnConsumeSubscription;
+    ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>> mOnConsumeTrigger;
     // NOLINTEND
 
 public:
@@ -42,7 +42,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit LegacyOnConsumeTriggerItemComponent(::LegacyOnConsumeTriggerItemComponentData&& data);
 
-    MCAPI void _consume(::ItemStack const& item, ::ItemStack& actor, ::Actor&);
+    MCAPI void _consume(::ItemStack const&, ::ItemStack& item, ::Actor& actor);
     // NOLINTEND
 
 public:

@@ -9,10 +9,8 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class BoundingBox;
 class CompoundBlockVolumeItem;
 class CompoundBlockVolumeIterator;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class CompoundBlockVolume : public ::Bedrock::EnableNonOwnerReferences {
@@ -43,8 +41,6 @@ public:
 
     MCNAPI ::CompoundBlockVolumeIterator begin() const;
 
-    MCNAPI ::BoundingBox calculateBoundsWithItem(::CompoundBlockVolumeItem const& item);
-
     MCNAPI void forEachPosition(::std::function<bool(::BlockPos const&)> const& callback) const;
 
     MCNAPI ::std::vector<::CompoundBlockVolumeItem> getAbsoluteVolumeList() const;
@@ -57,12 +53,6 @@ public:
 
     MCNAPI ::std::optional<::CompoundBlockVolumeItem>
     peekLastVolume(::std::optional<::CompoundBlockVolumePositionRelativity> optRelativity) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

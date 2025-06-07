@@ -116,23 +116,23 @@ public:
     ) const;
 
     MCAPI void _placeNextBlockSegmentInWorld(
-        ::BlockSource&                  region,
-        uint64                          startPlacement,
-        uint64                          endPlacement,
-        ::StructureSettings const&      structureSettings,
-        ::DataLoadHelper&               dataLoadHelper,
-        ::StructureBlockPalette const&  structureBlockPalette,
-        ::BlockPalette const&           position,
-        ::BlockPos                      offset,
-        ::BlockPos const&               pivot,
-        ::Vec3 const&                   rotation,
-        ::Rotation                      mirror,
-        ::Mirror                        integrityValue,
-        float                           integritySeed,
-        uint                            updateItemData,
-        ::StructureTelemetryServerData* ignoreJigsawBlocks,
-        bool                            globalBlockPalette,
-        bool
+        ::BlockSource&                 region,
+        uint64                         startPlacement,
+        uint64                         endPlacement,
+        ::StructureSettings const&     structureSettings,
+        ::DataLoadHelper&              dataLoadHelper,
+        ::StructureBlockPalette const& structureBlockPalette,
+        ::BlockPalette const&          globalBlockPalette,
+        ::BlockPos                     position,
+        ::BlockPos const&              offset,
+        ::Vec3 const&                  pivot,
+        ::Rotation                     rotation,
+        ::Mirror                       mirror,
+        float                          integrityValue,
+        uint                           integritySeed,
+        ::StructureTelemetryServerData*,
+        bool updateItemData,
+        bool ignoreJigsawBlocks
     ) const;
 
     MCAPI void fillEmpty(::BlockPos const& size);
@@ -158,11 +158,11 @@ public:
 
     MCAPI void placeInWorld(
         ::BlockSource&                  region,
-        ::BlockPalette const&           position,
-        ::BlockPos const&               structureSettings,
-        ::StructureSettings const&      updateItemData,
-        ::StructureTelemetryServerData* globalBlockPalette,
-        bool                            telemetryServerData
+        ::BlockPalette const&           globalBlockPalette,
+        ::BlockPos const&               position,
+        ::StructureSettings const&      structureSettings,
+        ::StructureTelemetryServerData* telemetryServerData,
+        bool                            updateItemData
     ) const;
 
     MCAPI void placeNextSegmentInWorld(

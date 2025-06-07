@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SwampSurfaceBiomeJsonComponent() /*override*/ = default;
+    virtual ~SwampSurfaceBiomeJsonComponent() /*override*/;
     // NOLINTEND
 
 public:
@@ -37,9 +37,6 @@ public:
     MCNAPI SwampSurfaceBiomeJsonComponent();
 
     MCNAPI SwampSurfaceBiomeJsonComponent(::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent const&);
-
-    MCNAPI ::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent&
-    operator=(::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent&&);
 
     MCNAPI ::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent&
     operator=(::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent const&);
@@ -65,6 +62,12 @@ public:
     MCNAPI void* $ctor();
 
     MCNAPI void* $ctor(::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

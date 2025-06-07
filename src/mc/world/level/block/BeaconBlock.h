@@ -19,10 +19,10 @@ public:
     // vIndex: 0
     virtual ~BeaconBlock() /*override*/ = default;
 
-    // vIndex: 138
+    // vIndex: 136
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
     // NOLINTEND
 

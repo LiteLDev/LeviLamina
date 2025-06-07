@@ -20,8 +20,8 @@ class LegacyOnHurtActorTriggerItemComponent : public ::LegacyTriggerItemComponen
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mOnHurtActorSubscription;
-    ::ll::TypedStorage<8, 264, ::std::optional<::DefinitionTrigger>> mOnHurtActor;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>      mOnHurtActorSubscription;
+    ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>> mOnHurtActor;
     // NOLINTEND
 
 public:

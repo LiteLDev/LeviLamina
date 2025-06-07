@@ -4,19 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
-#include "mc/util/AnimationMode.h"
-#include "mc/util/Mirror.h"
-#include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/StructureRedstoneSaveMode.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class LevelStorage;
 class StructureManager;
 class StructureTemplate;
@@ -25,7 +19,9 @@ namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptStructureManager; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidStructureError; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EngineError; }
+namespace Scripting { struct EnumBinding; }
 namespace Scripting { struct InvalidArgumentError; }
 // clang-format on
 
@@ -58,9 +54,6 @@ public:
         ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureManager> scriptStructureManager,
         ::LevelStorage&                                                                     levelStorage
     );
-
-    MCNAPI ::Scripting::InvalidArgumentError
-    _createBoundsError(int pos, ::BlockPos const& size, ::BlockPos const& index) const;
 
     MCNAPI ::StructureTemplate* _getStructureTemplate() const;
 
@@ -100,16 +93,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptStructureTemplate> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::AnimationMode> bindAnimationModeEnum();
+    MCNAPI static ::Scripting::EnumBinding bindAnimationModeEnum();
 
-    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Mirror> bindMirrorEnum();
+    MCNAPI static ::Scripting::EnumBinding bindMirrorEnum();
 
-    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Rotation> bindRotationEnum();
+    MCNAPI static ::Scripting::EnumBinding bindRotationEnum();
 
-    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::StructureRedstoneSaveMode>
-    bindStructureSaveModeEnum();
+    MCNAPI static ::Scripting::EnumBinding bindStructureSaveModeEnum();
     // NOLINTEND
 
 public:

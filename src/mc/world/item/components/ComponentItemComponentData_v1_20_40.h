@@ -11,10 +11,10 @@ struct ComponentItemComponentData_v1_20_40 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 280> mUnk768da2;
+    ::ll::UntypedStorage<8, 80>  mUnk768da2;
     ::ll::UntypedStorage<8, 80>  mUnka69b69;
     ::ll::UntypedStorage<8, 40>  mUnkb97016;
-    ::ll::UntypedStorage<8, 304> mUnk1bd2d3;
+    ::ll::UntypedStorage<8, 104> mUnk1bd2d3;
     ::ll::UntypedStorage<8, 56>  mUnk136989;
     ::ll::UntypedStorage<8, 240> mUnk6748bc;
     ::ll::UntypedStorage<8, 40>  mUnk440b59;

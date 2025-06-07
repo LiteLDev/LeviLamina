@@ -52,7 +52,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Horse* _createHorse(::SharedTypes::Legacy::Difficulty const& difficulty);
 
-    MCNAPI ::Skeleton* _createSkeleton(::SharedTypes::Legacy::Difficulty const& otherHorse, ::Horse const& difficulty);
+    MCNAPI ::Skeleton* _createSkeleton(::SharedTypes::Legacy::Difficulty const& difficulty, ::Horse const& otherHorse);
 
     MCNAPI ::Player* _getClosestPlayer() const;
     // NOLINTEND

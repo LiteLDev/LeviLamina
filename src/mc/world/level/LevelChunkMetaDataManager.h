@@ -36,8 +36,6 @@ public:
 
     MCNAPI void _onNewDimensionCreated(::Dimension& dimension);
 
-    MCNAPI ::std::shared_ptr<::LevelChunkMetaDataDictionary> getLevelChunkMetaDataDictionary() const;
-
     MCNAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
     MCNAPI void registerOnNewDimensionCreated(::IDimensionManagerConnector& dimensionManagerConnector);
@@ -64,6 +62,9 @@ public:
         ::BaseGameVersion const&      currentBaseGameVersion,
         ::LevelChunkMetaData&         metaData
     );
+
+    MCNAPI static void
+    inferTargetMetaData(::BaseGameVersion const& version, ::DimensionType dimensionID, ::LevelChunkMetaData& metaData);
 
     MCNAPI static ::std::shared_ptr<::LevelChunkMetaData> initializeLevelChunkMetaData(
         ::DimensionType               dimensionId,

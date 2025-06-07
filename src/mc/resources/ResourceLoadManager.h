@@ -102,9 +102,9 @@ public:
     MCNAPI bool cancel(::ResourceLoadType resourceLoadType);
 
     MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> queue(
-        ::ResourceLoadType                          threadedCallback,
-        ::brstd::move_only_function<::TaskResult()> mainThreadCallback,
-        ::std::function<void()>                     resourceLoadType,
+        ::ResourceLoadType                          resourceLoadType,
+        ::brstd::move_only_function<::TaskResult()> threadedCallback,
+        ::std::function<void()>                     mainThreadCallback,
         uint                                        taskPriority
     );
     // NOLINTEND

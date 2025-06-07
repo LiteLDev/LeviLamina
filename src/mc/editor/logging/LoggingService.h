@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/script/LoggingServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
@@ -20,7 +19,7 @@ class LoggingService : public ::Editor::Services::IEditorService, public ::Edito
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnkb9e713;
+    ::ll::UntypedStorage<8, 48> mUnk36f817;
     // NOLINTEND
 
 public:
@@ -36,10 +35,10 @@ public:
     virtual ~LoggingService() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> quit() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     // vIndex: 4
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
@@ -55,9 +54,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
     MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     $listenForLogMessage(::std::function<void(::Editor::LogMessage const&)> func);

@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::Http { class Status; }
+namespace Json { class Value; }
 // clang-format on
 
 namespace Bedrock::Http {
@@ -32,6 +33,8 @@ public:
     MCNAPI explicit Response(::Bedrock::Http::Status status);
 
     MCNAPI ::gsl::span<uchar const> getBodyAsBytes() const;
+
+    MCNAPI ::Json::Value getBodyAsJson() const;
 
     MCNAPI ~Response();
     // NOLINTEND

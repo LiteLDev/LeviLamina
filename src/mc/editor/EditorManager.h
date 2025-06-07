@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/serviceproviders/EditorManagerServiceProvider.h"
 #include "mc/editor/services/EditorServiceList.h"
 #include "mc/server/editor/IEditorManager.h"
@@ -57,12 +57,16 @@ public:
     virtual void cleanupOrphanedTemporaryPlaytestWorlds(::ILevelListCache& levelListCache) const /*override*/;
 
     // vIndex: 6
-    virtual ::Scripting::Result<void> scriptingTeardown() /*override*/;
+    virtual void cleanupOrphanedTemporaryRealmsUploadWorlds() /*override*/;
 
     // vIndex: 7
-    virtual ::Scripting::Result<void> scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> scriptingTeardown() /*override*/;
 
     // vIndex: 8
+    virtual ::Scripting::Result_deprecated<void>
+    scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent) /*override*/;
+
+    // vIndex: 9
     virtual void tryClearPlaytestRoundtripInfo() /*override*/;
 
     // vIndex: 1
@@ -72,13 +76,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EditorManager(bool packetSender, ::PacketSender& eventing, ::IMinecraftEventing& isClient);
+    MCNAPI EditorManager(bool isClient, ::PacketSender& packetSender, ::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(bool packetSender, ::PacketSender& eventing, ::IMinecraftEventing& isClient);
+    MCNAPI void* $ctor(bool isClient, ::PacketSender& packetSender, ::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:
@@ -99,9 +103,11 @@ public:
 
     MCNAPI void $cleanupOrphanedTemporaryPlaytestWorlds(::ILevelListCache& levelListCache) const;
 
-    MCNAPI ::Scripting::Result<void> $scriptingTeardown();
+    MCNAPI void $cleanupOrphanedTemporaryRealmsUploadWorlds();
 
-    MCNAPI ::Scripting::Result<void> $scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent);
+    MCNAPI ::Scripting::Result_deprecated<void> $scriptingTeardown();
+
+    MCNAPI ::Scripting::Result_deprecated<void> $scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent);
 
     MCNAPI void $tryClearPlaytestRoundtripInfo();
 

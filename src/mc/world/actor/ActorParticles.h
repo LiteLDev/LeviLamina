@@ -21,11 +21,11 @@ namespace ActorParticles {
 MCNAPI uint calculateDustParticleNumberFromFall(float fallDistance);
 
 MCNAPI void spawnBalloonPopParticles(
-    uint                                aabb,
-    ::AABB                              color,
-    ::SharedTypes::Legacy::PaletteColor level,
-    ::ILevel&                           random,
-    ::Random&                           particleCount
+    uint                                particleCount,
+    ::AABB                              aabb,
+    ::SharedTypes::Legacy::PaletteColor color,
+    ::ILevel&                           level,
+    ::Random&                           random
 );
 
 MCNAPI void spawnDeathParticles(::Vec3 position, ::Vec2 aabbDim, float heightOffset, ::ILevel& level);
@@ -40,21 +40,21 @@ MCNAPI void spawnParticlesInArea(
 );
 
 MCNAPI void spawnPukeParticles(
-    uint      position,
-    uint      lookDirection,
-    ::Vec3    level,
-    ::Vec3    random,
-    ::ILevel& numLines,
-    ::Random& particlesPerLine
+    uint      numLines,
+    uint      particlesPerLine,
+    ::Vec3    position,
+    ::Vec3    lookDirection,
+    ::ILevel& level,
+    ::Random& random
 );
 
 MCNAPI void spawnTreasureHuntingParticles(
-    uint      position,
+    uint      particleCount,
+    ::Vec3    position,
     ::Vec3    direction,
-    ::Vec3    aabbDim,
-    ::Vec2    level,
-    ::ILevel& random,
-    ::Random& particleCount
+    ::Vec2    aabbDim,
+    ::ILevel& level,
+    ::Random& random
 );
 // NOLINTEND
 

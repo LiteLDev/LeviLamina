@@ -8,7 +8,7 @@ class RequestBuilder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 216> mUnkaf9bb2;
+    ::ll::UntypedStorage<8, 224> mUnkaf9bb2;
     ::ll::UntypedStorage<8, 64>  mUnkd459f4;
     // NOLINTEND
 

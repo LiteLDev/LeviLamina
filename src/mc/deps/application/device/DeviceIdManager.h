@@ -34,6 +34,9 @@ public:
     // vIndex: 5
     virtual ::Bedrock::DeviceIdContext const& getDeviceIdContext() const = 0;
 
+    // vIndex: 6
+    virtual bool isDeviceIdValid() const = 0;
+
     // vIndex: 0
     virtual ~DeviceIdManager() /*override*/ = default;
     // NOLINTEND

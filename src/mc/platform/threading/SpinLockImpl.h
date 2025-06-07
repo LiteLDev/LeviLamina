@@ -22,7 +22,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void lock();
-
-    MCNAPI void unlock();
     // NOLINTEND
 };

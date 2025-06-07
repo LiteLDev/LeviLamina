@@ -143,8 +143,6 @@ public:
     MCAPI BinaryStream(::std::string& buffer, bool copyBuffer);
 
     MCAPI void write(void const* origin, uint64 num);
-
-    MCFOLD void writeUnsignedChar(uchar value, char const* docFieldName, char const* docFieldNotes);
     // NOLINTEND
 
 public:
@@ -164,7 +162,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $writeBool(bool value, char const* docFieldName, char const* docFieldNotes);
 
-    MCFOLD void $writeByte(uchar value, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void $writeByte(uchar value, char const* docFieldName, char const* docFieldNotes);
 
     MCFOLD void $writeUnsignedShort(ushort value, char const* docFieldName, char const* docFieldNotes);
 

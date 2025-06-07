@@ -74,10 +74,10 @@ public:
     // vIndex: 27
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 29
+    // vIndex: 32
     virtual bool canPushInItem(int slot, int, ::ItemStack const& item) const /*override*/;
 
-    // vIndex: 40
+    // vIndex: 43
     virtual bool isSlotDisabled(int slot) const /*override*/;
 
     // vIndex: 1

@@ -66,6 +66,10 @@ public:
     MCNAPI static ::std::shared_ptr<::PoolAliasBinding>
     random(::std::string&& id, ::std::vector<::Core::SimpleWeightedEntry<::std::string>>&& targets);
 
+    MCNAPI static ::std::shared_ptr<::PoolAliasBinding> randomGroup(
+        ::std::vector<::Core::SimpleWeightedEntry<::std::vector<::std::shared_ptr<::PoolAliasBinding>>>>&& targets
+    );
+
     MCNAPI static ::PoolAliasBinding::PoolAliasLookup resolvePoolAliases(
         ::std::vector<::std::shared_ptr<::PoolAliasBinding>> const& aliases,
         ::BlockPos const&                                           structureStartPosition,

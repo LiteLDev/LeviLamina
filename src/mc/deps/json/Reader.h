@@ -126,11 +126,9 @@ public:
 
     MCAPI bool parse(char const* beginDoc, char const* endDoc, ::Json::Value& root, bool);
 
-    MCAPI bool parse(char const* originalBegin, uint64 length, ::Json::Value& root, bool collectComments);
+    MCAPI ::Json::Value readArray(::Json::Reader::Token&, bool& ok);
 
-    MCAPI ::Json::Value readArray(::Json::Reader::Token& ok, bool&);
-
-    MCAPI ::Json::Value readObject(::Json::Reader::Token& successful, bool&);
+    MCAPI ::Json::Value readObject(::Json::Reader::Token&, bool& successful);
 
     MCAPI bool readToken(::Json::Reader::Token& token);
 

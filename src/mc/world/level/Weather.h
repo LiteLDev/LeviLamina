@@ -56,9 +56,9 @@ public:
     MCNAPI bool canPlaceTopSnow(
         ::BlockSource&    region,
         ::BlockPos const& pos,
+        bool              fromFallingSnow,
         bool              checkSnowDepthLevel,
-        bool              newHeightAfterPlacement,
-        int*              fromFallingSnow
+        int*              newHeightAfterPlacement
     ) const;
 
     MCNAPI bool isPrecipitatingAt(::BlockSource& region, ::BlockPos const& pos) const;

@@ -19,8 +19,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::string toString() const;
-
     MCNAPI ~CompoundBlockVolumeItem();
     // NOLINTEND
 

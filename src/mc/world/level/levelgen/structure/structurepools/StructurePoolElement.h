@@ -28,7 +28,7 @@ class StructurePoolBlockRule;
 class StructurePoolBlockTagRule;
 struct ActorDefinitionIdentifier;
 struct StructureTemplateRegistrationContext;
-namespace SharedTypes::v1_21_50 { struct JigsawStructureMetadata; }
+namespace SharedTypes::v1_21_80 { struct JigsawStructureMetadata; }
 namespace br::worldgen { struct StructureProcessor; }
 // clang-format on
 
@@ -161,7 +161,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SharedTypes::v1_21_50::JigsawStructureMetadata>> mMetadata;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata>> mMetadata;
     ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                        mMetadataMutex;
     ::ll::TypedStorage<8, 8, ::std::once_flag>                                                    mTemplateOnceFlag;
     ::ll::TypedStorage<8, 56, ::std::optional<::StructurePoolElement::LazyTemplate>>              mTemplate;
@@ -293,9 +293,9 @@ public:
         ::PostProcessSettings                                                postProcessSettings
     );
 
-    MCAPI ::std::unique_ptr<::SharedTypes::v1_21_50::JigsawStructureMetadata> _createMetadata() const;
+    MCAPI ::std::unique_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata> _createMetadata() const;
 
-    MCAPI ::SharedTypes::v1_21_50::JigsawStructureMetadata const& _getMetadata() const;
+    MCAPI ::SharedTypes::v1_21_80::JigsawStructureMetadata const& _getMetadata() const;
 
     MCAPI uint64 _getMetadataKey() const;
 

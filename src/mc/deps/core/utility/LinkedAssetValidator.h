@@ -16,6 +16,12 @@ public:
     // clang-format on
 
     // LinkedAssetValidator inner types define
+    enum class ValidatorStatus : uchar {
+        New       = 0,
+        Loaded    = 1,
+        Validated = 2,
+    };
+
     struct Reference {
     public:
         // member variables
@@ -87,25 +93,25 @@ public:
         // prevent constructor by default
         AssetCollection& operator=(AssetCollection const&);
         AssetCollection(AssetCollection const&);
-        AssetCollection();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~AssetCollection();
+        MCNAPI AssetCollection();
         // NOLINTEND
 
     public:
-        // destructor thunk
+        // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCNAPI void* $ctor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 184> mUnk2a951c;
+    ::ll::UntypedStorage<8, 104> mUnka69e6e;
+    ::ll::UntypedStorage<1, 1>   mUnk86474b;
     // NOLINTEND
 
 public:
@@ -124,7 +130,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void addFileReference(int assetType, ::std::string const& filepath, ::std::string contextString);
+
     MCNAPI void addIdentifier(int assetType, ::std::string const& identifier);
+
+    MCNAPI void addReference(int assetType, ::std::string const& identifier, ::std::string contextString);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::weak_ptr<::LinkedAssetValidator::AssetCollection>& mPerThreadAssetCollection();
     // NOLINTEND
 
 public:

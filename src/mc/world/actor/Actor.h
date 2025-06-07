@@ -94,7 +94,6 @@ struct ActorLink;
 struct DistanceSortedActor;
 struct EquipmentTable;
 struct MutableAttributeWithContext;
-struct PlayerMovementSettings;
 namespace Bedrock::Safety { class RedactableString; }
 namespace MovementDataExtractionUtility { class SnapshotAccessor; }
 // clang-format on
@@ -426,7 +425,7 @@ public:
     virtual void despawn();
 
     // vIndex: 72
-    virtual void setArmor(::SharedTypes::Legacy::ArmorSlot, ::ItemStack const&);
+    virtual void setArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
 
     // vIndex: 73
     virtual ::ArmorMaterialType getArmorMaterialTypeInSlot(::SharedTypes::Legacy::ArmorSlot) const;
@@ -504,7 +503,7 @@ public:
     virtual bool inCaravan() const;
 
     // vIndex: 98
-    virtual void sendMotionPacketIfNeeded(::PlayerMovementSettings const& playerMovementSettings);
+    virtual void sendMotionPacketIfNeeded();
 
     // vIndex: 99
     virtual bool canSynchronizeNewEntity() const;
@@ -615,7 +614,7 @@ public:
     virtual bool _shouldProvideFeedbackOnHandContainerItemSet(::HandSlot handSlot, ::ItemStack const& item) const;
 
     // vIndex: 134
-    virtual bool _shouldProvideFeedbackOnArmorSet(::SharedTypes::Legacy::ArmorSlot, ::ItemStack const&) const;
+    virtual bool _shouldProvideFeedbackOnArmorSet(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item) const;
 
     // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool, bool);
@@ -663,6 +662,8 @@ public:
 
     MCAPI void _serializeComponents(::CompoundTag& tag) const;
 
+    MCAPI void _setActorTypeId(::ActorType type);
+
     MCAPI void _setDimensionTransitionComponent(::DimensionType fromId, ::DimensionType toId, int portalCooldown);
 
     MCAPI void _setHandContainerItem(::ItemStack const& item, ::HandSlot handSlot);
@@ -701,6 +702,8 @@ public:
 
     MCAPI bool canFly() const;
 
+    MCAPI bool canMate(::Actor const& partner) const;
+
     MCAPI bool canReceiveMobEffectsFromGameplay() const;
 
     MCAPI bool canSee(::Actor const& target, ::ShapeType obstructionType) const;
@@ -731,8 +734,6 @@ public:
 
     MCAPI float distanceToSqr(::Vec3 const& pos) const;
 
-    MCAPI void dropLeash(bool createItemDrop, bool cutRope);
-
     MCAPI void dropTowards(::ItemStack const& item, ::Vec3 towards);
 
     MCAPI void equip(::EquipmentTable const& equipmentTable);
@@ -746,8 +747,6 @@ public:
     MCAPI void exitVehicle(bool exitFromPassenger, bool actorIsBeingDestroyed, bool wasEjectedByActivatorRail);
 
     MCAPI ::std::vector<::DistanceSortedActor> fetchNearbyActorsSorted(::Vec3 const& distance, ::ActorType actorTypeId);
-
-    MCAPI void forEachLeashedActor(::std::function<void(::gsl::not_null<::Actor*>)> callback) const;
 
     MCAPI ::Vec2 const& getAABBDim() const;
 
@@ -933,8 +932,6 @@ public:
 
     MCAPI bool isClientSide() const;
 
-    MCAPI bool isControlledByLocalInstance() const;
-
     MCAPI bool isCreative() const;
 
     MCAPI bool isDancing() const;
@@ -944,6 +941,8 @@ public:
     MCAPI bool isDoorOpener() const;
 
     MCAPI bool isGlobal() const;
+
+    MCAPI bool isInClouds() const;
 
     MCAPI bool isInLava() const;
 
@@ -987,6 +986,8 @@ public:
 
     MCAPI bool isSitting() const;
 
+    MCAPI bool isSneaking() const;
+
     MCAPI bool isSpectator() const;
 
     MCAPI bool isSurvival() const;
@@ -1008,8 +1009,6 @@ public:
     MCAPI bool isWorldBuilder() const;
 
     MCAPI void killed(::Actor& entity);
-
-    MCAPI void lerpTo(::Vec3 const& pos, ::Vec2 const& rot, int steps);
 
     MCAPI void loadEntityFlags(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
@@ -1040,8 +1039,6 @@ public:
     MCAPI void
     playSynchronizedSound(::SharedTypes::Legacy::LevelSoundEvent type, ::Vec3 const& pos, int data, bool isGlobal);
 
-    MCAPI void positionAllPassengers();
-
     MCAPI void positionPassenger(::Actor& passenger);
 
     MCAPI void postGameEvent(::GameEvent const& gameEvent, ::Vec3 const& originPos, ::Block const* affectedBlock);
@@ -1053,8 +1050,6 @@ public:
     MCAPI void pushOutOfBlocks(::Vec3 const& vec);
 
     MCAPI void queueBBUpdateFromDefinition();
-
-    MCAPI void queueBBUpdateFromValue(::Vec2 const& value);
 
     MCAPI void refreshComponents();
 
@@ -1086,7 +1081,7 @@ public:
 
     MCAPI void setAutonomous(bool g);
 
-    MCAPI void setBaseDefinition(::ActorDefinitionIdentifier const& sourceId, bool update, bool clearDefs);
+    MCAPI void setBaseDefinition(::ActorDefinitionIdentifier const& sourceId, bool clearDefs, bool update);
 
     MCAPI void setBlockTarget(::BlockPos const& target);
 
@@ -1122,6 +1117,8 @@ public:
 
     MCAPI void setRotationPrev(::Vec2 const& rotation);
 
+    MCAPI void setRotationWrapped(::Vec2 const& rot);
+
     MCAPI void setSkinID(int value);
 
     MCAPI void setStatusFlag(::ActorFlags flag, bool value);
@@ -1142,11 +1139,12 @@ public:
 
     MCAPI void spawnTrailBubbles();
 
-    MCAPI void stopRiding(bool exitFromPassenger, bool actorIsBeingDestroyed, bool switchingVehicles);
+    MCAPI void
+    stopRiding(bool exitFromPassenger, bool actorIsBeingDestroyed, bool switchingVehicles, bool isBeingTeleported);
 
     MCAPI void synchronousSetSize(float w, float h);
 
-    MCAPI void teleportPassengersTo(::Vec3 const& pos, int entityType, int cause);
+    MCAPI void teleportPassengersTo(::Vec3 const& pos, int cause, int entityType);
 
     MCAPI bool tick(::BlockSource& region);
 
@@ -1361,6 +1359,14 @@ public:
 
     MCAPI void $despawn();
 
+    MCAPI void $setArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
+
+    MCFOLD ::ArmorMaterialType $getArmorMaterialTypeInSlot(::SharedTypes::Legacy::ArmorSlot) const;
+
+    MCFOLD int $getArmorTextureIndexInSlot(::SharedTypes::Legacy::ArmorSlot) const;
+
+    MCFOLD float $getArmorColorInSlot(::SharedTypes::Legacy::ArmorSlot, int) const;
+
     MCFOLD void $setEquippedSlot(::SharedTypes::Legacy::EquipmentSlot, ::ItemStack const&);
 
     MCAPI void $setCarriedItem(::ItemStack const& item);
@@ -1403,7 +1409,7 @@ public:
 
     MCFOLD bool $inCaravan() const;
 
-    MCAPI void $sendMotionPacketIfNeeded(::PlayerMovementSettings const& playerMovementSettings);
+    MCAPI void $sendMotionPacketIfNeeded();
 
     MCFOLD bool $canSynchronizeNewEntity() const;
 
@@ -1475,6 +1481,8 @@ public:
     MCAPI void $doWaterSplashEffect();
 
     MCAPI bool $_shouldProvideFeedbackOnHandContainerItemSet(::HandSlot handSlot, ::ItemStack const& item) const;
+
+    MCAPI bool $_shouldProvideFeedbackOnArmorSet(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item) const;
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool, bool);
 

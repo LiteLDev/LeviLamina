@@ -40,6 +40,9 @@ public:
     // vIndex: 8
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 9
+    virtual void writeVariant(::BinaryStream& stream) const;
+
     // vIndex: 0
     virtual ~PlayerUpdateEntityOverridesPacket() /*override*/;
     // NOLINTEND
@@ -60,6 +63,8 @@ public:
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+    MCAPI void $writeVariant(::BinaryStream& stream) const;
     // NOLINTEND
 
 public:

@@ -9,3 +9,4 @@ src/mc1
 /bin/
 /cmake-build-release/
 /src-test/
+*.txt

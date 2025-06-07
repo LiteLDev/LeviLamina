@@ -2,34 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/ecs/systems/ITickingSystem.h"
-
 // auto generated forward declare list
 // clang-format off
-class EntityRegistry;
+class EntitySystems;
+struct TickingSystemWithInfo;
 // clang-format on
 
-class LeashableSystem : public ::ITickingSystem {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    // vIndex: 2
-    virtual void tick(::EntityRegistry& registry) /*override*/;
+namespace LeashableSystem {
+// functions
+// NOLINTBEGIN
+MCNAPI ::TickingSystemWithInfo createHandleAddToLeashedEntitiesRequestSystem();
 
-    // vIndex: 0
-    virtual ~LeashableSystem() /*override*/ = default;
-    // NOLINTEND
+MCNAPI ::TickingSystemWithInfo createHandleRemoveFromLeashedEntitiesRequestSystem();
 
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $tick(::EntityRegistry& registry);
-    // NOLINTEND
+MCNAPI void registerServerSystems(::EntitySystems& systemRegistry);
+// NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
-};
+} // namespace LeashableSystem

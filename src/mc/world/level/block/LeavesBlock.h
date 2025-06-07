@@ -14,11 +14,12 @@ class BaseGameVersion;
 class Block;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class HashedString;
-class Random;
 class Vec3;
 struct BlockAnimateTickData;
 struct BlockGraphicsModeChangeContext;
+namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class LeavesBlock : public ::BlockLegacy {
@@ -72,41 +73,44 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 132
+    // vIndex: 131
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 114
+    // vIndex: 113
     virtual bool isSeasonTinted(::Block const& block, ::BlockSource& region, ::BlockPos const& p) const /*override*/;
 
-    // vIndex: 141
+    // vIndex: 139
     virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const
         /*override*/;
 
-    // vIndex: 137
-    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    // vIndex: 141
+    virtual ::HashedString const& getCullingLayer() const /*override*/;
 
-    // vIndex: 124
+    // vIndex: 123
     virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 84
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 92
+    // vIndex: 91
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    // vIndex: 115
+    // vIndex: 114
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
 
-    // vIndex: 23
+    // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
-    // vIndex: 24
+    // vIndex: 23
     virtual bool canProvideMultifaceSupport(::Block const& block, uchar face) const /*override*/;
+
+    // vIndex: 130
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
     virtual ~LeavesBlock() /*override*/ = default;
@@ -116,6 +120,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _die(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCAPI ::LeavesBlock& setUseSeasonsOpaqueLayerIfSnowingBiome(bool enabled);
     // NOLINTEND
@@ -143,7 +149,7 @@ public:
 
     MCAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI ::HashedString const& $getCullingLayer() const;
 
     MCAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
 
@@ -162,6 +168,8 @@ public:
     MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
     MCFOLD bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

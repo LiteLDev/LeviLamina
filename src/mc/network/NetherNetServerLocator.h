@@ -18,6 +18,7 @@ struct NetherNetConnector;
 struct PingedCompatibleServer;
 struct PortPair;
 namespace Bedrock::Threading { class Mutex; }
+namespace NetherNet { struct NetworkID; }
 // clang-format on
 
 class NetherNetServerLocator : public ::StubServerLocator {
@@ -125,7 +126,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void _cacheDiscoveryResponseData(::NetherNetServerLocator::ServerData const& serverData);
 
-    MCNAPI void _onDiscoveryResponse(uint64 networkID, ::gsl::span<char const> responseData);
+    MCNAPI void _onDiscoveryResponse(::NetherNet::NetworkID const& networkID, ::gsl::span<char const> responseData);
 
     MCNAPI void _setIsAnnouncing(bool isAnnouncing);
 
@@ -136,7 +137,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::PingedCompatibleServer
-    _transformFrom(uint64 networkID, ::NetherNetServerLocator::ServerData&& serverData);
+    _transformFrom(::NetherNet::NetworkID const& networkID, ::NetherNetServerLocator::ServerData&& serverData);
     // NOLINTEND
 
 public:

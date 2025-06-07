@@ -92,6 +92,8 @@ MCAPI ::HashedString const& BlackBundle();
 
 MCAPI ::HashedString const& BlackDye();
 
+MCAPI ::HashedString const& BlackHarness();
+
 MCAPI ::HashedString const& BladePotterySherd();
 
 MCAPI ::HashedString const& BlazePowder();
@@ -107,6 +109,8 @@ MCAPI ::HashedString const& BlueBundle();
 MCAPI ::HashedString const& BlueDye();
 
 MCAPI ::HashedString const& BlueEgg();
+
+MCAPI ::HashedString const& BlueHarness();
 
 MCAPI ::HashedString const& BoatLegacy();
 
@@ -145,6 +149,8 @@ MCAPI ::HashedString const& BrownBundle();
 MCAPI ::HashedString const& BrownDye();
 
 MCAPI ::HashedString const& BrownEgg();
+
+MCAPI ::HashedString const& BrownHarness();
 
 MCAPI ::HashedString const& Brush();
 
@@ -267,6 +273,8 @@ MCAPI ::HashedString const& Crossbow();
 MCAPI ::HashedString const& CyanBundle();
 
 MCAPI ::HashedString const& CyanDye();
+
+MCAPI ::HashedString const& CyanHarness();
 
 MCAPI ::HashedString const& DangerPotterySherd();
 
@@ -452,9 +460,13 @@ MCAPI ::HashedString const& GrayBundle();
 
 MCAPI ::HashedString const& GrayDye();
 
+MCAPI ::HashedString const& GrayHarness();
+
 MCAPI ::HashedString const& GreenBundle();
 
 MCAPI ::HashedString const& GreenDye();
+
+MCAPI ::HashedString const& GreenHarness();
 
 MCAPI ::HashedString const& GuardianSpawnEgg();
 
@@ -463,6 +475,8 @@ MCAPI ::HashedString const& Gunpowder();
 MCAPI ::HashedString const& GusterBannerPattern();
 
 MCAPI ::HashedString const& GusterPotterySherd();
+
+MCAPI ::HashedString const& HappyGhastSpawnEgg();
 
 MCAPI ::HashedString const& HeartOfTheSea();
 
@@ -556,13 +570,19 @@ MCAPI ::HashedString const& LightBlueBundle();
 
 MCAPI ::HashedString const& LightBlueDye();
 
+MCAPI ::HashedString const& LightBlueHarness();
+
 MCAPI ::HashedString const& LightGrayBundle();
 
 MCAPI ::HashedString const& LightGrayDye();
 
+MCAPI ::HashedString const& LightGrayHarness();
+
 MCAPI ::HashedString const& LimeBundle();
 
 MCAPI ::HashedString const& LimeDye();
+
+MCAPI ::HashedString const& LimeHarness();
 
 MCAPI ::HashedString const& LingeringPotion();
 
@@ -575,6 +595,8 @@ MCAPI ::HashedString const& Mace();
 MCAPI ::HashedString const& MagentaBundle();
 
 MCAPI ::HashedString const& MagentaDye();
+
+MCAPI ::HashedString const& MagentaHarness();
 
 MCAPI ::HashedString const& MagmaCream();
 
@@ -710,6 +732,8 @@ MCAPI ::HashedString const& OrangeBundle();
 
 MCAPI ::HashedString const& OrangeDye();
 
+MCAPI ::HashedString const& OrangeHarness();
+
 MCAPI ::HashedString const& OxidizedCopperDoor();
 
 MCAPI ::HashedString const& Painting();
@@ -749,6 +773,8 @@ MCAPI ::HashedString const& PillagerSpawnEgg();
 MCAPI ::HashedString const& PinkBundle();
 
 MCAPI ::HashedString const& PinkDye();
+
+MCAPI ::HashedString const& PinkHarness();
 
 MCAPI ::HashedString const& PitcherPod();
 
@@ -790,6 +816,8 @@ MCAPI ::HashedString const& PurpleBundle();
 
 MCAPI ::HashedString const& PurpleDye();
 
+MCAPI ::HashedString const& PurpleHarness();
+
 MCAPI ::HashedString const& Quartz();
 
 MCAPI ::HashedString const& Rabbit();
@@ -819,6 +847,8 @@ MCAPI ::HashedString const& RecoveryCompass();
 MCAPI ::HashedString const& RedBundle();
 
 MCAPI ::HashedString const& RedDye();
+
+MCAPI ::HashedString const& RedHarness();
 
 MCAPI ::HashedString const& RedStone();
 
@@ -1012,6 +1042,8 @@ MCAPI ::HashedString const& WhiteBundle();
 
 MCAPI ::HashedString const& WhiteDye();
 
+MCAPI ::HashedString const& WhiteHarness();
+
 MCAPI ::HashedString const& WildArmorTrimSmithingTemplate();
 
 MCAPI ::HashedString const& WindCharge();
@@ -1041,6 +1073,8 @@ MCAPI ::HashedString const& WrittenBook();
 MCAPI ::HashedString const& YellowBundle();
 
 MCAPI ::HashedString const& YellowDye();
+
+MCAPI ::HashedString const& YellowHarness();
 
 MCAPI ::HashedString const& ZoglinSpawnEgg();
 

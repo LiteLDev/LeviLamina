@@ -89,7 +89,7 @@ public:
     // vIndex: 96
     virtual bool supportsVibration() const /*override*/;
 
-    // vIndex: 179
+    // vIndex: 178
     virtual bool supportsFliteTTS() const /*override*/;
 
     // vIndex: 69
@@ -143,7 +143,7 @@ public:
     // vIndex: 16
     virtual ::BuildPlatform getBuildPlatform() const /*override*/;
 
-    // vIndex: 180
+    // vIndex: 179
     virtual ::std::unique_ptr<::SecureStorage> getSecureStorage() /*override*/;
 
     // vIndex: 1
@@ -176,16 +176,16 @@ public:
     // vIndex: 156
     virtual void setFullscreenMode(::FullscreenMode const fullscreenMode) /*override*/;
 
-    // vIndex: 212
+    // vIndex: 211
     virtual bool isWebviewSupported() const /*override*/;
 
-    // vIndex: 213
+    // vIndex: 212
     virtual ::std::shared_ptr<::WebviewInterface> createWebview(::Webview::PlatformArguments&& args) const /*override*/;
 
-    // vIndex: 216
+    // vIndex: 215
     virtual bool getPlatformTTSEnabled() const /*override*/;
 
-    // vIndex: 217
+    // vIndex: 216
     virtual ::std::variant<::HWND__*, ::std::monostate> getRenderSurfaceParameters() const /*override*/;
 
     // vIndex: 109
@@ -194,10 +194,10 @@ public:
     // vIndex: 37
     virtual void hideSplashScreen() /*override*/;
 
-    // vIndex: 248
+    // vIndex: 247
     virtual int getPlatformDpi() const /*override*/;
 
-    // vIndex: 249
+    // vIndex: 248
     virtual ::UIScalingRules getPlatformUIScalingRules() const /*override*/;
     // NOLINTEND
 
@@ -205,12 +205,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI AppPlatform_win32(
-        ::HWND__*            dataFolder,
-        ::std::string const& HIDControllerWinRT,
-        ::std::string_view   hWnd,
-        ::std::shared_ptr<::HIDController>,
-        int screenWidth,
-        int screenHeight
+        ::HWND__*            hWnd,
+        ::std::string const& dataFolder,
+        ::std::string_view,
+        ::std::shared_ptr<::HIDController> HIDControllerWinRT,
+        int                                screenWidth,
+        int                                screenHeight
     );
 
     MCNAPI ::OSInformation _fetchOSInformation() const;
@@ -220,12 +220,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::HWND__*            dataFolder,
-        ::std::string const& HIDControllerWinRT,
-        ::std::string_view   hWnd,
-        ::std::shared_ptr<::HIDController>,
-        int screenWidth,
-        int screenHeight
+        ::HWND__*            hWnd,
+        ::std::string const& dataFolder,
+        ::std::string_view,
+        ::std::shared_ptr<::HIDController> HIDControllerWinRT,
+        int                                screenWidth,
+        int                                screenHeight
     );
     // NOLINTEND
 
@@ -296,8 +296,6 @@ public:
     MCNAPI ::std::string $getPackageFamilyName() const;
 
     MCNAPI ::PlatformType $getPlatformType() const;
-
-    MCNAPI ::BuildPlatform $getBuildPlatform() const;
 
     MCNAPI ::std::unique_ptr<::SecureStorage> $getSecureStorage();
 

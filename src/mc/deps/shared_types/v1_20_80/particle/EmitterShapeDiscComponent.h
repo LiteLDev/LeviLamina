@@ -22,6 +22,7 @@ public:
 
 public:
     // prevent constructor by default
+    EmitterShapeDiscComponent& operator=(EmitterShapeDiscComponent const&);
     EmitterShapeDiscComponent(EmitterShapeDiscComponent const&);
     EmitterShapeDiscComponent();
 
@@ -32,17 +33,7 @@ public:
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
     // vIndex: 0
-    virtual ~EmitterShapeDiscComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_20_80::EmitterShapeDiscComponent&
-    operator=(::SharedTypes::v1_20_80::EmitterShapeDiscComponent&&);
-
-    MCNAPI ::SharedTypes::v1_20_80::EmitterShapeDiscComponent&
-    operator=(::SharedTypes::v1_20_80::EmitterShapeDiscComponent const&);
+    virtual ~EmitterShapeDiscComponent() /*override*/;
     // NOLINTEND
 
 public:
@@ -55,6 +46,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::HashedString const& NameID();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

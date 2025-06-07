@@ -13,134 +13,102 @@ struct BlockCulling {
 public:
     // BlockCulling inner types declare
     // clang-format off
-    struct Contents;
+    struct Description;
+    struct Rule;
     // clang-format on
 
     // BlockCulling inner types define
-    struct Contents {
+    struct Description {
     public:
-        // Contents inner types declare
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnk7d35d9;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Description(Description const&);
+        Description();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Description&
+        operator=(::SharedTypes::v1_20_60::BlockCulling::Description&&);
+
+        MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Description&
+        operator=(::SharedTypes::v1_20_60::BlockCulling::Description const&);
+
+        MCNAPI ~Description();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct Rule {
+    public:
+        // Rule inner types declare
         // clang-format off
-        struct Description;
-        struct Rule;
+        struct GeometryPart;
         // clang-format on
 
-        // Contents inner types define
-        struct Description {
+        // Rule inner types define
+        struct GeometryPart {
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 32> mUnk6fd166;
+            ::ll::UntypedStorage<8, 32> mUnk1f8b89;
+            ::ll::UntypedStorage<4, 8>  mUnk3ef3e6;
+            ::ll::UntypedStorage<2, 4>  mUnk67ee93;
             // NOLINTEND
 
         public:
             // prevent constructor by default
-            Description(Description const&);
-            Description();
+            GeometryPart(GeometryPart const&);
+            GeometryPart();
 
         public:
             // member functions
             // NOLINTBEGIN
-            MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Contents::Description&
-            operator=(::SharedTypes::v1_20_60::BlockCulling::Contents::Description&&);
+            MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Rule::GeometryPart&
+            operator=(::SharedTypes::v1_20_60::BlockCulling::Rule::GeometryPart&&);
 
-            MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Contents::Description&
-            operator=(::SharedTypes::v1_20_60::BlockCulling::Contents::Description const&);
-
-            MCNAPI ~Description();
-            // NOLINTEND
-
-        public:
-            // destructor thunk
-            // NOLINTBEGIN
-            MCNAPI void $dtor();
-            // NOLINTEND
-        };
-
-        struct Rule {
-        public:
-            // Rule inner types declare
-            // clang-format off
-            struct GeometryPart;
-            // clang-format on
-
-            // Rule inner types define
-            struct GeometryPart {
-            public:
-                // member variables
-                // NOLINTBEGIN
-                ::ll::UntypedStorage<8, 32> mUnk722f3b;
-                ::ll::UntypedStorage<4, 8>  mUnka6431b;
-                ::ll::UntypedStorage<2, 4>  mUnke6ec3c;
-                // NOLINTEND
-
-            public:
-                // prevent constructor by default
-                GeometryPart(GeometryPart const&);
-                GeometryPart();
-
-            public:
-                // member functions
-                // NOLINTBEGIN
-                MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Contents::Rule::GeometryPart&
-                operator=(::SharedTypes::v1_20_60::BlockCulling::Contents::Rule::GeometryPart const&);
-
-                MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Contents::Rule::GeometryPart&
-                operator=(::SharedTypes::v1_20_60::BlockCulling::Contents::Rule::GeometryPart&&);
-                // NOLINTEND
-            };
-
-        public:
-            // member variables
-            // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 48> mUnkcf8fbb;
-            ::ll::UntypedStorage<2, 2>  mUnkb9cd09;
-            // NOLINTEND
-
-        public:
-            // prevent constructor by default
-            Rule(Rule const&);
-            Rule();
-
-        public:
-            // member functions
-            // NOLINTBEGIN
-            MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Contents::Rule&
-            operator=(::SharedTypes::v1_20_60::BlockCulling::Contents::Rule const&);
-
-            MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Contents::Rule&
-            operator=(::SharedTypes::v1_20_60::BlockCulling::Contents::Rule&&);
+            MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Rule::GeometryPart&
+            operator=(::SharedTypes::v1_20_60::BlockCulling::Rule::GeometryPart const&);
             // NOLINTEND
         };
 
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk42746d;
-        ::ll::UntypedStorage<8, 24> mUnkd0d530;
+        ::ll::UntypedStorage<8, 48> mUnk9db7e3;
+        ::ll::UntypedStorage<2, 2>  mUnk2fc63e;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        Contents(Contents const&);
-        Contents();
+        Rule(Rule const&);
+        Rule();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Contents&
-        operator=(::SharedTypes::v1_20_60::BlockCulling::Contents&&);
+        MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Rule&
+        operator=(::SharedTypes::v1_20_60::BlockCulling::Rule const&);
 
-        MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Contents&
-        operator=(::SharedTypes::v1_20_60::BlockCulling::Contents const&);
+        MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Rule& operator=(::SharedTypes::v1_20_60::BlockCulling::Rule&&);
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk6b4f1b;
-    ::ll::UntypedStorage<8, 56> mUnke7f1ca;
+    ::ll::UntypedStorage<8, 32> mUnkcd29ba;
+    ::ll::UntypedStorage<8, 24> mUnk1cf3df;
     // NOLINTEND
 
 public:

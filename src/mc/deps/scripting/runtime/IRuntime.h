@@ -92,7 +92,7 @@ public:
 
     // vIndex: 11
     virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
-        executeCoroutines(::std::optional<::std::chrono::microseconds>) = 0;
+        executeCoroutines(::std::optional<::std::chrono::microseconds>, ::std::optional<::Scripting::Privilege>) = 0;
 
     // vIndex: 12
     virtual bool hasPendingJobs() = 0;

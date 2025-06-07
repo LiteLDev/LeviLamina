@@ -73,10 +73,10 @@ public:
     MCNAPI void _tickInternal(::BlockSource& region);
 
     MCNAPI void _trySendSneakCloseToSculkSensorEventPacket(
-        ::BlockSource&            gameEvent,
-        ::GameEvent const&        gameEventContext,
-        ::GameEventContext const& sensorPos,
-        ::Vec3 const&             region
+        ::BlockSource&            region,
+        ::GameEvent const&        gameEvent,
+        ::GameEventContext const& gameEventContext,
+        ::Vec3 const&             sensorPos
     );
 
     MCNAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);

@@ -32,8 +32,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI JigsawBlockMetadata(::SharedTypes::v1_21_50::JigsawBlockMetadata&&);
-
     MCNAPI ::SharedTypes::v1_21_50::JigsawBlockMetadata& operator=(::SharedTypes::v1_21_50::JigsawBlockMetadata const&);
 
     MCNAPI ::SharedTypes::v1_21_50::JigsawBlockMetadata& operator=(::SharedTypes::v1_21_50::JigsawBlockMetadata&&);
@@ -47,12 +45,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_21_50::JigsawBlockMetadata&&);
     // NOLINTEND
 
 public:

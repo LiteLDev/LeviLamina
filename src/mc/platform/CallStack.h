@@ -36,24 +36,6 @@ public:
         ::ll::TypedStorage<4, 8, ::std::optional<::Bedrock::LogLevel>> mLogLevel;
         ::ll::TypedStorage<4, 8, ::std::optional<::LogAreaID>>         mLogArea;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Context& operator=(Context const&);
-        Context(Context const&);
-        Context();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI Context(::Bedrock::CallStack::Context&&);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::Bedrock::CallStack::Context&&);
-        // NOLINTEND
     };
 
     struct FrameWithContext {

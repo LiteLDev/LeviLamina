@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
@@ -12,6 +11,8 @@
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptContainerSlot; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace ScriptModuleMinecraft { struct ScriptInvalidContainerError; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -36,7 +37,17 @@ public:
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
     addItem(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
 
-    MCNAPI ::Scripting::Result<void> clearAll() const;
+    MCNAPI ::Scripting::Result_deprecated<void> clearAll() const;
+
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidContainerError>
+    contains(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
+
+    MCNAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidContainerError>
+    find(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
+
+    MCNAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidContainerError> firstEmptySlot() const;
+
+    MCNAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidContainerError> firstItem() const;
 
     MCNAPI ::Scripting::Result_deprecated<int> getEmptySlotsCount() const;
 
@@ -52,13 +63,16 @@ public:
 
     MCNAPI bool isValid() const;
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     moveItem(int fromSlot, int toSlot, ::ScriptModuleMinecraft::ScriptContainerWrapper& toScriptContainer) const;
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidContainerError>
+    reverseFind(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
+
+    MCNAPI ::Scripting::Result_deprecated<void>
     setItem(int slot, ::std::optional<::ScriptModuleMinecraft::ScriptItemStack> const& scriptItemStack) const;
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     swapItems(int slot, int otherSlot, ::ScriptModuleMinecraft::ScriptContainerWrapper& otherScriptContainer) const;
 
     MCNAPI ::Scripting::Result_deprecated<
@@ -69,7 +83,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptContainerWrapper> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

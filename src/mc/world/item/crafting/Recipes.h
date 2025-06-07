@@ -159,7 +159,7 @@ public:
 
     MCAPI void _loadDataDrivenRecipes(::std::vector<::PackInstance> const& resourcePacksNewestToOldest);
 
-    MCAPI void _loadHardcodedRecipes(::BaseGameVersion const& baseGameVersion, ::Experiments const&);
+    MCAPI void _loadHardcodedRecipes(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
 
     MCAPI ::RecipeIngredient const _loadIngredientFromJson(
         ::Json::Value const& obj,
@@ -194,12 +194,13 @@ public:
         ::std::string const& recipeId
     ) const;
 
-    MCAPI void addBundleDyeRecipe(
+    MCAPI void addDyedItemRecipe(
         ::std::string                recipeId,
         ::ItemInstance const&        result,
-        ::RecipeIngredient           dyedBundle,
+        ::RecipeIngredient           itemToDye,
         ::RecipeIngredient           dye,
         ::RecipeUnlockingRequirement unlockingReq,
+        int                          priority,
         ::SemVersion const&          formatVersion
     );
 
@@ -215,7 +216,7 @@ public:
         ::std::string const&                  r0,
         ::std::vector<::Recipes::Type> const& types,
         ::std::vector<::HashedString> const&  tags,
-        int                                   constructor,
+        int                                   priority,
         ::std::function<::std::unique_ptr<::ShapedRecipe>(
             ::std::string,
             int,
@@ -228,9 +229,9 @@ public:
             ::mce::UUID const*,
             ::RecipeUnlockingRequirement const&,
             ::SemVersion const&
-        )>                                    unlockingReq,
-        ::RecipeUnlockingRequirement const&   formatVersion,
-        ::SemVersion const&                   priority,
+        )>                                    constructor,
+        ::RecipeUnlockingRequirement const&   unlockingReq,
+        ::SemVersion const&                   formatVersion,
         bool                                  assumeSymmetry
     );
 

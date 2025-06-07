@@ -39,19 +39,22 @@ public:
     // vIndex: 24
     virtual uint64 getHighPerformanceThreadsCount() const /*override*/;
 
-    // vIndex: 250
+    // vIndex: 26
+    virtual void initializeGraphicsDeviceTier() /*override*/;
+
+    // vIndex: 249
     virtual ::Core::PathBuffer<::std::string> getPlatformTempPath() const /*override*/;
 
     // vIndex: 66
     virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath) /*override*/;
 
-    // vIndex: 178
+    // vIndex: 177
     virtual uint64 calculateAvailableDiskFreeSpace(::Core::Path const& rootPath) /*override*/;
 
     // vIndex: 77
     virtual bool allowContentLogWriteToDisk() /*override*/;
 
-    // vIndex: 181
+    // vIndex: 180
     virtual bool devHotReloadRenderResources() const /*override*/;
 
     // vIndex: 79
@@ -60,32 +63,32 @@ public:
     // vIndex: 80
     virtual ::MPMCQueue<::std::function<void()>>& getMainThreadQueue() /*override*/;
 
-    // vIndex: 214
+    // vIndex: 213
     virtual bool canAppSelfTerminate() const /*override*/;
 
-    // vIndex: 215
+    // vIndex: 214
     virtual bool getPlatformTTSExists() const /*override*/;
 
-    // vIndex: 216
+    // vIndex: 215
     virtual bool getPlatformTTSEnabled() const /*override*/;
 
     // vIndex: 68
     virtual void registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const
         /*override*/;
 
-    // vIndex: 238
+    // vIndex: 237
     virtual bool is24HourTimeFormat() const /*override*/;
 
-    // vIndex: 240
+    // vIndex: 239
     virtual ::Core::PathBuffer<::std::string> _getCurrentStoragePath() const /*override*/;
 
-    // vIndex: 241
+    // vIndex: 240
     virtual ::Core::PathBuffer<::std::string> _getExternalStoragePath() const /*override*/;
 
-    // vIndex: 242
+    // vIndex: 241
     virtual ::Core::PathBuffer<::std::string> _getInternalStoragePath() const /*override*/;
 
-    // vIndex: 243
+    // vIndex: 242
     virtual ::Core::PathBuffer<::std::string> _getUserdataPath() const /*override*/;
 
     // vIndex: 46
@@ -104,7 +107,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static long callWerRegisterCustomMetadata(::std::string const& data, ::std::string const& key);
+    MCNAPI static long callWerRegisterCustomMetadata(::std::string const& key, ::std::string const& data);
     // NOLINTEND
 
 public:
@@ -125,6 +128,8 @@ public:
     MCNAPI uint64 $getTotalHardwareThreadsCount() const;
 
     MCNAPI uint64 $getHighPerformanceThreadsCount() const;
+
+    MCNAPI void $initializeGraphicsDeviceTier();
 
     MCNAPI ::Core::PathBuffer<::std::string> $getPlatformTempPath() const;
 

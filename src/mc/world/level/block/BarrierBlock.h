@@ -17,10 +17,10 @@ public:
     // vIndex: 0
     virtual ~BarrierBlock() /*override*/ = default;
 
-    // vIndex: 25
+    // vIndex: 24
     virtual bool canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const /*override*/;
 
-    // vIndex: 116
+    // vIndex: 115
     virtual float getShadeBrightness(::Block const& block) const /*override*/;
     // NOLINTEND
 

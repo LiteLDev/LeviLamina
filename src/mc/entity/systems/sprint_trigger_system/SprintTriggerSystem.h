@@ -13,6 +13,7 @@ class StrictEntityContext;
 struct ActorDataControllingSeatIndexComponent;
 struct ActorDataDirtyFlagsComponent;
 struct ActorDataFlagComponent;
+struct ActorHeadInWaterFlagComponent;
 struct AttributeRequestComponent;
 struct CanVehicleSprintFlagComponent;
 struct ItemUseSlowdownModifierComponent;
@@ -36,11 +37,14 @@ struct WasInWaterFlagComponent;
 namespace SprintTriggerSystem {
 // functions
 // NOLINTBEGIN
+MCNAPI ::TickingSystemWithInfo createActionSystem();
+
 MCNAPI ::TickingSystemWithInfo createIntentSystem();
 
 MCNAPI ::TickingSystemWithInfo createSetRequestSystem();
 
 MCNAPI void doIntentTick(
+    ::Optional<::ActorHeadInWaterFlagComponent const>    headInWater,
     ::Optional<::ItemUseSlowdownModifierComponent const> itemInUse,
     ::Optional<::OnGroundFlagComponent const> const&     onGround,
     ::Optional<::WasInWaterFlagComponent const> const&   wasInWater,

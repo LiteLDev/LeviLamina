@@ -8,9 +8,9 @@ struct Proxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnkbe4614;
-    ::ll::UntypedStorage<8, 256> mUnkdad595;
-    ::ll::UntypedStorage<1, 1>   mUnk3358c0;
+    ::ll::UntypedStorage<8, 24> mUnkbe4614;
+    ::ll::UntypedStorage<8, 56> mUnkdad595;
+    ::ll::UntypedStorage<1, 1>  mUnk3358c0;
     // NOLINTEND
 
 public:

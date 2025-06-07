@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/WorldType.h"
 #include "mc/editor/services/export/ExportResult.h"
 
 // auto generated forward declare list
@@ -24,6 +25,7 @@ public:
     virtual void beginExportProject(
         ::WeakEntityRef,
         ::Editor::GameOptions const&,
+        ::Editor::WorldType const,
         ::std::function<void(::Editor::ExportResult const&)>
     ) = 0;
 

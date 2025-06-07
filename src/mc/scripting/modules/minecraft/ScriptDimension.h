@@ -4,8 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
@@ -55,8 +53,10 @@ namespace ScriptModuleMinecraft { struct ScriptWorldSoundOptions; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct EngineError; }
+namespace Scripting { struct EnumBinding; }
 namespace Scripting { struct Error; }
 namespace Scripting { struct InvalidArgumentError; }
 namespace Scripting { struct JSON; }
@@ -110,12 +110,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
+    MCNAPI ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+        ::Scripting::InvalidArgumentError,
+        ::Scripting::Error>
     _spawnEntity(
         ::std::variant<::ScriptModuleMinecraft::ScriptActorType, ::std::string> const& identifier,
         ::std::variant<::BlockPos, ::Vec3> const&                                      pos,
         ::Vec2 const&                                                                  rotation,
-        bool                                                                           initialPersistence
+        bool                                                                           initialPersistence,
+        bool                                                                           allowActorDefinitionSpawnEvent,
+        ::std::string const&                                                           spawnEvent
     ) const;
 
     MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptUnloadedChunksError, ::Scripting::Error>
@@ -135,7 +140,7 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptExplosionOptions> explosionOptions
     ) const;
 
-    MCNAPI ::Scripting::Result<void> createExplosion_V010(
+    MCNAPI ::Scripting::Result_deprecated<void> createExplosion_V010(
         ::Vec3 const&                                                                   pos,
         float                                                                           radius,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptExplosionOptions> explosionOptions
@@ -289,8 +294,8 @@ public:
 
     MCNAPI ::Scripting::Result<
         bool,
-        ::Scripting::InvalidArgumentError,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        ::Scripting::InvalidArgumentError,
         ::Scripting::Error>
     placeFeature(::std::string const& featureName, ::Vec3 const& location, bool shouldThrowOnFailure) const;
 
@@ -298,7 +303,7 @@ public:
         Result<bool, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
         placeFeatureRule(::std::string const& featureRuleName, ::Vec3 const& location) const;
 
-    MCNAPI ::Scripting::Result<void> playSound(
+    MCNAPI ::Scripting::Result_deprecated<void> playSound(
         ::std::string const&                                              soundID,
         ::Vec3 const&                                                     location,
         ::std::optional<::ScriptModuleMinecraft::ScriptWorldSoundOptions> soundOptions
@@ -345,13 +350,15 @@ public:
             ::std::string> const& blockType
     );
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     setWeather(::ScriptModuleMinecraft::ScriptWeatherType type, ::std::optional<int> duration);
 
     MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
-        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
+        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError,
+        ::Scripting::InvalidArgumentError,
+        ::Scripting::Error>
     spawnEntity(
         ::std::variant<::ScriptModuleMinecraft::ScriptActorType, ::std::string> const& identifier,
         ::Vec3 const&                                                                  pos,
@@ -364,7 +371,8 @@ public:
     MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
-        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
+        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError,
+        ::Scripting::Error>
     spawnEntity_V130(::std::string const& identifier, ::Vec3 const& pos) const;
 
     MCNAPI ::Scripting::Result<
@@ -400,10 +408,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptDimension> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::EnumBindingBuilder<::std::string, ::ScriptModuleMinecraft::ScriptWeatherType>
-    bindScriptWeatherType();
+    MCNAPI static ::Scripting::EnumBinding bindScriptWeatherType();
 
     MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>
     getOrCreateHandle(::DimensionType id, ::Level& level, ::Scripting::WeakLifetimeScope const& scope);

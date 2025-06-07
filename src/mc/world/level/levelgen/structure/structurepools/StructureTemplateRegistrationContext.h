@@ -35,8 +35,6 @@ public:
     // NOLINTBEGIN
     MCNAPI StructureTemplateRegistrationContext(::StructureTemplateRegistrationContext const&);
 
-    MCNAPI StructureTemplateRegistrationContext(::StructureTemplateRegistrationContext&&);
-
     MCNAPI ~StructureTemplateRegistrationContext();
     // NOLINTEND
 
@@ -44,8 +42,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::StructureTemplateRegistrationContext const&);
-
-    MCNAPI void* $ctor(::StructureTemplateRegistrationContext&&);
     // NOLINTEND
 
 public:

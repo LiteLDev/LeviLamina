@@ -6,8 +6,9 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class CompoundBlockVolume;
+class BlockVolumeBase;
 class StructureSettings;
+namespace Editor { class RelativeVolumeListBlockVolume; }
 namespace Editor::Services { struct ClipboardWriteOptions; }
 // clang-format on
 
@@ -30,10 +31,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::CompoundBlockVolume getPredictedWriteAsVolume(
-        ::BlockPos const&                                position,
-        ::Editor::Services::ClipboardWriteOptions const* options
-    ) const;
+    MCNAPI ::Editor::RelativeVolumeListBlockVolume
+    getPredictedWriteVolume(::BlockPos const& position, ::Editor::Services::ClipboardWriteOptions const* options) const;
 
     MCNAPI ::StructureSettings getStructureSettingsFromOptions(
         ::BlockPos const&                                size,
@@ -42,9 +41,9 @@ public:
 
     MCNAPI bool isEmpty() const;
 
-    MCNAPI void readFromVolume(::BlockSource& region, ::CompoundBlockVolume const& volume);
+    MCNAPI void readFromWorld(::BlockSource& region, ::BlockVolumeBase const& volume);
 
-    MCNAPI void readFromWorld(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to);
+    MCNAPI void readFromWorld(::BlockSource& region, ::Editor::RelativeVolumeListBlockVolume const& volume);
     // NOLINTEND
 };
 

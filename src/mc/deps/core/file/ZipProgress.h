@@ -17,6 +17,7 @@ public:
     // prevent constructor by default
     ZipProgress& operator=(ZipProgress const&);
     ZipProgress(ZipProgress const&);
+    ZipProgress();
 
 public:
     // virtual functions
@@ -26,18 +27,6 @@ public:
 
     // vIndex: 1
     virtual void clear();
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ZipProgress();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

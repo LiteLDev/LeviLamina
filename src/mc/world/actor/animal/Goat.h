@@ -81,6 +81,8 @@ public:
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getDeathSound();
+
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
     // NOLINTEND
 
 public:

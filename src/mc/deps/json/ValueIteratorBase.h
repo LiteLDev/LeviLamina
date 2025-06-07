@@ -42,6 +42,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void increment();
+
     MCAPI bool operator!=(::Json::ValueIteratorBase const& other) const;
     // NOLINTEND
 };

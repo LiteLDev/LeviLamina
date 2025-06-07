@@ -16,6 +16,8 @@ MCNAPI ::HashedString& EDUCATION_OID();
 
 MCNAPI ::HashedString& EDUCATION_SHARED_RESOURCE();
 
+MCNAPI ::HashedString& FLAT_WORLD_PRESET();
+
 MCNAPI ::HashedString& FLAT_WORLD_VERSION();
 
 MCNAPI ::HashedString& GAME_TYPE();

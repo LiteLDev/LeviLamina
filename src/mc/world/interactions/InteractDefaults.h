@@ -20,6 +20,8 @@ MCNAPI float const& COOLDOWN();
 
 MCNAPI float const& COOLDOWN_AFTER_ATTACK();
 
+MCNAPI float const& DROP_ITEM_Y_OFFSET();
+
 MCNAPI bool const& GIVE_ITEM();
 
 MCNAPI int const& HURT_ITEM();

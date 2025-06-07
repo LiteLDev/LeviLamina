@@ -26,16 +26,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 120
+    // vIndex: 119
     virtual ::Block const& getRenderBlock() const /*override*/;
 
-    // vIndex: 121
+    // vIndex: 120
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
-    // vIndex: 122
+    // vIndex: 121
     virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
 
-    // vIndex: 92
+    // vIndex: 91
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
@@ -50,6 +50,8 @@ public:
     MCNAPI ::Block const& $getRenderBlock() const;
 
     MCNAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
+
+    MCNAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
 
     MCNAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,

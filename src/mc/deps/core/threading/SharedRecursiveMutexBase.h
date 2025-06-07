@@ -36,6 +36,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void unlock();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
 

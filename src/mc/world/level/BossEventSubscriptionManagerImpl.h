@@ -22,14 +22,15 @@ public:
     ::ll::TypedStorage<
         8,
         128,
-        ::Bedrock::PubSub::Publisher<void(::BossEventUpdateType), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+        ::Bedrock::PubSub::Publisher<void(::BossEventUpdateType), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
         mOnBossEvent;
     ::ll::TypedStorage<
         8,
         128,
         ::Bedrock::PubSub::Publisher<
             void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&),
-            ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+            0>>
         mOnBossEventWithPacket;
     // NOLINTEND
 

@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/platform/Result.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { class PropertyReader; }
-// clang-format on
-
 namespace cereal {
 
 struct SchemaReader {
@@ -77,40 +72,40 @@ public:
     virtual bool isNull() const = 0;
 
     // vIndex: 5
-    virtual ::Bedrock::Result<bool> asBool(::cereal::PropertyReader const&) = 0;
+    virtual ::Bedrock::Result<bool> asBool() = 0;
 
     // vIndex: 6
-    virtual ::Bedrock::Result<schar> asInt8(::cereal::PropertyReader const&) = 0;
+    virtual ::Bedrock::Result<schar> asInt8() = 0;
 
     // vIndex: 7
-    virtual ::Bedrock::Result<uchar> asUInt8(::cereal::PropertyReader const&) = 0;
+    virtual ::Bedrock::Result<uchar> asUInt8() = 0;
 
     // vIndex: 8
-    virtual ::Bedrock::Result<short> asInt16(::cereal::PropertyReader const&) = 0;
+    virtual ::Bedrock::Result<short> asInt16() = 0;
 
     // vIndex: 9
-    virtual ::Bedrock::Result<ushort> asUInt16(::cereal::PropertyReader const&) = 0;
+    virtual ::Bedrock::Result<ushort> asUInt16() = 0;
 
     // vIndex: 10
-    virtual ::Bedrock::Result<int> asInt32(::cereal::PropertyReader const&) = 0;
+    virtual ::Bedrock::Result<int> asInt32() = 0;
 
     // vIndex: 11
-    virtual ::Bedrock::Result<uint> asUInt32(::cereal::PropertyReader const&) = 0;
+    virtual ::Bedrock::Result<uint> asUInt32() = 0;
 
     // vIndex: 12
-    virtual ::Bedrock::Result<int64> asInt64(::cereal::PropertyReader const&) = 0;
+    virtual ::Bedrock::Result<int64> asInt64() = 0;
 
     // vIndex: 13
-    virtual ::Bedrock::Result<uint64> asUInt64(::cereal::PropertyReader const&) = 0;
+    virtual ::Bedrock::Result<uint64> asUInt64() = 0;
 
     // vIndex: 14
-    virtual ::Bedrock::Result<float> asFloat(::cereal::PropertyReader const&) = 0;
+    virtual ::Bedrock::Result<float> asFloat() = 0;
 
     // vIndex: 15
-    virtual ::Bedrock::Result<double> asDouble(::cereal::PropertyReader const&) = 0;
+    virtual ::Bedrock::Result<double> asDouble() = 0;
 
     // vIndex: 16
-    virtual ::Bedrock::Result<::std::string> asString(::cereal::PropertyReader const&) = 0;
+    virtual ::Bedrock::Result<::std::string> asString() = 0;
 
     // vIndex: 17
     virtual uint64 members() = 0;
@@ -119,13 +114,13 @@ public:
     virtual uint64 length() = 0;
 
     // vIndex: 19
-    virtual bool pushMember(::std::string_view const, ::cereal::PropertyReader const&) = 0;
+    virtual bool pushMember(::std::string_view const) = 0;
 
     // vIndex: 20
-    virtual ::std::string_view pushNextMember(::cereal::PropertyReader const&) = 0;
+    virtual ::std::string_view pushNextMember() = 0;
 
     // vIndex: 21
-    virtual void pushElement(uint64, ::cereal::PropertyReader const&) = 0;
+    virtual void pushElement(uint64) = 0;
 
     // vIndex: 22
     virtual void pop() = 0;

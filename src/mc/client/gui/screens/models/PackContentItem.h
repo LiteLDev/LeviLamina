@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/screens/models/ManifestContentItem.h"
-#include "mc/client/gui/screens/models/PackListType.h"
 #include "mc/client/gui/screens/models/PackReportState.h"
 #include "mc/resources/PackReport.h"
 #include "mc/resources/SubpackInfoCollection.h"
@@ -12,23 +11,31 @@
 // auto generated forward declare list
 // clang-format off
 class PackSettings;
+struct PackContentItemListPosition;
 // clang-format on
 
 struct PackContentItem : public ::ManifestContentItem {
 public:
+    // PackContentItem inner types declare
+    // clang-format off
+    struct PositionSort;
+    // clang-format on
+
+    // PackContentItem inner types define
+    struct PositionSort {};
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::PackListType>                                       mListType;
-    ::ll::TypedStorage<8, 256, ::PackReport>                                       mPackReport;
-    ::ll::TypedStorage<8, 256, ::PackReport>                                       mLoadingReport;
-    ::ll::TypedStorage<8, 32, ::std::string>                                       mDateAvailable;
-    ::ll::TypedStorage<8, 8, uint64>                                               mPosition;
-    ::ll::TypedStorage<4, 4, int>                                                  mSubpackIndex;
-    ::ll::TypedStorage<1, 1, ::PackReportState>                                    mReportState;
-    ::ll::TypedStorage<8, 24, ::SubpackInfoCollection>                             mSubpackInfo;
-    ::ll::TypedStorage<8, 8, ::PackSettings*>                                      mPackSettings;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::PackContentItem>>> mDependencies;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::PackContentItem>>> mDependentContent;
+    ::ll::TypedStorage<8, 248, ::PackReport>                                                    mPackReport;
+    ::ll::TypedStorage<8, 248, ::PackReport>                                                    mLoadingReport;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                    mDateAvailable;
+    ::ll::TypedStorage<1, 1, ::PackReportState>                                                 mReportState;
+    ::ll::TypedStorage<8, 24, ::SubpackInfoCollection>                                          mSubpackInfo;
+    ::ll::TypedStorage<8, 8, ::PackSettings*>                                                   mPackSettings;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::PackContentItemListPosition>>> mListPosition;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::weak_ptr<::PackContentItem const>>>          mDependencies;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::weak_ptr<::PackContentItem const>>>          mDependentContent;
     // NOLINTEND
 
 public:

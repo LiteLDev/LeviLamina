@@ -84,7 +84,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemStackNetManagerBase(::Player& player, bool isEnabled, bool isClientSide);
+    MCAPI ItemStackNetManagerBase(::Player& player, bool isClientSide, bool isEnabled);
 
     MCAPI bool _isRequestActionAllowed(::ItemStackRequestAction const& requestAction);
 
@@ -111,7 +111,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player, bool isEnabled, bool isClientSide);
+    MCAPI void* $ctor(::Player& player, bool isClientSide, bool isEnabled);
     // NOLINTEND
 
 public:

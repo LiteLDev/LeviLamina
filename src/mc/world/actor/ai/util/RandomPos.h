@@ -49,9 +49,9 @@ public:
         ::BlockSource& region,
         ::Random&      random,
         ::Vec3 const&  inPos,
+        int            numAttempts,
         int            xzDist,
         int            yDist,
-        int            numAttempts,
         ::Vec3*        dir
     );
 
@@ -67,9 +67,9 @@ public:
         int                 yDist,
         int                 yOffset,
         bool                canFly,
-        bool                direction,
-        ::Vec3*             hoverHeight,
-        ::IntRange const&   canSwim,
+        bool                canSwim,
+        ::Vec3*             direction,
+        ::IntRange const&   hoverHeight,
         int                 tries,
         ::SolidityCheckType blockTest
     );
@@ -77,7 +77,7 @@ public:
     MCNAPI static ::std::optional<::Vec3> getPosTowards(::Mob& mob, int xzDist, int yDist, ::Vec3 const& towardsPos);
 
     MCNAPI static ::std::optional<::Vec3>
-    getPosTowards(::Random& random, ::Mob& mob, int towardsPos, int xzDist, ::Vec3 const& yDist);
+    getPosTowards(::Random& random, ::Mob& mob, int xzDist, int yDist, ::Vec3 const& towardsPos);
 
     MCNAPI static bool snapToGround(
         ::BlockPos&         inOutPos,

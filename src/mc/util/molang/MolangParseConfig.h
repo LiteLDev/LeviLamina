@@ -17,8 +17,9 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, ::MolangVersion>                    mVersion;
     ::ll::TypedStorage<8, 16, ::gsl::span<::HashedString const>> mAllowedQuerySets;
-    ::ll::TypedStorage<8, 16, ::brstd::bitset<77, uint64>>       mAllowedOperations;
+    ::ll::TypedStorage<8, 16, ::brstd::bitset<78, uint64>>       mAllowedOperations;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>      mAllowedSpecificQueries;
+    ::ll::TypedStorage<1, 1, bool>                               mPreserveSource;
     // NOLINTEND
 
 public:

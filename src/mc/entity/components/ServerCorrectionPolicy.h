@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
+    // vIndex: 2
     virtual ::MovementCorrection shouldCorrectMovement(
         ::EntityContext&               entity,
         ::PlayerAuthInputPacket const& packet,
@@ -40,16 +40,10 @@ public:
         bool                           isStrictMovement
     ) /*override*/;
 
-    // vIndex: 2
-    virtual bool canRewind(::EntityContext const&) /*override*/;
-
     // vIndex: 1
     virtual bool isReplayNeeded(::AdvanceFrameResult) const /*override*/;
 
-    // vIndex: 4
-    virtual bool validateFrameSupport(::EntityContext&) /*override*/;
-
-    // vIndex: 5
+    // vIndex: 3
     virtual void notifyOfExternalCorrection(uint64 frame) /*override*/;
 
     // vIndex: 0
@@ -67,11 +61,7 @@ public:
         bool                           isStrictMovement
     );
 
-    MCNAPI bool $canRewind(::EntityContext const&);
-
     MCNAPI bool $isReplayNeeded(::AdvanceFrameResult) const;
-
-    MCNAPI bool $validateFrameSupport(::EntityContext&);
 
     MCNAPI void $notifyOfExternalCorrection(uint64 frame);
     // NOLINTEND

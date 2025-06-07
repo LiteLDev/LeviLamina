@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,6 +16,7 @@ namespace ScriptModuleMinecraft { struct ScriptCameraSetLocationOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraSetPositionOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraSetRotationOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraTargetOptions; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -39,14 +39,14 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit ScriptCamera(::Player const& player);
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     cameraFade(::std::optional<::ScriptModuleMinecraft::ScriptCameraFadeOptions> fadeOptions) const;
 
-    MCNAPI ::Scripting::Result<void> clearCamera() const;
+    MCNAPI ::Scripting::Result_deprecated<void> clearCamera() const;
 
     MCNAPI ::ScriptModuleMinecraft::ScriptCamera& operator=(::ScriptModuleMinecraft::ScriptCamera&&);
 
-    MCNAPI ::Scripting::Result<void> setCamera(
+    MCNAPI ::Scripting::Result_deprecated<void> setCamera(
         ::std::string const&                                        cameraPreset,
         ::std::optional<::std::variant<
             ::ScriptModuleMinecraft::ScriptCameraSetFacingOptions,
@@ -58,7 +58,7 @@ public:
             ::ScriptModuleMinecraft::ScriptCameraFixedBoomOptions>> options
     ) const;
 
-    MCNAPI ::Scripting::Result<void> setCameraBeta(
+    MCNAPI ::Scripting::Result_deprecated<void> setCameraBeta(
         ::std::string const&                                        cameraPreset,
         ::std::optional<::std::variant<
             ::ScriptModuleMinecraft::ScriptCameraSetFacingOptions,
@@ -70,7 +70,7 @@ public:
             ::ScriptModuleMinecraft::ScriptCameraFixedBoomOptions>> options
     ) const;
 
-    MCNAPI ::Scripting::Result<void> setCamera_V160(
+    MCNAPI ::Scripting::Result_deprecated<void> setCamera_V160(
         ::std::string const&                                        cameraPreset,
         ::std::optional<::std::variant<
             ::ScriptModuleMinecraft::ScriptCameraSetFacingOptions,
@@ -86,7 +86,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptCamera> bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:

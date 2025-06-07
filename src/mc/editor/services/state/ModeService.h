@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/Mode.h"
 #include "mc/editor/serviceproviders/ModeServiceProvider.h"
@@ -21,7 +20,7 @@ class ModeService : public ::Editor::Services::IEditorService, public ::Editor::
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk5225b4;
+    ::ll::UntypedStorage<8, 48> mUnk74980a;
     ::ll::UntypedStorage<8, 16> mUnkcd1e6b;
     ::ll::UntypedStorage<4, 4>  mUnk4d8d86;
     // NOLINTEND
@@ -39,23 +38,23 @@ public:
     virtual ~ModeService() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> quit() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     // vIndex: 1
     virtual ::Editor::Mode getMode() const /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void> trySetMode(::Editor::Mode newMode) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> trySetMode(::Editor::Mode newMode) /*override*/;
 
     // vIndex: 3
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     listenForModeChange(::std::function<void(::Editor::Mode, ::Editor::Mode)> func) /*override*/;
 
     // vIndex: 7
-    virtual ::Scripting::Result<void> _doSwitchMode(::Editor::Mode) = 0;
+    virtual ::Scripting::Result_deprecated<void> _doSwitchMode(::Editor::Mode) = 0;
 
     // vIndex: 8
     virtual void _handleModeChangedPayload(::Editor::Network::ModeChangedPayload const&) = 0;
@@ -70,13 +69,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
     MCNAPI ::Editor::Mode $getMode() const;
 
-    MCNAPI ::Scripting::Result<void> $trySetMode(::Editor::Mode newMode);
+    MCNAPI ::Scripting::Result_deprecated<void> $trySetMode(::Editor::Mode newMode);
 
     MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     $listenForModeChange(::std::function<void(::Editor::Mode, ::Editor::Mode)> func);

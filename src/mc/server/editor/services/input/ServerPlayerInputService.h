@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/server/editor/serviceproviders/ServerPlayerInputServiceProvider.h"
 
@@ -38,16 +38,16 @@ public:
     virtual ~ServerPlayerInputService() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> init() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> quit() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> registerKeyBinding(
+    virtual ::Scripting::Result_deprecated<void> registerKeyBinding(
         ::HashedString const&               contextId,
         ::HashedString const&               eventId,
         ::Editor::Input::KeyBinding const&  binding,
@@ -55,22 +55,22 @@ public:
     ) /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void>
+    virtual ::Scripting::Result_deprecated<void>
     unregisterKeyBinding(::HashedString const& contextId, ::HashedString const& eventId) /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void> registerMouseBinding(
+    virtual ::Scripting::Result_deprecated<void> registerMouseBinding(
         ::HashedString const&                contextId,
         ::HashedString const&                eventId,
         ::Editor::Input::MouseBinding const& binding
     ) /*override*/;
 
     // vIndex: 4
-    virtual ::Scripting::Result<void>
+    virtual ::Scripting::Result_deprecated<void>
     unregisterMouseBinding(::HashedString const& contextId, ::HashedString const& eventId) /*override*/;
 
     // vIndex: 5
-    virtual ::Scripting::Result<void> updateKeyBindingProcessingState(
+    virtual ::Scripting::Result_deprecated<void> updateKeyBindingProcessingState(
         ::HashedString const& contextId,
         ::HashedString const& bindingId,
         ::std::optional<int>  state
@@ -81,38 +81,38 @@ public:
     getKeyBindingProcessingState(::HashedString const& contextId, ::HashedString const& bindingId) const /*override*/;
 
     // vIndex: 7
-    virtual ::Scripting::Result<void> setViewportFocus(bool focused) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> setViewportFocus(bool focused) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> $init();
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result<void> $quit();
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI ::Scripting::Result<void> $registerKeyBinding(
+    MCNAPI ::Scripting::Result_deprecated<void> $registerKeyBinding(
         ::HashedString const&               contextId,
         ::HashedString const&               eventId,
         ::Editor::Input::KeyBinding const&  binding,
         ::Editor::Input::BindingInfo const& info
     );
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     $unregisterKeyBinding(::HashedString const& contextId, ::HashedString const& eventId);
 
-    MCNAPI ::Scripting::Result<void> $registerMouseBinding(
+    MCNAPI ::Scripting::Result_deprecated<void> $registerMouseBinding(
         ::HashedString const&                contextId,
         ::HashedString const&                eventId,
         ::Editor::Input::MouseBinding const& binding
     );
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     $unregisterMouseBinding(::HashedString const& contextId, ::HashedString const& eventId);
 
-    MCNAPI ::Scripting::Result<void> $updateKeyBindingProcessingState(
+    MCNAPI ::Scripting::Result_deprecated<void> $updateKeyBindingProcessingState(
         ::HashedString const& contextId,
         ::HashedString const& bindingId,
         ::std::optional<int>  state
@@ -121,7 +121,7 @@ public:
     MCNAPI ::std::optional<int>
     $getKeyBindingProcessingState(::HashedString const& contextId, ::HashedString const& bindingId) const;
 
-    MCNAPI ::Scripting::Result<void> $setViewportFocus(bool focused);
+    MCNAPI ::Scripting::Result_deprecated<void> $setViewportFocus(bool focused);
     // NOLINTEND
 
 public:

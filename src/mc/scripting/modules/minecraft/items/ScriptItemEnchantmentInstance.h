@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
-
 // auto generated forward declare list
 // clang-format off
 class EnchantmentInstance;
@@ -12,6 +9,7 @@ class ItemEnchants;
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentLevelOutOfBoundsError; }
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentTypeNotCompatibleError; }
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentUnknownIdError; }
+namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -46,7 +44,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentInstance> bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:

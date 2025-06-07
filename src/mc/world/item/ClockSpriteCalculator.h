@@ -26,6 +26,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI int update(::BlockSource const& region, ::Vec3 const& instant, bool pos);
+    MCNAPI int update(::BlockSource const& region, ::Vec3 const& pos, bool instant);
     // NOLINTEND
 };

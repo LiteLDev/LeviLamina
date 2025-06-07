@@ -29,9 +29,9 @@ public:
     ::ll::UntypedStorage<8, 24>  mUnkdbad9c;
     ::ll::UntypedStorage<8, 8>   mUnk2cdcd8;
     ::ll::UntypedStorage<8, 24>  mUnkea18e6;
-    ::ll::UntypedStorage<8, 128> mUnkc3bc23;
-    ::ll::UntypedStorage<8, 128> mUnkbab0f8;
-    ::ll::UntypedStorage<8, 128> mUnk9c3871;
+    ::ll::UntypedStorage<8, 128> mUnk9f3dde;
+    ::ll::UntypedStorage<8, 128> mUnkf0ea9f;
+    ::ll::UntypedStorage<8, 128> mUnkb48e44;
     ::ll::UntypedStorage<1, 1>   mUnk583438;
     ::ll::UntypedStorage<8, 16>  mUnkfd3a24;
     // NOLINTEND
@@ -80,7 +80,7 @@ public:
 
     MCNAPI void forceRemoveActorFromWorld(::Actor& actor);
 
-    MCNAPI void onChunkDiscarded(::WeakEntityRef entityRef);
+    MCNAPI void onChunkDiscarded(::LevelChunk const& levelChunk, ::WeakEntityRef entityRef);
 
     MCNAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 

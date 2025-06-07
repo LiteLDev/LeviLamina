@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/debug/log/LogArea.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/resources/JsonBetaState.h"
 #include "mc/world/actor/ActorDefinitionParseStatus.h"
 
@@ -16,6 +17,7 @@ class Experiments;
 class IMinecraftEventing;
 class IPackLoadContext;
 class Level;
+class LinkedAssetValidator;
 class PackInstance;
 class ResourcePackManager;
 class SemVersion;
@@ -91,6 +93,7 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk13770a;
     ::ll::UntypedStorage<8, 64> mUnkfa226d;
     ::ll::UntypedStorage<8, 8>  mUnk6d02ad;
+    ::ll::UntypedStorage<8, 24> mUnk7caf27;
     ::ll::UntypedStorage<8, 80> mUnk3e218b;
     ::ll::UntypedStorage<8, 8>  mUnkcf7ca4;
     ::ll::UntypedStorage<8, 8>  mUnk6ed894;
@@ -114,10 +117,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ActorDefinitionGroup(
-        ::Level&               level,
-        ::ResourcePackManager& resourcePackManager,
-        ::IMinecraftEventing&  eventing,
-        ::Experiments const&   experiments
+        ::Level&                                           level,
+        ::ResourcePackManager&                             resourcePackManager,
+        ::IMinecraftEventing&                              eventing,
+        ::Experiments const&                               experiments,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator
     );
 
     MCNAPI void _getResources(::Level& level);
@@ -187,10 +191,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::Level&               level,
-        ::ResourcePackManager& resourcePackManager,
-        ::IMinecraftEventing&  eventing,
-        ::Experiments const&   experiments
+        ::Level&                                           level,
+        ::ResourcePackManager&                             resourcePackManager,
+        ::IMinecraftEventing&                              eventing,
+        ::Experiments const&                               experiments,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator
     );
     // NOLINTEND
 

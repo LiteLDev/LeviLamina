@@ -30,15 +30,21 @@ public:
     virtual ~BaseBlockLocationIterator() = default;
 
     // vIndex: 1
-    virtual ::BaseBlockLocationIterator& operator++();
+    virtual bool operator==(::BaseBlockLocationIterator const&) const;
 
     // vIndex: 2
-    virtual bool isValid() const = 0;
+    virtual bool operator!=(::BaseBlockLocationIterator const&) const;
 
     // vIndex: 3
-    virtual void _begin();
+    virtual ::BaseBlockLocationIterator& operator++();
 
     // vIndex: 4
+    virtual bool isValid() const = 0;
+
+    // vIndex: 5
+    virtual void _begin();
+
+    // vIndex: 6
     virtual void _end();
     // NOLINTEND
 

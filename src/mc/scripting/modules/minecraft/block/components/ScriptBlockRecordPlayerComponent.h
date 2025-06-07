@@ -3,22 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
+#include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBlockRecordPlayerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
+class ScriptBlockRecordPlayerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockActorComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -32,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void> ejectRecord();
+    MCNAPI ::Scripting::Result_deprecated<void> ejectRecord();
 
     MCNAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
@@ -40,11 +39,11 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<bool> isPlaying();
 
-    MCNAPI ::Scripting::Result<void> pauseRecord();
+    MCNAPI ::Scripting::Result_deprecated<void> pauseRecord();
 
-    MCNAPI ::Scripting::Result<void> playRecord();
+    MCNAPI ::Scripting::Result_deprecated<void> playRecord();
 
-    MCNAPI ::Scripting::Result<void> setRecord(
+    MCNAPI ::Scripting::Result_deprecated<void> setRecord(
         ::std::optional<::std::variant<
             ::std::string,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>> const& itemTypeOrId,
@@ -55,7 +54,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockRecordPlayerComponent>
+    MCNAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 

@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
 // clang-format on
 
@@ -39,22 +39,21 @@ public:
 
     MCNAPI bool hasItemProperty(::std::string id, ::std::string property) const;
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     registerItem(::Scripting::ContextConfig const& contextConfig, ::std::string id, ::std::string const& payload);
 
-    MCNAPI ::Scripting::Result<void> unregisterItem(::std::string id);
+    MCNAPI ::Scripting::Result_deprecated<void> unregisterItem(::std::string id);
 
-    MCNAPI ::Scripting::Result<void> updateRegisteredItem(::std::string id, ::std::string const& payload);
+    MCNAPI ::Scripting::Result_deprecated<void> updateRegisteredItem(::std::string id, ::std::string const& payload);
 
-    MCNAPI ::Scripting::Result<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     updateRegisteredItemProperty(::std::string id, ::std::string const& payload, ::std::string const& prop);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptDataStoreActionBarContainer>
-    bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 };
 

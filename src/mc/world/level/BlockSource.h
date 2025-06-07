@@ -225,12 +225,8 @@ public:
     fetchEntities(::Actor const* except, ::AABB const& bb, bool useHitbox, bool getDisplayEntities) /*override*/;
 
     // vIndex: 30
-    virtual ::gsl::span<::gsl::not_null<::Actor*>> fetchEntities(
-        ::ActorType                     entityTypeId,
-        ::AABB const&                   bb,
-        ::Actor const*                  except,
-        ::std::function<bool(::Actor*)> selector
-    ) /*override*/;
+    virtual ::gsl::span<::gsl::not_null<::Actor*>>
+    fetchEntities(::ActorType, ::AABB const&, ::Actor const*, ::std::function<bool(::Actor*)>) /*override*/;
 
     // vIndex: 19
     virtual void
@@ -436,8 +432,8 @@ public:
         ::BlockPos const& pos,
         ::Block const&    block,
         int               tickDelay,
-        int               skipOverrides,
-        bool              priorityOffset
+        int               priorityOffset,
+        bool              skipOverrides
     );
 
     MCAPI bool areChunksFullyLoaded(::BlockPos const& min, ::BlockPos const& max) const;
@@ -473,7 +469,7 @@ public:
     MCAPI ::gsl::span<::gsl::not_null<::Actor*>>
     fetchActors(::ActorDefinitionIdentifier const& actorId, ::AABB const& bb);
 
-    MCAPI ::std::vector<::BlockActor*> fetchBlockEntities(::BlockActorType bb, ::AABB const& blockActorTypeId) const;
+    MCAPI ::std::vector<::BlockActor*> fetchBlockEntities(::BlockActorType blockActorTypeId, ::AABB const& bb) const;
 
     MCAPI ::std::vector<::BlockActor*> const& fetchBlockEntities(::AABB const& bb);
 
@@ -710,13 +706,6 @@ public:
 
     MCAPI ::gsl::span<::gsl::not_null<::Actor*>>
     $fetchEntities(::Actor const* except, ::AABB const& bb, bool useHitbox, bool getDisplayEntities);
-
-    MCAPI ::gsl::span<::gsl::not_null<::Actor*>> $fetchEntities(
-        ::ActorType                     entityTypeId,
-        ::AABB const&                   bb,
-        ::Actor const*                  except,
-        ::std::function<bool(::Actor*)> selector
-    );
 
     MCAPI void
     $fetchAABBs(::std::vector<::AABB>& shapes, ::AABB const& intersectTestBox, bool withUnloadedChunks) const;

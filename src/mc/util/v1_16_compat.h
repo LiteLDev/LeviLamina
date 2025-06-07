@@ -12,7 +12,7 @@ namespace BiomeSourceUtil::v1_16_compat {
 // functions
 // NOLINTBEGIN
 MCNAPI ::std::optional<::BlockPos>
-locateSpawnBiome2d(::std::set<ushort> const& biomeSource, ::BiomeSource const& biomes, int startingX);
+locateSpawnBiome2d(::std::set<ushort> const& biomes, ::BiomeSource const& biomeSource, int startingX);
 // NOLINTEND
 
 } // namespace BiomeSourceUtil::v1_16_compat

@@ -46,7 +46,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~Definition() /*override*/;
+        virtual ~Definition() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -58,12 +58,6 @@ public:
                 ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GoAndGiveItemsToNoteblockGoal::Definition>>&
                 root
         );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -82,7 +76,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Mob&>                                       mMob;
-    ::ll::TypedStorage<8, 96, ::GoAndGiveItemsToNoteblockGoal::Definition> mDefinition;
+    ::ll::TypedStorage<8, 64, ::GoAndGiveItemsToNoteblockGoal::Definition> mDefinition;
     ::ll::TypedStorage<4, 4, ::GoAndGiveItemsToNoteblockGoal::State>       mState;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>                    mPath;
     ::ll::TypedStorage<4, 12, ::BlockPos>                                  mTargetBlockPos;
@@ -116,7 +110,13 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 0
-    virtual ~GoAndGiveItemsToNoteblockGoal() /*override*/ = default;
+    virtual ~GoAndGiveItemsToNoteblockGoal() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

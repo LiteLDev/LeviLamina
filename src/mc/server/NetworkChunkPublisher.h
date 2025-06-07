@@ -31,7 +31,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Level&>                                           mLevel;
     ::ll::TypedStorage<8, 8, ::ServerNetworkSystem*>                             mNetwork;
-    ::ll::TypedStorage<8, 160, ::NetworkIdentifier>                              mOwner;
+    ::ll::TypedStorage<8, 176, ::NetworkIdentifier>                              mOwner;
     ::ll::TypedStorage<8, 8, ::ClientBlobCache::Server::ActiveTransfersManager*> mClientCache;
     ::ll::TypedStorage<1, 1, ::SubClientId>                                      mSubClientId;
     ::ll::TypedStorage<4, 12, ::BlockPos>                                        mLastChunkUpdatePosition;

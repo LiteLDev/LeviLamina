@@ -20,19 +20,19 @@ public:
     // vIndex: 1
     virtual void init() /*override*/;
 
-    // vIndex: 43
+    // vIndex: 46
     virtual bool add(::ItemStack& item) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 47
     virtual bool canAdd(::ItemStack const& item) const /*override*/;
 
-    // vIndex: 50
+    // vIndex: 53
     virtual int getFirstEmptySlot() const;
 
     // vIndex: 26
     virtual int getEmptySlotsCount() const /*override*/;
 
-    // vIndex: 51
+    // vIndex: 54
     virtual void setContainerSize(int size);
 
     // vIndex: 12

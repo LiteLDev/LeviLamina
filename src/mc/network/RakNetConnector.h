@@ -101,7 +101,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::RakNet::RakPeerInterface&>                                          mRakPeer;
-        ::ll::TypedStorage<8, 160, ::NetworkIdentifier>                                                mId;
+        ::ll::TypedStorage<8, 176, ::NetworkIdentifier>                                                mId;
         ::ll::TypedStorage<8, 32, ::std::string>                                                       mSendBuffer;
         ::ll::TypedStorage<8, 24, ::std::vector<::RakNetConnector::RakNetNetworkPeer::ReadBufferData>> mReadBufferDatas;
         ::ll::TypedStorage<4, 4, int> mApproximateMaxBps;
@@ -196,19 +196,19 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 160, ::NetworkIdentifier>          mNATPunchServerId;
-    ::ll::TypedStorage<8, 416, ::Social::GameConnectionInfo> mBackupGameConnection;
+    ::ll::TypedStorage<8, 176, ::NetworkIdentifier>          mNATPunchServerId;
+    ::ll::TypedStorage<8, 464, ::Social::GameConnectionInfo> mBackupGameConnection;
     ::ll::TypedStorage<1, 1, bool>                           mTryBackupConnection;
     ::ll::TypedStorage<8, 16, ::std::unique_ptr<::RakNet::RakPeerInterface, void (*)(::RakNet::RakPeerInterface*)>>
                                                                    mRakPeer;
-    ::ll::TypedStorage<8, 160, ::NetworkIdentifier>                mServerId;
+    ::ll::TypedStorage<8, 176, ::NetworkIdentifier>                mServerId;
     ::ll::TypedStorage<8, 24, ::RakPeerHelper>                     mPeerHelper;
     ::ll::TypedStorage<8, 8, ::RakPeerHelper::IPSupportInterface&> mIPSupportInterface;
     ::ll::TypedStorage<1, 1, bool>                                 mIsAwaitingNatClient;
     ::ll::TypedStorage<1, 1, bool>                                 mIsServer;
     ::ll::TypedStorage<1, 1, bool>                                 mIsDisconnecting;
     ::ll::TypedStorage<1, 1, bool>                                 mConnectingToClient;
-    ::ll::TypedStorage<8, 416, ::Social::GameConnectionInfo>       mConnectedGameInfo;
+    ::ll::TypedStorage<8, 464, ::Social::GameConnectionInfo>       mConnectedGameInfo;
     ::ll::TypedStorage<
         8,
         64,
@@ -309,6 +309,8 @@ public:
         ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform,
         ::RakNet::RakPeerConfiguration const&            rakPeerConfig
     );
+
+    MCNAPI ::std::shared_ptr<::RakNetConnector::RakNetNetworkPeer> _createPeer(::NetworkIdentifier const& id);
 
     MCNAPI ::std::vector<::std::string> _getLocalIps() const;
 

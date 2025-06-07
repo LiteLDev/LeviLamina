@@ -130,8 +130,8 @@ public:
     // NOLINTBEGIN
     MCNAPI FileSecureStorage(
         ::Core::PathBuffer<::std::string> const&                        settingsPath,
-        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& sskSystem,
-        ::ISecureStorageKeySystem*                                      baseSettingsPath,
+        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& baseSettingsPath,
+        ::ISecureStorageKeySystem*                                      sskSystem,
         ::Core::Path const&                                             userDataPath,
         ::FileSecureStorage::StorageSystem*                             storage
     );
@@ -152,8 +152,8 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(
         ::Core::PathBuffer<::std::string> const&                        settingsPath,
-        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& sskSystem,
-        ::ISecureStorageKeySystem*                                      baseSettingsPath,
+        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& baseSettingsPath,
+        ::ISecureStorageKeySystem*                                      sskSystem,
         ::Core::Path const&                                             userDataPath,
         ::FileSecureStorage::StorageSystem*                             storage
     );

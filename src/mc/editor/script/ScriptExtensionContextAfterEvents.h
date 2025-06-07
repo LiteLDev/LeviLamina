@@ -15,8 +15,8 @@ class ScriptDeferredFlushTracker;
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Cursor { struct CursorState; }
 namespace Editor::Cursor { struct Position; }
+namespace Editor::Selection { struct SelectionVolumeEvent; }
 namespace Editor::Services { class EditorSettingsServiceProvider; }
-namespace Editor::Services { struct SelectionEvent; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace mce { class Color; }
 namespace mce { class UUID; }
@@ -98,7 +98,7 @@ public:
 
     MCNAPI void _handleModeChanged(::Editor::Mode from, ::Editor::Mode to);
 
-    MCNAPI void _handleSelectionEvent(::Editor::Services::SelectionEvent const& selectionEvent);
+    MCNAPI void _handleSelectionVolumeEvent(::Editor::Selection::SelectionVolumeEvent const& selectionEvent);
 
     MCNAPI void _handleThemeColorUpdated(
         ::Editor::Services::EditorSettingsServiceProvider* settingsServiceProvider,

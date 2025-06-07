@@ -47,6 +47,6 @@ public:
 
     MCNAPI ::HomeComponent& operator=(::HomeComponent&&);
 
-    MCNAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const& dataLoadHelper, ::DataLoadHelper&);
+    MCNAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 };

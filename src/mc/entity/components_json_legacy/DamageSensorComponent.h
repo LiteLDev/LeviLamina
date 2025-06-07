@@ -58,8 +58,8 @@ public:
     MCNAPI ::SharedTypes::Legacy::DealsDamage recordBlockDamageAndCheckIfDealt(
         ::Actor&                                owner,
         ::SharedTypes::Legacy::ActorDamageCause cause,
-        float                                   standingOnPos,
-        ::BlockPos                              amount
+        float                                   amount,
+        ::BlockPos                              standingOnPos
     );
 
     MCNAPI ::SharedTypes::Legacy::DealsDamage recordGenericDamageAndCheckIfDealt(

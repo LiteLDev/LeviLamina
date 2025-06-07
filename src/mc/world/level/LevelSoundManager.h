@@ -87,7 +87,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 112> mUnkd66652;
-        ::ll::UntypedStorage<8, 168> mUnked9d2e;
+        ::ll::UntypedStorage<8, 184> mUnked9d2e;
         // NOLINTEND
 
     public:
@@ -145,11 +145,11 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnkc1d14b;
     ::ll::UntypedStorage<8, 24>  mUnk56a928;
     ::ll::UntypedStorage<8, 24>  mUnk1b0ff2;
-    ::ll::UntypedStorage<8, 128> mUnkc70543;
-    ::ll::UntypedStorage<8, 128> mUnk334827;
-    ::ll::UntypedStorage<8, 128> mUnkf749fa;
-    ::ll::UntypedStorage<8, 128> mUnkc1d9ac;
-    ::ll::UntypedStorage<8, 128> mUnk19d345;
+    ::ll::UntypedStorage<8, 128> mUnk92a7e1;
+    ::ll::UntypedStorage<8, 128> mUnk8fd53d;
+    ::ll::UntypedStorage<8, 128> mUnk9a160d;
+    ::ll::UntypedStorage<8, 128> mUnk5bbd46;
+    ::ll::UntypedStorage<8, 128> mUnkc7e910;
     // NOLINTEND
 
 public:
@@ -224,13 +224,15 @@ public:
 
     MCNAPI void playSynchronizedSound_DEPRECATED(
         ::IDimension&                          dimension,
-        ::SharedTypes::Legacy::LevelSoundEvent pos,
-        ::Vec3 const&                          primaryLocalPlayer,
-        ::Player*                              data,
-        int                                    actorSoundIdentifier,
-        ::ActorSoundIdentifier const&          type,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        ::Player*                              primaryLocalPlayer,
+        int                                    data,
+        ::ActorSoundIdentifier const&          actorSoundIdentifier,
         bool                                   isGlobal
     );
+
+    MCNAPI void stopSoundEvent(::std::string const& name);
     // NOLINTEND
 
 public:

@@ -14,10 +14,10 @@ struct BlockQueuedTickingDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk2249ea;
-    ::ll::UntypedStorage<4, 4>   mUnk3b7d11;
-    ::ll::UntypedStorage<1, 1>   mUnk7f7922;
-    ::ll::UntypedStorage<8, 256> mUnk274a42;
+    ::ll::UntypedStorage<4, 4>  mUnk2249ea;
+    ::ll::UntypedStorage<4, 4>  mUnk3b7d11;
+    ::ll::UntypedStorage<1, 1>  mUnk7f7922;
+    ::ll::UntypedStorage<8, 56> mUnk274a42;
     // NOLINTEND
 
 public:

@@ -42,7 +42,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk2476ee;
+        ::ll::UntypedStorage<8, 8>  mUnk1d4d7a;
         ::ll::UntypedStorage<8, 8>  mUnk2b9a4e;
         ::ll::UntypedStorage<8, 64> mUnk2519ad;
         // NOLINTEND
@@ -61,16 +61,19 @@ public:
 
         // vIndex: 4
         virtual void onBlockChanged(
-            ::BlockSource&,
-            ::BlockPos const&,
-            uint,
-            ::Block const&,
-            ::Block const&,
-            int,
-            ::ActorBlockSyncMessage const*,
-            ::BlockChangedEventTarget,
-            ::Actor*
+            ::BlockSource&                 source,
+            ::BlockPos const&              pos,
+            uint                           layer,
+            ::Block const&                 block,
+            ::Block const&                 oldBlock,
+            int                            updateFlags,
+            ::ActorBlockSyncMessage const* syncMsg,
+            ::BlockChangedEventTarget      eventTarget,
+            ::Actor*                       blockChangeSource
         ) /*override*/;
+
+        // vIndex: 2
+        virtual void onSourceDestroyed(::BlockSource& source) /*override*/;
         // NOLINTEND
 
     public:

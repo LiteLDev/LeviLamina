@@ -4,10 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/deps/scripting/script_engine/Closure.h"
 #include "mc/editor/script/ServerScriptPackType.h"
 
@@ -16,6 +15,7 @@
 namespace Editor::API { class EditorExtensionContext; }
 namespace Editor::API { struct EditorExtensionOptionalParameters; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace Editor::API {
@@ -68,9 +68,9 @@ public:
 
     MCNAPI void _setToolGroup(::std::string const& value);
 
-    MCNAPI ::Scripting::Result<void> executeActivation(::Editor::API::EditorExtensionContext& context);
+    MCNAPI ::Scripting::Result_deprecated<void> executeActivation(::Editor::API::EditorExtensionContext& context);
 
-    MCNAPI ::Scripting::Result<void> executeShutdown(::Editor::API::EditorExtensionContext& context);
+    MCNAPI ::Scripting::Result_deprecated<void> executeShutdown(::Editor::API::EditorExtensionContext& context);
 
     MCNAPI ::Editor::API::EditorExtension& operator=(::Editor::API::EditorExtension const&);
 
@@ -80,7 +80,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::API::EditorExtension> bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 
 public:

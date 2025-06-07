@@ -20,18 +20,16 @@ public:
 
 public:
     // prevent constructor by default
+    StaticOptimizedString& operator=(StaticOptimizedString const&);
+    StaticOptimizedString(StaticOptimizedString const&);
     StaticOptimizedString();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StaticOptimizedString(::Bedrock::StaticOptimizedString const& other);
-
     MCAPI StaticOptimizedString(::std::string_view s, ::Bedrock::StaticOptimizedString::StorageType storageType);
 
     MCAPI void _set(char const* data, uint64 length, ::Bedrock::StaticOptimizedString::StorageType storageType);
-
-    MCAPI ::Bedrock::StaticOptimizedString& operator=(::Bedrock::StaticOptimizedString const& other);
 
     MCAPI ~StaticOptimizedString();
     // NOLINTEND
@@ -39,8 +37,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::StaticOptimizedString const& other);
-
     MCAPI void* $ctor(::std::string_view s, ::Bedrock::StaticOptimizedString::StorageType storageType);
     // NOLINTEND
 

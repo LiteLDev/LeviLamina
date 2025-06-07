@@ -3,15 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor::ScriptModule { class ScriptSelectionContainer; }
-namespace Editor::ScriptModule { struct ScriptPrimarySelectionChangedEvent; }
+namespace Editor { class ServiceProviderCollection; }
+namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -21,34 +19,45 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkcd03d3;
-    ::ll::UntypedStorage<8, 8>  mUnk658c12;
+    ::ll::UntypedStorage<8, 8>  mUnk51563d;
+    ::ll::UntypedStorage<8, 32> mUnk99837b;
+    ::ll::UntypedStorage<8, 32> mUnk7f1725;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ScriptSelectionService& operator=(ScriptSelectionService const&);
-    ScriptSelectionService(ScriptSelectionService const&);
     ScriptSelectionService();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptSelectionContainer>>
-    createContainer();
+    MCNAPI ScriptSelectionService(::Editor::ScriptModule::ScriptSelectionService const&);
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptSelectionContainer>>
-    getPrimaryContainer();
+    MCNAPI
+    ScriptSelectionService(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
+
+    MCNAPI ~ScriptSelectionService();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptSelectionService> bindScript();
+    MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
 
-    MCNAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptPrimarySelectionChangedEvent>
-    bindSelectionEvent();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptSelectionService const&);
+
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -33,7 +33,7 @@ public:
     virtual ::std::string const& getName() const /*override*/;
 
     // vIndex: 2
-    virtual void initializeComponent(::BlockComponentStorage& blockComponentSortage) const /*override*/;
+    virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     // vIndex: 4
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
@@ -86,7 +86,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::string const& $getName() const;
 
-    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentSortage) const;
+    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
     MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 

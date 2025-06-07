@@ -182,9 +182,9 @@ public:
 
     MCAPI ::std::unique_ptr<::Packet> getFullDataPacket() const;
 
-    MCAPI ::std::unique_ptr<::Packet> getUpdatePacket(::Level& pos, ::BlockPos const&) const;
+    MCAPI ::std::unique_ptr<::Packet> getUpdatePacket(::Level&, ::BlockPos const& pos) const;
 
-    MCAPI ::std::unique_ptr<::Packet> getUpdatePacket(::ItemStack const& entity, ::Level&, ::Actor&) const;
+    MCAPI ::std::unique_ptr<::Packet> getUpdatePacket(::ItemStack const&, ::Level&, ::Actor& entity) const;
 
     MCAPI void save(::LevelStorage& storage);
 

@@ -6,6 +6,7 @@
 // clang-format off
 class Experiments;
 class IWorldRegistriesProvider;
+class LinkedAssetValidator;
 class MobSpawnRules;
 class Random;
 class ResourcePackManager;
@@ -40,6 +41,7 @@ public:
         ::IWorldRegistriesProvider&    registries,
         ::br::spawn::SpawnPlacements&  spawnPlacements,
         ::cereal::ReflectionCtx const& ctx,
+        ::LinkedAssetValidator&        linkedAssetValidator,
         ::Experiments const&           experiments
     );
 
@@ -54,6 +56,7 @@ public:
         ::IWorldRegistriesProvider&    registries,
         ::br::spawn::SpawnPlacements&  spawnPlacements,
         ::cereal::ReflectionCtx const& ctx,
+        ::LinkedAssetValidator&        linkedAssetValidator,
         ::Experiments const&           experiments
     );
     // NOLINTEND

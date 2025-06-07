@@ -32,8 +32,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool bindPlayerMobs(::Actor& holderActor, int x, int y, int z, ::ItemInstance* itemUsed);
-
-    MCAPI static bool canBindPlayerMobs(::Actor const& entity, ::BlockPos const& blockPos);
     // NOLINTEND
 
 public:

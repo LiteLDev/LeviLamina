@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Level;
 class ScriptPackConfigurationManager;
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ContextConfig; }
@@ -40,15 +41,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ScriptServerAdminModuleFactory(
-        ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager
+    MCNAPI ScriptServerAdminModuleFactory(
+        ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager,
+        ::Level*                                                     level
     );
 
     MCNAPI ::Scripting::ModuleBinding _generateBindings(
         ::Scripting::ModuleBindingBuilder&          moduleBuilder,
         ::std::optional<::Scripting::ContextConfig> contextConfig,
-        bool                                        allowedTags,
-        ::std::vector<::std::string> const&         allowUntagged
+        bool                                        allowUntagged,
+        ::std::vector<::std::string> const&         allowedTags,
+        ::Level*                                    level
     );
     // NOLINTEND
 
@@ -69,7 +72,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager);
+    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager, ::Level* level);
     // NOLINTEND
 
 public:

@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class MoveActorAbsoluteData;
 class Player;
 class Vec2;
 class Vec3;
@@ -94,13 +93,9 @@ public:
 
     MCNAPI bool _shouldUpdateBasedOptimizationOnScore(::Player& player) const;
 
-    MCNAPI void handleClientData(::MoveActorAbsoluteData const& moveData);
-
     MCNAPI void sendUpdate(bool forceTeleport, bool forceMoveLocalEntity, bool forceAbsoluteMovement);
 
     MCNAPI bool shouldSendMotionPredictionHintsPacket() const;
-
-    MCNAPI bool shouldSendUpdate(bool forceTeleport, bool forceMoveLocalEntity) const;
 
     MCNAPI void teleportEntity(::Vec3 const& pos, ::Vec2 const& rot, float yHeadRot);
     // NOLINTEND

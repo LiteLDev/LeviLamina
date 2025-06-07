@@ -288,6 +288,8 @@ MCAPI ::BlockStateVariant<int> const& RailDirection();
 
 MCAPI ::BlockStateVariant<int> const& RedstoneSignal();
 
+MCAPI ::BlockStateVariant<int> const& RehydrationLevel();
+
 MCAPI ::BlockStateVariant<int> const& RepeaterDelay();
 
 MCAPI ::BlockStateVariant<int> const& RespawnAnchorCharge();

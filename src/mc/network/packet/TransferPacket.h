@@ -23,6 +23,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TransferPacket();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -39,6 +43,18 @@ public:
 
     // vIndex: 0
     virtual ~TransferPacket() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI TransferPacket(::std::string const& serverAddress, int serverPort);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& serverAddress, int serverPort);
     // NOLINTEND
 
 public:

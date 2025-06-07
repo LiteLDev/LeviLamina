@@ -22,9 +22,9 @@ namespace CodeBuilder { struct ErrorMessage; }
 
 namespace Automation {
 
-class AutomationSession : public ::std::enable_shared_from_this<::Automation::AutomationSession>,
-                          public ::WebviewObserver,
-                          public ::CodeBuilder::IRequestHandler {
+class AutomationSession : public ::WebviewObserver,
+                          public ::CodeBuilder::IRequestHandler,
+                          public ::std::enable_shared_from_this<::Automation::AutomationSession> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -101,6 +101,9 @@ public:
 
     // vIndex: 12
     virtual void error(::std::string const&, ::CodeBuilder::ErrorMessage const& message) /*override*/;
+
+    // vIndex: 13
+    virtual bool tutorialCached(::std::string const& tutorialPath) /*override*/;
     // NOLINTEND
 
 public:
@@ -176,6 +179,8 @@ public:
     MCNAPI void $unsubscribe(::std::string const& requestId, ::std::string const& eventId);
 
     MCNAPI void $error(::std::string const&, ::CodeBuilder::ErrorMessage const& message);
+
+    MCNAPI bool $tutorialCached(::std::string const& tutorialPath);
     // NOLINTEND
 
 public:

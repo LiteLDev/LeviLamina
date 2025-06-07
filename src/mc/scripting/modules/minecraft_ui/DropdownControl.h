@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/scripting/modules/minecraft_ui/IControl.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 
@@ -11,6 +11,7 @@
 // clang-format off
 class Player;
 namespace Json { class Value; }
+namespace ScriptModuleMinecraft { struct ScriptRawMessageError; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 // clang-format on
 
@@ -23,6 +24,7 @@ public:
     ::ll::UntypedStorage<8, 216> mUnkc2cb70;
     ::ll::UntypedStorage<8, 24>  mUnk22da8d;
     ::ll::UntypedStorage<4, 8>   mUnk2a4364;
+    ::ll::UntypedStorage<8, 224> mUnk9e3fe2;
     // NOLINTEND
 
 public:
@@ -35,7 +37,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::Scripting::Result_deprecated<::Json::Value>
+    virtual ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
     buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const /*override*/;
 
     // vIndex: 0
@@ -48,7 +50,8 @@ public:
     MCNAPI DropdownControl(
         ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>                label,
         ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>> options,
-        ::std::optional<uint> defaultValueIndex
+        ::std::optional<uint> defaultValueIndex,
+        ::std::optional<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>> tooltip
     );
     // NOLINTEND
 
@@ -58,14 +61,15 @@ public:
     MCNAPI void* $ctor(
         ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>                label,
         ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>> options,
-        ::std::optional<uint> defaultValueIndex
+        ::std::optional<uint> defaultValueIndex,
+        ::std::optional<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>> tooltip
     );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<::Json::Value>
+    MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
     $buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
     // NOLINTEND
 

@@ -6,10 +6,10 @@ struct CloudConfiguration {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 36> mUnk1a89eb;
-    ::ll::UntypedStorage<4, 36> mUnk9473a6;
-    ::ll::UntypedStorage<4, 36> mUnk7a96a5;
-    ::ll::UntypedStorage<4, 36> mUnka61c4f;
+    ::ll::UntypedStorage<4, 40> mUnk1a89eb;
+    ::ll::UntypedStorage<4, 40> mUnk9473a6;
+    ::ll::UntypedStorage<4, 40> mUnk7a96a5;
+    ::ll::UntypedStorage<4, 40> mUnka61c4f;
     // NOLINTEND
 
 public:

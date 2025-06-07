@@ -89,13 +89,13 @@ public:
     MCNAPI ::Scripting::QuickJS::RegisteredClass&
     registerClass(::JSContext* ctx, ::Scripting::ClassBinding const& classBinding, bool forModule);
 
-    MCNAPI void registerEnum(::JSContext* enumBinding, ::Scripting::EnumBinding const& ctx);
+    MCNAPI void registerEnum(::JSContext* ctx, ::Scripting::EnumBinding const& enumBinding);
 
     MCNAPI ::Scripting::QuickJS::RegisteredError&
     registerError(::JSContext* ctx, ::Scripting::ErrorBinding const& errorBinding);
 
     MCNAPI ::Scripting::QuickJS::RegisteredInterface&
-    registerInterface(::JSContext* interfaceBinding, ::Scripting::InterfaceBinding const& ctx);
+    registerInterface(::JSContext* ctx, ::Scripting::InterfaceBinding const& interfaceBinding);
 
     MCNAPI ~ClassRegistry();
     // NOLINTEND

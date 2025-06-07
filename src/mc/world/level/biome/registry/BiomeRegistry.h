@@ -23,6 +23,7 @@ class LevelStorage;
 class ResourcePackManager;
 struct BiomeTagIDType;
 struct BiomeTagSetIDType;
+namespace Core { class Path; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -81,7 +82,7 @@ public:
                                                   mBiomesById;
     ::ll::TypedStorage<4, 4, uint>                mNextCustomBiomeId;
     ::ll::TypedStorage<1, 1, ::std::atomic<bool>> mClosedForRegistration;
-    ::ll::TypedStorage<1, 1, bool>                mLoadFromPacks;
+    ::ll::TypedStorage<1, 1, bool>                mLoadFromAllPacks;
     ::ll::TypedStorage<8, 128, ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>> mTagRegistry;
     ::ll::TypedStorage<8, 8, ::Biome*>                                                                   mEmptyBiome;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnSaveSubscription;
@@ -118,7 +119,7 @@ public:
 
     MCAPI ::std::vector<::Biome const*> getBiomesInDimension(::DimensionType type) const;
 
-    MCAPI void initServerFromPacks(::ResourcePackManager& loader, ::IWorldRegistriesProvider& worldRegistries);
+    MCAPI void initServerFromPacks(::ResourcePackManager const& loader, ::IWorldRegistriesProvider& worldRegistries);
 
     MCAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
@@ -142,11 +143,14 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::BiomeRegistry::LoadedBiomeDocument _loadBiomeDocument(
-        ::ResourcePackManager&   loader,
-        ::std::string const&     biomeName,
-        bool                     loadFromPacks,
-        ::cereal::ReflectionCtx& ctx
+        ::ResourcePackManager const& loader,
+        ::std::string const&         biomeName,
+        bool                         loadFromAllPacks,
+        ::cereal::ReflectionCtx&     ctx
     );
+
+    MCAPI static ::std::string
+    getBiomeResourceText(::ResourcePackManager const& loader, ::Core::Path const& biomePath, bool loadFromAllPacks);
     // NOLINTEND
 
 public:

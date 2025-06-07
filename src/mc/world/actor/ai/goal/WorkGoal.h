@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::POIType>                              mPOIType;
-    ::ll::TypedStorage<8, 184, ::WorkDefinition>                     mDefinition;
+    ::ll::TypedStorage<8, 152, ::WorkDefinition>                     mDefinition;
     ::ll::TypedStorage<4, 4, int>                                    mCooldownTick;
     ::ll::TypedStorage<4, 4, int>                                    mActiveTick;
     ::ll::TypedStorage<4, 4, int>                                    mSoundTick;
@@ -60,7 +60,7 @@ public:
     virtual void useWorkstation();
 
     // vIndex: 0
-    virtual ~WorkGoal() /*override*/ = default;
+    virtual ~WorkGoal() /*override*/;
     // NOLINTEND
 
 public:
@@ -77,6 +77,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Mob& mob);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

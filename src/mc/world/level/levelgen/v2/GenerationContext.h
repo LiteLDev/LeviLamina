@@ -23,7 +23,6 @@ public:
     ::ll::TypedStorage<8, 8, int64>                            mLevelSeed;
     ::ll::TypedStorage<8, 8, ::ChunkPos>                       mChunkPos;
     ::ll::TypedStorage<8, 8, ::br::worldgen::ChunkAccessor&>   mChunkAccessor;
-    ::ll::TypedStorage<1, 1, bool>                             mIsDataDrivenJigsawStructuresEnabled;
     // NOLINTEND
 
 public:

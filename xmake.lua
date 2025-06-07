@@ -9,7 +9,7 @@ end
 add_requires("entt")
 add_requires("gsl")
 add_requires("glm")
-add_requires("fmt 10.2.1")
+add_requires("fmt 11")
 add_requires("leveldb")
 add_requires("type_safe")
 add_requires("expected-lite")

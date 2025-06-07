@@ -65,14 +65,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void _createSpellEntity(
-        float                       x,
-        float                       z,
-        float                       minY,
-        float                       maxY,
-        float                       lifespan,
-        int                         summonType,
-        ::ActorDefinitionIdentifier summonEvent,
-        ::std::string const&
+        float x,
+        float z,
+        float minY,
+        float maxY,
+        float,
+        int                         lifespan,
+        ::ActorDefinitionIdentifier summonType,
+        ::std::string const&        summonEvent
     ) const;
 
     MCNAPI int _selectBestSpell(::Actor& target) const;

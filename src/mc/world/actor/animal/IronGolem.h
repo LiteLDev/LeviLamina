@@ -75,6 +75,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+
     MCFOLD void $die(::ActorDamageSource const& source);
 
     MCFOLD float $getShadowRadius() const;

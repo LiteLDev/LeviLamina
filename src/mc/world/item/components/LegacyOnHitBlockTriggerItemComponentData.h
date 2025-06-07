@@ -6,24 +6,27 @@ struct LegacyOnHitBlockTriggerItemComponentData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 264> mUnk2d4d1b;
+    ::ll::UntypedStorage<8, 64> mUnk2d4d1b;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     LegacyOnHitBlockTriggerItemComponentData& operator=(LegacyOnHitBlockTriggerItemComponentData const&);
-    LegacyOnHitBlockTriggerItemComponentData(LegacyOnHitBlockTriggerItemComponentData const&);
     LegacyOnHitBlockTriggerItemComponentData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~LegacyOnHitBlockTriggerItemComponentData();
+    MCNAPI LegacyOnHitBlockTriggerItemComponentData(::LegacyOnHitBlockTriggerItemComponentData&&);
+
+    MCNAPI LegacyOnHitBlockTriggerItemComponentData(::LegacyOnHitBlockTriggerItemComponentData const&);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::LegacyOnHitBlockTriggerItemComponentData&&);
+
+    MCNAPI void* $ctor(::LegacyOnHitBlockTriggerItemComponentData const&);
     // NOLINTEND
 };

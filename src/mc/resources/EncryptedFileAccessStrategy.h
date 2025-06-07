@@ -6,6 +6,7 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/resources/DirectoryPackAccessStrategy.h"
 #include "mc/resources/PackAccessAssetGenerationResult.h"
+#include "mc/resources/PackAccessStrategyType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 16
+    // vIndex: 15
     virtual ::PackAccessAssetGenerationResult generateAssetSet() /*override*/;
 
     // vIndex: 5
@@ -50,22 +51,22 @@ public:
     virtual bool getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const
         /*override*/;
 
-    // vIndex: 9
-    virtual bool writeAsset(::Core::Path const& packRelativePath, ::std::string const& fileContent) /*override*/;
-
-    // vIndex: 15
+    // vIndex: 14
     virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
 
-    // vIndex: 21
+    // vIndex: 20
     virtual bool isAssetExtractionViable() const /*override*/;
 
-    // vIndex: 20
+    // vIndex: 11
+    virtual ::PackAccessStrategyType getStrategyType() const /*override*/;
+
+    // vIndex: 19
     virtual ::ContentIdentity readContentIdentity() const /*override*/;
 
-    // vIndex: 23
+    // vIndex: 22
     virtual ::std::string _getContentsFile();
 
-    // vIndex: 24
+    // vIndex: 23
     virtual ::std::string _getEncryptedAssetStream(::Core::Path const& packRelativePath) const;
 
     // vIndex: 0
@@ -126,11 +127,11 @@ public:
 
     MCNAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
 
-    MCNAPI bool $writeAsset(::Core::Path const& packRelativePath, ::std::string const& fileContent);
-
     MCNAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
 
     MCNAPI bool $isAssetExtractionViable() const;
+
+    MCNAPI ::PackAccessStrategyType $getStrategyType() const;
 
     MCNAPI ::ContentIdentity $readContentIdentity() const;
 

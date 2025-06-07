@@ -41,8 +41,6 @@ namespace SolidMobSystem {
 // NOLINTBEGIN
 MCNAPI ::TickingSystemWithInfo createRewindShapeRefreshSystem();
 
-MCNAPI ::TickingSystemWithInfo createStoreNearbyMobsOnMoveRequestSystem();
-
 MCNAPI void flagNearbyMobsForServerMovementCatchup(
     ::StrictEntityContext const&                   player,
     ::StateVectorComponent const&                  stateVector,

@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +13,6 @@ namespace Editor::API { class EditorExtension; }
 namespace Editor::ScriptModule { class ScriptInternalPlayerServiceContext; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextId; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 namespace Editor::API {
@@ -26,19 +25,18 @@ public:
     virtual ~EditorPlayerExtensionServiceProvider() = default;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void> startExtensions(::std::optional<::Scripting::ContextId>) = 0;
+    virtual ::Scripting::Result_deprecated<void> startExtensions(::std::optional<::Scripting::ContextId>) = 0;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void> stopExtensions() = 0;
+    virtual ::Scripting::Result_deprecated<void> stopExtensions() = 0;
 
     // vIndex: 3
-    virtual ::Scripting::Result<void>
+    virtual ::Scripting::Result_deprecated<void>
         forEachExtension(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)>) = 0;
 
     // vIndex: 4
-    virtual ::Scripting::Result<
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>,
-        ::Scripting::Error>
+    virtual ::Scripting::Result_deprecated<
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>>
     getInternalServiceContext(::Scripting::WeakLifetimeScope const&) = 0;
     // NOLINTEND
 

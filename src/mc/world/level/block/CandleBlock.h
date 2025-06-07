@@ -27,29 +27,29 @@ public:
     // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 138
+    // vIndex: 136
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 23
+    // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual int _getNumCandles(::Block const& block) const /*override*/;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual void _iterateCandles(
         ::Block const&                            block,
         ::BlockPos const&                         pos,
         ::std::function<void(::Vec3 const&, int)> callback
     ) const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual void _tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0

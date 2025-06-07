@@ -75,10 +75,10 @@ public:
         float                                            thickness,
         float                                            yRot,
         float                                            xRot,
-        int                                              yScale,
-        int                                              context,
-        float                                            step,
-        ::WorldGenContext const&                         dist
+        int                                              step,
+        int                                              dist,
+        float                                            yScale,
+        ::WorldGenContext const&                         context
     ) const;
 
     MCNAPI void apply(

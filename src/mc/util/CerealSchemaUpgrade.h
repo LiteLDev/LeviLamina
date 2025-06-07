@@ -48,13 +48,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CerealSchemaUpgrade(
-        ::std::string_view   fileType,
-        ::SemVersion         targetVersion,
-        ::std::string const& schemaKey,
-        ::std::string const& jsonMemberName
-    );
-
     MCNAPI bool checkAndUpgradeToNext(
         ::rapidjson::GenericDocument<
             ::rapidjson::UTF8<char>,
@@ -62,17 +55,6 @@ public:
             ::rapidjson::CrtAllocator>& document,
         ::SemVersion const&             documentOriginalVersion
     ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::string_view   fileType,
-        ::SemVersion         targetVersion,
-        ::std::string const& schemaKey,
-        ::std::string const& jsonMemberName
-    );
     // NOLINTEND
 
 public:

@@ -83,9 +83,9 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::ToFloatFunction<::TerrainShaper::Point> buildErosionJaggednessSpline(
+        float jaggednessFactorAtPeakRidgeAndErosionIndex0,
         float jaggednessFactorAtPeakRidgeAndErosionIndex1,
         float jaggednessFactorAtHighRidgeAndErosionIndex0,
-        float jaggednessFactorAtPeakRidgeAndErosionIndex0,
         float jaggednessFactorAtHighRidgeAndErosionIndex1
     );
 

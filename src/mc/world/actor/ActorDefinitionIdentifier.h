@@ -6,6 +6,12 @@
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/world/actor/ActorType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BedrockLoadContext;
+namespace cereal { class SerializerContext; }
+// clang-format on
+
 struct ActorDefinitionIdentifier {
 public:
     // member variables
@@ -18,12 +24,10 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorDefinitionIdentifier();
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ActorDefinitionIdentifier();
+
     MCAPI ActorDefinitionIdentifier(::ActorDefinitionIdentifier&&);
 
     MCAPI ActorDefinitionIdentifier(::ActorDefinitionIdentifier const&);
@@ -34,13 +38,13 @@ public:
 
     MCAPI explicit ActorDefinitionIdentifier(::std::string_view fullName);
 
-    MCAPI explicit ActorDefinitionIdentifier(::ActorType type);
+    MCAPI ActorDefinitionIdentifier(::ActorType type, ::std::string initEvent);
 
     MCAPI ActorDefinitionIdentifier(::std::string nameSpace, ::std::string identifier, ::std::string initEvent);
 
     MCAPI void _initialize();
 
-    MCAPI void initialize(::std::string const& fullName);
+    MCFOLD ::std::string const& getFullName() const;
 
     MCAPI void
     initialize(::std::string const& nameSpace, ::std::string const& identifier, ::std::string const& initEvent);
@@ -48,6 +52,12 @@ public:
     MCAPI ::ActorDefinitionIdentifier& operator=(::ActorDefinitionIdentifier const&);
 
     MCAPI bool operator==(::ActorDefinitionIdentifier const& other) const;
+
+    MCAPI void setter(
+        ::std::string const&               str,
+        ::BedrockLoadContext               context,
+        ::cereal::SerializerContext const& serializerContext
+    );
 
     MCAPI ~ActorDefinitionIdentifier();
     // NOLINTEND
@@ -61,6 +71,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::ActorDefinitionIdentifier&&);
 
     MCAPI void* $ctor(::ActorDefinitionIdentifier const&);
@@ -71,7 +83,7 @@ public:
 
     MCAPI void* $ctor(::std::string_view fullName);
 
-    MCAPI void* $ctor(::ActorType type);
+    MCAPI void* $ctor(::ActorType type, ::std::string initEvent);
 
     MCAPI void* $ctor(::std::string nameSpace, ::std::string identifier, ::std::string initEvent);
     // NOLINTEND

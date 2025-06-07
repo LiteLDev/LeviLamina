@@ -9,7 +9,7 @@ struct ComponentItemDeprecatedComponentData_v1_20_80 : public ::ComponentItemDep
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 272> mUnka65314;
+    ::ll::UntypedStorage<8, 72> mUnka65314;
     // NOLINTEND
 
 public:
@@ -24,6 +24,9 @@ public:
 
     MCNAPI ::ComponentItemDeprecatedComponentData_v1_20_80&
     operator=(::ComponentItemDeprecatedComponentData_v1_20_80 const&);
+
+    MCNAPI ::ComponentItemDeprecatedComponentData_v1_20_80&
+    operator=(::ComponentItemDeprecatedComponentData_v1_20_80&&);
 
     MCNAPI ~ComponentItemDeprecatedComponentData_v1_20_80();
     // NOLINTEND

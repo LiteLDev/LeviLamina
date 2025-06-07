@@ -255,8 +255,8 @@ public:
     MCNAPI FileSystemImpl(
         ::Core::FileAccessType                             accessType,
         ::std::shared_ptr<::Core::FileStorageArea>         storageArea,
-        ::Core::TransactionFlags                           manifestTracker,
-        ::std::shared_ptr<::Core::FlatFileManifestTracker> transactionFlags
+        ::Core::TransactionFlags                           transactionFlags,
+        ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker
     );
 
     MCNAPI ::Core::Result _flatFileOpenFlatFile(
@@ -357,8 +357,8 @@ public:
     MCNAPI void* $ctor(
         ::Core::FileAccessType                             accessType,
         ::std::shared_ptr<::Core::FileStorageArea>         storageArea,
-        ::Core::TransactionFlags                           manifestTracker,
-        ::std::shared_ptr<::Core::FlatFileManifestTracker> transactionFlags
+        ::Core::TransactionFlags                           transactionFlags,
+        ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker
     );
     // NOLINTEND
 

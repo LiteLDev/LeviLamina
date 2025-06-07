@@ -16,7 +16,7 @@ struct MountainParametersBiomeComponentGlue : public ::IBiomeComponentGlue {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk9469e7;
+    ::ll::UntypedStorage<8, 8> mUnk8c9b7b;
     // NOLINTEND
 
 public:

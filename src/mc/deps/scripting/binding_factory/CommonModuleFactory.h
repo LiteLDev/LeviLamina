@@ -29,8 +29,8 @@ public:
 
     MCNAPI ::Scripting::ModuleBinding _generateBindings(
         ::Scripting::ModuleBindingBuilder&  moduleBuilder,
-        bool                                allowedTags,
-        ::std::vector<::std::string> const& allowUntagged
+        bool                                allowUntagged,
+        ::std::vector<::std::string> const& allowedTags
     );
     // NOLINTEND
 

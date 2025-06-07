@@ -21,6 +21,7 @@ class ItemRegistry;
 class LevelData;
 class LinkedAssetValidator;
 class ResourcePackManager;
+class ServerScriptManager;
 struct ItemData;
 struct ItemRegistryComplexAlias;
 struct ItemTag;
@@ -92,6 +93,8 @@ public:
     MCAPI void addItemToTagMap(::Item const& item) const;
 
     MCAPI void alterAvailableCreativeItems(::ActorInfoRegistry* infoRegistry, ::LevelData& levelData) const;
+
+    MCAPI void bindDynamicScriptTypes(::ServerScriptManager& script, ::Experiments const& experiments) const;
 
     MCAPI bool canUpdateTags() const;
 

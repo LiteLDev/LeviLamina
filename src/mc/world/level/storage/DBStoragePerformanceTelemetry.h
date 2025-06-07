@@ -34,7 +34,7 @@ public:
     MCNAPI explicit DBStoragePerformanceTelemetry(::Bedrock::NonOwnerPointer<::LevelStorageEventing> eventing);
 
     MCNAPI void
-    _fireEventLevelDBPerformanceData(::Bedrock::Threading::LockGuard<::Bedrock::Threading::Mutex>& force, bool);
+    _fireEventLevelDBPerformanceData(::Bedrock::Threading::LockGuard<::Bedrock::Threading::Mutex>&, bool force);
 
     MCNAPI ~DBStoragePerformanceTelemetry();
     // NOLINTEND

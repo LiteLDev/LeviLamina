@@ -38,7 +38,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ClosureAny(::Scripting::ClosureAny const& rhs);
 
-    MCNAPI ::Scripting::ResultAny callGeneric(
+    MCNAPI ::Scripting::ResultAny _callGeneric(
         ::entt::meta_any*                       args,
         uint                                    argc,
         ::entt::meta_type const&                expectedReturnType,

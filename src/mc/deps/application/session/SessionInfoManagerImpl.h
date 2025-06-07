@@ -22,17 +22,16 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16>  mUnk76644a;
-    ::ll::UntypedStorage<8, 128> mUnk6a2f7c;
+    ::ll::UntypedStorage<8, 128> mUnk35cbdc;
     ::ll::UntypedStorage<8, 80>  mUnkab0304;
     ::ll::UntypedStorage<8, 16>  mUnkc9cc48;
-    ::ll::UntypedStorage<8, 160> mUnk1c9ab3;
+    ::ll::UntypedStorage<8, 120> mUnk1c9ab3;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     SessionInfoManagerImpl& operator=(SessionInfoManagerImpl const&);
     SessionInfoManagerImpl(SessionInfoManagerImpl const&);
-    SessionInfoManagerImpl();
 
 public:
     // virtual functions
@@ -62,19 +61,67 @@ public:
     onCurrentSessionChanged() /*override*/;
 
     // vIndex: 6
-    virtual ::std::string serializeSession(::Bedrock::SessionInfo const&) const /*override*/;
+    virtual ::std::string serializeSession(::Bedrock::SessionInfo const& session) const /*override*/;
 
     // vIndex: 7
-    virtual ::std::shared_ptr<::Bedrock::SessionInfo> deserializeSession(::std::string_view) const /*override*/;
+    virtual ::std::shared_ptr<::Bedrock::SessionInfo> deserializeSession(::std::string_view contents) const
+        /*override*/;
 
     // vIndex: 0
-    virtual ~SessionInfoManagerImpl() /*override*/ = default;
+    virtual ~SessionInfoManagerImpl() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI SessionInfoManagerImpl();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $initialize();
 
+    MCNAPI void $beginNewSession();
+
+    MCNAPI ::std::shared_ptr<::Bedrock::SessionInfo const> $getCurrentSession() const;
+
+    MCNAPI ::Bedrock::AccessUpdateEditor<
+        ::std::shared_ptr<::Bedrock::SessionInfo>,
+        ::Bedrock::SessionInfoManagerImpl,
+        ::Bedrock::Detail::AccessUpdateEditorAccessor<::std::shared_ptr<::Bedrock::SessionInfo>, void>,
+        ::Bedrock::Threading::Mutex>
+    $editCurrentSession();
+
+    MCNAPI ::Bedrock::PubSub::Connector<void(
+        ::Bedrock::NonOwnerPointer<::Bedrock::SessionInfoManager> const&,
+        ::std::shared_ptr<::Bedrock::SessionInfo const> const&
+    )>&
+    $onCurrentSessionChanged();
+
+    MCNAPI ::std::string $serializeSession(::Bedrock::SessionInfo const& session) const;
+
+    MCNAPI ::std::shared_ptr<::Bedrock::SessionInfo> $deserializeSession(::std::string_view contents) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftableForImplBase();
+
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };
 

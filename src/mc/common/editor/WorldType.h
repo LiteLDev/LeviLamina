@@ -5,9 +5,10 @@
 namespace Editor {
 
 enum class WorldType : int {
-    NonEditor       = 0,
-    EditorProject   = 1,
-    EditorTestLevel = 2,
+    NonEditor          = 0,
+    EditorProject      = 1,
+    EditorTestLevel    = 2,
+    EditorRealmsUpload = 3,
 };
 
 }

@@ -2,12 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
-
 // auto generated forward declare list
 // clang-format off
 class CompoundBlockVolumeItem;
+namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -29,8 +27,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ScriptCompoundBlockVolumeItem(::CompoundBlockVolumeItem const& item);
-
     MCNAPI ::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem&
     operator=(::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const& rhs);
 
@@ -42,14 +38,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem>
-    bindInterface();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::CompoundBlockVolumeItem const& item);
+    MCNAPI static ::Scripting::InterfaceBinding bindInterface();
     // NOLINTEND
 
 public:

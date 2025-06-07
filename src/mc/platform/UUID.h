@@ -14,7 +14,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string asString() const;
+    MCFOLD ::std::string asString() const;
+
+    MCAPI bool isEmpty() const;
 
     MCAPI bool operator!=(::mce::UUID const& rhs) const;
 
