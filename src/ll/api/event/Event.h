@@ -10,11 +10,14 @@ class CompoundTag;
 namespace ll::event {
 template <class T>
 class Cancellable;
+class CallbackStream;
 
 class Event {
 private:
     template <class T>
     friend class ::ll::event::Cancellable;
+
+    friend class CallbackStream;
 
     bool mCancelled{false};
 

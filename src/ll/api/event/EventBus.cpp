@@ -44,6 +44,9 @@ public:
                 } catch (...) {}
                 error_utils::printCurrentException(getLogger());
             }
+            if (event.mCancelled) {
+                break;
+            }
         }
     }
     void publish(std::string_view modName, Event& event) {
@@ -68,6 +71,9 @@ public:
                     getLogger().error("Error in Listener<{}>[{}] of {}:", event.getId().name, l->getId(), modName);
                 } catch (...) {}
                 error_utils::printCurrentException(getLogger());
+            }
+            if (event.mCancelled) {
+                break;
             }
         }
     }
