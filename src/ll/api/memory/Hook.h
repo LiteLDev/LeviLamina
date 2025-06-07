@@ -50,10 +50,28 @@ enum class HookPriority : int {
     Lowest  = 400,
 };
 
+enum RegisterSaveOptions {
+    SaveNone = 0,
+    SaveR10  = 1 << 0,
+    SaveR11  = 1 << 1,
+    SaveXmm4 = 1 << 2,
+    SaveXmm5 = 1 << 3,
+    SaveAll  = SaveR10 | SaveR11 | SaveXmm4 | SaveXmm5
+};
+
 LLNDAPI bool shouldHookSuspendThreads();
 
 LLAPI int
 hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority priority, bool suspendThreads = true);
+
+LLAPI int hook_ex(
+    FuncPtr             target,
+    FuncPtr             detour,
+    FuncPtr*            originalFunc,
+    HookPriority        priority,
+    RegisterSaveOptions options,
+    bool                suspendThreads
+);
 
 LLAPI bool unhook(FuncPtr target, FuncPtr detour, bool suspendThreads = true);
 
@@ -310,3 +328,226 @@ struct LL_EBO Hook {};
  */
 #define LL_AUTO_INSTANCE_HOOK(DEF_TYPE, PRIORITY, IDENTIFIER, RET_TYPE, ...)                                           \
     LL_VA_EXPAND(LL_AUTO_INSTANCE_HOOK_IMPL(DEF_TYPE, ::ll::memory::Hook, PRIORITY, IDENTIFIER, RET_TYPE, __VA_ARGS__))
+
+#define LL_HOOK_IMPL_EX(                                                                                               \
+    REGISTER,                                                                                                          \
+    FUNC_PTR,                                                                                                          \
+    STATIC,                                                                                                            \
+    CALL,                                                                                                              \
+    DEF_TYPE,                                                                                                          \
+    TYPE,                                                                                                              \
+    PRIORITY,                                                                                                          \
+    IDENTIFIER,                                                                                                        \
+    RET_TYPE,                                                                                                          \
+    OPTIONS,                                                                                                           \
+    ...                                                                                                                \
+)                                                                                                                      \
+    struct DEF_TYPE : public TYPE {                                                                                    \
+        inline static ::std::atomic_uint _AutoHookCount{};                                                             \
+                                                                                                                       \
+    private:                                                                                                           \
+        using _FuncPtr            = ::ll::memory::FuncPtr;                                                             \
+        using HookPriority        = ::ll::memory::HookPriority;                                                        \
+        using RegisterSaveOptions = ll::memory::RegisterSaveOptions;                                                   \
+        using _RawFuncType        = RET_TYPE FUNC_PTR(__VA_ARGS__);                                                    \
+        using _RawConstFuncType   = ::ll::memory::AddConstAtMemberFunT<_RawFuncType>;                                  \
+                                                                                                                       \
+        template <class T>                                                                                             \
+        struct _ConstDetector {                                                                                        \
+            [[maybe_unused]] static constexpr bool value = false;                                                      \
+            explicit constexpr _ConstDetector(T) {}                                                                    \
+        };                                                                                                             \
+        template <class T>                                                                                             \
+        [[maybe_unused]] _ConstDetector(T) -> _ConstDetector<T>;                                                       \
+        [[maybe_unused]] _ConstDetector(_RawFuncType) -> _ConstDetector<_RawFuncType>;                                 \
+        template <>                                                                                                    \
+        struct _ConstDetector<_RawConstFuncType> {                                                                     \
+            [[maybe_unused]] static constexpr bool value = true;                                                       \
+            explicit constexpr _ConstDetector(_RawConstFuncType) {}                                                    \
+        };                                                                                                             \
+        template <class T = _RawFuncType, std::enable_if_t<std::is_member_function_pointer_v<T>, int> = 0>             \
+        [[maybe_unused]] _ConstDetector(_RawConstFuncType) -> _ConstDetector<_RawConstFuncType>;                       \
+                                                                                                                       \
+        static constexpr bool _IsConstMemberFunction = decltype(_ConstDetector{IDENTIFIER})::value;                    \
+                                                                                                                       \
+        using _OriginFuncType = ::std::conditional_t<_IsConstMemberFunction, _RawConstFuncType, _RawFuncType>;         \
+                                                                                                                       \
+        inline static _FuncPtr        _HookTarget{};                                                                   \
+        inline static _OriginFuncType _OriginalFunc{};                                                                 \
+                                                                                                                       \
+        template <class T>                                                                                             \
+        static consteval void _Detector() {                                                                            \
+            if constexpr (requires { ::ll::memory::virtualDetector<T, IDENTIFIER>(); }) {                              \
+                if constexpr (::ll::memory::virtualDetector<T, IDENTIFIER>()) {                                        \
+                    static_assert(                                                                                     \
+                        ::ll::traits::always_false<T>,                                                                 \
+                        #IDENTIFIER " is a virtual function, you need use prefix $ workaround to hook it."             \
+                    );                                                                                                 \
+                }                                                                                                      \
+            }                                                                                                          \
+        }                                                                                                              \
+                                                                                                                       \
+    public:                                                                                                            \
+        template <class T>                                                                                             \
+            requires(::std::is_polymorphic_v<TYPE> && ::std::is_base_of_v<T, TYPE>)                                    \
+        [[nodiscard]] TYPE* thisFor() {                                                                                \
+            return static_cast<decltype(this)>(reinterpret_cast<T*>(this));                                            \
+        }                                                                                                              \
+        template <class... Args>                                                                                       \
+        STATIC RET_TYPE origin(Args&&... params) {                                                                     \
+            return CALL(::std::forward<Args>(params)...);                                                              \
+        }                                                                                                              \
+                                                                                                                       \
+        STATIC RET_TYPE detour(__VA_ARGS__);                                                                           \
+                                                                                                                       \
+        static int hook(bool suspendThreads = true) {                                                                  \
+            _Detector<_OriginFuncType>();                                                                              \
+            if (!_HookTarget) _HookTarget = ::ll::memory::resolveIdentifier<_OriginFuncType>(IDENTIFIER);              \
+            return ::ll::memory::hook_ex(                                                                              \
+                _HookTarget,                                                                                           \
+                ::ll::memory::toFuncPtr(&DEF_TYPE::detour),                                                            \
+                reinterpret_cast<_FuncPtr*>(&_OriginalFunc),                                                           \
+                PRIORITY,                                                                                              \
+                OPTIONS,                                                                                               \
+                suspendThreads                                                                                         \
+            );                                                                                                         \
+        }                                                                                                              \
+                                                                                                                       \
+        static bool unhook(bool suspendThreads = true) {                                                               \
+            return ::ll::memory::unhook(_HookTarget, ::ll::memory::toFuncPtr(&DEF_TYPE::detour), suspendThreads);      \
+        }                                                                                                              \
+    };                                                                                                                 \
+    REGISTER;                                                                                                          \
+    RET_TYPE DEF_TYPE::detour(__VA_ARGS__)
+
+#define LL_AUTO_REG_HOOK_IMPL_EX(FUNC_PTR, STATIC, CALL, DEF_TYPE, ...)                                                \
+    LL_VA_EXPAND(LL_HOOK_IMPL_EX(                                                                                      \
+        inline ::ll::memory::HookRegistrar<DEF_TYPE> DEF_TYPE##AutoRegister,                                           \
+        FUNC_PTR,                                                                                                      \
+        STATIC,                                                                                                        \
+        CALL,                                                                                                          \
+        DEF_TYPE,                                                                                                      \
+        __VA_ARGS__                                                                                                    \
+    ))
+
+#define LL_MANUAL_REG_HOOK_IMPL_EX(...) LL_VA_EXPAND(LL_HOOK_IMPL_EX(, __VA_ARGS__))
+
+#define LL_STATIC_HOOK_IMPL_EX(...) LL_VA_EXPAND(LL_MANUAL_REG_HOOK_IMPL_EX((*), static, _OriginalFunc, __VA_ARGS__))
+
+#define LL_AUTO_STATIC_HOOK_IMPL_EX(...) LL_VA_EXPAND(LL_AUTO_REG_HOOK_IMPL_EX((*), static, _OriginalFunc, __VA_ARGS__))
+
+#define LL_INSTANCE_HOOK_IMPL_EX(DEF_TYPE, TYPE, ...)                                                                  \
+    LL_VA_EXPAND(LL_MANUAL_REG_HOOK_IMPL_EX((TYPE::*), , (this->*_OriginalFunc), DEF_TYPE, TYPE, __VA_ARGS__))
+
+#define LL_AUTO_INSTANCE_HOOK_IMPL_EX(DEF_TYPE, TYPE, ...)                                                             \
+    LL_VA_EXPAND(LL_AUTO_REG_HOOK_IMPL_EX((TYPE::*), , (this->*_OriginalFunc), DEF_TYPE, TYPE, __VA_ARGS__))
+
+/**
+ * @brief Register a hook for a typed static function.
+ * @param DEF_TYPE The name of the hook definition.
+ * @param PRIORITY ll::memory::HookPriority The priority of the hook.
+ * @param TYPE The type which the function belongs to.
+ * @param IDENTIFIER The identifier of the hook. It can be a function pointer, symbol, address or a signature.
+ * @param OPTIONS ll::memory::RegisterSaveOptions The options for register saving.
+ * @param RET_TYPE The return type of the hook.
+ * @param ... The parameters of the hook.
+ *
+ * @note register or unregister by calling DEF_TYPE::hook() and DEF_TYPE::unhook().
+ */
+#define LL_TYPE_STATIC_HOOK_EX(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, OPTIONS, ...)                           \
+    LL_VA_EXPAND(LL_STATIC_HOOK_IMPL_EX(DEF_TYPE, TYPE, PRIORITY, IDENTIFIER, RET_TYPE, OPTIONS, __VA_ARGS__))
+
+/**
+ * @brief Register a hook for a static function.
+ * @param DEF_TYPE The name of the hook definition.
+ * @param PRIORITY ll::memory::HookPriority The priority of the hook.
+ * @param IDENTIFIER The identifier of the hook. It can be a function pointer, symbol, address or a signature.
+ * @param OPTIONS ll::memory::RegisterSaveOptions The options for register saving.
+ * @param RET_TYPE The return type of the hook.
+ * @param ... The parameters of the hook.
+ *
+ * @note register or unregister by calling DEF_TYPE::hook() and DEF_TYPE::unhook().
+ */
+#define LL_STATIC_HOOK_EX(DEF_TYPE, PRIORITY, IDENTIFIER, RET_TYPE, OPTIONS, ...)                                      \
+    LL_VA_EXPAND(                                                                                                      \
+        LL_STATIC_HOOK_IMPL_EX(DEF_TYPE, ::ll::memory::Hook, PRIORITY, IDENTIFIER, RET_TYPE, OPTIONS, __VA_ARGS__)     \
+    )
+
+/**
+ * @brief Register a hook for a typed static function.
+ * @details The hook will be automatically registered and unregistered.
+ * @see LL_TYPE_STATIC_HOOK for usage.
+ */
+#define LL_AUTO_TYPE_STATIC_HOOK_EX(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, OPTIONS, ...)                      \
+    LL_VA_EXPAND(LL_AUTO_STATIC_HOOK_IMPL_EX(DEF_TYPE, TYPE, PRIORITY, IDENTIFIER, RET_TYPE, OPTIONS, __VA_ARGS__))
+
+/**
+ * @brief Register a hook for a static function.
+ * @details The hook will be automatically registered and unregistered.
+ * @see LL_STATIC_HOOK for usage.
+ */
+#define LL_AUTO_STATIC_HOOK_EX(DEF_TYPE, PRIORITY, IDENTIFIER, RET_TYPE, OPTIONS, ...)                                 \
+    LL_VA_EXPAND(LL_AUTO_STATIC_HOOK_IMPL_EX(                                                                          \
+        DEF_TYPE,                                                                                                      \
+        ::ll::memory::Hook,                                                                                            \
+        PRIORITY,                                                                                                      \
+        IDENTIFIER,                                                                                                    \
+        RET_TYPE,                                                                                                      \
+        OPTIONS,                                                                                                       \
+        __VA_ARGS__                                                                                                    \
+    ))
+
+/**
+ * @brief Register a hook for a typed instance function.
+ * @param DEF_TYPE The name of the hook definition.
+ * @param PRIORITY ll::memory::HookPriority The priority of the hook.
+ * @param TYPE The type which the function belongs to.
+ * @param IDENTIFIER The identifier of the hook. It can be a function pointer, symbol, address or a signature.
+ * @param OPTIONS ll::memory::RegisterSaveOptions The options for register saving.
+ * @param RET_TYPE The return type of the hook.
+ * @param ... The parameters of the hook.
+ *
+ * @note register or unregister by calling DEF_TYPE::hook() and DEF_TYPE::unhook().
+ */
+#define LL_TYPE_INSTANCE_HOOK_EX(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, OPTIONS, ...)                         \
+    LL_VA_EXPAND(LL_INSTANCE_HOOK_IMPL_EX(DEF_TYPE, TYPE, PRIORITY, IDENTIFIER, RET_TYPE, OPTIONS, __VA_ARGS__))
+
+/**
+ * @brief Register a hook for a instance function.
+ * @param DEF_TYPE The name of the hook definition.
+ * @param PRIORITY ll::memory::HookPriority The priority of the hook.
+ * @param IDENTIFIER The identifier of the hook. It can be a function pointer, symbol, address or a signature.
+ * @param OPTIONS ll::memory::RegisterSaveOptions The options for register saving.
+ * @param RET_TYPE The return type of the hook.
+ * @param ... The parameters of the hook.
+ *
+ * @note register or unregister by calling DEF_TYPE::hook() and DEF_TYPE::unhook().
+ */
+#define LL_INSTANCE_HOOK_EX(DEF_TYPE, PRIORITY, IDENTIFIER, RET_TYPE, OPTIONS, ...)                                    \
+    LL_VA_EXPAND(                                                                                                      \
+        LL_INSTANCE_HOOK_IMPL_EX(DEF_TYPE, ::ll::memory::Hook, PRIORITY, IDENTIFIER, RET_TYPE, OPTIONS, __VA_ARGS__)   \
+    )
+
+/**
+ * @brief Register a hook for a typed instance function.
+ * @details The hook will be automatically registered and unregistered.
+ * @see LL_TYPE_INSTANCE_HOOK for usage.
+ */
+#define LL_AUTO_TYPE_INSTANCE_HOOK_EX(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, OPTIONS, ...)                    \
+    LL_VA_EXPAND(LL_AUTO_INSTANCE_HOOK_IMPL_EX(DEF_TYPE, TYPE, PRIORITY, IDENTIFIER, RET_TYPE, OPTIONS, __VA_ARGS__))
+
+/**
+ * @brief Register a hook for a instance function.
+ * @details The hook will be automatically registered and unregistered.
+ * @see LL_INSTANCE_HOOK for usage.
+ */
+#define LL_AUTO_INSTANCE_HOOK_EX(DEF_TYPE, PRIORITY, IDENTIFIER, RET_TYPE, OPTIONS, ...)                               \
+    LL_VA_EXPAND(LL_AUTO_INSTANCE_HOOK_IMPL_EX(                                                                        \
+        DEF_TYPE,                                                                                                      \
+        ::ll::memory::Hook,                                                                                            \
+        PRIORITY,                                                                                                      \
+        IDENTIFIER,                                                                                                    \
+        RET_TYPE,                                                                                                      \
+        OPTIONS,                                                                                                       \
+        __VA_ARGS__                                                                                                    \
+    ))
