@@ -55,6 +55,7 @@ fmt::text_style getTextStyleFromCode(std::string_view code) {
         case cf::MATERIAL_DIAMOND.back():   return fmt::fg(fmt::rgb(0x2CBAA8));
         case cf::MATERIAL_LAPIS.back():     return fmt::fg(fmt::rgb(0x21497B));
         case cf::MATERIAL_AMETHYST.back():  return fmt::fg(fmt::rgb(0x9A5CC6));
+        case cf::MATERIAL_RESIN.back():     return fmt::fg(fmt::rgb(0xEB7114));
         case cf::OBFUSCATED.back():         return fmt::emphasis::blink;
         case cf::BOLD.back():               return fmt::emphasis::bold;
         case cf::ITALIC.back():             return fmt::emphasis::italic;
@@ -123,7 +124,7 @@ constexpr const std::array formatColorPairs{
     std::pair{cf::MATERIAL_COPPER   , mce::Color(0xB4684D)}, std::pair{cf::MATERIAL_GOLD    , mce::Color(0xDEB12D)},
     std::pair{cf::MATERIAL_EMERALD  , mce::Color(0x47A036)}, std::pair{cf::MATERIAL_DIAMOND , mce::Color(0x2CBAA8)},
     std::pair{cf::MATERIAL_LAPIS    , mce::Color(0x21497B)}, std::pair{cf::MATERIAL_AMETHYST, mce::Color(0x9A5CC6)},
-    std::pair{cf::WHITE             , mce::Color(0xFFFFFF)}
+    std::pair{cf::MATERIAL_RESIN    , mce::Color(0xEB7114)}, std::pair{cf::WHITE            , mce::Color(0xFFFFFF)}
 };
 // clang-format on
 
@@ -232,7 +233,7 @@ std::string str2str(std::string_view str, uint fromCodePage, uint toCodePage) {
 std::string removeEscapeCode(std::string_view str) {
     std::string res;
     auto        sbu8 = sv2u8sv(str);
-    for (auto& s : ctre::split<u8"(\x1B(?:[@-Z\\-_]|\\[[0-?]*[ -/]*[@-~]))|((?<!§)§(?:[0-9a-u]))">(sbu8)) {
+    for (auto& s : ctre::split<u8"(\x1B(?:[@-Z\\-_]|\\[[0-?]*[ -/]*[@-~]))|((?<!§)§(?:[0-9a-v]))">(sbu8)) {
         res += u8sv2sv(s);
     }
     return res;
