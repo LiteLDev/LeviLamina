@@ -11,6 +11,7 @@
 #include "ll/api/base/FixedString.h"
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
+#include "ll/api/utils/HashUtils.h"
 #include "ll/api/utils/StringUtils.h"
 
 namespace ll::memory {
@@ -35,13 +36,19 @@ public:
 
     [[nodiscard]] constexpr bool isWildcard() const { return !element.has_value(); }
 
+    [[nodiscard]] constexpr bool operator==(SignatureElement const& other) const { return element == other.element; }
+
     [[nodiscard]] constexpr bool operator==(std::byte other) const { return isWildcard() || *element == other; }
 
     [[nodiscard]] constexpr bool operator==(uchar other) const { return operator==(static_cast<std::byte>(other)); }
+
+    [[nodiscard]] size_t hash() const { return std::hash<std::optional<std::byte>>{}(element); }
 };
 
 class SignatureView {
     std::span<SignatureElement const> elements;
+
+    void* uncachedResolve(std::span<std::byte> range) const;
 
 public:
     [[nodiscard]] constexpr SignatureView() = default;
@@ -69,6 +76,10 @@ public:
     LLNDAPI void* resolve(std::span<std::byte> range, bool disableErrorOutput = false) const;
 
     LLNDAPI std::string toString(bool alignWildcard = true, bool upperCase = true) const;
+
+    [[nodiscard]] constexpr bool operator==(SignatureView const& other) const {
+        return std::equal(begin(), end(), other.begin(), other.end());
+    }
 };
 
 class Signature {
@@ -77,6 +88,8 @@ class Signature {
     [[nodiscard]] constexpr Signature(std::vector<SignatureElement> vec) : elements(std::move(vec)) {}
 
 public:
+    [[nodiscard]] explicit constexpr Signature(SignatureView view) : elements(view.begin(), view.end()) {}
+
     [[nodiscard]] static constexpr Signature parse(std::string_view str) {
         std::vector<SignatureElement> elements;
         string_utils::splitByPattern(
@@ -103,6 +116,8 @@ public:
     [[nodiscard]] constexpr size_t size() const { return elements.size(); }
 
     [[nodiscard]] constexpr SignatureView view() const { return {std::span{elements}}; }
+
+    [[nodiscard]] constexpr bool operator==(Signature const& other) const { return elements == other.elements; }
 };
 
 [[nodiscard]] constexpr SignatureView::SignatureView(Signature const& signature) : SignatureView(signature.view()) {}
@@ -134,7 +149,7 @@ template <size_t N>
 : SignatureView(signature.view()) {}
 
 template <FixedString signature>
-constexpr auto signatureCache = []() {
+constexpr inline auto signatureCache = []() {
     constexpr size_t N = []() {
         size_t i = 0;
         string_utils::splitByPattern(
@@ -150,10 +165,6 @@ constexpr auto signatureCache = []() {
     FixedSignature<N> res{Signature::parse(signature)};
     return res;
 }();
-
-template <FixedString signature>
-inline void* signatureAddressCache = signatureCache<signature>.view().resolve();
-
 } // namespace ll::memory
 
 namespace ll::inline literals::inline memory_literals {
@@ -163,6 +174,25 @@ consteval memory::SignatureView operator""_sig() noexcept {
 }
 template <FixedString signature>
 constexpr void* operator""_sigp() noexcept {
-    return memory::signatureAddressCache<signature>;
+    return memory::signatureCache<signature>.view().resolve();
 }
 } // namespace ll::inline literals::inline memory_literals
+
+namespace std {
+template <>
+struct hash<ll::memory::SignatureElement> {
+    size_t operator()(ll::memory::SignatureElement const& e) const noexcept { return e.hash(); }
+};
+template <>
+struct hash<ll::memory::Signature> {
+    size_t operator()(ll::memory::Signature const& s) const noexcept {
+        return ll::hash_utils::HashCombiner{s.size()}.addRange(s);
+    }
+};
+template <>
+struct hash<ll::memory::SignatureView> {
+    size_t operator()(ll::memory::SignatureView const& s) const noexcept {
+        return ll::hash_utils::HashCombiner{s.size()}.addRange(s);
+    }
+};
+} // namespace std

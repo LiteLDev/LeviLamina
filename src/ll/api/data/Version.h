@@ -327,17 +327,14 @@ namespace literals {
 namespace std {
 template <>
 struct hash<ll::data::PreRelease> {
-    size_t operator()(ll::data::PreRelease const& d) const noexcept { return ll::hash_utils::hashType(d.values); }
+    size_t operator()(ll::data::PreRelease const& d) const noexcept {
+        return ll::hash_utils::HashCombiner{d.values.size()}.addRange(d.values);
+    }
 };
 template <>
 struct hash<ll::data::Version> {
     size_t operator()(ll::data::Version const& v) const noexcept {
-        size_t seed{v.major};
-        ll::hash_utils::hashCombine(v.minor, seed);
-        ll::hash_utils::hashCombine(v.patch, seed);
-        ll::hash_utils::hashCombine(std::hash<std::optional<ll::data::PreRelease>>{}(v.preRelease), seed);
-        ll::hash_utils::hashCombine(std::hash<std::optional<std::string>>{}(v.build), seed);
-        return seed;
+        return ll::hash_utils::HashCombiner{v.major}.add(v.minor).add(v.patch).add(v.preRelease).add(v.build);
     }
 };
 } // namespace std

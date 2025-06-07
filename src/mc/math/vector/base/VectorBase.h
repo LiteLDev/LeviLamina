@@ -102,15 +102,12 @@ struct LL_EBO VectorBase : concepts::VectorBaseTag {
     }
 
     [[nodiscard]] constexpr size_t hash() const noexcept {
-        size_t res = 0;
+        hash_utils::HashCombiner res{};
         forEachComponent([&]<typename axis_type, size_t iter> {
             if constexpr (has_hash<axis_type>::value) {
-                hash_utils::hashCombine(static_cast<T const*>(this)->template get<axis_type, iter>().hash(), res);
+                res.add(static_cast<T const*>(this)->template get<axis_type, iter>().hash());
             } else {
-                hash_utils::hashCombine(
-                    std::hash<axis_type>()(static_cast<T const*>(this)->template get<axis_type, iter>()),
-                    res
-                );
+                res.add(std::hash<axis_type>()(static_cast<T const*>(this)->template get<axis_type, iter>()));
             }
         });
         return res;

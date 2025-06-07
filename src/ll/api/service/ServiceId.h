@@ -15,7 +15,7 @@ public:
     std::string name;
 
     [[nodiscard]] constexpr explicit ServiceId(std::string_view id, size_t ver) noexcept
-    : HashedIdBase(hash_utils::hashCombineTo(ver, hash_utils::doHash(id))),
+    : HashedIdBase(hash_utils::HashCombiner{hash_utils::doHash(id)}.add(ver)),
       name(id),
       version(ver) {}
 
@@ -27,7 +27,7 @@ public:
     std::string_view name;
 
     [[nodiscard]] constexpr explicit ServiceIdView(std::string_view id, size_t ver) noexcept
-    : HashedIdBase(hash_utils::hashCombineTo(ver, hash_utils::doHash(id))),
+    : HashedIdBase(hash_utils::HashCombiner{hash_utils::doHash(id)}.add(ver)),
       name(id),
       version(ver) {}
     [[nodiscard]] constexpr ServiceIdView(ServiceId const& id) noexcept

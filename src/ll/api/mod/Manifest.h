@@ -21,9 +21,7 @@ namespace std {
 template <>
 struct hash<ll::mod::Dependency> {
     size_t operator()(ll::mod::Dependency const& d) const noexcept {
-        size_t hash = std::hash<std::string>{}(d.name);
-        ll::hash_utils::hashCombine(std::hash<std::optional<ll::data::Version>>{}(d.version), hash);
-        return hash;
+        return ll::hash_utils::HashCombiner{}.add(d.name).add(d.version);
     }
 };
 } // namespace std

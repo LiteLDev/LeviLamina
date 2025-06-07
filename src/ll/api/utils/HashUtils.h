@@ -1,9 +1,9 @@
 #pragma once
 
 #include <compare>
+#include <span>
 #include <string_view>
 #include <type_traits>
-#include <vector>
 
 #include "ll/api/base/Meta.h"
 #include "ll/api/base/StdInt.h"
@@ -24,16 +24,33 @@ public:
     }
 };
 
-template <class T>
-constexpr void hashCombine(T const& v, size_t& seed) {
-    seed ^= v + 0x9e3779b9ull + (seed << 6ull) + (seed >> 2ull);
-}
+class HashCombiner {
+    size_t seed;
 
-template <class T>
-constexpr size_t hashCombineTo(T const& v, size_t seed) {
-    seed ^= v + 0x9e3779b9ull + (seed << 6ull) + (seed >> 2ull);
-    return seed;
-}
+public:
+    [[nodiscard]] constexpr HashCombiner(size_t seed = 0) : seed(seed) {}
+
+    template <class T>
+    constexpr HashCombiner& add(T const& v) {
+        if constexpr (std::is_integral_v<T>) {
+            seed ^= v + 0x9e3779b9ull + (seed << 6ull) + (seed >> 2ull);
+        } else {
+            seed ^= std::hash<T>{}(v) + 0x9e3779b9ull + (seed << 6ull) + (seed >> 2ull);
+        }
+        return *this;
+    }
+
+    template <class T>
+    constexpr HashCombiner& addRange(T&& v) {
+        for (auto const& x : std::forward<T>(v)) {
+            this->add(x);
+        }
+        return *this;
+    }
+
+    [[nodiscard]] constexpr        operator size_t() const { return seed; }
+    [[nodiscard]] constexpr size_t hash() const { return seed; }
+};
 
 [[nodiscard]] constexpr uint64 doHash(std::string_view x) {
     // hash_64_fnv1a
@@ -60,15 +77,6 @@ constexpr size_t hashCombineTo(T const& v, size_t seed) {
         rval = ((rval << 5) + rval) + c;
     }
     return rval;
-}
-
-template <class T>
-[[nodiscard]] constexpr uint64 hashType(std::vector<T> const& v) {
-    size_t seed = v.size();
-    for (auto const& x : v) {
-        hashCombine(std::hash<T>{}(x), seed);
-    }
-    return seed;
 }
 } // namespace ll::inline utils::hash_utils
 

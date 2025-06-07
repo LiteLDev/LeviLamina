@@ -4,8 +4,7 @@
 #include "ll/core/LeviLamina.h"
 
 namespace ll::memory {
-void* SignatureView::resolve(std::span<std::byte> range, bool disableErrorOutput) const {
-
+void* SignatureView::uncachedResolve(std::span<std::byte> range) const {
     const auto firstByte = *elements.front();
     const auto scanEnd   = range.end() - elements.size() + 1;
 
@@ -17,10 +16,6 @@ void* SignatureView::resolve(std::span<std::byte> range, bool disableErrorOutput
         if (std::equal(elements.begin() + 1, elements.end(), i + 1, std::equal_to<>{})) [[unlikely]] {
             return &*i;
         }
-    }
-    if (!disableErrorOutput) {
-        getLogger().fatal("Couldn't find: {}", toString());
-        getLogger().fatal("In module: {}", sys_utils::getCallerModuleFileName());
     }
     return nullptr;
 }

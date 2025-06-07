@@ -37,7 +37,7 @@ namespace std {
 template <>
 struct hash<ll::service::ServiceInfo> {
     size_t operator()(ll::service::ServiceInfo const& info) const noexcept {
-        return ll::hash_utils::hashCombineTo(std::hash<std::string_view>{}(info.modName), info.id.hash);
+        return ll::hash_utils::HashCombiner{info.id.hash}.add(info.modName);
     }
 };
 } // namespace std
