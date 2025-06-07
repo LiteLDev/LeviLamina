@@ -50,4 +50,7 @@ bool unhook(FuncPtr target, FuncPtr detour, bool suspendThreads) {
     }
     return pl::hook::pl_unhook(target, detour);
 }
+bool hook_options(FuncPtr target, RegisterSaveOptions options, bool replace) {
+    return pl::hook::pl_hook_options(target, static_cast<pl::hook::RegisterSaveOptions>(options), replace);
+}
 } // namespace ll::memory
