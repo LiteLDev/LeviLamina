@@ -100,7 +100,10 @@ void CustomFormHandler::handle(
     for (size_t i = 0; i < mFormElements.size(); ++i) {
         auto& element = mFormElements[i];
         auto& value   = dataJson[i];
-        result->emplace(element->mName, element->parseResult(value));
+        if (element->getCategory() == FormElementBase::Category::Custom) {
+            auto& e = reinterpret_cast<CustomFormElement&>(*element);
+            result->emplace(e.mName, e.parseResult(value));
+        }
     }
 
     if (mCallback) {

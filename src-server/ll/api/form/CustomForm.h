@@ -36,16 +36,23 @@ public:
         std::string const& name,
         std::string const& text,
         std::string const& placeholder = {},
-        std::string const& defaultVal  = {}
+        std::string const& defaultVal  = {},
+        std::string const& tooltip     = {}
     );
 
-    LLAPI CustomForm& appendToggle(std::string const& name, std::string const& text, bool defaultVal = false);
+    LLAPI CustomForm& appendToggle(
+        std::string const& name,
+        std::string const& text,
+        bool               defaultVal = false,
+        std::string const& tooltip    = {}
+    );
 
     LLAPI CustomForm& appendDropdown(
         std::string const&              name,
         std::string const&              text,
         std::vector<std::string> const& options,
-        size_t                          defaultVal = 0
+        size_t                          defaultVal = 0,
+        std::string const&              tooltip    = {}
     );
 
     LLAPI CustomForm& appendSlider(
@@ -54,14 +61,16 @@ public:
         double             min,
         double             max,
         double             step       = 0.0,
-        double             defaultVal = 0.0
+        double             defaultVal = 0.0,
+        std::string const& tooltip    = {}
     );
 
     LLAPI CustomForm& appendStepSlider(
         std::string const&              name,
         std::string const&              text,
         std::vector<std::string> const& steps,
-        size_t                          defaultVal = 0
+        size_t                          defaultVal = 0,
+        std::string const&              tooltip    = {}
     );
 
     LLAPI CustomForm& sendTo(Player& player, Callback callback = {});
