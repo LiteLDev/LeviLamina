@@ -385,7 +385,15 @@ struct LL_EBO Hook {};
  * @see LL_INSTANCE_HOOK for usage.
  */
 #define LL_AUTO_INSTANCE_HOOK(DEF_TYPE, PRIORITY, IDENTIFIER, RET_TYPE, ...)                                           \
-    LL_VA_EXPAND(LL_AUTO_INSTANCE_HOOK_IMPL(DEF_TYPE, ::ll::memory::Hook, PRIORITY, IDENTIFIER, RET_TYPE, __VA_ARGS__))
+    LL_VA_EXPAND(LL_AUTO_INSTANCE_HOOK_IMPL(                                                                           \
+        DEF_TYPE,                                                                                                      \
+        ::ll::memory::Hook,                                                                                            \
+        PRIORITY,                                                                                                      \
+        IDENTIFIER,                                                                                                    \
+        RET_TYPE,                                                                                                      \
+        RegisterSaveOptions::SaveNone,                                                                                 \
+        __VA_ARGS__                                                                                                    \
+    ))
 
 /**
  * @brief Register a hook for a typed static function.
