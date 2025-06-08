@@ -38,23 +38,23 @@ namespace ll::memory {
 }
 class MimallocMemoryAllocator : public ::Bedrock::Memory::IMemoryAllocator {
 public:
-    virtual void* allocate(uint64 size) try { return mi_malloc(size != 0ull ? size : 1ull); } catch (...) {
+    void* allocate(uint64 size) override try { return mi_malloc(size != 0ull ? size : 1ull); } catch (...) {
         return nullptr;
     }
 
-    virtual void release(void* ptr) try { mi_free(ptr); } catch (...) {
+    void release(void* ptr) override try { mi_free(ptr); } catch (...) {
     }
 
-    virtual void* alignedAllocate(uint64 size, uint64 alignment) try {
+    void* alignedAllocate(uint64 size, uint64 alignment) override try {
         return mi_malloc_aligned(size != 0ull ? size : 1ull, alignment);
     } catch (...) {
         return nullptr;
     }
 
-    virtual void alignedRelease(void* ptr) try { mi_free(ptr); } catch (...) {
+    void alignedRelease(void* ptr) override try { mi_free(ptr); } catch (...) {
     }
 
-    virtual uint64 getUsableSize(void* ptr, bool) try { return mi_usable_size(ptr); } catch (...) {
+    uint64 getUsableSize(void* ptr, bool) override try { return mi_usable_size(ptr); } catch (...) {
         return 0ull;
     }
 
@@ -69,7 +69,7 @@ public:
         getLogger().info(str);
     }
 
-    virtual void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) try {
+    void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) override try {
         return mi_realloc(ptr, newSize);
     } catch (...) {
         return nullptr;
@@ -78,27 +78,29 @@ public:
 
 class StdMemoryAllocator : public ::Bedrock::Memory::IMemoryAllocator {
 public:
-    virtual void* allocate(uint64 size) try { return malloc(size != 0ull ? size : 1ull); } catch (...) {
+    void* allocate(uint64 size) override try { return malloc(size != 0ull ? size : 1ull); } catch (...) {
         return nullptr;
     }
 
-    virtual void release(void* ptr) try { free(ptr); } catch (...) {
+    void release(void* ptr) override try { free(ptr); } catch (...) {
     }
 
-    virtual void* alignedAllocate(uint64 size, uint64 alignment) try {
+    void* alignedAllocate(uint64 size, uint64 alignment) override try {
         return _aligned_malloc(size != 0ull ? size : 1ull, alignment);
     } catch (...) {
         return nullptr;
     }
 
-    virtual void alignedRelease(void* ptr) try { _aligned_free(ptr); } catch (...) {
+    void alignedRelease(void* ptr) override try { _aligned_free(ptr); } catch (...) {
     }
 
-    virtual uint64 getUsableSize(void* ptr, bool) try { return ptr ? _msize(ptr) : 0ull; } catch (...) {
+    uint64 getUsableSize(void* ptr, bool) override try { return ptr ? _msize(ptr) : 0ull; } catch (...) {
         return 0ull;
     }
 
-    virtual void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) try { return realloc(ptr, newSize); } catch (...) {
+    void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) override try {
+        return realloc(ptr, newSize);
+    } catch (...) {
         return nullptr;
     }
 };
@@ -137,29 +139,29 @@ class DebugAllocator : public T {
 
 
 public:
-    virtual void* allocate(uint64 size) {
+    void* allocate(uint64 size) override {
         auto res = T::allocate(size);
         getDebugMap()[LL_RETURN_ADDRESS].alloc(T::getUsableSize(res));
         return res;
     }
 
-    virtual void release(void* ptr) {
+    void release(void* ptr) override {
         getDebugMap()[LL_RETURN_ADDRESS].free(T::getUsableSize(ptr));
         T::release(ptr);
     }
 
-    virtual void* alignedAllocate(uint64 size, uint64 alignment) {
+    void* alignedAllocate(uint64 size, uint64 alignment) override {
         auto res = T::alignedAllocate(size, alignment);
         getDebugMap()[LL_RETURN_ADDRESS].alloc(T::getUsableSize(res));
         return res;
     }
 
-    virtual void alignedRelease(void* ptr) {
+    void alignedRelease(void* ptr) override {
         getDebugMap()[LL_RETURN_ADDRESS].free(T::getUsableSize(ptr));
         T::alignedRelease(ptr);
     }
 
-    virtual void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) {
+    void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) override {
         getDebugMap()[LL_RETURN_ADDRESS].free(T::getUsableSize(ptr));
         auto res = T::_realloc(ptr, newSize);
         getDebugMap()[LL_RETURN_ADDRESS].alloc(T::getUsableSize(res));
