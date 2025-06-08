@@ -46,8 +46,8 @@ public:
     int                                    mSetOffset;
     bool                                   mIsOptional;
     ::CommandParameterOption               mOptions;
-    ::ll::TypedStorage<8, 8, void* (*)(::Command*, int)> mValueGetFn;
-    ::ll::TypedStorage<8, 8, bool* (*)(::Command*, int)> mValueIsSetFn;
+    ::ll::TypedStorage<8, 8, void* (*)(::Command*, int)> mValueGetFn{};
+    ::ll::TypedStorage<8, 8, bool* (*)(::Command*, int)> mValueIsSetFn{};
     // NOLINTEND
 
 
