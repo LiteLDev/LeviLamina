@@ -94,7 +94,7 @@ public:
     virtual void alignedRelease(void* ptr) try { _aligned_free(ptr); } catch (...) {
     }
 
-    virtual uint64 getUsableSize(void* ptr) try { return ptr ? _msize(ptr) : 0ull; } catch (...) {
+    virtual uint64 getUsableSize(void* ptr, bool) try { return ptr ? _msize(ptr) : 0ull; } catch (...) {
         return 0ull;
     }
 
