@@ -48,6 +48,7 @@ LL_TYPE_INSTANCE_HOOK(
 // Minecraft
 static std::atomic<Minecraft*> minecraft;
 
+// TODO: not working
 LL_TYPE_INSTANCE_HOOK(MinecraftInit, HookPriority::High, Minecraft, &Minecraft::init, void) {
     minecraft = this;
     origin();
@@ -115,7 +116,7 @@ LL_TYPE_INSTANCE_HOOK(
     void,
     ServerInstance& ins
 ) {
-    level = getMinecraft()->getLevel();
+    level = ins.mMinecraft->getLevel();
     origin(ins);
 }
 LL_TYPE_INSTANCE_HOOK(LevelDestructor, HookPriority::High, Level, &Level::$dtor, void) {
