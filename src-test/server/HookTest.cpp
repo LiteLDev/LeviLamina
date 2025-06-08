@@ -75,7 +75,7 @@ LL_TYPE_INSTANCE_HOOK_EX(
 
 LL_TYPE_STATIC_HOOK_EX(
     HookExStaticTest,
-    HookPriority ::Normal,
+    HookPriority::Normal,
     RegisterSaveOptions::SaveAll,
     HookExTestClass,
     &HookExTestClass::getInstance,
