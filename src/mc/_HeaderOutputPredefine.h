@@ -34,7 +34,6 @@
 #include <cwctype>            // Wide character classification
 #include <deque>              // STL double ended queue container
 #include <exception>          // Exception handling classes
-#include <expected>           // STL expected
 #include <filesystem>         // STL file system
 #include <forward_list>       // STL forward list container
 #include <fstream>            // File stream classes
@@ -67,7 +66,12 @@
 #include <utility>            // STL utility components
 #include <variant>            // STL variant type
 #include <vector>             // STL dynamic array container
-#include <future>        // STL future
+#include <future>             // STL future
+
+// STL expected for C++23
+#if _HAS_CXX23
+#include <expected>
+#endif
 
 #include "entt/entt.hpp" // Entity Component System Library
 #include "entt/fwd.hpp"  // Entity Component Forward Declarations
