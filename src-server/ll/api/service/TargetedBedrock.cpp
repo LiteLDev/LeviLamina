@@ -48,8 +48,7 @@ LL_TYPE_INSTANCE_HOOK(
 // Minecraft
 static std::atomic<Minecraft*> minecraft;
 
-// TODO: not working
-LL_TYPE_INSTANCE_HOOK(MinecraftInit, HookPriority::High, Minecraft, &Minecraft::init, void) {
+LL_TYPE_INSTANCE_HOOK(MinecraftInit, HookPriority::High, Minecraft, &Minecraft::initCommands, void) {
     minecraft = this;
     origin();
 }
