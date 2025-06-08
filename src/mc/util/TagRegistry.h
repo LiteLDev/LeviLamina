@@ -14,7 +14,7 @@ public:
     TagSetID                                 mEmptyTagSet;
 
     MCAPI TagID tryGetTagID(const std::string&) const;
-    MCAPI std::vector<std::string> const getTagsInSet(TagSetID);
+    MCAPI std::vector<std::string> const getTagsInSet(TagSetID) const;
     MCAPI TagSetID                       removeTagFromSet(const TagID, TagSetID&);
     MCAPI TagSetID                       addTagToSet(const TagID, TagSetID&);
     MCAPI TagID                          acquireTag(const std::string&);
