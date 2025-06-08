@@ -50,12 +50,32 @@ enum class HookPriority : int {
     Lowest  = 400,
 };
 
+enum RegisterSaveOptions {
+    SaveNone = 0,
+    SaveR10  = 1 << 0,
+    SaveR11  = 1 << 1,
+    SaveXmm4 = 1 << 2,
+    SaveXmm5 = 1 << 3,
+    SaveAll  = SaveR10 | SaveR11 | SaveXmm4 | SaveXmm5
+};
+
 LLNDAPI bool shouldHookSuspendThreads();
 
 LLAPI int
 hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority priority, bool suspendThreads = true);
 
+LLAPI int hookEx(
+    FuncPtr             target,
+    FuncPtr             detour,
+    FuncPtr*            originalFunc,
+    HookPriority        priority,
+    RegisterSaveOptions options,
+    bool                suspendThreads
+);
+
 LLAPI bool unhook(FuncPtr target, FuncPtr detour, bool suspendThreads = true);
+
+LLAPI bool hookOptions(FuncPtr target, RegisterSaveOptions options, bool replace = true, bool suspendThreads = true);
 
 template <class T>
 concept FuncPtrType = std::is_function_v<std::remove_pointer_t<T>> || std::is_member_function_pointer_v<T>;
@@ -126,15 +146,16 @@ struct LL_EBO Hook {};
 
 } // namespace ll::memory
 
-#define LL_HOOK_IMPL(REGISTER, FUNC_PTR, STATIC, CALL, DEF_TYPE, TYPE, PRIORITY, IDENTIFIER, RET_TYPE, ...)            \
+#define LL_HOOK_IMPL(REGISTER, FUNC_PTR, STATIC, CALL, DEF_TYPE, TYPE, PRIORITY, OPTIONS, IDENTIFIER, RET_TYPE, ...)   \
     struct DEF_TYPE : public TYPE {                                                                                    \
         inline static ::std::atomic_uint _AutoHookCount{};                                                             \
                                                                                                                        \
     private:                                                                                                           \
-        using _FuncPtr          = ::ll::memory::FuncPtr;                                                               \
-        using HookPriority      = ::ll::memory::HookPriority;                                                          \
-        using _RawFuncType      = RET_TYPE FUNC_PTR(__VA_ARGS__);                                                      \
-        using _RawConstFuncType = ::ll::memory::AddConstAtMemberFunT<_RawFuncType>;                                    \
+        using _FuncPtr            = ::ll::memory::FuncPtr;                                                             \
+        using HookPriority        = ::ll::memory::HookPriority;                                                        \
+        using RegisterSaveOptions = ll::memory::RegisterSaveOptions;                                                   \
+        using _RawFuncType        = RET_TYPE FUNC_PTR(__VA_ARGS__);                                                    \
+        using _RawConstFuncType   = ::ll::memory::AddConstAtMemberFunT<_RawFuncType>;                                  \
                                                                                                                        \
         template <class T>                                                                                             \
         struct _ConstDetector {                                                                                        \
@@ -187,11 +208,12 @@ struct LL_EBO Hook {};
         static int hook(bool suspendThreads = true) {                                                                  \
             _Detector<_OriginFuncType>();                                                                              \
             if (!_HookTarget) _HookTarget = ::ll::memory::resolveIdentifier<_OriginFuncType>(IDENTIFIER);              \
-            return ::ll::memory::hook(                                                                                 \
+            return ::ll::memory::hookEx(                                                                              \
                 _HookTarget,                                                                                           \
                 ::ll::memory::toFuncPtr(&DEF_TYPE::detour),                                                            \
                 reinterpret_cast<_FuncPtr*>(&_OriginalFunc),                                                           \
                 PRIORITY,                                                                                              \
+                OPTIONS,                                                                                               \
                 suspendThreads                                                                                         \
             );                                                                                                         \
         }                                                                                                              \
@@ -237,7 +259,15 @@ struct LL_EBO Hook {};
  * @note register or unregister by calling DEF_TYPE::hook() and DEF_TYPE::unhook().
  */
 #define LL_TYPE_STATIC_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)                                       \
-    LL_VA_EXPAND(LL_STATIC_HOOK_IMPL(DEF_TYPE, TYPE, PRIORITY, IDENTIFIER, RET_TYPE, __VA_ARGS__))
+    LL_VA_EXPAND(LL_STATIC_HOOK_IMPL(                                                                                  \
+        DEF_TYPE,                                                                                                      \
+        TYPE,                                                                                                          \
+        PRIORITY,                                                                                                      \
+        RegisterSaveOptions::SaveNone,                                                                                 \
+        IDENTIFIER,                                                                                                    \
+        RET_TYPE,                                                                                                      \
+        __VA_ARGS__                                                                                                    \
+    ))
 
 /**
  * @brief Register a hook for a static function.
@@ -250,7 +280,15 @@ struct LL_EBO Hook {};
  * @note register or unregister by calling DEF_TYPE::hook() and DEF_TYPE::unhook().
  */
 #define LL_STATIC_HOOK(DEF_TYPE, PRIORITY, IDENTIFIER, RET_TYPE, ...)                                                  \
-    LL_VA_EXPAND(LL_STATIC_HOOK_IMPL(DEF_TYPE, ::ll::memory::Hook, PRIORITY, IDENTIFIER, RET_TYPE, __VA_ARGS__))
+    LL_VA_EXPAND(LL_STATIC_HOOK_IMPL(                                                                                  \
+        DEF_TYPE,                                                                                                      \
+        ::ll::memory::Hook,                                                                                            \
+        PRIORITY,                                                                                                      \
+        RegisterSaveOptions::SaveNone,                                                                                 \
+        IDENTIFIER,                                                                                                    \
+        RET_TYPE,                                                                                                      \
+        __VA_ARGS__                                                                                                    \
+    ))
 
 /**
  * @brief Register a hook for a typed static function.
@@ -258,7 +296,15 @@ struct LL_EBO Hook {};
  * @see LL_TYPE_STATIC_HOOK for usage.
  */
 #define LL_AUTO_TYPE_STATIC_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)                                  \
-    LL_VA_EXPAND(LL_AUTO_STATIC_HOOK_IMPL(DEF_TYPE, TYPE, PRIORITY, IDENTIFIER, RET_TYPE, __VA_ARGS__))
+    LL_VA_EXPAND(LL_AUTO_STATIC_HOOK_IMPL(                                                                             \
+        DEF_TYPE,                                                                                                      \
+        TYPE,                                                                                                          \
+        PRIORITY,                                                                                                      \
+        RegisterSaveOptions::SaveNone,                                                                                 \
+        IDENTIFIER,                                                                                                    \
+        RET_TYPE,                                                                                                      \
+        __VA_ARGS__                                                                                                    \
+    ))
 
 /**
  * @brief Register a hook for a static function.
@@ -266,7 +312,15 @@ struct LL_EBO Hook {};
  * @see LL_STATIC_HOOK for usage.
  */
 #define LL_AUTO_STATIC_HOOK(DEF_TYPE, PRIORITY, IDENTIFIER, RET_TYPE, ...)                                             \
-    LL_VA_EXPAND(LL_AUTO_STATIC_HOOK_IMPL(DEF_TYPE, ::ll::memory::Hook, PRIORITY, IDENTIFIER, RET_TYPE, __VA_ARGS__))
+    LL_VA_EXPAND(LL_AUTO_STATIC_HOOK_IMPL(                                                                             \
+        DEF_TYPE,                                                                                                      \
+        ::ll::memory::Hook,                                                                                            \
+        PRIORITY,                                                                                                      \
+        RegisterSaveOptions::SaveNone,                                                                                 \
+        IDENTIFIER,                                                                                                    \
+        RET_TYPE,                                                                                                      \
+        __VA_ARGS__                                                                                                    \
+    ))
 
 /**
  * @brief Register a hook for a typed instance function.
@@ -280,7 +334,15 @@ struct LL_EBO Hook {};
  * @note register or unregister by calling DEF_TYPE::hook() and DEF_TYPE::unhook().
  */
 #define LL_TYPE_INSTANCE_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)                                     \
-    LL_VA_EXPAND(LL_INSTANCE_HOOK_IMPL(DEF_TYPE, TYPE, PRIORITY, IDENTIFIER, RET_TYPE, __VA_ARGS__))
+    LL_VA_EXPAND(LL_INSTANCE_HOOK_IMPL(                                                                                \
+        DEF_TYPE,                                                                                                      \
+        TYPE,                                                                                                          \
+        PRIORITY,                                                                                                      \
+        RegisterSaveOptions::SaveNone,                                                                                 \
+        IDENTIFIER,                                                                                                    \
+        RET_TYPE,                                                                                                      \
+        __VA_ARGS__                                                                                                    \
+    ))
 
 /**
  * @brief Register a hook for a instance function.
@@ -293,7 +355,15 @@ struct LL_EBO Hook {};
  * @note register or unregister by calling DEF_TYPE::hook() and DEF_TYPE::unhook().
  */
 #define LL_INSTANCE_HOOK(DEF_TYPE, PRIORITY, IDENTIFIER, RET_TYPE, ...)                                                \
-    LL_VA_EXPAND(LL_INSTANCE_HOOK_IMPL(DEF_TYPE, ::ll::memory::Hook, PRIORITY, IDENTIFIER, RET_TYPE, __VA_ARGS__))
+    LL_VA_EXPAND(LL_INSTANCE_HOOK_IMPL(                                                                                \
+        DEF_TYPE,                                                                                                      \
+        ::ll::memory::Hook,                                                                                            \
+        PRIORITY,                                                                                                      \
+        RegisterSaveOptions::SaveNone,                                                                                 \
+        IDENTIFIER,                                                                                                    \
+        RET_TYPE,                                                                                                      \
+        __VA_ARGS__                                                                                                    \
+    ))
 
 /**
  * @brief Register a hook for a typed instance function.
@@ -301,7 +371,15 @@ struct LL_EBO Hook {};
  * @see LL_TYPE_INSTANCE_HOOK for usage.
  */
 #define LL_AUTO_TYPE_INSTANCE_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)                                \
-    LL_VA_EXPAND(LL_AUTO_INSTANCE_HOOK_IMPL(DEF_TYPE, TYPE, PRIORITY, IDENTIFIER, RET_TYPE, __VA_ARGS__))
+    LL_VA_EXPAND(LL_AUTO_INSTANCE_HOOK_IMPL(                                                                           \
+        DEF_TYPE,                                                                                                      \
+        TYPE,                                                                                                          \
+        PRIORITY,                                                                                                      \
+        RegisterSaveOptions::SaveNone,                                                                                 \
+        IDENTIFIER,                                                                                                    \
+        RET_TYPE,                                                                                                      \
+        __VA_ARGS__                                                                                                    \
+    ))
 
 /**
  * @brief Register a hook for a instance function.
@@ -309,4 +387,110 @@ struct LL_EBO Hook {};
  * @see LL_INSTANCE_HOOK for usage.
  */
 #define LL_AUTO_INSTANCE_HOOK(DEF_TYPE, PRIORITY, IDENTIFIER, RET_TYPE, ...)                                           \
-    LL_VA_EXPAND(LL_AUTO_INSTANCE_HOOK_IMPL(DEF_TYPE, ::ll::memory::Hook, PRIORITY, IDENTIFIER, RET_TYPE, __VA_ARGS__))
+    LL_VA_EXPAND(LL_AUTO_INSTANCE_HOOK_IMPL(                                                                           \
+        DEF_TYPE,                                                                                                      \
+        ::ll::memory::Hook,                                                                                            \
+        PRIORITY,                                                                                                      \
+        RegisterSaveOptions::SaveNone,                                                                                 \
+        IDENTIFIER,                                                                                                    \
+        RET_TYPE,                                                                                                      \
+        __VA_ARGS__                                                                                                    \
+    ))
+
+/**
+ * @brief Register a hook for a typed static function.
+ * @param DEF_TYPE The name of the hook definition.
+ * @param PRIORITY ll::memory::HookPriority The priority of the hook.
+ * @param OPTIONS ll::memory::RegisterSaveOptions The options for register saving.
+ * @param TYPE The type which the function belongs to.
+ * @param IDENTIFIER The identifier of the hook. It can be a function pointer, symbol, address or a signature.
+ * @param RET_TYPE The return type of the hook.
+ * @param ... The parameters of the hook.
+ *
+ * @note register or unregister by calling DEF_TYPE::hook() and DEF_TYPE::unhook().
+ */
+#define LL_TYPE_STATIC_HOOK_EX(DEF_TYPE, PRIORITY, OPTIONS, TYPE, IDENTIFIER, RET_TYPE, ...)                           \
+    LL_VA_EXPAND(LL_STATIC_HOOK_IMPL(DEF_TYPE, TYPE, PRIORITY, OPTIONS, IDENTIFIER, RET_TYPE, __VA_ARGS__))
+
+/**
+ * @brief Register a hook for a static function.
+ * @param DEF_TYPE The name of the hook definition.
+ * @param PRIORITY ll::memory::HookPriority The priority of the hook.
+ * @param OPTIONS ll::memory::RegisterSaveOptions The options for register saving.
+ * @param IDENTIFIER The identifier of the hook. It can be a function pointer, symbol, address or a signature.
+ * @param RET_TYPE The return type of the hook.
+ * @param ... The parameters of the hook.
+ *
+ * @note register or unregister by calling DEF_TYPE::hook() and DEF_TYPE::unhook().
+ */
+#define LL_STATIC_HOOK_EX(DEF_TYPE, PRIORITY, OPTIONS, IDENTIFIER, RET_TYPE, ...)                                      \
+    LL_VA_EXPAND(                                                                                                      \
+        LL_STATIC_HOOK_IMPL(DEF_TYPE, ::ll::memory::Hook, PRIORITY, OPTIONS, IDENTIFIER, RET_TYPE, __VA_ARGS__)        \
+    )
+
+/**
+ * @brief Register a hook for a typed static function.
+ * @details The hook will be automatically registered and unregistered.
+ * @see LL_TYPE_STATIC_HOOK for usage.
+ */
+#define LL_AUTO_TYPE_STATIC_HOOK_EX(DEF_TYPE, PRIORITY, OPTIONS, TYPE, IDENTIFIER, RET_TYPE, ...)                      \
+    LL_VA_EXPAND(LL_AUTO_STATIC_HOOK_IMPL(DEF_TYPE, TYPE, PRIORITY, OPTIONS, IDENTIFIER, RET_TYPE, __VA_ARGS__))
+
+/**
+ * @brief Register a hook for a static function.
+ * @details The hook will be automatically registered and unregistered.
+ * @see LL_STATIC_HOOK for usage.
+ */
+#define LL_AUTO_STATIC_HOOK_EX(DEF_TYPE, PRIORITY, OPTIONS, IDENTIFIER, RET_TYPE, ...)                                 \
+    LL_VA_EXPAND(                                                                                                      \
+        LL_AUTO_STATIC_HOOK_IMPL(DEF_TYPE, ::ll::memory::Hook, PRIORITY, OPTIONS, IDENTIFIER, RET_TYPE, __VA_ARGS__)   \
+    )
+
+/**
+ * @brief Register a hook for a typed instance function.
+ * @param DEF_TYPE The name of the hook definition.
+ * @param PRIORITY ll::memory::HookPriority The priority of the hook.
+ * @param OPTIONS ll::memory::RegisterSaveOptions The options for register saving.
+ * @param TYPE The type which the function belongs to.
+ * @param IDENTIFIER The identifier of the hook. It can be a function pointer, symbol, address or a signature.
+ * @param RET_TYPE The return type of the hook.
+ * @param ... The parameters of the hook.
+ *
+ * @note register or unregister by calling DEF_TYPE::hook() and DEF_TYPE::unhook().
+ */
+#define LL_TYPE_INSTANCE_HOOK_EX(DEF_TYPE, PRIORITY, OPTIONS, TYPE, IDENTIFIER, RET_TYPE, ...)                         \
+    LL_VA_EXPAND(LL_INSTANCE_HOOK_IMPL(DEF_TYPE, TYPE, PRIORITY, OPTIONS, IDENTIFIER, RET_TYPE, __VA_ARGS__))
+
+/**
+ * @brief Register a hook for a instance function.
+ * @param DEF_TYPE The name of the hook definition.
+ * @param PRIORITY ll::memory::HookPriority The priority of the hook.
+ * @param OPTIONS ll::memory::RegisterSaveOptions The options for register saving.
+ * @param IDENTIFIER The identifier of the hook. It can be a function pointer, symbol, address or a signature
+ * @param RET_TYPE The return type of the hook.
+ * @param ... The parameters of the hook.
+ *
+ * @note register or unregister by calling DEF_TYPE::hook() and DEF_TYPE::unhook().
+ */
+#define LL_INSTANCE_HOOK_EX(DEF_TYPE, PRIORITY, OPTIONS, IDENTIFIER, RET_TYPE, ...)                                    \
+    LL_VA_EXPAND(                                                                                                      \
+        LL_INSTANCE_HOOK_IMPL(DEF_TYPE, ::ll::memory::Hook, PRIORITY, OPTIONS, IDENTIFIER, RET_TYPE, __VA_ARGS__)      \
+    )
+
+/**
+ * @brief Register a hook for a typed instance function.
+ * @details The hook will be automatically registered and unregistered.
+ * @see LL_TYPE_INSTANCE_HOOK for usage.
+ */
+#define LL_AUTO_TYPE_INSTANCE_HOOK_EX(DEF_TYPE, PRIORITY, OPTIONS, TYPE, IDENTIFIER, RET_TYPE, ...)                    \
+    LL_VA_EXPAND(LL_AUTO_INSTANCE_HOOK_IMPL(DEF_TYPE, TYPE, PRIORITY, OPTIONS, IDENTIFIER, RET_TYPE, __VA_ARGS__))
+
+/**
+ * @brief Register a hook for a instance function.
+ * @details The hook will be automatically registered and unregistered.
+ * @see LL_INSTANCE_HOOK for usage.
+ */
+#define LL_AUTO_INSTANCE_HOOK_EX(DEF_TYPE, PRIORITY, OPTIONS, IDENTIFIER, RET_TYPE, ...)                               \
+    LL_VA_EXPAND(                                                                                                      \
+        LL_AUTO_INSTANCE_HOOK_IMPL(DEF_TYPE, ::ll::memory::Hook, PRIORITY, OPTIONS, IDENTIFIER, RET_TYPE, __VA_ARGS__) \
+    )

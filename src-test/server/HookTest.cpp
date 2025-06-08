@@ -47,5 +47,41 @@ LL_TYPE_INSTANCE_HOOK(TestUintptrHook, HookPriority::Normal, TestPtrClass, 0x114
     some = 1;
     return origin(a, b);
 }
+
+class HookExTestClass {
+protected:
+    int some = 0;
+
+public:
+    void                    test(int a = 0) { some = a; }
+    static HookExTestClass& getInstance() {
+        static HookExTestClass ins;
+        return ins;
+    }
+};
+
+LL_TYPE_INSTANCE_HOOK_EX(
+    HookExInstanceTest,
+    HookPriority::Normal,
+    RegisterSaveOptions::SaveAll,
+    HookExTestClass,
+    &HookExTestClass::test,
+    void,
+    int a
+) {
+    some = a + 1;
+    return origin(a);
+}
+
+LL_TYPE_STATIC_HOOK_EX(
+    HookExStaticTest,
+    HookPriority::Normal,
+    RegisterSaveOptions::SaveAll,
+    HookExTestClass,
+    &HookExTestClass::getInstance,
+    HookExTestClass&
+) {
+    return origin();
+}
 } // namespace
 // NOLINTEND
