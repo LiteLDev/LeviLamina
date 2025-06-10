@@ -108,8 +108,6 @@ constexpr auto construct(void* ptr, ptrdiff_t off, Args&&... args) {
 
 LLNDAPI ::Bedrock::Memory::IMemoryAllocator& getDefaultAllocator();
 
-LLNDAPI ::Memory::MemoryTracker& getMemoryTracker();
-
 [[noreturn]] LLAPI void throwMemoryException(size_t);
 
 LLNDAPI size_t getUsableSize(void* ptr);

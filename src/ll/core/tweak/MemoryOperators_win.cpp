@@ -174,9 +174,4 @@ public:
 #endif
     return ins;
 }
-
-::Memory::MemoryTracker& getMemoryTracker() {
-    static ::Memory::MemoryTracker tracker;
-    return tracker;
-}
 } // namespace ll::memory
