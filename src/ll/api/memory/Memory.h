@@ -17,10 +17,6 @@ namespace Bedrock::Memory {
 class IMemoryAllocator;
 }
 
-namespace Memory {
-class MemoryTracker;
-}
-
 namespace ll::memory {
 
 using FuncPtr = void*;
