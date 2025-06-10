@@ -62,22 +62,22 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _cleanupOutputDirOnExportFailure(::Core::PathBuffer<::std::string> const& pathToOutputDir);
+    MCAPI static void _cleanupOutputDirOnExportFailure(::Core::PathBuffer<::std::string> const& pathToOutputDir);
 
-    MCNAPI static void _exportSubcommand(
+    MCAPI static void _exportSubcommand(
         ::CommandOrigin const&,
         ::CommandOutput&                        output,
         ::ProjectCommand::ExportSubcommandTypes commandExportType,
         ::ActorUniqueID                         callingPlayerUniqueId
     );
 
-    MCNAPI static ::Core::PathBuffer<::std::string> _getLevelExportPath(
+    MCAPI static ::Core::PathBuffer<::std::string> _getLevelExportPath(
         ::ActorUniqueID      callingPlayerUniqueId,
         ::Level*             level,
         ::std::string const& exportFileExtension
     );
 
-    MCNAPI static void _outputFormattedCommand(
+    MCAPI static void _outputFormattedCommand(
         ::ActorUniqueID                     callingPlayerUniqueId,
         ::Level*                            level,
         ::std::string const&                prefix,
@@ -86,7 +86,7 @@ public:
         ::std::vector<::std::string> const& args
     );
 
-    MCNAPI static void _reportErrorToUser(
+    MCAPI static void _reportErrorToUser(
         ::ActorUniqueID                     callingPlayerUniqueId,
         ::Level*                            level,
         ::std::string const&                commandType,
@@ -94,7 +94,7 @@ public:
         ::std::vector<::std::string> const& args
     );
 
-    MCNAPI static void _reportToUser(
+    MCAPI static void _reportToUser(
         ::ActorUniqueID                     callingPlayerUniqueId,
         ::Level*                            level,
         ::std::string const&                commandType,
@@ -102,13 +102,13 @@ public:
         ::std::vector<::std::string> const& args
     );
 
-    MCNAPI static void setup(::CommandRegistry& registry);
+    MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
     // NOLINTEND
 
 public:

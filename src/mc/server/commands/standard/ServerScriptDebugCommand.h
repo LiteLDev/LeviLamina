@@ -44,17 +44,17 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::ScriptDiagnosticsPublishToFile*& sDiagnosticsPublishToFile();
+    MCAPI static ::ScriptDiagnosticsPublishToFile*& sDiagnosticsPublishToFile();
 
-    MCNAPI static ::std::optional<ushort>& sForcedPort();
+    MCAPI static ::std::optional<ushort>& sForcedPort();
 
-    MCNAPI static ::IScriptDebugger*& sServerScriptDebugger();
+    MCAPI static ::IScriptDebugger*& sServerScriptDebugger();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $execute(::CommandOrigin const&, ::CommandOutput& output) const;
+    MCAPI void $execute(::CommandOrigin const&, ::CommandOutput& output) const;
     // NOLINTEND
 
 public:

@@ -4,14 +4,19 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
 class IGameplayUserManagerConnector;
 class PacketSender;
+class PlayerListEntry;
+class PlayerListPacket;
 class PlayerLocationReceiver;
 class PlayerLocationSender;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -19,57 +24,65 @@ class PlayerListManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64>  mUnk1a674c;
-    ::ll::UntypedStorage<8, 24>  mUnke5760d;
-    ::ll::UntypedStorage<8, 24>  mUnk2ade5e;
-    ::ll::UntypedStorage<8, 24>  mUnk1e3a79;
-    ::ll::UntypedStorage<8, 128> mUnk86130e;
-    ::ll::UntypedStorage<8, 128> mUnk5e1e17;
-    ::ll::UntypedStorage<8, 16>  mUnka300dc;
-    ::ll::UntypedStorage<8, 16>  mUnkadd5e8;
-    ::ll::UntypedStorage<8, 16>  mUnk7dba24;
-    ::ll::UntypedStorage<8, 8>   mUnk6f10d4;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::mce::UUID, ::PlayerListEntry>> mPlayerList;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PacketSender>>           mPacketSender;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PlayerLocationReceiver>> mPlayerLocationReceiver;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PlayerLocationSender>>   mPlayerLocationSender;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<
+            void(::PlayerListEntry const&, ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const&),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+            0>>
+        mOnPlayerListEntryAdded;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<
+            void(::PlayerListEntry const&, ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const&),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+            0>>
+                                                                    mOnPlayerListEntryRemoved;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>      mOnGameplayUserAddedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>      mOnGameplayUserRemovedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>      mOnAnyGameplayUsersRemovedSubscription;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlayerListPacket>> mPendingPlayerListRemovePacket;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerListManager& operator=(PlayerListManager const&);
-    PlayerListManager(PlayerListManager const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PlayerListManager();
+    MCAPI PlayerListManager();
 
-    MCNAPI void _onAnyGameplayUsersRemoved();
+    MCAPI void _onAnyGameplayUsersRemoved();
 
-    MCNAPI void _onGameplayUserAdded(::EntityContext& entity);
+    MCAPI void _onGameplayUserAdded(::EntityContext& entity);
 
-    MCNAPI void _onGameplayUserRemoved(::EntityContext& entity);
+    MCAPI void _onGameplayUserRemoved(::EntityContext& entity);
 
-    MCNAPI void
-    initializeWithGameplayUserManagerOnServer(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
+    MCAPI void initializeWithGameplayUserManagerOnServer(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCNAPI void removeByUUID(::mce::UUID const& uuid);
+    MCAPI void removeByUUID(::mce::UUID const& uuid);
 
-    MCNAPI void setPacketSender(::PacketSender& packetSender);
+    MCAPI void setPacketSender(::PacketSender& packetSender);
 
-    MCNAPI void setPlayerLocationReceiver(::Bedrock::NonOwnerPointer<::PlayerLocationReceiver> playerLocationReceiver);
+    MCAPI void setPlayerLocationReceiver(::Bedrock::NonOwnerPointer<::PlayerLocationReceiver> playerLocationReceiver);
 
-    MCNAPI void setPlayerLocationSender(::Bedrock::NonOwnerPointer<::PlayerLocationSender> playerLocationSender);
+    MCAPI void setPlayerLocationSender(::Bedrock::NonOwnerPointer<::PlayerLocationSender> playerLocationSender);
 
-    MCNAPI ~PlayerListManager();
+    MCAPI ~PlayerListManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
