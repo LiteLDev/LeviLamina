@@ -17,6 +17,10 @@ namespace Bedrock::Memory {
 class IMemoryAllocator;
 }
 
+namespace Memory {
+class MemoryTracker;
+}
+
 namespace ll::memory {
 
 using FuncPtr = void*;
@@ -103,6 +107,8 @@ constexpr auto construct(void* ptr, ptrdiff_t off, Args&&... args) {
 }
 
 LLNDAPI ::Bedrock::Memory::IMemoryAllocator& getDefaultAllocator();
+
+LLNDAPI ::Memory::MemoryTracker& getMemoryTracker();
 
 [[noreturn]] LLAPI void throwMemoryException(size_t);
 

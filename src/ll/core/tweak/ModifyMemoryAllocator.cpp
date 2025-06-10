@@ -1,20 +1,11 @@
-// TODO:
-// #include "ll/api/memory/Memory.h"
-// #include "mc/deps/core/memory/InternalHeapAllocator.h"
+#include "ll/api/memory/Memory.h"
+#include "mc/deps/core/memory/MemoryTracker.h"
 
-// namespace ll::memory {
-// auto replaceMemoryAllocator = []() -> bool {
-//     auto           allocator = *reinterpret_cast<void***>(&getDefaultAllocator());
-//     auto           vftable   = ::Bedrock::Memory::InternalHeapAllocator::$vftable();
-//     constexpr auto vfcount   = 7;
-
-
-//     modify(vftable, vfcount * sizeof(void*), [&] {
-//         for (size_t i = 0; i < vfcount; ++i) {
-//             vftable[i] = allocator[i];
-//         }
-//     });
-
-//     return true;
-// }();
-// } // namespace ll::memory
+namespace ll::memory {
+    auto replaceMemoryAllocator = []() -> bool {
+        *(Bedrock::Memory::IMemoryAllocator **)
+                "Bedrock::Memory::sDefaultAllocator"_sym.resolve() = &ll::memory::getDefaultAllocator();
+        Memory::MemoryTracker::mInstance() = &ll::memory::getMemoryTracker();
+        return true;
+    }();
+} // namespace ll::memory
