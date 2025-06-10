@@ -26,13 +26,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::IMinecraftApp*& mApp();
+    MCAPI static ::IMinecraftApp*& mApp();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput&) const;
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput&) const;
     // NOLINTEND
 
 public:

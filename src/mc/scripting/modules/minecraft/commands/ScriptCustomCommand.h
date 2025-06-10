@@ -43,22 +43,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomCommandOrigin>
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomCommandOrigin>
     _createCustomCommandOrigin(::CommandOrigin const& origin, ::Scripting::WeakLifetimeScope const& scope) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool* getParamStorageIsSet(::Command* cmd, int index);
+    MCAPI static bool* getParamStorageIsSet(::Command* cmd, int index);
 
-    MCNAPI static void* getParamStorageValue(::Command* cmd, int index);
+    MCAPI static void* getParamStorageValue(::Command* cmd, int index);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
     // NOLINTEND
 
 public:

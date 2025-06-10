@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool tryToFilterTextWithRemoteFilter(
+    MCAPI bool tryToFilterTextWithRemoteFilter(
         ::CommandOrigin const&              origin,
         ::CommandOutput&                    output,
         ::std::vector<::std::string> const& text,
@@ -46,7 +46,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void kickPlayerDueToFlooding(
+    MCAPI static void kickPlayerDueToFlooding(
         ::Bedrock::NonOwnerPointer<::ServerNetworkHandler> serverNetworkHandler,
         ::Player*                                          player,
         ::IMinecraftEventing&                              eventing,
@@ -57,14 +57,14 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Minecraft*& mGame();
+    MCAPI static ::Minecraft*& mGame();
 
-    MCNAPI static ::Bedrock::NonOwnerPointer<::TextFilteringProcessor>& mTextFilteringProcessor();
+    MCAPI static ::Bedrock::NonOwnerPointer<::TextFilteringProcessor>& mTextFilteringProcessor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

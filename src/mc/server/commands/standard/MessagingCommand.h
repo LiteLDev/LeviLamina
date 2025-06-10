@@ -37,13 +37,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool checkChatPermissions(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCAPI bool checkChatPermissions(::CommandOrigin const& origin, ::CommandOutput& output) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void checkAndHandleTextProcessorEvents(
+    MCAPI static void checkAndHandleTextProcessorEvents(
         ::Player const&                                    player,
         ::std::vector<::Safety::TextFilteringEvent> const& events
     );
@@ -52,6 +52,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
