@@ -8,16 +8,15 @@ struct MemoryCategoryCounter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk2466d0;
-    ::ll::UntypedStorage<8, 8>  mUnk3fbc8d;
-    ::ll::UntypedStorage<8, 24> mUnka6360f;
+    ::ll::TypedStorage<8, 8, char const*> mCategoryName;
+    ::ll::TypedStorage<8, 8, uint64>      mCurrentBytes;
+    struct {
+        ::ll::TypedStorage<8, 8, uint64> mTotalAllocationCount;
+        ::ll::TypedStorage<4, 4, uint>   mCurrentAllocationCount;
+        ::ll::TypedStorage<4, 4, uint>   mMaxAllocationCount;
+        ::ll::TypedStorage<8, 8, uint64> mMaxBytes;
+    } detailed;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MemoryCategoryCounter& operator=(MemoryCategoryCounter const&);
-    MemoryCategoryCounter(MemoryCategoryCounter const&);
-    MemoryCategoryCounter();
 };
 
 } // namespace Memory
