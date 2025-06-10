@@ -50,29 +50,29 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Memory::MemoryTracker*& mInstance();
+    MCAPI static ::Memory::MemoryTracker*& mInstance();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isTracking() const;
+    MCFOLD bool $isTracking() const;
 
-    MCNAPI ::Memory::MemoryCategory $getCurrentCategory() const;
+    MCFOLD ::Memory::MemoryCategory $getCurrentCategory() const;
 
-    MCNAPI void $setCurrentCategory(::Memory::MemoryCategory);
+    MCFOLD void $setCurrentCategory(::Memory::MemoryCategory);
 
-    MCNAPI uint64 $getCategoryAllocationCount(uint) const;
+    MCFOLD uint64 $getCategoryAllocationCount(uint) const;
 
-    MCNAPI uint64 $getCategoryAllocatedMemory(uint) const;
+    MCFOLD uint64 $getCategoryAllocatedMemory(uint) const;
 
-    MCNAPI uint64 $getCategoryTotalAllocationCount(uint) const;
+    MCFOLD uint64 $getCategoryTotalAllocationCount(uint) const;
 
-    MCNAPI char const* $getCategoryName(uint) const;
+    MCFOLD char const* $getCategoryName(uint) const;
 
-    MCNAPI void $publish();
+    MCFOLD void $publish();
 
-    MCNAPI void $populateCounters(::std::vector<::Memory::MemoryCategoryCounter>&, uint64) const;
+    MCFOLD void $populateCounters(::std::vector<::Memory::MemoryCategoryCounter>&, uint64) const;
     // NOLINTEND
 
 public:
