@@ -1,20 +1,48 @@
-// TODO:
-// #include "ll/api/memory/Memory.h"
-// #include "mc/deps/core/memory/InternalHeapAllocator.h"
+#include "ll/api/memory/Memory.h"
+#include "mc/deps/core/memory/MemoryTracker.h"
 
-// namespace ll::memory {
-// auto replaceMemoryAllocator = []() -> bool {
-//     auto           allocator = *reinterpret_cast<void***>(&getDefaultAllocator());
-//     auto           vftable   = ::Bedrock::Memory::InternalHeapAllocator::$vftable();
-//     constexpr auto vfcount   = 7;
+namespace ll::memory {
+    class NoOperationMemoryTracker : public ::Memory::MemoryTracker {
+        [[nodiscard]] bool isTracking() const override {
+            return false;
+        }
 
+        [[nodiscard]] ::Memory::MemoryCategory getCurrentCategory() const override {
+            return ::Memory::MemoryCategory::Unknown;
+        }
 
-//     modify(vftable, vfcount * sizeof(void*), [&] {
-//         for (size_t i = 0; i < vfcount; ++i) {
-//             vftable[i] = allocator[i];
-//         }
-//     });
+        void setCurrentCategory(::Memory::MemoryCategory) override {}
 
-//     return true;
-// }();
-// } // namespace ll::memory
+        [[nodiscard]] uint64 getCategoryAllocationCount(uint) const override {
+            return 0;
+        }
+
+        [[nodiscard]] uint64 getCategoryAllocatedMemory(uint) const override {
+            return 0;
+        }
+
+        [[nodiscard]] uint64 getCategoryTotalAllocationCount(uint) const override {
+            return 0;
+        }
+
+        [[nodiscard]] char const *getCategoryName(uint) const override {
+            return "";
+        }
+
+        void publish() override {}
+
+        void populateCounters(::std::vector<::Memory::MemoryCategoryCounter> &, uint64) const override {}
+    };
+
+    ::Memory::MemoryTracker &getMemoryTracker() {
+        static NoOperationMemoryTracker tracker;
+        return tracker;
+    }
+
+    auto replaceMemoryAllocator = []() -> bool {
+        *(Bedrock::Memory::IMemoryAllocator **)
+                "Bedrock::Memory::sDefaultAllocator"_sym.resolve() = &ll::memory::getDefaultAllocator();
+        Memory::MemoryTracker::mInstance() = &getMemoryTracker();
+        return true;
+    }();
+} // namespace ll::memory
