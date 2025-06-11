@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0] - 2025-06-11
+
+### Added
+
+- Added new hash combiner & fix [#1673] @OEOTYAN
+- Added early return to event publish, resolve [#1668] @OEOTYAN
+- Added enum flags reflection, resolve [#1669] @OEOTYAN
+- Added hookEx and hookOptions (#1676) @ShrBox
+
+### Changed
+
+- Updated to Minecraft 1.21.80.3 @OYOTYAN @ShrBox @xiaoqch
+- Removed unused hook @xiaoqch
+
+### Fixed
+
+- Added new mc color format code convertion, fix [#1671] OEOTYAN 25-6-7 下午5:22fix: add new mc color format code convertion, fix [#1671] @OEOTYAN
+- Fixed [#1670] @OEOTYAN
+- Fixed Logger @xiaoqch
+- Fixed CommandParameterData @xiaoqch
+- Fixed StdMemoryAllocator @xiaoqch
+- Include <expected> only when C++23 is supported @xiaoqch
+
 ## [1.2.1] - 2025-06-05
 
 ### Changed
@@ -940,8 +963,14 @@ For lip and tooth-hub test only.
 [#1631]: https://github.com/LiteLDev/LeviLamina/issues/1631
 [#1636]: https://github.com/LiteLDev/LeviLamina/issues/1636
 [#1664]: https://github.com/LiteLDev/LeviLamina/issues/1664
+[#1668]: https://github.com/LiteLDev/LeviLamina/issues/1668
+[#1669]: https://github.com/LiteLDev/LeviLamina/issues/1669
+[#1670]: https://github.com/LiteLDev/LeviLamina/issues/1670
+[#1671]: https://github.com/LiteLDev/LeviLamina/issues/1671
+[#1673]: https://github.com/LiteLDev/LeviLamina/issues/1673
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.2.1...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.2.1...v1.3.0
 [1.2.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.2.0-rc.2...v1.2.0
 [1.2.0-rc.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.2.0-rc.1...v1.2.0-rc.2
