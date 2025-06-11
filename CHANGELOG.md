@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Added new mc color format code convertion, fix [#1671] OEOTYAN 25-6-7 下午5:22fix: add new mc color format code convertion, fix [#1671] @OEOTYAN
+- Added new mc color format code convertion, fix [#1671] @OEOTYAN
 - Fixed [#1670] @OEOTYAN
 - Fixed Logger @xiaoqch
 - Fixed CommandParameterData @xiaoqch
