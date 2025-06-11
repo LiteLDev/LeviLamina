@@ -4,15 +4,17 @@
 #include "ll/api/base/Concepts.h"
 #include "ll/api/base/FixedString.h"
 
-#include <string>
+#if _HAS_CXX23
+#include <expected>
+#endif
 
-#include "fmt/chrono.h"
-#include "fmt/color.h"
-#include "fmt/compile.h"
-#include "fmt/format.h"
-#include "fmt/os.h"
-#include "fmt/ranges.h"
-#include "fmt/std.h"
+#include "fmt/chrono.h"  // IWYU pragma: keep
+#include "fmt/color.h"   // IWYU pragma: keep
+#include "fmt/compile.h" // IWYU pragma: keep
+#include "fmt/format.h"  // IWYU pragma: keep
+#include "fmt/os.h"      // IWYU pragma: keep
+#include "fmt/ranges.h"  // IWYU pragma: keep
+#include "fmt/std.h"     // IWYU pragma: keep
 
 // #define LL_I18N_COLLECT_STRINGS
 

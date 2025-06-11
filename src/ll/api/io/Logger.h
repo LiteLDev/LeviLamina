@@ -5,6 +5,10 @@
 #include <string_view>
 #include <utility>
 
+#if _HAS_CXX23
+#include <expected>
+#endif
+
 #include "ll/api/base/Concepts.h" // IWYU pragma: keep
 #include "ll/api/base/Macro.h"
 #include "ll/api/coro/Generator.h"
