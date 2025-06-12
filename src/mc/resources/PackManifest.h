@@ -3,15 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/resource/ContentIdentity.h"
+#include "mc/deps/core/resource/PackCategory.h"
+#include "mc/deps/core/resource/PackIdVersion.h"
+#include "mc/deps/core/resource/PackOrigin.h"
+#include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/resource/ResourceLocation.h"
+#include "mc/deps/core/resource/ResourceMetadata.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/json/Value.h"
+#include "mc/resources/BaseGameVersion.h"
+#include "mc/resources/ManifestOrigin.h"
 #include "mc/resources/ManifestType.h"
+#include "mc/resources/MinEngineVersion.h"
 #include "mc/resources/PackCapability.h"
+#include "mc/resources/PackManifestFormat.h"
 #include "mc/resources/PackScope.h"
+#include "mc/resources/TemplateLockState.h"
 
 // auto generated forward declare list
 // clang-format off
 class ResourceInformation;
-namespace Json { class Value; }
+struct LegacyPackIdVersion;
+struct ModuleIdentifier;
 // clang-format on
 
 class PackManifest : public ::Bedrock::EnableNonOwnerReferences {
@@ -26,45 +40,45 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56>  mUnkb1c40e;
-    ::ll::UntypedStorage<8, 48>  mUnk1e2f34;
-    ::ll::UntypedStorage<8, 24>  mUnk7ab187;
-    ::ll::UntypedStorage<8, 32>  mUnkde7951;
-    ::ll::UntypedStorage<8, 32>  mUnk5f3fbd;
-    ::ll::UntypedStorage<8, 64>  mUnkc59183;
-    ::ll::UntypedStorage<8, 32>  mUnk4edafd;
-    ::ll::UntypedStorage<8, 32>  mUnkdf5b3f;
-    ::ll::UntypedStorage<1, 1>   mUnk25aa0f;
-    ::ll::UntypedStorage<8, 56>  mUnkcdbc53;
-    ::ll::UntypedStorage<8, 24>  mUnk3d395c;
-    ::ll::UntypedStorage<8, 24>  mUnk664099;
-    ::ll::UntypedStorage<8, 24>  mUnkf5931b;
-    ::ll::UntypedStorage<8, 24>  mUnk7e84bc;
-    ::ll::UntypedStorage<8, 16>  mUnk839d16;
-    ::ll::UntypedStorage<8, 136> mUnkb07766;
-    ::ll::UntypedStorage<1, 1>   mUnkabe2d4;
-    ::ll::UntypedStorage<4, 4>   mUnk8878ac;
-    ::ll::UntypedStorage<1, 1>   mUnk2eab2d;
-    ::ll::UntypedStorage<1, 1>   mUnk8e8733;
-    ::ll::UntypedStorage<1, 1>   mUnkeafc7c;
-    ::ll::UntypedStorage<1, 1>   mUnk13691a;
-    ::ll::UntypedStorage<8, 8>   mUnk188674;
-    ::ll::UntypedStorage<8, 32>  mUnk304e41;
-    ::ll::UntypedStorage<1, 1>   mUnk38739e;
-    ::ll::UntypedStorage<1, 1>   mUnkaab09f;
-    ::ll::UntypedStorage<1, 1>   mUnke953c1;
-    ::ll::UntypedStorage<1, 1>   mUnk538a60;
-    ::ll::UntypedStorage<1, 1>   mUnk926d65;
-    ::ll::UntypedStorage<1, 1>   mUnk260ef2;
-    ::ll::UntypedStorage<1, 1>   mUnk21ca15;
-    ::ll::UntypedStorage<4, 4>   mUnk57897f;
-    ::ll::UntypedStorage<1, 1>   mUnkdae40b;
-    ::ll::UntypedStorage<1, 1>   mUnkd66f77;
-    ::ll::UntypedStorage<8, 24>  mUnk956002;
-    ::ll::UntypedStorage<8, 24>  mUnkcc67f2;
-    ::ll::UntypedStorage<4, 4>   mUnk2cf8d0;
-    ::ll::UntypedStorage<1, 1>   mUnk75fbdd;
-    ::ll::UntypedStorage<1, 1>   mUnk980b3b;
+    ::ll::TypedStorage<8, 56, ::ResourceLocation> mLocation;
+    ::ll::TypedStorage<8, 48, ::PackIdVersion>    mIdentity;
+    ::ll::TypedStorage<8, 24, ::ContentIdentity>  mContentIdentity;
+    ::ll::TypedStorage<8, 32, ::MinEngineVersion> mMinEngineVersion;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion>  mRequiredBaseGameVersion;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::PackCapability::TrustLevel>> mCapabilities;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                     mName;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                     mDescription;
+    ::ll::TypedStorage<1, 1, bool>                                                               mExpired;
+    ::ll::TypedStorage<8, 56, ::ResourceLocation>                                                mPackIconLocation;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ResourceInformation>>                              mModules;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PackIdVersion>>                                    mPackDependencies;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ModuleIdentifier>>                                 mModuleDependencies;
+    ::ll::TypedStorage<8, 24, ::std::vector<::LegacyPackIdVersion>>   mLegacyModuleDependencies;
+    ::ll::TypedStorage<8, 16, ::Json::Value>                          mSettings;
+    ::ll::TypedStorage<8, 136, ::ResourceMetadata>                    mMetadata;
+    ::ll::TypedStorage<1, 1, ::PackType>                              mPackType;
+    ::ll::TypedStorage<4, 4, ::PackCategory>                          mPackCategory;
+    ::ll::TypedStorage<1, 1, ::PackOrigin>                            mPackOrigin;
+    ::ll::TypedStorage<1, 1, ::ManifestOrigin>                        mManifestOrigin;
+    ::ll::TypedStorage<1, 1, ::ManifestType>                          mManifestType;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsHidden;
+    ::ll::TypedStorage<8, 8, uint64>                                  mSize;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mLastModifiedDate;
+    ::ll::TypedStorage<1, 1, bool>                                    mHasValidUUID;
+    ::ll::TypedStorage<1, 1, bool>                                    mHasPlugins;
+    ::ll::TypedStorage<1, 1, bool>                                    mHasClientScript;
+    ::ll::TypedStorage<1, 1, bool>                                    mHasEducationMetadata;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsPlatformLocked;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsRandomSeedAllowed;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsTitleLocked;
+    ::ll::TypedStorage<4, 4, ::PackCapability::TrustLevel>            mMaximumAllowedTrustLevel;
+    ::ll::TypedStorage<1, 1, ::TemplateLockState>                     mTemplateOptionLockState;
+    ::ll::TypedStorage<1, 1, ::PackScope>                             mScope;
+    ::ll::TypedStorage<8, 24, ::ContentIdentity>                      mSourceIdentity;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>           mLanguageCodesForPackKeywords;
+    ::ll::TypedStorage<4, 4, ::PackManifest::PackRedownloadableState> mPackRedownloadableState;
+    ::ll::TypedStorage<1, 1, ::PackManifestFormat>                    mFormatVersion;
+    ::ll::TypedStorage<1, 1, ::PackManifestFormat>                    mOriginalFormatVersion;
     // NOLINTEND
 
 public:
