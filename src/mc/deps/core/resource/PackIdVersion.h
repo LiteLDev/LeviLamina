@@ -23,6 +23,9 @@ public:
     PackIdVersion();
 
 public:
+    bool operator==(PackIdVersion const& rhs) const { return *mId == *rhs.mId && *mVersion == *rhs.mVersion; }
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI PackIdVersion(::std::string const& id, ::std::string const& version, ::PackType packType);
@@ -64,3 +67,12 @@ public:
     MCAPI void $dtor();
     // NOLINTEND
 };
+
+namespace std {
+template <>
+struct hash<::PackIdVersion> {
+    size_t operator()(const ::PackIdVersion& packIdVersion) const {
+        return std::hash<std::string>()(packIdVersion.mId->asString() + packIdVersion.mVersion->asString());
+    }
+};
+} // namespace std
