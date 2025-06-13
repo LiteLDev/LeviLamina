@@ -40,10 +40,10 @@ cd myserver
 接下来，使用 lip 安装 LeviLamina（内置 Bedrock Dedicated Server）：
 
 ```shell
-# Install the latest version
+# 安装最新版本
 lip install github.com/LiteLDev/LeviLamina
 
-# Install a specific version (replace x.y.z with the desired version)
+# 安装指定版本 (把 x.y.z 替换成想要的版本)
 lip install github.com/LiteLDev/LeviLamina@x.y.z
 ```
 
@@ -62,10 +62,10 @@ lip install github.com/LiteLDev/LeviLamina@x.y.z
 为确保数据安全，请勿在同一目录内更新 LeviLamina。建议在独立文件夹内安装新版本，然后复制 `worlds` 目录并按需更新配置：
 
 ```shell
-# Update to the latest version
+# 升级到最新版本
 lip update github.com/LiteLDev/LeviLamina
 
-# Update to a specific version (replace x.y.z with the desired version)
+# 升级到指定版本 (把 x.y.z 替换成想要的版本)
 lip update github.com/LiteLDev/LeviLamina@x.y.z
 ```
 

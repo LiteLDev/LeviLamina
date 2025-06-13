@@ -17,54 +17,70 @@
 
 你可以通过不同的方式安装 LeviLamina，取决于你的需求：
 
-- 你可以[通过 lip 安装](#通过-lip-v0250及以上版本安装)，以便于安装和升级任务。这是推荐的方法。
-- 你可以下载模块并手动安装并完全手动管理升级。这在一些情况下很有用，比如在没有网络访问的隔离系统上安装 LeviLamina。
+- 你可以[通过 lip 安装](#通过-lip)，以便于安装和升级任务。这是推荐的方法。
+- 你可以下载模块并[手动安装](#手动安装)并完全手动管理升级。这在一些情况下很有用，比如在没有网络访问的隔离系统上安装
+  LeviLamina。
 
-### 通过 lip v0.25.0及以上版本安装
+### 通过 lip
 
 1. 安装lip，可以参考[lip文档](https://lip.levimc.org/zh/user-guide/installation/)
 2. 运行以下命令来安装LeviLamina:
 
 ```shell
-lip install github.com/LiteLDev/LeviLamina@版本
-# 示例:
-lip install github.com/LiteLDev/LeviLamina@x.x.x
+lip install github.com/LiteLDev/LeviLamina
 ```
-lip v0.25.0开始要求安装包时必须指定版本，LeviLamina的版本号可以在[releases](https://github.com/LiteLDev/LeviLamina/releases)查看
+
+或者指定版本号:
+
+```shell
+lip install github.com/LiteLDev/LeviLamina@x.y.z
+```
+
+LeviLamina的版本号可以在[releases](https://github.com/LiteLDev/LeviLamina/releases)查看
 
 如果你想要升级LeviLamina，可以运行以下命令:
 
 ```shell
-lip install -U github.com/LiteLDev/LeviLamina@版本
+lip install -U github.com/LiteLDev/LeviLamina
 ```
 
-### 通过 lip v0.24.0及以下版本安装(仅适用于LeviLamina 1.2.0以下版本)
+### 手动安装
 
-在lip的[releases](https://github.com/futrime/lip/releases/tag/v0.24.0)
-中可以下载到v0.24.0，Windows平台可以直接下载到.exe后缀的安装程序。  
-安装 lip 后，你可以通过运行以下命令来安装 LeviLamina：
+#### 下载所需文件
 
-```shell
-lip install github.com/LiteLDev/LeviLamina
-```
+1. 下载 [LeviLamina](https://github.com/LiteLDev/LeviLamina/releases)
+2. 根据特定版本的 LeviLamina 的 [tooth.json] 文件，下载所需的 [Preloader](https://github.com/LiteLDev/PreLoader/releases)
+3. 下载最新版的 [PeEditor](https://github.com/LiteLDev/PeEditor/releases)
+4. 根据 [tooth.json] 下载所需的 [bedrock-runtime-data](https://github.com/LiteLDev/bedrock-runtime-data/releases)
+5. 下载最新版的 [CrashLogger](https://github.com/LiteLDev/CrashLogger/releases)
+6. 根据 [支持的版本](../versions.md)，从 [Minecraft Wiki](https://minecraft.wiki/w/Bedrock_Dedicated_Server#Download)
+   下载基岩版服务器
+7. （可选）根据 [tooth.json] 下载 [levilamina-loc](https://github.com/LiteLDev/levilamina-loc/releases)
 
-要安装 LeviLamina 的特定版本，例如，1.0.0，你可以运行以下命令：
+[tooth.json]: https://github.com/LiteLDev/LeviLamina/blob/main/tooth.json
 
-```shell
-lip install github.com/LiteLDev/LeviLamina@1.0.0
-```
+#### 安装 LeviLamina
 
-在安装过程中，你可能会被要求确认一些提示。你可以按 `y` 来确认提示。要跳过提示，你可以在命令中添加 `-y` 选项。
+1. 创建一个用于 Minecraft 服务器的目录，并切换到该目录：
+2. 按照以下结构解压已下载的文件（部分文件或文件夹未在此列出）：
 
-```shell
-lip install -y github.com/LiteLDev/LeviLamina
-```
+   ```
+   bedrock_runtime_data
+   bedrock_server.exe
+   PeEditor.exe
+   PreLoader.dll
+   plugins/
+       LeviLamina/
+           CrashLogger.exe
+           LeviLamina.dll
+           LeviLamina.pdb
+           manifest.json
+           lang/
+               en_US.json
+               zh_CN.json
+   ```
+3. 运行以下命令以生成 `bedrock_server_mod.exe`：
 
-你现在已经成功安装了 LeviLamina。要升级 LeviLamina，你可以运行以下命令：
-
-```shell
-lip install --upgrade github.com/LiteLDev/LeviLamina
-```
-
-!!! danger
-    升级 LeviLamina 可能会导致数据丢失。请确保在升级之前备份你的数据。
+   ```pwsh
+   .\PeEditor.exe -mb
+   ```

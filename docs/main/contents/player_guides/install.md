@@ -17,60 +17,75 @@ To run Bedrock Dedicated Server for Minecraft, you need to install the following
 
 You can install LeviLamina in different ways, depending on your needs:
 
-- You can [install via lip](#installing-via-lip-v0250-and-above), for ease of installation and upgrade tasks. This is the recommended
+- You can [install via lip](#installing-via-lip), for ease of installation and upgrade tasks. This is
+  the recommended
   approach.
-- You can download the modules and install them manually and manage upgrades completely manually. This is useful in
+- You can download the modules and [install them manually](#installing-manually) and manage upgrades completely
+  manually. This is useful in
   situations such as installing LeviLamina on air-gapped systems with no access to the internet.
 
-### Installing via lip v0.25.0 and above
+### Installing via lip
 
 1. Install lip by referring to the [lip documentation](https://lip.levimc.org/en/user-guide/installation/).
 2. Run the following command to install LeviLamina:
 
 ```shell
-lip install github.com/LiteLDev/LeviLamina@version
-# Example:
-lip install github.com/LiteLDev/LeviLamina@x.x.x
+lip install github.com/LiteLDev/LeviLamina
 ```
-Starting from lip v0.25.0, specifying a version is required when installing packages. You can find LeviLamina's
-version numbers in the [releases](https://github.com/LiteLDev/LeviLamina/releases).
+
+Or specify a version number:
+
+```shell
+lip install github.com/LiteLDev/LeviLamina@x.y.z
+```
+
+You can find LeviLamina's version numbers in the [releases](https://github.com/LiteLDev/LeviLamina/releases).
 
 If you want to upgrade LeviLamina, run the following command:
 
 ```shell
-lip install -U github.com/LiteLDev/LeviLamina@version
+lip install -U github.com/LiteLDev/LeviLamina
 ```
 
-### Installing via lip v0.24.0 and below (only for LeviLamina versions below 1.2.0)
+### Installing manually
 
-You can download v0.24.0 in lip's [releases](https://github.com/futrime/lip/releases/tag/v0.24.0), and for Windows
-platforms you can directly download the installer with .exe extension.  
-After installing lip, you can install LeviLamina by running the following command:
+#### Download required files
 
-```shell
-lip install github.com/LiteLDev/LeviLamina
-```
+1. Download the [LeviLamina](https://github.com/LiteLDev/LeviLamina/releases)
+2. Download the required [Preloader](https://github.com/LiteLDev/PreLoader/releases) according to the [tooth.json] of
+   specific version of LeviLamina
+3. Download the latest [PeEditor](https://github.com/LiteLDev/PeEditor/releases)
+4. Download the required [bedrock-runtime-data](https://github.com/LiteLDev/bedrock-runtime-data/releases) according
+   to the [tooth.json]
+5. Download the latest [CrashLogger](https://github.com/LiteLDev/CrashLogger/releases)
+6. Download the Bedrock Dedicated Server from
+   the [Minecraft Wiki](https://minecraft.wiki/w/Bedrock_Dedicated_Server#Download) according
+   to [Supported Versions](../versions.md)
+7. (Optional) Download the [levilamina-loc](https://github.com/LiteLDev/levilamina-loc/releases) according to
+   the [tooth.json]
 
-To install a specific version of LeviLamina, for example, 0.4.2, you can run the following command:
+[tooth.json]: https://github.com/LiteLDev/LeviLamina/blob/main/tooth.json
 
-```shell
-lip install github.com/LiteLDev/LeviLamina@0.4.2
-```
+#### Install LeviLamina
 
-During the installation, you might be asked to confirm some prompts. You can press `y` to confirm the prompts. To skip
-the prompts, you can add the `-y` option to the command.
-
-```shell
-lip install -y github.com/LiteLDev/LeviLamina
-```
-
-You have now successfully installed LeviLamina.
-
-To upgrade LeviLamina, you can run the following command:
-
-```shell
-lip install --upgrade github.com/LiteLDev/LeviLamina
-```
-
-!!! danger
-    Upgrading LeviLamina may result in data loss. Please make sure you have a backup of your data before upgrading.
+1. Create a directory for your Minecraft server and switch to that directory:
+2. Decompress the downloaded files according to the following structure(Some files or folders not listed here):
+    ```
+    bedrock_runtime_data
+    bedrock_server.exe
+    PeEditor.exe
+    PreLoader.dll
+    plugins/
+        LeviLamina/
+            CrashLogger.exe
+            LeviLamina.dll
+            LeviLamina.pdb
+            manifest.json
+            lang/
+                en_US.json
+                zh_CN.json
+    ```
+3. Run the following command to generate bedrock_server_mod.exe:
+    ```pwsh
+    .\PeEditor.exe -mb
+    ```
