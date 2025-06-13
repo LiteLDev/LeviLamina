@@ -74,32 +74,43 @@ Next, modify the contents of `tooth.json`. `tooth.json` provides relevant inform
 
 ```json
 {
-    "format_version": 2,
-    "tooth": "github.com/futrime/better-suicide",
-    "version": "0.6.0",
-    "info": {
-        "name": "better-suicide",
-        "description": "Allow players to suicide in Minecraft.",
-        "author": "futrime",
-        "tags": [
-            "platform:levilamina",
-            "type:mod"
-        ]
-    },
-    "asset_url": "https://github.com/futrime/better-suicide/releases/download/v0.6.0/better-suicide-windows-x64.zip",
-    "prerequisites": {
-        "github.com/LiteLDev/LeviLamina": "1.0.x"
-    },
-    "files": {
-        "place": [
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "github.com/futrime/better-suicide",
+  "version": "0.6.0",
+  "info": {
+    "name": "better-suicide",
+    "description": "Allow players to suicide in Minecraft.",
+    "tags": [
+      "platform:levilamina",
+      "type:mod"
+    ],
+    "avatar_url": ""
+  },
+  "variants": [
+    {
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina": "1.3.*"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://github.com/futrime/better-suicide/releases/download/v0.6.0/better-suicide-windows-x64.zip"
+          ],
+          "placements": [
             {
-                "src": "better-suicide/*",
-                "dest": "plugins/better-suicide/"
+              "type": "dir",
+              "src": "better-suicide/",
+              "dest": "plugins/better-suicide/"
             }
-        ]
+          ]
+        }
+      ]
     }
+  ]
 }
-
 ```
 
 Then, you need to modify the copyright information in the `LICENSE` file. You can choose an open source license that suits your mod [here](https://choosealicense.com/licenses/). Rest assured, your mod does not need to be open source, because the mod template uses the CC0 license, you can freely modify or delete the `LICENSE` file. However, we recommend that you use an open source license, because this way you can make it easier for others to use your mod and help you improve your mod.
