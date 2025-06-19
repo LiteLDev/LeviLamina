@@ -10,9 +10,9 @@ public:
 
     [[nodiscard]] constexpr UUID(uint64 a = 0, uint64 b = 0) noexcept : a(a), b(b) {}
 
-    [[nodiscard]] inline UUID(std::string const& uuidStr) : UUID(fromString(uuidStr)) {}
+    [[nodiscard]] inline explicit UUID(std::string const& uuidStr) : UUID(fromString(uuidStr)) {}
 
-    [[nodiscard]] inline UUID(std::string_view uuidStr) : UUID(fromString(std::string{uuidStr})) {}
+    [[nodiscard]] inline explicit UUID(std::string_view uuidStr) : UUID(fromString(std::string{uuidStr})) {}
 
     LLNDAPI static mce::UUID random();
 
