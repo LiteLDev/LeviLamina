@@ -172,29 +172,17 @@ Add `#include` in `MyMod.cpp`, the final effect looks like this:
 
 #include "Config.h"
 
-#include <fmt/format.h>
-#include <functional>
 #include <ll/api/Config.h>
-#include <ll/api/command/Command.h>
 #include <ll/api/command/CommandHandle.h>
 #include <ll/api/command/CommandRegistrar.h>
 #include <ll/api/data/KeyValueDB.h>
 #include <ll/api/event/EventBus.h>
-#include <ll/api/event/ListenerBase.h>
 #include <ll/api/event/player/PlayerJoinEvent.h>
 #include <ll/api/event/player/PlayerUseItemEvent.h>
-#include <ll/api/form/ModalForm.h>
-#include <ll/api/io/FileUtils.h>
-#include <ll/api/mod/NativeMod.h>
-#include <ll/api/mod/ModManagerRegistry.h>
 #include <ll/api/service/Bedrock.h>
-#include <mc/world/actor/ActorType.h>
 #include <mc/server/commands/CommandOrigin.h>
 #include <mc/server/commands/CommandOutput.h>
-#include <mc/server/commands/CommandPermissionLevel.h>
 #include <mc/world/actor/player/Player.h>
-#include <mc/world/item/ItemStack.h>
-#include <stdexcept>
 ```
 
 ## Register command `/suicide`
@@ -208,7 +196,7 @@ In BDS, commands are not registered from the beginning, but need to be registere
     Generally speaking, the mod's constructor only needs to perform some game-independent initialization operations, such as initializing the logging system, initializing the configuration file, initializing the database, etc.
 
 ```cpp
-bool enable() {
+bool MyMod::enable() {
 
     // ...
 
@@ -220,7 +208,7 @@ bool enable() {
 
     auto& command = ll::command::CommandRegistrar::getInstance()
                         .getOrCreateCommand("suicide", "Commits suicide.", CommandPermissionLevel::Any);
-    command.overload().execute<[](CommandOrigin const& origin, CommandOutput& output) {
+    command.overload().execute([this](CommandOrigin const& origin, CommandOutput& output) {
         auto* entity = origin.getEntity();
         if (entity == nullptr || !entity->isType(ActorType::Player)) {
             output.error("Only players can commit suicide");
@@ -231,7 +219,7 @@ bool enable() {
         player->kill();
 
         getSelf().getLogger().info("{} killed themselves", player->getRealName());
-    }>();
+    });
 
     // ...
 
@@ -258,7 +246,7 @@ auto& command = ll::command::CommandRegistrar::getInstance()
 The first parameter is the command itself, which is the character entered in the console or chat bar. Although it has not been tested whether various special characters can work, we still recommend that only lowercase English letters be included. The second parameter is the command introduction. When entering part of the command in the chat bar, the candidate command and its introduction will be displayed in a semi-transparent gray form above. The third parameter is the command's permission level, which is defined as follows. Among them, if we want ordinary players in survival mode to be able to execute, we should choose `Any`. And `GameDirectors` corresponds to the permission of players who are at least in creative mode, `Admin` corresponds to the permission of at least OP, and `Host` corresponds to the console's permission.
 
 ```cpp
-enum class CommandPermissionLevel : schar {
+enum class CommandPermissionLevel : uchar {
     Any           = 0x0,
     GameDirectors = 0x1,
     Admin         = 0x2,
@@ -271,9 +259,9 @@ enum class CommandPermissionLevel : schar {
 Then, we need to add an overload to the command and set the corresponding callback.
 
 ```cpp
-command.overload().execute<[](CommandOrigin const& origin, CommandOutput& output) {
+command.overload().execute([this](CommandOrigin const& origin, CommandOutput& output) {
     // ...
-}>();
+});
 ```
 
 !!! note
@@ -287,11 +275,12 @@ enum LeviCommandOperation : int {
 };
 struct LeviCommand {
     LeviCommandOperation operation;
-    SoftEnum<ModNames>   mod;
+    SoftEnum<mod::ModNames>   mod;
 };
 
 void registerModManageCommand() {
-cmd.alias("ll");
+    // ...
+    cmd.alias("ll");
     cmd.overload<LeviCommand3>().text("load").required("mod").execute(
         [](CommandOrigin const&, CommandOutput& output, LeviCommand3 const& param) {
             // ...
@@ -313,7 +302,7 @@ In the callback function, we first try to get the source of the command executio
 
 ```cpp
 auto* entity = origin.getEntity();
-if (entity == nullptr || !entity->isType(ActorType::Player)) {
+if (entity == nullptr || !entity->isPlayer()) {
     output.error("Only players can commit suicide");
     return;
 }
@@ -325,7 +314,7 @@ After we confirm that the source of execution is the player, we can convert the 
 auto* player = static_cast<Player*>(entity);
 player->kill();
 
-getInstance().getSelf().getLogger().info("{} killed themselves", player->getRealName());
+getSelf().getLogger().info("{} killed themselves", player->getRealName());
 ```
 
 !!! warning
@@ -369,18 +358,18 @@ Config config;
 Then, we read the configuration file and save the configuration information to the member variable.
 
 ```cpp
-bool load() {
+bool MyMod::load() {
     
     // ...
 
     // Load or initialize configurations.
-    const auto& configFilePath = self.getConfigDir() / "config.json";
+    const auto& configFilePath = getSelf().getConfigDir() / "config.json";
     if (!ll::config::loadConfig(config, configFilePath)) {
-        logger.warn("Cannot load configurations from {}", configFilePath);
-        logger.info("Saving default configurations");
+        getSelf().getLogger().warn("Cannot load configurations from {}", configFilePath);
+        getSelf().getLogger().info("Saving default configurations");
 
         if (!ll::config::saveConfig(config, configFilePath)) {
-            logger.error("Cannot save default configurations to {}", configFilePath);
+            getSelf().getLogger().error("Cannot save default configurations to {}", configFilePath);
         }
     }
 
@@ -413,7 +402,7 @@ std::unique_ptr<ll::data::KeyValueDB> playerDb;
 Then, in the `load` function, we initialize the database instance.
 
 ```cpp
-bool load() {
+bool MyMod::load() {
         
     // ...
 
@@ -445,7 +434,7 @@ ll::event::ListenerPtr playerJoinEventListener;
 In the `enable()` function, we register this event listener, and in the `disable()` function, we unregister it.
 
 ```cpp
-bool enable() {
+bool MyMod::enable() {
 
     // ...
 
@@ -453,8 +442,8 @@ bool enable() {
 
     playerJoinEventListener = eventBus.emplaceListener<ll::event::player::PlayerJoinEvent>(
         [doGiveClockOnFirstJoin = config.doGiveClockOnFirstJoin,
-         &logger,
-         &playerDb = playerDb](ll::event::player::PlayerJoinEvent& event) {
+         &playerDb = playerDb
+         this](ll::event::player::PlayerJoinEvent& event) {
             if (doGiveClockOnFirstJoin) {
                 auto& player = event.self();
 
@@ -471,10 +460,10 @@ bool enable() {
 
                     // Mark the player as joined.
                     if (!playerDb->set(uuid.asString(), "true")) {
-                        logger.error("Cannot mark {} as joined in database", player.getRealName());
+                        getSelf().getLogger().error("Cannot mark {} as joined in database", player.getRealName());
                     }
 
-                    logger.info("First join of {}! Giving them a clock", player.getRealName());
+                    getSelf().getLogger().info("First join of {}! Giving them a clock", player.getRealName());
                 }
             }
         }
@@ -484,7 +473,7 @@ bool enable() {
 
 }
 
-bool disable() {
+bool MyMod::disable() {
 
     // ...
 
@@ -497,12 +486,12 @@ bool disable() {
 }
 ```
 
-Let's break down these codes and see. In the callback lambda function, we capture the `doGiveClockOnFirstJoin` in the configuration, as well as the mod's logger and database instance. Then, we judge whether the `doGiveClockOnFirstJoin` in the configuration is `true`, and if so, continue to execute the logic.
+Let's break down these codes and see. In the callback lambda function, we capture the `doGiveClockOnFirstJoin` in the configuration, as well as the mod's this and database instance. Then, we judge whether the `doGiveClockOnFirstJoin` in the configuration is `true`, and if so, continue to execute the logic.
 
 ```cpp
 [doGiveClockOnFirstJoin = config.doGiveClockOnFirstJoin,
- &logger,
- &playerDb = playerDb](ll::event::player::PlayerJoinEvent& event) {
+ &playerDb = playerDb
+ this](ll::event::player::PlayerJoinEvent& event) {
     if (doGiveClockOnFirstJoin) {
         // ...
     }
@@ -534,7 +523,7 @@ if (!playerDb->get(uuid.asString())) {
 Next, we create a clock item stack and add it to the player's backpack.
 
 ```cpp
-ItemStack itemStack("clock", 1);
+ItemStack itemStack("minecraft:clock", 1);
 player.add(itemStack);
 ```
 
@@ -552,7 +541,7 @@ Finally, we use the player's UUID as the key to mark the player as having entere
 ```cpp
 // Mark the player as joined.
 if (!playerDb->set(uuid.asString(), "true")) {
-    logger.error("Cannot mark {} as joined in database", player.getRealName());
+    getSelf().getLogger().error("Cannot mark {} as joined in database", player.getRealName());
 }
 ```
 
@@ -575,28 +564,28 @@ ll::event::ListenerPtr playerUseItemEventListener;
 In the `enable()` function, we register this event listener, and in the `disable()` function, we unregister it.
 
 ```cpp
-bool enable() {
+bool MyMod::enable() {
 
     // ...
 
     playerUseItemEventListener =
         eventBus.emplaceListener<ll::event::PlayerUseItemEvent>([enableClockMenu = config.enableClockMenu,
-                                                                 &logger](ll::event::PlayerUseItemEvent& event) {
+                                                                 this](ll::event::PlayerUseItemEvent& event) {
             if (enableClockMenu) {
                 auto& player    = event.self();
                 auto& itemStack = event.item();
 
-                if (itemStack.getRawNameId() == "clock") {
+                if (itemStack.getTypeName() == "minecraft:clock") {
                     ll::form::ModalForm form(
                         "Warning",
                         "Are you sure you want to kill yourself?",
                         "Yes",
                         "No",
-                        [&logger](Player& player, bool yes) {
+                        [this](Player& player, bool yes) {
                             if (yes) {
                                 player.kill();
 
-                                logger.info("{} killed themselves", player.getRealName());
+                                getSelf().getLogger().info("{} killed themselves", player.getRealName());
                             }
                         }
                     );
@@ -610,7 +599,7 @@ bool enable() {
 
 }
 
-bool disable() {
+bool MyMod::disable() {
 
     // ...
 
@@ -621,11 +610,11 @@ bool disable() {
 }
 ```
 
-Let's break down the code and see. In the callback lambda function, we capture the configuration item `enableClockMenu` and logger, and then judge, only when the configuration item is enabled, execute the logic.
+Let's break down the code and see. In the callback lambda function, we capture the configuration item `enableClockMenu` and this, and then judge, only when the configuration item is enabled, execute the logic.
 
 ```cpp
 playerUseItemEventListener = eventBus.emplaceListener<ll::event::PlayerUseItemEvent>(
-    [enableClockMenu = config.enableClockMenu, &logger](ll::event::PlayerUseItemEvent& event) {
+    [enableClockMenu = config.enableClockMenu, this](ll::event::PlayerUseItemEvent& event) {
         if (enableClockMenu) {
            // ...
         }
@@ -639,7 +628,7 @@ In the logic, we first get the two attributes of the event, the player who uses 
 auto& player    = event.self();
 auto& itemStack = event.item();
 
-if (itemStack.getRawNameId() == "clock") {
+if (itemStack.getTypeName() == "minecraft:clock") {
     // ...
 }
 ```
@@ -655,11 +644,11 @@ ll::form::ModalForm form(
     "Are you sure you want to kill yourself?",
     "Yes",
     "No",
-    [&logger](Player& player, bool yes) {
+    [this](Player& player, bool yes) {
         if (yes) {
             player.kill();
 
-            logger.info("{} killed themselves", player.getRealName());
+            getSelf().getLogger().info("{} killed themselves", player.getRealName());
         }
     }
 );

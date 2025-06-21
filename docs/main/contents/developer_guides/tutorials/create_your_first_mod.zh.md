@@ -172,30 +172,17 @@ xmake
 
 #include "Config.h"
 
-#include <fmt/format.h>
-#include <functional>
 #include <ll/api/Config.h>
-#include <ll/api/command/Command.h>
 #include <ll/api/command/CommandHandle.h>
 #include <ll/api/command/CommandRegistrar.h>
 #include <ll/api/data/KeyValueDB.h>
 #include <ll/api/event/EventBus.h>
-#include <ll/api/event/ListenerBase.h>
 #include <ll/api/event/player/PlayerJoinEvent.h>
 #include <ll/api/event/player/PlayerUseItemEvent.h>
-#include <ll/api/form/ModalForm.h>
-#include <ll/api/io/FileUtils.h>
-#include <ll/api/mod/NativeMod.h>
-#include <ll/api/mod/ModManagerRegistry.h>
 #include <ll/api/service/Bedrock.h>
-#include <mc/world/actor/ActorType.h>
 #include <mc/server/commands/CommandOrigin.h>
 #include <mc/server/commands/CommandOutput.h>
-#include <mc/server/commands/CommandPermissionLevel.h>
 #include <mc/world/actor/player/Player.h>
-#include <mc/world/item/registry/ItemStack.h>
-#include <memory>
-#include <stdexcept>
 ```
 
 ## 注册指令`/suicide`
@@ -209,7 +196,7 @@ xmake
     一般来说，模组的构造函数中只需要进行一些与游戏无关初始化操作即可，例如初始化日志系统、初始化配置文件、初始化数据库等等。
 
 ```cpp
-bool enable() {
+bool MyMod::enable() {
 
     // ...
 
@@ -221,7 +208,7 @@ bool enable() {
 
     auto& command = ll::command::CommandRegistrar::getInstance()
                         .getOrCreateCommand("suicide", "Commits suicide.", CommandPermissionLevel::Any);
-    command.overload().execute<[](CommandOrigin const& origin, CommandOutput& output) {
+    command.overload().execute([this](CommandOrigin const& origin, CommandOutput& output) {
         auto* entity = origin.getEntity();
         if (entity == nullptr || !entity->isType(ActorType::Player)) {
             output.error("Only players can commit suicide");
@@ -231,8 +218,8 @@ bool enable() {
         auto* player = static_cast<Player*>(entity); // NOLINT(cppcoreguidelines-pro-type-static-cast-downcast)
         player->kill();
 
-        getInstance().getLogger().info("{} killed themselves", player->getRealName());
-    }>();
+        getSelf().getLogger().info("{} killed themselves", player->getRealName());
+    });
 
     // ...
 
@@ -259,7 +246,7 @@ auto& command = ll::command::CommandRegistrar::getInstance()
 其中，第一个参数是指令本身，即在控制台或聊天栏内输入的字符。虽然尚未测试各种特殊字符能否生效，但我们仍然建议只包含小写英文字母。第二个参数是指令简介，在聊天栏输入指令的一部分时，会在上方以半透明灰色的形式显示候选指令及其简介。第三个参数是指令的权限等级，其定义如下。其中，如果我们希望生存模式下的普通玩家也能执行，应当选择`Any`。而`GameDirectors`对应至少为创造模式的玩家的权限，`Admin`对应至少为OP的权限，`Host`对应控制台的权限。
 
 ```cpp
-enum class CommandPermissionLevel : schar {
+enum class CommandPermissionLevel : uchar {
     Any           = 0x0,
     GameDirectors = 0x1,
     Admin         = 0x2,
@@ -272,9 +259,9 @@ enum class CommandPermissionLevel : schar {
 然后，我们需要为指令增加一个重载并设置对应的回调。
 
 ```cpp
-command.overload().execute<[](CommandOrigin const& origin, CommandOutput& output) {
+command.overload().execute([this](CommandOrigin const& origin, CommandOutput& output) {
     // ...
-}>();
+});
 ```
 
 !!! note
@@ -288,11 +275,12 @@ enum LeviCommandOperation : int {
 };
 struct LeviCommand {
     LeviCommandOperation operation;
-    SoftEnum<ModNames>   mod;
+    SoftEnum<mod::ModNames>   mod;
 };
 
 void registerModManageCommand() {
-cmd.alias("ll");
+    // ...
+    cmd.alias("ll");
     cmd.overload<LeviCommand3>().text("load").required("mod").execute(
         [](CommandOrigin const&, CommandOutput& output, LeviCommand3 const& param) {
             // ...
@@ -314,7 +302,7 @@ cmd.alias("ll");
 
 ```cpp
 auto* entity = origin.getEntity();
-if (entity == nullptr || !entity->isType(ActorType::Player)) {
+if (entity == nullptr || !entity->isPlayer()) {
     output.error("Only players can commit suicide");
     return;
 }
@@ -326,7 +314,7 @@ if (entity == nullptr || !entity->isType(ActorType::Player)) {
 auto* player = static_cast<Player*>(entity);
 player->kill();
 
-getInstance().getSelf().getLogger().info("{} killed themselves", player->getRealName());
+getSelf().getLogger().info("{} killed themselves", player->getRealName());
 ```
 
 !!! warning
@@ -370,18 +358,18 @@ Config config;
 然后，我们读取配置文件并将配置信息保存到成员变量中。
 
 ```cpp
-bool load() {
+bool MyMod::load() {
     
     // ...
 
     // Load or initialize configurations.
-    const auto& configFilePath = self.getConfigDir() / "config.json";
+    const auto& configFilePath = getSelf().getConfigDir() / "config.json";
     if (!ll::config::loadConfig(config, configFilePath)) {
-        logger.warn("Cannot load configurations from {}", configFilePath);
-        logger.info("Saving default configurations");
+        getSelf().getLogger().warn("Cannot load configurations from {}", configFilePath);
+        getSelf().getLogger().info("Saving default configurations");
 
         if (!ll::config::saveConfig(config, configFilePath)) {
-            logger.error("Cannot save default configurations to {}", configFilePath);
+            getSelf().getLogger().error("Cannot save default configurations to {}", configFilePath);
         }
     }
 
@@ -414,12 +402,12 @@ std::unique_ptr<ll::data::KeyValueDB> playerDb;
 然后，我们在`load`函数中，初始化数据库实例。
 
 ```cpp
-bool load() {
+bool MyMod::load() {
         
     // ...
 
     // Initialize databases;
-    const auto& playerDbPath = self.getDataDir() / "players";
+    const auto& playerDbPath = getSelf().getDataDir() / "players";
     playerDb                 = std::make_unique<ll::data::KeyValueDB>(playerDbPath);
 
     // ...
@@ -446,16 +434,16 @@ ll::event::ListenerPtr playerJoinEventListener;
 在`enable()`函数中注册这个事件监听器，并在`disable()`函数中取消注册。
 
 ```cpp
-bool enable() {
+bool MyMod::enable() {
 
     // ...
 
     auto& eventBus = ll::event::EventBus::getInstance();
 
-    playerJoinEventListener = eventBus.emplaceListener<ll::event::player::PlayerJoinEvent>(
+    playerJoinEventListener = eventBus.emplaceListener<ll::event::PlayerJoinEvent>(
         [doGiveClockOnFirstJoin = config.doGiveClockOnFirstJoin,
-         &logger,
-         &playerDb = playerDb](ll::event::player::PlayerJoinEvent& event) {
+         &playerDb = playerDb,
+         this](ll::event::PlayerJoinEvent& event) {
             if (doGiveClockOnFirstJoin) {
                 auto& player = event.self();
 
@@ -472,10 +460,10 @@ bool enable() {
 
                     // Mark the player as joined.
                     if (!playerDb->set(uuid.asString(), "true")) {
-                        logger.error("Cannot mark {} as joined in database", player.getRealName());
+                        getSelf().getLogger().error("Cannot mark {} as joined in database", player.getRealName());
                     }
 
-                    logger.info("First join of {}! Giving them a clock", player.getRealName());
+                    getSelf().getLogger().info("First join of {}! Giving them a clock", player.getRealName());
                 }
             }
         }
@@ -485,7 +473,7 @@ bool enable() {
 
 }
 
-bool disable() {
+bool MyMod::disable() {
 
     // ...
 
@@ -498,12 +486,12 @@ bool disable() {
 }
 ```
 
-让我们将这些代码拆开来看。在回调lambda函数中，我们捕获了配置中的`doGiveClockOnFirstJoin`，以及模组的logger和数据库实例。然后，我们判断配置中的`doGiveClockOnFirstJoin`是否为`true`，如果是，则继续执行逻辑。
+让我们将这些代码拆开来看。在回调lambda函数中，我们捕获了配置中的`doGiveClockOnFirstJoin`，以及模组的this和数据库实例。然后，我们判断配置中的`doGiveClockOnFirstJoin`是否为`true`，如果是，则继续执行逻辑。
 
 ```cpp
 [doGiveClockOnFirstJoin = config.doGiveClockOnFirstJoin,
- &logger,
- &playerDb = playerDb](ll::event::player::PlayerJoinEvent& event) {
+ &playerDb = playerDb
+ this](ll::event::player::PlayerJoinEvent& event) {
     if (doGiveClockOnFirstJoin) {
         // ...
     }
@@ -535,7 +523,7 @@ if (!playerDb->get(uuid.asString())) {
 接下来，我们创建一个钟的物品栈，并将这个物品栈添加到玩家的背包中。
 
 ```cpp
-ItemStack itemStack("clock", 1);
+ItemStack itemStack("minecraft:clock", 1);
 player.add(itemStack);
 ```
 
@@ -553,7 +541,7 @@ player.refreshInventory();
 ```cpp
 // Mark the player as joined.
 if (!playerDb->set(uuid.asString(), "true")) {
-    logger.error("Cannot mark {} as joined in database", player.getRealName());
+    getSelf().getLogger().error("Cannot mark {} as joined in database", player.getRealName());
 }
 ```
 
@@ -576,28 +564,28 @@ ll::event::ListenerPtr playerUseItemEventListener;
 在`enable()`函数中注册这个事件监听器，并在`disable()`函数中取消注册。
 
 ```cpp
-bool enable() {
+bool MyMod::enable() {
 
     // ...
 
     playerUseItemEventListener =
         eventBus.emplaceListener<ll::event::PlayerUseItemEvent>([enableClockMenu = config.enableClockMenu,
-                                                                 &logger](ll::event::PlayerUseItemEvent& event) {
+                                                                 this](ll::event::PlayerUseItemEvent& event) {
             if (enableClockMenu) {
                 auto& player    = event.self();
                 auto& itemStack = event.item();
 
-                if (itemStack.getRawNameId() == "clock") {
+                if (itemStack.getTypeName() == "minecraft:clock") {
                     ll::form::ModalForm form(
                         "Warning",
                         "Are you sure you want to kill yourself?",
                         "Yes",
                         "No",
-                        [&logger](Player& player, bool yes) {
+                        [this](Player& player, bool yes) {
                             if (yes) {
                                 player.kill();
 
-                                logger.info("{} killed themselves", player.getRealName());
+                                getSelf().getLogger().info("{} killed themselves", player.getRealName());
                             }
                         }
                     );
@@ -611,7 +599,7 @@ bool enable() {
 
 }
 
-bool disable() {
+bool MyMod::disable() {
 
     // ...
 
@@ -622,11 +610,11 @@ bool disable() {
 }
 ```
 
-让我们将代码拆开来看。在回调lambda函数中，我们捕获了配置项`enableClockMenu`和logger，然后进行判断，只有配置项启用时，才执行逻辑。
+让我们将代码拆开来看。在回调lambda函数中，我们捕获了配置项`enableClockMenu`和this，然后进行判断，只有配置项启用时，才执行逻辑。
 
 ```cpp
 playerUseItemEventListener = eventBus.emplaceListener<ll::event::PlayerUseItemEvent>(
-    [enableClockMenu = config.enableClockMenu, &logger](ll::event::PlayerUseItemEvent& event) {
+    [enableClockMenu = config.enableClockMenu, this](ll::event::PlayerUseItemEvent& event) {
         if (enableClockMenu) {
            // ...
         }
@@ -640,7 +628,7 @@ playerUseItemEventListener = eventBus.emplaceListener<ll::event::PlayerUseItemEv
 auto& player    = event.self();
 auto& itemStack = event.item();
 
-if (itemStack.getRawNameId() == "clock") {
+if (itemStack.getTypeName() == "clock") {
     // ...
 }
 ```
@@ -656,11 +644,11 @@ ll::form::ModalForm form(
     "Are you sure you want to kill yourself?",
     "Yes",
     "No",
-    [&logger](Player& player, bool yes) {
+    [this](Player& player, bool yes) {
         if (yes) {
             player.kill();
 
-            logger.info("{} killed themselves", player.getRealName());
+            getSelf().getLogger().info("{} killed themselves", player.getRealName());
         }
     }
 );
