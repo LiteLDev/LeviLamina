@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/server/IServerMapDataManagerConnector.h"
 #include "mc/world/level/MapDataManager.h"
 
@@ -16,20 +18,23 @@ class IMapDataManagerOptions;
 class LevelStorage;
 class MapItemSavedData;
 struct ActorUniqueID;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 class ServerMapDataManager : public ::MapDataManager, public ::IServerMapDataManagerConnector {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 128> mUnke5daeb;
-    ::ll::UntypedStorage<8, 16>  mUnk3a525e;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::MapItemSavedData&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+                                                               mOnCreateMapSavedData;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnGameplayUserAdded;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ServerMapDataManager& operator=(ServerMapDataManager const&);
-    ServerMapDataManager(ServerMapDataManager const&);
     ServerMapDataManager();
 
 public:
@@ -58,20 +63,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ServerMapDataManager(
+    MCAPI ServerMapDataManager(
         ::DimensionManager&                         dimensionManager,
         ::LevelStorage*                             levelStorage,
         ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions,
         ::std::function<::ActorUniqueID()>          getNewUniqueID
     );
 
-    MCNAPI void _onGameplayUserAdded(::EntityContext& entity);
+    MCAPI void _onGameplayUserAdded(::EntityContext& entity);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::DimensionManager&                         dimensionManager,
         ::LevelStorage*                             levelStorage,
         ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions,
@@ -82,15 +87,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
+    MCAPI void $registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCNAPI ::Bedrock::PubSub::Connector<void(::MapItemSavedData&)>& $getOnCreateMapSavedDataConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::MapItemSavedData&)>& $getOnCreateMapSavedDataConnector();
 
-    MCNAPI ::MapItemSavedData& $createMapSavedData(::ActorUniqueID const& uuid);
+    MCAPI ::MapItemSavedData& $createMapSavedData(::ActorUniqueID const& uuid);
 
-    MCNAPI void $requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate);
+    MCFOLD void $requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate);
 
-    MCNAPI void $_copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid);
+    MCAPI void $_copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid);
     // NOLINTEND
 
 public:

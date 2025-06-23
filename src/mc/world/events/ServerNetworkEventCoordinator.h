@@ -31,9 +31,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void registerServerNetworkEventHandler(::std::unique_ptr<::ServerNetworkEventHandler>&& handler);
+    MCFOLD void registerServerNetworkEventHandler(::std::unique_ptr<::ServerNetworkEventHandler>&& handler);
 
-    MCNAPI ::CoordinatorResult sendEvent(::EventRef<::MutableServerNetworkGameplayEvent<::CoordinatorResult>> event);
+    MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableServerNetworkGameplayEvent<::CoordinatorResult>> event);
     // NOLINTEND
 
 public:

@@ -18,12 +18,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ServerInstanceRequestResourceReload();
+    MCAPI ~ServerInstanceRequestResourceReload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -17,14 +17,8 @@ class ItemStackRequestActionCraftBase : public ::ItemStackRequestAction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkf01199;
+    ::ll::TypedStorage<1, 1, uchar> mNumCrafts;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemStackRequestActionCraftBase& operator=(ItemStackRequestActionCraftBase const&);
-    ItemStackRequestActionCraftBase(ItemStackRequestActionCraftBase const&);
-    ItemStackRequestActionCraftBase();
 
 public:
     // virtual functions

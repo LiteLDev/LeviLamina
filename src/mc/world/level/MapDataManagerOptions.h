@@ -3,25 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/IMapDataManagerOptions.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class LevelData;
 // clang-format on
 
 class MapDataManagerOptions : public ::IMapDataManagerOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnka0070d;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelData const> const> mLevelData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MapDataManagerOptions& operator=(MapDataManagerOptions const&);
-    MapDataManagerOptions(MapDataManagerOptions const&);
-    MapDataManagerOptions();
 
 public:
     // virtual functions
@@ -45,13 +41,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isPremiumWorldTemplate() const;
+    MCAPI bool $isPremiumWorldTemplate() const;
 
-    MCNAPI bool $isLegacyLevel() const;
+    MCAPI bool $isLegacyLevel() const;
 
-    MCNAPI bool $hasMapsCenteredToOrigin() const;
+    MCAPI bool $hasMapsCenteredToOrigin() const;
 
-    MCNAPI ::BlockPos const& $getWorldCenter() const;
+    MCAPI ::BlockPos const& $getWorldCenter() const;
     // NOLINTEND
 
 public:

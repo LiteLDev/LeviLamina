@@ -40,6 +40,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::GameEventListener::DeliveryMode $getDeliveryMode() const;
+    MCFOLD ::GameEventListener::DeliveryMode $getDeliveryMode() const;
     // NOLINTEND
 };

@@ -61,9 +61,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MapDecoration(::MapDecoration const&);
+    MCAPI MapDecoration(::MapDecoration const&);
 
-    MCNAPI MapDecoration(
+    MCAPI MapDecoration(
         ::MapDecoration::Type img,
         schar                 x,
         schar                 y,
@@ -72,15 +72,15 @@ public:
         ::mce::Color const&   color
     );
 
-    MCNAPI ~MapDecoration();
+    MCAPI ~MapDecoration();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::MapDecoration const&);
+    MCAPI void* $ctor(::MapDecoration const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::MapDecoration::Type img,
         schar                 x,
         schar                 y,
@@ -93,6 +93,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

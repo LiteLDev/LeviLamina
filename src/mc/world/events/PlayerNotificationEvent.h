@@ -81,12 +81,12 @@ struct PlayerNotificationEvent : public ::EventVariantImpl<
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~PlayerNotificationEvent();
+    MCAPI ~PlayerNotificationEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

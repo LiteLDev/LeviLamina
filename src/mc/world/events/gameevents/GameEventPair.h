@@ -27,12 +27,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~GameEventPair();
+    MCAPI ~GameEventPair();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

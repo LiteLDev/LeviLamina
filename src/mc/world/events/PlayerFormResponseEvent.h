@@ -23,12 +23,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~PlayerFormResponseEvent();
+    MCAPI ~PlayerFormResponseEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

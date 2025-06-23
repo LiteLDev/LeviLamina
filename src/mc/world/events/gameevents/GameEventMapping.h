@@ -13,14 +13,14 @@ class GameEventMapping {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::GameEvent const* creatorNameToEvent(::std::string const& name);
+    MCAPI static ::GameEvent const* creatorNameToEvent(::std::string const& name);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::set<::HashedString> const& mExposedGameEvents();
+    MCAPI static ::std::set<::HashedString> const& mExposedGameEvents();
 
-    MCNAPI static ::std::vector<::GameEventPair> const& mGameEventPairs();
+    MCAPI static ::std::vector<::GameEventPair> const& mGameEventPairs();
     // NOLINTEND
 };

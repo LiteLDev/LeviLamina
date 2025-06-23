@@ -34,19 +34,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SubscribedObjectives& getPlayerSubscriptions(::ScoreboardId const& id, ::Player const& player);
+    MCAPI ::SubscribedObjectives& getPlayerSubscriptions(::ScoreboardId const& id, ::Player const& player);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult $onScoreChanged(::ScoreboardId const& id, ::std::string const& objective, int score);
+    MCAPI ::EventResult $onScoreChanged(::ScoreboardId const& id, ::std::string const& objective, int score);
     // NOLINTEND
 
 public:

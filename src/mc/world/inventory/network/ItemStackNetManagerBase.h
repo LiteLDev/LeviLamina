@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/inventory/network/TypedClientNetId.h"
 
@@ -11,27 +13,36 @@
 class BlockSource;
 class ContainerScreenContext;
 class ContainerWeakRef;
+class EntityRegistry;
 class ItemStack;
 class ItemStackNetManagerScreen;
+class ItemStackNetManagerScreenStack;
 class ItemStackRequestAction;
 class Player;
 class SparseContainer;
 struct FullContainerName;
+struct ItemStackLegacyRequestIdTag;
 struct ItemStackRequestIdTag;
 // clang-format on
 
 class ItemStackNetManagerBase {
 public:
+    // ItemStackNetManagerBase inner types define
+    using LegacyRequestScope = ::gsl::final_action<::std::function<void()>>;
+
+    using BaseContainerSetter = ::std::function<void(::ItemStack const&)>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk1a7334;
-    ::ll::UntypedStorage<1, 1>  mUnk784de5;
-    ::ll::UntypedStorage<8, 8>  mUnkecd0f2;
-    ::ll::UntypedStorage<8, 16> mUnk6169ac;
-    ::ll::UntypedStorage<8, 16> mUnk29720d;
-    ::ll::UntypedStorage<8, 8>  mUnkc005c3;
-    ::ll::UntypedStorage<1, 1>  mUnk568e3c;
-    ::ll::UntypedStorage<4, 16> mUnka42c09;
+    ::ll::TypedStorage<1, 1, bool const>                                          mIsEnabled;
+    ::ll::TypedStorage<1, 1, bool const>                                          mIsClientSide;
+    ::ll::TypedStorage<8, 8, ::Player&>                                           mPlayer;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::EntityRegistry>>                        mLevelWeakRegistry;
+    ::ll::TypedStorage<8, 16, ::OwnerPtr<::EntityRegistry>>                       mEntityRegistry;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackNetManagerScreenStack>> mScreenStack;
+    ::ll::TypedStorage<1, 1, bool>                                                mCurrentRequestHasCraftAction;
+    ::ll::TypedStorage<4, 16, ::ItemStackLegacyRequestId>                         mLegacyTransactionRequestId;
     // NOLINTEND
 
 public:

@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,6 +17,7 @@ class ILevelStorageManagerConnector;
 class IMapDataManagerOptions;
 class LevelStorage;
 class MapItemSavedData;
+class PacketSender;
 struct ActorUniqueID;
 // clang-format on
 
@@ -22,13 +25,13 @@ class MapDataManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk6089a7;
-    ::ll::UntypedStorage<8, 8>  mUnk215bd6;
-    ::ll::UntypedStorage<8, 8>  mUnk62aa37;
-    ::ll::UntypedStorage<8, 64> mUnka44462;
-    ::ll::UntypedStorage<8, 16> mUnkda67f0;
-    ::ll::UntypedStorage<8, 64> mUnk8ad806;
-    ::ll::UntypedStorage<8, 24> mUnke8e6fb;
+    ::ll::TypedStorage<8, 8, ::DimensionManager&>                                          mDimensionManager;
+    ::ll::TypedStorage<8, 8, ::LevelStorage*>                                              mLevelStorage;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IMapDataManagerOptions>>> mMapDataManagerOptions;
+    ::ll::TypedStorage<8, 64, ::std::function<::ActorUniqueID()>>                          mGetNewUniqueID;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                             mOnSaveLevelData;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::std::unique_ptr<::MapItemSavedData>>> mMapData;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PacketSender>> mPacketSender;
     // NOLINTEND
 
 public:
@@ -59,46 +62,46 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MapDataManager(
+    MCAPI MapDataManager(
         ::DimensionManager&                         dimensionManager,
         ::LevelStorage*                             levelStorage,
         ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions,
         ::std::function<::ActorUniqueID()>          getNewUniqueID
     );
 
-    MCNAPI ::MapItemSavedData* _loadMapData(::ActorUniqueID const& uuid);
+    MCAPI ::MapItemSavedData* _loadMapData(::ActorUniqueID const& uuid);
 
-    MCNAPI void _onSaveLevelData(::LevelStorage& levelStorage);
+    MCAPI void _onSaveLevelData(::LevelStorage& levelStorage);
 
-    MCNAPI bool copyAndLockMap(::ActorUniqueID originalMapUuid, ::ActorUniqueID newMapUuid);
+    MCAPI bool copyAndLockMap(::ActorUniqueID originalMapUuid, ::ActorUniqueID newMapUuid);
 
-    MCNAPI ::MapItemSavedData& createMapSavedData(
+    MCAPI ::MapItemSavedData& createMapSavedData(
         ::std::vector<::ActorUniqueID> const& mapIds,
         ::BlockPos const&                     origin,
         ::DimensionType                       dimension,
         int                                   returnScaleLevel
     );
 
-    MCNAPI ::MapItemSavedData& createMapSavedData(
+    MCAPI ::MapItemSavedData& createMapSavedData(
         ::ActorUniqueID const& uuid,
         ::BlockPos const&      origin,
         ::DimensionType        dimension,
         int                    returnScaleLevel
     );
 
-    MCNAPI ::ActorUniqueID expandMapByID(::ActorUniqueID uuid, bool wasInit);
+    MCAPI ::ActorUniqueID expandMapByID(::ActorUniqueID uuid, bool wasInit);
 
-    MCNAPI ::MapItemSavedData* getMapSavedData(::ActorUniqueID uuid);
+    MCAPI ::MapItemSavedData* getMapSavedData(::ActorUniqueID uuid);
 
-    MCNAPI void registerOnSaveLevelDataSubscription(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+    MCAPI void registerOnSaveLevelDataSubscription(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
-    MCNAPI void tick();
+    MCAPI void tick();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::DimensionManager&                         dimensionManager,
         ::LevelStorage*                             levelStorage,
         ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions,
@@ -109,19 +112,19 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector&);
+    MCFOLD void $registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector&);
 
-    MCNAPI ::MapItemSavedData& $createMapSavedData(::ActorUniqueID const& uuid);
+    MCAPI ::MapItemSavedData& $createMapSavedData(::ActorUniqueID const& uuid);
 
-    MCNAPI void $requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate);
+    MCAPI void $requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate);
 
-    MCNAPI void $_copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid);
+    MCAPI void $_copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid);
     // NOLINTEND
 
 public:

@@ -30,16 +30,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI VibrationInfo(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, float distance);
+    MCAPI VibrationInfo(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, float distance);
 
-    MCNAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI void save(::CompoundTag& tag) const;
+    MCAPI void save(::CompoundTag& tag) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, float distance);
+    MCAPI void* $ctor(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, float distance);
     // NOLINTEND
 };

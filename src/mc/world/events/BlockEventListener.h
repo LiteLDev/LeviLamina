@@ -76,10 +76,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult
+    MCFOLD ::EventResult
     $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
 
-    MCNAPI ::EventResult $onBlockDestroyedByPlayer(
+    MCFOLD ::EventResult $onBlockDestroyedByPlayer(
         ::Player&         player,
         ::Block const&    destroyedBlock,
         ::BlockPos const& pos,
@@ -87,29 +87,29 @@ public:
         ::ItemStackBase const&
     );
 
-    MCNAPI ::EventResult $onBlockInPosWillBeDestroyedByPlayer(::Player& player, ::BlockPos const& pos);
+    MCFOLD ::EventResult $onBlockInPosWillBeDestroyedByPlayer(::Player& player, ::BlockPos const& pos);
 
-    MCNAPI ::EventResult
+    MCFOLD ::EventResult
     $onBlockMovedByPiston(::BlockPos const& pistonPos, ::BlockPos const& blockPos, ::PistonState const action);
 
-    MCNAPI ::EventResult $onBlockDestructionStopped(::Player& player, ::BlockPos const& blockPos, int progress);
+    MCFOLD ::EventResult $onBlockDestructionStopped(::Player& player, ::BlockPos const& blockPos, int progress);
 
-    MCNAPI ::EventResult $onBlockDestructionStarted(::Player&, ::BlockPos const&, ::Block const&, uchar const);
+    MCFOLD ::EventResult $onBlockDestructionStarted(::Player&, ::BlockPos const&, ::Block const&, uchar const);
 
-    MCNAPI ::EventResult $onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos);
+    MCFOLD ::EventResult $onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos);
 
-    MCNAPI ::EventResult $onBlockExploded(
+    MCFOLD ::EventResult $onBlockExploded(
         ::Dimension&      dimension,
         ::BlockPos const& blockPos,
         ::Block const&    destroyedBlock,
         ::Actor*          source
     );
 
-    MCNAPI ::EventResult $onBlockModified(::BlockPos const& pos, ::Block const& oldBlock, ::Block const& newBlock);
+    MCFOLD ::EventResult $onBlockModified(::BlockPos const& pos, ::Block const& oldBlock, ::Block const& newBlock);
 
-    MCNAPI ::EventResult $onUnknownBlockReceived(::Level& level, ::NewBlockID const& blockId, ushort data);
+    MCFOLD ::EventResult $onUnknownBlockReceived(::Level& level, ::NewBlockID const& blockId, ushort data);
 
-    MCNAPI ::EventResult $onEvent(::BlockNotificationEvent const& event);
+    MCFOLD ::EventResult $onEvent(::BlockNotificationEvent const& event);
     // NOLINTEND
 
 public:

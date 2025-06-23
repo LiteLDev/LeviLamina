@@ -66,28 +66,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _areAdjacentChunksTicking(::BlockSource& region) const;
+    MCAPI bool _areAdjacentChunksTicking(::BlockSource& region) const;
 
-    MCNAPI void _requestVibrationParticle(::BlockSource& region, ::BlockPos const& originPos, float timeToLive);
+    MCAPI void _requestVibrationParticle(::BlockSource& region, ::BlockPos const& originPos, float timeToLive);
 
-    MCNAPI void _tickInternal(::BlockSource& region);
+    MCAPI void _tickInternal(::BlockSource& region);
 
-    MCNAPI void _trySendSneakCloseToSculkSensorEventPacket(
+    MCAPI void _trySendSneakCloseToSculkSensorEventPacket(
         ::BlockSource&            region,
         ::GameEvent const&        gameEvent,
         ::GameEventContext const& gameEventContext,
         ::Vec3 const&             sensorPos
     );
 
-    MCNAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI void save(::CompoundTag& tag) const;
+    MCAPI void save(::CompoundTag& tag) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _shouldIgnoreVibration(
+    MCAPI static bool _shouldIgnoreVibration(
         ::BlockSource&            region,
         ::GameEvent const&        gameEvent,
         ::GameEventContext const& gameEventContext
@@ -97,12 +97,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void
+    MCAPI void
     $handleGameEvent(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, ::BlockSource& region);
 
-    MCNAPI uint $getRange() const;
+    MCFOLD uint $getRange() const;
 
-    MCNAPI ::GameEvents::PositionSource const& $getPositionSource() const;
+    MCFOLD ::GameEvents::PositionSource const& $getPositionSource() const;
     // NOLINTEND
 
 public:

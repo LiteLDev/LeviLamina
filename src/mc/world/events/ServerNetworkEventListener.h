@@ -36,17 +36,17 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult $onEvent(::ServerNetworkGameplayNotificationEvent const&);
+    MCFOLD ::EventResult $onEvent(::ServerNetworkGameplayNotificationEvent const&);
 
-    MCNAPI ::EventResult $onMessage(::MessageEvent const&);
+    MCFOLD ::EventResult $onMessage(::MessageEvent const&);
 
-    MCNAPI ::EventResult $onDiagnostics(::DiagnosticsEvent const&);
+    MCFOLD ::EventResult $onDiagnostics(::DiagnosticsEvent const&);
     // NOLINTEND
 
 public:

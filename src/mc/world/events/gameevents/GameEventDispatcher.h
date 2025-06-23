@@ -15,7 +15,7 @@ class GameEventDispatcher {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void post(
+    MCAPI void post(
         ::BlockSource&     region,
         ::Actor*           source,
         ::GameEvent const& gameEvent,

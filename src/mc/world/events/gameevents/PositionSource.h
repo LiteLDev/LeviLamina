@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void serializeTo(::CompoundTag& tag) const;
+    MCAPI void serializeTo(::CompoundTag& tag) const;
     // NOLINTEND
 };
 

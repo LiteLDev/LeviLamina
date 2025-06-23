@@ -3,36 +3,30 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/item/MapType.h"
 #include "mc/world/level/saveddata/maps/MapDecoration.h"
-
-// auto generated forward declare list
-// clang-format off
-class HashedString;
-// clang-format on
 
 struct ExplorationMapData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkd397f8;
-    ::ll::UntypedStorage<1, 1>  mUnk5ec1c3;
-    ::ll::UntypedStorage<8, 32> mUnkdfa1e3;
-    ::ll::UntypedStorage<8, 48> mUnk7942a7;
-    ::ll::UntypedStorage<1, 1>  mUnkf76ab7;
-    ::ll::UntypedStorage<8, 56> mUnkcfce3c;
+    ::ll::TypedStorage<4, 4, ::MapType>                        mMapType;
+    ::ll::TypedStorage<1, 1, ::MapDecoration::Type>            mMarkerType;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mFeatureName;
+    ::ll::TypedStorage<8, 48, ::HashedString>                  mStructureType;
+    ::ll::TypedStorage<1, 1, bool>                             mFeatureMustBeInNewChunks;
+    ::ll::TypedStorage<8, 56, ::std::optional<::HashedString>> mBiomeTag;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ExplorationMapData& operator=(ExplorationMapData const&);
-    ExplorationMapData(ExplorationMapData const&);
     ExplorationMapData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ExplorationMapData(
+    MCAPI ExplorationMapData(
         ::MapType                              mapType,
         ::MapDecoration::Type                  markerType,
         ::std::string const&                   featureName,
@@ -41,13 +35,13 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCNAPI ~ExplorationMapData();
+    MCAPI ~ExplorationMapData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::MapType                              mapType,
         ::MapDecoration::Type                  markerType,
         ::std::string const&                   featureName,
@@ -60,6 +54,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
