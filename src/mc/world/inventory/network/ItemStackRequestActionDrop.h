@@ -16,14 +16,8 @@ class ItemStackRequestActionDrop : public ::ItemStackRequestActionTransferBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkf7f505;
+    ::ll::TypedStorage<1, 1, bool> mRandomly;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemStackRequestActionDrop& operator=(ItemStackRequestActionDrop const&);
-    ItemStackRequestActionDrop(ItemStackRequestActionDrop const&);
-    ItemStackRequestActionDrop();
 
 public:
     // virtual functions

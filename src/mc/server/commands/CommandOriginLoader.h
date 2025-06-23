@@ -16,7 +16,7 @@ class CommandOriginLoader : public ::ICommandOriginLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnke6b10a;
+    ::ll::TypedStorage<8, 8, ::ServerLevel&> mServerLevel;
     // NOLINTEND
 
 public:
@@ -38,19 +38,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::CommandOrigin> load(::CompoundTag const& tag, ::ServerLevel& level);
+    MCAPI static ::std::unique_ptr<::CommandOrigin> load(::CompoundTag const& tag, ::ServerLevel& level);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::CommandOrigin> $load(::CompoundTag const& tag);
+    MCAPI ::std::unique_ptr<::CommandOrigin> $load(::CompoundTag const& tag);
     // NOLINTEND
 
 public:

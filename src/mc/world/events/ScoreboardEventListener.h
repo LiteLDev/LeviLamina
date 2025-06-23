@@ -33,19 +33,19 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult $onObjectiveAdded(::std::string const&);
+    MCFOLD ::EventResult $onObjectiveAdded(::std::string const&);
 
-    MCNAPI ::EventResult $onObjectiveRemoved(::std::string const&);
+    MCFOLD ::EventResult $onObjectiveRemoved(::std::string const&);
 
-    MCNAPI ::EventResult $onScoreboardIdentityRemoved(::ScoreboardId const&);
+    MCFOLD ::EventResult $onScoreboardIdentityRemoved(::ScoreboardId const&);
 
-    MCNAPI ::EventResult $onScoreChanged(::ScoreboardId const&, ::std::string const&, int);
+    MCFOLD ::EventResult $onScoreChanged(::ScoreboardId const&, ::std::string const&, int);
     // NOLINTEND
 
 public:

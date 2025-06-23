@@ -24,12 +24,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ActorDefinitionTriggeredEvent();
+    MCAPI ~ActorDefinitionTriggeredEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

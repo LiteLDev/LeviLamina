@@ -17,14 +17,8 @@ class ItemStackRequestActionCraftGrindstone : public ::ItemStackRequestActionCra
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk52d9fe;
+    ::ll::TypedStorage<4, 4, int> mRepairCost;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemStackRequestActionCraftGrindstone& operator=(ItemStackRequestActionCraftGrindstone const&);
-    ItemStackRequestActionCraftGrindstone(ItemStackRequestActionCraftGrindstone const&);
-    ItemStackRequestActionCraftGrindstone();
 
 public:
     // virtual functions

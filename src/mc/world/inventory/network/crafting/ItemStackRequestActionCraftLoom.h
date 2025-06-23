@@ -16,14 +16,8 @@ class ItemStackRequestActionCraftLoom : public ::ItemStackRequestActionCraftBase
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk169021;
+    ::ll::TypedStorage<8, 32, ::std::string> mPatternNameId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemStackRequestActionCraftLoom& operator=(ItemStackRequestActionCraftLoom const&);
-    ItemStackRequestActionCraftLoom(ItemStackRequestActionCraftLoom const&);
-    ItemStackRequestActionCraftLoom();
 
 public:
     // virtual functions

@@ -14,14 +14,8 @@ class CDNConfig : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk811154;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::string, ::std::string>>> mPackCDNUrls;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CDNConfig& operator=(CDNConfig const&);
-    CDNConfig(CDNConfig const&);
-    CDNConfig();
 
 public:
     // virtual functions

@@ -23,24 +23,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ItemDefinitionEventTriggeredEvent(::ItemDefinitionEventTriggeredEvent&&);
+    MCAPI ItemDefinitionEventTriggeredEvent(::ItemDefinitionEventTriggeredEvent&&);
 
-    MCNAPI ItemDefinitionEventTriggeredEvent(::ItemDefinitionEventTriggeredEvent const&);
+    MCAPI ItemDefinitionEventTriggeredEvent(::ItemDefinitionEventTriggeredEvent const&);
 
-    MCNAPI ~ItemDefinitionEventTriggeredEvent();
+    MCAPI ~ItemDefinitionEventTriggeredEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ItemDefinitionEventTriggeredEvent&&);
+    MCAPI void* $ctor(::ItemDefinitionEventTriggeredEvent&&);
 
-    MCNAPI void* $ctor(::ItemDefinitionEventTriggeredEvent const&);
+    MCAPI void* $ctor(::ItemDefinitionEventTriggeredEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

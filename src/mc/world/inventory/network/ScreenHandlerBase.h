@@ -8,13 +8,14 @@
 // auto generated forward declare list
 // clang-format off
 class ItemStackRequestAction;
+class ItemStackRequestActionHandler;
 // clang-format on
 
 class ScreenHandlerBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkb78672;
+    ::ll::TypedStorage<8, 8, ::ItemStackRequestActionHandler&> mRequestHandler;
     // NOLINTEND
 
 public:

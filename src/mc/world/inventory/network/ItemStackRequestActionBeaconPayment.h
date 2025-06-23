@@ -16,15 +16,9 @@ class ItemStackRequestActionBeaconPayment : public ::ItemStackRequestAction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk4d0b04;
-    ::ll::UntypedStorage<4, 4> mUnk2cb397;
+    ::ll::TypedStorage<4, 4, int> mPrimaryEffectId;
+    ::ll::TypedStorage<4, 4, int> mSecondaryEffectId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemStackRequestActionBeaconPayment& operator=(ItemStackRequestActionBeaconPayment const&);
-    ItemStackRequestActionBeaconPayment(ItemStackRequestActionBeaconPayment const&);
-    ItemStackRequestActionBeaconPayment();
 
 public:
     // virtual functions

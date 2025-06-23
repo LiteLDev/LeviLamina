@@ -11,8 +11,12 @@
 // clang-format off
 class ItemStack;
 class ItemStackRequestActionCraftBase;
+class ItemStackRequestActionCraftHandler;
 class Recipe;
 class Recipes;
+struct AllowedAnywhereConsume;
+struct ExpectedAnywhereConsume;
+struct ExpectedSlotConsume;
 struct FullContainerName;
 struct RecipeNetIdTag;
 // clang-format on
@@ -21,13 +25,13 @@ class CraftHandlerBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk97411e;
-    ::ll::UntypedStorage<1, 1>  mUnkf6091a;
-    ::ll::UntypedStorage<1, 1>  mUnkd3fa17;
-    ::ll::UntypedStorage<8, 24> mUnk1a195c;
-    ::ll::UntypedStorage<8, 24> mUnk4b67b7;
-    ::ll::UntypedStorage<8, 24> mUnke75150;
-    ::ll::UntypedStorage<1, 1>  mUnkbdc7c9;
+    ::ll::TypedStorage<8, 8, ::ItemStackRequestActionCraftHandler&>     mCraftRequestHandler;
+    ::ll::TypedStorage<1, 1, ::ItemStackRequestActionType>              mCraftActionType;
+    ::ll::TypedStorage<1, 1, bool>                                      mNonImplementedTrustClientResults;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpectedSlotConsume>>     mExpectedSlotConsumes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpectedAnywhereConsume>> mExpectedAnywhereConsumes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AllowedAnywhereConsume>>  mAllowedAnywhereConsumes;
+    ::ll::TypedStorage<1, 1, bool>                                      mIsCraftRequest;
     // NOLINTEND
 
 public:

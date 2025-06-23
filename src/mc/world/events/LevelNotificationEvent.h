@@ -37,12 +37,12 @@ struct LevelNotificationEvent : public ::EventVariantImpl<
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~LevelNotificationEvent();
+    MCAPI ~LevelNotificationEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

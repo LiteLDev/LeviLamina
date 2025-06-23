@@ -28,16 +28,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::BlockEventDispatcherToken& operator=(::BlockEventDispatcherToken&& rhs);
+    MCAPI ::BlockEventDispatcherToken& operator=(::BlockEventDispatcherToken&& rhs);
 
-    MCNAPI void unregister();
+    MCAPI void unregister();
 
-    MCNAPI ~BlockEventDispatcherToken();
+    MCAPI ~BlockEventDispatcherToken();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

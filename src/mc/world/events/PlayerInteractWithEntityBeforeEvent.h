@@ -28,20 +28,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PlayerInteractWithEntityBeforeEvent(::PlayerInteractWithEntityBeforeEvent const&);
+    MCAPI PlayerInteractWithEntityBeforeEvent(::PlayerInteractWithEntityBeforeEvent const&);
 
-    MCNAPI ~PlayerInteractWithEntityBeforeEvent();
+    MCAPI ~PlayerInteractWithEntityBeforeEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PlayerInteractWithEntityBeforeEvent const&);
+    MCFOLD void* $ctor(::PlayerInteractWithEntityBeforeEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

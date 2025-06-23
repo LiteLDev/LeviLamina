@@ -2,9 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/Brightness.h"
+#include "mc/world/level/block/DetectionRule.h"
+
 // auto generated forward declare list
 // clang-format off
 class Block;
+class BlockTransformationComponent;
+struct BlockBakedMaterialDataComponent;
+struct BlockCollisionBoxComponent;
+struct BlockDestructibleByMiningComponent;
+struct BlockGeometryComponent;
+struct BlockItemVisualComponent;
+struct BlockRedstoneComponent;
+struct BlockSelectionBoxComponent;
 // clang-format on
 
 struct BlockComponentDirectData {
@@ -19,38 +31,32 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkb0c407;
-    ::ll::UntypedStorage<8, 8> mUnk9d5ce7;
-    ::ll::UntypedStorage<8, 8> mUnkc58c4d;
-    ::ll::UntypedStorage<8, 8> mUnk3708df;
-    ::ll::UntypedStorage<8, 8> mUnkc655c3;
-    ::ll::UntypedStorage<8, 8> mUnkf1ecf5;
-    ::ll::UntypedStorage<8, 8> mUnk219668;
-    ::ll::UntypedStorage<1, 1> mUnkf938af;
-    ::ll::UntypedStorage<1, 1> mUnk655f5d;
-    ::ll::UntypedStorage<1, 1> mUnk447d20;
-    ::ll::UntypedStorage<1, 1> mUnke8f499;
-    ::ll::UntypedStorage<1, 1> mUnkda4e0e;
-    ::ll::UntypedStorage<1, 1> mUnkce59a7;
-    ::ll::UntypedStorage<4, 4> mUnkda06ee;
-    ::ll::UntypedStorage<4, 4> mUnk2c97b4;
-    ::ll::UntypedStorage<4, 4> mUnk2a895e;
-    ::ll::UntypedStorage<4, 4> mUnk75da08;
-    ::ll::UntypedStorage<4, 4> mUnkc08fbd;
-    ::ll::UntypedStorage<1, 4> mUnkd3e7c9;
-    ::ll::UntypedStorage<4, 4> mUnk78fd87;
-    ::ll::UntypedStorage<8, 8> mUnk84a8b9;
+    ::ll::TypedStorage<8, 8, ::BlockTransformationComponent const*>       mBlockTransformationComponent;
+    ::ll::TypedStorage<8, 8, ::BlockCollisionBoxComponent const*>         mBlockCollisionBoxComponent;
+    ::ll::TypedStorage<8, 8, ::BlockSelectionBoxComponent const*>         mBlockSelectionBoxComponent;
+    ::ll::TypedStorage<8, 8, ::BlockRedstoneComponent const*>             mBlockRedstoneComponent;
+    ::ll::TypedStorage<8, 8, ::BlockGeometryComponent const*>             mBlockGeometryComponent;
+    ::ll::TypedStorage<8, 8, ::BlockBakedMaterialDataComponent const*>    mBlockBakedMaterialDataComponent;
+    ::ll::TypedStorage<8, 8, ::BlockItemVisualComponent const*>           mBlockItemVisualComponent;
+    ::ll::TypedStorage<1, 1, bool>                                        mIsFullBlock;
+    ::ll::TypedStorage<1, 1, bool>                                        mUseNewTessellation;
+    ::ll::TypedStorage<1, 1, bool>                                        mNeedsLegacyTopRotation;
+    ::ll::TypedStorage<1, 1, bool>                                        mIsOpaqueFullBlock;
+    ::ll::TypedStorage<1, 1, ::Brightness>                                mLightEmission;
+    ::ll::TypedStorage<1, 1, ::Brightness>                                mLight;
+    ::ll::TypedStorage<4, 4, float>                                       mExplosionResistance;
+    ::ll::TypedStorage<4, 4, int>                                         mBurnOdds;
+    ::ll::TypedStorage<4, 4, int>                                         mFlameOdds;
+    ::ll::TypedStorage<4, 4, float>                                       mFriction;
+    ::ll::TypedStorage<4, 4, float>                                       mDestroySpeed;
+    ::ll::TypedStorage<1, 4, ::DetectionRule>                             mWaterDetectionRule;
+    ::ll::TypedStorage<4, 4, ::BlockComponentDirectData::LayerBitMask>    mFinalized;
+    ::ll::TypedStorage<8, 8, ::BlockDestructibleByMiningComponent const*> mDestructibleByMiningComponent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockComponentDirectData& operator=(BlockComponentDirectData const&);
-    BlockComponentDirectData(BlockComponentDirectData const&);
-    BlockComponentDirectData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _finalizeInit(::Block const& block);
+    MCAPI void _finalizeInit(::Block const& block);
     // NOLINTEND
 };

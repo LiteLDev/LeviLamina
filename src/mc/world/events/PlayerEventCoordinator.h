@@ -34,13 +34,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void registerPlayerGameplayHandler(::std::unique_ptr<::PlayerGameplayHandler>&& handler);
+    MCFOLD void registerPlayerGameplayHandler(::std::unique_ptr<::PlayerGameplayHandler>&& handler);
 
-    MCNAPI ::CoordinatorResult sendEvent(::EventRef<::PlayerGameplayEvent<::CoordinatorResult>> const& event);
+    MCAPI ::CoordinatorResult sendEvent(::EventRef<::PlayerGameplayEvent<::CoordinatorResult>> const& event);
 
-    MCNAPI void sendEvent(::EventRef<::PlayerGameplayEvent<void>> const& event);
+    MCAPI void sendEvent(::EventRef<::PlayerGameplayEvent<void>> const& event);
 
-    MCNAPI void sendPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants);
+    MCAPI void sendPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants);
     // NOLINTEND
 
 public:

@@ -22,12 +22,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorPlacedItemEvent(::ActorPlacedItemEvent const&);
+    MCAPI ActorPlacedItemEvent(::ActorPlacedItemEvent const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ActorPlacedItemEvent const&);
+    MCFOLD void* $ctor(::ActorPlacedItemEvent const&);
     // NOLINTEND
 };

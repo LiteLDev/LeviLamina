@@ -32,20 +32,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PlayerInteractWithBlockBeforeEvent(::PlayerInteractWithBlockBeforeEvent const&);
+    MCAPI PlayerInteractWithBlockBeforeEvent(::PlayerInteractWithBlockBeforeEvent const&);
 
-    MCNAPI ~PlayerInteractWithBlockBeforeEvent();
+    MCAPI ~PlayerInteractWithBlockBeforeEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PlayerInteractWithBlockBeforeEvent const&);
+    MCAPI void* $ctor(::PlayerInteractWithBlockBeforeEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void registerScriptingEventHandler(::std::unique_ptr<::ScriptingEventHandler>&& handler);
+    MCFOLD void registerScriptingEventHandler(::std::unique_ptr<::ScriptingEventHandler>&& handler);
     // NOLINTEND
 
 public:

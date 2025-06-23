@@ -23,6 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::gsl::final_action<::std::function<void()>> registerListener(::GameEventListener& gameEventListener);
+    MCAPI ::gsl::final_action<::std::function<void()>> registerListener(::GameEventListener& gameEventListener);
     // NOLINTEND
 };

@@ -19,7 +19,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $logEvent(::std::string const& message);
+    MCAPI void $logEvent(::std::string const& message);
     // NOLINTEND
 
 public:

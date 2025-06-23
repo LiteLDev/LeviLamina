@@ -38,13 +38,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~DocumentableEventExecution();
+        MCAPI ~DocumentableEventExecution();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -70,32 +70,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptDeferredEventCoordinator();
+    MCAPI ScriptDeferredEventCoordinator();
 
-    MCNAPI void _sendFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCAPI void _sendFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCNAPI void _sendFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCAPI void _sendFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCNAPI void _sendFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCAPI void _sendFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCNAPI void _sendFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCAPI void _sendFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCNAPI void _sendFlushSystemAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCAPI void _sendFlushSystemAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCNAPI void _sendFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCAPI void _sendFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::ScriptDeferredEventCoordinator::DocumentableEventExecution> const&
+    MCAPI static ::std::vector<::ScriptDeferredEventCoordinator::DocumentableEventExecution> const&
     sEventExecutionOrder();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
