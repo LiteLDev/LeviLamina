@@ -24,15 +24,13 @@ class FireworksRocketActor : public ::PredictableProjectile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkbd0e89;
-    ::ll::UntypedStorage<4, 4> mUnk917817;
-    ::ll::UntypedStorage<1, 1> mUnke7a725;
+    ::ll::TypedStorage<4, 4, int>  mLife;
+    ::ll::TypedStorage<4, 4, int>  mLifeTime;
+    ::ll::TypedStorage<1, 1, bool> mDispensed;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    FireworksRocketActor& operator=(FireworksRocketActor const&);
-    FireworksRocketActor(FireworksRocketActor const&);
     FireworksRocketActor();
 
 public:

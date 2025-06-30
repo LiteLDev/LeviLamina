@@ -9,14 +9,8 @@ class LargeFireball : public ::Fireball {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk7333d2;
+    ::ll::TypedStorage<4, 4, int> mExplosionPower;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LargeFireball& operator=(LargeFireball const&);
-    LargeFireball(LargeFireball const&);
-    LargeFireball();
 
 public:
     // virtual functions

@@ -3,28 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
+#include "mc/legacy/ActorUniqueID.h"
 
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
-struct ActorUniqueID;
 // clang-format on
 
 namespace GameEvents {
 
 class PositionSource {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnke6304b;
-    // NOLINTEND
+    // PositionSource inner types define
+    using ActorWithAttachPos = ::std::pair<::ActorUniqueID, ::SharedTypes::Legacy::ActorLocation>;
 
 public:
-    // prevent constructor by default
-    PositionSource& operator=(PositionSource const&);
-    PositionSource(PositionSource const&);
-    PositionSource();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::
+        TypedStorage<8, 24, ::std::variant<::std::pair<::ActorUniqueID, ::SharedTypes::Legacy::ActorLocation>, ::Vec3>>
+            mVariant;
+    // NOLINTEND
 
 public:
     // member functions

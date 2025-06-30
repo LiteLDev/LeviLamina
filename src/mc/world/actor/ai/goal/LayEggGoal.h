@@ -70,7 +70,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LayEggGoal(
+    MCAPI LayEggGoal(
         ::Mob&                                 mob,
         float                                  speedModifier,
         int                                    searchRange,
@@ -86,13 +86,13 @@ public:
         ::std::string const&                   layEggSound
     );
 
-    MCNAPI bool _isTargetBlock(::BlockLegacy const& block) const;
+    MCAPI bool _isTargetBlock(::BlockLegacy const& block) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Mob&                                 mob,
         float                                  speedModifier,
         int                                    searchRange,
@@ -112,27 +112,27 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $findTargetBlock();
+    MCAPI bool $findTargetBlock();
 
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCNAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
+    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
-    MCNAPI void $_moveToBlock();
+    MCAPI void $_moveToBlock();
     // NOLINTEND
 
 public:

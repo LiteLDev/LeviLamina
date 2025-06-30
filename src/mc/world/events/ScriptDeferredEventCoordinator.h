@@ -11,6 +11,8 @@
 class ScriptDeferredEventListener;
 class ScriptDeferredFlushTracker;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
+namespace Json { class Value; }
+namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
 class ScriptDeferredEventCoordinator : public ::EventCoordinatorNoTracking<::ScriptDeferredEventListener> {
@@ -25,15 +27,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk6fef1a;
-        ::ll::UntypedStorage<8, 64> mUnkce87df;
+        ::ll::TypedStorage<8, 8, void (::ScriptDeferredEventCoordinator::*)(::ScriptDeferredFlushTracker&)>
+            mExecuteEventsFn;
+        ::ll::TypedStorage<8, 64, ::std::function<void(::Scripting::ModuleDescriptor const&, ::Json::Value&)>>
+            mDocumentationGenerationFn;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DocumentableEventExecution& operator=(DocumentableEventExecution const&);
-        DocumentableEventExecution(DocumentableEventExecution const&);
-        DocumentableEventExecution();
 
     public:
         // member functions

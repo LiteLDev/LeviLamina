@@ -24,28 +24,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit Randomize(::Random& random);
+    MCAPI explicit Randomize(::Random& random);
 
-    MCNAPI bool chanceFloatGreaterThan(float improbability) const;
+    MCAPI bool chanceFloatGreaterThan(float improbability) const;
 
-    MCNAPI ~Randomize();
+    MCAPI ~Randomize();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static float const& ChanceFloatGreaterThan_MinExcessiveImprobability();
+    MCAPI static float const& ChanceFloatGreaterThan_MinExcessiveImprobability();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Random& random);
+    MCAPI void* $ctor(::Random& random);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

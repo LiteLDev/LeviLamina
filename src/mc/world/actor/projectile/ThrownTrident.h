@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/projectile/AbstractArrow.h"
+#include "mc/world/item/ItemStack.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +14,6 @@ class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
-class ItemStack;
 class Player;
 class Vec3;
 struct ActorDefinitionIdentifier;
@@ -30,15 +30,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnk5a0d0e;
-    ::ll::UntypedStorage<4, 4>   mUnk1626c9;
-    ::ll::UntypedStorage<8, 152> mUnkfcbd41;
+    ::ll::TypedStorage<1, 1, bool>          mDealtDamage;
+    ::ll::TypedStorage<4, 4, int>           mClientSideReturnTridentTickCount;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mTrident;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ThrownTrident& operator=(ThrownTrident const&);
-    ThrownTrident(ThrownTrident const&);
     ThrownTrident();
 
 public:
