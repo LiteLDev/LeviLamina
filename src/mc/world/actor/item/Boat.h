@@ -22,15 +22,13 @@ class Boat : public ::Actor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc0f659;
-    ::ll::UntypedStorage<4, 4> mUnk93e40b;
-    ::ll::UntypedStorage<4, 4> mUnk700165;
+    ::ll::TypedStorage<4, 4, float> mBubbleMultiplier;
+    ::ll::TypedStorage<4, 4, float> mBubbleAngle;
+    ::ll::TypedStorage<4, 4, float> mBubbleAngleOld;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Boat& operator=(Boat const&);
-    Boat(Boat const&);
     Boat();
 
 public:

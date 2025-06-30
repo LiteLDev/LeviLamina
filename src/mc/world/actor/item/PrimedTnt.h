@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/projectile/PredictableProjectile.h"
@@ -16,7 +17,6 @@ class DataLoadHelper;
 class EntityContext;
 class Vec3;
 struct ActorDefinitionIdentifier;
-struct ActorUniqueID;
 struct VariantParameterList;
 // clang-format on
 
@@ -24,14 +24,12 @@ class PrimedTnt : public ::PredictableProjectile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk783b5f;
-    ::ll::UntypedStorage<4, 4> mUnkb08415;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mOwnerID;
+    ::ll::TypedStorage<4, 4, ::ActorType>     mOwnerEntityType;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    PrimedTnt& operator=(PrimedTnt const&);
-    PrimedTnt(PrimedTnt const&);
     PrimedTnt();
 
 public:

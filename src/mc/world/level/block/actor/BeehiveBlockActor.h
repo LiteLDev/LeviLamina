@@ -78,27 +78,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Actor* _revive(::BlockSource& region, ::BeehiveBlockActor::Occupant const& occupant, uchar spawnDirection);
+    MCAPI ::Actor* _revive(::BlockSource& region, ::BeehiveBlockActor::Occupant const& occupant, uchar spawnDirection);
 
-    MCNAPI bool _tickOccupant(::BlockSource& region, ::BeehiveBlockActor::Occupant& occupant);
+    MCAPI bool _tickOccupant(::BlockSource& region, ::BeehiveBlockActor::Occupant& occupant);
 
-    MCNAPI void _trySpawnBees(::BlockSource& region);
+    MCAPI void _trySpawnBees(::BlockSource& region);
 
-    MCNAPI void evictAll(::BlockSource& region, bool angry);
+    MCAPI void evictAll(::BlockSource& region, bool angry);
 
-    MCNAPI void saveUserData(::CompoundTag& tag) const;
+    MCAPI void saveUserData(::CompoundTag& tag) const;
 
-    MCNAPI bool tryAdmit(::Actor& actor);
+    MCAPI bool tryAdmit(::Actor& actor);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::BlockSource& region);
+    MCAPI void $tick(::BlockSource& region);
 
-    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
     // NOLINTEND
 
 public:

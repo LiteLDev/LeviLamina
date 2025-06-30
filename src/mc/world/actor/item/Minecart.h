@@ -26,18 +26,16 @@ class Minecart : public ::Actor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk3355bb;
-    ::ll::UntypedStorage<1, 1> mUnk74c1d6;
-    ::ll::UntypedStorage<4, 4> mUnkd59223;
-    ::ll::UntypedStorage<8, 8> mUnk80b5a7;
-    ::ll::UntypedStorage<8, 8> mUnk8f8e51;
-    ::ll::UntypedStorage<4, 4> mUnk34dff3;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>> mDisplayBlockSerId;
+    ::ll::TypedStorage<1, 1, bool>                             mFlipped;
+    ::ll::TypedStorage<4, 4, float>                            mRailRenderRot;
+    ::ll::TypedStorage<8, 8, uint64>                           mBaseLoop;
+    ::ll::TypedStorage<8, 8, uint64>                           mRidingLoop;
+    ::ll::TypedStorage<4, 4, float>                            mSmoothSpeed;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Minecart& operator=(Minecart const&);
-    Minecart(Minecart const&);
     Minecart();
 
 public:

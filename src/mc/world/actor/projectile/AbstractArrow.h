@@ -29,16 +29,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk4ea9fa;
-    ::ll::UntypedStorage<1, 1> mUnk49a741;
-    ::ll::UntypedStorage<1, 1> mUnk38a4b9;
+    ::ll::TypedStorage<4, 4, int>  mFavoredSlot;
+    ::ll::TypedStorage<1, 1, bool> mIsPlayerOwned;
+    ::ll::TypedStorage<1, 1, bool> mIsCreative;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AbstractArrow& operator=(AbstractArrow const&);
-    AbstractArrow(AbstractArrow const&);
-    AbstractArrow();
 
 public:
     // virtual functions

@@ -59,31 +59,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ContainerComponent(::ContainerComponent&& other);
+    MCAPI ContainerComponent(::ContainerComponent&& other);
 
-    MCNAPI bool _tryMoveInItem(::ItemStack& item, int slot, int face, int itemCount);
+    MCAPI bool _tryMoveInItem(::ItemStack& item, int slot, int face, int itemCount);
 
-    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCNAPI bool addItem(::ItemActor& entity);
+    MCAPI bool addItem(::ItemActor& entity);
 
-    MCNAPI bool canOpenContainer(::Actor const& containerActor, ::Player& player) const;
+    MCAPI bool canOpenContainer(::Actor const& containerActor, ::Player& player) const;
 
-    MCNAPI int countItemsOfType(::ItemStack const& item) const;
+    MCAPI int countItemsOfType(::ItemStack const& item) const;
 
-    MCNAPI void dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
+    MCAPI void dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
 
-    MCNAPI void initFromDefinition(::Actor& actor, ::ContainerDescription const& desc);
+    MCAPI void initFromDefinition(::Actor& actor, ::ContainerDescription const& desc);
 
-    MCNAPI bool isEmpty() const;
+    MCAPI bool isEmpty() const;
 
-    MCNAPI bool openContainer(::Actor& containerActor, ::Player& player);
+    MCAPI bool openContainer(::Actor& containerActor, ::Player& player);
 
-    MCNAPI ::ContainerComponent& operator=(::ContainerComponent&& other);
+    MCAPI ::ContainerComponent& operator=(::ContainerComponent&& other);
 
-    MCNAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
-    MCNAPI void rebuildContainer(
+    MCAPI void rebuildContainer(
         ::Actor&                             owner,
         ::SharedTypes::Legacy::ContainerType type,
         int                                  size,
@@ -92,33 +92,33 @@ public:
         bool isPrivate
     );
 
-    MCNAPI void removeItemsOfType(::ItemStack const& item, int count);
+    MCAPI void removeItemsOfType(::ItemStack const& item, int count);
 
-    MCNAPI void setCustomName(::std::string const& name);
+    MCAPI void setCustomName(::std::string const& name);
 
-    MCNAPI bool setItem(int slot, ::ItemStack const& item);
+    MCAPI bool setItem(int slot, ::ItemStack const& item);
 
-    MCNAPI void unpackLootTable(::Level& level, ::DimensionType dimensionId);
+    MCAPI void unpackLootTable(::Level& level, ::DimensionType dimensionId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ContainerComponent&& other);
+    MCAPI void* $ctor(::ContainerComponent&& other);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $containerContentChanged(int iSlot);
+    MCAPI void $containerContentChanged(int iSlot);
 
-    MCNAPI void $containerClosed(::Player& player);
+    MCAPI void $containerClosed(::Player& player);
     // NOLINTEND
 
 public:

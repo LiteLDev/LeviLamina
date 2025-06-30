@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/world/level/ChunkPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
-class ChunkPos;
 class Dimension;
 class GameEventListener;
 // clang-format on
@@ -25,15 +25,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkb13385;
-        ::ll::UntypedStorage<4, 4> mUnk19607c;
+        ::ll::TypedStorage<8, 8, ::ChunkPos>      mChunkPos;
+        ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionId;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RegistrationLocation& operator=(RegistrationLocation const&);
-        RegistrationLocation(RegistrationLocation const&);
-        RegistrationLocation();
     };
 
 public:
