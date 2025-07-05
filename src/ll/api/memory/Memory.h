@@ -71,12 +71,12 @@ inline void modify(T& ref, brstd::function_ref<void(std::remove_cv_t<T>&)> f) {
 
 template <class R = void, class... Args>
 constexpr auto addressCall(void const* address, auto&&... args) -> R {
-    return ((R(*)(Args...))address)(std::forward<decltype((args))>(args)...);
+    return ((R(*)(Args...))address)(std::forward<decltype(args)>(args)...);
 }
 
 template <class R = void, class... Args>
 constexpr auto virtualCall(void const* self, ptrdiff_t vIndex, auto&&... args) -> R {
-    return (*(R(**)(void const*, Args...))(*(uintptr_t**)self + vIndex))(self, std::forward<decltype((args))>(args)...);
+    return (*(R(**)(void const*, Args...))(*(uintptr_t**)self + vIndex))(self, std::forward<decltype(args)>(args)...);
 }
 
 template <class T>

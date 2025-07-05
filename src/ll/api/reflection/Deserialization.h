@@ -148,7 +148,7 @@ inline Expected<> deserialize_impl(T& map, J const& j, meta::PriorityTag<2>) {
         if constexpr (concepts::IsString<typename T::key_type>) {
             if (auto res = deserialize<typename T::mapped_type>(
                     map[static_cast<T::key_type>(k)],
-                    std::forward<decltype((v))>(v)
+                    std::forward<decltype(v)>(v)
                 );
                 !res) {
                 res = makeSerKeyError(k, res.error());
@@ -157,7 +157,7 @@ inline Expected<> deserialize_impl(T& map, J const& j, meta::PriorityTag<2>) {
         } else {
             if (auto res = deserialize<typename T::mapped_type>(
                     map[magic_enum::enum_cast<typename T::key_type>(k).value()],
-                    std::forward<decltype((v))>(v)
+                    std::forward<decltype(v)>(v)
                 );
                 !res) {
                 res = makeSerKeyError(k, res.error());

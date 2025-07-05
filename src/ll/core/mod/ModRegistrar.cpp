@@ -94,7 +94,7 @@ void ModRegistrar::loadAllMods() noexcept try {
             continue;
         }
         if (auto res = loadManifest(file.path()).transform([&](auto&& manifest) {
-                manifests.try_emplace(manifest.name, std::forward<decltype((manifest))>(manifest));
+                manifests.try_emplace(manifest.name, std::forward<decltype(manifest)>(manifest));
             });
             !res) {
             if (res.error()) {

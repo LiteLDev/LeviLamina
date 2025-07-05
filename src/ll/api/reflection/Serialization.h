@@ -112,17 +112,17 @@ inline Expected<J> serialize_impl(T&& tuple, meta::PriorityTag<3>)
             size_t iter{0};
             (([&](auto&& arg) {
                  if (res) {
-                     if (auto v = serialize<J>(std::forward<decltype((arg))>(arg)); v) {
+                     if (auto v = serialize<J>(std::forward<decltype(arg)>(arg)); v) {
                          res->push_back(*std::move(v));
                          iter++;
                      } else {
                          res = makeSerIndexError(iter, v.error());
                      }
                  }
-             }(std::forward<decltype((args))>(args))),
+             }(std::forward<decltype(args)>(args))),
              ...);
         },
-        std::forward<decltype((tuple))>(tuple)
+        std::forward<decltype(tuple)>(tuple)
     );
     return res;
 }
@@ -133,7 +133,7 @@ inline Expected<J> serialize_impl(T&& arr, meta::PriorityTag<2>)
     Expected<J> res{J::array()};
     size_t      iter{0};
     for (auto&& val : std::forward<T>(arr)) {
-        if (auto v = serialize<J>(std::forward<decltype((val))>(val)); v) {
+        if (auto v = serialize<J>(std::forward<decltype(val)>(val)); v) {
             res->push_back(*std::move(v));
             iter++;
         } else {
@@ -156,11 +156,11 @@ inline Expected<J> serialize_impl(T&& map, meta::PriorityTag<2>)
     for (auto&& [k, v] : map) {
         std::string key;
         if constexpr (concepts::IsString<typename RT::key_type>) {
-            key = std::string{std::forward<decltype((k))>(k)};
+            key = std::string{std::forward<decltype(k)>(k)};
         } else {
-            key = magic_enum::enum_name(std::forward<decltype((k))>(k));
+            key = magic_enum::enum_name(std::forward<decltype(k)>(k));
         }
-        if (auto sv = serialize<J>(std::forward<decltype((v))>(v)); sv) {
+        if (auto sv = serialize<J>(std::forward<decltype(v)>(v)); sv) {
             (*res)[key] = *std::move(sv);
         } else {
             res = makeSerKeyError(key, sv.error());

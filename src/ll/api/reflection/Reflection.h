@@ -58,7 +58,7 @@ inline auto const member_offset_v = OffsetGetter<T>::template offset<I>(std::mak
 template <Reflectable T, class F>
 constexpr void forEachMember(T&& value, F&& func) {
     boost::pfr::for_each_field(std::forward<T>(value), [func = std::forward<F>(func)](auto&& field, std::size_t idx) {
-        func(member_name_array_v<T>[idx], std::forward<decltype((field))>(field));
+        func(member_name_array_v<T>[idx], std::forward<decltype(field)>(field));
     });
 }
 } // namespace ll::reflection
