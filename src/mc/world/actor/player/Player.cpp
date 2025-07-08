@@ -75,7 +75,9 @@ std::optional<NetworkPeer::NetworkStatus> Player::getNetworkStatus() const {
 std::string Player::getRealName() const {
     return getEntityContext()
         .tryGetComponent<UserEntityIdentifierComponent>()
-        .and_then([&](UserEntityIdentifierComponent const& identifier) { return optional_ref{identifier.mGameServerToken}; })
+        .and_then([&](UserEntityIdentifierComponent const& identifier) {
+            return optional_ref{identifier.mGameServerToken};
+        })
         .transform([](GameServerToken const& token) { return token.getIdentityName(); })
         .value_or(*mName);
 }
@@ -115,7 +117,7 @@ LLAPI void Player::setAbility(::AbilitiesIndex index, bool value) {
     abilities.getAbility(AbilitiesLayer::Base, AbilitiesIndex::Flying).mValue->mBoolVal = flying;
     UpdateAbilitiesPacket{getOrCreateUniqueID(), abilities}.sendTo(*this);
     abilities.setAbility(AbilitiesIndex::Flying, flying);
-    UpdateAdventureSettingsPacket{}.sendTo(*this);
+    UpdateAdventureSettingsPacket{getLevel().getAdventureSettings()}.sendTo(*this);
 }
 
 bool Player::isOperator() const {

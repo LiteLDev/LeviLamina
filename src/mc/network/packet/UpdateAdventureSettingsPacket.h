@@ -16,6 +16,10 @@ class ReadOnlyBinaryStream;
 
 class UpdateAdventureSettingsPacket : public ::Packet {
 public:
+    [[nodiscard]] constexpr explicit UpdateAdventureSettingsPacket(AdventureSettings const& settings)
+    : mAdventureSettings(settings) {}
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 5, ::AdventureSettings> mAdventureSettings;
