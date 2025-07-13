@@ -2,9 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
+
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
+class Block;
 class BlockSource;
 // clang-format on
 
@@ -12,14 +15,14 @@ class EndPortalShape {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnke4c8d8;
-    ::ll::UntypedStorage<4, 4>  mUnk975a30;
-    ::ll::UntypedStorage<4, 4>  mUnk4250e9;
-    ::ll::UntypedStorage<4, 4>  mUnkd6a933;
-    ::ll::UntypedStorage<4, 12> mUnk39cdb1;
-    ::ll::UntypedStorage<4, 12> mUnkada50f;
-    ::ll::UntypedStorage<4, 4>  mUnkbf3ee9;
-    ::ll::UntypedStorage<8, 24> mUnk7a0811;
+    ::ll::TypedStorage<8, 8, ::BlockSource&>                                mSource;
+    ::ll::TypedStorage<4, 4, int>                                           mRightDir;
+    ::ll::TypedStorage<4, 4, int>                                           mLeftDir;
+    ::ll::TypedStorage<4, 4, int>                                           mDepthDir;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                   mBottomLeft;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                   mOrigin;
+    ::ll::TypedStorage<4, 4, int>                                           mBlockDirection;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::vector<::Block const*>>> mPortalPattern;
     // NOLINTEND
 
 public:
@@ -31,24 +34,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EndPortalShape(::BlockSource& region, ::BlockPos pos);
+    MCAPI EndPortalShape(::BlockSource& region, ::BlockPos pos);
 
-    MCNAPI int getDistanceUntilEdge(::BlockPos const& pos, int direction, int facing);
+    MCAPI int getDistanceUntilEdge(::BlockPos const& pos, int direction, int facing);
 
-    MCNAPI bool isValid(::BlockSource& region);
+    MCAPI bool isValid(::BlockSource& region);
 
-    MCNAPI ~EndPortalShape();
+    MCAPI ~EndPortalShape();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockSource& region, ::BlockPos pos);
+    MCAPI void* $ctor(::BlockSource& region, ::BlockPos pos);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -51,18 +51,12 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk7f7e31;
-        ::ll::UntypedStorage<4, 16> mUnk6bd321;
-        ::ll::UntypedStorage<4, 4>  mUnk3edbb0;
-        ::ll::UntypedStorage<4, 4>  mUnk511109;
-        ::ll::UntypedStorage<4, 4>  mUnked0bc4;
+        ::ll::TypedStorage<4, 4, int>     mDurabilityMultiplier;
+        ::ll::TypedStorage<4, 16, int[4]> mSlotProtections;
+        ::ll::TypedStorage<4, 4, int>     mToughnessValue;
+        ::ll::TypedStorage<4, 4, int>     mEnchantmentValue;
+        ::ll::TypedStorage<4, 4, float>   mKnockbackResistance;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ArmorMaterial& operator=(ArmorMaterial const&);
-        ArmorMaterial(ArmorMaterial const&);
-        ArmorMaterial();
     };
 
 public:
