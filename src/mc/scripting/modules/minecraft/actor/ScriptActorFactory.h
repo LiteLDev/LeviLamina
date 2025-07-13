@@ -19,19 +19,19 @@ class ScriptActorFactory {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _processCreatedHandle(
+    MCAPI static void _processCreatedHandle(
         ::Actor const&                                                              actor,
         ::Scripting::WeakLifetimeScope const&                                       scope,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>& handle
     );
 
-    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>
     createHandle(::Actor const& actor, ::Scripting::WeakLifetimeScope const& scope);
 
-    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>
     getHandle(::Actor const& actor, ::Scripting::WeakLifetimeScope const& scope);
 
-    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>
     getHandle(::ScriptModuleMinecraft::ScriptActorData const& actorData, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };

@@ -25,18 +25,18 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Vec3 const& COBWEB_SLOWDOWN_OVERRIDE();
+    MCAPI static ::Vec3 const& COBWEB_SLOWDOWN_OVERRIDE();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onActorDied(::Actor& target, int amplifier) const;
+    MCAPI void $onActorDied(::Actor& target, int amplifier) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

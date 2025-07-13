@@ -25,16 +25,16 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& AXIS_TAG();
+    MCAPI static ::std::string const& AXIS_TAG();
 
-    MCNAPI static ::std::string const& COMPONENT_TAG();
+    MCAPI static ::std::string const& COMPONENT_TAG();
 
-    MCNAPI static ::std::string const& DIMENSION_TAG();
+    MCAPI static ::std::string const& DIMENSION_TAG();
 
-    MCNAPI static ::std::string const& POSITION_X_TAG();
+    MCAPI static ::std::string const& POSITION_X_TAG();
 
-    MCNAPI static ::std::string const& POSITION_Y_TAG();
+    MCAPI static ::std::string const& POSITION_Y_TAG();
 
-    MCNAPI static ::std::string const& POSITION_Z_TAG();
+    MCAPI static ::std::string const& POSITION_Z_TAG();
     // NOLINTEND
 };

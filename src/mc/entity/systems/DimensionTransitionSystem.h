@@ -36,7 +36,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickPortalTransition(
+    MCAPI static void _tickPortalTransition(
         ::ViewT<
             ::StrictEntityContext,
             ::Exclude<::PassengerComponent, ::VehicleComponent>,
@@ -45,14 +45,14 @@ public:
         ::EntityModifier<::DimensionTransitionComponent> mod
     );
 
-    MCNAPI static void _tickReadyToContinueServer(
+    MCAPI static void _tickReadyToContinueServer(
         ::ViewT<
             ::StrictEntityContext,
             ::Exclude<::PassengerComponent, ::VehicleComponent, ::DimensionTransitionComponent>,
             ::PlayerChangeDimensionRequestComponent> view
     );
 
-    MCNAPI static void _tickVehicleDismount(
+    MCAPI static void _tickVehicleDismount(
         ::ViewT<::StrictEntityContext, ::Include<::PlayerChangeDimensionRequestComponent, ::PassengerComponent>>
             passengers,
         ::ViewT<::StrictEntityContext, ::Include<::PlayerChangeDimensionRequestComponent>, ::VehicleComponent const>
@@ -60,18 +60,18 @@ public:
         ::EntityModifier<::StopRidingRequestComponent, ::ExitFromPassengerFlagComponent> modifier
     );
 
-    MCNAPI static ::TickingSystemWithInfo createPortalTransition();
+    MCAPI static ::TickingSystemWithInfo createPortalTransition();
 
-    MCNAPI static ::TickingSystemWithInfo createVehicleDismount();
+    MCAPI static ::TickingSystemWithInfo createVehicleDismount();
 
-    MCNAPI static void requestPlayerChangeDimension(
+    MCAPI static void requestPlayerChangeDimension(
         ::StrictEntityContext const&                                                      player,
         ::ChangeDimensionRequest&&                                                        request,
         ::ViewT<::StrictEntityContext, ::DimensionStateComponent, ::StateVectorComponent> playerData,
         ::EntityModifier<::PlayerChangeDimensionRequestComponent>                         modifier
     );
 
-    MCNAPI static void tryHandleChangeDimensionRequestLevel(
+    MCAPI static void tryHandleChangeDimensionRequestLevel(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::PlayerComponent>,

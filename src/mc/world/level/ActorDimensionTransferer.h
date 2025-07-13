@@ -57,7 +57,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorDimensionTransferer(
+    MCAPI ActorDimensionTransferer(
         ::std::unique_ptr<::IActorDimensionTransferProxy> actorDimensionTransferProxy,
         ::Bedrock::NotNullNonOwnerPtr<::ActorManager>     actorManager
     );
@@ -66,7 +66,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::unique_ptr<::IActorDimensionTransferProxy> actorDimensionTransferProxy,
         ::Bedrock::NotNullNonOwnerPtr<::ActorManager>     actorManager
     );
@@ -75,9 +75,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $setupActorForTransfer(::Actor& actor);
+    MCAPI void $setupActorForTransfer(::Actor& actor);
 
-    MCNAPI ::Vec3 $findTargetPositionAndSetPosition(
+    MCAPI ::Vec3 $findTargetPositionAndSetPosition(
         ::Actor&                       actor,
         ::DimensionType                toId,
         ::DimensionType                fromId,
@@ -86,7 +86,7 @@ public:
         ::std::optional<::Vec3> const& actorPosition
     );
 
-    MCNAPI void $transferActor(::Actor& actor, ::Dimension& toDimension, ::Vec3 const& targetPosition);
+    MCAPI void $transferActor(::Actor& actor, ::Dimension& toDimension, ::Vec3 const& targetPosition);
     // NOLINTEND
 
 public:

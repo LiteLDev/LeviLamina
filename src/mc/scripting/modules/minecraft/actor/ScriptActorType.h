@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinition;
 namespace ScriptModuleMinecraft { class ScriptDynamicPropertiesDefinition; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -17,29 +18,23 @@ class ScriptActorType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8cd362;
+    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::ActorDefinition>> mActorDefinition;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptActorType& operator=(ScriptActorType const&);
-    ScriptActorType(ScriptActorType const&);
-    ScriptActorType();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> addDynamicPropertiesDefinition(
+    MCAPI ::Scripting::Result_deprecated<void> addDynamicPropertiesDefinition(
         ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const& dynamicPropertiesDefinition
     );
 
-    MCNAPI ::std::string getId() const;
+    MCAPI ::std::string getId() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 
