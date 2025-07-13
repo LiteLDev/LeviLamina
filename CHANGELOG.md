@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.4] - 2025-07-13
+
+### Added
+
+- Added explicit keyword to mce::UUID constructors @xiaoqch
+- Added assignment operators for WeakEntityRef @xiaoqch
+
+### Changed
+
+- Bumped bedrock-runtime-data to v1.21.80-server.8
+- Updated headers
+
+### Fixed
+
+- Corrected reference types to avoid unnecessary copies @xiaoqch
+- Player::setAbility no longer resets AdventureSettings [#1684] @xiaoqch
+
 ## [1.3.3] - 2025-06-30
 
 ### Changed
@@ -994,8 +1011,10 @@ For lip and tooth-hub test only.
 [#1670]: https://github.com/LiteLDev/LeviLamina/issues/1670
 [#1671]: https://github.com/LiteLDev/LeviLamina/issues/1671
 [#1673]: https://github.com/LiteLDev/LeviLamina/issues/1673
+[#1684]: https://github.com/LiteLDev/LeviLamina/issues/1684
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.3.3...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.3.4...HEAD
+[1.3.4]: https://github.com/LiteLDev/LeviLamina/compare/v1.3.3...v1.3.4
 [1.3.3]: https://github.com/LiteLDev/LeviLamina/compare/v1.3.2...v1.3.3
 [1.3.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.3.1...v1.3.2
 [1.3.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.3.0...v1.3.1
