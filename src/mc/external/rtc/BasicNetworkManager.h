@@ -51,7 +51,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ~BasicNetworkManager() /*override*/ = default;
+    virtual ~BasicNetworkManager() /*override*/;
 
     // vIndex: 3
     virtual void StartUpdating() /*override*/;
@@ -63,26 +63,31 @@ public:
     virtual void DumpNetworks() /*override*/;
 
     // vIndex: 9
-    virtual void set_vpn_list(::std::vector<::rtc::NetworkMask> const&) /*override*/;
+    virtual void set_vpn_list(::std::vector<::rtc::NetworkMask> const& vpn) /*override*/;
 
     // vIndex: 0
-    virtual ::rtc::NetworkBindingResult BindSocketToNetwork(int, ::rtc::IPAddress const&) /*override*/;
+    virtual ::rtc::NetworkBindingResult
+    BindSocketToNetwork(int socket_fd, ::rtc::IPAddress const& address) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BasicNetworkManager(::rtc::NetworkMonitorFactory*, ::rtc::SocketFactory*, ::webrtc::FieldTrialsView const*);
+    MCNAPI BasicNetworkManager(
+        ::rtc::NetworkMonitorFactory*    network_monitor_factory,
+        ::rtc::SocketFactory*            socket_factory,
+        ::webrtc::FieldTrialsView const* field_trials_view
+    );
 
-    MCNAPI bool CreateNetworks(bool, ::std::vector<::std::unique_ptr<::rtc::Network>>*) const;
+    MCNAPI bool CreateNetworks(bool include_ignored, ::std::vector<::std::unique_ptr<::rtc::Network>>* networks) const;
 
-    MCNAPI bool IsConfiguredVpn(::rtc::IPAddress, int) const;
+    MCNAPI bool IsConfiguredVpn(::rtc::IPAddress prefix, int prefix_length) const;
 
-    MCNAPI bool IsIgnoredNetwork(::rtc::Network const&) const;
+    MCNAPI bool IsIgnoredNetwork(::rtc::Network const& network) const;
 
     MCNAPI void OnNetworksChanged();
 
-    MCNAPI ::rtc::IPAddress QueryDefaultLocalAddress(int) const;
+    MCNAPI ::rtc::IPAddress QueryDefaultLocalAddress(int family) const;
 
     MCNAPI void StartNetworkMonitor();
 
@@ -96,13 +101,31 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::rtc::NetworkMonitorFactory*, ::rtc::SocketFactory*, ::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(
+        ::rtc::NetworkMonitorFactory*    network_monitor_factory,
+        ::rtc::SocketFactory*            socket_factory,
+        ::webrtc::FieldTrialsView const* field_trials_view
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $StartUpdating();
 
+    MCNAPI void $StopUpdating();
+
+    MCNAPI void $DumpNetworks();
+
+    MCNAPI void $set_vpn_list(::std::vector<::rtc::NetworkMask> const& vpn);
+
+    MCNAPI ::rtc::NetworkBindingResult $BindSocketToNetwork(int socket_fd, ::rtc::IPAddress const& address);
     // NOLINTEND
 
 public:

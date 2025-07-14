@@ -8,7 +8,7 @@ class TransmissionOffset {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool Write(::rtc::ArrayView<uchar>, int);
+    MCNAPI static bool Write(::rtc::ArrayView<uchar> data, int rtp_time);
     // NOLINTEND
 };
 

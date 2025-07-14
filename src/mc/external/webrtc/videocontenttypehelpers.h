@@ -8,9 +8,9 @@
 namespace webrtc::videocontenttypehelpers {
 // functions
 // NOLINTBEGIN
-MCNAPI bool IsScreenshare(::webrtc::VideoContentType const&);
+MCNAPI bool IsScreenshare(::webrtc::VideoContentType const& content_type);
 
-MCNAPI char const* ToString(::webrtc::VideoContentType const&);
+MCNAPI char const* ToString(::webrtc::VideoContentType const& content_type);
 // NOLINTEND
 
 } // namespace webrtc::videocontenttypehelpers

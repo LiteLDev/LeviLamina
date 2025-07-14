@@ -75,8 +75,6 @@ public:
 
     MCAPI ::ItemStack getStrippedNetworkItem() const;
 
-    MCAPI bool matchesAndNetIdVariantMatches(::ItemStack const& other) const;
-
     MCAPI bool matchesNetIdVariant(::ItemStack const& other) const;
 
     MCAPI ::ItemStack& operator=(::ItemStack const& rhs);

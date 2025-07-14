@@ -45,10 +45,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PortAllocatorSession() /*override*/ = default;
+    virtual ~PortAllocatorSession() /*override*/;
 
     // vIndex: 1
-    virtual void SetCandidateFilter(uint) = 0;
+    virtual void SetCandidateFilter(uint filter) = 0;
 
     // vIndex: 2
     virtual void StartGettingPorts() = 0;
@@ -72,10 +72,10 @@ public:
     virtual void RegatherOnFailedNetworks();
 
     // vIndex: 9
-    virtual void GetCandidateStatsFromReadyPorts(::std::vector<::cricket::CandidateStats>*) const;
+    virtual void GetCandidateStatsFromReadyPorts(::std::vector<::cricket::CandidateStats>* candidate_stats_list) const;
 
     // vIndex: 10
-    virtual void SetStunKeepaliveIntervalForReadyPorts(::std::optional<int> const&);
+    virtual void SetStunKeepaliveIntervalForReadyPorts(::std::optional<int> const& stun_keepalive_interval);
 
     // vIndex: 11
     virtual ::std::vector<::cricket::PortInterface*> ReadyPorts() const = 0;
@@ -93,7 +93,7 @@ public:
     virtual uint generation();
 
     // vIndex: 16
-    virtual void set_generation(uint);
+    virtual void set_generation(uint generation);
 
     // vIndex: 17
     virtual void UpdateIceParametersInternal();
@@ -102,21 +102,60 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PortAllocatorSession(::std::string_view, int, ::std::string_view, ::std::string_view, uint);
+    MCNAPI PortAllocatorSession(
+        ::std::string_view content_name,
+        int                component,
+        ::std::string_view ice_ufrag,
+        ::std::string_view ice_pwd,
+        uint               flags
+    );
 
-    MCNAPI void SetIceParameters(::std::string_view, int, ::std::string_view, ::std::string_view);
+    MCNAPI void SetIceParameters(
+        ::std::string_view content_name,
+        int                component,
+        ::std::string_view ice_ufrag,
+        ::std::string_view ice_pwd
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string_view, int, ::std::string_view, ::std::string_view, uint);
+    MCNAPI void* $ctor(
+        ::std::string_view content_name,
+        int                component,
+        ::std::string_view ice_ufrag,
+        ::std::string_view ice_pwd,
+        uint               flags
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $IsCleared() const;
 
+    MCNAPI bool $IsStopped() const;
+
+    MCNAPI void $RegatherOnFailedNetworks();
+
+    MCNAPI void $GetCandidateStatsFromReadyPorts(::std::vector<::cricket::CandidateStats>* candidate_stats_list) const;
+
+    MCNAPI void $SetStunKeepaliveIntervalForReadyPorts(::std::optional<int> const& stun_keepalive_interval);
+
+    MCNAPI void $PruneAllPorts();
+
+    MCNAPI uint $generation();
+
+    MCNAPI void $set_generation(uint generation);
+
+    MCNAPI void $UpdateIceParametersInternal();
     // NOLINTEND
 
 public:

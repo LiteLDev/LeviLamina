@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/platform/brstd/once_flag.h"
 #include "mc/platform/threading/Mutex.h"
 #include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/PostProcessSettings.h"
@@ -11,6 +12,7 @@
 #include "mc/world/level/levelgen/structure/structurepools/JigsawReplacement.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolElementSettings.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolElementType.h"
+#include "mc/world/level/levelgen/v2/LiquidSettings.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -161,14 +163,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata>> mMetadata;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                        mMetadataMutex;
-    ::ll::TypedStorage<8, 8, ::std::once_flag>                                                    mTemplateOnceFlag;
-    ::ll::TypedStorage<8, 56, ::std::optional<::StructurePoolElement::LazyTemplate>>              mTemplate;
-    ::ll::TypedStorage<8, 8, uint64>                                                              mMetadataKey;
-    ::ll::TypedStorage<8, 32, ::std::string>                                                      mLocation;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::StructureManager>>                  mManager;
-    ::ll::TypedStorage<8, 32, ::StructurePoolElementSettings>                                     mSettings;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata>> mMetadata;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                         mMetadataMutex;
+    ::ll::TypedStorage<4, 4, ::brstd::once_flag>                                                   mTemplateOnceFlag;
+    ::ll::TypedStorage<8, 56, ::std::optional<::StructurePoolElement::LazyTemplate>>               mTemplate;
+    ::ll::TypedStorage<8, 8, uint64>                                                               mMetadataKey;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                       mLocation;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::StructureManager>>                   mManager;
+    ::ll::TypedStorage<8, 32, ::StructurePoolElementSettings>                                      mSettings;
     ::ll::TypedStorage<
         8,
         16,
@@ -226,7 +228,8 @@ public:
         ::BoundingBox                     chunkBB,
         ::Rotation                        rotation,
         ::IRandom&                        random,
-        ::br::worldgen::JigsawReplacement jigsaw
+        ::br::worldgen::JigsawReplacement jigsaw,
+        ::br::worldgen::LiquidSettings    liquidSettings
     ) const;
 
     // vIndex: 9
@@ -293,13 +296,11 @@ public:
         ::PostProcessSettings                                                postProcessSettings
     );
 
-    MCAPI ::std::unique_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata> _createMetadata() const;
-
     MCAPI ::SharedTypes::v1_21_80::JigsawStructureMetadata const& _getMetadata() const;
 
     MCAPI uint64 _getMetadataKey() const;
 
-    MCAPI ::StructurePoolElement::LazyTemplate const& _getTemplate() const;
+    MCAPI ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata> createMetadata() const;
     // NOLINTEND
 
 public:
@@ -379,7 +380,7 @@ public:
 
     MCAPI ::BoundingBox $getBoundingBox(::BlockPos position, ::Rotation rotation) const;
 
-    MCFOLD void $setProjection(::Projection projection);
+    MCAPI void $setProjection(::Projection projection);
 
     MCAPI ::Projection $getProjection() const;
 
@@ -402,7 +403,8 @@ public:
         ::BoundingBox                     chunkBB,
         ::Rotation                        rotation,
         ::IRandom&                        random,
-        ::br::worldgen::JigsawReplacement jigsaw
+        ::br::worldgen::JigsawReplacement jigsaw,
+        ::br::worldgen::LiquidSettings    liquidSettings
     ) const;
 
     MCAPI void $placeActors(::BlockSource& region, ::BlockPos position, ::Rotation rotation, ::Random& random) const;

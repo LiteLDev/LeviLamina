@@ -82,10 +82,10 @@ public:
     virtual ::Biome const* getBiome(int blockX, int blockY, int blockZ) const /*override*/;
 
     // vIndex: 8
-    virtual bool has(uint64 id) const /*override*/;
+    virtual bool hasBiomeById(ushort id) const /*override*/;
 
     // vIndex: 9
-    virtual bool hasByHashId(uint64 id) const /*override*/;
+    virtual bool hasBiomeByNameHash(uint64 hash) const /*override*/;
 
     // vIndex: 10
     virtual ::BiomeSourceType const getType() const /*override*/;
@@ -130,9 +130,9 @@ public:
 
     MCNAPI ::Biome const* $getBiome(int blockX, int blockY, int blockZ) const;
 
-    MCNAPI bool $has(uint64 id) const;
+    MCNAPI bool $hasBiomeById(ushort id) const;
 
-    MCNAPI bool $hasByHashId(uint64 id) const;
+    MCNAPI bool $hasBiomeByNameHash(uint64 hash) const;
 
     MCNAPI ::BiomeSourceType const $getType() const;
     // NOLINTEND

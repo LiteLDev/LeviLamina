@@ -38,10 +38,10 @@ public:
     // vIndex: 20
     virtual int getContainerSize() const /*override*/;
 
-    // vIndex: 34
+    // vIndex: 35
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 33
+    // vIndex: 34
     virtual ::Container const* getContainer() const /*override*/;
 
     // vIndex: 7
@@ -53,7 +53,7 @@ public:
     // vIndex: 21
     virtual int getMaxStackSize() const /*override*/;
 
-    // vIndex: 27
+    // vIndex: 28
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 22
@@ -68,7 +68,7 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual void onMove() /*override*/;
 
     // vIndex: 2
@@ -78,10 +78,10 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 46
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0

@@ -48,6 +48,8 @@ public:
         ::std::optional<::Editor::ScriptModule::ScriptClipboardWriteOptions> const& optOptions
     ) const;
 
+    MCNAPI ::Vec3 getSize() const;
+
     MCNAPI ::Scripting::Result_deprecated<::Editor::EditorStructureTemplate> getStructure();
 
     MCNAPI ::Scripting::Result_deprecated<void>

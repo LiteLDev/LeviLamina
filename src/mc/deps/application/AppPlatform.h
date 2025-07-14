@@ -165,236 +165,233 @@ public:
     virtual bool const areTreatmentPacksThrottled() const /*override*/;
 
     // vIndex: 31
-    virtual bool hasFastAlphaTest() const;
-
-    // vIndex: 32
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::IntegrityTokenResult>>
     requestIntegrityToken(::std::string const& nonceToken);
 
-    // vIndex: 33
+    // vIndex: 32
     virtual void setIntegrityToken(::std::string const& integrityToken);
 
-    // vIndex: 34
+    // vIndex: 33
     virtual void setIntegrityTokenErrorMessage(::std::string const& errorMessage);
 
-    // vIndex: 35
+    // vIndex: 34
     virtual bool supportsInPackageRecursion() const;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual bool supportsXboxLiveAchievements() const;
 
-    // vIndex: 37
+    // vIndex: 36
     virtual void hideSplashScreen();
 
-    // vIndex: 38
+    // vIndex: 37
     virtual ::std::string getFeedbackBugsLink() const;
 
-    // vIndex: 39
+    // vIndex: 38
     virtual ::std::string getFeedbackHelpLink() const;
 
-    // vIndex: 40
+    // vIndex: 39
     virtual auto getModalErrorMessageProc() -> ::AssertDialogResponse (*)(::std::string const&, ::std::string const&);
 
-    // vIndex: 41
+    // vIndex: 40
     virtual void updateLocalization(::std::string const& loc);
 
-    // vIndex: 42
+    // vIndex: 41
     virtual void setSleepEnabled(bool enabled);
 
-    // vIndex: 43
+    // vIndex: 42
     virtual ::Core::PathBuffer<::std::string> getScratchPath();
 
-    // vIndex: 44
+    // vIndex: 43
     virtual ::Core::PathBuffer<::std::string> getInternalPackStoragePath() const;
 
-    // vIndex: 45
+    // vIndex: 44
     virtual ::Core::PathBuffer<::std::string> getSettingsPath();
 
     // vIndex: 2
     virtual ::Core::PathBuffer<::std::string> getLoggingPath() const /*override*/;
 
-    // vIndex: 46
+    // vIndex: 45
     virtual ::Core::PathBuffer<::std::string> getPackagedShaderCachePath();
 
-    // vIndex: 47
+    // vIndex: 46
     virtual ::Core::PathBuffer<::std::string> getShaderCachePath();
 
-    // vIndex: 48
+    // vIndex: 47
     virtual ::Core::PathBuffer<::std::string> getUserdataPathForLevels() const;
 
-    // vIndex: 49
+    // vIndex: 48
     virtual ::Core::PathBuffer<::std::string> getCacheStoragePath();
 
-    // vIndex: 50
+    // vIndex: 49
     virtual ::Core::PathBuffer<::std::string> getOnDiskScratchPath();
 
-    // vIndex: 51
+    // vIndex: 50
     virtual ::Core::PathBuffer<::std::string> getOnDiskPackScratchPath();
 
-    // vIndex: 52
+    // vIndex: 51
     virtual ::Core::PathBuffer<::std::string> getLevelInfoCachePath() const;
 
-    // vIndex: 53
+    // vIndex: 52
     virtual ::Core::PathBuffer<::std::string> getCatalogSearchScratchPath();
 
-    // vIndex: 54
+    // vIndex: 53
     virtual ::Core::PathBuffer<::std::string> getUserStorageRootPath() const;
 
-    // vIndex: 55
+    // vIndex: 54
     virtual ::std::shared_ptr<::Core::FileStorageArea> getOrCreateStorageAreaForUser(::Social::UserCreationData const&);
 
-    // vIndex: 56
+    // vIndex: 55
     virtual bool hasSeparatedStorageAreasForContentAcquisition() const;
 
-    // vIndex: 57
+    // vIndex: 56
     virtual uint64 getOptimalLDBSize();
 
-    // vIndex: 58
+    // vIndex: 57
     virtual int getMaxLDBFilesOpen() const;
 
-    // vIndex: 59
+    // vIndex: 58
     virtual bool getDisableLDBSeekCompactions() const;
 
-    // vIndex: 60
+    // vIndex: 59
     virtual void showDialog(int dialogId);
 
-    // vIndex: 62
+    // vIndex: 61
     virtual void createUserInput();
 
-    // vIndex: 61
+    // vIndex: 60
     virtual void createUserInput(int dialogId);
 
-    // vIndex: 63
+    // vIndex: 62
     virtual int getUserInputStatus();
 
-    // vIndex: 64
+    // vIndex: 63
     virtual ::std::vector<::std::string> getUserInput();
 
-    // vIndex: 65
+    // vIndex: 64
     virtual ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> getFileAccess(::ResourceFileSystem fileSystem);
 
-    // vIndex: 66
+    // vIndex: 65
     virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath);
 
-    // vIndex: 67
+    // vIndex: 66
     virtual void registerFileForCollectionWithCrashDump(::Core::Path const& fileName);
 
-    // vIndex: 68
+    // vIndex: 67
     virtual void registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const;
 
-    // vIndex: 69
+    // vIndex: 68
     virtual int getScreenWidth() const;
 
-    // vIndex: 70
+    // vIndex: 69
     virtual int getScreenHeight() const;
 
-    // vIndex: 71
+    // vIndex: 70
     virtual int getDisplayWidth();
 
-    // vIndex: 72
+    // vIndex: 71
     virtual int getDisplayHeight();
 
-    // vIndex: 73
+    // vIndex: 72
     virtual void setScreenSize(int width, int height);
 
-    // vIndex: 74
+    // vIndex: 73
     virtual void setWindowSize(int width, int height);
 
-    // vIndex: 75
+    // vIndex: 74
     virtual void setWindowText(::std::string const& title);
 
-    // vIndex: 76
+    // vIndex: 75
     virtual ::std::optional<::OperationMode> getOperationMode() const;
 
-    // vIndex: 77
+    // vIndex: 76
     virtual bool allowContentLogWriteToDisk();
 
-    // vIndex: 78
+    // vIndex: 77
     virtual uint getMaxClubsRequests() const;
 
-    // vIndex: 79
+    // vIndex: 78
     virtual void queueForMainThread_DEPRECATED(::std::function<void()>) = 0;
 
-    // vIndex: 80
+    // vIndex: 79
     virtual ::MPMCQueue<::std::function<void()>>& getMainThreadQueue() = 0;
 
-    // vIndex: 81
+    // vIndex: 80
     virtual bool supportsLaunchingLegacyVersion() const;
 
-    // vIndex: 82
+    // vIndex: 81
     virtual void launchLegacyVersion();
 
-    // vIndex: 83
+    // vIndex: 82
     virtual bool canManageLegacyData() const;
 
-    // vIndex: 84
+    // vIndex: 83
     virtual bool supportsDayOneExperience() const;
 
-    // vIndex: 85
+    // vIndex: 84
     virtual bool canMigrateWorldData() const;
 
-    // vIndex: 86
+    // vIndex: 85
     virtual bool isContentAutoUpdateAllowed() const;
 
-    // vIndex: 87
+    // vIndex: 86
     virtual int getMaxSimultaneousDownloads() const;
 
-    // vIndex: 88
+    // vIndex: 87
     virtual uint getMaxSimultaneousServiceRequests() const;
 
-    // vIndex: 89
+    // vIndex: 88
     virtual bool isDownloadAndImportBlocking() const;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual bool isDownloadBuffered() const;
 
-    // vIndex: 91
+    // vIndex: 90
     virtual bool supportsAutoSaveOnDBCompaction() const;
 
-    // vIndex: 92
+    // vIndex: 91
     virtual ::std::string getTextBoxBackend() const = 0;
 
-    // vIndex: 93
+    // vIndex: 92
     virtual void setTextBoxBackend(::std::string const&) = 0;
 
-    // vIndex: 94
+    // vIndex: 93
     virtual int getCaretPosition() const = 0;
 
-    // vIndex: 95
+    // vIndex: 94
     virtual void setCaretPosition(int) = 0;
 
-    // vIndex: 96
+    // vIndex: 95
     virtual bool supportsVibration() const;
 
-    // vIndex: 97
+    // vIndex: 96
     virtual void vibrate(int milliSeconds);
 
-    // vIndex: 98
+    // vIndex: 97
     virtual ::Core::PathBuffer<::std::string> getAssetFileFullPath(::Core::Path const& filename);
 
-    // vIndex: 99
+    // vIndex: 98
     virtual ::std::string readAssetFile(::Core::Path const& filename);
 
-    // vIndex: 100
+    // vIndex: 99
     virtual bool hasAssetFile(::Core::Path const& filename);
 
-    // vIndex: 101
+    // vIndex: 100
     virtual bool copyAssetFile(::Core::Path const& filename, ::Core::Path const& destination);
 
-    // vIndex: 102
+    // vIndex: 101
     virtual ::std::set<::Core::PathBuffer<::std::string>>
     listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const;
 
-    // vIndex: 103
+    // vIndex: 102
     virtual bool supportsClientUpdate() const;
 
-    // vIndex: 104
+    // vIndex: 103
     virtual ::std::string getClientUpdateUrl() const;
 
-    // vIndex: 105
+    // vIndex: 104
     virtual int checkLicense();
 
-    // vIndex: 106
+    // vIndex: 105
     virtual bool hasBuyButtonWhenInvalidLicense();
 
     // vIndex: 10
@@ -406,25 +403,25 @@ public:
     // vIndex: 9
     virtual bool isNetworkEnabled(bool onlyWifiAllowed) const /*override*/;
 
-    // vIndex: 107
+    // vIndex: 106
     virtual void setNetworkAllowed(bool allowed);
 
-    // vIndex: 108
+    // vIndex: 107
     virtual bool isNetworkAllowed() const;
 
     // vIndex: 13
     virtual bool isInternetAvailable() const /*override*/;
 
-    // vIndex: 109
+    // vIndex: 108
     virtual ::std::optional<bool> isOnWifiConnectionTelemetryValue();
 
-    // vIndex: 110
+    // vIndex: 109
     virtual ::NetworkConnectionType getNetworkConnectionType();
 
-    // vIndex: 111
+    // vIndex: 110
     virtual void setNetworkConnectionType(::NetworkConnectionType connectionType);
 
-    // vIndex: 112
+    // vIndex: 111
     virtual int getDefaultNetworkMaxPlayers() const;
 
     // vIndex: 14
@@ -433,112 +430,112 @@ public:
     // vIndex: 15
     virtual bool multiplayerRequiresUGCEnabled() const /*override*/;
 
-    // vIndex: 113
+    // vIndex: 112
     virtual bool isCrossPlatformToggleVisible() const;
 
-    // vIndex: 114
+    // vIndex: 113
     virtual bool isTelemetryAllowed();
 
-    // vIndex: 115
+    // vIndex: 114
     virtual bool isTrialWorldsTransferToFullGameAllowed() const;
 
-    // vIndex: 116
+    // vIndex: 115
     virtual void buyGame();
 
-    // vIndex: 117
+    // vIndex: 116
     virtual void finish();
 
-    // vIndex: 118
+    // vIndex: 117
     virtual bool canLaunchUri(::std::string const& uri);
 
-    // vIndex: 119
+    // vIndex: 118
     virtual void launchUri(::std::string const& uri);
 
-    // vIndex: 120
+    // vIndex: 119
     virtual void launchSettings();
 
-    // vIndex: 121
+    // vIndex: 120
     virtual bool useXboxControlHelpers() const;
 
-    // vIndex: 122
+    // vIndex: 121
     virtual ::PlatformType getPlatformType() const;
 
-    // vIndex: 123
+    // vIndex: 122
     virtual bool isCentennial() const;
 
-    // vIndex: 124
+    // vIndex: 123
     virtual ::std::string getPackageFamilyName() const;
 
     // vIndex: 16
     virtual ::BuildPlatform getBuildPlatform() const /*override*/;
 
-    // vIndex: 125
+    // vIndex: 124
     virtual ::std::string getPlatformString() const = 0;
 
-    // vIndex: 126
+    // vIndex: 125
     virtual ::std::string getSubPlatformString() const = 0;
 
-    // vIndex: 127
+    // vIndex: 126
     virtual void setARVRPlatform(::ARVRPlatform);
 
     // vIndex: 17
     virtual ::ARVRPlatform getARVRPlatform() const /*override*/;
 
-    // vIndex: 128
+    // vIndex: 127
     virtual int getNumberOfParticleFramesToInterpolate() const;
 
-    // vIndex: 129
+    // vIndex: 128
     virtual int getDpi() const;
 
-    // vIndex: 130
+    // vIndex: 129
     virtual void setDpi(int dpi);
 
-    // vIndex: 131
+    // vIndex: 130
     virtual ::UIScalingRules getUIScalingRules() const;
 
-    // vIndex: 132
+    // vIndex: 131
     virtual void setUIScalingRules(::UIScalingRules UIScalingRules);
 
-    // vIndex: 133
+    // vIndex: 132
     virtual void setVRControllerType(::VRControllerType controllerType);
 
-    // vIndex: 134
+    // vIndex: 133
     virtual ::VRControllerType getVRControllerType() const;
 
-    // vIndex: 135
+    // vIndex: 134
     virtual bool hasIDEProfiler();
 
-    // vIndex: 136
+    // vIndex: 135
     virtual ::std::string getPlatformStringVar(int stringId);
 
-    // vIndex: 137
+    // vIndex: 136
     virtual ::std::string getApplicationId() const = 0;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual uint64 getFreeMemory() const = 0;
 
-    // vIndex: 139
+    // vIndex: 138
     virtual uint64 getMemoryLimit() const = 0;
 
-    // vIndex: 140
+    // vIndex: 139
     virtual uint64 getUsedMemory() = 0;
 
     // vIndex: 20
     virtual uint64 getTotalPhysicalMemory() const = 0;
 
-    // vIndex: 141
+    // vIndex: 140
     virtual uint64 getMaximumUsedMemory();
 
-    // vIndex: 142
+    // vIndex: 141
     virtual uint64 getLowMemoryEventThreshold(::LowMemorySeverity) const;
 
-    // vIndex: 143
+    // vIndex: 142
     virtual uint64 getLowMemoryEventRecoveryThreshold(::LowMemorySeverity severity) const;
 
     // vIndex: 19
     virtual uint64 getLowPhysicalMemoryThreshold() const /*override*/;
 
-    // vIndex: 144
+    // vIndex: 143
     virtual void calculateIfLowMemoryDevice();
 
     // vIndex: 3
@@ -547,112 +544,112 @@ public:
     // vIndex: 4
     virtual bool isLowPhysicalMemoryDevice() const /*override*/;
 
-    // vIndex: 145
+    // vIndex: 144
     virtual uint64 getTextureMemoryBudget() const;
 
-    // vIndex: 146
+    // vIndex: 145
     virtual uint64 getSingleMipDefaultMemoryBudget() const;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual void readyForApplicationExitInfo() const;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual ::DeviceSunsetTier getDeviceSunsetTier() const;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual int getMaxSimRadiusInChunks() const;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual ::std::vector<::std::string> getBroadcastAddresses();
 
-    // vIndex: 151
+    // vIndex: 150
     virtual ::std::vector<::std::string> getIPAddresses();
 
-    // vIndex: 152
+    // vIndex: 151
     virtual bool useAppPlatformForTelemetryIPAddress();
 
-    // vIndex: 153
+    // vIndex: 152
     virtual ::std::string getModelName();
 
-    // vIndex: 154
+    // vIndex: 153
     virtual bool usesHDRBrightness() const;
 
-    // vIndex: 155
+    // vIndex: 154
     virtual void updateBootstrapSettingsFromTreatmentsAsync();
 
-    // vIndex: 156
+    // vIndex: 155
     virtual void setFullscreenMode(::FullscreenMode const fullscreenMode);
 
-    // vIndex: 157
+    // vIndex: 156
     virtual bool isNetworkThrottled() const;
 
     // vIndex: 12
     virtual bool isLANAllowed() const /*override*/;
 
-    // vIndex: 158
+    // vIndex: 157
     virtual bool doesLANRequireMultiplayerRestrictions() const;
 
-    // vIndex: 159
+    // vIndex: 158
     virtual void collectGraphicsHardwareDetails();
 
-    // vIndex: 160
+    // vIndex: 159
     virtual ::std::string getEdition() const;
 
-    // vIndex: 161
+    // vIndex: 160
     virtual ::OsVersion getOSVersion() const;
 
-    // vIndex: 162
+    // vIndex: 161
     virtual bool isWin10Arm() const;
 
-    // vIndex: 163
+    // vIndex: 162
     virtual void setThreadsFrozen(bool frozen);
 
-    // vIndex: 164
+    // vIndex: 163
     virtual bool areThreadsFrozen() const;
 
-    // vIndex: 165
+    // vIndex: 164
     virtual float getDefaultSafeZoneScaleX() const;
 
-    // vIndex: 166
+    // vIndex: 165
     virtual float getDefaultSafeZoneScaleY() const;
 
-    // vIndex: 167
+    // vIndex: 166
     virtual float getDefaultSafeZoneScaleAll() const;
 
-    // vIndex: 168
+    // vIndex: 167
     virtual float getDefaultScreenPositionX() const;
 
-    // vIndex: 169
+    // vIndex: 168
     virtual float getDefaultScreenPositionY() const;
 
-    // vIndex: 170
+    // vIndex: 169
     virtual bool isQuitCapable() const;
 
-    // vIndex: 171
+    // vIndex: 170
     virtual bool requireControllerAtStartup() const;
 
-    // vIndex: 172
+    // vIndex: 171
     virtual bool notifyControllerConnectionStateChange() const;
 
-    // vIndex: 173
+    // vIndex: 172
     virtual bool platformRequiresControllerApplet() const;
 
-    // vIndex: 174
+    // vIndex: 173
     virtual ::InputMode getDefaultInputMode() const;
 
-    // vIndex: 175
+    // vIndex: 174
     virtual ::AppFocusState getFocusState();
 
-    // vIndex: 176
+    // vIndex: 175
     virtual ::AppLifecycleContext& getAppLifecycleContext();
 
-    // vIndex: 177
+    // vIndex: 176
     virtual uint64 calculateAvailableDiskFreeSpace(::Core::Path const&) = 0;
 
-    // vIndex: 178
+    // vIndex: 177
     virtual bool supportsFliteTTS() const;
 
-    // vIndex: 179
+    // vIndex: 178
     virtual ::std::unique_ptr<::SecureStorage> getSecureStorage();
 
     // vIndex: 1
@@ -661,229 +658,229 @@ public:
     // vIndex: 2
     virtual void setSecureStorageKey(::std::string const& key, ::SecureStorageKey const& value) /*override*/;
 
-    // vIndex: 180
+    // vIndex: 179
     virtual bool devHotReloadRenderResources() const;
 
-    // vIndex: 181
+    // vIndex: 180
     virtual bool shouldPauseDownloadsWhenEnterGame() const;
 
-    // vIndex: 182
+    // vIndex: 181
     virtual bool compareAppReceiptToLocalReceipt(::std::string const& otherReceipt);
 
-    // vIndex: 183
+    // vIndex: 182
     virtual ::mce::UUID const& getThirdPartyPackUUID() const;
 
-    // vIndex: 184
+    // vIndex: 183
     virtual bool saveTreatmentPacksAsZips() const;
 
-    // vIndex: 185
+    // vIndex: 184
     virtual bool saveEncryptedPacksAsZips() const;
 
-    // vIndex: 186
+    // vIndex: 185
     virtual bool saveEncryptedWorldTemplatePacksAsZips() const;
 
-    // vIndex: 187
+    // vIndex: 186
     virtual bool allowsResourcePackDevelopment() const;
 
-    // vIndex: 188
+    // vIndex: 187
     virtual bool supportsLegacySinglePremiumCacheDirectory() const;
 
-    // vIndex: 189
+    // vIndex: 188
     virtual bool supportsWorldShare() const;
 
-    // vIndex: 190
+    // vIndex: 189
     virtual bool hasJournalingFilesystem() const;
 
-    // vIndex: 191
+    // vIndex: 190
     virtual bool isAutoCompactionEnabled() const;
 
-    // vIndex: 192
+    // vIndex: 191
     virtual ::std::chrono::nanoseconds getLevelSaveInterval() const;
 
-    // vIndex: 193
+    // vIndex: 192
     virtual ::std::chrono::nanoseconds getOptionsSaveInterval() const;
 
-    // vIndex: 194
+    // vIndex: 193
     virtual bool hasPlatformSpecificInvites() const;
 
-    // vIndex: 195
+    // vIndex: 194
     virtual bool usePlatformProfilePicturesOnly() const;
 
-    // vIndex: 196
+    // vIndex: 195
     virtual bool allowBetaXblSignIn() const;
 
-    // vIndex: 197
+    // vIndex: 196
     virtual bool requiresXboxLiveSigninToPlay() const;
 
-    // vIndex: 198
+    // vIndex: 197
     virtual bool requiresLiveGoldForMultiplayer() const;
 
-    // vIndex: 199
+    // vIndex: 198
     virtual bool shouldRegisterForXboxLiveNotifications() const;
 
     // vIndex: 5
     virtual bool isRealmsEnabled() const /*override*/;
 
-    // vIndex: 200
+    // vIndex: 199
     virtual bool minimizeBackgroundDownloads() const;
 
-    // vIndex: 201
+    // vIndex: 200
     virtual bool requiresAutoSaveIconExplanationPopup() const;
 
-    // vIndex: 202
+    // vIndex: 201
     virtual ::std::optional<::ScreenshotOptions> getExtraLevelSaveDataIconParams(::std::string const& levelId) const;
 
-    // vIndex: 203
+    // vIndex: 202
     virtual ::std::vector<::std::shared_ptr<::Social::MultiplayerService>> getMultiplayerServiceListToRegister() const;
 
     // vIndex: 18
     virtual ::std::vector<::Social::MultiplayerServiceIdentifier>
     getBroadcastingMultiplayerServiceIds(bool xblBroadcast, bool platformBroadcast) const /*override*/;
 
-    // vIndex: 204
+    // vIndex: 203
     virtual uint maxFileDataRequestConcurrency() const;
 
-    // vIndex: 205
+    // vIndex: 204
     virtual void goToExternalConsumablesStoreListing() const;
 
-    // vIndex: 206
+    // vIndex: 205
     virtual float getStoreNetworkFailureTimeout() const;
 
-    // vIndex: 207
+    // vIndex: 206
     virtual ::std::shared_ptr<::Core::FileStorageArea>
     createLoggingStorageArea(::Core::FileAccessType fileAccessType, ::Core::Path const& loggingPath);
 
-    // vIndex: 208
+    // vIndex: 207
     virtual void handlePlatformSpecificCommerceError(uint error);
 
-    // vIndex: 209
+    // vIndex: 208
     virtual bool isEduMode() const;
 
-    // vIndex: 210
+    // vIndex: 209
     virtual bool importAsFlatFile() const;
 
-    // vIndex: 211
+    // vIndex: 210
     virtual bool isWebviewSupported() const;
 
-    // vIndex: 212
+    // vIndex: 211
     virtual ::std::shared_ptr<::WebviewInterface> createWebview(::Webview::PlatformArguments&&) const;
 
-    // vIndex: 213
+    // vIndex: 212
     virtual bool canAppSelfTerminate() const = 0;
 
-    // vIndex: 214
+    // vIndex: 213
     virtual bool getPlatformTTSExists() const;
 
-    // vIndex: 215
+    // vIndex: 214
     virtual bool getPlatformTTSEnabled() const;
 
-    // vIndex: 216
+    // vIndex: 215
     virtual ::std::variant<::HWND__*, ::std::monostate> getRenderSurfaceParameters() const;
 
-    // vIndex: 217
+    // vIndex: 216
     virtual bool shouldRemoveGraphicsDeviceOnAppTermination() const;
 
-    // vIndex: 218
+    // vIndex: 217
     virtual bool isJoinableViaExternalServers() const;
 
-    // vIndex: 219
+    // vIndex: 218
     virtual void onPrimaryUserNetworkReady();
 
-    // vIndex: 220
+    // vIndex: 219
     virtual bool isDisplayInitialized() const;
 
-    // vIndex: 221
+    // vIndex: 220
     virtual bool usesAsyncOptionSaving() const;
 
-    // vIndex: 222
+    // vIndex: 221
     virtual void showPlatformStoreIcon(bool shouldShow);
 
-    // vIndex: 223
+    // vIndex: 222
     virtual void showPlatformEmptyStoreDialog(::std::function<void(bool)>&& callback);
 
-    // vIndex: 224
+    // vIndex: 223
     virtual bool supportsVRModeSwap() const;
 
-    // vIndex: 225
+    // vIndex: 224
     virtual bool canSwapVRMode(bool const inVRMode) const;
 
-    // vIndex: 226
+    // vIndex: 225
     virtual void tryEnterVRMode(bool duringStartup, ::std::function<void(bool)> callback);
 
-    // vIndex: 227
+    // vIndex: 226
     virtual void exitVRMode(::std::function<void()> callback);
 
-    // vIndex: 228
+    // vIndex: 227
     virtual void initializeGameStreaming();
 
-    // vIndex: 229
+    // vIndex: 228
     virtual void notifyNetworkConfigurationChanged();
 
-    // vIndex: 230
+    // vIndex: 229
     virtual void setKeepScreenOnFlag(bool);
 
-    // vIndex: 231
+    // vIndex: 230
     virtual void initializeMulticast() const;
 
-    // vIndex: 232
+    // vIndex: 231
     virtual void requestMulticastReceivePermission();
 
-    // vIndex: 233
+    // vIndex: 232
     virtual bool hasMulticastReceivePermission() const;
 
-    // vIndex: 234
+    // vIndex: 233
     virtual void releaseMulticastReceivePermission() const;
 
-    // vIndex: 235
+    // vIndex: 234
     virtual void onMinecraftGameInitComplete();
 
-    // vIndex: 236
+    // vIndex: 235
     virtual void onFullGameUnlock();
 
-    // vIndex: 237
+    // vIndex: 236
     virtual bool is24HourTimeFormat() const;
 
-    // vIndex: 238
+    // vIndex: 237
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>>
         showOSUserDialog(::std::string, ::std::string, ::std::string);
 
-    // vIndex: 239
+    // vIndex: 238
     virtual ::Core::PathBuffer<::std::string> _getCurrentStoragePath() const = 0;
 
-    // vIndex: 240
+    // vIndex: 239
     virtual ::Core::PathBuffer<::std::string> _getExternalStoragePath() const = 0;
 
-    // vIndex: 241
+    // vIndex: 240
     virtual ::Core::PathBuffer<::std::string> _getInternalStoragePath() const = 0;
 
-    // vIndex: 242
+    // vIndex: 241
     virtual ::Core::PathBuffer<::std::string> _getUserdataPath() const = 0;
 
-    // vIndex: 243
+    // vIndex: 242
     virtual bool _tryEnableCPUBoost();
 
-    // vIndex: 244
+    // vIndex: 243
     virtual void _disableCPUBoost();
 
-    // vIndex: 245
+    // vIndex: 244
     virtual void _initializeFileStorageAreas();
 
-    // vIndex: 246
+    // vIndex: 245
     virtual void _teardownFileStorageAreas();
 
-    // vIndex: 247
+    // vIndex: 246
     virtual int getPlatformDpi() const;
 
-    // vIndex: 248
+    // vIndex: 247
     virtual ::UIScalingRules getPlatformUIScalingRules() const;
 
-    // vIndex: 249
+    // vIndex: 248
     virtual ::Core::PathBuffer<::std::string> getPlatformTempPath() const = 0;
 
-    // vIndex: 250
+    // vIndex: 249
     virtual void _onInitialize();
 
-    // vIndex: 251
+    // vIndex: 250
     virtual void _onTeardown();
     // NOLINTEND
 
@@ -955,8 +952,6 @@ public:
     MCNAPI int const $numberOfThrottledTreatmentPacksToImportPerMinute() const;
 
     MCNAPI bool const $areTreatmentPacksThrottled() const;
-
-    MCNAPI bool $hasFastAlphaTest() const;
 
     MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::IntegrityTokenResult>>
     $requestIntegrityToken(::std::string const& nonceToken);
@@ -1245,8 +1240,6 @@ public:
     MCNAPI bool $notifyControllerConnectionStateChange() const;
 
     MCNAPI bool $platformRequiresControllerApplet() const;
-
-    MCNAPI ::InputMode $getDefaultInputMode() const;
 
     MCNAPI ::AppFocusState $getFocusState();
 

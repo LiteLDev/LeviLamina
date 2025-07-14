@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/CopperBlock.h"
 
 // auto generated forward declare list
@@ -13,7 +14,7 @@ class BlockPos;
 class IConstBlockSource;
 // clang-format on
 
-class CopperGrateBlock : public ::CopperBlock {
+class CopperGrateBlock : public ::CopperBlock<::BlockLegacy> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -32,7 +33,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $getCollisionShapeForCamera(
+    MCNAPI bool $getCollisionShapeForCamera(
         ::AABB&                    outAABB,
         ::Block const&             block,
         ::IConstBlockSource const& region,

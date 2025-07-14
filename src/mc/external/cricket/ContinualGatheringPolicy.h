@@ -4,6 +4,9 @@
 
 namespace cricket {
 
-enum class ContinualGatheringPolicy : uint {};
+enum class ContinualGatheringPolicy : int {
+    Once        = 0,
+    Continually = 1,
+};
 
 }

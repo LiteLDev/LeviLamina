@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Level;
+class ILevel;
 class NetworkIdentifier;
 struct MCRESULT;
 // clang-format on
@@ -33,7 +33,7 @@ public:
     virtual ~DefaultCommandsContextProvider() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::Level* getLevel() /*override*/;
+    virtual ::ILevel* getLevel() /*override*/;
 
     // vIndex: 2
     virtual ::NetworkIdentifier getLocalNetworkId() const /*override*/;
@@ -50,7 +50,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Level* $getLevel();
+    MCNAPI ::ILevel* $getLevel();
 
     MCNAPI ::NetworkIdentifier $getLocalNetworkId() const;
 

@@ -7,7 +7,7 @@
 class BlendingData;
 class ChunkBlender;
 class ChunkPos;
-class Dimension;
+class ChunkSource;
 namespace ChunkBlenderUtil { struct AttenuationData; }
 // clang-format on
 
@@ -65,14 +65,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::shared_ptr<::ChunkBlender>>> mAttenuatorCache;
     ::ll::TypedStorage<8, 8, ::std::shared_mutex> mAttenuatorSharedMutex;
-    ::ll::TypedStorage<8, 8, ::Dimension&>        mDimension;
+    ::ll::TypedStorage<1, 1, bool const>          mIsClientSide;
+    ::ll::TypedStorage<8, 8, ::ChunkSource*>      mChunkSource;
+    ::ll::TypedStorage<2, 2, short const>         mDimensionMinHeight;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChunkBlenderFactory& operator=(ChunkBlenderFactory const&);
-    ChunkBlenderFactory(ChunkBlenderFactory const&);
-    ChunkBlenderFactory();
 
 public:
     // member functions

@@ -13,7 +13,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual ::cricket::StunAttributeValueType GetAttributeValueType(int) const /*override*/;
+    virtual ::cricket::StunAttributeValueType GetAttributeValueType(int type) const /*override*/;
 
     // vIndex: 1
     virtual ::cricket::StunMessage* CreateNew() const /*override*/;
@@ -25,7 +25,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::cricket::StunAttributeValueType $GetAttributeValueType(int type) const;
 
+    MCNAPI ::cricket::StunMessage* $CreateNew() const;
     // NOLINTEND
 
 public:

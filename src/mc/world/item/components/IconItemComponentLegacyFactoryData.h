@@ -16,7 +16,7 @@ struct IconItemComponentLegacyFactoryData : public ::IItemComponentLegacyFactory
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk855b16;
+    ::ll::UntypedStorage<8, 32> mUnkace5cf;
     // NOLINTEND
 
 public:

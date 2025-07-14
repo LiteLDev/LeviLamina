@@ -115,7 +115,7 @@ public:
     virtual void setUnloaded(::Actor& actor);
 
     // vIndex: 3
-    virtual ::Scripting::Result_deprecated<void> clearVelocity(::Actor& self);
+    virtual ::Scripting::Result_deprecated<void> clearVelocityStable(::Actor& self);
 
     // vIndex: 4
     virtual ::Scripting::Result_deprecated<void> lookAt(::Actor& self, ::Vec3 const& targetLocation);
@@ -133,7 +133,7 @@ public:
     virtual ::Scripting::Result_deprecated<void> setSneaking(::Actor& self, bool isSneaking);
 
     // vIndex: 9
-    virtual ::Scripting::Result_deprecated<void> applyImpulse(::Actor& self, ::Vec3 const& vector);
+    virtual ::Scripting::Result_deprecated<void> applyImpulseStable(::Actor& self, ::Vec3 const& vector);
 
     // vIndex: 10
     virtual ::Scripting::Result_deprecated<void> remove(::Actor& self);
@@ -223,6 +223,8 @@ public:
             ::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions>> const& options
     );
 
+    MCFOLD ::Scripting::Result_deprecated<void> applyImpulseBeta(::Actor& self, ::Vec3 const& vector);
+
     MCAPI ::Scripting::Result_deprecated<void> applyKnockback_V1(
         ::Actor& self,
         float    directionX,
@@ -236,6 +238,8 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<void>
     clearDynamicProperties(::Actor& self, ::Scripting::ContextConfig const& contextConfig);
+
+    MCFOLD ::Scripting::Result_deprecated<void> clearVelocityBeta(::Actor& self);
 
     MCAPI ::Scripting::Result_deprecated<bool> extinguishFire(::Actor& self, bool useEffects);
 
@@ -552,7 +556,7 @@ public:
 
     MCAPI void $setUnloaded(::Actor& actor);
 
-    MCFOLD ::Scripting::Result_deprecated<void> $clearVelocity(::Actor& self);
+    MCFOLD ::Scripting::Result_deprecated<void> $clearVelocityStable(::Actor& self);
 
     MCAPI ::Scripting::Result_deprecated<void> $lookAt(::Actor& self, ::Vec3 const& targetLocation);
 
@@ -564,7 +568,7 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<void> $setSneaking(::Actor& self, bool isSneaking);
 
-    MCAPI ::Scripting::Result_deprecated<void> $applyImpulse(::Actor& self, ::Vec3 const& vector);
+    MCAPI ::Scripting::Result_deprecated<void> $applyImpulseStable(::Actor& self, ::Vec3 const& vector);
 
     MCAPI ::Scripting::Result_deprecated<void> $remove(::Actor& self);
 

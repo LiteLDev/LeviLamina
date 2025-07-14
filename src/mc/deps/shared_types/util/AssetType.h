@@ -5,11 +5,14 @@
 namespace SharedTypes {
 
 enum class AssetType : int {
-    Block       = 0,
-    Entity      = 1,
-    Item        = 2,
-    ItemTexture = 3,
-    LootTable   = 4,
+    Biome           = 0,
+    Block           = 1,
+    BlockTexture    = 2,
+    Entity          = 3,
+    Item            = 4,
+    ItemTexture     = 5,
+    LootTable       = 6,
+    ParticleTexture = 7,
 };
 
 }

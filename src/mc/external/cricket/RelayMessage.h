@@ -1,0 +1,32 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/external/cricket/StunAttributeValueType.h"
+#include "mc/external/cricket/StunMessage.h"
+
+namespace cricket {
+
+class RelayMessage : public ::cricket::StunMessage {
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 2
+    virtual ::cricket::StunAttributeValueType GetAttributeValueType(int type) const /*override*/;
+
+    // vIndex: 1
+    virtual ::cricket::StunMessage* CreateNew() const /*override*/;
+
+    // vIndex: 0
+    virtual ~RelayMessage() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
+};
+
+} // namespace cricket

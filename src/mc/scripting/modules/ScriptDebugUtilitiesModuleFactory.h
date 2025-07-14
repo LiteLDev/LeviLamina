@@ -7,12 +7,25 @@
 
 // auto generated forward declare list
 // clang-format off
+class ServerLevel;
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ModuleBinding; }
 namespace mce { class UUID; }
 // clang-format on
 
 class ScriptDebugUtilitiesModuleFactory : public ::Scripting::GenericModuleBindingFactory {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkeee2a7;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptDebugUtilitiesModuleFactory& operator=(ScriptDebugUtilitiesModuleFactory const&);
+    ScriptDebugUtilitiesModuleFactory(ScriptDebugUtilitiesModuleFactory const&);
+    ScriptDebugUtilitiesModuleFactory();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -23,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptDebugUtilitiesModuleFactory();
+    MCNAPI explicit ScriptDebugUtilitiesModuleFactory(::ServerLevel* level);
 
     MCNAPI ::Scripting::ModuleBinding _generateBindings(
         ::Scripting::ModuleBindingBuilder&  moduleBuilder,
@@ -43,7 +56,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI void* $ctor(::ServerLevel* level);
     // NOLINTEND
 
 public:

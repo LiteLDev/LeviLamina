@@ -8,6 +8,7 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/puv/Loader.h"
+#include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/chunk/ChunksLoadedStatus.h"
 #include "mc/world/level/chunk/QueueRequestResult.h"
 #include "mc/world/level/levelgen/structure/StructureDeleteResult.h"
@@ -28,10 +29,12 @@ class PackInstance;
 class ResourcePackManager;
 class ServerLevel;
 class StructureAnimationData;
+class StructurePoolElement;
 class StructureSettings;
 class StructureTemplate;
 struct Tick;
 namespace Core { class Path; }
+namespace SharedTypes::v1_21_80 { struct JigsawStructureMetadata; }
 namespace SharedTypes::v1_21_80 { struct JigsawStructureMetadataFile; }
 namespace SharedTypes::v1_21_80 { struct JigsawStructureMetadataRegistry; }
 namespace cereal { struct ReflectionCtx; }
@@ -50,8 +53,12 @@ public:
     ::ll::TypedStorage<4, 4, uint>                                                     mStructurePlacementSaveCounter;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry>> mUnknownBlockRegistry;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ResourcePackManager> const> mPackManager;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadataRegistry>>
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<uint64, ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata>>>
                                                                          mMetadataRegistry;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>               mMetadataRegistryMutex;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::ReflectionCtx>> mCerealContext;
     // NOLINTEND
 
@@ -85,7 +92,13 @@ public:
         ::std::string&                                                  resourceStream
     );
 
-    MCNAPI ::SharedTypes::v1_21_80::JigsawStructureMetadataRegistry& _getMetadataRegistry() const;
+    MCNAPI bool _findResource(
+        ::std::string_view                                              structureNamespace,
+        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& structurePath,
+        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& rootStructurePath,
+        ::PackInstance const&                                           pack,
+        ::std::string&                                                  resourceStream
+    );
 
     MCNAPI bool _placeSegment(::StructureAnimationData& structureAnimationData);
 
@@ -112,6 +125,9 @@ public:
 
     MCNAPI ::StructureTemplate& getOrCreate(::std::string const& structureName);
 
+    MCNAPI ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata>
+    getOrCreateJigsawStructureMetadata(::StructurePoolElement const& structurePoolElement);
+
     MCNAPI ::LegacyStructureTemplate& getOrCreateLegacy(::std::string const& structureName);
 
     MCNAPI ::StructureTemplate* getStructure(::std::string const& structureName) const;
@@ -128,7 +144,7 @@ public:
 
     MCNAPI bool loadLegacy(::LegacyStructureTemplate& structure, ::std::string& data);
 
-    MCNAPI void loadMetadataRegistries(::ResourcePackManager& packManager);
+    MCNAPI void loadMetadataRegistries();
 
     MCNAPI void loadPlacementQueue(::LevelStorage& storage, ::Level& level, ::Dimension& dimension);
 
@@ -172,10 +188,7 @@ public:
     );
 
     MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
-    getStructurePath(::std::string const& structureFullName);
-
-    MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
-    getStructurePath(::std::string const& structureNamespace, ::std::string const& structureName);
+    getStructurePath(::std::string_view structureNamespace, ::std::string_view structureName);
     // NOLINTEND
 
 public:

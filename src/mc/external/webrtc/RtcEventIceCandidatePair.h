@@ -27,7 +27,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RtcEventIceCandidatePair() /*override*/ = default;
+    virtual ~RtcEventIceCandidatePair() /*override*/;
 
     // vIndex: 1
     virtual ::webrtc::RtcEvent::Type GetType() const /*override*/;
@@ -39,19 +39,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RtcEventIceCandidatePair(::webrtc::IceCandidatePairEventType, uint, uint);
+    MCNAPI
+    RtcEventIceCandidatePair(::webrtc::IceCandidatePairEventType type, uint candidate_pair_id, uint transaction_id);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::IceCandidatePairEventType, uint, uint);
+    MCNAPI void* $ctor(::webrtc::IceCandidatePairEventType type, uint candidate_pair_id, uint transaction_id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::webrtc::RtcEvent::Type $GetType() const;
 
+    MCNAPI bool $IsConfigEvent() const;
     // NOLINTEND
 
 public:

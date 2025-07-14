@@ -102,13 +102,19 @@ public:
     virtual void SendAsync(::webrtc::DataBuffer, ::absl::AnyInvocable<void(::webrtc::RTCError) &&>);
 
     // vIndex: 2
-    virtual ~DataChannelInterface() /*override*/ = default;
+    virtual ~DataChannelInterface() /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static uint64 MaxSendQueueSize();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

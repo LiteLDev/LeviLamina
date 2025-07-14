@@ -30,6 +30,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PackReport& operator=(PackReport const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI PackReport();
@@ -39,8 +43,6 @@ public:
     MCNAPI PackReport(::PackReport&&);
 
     MCNAPI bool hasErrors() const;
-
-    MCNAPI ::PackReport& operator=(::PackReport const&);
 
     MCNAPI ::PackReport& operator=(::PackReport&&);
 

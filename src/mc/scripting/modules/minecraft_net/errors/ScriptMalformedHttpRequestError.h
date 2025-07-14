@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Error.h"
+#include "mc/deps/scripting/runtime/BaseError.h"
 
 namespace ScriptModuleMinecraftNet {
 
-class ScriptMalformedHttpRequestError : public ::Scripting::Error {
+class ScriptMalformedHttpRequestError : public ::Scripting::BaseError {
 public:
     // prevent constructor by default
     ScriptMalformedHttpRequestError();

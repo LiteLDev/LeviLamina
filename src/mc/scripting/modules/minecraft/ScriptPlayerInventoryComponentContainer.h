@@ -16,10 +16,15 @@ namespace ScriptModuleMinecraft {
 
 class ScriptPlayerInventoryComponentContainer : public ::ScriptModuleMinecraft::ScriptInventoryComponentContainer {
 public:
+    // prevent constructor by default
+    ScriptPlayerInventoryComponentContainer(ScriptPlayerInventoryComponentContainer const&);
+    ScriptPlayerInventoryComponentContainer();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptPlayerInventoryComponentContainer() /*override*/ = default;
+    virtual ~ScriptPlayerInventoryComponentContainer() /*override*/;
 
     // vIndex: 13
     virtual ::Container* _tryGetContainer() const /*override*/;
@@ -29,9 +34,22 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerInventoryComponentContainer&
+    operator=(::ScriptModuleMinecraft::ScriptPlayerInventoryComponentContainer const&);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindV010();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

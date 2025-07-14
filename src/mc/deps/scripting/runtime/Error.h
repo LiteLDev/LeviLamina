@@ -2,40 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/runtime/BaseError.h"
+
 namespace Scripting {
 
-struct Error {
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkff4b79;
-    ::ll::UntypedStorage<8, 32> mUnk13ff88;
-    ::ll::UntypedStorage<8, 40> mUnk1622be;
-    ::ll::UntypedStorage<8, 24> mUnk163284;
-    ::ll::UntypedStorage<8, 40> mUnk4c53c7;
-    ::ll::UntypedStorage<1, 1>  mUnk1bf48e;
-    // NOLINTEND
-
+struct Error : public ::Scripting::BaseError {
 public:
     // prevent constructor by default
+    Error& operator=(Error const&);
     Error();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Error(::Scripting::Error&&);
-
-    MCNAPI Error(::Scripting::Error const&);
+    MCNAPI explicit Error(::Scripting::BaseError const& base);
 
     MCNAPI explicit Error(::std::string const& message_);
 
-    MCNAPI ::Scripting::Error& operator=(::Scripting::Error const&);
-
-    MCNAPI ::Scripting::Error& operator=(::Scripting::Error&&);
-
-    MCNAPI void setCallStack(::std::string _backtrace);
-
-    MCNAPI ::std::string toString() const;
+    MCNAPI Error(::Scripting::Error const&);
 
     MCNAPI ~Error();
     // NOLINTEND
@@ -43,11 +28,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::Error&&);
-
-    MCNAPI void* $ctor(::Scripting::Error const&);
+    MCNAPI void* $ctor(::Scripting::BaseError const& base);
 
     MCNAPI void* $ctor(::std::string const& message_);
+
+    MCNAPI void* $ctor(::Scripting::Error const&);
     // NOLINTEND
 
 public:

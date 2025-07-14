@@ -97,15 +97,18 @@ public:
     virtual ::IEntitlement const& getEntitlement(::ContentIdentity const&) = 0;
 
     // vIndex: 20
-    virtual ::std::vector<::mce::UUID> getOwnedEntitlementIds() const = 0;
+    virtual bool hasOwnedEntitlementForContentIdentity(::ContentIdentity const&) const = 0;
 
     // vIndex: 21
-    virtual void getEntitlementsByCreator(::std::string const&, ::std::vector<::Entitlement>&) = 0;
+    virtual ::std::vector<::mce::UUID> getOwnedEntitlementIds() const = 0;
 
     // vIndex: 22
-    virtual ::std::string const& getThirdPartyReceipt(::std::string const&) = 0;
+    virtual void getEntitlementsByCreator(::std::string const&, ::std::vector<::Entitlement>&) = 0;
 
     // vIndex: 23
+    virtual ::std::string const& getThirdPartyReceipt(::std::string const&) = 0;
+
+    // vIndex: 24
     virtual void purchaseCatalogOffer(
         ::std::string const&,
         ::std::string const&,
@@ -117,30 +120,30 @@ public:
         ::std::function<void(::TransactionStatus)>
     ) = 0;
 
-    // vIndex: 24
+    // vIndex: 25
     virtual void redeemRealmsCatalogOffer(
         ::std::string const&,
         ::std::string const&,
         ::std::function<void(::TransactionStatus)>
     ) = 0;
 
-    // vIndex: 25
+    // vIndex: 26
     virtual void transferDeviceAccountToXboxLive(::std::function<void(bool)>) = 0;
 
-    // vIndex: 26
+    // vIndex: 27
     virtual void markDeviceOwnership(::ContentIdentity const&, ::std::string const&) = 0;
 
-    // vIndex: 27
+    // vIndex: 28
     virtual void setDeviceEntitlements(::std::vector<::PurchaseInfo> const&) = 0;
 
-    // vIndex: 28
+    // vIndex: 29
     virtual void addEntitlementInventoryRefreshListener(::std::weak_ptr<::EntitlementChangeListener>) = 0;
 
-    // vIndex: 29
+    // vIndex: 30
     virtual ::Bedrock::PubSub::Subscription
         subscribeToOfferPurchaseSuccessEvent(::std::function<void(::std::string const&)>) = 0;
 
-    // vIndex: 30
+    // vIndex: 31
     virtual bool hasInventoryUpdated() const = 0;
     // NOLINTEND
 

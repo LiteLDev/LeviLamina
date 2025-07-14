@@ -47,10 +47,10 @@ public:
     // vIndex: 0
     virtual ~ChemistryTableBlockActor() /*override*/;
 
-    // vIndex: 34
+    // vIndex: 35
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 33
+    // vIndex: 34
     virtual ::Container const* getContainer() const /*override*/;
 
     // vIndex: 7
@@ -69,9 +69,9 @@ public:
     virtual void startOpen(::Player& p) /*override*/;
 
     // vIndex: 23
-    virtual void stopOpen(::Player& p) /*override*/;
+    virtual void stopOpen(::Player& player) /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
     // vIndex: 1
@@ -80,7 +80,7 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 2
@@ -141,7 +141,7 @@ public:
 
     MCNAPI void $startOpen(::Player& p);
 
-    MCNAPI void $stopOpen(::Player& p);
+    MCNAPI void $stopOpen(::Player& player);
 
     MCNAPI void $onRemoved(::BlockSource& region);
 

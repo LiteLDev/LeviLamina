@@ -35,10 +35,10 @@ public:
     virtual ::cricket::StunAttributeValueType value_type() const /*override*/;
 
     // vIndex: 3
-    virtual bool Read(::rtc::ByteBufferReader*) /*override*/;
+    virtual bool Read(::rtc::ByteBufferReader* buf) /*override*/;
 
     // vIndex: 4
-    virtual bool Write(::rtc::ByteBufferWriter*) const /*override*/;
+    virtual bool Write(::rtc::ByteBufferWriter* buf) const /*override*/;
 
     // vIndex: 0
     virtual ~StunAddressAttribute() /*override*/ = default;
@@ -47,25 +47,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void SetAddress(::rtc::SocketAddress const&);
+    MCNAPI void SetAddress(::rtc::SocketAddress const& addr);
 
-    MCNAPI StunAddressAttribute(ushort, ::rtc::SocketAddress const&);
+    MCNAPI StunAddressAttribute(ushort type, ::rtc::SocketAddress const& addr);
 
-    MCNAPI StunAddressAttribute(ushort, ushort);
+    MCNAPI StunAddressAttribute(ushort type, ushort length);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(ushort, ::rtc::SocketAddress const&);
+    MCNAPI void* $ctor(ushort type, ::rtc::SocketAddress const& addr);
 
-    MCNAPI void* $ctor(ushort, ushort);
+    MCNAPI void* $ctor(ushort type, ushort length);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::cricket::StunAttributeValueType $value_type() const;
 
+    MCNAPI bool $Read(::rtc::ByteBufferReader* buf);
+
+    MCNAPI bool $Write(::rtc::ByteBufferWriter* buf) const;
     // NOLINTEND
 
 public:

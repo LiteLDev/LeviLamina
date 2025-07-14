@@ -9,7 +9,6 @@
 // clang-format off
 class TaskGroup;
 namespace PackCommand { class IResourceRepositories; }
-namespace PackCommand { class PackCommandPipelineSync; }
 namespace PackCommand { struct MoveReplaceBatch; }
 namespace PackCommand { struct PackCommandHandle; }
 namespace PackCommand { struct RemoveBatch; }
@@ -46,7 +45,7 @@ public:
     virtual ::PackCommand::PackCommandHandle submitRemove(::PackCommand::RemoveBatch&& commands) /*override*/;
 
     // vIndex: 4
-    virtual ::PackCommand::PackCommandPipelineSync _getSync() /*override*/;
+    virtual ::TaskGroup& getTaskGroup() /*override*/;
 
     // vIndex: 0
     virtual ~PackCommandPipelineImpl() /*override*/ = default;
@@ -87,7 +86,7 @@ public:
 
     MCNAPI ::PackCommand::PackCommandHandle $submitRemove(::PackCommand::RemoveBatch&& commands);
 
-    MCNAPI ::PackCommand::PackCommandPipelineSync $_getSync();
+    MCNAPI ::TaskGroup& $getTaskGroup();
     // NOLINTEND
 
 public:

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/molang/MolangVersion.h"
-#include "mc/util/molang/ExpressionNode.h"
 #include "mc/util/molang/ExpressionOp.h"
 #include "mc/util/molang/IComplexExpression.h"
 
@@ -13,8 +12,11 @@
 class HashedString;
 class RenderParams;
 struct MolangScriptArg;
+namespace Bedrock { class StaticOptimizedString; }
 namespace Json { class Value; }
 namespace Molang::details { class ExpressionNode; }
+namespace Molang::details { class Program; }
+namespace Molang::details { class SourceTree; }
 // clang-format on
 
 namespace Molang::details {
@@ -58,38 +60,56 @@ public:
 
     // vIndex: 7
     virtual void
-    replaceResourceVariables(::std::unordered_map<::HashedString, ::ExpressionNode::ResourceReference>&) /*override*/;
-
-    // vIndex: 8
-    virtual void
     replaceArrayVariables(::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>&) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 8
     virtual void validateArrayVariables() const /*override*/;
 
-    // vIndex: 10
+    // vIndex: 9
     virtual bool isValid() const /*override*/;
 
-    // vIndex: 11
+    // vIndex: 10
     virtual bool isConstantValue() const /*override*/;
 
-    // vIndex: 12
+    // vIndex: 11
     virtual bool hasVariableAssignments() const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 12
     virtual ::ExpressionOp getOp() const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 13
     virtual bool needsToCompile() const /*override*/;
 
-    // vIndex: 15
+    // vIndex: 14
     virtual ::std::optional<::MolangScriptArg> getValueIfConstant() const /*override*/;
 
-    // vIndex: 16
-    virtual ::Molang::details::ExpressionNode* getSource() /*override*/;
+    // vIndex: 15
+    virtual ::Molang::details::SourceTree* getSource() /*override*/;
 
     // vIndex: 0
     virtual ~CompiledExpressionWithoutContentScope() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI CompiledExpressionWithoutContentScope(
+        ::Molang::details::Program       instructions,
+        ::Bedrock::StaticOptimizedString expressionString,
+        ::MolangVersion                  version,
+        bool                             hasVariableAssignments
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Molang::details::Program       instructions,
+        ::Bedrock::StaticOptimizedString expressionString,
+        ::MolangVersion                  version,
+        bool                             hasVariableAssignments
+    );
     // NOLINTEND
 
 public:
@@ -111,7 +131,7 @@ public:
 
     MCNAPI ::std::string $getExpressionString() const;
 
-    MCNAPI void $replaceResourceVariables(::std::unordered_map<::HashedString, ::ExpressionNode::ResourceReference>&);
+    MCNAPI ::MolangVersion $getMolangVersion() const;
 
     MCNAPI void $replaceArrayVariables(::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>&);
 
@@ -129,7 +149,7 @@ public:
 
     MCNAPI ::std::optional<::MolangScriptArg> $getValueIfConstant() const;
 
-    MCNAPI ::Molang::details::ExpressionNode* $getSource();
+    MCNAPI ::Molang::details::SourceTree* $getSource();
     // NOLINTEND
 
 public:

@@ -28,23 +28,23 @@ public:
 
     MCNAPI CopyOnWriteBuffer();
 
-    MCNAPI CopyOnWriteBuffer(::rtc::CopyOnWriteBuffer&&);
+    MCNAPI CopyOnWriteBuffer(::rtc::CopyOnWriteBuffer&& buf);
 
-    MCNAPI CopyOnWriteBuffer(::rtc::CopyOnWriteBuffer const&);
+    MCNAPI CopyOnWriteBuffer(::rtc::CopyOnWriteBuffer const& buf);
 
-    MCNAPI explicit CopyOnWriteBuffer(uint64);
+    MCNAPI explicit CopyOnWriteBuffer(uint64 size);
 
-    MCNAPI CopyOnWriteBuffer(uint64, uint64);
+    MCNAPI CopyOnWriteBuffer(uint64 size, uint64 capacity);
 
-    MCNAPI void EnsureCapacity(uint64);
+    MCNAPI void EnsureCapacity(uint64 new_capacity);
 
-    MCNAPI void SetSize(uint64);
+    MCNAPI void SetSize(uint64 size);
 
-    MCNAPI void UnshareAndEnsureCapacity(uint64);
+    MCNAPI void UnshareAndEnsureCapacity(uint64 new_capacity);
 
-    MCNAPI ::rtc::CopyOnWriteBuffer& operator=(::rtc::CopyOnWriteBuffer&&);
+    MCNAPI ::rtc::CopyOnWriteBuffer& operator=(::rtc::CopyOnWriteBuffer&& buf);
 
-    MCNAPI bool operator==(::rtc::CopyOnWriteBuffer const&) const;
+    MCNAPI bool operator==(::rtc::CopyOnWriteBuffer const& buf) const;
 
     MCNAPI ~CopyOnWriteBuffer();
     // NOLINTEND
@@ -54,13 +54,13 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::rtc::CopyOnWriteBuffer&&);
+    MCNAPI void* $ctor(::rtc::CopyOnWriteBuffer&& buf);
 
-    MCNAPI void* $ctor(::rtc::CopyOnWriteBuffer const&);
+    MCNAPI void* $ctor(::rtc::CopyOnWriteBuffer const& buf);
 
-    MCNAPI void* $ctor(uint64);
+    MCNAPI void* $ctor(uint64 size);
 
-    MCNAPI void* $ctor(uint64, uint64);
+    MCNAPI void* $ctor(uint64 size, uint64 capacity);
     // NOLINTEND
 
 public:

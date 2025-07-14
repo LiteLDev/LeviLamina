@@ -10,7 +10,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class FillingContainer;
 class HashedString;
+class IContainerRegistryAccess;
+class IContainerRegistryTracker;
 class IDynamicContainerSerialization;
 class ItemDescriptor;
 class ItemStack;
@@ -24,6 +27,15 @@ namespace cereal { struct ReflectionCtx; }
 
 class StorageItemComponent : public ::NetworkedItemComponent<::StorageItemComponent> {
 public:
+    // StorageItemComponent inner types declare
+    // clang-format off
+    class ContainerRegistryWriteAccess;
+    // clang-format on
+
+    // StorageItemComponent inner types define
+    class ContainerRegistryWriteAccess {};
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, int>                                          mNumSlots;
@@ -31,8 +43,16 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>>             mBannedItems;
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>>             mAllowedItems;
     ::ll::TypedStorage<8, 16, ::WeakRef<::IDynamicContainerSerialization>> mContainerSerialization;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::IContainerRegistryAccess>>       mContainerRegistryAccess;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::IContainerRegistryTracker>>      mContainerRegistryTracker;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>             mOnUseSubscription;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    StorageItemComponent& operator=(StorageItemComponent const&);
+    StorageItemComponent(StorageItemComponent const&);
+    StorageItemComponent();
 
 public:
     // virtual functions
@@ -47,8 +67,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::FillingContainer>
+    getBackingContainer(::FullContainerName id, ::StorageItemComponent::ContainerRegistryWriteAccess writeAccess) const;
+
+    MCAPI ::StorageItemComponent& operator=(::StorageItemComponent&&);
+
     MCAPI ::std::unique_ptr<::ListTag>
     serializeStorageItem(::FullContainerName const& name, ::SaveContext const& saveContext) const;
+
+    MCAPI void setContainerRegistryHandlers(
+        ::WeakRef<::IDynamicContainerSerialization> containerSerialization,
+        ::WeakRef<::IContainerRegistryAccess>       containerAccess,
+        ::WeakRef<::IContainerRegistryTracker>      containerTracker
+    );
     // NOLINTEND
 
 public:

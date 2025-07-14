@@ -31,7 +31,7 @@ public:
     // vIndex: 68
     virtual bool isBounceBlock() const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 139
     virtual int getExtraRenderLayers() const /*override*/;
 
     // vIndex: 0

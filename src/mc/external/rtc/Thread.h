@@ -146,7 +146,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3
-    virtual ~Thread() /*override*/ = default;
+    virtual ~Thread() /*override*/;
 
     // vIndex: 4
     virtual void Quit();
@@ -174,33 +174,33 @@ public:
 
     // vIndex: 1
     virtual void PostTaskImpl(
-        ::absl::AnyInvocable<void() &&>,
-        ::webrtc::TaskQueueBase::PostTaskTraits const&,
-        ::webrtc::Location const&
+        ::absl::AnyInvocable<void() &&>                task,
+        ::webrtc::TaskQueueBase::PostTaskTraits const& traits,
+        ::webrtc::Location const&                      location
     ) /*override*/;
 
     // vIndex: 2
     virtual void PostDelayedTaskImpl(
-        ::absl::AnyInvocable<void() &&>,
-        ::webrtc::TimeDelta,
-        ::webrtc::TaskQueueBase::PostDelayedTaskTraits const&,
-        ::webrtc::Location const&
+        ::absl::AnyInvocable<void() &&>                       task,
+        ::webrtc::TimeDelta                                   delay,
+        ::webrtc::TaskQueueBase::PostDelayedTaskTraits const& traits,
+        ::webrtc::Location const&                             location
     ) /*override*/;
 
     // vIndex: 11
-    virtual void BlockingCallImpl(::rtc::FunctionView<void()>, ::webrtc::Location const&);
+    virtual void BlockingCallImpl(::rtc::FunctionView<void()> functor, ::webrtc::Location const& location);
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AllowInvokesToThread(::rtc::Thread*);
+    MCNAPI void AllowInvokesToThread(::rtc::Thread* thread);
 
     MCNAPI void ClearCurrentTaskQueue();
 
     MCNAPI void DisallowAllInvokes();
 
-    MCNAPI void Dispatch(::absl::AnyInvocable<void() &&>);
+    MCNAPI void Dispatch(::absl::AnyInvocable<void() &&> task);
 
     MCNAPI void DoDestroy();
 
@@ -208,7 +208,7 @@ public:
 
     MCNAPI void EnsureIsCurrentTaskQueue();
 
-    MCNAPI ::absl::AnyInvocable<void() &&> Get(int);
+    MCNAPI ::absl::AnyInvocable<void() &&> Get(int cmsWait);
 
     MCNAPI bool IsCurrent() const;
 
@@ -218,29 +218,29 @@ public:
 
     MCNAPI void Join();
 
-    MCNAPI bool ProcessMessages(int);
+    MCNAPI bool ProcessMessages(int cmsLoop);
 
-    MCNAPI bool SetAllowBlockingCalls(bool);
+    MCNAPI bool SetAllowBlockingCalls(bool allow);
 
-    MCNAPI void SetDispatchWarningMs(int);
+    MCNAPI void SetDispatchWarningMs(int deadline);
 
-    MCNAPI bool SetName(::std::string_view, void const*);
+    MCNAPI bool SetName(::std::string_view name, void const* obj);
 
     MCNAPI bool Start();
 
-    MCNAPI explicit Thread(::rtc::SocketServer*);
+    MCNAPI explicit Thread(::rtc::SocketServer* ss);
 
-    MCNAPI explicit Thread(::std::unique_ptr<::rtc::SocketServer>);
+    MCNAPI explicit Thread(::std::unique_ptr<::rtc::SocketServer> ss);
 
-    MCNAPI Thread(::std::unique_ptr<::rtc::SocketServer>, bool);
+    MCNAPI Thread(::std::unique_ptr<::rtc::SocketServer> ss, bool do_init);
 
-    MCNAPI Thread(::rtc::SocketServer*, bool);
+    MCNAPI Thread(::rtc::SocketServer* ss, bool do_init);
 
     MCNAPI void UnwrapCurrent();
 
     MCNAPI void WakeUpSocketServer();
 
-    MCNAPI bool WrapCurrentWithThreadManager(::rtc::ThreadManager*, bool);
+    MCNAPI bool WrapCurrentWithThreadManager(::rtc::ThreadManager* thread_manager, bool need_synchronize_access);
 
     MCNAPI ::rtc::SocketServer* socketserver();
     // NOLINTEND
@@ -252,25 +252,60 @@ public:
 
     MCNAPI static ::rtc::Thread* Current();
 
-    MCNAPI static ulong PreRun(void*);
+    MCNAPI static ulong PreRun(void* pv);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::rtc::SocketServer*);
+    MCNAPI void* $ctor(::rtc::SocketServer* ss);
 
-    MCNAPI void* $ctor(::std::unique_ptr<::rtc::SocketServer>);
+    MCNAPI void* $ctor(::std::unique_ptr<::rtc::SocketServer> ss);
 
-    MCNAPI void* $ctor(::std::unique_ptr<::rtc::SocketServer>, bool);
+    MCNAPI void* $ctor(::std::unique_ptr<::rtc::SocketServer> ss, bool do_init);
 
-    MCNAPI void* $ctor(::rtc::SocketServer*, bool);
+    MCNAPI void* $ctor(::rtc::SocketServer* ss, bool do_init);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $Quit();
 
+    MCNAPI bool $IsQuitting();
+
+    MCNAPI void $Restart();
+
+    MCNAPI bool $IsProcessingMessagesForTesting();
+
+    MCNAPI int $GetDelay();
+
+    MCNAPI void $Stop();
+
+    MCNAPI void $Run();
+
+    MCNAPI void $Delete();
+
+    MCNAPI void $PostTaskImpl(
+        ::absl::AnyInvocable<void() &&>                task,
+        ::webrtc::TaskQueueBase::PostTaskTraits const& traits,
+        ::webrtc::Location const&                      location
+    );
+
+    MCNAPI void $PostDelayedTaskImpl(
+        ::absl::AnyInvocable<void() &&>                       task,
+        ::webrtc::TimeDelta                                   delay,
+        ::webrtc::TaskQueueBase::PostDelayedTaskTraits const& traits,
+        ::webrtc::Location const&                             location
+    );
+
+    MCNAPI void $BlockingCallImpl(::rtc::FunctionView<void()> functor, ::webrtc::Location const& location);
     // NOLINTEND
 
 public:

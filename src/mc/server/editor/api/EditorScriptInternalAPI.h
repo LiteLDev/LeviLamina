@@ -30,6 +30,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 40> mUnk26f8ed;
     ::ll::UntypedStorage<8, 16> mUnk6c34da;
+    ::ll::UntypedStorage<8, 8>  mUnk3d92dd;
     // NOLINTEND
 
 public:
@@ -64,8 +65,6 @@ public:
     MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>>
     getPlayerServiceContext(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer);
-
-    MCNAPI ::Editor::API::EditorScriptInternalAPI& operator=(::Editor::API::EditorScriptInternalAPI&&);
     // NOLINTEND
 
 public:

@@ -31,7 +31,7 @@ public:
 
     MCNAPI PacketOptions(::rtc::PacketOptions const&);
 
-    MCNAPI explicit PacketOptions(::rtc::DiffServCodePoint);
+    MCNAPI explicit PacketOptions(::rtc::DiffServCodePoint dscp);
 
     MCNAPI ~PacketOptions();
     // NOLINTEND
@@ -43,7 +43,7 @@ public:
 
     MCNAPI void* $ctor(::rtc::PacketOptions const&);
 
-    MCNAPI void* $ctor(::rtc::DiffServCodePoint);
+    MCNAPI void* $ctor(::rtc::DiffServCodePoint dscp);
     // NOLINTEND
 
 public:

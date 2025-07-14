@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Error.h"
+#include "mc/deps/scripting/runtime/BaseError.h"
 
 namespace Scripting {
 
-struct EngineError : public ::Scripting::Error {
+struct EngineError : public ::Scripting::BaseError {
 public:
     // prevent constructor by default
     EngineError();

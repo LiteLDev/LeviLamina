@@ -6,13 +6,25 @@ namespace webrtc::metrics {
 
 struct SampleInfo {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk70a362;
+    ::ll::UntypedStorage<4, 4>  mUnkcec79e;
+    ::ll::UntypedStorage<4, 4>  mUnk5f593d;
+    ::ll::UntypedStorage<8, 8>  mUnka21e13;
+    ::ll::UntypedStorage<8, 16> mUnk7c562f;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    SampleInfo& operator=(SampleInfo const&);
+    SampleInfo(SampleInfo const&);
     SampleInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SampleInfo(::std::string_view, int, int, uint64);
+    MCNAPI SampleInfo(::std::string_view name, int min, int max, uint64 bucket_count);
 
     MCNAPI ~SampleInfo();
     // NOLINTEND
@@ -20,7 +32,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string_view, int, int, uint64);
+    MCNAPI void* $ctor(::std::string_view name, int min, int max, uint64 bucket_count);
     // NOLINTEND
 
 public:

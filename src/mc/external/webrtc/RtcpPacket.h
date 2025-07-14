@@ -38,15 +38,18 @@ public:
     // NOLINTBEGIN
     MCNAPI uint64 HeaderLength() const;
 
-    MCNAPI bool OnBufferFull(uchar*, uint64*, ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)>) const;
+    MCNAPI bool
+    OnBufferFull(uchar* packet, uint64* index, ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void CreateHeader(uint64, uchar, uint64, uchar*, uint64*);
+    MCNAPI static void
+    CreateHeader(uint64 count_or_format, uchar packet_type, uint64 length, uchar* buffer, uint64* pos);
 
-    MCNAPI static void CreateHeader(uint64, uchar, uint64, bool, uchar*, uint64*);
+    MCNAPI static void
+    CreateHeader(uint64 count_or_format, uchar packet_type, uint64 length, bool padding, uchar* buffer, uint64* pos);
     // NOLINTEND
 
 public:

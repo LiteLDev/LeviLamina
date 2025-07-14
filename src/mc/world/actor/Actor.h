@@ -51,7 +51,6 @@ class ActorDefinitionDiffList;
 class ActorDefinitionGroup;
 class ActorInteraction;
 class ActorRuntimeID;
-class AddActorBasePacket;
 class AnimationComponent;
 class Attribute;
 class AttributeInstance;
@@ -80,6 +79,7 @@ class Mob;
 class MobEffect;
 class MobEffectInstance;
 class Options;
+class Packet;
 class Player;
 class Random;
 class RenderParams;
@@ -278,7 +278,7 @@ public:
     virtual void lerpMotion(::Vec3 const& delta);
 
     // vIndex: 23
-    virtual ::std::unique_ptr<::AddActorBasePacket> tryCreateAddActorPacket();
+    virtual ::std::unique_ptr<::Packet> tryCreateAddActorPacket();
 
     // vIndex: 24
     virtual void normalTick();
@@ -296,7 +296,7 @@ public:
     virtual void addPassenger(::Actor& passenger);
 
     // vIndex: 29
-    virtual ::std::string getExitTip(::std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const;
+    virtual ::std::string getExitTip(::std::string const&, ::InputMode, ::NewInteractionModel) const;
 
     // vIndex: 30
     virtual ::std::string getEntityLocNameString() const;
@@ -918,6 +918,8 @@ public:
 
     MCAPI void initActorProperties();
 
+    MCAPI void initParams(::VariantParameterList& params);
+
     MCAPI void initParams(::RenderParams& params);
 
     MCAPI bool isAdventure() const;
@@ -1057,7 +1059,7 @@ public:
 
     MCAPI void removeAllEffects();
 
-    MCAPI void removeAllPassengers(bool beingDestroyed);
+    MCAPI void removeAllPassengers(bool actorIsBeingDestroyed, bool exitFromPassenger);
 
     MCAPI void removeEffect(int effectId);
 
@@ -1116,8 +1118,6 @@ public:
     MCAPI void setRedactableNameTag(::Bedrock::Safety::RedactableString const& name);
 
     MCAPI void setRotationPrev(::Vec2 const& rotation);
-
-    MCAPI void setRotationWrapped(::Vec2 const& rot);
 
     MCAPI void setSkinID(int value);
 
@@ -1265,7 +1265,7 @@ public:
 
     MCAPI void $lerpMotion(::Vec3 const& delta);
 
-    MCAPI ::std::unique_ptr<::AddActorBasePacket> $tryCreateAddActorPacket();
+    MCAPI ::std::unique_ptr<::Packet> $tryCreateAddActorPacket();
 
     MCAPI void $normalTick();
 
@@ -1276,8 +1276,6 @@ public:
     MCAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
 
     MCAPI void $addPassenger(::Actor& passenger);
-
-    MCAPI ::std::string $getExitTip(::std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const;
 
     MCAPI ::std::string $getEntityLocNameString() const;
 
@@ -1418,6 +1416,8 @@ public:
     MCAPI void $stopSwimming();
 
     MCFOLD void $buildDebugInfo(::std::string&) const;
+
+    MCAPI ::CommandPermissionLevel $getCommandPermissionLevel() const;
 
     MCFOLD int $getDeathTime() const;
 

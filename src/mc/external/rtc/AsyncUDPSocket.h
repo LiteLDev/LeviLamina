@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cricket { class UDPPort; }
 namespace rtc { class Socket; }
 namespace rtc { class SocketAddress; }
 namespace rtc { struct PacketOptions; }
@@ -23,6 +24,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk5fd5db;
     ::ll::UntypedStorage<8, 24> mUnk5f11e8;
     ::ll::UntypedStorage<8, 16> mUnk5ac35d;
+    ::ll::UntypedStorage<8, 24> mUnk7f2e95;
     // NOLINTEND
 
 public:
@@ -44,10 +46,15 @@ public:
     virtual ::rtc::SocketAddress GetRemoteAddress() const /*override*/;
 
     // vIndex: 3
-    virtual int Send(void const*, uint64, ::rtc::PacketOptions const&) /*override*/;
+    virtual int Send(void const* pv, uint64 cb, ::rtc::PacketOptions const& options) /*override*/;
 
     // vIndex: 4
-    virtual int SendTo(void const*, uint64, ::rtc::SocketAddress const&, ::rtc::PacketOptions const&) /*override*/;
+    virtual int SendTo(
+        void const*                 pv,
+        uint64                      cb,
+        ::rtc::SocketAddress const& addr,
+        ::rtc::PacketOptions const& options
+    ) /*override*/;
 
     // vIndex: 5
     virtual int Close() /*override*/;
@@ -56,38 +63,61 @@ public:
     virtual ::rtc::AsyncPacketSocket::State GetState() const /*override*/;
 
     // vIndex: 7
-    virtual int GetOption(::rtc::Socket::Option, int*) /*override*/;
+    virtual int GetOption(::rtc::Socket::Option opt, int* value) /*override*/;
 
     // vIndex: 8
-    virtual int SetOption(::rtc::Socket::Option, int) /*override*/;
+    virtual int SetOption(::rtc::Socket::Option opt, int value) /*override*/;
 
     // vIndex: 9
     virtual int GetError() const /*override*/;
 
     // vIndex: 10
-    virtual void SetError(int) /*override*/;
+    virtual void SetError(int error) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit AsyncUDPSocket(::rtc::Socket*);
+    MCNAPI void AddOwner(::cricket::UDPPort* owner);
 
-    MCNAPI void OnReadEvent(::rtc::Socket*);
+    MCNAPI explicit AsyncUDPSocket(::rtc::Socket* socket);
 
-    MCNAPI void OnWriteEvent(::rtc::Socket*);
+    MCNAPI void OnReadEvent(::rtc::Socket* socket);
+
+    MCNAPI void OnWriteEvent(::rtc::Socket* socket);
+
+    MCNAPI void RemoveOwner(::cricket::UDPPort* owner);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::rtc::Socket*);
+    MCNAPI void* $ctor(::rtc::Socket* socket);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::rtc::SocketAddress $GetLocalAddress() const;
 
+    MCNAPI ::rtc::SocketAddress $GetRemoteAddress() const;
+
+    MCNAPI int $Send(void const* pv, uint64 cb, ::rtc::PacketOptions const& options);
+
+    MCNAPI int
+    $SendTo(void const* pv, uint64 cb, ::rtc::SocketAddress const& addr, ::rtc::PacketOptions const& options);
+
+    MCNAPI int $Close();
+
+    MCNAPI ::rtc::AsyncPacketSocket::State $GetState() const;
+
+    MCNAPI int $GetOption(::rtc::Socket::Option opt, int* value);
+
+    MCNAPI int $SetOption(::rtc::Socket::Option opt, int value);
+
+    MCNAPI int $GetError() const;
+
+    MCNAPI void $SetError(int error);
     // NOLINTEND
 
 public:

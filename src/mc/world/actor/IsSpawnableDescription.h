@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/actor/DefintionDescription.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 struct IsSpawnableDescription : public ::DefintionDescription {
 public:
     // member variables
@@ -31,12 +26,6 @@ public:
 
     // vIndex: 0
     virtual ~IsSpawnableDescription() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void parse(::Json::Value const& root);
     // NOLINTEND
 
 public:

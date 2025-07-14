@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace mce { struct Radian; }
-// clang-format on
-
 namespace mce {
 
 class Math {
@@ -25,8 +20,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::mce::Radian atan2(float dy, float dx);
-
     MCNAPI static float clamp(float v, float low, float high);
 
     MCNAPI static int clamp(int v, int low, int high);
@@ -39,9 +32,9 @@ public:
 
     MCNAPI static float lerpRotate(float from, float to, float a);
 
-    MCNAPI static float sqrt(float x);
-
     MCNAPI static float wrapDegrees(float input);
+
+    MCNAPI static float wrapRadians(float angle);
     // NOLINTEND
 
 public:

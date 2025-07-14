@@ -17,8 +17,6 @@ deserializePackStackEntry(::Json::Value const& entry, ::PackInstanceId& output, 
 
 MCNAPI void serializePackStackEntry(::PackInstanceId const& packInstanceId, ::Json::Value& output);
 
-MCNAPI ::std::string stringifyCapabilities(::std::vector<::std::string> const& capabilities);
-
 MCNAPI ::std::string stringifyResourceMetadataGeneratedWith(::ResourceMetadata const& resourceMetadata);
 // NOLINTEND
 

@@ -15,45 +15,47 @@ namespace webrtc { class RenderResolution; }
 namespace absl {
 // functions
 // NOLINTBEGIN
-MCNAPI bool EqualsIgnoreCase(::std::string_view, ::std::string_view);
+MCNAPI bool EqualsIgnoreCase(::std::string_view piece1, ::std::string_view piece2);
 
 MCNAPI bool operator!=(
-    ::absl::InlinedVector<int, 4, ::std::allocator<int>> const&,
-    ::absl::InlinedVector<int, 4, ::std::allocator<int>> const&
+    ::absl::InlinedVector<int, 4, ::std::allocator<int>> const& a,
+    ::absl::InlinedVector<int, 4, ::std::allocator<int>> const& b
 );
 
 MCNAPI bool operator!=(
     ::absl::
-        InlinedVector<::webrtc::DecodeTargetIndication, 10, ::std::allocator<::webrtc::DecodeTargetIndication>> const&,
+        InlinedVector<::webrtc::DecodeTargetIndication, 10, ::std::allocator<::webrtc::DecodeTargetIndication>> const&
+            a,
+    ::absl::
+        InlinedVector<::webrtc::DecodeTargetIndication, 10, ::std::allocator<::webrtc::DecodeTargetIndication>> const& b
+);
+
+MCNAPI bool operator==(
+    ::absl::InlinedVector<::webrtc::ScalabilityMode, 34, ::std::allocator<::webrtc::ScalabilityMode>> const& a,
+    ::absl::InlinedVector<::webrtc::ScalabilityMode, 34, ::std::allocator<::webrtc::ScalabilityMode>> const& b
+);
+
+MCNAPI bool operator==(
+    ::absl::InlinedVector<int, 4, ::std::allocator<int>> const& a,
+    ::absl::InlinedVector<int, 4, ::std::allocator<int>> const& b
+);
+
+MCNAPI bool operator==(
+    ::absl::InlinedVector<::webrtc::RenderResolution, 4, ::std::allocator<::webrtc::RenderResolution>> const& a,
+    ::absl::InlinedVector<::webrtc::RenderResolution, 4, ::std::allocator<::webrtc::RenderResolution>> const& b
+);
+
+MCNAPI bool operator==(
+    ::absl::InlinedVector<int, 10, ::std::allocator<int>> const& a,
+    ::absl::InlinedVector<int, 10, ::std::allocator<int>> const& b
+);
+
+MCNAPI bool operator==(
     ::absl::
         InlinedVector<::webrtc::DecodeTargetIndication, 10, ::std::allocator<::webrtc::DecodeTargetIndication>> const&
-);
-
-MCNAPI bool operator==(
-    ::absl::InlinedVector<::webrtc::ScalabilityMode, 34, ::std::allocator<::webrtc::ScalabilityMode>> const&,
-    ::absl::InlinedVector<::webrtc::ScalabilityMode, 34, ::std::allocator<::webrtc::ScalabilityMode>> const&
-);
-
-MCNAPI bool operator==(
-    ::absl::InlinedVector<int, 4, ::std::allocator<int>> const&,
-    ::absl::InlinedVector<int, 4, ::std::allocator<int>> const&
-);
-
-MCNAPI bool operator==(
-    ::absl::InlinedVector<::webrtc::RenderResolution, 4, ::std::allocator<::webrtc::RenderResolution>> const&,
-    ::absl::InlinedVector<::webrtc::RenderResolution, 4, ::std::allocator<::webrtc::RenderResolution>> const&
-);
-
-MCNAPI bool operator==(
-    ::absl::InlinedVector<int, 10, ::std::allocator<int>> const&,
-    ::absl::InlinedVector<int, 10, ::std::allocator<int>> const&
-);
-
-MCNAPI bool operator==(
+            a,
     ::absl::
-        InlinedVector<::webrtc::DecodeTargetIndication, 10, ::std::allocator<::webrtc::DecodeTargetIndication>> const&,
-    ::absl::
-        InlinedVector<::webrtc::DecodeTargetIndication, 10, ::std::allocator<::webrtc::DecodeTargetIndication>> const&
+        InlinedVector<::webrtc::DecodeTargetIndication, 10, ::std::allocator<::webrtc::DecodeTargetIndication>> const& b
 );
 // NOLINTEND
 

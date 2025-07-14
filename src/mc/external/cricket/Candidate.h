@@ -46,32 +46,37 @@ public:
     MCNAPI Candidate(::cricket::Candidate const&);
 
     MCNAPI Candidate(
-        int,
-        ::std::string_view,
-        ::rtc::SocketAddress const&,
-        uint,
-        ::std::string_view,
-        ::std::string_view,
-        ::webrtc::IceCandidateType,
-        uint,
-        ::std::string_view,
-        ushort,
-        ushort
+        int                         component,
+        ::std::string_view          protocol,
+        ::rtc::SocketAddress const& address,
+        uint                        priority,
+        ::std::string_view          username,
+        ::std::string_view          password,
+        ::webrtc::IceCandidateType  type,
+        uint                        generation,
+        ::std::string_view          foundation,
+        ushort                      network_id,
+        ushort                      network_cost
     );
 
-    MCNAPI void ComputeFoundation(::rtc::SocketAddress const&, uint64);
+    MCNAPI void ComputeFoundation(::rtc::SocketAddress const& base_address, uint64 tie_breaker);
 
     MCNAPI void ComputePrflxFoundation();
 
-    MCNAPI uint GetPriority(uint, int, int, bool) const;
+    MCNAPI uint GetPriority(
+        uint type_preference,
+        int  network_adapter_preference,
+        int  relay_preference,
+        bool adjust_local_preference
+    ) const;
 
-    MCNAPI bool IsEquivalent(::cricket::Candidate const&) const;
+    MCNAPI bool IsEquivalent(::cricket::Candidate const& c) const;
 
-    MCNAPI bool MatchesForRemoval(::cricket::Candidate const&) const;
+    MCNAPI bool MatchesForRemoval(::cricket::Candidate const& c) const;
 
-    MCNAPI ::cricket::Candidate ToSanitizedCopy(bool, bool) const;
+    MCNAPI ::cricket::Candidate ToSanitizedCopy(bool use_hostname_address, bool filter_related_address) const;
 
-    MCNAPI ::std::string ToStringInternal(bool) const;
+    MCNAPI ::std::string ToStringInternal(bool sensitive) const;
 
     MCNAPI void generate_id();
 
@@ -83,15 +88,15 @@ public:
 
     MCNAPI bool is_stun() const;
 
-    MCNAPI bool operator!=(::cricket::Candidate const&) const;
+    MCNAPI bool operator!=(::cricket::Candidate const& o) const;
 
     MCNAPI ::cricket::Candidate& operator=(::cricket::Candidate const&);
 
-    MCNAPI bool operator==(::cricket::Candidate const&) const;
+    MCNAPI bool operator==(::cricket::Candidate const& o) const;
 
-    MCNAPI void set_password(::std::string_view);
+    MCNAPI void set_password(::std::string_view password);
 
-    MCNAPI void set_username(::std::string_view);
+    MCNAPI void set_username(::std::string_view username);
 
     MCNAPI ::std::string_view type_name() const;
 
@@ -101,7 +106,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void Assign(::std::string&, ::std::string_view);
+    MCNAPI static void Assign(::std::string& s, ::std::string_view view);
     // NOLINTEND
 
 public:
@@ -112,17 +117,17 @@ public:
     MCNAPI void* $ctor(::cricket::Candidate const&);
 
     MCNAPI void* $ctor(
-        int,
-        ::std::string_view,
-        ::rtc::SocketAddress const&,
-        uint,
-        ::std::string_view,
-        ::std::string_view,
-        ::webrtc::IceCandidateType,
-        uint,
-        ::std::string_view,
-        ushort,
-        ushort
+        int                         component,
+        ::std::string_view          protocol,
+        ::rtc::SocketAddress const& address,
+        uint                        priority,
+        ::std::string_view          username,
+        ::std::string_view          password,
+        ::webrtc::IceCandidateType  type,
+        uint                        generation,
+        ::std::string_view          foundation,
+        ushort                      network_id,
+        ushort                      network_cost
     );
     // NOLINTEND
 

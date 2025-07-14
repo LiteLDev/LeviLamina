@@ -34,10 +34,10 @@ public:
     virtual ::cricket::StunAttributeValueType value_type() const /*override*/;
 
     // vIndex: 3
-    virtual bool Read(::rtc::ByteBufferReader*) /*override*/;
+    virtual bool Read(::rtc::ByteBufferReader* buf) /*override*/;
 
     // vIndex: 4
-    virtual bool Write(::rtc::ByteBufferWriter*) const /*override*/;
+    virtual bool Write(::rtc::ByteBufferWriter* buf) const /*override*/;
 
     // vIndex: 0
     virtual ~StunUInt32Attribute() /*override*/ = default;
@@ -46,23 +46,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit StunUInt32Attribute(ushort);
+    MCNAPI explicit StunUInt32Attribute(ushort type);
 
-    MCNAPI StunUInt32Attribute(ushort, uint);
+    MCNAPI StunUInt32Attribute(ushort type, uint value);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(ushort);
+    MCNAPI void* $ctor(ushort type);
 
-    MCNAPI void* $ctor(ushort, uint);
+    MCNAPI void* $ctor(ushort type, uint value);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::cricket::StunAttributeValueType $value_type() const;
 
+    MCNAPI bool $Read(::rtc::ByteBufferReader* buf);
+
+    MCNAPI bool $Write(::rtc::ByteBufferWriter* buf) const;
     // NOLINTEND
 
 public:

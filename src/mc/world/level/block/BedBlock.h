@@ -28,7 +28,7 @@ class BedBlock : public ::BlockLegacy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 136
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 117
@@ -81,7 +81,7 @@ public:
     // vIndex: 108
     virtual bool canSpawnAt(::BlockSource const& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 144
+    // vIndex: 143
     virtual ::mce::Color getMapColor(::BlockSource& source, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 

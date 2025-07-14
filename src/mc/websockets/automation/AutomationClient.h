@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActivationUri;
-class IMinecraftApp;
 namespace Automation { class AutomationSession; }
 namespace CodeBuilder { class GameContext; }
 namespace CodeBuilder { struct AgentMessage; }
@@ -85,8 +84,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit AutomationClient(::IMinecraftApp& minecraft);
-
     MCNAPI void _forEachSession(::std::function<bool(::Automation::AutomationSession&)> const& callback);
 
     MCNAPI void _removeSession(::Automation::AutomationSession const& session);
@@ -96,12 +93,6 @@ public:
     MCNAPI ::std::shared_ptr<::Automation::AutomationSession> getDefaultSession();
 
     MCNAPI ::std::shared_ptr<::CodeBuilder::GameContext> getGameContext() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::IMinecraftApp& minecraft);
     // NOLINTEND
 
 public:

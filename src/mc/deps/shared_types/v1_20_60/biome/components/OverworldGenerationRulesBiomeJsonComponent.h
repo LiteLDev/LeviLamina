@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/util/Reference.h"
 #include "mc/deps/shared_types/v1_20_60/biome/components/IBiomeJsonComponent.h"
 #include "mc/world/level/biome/BiomeTemperatureCategory.h"
 
@@ -27,7 +28,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 80> mUnk4869a4;
+        ::ll::UntypedStorage<8, 80> mUnk3f5bbc;
         // NOLINTEND
 
     public:
@@ -45,9 +46,9 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void fromString(
+        MCNAPI static void fromReference(
             ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeName& instance,
-            ::std::string const&                                                                    str
+            ::SharedTypes::Reference<0> const&                                                      ref
         );
         // NOLINTEND
 
@@ -74,9 +75,11 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void fromString(
+        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+        MCNAPI static void fromReference(
             ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeNameVector& instance,
-            ::std::string const&                                                                          str
+            ::SharedTypes::Reference<0> const&                                                            ref
         );
 
         MCNAPI static void fromVector(

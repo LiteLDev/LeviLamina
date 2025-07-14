@@ -60,40 +60,43 @@ public:
     // vIndex: 6
     virtual bool isValid() const;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual void tick(::ui::DirtyFlag&);
 
-    // vIndex: 8
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification);
-
-    // vIndex: 10
-    virtual bool canRemove() const;
+    // vIndex: 7
+    virtual void tick(::StoreDataDrivenScreenController&, ::ui::DirtyFlag&);
 
     // vIndex: 9
-    virtual bool canRemove(::StoreDataDrivenScreenController&) const;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification);
 
     // vIndex: 11
-    virtual int getReadyCount() const;
+    virtual bool canRemove() const;
+
+    // vIndex: 10
+    virtual bool canRemove(::StoreDataDrivenScreenController&) const;
 
     // vIndex: 12
-    virtual ::std::string getTelemetryData() const;
+    virtual int getReadyCount() const;
 
     // vIndex: 13
-    virtual ::ImageTelemetryInfo getImageTelemetry() const;
+    virtual ::std::string getTelemetryData() const;
 
     // vIndex: 14
-    virtual void _onInit(::StoreDataDrivenScreenController&);
+    virtual ::ImageTelemetryInfo getImageTelemetry() const;
 
     // vIndex: 15
-    virtual void _onPostInit();
+    virtual void _onInit(::StoreDataDrivenScreenController&);
 
     // vIndex: 16
-    virtual void _parseData(::Json::Value const&);
-
-    // vIndex: 18
-    virtual void _registerBindsAndEvents();
+    virtual void _onPostInit(::StoreDataDrivenScreenController&);
 
     // vIndex: 17
+    virtual void _parseData(::Json::Value const&);
+
+    // vIndex: 19
+    virtual void _registerBindsAndEvents();
+
+    // vIndex: 18
     virtual void _registerBindsAndEvents(::StoreDataDrivenScreenController&);
     // NOLINTEND
 

@@ -521,7 +521,14 @@ enum class LevelSoundEvent : uint {
     StateChange                        = 552,
     ImitateHappyGhast                  = 553,
     UnequipGeneric                     = 554,
-    Undefined                          = 555,
+    RecordTears                        = 555,
+    TheEndLightFlash                   = 556,
+    LeadLeash                          = 557,
+    LeadUnleash                        = 558,
+    LeadBreak                          = 559,
+    Unsaddle                           = 560,
+    RecordLavaChicken                  = 561,
+    Undefined                          = 562,
 };
 
 }

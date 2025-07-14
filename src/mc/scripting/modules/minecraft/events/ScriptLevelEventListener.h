@@ -13,7 +13,6 @@ class Actor;
 class Level;
 class Player;
 struct LevelGameRuleChangeEvent;
-struct LevelStartLeaveGameEvent;
 struct ScriptingWorldInitializeEvent;
 // clang-format on
 
@@ -39,9 +38,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 12
     virtual ::EventResult onEvent(::LevelGameRuleChangeEvent const& event) /*override*/;
-
-    // vIndex: 13
-    virtual ::EventResult onEvent(::LevelStartLeaveGameEvent const&) /*override*/;
 
     // vIndex: 11
     virtual ::EventResult onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent) /*override*/;
@@ -75,8 +71,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::EventResult $onEvent(::LevelGameRuleChangeEvent const& event);
-
-    MCNAPI ::EventResult $onEvent(::LevelStartLeaveGameEvent const&);
 
     MCNAPI ::EventResult $onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent);
 

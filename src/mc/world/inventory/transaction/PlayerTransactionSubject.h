@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/components/ServerAuthMovementMode.h"
 #include "mc/world/ContainerID.h"
 #include "mc/world/inventory/transaction/IItemUseTransactionSubject.h"
 
@@ -42,9 +41,6 @@ public:
 
     // vIndex: 1
     virtual bool isAlive() const /*override*/;
-
-    // vIndex: 24
-    virtual ::ServerAuthMovementMode getMovementAuthorityMode() const /*override*/;
 
     // vIndex: 2
     virtual ::ItemStack unwrapItem(::NetworkItemStackDescriptor const& item) const /*override*/;
@@ -129,8 +125,6 @@ public:
     MCNAPI void $setSelectedSlot(int slot, ::ContainerID containerId);
 
     MCNAPI bool $isAlive() const;
-
-    MCNAPI ::ServerAuthMovementMode $getMovementAuthorityMode() const;
 
     MCNAPI ::ItemStack $unwrapItem(::NetworkItemStackDescriptor const& item) const;
 

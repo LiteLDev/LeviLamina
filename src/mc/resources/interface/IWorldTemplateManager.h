@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class WorldTemplateCollectionView;
 struct PackIdVersion;
 struct WorldTemplateInfo;
 namespace Bedrock::PubSub { class Subscription; }
@@ -28,7 +29,7 @@ public:
         registerModifiedCallback(::std::function<void(::std::pair<::std::string, bool> const&)>) = 0;
 
     // vIndex: 3
-    virtual ::std::vector<::std::unique_ptr<::WorldTemplateInfo>> const& getLocalTemplates() const = 0;
+    virtual ::std::vector<::std::unique_ptr<::WorldTemplateInfo const>> const& getLocalTemplates() const = 0;
 
     // vIndex: 4
     virtual void populateWorldTemplates() = 0;
@@ -44,6 +45,15 @@ public:
 
     // vIndex: 8
     virtual ::WorldTemplateInfo const* findInstalledWorldTemplate(::PackIdVersion const&) const = 0;
+
+    // vIndex: 9
+    virtual ::WorldTemplateCollectionView createView(::mce::UUID const&) const = 0;
+
+    // vIndex: 10
+    virtual void forEachWorldTemplate(::std::function<void(::WorldTemplateInfo const&)> const&) const = 0;
+
+    // vIndex: 11
+    virtual bool isInitialized() const = 0;
     // NOLINTEND
 
 public:

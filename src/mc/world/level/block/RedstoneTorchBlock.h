@@ -39,7 +39,7 @@ public:
     // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual int getTickDelay();
 
     // vIndex: 53

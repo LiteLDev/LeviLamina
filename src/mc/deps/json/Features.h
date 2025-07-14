@@ -11,6 +11,12 @@ public:
     ::ll::TypedStorage<1, 1, bool> allowComments_;
     ::ll::TypedStorage<1, 1, bool> strictRoot_;
     // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Json::Features strictMode();
+    // NOLINTEND
 };
 
 } // namespace Json

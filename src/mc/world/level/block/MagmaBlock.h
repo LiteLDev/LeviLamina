@@ -32,7 +32,7 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 143
+    // vIndex: 142
     virtual ::Brightness getEmissiveBrightness(::Block const&) const /*override*/;
 
     // vIndex: 134

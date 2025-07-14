@@ -2,9 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+
 // auto generated forward declare list
 // clang-format off
 class Level;
+class LinkedAssetValidator;
 class ResourcePackManager;
 struct TradeTable;
 namespace Core { class Path; }
@@ -27,10 +31,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void _parseAndStoreTradeTable(
-        ::Level&               level,
-        ::ResourcePackManager* resourceLoader,
-        ::Core::Path const&    tradeTablePath,
-        bool                   usingUpcomingCreatorFeaturesExperiment
+        ::Level&                                           level,
+        ::ResourcePackManager*                             resourceLoader,
+        ::Core::Path const&                                tradeTablePath,
+        bool                                               usingUpcomingCreatorFeaturesExperiment,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
     MCNAPI ::TradeTable* fetchTable(::std::string const& path);

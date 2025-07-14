@@ -28,22 +28,22 @@ public:
     // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual ::mce::Color getDustColor(::Block const&) const = 0;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual ::std::string getDustParticleName(::Block const&) const = 0;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual bool falling() const;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual void onLand(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual bool isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 152
+    // vIndex: 151
     virtual void
     startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const;
 

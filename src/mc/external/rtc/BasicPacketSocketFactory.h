@@ -36,46 +36,79 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BasicPacketSocketFactory() /*override*/ = default;
+    virtual ~BasicPacketSocketFactory() /*override*/;
 
     // vIndex: 1
-    virtual ::rtc::AsyncPacketSocket* CreateUdpSocket(::rtc::SocketAddress const&, ushort, ushort) /*override*/;
+    virtual ::std::unique_ptr<::rtc::AsyncPacketSocket>
+    CreateUdpSocket(::rtc::SocketAddress const& address, ushort min_port, ushort max_port) /*override*/;
 
     // vIndex: 2
-    virtual ::rtc::AsyncListenSocket*
-    CreateServerTcpSocket(::rtc::SocketAddress const&, ushort, ushort, int) /*override*/;
+    virtual ::std::shared_ptr<::rtc::AsyncPacketSocket>
+    CreateGlobalUdpSocket(::rtc::SocketAddress const& address, ushort min_port, ushort max_port) /*override*/;
 
     // vIndex: 3
-    virtual ::rtc::AsyncPacketSocket* CreateClientTcpSocket(
-        ::rtc::SocketAddress const&,
-        ::rtc::SocketAddress const&,
-        ::rtc::ProxyInfo const&,
-        ::std::string const&,
-        ::rtc::PacketSocketTcpOptions const&
+    virtual ::std::unique_ptr<::rtc::AsyncListenSocket> CreateServerTcpSocket(
+        ::rtc::SocketAddress const& local_address,
+        ushort                      min_port,
+        ushort                      max_port,
+        int                         opts
     ) /*override*/;
 
     // vIndex: 4
+    virtual ::std::unique_ptr<::rtc::AsyncPacketSocket> CreateClientTcpSocket(
+        ::rtc::SocketAddress const&          local_address,
+        ::rtc::SocketAddress const&          remote_address,
+        ::rtc::ProxyInfo const&              proxy_info,
+        ::std::string const&                 user_agent,
+        ::rtc::PacketSocketTcpOptions const& tcp_options
+    ) /*override*/;
+
+    // vIndex: 5
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> CreateAsyncDnsResolver() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BasicPacketSocketFactory(::rtc::SocketFactory*);
+    MCNAPI explicit BasicPacketSocketFactory(::rtc::SocketFactory* socket_factory);
 
-    MCNAPI int BindSocket(::rtc::Socket*, ::rtc::SocketAddress const&, ushort, ushort);
+    MCNAPI int
+    BindSocket(::rtc::Socket* socket, ::rtc::SocketAddress const& local_address, ushort min_port, ushort max_port);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::rtc::SocketFactory*);
+    MCNAPI void* $ctor(::rtc::SocketFactory* socket_factory);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::unique_ptr<::rtc::AsyncPacketSocket>
+    $CreateUdpSocket(::rtc::SocketAddress const& address, ushort min_port, ushort max_port);
 
+    MCNAPI ::std::shared_ptr<::rtc::AsyncPacketSocket>
+    $CreateGlobalUdpSocket(::rtc::SocketAddress const& address, ushort min_port, ushort max_port);
+
+    MCNAPI ::std::unique_ptr<::rtc::AsyncListenSocket>
+    $CreateServerTcpSocket(::rtc::SocketAddress const& local_address, ushort min_port, ushort max_port, int opts);
+
+    MCNAPI ::std::unique_ptr<::rtc::AsyncPacketSocket> $CreateClientTcpSocket(
+        ::rtc::SocketAddress const&          local_address,
+        ::rtc::SocketAddress const&          remote_address,
+        ::rtc::ProxyInfo const&              proxy_info,
+        ::std::string const&                 user_agent,
+        ::rtc::PacketSocketTcpOptions const& tcp_options
+    );
+
+    MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> $CreateAsyncDnsResolver();
     // NOLINTEND
 
 public:

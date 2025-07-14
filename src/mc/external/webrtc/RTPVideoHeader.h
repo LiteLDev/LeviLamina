@@ -94,7 +94,7 @@ public:
 
     MCNAPI RTPVideoHeader(::webrtc::RTPVideoHeader const&);
 
-    MCNAPI void SetFromMetadata(::webrtc::VideoFrameMetadata const&);
+    MCNAPI void SetFromMetadata(::webrtc::VideoFrameMetadata const& metadata);
 
     MCNAPI ~RTPVideoHeader();
     // NOLINTEND
@@ -102,7 +102,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::webrtc::RTPVideoHeader FromMetadata(::webrtc::VideoFrameMetadata const&);
+    MCNAPI static ::webrtc::RTPVideoHeader FromMetadata(::webrtc::VideoFrameMetadata const& metadata);
     // NOLINTEND
 
 public:

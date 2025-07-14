@@ -73,7 +73,7 @@ public:
 
     // vIndex: 97
     virtual bool
-    canBeBuiltOver(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& item) const
+    canBeBuiltOver(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem) const
         /*override*/;
 
     // vIndex: 130
@@ -123,8 +123,12 @@ public:
 
     MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
-    MCAPI bool
-    $canBeBuiltOver(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& item) const;
+    MCAPI bool $canBeBuiltOver(
+        ::Block const&     block,
+        ::BlockSource&     region,
+        ::BlockPos const&  pos,
+        ::BlockItem const& newItem
+    ) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND

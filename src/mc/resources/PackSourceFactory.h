@@ -21,6 +21,7 @@ class InPackagePackSource;
 class PackSource;
 class TreatmentPackSource;
 class WorldHistoryPackSource;
+class WorldTemplateCollectionView;
 class WorldTemplatePackSource;
 struct PackIdVersion;
 namespace Bedrock::PubSub { class Subscription; }
@@ -72,7 +73,7 @@ public:
     // vIndex: 0
     virtual ~PackSourceFactory() /*override*/;
 
-    // vIndex: 1
+    // vIndex: 2
     virtual ::WorldTemplatePackSource& createWorldTemplatePackSource(
         ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager const> const& worldTemplateManager,
         ::mce::UUID const&                                                  worldTemplateId,
@@ -80,11 +81,19 @@ public:
         ::PackOrigin                                                        packOrigin
     ) /*override*/;
 
-    // vIndex: 2
+    // vIndex: 1
+    virtual ::WorldTemplatePackSource& createWorldTemplatePackSource(
+        ::std::unique_ptr<::WorldTemplateCollectionView> view,
+        ::mce::UUID const&                               worldTemplateId,
+        ::PackType                                       packType,
+        ::PackOrigin                                     packOrigin
+    ) /*override*/;
+
+    // vIndex: 3
     virtual ::WorldTemplatePackSource*
     getWorldTemplatePackSource(::mce::UUID const& worldTemplateId, ::PackType packType) const /*override*/;
 
-    // vIndex: 3
+    // vIndex: 4
     virtual ::DirectoryPackSource& createDirectoryPackSource(
         ::Core::Path const& path,
         ::PackType          packType,
@@ -92,31 +101,31 @@ public:
         bool                isDevDirectory
     ) /*override*/;
 
-    // vIndex: 4
+    // vIndex: 5
     virtual ::DirectoryPackSource* getDirectoryPackSource(::Core::Path const& path, ::PackType packType) const
         /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual ::InPackagePackSource& createInPackagePackSource(::PackType packType) /*override*/;
 
-    // vIndex: 6
+    // vIndex: 7
     virtual ::InPackagePackSource* getInPackagePackSource(::PackType packType) /*override*/;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual ::WorldHistoryPackSource&
     createWorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType packType) /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual ::WorldHistoryPackSource*
     getWorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType packType) const /*override*/;
 
-    // vIndex: 10
+    // vIndex: 11
     virtual ::DirectoryPackSource* getDirectoryPackSourceContaining(::PackIdVersion const& packId) const /*override*/;
 
-    // vIndex: 11
+    // vIndex: 12
     virtual void removeFromDirectoryPackSource(::Core::Path const& fullPathToPack) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual ::std::unique_ptr<::CompositePackSource>
     createCompositePackSource(::std::vector<::PackSource*> sources) /*override*/;
     // NOLINTEND
@@ -162,6 +171,13 @@ public:
         ::mce::UUID const&                                                  worldTemplateId,
         ::PackType                                                          packType,
         ::PackOrigin                                                        packOrigin
+    );
+
+    MCNAPI ::WorldTemplatePackSource& $createWorldTemplatePackSource(
+        ::std::unique_ptr<::WorldTemplateCollectionView> view,
+        ::mce::UUID const&                               worldTemplateId,
+        ::PackType                                       packType,
+        ::PackOrigin                                     packOrigin
     );
 
     MCNAPI ::WorldTemplatePackSource*

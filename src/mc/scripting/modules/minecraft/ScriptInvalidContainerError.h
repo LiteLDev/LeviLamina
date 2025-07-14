@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Error.h"
+#include "mc/deps/scripting/runtime/BaseError.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,10 +12,16 @@ namespace Scripting { struct ErrorBinding; }
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptInvalidContainerError : public ::Scripting::Error {
+struct ScriptInvalidContainerError : public ::Scripting::BaseError {
+public:
+    // prevent constructor by default
+    ScriptInvalidContainerError();
+
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit ScriptInvalidContainerError(::std::string_view functionName);
+
     MCNAPI ~ScriptInvalidContainerError();
     // NOLINTEND
 
@@ -23,6 +29,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string_view functionName);
     // NOLINTEND
 
 public:

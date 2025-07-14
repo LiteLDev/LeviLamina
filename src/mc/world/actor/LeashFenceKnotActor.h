@@ -52,7 +52,7 @@ public:
     virtual void remove() /*override*/;
 
     // vIndex: 118
-    virtual bool getInteraction(::Player&, ::ActorInteraction& interaction, ::Vec3 const&) /*override*/;
+    virtual bool getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
 
     // vIndex: 21
     virtual void teleportTo(
@@ -65,12 +65,6 @@ public:
 
     // vIndex: 8
     virtual ~LeashFenceKnotActor() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _removeAttachedActors();
     // NOLINTEND
 
 public:
@@ -96,7 +90,7 @@ public:
 
     MCAPI void $remove();
 
-    MCAPI bool $getInteraction(::Player&, ::ActorInteraction& interaction, ::Vec3 const&);
+    MCAPI bool $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
 
     MCAPI void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);

@@ -36,8 +36,12 @@ public:
 
     MCNAPI RelayServerConfig(::cricket::RelayServerConfig const&);
 
-    MCNAPI
-    RelayServerConfig(::rtc::SocketAddress const&, ::std::string_view, ::std::string_view, ::cricket::ProtocolType);
+    MCNAPI RelayServerConfig(
+        ::rtc::SocketAddress const& address,
+        ::std::string_view          username,
+        ::std::string_view          password,
+        ::cricket::ProtocolType     proto
+    );
 
     MCNAPI ~RelayServerConfig();
     // NOLINTEND
@@ -49,7 +53,12 @@ public:
 
     MCNAPI void* $ctor(::cricket::RelayServerConfig const&);
 
-    MCNAPI void* $ctor(::rtc::SocketAddress const&, ::std::string_view, ::std::string_view, ::cricket::ProtocolType);
+    MCNAPI void* $ctor(
+        ::rtc::SocketAddress const& address,
+        ::std::string_view          username,
+        ::std::string_view          password,
+        ::cricket::ProtocolType     proto
+    );
     // NOLINTEND
 
 public:

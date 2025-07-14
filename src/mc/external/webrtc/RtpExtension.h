@@ -30,9 +30,9 @@ public:
     // NOLINTBEGIN
     MCNAPI RtpExtension();
 
-    MCNAPI RtpExtension(::std::string_view, int);
+    MCNAPI RtpExtension(::std::string_view uri, int id);
 
-    MCNAPI RtpExtension(::std::string_view, int, bool);
+    MCNAPI RtpExtension(::std::string_view uri, int id, bool encrypt);
 
     MCNAPI ::std::string ToString() const;
 
@@ -44,19 +44,24 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::webrtc::RtpExtension> const
-    DeduplicateHeaderExtensions(::std::vector<::webrtc::RtpExtension> const&, ::webrtc::RtpExtension::Filter);
-
-    MCNAPI static ::webrtc::RtpExtension const* FindHeaderExtensionByUri(
-        ::std::vector<::webrtc::RtpExtension> const&,
-        ::std::string_view,
-        ::webrtc::RtpExtension::Filter
+    MCNAPI static ::std::vector<::webrtc::RtpExtension> const DeduplicateHeaderExtensions(
+        ::std::vector<::webrtc::RtpExtension> const& extensions,
+        ::webrtc::RtpExtension::Filter               filter
     );
 
-    MCNAPI static ::webrtc::RtpExtension const*
-    FindHeaderExtensionByUriAndEncryption(::std::vector<::webrtc::RtpExtension> const&, ::std::string_view, bool);
+    MCNAPI static ::webrtc::RtpExtension const* FindHeaderExtensionByUri(
+        ::std::vector<::webrtc::RtpExtension> const& extensions,
+        ::std::string_view                           uri,
+        ::webrtc::RtpExtension::Filter               filter
+    );
 
-    MCNAPI static bool IsEncryptionSupported(::std::string_view);
+    MCNAPI static ::webrtc::RtpExtension const* FindHeaderExtensionByUriAndEncryption(
+        ::std::vector<::webrtc::RtpExtension> const& extensions,
+        ::std::string_view                           uri,
+        bool                                         encrypt
+    );
+
+    MCNAPI static bool IsEncryptionSupported(::std::string_view uri);
     // NOLINTEND
 
 public:
@@ -90,9 +95,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::std::string_view, int);
+    MCNAPI void* $ctor(::std::string_view uri, int id);
 
-    MCNAPI void* $ctor(::std::string_view, int, bool);
+    MCNAPI void* $ctor(::std::string_view uri, int id, bool encrypt);
     // NOLINTEND
 
 public:

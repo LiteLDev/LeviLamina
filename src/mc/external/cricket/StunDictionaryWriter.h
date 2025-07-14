@@ -12,9 +12,25 @@ namespace cricket {
 
 class StunDictionaryWriter {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnkf1118b;
+    ::ll::UntypedStorage<8, 8>  mUnk6a167c;
+    ::ll::UntypedStorage<8, 8>  mUnkc114f7;
+    ::ll::UntypedStorage<8, 24> mUnk3cceec;
+    ::ll::UntypedStorage<8, 16> mUnk1af2b6;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    StunDictionaryWriter& operator=(StunDictionaryWriter const&);
+    StunDictionaryWriter(StunDictionaryWriter const&);
+    StunDictionaryWriter();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void ApplyDeltaAck(::cricket::StunUInt64Attribute const&);
+    MCNAPI void ApplyDeltaAck(::cricket::StunUInt64Attribute const& ack);
 
     MCNAPI ::std::unique_ptr<::cricket::StunByteStringAttribute> CreateDelta();
 

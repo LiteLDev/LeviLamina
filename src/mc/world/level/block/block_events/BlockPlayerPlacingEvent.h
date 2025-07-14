@@ -10,6 +10,7 @@
 class Actor;
 class Block;
 class BlockSource;
+class Item;
 // clang-format on
 
 namespace BlockEvents {
@@ -21,6 +22,7 @@ public:
     ::ll::TypedStorage<8, 8, ::BlockSource&>                  mRegion;
     ::ll::TypedStorage<8, 8, ::Actor&>                        mActor;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::Block const*>> mPermutationToPlace;
+    ::ll::TypedStorage<8, 8, ::Item const&>                   mItem;
     ::ll::TypedStorage<1, 1, uchar const>                     mFace;
     // NOLINTEND
 
@@ -38,6 +40,14 @@ public:
 
     // vIndex: 0
     virtual ~BlockPlayerPlacingEvent() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::Block const& getPermutationToPlace() const;
+
+    MCAPI void setPermutationToPlace(::Block const& perm);
     // NOLINTEND
 
 public:

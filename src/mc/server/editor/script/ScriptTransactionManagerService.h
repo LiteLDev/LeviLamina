@@ -101,6 +101,8 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<int> discardTrackedChanges();
 
+    MCNAPI ::Scripting::Result_deprecated<bool> isBusy();
+
     MCNAPI ::Scripting::Result_deprecated<bool> openTransaction(::std::string const& name);
 
     MCNAPI ::Scripting::Result_deprecated<void> redo();

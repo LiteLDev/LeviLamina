@@ -201,10 +201,10 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 2
-        virtual ~IdBase() /*override*/ = default;
+        virtual ~IdBase() /*override*/;
 
         // vIndex: 3
-        virtual bool Equals(::webrtc::StatsReport::IdBase const&) const;
+        virtual bool Equals(::webrtc::StatsReport::IdBase const& other) const;
 
         // vIndex: 4
         virtual ::std::string ToString() const = 0;
@@ -213,7 +213,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI explicit IdBase(::webrtc::StatsReport::StatsType);
+        MCNAPI explicit IdBase(::webrtc::StatsReport::StatsType type);
 
         MCNAPI ::webrtc::StatsReport::StatsType type() const;
         // NOLINTEND
@@ -221,13 +221,19 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::webrtc::StatsReport::StatsType);
+        MCNAPI void* $ctor(::webrtc::StatsReport::StatsType type);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-
+        MCNAPI bool $Equals(::webrtc::StatsReport::IdBase const& other) const;
         // NOLINTEND
 
     public:
@@ -285,30 +291,33 @@ public:
         // NOLINTBEGIN
         MCNAPI ::std::string ToString() const;
 
-        MCNAPI Value(::webrtc::StatsReport::StatsValueName, bool);
+        MCNAPI Value(::webrtc::StatsReport::StatsValueName name, bool b);
+
+        MCNAPI Value(::webrtc::StatsReport::StatsValueName name, float f);
+
+        MCNAPI Value(
+            ::webrtc::StatsReport::StatsValueName                         name,
+            ::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const& value
+        );
+
+        MCNAPI Value(::webrtc::StatsReport::StatsValueName name, char const* value);
+
+        MCNAPI Value(::webrtc::StatsReport::StatsValueName name, ::std::string const& value);
 
         MCNAPI
-        Value(::webrtc::StatsReport::StatsValueName, ::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const&);
+        Value(::webrtc::StatsReport::StatsValueName name, int64 value, ::webrtc::StatsReport::Value::Type int_type);
 
-        MCNAPI Value(::webrtc::StatsReport::StatsValueName, char const*);
+        MCNAPI bool operator==(::std::string const& value) const;
 
-        MCNAPI Value(::webrtc::StatsReport::StatsValueName, ::std::string const&);
+        MCNAPI bool operator==(float value) const;
 
-        MCNAPI Value(::webrtc::StatsReport::StatsValueName, float);
+        MCNAPI bool operator==(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const& value) const;
 
-        MCNAPI Value(::webrtc::StatsReport::StatsValueName, int64, ::webrtc::StatsReport::Value::Type);
+        MCNAPI bool operator==(bool value) const;
 
-        MCNAPI bool operator==(::std::string const&) const;
+        MCNAPI bool operator==(int64 value) const;
 
-        MCNAPI bool operator==(float) const;
-
-        MCNAPI bool operator==(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const&) const;
-
-        MCNAPI bool operator==(bool) const;
-
-        MCNAPI bool operator==(int64) const;
-
-        MCNAPI bool operator==(char const*) const;
+        MCNAPI bool operator==(char const* value) const;
 
         MCNAPI ::std::string const& string_val() const;
 
@@ -318,18 +327,21 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::webrtc::StatsReport::StatsValueName, bool);
+        MCNAPI void* $ctor(::webrtc::StatsReport::StatsValueName name, bool b);
+
+        MCNAPI void* $ctor(::webrtc::StatsReport::StatsValueName name, float f);
+
+        MCNAPI void* $ctor(
+            ::webrtc::StatsReport::StatsValueName                         name,
+            ::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const& value
+        );
+
+        MCNAPI void* $ctor(::webrtc::StatsReport::StatsValueName name, char const* value);
+
+        MCNAPI void* $ctor(::webrtc::StatsReport::StatsValueName name, ::std::string const& value);
 
         MCNAPI void*
-        $ctor(::webrtc::StatsReport::StatsValueName, ::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const&);
-
-        MCNAPI void* $ctor(::webrtc::StatsReport::StatsValueName, char const*);
-
-        MCNAPI void* $ctor(::webrtc::StatsReport::StatsValueName, ::std::string const&);
-
-        MCNAPI void* $ctor(::webrtc::StatsReport::StatsValueName, float);
-
-        MCNAPI void* $ctor(::webrtc::StatsReport::StatsValueName, int64, ::webrtc::StatsReport::Value::Type);
+        $ctor(::webrtc::StatsReport::StatsValueName name, int64 value, ::webrtc::StatsReport::Value::Type int_type);
         // NOLINTEND
 
     public:
@@ -356,24 +368,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddBoolean(::webrtc::StatsReport::StatsValueName, bool);
+    MCNAPI void AddBoolean(::webrtc::StatsReport::StatsValueName name, bool value);
 
-    MCNAPI void AddFloat(::webrtc::StatsReport::StatsValueName, float);
+    MCNAPI void AddFloat(::webrtc::StatsReport::StatsValueName name, float value);
 
-    MCNAPI void
-    AddId(::webrtc::StatsReport::StatsValueName, ::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const&);
+    MCNAPI void AddId(
+        ::webrtc::StatsReport::StatsValueName                         name,
+        ::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const& value
+    );
 
-    MCNAPI void AddInt(::webrtc::StatsReport::StatsValueName, int);
+    MCNAPI void AddInt(::webrtc::StatsReport::StatsValueName name, int value);
 
-    MCNAPI void AddInt64(::webrtc::StatsReport::StatsValueName, int64);
+    MCNAPI void AddInt64(::webrtc::StatsReport::StatsValueName name, int64 value);
 
-    MCNAPI void AddString(::webrtc::StatsReport::StatsValueName, ::std::string const&);
+    MCNAPI void AddString(::webrtc::StatsReport::StatsValueName name, ::std::string const& value);
 
-    MCNAPI void AddString(::webrtc::StatsReport::StatsValueName, char const*);
+    MCNAPI void AddString(::webrtc::StatsReport::StatsValueName name, char const* value);
 
-    MCNAPI ::webrtc::StatsReport::Value const* FindValue(::webrtc::StatsReport::StatsValueName) const;
+    MCNAPI ::webrtc::StatsReport::Value const* FindValue(::webrtc::StatsReport::StatsValueName name) const;
 
-    MCNAPI explicit StatsReport(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const&);
+    MCNAPI explicit StatsReport(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const& id);
 
     MCNAPI ~StatsReport();
     // NOLINTEND
@@ -383,27 +397,32 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> NewBandwidthEstimationId();
 
-    MCNAPI static ::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> NewCandidateId(bool, ::std::string const&);
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase>
+    NewCandidateId(bool local, ::std::string const& id);
 
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase>
-    NewCandidatePairId(::std::string const&, int, int);
-
-    MCNAPI static ::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> NewComponentId(::std::string const&, int);
+    NewCandidatePairId(::std::string const& content_name, int component, int index);
 
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase>
-    NewIdWithDirection(::webrtc::StatsReport::StatsType, ::std::string const&, ::webrtc::StatsReport::Direction);
+    NewComponentId(::std::string const& content_name, int component);
+
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> NewIdWithDirection(
+        ::webrtc::StatsReport::StatsType type,
+        ::std::string const&             id,
+        ::webrtc::StatsReport::Direction direction
+    );
 
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase>
-    NewTypedId(::webrtc::StatsReport::StatsType, ::std::string const&);
+    NewTypedId(::webrtc::StatsReport::StatsType type, ::std::string const& id);
 
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase>
-    NewTypedIntId(::webrtc::StatsReport::StatsType, int);
+    NewTypedIntId(::webrtc::StatsReport::StatsType type, int id);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const&);
+    MCNAPI void* $ctor(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const& id);
     // NOLINTEND
 
 public:

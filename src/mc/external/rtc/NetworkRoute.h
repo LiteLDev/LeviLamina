@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::string DebugString() const;
 
-    MCNAPI bool operator==(::rtc::NetworkRoute const&) const;
+    MCNAPI bool operator==(::rtc::NetworkRoute const& other) const;
     // NOLINTEND
 };
 

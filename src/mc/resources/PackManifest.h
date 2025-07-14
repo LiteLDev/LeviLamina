@@ -103,19 +103,17 @@ public:
 
     MCAPI explicit PackManifest(::ManifestType type);
 
-    MCAPI void _serailizeLegacyModuleDependencies(::Json::Value& destination) const;
-
     MCAPI void _serializeDependencies(::Json::Value& destination) const;
 
     MCAPI void _serializeHeader(::Json::Value& destination) const;
-
-    MCAPI void _serializeMeta(::Json::Value& destination) const;
 
     MCAPI void _serializeModules(::Json::Value& destination) const;
 
     MCAPI void addModule(::ResourceInformation const& resourceInfo);
 
     MCAPI void addPackCapability(::std::string_view capability, ::PackCapability::TrustLevel trustLevel);
+
+    MCAPI void addPackDependency(::PackIdVersion const& packId);
 
     MCAPI ::std::string getDescription() const;
 
@@ -128,6 +126,8 @@ public:
     MCAPI bool isRestrictedPack() const;
 
     MCAPI bool isUsingPackNameKeyword() const;
+
+    MCAPI void serialize(::PackManifestFormat formatVersion, ::Json::Value& destination) const;
 
     MCAPI void setDescription(::std::string const& description);
 

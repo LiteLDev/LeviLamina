@@ -23,19 +23,23 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 40> mUnk92d93a;
     ::ll::UntypedStorage<4, 4>  mUnk4a44e8;
-    ::ll::UntypedStorage<4, 16> mUnk6c4cda;
+    ::ll::UntypedStorage<4, 16> mUnk8f9d15;
+    ::ll::UntypedStorage<4, 16> mUnk446885;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ScriptBlockCustomComponentPlayerInteractAfterEvent&
     operator=(ScriptBlockCustomComponentPlayerInteractAfterEvent const&);
-    ScriptBlockCustomComponentPlayerInteractAfterEvent(ScriptBlockCustomComponentPlayerInteractAfterEvent const&);
     ScriptBlockCustomComponentPlayerInteractAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptBlockCustomComponentPlayerInteractAfterEvent(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerInteractAfterEvent const&
+    );
+
     MCNAPI ScriptBlockCustomComponentPlayerInteractAfterEvent(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerInteractAfterEvent&&
     );
@@ -55,6 +59,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerInteractAfterEvent const&);
+
     MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerInteractAfterEvent&&);
 
     MCNAPI void* $ctor(

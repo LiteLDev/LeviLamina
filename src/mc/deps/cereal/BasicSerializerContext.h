@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/ResultCode.h"
+
 namespace cereal {
 
 class BasicSerializerContext {
@@ -109,6 +112,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit BasicSerializerContext(::cereal::ResultCode errorCodes);
+
     MCNAPI ::std::string _getContextString(uint index) const;
 
     MCNAPI ::std::vector<::cereal::BasicSerializerContext::Context>
@@ -117,6 +122,12 @@ public:
     MCNAPI ::std::pair<::cereal::BasicSerializerContext::ContextType, ::std::string_view> currentContext() const;
 
     MCNAPI ::std::vector<::std::string> errors() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::cereal::ResultCode errorCodes);
     // NOLINTEND
 };
 

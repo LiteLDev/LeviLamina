@@ -44,13 +44,13 @@ public:
     // NOLINTBEGIN
     // vIndex: 4
     virtual ::HitResult clip(
-        ::Block const&                                     block,
-        ::BlockSource const&                               region,
-        ::BlockPos const&                                  pos,
-        ::Vec3 const&                                      A,
-        ::Vec3 const&                                      B,
-        ::ShapeType                                        shapeType,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
+        ::Block const& block,
+        ::BlockSource const&,
+        ::BlockPos const& pos,
+        ::Vec3 const&     A,
+        ::Vec3 const&     B,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     // vIndex: 9
@@ -62,7 +62,7 @@ public:
     virtual void addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
-        ::BlockPos const&          blockPos,
+        ::BlockPos const&          pos,
         ::AABB const*              intersectTestBox,
         ::std::vector<::AABB>&     inoutBoxes
     ) const /*override*/;
@@ -183,13 +183,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::HitResult $clip(
+        ::Block const& block,
+        ::BlockSource const&,
+        ::BlockPos const& pos,
+        ::Vec3 const&     A,
+        ::Vec3 const&     B,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
+
     MCFOLD ::AABB const&
     $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
     MCAPI void $addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
-        ::BlockPos const&          blockPos,
+        ::BlockPos const&          pos,
         ::AABB const*              intersectTestBox,
         ::std::vector<::AABB>&     inoutBoxes
     ) const;

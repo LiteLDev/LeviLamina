@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/json/Features.h"
+#include "mc/deps/json/Value.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -110,6 +111,8 @@ public:
 
     MCAPI bool decodeString(::Json::Reader::Token& token, char* decoded);
 
+    MCAPI ::Json::Value::CZString decodeString(::Json::Reader::Token& token, bool& successful);
+
     MCAPI bool
     decodeUnicodeCodePoint(::Json::Reader::Token& token, char const*& current, char const* end, uint& unicode);
 
@@ -125,6 +128,8 @@ public:
     MCAPI bool parse(::std::istream& sin, ::Json::Value& root, bool collectComments);
 
     MCAPI bool parse(char const* beginDoc, char const* endDoc, ::Json::Value& root, bool);
+
+    MCAPI bool parse(char const* originalBegin, uint64 length, ::Json::Value& root, bool collectComments);
 
     MCAPI ::Json::Value readArray(::Json::Reader::Token&, bool& ok);
 

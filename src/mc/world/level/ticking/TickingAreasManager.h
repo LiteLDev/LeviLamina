@@ -120,6 +120,8 @@ public:
 
     MCNAPI void loadArea(::std::string const& key, ::CompoundTag const* tag);
 
+    MCNAPI void loadAreasFromSaveData(::LevelStorage& levelStorage);
+
     MCNAPI void onTickingEntityAdded(::DimensionType dimensionId, ::Actor& actor, ::LevelStorage& levelStorage);
 
     MCNAPI void registerForActorManagerEvents(::IActorManagerConnector& actorManagerConnector);

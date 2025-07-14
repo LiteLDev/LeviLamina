@@ -10,6 +10,7 @@
 // clang-format off
 class AABB;
 class Block;
+class BlockPos;
 class BlockVolumeBase;
 class BoundingBox;
 class ChunkPos;
@@ -54,20 +55,26 @@ public:
     ) = 0;
 
     // vIndex: 7
-    virtual ::Editor::RelativeVolumeListBlockVolume shrinkWrapVolume(
+    virtual ::Editor::RelativeVolumeListBlockVolume findObscuredBlocksWithinVolume(
         ::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const
     ) = 0;
 
     // vIndex: 8
+    virtual ::Editor::RelativeVolumeListBlockVolume shrinkWrapVolume(
+        ::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const
+    ) = 0;
+
+    // vIndex: 9
     virtual bool isLocationInsideDimensionBounds(
         ::std::variant<
             ::BlockVolumeBase const*,
             ::Editor::RelativeVolumeListBlockVolume const*,
             ::Vec3 const*,
-            ::BoundingBox const*> const
+            ::BoundingBox const*,
+            ::BlockPos const*> const
     ) = 0;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual ::CompoundBlockVolume getContiguousSelection(
         int const,
         ::Facing::Name const&,
@@ -79,7 +86,7 @@ public:
         ::std::vector<::std::string> const&
     ) const = 0;
 
-    // vIndex: 10
+    // vIndex: 11
     virtual bool areBlocksContiguous(
         ::Editor::BlockUtils::ContiguousSelectionType const&,
         ::Block const&,
@@ -87,32 +94,32 @@ public:
         ::std::vector<::std::string> const&
     ) const = 0;
 
-    // vIndex: 11
+    // vIndex: 12
     virtual ::Vec3 getDeltaFromDirection(::Facing::Name const&) const = 0;
 
-    // vIndex: 12
+    // vIndex: 13
     virtual ::Vec3 getDimensionMinLocation() const = 0;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual ::Vec3 getDimensionMaxLocation() const = 0;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual ::BoundingBox getDimensionLocationBoundingBox() const = 0;
 
-    // vIndex: 15
+    // vIndex: 16
     virtual ::AABB
     getBoundForContiguousSelection(::Vec3 const&, ::Facing::Name const&, int const, bool const) const = 0;
 
-    // vIndex: 16
+    // vIndex: 17
     virtual bool isBlockExposedInDirection(::Dimension const&, ::Vec3 const&, ::Facing::Name const&) const = 0;
 
-    // vIndex: 17
+    // vIndex: 18
     virtual bool isSameBlockType(::Block const&, ::Block const&) const = 0;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual bool isSameBlockAndProperties(::Block const&, ::Block const&) const = 0;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual bool isBlockTypeInSelectionList(::Block const&, ::std::vector<::std::string> const&) const = 0;
     // NOLINTEND
 

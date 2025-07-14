@@ -16,10 +16,10 @@ class BlockPos;
 class BlockSource;
 class Experiments;
 class ItemStack;
-class Random;
 class Randomize;
 struct Brightness;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
+namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class GrassBlock : public ::BlockLegacy {
@@ -37,9 +37,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 135
-    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 73
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
@@ -76,6 +73,8 @@ public:
 
     MCAPI bool _plantGrass(::BlockSource& region, ::BlockPos const& abovePos, ::Randomize& randomize) const;
 
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
@@ -94,8 +93,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 

@@ -26,13 +26,13 @@ public:
     // NOLINTBEGIN
     MCNAPI Event();
 
-    MCNAPI Event(bool, bool);
+    MCNAPI Event(bool manual_reset, bool initially_signaled);
 
     MCNAPI void Reset();
 
     MCNAPI void Set();
 
-    MCNAPI bool Wait(::webrtc::TimeDelta, ::webrtc::TimeDelta);
+    MCNAPI bool Wait(::webrtc::TimeDelta give_up_after, ::webrtc::TimeDelta);
 
     MCNAPI ~Event();
     // NOLINTEND
@@ -48,7 +48,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(bool, bool);
+    MCNAPI void* $ctor(bool manual_reset, bool initially_signaled);
     // NOLINTEND
 
 public:

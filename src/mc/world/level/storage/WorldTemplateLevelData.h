@@ -30,6 +30,13 @@ public:
     // NOLINTBEGIN
     MCNAPI WorldTemplateLevelData();
 
+    MCNAPI WorldTemplateLevelData(
+        bool                     isFromWorldTemplate,
+        bool                     isWorldTemplateOptionLocked,
+        ::BaseGameVersion const& baseGameVersion,
+        ::BaseGameVersion const& maxBaseGameVersion
+    );
+
     MCNAPI void _getTagData(::CompoundTag const& tag);
 
     MCNAPI void _setTagData(::CompoundTag& tag) const;
@@ -43,6 +50,13 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(
+        bool                     isFromWorldTemplate,
+        bool                     isWorldTemplateOptionLocked,
+        ::BaseGameVersion const& baseGameVersion,
+        ::BaseGameVersion const& maxBaseGameVersion
+    );
     // NOLINTEND
 
 public:

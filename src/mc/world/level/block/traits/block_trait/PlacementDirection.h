@@ -188,12 +188,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void setRotationOffset(float const& rotation);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::BlockTrait::PlacementDirection CardinalDirection(float _yRotationOffset);

@@ -24,9 +24,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddLayer(::cricket::SimulcastLayer const&);
+    MCNAPI void AddLayer(::cricket::SimulcastLayer const& layer);
 
-    MCNAPI void AddLayerWithAlternatives(::std::vector<::cricket::SimulcastLayer> const&);
+    MCNAPI void AddLayerWithAlternatives(::std::vector<::cricket::SimulcastLayer> const& rids);
 
     MCNAPI ::std::vector<::cricket::SimulcastLayer> GetAllLayers() const;
 

@@ -33,31 +33,41 @@ public:
     virtual ~LogSink() = default;
 
     // vIndex: 7
-    virtual void OnLogMessage(::std::string const&, ::rtc::LoggingSeverity, char const*);
+    virtual void OnLogMessage(::std::string const& msg, ::rtc::LoggingSeverity severity, char const* tag);
 
     // vIndex: 6
-    virtual void OnLogMessage(::std::string const&, ::rtc::LoggingSeverity);
+    virtual void OnLogMessage(::std::string const& msg, ::rtc::LoggingSeverity);
 
     // vIndex: 5
     virtual void OnLogMessage(::std::string const&) = 0;
 
     // vIndex: 4
-    virtual void OnLogMessage(::std::string_view, ::rtc::LoggingSeverity, char const*);
+    virtual void OnLogMessage(::std::string_view msg, ::rtc::LoggingSeverity severity, char const* tag);
 
     // vIndex: 3
-    virtual void OnLogMessage(::std::string_view, ::rtc::LoggingSeverity);
+    virtual void OnLogMessage(::std::string_view msg, ::rtc::LoggingSeverity);
 
     // vIndex: 2
-    virtual void OnLogMessage(::std::string_view);
+    virtual void OnLogMessage(::std::string_view msg);
 
     // vIndex: 1
-    virtual void OnLogMessage(::rtc::LogLineRef const&);
+    virtual void OnLogMessage(::rtc::LogLineRef const& log_line);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $OnLogMessage(::std::string const& msg, ::rtc::LoggingSeverity severity, char const* tag);
 
+    MCNAPI void $OnLogMessage(::std::string const& msg, ::rtc::LoggingSeverity);
+
+    MCNAPI void $OnLogMessage(::std::string_view msg, ::rtc::LoggingSeverity severity, char const* tag);
+
+    MCNAPI void $OnLogMessage(::std::string_view msg, ::rtc::LoggingSeverity);
+
+    MCNAPI void $OnLogMessage(::std::string_view msg);
+
+    MCNAPI void $OnLogMessage(::rtc::LogLineRef const& log_line);
     // NOLINTEND
 
 public:

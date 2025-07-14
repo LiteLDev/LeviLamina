@@ -69,6 +69,9 @@ public:
 
     // vIndex: 16
     virtual void setBrushShapeVisible(bool const) = 0;
+
+    // vIndex: 17
+    virtual bool isBusy() = 0;
     // NOLINTEND
 
 public:

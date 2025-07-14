@@ -22,6 +22,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ResultAny();
 
+    MCNAPI explicit ResultAny(::entt::meta_any&& resultAny);
+
     MCNAPI ::entt::meta_any toAny();
 
     MCNAPI ::entt::meta_any toAny() const;
@@ -43,6 +45,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(::entt::meta_any&& resultAny);
     // NOLINTEND
 
 public:

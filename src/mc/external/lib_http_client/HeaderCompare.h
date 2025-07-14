@@ -11,7 +11,7 @@ struct HeaderCompare {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool operator()(::http_string const&, ::http_string const&) const;
+    MCNAPI bool operator()(::http_string const& l, ::http_string const& r) const;
     // NOLINTEND
 };
 

@@ -6,6 +6,16 @@ namespace cricket {
 
 struct SenderOptions {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkaf0f45;
+    ::ll::UntypedStorage<8, 24> mUnka98dad;
+    ::ll::UntypedStorage<8, 24> mUnk4cb572;
+    ::ll::UntypedStorage<8, 24> mUnk4fd38f;
+    ::ll::UntypedStorage<4, 4>  mUnk10a644;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     SenderOptions& operator=(SenderOptions const&);
     SenderOptions();

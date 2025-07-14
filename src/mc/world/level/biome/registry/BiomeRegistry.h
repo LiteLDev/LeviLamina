@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/platform/brstd/flat_set.h"
 #include "mc/util/IDType.h"
@@ -14,12 +15,14 @@
 // auto generated forward declare list
 // clang-format off
 class BaseGameVersion;
+class BedrockLoadContext;
 class Biome;
 class Dimension;
 class HashedString;
 class ILevelStorageManagerConnector;
 class IWorldRegistriesProvider;
 class LevelStorage;
+class LinkedAssetValidator;
 class ResourcePackManager;
 struct BiomeTagIDType;
 struct BiomeTagSetIDType;
@@ -69,7 +72,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 984, ::WellKnownBiomeTags>                                    mWellKnownBiomeTags;
+    ::ll::TypedStorage<8, 552, ::WellKnownBiomeTags>                                    mWellKnownBiomeTags;
+    ::ll::TypedStorage<1, 1, bool>                                                      mSurfaceBuildersResolved;
     ::ll::TypedStorage<1, 1, bool>                                                      mClientInitialized;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::unique_ptr<::Biome>>> mBiomesByName;
     ::ll::TypedStorage<
@@ -119,7 +123,11 @@ public:
 
     MCAPI ::std::vector<::Biome const*> getBiomesInDimension(::DimensionType type) const;
 
-    MCAPI void initServerFromPacks(::ResourcePackManager const& loader, ::IWorldRegistriesProvider& worldRegistries);
+    MCAPI void initServerFromPacks(
+        ::ResourcePackManager const&                       loader,
+        ::IWorldRegistriesProvider&                        worldRegistries,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator
+    );
 
     MCAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
@@ -146,7 +154,8 @@ public:
         ::ResourcePackManager const& loader,
         ::std::string const&         biomeName,
         bool                         loadFromAllPacks,
-        ::cereal::ReflectionCtx&     ctx
+        ::cereal::ReflectionCtx&     ctx,
+        ::BedrockLoadContext&        loadContext
     );
 
     MCAPI static ::std::string

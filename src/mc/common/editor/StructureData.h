@@ -21,7 +21,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI StructureData(::std::string structureNamespace, ::std::string structureName);
+
     MCNAPI ~StructureData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string structureNamespace, ::std::string structureName);
     // NOLINTEND
 
 public:

@@ -14,6 +14,7 @@
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/deps/nether_net/LogSeverity.h"
 #include "mc/platform/threading/Mutex.h"
+#include "mc/server/ServerGraphicsSettings.h"
 #include "mc/world/GameCallbacks.h"
 #include "mc/world/level/ForceBlockNetworkIdsAreHashes.h"
 
@@ -46,6 +47,7 @@ class ServerMetrics;
 class ServerNetworkSystem;
 class ServerScriptManager;
 class ServerTextSettings;
+class SignalingService;
 class TextFilteringProcessor;
 class Timer;
 class WorldSessionEndPoint;
@@ -125,6 +127,7 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ServerTextSettings>> mServerTextSettings;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::cereal::ReflectionCtx>> mCerealContext;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LinkedAssetValidator>>               mLinkedAssetValidator;
+    ::ll::TypedStorage<1, 1, ::ServerGraphicsSettings>                                mGraphicsSettings;
     // NOLINTEND
 
 public:
@@ -254,7 +257,9 @@ public:
         ::PortMappingInfo const&                                                     portMappingInfo,
         ::NetherNet::LogSeverity                                                     defaultLogSeverity,
         ::TextProcessorInitParams                                                    textProcessorInitParams,
-        ::std::optional<::NetherNet::NetworkID>                                      netherNetId
+        ::std::optional<::NetherNet::NetworkID>                                      netherNetId,
+        ::Bedrock::NonOwnerPointer<::SignalingService>                               signalingService,
+        ::std::optional<bool>                                                        disableClientVibrantVisuals
     );
 
     MCAPI void leaveGameSync();
@@ -301,6 +306,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onLowMemory(::LowMemorySeverity);
+
     MCAPI void $onLevelCorrupt();
 
     MCAPI void $onCriticalScriptError(char const* clientDisconnectMessage, char const* logMessage);

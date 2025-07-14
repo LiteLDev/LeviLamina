@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/renderer/rendergraph/Packet.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/legacy/ActorRuntimeID.h"
 #include "mc/network/MinecraftPacketIds.h"
-#include "mc/network/packet/Packet.h"
 #include "mc/network/packet/PlayerInputTick.h"
 #include "mc/platform/Result.h"
 

@@ -80,16 +80,16 @@ public:
 
     // vIndex: 6
     virtual ::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface> CreatePeerConnection(
-        ::webrtc::PeerConnectionInterface::RTCConfiguration const&,
-        ::webrtc::PeerConnectionDependencies
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
+        ::webrtc::PeerConnectionDependencies                       dependencies
     );
 
     // vIndex: 5
     virtual ::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface> CreatePeerConnection(
-        ::webrtc::PeerConnectionInterface::RTCConfiguration const&,
-        ::std::unique_ptr<::cricket::PortAllocator>,
-        ::std::unique_ptr<::rtc::RTCCertificateGeneratorInterface>,
-        ::webrtc::PeerConnectionObserver*
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
+        ::std::unique_ptr<::cricket::PortAllocator>                allocator,
+        ::std::unique_ptr<::rtc::RTCCertificateGeneratorInterface> cert_generator,
+        ::webrtc::PeerConnectionObserver*                          observer
     );
 
     // vIndex: 7
@@ -124,12 +124,30 @@ public:
     virtual void StopAecDump() = 0;
 
     // vIndex: 2
-    virtual ~PeerConnectionFactoryInterface() /*override*/ = default;
+    virtual ~PeerConnectionFactoryInterface() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface> $CreatePeerConnection(
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
+        ::webrtc::PeerConnectionDependencies                       dependencies
+    );
+
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface> $CreatePeerConnection(
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
+        ::std::unique_ptr<::cricket::PortAllocator>                allocator,
+        ::std::unique_ptr<::rtc::RTCCertificateGeneratorInterface> cert_generator,
+        ::webrtc::PeerConnectionObserver*                          observer
+    );
+
     MCNAPI ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>
     $CreateVideoTrack(::std::string const& label, ::webrtc::VideoTrackSourceInterface* source);
     // NOLINTEND

@@ -30,12 +30,6 @@ public:
         ServerChunkLoading& operator=(ServerChunkLoading const&);
         ServerChunkLoading(ServerChunkLoading const&);
         ServerChunkLoading();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::Json::Value toJson() const;
-        // NOLINTEND
     };
 
     struct ClientSubChunkCache {
@@ -52,12 +46,6 @@ public:
         ClientSubChunkCache& operator=(ClientSubChunkCache const&);
         ClientSubChunkCache(ClientSubChunkCache const&);
         ClientSubChunkCache();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::Json::Value toJson() const;
-        // NOLINTEND
     };
 
 public:

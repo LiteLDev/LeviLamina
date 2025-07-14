@@ -10,9 +10,6 @@ namespace PanicGoalConstants {
 // NOLINTBEGIN
 MCNAPI ::std::array<::SharedTypes::Legacy::ActorDamageCause, 18> const&
 POST_SUMMER_24_UPDATE_DEFAULT_PANIC_DAMAGE_CAUSES();
-
-MCNAPI ::std::array<::SharedTypes::Legacy::ActorDamageCause, 1> const&
-PRE_SUMMER_24_UPDATE_DEFAULT_PANIC_DAMAGE_CAUSES();
 // NOLINTEND
 
 } // namespace PanicGoalConstants

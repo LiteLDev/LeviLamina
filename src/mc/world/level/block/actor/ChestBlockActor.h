@@ -68,7 +68,7 @@ public:
     // vIndex: 21
     virtual int getMaxStackSize() const /*override*/;
 
-    // vIndex: 27
+    // vIndex: 28
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 7
@@ -87,64 +87,64 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    // vIndex: 47
+    // vIndex: 48
     virtual void loadItems(::CompoundTag const& base, ::ILevel& level);
 
     // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 48
+    // vIndex: 49
     virtual bool saveItems(::CompoundTag& base, ::SaveContext const& saveContext) const;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     // vIndex: 3
-    virtual bool saveItemInstanceData(::CompoundTag& base, ::SaveContext const& saveContext) const /*override*/;
+    virtual bool saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual void clearCache() /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 17
+    // vIndex: 18
     virtual void triggerEvent(int b0, int b1) /*override*/;
 
     // vIndex: 22
     virtual void startOpen(::Player& player) /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
     // vIndex: 23
     virtual void stopOpen(::Player& player) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual void onNeighborChanged(::BlockSource& region, ::BlockPos const& position) /*override*/;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual ::BlockActor* getCrackEntity(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
     // vIndex: 49
     virtual int clearInventory(int resizeTo) /*override*/;
 
-    // vIndex: 34
+    // vIndex: 35
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 33
+    // vIndex: 34
     virtual ::Container const* getContainer() const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual void onMove() /*override*/;
 
-    // vIndex: 12
+    // vIndex: 13
     virtual void onPlace(::BlockSource& region) /*override*/;
 
-    // vIndex: 49
+    // vIndex: 50
     virtual void openBy(::Player& p);
 
     // vIndex: 34
@@ -156,7 +156,7 @@ public:
     // vIndex: 33
     virtual bool canPullOutItem(int, int, ::ItemStack const&) const /*override*/;
 
-    // vIndex: 24
+    // vIndex: 25
     virtual void getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos) const /*override*/;
 
     // vIndex: 3
@@ -168,25 +168,25 @@ public:
     // vIndex: 41
     virtual void initializeContainerContents(::BlockSource& region) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 46
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual void playOpenSound(::BlockSource& region);
 
-    // vIndex: 51
+    // vIndex: 52
     virtual void playCloseSound(::BlockSource& region);
 
-    // vIndex: 52
+    // vIndex: 53
     virtual bool _canOpenThis(::BlockSource& region) const;
 
-    // vIndex: 53
+    // vIndex: 54
     virtual ::AABB getObstructionAABB() const;
 
-    // vIndex: 54
+    // vIndex: 55
     virtual bool _detectEntityObstruction(::BlockSource& region) const;
     // NOLINTEND
 
@@ -269,7 +269,7 @@ public:
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI bool $saveItemInstanceData(::CompoundTag& base, ::SaveContext const& saveContext) const;
+    MCAPI bool $saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
     MCFOLD void $clearCache();
 

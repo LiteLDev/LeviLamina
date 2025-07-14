@@ -2,4 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct SwimControlSystem {};
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct SwimControlSystem {
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::TickingSystemWithInfo create();
+    // NOLINTEND
+};

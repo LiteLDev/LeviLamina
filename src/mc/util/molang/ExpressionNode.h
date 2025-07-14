@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/molang/MolangVersion.h"
+#include "mc/platform/brstd/flat_set.h"
 #include "mc/util/MolangCompileResult.h"
 #include "mc/util/MolangQueryFunctionReturnType.h"
 #include "mc/util/molang/ExpressionOp.h"
@@ -20,6 +21,7 @@ struct MolangQueryFunction;
 struct MolangScriptArg;
 namespace Json { class Value; }
 namespace Molang::details { class IComplexExpression; }
+namespace Molang::details { class SourceTree; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -49,6 +51,9 @@ public:
 
     using ResourceTable = ::std::unordered_map<::HashedString, ::ExpressionNode::ResourceReference>;
 
+    using MissingResourceSet =
+        ::brstd::flat_set<::HashedString, ::std::less<::HashedString>, ::std::vector<::HashedString>>;
+
     using IComplexExpression = ::Molang::details::IComplexExpression;
 
     using GetParticleTintFunc = ::std::function<::mce::Color(::Block const&, ::BlockSource&, ::BlockPos const&)>;
@@ -69,6 +74,8 @@ public:
     MCAPI ExpressionNode(::ExpressionNode&&);
 
     MCAPI ExpressionNode(::ExpressionNode const& rhs);
+
+    MCAPI explicit ExpressionNode(::Molang::details::SourceTree root);
 
     MCAPI explicit ExpressionNode(float value);
 
@@ -107,7 +114,7 @@ public:
     MCAPI static ::std::function<
         ::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)> const*
     queryFunctionAccessorFromString(
-        ::std::string const&             functionName,
+        ::HashedString const&            functionName,
         ::MolangVersion                  molangVersion,
         ::MolangQueryFunctionReturnType& functionReturnType,
         bool                             missingIsOkay_returnNullIfSo
@@ -148,6 +155,8 @@ public:
     MCAPI void* $ctor(::ExpressionNode&&);
 
     MCAPI void* $ctor(::ExpressionNode const& rhs);
+
+    MCAPI void* $ctor(::Molang::details::SourceTree root);
 
     MCAPI void* $ctor(float value);
 

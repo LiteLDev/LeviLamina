@@ -4,6 +4,18 @@
 
 namespace webrtc {
 
-class StreamId {};
+class StreamId {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<2, 2> mUnka677ad;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    StreamId& operator=(StreamId const&);
+    StreamId(StreamId const&);
+    StreamId();
+};
 
 } // namespace webrtc

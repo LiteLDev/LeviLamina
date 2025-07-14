@@ -31,11 +31,11 @@ public:
     // vIndex: 1
     virtual void sendPacket(::std::string const&, ::NetworkPeer::Reliability, ::Compressibility) /*override*/;
 
-    // vIndex: 2
+    // vIndex: 7
     virtual ::NetworkPeer::DataStatus
-    receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) /*override*/;
+    _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) /*override*/;
 
-    // vIndex: 3
+    // vIndex: 2
     virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
     // NOLINTEND
 

@@ -12,11 +12,13 @@
 struct PlayerDimensionChangeAfterEvent;
 struct PlayerEmoteEvent;
 struct PlayerGameModeChangeEvent;
+struct PlayerHotbarSelectedSlotChangeEvent;
 struct PlayerInitialSpawnEvent;
 struct PlayerInputModeChangeEvent;
 struct PlayerInputPermissionCategoryChangeEvent;
 struct PlayerInteractWithBlockAfterEvent;
 struct PlayerInteractWithEntityAfterEvent;
+struct PlayerInventoryItemChangeEvent;
 struct PlayerRespawnEvent;
 struct PlayerScriptInputEvent;
 // clang-format on
@@ -40,36 +42,42 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 55
+    // vIndex: 57
     virtual ::EventResult onEvent(::PlayerRespawnEvent const& respawnEvent) /*override*/;
 
-    // vIndex: 58
+    // vIndex: 60
     virtual ::EventResult onEvent(::PlayerInitialSpawnEvent const& initialSpawnEvent) /*override*/;
 
-    // vIndex: 50
+    // vIndex: 52
     virtual ::EventResult onEvent(::PlayerDimensionChangeAfterEvent const& playerDimensionChangeEvent) /*override*/;
 
-    // vIndex: 59
+    // vIndex: 61
     virtual ::EventResult onEvent(::PlayerInputModeChangeEvent const& playerInputModeChangeEvent) /*override*/;
 
     // vIndex: 45
     virtual ::EventResult onEvent(::PlayerInputPermissionCategoryChangeEvent const& event) /*override*/;
 
-    // vIndex: 49
+    // vIndex: 51
     virtual ::EventResult
     onEvent(::PlayerInteractWithEntityAfterEvent const& playerInteractWithEntityEvent) /*override*/;
 
-    // vIndex: 48
+    // vIndex: 50
     virtual ::EventResult onEvent(::PlayerInteractWithBlockAfterEvent const& playerInteractWithBlockEvent) /*override*/;
 
     // vIndex: 39
     virtual ::EventResult onEvent(::PlayerGameModeChangeEvent const& playerGameModeChangeEvent) /*override*/;
 
-    // vIndex: 47
+    // vIndex: 49
     virtual ::EventResult onEvent(::PlayerEmoteEvent const& playerEmoteEvent) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 48
     virtual ::EventResult onEvent(::PlayerScriptInputEvent const& e) /*override*/;
+
+    // vIndex: 47
+    virtual ::EventResult onEvent(::PlayerInventoryItemChangeEvent const& e) /*override*/;
+
+    // vIndex: 46
+    virtual ::EventResult onEvent(::PlayerHotbarSelectedSlotChangeEvent const& e) /*override*/;
 
     // vIndex: 0
     virtual ~ScriptPlayerEventListener() /*override*/ = default;
@@ -97,6 +105,10 @@ public:
     MCNAPI ::EventResult $onEvent(::PlayerEmoteEvent const& playerEmoteEvent);
 
     MCNAPI ::EventResult $onEvent(::PlayerScriptInputEvent const& e);
+
+    MCNAPI ::EventResult $onEvent(::PlayerInventoryItemChangeEvent const& e);
+
+    MCNAPI ::EventResult $onEvent(::PlayerHotbarSelectedSlotChangeEvent const& e);
     // NOLINTEND
 
 public:

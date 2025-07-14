@@ -35,6 +35,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit CerealDocumentUpgrader(::SemVersion terminus);
+
     MCNAPI void clear();
 
     MCNAPI ::CerealDocumentUpgrader::ParseAndUpgradeResult parseJsonAndUpgrade(
@@ -63,6 +65,8 @@ public:
         ::std::optional<::SemVersion> const&              minVersion,
         ::std::function<bool(::SemVersion const&)> const& shouldUpgrade
     ) const;
+
+    MCNAPI ~CerealDocumentUpgrader();
     // NOLINTEND
 
 public:
@@ -74,5 +78,17 @@ public:
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
             ::rapidjson::CrtAllocator> const& document
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::SemVersion terminus);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -13,9 +13,4 @@ namespace gametest {
 MCNAPI ::Scripting::EnumBinding bindGameTestErrorType();
 // NOLINTEND
 
-// static variables
-// NOLINTBEGIN
-MCNAPI ::std::string const& GAMETEST_ERROR_TAG();
-// NOLINTEND
-
 } // namespace gametest

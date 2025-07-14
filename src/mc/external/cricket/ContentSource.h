@@ -4,6 +4,9 @@
 
 namespace cricket {
 
-enum class ContentSource : uint {};
+enum class ContentSource : int {
+    Local  = 0,
+    Remote = 1,
+};
 
 }

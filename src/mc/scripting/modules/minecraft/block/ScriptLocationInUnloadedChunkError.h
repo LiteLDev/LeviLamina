@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Error.h"
+#include "mc/deps/scripting/runtime/BaseError.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,7 @@ class Vec3;
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptLocationInUnloadedChunkError : public ::Scripting::Error {
+struct ScriptLocationInUnloadedChunkError : public ::Scripting::BaseError {
 public:
     // prevent constructor by default
     ScriptLocationInUnloadedChunkError();

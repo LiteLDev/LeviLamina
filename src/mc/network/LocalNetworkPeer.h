@@ -49,17 +49,17 @@ public:
     virtual void sendPacket(::std::string const&, ::NetworkPeer::Reliability, ::Compressibility) /*override*/;
 
     // vIndex: 2
-    virtual ::NetworkPeer::DataStatus
-    receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) /*override*/;
-
-    // vIndex: 3
     virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
 
-    // vIndex: 6
+    // vIndex: 5
     virtual bool isLocal() const /*override*/;
 
-    // vIndex: 7
+    // vIndex: 6
     virtual bool isEncrypted() const /*override*/;
+
+    // vIndex: 7
+    virtual ::NetworkPeer::DataStatus
+    _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) /*override*/;
 
     // vIndex: 0
     virtual ~LocalNetworkPeer() /*override*/ = default;

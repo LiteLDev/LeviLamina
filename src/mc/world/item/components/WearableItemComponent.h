@@ -23,6 +23,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::EquipmentSlot> mEquipmentSlot;
     ::ll::TypedStorage<4, 4, int>                                  mProtection;
+    ::ll::TypedStorage<1, 1, bool>                                 mHidesPlayerLocation;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>     mOnUseSubscription;
     // NOLINTEND
 

@@ -15,6 +15,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptGenerator& operator=(ScriptGenerator const&);
     ScriptGenerator();
 
 public:
@@ -23,8 +24,6 @@ public:
     MCNAPI ScriptGenerator(::ScriptGenerator&&);
 
     MCNAPI ScriptGenerator(::ScriptGenerator const&);
-
-    MCNAPI ::ScriptGenerator& operator=(::ScriptGenerator const&);
 
     MCNAPI ~ScriptGenerator();
     // NOLINTEND

@@ -24,15 +24,15 @@ struct ActorUniqueIDComponent;
 struct DeathTickingComponent;
 struct DimensionTypeComponent;
 struct EnderDragonFlagComponent;
-struct IsDeadFlagComponent;
 struct SoundEventPlayerComponent;
 struct SpawnExperienceOrbRequestQueueComponent;
 struct StateVectorComponent;
+struct TickDeathNeededComponent;
 // clang-format on
 
 struct ServerEnderDragonTickDeathSystemImpl
 : public ::IStrictTickingSystem<::StrictExecutionContext<
-      ::Filter<::ActorTickedComponent, ::IsDeadFlagComponent, ::EnderDragonFlagComponent>,
+      ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>,
       ::Read<
           ::ActorDataFlagComponent,
           ::ActorDefinitionIdentifierComponent,
@@ -51,7 +51,7 @@ public:
     // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
-            ::Filter<::ActorTickedComponent, ::IsDeadFlagComponent, ::EnderDragonFlagComponent>,
+            ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>,
             ::Read<
                 ::ActorDataFlagComponent,
                 ::ActorDefinitionIdentifierComponent,

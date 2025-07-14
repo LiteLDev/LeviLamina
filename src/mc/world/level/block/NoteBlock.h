@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 136
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 66
@@ -42,8 +42,7 @@ public:
     virtual bool attack(::Player* player, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 98
-    virtual void triggerEvent(::BlockSource& region, ::BlockPos const& pos, int instrument, int note) const
-        /*override*/;
+    virtual void triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const /*override*/;
 
     // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
@@ -75,7 +74,7 @@ public:
 
     MCAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
 
-    MCAPI void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int instrument, int note) const;
+    MCAPI void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND

@@ -9,11 +9,11 @@ namespace rtc { class MessageDigest; }
 
 namespace rtc {
 
-struct MessageDigestFactory {
+class MessageDigestFactory {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::rtc::MessageDigest* Create(::std::string_view);
+    MCNAPI static ::rtc::MessageDigest* Create(::std::string_view alg);
     // NOLINTEND
 };
 

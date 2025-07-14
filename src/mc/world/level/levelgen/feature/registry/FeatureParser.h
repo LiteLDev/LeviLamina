@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::Puv::LoadResultAny parse(::Puv::Input const& input) const /*override*/;
+    virtual ::Puv::LoadResultAny doParse(::Puv::Input const& input) const /*override*/;
 
     // vIndex: 0
     virtual ~FeatureParser() /*override*/ = default;
@@ -38,7 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Puv::LoadResultAny $parse(::Puv::Input const& input) const;
+    MCNAPI ::Puv::LoadResultAny $doParse(::Puv::Input const& input) const;
     // NOLINTEND
 
 public:

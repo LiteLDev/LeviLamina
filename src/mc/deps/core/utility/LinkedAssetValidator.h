@@ -112,6 +112,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 104> mUnka69e6e;
     ::ll::UntypedStorage<1, 1>   mUnk86474b;
+    ::ll::UntypedStorage<1, 1>   mUnk1d7f18;
     // NOLINTEND
 
 public:
@@ -130,6 +131,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit LinkedAssetValidator(bool isClient);
+
     MCNAPI void addFileReference(int assetType, ::std::string const& filepath, ::std::string contextString);
 
     MCNAPI void addIdentifier(int assetType, ::std::string const& identifier);
@@ -141,6 +144,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::weak_ptr<::LinkedAssetValidator::AssetCollection>& mPerThreadAssetCollection();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(bool isClient);
     // NOLINTEND
 
 public:

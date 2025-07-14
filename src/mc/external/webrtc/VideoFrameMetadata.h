@@ -85,43 +85,44 @@ public:
 
     MCNAPI ushort GetWidth() const;
 
-    MCNAPI void SetCodec(::webrtc::VideoCodecType);
+    MCNAPI void SetCodec(::webrtc::VideoCodecType codec);
 
-    MCNAPI void SetContentType(::webrtc::VideoContentType);
+    MCNAPI void SetContentType(::webrtc::VideoContentType content_type);
 
-    MCNAPI void SetCsrcs(::std::vector<uint>);
+    MCNAPI void SetCsrcs(::std::vector<uint> csrcs);
 
-    MCNAPI void SetDecodeTargetIndications(::rtc::ArrayView<::webrtc::DecodeTargetIndication const>);
+    MCNAPI void
+    SetDecodeTargetIndications(::rtc::ArrayView<::webrtc::DecodeTargetIndication const> decode_target_indications);
 
-    MCNAPI void SetFrameDependencies(::rtc::ArrayView<int64 const>);
+    MCNAPI void SetFrameDependencies(::rtc::ArrayView<int64 const> frame_dependencies);
 
-    MCNAPI void SetFrameId(::std::optional<int64>);
+    MCNAPI void SetFrameId(::std::optional<int64> frame_id);
 
-    MCNAPI void SetFrameType(::webrtc::VideoFrameType);
+    MCNAPI void SetFrameType(::webrtc::VideoFrameType frame_type);
 
-    MCNAPI void SetHeight(ushort);
+    MCNAPI void SetHeight(ushort height);
 
-    MCNAPI void SetIsLastFrameInPicture(bool);
+    MCNAPI void SetIsLastFrameInPicture(bool is_last_frame_in_picture);
 
     MCNAPI void SetRTPVideoHeaderCodecSpecifics(
         ::std::variant<
             ::std::monostate,
             ::webrtc::RTPVideoHeaderVP8,
             ::webrtc::RTPVideoHeaderVP9,
-            ::webrtc::RTPVideoHeaderH264>
+            ::webrtc::RTPVideoHeaderH264> codec_specifics
     );
 
-    MCNAPI void SetRotation(::webrtc::VideoRotation);
+    MCNAPI void SetRotation(::webrtc::VideoRotation rotation);
 
-    MCNAPI void SetSimulcastIdx(uchar);
+    MCNAPI void SetSimulcastIdx(uchar simulcast_idx);
 
-    MCNAPI void SetSpatialIndex(int);
+    MCNAPI void SetSpatialIndex(int spatial_index);
 
-    MCNAPI void SetSsrc(uint);
+    MCNAPI void SetSsrc(uint ssrc);
 
-    MCNAPI void SetTemporalIndex(int);
+    MCNAPI void SetTemporalIndex(int temporal_index);
 
-    MCNAPI void SetWidth(ushort);
+    MCNAPI void SetWidth(ushort width);
 
     MCNAPI VideoFrameMetadata();
 

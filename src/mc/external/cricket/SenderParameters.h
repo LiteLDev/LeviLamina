@@ -29,13 +29,19 @@ public:
     virtual ::std::map<::std::string, ::std::string> ToStringMap() const /*override*/;
 
     // vIndex: 0
-    virtual ~SenderParameters() /*override*/ = default;
+    virtual ~SenderParameters() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI ::std::map<::std::string, ::std::string> $ToStringMap() const;
     // NOLINTEND
 
 public:

@@ -10,7 +10,8 @@
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
-class Player;
+class Level;
+struct CommandOriginIdentity;
 // clang-format on
 
 class MessagingCommand : public ::ServerCommand {
@@ -43,8 +44,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void checkAndHandleTextProcessorEvents(
-        ::Player const&                                    player,
+    MCAPI static bool checkIfTextProcessorIsHealthyAndSendChatIfNot(
+        ::CommandOriginIdentity const&                     identity,
+        ::Level const&                                     level,
         ::std::vector<::Safety::TextFilteringEvent> const& events
     );
     // NOLINTEND

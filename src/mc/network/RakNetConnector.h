@@ -122,22 +122,22 @@ public:
         virtual void
         sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility) /*override*/;
 
-        // vIndex: 2
-        virtual ::NetworkPeer::DataStatus receivePacket(
+        // vIndex: 7
+        virtual ::NetworkPeer::DataStatus _receivePacket(
             ::std::string&                                                    outData,
             ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
         ) /*override*/;
 
-        // vIndex: 3
+        // vIndex: 2
         virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
 
-        // vIndex: 4
+        // vIndex: 3
         virtual void update() /*override*/;
 
-        // vIndex: 6
+        // vIndex: 5
         virtual bool isLocal() const /*override*/;
 
-        // vIndex: 7
+        // vIndex: 6
         virtual bool isEncrypted() const /*override*/;
 
         // vIndex: 0
@@ -163,7 +163,7 @@ public:
         // NOLINTBEGIN
         MCAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
 
-        MCAPI ::NetworkPeer::DataStatus $receivePacket(
+        MCAPI ::NetworkPeer::DataStatus $_receivePacket(
             ::std::string&                                                    outData,
             ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
         );
@@ -197,7 +197,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 176, ::NetworkIdentifier>          mNATPunchServerId;
-    ::ll::TypedStorage<8, 464, ::Social::GameConnectionInfo> mBackupGameConnection;
+    ::ll::TypedStorage<8, 456, ::Social::GameConnectionInfo> mBackupGameConnection;
     ::ll::TypedStorage<1, 1, bool>                           mTryBackupConnection;
     ::ll::TypedStorage<8, 16, ::std::unique_ptr<::RakNet::RakPeerInterface, void (*)(::RakNet::RakPeerInterface*)>>
                                                                    mRakPeer;
@@ -208,7 +208,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                 mIsServer;
     ::ll::TypedStorage<1, 1, bool>                                 mIsDisconnecting;
     ::ll::TypedStorage<1, 1, bool>                                 mConnectingToClient;
-    ::ll::TypedStorage<8, 464, ::Social::GameConnectionInfo>       mConnectedGameInfo;
+    ::ll::TypedStorage<8, 456, ::Social::GameConnectionInfo>       mConnectedGameInfo;
     ::ll::TypedStorage<
         8,
         64,

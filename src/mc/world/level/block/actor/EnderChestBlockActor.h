@@ -19,10 +19,10 @@ public:
     // vIndex: 0
     virtual ~EnderChestBlockActor() /*override*/ = default;
 
-    // vIndex: 49
+    // vIndex: 50
     virtual void openBy(::Player& p) /*override*/;
 
-    // vIndex: 27
+    // vIndex: 28
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 32
@@ -31,10 +31,10 @@ public:
     // vIndex: 33
     virtual bool canPullOutItem(int, int, ::ItemStack const&) const /*override*/;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual void playOpenSound(::BlockSource& region) /*override*/;
 
-    // vIndex: 51
+    // vIndex: 52
     virtual void playCloseSound(::BlockSource& region) /*override*/;
     // NOLINTEND
 

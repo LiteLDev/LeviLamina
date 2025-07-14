@@ -14,6 +14,7 @@ struct AttributesComponent;
 struct OnGroundFlagComponent;
 struct PlayerBobComponent;
 struct StateVectorComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 namespace PlayerTickBobSystem {
@@ -27,6 +28,8 @@ MCNAPI void _tick(
     ::PlayerBobComponent&                     playerBobComponent,
     ::Optional<::OnGroundFlagComponent const> isOnGround
 );
+
+MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
 } // namespace PlayerTickBobSystem

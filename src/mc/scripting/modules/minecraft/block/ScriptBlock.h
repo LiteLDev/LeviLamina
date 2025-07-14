@@ -311,6 +311,16 @@ public:
     MCNAPI static ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
+    setPermutationStatic(
+        ::BlockSource&                                         region,
+        ::BlockPos const&                                      location,
+        ::ScriptModuleMinecraft::ScriptBlockPermutation const& blockData
+    );
+
+    MCNAPI static ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError,
         ::Scripting::Error>
     setTypeStatic(

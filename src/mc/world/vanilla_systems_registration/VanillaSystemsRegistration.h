@@ -71,6 +71,8 @@ MCNAPI void registerEnvironmentSensingSystems(
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
+MCNAPI void registerInputDependentTickFilterSystems(::EntitySystems& systemRegistry);
+
 MCNAPI void registerInputIndependentTickSystems(
     ::EntitySystems&                                         systemRegistry,
     ::VanillaSystemsRegistration::RegistrationOptions const& options

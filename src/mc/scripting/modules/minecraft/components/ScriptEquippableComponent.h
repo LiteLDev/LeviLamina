@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
 #include "mc/scripting/modules/minecraft/components/ScriptActorComponent.h"
@@ -13,6 +14,7 @@
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptContainerSlot; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -39,6 +41,10 @@ public:
     MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerSlot>>
     getEquipmentSlot(::SharedTypes::Legacy::EquipmentSlot equipmentSlot);
+
+    MCNAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidActorError> getTotalArmor();
+
+    MCNAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidActorError> getTotalToughness();
 
     MCNAPI ::Scripting::Result_deprecated<bool> setEquipment(
         ::SharedTypes::Legacy::EquipmentSlot                             equipmentSlot,

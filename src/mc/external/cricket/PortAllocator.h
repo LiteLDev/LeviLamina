@@ -59,25 +59,25 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PortAllocator() /*override*/ = default;
+    virtual ~PortAllocator() /*override*/;
 
     // vIndex: 1
     virtual void Initialize();
 
     // vIndex: 2
-    virtual void set_restrict_ice_credentials_change(bool);
+    virtual void set_restrict_ice_credentials_change(bool value);
 
     // vIndex: 3
     virtual void SetNetworkIgnoreMask(int) = 0;
 
     // vIndex: 4
-    virtual void SetVpnPreference(::webrtc::VpnPreference);
+    virtual void SetVpnPreference(::webrtc::VpnPreference preference);
 
     // vIndex: 5
-    virtual void SetVpnList(::std::vector<::rtc::NetworkMask> const&);
+    virtual void SetVpnList(::std::vector<::rtc::NetworkMask> const& vpn_list);
 
     // vIndex: 6
-    virtual void GetCandidateStatsFromPooledSessions(::std::vector<::cricket::CandidateStats>*);
+    virtual void GetCandidateStatsFromPooledSessions(::std::vector<::cricket::CandidateStats>* candidate_stats_list);
 
     // vIndex: 7
     virtual ::cricket::PortAllocatorSession*
@@ -90,35 +90,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::cricket::PortAllocatorSession>
-    CreateSession(::std::string_view, int, ::std::string_view, ::std::string_view);
+    MCNAPI ::std::unique_ptr<::cricket::PortAllocatorSession> CreateSession(
+        ::std::string_view content_name,
+        int                component,
+        ::std::string_view ice_ufrag,
+        ::std::string_view ice_pwd
+    );
 
     MCNAPI void DiscardCandidatePool();
 
     MCNAPI ::std::_Vector_const_iterator<
         ::std::_Vector_val<::std::_Simple_types<::std::unique_ptr<::cricket::PortAllocatorSession>>>>
-    FindPooledSession(::cricket::IceParameters const*) const;
+    FindPooledSession(::cricket::IceParameters const* ice_credentials) const;
 
     MCNAPI ::std::vector<::cricket::IceParameters> GetPooledIceCredentials();
 
     MCNAPI PortAllocator();
 
-    MCNAPI ::cricket::Candidate SanitizeCandidate(::cricket::Candidate const&) const;
+    MCNAPI ::cricket::Candidate SanitizeCandidate(::cricket::Candidate const& c) const;
 
-    MCNAPI void SetCandidateFilter(uint);
+    MCNAPI void SetCandidateFilter(uint filter);
 
     MCNAPI bool SetConfiguration(
-        ::std::set<::rtc::SocketAddress> const&,
-        ::std::vector<::cricket::RelayServerConfig> const&,
-        ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const&,
-        int,
-        ::webrtc::PortPrunePolicy,
-        ::webrtc::TurnCustomizer*,
-        ::std::optional<int> const&
+        ::std::set<::rtc::SocketAddress> const&                                       stun_servers,
+        ::std::vector<::cricket::RelayServerConfig> const&                            turn_servers,
+        ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const& mapped_ports,
+        int                                                                           candidate_pool_size,
+        ::webrtc::PortPrunePolicy                                                     turn_port_prune_policy,
+        ::webrtc::TurnCustomizer*                                                     turn_customizer,
+        ::std::optional<int> const&                                                   stun_candidate_keepalive_interval
     );
 
-    MCNAPI ::std::unique_ptr<::cricket::PortAllocatorSession>
-    TakePooledSession(::std::string_view, int, ::std::string_view, ::std::string_view);
+    MCNAPI ::std::unique_ptr<::cricket::PortAllocatorSession> TakePooledSession(
+        ::std::string_view content_name,
+        int                component,
+        ::std::string_view ice_ufrag,
+        ::std::string_view ice_pwd
+    );
     // NOLINTEND
 
 public:
@@ -128,9 +136,25 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $Initialize();
 
+    MCNAPI void $set_restrict_ice_credentials_change(bool value);
+
+    MCNAPI void $SetVpnPreference(::webrtc::VpnPreference preference);
+
+    MCNAPI void $SetVpnList(::std::vector<::rtc::NetworkMask> const& vpn_list);
+
+    MCNAPI void $GetCandidateStatsFromPooledSessions(::std::vector<::cricket::CandidateStats>* candidate_stats_list);
+
+    MCNAPI bool $MdnsObfuscationEnabled() const;
     // NOLINTEND
 
 public:

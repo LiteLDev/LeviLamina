@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/renderer/rendergraph/Packet.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/network/MinecraftPacketIds.h"
-#include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/world/level/SubChunkPos.h"
 
@@ -31,6 +31,7 @@ public:
         HasData    = 1,
         AllTooHigh = 2,
         AllTooLow  = 3,
+        AllCopied  = 4,
     };
 
     enum class SubChunkRequestResult : uchar {
@@ -49,6 +50,8 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<1, 1, ::SubChunkPacket::HeightMapDataType>         mHeightMapType;
         ::ll::TypedStorage<1, 256, ::std::array<::std::array<schar, 16>, 16>> mSubchunkHeightMap;
+        ::ll::TypedStorage<1, 1, ::SubChunkPacket::HeightMapDataType>         mRenderHeightMapType;
+        ::ll::TypedStorage<1, 256, ::std::array<::std::array<schar, 16>, 16>> mSubchunkRenderHeightMap;
         // NOLINTEND
 
     public:
@@ -77,7 +80,7 @@ public:
         ::ll::TypedStorage<1, 3, ::SubChunkPacket::SubChunkPosOffset const> mSubChunkPosOffset;
         ::ll::TypedStorage<8, 32, ::std::string>                            mSerializedSubChunk;
         ::ll::TypedStorage<1, 1, ::SubChunkPacket::SubChunkRequestResult>   mResult;
-        ::ll::TypedStorage<1, 257, ::SubChunkPacket::HeightmapData>         mHeightMapData;
+        ::ll::TypedStorage<1, 514, ::SubChunkPacket::HeightmapData>         mHeightMapData;
         ::ll::TypedStorage<8, 8, uint64>                                    mBlobId;
         // NOLINTEND
 

@@ -57,13 +57,13 @@ public:
     OnEncodedImage(::webrtc::EncodedImage const&, ::webrtc::CodecSpecificInfo const*) = 0;
 
     // vIndex: 2
-    virtual void OnDroppedFrame(::webrtc::EncodedImageCallback::DropReason);
+    virtual void OnDroppedFrame(::webrtc::EncodedImageCallback::DropReason reason);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI void $OnDroppedFrame(::webrtc::EncodedImageCallback::DropReason reason);
     // NOLINTEND
 
 public:

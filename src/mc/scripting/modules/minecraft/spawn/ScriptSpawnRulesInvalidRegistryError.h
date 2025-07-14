@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Error.h"
+#include "mc/deps/scripting/runtime/BaseError.h"
 #include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
@@ -14,7 +14,7 @@ namespace Scripting { struct ErrorBinding; }
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptSpawnRulesInvalidRegistryError : public ::Scripting::Error {
+struct ScriptSpawnRulesInvalidRegistryError : public ::Scripting::BaseError {
 public:
     // member functions
     // NOLINTBEGIN

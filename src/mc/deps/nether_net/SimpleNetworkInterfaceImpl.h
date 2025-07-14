@@ -22,10 +22,10 @@ namespace NetherNet { class ConnectRequest; }
 namespace NetherNet { class ConnectResponse; }
 namespace NetherNet { class INetherNetTransportInterfaceCallbacks; }
 namespace NetherNet { class ISignalingInterface; }
-namespace NetherNet { struct NetherNetTransportServerConfiguration; }
 namespace NetherNet { struct NetworkID; }
 namespace NetherNet { struct SessionState; }
 namespace NetherNet { struct StunRelayServer; }
+namespace NetherNet { struct TransportConfiguration; }
 namespace NetherNet::LanEvents { struct DiscoveryRequest; }
 namespace NetherNet::LanEvents { struct DiscoveryResponse; }
 namespace NetherNet::LanEvents { struct MessageReceived; }
@@ -147,8 +147,8 @@ public:
     MCNAPI void Initialize(::NetherNet::INetherNetTransportInterfaceCallbacks* pCallbacks);
 
     MCNAPI void InitializeConfiguration(
-        ::NetherNet::NetherNetTransportServerConfiguration const* pConfiguration,
-        ::webrtc::PeerConnectionInterface::RTCConfiguration*      pRtcConfigOut
+        ::NetherNet::TransportConfiguration const*           pConfiguration,
+        ::webrtc::PeerConnectionInterface::RTCConfiguration* pRtcConfigOut
     );
 
     MCNAPI void ReceiveFromSignalingChannel(

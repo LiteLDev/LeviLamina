@@ -16,7 +16,6 @@
 class ActorDefinitionTrigger;
 class BlockDescriptor;
 class DefinitionTrigger;
-class FilterGroup;
 class HashedString;
 class ItemDescriptor;
 class MobEffectInstance;
@@ -59,9 +58,6 @@ public:
     MCNAPI static void parse(::Json::Value const& val, uchar& face, uchar defaultValue);
 
     MCNAPI static void
-    parse(::Json::Value const& val, ::MolangVersion molangVersion, ::BlockDescriptor& blockDescriptor);
-
-    MCNAPI static void
     parse(::Json::Value const& val, ::MolangVersion molangVersion, ::std::vector<::BlockDescriptor>& blockDescriptors);
 
     MCNAPI static void parse(::Json::Value const& val, ::std::vector<::std::string>& variable, char const* jsonName);
@@ -70,8 +66,6 @@ public:
     parse(::Json::Value const& val, ::WeightedChoices<::ActorDefinitionTrigger>& variable, char const* jsonName);
 
     MCNAPI static void parse(::Json::Value const& val, ::MobEffectInstance& variable, char const* jsonName);
-
-    MCNAPI static void parse(::Json::Value const& val, ::FilterGroup& variable, char const* jsonName, char const*);
 
     MCNAPI static void parse(
         ::Json::Value const&                                   val,
@@ -82,10 +76,6 @@ public:
 
     MCNAPI static void
     parse(::Json::Value const& val, ::HashedString& variable, char const* jsonName, char const* defaultValue);
-
-    MCNAPI static void parse(::Json::Value const& val, int& variable, char const* jsonName, int defaultValue);
-
-    MCNAPI static void parse(::Json::Value const& val, float& variable, char const* jsonName, float defaultValue);
 
     MCNAPI static void parse(
         ::Json::Value const&                        val,
@@ -124,13 +114,5 @@ public:
 
     MCNAPI static void
     serialize(::SharedTypes::Legacy::FilterSubject const& variable, ::Json::Value& val, char const* jsonName);
-
-    MCNAPI static void
-    serialize(::std::vector<::MobEffectInstance> const& variable, ::Json::Value& val, char const* jsonName);
-
-    MCNAPI static void serialize(::ActorType const& variable, ::Json::Value& val, char const* jsonName);
-
-    MCNAPI static void
-    serialize(::std::vector<::ActorDefinitionTrigger> const& variable, ::Json::Value& val, char const* jsonName);
     // NOLINTEND
 };

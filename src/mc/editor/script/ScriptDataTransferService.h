@@ -37,8 +37,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<void> _closeSession(::std::string const& collectionName);
+
     MCNAPI ::Scripting::Result_deprecated<::std::vector<::Editor::ScriptModule::ScriptTransferCollectionNameData>>
     _getRegisteredAccessors();
+
+    MCNAPI ::Scripting::Result_deprecated<void> _openSession(::std::string const& collectionName);
 
     MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptTransferServiceDataResponse>,

@@ -48,13 +48,13 @@ public:
     // NOLINTBEGIN
     MCNAPI RtpPacketToSend(::webrtc::RtpPacketToSend const&);
 
-    MCNAPI explicit RtpPacketToSend(::webrtc::RtpHeaderExtensionMap const*);
+    MCNAPI explicit RtpPacketToSend(::webrtc::RtpHeaderExtensionMap const* extensions);
 
-    MCNAPI RtpPacketToSend(::webrtc::RtpHeaderExtensionMap const*, uint64);
+    MCNAPI RtpPacketToSend(::webrtc::RtpHeaderExtensionMap const* extensions, uint64 capacity);
 
     MCNAPI ::webrtc::RtpPacketToSend& operator=(::webrtc::RtpPacketToSend const&);
 
-    MCNAPI void set_packet_type(::webrtc::RtpPacketMediaType);
+    MCNAPI void set_packet_type(::webrtc::RtpPacketMediaType type);
 
     MCNAPI ~RtpPacketToSend();
     // NOLINTEND
@@ -64,9 +64,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::RtpPacketToSend const&);
 
-    MCNAPI void* $ctor(::webrtc::RtpHeaderExtensionMap const*);
+    MCNAPI void* $ctor(::webrtc::RtpHeaderExtensionMap const* extensions);
 
-    MCNAPI void* $ctor(::webrtc::RtpHeaderExtensionMap const*, uint64);
+    MCNAPI void* $ctor(::webrtc::RtpHeaderExtensionMap const* extensions, uint64 capacity);
     // NOLINTEND
 
 public:

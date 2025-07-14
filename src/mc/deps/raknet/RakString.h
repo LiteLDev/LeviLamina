@@ -64,12 +64,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void FreeMemoryNoMutex();
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::RakNet::RakString::SharedString& emptyString();

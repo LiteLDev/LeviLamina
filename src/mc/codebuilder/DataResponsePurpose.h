@@ -9,6 +9,7 @@ enum class DataResponsePurpose : uchar {
     Item     = 1,
     Mob      = 2,
     Tutorial = 3,
+    File     = 4,
 };
 
 }

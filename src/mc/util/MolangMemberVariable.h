@@ -22,8 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MolangMemberVariable(::MolangMemberVariable&&);
-
     MCAPI MolangMemberVariable(::MolangMemberVariable const&);
 
     MCAPI ~MolangMemberVariable();
@@ -32,8 +30,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MolangMemberVariable&&);
-
     MCAPI void* $ctor(::MolangMemberVariable const&);
     // NOLINTEND
 

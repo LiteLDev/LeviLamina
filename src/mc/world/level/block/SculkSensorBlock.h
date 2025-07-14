@@ -55,7 +55,7 @@ public:
     // vIndex: 125
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
-    // vIndex: 143
+    // vIndex: 142
     virtual ::Brightness getEmissiveBrightness(::Block const& block) const /*override*/;
 
     // vIndex: 104

@@ -3,8 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/certificates/identity/GameServerToken.h"
-#include "mc/common/SubClientId.h"
+#include "mc/certificates/identity/LegacyMultiplayerToken.h"
+#include "mc/certificates/identity/PlayerAuthenticationType.h"
+#include "mc/certificates/identity/RawGameServerToken.h"
 #include "mc/world/actor/player/persona/PieceType.h"
 
 // auto generated forward declare list
@@ -25,8 +26,9 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WebToken>>              mRawToken;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::UnverifiedCertificate>> mCertificateData;
-    ::ll::TypedStorage<8, 8, ::GameServerToken>                          mGameServerToken;
-    ::ll::TypedStorage<1, 1, ::SubClientId>                              mClientSubId;
+    ::ll::TypedStorage<8, 8, ::LegacyMultiplayerToken>                   mLegacyMultiplayerToken;
+    ::ll::TypedStorage<8, 32, ::RawGameServerToken>                      mGameServerToken;
+    ::ll::TypedStorage<4, 4, ::PlayerAuthenticationType>                 mAuthenticationType;
     // NOLINTEND
 
 public:
@@ -39,7 +41,7 @@ public:
     // NOLINTBEGIN
     MCAPI ConnectionRequest(::ConnectionRequest const& other);
 
-    MCAPI ConnectionRequest(::std::unique_ptr<::WebToken> rawToken, ::std::string const& certificateString);
+    MCAPI ConnectionRequest(::std::unique_ptr<::WebToken> rawToken, ::Json::Value const& authentication);
 
     MCFOLD ::std::vector<::AnimatedImageData> getAnimatedImageData() const;
 
@@ -58,8 +60,6 @@ public:
     MCFOLD uint64 getClientRandomId() const;
 
     MCFOLD ::std::string getClientThirdPartyName() const;
-
-    MCFOLD ::Json::Value getData(::std::string const& key) const;
 
     MCFOLD ::std::string getDeviceId() const;
 
@@ -97,7 +97,7 @@ public:
 
     MCAPI bool verify(::std::vector<::std::string> const& trustedKeys, int64 currentTime, bool checkExpired);
 
-    MCFOLD bool verifySelfSigned(bool checkExpired);
+    MCAPI bool verifySelfSigned(bool checkExpired);
 
     MCAPI ~ConnectionRequest();
     // NOLINTEND
@@ -111,9 +111,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ConnectionRequest const& other);
+    MCFOLD void* $ctor(::ConnectionRequest const& other);
 
-    MCAPI void* $ctor(::std::unique_ptr<::WebToken> rawToken, ::std::string const& certificateString);
+    MCAPI void* $ctor(::std::unique_ptr<::WebToken> rawToken, ::Json::Value const& authentication);
     // NOLINTEND
 
 public:

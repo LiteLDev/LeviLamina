@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/ActorTypeNamespaceRules.h"
-
 struct ActorMapping {
 public:
     // member variables
@@ -27,8 +24,6 @@ public:
     MCNAPI ActorMapping(::std::string const& primary, ::std::string const& alt);
 
     MCNAPI ActorMapping(::std::string const& space, ::std::string const& primary, ::std::string const& alt);
-
-    MCNAPI ::std::string getMappingName(::ActorTypeNamespaceRules namespaceRule) const;
 
     MCNAPI ~ActorMapping();
     // NOLINTEND

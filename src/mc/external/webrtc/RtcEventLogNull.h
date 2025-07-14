@@ -24,7 +24,7 @@ public:
     virtual void StopLogging() /*override*/;
 
     // vIndex: 4
-    virtual void Log(::std::unique_ptr<::webrtc::RtcEvent>) /*override*/;
+    virtual void Log(::std::unique_ptr<::webrtc::RtcEvent> event) /*override*/;
 
     // vIndex: 0
     virtual ~RtcEventLogNull() /*override*/ = default;
@@ -33,7 +33,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $StartLogging(::std::unique_ptr<::webrtc::RtcEventLogOutput>, int64);
 
+    MCNAPI void $StopLogging();
+
+    MCNAPI void $Log(::std::unique_ptr<::webrtc::RtcEvent> event);
     // NOLINTEND
 
 public:

@@ -28,9 +28,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI IceCandidatePairDescription(::webrtc::IceCandidatePairDescription const&);
+    MCNAPI IceCandidatePairDescription(::webrtc::IceCandidatePairDescription const& other);
 
-    MCNAPI IceCandidatePairDescription(::webrtc::IceCandidateType, ::webrtc::IceCandidateType);
+    MCNAPI IceCandidatePairDescription(
+        ::webrtc::IceCandidateType local_candidate_type,
+        ::webrtc::IceCandidateType remote_candidate_type
+    );
 
     MCNAPI ~IceCandidatePairDescription();
     // NOLINTEND
@@ -38,9 +41,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::IceCandidatePairDescription const&);
+    MCNAPI void* $ctor(::webrtc::IceCandidatePairDescription const& other);
 
-    MCNAPI void* $ctor(::webrtc::IceCandidateType, ::webrtc::IceCandidateType);
+    MCNAPI void*
+    $ctor(::webrtc::IceCandidateType local_candidate_type, ::webrtc::IceCandidateType remote_candidate_type);
     // NOLINTEND
 
 public:

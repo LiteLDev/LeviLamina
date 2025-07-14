@@ -82,7 +82,7 @@ MCNAPI ::Scripting::EnumBinding bindButtonInputAction();
 
 MCNAPI ::Scripting::EnumBinding bindButtonInputState();
 
-MCNAPI ::Scripting::EnumBinding bindCommandPermissionLevels();
+MCNAPI ::Scripting::EnumBinding bindCommandPermissionLevel();
 
 MCNAPI ::Scripting::EnumBinding bindCustomCommandParamTypes();
 
@@ -108,11 +108,17 @@ MCNAPI ::Scripting::EnumBinding bindLiquidTypeEnum();
 
 MCNAPI void bindMoonPhases(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
+MCNAPI ::Scripting::EnumBinding bindPlayerPermissionLevel();
+
 MCNAPI ::Scripting::EnumBinding bindScriptDisplayObjectiveSlotId();
 
 MCNAPI ::Scripting::EnumBinding bindScriptEventSource();
 
+MCNAPI ::Scripting::EnumBinding bindScriptPlayerInventoryType();
+
 MCNAPI ::Scripting::EnumBinding bindTimeOfDay();
+
+MCNAPI ::Scripting::EnumBinding bindTintMethodEnums();
 
 MCNAPI ::Block const* extractBlockFromVariant(
     ::std::variant<
@@ -149,15 +155,6 @@ makeAimAssistCategoryDefinition(::ScriptModuleMinecraft::ScriptAimAssistCategory
 
 MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition
 makeAimAssistPresetDefinition(::ScriptModuleMinecraft::ScriptAimAssistPresetSettings const& preset);
-// NOLINTEND
-
-// static variables
-// NOLINTBEGIN
-MCNAPI ::std::string const& POSITION_IN_UNLOADED_CHUNK_TAG();
-
-MCNAPI ::std::string const& POSITION_OUT_OF_WORLD_BOUNDS_TAG();
-
-MCNAPI ::std::string const& UNLOADED_CHUNK_TAG();
 // NOLINTEND
 
 } // namespace ScriptModuleMinecraft

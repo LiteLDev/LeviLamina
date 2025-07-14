@@ -34,13 +34,11 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit StyledStreamWriter(::std::string indentation);
 
-    MCNAPI void indent();
-
-    MCNAPI bool isMultineArray(::Json::Value const& value);
-
     MCNAPI void pushValue(::std::string const& value);
 
     MCNAPI void unindent();
+
+    MCNAPI void write(::std::ostream& out, ::Json::Value const& root);
 
     MCNAPI void writeArrayValue(::Json::Value const& value);
 

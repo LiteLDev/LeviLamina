@@ -47,6 +47,7 @@ public:
     ::ll::TypedStorage<4, 12, ::Vec3>                                mApexPos;
     ::ll::TypedStorage<1, 1, bool>                                   mFoundApex;
     ::ll::TypedStorage<4, 4, int>                                    mLife;
+    ::ll::TypedStorage<4, 4, int>                                    mTickCount;
     ::ll::TypedStorage<4, 4, int>                                    mFlightTime;
     ::ll::TypedStorage<4, 4, int>                                    mOnGroundTime;
     ::ll::TypedStorage<4, 4, int>                                    mShakeTime;
@@ -139,6 +140,8 @@ public:
 
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
+    MCAPI float computeCollisionMargin(::BaseGameVersion const& baseGameVersion);
+
     MCAPI ::HitResult getCachedHitResult() const;
 
     MCAPI ::HitResult getHitResult() const;
@@ -177,12 +180,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Vec2 dampenShooterAngle(::Vec2 const& angle, float angleOffset, ::BaseGameVersion const& currVer);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static uint const& DELAY_ON_HIT();
     // NOLINTEND
 
 public:

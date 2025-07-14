@@ -18,7 +18,7 @@ public:
     // NOLINTBEGIN
     MCAPI static bool _parseItemLockMode(::ItemStackBase& item, ::Json::Value const& data);
 
-    MCAPI static bool _parseKeepOnDeath(::ItemStackBase& item, ::Json::Value const& data);
+    MCAPI static bool addKeepOnDeath(::ItemStackBase& item, ::Json::Value const& data);
 
     MCAPI static bool canMoveItemSlots(::Actor const& actor, ::ItemStackBase const& item);
 

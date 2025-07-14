@@ -82,22 +82,38 @@ public:
     virtual void DumpNetworks();
 
     // vIndex: 1
-    virtual bool GetDefaultLocalAddress(int, ::rtc::IPAddress*) const /*override*/;
+    virtual bool GetDefaultLocalAddress(int family, ::rtc::IPAddress* addr) const /*override*/;
 
     // vIndex: 1
     virtual ::webrtc::MdnsResponderInterface* GetMdnsResponder() const /*override*/;
 
     // vIndex: 9
-    virtual void set_vpn_list(::std::vector<::rtc::NetworkMask> const&);
+    virtual void set_vpn_list(::std::vector<::rtc::NetworkMask> const& vpn);
 
     // vIndex: 0
-    virtual ~NetworkManager() /*override*/ = default;
+    virtual ~NetworkManager() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $Initialize();
 
+    MCNAPI ::rtc::NetworkManager::EnumerationPermission $enumeration_permission() const;
+
+    MCNAPI void $DumpNetworks();
+
+    MCNAPI bool $GetDefaultLocalAddress(int family, ::rtc::IPAddress* addr) const;
+
+    MCNAPI ::webrtc::MdnsResponderInterface* $GetMdnsResponder() const;
+
+    MCNAPI void $set_vpn_list(::std::vector<::rtc::NetworkMask> const& vpn);
     // NOLINTEND
 
 public:

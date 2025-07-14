@@ -14,13 +14,13 @@ namespace dcsctp { class Parameters; }
 namespace dcsctp {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::string ErrorCausesToString(::dcsctp::Parameters const&);
+MCNAPI ::std::string ErrorCausesToString(::dcsctp::Parameters const& parameters);
 
-MCNAPI uint GenerateCrc32C(::rtc::ArrayView<uchar const>);
+MCNAPI uint GenerateCrc32C(::rtc::ArrayView<uchar const> data);
 
-MCNAPI ::std::string_view ToString(::dcsctp::ErrorKind);
+MCNAPI ::std::string_view ToString(::dcsctp::ErrorKind error);
 
-MCNAPI ::std::string_view ToString(::dcsctp::ReconfigurationResponseParameter::Result);
+MCNAPI ::std::string_view ToString(::dcsctp::ReconfigurationResponseParameter::Result result);
 // NOLINTEND
 
 } // namespace dcsctp

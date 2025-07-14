@@ -19,15 +19,15 @@ class ActorOwnerComponent;
 struct ActorTickedComponent;
 struct DeathTickingComponent;
 struct EnderDragonFlagComponent;
-struct IsDeadFlagComponent;
 struct ParticleEventDispatcherComponent;
 struct RandomReferenceComponent;
 struct StateVectorComponent;
+struct TickDeathNeededComponent;
 // clang-format on
 
 struct ClientEnderDragonTickDeathSystemImpl
 : public ::IStrictTickingSystem<::StrictExecutionContext<
-      ::Filter<::ActorTickedComponent, ::IsDeadFlagComponent, ::EnderDragonFlagComponent>,
+      ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>,
       ::Read<::DeathTickingComponent>,
       ::Write<
           ::ActorOwnerComponent,
@@ -44,7 +44,7 @@ public:
     // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
-            ::Filter<::ActorTickedComponent, ::IsDeadFlagComponent, ::EnderDragonFlagComponent>,
+            ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>,
             ::Read<::DeathTickingComponent>,
             ::Write<
                 ::ActorOwnerComponent,

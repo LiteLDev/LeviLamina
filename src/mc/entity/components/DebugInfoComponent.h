@@ -40,15 +40,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Listener(::DebugInfoComponent::Listener&&);
-
         MCNAPI ~Listener();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::DebugInfoComponent::Listener&&);
         // NOLINTEND
 
     public:

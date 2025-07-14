@@ -50,15 +50,18 @@ public:
     hasData(::HashedString const&, ::Editor::Services::PersistentDataType const) const = 0;
 
     // vIndex: 8
+    virtual ::std::string const& getPlayerSaveId() const = 0;
+
+    // vIndex: 9
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
         listenForPersistDataChanged(::std::function<void(::Editor::Persistence::PersistentData const&)>) = 0;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForPersistDataRemoved(
         ::std::function<void(::HashedString const&, ::Editor::Services::PersistentDataType)>
     ) = 0;
 
-    // vIndex: 10
+    // vIndex: 11
     virtual ::std::unique_ptr<::cereal::ReflectionCtx>& getCerealContext() = 0;
     // NOLINTEND
 

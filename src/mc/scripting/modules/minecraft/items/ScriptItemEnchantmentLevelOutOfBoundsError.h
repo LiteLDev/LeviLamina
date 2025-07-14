@@ -3,11 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Error.h"
+#include "mc/deps/scripting/runtime/BaseError.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ErrorBinding; }
+// clang-format on
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptItemEnchantmentLevelOutOfBoundsError : public ::Scripting::Error {
+struct ScriptItemEnchantmentLevelOutOfBoundsError : public ::Scripting::BaseError {
 public:
     // prevent constructor by default
     ScriptItemEnchantmentLevelOutOfBoundsError();
@@ -21,6 +26,12 @@ public:
         int                  level,
         int                  maxLevel
     );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:

@@ -5,11 +5,13 @@
 // auto generated inclusion list
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/SignTextSide.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockActorDataPacket;
+class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
@@ -176,6 +178,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SignBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -187,43 +193,45 @@ public:
     // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 20
+    // vIndex: 21
     virtual float getShadowRadius(::BlockSource& region) const /*override*/;
 
-    // vIndex: 29
+    // vIndex: 30
     virtual ::std::string getImmersiveReaderText(::BlockSource& region) /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 39
+    // vIndex: 40
     virtual ::std::vector<::std::string> getUgcStrings(::CompoundTag const& tag) const /*override*/;
 
-    // vIndex: 40
+    // vIndex: 41
     virtual ::std::vector<::std::string> getFilteredUgcStrings(::CompoundTag const& tag) const /*override*/;
 
-    // vIndex: 41
+    // vIndex: 42
     virtual void setUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const /*override*/;
 
-    // vIndex: 42
+    // vIndex: 43
     virtual void setFilteredUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 46
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 47
     virtual bool _playerCanUpdate(::Player const& fromPlayer) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI SignBlockActor(::BlockPos const& pos, ::BlockActorType blockActorType, ::std::string const& typeString);
+
     MCNAPI void _updateTextFromClient(::CompoundTag const& data, ::BlockSource const& region);
 
     MCNAPI ::SignTextSide getSideFacingPlayer(::Player const& player) const;
@@ -231,6 +239,12 @@ public:
     MCNAPI void setMessageForServerScripingOnly(::SignTextSide side, ::std::string message, ::std::string ownerID);
 
     MCNAPI void setMessageForServerScripingOnly(::SignTextSide side, ::TextObjectRoot message, ::std::string ownerID);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::BlockPos const& pos, ::BlockActorType blockActorType, ::std::string const& typeString);
     // NOLINTEND
 
 public:

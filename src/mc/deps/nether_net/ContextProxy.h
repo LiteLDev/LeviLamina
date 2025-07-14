@@ -10,7 +10,7 @@
 // clang-format off
 namespace NetherNet { class LanThreadManager; }
 namespace NetherNet { class RtcThreadManager; }
-namespace NetherNet { struct NetherNetTransportGlobalConfiguration; }
+namespace NetherNet { struct GlobalConfiguration; }
 // clang-format on
 
 namespace NetherNet {
@@ -47,7 +47,7 @@ public:
     virtual ::NetherNet::LanThreadManager& getLanThread() /*override*/;
 
     // vIndex: 5
-    virtual ::NetherNet::NetherNetTransportGlobalConfiguration const& getGlobalConfig() const /*override*/;
+    virtual ::NetherNet::GlobalConfiguration const& getGlobalConfig() const /*override*/;
 
     // vIndex: 7
     virtual void setLoggingLevel(::NetherNet::LogSeverity min) /*override*/;
@@ -73,7 +73,7 @@ public:
 
     MCNAPI ::NetherNet::LanThreadManager& $getLanThread();
 
-    MCNAPI ::NetherNet::NetherNetTransportGlobalConfiguration const& $getGlobalConfig() const;
+    MCNAPI ::NetherNet::GlobalConfiguration const& $getGlobalConfig() const;
 
     MCNAPI void $setLoggingLevel(::NetherNet::LogSeverity min);
 

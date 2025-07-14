@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/SceneType.h"
 #include "mc/client/gui/screens/interfaces/ISceneStack.h"
 
 // auto generated forward declare list
@@ -126,8 +127,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnkc65d86;
-        ::ll::UntypedStorage<1, 1> mUnk7756d7;
+        ::ll::UntypedStorage<1, 1>  mUnkc65d86;
+        ::ll::UntypedStorage<1, 1>  mUnk7756d7;
+        ::ll::UntypedStorage<8, 64> mUnk72368a;
         // NOLINTEND
 
     public:
@@ -262,10 +264,13 @@ public:
     // vIndex: 16
     virtual void schedulePopScreenWithExpectedNames(::std::vector<::std::string> const&) /*override*/;
 
-    // vIndex: 20
-    virtual void flushStack(bool, bool, bool) /*override*/;
-
     // vIndex: 21
+    virtual void flushStack(bool, bool, bool, ::std::function<void(bool)>) /*override*/;
+
+    // vIndex: 20
+    virtual bool popScreensBackTo(::ui::SceneType const) /*override*/;
+
+    // vIndex: 22
     virtual bool isEmpty() const /*override*/;
 
     // vIndex: 12

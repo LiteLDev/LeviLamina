@@ -7,13 +7,36 @@
 
 namespace cricket {
 
-struct RtcpMuxFilter {
+class RtcpMuxFilter {
+public:
+    // RtcpMuxFilter inner types define
+    enum class State : int {
+        Init             = 0,
+        Receivedoffer    = 1,
+        Sentoffer        = 2,
+        Sentpranswer     = 3,
+        Receivedpranswer = 4,
+        Active           = 5,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk517183;
+    ::ll::UntypedStorage<1, 1> mUnk702653;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RtcpMuxFilter& operator=(RtcpMuxFilter const&);
+    RtcpMuxFilter(RtcpMuxFilter const&);
+
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool ExpectAnswer(::cricket::ContentSource);
+    MCNAPI bool ExpectAnswer(::cricket::ContentSource source);
 
-    MCNAPI bool ExpectOffer(bool, ::cricket::ContentSource);
+    MCNAPI bool ExpectOffer(bool offer_enable, ::cricket::ContentSource source);
 
     MCNAPI bool IsActive() const;
 
@@ -23,11 +46,11 @@ public:
 
     MCNAPI RtcpMuxFilter();
 
-    MCNAPI bool SetAnswer(bool, ::cricket::ContentSource);
+    MCNAPI bool SetAnswer(bool answer_enable, ::cricket::ContentSource src);
 
-    MCNAPI bool SetOffer(bool, ::cricket::ContentSource);
+    MCNAPI bool SetOffer(bool offer_enable, ::cricket::ContentSource src);
 
-    MCNAPI bool SetProvisionalAnswer(bool, ::cricket::ContentSource);
+    MCNAPI bool SetProvisionalAnswer(bool answer_enable, ::cricket::ContentSource src);
     // NOLINTEND
 
 public:

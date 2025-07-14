@@ -42,19 +42,19 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 21
+    // vIndex: 22
     virtual bool hasAlphaLayer() const /*override*/;
 
-    // vIndex: 17
+    // vIndex: 18
     virtual void triggerEvent(int b0, int b1) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -71,6 +71,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static int _getHighestSection(::WorldGenerator& endGenerator, ::BlockVolume& box, ::BlockPos const& pos);
+
+    MCAPI static bool _isSafeToTeleport(::BlockSource const& region, ::BlockPos const& pos);
 
     MCAPI static ::BlockPos findExitPortal(::WorldGenerator& endGenerator, ::BlockPos const& origin);
 

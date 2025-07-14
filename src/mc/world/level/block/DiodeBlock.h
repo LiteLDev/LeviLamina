@@ -26,7 +26,7 @@ public:
     // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 60
@@ -39,52 +39,52 @@ public:
     // vIndex: 51
     virtual int getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual int getSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
 
     // vIndex: 43
     virtual bool isSignalSource() const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual bool isLocked(::BlockSource&, ::BlockPos const&) const;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual bool isSameDiode(::Block const& block) const;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual bool shouldPrioritize(::BlockSource& region, ::BlockPos const& pos) const;
 
     // vIndex: 118
     virtual bool canSpawnOn(::Actor*) const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual bool isOn() const;
 
-    // vIndex: 152
+    // vIndex: 151
     virtual bool shouldTurnOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 153
+    // vIndex: 152
     virtual int getInputSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 154
+    // vIndex: 153
     virtual bool isAlternateInput(::Block const&) const;
 
-    // vIndex: 155
+    // vIndex: 154
     virtual int getAlternateSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 156
+    // vIndex: 155
     virtual int getOutputSignal(::Block const& block) const;
 
-    // vIndex: 157
+    // vIndex: 156
     virtual int getTurnOffDelay(::Block const& block) const;
 
-    // vIndex: 158
+    // vIndex: 157
     virtual int getTurnOnDelay(::Block const&) const = 0;
 
-    // vIndex: 159
+    // vIndex: 158
     virtual ::Block const* getOnBlock(::Block const*) const = 0;
 
-    // vIndex: 160
+    // vIndex: 159
     virtual ::Block const* getOffBlock(::Block const*) const = 0;
 
     // vIndex: 0

@@ -144,6 +144,7 @@ public:
         ::ll::TypedStorage<4, 16, ::std::optional<::CameraInstruction::SetInstruction::EntityOffsetOption>>
                                                         mEntityOffset;
         ::ll::TypedStorage<1, 2, ::std::optional<bool>> mDefault;
+        ::ll::TypedStorage<1, 1, bool>                  mRemoveIgnoreStartingValuesComponent;
         // NOLINTEND
 
     public:

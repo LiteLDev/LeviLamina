@@ -14,8 +14,8 @@ class ActorEventResponseFactory;
 class ActorFactory;
 class MinEngineVersion;
 class SemVersion;
-struct DeserializeDataParams;
-namespace Json { class Value; }
+struct ActorDocumentDataParams;
+namespace cereal { class DynamicValue; }
 // clang-format on
 
 class ActorDefinition {
@@ -97,22 +97,26 @@ public:
     MCNAPI explicit ActorDefinition(::std::string const& id);
 
     MCNAPI ::ActorDefinitionParseStatus parse(
-        ::DeserializeDataParams      deserializeDataParams,
+        ::ActorDocumentDataParams    deserializeDataParams,
         ::ActorDefinitionDescriptor& desc,
         ::ActorFactory&              actorFactory,
         ::LogArea                    logArea
     );
 
-    MCNAPI void parseAttributes(::DeserializeDataParams deserializeDataParams, ::ActorDefinitionDescriptor& desc);
+    MCNAPI void parseAttributes(::ActorDocumentDataParams deserializeDataParams, ::ActorDefinitionDescriptor& desc);
 
-    MCNAPI void parseEntityDescription(::DeserializeDataParams deserializeDataParams);
+    MCNAPI void parseEntityDescription(
+        ::cereal::DynamicValue const& description,
+        ::SemVersion const&           formatVersion,
+        ::MinEngineVersion const&     minEngineVersion
+    );
 
     MCNAPI void parseEvents(
-        ::Json::Value const&         root,
-        ::MinEngineVersion const&    minEngineVersion,
-        ::SemVersion const&          formatVersion,
-        ::ActorEventResponseFactory* responseFactory,
-        ::JsonBetaState              useBetaFeatures
+        ::cereal::DynamicValue const& root,
+        ::MinEngineVersion const&     minEngineVersion,
+        ::SemVersion const&           formatVersion,
+        ::ActorEventResponseFactory*  responseFactory,
+        ::JsonBetaState               useBetaFeatures
     );
 
     MCNAPI ~ActorDefinition();

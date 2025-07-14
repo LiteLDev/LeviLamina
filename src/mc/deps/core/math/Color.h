@@ -25,6 +25,8 @@ public:
 
     MCAPI bool operator==(::mce::Color const& c) const;
 
+    MCAPI int toARGB() const;
+
     MCAPI ::std::string toHexString() const;
     // NOLINTEND
 
@@ -45,17 +47,9 @@ public:
 
     MCAPI static ::mce::Color const& BLUE();
 
-    MCAPI static ::mce::Color const& CYAN();
-
     MCAPI static ::mce::Color const& GREEN();
 
-    MCAPI static ::mce::Color const& GREY();
-
-    MCAPI static ::mce::Color const& MINECOIN_GOLD();
-
     MCAPI static ::mce::Color const& NIL();
-
-    MCAPI static ::mce::Color const& ORANGE();
 
     MCAPI static ::mce::Color const& PINK();
 

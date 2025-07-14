@@ -22,7 +22,6 @@
 #include "mc/network/connection/DisconnectFailReason.h"
 #include "mc/platform/MultiplayerServiceObserver.h"
 #include "mc/platform/UUID.h"
-#include "mc/platform/brstd/move_only_function.h"
 #include "mc/platform/threading/Mutex.h"
 #include "mc/server/DenyList.h"
 #include "mc/server/ServerTextEvent.h"
@@ -38,7 +37,7 @@ class AllowList;
 class AnimatePacket;
 class AnvilDamagePacket;
 class AppConfigs;
-class AsyncVerdictPromise;
+class AsyncJoinTaskManager;
 class BiomeDefinitionListPacket;
 class BlockActorDataPacket;
 class BlockPickRequestPacket;
@@ -66,7 +65,6 @@ class EmoteListPacket;
 class EmotePacket;
 class EntityContext;
 class GameCallbacks;
-class GameServerToken;
 class GameSpecificNetEventCallback;
 class GameTestNetworkAdapter;
 class GameTestRequestPacket;
@@ -152,6 +150,8 @@ namespace Automation { class AutomationClient; }
 namespace Bedrock::Safety { class RedactableString; }
 namespace ClientBlobCache::Server { class ActiveTransfersManager; }
 namespace Identity { class IEduAuth; }
+namespace ResourcePackPathLifetimeHelpers { class ResourcePackPathCache; }
+namespace Social { class GameConnectionInfo; }
 namespace Social { class MultiplayerServiceManager; }
 // clang-format on
 
@@ -164,7 +164,6 @@ public:
     // ServerNetworkHandler inner types declare
     // clang-format off
     class Client;
-    struct PendingVerdictEntry;
     class TransferBuilderBatcher;
     // clang-format on
 
@@ -196,33 +195,6 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI void removeSubClientRequest(::SubClientId subClientId);
-        // NOLINTEND
-    };
-
-    struct PendingVerdictEntry {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnkd47201;
-        ::ll::UntypedStorage<1, 1>  mUnk58c9f7;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PendingVerdictEntry& operator=(PendingVerdictEntry const&);
-        PendingVerdictEntry(PendingVerdictEntry const&);
-        PendingVerdictEntry();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~PendingVerdictEntry();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -268,12 +240,21 @@ public:
         ::std::unordered_map<
             uint64,
             ::std::unordered_map<::std::string, ::std::shared_ptr<::ResourcePackFileUploadManager>>>>
-                                                                                    mResourceUploadManagers;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                        mIOTaskGroup;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                        mAsyncJoinTaskGroup;
-    ::ll::TypedStorage<1, 1, bool>                                                  mIsTrial;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::PackIdVersion, ::std::string>> mPackIdToContentKey;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::GameSpecificNetEventCallback>>     mGameSpecificNetEventCallback;
+        mResourceUploadManagers;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::gsl::not_null<::std::shared_ptr<::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>>>>
+        mPreviousUpload;
+    ::ll::
+        TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ResourcePackPathLifetimeHelpers::ResourcePackPathCache>>>
+                                                                                         mResourcePackPathCache;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::TaskGroup>>>            mAsyncJoinTaskGroup;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::AsyncJoinTaskManager>>> mAsyncJoinTaskManager;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                             mIOTaskGroup;
+    ::ll::TypedStorage<1, 1, bool>                                                       mIsTrial;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::PackIdVersion, ::std::string>>      mPackIdToContentKey;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::GameSpecificNetEventCallback>>          mGameSpecificNetEventCallback;
     ::ll::TypedStorage<
         8,
         64,
@@ -288,25 +269,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                           mServerId;
     ::ll::TypedStorage<8, 32, ::std::string>                                           mScenarioId;
     ::ll::TypedStorage<8, 32, ::std::string>                                           mWorldId;
-    ::ll::TypedStorage<
-        8,
-        16,
-        ::std::map<
-            uint64,
-            ::brstd::move_only_function<void(
-                ::NetworkIdentifier const&,
-                ::std::variant<
-                    ::std::reference_wrapper<::ConnectionRequest const>,
-                    ::std::reference_wrapper<::SubClientConnectionRequest const>> const&,
-                ::SubClientId,
-                ::std::shared_ptr<::AsyncVerdictPromise>
-            )>>>
-                                                  mAsyncJoinCallbacks;
-    ::ll::TypedStorage<8, 8, uint64>              mNextAsyncJoinCallbackId;
-    ::ll::TypedStorage<8, 8, ::std::shared_mutex> mAsyncJoinCallbacksMutex;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::ServerNetworkHandler::PendingVerdictEntry>>
-                                                         mPendingVerdicts;
-    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds> mVerdictTimeout;
+    ::ll::TypedStorage<8, 32, ::std::string>                                           mOwnerId;
     // NOLINTEND
 
 public:
@@ -376,7 +339,7 @@ public:
 
     // vIndex: 13
     virtual void
-    onTransferRequest(::NetworkIdentifier const& id, ::std::string const& serverAddress, int serverPort) /*override*/;
+    onTransferRequest(::NetworkIdentifier const& id, ::Social::GameConnectionInfo const& destination) /*override*/;
 
     // vIndex: 7
     virtual void onDisconnect(
@@ -623,7 +586,7 @@ public:
     // vIndex: 23
     virtual void handle(::NetworkIdentifier const& source, ::ServerboundDiagnosticsPacket const& packet) /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual void handle(::NetworkIdentifier const& source, ::UpdateClientOptionsPacket const& packet) /*override*/;
 
     // vIndex: 1
@@ -632,9 +595,6 @@ public:
         ::SubClientConnectionRequest const& connectionRequest,
         ::SubClientId                       subid
     );
-
-    // vIndex: 2
-    virtual void _validateLoginPacket(::NetworkIdentifier const& source, ::LoginPacket const& packet);
 
     // vIndex: 4
     virtual void onTick() /*override*/;
@@ -645,8 +605,11 @@ public:
     // vIndex: 2
     virtual void onConnect(::NetworkIdentifier const& id) /*override*/;
 
-    // vIndex: 3
+    // vIndex: 2
     virtual void completeHandshake(::NetworkIdentifier const& source);
+
+    // vIndex: 3
+    virtual bool _validateLoginPacket(::NetworkIdentifier const& source, ::LoginPacket const& packet);
 
     // vIndex: 4
     virtual void _onClientAsyncAuthorized(
@@ -685,8 +648,12 @@ public:
         ::NetworkServerConfig                                       networkServerConfig
     );
 
-    MCAPI void
-    SetServerIdentifiers(::std::string const& serverId, ::std::string const& worldId, ::std::string const& scenarioId);
+    MCAPI void SetServerIdentifiers(
+        ::std::string const& serverId,
+        ::std::string const& worldId,
+        ::std::string const& scenarioId,
+        ::std::string const& ownerId
+    );
 
     MCAPI void _buildSubChunkPacketData(
         ::NetworkIdentifier const&     source,
@@ -711,34 +678,19 @@ public:
 
     MCAPI int _getActiveAndInProgressPlayerCount(::mce::UUID excludePlayer) const;
 
-    MCAPI ::std::string _getDisplayName(
-        ::GameServerToken const& token,
-        bool                     isThirdPartyNameOnly,
-        ::std::string const&     thirdPartyName
-    ) const;
-
     MCAPI ::std::optional<::MessToken> _getMessToken(::std::string const& eduTokenChain, bool isHostingPlayer);
 
     MCAPI ::ResourcePackFileUploadManager&
     _getResourcePackFileUploadManager(::NetworkIdentifier const& source, ::std::string const& resourceName);
 
-    MCAPI void _handleAllVerdictsTaskCompletion(
-        ::NetworkIdentifier const&          source,
-        ::SubClientId                       subClientId,
-        ::brstd::move_only_function<void()> onCompletionCallback,
-        uint64                              verdictId,
-        ::std::vector<
-            ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::nonstd::expected<void, ::AsyncJoinError>>>> const&
-            results
-    );
-
-    MCAPI void _handleAsyncJoinCallbacks(
-        ::NetworkIdentifier const& source,
+    MCAPI void _handleFinalVerdict(
         ::std::variant<
             ::std::reference_wrapper<::ConnectionRequest const>,
-            ::std::reference_wrapper<::SubClientConnectionRequest const>> const& request,
+            ::std::reference_wrapper<::SubClientConnectionRequest const>> const& connectionRequest,
+        ::NetworkIdentifier const&                                               source,
         ::SubClientId                                                            subClientId,
-        ::brstd::move_only_function<void()>                                      onCompletion
+        ::std::optional<::MessToken>                                             messToken,
+        ::nonstd::expected<void, ::AsyncJoinError>                               finalVerdict
     );
 
     MCAPI void _handleSetDefaultGameType(
@@ -749,8 +701,6 @@ public:
     MCAPI void _handleSetDifficulty(::ServerPlayer const& player, ::SetDifficultyPacket const& packet) const;
 
     MCAPI bool _isServerTextEnabled(::ServerTextEvent const& textEvent) const;
-
-    MCAPI bool _isValidThirdPartyName(::GameServerToken const& token, ::std::string const& thirdPartyName) const;
 
     MCAPI bool _loadNewPlayer(::ServerPlayer& newPlayer, bool isXboxLive);
 
@@ -834,17 +784,6 @@ public:
     MCAPI void persistPlayerPermissionsToDisk(
         ::UserEntityIdentifierComponent const& userIdentifier,
         ::PlayerPermissionLevel                playerPermission
-    );
-
-    MCAPI ::std::unique_ptr<uint64, ::std::function<void(uint64*)>> registerAsyncJoinCallback(
-        ::brstd::move_only_function<void(
-            ::NetworkIdentifier const&,
-            ::std::variant<
-                ::std::reference_wrapper<::ConnectionRequest const>,
-                ::std::reference_wrapper<::SubClientConnectionRequest const>> const&,
-            ::SubClientId,
-            ::std::shared_ptr<::AsyncVerdictPromise>
-        )> callback
     );
 
     MCAPI void removeFromDenyList(::mce::UUID const& uuid, ::std::string const& xuid);
@@ -958,7 +897,7 @@ public:
 
     MCAPI void $sendServerLegacyParticle(::ParticleType name, ::Vec3 const& pos, ::Vec3 const&, int data);
 
-    MCAPI void $onTransferRequest(::NetworkIdentifier const& id, ::std::string const& serverAddress, int serverPort);
+    MCAPI void $onTransferRequest(::NetworkIdentifier const& id, ::Social::GameConnectionInfo const& destination);
 
     MCAPI void $onDisconnect(
         ::NetworkIdentifier const&               id,
@@ -1129,8 +1068,6 @@ public:
         ::SubClientId                       subid
     );
 
-    MCAPI void $_validateLoginPacket(::NetworkIdentifier const& source, ::LoginPacket const& packet);
-
     MCAPI void $onTick();
 
     MCAPI ::GameSpecificNetEventCallback* $getGameSpecificNetEventCallback();
@@ -1138,6 +1075,8 @@ public:
     MCAPI void $onConnect(::NetworkIdentifier const& id);
 
     MCAPI void $completeHandshake(::NetworkIdentifier const& source);
+
+    MCAPI bool $_validateLoginPacket(::NetworkIdentifier const& source, ::LoginPacket const& packet);
 
     MCAPI void $_onClientAsyncAuthorized(
         ::NetworkIdentifier const&          source,

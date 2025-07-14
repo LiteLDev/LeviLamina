@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/scripting/modules/minecraft/ScriptCustomComponentRegistry.h"
 #include "mc/scripting/modules/minecraft/items/IScriptItemCustomComponentReader.h"
 #include "mc/scripting/modules/minecraft/items/IScriptItemCustomComponentWriter.h"
 
@@ -15,27 +16,25 @@ namespace cereal { struct ReflectionCtx; }
 namespace ScriptModuleMinecraft {
 
 class IScriptItemCustomComponentRegistry : public ::ScriptModuleMinecraft::IScriptItemCustomComponentReader,
-                                           public ::ScriptModuleMinecraft::IScriptItemCustomComponentWriter {
+                                           public ::ScriptModuleMinecraft::IScriptItemCustomComponentWriter,
+                                           public ::ScriptModuleMinecraft::ScriptCustomComponentRegistry {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3
-    virtual void onReload() = 0;
-
-    // vIndex: 4
-    virtual void onScriptInitializationComplete() = 0;
-
-    // vIndex: 5
-    virtual void onScriptModuleStartupComplete() = 0;
-
-    // vIndex: 6
     virtual ::ScriptDeferredEventListener& getEventListener() = 0;
 
-    // vIndex: 7
+    // vIndex: 4
     virtual void setCerealContext(::cereal::ReflectionCtx&);
 
     // vIndex: 0
-    virtual ~IScriptItemCustomComponentRegistry() /*override*/ = default;
+    virtual ~IScriptItemCustomComponentRegistry() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

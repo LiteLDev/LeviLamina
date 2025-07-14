@@ -50,13 +50,19 @@ public:
     // NOLINTBEGIN
     MCNAPI ::rtc::IPAddress GetBestIP() const;
 
-    MCNAPI ushort GetCost(::webrtc::FieldTrialsView const&) const;
+    MCNAPI ushort GetCost(::webrtc::FieldTrialsView const& field_trials) const;
 
     MCNAPI ::webrtc::MdnsResponderInterface* GetMdnsResponder() const;
 
-    MCNAPI Network(::std::string_view, ::std::string_view, ::rtc::IPAddress const&, int, ::rtc::AdapterType);
+    MCNAPI Network(
+        ::std::string_view      name,
+        ::std::string_view      desc,
+        ::rtc::IPAddress const& prefix,
+        int                     prefix_length,
+        ::rtc::AdapterType      type
+    );
 
-    MCNAPI bool SetIPs(::std::vector<::rtc::InterfaceAddress> const&, bool);
+    MCNAPI bool SetIPs(::std::vector<::rtc::InterfaceAddress> const& ips, bool changed);
 
     MCNAPI ::std::string ToString() const;
 
@@ -66,13 +72,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::pair<::rtc::AdapterType, bool> GuessAdapterFromNetworkCost(int);
+    MCNAPI static ::std::pair<::rtc::AdapterType, bool> GuessAdapterFromNetworkCost(int network_cost);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string_view, ::std::string_view, ::rtc::IPAddress const&, int, ::rtc::AdapterType);
+    MCNAPI void* $ctor(
+        ::std::string_view      name,
+        ::std::string_view      desc,
+        ::rtc::IPAddress const& prefix,
+        int                     prefix_length,
+        ::rtc::AdapterType      type
+    );
     // NOLINTEND
 
 public:

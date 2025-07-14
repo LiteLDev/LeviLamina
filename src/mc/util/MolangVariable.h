@@ -3,16 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/string/HashedString.h"
 #include "mc/util/MolangScriptArg.h"
 #include "mc/util/MolangVariableIndex.h"
 #include "mc/util/MolangVariableSettings.h"
+
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
 
 class MolangVariable {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::HashedString>                      mName;
     ::ll::TypedStorage<8, 88, ::MolangScriptArg>                   mValue;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MolangScriptArg>> mPublicValue;
     ::ll::TypedStorage<4, 8, ::MolangVariableSettings>             mSettings;
@@ -27,10 +30,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI MolangVariable(::MolangVariable const& rhs);
-
-    MCAPI MolangVariable(::MolangVariableIndex index, ::HashedString name, ::MolangScriptArg value);
-
-    MCAPI ~MolangVariable();
     // NOLINTEND
 
 public:
@@ -64,13 +63,5 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::MolangVariable const& rhs);
-
-    MCAPI void* $ctor(::MolangVariableIndex index, ::HashedString name, ::MolangScriptArg value);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

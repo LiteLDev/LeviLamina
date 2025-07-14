@@ -119,7 +119,7 @@ public:
     virtual int RecvFrom(void* pv, uint64 cb, ::rtc::SocketAddress* paddr, int64* timestamp);
 
     // vIndex: 8
-    virtual int RecvFrom(::rtc::Socket::ReceiveBuffer&);
+    virtual int RecvFrom(::rtc::Socket::ReceiveBuffer& buffer);
 
     // vIndex: 10
     virtual int Listen(int) = 0;
@@ -140,7 +140,7 @@ public:
     virtual ::rtc::Socket::ConnState GetState() const = 0;
 
     // vIndex: 16
-    virtual int GetOption(::rtc::Socket::Option, int*) = 0;
+    virtual int GetOption(::rtc::Socket::Option opt, int* value) = 0;
 
     // vIndex: 17
     virtual int SetOption(::rtc::Socket::Option, int) = 0;
@@ -156,6 +156,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI int $RecvFrom(void* pv, uint64 cb, ::rtc::SocketAddress* paddr, int64* timestamp);
+
+    MCNAPI int $RecvFrom(::rtc::Socket::ReceiveBuffer& buffer);
     // NOLINTEND
 
 public:

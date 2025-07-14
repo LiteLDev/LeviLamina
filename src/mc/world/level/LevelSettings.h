@@ -103,6 +103,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                              mServerId;
     ::ll::TypedStorage<8, 32, ::std::string>                              mWorldId;
     ::ll::TypedStorage<8, 32, ::std::string>                              mScenarioId;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mOwnerId;
     ::ll::TypedStorage<8, 328, ::std::optional<::EducationLevelSettings>> mEducationLevelSettings;
     ::ll::TypedStorage<1, 2, ::std::optional<bool>>                       mOverrideForceExperimentalGameplayFlag;
     ::ll::TypedStorage<8, 176, ::std::optional<::CloudSaveLevelInfo>>     mCloudSaveInfo;
@@ -147,6 +148,8 @@ public:
     MCAPI ::LevelSettings& setExperiments(::ExperimentStorage const& experiments);
 
     MCAPI ::LevelSettings& setGameRules(::GameRules gameRules);
+
+    MCAPI ::LevelSettings& setOwnerId(::std::string ownerId);
 
     MCAPI ::LevelSettings& setScenarioId(::std::string scenarioId);
 

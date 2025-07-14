@@ -26,7 +26,7 @@ public:
     virtual bool CanInsertDtmf() = 0;
 
     // vIndex: 7
-    virtual bool InsertDtmf(::std::string const&, int, int);
+    virtual bool InsertDtmf(::std::string const& tones, int duration, int inter_tone_gap);
 
     // vIndex: 6
     virtual bool InsertDtmf(::std::string const&, int, int, int);
@@ -44,13 +44,19 @@ public:
     virtual int comma_delay() const;
 
     // vIndex: 2
-    virtual ~DtmfSenderInterface() /*override*/ = default;
+    virtual ~DtmfSenderInterface() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI bool $InsertDtmf(::std::string const& tones, int duration, int inter_tone_gap);
     // NOLINTEND
 };
 

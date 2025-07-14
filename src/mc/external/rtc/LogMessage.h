@@ -35,7 +35,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void FinishPrintStream();
 
-    MCNAPI LogMessage(char const*, int, ::rtc::LoggingSeverity, ::rtc::LogErrorContext, int);
+    MCNAPI LogMessage(char const* file, int line, ::rtc::LoggingSeverity sev, ::rtc::LogErrorContext err_ctx, int err);
 
     MCNAPI ::rtc::StringBuilder& stream();
 
@@ -45,17 +45,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void AddLogToStream(::rtc::LogSink*, ::rtc::LoggingSeverity);
+    MCNAPI static void AddLogToStream(::rtc::LogSink* stream, ::rtc::LoggingSeverity min_sev);
 
     MCNAPI static int GetMinLogSeverity();
 
-    MCNAPI static bool IsNoop(::rtc::LoggingSeverity);
+    MCNAPI static bool IsNoop(::rtc::LoggingSeverity severity);
 
     MCNAPI static int64 LogStartTime();
 
-    MCNAPI static void OutputToDebug(::rtc::LogLineRef const&);
+    MCNAPI static void OutputToDebug(::rtc::LogLineRef const& log_line);
 
-    MCNAPI static void RemoveLogToStream(::rtc::LogSink*);
+    MCNAPI static void RemoveLogToStream(::rtc::LogSink* stream);
 
     MCNAPI static void UpdateMinLogSeverity();
 
@@ -79,7 +79,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(char const*, int, ::rtc::LoggingSeverity, ::rtc::LogErrorContext, int);
+    MCNAPI void* $ctor(char const* file, int line, ::rtc::LoggingSeverity sev, ::rtc::LogErrorContext err_ctx, int err);
     // NOLINTEND
 
 public:

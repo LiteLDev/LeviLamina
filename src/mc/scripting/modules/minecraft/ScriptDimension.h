@@ -272,6 +272,8 @@ public:
 
     MCNAPI ::std::string getId() const;
 
+    MCNAPI ::std::string getLocalizationKey() const;
+
     MCNAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
     getPlayers(::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> options) const;
@@ -403,6 +405,10 @@ public:
         ::Vec3 const&                                                                          location,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptMolangVariableMap> molangVariables
     );
+
+    MCNAPI void stopAllSounds();
+
+    MCNAPI void stopSound(::std::string const& soundID);
     // NOLINTEND
 
 public:

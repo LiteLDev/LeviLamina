@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RtpCodec() = default;
+    virtual ~RtpCodec();
     // NOLINTEND
 
 public:
@@ -38,7 +38,7 @@ public:
 
     MCNAPI ::webrtc::RtpCodec& operator=(::webrtc::RtpCodec const&);
 
-    MCNAPI bool operator==(::webrtc::RtpCodec const&) const;
+    MCNAPI bool operator==(::webrtc::RtpCodec const& o) const;
     // NOLINTEND
 
 public:
@@ -47,6 +47,12 @@ public:
     MCNAPI void* $ctor();
 
     MCNAPI void* $ctor(::webrtc::RtpCodec const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

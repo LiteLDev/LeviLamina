@@ -677,7 +677,7 @@ public:
 
     MCFOLD ::ItemComponent* $getComponent(::HashedString const&) const;
 
-    MCFOLD ::IFoodItemComponent* $getFood() const;
+    MCAPI ::IFoodItemComponent* $getFood() const;
 
     MCAPI ::Item& $setMaxDamage(int maxDamage);
 

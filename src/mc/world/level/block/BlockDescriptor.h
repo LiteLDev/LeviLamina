@@ -45,8 +45,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI State(::HashedString name, ::SharedTypes::Legacy::BlockDescriptor::Compound state);
-
         MCNAPI State(::HashedString name, ::std::string const& stringState);
 
         MCNAPI ::BlockDescriptor::State& operator=(::BlockDescriptor::State const&);
@@ -57,8 +55,6 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::HashedString name, ::SharedTypes::Legacy::BlockDescriptor::Compound state);
-
         MCNAPI void* $ctor(::HashedString name, ::std::string const& stringState);
         // NOLINTEND
 
@@ -162,8 +158,6 @@ public:
     MCNAPI void operator=(::BlockDescriptor const& rhs);
 
     MCNAPI ::std::unique_ptr<::CompoundTag> toCompoundTag() const;
-
-    MCNAPI ::Block const* tryGetBlock() const;
 
     MCNAPI ~BlockDescriptor();
     // NOLINTEND

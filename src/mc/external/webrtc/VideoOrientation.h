@@ -11,7 +11,7 @@ class VideoOrientation {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool Write(::rtc::ArrayView<uchar>, ::webrtc::VideoRotation);
+    MCNAPI static bool Write(::rtc::ArrayView<uchar> data, ::webrtc::VideoRotation rotation);
     // NOLINTEND
 };
 

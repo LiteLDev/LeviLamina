@@ -26,7 +26,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RTCStats() = default;
+    virtual ~RTCStats();
 
     // vIndex: 1
     virtual ::std::unique_ptr<::webrtc::RTCStats> copy() const = 0;
@@ -35,7 +35,7 @@ public:
     virtual char const* type() const = 0;
 
     // vIndex: 3
-    virtual ::std::vector<::webrtc::Attribute> AttributesImpl(uint64) const;
+    virtual ::std::vector<::webrtc::Attribute> AttributesImpl(uint64 additional_capacity) const;
     // NOLINTEND
 
 public:
@@ -43,7 +43,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::vector<::webrtc::Attribute> Attributes() const;
 
-    MCNAPI RTCStats(::webrtc::RTCStats const&);
+    MCNAPI RTCStats(::webrtc::RTCStats const& other);
 
     MCNAPI ::std::string ToJson() const;
     // NOLINTEND
@@ -51,13 +51,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::RTCStats const&);
+    MCNAPI void* $ctor(::webrtc::RTCStats const& other);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI ::std::vector<::webrtc::Attribute> $AttributesImpl(uint64 additional_capacity) const;
     // NOLINTEND
 
 public:

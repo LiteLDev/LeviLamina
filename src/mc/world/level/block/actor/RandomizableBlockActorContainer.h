@@ -32,7 +32,7 @@ public:
     // vIndex: 19
     virtual void dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop) /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual void onRemoved(::BlockSource&) /*override*/;
 
     // vIndex: 41

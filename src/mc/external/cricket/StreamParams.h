@@ -24,9 +24,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool AddSecondarySsrc(::std::string const&, uint, uint);
+    MCNAPI bool AddSecondarySsrc(::std::string const& semantics, uint primary_ssrc, uint secondary_ssrc);
 
-    MCNAPI void GenerateSsrcs(int, bool, bool, ::rtc::UniqueRandomIdGenerator*);
+    MCNAPI void GenerateSsrcs(
+        int                             num_layers,
+        bool                            generate_fid,
+        bool                            generate_fec_fr,
+        ::rtc::UniqueRandomIdGenerator* ssrc_generator
+    );
 
     MCNAPI StreamParams();
 
@@ -36,11 +41,11 @@ public:
 
     MCNAPI ::std::string first_stream_id() const;
 
-    MCNAPI bool has_ssrc(uint) const;
+    MCNAPI bool has_ssrc(uint ssrc) const;
 
     MCNAPI ::cricket::StreamParams& operator=(::cricket::StreamParams const&);
 
-    MCNAPI void set_stream_ids(::std::vector<::std::string> const&);
+    MCNAPI void set_stream_ids(::std::vector<::std::string> const& stream_ids);
 
     MCNAPI ::std::vector<::std::string> stream_ids() const;
 

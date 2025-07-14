@@ -2,12 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/edu_cloud_proxy/Operation.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace CodeBuilder { struct ChatSubscription; }
 namespace CodeBuilder { struct CommandRequest; }
 namespace CodeBuilder { struct EncryptionRequest; }
 namespace CodeBuilder { struct ErrorMessage; }
+namespace EduCloudProxy { struct CloudProject; }
 // clang-format on
 
 namespace CodeBuilder {
@@ -41,21 +45,33 @@ public:
     virtual void dataMob(::std::string const&) = 0;
 
     // vIndex: 8
-    virtual void dataTutorial(::std::string const&, ::std::string const&) = 0;
+    virtual void cloudRequest(
+        ::std::string const&,
+        ::EduCloudProxy::Operation const,
+        ::std::string const&,
+        ::std::vector<::std::string> const,
+        ::EduCloudProxy::CloudProject const
+    ) = 0;
 
     // vIndex: 9
-    virtual bool encryptConnection(::std::string const&, ::CodeBuilder::EncryptionRequest const&) = 0;
+    virtual void dataTutorial(::std::string const&, ::std::string const&) = 0;
 
     // vIndex: 10
-    virtual void subscribe(::std::string const&, ::std::string const&) = 0;
+    virtual void dataFile(::std::string const&, bool const, ::std::string const&, ::std::string const&) = 0;
 
     // vIndex: 11
-    virtual void unsubscribe(::std::string const&, ::std::string const&) = 0;
+    virtual bool encryptConnection(::std::string const&, ::CodeBuilder::EncryptionRequest const&) = 0;
 
     // vIndex: 12
-    virtual void error(::std::string const&, ::CodeBuilder::ErrorMessage const&) = 0;
+    virtual void subscribe(::std::string const&, ::std::string const&) = 0;
 
     // vIndex: 13
+    virtual void unsubscribe(::std::string const&, ::std::string const&) = 0;
+
+    // vIndex: 14
+    virtual void error(::std::string const&, ::CodeBuilder::ErrorMessage const&) = 0;
+
+    // vIndex: 15
     virtual bool tutorialCached(::std::string const&) = 0;
     // NOLINTEND
 

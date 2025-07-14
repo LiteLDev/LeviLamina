@@ -69,6 +69,8 @@ public:
     // NOLINTBEGIN
     MCAPI TeleportCommand();
 
+    MCAPI void doArmorStandTeleportBackwardCompability(::Actor& target, ::Actor const* destinationEntity) const;
+
     MCAPI ::RotationCommandUtils::FacingResult getFacingDirection(
         ::CommandOrigin const& origin,
         ::CommandOutput&       output,

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/ServerCommand.h"
+#include "mc/world/level/levelgen/v2/LiquidSettings.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -40,6 +41,7 @@ public:
     ::ll::UntypedStorage<4, 16> mUnke003e7;
     ::ll::UntypedStorage<8, 32> mUnkd4ce49;
     ::ll::UntypedStorage<8, 8>  mUnkf720b6;
+    ::ll::UntypedStorage<1, 1>  mUnkd7f738;
     ::ll::UntypedStorage<1, 1>  mUnk663c8d;
     ::ll::UntypedStorage<1, 1>  mUnk5c7fb5;
     ::ll::UntypedStorage<1, 1>  mUnk77c817;
@@ -80,24 +82,26 @@ public:
     ) const;
 
     MCAPI void _placeJigsaw(
-        ::std::string const&     pool,
-        ::std::string const&     target,
-        schar                    maxDepth,
-        ::CommandPosition const& pos,
-        bool                     keepJigsaws,
-        bool                     includeEntities,
-        ::CommandOrigin const&   origin,
-        ::CommandOutput&         output
+        ::std::string const&           pool,
+        ::std::string const&           target,
+        schar                          maxDepth,
+        ::CommandPosition const&       pos,
+        bool                           keepJigsaws,
+        bool                           includeEntities,
+        ::br::worldgen::LiquidSettings liquidSettings,
+        ::CommandOrigin const&         origin,
+        ::CommandOutput&               output
     ) const;
 
     MCAPI void _placeStructure(
-        ::std::string const&     id,
-        ::CommandPosition const& pos,
-        bool                     ignoreStartHeight,
-        bool                     keepJigsaws,
-        bool                     includeEntities,
-        ::CommandOrigin const&   origin,
-        ::CommandOutput&         output
+        ::std::string const&           id,
+        ::CommandPosition const&       pos,
+        bool                           ignoreStartHeight,
+        bool                           keepJigsaws,
+        bool                           includeEntities,
+        ::br::worldgen::LiquidSettings liquidSettings,
+        ::CommandOrigin const&         origin,
+        ::CommandOutput&               output
     ) const;
     // NOLINTEND
 
@@ -105,22 +109,24 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::nonstd::expected<::BoundingBox, ::std::string_view> placeJigsaw(
-        ::std::string const& pool,
-        ::std::string const& target,
-        schar                maxDepth,
-        ::BlockPos const&    position,
-        bool                 keepJigsaws,
-        bool                 includeEntities,
-        ::Dimension&         dimension
+        ::std::string const&           pool,
+        ::std::string const&           target,
+        schar                          maxDepth,
+        ::BlockPos const&              position,
+        bool                           keepJigsaws,
+        bool                           includeEntities,
+        ::Dimension&                   dimension,
+        ::br::worldgen::LiquidSettings liquidSettings
     );
 
     MCAPI static ::nonstd::expected<::BoundingBox, ::std::string_view> placeStructure(
-        ::std::string const& id,
-        ::BlockPos const&    pos,
-        ::Dimension&         dimension,
-        bool                 ignoreStartHeight,
-        bool                 keepJigsaws,
-        bool                 includeEntities
+        ::std::string const&           id,
+        ::BlockPos const&              pos,
+        ::Dimension&                   dimension,
+        bool                           ignoreStartHeight,
+        bool                           keepJigsaws,
+        bool                           includeEntities,
+        ::br::worldgen::LiquidSettings liquidSettings
     );
 
     MCAPI static void setup(

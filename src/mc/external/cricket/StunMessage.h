@@ -54,39 +54,40 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StunMessage() = default;
+    virtual ~StunMessage();
 
     // vIndex: 1
     virtual ::cricket::StunMessage* CreateNew() const;
 
     // vIndex: 2
-    virtual ::cricket::StunAttributeValueType GetAttributeValueType(int) const;
+    virtual ::cricket::StunAttributeValueType GetAttributeValueType(int type) const;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddAttribute(::std::unique_ptr<::cricket::StunAttribute>);
+    MCNAPI void AddAttribute(::std::unique_ptr<::cricket::StunAttribute> attr);
 
     MCNAPI bool AddFingerprint();
 
-    MCNAPI bool AddMessageIntegrity(::std::string_view);
+    MCNAPI bool AddMessageIntegrity(::std::string_view password);
 
-    MCNAPI bool AddMessageIntegrity32(::std::string_view);
+    MCNAPI bool AddMessageIntegrity32(::std::string_view password);
 
-    MCNAPI bool AddMessageIntegrityOfType(int, uint64, ::std::string_view);
+    MCNAPI bool AddMessageIntegrityOfType(int attr_type, uint64 attr_size, ::std::string_view key);
 
     MCNAPI ::std::unique_ptr<::cricket::StunMessage> Clone() const;
 
-    MCNAPI ::cricket::StunAttribute* CreateAttribute(int, uint64);
+    MCNAPI ::cricket::StunAttribute* CreateAttribute(int type, uint64 length);
 
-    MCNAPI bool EqualAttributes(::cricket::StunMessage const*, ::std::function<bool(int)>) const;
+    MCNAPI bool
+    EqualAttributes(::cricket::StunMessage const* other, ::std::function<bool(int)> attribute_type_mask) const;
 
-    MCNAPI ::cricket::StunAddressAttribute const* GetAddress(int) const;
+    MCNAPI ::cricket::StunAddressAttribute const* GetAddress(int type) const;
 
-    MCNAPI ::cricket::StunAttribute const* GetAttribute(int) const;
+    MCNAPI ::cricket::StunAttribute const* GetAttribute(int type) const;
 
-    MCNAPI ::cricket::StunByteStringAttribute const* GetByteString(int) const;
+    MCNAPI ::cricket::StunByteStringAttribute const* GetByteString(int type) const;
 
     MCNAPI ::cricket::StunErrorCodeAttribute const* GetErrorCode() const;
 
@@ -94,27 +95,27 @@ public:
 
     MCNAPI ::std::vector<ushort> GetNonComprehendedAttributes() const;
 
-    MCNAPI ::cricket::StunUInt16ListAttribute const* GetUInt16List(int) const;
+    MCNAPI ::cricket::StunUInt16ListAttribute const* GetUInt16List(int type) const;
 
-    MCNAPI ::cricket::StunUInt32Attribute const* GetUInt32(int) const;
+    MCNAPI ::cricket::StunUInt32Attribute const* GetUInt32(int type) const;
 
-    MCNAPI ::cricket::StunUInt64Attribute const* GetUInt64(int) const;
+    MCNAPI ::cricket::StunUInt64Attribute const* GetUInt64(int type) const;
 
     MCNAPI bool IsLegacy() const;
 
-    MCNAPI bool Read(::rtc::ByteBufferReader*);
+    MCNAPI bool Read(::rtc::ByteBufferReader* buf);
 
-    MCNAPI ::cricket::StunMessage::IntegrityStatus RevalidateMessageIntegrity(::std::string const&);
+    MCNAPI ::cricket::StunMessage::IntegrityStatus RevalidateMessageIntegrity(::std::string const& password);
 
     MCNAPI StunMessage();
 
-    MCNAPI explicit StunMessage(ushort);
+    MCNAPI explicit StunMessage(ushort type);
 
-    MCNAPI StunMessage(ushort, ::std::string_view);
+    MCNAPI StunMessage(ushort type, ::std::string_view transaction_id);
 
-    MCNAPI ::cricket::StunMessage::IntegrityStatus ValidateMessageIntegrity(::std::string const&);
+    MCNAPI ::cricket::StunMessage::IntegrityStatus ValidateMessageIntegrity(::std::string const& password);
 
-    MCNAPI bool Write(::rtc::ByteBufferWriter*) const;
+    MCNAPI bool Write(::rtc::ByteBufferWriter* buf) const;
     // NOLINTEND
 
 public:
@@ -122,11 +123,17 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string GenerateTransactionId();
 
-    MCNAPI static bool IsStunMethod(::rtc::ArrayView<int>, char const*, uint64);
+    MCNAPI static bool IsStunMethod(::rtc::ArrayView<int> methods, char const* data, uint64 size);
 
-    MCNAPI static bool ValidateFingerprint(char const*, uint64);
+    MCNAPI static bool ValidateFingerprint(char const* data, uint64 size);
 
-    MCNAPI static bool ValidateMessageIntegrityOfType(int, uint64, char const*, uint64, ::std::string const&);
+    MCNAPI static bool ValidateMessageIntegrityOfType(
+        int                  mi_attr_type,
+        uint64               mi_attr_size,
+        char const*          data,
+        uint64               size,
+        ::std::string const& password
+    );
     // NOLINTEND
 
 public:
@@ -134,15 +141,23 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(ushort);
+    MCNAPI void* $ctor(ushort type);
 
-    MCNAPI void* $ctor(ushort, ::std::string_view);
+    MCNAPI void* $ctor(ushort type, ::std::string_view transaction_id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::cricket::StunMessage* $CreateNew() const;
 
+    MCNAPI ::cricket::StunAttributeValueType $GetAttributeValueType(int type) const;
     // NOLINTEND
 
 public:

@@ -8,7 +8,7 @@ class SemVersion;
 namespace Puv { class Input; }
 namespace Puv { class LoadResultAny; }
 namespace Puv { class ParserBase; }
-namespace Puv { class Upgrader; }
+namespace Puv { class UpgraderBase; }
 // clang-format on
 
 namespace Puv::internal {
@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk18f589;
-    ::ll::UntypedStorage<8, 16> mUnkaba29a;
+    ::ll::UntypedStorage<8, 16> mUnkd44185;
     // NOLINTEND
 
 public:
@@ -34,7 +34,7 @@ public:
 
     MCNAPI void registerParser(::std::unique_ptr<::Puv::ParserBase> parser);
 
-    MCNAPI void registerUpgrader(::std::unique_ptr<::Puv::Upgrader> upgrader);
+    MCNAPI void registerUpgrader(::std::unique_ptr<::Puv::UpgraderBase> upgrader);
 
     MCNAPI ~LoaderBase();
     // NOLINTEND

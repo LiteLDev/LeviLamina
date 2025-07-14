@@ -13,7 +13,7 @@ struct BlockSpecifier {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke18c0f;
+    ::ll::UntypedStorage<8, 32> mUnk8322cc;
     ::ll::UntypedStorage<8, 64> mUnk610961;
     // NOLINTEND
 

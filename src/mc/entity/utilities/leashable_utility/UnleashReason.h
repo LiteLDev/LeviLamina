@@ -7,8 +7,9 @@ namespace LeashableUtility {
 enum class UnleashReason : int {
     Interaction = 0,
     Broken      = 1,
-    Removed     = 2,
-    Despawned   = 3,
+    Sheared     = 2,
+    Removed     = 3,
+    Despawned   = 4,
 };
 
 }

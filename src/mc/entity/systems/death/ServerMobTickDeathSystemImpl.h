@@ -25,18 +25,18 @@ struct ActorTickedComponent;
 struct ActorUniqueIDComponent;
 struct DeathTickingComponent;
 struct DimensionTypeComponent;
-struct IsDeadFlagComponent;
 struct MobFlagComponent;
 struct OffsetsComponent;
 struct PlayerComponent;
 struct SoundEventPlayerComponent;
 struct SpawnExperienceOrbRequestQueueComponent;
 struct StateVectorComponent;
+struct TickDeathNeededComponent;
 // clang-format on
 
 struct ServerMobTickDeathSystemImpl
 : public ::IStrictTickingSystem<::StrictExecutionContext<
-      ::Filter<::ActorTickedComponent, ::IsDeadFlagComponent, ::MobFlagComponent>,
+      ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::MobFlagComponent>,
       ::Read<
           ::AABBShapeComponent,
           ::ActorDefinitionIdentifierComponent,
@@ -58,7 +58,7 @@ public:
     // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
-            ::Filter<::ActorTickedComponent, ::IsDeadFlagComponent, ::MobFlagComponent>,
+            ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::MobFlagComponent>,
             ::Read<
                 ::AABBShapeComponent,
                 ::ActorDefinitionIdentifierComponent,

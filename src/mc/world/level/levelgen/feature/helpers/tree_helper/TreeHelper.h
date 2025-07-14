@@ -16,6 +16,12 @@ namespace TreeHelper {
 // NOLINTBEGIN
 MCNAPI bool isValidTreePosition(::IBlockWorldGenAPI const& target, ::BlockPos const& pos);
 
+MCNAPI ::std::optional<::BlockPos> placeBaseBlock(
+    ::IBlockWorldGenAPI&                    target,
+    ::BlockPos const&                       pos,
+    ::std::vector<::BlockDescriptor> const& validBaseBlocks
+);
+
 MCNAPI ::std::optional<::BlockPos> placeRadialBlockGroup(
     ::IBlockWorldGenAPI& target,
     ::BlockPos const&    pos,

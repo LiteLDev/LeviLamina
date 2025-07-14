@@ -12,6 +12,7 @@ namespace Core { class FileOpenMode; }
 namespace Core { class FileSystemImpl; }
 namespace Core { class PathView; }
 namespace Core { class Result; }
+namespace brstd { struct source_location; }
 // clang-format on
 
 namespace Core {
@@ -61,8 +62,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Core::Result
-    writeCreateOrAppendFileData(::Core::PathView path, uint64 offset, uint64 numBytesToWrite, uchar const* buffer);
+    MCNAPI static ::Core::Result writeCreateOrAppendFileData(
+        ::Core::PathView         path,
+        uint64                   offset,
+        uint64                   numBytesToWrite,
+        uchar const*             buffer,
+        ::brstd::source_location sourceLocation
+    );
     // NOLINTEND
 
 public:

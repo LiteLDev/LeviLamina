@@ -17,6 +17,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                           mResourcePackRequired;
     ::ll::TypedStorage<1, 1, bool>                           mHasAddonPacks;
     ::ll::TypedStorage<1, 1, bool>                           mHasScripts;
+    ::ll::TypedStorage<1, 1, bool>                           mForceDisableVibrantVisuals;
     ::ll::TypedStorage<8, 48, ::PackIdVersion>               mWorldTemplateIdAndVersion;
     ::ll::TypedStorage<8, 24, ::std::vector<::PackInfoData>> mResourcePacks;
     // NOLINTEND

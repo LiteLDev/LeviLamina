@@ -37,8 +37,6 @@ public:
 
     MCAPI ::Vec3 operator-() const;
 
-    MCAPI ::Vec3 operator-(::Vec3 const& rhs) const;
-
     MCFOLD bool operator==(::Vec3 const& rhs) const;
 
     MCAPI ::std::string toJsonString() const;

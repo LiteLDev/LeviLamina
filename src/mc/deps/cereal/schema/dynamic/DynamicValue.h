@@ -39,6 +39,8 @@ public:
     // NOLINTBEGIN
     MCNAPI DynamicValue(::cereal::DynamicValue&&);
 
+    MCNAPI uint64 hash() const;
+
     MCNAPI ~DynamicValue();
     // NOLINTEND
 

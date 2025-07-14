@@ -29,7 +29,13 @@ public:
         virtual void OnSetVolume(double) = 0;
 
         // vIndex: 1
-        virtual ~AudioObserver() = default;
+        virtual ~AudioObserver();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -49,31 +55,47 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void SetVolume(double);
+    virtual void SetVolume(double volume);
 
     // vIndex: 6
-    virtual void RegisterAudioObserver(::webrtc::AudioSourceInterface::AudioObserver*);
+    virtual void RegisterAudioObserver(::webrtc::AudioSourceInterface::AudioObserver* observer);
 
     // vIndex: 7
-    virtual void UnregisterAudioObserver(::webrtc::AudioSourceInterface::AudioObserver*);
+    virtual void UnregisterAudioObserver(::webrtc::AudioSourceInterface::AudioObserver* observer);
 
     // vIndex: 8
-    virtual void AddSink(::webrtc::AudioTrackSinkInterface*);
+    virtual void AddSink(::webrtc::AudioTrackSinkInterface* sink);
 
     // vIndex: 9
-    virtual void RemoveSink(::webrtc::AudioTrackSinkInterface*);
+    virtual void RemoveSink(::webrtc::AudioTrackSinkInterface* sink);
 
     // vIndex: 10
     virtual ::cricket::AudioOptions const options() const;
 
     // vIndex: 2
-    virtual ~AudioSourceInterface() /*override*/ = default;
+    virtual ~AudioSourceInterface() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $SetVolume(double volume);
 
+    MCNAPI void $RegisterAudioObserver(::webrtc::AudioSourceInterface::AudioObserver* observer);
+
+    MCNAPI void $UnregisterAudioObserver(::webrtc::AudioSourceInterface::AudioObserver* observer);
+
+    MCNAPI void $AddSink(::webrtc::AudioTrackSinkInterface* sink);
+
+    MCNAPI void $RemoveSink(::webrtc::AudioTrackSinkInterface* sink);
+
+    MCNAPI ::cricket::AudioOptions const $options() const;
     // NOLINTEND
 };
 

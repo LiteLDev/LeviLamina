@@ -11,7 +11,7 @@ public:
     union {
         ::ll::UntypedStorage<8, 128> mUnk4ff9d4;
         ::ll::UntypedStorage<4, 128> mUnk3a39ae;
-        ::ll::UntypedStorage<4, 128> mUnkff0e2b;
+        ::ll::UntypedStorage<2, 128> mUnkff0e2b;
     } address;
     ::ll::TypedStorage<2, 2, ushort> debugPort;
     ::ll::TypedStorage<2, 2, ushort> systemIndex;

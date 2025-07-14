@@ -9,6 +9,7 @@ public:
         SaveToDisk      = 0,
         SendOverNetwork = 1,
         Clone           = 2,
+        Move            = 3,
     };
 
     enum class SaveOperation : uchar {

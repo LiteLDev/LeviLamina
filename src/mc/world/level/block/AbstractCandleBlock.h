@@ -25,7 +25,7 @@ public:
     // vIndex: 19
     virtual bool hasVariableLighting() const /*override*/;
 
-    // vIndex: 136
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 30
@@ -41,22 +41,22 @@ public:
     // vIndex: 125
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
-    // vIndex: 146
+    // vIndex: 145
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
-    // vIndex: 145
+    // vIndex: 144
     virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const /*override*/;
 
     // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual int _getNumCandles(::Block const&) const;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual void _iterateCandles(::Block const&, ::BlockPos const&, ::std::function<void(::Vec3 const&, int)>) const;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual void _tryLightOnFire(::BlockSource&, ::BlockPos const&, ::Actor*) const;
 
     // vIndex: 0

@@ -33,42 +33,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddContent(::cricket::ContentInfo&&);
+    MCNAPI void AddContent(::cricket::ContentInfo&& content);
 
     MCNAPI void AddContent(
-        ::std::string const&,
-        ::cricket::MediaProtocolType,
-        bool,
-        ::std::unique_ptr<::cricket::MediaContentDescription>
+        ::std::string const&                                  name,
+        ::cricket::MediaProtocolType                          type,
+        bool                                                  rejected,
+        ::std::unique_ptr<::cricket::MediaContentDescription> description
     );
 
     MCNAPI void AddContent(
-        ::std::string const&,
-        ::cricket::MediaProtocolType,
-        bool,
-        bool,
-        ::std::unique_ptr<::cricket::MediaContentDescription>
+        ::std::string const&                                  name,
+        ::cricket::MediaProtocolType                          type,
+        bool                                                  rejected,
+        bool                                                  bundle_only,
+        ::std::unique_ptr<::cricket::MediaContentDescription> description
     );
 
-    MCNAPI void AddTransportInfo(::cricket::TransportInfo const&);
+    MCNAPI void AddTransportInfo(::cricket::TransportInfo const& transport_info);
 
     MCNAPI ::std::unique_ptr<::cricket::SessionDescription> Clone() const;
 
-    MCNAPI ::cricket::ContentInfo const* GetContentByName(::std::string const&) const;
+    MCNAPI ::cricket::ContentInfo const* GetContentByName(::std::string const& name) const;
 
-    MCNAPI ::std::vector<::cricket::ContentGroup const*> GetGroupsByName(::std::string const&) const;
+    MCNAPI ::std::vector<::cricket::ContentGroup const*> GetGroupsByName(::std::string const& name) const;
 
     MCNAPI ::cricket::TransportInfo const* GetTransportInfoByName(::std::string const&) const;
 
-    MCNAPI ::cricket::TransportInfo* GetTransportInfoByName(::std::string const&);
+    MCNAPI ::cricket::TransportInfo* GetTransportInfoByName(::std::string const& name);
 
-    MCNAPI bool HasGroup(::std::string const&) const;
+    MCNAPI bool HasGroup(::std::string const& name) const;
 
     MCNAPI SessionDescription();
 
     MCNAPI SessionDescription(::cricket::SessionDescription const&);
 
-    MCNAPI void set_extmap_allow_mixed(bool);
+    MCNAPI void set_extmap_allow_mixed(bool supported);
 
     MCNAPI ~SessionDescription();
     // NOLINTEND

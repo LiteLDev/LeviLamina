@@ -59,25 +59,25 @@ public:
     // vIndex: 43
     virtual ::BlockPos findSpawnPosition() const /*override*/;
 
-    // vIndex: 49
+    // vIndex: 50
     virtual int getLevelGenHeight() const /*override*/;
 
-    // vIndex: 48
+    // vIndex: 49
     virtual ::Util::MultidimensionalArray<float, 5, 5, 41>
     generateDensityCellsForChunk(::ChunkPos const& chunkPos) const /*override*/;
 
-    // vIndex: 54
+    // vIndex: 55
     virtual ::PerlinSimplexNoise const& getSurfaceNoise() /*override*/;
 
-    // vIndex: 55
+    // vIndex: 56
     virtual ::std::unique_ptr<::PerlinSimplexNoise> const& getMaterialAdjNoise() const /*override*/;
 
-    // vIndex: 47
+    // vIndex: 48
     virtual void
     decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const
         /*override*/;
 
-    // vIndex: 56
+    // vIndex: 57
     virtual void _prepareHeights(
         ::BlockVolume&                                                  box,
         ::ChunkPos const&                                               chunkPos,
@@ -89,7 +89,7 @@ public:
         int                                                             skipTopN
     ) /*override*/;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual ::std::optional<::XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const
         /*override*/;
 

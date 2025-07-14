@@ -4,24 +4,31 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/editor/services/PayloadStoreHelper.h"
 #include "mc/editor/services/state/PlayerStateControllerService.h"
 
 // auto generated forward declare list
 // clang-format off
 class Player;
+namespace Editor::Network { class PlayerMovementStatePayload; }
+namespace Editor::Network { class PlayerZoomPayload; }
 namespace Editor::Settings { struct SpeedProps; }
 // clang-format on
 
 namespace Editor::Services {
 
-class ServerPlayerStateControllerService : public ::Editor::Services::PlayerStateControllerService {
+class ServerPlayerStateControllerService : public ::Editor::Services::PlayerStateControllerService,
+                                           public ::Editor::Services::PayloadStoreHelper {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1>  mUnk2b7edb;
     ::ll::UntypedStorage<1, 1>  mUnkddf2a9;
     ::ll::UntypedStorage<8, 16> mUnka1bb56;
+    ::ll::UntypedStorage<1, 1>  mUnka66d90;
+    ::ll::UntypedStorage<4, 4>  mUnk281efa;
     ::ll::UntypedStorage<4, 4>  mUnk9a4c14;
+    ::ll::UntypedStorage<4, 16> mUnka438a5;
     // NOLINTEND
 
 public:
@@ -33,8 +40,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+    // vIndex: 2
     virtual ~ServerPlayerStateControllerService() /*override*/ = default;
+
+    // vIndex: 1
+    virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
@@ -64,7 +74,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void _handlePlayerMovementStatePayload(::Editor::Network::PlayerMovementStatePayload const& payload);
+
+    MCNAPI void _handlePlayerZoomPayload(::Editor::Network::PlayerZoomPayload const& payload);
+
     MCNAPI void _setFlySpeedMultiplier(::Editor::Settings::SpeedProps const& newValue);
+
+    MCNAPI void _updateFlySpeedAbility(bool sync);
     // NOLINTEND
 
 public:
@@ -76,6 +92,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
+
     MCNAPI ::Scripting::Result_deprecated<void> $ready();
 
     MCNAPI ::std::string_view $getServiceName() const;

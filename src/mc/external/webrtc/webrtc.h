@@ -105,329 +105,389 @@ enum : int {
 
 // functions
 // NOLINTBEGIN
-MCNAPI bool
-AV1IsSameProfile(::std::map<::std::string, ::std::string> const&, ::std::map<::std::string, ::std::string> const&);
+MCNAPI bool AV1IsSameProfile(
+    ::std::map<::std::string, ::std::string> const& params1,
+    ::std::map<::std::string, ::std::string> const& params2
+);
 
-MCNAPI char const* AdapterTypeToStatsType(::rtc::AdapterType);
+MCNAPI char const* AdapterTypeToStatsType(::rtc::AdapterType type);
 
-MCNAPI void AddAudioAttribute(::std::string const&, ::std::string_view, ::cricket::MediaContentDescription*);
+MCNAPI void
+AddAudioAttribute(::std::string const& name, ::std::string_view value, ::cricket::MediaContentDescription* desc);
 
-MCNAPI void AddFeedbackParameter(::cricket::FeedbackParam const&, ::cricket::Codec*);
+MCNAPI void AddFeedbackParameter(::cricket::FeedbackParam const& feedback_param, ::cricket::Codec* codec);
 
-MCNAPI void AddFeedbackParameters(::cricket::FeedbackParams const&, ::cricket::Codec*);
+MCNAPI void AddFeedbackParameters(::cricket::FeedbackParams const& feedback_params, ::cricket::Codec* codec);
 
-MCNAPI void AddFmtpLine(::cricket::Codec const&, ::std::string*);
+MCNAPI void AddFmtpLine(::cricket::Codec const& codec, ::std::string* message);
 
-MCNAPI void AddOrReplaceCodec(::cricket::MediaContentDescription*, ::cricket::Codec const&);
+MCNAPI void AddOrReplaceCodec(::cricket::MediaContentDescription* content_desc, ::cricket::Codec const& codec);
 
-MCNAPI void AddPacketizationLine(::cricket::Codec const&, ::std::string*);
+MCNAPI void AddPacketizationLine(::cricket::Codec const& codec, ::std::string* message);
 
-MCNAPI void AddParameters(::std::map<::std::string, ::std::string> const&, ::cricket::Codec*);
+MCNAPI void AddParameters(::std::map<::std::string, ::std::string> const& parameters, ::cricket::Codec* codec);
 
-MCNAPI void AddRtcpFbLines(::cricket::Codec const&, ::std::string*);
+MCNAPI void AddRtcpFbLines(::cricket::Codec const& codec, ::std::string* message);
 
-MCNAPI void AlignedFree(void*);
+MCNAPI void AlignedFree(void* mem_block);
 
-MCNAPI void* AlignedMalloc(uint64, uint64);
+MCNAPI void* AlignedMalloc(uint64 size, uint64 alignment);
 
-MCNAPI char const* CodecTypeToPayloadString(::webrtc::VideoCodecType);
+MCNAPI char const* CodecTypeToPayloadString(::webrtc::VideoCodecType type);
 
-MCNAPI ::webrtc::TimeDelta CompactNtpRttToTimeDelta(uint);
+MCNAPI ::webrtc::TimeDelta CompactNtpRttToTimeDelta(uint compact_ntp_interval);
 
-MCNAPI ::std::unique_ptr<::webrtc::TaskQueueFactory> CreateDefaultTaskQueueFactory(::webrtc::FieldTrialsView const*);
+MCNAPI ::std::unique_ptr<::webrtc::TaskQueueFactory>
+CreateDefaultTaskQueueFactory(::webrtc::FieldTrialsView const* field_trials);
 
-MCNAPI ::webrtc::IceCandidateInterface*
-CreateIceCandidate(::std::string const&, int, ::std::string const&, ::webrtc::SdpParseError*);
+MCNAPI ::webrtc::IceCandidateInterface* CreateIceCandidate(
+    ::std::string const&     sdp_mid,
+    int                      sdp_mline_index,
+    ::std::string const&     sdp,
+    ::webrtc::SdpParseError* error
+);
 
 MCNAPI ::std::unique_ptr<::webrtc::SessionDescriptionInterface>
-CreateSessionDescription(::webrtc::SdpType, ::std::string const&);
+CreateSessionDescription(::webrtc::SdpType type, ::std::string const& sdp);
 
 MCNAPI ::std::unique_ptr<::webrtc::SessionDescriptionInterface>
-CreateSessionDescription(::webrtc::SdpType, ::std::string const&, ::webrtc::SdpParseError*);
+CreateSessionDescription(::webrtc::SdpType type, ::std::string const& sdp, ::webrtc::SdpParseError* error_out);
 
 MCNAPI ::std::unique_ptr<::webrtc::SessionDescriptionInterface> CreateSessionDescription(
-    ::webrtc::SdpType,
-    ::std::string const&,
-    ::std::string const&,
-    ::std::unique_ptr<::cricket::SessionDescription>
+    ::webrtc::SdpType                                type,
+    ::std::string const&                             session_id,
+    ::std::string const&                             session_version,
+    ::std::unique_ptr<::cricket::SessionDescription> description
 );
 
 MCNAPI ::std::unique_ptr<::webrtc::TaskQueueFactory> CreateTaskQueueStdlibFactory();
 
 MCNAPI void CreateTrackWithNoSsrcs(
-    ::std::vector<::std::string> const&,
-    ::std::string_view,
-    ::std::vector<::cricket::RidDescription> const&,
-    ::std::vector<::cricket::StreamParams>*
+    ::std::vector<::std::string> const&             msid_stream_ids,
+    ::std::string_view                              msid_track_id,
+    ::std::vector<::cricket::RidDescription> const& rids,
+    ::std::vector<::cricket::StreamParams>*         tracks
 );
 
 MCNAPI void CreateTracksFromSsrcInfos(
-    ::std::vector<::webrtc::SsrcInfo> const&,
-    ::std::vector<::std::string> const&,
-    ::std::string_view,
-    ::std::vector<::cricket::StreamParams>*,
-    int
+    ::std::vector<::webrtc::SsrcInfo> const& ssrc_infos,
+    ::std::vector<::std::string> const&      msid_stream_ids,
+    ::std::string_view                       msid_track_id,
+    ::std::vector<::cricket::StreamParams>*  tracks,
+    int                                      msid_signaling
 );
 
-MCNAPI ::cricket::Codec GetCodecWithPayloadType(::cricket::MediaType, ::std::vector<::cricket::Codec> const&, int);
+MCNAPI ::cricket::Codec
+GetCodecWithPayloadType(::cricket::MediaType type, ::std::vector<::cricket::Codec> const& codecs, int payload_type);
 
-MCNAPI bool GetDtmfCode(char, int*);
+MCNAPI bool GetDtmfCode(char tone, int* code);
 
-MCNAPI ::std::string GetLegacyCandidateTypeName(::cricket::Candidate const&);
+MCNAPI ::std::string GetLegacyCandidateTypeName(::cricket::Candidate const& c);
 
-MCNAPI void GetMediaStreamIds(::cricket::ContentInfo const*, ::std::set<::std::string>*);
+MCNAPI void GetMediaStreamIds(::cricket::ContentInfo const* content, ::std::set<::std::string>* labels);
 
-MCNAPI bool GetMinValue(::std::vector<int> const&, int*);
+MCNAPI bool GetMinValue(::std::vector<int> const& values, int* value);
 
-MCNAPI bool GetParameter(::std::string const&, ::std::map<::std::string, ::std::string> const&, int*);
+MCNAPI bool GetParameter(::std::string const& name, ::std::map<::std::string, ::std::string> const& params, int* value);
 
-MCNAPI uint64 GetRightAlign(uint64, uint64);
+MCNAPI uint64 GetRightAlign(uint64 start_pos, uint64 alignment);
 
-MCNAPI ::std::vector<::std::string const*> GetStatsReferencedIds(::webrtc::RTCStats const&);
+MCNAPI ::std::vector<::std::string const*> GetStatsReferencedIds(::webrtc::RTCStats const& stats);
 
 MCNAPI void H264GenerateProfileLevelIdForAnswer(
-    ::std::map<::std::string, ::std::string> const&,
-    ::std::map<::std::string, ::std::string> const&,
-    ::std::map<::std::string, ::std::string>*
+    ::std::map<::std::string, ::std::string> const& local_supported_params,
+    ::std::map<::std::string, ::std::string> const& remote_offered_params,
+    ::std::map<::std::string, ::std::string>*       answer_params
 );
 
-MCNAPI bool
-H264IsSameProfile(::std::map<::std::string, ::std::string> const&, ::std::map<::std::string, ::std::string> const&);
+MCNAPI bool H264IsSameProfile(
+    ::std::map<::std::string, ::std::string> const& params1,
+    ::std::map<::std::string, ::std::string> const& params2
+);
 
-MCNAPI ::std::optional<::std::string> H264ProfileLevelIdToString(::webrtc::H264ProfileLevelId const&);
+MCNAPI ::std::optional<::std::string> H264ProfileLevelIdToString(::webrtc::H264ProfileLevelId const& profile_level_id);
 
-MCNAPI bool HasDuplicateMsidLines(::cricket::SessionDescription*);
+MCNAPI bool HasDuplicateMsidLines(::cricket::SessionDescription* desc);
 
-MCNAPI char const* IceCandidateTypeToStatsType(::cricket::Candidate const&);
+MCNAPI char const* IceCandidateTypeToStatsType(::cricket::Candidate const& candidate);
 
-MCNAPI ::std::string_view IceCandidateTypeToString(::webrtc::IceCandidateType);
+MCNAPI ::std::string_view IceCandidateTypeToString(::webrtc::IceCandidateType type);
 
 MCNAPI ::webrtc::RTCError
-InvokeSetParametersCallback(::absl::AnyInvocable<void(::webrtc::RTCError) &&>&, ::webrtc::RTCError);
+InvokeSetParametersCallback(::absl::AnyInvocable<void(::webrtc::RTCError) &&>& callback, ::webrtc::RTCError error);
 
-MCNAPI bool IsFmtpParam(::std::string_view);
+MCNAPI bool IsFmtpParam(::std::string_view name);
 
-MCNAPI bool IsLegalRsidName(::std::string_view);
+MCNAPI bool IsLegalRsidName(::std::string_view name);
 
-MCNAPI bool IsMandatoryHeaderExtension(::std::string const&);
+MCNAPI bool IsMandatoryHeaderExtension(::std::string const& uri);
 
-MCNAPI bool IsNewerSequenceNumber(ushort, ushort);
+MCNAPI bool IsNewerSequenceNumber(ushort sequence_number, ushort prev_sequence_number);
 
-MCNAPI bool IsOpenMessage(::rtc::CopyOnWriteBuffer const&);
+MCNAPI bool IsOpenMessage(::rtc::CopyOnWriteBuffer const& payload);
 
-MCNAPI bool IsRtcpPacket(::rtc::ArrayView<uchar const>);
+MCNAPI bool IsRtcpPacket(::rtc::ArrayView<uchar const> packet);
 
-MCNAPI bool IsRtpPacket(::rtc::ArrayView<uchar const>);
+MCNAPI bool IsRtpPacket(::rtc::ArrayView<uchar const> packet);
 
-MCNAPI bool IsTokenChar(char);
+MCNAPI bool IsTokenChar(char ch);
 
-MCNAPI int Leb128Size(uint64);
+MCNAPI int Leb128Size(uint64 value);
 
-MCNAPI void MaybeCreateStaticPayloadAudioCodecs(::std::vector<int> const&, ::cricket::MediaContentDescription*);
+MCNAPI void
+MaybeCreateStaticPayloadAudioCodecs(::std::vector<int> const& fmts, ::cricket::MediaContentDescription* media_desc);
 
-MCNAPI bool ParseCandidate(::std::string_view, ::cricket::Candidate*, ::webrtc::SdpParseError*, bool);
-
-MCNAPI bool ParseConnectionData(::std::string_view, ::rtc::SocketAddress*, ::webrtc::SdpParseError*);
-
-MCNAPI bool ParseDataChannelOpenAckMessage(::rtc::CopyOnWriteBuffer const&);
-
-MCNAPI bool ParseDataChannelOpenMessage(::rtc::CopyOnWriteBuffer const&, ::std::string*, ::webrtc::DataChannelInit*);
-
-MCNAPI void ParseFieldTrial(::std::initializer_list<::webrtc::FieldTrialParameterInterface*>, ::std::string_view);
-
-MCNAPI ::std::optional<::webrtc::H264ProfileLevelId> ParseH264ProfileLevelId(char const*);
-
-MCNAPI ::webrtc::RTCError ParseIceServersOrError(
-    ::std::vector<::webrtc::PeerConnectionInterface::IceServer> const&,
-    ::std::set<::rtc::SocketAddress>*,
-    ::std::vector<::cricket::RelayServerConfig>*
+MCNAPI bool ParseCandidate(
+    ::std::string_view       message,
+    ::cricket::Candidate*    candidate,
+    ::webrtc::SdpParseError* error,
+    bool                     is_raw
 );
 
-MCNAPI ushort ParseRtpSequenceNumber(::rtc::ArrayView<uchar const>);
+MCNAPI bool ParseConnectionData(::std::string_view line, ::rtc::SocketAddress* addr, ::webrtc::SdpParseError* error);
 
-MCNAPI uint ParseRtpSsrc(::rtc::ArrayView<uchar const>);
+MCNAPI bool ParseDataChannelOpenAckMessage(::rtc::CopyOnWriteBuffer const& payload);
 
-MCNAPI bool ParseSctpMaxMessageSize(::std::string_view, int*, ::webrtc::SdpParseError*);
+MCNAPI bool ParseDataChannelOpenMessage(
+    ::rtc::CopyOnWriteBuffer const& payload,
+    ::std::string*                  label,
+    ::webrtc::DataChannelInit*      config
+);
 
-MCNAPI bool ParseSctpPort(::std::string_view, int*, ::webrtc::SdpParseError*);
+MCNAPI void ParseFieldTrial(
+    ::std::initializer_list<::webrtc::FieldTrialParameterInterface*> fields,
+    ::std::string_view                                               trial_string
+);
 
-MCNAPI ::std::optional<::webrtc::AV1Profile> ParseSdpForAV1Profile(::std::map<::std::string, ::std::string> const&);
+MCNAPI ::std::optional<::webrtc::H264ProfileLevelId> ParseH264ProfileLevelId(char const* str);
+
+MCNAPI ::webrtc::RTCError ParseIceServersOrError(
+    ::std::vector<::webrtc::PeerConnectionInterface::IceServer> const& servers,
+    ::std::set<::rtc::SocketAddress>*                                  stun_servers,
+    ::std::vector<::cricket::RelayServerConfig>*                       turn_servers
+);
+
+MCNAPI ushort ParseRtpSequenceNumber(::rtc::ArrayView<uchar const> rtp_packet);
+
+MCNAPI uint ParseRtpSsrc(::rtc::ArrayView<uchar const> rtp_packet);
+
+MCNAPI bool ParseSctpMaxMessageSize(::std::string_view line, int* max_message_size, ::webrtc::SdpParseError* error);
+
+MCNAPI bool ParseSctpPort(::std::string_view line, int* sctp_port, ::webrtc::SdpParseError* error);
+
+MCNAPI ::std::optional<::webrtc::AV1Profile>
+ParseSdpForAV1Profile(::std::map<::std::string, ::std::string> const& params);
 
 MCNAPI ::std::optional<::webrtc::H264ProfileLevelId>
-ParseSdpForH264ProfileLevelId(::std::map<::std::string, ::std::string> const&);
+ParseSdpForH264ProfileLevelId(::std::map<::std::string, ::std::string> const& params);
 
-MCNAPI ::std::optional<::webrtc::VP9Profile> ParseSdpForVP9Profile(::std::map<::std::string, ::std::string> const&);
+MCNAPI ::std::optional<::webrtc::VP9Profile>
+ParseSdpForVP9Profile(::std::map<::std::string, ::std::string> const& params);
 
-MCNAPI ::webrtc::VideoCodecType PayloadStringToCodecType(::std::string const&);
+MCNAPI ::webrtc::VideoCodecType PayloadStringToCodecType(::std::string const& name);
 
-MCNAPI ::std::optional<::cricket::Codec> PopWildcardCodec(::std::vector<::cricket::Codec>*);
+MCNAPI ::std::optional<::cricket::Codec> PopWildcardCodec(::std::vector<::cricket::Codec>* codecs);
 
-MCNAPI int ResolveHostname(::std::string_view, int, ::std::vector<::rtc::IPAddress>&);
+MCNAPI int ResolveHostname(::std::string_view hostname, int family, ::std::vector<::rtc::IPAddress>& addresses);
 
-MCNAPI ::std::vector<uchar> RtpDescriptorAuthentication(::webrtc::RTPVideoHeader const&);
+MCNAPI ::std::vector<uchar> RtpDescriptorAuthentication(::webrtc::RTPVideoHeader const& rtp_video_header);
 
-MCNAPI int
-RtpHeaderExtensionSize(::rtc::ArrayView<::webrtc::RtpExtensionSize const>, ::webrtc::RtpHeaderExtensionMap const&);
+MCNAPI int RtpHeaderExtensionSize(
+    ::rtc::ArrayView<::webrtc::RtpExtensionSize const> extensions,
+    ::webrtc::RtpHeaderExtensionMap const&             registered_extensions
+);
 
-MCNAPI ::webrtc::RtpTransceiverDirection RtpTransceiverDirectionFromSendRecv(bool, bool);
+MCNAPI ::webrtc::RtpTransceiverDirection RtpTransceiverDirectionFromSendRecv(bool send, bool recv);
 
-MCNAPI bool RtpTransceiverDirectionHasRecv(::webrtc::RtpTransceiverDirection);
+MCNAPI bool RtpTransceiverDirectionHasRecv(::webrtc::RtpTransceiverDirection direction);
 
-MCNAPI bool RtpTransceiverDirectionHasSend(::webrtc::RtpTransceiverDirection);
+MCNAPI bool RtpTransceiverDirectionHasSend(::webrtc::RtpTransceiverDirection direction);
 
 MCNAPI ::webrtc::RtpTransceiverDirection
-    RtpTransceiverDirectionIntersection(::webrtc::RtpTransceiverDirection, ::webrtc::RtpTransceiverDirection);
+RtpTransceiverDirectionIntersection(::webrtc::RtpTransceiverDirection lhs, ::webrtc::RtpTransceiverDirection rhs);
 
-MCNAPI ::webrtc::RtpTransceiverDirection RtpTransceiverDirectionReversed(::webrtc::RtpTransceiverDirection);
+MCNAPI ::webrtc::RtpTransceiverDirection RtpTransceiverDirectionReversed(::webrtc::RtpTransceiverDirection direction);
 
-MCNAPI char const* RtpTransceiverDirectionToString(::webrtc::RtpTransceiverDirection);
+MCNAPI char const* RtpTransceiverDirectionToString(::webrtc::RtpTransceiverDirection direction);
 
-MCNAPI ::webrtc::RtpTransceiverDirection RtpTransceiverDirectionWithRecvSet(::webrtc::RtpTransceiverDirection, bool);
+MCNAPI ::webrtc::RtpTransceiverDirection
+RtpTransceiverDirectionWithRecvSet(::webrtc::RtpTransceiverDirection direction, bool recv);
 
 MCNAPI ::absl::AnyInvocable<void() &&>
 SafeTask(::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> flag, ::absl::AnyInvocable<void() &&> task);
 
-MCNAPI ::std::string_view ScalabilityModeToString(::webrtc::ScalabilityMode);
+MCNAPI ::std::string_view ScalabilityModeToString(::webrtc::ScalabilityMode scalability_mode);
 
-MCNAPI bool SdpDeserialize(::std::string_view, ::webrtc::JsepSessionDescription*, ::webrtc::SdpParseError*);
+MCNAPI bool
+SdpDeserialize(::std::string_view message, ::webrtc::JsepSessionDescription* jdesc, ::webrtc::SdpParseError* error);
 
-MCNAPI bool SdpDeserializeCandidate(::std::string_view, ::webrtc::JsepIceCandidate*, ::webrtc::SdpParseError*);
+MCNAPI bool SdpDeserializeCandidate(
+    ::std::string_view          message,
+    ::webrtc::JsepIceCandidate* jcandidate,
+    ::webrtc::SdpParseError*    error
+);
 
-MCNAPI ::std::string SdpSerialize(::webrtc::JsepSessionDescription const&);
+MCNAPI ::std::string SdpSerialize(::webrtc::JsepSessionDescription const& jdesc);
 
-MCNAPI ::std::string SdpSerializeCandidate(::cricket::Candidate const&);
+MCNAPI ::std::string SdpSerializeCandidate(::cricket::Candidate const& candidate);
 
-MCNAPI ::std::string SdpSerializeCandidate(::webrtc::IceCandidateInterface const&);
+MCNAPI ::std::string SdpSerializeCandidate(::webrtc::IceCandidateInterface const& candidate);
 
-MCNAPI ::std::optional<::webrtc::SdpType> SdpTypeFromString(::std::string const&);
+MCNAPI ::std::optional<::webrtc::SdpType> SdpTypeFromString(::std::string const& type_str);
 
-MCNAPI char const* SdpTypeToString(::webrtc::SdpType);
+MCNAPI char const* SdpTypeToString(::webrtc::SdpType type);
 
-MCNAPI ::std::optional<::webrtc::AV1Profile> StringToAV1Profile(::std::string_view);
+MCNAPI ::std::optional<::webrtc::AV1Profile> StringToAV1Profile(::std::string_view str);
 
-MCNAPI ::std::optional<::webrtc::VP9Profile> StringToVP9Profile(::std::string const&);
+MCNAPI ::std::optional<::webrtc::VP9Profile> StringToVP9Profile(::std::string const& str);
 
 MCNAPI ::webrtc::scoped_refptr<::webrtc::RTCStatsReport>
-TakeReferencedStats(::webrtc::scoped_refptr<::webrtc::RTCStatsReport>, ::std::vector<::std::string> const&);
+TakeReferencedStats(::webrtc::scoped_refptr<::webrtc::RTCStatsReport> report, ::std::vector<::std::string> const& ids);
 
-MCNAPI ::std::optional<::webrtc::RtcpFeedback> ToRtcpFeedback(::cricket::FeedbackParam const&);
+MCNAPI ::std::optional<::webrtc::RtcpFeedback> ToRtcpFeedback(::cricket::FeedbackParam const& cricket_feedback);
 
-MCNAPI ::webrtc::RtpCapabilities
-ToRtpCapabilities(::std::vector<::cricket::Codec> const&, ::std::vector<::webrtc::RtpExtension> const&);
+MCNAPI ::webrtc::RtpCapabilities ToRtpCapabilities(
+    ::std::vector<::cricket::Codec> const&       cricket_codecs,
+    ::std::vector<::webrtc::RtpExtension> const& cricket_extensions
+);
 
-MCNAPI ::webrtc::RtpCodecCapability ToRtpCodecCapability(::cricket::Codec const&);
+MCNAPI ::webrtc::RtpCodecCapability ToRtpCodecCapability(::cricket::Codec const& cricket_codec);
 
-MCNAPI ::std::string_view ToString(::webrtc::RTCErrorType);
+MCNAPI ::std::string_view ToString(::webrtc::RTCErrorType error);
 
-MCNAPI ::std::string ToString(::webrtc::DataRate);
+MCNAPI ::std::string ToString(::webrtc::DataRate value);
 
-MCNAPI ::std::string ToString(::webrtc::TimeDelta);
+MCNAPI ::std::string ToString(::webrtc::TimeDelta value);
 
-MCNAPI ::std::string ToString(::webrtc::DataSize);
+MCNAPI ::std::string ToString(::webrtc::DataSize value);
 
 MCNAPI ::std::string ToString(::webrtc::Timestamp);
 
-MCNAPI bool UnimplementedRtpParameterHasValue(::webrtc::RtpParameters const&);
+MCNAPI bool UnimplementedRtpParameterHasValue(::webrtc::RtpParameters const& parameters);
 
-MCNAPI void UpdateCodec(::cricket::MediaContentDescription*, int, ::std::map<::std::string, ::std::string> const&);
+MCNAPI void UpdateCodec(
+    ::cricket::MediaContentDescription* content_desc,
+    int                                 payload_type,
+    ::cricket::FeedbackParam const&     feedback_param
+);
 
-MCNAPI void UpdateCodec(::cricket::MediaContentDescription*, int, ::cricket::FeedbackParam const&);
+MCNAPI void UpdateCodec(
+    ::cricket::MediaContentDescription*             content_desc,
+    int                                             payload_type,
+    ::std::map<::std::string, ::std::string> const& parameters
+);
 
-MCNAPI void UpdateCodec(int, ::std::string_view, ::cricket::MediaContentDescription*);
+MCNAPI void UpdateCodec(int payload_type, ::std::string_view name, ::cricket::MediaContentDescription* desc);
 
-MCNAPI void UpdateCodec(int, ::std::string_view, int, int, uint64, ::cricket::MediaContentDescription*);
+MCNAPI void UpdateCodec(
+    int                                 payload_type,
+    ::std::string_view                  name,
+    int                                 clockrate,
+    int                                 bitrate,
+    uint64                              channels,
+    ::cricket::MediaContentDescription* desc
+);
 
-MCNAPI void UpdateFromWildcardCodecs(::cricket::MediaContentDescription*);
+MCNAPI void UpdateFromWildcardCodecs(::cricket::MediaContentDescription* desc);
 
-MCNAPI void
-UpdateRtpHeaderExtensionPreferencesFromSdpMunging(::cricket::SessionDescription const*, ::webrtc::TransceiverList*);
+MCNAPI void UpdateRtpHeaderExtensionPreferencesFromSdpMunging(
+    ::cricket::SessionDescription const* description,
+    ::webrtc::TransceiverList*           transceivers
+);
 
-MCNAPI void UpdateVideoCodecPacketization(::cricket::MediaContentDescription*, int, ::std::string_view);
+MCNAPI void UpdateVideoCodecPacketization(
+    ::cricket::MediaContentDescription* desc,
+    int                                 payload_type,
+    ::std::string_view                  packetization
+);
 
-MCNAPI bool
-VP9IsSameProfile(::std::map<::std::string, ::std::string> const&, ::std::map<::std::string, ::std::string> const&);
+MCNAPI bool VP9IsSameProfile(
+    ::std::map<::std::string, ::std::string> const& params1,
+    ::std::map<::std::string, ::std::string> const& params2
+);
 
-MCNAPI bool ValidAlignment(uint64);
+MCNAPI bool ValidAlignment(uint64 alignment);
 
-MCNAPI void WriteDataChannelOpenAckMessage(::rtc::CopyOnWriteBuffer*);
+MCNAPI void WriteDataChannelOpenAckMessage(::rtc::CopyOnWriteBuffer* payload);
 
 MCNAPI bool WriteDataChannelOpenMessage(
-    ::std::string const&,
-    ::std::string const&,
-    ::std::optional<::webrtc::Priority>,
-    bool,
-    ::std::optional<int>,
-    ::std::optional<int>,
-    ::rtc::CopyOnWriteBuffer*
+    ::std::string const&                label,
+    ::std::string const&                protocol,
+    ::std::optional<::webrtc::Priority> opt_priority,
+    bool                                ordered,
+    ::std::optional<int>                max_retransmits,
+    ::std::optional<int>                max_retransmit_time,
+    ::rtc::CopyOnWriteBuffer*           payload
 );
 
-MCNAPI void WriteFmtpHeader(int, ::rtc::StringBuilder*);
+MCNAPI void WriteFmtpHeader(int payload_type, ::rtc::StringBuilder* os);
 
-MCNAPI void WriteFmtpParameter(::std::string_view, ::std::string_view, ::rtc::StringBuilder*);
+MCNAPI void
+WriteFmtpParameter(::std::string_view parameter_name, ::std::string_view parameter_value, ::rtc::StringBuilder* os);
 
-MCNAPI bool WriteFmtpParameters(::std::map<::std::string, ::std::string> const&, ::rtc::StringBuilder*);
+MCNAPI bool WriteFmtpParameters(::std::map<::std::string, ::std::string> const& parameters, ::rtc::StringBuilder* os);
 
-MCNAPI int WriteLeb128(uint64, uchar*);
+MCNAPI int WriteLeb128(uint64 value, uchar* buffer);
 
-MCNAPI void WritePacketizationHeader(int, ::rtc::StringBuilder*);
+MCNAPI void WritePacketizationHeader(int payload_type, ::rtc::StringBuilder* os);
 
-MCNAPI void WriteRtcpFbHeader(int, ::rtc::StringBuilder*);
+MCNAPI void WriteRtcpFbHeader(int payload_type, ::rtc::StringBuilder* os);
 
-MCNAPI bool operator!=(::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const&, nullptr_t);
+MCNAPI bool operator!=(::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const& a, nullptr_t);
 
-MCNAPI bool operator!=(::webrtc::scoped_refptr<::rtc::RTCCertificate> const&, nullptr_t);
+MCNAPI bool operator!=(::webrtc::scoped_refptr<::rtc::RTCCertificate> const& a, nullptr_t);
 
-MCNAPI bool operator!=(::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> const&, nullptr_t);
+MCNAPI bool operator!=(::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> const& a, nullptr_t);
 
 MCNAPI bool operator<(
-    ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>> const&,
-    ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>> const&
+    ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>> const& a,
+    ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>> const& b
+);
+
+MCNAPI bool operator==(::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const& a, nullptr_t);
+
+MCNAPI bool operator==(::webrtc::scoped_refptr<::rtc::RTCCertificate> const& a, nullptr_t);
+
+MCNAPI bool operator==(::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> const& a, nullptr_t);
+
+MCNAPI bool operator==(
+    ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> const& a,
+    ::webrtc::MediaStreamTrackInterface const*                          b
 );
 
 MCNAPI bool operator==(
-    ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> const&,
-    ::webrtc::MediaStreamTrackInterface const*
+    ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> const& a,
+    ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> const& b
 );
 
 MCNAPI bool operator==(
-    ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> const&,
-    ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> const&
+    ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>> const& a,
+    ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>> const& b
 );
 
 MCNAPI bool operator==(
-    ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>> const&,
-    ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>> const&
+    ::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>> const& a,
+    ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> const&                                      b
 );
 
 MCNAPI bool operator==(
-    ::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>> const&,
-    ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> const&
+    ::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>> const& a,
+    ::webrtc::RtpSenderInterface const*                                                               b
 );
 
 MCNAPI bool operator==(
-    ::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>> const&,
-    ::webrtc::RtpSenderInterface const*
+    ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>> const& a,
+    ::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface> const&                                        b
 );
 
 MCNAPI bool operator==(
-    ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>> const&,
-    ::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface> const&
+    ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>> const& a,
+    ::webrtc::RtpReceiverInterface const*                                                                 b
 );
 
-MCNAPI bool operator==(::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const&, nullptr_t);
-
-MCNAPI bool operator==(::webrtc::scoped_refptr<::rtc::RTCCertificate> const&, nullptr_t);
-
 MCNAPI bool operator==(
-    ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>> const&,
-    ::webrtc::RtpReceiverInterface const*
-);
-
-MCNAPI bool operator==(::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> const&, nullptr_t);
-
-MCNAPI bool operator==(
-    ::webrtc::scoped_refptr<::rtc::RTCCertificate> const&,
-    ::webrtc::scoped_refptr<::rtc::RTCCertificate> const&
+    ::webrtc::scoped_refptr<::rtc::RTCCertificate> const& a,
+    ::webrtc::scoped_refptr<::rtc::RTCCertificate> const& b
 );
 // NOLINTEND
 

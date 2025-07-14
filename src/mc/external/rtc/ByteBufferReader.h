@@ -28,39 +28,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ByteBufferReader(::rtc::ByteBufferWriter const&);
+    MCNAPI explicit ByteBufferReader(::rtc::ByteBufferWriter const& buf);
 
-    MCNAPI explicit ByteBufferReader(::rtc::ArrayView<uchar const>);
+    MCNAPI explicit ByteBufferReader(::rtc::ArrayView<uchar const> bytes);
 
-    MCNAPI void Construct(uchar const*, uint64);
+    MCNAPI void Construct(uchar const* bytes, uint64 len);
 
-    MCNAPI bool Consume(uint64);
+    MCNAPI bool Consume(uint64 size);
 
-    MCNAPI bool ReadBytes(::rtc::ArrayView<uchar>);
+    MCNAPI bool ReadBytes(::rtc::ArrayView<uchar> val);
 
-    MCNAPI bool ReadBytes(uchar*, uint64);
+    MCNAPI bool ReadBytes(uchar* val, uint64 len);
 
-    MCNAPI bool ReadString(::std::string*, uint64);
+    MCNAPI bool ReadString(::std::string* val, uint64 len);
 
-    MCNAPI bool ReadStringView(::std::string_view*, uint64);
+    MCNAPI bool ReadStringView(::std::string_view* val, uint64 len);
 
-    MCNAPI bool ReadUInt16(ushort*);
+    MCNAPI bool ReadUInt16(ushort* val);
 
-    MCNAPI bool ReadUInt32(uint*);
+    MCNAPI bool ReadUInt32(uint* val);
 
-    MCNAPI bool ReadUInt64(uint64*);
+    MCNAPI bool ReadUInt64(uint64* val);
 
-    MCNAPI bool ReadUInt8(uchar*);
+    MCNAPI bool ReadUInt8(uchar* val);
 
-    MCNAPI bool ReadUVarint(uint64*);
+    MCNAPI bool ReadUVarint(uint64* val);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::rtc::ByteBufferWriter const&);
+    MCNAPI void* $ctor(::rtc::ByteBufferWriter const& buf);
 
-    MCNAPI void* $ctor(::rtc::ArrayView<uchar const>);
+    MCNAPI void* $ctor(::rtc::ArrayView<uchar const> bytes);
     // NOLINTEND
 };
 

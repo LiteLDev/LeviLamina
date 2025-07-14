@@ -13,6 +13,7 @@ enum class FailureReason : int {
     InvalidResponse         = 5,
     InvalidWorldName        = 6,
     Forbidden               = 7,
+    TimelineRequired        = 8,
 };
 
 }

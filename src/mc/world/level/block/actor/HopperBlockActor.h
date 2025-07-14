@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 8
+    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 1
@@ -53,7 +53,7 @@ public:
     // vIndex: 12
     virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
-    // vIndex: 27
+    // vIndex: 28
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 20
@@ -68,22 +68,22 @@ public:
     // vIndex: 23
     virtual void stopOpen(::Player& player) /*override*/;
 
-    // vIndex: 34
+    // vIndex: 35
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 33
+    // vIndex: 34
     virtual ::Container const* getContainer() const /*override*/;
 
     // vIndex: 34
     virtual void setContainerChanged(int slot) /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual void onRemoved(::BlockSource&) /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual void onNeighborChanged(::BlockSource& region, ::BlockPos const&) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual void onMove() /*override*/;
 
     // vIndex: 2
@@ -93,10 +93,10 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 46
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource&) /*override*/;
 
     // vIndex: 0

@@ -9,9 +9,22 @@ namespace cricket { class JsepTransport; }
 
 namespace webrtc {
 
-struct JsepTransportCollection {
+class JsepTransportCollection {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk1f4845;
+    ::ll::UntypedStorage<8, 16> mUnk77bd73;
+    ::ll::UntypedStorage<8, 16> mUnk30001c;
+    ::ll::UntypedStorage<8, 16> mUnkab9818;
+    ::ll::UntypedStorage<8, 64> mUnkafb72e;
+    ::ll::UntypedStorage<8, 64> mUnkb06921;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
+    JsepTransportCollection& operator=(JsepTransportCollection const&);
+    JsepTransportCollection(JsepTransportCollection const&);
     JsepTransportCollection();
 
 public:
@@ -27,32 +40,32 @@ public:
 
     MCNAPI ::cricket::JsepTransport const* GetTransportByName(::std::string const&) const;
 
-    MCNAPI ::cricket::JsepTransport* GetTransportByName(::std::string const&);
+    MCNAPI ::cricket::JsepTransport* GetTransportByName(::std::string const& transport_name);
 
-    MCNAPI ::cricket::JsepTransport const* GetTransportForMid(::std::string_view) const;
+    MCNAPI ::cricket::JsepTransport const* GetTransportForMid(::std::string_view mid) const;
 
     MCNAPI ::cricket::JsepTransport const* GetTransportForMid(::std::string const&) const;
 
-    MCNAPI ::cricket::JsepTransport* GetTransportForMid(::std::string const&);
+    MCNAPI ::cricket::JsepTransport* GetTransportForMid(::std::string const& mid);
 
     MCNAPI JsepTransportCollection(
-        ::std::function<bool(::std::string const&, ::cricket::JsepTransport*)>,
-        ::std::function<void()>
+        ::std::function<bool(::std::string const&, ::cricket::JsepTransport*)> map_change_callback,
+        ::std::function<void()>                                                state_change_callback
     );
 
-    MCNAPI void MaybeDestroyJsepTransport(::cricket::JsepTransport*);
+    MCNAPI void MaybeDestroyJsepTransport(::cricket::JsepTransport* transport);
 
-    MCNAPI void RegisterTransport(::std::string const&, ::std::unique_ptr<::cricket::JsepTransport>);
+    MCNAPI void RegisterTransport(::std::string const& mid, ::std::unique_ptr<::cricket::JsepTransport> transport);
 
-    MCNAPI void RemoveTransportForMid(::std::string const&);
+    MCNAPI void RemoveTransportForMid(::std::string const& mid);
 
     MCNAPI bool RollbackTransports();
 
-    MCNAPI bool SetTransportForMid(::std::string const&, ::cricket::JsepTransport*);
+    MCNAPI bool SetTransportForMid(::std::string const& mid, ::cricket::JsepTransport* jsep_transport);
 
-    MCNAPI bool TransportInUse(::cricket::JsepTransport*) const;
+    MCNAPI bool TransportInUse(::cricket::JsepTransport* jsep_transport) const;
 
-    MCNAPI bool TransportNeededForRollback(::cricket::JsepTransport*) const;
+    MCNAPI bool TransportNeededForRollback(::cricket::JsepTransport* jsep_transport) const;
 
     MCNAPI ::std::vector<::cricket::JsepTransport*> Transports();
 
@@ -62,7 +75,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::function<bool(::std::string const&, ::cricket::JsepTransport*)>, ::std::function<void()>);
+    MCNAPI void* $ctor(
+        ::std::function<bool(::std::string const&, ::cricket::JsepTransport*)> map_change_callback,
+        ::std::function<void()>                                                state_change_callback
+    );
     // NOLINTEND
 
 public:

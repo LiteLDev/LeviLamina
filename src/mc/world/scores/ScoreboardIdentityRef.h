@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/scores/PlayerScoreSetFunction.h"
 #include "mc/world/scores/ScoreboardId.h"
+#include "mc/world/scores/ScoreboardOperationResult.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -28,7 +29,8 @@ public:
     MCNAPI ::std::string const&
     getName(::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver) const;
 
-    MCNAPI bool modifyScoreInObjective(int& result, ::Objective& objective, int score, ::PlayerScoreSetFunction fn);
+    MCNAPI ::ScoreboardOperationResult
+    modifyScoreInObjective(int& result, ::Objective& objective, int score, ::PlayerScoreSetFunction fn);
 
     MCNAPI bool removeFromObjective(::Scoreboard& scoreboard, ::Objective& objective);
     // NOLINTEND

@@ -8,7 +8,7 @@
 
 namespace xbox::httpclient {
 
-struct Compression {
+class Compression {
 public:
     // static functions
     // NOLINTBEGIN

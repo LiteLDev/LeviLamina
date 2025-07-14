@@ -18,6 +18,12 @@ namespace webrtc {
 
 class RepeatingTaskHandle {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk1b6d7a;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     RepeatingTaskHandle& operator=(RepeatingTaskHandle const&);
     RepeatingTaskHandle(RepeatingTaskHandle const&);
@@ -39,12 +45,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::webrtc::RepeatingTaskHandle DelayedStart(
-        ::webrtc::TaskQueueBase*,
-        ::webrtc::TimeDelta,
-        ::absl::AnyInvocable<::webrtc::TimeDelta()>,
-        ::webrtc::TaskQueueBase::DelayPrecision,
-        ::webrtc::Clock*,
-        ::webrtc::Location const&
+        ::webrtc::TaskQueueBase*                    task_queue,
+        ::webrtc::TimeDelta                         first_delay,
+        ::absl::AnyInvocable<::webrtc::TimeDelta()> closure,
+        ::webrtc::TaskQueueBase::DelayPrecision     precision,
+        ::webrtc::Clock*                            clock,
+        ::webrtc::Location const&                   location
     );
     // NOLINTEND
 

@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorFilterGroup;
 class HealableComponent;
 class HealableDefinition;
 struct FeedItem;
@@ -30,8 +29,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<::ActorFilterGroup> getFilters() const;
-
     MCNAPI ::Scripting::Result_deprecated<bool> getForceUse() const;
 
     MCNAPI ::Scripting::Result_deprecated<::std::vector<::FeedItem>> getItems() const;

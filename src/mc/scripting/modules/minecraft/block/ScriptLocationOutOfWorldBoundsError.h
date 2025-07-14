@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Error.h"
+#include "mc/deps/scripting/runtime/BaseError.h"
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptLocationOutOfWorldBoundsError : public ::Scripting::Error {
+struct ScriptLocationOutOfWorldBoundsError : public ::Scripting::BaseError {
 public:
     // member functions
     // NOLINTBEGIN

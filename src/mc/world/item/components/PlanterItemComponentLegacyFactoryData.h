@@ -16,7 +16,7 @@ struct PlanterItemComponentLegacyFactoryData : public ::IItemComponentLegacyFact
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk818f9b;
+    ::ll::UntypedStorage<8, 32> mUnk41b279;
     ::ll::UntypedStorage<8, 24> mUnkd8bb46;
     // NOLINTEND
 

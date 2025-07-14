@@ -13,7 +13,7 @@ struct ScriptCameraDefaultOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk53b75f;
+    ::ll::UntypedStorage<4, 16> mUnkd3a885;
     // NOLINTEND
 
 public:

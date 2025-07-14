@@ -4,6 +4,11 @@
 
 namespace cricket {
 
-enum class IceTransportState : uint {};
+enum class IceTransportState : int {
+    Init       = 0,
+    Connecting = 1,
+    Completed  = 2,
+    Failed     = 3,
+};
 
 }

@@ -14,6 +14,13 @@ struct MolangScriptArg;
 
 class MolangVariableMap {
 public:
+    // MolangVariableMap inner types define
+    enum class MissingVariableHandling : int {
+        Error   = 0,
+        NoError = 1,
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<short>> mMapFromVariableIndexToVariableArrayOffset;
@@ -30,18 +37,15 @@ public:
     // NOLINTBEGIN
     MCAPI MolangVariableMap();
 
-    MCAPI MolangVariableMap(::MolangVariableMap&& rhs);
-
-    MCAPI ::MolangVariable const* _getMolangVariable(::MolangVariableIndex molangVariableIndex) const;
+    MCAPI MolangVariableMap(::MolangVariableMap&&);
 
     MCAPI ::MolangVariable* _getOrAddMolangVariable(::MolangVariableIndex molangVariableIndex);
 
-    MCAPI ::MolangVariable*
-    _getOrAddMolangVariable(uint64 const& variableNameHash, char const* variableName, bool allowSpecialCharacters);
-
     MCAPI ::MolangVariableMap& clear();
 
-    MCAPI ::MolangVariableMap& operator=(::MolangVariableMap&& rhs);
+    MCAPI ::MolangScriptArg const& getMolangVariable(uint64 variableNameHash, char const*) const;
+
+    MCAPI ::MolangVariableMap& operator=(::MolangVariableMap&&);
 
     MCAPI ::MolangVariableMap& operator=(::MolangVariableMap const& rhs);
 
@@ -65,7 +69,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::MolangVariableMap&& rhs);
+    MCAPI void* $ctor(::MolangVariableMap&&);
     // NOLINTEND
 
 public:

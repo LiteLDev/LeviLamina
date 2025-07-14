@@ -130,7 +130,7 @@ public:
     // vIndex: 6
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>>
-    onBeforePlayerGameModeChange(::Player const&, ::GameType, ::GameType) /*override*/;
+    onBeforePlayerGameModeChange(::Player const& player, ::GameType fromGameMode, ::GameType toGameMode) /*override*/;
 
     // vIndex: 2
     virtual void onBeforeWorldInitialize(
@@ -152,9 +152,9 @@ public:
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>>
     onBeforeWeatherChangedEvent(
-        ::ScriptModuleMinecraft::ScriptWeatherType,
-        ::ScriptModuleMinecraft::ScriptWeatherType,
-        int
+        ::ScriptModuleMinecraft::ScriptWeatherType previousWeatherType,
+        ::ScriptModuleMinecraft::ScriptWeatherType newWeatherType,
+        int                                        duration
     ) /*override*/;
     // NOLINTEND
 
@@ -232,6 +232,10 @@ public:
         ::PlayerInteractWithEntityBeforeEvent const& eventData
     );
 
+    MCNAPI ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>>
+    $onBeforePlayerGameModeChange(::Player const& player, ::GameType fromGameMode, ::GameType toGameMode);
+
     MCNAPI void $onBeforeWorldInitialize(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockComponentRegistry> const&
             blockComponentRegistry,
@@ -244,6 +248,14 @@ public:
     MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent>>
     $onBeforeEffectAddedEventSend(::ActorAddEffectEvent& actorEffectAddedEvent, ::Actor const& actor);
+
+    MCNAPI ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>>
+    $onBeforeWeatherChangedEvent(
+        ::ScriptModuleMinecraft::ScriptWeatherType previousWeatherType,
+        ::ScriptModuleMinecraft::ScriptWeatherType newWeatherType,
+        int                                        duration
+    );
     // NOLINTEND
 
 public:

@@ -6,6 +6,7 @@
 #include "mc/external/absl/AnyInvocable.h"
 #include "mc/external/cricket/CandidatePairInterface.h"
 #include "mc/external/cricket/IceCandidatePairState.h"
+#include "mc/external/cricket/StunRequest.h"
 #include "mc/external/rtc/WeakPtr.h"
 #include "mc/external/webrtc/IceCandidatePairConfigType.h"
 #include "mc/external/webrtc/IceCandidatePairEventType.h"
@@ -19,7 +20,6 @@ namespace cricket { class PortInterface; }
 namespace cricket { class StunAttribute; }
 namespace cricket { class StunByteStringAttribute; }
 namespace cricket { class StunMessage; }
-namespace cricket { class StunRequest; }
 namespace cricket { class StunRequestManager; }
 namespace cricket { class StunUInt64Attribute; }
 namespace cricket { struct ConnectionInfo; }
@@ -79,26 +79,73 @@ public:
         WriteTimeout    = 3,
     };
 
-    class ConnectionRequest {
+    class ConnectionRequest : public ::cricket::StunRequest {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk496778;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
+        ConnectionRequest& operator=(ConnectionRequest const&);
+        ConnectionRequest(ConnectionRequest const&);
         ConnectionRequest();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        // vIndex: 2
+        virtual void OnResponse(::cricket::StunMessage* response) /*override*/;
+
+        // vIndex: 3
+        virtual void OnErrorResponse(::cricket::StunMessage* response) /*override*/;
+
+        // vIndex: 5
+        virtual void OnTimeout() /*override*/;
+
+        // vIndex: 6
+        virtual void OnSent() /*override*/;
+
+        // vIndex: 7
+        virtual int resend_delay() /*override*/;
+
+        // vIndex: 0
+        virtual ~ConnectionRequest() /*override*/ = default;
+        // NOLINTEND
 
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ConnectionRequest(
-            ::cricket::StunRequestManager&,
-            ::cricket::Connection*,
-            ::std::unique_ptr<::cricket::IceMessage>
+            ::cricket::StunRequestManager&           manager,
+            ::cricket::Connection*                   connection,
+            ::std::unique_ptr<::cricket::IceMessage> message
         );
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void*
-        $ctor(::cricket::StunRequestManager&, ::cricket::Connection*, ::std::unique_ptr<::cricket::IceMessage>);
+        MCNAPI void* $ctor(
+            ::cricket::StunRequestManager&           manager,
+            ::cricket::Connection*                   connection,
+            ::std::unique_ptr<::cricket::IceMessage> message
+        );
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCNAPI void $OnResponse(::cricket::StunMessage* response);
+
+        MCNAPI void $OnErrorResponse(::cricket::StunMessage* response);
+
+        MCNAPI void $OnTimeout();
+
+        MCNAPI void $OnSent();
+
+        MCNAPI int $resend_delay();
         // NOLINTEND
 
     public:
@@ -162,7 +209,7 @@ public:
     ::ll::UntypedStorage<8, 48>   mUnk61f319;
     ::ll::UntypedStorage<8, 72>   mUnk327e9d;
     ::ll::UntypedStorage<8, 72>   mUnke0cb71;
-    ::ll::UntypedStorage<1, 32>   mUnk412384;
+    ::ll::UntypedStorage<8, 32>   mUnk412384;
     // NOLINTEND
 
 public:
@@ -175,7 +222,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Connection() /*override*/ = default;
+    virtual ~Connection() /*override*/;
 
     // vIndex: 1
     virtual ::cricket::Candidate const& local_candidate() const /*override*/;
@@ -193,24 +240,28 @@ public:
     virtual uint64 priority() const;
 
     // vIndex: 6
-    virtual int Send(void const*, uint64, ::rtc::PacketOptions const&) = 0;
+    virtual int Send(void const* data, uint64 len, ::rtc::PacketOptions const& options) = 0;
 
     // vIndex: 7
     virtual int GetError() = 0;
 
     // vIndex: 8
-    virtual void OnConnectionRequestResponse(::cricket::StunRequest*, ::cricket::StunMessage*);
+    virtual void OnConnectionRequestResponse(::cricket::StunRequest* request, ::cricket::StunMessage* response);
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::cricket::IceMessage>
-        BuildPingRequest(::std::unique_ptr<::cricket::StunByteStringAttribute>);
+    BuildPingRequest(::std::unique_ptr<::cricket::StunByteStringAttribute> delta);
 
     MCNAPI uint ComputeNetworkCost() const;
 
-    MCNAPI Connection(::rtc::WeakPtr<::cricket::PortInterface>, uint64, ::cricket::Candidate const&);
+    MCNAPI Connection(
+        ::rtc::WeakPtr<::cricket::PortInterface> port,
+        uint64                                   index,
+        ::cricket::Candidate const&              remote_candidate
+    );
 
     MCNAPI void DeregisterReceivedPacketCallback();
 
@@ -220,62 +271,66 @@ public:
 
     MCNAPI void ForgetLearnedState();
 
-    MCNAPI void HandlePiggybackCheckAcknowledgementIfAny(::cricket::StunMessage*);
+    MCNAPI void HandlePiggybackCheckAcknowledgementIfAny(::cricket::StunMessage* msg);
 
-    MCNAPI void HandleStunBindingOrGoogPingRequest(::cricket::IceMessage*);
+    MCNAPI void HandleStunBindingOrGoogPingRequest(::cricket::IceMessage* msg);
 
-    MCNAPI void LogCandidatePairConfig(::webrtc::IceCandidatePairConfigType);
+    MCNAPI void LogCandidatePairConfig(::webrtc::IceCandidatePairConfigType type);
 
-    MCNAPI void LogCandidatePairEvent(::webrtc::IceCandidatePairEventType, uint);
+    MCNAPI void LogCandidatePairEvent(::webrtc::IceCandidatePairEventType type, uint transaction_id);
 
-    MCNAPI void MaybeSetRemoteIceParametersAndGeneration(::cricket::IceParameters const&, int);
+    MCNAPI void MaybeSetRemoteIceParametersAndGeneration(::cricket::IceParameters const& ice_params, int generation);
 
-    MCNAPI void MaybeUpdateLocalCandidate(::cricket::StunRequest*, ::cricket::StunMessage*);
+    MCNAPI void MaybeUpdateLocalCandidate(::cricket::StunRequest* request, ::cricket::StunMessage* response);
 
-    MCNAPI void MaybeUpdatePeerReflexiveCandidate(::cricket::Candidate const&);
+    MCNAPI void MaybeUpdatePeerReflexiveCandidate(::cricket::Candidate const& new_candidate);
 
-    MCNAPI void OnConnectionRequestErrorResponse(::cricket::Connection::ConnectionRequest*, ::cricket::StunMessage*);
+    MCNAPI void OnConnectionRequestErrorResponse(
+        ::cricket::Connection::ConnectionRequest* request,
+        ::cricket::StunMessage*                   response
+    );
 
-    MCNAPI void OnConnectionRequestSent(::cricket::Connection::ConnectionRequest*);
+    MCNAPI void OnConnectionRequestSent(::cricket::Connection::ConnectionRequest* request);
 
-    MCNAPI void OnConnectionRequestTimeout(::cricket::Connection::ConnectionRequest*);
+    MCNAPI void OnConnectionRequestTimeout(::cricket::Connection::ConnectionRequest* request);
 
-    MCNAPI void OnReadPacket(::rtc::ReceivedPacket const&);
+    MCNAPI void OnReadPacket(::rtc::ReceivedPacket const& packet);
 
     MCNAPI void OnReadyToSend();
 
-    MCNAPI void OnSendStunPacket(void const*, uint64, ::cricket::StunRequest*);
+    MCNAPI void OnSendStunPacket(void const* data, uint64 size, ::cricket::StunRequest* req);
 
-    MCNAPI void Ping(int64, ::std::unique_ptr<::cricket::StunByteStringAttribute>);
+    MCNAPI void Ping(int64 now, ::std::unique_ptr<::cricket::StunByteStringAttribute> delta);
 
-    MCNAPI void PrintPingsSinceLastResponse(::std::string*, uint64);
+    MCNAPI void PrintPingsSinceLastResponse(::std::string* s, uint64 max);
 
     MCNAPI void Prune();
 
-    MCNAPI void ReceivedPing(::std::optional<::std::string> const&);
+    MCNAPI void ReceivedPing(::std::optional<::std::string> const& request_id);
 
-    MCNAPI void ReceivedPingResponse(int, ::std::string_view, ::std::optional<uint> const&);
+    MCNAPI void ReceivedPingResponse(int rtt, ::std::string_view request_id, ::std::optional<uint> const& nomination);
 
     MCNAPI void RegisterReceivedPacketCallback(
-        ::absl::AnyInvocable<void(::cricket::Connection*, ::rtc::ReceivedPacket const&)>
+        ::absl::AnyInvocable<void(::cricket::Connection*, ::rtc::ReceivedPacket const&)> received_packet_callback
     );
 
-    MCNAPI void SendGoogPingResponse(::cricket::StunMessage const*);
+    MCNAPI void SendGoogPingResponse(::cricket::StunMessage const* message);
 
-    MCNAPI void SendResponseMessage(::cricket::StunMessage const&);
+    MCNAPI void SendResponseMessage(::cricket::StunMessage const& response);
 
-    MCNAPI void SendStunBindingResponse(::cricket::StunMessage const*);
+    MCNAPI void SendStunBindingResponse(::cricket::StunMessage const* message);
 
-    MCNAPI void SetIceFieldTrials(::cricket::IceFieldTrials const*);
+    MCNAPI void SetIceFieldTrials(::cricket::IceFieldTrials const* field_trials);
 
-    MCNAPI void SetLocalCandidateNetworkCost(ushort);
+    MCNAPI void SetLocalCandidateNetworkCost(ushort cost);
 
     MCNAPI void SetStunDictConsumer(
-        ::std::function<::std::unique_ptr<::cricket::StunAttribute>(::cricket::StunByteStringAttribute const*)>,
-        ::std::function<void(::webrtc::RTCErrorOr<::cricket::StunUInt64Attribute const*>)>
+        ::std::function<::std::unique_ptr<::cricket::StunAttribute>(::cricket::StunByteStringAttribute const*)>
+                                                                                           goog_delta_consumer,
+        ::std::function<void(::webrtc::RTCErrorOr<::cricket::StunUInt64Attribute const*>)> goog_delta_ack_consumer
     );
 
-    MCNAPI bool ShouldSendGoogPing(::cricket::StunMessage const*);
+    MCNAPI bool ShouldSendGoogPing(::cricket::StunMessage const* message);
 
     MCNAPI bool Shutdown();
 
@@ -285,13 +340,14 @@ public:
 
     MCNAPI ::std::string ToString() const;
 
-    MCNAPI bool TooManyOutstandingPings(::std::optional<int> const&) const;
+    MCNAPI bool TooManyOutstandingPings(::std::optional<int> const& max_outstanding_pings) const;
 
-    MCNAPI void UpdateLocalIceParameters(int, ::std::string_view, ::std::string_view);
+    MCNAPI void
+    UpdateLocalIceParameters(int component, ::std::string_view username_fragment, ::std::string_view password);
 
-    MCNAPI void UpdateReceiving(int64);
+    MCNAPI void UpdateReceiving(int64 now);
 
-    MCNAPI void UpdateState(int64);
+    MCNAPI void UpdateState(int64 now);
 
     MCNAPI uint acked_nomination() const;
 
@@ -299,7 +355,7 @@ public:
 
     MCNAPI bool connected() const;
 
-    MCNAPI bool dead(int64) const;
+    MCNAPI bool dead(int64 now) const;
 
     MCNAPI int inactive_timeout() const;
 
@@ -313,7 +369,7 @@ public:
 
     MCNAPI int64 last_received() const;
 
-    MCNAPI bool missing_responses(int64) const;
+    MCNAPI bool missing_responses(int64 now) const;
 
     MCNAPI ::webrtc::TaskQueueBase* network_thread() const;
 
@@ -339,31 +395,31 @@ public:
 
     MCNAPI int rtt_samples() const;
 
-    MCNAPI void set_connected(bool);
+    MCNAPI void set_connected(bool value);
 
-    MCNAPI void set_ice_event_log(::webrtc::IceEventLog*);
+    MCNAPI void set_ice_event_log(::webrtc::IceEventLog* ice_event_log);
 
-    MCNAPI void set_inactive_timeout(::std::optional<int> const&);
+    MCNAPI void set_inactive_timeout(::std::optional<int> const& value);
 
-    MCNAPI void set_nomination(uint);
+    MCNAPI void set_nomination(uint value);
 
-    MCNAPI void set_receiving_timeout(::std::optional<int>);
+    MCNAPI void set_receiving_timeout(::std::optional<int> receiving_timeout_ms);
 
-    MCNAPI void set_remote_nomination(uint);
+    MCNAPI void set_remote_nomination(uint remote_nomination);
 
-    MCNAPI void set_selected(bool);
+    MCNAPI void set_selected(bool selected);
 
-    MCNAPI void set_state(::cricket::IceCandidatePairState);
+    MCNAPI void set_state(::cricket::IceCandidatePairState state);
 
-    MCNAPI void set_unwritable_min_checks(::std::optional<int> const&);
+    MCNAPI void set_unwritable_min_checks(::std::optional<int> const& value);
 
-    MCNAPI void set_unwritable_timeout(::std::optional<int> const&);
+    MCNAPI void set_unwritable_timeout(::std::optional<int> const& value_ms);
 
-    MCNAPI void set_use_candidate_attr(bool);
+    MCNAPI void set_use_candidate_attr(bool enable);
 
-    MCNAPI void set_write_state(::cricket::Connection::WriteState);
+    MCNAPI void set_write_state(::cricket::Connection::WriteState value);
 
-    MCNAPI bool stable(int64) const;
+    MCNAPI bool stable(int64 now) const;
 
     MCNAPI ::cricket::IceCandidatePairState state() const;
 
@@ -385,13 +441,30 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::rtc::WeakPtr<::cricket::PortInterface>, uint64, ::cricket::Candidate const&);
+    MCNAPI void*
+    $ctor(::rtc::WeakPtr<::cricket::PortInterface> port, uint64 index, ::cricket::Candidate const& remote_candidate);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::cricket::Candidate const& $local_candidate() const;
 
+    MCNAPI ::cricket::Candidate const& $remote_candidate() const;
+
+    MCNAPI ::rtc::Network const* $network() const;
+
+    MCNAPI int $generation() const;
+
+    MCNAPI uint64 $priority() const;
+
+    MCNAPI void $OnConnectionRequestResponse(::cricket::StunRequest* request, ::cricket::StunMessage* response);
     // NOLINTEND
 
 public:

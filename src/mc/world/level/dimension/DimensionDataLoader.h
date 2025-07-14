@@ -17,7 +17,7 @@ class DimensionDataLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 208> mUnk9d3a4b;
+    ::ll::UntypedStorage<8, 192> mUnk9d3a4b;
     // NOLINTEND
 
 public:

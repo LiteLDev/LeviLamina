@@ -42,56 +42,56 @@ public:
     // vIndex: 26
     virtual void initializeGraphicsDeviceTier() /*override*/;
 
-    // vIndex: 249
+    // vIndex: 248
     virtual ::Core::PathBuffer<::std::string> getPlatformTempPath() const /*override*/;
 
-    // vIndex: 66
+    // vIndex: 65
     virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath) /*override*/;
 
-    // vIndex: 177
+    // vIndex: 176
     virtual uint64 calculateAvailableDiskFreeSpace(::Core::Path const& rootPath) /*override*/;
 
-    // vIndex: 77
+    // vIndex: 76
     virtual bool allowContentLogWriteToDisk() /*override*/;
 
-    // vIndex: 180
+    // vIndex: 179
     virtual bool devHotReloadRenderResources() const /*override*/;
 
-    // vIndex: 79
+    // vIndex: 78
     virtual void queueForMainThread_DEPRECATED(::std::function<void()> callback) /*override*/;
 
-    // vIndex: 80
+    // vIndex: 79
     virtual ::MPMCQueue<::std::function<void()>>& getMainThreadQueue() /*override*/;
 
-    // vIndex: 213
+    // vIndex: 212
     virtual bool canAppSelfTerminate() const /*override*/;
 
-    // vIndex: 214
+    // vIndex: 213
     virtual bool getPlatformTTSExists() const /*override*/;
 
-    // vIndex: 215
+    // vIndex: 214
     virtual bool getPlatformTTSEnabled() const /*override*/;
 
-    // vIndex: 68
+    // vIndex: 67
     virtual void registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const
         /*override*/;
 
-    // vIndex: 237
+    // vIndex: 236
     virtual bool is24HourTimeFormat() const /*override*/;
 
-    // vIndex: 239
+    // vIndex: 238
     virtual ::Core::PathBuffer<::std::string> _getCurrentStoragePath() const /*override*/;
 
-    // vIndex: 240
+    // vIndex: 239
     virtual ::Core::PathBuffer<::std::string> _getExternalStoragePath() const /*override*/;
 
-    // vIndex: 241
+    // vIndex: 240
     virtual ::Core::PathBuffer<::std::string> _getInternalStoragePath() const /*override*/;
 
-    // vIndex: 242
+    // vIndex: 241
     virtual ::Core::PathBuffer<::std::string> _getUserdataPath() const /*override*/;
 
-    // vIndex: 46
+    // vIndex: 45
     virtual ::Core::PathBuffer<::std::string> getPackagedShaderCachePath() /*override*/;
 
     // vIndex: 0

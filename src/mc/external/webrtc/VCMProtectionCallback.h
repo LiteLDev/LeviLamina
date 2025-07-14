@@ -26,7 +26,13 @@ public:
     virtual void SetRetransmissionMode(int) = 0;
 
     // vIndex: 2
-    virtual ~VCMProtectionCallback() = default;
+    virtual ~VCMProtectionCallback();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

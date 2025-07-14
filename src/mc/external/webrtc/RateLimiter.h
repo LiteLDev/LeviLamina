@@ -11,17 +11,29 @@ namespace webrtc {
 
 class RateLimiter {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk2e9817;
+    ::ll::UntypedStorage<8, 40> mUnk74385f;
+    ::ll::UntypedStorage<8, 88> mUnkb52e97;
+    ::ll::UntypedStorage<8, 8>  mUnkf4354a;
+    ::ll::UntypedStorage<4, 4>  mUnk6b82f1;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    RateLimiter& operator=(RateLimiter const&);
+    RateLimiter(RateLimiter const&);
     RateLimiter();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RateLimiter(::webrtc::Clock*, int64);
+    MCNAPI RateLimiter(::webrtc::Clock* clock, int64 max_window_ms);
 
-    MCNAPI void SetMaxRate(uint);
+    MCNAPI void SetMaxRate(uint max_rate_bps);
 
-    MCNAPI bool TryUseRate(uint64);
+    MCNAPI bool TryUseRate(uint64 packet_size_bytes);
 
     MCNAPI ~RateLimiter();
     // NOLINTEND
@@ -29,7 +41,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::Clock*, int64);
+    MCNAPI void* $ctor(::webrtc::Clock* clock, int64 max_window_ms);
     // NOLINTEND
 
 public:

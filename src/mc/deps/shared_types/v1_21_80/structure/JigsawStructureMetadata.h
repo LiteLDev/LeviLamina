@@ -27,20 +27,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool operator==(::SharedTypes::v1_21_80::JigsawStructureMetadata const&) const;
-
-    MCNAPI ~JigsawStructureMetadata();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -118,6 +118,9 @@ public:
     virtual void debugRender();
 
     // vIndex: 46
+    virtual void propagateCombinedChunkSource(::ChunkSource*);
+
+    // vIndex: 47
     virtual void decorateWorldGenLoadChunk(
         ::Biome const&,
         ::LevelChunk&,
@@ -126,7 +129,7 @@ public:
         ::ChunkPos const&
     ) const = 0;
 
-    // vIndex: 47
+    // vIndex: 48
     virtual void decorateWorldGenPostProcess(::Biome const&, ::LevelChunk&, ::BlockSource&, ::Random&) const = 0;
     // NOLINTEND
 
@@ -198,6 +201,8 @@ public:
     MCAPI ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4>) const;
 
     MCFOLD void $debugRender();
+
+    MCFOLD void $propagateCombinedChunkSource(::ChunkSource*);
     // NOLINTEND
 
 public:

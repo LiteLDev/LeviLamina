@@ -12,7 +12,16 @@ namespace webrtc {
 
 class RateControlSettings {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnka68715;
+    ::ll::UntypedStorage<8, 48> mUnk765215;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    RateControlSettings& operator=(RateControlSettings const&);
+    RateControlSettings(RateControlSettings const&);
     RateControlSettings();
 
 public:
@@ -24,7 +33,7 @@ public:
 
     MCNAPI int64 GetCongestionWindowAdditionalTimeMs() const;
 
-    MCNAPI explicit RateControlSettings(::webrtc::FieldTrialsView const* const);
+    MCNAPI explicit RateControlSettings(::webrtc::FieldTrialsView const* const key_value_config);
 
     MCNAPI bool UseCongestionWindow() const;
 
@@ -38,13 +47,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::webrtc::RateControlSettings ParseFromKeyValueConfig(::webrtc::FieldTrialsView const* const);
+    MCNAPI static ::webrtc::RateControlSettings
+    ParseFromKeyValueConfig(::webrtc::FieldTrialsView const* const key_value_config);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::FieldTrialsView const* const);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const* const key_value_config);
     // NOLINTEND
 
 public:

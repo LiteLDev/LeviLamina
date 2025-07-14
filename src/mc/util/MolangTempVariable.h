@@ -27,22 +27,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MolangTempVariable(::HashedString const& value);
+    MCAPI explicit MolangTempVariable(::HashedString value);
 
     MCFOLD ::MolangTempVariable& operator=(::MolangTempVariable&&);
-
-    MCAPI ~MolangTempVariable();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::HashedString const& value);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::HashedString value);
     // NOLINTEND
 };

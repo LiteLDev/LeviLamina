@@ -7,6 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> MsaId;
+    ::ll::TypedStorage<8, 32, ::std::string> GuestId;
     ::ll::TypedStorage<8, 32, ::std::string> PlatformId;
     ::ll::TypedStorage<8, 32, ::std::string> PlatformOnlineId;
     ::ll::TypedStorage<8, 32, ::std::string> PlatformOfflineId;
@@ -15,9 +16,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PlayerStorageIds& operator=(PlayerStorageIds const&);
+    PlayerStorageIds(PlayerStorageIds const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI PlayerStorageIds();
+
+    MCNAPI ::PlayerStorageIds& operator=(::PlayerStorageIds&&);
 
     MCNAPI ~PlayerStorageIds();
     // NOLINTEND

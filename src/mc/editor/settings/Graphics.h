@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk705d9d;
-    ::ll::UntypedStorage<1, 4>  mUnk9a807a;
+    ::ll::UntypedStorage<1, 5>  mUnk9a807a;
     // NOLINTEND
 
 public:
@@ -25,21 +25,9 @@ public:
     Graphics();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit Graphics(::std::function<void(::Editor::Settings::GraphicsProps const&)> callback);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::function<void(::Editor::Settings::GraphicsProps const&)> callback);
     // NOLINTEND
 };
 

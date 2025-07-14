@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit WeakPtrBase(::rtc::internal::WeakReference const&);
+    MCNAPI explicit WeakPtrBase(::rtc::internal::WeakReference const& ref);
 
     MCNAPI ~WeakPtrBase();
     // NOLINTEND
@@ -33,7 +33,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::rtc::internal::WeakReference const&);
+    MCNAPI void* $ctor(::rtc::internal::WeakReference const& ref);
     // NOLINTEND
 
 public:

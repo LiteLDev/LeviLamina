@@ -25,7 +25,7 @@ public:
 
     MCNAPI RtcpParameters(::webrtc::RtcpParameters const&);
 
-    MCNAPI bool operator==(::webrtc::RtcpParameters const&) const;
+    MCNAPI bool operator==(::webrtc::RtcpParameters const& o) const;
 
     MCNAPI ~RtcpParameters();
     // NOLINTEND

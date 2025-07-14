@@ -3,10 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/puv/LoadResult.h"
 
 // auto generated forward declare list
 // clang-format off
+class LinkedAssetValidator;
 namespace Bedrock::Resources { class MinecraftDocumentInput; }
 namespace SharedTypes::v1_21_30 { struct TradeTableData; }
 namespace cereal { struct ReflectionCtx; }
@@ -16,7 +18,7 @@ class TradeTableDataLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 208> mUnk71be79;
+    ::ll::UntypedStorage<8, 192> mUnk91c026;
     // NOLINTEND
 
 public:
@@ -28,7 +30,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit TradeTableDataLoader(::cereal::ReflectionCtx const& ctx);
+    MCNAPI TradeTableDataLoader(
+        ::cereal::ReflectionCtx const&                     ctx,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+    );
 
     MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_30::TradeTableData>
     load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
@@ -39,7 +44,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
+    MCNAPI void*
+    $ctor(::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
     // NOLINTEND
 
 public:

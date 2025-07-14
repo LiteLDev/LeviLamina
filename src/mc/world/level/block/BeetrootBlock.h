@@ -20,7 +20,7 @@ class BeetrootBlock : public ::CropBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 150
+    // vIndex: 149
     virtual ::ItemInstance const getBaseSeed() const /*override*/;
 
     // vIndex: 117

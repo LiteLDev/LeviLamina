@@ -30,13 +30,13 @@ public:
     // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 47
+    // vIndex: 48
     virtual int getOutputSignal();
 
-    // vIndex: 48
+    // vIndex: 49
     virtual void setOutputSignal(int value);
 
     // vIndex: 0

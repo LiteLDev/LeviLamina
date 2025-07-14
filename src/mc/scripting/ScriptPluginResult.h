@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct PackIdVersion;
+namespace Scripting { struct ModuleDescriptor; }
+// clang-format on
+
 class ScriptPluginResult {
 public:
     // ScriptPluginResult inner types declare
@@ -141,6 +147,8 @@ public:
 
     MCNAPI ScriptPluginResult(::ScriptPluginResult&&);
 
+    MCNAPI ScriptPluginResult(::PackIdVersion packId, ::Scripting::ModuleDescriptor const& descriptor);
+
     MCNAPI void logError(::std::string const& error);
 
     MCNAPI void logErrors(::std::vector<::std::string> const& errors);
@@ -158,6 +166,8 @@ public:
     MCNAPI void* $ctor(::ScriptPluginResult const&);
 
     MCNAPI void* $ctor(::ScriptPluginResult&&);
+
+    MCNAPI void* $ctor(::PackIdVersion packId, ::Scripting::ModuleDescriptor const& descriptor);
     // NOLINTEND
 
 public:

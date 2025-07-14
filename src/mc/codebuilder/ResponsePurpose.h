@@ -13,7 +13,8 @@ enum class ResponsePurpose : uchar {
     ChatMessage       = 5,
     Data              = 6,
     EncryptConnection = 7,
-    Count             = 8,
+    Cloud             = 8,
+    Count             = 9,
 };
 
 }

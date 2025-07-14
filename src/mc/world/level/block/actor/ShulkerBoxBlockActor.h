@@ -35,13 +35,13 @@ public:
     // vIndex: 0
     virtual ~ShulkerBoxBlockActor() /*override*/ = default;
 
-    // vIndex: 27
+    // vIndex: 28
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 21
     virtual int getMaxStackSize() const /*override*/;
 
-    // vIndex: 12
+    // vIndex: 13
     virtual void onPlace(::BlockSource& region) /*override*/;
 
     // vIndex: 1
@@ -50,7 +50,7 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 32
@@ -62,22 +62,22 @@ public:
     // vIndex: 23
     virtual void stopOpen(::Player& player) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 46
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual void playOpenSound(::BlockSource& region) /*override*/;
 
-    // vIndex: 51
+    // vIndex: 52
     virtual void playCloseSound(::BlockSource& region) /*override*/;
 
-    // vIndex: 53
+    // vIndex: 54
     virtual ::AABB getObstructionAABB() const /*override*/;
 
-    // vIndex: 54
+    // vIndex: 55
     virtual bool _detectEntityObstruction(::BlockSource& region) const /*override*/;
     // NOLINTEND
 

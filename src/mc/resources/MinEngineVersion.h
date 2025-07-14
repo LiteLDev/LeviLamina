@@ -19,12 +19,13 @@ public:
 public:
     // prevent constructor by default
     MinEngineVersion& operator=(MinEngineVersion const&);
-    MinEngineVersion(MinEngineVersion const&);
     MinEngineVersion();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MinEngineVersion(::MinEngineVersion const&);
+
     MCAPI explicit MinEngineVersion(::SemVersion const& version);
 
     MCAPI ::MinEngineVersion& operator=(::MinEngineVersion&&);
@@ -41,6 +42,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::MinEngineVersion const&);
+
     MCAPI void* $ctor(::SemVersion const& version);
     // NOLINTEND
 

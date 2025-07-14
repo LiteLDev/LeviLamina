@@ -5,13 +5,6 @@
 // auto generated inclusion list
 #include "mc/certificates/UnverifiedCertificate.h"
 
-// auto generated forward declare list
-// clang-format off
-class PrivateKeyManager;
-class WebToken;
-namespace Json { class Value; }
-// clang-format on
-
 class Certificate {
 public:
     // member variables
@@ -38,34 +31,9 @@ public:
 
     MCNAPI int64 getNotBeforeDate() const;
 
-    MCNAPI bool isCertificateAuthority() const;
-
     MCNAPI bool validate(int64 currentTime, bool isSelfSigned, bool checkExpired);
 
     MCNAPI ~Certificate();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::WebToken> createWebToken(
-        ::PrivateKeyManager& signer,
-        int64                notBeforeDate,
-        int64                expirationDate,
-        ::std::string const& identityPublicKey,
-        bool                 isCertificateAuthority,
-        ::Json::Value const* extraData
-    );
-
-    MCNAPI static ::std::unique_ptr<::Certificate> createWrappedCertificate(
-        ::PrivateKeyManager&             signer,
-        int64                            notBeforeDate,
-        int64                            expirationDate,
-        ::std::string const&             identityPublicKey,
-        bool                             isCertificateAuthority,
-        ::Json::Value const*             extraData,
-        ::std::unique_ptr<::Certificate> parentCertificate
-    );
     // NOLINTEND
 
 public:

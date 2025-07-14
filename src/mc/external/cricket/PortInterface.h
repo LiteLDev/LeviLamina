@@ -53,7 +53,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PortInterface() = default;
+    virtual ~PortInterface();
 
     // vIndex: 1
     virtual ::webrtc::IceCandidateType Type() const = 0;
@@ -93,7 +93,7 @@ public:
     virtual int SetOption(::rtc::Socket::Option, int) = 0;
 
     // vIndex: 13
-    virtual int GetOption(::rtc::Socket::Option, int*) = 0;
+    virtual int GetOption(::rtc::Socket::Option opt, int* value) = 0;
 
     // vIndex: 14
     virtual int GetError() = 0;
@@ -145,7 +145,7 @@ public:
     virtual uint generation() const = 0;
 
     // vIndex: 30
-    virtual void set_generation(uint) = 0;
+    virtual void set_generation(uint generation) = 0;
 
     // vIndex: 31
     virtual bool send_retransmit_count_attribute() const = 0;
@@ -194,6 +194,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

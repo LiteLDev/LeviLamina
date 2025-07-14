@@ -37,19 +37,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ParticleProvider();
-
-    MCNAPI ~ParticleProvider();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

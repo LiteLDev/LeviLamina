@@ -9,6 +9,6 @@ class PlayerMovementSettingsComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 88, ::PlayerMovementSettings> mSettings;
+    ::ll::TypedStorage<8, 64, ::PlayerMovementSettings> mSettings;
     // NOLINTEND
 };

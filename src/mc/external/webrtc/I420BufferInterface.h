@@ -29,13 +29,27 @@ public:
     virtual ::webrtc::I420BufferInterface const* GetI420() const /*override*/;
 
     // vIndex: 2
-    virtual ~I420BufferInterface() /*override*/ = default;
+    virtual ~I420BufferInterface() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::webrtc::VideoFrameBuffer::Type $type() const;
 
+    MCNAPI int $ChromaWidth() const;
+
+    MCNAPI int $ChromaHeight() const;
+
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::I420BufferInterface> $ToI420();
+
+    MCNAPI ::webrtc::I420BufferInterface const* $GetI420() const;
     // NOLINTEND
 };
 

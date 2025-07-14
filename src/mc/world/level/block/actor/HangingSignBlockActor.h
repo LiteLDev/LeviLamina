@@ -19,7 +19,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 20
+    // vIndex: 21
     virtual float getShadowRadius(::BlockSource&) const /*override*/;
 
     // vIndex: 0

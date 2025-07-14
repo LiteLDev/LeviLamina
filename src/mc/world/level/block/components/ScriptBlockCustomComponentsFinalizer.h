@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockCustomComponentsComponent;
+class BlockLegacy;
+// clang-format on
+
 class ScriptBlockCustomComponentsFinalizer {
 public:
     // member variables
@@ -18,6 +24,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void
+    finalizeBlock(::BlockLegacy& block, ::std::vector<::gsl::not_null<::BlockCustomComponentsComponent*>>& customComps);
+
     MCNAPI ~ScriptBlockCustomComponentsFinalizer();
     // NOLINTEND
 

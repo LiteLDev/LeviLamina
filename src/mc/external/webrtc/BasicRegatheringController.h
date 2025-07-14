@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/sigslot/has_slots.h"
+#include "mc/external/sigslot/single_threaded.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cricket { class IceTransportInternal; }
@@ -12,7 +16,7 @@ namespace rtc { struct NetworkRoute; }
 
 namespace webrtc {
 
-class BasicRegatheringController {
+class BasicRegatheringController : public ::sigslot::has_slots<::sigslot::single_threaded> {
 public:
     // BasicRegatheringController inner types declare
     // clang-format off
@@ -20,19 +24,50 @@ public:
     // clang-format on
 
     // BasicRegatheringController inner types define
-    struct Config {};
+    struct Config {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk555f05;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Config& operator=(Config const&);
+        Config(Config const&);
+        Config();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkfa5fda;
+    ::ll::UntypedStorage<4, 4> mUnka21c63;
+    ::ll::UntypedStorage<8, 8> mUnk33ff0e;
+    ::ll::UntypedStorage<8, 8> mUnkf79c90;
+    ::ll::UntypedStorage<8, 8> mUnkb66aca;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
+    BasicRegatheringController& operator=(BasicRegatheringController const&);
+    BasicRegatheringController(BasicRegatheringController const&);
     BasicRegatheringController();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~BasicRegatheringController() /*override*/;
+    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI BasicRegatheringController(
-        ::webrtc::BasicRegatheringController::Config const&,
-        ::cricket::IceTransportInternal*,
-        ::rtc::Thread*
+        ::webrtc::BasicRegatheringController::Config const& config,
+        ::cricket::IceTransportInternal*                    ice_transport,
+        ::rtc::Thread*                                      thread
     );
 
     MCNAPI void OnIceTransportNetworkRouteChanged(::std::optional<::rtc::NetworkRoute>);
@@ -45,7 +80,7 @@ public:
 
     MCNAPI void ScheduleRecurringRegatheringOnFailedNetworks();
 
-    MCNAPI void SetConfig(::webrtc::BasicRegatheringController::Config const&);
+    MCNAPI void SetConfig(::webrtc::BasicRegatheringController::Config const& config);
 
     MCNAPI void Start();
     // NOLINTEND
@@ -53,8 +88,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::webrtc::BasicRegatheringController::Config const&, ::cricket::IceTransportInternal*, ::rtc::Thread*);
+    MCNAPI void* $ctor(
+        ::webrtc::BasicRegatheringController::Config const& config,
+        ::cricket::IceTransportInternal*                    ice_transport,
+        ::rtc::Thread*                                      thread
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

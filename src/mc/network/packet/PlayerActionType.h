@@ -40,7 +40,7 @@ enum class PlayerActionType : int {
     StopCrawling                    = 33,
     StartFlying                     = 34,
     StopFlying                      = 35,
-    ClientAckServerData             = 36,
+    DeprecatedClientAckServerData   = 36,
     StartUsingItem                  = 37,
     Count                           = 38,
 };

@@ -12,7 +12,7 @@ class GraphicsSettingsChangedPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 4> mUnkfa4646;
+    ::ll::UntypedStorage<1, 5> mUnkfa4646;
     // NOLINTEND
 
 public:

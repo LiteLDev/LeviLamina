@@ -46,7 +46,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::cricket::MediaType $type() const;
 
+    MCNAPI ::cricket::UnsupportedContentDescription* $as_unsupported();
+
+    MCNAPI ::cricket::UnsupportedContentDescription const* $as_unsupported() const;
+
+    MCNAPI bool $has_codecs() const;
+
+    MCNAPI ::cricket::UnsupportedContentDescription* $CloneInternal() const;
     // NOLINTEND
 
 public:

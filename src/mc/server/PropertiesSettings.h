@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/store/services/DiscoveryConfig.h"
 #include "mc/config/ChatRestrictionLevel.h"
 #include "mc/deps/core/debug/log/LogLevel.h"
 #include "mc/deps/nether_net/LogSeverity.h"
@@ -13,7 +14,6 @@
 #include "mc/network/NetworkPermissions.h"
 #include "mc/network/NetworkSettingOptions.h"
 #include "mc/network/TransportLayer.h"
-#include "mc/network/services/discovery/DiscoveryConfig.h"
 #include "mc/scripting/ScriptSettings.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/actor/player/PlayerMovementSettings.h"
@@ -64,9 +64,10 @@ public:
     ::ll::TypedStorage<4, 4, ::std::chrono::minutes>                              mMaxIdleTime;
     ::ll::TypedStorage<4, 4, int>                                                 mServerWakeupFrequency;
     ::ll::TypedStorage<4, 4, ::TransportLayer>                                    mTransportLayerType;
-    ::ll::TypedStorage<8, 32, ::std::optional<::NetherNet::NetworkID>>            mNetherNetId;
+    ::ll::TypedStorage<8, 24, ::NetherNet::NetworkID>                             mNetherNetId;
     ::ll::TypedStorage<8, 40, ::NetworkAddress>                                   mRemoteServerCommunicationEndpoint;
     ::ll::TypedStorage<8, 32, ::std::string>                                      mDefaultPlayerPermissionLevel;
+    ::ll::TypedStorage<1, 1, bool>                                                mDisableClientVibrantVisuals;
     ::ll::TypedStorage<4, 4, ::std::bitset<3>>                                    mServerTextSettings;
     ::ll::TypedStorage<1, 1, bool>                                                mEmitServerTelemetry;
     ::ll::TypedStorage<4, 4, ::LogLevel>                                          mContentLogLevel;
@@ -78,7 +79,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mUseWebsocketEncryption;
     ::ll::TypedStorage<4, 24, ::NetworkSettingOptions>                            mNetworkSettings;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>> mCustomProperties;
-    ::ll::TypedStorage<8, 88, ::PlayerMovementSettings>                           mPlayerMovementSettings;
+    ::ll::TypedStorage<8, 64, ::PlayerMovementSettings>                           mPlayerMovementSettings;
     ::ll::TypedStorage<8, 704, ::ScriptSettings>                                  mScriptSettings;
     ::ll::TypedStorage<1, 1, ::ChatRestrictionLevel>                              mChatRestrictionLevel;
     ::ll::TypedStorage<1, 1, bool>                                                mPersonaDisabled;
@@ -113,6 +114,8 @@ public:
     MCAPI ::SharedTypes::Legacy::Difficulty getDifficulty() const;
 
     MCAPI ::CommandPermissionLevel getOpPermissionLevel() const;
+
+    MCAPI float websocketRetryTime() const;
 
     MCAPI ~PropertiesSettings();
     // NOLINTEND

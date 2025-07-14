@@ -3,10 +3,32 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/client/player/DefaultSkin.h"
+#include "mc/client/player/ISkinRepository.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/string/BasicStackString.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/ImagePickingCallback.h"
+#include "mc/world/actor/player/persona/ArmSize.h"
 
-class SkinRepository : public ::Bedrock::EnableNonOwnerReferences,
+// auto generated forward declare list
+// clang-format off
+class ContentIdentity;
+class IContentKeyProvider;
+class Pack;
+class ResourceLocation;
+class ResourcePackManager;
+class SemVersion;
+class SerializedSkin;
+class Skin;
+class SkinHandle;
+class SkinPack;
+class TaskGroup;
+struct SkinPackMeta;
+namespace mce { class UUID; }
+// clang-format on
+
+class SkinRepository : public ::ISkinRepository,
                        public ::ImagePickingCallback,
                        public ::std::enable_shared_from_this<::SkinRepository> {
 public:
@@ -66,6 +88,151 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~SkinRepository() /*override*/ = default;
+
+    // vIndex: 1
+    virtual void update(::ResourcePackManager&) /*override*/;
+
+    // vIndex: 2
+    virtual void addLoadListener(::std::weak_ptr<bool>, ::std::function<void(::mce::UUID const&)>) /*override*/;
+
+    // vIndex: 3
+    virtual bool importSkinPack(::Pack&, bool) /*override*/;
+
+    // vIndex: 4
+    virtual bool loadCustomSkin(::std::string const&, ::persona::ArmSize::Type) /*override*/;
+
+    // vIndex: 5
+    virtual bool loadSkinPack(::mce::UUID const&, ::std::function<void()>) /*override*/;
+
+    // vIndex: 6
+    virtual void loadSkinPackAsync(::mce::UUID const&, ::SkinPackMeta const&) /*override*/;
+
+    // vIndex: 7
+    virtual void unloadAndDeleteSkinPack(::mce::UUID const&) /*override*/;
+
+    // vIndex: 8
+    virtual void cancelPendingLoads() /*override*/;
+
+    // vIndex: 9
+    virtual ::std::vector<::Pack const*> const getKnownSkinPacks() const /*override*/;
+
+    // vIndex: 10
+    virtual ::std::vector<::Pack const*> const getKnownSkinPacksInPackage() const /*override*/;
+
+    // vIndex: 11
+    virtual ::std::vector<::Pack const*> const getKnownSkinPacksInUserDir() const /*override*/;
+
+    // vIndex: 12
+    virtual ::std::vector<::Pack const*> const getKnownSkinPacksInPremiumDir() const /*override*/;
+
+    // vIndex: 13
+    virtual void forEachPack(::std::function<void(::Pack const&)> const&) const /*override*/;
+
+    // vIndex: 14
+    virtual ::std::vector<::std::unique_ptr<::SkinPack>> const& getLoadedSkinPacks() const /*override*/;
+
+    // vIndex: 15
+    virtual ::SkinPack* getSkinPackById(::mce::UUID const&) const /*override*/;
+
+    // vIndex: 16
+    virtual ::SkinPack* getSkinPackByIdHash(uint64) const /*override*/;
+
+    // vIndex: 17
+    virtual ::SemVersion const& getVersionOfKnownSkinPack(::mce::UUID const&) const /*override*/;
+
+    // vIndex: 18
+    virtual bool isSkinPackKnown(::mce::UUID const&) const /*override*/;
+
+    // vIndex: 19
+    virtual bool isSkinPackTrusted(::mce::UUID const&) const /*override*/;
+
+    // vIndex: 20
+    virtual bool isSkinPackLoaded(::mce::UUID const&) const /*override*/;
+
+    // vIndex: 21
+    virtual bool isKnownSkinPackUnLoaded(::mce::UUID const&) const /*override*/;
+
+    // vIndex: 22
+    virtual bool isSkinPackLoading(::mce::UUID const&) const /*override*/;
+
+    // vIndex: 23
+    virtual bool isSkinPackOwned(::ContentIdentity const&) const /*override*/;
+
+    // vIndex: 24
+    virtual ::Skin const* getSkinBySerializableName(::std::string const&) const /*override*/;
+
+    // vIndex: 25
+    virtual ::Skin const* getSkin(::SkinHandle const&) const /*override*/;
+
+    // vIndex: 27
+    virtual bool canUseSkin(::Skin const*) const /*override*/;
+
+    // vIndex: 26
+    virtual bool canUseSkin(::SkinHandle const&) const /*override*/;
+
+    // vIndex: 28
+    virtual ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
+    storeCustomSkin(::ResourceLocation const&) /*override*/;
+
+    // vIndex: 31
+    virtual ::SkinHandle addCustomSkin(::SkinHandle const&) /*override*/;
+
+    // vIndex: 30
+    virtual ::SkinHandle addCustomSkin(::DefaultSkin const, ::ResourceLocation const&) /*override*/;
+
+    // vIndex: 29
+    virtual ::SkinHandle addCustomSkin(::SerializedSkin const&, ::ResourceLocation const&) /*override*/;
+
+    // vIndex: 32
+    virtual bool storeSkin(::ResourceLocation const&, ::ResourceLocation const&) /*override*/;
+
+    // vIndex: 33
+    virtual bool canPickSkin() const /*override*/;
+
+    // vIndex: 34
+    virtual void pickSkin(::std::function<void(bool, ::std::string)>) /*override*/;
+
+    // vIndex: 35
+    virtual void reloadSkinPackLocText() /*override*/;
+
+    // vIndex: 36
+    virtual ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> getSkinKeyProvider() const /*override*/;
+
+    // vIndex: 37
+    virtual ::Skin const* getDefaultSkinBySerializableName(::std::string const&) const /*override*/;
+
+    // vIndex: 38
+    virtual ::std::string const _getDefaultSkinSerializableName(::std::string const&) const /*override*/;
+
+    // vIndex: 39
+    virtual ::std::string _getCustomSkinSerializableName(::DefaultSkin) const /*override*/;
+
+    // vIndex: 40
+    virtual bool isValidSkin(::ResourceLocation const&) const /*override*/;
+
+    // vIndex: 41
+    virtual void loadSkin(::ResourceLocation const&) /*override*/;
+
+    // vIndex: 42
+    virtual void unloadSkin(::ResourceLocation const&) /*override*/;
+
+    // vIndex: 43
+    virtual bool loadCustomSkinTexture(::ResourceLocation const&) /*override*/;
+
+    // vIndex: 44
+    virtual void beginAsyncInit(::TaskGroup&) /*override*/;
+
+    // vIndex: 45
+    virtual bool isInitialized() const /*override*/;
+
+    // vIndex: 46
+    virtual uint64 getLoadedSkinPackCount() /*override*/;
+
+    // vIndex: 47
+    virtual uint64 getLoadingSkinPackCount() /*override*/;
+
+    // vIndex: 48
+    virtual void unloadUnusedCustomSkinTextures(::std::vector<::SkinHandle> const&) /*override*/;
 
     // vIndex: 1
     virtual void onImagePickingSuccess(::std::string const&) /*override*/;

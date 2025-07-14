@@ -65,16 +65,22 @@ public:
     virtual void RemoveEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>*) = 0;
 
     // vIndex: 12
-    virtual void ProcessConstraints(::webrtc::VideoTrackSourceConstraints const&);
+    virtual void ProcessConstraints(::webrtc::VideoTrackSourceConstraints const& constraints);
 
     // vIndex: 0
-    virtual ~VideoTrackSourceInterface() /*override*/ = default;
+    virtual ~VideoTrackSourceInterface() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI void $ProcessConstraints(::webrtc::VideoTrackSourceConstraints const& constraints);
     // NOLINTEND
 };
 

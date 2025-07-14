@@ -16,21 +16,36 @@ namespace webrtc {
 
 class PeerConnectionMessageHandler {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkee6d7b;
+    ::ll::UntypedStorage<8, 8> mUnkdb9e54;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PeerConnectionMessageHandler& operator=(PeerConnectionMessageHandler const&);
+    PeerConnectionMessageHandler(PeerConnectionMessageHandler const&);
+    PeerConnectionMessageHandler();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void PostCreateSessionDescriptionFailure(::webrtc::CreateSessionDescriptionObserver*, ::webrtc::RTCError);
+    MCNAPI void
+    PostCreateSessionDescriptionFailure(::webrtc::CreateSessionDescriptionObserver* observer, ::webrtc::RTCError error);
 
     MCNAPI void PostGetStats(
-        ::webrtc::StatsObserver*,
-        ::webrtc::LegacyStatsCollectorInterface*,
-        ::webrtc::MediaStreamTrackInterface*
+        ::webrtc::StatsObserver*                 observer,
+        ::webrtc::LegacyStatsCollectorInterface* legacy_stats,
+        ::webrtc::MediaStreamTrackInterface*     track
     );
 
-    MCNAPI void PostSetSessionDescriptionFailure(::webrtc::SetSessionDescriptionObserver*, ::webrtc::RTCError&&);
+    MCNAPI void
+    PostSetSessionDescriptionFailure(::webrtc::SetSessionDescriptionObserver* observer, ::webrtc::RTCError&& error);
 
-    MCNAPI void PostSetSessionDescriptionSuccess(::webrtc::SetSessionDescriptionObserver*);
+    MCNAPI void PostSetSessionDescriptionSuccess(::webrtc::SetSessionDescriptionObserver* observer);
 
-    MCNAPI void RequestUsagePatternReport(::std::function<void()>, int);
+    MCNAPI void RequestUsagePatternReport(::std::function<void()> func, int delay_ms);
 
     MCNAPI ~PeerConnectionMessageHandler();
     // NOLINTEND

@@ -77,15 +77,9 @@ public:
     virtual ::TextureUVCoordinateSet const& getCarriedTexture(uint64, int) const;
 
     // vIndex: 9
-    virtual ::Vec3 randomlyModifyPosition(::BlockPos const&, int&) const;
-
-    // vIndex: 8
-    virtual ::Vec3 randomlyModifyPosition(::BlockPos const&) const;
-
-    // vIndex: 11
     virtual void setVisualShape(::AABB const&);
 
-    // vIndex: 10
+    // vIndex: 8
     virtual void setVisualShape(::Vec3 const&, ::Vec3 const&);
     // NOLINTEND
 

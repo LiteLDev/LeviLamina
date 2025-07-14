@@ -10,6 +10,7 @@
 // clang-format off
 class Actor;
 class ActorInteraction;
+class BaseGameVersion;
 class CompoundTag;
 class DataLoadHelper;
 class MerchantRecipeList;
@@ -45,6 +46,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void _calculateDemandPrices(
+        int               lowTierDiscount,
+        int               highTierDiscount,
+        int               nearbyCuredDiscount,
+        int               heroEffectAmplifier,
+        bool              hasHeroOfTheVillage,
+        ::BaseGameVersion baseGameVersion
+    );
+
     MCNAPI bool _generateTrades();
 
     MCNAPI ::TradeTable* _getTradeTable();

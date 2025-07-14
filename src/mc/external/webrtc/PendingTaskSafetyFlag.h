@@ -43,13 +43,13 @@ public:
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> Create();
 
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag>
-    CreateAttachedToTaskQueue(bool, ::webrtc::TaskQueueBase*);
+    CreateAttachedToTaskQueue(bool alive, ::webrtc::TaskQueueBase* attached_queue);
 
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> CreateDetached();
 
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> CreateDetachedInactive();
 
-    MCNAPI static ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> CreateInternal(bool);
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> CreateInternal(bool alive);
     // NOLINTEND
 };
 

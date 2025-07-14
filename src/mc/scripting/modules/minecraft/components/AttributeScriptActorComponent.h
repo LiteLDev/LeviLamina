@@ -3,11 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
+namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -39,21 +42,26 @@ public:
     virtual ::Scripting::Result_deprecated<bool> setCurrent(float const& value) const;
 
     // vIndex: 6
-    virtual ::Scripting::Result_deprecated<float> getValue() const;
+    virtual ::Scripting::
+        Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError>
+        setCurrentV2(float const& value) const;
 
     // vIndex: 7
-    virtual ::Scripting::Result_deprecated<float> getEffectiveMinValue() const;
+    virtual ::Scripting::Result_deprecated<float> getValue() const;
 
     // vIndex: 8
-    virtual ::Scripting::Result_deprecated<float> getEffectiveMaxValue() const;
+    virtual ::Scripting::Result_deprecated<float> getEffectiveMinValue() const;
 
     // vIndex: 9
-    virtual ::Scripting::Result_deprecated<void> resetToMinValue() const;
+    virtual ::Scripting::Result_deprecated<float> getEffectiveMaxValue() const;
 
     // vIndex: 10
-    virtual ::Scripting::Result_deprecated<void> resetToMaxValue() const;
+    virtual ::Scripting::Result_deprecated<void> resetToMinValue() const;
 
     // vIndex: 11
+    virtual ::Scripting::Result_deprecated<void> resetToMaxValue() const;
+
+    // vIndex: 12
     virtual ::Scripting::Result_deprecated<void> resetToDefaultValue() const;
 
     // vIndex: 3
@@ -72,6 +80,10 @@ public:
     MCNAPI ::Scripting::Result_deprecated<float> $getCurrent() const;
 
     MCNAPI ::Scripting::Result_deprecated<bool> $setCurrent(float const& value) const;
+
+    MCNAPI ::Scripting::
+        Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError>
+        $setCurrentV2(float const& value) const;
 
     MCNAPI ::Scripting::Result_deprecated<float> $getValue() const;
 

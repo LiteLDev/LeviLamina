@@ -45,10 +45,10 @@ public:
     virtual ::Biome const* getBiome(int, int, int) const = 0;
 
     // vIndex: 8
-    virtual bool has(uint64) const = 0;
+    virtual bool hasBiomeById(ushort) const = 0;
 
     // vIndex: 9
-    virtual bool hasByHashId(uint64) const = 0;
+    virtual bool hasBiomeByNameHash(uint64) const = 0;
 
     // vIndex: 10
     virtual ::BiomeSourceType const getType() const = 0;

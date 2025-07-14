@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
 
 // auto generated forward declare list
@@ -14,6 +15,7 @@ class Experiments;
 class IWorldRegistriesProvider;
 class LevelSeed64;
 class LevelStorage;
+class LinkedAssetValidator;
 class ResourcePackManager;
 // clang-format on
 
@@ -41,13 +43,24 @@ public:
     MCNAPI
     BiomeManager(::OwnerPtr<::BiomeRegistry> biomes, ::std::unique_ptr<::AutomaticFeatureRules> automaticFeatureRules);
 
+    MCNAPI void _initializeServerBiomeRegistry(
+        ::Experiments const&                               experiments,
+        ::IWorldRegistriesProvider&                        worldRegistries,
+        ::ResourcePackManager const&                       resourcePackManager,
+        ::LevelSeed64                                      levelSeed,
+        ::LevelStorage&                                    levelStorage,
+        ::BaseGameVersion const&                           baseGameVersion,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator
+    );
+
     MCNAPI void initializeBiomeRegistryAndAutomaticFeatureRulesOnServer(
-        ::Experiments const&        experiments,
-        ::IWorldRegistriesProvider& worldRegistries,
-        ::ResourcePackManager&      resourcePackManager,
-        ::LevelSeed64               levelSeed,
-        ::LevelStorage&             levelStorage,
-        ::BaseGameVersion const&    baseGameVersion
+        ::Experiments const&                               experiments,
+        ::IWorldRegistriesProvider&                        worldRegistries,
+        ::ResourcePackManager&                             resourcePackManager,
+        ::LevelSeed64                                      levelSeed,
+        ::LevelStorage&                                    levelStorage,
+        ::BaseGameVersion const&                           baseGameVersion,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator
     );
 
     MCNAPI ~BiomeManager();

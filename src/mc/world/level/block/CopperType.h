@@ -2,8 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class CopperType : int {
-    Waxed     = -1,
+enum class CopperType : uchar {
     Default   = 0,
     Exposed   = 1,
     Weathered = 2,

@@ -6,12 +6,6 @@
 #include "mc/deps/core/debug/log/ContentLogEndPoint.h"
 #include "mc/deps/core/debug/log/LogArea.h"
 #include "mc/deps/core/debug/log/LogLevel.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Editor::Services { class LoggingService; }
-// clang-format on
 
 namespace Editor {
 
@@ -49,20 +43,6 @@ public:
 
     // vIndex: 4
     virtual bool isEnabled() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit EditorContentLogEndPoint(
-        ::Bedrock::NotNullNonOwnerPtr<::Editor::Services::LoggingService> loggingService
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Editor::Services::LoggingService> loggingService);
     // NOLINTEND
 
 public:

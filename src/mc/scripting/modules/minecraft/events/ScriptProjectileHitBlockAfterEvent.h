@@ -7,9 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct ProjectileHitEvent;
 namespace ScriptModuleMinecraft { struct ScriptBlockHitInformation; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -19,7 +17,7 @@ struct ScriptProjectileHitBlockAfterEvent : public ::ScriptModuleMinecraft::Scri
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56> mUnkf2c13c;
+    ::ll::UntypedStorage<8, 64> mUnkf2c13c;
     // NOLINTEND
 
 public:
@@ -31,11 +29,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptProjectileHitBlockAfterEvent(::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent const&);
-
-    MCNAPI ScriptProjectileHitBlockAfterEvent(
-        ::ProjectileHitEvent const&           projectileHitEvent,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
 
     MCNAPI ::ScriptModuleMinecraft::ScriptBlockHitInformation getBlockHit() const;
 
@@ -53,8 +46,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent const&);
-
-    MCNAPI void* $ctor(::ProjectileHitEvent const& projectileHitEvent, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

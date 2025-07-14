@@ -146,4 +146,5 @@ enum class DefaultMessageIDTypes : int {
     Available6                                       = 140,
     Available7                                       = 141,
     UserPacketEnum                                   = 142,
+    UserPacketMinecraft                              = 254,
 };

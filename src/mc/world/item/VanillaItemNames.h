@@ -652,6 +652,8 @@ MCAPI ::HashedString const& MusicDiscCreatorMusicBox();
 
 MCAPI ::HashedString const& MusicDiscFar();
 
+MCAPI ::HashedString const& MusicDiscLavaChicken();
+
 MCAPI ::HashedString const& MusicDiscMall();
 
 MCAPI ::HashedString const& MusicDiscMellohi();
@@ -667,6 +669,8 @@ MCAPI ::HashedString const& MusicDiscRelic();
 MCAPI ::HashedString const& MusicDiscStal();
 
 MCAPI ::HashedString const& MusicDiscStrad();
+
+MCAPI ::HashedString const& MusicDiscTears();
 
 MCAPI ::HashedString const& MusicDiscWait();
 

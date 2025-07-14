@@ -14,12 +14,18 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 
 class BeaconBlock : public ::ActorBlock {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool> mPermanentlyRendered;
+    // NOLINTEND
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~BeaconBlock() /*override*/ = default;
 
-    // vIndex: 136
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 130

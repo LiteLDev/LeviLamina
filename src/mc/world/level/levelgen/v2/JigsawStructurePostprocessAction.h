@@ -7,6 +7,7 @@
 #include "mc/world/level/chunk/IRequestAction.h"
 #include "mc/world/level/levelgen/structure/BoundingBox.h"
 #include "mc/world/level/levelgen/structure/structurepools/JigsawReplacement.h"
+#include "mc/world/level/levelgen/v2/LiquidSettings.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,6 +28,7 @@ public:
     ::ll::TypedStorage<4, 24, ::BoundingBox>                                                 mChunkBounds;
     ::ll::TypedStorage<1, 1, ::br::worldgen::JigsawReplacement>                              mJigsawReplacement;
     ::ll::TypedStorage<1, 1, bool>                                                           mIncludeEntities;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::LiquidSettings>                                 mLiquidSettings;
     // NOLINTEND
 
 public:

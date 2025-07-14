@@ -122,6 +122,8 @@ struct sockaddr_storage;
 struct sockaddr_in;
 struct sockaddr_in6;
 struct evp_md_ctx_st;
+struct asn1_string_st;
+struct bio_st;
 
 using uchar  = uint8_t;
 using ushort = uint16_t;

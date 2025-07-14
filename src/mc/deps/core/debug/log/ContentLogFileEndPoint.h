@@ -34,7 +34,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ContentLogFileEndPoint() /*override*/ = default;
+    virtual ~ContentLogFileEndPoint() /*override*/;
 
     // vIndex: 1
     virtual void log(::LogArea const area, ::LogLevel const level, char const* message) /*override*/;
@@ -72,6 +72,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Core::Path debugLogDirectory, ::Core::Path fileName, ::std::optional<::LogLevel> minLogLevel);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

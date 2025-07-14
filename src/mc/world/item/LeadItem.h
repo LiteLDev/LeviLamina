@@ -31,7 +31,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool bindPlayerMobs(::Actor& holderActor, int x, int y, int z, ::ItemInstance* itemUsed);
+    MCAPI static bool bindPlayerMobs(::Actor& holderActor, ::BlockPos const& pos, ::ItemInstance* itemUsed);
     // NOLINTEND
 
 public:

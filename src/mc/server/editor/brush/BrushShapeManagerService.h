@@ -110,6 +110,9 @@ public:
 
     // vIndex: 16
     virtual void setBrushShapeVisible(bool const visible) /*override*/;
+
+    // vIndex: 17
+    virtual bool isBusy() /*override*/;
     // NOLINTEND
 
 public:
@@ -170,6 +173,8 @@ public:
     MCNAPI void $setFlattenRadius(int const flattenRadius);
 
     MCNAPI void $setBrushShapeVisible(bool const visible);
+
+    MCNAPI bool $isBusy();
     // NOLINTEND
 
 public:

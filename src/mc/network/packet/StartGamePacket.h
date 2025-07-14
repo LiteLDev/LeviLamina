@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/renderer/rendergraph/Packet.h"
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/resource/ContentIdentity.h"
@@ -11,7 +12,6 @@
 #include "mc/nbt/CompoundTag.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/NetworkPermissions.h"
-#include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/platform/UUID.h"
 #include "mc/world/actor/player/SyncedPlayerMovementSettings.h"
@@ -30,28 +30,28 @@ class StartGamePacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1408, ::LevelSettings>              mSettings;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                 mEntityId;
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                mRuntimeId;
-    ::ll::TypedStorage<4, 4, ::GameType>                      mEntityGameType;
-    ::ll::TypedStorage<4, 12, ::Vec3>                         mPos;
-    ::ll::TypedStorage<4, 8, ::Vec2>                          mRot;
-    ::ll::TypedStorage<8, 32, ::std::string>                  mLevelId;
-    ::ll::TypedStorage<8, 32, ::std::string>                  mLevelName;
-    ::ll::TypedStorage<8, 24, ::ContentIdentity>              mTemplateContentIdentity;
-    ::ll::TypedStorage<8, 16, ::mce::UUID>                    mWorldTemplateId;
-    ::ll::TypedStorage<1, 1, bool>                            mIsTrial;
-    ::ll::TypedStorage<4, 12, ::SyncedPlayerMovementSettings> mMovementSettings;
-    ::ll::TypedStorage<8, 8, uint64>                          mLevelCurrentTime;
-    ::ll::TypedStorage<4, 4, int>                             mEnchantmentSeed;
-    ::ll::TypedStorage<8, 32, ::std::string>                  mMultiplayerCorrelationId;
-    ::ll::TypedStorage<1, 1, bool>                            mEnableItemStackNetManager;
-    ::ll::TypedStorage<8, 32, ::std::string>                  mServerVersion;
-    ::ll::TypedStorage<8, 24, ::CompoundTag>                  mPlayerPropertyData;
-    ::ll::TypedStorage<8, 8, uint64>                          mServerBlockTypeRegistryChecksum;
-    ::ll::TypedStorage<1, 1, bool>                            mServerEnabledClientSideGeneration;
-    ::ll::TypedStorage<1, 1, bool>                            mBlockNetworkIdsAreHashes;
-    ::ll::TypedStorage<1, 1, ::NetworkPermissions>            mNetworkPermissions;
+    ::ll::TypedStorage<8, 1440, ::LevelSettings>             mSettings;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                mEntityId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>               mRuntimeId;
+    ::ll::TypedStorage<4, 4, ::GameType>                     mEntityGameType;
+    ::ll::TypedStorage<4, 12, ::Vec3>                        mPos;
+    ::ll::TypedStorage<4, 8, ::Vec2>                         mRot;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mLevelId;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mLevelName;
+    ::ll::TypedStorage<8, 24, ::ContentIdentity>             mTemplateContentIdentity;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>                   mWorldTemplateId;
+    ::ll::TypedStorage<1, 1, bool>                           mIsTrial;
+    ::ll::TypedStorage<4, 8, ::SyncedPlayerMovementSettings> mMovementSettings;
+    ::ll::TypedStorage<8, 8, uint64>                         mLevelCurrentTime;
+    ::ll::TypedStorage<4, 4, int>                            mEnchantmentSeed;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mMultiplayerCorrelationId;
+    ::ll::TypedStorage<1, 1, bool>                           mEnableItemStackNetManager;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mServerVersion;
+    ::ll::TypedStorage<8, 24, ::CompoundTag>                 mPlayerPropertyData;
+    ::ll::TypedStorage<8, 8, uint64>                         mServerBlockTypeRegistryChecksum;
+    ::ll::TypedStorage<1, 1, bool>                           mServerEnabledClientSideGeneration;
+    ::ll::TypedStorage<1, 1, bool>                           mBlockNetworkIdsAreHashes;
+    ::ll::TypedStorage<1, 1, ::NetworkPermissions>           mNetworkPermissions;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::string, ::CompoundTag>>> mBlockProperties;
     // NOLINTEND
 

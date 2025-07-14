@@ -67,7 +67,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MolangScriptArg(::MolangScriptArg const&);
+    MCAPI MolangScriptArg(::MolangScriptArg const& other);
 
     MCAPI explicit MolangScriptArg(float value);
 
@@ -75,11 +75,13 @@ public:
 
     MCAPI ::HashedString const& getName() const;
 
-    MCAPI ::MolangScriptArg& operator=(::MolangScriptArg const&);
+    MCAPI ::MolangScriptArg& operator=(::MolangScriptArg const& other);
 
-    MCAPI ::MolangScriptArg& operator=(::MolangScriptArg&&);
+    MCAPI ::MolangScriptArg& operator=(::MolangScriptArg&& other);
 
-    MCAPI ::MolangScriptArg& operator=(::MolangMemberArray const& value);
+    MCAPI ::MolangScriptArg& operator=(float&& value);
+
+    MCAPI ::MolangScriptArg& operator=(::MolangMemberArray&& value);
 
     MCAPI bool operator==(::MolangScriptArg const& rhs) const;
 
@@ -109,7 +111,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MolangScriptArg const&);
+    MCAPI void* $ctor(::MolangScriptArg const& other);
 
     MCAPI void* $ctor(float value);
     // NOLINTEND

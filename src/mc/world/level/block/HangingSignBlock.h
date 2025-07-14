@@ -34,7 +34,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 22
@@ -47,10 +47,10 @@ public:
     // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual float getYRotationInDegrees(::Block const& block) const /*override*/;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual ::ItemInstance _getItemInstance() const /*override*/;
 
     // vIndex: 0

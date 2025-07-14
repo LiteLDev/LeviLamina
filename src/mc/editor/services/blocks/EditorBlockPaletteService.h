@@ -28,6 +28,7 @@ namespace Editor::Network { class BlockPaletteChangedPayload; }
 namespace Editor::Network { class BlockPaletteItemChangedPayload; }
 namespace Editor::Network { class BlockPaletteRemovedPayload; }
 namespace Editor::Network { class BlockPaletteSelectedIndexChangedPayload; }
+namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace Scripting { struct Error; }
 // clang-format on
 
@@ -144,7 +145,7 @@ public:
 
     MCNAPI ::Scripting::Error _getAttemptingToRemoveOnlyPaletteError(::HashedString const& paletteId) const;
 
-    MCNAPI ::Scripting::Error _getIndexOutOfBoundsError(int index, int max) const;
+    MCNAPI ::Scripting::ArgumentOutOfBoundsError _getIndexOutOfBoundsError(int index, int max) const;
 
     MCNAPI ::Editor::EditorBlockPalette* _getPalette(::HashedString const& paletteId) const;
 

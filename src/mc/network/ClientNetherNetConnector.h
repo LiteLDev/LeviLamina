@@ -13,8 +13,23 @@ namespace Social { class GameConnectionInfo; }
 
 struct ClientNetherNetConnector : public ::NetherNetConnector {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 456> mUnkb30d11;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ClientNetherNetConnector& operator=(ClientNetherNetConnector const&);
+    ClientNetherNetConnector(ClientNetherNetConnector const&);
+    ClientNetherNetConnector();
+
+public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
+    virtual ::Social::GameConnectionInfo const& getConnectedGameInfo() const /*override*/;
+
     // vIndex: 10
     virtual bool connect(::Social::GameConnectionInfo const&, ::Social::GameConnectionInfo const&) /*override*/;
 

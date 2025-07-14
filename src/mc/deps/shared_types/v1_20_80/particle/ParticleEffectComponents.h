@@ -14,16 +14,8 @@ namespace SharedTypes::v1_20_80 {
 
 struct ParticleEffectComponents : public ::cereal::ComponentStorage {
 public:
-    // prevent constructor by default
-    ParticleEffectComponents(ParticleEffectComponents const&);
-    ParticleEffectComponents();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_20_80::ParticleEffectComponents&
-    operator=(::SharedTypes::v1_20_80::ParticleEffectComponents const&);
-
     MCNAPI ~ParticleEffectComponents();
     // NOLINTEND
 

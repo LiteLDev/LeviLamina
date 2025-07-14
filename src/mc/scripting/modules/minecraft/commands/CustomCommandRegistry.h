@@ -5,10 +5,12 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/script_engine/ClosureGeneric.h"
-#include "mc/scripting/modules/minecraft/ScriptCustomComponentRegistry.h"
+#include "mc/scripting/modules/minecraft/ScriptServerStateMonitor.h"
 
 // auto generated forward declare list
 // clang-format off
+class CommandRegistry;
+struct ServerScriptManagerEvents;
 namespace ScriptModuleMinecraft { struct ScriptCustomCommandError; }
 namespace ScriptModuleMinecraft { struct ScriptCustomCommandInterface; }
 namespace ScriptModuleMinecraft { struct ScriptCustomCommandResult; }
@@ -18,7 +20,7 @@ namespace Scripting { struct EngineError; }
 
 namespace ScriptModuleMinecraft {
 
-class CustomCommandRegistry : public ::ScriptModuleMinecraft::ScriptCustomComponentRegistry {
+class CustomCommandRegistry : public ::ScriptModuleMinecraft::ScriptServerStateMonitor {
 public:
     // CustomCommandRegistry inner types declare
     // clang-format off
@@ -38,6 +40,7 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
+            ::ll::UntypedStorage<8, 40>  mUnkcc381b;
             ::ll::UntypedStorage<8, 136> mUnkfa69c6;
             ::ll::UntypedStorage<8, 232> mUnk89e32f;
             // NOLINTEND
@@ -103,6 +106,7 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk34d4c0;
     ::ll::UntypedStorage<8, 64> mUnk823e0c;
     ::ll::UntypedStorage<8, 24> mUnk2d5f71;
+    ::ll::UntypedStorage<8, 64> mUnkc47c8c;
     // NOLINTEND
 
 public:
@@ -115,13 +119,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CustomCommandRegistry() /*override*/ = default;
-
-    // vIndex: 1
-    virtual void _onReload() /*override*/;
-
-    // vIndex: 3
-    virtual void _onScriptModuleStartupComplete() /*override*/;
+    virtual ~CustomCommandRegistry() /*override*/;
 
     // vIndex: 2
     virtual void _onScriptInitializationComplete() /*override*/;
@@ -130,17 +128,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI CustomCommandRegistry(::ServerScriptManagerEvents& events, ::CommandRegistry& commandRegistry);
+
     MCNAPI ::std::optional<::ScriptModuleMinecraft::ScriptCustomCommandError> _checkNamespaceConsistency(
         ::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations const& registrations,
-        ::std::string const&                                                        newNamespace
+        ::std::string_view                                                          newNamespace
     ) const;
 
     MCNAPI ::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations&
-    _getOrCreatePendingRegistrationsForPack(::std::string const& packUUID, ::std::string const& newNamespace);
+    _getOrCreatePendingRegistrationsForPack(::std::string const& packUUID, ::std::string_view newNamespace);
 
     MCNAPI void _processRegistrations();
 
     MCNAPI void _reloadRegistrations();
+
+    MCNAPI ::std::optional<::std::string> _tryClaimAlias(::std::string const& commandName);
 
     MCNAPI ::std::optional<::std::string> _validateEnumDependencies(
         ::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations const& registrations,
@@ -171,12 +173,20 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ServerScriptManagerEvents& events, ::CommandRegistry& commandRegistry);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_onReload();
-
-    MCNAPI void $_onScriptModuleStartupComplete();
-
     MCNAPI void $_onScriptInitializationComplete();
     // NOLINTEND
 

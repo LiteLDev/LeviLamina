@@ -15,13 +15,14 @@ class BlockDefinitionGroup;
 class CreativeItemRegistry;
 class Experiments;
 class HashedString;
+class IContainerRegistryAccess;
+class IContainerRegistryTracker;
 class IDynamicContainerSerialization;
 class Item;
 class ItemRegistry;
 class LevelData;
 class LinkedAssetValidator;
 class ResourcePackManager;
-class ServerScriptManager;
 struct ItemData;
 struct ItemRegistryComplexAlias;
 struct ItemTag;
@@ -94,8 +95,6 @@ public:
 
     MCAPI void alterAvailableCreativeItems(::ActorInfoRegistry* infoRegistry, ::LevelData& levelData) const;
 
-    MCAPI void bindDynamicScriptTypes(::ServerScriptManager& script, ::Experiments const& experiments) const;
-
     MCAPI bool canUpdateTags() const;
 
     MCAPI ::Bedrock::NonOwnerPointer<::cereal::ReflectionCtx const> cerealContext() const;
@@ -156,7 +155,11 @@ public:
 
     MCFOLD ::WeakPtr<::Item> lookupByVanillaName(::HashedString const& inString) const;
 
-    MCAPI void onLevelInit(::WeakRef<::IDynamicContainerSerialization> containerSerialization) const;
+    MCAPI void onLevelInit(
+        ::WeakRef<::IDynamicContainerSerialization> containerSerialization,
+        ::WeakRef<::IContainerRegistryAccess>       containerAccess,
+        ::WeakRef<::IContainerRegistryTracker>      containerTracker
+    ) const;
 
     MCAPI void
     registerAlias(::HashedString const& alias, ::HashedString const& name, ::BaseGameVersion const& fromVersion) const;

@@ -14,22 +14,34 @@ public:
     virtual bool areRayTracingResourcesAvailable() const = 0;
 
     // vIndex: 6
-    virtual bool arePBRResourcesAvailable() const = 0;
+    virtual bool isDeferredLightingModelAvailable() const = 0;
 
     // vIndex: 7
     virtual bool isRayTracingAvailable() const = 0;
 
     // vIndex: 8
-    virtual bool isDeferredShadingAvailable() const = 0;
+    virtual bool areDeferredShadingAndResourcesAvailable() const = 0;
 
     // vIndex: 9
-    virtual bool supportsVibrantVisualsPackStack() const = 0;
+    virtual bool isVibrantVisualsAllowed() const = 0;
 
     // vIndex: 10
-    virtual ::dragon::rendering::LightingModels getLightingModel() const = 0;
+    virtual void setForceDisableVibrantVisuals(bool) = 0;
 
     // vIndex: 11
+    virtual bool isPlatformDeferredPerformanceCompatible() const = 0;
+
+    // vIndex: 12
+    virtual bool canSwitchGraphicsModeInGame() const = 0;
+
+    // vIndex: 13
+    virtual ::dragon::rendering::LightingModels getLightingModel() const = 0;
+
+    // vIndex: 14
     virtual void setLightingModel(::dragon::rendering::LightingModels const) = 0;
+
+    // vIndex: 15
+    virtual void setCanSwitchGraphicsModeInGame(bool) = 0;
 
     // vIndex: 0
     virtual ~IAdvancedGraphicsOptions() /*override*/ = default;

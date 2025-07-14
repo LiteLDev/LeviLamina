@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Error.h"
+#include "mc/deps/scripting/runtime/BaseError.h"
 
 namespace ScriptModuleDiagnostics {
 
-struct ScriptSentryAlreadyInitializedError : public ::Scripting::Error {
+struct ScriptSentryAlreadyInitializedError : public ::Scripting::BaseError {
 public:
     // member functions
     // NOLINTBEGIN

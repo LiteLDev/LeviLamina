@@ -2,15 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-
-// auto generated forward declare list
-// clang-format off
-class Dimension;
-class Vec3;
-// clang-format on
-
 class ServerParticleManager {
 public:
     // member variables
@@ -24,11 +15,4 @@ public:
     ServerParticleManager& operator=(ServerParticleManager const&);
     ServerParticleManager(ServerParticleManager const&);
     ServerParticleManager();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void
-    spawnParticleEffect(::std::string const& effectName, ::Vec3 const& spawnLocation, ::DimensionType dimensionType);
-    // NOLINTEND
 };

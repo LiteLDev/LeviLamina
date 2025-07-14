@@ -51,8 +51,6 @@ public:
     ) const;
 
     MCAPI bool intersects(::Vec3 const& segmentBegin, ::Vec3 const& segmentEnd) const;
-
-    MCAPI bool intersectsInner(::AABB const& c) const;
     // NOLINTEND
 
 public:

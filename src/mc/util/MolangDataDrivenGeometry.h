@@ -21,21 +21,14 @@ public:
 public:
     // prevent constructor by default
     MolangDataDrivenGeometry& operator=(MolangDataDrivenGeometry const&);
+    MolangDataDrivenGeometry(MolangDataDrivenGeometry const&);
     MolangDataDrivenGeometry();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MolangDataDrivenGeometry(::MolangDataDrivenGeometry const&);
-
     MCAPI ::MolangDataDrivenGeometry& operator=(::MolangDataDrivenGeometry&&);
 
     MCFOLD bool operator==(::MolangDataDrivenGeometry const& rhs) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::MolangDataDrivenGeometry const&);
     // NOLINTEND
 };

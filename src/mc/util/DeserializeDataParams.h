@@ -2,34 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct DeserializeDataParams {
+// auto generated inclusion list
+#include "mc/util/DeserializeDataSettings.h"
+
+struct DeserializeDataParams : public ::DeserializeDataSettings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk407f0e;
-    ::ll::UntypedStorage<8, 24> mUnk8a0b4a;
-    ::ll::UntypedStorage<8, 32> mUnke19b37;
-    ::ll::UntypedStorage<1, 1>  mUnk84bd48;
-    ::ll::UntypedStorage<1, 1>  mUnka7eaee;
+    ::ll::UntypedStorage<8, 8> mUnk407f0e;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     DeserializeDataParams& operator=(DeserializeDataParams const&);
+    DeserializeDataParams(DeserializeDataParams const&);
     DeserializeDataParams();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DeserializeDataParams(::DeserializeDataParams const&);
-
     MCNAPI ~DeserializeDataParams();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::DeserializeDataParams const&);
     // NOLINTEND
 
 public:

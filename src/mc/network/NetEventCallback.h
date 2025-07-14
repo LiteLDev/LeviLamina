@@ -189,7 +189,6 @@ class SetHealthPacket;
 class SetHudPacket;
 class SetLastHurtByPacket;
 class SetLocalPlayerAsInitializedPacket;
-class SetMovementAuthorityPacket;
 class SetPlayerGameTypePacket;
 class SetPlayerInventoryOptionsPacket;
 class SetScorePacket;
@@ -234,6 +233,8 @@ class UpdateSoftEnumPacket;
 class UpdateSubChunkBlocksPacket;
 class UpdateTradePacket;
 struct NetworkIdentifierWithSubId;
+namespace ScriptModuleDebugUtilities { class ServerScriptDebugDrawerPacket; }
+namespace Social { class GameConnectionInfo; }
 // clang-format on
 
 class NetEventCallback : public ::Bedrock::EnableNonOwnerReferences {
@@ -305,7 +306,7 @@ public:
     );
 
     // vIndex: 13
-    virtual void onTransferRequest(::NetworkIdentifier const&, ::std::string const&, int);
+    virtual void onTransferRequest(::NetworkIdentifier const&, ::Social::GameConnectionInfo const&);
 
     // vIndex: 14
     virtual bool getIsConnectedToApplicationLayer() const;
@@ -941,19 +942,19 @@ public:
     virtual void handle(::NetworkIdentifier const&, ::CurrentStructureFeaturePacket const&);
 
     // vIndex: 20
-    virtual void handle(::NetworkIdentifier const&, ::SetMovementAuthorityPacket const&);
-
-    // vIndex: 19
     virtual void handle(::NetworkIdentifier const&, ::UpdateClientOptionsPacket const&);
 
-    // vIndex: 18
+    // vIndex: 19
     virtual void handle(::NetworkIdentifier const&, ::PlayerVideoCapturePacket const&);
 
-    // vIndex: 17
+    // vIndex: 18
     virtual void handle(::NetworkIdentifier const&, ::PlayerUpdateEntityOverridesPacket const&);
 
-    // vIndex: 16
+    // vIndex: 17
     virtual void handle(::NetworkIdentifier const&, ::PlayerLocationPacket const&);
+
+    // vIndex: 16
+    virtual void handle(::NetworkIdentifier const&, ::ScriptModuleDebugUtilities::ServerScriptDebugDrawerPacket const&);
     // NOLINTEND
 
 public:
@@ -1008,7 +1009,7 @@ public:
         ::SubClientId
     );
 
-    MCNAPI void $onTransferRequest(::NetworkIdentifier const&, ::std::string const&, int);
+    MCNAPI void $onTransferRequest(::NetworkIdentifier const&, ::Social::GameConnectionInfo const&);
 
     MCNAPI bool $getIsConnectedToApplicationLayer() const;
 
@@ -1432,8 +1433,6 @@ public:
 
     MCNAPI void $handle(::NetworkIdentifier const&, ::CurrentStructureFeaturePacket const&);
 
-    MCNAPI void $handle(::NetworkIdentifier const&, ::SetMovementAuthorityPacket const&);
-
     MCNAPI void $handle(::NetworkIdentifier const&, ::UpdateClientOptionsPacket const&);
 
     MCNAPI void $handle(::NetworkIdentifier const&, ::PlayerVideoCapturePacket const&);
@@ -1441,6 +1440,8 @@ public:
     MCNAPI void $handle(::NetworkIdentifier const&, ::PlayerUpdateEntityOverridesPacket const&);
 
     MCNAPI void $handle(::NetworkIdentifier const&, ::PlayerLocationPacket const&);
+
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ScriptModuleDebugUtilities::ServerScriptDebugDrawerPacket const&);
     // NOLINTEND
 
 public:

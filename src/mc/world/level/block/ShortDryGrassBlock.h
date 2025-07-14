@@ -12,6 +12,7 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
+struct BlockAnimateTickData;
 // clang-format on
 
 class ShortDryGrassBlock : public ::FoliageBlock {
@@ -33,6 +34,9 @@ public:
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
+    // vIndex: 123
+    virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
+
     // vIndex: 0
     virtual ~ShortDryGrassBlock() /*override*/ = default;
     // NOLINTEND
@@ -48,6 +52,8 @@ public:
 
     MCAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+
+    MCAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
     // NOLINTEND
 
 public:

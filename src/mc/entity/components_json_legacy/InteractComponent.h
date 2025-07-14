@@ -12,6 +12,8 @@ class ActorInteraction;
 class BlockSource;
 class Interaction;
 class ItemStack;
+class Level;
+class LootTables;
 class Player;
 struct ItemSlotInfo;
 // clang-format on
@@ -44,7 +46,7 @@ public:
     );
 
     MCNAPI static void
-    _tryDropItem(::BlockSource& region, ::Actor& owner, ::ItemSlotInfo const& itemSlotInfo, float dropOffsetY);
+    _tryDropItem(::BlockSource& region, ::Actor& owner, ::ItemSlotInfo const& itemSlotInfo, float yOffset);
 
     MCNAPI static void _tryEquipItem(
         ::Actor&              owner,
@@ -57,5 +59,13 @@ public:
     );
 
     MCNAPI static void _trySendArmorSlot(::Actor& owner, ::SharedTypes::Legacy::ArmorSlot armorSlot);
+
+    MCNAPI static void _trySpawnItems(
+        ::Level&             level,
+        ::Actor&             owner,
+        ::LootTables&        lootTables,
+        ::std::string const& lootTableName,
+        float                yOffset
+    );
     // NOLINTEND
 };

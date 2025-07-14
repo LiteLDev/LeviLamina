@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BaseGameVersion;
 class CameraPresets;
 class CommandOrigin;
 class CommandOutput;
@@ -106,11 +107,12 @@ public:
     ) const;
 
     MCAPI bool prepareInstruction(
-        ::CameraInstruction&   cameraInstruction,
-        ::CameraPresets const& cameraPresets,
-        ::CommandOrigin const& origin,
-        ::CommandOutput&       output,
-        ::Experiments const&   experiments
+        ::CameraInstruction&     cameraInstruction,
+        ::CameraPresets const&   cameraPresets,
+        ::CommandOrigin const&   origin,
+        ::CommandOutput&         output,
+        ::Experiments const&     experiments,
+        ::BaseGameVersion const& baseGameVersion
     ) const;
     // NOLINTEND
 
@@ -182,6 +184,8 @@ public:
     MCAPI static char const*& OPTION_TIME();
 
     MCAPI static char const*& OPTION_VIEW_OFFSET();
+
+    MCAPI static ::BaseGameVersion const& REMOVE_IGNORE_STARTING_VALUE_COMPONENT_VERSION();
     // NOLINTEND
 
 public:

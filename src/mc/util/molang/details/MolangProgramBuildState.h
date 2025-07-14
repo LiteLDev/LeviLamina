@@ -4,8 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Molang::details { class IInstruction; }
-namespace Molang::details { class Program; }
+namespace brstd { struct source_location; }
 // clang-format on
 
 namespace Molang::details {
@@ -17,7 +16,6 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk9b2202;
     ::ll::UntypedStorage<1, 1>  mUnkae9e01;
     ::ll::UntypedStorage<8, 24> mUnk15adb4;
-    ::ll::UntypedStorage<8, 32> mUnk2afa3d;
     // NOLINTEND
 
 public:
@@ -31,15 +29,12 @@ public:
     // NOLINTBEGIN
     MCNAPI uint64 allocateInstruction();
 
-    MCNAPI void emplaceInstruction(::std::unique_ptr<::Molang::details::IInstruction> instruction);
-
-    MCNAPI ::Molang::details::Program extractProgram();
-
     MCNAPI void insertJumpWithMaddAtIndex(
-        uint64 instructionIndexToPutThisInstruction,
-        uint64 instructionToJumpTo,
-        float  mulValue,
-        float  addValue
+        uint64                   instructionIndexToPutThisInstruction,
+        uint64                   instructionToJumpTo,
+        float                    mulValue,
+        float                    addValue,
+        ::brstd::source_location source
     );
 
     MCNAPI uint64 numInstructions() const;
@@ -49,17 +44,18 @@ public:
     MCNAPI void popLoopScope(uint64 instructionIndex);
 
     MCNAPI void pushLoopScope(
-        uint64 loopScopeInitializationInstructionIndex,
-        uint64 loopRepeatLogicInstructionIndex,
-        uint64 loopCleanupInstructionIndex,
-        uint64 nextStatementIndex
+        uint64                   loopScopeInitializationInstructionIndex,
+        uint64                   loopRepeatLogicInstructionIndex,
+        uint64                   loopCleanupInstructionIndex,
+        uint64                   nextStatementIndex,
+        ::brstd::source_location source
     );
 
-    MCNAPI void pushReturnValue();
+    MCNAPI void pushReturnValue(::brstd::source_location source);
 
-    MCNAPI void pushValue(float value);
+    MCNAPI void pushValue(float value, ::brstd::source_location source);
 
-    MCNAPI void setReturnValue(float value);
+    MCNAPI void setReturnValue(float value, ::brstd::source_location source);
 
     MCNAPI ~MolangProgramBuildState();
     // NOLINTEND

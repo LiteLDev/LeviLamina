@@ -7,6 +7,7 @@
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/resources/BaseGameVersion.h"
 
 // auto generated forward declare list
@@ -177,7 +178,7 @@ public:
 
     MCAPI static void finalizeBlockCustomComponentEvents(::ServerScriptManager const& scriptManager);
 
-    MCAPI static void forEachBlock(::std::function<bool(::BlockLegacy const&)> callback);
+    MCAPI static void forEachBlock(::brstd::function_ref<bool(::BlockLegacy const&)> callback);
 
     MCAPI static ::HashedString const& getBlockNameFromNameHash(uint64 hash);
 

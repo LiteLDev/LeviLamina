@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
+class CompoundTag;
 class HashedString;
 class SemVersion;
 namespace cereal { struct ReflectionCtx; }
@@ -42,8 +43,10 @@ public:
     ::ll::UntypedStorage<8, 48> mUnk82c02d;
     ::ll::UntypedStorage<1, 1>  mUnkc74705;
     ::ll::UntypedStorage<1, 1>  mUnk6249a9;
+    ::ll::UntypedStorage<1, 1>  mUnke7f60d;
     ::ll::UntypedStorage<8, 48> mUnkddf5e8;
     ::ll::UntypedStorage<8, 16> mUnk32eaa1;
+    ::ll::UntypedStorage<8, 24> mUnk16741f;
     // NOLINTEND
 
 public:
@@ -61,6 +64,12 @@ public:
     // vIndex: 10
     virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion) /*override*/;
 
+    // vIndex: 11
+    virtual ::CompoundTag buildUnboundDataNetworkTag() const /*override*/;
+
+    // vIndex: 12
+    virtual void initializeUnboundDataFromNetwork(::CompoundTag const& tag) /*override*/;
+
     // vIndex: 0
     virtual ~BlockGeometryDescription() /*override*/;
     // NOLINTEND
@@ -73,9 +82,10 @@ public:
     MCNAPI BlockGeometryDescription(::BlockGeometryDescription const&);
 
     MCNAPI BlockGeometryDescription(
-        ::HashedString const& geometryName,
-        ::HashedString const& cullingName,
-        ::HashedString const& cullingLayer
+        ::HashedString const&                                   geometryName,
+        ::HashedString const&                                   cullingName,
+        ::HashedString const&                                   cullingLayer,
+        ::std::variant<bool, ::std::set<::HashedString>> const& uvLock
     );
 
     MCNAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription&&);
@@ -107,6 +117,8 @@ public:
     MCNAPI static ::std::string const& GEO_NAME_CONSTRAINT();
 
     MCNAPI static ::std::string const& NameID();
+
+    MCNAPI static ::std::string const& UV_LOCKING_CONSTRAINT();
     // NOLINTEND
 
 public:
@@ -116,8 +128,12 @@ public:
 
     MCNAPI void* $ctor(::BlockGeometryDescription const&);
 
-    MCNAPI void*
-    $ctor(::HashedString const& geometryName, ::HashedString const& cullingName, ::HashedString const& cullingLayer);
+    MCNAPI void* $ctor(
+        ::HashedString const&                                   geometryName,
+        ::HashedString const&                                   cullingName,
+        ::HashedString const&                                   cullingLayer,
+        ::std::variant<bool, ::std::set<::HashedString>> const& uvLock
+    );
     // NOLINTEND
 
 public:
@@ -136,6 +152,10 @@ public:
     MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
     MCNAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
+
+    MCNAPI ::CompoundTag $buildUnboundDataNetworkTag() const;
+
+    MCNAPI void $initializeUnboundDataFromNetwork(::CompoundTag const& tag);
     // NOLINTEND
 
 public:

@@ -6,8 +6,6 @@
 // clang-format off
 class CraftingContext;
 class ItemStack;
-class Level;
-class RecipeIngredient;
 // clang-format on
 
 namespace SmithingTrimRecipeUtils {
@@ -19,12 +17,6 @@ MCNAPI bool doesItemHaveResultingTrim(
     ::std::string const&     templateName,
     ::std::string const&     materialName
 );
-
-MCNAPI bool
-validateAdditionIngredient(::Level const& level, ::RecipeIngredient additionIngredient, ::std::string const& recipeId);
-
-MCNAPI bool
-validateTemplateIngredient(::Level const& level, ::RecipeIngredient templateIngredient, ::std::string const& recipeId);
 // NOLINTEND
 
 } // namespace SmithingTrimRecipeUtils

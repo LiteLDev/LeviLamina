@@ -76,6 +76,8 @@ public:
     MCNAPI void _loadEntities();
 
     MCNAPI void _markChunkAsImported(::ChunkPos const& pos);
+
+    MCNAPI bool _openRegionFile();
     // NOLINTEND
 
 public:

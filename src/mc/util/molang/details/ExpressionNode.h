@@ -5,8 +5,8 @@
 // auto generated inclusion list
 #include "mc/molang/MolangVersion.h"
 #include "mc/platform/brstd/bitset.h"
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/util/MolangCompileResult.h"
-#include "mc/util/molang/ExpressionNode.h"
 #include "mc/util/molang/ExpressionOp.h"
 
 // auto generated forward declare list
@@ -17,7 +17,7 @@ struct MolangEvalParams;
 struct MolangParseConfig;
 struct MolangScriptArg;
 namespace Json { class Value; }
-namespace Molang::details { class IComplexExpression; }
+namespace Molang::details { class Program; }
 namespace Molang::details { struct MolangProgramBuildState; }
 // clang-format on
 
@@ -28,16 +28,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<2, 2>  mUnkf560f0;
-    ::ll::UntypedStorage<2, 2>  mUnk50c582;
     ::ll::UntypedStorage<4, 4>  mUnk4e6e98;
     ::ll::UntypedStorage<4, 4>  mUnk56c08e;
-    ::ll::UntypedStorage<4, 4>  mUnkce7c76;
-    ::ll::UntypedStorage<1, 1>  mUnk909b35;
-    ::ll::UntypedStorage<1, 1>  mUnk72c394;
-    ::ll::UntypedStorage<1, 1>  mUnk447a4a;
     ::ll::UntypedStorage<8, 88> mUnka6816f;
     ::ll::UntypedStorage<8, 24> mUnk58ba9b;
-    ::ll::UntypedStorage<8, 32> mUnkcbc25e;
     // NOLINTEND
 
 public:
@@ -47,11 +41,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ExpressionNode(::Molang::details::ExpressionNode const& rhs);
+    MCNAPI ExpressionNode(::Molang::details::ExpressionNode const&);
 
-    MCNAPI ExpressionNode(::Molang::details::ExpressionNode&& rhs);
-
-    MCNAPI ExpressionNode(::Json::Value const& value, ::MolangParseConfig const& config);
+    MCNAPI ExpressionNode(::Molang::details::ExpressionNode&&);
 
     MCNAPI bool _buildTree(::brstd::bitset<78, uint64> const& usedTokenFlags, ::MolangVersion molangVersion);
 
@@ -59,45 +51,37 @@ public:
 
     MCNAPI bool _optimize(::MolangVersion version, ::RenderParams& outRenderParams, int recursionDepth);
 
-    MCNAPI bool _processBinaryExpressions(::std::function<bool(::ExpressionOp)> predicate);
+    MCNAPI bool _processBinaryExpressions(::brstd::function_ref<bool(::ExpressionOp)> predicate);
 
     MCNAPI bool _processTernaryAndConditionalExpressions();
 
     MCNAPI bool _readNextToken(char const*& expression, ::MolangParseConfig const& parseConfig);
 
-    MCNAPI void _setExpressionStringWithoutRelink(::std::string expressionString);
-
-    MCNAPI bool _tokenize(
-        char const*                  expression,
-        ::brstd::bitset<78, uint64>& usedTokenFlags,
-        ::MolangParseConfig const&   parseConfig
-    );
-
     MCNAPI bool _validate(::MolangVersion version, bool inLoop, int inAssignmentLHSDepth) const;
 
     MCNAPI bool _validateChildrenAreNumerical(::MolangVersion version) const;
+
+    MCNAPI bool areAllChildrenEqual() const;
 
     MCNAPI void clear();
 
     MCNAPI bool findClosingOp(uint64& i, ::ExpressionOp endOp) const;
 
-    MCNAPI ::std::string getExpressionString() const;
-
     MCNAPI uint64 getTreeHash(bool sideEffectsReturnZero) const;
 
     MCNAPI bool getTreeString(::std::string& dest, bool sideEffectsReturnZero) const;
-
-    MCNAPI ::std::optional<::MolangScriptArg> getValueIfConstant() const;
 
     MCNAPI bool hasMadd() const;
 
     MCNAPI bool isValid() const;
 
+    MCNAPI ::nonstd::expected<::Molang::details::Program, ::MolangCompileResult> link(::MolangVersion version);
+
     MCNAPI void moveConstantChildToValueIfFloatOrHashType(int firstConstChildIndex);
 
-    MCNAPI ::Molang::details::ExpressionNode& operator=(::Molang::details::ExpressionNode&& rhs);
+    MCNAPI ::Molang::details::ExpressionNode& operator=(::Molang::details::ExpressionNode&&);
 
-    MCNAPI ::Molang::details::ExpressionNode& operator=(::Molang::details::ExpressionNode const& rhs);
+    MCNAPI ::Molang::details::ExpressionNode& operator=(::Molang::details::ExpressionNode const&);
 
     MCNAPI ::Molang::details::ExpressionNode& operator=(float value);
 
@@ -105,7 +89,14 @@ public:
 
     MCNAPI bool optimizeFunctionCallParams();
 
-    MCNAPI bool parse(::std::string_view inputExpression, ::MolangParseConfig const& config);
+    MCNAPI bool parse(
+        ::std::string_view           inputExpression,
+        ::MolangParseConfig const&   config,
+        ::brstd::bitset<78, uint64>& usedTokenFlags
+    );
+
+    MCNAPI bool
+    parse(::Json::Value const& value, ::MolangParseConfig const& config, ::brstd::bitset<78, uint64>& usedTokenFlags);
 
     MCNAPI bool processArrays();
 
@@ -126,9 +117,6 @@ public:
     MCNAPI bool processUnaryExpression(::ExpressionOp op);
 
     MCNAPI void replaceArrayVariables(::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>& dataMap);
-
-    MCNAPI void
-    replaceResourceVariables(::std::unordered_map<::HashedString, ::ExpressionNode::ResourceReference>& resourceTable);
 
     MCNAPI void validateArrayVariables() const;
 
@@ -152,7 +140,7 @@ public:
     MCNAPI static ::std::optional<::MolangScriptArg>
     _getQueryFunctionAccessor(::std::string const& functionName, ::MolangParseConfig const& parseConfig);
 
-    MCNAPI static ::MolangScriptArg const* _getScriptArgFromMemberAccessedVariable(
+    MCNAPI static ::MolangScriptArg const* _getReferencedMemberVariableScriptArg(
         ::MolangEvalParams&                      state,
         ::Molang::details::ExpressionNode const& memberAccessorNode
     );
@@ -164,18 +152,14 @@ public:
     );
 
     MCNAPI static char const* getOpFriendlyName(::ExpressionOp op);
-
-    MCNAPI static ::std::unique_ptr<::Molang::details::IComplexExpression> link(::Molang::details::ExpressionNode node);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Molang::details::ExpressionNode const& rhs);
+    MCNAPI void* $ctor(::Molang::details::ExpressionNode const&);
 
-    MCNAPI void* $ctor(::Molang::details::ExpressionNode&& rhs);
-
-    MCNAPI void* $ctor(::Json::Value const& value, ::MolangParseConfig const& config);
+    MCNAPI void* $ctor(::Molang::details::ExpressionNode&&);
     // NOLINTEND
 
 public:

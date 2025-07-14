@@ -19,18 +19,18 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static uchar CombineRangeAndChromaSiting(
-        ::webrtc::ColorSpace::RangeID,
-        ::webrtc::ColorSpace::ChromaSiting,
-        ::webrtc::ColorSpace::ChromaSiting
+        ::webrtc::ColorSpace::RangeID      range,
+        ::webrtc::ColorSpace::ChromaSiting chroma_siting_horizontal,
+        ::webrtc::ColorSpace::ChromaSiting chroma_siting_vertical
     );
 
-    MCNAPI static bool Write(::rtc::ArrayView<uchar>, ::webrtc::ColorSpace const&);
+    MCNAPI static bool Write(::rtc::ArrayView<uchar> data, ::webrtc::ColorSpace const& color_space);
 
-    MCNAPI static uint64 WriteChromaticity(uchar*, ::webrtc::HdrMasteringMetadata::Chromaticity const&);
+    MCNAPI static uint64 WriteChromaticity(uchar* data, ::webrtc::HdrMasteringMetadata::Chromaticity const& p);
 
-    MCNAPI static uint64 WriteHdrMetadata(::rtc::ArrayView<uchar>, ::webrtc::HdrMetadata const&);
+    MCNAPI static uint64 WriteHdrMetadata(::rtc::ArrayView<uchar> data, ::webrtc::HdrMetadata const& hdr_metadata);
 
-    MCNAPI static uint64 WriteLuminance(uchar*, float, int);
+    MCNAPI static uint64 WriteLuminance(uchar* data, float f, int denominator);
     // NOLINTEND
 };
 

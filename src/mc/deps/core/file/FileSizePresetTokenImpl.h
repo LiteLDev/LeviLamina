@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/container/list_base_hook.h"
 #include "mc/deps/core/file/FileSizePresetToken.h"
+#include "mc/platform/container/list_base_hook.h"
 
 namespace Core {
 

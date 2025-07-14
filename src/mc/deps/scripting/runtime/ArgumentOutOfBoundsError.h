@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Error.h"
+#include "mc/deps/scripting/runtime/BaseError.h"
 
 namespace Scripting {
 
-struct ArgumentOutOfBoundsError : public ::Scripting::Error {
+struct ArgumentOutOfBoundsError : public ::Scripting::BaseError {
 public:
     // member variables
     // NOLINTBEGIN

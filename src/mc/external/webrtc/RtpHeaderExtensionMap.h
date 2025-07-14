@@ -28,19 +28,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void Deregister(::std::string_view);
+    MCNAPI void Deregister(::std::string_view uri);
 
-    MCNAPI ::webrtc::RTPExtensionType GetType(int) const;
+    MCNAPI ::webrtc::RTPExtensionType GetType(int id) const;
 
-    MCNAPI bool Register(int, ::webrtc::RTPExtensionType, ::std::string_view);
+    MCNAPI bool Register(int id, ::webrtc::RTPExtensionType type, ::std::string_view uri);
 
-    MCNAPI bool RegisterByUri(int, ::std::string_view);
+    MCNAPI bool RegisterByUri(int id, ::std::string_view uri);
 
     MCNAPI RtpHeaderExtensionMap();
 
-    MCNAPI explicit RtpHeaderExtensionMap(bool);
+    MCNAPI explicit RtpHeaderExtensionMap(::rtc::ArrayView<::webrtc::RtpExtension const> extensions);
 
-    MCNAPI explicit RtpHeaderExtensionMap(::rtc::ArrayView<::webrtc::RtpExtension const>);
+    MCNAPI explicit RtpHeaderExtensionMap(bool extmap_allow_mixed);
     // NOLINTEND
 
 public:
@@ -48,9 +48,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(bool);
+    MCNAPI void* $ctor(::rtc::ArrayView<::webrtc::RtpExtension const> extensions);
 
-    MCNAPI void* $ctor(::rtc::ArrayView<::webrtc::RtpExtension const>);
+    MCNAPI void* $ctor(bool extmap_allow_mixed);
     // NOLINTEND
 };
 

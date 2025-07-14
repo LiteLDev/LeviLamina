@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace PackCommand { class PackCommandPipelineSync; }
+class TaskGroup;
 namespace PackCommand { struct MoveReplaceBatch; }
 namespace PackCommand { struct PackCommandHandle; }
 namespace PackCommand { struct RemoveBatch; }
@@ -34,7 +34,7 @@ public:
     virtual ::PackCommand::PackCommandHandle submitRemove(::PackCommand::RemoveBatch&&) = 0;
 
     // vIndex: 4
-    virtual ::PackCommand::PackCommandPipelineSync _getSync() = 0;
+    virtual ::TaskGroup& getTaskGroup() = 0;
     // NOLINTEND
 
 public:

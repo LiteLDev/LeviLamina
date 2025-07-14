@@ -2,9 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/Constraint.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace cereal { class SerializerContext; }
 namespace cereal { struct ReflectionCtx; }
+namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
 namespace SharedTypes::v1_20_60 {
@@ -28,9 +33,46 @@ public:
         // BiomeJsonObject inner types define
         struct BiomeDescription {
         public:
+            // BiomeDescription inner types declare
+            // clang-format off
+            struct BiomeIdentifierReferenceConstraint;
+            // clang-format on
+
+            // BiomeDescription inner types define
+            struct BiomeIdentifierReferenceConstraint : public ::cereal::Constraint {
+            public:
+                // virtual functions
+                // NOLINTBEGIN
+                // vIndex: 0
+                virtual void doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const
+                    /*override*/;
+
+                // vIndex: 2
+                virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
+
+                // vIndex: 1
+                virtual ~BiomeIdentifierReferenceConstraint() /*override*/ = default;
+                // NOLINTEND
+
+            public:
+                // virtual function thunks
+                // NOLINTBEGIN
+                MCNAPI void $doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
+
+                MCNAPI ::cereal::internal::ConstraintDescription $description() const;
+                // NOLINTEND
+
+            public:
+                // vftables
+                // NOLINTBEGIN
+                MCNAPI static void** $vftable();
+                // NOLINTEND
+            };
+
+        public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 32> mUnk61328d;
+            ::ll::UntypedStorage<8, 32> mUnk7f4c54;
             // NOLINTEND
 
         public:

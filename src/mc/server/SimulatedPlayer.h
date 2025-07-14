@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/certificates/identity/PlayerAuthenticationType.h"
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -25,7 +26,6 @@ class ChunkSource;
 class ChunkViewSource;
 class Dimension;
 class EntityContext;
-class GameServerToken;
 class ItemStack;
 class Level;
 class NavigationComponent;
@@ -36,6 +36,7 @@ class ServerNetworkSystem;
 class Vec2;
 class Vec3;
 struct ActorUniqueID;
+struct PlayerAuthenticationInfo;
 struct VariantParameterList;
 namespace ClientBlobCache::Server { class ActiveTransfersManager; }
 namespace ScriptModuleGameTest { struct ScriptNavigationResult; }
@@ -54,7 +55,7 @@ public:
     ::ll::TypedStorage<1, 2, ::std::optional<uchar>>                                      mDestroyingBlockFace;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::gametest::BaseGameTestHelper>> mGameTestHelper;
     ::ll::TypedStorage<8, 8, uint64>                                                      mCooldownTick;
-    ::ll::TypedStorage<8, 88, ::PlayerMovementSettings>                                   mMovementSettings;
+    ::ll::TypedStorage<8, 64, ::PlayerMovementSettings>                                   mMovementSettings;
     ::ll::TypedStorage<4, 4, float>                                                       mBaseInputSpeed;
     ::ll::TypedStorage<8, 32, ::std::string>                                              mXuid;
     ::ll::TypedStorage<8, 40, ::PlayerSuspendLevelStorageSaveToken const> mPlayerSuspendLevelStorageSaveToken;
@@ -119,7 +120,8 @@ public:
         ::std::function<void(::ServerPlayer&)>             playerLoadedCallback,
         ::mce::UUID                                        uuid,
         ::std::string const&                               deviceId,
-        ::GameServerToken const&                           token,
+        ::PlayerAuthenticationType                         authType,
+        ::PlayerAuthenticationInfo const&                  authInfo,
         int                                                maxChunkRadius,
         bool                                               enableItemStackNetManager,
         ::EntityContext&                                   entityContext
@@ -216,7 +218,8 @@ public:
         ::std::function<void(::ServerPlayer&)>             playerLoadedCallback,
         ::mce::UUID                                        uuid,
         ::std::string const&                               deviceId,
-        ::GameServerToken const&                           token,
+        ::PlayerAuthenticationType                         authType,
+        ::PlayerAuthenticationInfo const&                  authInfo,
         int                                                maxChunkRadius,
         bool                                               enableItemStackNetManager,
         ::EntityContext&                                   entityContext

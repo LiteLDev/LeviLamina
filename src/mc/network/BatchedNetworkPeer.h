@@ -86,7 +86,7 @@ public:
     // vIndex: 0
     virtual ~BatchedNetworkPeer() /*override*/;
 
-    // vIndex: 5
+    // vIndex: 4
     virtual void flush(::std::function<void()>&& callback) /*override*/;
 
     // vIndex: 1
@@ -97,16 +97,16 @@ public:
     ) /*override*/;
 
     // vIndex: 2
-    virtual ::NetworkPeer::DataStatus receivePacket(
+    virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
+
+    // vIndex: 3
+    virtual void update() /*override*/;
+
+    // vIndex: 7
+    virtual ::NetworkPeer::DataStatus _receivePacket(
         ::std::string&                                                    outData,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     ) /*override*/;
-
-    // vIndex: 3
-    virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
-
-    // vIndex: 4
-    virtual void update() /*override*/;
     // NOLINTEND
 
 public:
@@ -137,14 +137,14 @@ public:
     MCAPI void
     $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
 
-    MCAPI ::NetworkPeer::DataStatus $receivePacket(
-        ::std::string&                                                    outData,
-        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
-    );
-
     MCFOLD ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 
     MCAPI void $update();
+
+    MCAPI ::NetworkPeer::DataStatus $_receivePacket(
+        ::std::string&                                                    outData,
+        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+    );
     // NOLINTEND
 
 public:

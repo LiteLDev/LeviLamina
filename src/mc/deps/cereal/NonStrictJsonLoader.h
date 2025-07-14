@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/BasicLoader.h"
+#include "mc/deps/cereal/ResultCode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,13 +28,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit NonStrictJsonLoader(::cereal::ReflectionCtx const&);
+    MCNAPI NonStrictJsonLoader(::cereal::ReflectionCtx const&, ::cereal::ResultCode);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::ReflectionCtx const&);
+    MCNAPI void* $ctor(::cereal::ReflectionCtx const&, ::cereal::ResultCode);
     // NOLINTEND
 
 public:

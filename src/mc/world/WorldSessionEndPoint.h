@@ -40,7 +40,13 @@ public:
     virtual bool logOnlyOnce() const /*override*/;
 
     // vIndex: 0
-    virtual ~WorldSessionEndPoint() /*override*/ = default;
+    virtual ~WorldSessionEndPoint() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -55,13 +61,5 @@ public:
     MCNAPI bool $isEnabled() const;
 
     MCNAPI bool $logOnlyOnce() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForLogEndPoint();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

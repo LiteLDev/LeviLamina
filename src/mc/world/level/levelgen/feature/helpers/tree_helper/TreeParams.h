@@ -6,7 +6,6 @@
 // clang-format off
 class BlockPos;
 class IBlockWorldGenAPI;
-class Random;
 // clang-format on
 
 namespace TreeHelper {
@@ -33,10 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _placeBaseBlockAt(::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
-
-    MCNAPI void
-    placeBaseCluster(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, int trunkWidth) const;
+    MCNAPI void _placeBaseBlockCircle(::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
 
     MCNAPI ~TreeParams();
     // NOLINTEND

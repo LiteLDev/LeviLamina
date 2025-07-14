@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/ProjectExportStatus.h"
 #include "mc/common/editor/WorldType.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
@@ -22,7 +23,8 @@ class EditorExportProjectManagerService : public ::Editor::Services::IEditorServ
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk328f45;
+    ::ll::UntypedStorage<4, 4>  mUnk7651cd;
+    ::ll::UntypedStorage<8, 24> mUnkb15932;
     // NOLINTEND
 
 public:
@@ -48,14 +50,27 @@ public:
 
     // vIndex: 1
     virtual void beginExportProject(
-        ::WeakEntityRef                                      playerRef,
-        ::Editor::GameOptions const&                         gameOptions,
-        ::Editor::WorldType const                            editorWorldType,
-        ::std::function<void(::Editor::ExportResult const&)> callback
+        ::WeakEntityRef                                                     playerRef,
+        ::Editor::GameOptions const&                                        gameOptions,
+        ::Editor::WorldType const                                           editorWorldType,
+        ::std::function<void(::Editor::ExportResult const&, ::std::string)> callback
     ) /*override*/;
 
     // vIndex: 2
     virtual bool canExportProject() /*override*/;
+
+    // vIndex: 3
+    virtual ::Editor::ProjectExportStatus getExportStatus() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _onExportError(
+        ::std::function<void(::Editor::ExportResult const&, ::std::string)> callback,
+        ::std::string                                                       message,
+        ::Editor::ExportResult                                              result
+    );
     // NOLINTEND
 
 public:
@@ -68,13 +83,15 @@ public:
     MCNAPI ::std::string_view $getServiceName() const;
 
     MCNAPI void $beginExportProject(
-        ::WeakEntityRef                                      playerRef,
-        ::Editor::GameOptions const&                         gameOptions,
-        ::Editor::WorldType const                            editorWorldType,
-        ::std::function<void(::Editor::ExportResult const&)> callback
+        ::WeakEntityRef                                                     playerRef,
+        ::Editor::GameOptions const&                                        gameOptions,
+        ::Editor::WorldType const                                           editorWorldType,
+        ::std::function<void(::Editor::ExportResult const&, ::std::string)> callback
     );
 
     MCNAPI bool $canExportProject();
+
+    MCNAPI ::Editor::ProjectExportStatus $getExportStatus();
     // NOLINTEND
 
 public:

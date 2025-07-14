@@ -47,6 +47,7 @@ public:
     ::ll::TypedStorage<8, 8, ::ChunkPos>                                   mCenterChunkPos;
     ::ll::TypedStorage<8, 8, uint64>                                       mCenterSubChunkIndex;
     ::ll::TypedStorage<1, 1, bool>                                         mOriginalLighting;
+    ::ll::TypedStorage<1, 1, bool>                                         mIsClientSide;
     ::ll::TypedStorage<1, 1, ::SubChunkBrightnessStorage::LightPair>       mDefaultLightPair;
     // NOLINTEND
 
@@ -61,6 +62,7 @@ public:
         ::IBlockSource&   source,
         uint64            centerSubChunkIndex,
         ::ChunkPos const& centerChunkPos,
+        bool              isClientSide,
         bool              originalLighting,
         bool              useFullyDarkSubchunk
     );
@@ -88,7 +90,7 @@ public:
 
     MCNAPI void _propagateSubtractiveBlockLight(::SubChunkLightIndex coordIndex, uchar effectiveBrightness);
 
-    MCNAPI void _propagateSubtractiveSkyLight();
+    MCNAPI void _propagateSubtractiveSkyLight(bool shouldCheckForIgnoredAbsorptionValues);
 
     MCNAPI void _propagateSubtractiveSkyLight(::SubChunkLightIndex coordIndex, uchar effectiveBrightness);
 
@@ -164,6 +166,7 @@ public:
         ::IBlockSource&   source,
         uint64            centerSubChunkIndex,
         ::ChunkPos const& centerChunkPos,
+        bool              isClientSide,
         bool              originalLighting,
         bool              useFullyDarkSubchunk
     );

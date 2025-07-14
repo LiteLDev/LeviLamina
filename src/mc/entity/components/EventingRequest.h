@@ -8,10 +8,8 @@ public:
     // clang-format off
     struct ActorMovementCorrectionData;
     struct PersonaEmoteData;
-    struct PlayerActionComparisonErrorData;
     struct PlayerBounceData;
     struct PlayerUnexpectedFallDamageData;
-    struct VehiclePositionComparisonErrorData;
     // clang-format on
 
     // EventingRequest inner types define
@@ -45,35 +43,6 @@ public:
         PlayerBounceData& operator=(PlayerBounceData const&);
         PlayerBounceData(PlayerBounceData const&);
         PlayerBounceData();
-    };
-
-    struct PlayerActionComparisonErrorData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk59ecd4;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PlayerActionComparisonErrorData& operator=(PlayerActionComparisonErrorData const&);
-        PlayerActionComparisonErrorData(PlayerActionComparisonErrorData const&);
-        PlayerActionComparisonErrorData();
-    };
-
-    struct VehiclePositionComparisonErrorData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnk68aef0;
-        ::ll::UntypedStorage<4, 12> mUnkb85586;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        VehiclePositionComparisonErrorData& operator=(VehiclePositionComparisonErrorData const&);
-        VehiclePositionComparisonErrorData(VehiclePositionComparisonErrorData const&);
-        VehiclePositionComparisonErrorData();
     };
 
     struct PlayerUnexpectedFallDamageData {
@@ -116,8 +85,6 @@ public:
         ::std::variant<
             ::EventingRequest::PersonaEmoteData,
             ::EventingRequest::PlayerBounceData,
-            ::EventingRequest::PlayerActionComparisonErrorData,
-            ::EventingRequest::VehiclePositionComparisonErrorData,
             ::EventingRequest::PlayerUnexpectedFallDamageData,
             ::EventingRequest::ActorMovementCorrectionData>>
         mData;

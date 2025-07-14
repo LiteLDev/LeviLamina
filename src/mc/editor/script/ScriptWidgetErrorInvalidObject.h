@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Error.h"
+#include "mc/deps/scripting/runtime/BaseError.h"
 
 namespace Editor::ScriptModule {
 
-class ScriptWidgetErrorInvalidObject : public ::Scripting::Error {
+class ScriptWidgetErrorInvalidObject : public ::Scripting::BaseError {
 public:
     // member functions
     // NOLINTBEGIN

@@ -9,7 +9,10 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
+class Experiments;
 class SemVersion;
+namespace Json { class Value; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockDestructionParticlesDescription
@@ -19,6 +22,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkfae2e8;
     ::ll::UntypedStorage<1, 1>  mUnk290d49;
+    ::ll::UntypedStorage<4, 4>  mUnk860978;
     // NOLINTEND
 
 public:
@@ -46,13 +50,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockDestructionParticlesDescription(::std::string texture, ::TintMethod tintMethod);
+    MCNAPI explicit BlockDestructionParticlesDescription(uchar particleNumber);
+
+    MCNAPI BlockDestructionParticlesDescription(::std::string texture, ::TintMethod tintMethod, uchar particleNumber);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCNAPI static bool postParseConstraint(
+        ::Experiments const& experiments,
+        ::Json::Value const& componentJson,
+        ::SemVersion const&  jsonVersion
+    );
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static uchar const& DEFAULT_NON_CUBE_PARTICLE_COUNT();
+
+    MCNAPI static uchar const& DEFAULT_PARTICLE_COUNT();
+
     MCNAPI static ::std::string const& NameID();
+
+    MCNAPI static ::std::string const& ParticleCountID();
 
     MCNAPI static ::std::string const& SchemaID();
 
@@ -61,12 +85,16 @@ public:
     MCNAPI static ::std::string const& TintMethodID();
 
     MCNAPI static ::SemVersion const& Version1_21_70();
+
+    MCNAPI static ::SemVersion const& Version1_21_90();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string texture, ::TintMethod tintMethod);
+    MCNAPI void* $ctor(uchar particleNumber);
+
+    MCNAPI void* $ctor(::std::string texture, ::TintMethod tintMethod, uchar particleNumber);
     // NOLINTEND
 
 public:

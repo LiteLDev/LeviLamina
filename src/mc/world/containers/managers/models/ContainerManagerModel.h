@@ -80,7 +80,7 @@ public:
     virtual ::ContainerID getContainerId() const /*override*/;
 
     // vIndex: 2
-    virtual void setContainerId(::ContainerID) /*override*/;
+    virtual void setContainerId(::ContainerID id) /*override*/;
 
     // vIndex: 3
     virtual ::SharedTypes::Legacy::ContainerType getContainerType() const /*override*/;
@@ -155,6 +155,10 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $tick();
+
+    MCNAPI ::ContainerID $getContainerId() const;
+
+    MCNAPI void $setContainerId(::ContainerID id);
 
     MCNAPI ::SharedTypes::Legacy::ContainerType $getContainerType() const;
 

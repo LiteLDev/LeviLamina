@@ -98,6 +98,8 @@ public:
 
     MCNAPI static ::Motif const&& mDefaultImage();
 
+    MCNAPI static ::Motif const& mDennis();
+
     MCNAPI static ::Motif const& mDonkeyKong();
 
     MCNAPI static ::Motif const& mEarth();

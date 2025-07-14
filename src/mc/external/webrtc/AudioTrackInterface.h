@@ -23,25 +23,33 @@ public:
     virtual ::webrtc::AudioSourceInterface* GetSource() const = 0;
 
     // vIndex: 9
-    virtual void AddSink(::webrtc::AudioTrackSinkInterface*) = 0;
+    virtual void AddSink(::webrtc::AudioTrackSinkInterface* sink) = 0;
 
     // vIndex: 10
-    virtual void RemoveSink(::webrtc::AudioTrackSinkInterface*) = 0;
+    virtual void RemoveSink(::webrtc::AudioTrackSinkInterface* sink) = 0;
 
     // vIndex: 11
-    virtual bool GetSignalLevel(int*);
+    virtual bool GetSignalLevel(int* level);
 
     // vIndex: 12
     virtual ::webrtc::scoped_refptr<::webrtc::AudioProcessorInterface> GetAudioProcessor();
 
     // vIndex: 2
-    virtual ~AudioTrackInterface() /*override*/ = default;
+    virtual ~AudioTrackInterface() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $GetSignalLevel(int* level);
 
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::AudioProcessorInterface> $GetAudioProcessor();
     // NOLINTEND
 };
 

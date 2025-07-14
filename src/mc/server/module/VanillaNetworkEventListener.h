@@ -18,7 +18,7 @@ class VanillaNetworkEventListener : public ::EventListenerDispatcher<::ActorEven
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 63
+    // vIndex: 65
     virtual ::EventResult onEvent(::PlayerDamageEvent const&) /*override*/;
 
     // vIndex: 0

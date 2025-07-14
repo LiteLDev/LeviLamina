@@ -19,12 +19,13 @@ public:
 public:
     // prevent constructor by default
     PackIdVersion& operator=(PackIdVersion const&);
-    PackIdVersion(PackIdVersion const&);
     PackIdVersion();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PackIdVersion(::PackIdVersion const&);
+
     MCAPI PackIdVersion(::std::string const& id, ::std::string const& version, ::PackType packType);
 
     MCAPI PackIdVersion(::mce::UUID const& id, ::SemVersion const& version, ::PackType packType);
@@ -53,6 +54,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::PackIdVersion const&);
+
     MCAPI void* $ctor(::std::string const& id, ::std::string const& version, ::PackType packType);
 
     MCAPI void* $ctor(::mce::UUID const& id, ::SemVersion const& version, ::PackType packType);

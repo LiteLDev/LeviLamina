@@ -25,7 +25,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptContentLogEndPoint() /*override*/ = default;
+    virtual ~ScriptContentLogEndPoint() /*override*/;
 
     // vIndex: 1
     virtual void log(::LogArea const, ::LogLevel const logLevel, char const* message) /*override*/;
@@ -44,6 +44,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $log(::LogArea const, ::LogLevel const logLevel, char const* message);
@@ -55,13 +61,5 @@ public:
     MCNAPI void $setEnabled(bool newState);
 
     MCNAPI bool $isEnabled() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForLogEndPoint();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

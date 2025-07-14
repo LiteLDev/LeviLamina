@@ -24,6 +24,8 @@ MCNAPI void fromProxyWithAssetValidation(
     ::cereal::SerializerContext const&                 serializerContext
 );
 
+MCNAPI void fromString(::BlockDescriptor& instance, ::std::string const& str);
+
 MCNAPI void fromStringWithAssetValidation(
     ::BlockDescriptor&                 instance,
     ::std::string const&               str,

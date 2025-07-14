@@ -60,6 +60,8 @@ public:
 
     MCFOLD bool $isDye() const;
 
+    MCFOLD ::ItemColor $getItemColor() const;
+
     MCFOLD bool $isValidAuxValue(int auxValue) const;
 
     MCAPI ::InteractionResult

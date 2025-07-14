@@ -23,7 +23,13 @@ public:
     virtual void StartShortCircuiting();
 
     // vIndex: 2
-    virtual ~TransformedFrameCallback() /*override*/ = default;
+    virtual ~TransformedFrameCallback() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

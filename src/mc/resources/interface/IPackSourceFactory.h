@@ -15,6 +15,7 @@ class IWorldTemplateManager;
 class InPackagePackSource;
 class PackSource;
 class WorldHistoryPackSource;
+class WorldTemplateCollectionView;
 class WorldTemplatePackSource;
 struct PackIdVersion;
 namespace Core { class Path; }
@@ -28,7 +29,7 @@ public:
     // vIndex: 0
     virtual ~IPackSourceFactory() = default;
 
-    // vIndex: 1
+    // vIndex: 2
     virtual ::WorldTemplatePackSource& createWorldTemplatePackSource(
         ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager const> const&,
         ::mce::UUID const&,
@@ -36,34 +37,42 @@ public:
         ::PackOrigin
     ) = 0;
 
-    // vIndex: 2
-    virtual ::WorldTemplatePackSource* getWorldTemplatePackSource(::mce::UUID const&, ::PackType) const = 0;
+    // vIndex: 1
+    virtual ::WorldTemplatePackSource& createWorldTemplatePackSource(
+        ::std::unique_ptr<::WorldTemplateCollectionView>,
+        ::mce::UUID const&,
+        ::PackType,
+        ::PackOrigin
+    ) = 0;
 
     // vIndex: 3
-    virtual ::DirectoryPackSource& createDirectoryPackSource(::Core::Path const&, ::PackType, ::PackOrigin, bool) = 0;
+    virtual ::WorldTemplatePackSource* getWorldTemplatePackSource(::mce::UUID const&, ::PackType) const = 0;
 
     // vIndex: 4
-    virtual ::DirectoryPackSource* getDirectoryPackSource(::Core::Path const&, ::PackType) const = 0;
+    virtual ::DirectoryPackSource& createDirectoryPackSource(::Core::Path const&, ::PackType, ::PackOrigin, bool) = 0;
 
     // vIndex: 5
-    virtual ::InPackagePackSource& createInPackagePackSource(::PackType) = 0;
+    virtual ::DirectoryPackSource* getDirectoryPackSource(::Core::Path const&, ::PackType) const = 0;
 
     // vIndex: 6
-    virtual ::InPackagePackSource* getInPackagePackSource(::PackType) = 0;
+    virtual ::InPackagePackSource& createInPackagePackSource(::PackType) = 0;
 
     // vIndex: 7
-    virtual ::WorldHistoryPackSource& createWorldHistoryPackSource(::Core::Path const&, ::PackType) = 0;
+    virtual ::InPackagePackSource* getInPackagePackSource(::PackType) = 0;
 
     // vIndex: 8
-    virtual ::WorldHistoryPackSource* getWorldHistoryPackSource(::Core::Path const&, ::PackType) const = 0;
+    virtual ::WorldHistoryPackSource& createWorldHistoryPackSource(::Core::Path const&, ::PackType) = 0;
 
     // vIndex: 9
-    virtual ::std::unique_ptr<::CompositePackSource> createCompositePackSource(::std::vector<::PackSource*>) = 0;
+    virtual ::WorldHistoryPackSource* getWorldHistoryPackSource(::Core::Path const&, ::PackType) const = 0;
 
     // vIndex: 10
-    virtual ::DirectoryPackSource* getDirectoryPackSourceContaining(::PackIdVersion const&) const = 0;
+    virtual ::std::unique_ptr<::CompositePackSource> createCompositePackSource(::std::vector<::PackSource*>) = 0;
 
     // vIndex: 11
+    virtual ::DirectoryPackSource* getDirectoryPackSourceContaining(::PackIdVersion const&) const = 0;
+
+    // vIndex: 12
     virtual void removeFromDirectoryPackSource(::Core::Path const&) = 0;
     // NOLINTEND
 

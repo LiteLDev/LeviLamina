@@ -34,6 +34,9 @@ MCNAPI ::std::vector<::std::string> readStringArrayAndReport(
     bool                          optional
 );
 
+MCNAPI ::std::pair<::Json::Value const*, ::PackParseErrorType>
+readValue(::Json::Value const& value, ::std::string const& propertyName);
+
 MCNAPI ::std::pair<::Json::Value const, ::PackParseErrorType> readValueAndReportErrors(
     ::Json::Value const&          parent,
     ::std::string const&          element,

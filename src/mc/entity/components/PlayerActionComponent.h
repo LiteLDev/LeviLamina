@@ -40,13 +40,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::std::string
-    getDiffOfPlayerAuthInputPacket(::PlayerActionComponent const& lhs, ::PlayerActionComponent const& rhs);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::PlayerActionComponent&&);

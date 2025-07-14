@@ -32,10 +32,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 9
-    virtual ::Scripting::Result_deprecated<void> applyImpulse(::Actor& self, ::Vec3 const& vector) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> applyImpulseStable(::Actor& self, ::Vec3 const& vector) /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result_deprecated<void> clearVelocity(::Actor& self) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> clearVelocityStable(::Actor& self) /*override*/;
 
     // vIndex: 10
     virtual ::Scripting::Result_deprecated<void> remove(::Actor& self) /*override*/;
@@ -186,9 +186,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> $applyImpulse(::Actor& self, ::Vec3 const& vector);
+    MCNAPI ::Scripting::Result_deprecated<void> $applyImpulseStable(::Actor& self, ::Vec3 const& vector);
 
-    MCNAPI ::Scripting::Result_deprecated<void> $clearVelocity(::Actor& self);
+    MCNAPI ::Scripting::Result_deprecated<void> $clearVelocityStable(::Actor& self);
 
     MCNAPI ::Scripting::Result_deprecated<void> $remove(::Actor& self);
 

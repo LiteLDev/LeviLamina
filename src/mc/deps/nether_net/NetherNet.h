@@ -13,7 +13,7 @@ namespace NetherNet { class CandidateAdd; }
 namespace NetherNet { class ConnectError; }
 namespace NetherNet { class ConnectRequest; }
 namespace NetherNet { class ConnectResponse; }
-namespace NetherNet { struct NetherNetTransportGlobalConfiguration; }
+namespace NetherNet { struct GlobalConfiguration; }
 namespace rtc { class IPAddress; }
 namespace webrtc { class StatsReport; }
 // clang-format on
@@ -28,7 +28,7 @@ MCNAPI ::NetherNet::ErrorOr<::std::vector<uchar>, ::std::error_code> CreateKey(u
 MCNAPI bool
 GetValue(::webrtc::StatsReport const* report, ::webrtc::StatsReport::StatsValueName name, ::std::string* value);
 
-MCNAPI void InitializeNetherNetTransport(::NetherNet::NetherNetTransportGlobalConfiguration const& config);
+MCNAPI void InitializeNetherNetTransport(::NetherNet::GlobalConfiguration const& config);
 
 MCNAPI ::std::optional<::std::variant<
     ::NetherNet::ConnectRequest,

@@ -32,7 +32,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 2
-        virtual ~Flag() /*override*/ = default;
+        virtual ~Flag() /*override*/;
         // NOLINTEND
 
     public:
@@ -49,6 +49,12 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -73,11 +79,11 @@ public:
     // NOLINTBEGIN
     MCNAPI WeakReference();
 
-    MCNAPI explicit WeakReference(::rtc::internal::WeakReference::Flag const*);
-
     MCNAPI WeakReference(::rtc::internal::WeakReference&&);
 
     MCNAPI WeakReference(::rtc::internal::WeakReference const&);
+
+    MCNAPI explicit WeakReference(::rtc::internal::WeakReference::Flag const* flag);
 
     MCNAPI bool is_valid() const;
 
@@ -89,11 +95,11 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::rtc::internal::WeakReference::Flag const*);
-
     MCNAPI void* $ctor(::rtc::internal::WeakReference&&);
 
     MCNAPI void* $ctor(::rtc::internal::WeakReference const&);
+
+    MCNAPI void* $ctor(::rtc::internal::WeakReference::Flag const* flag);
     // NOLINTEND
 
 public:

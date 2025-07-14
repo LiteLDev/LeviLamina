@@ -8,6 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
+class BlockPos;
+class BlockSource;
 class Experiments;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -18,6 +20,9 @@ class DriedGhastBlock : public ::BlockLegacy {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 131
+    virtual void onRemove(::BlockSource& region, ::BlockPos const& position) const /*override*/;
+
     // vIndex: 123
     virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
 
@@ -42,6 +47,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& position) const;
+
     MCAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
 
     MCAPI int $getVariant(::Block const& block) const;

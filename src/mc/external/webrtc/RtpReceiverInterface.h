@@ -47,7 +47,7 @@ public:
     virtual ::webrtc::RtpParameters GetParameters() const = 0;
 
     // vIndex: 10
-    virtual bool SetParameters(::webrtc::RtpParameters const&);
+    virtual bool SetParameters(::webrtc::RtpParameters const& parameters);
 
     // vIndex: 11
     virtual void SetObserver(::webrtc::RtpReceiverObserverInterface*) = 0;
@@ -74,7 +74,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI bool $SetParameters(::webrtc::RtpParameters const& parameters);
     // NOLINTEND
 };
 

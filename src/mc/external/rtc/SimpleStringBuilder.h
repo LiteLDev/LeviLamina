@@ -23,25 +23,25 @@ public:
     // NOLINTBEGIN
     MCNAPI ::rtc::SimpleStringBuilder& AppendFormat(char const*, ...);
 
-    MCNAPI explicit SimpleStringBuilder(::rtc::ArrayView<char>);
+    MCNAPI explicit SimpleStringBuilder(::rtc::ArrayView<char> buffer);
 
-    MCNAPI ::rtc::SimpleStringBuilder& operator<<(uint);
+    MCNAPI ::rtc::SimpleStringBuilder& operator<<(char ch);
 
-    MCNAPI ::rtc::SimpleStringBuilder& operator<<(int);
+    MCNAPI ::rtc::SimpleStringBuilder& operator<<(uint i);
 
-    MCNAPI ::rtc::SimpleStringBuilder& operator<<(uint64);
+    MCNAPI ::rtc::SimpleStringBuilder& operator<<(int i);
 
-    MCNAPI ::rtc::SimpleStringBuilder& operator<<(int64);
+    MCNAPI ::rtc::SimpleStringBuilder& operator<<(uint64 i);
 
-    MCNAPI ::rtc::SimpleStringBuilder& operator<<(char);
+    MCNAPI ::rtc::SimpleStringBuilder& operator<<(int64 i);
 
-    MCNAPI ::rtc::SimpleStringBuilder& operator<<(::std::string_view);
+    MCNAPI ::rtc::SimpleStringBuilder& operator<<(::std::string_view str);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::rtc::ArrayView<char>);
+    MCNAPI void* $ctor(::rtc::ArrayView<char> buffer);
     // NOLINTEND
 };
 

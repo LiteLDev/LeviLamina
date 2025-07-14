@@ -33,10 +33,14 @@ public:
 
     MCNAPI IceEventLog();
 
-    MCNAPI void
-    LogCandidatePairConfig(::webrtc::IceCandidatePairConfigType, uint, ::webrtc::IceCandidatePairDescription const&);
+    MCNAPI void LogCandidatePairConfig(
+        ::webrtc::IceCandidatePairConfigType         type,
+        uint                                         candidate_pair_id,
+        ::webrtc::IceCandidatePairDescription const& candidate_pair_desc
+    );
 
-    MCNAPI void LogCandidatePairEvent(::webrtc::IceCandidatePairEventType, uint, uint);
+    MCNAPI void
+    LogCandidatePairEvent(::webrtc::IceCandidatePairEventType type, uint candidate_pair_id, uint transaction_id);
 
     MCNAPI ~IceEventLog();
     // NOLINTEND

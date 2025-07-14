@@ -7,10 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class AddActorBasePacket;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
+class Packet;
 // clang-format on
 
 class Painting : public ::HangingActor {
@@ -33,7 +33,7 @@ public:
     virtual float getShadowRadius() const /*override*/;
 
     // vIndex: 23
-    virtual ::std::unique_ptr<::AddActorBasePacket> tryCreateAddActorPacket() /*override*/;
+    virtual ::std::unique_ptr<::Packet> tryCreateAddActorPacket() /*override*/;
 
     // vIndex: 138
     virtual int getWidth() const /*override*/;
@@ -65,7 +65,7 @@ public:
     // NOLINTBEGIN
     MCFOLD float $getShadowRadius() const;
 
-    MCAPI ::std::unique_ptr<::AddActorBasePacket> $tryCreateAddActorPacket();
+    MCAPI ::std::unique_ptr<::Packet> $tryCreateAddActorPacket();
 
     MCAPI int $getWidth() const;
 

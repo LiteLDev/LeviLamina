@@ -89,7 +89,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Port() /*override*/ = default;
+    virtual ~Port() /*override*/;
 
     // vIndex: 1
     virtual ::webrtc::IceCandidateType Type() const /*override*/;
@@ -101,10 +101,10 @@ public:
     virtual ::cricket::IceRole GetIceRole() const /*override*/;
 
     // vIndex: 3
-    virtual void SetIceRole(::cricket::IceRole) /*override*/;
+    virtual void SetIceRole(::cricket::IceRole role) /*override*/;
 
     // vIndex: 5
-    virtual void SetIceTiebreaker(uint64) /*override*/;
+    virtual void SetIceTiebreaker(uint64 tiebreaker) /*override*/;
 
     // vIndex: 6
     virtual uint64 IceTiebreaker() const /*override*/;
@@ -128,35 +128,35 @@ public:
     virtual uint generation() const /*override*/;
 
     // vIndex: 30
-    virtual void set_generation(uint) /*override*/;
+    virtual void set_generation(uint generation) /*override*/;
 
     // vIndex: 16
     virtual ::std::vector<::cricket::Candidate> const& Candidates() const /*override*/;
 
     // vIndex: 19
-    virtual void SubscribePortDestroyed(::std::function<void(::cricket::PortInterface*)>) /*override*/;
+    virtual void SubscribePortDestroyed(::std::function<void(::cricket::PortInterface*)> callback) /*override*/;
 
     // vIndex: 10
-    virtual ::cricket::Connection* GetConnection(::rtc::SocketAddress const&) /*override*/;
+    virtual ::cricket::Connection* GetConnection(::rtc::SocketAddress const& remote_addr) /*override*/;
 
     // vIndex: 23
-    virtual void DestroyConnection(::cricket::Connection*) /*override*/;
+    virtual void DestroyConnection(::cricket::Connection* conn) /*override*/;
 
     // vIndex: 24
-    virtual void DestroyConnectionAsync(::cricket::Connection*) /*override*/;
+    virtual void DestroyConnectionAsync(::cricket::Connection* conn) /*override*/;
 
     // vIndex: 41
-    virtual bool HandleIncomingPacket(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const&);
+    virtual bool HandleIncomingPacket(::rtc::AsyncPacketSocket* socket, ::rtc::ReceivedPacket const& packet);
 
     // vIndex: 42
     virtual bool CanHandleIncomingPacketsFrom(::rtc::SocketAddress const&) const;
 
     // vIndex: 18
     virtual void SendBindingErrorResponse(
-        ::cricket::StunMessage*,
-        ::rtc::SocketAddress const&,
-        int,
-        ::std::string_view
+        ::cricket::StunMessage*     message,
+        ::rtc::SocketAddress const& addr,
+        int                         error_code,
+        ::std::string_view          reason
     ) /*override*/;
 
     // vIndex: 27
@@ -172,136 +172,143 @@ public:
     virtual ::std::string ToString() const /*override*/;
 
     // vIndex: 37
-    virtual bool ParseStunUsername(::cricket::StunMessage const*, ::std::string*, ::std::string*) const /*override*/;
+    virtual bool ParseStunUsername(
+        ::cricket::StunMessage const* stun_msg,
+        ::std::string*                local_ufrag,
+        ::std::string*                remote_ufrag
+    ) const /*override*/;
 
     // vIndex: 38
-    virtual ::std::string CreateStunUsername(::std::string_view) const /*override*/;
+    virtual ::std::string CreateStunUsername(::std::string_view remote_username) const /*override*/;
 
     // vIndex: 39
-    virtual bool
-    MaybeIceRoleConflict(::rtc::SocketAddress const&, ::cricket::IceMessage*, ::std::string_view) /*override*/;
+    virtual bool MaybeIceRoleConflict(
+        ::rtc::SocketAddress const& addr,
+        ::cricket::IceMessage*      stun_msg,
+        ::std::string_view          remote_ufrag
+    ) /*override*/;
 
     // vIndex: 43
     virtual void OnSentPacket(::rtc::AsyncPacketSocket*, ::rtc::SentPacket const&) = 0;
 
     // vIndex: 33
-    virtual void AddPrflxCandidate(::cricket::Candidate const&) /*override*/;
+    virtual void AddPrflxCandidate(::cricket::Candidate const& local) /*override*/;
 
     // vIndex: 40
     virtual short network_cost() const /*override*/;
 
     // vIndex: 22
-    virtual void GetStunStats(::std::optional<::cricket::StunStats>*) /*override*/;
+    virtual void GetStunStats(::std::optional<::cricket::StunStats>* stats) /*override*/;
 
     // vIndex: 34
     virtual void UpdateNetworkCost() /*override*/;
 
     // vIndex: 44
-    virtual void PostAddAddress(bool);
+    virtual void PostAddAddress(bool is_final);
 
     // vIndex: 36
     virtual bool GetStunMessage(
-        char const*,
-        uint64,
-        ::rtc::SocketAddress const&,
-        ::std::unique_ptr<::cricket::IceMessage>*,
-        ::std::string*
+        char const*                               data,
+        uint64                                    size,
+        ::rtc::SocketAddress const&               addr,
+        ::std::unique_ptr<::cricket::IceMessage>* out_msg,
+        ::std::string*                            out_username
     ) /*override*/;
 
     // vIndex: 35
     virtual ::rtc::DiffServCodePoint StunDscpValue() const /*override*/;
 
     // vIndex: 45
-    virtual void HandleConnectionDestroyed(::cricket::Connection*);
+    virtual void HandleConnectionDestroyed(::cricket::Connection* conn);
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void AddAddress(
-        ::rtc::SocketAddress const&,
-        ::rtc::SocketAddress const&,
-        ::rtc::SocketAddress const&,
-        ::std::string_view,
-        ::std::string_view,
-        ::std::string_view,
-        ::webrtc::IceCandidateType,
-        uint,
-        uint,
-        ::std::string_view,
-        bool
+        ::rtc::SocketAddress const& address,
+        ::rtc::SocketAddress const& base_address,
+        ::rtc::SocketAddress const& related_address,
+        ::std::string_view          protocol,
+        ::std::string_view          relay_protocol,
+        ::std::string_view          tcptype,
+        ::webrtc::IceCandidateType  type,
+        uint                        type_preference,
+        uint                        relay_preference,
+        ::std::string_view          url,
+        bool                        is_final
     );
 
-    MCNAPI void AddOrReplaceConnection(::cricket::Connection*);
+    MCNAPI void AddOrReplaceConnection(::cricket::Connection* conn);
 
     MCNAPI void CancelPendingTasks();
 
-    MCNAPI void CopyPortInformationToPacketInfo(::rtc::PacketInfo*) const;
+    MCNAPI void CopyPortInformationToPacketInfo(::rtc::PacketInfo* info) const;
 
     MCNAPI void Destroy();
 
     MCNAPI void DestroyAllConnections();
 
-    MCNAPI void DestroyConnectionInternal(::cricket::Connection*, bool);
+    MCNAPI void DestroyConnectionInternal(::cricket::Connection* conn, bool async);
 
     MCNAPI void DestroyIfDead();
 
-    MCNAPI void FinishAddingAddress(::cricket::Candidate const&, bool);
+    MCNAPI void FinishAddingAddress(::cricket::Candidate const& c, bool is_final);
 
-    MCNAPI bool IsCompatibleAddress(::rtc::SocketAddress const&);
+    MCNAPI bool IsCompatibleAddress(::rtc::SocketAddress const& addr);
 
     MCNAPI void KeepAliveUntilPruned();
 
-    MCNAPI bool MaybeObfuscateAddress(::cricket::Candidate const&, bool);
+    MCNAPI bool MaybeObfuscateAddress(::cricket::Candidate const& c, bool is_final);
 
     MCNAPI ::rtc::WeakPtr<::cricket::Port> NewWeakPtr();
 
-    MCNAPI bool OnConnectionDestroyed(::cricket::Connection*);
+    MCNAPI bool OnConnectionDestroyed(::cricket::Connection* conn);
 
-    MCNAPI void OnNetworkTypeChanged(::rtc::Network const*);
+    MCNAPI void OnNetworkTypeChanged(::rtc::Network const* network);
 
-    MCNAPI void OnReadPacket(::rtc::ReceivedPacket const&, ::cricket::ProtocolType);
+    MCNAPI void OnReadPacket(::rtc::ReceivedPacket const& packet, ::cricket::ProtocolType proto);
 
     MCNAPI void OnReadyToSend();
 
     MCNAPI Port(
-        ::webrtc::TaskQueueBase*,
-        ::webrtc::IceCandidateType,
-        ::rtc::PacketSocketFactory*,
-        ::rtc::Network const*,
-        ::std::string_view,
-        ::std::string_view,
-        ::webrtc::FieldTrialsView const*
+        ::webrtc::TaskQueueBase*         thread,
+        ::webrtc::IceCandidateType       type,
+        ::rtc::PacketSocketFactory*      factory,
+        ::rtc::Network const*            network,
+        ::std::string_view               username_fragment,
+        ::std::string_view               password,
+        ::webrtc::FieldTrialsView const* field_trials
     );
 
     MCNAPI Port(
-        ::webrtc::TaskQueueBase*,
-        ::webrtc::IceCandidateType,
-        ::rtc::PacketSocketFactory*,
-        ::rtc::Network const*,
-        ushort,
-        ushort,
-        ::std::string_view,
-        ::std::string_view,
-        ::webrtc::FieldTrialsView const*,
-        bool
+        ::webrtc::TaskQueueBase*         thread,
+        ::webrtc::IceCandidateType       type,
+        ::rtc::PacketSocketFactory*      factory,
+        ::rtc::Network const*            network,
+        ushort                           min_port,
+        ushort                           max_port,
+        ::std::string_view               username_fragment,
+        ::std::string_view               password,
+        ::webrtc::FieldTrialsView const* field_trials,
+        bool                             shared_socket
     );
 
-    MCNAPI void PostDestroyIfDead(bool);
+    MCNAPI void PostDestroyIfDead(bool delayed);
 
     MCNAPI void Prune();
 
-    MCNAPI void SendPortDestroyed(::cricket::Port*);
+    MCNAPI void SendPortDestroyed(::cricket::Port* port);
 
     MCNAPI void SendUnknownAttributesErrorResponse(
-        ::cricket::StunMessage*,
-        ::rtc::SocketAddress const&,
-        ::std::vector<ushort> const&
+        ::cricket::StunMessage*      message,
+        ::rtc::SocketAddress const&  addr,
+        ::std::vector<ushort> const& unknown_types
     );
 
-    MCNAPI void SetIceParameters(int, ::std::string_view, ::std::string_view);
+    MCNAPI void SetIceParameters(int component, ::std::string_view username_fragment, ::std::string_view password);
 
-    MCNAPI void set_content_name(::std::string_view);
+    MCNAPI void set_content_name(::std::string_view content_name);
 
     MCNAPI ::std::string const& username_fragment() const;
     // NOLINTEND
@@ -310,33 +317,128 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::webrtc::TaskQueueBase*,
-        ::webrtc::IceCandidateType,
-        ::rtc::PacketSocketFactory*,
-        ::rtc::Network const*,
-        ::std::string_view,
-        ::std::string_view,
-        ::webrtc::FieldTrialsView const*
+        ::webrtc::TaskQueueBase*         thread,
+        ::webrtc::IceCandidateType       type,
+        ::rtc::PacketSocketFactory*      factory,
+        ::rtc::Network const*            network,
+        ::std::string_view               username_fragment,
+        ::std::string_view               password,
+        ::webrtc::FieldTrialsView const* field_trials
     );
 
     MCNAPI void* $ctor(
-        ::webrtc::TaskQueueBase*,
-        ::webrtc::IceCandidateType,
-        ::rtc::PacketSocketFactory*,
-        ::rtc::Network const*,
-        ushort,
-        ushort,
-        ::std::string_view,
-        ::std::string_view,
-        ::webrtc::FieldTrialsView const*,
-        bool
+        ::webrtc::TaskQueueBase*         thread,
+        ::webrtc::IceCandidateType       type,
+        ::rtc::PacketSocketFactory*      factory,
+        ::rtc::Network const*            network,
+        ushort                           min_port,
+        ushort                           max_port,
+        ::std::string_view               username_fragment,
+        ::std::string_view               password,
+        ::webrtc::FieldTrialsView const* field_trials,
+        bool                             shared_socket
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::webrtc::IceCandidateType $Type() const;
 
+    MCNAPI ::rtc::Network const* $Network() const;
+
+    MCNAPI ::cricket::IceRole $GetIceRole() const;
+
+    MCNAPI void $SetIceRole(::cricket::IceRole role);
+
+    MCNAPI void $SetIceTiebreaker(uint64 tiebreaker);
+
+    MCNAPI uint64 $IceTiebreaker() const;
+
+    MCNAPI bool $SharedSocket() const;
+
+    MCNAPI ::webrtc::TaskQueueBase* $thread();
+
+    MCNAPI ::rtc::PacketSocketFactory* $socket_factory() const;
+
+    MCNAPI ::std::string const& $content_name() const;
+
+    MCNAPI bool $send_retransmit_count_attribute() const;
+
+    MCNAPI uint $generation() const;
+
+    MCNAPI void $set_generation(uint generation);
+
+    MCNAPI ::std::vector<::cricket::Candidate> const& $Candidates() const;
+
+    MCNAPI void $SubscribePortDestroyed(::std::function<void(::cricket::PortInterface*)> callback);
+
+    MCNAPI ::cricket::Connection* $GetConnection(::rtc::SocketAddress const& remote_addr);
+
+    MCNAPI void $DestroyConnection(::cricket::Connection* conn);
+
+    MCNAPI void $DestroyConnectionAsync(::cricket::Connection* conn);
+
+    MCNAPI bool $HandleIncomingPacket(::rtc::AsyncPacketSocket* socket, ::rtc::ReceivedPacket const& packet);
+
+    MCNAPI bool $CanHandleIncomingPacketsFrom(::rtc::SocketAddress const&) const;
+
+    MCNAPI void $SendBindingErrorResponse(
+        ::cricket::StunMessage*     message,
+        ::rtc::SocketAddress const& addr,
+        int                         error_code,
+        ::std::string_view          reason
+    );
+
+    MCNAPI ::std::string const& $user_agent();
+
+    MCNAPI ::rtc::ProxyInfo const& $proxy();
+
+    MCNAPI void $EnablePortPackets();
+
+    MCNAPI ::std::string $ToString() const;
+
+    MCNAPI bool $ParseStunUsername(
+        ::cricket::StunMessage const* stun_msg,
+        ::std::string*                local_ufrag,
+        ::std::string*                remote_ufrag
+    ) const;
+
+    MCNAPI ::std::string $CreateStunUsername(::std::string_view remote_username) const;
+
+    MCNAPI bool $MaybeIceRoleConflict(
+        ::rtc::SocketAddress const& addr,
+        ::cricket::IceMessage*      stun_msg,
+        ::std::string_view          remote_ufrag
+    );
+
+    MCNAPI void $AddPrflxCandidate(::cricket::Candidate const& local);
+
+    MCNAPI short $network_cost() const;
+
+    MCNAPI void $GetStunStats(::std::optional<::cricket::StunStats>* stats);
+
+    MCNAPI void $UpdateNetworkCost();
+
+    MCNAPI void $PostAddAddress(bool is_final);
+
+    MCNAPI bool $GetStunMessage(
+        char const*                               data,
+        uint64                                    size,
+        ::rtc::SocketAddress const&               addr,
+        ::std::unique_ptr<::cricket::IceMessage>* out_msg,
+        ::std::string*                            out_username
+    );
+
+    MCNAPI ::rtc::DiffServCodePoint $StunDscpValue() const;
+
+    MCNAPI void $HandleConnectionDestroyed(::cricket::Connection* conn);
     // NOLINTEND
 
 public:

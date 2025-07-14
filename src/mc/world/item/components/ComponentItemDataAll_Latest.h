@@ -6,7 +6,7 @@ struct ComponentItemDataAll_Latest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 2024> mUnkad941d;
+    ::ll::UntypedStorage<8, 2032> mUnk9c48ea;
     ::ll::UntypedStorage<1, 2>    mUnk508f97;
     ::ll::UntypedStorage<8, 192>  mUnk213e50;
     ::ll::UntypedStorage<8, 32>   mUnk55128e;

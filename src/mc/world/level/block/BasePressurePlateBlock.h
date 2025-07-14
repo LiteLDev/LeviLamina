@@ -42,7 +42,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual int getTickDelay() const;
 
     // vIndex: 56
@@ -63,7 +63,7 @@ public:
     virtual bool shouldTriggerEntityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const
         /*override*/;
 
-    // vIndex: 146
+    // vIndex: 145
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
     // vIndex: 66
@@ -84,19 +84,19 @@ public:
     // vIndex: 118
     virtual bool canSpawnOn(::Actor*) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual int getSignalStrength(::BlockSource&, ::BlockPos const&) const = 0;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual int getSignalForData(int) const = 0;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual int getRedstoneSignal(int) const = 0;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual ::AABB const getSensitiveAABB(::BlockPos const& pos) const;
 
     // vIndex: 130

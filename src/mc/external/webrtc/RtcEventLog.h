@@ -40,7 +40,7 @@ public:
     virtual void StopLogging() = 0;
 
     // vIndex: 2
-    virtual void StopLogging(::std::function<void()>);
+    virtual void StopLogging(::std::function<void()> callback);
 
     // vIndex: 4
     virtual void Log(::std::unique_ptr<::webrtc::RtcEvent>) = 0;
@@ -49,7 +49,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI void $StopLogging(::std::function<void()> callback);
     // NOLINTEND
 };
 

@@ -15,10 +15,10 @@ class BarrelBlockActor : public ::ChestBlockActor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 27
+    // vIndex: 28
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 12
+    // vIndex: 13
     virtual void onPlace(::BlockSource& region) /*override*/;
 
     // vIndex: 22
@@ -27,10 +27,10 @@ public:
     // vIndex: 23
     virtual void stopOpen(::Player& player) /*override*/;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual void playOpenSound(::BlockSource& region) /*override*/;
 
-    // vIndex: 51
+    // vIndex: 52
     virtual void playCloseSound(::BlockSource& region) /*override*/;
 
     // vIndex: 0

@@ -11,7 +11,7 @@ struct ComponentItemDescriptionData_v1_20_20 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf5377e;
+    ::ll::UntypedStorage<8, 32> mUnke22d41;
     ::ll::UntypedStorage<8, 64> mUnk8d8747;
     // NOLINTEND
 

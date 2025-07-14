@@ -15,13 +15,13 @@ class IContentCatalogPackSource : public ::PackSource {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 6
+    // vIndex: 7
     virtual void refreshCatalogItems(::IPackManifestFactory&) = 0;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual ::Bedrock::PubSub::Subscription setAsyncCallback(::std::function<void(bool)>) = 0;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void setEnabled(bool) = 0;
 
     // vIndex: 0

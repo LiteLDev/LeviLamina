@@ -23,6 +23,7 @@
 #include "mc/world/level/chunk/ChunkTerrainDataState.h"
 #include "mc/world/level/chunk/ColumnCachedData.h"
 #include "mc/world/level/chunk/DirtyTicksCounter.h"
+#include "mc/world/level/chunk/LevelChunkBlockActorStorage.h"
 #include "mc/world/level/chunk/LevelChunkFormat.h"
 #include "mc/world/level/chunk/LevelChunkNeighbor.h"
 #include "mc/world/level/chunk/LevelChunkVolumeData.h"
@@ -65,7 +66,6 @@ struct ActorLink;
 struct BiomeChunkState;
 struct BlockID;
 struct DeserializationChanges;
-struct LevelChunkPhase1Deleter;
 struct NibblePair;
 struct SubChunk;
 namespace LevelChunkTicking { struct Registry; }
@@ -113,8 +113,6 @@ public:
     };
 
     using BlockList = ::std::vector<::BlockPos>;
-
-    using OwnedBlockActorMap = ::std::unordered_map<::ChunkBlockPos, ::std::shared_ptr<::BlockActor>>;
 
     using BlockActorVector = ::std::vector<::std::shared_ptr<::BlockActor>>;
 
@@ -170,6 +168,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                           mBiomesMutex;
     ::ll::TypedStorage<4, 2048, ::std::array<::ColumnCachedData, 256>>                      mCachedData;
     ::ll::TypedStorage<2, 512, ::std::array<::ChunkLocalHeight, 256>>                       mHeightmap;
+    ::ll::TypedStorage<2, 512, ::std::array<::ChunkLocalHeight, 256>>                       mRenderHeightmap;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::vector<short>>>                       mPreWorldGenHeightmap;
     ::ll::TypedStorage<2, 2, ::ChunkLocalHeight>                                            mNonAirMaxHeight;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<ushort, ::BiomeChunkState>>              mBiomeStates;
@@ -183,12 +182,12 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                          mUse3DBiomeMaps;
     ::ll::TypedStorage<1, 1, bool>                                                          mLevelChunkHas3dBiomeTag;
     ::ll::TypedStorage<1, 4, ::LevelChunk::Telemetry>                                       mTelemetry;
-    ::ll::TypedStorage<4, 48, ::DirtyTicksCounter[6]>                 mFullChunkDirtyTicksCounters;
-    ::ll::TypedStorage<4, 8, ::DirtyTicksCounter>                     mChunkActorsDirtyTicksCounter;
-    ::ll::TypedStorage<2, 512, ::std::array<::ChunkLocalHeight, 256>> mRainHeights;
-    ::ll::TypedStorage<8, 24, ::std::vector<::WeakEntityRef>>         mEntities;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>           mRemovedActorStorageKeys;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkBlockPos, ::std::shared_ptr<::BlockActor>>> mBlockEntities;
+    ::ll::TypedStorage<4, 48, ::DirtyTicksCounter[6]>                         mFullChunkDirtyTicksCounters;
+    ::ll::TypedStorage<4, 8, ::DirtyTicksCounter>                             mChunkActorsDirtyTicksCounter;
+    ::ll::TypedStorage<2, 512, ::std::array<::ChunkLocalHeight, 256>>         mRainHeights;
+    ::ll::TypedStorage<8, 24, ::std::vector<::WeakEntityRef>>                 mEntities;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                   mRemovedActorStorageKeys;
+    ::ll::TypedStorage<8, 136, ::LevelChunkBlockActorStorage>                 mBlockEntities;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::BlockActor>>> mPreservedBlockEntities;
     ::ll::TypedStorage<8, 24, ::std::vector<::WeakRef<::EntityContext>>>      mVolumes;
     ::ll::TypedStorage<1, 2, ::BrightnessPair>                                mDefaultBrightness;
@@ -233,11 +232,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI LevelChunk(
-        ::Dimension&       dimension,
-        ::ChunkPos const&  cp,
-        bool               readOnly,
-        ::SubChunkInitMode initBlocks,
-        bool               initializeMetaData
+        ::Dimension&                                dimension,
+        ::ChunkPos const&                           cp,
+        bool                                        readOnly,
+        ::SubChunkInitMode                          initBlocks,
+        bool                                        initializeMetaData,
+        ::LevelChunkBlockActorStorage::TrackingMode blockActorTrackingMode
     );
 
     MCAPI void _addEntityToVolumes(::gsl::not_null<::Actor*> actor);
@@ -253,10 +253,7 @@ public:
 
     MCAPI void _deserializeBiomes(::IDataInput& stream, ::BiomeRegistry const& biomeRegistry, bool fromNetwork);
 
-    MCAPI void _deserializeBlockEntities(
-        ::IDataInput&                                                           stream,
-        ::std::unordered_map<::ChunkBlockPos, ::std::shared_ptr<::BlockActor>>& blockEntityMap
-    );
+    MCAPI void _deserializeBlockEntities(::IDataInput& stream, ::LevelChunkBlockActorStorage& blockEntityMap);
 
     MCAPI void _deserializeCCsubChunks(short index, ::StringByteInput& stream);
 
@@ -267,10 +264,8 @@ public:
 
     MCAPI void _fixupCommandBlocksOnTickingQueue(::BlockSource& tickRegion);
 
-    MCAPI void _fixupCorruptedBlockActors(
-        ::std::unordered_map<::ChunkBlockPos, ::std::shared_ptr<::BlockActor>>& deserialized,
-        ::buffer_span_mut<::SubChunk>                                           subchunks
-    );
+    MCAPI void
+    _fixupCorruptedBlockActors(::LevelChunkBlockActorStorage& deserialized, ::buffer_span_mut<::SubChunk> subchunks);
 
     MCAPI void _generateOriginalLighting(::ChunkViewSource& neighborhood, bool enforceBorderCheck);
 
@@ -321,9 +316,7 @@ public:
 
     MCAPI void addHardcodedSpawningArea(::BoundingBox const& spawnerAABB, ::HardcodedSpawnAreaType type);
 
-    MCAPI void addSubChunkBlockEntitiesToLevelChunk(
-        ::std::unordered_map<::ChunkBlockPos, ::std::shared_ptr<::BlockActor>>& blockActorMap
-    );
+    MCAPI void addSubChunkBlockEntitiesToLevelChunk(::LevelChunkBlockActorStorage& blockActorMap);
 
     MCAPI bool applySeasonsPostProcess(::BlockSource& region);
 
@@ -363,8 +356,8 @@ public:
     MCAPI void finalizePostProcessing();
 
     MCAPI void finalizeSubChunkDeserialization(
-        ::std::unordered_map<::ChunkBlockPos, ::std::shared_ptr<::BlockActor>>& blockActorMap,
-        ::buffer_span_mut<::SubChunk>                                           subchunks
+        ::LevelChunkBlockActorStorage& blockActorMap,
+        ::buffer_span_mut<::SubChunk>  subchunks
     );
 
     MCAPI ::std::optional<::BlockPos> findExposedLightningRod(::BlockPos const& pos, ::BlockSource& region);
@@ -413,6 +406,8 @@ public:
     MCAPI ::BlockPos const getTopRainBlockPos(::ChunkBlockPos const& pos);
 
     MCAPI bool hasEntity(::WeakEntityRef entityRef);
+
+    MCAPI bool hasSubChunksToPrune() const;
 
     MCAPI bool isNonActorDataDirty() const;
 
@@ -521,9 +516,6 @@ public:
         bool                                       isClientSide
     );
 
-    MCAPI static ::std::unique_ptr<::LevelChunk, ::LevelChunkPhase1Deleter>
-    createNew(::Dimension& dimension, ::ChunkPos cp, bool readOnly, ::SubChunkInitMode initBlocks);
-
     MCAPI static ::std::pair<ushort, ::std::vector<::std::unique_ptr<::SubChunkStorage<::Biome>>>> deserialize3DBiomes(
         ::IDataInput&          stream,
         ::BiomeRegistry const& biomeRegistry,
@@ -548,11 +540,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::Dimension&       dimension,
-        ::ChunkPos const&  cp,
-        bool               readOnly,
-        ::SubChunkInitMode initBlocks,
-        bool               initializeMetaData
+        ::Dimension&                                dimension,
+        ::ChunkPos const&                           cp,
+        bool                                        readOnly,
+        ::SubChunkInitMode                          initBlocks,
+        bool                                        initializeMetaData,
+        ::LevelChunkBlockActorStorage::TrackingMode blockActorTrackingMode
     );
     // NOLINTEND
 

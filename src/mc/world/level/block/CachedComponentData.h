@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Block;
-// clang-format on
-
 struct CachedComponentData {
 public:
     // member variables
@@ -21,10 +16,4 @@ public:
     CachedComponentData& operator=(CachedComponentData const&);
     CachedComponentData(CachedComponentData const&);
     CachedComponentData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void cacheComponentData(::Block const& block);
-    // NOLINTEND
 };

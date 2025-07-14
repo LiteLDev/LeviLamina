@@ -33,13 +33,19 @@ public:
     virtual ~PacketSocketFactory() = default;
 
     // vIndex: 1
-    virtual ::rtc::AsyncPacketSocket* CreateUdpSocket(::rtc::SocketAddress const&, ushort, ushort) = 0;
+    virtual ::std::unique_ptr<::rtc::AsyncPacketSocket>
+    CreateUdpSocket(::rtc::SocketAddress const&, ushort, ushort) = 0;
 
     // vIndex: 2
-    virtual ::rtc::AsyncListenSocket* CreateServerTcpSocket(::rtc::SocketAddress const&, ushort, ushort, int) = 0;
+    virtual ::std::shared_ptr<::rtc::AsyncPacketSocket>
+    CreateGlobalUdpSocket(::rtc::SocketAddress const&, ushort, ushort) = 0;
 
     // vIndex: 3
-    virtual ::rtc::AsyncPacketSocket* CreateClientTcpSocket(
+    virtual ::std::unique_ptr<::rtc::AsyncListenSocket>
+    CreateServerTcpSocket(::rtc::SocketAddress const&, ushort, ushort, int) = 0;
+
+    // vIndex: 4
+    virtual ::std::unique_ptr<::rtc::AsyncPacketSocket> CreateClientTcpSocket(
         ::rtc::SocketAddress const&,
         ::rtc::SocketAddress const&,
         ::rtc::ProxyInfo const&,
@@ -47,7 +53,7 @@ public:
         ::rtc::PacketSocketTcpOptions const&
     ) = 0;
 
-    // vIndex: 4
+    // vIndex: 5
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> CreateAsyncDnsResolver() = 0;
     // NOLINTEND
 

@@ -12,20 +12,24 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 56> mUnk417288;
-    ::ll::UntypedStorage<8, 56> mUnk8e4daf;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ComponentStorage& operator=(ComponentStorage const&);
     ComponentStorage(ComponentStorage const&);
     ComponentStorage();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::cereal::ComponentStorage& operator=(::cereal::ComponentStorage const&);
+    MCNAPI ::entt::basic_any<16, 8> getComponent(::std::string_view name);
+
+    MCNAPI bool hasComponent(::std::string_view name) const;
 
     MCNAPI ::cereal::ComponentStorage& operator=(::cereal::ComponentStorage&&);
+
+    MCNAPI bool removeComponent(::std::string_view name);
     // NOLINTEND
 };
 

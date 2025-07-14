@@ -18,7 +18,7 @@ public:
     // vIndex: 29
     virtual bool isCraftingBlock() const /*override*/;
 
-    // vIndex: 136
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 130

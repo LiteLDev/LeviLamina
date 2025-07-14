@@ -12,6 +12,7 @@
 // clang-format off
 class BackgroundTaskBase;
 class WorkerPool;
+struct RunTaskOptions;
 namespace Bedrock::Threading { class OSThreadPriority; }
 // clang-format on
 
@@ -84,9 +85,9 @@ public:
 
     MCNAPI void _doNoWorkDelay();
 
-    MCNAPI bool _processNextTask();
+    MCNAPI bool _processNextTask(::RunTaskOptions const& options);
 
-    MCNAPI ::BackgroundWorker::RunOneResult _runOneTask();
+    MCNAPI ::BackgroundWorker::RunOneResult _runOneTask(::RunTaskOptions const& options);
 
     MCNAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task);
 

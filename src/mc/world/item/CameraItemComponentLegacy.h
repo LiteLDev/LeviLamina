@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/molang/MolangVersion.h"
 #include "mc/world/item/components/ICameraItemComponent.h"
 
 // auto generated forward declare list
@@ -105,8 +104,6 @@ public:
     ) const;
 
     MCNAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
-
-    MCNAPI bool init(::Json::Value const& data, ::MolangVersion);
     // NOLINTEND
 
 public:

@@ -18,6 +18,7 @@
 // auto generated forward declare list
 // clang-format off
 class Aquifer;
+class BaseGameVersion;
 class Biome;
 class BiomeRegistry;
 class BiomeSource;
@@ -30,7 +31,10 @@ class ChunkBlender;
 class ChunkBlenderFactory;
 class ChunkLocalNoiseCache;
 class ChunkPos;
+class ChunkSource;
 class Dimension;
+class DimensionHeightRange;
+class Experiments;
 class LevelChunk;
 class LevelSeed64;
 class NoodleCavifier;
@@ -139,28 +143,31 @@ public:
     // vIndex: 1
     virtual ::std::optional<short> getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const /*override*/;
 
-    // vIndex: 49
+    // vIndex: 50
     virtual int getLevelGenHeight() const /*override*/;
 
-    // vIndex: 48
+    // vIndex: 49
     virtual ::Util::MultidimensionalArray<float, 5, 5, 41>
     generateDensityCellsForChunk(::ChunkPos const& chunkPos) const /*override*/;
+
+    // vIndex: 46
+    virtual void propagateCombinedChunkSource(::ChunkSource* chunkSource) /*override*/;
 
     // vIndex: 33
     virtual bool chunkPosNeedsBlending(::ChunkPos const& cp) /*override*/;
 
-    // vIndex: 54
+    // vIndex: 55
     virtual ::PerlinSimplexNoise const& getSurfaceNoise() /*override*/;
 
-    // vIndex: 55
+    // vIndex: 56
     virtual ::std::unique_ptr<::PerlinSimplexNoise> const& getMaterialAdjNoise() const /*override*/;
 
-    // vIndex: 47
+    // vIndex: 48
     virtual void
     decorateWorldGenPostProcess(::Biome const&, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const
         /*override*/;
 
-    // vIndex: 56
+    // vIndex: 57
     virtual void _prepareHeights(
         ::BlockVolume&                                                  box,
         ::ChunkPos const&                                               chunkPos,
@@ -172,7 +179,7 @@ public:
         int                                                             skipTopN
     ) /*override*/;
 
-    // vIndex: 51
+    // vIndex: 52
     virtual ::std::unique_ptr<::Aquifer> tryMakeAquifer(
         ::ChunkPos const&          chunkPos,
         ::SurfaceLevelCache const& surfaceLevelCache,
@@ -181,11 +188,11 @@ public:
         short                      seaLevel
     ) const /*override*/;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual ::std::optional<::XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const
         /*override*/;
 
-    // vIndex: 52
+    // vIndex: 53
     virtual ::ChunkLocalNoiseCache createNoiseCache(::ChunkPos chunkPos) const /*override*/;
     // NOLINTEND
 
@@ -214,18 +221,23 @@ public:
         ::Block const&        stone,
         ::OreVeinifier*       oreVeinifier
     ) const;
-
-    MCAPI ::std::unique_ptr<::BiomeSource> makeBiomeSource(
-        ::XoroshiroPositionalRandomFactory const& random,
-        ::BiomeRegistry const&                    biomeRegistry,
-        ::Biome const*                            overrideBiome
-    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::PerlinSimplexNoise> createMaterialAdjNoise(uint seed);
+
+    MCAPI static ::std::unique_ptr<::BiomeSource> makeBiomeSource(
+        ::XoroshiroPositionalRandomFactory const& random,
+        ::BiomeRegistry const&                    biomeRegistry,
+        ::Biome const*                            overrideBiome,
+        ::BaseGameVersion const&                  baseGameVersion,
+        ::Experiments const&                      experiments,
+        ::OverworldNoises3d const&                overworldNoises,
+        ::ChunkBlenderFactory&                    chunkBlenderFactory,
+        ::DimensionHeightRange const&             heightRange
+    );
     // NOLINTEND
 
 public:
@@ -253,6 +265,8 @@ public:
 
     MCAPI ::Util::MultidimensionalArray<float, 5, 5, 41>
     $generateDensityCellsForChunk(::ChunkPos const& chunkPos) const;
+
+    MCAPI void $propagateCombinedChunkSource(::ChunkSource* chunkSource);
 
     MCAPI bool $chunkPosNeedsBlending(::ChunkPos const& cp);
 

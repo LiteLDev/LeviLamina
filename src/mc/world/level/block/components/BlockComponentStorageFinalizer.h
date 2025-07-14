@@ -13,6 +13,8 @@ public:
     // NOLINTBEGIN
     MCNAPI void _checkForCollisionComponentBoxDuplication(::Block& block);
 
+    MCNAPI void _checkForMissingGeometryComponent(::Block& block);
+
     MCNAPI void _checkForSelectionBoxComponentDuplication(::Block& block);
 
     MCNAPI void _finalizeBlockTriggerComponents(::Block& block);
@@ -20,7 +22,5 @@ public:
     MCNAPI void _finalizeCollisionBoxComponent(::Block& block);
 
     MCNAPI void _finalizeSelectionBoxComponent(::Block& block);
-
-    MCNAPI void addRemainingComponents(::Block& block);
     // NOLINTEND
 };

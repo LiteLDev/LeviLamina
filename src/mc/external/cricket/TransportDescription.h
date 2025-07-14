@@ -37,17 +37,17 @@ public:
 
     MCNAPI TransportDescription();
 
-    MCNAPI TransportDescription(::cricket::TransportDescription const&);
+    MCNAPI TransportDescription(::cricket::TransportDescription const& from);
 
-    MCNAPI TransportDescription(::std::string_view, ::std::string_view);
+    MCNAPI TransportDescription(::std::string_view ice_ufrag, ::std::string_view ice_pwd);
 
     MCNAPI TransportDescription(
-        ::std::vector<::std::string> const&,
-        ::std::string_view,
-        ::std::string_view,
-        ::cricket::IceMode,
-        ::cricket::ConnectionRole,
-        ::rtc::SSLFingerprint const*
+        ::std::vector<::std::string> const& transport_options,
+        ::std::string_view                  ice_ufrag,
+        ::std::string_view                  ice_pwd,
+        ::cricket::IceMode                  ice_mode,
+        ::cricket::ConnectionRole           role,
+        ::rtc::SSLFingerprint const*        identity_fingerprint
     );
 
     MCNAPI ~TransportDescription();
@@ -58,17 +58,17 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::cricket::TransportDescription const&);
+    MCNAPI void* $ctor(::cricket::TransportDescription const& from);
 
-    MCNAPI void* $ctor(::std::string_view, ::std::string_view);
+    MCNAPI void* $ctor(::std::string_view ice_ufrag, ::std::string_view ice_pwd);
 
     MCNAPI void* $ctor(
-        ::std::vector<::std::string> const&,
-        ::std::string_view,
-        ::std::string_view,
-        ::cricket::IceMode,
-        ::cricket::ConnectionRole,
-        ::rtc::SSLFingerprint const*
+        ::std::vector<::std::string> const& transport_options,
+        ::std::string_view                  ice_ufrag,
+        ::std::string_view                  ice_pwd,
+        ::cricket::IceMode                  ice_mode,
+        ::cricket::ConnectionRole           role,
+        ::rtc::SSLFingerprint const*        identity_fingerprint
     );
     // NOLINTEND
 

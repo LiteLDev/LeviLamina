@@ -26,15 +26,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit RTCError(::webrtc::RTCErrorType);
+    MCNAPI explicit RTCError(::webrtc::RTCErrorType type);
 
-    MCNAPI RTCError(::webrtc::RTCErrorType, ::std::string_view);
+    MCNAPI RTCError(::webrtc::RTCErrorType type, ::std::string_view message);
 
     MCNAPI char const* message() const;
 
     MCNAPI ::webrtc::RTCError& operator=(::webrtc::RTCError&&);
 
-    MCNAPI void set_message(::std::string_view);
+    MCNAPI void set_message(::std::string_view message);
 
     MCNAPI ~RTCError();
     // NOLINTEND
@@ -48,9 +48,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::RTCErrorType);
+    MCNAPI void* $ctor(::webrtc::RTCErrorType type);
 
-    MCNAPI void* $ctor(::webrtc::RTCErrorType, ::std::string_view);
+    MCNAPI void* $ctor(::webrtc::RTCErrorType type, ::std::string_view message);
     // NOLINTEND
 
 public:

@@ -6,8 +6,8 @@ struct BloomConfiguration {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk6668a3;
-    ::ll::UntypedStorage<4, 8> mUnk95c522;
+    ::ll::UntypedStorage<1, 1>  mUnk6668a3;
+    ::ll::UntypedStorage<4, 12> mUnk95c522;
     // NOLINTEND
 
 public:

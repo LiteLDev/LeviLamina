@@ -6,6 +6,7 @@
 #include "mc/common/editor/ThemeSettingsColorKey.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/services/settings/EditorSettingsService.h"
+#include "mc/options/GraphicsMode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -38,6 +39,9 @@ public:
 
     // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
+
+    // vIndex: 2
+    virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
     // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
@@ -105,6 +109,10 @@ public:
     MCNAPI void _handleThemeDeleted(::std::string const& id);
 
     MCNAPI void _handleThemeSettingsModified(::Editor::Settings::ThemeProps const& props);
+
+    MCNAPI void _loadGraphicsMode();
+
+    MCNAPI void _saveGraphicsMode(::GraphicsMode mode);
     // NOLINTEND
 
 public:
@@ -117,6 +125,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<void> $init();
+
+    MCNAPI ::Scripting::Result_deprecated<void> $ready();
 
     MCNAPI ::Scripting::Result_deprecated<void> $quit();
 

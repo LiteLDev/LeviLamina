@@ -15,7 +15,7 @@ class DropperBlock : public ::DispenserBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 148
+    // vIndex: 147
     virtual void dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 0

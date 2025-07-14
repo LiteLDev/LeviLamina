@@ -11,7 +11,7 @@ class INISaver : public ::cereal::BasicSaver {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 112> mUnkb9979a;
+    ::ll::UntypedStorage<8, 120> mUnkb9979a;
     // NOLINTEND
 
 public:

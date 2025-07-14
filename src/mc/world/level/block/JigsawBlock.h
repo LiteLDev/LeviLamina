@@ -21,7 +21,7 @@ class JigsawBlock : public ::FaceDirectionalActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 136
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 119

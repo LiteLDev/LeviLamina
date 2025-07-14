@@ -37,7 +37,7 @@ public:
     ::ll::UntypedStorage<8, 48> mUnk748d42;
     ::ll::UntypedStorage<1, 1>  mUnkd3ab2c;
     ::ll::UntypedStorage<8, 32> mUnkf3e89d;
-    ::ll::UntypedStorage<8, 32> mUnkf84a0d;
+    ::ll::UntypedStorage<8, 32> mUnkb56b47;
     // NOLINTEND
 
 public:
@@ -49,7 +49,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AsyncPacketSocket() /*override*/ = default;
+    virtual ~AsyncPacketSocket() /*override*/;
 
     // vIndex: 1
     virtual ::rtc::SocketAddress GetLocalAddress() const = 0;
@@ -58,7 +58,7 @@ public:
     virtual ::rtc::SocketAddress GetRemoteAddress() const = 0;
 
     // vIndex: 3
-    virtual int Send(void const*, uint64, ::rtc::PacketOptions const&) = 0;
+    virtual int Send(void const* data, uint64 len, ::rtc::PacketOptions const& options) = 0;
 
     // vIndex: 4
     virtual int SendTo(void const*, uint64, ::rtc::SocketAddress const&, ::rtc::PacketOptions const&) = 0;
@@ -70,7 +70,7 @@ public:
     virtual ::rtc::AsyncPacketSocket::State GetState() const = 0;
 
     // vIndex: 7
-    virtual int GetOption(::rtc::Socket::Option, int*) = 0;
+    virtual int GetOption(::rtc::Socket::Option opt, int* value) = 0;
 
     // vIndex: 8
     virtual int SetOption(::rtc::Socket::Option, int) = 0;
@@ -87,23 +87,31 @@ public:
     // NOLINTBEGIN
     MCNAPI AsyncPacketSocket();
 
-    MCNAPI void DeregisterReceivedPacketCallback();
+    MCNAPI void NotifyPacketReceived(::rtc::ReceivedPacket const& packet);
 
-    MCNAPI void NotifyPacketReceived(::rtc::ReceivedPacket const&);
+    MCNAPI void
+    SubscribeCloseEvent(void const* removal_tag, ::std::function<void(::rtc::AsyncPacketSocket*, int)> callback);
 
-    MCNAPI void RegisterReceivedPacketCallback(
-        ::absl::AnyInvocable<void(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const&)>
+    MCNAPI void SubscribeReceivedPacketEvent(
+        void const*                                                                         removal_tag,
+        ::absl::AnyInvocable<void(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const&)> received_packet_callback
     );
 
-    MCNAPI void SubscribeCloseEvent(void const*, ::std::function<void(::rtc::AsyncPacketSocket*, int)>);
+    MCNAPI void UnsubscribeCloseEvent(void const* removal_tag);
 
-    MCNAPI void UnsubscribeCloseEvent(void const*);
+    MCNAPI void UnsubscribeReceivedPacketEvent(void const* removal_tag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

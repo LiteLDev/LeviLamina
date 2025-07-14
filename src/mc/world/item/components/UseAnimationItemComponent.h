@@ -5,10 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/item/UseAnimation.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
+#include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
+class SemVersion;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class UseAnimationItemComponent : public ::NetworkedItemComponent<::UseAnimationItemComponent> {
@@ -31,6 +34,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
+
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 

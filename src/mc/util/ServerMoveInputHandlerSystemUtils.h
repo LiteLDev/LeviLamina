@@ -4,11 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
-#include "mc/deps/ecs/strict/OptionalGlobal.h"
 
 // auto generated forward declare list
 // clang-format off
-class PlayerMovementSettingsComponent;
 class StrictEntityContext;
 struct ActorDataDirtyFlagsComponent;
 struct ActorDataFlagComponent;
@@ -26,16 +24,15 @@ namespace ServerMoveInputHandlerSystemUtils {
 // NOLINTBEGIN
 MCAPI void _tickServerMoveInputHandler(
     ::StrictEntityContext&,
-    ::MovementAbilitiesComponent const&                        abilitiesComponent,
-    ::ServerPlayerCurrentMovementComponent const&              serverPlayerCurrentMovementComponent,
-    ::ClientInputLockComponent&                                lockComponent,
-    ::MoveInputComponent&                                      input,
-    ::ActorDataFlagComponent&                                  actorDataFlag,
-    ::ActorDataDirtyFlagsComponent&                            actorDataDirtyFlags,
-    ::VanillaClientGameplayComponent&                          vanillaClientGameplayComponent,
-    ::Optional<::SneakingComponent const>                      sneakingComponent,
-    ::Optional<::WasInWaterFlagComponent const>                isInWater,
-    ::OptionalGlobal<::PlayerMovementSettingsComponent const>& playerMovementSettingsComponent
+    ::MovementAbilitiesComponent const&           abilitiesComponent,
+    ::ServerPlayerCurrentMovementComponent const& serverPlayerCurrentMovementComponent,
+    ::ClientInputLockComponent&                   lockComponent,
+    ::MoveInputComponent&                         input,
+    ::ActorDataFlagComponent&                     actorDataFlag,
+    ::ActorDataDirtyFlagsComponent&               actorDataDirtyFlags,
+    ::VanillaClientGameplayComponent&             vanillaClientGameplayComponent,
+    ::Optional<::SneakingComponent const>         sneakingComponent,
+    ::Optional<::WasInWaterFlagComponent const>   isInWater
 );
 // NOLINTEND
 

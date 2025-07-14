@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/GeneratorType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class ServiceProviderCollection; }
@@ -19,22 +22,22 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk4e6ce7;
     ::ll::UntypedStorage<8, 32> mUnk2079d7;
     ::ll::UntypedStorage<8, 16> mUnk74450d;
+    ::ll::UntypedStorage<8, 8>  mUnk8907b6;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     EditorScriptAPI& operator=(EditorScriptAPI const&);
-    EditorScriptAPI(EditorScriptAPI const&);
     EditorScriptAPI();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EditorScriptAPI(::Editor::API::EditorScriptAPI&&);
+    MCNAPI EditorScriptAPI(::Editor::API::EditorScriptAPI const&);
 
     MCNAPI EditorScriptAPI(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
 
-    MCNAPI ::Editor::API::EditorScriptAPI& operator=(::Editor::API::EditorScriptAPI&&);
+    MCNAPI ::std::optional<::GeneratorType> _getWorldGeneratorType() const;
 
     MCNAPI ~EditorScriptAPI();
     // NOLINTEND
@@ -48,7 +51,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::API::EditorScriptAPI&&);
+    MCNAPI void* $ctor(::Editor::API::EditorScriptAPI const&);
 
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND

@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4>  mUnk63462f;
-    ::ll::UntypedStorage<4, 16> mUnk9e8d7c;
+    ::ll::UntypedStorage<2, 16> mUnk9e8d7c;
     // NOLINTEND
 
 public:
@@ -40,11 +40,11 @@ public:
 
     MCNAPI ::in6_addr ipv6_address() const;
 
-    MCNAPI bool operator!=(::rtc::IPAddress const&) const;
+    MCNAPI bool operator!=(::rtc::IPAddress const& other) const;
 
-    MCNAPI bool operator<(::rtc::IPAddress const&) const;
+    MCNAPI bool operator<(::rtc::IPAddress const& other) const;
 
-    MCNAPI bool operator==(::rtc::IPAddress const&) const;
+    MCNAPI bool operator==(::rtc::IPAddress const& other) const;
 
     MCNAPI int overhead() const;
 

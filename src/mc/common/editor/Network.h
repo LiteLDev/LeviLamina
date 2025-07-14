@@ -24,6 +24,8 @@ MCNAPI void bindNativeBrushServicePayloadTypes(::cereal::ReflectionCtx& ctx);
 
 MCNAPI void bindPayloadTypes(::cereal::ReflectionCtx& ctx);
 
+MCNAPI void bindPlayerStatePayloadsTypes(::cereal::ReflectionCtx& ctx);
+
 MCNAPI void bindStructurePayloadTypes(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 

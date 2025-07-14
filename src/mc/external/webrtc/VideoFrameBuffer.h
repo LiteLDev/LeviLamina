@@ -47,11 +47,12 @@ public:
     virtual ::webrtc::I420BufferInterface const* GetI420() const;
 
     // vIndex: 8
-    virtual ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> CropAndScale(int, int, int, int, int, int);
+    virtual ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer>
+    CropAndScale(int offset_x, int offset_y, int crop_width, int crop_height, int scaled_width, int scaled_height);
 
     // vIndex: 9
     virtual ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer>
-        GetMappedFrameBuffer(::rtc::ArrayView<::webrtc::VideoFrameBuffer::Type>);
+    GetMappedFrameBuffer(::rtc::ArrayView<::webrtc::VideoFrameBuffer::Type> types);
 
     // vIndex: 2
     virtual ~VideoFrameBuffer() /*override*/ = default;
@@ -60,7 +61,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer>
+    $CropAndScale(int offset_x, int offset_y, int crop_width, int crop_height, int scaled_width, int scaled_height);
 
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer>
+    $GetMappedFrameBuffer(::rtc::ArrayView<::webrtc::VideoFrameBuffer::Type> types);
     // NOLINTEND
 };
 

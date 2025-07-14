@@ -41,8 +41,6 @@ public:
 
     MCNAPI ::StructureLoadResult _parseEntities(::CompoundTag const& structureTag);
 
-    MCNAPI ::StructureLoadResult _parseFormatVersion(::CompoundTag const& tag);
-
     MCNAPI ::StructureLoadResult _parsePalettes(::CompoundTag const& structureTag);
 
     MCNAPI ::StructureLoadResult _parseSize(::CompoundTag const& tag);

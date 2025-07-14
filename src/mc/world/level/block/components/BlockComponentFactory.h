@@ -32,7 +32,7 @@ public:
         ::ll::UntypedStorage<8, 24> mUnkfbf74d;
         ::ll::UntypedStorage<8, 32> mUnk6beadb;
         ::ll::UntypedStorage<8, 24> mUnk445a76;
-        ::ll::UntypedStorage<8, 64> mUnk9ed2fe;
+        ::ll::UntypedStorage<8, 64> mUnkeca053;
         ::ll::UntypedStorage<1, 1>  mUnk5e7d13;
         // NOLINTEND
 
@@ -92,9 +92,6 @@ public:
     contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
 
     MCNAPI static void registerAllCerealDescriptions(::cereal::ReflectionCtx& ctx);
-
-    MCNAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>&
-    setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

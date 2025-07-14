@@ -34,15 +34,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::Actor*
+    getActorPtrFromPushedArray(uint64 arrayStackOffset, uint64 arrayElementOffset, bool& outOfElements) const;
+
     MCNAPI ::Actor* popActor();
 
     MCNAPI uint64 popMissingVariableOrActorAddress(::MolangVariableIndex variableIndex);
 
     MCNAPI uint64 popMissingVariableOrActorAddress(::HashedString const& variableName);
 
-    MCNAPI bool popPublicAccessMode();
-
     MCNAPI void restoreStackState(::MolangEvalStackState&& state);
+
+    MCNAPI void setPushedValue(float value);
 
     MCNAPI ~MolangEvalParams();
     // NOLINTEND

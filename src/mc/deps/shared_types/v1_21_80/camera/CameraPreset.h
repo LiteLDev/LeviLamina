@@ -45,7 +45,6 @@ public:
     ::ll::UntypedStorage<4, 8>  mUnkac01c4;
     ::ll::UntypedStorage<1, 2>  mUnk230970;
     ::ll::UntypedStorage<1, 2>  mUnkc68cb8;
-    ::ll::UntypedStorage<1, 2>  mUnkeca530;
     ::ll::UntypedStorage<8, 72> mUnk28a0cd;
     ::ll::UntypedStorage<1, 2>  mUnk1c232f;
     // NOLINTEND
@@ -64,10 +63,6 @@ public:
     MCNAPI ::SharedTypes::v1_21_80::CameraPreset& operator=(::SharedTypes::v1_21_80::CameraPreset&&);
 
     MCNAPI ::SharedTypes::v1_21_80::CameraPreset& operator=(::SharedTypes::v1_21_80::CameraPreset const&);
-
-    MCNAPI void setHorizontalRotationLimit(::std::array<float, 2> const& arr);
-
-    MCNAPI void setVerticalRotationLimit(::std::array<float, 2> const& arr);
 
     MCNAPI void write(::BinaryStream& stream) const;
 

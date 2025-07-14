@@ -27,9 +27,6 @@ MCNAPI void LogMissingChildSchemaOption(
     ::std::string const& optionsStr
 );
 
-MCNAPI void
-LogUnknownChildSchemaOption(::std::string const& childName, ::LogArea area, ::Json::Value const& childValue);
-
 MCNAPI void eraseSchema(::HashedString const& name, ::SemVersion const& version);
 
 MCNAPI ::Json::Value& getMemberByCaseInsensitiveName(::Json::Value& node, ::std::string_view memberName);

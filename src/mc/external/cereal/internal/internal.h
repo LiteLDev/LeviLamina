@@ -36,6 +36,8 @@ MCNAPI void derefAndSave(
     ::cereal::SerializerContext&           context
 );
 
+MCNAPI ::cereal::DynamicValue dynamicValueFromProp(::entt::meta_ctx const& ctx, ::entt::meta_any const& prop);
+
 MCNAPI void fillEnumDescription(
     ::entt::meta_ctx const&                          ctx,
     ::cereal::SchemaDescription&                     ret,
@@ -55,31 +57,19 @@ MCNAPI ::entt::
     dense_map<::std::string, ::entt::meta_any, ::cereal::util::internal::StringViewHash, ::std::equal_to<void>>*
     getUserProperties(::entt::meta_type const& type);
 
-MCNAPI void loadEnumValue(
-    ::entt::meta_type const&     type,
-    ::cereal::SchemaReader&      reader,
-    ::entt::meta_any&            any,
-    ::cereal::SerializerContext& context
-);
-
 MCNAPI ::cereal::internal::BasicSchema const* lookup(::entt::meta_ctx const& ctx, ::entt::type_info info);
+
+MCNAPI ::std::string makeEnumErrorMsg(::entt::meta_type const& type);
 
 MCNAPI void overrideCheck(::entt::meta_type type, uint currentMetaData, ::cereal::internal::SchemaTraits traits);
 
-MCNAPI ::std::unordered_map<::std::string, ::cereal::DynamicValue> pickUserProperties(
+MCNAPI ::std::map<::std::string, ::cereal::DynamicValue> pickUserProperties(
     ::entt::meta_ctx const& ctx,
     ::entt::dense_map<
         ::std::string,
         ::entt::meta_any,
         ::cereal::util::internal::StringViewHash,
         ::std::equal_to<void>> const& userProps
-);
-
-MCNAPI void saveEnumValue(
-    ::entt::meta_any const&      enumValue,
-    ::entt::meta_type const&     type,
-    ::cereal::SchemaWriter&      writer,
-    ::cereal::SerializerContext& context
 );
 
 MCNAPI ::std::string toString(double d);

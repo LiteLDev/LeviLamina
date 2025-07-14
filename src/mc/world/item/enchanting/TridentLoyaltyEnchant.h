@@ -7,6 +7,10 @@
 
 class TridentLoyaltyEnchant : public ::Enchant {
 public:
+    // prevent constructor by default
+    TridentLoyaltyEnchant();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -20,6 +24,34 @@ public:
 
     // vIndex: 0
     virtual ~TridentLoyaltyEnchant() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI TridentLoyaltyEnchant(
+        ::Enchant::Type            type,
+        ::Enchant::Frequency       frequency,
+        ::std::string_view         stringId,
+        ::std::string_view         description,
+        ::Enchant::VillagerTrading isAvailableForVillagerTraining,
+        int                        primarySlots,
+        int                        secondarySlots
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Enchant::Type            type,
+        ::Enchant::Frequency       frequency,
+        ::std::string_view         stringId,
+        ::std::string_view         description,
+        ::Enchant::VillagerTrading isAvailableForVillagerTraining,
+        int                        primarySlots,
+        int                        secondarySlots
+    );
     // NOLINTEND
 
 public:

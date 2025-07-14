@@ -40,7 +40,7 @@ public:
         /*override*/;
 
     // vIndex: 47
-    virtual bool isValidAuxValue(int auxValue) const /*override*/;
+    virtual bool isValidAuxValue(int value) const /*override*/;
 
     // vIndex: 0
     virtual ~FaceDirectionalBlock() /*override*/ = default;
@@ -61,6 +61,6 @@ public:
         int               itemValue
     ) const;
 
-    MCAPI bool $isValidAuxValue(int auxValue) const;
+    MCAPI bool $isValidAuxValue(int value) const;
     // NOLINTEND
 };

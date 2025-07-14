@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class GameTestClearTask;
-// clang-format on
-
 namespace gametest {
 
 class GameTestTicker {
@@ -29,8 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void add(::std::unique_ptr<::GameTestClearTask> clearTask);
-
     MCNAPI void clear();
 
     MCNAPI void forceStop();

@@ -196,6 +196,8 @@ public:
 
     MCNAPI void InsertIntoSplitPacketList(::RakNet::InternalPacket* internalPacket, uint64 time);
 
+    MCNAPI void PushDatagram();
+
     MCNAPI void PushPacket(uint64 time, ::RakNet::InternalPacket* internalPacket, bool isReliable);
 
     MCNAPI void ReleaseToInternalPacketPool(::RakNet::InternalPacket* ip);

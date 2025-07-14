@@ -7,6 +7,7 @@
 #include "mc/deps/core/debug/log/LogLevel.h"
 #include "mc/deps/core/utility/DisableServiceLocatorOverride.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/typeid_t.h"
 #include "mc/diagnostics/LogAreaID.h"
 #include "mc/platform/threading/Mutex.h"
@@ -80,7 +81,19 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::gsl::not_null<::ContentLogEndPoint*>> mContentLogEndPoint;
+        ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ContentLogEndPoint>> mContentLogEndPoint;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~ContentLogEndPointData();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -147,6 +160,8 @@ public:
     MCNAPI ::std::string getScope();
 
     MCNAPI void log(bool, ::LogLevel, ::LogArea, ...);
+
+    MCNAPI void registerEndPoint(::Bedrock::typeid_t<::ContentLog> id, ::gsl::not_null<::ContentLogEndPoint*> endPoint);
 
     MCNAPI void unregisterEndPoint(::gsl::not_null<::ContentLogEndPoint*> endPoint);
 

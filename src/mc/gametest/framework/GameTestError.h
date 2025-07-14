@@ -3,17 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Error.h"
+#include "mc/deps/scripting/runtime/BaseError.h"
 #include "mc/gametest/framework/GameTestErrorType.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct ErrorBinding; }
+namespace gametest { struct GameTestErrorContext; }
 // clang-format on
 
 namespace gametest {
 
-struct GameTestError : public ::Scripting::Error {
+struct GameTestError : public ::Scripting::BaseError {
 public:
     // member variables
     // NOLINTBEGIN
@@ -34,10 +35,19 @@ public:
 
     MCNAPI GameTestError(::gametest::GameTestError&&);
 
+    MCNAPI GameTestError(::gametest::GameTestErrorType type_, ::std::string const& message_);
+
     MCNAPI GameTestError(
         ::gametest::GameTestErrorType type_,
         ::std::string const&          message_,
         ::std::vector<::std::string>  params_
+    );
+
+    MCNAPI GameTestError(
+        ::gametest::GameTestErrorType                     type_,
+        ::std::string const&                              message_,
+        ::std::vector<::std::string>                      params_,
+        ::std::optional<::gametest::GameTestErrorContext> context_
     );
 
     MCNAPI ~GameTestError();
@@ -56,8 +66,17 @@ public:
 
     MCNAPI void* $ctor(::gametest::GameTestError&&);
 
+    MCNAPI void* $ctor(::gametest::GameTestErrorType type_, ::std::string const& message_);
+
     MCNAPI void*
     $ctor(::gametest::GameTestErrorType type_, ::std::string const& message_, ::std::vector<::std::string> params_);
+
+    MCNAPI void* $ctor(
+        ::gametest::GameTestErrorType                     type_,
+        ::std::string const&                              message_,
+        ::std::vector<::std::string>                      params_,
+        ::std::optional<::gametest::GameTestErrorContext> context_
+    );
     // NOLINTEND
 
 public:

@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EditorProjectStructureData(::std::string const& strucNamespace, ::std::string const& name);
+    MCNAPI EditorProjectStructureData(::std::string strucNamespace, ::std::string name);
 
     MCNAPI ~EditorProjectStructureData();
     // NOLINTEND
@@ -31,7 +31,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& strucNamespace, ::std::string const& name);
+    MCNAPI void* $ctor(::std::string strucNamespace, ::std::string name);
     // NOLINTEND
 
 public:

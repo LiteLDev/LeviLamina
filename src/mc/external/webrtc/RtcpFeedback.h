@@ -26,9 +26,9 @@ public:
     // NOLINTBEGIN
     MCNAPI RtcpFeedback(::webrtc::RtcpFeedback const&);
 
-    MCNAPI explicit RtcpFeedback(::webrtc::RtcpFeedbackType);
+    MCNAPI explicit RtcpFeedback(::webrtc::RtcpFeedbackType type);
 
-    MCNAPI RtcpFeedback(::webrtc::RtcpFeedbackType, ::webrtc::RtcpFeedbackMessageType);
+    MCNAPI RtcpFeedback(::webrtc::RtcpFeedbackType type, ::webrtc::RtcpFeedbackMessageType message_type);
 
     MCNAPI ~RtcpFeedback();
     // NOLINTEND
@@ -38,9 +38,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::RtcpFeedback const&);
 
-    MCNAPI void* $ctor(::webrtc::RtcpFeedbackType);
+    MCNAPI void* $ctor(::webrtc::RtcpFeedbackType type);
 
-    MCNAPI void* $ctor(::webrtc::RtcpFeedbackType, ::webrtc::RtcpFeedbackMessageType);
+    MCNAPI void* $ctor(::webrtc::RtcpFeedbackType type, ::webrtc::RtcpFeedbackMessageType message_type);
     // NOLINTEND
 
 public:

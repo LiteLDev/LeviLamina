@@ -52,23 +52,23 @@ public:
     // vIndex: 0
     virtual ~AppPlatform_win32() /*override*/;
 
-    // vIndex: 99
+    // vIndex: 98
     virtual ::std::string readAssetFile(::Core::Path const& filename) /*override*/;
 
-    // vIndex: 98
+    // vIndex: 97
     virtual ::Core::PathBuffer<::std::string> getAssetFileFullPath(::Core::Path const& filename) /*override*/;
 
-    // vIndex: 102
+    // vIndex: 101
     virtual ::std::set<::Core::PathBuffer<::std::string>>
     listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const /*override*/;
 
-    // vIndex: 66
+    // vIndex: 65
     virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath) /*override*/;
 
-    // vIndex: 118
+    // vIndex: 117
     virtual bool canLaunchUri(::std::string const& uri) /*override*/;
 
-    // vIndex: 119
+    // vIndex: 118
     virtual void launchUri(::std::string const& uri) /*override*/;
 
     // vIndex: 30
@@ -77,73 +77,70 @@ public:
     // vIndex: 2
     virtual ::Core::PathBuffer<::std::string> getLoggingPath() const /*override*/;
 
-    // vIndex: 160
+    // vIndex: 159
     virtual ::std::string getEdition() const /*override*/;
 
-    // vIndex: 161
+    // vIndex: 160
     virtual ::OsVersion getOSVersion() const /*override*/;
 
-    // vIndex: 31
-    virtual bool hasFastAlphaTest() const /*override*/;
-
-    // vIndex: 96
+    // vIndex: 95
     virtual bool supportsVibration() const /*override*/;
 
-    // vIndex: 178
+    // vIndex: 177
     virtual bool supportsFliteTTS() const /*override*/;
 
-    // vIndex: 69
+    // vIndex: 68
     virtual int getScreenWidth() const /*override*/;
 
-    // vIndex: 70
+    // vIndex: 69
     virtual int getScreenHeight() const /*override*/;
 
-    // vIndex: 71
+    // vIndex: 70
     virtual int getDisplayWidth() /*override*/;
 
-    // vIndex: 72
+    // vIndex: 71
     virtual int getDisplayHeight() /*override*/;
 
-    // vIndex: 73
+    // vIndex: 72
     virtual void setScreenSize(int width, int height) /*override*/;
 
-    // vIndex: 74
+    // vIndex: 73
     virtual void setWindowSize(int width, int height) /*override*/;
 
-    // vIndex: 75
+    // vIndex: 74
     virtual void setWindowText(::std::string const& title) /*override*/;
 
-    // vIndex: 92
+    // vIndex: 91
     virtual ::std::string getTextBoxBackend() const /*override*/;
 
-    // vIndex: 93
+    // vIndex: 92
     virtual void setTextBoxBackend(::std::string const& newText) /*override*/;
 
-    // vIndex: 94
+    // vIndex: 93
     virtual int getCaretPosition() const /*override*/;
 
-    // vIndex: 95
+    // vIndex: 94
     virtual void setCaretPosition(int position) /*override*/;
 
-    // vIndex: 106
+    // vIndex: 105
     virtual bool hasBuyButtonWhenInvalidLicense() /*override*/;
 
-    // vIndex: 137
+    // vIndex: 136
     virtual ::std::string getApplicationId() const /*override*/;
 
-    // vIndex: 123
+    // vIndex: 122
     virtual bool isCentennial() const /*override*/;
 
-    // vIndex: 124
+    // vIndex: 123
     virtual ::std::string getPackageFamilyName() const /*override*/;
 
-    // vIndex: 122
+    // vIndex: 121
     virtual ::PlatformType getPlatformType() const /*override*/;
 
     // vIndex: 16
     virtual ::BuildPlatform getBuildPlatform() const /*override*/;
 
-    // vIndex: 179
+    // vIndex: 178
     virtual ::std::unique_ptr<::SecureStorage> getSecureStorage() /*override*/;
 
     // vIndex: 1
@@ -152,52 +149,52 @@ public:
     // vIndex: 2
     virtual void setSecureStorageKey(::std::string const&, ::SecureStorageKey const&) /*override*/;
 
-    // vIndex: 125
+    // vIndex: 124
     virtual ::std::string getPlatformString() const /*override*/;
 
-    // vIndex: 126
+    // vIndex: 125
     virtual ::std::string getSubPlatformString() const /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual uint64 getFreeMemory() const /*override*/;
 
-    // vIndex: 139
+    // vIndex: 138
     virtual uint64 getMemoryLimit() const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 139
     virtual uint64 getUsedMemory() /*override*/;
 
     // vIndex: 20
     virtual uint64 getTotalPhysicalMemory() const /*override*/;
 
-    // vIndex: 153
+    // vIndex: 152
     virtual ::std::string getModelName() /*override*/;
 
-    // vIndex: 156
+    // vIndex: 155
     virtual void setFullscreenMode(::FullscreenMode const fullscreenMode) /*override*/;
 
-    // vIndex: 211
+    // vIndex: 210
     virtual bool isWebviewSupported() const /*override*/;
 
-    // vIndex: 212
+    // vIndex: 211
     virtual ::std::shared_ptr<::WebviewInterface> createWebview(::Webview::PlatformArguments&& args) const /*override*/;
 
-    // vIndex: 215
+    // vIndex: 214
     virtual bool getPlatformTTSEnabled() const /*override*/;
 
-    // vIndex: 216
+    // vIndex: 215
     virtual ::std::variant<::HWND__*, ::std::monostate> getRenderSurfaceParameters() const /*override*/;
 
-    // vIndex: 109
+    // vIndex: 108
     virtual ::std::optional<bool> isOnWifiConnectionTelemetryValue() /*override*/;
 
-    // vIndex: 37
+    // vIndex: 36
     virtual void hideSplashScreen() /*override*/;
 
-    // vIndex: 247
+    // vIndex: 246
     virtual int getPlatformDpi() const /*override*/;
 
-    // vIndex: 248
+    // vIndex: 247
     virtual ::UIScalingRules getPlatformUIScalingRules() const /*override*/;
     // NOLINTEND
 
@@ -258,8 +255,6 @@ public:
     MCNAPI ::std::string $getEdition() const;
 
     MCNAPI ::OsVersion $getOSVersion() const;
-
-    MCNAPI bool $hasFastAlphaTest() const;
 
     MCNAPI bool $supportsVibration() const;
 

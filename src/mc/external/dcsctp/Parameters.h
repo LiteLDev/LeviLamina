@@ -20,9 +20,21 @@ public:
     // Parameters inner types define
     class Builder {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 24> mUnka0a698;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Builder& operator=(Builder const&);
+        Builder(Builder const&);
+        Builder();
+
+    public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::dcsctp::Parameters::Builder& Add(::dcsctp::Parameter const&);
+        MCNAPI ::dcsctp::Parameters::Builder& Add(::dcsctp::Parameter const& p);
 
         MCNAPI ~Builder();
         // NOLINTEND
@@ -35,6 +47,18 @@ public:
     };
 
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk64c2f2;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Parameters& operator=(Parameters const&);
+    Parameters(Parameters const&);
+    Parameters();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::vector<::dcsctp::ParameterDescriptor> descriptors() const;
@@ -45,7 +69,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::dcsctp::Parameters> Parse(::rtc::ArrayView<uchar const>);
+    MCNAPI static ::std::optional<::dcsctp::Parameters> Parse(::rtc::ArrayView<uchar const> data);
     // NOLINTEND
 
 public:

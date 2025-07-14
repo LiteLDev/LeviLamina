@@ -31,6 +31,8 @@ public:
     MCNAPI
     BedrockLoadContext(::MolangVersion molangVersion, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
 
+    MCNAPI ::BedrockLoadContext& operator=(::BedrockLoadContext&&);
+
     MCNAPI ~BedrockLoadContext();
     // NOLINTEND
 

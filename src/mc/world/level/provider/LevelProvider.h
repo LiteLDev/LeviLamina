@@ -23,8 +23,7 @@ MCNAPI void registerExternalDataComponent(
     ::std::unique_ptr<::ExternalDataInterface> externalDataInterface
 );
 
-MCNAPI void
-registerLevelGlobalComponents(::EntityRegistry& registry, ::ILevel& level, bool registerOverflowTickComponent);
+MCNAPI void registerLevelGlobalComponents(::EntityRegistry& registry, ::ILevel& level);
 // NOLINTEND
 
 } // namespace LevelProvider

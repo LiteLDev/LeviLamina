@@ -32,7 +32,7 @@ public:
 
     MCNAPI VideoMediaInfo(::cricket::VideoMediaInfo const&);
 
-    MCNAPI VideoMediaInfo(::cricket::VideoMediaSendInfo&&, ::cricket::VideoMediaReceiveInfo&&);
+    MCNAPI VideoMediaInfo(::cricket::VideoMediaSendInfo&& send, ::cricket::VideoMediaReceiveInfo&& receive);
 
     MCNAPI ~VideoMediaInfo();
     // NOLINTEND
@@ -44,7 +44,7 @@ public:
 
     MCNAPI void* $ctor(::cricket::VideoMediaInfo const&);
 
-    MCNAPI void* $ctor(::cricket::VideoMediaSendInfo&&, ::cricket::VideoMediaReceiveInfo&&);
+    MCNAPI void* $ctor(::cricket::VideoMediaSendInfo&& send, ::cricket::VideoMediaReceiveInfo&& receive);
     // NOLINTEND
 
 public:

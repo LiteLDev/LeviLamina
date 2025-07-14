@@ -4,6 +4,7 @@
 
 enum class SearchCacheDuration : uint {
     None      = 0,
+    Minutes10 = 600,
     Minutes30 = 1800,
     Hours1    = 3600,
     Hours2    = 7200,

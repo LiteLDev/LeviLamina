@@ -19,6 +19,8 @@ class EventManager {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk14b190;
+    ::ll::UntypedStorage<8, 8>  mUnk68606b;
     ::ll::UntypedStorage<8, 24> mUnkabddfc;
     ::ll::UntypedStorage<8, 24> mUnkd72b3b;
     ::ll::UntypedStorage<8, 64> mUnk1501bd;
@@ -81,6 +83,12 @@ public:
     MCNAPI void setupCommonProperties();
 
     MCNAPI ~EventManager();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::string GetEdition();
     // NOLINTEND
 
 public:

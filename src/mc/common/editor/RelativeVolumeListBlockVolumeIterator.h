@@ -40,12 +40,6 @@ public:
     // vIndex: 4
     virtual bool isValid() const /*override*/;
 
-    // vIndex: 1
-    virtual bool operator==(::BaseBlockLocationIterator const& rhs) const /*override*/;
-
-    // vIndex: 2
-    virtual bool operator!=(::BaseBlockLocationIterator const& rhs) const /*override*/;
-
     // vIndex: 5
     virtual void _begin() /*override*/;
 

@@ -38,35 +38,39 @@ public:
 
     // vIndex: 1
     virtual void GenerateCertificateAsync(
-        ::rtc::KeyParams const&,
-        ::std::optional<uint64> const&,
-        ::absl::AnyInvocable<void(::webrtc::scoped_refptr<::rtc::RTCCertificate>) &&>
+        ::rtc::KeyParams const&                                                       key_params,
+        ::std::optional<uint64> const&                                                expires_ms,
+        ::absl::AnyInvocable<void(::webrtc::scoped_refptr<::rtc::RTCCertificate>) &&> callback
     ) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RTCCertificateGenerator(::rtc::Thread*, ::rtc::Thread*);
+    MCNAPI RTCCertificateGenerator(::rtc::Thread* signaling_thread, ::rtc::Thread* worker_thread);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::webrtc::scoped_refptr<::rtc::RTCCertificate>
-    GenerateCertificate(::rtc::KeyParams const&, ::std::optional<uint64> const&);
+    GenerateCertificate(::rtc::KeyParams const& key_params, ::std::optional<uint64> const& expires_ms);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::rtc::Thread*, ::rtc::Thread*);
+    MCNAPI void* $ctor(::rtc::Thread* signaling_thread, ::rtc::Thread* worker_thread);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI void $GenerateCertificateAsync(
+        ::rtc::KeyParams const&                                                       key_params,
+        ::std::optional<uint64> const&                                                expires_ms,
+        ::absl::AnyInvocable<void(::webrtc::scoped_refptr<::rtc::RTCCertificate>) &&> callback
+    );
     // NOLINTEND
 
 public:

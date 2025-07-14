@@ -14,13 +14,25 @@ namespace webrtc {
 
 struct RateControlInput {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk3f7b6a;
+    ::ll::UntypedStorage<8, 16> mUnk15845d;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    RateControlInput& operator=(RateControlInput const&);
+    RateControlInput(RateControlInput const&);
     RateControlInput();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RateControlInput(::webrtc::BandwidthUsage, ::std::optional<::webrtc::DataRate> const&);
+    MCNAPI RateControlInput(
+        ::webrtc::BandwidthUsage                   bw_state,
+        ::std::optional<::webrtc::DataRate> const& estimated_throughput
+    );
 
     MCNAPI ~RateControlInput();
     // NOLINTEND
@@ -28,7 +40,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::BandwidthUsage, ::std::optional<::webrtc::DataRate> const&);
+    MCNAPI void*
+    $ctor(::webrtc::BandwidthUsage bw_state, ::std::optional<::webrtc::DataRate> const& estimated_throughput);
     // NOLINTEND
 
 public:

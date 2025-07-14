@@ -3,11 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/schema/SerializationTraitsSupport.h"
 #include "mc/platform/Result.h"
 
 namespace cereal {
 
-struct SchemaReader {
+struct SchemaReader : public ::cereal::SerializationTraitsSupport {
 public:
     // SchemaReader inner types declare
     // clang-format off
@@ -56,9 +57,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SchemaReader() = default;
-
     // vIndex: 1
     virtual bool isValid() const = 0;
 
@@ -124,6 +122,9 @@ public:
 
     // vIndex: 22
     virtual void pop() = 0;
+
+    // vIndex: 0
+    virtual ~SchemaReader() /*override*/ = default;
     // NOLINTEND
 
 public:

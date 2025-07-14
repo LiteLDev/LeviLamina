@@ -16,7 +16,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BlockActorLevelListener() /*override*/;
+    virtual ~BlockActorLevelListener() /*override*/ = default;
 
     // vIndex: 20
     virtual void onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
@@ -31,12 +31,6 @@ public:
 
     // vIndex: 23
     virtual void onChunkUnloaded(::LevelChunk& lc) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

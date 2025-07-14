@@ -30,6 +30,8 @@ public:
 
     MCNAPI uint getActorInfoId(::std::string const& name) const;
 
+    MCNAPI ::std::vector<::ActorInfo> getActorInfoList() const;
+
     MCNAPI bool isSpawnEggAvailable(::std::string identifier);
 
     MCNAPI void registerActorInfo(::ActorInfo const& info);

@@ -1,0 +1,61 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/deps/ecs/strict/AddRemove.h"
+#include "mc/deps/ecs/strict/EntityFactoryT.h"
+#include "mc/deps/ecs/strict/Filter.h"
+#include "mc/deps/ecs/strict/GlobalRead.h"
+#include "mc/deps/ecs/strict/GlobalWrite.h"
+#include "mc/deps/ecs/strict/IStrictTickingSystem.h"
+#include "mc/deps/ecs/strict/Read.h"
+#include "mc/deps/ecs/strict/StrictExecutionContext.h"
+#include "mc/deps/ecs/strict/Write.h"
+
+// auto generated forward declare list
+// clang-format off
+struct ActorTickedComponent;
+struct DeathTickingComponent;
+struct OverlayAlphaComponent;
+struct ShieldFlickerComponent;
+struct SwellComponent;
+struct SynchedActorDataComponent;
+struct TickDeathNeededComponent;
+struct WitherBossFlagComponent;
+// clang-format on
+
+struct ClientWitherBossTickDeathSystemImpl
+: public ::IStrictTickingSystem<::StrictExecutionContext<
+      ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::WitherBossFlagComponent>,
+      ::Read<::DeathTickingComponent>,
+      ::Write<::OverlayAlphaComponent, ::ShieldFlickerComponent, ::SwellComponent, ::SynchedActorDataComponent>,
+      ::AddRemove<>,
+      ::GlobalRead<>,
+      ::GlobalWrite<>,
+      ::EntityFactoryT<>>> {
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 5
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::WitherBossFlagComponent>,
+            ::Read<::DeathTickingComponent>,
+            ::Write<::OverlayAlphaComponent, ::ShieldFlickerComponent, ::SwellComponent, ::SynchedActorDataComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>&
+    ) /*override*/;
+
+    // vIndex: 0
+    virtual ~ClientWitherBossTickDeathSystemImpl() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
+};

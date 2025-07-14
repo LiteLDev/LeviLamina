@@ -14,7 +14,6 @@
 class AppPlatform;
 class BinaryStream;
 class ReadOnlyBinaryStream;
-struct NetherNetConnector;
 struct PingedCompatibleServer;
 struct PortPair;
 namespace Bedrock::Threading { class Mutex; }
@@ -41,6 +40,7 @@ public:
         ::ll::UntypedStorage<1, 1>  mUnk91bac1;
         ::ll::UntypedStorage<1, 1>  mUnk1b4aaf;
         ::ll::UntypedStorage<4, 4>  mUnk21552f;
+        ::ll::UntypedStorage<2, 2>  mUnkb17aa9;
         // NOLINTEND
 
     public:
@@ -70,10 +70,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk6f15a6;
-    ::ll::UntypedStorage<8, 24> mUnk7a26b6;
+    ::ll::UntypedStorage<8, 24> mUnka0ecad;
     ::ll::UntypedStorage<8, 32> mUnkcf0391;
+    ::ll::UntypedStorage<8, 16> mUnkeab7f7;
     ::ll::UntypedStorage<1, 1>  mUnkfee0d4;
     ::ll::UntypedStorage<1, 1>  mUnk646852;
+    ::ll::UntypedStorage<8, 88> mUnk330682;
     ::ll::UntypedStorage<8, 80> mUnk1547c8;
     // NOLINTEND
 
@@ -124,13 +126,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _cacheDiscoveryResponseData(::NetherNetServerLocator::ServerData const& serverData);
+    MCNAPI void _cacheDiscoveryResponseData();
 
     MCNAPI void _onDiscoveryResponse(::NetherNet::NetworkID const& networkID, ::gsl::span<char const> responseData);
 
+    MCNAPI void _setDiscoveryRequestCallback(bool enable);
+
+    MCNAPI void _setDiscoveryResponseCallback(bool enable);
+
     MCNAPI void _setIsAnnouncing(bool isAnnouncing);
 
-    MCNAPI void setNetherNetConnector(::Bedrock::NonOwnerPointer<::NetherNetConnector>&& connector);
+    MCNAPI void _setIsDiscovering(bool isDiscovering);
     // NOLINTEND
 
 public:

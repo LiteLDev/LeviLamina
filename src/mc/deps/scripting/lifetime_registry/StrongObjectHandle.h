@@ -34,6 +34,8 @@ public:
 
     MCNAPI ::Scripting::StrongObjectHandle& operator=(::Scripting::StrongObjectHandle&& rhs);
 
+    MCNAPI bool valid() const;
+
     MCNAPI ~StrongObjectHandle();
     // NOLINTEND
 

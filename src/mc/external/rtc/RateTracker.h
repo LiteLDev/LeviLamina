@@ -27,7 +27,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RateTracker() = default;
+    virtual ~RateTracker();
 
     // vIndex: 1
     virtual int64 Time() const;
@@ -36,17 +36,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddSamples(int64);
+    MCNAPI void AddSamples(int64 sample_count);
 
-    MCNAPI void AddSamplesAtTime(int64, int64);
+    MCNAPI void AddSamplesAtTime(int64 current_time_ms, int64 sample_count);
 
-    MCNAPI double ComputeRateForInterval(int64) const;
+    MCNAPI double ComputeRateForInterval(int64 interval_milliseconds) const;
 
     MCNAPI void EnsureInitialized();
 
-    MCNAPI uint64 NextBucketIndex(uint64) const;
+    MCNAPI uint64 NextBucketIndex(uint64 bucket_index) const;
 
-    MCNAPI RateTracker(int64, uint64);
+    MCNAPI RateTracker(int64 bucket_milliseconds, uint64 bucket_count);
 
     MCNAPI int64 TotalSampleCount() const;
     // NOLINTEND
@@ -54,13 +54,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(int64, uint64);
+    MCNAPI void* $ctor(int64 bucket_milliseconds, uint64 bucket_count);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI int64 $Time() const;
     // NOLINTEND
 
 public:

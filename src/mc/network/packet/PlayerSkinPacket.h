@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/renderer/rendergraph/Packet.h"
 #include "mc/network/MinecraftPacketIds.h"
-#include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/platform/UUID.h"
 #include "mc/world/actor/player/SerializedSkin.h"
@@ -19,10 +19,10 @@ class PlayerSkinPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::mce::UUID>       mUUID;
-    ::ll::TypedStorage<8, 528, ::SerializedSkin> mSkin;
-    ::ll::TypedStorage<8, 32, ::std::string>     mLocalizedNewSkinName;
-    ::ll::TypedStorage<8, 32, ::std::string>     mLocalizedOldSkinName;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>      mUUID;
+    ::ll::TypedStorage<8, 16, ::SerializedSkin> mSkin;
+    ::ll::TypedStorage<8, 32, ::std::string>    mLocalizedNewSkinName;
+    ::ll::TypedStorage<8, 32, ::std::string>    mLocalizedOldSkinName;
     // NOLINTEND
 
 public:
@@ -41,7 +41,7 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 5
-    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream) /*override*/;
+    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 8
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
@@ -62,7 +62,7 @@ public:
 
     MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& bitStream);
+    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
 
     MCFOLD ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND

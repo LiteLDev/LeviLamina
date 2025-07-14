@@ -25,7 +25,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::KeyFrameTransform& addKeyFrame(float time);
-
-    MCNAPI void sortKeyFrames();
     // NOLINTEND
 };

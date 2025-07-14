@@ -23,9 +23,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit RtpHeaderExtensionCapability(::std::string_view);
+    MCNAPI explicit RtpHeaderExtensionCapability(::std::string_view uri);
 
-    MCNAPI RtpHeaderExtensionCapability(::std::string_view, int);
+    MCNAPI RtpHeaderExtensionCapability(::std::string_view uri, int preferred_id);
 
     MCNAPI ~RtpHeaderExtensionCapability();
     // NOLINTEND
@@ -33,9 +33,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string_view);
+    MCNAPI void* $ctor(::std::string_view uri);
 
-    MCNAPI void* $ctor(::std::string_view, int);
+    MCNAPI void* $ctor(::std::string_view uri, int preferred_id);
     // NOLINTEND
 
 public:

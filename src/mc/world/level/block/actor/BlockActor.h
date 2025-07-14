@@ -89,124 +89,127 @@ public:
     virtual void onCustomTagLoadDone(::BlockSource&);
 
     // vIndex: 7
-    virtual bool isWithinRenderDistance(::Vec3 const& cameraPosition) const;
+    virtual bool isPermanentlyRendered() const;
 
     // vIndex: 8
-    virtual void tick(::BlockSource& region);
+    virtual bool isWithinRenderDistance(::Vec3 const& cameraPosition) const;
 
     // vIndex: 9
-    virtual void onChanged(::BlockSource&);
+    virtual void tick(::BlockSource& region);
 
     // vIndex: 10
-    virtual bool isMovable(::BlockSource&);
+    virtual void onChanged(::BlockSource&);
 
     // vIndex: 11
-    virtual bool isCustomNameSaved();
+    virtual bool isMovable(::BlockSource&);
 
     // vIndex: 12
-    virtual void onPlace(::BlockSource&);
+    virtual bool isCustomNameSaved();
 
     // vIndex: 13
-    virtual void onMove();
+    virtual void onPlace(::BlockSource&);
 
     // vIndex: 14
-    virtual void onRemoved(::BlockSource&);
+    virtual void onMove();
 
     // vIndex: 15
-    virtual bool isPreserved(::BlockSource&) const;
+    virtual void onRemoved(::BlockSource&);
 
     // vIndex: 16
-    virtual bool shouldPreserve(::BlockSource&);
+    virtual bool isPreserved(::BlockSource&) const;
 
     // vIndex: 17
-    virtual void triggerEvent(int, int);
+    virtual bool shouldPreserve(::BlockSource&);
 
     // vIndex: 18
-    virtual void clearCache();
+    virtual void triggerEvent(int, int);
 
     // vIndex: 19
-    virtual void onNeighborChanged(::BlockSource&, ::BlockPos const&);
+    virtual void clearCache();
 
     // vIndex: 20
-    virtual float getShadowRadius(::BlockSource&) const;
+    virtual void onNeighborChanged(::BlockSource&, ::BlockPos const&);
 
     // vIndex: 21
-    virtual bool hasAlphaLayer() const;
+    virtual float getShadowRadius(::BlockSource&) const;
 
     // vIndex: 22
-    virtual ::BlockActor* getCrackEntity(::BlockSource&, ::BlockPos const&);
+    virtual bool hasAlphaLayer() const;
 
     // vIndex: 23
-    virtual ::AABB getCollisionShape(::IConstBlockSource const&) const;
+    virtual ::BlockActor* getCrackEntity(::BlockSource&, ::BlockPos const&);
 
     // vIndex: 24
-    virtual void getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos) const;
+    virtual ::AABB getCollisionShape(::IConstBlockSource const&) const;
 
     // vIndex: 25
-    virtual ::Bedrock::Safety::RedactableString const& getCustomName() const;
+    virtual void getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos) const;
 
     // vIndex: 26
+    virtual ::Bedrock::Safety::RedactableString const& getCustomName() const;
+
+    // vIndex: 27
     virtual ::std::string const&
     getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context);
 
-    // vIndex: 27
+    // vIndex: 28
     virtual ::std::string getName() const;
 
-    // vIndex: 28
+    // vIndex: 29
     virtual void setCustomName(::Bedrock::Safety::RedactableString const& name);
 
-    // vIndex: 29
+    // vIndex: 30
     virtual ::std::string getImmersiveReaderText(::BlockSource&);
 
-    // vIndex: 30
+    // vIndex: 31
     virtual int getRepairCost() const;
 
-    // vIndex: 32
+    // vIndex: 33
     virtual ::PistonBlockActor* getOwningPiston(::BlockSource&);
 
-    // vIndex: 31
+    // vIndex: 32
     virtual ::PistonBlockActor const* getOwningPiston(::BlockSource&) const;
 
-    // vIndex: 34
+    // vIndex: 35
     virtual ::Container* getContainer();
 
-    // vIndex: 33
+    // vIndex: 34
     virtual ::Container const* getContainer() const;
 
-    // vIndex: 35
+    // vIndex: 36
     virtual void eraseLootTable();
 
-    // vIndex: 36
+    // vIndex: 37
     virtual void onChunkLoaded(::LevelChunk&);
 
-    // vIndex: 37
+    // vIndex: 38
     virtual void onChunkUnloaded(::LevelChunk&);
 
-    // vIndex: 38
+    // vIndex: 39
     virtual void onSubChunkLoaded(::LevelChunk&, short, bool);
 
-    // vIndex: 39
+    // vIndex: 40
     virtual ::std::vector<::std::string> getUgcStrings(::CompoundTag const&) const;
 
-    // vIndex: 40
+    // vIndex: 41
     virtual ::std::vector<::std::string> getFilteredUgcStrings(::CompoundTag const&) const;
 
-    // vIndex: 41
+    // vIndex: 42
     virtual void setUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
 
-    // vIndex: 42
+    // vIndex: 43
     virtual void setFilteredUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
 
-    // vIndex: 43
+    // vIndex: 44
     virtual void fixupOnLoad(::LevelChunk&);
 
-    // vIndex: 44
+    // vIndex: 45
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&);
 
-    // vIndex: 45
+    // vIndex: 46
     virtual void _onUpdatePacket(::CompoundTag const&, ::BlockSource&);
 
-    // vIndex: 46
+    // vIndex: 47
     virtual bool _playerCanUpdate(::Player const&) const;
     // NOLINTEND
 
@@ -253,6 +256,8 @@ public:
     MCFOLD void $loadBlockData(::CompoundTag const&, ::BlockSource&, ::DataLoadHelper&);
 
     MCFOLD void $onCustomTagLoadDone(::BlockSource&);
+
+    MCFOLD bool $isPermanentlyRendered() const;
 
     MCAPI bool $isWithinRenderDistance(::Vec3 const& cameraPosition) const;
 

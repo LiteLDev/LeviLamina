@@ -32,9 +32,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit PeerConnectionDependencies(::webrtc::PeerConnectionObserver*);
-
     MCNAPI PeerConnectionDependencies(::webrtc::PeerConnectionDependencies&&);
+
+    MCNAPI explicit PeerConnectionDependencies(::webrtc::PeerConnectionObserver* observer_in);
 
     MCNAPI ~PeerConnectionDependencies();
     // NOLINTEND
@@ -42,9 +42,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::PeerConnectionObserver*);
-
     MCNAPI void* $ctor(::webrtc::PeerConnectionDependencies&&);
+
+    MCNAPI void* $ctor(::webrtc::PeerConnectionObserver* observer_in);
     // NOLINTEND
 
 public:

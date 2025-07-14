@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+struct ActorDocumentDataParams;
 struct DeserializeDataParams;
 // clang-format on
 
@@ -24,6 +25,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::Description* parseDescription(::ActorDocumentDataParams actorDocumentDataParams);
+
     MCNAPI ::Description* parseDescription(::DeserializeDataParams deserializeDataParams);
     // NOLINTEND
 

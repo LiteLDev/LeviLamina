@@ -9,7 +9,19 @@ namespace webrtc { class DataRate; }
 
 namespace webrtc {
 
-struct LinkCapacityEstimator {
+class LinkCapacityEstimator {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk19f5fa;
+    ::ll::UntypedStorage<8, 8>  mUnkb33dcf;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    LinkCapacityEstimator& operator=(LinkCapacityEstimator const&);
+    LinkCapacityEstimator(LinkCapacityEstimator const&);
+
 public:
     // member functions
     // NOLINTBEGIN
@@ -17,11 +29,11 @@ public:
 
     MCNAPI ::webrtc::DataRate LowerBound() const;
 
-    MCNAPI void OnOveruseDetected(::webrtc::DataRate);
+    MCNAPI void OnOveruseDetected(::webrtc::DataRate acknowledged_rate);
 
     MCNAPI void Reset();
 
-    MCNAPI void Update(::webrtc::DataRate, double);
+    MCNAPI void Update(::webrtc::DataRate capacity_sample, double alpha);
 
     MCNAPI ::webrtc::DataRate UpperBound() const;
 

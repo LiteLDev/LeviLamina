@@ -82,7 +82,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI uint $GetGroupKey() const;
     // NOLINTEND
 
 public:

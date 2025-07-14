@@ -8,6 +8,8 @@
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/options/GraphicsMode.h"
 #include "mc/scripting/modules/minecraft/actor/ScriptActor.h"
+#include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/server/commands/PlayerPermissionLevel.h"
 #include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
@@ -69,10 +71,10 @@ public:
     virtual ::Scripting::Result_deprecated<void> lookAt(::Actor& self, ::Vec3 const& targetLocation) /*override*/;
 
     // vIndex: 9
-    virtual ::Scripting::Result_deprecated<void> applyImpulse(::Actor& self, ::Vec3 const& vector) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> applyImpulseStable(::Actor& self, ::Vec3 const& vector) /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result_deprecated<void> clearVelocity(::Actor& self) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> clearVelocityStable(::Actor& self) /*override*/;
 
     // vIndex: 10
     virtual ::Scripting::Result_deprecated<void> remove(::Actor& self) /*override*/;
@@ -140,6 +142,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptClientSystemInfo>>
     getClientSystemInfo();
 
+    MCNAPI ::Scripting::Result<::CommandPermissionLevel, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getCommandPermissionLevel() const;
+
     MCNAPI ::Scripting::Result_deprecated<::GameType> getGameMode() const;
 
     MCNAPI ::Scripting::Result<::GraphicsMode, ::ScriptModuleMinecraft::ScriptInvalidActorError>
@@ -157,6 +162,9 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<int> getPlayerLevel() const;
 
+    MCNAPI ::Scripting::Result<::PlayerPermissionLevel, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getPlayerPermissionLevel() const;
+
     MCNAPI ::Scripting::Result_deprecated<int> getSelectedSlot() const;
 
     MCNAPI ::Scripting::Result_deprecated<::std::optional<::ScriptModuleMinecraft::ScriptDimensionLocation>>
@@ -173,8 +181,6 @@ public:
     MCNAPI ::Scripting::Result_deprecated<bool> isGliding() const;
 
     MCNAPI ::Scripting::Result_deprecated<bool> isJumping() const;
-
-    MCNAPI ::Scripting::Result_deprecated<bool> isOp() const;
 
     MCNAPI ::ScriptModuleMinecraft::ScriptPlayer& operator=(::ScriptModuleMinecraft::ScriptPlayer&&);
 
@@ -214,9 +220,10 @@ public:
                 var
         ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> setGameMode(::std::optional<::GameType> gameModeOrUndefined);
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    setCommandPermissionLevel(::CommandPermissionLevel commandPermissionLevel);
 
-    MCNAPI ::Scripting::Result_deprecated<void> setOp(bool isOp) const;
+    MCNAPI ::Scripting::Result_deprecated<void> setGameMode(::std::optional<::GameType> gameModeOrUndefined);
 
     MCNAPI ::Scripting::Result_deprecated<void> setPropertyOverrideForEntity(
         ::ScriptModuleMinecraft::ScriptActor const&       targetEntity,
@@ -244,7 +251,12 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> startItemCooldown(::std::string const& itemType, int duration);
 
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError> stopAllSounds();
+
     MCNAPI ::Scripting::Result_deprecated<void> stopMusic();
+
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    stopSound(::std::string const& soundID);
     // NOLINTEND
 
 public:
@@ -278,9 +290,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<void> $lookAt(::Actor& self, ::Vec3 const& targetLocation);
 
-    MCNAPI ::Scripting::Result_deprecated<void> $applyImpulse(::Actor& self, ::Vec3 const& vector);
+    MCNAPI ::Scripting::Result_deprecated<void> $applyImpulseStable(::Actor& self, ::Vec3 const& vector);
 
-    MCNAPI ::Scripting::Result_deprecated<void> $clearVelocity(::Actor& self);
+    MCNAPI ::Scripting::Result_deprecated<void> $clearVelocityStable(::Actor& self);
 
     MCNAPI ::Scripting::Result_deprecated<void> $remove(::Actor& self);
 

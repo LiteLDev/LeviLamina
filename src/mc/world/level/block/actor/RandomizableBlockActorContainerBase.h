@@ -38,7 +38,7 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 35
+    // vIndex: 36
     virtual void eraseLootTable() /*override*/;
     // NOLINTEND
 

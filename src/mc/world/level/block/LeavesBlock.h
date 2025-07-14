@@ -58,10 +58,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                                            mHasTransparentLeaves;
-    ::ll::TypedStorage<1, 1, bool>                                            mHasFastAlphaTest;
     ::ll::TypedStorage<8, 8, ::HashedString const&>                           mSapling;
     ::ll::TypedStorage<4, 28, ::std::optional<::LeavesBlock::ParticleParams>> mParticleParams;
-    ::ll::TypedStorage<1, 1, bool>                                            mUseSeasonsOpaqueLayerIfSnowingBiome;
     // NOLINTEND
 
 public:
@@ -82,11 +80,11 @@ public:
     // vIndex: 113
     virtual bool isSeasonTinted(::Block const& block, ::BlockSource& region, ::BlockPos const& p) const /*override*/;
 
-    // vIndex: 139
+    // vIndex: 138
     virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const
         /*override*/;
 
-    // vIndex: 141
+    // vIndex: 140
     virtual ::HashedString const& getCullingLayer() const /*override*/;
 
     // vIndex: 123
@@ -122,8 +120,6 @@ public:
     MCAPI void _die(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
-
-    MCAPI ::LeavesBlock& setUseSeasonsOpaqueLayerIfSnowingBiome(bool enabled);
     // NOLINTEND
 
 public:

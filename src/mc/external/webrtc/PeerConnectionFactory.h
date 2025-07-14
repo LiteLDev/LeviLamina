@@ -55,60 +55,64 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3
-    virtual void SetOptions(::webrtc::PeerConnectionFactoryInterface::Options const&) /*override*/;
+    virtual void SetOptions(::webrtc::PeerConnectionFactoryInterface::Options const& options) /*override*/;
 
     // vIndex: 4
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>>
     CreatePeerConnectionOrError(
-        ::webrtc::PeerConnectionInterface::RTCConfiguration const&,
-        ::webrtc::PeerConnectionDependencies
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
+        ::webrtc::PeerConnectionDependencies                       dependencies
     ) /*override*/;
 
     // vIndex: 7
-    virtual ::webrtc::RtpCapabilities GetRtpSenderCapabilities(::cricket::MediaType) const /*override*/;
+    virtual ::webrtc::RtpCapabilities GetRtpSenderCapabilities(::cricket::MediaType kind) const /*override*/;
 
     // vIndex: 8
-    virtual ::webrtc::RtpCapabilities GetRtpReceiverCapabilities(::cricket::MediaType) const /*override*/;
+    virtual ::webrtc::RtpCapabilities GetRtpReceiverCapabilities(::cricket::MediaType kind) const /*override*/;
 
     // vIndex: 9
     virtual ::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>
-    CreateLocalMediaStream(::std::string const&) /*override*/;
+    CreateLocalMediaStream(::std::string const& stream_id) /*override*/;
 
     // vIndex: 10
     virtual ::webrtc::scoped_refptr<::webrtc::AudioSourceInterface>
-    CreateAudioSource(::cricket::AudioOptions const&) /*override*/;
+    CreateAudioSource(::cricket::AudioOptions const& options) /*override*/;
 
     // vIndex: 12
-    virtual ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>
-        CreateVideoTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackSourceInterface>, ::std::string_view) /*override*/;
+    virtual ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface> CreateVideoTrack(
+        ::webrtc::scoped_refptr<::webrtc::VideoTrackSourceInterface> source,
+        ::std::string_view                                           id
+    ) /*override*/;
 
     // vIndex: 13
     virtual ::webrtc::scoped_refptr<::webrtc::AudioTrackInterface>
-    CreateAudioTrack(::std::string const&, ::webrtc::AudioSourceInterface*) /*override*/;
+    CreateAudioTrack(::std::string const& id, ::webrtc::AudioSourceInterface* source) /*override*/;
 
     // vIndex: 14
-    virtual bool StartAecDump(::_iobuf*, int64) /*override*/;
+    virtual bool StartAecDump(::_iobuf* file, int64 max_size_bytes) /*override*/;
 
     // vIndex: 15
     virtual void StopAecDump() /*override*/;
 
     // vIndex: 2
-    virtual ~PeerConnectionFactory() /*override*/ = default;
+    virtual ~PeerConnectionFactory() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::webrtc::Call>
-    CreateCall_w(::webrtc::Environment const&, ::webrtc::PeerConnectionInterface::RTCConfiguration const&);
+    MCNAPI ::std::unique_ptr<::webrtc::Call> CreateCall_w(
+        ::webrtc::Environment const&                               env,
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration
+    );
 
-    MCNAPI bool IsTrialEnabled(::std::string_view) const;
+    MCNAPI bool IsTrialEnabled(::std::string_view key) const;
 
-    MCNAPI explicit PeerConnectionFactory(::webrtc::PeerConnectionFactoryDependencies);
+    MCNAPI explicit PeerConnectionFactory(::webrtc::PeerConnectionFactoryDependencies dependencies);
 
     MCNAPI PeerConnectionFactory(
-        ::webrtc::scoped_refptr<::webrtc::ConnectionContext>,
-        ::webrtc::PeerConnectionFactoryDependencies*
+        ::webrtc::scoped_refptr<::webrtc::ConnectionContext> context,
+        ::webrtc::PeerConnectionFactoryDependencies*         dependencies
     );
 
     MCNAPI ::cricket::MediaEngineInterface* media_engine() const;
@@ -117,16 +121,50 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::PeerConnectionFactoryDependencies);
+    MCNAPI void* $ctor(::webrtc::PeerConnectionFactoryDependencies dependencies);
 
-    MCNAPI void*
-    $ctor(::webrtc::scoped_refptr<::webrtc::ConnectionContext>, ::webrtc::PeerConnectionFactoryDependencies*);
+    MCNAPI void* $ctor(
+        ::webrtc::scoped_refptr<::webrtc::ConnectionContext> context,
+        ::webrtc::PeerConnectionFactoryDependencies*         dependencies
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $SetOptions(::webrtc::PeerConnectionFactoryInterface::Options const& options);
 
+    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>>
+    $CreatePeerConnectionOrError(
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
+        ::webrtc::PeerConnectionDependencies                       dependencies
+    );
+
+    MCNAPI ::webrtc::RtpCapabilities $GetRtpSenderCapabilities(::cricket::MediaType kind) const;
+
+    MCNAPI ::webrtc::RtpCapabilities $GetRtpReceiverCapabilities(::cricket::MediaType kind) const;
+
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>
+    $CreateLocalMediaStream(::std::string const& stream_id);
+
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::AudioSourceInterface>
+    $CreateAudioSource(::cricket::AudioOptions const& options);
+
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>
+    $CreateVideoTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackSourceInterface> source, ::std::string_view id);
+
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::AudioTrackInterface>
+    $CreateAudioTrack(::std::string const& id, ::webrtc::AudioSourceInterface* source);
+
+    MCNAPI bool $StartAecDump(::_iobuf* file, int64 max_size_bytes);
+
+    MCNAPI void $StopAecDump();
     // NOLINTEND
 
 public:

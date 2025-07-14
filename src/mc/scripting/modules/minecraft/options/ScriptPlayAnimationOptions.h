@@ -14,6 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk661f75;
+    ::ll::UntypedStorage<8, 32> mUnkc5982c;
     ::ll::UntypedStorage<8, 40> mUnk7de0bf;
     ::ll::UntypedStorage<4, 8>  mUnkb5e4ac;
     ::ll::UntypedStorage<8, 40> mUnk3a0d0d;
@@ -43,7 +44,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bindV1();
+
+    MCNAPI static ::Scripting::InterfaceBinding bindV2();
     // NOLINTEND
 
 public:

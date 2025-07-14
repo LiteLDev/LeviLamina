@@ -11,7 +11,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor::API { class EditorExtension; }
 namespace Editor::API { class EditorExtensionContext; }
 namespace Editor::ScriptModule { class ScriptInternalPlayerServiceContext; }
@@ -78,8 +77,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit EditorPlayerExtensionService(::Editor::ServiceProviderCollection& providers);
-
     MCNAPI ::Scripting::Result_deprecated<void>
     _createAndStartExtensionContexts(::std::optional<::Scripting::ContextId> optionalContextId);
 
@@ -90,12 +87,6 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void>
     _handleStartExtensions(::std::optional<::Scripting::ContextId> optionalContextId);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:

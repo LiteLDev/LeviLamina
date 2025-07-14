@@ -20,7 +20,13 @@ public:
     virtual ::rtc::NetworkBindingResult BindSocketToNetwork(int, ::rtc::IPAddress const&) = 0;
 
     // vIndex: 1
-    virtual ~NetworkBinderInterface() = default;
+    virtual ~NetworkBinderInterface();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

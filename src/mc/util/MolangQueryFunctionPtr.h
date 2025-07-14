@@ -29,27 +29,12 @@ public:
 public:
     // prevent constructor by default
     MolangQueryFunctionPtr& operator=(MolangQueryFunctionPtr const&);
+    MolangQueryFunctionPtr(MolangQueryFunctionPtr const&);
     MolangQueryFunctionPtr();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MolangQueryFunctionPtr(::MolangQueryFunctionPtr const&);
-
     MCAPI ::MolangQueryFunctionPtr& operator=(::MolangQueryFunctionPtr&&);
-
-    MCAPI ~MolangQueryFunctionPtr();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::MolangQueryFunctionPtr const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

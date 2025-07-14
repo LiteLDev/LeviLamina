@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/codebuilder/IRequestHandler.h"
+#include "mc/common/edu_cloud_proxy/Operation.h"
 #include "mc/platform/WebviewObserver.h"
 #include "mc/websockets/CloseStatusCode.h"
 #include "mc/websockets/WSConnectionResult.h"
@@ -18,6 +19,7 @@ namespace CodeBuilder { struct ChatSubscription; }
 namespace CodeBuilder { struct CommandRequest; }
 namespace CodeBuilder { struct EncryptionRequest; }
 namespace CodeBuilder { struct ErrorMessage; }
+namespace EduCloudProxy { struct CloudProject; }
 // clang-format on
 
 namespace Automation {
@@ -43,7 +45,8 @@ public:
     ::ll::UntypedStorage<8, 32>   mUnk7347c6;
     ::ll::UntypedStorage<8, 64>   mUnk2747d5;
     ::ll::UntypedStorage<8, 8>    mUnkc5c47e;
-    ::ll::UntypedStorage<1, 1>    mUnk27d909;
+    ::ll::UntypedStorage<8, 8>    mUnk27d909;
+    ::ll::UntypedStorage<8, 8>    mUnkf24bcf;
     // NOLINTEND
 
 public:
@@ -86,23 +89,40 @@ public:
     // vIndex: 7
     virtual void dataMob(::std::string const& requestId) /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void dataTutorial(::std::string const& requestId, ::std::string const& tutorialPath) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
+    virtual void dataFile(
+        ::std::string const& requestId,
+        bool const           isRead,
+        ::std::string const& filePath,
+        ::std::string const& fileContents
+    ) /*override*/;
+
+    // vIndex: 8
+    virtual void cloudRequest(
+        ::std::string const&               requestId,
+        ::EduCloudProxy::Operation const   operation,
+        ::std::string const&               id,
+        ::std::vector<::std::string> const idList,
+        ::EduCloudProxy::CloudProject      project
+    ) /*override*/;
+
+    // vIndex: 11
     virtual bool
     encryptConnection(::std::string const& requestId, ::CodeBuilder::EncryptionRequest const& request) /*override*/;
 
-    // vIndex: 10
+    // vIndex: 12
     virtual void subscribe(::std::string const& requestId, ::std::string const& eventId) /*override*/;
 
-    // vIndex: 11
+    // vIndex: 13
     virtual void unsubscribe(::std::string const& requestId, ::std::string const& eventId) /*override*/;
 
-    // vIndex: 12
+    // vIndex: 14
     virtual void error(::std::string const&, ::CodeBuilder::ErrorMessage const& message) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 15
     virtual bool tutorialCached(::std::string const& tutorialPath) /*override*/;
     // NOLINTEND
 
@@ -171,6 +191,21 @@ public:
     MCNAPI void $dataMob(::std::string const& requestId);
 
     MCNAPI void $dataTutorial(::std::string const& requestId, ::std::string const& tutorialPath);
+
+    MCNAPI void $dataFile(
+        ::std::string const& requestId,
+        bool const           isRead,
+        ::std::string const& filePath,
+        ::std::string const& fileContents
+    );
+
+    MCNAPI void $cloudRequest(
+        ::std::string const&               requestId,
+        ::EduCloudProxy::Operation const   operation,
+        ::std::string const&               id,
+        ::std::vector<::std::string> const idList,
+        ::EduCloudProxy::CloudProject      project
+    );
 
     MCNAPI bool $encryptConnection(::std::string const& requestId, ::CodeBuilder::EncryptionRequest const& request);
 

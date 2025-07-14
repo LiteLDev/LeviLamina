@@ -21,7 +21,6 @@ public:
     // MinecraftScreenModel inner types declare
     // clang-format off
     struct Context;
-    struct LoadingMessages;
     // clang-format on
 
     // MinecraftScreenModel inner types define
@@ -42,25 +41,6 @@ public:
         Context& operator=(Context const&);
         Context(Context const&);
         Context();
-    };
-
-    struct LoadingMessages {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnk8ed4e7;
-        ::ll::UntypedStorage<4, 8>  mUnk5eba2d;
-        ::ll::UntypedStorage<8, 24> mUnkf189c7;
-        ::ll::UntypedStorage<8, 24> mUnkbfedcf;
-        ::ll::UntypedStorage<8, 24> mUnk273607;
-        ::ll::UntypedStorage<8, 24> mUnkde92e9;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LoadingMessages& operator=(LoadingMessages const&);
-        LoadingMessages(LoadingMessages const&);
-        LoadingMessages();
     };
 
     enum class FriendsDrawerLocation : int {

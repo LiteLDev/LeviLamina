@@ -47,7 +47,7 @@ public:
     virtual ~Weather() /*override*/ = default;
 
     // vIndex: 26
-    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int) /*override*/;
+    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const&, int data) /*override*/;
     // NOLINTEND
 
 public:
@@ -88,7 +88,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $levelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const&, int data);
     // NOLINTEND
 
 public:
