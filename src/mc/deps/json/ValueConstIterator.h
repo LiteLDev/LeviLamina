@@ -28,6 +28,13 @@ public:
     using value_type = ::Json::Value;
 
 public:
+    inline ValueConstIterator& operator++() {
+        increment();
+        return *this;
+    }
+    inline ::Json::Value const& operator*() const { return deref(); }
+
+public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::Json::ValueConstIterator& operator=(::Json::ValueIteratorBase const& other);
