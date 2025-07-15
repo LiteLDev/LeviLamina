@@ -72,7 +72,7 @@ std::optional<NetworkPeer::NetworkStatus> Player::getNetworkStatus() const {
         .transform([](auto& peer) { return peer.getNetworkStatus(); });
 }
 
-std::string Player::getRealName() const { return getConnectionRequest()->getClientThirdPartyName(); }
+std::string Player::getRealName() const { return getConnectionRequest()->mLegacyMultiplayerToken->getIdentityName(); }
 
 void Player::disconnect(std::string_view reason) const {
     ll::service::getServerNetworkHandler().and_then([&](auto& handler) {
