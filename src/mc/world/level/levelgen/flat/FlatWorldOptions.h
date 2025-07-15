@@ -36,8 +36,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Json::Value _parseFlatWorldJson(::std::string_view json);
-
     MCNAPI static ::Json::Value getLayers(::LevelData const& levelData);
     // NOLINTEND
 

@@ -64,8 +64,6 @@ public:
     // NOLINTBEGIN
     MCAPI ChunkViewSource(::ChunkViewSource const& otherChunkViewSource);
 
-    MCAPI ChunkViewSource(::ChunkSource& mainSource, ::ChunkSource::LoadMode parentLoadMode);
-
     MCAPI ChunkViewSource(
         ::ChunkSource&                                              mainSource,
         ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& gridArea,
@@ -105,8 +103,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ChunkViewSource const& otherChunkViewSource);
-
-    MCAPI void* $ctor(::ChunkSource& mainSource, ::ChunkSource::LoadMode parentLoadMode);
 
     MCAPI void* $ctor(
         ::ChunkSource&                                              mainSource,

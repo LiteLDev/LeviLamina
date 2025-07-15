@@ -185,7 +185,6 @@ struct ActorUniqueID;
 struct AdventureSettings;
 struct Bounds;
 struct BreakingItemParticleData;
-struct EducationLevelSettings;
 struct LevelTagIDType;
 struct LevelTagSetIDType;
 struct PlayerMovementSettings;
@@ -709,50 +708,44 @@ public:
     // vIndex: 165
     virtual ::Bedrock::NotNullNonOwnerPtr<::PhotoManager const> getPhotoManager() const = 0;
 
-    // vIndex: 167
-    virtual void setEducationLevelSettings(::EducationLevelSettings) = 0;
-
     // vIndex: 168
-    virtual ::std::optional<::EducationLevelSettings> const& getEducationLevelSettings() const = 0;
-
-    // vIndex: 170
     virtual ::Bedrock::NotNullNonOwnerPtr<::EducationSettingsManager> getEducationSettingsManager() = 0;
 
-    // vIndex: 169
+    // vIndex: 167
     virtual ::Bedrock::NotNullNonOwnerPtr<::EducationSettingsManager const> getEducationSettingsManager() const = 0;
 
-    // vIndex: 171
+    // vIndex: 169
     virtual void save() = 0;
 
-    // vIndex: 172
+    // vIndex: 170
     virtual void saveLevelData() = 0;
 
-    // vIndex: 173
+    // vIndex: 171
     virtual void saveGameData() = 0;
 
-    // vIndex: 174
+    // vIndex: 172
     virtual ::std::shared_ptr<void*> requestTimedStorageDeferment() = 0;
 
-    // vIndex: 175
+    // vIndex: 173
     virtual ::TickingAreasManager& getTickingAreasMgr() = 0;
 
-    // vIndex: 176
+    // vIndex: 174
     virtual void addTickingAreaList(::DimensionType, ::std::shared_ptr<::TickingAreaList> const&) = 0;
 
-    // vIndex: 177
+    // vIndex: 175
     virtual void sendServerLegacyParticle(::ParticleType, ::Vec3 const&, ::Vec3 const&, int) = 0;
 
-    // vIndex: 182
+    // vIndex: 180
     virtual void
     playSound(::SharedTypes::Legacy::LevelSoundEvent, ::Vec3 const&, int, ::ActorSoundIdentifier const&, bool) = 0;
 
-    // vIndex: 181
+    // vIndex: 179
     virtual void playSound(::SharedTypes::Legacy::LevelSoundEvent, ::Vec3 const&, float const, float const) = 0;
 
-    // vIndex: 180
+    // vIndex: 178
     virtual void playSound(::std::string const&, ::Vec3 const&, float, float) = 0;
 
-    // vIndex: 179
+    // vIndex: 177
     virtual void playSound(
         ::IConstBlockSource const&,
         ::SharedTypes::Legacy::LevelSoundEvent,
@@ -762,7 +755,7 @@ public:
         bool
     ) = 0;
 
-    // vIndex: 178
+    // vIndex: 176
     virtual void playSound(
         ::DimensionType,
         ::SharedTypes::Legacy::LevelSoundEvent,
@@ -772,55 +765,55 @@ public:
         bool
     ) = 0;
 
-    // vIndex: 183
+    // vIndex: 181
     virtual ::PlayerEventCoordinator& getRemotePlayerEventCoordinator() = 0;
 
-    // vIndex: 184
+    // vIndex: 182
     virtual ::ServerPlayerEventCoordinator& getServerPlayerEventCoordinator() = 0;
 
-    // vIndex: 185
+    // vIndex: 183
     virtual ::ClientPlayerEventCoordinator& getClientPlayerEventCoordinator() = 0;
 
-    // vIndex: 186
+    // vIndex: 184
     virtual ::ActorEventCoordinator& getActorEventCoordinator() = 0;
 
-    // vIndex: 187
+    // vIndex: 185
     virtual ::BlockEventCoordinator& getBlockEventCoordinator() = 0;
 
-    // vIndex: 188
+    // vIndex: 186
     virtual ::ItemEventCoordinator& getItemEventCoordinator() = 0;
 
-    // vIndex: 189
+    // vIndex: 187
     virtual ::ServerNetworkEventCoordinator& getServerNetworkEventCoordinator() = 0;
 
-    // vIndex: 190
+    // vIndex: 188
     virtual ::ScriptingEventCoordinator& getScriptingEventCoordinator() = 0;
 
-    // vIndex: 191
+    // vIndex: 189
     virtual ::ScriptDeferredEventCoordinator& getScriptDeferredEventCoordinator() = 0;
 
-    // vIndex: 192
+    // vIndex: 190
     virtual ::LevelEventCoordinator& getLevelEventCoordinator() = 0;
 
-    // vIndex: 194
+    // vIndex: 192
     virtual void handleLevelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int) = 0;
 
-    // vIndex: 193
+    // vIndex: 191
     virtual void handleLevelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&) = 0;
 
-    // vIndex: 195
+    // vIndex: 193
     virtual ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> getLevelEventManager() = 0;
 
-    // vIndex: 196
+    // vIndex: 194
     virtual void handleStopSoundEvent(::std::string const&) = 0;
 
-    // vIndex: 197
+    // vIndex: 195
     virtual void handleStopAllSounds() = 0;
 
-    // vIndex: 198
+    // vIndex: 196
     virtual void handleStopMusicEvent() = 0;
 
-    // vIndex: 200
+    // vIndex: 198
     virtual void broadcastLevelEvent(
         ::SharedTypes::Legacy::LevelEvent,
         ::Vec3 const&,
@@ -828,21 +821,21 @@ public:
         ::UserEntityIdentifierComponent const*
     ) = 0;
 
-    // vIndex: 199
+    // vIndex: 197
     virtual void broadcastLevelEvent(
         ::SharedTypes::Legacy::LevelEvent,
         ::CompoundTag const&,
         ::UserEntityIdentifierComponent const*
     ) = 0;
 
-    // vIndex: 202
+    // vIndex: 200
     virtual void broadcastLocalEvent(::BlockSource&, ::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int) = 0;
 
-    // vIndex: 201
+    // vIndex: 199
     virtual void
     broadcastLocalEvent(::BlockSource&, ::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, ::Block const&) = 0;
 
-    // vIndex: 205
+    // vIndex: 203
     virtual void broadcastSoundEvent(
         ::BlockSource&,
         ::SharedTypes::Legacy::LevelSoundEvent,
@@ -852,7 +845,7 @@ public:
         bool
     ) = 0;
 
-    // vIndex: 204
+    // vIndex: 202
     virtual void broadcastSoundEvent(
         ::BlockSource&,
         ::SharedTypes::Legacy::LevelSoundEvent,
@@ -862,7 +855,7 @@ public:
         bool
     ) = 0;
 
-    // vIndex: 203
+    // vIndex: 201
     virtual void broadcastSoundEvent(
         ::Dimension&,
         ::SharedTypes::Legacy::LevelSoundEvent,
@@ -872,137 +865,137 @@ public:
         bool
     ) = 0;
 
-    // vIndex: 206
+    // vIndex: 204
     virtual void broadcastActorEvent(::Actor&, ::ActorEvent, int) const = 0;
 
-    // vIndex: 207
+    // vIndex: 205
     virtual ::Bedrock::NonOwnerPointer<::ActorEventBroadcaster const> getActorEventBroadcaster() const = 0;
 
-    // vIndex: 208
+    // vIndex: 206
     virtual void addChunkViewTracker(::std::weak_ptr<::ChunkViewSource>) = 0;
 
-    // vIndex: 209
+    // vIndex: 207
     virtual void onChunkReload(::Bounds const&) = 0;
 
-    // vIndex: 210
+    // vIndex: 208
     virtual void onChunkReloaded(::ChunkSource&, ::LevelChunk&) = 0;
 
-    // vIndex: 211
+    // vIndex: 209
     virtual int getActivePlayerCount() const = 0;
 
-    // vIndex: 212
+    // vIndex: 210
     virtual int getActiveUsersCount() const = 0;
 
-    // vIndex: 214
+    // vIndex: 212
     virtual void forEachPlayer(::std::function<bool(::Player&)>) = 0;
 
-    // vIndex: 213
+    // vIndex: 211
     virtual void forEachPlayer(::std::function<bool(::Player const&)>) const = 0;
 
-    // vIndex: 216
+    // vIndex: 214
     virtual void forEachUser(::std::function<bool(::EntityContext&)>) = 0;
 
-    // vIndex: 215
+    // vIndex: 213
     virtual void forEachUser(::std::function<bool(::EntityContext const&)>) const = 0;
 
-    // vIndex: 218
+    // vIndex: 216
     virtual ::Player* findPlayer(::std::function<bool(::Player const&)>) const = 0;
 
-    // vIndex: 217
+    // vIndex: 215
     virtual ::Player* findPlayer(::std::function<bool(::WeakEntityRef const&)>) const = 0;
 
-    // vIndex: 219
+    // vIndex: 217
     virtual int getUserCount() const = 0;
 
-    // vIndex: 220
+    // vIndex: 218
     virtual int countUsersWithMatchingNetworkId(::NetworkIdentifier const&) const = 0;
 
-    // vIndex: 221
+    // vIndex: 219
     virtual ::std::vector<::OwnerPtr<::EntityContext>> const& getUsers() const = 0;
 
-    // vIndex: 222
+    // vIndex: 220
     virtual ::std::vector<::OwnerPtr<::EntityContext>> const& getEntities() const = 0;
 
-    // vIndex: 223
+    // vIndex: 221
     virtual void onSubChunkLoaded(::ChunkSource&, ::LevelChunk&, short, bool) = 0;
 
-    // vIndex: 224
+    // vIndex: 222
     virtual ::Bedrock::NonOwnerPointer<::SubChunkManager> getSubChunkManager() = 0;
 
-    // vIndex: 225
+    // vIndex: 223
     virtual void onChunkLoaded(::ChunkSource&, ::LevelChunk&) = 0;
 
-    // vIndex: 226
+    // vIndex: 224
     virtual void onChunkDiscarded(::LevelChunk&) = 0;
 
-    // vIndex: 227
+    // vIndex: 225
     virtual ::Bedrock::NotNullNonOwnerPtr<::LevelChunkEventManager> getLevelChunkEventManager() = 0;
 
-    // vIndex: 228
+    // vIndex: 226
     virtual ::LevelChunkMetaDataManager* getLevelChunkMetaDataManager() = 0;
 
-    // vIndex: 229
+    // vIndex: 227
     virtual void queueEntityDestruction(::OwnerPtr<::EntityContext>) = 0;
 
-    // vIndex: 231
+    // vIndex: 229
     virtual ::OwnerPtr<::EntityContext> removeEntity(::Actor&) = 0;
 
-    // vIndex: 230
+    // vIndex: 228
     virtual ::OwnerPtr<::EntityContext> removeEntity(::WeakEntityRef) = 0;
 
-    // vIndex: 232
+    // vIndex: 230
     virtual void forceRemoveEntity(::Actor&) = 0;
 
-    // vIndex: 233
+    // vIndex: 231
     virtual void forceRemoveEntityfromWorld(::Actor&) = 0;
 
-    // vIndex: 234
+    // vIndex: 232
     virtual void forceFlushRemovedPlayers() = 0;
 
-    // vIndex: 235
+    // vIndex: 233
     virtual void loadFunctionManager() = 0;
 
-    // vIndex: 236
+    // vIndex: 234
     virtual void levelCleanupQueueEntityRemoval(::OwnerPtr<::EntityContext>) = 0;
 
-    // vIndex: 237
+    // vIndex: 235
     virtual void registerTemporaryPointer(::_TickPtr&) = 0;
 
-    // vIndex: 238
+    // vIndex: 236
     virtual void unregisterTemporaryPointer(::_TickPtr&) = 0;
 
-    // vIndex: 239
+    // vIndex: 237
     virtual ::Bedrock::NotNullNonOwnerPtr<::TempEPtrManager> getTempEPtrManager() = 0;
 
-    // vIndex: 240
+    // vIndex: 238
     virtual bool destroyBlock(::BlockSource&, ::BlockPos const&, bool) = 0;
 
-    // vIndex: 241
+    // vIndex: 239
     virtual ::Bedrock::NotNullNonOwnerPtr<::LevelBlockDestroyer> getLevelBlockDestroyer() = 0;
 
-    // vIndex: 242
+    // vIndex: 240
     virtual void upgradeStorageVersion(::StorageVersion) = 0;
 
-    // vIndex: 243
+    // vIndex: 241
     virtual void suspendAndSave() = 0;
 
-    // vIndex: 244
+    // vIndex: 242
     virtual ::Particle* addParticle(::ParticleType, ::Vec3 const&, ::Vec3 const&, int, ::CompoundTag const*, bool) = 0;
 
-    // vIndex: 245
+    // vIndex: 243
     virtual void addParticleEffect(::HashedString const&, ::Vec3 const&, ::MolangVariableMap const&) = 0;
 
-    // vIndex: 246
+    // vIndex: 244
     virtual void addTerrainParticleEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float) = 0;
 
-    // vIndex: 247
+    // vIndex: 245
     virtual void addTerrainSlideEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float) = 0;
 
-    // vIndex: 248
+    // vIndex: 246
     virtual void
     addBreakingItemParticleEffect(::Vec3 const&, ::BreakingItemParticleData const&, ::ResolvedItemIconInfo const&) = 0;
 
-    // vIndex: 249
+    // vIndex: 247
     virtual void addBiomeTintedParticleEffect(
         ::HashedString const&,
         ::BlockPos const&,
@@ -1010,277 +1003,277 @@ public:
         ::std::optional<::mce::Color>
     ) = 0;
 
-    // vIndex: 250
+    // vIndex: 248
     virtual ::ActorUniqueID getNewUniqueID() = 0;
 
-    // vIndex: 251
+    // vIndex: 249
     virtual ::ActorRuntimeID getNextRuntimeID() = 0;
 
-    // vIndex: 252
+    // vIndex: 250
     virtual ::std::vector<::ChunkPos> const& getTickingOffsets() const = 0;
 
-    // vIndex: 253
+    // vIndex: 251
     virtual ::std::vector<::ChunkPos> const& getClientTickingOffsets() const = 0;
 
-    // vIndex: 254
+    // vIndex: 252
     virtual ::std::vector<::ChunkPos> getSortedPositionsFromClientOffsets(::std::vector<::ChunkPos> const&) const = 0;
 
-    // vIndex: 255
+    // vIndex: 253
     virtual ::Bedrock::NotNullNonOwnerPtr<::ChunkTickOffsetManager const> getChunkTickOffsetManager() const = 0;
 
-    // vIndex: 256
+    // vIndex: 254
     virtual bool isExporting() const = 0;
 
-    // vIndex: 257
+    // vIndex: 255
     virtual void setIsExporting(bool) = 0;
 
-    // vIndex: 258
+    // vIndex: 256
     virtual ::SavedDataStorage& getSavedData() = 0;
 
-    // vIndex: 261
+    // vIndex: 259
     virtual ::MapItemSavedData* getMapSavedData(::ActorUniqueID const) = 0;
 
-    // vIndex: 260
+    // vIndex: 258
     virtual ::MapItemSavedData* getMapSavedData(::CompoundTag const&) = 0;
 
-    // vIndex: 259
+    // vIndex: 257
     virtual ::MapItemSavedData* getMapSavedData(::CompoundTag const*) = 0;
 
-    // vIndex: 262
+    // vIndex: 260
     virtual void requestMapInfo(::ActorUniqueID const, bool) = 0;
 
-    // vIndex: 263
+    // vIndex: 261
     virtual ::ActorUniqueID expandMapByID(::ActorUniqueID const, bool) = 0;
 
-    // vIndex: 264
+    // vIndex: 262
     virtual bool copyAndLockMap(::ActorUniqueID const, ::ActorUniqueID const) = 0;
 
-    // vIndex: 266
+    // vIndex: 264
     virtual ::MapItemSavedData& createMapSavedData(::ActorUniqueID const&, ::BlockPos const&, ::DimensionType, int) = 0;
 
-    // vIndex: 265
+    // vIndex: 263
     virtual ::MapItemSavedData&
     createMapSavedData(::std::vector<::ActorUniqueID> const&, ::BlockPos const&, ::DimensionType, int) = 0;
 
-    // vIndex: 267
+    // vIndex: 265
     virtual ::Core::PathBuffer<::std::string> getScreenshotsFolder() const = 0;
 
-    // vIndex: 268
+    // vIndex: 266
     virtual ::std::string getLevelId() const = 0;
 
-    // vIndex: 269
+    // vIndex: 267
     virtual void setLevelId(::std::string) = 0;
 
-    // vIndex: 270
+    // vIndex: 268
     virtual ::TaskGroup& getSyncTasksGroup() = 0;
 
-    // vIndex: 271
+    // vIndex: 269
     virtual ::TaskGroup& getIOTasksGroup() = 0;
 
-    // vIndex: 272
+    // vIndex: 270
     virtual ::ResourcePackManager* getClientResourcePackManager() const = 0;
 
-    // vIndex: 273
+    // vIndex: 271
     virtual ::ResourcePackManager* getServerResourcePackManager() const = 0;
 
-    // vIndex: 274
+    // vIndex: 272
     virtual ::TradeTables* getTradeTables();
 
-    // vIndex: 275
+    // vIndex: 273
     virtual void decrementTagCache(
         ::std::string const&,
         ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
     ) = 0;
 
-    // vIndex: 276
+    // vIndex: 274
     virtual void incrementTagCache(
         ::std::string const&,
         ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
     ) = 0;
 
-    // vIndex: 277
+    // vIndex: 275
     virtual ::Bedrock::NonOwnerPointer<::TagCacheManager> getTagCacheManager() = 0;
 
-    // vIndex: 278
+    // vIndex: 276
     virtual bool isEdu() const = 0;
 
-    // vIndex: 280
+    // vIndex: 278
     virtual ::ActorFactory& getActorFactory() = 0;
 
-    // vIndex: 279
+    // vIndex: 277
     virtual ::ActorFactory const& getActorFactory() const = 0;
 
-    // vIndex: 281
+    // vIndex: 279
     virtual ::ActorInfoRegistry* getActorInfoRegistry() = 0;
 
-    // vIndex: 283
+    // vIndex: 281
     virtual ::StackRefResult<::EntityRegistry> getEntityRegistry() = 0;
 
-    // vIndex: 282
+    // vIndex: 280
     virtual ::StackRefResult<::EntityRegistry const> getEntityRegistry() const = 0;
 
-    // vIndex: 284
+    // vIndex: 282
     virtual ::EntitySystems& getEntitySystems() = 0;
 
-    // vIndex: 286
+    // vIndex: 284
     virtual ::WeakRef<::EntityContext> getLevelEntity() = 0;
 
-    // vIndex: 285
+    // vIndex: 283
     virtual ::WeakRef<::EntityContext const> getLevelEntity() const = 0;
 
-    // vIndex: 287
+    // vIndex: 285
     virtual ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> tryGetVolumeEntityManagerServer() const = 0;
 
-    // vIndex: 289
+    // vIndex: 287
     virtual void
     runCommand(::HashedString const&, ::CommandOrigin&, ::CommandOriginSystem, ::CurrentCmdVersion const) = 0;
 
-    // vIndex: 288
+    // vIndex: 286
     virtual void runCommand(::Command&, ::CommandOrigin&, ::CommandOriginSystem) = 0;
 
-    // vIndex: 290
+    // vIndex: 288
     virtual ::PlayerCapabilities::ISharedController const& getCapabilities() const = 0;
 
-    // vIndex: 291
+    // vIndex: 289
     virtual ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& getTagRegistry() = 0;
 
-    // vIndex: 292
+    // vIndex: 290
     virtual ::PlayerMovementSettings const& getPlayerMovementSettings() const = 0;
 
-    // vIndex: 293
+    // vIndex: 291
     virtual void setPlayerMovementSettings(::PlayerMovementSettings const&) = 0;
 
-    // vIndex: 295
+    // vIndex: 293
     virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerMovementSettingsManager> getPlayerMovementSettingsManager() = 0;
 
-    // vIndex: 294
+    // vIndex: 292
     virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerMovementSettingsManager const>
     getPlayerMovementSettingsManager() const = 0;
 
-    // vIndex: 296
+    // vIndex: 294
     virtual bool canUseSkin(::SerializedSkin const&, ::NetworkIdentifier const&, ::ActorUniqueID const&) const = 0;
 
-    // vIndex: 297
+    // vIndex: 295
     virtual ::Bedrock::NonOwnerPointer<::TrustedSkinHelper const> getTrustedSkinHelper() const = 0;
 
-    // vIndex: 298
+    // vIndex: 296
     virtual ::PositionTrackingDB::PositionTrackingDBClient* getPositionTrackerDBClient() const = 0;
 
-    // vIndex: 299
+    // vIndex: 297
     virtual ::PositionTrackingDB::PositionTrackingDBServer* getPositionTrackerDBServer() const = 0;
 
-    // vIndex: 300
+    // vIndex: 298
     virtual void flushRunTimeLighting() = 0;
 
-    // vIndex: 301
+    // vIndex: 299
     virtual void loadBlockDefinitionGroup(::Experiments const&) = 0;
 
-    // vIndex: 302
+    // vIndex: 300
     virtual void initializeBlockDefinitionGroup() = 0;
 
-    // vIndex: 303
+    // vIndex: 301
     virtual ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> getUnknownBlockTypeRegistry() = 0;
 
-    // vIndex: 304
+    // vIndex: 302
     virtual bool isClientSide() const = 0;
 
-    // vIndex: 305
+    // vIndex: 303
     virtual ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const& getPlayerList() const = 0;
 
-    // vIndex: 306
+    // vIndex: 304
     virtual ::std::string const& getPlayerXUID(::mce::UUID const&) const = 0;
 
-    // vIndex: 307
+    // vIndex: 305
     virtual ::std::string const& getPlayerPlatformOnlineId(::mce::UUID const&) const = 0;
 
-    // vIndex: 309
+    // vIndex: 307
     virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerListManager> getPlayerListManager() = 0;
 
-    // vIndex: 308
+    // vIndex: 306
     virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerListManager const> getPlayerListManager() const = 0;
 
-    // vIndex: 310
+    // vIndex: 308
     virtual ::std::vector<::WeakEntityRef> const& getActiveUsers() const = 0;
 
-    // vIndex: 311
+    // vIndex: 309
     virtual ::std::vector<::Actor*> getRuntimeActorList() const = 0;
 
-    // vIndex: 312
+    // vIndex: 310
     virtual void notifySubChunkRequestManager(::SubChunkPacket const&) = 0;
 
-    // vIndex: 313
+    // vIndex: 311
     virtual ::SubChunkRequestManager* getSubChunkRequestManager() = 0;
 
-    // vIndex: 314
+    // vIndex: 312
     virtual ::PacketSender* getPacketSender() const = 0;
 
-    // vIndex: 315
+    // vIndex: 313
     virtual ::Bedrock::NonOwnerPointer<::NetEventCallback> getNetEventCallback() const = 0;
 
-    // vIndex: 316
+    // vIndex: 314
     virtual void setNetEventCallback(::Bedrock::NonOwnerPointer<::NetEventCallback>) = 0;
 
-    // vIndex: 317
+    // vIndex: 315
     virtual ::gsl::not_null<::StackRefResult<::ILevelRandom>> getILevelRandom() = 0;
 
-    // vIndex: 318
+    // vIndex: 316
     virtual ::IRandom& getIRandom() const = 0;
 
-    // vIndex: 319
+    // vIndex: 317
     virtual ::Random& getRandom() const = 0;
 
-    // vIndex: 320
+    // vIndex: 318
     virtual ::Random& getThreadRandom() const = 0;
 
-    // vIndex: 321
+    // vIndex: 319
     virtual ::HitResult& getHitResult() = 0;
 
-    // vIndex: 322
+    // vIndex: 320
     virtual ::HitResult& getLiquidHitResult() = 0;
 
-    // vIndex: 323
+    // vIndex: 321
     virtual ::Bedrock::NotNullNonOwnerPtr<::HitResultWrapper> getHitResultWrapper() = 0;
 
-    // vIndex: 324
+    // vIndex: 322
     virtual ::std::string const& getImmersiveReaderString() const = 0;
 
-    // vIndex: 325
+    // vIndex: 323
     virtual void setImmersiveReaderString(::std::string) = 0;
 
-    // vIndex: 327
+    // vIndex: 325
     virtual ::AdventureSettings& getAdventureSettings() = 0;
 
-    // vIndex: 326
+    // vIndex: 324
     virtual ::AdventureSettings const& getAdventureSettings() const = 0;
 
-    // vIndex: 329
+    // vIndex: 327
     virtual ::GameRules const& getGameRules() const = 0;
 
-    // vIndex: 328
+    // vIndex: 326
     virtual ::GameRules& getGameRules() = 0;
 
-    // vIndex: 330
+    // vIndex: 328
     virtual bool hasStartWithMapEnabled() const = 0;
 
-    // vIndex: 331
+    // vIndex: 329
     virtual bool isEditorWorld() const = 0;
 
-    // vIndex: 332
+    // vIndex: 330
     virtual bool isHardcore() const = 0;
 
-    // vIndex: 333
+    // vIndex: 331
     virtual ::Abilities& getDefaultAbilities() = 0;
 
-    // vIndex: 335
+    // vIndex: 333
     virtual ::PermissionsHandler& getDefaultPermissions() = 0;
 
-    // vIndex: 334
+    // vIndex: 332
     virtual ::PermissionsHandler const& getDefaultPermissions() const = 0;
 
-    // vIndex: 336
+    // vIndex: 334
     virtual bool getTearingDown() const = 0;
 
-    // vIndex: 337
+    // vIndex: 335
     virtual void takePicture(
         ::cg::ImageBuffer&,
         ::Actor*,
@@ -1289,148 +1282,148 @@ public:
         ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>
     ) = 0;
 
-    // vIndex: 338
-    virtual ::Bedrock::NotNullNonOwnerPtr<::LevelSoundManager> getLevelSoundManager() = 0;
+    // vIndex: 336
+    virtual ::LevelSoundManager& getLevelSoundManager() = 0;
 
-    // vIndex: 339
+    // vIndex: 337
     virtual ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> getSoundPlayer() const = 0;
 
-    // vIndex: 340
+    // vIndex: 338
     virtual void setSimPaused(bool) = 0;
 
-    // vIndex: 341
+    // vIndex: 339
     virtual bool getSimPaused() = 0;
 
-    // vIndex: 342
+    // vIndex: 340
     virtual void setFinishedInitializing() = 0;
 
-    // vIndex: 343
+    // vIndex: 341
     virtual ::LootTables& getLootTables() = 0;
 
-    // vIndex: 344
+    // vIndex: 342
     virtual void updateWeather(float, int, float, int) = 0;
 
-    // vIndex: 345
+    // vIndex: 343
     virtual int getNetherScale() const = 0;
 
-    // vIndex: 347
+    // vIndex: 345
     virtual ::Scoreboard& getScoreboard() = 0;
 
-    // vIndex: 346
+    // vIndex: 344
     virtual ::Scoreboard const& getScoreboard() const = 0;
 
-    // vIndex: 348
+    // vIndex: 346
     virtual ::Scoreboard* tryGetScoreboard() = 0;
 
-    // vIndex: 349
+    // vIndex: 347
     virtual ::LayeredAbilities* getPlayerAbilities(::ActorUniqueID const&) = 0;
 
-    // vIndex: 350
+    // vIndex: 348
     virtual void setPlayerAbilities(::ActorUniqueID const&, ::LayeredAbilities const&) = 0;
 
-    // vIndex: 351
+    // vIndex: 349
     virtual void sendAllPlayerAbilities(::Player const&) = 0;
 
-    // vIndex: 352
+    // vIndex: 350
     virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerAbilitiesManager> getPlayerAbilitiesManager() = 0;
 
-    // vIndex: 353
+    // vIndex: 351
     virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerPermissionsManager> getPlayerPermissionsManager() = 0;
 
-    // vIndex: 354
+    // vIndex: 352
     virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerPermissionsSynchroniser> getPlayerPermissionsSynchroniser() = 0;
 
-    // vIndex: 355
+    // vIndex: 353
     virtual ::Recipes& getRecipes() const = 0;
 
-    // vIndex: 356
+    // vIndex: 354
     virtual ::BlockReducer* getBlockReducer() const = 0;
 
-    // vIndex: 358
+    // vIndex: 356
     virtual ::std::weak_ptr<::TrimPatternRegistry const> getTrimPatternRegistry() const = 0;
 
-    // vIndex: 357
+    // vIndex: 355
     virtual ::std::weak_ptr<::TrimPatternRegistry> getTrimPatternRegistry() = 0;
 
-    // vIndex: 360
+    // vIndex: 358
     virtual ::std::weak_ptr<::TrimMaterialRegistry const> getTrimMaterialRegistry() const = 0;
 
-    // vIndex: 359
+    // vIndex: 357
     virtual ::std::weak_ptr<::TrimMaterialRegistry> getTrimMaterialRegistry() = 0;
 
-    // vIndex: 361
+    // vIndex: 359
     virtual ::BlockLegacy const& getRegisteredBorderBlock() const = 0;
 
-    // vIndex: 362
+    // vIndex: 360
     virtual ::Bedrock::NotNullNonOwnerPtr<::LevelChunkPerformanceTelemetry> getLevelChunkPerformanceTelemetry() = 0;
 
-    // vIndex: 363
+    // vIndex: 361
     virtual bool use3DBiomeMaps() const = 0;
 
-    // vIndex: 364
+    // vIndex: 362
     virtual void addBlockSourceForValidityTracking(::BlockSource*) = 0;
 
-    // vIndex: 365
+    // vIndex: 363
     virtual void removeBlockSourceFromValidityTracking(::BlockSource*) = 0;
 
-    // vIndex: 366
+    // vIndex: 364
     virtual ::Bedrock::NotNullNonOwnerPtr<::BlockSourceValidityManager> getBlockSourceValidityManager() = 0;
 
-    // vIndex: 368
+    // vIndex: 366
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> getChunkGenerationManager() = 0;
 
-    // vIndex: 367
+    // vIndex: 365
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> getChunkGenerationManager() const = 0;
 
-    // vIndex: 369
+    // vIndex: 367
     virtual ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> getMapDataManager() = 0;
 
-    // vIndex: 370
+    // vIndex: 368
     virtual ::Level* asLevel();
 
-    // vIndex: 371
+    // vIndex: 369
     virtual ::MultiPlayerLevel* asMultiPlayerLevel();
 
-    // vIndex: 373
+    // vIndex: 371
     virtual ::Bedrock::NonOwnerPointer<::CameraRegistry const> getCameraRegistry() const = 0;
 
-    // vIndex: 372
+    // vIndex: 370
     virtual ::Bedrock::NonOwnerPointer<::CameraRegistry> getCameraRegistry() = 0;
 
-    // vIndex: 374
+    // vIndex: 372
     virtual ::Bedrock::NonOwnerPointer<::EntitySystems> getCameraSystems() = 0;
 
-    // vIndex: 375
+    // vIndex: 373
     virtual bool isClientSideGenerationEnabled() = 0;
 
-    // vIndex: 376
+    // vIndex: 374
     virtual bool blockNetworkIdsAreHashes() = 0;
 
-    // vIndex: 377
+    // vIndex: 375
     virtual ::ItemRegistryRef getItemRegistry() const = 0;
 
-    // vIndex: 378
+    // vIndex: 376
     virtual ::std::weak_ptr<::BlockTypeRegistry> getBlockRegistry() const = 0;
 
-    // vIndex: 379
+    // vIndex: 377
     virtual void pauseAndFlushTaskGroups() = 0;
 
-    // vIndex: 380
+    // vIndex: 378
     virtual ::cereal::ReflectionCtx const& cerealContext() const = 0;
 
-    // vIndex: 381
+    // vIndex: 379
     virtual void subChunkTickAndSendRequests() = 0;
 
-    // vIndex: 382
+    // vIndex: 380
     virtual ::PlayerDeathManager* _getPlayerDeathManager() = 0;
 
-    // vIndex: 383
+    // vIndex: 381
     virtual ::MapDataManager& _getMapDataManager() = 0;
 
-    // vIndex: 384
+    // vIndex: 382
     virtual ::cereal::ReflectionCtx& _cerealContext() = 0;
 
-    // vIndex: 385
+    // vIndex: 383
     virtual void _onLowMemory() = 0;
     // NOLINTEND
 

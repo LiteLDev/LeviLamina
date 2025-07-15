@@ -47,6 +47,8 @@ public:
     // NOLINTBEGIN
     MCNAPI DimensionDefinitionGroup(::DimensionDefinitionGroup const&);
 
+    MCNAPI DimensionDefinitionGroup(::DimensionDefinitionGroup&&);
+
     MCNAPI DimensionDefinitionGroup(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager* const rpm);
 
     MCNAPI ::DimensionDefinitionGroup& operator=(::DimensionDefinitionGroup&&);
@@ -63,6 +65,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::DimensionDefinitionGroup const&);
+
+    MCNAPI void* $ctor(::DimensionDefinitionGroup&&);
 
     MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager* const rpm);
     // NOLINTEND

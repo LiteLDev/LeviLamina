@@ -47,10 +47,10 @@ public:
     MCNAPI EditorStructureDBMetadata(::Editor::EditorStructureDBMetadata const&);
 
     MCNAPI EditorStructureDBMetadata(
-        ::mce::UUID const&   guid,
-        ::std::string const& structureNamespace,
-        ::std::string const& structureName,
-        ::std::string const& displayName
+        ::mce::UUID const& guid,
+        ::std::string      structureNamespace,
+        ::std::string      structureName,
+        ::std::string      displayName
     );
 
     MCNAPI ::Editor::EditorStructureDBMetadata& operator=(::Editor::EditorStructureDBMetadata&&);
@@ -76,10 +76,10 @@ public:
     MCNAPI void* $ctor(::Editor::EditorStructureDBMetadata const&);
 
     MCNAPI void* $ctor(
-        ::mce::UUID const&   guid,
-        ::std::string const& structureNamespace,
-        ::std::string const& structureName,
-        ::std::string const& displayName
+        ::mce::UUID const& guid,
+        ::std::string      structureNamespace,
+        ::std::string      structureName,
+        ::std::string      displayName
     );
     // NOLINTEND
 

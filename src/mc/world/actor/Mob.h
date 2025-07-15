@@ -169,7 +169,7 @@ public:
     virtual bool checkSpawnObstruction() const;
 
     // vIndex: 28
-    virtual void addPassenger(::Actor& passenger) /*override*/;
+    virtual void addPassenger(::Actor& newPassenger) /*override*/;
 
     // vIndex: 27
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
@@ -199,7 +199,7 @@ public:
     virtual void blockedByShield(::ActorDamageSource const& source, ::Actor& blocker) /*override*/;
 
     // vIndex: 51
-    virtual void setTarget(::Actor* entity) /*override*/;
+    virtual void setTarget(::Actor* target) /*override*/;
 
     // vIndex: 53
     virtual bool attack(::Actor&, ::SharedTypes::Legacy::ActorDamageCause const&) /*override*/;
@@ -371,12 +371,6 @@ public:
 
     MCAPI void _initialize(::EntityContext& entityContext, bool isClientSide);
 
-    MCAPI void _logMobComponentInitializationError(
-        ::std::string const& typeName,
-        ::std::string const& existingName,
-        char const*          descriptionJsonName
-    );
-
     MCAPI void _processSoulSpeed();
 
     MCAPI void _registerMobAttributes();
@@ -409,11 +403,11 @@ public:
 
     MCAPI int getArmorTypeHash();
 
+    MCAPI float getAttackAnim(float a);
+
     MCAPI int getCaravanSize() const;
 
     MCAPI int getCurrentSwingDuration();
-
-    MCAPI float getDamageAfterArmorReduction(::ActorDamageSource const& source, float damage) const;
 
     MCAPI float getDamageAfterDamageSensorComponentAdjustments(::ActorDamageSource const& source, float damage);
 
@@ -436,6 +430,8 @@ public:
     MCAPI ::JumpPreventionResult getJumpPrevention();
 
     MCAPI int getMeleeKnockbackBonus();
+
+    MCAPI int getToughnessValue() const;
 
     MCAPI ::TravelType getTravelType();
 
@@ -578,7 +574,7 @@ public:
 
     MCAPI bool $checkSpawnObstruction() const;
 
-    MCAPI void $addPassenger(::Actor& passenger);
+    MCAPI void $addPassenger(::Actor& newPassenger);
 
     MCAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
 
@@ -598,7 +594,7 @@ public:
 
     MCAPI void $blockedByShield(::ActorDamageSource const& source, ::Actor& blocker);
 
-    MCFOLD void $setTarget(::Actor* entity);
+    MCFOLD void $setTarget(::Actor* target);
 
     MCFOLD bool $isAlliedTo(::Mob*);
 

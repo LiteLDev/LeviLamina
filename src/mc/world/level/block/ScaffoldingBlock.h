@@ -40,13 +40,13 @@ public:
 
     // vIndex: 4
     virtual ::HitResult clip(
-        ::Block const&                                     block,
-        ::BlockSource const&                               region,
-        ::BlockPos const&                                  pos,
-        ::Vec3 const&                                      A,
-        ::Vec3 const&                                      B,
-        ::ShapeType                                        shapeType,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
+        ::Block const&,
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::Vec3 const&        A,
+        ::Vec3 const&        B,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     // vIndex: 86
@@ -74,10 +74,10 @@ public:
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
     // vIndex: 122
@@ -119,13 +119,13 @@ public:
     ) const;
 
     MCAPI ::HitResult $clip(
-        ::Block const&                                     block,
-        ::BlockSource const&                               region,
-        ::BlockPos const&                                  pos,
-        ::Vec3 const&                                      A,
-        ::Vec3 const&                                      B,
-        ::ShapeType                                        shapeType,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
+        ::Block const&,
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::Vec3 const&        A,
+        ::Vec3 const&        B,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;

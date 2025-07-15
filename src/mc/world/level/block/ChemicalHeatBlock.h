@@ -21,7 +21,7 @@ class ChemicalHeatBlock : public ::BlockLegacy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 140
+    // vIndex: 139
     virtual int getExtraRenderLayers() const /*override*/;
 
     // vIndex: 55

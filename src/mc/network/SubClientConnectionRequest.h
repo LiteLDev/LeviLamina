@@ -20,9 +20,11 @@ class SubClientConnectionRequest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk2af921;
-    ::ll::UntypedStorage<8, 8> mUnkaac929;
-    ::ll::UntypedStorage<8, 8> mUnke31d2b;
+    ::ll::UntypedStorage<8, 8>  mUnk2af921;
+    ::ll::UntypedStorage<8, 8>  mUnkaac929;
+    ::ll::UntypedStorage<8, 8>  mUnk75974b;
+    ::ll::UntypedStorage<8, 32> mUnk26d215;
+    ::ll::UntypedStorage<4, 4>  mUnkeec142;
     // NOLINTEND
 
 public:
@@ -35,7 +37,7 @@ public:
     // NOLINTBEGIN
     MCNAPI SubClientConnectionRequest(::SubClientConnectionRequest const& other);
 
-    MCNAPI SubClientConnectionRequest(::std::unique_ptr<::WebToken> rawToken, ::std::string const& certificateString);
+    MCNAPI SubClientConnectionRequest(::std::unique_ptr<::WebToken> rawToken, ::Json::Value const& authentication);
 
     MCNAPI ::std::vector<::AnimatedImageData> getAnimatedImageData() const;
 
@@ -46,8 +48,6 @@ public:
     MCNAPI ::std::string getCapeId() const;
 
     MCNAPI uint64 getClientRandomId() const;
-
-    MCNAPI ::Json::Value getData(::std::string const& key) const;
 
     MCNAPI ::std::string getDeviceId() const;
 
@@ -103,7 +103,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::SubClientConnectionRequest const& other);
 
-    MCNAPI void* $ctor(::std::unique_ptr<::WebToken> rawToken, ::std::string const& certificateString);
+    MCNAPI void* $ctor(::std::unique_ptr<::WebToken> rawToken, ::Json::Value const& authentication);
     // NOLINTEND
 
 public:

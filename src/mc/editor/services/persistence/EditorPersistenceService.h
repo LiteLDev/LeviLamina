@@ -62,11 +62,11 @@ public:
     // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     listenForPersistDataChanged(::std::function<void(::Editor::Persistence::PersistentData const&)> func) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForPersistDataRemoved(
         ::std::function<void(::HashedString const&, ::Editor::Services::PersistentDataType)> func
     ) /*override*/;
@@ -100,13 +100,16 @@ public:
     getKeysStartWith(::std::string const prefix, ::Editor::Services::PersistentDataType const dataType) const
         /*override*/;
 
+    // vIndex: 8
+    virtual ::std::string const& getPlayerSaveId() const /*override*/;
+
     // vIndex: 7
     virtual void _removePersistData(::HashedString const&, ::Editor::Services::PersistentDataType const);
 
     // vIndex: 8
     virtual void _tick(::Editor::ServiceProviderCollection&);
 
-    // vIndex: 10
+    // vIndex: 11
     virtual ::std::unique_ptr<::cereal::ReflectionCtx>& getCerealContext() /*override*/;
     // NOLINTEND
 
@@ -166,6 +169,8 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<::std::vector<::HashedString>>
     $getKeysStartWith(::std::string const prefix, ::Editor::Services::PersistentDataType const dataType) const;
+
+    MCNAPI ::std::string const& $getPlayerSaveId() const;
 
     MCNAPI void $_removePersistData(::HashedString const&, ::Editor::Services::PersistentDataType const);
 

@@ -28,8 +28,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Block const*
-    _getResolvedBlock(::SharedTypes::v1_20_60::BlockSpecifier const& blockSpecifier, ::std::string const& fieldName);
+    MCNAPI static ::std::vector<::Block const*>
+    _getResolvedBlocks(::std::vector<::SharedTypes::v1_20_60::BlockSpecifier> const& blockSpecifiers);
     // NOLINTEND
 
 public:

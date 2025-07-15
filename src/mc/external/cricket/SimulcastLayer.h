@@ -22,7 +22,7 @@ public:
     // NOLINTBEGIN
     MCNAPI SimulcastLayer(::cricket::SimulcastLayer const&);
 
-    MCNAPI SimulcastLayer(::std::string_view, bool);
+    MCNAPI SimulcastLayer(::std::string_view rid, bool is_paused);
 
     MCNAPI ~SimulcastLayer();
     // NOLINTEND
@@ -32,7 +32,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::cricket::SimulcastLayer const&);
 
-    MCNAPI void* $ctor(::std::string_view, bool);
+    MCNAPI void* $ctor(::std::string_view rid, bool is_paused);
     // NOLINTEND
 
 public:

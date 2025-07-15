@@ -4,6 +4,10 @@
 
 namespace dcsctp {
 
-enum class SendPacketStatus : uint {};
+enum class SendPacketStatus : int {
+    KSuccess          = 0,
+    KTemporaryFailure = 1,
+    KError            = 2,
+};
 
 }

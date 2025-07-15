@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 class LootPoolTiers {
 public:
     // member variables
@@ -21,10 +16,4 @@ public:
     LootPoolTiers& operator=(LootPoolTiers const&);
     LootPoolTiers(LootPoolTiers const&);
     LootPoolTiers();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootPoolTiers> deserialize(::Json::Value tiers);
-    // NOLINTEND
 };

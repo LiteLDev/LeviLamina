@@ -22,6 +22,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI bool const getBool(int index) const;
+
+    MCNAPI ::std::string const& getString(int index) const;
+
     MCNAPI int indexOf(uint64 const& h) const;
     // NOLINTEND
 };

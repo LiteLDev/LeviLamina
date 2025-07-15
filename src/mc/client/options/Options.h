@@ -34,7 +34,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnkf5f65e;
-    ::ll::UntypedStorage<8, 32> mUnk904fa0;
     ::ll::UntypedStorage<8, 32> mUnka6468d;
     ::ll::UntypedStorage<1, 1>  mUnk97d4f1;
     ::ll::UntypedStorage<1, 1>  mUnkbadb16;
@@ -69,6 +68,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnkda32c3;
     ::ll::UntypedStorage<8, 24> mUnk227c67;
     ::ll::UntypedStorage<1, 1>  mUnkf9748f;
+    ::ll::UntypedStorage<4, 4>  mUnk6814ff;
     // NOLINTEND
 
 public:
@@ -157,7 +157,7 @@ public:
     virtual ::ChatOptions& getChatOptions() /*override*/;
 
     // vIndex: 24
-    virtual ::std::array<::std::unique_ptr<::Option>, 795> const& getAllRegisteredOptions() /*override*/;
+    virtual ::std::array<::std::unique_ptr<::Option>, 804> const& getAllRegisteredOptions() /*override*/;
 
     // vIndex: 25
     virtual void forEachOption(::std::function<void(::Option*)>) /*override*/;
@@ -183,55 +183,46 @@ public:
     // vIndex: 94
     virtual bool getDeferred() const /*override*/;
 
-    // vIndex: 105
+    // vIndex: 106
     virtual ::GamePadRemappingLayout& getGamePadRemappingByType(::VRControllerType) /*override*/;
 
-    // vIndex: 106
+    // vIndex: 107
     virtual ::std::shared_ptr<::KeyboardRemappingLayout> getCurrentKeyboardRemapping() const /*override*/;
 
-    // vIndex: 107
+    // vIndex: 108
     virtual ::std::shared_ptr<::KeyboardRemappingLayout> getKeyboardRemappingByType(::KeyboardType) const /*override*/;
 
-    // vIndex: 108
+    // vIndex: 109
     virtual ::GamePadRemappingLayout& getMotionControllerRemapping() /*override*/;
 
-    // vIndex: 109
+    // vIndex: 110
     virtual void setLanguage(::std::string const&) /*override*/;
 
-    // vIndex: 110
+    // vIndex: 111
     virtual ::std::string getLanguage() const /*override*/;
 
-    // vIndex: 136
+    // vIndex: 137
     virtual void setPlayerViewPerspective(int) /*override*/;
 
-    // vIndex: 151
-    virtual void setOverrideUsername(::std::string const&) /*override*/;
-
-    // vIndex: 152
-    virtual bool hasOverrideUsername() const /*override*/;
-
-    // vIndex: 153
-    virtual ::std::string const& getDisplayedUsername() const /*override*/;
-
-    // vIndex: 158
+    // vIndex: 156
     virtual void setRecentSkinIds(::std::vector<::std::string> const&) /*override*/;
 
-    // vIndex: 159
+    // vIndex: 157
     virtual ::std::vector<::std::string> const& getRecentSkinIds() /*override*/;
 
-    // vIndex: 351
+    // vIndex: 349
     virtual float getDefaultPlatformSafeZoneX() const /*override*/;
 
-    // vIndex: 352
+    // vIndex: 350
     virtual float getDefaultPlatformSafeZoneY() const /*override*/;
 
-    // vIndex: 353
+    // vIndex: 351
     virtual bool getServerboundClientDiagnosticsEnabled() const /*override*/;
 
-    // vIndex: 354
+    // vIndex: 352
     virtual ::ScriptDebuggerSettings getScriptDebuggerSettings() const /*override*/;
 
-    // vIndex: 355
+    // vIndex: 353
     virtual ::Scripting::WatchdogSettings getScriptWatchdogSettings() const /*override*/;
 
     // vIndex: 88
@@ -240,14 +231,20 @@ public:
     // vIndex: 95
     virtual int getGraphicsQualityPresetMode() const /*override*/;
 
-    // vIndex: 371
+    // vIndex: 96
+    virtual int getDeferredTargetFrameRate() const /*override*/;
+
+    // vIndex: 369
     virtual void setSaveDeferralCount(int) /*override*/;
 
-    // vIndex: 372
+    // vIndex: 370
     virtual int getSaveDeferralCount() const /*override*/;
 
-    // vIndex: 373
+    // vIndex: 371
     virtual ::std::optional<::DeviceMemoryTier> getScriptingMemoryTierOverride() const /*override*/;
+
+    // vIndex: 372
+    virtual void setForceVibrantVisualsDisabled(bool) /*override*/;
     // NOLINTEND
 
 public:

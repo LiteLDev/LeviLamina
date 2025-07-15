@@ -9,7 +9,20 @@ namespace webrtc { struct DataBuffer; }
 
 namespace webrtc {
 
-struct PacketQueue {
+class PacketQueue {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnk61366b;
+    ::ll::UntypedStorage<8, 8>  mUnkf0b2ce;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PacketQueue& operator=(PacketQueue const&);
+    PacketQueue(PacketQueue const&);
+    PacketQueue();
+
 public:
     // member functions
     // NOLINTBEGIN
@@ -19,7 +32,7 @@ public:
 
     MCNAPI ::std::unique_ptr<::webrtc::DataBuffer> PopFront();
 
-    MCNAPI void PushBack(::std::unique_ptr<::webrtc::DataBuffer>);
+    MCNAPI void PushBack(::std::unique_ptr<::webrtc::DataBuffer> packet);
 
     MCNAPI ~PacketQueue();
     // NOLINTEND

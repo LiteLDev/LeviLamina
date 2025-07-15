@@ -21,7 +21,7 @@ public:
     public:
         // Rule inner types define
         enum class Condition : int {
-            Default              = 0,
+            NotDefined           = 0,
             SameCullingLayer     = 1,
             SameBlock            = 2,
             SameBlockPermutation = 3,
@@ -31,7 +31,8 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 48> mUnk8bb813;
-        ::ll::UntypedStorage<4, 4>  mUnk7fb908;
+        ::ll::UntypedStorage<4, 8>  mUnk54eeb9;
+        ::ll::UntypedStorage<1, 1>  mUnke10792;
         ::ll::UntypedStorage<2, 2>  mUnk587179;
         // NOLINTEND
 

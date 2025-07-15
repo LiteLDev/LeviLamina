@@ -6,6 +6,7 @@
 #include "mc/util/Rotation.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/structure/structurepools/JigsawReplacement.h"
+#include "mc/world/level/levelgen/v2/LiquidSettings.h"
 #include "mc/world/level/levelgen/v2/StructureSection.h"
 #include "mc/world/level/levelgen/v2/terrain_adjustment/Type.h"
 
@@ -32,6 +33,7 @@ public:
     ::ll::TypedStorage<1, 1, ::Rotation>                                     mRot;
     ::ll::TypedStorage<4, 12, ::BlockPos>                                    mPosition;
     ::ll::TypedStorage<8, 24, ::std::vector<::br::worldgen::JigsawJunction>> mJunctions;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::LiquidSettings>                 mLiquidSettings;
     // NOLINTEND
 
 public:

@@ -14,13 +14,14 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 112> mUnk947740;
-    ::ll::UntypedStorage<8, 112> mUnk4922d2;
+    ::ll::UntypedStorage<8, 56>  mUnk4922d2;
     ::ll::UntypedStorage<8, 24>  mUnkf90292;
     ::ll::UntypedStorage<8, 24>  mUnk735e26;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ParticleEffectData& operator=(ParticleEffectData const&);
     ParticleEffectData();
 
 public:
@@ -29,8 +30,6 @@ public:
     MCNAPI ParticleEffectData(::SharedTypes::v1_20_80::ParticleEffectData const&);
 
     MCNAPI ::SharedTypes::v1_20_80::ParticleEffectData& operator=(::SharedTypes::v1_20_80::ParticleEffectData&&);
-
-    MCNAPI ::SharedTypes::v1_20_80::ParticleEffectData& operator=(::SharedTypes::v1_20_80::ParticleEffectData const&);
     // NOLINTEND
 
 public:

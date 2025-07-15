@@ -44,6 +44,12 @@ MCNAPI void _tickMoveInputUpdate(
         ::ControlSchemeComponent> localPlayerView
 );
 
+MCNAPI void _transfer(
+    ::CameraComponent const&        cameraComponent,
+    ::ControlSchemeComponent const& controlSchemeComponent,
+    ::MoveInputComponent&           moveInputComponent
+);
+
 MCNAPI ::TickingSystemWithInfo createMoveInputUpdateSystem();
 
 MCNAPI ::TickingSystemWithInfo createPlayerActionUpdateSystem();

@@ -58,7 +58,7 @@ public:
     virtual ::webrtc::RtpParameters GetParameters() const = 0;
 
     // vIndex: 13
-    virtual ::webrtc::RTCError SetParameters(::webrtc::RtpParameters const&) = 0;
+    virtual ::webrtc::RTCError SetParameters(::webrtc::RtpParameters const& parameters) = 0;
 
     // vIndex: 14
     virtual void SetParametersAsync(::webrtc::RtpParameters const&, ::absl::AnyInvocable<void(::webrtc::RTCError) &&>);

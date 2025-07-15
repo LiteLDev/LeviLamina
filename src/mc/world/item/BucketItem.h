@@ -101,7 +101,8 @@ public:
         ::BlockSource&    region,
         ::BlockPos const& pos,
         ::Block const&    block,
-        ::Block const&    extraBlock
+        ::Block const&    extraBlock,
+        ::Actor const*    placer
     ) const;
 
     MCAPI bool _emptyBucket(

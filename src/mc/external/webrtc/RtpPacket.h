@@ -61,57 +61,57 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::rtc::ArrayView<uchar> AllocateExtension(::webrtc::RTPExtensionType, uint64);
+    MCNAPI ::rtc::ArrayView<uchar> AllocateExtension(::webrtc::RTPExtensionType type, uint64 length);
 
-    MCNAPI uchar* AllocatePayload(uint64);
+    MCNAPI uchar* AllocatePayload(uint64 size_bytes);
 
-    MCNAPI ::rtc::ArrayView<uchar> AllocateRawExtension(int, uint64);
+    MCNAPI ::rtc::ArrayView<uchar> AllocateRawExtension(int id, uint64 length);
 
     MCNAPI void Clear();
 
     MCNAPI ::std::vector<uint> Csrcs() const;
 
-    MCNAPI ::rtc::ArrayView<uchar const> FindExtension(::webrtc::RTPExtensionType) const;
+    MCNAPI ::rtc::ArrayView<uchar const> FindExtension(::webrtc::RTPExtensionType type) const;
 
-    MCNAPI ::webrtc::RtpPacket::ExtensionInfo const* FindExtensionInfo(int) const;
+    MCNAPI ::webrtc::RtpPacket::ExtensionInfo const* FindExtensionInfo(int id) const;
 
-    MCNAPI ::webrtc::RtpPacket::ExtensionInfo& FindOrCreateExtensionInfo(int);
+    MCNAPI ::webrtc::RtpPacket::ExtensionInfo& FindOrCreateExtensionInfo(int id);
 
-    MCNAPI bool HasExtension(::webrtc::RTPExtensionType) const;
+    MCNAPI bool HasExtension(::webrtc::RTPExtensionType type) const;
 
-    MCNAPI bool Parse(::rtc::CopyOnWriteBuffer);
+    MCNAPI bool Parse(::rtc::CopyOnWriteBuffer buffer);
 
-    MCNAPI bool ParseBuffer(uchar const*, uint64);
+    MCNAPI bool ParseBuffer(uchar const* buffer, uint64 size);
 
     MCNAPI void PromoteToTwoByteHeaderExtension();
 
     MCNAPI RtpPacket(::webrtc::RtpPacket const&);
 
-    MCNAPI explicit RtpPacket(::webrtc::RtpHeaderExtensionMap const*);
+    MCNAPI explicit RtpPacket(::webrtc::RtpHeaderExtensionMap const* extensions);
 
-    MCNAPI RtpPacket(::webrtc::RtpHeaderExtensionMap const*, uint64);
+    MCNAPI RtpPacket(::webrtc::RtpHeaderExtensionMap const* extensions, uint64 capacity);
 
-    MCNAPI void SetCsrcs(::rtc::ArrayView<uint const>);
+    MCNAPI void SetCsrcs(::rtc::ArrayView<uint const> csrcs);
 
-    MCNAPI ushort SetExtensionLengthMaybeAddZeroPadding(uint64);
+    MCNAPI ushort SetExtensionLengthMaybeAddZeroPadding(uint64 extensions_offset);
 
-    MCNAPI void SetMarker(bool);
+    MCNAPI void SetMarker(bool marker_bit);
 
-    MCNAPI bool SetPadding(uint64);
+    MCNAPI bool SetPadding(uint64 padding_bytes);
 
-    MCNAPI uchar* SetPayloadSize(uint64);
+    MCNAPI uchar* SetPayloadSize(uint64 size_bytes);
 
-    MCNAPI void SetPayloadType(uchar);
+    MCNAPI void SetPayloadType(uchar payload_type);
 
-    MCNAPI void SetSequenceNumber(ushort);
+    MCNAPI void SetSequenceNumber(ushort seq_no);
 
-    MCNAPI void SetSsrc(uint);
+    MCNAPI void SetSsrc(uint ssrc);
 
-    MCNAPI void SetTimestamp(uint);
+    MCNAPI void SetTimestamp(uint timestamp);
 
-    MCNAPI uchar* WriteAt(uint64);
+    MCNAPI uchar* WriteAt(uint64 offset);
 
-    MCNAPI void WriteAt(uint64, uchar);
+    MCNAPI void WriteAt(uint64 offset, uchar byte);
 
     MCNAPI uchar const* data() const;
 
@@ -125,9 +125,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::RtpPacket const&);
 
-    MCNAPI void* $ctor(::webrtc::RtpHeaderExtensionMap const*);
+    MCNAPI void* $ctor(::webrtc::RtpHeaderExtensionMap const* extensions);
 
-    MCNAPI void* $ctor(::webrtc::RtpHeaderExtensionMap const*, uint64);
+    MCNAPI void* $ctor(::webrtc::RtpHeaderExtensionMap const* extensions, uint64 capacity);
     // NOLINTEND
 
 public:

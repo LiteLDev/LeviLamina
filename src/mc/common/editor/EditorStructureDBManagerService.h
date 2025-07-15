@@ -130,9 +130,9 @@ public:
 
     MCNAPI ::std::string _getNamespaceFromStructurePath(::Core::Path const& path) const;
 
-    MCNAPI ::std::string _handleDupeDisplayName(::std::string const& displayName);
+    MCNAPI ::std::string _handleDupeDisplayName(::std::string_view displayName);
 
-    MCNAPI ::std::string _handleDupeName(::std::string const& name);
+    MCNAPI ::std::string _handleDupeName(::std::string_view name);
 
     MCNAPI ::std::optional<::Editor::EditorStructureSourceDataItem> const
     _parseJsonToMetadata(::std::string& jsonString, ::Editor::EditorStructureDBMetadata& metaData);

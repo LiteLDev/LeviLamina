@@ -17,13 +17,14 @@ class ItemContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnka4dc0e;
-    ::ll::UntypedStorage<8, 8>  mUnk1b40db;
-    ::ll::UntypedStorage<4, 4>  mUnka18ec5;
-    ::ll::UntypedStorage<4, 4>  mUnkf522d2;
-    ::ll::UntypedStorage<8, 8>  mUnk593683;
-    ::ll::UntypedStorage<4, 12> mUnk941ac7;
-    ::ll::UntypedStorage<8, 24> mUnkf97e18;
+    ::ll::UntypedStorage<4, 4>   mUnka4dc0e;
+    ::ll::UntypedStorage<8, 8>   mUnk1b40db;
+    ::ll::UntypedStorage<4, 4>   mUnka18ec5;
+    ::ll::UntypedStorage<4, 4>   mUnkf522d2;
+    ::ll::UntypedStorage<8, 8>   mUnk593683;
+    ::ll::UntypedStorage<4, 12>  mUnk941ac7;
+    ::ll::UntypedStorage<8, 24>  mUnkf97e18;
+    ::ll::UntypedStorage<8, 160> mUnkcfbd62;
     // NOLINTEND
 
 public:
@@ -35,11 +36,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ItemContext(::ItemContext&&);
+
     MCNAPI ::ItemStack const& _getItem() const;
 
     MCNAPI void _setItem(::ItemStack const& item);
 
     MCNAPI ::Container* _tryGetContainerFromEntity() const;
+
+    MCNAPI ::Container* _tryGetContainerFromItem() const;
 
     MCNAPI ::std::optional<::std::vector<::std::string>> getDynamicPropertyIds(::std::string const& collection) const;
 
@@ -78,6 +83,12 @@ public:
 
     MCNAPI static bool
     setEquipment(::ItemStack const& item, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot, ::Mob& mob);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ItemContext&&);
     // NOLINTEND
 
 public:

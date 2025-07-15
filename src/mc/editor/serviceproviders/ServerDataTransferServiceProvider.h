@@ -37,6 +37,12 @@ public:
     // vIndex: 5
     virtual ::std::vector<::Editor::ScriptModule::ScriptTransferCollectionNameData>
     getRegisteredCollections() const = 0;
+
+    // vIndex: 6
+    virtual ::Scripting::Result_deprecated<void> openSession(::std::string const&) = 0;
+
+    // vIndex: 7
+    virtual ::Scripting::Result_deprecated<void> closeSession(::std::string const&) = 0;
     // NOLINTEND
 
 public:

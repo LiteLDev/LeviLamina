@@ -51,7 +51,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Codec() = default;
+    virtual ~Codec();
 
     // vIndex: 1
     virtual ::webrtc::RtpCodecParameters ToCodecParameters() const;
@@ -60,35 +60,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddFeedbackParam(::cricket::FeedbackParam const&);
+    MCNAPI void AddFeedbackParam(::cricket::FeedbackParam const& param);
 
     MCNAPI Codec(::cricket::Codec&&);
 
     MCNAPI Codec(::cricket::Codec const&);
 
-    MCNAPI Codec(::cricket::Codec::Type, int, ::std::string const&, int);
+    MCNAPI Codec(::cricket::Codec::Type type, int id, ::std::string const& name, int clockrate);
 
-    MCNAPI Codec(::cricket::Codec::Type, int, ::std::string const&, int, uint64);
+    MCNAPI Codec(::cricket::Codec::Type type, int id, ::std::string const& name, int clockrate, uint64 channels);
 
-    MCNAPI bool GetParam(::std::string const&, int*) const;
+    MCNAPI bool GetParam(::std::string const& name, int* out) const;
 
-    MCNAPI bool GetParam(::std::string const&, ::std::string*) const;
+    MCNAPI bool GetParam(::std::string const& name, ::std::string* out) const;
 
     MCNAPI ::cricket::Codec::ResiliencyType GetResiliencyType() const;
 
-    MCNAPI void IntersectFeedbackParams(::cricket::Codec const&);
+    MCNAPI void IntersectFeedbackParams(::cricket::Codec const& other);
 
     MCNAPI bool IsMediaCodec() const;
 
     MCNAPI bool IsResiliencyCodec() const;
 
-    MCNAPI bool Matches(::cricket::Codec const&) const;
+    MCNAPI bool Matches(::cricket::Codec const& codec) const;
 
-    MCNAPI bool MatchesRtpCodec(::webrtc::RtpCodec const&) const;
+    MCNAPI bool MatchesRtpCodec(::webrtc::RtpCodec const& codec_capability) const;
 
-    MCNAPI void SetParam(::std::string const&, int);
+    MCNAPI void SetParam(::std::string const& name, int value);
 
-    MCNAPI void SetParam(::std::string const&, ::std::string const&);
+    MCNAPI void SetParam(::std::string const& name, ::std::string const& value);
 
     MCNAPI ::std::string ToString() const;
 
@@ -104,15 +104,21 @@ public:
 
     MCNAPI void* $ctor(::cricket::Codec const&);
 
-    MCNAPI void* $ctor(::cricket::Codec::Type, int, ::std::string const&, int);
+    MCNAPI void* $ctor(::cricket::Codec::Type type, int id, ::std::string const& name, int clockrate);
 
-    MCNAPI void* $ctor(::cricket::Codec::Type, int, ::std::string const&, int, uint64);
+    MCNAPI void* $ctor(::cricket::Codec::Type type, int id, ::std::string const& name, int clockrate, uint64 channels);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI ::webrtc::RtpCodecParameters $ToCodecParameters() const;
     // NOLINTEND
 
 public:

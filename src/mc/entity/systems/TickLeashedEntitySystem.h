@@ -17,7 +17,7 @@ namespace TickLeashedEntitySystem {
 // functions
 // NOLINTBEGIN
 MCNAPI void tickEntity(
-    ::LeashableComponent const&       leashableComponent,
+    ::LeashableComponent&             leashableComponent,
     ::ActorOwnerComponent&            actorOwnerComponent,
     ::Optional<::NavigationComponent> navigationComponent,
     ::CurrentTickComponent const&     currentTick

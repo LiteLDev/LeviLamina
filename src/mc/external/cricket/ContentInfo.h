@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ContentInfo(::cricket::ContentInfo const&);
+    MCNAPI ContentInfo(::cricket::ContentInfo const& o);
 
     MCNAPI ::cricket::MediaContentDescription const* media_description() const;
 
@@ -40,7 +40,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cricket::ContentInfo const&);
+    MCNAPI void* $ctor(::cricket::ContentInfo const& o);
     // NOLINTEND
 
 public:

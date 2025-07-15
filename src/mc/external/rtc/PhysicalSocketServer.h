@@ -38,16 +38,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PhysicalSocketServer() /*override*/ = default;
+    virtual ~PhysicalSocketServer() /*override*/;
 
     // vIndex: 1
-    virtual ::rtc::Socket* CreateSocket(int, int) /*override*/;
+    virtual ::rtc::Socket* CreateSocket(int family, int type) /*override*/;
 
     // vIndex: 5
-    virtual ::rtc::Socket* WrapSocket(uint64);
+    virtual ::rtc::Socket* WrapSocket(uint64 s);
 
     // vIndex: 3
-    virtual bool Wait(::webrtc::TimeDelta, bool) /*override*/;
+    virtual bool Wait(::webrtc::TimeDelta max_wait_duration, bool process_io) /*override*/;
 
     // vIndex: 4
     virtual void WakeUp() /*override*/;
@@ -56,17 +56,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void Add(::rtc::Dispatcher*);
+    MCNAPI void Add(::rtc::Dispatcher* pdispatcher);
 
     MCNAPI PhysicalSocketServer();
 
-    MCNAPI void Remove(::rtc::Dispatcher*);
+    MCNAPI void Remove(::rtc::Dispatcher* pdispatcher);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static int ToCmsWait(::webrtc::TimeDelta);
+    MCNAPI static int ToCmsWait(::webrtc::TimeDelta max_wait_duration);
     // NOLINTEND
 
 public:
@@ -76,9 +76,21 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::rtc::Socket* $CreateSocket(int family, int type);
 
+    MCNAPI ::rtc::Socket* $WrapSocket(uint64 s);
+
+    MCNAPI bool $Wait(::webrtc::TimeDelta max_wait_duration, bool process_io);
+
+    MCNAPI void $WakeUp();
     // NOLINTEND
 
 public:

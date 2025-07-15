@@ -49,7 +49,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 51
+    // vIndex: 53
     virtual ::EventResult onEvent(::PlayerDimensionChangeBeforeEvent const&) /*override*/;
 
     // vIndex: 0

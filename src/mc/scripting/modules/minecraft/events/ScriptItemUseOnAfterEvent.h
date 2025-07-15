@@ -30,7 +30,6 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptItemUseOnAfterEvent& operator=(ScriptItemUseOnAfterEvent const&);
     ScriptItemUseOnAfterEvent(ScriptItemUseOnAfterEvent const&);
     ScriptItemUseOnAfterEvent();
 
@@ -45,6 +44,12 @@ public:
     );
 
     MCNAPI ::Scripting::Result_deprecated<::BlockPos> getBlockLocation_V010() const;
+
+    MCNAPI ::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent&&);
+
+    MCNAPI ::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent const&);
     // NOLINTEND
 
 public:

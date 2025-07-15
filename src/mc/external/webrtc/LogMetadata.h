@@ -24,13 +24,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LogMetadata(char const*, int, ::rtc::LoggingSeverity);
+    MCNAPI LogMetadata(char const* file, int line, ::rtc::LoggingSeverity severity);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(char const*, int, ::rtc::LoggingSeverity);
+    MCNAPI void* $ctor(char const* file, int line, ::rtc::LoggingSeverity severity);
     // NOLINTEND
 };
 

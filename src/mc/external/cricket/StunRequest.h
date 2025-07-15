@@ -34,21 +34,27 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StunRequest() = default;
+    virtual ~StunRequest();
 
     // vIndex: 1
-    virtual void OnResponse(::cricket::StunMessage*);
+    virtual bool CheckSkip();
 
     // vIndex: 2
-    virtual void OnErrorResponse(::cricket::StunMessage*);
+    virtual void OnResponse(::cricket::StunMessage* response);
 
     // vIndex: 3
-    virtual void OnTimeout();
+    virtual void OnErrorResponse(::cricket::StunMessage* response);
 
     // vIndex: 4
-    virtual void OnSent();
+    virtual void OnSkip();
 
     // vIndex: 5
+    virtual void OnTimeout();
+
+    // vIndex: 6
+    virtual void OnSent();
+
+    // vIndex: 7
     virtual int resend_delay();
     // NOLINTEND
 
@@ -57,13 +63,13 @@ public:
     // NOLINTBEGIN
     MCNAPI int Elapsed() const;
 
-    MCNAPI void Send(::webrtc::TimeDelta);
+    MCNAPI void Send(::webrtc::TimeDelta delay);
 
-    MCNAPI void SendDelayed(::webrtc::TimeDelta);
+    MCNAPI void SendDelayed(::webrtc::TimeDelta delay);
 
     MCNAPI void SendInternal();
 
-    MCNAPI StunRequest(::cricket::StunRequestManager&, ::std::unique_ptr<::cricket::StunMessage>);
+    MCNAPI StunRequest(::cricket::StunRequestManager& manager, ::std::unique_ptr<::cricket::StunMessage> message);
 
     MCNAPI ::cricket::StunMessage const* msg() const;
 
@@ -75,13 +81,31 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cricket::StunRequestManager&, ::std::unique_ptr<::cricket::StunMessage>);
+    MCNAPI void* $ctor(::cricket::StunRequestManager& manager, ::std::unique_ptr<::cricket::StunMessage> message);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $CheckSkip();
 
+    MCNAPI void $OnResponse(::cricket::StunMessage* response);
+
+    MCNAPI void $OnErrorResponse(::cricket::StunMessage* response);
+
+    MCNAPI void $OnSkip();
+
+    MCNAPI void $OnTimeout();
+
+    MCNAPI void $OnSent();
+
+    MCNAPI int $resend_delay();
     // NOLINTEND
 
 public:

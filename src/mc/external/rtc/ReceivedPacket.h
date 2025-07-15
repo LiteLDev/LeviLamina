@@ -41,32 +41,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::rtc::ReceivedPacket CopyAndSet(::rtc::ReceivedPacket::DecryptionInfo) const;
+    MCNAPI ::rtc::ReceivedPacket CopyAndSet(::rtc::ReceivedPacket::DecryptionInfo decryption_info) const;
 
     MCNAPI ReceivedPacket(
-        ::rtc::ArrayView<uchar const>,
-        ::rtc::SocketAddress const&,
-        ::std::optional<::webrtc::Timestamp>,
-        ::rtc::EcnMarking,
-        ::rtc::ReceivedPacket::DecryptionInfo
+        ::rtc::ArrayView<uchar const>         payload,
+        ::rtc::SocketAddress const&           source_address,
+        ::std::optional<::webrtc::Timestamp>  arrival_time,
+        ::rtc::EcnMarking                     ecn,
+        ::rtc::ReceivedPacket::DecryptionInfo decryption
     );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::rtc::ReceivedPacket CreateFromLegacy(uchar const*, uint64, int64, ::rtc::SocketAddress const&);
+    MCNAPI static ::rtc::ReceivedPacket
+    CreateFromLegacy(uchar const* data, uint64 size, int64 packet_time_us, ::rtc::SocketAddress const& source_address);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::rtc::ArrayView<uchar const>,
-        ::rtc::SocketAddress const&,
-        ::std::optional<::webrtc::Timestamp>,
-        ::rtc::EcnMarking,
-        ::rtc::ReceivedPacket::DecryptionInfo
+        ::rtc::ArrayView<uchar const>         payload,
+        ::rtc::SocketAddress const&           source_address,
+        ::std::optional<::webrtc::Timestamp>  arrival_time,
+        ::rtc::EcnMarking                     ecn,
+        ::rtc::ReceivedPacket::DecryptionInfo decryption
     );
     // NOLINTEND
 };

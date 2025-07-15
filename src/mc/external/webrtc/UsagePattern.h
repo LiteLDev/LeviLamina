@@ -14,11 +14,23 @@ namespace webrtc {
 
 class UsagePattern {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk2807da;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    UsagePattern& operator=(UsagePattern const&);
+    UsagePattern(UsagePattern const&);
+    UsagePattern();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void NoteUsageEvent(::webrtc::UsageEvent);
+    MCNAPI void NoteUsageEvent(::webrtc::UsageEvent event);
 
-    MCNAPI void ReportUsagePattern(::webrtc::PeerConnectionObserver*) const;
+    MCNAPI void ReportUsagePattern(::webrtc::PeerConnectionObserver* observer) const;
     // NOLINTEND
 };
 

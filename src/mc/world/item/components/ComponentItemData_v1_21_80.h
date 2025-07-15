@@ -20,16 +20,13 @@ public:
 
 public:
     // prevent constructor by default
+    ComponentItemData_v1_21_80& operator=(ComponentItemData_v1_21_80 const&);
     ComponentItemData_v1_21_80();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ComponentItemData_v1_21_80(::ComponentItemData_v1_21_80 const&);
-
-    MCNAPI ComponentItemData_v1_21_80(::ComponentItemData_v1_21_80&&);
-
-    MCNAPI ::ComponentItemData_v1_21_80& operator=(::ComponentItemData_v1_21_80 const&);
 
     MCNAPI ~ComponentItemData_v1_21_80();
     // NOLINTEND
@@ -55,8 +52,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ComponentItemData_v1_21_80 const&);
-
-    MCNAPI void* $ctor(::ComponentItemData_v1_21_80&&);
     // NOLINTEND
 
 public:

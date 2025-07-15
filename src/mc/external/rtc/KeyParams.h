@@ -32,7 +32,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool IsValid() const;
 
-    MCNAPI explicit KeyParams(::rtc::KeyType);
+    MCNAPI explicit KeyParams(::rtc::KeyType key_type);
 
     MCNAPI ::rtc::ECCurve ec_curve() const;
 
@@ -42,7 +42,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::rtc::KeyType);
+    MCNAPI void* $ctor(::rtc::KeyType key_type);
     // NOLINTEND
 };
 

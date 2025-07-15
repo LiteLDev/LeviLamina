@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/Result.h"
+#include "mc/world/level/ActorValidationError.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -18,7 +22,7 @@ public:
     virtual void initializeActor(::Actor&) = 0;
 
     // vIndex: 2
-    virtual bool validate(::Actor const&) = 0;
+    virtual ::Bedrock::Result<void, ::ActorValidationError> validate(::Actor const&) = 0;
 
     // vIndex: 3
     virtual void addActor(::Actor&) = 0;

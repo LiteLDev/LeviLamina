@@ -20,8 +20,6 @@ MCNAPI ::std::unique_ptr<::MolangVariable> deserializeVariable(::Json::Value con
 MCNAPI ::std::unique_ptr<::MolangVariableMap> deserializeVariableMap(::Json::Value const& json);
 
 MCNAPI ::Json::Value serializeScriptArg(::MolangScriptArg const& scriptArg);
-
-MCNAPI ::Json::Value serializeVariable(::MolangVariable const& variable);
 // NOLINTEND
 
 } // namespace MolangSerializer

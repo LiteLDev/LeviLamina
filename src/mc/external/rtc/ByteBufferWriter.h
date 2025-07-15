@@ -14,7 +14,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ByteBufferWriter();
 
-    MCNAPI ByteBufferWriter(uchar const*, uint64);
+    MCNAPI ByteBufferWriter(uchar const* bytes, uint64 len);
 
     MCNAPI ~ByteBufferWriter();
     // NOLINTEND
@@ -24,7 +24,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(uchar const*, uint64);
+    MCNAPI void* $ctor(uchar const* bytes, uint64 len);
     // NOLINTEND
 
 public:

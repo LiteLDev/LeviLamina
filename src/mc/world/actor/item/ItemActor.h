@@ -13,11 +13,11 @@
 // clang-format off
 class ActorDamageSource;
 class ActorDefinitionGroup;
-class AddActorBasePacket;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
 class ListTag;
+class Packet;
 class Player;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
@@ -72,7 +72,7 @@ public:
     virtual void playerTouch(::Player& player) /*override*/;
 
     // vIndex: 23
-    virtual ::std::unique_ptr<::AddActorBasePacket> tryCreateAddActorPacket() /*override*/;
+    virtual ::std::unique_ptr<::Packet> tryCreateAddActorPacket() /*override*/;
 
     // vIndex: 84
     virtual ::ActorUniqueID getSourceUniqueID() const /*override*/;
@@ -140,7 +140,7 @@ public:
 
     MCAPI void $playerTouch(::Player& player);
 
-    MCAPI ::std::unique_ptr<::AddActorBasePacket> $tryCreateAddActorPacket();
+    MCAPI ::std::unique_ptr<::Packet> $tryCreateAddActorPacket();
 
     MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
 

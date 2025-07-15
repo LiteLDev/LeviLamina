@@ -286,27 +286,27 @@ public:
     virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
     onBeforeItemUseOn(::Player const& player, ::ItemUseOnEvent const& itemEvent) /*override*/;
 
-    // vIndex: 40
+    // vIndex: 42
     virtual void onItemUseOn(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent>& itemEvent
     ) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 45
     virtual void onItemStartUse(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent>& itemEvent
     ) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 46
     virtual void onItemCompleteUse(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemCompleteUseAfterEvent>& itemEvent
     ) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 47
     virtual void onItemReleaseUse(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent>& itemEvent
     ) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 48
     virtual void onItemStopUse(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent>& itemEvent
     ) /*override*/;

@@ -45,7 +45,7 @@ public:
     virtual ::webrtc::RtpTransceiverDirection direction() const = 0;
 
     // vIndex: 10
-    virtual void SetDirection(::webrtc::RtpTransceiverDirection);
+    virtual void SetDirection(::webrtc::RtpTransceiverDirection new_direction);
 
     // vIndex: 11
     virtual ::webrtc::RTCError SetDirectionWithError(::webrtc::RtpTransceiverDirection);
@@ -82,13 +82,21 @@ public:
         SetHeaderExtensionsToNegotiate(::rtc::ArrayView<::webrtc::RtpHeaderExtensionCapability const>) = 0;
 
     // vIndex: 2
-    virtual ~RtpTransceiverInterface() /*override*/ = default;
+    virtual ~RtpTransceiverInterface() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $SetDirection(::webrtc::RtpTransceiverDirection new_direction);
 
+    MCNAPI void $Stop();
     // NOLINTEND
 };
 

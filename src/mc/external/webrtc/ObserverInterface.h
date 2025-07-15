@@ -12,7 +12,13 @@ public:
     virtual void OnChanged() = 0;
 
     // vIndex: 1
-    virtual ~ObserverInterface() = default;
+    virtual ~ObserverInterface();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

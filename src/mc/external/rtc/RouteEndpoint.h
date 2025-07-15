@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool operator==(::rtc::RouteEndpoint const&) const;
+    MCNAPI bool operator==(::rtc::RouteEndpoint const& other) const;
     // NOLINTEND
 };
 

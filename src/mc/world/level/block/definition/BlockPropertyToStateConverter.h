@@ -24,8 +24,6 @@ MCNAPI void _convertPropertyToStateInObjectContainsConditionObject(::Json::Value
 
 MCNAPI void _convertPropertyToStateInObjectContainsSetBlockStateObject(::Json::Value& obj);
 
-MCNAPI void _convertPropertyToStateInPermutation(::Json::Value& root);
-
 MCNAPI void _copyMembers(::Json::Value& from, ::Json::Value& to);
 
 MCNAPI void checkAndConvertInBlock(::SemVersion const& version, ::Json::Value& root);

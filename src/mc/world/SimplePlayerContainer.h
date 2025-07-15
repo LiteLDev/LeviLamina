@@ -34,7 +34,7 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
     // NOLINTEND
 
 public:
@@ -42,7 +42,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCNAPI void $setItem(int slot, ::ItemStack const& item);
+    MCNAPI void $setItem(int modelSlot, ::ItemStack const& item);
     // NOLINTEND
 
 public:

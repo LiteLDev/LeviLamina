@@ -57,7 +57,7 @@ public:
     // vIndex: 43
     virtual bool isSignalSource() const /*override*/;
 
-    // vIndex: 137
+    // vIndex: 136
     virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const
         /*override*/;
 

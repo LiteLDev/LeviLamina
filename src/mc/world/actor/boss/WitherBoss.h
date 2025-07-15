@@ -65,7 +65,6 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk8dfa8e;
     ::ll::UntypedStorage<4, 4>  mUnkbcd1e5;
     ::ll::UntypedStorage<4, 4>  mUnkf3ac9e;
-    ::ll::UntypedStorage<4, 4>  mUnke43f8c;
     ::ll::UntypedStorage<4, 4>  mUnk95f423;
     ::ll::UntypedStorage<4, 4>  mUnkca0cd1;
     ::ll::UntypedStorage<4, 4>  mUnk56ff06;
@@ -103,7 +102,7 @@ public:
     virtual bool canFreeze() const /*override*/;
 
     // vIndex: 105
-    virtual bool canBeAffected(uint effectId) const /*override*/;
+    virtual bool canBeAffected(uint id) const /*override*/;
 
     // vIndex: 106
     virtual bool canBeAffectedByArrow(::MobEffectInstance const& effect) const /*override*/;
@@ -133,13 +132,16 @@ public:
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
     // vIndex: 12
     virtual ::Vec3 getFiringPos() const /*override*/;
+
+    // vIndex: 173
+    virtual void tickDeath() /*override*/;
 
     // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
@@ -176,8 +178,6 @@ public:
     MCAPI ::ActorUniqueID getAlternativeTarget(int headIndex);
 
     MCAPI ::Vec3 getHeadPos(int headID) const;
-
-    MCAPI int getInvulnerableTicks() const;
 
     MCAPI bool hasAerialAttack() const;
 
@@ -221,7 +221,7 @@ public:
 
     MCFOLD bool $canFreeze() const;
 
-    MCAPI bool $canBeAffected(uint effectId) const;
+    MCAPI bool $canBeAffected(uint id) const;
 
     MCAPI bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
 
@@ -241,11 +241,13 @@ public:
 
     MCFOLD bool $startRiding(::Actor& vehicle, bool forceRiding);
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
     MCAPI ::Vec3 $getFiringPos() const;
+
+    MCFOLD void $tickDeath();
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
     // NOLINTEND

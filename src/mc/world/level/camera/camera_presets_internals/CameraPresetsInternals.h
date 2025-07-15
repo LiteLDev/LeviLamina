@@ -11,6 +11,8 @@ _doContentError(::std::string const& message, ::std::string_view filename, ::std
 
 // static variables
 // NOLINTBEGIN
+MCNAPI ::std::vector<::std::string>& ALLOWED_MC_EASE_TARGET();
+
 MCNAPI ::std::vector<::std::string>& ALLOWED_MC_INHERIT();
 // NOLINTEND
 

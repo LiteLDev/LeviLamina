@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CompoundBlockVolume;
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EnumBinding; }
 // clang-format on
@@ -41,8 +39,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptCompoundBlockVolume(::CompoundBlockVolume const& volume, ::Scripting::WeakLifetimeScope const& scope);
-
     MCNAPI ::ScriptModuleMinecraft::ScriptCompoundBlockVolume&
     operator=(::ScriptModuleMinecraft::ScriptCompoundBlockVolume const&);
     // NOLINTEND
@@ -55,12 +51,6 @@ public:
     MCNAPI static ::Scripting::ClassBinding bindClass();
 
     MCNAPI static ::Scripting::EnumBinding bindRelativeEnums();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::CompoundBlockVolume const& volume, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:

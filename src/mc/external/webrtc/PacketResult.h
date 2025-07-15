@@ -16,7 +16,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI bool operator()(::webrtc::PacketResult const&, ::webrtc::PacketResult const&);
+        MCNAPI bool operator()(::webrtc::PacketResult const& lhs, ::webrtc::PacketResult const& rhs);
         // NOLINTEND
     };
 

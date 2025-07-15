@@ -51,6 +51,7 @@ enum class CurrentCmdVersion : int {
     SpreadPlayersStuckInGroundFixAndMaxHeightParameter                                = 41,
     LocateStructureOutput                                                             = 42,
     PostBlockFlattening                                                               = 43,
-    Count                                                                             = 44,
-    Latest                                                                            = 43,
+    TestForBlockCommandDoesNotIgnoreBlockState                                        = 44,
+    Count                                                                             = 45,
+    Latest                                                                            = 44,
 };

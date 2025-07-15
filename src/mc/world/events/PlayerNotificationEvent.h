@@ -57,6 +57,7 @@ struct PlayerFormCloseEvent;
 struct PlayerFormResponseEvent;
 struct PlayerGameModeChangeEvent;
 struct PlayerGetExperienceOrbEvent;
+struct PlayerHotbarSelectedSlotChangeEvent;
 struct PlayerInitialSpawnEvent;
 struct PlayerInputModeChangeEvent;
 struct PlayerInputPermissionCategoryChangeEvent;
@@ -65,6 +66,7 @@ struct PlayerInteractWithBlockAfterEvent;
 struct PlayerInteractWithBlockBeforeEvent;
 struct PlayerInteractWithEntityAfterEvent;
 struct PlayerInteractWithEntityBeforeEvent;
+struct PlayerInventoryItemChangeEvent;
 struct PlayerOpenContainerEvent;
 struct PlayerRespawnEvent;
 struct PlayerSayCommandEvent;
@@ -105,6 +107,8 @@ struct PlayerNotificationEvent : public ::EventVariantImpl<
                                      ::PlayerInteractWithBlockAfterEvent const,
                                      ::PlayerEmoteEvent const,
                                      ::PlayerScriptInputEvent const,
+                                     ::PlayerInventoryItemChangeEvent const,
+                                     ::PlayerHotbarSelectedSlotChangeEvent const,
                                      ::PlayerInputPermissionCategoryChangeEvent const,
                                      ::PlayerSayCommandEvent const,
                                      ::PlayerGetExperienceOrbEvent const,

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/molang/MolangVersion.h"
-#include "mc/util/molang/ExpressionNode.h"
 #include "mc/util/molang/ExpressionOp.h"
 #include "mc/util/molang/IComplexExpression.h"
 
@@ -15,6 +14,7 @@ class RenderParams;
 struct MolangScriptArg;
 namespace Json { class Value; }
 namespace Molang::details { class ExpressionNode; }
+namespace Molang::details { class SourceTree; }
 // clang-format on
 
 namespace Molang::details {
@@ -23,7 +23,7 @@ class SourceExpression : public ::Molang::details::IComplexExpression {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 168> mUnk47be62;
+    ::ll::UntypedStorage<8, 144> mUnk33d9ea;
     // NOLINTEND
 
 public:
@@ -54,41 +54,48 @@ public:
     virtual ::MolangVersion getMolangVersion() const /*override*/;
 
     // vIndex: 7
-    virtual void replaceResourceVariables(
-        ::std::unordered_map<::HashedString, ::ExpressionNode::ResourceReference>& resourceTable
-    ) /*override*/;
-
-    // vIndex: 8
     virtual void replaceArrayVariables(
         ::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>& dataMap
     ) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 8
     virtual void validateArrayVariables() const /*override*/;
 
-    // vIndex: 10
+    // vIndex: 9
     virtual bool isValid() const /*override*/;
 
-    // vIndex: 11
+    // vIndex: 10
     virtual bool isConstantValue() const /*override*/;
 
-    // vIndex: 12
+    // vIndex: 11
     virtual bool hasVariableAssignments() const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 12
     virtual ::ExpressionOp getOp() const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 13
     virtual bool needsToCompile() const /*override*/;
 
-    // vIndex: 15
+    // vIndex: 14
     virtual ::std::optional<::MolangScriptArg> getValueIfConstant() const /*override*/;
 
-    // vIndex: 16
-    virtual ::Molang::details::ExpressionNode* getSource() /*override*/;
+    // vIndex: 15
+    virtual ::Molang::details::SourceTree* getSource() /*override*/;
 
     // vIndex: 0
     virtual ~SourceExpression() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI SourceExpression(::MolangScriptArg value, ::ExpressionOp op);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::MolangScriptArg value, ::ExpressionOp op);
     // NOLINTEND
 
 public:
@@ -107,9 +114,6 @@ public:
     MCNAPI ::MolangVersion $getMolangVersion() const;
 
     MCNAPI void
-    $replaceResourceVariables(::std::unordered_map<::HashedString, ::ExpressionNode::ResourceReference>& resourceTable);
-
-    MCNAPI void
     $replaceArrayVariables(::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>& dataMap);
 
     MCNAPI void $validateArrayVariables() const;
@@ -126,7 +130,7 @@ public:
 
     MCNAPI ::std::optional<::MolangScriptArg> $getValueIfConstant() const;
 
-    MCNAPI ::Molang::details::ExpressionNode* $getSource();
+    MCNAPI ::Molang::details::SourceTree* $getSource();
     // NOLINTEND
 
 public:

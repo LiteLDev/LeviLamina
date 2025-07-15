@@ -30,13 +30,13 @@ public:
     virtual ~Certificate() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::std::string serialize(::Crypto::Certificate::Encoding) const /*override*/;
+    virtual ::std::string serialize(::Crypto::Certificate::Encoding encoding) const /*override*/;
 
     // vIndex: 2
-    virtual ::std::string extractPublicKey(::Crypto::Certificate::Encoding) const /*override*/;
+    virtual ::std::string extractPublicKey(::Crypto::Certificate::Encoding encoding) const /*override*/;
 
     // vIndex: 3
-    virtual ::std::string extractPrivateKey(::Crypto::Certificate::Encoding) const /*override*/;
+    virtual ::std::string extractPrivateKey(::Crypto::Certificate::Encoding encoding) const /*override*/;
 
     // vIndex: 4
     virtual ::std::string getIssuer() const /*override*/;
@@ -45,20 +45,46 @@ public:
     virtual bool hasValidCertChain() const /*override*/;
 
     // vIndex: 6
-    virtual ::std::string
-        generateCertificateThumbprint(::Crypto::Hash::HashType, ::Crypto::Certificate::ThumbprintFormat) const
-        /*override*/;
+    virtual ::std::string generateCertificateThumbprint(
+        ::Crypto::Hash::HashType                hashFunction,
+        ::Crypto::Certificate::ThumbprintFormat formatting
+    ) const /*override*/;
 
     // vIndex: 7
-    virtual ::std::string
-        generatePublicKeyThumbprint(::Crypto::Hash::HashType, ::Crypto::Certificate::ThumbprintFormat) const
-        /*override*/;
+    virtual ::std::string generatePublicKeyThumbprint(
+        ::Crypto::Hash::HashType                hashFunction,
+        ::Crypto::Certificate::ThumbprintFormat formatting
+    ) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::string $serialize(::Crypto::Certificate::Encoding encoding) const;
 
+    MCNAPI ::std::string $extractPublicKey(::Crypto::Certificate::Encoding encoding) const;
+
+    MCNAPI ::std::string $extractPrivateKey(::Crypto::Certificate::Encoding encoding) const;
+
+    MCNAPI ::std::string $getIssuer() const;
+
+    MCNAPI bool $hasValidCertChain() const;
+
+    MCNAPI ::std::string $generateCertificateThumbprint(
+        ::Crypto::Hash::HashType                hashFunction,
+        ::Crypto::Certificate::ThumbprintFormat formatting
+    ) const;
+
+    MCNAPI ::std::string $generatePublicKeyThumbprint(
+        ::Crypto::Hash::HashType                hashFunction,
+        ::Crypto::Certificate::ThumbprintFormat formatting
+    ) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

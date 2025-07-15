@@ -6,12 +6,15 @@
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/resources/DirectoryPackSource.h"
+#include "mc/resources/PackSource.h"
 
 // auto generated forward declare list
 // clang-format off
 class IContentKeyProvider;
 class IPackManifestFactory;
 class PackSourceReport;
+struct PackSourceLoadOptions;
+struct PackSourceLoadResult;
 struct WorldTemplatePackSourceOptions;
 // clang-format on
 
@@ -19,7 +22,7 @@ class WorldTemplatePackSource : public ::DirectoryPackSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkc34428;
+    ::ll::UntypedStorage<8, 8>  mUnk871116;
     ::ll::UntypedStorage<8, 16> mUnk866f94;
     ::ll::UntypedStorage<1, 1>  mUnkedfcff;
     // NOLINTEND
@@ -36,11 +39,8 @@ public:
     // vIndex: 0
     virtual ~WorldTemplatePackSource() /*override*/ = default;
 
-    // vIndex: 5
-    virtual ::PackSourceReport load(
-        ::IPackManifestFactory&                                           manifestFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
-    ) /*override*/;
+    // vIndex: 6
+    virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&& options) /*override*/;
     // NOLINTEND
 
 public:
@@ -49,6 +49,7 @@ public:
     MCNAPI explicit WorldTemplatePackSource(::WorldTemplatePackSourceOptions options);
 
     MCNAPI ::PackSourceReport _tryLoadFromZip(
+        ::std::shared_ptr<::PackSource::PackTaskData>                     data,
         ::IPackManifestFactory&                                           manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
         ::Core::PathBuffer<::std::string> const&                          worldTemplatePath,
@@ -65,10 +66,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::PackSourceReport $load(
-        ::IPackManifestFactory&                                           manifestFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
-    );
+    MCNAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&& options);
     // NOLINTEND
 
 public:

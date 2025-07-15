@@ -513,8 +513,6 @@ public:
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
-
     MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
     MCAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
@@ -534,8 +532,6 @@ public:
     MCAPI ::HashedString const& $getCooldownType() const;
 
     MCAPI int $getCooldownTime() const;
-
-    MCAPI ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
 
     MCFOLD bool $useVariant(int, int, bool) const;
 

@@ -77,8 +77,6 @@ public:
 
     MCNAPI ::MobSpawnHerdInfo const& selectRandomHerd(::IRandom& random) const;
 
-    MCNAPI ::MobSpawnRules& setMobEventType(::std::string const& eventName);
-
     MCNAPI ~MobSpawnRules();
     // NOLINTEND
 

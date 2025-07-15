@@ -24,10 +24,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BaseScriptBlockDefinitionalComponent() /*override*/ = default;
+    virtual ~BaseScriptBlockDefinitionalComponent() /*override*/;
 
     // vIndex: 3
     virtual bool _isValid() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

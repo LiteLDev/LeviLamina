@@ -24,15 +24,13 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptInventoryComponentContainer& operator=(ScriptInventoryComponentContainer const&);
-    ScriptInventoryComponentContainer(ScriptInventoryComponentContainer const&);
     ScriptInventoryComponentContainer();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptInventoryComponentContainer() /*override*/ = default;
+    virtual ~ScriptInventoryComponentContainer() /*override*/;
 
     // vIndex: 2
     virtual ::Scripting::Result_deprecated<int> getEmptySlotsCount() const /*override*/;
@@ -45,9 +43,30 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptInventoryComponentContainer(::ScriptModuleMinecraft::ScriptInventoryComponentContainer const&);
+
+    MCNAPI ::ScriptModuleMinecraft::ScriptInventoryComponentContainer&
+    operator=(::ScriptModuleMinecraft::ScriptInventoryComponentContainer const&);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindV010();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptInventoryComponentContainer const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

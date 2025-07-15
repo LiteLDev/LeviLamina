@@ -20,6 +20,8 @@ public:
     MCNAPI LegacyOnUseTriggerItemComponentData(::LegacyOnUseTriggerItemComponentData const&);
 
     MCNAPI LegacyOnUseTriggerItemComponentData(::LegacyOnUseTriggerItemComponentData&&);
+
+    MCNAPI ~LegacyOnUseTriggerItemComponentData();
     // NOLINTEND
 
 public:
@@ -28,5 +30,11 @@ public:
     MCNAPI void* $ctor(::LegacyOnUseTriggerItemComponentData const&);
 
     MCNAPI void* $ctor(::LegacyOnUseTriggerItemComponentData&&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

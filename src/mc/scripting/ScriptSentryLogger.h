@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { struct BaseError; }
 namespace Scripting { struct ContextId; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 class ScriptSentryLogger : public ::Scripting::IPrinter {
@@ -31,13 +31,13 @@ public:
     virtual ~ScriptSentryLogger() /*override*/ = default;
 
     // vIndex: 4
-    virtual void onException(::Scripting::ContextId, ::Scripting::Error const& error, ::entt::meta_any const&) const
+    virtual void onException(::Scripting::ContextId, ::Scripting::BaseError const& error, ::entt::meta_any const&) const
         /*override*/;
 
     // vIndex: 6
     virtual void onPromiseRejection(
         ::Scripting::ContextId,
-        ::Scripting::Error const& error,
+        ::Scripting::BaseError const& error,
         ::entt::meta_any const&,
         bool isHandled
     ) const /*override*/;
@@ -46,11 +46,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onException(::Scripting::ContextId, ::Scripting::Error const& error, ::entt::meta_any const&) const;
+    MCNAPI void
+    $onException(::Scripting::ContextId, ::Scripting::BaseError const& error, ::entt::meta_any const&) const;
 
     MCNAPI void $onPromiseRejection(
         ::Scripting::ContextId,
-        ::Scripting::Error const& error,
+        ::Scripting::BaseError const& error,
         ::entt::meta_any const&,
         bool isHandled
     ) const;

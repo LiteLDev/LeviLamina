@@ -146,6 +146,8 @@ struct sockaddr_storage;
 struct sockaddr_in;
 struct sockaddr_in6;
 struct evp_md_ctx_st;
+struct asn1_string_st;
+struct bio_st;
 
 #include "mc/deps/core/utility/optional_ref.h" // replace optional<reference_wrapper<>>
 #include "mc/platform/brstd/function_ref.h"    // function reference

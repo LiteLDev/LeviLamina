@@ -14,8 +14,8 @@ namespace ScriptModuleMinecraftNet { struct ScriptNetRequest; }
 namespace ScriptModuleMinecraftNet { struct ScriptNetResponse; }
 namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct BaseError; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 namespace ScriptModuleMinecraftNet {
@@ -51,7 +51,7 @@ public:
 
         MCNAPI ::Scripting::Promise<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
-            ::Scripting::Error,
+            ::Scripting::BaseError,
             void>
         process(
             ::Scripting::WeakLifetimeScope const&,
@@ -88,7 +88,7 @@ public:
 
     MCNAPI ::Scripting::Promise<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
-        ::Scripting::Error,
+        ::Scripting::BaseError,
         void>
     get(::Scripting::WeakLifetimeScope const& scope,
         ::Scripting::ScriptObjectFactory&     factory,
@@ -99,7 +99,7 @@ public:
 
     MCNAPI ::Scripting::Promise<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
-        ::Scripting::Error,
+        ::Scripting::BaseError,
         void>
     request(
         ::Scripting::WeakLifetimeScope const&                                                     scope,

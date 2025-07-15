@@ -4,17 +4,28 @@
 
 namespace OS {
 
-struct WaitTimer {
+class WaitTimer {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk19a2df;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    WaitTimer& operator=(WaitTimer const&);
+    WaitTimer(WaitTimer const&);
+
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void Cancel();
 
-    MCNAPI uint64 GetAbsoluteTime(uint);
+    MCNAPI uint64 GetAbsoluteTime(uint msFromNow);
 
-    MCNAPI long Initialize(void*, void (*)(void*));
+    MCNAPI long Initialize(void* context, void (*callback)(void*));
 
-    MCNAPI void Start(uint64);
+    MCNAPI void Start(uint64 absoluteTime);
 
     MCNAPI void Terminate();
 

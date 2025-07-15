@@ -13,9 +13,9 @@ class RtpVideoLayersAllocationExtension {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static uint64 ValueSize(::webrtc::VideoLayersAllocation const&);
+    MCNAPI static uint64 ValueSize(::webrtc::VideoLayersAllocation const& allocation);
 
-    MCNAPI static bool Write(::rtc::ArrayView<uchar>, ::webrtc::VideoLayersAllocation const&);
+    MCNAPI static bool Write(::rtc::ArrayView<uchar> data, ::webrtc::VideoLayersAllocation const& allocation);
     // NOLINTEND
 };
 

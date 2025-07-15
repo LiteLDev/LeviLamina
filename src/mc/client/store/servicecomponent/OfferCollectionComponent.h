@@ -56,23 +56,23 @@ public:
     // vIndex: 5
     virtual void getComponentDependanciesToAdd(::std::vector<::std::shared_ptr<::StoreUIComponent>>&) /*override*/;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual void tick(::ui::DirtyFlag&) /*override*/;
 
-    // vIndex: 10
+    // vIndex: 11
     virtual bool canRemove() const /*override*/;
 
-    // vIndex: 11
+    // vIndex: 12
     virtual int getReadyCount() const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual ::ImageTelemetryInfo getImageTelemetry() const /*override*/;
 
     // vIndex: 17
-    virtual void _registerBindsAndEvents(::StoreDataDrivenScreenController&) /*override*/;
-
-    // vIndex: 16
     virtual void _parseData(::Json::Value const&) /*override*/;
+
+    // vIndex: 18
+    virtual void _registerBindsAndEvents(::StoreDataDrivenScreenController&) /*override*/;
     // NOLINTEND
 
 public:

@@ -40,7 +40,7 @@ public:
     // vIndex: 131
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 136
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 28
@@ -60,14 +60,14 @@ public:
     virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
         /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual int getTickDelay() const;
 
-    // vIndex: 137
+    // vIndex: 136
     virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const
         /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual void dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
 
     // vIndex: 130

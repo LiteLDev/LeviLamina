@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { class DynamicValue; }
 namespace cereal { struct NullType; }
 // clang-format on
 
@@ -17,6 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 72> mUnke7aa60;
+    ::ll::UntypedStorage<8, 8>  mUnk62b5d6;
     ::ll::UntypedStorage<8, 24> mUnk29ce5e;
     // NOLINTEND
 
@@ -85,6 +87,12 @@ public:
 
     // vIndex: 0
     virtual ~DynamicValueSchemaWriter() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool write(::cereal::DynamicValue value);
     // NOLINTEND
 
 public:

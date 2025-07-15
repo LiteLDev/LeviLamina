@@ -6,6 +6,7 @@
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/debug/log/LogArea.h"
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/resources/JsonBetaState.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/item/CreativeItemCategory.h"
@@ -134,15 +135,11 @@ public:
         ::std::string const&              blockIdentifier,
         ::SemVersion const&               originalJsonVersion,
         ::IPackLoadContext&               packLoadContext,
-        ::JsonBetaState                   canUseBeta
+        ::JsonBetaState                   canUseBeta,
+        bool                              isVanillaBlock
     );
 
     MCNAPI ::CreativeItemCategory _stringToCreativeItemCategory(::std::string const& str);
-
-    MCNAPI bool _validateCrossComponentConstraints(
-        ::BlockComponentGroupDescription const& description,
-        ::SemVersion const&                     mOriginalJsonVersion
-    ) const;
 
     MCNAPI bool _validatePrereleaseRequirements(
         ::LogArea                                   logArea,
@@ -158,13 +155,6 @@ public:
 
     MCNAPI ::std::unique_ptr<::BlockDefinition>
     generateBlockDefinition(::BlockDefinitionGroup::BlockResource const& resource, ::IPackLoadContext& packLoadContext);
-
-    MCNAPI bool generateBlockResource(
-        ::Json::Value const&                   root,
-        ::IPackLoadContext const&              packLoadContext,
-        ::SemVersion const&                    originalJsonVersion,
-        ::BlockDefinitionGroup::BlockResource& out
-    );
 
     MCNAPI ::std::vector<::std::pair<::std::string, ::CompoundTag>> generateServerBlockProperties() const;
 
@@ -184,9 +174,9 @@ public:
     );
 
     MCNAPI void loadResources(
-        ::ResourcePackManager const& resourcePackManager,
-        ::Experiments const&         experiments,
-        ::LinkedAssetValidator&      validator
+        ::ResourcePackManager const&                       resourcePackManager,
+        ::Experiments const&                               experiments,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
     MCNAPI void registerBlockFromDefinition(::BlockDefinition const& definition, bool assertIfAlreadyExists);

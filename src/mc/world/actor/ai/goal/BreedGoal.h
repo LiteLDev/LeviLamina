@@ -20,7 +20,7 @@ public:
     ::ll::TypedStorage<8, 8, ::Mob&>           mOwner;
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPartner;
     ::ll::TypedStorage<4, 4, int>              mLoveTime;
-    ::ll::TypedStorage<4, 4, float const>      mSpeed;
+    ::ll::TypedStorage<4, 4, float>            mSpeed;
     ::ll::TypedStorage<1, 1, bool const>       mStopNavigationOnStop;
     // NOLINTEND
 

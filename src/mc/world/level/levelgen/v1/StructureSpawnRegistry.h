@@ -32,12 +32,9 @@ public:
     MCNAPI ::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride> const*
     get(::std::string const& key) const;
 
-    MCNAPI ~StructureSpawnRegistry();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void insert(
+        ::std::string_view                                                                    key,
+        ::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride>&& staticStructureMobs
+    );
     // NOLINTEND
 };

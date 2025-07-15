@@ -7,10 +7,6 @@
 
 class CrossbowEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    CrossbowEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -33,37 +29,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CrossbowEnchant(
-        ::Enchant::Type,
-        ::Enchant::Frequency,
-        ::std::string_view,
-        ::std::string_view,
-        ::Enchant::VillagerTrading,
-        int,
-        int
-    );
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::vector<::Enchant::Type> const& VALID_ENCHANTMENTS();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Enchant::Type,
-        ::Enchant::Frequency,
-        ::std::string_view,
-        ::std::string_view,
-        ::Enchant::VillagerTrading,
-        int,
-        int
-    );
     // NOLINTEND
 
 public:

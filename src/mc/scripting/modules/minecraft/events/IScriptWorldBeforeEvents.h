@@ -132,10 +132,6 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent>>
     $onBeforePlayerInteractWithBlock(::Player&, ::PlayerInteractWithBlockBeforeEvent const&);
 
-    MCNAPI ::std::optional<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>>
-    $onBeforePlayerGameModeChange(::Player const&, ::GameType, ::GameType);
-
     MCNAPI void $onBeforePlayerLeave(::Player const&);
 
     MCNAPI void $onBeforeActorRemove(::Actor const&);

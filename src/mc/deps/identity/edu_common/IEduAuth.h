@@ -20,7 +20,7 @@ class IEduAuth {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 432> mUnkc8d11d;
+    ::ll::UntypedStorage<8, 8> mUnk8954c5;
     // NOLINTEND
 
 public:
@@ -65,7 +65,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Identity::EduAuthTokenPair getHostTokens() const;
+    MCNAPI ::Identity::EduAuthTokenPair getTokens() const;
     // NOLINTEND
 
 public:

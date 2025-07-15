@@ -13,6 +13,7 @@ class Actor;
 class ActorComponentFactory;
 class ActorDefinitionGroup;
 class ActorGoalFactory;
+class ActorMigratedDefinitionFactory;
 class BlockPos;
 class CompoundTag;
 class DataLoadHelper;
@@ -27,6 +28,7 @@ class Vec3;
 struct ActorDefinitionIdentifier;
 struct ActorFactoryData;
 struct VanillaActorData;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class ActorFactory {
@@ -38,8 +40,10 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ActorDefinitionGroup>>      mDefinitions;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ActorFactoryData>> mFactoryFunctions;
     ::ll::TypedStorage<8, 16, ::std::set<::std::string>>                               mExperimentalEntities;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::cereal::ReflectionCtx*>>                mCerealContext;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorComponentFactory>>               mComponentFactory;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorGoalFactory>>                    mGoalFactory;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorMigratedDefinitionFactory>>      mActorMigratedFactory;
     // NOLINTEND
 
 public:
@@ -56,7 +60,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ActorFactory(::Bedrock::NotNullNonOwnerPtr<::Level> level);
+    MCAPI ActorFactory(::cereal::ReflectionCtx& ctx, ::Bedrock::NotNullNonOwnerPtr<::Level> level);
 
     MCAPI void _buildSummonableActorList(
         ::Experiments const&                                                   experiments,
@@ -116,6 +120,8 @@ public:
     MCAPI ::OwnerPtr<::EntityContext>
     createTransformedActor(::ActorDefinitionIdentifier const& identifier, ::Actor* from);
 
+    MCAPI void init(::Experiments const& experiments);
+
     MCAPI ::OwnerPtr<::EntityContext> loadActor(
         ::CompoundTag*                tag,
         ::DataLoadHelper&             dataLoadHelper,
@@ -157,7 +163,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Level> level);
+    MCAPI void* $ctor(::cereal::ReflectionCtx& ctx, ::Bedrock::NotNullNonOwnerPtr<::Level> level);
     // NOLINTEND
 
 public:

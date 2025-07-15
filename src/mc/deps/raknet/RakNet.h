@@ -8,7 +8,6 @@ namespace RakNet { class BitStream; }
 namespace RakNet { class RakNetSocket2; }
 namespace RakNet { class RakPeer; }
 namespace RakNet { struct RakNetGUID; }
-namespace RakNet { struct SplitPacketChannel; }
 namespace RakNet { struct SystemAddress; }
 // clang-format on
 
@@ -40,8 +39,6 @@ MCAPI bool ProcessOfflineNetworkPacket(
     bool*                    isOfflineMessage,
     uint64                   timeRead
 );
-
-MCAPI int SplitPacketChannelComp(ushort const& key, ::RakNet::SplitPacketChannel* const& data);
 
 MCAPI uint UpdateNetworkLoop(void* arguments);
 

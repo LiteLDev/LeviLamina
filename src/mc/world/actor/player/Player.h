@@ -6,6 +6,7 @@
 #include "mc/world/inventory/EnderChestContainer.h"
 
 // auto generated inclusion list
+#include "mc/certificates/identity/PlayerAuthenticationType.h"
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/platform/BuildPlatform.h"
@@ -48,7 +49,6 @@
 class AABB;
 class Actor;
 class ActorDamageSource;
-class AddActorBasePacket;
 class Agent;
 class AnimationComponent;
 class Attribute;
@@ -70,7 +70,6 @@ class EnderChestContainer;
 class EntityContext;
 class FrameUpdateContextBase;
 class GameMode;
-class GameServerToken;
 class GetCollisionShapeInterface;
 class HudContainerManagerModel;
 class IConstBlockSource;
@@ -103,6 +102,7 @@ struct AABBShapeComponent;
 struct ActorRotationComponent;
 struct INpcDialogueData;
 struct MutableAttributeWithContext;
+struct PlayerAuthenticationInfo;
 struct PlayerDestroyProgressCacheComponent;
 struct PlayerMovementSettings;
 struct StateVectorComponent;
@@ -505,7 +505,7 @@ public:
     virtual bool isInTrialMode();
 
     // vIndex: 143
-    virtual void setSpeed(float speed) /*override*/;
+    virtual void setSpeed(float _speed) /*override*/;
 
     // vIndex: 149
     virtual int getItemUseDuration() const /*override*/;
@@ -523,7 +523,7 @@ public:
     virtual bool isDamageBlocked(::ActorDamageSource const& source) const /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     // vIndex: 160
     virtual ::std::vector<::ItemStack const*> getAllHand() const /*override*/;
@@ -684,7 +684,7 @@ public:
     virtual void setOffhandSlot(::ItemStack const& item) /*override*/;
 
     // vIndex: 23
-    virtual ::std::unique_ptr<::AddActorBasePacket> tryCreateAddActorPacket() /*override*/;
+    virtual ::std::unique_ptr<::Packet> tryCreateAddActorPacket() /*override*/;
 
     // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
@@ -858,19 +858,20 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI Player(
-        ::Level&                   level,
-        ::PacketSender&            packetSender,
-        ::GameType                 playerGameType,
-        bool                       isHostingPlayer,
-        ::NetworkIdentifier const& owner,
-        ::SubClientId              subid,
-        ::mce::UUID                uuid,
-        ::std::string const&       playFabId,
-        ::std::string const&       deviceId,
-        ::GameServerToken const&   gameServerToken,
-        ::EntityContext&           entityContext,
-        ::std::string const&       platformId,
-        ::std::string const&       platformOnlineId
+        ::Level&                          level,
+        ::PacketSender&                   packetSender,
+        ::GameType                        playerGameType,
+        bool                              isHostingPlayer,
+        ::NetworkIdentifier const&        owner,
+        ::SubClientId                     subid,
+        ::mce::UUID                       uuid,
+        ::std::string const&              playFabId,
+        ::std::string const&              deviceId,
+        ::PlayerAuthenticationType        authType,
+        ::PlayerAuthenticationInfo const& authInfo,
+        ::EntityContext&                  entityContext,
+        ::std::string const&              platformId,
+        ::std::string const&              platformOnlineId
     );
 
     MCAPI void _addLevels(int levels);
@@ -1030,6 +1031,8 @@ public:
 
     MCAPI void loadLastDeathLocation(::CompoundTag const& tag);
 
+    MCAPI void playFallOrLandSound(int expectedDamage, ::Block const& onBlock, ::Block const& blockAbove);
+
     MCAPI void playPredictiveSynchronizedSound(
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
@@ -1183,19 +1186,20 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::Level&                   level,
-        ::PacketSender&            packetSender,
-        ::GameType                 playerGameType,
-        bool                       isHostingPlayer,
-        ::NetworkIdentifier const& owner,
-        ::SubClientId              subid,
-        ::mce::UUID                uuid,
-        ::std::string const&       playFabId,
-        ::std::string const&       deviceId,
-        ::GameServerToken const&   gameServerToken,
-        ::EntityContext&           entityContext,
-        ::std::string const&       platformId,
-        ::std::string const&       platformOnlineId
+        ::Level&                          level,
+        ::PacketSender&                   packetSender,
+        ::GameType                        playerGameType,
+        bool                              isHostingPlayer,
+        ::NetworkIdentifier const&        owner,
+        ::SubClientId                     subid,
+        ::mce::UUID                       uuid,
+        ::std::string const&              playFabId,
+        ::std::string const&              deviceId,
+        ::PlayerAuthenticationType        authType,
+        ::PlayerAuthenticationInfo const& authInfo,
+        ::EntityContext&                  entityContext,
+        ::std::string const&              platformId,
+        ::std::string const&              platformOnlineId
     );
     // NOLINTEND
 
@@ -1272,7 +1276,7 @@ public:
 
     MCFOLD bool $isInTrialMode();
 
-    MCAPI void $setSpeed(float speed);
+    MCAPI void $setSpeed(float _speed);
 
     MCAPI int $getItemUseDuration() const;
 
@@ -1284,7 +1288,7 @@ public:
 
     MCAPI bool $isDamageBlocked(::ActorDamageSource const& source) const;
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCAPI ::std::vector<::ItemStack const*> $getAllHand() const;
 
@@ -1389,9 +1393,11 @@ public:
 
     MCAPI void $addLevels(int levels);
 
+    MCAPI void $setArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
+
     MCAPI void $setOffhandSlot(::ItemStack const& item);
 
-    MCAPI ::std::unique_ptr<::AddActorBasePacket> $tryCreateAddActorPacket();
+    MCAPI ::std::unique_ptr<::Packet> $tryCreateAddActorPacket();
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
@@ -1467,6 +1473,8 @@ public:
     MCAPI void $onMovePlayerPacketNormal(::Vec3 const& pos, ::Vec2 const& rot, float yHeadRot);
 
     MCAPI bool $_shouldProvideFeedbackOnHandContainerItemSet(::HandSlot handSlot, ::ItemStack const& item) const;
+
+    MCAPI bool $_shouldProvideFeedbackOnArmorSet(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item) const;
 
     MCAPI ::std::shared_ptr<::ChunkViewSource> $_createChunkSource(::ChunkSource& mainChunkSource);
 

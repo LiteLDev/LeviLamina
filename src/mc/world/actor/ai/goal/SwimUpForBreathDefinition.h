@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class SwimUpForBreathGoal;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -34,12 +32,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~SwimUpForBreathDefinition() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void initialize(::EntityContext& entity, ::SwimUpForBreathGoal& goal) const;
     // NOLINTEND
 
 public:

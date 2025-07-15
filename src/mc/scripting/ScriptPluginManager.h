@@ -117,5 +117,13 @@ public:
     MCNAPI ::std::vector<::ScriptPluginManager::PackNameAndWeakScope> getPluginScopes() const;
 
     MCNAPI ::ScriptPluginManagerResult runGroup(::PluginExecutionGroup group);
+
+    MCNAPI ~ScriptPluginManager();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

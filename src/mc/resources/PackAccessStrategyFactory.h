@@ -9,7 +9,6 @@ class ResourceLocation;
 struct AnyAccessStrategyOptions;
 struct DirectoryAccessStrategyOptions;
 struct DirectoryWihEncryptedBlobAccessStrategyOptions;
-struct EncryptedAccessStrategyOptions;
 struct EncryptedZipAccessStrategyOptions;
 struct PackAccessStrategies;
 struct ZipAccessStrategyOptions;
@@ -25,8 +24,6 @@ public:
 
     MCNAPI static ::PackAccessStrategies
     createForDirectoryWithEncryptedBlob(::DirectoryWihEncryptedBlobAccessStrategyOptions const& create);
-
-    MCNAPI static ::PackAccessStrategies createForEncrypted(::EncryptedAccessStrategyOptions const& create);
 
     MCNAPI static ::PackAccessStrategies createForEncryptedZip(::EncryptedZipAccessStrategyOptions const& create);
 

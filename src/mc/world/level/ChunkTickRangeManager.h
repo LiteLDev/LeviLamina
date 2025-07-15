@@ -25,14 +25,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ChunkTickRangeManager();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ChunkTickRangeManager(uint chunkTickRange, uint maxSimRadiusInChunks);
-
     MCNAPI void _onChunkLoaded(::ChunkSource&, ::LevelChunk& levelChunk, int closestPlayerDistanceSquared);
 
     MCNAPI bool isChunkInTickRange(::LevelChunk const& lc, ::std::optional<int> minDistToPlayer) const;
@@ -47,19 +41,5 @@ public:
     ) const;
 
     MCNAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
-
-    MCNAPI ~ChunkTickRangeManager();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(uint chunkTickRange, uint maxSimRadiusInChunks);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

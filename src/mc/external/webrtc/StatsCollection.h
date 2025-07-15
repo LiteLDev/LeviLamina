@@ -15,19 +15,31 @@ namespace webrtc {
 
 class StatsCollection {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk164237;
+    ::ll::UntypedStorage<1, 1>  mUnk21a3e8;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    StatsCollection& operator=(StatsCollection const&);
+    StatsCollection(StatsCollection const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::list<::webrtc::StatsReport*> DetachCollection();
 
-    MCNAPI ::webrtc::StatsReport* Find(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const&);
+    MCNAPI ::webrtc::StatsReport* Find(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const& id);
 
-    MCNAPI ::webrtc::StatsReport* FindOrAddNew(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const&);
+    MCNAPI ::webrtc::StatsReport* FindOrAddNew(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const& id);
 
-    MCNAPI ::webrtc::StatsReport* InsertNew(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const&);
+    MCNAPI ::webrtc::StatsReport* InsertNew(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const& id);
 
-    MCNAPI void MergeCollection(::std::list<::webrtc::StatsReport*>);
+    MCNAPI void MergeCollection(::std::list<::webrtc::StatsReport*> collection);
 
-    MCNAPI ::webrtc::StatsReport* ReplaceOrAddNew(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const&);
+    MCNAPI ::webrtc::StatsReport* ReplaceOrAddNew(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const& id);
 
     MCNAPI StatsCollection();
 

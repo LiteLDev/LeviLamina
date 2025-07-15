@@ -25,9 +25,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void Create(uchar*) const;
+    MCNAPI void Create(uchar* buffer) const;
 
-    MCNAPI bool Parse(uchar const*, uint64);
+    MCNAPI bool Parse(uchar const* buffer, uint64 length);
 
     MCNAPI ReportBlock();
     // NOLINTEND

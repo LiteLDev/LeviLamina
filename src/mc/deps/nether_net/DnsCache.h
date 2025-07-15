@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/webrtc/flat_map.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace rtc { class IPAddress; }
-namespace webrtc { class flat_map; }
 // clang-format on
 
 namespace NetherNet {

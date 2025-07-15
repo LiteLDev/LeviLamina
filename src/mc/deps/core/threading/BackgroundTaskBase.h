@@ -7,9 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class IBackgroundTaskOwner;
 class ITaskExecutionContext;
-struct TaskStartInfo;
 // clang-format on
 
 class BackgroundTaskBase {
@@ -86,15 +84,12 @@ public:
     virtual bool isReady() const = 0;
 
     // vIndex: 3
-    virtual ::TaskRunResult run(::ITaskExecutionContext const*) = 0;
+    virtual ::TaskRunResult run(::ITaskExecutionContext const*, bool) = 0;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    BackgroundTaskBase(::gsl::not_null<::IBackgroundTaskOwner*> group, ::TaskStartInfo const& startInfo, bool isAsync);
-
     MCNAPI void setNext(::std::shared_ptr<::BackgroundTaskBase> next);
     // NOLINTEND
 
@@ -102,12 +97,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::BackgroundTaskBase*& gCurrentTask();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::gsl::not_null<::IBackgroundTaskOwner*> group, ::TaskStartInfo const& startInfo, bool isAsync);
     // NOLINTEND
 
 public:

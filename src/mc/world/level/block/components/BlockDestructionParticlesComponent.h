@@ -12,5 +12,6 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> mTexture;
     ::ll::TypedStorage<2, 2, ushort>         mPreFlatteningAux;
     ::ll::TypedStorage<1, 1, ::TintMethod>   mTintMethod;
+    ::ll::TypedStorage<1, 1, uchar>          mParticleCount;
     // NOLINTEND
 };

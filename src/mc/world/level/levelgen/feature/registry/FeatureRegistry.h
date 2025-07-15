@@ -79,6 +79,8 @@ public:
 
     MCAPI void _registerFeature(::std::string const& name, ::std::unique_ptr<::IFeature> featurePtr);
 
+    MCAPI ::std::string const& _reverseLookup(uint64 index) const;
+
     MCAPI bool _setupFeature(
         ::IWorldRegistriesProvider&  worldRegistries,
         bool                         isBasePack,

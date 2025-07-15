@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/ProjectExportStatus.h"
 #include "mc/common/editor/WorldType.h"
 #include "mc/editor/services/export/ExportResult.h"
 
@@ -26,11 +27,14 @@ public:
         ::WeakEntityRef,
         ::Editor::GameOptions const&,
         ::Editor::WorldType const,
-        ::std::function<void(::Editor::ExportResult const&)>
+        ::std::function<void(::Editor::ExportResult const&, ::std::string)>
     ) = 0;
 
     // vIndex: 2
     virtual bool canExportProject() = 0;
+
+    // vIndex: 3
+    virtual ::Editor::ProjectExportStatus getExportStatus() = 0;
     // NOLINTEND
 
 public:

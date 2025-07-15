@@ -9,10 +9,14 @@
 
 // auto generated forward declare list
 // clang-format off
+class ItemContext;
 class Vec3;
+namespace ScriptModuleMinecraft { class ScriptContainerWrapper; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
+namespace ScriptModuleMinecraft { struct ScriptContainerRulesError; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidContainerSlotError; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
@@ -26,19 +30,26 @@ class ScriptContainerSlot {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnk4cf7c5;
-    ::ll::UntypedStorage<8, 16> mUnk4ff339;
+    ::ll::UntypedStorage<8, 232> mUnk4cf7c5;
+    ::ll::UntypedStorage<8, 40>  mUnk6df2de;
+    ::ll::UntypedStorage<8, 16>  mUnk4ff339;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptContainerSlot& operator=(ScriptContainerSlot const&);
-    ScriptContainerSlot(ScriptContainerSlot const&);
     ScriptContainerSlot();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptContainerSlot(::ScriptModuleMinecraft::ScriptContainerSlot const&);
+
+    MCNAPI ScriptContainerSlot(
+        ::ItemContext                                                                         itemContext,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper> scriptContainerHandle,
+        ::Scripting::WeakLifetimeScope                                                        scope
+    );
+
     MCNAPI bool _isValid() const;
 
     MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidContainerSlotError>
@@ -103,6 +114,8 @@ public:
     MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidContainerSlotError>
     isStackableWith(::ScriptModuleMinecraft::ScriptItemStack const& other) const;
 
+    MCNAPI ::ScriptModuleMinecraft::ScriptContainerSlot& operator=(::ScriptModuleMinecraft::ScriptContainerSlot const&);
+
     MCNAPI ::ScriptModuleMinecraft::ScriptContainerSlot& operator=(::ScriptModuleMinecraft::ScriptContainerSlot&&);
 
     MCNAPI ::Scripting::
@@ -128,7 +141,10 @@ public:
         ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> const& optionalValue
     );
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidContainerSlotError>
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptContainerRulesError,
+        ::ScriptModuleMinecraft::ScriptInvalidContainerSlotError>
     setItem(::std::optional<::ScriptModuleMinecraft::ScriptItemStack> const& scriptItemStack);
 
     MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidContainerSlotError>
@@ -143,12 +159,32 @@ public:
     MCNAPI ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptInvalidContainerSlotError, ::Scripting::ArgumentOutOfBoundsError>
         setNameTag(::std::optional<::std::string> nameTag);
+
+    MCNAPI ~ScriptContainerSlot();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptContainerSlot const&);
+
+    MCNAPI void* $ctor(
+        ::ItemContext                                                                         itemContext,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper> scriptContainerHandle,
+        ::Scripting::WeakLifetimeScope                                                        scope
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

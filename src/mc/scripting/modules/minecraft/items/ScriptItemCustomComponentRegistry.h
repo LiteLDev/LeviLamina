@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
-#include "mc/scripting/modules/minecraft/ScriptCustomComponentRegistry.h"
 #include "mc/scripting/modules/minecraft/items/IScriptItemCustomComponentRegistry.h"
 
 // auto generated forward declare list
@@ -15,21 +15,24 @@ class Item;
 class ItemRegistryRef;
 class ScriptDeferredEventCoordinator;
 class ScriptDeferredEventListener;
+struct ServerScriptManagerEvents;
 namespace ScriptModuleMinecraft { class IScriptItemCustomComponentSignalCollection; }
+namespace ScriptModuleMinecraft { class ScriptCustomComponentParameterCache; }
 namespace ScriptModuleMinecraft { class ScriptItemCustomComponentInterface; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { struct ScriptCustomComponentInvalidRegistryError; }
+namespace ScriptModuleMinecraft { struct ScriptCustomComponentParameters; }
 namespace ScriptModuleMinecraft { struct ScriptItemCustomComponentAlreadyRegisteredError; }
 namespace ScriptModuleMinecraft { struct ScriptItemCustomComponentReloadNewComponentError; }
 namespace ScriptModuleMinecraft { struct ScriptItemCustomComponentReloadNewEventError; }
 namespace ScriptModuleMinecraft { struct ScriptItemCustomComponentReloadVersionError; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
-class ScriptItemCustomComponentRegistry : public ::ScriptModuleMinecraft::IScriptItemCustomComponentRegistry,
-                                          public ::ScriptModuleMinecraft::ScriptCustomComponentRegistry {
+class ScriptItemCustomComponentRegistry : public ::ScriptModuleMinecraft::IScriptItemCustomComponentRegistry {
 public:
     // ScriptItemCustomComponentRegistry inner types declare
     // clang-format off
@@ -72,6 +75,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkdbb6de;
     ::ll::UntypedStorage<8, 16> mUnk58737c;
     ::ll::UntypedStorage<8, 16> mUnke262ca;
+    ::ll::UntypedStorage<8, 8>  mUnkebf18e;
     ::ll::UntypedStorage<8, 8>  mUnke3cee5;
     ::ll::UntypedStorage<8, 24> mUnkfd49fe;
     // NOLINTEND
@@ -120,24 +124,17 @@ public:
     ) const /*override*/;
 
     // vIndex: 2
-    virtual bool isValidComponentForItem(
+    virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
+    tryGetCustomComponentParametersForItem(
         ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle,
-        ::std::string_view                                                           componentName
+        ::std::string_view                                                           componentName,
+        ::Scripting::WeakLifetimeScope const&                                        scope
     ) const /*override*/;
 
-    // vIndex: 6
+    // vIndex: 3
     virtual ::ScriptDeferredEventListener& getEventListener() /*override*/;
 
-    // vIndex: 3
-    virtual void onReload() /*override*/;
-
     // vIndex: 4
-    virtual void onScriptInitializationComplete() /*override*/;
-
-    // vIndex: 5
-    virtual void onScriptModuleStartupComplete() /*override*/;
-
-    // vIndex: 7
     virtual void setCerealContext(::cereal::ReflectionCtx& ctx) /*override*/;
 
     // vIndex: 1
@@ -151,9 +148,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptItemCustomComponentRegistry(
+        ::ServerScriptManagerEvents&      events,
         ::ScriptDeferredEventCoordinator& deferredEventCoordinator,
         ::ItemRegistryRef                 itemRegistry,
-        ::std::unique_ptr<::ScriptModuleMinecraft::IScriptItemCustomComponentSignalCollection>&& signals
+        ::std::unique_ptr<::ScriptModuleMinecraft::IScriptItemCustomComponentSignalCollection>&& signals,
+        ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache&                            parameterCache
     );
 
     MCNAPI void _bindComponentToCereal(::HashedString const& compName);
@@ -179,9 +178,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
+        ::ServerScriptManagerEvents&      events,
         ::ScriptDeferredEventCoordinator& deferredEventCoordinator,
         ::ItemRegistryRef                 itemRegistry,
-        ::std::unique_ptr<::ScriptModuleMinecraft::IScriptItemCustomComponentSignalCollection>&& signals
+        ::std::unique_ptr<::ScriptModuleMinecraft::IScriptItemCustomComponentSignalCollection>&& signals,
+        ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache&                            parameterCache
     );
     // NOLINTEND
 
@@ -222,18 +223,14 @@ public:
         ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle
     ) const;
 
-    MCNAPI bool $isValidComponentForItem(
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
+    $tryGetCustomComponentParametersForItem(
         ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle,
-        ::std::string_view                                                           componentName
+        ::std::string_view                                                           componentName,
+        ::Scripting::WeakLifetimeScope const&                                        scope
     ) const;
 
     MCNAPI ::ScriptDeferredEventListener& $getEventListener();
-
-    MCNAPI void $onReload();
-
-    MCNAPI void $onScriptInitializationComplete();
-
-    MCNAPI void $onScriptModuleStartupComplete();
 
     MCNAPI void $setCerealContext(::cereal::ReflectionCtx& ctx);
 
@@ -245,11 +242,11 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-
     MCNAPI static void** $vftableForIScriptItemCustomComponentWriter();
 
     MCNAPI static void** $vftableForIScriptItemCustomComponentReader();
+
+    MCNAPI static void** $vftableForScriptCustomComponentRegistry();
     // NOLINTEND
 };
 

@@ -44,7 +44,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ConnectionContext(::webrtc::Environment const&, ::webrtc::PeerConnectionFactoryDependencies*);
+    MCNAPI
+    ConnectionContext(::webrtc::Environment const& env, ::webrtc::PeerConnectionFactoryDependencies* dependencies);
 
     MCNAPI ~ConnectionContext();
     // NOLINTEND
@@ -53,13 +54,13 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::ConnectionContext>
-    Create(::webrtc::Environment const&, ::webrtc::PeerConnectionFactoryDependencies*);
+    Create(::webrtc::Environment const& env, ::webrtc::PeerConnectionFactoryDependencies* dependencies);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::Environment const&, ::webrtc::PeerConnectionFactoryDependencies*);
+    MCNAPI void* $ctor(::webrtc::Environment const& env, ::webrtc::PeerConnectionFactoryDependencies* dependencies);
     // NOLINTEND
 
 public:

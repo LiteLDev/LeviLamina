@@ -14,13 +14,19 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CandidatePairInterface() = default;
+    virtual ~CandidatePairInterface();
 
     // vIndex: 1
     virtual ::cricket::Candidate const& local_candidate() const = 0;
 
     // vIndex: 2
     virtual ::cricket::Candidate const& remote_candidate() const = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

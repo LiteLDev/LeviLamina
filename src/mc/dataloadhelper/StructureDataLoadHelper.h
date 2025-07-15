@@ -34,6 +34,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StructureDataLoadHelper();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -95,6 +99,34 @@ public:
 
     // vIndex: 0
     virtual ~StructureDataLoadHelper() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI StructureDataLoadHelper(
+        ::BlockPos const& structurePlacementLocation,
+        ::BlockPos const& structureWorldOrigin,
+        ::Vec3 const&     rotationPivot,
+        ::ActorUniqueID   ownerID,
+        ::Rotation        rotation,
+        ::Mirror          mirror,
+        ::Level&          level
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::BlockPos const& structurePlacementLocation,
+        ::BlockPos const& structureWorldOrigin,
+        ::Vec3 const&     rotationPivot,
+        ::ActorUniqueID   ownerID,
+        ::Rotation        rotation,
+        ::Mirror          mirror,
+        ::Level&          level
+    );
     // NOLINTEND
 
 public:

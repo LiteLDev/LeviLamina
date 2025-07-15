@@ -17,6 +17,8 @@ class BlockDefinitionGroup;
 class CreativeItemRegistry;
 class Experiments;
 class HashedString;
+class IContainerRegistryAccess;
+class IContainerRegistryTracker;
 class IDynamicContainerSerialization;
 class IPackLoadContext;
 class Item;
@@ -129,7 +131,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI ItemHashAlias(uint64 nameHash, ::BaseGameVersion const& version);
+
+        MCNAPI ::ItemRegistry::ItemHashAlias& operator=(::ItemRegistry::ItemHashAlias&&);
+
         MCNAPI ~ItemHashAlias();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(uint64 nameHash, ::BaseGameVersion const& version);
         // NOLINTEND
 
     public:
@@ -255,7 +267,11 @@ public:
 
     MCAPI ::WeakPtr<::Item> lookupByNameNoParsing(int& inOutItemAux, ::HashedString const& fullName) const;
 
-    MCAPI void onLevelInit(::WeakRef<::IDynamicContainerSerialization> containerSerialization);
+    MCAPI void onLevelInit(
+        ::WeakRef<::IDynamicContainerSerialization> containerSerialization,
+        ::WeakRef<::IContainerRegistryAccess>       containerAccess,
+        ::WeakRef<::IContainerRegistryTracker>      containerTracker
+    );
 
     MCAPI void
     registerAlias(::HashedString const& alias, ::HashedString const& name, ::BaseGameVersion const& fromVersion);

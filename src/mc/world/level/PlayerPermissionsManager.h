@@ -26,7 +26,7 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PlayerListManager>>      mPlayerListManager;
     ::ll::TypedStorage<8, 64, ::std::function<::Player*()>>                         mGetPrimaryLocalPlayer;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                       mCurrentPlayerID;
-    ::ll::TypedStorage<1, 1, ::PlayerPermissionLevel>                               mCurrentPlayerPermissionLevel;
+    ::ll::TypedStorage<1, 2, ::std::optional<::PlayerPermissionLevel>>              mCurrentPlayerPermissionLevel;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::AbilitiesIndex, bool>>>   mCurrentPlayerPermissionsList;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::AbilitiesIndex, bool>>>   mLocalPlayerPermissionsList;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                      mPlayerAbilitiesSubscription;
@@ -40,7 +40,7 @@ public:
         8,
         48,
         ::Bedrock::PubSub::Publisher<
-            void(::ActorUniqueID const&, ::PlayerPermissionLevel),
+            void(::ActorUniqueID const&, ::std::optional<::PlayerPermissionLevel>),
             ::Bedrock::PubSub::ThreadModel::SingleThreaded,
             0>>
         mCachedPlayerPermissionLevelChangedPublisher;
@@ -49,6 +49,16 @@ public:
 public:
     // prevent constructor by default
     PlayerPermissionsManager();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~PlayerPermissionsManager();
+
+    // vIndex: 1
+    virtual bool hasPlayerPermissions(::ActorUniqueID playerId) const;
+    // NOLINTEND
 
 public:
     // member functions
@@ -61,11 +71,7 @@ public:
 
     MCAPI void _loadLocalPermissionsList();
 
-    MCAPI bool isPlayerValid(::ActorUniqueID playerId) const;
-
     MCAPI bool loadPlayerPermissions(::ActorUniqueID playerId);
-
-    MCAPI ~PlayerPermissionsManager();
     // NOLINTEND
 
 public:
@@ -82,5 +88,17 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $hasPlayerPermissions(::ActorUniqueID playerId) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

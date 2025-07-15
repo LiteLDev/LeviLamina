@@ -90,6 +90,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::std::string _getPaletteSavePrefix(::std::string const& paletteId) const;
+
     MCNAPI bool _loadActiveBlockPaletteId();
 
     MCNAPI bool _loadAllBlockPalettes();

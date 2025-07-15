@@ -90,7 +90,7 @@ public:
     // vIndex: 9
     virtual bool postProcess(::ChunkViewSource& neighborhood) /*override*/;
 
-    // vIndex: 48
+    // vIndex: 49
     virtual ::Util::MultidimensionalArray<float, 5, 5, 41>
     generateDensityCellsForChunk(::ChunkPos const& chunkPos) const = 0;
 
@@ -113,17 +113,17 @@ public:
     // vIndex: 40
     virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const /*override*/;
 
-    // vIndex: 49
+    // vIndex: 50
     virtual int getLevelGenHeight() const = 0;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual ::std::optional<::XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const = 0;
 
-    // vIndex: 51
+    // vIndex: 52
     virtual ::std::unique_ptr<::Aquifer>
     tryMakeAquifer(::ChunkPos const&, ::SurfaceLevelCache const&, short, short, short) const;
 
-    // vIndex: 46
+    // vIndex: 47
     virtual void decorateWorldGenLoadChunk(
         ::Biome const&       biome,
         ::LevelChunk&        lc,
@@ -132,19 +132,19 @@ public:
         ::ChunkPos const&    pos
     ) const /*override*/;
 
-    // vIndex: 52
+    // vIndex: 53
     virtual ::ChunkLocalNoiseCache createNoiseCache(::ChunkPos chunkPos) const;
 
-    // vIndex: 53
+    // vIndex: 54
     virtual ::WorldGenCache createWorldGenCache(::ChunkPos chunkPos) const;
 
-    // vIndex: 54
+    // vIndex: 55
     virtual ::PerlinSimplexNoise const& getSurfaceNoise() = 0;
 
-    // vIndex: 55
+    // vIndex: 56
     virtual ::std::unique_ptr<::PerlinSimplexNoise> const& getMaterialAdjNoise() const = 0;
 
-    // vIndex: 56
+    // vIndex: 57
     virtual void _prepareHeights(
         ::BlockVolume&,
         ::ChunkPos const&,

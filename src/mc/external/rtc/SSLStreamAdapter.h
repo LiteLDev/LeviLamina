@@ -36,7 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SSLStreamAdapter() /*override*/ = default;
+    virtual ~SSLStreamAdapter() /*override*/;
 
     // vIndex: 6
     virtual void SetIdentity(::std::unique_ptr<::rtc::SSLIdentity>) = 0;
@@ -67,7 +67,7 @@ public:
     virtual ::std::unique_ptr<::rtc::SSLCertChain> GetPeerSSLCertChain() const = 0;
 
     // vIndex: 15
-    virtual bool GetSslCipherSuite(int*);
+    virtual bool GetSslCipherSuite(int* cipher_suite);
 
     // vIndex: 16
     virtual ::rtc::SSLProtocolVersion GetSslVersion() const = 0;
@@ -76,16 +76,23 @@ public:
     virtual bool GetSslVersionBytes(int*) const = 0;
 
     // vIndex: 18
-    virtual bool ExportKeyingMaterial(::std::string_view, uchar const*, uint64, bool, uchar*, uint64);
+    virtual bool ExportKeyingMaterial(
+        ::std::string_view label,
+        uchar const*       context,
+        uint64             context_len,
+        bool               use_context,
+        uchar*             result,
+        uint64             result_len
+    );
 
     // vIndex: 19
     virtual ushort GetPeerSignatureAlgorithm() const = 0;
 
     // vIndex: 20
-    virtual bool SetDtlsSrtpCryptoSuites(::std::vector<int> const&);
+    virtual bool SetDtlsSrtpCryptoSuites(::std::vector<int> const& crypto_suites);
 
     // vIndex: 21
-    virtual bool GetDtlsSrtpCryptoSuite(int*);
+    virtual bool GetDtlsSrtpCryptoSuite(int* crypto_suite);
 
     // vIndex: 22
     virtual bool IsTlsConnected() = 0;
@@ -94,16 +101,37 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::rtc::SSLStreamAdapter>
-        Create(::std::unique_ptr<::rtc::StreamInterface>, ::absl::AnyInvocable<void(::rtc::SSLHandshakeError)>);
+    MCNAPI static ::std::unique_ptr<::rtc::SSLStreamAdapter> Create(
+        ::std::unique_ptr<::rtc::StreamInterface>            stream,
+        ::absl::AnyInvocable<void(::rtc::SSLHandshakeError)> handshake_error
+    );
 
-    MCNAPI static ::std::string SslCipherSuiteToName(int);
+    MCNAPI static ::std::string SslCipherSuiteToName(int cipher_suite);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $GetSslCipherSuite(int* cipher_suite);
 
+    MCNAPI bool $ExportKeyingMaterial(
+        ::std::string_view label,
+        uchar const*       context,
+        uint64             context_len,
+        bool               use_context,
+        uchar*             result,
+        uint64             result_len
+    );
+
+    MCNAPI bool $SetDtlsSrtpCryptoSuites(::std::vector<int> const& crypto_suites);
+
+    MCNAPI bool $GetDtlsSrtpCryptoSuite(int* crypto_suite);
     // NOLINTEND
 
 public:

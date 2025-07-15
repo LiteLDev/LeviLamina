@@ -4,24 +4,55 @@
 
 // auto generated inclusion list
 #include "mc/external/webrtc/ProbeFailureReason.h"
+#include "mc/external/webrtc/RtcEvent.h"
 
 namespace webrtc {
 
-class RtcEventProbeResultFailure {
+class RtcEventProbeResultFailure : public ::webrtc::RtcEvent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkd643d6;
+    ::ll::UntypedStorage<4, 4> mUnkd3c1c8;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
+    RtcEventProbeResultFailure& operator=(RtcEventProbeResultFailure const&);
+    RtcEventProbeResultFailure(RtcEventProbeResultFailure const&);
     RtcEventProbeResultFailure();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~RtcEventProbeResultFailure() /*override*/ = default;
+
+    // vIndex: 1
+    virtual ::webrtc::RtcEvent::Type GetType() const /*override*/;
+
+    // vIndex: 2
+    virtual bool IsConfigEvent() const /*override*/;
+    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RtcEventProbeResultFailure(int, ::webrtc::ProbeFailureReason);
+    MCNAPI RtcEventProbeResultFailure(int id, ::webrtc::ProbeFailureReason failure_reason);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(int, ::webrtc::ProbeFailureReason);
+    MCNAPI void* $ctor(int id, ::webrtc::ProbeFailureReason failure_reason);
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI ::webrtc::RtcEvent::Type $GetType() const;
+
+    MCNAPI bool $IsConfigEvent() const;
     // NOLINTEND
 
 public:

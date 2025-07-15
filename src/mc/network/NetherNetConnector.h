@@ -179,12 +179,6 @@ public:
     );
 
     MCNAPI void _prepareForNewSession();
-
-    MCNAPI void setBroadcastRequestCallback(::std::function<bool(void*, int*)>&& broadcastRequestCallback);
-
-    MCNAPI void setBroadcastResponseCallback(
-        ::std::function<void(::NetherNet::NetworkID const&, void const*, int)>&& broadcastResponseCallback
-    );
     // NOLINTEND
 
 public:

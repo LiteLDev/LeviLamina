@@ -23,8 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PieceWeight(::PieceWeight&&);
-
     MCNAPI PieceWeight(::std::string const& pieceClass, int weight, int maxPlaceCount, int minDepth, bool allowInRow);
 
     MCNAPI ~PieceWeight();
@@ -33,8 +31,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PieceWeight&&);
-
     MCNAPI void* $ctor(::std::string const& pieceClass, int weight, int maxPlaceCount, int minDepth, bool allowInRow);
     // NOLINTEND
 

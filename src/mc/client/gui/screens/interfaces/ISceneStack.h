@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/SceneType.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
@@ -82,9 +83,12 @@ public:
     virtual void pushScreen(::std::shared_ptr<::AbstractScene>, bool) = 0;
 
     // vIndex: 20
-    virtual void flushStack(bool, bool, bool) = 0;
+    virtual bool popScreensBackTo(::ui::SceneType const) = 0;
 
     // vIndex: 21
+    virtual void flushStack(bool, bool, bool, ::std::function<void(bool)>) = 0;
+
+    // vIndex: 22
     virtual bool isEmpty() const = 0;
     // NOLINTEND
 

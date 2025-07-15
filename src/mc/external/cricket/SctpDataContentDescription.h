@@ -39,7 +39,7 @@ public:
     virtual bool has_codecs() const /*override*/;
 
     // vIndex: 10
-    virtual void set_protocol(::std::string_view) /*override*/;
+    virtual void set_protocol(::std::string_view protocol) /*override*/;
 
     // vIndex: 12
     virtual ::cricket::SctpDataContentDescription* CloneInternal() const /*override*/;
@@ -51,7 +51,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::cricket::MediaType $type() const;
 
+    MCNAPI ::cricket::SctpDataContentDescription* $as_sctp();
+
+    MCNAPI ::cricket::SctpDataContentDescription const* $as_sctp() const;
+
+    MCNAPI bool $has_codecs() const;
+
+    MCNAPI void $set_protocol(::std::string_view protocol);
+
+    MCNAPI ::cricket::SctpDataContentDescription* $CloneInternal() const;
     // NOLINTEND
 
 public:

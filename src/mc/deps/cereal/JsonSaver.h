@@ -16,8 +16,8 @@ class JsonSaver : public ::cereal::BasicSaver {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 144> mUnkb954b8;
-    ::ll::UntypedStorage<8, 160> mUnkd5d8b1;
+    ::ll::UntypedStorage<8, 152> mUnkb954b8;
+    ::ll::UntypedStorage<8, 168> mUnkd5d8b1;
     ::ll::UntypedStorage<1, 1>   mUnk3d4165;
     // NOLINTEND
 

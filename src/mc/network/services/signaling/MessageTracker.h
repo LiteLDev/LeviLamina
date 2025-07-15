@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class MessagePerformance;
+namespace NetherNet { struct NetworkID; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -40,6 +41,14 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ::MessageTracker::MessageStatus& operator=(::MessageTracker::MessageStatus&&);
+
+        MCNAPI ~MessageStatus();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -76,11 +85,16 @@ public:
         ::std::function<void(::mce::UUID, ::MessageTracker::MessageStatus&&)>&& fn
     );
 
-    MCNAPI void messageAccepted(::std::string const& messageId);
-
-    MCNAPI void messageDelivered(::std::string const& messageId);
+    MCNAPI void add(::std::string const& messageId, ::std::function<void(::NetherNet::ESessionError)>&& onComplete);
 
     MCNAPI void messageError(::std::string const& messageId, ::NetherNet::ESessionError error);
+
+    MCNAPI void messageSent(
+        ::NetherNet::NetworkID to,
+        ::std::string const&   message,
+        ::std::string const&   messageId,
+        ::std::error_code      error
+    );
 
     MCNAPI ~MessageTracker();
     // NOLINTEND

@@ -29,7 +29,7 @@ public:
     // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const&, ::AABB& bufferAABB) const /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 86
@@ -53,17 +53,17 @@ public:
     // vIndex: 41
     virtual bool isCandleCakeBlock() const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual int _getNumCandles(::Block const&) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual void _iterateCandles(
         ::Block const&                            block,
         ::BlockPos const&                         pos,
         ::std::function<void(::Vec3 const&, int)> callback
     ) const /*override*/;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual void _tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const /*override*/;
 
     // vIndex: 130

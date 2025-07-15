@@ -11,25 +11,33 @@ namespace webrtc { class Timestamp; }
 
 namespace webrtc {
 
-struct FrequencyTracker {
+class FrequencyTracker {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 88> mUnk773b89;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
+    FrequencyTracker& operator=(FrequencyTracker const&);
+    FrequencyTracker(FrequencyTracker const&);
     FrequencyTracker();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit FrequencyTracker(::webrtc::TimeDelta);
+    MCNAPI explicit FrequencyTracker(::webrtc::TimeDelta max_window_size);
 
-    MCNAPI ::std::optional<::webrtc::Frequency> Rate(::webrtc::Timestamp) const;
+    MCNAPI ::std::optional<::webrtc::Frequency> Rate(::webrtc::Timestamp now) const;
 
-    MCNAPI void Update(int64, ::webrtc::Timestamp);
+    MCNAPI void Update(int64 count, ::webrtc::Timestamp now);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::TimeDelta);
+    MCNAPI void* $ctor(::webrtc::TimeDelta max_window_size);
     // NOLINTEND
 };
 

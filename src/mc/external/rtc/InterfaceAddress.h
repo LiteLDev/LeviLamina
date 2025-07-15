@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~InterfaceAddress() /*override*/ = default;
+    virtual ~InterfaceAddress() /*override*/;
     // NOLINTEND
 
 public:
@@ -32,9 +32,15 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::string ToString() const;
 
-    MCNAPI ::rtc::InterfaceAddress const& operator=(::rtc::InterfaceAddress const&);
+    MCNAPI ::rtc::InterfaceAddress const& operator=(::rtc::InterfaceAddress const& other);
 
-    MCNAPI bool operator==(::rtc::InterfaceAddress const&) const;
+    MCNAPI bool operator==(::rtc::InterfaceAddress const& other) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -13,6 +13,10 @@ class IPackLoadContext;
 
 class BlockEventResponseFactory : public ::EventResponseFactory, public ::IPackLoadScoped {
 public:
+    // prevent constructor by default
+    BlockEventResponseFactory();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -23,6 +27,18 @@ public:
 
     // vIndex: 2
     virtual void initSchema() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit BlockEventResponseFactory(::IPackLoadContext const& packLoadContext);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::IPackLoadContext const& packLoadContext);
     // NOLINTEND
 
 public:

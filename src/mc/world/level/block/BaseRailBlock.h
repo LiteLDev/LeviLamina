@@ -102,7 +102,7 @@ public:
     // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 139
+    // vIndex: 138
     virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const
         /*override*/;
 
@@ -129,10 +129,10 @@ public:
     // vIndex: 114
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 130

@@ -33,17 +33,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DtlsTransportInformation(::webrtc::DtlsTransportInformation const&);
+    MCNAPI DtlsTransportInformation(::webrtc::DtlsTransportInformation const& c);
 
-    MCNAPI explicit DtlsTransportInformation(::webrtc::DtlsTransportState);
+    MCNAPI explicit DtlsTransportInformation(::webrtc::DtlsTransportState state);
 
     MCNAPI DtlsTransportInformation(
-        ::webrtc::DtlsTransportState,
-        ::std::optional<::webrtc::DtlsTransportTlsRole>,
-        ::std::optional<int>,
-        ::std::optional<int>,
-        ::std::optional<int>,
-        ::std::unique_ptr<::rtc::SSLCertChain>
+        ::webrtc::DtlsTransportState                    state,
+        ::std::optional<::webrtc::DtlsTransportTlsRole> role,
+        ::std::optional<int>                            tls_version,
+        ::std::optional<int>                            ssl_cipher_suite,
+        ::std::optional<int>                            srtp_cipher_suite,
+        ::std::unique_ptr<::rtc::SSLCertChain>          remote_ssl_certificates
     );
 
     MCNAPI ~DtlsTransportInformation();
@@ -52,17 +52,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::DtlsTransportInformation const&);
+    MCNAPI void* $ctor(::webrtc::DtlsTransportInformation const& c);
 
-    MCNAPI void* $ctor(::webrtc::DtlsTransportState);
+    MCNAPI void* $ctor(::webrtc::DtlsTransportState state);
 
     MCNAPI void* $ctor(
-        ::webrtc::DtlsTransportState,
-        ::std::optional<::webrtc::DtlsTransportTlsRole>,
-        ::std::optional<int>,
-        ::std::optional<int>,
-        ::std::optional<int>,
-        ::std::unique_ptr<::rtc::SSLCertChain>
+        ::webrtc::DtlsTransportState                    state,
+        ::std::optional<::webrtc::DtlsTransportTlsRole> role,
+        ::std::optional<int>                            tls_version,
+        ::std::optional<int>                            ssl_cipher_suite,
+        ::std::optional<int>                            srtp_cipher_suite,
+        ::std::unique_ptr<::rtc::SSLCertChain>          remote_ssl_certificates
     );
     // NOLINTEND
 

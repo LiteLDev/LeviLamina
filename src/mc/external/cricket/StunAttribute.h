@@ -35,13 +35,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StunAttribute() = default;
+    virtual ~StunAttribute();
 
     // vIndex: 1
     virtual ::cricket::StunAttributeValueType value_type() const = 0;
 
     // vIndex: 2
-    virtual void SetOwner(::cricket::StunMessage*);
+    virtual void SetOwner(::cricket::StunMessage* owner);
 
     // vIndex: 3
     virtual bool Read(::rtc::ByteBufferReader*) = 0;
@@ -53,24 +53,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void ConsumePadding(::rtc::ByteBufferReader*) const;
+    MCNAPI void ConsumePadding(::rtc::ByteBufferReader* buf) const;
 
-    MCNAPI StunAttribute(ushort, ushort);
+    MCNAPI StunAttribute(ushort type, ushort length);
 
-    MCNAPI void WritePadding(::rtc::ByteBufferWriter*) const;
+    MCNAPI void WritePadding(::rtc::ByteBufferWriter* buf) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::cricket::StunAttribute*
-    Create(::cricket::StunAttributeValueType, ushort, ushort, ::cricket::StunMessage*);
+    Create(::cricket::StunAttributeValueType value_type, ushort type, ushort length, ::cricket::StunMessage* owner);
 
     MCNAPI static ::std::unique_ptr<::cricket::StunErrorCodeAttribute> CreateErrorCode();
 
-    MCNAPI static ::std::unique_ptr<::cricket::StunUInt16ListAttribute> CreateUInt16ListAttribute(ushort);
+    MCNAPI static ::std::unique_ptr<::cricket::StunUInt16ListAttribute> CreateUInt16ListAttribute(ushort type);
 
-    MCNAPI static ::std::unique_ptr<::cricket::StunUInt32Attribute> CreateUInt32(ushort);
+    MCNAPI static ::std::unique_ptr<::cricket::StunUInt32Attribute> CreateUInt32(ushort type);
 
     MCNAPI static ::std::unique_ptr<::cricket::StunUInt16ListAttribute> CreateUnknownAttributes();
     // NOLINTEND
@@ -78,13 +78,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(ushort, ushort);
+    MCNAPI void* $ctor(ushort type, ushort length);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI void $SetOwner(::cricket::StunMessage* owner);
     // NOLINTEND
 
 public:

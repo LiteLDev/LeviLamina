@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class GameVersion;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Json { class Value; }
 // clang-format on
@@ -36,6 +37,7 @@ public:
         ::ll::UntypedStorage<4, 4>   mUnk7dec7e;
         ::ll::UntypedStorage<4, 4>   mUnkf734a9;
         ::ll::UntypedStorage<8, 32>  mUnka7679a;
+        ::ll::UntypedStorage<8, 56>  mUnk3aef34;
         ::ll::UntypedStorage<4, 4>   mUnka4b04c;
         ::ll::UntypedStorage<8, 8>   mUnk461146;
         ::ll::UntypedStorage<8, 16>  mUnk3e46b2;
@@ -58,7 +60,8 @@ public:
             ::OptionResetFlags   resetFlags,
             ::std::string const& captionId,
             ::std::string const& saveTag,
-            ::OptionType         optionType
+            ::OptionType         optionType,
+            ::GameVersion        version
         );
 
         MCNAPI ~Impl();
@@ -73,7 +76,8 @@ public:
             ::OptionResetFlags   resetFlags,
             ::std::string const& captionId,
             ::std::string const& saveTag,
-            ::OptionType         optionType
+            ::OptionType         optionType,
+            ::GameVersion        version
         );
         // NOLINTEND
 
@@ -124,7 +128,8 @@ public:
         ::OptionResetFlags   resetFlags,
         ::std::string const& captionId,
         ::std::string const& saveTag,
-        ::OptionType         optionType
+        ::OptionType         optionType,
+        ::GameVersion        version
     );
 
     MCNAPI void _updatePropertyVector(
@@ -155,7 +160,8 @@ public:
         ::OptionResetFlags   resetFlags,
         ::std::string const& captionId,
         ::std::string const& saveTag,
-        ::OptionType         optionType
+        ::OptionType         optionType,
+        ::GameVersion        version
     );
     // NOLINTEND
 

@@ -26,8 +26,6 @@ MCNAPI void _breakIntoWordsAndFindProfanity(
     ::std::unordered_set<::std::string> const&      containsSet
 );
 
-MCNAPI void _logIfValidLogArea(::LogArea logArea, ::std::string const& msg);
-
 MCNAPI void _recordProfanityLocationInWord(
     ::std::string const&                            word,
     ::std::vector<::std::pair<int, int>> const&     originalStrIndexes,
@@ -70,11 +68,7 @@ MCNAPI ::BidirectionalUnorderedMap<int, uint64> generateHashMapFromListTag(::Lis
 
 MCNAPI ::std::string generateRandomId(int modifier);
 
-MCNAPI ::std::string getNameWithoutNamespace(::std::string const& name);
-
-MCNAPI ::std::string getNamespace(::std::string const& name);
-
-MCNAPI bool isValidNamespaceFormat(::std::string const& name);
+MCNAPI bool isValidNamespaceFormat(::std::string_view name);
 
 MCNAPI bool isValidUTF8(::std::string const& content);
 

@@ -30,19 +30,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void Add(::webrtc::RtpPacketCounter const&);
+    MCNAPI void Add(::webrtc::RtpPacketCounter const& other);
 
-    MCNAPI explicit RtpPacketCounter(::webrtc::RtpPacket const&);
+    MCNAPI explicit RtpPacketCounter(::webrtc::RtpPacket const& packet);
 
-    MCNAPI explicit RtpPacketCounter(::webrtc::RtpPacketToSend const&);
+    MCNAPI explicit RtpPacketCounter(::webrtc::RtpPacketToSend const& packet_to_send);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::RtpPacket const&);
+    MCNAPI void* $ctor(::webrtc::RtpPacket const& packet);
 
-    MCNAPI void* $ctor(::webrtc::RtpPacketToSend const&);
+    MCNAPI void* $ctor(::webrtc::RtpPacketToSend const& packet_to_send);
     // NOLINTEND
 };
 

@@ -37,9 +37,6 @@ public:
 
     // vIndex: 6
     virtual ::WorldTemplateInfo const* findWorldTemplateByUUID(::std::vector<::mce::UUID> const&) const = 0;
-
-    // vIndex: 7
-    virtual ::WorldTemplateInfo* findWorldTemplateByPackUUIDNonConst(::std::vector<::mce::UUID> const&) const = 0;
     // NOLINTEND
 
 public:

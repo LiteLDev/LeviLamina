@@ -11,7 +11,7 @@
 namespace ScriptModuleMinecraftNet { struct ScriptNetHeader; }
 namespace ScriptModuleMinecraftNet { struct ScriptNetRequest; }
 namespace ScriptModuleMinecraftNet { struct ScriptNetResponse; }
-namespace Scripting { struct Error; }
+namespace Scripting { struct BaseError; }
 // clang-format on
 
 namespace ScriptModuleMinecraftNet {
@@ -28,7 +28,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 80> mUnka50c39;
+        ::ll::UntypedStorage<8, 80> mUnk818803;
         ::ll::UntypedStorage<8, 32> mUnk6af6af;
         // NOLINTEND
 
@@ -67,7 +67,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void handleFailure(uint requestId, ::Scripting::Error const& error);
+    MCNAPI void handleFailure(uint requestId, ::Scripting::BaseError const& error);
 
     MCNAPI void handleResponse(
         uint                                                              requestId,
@@ -81,7 +81,7 @@ public:
     MCNAPI uint track(
         ::Scripting::Promise<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
-            ::Scripting::Error,
+            ::Scripting::BaseError,
             void> const&                                                                          promise,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> const& requestHandle
     );

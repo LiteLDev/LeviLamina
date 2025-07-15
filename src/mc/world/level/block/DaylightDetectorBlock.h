@@ -35,7 +35,7 @@ public:
     // vIndex: 131
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual void updateSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
 
     // vIndex: 53
@@ -43,7 +43,7 @@ public:
     shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
         /*override*/;
 
-    // vIndex: 136
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 43

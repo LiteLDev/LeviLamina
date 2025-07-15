@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/http/StatusCode.h"
 #include "mc/deps/core/http/WebSocket.h"
 
 namespace Bedrock::Http {

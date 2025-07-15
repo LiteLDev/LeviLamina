@@ -11,44 +11,48 @@ class CodeBuilderPerformance {
 public:
     // CodeBuilderPerformance inner types define
     enum class Stage : int {
-        CacheCodescreenStart   = 0,
-        CacheCodescreenFinish  = 1,
-        WebviewLoadStart       = 2,
-        WebviewLoadFinish      = 3,
-        CreateNewProject       = 4,
-        ProjectLoadStart       = 5,
-        ProjectLoadFinish      = 6,
-        TutorialLoadStart      = 7,
-        TutorialLoadFinish     = 8,
-        EditorContentLoaded    = 9,
-        LoadBlockly            = 10,
-        BlocksContentLoaded    = 11,
-        NetworkRequest         = 12,
-        DomLoaded              = 13,
-        CodeRunStart           = 14,
-        CodeRunComplete        = 15,
-        FirstCommandSent       = 16,
-        FirstCommandReceived   = 17,
-        FirstUserVisibleResult = 18,
+        CacheCodescreenStart  = 0,
+        CacheCodescreenFinish = 1,
+        WebviewLoadStart      = 2,
+        WebviewLoadFinish     = 3,
+        CreateNewProject      = 4,
+        ProjectLoadStart      = 5,
+        ProjectLoadFinish     = 6,
+        TutorialLoadStart     = 7,
+        TutorialLoadFinish    = 8,
+        EditorContentLoaded   = 9,
+        LoadBlockly           = 10,
+        BlocksContentLoaded   = 11,
+        NetworkRequest        = 12,
+        DomLoaded             = 13,
+        CodeRunStart          = 14,
+        CodeRunComplete       = 15,
+        FirstCommandSent      = 16,
+        FirstCommandReceived  = 17,
+        FirstCommandRun       = 18,
     };
 
     enum class Flags : int {
-        FirstWorldLaunch   = 0,
-        FirstSessionLaunch = 1,
-        CodeScreenCached   = 2,
-        TutorialCached     = 3,
-        Count              = 4,
+        AwaitingFirstCommandSent     = 0,
+        AwaitingFirstCommandReceived = 1,
+        AwaitingFirstCommandRun      = 2,
+        CodeScreenCached             = 3,
+        CodeRunStarted               = 4,
+        FirstWorldLaunch             = 5,
+        FirstSessionLaunch           = 6,
+        TutorialCached               = 7,
+        Count                        = 8,
     };
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void fireCodeBuilderLoadPerformanceEvent(
+        ::IMinecraftEventing const*     eventing,
         ::CodeBuilderPerformance::Stage stage,
-        ::std::string const&            codeProjectId,
+        ::std::string_view              codeProjectId,
         uint64                          tutorialSize,
         uint64                          downloadSize,
-        ::IMinecraftEventing*           eventing,
         ::std::chrono::milliseconds     duration
     );
 
@@ -64,6 +68,8 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::optional<::std::chrono::steady_clock::time_point>& mCacheCodeScreenTimeStart();
 
+    MCNAPI static ::std::string& mCodeBuilderProjectId();
+
     MCNAPI static ::std::string& mCodeBuilderSessionId();
 
     MCNAPI static ::std::optional<::std::chrono::steady_clock::time_point>& mCodeRunStart();
@@ -72,7 +78,7 @@ public:
 
     MCNAPI static ::std::string& mEditorName();
 
-    MCNAPI static ::std::bitset<4>& mFlags();
+    MCNAPI static ::std::bitset<8>& mFlags();
 
     MCNAPI static ::std::optional<::std::chrono::steady_clock::time_point>& mLastTimestamp();
 

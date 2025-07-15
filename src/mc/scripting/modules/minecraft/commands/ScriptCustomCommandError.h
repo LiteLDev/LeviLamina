@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Error.h"
+#include "mc/deps/scripting/runtime/BaseError.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +13,7 @@ namespace Scripting { struct ErrorBinding; }
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptCustomCommandError : public ::Scripting::Error {
+struct ScriptCustomCommandError : public ::Scripting::BaseError {
 public:
     // ScriptCustomCommandError inner types define
     enum class Reason : int {

@@ -43,6 +43,8 @@ public:
 
     MCAPI uint64 getHash() const;
 
+    MCAPI ::std::string getNetherNetOrRakNetIDAsString() const;
+
     MCAPI bool isUnassigned() const;
 
     MCAPI ::std::string toString() const;

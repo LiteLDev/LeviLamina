@@ -25,10 +25,4 @@ public:
     EndChaosLightManager& operator=(EndChaosLightManager const&);
     EndChaosLightManager(EndChaosLightManager const&);
     EndChaosLightManager();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void tick();
-    // NOLINTEND
 };

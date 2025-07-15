@@ -45,10 +45,10 @@ public:
     // vIndex: 45
     virtual bool canBeOriginalSurface() const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual void _lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual void _unlightBlock(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     // vIndex: 130

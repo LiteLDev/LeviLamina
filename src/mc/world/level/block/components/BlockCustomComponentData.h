@@ -7,12 +7,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnkd9ee96;
-    ::ll::UntypedStorage<8, 72> mUnkde55c2;
+    ::ll::UntypedStorage<8, 80> mUnk12f0f1;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BlockCustomComponentData& operator=(BlockCustomComponentData const&);
     BlockCustomComponentData(BlockCustomComponentData const&);
     BlockCustomComponentData();
 
@@ -20,6 +19,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::BlockCustomComponentData& operator=(::BlockCustomComponentData&&);
+
+    MCNAPI ::BlockCustomComponentData& operator=(::BlockCustomComponentData const&);
 
     MCNAPI ~BlockCustomComponentData();
     // NOLINTEND

@@ -58,13 +58,13 @@ public:
 
     // vIndex: 4
     virtual ::HitResult clip(
-        ::Block const&                                     block,
-        ::BlockSource const&                               region,
-        ::BlockPos const&                                  pos,
-        ::Vec3 const&                                      A,
-        ::Vec3 const&                                      B,
-        ::ShapeType                                        shapeType,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
+        ::Block const&       block,
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::Vec3 const&        A,
+        ::Vec3 const&        B,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     // vIndex: 7
@@ -151,6 +151,16 @@ public:
     MCFOLD bool $hasComparatorSignal() const;
 
     MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+
+    MCFOLD ::HitResult $clip(
+        ::Block const&       block,
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::Vec3 const&        A,
+        ::Vec3 const&        B,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
 
     MCFOLD bool $addCollisionShapes(
         ::Block const&                                     block,

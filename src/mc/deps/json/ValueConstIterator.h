@@ -30,9 +30,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::Json::Value const& operator*() const;
+    MCFOLD ::Json::ValueConstIterator& operator=(::Json::ValueIteratorBase const& other);
 
-    MCFOLD ::Json::ValueConstIterator& operator++();
+    MCAPI ~ValueConstIterator();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

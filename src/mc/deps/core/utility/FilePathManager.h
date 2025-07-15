@@ -7,20 +7,32 @@
 #include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Core { class Path; }
+namespace Core { struct FilePathManagerPaths; }
+// clang-format on
+
 namespace Core {
 
 class FilePathManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk4812b0;
     ::ll::UntypedStorage<8, 32> mUnk572541;
-    ::ll::UntypedStorage<8, 32> mUnk9af116;
-    ::ll::UntypedStorage<8, 32> mUnkc1dc72;
-    ::ll::UntypedStorage<8, 32> mUnkbde984;
-    ::ll::UntypedStorage<8, 32> mUnkcf4814;
-    ::ll::UntypedStorage<8, 32> mUnk72fd26;
-    ::ll::UntypedStorage<8, 32> mUnke53a36;
+    ::ll::UntypedStorage<8, 32> mUnk4e130e;
+    ::ll::UntypedStorage<8, 32> mUnk48591c;
+    ::ll::UntypedStorage<8, 32> mUnk6c2c6e;
+    ::ll::UntypedStorage<8, 32> mUnkf9b714;
+    ::ll::UntypedStorage<8, 32> mUnk3ea53f;
+    ::ll::UntypedStorage<8, 32> mUnk4e27dc;
+    ::ll::UntypedStorage<8, 32> mUnka3fac4;
+    ::ll::UntypedStorage<8, 32> mUnk6aabe0;
+    ::ll::UntypedStorage<8, 32> mUnkdaf65b;
+    ::ll::UntypedStorage<8, 32> mUnk725ea5;
+    ::ll::UntypedStorage<8, 32> mUnkbefcf7;
+    ::ll::UntypedStorage<8, 32> mUnk235a6a;
+    ::ll::UntypedStorage<1, 1>  mUnk577587;
     // NOLINTEND
 
 public:
@@ -39,9 +51,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Core::PathBuffer<::std::string> getUserDataPath() const;
+    MCNAPI explicit FilePathManager(::Core::FilePathManagerPaths&& paths);
 
-    MCNAPI ::Core::PathBuffer<::std::string> getWorldsPath() const;
+    MCNAPI void setRootPath(::Core::Path const& path);
     // NOLINTEND
 
 public:
@@ -58,6 +70,12 @@ public:
     MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& RESOURCE_PACKS_DIR();
 
     MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& WORLDS_DIR();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Core::FilePathManagerPaths&& paths);
     // NOLINTEND
 
 public:

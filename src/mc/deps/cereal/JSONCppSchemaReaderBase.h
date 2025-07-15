@@ -29,6 +29,18 @@ public:
         State& operator=(State const&);
         State(State const&);
         State();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~State();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
     };
 
 public:

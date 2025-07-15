@@ -12,7 +12,7 @@ enum class ScriptBlockCustomComponentEventTypes : ushort {
     OnTick              = 4,
     OnStepOff           = 5,
     OnPlayerInteract    = 6,
-    OnPlayerDestroy     = 7,
+    OnPlayerBreak       = 7,
     OnPlace             = 8,
     BeforeOnPlayerPlace = 9,
     Count               = 10,

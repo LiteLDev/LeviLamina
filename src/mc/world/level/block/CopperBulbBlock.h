@@ -6,7 +6,7 @@
 #include "mc/common/Brightness.h"
 #include "mc/world/Direction.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/CopperBehavior.h"
+#include "mc/world/level/block/CopperBlock.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,32 +14,20 @@ class Block;
 class BlockPos;
 class BlockSource;
 class Experiments;
-class Random;
 namespace BlockEvents { class BlockPlaceEvent; }
-namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class CopperBulbBlock : public ::BlockLegacy {
+class CopperBulbBlock : public ::CopperBlock<::BlockLegacy> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 96, ::CopperBehavior> mCopperBehavior;
-    ::ll::TypedStorage<1, 1, ::Brightness>      mLitBrightness;
+    ::ll::TypedStorage<1, 1, ::Brightness> mLitBrightness;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 26
-    virtual ::CopperBehavior const* tryGetCopperBehavior() const /*override*/;
-
-    // vIndex: 135
-    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    // vIndex: 17
-    virtual void onLightningHit(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
     // vIndex: 66
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
@@ -63,7 +51,7 @@ public:
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
     // vIndex: 130
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0
     virtual ~CopperBulbBlock() /*override*/ = default;
@@ -72,36 +60,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-
-    MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::CopperBehavior const* $tryGetCopperBehavior() const;
+    MCNAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    MCFOLD void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $hasComparatorSignal() const;
 
-    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI int
+    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
-
-    MCFOLD bool $hasComparatorSignal() const;
-
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
-
-    MCFOLD bool
+    MCNAPI bool
     $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCAPI ::Brightness $getLightEmission(::Block const& block) const;
+    MCNAPI ::Brightness $getLightEmission(::Block const& block) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:

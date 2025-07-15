@@ -24,6 +24,8 @@ public:
 
     MCNAPI bool hasErrors() const;
 
+    MCNAPI ::PackSourceReport& operator=(::PackSourceReport&&);
+
     MCNAPI ~PackSourceReport();
     // NOLINTEND
 

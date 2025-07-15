@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/http/StatusCode.h"
 #include "mc/deps/core/http/WebSocket.h"
 #include "mc/deps/core/threading/AsyncPromise.h"
 #include "mc/deps/core/threading/IAsyncResult.h"
@@ -21,7 +22,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>   mUnk5730d9;
-    ::ll::UntypedStorage<8, 104> mUnk6d60c4;
+    ::ll::UntypedStorage<8, 104> mUnkd613a3;
     // NOLINTEND
 
 public:
@@ -63,15 +64,21 @@ public:
     MCNAPI PersistentWebSocket();
 
     MCNAPI void _connectWithRetry(
-        ::std::string const&                     uri,
-        ::Bedrock::Http::HeaderCollection const& headers,
-        ::std::error_code                        lastError,
-        ::Bedrock::Http::RetryPolicy&&           retry
+        ::std::string const&                                               uri,
+        ::Bedrock::Http::HeaderCollection const&                           headers,
+        ::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code> lastResult,
+        ::Bedrock::Http::RetryPolicy&&                                     retry
     );
 
-    MCNAPI void _reconnect(::std::error_code lastError, ::Bedrock::Http::RetryPolicy&& retry);
+    MCNAPI void _onConnect(
+        ::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code> result,
+        ::Bedrock::Http::RetryPolicy&&                                     retry
+    );
 
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::error_code>> connect();
+    MCNAPI void _reconnect(
+        ::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code> lastResult,
+        ::Bedrock::Http::RetryPolicy&&                                     retry
+    );
 
     MCNAPI void disconnect();
     // NOLINTEND

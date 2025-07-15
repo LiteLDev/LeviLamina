@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 5
@@ -60,13 +60,13 @@ public:
 
     // vIndex: 4
     virtual ::HitResult clip(
-        ::Block const&                                     block,
-        ::BlockSource const&                               region,
-        ::BlockPos const&                                  pos,
-        ::Vec3 const&                                      A,
-        ::Vec3 const&                                      B,
-        ::ShapeType                                        shapeType,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
+        ::Block const&,
+        ::BlockSource const&,
+        ::BlockPos const&,
+        ::Vec3 const&,
+        ::Vec3 const&,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     // vIndex: 22
@@ -123,16 +123,6 @@ public:
         ::BlockPos const&                                  pos,
         ::AABB const*                                      intersectTestBox,
         ::std::vector<::AABB>&                             inoutBoxes,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const;
-
-    MCAPI ::HitResult $clip(
-        ::Block const&                                     block,
-        ::BlockSource const&                               region,
-        ::BlockPos const&                                  pos,
-        ::Vec3 const&                                      A,
-        ::Vec3 const&                                      B,
-        ::ShapeType                                        shapeType,
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 

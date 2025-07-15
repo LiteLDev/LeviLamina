@@ -637,9 +637,6 @@ public:
 
         MCAPI bool _parse(::std::string const& in);
 
-        MCAPI ::std::unique_ptr<::CommandSelector<::Actor>>
-        createSelector(::std::string const& selectorString, ::CommandOrigin const& origin);
-
         MCAPI ::std::vector<::std::string> getErrorParams() const;
 
         MCAPI bool parseCommand(::std::string const& in);
@@ -809,8 +806,6 @@ public:
     ) const;
 
     MCAPI ::CommandRegistry::Symbol _getConstrainedParamEnumSymbol(::CommandRegistry::Symbol symbol) const;
-
-    MCAPI bool _isCommandElementValid(::std::string const& name) const;
 
     MCAPI bool _matchesEnumConstraintsSet(
         ::CommandRegistry::Symbol const& commandParamSymbol,

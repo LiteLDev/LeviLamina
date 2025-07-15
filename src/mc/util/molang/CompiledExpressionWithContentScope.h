@@ -40,7 +40,7 @@ public:
     virtual ::MolangScriptArg const& evalGeneric(::RenderParams& params) const /*override*/;
 
     // vIndex: 0
-    virtual ~CompiledExpressionWithContentScope() /*override*/;
+    virtual ~CompiledExpressionWithContentScope() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -63,12 +63,6 @@ public:
         ::MolangVersion                  version,
         bool                             hasVariableAssignments
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

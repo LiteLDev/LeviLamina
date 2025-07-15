@@ -49,9 +49,6 @@ public:
     ) = 0;
 
     // vIndex: 2
-    virtual void fireEventConnectionFailed(::IConnectionEventing::ConnectionFailureReason) = 0;
-
-    // vIndex: 3
     virtual void fireEventOnSuccessfulClientLogin(::MultiPlayerLevel const*) = 0;
     // NOLINTEND
 

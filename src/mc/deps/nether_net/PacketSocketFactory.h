@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace rtc { class AsyncPacketSocket; }
+namespace rtc { class SocketAddress; }
 namespace webrtc { class AsyncDnsResolverInterface; }
 // clang-format on
 
@@ -17,7 +19,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnk765ab2;
-    ::ll::UntypedStorage<8, 16> mUnkbbc50e;
+    ::ll::UntypedStorage<8, 16> mUnk50651e;
+    ::ll::UntypedStorage<8, 8>  mUnka96575;
     // NOLINTEND
 
 public:
@@ -32,13 +35,20 @@ public:
     // vIndex: 0
     virtual ~PacketSocketFactory() /*override*/ = default;
 
-    // vIndex: 4
+    // vIndex: 2
+    virtual ::std::shared_ptr<::rtc::AsyncPacketSocket>
+    CreateGlobalUdpSocket(::rtc::SocketAddress const& address, ushort minPort, ushort maxPort) /*override*/;
+
+    // vIndex: 5
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> CreateAsyncDnsResolver() /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::shared_ptr<::rtc::AsyncPacketSocket>
+    $CreateGlobalUdpSocket(::rtc::SocketAddress const& address, ushort minPort, ushort maxPort);
+
     MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> $CreateAsyncDnsResolver();
     // NOLINTEND
 

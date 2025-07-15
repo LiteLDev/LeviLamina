@@ -47,8 +47,6 @@ public:
 
     MCNAPI bool operator>=(::GameVersion const& other) const;
 
-    MCNAPI ::std::unique_ptr<::ListTag> serialize() const;
-
     MCNAPI ~GameVersion();
     // NOLINTEND
 
@@ -56,6 +54,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::GameVersion current();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::GameVersion const& Zero();
     // NOLINTEND
 
 public:

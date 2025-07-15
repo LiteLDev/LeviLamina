@@ -58,7 +58,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MediaContentDescription() = default;
+    virtual ~MediaContentDescription();
 
     // vIndex: 1
     virtual ::cricket::MediaType type() const = 0;
@@ -88,7 +88,7 @@ public:
     virtual ::cricket::UnsupportedContentDescription const* as_unsupported() const;
 
     // vIndex: 10
-    virtual void set_protocol(::std::string_view);
+    virtual void set_protocol(::std::string_view protocol);
 
     // vIndex: 11
     virtual bool has_codecs() const;
@@ -100,21 +100,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddCodecs(::std::vector<::cricket::Codec> const&);
+    MCNAPI void AddCodecs(::std::vector<::cricket::Codec> const& codecs);
 
-    MCNAPI void AddRtpHeaderExtension(::webrtc::RtpExtension const&);
+    MCNAPI void AddRtpHeaderExtension(::webrtc::RtpExtension const& ext);
 
-    MCNAPI void AddStream(::cricket::StreamParams const&);
+    MCNAPI void AddStream(::cricket::StreamParams const& stream);
 
     MCNAPI MediaContentDescription();
 
     MCNAPI MediaContentDescription(::cricket::MediaContentDescription const&);
 
-    MCNAPI void set_extmap_allow_mixed_enum(::cricket::MediaContentDescription::ExtmapAllowMixed);
+    MCNAPI void
+    set_extmap_allow_mixed_enum(::cricket::MediaContentDescription::ExtmapAllowMixed new_extmap_allow_mixed);
 
-    MCNAPI void set_receive_rids(::std::vector<::cricket::RidDescription> const&);
+    MCNAPI void set_receive_rids(::std::vector<::cricket::RidDescription> const& rids);
 
-    MCNAPI void set_simulcast_description(::cricket::SimulcastDescription const&);
+    MCNAPI void set_simulcast_description(::cricket::SimulcastDescription const& simulcast);
     // NOLINTEND
 
 public:
@@ -126,9 +127,33 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::cricket::AudioContentDescription* $as_audio();
 
+    MCNAPI ::cricket::AudioContentDescription const* $as_audio() const;
+
+    MCNAPI ::cricket::VideoContentDescription* $as_video();
+
+    MCNAPI ::cricket::VideoContentDescription const* $as_video() const;
+
+    MCNAPI ::cricket::SctpDataContentDescription* $as_sctp();
+
+    MCNAPI ::cricket::SctpDataContentDescription const* $as_sctp() const;
+
+    MCNAPI ::cricket::UnsupportedContentDescription* $as_unsupported();
+
+    MCNAPI ::cricket::UnsupportedContentDescription const* $as_unsupported() const;
+
+    MCNAPI void $set_protocol(::std::string_view protocol);
+
+    MCNAPI bool $has_codecs() const;
     // NOLINTEND
 
 public:

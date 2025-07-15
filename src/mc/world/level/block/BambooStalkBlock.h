@@ -31,7 +31,7 @@ public:
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 86
@@ -51,7 +51,7 @@ public:
         /*override*/;
 
     // vIndex: 47
-    virtual bool isValidAuxValue(int value) const /*override*/;
+    virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
     // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB&) const /*override*/;
@@ -107,7 +107,7 @@ public:
 
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI bool $isValidAuxValue(int value) const;
+    MCAPI bool $isValidAuxValue(int auxValue) const;
 
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB&) const;
 

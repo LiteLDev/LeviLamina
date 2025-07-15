@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 class RandomValueBounds {
 public:
     // member variables
@@ -20,10 +15,4 @@ public:
     RandomValueBounds& operator=(RandomValueBounds const&);
     RandomValueBounds(RandomValueBounds const&);
     RandomValueBounds();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void deserialize(::Json::Value const& object);
-    // NOLINTEND
 };

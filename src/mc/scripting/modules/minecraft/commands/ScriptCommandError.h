@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Error.h"
+#include "mc/deps/scripting/runtime/BaseError.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +13,7 @@ namespace Scripting { struct ErrorBinding; }
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptCommandError : public ::Scripting::Error {
+struct ScriptCommandError : public ::Scripting::BaseError {
 public:
     // prevent constructor by default
     ScriptCommandError();

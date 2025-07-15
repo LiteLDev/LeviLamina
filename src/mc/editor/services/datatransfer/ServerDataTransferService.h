@@ -132,6 +132,12 @@ public:
     // vIndex: 5
     virtual ::std::vector<::Editor::ScriptModule::ScriptTransferCollectionNameData> getRegisteredCollections() const
         /*override*/;
+
+    // vIndex: 6
+    virtual ::Scripting::Result_deprecated<void> openSession(::std::string const& collectionName) /*override*/;
+
+    // vIndex: 7
+    virtual ::Scripting::Result_deprecated<void> closeSession(::std::string const& collectionName) /*override*/;
     // NOLINTEND
 
 public:
@@ -182,6 +188,10 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> $sendDataToClipboard(::std::string const& jsonData);
 
     MCNAPI ::std::vector<::Editor::ScriptModule::ScriptTransferCollectionNameData> $getRegisteredCollections() const;
+
+    MCNAPI ::Scripting::Result_deprecated<void> $openSession(::std::string const& collectionName);
+
+    MCNAPI ::Scripting::Result_deprecated<void> $closeSession(::std::string const& collectionName);
     // NOLINTEND
 
 public:

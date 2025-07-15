@@ -37,8 +37,6 @@ public:
     MCNAPI static ::Scripting::EnumBinding bindGamePublishSettingEnum();
 
     MCNAPI static ::Scripting::InterfaceBinding bindInterface();
-
-    MCNAPI static ::Scripting::EnumBinding bindPlayerPermissionLevelEnum();
     // NOLINTEND
 
 public:

@@ -9,11 +9,22 @@ namespace OS { struct ThreadPoolActionStatus; }
 
 namespace OS {
 
-struct ThreadPool {
+class ThreadPool {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk8fbfec;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ThreadPool& operator=(ThreadPool const&);
+    ThreadPool(ThreadPool const&);
+
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI long Initialize(void*, void (*)(void*, ::OS::ThreadPoolActionStatus&));
+    MCNAPI long Initialize(void* context, void (*callback)(void*, ::OS::ThreadPoolActionStatus&));
 
     MCNAPI void Submit();
 

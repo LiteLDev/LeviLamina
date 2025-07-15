@@ -31,10 +31,10 @@ public:
     // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual bool isLocked(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 136
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 122
@@ -43,7 +43,7 @@ public:
     // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 86
@@ -61,16 +61,16 @@ public:
     // vIndex: 69
     virtual bool isPreservingMediumWhenPlaced(::BlockLegacy const* medium) const /*override*/;
 
-    // vIndex: 158
+    // vIndex: 157
     virtual int getTurnOnDelay(::Block const& block) const /*override*/;
 
-    // vIndex: 159
+    // vIndex: 158
     virtual ::Block const* getOnBlock(::Block const* block) const /*override*/;
 
-    // vIndex: 160
+    // vIndex: 159
     virtual ::Block const* getOffBlock(::Block const* block) const /*override*/;
 
-    // vIndex: 154
+    // vIndex: 153
     virtual bool isAlternateInput(::Block const& block) const /*override*/;
 
     // vIndex: 130

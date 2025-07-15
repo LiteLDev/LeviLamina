@@ -4,7 +4,19 @@
 
 namespace xbox::httpclient {
 
-struct win32_cs {
+class win32_cs {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnkfabdf5;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    win32_cs& operator=(win32_cs const&);
+    win32_cs(win32_cs const&);
+    win32_cs();
+
 public:
     // member functions
     // NOLINTBEGIN

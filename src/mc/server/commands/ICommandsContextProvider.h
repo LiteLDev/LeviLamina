@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Level;
+class ILevel;
 class NetworkIdentifier;
 struct MCRESULT;
 // clang-format on
@@ -20,7 +20,7 @@ public:
     virtual ~ICommandsContextProvider() = default;
 
     // vIndex: 1
-    virtual ::Level* getLevel() = 0;
+    virtual ::ILevel* getLevel() = 0;
 
     // vIndex: 2
     virtual ::NetworkIdentifier getLocalNetworkId() const = 0;

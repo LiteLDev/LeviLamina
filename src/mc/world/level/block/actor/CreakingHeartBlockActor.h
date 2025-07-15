@@ -38,10 +38,10 @@ public:
     // vIndex: 3
     virtual bool saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
     // vIndex: 0

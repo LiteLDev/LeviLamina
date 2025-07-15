@@ -7,4 +7,5 @@ enum class ItemContextType : int {
     BlockContainer = 1,
     ActorContainer = 2,
     ActorEquipment = 3,
+    ItemContainer  = 4,
 };

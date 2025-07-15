@@ -60,13 +60,13 @@ public:
     // NOLINTBEGIN
     MCNAPI CryptoOptions();
 
-    MCNAPI CryptoOptions(::webrtc::CryptoOptions const&);
+    MCNAPI CryptoOptions(::webrtc::CryptoOptions const& other);
 
     MCNAPI ::std::vector<int> GetSupportedDtlsSrtpCryptoSuites() const;
 
-    MCNAPI bool operator!=(::webrtc::CryptoOptions const&) const;
+    MCNAPI bool operator!=(::webrtc::CryptoOptions const& other) const;
 
-    MCNAPI bool operator==(::webrtc::CryptoOptions const&) const;
+    MCNAPI bool operator==(::webrtc::CryptoOptions const& other) const;
 
     MCNAPI ~CryptoOptions();
     // NOLINTEND
@@ -76,7 +76,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::webrtc::CryptoOptions const&);
+    MCNAPI void* $ctor(::webrtc::CryptoOptions const& other);
     // NOLINTEND
 
 public:

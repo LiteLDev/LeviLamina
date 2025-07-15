@@ -113,13 +113,13 @@ public:
     virtual void contentAssert(::LogArea const area, ::LogLevel const level, char const* message);
 
     // vIndex: 0
-    virtual ~DebugEndPoint() /*override*/ = default;
+    virtual ~DebugEndPoint() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit DebugEndPoint(::std::optional<::LogLevel> minLogLevel);
+    MCNAPI void initializeContentLogging(::ResourcePackManager& mgr, ::Core::Path const& levelPath);
     // NOLINTEND
 
 public:
@@ -129,9 +129,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::optional<::LogLevel> minLogLevel);
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

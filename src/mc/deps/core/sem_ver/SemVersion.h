@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
+struct SemVersionAnyVersionType;
 namespace Json { class Value; }
 // clang-format on
 
@@ -27,13 +28,11 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    SemVersion& operator=(SemVersion const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI SemVersion();
+
+    MCAPI explicit SemVersion(::SemVersionAnyVersionType);
 
     MCAPI SemVersion(::SemVersion const&);
 
@@ -46,6 +45,10 @@ public:
         ::Bedrock::StaticOptimizedString preRelease,
         ::Bedrock::StaticOptimizedString buildMeta
     );
+
+    MCAPI ::SemVersion& operator=(::SemVersion const&);
+
+    MCAPI ::SemVersion& operator=(::SemVersion&&);
 
     MCAPI ~SemVersion();
     // NOLINTEND
@@ -66,6 +69,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCFOLD void* $ctor();
+
+    MCAPI void* $ctor(::SemVersionAnyVersionType);
 
     MCAPI void* $ctor(::SemVersion const&);
 

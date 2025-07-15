@@ -16,14 +16,14 @@ class TextFilteringUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool checkChatFilteringEventsAndSendChatIfTextProcessorOffline(
+    MCNAPI static void checkChatFilteringEventsAndSendToastIfClientWasMuted(
         ::std::vector<::Safety::TextFilteringEvent> const& events,
         ::gsl::not_null<::PacketSender*>                   packetSender,
         ::NetworkIdentifier const&                         source,
         ::SubClientId const&                               subClientId
     );
 
-    MCNAPI static void checkChatFilteringEventsAndSendToastIfClientWasMuted(
+    MCNAPI static bool checkIfTextProcessorIsUnhealthyAndSendChat(
         ::std::vector<::Safety::TextFilteringEvent> const& events,
         ::gsl::not_null<::PacketSender*>                   packetSender,
         ::NetworkIdentifier const&                         source,

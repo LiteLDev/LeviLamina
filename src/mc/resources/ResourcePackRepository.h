@@ -10,6 +10,7 @@
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/resource/ResourceLocation.h"
+#include "mc/deps/core/threading/IAsyncResult.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/threading/Mutex.h"
 #include "mc/resources/IResourcePackRepository.h"
@@ -123,154 +124,173 @@ public:
     virtual ::ResourcePack* getResourcePackForPackId(::PackIdVersion const& idAndVersion) const /*override*/;
 
     // vIndex: 3
+    virtual ::ResourcePack* getResourcePackOfDifferentVersionForPackId(::PackIdVersion const& idAndVersion) const
+        /*override*/;
+
+    // vIndex: 4
     virtual ::ResourcePack*
     getResourcePackForPackIdInPath(::PackIdVersion const& idAndVersion, ::Core::Path const& fullPath) const
         /*override*/;
 
-    // vIndex: 4
+    // vIndex: 5
     virtual ::ResourcePack* getResourcePackByUUID(::mce::UUID const& id) const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual ::ResourcePack* getResourcePackForPackIdOwned(::PackIdVersion const& idAndVersion) const /*override*/;
 
-    // vIndex: 6
+    // vIndex: 7
     virtual ::ResourcePack*
     getResourcePackSatisfiesPackId(::PackIdVersion const& idAndVersion, bool requireOwnership) const /*override*/;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual ::ResourcePack* getResourcePackContainingModule(::PackIdVersion const& idAndVersion) const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual ::ResourcePack* getResourcePackInPath(::Core::Path const& path) const /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual bool isResourcePackLoaded(::PackIdVersion const& identity, ::PackOrigin const& location) /*override*/;
 
-    // vIndex: 10
+    // vIndex: 11
     virtual ::PackSourceReport const* getPackLoadingReport() const /*override*/;
 
-    // vIndex: 11
+    // vIndex: 12
     virtual ::ResourcePack* getEditorPack() const /*override*/;
 
-    // vIndex: 12
+    // vIndex: 13
     virtual ::ResourcePack* getVanillaPack() const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual bool setServicePacks(::std::vector<::PackIdVersion> servicePackIds) /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual bool hasServicePacks(::std::vector<::PackIdVersion> const& servicePacksIds) const /*override*/;
 
-    // vIndex: 15
+    // vIndex: 16
     virtual ::std::vector<::PackIdVersion> const& getServicePacks() const /*override*/;
 
-    // vIndex: 16
+    // vIndex: 17
     virtual void addServicePacksToStack(::ResourcePackStack& stack) const /*override*/;
 
-    // vIndex: 17
+    // vIndex: 18
     virtual void
     addCachedResourcePacks(::std::unordered_map<::ContentIdentity, ::std::string> const* tempCacheKeys) /*override*/;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual void addWorldResourcePacks(::Core::Path const& levelPath) /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual void addPremiumWorldTemplateResourcePacks(
         ::Core::Path const&      worldTemplatePath,
         ::ContentIdentity const& premiumWorldIdentity
     ) /*override*/;
 
-    // vIndex: 20
+    // vIndex: 23
     virtual void addTempWorldTemplateResourcePacks(::mce::UUID const& worldTemplateUUID) /*override*/;
 
     // vIndex: 21
-    virtual void removePacksLoadedFromCache() /*override*/;
+    virtual void addWorldPackSource(::Core::Path const& levelPath) /*override*/;
 
     // vIndex: 22
-    virtual void removePacksLoadedFromWorld() /*override*/;
-
-    // vIndex: 23
-    virtual ::Core::PathBuffer<::std::string> const getResourcePacksPath() const /*override*/;
+    virtual void addPremiumWorldTemplatePackSource(
+        ::Core::Path const&      worldTemplatePath,
+        ::ContentIdentity const& premiumWorldIdentity
+    ) /*override*/;
 
     // vIndex: 24
-    virtual ::Core::PathBuffer<::std::string> const getBehaviorPacksPath() const /*override*/;
+    virtual void removePacksLoadedFromCache() /*override*/;
 
     // vIndex: 25
-    virtual ::Core::PathBuffer<::std::string> const getSkinPacksPath() const /*override*/;
+    virtual void removePacksLoadedFromWorld() /*override*/;
 
     // vIndex: 26
-    virtual ::Core::PathBuffer<::std::string> const getDevelopmentResourcePacksPath() const /*override*/;
+    virtual ::Core::PathBuffer<::std::string> const getResourcePacksPath() const /*override*/;
 
     // vIndex: 27
-    virtual ::Core::PathBuffer<::std::string> const getDevelopmentBehaviorPacksPath() const /*override*/;
+    virtual ::Core::PathBuffer<::std::string> const getBehaviorPacksPath() const /*override*/;
 
     // vIndex: 28
-    virtual ::Core::PathBuffer<::std::string> const getDevelopmentSkinPacksPath() const /*override*/;
+    virtual ::Core::PathBuffer<::std::string> const getSkinPacksPath() const /*override*/;
 
     // vIndex: 29
-    virtual ::Core::PathBuffer<::std::string> const getTreatmentPacksPath() const /*override*/;
+    virtual ::Core::PathBuffer<::std::string> const getDevelopmentResourcePacksPath() const /*override*/;
 
     // vIndex: 30
-    virtual void refreshPacks() /*override*/;
+    virtual ::Core::PathBuffer<::std::string> const getDevelopmentBehaviorPacksPath() const /*override*/;
 
     // vIndex: 31
-    virtual void requestReloadUserPacks() /*override*/;
+    virtual ::Core::PathBuffer<::std::string> const getDevelopmentSkinPacksPath() const /*override*/;
 
     // vIndex: 32
-    virtual ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> getKeyProvider() const /*override*/;
+    virtual ::Core::PathBuffer<::std::string> const getTreatmentPacksPath() const /*override*/;
 
     // vIndex: 33
-    virtual ::PackManifestFactory& getPackManifestFactory() /*override*/;
+    virtual void refreshPacks() /*override*/;
 
     // vIndex: 34
-    virtual ::PackSettingsFactory& getPackSettingsFactory() const /*override*/;
+    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> refreshPacksAsync() /*override*/;
 
     // vIndex: 35
-    virtual ::PackSourceFactory& getPackSourceFactory() /*override*/;
+    virtual void requestReloadUserPacks() /*override*/;
 
     // vIndex: 36
-    virtual ::CompositePackSource const* getWorldPackSource() const /*override*/;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> getKeyProvider() const /*override*/;
 
     // vIndex: 37
-    virtual ::std::vector<::ResourcePack*> getPacksByResourceLocation(::PackOrigin type) const /*override*/;
+    virtual ::PackManifestFactory& getPackManifestFactory() /*override*/;
 
     // vIndex: 38
-    virtual ::std::vector<::ResourcePack*> getPacksByType(::PackType type) const /*override*/;
+    virtual ::PackSettingsFactory& getPackSettingsFactory() const /*override*/;
 
     // vIndex: 39
-    virtual ::std::vector<::ResourcePack*> getPacksByCategory(::PackCategory category) const /*override*/;
+    virtual ::PackSourceFactory& getPackSourceFactory() /*override*/;
 
     // vIndex: 40
-    virtual void addInvalidPack(::ResourceLocation const& packLocation, ::PackType type) /*override*/;
-
-    // vIndex: 42
-    virtual ::std::vector<::ResourceLocation> const& getInvalidPacks(::PackType type) const /*override*/;
+    virtual ::CompositePackSource const* getWorldPackSource() const /*override*/;
 
     // vIndex: 41
+    virtual ::std::vector<::ResourcePack*> getPacksByResourceLocation(::PackOrigin type) const /*override*/;
+
+    // vIndex: 42
+    virtual ::std::vector<::ResourcePack*> getPacksByType(::PackType type) const /*override*/;
+
+    // vIndex: 43
+    virtual ::std::vector<::ResourcePack*> getPacksByCategory(::PackCategory category) const /*override*/;
+
+    // vIndex: 44
+    virtual void forEachPack(::std::function<void(::ResourcePack const&)> const& callback) const /*override*/;
+
+    // vIndex: 45
+    virtual void addInvalidPack(::ResourceLocation const& packLocation, ::PackType type) /*override*/;
+
+    // vIndex: 47
+    virtual ::std::vector<::ResourceLocation> const& getInvalidPacks(::PackType type) const /*override*/;
+
+    // vIndex: 46
     virtual ::std::vector<::ResourceLocation> getInvalidPacks(::InvalidPacksFilterGroup const& packTypes) const
         /*override*/;
 
-    // vIndex: 43
+    // vIndex: 48
     virtual void deletePack(::ResourceLocation const& packLocation) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 49
     virtual void deletePackFiles(::ResourceLocation const& packLocation) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 50
     virtual void postDeletePack(::ResourceLocation const& packLocation) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 51
     virtual void untrackInvalidPack(::ResourceLocation const& packLocation) /*override*/;
 
-    // vIndex: 47
+    // vIndex: 52
     virtual void
     registerResourcePackRemovedCallback(void* ptr, ::std::function<void(::ResourcePack*)> callback) /*override*/;
 
-    // vIndex: 48
+    // vIndex: 53
     virtual void unregisterResourcePackRemovedCallback(void* ptr) /*override*/;
 
-    // vIndex: 49
-    virtual bool isInitialized() /*override*/;
+    // vIndex: 54
+    virtual bool isInitialized() const /*override*/;
     // NOLINTEND
 
 public:
@@ -358,6 +378,8 @@ public:
 
     MCAPI ::ResourcePack* $getResourcePackForPackId(::PackIdVersion const& idAndVersion) const;
 
+    MCAPI ::ResourcePack* $getResourcePackOfDifferentVersionForPackId(::PackIdVersion const& idAndVersion) const;
+
     MCAPI ::ResourcePack*
     $getResourcePackForPackIdInPath(::PackIdVersion const& idAndVersion, ::Core::Path const& fullPath) const;
 
@@ -399,6 +421,13 @@ public:
 
     MCAPI void $addTempWorldTemplateResourcePacks(::mce::UUID const& worldTemplateUUID);
 
+    MCAPI void $addWorldPackSource(::Core::Path const& levelPath);
+
+    MCAPI void $addPremiumWorldTemplatePackSource(
+        ::Core::Path const&      worldTemplatePath,
+        ::ContentIdentity const& premiumWorldIdentity
+    );
+
     MCAPI void $removePacksLoadedFromCache();
 
     MCAPI void $removePacksLoadedFromWorld();
@@ -419,15 +448,17 @@ public:
 
     MCAPI void $refreshPacks();
 
+    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> $refreshPacksAsync();
+
     MCAPI void $requestReloadUserPacks();
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> $getKeyProvider() const;
 
-    MCAPI ::PackManifestFactory& $getPackManifestFactory();
+    MCFOLD ::PackManifestFactory& $getPackManifestFactory();
 
     MCFOLD ::PackSettingsFactory& $getPackSettingsFactory() const;
 
-    MCFOLD ::PackSourceFactory& $getPackSourceFactory();
+    MCAPI ::PackSourceFactory& $getPackSourceFactory();
 
     MCFOLD ::CompositePackSource const* $getWorldPackSource() const;
 
@@ -436,6 +467,8 @@ public:
     MCAPI ::std::vector<::ResourcePack*> $getPacksByType(::PackType type) const;
 
     MCAPI ::std::vector<::ResourcePack*> $getPacksByCategory(::PackCategory category) const;
+
+    MCAPI void $forEachPack(::std::function<void(::ResourcePack const&)> const& callback) const;
 
     MCAPI void $addInvalidPack(::ResourceLocation const& packLocation, ::PackType type);
 
@@ -455,7 +488,7 @@ public:
 
     MCAPI void $unregisterResourcePackRemovedCallback(void* ptr);
 
-    MCAPI bool $isInitialized();
+    MCAPI bool $isInitialized() const;
     // NOLINTEND
 
 public:

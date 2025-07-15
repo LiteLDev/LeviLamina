@@ -15,6 +15,8 @@ namespace StorageItemUtility { class StorageItemWeightData; }
 namespace StorageItemUtility {
 // functions
 // NOLINTBEGIN
+MCNAPI void _tryFlattenStorageItem(::ItemStackBase& item, ::SaveContext const& context);
+
 MCNAPI int getItemWeightInStorageItem(::ItemStackBase const& item, ::std::optional<uchar> amount);
 
 MCNAPI ::std::optional<::FullContainerName> getStorageItemID(::ItemStackBase const& storageItem);

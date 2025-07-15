@@ -55,9 +55,9 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
-    // vIndex: 27
+    // vIndex: 28
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 21
@@ -75,7 +75,7 @@ public:
     // vIndex: 34
     virtual void setContainerChanged(int slot) /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual void onRemoved(::BlockSource&) /*override*/;
 
     // vIndex: 32
@@ -84,10 +84,10 @@ public:
     // vIndex: 33
     virtual bool canPullOutItem(int slot, int face, ::ItemStack const&) const /*override*/;
 
-    // vIndex: 34
+    // vIndex: 35
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 33
+    // vIndex: 34
     virtual ::Container const* getContainer() const /*override*/;
 
     // vIndex: 1
@@ -96,13 +96,13 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual void onMove() /*override*/;
 
     // vIndex: 2
@@ -134,7 +134,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCNAPI void $setItem(int slot, ::ItemStack const& item);
+    MCNAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCNAPI ::std::string $getName() const;
 

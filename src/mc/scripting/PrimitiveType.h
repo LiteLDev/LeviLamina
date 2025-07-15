@@ -11,6 +11,7 @@ enum class PrimitiveType : int {
     LineList    = 3,
     Disc        = 4,
     AxialSphere = 5,
+    Arrow       = 6,
 };
 
 }

@@ -18,7 +18,6 @@ class IRealmEventLogger;
 class ItemEnchants;
 class ItemInstance;
 class ItemStack;
-class LevelStorage;
 class Player;
 class RealmsStoriesData;
 class Vec3;
@@ -39,10 +38,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RealmsStoriesGameplayEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 43
@@ -51,7 +46,7 @@ public:
     // vIndex: 32
     virtual ::EventResult onEvent(::ActorKilledEvent const& actorKilledEvent) /*override*/;
 
-    // vIndex: 66
+    // vIndex: 68
     virtual ::EventResult onEvent(::PlayerUseNameTagEvent const& playerUseNameTagEvent) /*override*/;
 
     // vIndex: 16
@@ -93,11 +88,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RealmsStoriesGameplayEventListener(
-        ::LevelStorage&                        levelStorage,
-        ::std::unique_ptr<::IRealmEventLogger> realmEventLogger
-    );
-
     MCNAPI void _checkForBiomeRealmEvents(::Player const& player);
 
     MCNAPI void _checkForStructureRealmEvents(::Player const& player);
@@ -125,12 +115,6 @@ public:
     MCNAPI static ::std::set<::std::string> _getXuidsInKillProximity(::Actor const& killedActor, float xz, float y);
 
     MCNAPI static ::std::string _playerXuidsToString(::std::set<::std::string> const& xuids);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::LevelStorage& levelStorage, ::std::unique_ptr<::IRealmEventLogger> realmEventLogger);
     // NOLINTEND
 
 public:

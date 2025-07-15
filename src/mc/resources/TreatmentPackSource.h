@@ -5,15 +5,12 @@
 // auto generated inclusion list
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/resources/PackSource.h"
 
 // auto generated forward declare list
 // clang-format off
-class IContentKeyProvider;
-class IPackManifestFactory;
-class Pack;
-class PackSourceReport;
+struct PackSourceLoadOptions;
+struct PackSourceLoadResult;
 // clang-format on
 
 class TreatmentPackSource : public ::PackSource {
@@ -23,7 +20,6 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnkca5dea;
     ::ll::UntypedStorage<8, 32> mUnk34c181;
     ::ll::UntypedStorage<1, 1>  mUnk413230;
-    ::ll::UntypedStorage<8, 24> mUnk3a09b0;
     // NOLINTEND
 
 public:
@@ -38,21 +34,14 @@ public:
     // vIndex: 0
     virtual ~TreatmentPackSource() /*override*/ = default;
 
-    // vIndex: 1
-    virtual void forEachPackConst(::std::function<void(::Pack const&)>) const /*override*/;
-
-    // vIndex: 2
-    virtual void forEachPack(::std::function<void(::Pack&)>) /*override*/;
-
     // vIndex: 3
     virtual ::PackOrigin getPackOrigin() const /*override*/;
 
     // vIndex: 4
     virtual ::PackType getPackType() const /*override*/;
 
-    // vIndex: 5
-    virtual ::PackSourceReport
-    load(::IPackManifestFactory&, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&) /*override*/;
+    // vIndex: 6
+    virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&&) /*override*/;
     // NOLINTEND
 
 public:

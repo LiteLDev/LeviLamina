@@ -55,13 +55,13 @@ public:
 
     // vIndex: 4
     virtual ::HitResult clip(
-        ::Block const&                                     block,
-        ::BlockSource const&                               region,
-        ::BlockPos const&                                  pos,
-        ::Vec3 const&                                      A,
-        ::Vec3 const&                                      B,
-        ::ShapeType                                        shapeType,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
+        ::Block const&       block,
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::Vec3 const&        A,
+        ::Vec3 const&        B,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     // vIndex: 8
@@ -94,10 +94,10 @@ public:
     // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 136
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 139
     virtual int getExtraRenderLayers() const /*override*/;
 
     // vIndex: 86
@@ -107,7 +107,7 @@ public:
     // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 142
+    // vIndex: 141
     virtual ::Brightness getLight(::Block const& block) const /*override*/;
 
     // vIndex: 125
@@ -189,6 +189,16 @@ public:
         ::AABB const*                                      intersectTestBox,
         ::std::vector<::AABB>&                             inoutBoxes,
         ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const;
+
+    MCFOLD ::HitResult $clip(
+        ::Block const&       block,
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::Vec3 const&        A,
+        ::Vec3 const&        B,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
     MCAPI void $addAABBs(

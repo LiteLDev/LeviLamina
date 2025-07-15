@@ -64,9 +64,9 @@ public:
     // NOLINTBEGIN
     MCNAPI CallbackListReceivers();
 
-    MCNAPI void Foreach(::rtc::FunctionView<void(::webrtc::UntypedFunction&)>);
+    MCNAPI void Foreach(::rtc::FunctionView<void(::webrtc::UntypedFunction&)> fv);
 
-    MCNAPI void RemoveReceivers(void const*);
+    MCNAPI void RemoveReceivers(void const* removal_tag);
 
     MCNAPI ~CallbackListReceivers();
     // NOLINTEND

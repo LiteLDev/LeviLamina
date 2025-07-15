@@ -79,7 +79,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1>    mUnk21a88e;
     ::ll::UntypedStorage<8, 8>    mUnka4780b;
-    ::ll::UntypedStorage<8, 6912> mUnka99eed;
+    ::ll::UntypedStorage<8, 7056> mUnka99eed;
     ::ll::UntypedStorage<8, 144>  mUnk3d7cec;
     ::ll::UntypedStorage<8, 24>   mUnk99b67a;
     ::ll::UntypedStorage<8, 8>    mUnk880742;
@@ -117,10 +117,6 @@ public:
     MCNAPI void _bindGlobals(::Scripting::GlobalBinding const& global);
 
     MCNAPI void _bindModules(::std::vector<::Scripting::ModuleBinding> const& modules);
-
-    MCNAPI void _bindPrint(::JSContext* ctx);
-
-    MCNAPI ::JSModuleDef* _evalScriptAsModule(::std::string const& moduleName, ::std::string const& moduleScript);
 
     MCNAPI void _resolvePromise(::JSValue jsResolutionFunc, ::entt::meta_any& arg);
 
@@ -187,12 +183,6 @@ public:
         ::std::string const&                className
     );
 
-    MCNAPI static void _createGlobalEnum(
-        ::JSContext*                           ctx,
-        ::Scripting::QuickJS::ContextUserData& contextData,
-        ::Scripting::EnumBinding const&        enumBinding
-    );
-
     MCNAPI static void _createGlobalFunction(::JSContext* ctx, ::Scripting::FunctionBinding const& functionBinding);
 
     MCNAPI static void _createGlobalObject(
@@ -207,13 +197,6 @@ public:
         ::Scripting::QuickJS::ContextUserData& contextData,
         ::JSValue                              jsValue,
         ::Scripting::IteratorBinding&          iteratorBinding
-    );
-
-    MCNAPI static void _createModuleEnum(
-        ::JSContext*                           ctx,
-        ::JSModuleDef*                         jsModuleDef,
-        ::Scripting::QuickJS::ContextUserData& contextData,
-        ::Scripting::EnumBinding const&        enumBinding
     );
 
     MCNAPI static void _createModuleFunction(

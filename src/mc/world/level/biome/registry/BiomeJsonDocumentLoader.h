@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BedrockLoadContext;
 namespace Core { class Path; }
 namespace SharedTypes::v1_20_60 { struct BiomeJsonDocument; }
 namespace cereal { struct ReflectionCtx; }
@@ -18,7 +19,8 @@ MCNAPI ::std::unique_ptr<::SharedTypes::v1_20_60::BiomeJsonDocument> loadBiomeJs
         ::rapidjson::UTF8<char>,
         ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
         ::rapidjson::CrtAllocator> const& rapidJsonDocument,
-    ::Core::Path const&                   biomePath
+    ::Core::Path const&                   biomePath,
+    ::BedrockLoadContext&                 loadContext
 );
 // NOLINTEND
 

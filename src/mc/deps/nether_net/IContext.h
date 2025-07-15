@@ -10,7 +10,7 @@
 // clang-format off
 namespace NetherNet { class LanThreadManager; }
 namespace NetherNet { class RtcThreadManager; }
-namespace NetherNet { struct NetherNetTransportGlobalConfiguration; }
+namespace NetherNet { struct GlobalConfiguration; }
 // clang-format on
 
 namespace NetherNet {
@@ -35,7 +35,7 @@ public:
     virtual ::NetherNet::LanThreadManager& getLanThread() = 0;
 
     // vIndex: 5
-    virtual ::NetherNet::NetherNetTransportGlobalConfiguration const& getGlobalConfig() const = 0;
+    virtual ::NetherNet::GlobalConfiguration const& getGlobalConfig() const = 0;
 
     // vIndex: 6
     virtual void _logMessage(::NetherNet::LogSeverity, char const*, char*) const = 0;

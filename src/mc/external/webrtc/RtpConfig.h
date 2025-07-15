@@ -112,7 +112,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<uint> GetRtxSsrcAssociatedWithMediaSsrc(uint) const;
+    MCNAPI ::std::optional<uint> GetRtxSsrcAssociatedWithMediaSsrc(uint media_ssrc) const;
 
     MCNAPI RtpConfig(::webrtc::RtpConfig const&);
 

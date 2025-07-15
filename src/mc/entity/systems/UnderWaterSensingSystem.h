@@ -39,6 +39,7 @@ struct PlayerComponent;
 struct RenderRotationComponent;
 struct StandAnimationComponent;
 struct StateVectorComponent;
+struct TickingSystemWithInfo;
 struct UpdateWaterStateRequestComponent;
 struct VanillaOffsetComponent;
 struct VehicleComponent;
@@ -144,6 +145,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static ::TickingSystemWithInfo createSystem();
+
     MCNAPI static void doUnderWaterSensing(
         ::StrictEntityContext const&                                                          entity,
         ::StateVectorComponent const&                                                         stateVectorComponent,

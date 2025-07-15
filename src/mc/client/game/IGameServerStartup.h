@@ -10,7 +10,7 @@
 // clang-format off
 class ContentIdentity;
 class LevelSettings;
-struct LevelSummary;
+class TaskGroup;
 // clang-format on
 
 class IGameServerStartup {
@@ -24,10 +24,6 @@ public:
     virtual bool canStartLocalServer() const = 0;
 
     // vIndex: 2
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-    startLocalServerAsyncFromSummary(::LevelSummary const&) = 0;
-
-    // vIndex: 3
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> startLocalServerAsync(
         ::std::string const&,
         ::std::string const&,
@@ -36,17 +32,11 @@ public:
         ::StartIntent
     ) = 0;
 
-    // vIndex: 4
-    virtual bool startLocalServerBlocking(
-        ::std::string const&,
-        ::std::string const&,
-        ::ContentIdentity const&,
-        ::LevelSettings const&,
-        ::StartIntent
-    ) = 0;
-
-    // vIndex: 5
+    // vIndex: 3
     virtual bool isHostingLocalDedicatedServer() const = 0;
+
+    // vIndex: 4
+    virtual ::TaskGroup& _getServerInitTaskGroup() = 0;
     // NOLINTEND
 
 public:

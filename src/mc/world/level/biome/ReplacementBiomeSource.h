@@ -64,6 +64,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnk659304;
     ::ll::UntypedStorage<8, 64> mUnkf3598e;
+    ::ll::UntypedStorage<8, 40> mUnk885cf9;
+    ::ll::UntypedStorage<8, 40> mUnkb07982;
     ::ll::UntypedStorage<8, 24> mUnk908bc6;
     // NOLINTEND
 
@@ -100,10 +102,10 @@ public:
     virtual ::Biome const* getBiome(int blockX, int blockY, int blockZ) const /*override*/;
 
     // vIndex: 8
-    virtual bool has(uint64 id) const /*override*/;
+    virtual bool hasBiomeById(ushort id) const /*override*/;
 
     // vIndex: 9
-    virtual bool hasByHashId(uint64 id) const /*override*/;
+    virtual bool hasBiomeByNameHash(uint64 hash) const /*override*/;
 
     // vIndex: 10
     virtual ::BiomeSourceType const getType() const /*override*/;
@@ -120,6 +122,8 @@ public:
         ::std::vector<::BiomeReplacement> const&  biomeReplacements,
         ::std::unique_ptr<::BiomeSource>          wrappedBiomeSource
     );
+
+    MCNAPI bool fullyReplacesBiomeByNameHash(uint64 hash) const;
 
     MCNAPI ::Biome const* tryReplace(::Biome const* targetBiome, ::BlockPos const& position) const;
     // NOLINTEND
@@ -158,9 +162,9 @@ public:
 
     MCNAPI ::Biome const* $getBiome(int blockX, int blockY, int blockZ) const;
 
-    MCNAPI bool $has(uint64 id) const;
+    MCNAPI bool $hasBiomeById(ushort id) const;
 
-    MCNAPI bool $hasByHashId(uint64 id) const;
+    MCNAPI bool $hasBiomeByNameHash(uint64 hash) const;
 
     MCNAPI ::BiomeSourceType const $getType() const;
     // NOLINTEND

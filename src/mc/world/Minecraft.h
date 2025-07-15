@@ -40,7 +40,6 @@ class ResourcePackManager;
 class Scheduler;
 class ServerMetrics;
 class ServerNetworkHandler;
-class ServerNetworkSystem;
 class StructureManager;
 class TextFilteringProcessor;
 class Timer;
@@ -158,8 +157,6 @@ public:
     MCAPI ::Level* getLevel() const;
 
     MCAPI ::Bedrock::NonOwnerPointer<::ServerNetworkHandler> getServerNetworkHandler();
-
-    MCAPI ::ServerNetworkSystem& getServerNetworkSystem();
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::StructureManager> getStructureManager();
 

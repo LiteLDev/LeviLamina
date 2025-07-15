@@ -13,18 +13,18 @@ namespace cricket { struct RidDescription; }
 
 namespace webrtc {
 
-struct SimulcastSdpSerializer {
+class SimulcastSdpSerializer {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::webrtc::RTCErrorOr<::cricket::RidDescription> DeserializeRidDescription(::std::string_view) const;
+    MCNAPI ::webrtc::RTCErrorOr<::cricket::RidDescription> DeserializeRidDescription(::std::string_view string) const;
 
     MCNAPI ::webrtc::RTCErrorOr<::cricket::SimulcastDescription>
-        DeserializeSimulcastDescription(::std::string_view) const;
+    DeserializeSimulcastDescription(::std::string_view string) const;
 
-    MCNAPI ::std::string SerializeRidDescription(::cricket::RidDescription const&) const;
+    MCNAPI ::std::string SerializeRidDescription(::cricket::RidDescription const& rid_description) const;
 
-    MCNAPI ::std::string SerializeSimulcastDescription(::cricket::SimulcastDescription const&) const;
+    MCNAPI ::std::string SerializeSimulcastDescription(::cricket::SimulcastDescription const& simulcast) const;
     // NOLINTEND
 };
 

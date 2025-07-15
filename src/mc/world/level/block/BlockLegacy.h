@@ -15,6 +15,7 @@
 #include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/optional_ref.h"
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/resources/BaseGameVersion.h"
 #include "mc/util/IntRange.h"
 #include "mc/world/Direction.h"
@@ -49,9 +50,7 @@ class BlockState;
 class BlockStateGroup;
 class BlockStateInstance;
 class Container;
-class CopperBehavior;
 class DefinitionEvent;
-class DefinitionTrigger;
 class EntityContext;
 class Experiments;
 class GetCollisionShapeInterface;
@@ -64,10 +63,8 @@ class ItemStack;
 class Material;
 class MobSpawnerData;
 class Player;
-class Random;
 class Randomize;
 class RenderParams;
-class ScriptBlockCustomComponentsFinalizer;
 class SemVersion;
 class SpawnConditions;
 class Vec3;
@@ -76,6 +73,7 @@ struct BlockAnimateTickData;
 struct BlockComponentDescription;
 struct BlockGraphicsModeChangeContext;
 struct CommandName;
+struct CopperBehavior;
 struct ResourceDrops;
 struct ResourceDropsContext;
 struct UpdateEntityAfterFallOnInterface;
@@ -413,7 +411,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                           mIsDoor;
     ::ll::TypedStorage<1, 1, bool>                           mIsOpaqueFullBlock;
     ::ll::TypedStorage<4, 4, float>                          mTranslucency;
-    ::ll::TypedStorage<1, 1, bool>                           mShouldRandomTick;
     ::ll::TypedStorage<1, 1, bool>                           mShouldRandomTickExtraLayer;
     ::ll::TypedStorage<1, 1, bool>                           mIsMobPiece;
     ::ll::TypedStorage<1, 1, bool>                           mCanBeExtraBlock;
@@ -480,13 +477,13 @@ public:
 
     // vIndex: 4
     virtual ::HitResult clip(
-        ::Block const&                                     block,
-        ::BlockSource const&                               region,
-        ::BlockPos const&                                  pos,
-        ::Vec3 const&                                      A,
-        ::Vec3 const&                                      B,
-        ::ShapeType                                        shapeType,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
+        ::Block const&,
+        ::BlockSource const&,
+        ::BlockPos const&,
+        ::Vec3 const&,
+        ::Vec3 const&,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
     // vIndex: 5
@@ -943,39 +940,36 @@ public:
     virtual bool shouldTickOnSetBlock() const;
 
     // vIndex: 135
-    virtual void randomTick(::BlockSource&, ::BlockPos const&, ::Random&) const;
-
-    // vIndex: 136
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 137
+    // vIndex: 136
     virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 139
+    // vIndex: 138
     virtual ::BlockRenderLayer getRenderLayer(::Block const& block, ::BlockSource&, ::BlockPos const& pos) const;
 
-    // vIndex: 140
+    // vIndex: 139
     virtual int getExtraRenderLayers() const;
 
-    // vIndex: 141
+    // vIndex: 140
     virtual ::HashedString const& getCullingLayer() const;
 
-    // vIndex: 142
+    // vIndex: 141
     virtual ::Brightness getLight(::Block const&) const;
 
-    // vIndex: 143
+    // vIndex: 142
     virtual ::Brightness getEmissiveBrightness(::Block const&) const;
 
-    // vIndex: 144
+    // vIndex: 143
     virtual ::mce::Color getMapColor(::BlockSource&, ::BlockPos const&, ::Block const&) const;
 
-    // vIndex: 145
+    // vIndex: 144
     virtual void _onHitByActivatingAttack(::BlockSource&, ::BlockPos const&, ::Actor*) const;
 
-    // vIndex: 146
+    // vIndex: 145
     virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor&) const;
     // NOLINTEND
 
@@ -986,12 +980,6 @@ public:
 
     MCAPI void _executeEvent(
         ::std::string const&                                                  name,
-        ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
-        ::RenderParams&                                                       params
-    ) const;
-
-    MCAPI void _forceExecuteTrigger(
-        ::DefinitionTrigger const&                                            trigger,
         ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
         ::RenderParams&                                                       params
     ) const;
@@ -1020,13 +1008,7 @@ public:
 
     MCAPI void finalizeBlockComponentStorage();
 
-    MCAPI void finalizeScriptCustomComponents(::ScriptBlockCustomComponentsFinalizer& finalizer);
-
-    MCAPI void forEachBlockPermutation(::std::function<bool(::Block const&)> callback) const;
-
-    MCAPI bool forEachBlockPermutationMutable(::std::function<bool(::Block&)> callback);
-
-    MCAPI void forEachBlockStateInstance(::std::function<bool(::BlockStateInstance const&)> callback) const;
+    MCAPI void forEachBlockPermutation(::brstd::function_ref<bool(::Block const&)> callback) const;
 
     MCAPI short getBlockItemId() const;
 
@@ -1168,16 +1150,6 @@ public:
 
     MCFOLD bool
     $hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const;
-
-    MCAPI ::HitResult $clip(
-        ::Block const&                                     block,
-        ::BlockSource const&                               region,
-        ::BlockPos const&                                  pos,
-        ::Vec3 const&                                      A,
-        ::Vec3 const&                                      B,
-        ::ShapeType                                        shapeType,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const;
 
     MCAPI ::AABB $getCollisionShape(
         ::Block const& block,
@@ -1499,8 +1471,6 @@ public:
     MCFOLD void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
     MCFOLD bool $shouldTickOnSetBlock() const;
-
-    MCFOLD void $randomTick(::BlockSource&, ::BlockPos const&, ::Random&) const;
 
     MCFOLD bool $isInteractiveBlock() const;
 

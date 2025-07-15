@@ -18,14 +18,13 @@ public:
 
 public:
     // prevent constructor by default
+    Member& operator=(Member const&);
     Member(Member const&);
     Member();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::cereal::internal::Member& operator=(::cereal::internal::Member const&);
-
     MCNAPI ~Member();
     // NOLINTEND
 

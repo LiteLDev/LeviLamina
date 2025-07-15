@@ -15,6 +15,7 @@ class NetworkDebugManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // NetworkDebugManager inner types declare
     // clang-format off
+    class NetherNetStats;
     class Tracker;
     // clang-format on
 
@@ -56,12 +57,28 @@ public:
         // NOLINTEND
     };
 
+    class NetherNetStats {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 64> mUnkb551f9;
+        ::ll::UntypedStorage<8, 64> mUnk9eb8b0;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        NetherNetStats& operator=(NetherNetStats const&);
+        NetherNetStats(NetherNetStats const&);
+        NetherNetStats();
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 1088> mUnk448985;
     ::ll::UntypedStorage<4, 4>    mUnkddd6be;
     ::ll::UntypedStorage<8, 16>   mUnk931b60;
+    ::ll::UntypedStorage<8, 8>    mUnkb1feb2;
     // NOLINTEND
 
 public:

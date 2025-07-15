@@ -57,9 +57,13 @@ public:
 
     MCNAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
 
+    MCNAPI ::ItemStack const& getSelectedItem() const;
+
     MCNAPI void init(::std::weak_ptr<::HudContainerManagerModel> hud);
 
     MCNAPI bool removeResource(int type);
+
+    MCNAPI bool selectSlot(int slot, ::ContainerID containerId);
     // NOLINTEND
 
 public:

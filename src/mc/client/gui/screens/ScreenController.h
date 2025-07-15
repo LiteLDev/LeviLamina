@@ -48,6 +48,12 @@ public:
         NotUp   = 4,
     };
 
+    enum class SliderChangeType : int {
+        AnyChange    = 0,
+        NotFinalized = 1,
+        Finalized    = 2,
+    };
+
     struct ButtonEventCallbackKeyHasher {};
 
 public:
@@ -74,7 +80,7 @@ public:
     ::ll::UntypedStorage<8, 64>   mUnk3c1132;
     ::ll::UntypedStorage<8, 64>   mUnk20b072;
     ::ll::UntypedStorage<8, 24>   mUnkc3d6bf;
-    ::ll::UntypedStorage<8, 64>   mUnkee4a31;
+    ::ll::UntypedStorage<8, 64>   mUnk392f36;
     ::ll::UntypedStorage<8, 64>   mUnkaa9757;
     ::ll::UntypedStorage<8, 64>   mUnk955ba0;
     ::ll::UntypedStorage<8, 64>   mUnk9c1f6f;

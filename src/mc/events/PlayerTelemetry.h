@@ -51,6 +51,22 @@ public:
 
     MCNAPI void UpdatePlayerLoadout(::Player& player);
 
+    MCNAPI void VehicleEntered(
+        ::std::string const&                            vehicleName,
+        int                                             vehicleVariant,
+        ::std::map<::std::string, ::std::string> const& mobProps,
+        int                                             passengerCount
+    );
+
+    MCNAPI void VehicleExited(
+        ::std::string const&                            vehicleName,
+        int                                             vehicleVariant,
+        ::std::map<::std::string, ::std::string> const& mobProps,
+        int                                             passengerCount,
+        double                                          timeOnMountSeconds,
+        double                                          distanceTravelled
+    );
+
     MCNAPI ~PlayerTelemetry();
     // NOLINTEND
 

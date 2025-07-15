@@ -320,6 +320,8 @@ public:
     MCAPI ::DBStorage::PendingWriteResult
     _readPendingWrite(::std::string const& key, ::DBHelpers::Category category) const;
 
+    MCAPI void _removeCorruptedMark() const;
+
     MCAPI void _scheduleNextAutoCompaction();
 
     MCAPI bool _suspendAndPerformSaveAction(

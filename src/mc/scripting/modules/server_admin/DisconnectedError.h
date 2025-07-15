@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Error.h"
+#include "mc/deps/scripting/runtime/BaseError.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,7 @@ namespace Scripting { struct ErrorBinding; }
 
 namespace ScriptModuleServerAdmin {
 
-struct DisconnectedError : public ::Scripting::Error {
+struct DisconnectedError : public ::Scripting::BaseError {
 public:
     // member variables
     // NOLINTBEGIN

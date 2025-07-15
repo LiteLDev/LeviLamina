@@ -36,7 +36,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 8>   mUnk8037a3;
-    ::ll::UntypedStorage<8, 32>  mUnkc3e488;
+    ::ll::UntypedStorage<8, 32>  mUnk88d8a9;
     ::ll::UntypedStorage<8, 24>  mUnk59ce09;
     ::ll::UntypedStorage<8, 328> mUnk2aa4f8;
     ::ll::UntypedStorage<4, 4>   mUnk8f1205;
@@ -52,8 +52,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI TradeItem();
-
-    MCNAPI TradeItem(::SharedTypes::v1_21_30::TradeItem&&);
 
     MCNAPI ::SharedTypes::v1_21_30::TradeItem& operator=(::SharedTypes::v1_21_30::TradeItem&&);
 
@@ -80,8 +78,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::SharedTypes::v1_21_30::TradeItem&&);
     // NOLINTEND
 
 public:

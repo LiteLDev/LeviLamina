@@ -6,6 +6,7 @@
 #include "mc/external/cricket/MediaType.h"
 #include "mc/external/webrtc/RTCErrorOr.h"
 #include "mc/external/webrtc/RtpReceiverProxyWithInternal.h"
+#include "mc/external/webrtc/RtpSenderBase.h"
 #include "mc/external/webrtc/RtpSenderProxyWithInternal.h"
 #include "mc/external/webrtc/RtpTransceiverProxyWithInternal.h"
 #include "mc/external/webrtc/scoped_refptr.h"
@@ -36,86 +37,121 @@ namespace webrtc { struct RtpSenderInfo; }
 
 namespace webrtc {
 
-class RtpTransmissionManager {
+class RtpTransmissionManager : public ::webrtc::RtpSenderBase::SetStreamsObserver {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk367a7f;
+    ::ll::UntypedStorage<8, 24> mUnka389af;
+    ::ll::UntypedStorage<8, 24> mUnk4d0ce4;
+    ::ll::UntypedStorage<8, 24> mUnkb0ca04;
+    ::ll::UntypedStorage<8, 24> mUnk54449d;
+    ::ll::UntypedStorage<1, 1>  mUnk71129b;
+    ::ll::UntypedStorage<1, 1>  mUnkb54966;
+    ::ll::UntypedStorage<8, 8>  mUnk61d4c0;
+    ::ll::UntypedStorage<8, 8>  mUnk68803e;
+    ::ll::UntypedStorage<8, 8>  mUnk2bc804;
+    ::ll::UntypedStorage<8, 8>  mUnk405916;
+    ::ll::UntypedStorage<8, 64> mUnk80bf6f;
+    ::ll::UntypedStorage<8, 16> mUnk22c438;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
+    RtpTransmissionManager& operator=(RtpTransmissionManager const&);
+    RtpTransmissionManager(RtpTransmissionManager const&);
     RtpTransmissionManager();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 1
+    virtual void OnSetStreams() /*override*/;
+
+    // vIndex: 0
+    virtual ~RtpTransmissionManager() /*override*/ = default;
+    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddAudioTrack(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*);
+    MCNAPI void AddAudioTrack(::webrtc::AudioTrackInterface* track, ::webrtc::MediaStreamInterface* stream);
 
     MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> AddTrack(
-        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface>,
-        ::std::vector<::std::string> const&,
-        ::std::vector<::webrtc::RtpEncodingParameters> const*
+        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track,
+        ::std::vector<::std::string> const&                          stream_ids,
+        ::std::vector<::webrtc::RtpEncodingParameters> const*        init_send_encodings
     );
 
     MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> AddTrackPlanB(
-        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface>,
-        ::std::vector<::std::string> const&,
-        ::std::vector<::webrtc::RtpEncodingParameters> const*
+        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track,
+        ::std::vector<::std::string> const&                          stream_ids,
+        ::std::vector<::webrtc::RtpEncodingParameters> const*        init_send_encodings
     );
 
     MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> AddTrackUnifiedPlan(
-        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface>,
-        ::std::vector<::std::string> const&,
-        ::std::vector<::webrtc::RtpEncodingParameters> const*
+        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track,
+        ::std::vector<::std::string> const&                          stream_ids,
+        ::std::vector<::webrtc::RtpEncodingParameters> const*        init_send_encodings
     );
 
-    MCNAPI void AddVideoTrack(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*);
+    MCNAPI void AddVideoTrack(::webrtc::VideoTrackInterface* track, ::webrtc::MediaStreamInterface* stream);
 
     MCNAPI void Close();
 
     MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>
-        CreateAndAddTransceiver(
-            ::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>>,
-            ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>>
-        );
-
-    MCNAPI void CreateAudioReceiver(::webrtc::MediaStreamInterface*, ::webrtc::RtpSenderInfo const&);
-
-    MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>>
-    CreateReceiver(::cricket::MediaType, ::std::string const&);
-
-    MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>> CreateSender(
-        ::cricket::MediaType,
-        ::std::string const&,
-        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface>,
-        ::std::vector<::std::string> const&,
-        ::std::vector<::webrtc::RtpEncodingParameters> const&
+    CreateAndAddTransceiver(
+        ::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>>     sender,
+        ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>> receiver
     );
 
-    MCNAPI void CreateVideoReceiver(::webrtc::MediaStreamInterface*, ::webrtc::RtpSenderInfo const&);
+    MCNAPI void
+    CreateAudioReceiver(::webrtc::MediaStreamInterface* stream, ::webrtc::RtpSenderInfo const& remote_sender_info);
+
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>>
+    CreateReceiver(::cricket::MediaType media_type, ::std::string const& receiver_id);
+
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>> CreateSender(
+        ::cricket::MediaType                                         media_type,
+        ::std::string const&                                         id,
+        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track,
+        ::std::vector<::std::string> const&                          stream_ids,
+        ::std::vector<::webrtc::RtpEncodingParameters> const&        send_encodings
+    );
+
+    MCNAPI void
+    CreateVideoReceiver(::webrtc::MediaStreamInterface* stream, ::webrtc::RtpSenderInfo const& remote_sender_info);
 
     MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>
     FindFirstTransceiverForAddedTrack(
-        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface>,
-        ::std::vector<::webrtc::RtpEncodingParameters> const*
+        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track,
+        ::std::vector<::webrtc::RtpEncodingParameters> const*        init_send_encodings
     );
 
     MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>>
-    FindReceiverById(::std::string const&) const;
+    FindReceiverById(::std::string const& receiver_id) const;
 
     MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>>
-    FindSenderById(::std::string const&) const;
+    FindSenderById(::std::string const& sender_id) const;
 
     MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>>
-    FindSenderForTrack(::webrtc::MediaStreamTrackInterface*) const;
+    FindSenderForTrack(::webrtc::MediaStreamTrackInterface* track) const;
 
-    MCNAPI ::webrtc::RtpSenderInfo const*
-    FindSenderInfo(::std::vector<::webrtc::RtpSenderInfo> const&, ::std::string const&, ::std::string const&) const;
+    MCNAPI ::webrtc::RtpSenderInfo const* FindSenderInfo(
+        ::std::vector<::webrtc::RtpSenderInfo> const& infos,
+        ::std::string const&                          stream_id,
+        ::std::string const&                          sender_id
+    ) const;
 
     MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>
     GetAudioTransceiver() const;
 
-    MCNAPI ::std::vector<::webrtc::RtpSenderInfo>* GetLocalSenderInfos(::cricket::MediaType);
+    MCNAPI ::std::vector<::webrtc::RtpSenderInfo>* GetLocalSenderInfos(::cricket::MediaType media_type);
 
     MCNAPI ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>>>
     GetReceiversInternal() const;
 
-    MCNAPI ::std::vector<::webrtc::RtpSenderInfo>* GetRemoteSenderInfos(::cricket::MediaType);
+    MCNAPI ::std::vector<::webrtc::RtpSenderInfo>* GetRemoteSenderInfos(::cricket::MediaType media_type);
 
     MCNAPI ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>>>
     GetSendersInternal() const;
@@ -125,32 +161,38 @@ public:
 
     MCNAPI ::webrtc::PeerConnectionObserver* Observer() const;
 
-    MCNAPI void OnLocalSenderAdded(::webrtc::RtpSenderInfo const&, ::cricket::MediaType);
+    MCNAPI void OnLocalSenderAdded(::webrtc::RtpSenderInfo const& sender_info, ::cricket::MediaType media_type);
 
-    MCNAPI void OnLocalSenderRemoved(::webrtc::RtpSenderInfo const&, ::cricket::MediaType);
+    MCNAPI void OnLocalSenderRemoved(::webrtc::RtpSenderInfo const& sender_info, ::cricket::MediaType media_type);
 
     MCNAPI void OnNegotiationNeeded();
 
-    MCNAPI void
-    OnRemoteSenderAdded(::webrtc::RtpSenderInfo const&, ::webrtc::MediaStreamInterface*, ::cricket::MediaType);
+    MCNAPI void OnRemoteSenderAdded(
+        ::webrtc::RtpSenderInfo const&  sender_info,
+        ::webrtc::MediaStreamInterface* stream,
+        ::cricket::MediaType            media_type
+    );
 
-    MCNAPI void
-    OnRemoteSenderRemoved(::webrtc::RtpSenderInfo const&, ::webrtc::MediaStreamInterface*, ::cricket::MediaType);
+    MCNAPI void OnRemoteSenderRemoved(
+        ::webrtc::RtpSenderInfo const&  sender_info,
+        ::webrtc::MediaStreamInterface* stream,
+        ::cricket::MediaType            media_type
+    );
 
     MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface>
-    RemoveAndStopReceiver(::webrtc::RtpSenderInfo const&);
+    RemoveAndStopReceiver(::webrtc::RtpSenderInfo const& remote_sender_info);
 
-    MCNAPI void RemoveAudioTrack(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*);
+    MCNAPI void RemoveAudioTrack(::webrtc::AudioTrackInterface* track, ::webrtc::MediaStreamInterface* stream);
 
-    MCNAPI void RemoveVideoTrack(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*);
+    MCNAPI void RemoveVideoTrack(::webrtc::VideoTrackInterface* track, ::webrtc::MediaStreamInterface* stream);
 
     MCNAPI RtpTransmissionManager(
-        bool,
-        ::webrtc::ConnectionContext*,
-        ::webrtc::UsagePattern*,
-        ::webrtc::PeerConnectionObserver*,
-        ::webrtc::LegacyStatsCollectorInterface*,
-        ::std::function<void()>
+        bool                                     is_unified_plan,
+        ::webrtc::ConnectionContext*             context,
+        ::webrtc::UsagePattern*                  usage_pattern,
+        ::webrtc::PeerConnectionObserver*        observer,
+        ::webrtc::LegacyStatsCollectorInterface* legacy_stats,
+        ::std::function<void()>                  on_negotiation_needed
     );
 
     MCNAPI ::cricket::MediaEngineInterface* media_engine() const;
@@ -168,13 +210,19 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        bool,
-        ::webrtc::ConnectionContext*,
-        ::webrtc::UsagePattern*,
-        ::webrtc::PeerConnectionObserver*,
-        ::webrtc::LegacyStatsCollectorInterface*,
-        ::std::function<void()>
+        bool                                     is_unified_plan,
+        ::webrtc::ConnectionContext*             context,
+        ::webrtc::UsagePattern*                  usage_pattern,
+        ::webrtc::PeerConnectionObserver*        observer,
+        ::webrtc::LegacyStatsCollectorInterface* legacy_stats,
+        ::std::function<void()>                  on_negotiation_needed
     );
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI void $OnSetStreams();
     // NOLINTEND
 
 public:

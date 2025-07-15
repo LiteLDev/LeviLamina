@@ -12,15 +12,28 @@ namespace webrtc { class StreamId; }
 
 namespace webrtc {
 
-struct SctpSidAllocator {
+class SctpSidAllocator {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnke260d1;
+    ::ll::UntypedStorage<1, 1>  mUnkeb1dce;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SctpSidAllocator& operator=(SctpSidAllocator const&);
+    SctpSidAllocator(SctpSidAllocator const&);
+    SctpSidAllocator();
+
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::webrtc::StreamId> AllocateSid(::rtc::SSLRole);
+    MCNAPI ::std::optional<::webrtc::StreamId> AllocateSid(::rtc::SSLRole role);
 
-    MCNAPI void ReleaseSid(::webrtc::StreamId);
+    MCNAPI void ReleaseSid(::webrtc::StreamId sid);
 
-    MCNAPI bool ReserveSid(::webrtc::StreamId);
+    MCNAPI bool ReserveSid(::webrtc::StreamId sid);
 
     MCNAPI ~SctpSidAllocator();
     // NOLINTEND

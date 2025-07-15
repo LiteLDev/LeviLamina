@@ -37,7 +37,7 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 117
@@ -73,7 +73,7 @@ public:
     hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const
         /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual ::ItemInstance const getBaseSeed() const;
 
     // vIndex: 73

@@ -66,6 +66,8 @@ public:
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>>
     getCurrentBrushVolume();
 
+    MCNAPI bool isBrushPaintBusy();
+
     MCNAPI ::Scripting::Result_deprecated<void> setBrushMask(::Editor::ScriptModule::ScriptBlockMaskList const& mask);
 
     MCNAPI void setBrushShape(

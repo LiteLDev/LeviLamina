@@ -197,7 +197,9 @@ public:
     ::ll::TypedStorage<4, 4, float>                                          mCurrentExpCache;
     ::ll::TypedStorage<4, 4, int>                                            mCurrentLevelCache;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>        mLastLevelChangedTimePoint;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>        mLastXPContainerClosedTimePoint;
     ::ll::TypedStorage<1, 1, bool>                                           mPreparedMainChunkSource;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>               mVisibleTouchJoystickLockSubscription;
     // NOLINTEND
 
 public:

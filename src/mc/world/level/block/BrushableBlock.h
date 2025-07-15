@@ -45,16 +45,16 @@ public:
     // vIndex: 124
     virtual ::BlockLegacy& init() /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual void onLand(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const* blockActor) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
     // vIndex: 117

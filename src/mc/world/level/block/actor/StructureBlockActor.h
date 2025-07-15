@@ -17,7 +17,6 @@ class CompoundTag;
 class DataLoadHelper;
 class ILevel;
 class SaveContext;
-namespace mce { class Color; }
 // clang-format on
 
 class StructureBlockActor : public ::BlockActor {
@@ -38,13 +37,13 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 46
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -61,16 +60,6 @@ public:
     MCNAPI void setPowered(::BlockSource& region, ::BlockPos const& pos, bool shouldTrigger, bool redstoneTriggered);
 
     MCNAPI void setStructureData(::StructureEditorData const& data);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::mce::Color const& X_AXIS_COLOR();
-
-    MCNAPI static ::mce::Color const& Y_AXIS_COLOR();
-
-    MCNAPI static ::mce::Color const& Z_AXIS_COLOR();
     // NOLINTEND
 
 public:

@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/external/rtc/VideoSinkInterface.h"
+#include "mc/external/rtc/VideoSourceInterface.h"
+#include "mc/external/webrtc/VideoTrackSource.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +15,7 @@ namespace webrtc { class VideoFrame; }
 
 namespace webrtc {
 
-class VideoRtpTrackSource {
+class VideoRtpTrackSource : public ::webrtc::VideoTrackSource {
 public:
     // VideoRtpTrackSource inner types declare
     // clang-format off
@@ -21,20 +23,73 @@ public:
     // clang-format on
 
     // VideoRtpTrackSource inner types define
-    class Callback {};
+    class Callback {
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        // vIndex: 0
+        virtual ~Callback() = default;
+
+        // vIndex: 1
+        virtual void OnGenerateKeyFrame() = 0;
+
+        // vIndex: 2
+        virtual void OnEncodedSinkEnabled(bool) = 0;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+
+        // NOLINTEND
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>   mUnke99678;
+    ::ll::UntypedStorage<8, 200> mUnk6819ed;
+    ::ll::UntypedStorage<8, 40>  mUnkdd4fc5;
+    ::ll::UntypedStorage<8, 24>  mUnkac4663;
+    ::ll::UntypedStorage<8, 8>   mUnk544369;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
+    VideoRtpTrackSource& operator=(VideoRtpTrackSource const&);
+    VideoRtpTrackSource(VideoRtpTrackSource const&);
     VideoRtpTrackSource();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 13
+    virtual ::rtc::VideoSourceInterface<::webrtc::VideoFrame>* source() /*override*/;
+
+    // vIndex: 8
+    virtual bool SupportsEncodedOutput() const /*override*/;
+
+    // vIndex: 9
+    virtual void GenerateKeyFrame() /*override*/;
+
+    // vIndex: 10
+    virtual void AddEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* sink) /*override*/;
+
+    // vIndex: 11
+    virtual void RemoveEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* sink) /*override*/;
+
+    // vIndex: 0
+    virtual ~VideoRtpTrackSource() /*override*/;
+    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void BroadcastRecordableEncodedFrame(::webrtc::RecordableEncodedFrame const&) const;
+    MCNAPI void BroadcastRecordableEncodedFrame(::webrtc::RecordableEncodedFrame const& frame) const;
 
     MCNAPI void ClearCallback();
 
-    MCNAPI explicit VideoRtpTrackSource(::webrtc::VideoRtpTrackSource::Callback*);
+    MCNAPI explicit VideoRtpTrackSource(::webrtc::VideoRtpTrackSource::Callback* callback);
 
     MCNAPI ::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink();
     // NOLINTEND
@@ -42,7 +97,27 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::VideoRtpTrackSource::Callback*);
+    MCNAPI void* $ctor(::webrtc::VideoRtpTrackSource::Callback* callback);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI ::rtc::VideoSourceInterface<::webrtc::VideoFrame>* $source();
+
+    MCNAPI bool $SupportsEncodedOutput() const;
+
+    MCNAPI void $GenerateKeyFrame();
+
+    MCNAPI void $AddEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* sink);
+
+    MCNAPI void $RemoveEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* sink);
     // NOLINTEND
 
 public:

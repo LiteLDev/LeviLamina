@@ -41,8 +41,14 @@ public:
     // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
+    // vIndex: 2
+    virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
+
     // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
+
+    // vIndex: 8
+    virtual ::std::string const& getPlayerSaveId() const /*override*/;
 
     // vIndex: 7
     virtual void
@@ -77,7 +83,11 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
+    MCNAPI ::Scripting::Result_deprecated<void> $ready();
+
     MCNAPI ::std::string_view $getServiceName() const;
+
+    MCNAPI ::std::string const& $getPlayerSaveId() const;
 
     MCNAPI void $_removePersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType);
 

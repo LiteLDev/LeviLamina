@@ -26,15 +26,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddInternal(::rtc::Thread*);
+    MCNAPI void AddInternal(::rtc::Thread* message_queue);
 
     MCNAPI ::rtc::Thread* CurrentThread();
 
-    MCNAPI void RemoveInternal(::rtc::Thread*);
+    MCNAPI void RemoveInternal(::rtc::Thread* message_queue);
 
-    MCNAPI void SetCurrentThread(::rtc::Thread*);
+    MCNAPI void SetCurrentThread(::rtc::Thread* thread);
 
-    MCNAPI void SetCurrentThreadInternal(::rtc::Thread*);
+    MCNAPI void SetCurrentThreadInternal(::rtc::Thread* thread);
 
     MCNAPI ThreadManager();
 
@@ -46,11 +46,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void Add(::rtc::Thread*);
+    MCNAPI static void Add(::rtc::Thread* message_queue);
 
     MCNAPI static ::rtc::ThreadManager* Instance();
 
-    MCNAPI static void Remove(::rtc::Thread*);
+    MCNAPI static void Remove(::rtc::Thread* message_queue);
     // NOLINTEND
 
 public:

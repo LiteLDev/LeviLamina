@@ -10,6 +10,7 @@
 // clang-format off
 class StrictEntityContext;
 struct ActorIsBeingDestroyedFlagComponent;
+struct ExitFromPassengerFlagComponent;
 struct StopRidingRequestComponent;
 struct TickingSystemWithInfo;
 struct VehicleComponent;
@@ -21,16 +22,23 @@ namespace RemoveAllPassengersSystem {
 MCNAPI ::TickingSystemWithInfo createRideableComponentRemovalSystem();
 
 MCNAPI void removeAllPassengers(
-    ::VehicleComponent const&                                                             vehicleComponent,
-    bool                                                                                  actorIsBeingDestroyed,
-    ::EntityModifier<::ActorIsBeingDestroyedFlagComponent, ::StopRidingRequestComponent>& modifier
+    ::VehicleComponent const& vehicleComponent,
+    bool                      actorIsBeingDestroyed,
+    bool                      exitFromPassenger,
+    ::EntityModifier<
+        ::ActorIsBeingDestroyedFlagComponent,
+        ::ExitFromPassengerFlagComponent,
+        ::StopRidingRequestComponent>& modifier
 );
 
 MCNAPI void tickRemoveAllPassengers(
     ::StrictEntityContext&,
-    ::VehicleComponent const&                                                            vehicleComponent,
-    ::Optional<::ActorIsBeingDestroyedFlagComponent>                                     actorIsBeingDestroyed,
-    ::EntityModifier<::ActorIsBeingDestroyedFlagComponent, ::StopRidingRequestComponent> modifier
+    ::VehicleComponent const&                        vehicleComponent,
+    ::Optional<::ActorIsBeingDestroyedFlagComponent> actorIsBeingDestroyed,
+    ::EntityModifier<
+        ::ActorIsBeingDestroyedFlagComponent,
+        ::ExitFromPassengerFlagComponent,
+        ::StopRidingRequestComponent> modifier
 );
 // NOLINTEND
 

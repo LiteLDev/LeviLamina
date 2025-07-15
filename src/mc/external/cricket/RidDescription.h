@@ -24,7 +24,7 @@ public:
 
     MCNAPI RidDescription(::cricket::RidDescription const&);
 
-    MCNAPI RidDescription(::std::string const&, ::cricket::RidDirection);
+    MCNAPI RidDescription(::std::string const& rid, ::cricket::RidDirection direction);
 
     MCNAPI ::cricket::RidDescription& operator=(::cricket::RidDescription const&);
 
@@ -38,7 +38,7 @@ public:
 
     MCNAPI void* $ctor(::cricket::RidDescription const&);
 
-    MCNAPI void* $ctor(::std::string const&, ::cricket::RidDirection);
+    MCNAPI void* $ctor(::std::string const& rid, ::cricket::RidDirection direction);
     // NOLINTEND
 
 public:

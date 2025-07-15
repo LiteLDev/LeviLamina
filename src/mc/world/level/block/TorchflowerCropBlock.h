@@ -21,7 +21,7 @@ class TorchflowerCropBlock : public ::CropBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 150
+    // vIndex: 149
     virtual ::ItemInstance const getBaseSeed() const /*override*/;
 
     // vIndex: 117
@@ -35,7 +35,7 @@ public:
         ::AABB&                    bufferValue
     ) const /*override*/;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual ::Block const& setGrowth(
         ::BlockSource&    region,
         ::BlockPos const& pos,

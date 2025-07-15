@@ -37,13 +37,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 8
+    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 12
+    // vIndex: 13
     virtual void onPlace(::BlockSource& region) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
     // vIndex: 1
@@ -55,16 +55,16 @@ public:
     // vIndex: 3
     virtual bool saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual ::BlockActor* getCrackEntity(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
-    // vIndex: 27
+    // vIndex: 28
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 46
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0

@@ -57,10 +57,10 @@ public:
     getBiomeArea(::BoundingBox const& area, uint scale, ::GetBiomeOptions const& getBiomeOptions) const /*override*/;
 
     // vIndex: 8
-    virtual bool has(uint64 id) const /*override*/;
+    virtual bool hasBiomeById(ushort id) const /*override*/;
 
     // vIndex: 9
-    virtual bool hasByHashId(uint64 id) const /*override*/;
+    virtual bool hasBiomeByNameHash(uint64 hash) const /*override*/;
 
     // vIndex: 10
     virtual ::BiomeSourceType const getType() const /*override*/;
@@ -87,9 +87,9 @@ public:
     MCAPI ::BiomeArea
     $getBiomeArea(::BoundingBox const& area, uint scale, ::GetBiomeOptions const& getBiomeOptions) const;
 
-    MCAPI bool $has(uint64 id) const;
+    MCAPI bool $hasBiomeById(ushort id) const;
 
-    MCAPI bool $hasByHashId(uint64 id) const;
+    MCAPI bool $hasBiomeByNameHash(uint64 hash) const;
 
     MCFOLD ::BiomeSourceType const $getType() const;
     // NOLINTEND

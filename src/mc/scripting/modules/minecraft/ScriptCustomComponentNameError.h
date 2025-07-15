@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Error.h"
+#include "mc/deps/scripting/runtime/BaseError.h"
 #include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
@@ -16,7 +16,7 @@ namespace Scripting { struct ErrorBinding; }
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptCustomComponentNameError : public ::Scripting::Error {
+struct ScriptCustomComponentNameError : public ::Scripting::BaseError {
 public:
     // ScriptCustomComponentNameError inner types define
     enum class Reason : int {
@@ -40,6 +40,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptCustomComponentNameError(
+        ::HashedString const&                                           componentName,
+        ::ScriptModuleMinecraft::ScriptCustomComponentNameError::Reason reason
+    );
+
     MCNAPI ~ScriptCustomComponentNameError();
     // NOLINTEND
 
@@ -53,6 +58,13 @@ public:
     MCNAPI static ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptCustomComponentNameError, ::Scripting::EngineError>
         validate(::HashedString const& componentName);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(::HashedString const& componentName, ::ScriptModuleMinecraft::ScriptCustomComponentNameError::Reason reason);
     // NOLINTEND
 
 public:

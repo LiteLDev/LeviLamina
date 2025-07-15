@@ -115,6 +115,9 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent::IntermediateStorage const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                    scope
     );
+
+    MCNAPI ::ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent&
+    operator=(::ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent&&);
     // NOLINTEND
 
 public:

@@ -17,11 +17,12 @@ public:
 public:
     // prevent constructor by default
     Version& operator=(Version const&);
-    Version();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI Version();
+
     MCNAPI Version(::Scripting::Version const&);
 
     MCNAPI Version(ushort major_, ushort minor_, ushort patch_, ::std::string preRelease_);
@@ -31,6 +32,8 @@ public:
     MCNAPI ::Scripting::Version& operator=(::Scripting::Version&&);
 
     MCNAPI bool operator==(::Scripting::Version const& rhs) const;
+
+    MCNAPI bool operator>(::Scripting::Version const& rhs) const;
 
     MCNAPI bool operator>=(::Scripting::Version const& rhs) const;
 
@@ -44,6 +47,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
     MCNAPI void* $ctor(::Scripting::Version const&);
 
     MCNAPI void* $ctor(ushort major_, ushort minor_, ushort patch_, ::std::string preRelease_);

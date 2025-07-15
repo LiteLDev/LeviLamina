@@ -12,7 +12,21 @@ namespace webrtc {
 
 struct RobustThroughputEstimatorSettings {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk17ddd9;
+    ::ll::UntypedStorage<4, 4> mUnk1ab299;
+    ::ll::UntypedStorage<4, 4> mUnk1ed21e;
+    ::ll::UntypedStorage<8, 8> mUnkc83756;
+    ::ll::UntypedStorage<8, 8> mUnkca1bbe;
+    ::ll::UntypedStorage<4, 4> mUnk5bab0a;
+    ::ll::UntypedStorage<8, 8> mUnkb98c4d;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    RobustThroughputEstimatorSettings& operator=(RobustThroughputEstimatorSettings const&);
+    RobustThroughputEstimatorSettings(RobustThroughputEstimatorSettings const&);
     RobustThroughputEstimatorSettings();
 
 public:
@@ -20,7 +34,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::webrtc::StructParametersParser> Parser();
 
-    MCNAPI explicit RobustThroughputEstimatorSettings(::webrtc::FieldTrialsView const*);
+    MCNAPI explicit RobustThroughputEstimatorSettings(::webrtc::FieldTrialsView const* key_value_config);
     // NOLINTEND
 
 public:
@@ -32,7 +46,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const* key_value_config);
     // NOLINTEND
 };
 

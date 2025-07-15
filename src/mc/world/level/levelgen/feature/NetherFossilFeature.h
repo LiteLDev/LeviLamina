@@ -16,7 +16,7 @@ class NetherFossilFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkd22c91;
+    ::ll::UntypedStorage<8, 24> mUnk21717a;
     ::ll::UntypedStorage<1, 1>  mUnkaf6255;
     // NOLINTEND
 

@@ -57,10 +57,6 @@ public:
 
     MCNAPI ::SharedTypes::v1_21_70::CameraPreset& operator=(::SharedTypes::v1_21_70::CameraPreset const&);
 
-    MCNAPI void setHorizontalRotationLimit(::std::array<float, 2> const& arr);
-
-    MCNAPI void setVerticalRotationLimit(::std::array<float, 2> const& arr);
-
     MCNAPI ~CameraPreset();
     // NOLINTEND
 

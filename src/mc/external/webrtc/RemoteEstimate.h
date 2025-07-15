@@ -25,7 +25,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RemoteEstimate() /*override*/ = default;
+    virtual ~RemoteEstimate() /*override*/;
     // NOLINTEND
 
 public:
@@ -33,13 +33,19 @@ public:
     // NOLINTBEGIN
     MCNAPI bool ParseData();
 
-    MCNAPI explicit RemoteEstimate(::webrtc::rtcp::App&&);
+    MCNAPI explicit RemoteEstimate(::webrtc::rtcp::App&& app);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::rtcp::App&&);
+    MCNAPI void* $ctor(::webrtc::rtcp::App&& app);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

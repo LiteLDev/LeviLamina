@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/options/EducationServicesEnvironment.h"
+#include "mc/common/SubClientId.h"
 #include "mc/deps/core/debug/log/LogLevel.h"
 #include "mc/deps/core/file/file_system/FileType.h"
 #include "mc/deps/core/sem_ver/SemVersionBase.h"
@@ -67,7 +68,6 @@ class ItemInstance;
 class LevelData;
 class ListTag;
 class RecipeIngredient;
-class RedstoneTorchCapacitor;
 class SemVersionConstant;
 class SubChunkBrightnessStorage;
 class ThirdPartyInfo;
@@ -75,7 +75,6 @@ class WorkerPool;
 struct AccessorTypeEnumHasher;
 struct ActorDefinitionIdentifier;
 struct ActorFactoryData;
-struct ActorMapping;
 struct AllWorkerConfigurations;
 struct AssertHandlerContext;
 struct BlockLayer;
@@ -103,6 +102,7 @@ namespace Json { class Value; }
 namespace RakNet { class RakPeerInterface; }
 namespace RakNet { struct RakPeerConfiguration; }
 namespace cereal { struct ReflectionCtx; }
+namespace mce { class UUID; }
 // clang-format on
 
 // functions
@@ -111,13 +111,13 @@ MCAPI void BedrockLogOut(uint, char const*, ...);
 
 MCAPI ::CreativeItemCategory CreativeItemCategoryFromString(::std::string const& str);
 
-MCAPI void* DefaultMemAllocFunction(uint64, uint);
+MCFOLD void* DefaultMemAllocFunction(uint64 size, uint memoryType);
 
-MCAPI void DefaultMemFreeFunction(void*, uint);
+MCFOLD void DefaultMemFreeFunction(void* pointer, uint memoryType);
 
 MCFOLD void DefaultOutOfMemoryHandler(char const* file, long line);
 
-MCAPI bool DoesMockCallMatch(::HC_CALL const*, ::HC_CALL const*);
+MCAPI bool DoesMockCallMatch(::HC_CALL const* mockCall, ::HC_CALL const* originalCall);
 
 MCAPI ::HashedString const& EntityCanonicalName(::ActorType entityType);
 
@@ -137,25 +137,24 @@ MCAPI ::std::unordered_map<::std::string, ::ActorFactoryData>& GetActorDataRegis
 
 MCAPI double GetEngagementMetricsTimeSinceAppStart_DEPRECATED();
 
+MCAPI void JSONSchemaBindings(::cereal::ReflectionCtx& ctx);
+
 MCAPI ::std::optional<::LogLevel> LogLevelFromString(::std::string const& str);
 
 MCFOLD bool MOCK_ASSERT_HANDLER(::AssertHandlerContext const& context);
 
 MCAPI bool MOCK_ASSERT_HANDLER_NO_THROW(::AssertHandlerContext const& context);
 
-MCAPI bool Mock_Internal_HCHttpCallPerformAsync(::HC_CALL*);
+MCAPI bool Mock_Internal_HCHttpCallPerformAsync(::HC_CALL* originalCall);
 
-MCAPI long Mock_Internal_ReadRequestBodyIntoMemory(::HC_CALL*, ::std::vector<uchar, ::http_stl_allocator<uchar>>*);
+MCAPI long Mock_Internal_ReadRequestBodyIntoMemory(
+    ::HC_CALL*                                         originalCall,
+    ::std::vector<uchar, ::http_stl_allocator<uchar>>* bodyBytes
+);
 
 MCAPI ::std::optional<::NetherNet::LogSeverity> NetherNetLogSeverityFromString(::std::string const& str);
 
 MCAPI void PlatformBedrockLogOut(uint _priority, char const* buf, uint64 nullTerminatorPos);
-
-MCAPI void PushCircularReference(
-    ::std::unordered_map<::BlockPos, ::RedstoneTorchCapacitor*>&                      relatedTorches,
-    ::BlockPos const&                                                                 pos,
-    ::std::queue<::RedstoneTorchCapacitor*, ::std::deque<::RedstoneTorchCapacitor*>>& list
-);
 
 MCAPI ::std::string StringFromCreativeItemCategory(::CreativeItemCategory category);
 
@@ -190,8 +189,6 @@ MCAPI uchar _facingToDirection(uchar facing);
 MCAPI uint _facingToVineDirection(uchar facing);
 
 MCAPI ::ScatterParamsMolangVariableIndices& _getScatterParamsMolangVariableIndices();
-
-MCAPI bool _hasAirBuffer(::Json::Value const& blockLayers);
 
 MCAPI ::Block const* _loadLayerBlock(::Json::Value const& layer);
 
@@ -266,23 +263,26 @@ MCAPI ::ActorCategory entityCategoryFromString(::std::string const& str);
 
 MCAPI ::srtp_err_status_t external_crypto_init();
 
-MCAPI ::srtp_err_status_t external_hmac_alloc(::srtp_auth_t**, int, int);
+MCAPI ::srtp_err_status_t external_hmac_alloc(::srtp_auth_t** a, int key_len, int out_len);
 
-MCAPI ::srtp_err_status_t external_hmac_compute(void*, uchar const*, int, int, uchar*);
+MCAPI ::srtp_err_status_t external_hmac_compute(void*, uchar const*, int, int tag_len, uchar* result);
 
-MCAPI ::srtp_err_status_t external_hmac_dealloc(::srtp_auth_t*);
+MCAPI ::srtp_err_status_t external_hmac_dealloc(::srtp_auth_t* a);
 
-MCAPI ::srtp_err_status_t external_hmac_init(void*, uchar const*, int);
+MCAPI ::srtp_err_status_t external_hmac_init(void* state, uchar const* key, int key_len);
 
-MCAPI ::srtp_err_status_t external_hmac_start(void*);
+MCFOLD ::srtp_err_status_t external_hmac_start(void*);
 
-MCAPI ::srtp_err_status_t external_hmac_update(void*, uchar const*, int);
+MCFOLD ::srtp_err_status_t external_hmac_update(void*, uchar const*, int);
 
 MCAPI int fclose(::Core::File& file);
 
 MCAPI ::std::optional<::FlatWorldPresetID> flatWorldPresetIDFromString(::std::string const& str);
 
-MCAPI void forEachEntityType(::std::function<bool(::ActorType, ::std::string const&)> callback);
+MCAPI void forEachEntityType(
+    ::std::function<bool(::ActorType, ::std::string const&)> callback,
+    ::ActorTypeNamespaceRules                                namespaceRule
+);
 
 MCAPI uint64 fread(void* buffer, uint64 size, uint64 count, ::Core::File& file);
 
@@ -291,8 +291,6 @@ MCAPI int fseek(::Core::File& file, int64 offset, int origin);
 MCAPI ::std::string gatherTypeStrings(::std::vector<::Json::ValueType> const& types);
 
 MCAPI ::std::string getDiscoveryServiceURL(::DiscoveryEnvironment environment);
-
-MCAPI ::std::string const getEdition();
 
 MCAPI ::Bedrock::FileType getFileType(::Core::PathView filePath, ::IFileAccess& fileAccess);
 
@@ -316,6 +314,10 @@ MCAPI ::std::string join(::std::string_view prefix, ::LevelChunkTag tag);
 
 MCAPI ::std::string join(::std::string_view prefix, ::LevelChunkTag tag, uint i);
 
+MCAPI ::std::string makeGuestDisplayName(::std::string const& hostName, ::SubClientId subclientId);
+
+MCAPI ::mce::UUID makeGuestUUID(::mce::UUID const& hostUuid, ::SubClientId subclientId);
+
 MCAPI bool operator<(
     ::SemVersionBase<::std::string_view> const&               lhs,
     ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
@@ -329,6 +331,11 @@ MCAPI bool operator<(
 MCAPI bool operator<(
     ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
     ::SemVersionBase<::std::string_view> const&               rhs
+);
+
+MCFOLD bool operator<=(
+    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
+    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
 );
 
 MCAPI bool operator==(::DefinitionTrigger const& a, ::DefinitionTrigger const& b);
@@ -367,15 +374,15 @@ MCAPI ::std::string toString(::AgentActionType type);
 
 MCAPI ::std::optional<::std::locale> tryGetLocaleFromName(::std::string const& localeName);
 
-MCAPI ::http_wstring utf16_from_utf8(::http_string const&);
+MCAPI ::http_wstring utf16_from_utf8(::http_string const& utf8);
 
-MCAPI ::http_wstring utf16_from_utf8(char const*);
+MCAPI ::http_wstring utf16_from_utf8(char const* utf8);
 
-MCAPI ::http_wstring utf16_from_utf8(char const*, uint64);
+MCAPI ::http_wstring utf16_from_utf8(char const* utf8, uint64 size);
 
-MCAPI ::http_string utf8_from_utf16(::http_wstring const&);
+MCAPI ::http_string utf8_from_utf16(::http_wstring const& utf16);
 
-MCAPI ::http_string utf8_from_utf16(wchar_t const*, uint64);
+MCAPI ::http_string utf8_from_utf16(wchar_t const* utf16, uint64 size);
 // NOLINTEND
 
 // static variables
@@ -394,8 +401,6 @@ MCAPI ::HashedString const& BLAST_FURNACE_TAG();
 MCAPI ::HashedString const& CAMPFIRE_TAG();
 
 MCAPI ::std::unordered_map<::ContainerEnumName, ::std::string>& ContainerCollectionNameMap();
-
-MCAPI ::std::unordered_map<::ActorType, ::ActorMapping>& ENTITY_TYPE_MAP();
 
 MCAPI ::HashedString const& FURNACE_TAG();
 
@@ -549,6 +554,10 @@ MCAPI ::std::add_lvalue_reference_t<::DynDnsResult[]> resultTable();
 MCAPI bool& s_AsyncLibEnablePumpingWait();
 
 MCAPI ::std::atomic<uint>& s_AsyncLibGlobalStateCount();
+
+MCAPI int& stbi__flip_vertically_on_write();
+
+MCAPI int& stbi_write_tga_with_rle();
 
 MCAPI ::std::add_lvalue_reference_t<::TypeMapping[]> typeMappings();
 // NOLINTEND

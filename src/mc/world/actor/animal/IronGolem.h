@@ -34,7 +34,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 154
-    virtual bool doHurtTarget(::Actor*, ::SharedTypes::Legacy::ActorDamageCause const&) /*override*/;
+    virtual bool doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
 
     // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
@@ -75,6 +75,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
+
     MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCFOLD void $die(::ActorDamageSource const& source);

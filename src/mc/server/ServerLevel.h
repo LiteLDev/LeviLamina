@@ -96,10 +96,10 @@ public:
         ::std::string const*   levelId
     ) /*override*/;
 
-    // vIndex: 388
+    // vIndex: 386
     virtual ::PlayerSleepManager const& getPlayerSleepManager() const /*override*/;
 
-    // vIndex: 387
+    // vIndex: 385
     virtual ::PlayerSleepManager& getPlayerSleepManager() /*override*/;
 
     // vIndex: 155
@@ -115,72 +115,72 @@ public:
     // vIndex: 157
     virtual void setWorldTemplateOptionsUnlocked() /*override*/;
 
-    // vIndex: 272
+    // vIndex: 270
     virtual ::ResourcePackManager* getClientResourcePackManager() const /*override*/;
 
-    // vIndex: 273
+    // vIndex: 271
     virtual ::ResourcePackManager* getServerResourcePackManager() const /*override*/;
 
-    // vIndex: 274
+    // vIndex: 272
     virtual ::TradeTables* getTradeTables() /*override*/;
 
-    // vIndex: 289
+    // vIndex: 287
     virtual void
     runCommand(::HashedString const&, ::CommandOrigin&, ::CommandOriginSystem, ::CurrentCmdVersion const) /*override*/;
 
-    // vIndex: 288
+    // vIndex: 286
     virtual void runCommand(::Command&, ::CommandOrigin&, ::CommandOriginSystem) /*override*/;
 
-    // vIndex: 275
+    // vIndex: 273
     virtual void decrementTagCache(
         ::std::string const& tag,
         ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
     ) /*override*/;
 
-    // vIndex: 276
+    // vIndex: 274
     virtual void incrementTagCache(
         ::std::string const& tag,
         ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
     ) /*override*/;
 
-    // vIndex: 277
+    // vIndex: 275
     virtual ::Bedrock::NonOwnerPointer<::TagCacheManager> getTagCacheManager() /*override*/;
 
-    // vIndex: 228
+    // vIndex: 226
     virtual ::LevelChunkMetaDataManager* getLevelChunkMetaDataManager() /*override*/;
 
-    // vIndex: 235
+    // vIndex: 233
     virtual void loadFunctionManager() /*override*/;
 
-    // vIndex: 320
+    // vIndex: 318
     virtual ::Random& getThreadRandom() const /*override*/;
 
-    // vIndex: 299
+    // vIndex: 297
     virtual ::PositionTrackingDB::PositionTrackingDBServer* getPositionTrackerDBServer() const /*override*/;
 
-    // vIndex: 287
+    // vIndex: 285
     virtual ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> tryGetVolumeEntityManagerServer() const
         /*override*/;
 
-    // vIndex: 368
+    // vIndex: 366
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> getChunkGenerationManager() /*override*/;
 
-    // vIndex: 367
+    // vIndex: 365
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> getChunkGenerationManager() const /*override*/;
 
-    // vIndex: 369
+    // vIndex: 367
     virtual ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> getMapDataManager() /*override*/;
 
-    // vIndex: 389
+    // vIndex: 387
     virtual void _subTick() /*override*/;
 
-    // vIndex: 382
+    // vIndex: 380
     virtual ::PlayerDeathManager* _getPlayerDeathManager() /*override*/;
 
-    // vIndex: 383
+    // vIndex: 381
     virtual ::MapDataManager& _getMapDataManager() /*override*/;
 
-    // vIndex: 390
+    // vIndex: 388
     virtual void _initializeMapDataManager() /*override*/;
     // NOLINTEND
 

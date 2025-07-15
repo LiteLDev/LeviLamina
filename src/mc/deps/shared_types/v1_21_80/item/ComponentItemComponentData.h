@@ -5,8 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersion;
-namespace cereal { class DynamicValue; }
-namespace cereal { class SerializerContext; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -67,17 +65,11 @@ public:
 
     MCNAPI ComponentItemComponentData(::SharedTypes::v1_21_80::ComponentItemComponentData const&);
 
-    MCNAPI ::std::shared_ptr<::cereal::DynamicValue>
-    getCustomComponent(::cereal::SerializerContext const& context) const;
-
     MCNAPI ::SharedTypes::v1_21_80::ComponentItemComponentData&
     operator=(::SharedTypes::v1_21_80::ComponentItemComponentData&&);
 
     MCNAPI ::SharedTypes::v1_21_80::ComponentItemComponentData&
     operator=(::SharedTypes::v1_21_80::ComponentItemComponentData const&);
-
-    MCNAPI void
-    setCustomComponent(::std::shared_ptr<::cereal::DynamicValue> data, ::cereal::SerializerContext const& context);
 
     MCNAPI ~ComponentItemComponentData();
     // NOLINTEND

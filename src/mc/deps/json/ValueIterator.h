@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
+namespace Json { class ValueConstIterator; }
 // clang-format on
 
 namespace Json {
@@ -28,11 +29,27 @@ public:
     using value_type = ::Json::Value;
 
 public:
+    // prevent constructor by default
+    ValueIterator();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Json::Value& operator*() const;
+    MCNAPI explicit ValueIterator(::Json::ValueConstIterator const& other);
 
-    MCNAPI ::Json::ValueIterator& operator++();
+    MCNAPI ~ValueIterator();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Json::ValueConstIterator const& other);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

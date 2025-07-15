@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/http/StatusCode.h"
 #include "mc/deps/core/threading/AsyncPromise.h"
 #include "mc/deps/core/threading/IAsyncResult.h"
 
@@ -49,7 +50,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::error_code>>
+    MCNAPI ::HC_WEBSOCKET_OBSERVER* _allocateSocket(::std::future<void> connectCompleted);
+
+    MCNAPI ::std::shared_ptr<
+        ::Bedrock::Threading::IAsyncResult<::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code>>>
     connect(::std::string const& uri, ::Bedrock::Http::HeaderCollection const& headers);
 
     MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::error_code>>
@@ -62,10 +66,11 @@ public:
     MCNAPI static void _deallocateSocketAsync(::HC_WEBSOCKET_OBSERVER* handle);
 
     MCNAPI static void _onConnect(
-        ::XAsyncBlock*                                        asyncConnect,
-        ::std::weak_ptr<::Bedrock::Http::WebSocket>           weakThis,
-        ::Bedrock::Threading::AsyncPromise<::std::error_code> onComplete,
-        ::HC_WEBSOCKET_OBSERVER*                              connectHandle
+        ::XAsyncBlock*                              asyncConnect,
+        ::std::weak_ptr<::Bedrock::Http::WebSocket> weakThis,
+        ::Bedrock::Threading::AsyncPromise<::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code>>
+                                 onComplete,
+        ::HC_WEBSOCKET_OBSERVER* connectHandle
     );
     // NOLINTEND
 

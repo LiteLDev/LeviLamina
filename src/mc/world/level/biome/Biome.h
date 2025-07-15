@@ -56,7 +56,6 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::HashedString const>                               mHash;
     ::ll::TypedStorage<4, 4, float>                                               mTemperature;
     ::ll::TypedStorage<4, 4, float>                                               mDownfall;
     ::ll::TypedStorage<4, 4, float>                                               mRedSporeDensity;
@@ -78,6 +77,7 @@ public:
     ::ll::TypedStorage<1, 2, ::Biome::CachedClientComponentData> mCachedClientComponentData;
     ::ll::TypedStorage<2, 2, ushort const>                       mId;
     ::ll::TypedStorage<8, 32, ::BiomeComponentStorage>           mBiomeComponentStorage;
+    ::ll::TypedStorage<8, 48, ::HashedString const>              mHash;
     // NOLINTEND
 
 public:

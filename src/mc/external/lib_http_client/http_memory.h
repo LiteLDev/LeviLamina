@@ -4,13 +4,13 @@
 
 namespace xbox::httpclient {
 
-struct http_memory {
+class http_memory {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void* mem_alloc(uint64);
+    MCNAPI static void* mem_alloc(uint64 size);
 
-    MCNAPI static void mem_free(void*);
+    MCNAPI static void mem_free(void* pAddress);
     // NOLINTEND
 };
 

@@ -34,10 +34,6 @@ public:
 
     MCNAPI void removeIrrelevantKeyFramesAndConvertAllFloatKeyFramesToSimplifiedVersion();
 
-    MCNAPI void sortEvents();
-
-    MCNAPI void sortSoundEffectEvents();
-
     MCNAPI ~ActorSkeletalAnimation();
     // NOLINTEND
 

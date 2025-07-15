@@ -15,7 +15,7 @@ class SlimeMoveControl : public ::MoveControl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mJumpDelayTicks;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>> mJumpDelayTicks;
     // NOLINTEND
 
 public:
@@ -26,6 +26,12 @@ public:
 
     // vIndex: 0
     virtual ~SlimeMoveControl() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static int _getJumpDelay(::Mob const& mob);
     // NOLINTEND
 
 public:

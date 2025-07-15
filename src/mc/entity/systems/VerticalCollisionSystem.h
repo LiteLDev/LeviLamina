@@ -25,7 +25,6 @@ struct MinecartFlagComponent;
 struct MoveRequestComponent;
 struct PlayerComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 struct VerticalCollisionFlagComponent;
 // clang-format on
 
@@ -88,8 +87,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo create();
-
     MCNAPI static void tickVerticalCollisionSystem(
         ::StrictEntityContext const&  context,
         ::AABBShapeComponent const&   aabb,

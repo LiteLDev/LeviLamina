@@ -9,12 +9,15 @@ struct FallFlyTicksComponent;
 struct MoveInputComponent;
 struct MovementAbilitiesComponent;
 struct StateVectorComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 class GlideInputSystem {
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static ::TickingSystemWithInfo createGlideInputSystem();
+
     MCNAPI static void doGlideInputSystem(
         ::MovementAbilitiesComponent const& abilitiesComponent,
         ::MoveInputComponent const&         moveInputComponent,

@@ -24,41 +24,42 @@ struct ActorTickedComponent;
 struct ActorUniqueIDComponent;
 struct DeathTickingComponent;
 struct DimensionTypeComponent;
-struct IsDeadFlagComponent;
 struct MobFlagComponent;
 struct OffsetsComponent;
 struct PlayerComponent;
 struct SoundEventPlayerComponent;
 struct StateVectorComponent;
+struct TickDeathNeededComponent;
 // clang-format on
 
-struct ClientMobTickDeathSystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<
-                                          ::Filter<::ActorTickedComponent, ::IsDeadFlagComponent, ::MobFlagComponent>,
-                                          ::Read<
-                                              ::AABBShapeComponent,
-                                              ::ActorDefinitionIdentifierComponent,
-                                              ::ActorUniqueIDComponent,
-                                              ::DimensionTypeComponent,
-                                              ::OffsetsComponent,
-                                              ::SoundEventPlayerComponent,
-                                              ::StateVectorComponent>,
-                                          ::Write<
-                                              ::ActorDataFlagComponent,
-                                              ::ActorDataDirtyFlagsComponent,
-                                              ::ActorOwnerComponent,
-                                              ::DeathTickingComponent,
-                                              ::PlayerComponent>,
-                                          ::AddRemove<>,
-                                          ::GlobalRead<>,
-                                          ::GlobalWrite<>,
-                                          ::EntityFactoryT<>>> {
+struct ClientMobTickDeathSystemImpl
+: public ::IStrictTickingSystem<::StrictExecutionContext<
+      ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::MobFlagComponent>,
+      ::Read<
+          ::AABBShapeComponent,
+          ::ActorDefinitionIdentifierComponent,
+          ::ActorUniqueIDComponent,
+          ::DimensionTypeComponent,
+          ::OffsetsComponent,
+          ::SoundEventPlayerComponent,
+          ::StateVectorComponent>,
+      ::Write<
+          ::ActorDataFlagComponent,
+          ::ActorDataDirtyFlagsComponent,
+          ::ActorOwnerComponent,
+          ::DeathTickingComponent,
+          ::PlayerComponent>,
+      ::AddRemove<>,
+      ::GlobalRead<>,
+      ::GlobalWrite<>,
+      ::EntityFactoryT<>>> {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
-            ::Filter<::ActorTickedComponent, ::IsDeadFlagComponent, ::MobFlagComponent>,
+            ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::MobFlagComponent>,
             ::Read<
                 ::AABBShapeComponent,
                 ::ActorDefinitionIdentifierComponent,

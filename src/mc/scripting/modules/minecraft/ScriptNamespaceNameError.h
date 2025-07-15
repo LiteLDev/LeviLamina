@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Error.h"
+#include "mc/deps/scripting/runtime/BaseError.h"
 #include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
@@ -15,7 +15,7 @@ namespace Scripting { struct ErrorBinding; }
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptNamespaceNameError : public ::Scripting::Error {
+struct ScriptNamespaceNameError : public ::Scripting::BaseError {
 public:
     // ScriptNamespaceNameError inner types define
     enum class Reason : int {
@@ -33,14 +33,16 @@ public:
 public:
     // prevent constructor by default
     ScriptNamespaceNameError& operator=(ScriptNamespaceNameError const&);
-    ScriptNamespaceNameError(ScriptNamespaceNameError const&);
     ScriptNamespaceNameError();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptNamespaceNameError(::ScriptModuleMinecraft::ScriptNamespaceNameError const&);
+
     MCNAPI ScriptNamespaceNameError(
         ::std::string const&                                      name,
+        ::std::string const&                                      message,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError::Reason reason
     );
 
@@ -55,13 +57,19 @@ public:
     MCNAPI static ::Scripting::EnumBinding bindReasonEnum();
 
     MCNAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::Scripting::EngineError>
-    validate(::std::string const& name);
+    validate(::std::string const& name, bool allowMinecraftNamespace, bool allowMultipleNamespaces);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& name, ::ScriptModuleMinecraft::ScriptNamespaceNameError::Reason reason);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptNamespaceNameError const&);
+
+    MCNAPI void* $ctor(
+        ::std::string const&                                      name,
+        ::std::string const&                                      message,
+        ::ScriptModuleMinecraft::ScriptNamespaceNameError::Reason reason
+    );
     // NOLINTEND
 
 public:

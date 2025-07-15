@@ -79,8 +79,14 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockTickingQueue();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit BlockTickingQueue(::TickingQueueType queueType);
+
     MCAPI void _acquireAllTicks(::BlockTickingQueue& otherChunkQueue);
 
     MCAPI void _addToNextTickQueue(::BlockPos const& pos, ::Block const& block, int tickDelay, int priorityOffset);
@@ -118,6 +124,12 @@ public:
     MCAPI bool tickPendingTicks(::BlockSource& region, ::Tick const& until, int max, bool instaTick_);
 
     MCAPI ~BlockTickingQueue();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::TickingQueueType queueType);
     // NOLINTEND
 
 public:

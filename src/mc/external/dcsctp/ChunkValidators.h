@@ -9,13 +9,13 @@ namespace dcsctp { class SackChunk; }
 
 namespace dcsctp {
 
-struct ChunkValidators {
+class ChunkValidators {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::dcsctp::SackChunk Clean(::dcsctp::SackChunk&&);
+    MCNAPI static ::dcsctp::SackChunk Clean(::dcsctp::SackChunk&& sack);
 
-    MCNAPI static bool Validate(::dcsctp::SackChunk const&);
+    MCNAPI static bool Validate(::dcsctp::SackChunk const& sack);
     // NOLINTEND
 };
 

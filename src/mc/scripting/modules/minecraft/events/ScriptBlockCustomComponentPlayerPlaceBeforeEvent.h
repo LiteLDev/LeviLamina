@@ -5,10 +5,12 @@
 // auto generated inclusion list
 #include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 #include "mc/scripting/modules/minecraft/events/ScriptCustomComponentBeforeEvent.h"
+#include "mc/scripting/modules/minecraft/events/ScriptCustomComponentToExecute.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace BlockEvents { class BlockPlayerPlacingEvent; }
+namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentInterface; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -67,6 +69,11 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
+
+    MCNAPI static ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&,
+        void>>
+    tryGetComponentsToExecute(::BlockEvents::BlockPlayerPlacingEvent const& eventData);
     // NOLINTEND
 
 public:

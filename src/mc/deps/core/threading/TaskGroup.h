@@ -8,7 +8,8 @@
 #include "mc/common/editor/WorldType.h"
 #include "mc/deps/application/crash_manager/CrashFileProcessor.h"
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/resource/ResourceFileSystem.h"
+#include "mc/deps/core/http/StatusCode.h"
+#include "mc/deps/core/threading/AsyncPromise.h"
 #include "mc/deps/core/threading/IAsyncResult.h"
 #include "mc/deps/core/threading/IBackgroundTaskOwner.h"
 #include "mc/deps/core/threading/TaskGroupState.h"
@@ -19,13 +20,14 @@
 #include "mc/deps/scripting/script_engine/Promise.h"
 #include "mc/editor/services/export/ExportResult.h"
 #include "mc/events/TextProcessingEventOrigin.h"
-#include "mc/network/services/signaling/SignalingServiceConfig.h"
+#include "mc/network/services/signaling/ISignalingServiceConfigProvider.h"
 #include "mc/platform/Copyable.h"
 #include "mc/platform/ErrorInfo.h"
 #include "mc/platform/Result.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/platform/threading/UniqueLock.h"
 #include "mc/server/commands/AsyncCommandExecutor.h"
+#include "mc/server/commands/edu/make_code_fileio/MakeCodeFileResult.h"
 #include "mc/server/safety/TextFilteringEvent.h"
 #include "mc/util/DownloaderState.h"
 #include "mc/world/level/FileArchiver.h"
@@ -45,25 +47,30 @@ class ConnectionRequest;
 class Dimension;
 class IContentAccessibilityProvider;
 class IContentKeyProvider;
-class IFileAccess;
 class IMinecraftEventing;
+class IPackManifestFactory;
+class IWorldTemplateManagerInitializer;
 class Level;
 class LevelChunk;
 class LevelData;
 class LevelDbEnv;
+class LoginPacket;
 class MapItemSavedData;
 class NetworkIdentifier;
 class PackManifestFactory;
+class PackSource;
 class PackSourceFactory;
+class PackSourceReport;
 class Player;
 class ResourceLocation;
 class RopeSystem;
 class Scheduler;
-class ServicesManager;
 class SubClientConnectionRequest;
+class SubClientLoginPacket;
 class TaskResult;
 class WeakEntityRef;
 class WorkerPool;
+struct AsyncJoinError;
 struct Brightness;
 struct DBStorageConfig;
 struct FileChunkInfo;
@@ -77,17 +84,21 @@ namespace Bedrock::Http { class Response; }
 namespace Bedrock::Http { class RetryPolicy; }
 namespace Bedrock::Http { class Status; }
 namespace Bedrock::Http { struct Url; }
+namespace Bedrock::Services { class AzureGetTokenHttpCall; }
+namespace Bedrock::Services { struct AzureGetTokenHttpResponse; }
 namespace Bedrock::Services { struct EnvironmentQueryResponse; }
 namespace Bedrock::Threading { class Mutex; }
 namespace Bedrock::Threading { struct CachedAsyncRetry; }
+namespace CodeBuilder { class IRequestHandler; }
+namespace CodeBuilder { struct RequestHeader; }
 namespace Core { class FilePathManager; }
 namespace Core { class Path; }
 namespace Core::ZipUtils { struct ZipProgressList; }
 namespace Editor { class GameOptions; }
 namespace Json { class Value; }
+namespace MakeCodeFileIO { struct MakeCodeFileIOReadResult; }
 namespace NetherNet { struct NetworkID; }
 namespace PackCommand { class IPackCommandPipeline; }
-namespace PackCommand { struct PackCommandHandle; }
 namespace PackCommand { struct PackCommandResult; }
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
 namespace PositionTrackingDB { class TrackingRecord; }
@@ -95,7 +106,7 @@ namespace ScriptModuleMinecraftNet { struct ScriptNetRequest; }
 namespace ScriptModuleMinecraftNet { struct ScriptNetResponse; }
 namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct Error; }
+namespace Scripting { struct BaseError; }
 namespace Social::Events { class Event; }
 namespace WebServices::EduSignin { struct SigninError; }
 namespace WebServices::EduSignin { struct SigninResponse; }
@@ -167,6 +178,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI TaskGroup(::WorkerPool& workers, ::Scheduler& context, ::std::string name);
+
+    MCNAPI void
+    _doWorkUntil(::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> task, ::std::promise<void>* workStarted);
 
     MCNAPI void _forAllTasks(
         ::Bedrock::Threading::UniqueLock<::Bedrock::Threading::Mutex>&        lock,

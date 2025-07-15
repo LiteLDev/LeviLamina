@@ -45,7 +45,7 @@ public:
     // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 20
@@ -72,13 +72,13 @@ public:
     // vIndex: 23
     virtual void stopOpen(::Player& player) /*override*/;
 
-    // vIndex: 34
+    // vIndex: 35
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 33
+    // vIndex: 34
     virtual ::Container const* getContainer() const /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
     // vIndex: 2
@@ -88,10 +88,10 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 46
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -135,7 +135,7 @@ public:
 
     MCAPI bool $canPushInItem(int, int, ::ItemStack const& item) const;
 
-    MCAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
+    MCFOLD bool $canPullOutItem(int, int, ::ItemStack const&) const;
 
     MCAPI ::ItemStack const& $getItem(int) const;
 

@@ -23,7 +23,7 @@ public:
 
     MCNAPI SsrcGroup(::cricket::SsrcGroup const&);
 
-    MCNAPI SsrcGroup(::std::string const&, ::std::vector<uint> const&);
+    MCNAPI SsrcGroup(::std::string const& usage, ::std::vector<uint> const& ssrcs);
 
     MCNAPI ::cricket::SsrcGroup& operator=(::cricket::SsrcGroup const&);
 
@@ -37,7 +37,7 @@ public:
 
     MCNAPI void* $ctor(::cricket::SsrcGroup const&);
 
-    MCNAPI void* $ctor(::std::string const&, ::std::vector<uint> const&);
+    MCNAPI void* $ctor(::std::string const& usage, ::std::vector<uint> const& ssrcs);
     // NOLINTEND
 
 public:

@@ -25,12 +25,13 @@ public:
 public:
     // prevent constructor by default
     VersionRange& operator=(VersionRange const&);
-    VersionRange(VersionRange const&);
     VersionRange();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI VersionRange(::Puv::VersionRange const&);
+
     MCNAPI VersionRange(::SemVersion const& min, ::SemVersion const& max, ::Puv::RangeType type);
 
     MCNAPI ~VersionRange();
@@ -39,6 +40,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::Puv::VersionRange const&);
+
     MCNAPI void* $ctor(::SemVersion const& min, ::SemVersion const& max, ::Puv::RangeType type);
     // NOLINTEND
 

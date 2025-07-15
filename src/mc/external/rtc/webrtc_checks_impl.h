@@ -10,13 +10,13 @@ namespace rtc::webrtc_checks_impl {
 // NOLINTBEGIN
 MCNAPI void FatalLog(char const*, int, char const*, ::rtc::webrtc_checks_impl::CheckArgType const*, ...);
 
-MCNAPI bool ParseArg(char**, ::rtc::webrtc_checks_impl::CheckArgType const**, ::std::string*);
+MCNAPI bool ParseArg(char** args, ::rtc::webrtc_checks_impl::CheckArgType const** fmt, ::std::string* s);
 
 MCNAPI void UnreachableCodeReached();
 
-MCNAPI void WriteFatalLog(::std::string_view);
+MCNAPI void WriteFatalLog(::std::string_view output);
 
-MCNAPI void WriteFatalLog(char const*, int, ::std::string_view);
+MCNAPI void WriteFatalLog(char const* file, int line, ::std::string_view output);
 // NOLINTEND
 
 } // namespace rtc::webrtc_checks_impl

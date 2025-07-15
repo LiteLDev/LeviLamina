@@ -29,7 +29,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI WorkerPoolGlobalState(::WorkerPoolGlobalState&&);
+
+    MCNAPI ::WorkerPoolGlobalState& operator=(::WorkerPoolGlobalState&&);
+
     MCNAPI ~WorkerPoolGlobalState();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::WorkerPoolGlobalState&&);
     // NOLINTEND
 
 public:

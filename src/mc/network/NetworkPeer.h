@@ -71,23 +71,23 @@ public:
     virtual void sendPacket(::std::string const&, ::NetworkPeer::Reliability, ::Compressibility) = 0;
 
     // vIndex: 2
-    virtual ::NetworkPeer::DataStatus
-    receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) = 0;
-
-    // vIndex: 3
     virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const = 0;
 
-    // vIndex: 4
+    // vIndex: 3
     virtual void update();
 
-    // vIndex: 5
+    // vIndex: 4
     virtual void flush(::std::function<void()>&& callback);
 
-    // vIndex: 6
+    // vIndex: 5
     virtual bool isLocal() const;
 
-    // vIndex: 7
+    // vIndex: 6
     virtual bool isEncrypted() const;
+
+    // vIndex: 7
+    virtual ::NetworkPeer::DataStatus
+    _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) = 0;
     // NOLINTEND
 
 public:

@@ -14,6 +14,7 @@
 // clang-format off
 class AABB;
 class Block;
+class BlockPos;
 class BlockSource;
 class BlockVolumeBase;
 class BoundingBox;
@@ -86,29 +87,35 @@ public:
     ) /*override*/;
 
     // vIndex: 7
+    virtual ::Editor::RelativeVolumeListBlockVolume findObscuredBlocksWithinVolume(
+        ::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const inVolume
+    ) /*override*/;
+
+    // vIndex: 8
     virtual ::Editor::RelativeVolumeListBlockVolume shrinkWrapVolume(
         ::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const
     ) /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual bool isLocationInsideDimensionBounds(
         ::std::variant<
             ::BlockVolumeBase const*,
             ::Editor::RelativeVolumeListBlockVolume const*,
             ::Vec3 const*,
-            ::BoundingBox const*> const test
+            ::BoundingBox const*,
+            ::BlockPos const*> const test
     ) /*override*/;
 
-    // vIndex: 12
+    // vIndex: 13
     virtual ::Vec3 getDimensionMinLocation() const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual ::Vec3 getDimensionMaxLocation() const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual ::BoundingBox getDimensionLocationBoundingBox() const /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual ::CompoundBlockVolume getContiguousSelection(
         int const                                            size,
         ::Facing::Name const&                                selectionDirection,
@@ -120,7 +127,7 @@ public:
         ::std::vector<::std::string> const&                  contiguousSelectionBlockList
     ) const /*override*/;
 
-    // vIndex: 10
+    // vIndex: 11
     virtual bool areBlocksContiguous(
         ::Editor::BlockUtils::ContiguousSelectionType const& contiguousSelectionType,
         ::Block const&                                       blockToTest,
@@ -128,7 +135,7 @@ public:
         ::std::vector<::std::string> const&                  allowList
     ) const /*override*/;
 
-    // vIndex: 11
+    // vIndex: 12
     virtual ::Vec3 getDeltaFromDirection(::Facing::Name const& selectionDirection) const /*override*/;
 
     // vIndex: 7
@@ -140,7 +147,7 @@ public:
     // vIndex: 9
     virtual ::Scripting::Result_deprecated<void> _implQuit() = 0;
 
-    // vIndex: 15
+    // vIndex: 16
     virtual ::AABB getBoundForContiguousSelection(
         ::Vec3 const&         initialLocation,
         ::Facing::Name const& selectionDirection,
@@ -148,20 +155,20 @@ public:
         bool const            isFace
     ) const /*override*/;
 
-    // vIndex: 16
+    // vIndex: 17
     virtual bool isBlockExposedInDirection(
         ::Dimension const&    dimension,
         ::Vec3 const&         targetLocation,
         ::Facing::Name const& direction
     ) const /*override*/;
 
-    // vIndex: 17
+    // vIndex: 18
     virtual bool isSameBlockType(::Block const& blockA, ::Block const& blockB) const /*override*/;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual bool isSameBlockAndProperties(::Block const& blockA, ::Block const& blockB) const /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual bool isBlockTypeInSelectionList(::Block const& block, ::std::vector<::std::string> const& allowList) const
         /*override*/;
     // NOLINTEND
@@ -207,6 +214,10 @@ public:
         ::Editor::BlockMask::BlockMaskList const& blockMask
     );
 
+    MCNAPI ::Editor::RelativeVolumeListBlockVolume $findObscuredBlocksWithinVolume(
+        ::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const inVolume
+    );
+
     MCNAPI ::Editor::RelativeVolumeListBlockVolume
     $shrinkWrapVolume(::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const);
 
@@ -215,7 +226,8 @@ public:
             ::BlockVolumeBase const*,
             ::Editor::RelativeVolumeListBlockVolume const*,
             ::Vec3 const*,
-            ::BoundingBox const*> const test
+            ::BoundingBox const*,
+            ::BlockPos const*> const test
     );
 
     MCNAPI ::Vec3 $getDimensionMinLocation() const;

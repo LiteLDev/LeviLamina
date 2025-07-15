@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     // vIndex: 6
     virtual void doLoad(
-        ::cereal::SchemaReader&      value,
+        ::cereal::SchemaReader&      reader,
         ::entt::meta_any&            any,
         ::entt::meta_any const&      udata,
         ::cereal::SerializerContext& context
@@ -39,7 +39,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $doLoad(
-        ::cereal::SchemaReader&      value,
+        ::cereal::SchemaReader&      reader,
         ::entt::meta_any&            any,
         ::entt::meta_any const&      udata,
         ::cereal::SerializerContext& context

@@ -224,7 +224,7 @@ enum class MinecraftPacketIds : int {
     CameraAimAssist                          = 316,
     ContainerRegistryCleanup                 = 317,
     MovementEffect                           = 318,
-    SetMovementAuthorityMode                 = 319,
+    SetMovementAuthorityModeDeprecated       = 319,
     CameraAimAssistPresets                   = 320,
     ClientCameraAimAssist                    = 321,
     ClientMovementPredictionSyncPacket       = 322,
@@ -233,5 +233,6 @@ enum class MinecraftPacketIds : int {
     PlayerUpdateEntityOverridesPacket        = 325,
     PlayerLocation                           = 326,
     ClientboundControlSchemeSetPacket        = 327,
-    EndId                                    = 328,
+    ServerScriptDebugDrawerPacket            = 328,
+    EndId                                    = 329,
 };

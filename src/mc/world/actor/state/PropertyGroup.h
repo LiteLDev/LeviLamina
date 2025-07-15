@@ -109,6 +109,8 @@ public:
 
     MCNAPI ::PropertyMetadata const* getPropertyMetadata(uint64 propertyNameHash) const;
 
+    MCNAPI ::std::vector<::HashedString> const& getStringEnumValues(uint64 stringTypeArrayIndex) const;
+
     MCNAPI ~PropertyGroup();
     // NOLINTEND
 
@@ -116,9 +118,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::PropertyMetadata::ContainedType _getJsonPropertyType(::Json::Value const& typeNode);
-
-    MCNAPI static bool
-    _tryGetClientSync(::std::string const& propertyName, ::Json::Value const& propertyNode, bool& clientSyncOut);
 
     MCNAPI static bool isValidEnumEntry(::std::string const& entryValue);
 

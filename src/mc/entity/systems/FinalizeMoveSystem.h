@@ -19,7 +19,6 @@ struct MovementAbilitiesComponent;
 struct OffsetsComponent;
 struct OnGroundFlagComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 struct VerticalCollisionFlagComponent;
 // clang-format on
 
@@ -27,8 +26,6 @@ struct FinalizeMoveSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo create();
-
     MCNAPI static void tick(
         ::ViewT<
             ::StrictEntityContext,

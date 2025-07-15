@@ -16,7 +16,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, int>            mRequiredControlFlags;
-    ::ll::TypedStorage<8, 32, ::std::string> mName;
+    ::ll::TypedStorage<8, 32, ::std::string> mDebugName;
     ::ll::TypedStorage<2, 2, ushort>         mTypeId;
     // NOLINTEND
 

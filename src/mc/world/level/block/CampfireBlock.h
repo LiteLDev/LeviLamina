@@ -39,7 +39,7 @@ public:
     // vIndex: 19
     virtual bool hasVariableLighting() const /*override*/;
 
-    // vIndex: 146
+    // vIndex: 145
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
     // vIndex: 56
@@ -47,7 +47,7 @@ public:
         /*override*/;
 
     // vIndex: 22
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
+    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
     // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
@@ -105,8 +105,6 @@ public:
     MCNAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
     MCNAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
-
-    MCNAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
     MCNAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 

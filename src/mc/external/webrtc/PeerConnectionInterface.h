@@ -116,7 +116,7 @@ public:
         MCNAPI ::webrtc::PeerConnectionInterface::IceServer&
         operator=(::webrtc::PeerConnectionInterface::IceServer const&);
 
-        MCNAPI bool operator==(::webrtc::PeerConnectionInterface::IceServer const&) const;
+        MCNAPI bool operator==(::webrtc::PeerConnectionInterface::IceServer const& o) const;
 
         MCNAPI ~IceServer();
         // NOLINTEND
@@ -251,12 +251,12 @@ public:
 
         MCNAPI RTCConfiguration(::webrtc::PeerConnectionInterface::RTCConfiguration const&);
 
-        MCNAPI bool operator!=(::webrtc::PeerConnectionInterface::RTCConfiguration const&) const;
+        MCNAPI bool operator!=(::webrtc::PeerConnectionInterface::RTCConfiguration const& o) const;
 
         MCNAPI ::webrtc::PeerConnectionInterface::RTCConfiguration&
         operator=(::webrtc::PeerConnectionInterface::RTCConfiguration const&);
 
-        MCNAPI bool operator==(::webrtc::PeerConnectionInterface::RTCConfiguration const&) const;
+        MCNAPI bool operator==(::webrtc::PeerConnectionInterface::RTCConfiguration const& o) const;
 
         MCNAPI ~RTCConfiguration();
         // NOLINTEND
@@ -315,7 +315,7 @@ public:
     virtual bool AddStream(::webrtc::MediaStreamInterface*) = 0;
 
     // vIndex: 6
-    virtual void RemoveStream(::webrtc::MediaStreamInterface*) = 0;
+    virtual void RemoveStream(::webrtc::MediaStreamInterface* remove_stream) = 0;
 
     // vIndex: 8
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>>
@@ -393,7 +393,7 @@ public:
 
     // vIndex: 24
     virtual ::webrtc::scoped_refptr<::webrtc::DataChannelInterface>
-    CreateDataChannel(::std::string const&, ::webrtc::DataChannelInit const*);
+    CreateDataChannel(::std::string const& label, ::webrtc::DataChannelInit const* config);
 
     // vIndex: 25
     virtual ::webrtc::SessionDescriptionInterface const* local_description() const = 0;
@@ -534,13 +534,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view AsString(::webrtc::PeerConnectionInterface::SignalingState);
+    MCNAPI static ::std::string_view AsString(::webrtc::PeerConnectionInterface::SignalingState state);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::DataChannelInterface>
+    $CreateDataChannel(::std::string const& label, ::webrtc::DataChannelInit const* config);
     // NOLINTEND
 };
 

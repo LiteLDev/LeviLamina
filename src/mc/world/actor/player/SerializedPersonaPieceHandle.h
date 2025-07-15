@@ -16,15 +16,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>                 mIsDefaultPiece;
     ::ll::TypedStorage<8, 32, ::std::string>       mProductId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SerializedPersonaPieceHandle(SerializedPersonaPieceHandle const&);
-    SerializedPersonaPieceHandle();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::SerializedPersonaPieceHandle& operator=(::SerializedPersonaPieceHandle const&);
-    // NOLINTEND
 };

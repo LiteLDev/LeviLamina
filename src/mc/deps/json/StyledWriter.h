@@ -41,9 +41,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void indent();
+    MCNAPI StyledWriter();
 
-    MCNAPI bool isMultineArray(::Json::Value const& value);
+    MCNAPI void indent();
 
     MCNAPI void pushValue(::std::string const& value);
 
@@ -56,6 +56,12 @@ public:
     MCNAPI void writeValue(::Json::Value const& value);
 
     MCNAPI void writeWithIndent(::std::string const& value);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

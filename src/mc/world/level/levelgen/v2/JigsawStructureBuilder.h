@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/v2/DimensionPadding.h"
 #include "mc/world/level/levelgen/v2/JigsawExpansion.h"
+#include "mc/world/level/levelgen/v2/LiquidSettings.h"
 #include "mc/world/level/levelgen/v2/StructureBuilder.h"
 #include "mc/world/level/levelgen/v2/StructureHeightProvider.h"
 #include "mc/world/level/levelgen/v2/heightmap_projection/Type.h"
@@ -31,6 +32,7 @@ public:
     ::ll::TypedStorage<1, 1, ::br::worldgen::HeightmapProjection::Type>             mProjectStartToHeightmap;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::PoolAliasBinding>>> mPoolAliases;
     ::ll::TypedStorage<1, 1, ::br::worldgen::JigsawExpansion>                       mExpansion;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::LiquidSettings>                        mLiquidSettings;
     // NOLINTEND
 
 public:

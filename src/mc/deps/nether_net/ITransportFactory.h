@@ -9,8 +9,8 @@
 // clang-format off
 namespace NetherNet { class INetherNetTransportInterface; }
 namespace NetherNet { class INetherNetTransportInterfaceCallbacks; }
-namespace NetherNet { struct NetherNetTransportServerConfiguration; }
 namespace NetherNet { struct NetworkID; }
+namespace NetherNet { struct TransportConfiguration; }
 // clang-format on
 
 namespace NetherNet {
@@ -34,7 +34,7 @@ public:
     // vIndex: 4
     virtual ::NetherNet::INetherNetTransportInterface* createTransportInterface(
         ::NetherNet::NetworkID,
-        ::NetherNet::NetherNetTransportServerConfiguration*,
+        ::NetherNet::TransportConfiguration*,
         ::NetherNet::INetherNetTransportInterfaceCallbacks*
     ) = 0;
 

@@ -41,7 +41,9 @@ public:
         AlphaEnded         = 3,
         UserNotAllowed     = 4,
         Forbidden          = 5,
-        Other              = 6,
+        Banned             = 6,
+        Suspended          = 7,
+        Other              = 8,
     };
 
     enum class InviteAction : int {

@@ -5,10 +5,11 @@
 namespace Editor::ScriptModule {
 
 enum class ScriptSettingsGraphicsPropType : int {
-    ShowInvisibleBlocks = 0,
-    ShowChunkBoundaries = 1,
-    ShowCompass         = 2,
-    NightVision         = 3,
+    GraphicsMode        = 0,
+    ShowInvisibleBlocks = 1,
+    ShowChunkBoundaries = 2,
+    ShowCompass         = 3,
+    NightVision         = 4,
 };
 
 }

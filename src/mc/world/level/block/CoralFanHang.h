@@ -50,13 +50,13 @@ public:
     // vIndex: 111
     virtual ::std::string buildDescriptionId(::Block const&) const /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual void checkAlive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 80

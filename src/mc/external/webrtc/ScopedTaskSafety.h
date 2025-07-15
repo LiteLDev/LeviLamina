@@ -30,7 +30,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> flag() const;
 
-    MCNAPI void reset(::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag>);
+    MCNAPI void reset(::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> new_flag);
 
     MCNAPI ~ScopedTaskSafety();
     // NOLINTEND

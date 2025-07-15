@@ -75,6 +75,8 @@ MCNAPI ::BaseGameVersion const& WildUpdateVersion_U6();
 MCNAPI ::BaseGameVersion const& WildUpdateVersion_U8();
 
 MCNAPI ::BaseGameVersion const& Y2025Drop1Version();
+
+MCNAPI ::BaseGameVersion const& Y2025Drop2Version();
 // NOLINTEND
 
 } // namespace VanillaGameVersions

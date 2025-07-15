@@ -13,11 +13,11 @@ class StrictEntityContext;
 struct ActorDataControllingSeatIndexComponent;
 struct ActorDataDirtyFlagsComponent;
 struct ActorDataFlagComponent;
-struct ActorHeadInWaterFlagComponent;
 struct AttributeRequestComponent;
 struct CanVehicleSprintFlagComponent;
 struct ItemUseSlowdownModifierComponent;
 struct MobEffectsComponent;
+struct MobIsJumpingFlagComponent;
 struct MoveInputComponent;
 struct MovementAbilitiesComponent;
 struct MovementAttributesComponent;
@@ -44,8 +44,8 @@ MCNAPI ::TickingSystemWithInfo createIntentSystem();
 MCNAPI ::TickingSystemWithInfo createSetRequestSystem();
 
 MCNAPI void doIntentTick(
-    ::Optional<::ActorHeadInWaterFlagComponent const>    headInWater,
     ::Optional<::ItemUseSlowdownModifierComponent const> itemInUse,
+    ::Optional<::MobIsJumpingFlagComponent const>        isJumping,
     ::Optional<::OnGroundFlagComponent const> const&     onGround,
     ::Optional<::WasInWaterFlagComponent const> const&   wasInWater,
     ::MovementAbilitiesComponent const&                  abilities,

@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StreamInterface() = default;
+    virtual ~StreamInterface();
 
     // vIndex: 1
     virtual ::rtc::StreamState GetState() const = 0;
@@ -47,7 +47,7 @@ public:
     // NOLINTBEGIN
     MCNAPI StreamInterface();
 
-    MCNAPI ::rtc::StreamResult WriteAll(void const*, uint64, uint64*, int*);
+    MCNAPI ::rtc::StreamResult WriteAll(void const* data, uint64 data_len, uint64* written, int* error);
     // NOLINTEND
 
 public:
@@ -57,9 +57,15 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI bool $Flush();
     // NOLINTEND
 
 public:

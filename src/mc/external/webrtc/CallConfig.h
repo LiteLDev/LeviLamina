@@ -39,7 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CallConfig(::webrtc::Environment const&, ::webrtc::TaskQueueBase*);
+    MCNAPI CallConfig(::webrtc::Environment const& env, ::webrtc::TaskQueueBase* network_task_queue);
 
     MCNAPI ~CallConfig();
     // NOLINTEND
@@ -47,7 +47,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::Environment const&, ::webrtc::TaskQueueBase*);
+    MCNAPI void* $ctor(::webrtc::Environment const& env, ::webrtc::TaskQueueBase* network_task_queue);
     // NOLINTEND
 
 public:

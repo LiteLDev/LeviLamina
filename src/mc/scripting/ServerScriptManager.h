@@ -20,6 +20,7 @@
 #include "mc/scripting/PluginExecutionGroup.h"
 #include "mc/scripting/RegisterDiagnosticsStatsTypes.h"
 #include "mc/scripting/ScriptSettings.h"
+#include "mc/scripting/ServerScriptManagerEvents.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/LevelEventListener.h"
@@ -55,6 +56,7 @@ struct ServerInstanceRequestResourceReload;
 namespace ScriptModuleMinecraft { class CustomCommandRegistry; }
 namespace ScriptModuleMinecraft { class IScriptItemCustomComponentRegistry; }
 namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentsRegistry; }
+namespace ScriptModuleMinecraft { class ScriptCustomComponentParameterCache; }
 namespace ScriptModuleMinecraft { class ScriptCustomSpawnRulesRegistry; }
 namespace ScriptModuleMinecraft { class ScriptGlobalEventListeners; }
 namespace Scripting { class DependencyLocator; }
@@ -78,6 +80,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<8, 144, ::ServerScriptManagerEvents>                        mScriptStateEvents;
     ::ll::TypedStorage<8, 704, ::ScriptSettings>                                   mSettings;
     ::ll::TypedStorage<8, 8, ::ServerLevel&>                                       mServerLevel;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Scheduler>>             mServerScheduler;
@@ -87,6 +90,8 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptClientDiagnosticsListener>> mClientDiagnosticsListener;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelEventHandlerRegistrar>>      mLevelEventHandlerRegistrar;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::CustomCommandRegistry>> mCustomCommandRegistry;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptCustomComponentParameterCache>>
+        mCustomComponentParameterCache;
     ::ll::TypedStorage<8, 16, ::OwnerPtr<::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry>>
         mBlockCustomComponentsRegistry;
     ::ll::TypedStorage<8, 16, ::OwnerPtr<::ScriptModuleMinecraft::IScriptItemCustomComponentRegistry>>

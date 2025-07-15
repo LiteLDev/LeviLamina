@@ -21,7 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool operator==(::cricket::FeedbackParam const&) const;
+    MCNAPI bool operator==(::cricket::FeedbackParam const& other) const;
 
     MCNAPI ~FeedbackParam();
     // NOLINTEND

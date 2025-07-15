@@ -23,19 +23,50 @@ public:
     // clang-format on
 
     // SctpPacket inner types define
-    class Builder {
+    struct ChunkDescriptor {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1>  mUnkfc7a17;
+        ::ll::UntypedStorage<1, 1>  mUnk5a7a37;
+        ::ll::UntypedStorage<8, 16> mUnk1d4891;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
+        ChunkDescriptor& operator=(ChunkDescriptor const&);
+        ChunkDescriptor(ChunkDescriptor const&);
+        ChunkDescriptor();
+    };
+
+    class Builder {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>  mUnk925f93;
+        ::ll::UntypedStorage<2, 2>  mUnk5b8bbd;
+        ::ll::UntypedStorage<2, 2>  mUnk16be9c;
+        ::ll::UntypedStorage<8, 8>  mUnk24297c;
+        ::ll::UntypedStorage<8, 24> mUnk5d4223;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Builder& operator=(Builder const&);
+        Builder(Builder const&);
         Builder();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::dcsctp::SctpPacket::Builder& Add(::dcsctp::Chunk const&);
+        MCNAPI ::dcsctp::SctpPacket::Builder& Add(::dcsctp::Chunk const& chunk);
 
-        MCNAPI ::std::vector<uchar> Build(bool);
+        MCNAPI ::std::vector<uchar> Build(bool write_checksum);
 
-        MCNAPI Builder(::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::dcsctp::DcSctpOptions const&);
+        MCNAPI Builder(
+            ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint> verification_tag,
+            ::dcsctp::DcSctpOptions const&                            options
+        );
 
         MCNAPI uint64 bytes_remaining() const;
 
@@ -45,7 +76,10 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint>, ::dcsctp::DcSctpOptions const&);
+        MCNAPI void* $ctor(
+            ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint> verification_tag,
+            ::dcsctp::DcSctpOptions const&                            options
+        );
         // NOLINTEND
 
     public:
@@ -55,7 +89,19 @@ public:
         // NOLINTEND
     };
 
-    struct ChunkDescriptor {};
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12> mUnkd09989;
+    ::ll::UntypedStorage<8, 24> mUnk5ca691;
+    ::ll::UntypedStorage<8, 24> mUnk44c1e0;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SctpPacket& operator=(SctpPacket const&);
+    SctpPacket(SctpPacket const&);
+    SctpPacket();
 
 public:
     // member functions
@@ -67,7 +113,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::optional<::dcsctp::SctpPacket>
-    Parse(::rtc::ArrayView<uchar const>, ::dcsctp::DcSctpOptions const&);
+    Parse(::rtc::ArrayView<uchar const> data, ::dcsctp::DcSctpOptions const& options);
     // NOLINTEND
 
 public:

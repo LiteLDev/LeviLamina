@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8> mUnk3a6073;
-    ::ll::UntypedStorage<8, 8> mUnk731764;
+    ::ll::UntypedStorage<8, 8> mUnk2a21a0;
     // NOLINTEND
 
 public:
@@ -34,24 +34,16 @@ public:
     virtual ~TransactionHandler() = default;
 
     // vIndex: 1
-    virtual void update();
-
-    // vIndex: 2
     virtual void transactPurchase(::Offer&, ::TransactionContext&, ::PurchasePath);
 
-    // vIndex: 3
-    virtual bool transactFulfillment(
-        ::Offer&,
-        ::std::shared_ptr<::Purchase>,
-        ::std::unique_ptr<::TransactionContext>,
-        ::PurchasePath
-    ) = 0;
-
-    // vIndex: 4
+    // vIndex: 2
     virtual bool tryParseTransactionPayload(::std::shared_ptr<::Purchase>&, ::std::string&) const;
 
-    // vIndex: 5
+    // vIndex: 3
     virtual void onPurchaseComplete(::Offer&, ::std::string const&, ::PurchasePath, ::PurchaseResult);
+
+    // vIndex: 4
+    virtual bool _transactFulfillment(::Offer&, ::std::shared_ptr<::Purchase>, ::PurchasePath) = 0;
     // NOLINTEND
 
 public:

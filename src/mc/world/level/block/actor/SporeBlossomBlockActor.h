@@ -14,7 +14,7 @@ class SporeBlossomBlockActor : public ::BlockActor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 8
+    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 0

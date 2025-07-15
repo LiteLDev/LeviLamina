@@ -40,19 +40,19 @@ public:
     getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
         /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
     // vIndex: 123
     virtual void animateTick(::BlockAnimateTickData const&) const /*override*/;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual bool falling() const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual void onLand(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 29
@@ -66,7 +66,7 @@ public:
     getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
         /*override*/;
 
-    // vIndex: 136
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 22

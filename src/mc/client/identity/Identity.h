@@ -25,7 +25,6 @@ class Identity : public ::std::enable_shared_from_this<::Social::Identity> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk514a35;
     ::ll::UntypedStorage<8, 16> mUnk168348;
     ::ll::UntypedStorage<1, 1>  mUnk2436b9;
     ::ll::UntypedStorage<8, 32> mUnkc3caa1;
@@ -119,7 +118,7 @@ public:
     virtual void clearCachedCredentials();
 
     // vIndex: 25
-    virtual ::std::string const& getDisplayName() const;
+    virtual ::std::string getDisplayName() const;
 
     // vIndex: 26
     virtual void setPresence(::std::string const&);

@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { struct BaseError; }
 namespace Scripting { struct ContextId; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 class ScriptPrintLogger : public ::Scripting::IPrinter {
@@ -28,18 +28,18 @@ public:
     virtual void onError(::Scripting::ContextId, ::std::string_view message) const /*override*/;
 
     // vIndex: 4
-    virtual void onException(::Scripting::ContextId, ::Scripting::Error const& error, ::entt::meta_any const&) const
+    virtual void onException(::Scripting::ContextId, ::Scripting::BaseError const& error, ::entt::meta_any const&) const
         /*override*/;
 
     // vIndex: 5
     virtual bool
-    shouldPrintException(::Scripting::ContextId, ::Scripting::Error const&, ::entt::meta_any const& errorAny) const
+    shouldPrintException(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const& errorAny) const
         /*override*/;
 
     // vIndex: 6
     virtual void onPromiseRejection(
         ::Scripting::ContextId,
-        ::Scripting::Error const& error,
+        ::Scripting::BaseError const& error,
         ::entt::meta_any const&,
         bool isHandled
     ) const /*override*/;
@@ -54,14 +54,18 @@ public:
 
     MCNAPI void $onError(::Scripting::ContextId, ::std::string_view message) const;
 
-    MCNAPI void $onException(::Scripting::ContextId, ::Scripting::Error const& error, ::entt::meta_any const&) const;
+    MCNAPI void
+    $onException(::Scripting::ContextId, ::Scripting::BaseError const& error, ::entt::meta_any const&) const;
 
-    MCNAPI bool
-    $shouldPrintException(::Scripting::ContextId, ::Scripting::Error const&, ::entt::meta_any const& errorAny) const;
+    MCNAPI bool $shouldPrintException(
+        ::Scripting::ContextId,
+        ::Scripting::BaseError const&,
+        ::entt::meta_any const& errorAny
+    ) const;
 
     MCNAPI void $onPromiseRejection(
         ::Scripting::ContextId,
-        ::Scripting::Error const& error,
+        ::Scripting::BaseError const& error,
         ::entt::meta_any const&,
         bool isHandled
     ) const;

@@ -23,17 +23,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void Add(::cricket::FeedbackParam const&);
+    MCNAPI void Add(::cricket::FeedbackParam const& param);
 
     MCNAPI FeedbackParams();
 
     MCNAPI FeedbackParams(::cricket::FeedbackParams const&);
 
-    MCNAPI bool Has(::cricket::FeedbackParam const&) const;
+    MCNAPI bool Has(::cricket::FeedbackParam const& param) const;
 
     MCNAPI bool HasDuplicateEntries() const;
 
-    MCNAPI void Intersect(::cricket::FeedbackParams const&);
+    MCNAPI void Intersect(::cricket::FeedbackParams const& from);
 
     MCNAPI ~FeedbackParams();
     // NOLINTEND

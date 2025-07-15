@@ -13,9 +13,9 @@
 class IScriptPluginSource;
 class MinEngineVersion;
 struct PackIdVersion;
+namespace Scripting { struct BaseError; }
 namespace Scripting { struct Capabilities; }
 namespace Scripting { struct ContextId; }
-namespace Scripting { struct Error; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct ScriptData; }
 // clang-format on
@@ -69,24 +69,24 @@ public:
 
     // vIndex: 4
     virtual void onException(
-        ::Scripting::ContextId    contextId,
-        ::Scripting::Error const& error,
-        ::entt::meta_any const&   errorAny
+        ::Scripting::ContextId        contextId,
+        ::Scripting::BaseError const& error,
+        ::entt::meta_any const&       errorAny
     ) const /*override*/;
 
     // vIndex: 5
     virtual bool shouldPrintException(
-        ::Scripting::ContextId    contextId,
-        ::Scripting::Error const& error,
-        ::entt::meta_any const&   errorAny
+        ::Scripting::ContextId        contextId,
+        ::Scripting::BaseError const& error,
+        ::entt::meta_any const&       errorAny
     ) const /*override*/;
 
     // vIndex: 6
     virtual void onPromiseRejection(
-        ::Scripting::ContextId    contextId,
-        ::Scripting::Error const& error,
-        ::entt::meta_any const&   errorAny,
-        bool                      isHandled
+        ::Scripting::ContextId        contextId,
+        ::Scripting::BaseError const& error,
+        ::entt::meta_any const&       errorAny,
+        bool                          isHandled
     ) const /*override*/;
     // NOLINTEND
 
@@ -146,22 +146,22 @@ public:
     MCNAPI void $onError(::Scripting::ContextId contextId, ::std::string_view message) const;
 
     MCNAPI void $onException(
-        ::Scripting::ContextId    contextId,
-        ::Scripting::Error const& error,
-        ::entt::meta_any const&   errorAny
+        ::Scripting::ContextId        contextId,
+        ::Scripting::BaseError const& error,
+        ::entt::meta_any const&       errorAny
     ) const;
 
     MCNAPI bool $shouldPrintException(
-        ::Scripting::ContextId    contextId,
-        ::Scripting::Error const& error,
-        ::entt::meta_any const&   errorAny
+        ::Scripting::ContextId        contextId,
+        ::Scripting::BaseError const& error,
+        ::entt::meta_any const&       errorAny
     ) const;
 
     MCNAPI void $onPromiseRejection(
-        ::Scripting::ContextId    contextId,
-        ::Scripting::Error const& error,
-        ::entt::meta_any const&   errorAny,
-        bool                      isHandled
+        ::Scripting::ContextId        contextId,
+        ::Scripting::BaseError const& error,
+        ::entt::meta_any const&       errorAny,
+        bool                          isHandled
     ) const;
     // NOLINTEND
 

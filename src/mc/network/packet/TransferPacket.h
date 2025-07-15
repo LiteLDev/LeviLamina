@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/renderer/rendergraph/Packet.h"
 #include "mc/network/MinecraftPacketIds.h"
-#include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
@@ -17,14 +17,10 @@ class TransferPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mServerAddress;
-    ::ll::TypedStorage<4, 4, int>            mServerPort;
+    ::ll::TypedStorage<8, 32, ::std::string> mDestination;
+    ::ll::TypedStorage<2, 2, ushort>         mDestinationPort;
     ::ll::TypedStorage<1, 1, bool>           mReloadWorld;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TransferPacket();
 
 public:
     // virtual functions
@@ -43,18 +39,6 @@ public:
 
     // vIndex: 0
     virtual ~TransferPacket() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI TransferPacket(::std::string const& serverAddress, int serverPort);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& serverAddress, int serverPort);
     // NOLINTEND
 
 public:

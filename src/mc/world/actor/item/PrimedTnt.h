@@ -116,7 +116,7 @@ public:
 
     MCAPI ::ActorUniqueID $getSourceUniqueID() const;
 
-    MCFOLD ::ActorType $getOwnerEntityType();
+    MCAPI ::ActorType $getOwnerEntityType();
 
     MCFOLD void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);

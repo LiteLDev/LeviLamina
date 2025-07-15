@@ -205,6 +205,16 @@ public:
         ::Enchant::Type            type,
         ::Enchant::Frequency       frequency,
         ::std::string_view         stringId,
+        ::std::string_view         description,
+        ::Enchant::VillagerTrading isAvailableForVillagerTraining,
+        int                        primarySlots,
+        int                        secondarySlots
+    );
+
+    MCAPI Enchant(
+        ::Enchant::Type            type,
+        ::Enchant::Frequency       frequency,
+        ::std::string_view         stringId,
         ::std::string_view         scriptStringId,
         ::std::string_view         description,
         ::Enchant::VillagerTrading isAvailableForVillagerTraining,
@@ -240,6 +250,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Enchant::Type            type,
+        ::Enchant::Frequency       frequency,
+        ::std::string_view         stringId,
+        ::std::string_view         description,
+        ::Enchant::VillagerTrading isAvailableForVillagerTraining,
+        int                        primarySlots,
+        int                        secondarySlots
+    );
+
     MCAPI void* $ctor(
         ::Enchant::Type            type,
         ::Enchant::Frequency       frequency,

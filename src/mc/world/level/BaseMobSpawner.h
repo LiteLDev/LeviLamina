@@ -7,7 +7,6 @@
 class BlockPos;
 class BlockSource;
 class CompoundTag;
-class SpawnData;
 struct ActorDefinitionIdentifier;
 // clang-format on
 
@@ -69,8 +68,6 @@ public:
     MCNAPI void removeDisplayEntity();
 
     MCNAPI void setEntityId(::ActorDefinitionIdentifier actorDefId);
-
-    MCNAPI void setNextSpawnData(::std::unique_ptr<::SpawnData> nextSpawnData);
     // NOLINTEND
 
 public:

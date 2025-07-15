@@ -19,6 +19,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk15868f;
     ::ll::UntypedStorage<8, 32> mUnkab4a80;
+    ::ll::UntypedStorage<8, 32> mUnk4ac68d;
     ::ll::UntypedStorage<8, 32> mUnk160668;
     ::ll::UntypedStorage<8, 72> mUnka0304c;
     // NOLINTEND
@@ -47,11 +48,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::cereal::ext::JSONSchema fromDescriptions(
-        ::std::vector<::cereal::SchemaDescription> const& descriptions,
-        uint64                                            pos,
-        ::std::string const&                              minecraftVersion
-    );
+    MCNAPI static ::cereal::ext::JSONSchema
+    fromDescriptions(::std::vector<::cereal::SchemaDescription> const& descriptions, uint64 pos);
     // NOLINTEND
 
 public:

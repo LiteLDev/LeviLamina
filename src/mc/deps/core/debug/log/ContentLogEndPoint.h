@@ -41,7 +41,5 @@ public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftableForLogEndPoint();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

@@ -113,19 +113,19 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 136
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual float getYRotationInDegrees(::Block const& block) const;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual bool _canSurvive(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual ::ItemInstance _getItemInstance() const;
 
     // vIndex: 130

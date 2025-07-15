@@ -92,12 +92,12 @@ public:
     // vIndex: 42
     virtual ::WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const /*override*/;
 
-    // vIndex: 46
+    // vIndex: 47
     virtual void
     decorateWorldGenLoadChunk(::Biome const&, ::LevelChunk&, ::BlockVolumeTarget&, ::Random&, ::ChunkPos const&) const
         /*override*/;
 
-    // vIndex: 47
+    // vIndex: 48
     virtual void decorateWorldGenPostProcess(::Biome const&, ::LevelChunk&, ::BlockSource&, ::Random&) const
         /*override*/;
 

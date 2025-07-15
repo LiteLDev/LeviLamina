@@ -11,7 +11,7 @@ namespace Scripting { struct Version; }
 namespace ScriptModuleMinecraft::Releases {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::std::add_lvalue_reference_t<::ScriptModuleMinecraft::Releases::VersionRelease const[]> ALL_V1_RELEASES();
+MCNAPI ::std::add_lvalue_reference_t<::ScriptModuleMinecraft::Releases::VersionRelease const[]> ALL_RELEASES();
 
 MCNAPI ::Scripting::Version const& V010();
 

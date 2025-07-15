@@ -46,7 +46,7 @@ public:
     // vIndex: 45
     virtual bool canBeOriginalSurface() const /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 82

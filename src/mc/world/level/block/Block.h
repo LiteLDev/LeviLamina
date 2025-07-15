@@ -107,6 +107,8 @@ public:
 
     MCAPI Block(ushort data, ::gsl::not_null<::BlockLegacy*> oldBlock, ::CompoundTag serId, uint const& runId);
 
+    MCAPI bool _isSolid() const;
+
     MCAPI void _queueForTickBasedOnComponentConfiguration(
         ::BlockSource&    region,
         ::BlockPos const& pos,
@@ -145,6 +147,8 @@ public:
 
     MCAPI ::Block const& copyState(::Block const& fromBlock, ::BlockState const& state) const;
 
+    MCAPI ::Block const& copyStates(::Block const& fromBlock) const;
+
     MCAPI void executeItemEvent(
         ::ItemStackBase&     item,
         ::std::string const& eventName,
@@ -154,6 +158,8 @@ public:
     ) const;
 
     MCAPI bool executeTrigger(::DefinitionTrigger const& trigger, ::RenderParams& params) const;
+
+    MCAPI void finalizeBlockComponentStorage();
 
     MCAPI bool getCollisionShape(
         ::AABB&                                            outAABB,

@@ -104,14 +104,14 @@ public:
 
         MCNAPI ::webrtc::VideoFrame build();
 
-        MCNAPI ::webrtc::VideoFrame::Builder& set_id(ushort);
+        MCNAPI ::webrtc::VideoFrame::Builder& set_id(ushort id);
 
-        MCNAPI ::webrtc::VideoFrame::Builder& set_rotation(::webrtc::VideoRotation);
+        MCNAPI ::webrtc::VideoFrame::Builder& set_rotation(::webrtc::VideoRotation rotation);
 
-        MCNAPI ::webrtc::VideoFrame::Builder& set_timestamp_us(int64);
+        MCNAPI ::webrtc::VideoFrame::Builder& set_timestamp_us(int64 timestamp_us);
 
         MCNAPI ::webrtc::VideoFrame::Builder&
-        set_video_frame_buffer(::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const&);
+        set_video_frame_buffer(::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const& buffer);
 
         MCNAPI ~Builder();
         // NOLINTEND
@@ -158,18 +158,18 @@ public:
     MCNAPI VideoFrame(::webrtc::VideoFrame const&);
 
     MCNAPI VideoFrame(
-        ushort,
-        ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const&,
-        int64,
-        ::std::optional<::webrtc::Timestamp> const&,
-        ::std::optional<::webrtc::Timestamp> const&,
-        uint,
-        int64,
-        ::webrtc::VideoRotation,
-        ::std::optional<::webrtc::ColorSpace> const&,
-        ::webrtc::VideoFrame::RenderParameters const&,
-        ::std::optional<::webrtc::VideoFrame::UpdateRect> const&,
-        ::webrtc::RtpPacketInfos
+        ushort                                                     id,
+        ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const& buffer,
+        int64                                                      timestamp_us,
+        ::std::optional<::webrtc::Timestamp> const&                capture_time_identifier,
+        ::std::optional<::webrtc::Timestamp> const&                reference_time,
+        uint                                                       timestamp_rtp,
+        int64                                                      ntp_time_ms,
+        ::webrtc::VideoRotation                                    rotation,
+        ::std::optional<::webrtc::ColorSpace> const&               color_space,
+        ::webrtc::VideoFrame::RenderParameters const&              render_parameters,
+        ::std::optional<::webrtc::VideoFrame::UpdateRect> const&   update_rect,
+        ::webrtc::RtpPacketInfos                                   packet_infos
     );
 
     MCNAPI int height() const;
@@ -185,18 +185,18 @@ public:
     MCNAPI void* $ctor(::webrtc::VideoFrame const&);
 
     MCNAPI void* $ctor(
-        ushort,
-        ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const&,
-        int64,
-        ::std::optional<::webrtc::Timestamp> const&,
-        ::std::optional<::webrtc::Timestamp> const&,
-        uint,
-        int64,
-        ::webrtc::VideoRotation,
-        ::std::optional<::webrtc::ColorSpace> const&,
-        ::webrtc::VideoFrame::RenderParameters const&,
-        ::std::optional<::webrtc::VideoFrame::UpdateRect> const&,
-        ::webrtc::RtpPacketInfos
+        ushort                                                     id,
+        ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const& buffer,
+        int64                                                      timestamp_us,
+        ::std::optional<::webrtc::Timestamp> const&                capture_time_identifier,
+        ::std::optional<::webrtc::Timestamp> const&                reference_time,
+        uint                                                       timestamp_rtp,
+        int64                                                      ntp_time_ms,
+        ::webrtc::VideoRotation                                    rotation,
+        ::std::optional<::webrtc::ColorSpace> const&               color_space,
+        ::webrtc::VideoFrame::RenderParameters const&              render_parameters,
+        ::std::optional<::webrtc::VideoFrame::UpdateRect> const&   update_rect,
+        ::webrtc::RtpPacketInfos                                   packet_infos
     );
     // NOLINTEND
 

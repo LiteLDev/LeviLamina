@@ -5,16 +5,4 @@
 // auto generated inclusion list
 #include "mc/util/MolangHashStringVariable.h"
 
-struct MolangArrayVariable : public ::MolangHashStringVariable<::MolangArrayVariable> {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~MolangArrayVariable();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-};
+struct MolangArrayVariable : public ::MolangHashStringVariable<::MolangArrayVariable> {};

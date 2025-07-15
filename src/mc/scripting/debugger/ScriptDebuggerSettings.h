@@ -20,22 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptDebuggerSettings& operator=(ScriptDebuggerSettings const&);
-    ScriptDebuggerSettings();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptDebuggerSettings(::ScriptDebuggerSettings const&);
-
     MCNAPI ~ScriptDebuggerSettings();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptDebuggerSettings const&);
     // NOLINTEND
 
 public:

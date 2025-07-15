@@ -10,7 +10,6 @@
 #include "mc/world/item/SortItemInstanceIdAux.h"
 #include "mc/world/item/crafting/ExternalRecipeStore.h"
 #include "mc/world/item/crafting/RecipeIngredient.h"
-#include "mc/world/item/crafting/RecipeUnlockingRequirement.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -150,16 +149,13 @@ public:
 
     MCAPI void _addMapRecipes();
 
-    MCAPI ::RecipeUnlockingRequirement
-    _createUnlockingRequirementFromContext(::RecipeUnlockingRequirement::UnlockingContext context) const;
-
     MCAPI bool _isRecipeValidToAdd(::Recipe const& recipe);
 
     MCAPI bool _loadBrewingMix(::Json::Value const& objData, ::MinEngineVersion const& minEngineVersion);
 
     MCAPI void _loadDataDrivenRecipes(::std::vector<::PackInstance> const& resourcePacksNewestToOldest);
 
-    MCAPI void _loadHardcodedRecipes(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
+    MCAPI void _loadHardcodedRecipes(::BaseGameVersion const& baseGameVersion, ::Experiments const&);
 
     MCAPI ::RecipeIngredient const _loadIngredientFromJson(
         ::Json::Value const& obj,
@@ -170,9 +166,6 @@ public:
 
     MCAPI ::RecipeIngredient const
     _loadInputIngredientFromJson(::Json::Value const& obj, ::MinEngineVersion const& minEngineVersion) const;
-
-    MCAPI ::RecipeIngredient const
-    _loadOutputIngredientFromJson(::Json::Value const& obj, ::MolangVersion molangVersion) const;
 
     MCAPI bool _loadSmithingTransform(
         ::Json::Value const&                 objData,

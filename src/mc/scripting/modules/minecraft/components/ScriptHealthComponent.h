@@ -3,12 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/AttributeScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
+namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
+namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -21,13 +24,18 @@ public:
     // vIndex: 5
     virtual ::Scripting::Result_deprecated<bool> setCurrent(float const& value) const /*override*/;
 
-    // vIndex: 9
-    virtual ::Scripting::Result_deprecated<void> resetToMinValue() const /*override*/;
+    // vIndex: 6
+    virtual ::Scripting::
+        Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError>
+        setCurrentV2(float const& value) const /*override*/;
 
     // vIndex: 10
-    virtual ::Scripting::Result_deprecated<void> resetToMaxValue() const /*override*/;
+    virtual ::Scripting::Result_deprecated<void> resetToMinValue() const /*override*/;
 
     // vIndex: 11
+    virtual ::Scripting::Result_deprecated<void> resetToMaxValue() const /*override*/;
+
+    // vIndex: 12
     virtual ::Scripting::Result_deprecated<void> resetToDefaultValue() const /*override*/;
 
     // vIndex: 0
@@ -57,6 +65,10 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<bool> $setCurrent(float const& value) const;
+
+    MCNAPI ::Scripting::
+        Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError>
+        $setCurrentV2(float const& value) const;
 
     MCNAPI ::Scripting::Result_deprecated<void> $resetToMinValue() const;
 

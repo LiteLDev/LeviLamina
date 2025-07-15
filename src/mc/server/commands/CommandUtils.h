@@ -36,6 +36,9 @@ class Actor;
 namespace CommandUtils {
 // functions
 // NOLINTBEGIN
+MCAPI bool
+addItemInstanceComponents(::ItemInstance& itemInstance, ::Json::Value const& components, ::std::string& errorMsg);
+
 MCAPI ::Actor* addToLevel(::OwnerPtr<::EntityContext> entity, ::BlockSource& region);
 
 MCAPI void addtoCSVList(::std::string& list, ::std::string const& newItem);

@@ -24,6 +24,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI HoverTextColorItemComponent(::SharedTypes::v1_20_50::HoverTextColorItemComponent&&);
+
     MCNAPI ::SharedTypes::v1_20_50::HoverTextColorItemComponent&
     operator=(::SharedTypes::v1_20_50::HoverTextColorItemComponent&&);
 
@@ -37,6 +39,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::SharedTypes::v1_20_50::HoverTextColorItemComponent&&);
     // NOLINTEND
 
 public:

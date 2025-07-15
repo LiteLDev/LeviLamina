@@ -15,6 +15,7 @@ class BlockSource;
 class Experiments;
 class Random;
 namespace BlockEvents { class BlockQueuedTickEvent; }
+namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class ChorusFlowerBlock : public ::BlockLegacy {
@@ -24,9 +25,6 @@ public:
     // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 135
-    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
@@ -34,7 +32,7 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 22
@@ -60,6 +58,8 @@ public:
 
     MCAPI void _placeGrownFlower(::BlockSource& region, ::BlockPos const& pos, int newAge) const;
 
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
@@ -82,8 +82,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI int $getVariant(::Block const& block) const;
-
-    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 

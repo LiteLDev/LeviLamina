@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RtpCodecCapability() /*override*/ = default;
+    virtual ~RtpCodecCapability() /*override*/;
     // NOLINTEND
 
 public:
@@ -40,6 +40,12 @@ public:
     MCNAPI void* $ctor();
 
     MCNAPI void* $ctor(::webrtc::RtpCodecCapability const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

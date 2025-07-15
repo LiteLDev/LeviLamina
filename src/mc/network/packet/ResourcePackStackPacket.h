@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/renderer/rendergraph/Packet.h"
 #include "mc/network/MinecraftPacketIds.h"
-#include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/resources/BaseGameVersion.h"
 #include "mc/world/level/storage/ExperimentStorage.h"
@@ -12,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
+class Experiments;
 class ReadOnlyBinaryStream;
 struct PackInstanceId;
 // clang-format on
@@ -51,12 +52,30 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ResourcePackStackPacket();
+
+    MCAPI ResourcePackStackPacket(
+        ::std::vector<::PackInstanceId> addOnIdsAndVersions,
+        ::std::vector<::PackInstanceId> texturePackIdsAndVersions,
+        ::BaseGameVersion const&        baseGameVersion,
+        bool                            texturePackRequired,
+        ::Experiments const&            experiments,
+        bool                            includeEditorPacks
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+
+    MCAPI void* $ctor(
+        ::std::vector<::PackInstanceId> addOnIdsAndVersions,
+        ::std::vector<::PackInstanceId> texturePackIdsAndVersions,
+        ::BaseGameVersion const&        baseGameVersion,
+        bool                            texturePackRequired,
+        ::Experiments const&            experiments,
+        bool                            includeEditorPacks
+    );
     // NOLINTEND
 
 public:

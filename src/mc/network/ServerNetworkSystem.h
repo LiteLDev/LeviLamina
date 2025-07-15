@@ -16,6 +16,8 @@ class NetworkDebugManager;
 class NetworkIdentifier;
 class NetworkSessionOwner;
 class Scheduler;
+class SignalingService;
+class SignalingServiceSignInJob;
 struct ConnectionDefinition;
 struct NetworkSettingOptions;
 struct NetworkSystemToggles;
@@ -48,13 +50,17 @@ public:
         ::NetworkSettingOptions const&                       networkSettingOption,
         ::PortMappingInfo const&                             portMappingInfo,
         ::NetherNet::LogSeverity                             defaultLogSeverity,
-        ::std::optional<::NetherNet::NetworkID>              networkId
+        ::std::optional<::NetherNet::NetworkID>              networkId,
+        ::Bedrock::NonOwnerPointer<::SignalingService>       signalingService
     );
 
     MCNAPI void _createNetworkStatistics(
         ::NetworkSystemToggles const&                            networkToggles,
         ::Bedrock::NonOwnerPointer<::NetworkDebugManager> const& networkDebugManager
     );
+
+    MCNAPI ::std::shared_ptr<::SignalingServiceSignInJob>
+    createSignalingServiceSigninJobIfNeeded(::Bedrock::NotNullNonOwnerPtr<::SignalingService> signalingService);
 
     MCNAPI ::NetworkIdentifier getLocalNetworkId() const;
 
@@ -73,7 +79,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>         appPlatform,
         ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner,
         ::NetworkSettingOptions const&                       networkSettingOptions,
-        ::std::optional<::NetherNet::NetworkID>              networkId
+        ::std::optional<::NetherNet::NetworkID>              networkId,
+        ::Bedrock::NonOwnerPointer<::SignalingService>       signalingService
     );
     // NOLINTEND
 
@@ -90,7 +97,8 @@ public:
         ::NetworkSettingOptions const&                       networkSettingOption,
         ::PortMappingInfo const&                             portMappingInfo,
         ::NetherNet::LogSeverity                             defaultLogSeverity,
-        ::std::optional<::NetherNet::NetworkID>              networkId
+        ::std::optional<::NetherNet::NetworkID>              networkId,
+        ::Bedrock::NonOwnerPointer<::SignalingService>       signalingService
     );
     // NOLINTEND
 

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/CrashDumpLogStringID.h"
+#include "mc/platform/diagnostics/CrashDumpLogStringID.h"
 #include "mc/world/level/ILevelCrashDumpManager.h"
 
 class LevelCrashDumpManager : public ::ILevelCrashDumpManager {
@@ -24,22 +24,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LevelCrashDumpManager() /*override*/;
+    virtual ~LevelCrashDumpManager() /*override*/ = default;
 
     // vIndex: 1
-    virtual void setCrashDumpLogStringID(::CrashDumpLogStringID) const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual void setCrashDumpLogStringID(::CrashDumpLogStringID crashDumpLogStringID) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI void $setCrashDumpLogStringID(::CrashDumpLogStringID crashDumpLogStringID) const;
     // NOLINTEND
 
 public:

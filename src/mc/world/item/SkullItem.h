@@ -68,6 +68,8 @@ public:
     // NOLINTBEGIN
     MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
+    MCAPI ::Rarity $getRarity(::ItemStackBase const& stack) const;
+
     MCFOLD int $getLevelDataForAuxValue(int auxValue) const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;

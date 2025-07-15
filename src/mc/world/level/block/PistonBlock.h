@@ -70,7 +70,7 @@ public:
     // vIndex: 47
     virtual bool isValidAuxValue(int value) const /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 117

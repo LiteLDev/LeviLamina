@@ -7,12 +7,16 @@
 #include "mc/external/cricket/MediaType.h"
 #include "mc/external/rtc/SSLRole.h"
 #include "mc/external/webrtc/AddIceCandidateResult.h"
+#include "mc/external/webrtc/CreateSessionDescriptionObserver.h"
 #include "mc/external/webrtc/PeerConnectionInterface.h"
 #include "mc/external/webrtc/RTCErrorOr.h"
 #include "mc/external/webrtc/RTCErrorType.h"
 #include "mc/external/webrtc/RtpTransceiverDirection.h"
 #include "mc/external/webrtc/RtpTransceiverProxyWithInternal.h"
+#include "mc/external/webrtc/SdpStateProvider.h"
 #include "mc/external/webrtc/SdpType.h"
+#include "mc/external/webrtc/SetLocalDescriptionObserverInterface.h"
+#include "mc/external/webrtc/SetRemoteDescriptionObserverInterface.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
@@ -31,7 +35,6 @@ namespace cricket { struct StreamParams; }
 namespace rtc { class Thread; }
 namespace webrtc { class AudioTrackInterface; }
 namespace webrtc { class ConnectionContext; }
-namespace webrtc { class CreateSessionDescriptionObserver; }
 namespace webrtc { class DataChannelController; }
 namespace webrtc { class IceCandidateInterface; }
 namespace webrtc { class JsepIceCandidate; }
@@ -44,8 +47,6 @@ namespace webrtc { class RtpTransceiver; }
 namespace webrtc { class RtpTransceiverInterface; }
 namespace webrtc { class RtpTransmissionManager; }
 namespace webrtc { class SessionDescriptionInterface; }
-namespace webrtc { class SetLocalDescriptionObserverInterface; }
-namespace webrtc { class SetRemoteDescriptionObserverInterface; }
 namespace webrtc { class SetSessionDescriptionObserver; }
 namespace webrtc { class StreamCollection; }
 namespace webrtc { class StreamCollectionInterface; }
@@ -56,33 +57,36 @@ namespace webrtc { struct PeerConnectionDependencies; }
 
 namespace webrtc {
 
-class SdpOfferAnswerHandler {
+class SdpOfferAnswerHandler : public ::webrtc::SdpStateProvider {
 public:
     // SdpOfferAnswerHandler inner types declare
     // clang-format off
+    class ImplicitCreateSessionDescriptionObserver;
     class LocalIceCredentialsToReplace;
     class RemoteDescriptionOperation;
     class SetSessionDescriptionObserverAdapter;
     // clang-format on
 
     // SdpOfferAnswerHandler inner types define
-    enum class SessionError : uint {};
-
-    class LocalIceCredentialsToReplace {
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI void AppendIceCredentialsFromSessionDescription(::webrtc::SessionDescriptionInterface const&);
-
-        MCNAPI void ClearIceCredentials();
-
-        MCNAPI bool SatisfiesIceRestart(::webrtc::SessionDescriptionInterface const&) const;
-        // NOLINTEND
-    };
-
     class RemoteDescriptionOperation {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>  mUnk38d8f1;
+        ::ll::UntypedStorage<8, 8>  mUnk4053c6;
+        ::ll::UntypedStorage<8, 8>  mUnk9a7b42;
+        ::ll::UntypedStorage<8, 8>  mUnk86d150;
+        ::ll::UntypedStorage<8, 64> mUnk938da2;
+        ::ll::UntypedStorage<8, 48> mUnk557ac8;
+        ::ll::UntypedStorage<8, 16> mUnkdd5c30;
+        ::ll::UntypedStorage<4, 4>  mUnkc659ff;
+        ::ll::UntypedStorage<1, 1>  mUnkbd8877;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
+        RemoteDescriptionOperation& operator=(RemoteDescriptionOperation const&);
+        RemoteDescriptionOperation(RemoteDescriptionOperation const&);
         RemoteDescriptionOperation();
 
     public:
@@ -90,20 +94,20 @@ public:
         // NOLINTBEGIN
         MCNAPI bool HaveSessionError();
 
-        MCNAPI void InvalidParam(::std::string);
+        MCNAPI void InvalidParam(::std::string message);
 
         MCNAPI bool MaybeRollback();
 
         MCNAPI RemoteDescriptionOperation(
-            ::webrtc::SdpOfferAnswerHandler*,
-            ::std::unique_ptr<::webrtc::SessionDescriptionInterface>,
-            ::webrtc::scoped_refptr<::webrtc::SetRemoteDescriptionObserverInterface>,
-            ::std::function<void()>
+            ::webrtc::SdpOfferAnswerHandler*                                         handler,
+            ::std::unique_ptr<::webrtc::SessionDescriptionInterface>                 desc,
+            ::webrtc::scoped_refptr<::webrtc::SetRemoteDescriptionObserverInterface> observer,
+            ::std::function<void()>                                                  operations_chain_callback
         );
 
         MCNAPI void SetAsSessionError();
 
-        MCNAPI void SetError(::webrtc::RTCErrorType, ::std::string);
+        MCNAPI void SetError(::webrtc::RTCErrorType type, ::std::string message);
 
         MCNAPI void SignalCompletion();
 
@@ -114,19 +118,104 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(
-            ::webrtc::SdpOfferAnswerHandler*,
-            ::std::unique_ptr<::webrtc::SessionDescriptionInterface>,
-            ::webrtc::scoped_refptr<::webrtc::SetRemoteDescriptionObserverInterface>,
-            ::std::function<void()>
+            ::webrtc::SdpOfferAnswerHandler*                                         handler,
+            ::std::unique_ptr<::webrtc::SessionDescriptionInterface>                 desc,
+            ::webrtc::scoped_refptr<::webrtc::SetRemoteDescriptionObserverInterface> observer,
+            ::std::function<void()>                                                  operations_chain_callback
         );
         // NOLINTEND
     };
 
-    class SetSessionDescriptionObserverAdapter {
+    class ImplicitCreateSessionDescriptionObserver : public ::webrtc::CreateSessionDescriptionObserver {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1>  mUnk1972e1;
+        ::ll::UntypedStorage<8, 16> mUnkb3ce39;
+        ::ll::UntypedStorage<8, 8>  mUnkcb15ee;
+        ::ll::UntypedStorage<8, 64> mUnk801993;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ImplicitCreateSessionDescriptionObserver& operator=(ImplicitCreateSessionDescriptionObserver const&);
+        ImplicitCreateSessionDescriptionObserver(ImplicitCreateSessionDescriptionObserver const&);
+        ImplicitCreateSessionDescriptionObserver();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        // vIndex: 2
+        virtual ~ImplicitCreateSessionDescriptionObserver() /*override*/;
+
+        // vIndex: 3
+        virtual void OnSuccess(::webrtc::SessionDescriptionInterface* desc_ptr) /*override*/;
+
+        // vIndex: 4
+        virtual void OnFailure(::webrtc::RTCError error) /*override*/;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCNAPI void $OnSuccess(::webrtc::SessionDescriptionInterface* desc_ptr);
+
+        MCNAPI void $OnFailure(::webrtc::RTCError error);
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
+        // NOLINTEND
+    };
+
+    class SetSessionDescriptionObserverAdapter : public ::webrtc::SetLocalDescriptionObserverInterface,
+                                                 public ::webrtc::SetRemoteDescriptionObserverInterface {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 16> mUnk14d45d;
+        ::ll::UntypedStorage<8, 8>  mUnkd32ec5;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SetSessionDescriptionObserverAdapter& operator=(SetSessionDescriptionObserverAdapter const&);
+        SetSessionDescriptionObserverAdapter(SetSessionDescriptionObserverAdapter const&);
+        SetSessionDescriptionObserverAdapter();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        // vIndex: 3
+        virtual void OnSetLocalDescriptionComplete(::webrtc::RTCError error) /*override*/;
+
+        // vIndex: 3
+        virtual void OnSetRemoteDescriptionComplete(::webrtc::RTCError error) /*override*/;
+
+        // vIndex: 2
+        virtual ~SetSessionDescriptionObserverAdapter() /*override*/ = default;
+        // NOLINTEND
+
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI void OnSetDescriptionComplete(::webrtc::RTCError);
+        MCNAPI void OnSetDescriptionComplete(::webrtc::RTCError error);
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCNAPI void $OnSetLocalDescriptionComplete(::webrtc::RTCError error);
+
+        MCNAPI void $OnSetRemoteDescriptionComplete(::webrtc::RTCError error);
         // NOLINTEND
 
     public:
@@ -138,49 +227,158 @@ public:
         // NOLINTEND
     };
 
+    enum class SessionError : int {
+        KNone      = 0,
+        KContent   = 1,
+        KTransport = 2,
+    };
+
+    class LocalIceCredentialsToReplace {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 16> mUnk44201b;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        LocalIceCredentialsToReplace& operator=(LocalIceCredentialsToReplace const&);
+        LocalIceCredentialsToReplace(LocalIceCredentialsToReplace const&);
+        LocalIceCredentialsToReplace();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI void AppendIceCredentialsFromSessionDescription(::webrtc::SessionDescriptionInterface const& desc);
+
+        MCNAPI void ClearIceCredentials();
+
+        MCNAPI bool SatisfiesIceRestart(::webrtc::SessionDescriptionInterface const& local_description) const;
+        // NOLINTEND
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk6fb1a0;
+    ::ll::UntypedStorage<8, 8>  mUnk83b177;
+    ::ll::UntypedStorage<8, 8>  mUnkf18b9b;
+    ::ll::UntypedStorage<8, 8>  mUnk370f83;
+    ::ll::UntypedStorage<8, 8>  mUnka66c5f;
+    ::ll::UntypedStorage<8, 8>  mUnk8a6263;
+    ::ll::UntypedStorage<8, 8>  mUnkbf2ff7;
+    ::ll::UntypedStorage<4, 4>  mUnk2e91d1;
+    ::ll::UntypedStorage<1, 2>  mUnk9c155c;
+    ::ll::UntypedStorage<8, 8>  mUnk4b7776;
+    ::ll::UntypedStorage<8, 8>  mUnk5ebabb;
+    ::ll::UntypedStorage<8, 24> mUnk4b7303;
+    ::ll::UntypedStorage<8, 8>  mUnk644da3;
+    ::ll::UntypedStorage<8, 32> mUnkafa2ee;
+    ::ll::UntypedStorage<8, 24> mUnk2a319b;
+    ::ll::UntypedStorage<8, 16> mUnk2a3910;
+    ::ll::UntypedStorage<8, 8>  mUnk9f72d7;
+    ::ll::UntypedStorage<1, 1>  mUnkfcbc5f;
+    ::ll::UntypedStorage<1, 1>  mUnk80521a;
+    ::ll::UntypedStorage<4, 4>  mUnk59d611;
+    ::ll::UntypedStorage<1, 1>  mUnk778248;
+    ::ll::UntypedStorage<1, 1>  mUnkc0d07e;
+    ::ll::UntypedStorage<1, 1>  mUnk4415fe;
+    ::ll::UntypedStorage<8, 8>  mUnk5dcc6c;
+    ::ll::UntypedStorage<4, 4>  mUnk8004ed;
+    ::ll::UntypedStorage<8, 32> mUnk2ed360;
+    ::ll::UntypedStorage<8, 88> mUnkad58ba;
+    ::ll::UntypedStorage<4, 20> mUnkb32f83;
+    ::ll::UntypedStorage<8, 8>  mUnk1692f7;
+    ::ll::UntypedStorage<1, 2>  mUnkba7369;
+    ::ll::UntypedStorage<8, 16> mUnkf74f36;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
+    SdpOfferAnswerHandler& operator=(SdpOfferAnswerHandler const&);
+    SdpOfferAnswerHandler(SdpOfferAnswerHandler const&);
     SdpOfferAnswerHandler();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~SdpOfferAnswerHandler() /*override*/;
+
+    // vIndex: 1
+    virtual ::webrtc::PeerConnectionInterface::SignalingState signaling_state() const /*override*/;
+
+    // vIndex: 2
+    virtual ::webrtc::SessionDescriptionInterface const* local_description() const /*override*/;
+
+    // vIndex: 3
+    virtual ::webrtc::SessionDescriptionInterface const* remote_description() const /*override*/;
+
+    // vIndex: 4
+    virtual ::webrtc::SessionDescriptionInterface const* current_local_description() const /*override*/;
+
+    // vIndex: 5
+    virtual ::webrtc::SessionDescriptionInterface const* current_remote_description() const /*override*/;
+
+    // vIndex: 6
+    virtual ::webrtc::SessionDescriptionInterface const* pending_local_description() const /*override*/;
+
+    // vIndex: 7
+    virtual ::webrtc::SessionDescriptionInterface const* pending_remote_description() const /*override*/;
+
+    // vIndex: 8
+    virtual bool NeedsIceRestart(::std::string const& content_name) const /*override*/;
+
+    // vIndex: 9
+    virtual bool IceRestartPending(::std::string const& content_name) const /*override*/;
+
+    // vIndex: 10
+    virtual ::std::optional<::rtc::SSLRole> GetDtlsRole(::std::string const& mid) const /*override*/;
+    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool AddIceCandidate(::webrtc::IceCandidateInterface const*);
+    MCNAPI bool AddIceCandidate(::webrtc::IceCandidateInterface const* ice_candidate);
 
-    MCNAPI void
-        AddIceCandidate(::std::unique_ptr<::webrtc::IceCandidateInterface>, ::std::function<void(::webrtc::RTCError)>);
+    MCNAPI void AddIceCandidate(
+        ::std::unique_ptr<::webrtc::IceCandidateInterface> candidate,
+        ::std::function<void(::webrtc::RTCError)>          callback
+    );
 
-    MCNAPI ::webrtc::AddIceCandidateResult AddIceCandidateInternal(::webrtc::IceCandidateInterface const*);
+    MCNAPI ::webrtc::AddIceCandidateResult
+    AddIceCandidateInternal(::webrtc::IceCandidateInterface const* ice_candidate);
 
-    MCNAPI void AddLocalIceCandidate(::webrtc::JsepIceCandidate const*);
+    MCNAPI void AddLocalIceCandidate(::webrtc::JsepIceCandidate const* candidate);
 
-    MCNAPI bool AddStream(::webrtc::MediaStreamInterface*);
+    MCNAPI bool AddStream(::webrtc::MediaStreamInterface* local_stream);
 
-    MCNAPI void AddUpToOneReceivingTransceiverOfType(::cricket::MediaType);
+    MCNAPI void AddUpToOneReceivingTransceiverOfType(::cricket::MediaType media_type);
 
     MCNAPI void AllocateSctpSids();
 
     MCNAPI ::webrtc::RTCError ApplyLocalDescription(
-        ::std::unique_ptr<::webrtc::SessionDescriptionInterface>,
-        ::std::map<::std::string, ::cricket::ContentGroup const*> const&
+        ::std::unique_ptr<::webrtc::SessionDescriptionInterface>         desc,
+        ::std::map<::std::string, ::cricket::ContentGroup const*> const& bundle_groups_by_mid
     );
 
-    MCNAPI void ApplyRemoteDescription(::std::unique_ptr<::webrtc::SdpOfferAnswerHandler::RemoteDescriptionOperation>);
+    MCNAPI void
+    ApplyRemoteDescription(::std::unique_ptr<::webrtc::SdpOfferAnswerHandler::RemoteDescriptionOperation> operation);
 
-    MCNAPI void ApplyRemoteDescriptionUpdateTransceiverState(::webrtc::SdpType);
+    MCNAPI void ApplyRemoteDescriptionUpdateTransceiverState(::webrtc::SdpType sdp_type);
 
     MCNAPI ::webrtc::RTCErrorOr<
         ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>>
     AssociateTransceiver(
-        ::cricket::ContentSource,
-        ::webrtc::SdpType,
-        uint64,
-        ::cricket::ContentInfo const&,
-        ::cricket::ContentInfo const*,
-        ::cricket::ContentInfo const*
+        ::cricket::ContentSource      source,
+        ::webrtc::SdpType             type,
+        uint64                        mline_index,
+        ::cricket::ContentInfo const& content,
+        ::cricket::ContentInfo const* old_local_content,
+        ::cricket::ContentInfo const* old_remote_content
     );
 
-    MCNAPI void ChangeSignalingState(::webrtc::PeerConnectionInterface::SignalingState);
+    MCNAPI void ChangeSignalingState(::webrtc::PeerConnectionInterface::SignalingState signaling_state);
 
     MCNAPI bool CheckIfNegotiationIsNeeded();
 
@@ -189,271 +387,287 @@ public:
     MCNAPI bool ConfiguredForMedia() const;
 
     MCNAPI void CreateAnswer(
-        ::webrtc::CreateSessionDescriptionObserver*,
-        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&
+        ::webrtc::CreateSessionDescriptionObserver*                     observer,
+        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& options
     );
 
-    MCNAPI ::webrtc::RTCError CreateChannels(::cricket::SessionDescription const&);
+    MCNAPI ::webrtc::RTCError CreateChannels(::cricket::SessionDescription const& desc);
 
     MCNAPI void CreateOffer(
-        ::webrtc::CreateSessionDescriptionObserver*,
-        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&
+        ::webrtc::CreateSessionDescriptionObserver*                     observer,
+        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& options
     );
 
     MCNAPI void DestroyMediaChannels();
 
     MCNAPI void DoCreateAnswer(
-        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&,
-        ::webrtc::scoped_refptr<::webrtc::CreateSessionDescriptionObserver>
+        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&     options,
+        ::webrtc::scoped_refptr<::webrtc::CreateSessionDescriptionObserver> observer
     );
 
     MCNAPI void DoCreateOffer(
-        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&,
-        ::webrtc::scoped_refptr<::webrtc::CreateSessionDescriptionObserver>
+        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&     options,
+        ::webrtc::scoped_refptr<::webrtc::CreateSessionDescriptionObserver> observer
     );
 
     MCNAPI void DoSetLocalDescription(
-        ::std::unique_ptr<::webrtc::SessionDescriptionInterface>,
-        ::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface>
+        ::std::unique_ptr<::webrtc::SessionDescriptionInterface>                desc,
+        ::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface> observer
     );
 
-    MCNAPI void DoSetRemoteDescription(::std::unique_ptr<::webrtc::SdpOfferAnswerHandler::RemoteDescriptionOperation>);
+    MCNAPI void
+    DoSetRemoteDescription(::std::unique_ptr<::webrtc::SdpOfferAnswerHandler::RemoteDescriptionOperation> operation);
 
     MCNAPI void EnableSending();
 
-    MCNAPI bool ExpectSetLocalDescription(::webrtc::SdpType);
+    MCNAPI bool ExpectSetLocalDescription(::webrtc::SdpType type);
 
-    MCNAPI bool ExpectSetRemoteDescription(::webrtc::SdpType);
+    MCNAPI bool ExpectSetRemoteDescription(::webrtc::SdpType type);
 
-    MCNAPI void FillInMissingRemoteMids(::cricket::SessionDescription*);
+    MCNAPI void FillInMissingRemoteMids(::cricket::SessionDescription* new_remote_description);
 
     MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>
-        FindAvailableTransceiverToReceive(::cricket::MediaType) const;
+    FindAvailableTransceiverToReceive(::cricket::MediaType media_type) const;
 
-    MCNAPI ::webrtc::RTCErrorOr<::cricket::ContentInfo const*>
-    FindContentInfo(::webrtc::SessionDescriptionInterface const*, ::webrtc::IceCandidateInterface const*);
+    MCNAPI ::webrtc::RTCErrorOr<::cricket::ContentInfo const*> FindContentInfo(
+        ::webrtc::SessionDescriptionInterface const* description,
+        ::webrtc::IceCandidateInterface const*       candidate
+    );
 
-    MCNAPI ::cricket::ContentInfo const*
-    FindMediaSectionForTransceiver(::webrtc::RtpTransceiver const*, ::webrtc::SessionDescriptionInterface const*) const;
+    MCNAPI ::cricket::ContentInfo const* FindMediaSectionForTransceiver(
+        ::webrtc::RtpTransceiver const*              transceiver,
+        ::webrtc::SessionDescriptionInterface const* sdesc
+    ) const;
 
     MCNAPI void GenerateMediaDescriptionOptions(
-        ::webrtc::SessionDescriptionInterface const*,
-        ::webrtc::RtpTransceiverDirection,
-        ::webrtc::RtpTransceiverDirection,
-        ::std::optional<uint64>*,
-        ::std::optional<uint64>*,
-        ::std::optional<uint64>*,
-        ::cricket::MediaSessionOptions*
+        ::webrtc::SessionDescriptionInterface const* session_desc,
+        ::webrtc::RtpTransceiverDirection            audio_direction,
+        ::webrtc::RtpTransceiverDirection            video_direction,
+        ::std::optional<uint64>*                     audio_index,
+        ::std::optional<uint64>*                     video_index,
+        ::std::optional<uint64>*                     data_index,
+        ::cricket::MediaSessionOptions*              session_options
     );
 
     MCNAPI void GenerateNegotiationNeededEvent();
 
-    MCNAPI ::cricket::MediaDescriptionOptions GetMediaDescriptionOptionsForActiveData(::std::string const&) const;
+    MCNAPI ::cricket::MediaDescriptionOptions GetMediaDescriptionOptionsForActiveData(::std::string const& mid) const;
 
-    MCNAPI ::cricket::MediaDescriptionOptions GetMediaDescriptionOptionsForRejectedData(::std::string const&) const;
+    MCNAPI ::cricket::MediaDescriptionOptions GetMediaDescriptionOptionsForRejectedData(::std::string const& mid) const;
 
     MCNAPI void GetOptionsForAnswer(
-        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&,
-        ::cricket::MediaSessionOptions*
+        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& offer_answer_options,
+        ::cricket::MediaSessionOptions*                                 session_options
     );
 
     MCNAPI void GetOptionsForOffer(
-        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&,
-        ::cricket::MediaSessionOptions*
+        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& offer_answer_options,
+        ::cricket::MediaSessionOptions*                                 session_options
     );
 
     MCNAPI void GetOptionsForPlanBAnswer(
-        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&,
-        ::cricket::MediaSessionOptions*
+        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& offer_answer_options,
+        ::cricket::MediaSessionOptions*                                 session_options
     );
 
     MCNAPI void GetOptionsForPlanBOffer(
-        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&,
-        ::cricket::MediaSessionOptions*
+        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& offer_answer_options,
+        ::cricket::MediaSessionOptions*                                 session_options
     );
 
     MCNAPI void GetOptionsForUnifiedPlanAnswer(
-        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&,
-        ::cricket::MediaSessionOptions*
+        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& offer_answer_options,
+        ::cricket::MediaSessionOptions*                                 session_options
     );
 
     MCNAPI void GetOptionsForUnifiedPlanOffer(
-        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&,
-        ::cricket::MediaSessionOptions*
+        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& offer_answer_options,
+        ::cricket::MediaSessionOptions*                                 session_options
     );
 
     MCNAPI ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>>
-        GetReceivingTransceiversOfType(::cricket::MediaType);
+    GetReceivingTransceiversOfType(::cricket::MediaType media_type);
 
     MCNAPI ::std::string GetSessionErrorMsg();
 
     MCNAPI ::std::optional<::rtc::SSLRole> GuessSslRole() const;
 
-    MCNAPI ::webrtc::RTCError HandleLegacyOfferOptions(::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&);
+    MCNAPI ::webrtc::RTCError
+    HandleLegacyOfferOptions(::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& options);
 
     MCNAPI bool HasNewIceCredentials();
 
     MCNAPI void Initialize(
-        ::webrtc::PeerConnectionInterface::RTCConfiguration const&,
-        ::webrtc::PeerConnectionDependencies&,
-        ::webrtc::ConnectionContext*
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
+        ::webrtc::PeerConnectionDependencies&                      dependencies,
+        ::webrtc::ConnectionContext*                               context
     );
 
     MCNAPI bool IsUnifiedPlan() const;
 
-    MCNAPI void OnAudioTrackAdded(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*);
+    MCNAPI void OnAudioTrackAdded(::webrtc::AudioTrackInterface* track, ::webrtc::MediaStreamInterface* stream);
 
-    MCNAPI void OnAudioTrackRemoved(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*);
+    MCNAPI void OnAudioTrackRemoved(::webrtc::AudioTrackInterface* track, ::webrtc::MediaStreamInterface* stream);
 
     MCNAPI void OnOperationsChainEmpty();
 
-    MCNAPI void OnVideoTrackAdded(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*);
+    MCNAPI void OnVideoTrackAdded(::webrtc::VideoTrackInterface* track, ::webrtc::MediaStreamInterface* stream);
 
-    MCNAPI void OnVideoTrackRemoved(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*);
+    MCNAPI void OnVideoTrackRemoved(::webrtc::VideoTrackInterface* track, ::webrtc::MediaStreamInterface* stream);
 
     MCNAPI void PlanBUpdateSendersAndReceivers(
-        ::cricket::ContentInfo const*,
-        ::cricket::AudioContentDescription const*,
-        ::cricket::ContentInfo const*,
-        ::cricket::VideoContentDescription const*
+        ::cricket::ContentInfo const*             audio_content,
+        ::cricket::AudioContentDescription const* audio_desc,
+        ::cricket::ContentInfo const*             video_content,
+        ::cricket::VideoContentDescription const* video_desc
     );
 
     MCNAPI void PrepareForShutdown();
 
     MCNAPI void ProcessRemovalOfRemoteTrack(
-        ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>,
-        ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>>*,
-        ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>>*
+        ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>> transceiver,
+        ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>>*                   remove_list,
+        ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>>*                      removed_streams
     );
 
     MCNAPI ::webrtc::RTCError PushdownMediaDescription(
-        ::webrtc::SdpType,
-        ::cricket::ContentSource,
-        ::std::map<::std::string, ::cricket::ContentGroup const*> const&
+        ::webrtc::SdpType                                                type,
+        ::cricket::ContentSource                                         source,
+        ::std::map<::std::string, ::cricket::ContentGroup const*> const& bundle_groups_by_mid
     );
 
-    MCNAPI ::webrtc::RTCError PushdownTransportDescription(::cricket::ContentSource, ::webrtc::SdpType);
+    MCNAPI ::webrtc::RTCError PushdownTransportDescription(::cricket::ContentSource source, ::webrtc::SdpType type);
 
     MCNAPI bool ReadyToUseRemoteCandidate(
-        ::webrtc::IceCandidateInterface const*,
-        ::webrtc::SessionDescriptionInterface const*,
-        bool*
+        ::webrtc::IceCandidateInterface const*       candidate,
+        ::webrtc::SessionDescriptionInterface const* remote_desc,
+        bool*                                        valid
     );
 
-    MCNAPI bool RemoveIceCandidates(::std::vector<::cricket::Candidate> const&);
+    MCNAPI bool RemoveIceCandidates(::std::vector<::cricket::Candidate> const& candidates);
 
-    MCNAPI void RemoveLocalIceCandidates(::std::vector<::cricket::Candidate> const&);
+    MCNAPI void RemoveLocalIceCandidates(::std::vector<::cricket::Candidate> const& candidates);
 
-    MCNAPI void RemoveRecvDirectionFromReceivingTransceiversOfType(::cricket::MediaType);
+    MCNAPI void RemoveRecvDirectionFromReceivingTransceiversOfType(::cricket::MediaType media_type);
 
     MCNAPI void RemoveRemoteStreamsIfEmpty(
-        ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const&,
-        ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>>*
+        ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const& remote_streams,
+        ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>>*       removed_streams
     );
 
-    MCNAPI void RemoveSenders(::cricket::MediaType);
+    MCNAPI void RemoveSenders(::cricket::MediaType media_type);
 
     MCNAPI void RemoveStoppedTransceivers();
 
-    MCNAPI void RemoveStream(::webrtc::MediaStreamInterface*);
+    MCNAPI void RemoveStream(::webrtc::MediaStreamInterface* local_stream);
 
-    MCNAPI void RemoveUnusedChannels(::cricket::SessionDescription const*);
+    MCNAPI void RemoveUnusedChannels(::cricket::SessionDescription const* desc);
 
     MCNAPI ::webrtc::RTCError ReplaceRemoteDescription(
-        ::std::unique_ptr<::webrtc::SessionDescriptionInterface>,
-        ::webrtc::SdpType,
-        ::std::unique_ptr<::webrtc::SessionDescriptionInterface>*
+        ::std::unique_ptr<::webrtc::SessionDescriptionInterface>  desc,
+        ::webrtc::SdpType                                         sdp_type,
+        ::std::unique_ptr<::webrtc::SessionDescriptionInterface>* replaced_description
     );
 
     MCNAPI void RestartIce();
 
-    MCNAPI ::webrtc::RTCError Rollback(::webrtc::SdpType);
+    MCNAPI ::webrtc::RTCError Rollback(::webrtc::SdpType desc_type);
 
-    MCNAPI SdpOfferAnswerHandler(::webrtc::PeerConnectionSdpMethods*, ::webrtc::ConnectionContext*);
+    MCNAPI SdpOfferAnswerHandler(::webrtc::PeerConnectionSdpMethods* pc, ::webrtc::ConnectionContext* context);
 
-    MCNAPI char const* SessionErrorToString(::webrtc::SdpOfferAnswerHandler::SessionError) const;
+    MCNAPI char const* SessionErrorToString(::webrtc::SdpOfferAnswerHandler::SessionError error) const;
 
     MCNAPI void SetAssociatedRemoteStreams(
-        ::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>,
-        ::std::vector<::std::string> const&,
-        ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>>*,
-        ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>>*
+        ::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>                  receiver,
+        ::std::vector<::std::string> const&                                     stream_ids,
+        ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>>* added_streams,
+        ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>>* removed_streams
     );
 
-    MCNAPI void SetLocalDescription(::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface>);
+    MCNAPI void SetLocalDescription(::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface> observer);
 
-    MCNAPI void SetLocalDescription(::webrtc::SetSessionDescriptionObserver*);
-
-    MCNAPI void SetLocalDescription(::webrtc::SetSessionDescriptionObserver*, ::webrtc::SessionDescriptionInterface*);
+    MCNAPI void SetLocalDescription(::webrtc::SetSessionDescriptionObserver* observer);
 
     MCNAPI void SetLocalDescription(
-        ::std::unique_ptr<::webrtc::SessionDescriptionInterface>,
-        ::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface>
+        ::std::unique_ptr<::webrtc::SessionDescriptionInterface>                desc,
+        ::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface> observer
+    );
+
+    MCNAPI void SetLocalDescription(
+        ::webrtc::SetSessionDescriptionObserver* observer,
+        ::webrtc::SessionDescriptionInterface*   desc_ptr
     );
 
     MCNAPI void SetRemoteDescription(
-        ::std::unique_ptr<::webrtc::SessionDescriptionInterface>,
-        ::webrtc::scoped_refptr<::webrtc::SetRemoteDescriptionObserverInterface>
+        ::std::unique_ptr<::webrtc::SessionDescriptionInterface>                 desc,
+        ::webrtc::scoped_refptr<::webrtc::SetRemoteDescriptionObserverInterface> observer
     );
 
-    MCNAPI void SetRemoteDescription(::webrtc::SetSessionDescriptionObserver*, ::webrtc::SessionDescriptionInterface*);
+    MCNAPI void SetRemoteDescription(
+        ::webrtc::SetSessionDescriptionObserver* observer,
+        ::webrtc::SessionDescriptionInterface*   desc_ptr
+    );
 
-    MCNAPI void SetRemoteDescriptionPostProcess(bool);
+    MCNAPI void SetRemoteDescriptionPostProcess(bool was_answer);
 
-    MCNAPI void SetSessionError(::webrtc::SdpOfferAnswerHandler::SessionError, ::std::string const&);
+    MCNAPI void SetSessionError(::webrtc::SdpOfferAnswerHandler::SessionError error, ::std::string const& error_desc);
 
-    MCNAPI bool ShouldFireNegotiationNeededEvent(uint);
+    MCNAPI bool ShouldFireNegotiationNeededEvent(uint event_id);
 
-    MCNAPI ::webrtc::RTCError
-    UpdateDataChannelTransport(::cricket::ContentSource, ::cricket::ContentInfo const&, ::cricket::ContentGroup const*);
+    MCNAPI ::webrtc::RTCError UpdateDataChannelTransport(
+        ::cricket::ContentSource       source,
+        ::cricket::ContentInfo const&  content,
+        ::cricket::ContentGroup const* bundle_group
+    );
 
     MCNAPI void UpdateEndedRemoteMediaStreams();
 
-    MCNAPI void UpdateLocalSenders(::std::vector<::cricket::StreamParams> const&, ::cricket::MediaType);
+    MCNAPI void
+    UpdateLocalSenders(::std::vector<::cricket::StreamParams> const& streams, ::cricket::MediaType media_type);
 
     MCNAPI void UpdateNegotiationNeeded();
 
     MCNAPI bool UpdatePayloadTypeDemuxingState(
-        ::cricket::ContentSource,
-        ::std::map<::std::string, ::cricket::ContentGroup const*> const&
+        ::cricket::ContentSource                                         source,
+        ::std::map<::std::string, ::cricket::ContentGroup const*> const& bundle_groups_by_mid
     );
 
     MCNAPI void UpdateRemoteSendersList(
-        ::std::vector<::cricket::StreamParams> const&,
-        bool,
-        ::cricket::MediaType,
-        ::webrtc::StreamCollection*
+        ::std::vector<::cricket::StreamParams> const& streams,
+        bool                                          default_sender_needed,
+        ::cricket::MediaType                          media_type,
+        ::webrtc::StreamCollection*                   new_streams
     );
 
     MCNAPI ::webrtc::RTCError UpdateSessionState(
-        ::webrtc::SdpType,
-        ::cricket::ContentSource,
-        ::cricket::SessionDescription const*,
-        ::std::map<::std::string, ::cricket::ContentGroup const*> const&
+        ::webrtc::SdpType                                                type,
+        ::cricket::ContentSource                                         source,
+        ::cricket::SessionDescription const*                             description,
+        ::std::map<::std::string, ::cricket::ContentGroup const*> const& bundle_groups_by_mid
     );
 
     MCNAPI ::webrtc::RTCError UpdateTransceiverChannel(
-        ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>,
-        ::cricket::ContentInfo const&,
-        ::cricket::ContentGroup const*
+        ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>> transceiver,
+        ::cricket::ContentInfo const&                                                                content,
+        ::cricket::ContentGroup const*                                                               bundle_group
     );
 
     MCNAPI ::webrtc::RTCError UpdateTransceiversAndDataChannels(
-        ::cricket::ContentSource,
-        ::webrtc::SessionDescriptionInterface const&,
-        ::webrtc::SessionDescriptionInterface const*,
-        ::webrtc::SessionDescriptionInterface const*,
-        ::std::map<::std::string, ::cricket::ContentGroup const*> const&
+        ::cricket::ContentSource                                         source,
+        ::webrtc::SessionDescriptionInterface const&                     new_session,
+        ::webrtc::SessionDescriptionInterface const*                     old_local_description,
+        ::webrtc::SessionDescriptionInterface const*                     old_remote_description,
+        ::std::map<::std::string, ::cricket::ContentGroup const*> const& bundle_groups_by_mid
     );
 
-    MCNAPI bool UseCandidate(::webrtc::IceCandidateInterface const*);
+    MCNAPI bool UseCandidate(::webrtc::IceCandidateInterface const* candidate);
 
     MCNAPI bool UseCandidatesInRemoteDescription();
 
     MCNAPI ::webrtc::RTCError ValidateSessionDescription(
-        ::webrtc::SessionDescriptionInterface const*,
-        ::cricket::ContentSource,
-        ::std::map<::std::string, ::cricket::ContentGroup const*> const&
+        ::webrtc::SessionDescriptionInterface const*                     sdesc,
+        ::cricket::ContentSource                                         source,
+        ::std::map<::std::string, ::cricket::ContentGroup const*> const& bundle_groups_by_mid
     );
 
     MCNAPI ::webrtc::DataChannelController* data_channel_controller();
@@ -487,17 +701,47 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::unique_ptr<::webrtc::SdpOfferAnswerHandler> Create(
-        ::webrtc::PeerConnectionSdpMethods*,
-        ::webrtc::PeerConnectionInterface::RTCConfiguration const&,
-        ::webrtc::PeerConnectionDependencies&,
-        ::webrtc::ConnectionContext*
+        ::webrtc::PeerConnectionSdpMethods*                        pc,
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
+        ::webrtc::PeerConnectionDependencies&                      dependencies,
+        ::webrtc::ConnectionContext*                               context
     );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::PeerConnectionSdpMethods*, ::webrtc::ConnectionContext*);
+    MCNAPI void* $ctor(::webrtc::PeerConnectionSdpMethods* pc, ::webrtc::ConnectionContext* context);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI ::webrtc::PeerConnectionInterface::SignalingState $signaling_state() const;
+
+    MCNAPI ::webrtc::SessionDescriptionInterface const* $local_description() const;
+
+    MCNAPI ::webrtc::SessionDescriptionInterface const* $remote_description() const;
+
+    MCNAPI ::webrtc::SessionDescriptionInterface const* $current_local_description() const;
+
+    MCNAPI ::webrtc::SessionDescriptionInterface const* $current_remote_description() const;
+
+    MCNAPI ::webrtc::SessionDescriptionInterface const* $pending_local_description() const;
+
+    MCNAPI ::webrtc::SessionDescriptionInterface const* $pending_remote_description() const;
+
+    MCNAPI bool $NeedsIceRestart(::std::string const& content_name) const;
+
+    MCNAPI bool $IceRestartPending(::std::string const& content_name) const;
+
+    MCNAPI ::std::optional<::rtc::SSLRole> $GetDtlsRole(::std::string const& mid) const;
     // NOLINTEND
 
 public:

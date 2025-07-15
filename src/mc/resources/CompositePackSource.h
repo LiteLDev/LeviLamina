@@ -3,15 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/resources/PackSource.h"
 
 // auto generated forward declare list
 // clang-format off
-class IContentKeyProvider;
-class IPackManifestFactory;
 class Pack;
-class PackSourceReport;
+struct PackSourceLoadOptions;
+struct PackSourceLoadResult;
 // clang-format on
 
 class CompositePackSource : public ::PackSource {
@@ -34,10 +32,10 @@ public:
     virtual void forEachPack(::std::function<void(::Pack&)> callback) /*override*/;
 
     // vIndex: 5
-    virtual ::PackSourceReport load(
-        ::IPackManifestFactory&                                           manifestFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
-    ) /*override*/;
+    virtual void _buildSourcesForLoad(::std::vector<::gsl::not_null<::PackSource*>>& sources) /*override*/;
+
+    // vIndex: 6
+    virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&&) /*override*/;
     // NOLINTEND
 
 public:
@@ -47,10 +45,9 @@ public:
 
     MCAPI void $forEachPack(::std::function<void(::Pack&)> callback);
 
-    MCAPI ::PackSourceReport $load(
-        ::IPackManifestFactory&                                           manifestFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
-    );
+    MCAPI void $_buildSourcesForLoad(::std::vector<::gsl::not_null<::PackSource*>>& sources);
+
+    MCAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&&);
     // NOLINTEND
 
 public:

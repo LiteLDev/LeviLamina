@@ -9,9 +9,10 @@ enum class IdentityType : uint64 {
     XboxLive        = 1,
     Platform        = 2,
     PlatformNetwork = 3,
-    Mock            = 4,
-    Count           = 5,
-    All             = 6,
+    EduNetwork      = 4,
+    Mock            = 5,
+    Count           = 6,
+    All             = 7,
 };
 
 }

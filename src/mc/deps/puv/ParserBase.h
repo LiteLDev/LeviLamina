@@ -33,7 +33,7 @@ public:
     virtual ~ParserBase() = default;
 
     // vIndex: 1
-    virtual ::Puv::LoadResultAny parse(::Puv::Input const&) const = 0;
+    virtual ::Puv::LoadResultAny doParse(::Puv::Input const&) const = 0;
     // NOLINTEND
 
 public:

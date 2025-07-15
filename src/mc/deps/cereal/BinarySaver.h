@@ -11,7 +11,7 @@ class BinarySaver : public ::cereal::BasicSaver {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk40d3c8;
+    ::ll::UntypedStorage<8, 24> mUnk40d3c8;
     // NOLINTEND
 
 public:

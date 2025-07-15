@@ -19,7 +19,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool AddKnownId(::std::string_view);
+    MCNAPI bool AddKnownId(::std::string_view value);
 
     MCNAPI ::std::string GenerateString();
 

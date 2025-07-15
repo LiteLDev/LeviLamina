@@ -22,8 +22,6 @@ public:
 
     MCNAPI static ::TickingSystemWithInfo createClearPlayerActionComponentSystem();
 
-    MCNAPI static ::std::array<::TickingSystemWithInfo, 2> createPostTravelSystems();
-
     MCNAPI static ::TickingSystemWithInfo createServerPlayerResetFallDistanceSystem();
     // NOLINTEND
 };

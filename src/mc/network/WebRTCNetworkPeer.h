@@ -36,22 +36,22 @@ public:
     sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility) /*override*/;
 
     // vIndex: 2
-    virtual ::NetworkPeer::DataStatus receivePacket(
+    virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
+
+    // vIndex: 3
+    virtual void update() /*override*/;
+
+    // vIndex: 5
+    virtual bool isLocal() const /*override*/;
+
+    // vIndex: 6
+    virtual bool isEncrypted() const /*override*/;
+
+    // vIndex: 7
+    virtual ::NetworkPeer::DataStatus _receivePacket(
         ::std::string&                                                    outData,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     ) /*override*/;
-
-    // vIndex: 3
-    virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
-
-    // vIndex: 4
-    virtual void update() /*override*/;
-
-    // vIndex: 6
-    virtual bool isLocal() const /*override*/;
-
-    // vIndex: 7
-    virtual bool isEncrypted() const /*override*/;
     // NOLINTEND
 
 public:
@@ -71,11 +71,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
 
-    MCNAPI ::NetworkPeer::DataStatus $receivePacket(
-        ::std::string&                                                    outData,
-        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
-    );
-
     MCNAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 
     MCNAPI void $update();
@@ -83,6 +78,11 @@ public:
     MCNAPI bool $isLocal() const;
 
     MCNAPI bool $isEncrypted() const;
+
+    MCNAPI ::NetworkPeer::DataStatus $_receivePacket(
+        ::std::string&                                                    outData,
+        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+    );
     // NOLINTEND
 
 public:

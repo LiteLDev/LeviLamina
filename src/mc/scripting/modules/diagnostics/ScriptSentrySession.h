@@ -8,8 +8,9 @@
 // auto generated forward declare list
 // clang-format off
 struct SentryEnvelopePayload;
+namespace ScriptModuleDiagnostics { class IScriptSentryRequestSender; }
 namespace ScriptModuleDiagnostics { struct ScriptSentrySessionParameters; }
-namespace Scripting { struct Error; }
+namespace Scripting { struct BaseError; }
 // clang-format on
 
 namespace ScriptModuleDiagnostics {
@@ -54,12 +55,16 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 192> mUnke6f10e;
-    ::ll::UntypedStorage<8, 32>  mUnk7fc375;
-    ::ll::UntypedStorage<8, 32>  mUnkb80081;
-    ::ll::UntypedStorage<8, 24>  mUnk7e0f9d;
-    ::ll::UntypedStorage<8, 64>  mUnk558d04;
-    ::ll::UntypedStorage<8, 120> mUnk894b59;
+    ::ll::UntypedStorage<8, 8>    mUnk4920da;
+    ::ll::UntypedStorage<8, 208>  mUnke6f10e;
+    ::ll::UntypedStorage<8, 32>   mUnkb80081;
+    ::ll::UntypedStorage<8, 24>   mUnk7e0f9d;
+    ::ll::UntypedStorage<8, 64>   mUnk558d04;
+    ::ll::UntypedStorage<8, 8>    mUnke07d17;
+    ::ll::UntypedStorage<4, 4>    mUnk6feff8;
+    ::ll::UntypedStorage<1, 1>    mUnk46ce59;
+    ::ll::UntypedStorage<4, 5000> mUnk8af1c4;
+    ::ll::UntypedStorage<4, 8>    mUnke5c723;
     // NOLINTEND
 
 public:
@@ -71,9 +76,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ScriptSentrySession(::ScriptModuleDiagnostics::ScriptSentrySessionParameters parameters);
+    MCNAPI ScriptSentrySession(
+        ::std::unique_ptr<::ScriptModuleDiagnostics::IScriptSentryRequestSender> requestSender,
+        ::ScriptModuleDiagnostics::ScriptSentrySessionParameters                 parameters
+    );
 
-    MCNAPI void _fillError(::SentryEnvelopePayload& result, ::Scripting::Error const& error);
+    MCNAPI void _fillError(::SentryEnvelopePayload& result, ::Scripting::BaseError const& error);
 
     MCNAPI void _sendEvent(::SentryEnvelopePayload eventPayload) const;
 
@@ -86,7 +94,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleDiagnostics::ScriptSentrySessionParameters parameters);
+    MCNAPI void* $ctor(
+        ::std::unique_ptr<::ScriptModuleDiagnostics::IScriptSentryRequestSender> requestSender,
+        ::ScriptModuleDiagnostics::ScriptSentrySessionParameters                 parameters
+    );
     // NOLINTEND
 
 public:

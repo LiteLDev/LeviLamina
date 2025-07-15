@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/Upgrader.h"
+#include "mc/deps/puv/UpgraderBase.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Puv { class LoadResultAny; }
 // clang-format on
 
-class FeatureUpgrader : public ::Puv::Upgrader {
+class FeatureUpgrader : public ::Puv::UpgraderBase {
 public:
     // virtual functions
     // NOLINTBEGIN

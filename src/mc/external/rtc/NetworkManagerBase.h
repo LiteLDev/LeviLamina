@@ -50,44 +50,64 @@ public:
     virtual ::rtc::NetworkManager::EnumerationPermission enumeration_permission() const /*override*/;
 
     // vIndex: 1
-    virtual bool GetDefaultLocalAddress(int, ::rtc::IPAddress*) const /*override*/;
+    virtual bool GetDefaultLocalAddress(int family, ::rtc::IPAddress* ipaddr) const /*override*/;
 
     // vIndex: 1
-    virtual ~NetworkManagerBase() /*override*/ = default;
+    virtual ~NetworkManagerBase() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::rtc::Network>
-    CreateNetwork(::std::string_view, ::std::string_view, ::rtc::IPAddress const&, int, ::rtc::AdapterType) const;
+    MCNAPI ::std::unique_ptr<::rtc::Network> CreateNetwork(
+        ::std::string_view      name,
+        ::std::string_view      description,
+        ::rtc::IPAddress const& prefix,
+        int                     prefix_length,
+        ::rtc::AdapterType      type
+    ) const;
 
-    MCNAPI ::rtc::Network* GetNetworkFromAddress(::rtc::IPAddress const&) const;
+    MCNAPI ::rtc::Network* GetNetworkFromAddress(::rtc::IPAddress const& ip) const;
 
-    MCNAPI void
-    MergeNetworkList(::std::vector<::std::unique_ptr<::rtc::Network>>, bool*, ::rtc::NetworkManager::Stats*);
+    MCNAPI void MergeNetworkList(
+        ::std::vector<::std::unique_ptr<::rtc::Network>> new_networks,
+        bool*                                            changed,
+        ::rtc::NetworkManager::Stats*                    stats
+    );
 
-    MCNAPI explicit NetworkManagerBase(::webrtc::FieldTrialsView const*);
+    MCNAPI explicit NetworkManagerBase(::webrtc::FieldTrialsView const* field_trials);
 
-    MCNAPI void set_default_local_addresses(::rtc::IPAddress const&, ::rtc::IPAddress const&);
+    MCNAPI void set_default_local_addresses(::rtc::IPAddress const& ipv4, ::rtc::IPAddress const& ipv6);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool IsVpnMacAddress(::rtc::ArrayView<uchar const>);
+    MCNAPI static bool IsVpnMacAddress(::rtc::ArrayView<uchar const> address);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::FieldTrialsView const*);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const* field_trials);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::vector<::rtc::Network const*> $GetNetworks() const;
 
+    MCNAPI ::std::vector<::rtc::Network const*> $GetAnyAddressNetworks();
+
+    MCNAPI ::rtc::NetworkManager::EnumerationPermission $enumeration_permission() const;
+
+    MCNAPI bool $GetDefaultLocalAddress(int family, ::rtc::IPAddress* ipaddr) const;
     // NOLINTEND
 
 public:

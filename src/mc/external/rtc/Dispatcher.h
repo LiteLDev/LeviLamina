@@ -9,7 +9,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Dispatcher() = default;
+    virtual ~Dispatcher();
 
     // vIndex: 1
     virtual uint GetRequestedEvents() = 0;
@@ -25,6 +25,12 @@ public:
 
     // vIndex: 5
     virtual bool CheckSignalClose() = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

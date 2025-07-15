@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/Result.h"
 #include "mc/world/level/ActorManagerProxy.h"
+#include "mc/world/level/ActorValidationError.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,7 +32,7 @@ public:
     virtual void initializeActor(::Actor& actor) /*override*/;
 
     // vIndex: 2
-    virtual bool validate(::Actor const& actor) /*override*/;
+    virtual ::Bedrock::Result<void, ::ActorValidationError> validate(::Actor const& actor) /*override*/;
 
     // vIndex: 3
     virtual void addActor(::Actor& actor) /*override*/;
@@ -50,7 +52,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $initializeActor(::Actor& actor);
 
-    MCNAPI bool $validate(::Actor const& actor);
+    MCNAPI ::Bedrock::Result<void, ::ActorValidationError> $validate(::Actor const& actor);
 
     MCNAPI void $addActor(::Actor& actor);
 

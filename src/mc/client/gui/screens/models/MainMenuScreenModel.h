@@ -27,6 +27,8 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk76c977;
     ::ll::UntypedStorage<8, 16>  mUnkef369f;
     ::ll::UntypedStorage<8, 8>   mUnk52b71e;
+    ::ll::UntypedStorage<8, 16>  mUnk8c0d7d;
+    ::ll::UntypedStorage<8, 8>   mUnkb2c4db;
     ::ll::UntypedStorage<8, 24>  mUnk6e0902;
     ::ll::UntypedStorage<8, 8>   mUnk5d30f7;
     ::ll::UntypedStorage<8, 16>  mUnk8ace6f;
@@ -77,10 +79,6 @@ public:
 
     // vIndex: 6
     virtual ::WorldTemplateInfo const* findWorldTemplateByUUID(::std::vector<::mce::UUID> const&) const /*override*/;
-
-    // vIndex: 7
-    virtual ::WorldTemplateInfo* findWorldTemplateByPackUUIDNonConst(::std::vector<::mce::UUID> const&) const
-        /*override*/;
 
     // vIndex: 4
     virtual bool isPackIdInRealmsPlus(::std::string const&) const /*override*/;

@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/renderer/rendergraph/Packet.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/ecs/EntityNetId.h"
 #include "mc/nbt/CompoundTag.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/NetworkBlockPosition.h"
-#include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/resources/MinEngineVersion.h"
 

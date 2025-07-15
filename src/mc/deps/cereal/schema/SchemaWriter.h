@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/schema/SerializationTraitsSupport.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct NullType; }
@@ -9,13 +12,10 @@ namespace cereal { struct NullType; }
 
 namespace cereal {
 
-struct SchemaWriter {
+struct SchemaWriter : public ::cereal::SerializationTraitsSupport {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SchemaWriter() = default;
-
     // vIndex: 13
     virtual bool write(::cereal::NullType) = 0;
 
@@ -72,6 +72,9 @@ public:
 
     // vIndex: 19
     virtual bool isSequenceWriter() const;
+
+    // vIndex: 0
+    virtual ~SchemaWriter() /*override*/ = default;
     // NOLINTEND
 
 public:

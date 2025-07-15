@@ -119,13 +119,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::BlockPos _getHomePos() const;
-
     MCNAPI bool _hasReachedHome() const;
 
     MCNAPI bool _hasRequiredComponents() const;
-
-    MCNAPI bool _isInHomeDimension() const;
 
     MCNAPI void _triggerOnFailedEvents();
     // NOLINTEND

@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 struct CrashDumpEventData;
-struct CrashDumpKeyValueData;
 struct CrashDump_AllData;
 namespace Bedrock::Threading { class Mutex; }
 // clang-format on
@@ -17,8 +16,6 @@ public:
     MCNAPI static void crashDumpLogThreadRoutine();
 
     MCNAPI static void logEvent(::CrashDumpEventData const& eventData);
-
-    MCNAPI static void logKeyValue(::CrashDumpKeyValueData const& keyValueData);
 
     MCNAPI static bool setDeviceSessionID(::std::string const& str);
 

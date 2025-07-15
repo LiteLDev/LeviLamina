@@ -77,6 +77,8 @@ public:
 
     MCNAPI void addComponentDescription(::std::shared_ptr<::BlockComponentDescription> desc);
 
+    MCNAPI void foreachDescription(::std::function<void(::BlockComponentDescription const&)> callback) const;
+
     MCNAPI ::BlockComponentGroupDescription& operator=(::BlockComponentGroupDescription&&);
 
     MCNAPI ~BlockComponentGroupDescription();

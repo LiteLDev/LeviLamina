@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/Result.h"
+#include "mc/scripting/modules/minecraft/ScriptServerStateMonitor.h"
 #include "mc/world/level/spawn/EntitySpawnReason.h"
 
 // auto generated forward declare list
@@ -20,22 +21,11 @@ namespace br::spawn { struct EntityType; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptCustomSpawnRulesRegistry {
-public:
-    // ScriptCustomSpawnRulesRegistry inner types define
-    enum class State : int {
-        PreInit               = 0,
-        ScriptLoaded          = 1,
-        Finalized             = 2,
-        ReloadingPreInit      = 3,
-        ReloadingScriptLoaded = 4,
-    };
-
+class ScriptCustomSpawnRulesRegistry : public ::ScriptModuleMinecraft::ScriptServerStateMonitor {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8> mUnkf7db7b;
-    ::ll::UntypedStorage<4, 4> mUnk2be200;
     // NOLINTEND
 
 public:
@@ -43,6 +33,16 @@ public:
     ScriptCustomSpawnRulesRegistry& operator=(ScriptCustomSpawnRulesRegistry const&);
     ScriptCustomSpawnRulesRegistry(ScriptCustomSpawnRulesRegistry const&);
     ScriptCustomSpawnRulesRegistry();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 1
+    virtual void _onReload() /*override*/;
+
+    // vIndex: 0
+    virtual ~ScriptCustomSpawnRulesRegistry() /*override*/ = default;
+    // NOLINTEND
 
 public:
     // member functions
@@ -72,6 +72,18 @@ public:
         ::std::string const&                                                                id,
         ::std::function<bool(::BlockSource&, ::Mob const&, ::br::spawn::EntityType const&)> callback
     );
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI void $_onReload();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

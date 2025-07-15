@@ -14,7 +14,6 @@ class BlockActor;
 class BlockPos;
 class BlockSource;
 class ItemInstance;
-struct BlockAnimateTickData;
 namespace mce { class Color; }
 // clang-format on
 
@@ -25,10 +24,10 @@ public:
     // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual ::mce::Color getDustColor(::Block const& block) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual ::std::string getDustParticleName(::Block const& block) const /*override*/;
 
     // vIndex: 73
@@ -45,9 +44,6 @@ public:
 
     // vIndex: 45
     virtual bool canBeOriginalSurface() const /*override*/;
-
-    // vIndex: 123
-    virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 0
     virtual ~SandBlock() /*override*/ = default;
@@ -70,8 +66,6 @@ public:
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCFOLD bool $canBeOriginalSurface() const;
-
-    MCAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
     // NOLINTEND
 
 public:

@@ -4,6 +4,11 @@
 
 namespace webrtc {
 
-enum class ProbeFailureReason : uint {};
+enum class ProbeFailureReason : int {
+    KInvalidSendReceiveInterval = 0,
+    KInvalidSendReceiveRatio    = 1,
+    KTimeout                    = 2,
+    KLast                       = 3,
+};
 
 }

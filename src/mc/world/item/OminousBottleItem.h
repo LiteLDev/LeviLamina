@@ -43,7 +43,7 @@ public:
 
     // vIndex: 52
     virtual void appendFormattedHovertext(
-        ::ItemStackBase const&               item,
+        ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
@@ -101,7 +101,7 @@ public:
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
     MCAPI void $appendFormattedHovertext(
-        ::ItemStackBase const&               item,
+        ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory

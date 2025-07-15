@@ -28,10 +28,10 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 5
@@ -48,10 +48,10 @@ public:
     // vIndex: 80
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual void checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual ::Block const& setGrowth(
         ::BlockSource&    region,
         ::BlockPos const& pos,

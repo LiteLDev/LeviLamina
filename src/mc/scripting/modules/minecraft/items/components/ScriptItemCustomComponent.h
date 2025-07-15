@@ -14,6 +14,17 @@ namespace ScriptModuleMinecraft {
 
 class ScriptItemCustomComponent : public ::ScriptModuleMinecraft::ScriptItemComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk729dd5;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptItemCustomComponent& operator=(ScriptItemCustomComponent const&);
+    ScriptItemCustomComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -21,9 +32,21 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptItemCustomComponent(::ScriptModuleMinecraft::ScriptItemCustomComponent const&);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponent const&);
     // NOLINTEND
 
 public:

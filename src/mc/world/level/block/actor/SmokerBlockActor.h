@@ -9,7 +9,7 @@ class SmokerBlockActor : public ::FurnaceBlockActor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 27
+    // vIndex: 28
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 0

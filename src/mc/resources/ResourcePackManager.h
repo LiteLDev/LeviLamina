@@ -13,6 +13,7 @@
 class IContentTierManager;
 class LoadedResourceData;
 class PackInstance;
+class PackSourceReport;
 class ResourceGroup;
 class ResourceLocation;
 class ResourceLocationPair;
@@ -65,9 +66,9 @@ public:
 
     // vIndex: 1
     virtual bool load(
-        ::ResourceLocationPair const&    resourceLocationPair,
+        ::ResourceLocationPair const&    resourceLocation,
         ::std::string&                   resourceStream,
-        ::gsl::span<::std::string const> extensionList
+        ::gsl::span<::std::string const> extensions
     ) const /*override*/;
 
     // vIndex: 4
@@ -106,7 +107,7 @@ public:
     // vIndex: 12
     virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensionList
+        ::gsl::span<::std::string const> extensions
     ) const /*override*/;
 
     // vIndex: 13
@@ -132,8 +133,6 @@ public:
         ::std::vector<::Core::Path>& resources
     ) const;
 
-    MCNAPI bool _shouldRebuildStack() const;
-
     MCNAPI void _updateLanguageSubpacks();
 
     MCNAPI int composeFullStack(
@@ -152,6 +151,8 @@ public:
     MCNAPI void iteratePacks(::std::function<void(::PackInstance const&)> const& pred) const;
 
     MCNAPI void removeIf(::std::function<bool(::PackInstance const&)> const& pred);
+
+    MCNAPI void setPackSourceReport(::PackSourceReport&& report);
 
     MCNAPI bool
     setStack(::std::unique_ptr<::ResourcePackStack> stack, ::ResourcePackStackType stackType, bool composeStack);
@@ -185,9 +186,9 @@ public:
     ) const;
 
     MCNAPI bool $load(
-        ::ResourceLocationPair const&    resourceLocationPair,
+        ::ResourceLocationPair const&    resourceLocation,
         ::std::string&                   resourceStream,
-        ::gsl::span<::std::string const> extensionList
+        ::gsl::span<::std::string const> extensions
     ) const;
 
     MCNAPI bool $loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
@@ -216,7 +217,7 @@ public:
 
     MCNAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensionList
+        ::gsl::span<::std::string const> extensions
     ) const;
 
     MCNAPI bool $hasCapability(::std::string_view requiredCapability) const;

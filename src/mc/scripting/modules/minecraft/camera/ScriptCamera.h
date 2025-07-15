@@ -16,6 +16,7 @@ namespace ScriptModuleMinecraft { struct ScriptCameraSetLocationOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraSetPositionOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraSetRotationOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraTargetOptions; }
+namespace ScriptModuleMinecraft { struct ScriptEaseOptions; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -58,7 +59,7 @@ public:
             ::ScriptModuleMinecraft::ScriptCameraFixedBoomOptions>> options
     ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> setCameraBeta(
+    MCNAPI ::Scripting::Result_deprecated<void> setCamera_V1(
         ::std::string const&                                        cameraPreset,
         ::std::optional<::std::variant<
             ::ScriptModuleMinecraft::ScriptCameraSetFacingOptions,
@@ -70,7 +71,7 @@ public:
             ::ScriptModuleMinecraft::ScriptCameraFixedBoomOptions>> options
     ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> setCamera_V160(
+    MCNAPI ::Scripting::Result_deprecated<void> setCamera_V2(
         ::std::string const&                                        cameraPreset,
         ::std::optional<::std::variant<
             ::ScriptModuleMinecraft::ScriptCameraSetFacingOptions,
@@ -78,9 +79,13 @@ public:
             ::ScriptModuleMinecraft::ScriptCameraSetRotationOptions,
             ::ScriptModuleMinecraft::ScriptCameraSetLocationOptions,
             ::ScriptModuleMinecraft::ScriptCameraTargetOptions,
-            ::ScriptModuleMinecraft::ScriptCameraDefaultOptions,
             ::ScriptModuleMinecraft::ScriptCameraFixedBoomOptions>> options
     ) const;
+
+    MCNAPI ::Scripting::Result_deprecated<void> setDefaultCamera(
+        ::std::string const&                                        cameraPreset,
+        ::std::optional<::ScriptModuleMinecraft::ScriptEaseOptions> easeOptions
+    );
     // NOLINTEND
 
 public:

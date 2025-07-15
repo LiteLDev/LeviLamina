@@ -13,7 +13,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class Mob;
 class NavigationComponent;
 namespace JsonUtil { class EmptyClass; }
@@ -55,12 +54,6 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~Definition() /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI void initialize(::EntityContext& entity, ::JumpToBlockGoal& goal) const;
         // NOLINTEND
 
     public:

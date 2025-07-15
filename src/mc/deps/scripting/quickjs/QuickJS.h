@@ -104,8 +104,6 @@ MCNAPI ::JSValue GenericReflectionPropertySetter(
 
 MCNAPI ::std::string GetClassNameFromJSValue(::JSContext* ctx, ::JSValue target);
 
-MCNAPI uint GetJSArrayLength(::JSContext* ctx, ::JSValue jsArray);
-
 MCNAPI ::Scripting::ObjectHandle GetNativeObjectHandleFromJSValue(::JSValue jsValue);
 
 MCNAPI ::Scripting::QuickJS::PropertyGetSet const&

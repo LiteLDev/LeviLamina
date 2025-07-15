@@ -22,6 +22,9 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk247eaa;
     ::ll::UntypedStorage<1, 1>  mUnk8ff52e;
     ::ll::UntypedStorage<1, 1>  mUnk654568;
+    ::ll::UntypedStorage<1, 1>  mUnkca02cf;
+    ::ll::UntypedStorage<1, 1>  mUnk5fcbcc;
+    ::ll::UntypedStorage<1, 1>  mUnkec775d;
     ::ll::UntypedStorage<4, 4>  mUnk18bb5b;
     ::ll::UntypedStorage<8, 24> mUnke3b45f;
     // NOLINTEND
@@ -51,28 +54,40 @@ public:
     virtual bool areRayTracingResourcesAvailable() const /*override*/;
 
     // vIndex: 6
-    virtual bool arePBRResourcesAvailable() const /*override*/;
+    virtual bool isDeferredLightingModelAvailable() const /*override*/;
 
     // vIndex: 3
     virtual bool isPlatformCompatible() const /*override*/;
+
+    // vIndex: 11
+    virtual bool isPlatformDeferredPerformanceCompatible() const /*override*/;
 
     // vIndex: 7
     virtual bool isRayTracingAvailable() const /*override*/;
 
     // vIndex: 8
-    virtual bool isDeferredShadingAvailable() const /*override*/;
+    virtual bool areDeferredShadingAndResourcesAvailable() const /*override*/;
 
     // vIndex: 9
-    virtual bool supportsVibrantVisualsPackStack() const /*override*/;
+    virtual bool isVibrantVisualsAllowed() const /*override*/;
+
+    // vIndex: 10
+    virtual void setForceDisableVibrantVisuals(bool) /*override*/;
+
+    // vIndex: 12
+    virtual bool canSwitchGraphicsModeInGame() const /*override*/;
 
     // vIndex: 4
     virtual bool isUpscalingAvailable() const /*override*/;
 
-    // vIndex: 10
+    // vIndex: 13
     virtual ::dragon::rendering::LightingModels getLightingModel() const /*override*/;
 
-    // vIndex: 11
+    // vIndex: 14
     virtual void setLightingModel(::dragon::rendering::LightingModels const) /*override*/;
+
+    // vIndex: 15
+    virtual void setCanSwitchGraphicsModeInGame(bool) /*override*/;
     // NOLINTEND
 
 public:

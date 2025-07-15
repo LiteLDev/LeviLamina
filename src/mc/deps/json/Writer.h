@@ -14,10 +14,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Writer() = default;
+    virtual ~Writer();
 
     // vIndex: 1
     virtual ::std::string write(::Json::Value const&) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

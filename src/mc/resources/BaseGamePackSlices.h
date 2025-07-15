@@ -9,6 +9,7 @@
 // clang-format off
 class BaseGameVersion;
 class IResourcePackRepository;
+class ResourcePack;
 class ResourcePackStack;
 namespace mce { class UUID; }
 // clang-format on
@@ -76,6 +77,16 @@ public:
     ) const;
 
     MCNAPI ~BaseGamePackSlices();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void _add(
+        ::std::vector<::BaseGamePackSlices::BaseGameVersionPack>& baseGameVersionPacks,
+        ::BaseGameVersion const&                                  baseGameVersion,
+        ::ResourcePack&                                           pack
+    );
     // NOLINTEND
 
 public:

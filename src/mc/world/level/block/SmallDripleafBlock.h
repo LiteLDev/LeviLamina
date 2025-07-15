@@ -36,7 +36,7 @@ public:
     // vIndex: 80
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 5
@@ -70,7 +70,7 @@ public:
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const /*override*/;
 
     // vIndex: 30

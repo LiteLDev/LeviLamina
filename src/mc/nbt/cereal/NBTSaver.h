@@ -14,7 +14,7 @@ class NBTSaver : public ::cereal::BasicSaver {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnka5501a;
+    ::ll::UntypedStorage<8, 40> mUnka5501a;
     // NOLINTEND
 
 public:

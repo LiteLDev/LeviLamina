@@ -96,10 +96,10 @@ public:
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
     // vIndex: 101
@@ -119,10 +119,10 @@ public:
     // vIndex: 30
     virtual bool isLavaBlocking() const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual bool isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 152
+    // vIndex: 151
     virtual void
     startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const
         /*override*/;

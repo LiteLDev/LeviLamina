@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SessionDescriptionInterface() = default;
+    virtual ~SessionDescriptionInterface();
 
     // vIndex: 1
     virtual ::std::unique_ptr<::webrtc::SessionDescriptionInterface> Clone() const;
@@ -47,7 +47,7 @@ public:
     virtual bool AddCandidate(::webrtc::IceCandidateInterface const*) = 0;
 
     // vIndex: 9
-    virtual uint64 RemoveCandidates(::std::vector<::cricket::Candidate> const&);
+    virtual uint64 RemoveCandidates(::std::vector<::cricket::Candidate> const& candidates);
 
     // vIndex: 10
     virtual uint64 number_of_mediasections() const = 0;
@@ -72,9 +72,19 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::unique_ptr<::webrtc::SessionDescriptionInterface> $Clone() const;
 
+    MCNAPI ::webrtc::SdpType $GetType() const;
+
+    MCNAPI uint64 $RemoveCandidates(::std::vector<::cricket::Candidate> const& candidates);
     // NOLINTEND
 
 public:

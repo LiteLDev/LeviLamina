@@ -81,7 +81,7 @@ public:
 
     MCNAPI ::std::optional<uint> getCameraPresetIndex(::std::string const& presetName) const;
 
-    MCNAPI void loadPresets(::ResourcePackManager& resourcePackManager, ::Experiments const&);
+    MCNAPI void loadPresets(::ResourcePackManager& resourcePackManager, ::Experiments const& experiments);
 
     MCNAPI ::CameraPresets& operator=(::CameraPresets&&);
 

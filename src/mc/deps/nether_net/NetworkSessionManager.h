@@ -17,7 +17,6 @@ namespace NetherNet { class ConnectError; }
 namespace NetherNet { class ConnectRequest; }
 namespace NetherNet { class ConnectResponse; }
 namespace NetherNet { class NetworkSession; }
-namespace NetherNet { class SimpleNetworkInterfaceImpl; }
 namespace NetherNet { struct NetworkID; }
 namespace NetherNet { struct SessionState; }
 namespace webrtc { class SessionDescriptionInterface; }
@@ -124,11 +123,6 @@ public:
 
     MCNAPI bool IsPacketAvailable(::NetherNet::NetworkID remoteId, uint64 connectionId, uint* pcbMessageSize);
 
-    MCNAPI NetworkSessionManager(
-        ::NetherNet::ContextProxy const&         ctx,
-        ::NetherNet::SimpleNetworkInterfaceImpl& networkInterface
-    );
-
     MCNAPI void NotifyOnSessionOpen(::NetherNet::NetworkID networkIDRemote, uint64 connectionId);
 
     MCNAPI bool NotifyOnSessionRequested(::NetherNet::NetworkID networkIDRemote, uint64 connectionId);
@@ -184,12 +178,6 @@ public:
             ::NetherNet::CandidateAdd> const&            signal,
         ::std::optional<::NetherNet::SignalingChannelId> preference
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::NetherNet::ContextProxy const& ctx, ::NetherNet::SimpleNetworkInterfaceImpl& networkInterface);
     // NOLINTEND
 
 public:

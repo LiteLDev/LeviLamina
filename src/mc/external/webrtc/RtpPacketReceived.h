@@ -34,7 +34,7 @@ public:
     // NOLINTBEGIN
     MCNAPI RtpPacketReceived(::webrtc::RtpPacketReceived const&);
 
-    MCNAPI RtpPacketReceived(::webrtc::RtpHeaderExtensionMap const*, ::webrtc::Timestamp);
+    MCNAPI RtpPacketReceived(::webrtc::RtpHeaderExtensionMap const* extensions, ::webrtc::Timestamp arrival_time);
 
     MCNAPI ~RtpPacketReceived();
     // NOLINTEND
@@ -44,7 +44,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::RtpPacketReceived const&);
 
-    MCNAPI void* $ctor(::webrtc::RtpHeaderExtensionMap const*, ::webrtc::Timestamp);
+    MCNAPI void* $ctor(::webrtc::RtpHeaderExtensionMap const* extensions, ::webrtc::Timestamp arrival_time);
     // NOLINTEND
 
 public:

@@ -6,6 +6,8 @@
 #include "mc/deps/core/debug/log/LogArea.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/puv/LoadResult.h"
+#include "mc/deps/puv/SlicedLoader.h"
 #include "mc/resources/JsonBetaState.h"
 #include "mc/world/actor/ActorDefinitionParseStatus.h"
 
@@ -13,6 +15,8 @@
 // clang-format off
 class ActorDefinition;
 class ActorDefinitionPtr;
+class ActorMigratedDefinitionFactory;
+class BedrockLoadContext;
 class Experiments;
 class IMinecraftEventing;
 class IPackLoadContext;
@@ -21,9 +25,12 @@ class LinkedAssetValidator;
 class PackInstance;
 class ResourcePackManager;
 class SemVersion;
-struct DeserializeDataParams;
+struct ActorMigratedDefinitionCustomData;
 namespace Core { class Path; }
 namespace Json { class Value; }
+namespace Puv { class Input; }
+namespace SharedTypes::v1_21_90 { struct ActorDefinitions; }
+namespace SharedTypes::v1_21_90 { struct ActorDocument; }
 // clang-format on
 
 class ActorDefinitionGroup : public ::Bedrock::EnableNonOwnerReferences {
@@ -98,6 +105,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkcf7ca4;
     ::ll::UntypedStorage<8, 8>  mUnk6ed894;
     ::ll::UntypedStorage<8, 72> mUnkc1236e;
+    ::ll::UntypedStorage<8, 8>  mUnke79e3a;
     // NOLINTEND
 
 public:
@@ -126,6 +134,17 @@ public:
 
     MCNAPI void _getResources(::Level& level);
 
+    MCNAPI bool _initActorDefinition(
+        ::Puv::Input const&  input,
+        ::SemVersion const&  formatVersion,
+        ::IPackLoadContext&  packLoadContext,
+        ::std::string const& relativeResourceFilepath,
+        ::JsonBetaState      useBetaFeatures,
+        ::std::string const& identifier,
+        ::Level&             level,
+        ::LogArea            logArea
+    );
+
     MCNAPI ::ActorDefinitionGroup::LoadActorResult _loadActorDefinition(
         ::Level&                             level,
         ::IPackLoadContext&                  packLoadContext,
@@ -139,15 +158,29 @@ public:
         ::SemVersion const&  formatVersion,
         ::IPackLoadContext&  packLoadContext,
         ::std::string const& relativeResourceFilepath,
-        ::Json::Value&       minecraftEntityNode,
+        ::Json::Value        minecraftEntityNode,
         ::JsonBetaState      useBetaFeatures,
         ::std::string const& identifier,
         ::Level&             level,
         ::LogArea            logArea
     );
 
-    MCNAPI ::ActorDefinitionParseStatus
-    _loadTemplates(::Level& level, ::std::string const& base, ::DeserializeDataParams deserializeDataParams);
+    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_90::ActorDocument> _loadEntityNode(
+        ::Puv::Input const&                     input,
+        ::SemVersion const&                     formatVersion,
+        ::IPackLoadContext&                     packLoadContext,
+        ::JsonBetaState                         useBetaFeatures,
+        ::ActorMigratedDefinitionFactory const& factory
+    ) const;
+
+    MCNAPI ::ActorDefinitionParseStatus _loadTemplates(
+        ::Level&                                                                        level,
+        ::std::string const&                                                            base,
+        ::std::unordered_map<::std::string, ::SharedTypes::v1_21_90::ActorDefinitions>& componentsGroup,
+        ::SemVersion const&                                                             formatVersion,
+        ::IPackLoadContext const&                                                       packLoadContext,
+        ::JsonBetaState                                                                 useBetaFeatures
+    );
 
     MCNAPI void _removeRef(::ActorDefinitionPtr& ptr);
 
@@ -168,8 +201,6 @@ public:
         ::std::string const&                                         componentName,
         ::std::function<void(::Json::Value&, ::Json::Value&)> const& callback
     );
-
-    MCNAPI static void loadActorDefinitionFormatVersion(::Json::Value const& root, ::SemVersion& formatVersion);
 
     MCNAPI static bool loadActorDefinitionIdentifier(
         ::Json::Value const& root,

@@ -215,6 +215,14 @@ public:
         _recursiveCorridor(::WoodlandMansionPieces::SimpleGrid& grid, int x, int y, uchar heading, int depth);
 
         MCNAPI void _setupThirdFloor();
+
+        MCNAPI uchar get1x2RoomDirection(
+            ::WoodlandMansionPieces::SimpleGrid const& grid,
+            int                                        x,
+            int                                        y,
+            int                                        floorNum,
+            int                                        roomId
+        ) const;
         // NOLINTEND
 
     public:

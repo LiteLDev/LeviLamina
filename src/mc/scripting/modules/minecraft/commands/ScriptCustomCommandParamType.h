@@ -13,8 +13,9 @@ enum class ScriptCustomCommandParamType : int {
     PlayerSelector = 5,
     Location       = 6,
     BlockType      = 7,
-    ItemType       = 8,
-    Enum           = 9,
+    EntityType     = 8,
+    ItemType       = 9,
+    Enum           = 10,
 };
 
 }

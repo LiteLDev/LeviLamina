@@ -19,15 +19,14 @@ public:
     ::ll::UntypedStorage<8, 48> mUnk284a47;
     ::ll::UntypedStorage<8, 48> mUnkfab9af;
     ::ll::UntypedStorage<8, 16> mUnk854b50;
+    ::ll::UntypedStorage<8, 24> mUnk4ccb10;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Proxy();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI Proxy();
+
     MCNAPI Proxy(::BlockGeometrySerializer::Proxy const&);
 
     MCNAPI ::std::map<::std::string, ::SharedTypes::Legacy::ExpressionNode> getBoneVisibility() const;
@@ -54,6 +53,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
     MCNAPI void* $ctor(::BlockGeometrySerializer::Proxy const&);
     // NOLINTEND
 

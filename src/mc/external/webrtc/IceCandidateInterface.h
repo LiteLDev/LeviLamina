@@ -14,7 +14,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IceCandidateInterface() = default;
+    virtual ~IceCandidateInterface();
 
     // vIndex: 1
     virtual ::std::string sdp_mid() const = 0;
@@ -33,9 +33,15 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI ::std::string $server_url() const;
     // NOLINTEND
 
 public:

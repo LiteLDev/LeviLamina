@@ -37,7 +37,7 @@ public:
     // vIndex: 133
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 139
     virtual int getExtraRenderLayers() const /*override*/;
 
     // vIndex: 11

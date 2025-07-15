@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/platform/brstd/copyable_function.h"
 #include "mc/platform/threading/LockGuard.h"
 #include "mc/platform/threading/SharedLock.h"
 
@@ -33,15 +34,15 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk36485c;
-        ::ll::UntypedStorage<8, 40> mUnk7c4cd3;
-        ::ll::UntypedStorage<8, 32> mUnka16edc;
-        ::ll::UntypedStorage<8, 24> mUnkbf5d9d;
-        ::ll::UntypedStorage<8, 88> mUnka2b527;
-        ::ll::UntypedStorage<8, 8>  mUnkb96eba;
-        ::ll::UntypedStorage<8, 24> mUnk6aa7f3;
-        ::ll::UntypedStorage<8, 16> mUnk431661;
-        ::ll::UntypedStorage<8, 24> mUnk71a5a1;
+        ::ll::UntypedStorage<8, 8>   mUnk36485c;
+        ::ll::UntypedStorage<8, 40>  mUnk7c4cd3;
+        ::ll::UntypedStorage<8, 32>  mUnka16edc;
+        ::ll::UntypedStorage<8, 192> mUnkbf5d9d;
+        ::ll::UntypedStorage<8, 88>  mUnka2b527;
+        ::ll::UntypedStorage<8, 8>   mUnkb96eba;
+        ::ll::UntypedStorage<8, 24>  mUnk6aa7f3;
+        ::ll::UntypedStorage<8, 16>  mUnk431661;
+        ::ll::UntypedStorage<8, 24>  mUnk71a5a1;
         // NOLINTEND
 
     public:
@@ -53,12 +54,22 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI explicit Impl(::Bedrock::DataStore* owner);
+
         MCNAPI ::Bedrock::JSONObject::Node*
         _setValueForKey(char const* key, uint64 keyLength, ::Bedrock::JSONObject::ValueWrapper const& value);
 
         MCNAPI void load();
 
+        MCNAPI void setCustomFileHandlers(::Bedrock::DataStore::CustomFileHandlers handlers);
+
         MCNAPI ~Impl();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::Bedrock::DataStore* owner);
         // NOLINTEND
 
     public:
@@ -124,9 +135,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnka2167c;
-        ::ll::UntypedStorage<8, 8> mUnkafbedc;
-        ::ll::UntypedStorage<8, 8> mUnkf5b462;
+        ::ll::UntypedStorage<8, 64> mUnk28b7e8;
+        ::ll::UntypedStorage<8, 64> mUnke4ea96;
+        ::ll::UntypedStorage<8, 64> mUnk216882;
         // NOLINTEND
 
     public:
@@ -134,6 +145,18 @@ public:
         CustomFileHandlers& operator=(CustomFileHandlers const&);
         CustomFileHandlers(CustomFileHandlers const&);
         CustomFileHandlers();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~CustomFileHandlers();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
     };
 
     template <typename T0, typename T1>
@@ -161,6 +184,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI DataStore();
+
+    MCNAPI void setCustomFileHandlers(::Bedrock::DataStore::CustomFileHandlers handlers);
     // NOLINTEND
 
 public:

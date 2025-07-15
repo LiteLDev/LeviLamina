@@ -19,19 +19,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddContentName(::std::string_view);
+    MCNAPI void AddContentName(::std::string_view content_name);
 
     MCNAPI ContentGroup(::cricket::ContentGroup&&);
 
-    MCNAPI explicit ContentGroup(::std::string const&);
-
     MCNAPI ContentGroup(::cricket::ContentGroup const&);
+
+    MCNAPI explicit ContentGroup(::std::string const& semantics);
 
     MCNAPI ::std::string const* FirstContentName() const;
 
-    MCNAPI bool HasContentName(::std::string_view) const;
+    MCNAPI bool HasContentName(::std::string_view content_name) const;
 
-    MCNAPI bool RemoveContentName(::std::string_view);
+    MCNAPI bool RemoveContentName(::std::string_view content_name);
 
     MCNAPI ::std::string ToString() const;
 
@@ -45,9 +45,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::cricket::ContentGroup&&);
 
-    MCNAPI void* $ctor(::std::string const&);
-
     MCNAPI void* $ctor(::cricket::ContentGroup const&);
+
+    MCNAPI void* $ctor(::std::string const& semantics);
     // NOLINTEND
 
 public:

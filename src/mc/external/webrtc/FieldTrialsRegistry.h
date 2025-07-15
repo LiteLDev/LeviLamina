@@ -27,7 +27,7 @@ public:
     virtual ~FieldTrialsRegistry() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::std::string Lookup(::std::string_view) const /*override*/;
+    virtual ::std::string Lookup(::std::string_view key) const /*override*/;
 
     // vIndex: 2
     virtual ::std::string GetValue(::std::string_view) const = 0;
@@ -36,7 +36,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI ::std::string $Lookup(::std::string_view key) const;
     // NOLINTEND
 };
 

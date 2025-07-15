@@ -12,6 +12,18 @@ namespace Bedrock::JSONObject { class Node; }
 
 namespace Bedrock::JSONObject {
 
-class MutableObjectHelper : public ::Bedrock::JSONObject::ObjectHelperBase<0> {};
+class MutableObjectHelper : public ::Bedrock::JSONObject::ObjectHelperBase<0> {
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~MutableObjectHelper();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+};
 
 } // namespace Bedrock::JSONObject

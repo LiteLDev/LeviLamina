@@ -25,11 +25,11 @@ public:
     // NOLINTBEGIN
     MCNAPI void Clear();
 
-    MCNAPI bool EqualIPs(::rtc::SocketAddress const&) const;
+    MCNAPI bool EqualIPs(::rtc::SocketAddress const& addr) const;
 
-    MCNAPI bool EqualPorts(::rtc::SocketAddress const&) const;
+    MCNAPI bool EqualPorts(::rtc::SocketAddress const& addr) const;
 
-    MCNAPI bool FromString(::std::string_view);
+    MCNAPI bool FromString(::std::string_view str);
 
     MCNAPI ::std::string HostAsSensitiveURIString() const;
 
@@ -47,37 +47,37 @@ public:
 
     MCNAPI ::std::string PortAsString() const;
 
-    MCNAPI void SetIP(::rtc::IPAddress const&);
+    MCNAPI void SetIP(::std::string_view hostname);
 
-    MCNAPI void SetIP(::std::string_view);
+    MCNAPI void SetIP(::rtc::IPAddress const& ip);
 
-    MCNAPI void SetPort(int);
+    MCNAPI void SetPort(int port);
 
-    MCNAPI void SetResolvedIP(::rtc::IPAddress const&);
+    MCNAPI void SetResolvedIP(::rtc::IPAddress const& ip);
 
     MCNAPI SocketAddress();
 
-    MCNAPI SocketAddress(::rtc::SocketAddress const&);
+    MCNAPI SocketAddress(::rtc::SocketAddress const& addr);
 
-    MCNAPI SocketAddress(::rtc::IPAddress const&, int);
+    MCNAPI SocketAddress(::std::string_view hostname, int port);
 
-    MCNAPI SocketAddress(::std::string_view, int);
+    MCNAPI SocketAddress(::rtc::IPAddress const& ip, int port);
 
     MCNAPI ::std::string ToSensitiveNameAndAddressString() const;
 
     MCNAPI ::std::string ToSensitiveString() const;
 
-    MCNAPI uint64 ToSockAddrStorage(::sockaddr_storage*) const;
+    MCNAPI uint64 ToSockAddrStorage(::sockaddr_storage* addr) const;
 
     MCNAPI ::std::string ToString() const;
 
     MCNAPI ::rtc::IPAddress const& ipaddr() const;
 
-    MCNAPI bool operator<(::rtc::SocketAddress const&) const;
+    MCNAPI bool operator<(::rtc::SocketAddress const& addr) const;
 
-    MCNAPI ::rtc::SocketAddress& operator=(::rtc::SocketAddress const&);
+    MCNAPI ::rtc::SocketAddress& operator=(::rtc::SocketAddress const& addr);
 
-    MCNAPI bool operator==(::rtc::SocketAddress const&) const;
+    MCNAPI bool operator==(::rtc::SocketAddress const& addr) const;
 
     MCNAPI ushort port() const;
 
@@ -89,11 +89,11 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::rtc::SocketAddress const&);
+    MCNAPI void* $ctor(::rtc::SocketAddress const& addr);
 
-    MCNAPI void* $ctor(::rtc::IPAddress const&, int);
+    MCNAPI void* $ctor(::std::string_view hostname, int port);
 
-    MCNAPI void* $ctor(::std::string_view, int);
+    MCNAPI void* $ctor(::rtc::IPAddress const& ip, int port);
     // NOLINTEND
 
 public:

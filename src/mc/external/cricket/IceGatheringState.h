@@ -4,6 +4,10 @@
 
 namespace cricket {
 
-enum class IceGatheringState : uint {};
+enum class IceGatheringState : int {
+    KIceGatheringNew       = 0,
+    KIceGatheringGathering = 1,
+    KIceGatheringComplete  = 2,
+};
 
 }

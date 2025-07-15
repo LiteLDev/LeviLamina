@@ -60,29 +60,29 @@ public:
     // vIndex: 6
     virtual void onCustomTagLoadDone(::BlockSource& region) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 12
+    // vIndex: 13
     virtual void onPlace(::BlockSource& region) /*override*/;
 
-    // vIndex: 25
+    // vIndex: 26
     virtual ::Bedrock::Safety::RedactableString const& getCustomName() const /*override*/;
 
-    // vIndex: 26
+    // vIndex: 27
     virtual ::std::string const&
     getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context) /*override*/;
 
-    // vIndex: 28
-    virtual void setCustomName(::Bedrock::Safety::RedactableString const& str) /*override*/;
-
-    // vIndex: 44
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
+    // vIndex: 29
+    virtual void setCustomName(::Bedrock::Safety::RedactableString const& name) /*override*/;
 
     // vIndex: 45
-    virtual void _onUpdatePacket(::CompoundTag const& tag, ::BlockSource& region) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
     // vIndex: 46
+    virtual void _onUpdatePacket(::CompoundTag const& tag, ::BlockSource& region) /*override*/;
+
+    // vIndex: 47
     virtual bool _playerCanUpdate(::Player const& player) const /*override*/;
 
     // vIndex: 0
@@ -149,7 +149,7 @@ public:
     MCNAPI ::std::string const&
     $getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context);
 
-    MCNAPI void $setCustomName(::Bedrock::Safety::RedactableString const& str);
+    MCNAPI void $setCustomName(::Bedrock::Safety::RedactableString const& name);
 
     MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 

@@ -103,8 +103,6 @@ public:
 
     MCNAPI void _uploadStream();
 
-    MCNAPI void addCallbackQueue(::std::function<void()> callback);
-
     MCNAPI void uploadFile(
         ::std::string const& uploadId,
         ::Core::Path const&  filePath,

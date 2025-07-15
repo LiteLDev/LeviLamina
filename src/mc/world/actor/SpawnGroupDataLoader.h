@@ -15,7 +15,7 @@ class SpawnGroupDataLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 208> mUnkff76e9;
+    ::ll::UntypedStorage<8, 192> mUnkff76e9;
     // NOLINTEND
 
 public:

@@ -45,13 +45,13 @@ public:
     // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual void checkAlive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const /*override*/;
 
     // vIndex: 5
@@ -82,7 +82,7 @@ public:
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual ::Block const& _keepRelevantStateForDropping(::Block const& block) const;
 
     // vIndex: 130

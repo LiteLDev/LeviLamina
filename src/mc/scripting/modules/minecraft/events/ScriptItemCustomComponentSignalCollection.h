@@ -12,8 +12,11 @@ class ComponentItem;
 class HashedString;
 class ScriptDeferredFlushTracker;
 struct ItemCustomComponentData;
+namespace Json { class Value; }
+namespace ScriptModuleMinecraft { class ScriptCustomComponentParameterCache; }
 namespace ScriptModuleMinecraft { class ScriptItemCustomComponentInterface; }
 namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -23,15 +26,15 @@ class ScriptItemCustomComponentSignalCollection
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk3e8f4b;
     ::ll::UntypedStorage<8, 24> mUnk19348b;
-    ::ll::UntypedStorage<8, 88> mUnk39381f;
+    ::ll::UntypedStorage<8, 96> mUnk39381f;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ScriptItemCustomComponentSignalCollection& operator=(ScriptItemCustomComponentSignalCollection const&);
     ScriptItemCustomComponentSignalCollection(ScriptItemCustomComponentSignalCollection const&);
+    ScriptItemCustomComponentSignalCollection();
 
 public:
     // virtual functions
@@ -61,43 +64,36 @@ public:
     virtual void onPostFlushAfterEvents() /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptItemCustomComponentSignalCollection() /*override*/;
+    virtual ~ScriptItemCustomComponentSignalCollection() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptItemCustomComponentSignalCollection();
-
     MCNAPI explicit ScriptItemCustomComponentSignalCollection(
-        ::ScriptModuleMinecraft::ScriptCustomComponentEventMetadata<
-            ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface>&& metadata
+        ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache& parameterCache
     );
-
-    MCNAPI void bindMetadata(::Scripting::ModuleBindingBuilder& moduleBuilder);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static ::ScriptModuleMinecraft::ScriptCustomComponentEventMetadata<
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface> const
+    _getEventMetadata();
+
     MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+
+    MCNAPI static void generateOrderDocumentationForVersion(
+        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
+        ::Json::Value&                       eventOrderArray
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(
-        ::ScriptModuleMinecraft::ScriptCustomComponentEventMetadata<
-            ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface>&& metadata
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomComponentParameterCache& parameterCache);
     // NOLINTEND
 
 public:

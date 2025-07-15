@@ -30,9 +30,9 @@ public:
 
     MCNAPI ::std::unique_ptr<::rtc::SSLCertificateStats> GetStats() const;
 
-    MCNAPI explicit SSLCertChain(::std::vector<::std::unique_ptr<::rtc::SSLCertificate>>);
+    MCNAPI explicit SSLCertChain(::std::vector<::std::unique_ptr<::rtc::SSLCertificate>> certs);
 
-    MCNAPI explicit SSLCertChain(::std::unique_ptr<::rtc::SSLCertificate>);
+    MCNAPI explicit SSLCertChain(::std::unique_ptr<::rtc::SSLCertificate> single_cert);
 
     MCNAPI ~SSLCertChain();
     // NOLINTEND
@@ -40,9 +40,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::vector<::std::unique_ptr<::rtc::SSLCertificate>>);
+    MCNAPI void* $ctor(::std::vector<::std::unique_ptr<::rtc::SSLCertificate>> certs);
 
-    MCNAPI void* $ctor(::std::unique_ptr<::rtc::SSLCertificate>);
+    MCNAPI void* $ctor(::std::unique_ptr<::rtc::SSLCertificate> single_cert);
     // NOLINTEND
 
 public:

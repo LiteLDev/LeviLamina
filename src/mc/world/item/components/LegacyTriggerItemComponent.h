@@ -40,6 +40,13 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void
+    _dispatch(bool& result, ::ItemStackBase& item, ::DefinitionTrigger const& trigger, ::RenderParams& params);
+    // NOLINTEND
+
+public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

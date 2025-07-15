@@ -3,15 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/certificates/identity/PlayerAuthenticationType.h"
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/platform/PlatformType.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/core/utility/CrashDumpLogStringID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
 #include "mc/legacy/ActorUniqueID.h"
+#include "mc/platform/diagnostics/CrashDumpLogStringID.h"
 #include "mc/util/CallbackToken.h"
 #include "mc/util/HudElement.h"
 #include "mc/util/HudVisibility.h"
@@ -38,7 +39,6 @@ class DataLoadHelper;
 class Dimension;
 class EntityContext;
 class FrameUpdateContextBase;
-class GameServerToken;
 class IContainerManager;
 class InventoryTransaction;
 class ItemStack;
@@ -52,6 +52,7 @@ class ServerNetworkSystem;
 class TextObjectRoot;
 class Vec3;
 struct INpcDialogueData;
+struct PlayerAuthenticationInfo;
 struct PlayerMovementSettings;
 struct SyncedClientOptionsComponent;
 struct VariantParameterList;
@@ -109,7 +110,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                    mIsCompatibleWithClientSideChunkGen;
     ::ll::TypedStorage<4, 4, int>                                     mRemainingStructureRefreshTicks;
     ::ll::TypedStorage<8, 48, ::HashedString>                         mCurrentStructureFeature;
-    ::ll::TypedStorage<4, 4, int>                                     mLastKnownSyncTick;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::ServerPlayer::NearbyActor>> mNearbyActors;
     ::ll::TypedStorage<8, 16, ::CallbackToken>                                                    mCloseContainerToken;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Editor::IEditorPlayer>>                          mEditorServerPlayer;
@@ -158,7 +158,7 @@ public:
     virtual void moveView() /*override*/;
 
     // vIndex: 186
-    virtual void moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimension) /*override*/;
+    virtual void moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimensionType) /*override*/;
 
     // vIndex: 183
     virtual void frameUpdate(::FrameUpdateContextBase&) /*override*/;
@@ -201,7 +201,7 @@ public:
 
     // vIndex: 203
     virtual void displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& resolvedTextObject,
+        ::ResolvedTextObject const& textObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     ) /*override*/;
@@ -247,7 +247,7 @@ public:
     virtual ::HashedString getCurrentStructureFeature() const /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     // vIndex: 220
     virtual void setContainerData(::IContainerManager& menu, int id, int value) /*override*/;
@@ -360,7 +360,8 @@ public:
         ::mce::UUID                                        uuid,
         ::std::string const&                               playFabId,
         ::std::string const&                               deviceId,
-        ::GameServerToken const&                           gameServerToken,
+        ::PlayerAuthenticationType                         authType,
+        ::PlayerAuthenticationInfo const&                  authInfo,
         int                                                maxChunkRadius,
         bool                                               enableItemStackNetManager,
         ::EntityContext&                                   entityContext,
@@ -384,11 +385,7 @@ public:
 
     MCAPI void _updateNearbyActors();
 
-    MCAPI void acceptClientPosition(::Vec3 const& clientPos, ::Vec3 const& clientPosDelta);
-
     MCAPI void addActorToReplicationList(::gsl::not_null<::Actor*> actor, bool autonomous);
-
-    MCAPI void checkCheating(::Vec3 const& clientPos, ::Vec3 const& clientPosDelta);
 
     MCAPI void createEditorPlayer(::Bedrock::NonOwnerPointer<::Editor::IEditorManager> editorManager);
 
@@ -446,7 +443,8 @@ public:
         ::mce::UUID                                        uuid,
         ::std::string const&                               playFabId,
         ::std::string const&                               deviceId,
-        ::GameServerToken const&                           gameServerToken,
+        ::PlayerAuthenticationType                         authType,
+        ::PlayerAuthenticationInfo const&                  authInfo,
         int                                                maxChunkRadius,
         bool                                               enableItemStackNetManager,
         ::EntityContext&                                   entityContext,
@@ -485,7 +483,7 @@ public:
 
     MCAPI void $moveView();
 
-    MCAPI void $moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimension);
+    MCAPI void $moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimensionType);
 
     MCFOLD void $frameUpdate(::FrameUpdateContextBase&);
 
@@ -512,7 +510,7 @@ public:
     );
 
     MCAPI void $displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& resolvedTextObject,
+        ::ResolvedTextObject const& textObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     );
@@ -547,7 +545,7 @@ public:
 
     MCAPI ::HashedString $getCurrentStructureFeature() const;
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI void $setContainerData(::IContainerManager& menu, int id, int value);
 

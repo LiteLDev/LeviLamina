@@ -13,7 +13,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 10
-    virtual void set_protocol(::std::string_view) /*override*/;
+    virtual void set_protocol(::std::string_view protocol) /*override*/;
 
     // vIndex: 1
     virtual ::cricket::MediaType type() const /*override*/;
@@ -34,7 +34,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $set_protocol(::std::string_view protocol);
 
+    MCNAPI ::cricket::MediaType $type() const;
+
+    MCNAPI ::cricket::VideoContentDescription* $as_video();
+
+    MCNAPI ::cricket::VideoContentDescription const* $as_video() const;
+
+    MCNAPI ::cricket::VideoContentDescription* $CloneInternal() const;
     // NOLINTEND
 
 public:

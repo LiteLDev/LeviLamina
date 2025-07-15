@@ -17,8 +17,8 @@ class BlockSource;
 class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-class Random;
 namespace BlockEvents { class BlockQueuedTickEvent; }
+namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class FarmBlock : public ::BlockLegacy {
@@ -41,10 +41,7 @@ public:
     // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 135
-    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random&) const /*override*/;
-
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 131
@@ -72,6 +69,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
@@ -101,8 +100,6 @@ public:
     $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
     MCAPI int $getVariant(::Block const& block) const;
-
-    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random&) const;
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 

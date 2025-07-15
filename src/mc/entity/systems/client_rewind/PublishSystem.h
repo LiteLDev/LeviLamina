@@ -16,7 +16,6 @@
 // auto generated forward declare list
 // clang-format off
 class ReplayStateComponent;
-class StrictEntityContext;
 struct ActorDataBoundingBoxComponent;
 struct ActorDataFlagComponent;
 struct ActorDataHorseFlagComponent;
@@ -59,24 +58,6 @@ public:
             ::GlobalRead<>,
             ::GlobalWrite<>,
             ::EntityFactoryT<>>&
-    ) /*override*/;
-
-    // vIndex: 6
-    virtual void singleTick(
-        ::StrictExecutionContext<
-            ::Filter<::ActorMovementTickNeededComponent>,
-            ::Read<
-                ::ActorDataFlagComponent,
-                ::ActorDataHorseFlagComponent,
-                ::ActorDataJumpDurationComponent,
-                ::ActorDataBoundingBoxComponent,
-                ::ActorDataSeatOffsetComponent>,
-            ::Write<::ReplayStateTrackerComponent, ::ReplayStateComponent>,
-            ::AddRemove<>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>&,
-        ::StrictEntityContext&
     ) /*override*/;
 
     // vIndex: 0

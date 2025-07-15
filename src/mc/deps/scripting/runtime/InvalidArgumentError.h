@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Error.h"
+#include "mc/deps/scripting/runtime/BaseError.h"
 #include "mc/deps/scripting/runtime/InvalidArgumentErrorType.h"
 
 namespace Scripting {
 
-struct InvalidArgumentError : public ::Scripting::Error {
+struct InvalidArgumentError : public ::Scripting::BaseError {
 public:
     // member variables
     // NOLINTBEGIN

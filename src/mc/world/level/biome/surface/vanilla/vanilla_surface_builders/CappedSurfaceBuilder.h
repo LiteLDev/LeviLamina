@@ -35,6 +35,9 @@ public:
         virtual bool isWaterBlock(::Block const& block) const;
 
         // vIndex: 3
+        virtual bool isLavaBlock(::Block const& block) const;
+
+        // vIndex: 4
         virtual bool isSolidBlock(::Block const& block) const;
         // NOLINTEND
 
@@ -44,6 +47,8 @@ public:
         MCNAPI bool $isFoundationBlock(::Block const& block) const;
 
         MCNAPI bool $isWaterBlock(::Block const& block) const;
+
+        MCNAPI bool $isLavaBlock(::Block const& block) const;
 
         MCNAPI bool $isSolidBlock(::Block const& block) const;
         // NOLINTEND

@@ -12,8 +12,6 @@ class Vec3;
 namespace ActorOffset {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Vec3 getEyeOffset(::EntityContext const& entity);
-
 MCNAPI void initializePlayer(::EntityContext& entity);
 
 MCNAPI void setAABBRelativeScaling(

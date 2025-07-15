@@ -4,10 +4,10 @@
 #include "mc/deps/json/Value.h"
 
 // auto generated inclusion list
+#include "mc/client/renderer/rendergraph/Packet.h"
 #include "mc/deps/json/Value.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/ModalFormCancelReason.h"
-#include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list

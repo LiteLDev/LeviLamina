@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/structurepools/alias/PoolAliasBinding.h"
 #include "mc/world/level/levelgen/v2/JigsawExpansion.h"
+#include "mc/world/level/levelgen/v2/LiquidSettings.h"
 #include "mc/world/level/levelgen/v2/heightmap_projection/Type.h"
 
 // auto generated forward declare list
@@ -33,7 +34,8 @@ public:
         int                                       maxDistanceFromCenter,
         ::br::worldgen::DimensionPadding          dimensionPadding,
         ::PoolAliasBinding::PoolAliasLookup&&     poolAliasLookup,
-        ::br::worldgen::JigsawExpansion           expansion
+        ::br::worldgen::JigsawExpansion           expansion,
+        ::br::worldgen::LiquidSettings            liquidSettings
     );
     // NOLINTEND
 };

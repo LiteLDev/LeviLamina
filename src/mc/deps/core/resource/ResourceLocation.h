@@ -22,10 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ResourceLocation(ResourceLocation const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ResourceLocation();
@@ -33,8 +29,6 @@ public:
     MCNAPI ResourceLocation(::Core::Path const& path, ::ResourceFileSystem fileSystem);
 
     MCNAPI ::Core::PathBuffer<::std::string> getFullPath() const;
-
-    MCNAPI ::ResourceLocation& operator=(::ResourceLocation const&);
 
     MCNAPI bool operator==(::ResourceLocation const& rhs) const;
 

@@ -27,12 +27,11 @@ public:
     // prevent constructor by default
     ActorSoundIdentifier& operator=(ActorSoundIdentifier const&);
     ActorSoundIdentifier(ActorSoundIdentifier const&);
+    ActorSoundIdentifier();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorSoundIdentifier();
-
     MCNAPI explicit ActorSoundIdentifier(::Actor const& actor);
 
     MCNAPI ActorSoundIdentifier(
@@ -48,8 +47,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::Actor const& actor);
 
     MCNAPI void* $ctor(

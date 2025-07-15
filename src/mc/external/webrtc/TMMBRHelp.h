@@ -9,15 +9,16 @@ namespace webrtc::rtcp { class TmmbItem; }
 
 namespace webrtc {
 
-struct TMMBRHelp {
+class TMMBRHelp {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static uint64 CalcMinBitrateBps(::std::vector<::webrtc::rtcp::TmmbItem> const&);
+    MCNAPI static uint64 CalcMinBitrateBps(::std::vector<::webrtc::rtcp::TmmbItem> const& candidates);
 
-    MCNAPI static ::std::vector<::webrtc::rtcp::TmmbItem> FindBoundingSet(::std::vector<::webrtc::rtcp::TmmbItem>);
+    MCNAPI static ::std::vector<::webrtc::rtcp::TmmbItem>
+    FindBoundingSet(::std::vector<::webrtc::rtcp::TmmbItem> candidates);
 
-    MCNAPI static bool IsOwner(::std::vector<::webrtc::rtcp::TmmbItem> const&, uint);
+    MCNAPI static bool IsOwner(::std::vector<::webrtc::rtcp::TmmbItem> const& bounding, uint ssrc);
     // NOLINTEND
 };
 

@@ -49,25 +49,33 @@ public:
     virtual bool IsResumedSession() = 0;
 
     // vIndex: 10
-    virtual int Listen(int) /*override*/;
+    virtual int Listen(int backlog) /*override*/;
 
     // vIndex: 11
-    virtual ::rtc::Socket* Accept(::rtc::SocketAddress*) /*override*/;
+    virtual ::rtc::Socket* Accept(::rtc::SocketAddress* paddr) /*override*/;
 
     // vIndex: 0
-    virtual ~SSLAdapter() /*override*/ = default;
+    virtual ~SSLAdapter() /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::rtc::SSLAdapter* Create(::rtc::Socket*);
+    MCNAPI static ::rtc::SSLAdapter* Create(::rtc::Socket* socket);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI int $Listen(int backlog);
 
+    MCNAPI ::rtc::Socket* $Accept(::rtc::SocketAddress* paddr);
     // NOLINTEND
 };
 

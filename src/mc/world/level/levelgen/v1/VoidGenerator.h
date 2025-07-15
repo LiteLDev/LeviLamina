@@ -79,18 +79,18 @@ public:
     // vIndex: 42
     virtual ::WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const /*override*/;
 
-    // vIndex: 48
+    // vIndex: 49
     virtual ::ChunkLocalNoiseCache createNoiseCache(::ChunkPos chunkPos) const;
 
-    // vIndex: 49
+    // vIndex: 50
     virtual ::WorldGenCache createWorldGenCache(::ChunkPos chunkPos) const;
 
-    // vIndex: 47
+    // vIndex: 48
     virtual void
     decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const
         /*override*/;
 
-    // vIndex: 46
+    // vIndex: 47
     virtual void decorateWorldGenLoadChunk(
         ::Biome const&       biome,
         ::LevelChunk&        lc,
@@ -115,7 +115,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BiomeSource const& $getBiomeSource() const;
+    MCFOLD ::BiomeSource const& $getBiomeSource() const;
 
     MCFOLD ::BlockPos $findSpawnPosition() const;
 

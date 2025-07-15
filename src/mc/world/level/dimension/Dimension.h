@@ -408,6 +408,10 @@ public:
 
     MCAPI void flagEntityforChunkMove(::Actor& e);
 
+    MCAPI ::ChunkSource& getChunkSource() const;
+
+    MCAPI ushort getHeightInSubchunks() const;
+
     MCAPI float getMoonBrightness() const;
 
     MCAPI ::Brightness getOldSkyDarken(float a);
@@ -511,7 +515,7 @@ public:
 
     MCFOLD ::BiomeRegistry const& $getBiomeRegistry() const;
 
-    MCAPI ::BlockSource& $getBlockSourceFromMainChunkSource() const;
+    MCFOLD ::BlockSource& $getBlockSourceFromMainChunkSource() const;
 
     MCAPI ::Actor* $fetchEntity(::ActorUniqueID actorID, bool getRemoved) const;
 
@@ -553,9 +557,9 @@ public:
 
     MCAPI void $onLevelDestruction(::std::string const&);
 
-    MCAPI ::BaseLightTextureImageBuilder* $getLightTextureImageBuilder() const;
+    MCFOLD ::BaseLightTextureImageBuilder* $getLightTextureImageBuilder() const;
 
-    MCAPI ::DimensionBrightnessRamp const& $getBrightnessRamp() const;
+    MCFOLD ::DimensionBrightnessRamp const& $getBrightnessRamp() const;
 
     MCAPI void $startLeaveGame();
 

@@ -12,6 +12,7 @@ class CommandOutput;
 class CommandRegistry;
 class Level;
 class Player;
+namespace Social { class GameConnectionInfo; }
 // clang-format on
 
 class TransferServerCommand : public ::ServerCommand {
@@ -42,6 +43,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::Social::GameConnectionInfo _convertToDestination() const;
+
     MCAPI ::Player const* _loopPlayers(::Level& level, ::std::function<bool(::Player const*)> condition) const;
     // NOLINTEND
 

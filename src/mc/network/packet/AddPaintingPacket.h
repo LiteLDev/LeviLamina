@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/renderer/rendergraph/Packet.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/legacy/ActorRuntimeID.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/network/MinecraftPacketIds.h"
-#include "mc/network/packet/AddActorBasePacket.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
@@ -16,7 +16,7 @@ class BinaryStream;
 class ReadOnlyBinaryStream;
 // clang-format on
 
-class AddPaintingPacket : public ::AddActorBasePacket {
+class AddPaintingPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN

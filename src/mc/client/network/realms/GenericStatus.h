@@ -8,12 +8,14 @@ enum class GenericStatus : int {
     Success             = 0,
     NotLoggedIn         = 1,
     Forbidden           = 2,
-    Fail                = 3,
-    BadRequest          = 4,
-    Unavailable         = 5,
-    UnknownServiceError = 6,
-    UserNotAllowed      = 7,
-    RateLimit           = 8,
+    Banned              = 3,
+    Suspended           = 4,
+    Fail                = 5,
+    BadRequest          = 6,
+    Unavailable         = 7,
+    UnknownServiceError = 8,
+    UserNotAllowed      = 9,
+    RateLimit           = 10,
 };
 
 }

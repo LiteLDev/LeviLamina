@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Error.h"
+#include "mc/deps/scripting/runtime/BaseError.h"
 #include "mc/scripting/modules/minecraft_ui/ScriptFormRejectReason.h"
 
 // auto generated forward declare list
@@ -13,7 +13,7 @@ namespace Scripting { struct ErrorBinding; }
 
 namespace ScriptModuleMinecraftServerUI {
 
-class ScriptFormRejectError : public ::Scripting::Error {
+class ScriptFormRejectError : public ::Scripting::BaseError {
 public:
     // member variables
     // NOLINTBEGIN

@@ -11,8 +11,8 @@
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
-class BlockVolumeBase;
 namespace Editor { class EditorStructureTemplate; }
+namespace Editor { class RelativeVolumeListBlockVolume; }
 namespace Editor::Network { class StructureCopyToClipboardPayload; }
 namespace Editor::Network { class StructureDeletePayload; }
 namespace Editor::Network { class StructureDuplicatePayload; }
@@ -82,8 +82,11 @@ public:
     MCNAPI void
     _handleStructureReplaceFromClipboardPayload(::Editor::Network::StructureReplaceFromClipboardPayload const& payload);
 
-    MCNAPI ::Editor::EditorStructureTemplate
-    _makeStructureTemplateFromVolume(::BlockSource* region, ::BlockVolumeBase const& volume);
+    MCNAPI void _makeStructureTemplateFromVolume(
+        ::Editor::EditorStructureTemplate&             structureTemplate,
+        ::BlockSource*                                 region,
+        ::Editor::RelativeVolumeListBlockVolume const& volume
+    );
     // NOLINTEND
 
 public:

@@ -22,6 +22,7 @@ class Player;
 class Scheduler;
 class ServerInstance;
 struct ScriptingWorldInitializeEvent;
+namespace Core { class FilePathManager; }
 namespace Editor { class IEditorPlayer; }
 namespace Editor::Network { class INetworkPayload; }
 namespace Scripting { class GenericModuleBindingFactory; }
@@ -36,9 +37,10 @@ class EditorManagerServer : public ::Editor::EditorManager,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk63252c;
-    ::ll::UntypedStorage<8, 8> mUnk2bb08a;
-    ::ll::UntypedStorage<8, 8> mUnkf4abda;
+    ::ll::UntypedStorage<8, 8>  mUnk63252c;
+    ::ll::UntypedStorage<8, 8>  mUnk2bb08a;
+    ::ll::UntypedStorage<8, 8>  mUnkf4abda;
+    ::ll::UntypedStorage<8, 24> mUnk62d704;
     // NOLINTEND
 
 public:
@@ -87,7 +89,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit EditorManagerServer(::ServerInstance& server);
+    MCNAPI
+    EditorManagerServer(::ServerInstance& server, ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> fileManager);
 
     MCNAPI void _dispatchToServerPlayers(::Editor::Network::INetworkPayload& payload);
 
@@ -97,7 +100,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ServerInstance& server);
+    MCNAPI void* $ctor(::ServerInstance& server, ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> fileManager);
     // NOLINTEND
 
 public:

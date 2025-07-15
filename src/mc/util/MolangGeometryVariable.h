@@ -16,13 +16,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::MolangGeometryVariable& operator=(::MolangGeometryVariable&&);
-
-    MCAPI ~MolangGeometryVariable();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

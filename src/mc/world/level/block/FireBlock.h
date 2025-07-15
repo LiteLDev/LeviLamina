@@ -45,7 +45,7 @@ public:
     // vIndex: 77
     virtual bool mayPick() const /*override*/;
 
-    // vIndex: 146
+    // vIndex: 145
     virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const /*override*/;
 
     // vIndex: 78

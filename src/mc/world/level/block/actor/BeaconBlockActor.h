@@ -44,6 +44,9 @@ public:
     ::ll::TypedStorage<4, 4, int>                                         mSecondaryEffectTier;
     ::ll::TypedStorage<8, 24, ::std::vector<::MobEffect*>>                mBeaconEffects;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::vector<::MobEffect*>>> mTierEffects;
+    ::ll::TypedStorage<1, 1, bool>                                        mPermanentlyRendered;
+    ::ll::TypedStorage<1, 1, bool>                                        mClientRenderingNeedsUpdate;
+    ::ll::TypedStorage<1, 1, bool>                                        mIsBlockBaseLoaded;
     // NOLINTEND
 
 public:
@@ -56,7 +59,7 @@ public:
     // vIndex: 0
     virtual ~BeaconBlockActor() /*override*/ = default;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 2
@@ -65,22 +68,25 @@ public:
     // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 21
+    // vIndex: 22
     virtual bool hasAlphaLayer() const /*override*/;
 
     // vIndex: 7
+    virtual bool isPermanentlyRendered() const /*override*/;
+
+    // vIndex: 8
     virtual bool isWithinRenderDistance(::Vec3 const& cameraPosition) const /*override*/;
 
     // vIndex: 7
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 14
     virtual void removeItem(int slot, int count) /*override*/;
 
-    // vIndex: 27
+    // vIndex: 28
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 20
@@ -102,31 +108,38 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    // vIndex: 34
+    // vIndex: 35
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 33
+    // vIndex: 34
     virtual ::Container const* getContainer() const /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 46
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BeaconBlockActor(::BlockPos const& pos);
+    MCNAPI BeaconBlockActor(::BlockPos const& pos, bool permanentlyRendered);
 
     MCNAPI void _applyEffects(::BlockSource& region);
+
+    MCNAPI void
+    _notifyBeamSectionsChange(::BlockSource& region, ::std::vector<::BeaconBeamSection> const& oldBeamSections);
 
     MCNAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
     MCNAPI bool _setEffect(int effectId, int& outEffectId, int& outTier);
 
-    MCNAPI void checkShapeAndAchievement(::BlockSource& region);
+    MCNAPI void checkAchievement(::BlockSource& region);
+
+    MCNAPI void checkShape(::BlockSource& region);
+
+    MCNAPI void generateBeamSections(::BlockSource& region);
 
     MCNAPI ::CompoundTag getBeaconData(::SaveContext const& saveContext);
 
@@ -146,7 +159,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockPos const& pos);
+    MCNAPI void* $ctor(::BlockPos const& pos, bool permanentlyRendered);
     // NOLINTEND
 
 public:
@@ -160,11 +173,13 @@ public:
 
     MCNAPI bool $hasAlphaLayer() const;
 
+    MCNAPI bool $isPermanentlyRendered() const;
+
     MCNAPI bool $isWithinRenderDistance(::Vec3 const& cameraPosition) const;
 
     MCNAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCNAPI void $setItem(int slot, ::ItemStack const& item);
+    MCNAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCNAPI void $removeItem(int slot, int count);
 

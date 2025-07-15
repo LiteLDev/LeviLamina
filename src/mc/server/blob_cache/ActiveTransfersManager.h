@@ -56,6 +56,7 @@ public:
     // prevent constructor by default
     ActiveTransfersManager& operator=(ActiveTransfersManager const&);
     ActiveTransfersManager(ActiveTransfersManager const&);
+    ActiveTransfersManager();
 
 public:
     // virtual functions
@@ -67,8 +68,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActiveTransfersManager();
-
     MCAPI ::std::shared_ptr<::ClientBlobCache::Server::Blob> dropBlobFor(::NetworkIdentifier const& client, uint64 id);
 
     MCAPI void enableCacheFor(::NetworkIdentifier const& client);
@@ -77,12 +76,6 @@ public:
 
     MCAPI ::std::shared_ptr<::ClientBlobCache::Server::Blob>
     rememberBlob(uint64 id, ::std::string& data, bool isChunkInTickRange);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

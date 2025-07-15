@@ -32,7 +32,7 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const /*override*/;
 
     // vIndex: 111
@@ -46,7 +46,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 73
@@ -73,7 +73,7 @@ public:
     // vIndex: 80
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual void checkAlive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 130
@@ -121,6 +121,8 @@ public:
     MCAPI ::Brightness $getLightEmission(::Block const& block) const;
 
     MCFOLD bool $hasVariableLighting() const;
+
+    MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
     MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 

@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class BaseGameVersion;
 class HitResult;
 class MobEffect;
 class MobEffectInstance;
@@ -56,10 +57,12 @@ public:
         ::std::vector<::Actor*> const& actors,
         ::Actor&                       projectile,
         ::std::shared_ptr<::Potion const> const&,
-        float        splashRange,
-        ::MobEffect* effect,
-        ::HitResult& res,
-        int          aux
+        float                    splashRange,
+        float                    collisionMargin,
+        ::MobEffect*             effect,
+        ::HitResult&             res,
+        int                      aux,
+        ::BaseGameVersion const& currVer
     );
     // NOLINTEND
 

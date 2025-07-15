@@ -6,7 +6,9 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/platform/Result.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/level/ActorValidationError.h"
 #include "mc/world/level/IActorManagerConnector.h"
 
 // auto generated forward declare list
@@ -70,9 +72,14 @@ public:
 
     MCNAPI void _onChunkDiscarded(::LevelChunk& levelChunk);
 
-    MCNAPI ::Actor* addActorEntity(::IAddActorEntityProxy& addActorEntityProxy, ::OwnerPtr<::EntityContext> entity);
+    MCNAPI ::Bedrock::Result<::Actor*, ::ActorValidationError>
+    addActorEntity(::IAddActorEntityProxy& addActorEntityProxy, ::OwnerPtr<::EntityContext> entity);
 
-    MCNAPI ::Actor* addGlobalActorEntity(::Dimension& dimension, ::OwnerPtr<::EntityContext> entity);
+    MCNAPI ::Bedrock::Result<::Actor*, ::ActorValidationError>
+    addActorEntity(::Dimension& dimension, ::OwnerPtr<::EntityContext> entity);
+
+    MCNAPI ::Bedrock::Result<::Actor*, ::ActorValidationError>
+    addGlobalActorEntity(::IAddActorEntityProxy& addActorEntityProxy, ::OwnerPtr<::EntityContext> entity);
 
     MCNAPI void cleanupActorEntityReferencesGarbageCollect(::OwnerPtr<::EntityContext> entity);
 

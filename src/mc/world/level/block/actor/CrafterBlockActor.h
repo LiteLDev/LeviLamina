@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockActorDataPacket;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
 class CraftingContainer;
@@ -65,13 +64,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CrafterBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 27
+    // vIndex: 28
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 32
@@ -86,13 +81,13 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 46
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource&) /*override*/;
 
     // vIndex: 0
@@ -102,8 +97,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit CrafterBlockActor(::BlockPos pos);
-
     MCNAPI bool tryMoveItemsIntoContainer(::BlockSource& region, ::std::vector<::ItemInstance>& items);
     // NOLINTEND
 
@@ -114,12 +107,6 @@ public:
     _getRecipesForCraftingGrid(::Level& level, ::CraftingContainer& craftingContainer);
 
     MCNAPI static ::std::vector<::ItemInstance> getCraftableItem(::CraftingContainer& craftingGrid, ::Level& level);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockPos pos);
     // NOLINTEND
 
 public:

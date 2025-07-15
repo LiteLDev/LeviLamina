@@ -45,11 +45,38 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ValueIteratorBase& operator=(ValueIteratorBase const&);
+    ValueIteratorBase();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ValueIteratorBase(::Json::ValueIteratorBase const& other);
+
+    MCAPI ::Json::Value& deref() const;
+
     MCAPI void increment();
 
+    MCFOLD bool isEqual(::Json::ValueIteratorBase const& other) const;
+
+    MCAPI char const* memberName() const;
+
     MCAPI bool operator!=(::Json::ValueIteratorBase const& other) const;
+
+    MCAPI ~ValueIteratorBase();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::Json::ValueIteratorBase const& other);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -62,24 +62,6 @@ public:
             ::EntityFactoryT<>>& executionContext
     ) /*override*/;
 
-    // vIndex: 6
-    virtual void singleTick(
-        ::StrictExecutionContext<
-            ::Filter<::ActorMovementTickNeededComponent>,
-            ::Read<
-                ::ActorDataFlagComponent,
-                ::ActorDataHorseFlagComponent,
-                ::ActorDataJumpDurationComponent,
-                ::ActorDataBoundingBoxComponent,
-                ::ActorDataSeatOffsetComponent>,
-            ::Write<::ReplayStateTrackerComponent>,
-            ::AddRemove<>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& executionContext,
-        ::StrictEntityContext&   entityContext
-    ) /*override*/;
-
     // vIndex: 0
     virtual ~AccumulateSystem() /*override*/ = default;
     // NOLINTEND
@@ -117,23 +99,6 @@ public:
             ::GlobalRead<>,
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& executionContext
-    );
-
-    MCNAPI void $singleTick(
-        ::StrictExecutionContext<
-            ::Filter<::ActorMovementTickNeededComponent>,
-            ::Read<
-                ::ActorDataFlagComponent,
-                ::ActorDataHorseFlagComponent,
-                ::ActorDataJumpDurationComponent,
-                ::ActorDataBoundingBoxComponent,
-                ::ActorDataSeatOffsetComponent>,
-            ::Write<::ReplayStateTrackerComponent>,
-            ::AddRemove<>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& executionContext,
-        ::StrictEntityContext&   entityContext
     );
     // NOLINTEND
 

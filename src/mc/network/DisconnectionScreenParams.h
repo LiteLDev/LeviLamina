@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/network/connection/DisconnectFailReason.h"
-
 struct DisconnectionScreenParams {
 public:
     // member variables
@@ -23,12 +20,4 @@ public:
     DisconnectionScreenParams& operator=(DisconnectionScreenParams const&);
     DisconnectionScreenParams(DisconnectionScreenParams const&);
     DisconnectionScreenParams();
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::
-        unordered_map<::Connection::DisconnectFailReason, ::std::pair<::std::string, ::std::string>> const&
-        DISCONNECT_TO_ERRORSTRING_MAP();
-    // NOLINTEND
 };

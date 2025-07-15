@@ -12,6 +12,7 @@
 #include "mc/world/scores/ObjectiveRenderType.h"
 #include "mc/world/scores/ObjectiveSortOrder.h"
 #include "mc/world/scores/PlayerScoreSetFunction.h"
+#include "mc/world/scores/ScoreboardOperationResult.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -115,7 +116,7 @@ public:
     addObjective(::std::string const& name, ::std::string const& displayName, ::ObjectiveCriteria const& criteria);
 
     MCAPI int applyPlayerOperation(
-        bool&                          success,
+        ::ScoreboardOperationResult&   result,
         ::std::vector<::ScoreboardId>& sourceErrorIds,
         ::ScoreboardId const&          target,
         ::Objective&                   targetObjective,
@@ -158,11 +159,11 @@ public:
     MCAPI ::std::vector<::ScoreboardId> getTrackedIds() const;
 
     MCAPI int modifyPlayerScore(
-        bool&                    success,
-        ::ScoreboardId const&    id,
-        ::Objective&             objective,
-        int                      scoreValue,
-        ::PlayerScoreSetFunction action
+        ::ScoreboardOperationResult& result,
+        ::ScoreboardId const&        id,
+        ::Objective&                 objective,
+        int                          scoreValue,
+        ::PlayerScoreSetFunction     action
     );
 
     MCAPI ::ScoreboardIdentityRef const& registerScoreboardIdentity(::CompoundTag const& loadedData);

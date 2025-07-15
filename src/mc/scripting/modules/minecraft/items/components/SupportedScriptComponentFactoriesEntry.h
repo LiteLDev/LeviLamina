@@ -22,12 +22,14 @@ public:
 public:
     // prevent constructor by default
     SupportedScriptComponentFactoriesEntry& operator=(SupportedScriptComponentFactoriesEntry const&);
-    SupportedScriptComponentFactoriesEntry(SupportedScriptComponentFactoriesEntry const&);
     SupportedScriptComponentFactoriesEntry();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI
+    SupportedScriptComponentFactoriesEntry(::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry const&);
+
     MCNAPI SupportedScriptComponentFactoriesEntry(
         ::BaseGameVersion                        minVersion,
         ::std::unordered_set<::std::string_view> supportedComponentTypeNames,
@@ -41,6 +43,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry const&);
+
     MCNAPI void* $ctor(
         ::BaseGameVersion                        minVersion,
         ::std::unordered_set<::std::string_view> supportedComponentTypeNames,
