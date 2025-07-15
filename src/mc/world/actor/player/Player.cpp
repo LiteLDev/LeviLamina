@@ -48,7 +48,10 @@ optional_ref<ConnectionRequest const> Player::getConnectionRequest() const {
 NetworkIdentifier const& Player::getNetworkIdentifier() const { return getUserEntityIdentifier().mNetworkId; }
 
 optional_ref<Certificate const> Player::getCertificate() const {
-    return getConnectionRequest()->mLegacyMultiplayerToken->mCertificate.get();
+    if (auto request = getConnectionRequest()) {
+        return request->mLegacyMultiplayerToken->mCertificate.get();
+    }
+    return std::nullopt;
 }
 
 SubClientId const& Player::getClientSubId() const { return getUserEntityIdentifier().mClientSubId; }
@@ -72,7 +75,9 @@ std::optional<NetworkPeer::NetworkStatus> Player::getNetworkStatus() const {
         .transform([](auto& peer) { return peer.getNetworkStatus(); });
 }
 
-std::string Player::getRealName() const { return getConnectionRequest()->mLegacyMultiplayerToken->getIdentityName(); }
+std::string Player::getRealName() const {
+    return getUserEntityIdentifier().mTrustedPlayerInfo->mUnkf7edc1.as<std::string>();
+}
 
 void Player::disconnect(std::string_view reason) const {
     ll::service::getServerNetworkHandler().and_then([&](auto& handler) {
