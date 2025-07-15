@@ -34,10 +34,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::ResultAny
+    MCAPI ::Scripting::ResultAny
     $runOn(::Scripting::ContextId, ::Scripting::NativeRuntime&, ::std::optional<::Scripting::Privilege>);
 
-    MCNAPI ::Scripting::ResultAny
+    MCAPI ::Scripting::ResultAny
     $runOn(::Scripting::ContextId, ::Scripting::StringBasedRuntime&, ::std::optional<::Scripting::Privilege>);
     // NOLINTEND
 };

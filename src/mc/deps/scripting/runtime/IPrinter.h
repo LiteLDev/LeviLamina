@@ -41,13 +41,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onInfo(::Scripting::ContextId, ::std::string_view) const;
+    MCFOLD void $onInfo(::Scripting::ContextId, ::std::string_view) const;
 
-    MCNAPI void $onWarn(::Scripting::ContextId, ::std::string_view) const;
+    MCFOLD void $onWarn(::Scripting::ContextId, ::std::string_view) const;
 
-    MCNAPI void $onError(::Scripting::ContextId, ::std::string_view) const;
+    MCFOLD void $onError(::Scripting::ContextId, ::std::string_view) const;
 
-    MCNAPI bool
+    MCFOLD bool
     $shouldPrintException(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&) const;
     // NOLINTEND
 };

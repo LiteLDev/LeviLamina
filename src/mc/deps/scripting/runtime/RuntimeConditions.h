@@ -13,7 +13,7 @@ class RuntimeConditions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkc091ae;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::RuntimeCondition>> mRuntimeConditions;
     // NOLINTEND
 
 public:
@@ -24,27 +24,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RuntimeConditions(::Scripting::RuntimeConditions const& rhs);
+    MCAPI RuntimeConditions(::Scripting::RuntimeConditions const& rhs);
 
-    MCNAPI explicit RuntimeConditions(::std::vector<::Scripting::RuntimeCondition> const& runtimeConditions);
+    MCAPI explicit RuntimeConditions(::std::vector<::Scripting::RuntimeCondition> const& runtimeConditions);
 
-    MCNAPI ::Scripting::RuntimeConditions getMissing(::Scripting::RuntimeConditions const& runtimeConditions);
+    MCAPI ::Scripting::RuntimeConditions getMissing(::Scripting::RuntimeConditions const& runtimeConditions);
 
-    MCNAPI ~RuntimeConditions();
+    MCAPI ~RuntimeConditions();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::RuntimeConditions const& rhs);
+    MCAPI void* $ctor(::Scripting::RuntimeConditions const& rhs);
 
-    MCNAPI void* $ctor(::std::vector<::Scripting::RuntimeCondition> const& runtimeConditions);
+    MCAPI void* $ctor(::std::vector<::Scripting::RuntimeCondition> const& runtimeConditions);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

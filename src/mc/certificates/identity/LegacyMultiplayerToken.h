@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Certificate;
 struct PlayerAuthenticationInfo;
 namespace mce { class UUID; }
 // clang-format on
@@ -19,7 +20,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8e4524;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Certificate>> mCertificate;
     // NOLINTEND
 
 public:
@@ -29,32 +30,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LegacyMultiplayerToken(::LegacyMultiplayerToken const& other);
+    MCAPI LegacyMultiplayerToken(::LegacyMultiplayerToken const& other);
 
-    MCNAPI ::mce::UUID getIdentity() const;
+    MCAPI ::mce::UUID getIdentity() const;
 
-    MCNAPI ::std::string getIdentityName() const;
+    MCAPI ::std::string getIdentityName() const;
 
-    MCNAPI ::PlayerAuthenticationInfo getTrustedInfo(bool trustSelfSigned) const;
+    MCAPI ::PlayerAuthenticationInfo getTrustedInfo(bool trustSelfSigned) const;
 
-    MCNAPI ::std::string getXuid(bool trustSelfSigned) const;
+    MCAPI ::std::string getXuid(bool trustSelfSigned) const;
 
-    MCNAPI ::LegacyMultiplayerToken const& operator=(::LegacyMultiplayerToken const& other);
+    MCAPI ::LegacyMultiplayerToken const& operator=(::LegacyMultiplayerToken const& other);
 
-    MCNAPI ::std::string toString() const;
+    MCAPI ::std::string toString() const;
 
-    MCNAPI ~LegacyMultiplayerToken();
+    MCAPI ~LegacyMultiplayerToken();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::LegacyMultiplayerToken const& other);
+    MCAPI void* $ctor(::LegacyMultiplayerToken const& other);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

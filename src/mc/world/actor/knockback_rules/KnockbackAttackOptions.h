@@ -2,18 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
 namespace KnockbackRules {
 
 struct KnockbackAttackOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk6b8d7d;
-    ::ll::UntypedStorage<8, 8>  mUnk8d81f1;
-    ::ll::UntypedStorage<4, 12> mUnk2bea8c;
-    ::ll::UntypedStorage<4, 4>  mUnk58ec19;
-    ::ll::UntypedStorage<4, 4>  mUnk9547d9;
-    ::ll::UntypedStorage<1, 1>  mUnka09e5f;
+    ::ll::TypedStorage<8, 8, ::Mob&>        mSelf;
+    ::ll::TypedStorage<8, 8, ::Mob&>        mTarget;
+    ::ll::TypedStorage<4, 12, ::Vec3 const> mDirection;
+    ::ll::TypedStorage<4, 4, float const>   mForce;
+    ::ll::TypedStorage<4, 4, float const>   mHeightCap;
+    ::ll::TypedStorage<1, 1, bool const>    mSlowdownSelf;
     // NOLINTEND
 
 public:
