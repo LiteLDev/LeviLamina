@@ -32,31 +32,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit StyledStreamWriter(::std::string indentation);
+    MCAPI explicit StyledStreamWriter(::std::string indentation);
 
-    MCNAPI void pushValue(::std::string const& value);
+    MCAPI void pushValue(::std::string const& value);
 
-    MCNAPI void unindent();
+    MCAPI void unindent();
 
-    MCNAPI void write(::std::ostream& out, ::Json::Value const& root);
+    MCAPI void write(::std::ostream& out, ::Json::Value const& root);
 
-    MCNAPI void writeArrayValue(::Json::Value const& value);
+    MCAPI void writeArrayValue(::Json::Value const& value);
 
-    MCNAPI void writeValue(::Json::Value const& value);
+    MCAPI void writeValue(::Json::Value const& value);
 
-    MCNAPI ~StyledStreamWriter();
+    MCAPI ~StyledStreamWriter();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string indentation);
+    MCAPI void* $ctor(::std::string indentation);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

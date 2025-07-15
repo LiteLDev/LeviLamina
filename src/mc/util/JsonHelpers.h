@@ -10,7 +10,7 @@ namespace Json { class Value; }
 namespace JsonHelpers {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string getAsString(::Json::Value const& value, ::std::string_view defaultString);
+MCNAPI ::std::string getAsString(::Json::Value const& value, ::std::string_view defaultString);
 // NOLINTEND
 
 } // namespace JsonHelpers

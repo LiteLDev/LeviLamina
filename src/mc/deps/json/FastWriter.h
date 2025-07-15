@@ -33,27 +33,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FastWriter();
+    MCAPI FastWriter();
 
-    MCNAPI void writeValue(::Json::Value const& value);
+    MCAPI void writeValue(::Json::Value const& value);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string $write(::Json::Value const& root);
+    MCAPI ::std::string $write(::Json::Value const& root);
     // NOLINTEND
 
 public:

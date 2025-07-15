@@ -56,39 +56,39 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI CZString();
+        MCAPI CZString();
 
-        MCNAPI explicit CZString(char const* cstr);
+        MCAPI explicit CZString(char const* cstr);
 
-        MCNAPI CZString(::Json::Value::CZString const& other);
+        MCAPI CZString(::Json::Value::CZString const& other);
 
-        MCNAPI CZString(::Json::Value::CZString&& other);
+        MCAPI CZString(::Json::Value::CZString&& other);
 
-        MCNAPI CZString(char* cstr, bool duplicate);
+        MCAPI CZString(char* cstr, bool duplicate);
 
-        MCNAPI char const* c_str() const;
+        MCFOLD char const* c_str() const;
 
-        MCNAPI ~CZString();
+        MCAPI ~CZString();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor();
+        MCFOLD void* $ctor();
 
-        MCNAPI void* $ctor(char const* cstr);
+        MCAPI void* $ctor(char const* cstr);
 
-        MCNAPI void* $ctor(::Json::Value::CZString const& other);
+        MCAPI void* $ctor(::Json::Value::CZString const& other);
 
-        MCNAPI void* $ctor(::Json::Value::CZString&& other);
+        MCAPI void* $ctor(::Json::Value::CZString&& other);
 
-        MCNAPI void* $ctor(char* cstr, bool duplicate);
+        MCAPI void* $ctor(char* cstr, bool duplicate);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -100,8 +100,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI bool
-        operator()(::Json::Value::CZString const& czstring1, ::Json::Value::CZString const& czstring2) const;
+        MCAPI bool operator()(::Json::Value::CZString const& czstring1, ::Json::Value::CZString const& czstring2) const;
         // NOLINTEND
     };
 

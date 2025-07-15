@@ -29,9 +29,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_useDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCAPI void $_useDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:
