@@ -21,14 +21,8 @@ class SplashPotionEffectSubcomponent : public ::OnHitSubcomponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk10cc00;
+    ::ll::TypedStorage<4, 4, int> mPotionEffect;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SplashPotionEffectSubcomponent& operator=(SplashPotionEffectSubcomponent const&);
-    SplashPotionEffectSubcomponent(SplashPotionEffectSubcomponent const&);
-    SplashPotionEffectSubcomponent();
 
 public:
     // virtual functions

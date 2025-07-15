@@ -35,21 +35,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ValueIterator(::Json::ValueConstIterator const& other);
+    MCAPI explicit ValueIterator(::Json::ValueConstIterator const& other);
 
-    MCNAPI ~ValueIterator();
+    MCAPI ~ValueIterator();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Json::ValueConstIterator const& other);
+    MCFOLD void* $ctor(::Json::ValueConstIterator const& other);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

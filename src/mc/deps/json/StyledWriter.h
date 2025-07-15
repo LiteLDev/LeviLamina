@@ -41,39 +41,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StyledWriter();
+    MCAPI StyledWriter();
 
-    MCNAPI void indent();
+    MCAPI void indent();
 
-    MCNAPI void pushValue(::std::string const& value);
+    MCAPI void pushValue(::std::string const& value);
 
-    MCNAPI void unindent();
+    MCAPI void unindent();
 
-    MCNAPI void writeArrayValue(::Json::Value const& value);
+    MCAPI void writeArrayValue(::Json::Value const& value);
 
-    MCNAPI void writeIndent();
+    MCAPI void writeIndent();
 
-    MCNAPI void writeValue(::Json::Value const& value);
+    MCAPI void writeValue(::Json::Value const& value);
 
-    MCNAPI void writeWithIndent(::std::string const& value);
+    MCAPI void writeWithIndent(::std::string const& value);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string $write(::Json::Value const& root);
+    MCAPI ::std::string $write(::Json::Value const& root);
     // NOLINTEND
 
 public:
