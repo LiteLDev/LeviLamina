@@ -16,12 +16,17 @@ class SerializedSkinImpl;
 class SerializedSkin {
 public:
     // SerializedSkin inner types define
-    using SerializedSkinWrapper = ::Bedrock::Application::ThreadOwner<::SerializedSkinImpl, 0>;
+    using SerializedSkinWrapper =
+        ::Bedrock::Application::ThreadOwner<::SerializedSkinImpl, Bedrock::Application::ThreadOwnerBehavior::Assert>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Application::ThreadOwner<::SerializedSkinImpl, 0>>>
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::std::shared_ptr<::Bedrock::Application::
+                              ThreadOwner<::SerializedSkinImpl, Bedrock::Application::ThreadOwnerBehavior::Assert>>>
         mSkinImpl;
     // NOLINTEND
 
