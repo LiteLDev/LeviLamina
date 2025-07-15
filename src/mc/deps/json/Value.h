@@ -310,25 +310,13 @@ public:
 
     MCAPI Value(::Json::Value&& other);
 
-    MCAPI explicit Value(::Json::Value::CZString* str);
+    MCAPI Value(::Json::Value::CZString* str);
 
     MCAPI Value(::Json::ValueType type = NullValue);
 
     MCAPI Value(char const* value);
 
-    MCAPI explicit Value(int value);
-
-    MCAPI explicit Value(uint value);
-
-    MCAPI explicit Value(double value);
-
     MCAPI Value(::std::string const& value);
-
-    MCAPI explicit Value(uint64 value);
-
-    MCAPI explicit Value(int64 value);
-
-    MCAPI explicit Value(bool value);
 
     MCAPI void _insert(::Json::Value::CZString&& key, ::Json::Value&& value, bool overwrite);
 
@@ -348,8 +336,6 @@ public:
 
     MCAPI int asInt(int defaultValue) const;
 
-    MCAPI int64 asInt64(int64 defaultValue) const;
-
     MCAPI int64 asLargestInt() const;
 
     MCAPI uint64 asLargestUInt() const;
@@ -357,8 +343,6 @@ public:
     MCAPI ::std::string asString(::std::string const& defaultValue) const;
 
     MCAPI uint asUInt(uint defaultValue) const;
-
-    MCAPI uint64 asUInt64(uint64 defaultValue) const;
 
     MCFOLD ::Json::ValueConstIterator begin() const;
 
@@ -380,31 +364,11 @@ public:
 
     MCAPI ::std::vector<::std::string> getMemberNames() const;
 
-    MCAPI bool isArray() const;
-
-    MCAPI bool isBool() const;
-
     MCAPI bool isConvertibleTo(::Json::ValueType other) const;
-
-    MCAPI bool isDouble() const;
-
-    MCAPI bool isInt() const;
-
-    MCAPI bool isIntegral() const;
 
     MCAPI bool isMember(char const* key) const;
 
     MCAPI bool isMember(::std::string const& key) const;
-
-    MCFOLD bool isNull() const;
-
-    MCAPI bool isNumeric() const;
-
-    MCAPI bool isObject() const;
-
-    MCAPI bool isString() const;
-
-    MCAPI bool isUInt() const;
 
     MCAPI bool operator!=(::Json::Value const& other) const;
 
@@ -420,17 +384,11 @@ public:
 
     MCAPI ::Json::Value const& operator[](int index) const;
 
-    MCAPI ::Json::Value const& operator[](uint index) const;
-
     MCAPI ::Json::Value const& operator[](char const* key) const;
 
     MCAPI ::Json::Value const& operator[](::std::string const& key) const;
 
-    MCAPI ::Json::Value& operator[](int index);
-
     MCAPI ::Json::Value& operator[](uint index);
-
-    MCAPI ::Json::Value& operator[](char const* key);
 
     MCAPI ::Json::Value& operator[](::std::string const& key);
 
@@ -444,32 +402,12 @@ public:
 
     MCAPI ::std::string toStyledString() const;
 
-    MCFOLD ::Json::ValueType type() const;
-
     MCAPI ~Value();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& maxInt();
-
-    MCAPI static int64 const& maxInt64();
-
-    MCAPI static int64 const& maxLargestInt();
-
-    MCAPI static uint64 const& maxLargestUInt();
-
-    MCAPI static uint const& maxUInt();
-
-    MCAPI static uint64 const& maxUInt64();
-
-    MCAPI static int const& minInt();
-
-    MCAPI static int64 const& minInt64();
-
-    MCAPI static int64 const& minLargestInt();
-
     MCAPI static ::Json::Value const& null();
     // NOLINTEND
 

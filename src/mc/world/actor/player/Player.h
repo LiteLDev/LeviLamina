@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/certificates/Certificate.h"
 #include "mc/entity/components/UserEntityIdentifierComponent.h"
 #include "mc/network/NetworkPeer.h"
 #include "mc/world/inventory/EnderChestContainer.h"
@@ -239,6 +240,7 @@ public:
     /**
      * @brief Get the name of the player's langtext.
      * @return The name of the player's langtext.
+     *
      * @warning This is not the player's in-game nickname.
      */
     LLNDAPI std::string getLocaleCode() const;
@@ -258,17 +260,22 @@ public:
 
     /**
      * @brief Determine if a player is an administrator of the server
-     * @return Returns true if the player is an administrator of the server; otherwise returns false
-     * @warning Custom permissions are not considered administrators
+     * @return Returns true if the player
+     * is an administrator of the server; otherwise returns false
+     * @warning Custom permissions are not considered
+     * administrators
      */
     LLNDAPI bool isOperator() const;
 
     /**
      * @brief Give player item and refresh.
      * @return Whether it is a complete success
-     *         (e.g. returning false if the quantity of items given to the player does not match the expectation).
-     * @warning The return value does not take into account whether the refresh was successful.
-     *          You can use Player::add, but it will not refresh the item, which may lead to potential issues.
+     *         (e.g.
+     * returning false if the quantity of items given to the player does not match the expectation).
+     * @warning The
+     * return value does not take into account whether the refresh was successful.
+     *          You can use
+     * Player::add, but it will not refresh the item, which may lead to potential issues.
      */
     LLAPI bool addAndRefresh(class ItemStack& item);
 

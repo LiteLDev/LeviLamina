@@ -31,8 +31,7 @@ LL_STATIC_HOOK(
     ActorDataDirtyFlagsComponent&                            actorDataDirtyFlags,
     VanillaClientGameplayComponent&                          vanillaClientGameplayComponent,
     ::Optional<::SneakingComponent const>                    sneakingComponent,
-    ::Optional<::WasInWaterFlagComponent const>              isInWater,
-    OptionalGlobal<::PlayerMovementSettingsComponent const>& playerMovementSettingsComponent
+    ::Optional<::WasInWaterFlagComponent const>              isInWater
 ) {
     origin(
         strictEntityContext,
@@ -44,8 +43,7 @@ LL_STATIC_HOOK(
         actorDataDirtyFlags,
         vanillaClientGameplayComponent,
         sneakingComponent,
-        isInWater,
-        playerMovementSettingsComponent
+        isInWater
     );
     if (strictEntityContext.mEntity->isNull()) return;
     if (auto level = ll::service::getLevel(); level) {
