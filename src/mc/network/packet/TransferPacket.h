@@ -23,6 +23,12 @@ public:
     // NOLINTEND
 
 public:
+    TransferPacket(std::string const& dest, ushort port, bool reloadWorld = false)
+    : mDestination(dest),
+      mDestinationPort(port),
+      mReloadWorld(reloadWorld) {}
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
