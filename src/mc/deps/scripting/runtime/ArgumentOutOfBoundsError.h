@@ -11,9 +11,9 @@ struct ArgumentOutOfBoundsError : public ::Scripting::BaseError {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk740508;
-    ::ll::UntypedStorage<8, 8> mUnkafc9ac;
-    ::ll::UntypedStorage<8, 8> mUnke9fe98;
+    ::ll::TypedStorage<8, 8, double> value;
+    ::ll::TypedStorage<8, 8, double> minValue;
+    ::ll::TypedStorage<8, 8, double> maxValue;
     // NOLINTEND
 
 public:
@@ -24,31 +24,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ArgumentOutOfBoundsError(::Scripting::ArgumentOutOfBoundsError&&);
+    MCAPI ArgumentOutOfBoundsError(::Scripting::ArgumentOutOfBoundsError&&);
 
-    MCNAPI ArgumentOutOfBoundsError(::Scripting::ArgumentOutOfBoundsError const&);
+    MCAPI ArgumentOutOfBoundsError(::Scripting::ArgumentOutOfBoundsError const&);
 
-    MCNAPI ArgumentOutOfBoundsError(::std::string const& message_, double value_, double minValue_, double maxValue_);
+    MCAPI ArgumentOutOfBoundsError(::std::string const& message_, double value_, double minValue_, double maxValue_);
 
-    MCNAPI ::Scripting::ArgumentOutOfBoundsError& operator=(::Scripting::ArgumentOutOfBoundsError&&);
+    MCFOLD ::Scripting::ArgumentOutOfBoundsError& operator=(::Scripting::ArgumentOutOfBoundsError&&);
 
-    MCNAPI ~ArgumentOutOfBoundsError();
+    MCAPI ~ArgumentOutOfBoundsError();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::ArgumentOutOfBoundsError&&);
+    MCFOLD void* $ctor(::Scripting::ArgumentOutOfBoundsError&&);
 
-    MCNAPI void* $ctor(::Scripting::ArgumentOutOfBoundsError const&);
+    MCFOLD void* $ctor(::Scripting::ArgumentOutOfBoundsError const&);
 
-    MCNAPI void* $ctor(::std::string const& message_, double value_, double minValue_, double maxValue_);
+    MCAPI void* $ctor(::std::string const& message_, double value_, double minValue_, double maxValue_);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

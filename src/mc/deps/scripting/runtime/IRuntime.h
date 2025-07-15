@@ -132,9 +132,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::IRuntimeMetadata* $getMetadata() const;
+    MCFOLD ::Scripting::IRuntimeMetadata* $getMetadata() const;
 
-    MCNAPI void $moveToThread();
+    MCFOLD void $moveToThread();
     // NOLINTEND
 };
 

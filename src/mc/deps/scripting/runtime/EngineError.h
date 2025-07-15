@@ -15,21 +15,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit EngineError(::std::string const& message);
+    MCAPI explicit EngineError(::std::string const& message);
 
-    MCNAPI ~EngineError();
+    MCAPI ~EngineError();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& message);
+    MCAPI void* $ctor(::std::string const& message);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 
