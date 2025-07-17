@@ -22,8 +22,9 @@
 std::vector<Actor*>
 BlockSource::getEntities(AABB const& range, float extendDistance, ActorType actorType, bool ignoreType) const {
     std::vector<Actor*> entities;
-    ChunkPos            minChunk{range.min.x - extendDistance, range.min.z - extendDistance};
-    ChunkPos            maxChunk{range.max.x + extendDistance, range.max.z + extendDistance};
+    AABB                extendedRange{range.min - extendDistance, range.max + extendDistance};
+    ChunkPos            minChunk{floor(extendedRange.min.x / 16), floor(extendedRange.min.z / 16)};
+    ChunkPos            maxChunk{ceil(extendedRange.max.x / 16), ceil(extendedRange.max.z / 16)};
 
     for (int x = minChunk.x; x <= maxChunk.x; x++)
         for (int z = minChunk.z; z <= maxChunk.z; z++) {
@@ -34,7 +35,7 @@ BlockSource::getEntities(AABB const& range, float extendDistance, ActorType acto
             for (auto& weakEntityRef : chunk->mEntities.get()) {
                 auto actor = weakEntityRef.tryUnwrap();
                 if (actor && (actorType == ActorType::TypeMask || actor->isType(actorType) != ignoreType)
-                    && range.intersects(actor->getAABB())) {
+                    && extendedRange.intersects(actor->getAABB())) {
                     entities.emplace_back(actor);
                 }
             }
