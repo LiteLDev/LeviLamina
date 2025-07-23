@@ -76,7 +76,7 @@ std::optional<NetworkPeer::NetworkStatus> Player::getNetworkStatus() const {
 }
 
 std::string Player::getRealName() const {
-    return getUserEntityIdentifier().mTrustedPlayerInfo->mUnkf7edc1.as<std::string>();
+    return getUserEntityIdentifier().mTrustedPlayerInfo->XboxLiveName;
 }
 
 void Player::disconnect(std::string_view reason) const {
