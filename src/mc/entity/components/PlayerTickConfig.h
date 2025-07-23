@@ -13,17 +13,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk840e3d;
-    ::ll::UntypedStorage<8, 8> mUnkf88077;
-    ::ll::UntypedStorage<8, 8> mUnkb54015;
-    ::ll::UntypedStorage<1, 1> mUnkd04d7e;
-    ::ll::UntypedStorage<1, 1> mUnk510c08;
-    ::ll::UntypedStorage<1, 1> mUnk24676a;
+    ::ll::TypedStorage<1, 1, ::PlayerTickConfig::TickPolicy> mPolicy;
+    ::ll::TypedStorage<8, 8, uint64>                         mMaxBatchedTicks;
+    ::ll::TypedStorage<8, 8, uint64>                         mMaxCreditTicks;
+    ::ll::TypedStorage<1, 1, bool>                           mIsStrictMovement;
+    ::ll::TypedStorage<1, 1, bool>                           mIsStrictDismount;
+    ::ll::TypedStorage<1, 1, bool>                           mIsStrictEntityInteractions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerTickConfig& operator=(PlayerTickConfig const&);
-    PlayerTickConfig(PlayerTickConfig const&);
-    PlayerTickConfig();
 };

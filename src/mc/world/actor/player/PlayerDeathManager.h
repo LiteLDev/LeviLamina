@@ -3,29 +3,32 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/world/actor/player/IPlayerDeathManagerConnector.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
+class IPlayerDeathManagerProxy;
+class PacketSender;
 class Player;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 class PlayerDeathManager : public ::IPlayerDeathManagerConnector {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 128> mUnkb4fcec;
-    ::ll::UntypedStorage<8, 8>   mUnkbc01aa;
-    ::ll::UntypedStorage<8, 24>  mUnkbddb5a;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::Player&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+                                                                                             mOnPlayerDeathPublisher;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IPlayerDeathManagerProxy>>> mPlayerDeathManagerProxy;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PacketSender>>                    mPacketSender;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerDeathManager& operator=(PlayerDeathManager const&);
-    PlayerDeathManager(PlayerDeathManager const&);
-    PlayerDeathManager();
 
 public:
     // virtual functions
@@ -40,19 +43,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void playerDied(::Player& player, ::ActorDamageSource const& source);
+    MCAPI void playerDied(::Player& player, ::ActorDamageSource const& source);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::PubSub::Connector<void(::Player&)>& $getOnPlayerDeathConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::Player&)>& $getOnPlayerDeathConnector();
     // NOLINTEND
 
 public:

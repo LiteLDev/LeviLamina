@@ -6,15 +6,9 @@ struct PlayerAuthenticationInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkd29476;
-    ::ll::UntypedStorage<8, 32> mUnkf7edc1;
+    ::ll::TypedStorage<8, 32, ::std::string> Xuid;
+    ::ll::TypedStorage<8, 32, ::std::string> XboxLiveName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerAuthenticationInfo& operator=(PlayerAuthenticationInfo const&);
-    PlayerAuthenticationInfo(PlayerAuthenticationInfo const&);
-    PlayerAuthenticationInfo();
 
 public:
     // member functions

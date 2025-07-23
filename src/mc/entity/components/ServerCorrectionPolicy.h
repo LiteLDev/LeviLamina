@@ -53,7 +53,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::MovementCorrection $shouldCorrectMovement(
+    MCAPI ::MovementCorrection $shouldCorrectMovement(
         ::EntityContext&               entity,
         ::PlayerAuthInputPacket const& packet,
         uint64                         frame,
@@ -61,9 +61,9 @@ public:
         bool                           isStrictMovement
     );
 
-    MCNAPI bool $isReplayNeeded(::AdvanceFrameResult) const;
+    MCFOLD bool $isReplayNeeded(::AdvanceFrameResult) const;
 
-    MCNAPI void $notifyOfExternalCorrection(uint64 frame);
+    MCAPI void $notifyOfExternalCorrection(uint64 frame);
     // NOLINTEND
 
 public:

@@ -20,12 +20,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::PlayerMovementSettings getDefault();
+    MCAPI static ::PlayerMovementSettings getDefault();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::PlayerMovementSettings const& INVALID();
+    MCAPI static ::PlayerMovementSettings const& INVALID();
     // NOLINTEND
 };
