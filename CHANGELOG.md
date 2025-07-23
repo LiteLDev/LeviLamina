@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.2] - 2025-07-23
+
+### Added
+
+- Completed MutableServerNetworkGameplayEvent [#1706]
+
+### Changed
+
+- Bumped bedrock-runtime-data to v1.21.93-server.4
+- Updated headers
+
 ## [1.4.1] - 2025-07-15
 
 ### Changed
@@ -1018,8 +1029,10 @@ For lip and tooth-hub test only.
 [#1671]: https://github.com/LiteLDev/LeviLamina/issues/1671
 [#1673]: https://github.com/LiteLDev/LeviLamina/issues/1673
 [#1684]: https://github.com/LiteLDev/LeviLamina/issues/1684
+[#1706]: https://github.com/LiteLDev/LeviLamina/issues/1706
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.1...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.2...HEAD
+[1.4.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.1...v1.4.2
 [1.4.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.3.4...v1.4.1
 [1.3.4]: https://github.com/LiteLDev/LeviLamina/compare/v1.3.3...v1.3.4
 [1.3.3]: https://github.com/LiteLDev/LeviLamina/compare/v1.3.2...v1.3.3
