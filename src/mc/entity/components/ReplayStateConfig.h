@@ -2,26 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/components/ReplayStateConfigThresholds.h"
+#include "mc/entity/components/ReplayStateMode.h"
+
 struct ReplayStateConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk8ae014;
-    ::ll::UntypedStorage<1, 1>  mUnke71cf2;
-    ::ll::UntypedStorage<1, 1>  mUnk5c0bb2;
-    ::ll::UntypedStorage<1, 1>  mUnk7c038b;
-    ::ll::UntypedStorage<2, 2>  mUnk61adfe;
+    ::ll::TypedStorage<4, 12, ::ReplayStateConfigThresholds> mSupportedThresholds;
+    ::ll::TypedStorage<1, 1, ::ReplayStateMode>              mMode;
+    ::ll::TypedStorage<1, 1, uchar>                          mMinCorrectionDelay;
+    ::ll::TypedStorage<1, 1, uchar>                          mMaxCorrectionDelay;
+    ::ll::TypedStorage<2, 2, ushort>                         mHistorySize;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ReplayStateConfig& operator=(ReplayStateConfig const&);
-    ReplayStateConfig(ReplayStateConfig const&);
-    ReplayStateConfig();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void setReplayStateConfigThresholds(float baseThreshold);
+    MCAPI void setReplayStateConfigThresholds(float baseThreshold);
     // NOLINTEND
 };

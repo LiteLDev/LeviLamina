@@ -15,30 +15,18 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkda14e6;
-        ::ll::UntypedStorage<4, 4> mUnked47e9;
+        ::ll::TypedStorage<4, 4, uint> mPropertyIndex;
+        ::ll::TypedStorage<4, 4, int>  mData;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PropertySyncIntEntry& operator=(PropertySyncIntEntry const&);
-        PropertySyncIntEntry(PropertySyncIntEntry const&);
-        PropertySyncIntEntry();
     };
 
     struct PropertySyncFloatEntry {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkaf6d08;
-        ::ll::UntypedStorage<4, 4> mUnk728a91;
+        ::ll::TypedStorage<4, 4, uint>  mPropertyIndex;
+        ::ll::TypedStorage<4, 4, float> mData;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PropertySyncFloatEntry& operator=(PropertySyncFloatEntry const&);
-        PropertySyncFloatEntry(PropertySyncFloatEntry const&);
-        PropertySyncFloatEntry();
     };
 
 public:

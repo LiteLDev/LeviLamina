@@ -58,36 +58,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _finishCooking(::BlockSource& region, int slot);
+    MCAPI void _finishCooking(::BlockSource& region, int slot);
 
-    MCNAPI void dropAllItems(::BlockSource& region);
+    MCAPI void dropAllItems(::BlockSource& region);
 
-    MCNAPI ::HashedString const& getCampfireTag(::BlockSource const& region) const;
+    MCAPI ::HashedString const& getCampfireTag(::BlockSource const& region) const;
 
-    MCNAPI bool setItem(::BlockSource&, ::ItemInstance const& item);
+    MCAPI bool setItem(::BlockSource&, ::ItemInstance const& item);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::BlockSource& region);
+    MCAPI void $tick(::BlockSource& region);
 
-    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI float $getShadowRadius(::BlockSource&) const;
+    MCFOLD float $getShadowRadius(::BlockSource&) const;
 
-    MCNAPI void $onChanged(::BlockSource& region);
+    MCFOLD void $onChanged(::BlockSource& region);
 
-    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

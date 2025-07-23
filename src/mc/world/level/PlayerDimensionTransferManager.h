@@ -48,7 +48,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PlayerDimensionTransferManager(
+    MCAPI PlayerDimensionTransferManager(
         ::std::unique_ptr<::PlayerLimboActorManager>               playerLimboActorManager,
         ::std::unique_ptr<::IPlayerDimensionTransferer>            playerDimensionTransferer,
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>          dimensionManager,
@@ -57,41 +57,41 @@ public:
         ::std::unique_ptr<::ILevelCrashDumpManager>                levelCrashDumpManager
     );
 
-    MCNAPI ::StackRefResult<::EntityRegistry> _getValidEntityRegistry();
+    MCAPI ::StackRefResult<::EntityRegistry> _getValidEntityRegistry();
 
-    MCNAPI bool _isPlayerSuspended(::Player const& player) const;
+    MCAPI bool _isPlayerSuspended(::Player const& player) const;
 
-    MCNAPI void _onGameplayUserRemoved(::EntityContext& entity);
+    MCAPI void _onGameplayUserRemoved(::EntityContext& entity);
 
-    MCNAPI bool _playerChangeDimension(::Player& player, ::ChangeDimensionRequest& changeRequest);
+    MCAPI bool _playerChangeDimension(::Player& player, ::ChangeDimensionRequest& changeRequest);
 
-    MCNAPI void _playerChangeDimensionPrepareRegion(
+    MCAPI void _playerChangeDimensionPrepareRegion(
         ::Player&                 player,
         ::ChangeDimensionRequest& changeRequest,
         ::Dimension&              toDimension
     );
 
-    MCNAPI bool _playerChangeDimensionWaitingForChunks(
+    MCAPI bool _playerChangeDimensionWaitingForChunks(
         ::Player&                 player,
         ::ChangeDimensionRequest& changeRequest,
         ::Dimension&              toDimension
     );
 
-    MCNAPI void handleChangeDimensionRequests();
+    MCAPI void handleChangeDimensionRequests();
 
-    MCNAPI void requestPlayerChangeDimension(::Player const& player, ::ChangeDimensionRequest&& changeRequest);
+    MCAPI void requestPlayerChangeDimension(::Player const& player, ::ChangeDimensionRequest&& changeRequest);
 
-    MCNAPI void setPacketSender(::PacketSender& packetSender);
+    MCAPI void setPacketSender(::PacketSender& packetSender);
 
-    MCNAPI void transferActorToOwnedEntityLimbo(::ActorUniqueID playerId, ::Actor& actor);
+    MCAPI void transferActorToOwnedEntityLimbo(::ActorUniqueID playerId, ::Actor& actor);
 
-    MCNAPI ~PlayerDimensionTransferManager();
+    MCAPI ~PlayerDimensionTransferManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::unique_ptr<::PlayerLimboActorManager>               playerLimboActorManager,
         ::std::unique_ptr<::IPlayerDimensionTransferer>            playerDimensionTransferer,
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>          dimensionManager,
@@ -104,6 +104,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

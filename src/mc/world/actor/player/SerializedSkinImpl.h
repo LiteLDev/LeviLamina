@@ -3,83 +3,88 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/image/Image.h"
+#include "mc/deps/core/math/Color.h"
+#include "mc/deps/json/Value.h"
 #include "mc/platform/Result.h"
+#include "mc/resources/MinEngineVersion.h"
+#include "mc/world/actor/player/TrustedSkinFlag.h"
+#include "mc/world/actor/player/persona/ArmSize.h"
+#include "mc/world/actor/player/persona/PieceType.h"
 
 // auto generated forward declare list
 // clang-format off
+class AnimatedImageData;
 class BinaryStream;
 class ConnectionRequest;
 class ReadOnlyBinaryStream;
+class SerializedPersonaPieceHandle;
 class SubClientConnectionRequest;
+class TintMapColor;
 // clang-format on
 
 class SerializedSkinImpl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk1f8427;
-    ::ll::UntypedStorage<8, 32> mUnka06b74;
-    ::ll::UntypedStorage<8, 32> mUnka00f31;
-    ::ll::UntypedStorage<8, 32> mUnkaba1bc;
-    ::ll::UntypedStorage<8, 32> mUnka669cf;
-    ::ll::UntypedStorage<8, 48> mUnkcfb31a;
-    ::ll::UntypedStorage<8, 48> mUnk500f41;
-    ::ll::UntypedStorage<8, 24> mUnkc3c4c7;
-    ::ll::UntypedStorage<8, 16> mUnka3b3ee;
-    ::ll::UntypedStorage<8, 32> mUnkdcf7c7;
-    ::ll::UntypedStorage<8, 16> mUnk11407a;
-    ::ll::UntypedStorage<8, 32> mUnk404dc6;
-    ::ll::UntypedStorage<8, 32> mUnk38db49;
-    ::ll::UntypedStorage<8, 24> mUnk7fae9e;
-    ::ll::UntypedStorage<8, 8>  mUnkc17be4;
-    ::ll::UntypedStorage<8, 64> mUnkaf1241;
-    ::ll::UntypedStorage<4, 16> mUnkbe9295;
-    ::ll::UntypedStorage<1, 1>  mUnk5166fb;
-    ::ll::UntypedStorage<1, 1>  mUnk58e93d;
-    ::ll::UntypedStorage<1, 1>  mUnk3a402e;
-    ::ll::UntypedStorage<1, 1>  mUnka69637;
-    ::ll::UntypedStorage<1, 1>  mUnk8948ee;
-    ::ll::UntypedStorage<1, 1>  mUnka34f2f;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mPlayFabId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mFullId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mResourcePatch;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mDefaultGeometryName;
+    ::ll::TypedStorage<8, 48, ::mce::Image>                                               mSkinImage;
+    ::ll::TypedStorage<8, 48, ::mce::Image>                                               mCapeImage;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AnimatedImageData>>                         mSkinAnimatedImages;
+    ::ll::TypedStorage<8, 16, ::Json::Value>                                              mGeometryData;
+    ::ll::TypedStorage<8, 32, ::MinEngineVersion>                                         mGeometryDataMinEngineVersion;
+    ::ll::TypedStorage<8, 16, ::Json::Value>                                              mGeometryDataMutable;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mAnimationData;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mCapeId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SerializedPersonaPieceHandle>>              mPersonaPieces;
+    ::ll::TypedStorage<8, 8, ::persona::ArmSize::Type>                                    mArmSizeType;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::persona::PieceType, ::TintMapColor>> mPieceTintColors;
+    ::ll::TypedStorage<4, 16, ::mce::Color>                                               mSkinColor;
+    ::ll::TypedStorage<1, 1, ::TrustedSkinFlag>                                           mIsTrustedSkin;
+    ::ll::TypedStorage<1, 1, bool>                                                        mIsPremium;
+    ::ll::TypedStorage<1, 1, bool>                                                        mIsPersona;
+    ::ll::TypedStorage<1, 1, bool>                                                        mIsPersonaCapeOnClassicSkin;
+    ::ll::TypedStorage<1, 1, bool>                                                        mIsPrimaryUser;
+    ::ll::TypedStorage<1, 1, bool>                                                        mOverridesPlayerAppearance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SerializedSkinImpl& operator=(SerializedSkinImpl const&);
-    SerializedSkinImpl(SerializedSkinImpl const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SerializedSkinImpl();
+    MCAPI SerializedSkinImpl();
 
-    MCNAPI explicit SerializedSkinImpl(::ConnectionRequest const& request);
+    MCAPI explicit SerializedSkinImpl(::ConnectionRequest const& request);
 
-    MCNAPI explicit SerializedSkinImpl(::SubClientConnectionRequest const& request);
+    MCAPI explicit SerializedSkinImpl(::SubClientConnectionRequest const& request);
 
-    MCNAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
-    MCNAPI void setArmSizeFromString(::std::string const& armSizeStr);
+    MCAPI void setArmSizeFromString(::std::string const& armSizeStr);
 
-    MCNAPI void updateGeometryName();
+    MCAPI void updateGeometryName();
 
-    MCNAPI void write(::BinaryStream& stream) const;
+    MCAPI void write(::BinaryStream& stream) const;
 
-    MCNAPI ~SerializedSkinImpl();
+    MCAPI ~SerializedSkinImpl();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::ConnectionRequest const& request);
+    MCAPI void* $ctor(::ConnectionRequest const& request);
 
-    MCNAPI void* $ctor(::SubClientConnectionRequest const& request);
+    MCAPI void* $ctor(::SubClientConnectionRequest const& request);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

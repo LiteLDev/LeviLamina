@@ -24,17 +24,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void releaseUsing(::Player& player);
+    MCAPI void releaseUsing(::Player& player);
 
-    MCNAPI void
+    MCAPI void
     setItemInUse(::ItemStack const& newItem, ::EntityContext& owner, int duration, ::PlayerInventorySlotData slot);
 
-    MCNAPI ~PlayerItemInUse();
+    MCAPI ~PlayerItemInUse();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -2,22 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class BlockPos;
 class BlockSource;
+class Level;
 // clang-format on
 
 class WanderingTraderScheduler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk4b885e;
-    ::ll::UntypedStorage<8, 8> mUnk9a2f11;
-    ::ll::UntypedStorage<1, 1> mUnk1a81a3;
-    ::ll::UntypedStorage<4, 4> mUnk788faf;
-    ::ll::UntypedStorage<8, 8> mUnkbbd251;
+    ::ll::TypedStorage<8, 8, ::Level&>        mLevel;
+    ::ll::TypedStorage<8, 8, uint64>          mTickToCheckIfSpawning;
+    ::ll::TypedStorage<1, 1, bool>            mSpawnWanderingTrader;
+    ::ll::TypedStorage<4, 4, int>             mDaysSinceLastSpawn;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mWanderingTraderUUID;
     // NOLINTEND
 
 public:
