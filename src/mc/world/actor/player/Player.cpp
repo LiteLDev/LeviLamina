@@ -48,10 +48,9 @@ optional_ref<ConnectionRequest const> Player::getConnectionRequest() const {
 NetworkIdentifier const& Player::getNetworkIdentifier() const { return getUserEntityIdentifier().mNetworkId; }
 
 optional_ref<Certificate const> Player::getCertificate() const {
-    if (auto request = getConnectionRequest()) {
-        return request->mLegacyMultiplayerToken->mCertificate.get();
-    }
-    return std::nullopt;
+    return getConnectionRequest().transform([](auto& request) {
+        return request.mLegacyMultiplayerToken->mCertificate.get();
+    });
 }
 
 SubClientId const& Player::getClientSubId() const { return getUserEntityIdentifier().mClientSubId; }
@@ -63,10 +62,9 @@ mce::UUID const& Player::getUuid() const { return getUserEntityIdentifier().mCli
 std::string Player::getIPAndPort() const { return getNetworkIdentifier().getIPAndPort(); }
 
 std::string Player::getLocaleCode() const {
-    if (auto request = getConnectionRequest()) {
-        return std::as_const(request->mRawToken->mDataInfo)["LanguageCode"].asString({});
-    }
-    return {};
+    return getConnectionRequest().and_then([](auto& request) {
+        return std::as_const(request.mRawToken->mDataInfo)["LanguageCode"].asString({});
+    });
 }
 
 std::optional<NetworkPeer::NetworkStatus> Player::getNetworkStatus() const {
@@ -76,7 +74,7 @@ std::optional<NetworkPeer::NetworkStatus> Player::getNetworkStatus() const {
 }
 
 std::string Player::getRealName() const {
-    return getUserEntityIdentifier().mTrustedPlayerInfo->XboxLiveName;
+    return isSimulated() ? *mName : *getUserEntityIdentifier().mTrustedPlayerInfo->XboxLiveName;
 }
 
 void Player::disconnect(std::string_view reason) const {
