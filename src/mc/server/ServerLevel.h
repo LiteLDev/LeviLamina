@@ -5,12 +5,18 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 #include "mc/util/IDType.h"
 #include "mc/util/TagRegistry.h"
+#include "mc/world/actor/player/PlayerDeathManager.h"
+#include "mc/world/item/trading/TradeTables.h"
+#include "mc/world/level/BossbarManager.h"
 #include "mc/world/level/CommandOriginSystem.h"
 #include "mc/world/level/Level.h"
+#include "mc/world/level/LevelChunkMetaDataManager.h"
+#include "mc/world/persistence/DynamicPropertiesDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,32 +24,33 @@ class Actor;
 class BlockTypeRegistry;
 class ChunkGenerationManager;
 class Command;
+class CommandManager;
 class CommandOrigin;
+class DynamicPropertiesManager;
 class EntityContext;
 class Experiments;
 class HashedString;
 class IEntityRegistryOwner;
 class IMinecraftEventing;
 class ItemRegistryRef;
-class LevelChunkMetaDataManager;
 class LevelData;
 class LevelSettings;
 class LevelStorage;
 class LinkedAssetValidator;
 class MapDataManager;
 class MinecraftCommands;
+class MobEvents;
 class PacketSender;
 class Player;
-class PlayerDeathManager;
 class PlayerSleepManager;
 class Random;
 class ResourcePackManager;
 class Scheduler;
+class ServerMapDataManager;
 class ServerPlayerSleepManager;
 class SoundPlayerInterface;
 class StructureManager;
 class TagCacheManager;
-class TradeTables;
 class VolumeEntityManagerServer;
 struct LevelTagIDType;
 struct LevelTagSetIDType;
@@ -55,25 +62,28 @@ class ServerLevel : public ::Level {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnkf36304;
-    ::ll::UntypedStorage<8, 8>   mUnk85019e;
-    ::ll::UntypedStorage<8, 64>  mUnkf592ac;
-    ::ll::UntypedStorage<8, 16>  mUnkb248d7;
-    ::ll::UntypedStorage<8, 8>   mUnkea45af;
-    ::ll::UntypedStorage<8, 16>  mUnk43b5c6;
-    ::ll::UntypedStorage<8, 16>  mUnk583e87;
-    ::ll::UntypedStorage<8, 64>  mUnk9a9b65;
-    ::ll::UntypedStorage<8, 8>   mUnkd4eea4;
-    ::ll::UntypedStorage<8, 8>   mUnk6156c4;
-    ::ll::UntypedStorage<8, 72>  mUnk71db1b;
-    ::ll::UntypedStorage<8, 16>  mUnk3b6c59;
-    ::ll::UntypedStorage<8, 16>  mUnk11fda3;
-    ::ll::UntypedStorage<8, 16>  mUnk3daa27;
-    ::ll::UntypedStorage<8, 16>  mUnkc57a61;
-    ::ll::UntypedStorage<8, 168> mUnk155f9c;
-    ::ll::UntypedStorage<8, 48>  mUnk8f3e19;
-    ::ll::UntypedStorage<8, 16>  mUnkf595c6;
-    ::ll::UntypedStorage<8, 8>   mUnk6f3347;
+    ::ll::TypedStorage<8, 8, ::ResourcePackManager&>                           mServerResourcePackManager;
+    ::ll::TypedStorage<8, 8, ::ResourcePackManager&>                           mClientResourcePackManager;
+    ::ll::TypedStorage<8, 64, ::TradeTables>                                   mTradeTable;
+    ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::CommandManager>> mCommandManager;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MobEvents>>                   mMobEvents;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::TagCacheManager>>> mTagCacheManager;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PositionTrackingDB::PositionTrackingDBServer>>
+                                                                             mServerPositionTrackerDB;
+    ::ll::TypedStorage<8, 64, ::BossbarManager>                              mBossbarManager;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::VolumeEntityManagerServer>> mVolumeEntityManager;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DynamicPropertiesManager>>  mDynamicPropertiesManager;
+    ::ll::TypedStorage<8, 72, ::DynamicPropertiesDefinition>                 mDynamicPropertiesDefinition;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>               mOnActorEntityAdded;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ChunkGenerationManager>>>
+        mChunkGenerationManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ServerPlayerSleepManager>>>
+                                                               mServerPlayerSleepManager;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnPlayerWakeUpSubscription;
+    ::ll::TypedStorage<8, 168, ::PlayerDeathManager>           mPlayerDeathManager;
+    ::ll::TypedStorage<8, 48, ::LevelChunkMetaDataManager>     mLevelChunkMetaDataManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ServerMapDataManager>>> mMapDataManager;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mNextTelemetrySendTime;
     // NOLINTEND
 
 public:

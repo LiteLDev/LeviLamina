@@ -50,34 +50,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _removeSideSource(::BlockPos const& posSource);
+    MCAPI void _removeSideSource(::BlockPos const& posSource);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI uchar $getPoweroutDirection() const;
+    MCFOLD uchar $getPoweroutDirection() const;
 
-    MCNAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+    MCFOLD bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
-    MCNAPI bool $canConsumePowerAnyDirection() const;
+    MCFOLD bool $canConsumePowerAnyDirection() const;
 
-    MCNAPI bool $canConsumerPower() const;
+    MCFOLD bool $canConsumerPower() const;
 
-    MCNAPI void $removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent);
+    MCAPI void $removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent);
 
-    MCNAPI void $removeFromAnySourceList(::BaseCircuitComponent const* component);
+    MCAPI void $removeFromAnySourceList(::BaseCircuitComponent const* component);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

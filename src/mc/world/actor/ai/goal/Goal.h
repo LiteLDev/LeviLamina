@@ -57,30 +57,30 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canContinueToUse();
+    MCFOLD bool $canContinueToUse();
 
-    MCNAPI bool $canBeInterrupted();
+    MCFOLD bool $canBeInterrupted();
 
-    MCNAPI void $start();
+    MCFOLD void $start();
 
-    MCNAPI void $stop();
+    MCFOLD void $stop();
 
-    MCNAPI void $tick();
+    MCFOLD void $tick();
 
-    MCNAPI bool $isTargetGoal() const;
+    MCFOLD bool $isTargetGoal() const;
 
-    MCNAPI void $onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
+    MCFOLD void $onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

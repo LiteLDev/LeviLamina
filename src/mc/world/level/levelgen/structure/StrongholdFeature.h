@@ -95,9 +95,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::StrongholdFeature::StrongholdResult const _generateStronghold(uint levelSeed, ::ChunkPos const& cp);
+    MCAPI ::StrongholdFeature::StrongholdResult const _generateStronghold(uint levelSeed, ::ChunkPos const& cp);
 
-    MCNAPI bool _getNearestStronghold(
+    MCAPI bool _getNearestStronghold(
         ::Dimension const& dimension,
         uint               levelSeed,
         ::BlockPos const&  origin,
@@ -105,7 +105,7 @@ public:
         bool               mustBeInNewChunks
     );
 
-    MCNAPI void generatePositions(
+    MCAPI void generatePositions(
         ::Random&                            random,
         ::BiomeSource const&                 biomeSource,
         uint                                 levelSeed,
@@ -117,13 +117,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::BlockPos const& START_OFFSET();
+    MCAPI static ::BlockPos const& START_OFFSET();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isFeatureChunk(
+    MCAPI bool $isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
         ::ChunkPos const&                    pos,
@@ -132,7 +132,7 @@ public:
         ::Dimension const&                   dimension
     );
 
-    MCNAPI bool $getNearestGeneratedFeature(
+    MCAPI bool $getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
         ::BlockPos const&                      origin,
@@ -142,7 +142,7 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCNAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
+    MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
         ::Dimension& generator,
         ::BiomeSource const&,
         ::Random&         random,
@@ -154,6 +154,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

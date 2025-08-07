@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.3] - 2025-08-07
+
+### Added
+
+- Added data and size function for ll::FixedString (#1720) @killcerr
+
+### Changed
+
+- Bumped bedrock-runtime-data to v1.21.93-server.5
+- Updated headers
+- Use CommandPermissionLevel in Player::isOperator @ShrBox
+
+### Fixed
+
+- Fixed the simulated player using Player::getRealName (#1716) @zimuya4153
+
 ## [1.4.2] - 2025-07-23
 
 ### Added
@@ -1031,7 +1047,8 @@ For lip and tooth-hub test only.
 [#1684]: https://github.com/LiteLDev/LeviLamina/issues/1684
 [#1706]: https://github.com/LiteLDev/LeviLamina/issues/1706
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.2...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.3...HEAD
+[1.4.3]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.2...v1.4.3
 [1.4.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.1...v1.4.2
 [1.4.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.3.4...v1.4.1
 [1.3.4]: https://github.com/LiteLDev/LeviLamina/compare/v1.3.3...v1.3.4

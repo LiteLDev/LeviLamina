@@ -2,18 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/entity/components/CorrectionMethod.h"
+
 struct MovementCorrection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk963486;
-    ::ll::UntypedStorage<4, 12> mUnk21d756;
-    ::ll::UntypedStorage<1, 1>  mUnkd363a2;
+    ::ll::TypedStorage<1, 1, ::CorrectionMethod> mMethod;
+    ::ll::TypedStorage<4, 12, ::Vec3>            mAcceptPosition;
+    ::ll::TypedStorage<1, 1, uchar>              mNewDivergenceCounter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MovementCorrection& operator=(MovementCorrection const&);
-    MovementCorrection(MovementCorrection const&);
-    MovementCorrection();
 };

@@ -79,19 +79,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit OceanMonumentFeature(uint seed);
+    MCAPI explicit OceanMonumentFeature(uint seed);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(uint seed);
+    MCAPI void* $ctor(uint seed);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $getNearestGeneratedFeature(
+    MCAPI bool $getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
         ::BlockPos const&                      origin,
@@ -101,7 +101,7 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCNAPI bool $isFeatureChunk(
+    MCAPI bool $isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
         ::ChunkPos const&                    pos,
@@ -110,11 +110,11 @@ public:
         ::Dimension const&
     );
 
-    MCNAPI bool $shouldAddHardcodedSpawnAreas() const;
+    MCFOLD bool $shouldAddHardcodedSpawnAreas() const;
 
-    MCNAPI bool $shouldPostProcessMobs() const;
+    MCFOLD bool $shouldPostProcessMobs() const;
 
-    MCNAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
+    MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
         ::Dimension& generator,
         ::BiomeSource const&,
         ::Random&         random,
@@ -126,6 +126,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

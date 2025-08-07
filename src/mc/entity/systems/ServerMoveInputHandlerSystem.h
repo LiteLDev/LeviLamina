@@ -13,8 +13,8 @@ struct ServerMoveInputHandlerSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo create();
+    MCAPI static ::TickingSystemWithInfo create();
 
-    MCNAPI static void digestPlayerInputPacket(::MoveInputComponent& input, ::PlayerAuthInputPacket const& packet);
+    MCAPI static void digestPlayerInputPacket(::MoveInputComponent& input, ::PlayerAuthInputPacket const& packet);
     // NOLINTEND
 };

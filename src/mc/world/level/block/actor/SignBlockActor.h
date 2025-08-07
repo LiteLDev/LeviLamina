@@ -3,7 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Color.h"
+#include "mc/deps/input/InputMode.h"
+#include "mc/input/NewInteractionModel.h"
 #include "mc/legacy/ActorUniqueID.h"
+#include "mc/textobject/TextObjectRoot.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/SignTextSide.h"
@@ -18,7 +22,6 @@ class DataLoadHelper;
 class ILevel;
 class Player;
 class SaveContext;
-class TextObjectRoot;
 // clang-format on
 
 class SignBlockActor : public ::BlockActor {
@@ -35,8 +38,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk91ce4f;
-        ::ll::UntypedStorage<4, 4>  mUnk35f0f1;
+        ::ll::TypedStorage<8, 32, ::std::string> text;
+        ::ll::TypedStorage<4, 4, int>            lineLength;
         // NOLINTEND
 
     public:
@@ -73,20 +76,14 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 160> mUnkbfd50f;
-        ::ll::UntypedStorage<4, 4>   mUnkf1d1da;
-        ::ll::UntypedStorage<8, 32>  mUnk7dddfe;
-        ::ll::UntypedStorage<8, 8>   mUnkeb613c;
-        ::ll::UntypedStorage<1, 1>   mUnk6a42b3;
-        ::ll::UntypedStorage<4, 4>   mUnkcd7811;
-        ::ll::UntypedStorage<4, 4>   mUnk770afe;
+        ::ll::TypedStorage<8, 160, ::SignBlockActor::CachedLineData[4]> lineData;
+        ::ll::TypedStorage<4, 4, uint>                                  numLines;
+        ::ll::TypedStorage<8, 32, ::std::string>                        filteredMessage;
+        ::ll::TypedStorage<8, 8, void const*>                           cachedFontCompare;
+        ::ll::TypedStorage<1, 1, bool>                                  dirty;
+        ::ll::TypedStorage<4, 4, ::InputMode>                           inputMode;
+        ::ll::TypedStorage<4, 4, ::NewInteractionModel>                 interactionModel;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CachedMessageData& operator=(CachedMessageData const&);
-        CachedMessageData(CachedMessageData const&);
-        CachedMessageData();
     };
 
     class Text {
@@ -100,16 +97,16 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32>  mUnk88dc11;
-        ::ll::UntypedStorage<8, 32>  mUnkaa8b5f;
-        ::ll::UntypedStorage<8, 32>  mUnk5885e2;
-        ::ll::UntypedStorage<8, 224> mUnk5f1573;
-        ::ll::UntypedStorage<4, 16>  mUnke0f953;
-        ::ll::UntypedStorage<1, 1>   mUnkf0c705;
-        ::ll::UntypedStorage<1, 1>   mUnkd4ffb0;
-        ::ll::UntypedStorage<1, 1>   mUnkd39979;
-        ::ll::UntypedStorage<8, 32>  mUnk96a516;
-        ::ll::UntypedStorage<8, 32>  mUnk293de5;
+        ::ll::TypedStorage<8, 32, ::std::string>                        mMessage;
+        ::ll::TypedStorage<8, 32, ::std::string>                        mFilteredMessage;
+        ::ll::TypedStorage<8, 32, ::TextObjectRoot>                     mTextObjectMessage;
+        ::ll::TypedStorage<8, 224, ::SignBlockActor::CachedMessageData> mCachedMessage;
+        ::ll::TypedStorage<4, 16, ::mce::Color>                         mSignTextColor;
+        ::ll::TypedStorage<1, 1, bool>                                  mGlowing;
+        ::ll::TypedStorage<1, 1, bool>                                  mHideGlowOutline;
+        ::ll::TypedStorage<1, 1, bool>                                  mShouldPersistFormatting;
+        ::ll::TypedStorage<8, 32, ::std::string>                        mLastEditXuid;
+        ::ll::TypedStorage<8, 32, ::std::string>                        mTextObjectString;
         // NOLINTEND
 
     public:
@@ -230,56 +227,56 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SignBlockActor(::BlockPos const& pos, ::BlockActorType blockActorType, ::std::string const& typeString);
+    MCAPI SignBlockActor(::BlockPos const& pos, ::BlockActorType blockActorType, ::std::string const& typeString);
 
-    MCNAPI void _updateTextFromClient(::CompoundTag const& data, ::BlockSource const& region);
+    MCAPI void _updateTextFromClient(::CompoundTag const& data, ::BlockSource const& region);
 
-    MCNAPI ::SignTextSide getSideFacingPlayer(::Player const& player) const;
+    MCAPI ::SignTextSide getSideFacingPlayer(::Player const& player) const;
 
-    MCNAPI void setMessageForServerScripingOnly(::SignTextSide side, ::std::string message, ::std::string ownerID);
+    MCAPI void setMessageForServerScripingOnly(::SignTextSide side, ::std::string message, ::std::string ownerID);
 
-    MCNAPI void setMessageForServerScripingOnly(::SignTextSide side, ::TextObjectRoot message, ::std::string ownerID);
+    MCAPI void setMessageForServerScripingOnly(::SignTextSide side, ::TextObjectRoot message, ::std::string ownerID);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockPos const& pos, ::BlockActorType blockActorType, ::std::string const& typeString);
+    MCAPI void* $ctor(::BlockPos const& pos, ::BlockActorType blockActorType, ::std::string const& typeString);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI void $onChanged(::BlockSource& region);
+    MCFOLD void $onChanged(::BlockSource& region);
 
-    MCNAPI float $getShadowRadius(::BlockSource& region) const;
+    MCAPI float $getShadowRadius(::BlockSource& region) const;
 
-    MCNAPI ::std::string $getImmersiveReaderText(::BlockSource& region);
+    MCAPI ::std::string $getImmersiveReaderText(::BlockSource& region);
 
-    MCNAPI void $tick(::BlockSource& region);
+    MCAPI void $tick(::BlockSource& region);
 
-    MCNAPI ::std::vector<::std::string> $getUgcStrings(::CompoundTag const& tag) const;
+    MCAPI ::std::vector<::std::string> $getUgcStrings(::CompoundTag const& tag) const;
 
-    MCNAPI ::std::vector<::std::string> $getFilteredUgcStrings(::CompoundTag const& tag) const;
+    MCAPI ::std::vector<::std::string> $getFilteredUgcStrings(::CompoundTag const& tag) const;
 
-    MCNAPI void $setUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const;
+    MCAPI void $setUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const;
 
-    MCNAPI void $setFilteredUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const;
+    MCAPI void $setFilteredUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const;
 
-    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
-    MCNAPI bool $_playerCanUpdate(::Player const& fromPlayer) const;
+    MCAPI bool $_playerCanUpdate(::Player const& fromPlayer) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -29,50 +29,50 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BaseGameVersion(::BaseGameVersion const& rhs);
+    MCAPI BaseGameVersion(::BaseGameVersion const& rhs);
 
-    MCNAPI BaseGameVersion(ushort major, uint minor, uint patch);
+    MCAPI BaseGameVersion(ushort major, uint minor, uint patch);
 
-    MCNAPI ::std::string asString() const;
+    MCAPI ::std::string asString() const;
 
-    MCNAPI bool isCompatibleWith(::BaseGameVersion const& baseGameVersion) const;
+    MCAPI bool isCompatibleWith(::BaseGameVersion const& baseGameVersion) const;
 
-    MCNAPI bool operator<=(::BaseGameVersion const& rhs) const;
+    MCFOLD bool operator<=(::BaseGameVersion const& rhs) const;
 
-    MCNAPI ::BaseGameVersion& operator=(::BaseGameVersion const&);
+    MCAPI ::BaseGameVersion& operator=(::BaseGameVersion const&);
 
-    MCNAPI bool operator>=(::BaseGameVersion const& rhs) const;
+    MCAPI bool operator>=(::BaseGameVersion const& rhs) const;
 
-    MCNAPI ~BaseGameVersion();
+    MCAPI ~BaseGameVersion();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::SemVersion::MatchType fromString(::std::string const& source, ::BaseGameVersion& output);
+    MCAPI static ::SemVersion::MatchType fromString(::std::string const& source, ::BaseGameVersion& output);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::BaseGameVersion const& ANY();
+    MCAPI static ::BaseGameVersion const& ANY();
 
-    MCNAPI static ::BaseGameVersion const& EMPTY();
+    MCAPI static ::BaseGameVersion const& EMPTY();
 
-    MCNAPI static ::BaseGameVersion const& INCOMPATIBLE();
+    MCAPI static ::BaseGameVersion const& INCOMPATIBLE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BaseGameVersion const& rhs);
+    MCFOLD void* $ctor(::BaseGameVersion const& rhs);
 
-    MCNAPI void* $ctor(ushort major, uint minor, uint patch);
+    MCAPI void* $ctor(ushort major, uint minor, uint patch);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

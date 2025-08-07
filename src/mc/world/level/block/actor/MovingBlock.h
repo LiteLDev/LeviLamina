@@ -64,40 +64,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
-    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCFOLD ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCNAPI ::AABB const& $getVisualShapeInWorld(
+    MCAPI ::AABB const& $getVisualShapeInWorld(
         ::Block const&,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
         ::AABB&                    bufferAABB
     ) const;
 
-    MCNAPI bool $pushesUpFallingBlocks() const;
+    MCFOLD bool $pushesUpFallingBlocks() const;
 
-    MCNAPI ::AABB $getCollisionShape(
+    MCAPI ::AABB $getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCNAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
+    MCAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
 
-    MCNAPI bool $isMovingBlock() const;
+    MCFOLD bool $isMovingBlock() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
