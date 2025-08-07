@@ -48,19 +48,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canConsumePowerAnyDirection() const;
+    MCFOLD bool $canConsumePowerAnyDirection() const;
 
-    MCNAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+    MCFOLD bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
-    MCNAPI bool
+    MCAPI bool
     $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
-    MCNAPI ::CircuitComponentType $getCircuitComponentType() const;
+    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/entity/components/IReplayStatePolicy.h"
+#include "mc/entity/components/ReplayStateConfig.h"
 #include "mc/entity/utilities/AdvanceFrameResult.h"
 
 // auto generated forward declare list
@@ -17,16 +18,10 @@ class ServerCorrectionPolicy : public ::IReplayStatePolicy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk2554b0;
-    ::ll::UntypedStorage<8, 16> mUnk2fab45;
-    ::ll::UntypedStorage<4, 20> mUnk93eaea;
+    ::ll::TypedStorage<8, 8, uint64>                   mLastCorrection;
+    ::ll::TypedStorage<8, 16, ::std::optional<uint64>> mLastExternalCorrection;
+    ::ll::TypedStorage<4, 20, ::ReplayStateConfig>     mConfig;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerCorrectionPolicy& operator=(ServerCorrectionPolicy const&);
-    ServerCorrectionPolicy(ServerCorrectionPolicy const&);
-    ServerCorrectionPolicy();
 
 public:
     // virtual functions
@@ -69,6 +64,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

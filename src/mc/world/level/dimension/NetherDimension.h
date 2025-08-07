@@ -82,46 +82,46 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI NetherDimension(::ILevel& level, ::Scheduler& callbackContext);
+    MCAPI NetherDimension(::ILevel& level, ::Scheduler& callbackContext);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ILevel& level, ::Scheduler& callbackContext);
+    MCAPI void* $ctor(::ILevel& level, ::Scheduler& callbackContext);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $init(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
+    MCAPI void $init(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
-    MCNAPI ::HashedString $getDefaultBiome() const;
+    MCAPI ::HashedString $getDefaultBiome() const;
 
-    MCNAPI bool $isNaturalDimension() const;
+    MCFOLD bool $isNaturalDimension() const;
 
-    MCNAPI bool $isValidSpawn(int x, int z) const;
+    MCFOLD bool $isValidSpawn(int x, int z) const;
 
-    MCNAPI bool $showSky() const;
+    MCFOLD bool $showSky() const;
 
-    MCNAPI float $getTimeOfDay(int time, float a) const;
+    MCFOLD float $getTimeOfDay(int time, float a) const;
 
-    MCNAPI bool $mayRespawnViaBed() const;
+    MCFOLD bool $mayRespawnViaBed() const;
 
-    MCNAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
+    MCAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
 
-    MCNAPI ::std::unique_ptr<::WorldGenerator>
+    MCAPI ::std::unique_ptr<::WorldGenerator>
     $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
-    MCNAPI bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
+    MCFOLD bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
 
-    MCNAPI void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
+    MCFOLD void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
 
-    MCNAPI void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
+    MCFOLD void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
 
-    MCNAPI void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
+    MCFOLD void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
 
-    MCNAPI ::std::unique_ptr<::ChunkSource>
+    MCFOLD ::std::unique_ptr<::ChunkSource>
     $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
     // NOLINTEND
 
@@ -130,7 +130,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftableForEnableNonOwnerReferences();
 
-    MCNAPI static void** $vftableForIDimension();
+    MCAPI static void** $vftableForIDimension();
 
     MCNAPI static void** $vftableForSavedData();
 

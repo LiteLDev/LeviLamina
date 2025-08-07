@@ -48,7 +48,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isFeatureChunk(
+    MCAPI bool $isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
         ::ChunkPos const&                    pos,
@@ -57,9 +57,9 @@ public:
         ::Dimension const&                   dimension
     );
 
-    MCNAPI bool $shouldPostProcessMobs() const;
+    MCFOLD bool $shouldPostProcessMobs() const;
 
-    MCNAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
+    MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
         ::Dimension&                         generator,
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
@@ -71,6 +71,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

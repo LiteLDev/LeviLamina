@@ -74,7 +74,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $getNearestGeneratedFeature(
+    MCAPI bool $getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
         ::BlockPos const&                      origin,
@@ -84,7 +84,7 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCNAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
+    MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
         ::Dimension&         dimension,
         ::BiomeSource const& biomeSource,
         ::Random&,
@@ -92,7 +92,7 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
 
-    MCNAPI bool $isFeatureChunk(
+    MCAPI bool $isFeatureChunk(
         ::BiomeSource const&,
         ::Random&         random,
         ::ChunkPos const& pos,
@@ -105,6 +105,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -60,25 +60,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $cacheValues(::CircuitSystem& system, ::BlockPos const& pos);
+    MCAPI void $cacheValues(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCNAPI bool
+    MCAPI bool
     $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
-    MCNAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+    MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
-    MCNAPI bool $canConsumerPower() const;
+    MCFOLD bool $canConsumerPower() const;
 
-    MCNAPI ::RedstoneLogicExecutionFlags $getLogicExecutionFlags() const;
+    MCFOLD ::RedstoneLogicExecutionFlags $getLogicExecutionFlags() const;
 
-    MCNAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
+    MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCNAPI ::CircuitComponentType $getCircuitComponentType() const;
+    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

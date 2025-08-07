@@ -99,39 +99,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI int _findStrongestStrength(::BlockPos const& targetPos, ::CircuitSystem&, bool& bPowerFromSelf);
+    MCAPI int _findStrongestStrength(::BlockPos const& targetPos, ::CircuitSystem&, bool& bPowerFromSelf);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI uchar $getPoweroutDirection() const;
+    MCFOLD uchar $getPoweroutDirection() const;
 
-    MCNAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+    MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
-    MCNAPI bool
+    MCAPI bool
     $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
-    MCNAPI void $removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent);
+    MCAPI void $removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent);
 
-    MCNAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
+    MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCNAPI void $cacheValues(::CircuitSystem& system, ::BlockPos const& pos);
+    MCAPI void $cacheValues(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCNAPI int $getStrength() const;
+    MCAPI int $getStrength() const;
 
-    MCNAPI bool $isHalfPulse() const;
+    MCAPI bool $isHalfPulse() const;
 
-    MCNAPI ::CircuitComponentType $getCircuitComponentType() const;
+    MCAPI ::CircuitComponentType $getCircuitComponentType() const;
 
-    MCNAPI ::RedstoneLogicExecutionFlags $getLogicExecutionFlags() const;
+    MCFOLD ::RedstoneLogicExecutionFlags $getLogicExecutionFlags() const;
 
-    MCNAPI void $updateDependencies(::CircuitSceneGraph& system, ::BlockPos const& pos);
+    MCAPI void $updateDependencies(::CircuitSceneGraph& system, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

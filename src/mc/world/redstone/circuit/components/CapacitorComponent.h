@@ -29,26 +29,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CapacitorComponent();
+    MCAPI CapacitorComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI uchar $getPoweroutDirection() const;
+    MCFOLD uchar $getPoweroutDirection() const;
 
-    MCNAPI ::CircuitComponentType $getCircuitComponentType() const;
+    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

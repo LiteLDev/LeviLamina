@@ -49,13 +49,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    CircuitTrackingInfo(::gsl::not_null<::BaseCircuitComponent*> component, ::BlockPos const& pos, int dampening);
+    MCAPI CircuitTrackingInfo(::gsl::not_null<::BaseCircuitComponent*> component, ::BlockPos const& pos, int dampening);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::gsl::not_null<::BaseCircuitComponent*> component, ::BlockPos const& pos, int dampening);
+    MCAPI void* $ctor(::gsl::not_null<::BaseCircuitComponent*> component, ::BlockPos const& pos, int dampening);
     // NOLINTEND
 };

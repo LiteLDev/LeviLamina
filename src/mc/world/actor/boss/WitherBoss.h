@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/entity/components/WitherBossPreAIStepResult.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
@@ -20,7 +22,6 @@ class DataLoadHelper;
 class EntityContext;
 class Level;
 class MobEffectInstance;
-class Vec3;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
 struct VariantParameterList;
@@ -39,48 +40,46 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkfb1661;
-    ::ll::UntypedStorage<4, 4>  mUnk91e8c4;
-    ::ll::UntypedStorage<4, 24> mUnkf73b85;
-    ::ll::UntypedStorage<4, 24> mUnk42fb80;
-    ::ll::UntypedStorage<4, 12> mUnkafb5ce;
-    ::ll::UntypedStorage<4, 12> mUnkdbcf4c;
-    ::ll::UntypedStorage<4, 4>  mUnk10623a;
-    ::ll::UntypedStorage<4, 4>  mUnkb71073;
-    ::ll::UntypedStorage<4, 4>  mUnk802c66;
-    ::ll::UntypedStorage<1, 1>  mUnk409e03;
-    ::ll::UntypedStorage<1, 1>  mUnk50435a;
-    ::ll::UntypedStorage<4, 12> mUnkc20e00;
-    ::ll::UntypedStorage<4, 4>  mUnkf587d8;
-    ::ll::UntypedStorage<4, 4>  mUnk9b6d2a;
-    ::ll::UntypedStorage<4, 4>  mUnkb77d38;
-    ::ll::UntypedStorage<4, 4>  mUnk62a4f1;
-    ::ll::UntypedStorage<4, 4>  mUnkc1a831;
-    ::ll::UntypedStorage<4, 4>  mUnk8cedff;
-    ::ll::UntypedStorage<4, 4>  mUnkd4292b;
-    ::ll::UntypedStorage<4, 4>  mUnkcb987d;
-    ::ll::UntypedStorage<4, 4>  mUnkc03dfe;
-    ::ll::UntypedStorage<1, 1>  mUnk5db70c;
-    ::ll::UntypedStorage<1, 1>  mUnkacf26a;
-    ::ll::UntypedStorage<4, 4>  mUnk8dfa8e;
-    ::ll::UntypedStorage<4, 4>  mUnkbcd1e5;
-    ::ll::UntypedStorage<4, 4>  mUnkf3ac9e;
-    ::ll::UntypedStorage<4, 4>  mUnk95f423;
-    ::ll::UntypedStorage<4, 4>  mUnkca0cd1;
-    ::ll::UntypedStorage<4, 4>  mUnk56ff06;
-    ::ll::UntypedStorage<4, 4>  mUnkfac4e5;
-    ::ll::UntypedStorage<4, 4>  mUnk21dcc1;
-    ::ll::UntypedStorage<4, 4>  mUnk5bb727;
-    ::ll::UntypedStorage<1, 1>  mUnk33834c;
-    ::ll::UntypedStorage<4, 4>  mUnke678ef;
-    ::ll::UntypedStorage<8, 8>  mUnk9c9e88;
-    ::ll::UntypedStorage<4, 4>  mUnk42962d;
+    ::ll::TypedStorage<4, 4, int>                                    MAX_SHIELD_HEALTH;
+    ::ll::TypedStorage<4, 4, int>                                    mShieldHealth;
+    ::ll::TypedStorage<4, 24, ::Vec2[3]>                             mHeadRots;
+    ::ll::TypedStorage<4, 24, ::Vec2[3]>                             mOldHeadRots;
+    ::ll::TypedStorage<4, 12, int[3]>                                mNextHeadUpdate;
+    ::ll::TypedStorage<4, 12, int[3]>                                mIdleHeadUpdates;
+    ::ll::TypedStorage<4, 4, int>                                    mDestroyBlocksTick;
+    ::ll::TypedStorage<4, 4, int>                                    mHealthThreshold;
+    ::ll::TypedStorage<4, 4, int>                                    mPhase;
+    ::ll::TypedStorage<1, 1, bool>                                   mWantsToExplode;
+    ::ll::TypedStorage<1, 1, bool>                                   mCharging;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                mChargeDirection;
+    ::ll::TypedStorage<4, 4, int>                                    mChargeFrames;
+    ::ll::TypedStorage<4, 4, int>                                    mPreparingCharge;
+    ::ll::TypedStorage<4, 4, int>                                    mProjectileCounter;
+    ::ll::TypedStorage<4, 4, int>                                    mSpawningFrames;
+    ::ll::TypedStorage<4, 4, int>                                    mTimeTillNextShot;
+    ::ll::TypedStorage<4, 4, int>                                    mFireRate;
+    ::ll::TypedStorage<4, 4, float>                                  mSpinSpeed;
+    ::ll::TypedStorage<4, 4, int>                                    mStunTimer;
+    ::ll::TypedStorage<4, 4, int>                                    mFramesTillMove;
+    ::ll::TypedStorage<1, 1, bool>                                   mWantsMove;
+    ::ll::TypedStorage<1, 1, bool>                                   mIsPathing;
+    ::ll::TypedStorage<4, 4, int>                                    mMaxHealth;
+    ::ll::TypedStorage<4, 4, int>                                    mNumSkeletons;
+    ::ll::TypedStorage<4, 4, int>                                    mMaxSkeletons;
+    ::ll::TypedStorage<4, 4, int>                                    mMovementTime;
+    ::ll::TypedStorage<4, 4, int>                                    mHealthIntervals;
+    ::ll::TypedStorage<4, 4, int>                                    mLastHealthValue;
+    ::ll::TypedStorage<4, 4, int>                                    mDelayShot;
+    ::ll::TypedStorage<4, 4, int>                                    mTimeSinceLastShot;
+    ::ll::TypedStorage<4, 4, float>                                  mAttackRange;
+    ::ll::TypedStorage<1, 1, bool>                                   mSecondVolley;
+    ::ll::TypedStorage<4, 4, int>                                    mMainHeadAttackCountdown;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorDamageSource>> mDeathSource;
+    ::ll::TypedStorage<4, 4, int>                                    mlastFiredHead;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    WitherBoss& operator=(WitherBoss const&);
-    WitherBoss(WitherBoss const&);
     WitherBoss();
 
 public:

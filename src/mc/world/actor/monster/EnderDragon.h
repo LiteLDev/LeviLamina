@@ -3,9 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/monster/Monster.h"
+#include "mc/world/level/pathfinder/BinaryHeap.h"
 #include "mc/world/level/pathfinder/PathCompletionType.h"
 
 // auto generated forward declare list
@@ -19,7 +22,6 @@ class EnderCrystal;
 class EntityContext;
 class Path;
 class PathfinderNode;
-class Vec3;
 struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
@@ -28,37 +30,35 @@ class EnderDragon : public ::Monster {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk1062c1;
-    ::ll::UntypedStorage<4, 768> mUnk11c904;
-    ::ll::UntypedStorage<4, 4>   mUnk5d54df;
-    ::ll::UntypedStorage<8, 8>   mUnk13fb8a;
-    ::ll::UntypedStorage<8, 8>   mUnkd44524;
-    ::ll::UntypedStorage<8, 8>   mUnk85ea3d;
-    ::ll::UntypedStorage<8, 8>   mUnk86483c;
-    ::ll::UntypedStorage<8, 8>   mUnk62a1e2;
-    ::ll::UntypedStorage<8, 8>   mUnk53aab2;
-    ::ll::UntypedStorage<8, 8>   mUnkb85f71;
-    ::ll::UntypedStorage<8, 8>   mUnk1b0795;
-    ::ll::UntypedStorage<1, 1>   mUnk9ece3a;
-    ::ll::UntypedStorage<4, 4>   mUnk29c5f9;
-    ::ll::UntypedStorage<4, 4>   mUnkede53f;
-    ::ll::UntypedStorage<4, 4>   mUnkab9a7d;
-    ::ll::UntypedStorage<4, 12>  mUnke72f4d;
-    ::ll::UntypedStorage<4, 4>   mUnk893b82;
-    ::ll::UntypedStorage<1, 1>   mUnkf1cd69;
-    ::ll::UntypedStorage<8, 24>  mUnka92db8;
-    ::ll::UntypedStorage<8, 24>  mUnk45bb48;
-    ::ll::UntypedStorage<8, 32>  mUnkbeb4f5;
-    ::ll::UntypedStorage<8, 8>   mUnk9b5011;
-    ::ll::UntypedStorage<4, 4>   mUnkd16120;
-    ::ll::UntypedStorage<1, 1>   mUnke7bd10;
-    ::ll::UntypedStorage<8, 64>  mUnk3356b7;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>                  mPath;
+    ::ll::TypedStorage<4, 768, ::std::array<::std::array<float, 3>, 64>> mPositions;
+    ::ll::TypedStorage<4, 4, int>                                        mPosPointer;
+    ::ll::TypedStorage<8, 8, ::AABB*>                                    mHead;
+    ::ll::TypedStorage<8, 8, ::AABB*>                                    mNeck;
+    ::ll::TypedStorage<8, 8, ::AABB*>                                    mBody;
+    ::ll::TypedStorage<8, 8, ::AABB*>                                    mTail1;
+    ::ll::TypedStorage<8, 8, ::AABB*>                                    mTail2;
+    ::ll::TypedStorage<8, 8, ::AABB*>                                    mTail3;
+    ::ll::TypedStorage<8, 8, ::AABB*>                                    mWing1;
+    ::ll::TypedStorage<8, 8, ::AABB*>                                    mWing2;
+    ::ll::TypedStorage<1, 1, bool>                                       mInWall;
+    ::ll::TypedStorage<4, 4, int>                                        mGrowlTime;
+    ::ll::TypedStorage<4, 4, int>                                        mSittingDamageReceived;
+    ::ll::TypedStorage<4, 4, float>                                      mTurnSpeed;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                    mTargetPos;
+    ::ll::TypedStorage<4, 4, int>                                        mFlameAttackCount;
+    ::ll::TypedStorage<1, 1, bool>                                       mNodesFinalized;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PathfinderNode>>           mNodes;
+    ::ll::TypedStorage<8, 24, ::std::vector<int>>                        mNodeAdjacency;
+    ::ll::TypedStorage<8, 32, ::BinaryHeap>                              mOpenSet;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                            mNearestCrystal;
+    ::ll::TypedStorage<4, 4, int>                                        mEnderCrystalsAlive;
+    ::ll::TypedStorage<1, 1, bool>                                       mDragonKilledPreviously;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::EnderDragon&)>>     mDragonKilledCallback;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    EnderDragon& operator=(EnderDragon const&);
-    EnderDragon(EnderDragon const&);
     EnderDragon();
 
 public:

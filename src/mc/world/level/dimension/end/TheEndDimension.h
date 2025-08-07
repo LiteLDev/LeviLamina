@@ -116,62 +116,62 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TheEndDimension(::ILevel& level, ::Scheduler& context);
+    MCAPI TheEndDimension(::ILevel& level, ::Scheduler& context);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ILevel& level, ::Scheduler& context);
+    MCAPI void* $ctor(::ILevel& level, ::Scheduler& context);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $startLeaveGame();
+    MCAPI void $startLeaveGame();
 
-    MCNAPI void $init(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
+    MCAPI void $init(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI ::HashedString $getDefaultBiome() const;
+    MCAPI ::HashedString $getDefaultBiome() const;
 
-    MCNAPI bool $isNaturalDimension() const;
+    MCFOLD bool $isNaturalDimension() const;
 
-    MCNAPI bool $isValidSpawn(int x, int z) const;
+    MCFOLD bool $isValidSpawn(int x, int z) const;
 
-    MCNAPI short $getCloudHeight() const;
+    MCFOLD short $getCloudHeight() const;
 
-    MCNAPI bool $mayRespawnViaBed() const;
+    MCFOLD bool $mayRespawnViaBed() const;
 
-    MCNAPI ::BlockPos $getSpawnPos() const;
+    MCAPI ::BlockPos $getSpawnPos() const;
 
-    MCNAPI int $getSpawnYPosition() const;
+    MCFOLD int $getSpawnYPosition() const;
 
-    MCNAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
+    MCAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
 
-    MCNAPI void $deserialize(::CompoundTag const& tag);
+    MCAPI void $deserialize(::CompoundTag const& tag);
 
-    MCNAPI void $serialize(::CompoundTag& tag) const;
+    MCAPI void $serialize(::CompoundTag& tag) const;
 
-    MCNAPI float $getTimeOfDay(int time, float a) const;
+    MCFOLD float $getTimeOfDay(int time, float a) const;
 
-    MCNAPI ::std::unique_ptr<::WorldGenerator>
+    MCAPI ::std::unique_ptr<::WorldGenerator>
     $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
-    MCNAPI bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
+    MCFOLD bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
 
-    MCNAPI void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
+    MCFOLD void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
 
-    MCNAPI void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
+    MCFOLD void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
 
-    MCNAPI ::Dimension::DirectionalLightState $getDimensionDirectionalLightSourceState(float a) const;
+    MCAPI ::Dimension::DirectionalLightState $getDimensionDirectionalLightSourceState(float a) const;
 
-    MCNAPI void $setDimensionDirectionalLightControls(
+    MCAPI void $setDimensionDirectionalLightControls(
         ::std::variant<::Dimension::ChaoticDirectionalLightControls> const& directionalLightControls
     );
 
-    MCNAPI void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
+    MCFOLD void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
     // NOLINTEND
 
 public:
@@ -179,7 +179,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftableForEnableNonOwnerReferences();
 
-    MCNAPI static void** $vftableForIDimension();
+    MCAPI static void** $vftableForIDimension();
 
     MCNAPI static void** $vftableForSavedData();
 
