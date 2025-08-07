@@ -81,7 +81,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MoveToBlockGoal(
+    MCAPI MoveToBlockGoal(
         ::Mob&                                  mob,
         float                                   speedModifier,
         int                                     searchRange,
@@ -98,19 +98,19 @@ public:
         ::ActorFilterGroup const&               targetBlockFilter
     );
 
-    MCNAPI void _checkIfStuck();
+    MCAPI void _checkIfStuck();
 
-    MCNAPI bool _findTargetBlock();
+    MCAPI bool _findTargetBlock();
 
-    MCNAPI bool _isValidTarget(::Block const& candidateBlock) const;
+    MCAPI bool _isValidTarget(::Block const& candidateBlock) const;
 
-    MCNAPI void _moveToBlock();
+    MCAPI void _moveToBlock();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Mob&                                  mob,
         float                                   speedModifier,
         int                                     searchRange,
@@ -131,28 +131,28 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
