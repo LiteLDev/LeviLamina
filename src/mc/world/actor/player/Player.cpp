@@ -116,7 +116,7 @@ LLAPI void Player::setAbility(::AbilitiesIndex index, bool value) {
 }
 
 bool Player::isOperator() const {
-    return getAbilities().mPermissions->mPlayerPermissions == PlayerPermissionLevel::Operator;
+    return getAbilities().mPermissions->mCommandPermissions >= CommandPermissionLevel::GameDirectors;
 }
 
 bool Player::addAndRefresh(class ItemStack& item) {
