@@ -23,6 +23,11 @@ struct FixedString {
 
     [[nodiscard]] constexpr char const& operator[](size_t idx) const noexcept { return buf[idx]; }
     [[nodiscard]] constexpr char&       operator[](size_t idx) noexcept { return buf[idx]; }
+    [[nodiscard]] constexpr char const* data() const { return buf; }
+    [[nodiscard]] constexpr char*       data() { return buf; }
+
+    constexpr size_t size() const { return N; }
+
 
     template <size_t Ny>
     consteval auto operator+(FixedString<Ny> const& other) noexcept {
