@@ -159,6 +159,12 @@ void registerModManageCommand() {
                     output.success("Version: {0}"_tr(man.version->to_string()));
                 }
                 output.success("Entry: {0}"_tr(man.entry));
+                if (man.extraInfo && !man.extraInfo->empty()) {
+                    output.success("Extra Info:"_tr());
+                    for (auto& line : *man.extraInfo) {
+                        output.success("  {0}: {1}", line.first, line.second);
+                    }
+                }
                 break;
             }
             default:
