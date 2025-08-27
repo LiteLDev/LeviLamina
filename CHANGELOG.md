@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.4.4] - 2025-08-27
 
+### Added
+
+- Added display of extra mod info for mod manage command [#1722] @zimuya4153
+
 ### Changed
 
 - Updated StringHash implementation and improve hasCategory logic @OEOTYAN
@@ -1058,6 +1062,7 @@ For lip and tooth-hub test only.
 [#1673]: https://github.com/LiteLDev/LeviLamina/issues/1673
 [#1684]: https://github.com/LiteLDev/LeviLamina/issues/1684
 [#1706]: https://github.com/LiteLDev/LeviLamina/issues/1706
+[#1722]: https://github.com/LiteLDev/LeviLamina/issues/1722
 
 [Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.4...HEAD
 [1.4.4]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.3...v1.4.4
