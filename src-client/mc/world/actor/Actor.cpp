@@ -34,5 +34,5 @@ void Actor::teleport(class Vec3 const& pos, DimensionType dimId) {
 }
 
 bool Actor::hasCategory(::ActorCategory categories) const {
-    return this->mCategories == categories;
-};
+    return (std::to_underlying(this->mCategories) & std::to_underlying(categories)) == std::to_underlying(categories);
+}

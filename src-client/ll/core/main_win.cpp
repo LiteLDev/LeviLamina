@@ -102,7 +102,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     void
 ) {
     bindString(
-        StringHash(3295792350),
+        StringHash("#version"),
         []() -> auto {
             auto gameVer   = getGameVersion();
             auto loaderVer = getLoaderVersion();
