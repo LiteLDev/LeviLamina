@@ -37,7 +37,6 @@ class CommandSelectorBase;
 class IMinecraftEventing;
 class Packet;
 struct ActorSelectorArgs;
-struct AutoCompleteInformation;
 struct CommandSyntaxInformation;
 namespace Json { class Value; }
 // clang-format on
@@ -57,7 +56,6 @@ public:
     struct ParseRule;
     struct ParseTable;
     struct ParseToken;
-    struct ParseTreeVisitor;
     class Parser;
     struct RegistryState;
     struct SemanticInfo;
@@ -658,8 +656,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-    struct ParseTreeVisitor {};
 
 public:
     // member variables

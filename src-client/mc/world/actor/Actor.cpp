@@ -9,6 +9,8 @@
 #include "mc/server/ServerLevel.h"
 #include "mc/server/commands/CommandUtils.h"
 #include "mc/server/commands/standard/TeleportCommand.h"
+#include "mc/server/commands/standard/TeleportTarget.h" // IWYU pragma: keep for TeleportCommand::computeTarget
+#include "mc/util/rotation_command_utils/RotationData.h"
 #include "mc/world//actor/player/Player.h"
 #include "mc/world/actor/ActorDamageByActorSource.h"
 #include "mc/world/actor/provider/ActorCollision.h"
@@ -29,4 +31,8 @@ void Actor::teleport(class Vec3 const& pos, DimensionType dimId) {
         TeleportCommand::computeTarget(*this, pos, nullptr, dimId, std::nullopt, 1),
         false
     );
+}
+
+bool Actor::hasCategory(::ActorCategory categories) const {
+    return (std::to_underlying(this->mCategories) & std::to_underlying(categories)) == std::to_underlying(categories);
 }

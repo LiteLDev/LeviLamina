@@ -52,14 +52,13 @@ void leviLaminaMain() {
     mod::ModRegistrar::getInstance().loadAllMods();
 }
 
-namespace service::bedrock {
-extern std::atomic<ServerInstance*> serverInstance;
-}
+// namespace service::bedrock {
+// extern std::atomic<ServerInstance*> serverInstance;
+// }
 
 LL_AUTO_TYPE_INSTANCE_HOOK(
     EnableAllModsHook,
     HookPriority::High,
-    ServerInstanceEventCoordinator,
     ServerScriptManager,
     &ServerScriptManager::$onServerThreadStarted,
     EventResult,
@@ -67,8 +66,8 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 ) {
     getLogger().debug("sendServerInitializeEnd");
 
-    auto result                      = origin(ins);
-    service::bedrock::serverInstance = std::addressof(ins);
+    auto result = origin(ins);
+    // service::bedrock::serverInstance = std::addressof(ins);
 
     CrashLogger::init();
 
@@ -90,7 +89,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 
     command::CommandRegistrar::getInstance().clear();
 
-    service::bedrock::serverInstance = nullptr;
+    // service::bedrock::serverInstance = nullptr;
 
     origin();
 }

@@ -48,13 +48,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
+    MCFOLD ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
     // NOLINTEND
 
 public:

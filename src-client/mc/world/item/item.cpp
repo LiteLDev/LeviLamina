@@ -1,4 +1,5 @@
 #include "mc/world/item/Item.h"
+#include "mc/nbt/CompoundTag.h"
 #include "mc/world/item/ItemStackBase.h"
 
 
@@ -17,6 +18,9 @@ std::string ItemStackBase::getDescriptionName() const {
 }
 
 LLAPI short ItemStackBase::getDamageValue() const {
-    if (mItem && mUserData) return mItem->getDamageValue(mUserData.get());
+    if (mItem && mUserData) {
+        if(mUserData->contains(Item::TAG_DAMAGE()))
+            return mUserData->at(Item::TAG_DAMAGE());
+    };
     return 0;
 }

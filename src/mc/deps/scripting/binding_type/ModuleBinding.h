@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/script_engine/ModuleDescriptor.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct ClassBinding; }
@@ -11,7 +14,6 @@ namespace Scripting { struct ErrorBinding; }
 namespace Scripting { struct FunctionBinding; }
 namespace Scripting { struct InterfaceBinding; }
 namespace Scripting { struct ModuleDependency; }
-namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct ObjectFactory; }
 namespace Scripting { struct TypeMapData; }
 // clang-format on
@@ -22,18 +24,18 @@ struct ModuleBinding {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 104> mUnk10164d;
-    ::ll::UntypedStorage<8, 24>  mUnk90f6b8;
-    ::ll::UntypedStorage<8, 32>  mUnk1192ef;
-    ::ll::UntypedStorage<8, 24>  mUnka3446e;
-    ::ll::UntypedStorage<8, 24>  mUnke60f93;
-    ::ll::UntypedStorage<8, 24>  mUnka8aee8;
-    ::ll::UntypedStorage<8, 24>  mUnkd9c53a;
-    ::ll::UntypedStorage<8, 24>  mUnkd347f3;
-    ::ll::UntypedStorage<8, 24>  mUnk6b2416;
-    ::ll::UntypedStorage<8, 24>  mUnk911301;
-    ::ll::UntypedStorage<8, 24>  mUnk7a469a;
-    ::ll::UntypedStorage<1, 1>   mUnk13eb3d;
+    ::ll::TypedStorage<8, 104, ::Scripting::ModuleDescriptor>               descriptor;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::ModuleDependency>> moduleDependencies;
+    ::ll::TypedStorage<8, 32, ::std::string>                                javaScript;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::ClassBinding>>     classBindings;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::InterfaceBinding>> interfaceBindings;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::ErrorBinding>>     errorBindings;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::EnumBinding>>      enumBindings;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::FunctionBinding>>  functionBindings;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::ObjectFactory>>    objectFactories;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::ConstantFactory>>  constants;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::TypeMapData>>      typeMaps;
+    ::ll::TypedStorage<1, 1, bool>                                          importRestricted;
     // NOLINTEND
 
 public:

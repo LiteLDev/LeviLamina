@@ -58,46 +58,46 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit NearestAttackableTargetGoal(::Mob& mob);
+    MCAPI explicit NearestAttackableTargetGoal(::Mob& mob);
 
-    MCNAPI bool _canStartSearching();
+    MCAPI bool _canStartSearching();
 
-    MCNAPI bool _isTargetInCooldown(::MobDescriptor const& descriptor) const;
+    MCAPI bool _isTargetInCooldown(::MobDescriptor const& descriptor) const;
 
-    MCNAPI bool _selectTarget();
+    MCAPI bool _selectTarget();
 
-    MCNAPI bool isTargetVisible(::Mob const& mob, float maxDistance, float maxHeight) const;
+    MCAPI bool isTargetVisible(::Mob const& mob, float maxDistance, float maxHeight) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Mob& mob);
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCNAPI ::ActorUniqueID $_findTarget(::MobDescriptor const** outMobDescriptor);
+    MCAPI ::ActorUniqueID $_findTarget(::MobDescriptor const** outMobDescriptor);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

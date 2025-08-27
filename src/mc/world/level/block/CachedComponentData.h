@@ -2,18 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/Brightness.h"
+#include "mc/world/level/block/BlockOcclusionType.h"
+
 struct CachedComponentData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnka3add9;
-    ::ll::UntypedStorage<1, 1> mUnkd6c5eb;
-    ::ll::UntypedStorage<4, 4> mUnk7c9950;
+    ::ll::TypedStorage<1, 1, ::Brightness>         mEmissiveBrightness;
+    ::ll::TypedStorage<1, 1, bool>                 mIsSolid;
+    ::ll::TypedStorage<4, 4, ::BlockOcclusionType> mOcclusionType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CachedComponentData& operator=(CachedComponentData const&);
-    CachedComponentData(CachedComponentData const&);
-    CachedComponentData();
 };

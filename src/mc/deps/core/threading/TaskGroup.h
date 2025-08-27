@@ -3,113 +3,37 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/SubClientId.h"
-#include "mc/common/editor/SessionResult.h"
-#include "mc/common/editor/WorldType.h"
-#include "mc/deps/application/crash_manager/CrashFileProcessor.h"
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/http/StatusCode.h"
-#include "mc/deps/core/threading/AsyncPromise.h"
 #include "mc/deps/core/threading/IAsyncResult.h"
 #include "mc/deps/core/threading/IBackgroundTaskOwner.h"
 #include "mc/deps/core/threading/TaskGroupState.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/nether_net/ESessionError.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/deps/scripting/script_engine/Promise.h"
-#include "mc/editor/services/export/ExportResult.h"
-#include "mc/events/TextProcessingEventOrigin.h"
 #include "mc/network/services/signaling/ISignalingServiceConfigProvider.h"
 #include "mc/platform/Copyable.h"
 #include "mc/platform/ErrorInfo.h"
 #include "mc/platform/Result.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/platform/threading/UniqueLock.h"
-#include "mc/server/commands/AsyncCommandExecutor.h"
 #include "mc/server/commands/edu/make_code_fileio/MakeCodeFileResult.h"
-#include "mc/server/safety/TextFilteringEvent.h"
-#include "mc/util/DownloaderState.h"
 #include "mc/world/level/FileArchiver.h"
-#include "mc/world/level/saveddata/maps/MapItemSavedData.h"
 
 // auto generated forward declare list
 // clang-format off
-class AppPlatform;
 class BackgroundTaskBase;
-class BlockPos;
-class BlockSource;
-class CallbackToken;
-class ChunkViewSource;
-class CommandOrigin;
-class CommandOutput;
-class ConnectionRequest;
-class Dimension;
-class IContentAccessibilityProvider;
-class IContentKeyProvider;
-class IMinecraftEventing;
-class IPackManifestFactory;
-class IWorldTemplateManagerInitializer;
-class Level;
-class LevelChunk;
-class LevelData;
-class LevelDbEnv;
-class LoginPacket;
-class MapItemSavedData;
-class NetworkIdentifier;
-class PackManifestFactory;
-class PackSource;
-class PackSourceFactory;
-class PackSourceReport;
-class Player;
-class ResourceLocation;
-class RopeSystem;
 class Scheduler;
-class SubClientConnectionRequest;
-class SubClientLoginPacket;
 class TaskResult;
-class WeakEntityRef;
 class WorkerPool;
 struct AsyncJoinError;
-struct Brightness;
-struct DBStorageConfig;
-struct FileChunkInfo;
-struct HC_CALL;
-struct ServicePack;
 struct TaskStartInfo;
-namespace Bedrock { class CrashFileProcessor; }
 namespace Bedrock::Http { class HeaderCollection; }
 namespace Bedrock::Http { class Request; }
 namespace Bedrock::Http { class Response; }
-namespace Bedrock::Http { class RetryPolicy; }
-namespace Bedrock::Http { class Status; }
 namespace Bedrock::Http { struct Url; }
-namespace Bedrock::Services { class AzureGetTokenHttpCall; }
 namespace Bedrock::Services { struct AzureGetTokenHttpResponse; }
 namespace Bedrock::Services { struct EnvironmentQueryResponse; }
 namespace Bedrock::Threading { class Mutex; }
 namespace Bedrock::Threading { struct CachedAsyncRetry; }
-namespace CodeBuilder { class IRequestHandler; }
-namespace CodeBuilder { struct RequestHeader; }
-namespace Core { class FilePathManager; }
-namespace Core { class Path; }
-namespace Core::ZipUtils { struct ZipProgressList; }
-namespace Editor { class GameOptions; }
-namespace Json { class Value; }
 namespace MakeCodeFileIO { struct MakeCodeFileIOReadResult; }
-namespace NetherNet { struct NetworkID; }
-namespace PackCommand { class IPackCommandPipeline; }
 namespace PackCommand { struct PackCommandResult; }
-namespace PositionTrackingDB { class PositionTrackingDBServer; }
-namespace PositionTrackingDB { class TrackingRecord; }
-namespace ScriptModuleMinecraftNet { struct ScriptNetRequest; }
-namespace ScriptModuleMinecraftNet { struct ScriptNetResponse; }
-namespace Scripting { class ScriptObjectFactory; }
-namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct BaseError; }
-namespace Social::Events { class Event; }
-namespace WebServices::EduSignin { struct SigninError; }
-namespace WebServices::EduSignin { struct SigninResponse; }
 // clang-format on
 
 class TaskGroup : public ::IBackgroundTaskOwner {

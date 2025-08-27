@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI POIBlueprint(
+    MCAPI POIBlueprint(
         ::std::string name,
         ::POIType     type,
         float         radius,
@@ -38,7 +38,7 @@ public:
         ::std::string soundEvent
     );
 
-    MCNAPI POIBlueprint(
+    MCAPI POIBlueprint(
         ::std::string name,
         ::POIType     type,
         float         radius,
@@ -50,13 +50,13 @@ public:
         ::std::string endEvent
     );
 
-    MCNAPI ~POIBlueprint();
+    MCAPI ~POIBlueprint();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::string name,
         ::POIType     type,
         float         radius,
@@ -66,7 +66,7 @@ public:
         ::std::string soundEvent
     );
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::string name,
         ::POIType     type,
         float         radius,
@@ -82,6 +82,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -9,15 +9,6 @@ namespace Scripting::internal {
 
 struct BaseScriptComponent {
 public:
-    // BaseScriptComponent inner types declare
-    // clang-format off
-    struct Traits;
-    // clang-format on
-
-    // BaseScriptComponent inner types define
-    struct Traits {};
-
-public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1>  mUnka330d8;

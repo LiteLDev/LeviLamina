@@ -56,38 +56,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::BlockActor* _getBlockEntity();
+    MCAPI ::BlockActor* _getBlockEntity();
 
-    MCNAPI ::Container* _getRawContainer();
+    MCAPI ::Container* _getRawContainer();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::ItemStack> $getItemCopies() const;
+    MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCNAPI void $setSlot(int slot, ::ItemStack const& item, bool);
+    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool);
 
-    MCNAPI ::ItemStack const& $getSlot(int slot) const;
+    MCAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCNAPI void $setData(int id, int value);
+    MCFOLD void $setData(int id, int value);
 
-    MCNAPI void $broadcastChanges();
+    MCAPI void $broadcastChanges();
 
-    MCNAPI bool $isValid(float pickRange);
+    MCAPI bool $isValid(float pickRange);
 
-    MCNAPI ::ContainerScreenContext $_postInit();
+    MCAPI ::ContainerScreenContext $_postInit();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,9 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/scripting/modules/minecraft/ScriptRGB.h"
+#include "mc/scripting/modules/minecraft/debugdrawer/ScriptDebugShapeType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleDebugUtilities { struct PacketShapeData; }
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -30,21 +37,25 @@ public:
         SerializeAll          = 4294967294,
     };
 
+    using FlagsStorage = uint;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk30d837;
-    ::ll::UntypedStorage<4, 12> mUnkd2f96a;
-    ::ll::UntypedStorage<4, 12> mUnk30f287;
-    ::ll::UntypedStorage<4, 4>  mUnk4b5d2f;
-    ::ll::UntypedStorage<4, 24> mUnkd5bb4a;
-    ::ll::UntypedStorage<4, 8>  mUnkdec18d;
-    ::ll::UntypedStorage<4, 8>  mUnkc1fde9;
-    ::ll::UntypedStorage<8, 24> mUnkbe0af3;
-    ::ll::UntypedStorage<8, 8>  mUnk1fd12e;
-    ::ll::UntypedStorage<4, 4>  mUnkc0fd57;
-    ::ll::UntypedStorage<4, 4>  mUnk821e2b;
-    ::ll::UntypedStorage<1, 1>  mUnka45b2a;
+    ::ll::TypedStorage<1, 1, ::ScriptModuleDebugUtilities::ScriptDebugShapeType> mShapeType;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                            mLocation;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                            mRotation;
+    ::ll::TypedStorage<4, 4, float>                                              mScale;
+    ::ll::TypedStorage<4, 24, ::ScriptModuleMinecraft::ScriptRGB>                mColor;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>                             mTimeLeftSec;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>                             mTimeLeftTotalSec;
+    ::ll::
+        TypedStorage<8, 24, ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
+                                     mVisibleTo;
+    ::ll::TypedStorage<8, 8, uint64> mNetworkId;
+    ::ll::TypedStorage<4, 4, uint>   mFlags;
+    ::ll::TypedStorage<4, 4, int>    mSegments;
+    ::ll::TypedStorage<1, 1, bool>   mExistsInWorld;
     // NOLINTEND
 
 public:
@@ -67,44 +78,44 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptDebugShape(::ScriptModuleDebugUtilities::ScriptDebugShape const&);
+    MCAPI ScriptDebugShape(::ScriptModuleDebugUtilities::ScriptDebugShape const&);
 
-    MCNAPI ::ScriptModuleDebugUtilities::ScriptDebugShape&
+    MCFOLD ::ScriptModuleDebugUtilities::ScriptDebugShape&
     operator=(::ScriptModuleDebugUtilities::ScriptDebugShape const&);
 
-    MCNAPI void remove();
+    MCAPI void remove();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleDebugUtilities::ScriptDebugShape const&);
+    MCAPI void* $ctor(::ScriptModuleDebugUtilities::ScriptDebugShape const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $populatePacketData(::ScriptModuleDebugUtilities::PacketShapeData& packet) const;
+    MCAPI void $populatePacketData(::ScriptModuleDebugUtilities::PacketShapeData& packet) const;
 
-    MCNAPI void $applyUpdatedData(::ScriptModuleDebugUtilities::PacketShapeData const& packet);
+    MCAPI void $applyUpdatedData(::ScriptModuleDebugUtilities::PacketShapeData const& packet);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -48,8 +48,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::MoveInputComponent& operator=(::MoveInputComponent&&);
+    MCFOLD ::MoveInputComponent& operator=(::MoveInputComponent&&);
 
-    MCNAPI ::MoveInputComponent& operator=(::MoveInputComponent const&);
+    MCAPI ::MoveInputComponent& operator=(::MoveInputComponent const&);
     // NOLINTEND
 };
