@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.4] - 2025-08-27
+
+### Changed
+
+- Updated StringHash implementation and improve hasCategory logic @OEOTYAN
+- Bumped bedrock-runtime-data to v1.21.93-server.6
+- Updated headers
+
+### Fixed
+
+- Fallback to fwrite when stdout not a console @OEOTYAN
+
 ## [1.4.3] - 2025-08-07
 
 ### Added
@@ -1047,7 +1059,8 @@ For lip and tooth-hub test only.
 [#1684]: https://github.com/LiteLDev/LeviLamina/issues/1684
 [#1706]: https://github.com/LiteLDev/LeviLamina/issues/1706
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.3...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.4...HEAD
+[1.4.4]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.3...v1.4.4
 [1.4.3]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.2...v1.4.3
 [1.4.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.1...v1.4.2
 [1.4.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.3.4...v1.4.1
