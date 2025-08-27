@@ -87,36 +87,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _checkIfStuck();
+    MCAPI void _checkIfStuck();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCFOLD void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI bool $hasReachedTarget() const;
+    MCAPI bool $hasReachedTarget() const;
 
-    MCNAPI int $_nextStartTick();
+    MCAPI int $_nextStartTick();
 
-    MCNAPI bool $_canReach(::BlockPos const& pos);
+    MCAPI bool $_canReach(::BlockPos const& pos);
 
-    MCNAPI ::Vec3 $_getTargetPosition() const;
+    MCAPI ::Vec3 $_getTargetPosition() const;
 
-    MCNAPI uint64 $_getRepathTime() const;
+    MCFOLD uint64 $_getRepathTime() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

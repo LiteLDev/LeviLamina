@@ -2,22 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/OwnerPtr.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleDebugUtilities { class ScriptDebugShape; }
+namespace Scripting::RenderHelper { class BasePrimitivePosition; }
+// clang-format on
+
 namespace ScriptModuleDebugUtilities {
 
 struct ClientScriptDebugShape {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnke02347;
-    ::ll::UntypedStorage<8, 16> mUnk105b1c;
-    ::ll::UntypedStorage<1, 1>  mUnk6dc6a8;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleDebugUtilities::ScriptDebugShape>> shapeData;
+    ::ll::TypedStorage<8, 16, ::OwnerPtr<::Scripting::RenderHelper::BasePrimitivePosition>>     renderPrimitive;
+    ::ll::TypedStorage<1, 1, bool>                                                              dirty;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClientScriptDebugShape& operator=(ClientScriptDebugShape const&);
-    ClientScriptDebugShape(ClientScriptDebugShape const&);
-    ClientScriptDebugShape();
 };
 
 } // namespace ScriptModuleDebugUtilities

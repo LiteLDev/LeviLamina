@@ -5,12 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 
 // auto generated forward declare list
 // clang-format off
 class ServerLevel;
 namespace ScriptModuleDebugUtilities { class ScriptDebugShape; }
-namespace Scripting { class WeakLifetimeScope; }
+namespace ScriptModuleDebugUtilities { struct ScriptDebugDrawerDataComponent; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -18,11 +19,15 @@ namespace ScriptModuleDebugUtilities {
 
 class ScriptDebugDrawer : public ::Scripting::WeakHandleFromThis<::ScriptModuleDebugUtilities::ScriptDebugDrawer> {
 public:
+    // ScriptDebugDrawer inner types define
+    using Key = int64;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkefd6aa;
-    ::ll::UntypedStorage<8, 8>  mUnk524c0d;
-    ::ll::UntypedStorage<8, 8>  mUnkb2ed06;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope>                               mScope;
+    ::ll::TypedStorage<8, 8, ::ServerLevel&>                                                mLevel;
+    ::ll::TypedStorage<8, 8, ::ScriptModuleDebugUtilities::ScriptDebugDrawerDataComponent*> mDataComponent;
     // NOLINTEND
 
 public:
@@ -34,20 +39,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _addShape(::Scripting::StrongTypedObjectHandle<::ScriptModuleDebugUtilities::ScriptDebugShape> shape);
+    MCAPI void _addShape(::Scripting::StrongTypedObjectHandle<::ScriptModuleDebugUtilities::ScriptDebugShape> shape);
 
-    MCNAPI void _removeAll();
+    MCAPI void _removeAll();
 
-    MCNAPI void
-    _removeShape(::Scripting::StrongTypedObjectHandle<::ScriptModuleDebugUtilities::ScriptDebugShape> shape);
+    MCAPI void _removeShape(::Scripting::StrongTypedObjectHandle<::ScriptModuleDebugUtilities::ScriptDebugShape> shape);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleDebugUtilities::ScriptDebugDrawer>
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleDebugUtilities::ScriptDebugDrawer>
     getHandle(::Scripting::WeakLifetimeScope& scope, ::ServerLevel& level);
     // NOLINTEND
 };

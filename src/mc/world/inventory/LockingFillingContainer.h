@@ -63,20 +63,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LockingFillingContainer(
+    MCAPI LockingFillingContainer(
         int                                                         numTotalSlots,
         ::SharedTypes::Legacy::ContainerType                        containerType,
         ::std::weak_ptr<::Bedrock::Threading::SharedRecursiveMutex> serializationMutex,
         bool                                                        isClientSide
     );
 
-    MCNAPI int getWeightInStorageItem() const;
+    MCAPI int getWeightInStorageItem() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         int                                                         numTotalSlots,
         ::SharedTypes::Legacy::ContainerType                        containerType,
         ::std::weak_ptr<::Bedrock::Threading::SharedRecursiveMutex> serializationMutex,
@@ -87,28 +87,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $clearInventory(int resizeTo);
+    MCFOLD int $clearInventory(int resizeTo);
 
-    MCNAPI void $swapSlots(int from, int to);
+    MCFOLD void $swapSlots(int from, int to);
 
-    MCNAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
+    MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
-    MCNAPI ::std::unique_ptr<::ListTag> $saveToTag(::SaveContext const& saveContext) const;
+    MCAPI ::std::unique_ptr<::ListTag> $saveToTag(::SaveContext const& saveContext) const;
 
-    MCNAPI ::ItemStack const& $getItem(int slot) const;
+    MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCNAPI void $serverInitItemStackIds(
+    MCAPI void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCNAPI void $_trySetInSlot(::ItemStack& item, int const& slot, int const& inventorySize, int& backCompatOffset);
+    MCAPI void $_trySetInSlot(::ItemStack& item, int const& slot, int const& inventorySize, int& backCompatOffset);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

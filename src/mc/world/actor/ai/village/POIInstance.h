@@ -42,7 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI POIInstance(
+    MCAPI POIInstance(
         ::BlockPos const& pos,
         bool              useBoundingBox,
         ::std::string     name,
@@ -55,19 +55,19 @@ public:
         ::std::string     endEvent
     );
 
-    MCNAPI ::AABB getSecondBlockFullAABB(::BlockSource& region);
+    MCAPI ::AABB getSecondBlockFullAABB(::BlockSource& region);
 
-    MCNAPI void save(::CompoundTag& tag) const;
+    MCAPI void save(::CompoundTag& tag) const;
 
-    MCNAPI void trySpawnParticles(::BlockSource& region, ::Random& random, int particleType) const;
+    MCAPI void trySpawnParticles(::BlockSource& region, ::Random& random, int particleType) const;
 
-    MCNAPI ~POIInstance();
+    MCAPI ~POIInstance();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::BlockPos const& pos,
         bool              useBoundingBox,
         ::std::string     name,
@@ -84,6 +84,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

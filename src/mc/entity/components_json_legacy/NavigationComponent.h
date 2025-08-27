@@ -62,11 +62,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void initMultiTypeNavigationComponent(::Mob& entity, ::ActorDefinitionDescriptor& initDescription);
+    MCAPI void initMultiTypeNavigationComponent(::Mob& entity, ::ActorDefinitionDescriptor& initDescription);
 
-    MCNAPI void initializeFromDefinition(::Mob& owner, ::NavigationDescription* description);
+    MCAPI void initializeFromDefinition(::Mob& owner, ::NavigationDescription* description);
 
-    MCNAPI ::NodeType isFree(
+    MCAPI ::NodeType isFree(
         ::Mob&            owner,
         ::BlockPos const& lastPathPos,
         ::BlockPos const& testPos,
@@ -74,18 +74,18 @@ public:
         ::CanJumpIntoNode jumpIntoNode
     );
 
-    MCNAPI bool moveTo(::Mob& owner, ::std::unique_ptr<::Path> newPath, float speed);
+    MCAPI bool moveTo(::Mob& owner, ::std::unique_ptr<::Path> newPath, float speed);
 
-    MCNAPI bool moveTo(::Mob& owner, ::Actor& target, float speed);
+    MCAPI bool moveTo(::Mob& owner, ::Actor& target, float speed);
 
-    MCNAPI ::NavigationComponent& operator=(::NavigationComponent&&);
+    MCAPI ::NavigationComponent& operator=(::NavigationComponent&&);
 
-    MCNAPI ~NavigationComponent();
+    MCAPI ~NavigationComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

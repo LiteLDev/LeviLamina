@@ -13,10 +13,10 @@ struct ScriptPluginDetails {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk15d49e;
-    ::ll::UntypedStorage<8, 32> mUnkbf912a;
-    ::ll::UntypedStorage<8, 32> mUnk7d74a6;
-    ::ll::UntypedStorage<8, 64> mUnkda1810;
+    ::ll::TypedStorage<8, 32, ::std::string>                            mName;
+    ::ll::TypedStorage<8, 32, ::std::string>                            mPackId;
+    ::ll::TypedStorage<8, 32, ::std::string>                            mModuleUUID;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>> mHandleCounts;
     // NOLINTEND
 
 public:

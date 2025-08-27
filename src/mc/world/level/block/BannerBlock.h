@@ -72,59 +72,59 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::ItemInstance itemInstanceFromBlockEntity(::gsl::not_null<::BannerBlockActor const*> banner);
+    MCAPI static ::ItemInstance itemInstanceFromBlockEntity(::gsl::not_null<::BannerBlockActor const*> banner);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::AABB& EAST_AABB();
+    MCAPI static ::AABB& EAST_AABB();
 
-    MCNAPI static ::AABB& NORTH_AABB();
+    MCAPI static ::AABB& NORTH_AABB();
 
-    MCNAPI static ::AABB& SOUTH_AABB();
+    MCAPI static ::AABB& SOUTH_AABB();
 
-    MCNAPI static ::AABB& STANDING_AABB();
+    MCAPI static ::AABB& STANDING_AABB();
 
-    MCNAPI static ::AABB& WEST_AABB();
+    MCAPI static ::AABB& WEST_AABB();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB&) const;
+    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB&) const;
 
-    MCNAPI ::AABB $getCollisionShape(
+    MCFOLD ::AABB $getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
         ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCNAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const* blockActor) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const* blockActor) const;
 
-    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI int $getVariant(::Block const& block) const;
+    MCFOLD int $getVariant(::Block const& block) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

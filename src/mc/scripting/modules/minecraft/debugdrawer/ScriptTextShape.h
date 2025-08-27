@@ -17,7 +17,7 @@ class ScriptTextShape : public ::ScriptModuleDebugUtilities::ScriptDebugShape {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk483fd5;
+    ::ll::TypedStorage<8, 32, ::std::string> mText;
     // NOLINTEND
 
 public:
@@ -40,44 +40,44 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptTextShape(::ScriptModuleDebugUtilities::ScriptTextShape const&);
+    MCAPI ScriptTextShape(::ScriptModuleDebugUtilities::ScriptTextShape const&);
 
-    MCNAPI ::ScriptModuleDebugUtilities::ScriptTextShape&
+    MCAPI ::ScriptModuleDebugUtilities::ScriptTextShape&
     operator=(::ScriptModuleDebugUtilities::ScriptTextShape const&);
 
-    MCNAPI void setText(::std::string text);
+    MCAPI void setText(::std::string text);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleDebugUtilities::ScriptTextShape const&);
+    MCAPI void* $ctor(::ScriptModuleDebugUtilities::ScriptTextShape const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $populatePacketData(::ScriptModuleDebugUtilities::PacketShapeData& packet) const;
+    MCAPI void $populatePacketData(::ScriptModuleDebugUtilities::PacketShapeData& packet) const;
 
-    MCNAPI void $applyUpdatedData(::ScriptModuleDebugUtilities::PacketShapeData const& packet);
+    MCAPI void $applyUpdatedData(::ScriptModuleDebugUtilities::PacketShapeData const& packet);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

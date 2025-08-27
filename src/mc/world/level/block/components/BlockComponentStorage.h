@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/typeid_t.h"
+#include "mc/platform/brstd/flat_map.h"
+#include "mc/platform/brstd/flat_set.h"
 
 class BlockComponentStorage {
 public:
@@ -29,30 +31,40 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56> mUnkbd91b3;
-    ::ll::UntypedStorage<8, 40> mUnkce79bc;
-    ::ll::UntypedStorage<1, 1>  mUnk3ed799;
-    ::ll::UntypedStorage<1, 1>  mUnkfe00f1;
-    ::ll::UntypedStorage<1, 1>  mUnkee4bb9;
+    ::ll::TypedStorage<
+        8,
+        56,
+        ::brstd::flat_map<
+            ::Bedrock::typeid_t<void>,
+            ::std::unique_ptr<::BlockComponentStorage::ComponentBase>,
+            ::std::less<::Bedrock::typeid_t<void>>,
+            ::std::vector<::Bedrock::typeid_t<void>>,
+            ::std::vector<::std::unique_ptr<::BlockComponentStorage::ComponentBase>>>>
+        mComponents;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::brstd::flat_set<
+            ::Bedrock::typeid_t<void>,
+            ::std::less<::Bedrock::typeid_t<void>>,
+            ::std::vector<::Bedrock::typeid_t<void>>>>
+                                   mStatelessComponents;
+    ::ll::TypedStorage<1, 1, bool> mAllowModifyingComponents;
+    ::ll::TypedStorage<1, 1, bool> mAllowComponentReplacement;
+    ::ll::TypedStorage<1, 1, bool> mAllowTryGetComponentBeforeFinalization;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockComponentStorage& operator=(BlockComponentStorage const&);
-    BlockComponentStorage(BlockComponentStorage const&);
-    BlockComponentStorage();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _addStatelessComponent(::Bedrock::typeid_t<void> typeId);
+    MCAPI void _addStatelessComponent(::Bedrock::typeid_t<void> typeId);
 
-    MCNAPI ~BlockComponentStorage();
+    MCAPI ~BlockComponentStorage();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

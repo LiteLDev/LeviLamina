@@ -32,28 +32,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI HopperContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
+    MCAPI HopperContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
 
-    MCNAPI HopperContainerManagerModel(::ContainerID containerId, ::Player& player, ::ActorUniqueID const& uniqueID);
+    MCAPI HopperContainerManagerModel(::ContainerID containerId, ::Player& player, ::ActorUniqueID const& uniqueID);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
+    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
 
-    MCNAPI void* $ctor(::ContainerID containerId, ::Player& player, ::ActorUniqueID const& uniqueID);
+    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::ActorUniqueID const& uniqueID);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ContainerScreenContext $_postInit();
+    MCAPI ::ContainerScreenContext $_postInit();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

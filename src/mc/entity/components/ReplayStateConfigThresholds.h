@@ -6,14 +6,8 @@ struct ReplayStateConfigThresholds {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc820fd;
-    ::ll::UntypedStorage<4, 4> mUnkee5f44;
-    ::ll::UntypedStorage<4, 4> mUnkc58b4a;
+    ::ll::TypedStorage<4, 4, float> mPositionThreshold;
+    ::ll::TypedStorage<4, 4, float> mPositionAcceptance;
+    ::ll::TypedStorage<4, 4, float> mPositionPersuasion;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ReplayStateConfigThresholds& operator=(ReplayStateConfigThresholds const&);
-    ReplayStateConfigThresholds(ReplayStateConfigThresholds const&);
-    ReplayStateConfigThresholds();
 };

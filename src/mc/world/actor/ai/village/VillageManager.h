@@ -68,13 +68,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~DwellerTestVillageInfo();
+        MCAPI ~DwellerTestVillageInfo();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -204,6 +204,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -232,40 +232,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LegacyGoalDefinition();
+    MCAPI LegacyGoalDefinition();
 
-    MCNAPI LegacyGoalDefinition(::LegacyGoalDefinition const&);
+    MCAPI LegacyGoalDefinition(::LegacyGoalDefinition const&);
 
-    MCNAPI LegacyGoalDefinition(::LegacyGoalDefinition&&);
+    MCAPI LegacyGoalDefinition(::LegacyGoalDefinition&&);
 
-    MCNAPI ::LegacyGoalDefinition& operator=(::LegacyGoalDefinition&&);
+    MCAPI ::LegacyGoalDefinition& operator=(::LegacyGoalDefinition&&);
 
-    MCNAPI ::LegacyGoalDefinition& operator=(::LegacyGoalDefinition const&);
+    MCAPI ::LegacyGoalDefinition& operator=(::LegacyGoalDefinition const&);
 
-    MCNAPI bool parse(::ConstDeserializeDataParams const& deserializeDataParams, int priority);
+    MCAPI bool parse(::ConstDeserializeDataParams const& deserializeDataParams, int priority);
 
-    MCNAPI ~LegacyGoalDefinition();
+    MCAPI ~LegacyGoalDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static int _controlFlagsFromArr(::Json::Value const& flags);
+    MCAPI static int _controlFlagsFromArr(::Json::Value const& flags);
 
-    MCNAPI static ::POIType _getPOITypeFromString(::std::string poiStr);
+    MCAPI static ::POIType _getPOITypeFromString(::std::string poiStr);
 
-    MCNAPI static ::std::vector<::SharedTypes::Legacy::ActorDamageCause>
+    MCAPI static ::std::vector<::SharedTypes::Legacy::ActorDamageCause>
     _getPanicGoalDamageSources(::ConstDeserializeDataParams const& deserializeDataParams);
 
-    MCNAPI static ::TargetSelectionMethod _getTargetSelectionMethodFromString(::std::string const& methodStr);
+    MCAPI static ::TargetSelectionMethod _getTargetSelectionMethodFromString(::std::string const& methodStr);
 
-    MCNAPI static bool goalExists(::std::string const& name);
+    MCAPI static bool goalExists(::std::string const& name);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::
+    MCAPI static ::std::
         unordered_map<::std::string, ::std::function<::std::unique_ptr<::Goal>(::Mob&, ::LegacyGoalDefinition const&)>>&
         mGoalMap();
     // NOLINTEND
@@ -273,16 +273,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::LegacyGoalDefinition const&);
+    MCAPI void* $ctor(::LegacyGoalDefinition const&);
 
-    MCNAPI void* $ctor(::LegacyGoalDefinition&&);
+    MCAPI void* $ctor(::LegacyGoalDefinition&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

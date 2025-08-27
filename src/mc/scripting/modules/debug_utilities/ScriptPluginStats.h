@@ -2,20 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleDebugUtilities { struct ScriptPluginDetails; }
+// clang-format on
+
 namespace ScriptModuleDebugUtilities {
 
 struct ScriptPluginStats {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkc1c67b;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptModuleDebugUtilities::ScriptPluginDetails>> mPlugins;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptPluginStats& operator=(ScriptPluginStats const&);
-    ScriptPluginStats(ScriptPluginStats const&);
-    ScriptPluginStats();
 
 public:
     // member functions

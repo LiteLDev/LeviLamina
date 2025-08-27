@@ -109,76 +109,76 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ChestBlock(::std::string const& nameId, int id, ::ChestBlock::ChestType type, ::MaterialType materialType);
+    MCAPI ChestBlock(::std::string const& nameId, int id, ::ChestBlock::ChestType type, ::MaterialType materialType);
 
-    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCNAPI void updateSignalStrength(::BlockSource& region, ::BlockPos const& pos, int strength) const;
+    MCAPI void updateSignalStrength(::BlockSource& region, ::BlockPos const& pos, int strength) const;
 
-    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _tryEquipChest(::Actor& actor);
+    MCAPI static bool _tryEquipChest(::Actor& actor);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& nameId, int id, ::ChestBlock::ChestType type, ::MaterialType materialType);
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::ChestBlock::ChestType type, ::MaterialType materialType);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BlockLegacy& $init();
+    MCAPI ::BlockLegacy& $init();
 
-    MCNAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCNAPI void $onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to) const;
+    MCAPI void $onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to) const;
 
-    MCNAPI bool $detachesOnPistonMove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $detachesOnPistonMove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $hasComparatorSignal() const;
+    MCFOLD bool $hasComparatorSignal() const;
 
-    MCNAPI int
+    MCFOLD int
     $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCNAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
+    MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCNAPI bool $getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
+    MCAPI bool $getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
 
-    MCNAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
-    MCNAPI bool $isContainerBlock() const;
+    MCFOLD bool $isContainerBlock() const;
 
-    MCNAPI bool $isSignalSource() const;
+    MCFOLD bool $isSignalSource() const;
 
-    MCNAPI bool
+    MCFOLD bool
     $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCNAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
-    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

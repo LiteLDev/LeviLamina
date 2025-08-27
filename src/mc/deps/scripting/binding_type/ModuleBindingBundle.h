@@ -2,14 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/binding_type/GlobalBinding.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ModuleBinding; }
+// clang-format on
+
 namespace Scripting {
 
 struct ModuleBindingBundle {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnkee6c72;
-    ::ll::UntypedStorage<8, 144> mUnkc10f43;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::ModuleBinding>> modules;
+    ::ll::TypedStorage<8, 144, ::Scripting::GlobalBinding>               globals;
     // NOLINTEND
 
 public:
