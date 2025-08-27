@@ -3,19 +3,47 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/shared_types/legacy/Difficulty.h"
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
-class Vec3;
-struct ActorUniqueID;
-struct Tick;
 // clang-format on
 
 class Raid {
 public:
     // Raid inner types define
+    using GroupNumberType = uchar;
+
+    using RaiderCountType = uchar;
+
+    using FailureCountType = uchar;
+
+    using CallbackCallCountType = uint64;
+
+    using DurationType = int;
+
+    using ActorIDCollection = ::std::unordered_set<::ActorUniqueID>;
+
+    using PickSpawnPointCallback = ::std::function<bool(uint64, ::Vec3&)>;
+
+    using SpawnGroupCallback = ::std::function<bool(uint64, ::Vec3, uchar, ::std::unordered_set<::ActorUniqueID>&)>;
+
+    using DoesActorExistCallback = ::std::function<bool(::ActorUniqueID const&)>;
+
+    using ApplyHeroOfTheVillageCallback = ::std::function<void(::ActorUniqueID const&)>;
+
+    using ActorRemovedFromRaidCallback = ::std::function<void(::ActorUniqueID const&)>;
+
+    using IsVillageDefeatedCallback = ::std::function<bool()>;
+
+    using NotificationCallback = ::std::function<void(::Raid const&)>;
+
+    using RaiderHealthCallback = ::std::function<float(::ActorUniqueID const&)>;
+
     enum class RaidState : int {
         PreparingGroup    = 0,
         PickingSpawnPoint = 1,
@@ -35,49 +63,49 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk99e5e3;
-    ::ll::UntypedStorage<4, 4>  mUnk7c1013;
-    ::ll::UntypedStorage<1, 1>  mUnk4723c3;
-    ::ll::UntypedStorage<1, 1>  mUnke2d823;
-    ::ll::UntypedStorage<8, 8>  mUnke46c3e;
-    ::ll::UntypedStorage<8, 8>  mUnkcfa5b4;
-    ::ll::UntypedStorage<4, 4>  mUnk83de3a;
-    ::ll::UntypedStorage<4, 4>  mUnk40ce16;
-    ::ll::UntypedStorage<4, 4>  mUnk2ae8fa;
-    ::ll::UntypedStorage<4, 4>  mUnkd19766;
-    ::ll::UntypedStorage<4, 4>  mUnk2a3f58;
-    ::ll::UntypedStorage<4, 4>  mUnk482318;
-    ::ll::UntypedStorage<4, 12> mUnkd5ce62;
-    ::ll::UntypedStorage<8, 64> mUnk5c5707;
-    ::ll::UntypedStorage<1, 1>  mUnkc27ec3;
-    ::ll::UntypedStorage<4, 4>  mUnke4ebc1;
-    ::ll::UntypedStorage<1, 1>  mUnk8b26c8;
-    ::ll::UntypedStorage<1, 1>  mUnk575e09;
-    ::ll::UntypedStorage<8, 64> mUnk2ffa50;
-    ::ll::UntypedStorage<8, 64> mUnke5c0ae;
-    ::ll::UntypedStorage<8, 64> mUnkfc7daa;
-    ::ll::UntypedStorage<8, 64> mUnk3dac0b;
-    ::ll::UntypedStorage<8, 64> mUnk6a04e6;
-    ::ll::UntypedStorage<8, 64> mUnkf67541;
-    ::ll::UntypedStorage<8, 64> mUnkb0d18d;
-    ::ll::UntypedStorage<8, 64> mUnk223348;
-    ::ll::UntypedStorage<8, 64> mUnk305f36;
-    ::ll::UntypedStorage<8, 64> mUnk95ca13;
-    ::ll::UntypedStorage<8, 64> mUnk7b952e;
-    ::ll::UntypedStorage<8, 64> mUnkedfc9b;
-    ::ll::UntypedStorage<8, 64> mUnkff3266;
+    ::ll::TypedStorage<4, 4, ::Raid::RaidState>                             mCurrentRaidState;
+    ::ll::TypedStorage<4, 4, ::Raid::RaidStatus>                            mRaidStatus;
+    ::ll::TypedStorage<1, 1, uchar>                                         mCurrentGroupNumber;
+    ::ll::TypedStorage<1, 1, uchar>                                         mNumGroupsInRaid;
+    ::ll::TypedStorage<8, 8, ::Tick>                                        mGameTick;
+    ::ll::TypedStorage<8, 8, ::Tick>                                        mTicksInState;
+    ::ll::TypedStorage<4, 4, int>                                           mRaidPreparationTime;
+    ::ll::TypedStorage<4, 4, int const>                                     mGroupCompleteDelay;
+    ::ll::TypedStorage<4, 4, int>                                           mTicksUntilGroupComplete;
+    ::ll::TypedStorage<4, 4, int const>                                     mLocationHelpDelay;
+    ::ll::TypedStorage<4, 4, int>                                           mTicksUntilLocationHelp;
+    ::ll::TypedStorage<4, 4, int const>                                     mFinishedDelay;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                       mCurrentGroupSpawnPoint;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ActorUniqueID>>        mRaiders;
+    ::ll::TypedStorage<1, 1, uchar>                                         mNumRaidersSpawnedInCurrentGroup;
+    ::ll::TypedStorage<4, 4, float>                                         mCurrentGroupTotalMaxHealth;
+    ::ll::TypedStorage<1, 1, uchar const>                                   mAllowedSpawnFailures;
+    ::ll::TypedStorage<1, 1, uchar>                                         mSpawnFailures;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ActorUniqueID>>        mHeroesOfTheVillage;
+    ::ll::TypedStorage<8, 64, ::std::function<bool(uint64, ::Vec3&)> const> mPickSpawnPointCallback;
+    ::ll::
+        TypedStorage<8, 64, ::std::function<bool(uint64, ::Vec3, uchar, ::std::unordered_set<::ActorUniqueID>&)> const>
+                                                                                   mSpawnGroupCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<bool(::ActorUniqueID const&)> const> mDoesActorExistCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()> const>                       mIsVillageDefeatedCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::Raid const&)>>                mOnSpawnPointChosenCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::Raid const&)>>                mOnGroupSpawnedCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::Raid const&)>>                mOnAwardRewardsCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::Raid const&)>>                mOnHelpLocateRaidersCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::Raid const&)>>                mOnVillageDefeatedCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::ActorUniqueID const&)>>       mApplyHeroOfTheVillageCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::ActorUniqueID const&)>>       mOnActorRemovedFromRaidCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<float(::ActorUniqueID const&)>>      mGetRaiderHealthCallback;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Raid& operator=(Raid const&);
-    Raid(Raid const&);
     Raid();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Raid(
+    MCAPI Raid(
         int                                      raidPreparationTime,
         int                                      groupCompleteDelayInTicks,
         int                                      locationHelpDelayInTicks,
@@ -90,35 +118,35 @@ public:
         ::std::function<bool()>&&                                                              isVillageDefeatedCallback
     );
 
-    MCNAPI float _calcBossBarUsingHealth() const;
+    MCAPI float _calcBossBarUsingHealth() const;
 
-    MCNAPI float _calcBossBarUsingMobs() const;
+    MCAPI float _calcBossBarUsingMobs() const;
 
-    MCNAPI float _getTotalRaiderHealth() const;
+    MCAPI float _getTotalRaiderHealth() const;
 
-    MCNAPI void _tickGroupInPlay();
+    MCAPI void _tickGroupInPlay();
 
-    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCNAPI float getBossBarFilledFraction() const;
+    MCAPI float getBossBarFilledFraction() const;
 
-    MCNAPI void readAdditionalSaveData(::CompoundTag const& tag);
+    MCAPI void readAdditionalSaveData(::CompoundTag const& tag);
 
-    MCNAPI void tick(::Tick tick);
+    MCAPI void tick(::Tick tick);
 
-    MCNAPI ~Raid();
+    MCAPI ~Raid();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Vec3 const& INVALID_SPAWN_POINT();
+    MCAPI static ::Vec3 const& INVALID_SPAWN_POINT();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         int                                      raidPreparationTime,
         int                                      groupCompleteDelayInTicks,
         int                                      locationHelpDelayInTicks,
@@ -135,6 +163,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

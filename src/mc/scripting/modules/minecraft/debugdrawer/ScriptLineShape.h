@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/scripting/modules/minecraft/debugdrawer/ScriptDebugShape.h"
 
 // auto generated forward declare list
@@ -17,7 +18,7 @@ class ScriptLineShape : public ::ScriptModuleDebugUtilities::ScriptDebugShape {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkab04f0;
+    ::ll::TypedStorage<4, 12, ::Vec3> mEndLocation;
     // NOLINTEND
 
 public:
@@ -40,42 +41,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptLineShape(::ScriptModuleDebugUtilities::ScriptLineShape const&);
+    MCAPI ScriptLineShape(::ScriptModuleDebugUtilities::ScriptLineShape const&);
 
-    MCNAPI ::ScriptModuleDebugUtilities::ScriptLineShape&
+    MCFOLD ::ScriptModuleDebugUtilities::ScriptLineShape&
     operator=(::ScriptModuleDebugUtilities::ScriptLineShape const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleDebugUtilities::ScriptLineShape const&);
+    MCAPI void* $ctor(::ScriptModuleDebugUtilities::ScriptLineShape const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $populatePacketData(::ScriptModuleDebugUtilities::PacketShapeData& packet) const;
+    MCAPI void $populatePacketData(::ScriptModuleDebugUtilities::PacketShapeData& packet) const;
 
-    MCNAPI void $applyUpdatedData(::ScriptModuleDebugUtilities::PacketShapeData const& packet);
+    MCAPI void $applyUpdatedData(::ScriptModuleDebugUtilities::PacketShapeData const& packet);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

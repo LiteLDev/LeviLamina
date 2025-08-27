@@ -59,7 +59,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StorageItemContainerModel(
+    MCAPI StorageItemContainerModel(
         ::FullContainerName const&         name,
         ::std::shared_ptr<::Container>     container,
         bool                               isClientSide,
@@ -67,13 +67,13 @@ public:
         ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
     );
 
-    MCNAPI void _refreshSlot(int modelSlot);
+    MCAPI void _refreshSlot(int modelSlot);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::FullContainerName const&         name,
         ::std::shared_ptr<::Container>     container,
         bool                               isClientSide,
@@ -85,24 +85,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $postInit();
+    MCAPI void $postInit();
 
-    MCNAPI void $containerContentChanged(int slot);
+    MCAPI void $containerContentChanged(int slot);
 
-    MCNAPI bool $isValid();
+    MCFOLD bool $isValid();
 
-    MCNAPI ::ContainerWeakRef $getContainerWeakRef() const;
+    MCAPI ::ContainerWeakRef $getContainerWeakRef() const;
 
-    MCNAPI int $_getContainerOffset() const;
+    MCFOLD int $_getContainerOffset() const;
 
-    MCNAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+    MCFOLD void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
-    MCNAPI ::Container* $_getContainer() const;
+    MCAPI ::Container* $_getContainer() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

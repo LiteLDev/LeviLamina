@@ -23,31 +23,19 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnke53b4d;
-        ::ll::UntypedStorage<4, 4> mUnk5d0fd8;
-        ::ll::UntypedStorage<4, 4> mUnkd31793;
+        ::ll::TypedStorage<4, 4, int> x;
+        ::ll::TypedStorage<4, 4, int> y;
+        ::ll::TypedStorage<4, 4, int> z;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Exit& operator=(Exit const&);
-        Exit(Exit const&);
-        Exit();
     };
 
     struct RailExits {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnkb69b72;
-        ::ll::UntypedStorage<4, 12> mUnkcebc2c;
+        ::ll::TypedStorage<4, 12, ::RailMovementUtility::Exit> mExitA;
+        ::ll::TypedStorage<4, 12, ::RailMovementUtility::Exit> mExitB;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RailExits& operator=(RailExits const&);
-        RailExits(RailExits const&);
-        RailExits();
     };
 
 public:

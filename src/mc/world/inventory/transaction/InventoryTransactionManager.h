@@ -29,18 +29,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _createServerSideAction(::ItemStack const& oldItem, ::ItemStack const& newItem);
+    MCAPI void _createServerSideAction(::ItemStack const& oldItem, ::ItemStack const& newItem);
 
-    MCNAPI void addAction(::InventoryAction const& action, bool forceBalanced);
+    MCAPI void addAction(::InventoryAction const& action, bool forceBalanced);
 
-    MCNAPI void forceBalanceTransaction();
+    MCAPI void forceBalanceTransaction();
 
-    MCNAPI ~InventoryTransactionManager();
+    MCAPI ~InventoryTransactionManager();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

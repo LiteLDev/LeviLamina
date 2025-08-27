@@ -27,34 +27,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptCircleShape(::ScriptModuleDebugUtilities::ScriptCircleShape const&);
+    MCAPI ScriptCircleShape(::ScriptModuleDebugUtilities::ScriptCircleShape const&);
 
-    MCNAPI ::ScriptModuleDebugUtilities::ScriptCircleShape&
+    MCFOLD ::ScriptModuleDebugUtilities::ScriptCircleShape&
     operator=(::ScriptModuleDebugUtilities::ScriptCircleShape const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleDebugUtilities::ScriptCircleShape const&);
+    MCFOLD void* $ctor(::ScriptModuleDebugUtilities::ScriptCircleShape const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

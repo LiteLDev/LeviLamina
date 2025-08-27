@@ -10,20 +10,16 @@
 namespace BlockTraitConversionUtils { struct ConvertedSet; }
 // clang-format on
 
-namespace BlockTraitConversionUtils {
+namespace BlockTraitConversionUtils::FacingDirectionToCardinalDirection {
+// static variables
+// NOLINTBEGIN
+MCNAPI ::BlockTraitConversionUtils::ConvertedSet& R20U3();
 
-struct FacingDirectionToCardinalDirection {
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::BlockTraitConversionUtils::ConvertedSet& R20U3();
+MCNAPI ::BlockTraitConversionUtils::ConvertedSet& R20U4();
 
-    MCNAPI static ::BlockTraitConversionUtils::ConvertedSet& R20U4();
+MCNAPI ::std::add_lvalue_reference_t<::Direction::Type const[]> conversionTable();
 
-    MCNAPI static ::std::add_lvalue_reference_t<::Direction::Type const[]> conversionTable();
+MCNAPI ::std::add_lvalue_reference_t<::Direction::Type const[]> furnaceConversionTable();
+// NOLINTEND
 
-    MCNAPI static ::std::add_lvalue_reference_t<::Direction::Type const[]> furnaceConversionTable();
-    // NOLINTEND
-};
-
-} // namespace BlockTraitConversionUtils
+} // namespace BlockTraitConversionUtils::FacingDirectionToCardinalDirection

@@ -74,18 +74,12 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkcc2282;
-        ::ll::UntypedStorage<4, 4> mUnkf670ea;
-        ::ll::UntypedStorage<4, 4> mUnka0dc00;
-        ::ll::UntypedStorage<4, 4> mUnk40d030;
-        ::ll::UntypedStorage<4, 4> mUnkf2c71b;
+        ::ll::TypedStorage<4, 4, int const>   mLevel;
+        ::ll::TypedStorage<4, 4, int const>   mUses;
+        ::ll::TypedStorage<4, 4, float const> mSpeed;
+        ::ll::TypedStorage<4, 4, int const>   mDamage;
+        ::ll::TypedStorage<4, 4, int const>   mEnchantmentValue;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Tier& operator=(Tier const&);
-        Tier(Tier const&);
-        Tier();
     };
 
 public:

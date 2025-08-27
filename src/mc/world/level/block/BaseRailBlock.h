@@ -49,33 +49,33 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Rail(::BlockSource& region, ::BlockPos const& pos);
+        MCAPI Rail(::BlockSource& region, ::BlockPos const& pos);
 
-        MCNAPI void connectTo(::BaseRailBlock::Rail& rail);
+        MCAPI void connectTo(::BaseRailBlock::Rail& rail);
 
-        MCNAPI ::std::shared_ptr<::BaseRailBlock::Rail> getRail(::BlockPos const& p);
+        MCAPI ::std::shared_ptr<::BaseRailBlock::Rail> getRail(::BlockPos const& p);
 
-        MCNAPI bool hasNeighborRail(::BlockPos const& pos);
+        MCAPI bool hasNeighborRail(::BlockPos const& pos);
 
-        MCNAPI void place(int signalStrength, bool first);
+        MCAPI void place(int signalStrength, bool first);
 
-        MCNAPI void removeSoftConnections();
+        MCAPI void removeSoftConnections();
 
-        MCNAPI void updateConnections(int direction);
+        MCAPI void updateConnections(int direction);
 
-        MCNAPI ~Rail();
+        MCAPI ~Rail();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::BlockSource& region, ::BlockPos const& pos);
+        MCAPI void* $ctor(::BlockSource& region, ::BlockPos const& pos);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 

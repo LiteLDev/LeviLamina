@@ -13,32 +13,26 @@ struct ScriptRuntimeStats {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk1e197a;
-    ::ll::UntypedStorage<8, 8> mUnk367240;
-    ::ll::UntypedStorage<8, 8> mUnkaa99a7;
-    ::ll::UntypedStorage<8, 8> mUnk44e9cf;
-    ::ll::UntypedStorage<8, 8> mUnk7b53f0;
-    ::ll::UntypedStorage<8, 8> mUnkf38e23;
-    ::ll::UntypedStorage<8, 8> mUnk3a1981;
-    ::ll::UntypedStorage<8, 8> mUnk5601ac;
-    ::ll::UntypedStorage<8, 8> mUnk4d2609;
-    ::ll::UntypedStorage<8, 8> mUnke036f9;
-    ::ll::UntypedStorage<8, 8> mUnkb9d7f4;
-    ::ll::UntypedStorage<8, 8> mUnk991953;
-    ::ll::UntypedStorage<8, 8> mUnkce5b1b;
-    ::ll::UntypedStorage<8, 8> mUnkb8ced4;
-    ::ll::UntypedStorage<8, 8> mUnkaf786a;
-    ::ll::UntypedStorage<8, 8> mUnk30294d;
-    ::ll::UntypedStorage<8, 8> mUnk7c5a77;
-    ::ll::UntypedStorage<8, 8> mUnk564c28;
-    ::ll::UntypedStorage<8, 8> mUnkf5941b;
+    ::ll::TypedStorage<8, 8, int64> mMemoryAllocatedCount;
+    ::ll::TypedStorage<8, 8, int64> mMemoryAllocatedSize;
+    ::ll::TypedStorage<8, 8, int64> mMemoryUsedCount;
+    ::ll::TypedStorage<8, 8, int64> mMemoryUsedSize;
+    ::ll::TypedStorage<8, 8, int64> mAtomCount;
+    ::ll::TypedStorage<8, 8, int64> mAtomSize;
+    ::ll::TypedStorage<8, 8, int64> mStringCount;
+    ::ll::TypedStorage<8, 8, int64> mStringSize;
+    ::ll::TypedStorage<8, 8, int64> mObjectCount;
+    ::ll::TypedStorage<8, 8, int64> mObjectSize;
+    ::ll::TypedStorage<8, 8, int64> mPropertyCount;
+    ::ll::TypedStorage<8, 8, int64> mPropertySize;
+    ::ll::TypedStorage<8, 8, int64> mFunctionCount;
+    ::ll::TypedStorage<8, 8, int64> mFunctionSize;
+    ::ll::TypedStorage<8, 8, int64> mFunctionCodeSize;
+    ::ll::TypedStorage<8, 8, int64> mFunctionLineCount;
+    ::ll::TypedStorage<8, 8, int64> mArrayCount;
+    ::ll::TypedStorage<8, 8, int64> mFastArrayCount;
+    ::ll::TypedStorage<8, 8, int64> mFastArrayElementCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptRuntimeStats& operator=(ScriptRuntimeStats const&);
-    ScriptRuntimeStats(ScriptRuntimeStats const&);
-    ScriptRuntimeStats();
 
 public:
     // static functions

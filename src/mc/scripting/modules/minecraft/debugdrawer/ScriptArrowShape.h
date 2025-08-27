@@ -17,8 +17,8 @@ class ScriptArrowShape : public ::ScriptModuleDebugUtilities::ScriptLineShape {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkf0ce43;
-    ::ll::UntypedStorage<4, 4> mUnkb3728f;
+    ::ll::TypedStorage<4, 4, float> mHeadRadius;
+    ::ll::TypedStorage<4, 4, float> mHeadLength;
     // NOLINTEND
 
 public:
@@ -33,7 +33,7 @@ public:
     virtual void populatePacketData(::ScriptModuleDebugUtilities::PacketShapeData& packet) const /*override*/;
 
     // vIndex: 2
-    virtual void applyUpdatedData(::ScriptModuleDebugUtilities::PacketShapeData const& packet) /*override*/;
+    virtual void applyUpdatedData(::ScriptModuleDebugUtilities::PacketShapeData const& existing) /*override*/;
 
     // vIndex: 0
     virtual ~ScriptArrowShape() /*override*/;
@@ -42,34 +42,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleDebugUtilities::ScriptArrowShape&
+    MCAPI ::ScriptModuleDebugUtilities::ScriptArrowShape&
     operator=(::ScriptModuleDebugUtilities::ScriptArrowShape const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $populatePacketData(::ScriptModuleDebugUtilities::PacketShapeData& packet) const;
+    MCAPI void $populatePacketData(::ScriptModuleDebugUtilities::PacketShapeData& packet) const;
 
-    MCNAPI void $applyUpdatedData(::ScriptModuleDebugUtilities::PacketShapeData const& packet);
+    MCAPI void $applyUpdatedData(::ScriptModuleDebugUtilities::PacketShapeData const& existing);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

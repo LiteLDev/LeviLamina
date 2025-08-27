@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/Facing.h"
+#include "mc/world/level/block/BlockedDirections.h"
 #include "mc/world/level/block/LiquidReaction.h"
 #include "mc/world/level/block/LiquidType.h"
 
@@ -11,22 +12,20 @@ struct DetectionRule {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkd9aa3a;
-    ::ll::UntypedStorage<1, 1> mUnk119cc3;
-    ::ll::UntypedStorage<1, 1> mUnk21e36d;
-    ::ll::UntypedStorage<1, 1> mUnk14e35f;
+    ::ll::TypedStorage<1, 1, bool>                mCanContainLiquid;
+    ::ll::TypedStorage<1, 1, ::BlockedDirections> mStopsFlowDirections;
+    ::ll::TypedStorage<1, 1, ::LiquidReaction>    mOnLiquidTouches;
+    ::ll::TypedStorage<1, 1, ::LiquidType>        mLiquidType;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    DetectionRule& operator=(DetectionRule const&);
-    DetectionRule(DetectionRule const&);
     DetectionRule();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DetectionRule(
+    MCAPI DetectionRule(
         ::LiquidType                                liquidType,
         bool                                        canContainLiquid,
         ::LiquidReaction                            onLiquidTouches,
@@ -37,7 +36,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::LiquidType                                liquidType,
         bool                                        canContainLiquid,
         ::LiquidReaction                            onLiquidTouches,

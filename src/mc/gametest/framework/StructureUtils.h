@@ -20,7 +20,7 @@ class Vec3;
 namespace gametest::StructureUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI void AddCommandBlockAndButtonToStartTest(
+MCAPI void AddCommandBlockAndButtonToStartTest(
     ::BlockPos const& structureBlockPos,
     ::Rotation,
     ::BlockPos const&    commandBlockPosRelativeToTestPos,
@@ -28,9 +28,9 @@ MCNAPI void AddCommandBlockAndButtonToStartTest(
     ::BlockSource&       region
 );
 
-MCNAPI void ClearSpaceForStructure(::BoundingBox const& structureBoundingBox, int structureYPos, ::BlockSource& region);
+MCAPI void ClearSpaceForStructure(::BoundingBox const& structureBoundingBox, int structureYPos, ::BlockSource& region);
 
-MCNAPI void CreateNewEmptyStructureBlock(
+MCAPI void CreateNewEmptyStructureBlock(
     ::std::string const& testName,
     ::BlockPos const&    structurePos,
     ::BlockPos const&    size,
@@ -38,22 +38,22 @@ MCNAPI void CreateNewEmptyStructureBlock(
     ::BlockSource&       region
 );
 
-MCNAPI ::std::optional<::BlockPos>
+MCAPI ::std::optional<::BlockPos>
 FindStructureBlockContainingPos(::BlockPos const& pos, int searchRadius, ::BlockSource& region);
 
-MCNAPI ::std::vector<::BlockPos>
+MCAPI ::std::vector<::BlockPos>
 FindStructureBlocks(::BlockPos const& centerPos, int searchRadius, ::BlockSource& region);
 
-MCNAPI ::BoundingBox GetStructureBoundingBox(::StructureBlockActor const& structureBlockActor);
+MCAPI ::BoundingBox GetStructureBoundingBox(::StructureBlockActor const& structureBlockActor);
 
-MCNAPI ::StructureEditorData GetStructureEditorData(::StructureTemplate const& structure, ::Rotation const& rotation);
+MCAPI ::StructureEditorData GetStructureEditorData(::StructureTemplate const& structure, ::Rotation const& rotation);
 
-MCNAPI ::Vec3
+MCAPI ::Vec3
 GetStructureRelativePos(::BlockPos const& structureBlockPos, ::Vec3 const& worldPos, ::Vec3 pivot, ::Rotation rotation);
 
-MCNAPI ::StructureTemplate* GetStructureTemplate(::std::string const& structureName, ::Level& level);
+MCAPI ::StructureTemplate* GetStructureTemplate(::std::string const& structureName, ::Level& level);
 
-MCNAPI ::StructureBlockActor* SpawnStructure(
+MCAPI ::StructureBlockActor* SpawnStructure(
     ::std::string const& structureName,
     ::BlockPos const&    northWestCorner,
     ::Rotation           rotation,

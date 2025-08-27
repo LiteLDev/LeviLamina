@@ -77,38 +77,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _canAttack(::Actor* target, bool allowInvulnerable, ::MobDescriptor const** outDescriptorMatch);
+    MCAPI bool _canAttack(::Actor* target, bool allowInvulnerable, ::MobDescriptor const** outDescriptorMatch);
 
-    MCNAPI bool _canReach(::Actor& target);
+    MCAPI bool _canReach(::Actor& target);
 
-    MCNAPI bool
+    MCAPI bool
     _matchesTargetTypes(::Mob* testMob, ::Actor* target, bool mustSee, ::MobDescriptor const** outDescriptorMatch);
 
-    MCNAPI bool _withinRange(::Actor const& target);
+    MCAPI bool _withinRange(::Actor const& target);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isTargetGoal() const;
+    MCFOLD bool $isTargetGoal() const;
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCFOLD void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCNAPI bool $_canAttack(
+    MCAPI bool $_canAttack(
         ::Mob*                  testMob,
         ::Actor*                target,
         bool                    allowInvulnerable,
@@ -120,6 +120,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
