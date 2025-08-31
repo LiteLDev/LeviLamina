@@ -27,30 +27,31 @@ class SynchedActorDataEntityWrapper;
 struct ActorLink;
 // clang-format on
 
+// 定义一个名为 AddPlayerPacket 的类，它继承自 Packet 类
+// 这个数据包由服务器发送给客户端，用于在客户端的世界中生成（添加）一个其他玩家的实体。
 class AddPlayerPacket : public ::Packet {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ActorLink>>                   mLinks;
-    ::ll::TypedStorage<8, 32, ::std::string>                                mName;
-    ::ll::TypedStorage<8, 16, ::mce::UUID>                                  mUuid;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                               mEntityId;
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                              mRuntimeId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                mPlatformOnlineId;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                       mPos;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                       mVelocity;
-    ::ll::TypedStorage<4, 8, ::Vec2>                                        mRot;
-    ::ll::TypedStorage<4, 4, float>                                         mYHeadRot;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mUnpack;
-    ::ll::TypedStorage<4, 1444, ::LayeredAbilities>                         mAbilities;
-    ::ll::TypedStorage<8, 32, ::std::string>                                mDeviceId;
-    ::ll::TypedStorage<4, 4, ::BuildPlatform>                               mBuildPlatform;
-    ::ll::TypedStorage<4, 4, ::GameType>                                    mPlayerGameType;
-    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor>                 mCarriedItem;
-    ::ll::TypedStorage<8, 8, ::SynchedActorDataEntityWrapper const*>        mEntityData;
-    ::ll::TypedStorage<8, 48, ::PropertySyncData>                           mSynchedProperties;
-    // NOLINTEND
-
+    // 成员变量
+    // NOLINTBEGIN // 告诉代码检查工具（linter）开始忽略此处的代码
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorLink>>                   mLinks;             // 玩家实体与其他实体的链接关系，例如骑乘。
+    ::ll::TypedStorage<8, 32, ::std::string>                                mName;              // 玩家的游戏内名称（ID）。
+    ::ll::TypedStorage<8, 16, ::mce::UUID>                                  mUuid;              // 玩家的账户唯一标识符 (UUID)。
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                               mEntityId;          // 玩家实体的永久唯一ID。
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                              mRuntimeId;         // 玩家实体的运行时ID。
+    ::ll::TypedStorage<8, 32, ::std::string>                                mPlatformOnlineId;  // 玩家在对应平台上的在线ID（例如 Xbox Live ID）。
+    ::ll::TypedStorage<4, 12, ::Vec3>                                       mPos;               // 玩家的位置坐标。
+    ::ll::TypedStorage<4, 12, ::Vec3>                                       mVelocity;          // 玩家的速度向量。
+    ::ll::TypedStorage<4, 8, ::Vec2>                                        mRot;               // 玩家的旋转角度（pitch 和 yaw）。
+    ::ll::TypedStorage<4, 4, float>                                         mYHeadRot;          // 玩家头部的偏航角。
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mUnpack;            // 待解包的实体元数据列表。
+    ::ll::TypedStorage<4, 1444, ::LayeredAbilities>                         mAbilities;         // 玩家的权限数据，如是否可以飞行、是否无敌等。
+    ::ll::TypedStorage<8, 32, ::std::string>                                mDeviceId;          // 玩家所使用设备的ID。
+    ::ll::TypedStorage<4, 4, ::BuildPlatform>                               mBuildPlatform;     // 玩家客户端的构建平台（例如，Windows、iOS、Android）。
+    ::ll::TypedStorage<4, 4, ::GameType>                                    mPlayerGameType;    // 玩家当前的游戏模式（生存、创造等）。
+    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor>                 mCarriedItem;       // 玩家当前主手持有的物品。
+    ::ll::TypedStorage<8, 8, ::SynchedActorDataEntityWrapper const*>        mEntityData;        // 指向同步实体数据的包装器。
+    ::ll::TypedStorage<8, 48, ::PropertySyncData>                           mSynchedProperties; // 需要同步的实体状态属性数据。
+    // NOLINTEND // 告诉代码检查工具结束忽略此处的代码
 public:
     // virtual functions
     // NOLINTBEGIN

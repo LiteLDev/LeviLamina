@@ -14,13 +14,14 @@ class BinaryStream;
 class ReadOnlyBinaryStream;
 // clang-format on
 
+// 定义一个名为 AutomationClientConnectPacket 的类，它继承自 Packet 类
+// 这个数据包用于处理自动化客户端（通常是用于测试或外部工具）的连接请求。
+// 客户端发送此数据包，其中包含一个 WebSocket 的 URI，请求服务器连接到该 WebSocket 端点。
 class AutomationClientConnectPacket : public ::Packet {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::WebSocketPacketData> mWebSocketData;
-    // NOLINTEND
-
+    // 成员变量
+    // NOLINTBEGIN // 告诉代码检查工具（linter）开始忽略此处的代码
+    ::ll::TypedStorage<8, 32, ::WebSocketPacketData> mWebSocketData; // 包含了 WebSocket 的连接信息，主要是连接的 URI 地址。
 public:
     // virtual functions
     // NOLINTBEGIN
