@@ -41,12 +41,6 @@ jobs:
         # with:
         #   xmake-version: branch@master
 
-      - uses: matbour/setup-sentry-cli@v1
-        with:
-          token: ${{ SECRETS.SENTRY_TOKEN }}
-          organization: ${{ SECRETS.SENTRY_ORG }}
-          project: ${{ SECRETS.SENTRY_PROJECT }}
-
       - uses: actions/cache@v4
         with:
           path: |
@@ -66,12 +60,41 @@ jobs:
       - run: |
           xmake -v -y
 
-      - if: github.event_name == 'push'
-        run: |
-          sentry-cli debug-files upload --include-sources bin/LeviLamina
-
       - uses: actions/upload-artifact@v4
         with:
           name: levilamina-${{ github.sha }}-${{ matrix.target_type }}-${{ matrix.mode }}${{ matrix.tests == true && '-tests' || '' }}-windows-x64
           path: |
             bin/
+
+  upload-to-sentry:
+    needs: build
+    if: github.event_name == 'push'
+    strategy:
+      fail-fast: false
+      matrix:
+        target_type:
+          - server
+          - client
+        mode:
+          - debug
+          - release
+        tests:
+          - true
+          - false
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: matbour/setup-sentry-cli@v1
+        with:
+          token: ${{ SECRETS.SENTRY_TOKEN }}
+          organization: ${{ SECRETS.SENTRY_ORG }}
+          project: ${{ SECRETS.SENTRY_PROJECT }}
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: levilamina-${{ github.sha }}-${{ matrix.target_type }}-${{ matrix.mode }}${{ matrix.tests == true && '-tests' || '' }}-windows-x64
+          path: artifact
+
+      - run: |
+          sentry-cli debug-files upload --include-sources artifact
