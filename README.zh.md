@@ -18,7 +18,7 @@ LeviLamina 是一个非官方的模组加载器，旨在为基岩版提供必不
 
 开发者可以轻松地用 C++ 编写模组。这种无缝集成赋予了他们轻松扩展和个性化游戏功能的能力，促进了直观的学习体验和无与伦比的灵活性。
 
-有关更多信息，请参阅[文档](https://lamina.levimc.org/quickstart/zh/).
+有关更多信息，请参阅[文档](https://lamina.levimc.org/zh/).
 
 ## EULA 和使用准则
 
