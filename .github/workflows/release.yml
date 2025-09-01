@@ -51,7 +51,6 @@ jobs:
 
   upload-to-sentry:
     needs: build
-    if: github.event_name == 'push'
     strategy:
       fail-fast: false
       matrix:
