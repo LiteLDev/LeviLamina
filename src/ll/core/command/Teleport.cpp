@@ -45,7 +45,7 @@ void registerTpdimCommand() {
         .execute([&](CommandOrigin const& origin, CommandOutput& output, TpSelf const& param, ::Command const& cmd) {
             auto self = origin.getEntity();
             if (!self) {
-                output.error("Not an actor origin"_tr());
+                output.error("Not an actor origin"_trl(origin.getLocaleCode()));
                 return;
             }
             Vec3 pos;
@@ -58,11 +58,12 @@ void registerTpdimCommand() {
                            param.dimension,
                            origin.getLevel()->getDimensionConversionData()
                        )) {
-                output.error("fail to convert position between dimensions"_tr());
+                output.error("fail to convert position between dimensions"_trl(origin.getLocaleCode()));
                 return;
             }
             self->teleport(pos, param.dimension);
-            output.success("Teleported {0} to {1} {2}"_tr(
+            output.success("Teleported {0} to {1} {2}"_trl(
+                origin.getLocaleCode(),
                 origin.getName(),
                 VanillaDimensions::toString(param.dimension),
                 pos.toString()
@@ -76,7 +77,7 @@ void registerTpdimCommand() {
         .execute([&](CommandOrigin const& origin, CommandOutput& output, TpTarget const& param, ::Command const& cmd) {
             auto victim = param.victim.results(origin);
             if (victim.empty()) {
-                output.error("No target"_tr());
+                output.error("No target"_trl(origin.getLocaleCode()));
                 return;
             }
             Vec3 pos;
@@ -89,13 +90,14 @@ void registerTpdimCommand() {
                            param.dimension,
                            origin.getLevel()->getDimensionConversionData()
                        )) {
-                output.error("fail to convert position between dimensions"_tr());
+                output.error("fail to convert position between dimensions"_trl(origin.getLocaleCode()));
                 return;
             }
             for (auto actor : victim) {
                 actor->teleport(pos, param.dimension);
             }
-            output.success("Teleported {0} to {1} {2}"_tr(
+            output.success("Teleported {0} to {1} {2}"_trl(
+                origin.getLocaleCode(),
                 CommandOutputParameter{victim}.mString,
                 VanillaDimensions::toString(param.dimension),
                 pos.toString()
