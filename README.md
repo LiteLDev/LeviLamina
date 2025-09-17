@@ -45,9 +45,7 @@ LeviLamina follows the [Contributor Covenant](https://www.contributor-covenant.o
 
 ### Contributors
 
-This project exists thanks to all the people who contribute.
-
-![Contributors](https://contrib.rocks/image?repo=LiteLDev/LeviLamina)
+This project exists thanks to [all the people who contribute](https://github.com/LiteLDev/LeviLamina/graphs/contributors).
 
 ## License
 
