@@ -63,15 +63,15 @@ void registerModManageCommand() {
                     )
                     .alias("ll");
     cmd.overload<LeviCommand3>().text("load").required("mod").execute(
-        [](CommandOrigin const&, CommandOutput& output, LeviCommand3 const& param) {
+        [](CommandOrigin const& origin, CommandOutput& output, LeviCommand3 const& param) {
             if (ll::mod::ModManagerRegistry::getInstance().hasMod(param.mod)) {
-                output.error("Mod {0} already loaded"_tr(param.mod));
+                output.error("Mod {0} already loaded"_trl(origin.getLocaleCode(), param.mod));
                 return;
             }
             if (auto res = ll::mod::ModRegistrar::getInstance().loadMod(param.mod); res) {
-                output.success("Load mod {0} successfully"_tr(param.mod));
+                output.success("Load mod {0} successfully"_trl(origin.getLocaleCode(), param.mod));
             } else {
-                output.error("Failed to load mod {0}"_tr(param.mod));
+                output.error("Failed to load mod {0}"_trl(origin.getLocaleCode(), param.mod));
                 res.error().log(output);
             }
         }
@@ -79,34 +79,34 @@ void registerModManageCommand() {
     cmd.overload<LeviCommand>()
         .required("operation")
         .required("mod")
-        .execute([](CommandOrigin const&, CommandOutput& output, LeviCommand const& param) {
+        .execute([](CommandOrigin const& origin, CommandOutput& output, LeviCommand const& param) {
             if (!ll::mod::ModManagerRegistry::getInstance().hasMod(param.mod)) {
-                output.error("Mod {0} not found"_tr(param.mod));
+                output.error("Mod {0} not found"_trl(origin.getLocaleCode(), param.mod));
                 return;
             }
             auto& reg = ll::mod::ModRegistrar::getInstance();
             switch (param.operation) {
             case LeviCommandOperation::unload:
                 if (auto res = reg.unloadMod(param.mod); res) {
-                    output.success("Unload mod {0} successfully"_tr(param.mod));
+                    output.success("Unload mod {0} successfully"_trl(origin.getLocaleCode(), param.mod));
                 } else {
-                    output.error("Failed to unload mod {0}"_tr(param.mod));
+                    output.error("Failed to unload mod {0}"_trl(origin.getLocaleCode(), param.mod));
                     res.error().log(output);
                 }
                 break;
             case LeviCommandOperation::reload:
                 if (auto res = reg.unloadMod(param.mod).and_then([&] { return reg.loadMod(param.mod); }); res) {
-                    output.success("Reload mod {0} successfully"_tr(param.mod));
+                    output.success("Reload mod {0} successfully"_trl(origin.getLocaleCode(), param.mod));
                 } else {
-                    output.error("Failed to reload mod {0}"_tr(param.mod));
+                    output.error("Failed to reload mod {0}"_trl(origin.getLocaleCode(), param.mod));
                     res.error().log(output);
                 }
                 break;
             case LeviCommandOperation::reactivate:
                 if (auto res = reg.disableMod(param.mod).and_then([&] { return reg.enableMod(param.mod); }); res) {
-                    output.success("Reactivate mod {0} successfully"_tr(param.mod));
+                    output.success("Reactivate mod {0} successfully"_trl(origin.getLocaleCode(), param.mod));
                 } else {
-                    output.error("Failed to reactivate mod {0}"_tr(param.mod));
+                    output.error("Failed to reactivate mod {0}"_trl(origin.getLocaleCode(), param.mod));
                     res.error().log(output);
                 }
                 break;
@@ -117,52 +117,52 @@ void registerModManageCommand() {
     cmd.overload<LeviCommand2>()
         .required("operation")
         .required("mod")
-        .execute([](CommandOrigin const&, CommandOutput& output, LeviCommand2 const& param) {
+        .execute([](CommandOrigin const& origin, CommandOutput& output, LeviCommand2 const& param) {
             if (!ll::mod::ModManagerRegistry::getInstance().hasMod(param.mod)) {
-                output.error("Mod {0} not found"_tr(param.mod));
+                output.error("Mod {0} not found"_trl(origin.getLocaleCode(), param.mod));
                 return;
             }
             auto& reg = ll::mod::ModRegistrar::getInstance();
             switch (param.operation) {
             case LeviCommandOperation2::enable:
                 if (auto res = reg.enableMod(param.mod); res) {
-                    output.success("Enable mod {0} successfully"_tr(param.mod));
+                    output.success("Enable mod {0} successfully"_trl(origin.getLocaleCode(), param.mod));
                 } else {
-                    output.error("Failed to enable mod {0}"_tr(param.mod));
+                    output.error("Failed to enable mod {0}"_trl(origin.getLocaleCode(), param.mod));
                     res.error().log(output);
                 }
                 break;
             case LeviCommandOperation2::disable:
                 if (auto res = reg.disableMod(param.mod); res) {
-                    output.success("Disable mod {0} successfully"_tr(param.mod));
+                    output.success("Disable mod {0} successfully"_trl(origin.getLocaleCode(), param.mod));
                 } else {
-                    output.error("Failed to disable mod {0}"_tr(param.mod));
+                    output.error("Failed to disable mod {0}"_trl(origin.getLocaleCode(), param.mod));
                     res.error().log(output);
                 }
                 break;
             case LeviCommandOperation2::show: {
                 auto mod = ll::mod::ModManagerRegistry::getInstance().getMod(param.mod);
                 if (!mod) {
-                    output.error("Mod {0} not found"_tr(param.mod));
+                    output.error("Mod {0} not found"_trl(origin.getLocaleCode(), param.mod));
                     return;
                 }
                 mod::Manifest const& man = mod->getManifest();
-                output.success("Name: {0}"_tr(man.name));
+                output.success("Name: {0}"_trl(origin.getLocaleCode(), man.name));
                 if (man.author) {
-                    output.success("Author: {0}"_tr(*man.author));
+                    output.success("Author: {0}"_trl(origin.getLocaleCode(), *man.author));
                 }
                 if (man.description) {
-                    output.success("Description: {0}"_tr(*man.description));
+                    output.success("Description: {0}"_trl(origin.getLocaleCode(), *man.description));
                 }
-                output.success("Type: {0}"_tr(man.type));
+                output.success("Type: {0}"_trl(origin.getLocaleCode(), man.type));
                 if (man.version) {
-                    output.success("Version: {0}"_tr(man.version->to_string()));
+                    output.success("Version: {0}"_trl(origin.getLocaleCode(), man.version->to_string()));
                 }
-                output.success("Entry: {0}"_tr(man.entry));
+                output.success("Entry: {0}"_trl(origin.getLocaleCode(), man.entry));
                 if (man.extraInfo && !man.extraInfo->empty()) {
-                    output.success("Extra Info:"_tr());
+                    output.success("Extra Info:"_trl(origin.getLocaleCode()));
                     for (auto& line : *man.extraInfo) {
-                        output.success("  {0}: {1}", line.first, line.second);
+                        output.success("  {0}: {1}"_trl(origin.getLocaleCode(), line.first, line.second));
                     }
                 }
                 break;
@@ -171,7 +171,7 @@ void registerModManageCommand() {
                 LL_UNREACHABLE;
             }
         });
-    cmd.overload().text("list").execute([](CommandOrigin const&, CommandOutput& output) {
+    cmd.overload().text("list").execute([](CommandOrigin const& origin, CommandOutput& output) {
         size_t      amount = 0;
         std::string mods;
         for (auto& mod : ll::mod::ModManagerRegistry::getInstance().mods()) {
@@ -181,7 +181,7 @@ void registerModManageCommand() {
         if (!mods.empty()) {
             mods.resize(mods.size() - 2);
         }
-        output.success("There are {0} mods: {1}"_tr(amount, mods));
+        output.success("There are {0} mods: {1}"_trl(origin.getLocaleCode(), amount, mods));
     });
 }
 } // namespace ll::command
