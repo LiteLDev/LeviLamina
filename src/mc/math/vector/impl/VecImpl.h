@@ -41,7 +41,8 @@
         template <std::convertible_to<TYPE> T0, std::convertible_to<TYPE> T1>                                          \
         [[nodiscard]] constexpr NAME(T0 x, T1 z) noexcept                                                              \
         : x(static_cast<TYPE>((std::is_floating_point_v<T0> && !std::is_floating_point_v<TYPE>) ? std::floor(x) : x)), \
-          z(static_cast<TYPE>((std::is_floating_point_v<T1> && !std::is_floating_point_v<TYPE>) ? std::floor(z) : z)   \
+          z(                                                                                                           \
+              static_cast<TYPE>((std::is_floating_point_v<T1> && !std::is_floating_point_v<TYPE>) ? std::floor(z) : z) \
           ) {}                                                                                                         \
         template <IsField T>                                                                                           \
         [[nodiscard]] constexpr NAME(T const& vec)                                                                     \
@@ -95,7 +96,8 @@
         [[nodiscard]] constexpr NAME(T0 x, T1 y, T2 z) noexcept                                                        \
         : x(static_cast<TYPE>((std::is_floating_point_v<T0> && !std::is_floating_point_v<TYPE>) ? std::floor(x) : x)), \
           y(static_cast<TYPE>((std::is_floating_point_v<T1> && !std::is_floating_point_v<TYPE>) ? std::floor(y) : y)), \
-          z(static_cast<TYPE>((std::is_floating_point_v<T2> && !std::is_floating_point_v<TYPE>) ? std::floor(z) : z)   \
+          z(                                                                                                           \
+              static_cast<TYPE>((std::is_floating_point_v<T2> && !std::is_floating_point_v<TYPE>) ? std::floor(z) : z) \
           ) {}                                                                                                         \
         template <IsField T>                                                                                           \
         [[nodiscard]] constexpr NAME(T const& vec)                                                                     \
@@ -159,7 +161,8 @@
         : x(static_cast<TYPE>((std::is_floating_point_v<T0> && !std::is_floating_point_v<TYPE>) ? std::floor(x) : x)), \
           y(static_cast<TYPE>((std::is_floating_point_v<T1> && !std::is_floating_point_v<TYPE>) ? std::floor(y) : y)), \
           z(static_cast<TYPE>((std::is_floating_point_v<T2> && !std::is_floating_point_v<TYPE>) ? std::floor(z) : z)), \
-          w(static_cast<TYPE>((std::is_floating_point_v<T3> && !std::is_floating_point_v<TYPE>) ? std::floor(w) : w)   \
+          w(                                                                                                           \
+              static_cast<TYPE>((std::is_floating_point_v<T3> && !std::is_floating_point_v<TYPE>) ? std::floor(w) : w) \
           ) {}                                                                                                         \
         template <IsField T>                                                                                           \
         [[nodiscard]] constexpr NAME(T const& vec)                                                                     \

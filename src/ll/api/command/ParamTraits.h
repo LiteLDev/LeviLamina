@@ -33,9 +33,15 @@ template <class T>
 struct ParamTraits : ParamTraitsBase<T> {};
 template <class T>
 struct EnumParser {
-    bool
-    operator()(CommandRegistry const& registry, void* storage, CommandRegistry::ParseToken const& token, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-        const {
+    bool operator()(
+        CommandRegistry const&             registry,
+        void*                              storage,
+        CommandRegistry::ParseToken const& token,
+        CommandOrigin const&,
+        int,
+        std::string&,
+        std::vector<std::string>&
+    ) const {
         *(T*)storage = (T)registry.getEnumData(token);
         return true;
     }
@@ -60,9 +66,15 @@ struct ParamTraits<T> : ParamTraitsBase<T> {
     }
 };
 struct EmptyParser {
-    bool
-    operator()(CommandRegistry const&, void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-        const {
+    bool operator()(
+        CommandRegistry const&,
+        void*,
+        CommandRegistry::ParseToken const&,
+        CommandOrigin const&,
+        int,
+        std::string&,
+        std::vector<std::string>&
+    ) const {
         return false;
     }
 };

@@ -18,19 +18,16 @@ public:
     using second_type = Other;
 
     template <class... Ts2>
-    constexpr explicit TightPair(
-        ZeroThenVariadicArgs,
-        Ts2&&... val2
-    ) noexcept(std::is_nothrow_default_constructible_v<Base> && std::is_nothrow_constructible_v<Other, Ts2...>)
+    constexpr explicit TightPair(ZeroThenVariadicArgs, Ts2&&... val2) noexcept(
+        std::is_nothrow_default_constructible_v<Base> && std::is_nothrow_constructible_v<Other, Ts2...>
+    )
     : Base(),
       sec(std::forward<Ts2>(val2)...) {}
 
     template <class T1, class... Ts2>
-    constexpr TightPair(
-        OneThenVariadicArgs,
-        T1&& val1,
-        Ts2&&... val2
-    ) noexcept(std::is_nothrow_constructible_v<Base, T1> && std::is_nothrow_constructible_v<Other, Ts2...>)
+    constexpr TightPair(OneThenVariadicArgs, T1&& val1, Ts2&&... val2) noexcept(
+        std::is_nothrow_constructible_v<Base, T1> && std::is_nothrow_constructible_v<Other, Ts2...>
+    )
     : Base(std::forward<T1>(val1)),
       sec(std::forward<Ts2>(val2)...) {}
 
@@ -53,19 +50,16 @@ public:
     using second_type = Other;
 
     template <class... Ts2>
-    constexpr explicit TightPair(
-        ZeroThenVariadicArgs,
-        Ts2&&... val2
-    ) noexcept(std::is_nothrow_default_constructible_v<Base> && std::is_nothrow_constructible_v<Other, Ts2...>)
+    constexpr explicit TightPair(ZeroThenVariadicArgs, Ts2&&... val2) noexcept(
+        std::is_nothrow_default_constructible_v<Base> && std::is_nothrow_constructible_v<Other, Ts2...>
+    )
     : fst(),
       sec(std::forward<Ts2>(val2)...) {}
 
     template <class T1, class... Ts2>
-    constexpr TightPair(
-        OneThenVariadicArgs,
-        T1&& val1,
-        Ts2&&... val2
-    ) noexcept(std::is_nothrow_constructible_v<Base, T1> && std::is_nothrow_constructible_v<Other, Ts2...>)
+    constexpr TightPair(OneThenVariadicArgs, T1&& val1, Ts2&&... val2) noexcept(
+        std::is_nothrow_constructible_v<Base, T1> && std::is_nothrow_constructible_v<Other, Ts2...>
+    )
     : fst(std::forward<T1>(val1)),
       sec(std::forward<Ts2>(val2)...) {}
 

@@ -18,9 +18,11 @@ class FormHandler {
 public:
     virtual ~FormHandler() = default;
 
-    virtual void
-    handle(Player& player, std::optional<Json::Value> data, std::optional<ModalFormCancelReason> cancelReason)
-        const = 0;
+    virtual void handle(
+        Player&                              player,
+        std::optional<Json::Value>           data,
+        std::optional<ModalFormCancelReason> cancelReason
+    ) const = 0;
 
     [[nodiscard]] virtual FormType getType() const = 0;
 };
@@ -34,23 +36,29 @@ public:
     : mCallback(std::move(callback)),
       mButtonCallbacks(std::move(buttonCallbacks)) {}
 
-    void handle(Player& player, std::optional<Json::Value> data, std::optional<ModalFormCancelReason> cancelReason)
-        const override;
+    void handle(
+        Player&                              player,
+        std::optional<Json::Value>           data,
+        std::optional<ModalFormCancelReason> cancelReason
+    ) const override;
 
     [[nodiscard]] FormType getType() const override { return FormType::SimpleForm; }
 };
 
 class CustomFormHandler : public FormHandler {
 public:
-    CustomForm::Callback                            mCallback;
+    CustomForm::Callback                          mCallback;
     std::vector<std::shared_ptr<FormElementBase>> mFormElements;
 
     CustomFormHandler(CustomForm::Callback callback, std::vector<std::shared_ptr<FormElementBase>> formElements)
     : mCallback(std::move(callback)),
       mFormElements(std::move(formElements)) {}
 
-    void handle(Player& player, std::optional<Json::Value> data, std::optional<ModalFormCancelReason> cancelReason)
-        const override;
+    void handle(
+        Player&                              player,
+        std::optional<Json::Value>           data,
+        std::optional<ModalFormCancelReason> cancelReason
+    ) const override;
 
     [[nodiscard]] FormType getType() const override { return FormType::CustomForm; }
 };
@@ -61,8 +69,11 @@ public:
 
     explicit ModalFormHandler(ModalForm::Callback callback) : mCallback(std::move(callback)) {}
 
-    void handle(Player& player, std::optional<Json::Value> data, std::optional<ModalFormCancelReason> cancelReason)
-        const override;
+    void handle(
+        Player&                              player,
+        std::optional<Json::Value>           data,
+        std::optional<ModalFormCancelReason> cancelReason
+    ) const override;
 
     [[nodiscard]] FormType getType() const override { return FormType::ModalForm; }
 };

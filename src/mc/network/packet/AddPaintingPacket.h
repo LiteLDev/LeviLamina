@@ -2,6 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
@@ -16,12 +17,11 @@ class ReadOnlyBinaryStream;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class AddPaintingPacket : public ::Packet {
+class AddPaintingPacket : public ::Packet, public ::AddPaintingPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::AddPaintingPacketPayload> mPayload;
-    ::ll::TypedStorage<4, 4, ::SerializationMode>         mSerializationMode;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
 public:

@@ -56,8 +56,7 @@ optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name, Block
         }
         stateList.emplace_back(stateNameHash, value);
     }
-    auto block =
-        registry._lookupByNameImpl(nameHash, 0, BlockTypeRegistry::LookupByNameImplResolve::Block).mBlock;
+    auto block = registry._lookupByNameImpl(nameHash, 0, BlockTypeRegistry::LookupByNameImplResolve::Block).mBlock;
     if (block) {
         for (auto& state : stateList) {
             if (block) {

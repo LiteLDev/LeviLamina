@@ -14,7 +14,9 @@ struct ServerSettingsResponsePacketInfo;
 class ServerSettingsResponsePacket
 : public ::SerializedPayloadPacket<::ServerSettingsResponsePacketInfo, ::ServerSettingsResponsePacketPayload> {
 public:
-    ServerSettingsResponsePacket(uint formId, ::std::string const& formJSON) : mFormId(formId), mFormJSON(formJSON) {}
+    ServerSettingsResponsePacket(uint formId, ::std::string const& formJSON)
+    : SerializedPayloadPacket(formId, formJSON) {}
+
 public:
     // ServerSettingsResponsePacket inner types define
     using PayloadType = ::ServerSettingsResponsePacketPayload;

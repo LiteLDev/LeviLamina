@@ -97,7 +97,8 @@ public:
                     && SUCCEEDED(
                         debugClient->QueryInterface(IID_IDebugSymbols3, reinterpret_cast<void**>(&debugSymbols))
                     )
-                    && SUCCEEDED(debugClient->QueryInterface(IID_IDebugControl, reinterpret_cast<void**>(&debugControl))
+                    && SUCCEEDED(
+                        debugClient->QueryInterface(IID_IDebugControl, reinterpret_cast<void**>(&debugControl))
                     )) {
                     attached = SUCCEEDED(debugClient->AttachProcess(
                         0,
@@ -107,8 +108,8 @@ public:
                     if (attached) {
                         (void)debugControl->WaitForEvent(0, INFINITE);
                     }
-                    (void
-                    )debugSymbols->AppendSymbolPathWide(sys_utils::getModulePath(nullptr).value().parent_path().c_str()
+                    (void)debugSymbols->AppendSymbolPathWide(
+                        sys_utils::getModulePath(nullptr).value().parent_path().c_str()
                     );
                     (void)debugSymbols->RemoveSymbolOptions(
                         SYMOPT_NO_CPP | SYMOPT_LOAD_ANYTHING | SYMOPT_NO_UNQUALIFIED_LOADS | SYMOPT_IGNORE_NT_SYMPATH

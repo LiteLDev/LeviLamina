@@ -19,8 +19,7 @@ std::string ItemStackBase::getDescriptionName() const {
 
 LLAPI short ItemStackBase::getDamageValue() const {
     if (mItem && mUserData) {
-        if(mUserData->contains(Item::TAG_DAMAGE()))
-            return mUserData->at(Item::TAG_DAMAGE());
+        if (mUserData->contains(Item::TAG_DAMAGE())) return mUserData->at(Item::TAG_DAMAGE());
     };
     return 0;
 }

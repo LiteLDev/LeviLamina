@@ -62,11 +62,13 @@ void registerTpdimCommand() {
                 return;
             }
             self->teleport(pos, param.dimension);
-            output.success("Teleported {0} to {1} {2}"_tr(
-                origin.getName(),
-                VanillaDimensions::toString(param.dimension),
-                pos.toString()
-            ));
+            output.success(
+                "Teleported {0} to {1} {2}"_tr(
+                    origin.getName(),
+                    VanillaDimensions::toString(param.dimension),
+                    pos.toString()
+                )
+            );
         });
     cmd.overload<TpTarget>()
         .required("victim")
@@ -95,11 +97,13 @@ void registerTpdimCommand() {
             for (auto actor : victim) {
                 actor->teleport(pos, param.dimension);
             }
-            output.success("Teleported {0} to {1} {2}"_tr(
-                CommandOutputParameter{victim}.mString,
-                VanillaDimensions::toString(param.dimension),
-                pos.toString()
-            ));
+            output.success(
+                "Teleported {0} to {1} {2}"_tr(
+                    CommandOutputParameter{victim}.mString,
+                    VanillaDimensions::toString(param.dimension),
+                    pos.toString()
+                )
+            );
         });
 }
 } // namespace ll::command

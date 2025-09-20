@@ -54,12 +54,14 @@ protected:
 ModalForm::ModalForm() : impl(std::make_unique<ModalFormImpl>()) {}
 
 ModalForm::ModalForm(std::string title, std::string content, std::string upperButton, std::string lowerButton)
-: impl(std::make_unique<ModalFormImpl>(
-      std::move(title),
-      std::move(content),
-      std::move(upperButton),
-      std::move(lowerButton)
-  )) {}
+: impl(
+      std::make_unique<ModalFormImpl>(
+          std::move(title),
+          std::move(content),
+          std::move(upperButton),
+          std::move(lowerButton)
+      )
+  ) {}
 
 ModalForm::~ModalForm() = default;
 

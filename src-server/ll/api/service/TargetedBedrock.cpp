@@ -29,17 +29,26 @@ LL_TYPE_INSTANCE_HOOK(
     DedicatedServer,
     &DedicatedServer::runDedicatedServerLoop,
     ::DedicatedServer::StartResult,
-    ::Core::FilePathManager&              filePathManager,
-    ::PropertiesSettings&                 properties,
-    ::LevelSettings&                      settings,
-    ::AllowListFile&                      userAllowList,
-    ::std::unique_ptr<::PermissionsFile>& permissionsFile,
-    ::Bedrock::ActivationArguments const& args,
-    ::TestConfig&                         testConfig
+    ::Core::FilePathManager&                                     filePathManager,
+    ::PropertiesSettings&                                        properties,
+    ::LevelSettings&                                             settings,
+    ::AllowListFile&                                             userAllowList,
+    ::std::unique_ptr<::PermissionsFile>&                        permissionsFile,
+    ::std::optional<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder,
+    ::Bedrock::ActivationArguments const&                        args,
+    ::TestConfig&                                                testConfig
 ) {
-    propertiesSettings = &properties;
-    DedicatedServer::StartResult res =
-        origin(filePathManager, properties, settings, userAllowList, permissionsFile, args, testConfig);
+    propertiesSettings               = &properties;
+    DedicatedServer::StartResult res = origin(
+        filePathManager,
+        properties,
+        settings,
+        userAllowList,
+        permissionsFile,
+        std::move(packetGroupBuilder),
+        args,
+        testConfig
+    );
     propertiesSettings = nullptr;
     return res;
 }

@@ -128,13 +128,15 @@ void ModRegistrar::loadAllMods() noexcept try {
             for (auto& dependency : *manifest.dependencies) {
                 if (!manifests.contains(dependency.name) || !checkVersion(manifests.at(dependency.name), dependency)) {
                     error = true;
-                    getLogger().error("Missing dependency {0}"_tr(
-                        dependency.version
-                            .transform([&](auto& ver) {
-                                return fmt::format("{} v{}", dependency.name, ver.to_string());
-                            })
-                            .value_or(dependency.name)
-                    ));
+                    getLogger().error(
+                        "Missing dependency {0}"_tr(
+                            dependency.version
+                                .transform([&](auto& ver) {
+                                    return fmt::format("{} v{}", dependency.name, ver.to_string());
+                                })
+                                .value_or(dependency.name)
+                        )
+                    );
                 }
             }
             if (error) {
@@ -166,12 +168,14 @@ void ModRegistrar::loadAllMods() noexcept try {
         for (auto& conflict : *manifest.conflicts) {
             if (manifests.contains(conflict.name) && checkVersion(manifests.at(conflict.name), conflict)) {
                 pendingRemoved.emplace_back(name);
-                getLogger().error("{0} conflicts with {1}"_tr(
-                    name,
-                    conflict.version
-                        .transform([&](auto& ver) { return fmt::format("{} v{}", conflict.name, ver.to_string()); })
-                        .value_or(conflict.name)
-                ));
+                getLogger().error(
+                    "{0} conflicts with {1}"_tr(
+                        name,
+                        conflict.version
+                            .transform([&](auto& ver) { return fmt::format("{} v{}", conflict.name, ver.to_string()); })
+                            .value_or(conflict.name)
+                    )
+                );
             }
         }
     }
@@ -280,10 +284,13 @@ void ModRegistrar::enableAllMods() noexcept try {
         }
     }
     if (count > 0) {
-        getLogger().info("{0} mod(s) enabled in ({1:.1f}s)"_tr(
-            count,
-            std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::steady_clock::now() - begin).count()
-        ));
+        getLogger().info(
+            "{0} mod(s) enabled in ({1:.1f}s)"_tr(
+                count,
+                std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::steady_clock::now() - begin)
+                    .count()
+            )
+        );
     }
 
 } catch (...) {
@@ -297,7 +304,8 @@ void ModRegistrar::disableAllMods() noexcept try {
         for (auto& name : std::ranges::reverse_view(names)) {
             auto mod = impl->registry.getMod(name);
             if (!mod || mod->isDisabled()) continue;
-            getLogger().info("Disabling {0} v{1}"_tr(name, mod->getManifest().version.value_or(data::Version{0, 0, 0}))
+            getLogger().info(
+                "Disabling {0} v{1}"_tr(name, mod->getManifest().version.value_or(data::Version{0, 0, 0}))
             );
             if (auto res = disableMod(name); !res) {
                 res.error().log(getLogger(), io::LogLevel::Warn);
@@ -325,23 +333,27 @@ Expected<> ModRegistrar::loadMod(std::string_view name) noexcept {
     if (manifest.dependencies) {
         for (auto& dependency : *manifest.dependencies) {
             if (!reg.hasMod(dependency.name) || !checkVersion(reg.getMod(dependency.name)->getManifest(), dependency)) {
-                return makeStringError("Missing dependency {0}"_tr(
-                    dependency.version
-                        .transform([&](auto& ver) { return fmt::format("{} v{}", dependency.name, ver.to_string()); })
-                        .value_or(dependency.name)
-                ));
+                return makeStringError(
+                    "Missing dependency {0}"_tr(dependency.version
+                                                    .transform([&](auto& ver) {
+                                                        return fmt::format("{} v{}", dependency.name, ver.to_string());
+                                                    })
+                                                    .value_or(dependency.name))
+                );
             }
         }
     }
     if (manifest.conflicts) {
         for (auto& conflict : *manifest.conflicts) {
             if (reg.hasMod(conflict.name) && checkVersion(reg.getMod(conflict.name)->getManifest(), conflict)) {
-                return makeStringError("{0} conflicts with {1}"_tr(
-                    name,
-                    conflict.version
-                        .transform([&](auto& ver) { return fmt::format("{} v{}", conflict.name, ver.to_string()); })
-                        .value_or(conflict.name)
-                ));
+                return makeStringError(
+                    "{0} conflicts with {1}"_tr(
+                        name,
+                        conflict.version
+                            .transform([&](auto& ver) { return fmt::format("{} v{}", conflict.name, ver.to_string()); })
+                            .value_or(conflict.name)
+                    )
+                );
             }
         }
     }

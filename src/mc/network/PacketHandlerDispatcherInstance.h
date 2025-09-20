@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/client/renderer/rendergraph/Packet.h"
+#include "mc/network/Packet.h"
 
 class NetworkIdentifier;
 class NetEventCallback;

@@ -104,8 +104,9 @@ void RuntimeOverload::execute(RuntimeCommand::Fn fn) {
         map.try_emplace(name, idx++);
     }
     setFactory(
-        [executor = std::move(fn), params = std::move(impl->params), map = std::move(map)](
-        ) -> std::unique_ptr<::Command> {
+        [executor = std::move(fn),
+         params   = std::move(impl->params),
+         map      = std::move(map)]() -> std::unique_ptr<::Command> {
             return std::unique_ptr<RuntimeCommand>(new ((uint)params.size()) RuntimeCommand{map, params, executor});
         }
     );

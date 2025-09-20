@@ -93,7 +93,12 @@ public:
             }
             return vals;
         }()};
-        return tryRegisterEnum(::ll::command::enum_name_v<T>, values, Bedrock::type_id<CommandRegistry, T>(), &CommandRegistry::parse<T>);
+        return tryRegisterEnum(
+            ::ll::command::enum_name_v<T>,
+            values,
+            Bedrock::type_id<CommandRegistry, T>(),
+            &CommandRegistry::parse<T>
+        );
     }
     template <concepts::Require<std::is_enum> T>
     inline bool tryRegisterRuntimeEnum() {

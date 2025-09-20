@@ -34,18 +34,18 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::Bedrock::typeid_t<::CommandRegistry> mTypeIndex;
-    ParseFunction                          mParse;
-    ::std::string                          mName;
-    char const*                            mEnumNameOrPostfix;
-    CommandRegistry::Symbol                mEnumOrPostfixSymbol;
-    char const*                            mChainedSubcommand;
-    CommandRegistry::Symbol                mChainedSubcommandSymbol;
-    ::CommandParameterDataType             mParamType;
-    int                                    mOffset;
-    int                                    mSetOffset;
-    bool                                   mIsOptional;
-    ::CommandParameterOption               mOptions;
+    ::Bedrock::typeid_t<::CommandRegistry>               mTypeIndex;
+    ParseFunction                                        mParse;
+    ::std::string                                        mName;
+    char const*                                          mEnumNameOrPostfix;
+    CommandRegistry::Symbol                              mEnumOrPostfixSymbol;
+    char const*                                          mChainedSubcommand;
+    CommandRegistry::Symbol                              mChainedSubcommandSymbol;
+    ::CommandParameterDataType                           mParamType;
+    int                                                  mOffset;
+    int                                                  mSetOffset;
+    bool                                                 mIsOptional;
+    ::CommandParameterOption                             mOptions;
     ::ll::TypedStorage<8, 8, void* (*)(::Command*, int)> mValueGetFn{};
     ::ll::TypedStorage<8, 8, bool* (*)(::Command*, int)> mValueIsSetFn{};
     // NOLINTEND

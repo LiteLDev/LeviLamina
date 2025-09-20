@@ -147,6 +147,7 @@ public:
     optional_ref<Block const> trySetState(BlockState const& stateType, T val, ushort data) {
         return trySetState(stateType.mID, val, data);
     }
+
 public:
     // BlockType inner types declare
     // clang-format off
@@ -358,8 +359,8 @@ public:
 public:
     LLNDAPI std::string const& getTypeName() const;
 
-    LLNDAPI static optional_ref<BlockType>         tryGetFromRegistry(std::string_view name);
-    LLNDAPI static optional_ref<BlockType const>   tryGetFromRegistry(uint legacyBlockID);
+    LLNDAPI static optional_ref<BlockType>       tryGetFromRegistry(std::string_view name);
+    LLNDAPI static optional_ref<BlockType const> tryGetFromRegistry(uint legacyBlockID);
 
 public:
     // member variables

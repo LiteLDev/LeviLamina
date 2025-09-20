@@ -123,8 +123,8 @@ public:
     }
     template <class U, class C2, class D2>
         requires(std::is_convertible_v<U*, T*>)
-    constexpr IndirectValue& operator=(IndirectValue<U, C2, D2> const& other
-    ) noexcept(std::is_nothrow_copy_constructible_v<U>) {
+    constexpr IndirectValue&
+    operator=(IndirectValue<U, C2, D2> const& other) noexcept(std::is_nothrow_copy_constructible_v<U>) {
         if constexpr (std::is_same_v<U, T>) {
             if (std::addressof(other) == this) {
                 return *this;

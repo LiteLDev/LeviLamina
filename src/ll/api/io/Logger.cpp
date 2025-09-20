@@ -17,11 +17,13 @@
 namespace ll::io {
 
 static void printLogError(std::string_view msg) noexcept try {
-    io::defaultOutput(fmt::format(
-        "\x1b[31mERROR IN LOGGER API:\n{}\x1b[91m\n{}\x1b[0m\n",
-        error_utils::makeExceptionString(std::current_exception()),
-        string_utils::tou8str(msg)
-    ));
+    io::defaultOutput(
+        fmt::format(
+            "\x1b[31mERROR IN LOGGER API:\n{}\x1b[91m\n{}\x1b[0m\n",
+            error_utils::makeExceptionString(std::current_exception()),
+            string_utils::tou8str(msg)
+        )
+    );
 } catch (...) {
     try {
         io::defaultOutput(fmt::format("\x1b[31mUNKNOWN ERROR IN LOGGER API\x1b[0m\n"));

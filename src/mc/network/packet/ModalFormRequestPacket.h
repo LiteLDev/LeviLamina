@@ -16,15 +16,15 @@ class ReadOnlyBinaryStream;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class ModalFormRequestPacket : public ::Packet {
+class ModalFormRequestPacket : public ::Packet, public ::ModalFormRequestPacketPayload {
 public:
-    ModalFormRequestPacket(uint formId, ::std::string const& formJSON) : mFormId(formId), mFormJSON(formJSON) {}
+    ModalFormRequestPacket(uint formId, ::std::string const& formJSON)
+    : ModalFormRequestPacketPayload(formId, formJSON) {}
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::ModalFormRequestPacketPayload> mPayload;
-    ::ll::TypedStorage<4, 4, ::SerializationMode>              mSerializationMode;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
 public:
