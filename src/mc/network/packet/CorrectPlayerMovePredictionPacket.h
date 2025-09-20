@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/renderer/rendergraph/Packet.h"
 #include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/Packet.h"
 #include "mc/network/packet/CorrectPlayerMovePredictionPacketPayload.h"
 #include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"

@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/renderer/rendergraph/Packet.h"
 #include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list

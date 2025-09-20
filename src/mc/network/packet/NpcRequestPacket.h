@@ -32,19 +32,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit NpcRequestPacket(::NpcRequestPacketPayload payload);
+    MCAPI explicit NpcRequestPacket(::NpcRequestPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::NpcRequestPacketPayload payload);
+    MCAPI void* $ctor(::NpcRequestPacketPayload payload);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

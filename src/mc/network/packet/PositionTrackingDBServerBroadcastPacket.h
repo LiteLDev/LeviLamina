@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/renderer/rendergraph/Packet.h"
 #include "mc/nbt/CompoundTag.h"
 #include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/world/level/PositionTrackingId.h"
 
